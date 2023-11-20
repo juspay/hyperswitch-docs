@@ -1,5 +1,5 @@
 ---
-description: Lighting fast with a near-invisible presence
+description: Lightning fast with a near-invisible presence
 ---
 
 # ⚡ A Payments Switch with virtually zero overhead

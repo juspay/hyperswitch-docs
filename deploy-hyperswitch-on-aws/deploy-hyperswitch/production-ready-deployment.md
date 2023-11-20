@@ -100,13 +100,13 @@ Make sure to save the passwords you provide while running the script
 
 On successful execution of the script, you will receive the following outputs
 
-| Output                      | What is it used for                                                                                                               |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Hostname of the app server  | Access the application's APIs using the given base URL                                                                            |
-| Hostname of the log server  | View real-time logs for all processes                                                                                             |
-| Control Center URL          | Access the Hyperswitch control center and explore multiple settings                                                               |
-| Hyperloader.js URL          | Use the `hyperloader` to [integrate our web client](../deploy-web-client/integrate-web-client-on-your-web-app.md) in your website |
-| Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                    |
+| Output                      | What is it used for                                                                                                           |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Hostname of the app server  | Access the application's APIs using the given base URL                                                                        |
+| Hostname of the log server  | View real-time logs for all processes                                                                                         |
+| Control Center URL          | Access the Hyperswitch control center and explore multiple settings                                                           |
+| Hyperloader.js URL          | Use the `hyperloader` to [integrate our web client](../../going-live/integrate-web-client-on-your-web-app.md) in your website |
+| Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                |
 
 {% hint style="success" %}
 That's it! Hyperswitch should be up and running on your AWS account

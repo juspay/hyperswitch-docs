@@ -2,7 +2,7 @@
 description: Integrate web client for a seamless, blended and an unified payment experience
 ---
 
-# Integrate web client on your web app
+# 🖥 Integrate web client on your web app
 
 {% hint style="info" %}
 In this section, you will learn to integrate the web client on your web app

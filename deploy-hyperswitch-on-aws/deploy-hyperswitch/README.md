@@ -2,7 +2,7 @@
 description: Deploy the Hyperswitch server on the cloud
 ---
 
-# 🗄 Deploy app server
+# 🗄 Deploy Hyperswitch
 
 {% hint style="info" %}
 In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
