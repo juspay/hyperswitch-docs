@@ -3,18 +3,23 @@
 * [👋 Intro to Hyperswitch](README.md)
 * [🛠 Overview of the setup](overview-of-the-setup.md)
 
-## Setup Hyperswitch locally
+## Run Hyperswitch locally
 
-* [🐳 Run Hyperswitch](setup-hyperswitch-locally/run-hyperswitch.md)
-* [💵 Test a payment](setup-hyperswitch-locally/test-a-payment.md)
-* [🔧 Account setup](setup-hyperswitch-locally/account-setup.md)
+* [🐳 Run app server](run-hyperswitch-locally/run-app-server.md)
+* [🔧 Account setup](run-hyperswitch-locally/account-setup.md)
+* [🔌 Run control center](run-hyperswitch-locally/run-control-center.md)
+* [💻 Run web client](run-hyperswitch-locally/run-web-client.md)
+* [💵 Test a payment](run-hyperswitch-locally/test-a-payment.md)
 
 ## Deploy Hyperswitch on AWS
 
-* [🗄 Deploy Hyperswitch](deploy-hyperswitch-on-aws/deploy-hyperswitch/README.md)
-  * [Production ready deployment](deploy-hyperswitch-on-aws/deploy-hyperswitch/production-ready-deployment.md)
-  * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-hyperswitch/standalone-deployment-for-prototyping.md)
-  * [Standalone control center deployment for prototyping](deploy-hyperswitch-on-aws/deploy-hyperswitch/standalone-control-center-deployment-for-prototyping.md)
+* [🗄 Deploy app server](deploy-hyperswitch-on-aws/deploy-app-server/README.md)
+  * [Production ready deployment](deploy-hyperswitch-on-aws/deploy-app-server/production-ready-deployment.md)
+  * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-app-server/standalone-deployment-for-prototyping.md)
+* [🎛 Deploy control center](deploy-hyperswitch-on-aws/deploy-control-center.md)
+* [🖥 Deploy web client](deploy-hyperswitch-on-aws/deploy-web-client/README.md)
+  * [Production ready deployment](deploy-hyperswitch-on-aws/deploy-web-client/production-ready-deployment.md)
+  * [Integrate web client on your web app](deploy-hyperswitch-on-aws/deploy-web-client/integrate-web-client-on-your-web-app.md)
 * [🔧 Account setup & testing](deploy-hyperswitch-on-aws/account-setup-and-testing.md)
 
 ## Going live
@@ -28,7 +33,6 @@
   * [🗄 Card Vault installation](going-live/pci-compliance/card-vault-installation.md)
 * [🔐 Security](going-live/security.md)
 * [♻ Updates](going-live/updates.md)
-* [🖥 Integrate web client on your web app](going-live/integrate-web-client-on-your-web-app.md)
 
 ## Learn how Hyperswitch works
 
