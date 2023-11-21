@@ -43,9 +43,9 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 ### **Prerequisites**
 
-* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 * `git` installed on your local machine
 * node version 18
+* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 
 ### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
