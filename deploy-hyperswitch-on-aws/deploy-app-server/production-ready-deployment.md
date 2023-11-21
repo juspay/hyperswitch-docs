@@ -128,7 +128,7 @@ That's it! Hyperswitch should be up and running on your AWS account. Open the De
 11. **How can I monitor the performance and health of Hyperswitch on EKS?** You can Use AWS CloudWatch, Prometheus, or other monitoring solutions to track performance metrics and set up alerts. Refer [our guide](../../going-live/monitoring.md) for more information
 12. **Is there a recommended backup and disaster recovery strategy for Hyperswitch and associated AWS resources?** Yes, it's essential to implement regular backups for RDS and have a disaster recovery plan in place. AWS provides tools and services for this purpose.
 13. **Are there any specific security considerations when deploying Hyperswitch on AWS EKS?** You should follow our [best practices](../../going-live/security.md) for securing your EKS cluster and your Hyperswitch application, including network policies, IAM roles, and encryption.
-14. **How do I upgrade Hyperswitch and its dependencies on EKS?** We will be providing an update CDK script soon
+14. **How do I upgrade Hyperswitch and its dependencies on EKS?** Please refer to the [Updates](../../going-live/updates.md) section for more details
 15. **What do I do if I encounter issues during the deployment process?** If you encounter issues, consult the troubleshooting section of the documentation or [reach out to our support team](https://hyperswitch.io/contact) for assistance.
 16. **Where can I find further documentation on Hyperswitch?** You can find additional documentation, tutorials, and support resources on our website and in our api docs.
 
