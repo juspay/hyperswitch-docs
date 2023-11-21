@@ -18,12 +18,13 @@ In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either
 
 ### This setup includes:
 
-| Component       | Instance Type  | Default Configuration |
-| --------------- | -------------- | --------------------- |
-| EKS (1 Cluster) | t3.medium      | 2 Nodes               |
-| Load Balancer   | Application LB | 2 LBs                 |
-| RDS             | t4g.medium     | 1 cluster             |
-| ElasticCache    | t4g.medium     | 1 cluster             |
+| Component            | Instance Type  | Default Configuration |
+| -------------------- | -------------- | --------------------- |
+| EKS (1 Cluster)      | t3.medium      | 2 Nodes               |
+| Load Balancer        | Application LB | 2 LBs                 |
+| RDS                  | t4g.medium     | 1 cluster             |
+| ElasticCache         | t4g.medium     | 1 cluster             |
+| S3 (for hyperloader) | -              | Public bucket         |
 
 The following services will be installed in the 2 Nodes inside your EKS cluster
 
@@ -35,6 +36,8 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 | Promtail               | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
 | Loki                   | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
 | Grafana                | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Control Center         | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 
 
 
