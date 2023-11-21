@@ -8,7 +8,9 @@
 * [🐳 Run app server](run-hyperswitch-locally/run-app-server.md)
 * [💻 Run web client](run-hyperswitch-locally/run-web-client.md)
 * [🔌 Run control center](run-hyperswitch-locally/run-control-center.md)
-* [🔧 Account setup](run-hyperswitch-locally/account-setup.md)
+* [🔧 Account setup](run-hyperswitch-locally/account-setup/README.md)
+  * [Using Hyperswitch control center](run-hyperswitch-locally/account-setup/using-hyperswitch-control-center.md)
+  * [Using postman](run-hyperswitch-locally/account-setup/using-postman.md)
 * [💵 Test a payment](run-hyperswitch-locally/test-a-payment.md)
 
 ## Deploy Hyperswitch on AWS
@@ -16,7 +18,8 @@
 * [🗄 Deploy app server](deploy-hyperswitch-on-aws/deploy-app-server/README.md)
   * [Full-stack deployment](deploy-hyperswitch-on-aws/deploy-app-server/production-ready-deployment.md)
   * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-app-server/standalone-deployment-for-prototyping.md)
-* [🎛 Deploy control center](deploy-hyperswitch-on-aws/deploy-control-center.md)
+* [🎛 Deploy control center](deploy-hyperswitch-on-aws/deploy-control-center/README.md)
+  * [Standalone control center deployment for prototyping](deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping.md)
 * [🖥 Deploy web client](deploy-hyperswitch-on-aws/deploy-web-client/README.md)
   * [Production ready deployment](deploy-hyperswitch-on-aws/deploy-web-client/production-ready-deployment.md)
   * [Integrate web client on your web app](deploy-hyperswitch-on-aws/deploy-web-client/integrate-web-client-on-your-web-app.md)
