@@ -2,7 +2,7 @@
 description: Use our CDK script to deploy our complete K8s setup inside your stack
 ---
 
-# Comprehensive deployment
+# Full-stack deployment
 
 {% hint style="info" %}
 In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
@@ -59,7 +59,9 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 </details>
 
-#### Step 1 - Configure your AWS credentials in your terminal
+#### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
+
+#### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
 
