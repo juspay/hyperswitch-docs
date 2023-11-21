@@ -12,7 +12,7 @@ In this chapter, you will deploy our full-stack application on AWS EKS. This wil
 
 ## What is included in this setup
 
-The following components and services will be deployed in your AWS account
+The following components and services will be deployed in a **new stack** in your AWS account
 
 | Component            | Instance Type  | Default Configuration |
 | -------------------- | -------------- | --------------------- |
