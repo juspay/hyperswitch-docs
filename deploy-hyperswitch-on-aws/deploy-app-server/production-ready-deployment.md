@@ -41,20 +41,20 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 ## Steps to Deploy Hyperswitch on AWS
 
-#### **Prerequisites**
+### **Prerequisites**
 
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 * `git` installed on your local machine
 * node version 18
 
-#### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
+### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
 <figure><img src="../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
 
-#### Step 2 - Configure your AWS credentials in your terminal
+### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
 
@@ -76,7 +76,7 @@ export AWS_SECRET_ACCESS_KEY=<Your Secret_Access_Key> // e.g., export AWS_SECRET
 export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 ```
 
-#### Step 3 - Deploy Hyperswitch application
+### Step 3 - Deploy Hyperswitch application
 
 Run the below commands in the same terminal session
 
@@ -95,7 +95,7 @@ Once the script is run you will have to provide the following as inputs
 Make sure to save the passwords you provide while running the script
 {% endhint %}
 
-#### Output
+### Output
 
 On successful execution of the script, you will receive the following outputs
 
