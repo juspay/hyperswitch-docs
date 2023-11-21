@@ -14,7 +14,7 @@
 ## Deploy Hyperswitch on AWS
 
 * [🗄 Deploy app server](deploy-hyperswitch-on-aws/deploy-app-server/README.md)
-  * [Full-stack deployment](deploy-hyperswitch-on-aws/deploy-app-server/full-stack-deployment.md)
+  * [Full-stack deployment](deploy-hyperswitch-on-aws/deploy-app-server/production-ready-deployment.md)
   * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-app-server/standalone-deployment-for-prototyping.md)
 * [🎛 Deploy control center](deploy-hyperswitch-on-aws/deploy-control-center.md)
 * [🖥 Deploy web client](deploy-hyperswitch-on-aws/deploy-web-client/README.md)
