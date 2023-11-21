@@ -36,6 +36,8 @@
 
 ## Learn how Hyperswitch works
 
-* [📐 Hyperswitch architecture](learn-how-hyperswitch-works/hyperswitch-architecture.md)
+* [📐 Hyperswitch architecture](learn-how-hyperswitch-works/hyperswitch-architecture/README.md)
+  * [Router](learn-how-hyperswitch-works/hyperswitch-architecture/router.md)
+  * [Storage](learn-how-hyperswitch-works/hyperswitch-architecture/storage.md)
 * [🌊 Payment flows](learn-how-hyperswitch-works/payment-flows.md)
 * [⚡ A Payments Switch with virtually zero overhead](learn-how-hyperswitch-works/a-payments-switch-with-virtually-zero-overhead.md)

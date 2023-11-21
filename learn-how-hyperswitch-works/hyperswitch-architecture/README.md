@@ -15,7 +15,7 @@ At high level, Hyperswitch has two main components,&#x20;
 * router, which handles the incoming requests and talks to various connectors.
 * a low latency storage layer
 
-<figure><img src="../.gitbook/assets/HS_architecture (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/HS_architecture (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Core API Layer <a href="#core" id="core"></a>
 
