@@ -10,13 +10,9 @@ In this chapter, you will deploy our full-stack application on AWS EKS. This wil
 
 ***
 
-## Video
+## What is included in this setup
 
-{% embed url="https://youtu.be/H9el_IHsd2g" %}
-
-## Full-stack deployment
-
-### This setup includes:
+The following components and services will be deployed in your AWS account
 
 | Component            | Instance Type  | Default Configuration |
 | -------------------- | -------------- | --------------------- |
@@ -45,7 +41,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 ## Steps to Deploy Hyperswitch on AWS
 
-### **What do you need to get started**
+#### **Prerequisites**
 
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 * `git` installed on your local machine
@@ -98,6 +94,8 @@ Once the script is run you will have to provide the following as inputs
 {% hint style="warning" %}
 Make sure to save the passwords you provide while running the script
 {% endhint %}
+
+#### Output
 
 On successful execution of the script, you will receive the following outputs
 
