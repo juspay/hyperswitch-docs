@@ -7,9 +7,9 @@
 
 * [🐳 Run app server](run-hyperswitch-locally/run-app-server.md)
 * [💻 Run web client](run-hyperswitch-locally/run-web-client.md)
-* [💵 Test a payment](run-hyperswitch-locally/test-a-payment.md)
 * [🔌 Run control center](run-hyperswitch-locally/run-control-center.md)
 * [🔧 Account setup](run-hyperswitch-locally/account-setup.md)
+* [💵 Test a payment](run-hyperswitch-locally/test-a-payment.md)
 
 ## Deploy Hyperswitch on AWS
 
