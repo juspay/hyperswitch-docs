@@ -5,7 +5,7 @@ description: Use our CDK script to deploy our complete K8s setup inside your sta
 # Full-stack deployment
 
 {% hint style="info" %}
-In this chapter, you will deploy our full-stack Hyperswitch application on AWS cloud. This will deploy our app server, web client and control center
+In this chapter, you will deploy our full-stack application on AWS EKS. This will deploy our app server, web client and control center
 {% endhint %}
 
 ***
@@ -90,10 +90,10 @@ cd hyperswitch-cdk
 sh install.sh
 ```
 
-Once the script is run you will have to configure the following
+Once the script is run you will have to provide the following as inputs
 
-1. DB password (should be more than 8 chars)
-2. Admin Api key for Hyperswitch APIs&#x20;
+1. Provide a DB password of your choice (should be more than 8 chars)
+2. Provide an Admin Api key of your choice for Hyperswitch APIs&#x20;
 
 {% hint style="warning" %}
 Make sure to save the passwords you provide while running the script
