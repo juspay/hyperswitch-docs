@@ -14,7 +14,7 @@ In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either
 
 {% embed url="https://youtu.be/H9el_IHsd2g" %}
 
-## Production ready deployment
+## Full-stack deployment
 
 ### This setup includes:
 
