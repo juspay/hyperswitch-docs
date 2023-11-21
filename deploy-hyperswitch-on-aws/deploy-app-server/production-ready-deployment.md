@@ -53,7 +53,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
 
 #### Step 2 - Configure your AWS credentials in your terminal
 
