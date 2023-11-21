@@ -48,18 +48,12 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 * `git` installed on your local machine
 * node version 18
 
-<details>
-
-<summary>Optional - Create a new user with Admin access (if you do not have a non-root user)</summary>
-
-1. Create a new user in your AWS account as shown below
-2. While setting permissions, **provide admin access** to the user as shown below&#x20;
-
-![](<../../.gitbook/assets/AWS user (1).gif>)
-
-</details>
-
 #### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
+
+* Create a new user in your AWS account as shown below
+* While setting permissions, **provide admin access** to the user as shown below
+
+<figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
 #### Step 2 - Configure your AWS credentials in your terminal
 
