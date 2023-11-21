@@ -5,7 +5,7 @@ description: Use our CDK script to deploy our complete K8s setup inside your sta
 # Full-stack deployment
 
 {% hint style="info" %}
-In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
+In this chapter, you will deploy our full-stack Hyperswitch application on AWS cloud. This will deploy our app server, web client and control center
 {% endhint %}
 
 ***
