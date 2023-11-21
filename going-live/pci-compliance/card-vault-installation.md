@@ -52,6 +52,12 @@ Ensure to manage your instances' (EC2 and RDS) security group rules are selectiv
 amazon-linux-extras install docker -y
 ```
 
+Run the following command to start docker
+
+```bash
+systemctl start docker
+```
+
 #### Pull the locker docker image
 
 ```bash
