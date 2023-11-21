@@ -50,8 +50,8 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 #### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
-* Create a new user in your AWS account as shown below
-* While setting permissions, **provide admin access** to the user as shown below
+* Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
+* While setting permissions, **provide admin access** to the user
 
 <figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
@@ -77,7 +77,7 @@ export AWS_SECRET_ACCESS_KEY=<Your Secret_Access_Key> // e.g., export AWS_SECRET
 export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 ```
 
-#### Step 2 - Deploy Hyperswitch application
+#### Step 3 - Deploy Hyperswitch application
 
 Run the below commands in the same terminal session
 
