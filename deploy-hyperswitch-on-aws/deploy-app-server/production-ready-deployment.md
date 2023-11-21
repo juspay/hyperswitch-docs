@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy our production-ready K8s setup inside your stack
+description: Use our CDK script to deploy our complete K8s setup inside your stack
 ---
 
 # Comprehensive deployment
