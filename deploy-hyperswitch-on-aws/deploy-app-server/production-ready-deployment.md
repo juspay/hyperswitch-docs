@@ -37,7 +37,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 
 
-<figure><img src="../../.gitbook/assets/K8S Helm Charts (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/K8S Helm Charts (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Steps to Deploy Hyperswitch on AWS
 
