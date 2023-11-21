@@ -134,7 +134,7 @@ You will either get these keys as an output when you host the app server, or for
 
 **Optional:**
 
-1. **Hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `sandbox.hyperswitch.io`
+1. **URL where you have hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `sandbox.hyperswitch.io`
 2. **URL where you have hosted Hyperswitch Client SDK** - This is the Hyperloader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path})`. If not provided, this will default to `https://beta.hyperswitch.io/v1`
 3. **AWS Region -** This is the AWS region where you will host you web client. If not provided, it will default to `us-east-2`.
 
