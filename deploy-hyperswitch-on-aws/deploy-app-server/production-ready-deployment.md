@@ -108,9 +108,7 @@ On successful execution of the script, you will receive the following outputs
 | Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                    |
 
 {% hint style="success" %}
-That's it! Hyperswitch should be up and running on your AWS account
-
-Verify the health of the application by hitting `http://<host>/health`. The expected response is 'health is good'
+That's it! Hyperswitch should be up and running on your AWS account. Open the Demo Store and make a test transaction using any test card :tada::tada:
 {% endhint %}
 
 <details>
