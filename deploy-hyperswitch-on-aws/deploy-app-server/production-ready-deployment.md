@@ -10,6 +10,10 @@ In this chapter, you will deploy our full-stack application on AWS EKS. This wil
 
 ***
 
+## Video
+
+{% embed url="https://www.youtube.com/watch?v=fmFNPOwqXEE" %}
+
 ## What is included in this setup
 
 The following components and services will be deployed in a **new stack** in your AWS account
