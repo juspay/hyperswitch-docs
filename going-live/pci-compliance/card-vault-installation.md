@@ -6,7 +6,7 @@ description: This section will guide you to set up your own card vault from scra
 
 ***
 
-The Hyperswitch Card Vault - [Tartarus](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;
+The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;
 
 It is designed in an polymorphic manner to handle and store any type of sensitive information making it highly scalable with extensive coverage of payment methods and processors.
 
@@ -18,7 +18,7 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 * The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
-* The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/locker-api-reference/)
+* The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
 * Cards are stored against the combination of merchant and customer identifiers.&#x20;
 * Internal hashing checks are in place to avoid data duplication.&#x20;
 
