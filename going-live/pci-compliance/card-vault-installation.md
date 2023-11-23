@@ -46,6 +46,12 @@ Ensure to manage your instances' (EC2 and RDS) security group rules are selectiv
 
 #### Install docker on the EC2 instance
 
+Connect to your EC2 instance using the SSH client via a terminal
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-23 at 2.23.35 PM.png" alt=""><figcaption><p>Connecting to your EC2 instance</p></figcaption></figure>
+
+Once you SSH into the EC2 instance, run the following commands on the terminal to install docker
+
 ```bash
 amazon-linux-extras install docker -y
 ```
@@ -56,7 +62,7 @@ Run the following command to start docker
 systemctl start docker
 ```
 
-#### Pull the locker docker image
+After starting the docker run the following command to pull the `hyperswitch-card-vault` docker image
 
 ```bash
 docker pull juspaydotin/hyperswitch-card-vault:latest
@@ -67,7 +73,7 @@ docker pull juspaydotin/hyperswitch-card-vault:latest
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-20 at 5.53.56 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-20 at 5.53.56 PM.png" alt=""><figcaption><p>Creating a database using RDS</p></figcaption></figure>
 
 * To run the migrations install `psql` in the EC2 instance
 
