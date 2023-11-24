@@ -26,6 +26,8 @@ On the left nav bar, click on your email on the bottom to access the profile sec
 
 From the left nav bar, navigate to Developers --> Keys.
 
+<figure><img src="../../.gitbook/assets/API Key (1).gif" alt=""><figcaption></figcaption></figure>
+
 Click on create API key from the page. A pop-up appears where you have to enter details like the description and validity of the key. Enter the details and click Next.
 
 An API key will be created and you will get the option to download and copy the API key.
@@ -37,6 +39,8 @@ Ensure that you download or copy the API key as it will be available only once t
 ## Add a payment processor
 
 On the left nav bar, navigate to the processors tab.
+
+<figure><img src="../../.gitbook/assets/Processor.gif" alt=""><figcaption></figcaption></figure>
 
 You can see the list of payment processors already integrated with Hyperswitch. Click on the processor you want to connect.
 
@@ -52,6 +56,8 @@ To connect a payment processor:
 The Hyperswitch control center gives you full control on how and where you route your payments.&#x20;
 
 In the left nav bar, navigate to workflow --> routing to access the smart routing module.
+
+<figure><img src="../../.gitbook/assets/Routing.gif" alt=""><figcaption></figcaption></figure>
 
 By default, a priority-based routing based on the processor created time (first connected processor with highest priority) is enabled for you. This also acts as your fallback routing - which means if all else fails, routing will follow this priority.&#x20;
 
