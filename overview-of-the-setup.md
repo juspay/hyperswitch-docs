@@ -47,25 +47,3 @@ Within 15-minutes, you should be able to deploye Hyperswitch in your local machi
 * [Github repo](https://github.com/juspay/hyperswitch)
 * [Slack channel](https://hyperswitch-io.slack.com/join/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) for queries
 * [Discord channel](https://discord.com/invite/wJZ7DVW8mm) for queries
-
-{% tabs %}
-{% tab title="Digital Businesses" %}
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="Banks & Financial Institutions" %}
-
-{% endtab %}
-
-{% tab title="SaaS Organizations" %}
-
-{% endtab %}
-
-{% tab title="Marketplace" %}
-
-{% endtab %}
-
-{% tab title="Resellers" %}
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Account setup</td><td></td><td></td></tr><tr><td>Client Integration</td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
