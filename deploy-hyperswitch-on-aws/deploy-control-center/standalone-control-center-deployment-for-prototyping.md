@@ -128,7 +128,7 @@ Takes around 10-15 min to execute successfully
 {% endhint %}
 
 ```json
-curl https://raw.githubusercontent.com/juspay/hyperswitch/main/aws/hyperswitch_control_center_aws_setup.sh | bash
+curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_aws_setup.sh | bash
 ```
 
 
@@ -144,6 +144,6 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 {% endhint %}
 
 ```json
-curl https://raw.githubusercontent.com/juspay/hyperswitch/main/aws/hyperswitch_control_center_cleanup_setup.sh | bash
+curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_cleanup_setup.sh | bash
 ```
 
