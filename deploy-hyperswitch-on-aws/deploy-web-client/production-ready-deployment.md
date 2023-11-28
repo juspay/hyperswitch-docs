@@ -15,7 +15,7 @@ let backendEndPoint ="YOUR_HOSTED_APP_SERVER_URL"
 ```
 
 \
-After running `npm run build`, you will get a **`build`** folder, which you can then deploy to the service of your choice.
+After running `npm run build`, you will get a **`dist`** folder, which you can then deploy to the service of your choice.
 
 In our case, we use AWS , a combination of S3 and Cloudfront, as our CDN, for our deployment and hosting. We would recommend the same for everybody, but feel free to use any other Cloud services for hosting.\
 
@@ -57,7 +57,7 @@ Click on your newly created bucket name.
 
 **Step 5**
 
-Click on upload, and upload your **`build`** folder.
+Click on upload, and upload your **`dist`** folder.
 
 <figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
