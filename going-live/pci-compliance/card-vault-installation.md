@@ -124,6 +124,8 @@ Now, create a KMS key pair on AWS with the key type as `symmetric` and the key u
 To generate the `master key` and the `custodian keys` use the following command after cloning the repository.
 
 ```bash
+git clone https://github.com/juspay/hyperswitch-card-vault.git
+cd hyperswitch-card-vault
 cargo run --bin utils -- master-key
 ```
 
