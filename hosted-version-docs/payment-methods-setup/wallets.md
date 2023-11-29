@@ -1,4 +1,4 @@
-# Wallets
+# 📱 Wallets
 
 ## Wallets
 

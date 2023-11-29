@@ -1,4 +1,4 @@
-# Multiple Business Units
+# 📊 Business units manager
 
 **Managing Multiple Business units and multiple same processor/connector accounts in Hyperswitch:**
 

@@ -5,25 +5,10 @@
 ## payment use cases
 
 * [🛒 Digital businesses](payment-use-cases/digital-businesses.md)
-* [💻 Run web client](payment-use-cases/run-web-client.md)
-* [🔌 Run control center](payment-use-cases/run-control-center.md)
-* [🔧 Account setup](payment-use-cases/account-setup/README.md)
-  * [Using Hyperswitch control center](payment-use-cases/account-setup/using-hyperswitch-control-center.md)
-  * [Using postman](payment-use-cases/account-setup/using-postman.md)
-* [💵 Test a payment](payment-use-cases/test-a-payment.md)
 * [🏦 Banks & financial institutions](payment-use-cases/banks-and-financial-institutions.md)
 * [💻 SaaS businesses](payment-use-cases/saas-businesses.md)
 * [📶 Marketplace solutions](payment-use-cases/marketplace-solutions.md)
 * [🤝 Resellers & Independent Sales Organizations (ISOs)](payment-use-cases/resellers-and-independent-sales-organizations-isos.md)
-
-## Deploy Hyperswitch on AWS
-
-* [🔧 Account setup & testing](deploy-hyperswitch-on-aws/account-setup-and-testing.md)
-
-## Going live
-
-* [🚀 Overview](going-live/overview.md)
-* [🏁 Prerequisites](going-live/prerequisites.md)
 
 ## Open source setup
 
@@ -57,16 +42,46 @@
 
 ## Hosted version docs
 
-* [📐 Hyperswitch architecture](hosted-version-docs/hyperswitch-architecture/README.md)
-  * [Router](hosted-version-docs/hyperswitch-architecture/router.md)
-  * [Storage](hosted-version-docs/hyperswitch-architecture/storage.md)
 * [⚡ Quickstart](hosted-version-docs/quickstart.md)
-* [⚡ A Payments Switch with virtually zero overhead](hosted-version-docs/a-payments-switch-with-virtually-zero-overhead.md)
 * [⚙ Account setup](hosted-version-docs/account-setup.md)
 * [📦 Integration steps](hosted-version-docs/integration-steps.md)
-* [💳 Payment methods setup](hosted-version-docs/payment-methods-setup.md)
+* [💳 Payment methods setup](hosted-version-docs/payment-methods-setup/README.md)
+  * [💳 Cards](hosted-version-docs/payment-methods-setup/cards.md)
+  * [📱 Wallets](hosted-version-docs/payment-methods-setup/wallets.md)
+  * [Pay Later](hosted-version-docs/payment-methods-setup/pay-later.md)
+  * [🏦 Banks](hosted-version-docs/payment-methods-setup/banks.md)
+  * [🪙 Crypto](hosted-version-docs/payment-methods-setup/crypto.md)
+  * [🔑 Test Credentials](hosted-version-docs/payment-methods-setup/test-credentials.md)
 * [📥 Migrate from Stripe](hosted-version-docs/migrate-from-stripe.md)
-* [📑 API Reference](hosted-version-docs/api-reference.md)
+* [🔗 Connectors](hosted-version-docs/connectors/README.md)
+  * [ACI](hosted-version-docs/connectors/aci.md)
+  * [Adyen](hosted-version-docs/connectors/adyen.md)
+  * [Airwallex](hosted-version-docs/connectors/airwallex.md)
+  * [Authorizedotnet](hosted-version-docs/connectors/authorizedotnet.md)
+  * [Bambora](hosted-version-docs/connectors/bambora.md)
+  * [Bluesnap](hosted-version-docs/connectors/bluesnap.md)
+  * [Braintree](hosted-version-docs/connectors/braintree.md)
+  * [Checkout](hosted-version-docs/connectors/checkout.md)
+  * [Coinbase](hosted-version-docs/connectors/coinbase.md)
+  * [Cybersource](hosted-version-docs/connectors/cybersource.md)
+  * [dLocal](hosted-version-docs/connectors/dlocal.md)
+  * [Fiserv](hosted-version-docs/connectors/fiserv.md)
+  * [GlobalPayments](hosted-version-docs/connectors/globalpayments.md)
+  * [Klarna](hosted-version-docs/connectors/klarna.md)
+  * [Mollie](hosted-version-docs/connectors/mollie.md)
+  * [MultiSafepay](hosted-version-docs/connectors/multisafepay.md)
+  * [Nuvei](hosted-version-docs/connectors/nuvei.md)
+  * [OpenNode](hosted-version-docs/connectors/opennode.md)
+  * [Paypal](hosted-version-docs/connectors/paypal.md)
+  * [PayU](hosted-version-docs/connectors/payu.md)
+  * [Rapyd](hosted-version-docs/connectors/rapyd.md)
+  * [Shift4](hosted-version-docs/connectors/shift4.md)
+  * [Stripe](hosted-version-docs/connectors/stripe.md)
+  * [TrustPay](hosted-version-docs/connectors/trustpay.md)
+  * [Worldline](hosted-version-docs/connectors/worldline.md)
+  * [Worldpay](hosted-version-docs/connectors/worldpay.md)
+  * [Zen](hosted-version-docs/connectors/zen.md)
+* [🚀 API Reference](https://api-reference.hyperswitch.io/introduction)
 
 ## Payment Features
 
@@ -77,6 +92,7 @@
 * [🔃 Smart retries](payment-features/smart-retries.md)
 * [🛡 Fraud & risk management](payment-features/fraud-and-risk-management.md)
 * [📋 3DS decision manager](payment-features/3ds-decision-manager.md)
+* [📊 Business units manager](payment-features/business-units-manager.md)
 
 ## Learn how Hyperswitch works
 
@@ -85,65 +101,9 @@
   * [Storage](learn-how-hyperswitch-works/hyperswitch-architecture/storage.md)
 * [🌊 Payment flows](<learn-how-hyperswitch-works/payment-flows (1).md>)
 * [⚡ A Payments Switch with virtually zero overhead](learn-how-hyperswitch-works/a-payments-switch-with-virtually-zero-overhead.md)
-
-***
-
-* [API Reference](https://api-reference.hyperswitch.io/introduction)
-
-## Payment Methods Setup
-
-* [💳 Cards](payment-methods-setup/cards.md)
-* [Wallets](payment-methods-setup/wallets.md)
-* [Pay Later](payment-methods-setup/pay-later.md)
-* [🏦 Banks](payment-methods-setup/banks.md)
-* [🪙 Crypto](payment-methods-setup/crypto.md)
-* [🔑 Test Credentials](payment-methods-setup/test-credentials.md)
-
-## Features
-
-* [Smart Router](features/smart-router.md)
-* [🔄 Smart Retries](features/smart-retries.md)
-* [💸 Payouts](features/payouts.md)
-* [Fraud and Risk Management](features/fraud-and-risk-management.md)
-* [3DS Decision Manager](features/3ds-decision-manager.md)
-* [Surcharge Decision Manager](features/surcharge-decision-manager.md)
-* [Multiple Business Units](features/multiple-business-units.md)
-* [Saving cards and Tokenization](features/saving-cards-and-tokenization.md)
-* [Mandates/Recurring Payments](features/mandates-recurring-payments.md)
-
-## Connectors
-
-* [Click and Connect](connectors/click-and-connect/README.md)
-  * [ACI](connectors/click-and-connect/aci.md)
-  * [Adyen](connectors/click-and-connect/adyen.md)
-  * [Airwallex](connectors/click-and-connect/airwallex.md)
-  * [Authorizedotnet](connectors/click-and-connect/authorizedotnet.md)
-  * [Bambora](connectors/click-and-connect/bambora.md)
-  * [Bluesnap](connectors/click-and-connect/bluesnap.md)
-  * [Braintree](connectors/click-and-connect/braintree.md)
-  * [Checkout](connectors/click-and-connect/checkout.md)
-  * [Coinbase](connectors/click-and-connect/coinbase.md)
-  * [Cybersource](connectors/click-and-connect/cybersource.md)
-  * [dLocal](connectors/click-and-connect/dlocal.md)
-  * [Fiserv](connectors/click-and-connect/fiserv.md)
-  * [GlobalPayments](connectors/click-and-connect/globalpayments.md)
-  * [Klarna](connectors/click-and-connect/klarna.md)
-  * [Mollie](connectors/click-and-connect/mollie.md)
-  * [MultiSafepay](connectors/click-and-connect/multisafepay.md)
-  * [Nuvei](connectors/click-and-connect/nuvei.md)
-  * [OpenNode](connectors/click-and-connect/opennode.md)
-  * [Paypal](connectors/click-and-connect/paypal.md)
-  * [PayU](connectors/click-and-connect/payu.md)
-  * [Rapyd](connectors/click-and-connect/rapyd.md)
-  * [Shift4](connectors/click-and-connect/shift4.md)
-  * [Stripe](connectors/click-and-connect/stripe.md)
-  * [TrustPay](connectors/click-and-connect/trustpay.md)
-  * [Worldline](connectors/click-and-connect/worldline.md)
-  * [Worldpay](connectors/click-and-connect/worldpay.md)
-  * [Zen](connectors/click-and-connect/zen.md)
+* [📘 Blog](https://hyperswitch.io/blog)
 
 ***
 
 * [🎛 Control Center](control-center.md)
 * [👨💻 Dev Support](dev-support.md)
-* [📘 Blog](https://hyperswitch.io/blog)
