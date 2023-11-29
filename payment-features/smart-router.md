@@ -4,7 +4,7 @@
 
 <figure><img src="../.gitbook/assets/smart_router.png" alt=""><figcaption></figcaption></figure>
 
-### No-code payments routing
+## No-code payments routing
 
 While channelling payments across multiple processors on a daily basis is cumbersome, it could be vital to optimizing your payment processing costs as your business needs evolve constantly or as new payment processors provide competitive pricing and so on. Hence, Hyperswitch’s Smart Router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
 
@@ -16,11 +16,11 @@ While channelling payments across multiple processors on a daily basis is cumber
 
 **Cost Based Configuration (coming soon):** Automatically routes transaction to the payment processor charging the least MDR (merchant discount rate) for the opted payment method.
 
-### How does the Smart Router work?
+## How does the Smart Router work?
 
 Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
-### How to configure the Smart Router?
+## How to configure the Smart Router?
 
 [Hyperswitch dashboard](https://app.hyperswitch.io/routing) provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Hyperswitch currently supports.
 
@@ -64,7 +64,7 @@ _**Step 6:**_ You can view your active routing algorithm as well as all previous
 
 {% embed url="https://hyperswitch.io/video/Rule_Based_video.mp4" %}
 
-### Steps to configure Volume Based Configuration in Smart Router:
+## Steps to configure Volume Based Configuration in Smart Router:
 
 _**Step 1:**_ Click on `Setup` for Volume Based Configuration
 
@@ -86,7 +86,7 @@ _**Step 5:**_ You can view your active routing algorithm as well as all previous
 
 <figure><img src="../.gitbook/assets/smartrouter-B-step5.png" alt=""><figcaption></figcaption></figure>
 
-### Get started with Volume Based Routing
+## Get started with Volume Based Routing
 
 ### Steps to configure Default fallback Configuration in Smart Router:
 
@@ -101,6 +101,6 @@ _**Step 1:**_ Click on `Manage` for configuring Default fallback
 
 <figure><img src="../.gitbook/assets/smartrouter-C-step2.png" alt=""><figcaption></figcaption></figure>
 
-### How to update the Smart Router?
+## How to update the Smart Router?
 
 {% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}

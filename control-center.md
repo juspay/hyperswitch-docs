@@ -49,4 +49,4 @@ In addition to the above, it also includes rich features to make operations more
 
 ## How to get started?
 
-[Click here](https://app.hyperswitch.io/register) to signup for hyperswitch.
+[Click here](https://app.hyperswitch.io/register) to signup for Hyperswitch.
