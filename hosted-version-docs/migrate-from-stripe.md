@@ -69,7 +69,7 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 
 **Checkout the migration steps here:**
 
-* [Web](web.md)
-* [Android](android.md)
-* [iOS](ios.md)
-* [React Native](react-native.md)
+* [Web](migrate-from-stripe/web.md)
+* [Android](migrate-from-stripe/android.md)
+* [iOS](migrate-from-stripe/ios.md)
+* [React Native](migrate-from-stripe/react-native.md)
