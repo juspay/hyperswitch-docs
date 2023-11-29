@@ -64,7 +64,7 @@ The following is an abridged version of the `PaymentIntent` state machine flow t
   }
 }%%
 
-flowchart LR
+flowchart TD
 
 A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod
     RequiresPaymentMethod -->|payment_method| RequiresConfirmation
