@@ -1,6 +1,6 @@
 ---
 description: The complete guide to setting up & managing your own payments switch
-cover: ../.gitbook/assets/Frame.png
+cover: .gitbook/assets/Frame.png
 coverY: -1.5791666666666666
 layout:
   cover:

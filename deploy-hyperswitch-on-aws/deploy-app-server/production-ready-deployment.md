@@ -41,7 +41,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 
 
-<figure><img src="../../../.gitbook/assets/K8S Helm Charts (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/K8S Helm Charts (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Steps to Deploy Hyperswitch on AWS
 
@@ -56,7 +56,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure your AWS credentials in your terminal
 
@@ -69,7 +69,7 @@ For this step you would need the following from your AWS account
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 

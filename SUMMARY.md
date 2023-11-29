@@ -4,54 +4,45 @@
 
 ## payment use cases
 
-* [🛒 Digital businesses](payment-use-cases/digital-businesses.md)
+* [🛒 Digital businesses](run-hyperswitch-locally/run-app-server.md)
 * [🏦 Banks & financial institutions](payment-use-cases/banks-and-financial-institutions.md)
 * [💻 SaaS businesses](payment-use-cases/saas-businesses.md)
 * [📶 Marketplace solutions](payment-use-cases/marketplace-solutions.md)
 * [🤝 Resellers & Independent Sales Organizations (ISOs)](payment-use-cases/resellers-and-independent-sales-organizations-isos.md)
 
-## Deploy Hyperswitch on AWS
-
-* [🔧 Account setup & testing](deploy-hyperswitch-on-aws/account-setup-and-testing.md)
-
-## Going live
-
-* [🚀 Overview](going-live/overview.md)
-* [🏁 Prerequisites](going-live/prerequisites.md)
-
 ## Open source setup
 
-* [🛠 Overview of the OSS setup](open-source-setup/overview-of-the-oss-setup.md)
+* [🛠 Overview of the OSS setup](overview-of-the-setup.md)
 * [💻 Local setup](open-source-setup/local-setup/README.md)
   * [🐳 Run app server](open-source-setup/local-setup/run-app-server.md)
   * [🔌 Run control center](open-source-setup/local-setup/run-control-center.md)
   * [💻 Run web client](open-source-setup/local-setup/run-web-client.md)
 * [☁ Deploy Hyperswitch on AWS ](open-source-setup/deploy-hyperswitch-on-aws/README.md)
-  * [🗄 Deploy app server](open-source-setup/deploy-hyperswitch-on-aws/deploy-app-server/README.md)
-    * [Full-stack deployment](open-source-setup/deploy-hyperswitch-on-aws/deploy-app-server/full-stack-deployment.md)
-    * [Standalone deployment for prototyping](open-source-setup/deploy-hyperswitch-on-aws/deploy-app-server/standalone-deployment-for-prototyping.md)
-  * [🎛 Deploy control center](open-source-setup/deploy-hyperswitch-on-aws/deploy-control-center/README.md)
-    * [Standalone control center deployment for prototyping](open-source-setup/deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping.md)
-  * [🖥 Deploy web client](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/README.md)
-    * [Production ready deployment](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/production-ready-deployment.md)
-    * [Standalone deployment for prototyping](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/standalone-deployment-for-prototyping.md)
-    * [Integrate web client on your web app](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/integrate-web-client-on-your-web-app.md)
+  * [🗄 Deploy app server](deploy-hyperswitch-on-aws/deploy-app-server/README.md)
+    * [Full-stack deployment](deploy-hyperswitch-on-aws/deploy-app-server/production-ready-deployment.md)
+    * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-app-server/standalone-deployment-for-prototyping.md)
+  * [🎛 Deploy control center](deploy-hyperswitch-on-aws/deploy-control-center.md)
+    * [Standalone control center deployment for prototyping](deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping.md)
+  * [🖥 Deploy web client](deploy-hyperswitch-on-aws/deploy-web-client/README.md)
+    * [Production ready deployment](deploy-hyperswitch-on-aws/deploy-web-client/production-ready-deployment.md)
+    * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-web-client/standalone-deployment-for-prototyping.md)
+    * [Integrate web client on your web app](deploy-hyperswitch-on-aws/deploy-web-client/integrate-web-client-on-your-web-app.md)
 * [🔧 Account setup](open-source-setup/account-setup/README.md)
   * [Using Hyperswitch control center](open-source-setup/account-setup/using-hyperswitch-control-center.md)
   * [Using postman](open-source-setup/account-setup/using-postman.md)
 * [💵 Test a payment](open-source-setup/test-a-payment.md)
 * [🚀 Going live](open-source-setup/going-live/README.md)
-  * [👀 Monitoring](open-source-setup/going-live/monitoring.md)
-  * [🏛 PCI compliance](open-source-setup/going-live/pci-compliance/README.md)
-    * [🍰 It's no rocket science](open-source-setup/going-live/pci-compliance/its-no-rocket-science.md)
-    * [🗒 Completing the SAQ](open-source-setup/going-live/pci-compliance/completing-the-saq.md)
-    * [🗄 Card Vault installation](open-source-setup/going-live/pci-compliance/card-vault-installation.md)
-  * [🔐 Security](open-source-setup/going-live/security.md)
-  * [♻ Updates](open-source-setup/going-live/updates.md)
+  * [👀 Monitoring](going-live/monitoring.md)
+  * [🏛 PCI compliance](going-live/pci-compliance/README.md)
+    * [🍰 It's no rocket science](going-live/pci-compliance/its-no-rocket-science.md)
+    * [🗒 Completing the SAQ](going-live/pci-compliance/completing-the-saq.md)
+    * [🗄 Card Vault installation](going-live/pci-compliance/card-vault-installation.md)
+  * [🔐 Security](going-live/security.md)
+  * [♻ Updates](going-live/updates.md)
 
 ## Hosted version docs
 
-* [⚡ Quickstart](hosted-version-docs/quickstart.md)
+* [⚡ Quickstart](learn-how-hyperswitch-works/payment-flows.md)
 * [⚙ Account setup](hosted-version-docs/account-setup.md)
 * [📦 Integration steps](hosted-version-docs/integration-steps.md)
 * [💳 Payment methods setup](hosted-version-docs/payment-methods-setup.md)
@@ -73,5 +64,5 @@
 * [📐 Hyperswitch architecture](learn-how-hyperswitch-works/hyperswitch-architecture/README.md)
   * [Router](learn-how-hyperswitch-works/hyperswitch-architecture/router.md)
   * [Storage](learn-how-hyperswitch-works/hyperswitch-architecture/storage.md)
-* [🌊 Payment flows](learn-how-hyperswitch-works/payment-flows.md)
+* [🌊 Payment flows](<learn-how-hyperswitch-works/payment-flows (1).md>)
 * [⚡ A Payments Switch with virtually zero overhead](learn-how-hyperswitch-works/a-payments-switch-with-virtually-zero-overhead.md)
