@@ -5,7 +5,7 @@ description: Use Docker to set up Hyperswitch app server
 # 🐳 Run app server
 
 {% hint style="info" %}
-Let's hit the ground running – within five minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
+Let's hit the ground running – in the first fifteen minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
 {% endhint %}
 
 {% embed url="https://www.loom.com/embed/a9b2b42fb72e4691a06e6121b330ebe9?sid=76bf9484-8f0f-462e-95a2-b4f551cd51ed" %}
@@ -24,13 +24,13 @@ Once the repository is cloned, switch to the project directory.
 cd hyperswitch
 ```
 
-Now, we'll start all services using Docker Compose. This will pull Hyperswitch Docker images and then start the server. Wait for the `migration_runner` container to finish running migrations (approximately 2 minutes) before proceeding further.
+Now, we'll start all services using Docker Compose. This will compile Hyperswitch and then start the server. Depending on the specifications of your machine, this compilation could take between 10 to 15 minutes.
 
 ```
 docker compose up -d
 ```
 
-Congratulations! You've now setup Hyperswitch in your local machine. In order to verify that the server is up and running hit the health endpoint.
+Congratulations! you've now setup Hyperswitch in your local machine. In order to verify that the server is up and running hit the health endpoint.
 
 ```
 curl --head --request GET 'http://localhost:8080/health'

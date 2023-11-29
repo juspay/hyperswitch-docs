@@ -23,7 +23,7 @@ To effectively utilize both aspects, Hyperswitch relies on the following
 
 This combination, along with Grafana for visualization, seamlessly integrates logs and metrics into intuitive, interactive dashboards.&#x20;
 
-<figure><img src="../.gitbook/assets/Monitoring architecture (3).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Monitoring architecture (3).jpg" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -209,4 +209,4 @@ let enableLogging = true;
 let loggingLevel = "DEBUG";
 ```
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-24 at 5.00.03 PM.png" alt=""><figcaption><p>Understanding Logging Levels</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-24 at 5.00.03 PM.png" alt=""><figcaption><p>Understanding Logging Levels</p></figcaption></figure>

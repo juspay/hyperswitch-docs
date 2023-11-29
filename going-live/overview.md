@@ -15,18 +15,18 @@ This chapter will give you an overview of everything you would need for going li
 ### Monitoring
 
 * [ ] Make sure logs are being printed for all components in your setup
-* [ ] Aggregate your logs across instances and [setup a logging system](monitoring.md) (e.g. Grafana Loki) for storing and viewing your logs
+* [ ] Aggregate your logs across instances and [setup a logging system](../open-source-setup/going-live/monitoring.md) (e.g. Grafana Loki) for storing and viewing your logs
 * [ ] Make sure your metrics pipeline is setup and provides visibility into both application and system performance
 
 ### PCI Compliance
 
 * [ ] Make sure your system is meeting the PCI compliance requirements for your business
-* [ ] If you are storing card data make sure your [card vault is set up](pci-compliance/card-vault-installation.md) as per our instructions
+* [ ] If you are storing card data make sure your [card vault is set up](../open-source-setup/going-live/pci-compliance/card-vault-installation.md) as per our instructions
 
 ### Security
 
 * [ ] Keep the system hidden from external access; instead, use a front-end system or a reverse proxy as a protective layer in front of it
-* [ ] Make sure to follow our [security guidelines](security.md) for various components in your set up
+* [ ] Make sure to follow our [security guidelines](../open-source-setup/going-live/security.md) for various components in your set up
 
 ### Integrate with your app
 
@@ -34,7 +34,7 @@ This chapter will give you an overview of everything you would need for going li
 * [ ] Avoid duplication or storage of your API keys in multiple locations
 * [ ] Test your integration and make sure all scenarios in the payments lifecycle is handled
 * [ ] Make sure your application (Frontend/Backend) is set up to handle all the possible error scenarios
-* [ ] Keep track of new releases/bug fixes and make sure to [keep your system updated](updates.md)
+* [ ] Keep track of new releases/bug fixes and make sure to [keep your system updated](../open-source-setup/going-live/updates.md)
 
 ### Infra
 

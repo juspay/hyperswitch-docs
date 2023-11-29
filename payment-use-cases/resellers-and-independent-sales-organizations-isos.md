@@ -1,0 +1,7 @@
+# 🤝 Resellers & Independent Sales Organizations (ISOs)
+
+{% hint style="info" %}
+Start here if you are a payment reseller or an independent sales organization (ISO). Learn how Hyperswitch can support your payment offerings
+{% endhint %}
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Deploy our open source solution</strong></td><td>Deploy our full stack open source solution on your AWS stack to start accepting payments on your website</td><td></td><td><a href="../.gitbook/assets/GitHub.jpg">GitHub.jpg</a></td><td><a href="../open-source-setup/overview-of-the-oss-setup.md">overview-of-the-oss-setup.md</a></td></tr><tr><td><strong>Use our hosted solution</strong></td><td>Configure your payment preferences and Integrate Hyperswitch with your application in minutes</td><td></td><td><a href="../.gitbook/assets/HostedVersion.jpg">HostedVersion.jpg</a></td><td><a href="../hosted-version-docs/quickstart.md">quickstart.md</a></td></tr><tr><td><strong>Explore supported payment flows</strong></td><td>Looking for specific payment flows for your products? Explore all the supported payment flows that you can integrate</td><td></td><td><a href="../.gitbook/assets/Payment flow.jpg">Payment flow.jpg</a></td><td><a href="../learn-how-hyperswitch-works/payment-flows.md">payment-flows.md</a></td></tr></tbody></table>

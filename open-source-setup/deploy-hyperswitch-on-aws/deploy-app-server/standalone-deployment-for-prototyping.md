@@ -26,7 +26,7 @@ In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either
 
 The Hyperswitch App server will be installed in the EC2 instance
 
-<figure><img src="../../.gitbook/assets/Standalone Deployment.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Standalone Deployment.png" alt=""><figcaption></figcaption></figure>
 
 ## Steps to Deploy Hyperswitch on AWS
 
@@ -117,7 +117,7 @@ For this step you would need the following from you AWS account
 
 You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-10-12 at 6.00.50 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-12 at 6.00.50 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 

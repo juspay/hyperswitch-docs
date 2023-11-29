@@ -14,7 +14,7 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 ## How does it work?
 
-<figure><img src="../../.gitbook/assets/general-block-diagram.png" alt=""><figcaption><p>Locker usage flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/general-block-diagram.png" alt=""><figcaption><p>Locker usage flow</p></figcaption></figure>
 
 * The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
@@ -28,7 +28,7 @@ Master Key - AES generated key to that is encrypted/decrypted by the custodian k
 
 Custodian Keys - AES generated key that is used to encrypt and decrypt the master key. It broken into two keys (`key 1` and `key 2`) and available with two custodians to enhance security.
 
-<figure><img src="../../.gitbook/assets/locker-key-hierarchy.png" alt=""><figcaption><p>Key Hierarchy of Tartarus</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/locker-key-hierarchy.png" alt=""><figcaption><p>Key Hierarchy of Tartarus</p></figcaption></figure>
 
 ## Setting up your Card Locker:
 
@@ -38,7 +38,7 @@ Custodian Keys - AES generated key that is used to encrypt and decrypt the maste
 
 Log into your AWS account and create a new EC2 instance preferably on a t3.medium machine with an AMI that supports docker like Amazon Linux 2.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 5.12.15 PM.png" alt=""><figcaption><p>Create and launch an EC2 Instance</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-21 at 5.12.15 PM.png" alt=""><figcaption><p>Create and launch an EC2 Instance</p></figcaption></figure>
 
 {% hint style="danger" %}
 Ensure to manage your instances' (EC2 and RDS) security group rules are selectively enabled for the application subnet and not exposed to the internet. (The locker application should not be accessible via internet)
@@ -48,7 +48,7 @@ Ensure to manage your instances' (EC2 and RDS) security group rules are selectiv
 
 Connect to your EC2 instance using the SSH client via a terminal
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-23 at 2.23.35 PM.png" alt=""><figcaption><p>Connecting to your EC2 instance</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-23 at 2.23.35 PM.png" alt=""><figcaption><p>Connecting to your EC2 instance</p></figcaption></figure>
 
 Once you SSH into the EC2 instance, run the following commands on the terminal to install docker
 
@@ -73,7 +73,7 @@ docker pull juspaydotin/hyperswitch-card-vault:latest
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-20 at 5.53.56 PM.png" alt=""><figcaption><p>Creating a database using RDS</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-20 at 5.53.56 PM.png" alt=""><figcaption><p>Creating a database using RDS</p></figcaption></figure>
 
 * To run the migrations install `psql` in the EC2 instance
 
@@ -115,9 +115,9 @@ Before setting up KMS, create a new IAM role for your EC2 instance to allow conn
 
 Now, create a KMS key pair on AWS with the key type as `symmetric` and the key usage as Encrypt and Decrypt. Ensure to add the IAM role above in the key administrative permissions and key usage permissions.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 2.37.39 PM.png" alt=""><figcaption><p>Setting up KMS</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-21 at 2.37.39 PM.png" alt=""><figcaption><p>Setting up KMS</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 5.08.39 PM.png" alt=""><figcaption><p>Adding IAM roles</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-21 at 5.08.39 PM.png" alt=""><figcaption><p>Adding IAM roles</p></figcaption></figure>
 
 #### Generating the keys
 

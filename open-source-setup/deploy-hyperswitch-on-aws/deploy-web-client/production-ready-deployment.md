@@ -35,38 +35,38 @@ In our case, we use AWS , a combination of S3 and Cloudfront, as our CDN, for ou
 
 Open up your AWS console and click on S3 in Services section or search for the same.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2**
 
 Select Buckets on the left sidebar.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 **Step 3**
 
 Click on create bucket and configure your bucket according to your needs.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 **Step 4**
 
 Click on your newly created bucket name.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 **Step 5**
 
 Click on upload, and upload your **`dist`** folder.
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 **Step 6**\
 \
 After uploading, click on the path where HyperLoader.js is. You will be taken to a page with object “Properties”. There you will find Object URL which will look something like this.\
 `https://{domain}.s3.amazonaws.com/{path}/HyperLoader.js`
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 **Great!**\
 Your Web Client is hosted and can be accessed by this URL.

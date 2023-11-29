@@ -1,6 +1,6 @@
 ---
 description: The complete guide to setting up & managing your own payments switch
-cover: .gitbook/assets/Frame.png
+cover: ../.gitbook/assets/Frame.png
 coverY: -1.5791666666666666
 layout:
   cover:
@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# 🛠 Overview of the setup
+# 🛠 Overview of the OSS setup
 
 {% hint style="info" %}
 After going through this guide, you should be able to:
