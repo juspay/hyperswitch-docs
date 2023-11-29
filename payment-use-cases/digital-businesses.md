@@ -1,0 +1,11 @@
+---
+description: Use Docker to set up Hyperswitch app server
+---
+
+# 🛒 Digital businesses
+
+{% hint style="success" %}
+Start here if you are a digital business looking to accept one time or recurring online payments on your website
+{% endhint %}
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Deploy our open source solution</strong></td><td>Deploy our full stack open source solution on your AWS stack to start accepting payments on your website</td><td></td><td><a href="../.gitbook/assets/GitHub.jpg">GitHub.jpg</a></td><td><a href="../open-source-setup/overview-of-the-oss-setup.md">overview-of-the-oss-setup.md</a></td></tr><tr><td><strong>Use our hosted solution</strong></td><td>Configure your payment preferences and Integrate Hyperswitch with your application in minutes</td><td></td><td><a href="../.gitbook/assets/HostedVersion.jpg">HostedVersion.jpg</a></td><td><a href="../hosted-version-docs/quickstart.md">quickstart.md</a></td></tr><tr><td><strong>Migrate from Stripe</strong></td><td>Already a Stripe user? Use our Stripe compatible SDK for a quick migration to Hyperswitch</td><td></td><td><a href="../.gitbook/assets/StripeMigration.jpg">StripeMigration.jpg</a></td><td><a href="../hosted-version-docs/migrate-from-stripe.md">migrate-from-stripe.md</a></td></tr><tr><td><strong>WooCommerce Plugin</strong></td><td>Give your WooCommerce store a lightweight and embedded payment experience for Stripe + Paypal, with Hyperswitch</td><td></td><td><a href="../.gitbook/assets/WooComerce.jpg">WooComerce.jpg</a></td><td></td></tr><tr><td><strong>Explore supported payment flows</strong></td><td>Looking for specific payment flows for your website? Explore all the supported payment flows that you can integrate</td><td></td><td><a href="../.gitbook/assets/Payment flow.jpg">Payment flow.jpg</a></td><td><a href="../learn-how-hyperswitch-works/payment-flows (1).md">payment-flows (1).md</a></td></tr></tbody></table>
