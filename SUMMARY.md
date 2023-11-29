@@ -1,6 +1,8 @@
 # Table of contents
 
 * [👋 Intro to Hyperswitch](README.md)
+* [⚡ Quickstart](quickstart.md)
+* [Use PayPal With Stripe](use-paypal-with-stripe.md)
 
 ## payment use cases
 
@@ -9,6 +11,15 @@
 * [💻 SaaS businesses](payment-use-cases/saas-businesses.md)
 * [📶 Marketplace solutions](payment-use-cases/marketplace-solutions.md)
 * [🤝 Resellers & Independent Sales Organizations (ISOs)](payment-use-cases/resellers-and-independent-sales-organizations-isos.md)
+
+***
+
+* [Go-live Checklist](go-live-checklist.md)
+
+## Going live
+
+* [🚀 Overview](going-live/overview.md)
+* [🏁 Prerequisites](going-live/prerequisites.md)
 
 ## Open source setup
 
@@ -107,3 +118,56 @@
 
 * [🎛 Control Center](control-center.md)
 * [👨💻 Dev Support](dev-support.md)
+
+## Migrate from Stripe
+
+* [Overview](migrate-from-stripe/overview/README.md)
+  * [Web](migrate-from-stripe/overview/web.md)
+  * [Android](migrate-from-stripe/overview/android.md)
+  * [IOS](migrate-from-stripe/overview/ios.md)
+  * [React Native](migrate-from-stripe/overview/react-native.md)
+
+## Unified Checkout
+
+* [Web](unified-checkout/web/README.md)
+  * [Overview](unified-checkout/web/overview.md)
+  * [Node And React](unified-checkout/web/node-and-react.md)
+  * [Node and HTML](unified-checkout/web/node-and-html.md)
+  * [REST API and HTML](unified-checkout/web/rest-api-and-html.md)
+  * [Customization](unified-checkout/web/customization.md)
+  * [Error Codes](unified-checkout/web/error-codes.md)
+* [Android](unified-checkout/android/README.md)
+  * [Overview](unified-checkout/android/overview.md)
+  * [Kotlin with Node Backend](unified-checkout/android/kotlin-with-node-backend.md)
+  * [Customization](unified-checkout/android/customization.md)
+  * [Google Pay](unified-checkout/android/google-pay.md)
+* [IOS](unified-checkout/ios/README.md)
+  * [Overview](unified-checkout/ios/overview.md)
+  * [Swift with Node Backend](unified-checkout/ios/swift-with-node-backend.md)
+  * [Customization](unified-checkout/ios/customization.md)
+  * [Apple Pay](unified-checkout/ios/apple-pay.md)
+  * [PayPal](unified-checkout/ios/paypal.md)
+
+***
+
+* [React Native](react-native/README.md)
+  * [Overview](react-native/overview.md)
+  * [React Native with Node Backend](react-native/react-native-with-node-backend.md)
+  * [Customization](react-native/customization.md)
+  * [GooglePay](react-native/googlepay.md)
+  * [PayPal](react-native/paypal.md)
+  * [Apple Pay](react-native/apple-pay.md)
+* [SDK Reference](sdk-reference/README.md)
+  * [Node](sdk-reference/node.md)
+  * [React](sdk-reference/react.md)
+* [Hyper Widgets](hyper-widgets/README.md)
+  * [Node and React](hyper-widgets/node-and-react.md)
+  * [Node and HTML](hyper-widgets/node-and-html.md)
+  * [REST API and HTML](hyper-widgets/rest-api-and-html.md)
+* [WooCommerce Plugin](woocommerce-plugin/README.md)
+  * [Overview](woocommerce-plugin/overview.md)
+  * [Setup](woocommerce-plugin/setup.md)
+  * [FAQs](woocommerce-plugin/faqs.md)
+  * [Compatibility](woocommerce-plugin/compatibility.md)
+  * [Roadmap](woocommerce-plugin/roadmap.md)
+* [Setup Paypal with Stripe on Hyperswitch](setup-paypal-with-stripe-on-hyperswitch.md)

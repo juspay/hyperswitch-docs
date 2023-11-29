@@ -22,7 +22,7 @@ There are multiple stages in a Payment flow depending on the payment methods tha
 
 **e) Confirming the payment:** After the customer clicks pay, the SDK calls the payments/confirm endpoint with the customer's payment method details and post response, it displays the payment status
 
-<figure><img src="../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (69) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here's a more detailed version of the payment flow:
 
