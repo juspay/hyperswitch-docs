@@ -109,7 +109,7 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 
 ### Tabs
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name   | States     | Pseudo-Classes                     | Pseudo-Elements |
 | ------------ | ---------- | ---------------------------------- | --------------- |
@@ -157,7 +157,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Form Inputs
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name | States             | Pseudo-Classes                       | Pseudo-Elements            |
 | ---------- | ------------------ | ------------------------------------ | -------------------------- |
@@ -167,7 +167,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Checkbox
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name     | States    | Pseudo-Classes | Pseudo-Elements |
 | -------------- | --------- | -------------- | --------------- |

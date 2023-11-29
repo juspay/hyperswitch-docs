@@ -67,10 +67,10 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 
 **Checkout the migration steps here:**
 
-* [Web](migrate-from-stripe/overview/web.md)
-* [Android](migrate-from-stripe/overview/android.md)
-* [iOS](migrate-from-stripe/overview/ios.md)
-* [React Native](migrate-from-stripe/overview/react-native.md)
+* [Web](../../hosted-version-docs/migrate-from-stripe/web.md)
+* [Android](../../hosted-version-docs/migrate-from-stripe/android.md)
+* [iOS](../../hosted-version-docs/migrate-from-stripe/ios.md)
+* [React Native](../../hosted-version-docs/migrate-from-stripe/react-native.md)
 
 ## Integrate from Scratch
 
@@ -131,17 +131,17 @@ Next, you need to adjust your integration settings on Stripe to enable you to ha
 
 Navigate to the **Integration** page within your Stripe settings and toggle the “Handle Card information directly” switch:
 
-<figure><img src=".gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 Navigate back to the **Processors** page and click on Stripe to begin the second processor connection.
 
-<figure><img src=".gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 Select the Mastercard and Visa methods for debit and credit payments within the “Payment Methods” step.
 
-<figure><img src=".gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
 Now, you will find the processors you have configured within the “Previously Connected” section of the **Processors** page. You can always edit the details for the connected processors wherever they change at a later time.
 
@@ -149,6 +149,6 @@ Now, you will find the processors you have configured within the “Previously C
 
 From the **Home** page of Hyperswitch dashboard you can request for production access, by filling a short form. The Hyperswitch support team will verify your account and send you production access credentials on your registered email address within 8 hours.
 
-<figure><img src=".gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 Once you have access to the production credentials, please follow the instructions on the [go-live checklist](https://hyperswitch.io/docs/goLiveChecklist).

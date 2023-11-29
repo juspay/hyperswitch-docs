@@ -1,8 +1,6 @@
 # Table of contents
 
 * [👋 Intro to Hyperswitch](README.md)
-* [⚡ Quickstart](quickstart.md)
-* [Use PayPal With Stripe](use-paypal-with-stripe.md)
 
 ## payment use cases
 
@@ -11,15 +9,6 @@
 * [💻 SaaS businesses](payment-use-cases/saas-businesses.md)
 * [📶 Marketplace solutions](payment-use-cases/marketplace-solutions.md)
 * [🤝 Resellers & Independent Sales Organizations (ISOs)](payment-use-cases/resellers-and-independent-sales-organizations-isos.md)
-
-***
-
-* [Go-live Checklist](go-live-checklist.md)
-
-## Going live
-
-* [🚀 Overview](going-live/overview.md)
-* [🏁 Prerequisites](going-live/prerequisites.md)
 
 ## Open source setup
 
@@ -55,7 +44,45 @@
 
 * [⚡ Quickstart](hosted-version-docs/quickstart.md)
 * [⚙ Account setup](hosted-version-docs/account-setup.md)
-* [📦 Integration steps](hosted-version-docs/integration-steps.md)
+* [📦 Integration guide](hosted-version-docs/integration-guide/README.md)
+  * [Web](hosted-version-docs/integration-guide/web/README.md)
+    * [Overview](hosted-version-docs/integration-guide/web/overview.md)
+    * [Node And React](hosted-version-docs/integration-guide/web/node-and-react.md)
+    * [Node and HTML](hosted-version-docs/integration-guide/web/node-and-html.md)
+    * [REST API and HTML](hosted-version-docs/integration-guide/web/rest-api-and-html.md)
+    * [Customization](hosted-version-docs/integration-guide/web/customization.md)
+    * [Error Codes](hosted-version-docs/integration-guide/web/error-codes.md)
+  * [Android](hosted-version-docs/integration-guide/android/README.md)
+    * [Overview](hosted-version-docs/integration-guide/android/overview.md)
+    * [Kotlin with Node Backend](hosted-version-docs/integration-guide/android/kotlin-with-node-backend.md)
+    * [Customization](hosted-version-docs/integration-guide/android/customization.md)
+    * [Google Pay](hosted-version-docs/integration-guide/android/google-pay.md)
+  * [IOS](hosted-version-docs/integration-guide/ios/README.md)
+    * [Overview](hosted-version-docs/integration-guide/ios/overview.md)
+    * [Swift with Node Backend](hosted-version-docs/integration-guide/ios/swift-with-node-backend.md)
+    * [Customization](hosted-version-docs/integration-guide/ios/customization.md)
+    * [Apple Pay](hosted-version-docs/integration-guide/ios/apple-pay.md)
+    * [PayPal](hosted-version-docs/integration-guide/ios/paypal.md)
+  * [React Native](hosted-version-docs/integration-guide/react-native/README.md)
+    * [Overview](hosted-version-docs/integration-guide/react-native/overview.md)
+    * [React Native with Node Backend](hosted-version-docs/integration-guide/react-native/react-native-with-node-backend.md)
+    * [Customization](hosted-version-docs/integration-guide/react-native/customization.md)
+    * [GooglePay](hosted-version-docs/integration-guide/react-native/googlepay.md)
+    * [PayPal](hosted-version-docs/integration-guide/react-native/paypal.md)
+    * [Apple Pay](hosted-version-docs/integration-guide/react-native/apple-pay.md)
+  * [SDK Reference](hosted-version-docs/integration-guide/sdk-reference/README.md)
+    * [Node](hosted-version-docs/integration-guide/sdk-reference/node.md)
+    * [React](hosted-version-docs/integration-guide/sdk-reference/react.md)
+  * [Hyper Widgets](hosted-version-docs/integration-guide/hyper-widgets/README.md)
+    * [Node and React](hosted-version-docs/integration-guide/hyper-widgets/node-and-react.md)
+    * [Node and HTML](hosted-version-docs/integration-guide/hyper-widgets/node-and-html.md)
+    * [REST API and HTML](hosted-version-docs/integration-guide/hyper-widgets/rest-api-and-html.md)
+  * [WooCommerce Plugin](hosted-version-docs/integration-guide/woocommerce-plugin/README.md)
+    * [Overview](hosted-version-docs/integration-guide/woocommerce-plugin/overview.md)
+    * [Setup](hosted-version-docs/integration-guide/woocommerce-plugin/setup.md)
+    * [FAQs](hosted-version-docs/integration-guide/woocommerce-plugin/faqs.md)
+    * [Compatibility](hosted-version-docs/integration-guide/woocommerce-plugin/compatibility.md)
+    * [Roadmap](hosted-version-docs/integration-guide/woocommerce-plugin/roadmap.md)
 * [💳 Payment methods setup](hosted-version-docs/payment-methods-setup/README.md)
   * [💳 Cards](hosted-version-docs/payment-methods-setup/cards.md)
   * [📱 Wallets](hosted-version-docs/payment-methods-setup/wallets.md)
@@ -63,7 +90,6 @@
   * [🏦 Banks](hosted-version-docs/payment-methods-setup/banks.md)
   * [🪙 Crypto](hosted-version-docs/payment-methods-setup/crypto.md)
   * [🔑 Test Credentials](hosted-version-docs/payment-methods-setup/test-credentials.md)
-* [📥 Migrate from Stripe](hosted-version-docs/migrate-from-stripe.md)
 * [🔗 Connectors](hosted-version-docs/connectors/README.md)
   * [ACI](hosted-version-docs/connectors/aci.md)
   * [Adyen](hosted-version-docs/connectors/adyen.md)
@@ -92,18 +118,27 @@
   * [Worldline](hosted-version-docs/connectors/worldline.md)
   * [Worldpay](hosted-version-docs/connectors/worldpay.md)
   * [Zen](hosted-version-docs/connectors/zen.md)
+* [📥 Migrate from Stripe](hosted-version-docs/migrate-from-stripe/README.md)
+  * [Web](hosted-version-docs/migrate-from-stripe/web.md)
+  * [Android](hosted-version-docs/migrate-from-stripe/android.md)
+  * [IOS](hosted-version-docs/migrate-from-stripe/ios.md)
+  * [React Native](hosted-version-docs/migrate-from-stripe/react-native.md)
 * [🚀 API Reference](https://api-reference.hyperswitch.io/introduction)
 
-## Payment Features
+## Hyperswitch Features
 
-* [🛣 Smart router](payment-features/smart-router.md)
-* [🔁 Mandates & recurring payments](payment-features/mandates-and-recurring-payments.md)
-* [🔓 Tokenization & saved cards](payment-features/tokenization-and-saved-cards.md)
-* [💵 Payouts](payment-features/payouts.md)
-* [🔃 Smart retries](payment-features/smart-retries.md)
-* [🛡 Fraud & risk management](payment-features/fraud-and-risk-management.md)
-* [📋 3DS decision manager](payment-features/3ds-decision-manager.md)
-* [📊 Business units manager](payment-features/business-units-manager.md)
+* [🛣 Smart router](hyperswitch-features/smart-router.md)
+* [🔁 Mandates & recurring payments](hyperswitch-features/mandates-and-recurring-payments.md)
+* [🔓 Tokenization & saved cards](hyperswitch-features/tokenization-and-saved-cards.md)
+* [💵 Payouts](hyperswitch-features/payouts.md)
+* [🔃 Smart retries](hyperswitch-features/smart-retries.md)
+* [🛡 Fraud & risk management](hyperswitch-features/fraud-and-risk-management.md)
+* [📋 3DS decision manager](hyperswitch-features/3ds-decision-manager.md)
+* [📊 Business units manager](hyperswitch-features/business-units-manager.md)
+* [🎛 Control Center](hyperswitch-features/control-center.md)
+* [🥗 Payment Recipes](hyperswitch-features/payment-recipes/README.md)
+  * [Use PayPal With Stripe](hyperswitch-features/payment-recipes/use-paypal-with-stripe.md)
+  * [Setup Paypal with Stripe on Hyperswitch](hyperswitch-features/payment-recipes/setup-paypal-with-stripe-on-hyperswitch.md)
 
 ## Learn how Hyperswitch works
 
@@ -113,61 +148,4 @@
 * [🌊 Payment flows](<learn-how-hyperswitch-works/payment-flows (1).md>)
 * [⚡ A Payments Switch with virtually zero overhead](learn-how-hyperswitch-works/a-payments-switch-with-virtually-zero-overhead.md)
 * [📘 Blog](https://hyperswitch.io/blog)
-
-***
-
-* [🎛 Control Center](control-center.md)
-* [👨💻 Dev Support](dev-support.md)
-
-## Migrate from Stripe
-
-* [Overview](migrate-from-stripe/overview/README.md)
-  * [Web](migrate-from-stripe/overview/web.md)
-  * [Android](migrate-from-stripe/overview/android.md)
-  * [IOS](migrate-from-stripe/overview/ios.md)
-  * [React Native](migrate-from-stripe/overview/react-native.md)
-
-## Unified Checkout
-
-* [Web](unified-checkout/web/README.md)
-  * [Overview](unified-checkout/web/overview.md)
-  * [Node And React](unified-checkout/web/node-and-react.md)
-  * [Node and HTML](unified-checkout/web/node-and-html.md)
-  * [REST API and HTML](unified-checkout/web/rest-api-and-html.md)
-  * [Customization](unified-checkout/web/customization.md)
-  * [Error Codes](unified-checkout/web/error-codes.md)
-* [Android](unified-checkout/android/README.md)
-  * [Overview](unified-checkout/android/overview.md)
-  * [Kotlin with Node Backend](unified-checkout/android/kotlin-with-node-backend.md)
-  * [Customization](unified-checkout/android/customization.md)
-  * [Google Pay](unified-checkout/android/google-pay.md)
-* [IOS](unified-checkout/ios/README.md)
-  * [Overview](unified-checkout/ios/overview.md)
-  * [Swift with Node Backend](unified-checkout/ios/swift-with-node-backend.md)
-  * [Customization](unified-checkout/ios/customization.md)
-  * [Apple Pay](unified-checkout/ios/apple-pay.md)
-  * [PayPal](unified-checkout/ios/paypal.md)
-
-***
-
-* [React Native](react-native/README.md)
-  * [Overview](react-native/overview.md)
-  * [React Native with Node Backend](react-native/react-native-with-node-backend.md)
-  * [Customization](react-native/customization.md)
-  * [GooglePay](react-native/googlepay.md)
-  * [PayPal](react-native/paypal.md)
-  * [Apple Pay](react-native/apple-pay.md)
-* [SDK Reference](sdk-reference/README.md)
-  * [Node](sdk-reference/node.md)
-  * [React](sdk-reference/react.md)
-* [Hyper Widgets](hyper-widgets/README.md)
-  * [Node and React](hyper-widgets/node-and-react.md)
-  * [Node and HTML](hyper-widgets/node-and-html.md)
-  * [REST API and HTML](hyper-widgets/rest-api-and-html.md)
-* [WooCommerce Plugin](woocommerce-plugin/README.md)
-  * [Overview](woocommerce-plugin/overview.md)
-  * [Setup](woocommerce-plugin/setup.md)
-  * [FAQs](woocommerce-plugin/faqs.md)
-  * [Compatibility](woocommerce-plugin/compatibility.md)
-  * [Roadmap](woocommerce-plugin/roadmap.md)
-* [Setup Paypal with Stripe on Hyperswitch](setup-paypal-with-stripe-on-hyperswitch.md)
+* [👨💻 Dev Support](learn-how-hyperswitch-works/dev-support.md)
