@@ -27,6 +27,7 @@
     * [Production ready deployment](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/production-ready-deployment.md)
     * [Standalone deployment for prototyping](deploy-hyperswitch-on-aws/deploy-web-client/standalone-deployment-for-prototyping.md)
     * [Integrate web client on your web app](open-source-setup/deploy-hyperswitch-on-aws/deploy-web-client/integrate-web-client-on-your-web-app.md)
+  * [🔐 Deploy card vault](open-source-setup/deploy-hyperswitch-on-aws/deploy-card-vault.md)
 * [🔧 Account setup](open-source-setup/account-setup/README.md)
   * [Using Hyperswitch control center](open-source-setup/account-setup/using-hyperswitch-control-center.md)
   * [Using postman](open-source-setup/account-setup/using-postman.md)

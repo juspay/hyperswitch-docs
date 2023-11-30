@@ -22,9 +22,10 @@ The following components and services will be deployed in a **new stack** in you
 | -------------------- | -------------- | --------------------- |
 | EKS (1 Cluster)      | t3.medium      | 2 Nodes               |
 | Load Balancer        | Application LB | 2 LBs                 |
-| RDS                  | t4g.medium     | 1 cluster             |
+| RDS                  | t4g.medium     | 2 cluster             |
 | ElasticCache         | t4g.medium     | 1 cluster             |
 | S3 (for hyperloader) | -              | Public bucket         |
+| EC2                  | t3.medium      | 1 instance            |
 
 The following services will be installed in the 2 Nodes inside your EKS cluster
 
@@ -94,6 +95,9 @@ Once the script is run you will have to provide the following as inputs
 
 1. Provide a DB password of your choice (should be more than 8 chars)
 2. Provide an Admin Api key of your choice for Hyperswitch APIs&#x20;
+3. If you choose to opt-in for the card vault service, provide a master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
+   * Provide the Locker DB password of your choice when prompted
+4. After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker))
 
 {% hint style="warning" %}
 Make sure to save the passwords you provide while running the script
