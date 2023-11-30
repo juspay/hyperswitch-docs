@@ -135,14 +135,13 @@
 ## Learn more
 
 * [🚀 API Reference](https://api-reference.hyperswitch.io/introduction)
-* [SDK Reference](learn-more/sdk-reference/README.md)
+* [🍡 SDK Reference](learn-more/sdk-reference/README.md)
   * [Node](learn-more/sdk-reference/node.md)
   * [React](learn-more/sdk-reference/react.md)
 * [📐 Hyperswitch architecture](learn-more/hyperswitch-architecture/README.md)
   * [Router](learn-more/hyperswitch-architecture/router.md)
   * [Storage](learn-more/hyperswitch-architecture/storage.md)
+  * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
 * [🌊 Payment flows](learn-more/payment-flows/README.md)
   * [Zero Auth flow on Hyperswitch](learn-more/payment-flows/zero-auth-flow-on-hyperswitch.md)
-* [⚡ A Payments Switch with virtually zero overhead](learn-more/a-payments-switch-with-virtually-zero-overhead.md)
 * [📘 Blog](https://hyperswitch.io/blog)
-* [👨💻 Dev Support](learn-more/dev-support.md)
