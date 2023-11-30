@@ -57,8 +57,13 @@ Once the script is run you will have to provide the following as inputs
 
 1. Provide the master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
 2. Provide the Locker DB password of your choice when prompted
-3. If you want to deploy the card vault in an existing VPC of yours, provide the VPC ID when prompted. (Note: The VPC should have at least one private subnet to deploy the card vault)
-4. If you don't have one or want to set up a new VPC leave the input blank and proceed
+3. If you want to deploy the card vault in an existing VPC of yours, provide the VPC ID when prompted.
+
+{% hint style="warning" %}
+Note: The VPC should have at least one private subnet with egress to deploy the card vault
+{% endhint %}
+
+1. If you don't have one or want to set up a new VPC leave the input blank and proceed
 
 **After the deployment is completed:**&#x20;
 
@@ -77,11 +82,16 @@ chmod 400 locker-jump.pem
 * Run the following command to SSH access your Card Vault instance through a jump server
 
 ```bash
-ssh -i locker.pem ec2-user@$LOCKER_IP
+ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
-* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)).&#x20;
-* The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and displayed. **Ensure to save it.**
+* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.&#x20;
+* The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
+
+```bash
+aws ssm get-parameter --name /locker/public_key:1 --query 'Parameter.Value' --output text
+aws ssm get-parameter --name /tenant/private_key:1 --query 'Parameter.Value' --output text
+```
 
 ### Output
 
