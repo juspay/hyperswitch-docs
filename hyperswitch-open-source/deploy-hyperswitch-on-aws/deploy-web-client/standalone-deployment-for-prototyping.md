@@ -18,7 +18,7 @@ In this chapter, you will deploy Hyperswitch web client playground on AWS cloud.
 
 > #### Note
 >
-> You can directly start from [Step 3](https://hyperswitch-juspay.stoplight.io/studio/installation-guide:main?source=8jifq2qd#step-3---setup-hyperswitch) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-deployment-for-prototyping.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 

@@ -39,7 +39,7 @@ The Hyperswitch App server will be installed in the EC2 instance
 
 > #### Note
 >
-> You can directly start from [Step 3](https://hyperswitch-juspay.stoplight.io/studio/installation-guide:main?source=8jifq2qd#step-3---setup-hyperswitch) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-deployment-for-prototyping.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 

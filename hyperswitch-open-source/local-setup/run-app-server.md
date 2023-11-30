@@ -40,5 +40,3 @@ The expected response here is `200 OK` status code. This indicates that the serv
 
 In the next chapter, we'll run payments through your local Hyperswitch setup by setting up the necessary accounts, API credentials and try out payments and refunds.
 
-**Note** : In case you want to set up Hyperswitch from scratch in your local system, please goto this tutorial - [Setup Hyperswitch from scratch](broken-reference)&#x20;
-

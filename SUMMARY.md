@@ -1,14 +1,10 @@
 # Table of contents
 
-* [👋 Intro to Hyperswitch](README.md)
+## About Hyperswitch
 
-## payment use cases
-
-* [🛒 Online businesses](payment-use-cases/online-businesses.md)
-* [🏦 Banks & financial institutions](payment-use-cases/banks-and-financial-institutions.md)
-* [💻 SaaS businesses](payment-use-cases/saas-businesses.md)
-* [📶 Marketplace solutions](payment-use-cases/marketplace-solutions.md)
-* [🤝 Resellers & Independent Sales Organizations (ISOs)](payment-use-cases/resellers-and-independent-sales-organizations-isos.md)
+* [👋 Hello world](README.md)
+* [🛒 For online businesses](about-hyperswitch/for-online-businesses.md)
+* [🏦 For banks & financial institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
 
 ## Hyperswitch open source
 

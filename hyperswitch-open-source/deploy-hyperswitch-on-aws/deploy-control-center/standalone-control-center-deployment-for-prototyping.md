@@ -32,7 +32,7 @@ In this chapter, you will deploy Hyperswitch control center on AWS cloud. You ca
 
 > #### Note
 >
-> You can directly start from [Step 3](https://hyperswitch-juspay.stoplight.io/studio/installation-guide:main?source=8jifq2qd#step-3---setup-hyperswitch) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-control-center-deployment-for-prototyping.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 

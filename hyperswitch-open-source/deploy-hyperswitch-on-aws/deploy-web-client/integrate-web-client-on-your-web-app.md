@@ -11,7 +11,7 @@ In this section, you will learn to integrate the web client on your web app
 Assuming that the app server is hosted successfully, you can now integrate the web client on your HTML web app with the following steps.&#x20;
 
 {% hint style="info" %}
-If your web app is in other tech stack (for eg., React, Angular, etc.), you can follow our [documentation](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/) for reference integrations.
+If your web app is in other tech stack (for eg., React, Angular, etc.), you can follow our [documentation](../../../hyperswitch-cloud/integration-guide/web/node-and-react.md) for reference integrations.
 {% endhint %}
 
 ### 1. Build checkout page on the client <a href="#2-build-checkout-page-on-the-client" id="2-build-checkout-page-on-the-client"></a>
@@ -166,5 +166,5 @@ async function checkStatus() {
 
 That's it! You have successfully integrated your hosted web client on your web app. Now you can collect payments from your customers in a secure way.
 
-The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/customization) for more details.&#x20;
+The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
 
