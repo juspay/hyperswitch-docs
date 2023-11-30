@@ -1,6 +1,6 @@
 # Use PayPal With Stripe
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 ## Use Paypal with Stripe
 
@@ -31,7 +31,7 @@ Hyperswitch offers you a Unified dashboard to track your payments across both th
 
 And you get a single window view of how your payments are performing across both processors in terms of conversion rates, dispute rate, time to process transaction and 20+ payments related metrics.
 
-<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 ### Reduced integration effort
 
