@@ -97,7 +97,8 @@ Once the script is run you will have to provide the following as inputs
 2. Provide an Admin Api key of your choice for Hyperswitch APIs&#x20;
 3. If you choose to opt-in for the card vault service, provide a master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
    * Provide the Locker DB password of your choice when prompted
-4. After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal
+
+After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal
 
 {% hint style="warning" %}
 Make sure to save the passwords you provide while running the script
