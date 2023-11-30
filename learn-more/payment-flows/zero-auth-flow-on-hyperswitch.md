@@ -1,4 +1,4 @@
-# Zero Auth flow on Hyperswitch
+# 0 Zero Auth flow on Hyperswitch
 
 The zero-auth flow in Hyperswitch allows the merchant to offer postpaid payment services. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method for recurring payments. A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
 
@@ -9,11 +9,11 @@ The following API cURLs demonstrate the usage of the zero-auth flow. The example
 1. Creating a 0 amount payment along with the mandate data to set up a mandate with customer’s payment details (Customer initiated transaction)\
 
 
-```
+```shell
 curl --location 'http://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
 --data-raw '{
 "amount": 0,
 "currency": "USD",
@@ -39,7 +39,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 
 2. Confirm the payment after collecting payment information from the user \[You can skip this step if you are using the Hyperswitch Unified Checkout]
 
-```
+```bash
 curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -100,7 +100,7 @@ curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/co
 
     You can use the List Mandates API to retrieve the list of mandates issued against a customer and their status.
 
-```
+```bash
 curl --location 'https://sandbox.hyperswitch.io/customers/{{customer_id}}/mandates' \
 --header 'Accept: application/json' \
 --header 'api-key: <enter your Hyperswitch API key here>'
@@ -108,7 +108,7 @@ curl --location 'https://sandbox.hyperswitch.io/customers/{{customer_id}}/mandat
 
 You’ll get the list of mandates in the response:
 
-```
+```bash
 [
     {
         "mandate_id": "man_oBkxfbl29hAW3yJ5P4FX",
@@ -141,7 +141,7 @@ You’ll get the list of mandates in the response:
 
 For any of the active mandates you can use the below request to make the recurring payment.
 
-```
+```bash
 curl --location 'http://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -180,7 +180,7 @@ The same API request can be expanded to other payment methods as well by simply 
 
 The below example displays the schema for making a zero auth request for a bank direct debit payment method.
 
-```
+```bash
  "payment_method": "bank_debit",
     "payment_method_type": "ach",
     "payment_method_data": {

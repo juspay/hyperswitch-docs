@@ -144,5 +144,5 @@
   * [Storage](learn-more/hyperswitch-architecture/storage.md)
   * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
 * [🌊 Payment flows](learn-more/payment-flows/README.md)
-  * [Zero Auth flow on Hyperswitch](learn-more/payment-flows/zero-auth-flow-on-hyperswitch.md)
+  * [0 Zero Auth flow on Hyperswitch](learn-more/payment-flows/zero-auth-flow-on-hyperswitch.md)
 * [📘 Blog](https://hyperswitch.io/blog)
