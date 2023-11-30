@@ -40,7 +40,7 @@ Follow these simple steps to set up Hyperswitch on your local machine.
 3.  Install project dependencies:
 
     ```
-    npm install
+    npm install --force
     ```
 4.  Update the .env file in the root directory.
 
