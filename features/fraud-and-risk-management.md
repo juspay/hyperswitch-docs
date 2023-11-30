@@ -1,4 +1,12 @@
+---
+description: Effectively enhance fraud detection across 40+ countries
+---
+
 # 🛡 Fraud & risk management
+
+{% hint style="info" %}
+Understand FRM, it's need, use cases, architecture and steps to integrate it in your system
+{% endhint %}
 
 The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection across more than 40 countries and various currencies within your payment ecosystem.
 

@@ -1,8 +1,12 @@
 ---
-description: This section is coming soon!
+description: Recurring payments and Subscription management made easy!
 ---
 
 # 🔁 Mandates & recurring payments
+
+{% hint style="info" %}
+Know how to setup and execute recurring payments with hyperswitch
+{% endhint %}
 
 Hyperswitch supports recurring payments by creating mandates - a record of the permission that your customer provides to debit their payment method such as cards, wallets, etc later for the specified amount and period.
 

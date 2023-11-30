@@ -1,12 +1,20 @@
+---
+description: >-
+  Managing Multiple Business units and multiple same processor/connector
+  accounts in Hyperswitch
+---
+
 # 📊 Business units manager
 
-**Managing Multiple Business units and multiple same processor/connector accounts in Hyperswitch:**
+{% hint style="info" %}
+Steps to create new business unit, attach connector to it, and send corresponding transactions&#x20;
+{% endhint %}
 
 When you sign up on Hyperswitch, we automatically create a business unit under your merchant\_id with the Business country as the country you selected during sign-up and Business Label as default. When you create a new processor account, it is automatically attached to this business unit. You would be able to configure one account for every processor/connector under one business unit.
 
 <figure><img src="../.gitbook/assets/mbs-1.png" alt=""><figcaption></figcaption></figure>
 
-\_List of connectors configured along with the business unit that they are attached to can be viewed under the Processors section on your Hyperswitch dashboard.\_
+List of connectors configured along with the business unit that they are attached to can be viewed under the Processors section on your Hyperswitch dashboard
 
 ## How to create a new Business unit?
 

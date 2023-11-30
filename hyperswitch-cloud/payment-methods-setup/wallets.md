@@ -1,4 +1,12 @@
+---
+description: International wallets supported by Hyperswitch
+---
+
 # 📱 Wallets
+
+{% hint style="info" %}
+Steps to integrate PayPal, Google Pay, Apple Pay
+{% endhint %}
 
 ## Wallets
 

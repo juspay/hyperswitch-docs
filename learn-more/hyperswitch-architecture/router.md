@@ -1,5 +1,9 @@
 # Router
 
+{% hint style="info" %}
+Know about the architecture and the components involved
+{% endhint %}
+
 The router service is written in rust to enforce type safety and to maintain superior performance. The router is designed with a hexagonal architecture, to allow independent pieces to be managed separately.
 
 ## Core API Layer

@@ -1,6 +1,4 @@
-# Pay Later
-
-## Pay Later
+# 📆 Pay Later
 
 Hyperswitch supports the following global and local buy now pay later payment methods.
 

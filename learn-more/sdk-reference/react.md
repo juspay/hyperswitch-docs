@@ -1,5 +1,11 @@
 # React
 
+
+
+{% hint style="info" %}
+This section covers different methods and their params of the Hyperswitch React SDK
+{% endhint %}
+
 Hyperswitch's SDK come with many methods which you can use to customize your payments experience.
 
 ### useHyper()

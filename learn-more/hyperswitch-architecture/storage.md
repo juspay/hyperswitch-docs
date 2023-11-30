@@ -1,4 +1,12 @@
+---
+description: For low latency data transfers and for backups
+---
+
 # Storage
+
+{% hint style="info" %}
+Understand here the different storages involved
+{% endhint %}
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.
 

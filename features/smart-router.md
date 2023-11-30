@@ -1,6 +1,8 @@
-# 🛣 Smart router
+---
+description: Infinite control over managing your payments
+---
 
-## Infinite control over managing your payments
+# 🛣 Smart router
 
 <figure><img src="../.gitbook/assets/smart_router.png" alt=""><figcaption></figcaption></figure>
 

@@ -1,6 +1,14 @@
-# 🎛 Control Center
+---
+description: One and only dashboard for all your payment operations needs!
+---
 
-## One and only [dashboard](https://app.hyperswitch.io/login) for all your payment operations needs!
+# 🎛 Payment operations
+
+##
+
+{% hint style="info" %}
+Day to day use cases of payments operations which hyperswitch dashboard can boost
+{% endhint %}
 
 ## Payment Operations
 
