@@ -7,7 +7,7 @@ description: >-
 # 📊 Business units manager
 
 {% hint style="info" %}
-Steps to create new business unit, attach connector to it, and send corresponding transactions&#x20;
+In this section, we will cover the steps to create new business unit, attach connector to it, and send corresponding transactions.
 {% endhint %}
 
 When you sign up on Hyperswitch, we automatically create a business unit under your merchant\_id with the Business country as the country you selected during sign-up and Business Label as default. When you create a new processor account, it is automatically attached to this business unit. You would be able to configure one account for every processor/connector under one business unit.

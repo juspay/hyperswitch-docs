@@ -4,10 +4,8 @@ description: One and only dashboard for all your payment operations needs!
 
 # 🎛 Payment operations
 
-##
-
 {% hint style="info" %}
-Day to day use cases of payments operations which hyperswitch dashboard can boost
+This section covers the day-to-day use cases of payments operations which hyperswitch dashboard can boost
 {% endhint %}
 
 ## Payment Operations

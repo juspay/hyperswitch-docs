@@ -1,5 +1,5 @@
 ---
-description: Recurring payments and Subscription management made easy!
+description: Recurring payments and subscription management made easy!
 ---
 
 # 🔁 Mandates & recurring payments

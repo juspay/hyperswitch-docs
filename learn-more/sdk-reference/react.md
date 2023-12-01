@@ -1,6 +1,8 @@
+---
+description: To customize your payments experience
+---
+
 # React
-
-
 
 {% hint style="info" %}
 This section covers different methods and their params of the Hyperswitch React SDK

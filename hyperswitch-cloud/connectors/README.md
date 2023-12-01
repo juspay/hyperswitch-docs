@@ -1,4 +1,4 @@
-# 🔗 Connectors
+# 🔌 Connectors
 
 > Onboard new payment integrations with clicks, not code !
 

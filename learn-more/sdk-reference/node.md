@@ -4,7 +4,9 @@ description: Node to access the Hyperswitch API
 
 # Node
 
-The Hyperswitch Node library provides convenient access to the Hyperswitch API from applications written in server-side JavaScript.
+{% hint style="info" %}
+In this section, we will cover the steps to get a convenient access to the Hyperswitch API from applications written in server-side JavaScript.
+{% endhint %}
 
 ## Requirements
 
