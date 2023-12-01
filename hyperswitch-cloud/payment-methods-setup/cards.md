@@ -1,23 +1,31 @@
+---
+description: Accept debit and credit card payments on your application
+---
+
 # 💳 Cards
+
+{% hint style="info" %}
+This section gives you an overview of how to enable debit and credit cards on Hyperswitch along with how to configure the web client to securely save your customers' card details for future payments
+{% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/logos/logo\_diners.svg)![logo\_discord](https://hyperswitch.io/logos/logo\_visa.svg)![logo\_discord](https://hyperswitch.io/logos/logo\_mastercard.svg)![logo\_discord](https://hyperswitch.io/logos/logo\_amex.svg)
 
-**Hyperswitch supports credit and debit card payments through all our payment processor connectors.** \
+Hyperswitch supports credit and debit card payments through all our payment processor connectors**.** \
 We accept cards from all major global and local card networks, such as Visa, Mastercard, American Express, Diners, Discover, JCB, Union Pay, etc. While Hyperswitch supports card payments in 135+ currencies and 150+ countries, each of these connectors and networks has limitations in terms of the number of countries and currencies they support.
 
 Apart from regular one-time payments, Hyperswitch supports saving a card, recurring payments, and placing a hold for later capture.
 
-### Integration Steps
+## Integration Steps
 
 1. Go to Hyperswitch dashboard and to connectors tab [here](https://app.hyperswitch.io/) and enable card.
 
-### Saved Cards
+## Saved Cards
 
-You could use Hyperswitch’s PCI Compliant secure vault to safely store your customers’ card data and retrieve them when they return to pay on your website/app. In addition, our hyper SDK has a checkbox on the payment page that you can use to take customers’ consent to store their card data. To try out the save cards feature through API, include either of the values for the `setup_future_usage` field in your Payments API request body. This feature comes with [Unified Checkout](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb#unified-checkout).
+You could use Hyperswitch’s PCI Compliant secure vault to safely store your customers’ card data and retrieve them when they return to pay on your website/app. In addition, our hyper SDK has a checkbox on the payment page that you can use to take customers’ consent to store their card data. To try out the save cards feature through API, include either of the values for the `setup_future_usage` field in your Payments API request body. This feature comes with [Unified Checkout](../integration-guide/web/).
 
-### 1. Setup the server
+### Setup the server
 
-#### 1.1 Install the `hyperswitch-node` library
+#### Install the `hyperswitch-node` library
 
 Install the package and import it in your code
 
@@ -25,7 +33,7 @@ Install the package and import it in your code
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
-#### 1.2 Create a customer and payment
+#### Create a customer and payment
 
 Before creating a customer or payment, import the `hyperswitch-node` dependencies and initialize it with your API key. To get an API Key please find it here.
 
@@ -118,11 +126,11 @@ app.post("/list-paymentmethods", async (req, res) => {
 });
 ```
 
-### 2. Build checkout page on the client
+### Build checkout page on the client
 
 _Follow the integration steps of Unified Checkout_ [_here_](https://hyperswitch.io/docs/unifiedCheckoutWeb/) _for your respective stack_
 
-#### 2.1 Pass the the `paymentMethods` data to `HyperElements`
+#### Pass the the `paymentMethods` data to `HyperElements`
 
 ```js
 useEffect(() => {
@@ -158,10 +166,10 @@ let options = {
 
 Now follow the rest of the integration steps to enable Unified Checkout.
 
-### Recurring Payments - Mandate through cards
+## Recurring Payments - Mandate through cards
 
 Currently, Hyperswitch supports the creation of mandates for card transactions through the following payment processors: - Adyen - Checkout
 
-### Placing a hold for later capture
+## Placing a hold for later capture
 
-By default, all payments are auto-captured during authorization in Hyperswitch, but you can choose to separate capture from authorization by manually capturing an authorized payment later. Setting the ‘capture’ field in payments/confirm API to ‘manual’ will block the stated amount on the customer’s card without charging them. To charge the customer an amount equal to or lesser than the blocked amount, use the payments/capture endpoint with the relevant details.
+By default, all payments are auto-captured during authorization in Hyperswitch, but you can choose to separate capture from authorization by manually capturing an authorized payment later. Setting the `capture` field in payments/confirm API to `manual` will block the stated amount on the customer’s card without charging them. To charge the customer an amount equal to or lesser than the blocked amount, use the payments/capture endpoint with the relevant details.

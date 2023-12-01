@@ -176,13 +176,8 @@ The Unified Checkout provides developers a high level of customizability which e
             theme: string, //[Possible Values: 'dark' | 'light' | 'outline' ]
             height: int, //You can customize the height of the wallet button in the UnifiedCheckout using the height property. However, not all wallets support different height options. If you provide a height value that is outside the supported range of a particular wallet, it will fallback to either the maximum or minimum height value based on the value provided.
         }
-
-
     },
   }
-
-
-
   {
   "defaultValues": {
     "billingDetails": {
@@ -238,8 +233,4 @@ The Unified Checkout provides developers a high level of customizability which e
     }
   }
   }
-
-
-
-
 ```

@@ -1,3 +1,7 @@
+---
+description: Migrate from Stripe on your web app
+---
+
 # Web
 
 ## Migrate from Stripe

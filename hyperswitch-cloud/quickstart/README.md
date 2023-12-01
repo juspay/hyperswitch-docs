@@ -4,6 +4,14 @@ description: Get started with Hyperswitch in 4 easy steps
 
 # ⚡ Quickstart
 
+{% hint style="info" %}
+This section gives you the steps to get started with Hyperswitch, configure your payment processor, integrate with your application and accept your first payment in minutes
+{% endhint %}
+
+## Getting Started
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Quickstart guide</strong></td><td>Integrate Hyperswitch from scratch and accept your first payment in minutes</td><td></td><td><a href="./#get-your-hyperswitch-api-key">#get-your-hyperswitch-api-key</a></td><td><a href="../../.gitbook/assets/quickstart.jpg">quickstart.jpg</a></td></tr><tr><td><strong>Migrate from Stripe</strong></td><td>Already a Stripe user? Learn how you can quickly migrate to Hyperswitch</td><td></td><td><a href="migrate-from-stripe/">migrate-from-stripe</a></td><td><a href="../../.gitbook/assets/StripeMigration.jpg">StripeMigration.jpg</a></td></tr><tr><td>P<strong>ayment recipes</strong></td><td>Explore quick payment recipes consisting of combinations of use case specific payment processors</td><td></td><td><a href="payment-recipes/">payment-recipes</a></td><td><a href="../../.gitbook/assets/recipe.jpg">recipe.jpg</a></td></tr></tbody></table>
+
 ## Get your Hyperswitch API key
 
 If you have not created a sandbox account, please create one
@@ -47,4 +55,3 @@ The control center provides complete control on your payment operations.
 * **Smart payment routing:** You will have the complete capability to dynamically set the payment routing logic based on 20+ variables. Use this to optimize your payment processing goals.
 
 Learn how to enable all payment methods [here](../payment-methods-setup/cards.md) starting with Cards.
-

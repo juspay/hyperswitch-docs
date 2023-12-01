@@ -1,3 +1,7 @@
+---
+description: Accept a payment using Google Pay in your Android app
+---
+
 # Google Pay
 
 With Google Pay, customers can conveniently make payments within your app or website using credit or debit cards saved in their Google Account. This includes cards from various sources, such as Google Play, YouTube, Chrome, or any Android device. By utilizing the Google Pay API, you can request access to any credit or debit card stored in your customer's Google account.

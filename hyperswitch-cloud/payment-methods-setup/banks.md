@@ -1,6 +1,14 @@
+---
+description: Accept bank payment methods on your application
+---
+
 # 🏦 Banks
 
-## Banks
+{% hint style="info" %}
+This section gives you an overview of how to enable bank transfers, bank debits and bank redirect payment methods through Hyperswitch
+{% endhint %}
+
+## Bank payment methods
 
 Apart from cards (47%) and digital wallets (28%), bank transfer (9%) is the third most used payment instrument in the US. Banks as a payment method has several payment flows across the world and Hyperswitch provides support for integrating the below three common flows:
 
@@ -23,11 +31,11 @@ Apart from cards (47%) and digital wallets (28%), bank transfer (9%) is the thir
 
 Bank Redirects are one of the most preferred options for paying online across the world. Due to their highly secure nature, bank redirects are used extensively in countries like Germany, Netherlands, Asia, LATAM, etc.
 
-**How do Bank Redirects work?**
+### **How do Bank Redirects work?**
 
 When customers select one of the Bank Redirects method on the checkout page, they are redirected to their online banking portal where they login and approve the transaction for which money is debited from their bank account. Post approval, they are redirected back to the shopping page. The transaction approval step might include two factor authentication in some bank redirects.
 
-**Integrating Bank Redirects on Hyperswitch:**
+### **Integrating Bank Redirects on Hyperswitch:**
 
 To enable Bank redirect on Unified Checkout, you need to enable the payment methods on the Hyperswitch Dashboard. Hyperswitch SDKs intelligently display the supported Bank redirect option(s) based on the currency and the country of the customer.
 

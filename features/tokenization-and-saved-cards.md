@@ -4,6 +4,10 @@ description: Store your customers cards securely in a centralized compliant vaul
 
 # 🔓 Tokenization & saved cards
 
+{% hint style="info" %}
+In this section, we will know how to store your customers cards securely, migrate them from your processors to hyperswitch giving a bried of the network tokenization concept.
+{% endhint %}
+
 Hyperswitch provides you with the capability to store your customers cards securely in a centralized PCI DSS Level 1 compliant vault. Our Unified checkout automatically handles save cards flow when customers choose the Save card details checkbox while providing their card details for the payment and the transaction is successfully processed.
 
 <figure><img src="../.gitbook/assets/savedCards1.png" alt=""><figcaption></figcaption></figure>

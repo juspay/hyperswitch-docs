@@ -1,6 +1,12 @@
+---
+description: Integrate hyper SDK to your Swift App using hyperswitch-node
+---
+
 # Swift with Node Backend
 
-Use this guide to integrate hyper SDK to your iOS app. You can use this as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [App on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+{% hint style="info" %}
+Use this guide to integrate hyper SDK to your iOS app. You can use the following app as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [App on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+{% endhint %}
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip)
 

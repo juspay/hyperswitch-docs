@@ -1,8 +1,12 @@
+---
+description: Migrate from Stripe on your iOS app
+---
+
 # IOS
 
 If you are already integrated with Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Digital Payments Manager and many more.
 
-## iOS - Node Backend and Swift Frontend
+### iOS - Node Backend and Swift Frontend
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner.
 

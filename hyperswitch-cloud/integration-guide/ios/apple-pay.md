@@ -1,6 +1,10 @@
-# Apple Pay
+---
+description: >-
+  Allow customers to securely make payments using Apple Pay on their iPhone,
+  iPad.
+---
 
-Allow customers to securely make payments using Apple Pay on their iPhone, iPad.
+# Apple Pay
 
 Apple Pay seamlessly integrates with Hyperswitch, providing you with the flexibility to replace conventional payment forms whenever it is feasible and appropriate.
 

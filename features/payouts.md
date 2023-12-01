@@ -1,3 +1,7 @@
+---
+description: Swift and streamlined payout automation
+---
+
 # 💵 Payouts
 
 {% hint style="info" %}

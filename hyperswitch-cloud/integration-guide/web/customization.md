@@ -177,7 +177,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ## 4. Languages
 
-Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](https://hyperswitch.io/docs/sdkIntegrations/sdkReference/reactSdk#2-hyperelementsoptions)
+Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../learn-more/sdk-reference/node.md)
 
 We support the following locales -
 

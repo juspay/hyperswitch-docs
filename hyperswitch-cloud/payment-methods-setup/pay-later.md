@@ -1,16 +1,22 @@
+---
+description: Accept pay later options through Hyperswitch
+---
+
 # 📆 Pay Later
 
-Hyperswitch supports the following global and local buy now pay later payment methods.
+{% hint style="info" %}
+This section gives you an overview of how to enable buy now pay later payments with Klarna, Affirm and Afterpay/Clearpay
+{% endhint %}
 
-### Klarna, Affirm, Afterpay/Clearpay - Redirection flow
+## Klarna, Affirm, Afterpay/Clearpay - Redirection flow
 
 * Klarna is a global buy now pay later payment method that is available in more than 19 countries and supports 10 currencies.
 * Affirm is a buy now pay later payment method available to US customers and supports USD.
 * Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
 
-**How to configure Paylater options (Redirection flow) on Hyperswitch?**
+## **How to configure pay later options (Redirection flow) on Hyperswitch?**
 
-1. Make sure that the paylater options are enabled on your connector's dashboard
+1. Make sure that the pay later options are enabled on your connector's dashboard
 2. Enable paylater options on Hyperswitch dashboard under "payment methods" tab while configuring your connector
 3. Ensure that you add the additional mandatory parameters when you create a payment (using node SDK or /payments API) from your server-side.
 
@@ -52,7 +58,7 @@ Hyperswitch supports the following global and local buy now pay later payment me
   }
 ```
 
-### Klarna - In app flow
+## Klarna - In app flow
 
 ![Klarna Logo](https://hyperswitch.io/icons/homePageIcons/logos/klarnaLogo.svg)
 

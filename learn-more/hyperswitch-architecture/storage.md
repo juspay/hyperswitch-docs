@@ -5,7 +5,7 @@ description: For low latency data transfers and for backups
 # Storage
 
 {% hint style="info" %}
-Understand here the different storages involved
+In this section, we will cover the different storages involved in the payment orchestration with Hyperswitch.
 {% endhint %}
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.

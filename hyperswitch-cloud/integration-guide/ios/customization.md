@@ -1,6 +1,12 @@
+---
+description: iOS Unified Checkout Customization
+---
+
 # Customization
 
-You can customize the iOS Unified Checkout to support your checkout context and brand guidelines by chenging fonts, colours, shapes and layouts(coming soon).
+{% hint style="info" %}
+You can customize the iOS Unified Checkout to support your checkout context and brand guidelines by changing fonts, colours, shapes and layouts(coming soon).
+{% endhint %}
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
 

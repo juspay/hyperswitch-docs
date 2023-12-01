@@ -1,3 +1,7 @@
+---
+description: Customize your Android Unified check
+---
+
 # Customization
 
 You can customize the Android Unified Checkout to support your checkout context and brand guidelines by changing fonts, colors, shapes and layouts(coming soon).

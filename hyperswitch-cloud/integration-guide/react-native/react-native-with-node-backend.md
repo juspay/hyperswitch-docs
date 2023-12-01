@@ -1,10 +1,16 @@
+---
+description: Integrate hyper SDK to your React Native App using hyperswitch-node
+---
+
 # React Native with Node Backend
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards).
-
-Use this guide to integrate `hyper` SDK to your React Native app. You can use this as a reference with your Hyperswitch credentials to test the setup.
+{% hint style="info" %}
+Use this guide to integrate `hyper` SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
+{% endhint %}
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/Hyperswitch-React-Native-demo-app/archive/refs/heads/main.zip)
+
+**Before following these steps, please configure your payment methods** [here](../../payment-methods-setup/cards.md).
 
 ## Requirements
 

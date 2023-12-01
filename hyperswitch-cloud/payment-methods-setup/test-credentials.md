@@ -1,8 +1,14 @@
+---
+description: Key to configure and test different connectors in Hyperswitch
+---
+
 # 🔑 Test Credentials
 
-## Test Credentials
+{% hint style="info" %}
+This section gives you an overview of how to you can make test transactions for the payment methods you have enabled
+{% endhint %}
 
-### Testing Cards across different Connectors
+## Testing Cards across different Connectors
 
 You might have configured multiple connectors on the Hyperswitch Dashboard. If you wish to ensure sanity of connector configuration, you can target and test the particular connector.
 
@@ -16,7 +22,7 @@ You might have configured multiple connectors on the Hyperswitch Dashboard. If y
 
 **Step 5**: Enter card details as per the table below. Please note that test credentials varies across each connector.
 
-#### Test Cards for popular connectors
+### Test Cards for popular connectors
 
 Simulate a successful test card payment with the following credentials
 

@@ -2,7 +2,7 @@
 
 ## Integrate Unified Checkout using Rest APIs and HTML Frontend
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards).
+**Before following these steps, please configure your payment methods** [here](../../payment-methods-setup/cards.md).
 
 ### 1. Setup the server
 

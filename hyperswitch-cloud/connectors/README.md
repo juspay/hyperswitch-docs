@@ -1,8 +1,10 @@
+---
+description: Onboard new payment integrations without code
+---
+
 # 🔌 Connectors
 
-> Onboard new payment integrations with clicks, not code !
-
-### Enablement of multiple processors
+## Enablement of multiple processors
 
 As your business grows faster, there would be a need to expand payment offerings with more payment processors. This need might arise due to multiple reasons:
 
@@ -14,11 +16,11 @@ As your business grows faster, there would be a need to expand payment offerings
 
 Integrating and maintaining multiple payment processors is a complex activity and could drain significant tech bandwidth from your core business activities.
 
-### Available Connectors and Future roadmap <a href="#available-connectors-and-future-roadmap" id="available-connectors-and-future-roadmap"></a>
+## Available connectors and roadmap <a href="#available-connectors-and-future-roadmap" id="available-connectors-and-future-roadmap"></a>
 
-The list of available connectors and future roadmap can be viewed [here](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22\_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=0\&single=true)
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Hyperswitch Connectors</strong></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td><a href="../../.gitbook/assets/Payment flow (1).jpg">Payment flow (1).jpg</a></td></tr></tbody></table>
 
-### What is Click and Connect?
+## What is Click and Connect?
 
 Hyperswitch is pre-integrated with 40+ payment processors, and adding a new payment processor is fully automated. Hence it can be managed without development effort. By using Hyperswitch Click and Connect, all that you need to do would be four steps to enable a new payment processor.
 
@@ -30,6 +32,6 @@ Hyperswitch is pre-integrated with 40+ payment processors, and adding a new paym
 
 **Step 4**: Launch the production environment and monitor performance metrics using Hyperswitch Dashboard.
 
-### How to get started?
+## How to get started?
 
-[Click here](https://hyperswitch.io/contact-sales) to signup for hyperswitch.
+[Click here](https://hyperswitch.io/contact-sales) to signup for Hyperswitch.

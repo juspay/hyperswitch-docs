@@ -1,3 +1,7 @@
+---
+description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
+---
+
 # Kotlin with Node Backend
 
 Use this guide to integrate hyper SDK to your Android app. You can use this as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [App on Google Play Store](https://play.google.com/store/apps/details?id=io.hyperswitch.hyperecom) to test the payment flow.

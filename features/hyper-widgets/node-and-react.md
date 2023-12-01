@@ -4,7 +4,11 @@ description: Integrate Hyper Widgets using Node Backend and React Frontend
 
 # Node and React
 
-Use this guide to integrate `hyper` SDK to your React app. You can use this as a reference with your Hyperswitch credentials to test the setup.
+{% hint style="info" %}
+In this section, we will integrate hyper SDK to your React app using Node by setting up the server, building the checkout page to complete a payment on the client.
+
+&#x20;You can also use this [demo app](https://github.com/aashu331998/hyperswitch-react-demo-app/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup.
+{% endhint %}
 
 ## [Demo App](https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip)
 

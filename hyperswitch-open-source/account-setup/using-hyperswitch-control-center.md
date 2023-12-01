@@ -4,7 +4,7 @@ description: >-
   center
 ---
 
-# Using Hyperswitch control center
+# 🎛 Using Hyperswitch control center
 
 {% hint style="info" %}
 Here, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center

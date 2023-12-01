@@ -1,10 +1,16 @@
+---
+description: Accept a payment using Google Pay in your React Native app
+---
+
 # GooglePay
+
+{% hint style="info" %}
+In this section, we will enable GooglePay with simple steps with Hyperswitch's React Native SDK
+{% endhint %}
 
 With Google Pay, customers can conveniently make payments within your app or website using credit or debit cards saved in their Google Account. This includes cards from various sources, such as Google Play, YouTube, Chrome, or any Android device. By utilizing the Google Pay API, you can request access to any credit or debit card stored in your customer's Google account.
 
 Google Pay seamlessly integrates with Hyperswitch, providing you with the flexibility to replace conventional payment forms whenever it is feasible and appropriate.
-
-**Accept a payment using Google Pay in your React Native app**
 
 To begin accepting Google Pay in your React Native apps, utilize Hyperswitch's React Native SDK, which offers the swiftest and most straightforward approach.
 

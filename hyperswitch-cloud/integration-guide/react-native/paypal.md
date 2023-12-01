@@ -1,6 +1,8 @@
-# PayPal
+---
+description: Allow customers to securely make payments using PayPal.
+---
 
-Allow customers to securely make payments using PayPal.
+# PayPal
 
 PayPal seamlessly integrates with Hyperswitch, providing you with the flexibility to replace conventional payment forms whenever it is feasible and appropriate.
 

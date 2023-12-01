@@ -2,7 +2,7 @@
 description: Create your Hyperswitch account and add a payment provider through postman
 ---
 
-# Using postman
+# 🚀 Using postman
 
 ## Account setup using Postman <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 

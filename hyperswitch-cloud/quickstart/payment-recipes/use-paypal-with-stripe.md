@@ -66,5 +66,5 @@ And in the future, if you wish to become a PCI compliant organization, you can e
 
 ## More Resources
 
-* [Setting up Paypal + Stripe on Hyperswitch](https://hyperswitch.io/docs/sdkIntegrations/setupPaypalStripeOnHyperSwitch)
-* [Migrate from Stripe to Hyperswitch](https://hyperswitch.io/docs/migrateFromStripe/)
+* [Setting up Paypal + Stripe on Hyperswitch](setup-paypal-with-stripe-on-hyperswitch.md)
+* [Migrate from Stripe to Hyperswitch](../migrate-from-stripe/)

@@ -2,10 +2,6 @@
 
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
-\<a href="https://github.com/aashu331998/hyperswitch-html-demo-app/archive/refs/heads/main.zip" target="\_blank"
-
-
-
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/hyperswitch-html-demo-app/archive/refs/heads/main.zip)
 
 ## 1. Setup the server

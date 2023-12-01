@@ -4,6 +4,10 @@ description: Infinite control over managing your payments
 
 # 🛣 Smart router
 
+{% hint style="info" %}
+With this section, find out how smart router is the key to channeling payments across multiple processors easily.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/smart_router.png" alt=""><figcaption></figcaption></figure>
 
 ## No-code payments routing

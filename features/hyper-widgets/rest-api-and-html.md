@@ -1,51 +1,29 @@
 ---
-description: Integrate Hyper Widgets using Node Backend and HTML Frontend
+description: Integrate Hyper Widgets using Rest APIs and HTML Frontend
 ---
 
-# Node and HTML
+# REST API and HTML
 
-Use this guide to integrate `hyper` SDK to your HTML app. You can also use this [demo app](https://github.com/aashu331998/hyperswitch-html-demo-app/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup.
+{% hint style="info" %}
+In this section, we will cover how to integrate Hyperwidgets using REST API and HTML by setting up the Hyperswitch server, building the checkout page to complete a payment on the client.
+{% endhint %}
 
 ### 1. Setup the server
 
-#### 1.1 Install the `hyperswitch-node` library
+#### 1.1 Create a payment
 
-Install the package and import it in your code
-
-```js
-$ npm install @juspay-tech/hyperswitch-node
-```
-
-#### 1.2 Create a payment
-
-Before creating a payment, import the `hyperswitch-node` dependencies and initialize it with your API key. To get an API Key please find it here.
+Add an endpoint on your server that creates a payment using the Payments API. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the `client_secret` obtained in the response to complete the payment on the client.
 
 ```js
-const hyper = require("@juspay-tech/hyperswitch-node")(‘YOUR_API_KEY’);
-```
-
-Add an endpoint on your server that creates a Payment. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the `client_secret` obtained in the response to securely complete the payment on the client.
-
-```js
-app.post("/create-payment", async (req, res) => {
-  try {
-    // Create a Payment with the order amount and currency
-    const payment = await hyper.paymentIntents.create({
-      amount: 100,
-      currency: "USD",
-    });
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
-  }
-});
+// Create a Payment with the order amount and currency
+curl --location --request POST 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <YOUR_API_KEY>' \
+--data-raw '{
+ "amount": 10,
+ "currency": "USD"
+}'
 ```
 
 ### 2. Build checkout page on the client
@@ -100,7 +78,7 @@ async function initialize() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
   });
-  const { clientSecret } = await response.json();
+  const { client_secret } = await response.json();
 
   const appearance = {
     theme: "midnight",
@@ -122,27 +100,27 @@ Listen to the form’s submit event to know when to confirm the payment through 
 Call `confirmPayment()`, passing along the widget and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the `return_url`.
 
 ```js
-async function handleSubmit(e) {
-  e.preventDefault();
-  setLoading(true);
+sync function handleSubmit(e) {
+e.preventDefault();
+setLoading(true);
 
-  const { error } = await hyper.confirmPayment({
-    widgets,
-    confirmParams: {
-      // Make sure to change this to your payment completion page
-      return_url: "https://example.com/complete",
-    },
-  });
+const { error } = await hyper.confirmPayment({
+  widgets,
+  confirmParams: {
+    // Make sure to change this to your payment completion page
+    return_url: "https://example.com/complete",
+  },
+});
 
-  // This point will only be reached if there is an immediate error occurring while confirming the payment. Otherwise, your customer will be redirected to your `return_url`.
+// This point will only be reached if there is an immediate error occurring while confirming the payment. Otherwise, your customer will be redirected to your `return_url`
 
-  // For some payment flows such as Sofort, iDEAL, your customer will be redirected to an intermediate page to complete authorization of the payment, and then redirected to the `return_url`.
+// For some payment flows such as Sofort, iDEAL, your customer will be redirected to an intermediate page to complete authorization of the payment, and then redirected to the `return_url`.
 
-  if (error.type === "validation_error") {
-    showMessage(error.message);
-  } else {
-    showMessage("An unexpected error occurred.");
-  }
+if (error.type === "validation_error") {
+  showMessage(error.message);
+} else {
+  showMessage("An unexpected error occurred.");
+}
   setLoading(false);
 }
 ```
@@ -182,5 +160,3 @@ async function checkStatus() {
   }
 }
 ```
-
-Previous{"<<"} Node Backend And React Frontend NextRest API Backend And HTML Frontend >>
