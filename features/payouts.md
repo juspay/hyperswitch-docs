@@ -1,7 +1,7 @@
 # 💵 Payouts
 
 {% hint style="info" %}
-Get an understanding of Payout features, supported processors, methods, working and how to get started with it.
+After reading this section, you will know about Payout features, supported processors, methods, working and how to get started with it.
 {% endhint %}
 
 Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using our automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage our infrastructure to streamline and orchestrate your payout processes efficiently.
