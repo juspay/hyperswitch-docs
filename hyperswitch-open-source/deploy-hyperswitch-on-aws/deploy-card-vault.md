@@ -65,7 +65,9 @@ Note: The VPC should have at least one private subnet with egress to deploy the 
 
 1. If you don't have one or want to set up a new VPC leave the input blank and proceed
 
-**After the deployment is completed:**&#x20;
+### **Unlocking the Card Vault**
+
+At this point your locker setup on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
 
 * Run the following command to generate the key for the jump-server
 
