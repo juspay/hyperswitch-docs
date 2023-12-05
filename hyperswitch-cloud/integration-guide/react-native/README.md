@@ -8,7 +8,7 @@ description: Integrate unified checkout with your react native app
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your React Native App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt="" width="351"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83).png" alt="" width="286"><figcaption></figcaption></figure>
 
 ### Global Checkout Experience <a href="#global-checkout-experience" id="global-checkout-experience"></a>
 

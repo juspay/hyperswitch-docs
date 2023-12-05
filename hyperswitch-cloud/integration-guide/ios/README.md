@@ -8,7 +8,7 @@ description: Integrate unified checkout with your iOS app
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your iOS App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-12-05 at 2.54.45 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Global Checkout Experience <a href="#global-checkout-experience" id="global-checkout-experience"></a>
 

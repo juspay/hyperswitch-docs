@@ -8,9 +8,9 @@ description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
 In this section, know about the various features offered by Hyperswitch Woocommerce Plugin and how can you get started with it.
 {% endhint %}
 
-Give your shoppers a lightweight and embedded payment experience for Stripe + Paypal, with Hyperswitch - an open source financial switch. And future proof your business continuity with the redundancy of multiple payment processors provided.
+<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
-3k transactions monthly are free forever if you sign-up prior to 30th Nov 2023
+Give your shoppers a lightweight and embedded payment experience for Stripe + Paypal, with Hyperswitch - an open source financial switch. And future proof your business continuity with the redundancy of multiple payment processors provided.
 
 ## [Get Started](https://app.hyperswitch.io/register)
 

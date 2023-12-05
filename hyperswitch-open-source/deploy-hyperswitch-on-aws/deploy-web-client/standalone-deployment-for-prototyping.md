@@ -5,7 +5,7 @@ description: Quickly deploy your web client playground and see it in action
 # Standalone deployment for prototyping
 
 {% hint style="info" %}
-In this chapter, you will deploy Hyperswitch web client playground on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
+In this chapter, you will deploy Hyperswitch web client playground on AWS cloud.&#x20;
 {% endhint %}
 
 ## Steps to Deploy Hyperswitch web client on AWS

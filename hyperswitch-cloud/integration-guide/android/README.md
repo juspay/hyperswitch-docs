@@ -8,7 +8,7 @@ description: Integrate unified checkout on your android app
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your Android App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-12-05 at 1.45.03 PM.png" alt="" width="351"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82).png" alt="" width="286"><figcaption></figcaption></figure>
 
 ### Global Checkout Experience <a href="#global-checkout-experience" id="global-checkout-experience"></a>
 

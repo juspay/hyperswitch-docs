@@ -190,7 +190,7 @@ Now you have successfully configured Grafana's data source with Grafana Loki, an
 
 Logging from the payment checkout web client is crucial for tracking and monitoring the flow of payments. It provides a transparent record of events, errors, and user interactions, aiding developers and support teams in identifying issues, debugging, and ensuring the security and reliability of payment processes. Well-implemented logging enhances traceability and facilitates a more efficient resolution of potential problems in the payment checkout experience.
 
-Logs are sent to the server via non-blocking Beacon API requests. This means that even if the logging endpoint configured is incorrect, it would not affect the core payment functionalities. You can find more about the structure of logging request payload in the `beaconApiCall` function in the `OrcaLogger.res` file.
+Logs are sent to the server via non-blocking Beacon API requests. This means that even if the logging endpoint configured is incorrect, it would not affect the core payment functionalities. You can find more about the structure of logging request payload in the `beaconApiCall` function in the [`OrcaLogger.res`](https://github.com/juspay/hyperswitch-web/blob/main/src/orca-log-catcher/OrcaLogger.res) file.
 
 If you want to collect logs, you can do so by setting up an endpoint on your server to receive, process and persist logs.
 

@@ -4,13 +4,15 @@ description: Get started integrating the Hyperswitch web client on your app
 
 # 📦 Integration guide
 
-<div align="left">
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-05 at 12.22.44 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-12-05 at 12.22.44 PM.png" alt="" width="375"><figcaption><p>Unified Checkout - Web</p></figcaption></figure>
+
+<div align="center">
+
+<figure><img src="../../.gitbook/assets/image (85).png" alt="" width="375"><figcaption><p>Unified Checkout - App</p></figcaption></figure>
 
 </div>
-
-## Global Checkout Experience
 
 Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
