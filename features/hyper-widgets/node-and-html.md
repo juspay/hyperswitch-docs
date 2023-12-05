@@ -10,8 +10,6 @@ In this section, we will integrate hyper SDK to your HTML app using Node by sett
 &#x20;You can also use this [demo app](https://github.com/aashu331998/hyperswitch-html-demo-app/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup.
 {% endhint %}
 
-
-
 ### 1. Setup the server
 
 #### 1.1 Install the `hyperswitch-node` library
@@ -188,3 +186,5 @@ async function checkStatus() {
   }
 }
 ```
+
+Congratulations! Now that you have succesfully integrated the widgets, you can go ahead and[ test a payment.](../../hyperswitch-open-source/test-a-payment.md)

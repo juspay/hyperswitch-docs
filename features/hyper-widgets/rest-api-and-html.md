@@ -160,3 +160,5 @@ async function checkStatus() {
   }
 }
 ```
+
+Congratulations! Now that you have succesfully integrated the widgets, you can go ahead and[ test a payment.](../../hyperswitch-open-source/test-a-payment.md)
