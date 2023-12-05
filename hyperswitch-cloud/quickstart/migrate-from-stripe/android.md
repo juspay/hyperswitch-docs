@@ -4,6 +4,10 @@ description: Migrate from Stripe on your android app
 
 # Android
 
+{% hint style="info" %}
+Migrate from Stripe on your Android app in less than 15 mins!
+{% endhint %}
+
 If you are already integrated with Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Digital Payments Manager and many more.
 
 ### Android - Node Backend and Kotlin Frontend
