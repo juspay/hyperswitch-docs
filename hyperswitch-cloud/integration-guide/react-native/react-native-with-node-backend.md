@@ -248,3 +248,5 @@ return (
   </Screen>
 );
 ```
+
+Congratulations! Now that you have integrated the Android SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;

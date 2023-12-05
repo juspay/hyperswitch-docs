@@ -5,6 +5,10 @@ description: Integrate hyper SDK to your Swift App using hyperswitch-node
 # Swift with Node Backend
 
 {% hint style="info" %}
+In this section, you will get detailed instructions for integrating the Hyperswitch native iOS SDK for your Android app
+{% endhint %}
+
+{% hint style="info" %}
 Use this guide to integrate hyper SDK to your iOS app. You can use the following app as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [App on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
@@ -278,3 +282,5 @@ VStack {
   }
 }.onAppear { model.preparePaymentIntent() }
 ```
+
+Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;

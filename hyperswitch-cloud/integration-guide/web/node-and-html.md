@@ -1,4 +1,12 @@
+---
+description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+---
+
 # Node and HTML
+
+{% hint style="info" %}
+In this section, you will get details to Integrate Unified Checkout using Node Backend and HTML Frontend
+{% endhint %}
 
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
@@ -199,3 +207,5 @@ async function checkStatus() {
   }
 }
 ```
+
+Congratulations! Now that you have integrated the  unified checkout on your app, you can customize the payment elements to blend with the rest of your app.&#x20;

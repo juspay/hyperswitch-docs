@@ -4,7 +4,11 @@ description: 'Visual customization: Colors, shapes, specific UI components'
 
 # Customization
 
-You can customize the React Native Unified Checkout to supports visual customization, which allows you to match the design of your app. You can modify colors, fonts, and more by using the `appearance` parameter when you call `initPaymentSheet()`.
+{% hint style="info" %}
+You can customize the React Native Unified Checkout to supports visual customization, which allows you to match the design of your app
+{% endhint %}
+
+You can modify colors, fonts, and more by using the `appearance` parameter when you call `initPaymentSheet()`.
 
 ## Colors
 
@@ -112,3 +116,5 @@ primaryButton: {
   },
 
 ```
+
+Now you can test the payments on your app and go-live!

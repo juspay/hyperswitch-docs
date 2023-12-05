@@ -1,10 +1,12 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: Integrate hyper SDK to your React Web App using Hyperswitch-node
 ---
 
 # Node And React
 
-## Integrate Unified Checkout using Node Backend and React Frontend
+{% hint style="info" %}
+In this section, you will get details to Integrate Unified Checkout using Node Backend and React Frontend
+{% endhint %}
 
 **Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyper` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
@@ -301,3 +303,5 @@ Callback for these event will be triggered with following event object.
   blur: boolean,
 }
 ```
+
+Congratulations! Now that you have integrated the  unified checkout on your app, you can customize the payment elements to blend with the rest of your app.&#x20;

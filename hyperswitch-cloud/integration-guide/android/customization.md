@@ -1,10 +1,12 @@
 ---
-description: Customize your Android Unified check
+description: Customize your Android Unified checkout
 ---
 
 # Customization
 
-You can customize the Android Unified Checkout to support your checkout context and brand guidelines by changing fonts, colors, shapes and layouts(coming soon).
+{% hint style="info" %}
+You can customize the Android Unified Checkout to support your checkout context and brand guidelines by changing fonts, colors, shapes and layouts.
+{% endhint %}
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
 
@@ -36,7 +38,7 @@ Modify the color categories in `PaymentSheet.Colors` to customize the colors on 
 | subtitle         | Color of secondary text like prompts for input fields                          |
 | surface          | Color of the payment page                                                      |
 
-## shapes
+## Shapes
 
 Modify the corner radius and border width used across the payment page using `appearance.shapes`.
 
@@ -44,3 +46,5 @@ Modify the corner radius and border width used across the payment page using `ap
 | ------------------- | ---------------------------------------------------------------------------------------------- |
 | borderStrokeWidthDp | Width of the border used to across input fields, tabs and other components of the payment page |
 | cornerRadiusDp      | Corner radius of the input fields, tabs and other components                                   |
+
+Now you can test the payments on your app and go-live!

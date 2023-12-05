@@ -1,6 +1,12 @@
+---
+description: Customize your Web unified checkout
+---
+
 # Customization
 
-You can customize the Unified Checkout to support your checkout context and brand guidelines by using Layouts and Styling APIs.
+{% hint style="info" %}
+You can customize the Unified Checkout to support your checkout context and brand guidelines by using Layouts and Styling APIs
+{% endhint %}
 
 ## 1. Layouts
 
@@ -189,3 +195,7 @@ We support the following locales -
 * Japanese (ja)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team.
+
+
+
+Now you can test the payments on your app and go-live!
