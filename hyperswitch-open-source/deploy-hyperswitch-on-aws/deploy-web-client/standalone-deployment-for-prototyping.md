@@ -20,7 +20,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 
 > #### Note
 >
-> You can directly start from [Step 3](standalone-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-deployment-for-prototyping.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 
