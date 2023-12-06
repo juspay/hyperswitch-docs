@@ -8,7 +8,7 @@ description: An alternate integration with more control over UI
 This section will help you get an overview of Widgets, in case you want more control over the UI elements
 {% endhint %}
 
-At Hyperswitch, we recognize that every merchant holds a distinctive vision for their app and may require greater influence over both the user interface (UI) and payment processes. If you seek alternatives to conventional payment elements and wish to incorporate specific logic and UI components seamlessly into your checkout page, exploring our Hyper Widgets might be the perfect solution for you.
+At Hyperswitch, we recognize that every merchant holds a distinctive vision for their app and may require greater influence over both the user interface (UI) and payment processes. If you seek alternatives to conventional payment elements and wish to incorporate specific logic and UI components seamlessly into your checkout page, Hyper Widgets might be the perfect solution for you.
 
 Hyper Widgets emerge as versatile tools that empower businesses to seamlessly integrate and enhance their payment experiences. These widgets are customizable, feature-rich components designed to simplify the implementation of various payment-related functionalities on websites and applications.
 

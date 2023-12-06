@@ -5,20 +5,24 @@ description: Make your first payment and refund through Hyperswitch
 # 💵 Test a payment
 
 {% hint style="info" %}
-Here, you'll be making a Payment using your local Hyperswitch setup, via your preferred payment provider.&#x20;
+Here, you'll be making a Payment using your Hyperswitch setup, via your preferred payment provider.&#x20;
 {% endhint %}
 
 ***
 
 ## Test on web client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-Once you have successfully run the web client, you should be able to test the payments.
+Once you have successfully run the web client, you should be able to test the payments.&#x20;
 
-**Local:** After running the web client, you will see the demo web app (playground) running on `http://localhost:4242` where you can test your payments.
+{% hint style="warning" %}
+[Account setup ](account-setup/)is a pre-requisite before you can test the payments.
+{% endhint %}
 
-**Web App:** In case you have hosted the SDK and integrated it on your app, you can do a usual release of your app. Post successful deployment, you can test the payments on your app url.
+**Local:** After running the web client, you will see the demo web app (playground) running on `http://localhost:5252` where you can test your payments.
 
-**Playground deployment:** In case you have [deployed the demo app playground](deploy-hyperswitch-on-aws/deploy-web-client/standalone-deployment-for-prototyping.md), you will see the playground up and running on the public IP that you received after deployment.
+**Self Hosted Web App:** In case you have hosted the SDK and integrated it on your app, you can do a usual release of your app. Post successful deployment, you can test the payments on your app url.
+
+**Playground deployment:** In case you have [deployed the demo app playground](deploy-hyperswitch-on-aws/deploy-web-client/standalone-deployment-for-prototyping-optional.md), you will see the playground up and running on the public IP that you received after deployment.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-09 at 5.25.15 PM.png" alt=""><figcaption></figcaption></figure>
 

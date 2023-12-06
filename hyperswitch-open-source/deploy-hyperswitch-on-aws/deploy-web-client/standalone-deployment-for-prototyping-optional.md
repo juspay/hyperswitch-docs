@@ -2,7 +2,7 @@
 description: Quickly deploy your web client playground and see it in action
 ---
 
-# Standalone deployment for prototyping
+# Standalone deployment for prototyping (OPTIONAL)
 
 {% hint style="info" %}
 In this chapter, you will deploy Hyperswitch web client playground on AWS cloud.&#x20;
@@ -20,7 +20,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 
 > #### Note
 >
-> You can directly start from [Step 3](standalone-deployment-for-prototyping.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 
@@ -110,10 +110,10 @@ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 #### Step 3 - Setup Hyperswitch web client playground
 
 {% hint style="danger" %}
-The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperwitch-web` setups the playground for you-> which is a fullstack application. We ensure that the **secret key stays in the server side** and the publishable key stays in the client side, we insist you do the same for your application when you move to a Production ready setup
+The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperswitch-web` setups the playground for you-> which is a fullstack application. We ensure that the **secret key stays in the server side** and the publishable key stays in the client side, we insist you do the same for your application when you move to a Production ready setup
 {% endhint %}
 
-You can now deploy the hyperswitch web client application by running the below command in the same terminal session
+You can now deploy the Hyperswitch web client application by running the below command in the same terminal session
 
 {% hint style="info" %}
 Takes around 10-15 min to execute successfully
@@ -136,9 +136,13 @@ You will either get these keys as an output when you host the app server, or for
 
 **Optional:**
 
-1. **URL where you have hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `sandbox.hyperswitch.io`
-2. **URL where you have hosted Hyperswitch Client SDK** - This is the Hyperloader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path})`. If not provided, this will default to `https://beta.hyperswitch.io/v1`
+1. **URL where you have hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `https://sandbox.hyperswitch.io`
+2. **URL where you have hosted Hyperswitch Client SDK** - This is the HyperLoader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path})`. If not provided, this will default to `https://beta.hyperswitch.io/v1`
 3. **AWS Region -** This is the AWS region where you will host you web client. If not provided, it will default to `us-east-2`.
+
+{% hint style="warning" %}
+Depending on the API version and changes made to the web client, the web client may or may not be compatible with the SaaS app server.
+{% endhint %}
 
 Once the script is executed, you will receive a `Public IP` as the response (e.g. `http://34.207.75.225`). This IP is the base URL for accessing the web client playground.
 

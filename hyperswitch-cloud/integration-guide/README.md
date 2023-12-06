@@ -1,5 +1,5 @@
 ---
-description: Get started integrating the Hyperswitch web client on your app
+description: Get started integrating the Hyperswitch web client in your app
 ---
 
 # 📦 Integration guide
