@@ -115,7 +115,7 @@ Make sure to save the keys and passwords you provide while running the script
 
 ### Integrating it with your Application&#x20;
 
-To start using it with Hyperswitch update the following environment variables while deploying. You can use it any other tenant application using the respective card vault URL and JWE keys.
+To start using it with Hyperswitch update the following environment variables while deploying. You can use it with any other tenant application using the respective card vault URL and JWE keys.
 
 ```bash
 ROUTER__LOCKER__HOST= # add the ip address of the ec2 instance created
