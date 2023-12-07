@@ -127,10 +127,6 @@
     * [Compatibility](features/e-commerce-platform-plugins/woocommerce-plugin/compatibility.md)
     * [FAQs](features/e-commerce-platform-plugins/woocommerce-plugin/faqs.md)
 * [🔗 Payment links](features/payment-links.md)
-* [⚙ Hyper Widgets](features/hyper-widgets/README.md)
-  * [Node and React](features/hyper-widgets/node-and-react.md)
-  * [Node and HTML](features/hyper-widgets/node-and-html.md)
-  * [REST API and HTML](features/hyper-widgets/rest-api-and-html.md)
 * [🚩 Disputes/Chargebacks Management](features/disputes.md)
 
 ## Learn more
