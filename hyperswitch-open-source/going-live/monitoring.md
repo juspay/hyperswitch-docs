@@ -210,3 +210,7 @@ let loggingLevel = "DEBUG";
 ```
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-24 at 5.00.03 PM.png" alt=""><figcaption><p>Understanding Logging Levels</p></figcaption></figure>
+
+## Next Steps
+
+Once you've completed the aforementioned steps for logging and monitoring, you can initiate a payment via the SDK and trace it within the logging dashboard using identifiers such as the request ID or order ID.
