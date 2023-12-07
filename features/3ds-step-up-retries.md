@@ -18,6 +18,8 @@ This section covers how 3DS Step-up retries function, the supported payment proc
 
 The flow looks like the following:
 
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-07 at 5.56.20 PM.png" alt=""><figcaption></figcaption></figure>
+
 ## Supported Payment processors
 
 Hyperswitch supports the following processors for 3DS Step-up retries.
