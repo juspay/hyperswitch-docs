@@ -14,7 +14,7 @@ There are two possible types of payment retry flows:
 
 **Smart Retries:** These retries are applicable where a user action is not required (after entering the card information) to complete a payment. Below are some example scenarios:
 
-* Scenario 1: If the payment is a _non-3DS card transaction_ and the payment is declined by the primary processor due to a _business failure_, the payment _will be retried_.
+* Scenario 1: If the payment is a non-3DS card transaction and the payment is declined by the primary processor due to technical or business failures, it will be retried.
 * Scenario 2: If the payment is a _3DS card transaction_ and the payment is declined by the primary processor due to a _technical failure_, the payment _will be retried_.
 * Scenario 3: If the payment is a _3DS card transaction_ and the payment is declined by the primary processor due to a _business failure_, the payment _will not be retried_.
 
@@ -27,6 +27,7 @@ There are two possible types of payment retry flows:
 Hyperswitch supports the following primary processors for automatic retries.
 
 * Stripe
+* Bluesnap
 * Checkout.com
 * Trustpay
 
@@ -75,7 +76,7 @@ For example, if the merchant had sent pay\_abcd145efg, then Hyperswitch will sen
 
 The user experience will not be different from a regular checkout experience, since all retry attempts will happen silently in the background. However, there is a possibility of the user receiving multiple payment attempt notifications / sms from the card issuing bank due to the card payment being attempted for more than once.
 
-### What is the different between fallback and smart retry?
+### What is the difference between fallback and smart retry?
 
 Fallback is a pecking order of all the configured processors which is used to route traffic standalone or when other smart routing rules are not applicable for the particular transaction. You can reorder the list with simple drag and drop from the Routing > Default fallback > Manage section in the dashboard.
 
