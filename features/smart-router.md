@@ -1,22 +1,18 @@
 ---
-description: Infinite control over managing your payments
+description: Route your payments seamlessly with the Smart Router.
 ---
 
-# 🛣 Smart router
+# 🛣 Smart Router
 
 {% hint style="info" %}
 With this section, find out how smart router is the key to channeling payments across multiple processors easily.
 {% endhint %}
-
-<figure><img src="../.gitbook/assets/smart_router.png" alt=""><figcaption></figcaption></figure>
 
 ## Prerequisites
 
 To get started with  Smart Router , we need to have atleast one Payment Processor integrated . If no  payment processor have been integrated ,one can integrate any Payment Processor of their choice by following the [Connector Integration](../hyperswitch-cloud/connectors/) docs.
 
 ## No-code payments routing
-
-
 
 While channelling payments across multiple processors on a daily basis is cumbersome, it could be vital to optimizing your payment processing costs as your business needs evolve constantly or as new payment processors provide competitive pricing and so on. Hence, Hyperswitch’s Smart Router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
 
@@ -32,7 +28,7 @@ While channelling payments across multiple processors on a daily basis is cumber
 
 Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
-<figure><img src="broken-reference" alt=""><figcaption><p>The Smart Routing Flow</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
 
 ## How to configure the Smart Router?
 
@@ -44,7 +40,7 @@ Hyperswitch Smart Router Engine evaluates every payment request against your pre
 
 ## Next step&#x20;
 
-To test the Smart Router, after activating one rule  , we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
+To test the Smart Router, after activating one rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
 
 ## How to setup the Smart Router?
 

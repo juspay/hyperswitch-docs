@@ -68,7 +68,7 @@
   * [💳 Cards](hyperswitch-cloud/payment-methods-setup/cards.md)
   * [📱 Wallets](hyperswitch-cloud/payment-methods-setup/wallets.md)
   * [📆 Pay Later](hyperswitch-cloud/payment-methods-setup/pay-later.md)
-  * [🏦 Banks](hyperswitch-cloud/payment-methods-setup/banks/README.md)
+  * [🏦 Banks](hyperswitch-cloud/payment-methods-setup/banks.md)
     * [Bank Debits](hyperswitch-cloud/payment-methods-setup/banks/bank-debits.md)
     * [Bank Redirects](hyperswitch-cloud/payment-methods-setup/banks/bank-redirects.md)
     * [Bank Transfers](hyperswitch-cloud/payment-methods-setup/banks/bank-transfers.md)
@@ -105,7 +105,7 @@
 
 ## Features
 
-* [🛣 Smart router](features/smart-router.md)
+* [🛣 Smart Router](features/smart-router.md)
   * [Rule Based Routing](features/smart-router/rule-based-routing.md)
   * [Volume Based Routing](features/smart-router/volume-based-routing.md)
   * [Default Fallback Routing](features/smart-router/default-fallback-routing.md)

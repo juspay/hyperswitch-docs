@@ -1,5 +1,5 @@
 ---
-description: Configure advanced rules to enable payment authentication
+description: Configure advanced rules with various payment parameters
 ---
 
 # 📋 3DS decision manager

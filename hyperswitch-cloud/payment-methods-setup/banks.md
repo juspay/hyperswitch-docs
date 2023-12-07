@@ -24,7 +24,7 @@ Apart from cards (47%) and digital wallets (28%), bank transfer (9%) is the thir
 
 
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Bank Debits</strong></td><td></td><td></td><td><a href="bank-debits.md">bank-debits.md</a></td><td><a href="../../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr><tr><td><strong>Bank Redirects</strong></td><td></td><td></td><td><a href="bank-redirects.md">bank-redirects.md</a></td><td><a href="../../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr><tr><td><strong>Bank Transfers</strong></td><td></td><td></td><td><a href="bank-transfers.md">bank-transfers.md</a></td><td><a href="../../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Bank Debits</strong></td><td></td><td></td><td><a href="banks/bank-debits.md">bank-debits.md</a></td><td><a href="../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr><tr><td><strong>Bank Redirects</strong></td><td></td><td></td><td><a href="banks/bank-redirects.md">bank-redirects.md</a></td><td><a href="../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr><tr><td><strong>Bank Transfers</strong></td><td></td><td></td><td><a href="banks/bank-transfers.md">bank-transfers.md</a></td><td><a href="../../.gitbook/assets/banks.jpg">banks.jpg</a></td></tr></tbody></table>
 
 ##
 
