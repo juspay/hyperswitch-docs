@@ -45,7 +45,7 @@ export AWS_SECRET_ACCESS_KEY=<Your Secret_Access_Key> // e.g., export AWS_SECRET
 export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 ```
 
-### Step 3 - Deploy Hyperswitch application
+### Step 3 - Deploy Card Vault
 
 Run the below commands in the same terminal session
 
@@ -112,4 +112,14 @@ On successful deployment of the Card Vault you will receive the following
 {% hint style="warning" %}
 Make sure to save the keys and passwords you provide while running the script
 {% endhint %}
+
+### Integrating it with your Application&#x20;
+
+To start using it with Hyperswitch update the following environment variables while deploying. You can use it any other tenant application using the respective card vault URL and JWE keys.
+
+```bash
+ROUTER__LOCKER__HOST= # add the ip address of the ec2 instance created
+ROUTER__JWEKEY__VAULT_ENCRYPTION_KEY= # add the JWE public key of locker generated above
+ROUTER__JWEKEY__VAULT_PUBLIC_KEY= # add the JWE private key of tenant generated above
+```
 
