@@ -48,7 +48,7 @@
     * [React Native](hyperswitch-cloud/quickstart/migrate-from-stripe/react-native.md)
   * [🥗 Payment Recipes](hyperswitch-cloud/quickstart/payment-recipes/README.md)
     * [Use PayPal With Stripe](hyperswitch-cloud/quickstart/payment-recipes/use-paypal-with-stripe.md)
-* [⚙ Account setup](hyperswitch-cloud/account-setup.md)
+* [⚙ Control Centre Account setup](hyperswitch-cloud/control-centre-account-setup.md)
 * [📦 Integration guide](hyperswitch-cloud/integration-guide/README.md)
   * [🌐 Web](hyperswitch-cloud/integration-guide/web/README.md)
     * [Node And React](hyperswitch-cloud/integration-guide/web/node-and-react.md)

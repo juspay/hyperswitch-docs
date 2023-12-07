@@ -19,9 +19,11 @@ In this section, you would be running the control center through which you can m
 
 ## Standard Installation
 
-### Prerequisites
+### Pre-Requisites
 
-1. Node.js and npm installed on your machine.
+{% hint style="info" %}
+Node.js and npm installed on your machine.
+{% endhint %}
 
 ### Installation Steps
 
@@ -59,3 +61,5 @@ Follow these simple steps to set up Hyperswitch on your local machine.
     npm run start
     ```
 7. Access the application in your browser at [http://localhost:9000](http://localhost:9000/).
+
+**Further Steps :-** [Setup for the web client](run-web-client.md) and complete the local setup.
