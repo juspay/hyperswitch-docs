@@ -10,7 +10,7 @@ This section covers the frequently asked questions you might have around 3DS Dec
 
 ### FAQs
 
-What are the parameters that I can use to configure 3DS rules?
+1. What are some of the payment parameters that I can use to configure 3DS rules?
 
 * amount - set rules for a specific value or a range of values for the transaction amount
 * currency - select the currency of transaction
@@ -20,5 +20,5 @@ What are the parameters that I can use to configure 3DS rules?
 
 2. How do I update the current configuration?\
    Click on Create New and configure a new rule that would replace the existing configuration
-3. What happens if I set `authentication_type` as `no_three_ds` in `/payments` request?\
-   3D Secure will be enforced even if the payment request parameters conform to any one of the rules in the active 3DS Decision Manager
+3. What happens if I set `authentication_type` as `three_ds` in `/payments` request?\
+   3D Secure will be enforced and override the 3DS Decision Manager's decision

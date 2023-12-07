@@ -8,11 +8,13 @@ If you're looking for a production grade deployment of the card vault to be used
 
 ## Standalone deployment of the Hyperswitch Card Vault for prototyping
 
-### **Prerequisites**
+{% hint style="warning" %}
+Pre-requisites
 
 * `git` installed on your local machine
 * node version 18
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+{% endhint %}
 
 ### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
