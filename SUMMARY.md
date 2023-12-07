@@ -57,7 +57,7 @@
   * [📱 Android](hyperswitch-cloud/integration-guide/android/README.md)
     * [Kotlin with Node Backend](hyperswitch-cloud/integration-guide/android/kotlin-with-node-backend.md)
     * [Customization](hyperswitch-cloud/integration-guide/android/customization.md)
-  * [📱 IOS](hyperswitch-cloud/integration-guide/ios/README.md)
+  * [📱 iOS](hyperswitch-cloud/integration-guide/ios/README.md)
     * [Swift with Node Backend](hyperswitch-cloud/integration-guide/ios/swift-with-node-backend.md)
     * [Customization](hyperswitch-cloud/integration-guide/ios/customization.md)
   * [⏺ React Native](hyperswitch-cloud/integration-guide/react-native/README.md)

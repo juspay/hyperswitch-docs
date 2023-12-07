@@ -17,9 +17,9 @@ For quick prototyping, you can also try out deploying the full stack integrated 
 
 This guide is aimed at helping you deploy the Web client on the cloud and access it over the internet.
 
-1. Production ready deployment of web client: At the end of this step, you will host the web client SDK (HyperLoader.js) on the cloud to serve your customers. &#x20;
-2. Integrate on your app and deploy: Once HyperLoader.js is deployed on cloud, you can integrate the SDK in your web app. You can deploy this as a part of your regular deployment.
-3. Deploying the playground for quick prototyping **(OPTIONAL)**: The web client comes with a full stack playground for quick prototyping. You can test the deployment with a single script and get a feel of the product before you integrate it on your app.
+
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Production ready deployment of web client</td><td></td><td>Host the web client SDK (HyperLoader.js) on the cloud to serve your customers.</td></tr><tr><td>Integrate on your app and deploy</td><td><p></p><p>Once HyperLoader.js is deployed on cloud, integrate the SDK in your web app. You can deploy this as a part of your regular deployment.</p></td><td></td></tr><tr><td>Deploying the playground for quick prototyping (OPTIONAL)</td><td>The web client comes with a full stack playground for quick prototyping. Test the deployment with a single script and get a feel of the product before you integrate it on your app.</td><td></td></tr></tbody></table>
 
 
 
