@@ -102,13 +102,18 @@
 
 ## Features
 
-* [🛣 Smart router](features/smart-router.md)
+* [🛣 Smart router](features/smart-router/README.md)
+  * [Rule Based Routing](features/smart-router/rule-based-routing.md)
+  * [Volume Based Routing](features/smart-router/volume-based-routing.md)
+  * [Default Fallback Routing](features/smart-router/default-fallback-routing.md)
 * [🔁 Mandates & recurring payments](features/mandates-and-recurring-payments.md)
 * [🔓 Tokenization & saved cards](features/tokenization-and-saved-cards.md)
 * [💵 Payouts](features/payouts.md)
 * [🔃 Smart retries](features/smart-retries.md)
 * [🛡 Fraud & risk management](features/fraud-and-risk-management.md)
-* [📋 3DS decision manager](features/3ds-decision-manager.md)
+* [📋 3DS decision manager](features/3ds-decision-manager/README.md)
+  * [Setup](features/3ds-decision-manager/setup.md)
+  * [FAQs](features/3ds-decision-manager/faqs.md)
 * [📊 Business units manager](features/business-units-manager.md)
 * [🎛 Payment operations](features/payment-operations.md)
 * [🛍 E-commerce platform plugins](features/e-commerce-platform-plugins/README.md)
