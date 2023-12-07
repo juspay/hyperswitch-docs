@@ -5,7 +5,7 @@ description: Make your first payment and refund through Hyperswitch
 # 💵 Test a payment
 
 {% hint style="info" %}
-Here, you'll be making a Payment using your Hyperswitch setup, via your preferred payment provider.&#x20;
+Here, you'll be making a payment using your Hyperswitch setup, via your preferred payment provider.&#x20;
 {% endhint %}
 
 ***
@@ -40,12 +40,31 @@ On confirming the payment, you will see the the Payment confirmation screen.
 
 Congrats! you have successfully tested an end-to-end payment with your own app server and a web client.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 In case you have integrated the web client on your app and want to test a payment, the payment status confirmation screen has to be handled by you. You will see that post payment confirmation.
 {% endhint %}
 
 The app server is more powerful than just processing the payments. You can test refunds, subscription payments and more using the app server.
 
-## **Resources** <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-* To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3).
+
+<details>
+
+<summary>Troubleshooting</summary>
+
+1. **I cannot see the Web app playground running on `http://localhost:5252`**\
+   This can happen when the playground's server or client are not run properly. Please check your terminal for any errors. The errors are directive, and should be able to pinpoint the issue. You can restart the playground using `npm run start:playground`\
+   Please make sure that you are sending the publishable key correctly.
+2. **I have hosted the web client successfully, but cannot see the payment element**\
+   Please check the console errors. Please make sure that the publishable key and api key are correct. Please verify if the web client is initiated with a valid client secret.\
+   Also make sure that HyperLoader.js is hosted successfully. You can open that URL on browser and see if the bundle is correct. In Network tab, check if the HyperLoader.js is called correctly. If not, please verify the env file and make sure that the correct URL is set.
+3. **I am unable to complete the payment**\
+   There can be multiple reasons for this. Please make sure that you have correctly followed all the steps in [account setup ](account-setup/)section.\
+   Also make sure that you have configured at least 1 connector.
+4. **After payment, I see a `Page Not Found` error.**\
+   This can be a demo playground issue and not an issue with the web client. Please make sure that the return URL is correctly set.
+5. **My transactions are  failing.** \
+   This can happen when the connector is not correctly configured. Please make sure that the configured API keys are correct. In case of card payments, make sure that you have enabled raw card processing on the connector dashboard.\
+   An exhaustive list of error and the corrective items are [here](https://api-reference.hyperswitch.io/essentials/error\_codes).
+
+</details>
