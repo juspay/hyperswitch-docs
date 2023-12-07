@@ -32,31 +32,31 @@ let hyper = useHyper();
 
 Use `hyper.confirmPayment` to confirm a PaymentIntent using data collected by the Payment Element. When called, `hyper.confirmPayment` will attempt to complete any required actions, such as authenticating your user by displaying a 3DS dialog or redirecting them to a bank authorization page. Your user will be redirected to the return\_url you pass once the confirmation is complete.
 
-| options (Required)     | Description                                                                                                                                                                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| elements (object)      | **Required**. The Elements instance that was used to create the Payment Element.                                                                                                                                                                                                                   |
-| confirmParams (object) | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
-| redirect (string)      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
+| options (Required)       | Description                                                                                                                                                                                                                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `elements (object)`      | **Required**. The Elements instance that was used to create the Payment Element.                                                                                                                                                                                                                   |
+| `confirmParams (object)` | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
+| `redirect (string)`      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
 
 **ConfirmParams object**
 
 | confirmParams                  | Description                                                                                                                                                                                                                                                                                                               |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| return\_url(string)            | **Required**. The url your customer will be directed to after they complete payment.                                                                                                                                                                                                                                      |
-| shipping (object)              | The shipping details for the payment, if collected.                                                                                                                                                                                                                                                                       |
-| payment\_method\_data (object) | When you call `hyper.confirmPayment`, payment details are collected from the `HyperElement` and passed to the PaymentIntents confirm endpoint as the `payment_method_data` parameter. You can also include additional payment\_method\_data fields, which will be merged with the data collected from the `HyperElement`. |
+| `return_url(string)`           | **Required**. The url your customer will be directed to after they complete payment.                                                                                                                                                                                                                                      |
+| `shipping (object)`            | The shipping details for the payment, if collected.                                                                                                                                                                                                                                                                       |
+| `payment_method_data (object)` | When you call `hyper.confirmPayment`, payment details are collected from the `HyperElement` and passed to the PaymentIntents confirm endpoint as the `payment_method_data` parameter. You can also include additional payment\_method\_data fields, which will be merged with the data collected from the `HyperElement`. |
 
 #### 2. `hyper.elements(options)`
 
 This method creates an Elements instance, which manages a group of elements.
 
-| options (Required)    | Description                                                                                                                                                                                                                |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| font (array)          | An array of custom fonts, which elements created from the Elements object can use. Fonts can be specified as CssFontSource or CustomFontSource objects.                                                                    |
-| locale (string)       | A locale to display placeholders and error strings in. Default is auto (HyperSwitch detects the locale of the browser).                                                                                                    |
-| clientSecret (string) | **Required** Required to use with the Unified Checkout and Hyper Widgets.                                                                                                                                                  |
-| appearance (object)   | Match the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                       |
-| loader (variants)     | **Can be either 'auto', 'always' or 'never'** Display skeleton loader UI while waiting for Elements to be fully loaded, after they are mounted. Default is 'auto' (HyperSwitch determines if a loader UI should be shown). |
+| options (Required)      | Description                                                                                                                                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `font (array)`          | An array of custom fonts, which elements created from the Elements object can use. Fonts can be specified as CssFontSource or CustomFontSource objects.                                                                    |
+| `locale (string)`       | A locale to display placeholders and error strings in. Default is auto (HyperSwitch detects the locale of the browser).                                                                                                    |
+| `clientSecret (string)` | **Required** Required to use with the Unified Checkout and Hyper Widgets.                                                                                                                                                  |
+| `appearance (object)`   | Match the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                       |
+| `loader (variants)`     | **Can be either 'auto', 'always' or 'never'** Display skeleton loader UI while waiting for Elements to be fully loaded, after they are mounted. Default is 'auto' (HyperSwitch determines if a loader UI should be shown). |
 
 #### 3.`hyper.confirmCardPayment(clientSecret,data?,options?)`
 
@@ -64,15 +64,15 @@ Use `hyper.confirmCardPayment` when the customer submits your payment form. When
 
 `clientSecret` is a required string.
 
-| data                    | Description                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------ |
-| payment\_method(object) | An object containing data to create a PaymentMethod with.                            |
-| shipping (object)       | The shipping details for the payment, if collected.                                  |
-| return\_url (string)    | **Required**. The url your customer will be directed to after they complete payment. |
+| data                     | Description                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| `payment_method(object)` | An object containing data to create a PaymentMethod with.                            |
+| `shipping (object)`      | The shipping details for the payment, if collected.                                  |
+| `return_url (string)`    | **Required**. The url your customer will be directed to after they complete payment. |
 
-| options                | Description                                               |
-| ---------------------- | --------------------------------------------------------- |
-| handleActions(boolean) | An object containing data to create a PaymentMethod with. |
+| options                  | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `handleActions(boolean)` | An object containing data to create a PaymentMethod with. |
 
 `payment_method` example
 
@@ -93,18 +93,18 @@ Retrieve a PaymentIntent using its client secret.
 
 Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a PaymentRequest requires that you configure it with an options object.
 
-| options (Required)          | Description                                                                                                                                                                                                                                         |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country (string)            | **Required**. The two-letter country code of your HyperSwitch account (e.g., US).                                                                                                                                                                   |
-| currency (string)           | **Required**. Three character currency code (e.g., USD).                                                                                                                                                                                            |
-| total (object)              | **Required**. A PaymentItem object. This PaymentItem is shown to the customer in the browser’s payment interface.                                                                                                                                   |
-| displayItems (array)        | An array of PaymentItem objects. These objects are shown as line items in the browser’s payment interface. Note that the sum of the line item amounts does not need to add up to the total amount above.                                            |
-| requestPayerName (boolean)  | **recommended** By default, the browser‘s payment interface only asks the customer for actual payment information. A customer name can be collected by setting this option to true. This collected name will appears in the PaymentResponse object. |
-| requestPayerEmail (boolean) | Request the payer's email-id.                                                                                                                                                                                                                       |
-| requestPayerPhone (boolean) | request payer's phone number                                                                                                                                                                                                                        |
-| requestShipping (boolean)   | request payer's shipping information                                                                                                                                                                                                                |
-| shippingOptions (array)     | An array of ShippingOption objects. The first shipping option listed appears in the browser payment interface as the default option.                                                                                                                |
-| disableWallets (array)      | An array of wallet strings. Can be one or more of applePay, googlePay, link, and browserCard. Use this option to disable Apple Pay, Google Pay, Link, and/or browser-saved cards.                                                                   |
+| options (Required)            | Description                                                                                                                                                                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `country (string)`            | **Required**. The two-letter country code of your HyperSwitch account (e.g., US).                                                                                                                                                                   |
+| `currency (string)`           | **Required**. Three character currency code (e.g., USD).                                                                                                                                                                                            |
+| `total (object)`              | **Required**. A PaymentItem object. This PaymentItem is shown to the customer in the browser’s payment interface.                                                                                                                                   |
+| `displayItems (array)`        | An array of PaymentItem objects. These objects are shown as line items in the browser’s payment interface. Note that the sum of the line item amounts does not need to add up to the total amount above.                                            |
+| `requestPayerName (boolean)`  | **recommended** By default, the browser‘s payment interface only asks the customer for actual payment information. A customer name can be collected by setting this option to true. This collected name will appears in the PaymentResponse object. |
+| `requestPayerEmail (boolean)` | Request the payer's email-id.                                                                                                                                                                                                                       |
+| `requestPayerPhone (boolean)` | request payer's phone number                                                                                                                                                                                                                        |
+| `requestShipping (boolean)`   | request payer's shipping information                                                                                                                                                                                                                |
+| `shippingOptions (array)`     | An array of ShippingOption objects. The first shipping option listed appears in the browser payment interface as the default option.                                                                                                                |
+| `disableWallets (array)`      | An array of wallet strings. Can be one or more of applePay, googlePay, link, and browserCard. Use this option to disable Apple Pay, Google Pay, Link, and/or browser-saved cards.                                                                   |
 
 `clientSecret` is a required string.
 
@@ -136,23 +136,23 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 | options (Required) | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| classes (object)   | Set custom class names on the container DOM element when the Hyper element is in a particular state.                                           |
-| style              | Customize the appearance of this element using CSS properties passed in a Style object.                                                        |
-| hidePostalCode     | Hide the postal code field. Default is false. If you are already collecting a full billing address or postal code elsewhere, set this to true. |
-| iconStyle          | Appearance of the icon in the Element. Either solid or default.                                                                                |
-| hideIcon           | Hides the icon in the Element. Default is false.                                                                                               |
-| disabled           | Applies a disabled state to the Element such that user input is not accepted. Default is false.                                                |
+| `classes (object)` | Set custom class names on the container DOM element when the Hyper element is in a particular state.                                           |
+| `style`            | Customize the appearance of this element using CSS properties passed in a Style object.                                                        |
+| `hidePostalCode`   | Hide the postal code field. Default is false. If you are already collecting a full billing address or postal code elsewhere, set this to true. |
+| `iconStyle`        | Appearance of the icon in the Element. Either solid or default.                                                                                |
+| `hideIcon`         | Hides the icon in the Element. Default is false.                                                                                               |
+| `disabled`         | Applies a disabled state to the Element such that user input is not accepted. Default is false.                                                |
 
 
 
 **Classes object**
 
-| classes  | Description                                                                              |
-| -------- | ---------------------------------------------------------------------------------------- |
-| base     | The base class applied to the container. Defaults to HyperElement.                       |
-| complete | The class name to apply when the Element is complete. Defaults to HyperElement—complete. |
-| focus    | The class name to apply when the Element is focused. Defaults to HyperElement--focus.    |
-| invalid  | The class name to apply when the Element is invalid. Defaults to HyperElement--invalid.  |
+| classes    | Description                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------- |
+| `base`     | The base class applied to the container. Defaults to HyperElement.                       |
+| `complete` | The class name to apply when the Element is complete. Defaults to HyperElement—complete. |
+| `focus`    | The class name to apply when the Element is focused. Defaults to HyperElement--focus.    |
+| `invalid`  | The class name to apply when the Element is invalid. Defaults to HyperElement--invalid.  |
 
 
 
@@ -164,11 +164,11 @@ If you collect certain information in a different part of your interface (e.g., 
 
 The styles of an Element can be dynamically changed using element.update. This method can be used to simulate CSS media queries that automatically adjust the size of elements when viewed on different devices
 
-| options               | Description                                                                                                                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| locale (string)       | A locale to display placeholders and error strings in. Default is auto (Hyperswitch detects the locale of the browser).Setting the locale does not affect the behavior of postal code validation—a valid postal code for the billing country of the card is still required. |
-| appearance (object)   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
-| clientSecret (string) | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
+| options                 | Description                                                                                                                                                                                                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `locale (string)`       | A locale to display placeholders and error strings in. Default is auto (Hyperswitch detects the locale of the browser).Setting the locale does not affect the behavior of postal code validation—a valid postal code for the billing country of the card is still required. |
+| `appearance (object)`   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
+| `clientSecret (string)` | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
 
 
 
@@ -178,7 +178,7 @@ The styles of an Element can be dynamically changed using element.update. This m
 
 This component wraps around the entire app and it consumes 2 parameters -
 
-<table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td>hyper (promise)</td><td>This is the response that you get after calling the  loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td>options (object)</td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
+<table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td><code>hyper (promise)</code></td><td>This is the response that you get after calling the  loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td><code>options (object)</code></td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
 
 
 
@@ -186,14 +186,14 @@ This component wraps around the entire app and it consumes 2 parameters -
 
 This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.&#x20;
 
-| parameters                      | Description                                                                                          |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| options (object)                | This has the same API as elements.create()                                                           |
-| onChange (function:event=>unit) | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout  |
-| onReady (function:event=>unit)  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                 |
-| onFocus (function:event=>unit)  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout.  |
-| onBlur (function:event=>unit)   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.  |
-| onClick (function:event=>unit)  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.    |
+| parameters                        | Description                                                                                          |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `options (object)`                | This has the same API as elements.create()                                                           |
+| `onChange (function:event=>unit)` | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout  |
+| `onReady (function:event=>unit)`  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                 |
+| `onFocus (function:event=>unit)`  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout.  |
+| `onBlur (function:event=>unit)`   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.  |
+| `onClick (function:event=>unit)`  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.    |
 
 ### `<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 

@@ -128,7 +128,9 @@ async function handleSubmit(e) {
 }
 ```
 
+{% hint style="info" %}
 Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
+{% endhint %}
 
 #### 2.2 Display a payment status message <a href="#32-display-a-payment-status-message" id="32-display-a-payment-status-message"></a>
 
@@ -164,7 +166,9 @@ async function checkStatus() {
 }
 ```
 
+{% hint style="success" %}
 That's it! You have successfully integrated your hosted web client on your web app. Now you can collect payments from your customers in a secure way.
+{% endhint %}
 
 The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
 

@@ -93,8 +93,8 @@ For more information, [click here](https://docs.aws.amazon.com/cli/latest/usergu
 
 For this step you would need the following from you AWS account
 
-1. Access key ID
-2. Secret Access Key
+1. `Access key ID`
+2. `Secret Access Key`
 
 You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
@@ -127,8 +127,8 @@ On running the above command, you will get an option to configure the following:
 
 **Mandatory:**&#x20;
 
-1. **Publishable Key -** This is a public key that resides on your client side for authentication
-2. **Secret Key -** This is the API key which should only be restricted to your app server
+1. **`Publishable Key` -** This is a public key that resides on your client side for authentication
+2. **`Secret Key` -** This is the API key which should only be restricted to your app server
 
 {% hint style="info" %}
 You will either get these keys as an output when you host the app server, or for quick prototyping, you can create a new Hyperswitch sandbox account [here](https://app.hyperswitch.io/login) and get started.

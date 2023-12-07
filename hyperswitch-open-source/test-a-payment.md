@@ -50,7 +50,7 @@ The app server is more powerful than just processing the payments. You can test 
 
 <details>
 
-<summary>Troubleshooting</summary>
+<summary>Troubleshooting/FAQs</summary>
 
 1. **I cannot see the Web app playground running on `http://localhost:5252`**\
    This can happen when the playground's server or client are not run properly. Please check your terminal for any errors. The errors are directive, and should be able to pinpoint the issue. You can restart the playground using `npm run start:playground`\

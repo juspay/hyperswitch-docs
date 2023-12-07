@@ -37,7 +37,11 @@ npm run start:dev
 
 This will trigger a build of the project. On a successful build, you should see a message `Compiled successfully` in your terminal.&#x20;
 
-Now you can proceed with launching the playground. The playground is a full stack integrated demo app where you can test your payments. In a separate terminal, run the following command to start the app on your local machine.
+Now you can proceed with launching the playground.&#x20;
+
+{% hint style="info" %}
+NOTE: The **playground** is a full stack integrated demo app where you can test your payments. In a separate terminal, run the following command to start the app on your local machine.
+{% endhint %}
 
 ```bash
 npm run start:playground
@@ -45,17 +49,13 @@ npm run start:playground
 
 This step will prompt you to enter 3 details that you must have received in the previous step when you set up the app server -&#x20;
 
-**Publishable Key -** This is a public key that resides on your client side for authentication
+| **Publishable Key**                                   |  This is a public key that resides on your client side for authentication                                                                                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Secret Key**                                        | This is the API key which should only be restricted to your app server                                                                                                                      |
+| **Self-hosted Hyperswitch Server URL**                |  This is the URL of your self-hosted[ **Hyperswitch app server**](run-app-server.md) (for eg., `http://localhost:8080`)                                                                     |
+| **Application Server URL (URL of your node server)**  | This is the URL of your playground server. Please note that this is just a playground setup for quick development and hence contains the server.js file. (for eg., `http://localhost:5252)` |
 
-**Secret Key -** This is the API key which should only be restricted to your app server
-
-**Self-hosted Hyperswitch Server URL -** This is the URL of your self-hosted[ **Hyperswitch app server**](run-app-server.md) (for eg., `http://localhost:8080`)
-
-**Self-hosted Hyperswitch Client URL** - This is the URL of your web client (HyperLoader.js), which will come in picture when you deploy it on cloud. For local setup, you need to enter `http://localhost:9050`&#x20;
-
-**Application Server URL (URL of your node server) -** This is the URL of your playground server. Please note that this is just a playground setup for quick development and hence contains the server.js file. (for eg., `http://localhost:5252)`
-
-
-
+{% hint style="success" %}
 Congratulations! You will now see the web app running on `http://localhost:9060` where you can test your payments.
+{% endhint %}
 
