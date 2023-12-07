@@ -2,13 +2,13 @@
 description: Quickly deploy your web client playground and see it in action
 ---
 
-# Standalone deployment for prototyping (OPTIONAL)
+# Playground deployment for prototyping (OPTIONAL)
 
 {% hint style="info" %}
-In this chapter, you will deploy Hyperswitch web client playground on AWS cloud.&#x20;
+Explore the web client's full stack playground for rapid prototyping using a single script to experience the product before integrating it into your app. You can also test your deployment on cloud, CDN configurations, etc. with this demo playground, before deploying your app.
+{% endhint %}
 
 Please note that this deployment is just for the demo-playground. This is **optional** and does not replace the integration step. In order to go-live, please integrate the web client onto your app before the deployment of your app
-{% endhint %}
 
 ## Steps to Deploy Hyperswitch web client on AWS
 
@@ -20,7 +20,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 
 > #### Note
 >
-> You can directly start from [Step 3](standalone-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](playground-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 

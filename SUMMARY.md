@@ -20,10 +20,10 @@
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
     * [🗄 Deploy app server](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server.md)
     * [🎛 Deploy Control Center](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center.md)
-    * [🖥 Deploy web client](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/README.md)
+    * [🖥 Deploy web client](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-web-client/README.md)
       * [Production ready deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment.md)
       * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
-      * [Standalone deployment for prototyping (OPTIONAL)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/standalone-deployment-for-prototyping-optional.md)
+      * [Playground deployment for prototyping (OPTIONAL)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
     * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault.md)
 * [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
   * [🎛 Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
@@ -127,6 +127,10 @@
     * [Compatibility](features/e-commerce-platform-plugins/woocommerce-plugin/compatibility.md)
     * [FAQs](features/e-commerce-platform-plugins/woocommerce-plugin/faqs.md)
 * [🔗 Payment links](features/payment-links.md)
+* [⚙ Hyper Widgets](features/hyper-widgets/README.md)
+  * [Node and React](features/hyper-widgets/node-and-react.md)
+  * [Node and HTML](features/hyper-widgets/node-and-html.md)
+  * [REST API and HTML](features/hyper-widgets/rest-api-and-html.md)
 * [🚩 Disputes/Chargebacks Management](features/disputes.md)
 
 ## Learn more

@@ -58,6 +58,24 @@ Even after a successful dispute challenge, a payment method issuer might deem th
 
 
 
+## #Managing Disputes on Hyperswitch through API
+
+1. **Processing Disputes Webhooks from Hyperswitch**
+
+Hyperswitch communicates to your server whenever a dispute is raised or whenever there is a change in the existing disputes' statuses by sending you a Dispute webhook with the `dispute_details` object that has one of the following event\_type:
+
+`dispute_opened`,`dispute_expired`,`dispute_accepted`,`dispute_cancelled`,`dispute_challenged`,`dispute_won`,`dispute_lost`
+
+
+
+2. **Challenging a dispute**
+3. **Accepting a dispute**
+4.
+
+
+
+
+
 ## #Managing Disputes on Hyperswitch through Dashboard
 
 ### 1. Viewing Disputes on Hyperswitch dashboard

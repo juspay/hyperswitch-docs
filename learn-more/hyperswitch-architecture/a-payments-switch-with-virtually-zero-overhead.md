@@ -78,7 +78,7 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 The latency of the entire Hyperswitch application is just \~25 ms&#x20;
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <div data-full-width="false">
 

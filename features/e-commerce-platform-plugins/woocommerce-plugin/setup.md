@@ -5,7 +5,7 @@ description: WooCommerce Plugin Setup
 # Setup
 
 {% hint style="info" %}
-This section covers the steps to setup woocommerce plugin on your website&#x20;
+This section covers the steps to setup woocommerce plugin on your website and managing the orders from the dashboard.
 {% endhint %}
 
 ### Prerequisites

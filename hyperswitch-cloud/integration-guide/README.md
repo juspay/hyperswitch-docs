@@ -4,23 +4,18 @@ description: Get started integrating the Hyperswitch web client in your app
 
 # 📦 Integration guide
 
+<img src="../../.gitbook/assets/Screenshot 2023-12-05 at 12.22.44 PM.png" alt="Unified Checkout - Web" data-size="original">                             <img src="../../.gitbook/assets/image (85).png" alt="Unified Checkout - App" data-size="original">
 
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-05 at 12.22.44 PM.png" alt="" width="375"><figcaption><p>Unified Checkout - Web</p></figcaption></figure>
-
-<div align="center">
-
-<figure><img src="../../.gitbook/assets/image (85).png" alt="" width="375"><figcaption><p>Unified Checkout - App</p></figcaption></figure>
-
-</div>
 
 Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
-**Inclusive:** A variety of global payment methods including cards, buy now pay later and digital wallets are supported by the Unified Checkout, with adaptation to local preferences and ability to local language customization.
+| <img src="../../.gitbook/assets/image (94).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../../.gitbook/assets/image (95).png" alt="" data-size="original"> | <p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p>      |
+| <img src="../../.gitbook/assets/image (96).png" alt="" data-size="original"> | <p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p>                                                          |
 
-**Consistent:** With a diverse set of payment methods supported, the Unified Checkout provides a singular consistent payment experience across platforms (web, android and ios) powered by smart payment forms, minimal redirections and intelligent retries.
 
-**Blended:** The Unified Checkout includes 40+ styling APIs, which could be tweaked to make the payment experience blend with your product. Your users will get a fully native and embedded payment experience within your app or website
 
 ## Modify and Experiment
 

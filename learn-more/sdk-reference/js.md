@@ -1,7 +1,3 @@
----
-description: To customize your payments experience
----
-
 # JS
 
 {% hint style="info" %}
@@ -54,15 +50,15 @@ Use `hyper.confirmCardPayment` when the customer submits your payment form. When
 
 `clientSecret` is a required string.
 
-| data                    | Description                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------ |
-| payment\_method(object) | An object containing data to create a PaymentMethod with.                            |
-| shipping (object)       | The shipping details for the payment, if collected.                                  |
-| return\_url (string)    | **Required**. The url your customer will be directed to after they complete payment. |
+| data                     | Description                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| `payment_method(object)` | An object containing data to create a PaymentMethod with.                            |
+| `shipping (object)`      | The shipping details for the payment, if collected.                                  |
+| `return_url (string)`    | **Required**. The url your customer will be directed to after they complete payment. |
 
-| options                | Description                                               |
-| ---------------------- | --------------------------------------------------------- |
-| handleActions(boolean) | An object containing data to create a PaymentMethod with. |
+| options                  | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `handleActions(boolean)` | An object containing data to create a PaymentMethod with. |
 
 `payment_method` example
 
@@ -83,18 +79,18 @@ Retrieve a PaymentIntent using its client secret.
 
 Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a PaymentRequest requires that you configure it with an options object.
 
-| options (Required)          | Description                                                                                                                                                                                                                                         |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country (string)            | **Required**. The two-letter country code of your HyperSwitch account (e.g., US).                                                                                                                                                                   |
-| currency (string)           | **Required**. Three character currency code (e.g., USD).                                                                                                                                                                                            |
-| total (object)              | **Required**. A PaymentItem object. This PaymentItem is shown to the customer in the browser’s payment interface.                                                                                                                                   |
-| displayItems (array)        | An array of PaymentItem objects. These objects are shown as line items in the browser’s payment interface. Note that the sum of the line item amounts does not need to add up to the total amount above.                                            |
-| requestPayerName (boolean)  | **recommended** By default, the browser‘s payment interface only asks the customer for actual payment information. A customer name can be collected by setting this option to true. This collected name will appears in the PaymentResponse object. |
-| requestPayerEmail (boolean) | Request the payer's email-id.                                                                                                                                                                                                                       |
-| requestPayerPhone (boolean) | request payer's phone number                                                                                                                                                                                                                        |
-| requestShipping (boolean)   | request payer's shipping information                                                                                                                                                                                                                |
-| shippingOptions (array)     | An array of ShippingOption objects. The first shipping option listed appears in the browser payment interface as the default option.                                                                                                                |
-| disableWallets (array)      | An array of wallet strings. Can be one or more of applePay, googlePay, and browserCard. Use this option to disable Apple Pay, Google Pay, and/or browser-saved cards.                                                                               |
+| options (Required)            | Description                                                                                                                                                                                                                                         |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `country (string)`            | **Required**. The two-letter country code of your HyperSwitch account (e.g., US).                                                                                                                                                                   |
+| `currency (string)`           | **Required**. Three character currency code (e.g., USD).                                                                                                                                                                                            |
+| `total (object)`              | **Required**. A PaymentItem object. This PaymentItem is shown to the customer in the browser’s payment interface.                                                                                                                                   |
+| `displayItems (array)`        | An array of PaymentItem objects. These objects are shown as line items in the browser’s payment interface. Note that the sum of the line item amounts does not need to add up to the total amount above.                                            |
+| `requestPayerName (boolean)`  | **recommended** By default, the browser‘s payment interface only asks the customer for actual payment information. A customer name can be collected by setting this option to true. This collected name will appears in the PaymentResponse object. |
+| `requestPayerEmail (boolean)` | Request the payer's email-id.                                                                                                                                                                                                                       |
+| `requestPayerPhone (boolean)` | request payer's phone number                                                                                                                                                                                                                        |
+| `requestShipping (boolean)`   | request payer's shipping information                                                                                                                                                                                                                |
+| `shippingOptions (array)`     | An array of ShippingOption objects. The first shipping option listed appears in the browser payment interface as the default option.                                                                                                                |
+| `disableWallets (array)`      | An array of wallet strings. Can be one or more of applePay, googlePay, and browserCard. Use this option to disable Apple Pay, Google Pay, and/or browser-saved cards.                                                                               |
 
 `clientSecret` is a required string.
 
@@ -123,78 +119,78 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 **Options object**
 
-| options (Required)              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| layout (accordion/tabs/objects) | <p>Specify the layout for the Payment Element. If you only pass a layout type (<code>'accordion'</code> or <code>‘tabs’</code>) without any additional parameters, the Payment Element renders using that layout and the default values associated with it.</p><p>An object can also be passed to specify the layout with additional configuration.</p>                                                                                                                                                                                                                                               |
-| defaultValues (object)          | Provide initial customer information that will be displayed in the Payment Element. The form will render with empty fields if not provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| business (object)               | Provide information about your business that will be displayed in the Payment Element. This object contains a key value pair of `name` which is a string                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| paymentMethodOrder (array)      | <p>By default, the Payment Element will use a dynamic ordering that optimizes payment method display for each user.</p><p>You can override the default order in which payment methods are displayed in the Payment Element with a list of payment method types.</p><p>If the associated PaymentIntent has payment method types not specified in <code>paymentMethodOrder</code>, they will be displayed after the payment methods you specify. If you specify payment method types not on the associated PaymentIntent, they will be ignored.</p>                                                     |
-| fields (object)                 | <p>By default, the Payment Element will collect all necessary details to complete a payment.</p><p>For some payment methods, this means that the Payment Element will collect details like name or email that you may have already collected from the user. If this is the case, you can prevent the Payment Element from collecting these data by using the fields option.</p><p>If you disable the collection of a certain field with the fields option, you must pass that same data to hyper.confirmPayment or the payment will be rejected.</p>                                                  |
-| terms (object)                  | Control how mandates or other legal agreements are displayed in the Payment Element. Use never to never display legal agreements. The default setting is auto, which causes legal agreements to only be shown when necessary.                                                                                                                                                                                                                                                                                                                                                                         |
-| wallets (object)                | <p>By default, the Payment Element will display all the payment methods that the underlying Payment Intent was created with.</p><p>However, wallets like Apple Pay and Google Pay are not payment methods per the Payment Intent API. They will show when the Payment Intent has the card payment method and the customer is using a supported platform and have an active card in their account. This is the auto behavior, and it is the default for choice for all wallets.</p><p>If you do not want to show a given wallet as a payment option, you can set its property in wallets to never.</p> |
+| options (Required)                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `layout (accordion/tabs/objects)` | <p>Specify the layout for the Payment Element. If you only pass a layout type (<code>'accordion'</code> or <code>‘tabs’</code>) without any additional parameters, the Payment Element renders using that layout and the default values associated with it.</p><p>An object can also be passed to specify the layout with additional configuration.</p>                                                                                                                                                                                                                                               |
+| `defaultValues (object)`          | Provide initial customer information that will be displayed in the Payment Element. The form will render with empty fields if not provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `business (object)`               | Provide information about your business that will be displayed in the Payment Element. This object contains a key value pair of `name` which is a string                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `paymentMethodOrder (array)`      | <p>By default, the Payment Element will use a dynamic ordering that optimizes payment method display for each user.</p><p>You can override the default order in which payment methods are displayed in the Payment Element with a list of payment method types.</p><p>If the associated PaymentIntent has payment method types not specified in <code>paymentMethodOrder</code>, they will be displayed after the payment methods you specify. If you specify payment method types not on the associated PaymentIntent, they will be ignored.</p>                                                     |
+| `fields (object)`                 | <p>By default, the Payment Element will collect all necessary details to complete a payment.</p><p>For some payment methods, this means that the Payment Element will collect details like name or email that you may have already collected from the user. If this is the case, you can prevent the Payment Element from collecting these data by using the fields option.</p><p>If you disable the collection of a certain field with the fields option, you must pass that same data to hyper.confirmPayment or the payment will be rejected.</p>                                                  |
+| `terms (object)`                  | Control how mandates or other legal agreements are displayed in the Payment Element. Use never to never display legal agreements. The default setting is auto, which causes legal agreements to only be shown when necessary.                                                                                                                                                                                                                                                                                                                                                                         |
+| `wallets (object)`                | <p>By default, the Payment Element will display all the payment methods that the underlying Payment Intent was created with.</p><p>However, wallets like Apple Pay and Google Pay are not payment methods per the Payment Intent API. They will show when the Payment Intent has the card payment method and the customer is using a supported platform and have an active card in their account. This is the auto behavior, and it is the default for choice for all wallets.</p><p>If you do not want to show a given wallet as a payment option, you can set its property in wallets to never.</p> |
 
 
 
 **Layout object**
 
-| layout                              | Description                                                                                                                                                                                                                                                                                                |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type (accordion/tabs)               | Defines the layout to render the Payment Element.                                                                                                                                                                                                                                                          |
-| defaultCollapsed (boolean)          | Controls if the Payment Element renders in a collapsed state (where no payment method is selected by default). When you leave this undefined, Hyperswitch renders the experience that it determines will have the best conversion.                                                                         |
-| radios (boolean)                    | <p>Renders each Payment Method with a radio input next to its logo. The radios visually indicate the current selection of the Payment Element.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                |
-| spacedAccordionItems (boolean)      | <p>When true, the Payment Methods render as standalone buttons with space in between them.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                                                                    |
-| visibleAccordionItemsCount (number) | <p>Sets the max number of Payment Methods visible before using the "More" button to hide additional Payment Methods. Set this value to 0 to disable the "More" button and render all available Payment Methods. Default is 5.</p><p><em>This property is only applicable to the accordion layout.</em></p> |
+| layout                                | Description                                                                                                                                                                                                                                                                                                |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type (accordion/tabs)`               | Defines the layout to render the Payment Element.                                                                                                                                                                                                                                                          |
+| `defaultCollapsed (boolean)`          | Controls if the Payment Element renders in a collapsed state (where no payment method is selected by default). When you leave this undefined, Hyperswitch renders the experience that it determines will have the best conversion.                                                                         |
+| `radios (boolean)`                    | <p>Renders each Payment Method with a radio input next to its logo. The radios visually indicate the current selection of the Payment Element.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                |
+| `spacedAccordionItems (boolean)`      | <p>When true, the Payment Methods render as standalone buttons with space in between them.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                                                                    |
+| `visibleAccordionItemsCount (number)` | <p>Sets the max number of Payment Methods visible before using the "More" button to hide additional Payment Methods. Set this value to 0 to disable the "More" button and render all available Payment Methods. Default is 5.</p><p><em>This property is only applicable to the accordion layout.</em></p> |
 
 
 
 **defaultValues object**
 
-| defaultValues           | Description                                                                                                                                                                                                                 |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| billingDetails (object) | Specify customer's billing details, which lets you pre-fill a customer’s name, email, phone number and address if required by payment method. Pre-filling as much information as possible streamlines the checkout process. |
+| defaultValues             | Description                                                                                                                                                                                                                 |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `billingDetails (object)` | Specify customer's billing details, which lets you pre-fill a customer’s name, email, phone number and address if required by payment method. Pre-filling as much information as possible streamlines the checkout process. |
 
-| billingDetails   |
-| ---------------- |
-| name (string)    |
-| email (string)   |
-| phone (string)   |
-| address (object) |
+| billingDetails     | Description |
+| ------------------ | ----------- |
+| `name (string)`    |             |
+| `email (string)`   |             |
+| `phone (string)`   |             |
+| `address (object)` |             |
 
-| address          |
-| ---------------- |
-| line1 (string)   |
-| line2 (string)   |
-| city (string)    |
-| state (object)   |
-| country (string) |
-| postal\_code     |
+| address            | Description |
+| ------------------ | ----------- |
+| `line1 (string)`   |             |
+| `line2 (string)`   |             |
+| `city (string)`    |             |
+| `state (object)`   |             |
+| `country (string)` |             |
+| `postal_code`      |             |
 
 **fields object**
 
-| layout                                 | Description                                                                                                                |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| billingDetails (never / auto / object) | Please refer the above written structure of billingDetails, expect of them being string, they will be either never or auto |
+| layout                                   | Description                                                                                                                |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `billingDetails (never / auto / object)` | Please refer the above written structure of billingDetails, expect of them being string, they will be either never or auto |
 
 **terms object**
 
-| terms                                 |
-| ------------------------------------- |
-| usBankAccount (auto / always / never) |
-| card (auto / always / never)          |
-| auBecsDebit (auto / always / never)   |
-| bancontact (auto / always / never)    |
-| ideal (auto / always / never)         |
-| sepaDebit (auto / always / never)     |
-| sofort (auto / always / never)        |
+| terms                                   | Description |
+| --------------------------------------- | ----------- |
+| `usBankAccount (auto / always / never)` |             |
+| `card (auto / always / never)`          |             |
+| `auBecsDebit (auto / always / never)`   |             |
+| `bancontact (auto / always / never)`    |             |
+| `ideal (auto / always / never)`         |             |
+| `sepaDebit (auto / always / never)`     |             |
+| `sofort (auto / always / never)`        |             |
 
 **wallets object**
 
-| wallets                  | Description                                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------------------- |
-| applePay (auto / never)  |                                                                                                |
-| googlePay (auto / never) |                                                                                                |
-| walletReturnUrl (string) | This is the URL which you will get redirected to post a successful confirmation of a payment.  |
-| style (object)           | This gives the style to the wallet buttons in the Payment Element.                             |
+| wallets                    | Description                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------- |
+| `applePay (auto / never)`  |                                                                                                |
+| `googlePay (auto / never)` |                                                                                                |
+| `walletReturnUrl (string)` | This is the URL which you will get redirected to post a successful confirmation of a payment.  |
+| `style (object)`           | This gives the style to the wallet buttons in the Payment Element.                             |
 
 
 
@@ -206,11 +202,11 @@ If you collect certain information in a different part of your interface (e.g., 
 
 The styles of an Element can be dynamically changed using element.update. This method can be used to simulate CSS media queries that automatically adjust the size of elements when viewed on different devices
 
-| options               | Description                                                                                                                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| locale (string)       | A locale to display placeholders and error strings in. Default is auto (Hyperswitch detects the locale of the browser).Setting the locale does not affect the behavior of postal code validation—a valid postal code for the billing country of the card is still required. |
-| appearance (object)   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
-| clientSecret (string) | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
+| options                 | Description                                                                                                                                                                                                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `locale (string)`       | A locale to display placeholders and error strings in. Default is auto (Hyperswitch detects the locale of the browser).Setting the locale does not affect the behavior of postal code validation—a valid postal code for the billing country of the card is still required. |
+| `appearance (object)`   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
+| `clientSecret (string)` | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
 
 ### paymentElement()
 

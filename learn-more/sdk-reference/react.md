@@ -20,7 +20,7 @@ The API for both the Hooks and Components are listed down below. \
 
 ### 1. Hooks
 
-### useHyper()
+### `useHyper()`
 
 This hook gives you access to methods in Hyper API, which you can call.
 
@@ -174,7 +174,7 @@ The styles of an Element can be dynamically changed using element.update. This m
 
 ### 2. Components
 
-### \<HyperElements hyper options />
+### `<HyperElements hyper options />`
 
 This component wraps around the entire app and it consumes 2 parameters -
 
@@ -182,7 +182,7 @@ This component wraps around the entire app and it consumes 2 parameters -
 
 
 
-### \<UnifiedCheckout options onChange? onReady? onFocus? onBlur? onClick? />
+### `<UnifiedCheckout options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.&#x20;
 
@@ -195,13 +195,13 @@ This component is the Unified Checkout itself which internally mounts the main i
 | onBlur (function:event=>unit)   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.  |
 | onClick (function:event=>unit)  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.    |
 
-### \<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />
+### `<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component is the CardWidget, which is a 1 line payment method consisting of only card. This is a compact widget which fits anywhere in a webpage. \
 \
 It follows the same API as Unified Checkout
 
-### \<CardNumberWidget options onChange? onReady? onFocus? onBlur? onClick? />
+### `<CardNumberWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
@@ -211,7 +211,7 @@ It follows the same API as Unified Checkout&#x20;
 You need to use it along with CardCVCWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
 {% endhint %}
 
-### \<CardCVCWidget options onChange? onReady? onFocus? onBlur? onClick? />
+### `<CardCVCWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
@@ -221,7 +221,7 @@ It follows the same API as Unified Checkout&#x20;
 You need to use it along with CardNumberWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
 {% endhint %}
 
-### \<CardExpiryWidget options onChange? onReady? onFocus? onBlur? onClick? />
+### `<CardExpiryWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
