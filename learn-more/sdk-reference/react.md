@@ -8,7 +8,17 @@ description: To customize your payments experience
 This section covers different methods and their params of the Hyperswitch React SDK
 {% endhint %}
 
-Hyperswitch's SDK come with many methods which you can use to customize your payments experience.
+Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount. \
+\
+The React SDK offers 2 integral elements for you to use:&#x20;
+
+1. Hooks
+2. Components
+
+The API for both the Hooks and Components are listed down below. \
+
+
+### 1. Hooks
 
 ### useHyper()
 
@@ -113,7 +123,113 @@ This method retrieves a previously created Payment Element. Here the `type` is `
 elements.getElement('payment') returns one of the following:
 
 * An instance of a Unified Checkout.
-* `null`, when no Unified Checkout has been created.
+* `null`, when no Unified Checkout has been created.\
+
+
+**2. `elements.create(type, options?)`**
+
+This method creates an instance of an individual Element. It takes the type of Element to create as well as an options object.
+
+The type can be ‘payment’ for UnifiedCheckout.
+
+**Options object**
+
+| options (Required) | Description                                                                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| classes (object)   | Set custom class names on the container DOM element when the Hyper element is in a particular state.                                           |
+| style              | Customize the appearance of this element using CSS properties passed in a Style object.                                                        |
+| hidePostalCode     | Hide the postal code field. Default is false. If you are already collecting a full billing address or postal code elsewhere, set this to true. |
+| iconStyle          | Appearance of the icon in the Element. Either solid or default.                                                                                |
+| hideIcon           | Hides the icon in the Element. Default is false.                                                                                               |
+| disabled           | Applies a disabled state to the Element such that user input is not accepted. Default is false.                                                |
+
+
+
+**Classes object**
+
+| classes  | Description                                                                              |
+| -------- | ---------------------------------------------------------------------------------------- |
+| base     | The base class applied to the container. Defaults to HyperElement.                       |
+| complete | The class name to apply when the Element is complete. Defaults to HyperElement—complete. |
+| focus    | The class name to apply when the Element is focused. Defaults to HyperElement--focus.    |
+| invalid  | The class name to apply when the Element is invalid. Defaults to HyperElement--invalid.  |
+
+
+
+**`3. element.update(options)`**
+
+Updates the options the Element was initialized with. Updates are merged into the existing configuration.
+
+If you collect certain information in a different part of your interface (e.g., ZIP or postal code), use element.update with the appropriate information.
+
+The styles of an Element can be dynamically changed using element.update. This method can be used to simulate CSS media queries that automatically adjust the size of elements when viewed on different devices
+
+| options               | Description                                                                                                                                                                                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| locale (string)       | A locale to display placeholders and error strings in. Default is auto (Hyperswitch detects the locale of the browser).Setting the locale does not affect the behavior of postal code validation—a valid postal code for the billing country of the card is still required. |
+| appearance (object)   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
+| clientSecret (string) | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
+
+
+
+### 2. Components
+
+### \<HyperElements hyper options />
+
+This component wraps around the entire app and it consumes 2 parameters -
+
+<table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td>hyper (promise)</td><td>This is the response that you get after calling the  loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td>options (object)</td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
+
+
+
+### \<UnifiedCheckout options onChange? onReady? onFocus? onBlur? onClick? />
+
+This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.&#x20;
+
+| parameters                      | Description                                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| options (object)                | This has the same API as elements.create()                                                           |
+| onChange (function:event=>unit) | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout  |
+| onReady (function:event=>unit)  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                 |
+| onFocus (function:event=>unit)  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout.  |
+| onBlur (function:event=>unit)   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.  |
+| onClick (function:event=>unit)  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.    |
+
+### \<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />
+
+This component is the CardWidget, which is a 1 line payment method consisting of only card. This is a compact widget which fits anywhere in a webpage. \
+\
+It follows the same API as Unified Checkout
+
+### \<CardNumberWidget options onChange? onReady? onFocus? onBlur? onClick? />
+
+This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
+\
+It follows the same API as Unified Checkout&#x20;
+
+{% hint style="info" %}
+You need to use it along with CardCVCWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
+{% endhint %}
+
+### \<CardCVCWidget options onChange? onReady? onFocus? onBlur? onClick? />
+
+This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
+\
+It follows the same API as Unified Checkout&#x20;
+
+{% hint style="info" %}
+You need to use it along with CardNumberWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
+{% endhint %}
+
+### \<CardExpiryWidget options onChange? onReady? onFocus? onBlur? onClick? />
+
+This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
+\
+It follows the same API as Unified Checkout&#x20;
+
+{% hint style="info" %}
+You need to use it along with CardCVCWidget and CardNumberWidget components, it cannot function as a standalone component.&#x20;
+{% endhint %}
 
 ### Unified Checkout
 
