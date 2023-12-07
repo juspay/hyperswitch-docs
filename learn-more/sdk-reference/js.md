@@ -1,3 +1,7 @@
+---
+description: To customize your payments experience
+---
+
 # JS
 
 {% hint style="info" %}
@@ -149,21 +153,21 @@ The type can be ‘payment’ for UnifiedCheckout.
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | billingDetails (object) | Specify customer's billing details, which lets you pre-fill a customer’s name, email, phone number and address if required by payment method. Pre-filling as much information as possible streamlines the checkout process. |
 
-| billingDetails   | Description |
-| ---------------- | ----------- |
-| name (string)    |             |
-| email (string)   |             |
-| phone (string)   |             |
-| address (object) |             |
+| billingDetails   |
+| ---------------- |
+| name (string)    |
+| email (string)   |
+| phone (string)   |
+| address (object) |
 
-| address          | Description |
-| ---------------- | ----------- |
-| line1 (string)   |             |
-| line2 (string)   |             |
-| city (string)    |             |
-| state (object)   |             |
-| country (string) |             |
-| postal\_code     |             |
+| address          |
+| ---------------- |
+| line1 (string)   |
+| line2 (string)   |
+| city (string)    |
+| state (object)   |
+| country (string) |
+| postal\_code     |
 
 **fields object**
 
@@ -173,15 +177,15 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 **terms object**
 
-| terms                                 | Description |
-| ------------------------------------- | ----------- |
-| usBankAccount (auto / always / never) |             |
-| card (auto / always / never)          |             |
-| auBecsDebit (auto / always / never)   |             |
-| bancontact (auto / always / never)    |             |
-| ideal (auto / always / never)         |             |
-| sepaDebit (auto / always / never)     |             |
-| sofort (auto / always / never)        |             |
+| terms                                 |
+| ------------------------------------- |
+| usBankAccount (auto / always / never) |
+| card (auto / always / never)          |
+| auBecsDebit (auto / always / never)   |
+| bancontact (auto / always / never)    |
+| ideal (auto / always / never)         |
+| sepaDebit (auto / always / never)     |
+| sofort (auto / always / never)        |
 
 **wallets object**
 

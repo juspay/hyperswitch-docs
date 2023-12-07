@@ -5,7 +5,7 @@ description: Node to access the Hyperswitch API
 # Node
 
 {% hint style="info" %}
-In this section, we will cover the steps to get a convenient access to the Hyperswitch API from applications written in server-side JavaScript.
+In this section, we will cover the steps to do an easy integration of your Node Backend server
 {% endhint %}
 
 ## Requirements
