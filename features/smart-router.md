@@ -5,16 +5,16 @@ description: Route your payments seamlessly with the Smart Router.
 # 🛣 Smart Router
 
 {% hint style="info" %}
-With this section, find out how smart router is the key to channeling payments across multiple processors easily.
+With this section, understand out how the Hyperswitch Smart Router works to improve your covnersion rates and reduces processing costs
 {% endhint %}
 
 ## Prerequisites
 
-To get started with  Smart Router , we need to have atleast one Payment Processor integrated . If no  payment processor have been integrated ,one can integrate any Payment Processor of their choice by following the [Connector Integration](../hyperswitch-cloud/connectors/) docs.
+To get started with Smart Router, ensure to have one or more Payment Processor integrated. You can integrate the Payment Processor of their choice on the Control Center by following the [Connector Integration](../hyperswitch-cloud/connectors/) guide.
 
-## No-code payments routing
+## What is smart payment routing?
 
-While channelling payments across multiple processors on a daily basis is cumbersome, it could be vital to optimizing your payment processing costs as your business needs evolve constantly or as new payment processors provide competitive pricing and so on. Hence, Hyperswitch’s Smart Router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
+While channelling payments across multiple processors on a daily basis is cumbersome, it could be vital to optimising your payment processing costs as your business needs evolve constantly or as new payment processors provide competitive pricing and so on. Hence, Hyperswitch’s Smart Router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
 
 **Volume Based Configuration:** Define volume distribution among multiple payment processors using percentages.
 
