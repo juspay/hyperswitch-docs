@@ -1,12 +1,16 @@
 ---
-description: Node to access the Hyperswitch API
+description: Node SDK to access the Hyperswitch API
 ---
 
 # Node
 
+
+
 {% hint style="info" %}
 In this section, we will cover the steps to do an easy integration of your Node Backend server
 {% endhint %}
+
+## Using Node SDK for app server is OPTIONAL. You can use our REST APIs for the&#x20;
 
 ## Requirements
 
