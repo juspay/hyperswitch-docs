@@ -166,5 +166,5 @@ async function checkStatus() {
 
 That's it! You have successfully integrated your hosted web client on your web app. Now you can collect payments from your customers in a secure way.
 
-The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
+The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
 

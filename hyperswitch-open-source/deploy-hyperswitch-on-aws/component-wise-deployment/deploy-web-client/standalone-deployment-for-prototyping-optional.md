@@ -20,7 +20,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 
 > #### Note
 >
-> You can directly start from [Step 3](standalone-deployment-for-prototyping.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
+> You can directly start from [Step 3](standalone-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
 #### Step 1 - Install or Update the AWS CLI
 
@@ -98,7 +98,7 @@ For this step you would need the following from you AWS account
 
 You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-12 at 6.00.50 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2023-10-12 at 6.00.50 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 
