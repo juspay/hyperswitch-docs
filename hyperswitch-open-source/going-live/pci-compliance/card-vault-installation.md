@@ -138,7 +138,7 @@ openssl genrsa -out tenant-private-key.pem 2048
 
 # Generating the public keys
 openssl rsa -in locker-private-key.pem -pubout -out locker-public-key.pem
-openssl rsa -in locker-private-key.pem -pubout -out tenant-public-key.pem
+openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 ```
 
 {% hint style="info" %}
