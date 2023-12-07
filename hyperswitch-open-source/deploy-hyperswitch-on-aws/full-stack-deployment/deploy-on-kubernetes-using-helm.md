@@ -9,8 +9,8 @@ The Helm chart is designed to facilitate the deployment of Hyperswitch services,
 
 {% code fullWidth="false" %}
 ```bash
-git  clone https://github.com/juspay/hyperswitch.git
-diesel  migration --database-url postgres://{{user}}:{{password}}@{{host_name}}:5432/{{db_name}} run
+git clone https://github.com/juspay/hyperswitch.git
+diesel migration --database-url postgres://{{user}}:{{password}}@{{host_name}}:5432/{{db_name}} run
 ```
 {% endcode %}
 

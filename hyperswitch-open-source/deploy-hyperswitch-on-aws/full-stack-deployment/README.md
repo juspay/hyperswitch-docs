@@ -1,7 +1,3 @@
----
-description: Unveiling the magic of our 1-click setup
----
-
 # Full stack deployment
 
 {% hint style="info" %}
