@@ -32,6 +32,8 @@ While channelling payments across multiple processors on a daily basis is cumber
 
 Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
+<figure><img src="broken-reference" alt=""><figcaption><p>The Smart Routing Flow</p></figcaption></figure>
+
 ## How to configure the Smart Router?
 
 [Hyperswitch dashboard](https://app.hyperswitch.io/routing) provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Hyperswitch currently supports.\
