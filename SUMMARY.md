@@ -122,6 +122,7 @@
   * [Node and React](features/hyper-widgets/node-and-react.md)
   * [Node and HTML](features/hyper-widgets/node-and-html.md)
   * [REST API and HTML](features/hyper-widgets/rest-api-and-html.md)
+* [🚩 Disputes/Chargebacks Management](features/disputes.md)
 
 ## Learn more
 
