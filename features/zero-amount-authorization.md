@@ -2,17 +2,17 @@
 description: Best way to offer postpaid payment services
 ---
 
-# 0 Zero Auth flow on Hyperswitch
+# 0 Zero Amount Authorization
 
 {% hint style="info" %}
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero-auth flow in Hyperswitch allows the merchant to offer postpaid payment services. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method for recurring payments. A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
+The zero amount authorization flow in Hyperswitch allows the merchant to offer postpaid payment services. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method for recurring payments. A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
-## How to use the zero-auth flow
+## How to use the zero amount authorization flow?
 
 1. Creating a 0 amount payment along with the mandate data to set up a mandate with customer’s payment details (Customer initiated transaction)\
 
