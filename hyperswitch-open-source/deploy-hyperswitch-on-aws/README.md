@@ -1,7 +1,5 @@
 ---
-description: >-
-  We're making the solution construct for the hyperswitch payment solution
-  available as an open-source.
+description: Deploy and run Hyperswitch on AWS
 ---
 
 # ☁ Deploy Hyperswitch on AWS&#x20;

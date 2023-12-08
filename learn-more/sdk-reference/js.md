@@ -1,5 +1,5 @@
 ---
-description: To customize your payments experience
+description: Detailed SDK methods and props to customize your payments experience
 ---
 
 # JS
@@ -22,31 +22,31 @@ let hyper = Hyper();
 
 Use `hyper.confirmPayment` to confirm a PaymentIntent using data collected by the Payment Element. When called, `hyper.confirmPayment` will attempt to complete any required actions, such as authenticating your user by displaying a 3DS dialog or redirecting them to a bank authorization page. Your user will be redirected to the return\_url you pass once the confirmation is complete.
 
-| options (Required)     | Description                                                                                                                                                                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| elements (object)      | **Required**. The Elements instance that was used to create the Payment Element.                                                                                                                                                                                                                   |
-| confirmParams (object) | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
-| redirect (string)      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
+| options (Required)       | Description                                                                                                                                                                                                                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `elements (object)`      | **Required**. The Elements instance that was used to create the Payment Element.                                                                                                                                                                                                                   |
+| `confirmParams (object)` | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
+| `redirect (string)`      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
 
 **ConfirmParams object**
 
 | confirmParams                  | Description                                                                                                                                                                                                                                                                                                               |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| return\_url(string)            | **Required**. The url your customer will be directed to after they complete payment.                                                                                                                                                                                                                                      |
-| shipping (object)              | The shipping details for the payment, if collected.                                                                                                                                                                                                                                                                       |
-| payment\_method\_data (object) | When you call `hyper.confirmPayment`, payment details are collected from the `HyperElement` and passed to the PaymentIntents confirm endpoint as the `payment_method_data` parameter. You can also include additional payment\_method\_data fields, which will be merged with the data collected from the `HyperElement`. |
+| `return_url(string)`           | **Required**. The url your customer will be directed to after they complete payment.                                                                                                                                                                                                                                      |
+| `shipping (object)`            | The shipping details for the payment, if collected.                                                                                                                                                                                                                                                                       |
+| `payment_method_data (object)` | When you call `hyper.confirmPayment`, payment details are collected from the `HyperElement` and passed to the PaymentIntents confirm endpoint as the `payment_method_data` parameter. You can also include additional payment\_method\_data fields, which will be merged with the data collected from the `HyperElement`. |
 
 #### 2. `hyper.elements(options)`
 
 This method creates an Elements instance, which manages a group of elements.
 
-| options (Required)    | Description                                                                                                                                                                                                                |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| font (array)          | An array of custom fonts, which elements created from the Elements object can use. Fonts can be specified as CssFontSource or CustomFontSource objects.                                                                    |
-| locale (string)       | A locale to display placeholders and error strings in. Default is auto (HyperSwitch detects the locale of the browser).                                                                                                    |
-| clientSecret (string) | **Required** Required to use with the Unified Checkout and Hyper Widgets.                                                                                                                                                  |
-| appearance (object)   | Match the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                       |
-| loader (variants)     | **Can be either 'auto', 'always' or 'never'** Display skeleton loader UI while waiting for Elements to be fully loaded, after they are mounted. Default is 'auto' (HyperSwitch determines if a loader UI should be shown). |
+| options (Required)      | Description                                                                                                                                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `font (array)`          | An array of custom fonts, which elements created from the Elements object can use. Fonts can be specified as CssFontSource or CustomFontSource objects.                                                                    |
+| `locale (string)`       | A locale to display placeholders and error strings in. Default is auto (HyperSwitch detects the locale of the browser).                                                                                                    |
+| `clientSecret (string)` | **Required** Required to use with the Unified Checkout and Hyper Widgets.                                                                                                                                                  |
+| `appearance (object)`   | Match the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                       |
+| `loader (variants)`     | **Can be either 'auto', 'always' or 'never'** Display skeleton loader UI while waiting for Elements to be fully loaded, after they are mounted. Default is 'auto' (HyperSwitch determines if a loader UI should be shown). |
 
 #### 3.`hyper.confirmCardPayment(clientSecret,data?,options?)`
 
