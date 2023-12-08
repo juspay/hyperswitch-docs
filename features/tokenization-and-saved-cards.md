@@ -1,14 +1,14 @@
 ---
-description: Store your customers cards securely in a centralized compliant vault
+description: Store your customers cards securely in a centralized and PCI compliant vault
 ---
 
 # 🔓 Tokenization & saved cards
 
 {% hint style="info" %}
-In this section, we will know how to store your customers cards securely, migrate them from your processors to hyperswitch giving a bried of the network tokenization concept.
+In this section, you will learn how to store your customers cards securely, migrate them from your processors to Hyperswitch and understand the concept of network tokenization .
 {% endhint %}
 
-Hyperswitch provides you with the capability to store your customers cards securely in a centralized PCI DSS Level 1 compliant vault. Our Unified checkout automatically handles save cards flow when customers choose the Save card details checkbox while providing their card details for the payment and the transaction is successfully processed.
+Hyperswitch provides you with the capability to store your customers cards securely in a centralized PCI DSS Level 1 compliant vault. Our Unified checkout automatically handles save cards flow. Customers choose the 'Save card details' checkbox while providing their card details for the payment and the transaction is successfully processed.
 
 <figure><img src="../.gitbook/assets/savedCards1.png" alt=""><figcaption></figcaption></figure>
 
@@ -20,8 +20,8 @@ Internally, Hyperswitch handles saving cards through multiple layers of tokeniza
 
 ## Migrating your customers’ saved cards from your processors to Hyperswitch
 
-Hyperswitch also supports migrating your customers’ saved cards from your processors’ vaults to Hyperswitch. This process typically involves requesting your processor’s support team to share your customers’ saved cards data to Hyperswitch in a secure file transfer format and may involve sharing Hyperswitch’s PCI DSS certificate with them. Please write to <mark style="color:blue;">hyperswitch@juspay.in</mark> to know more and kickstart your card migration process.
+Hyperswitch also supports migrating your customers’ saved cards from your processors’ vaults to Hyperswitch. This process typically involves requesting your processor’s support team to share your customers’ saved cards data to Hyperswitch in a secure file transfer format and may involve sharing Hyperswitch’s PCI DSS certificate with them. Please write to biz@<mark style="color:blue;">hyperswitch.io</mark> to know more and kickstart your card migration process.
 
-## Network Tokenization - Coming Soon!
+## Network Tokenization
 
-Soon, Hyperswitch will be able to support Network Tokenization which will enable you to securely store your customers’ card details with various networks such as Visa, Mastercard, American Express, etc. This would bring in additional benefits such as higher authorization rates, fraud reduction, liability shift, lower network fees in some cases, etc.
+Hyperswitch can also support Network Tokenization which will enable you to securely store your customers’ card details with various networks such as Visa, Mastercard, American Express, etc. This would bring in additional benefits such as higher authorization rates, fraud reduction, liability shift, lower network fees in some cases, etc. Request for this feature [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
