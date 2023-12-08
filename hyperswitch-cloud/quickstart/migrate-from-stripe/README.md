@@ -16,10 +16,10 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% tab title="Stripe Products" %}
 
 
-| Stripe UI elements   | <mark style="color:green;">Supported for Payment sheet, Card element and wallet element</mark> |
-| -------------------- | ---------------------------------------------------------------------------------------------- |
-| Stripe Payment links | <mark style="color:yellow;">Coming soon</mark>                                                 |
-| Stripe Checkout      | <mark style="color:yellow;">Coming soon</mark>                                                 |
+| Stripe UI elements   | <mark style="color:green;">Supported for Payment sheet, Card element and wallet element</mark>                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Stripe Payment links | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Stripe Checkout      | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 
 {% tab title="Functionalities" %}
@@ -47,27 +47,27 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% tab title="Backend platforms" %}
 
 
-|        |                                                |
-| ------ | ---------------------------------------------- |
-| Node   | <mark style="color:green;">Supported</mark>    |
-| Python | <mark style="color:yellow;">Coming soon</mark> |
-| PHP    | <mark style="color:yellow;">Coming soon</mark> |
-| Ruby   | <mark style="color:yellow;">Coming soon</mark> |
+|        |                                                                                                                        |
+| ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Node   | <mark style="color:green;">Supported</mark>                                                                            |
+| Python | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| PHP    | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Ruby   | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 
 {% tab title="Frontend platforms" %}
 
 
-|              |                                                |
-| ------------ | ---------------------------------------------- |
-| HTML         | <mark style="color:green;">Supported</mark>    |
-| React        | <mark style="color:green;">Supported</mark>    |
-| Java         | <mark style="color:green;">Supported</mark>    |
-| Swift        | <mark style="color:green;">Supported</mark>    |
-| React Native | <mark style="color:green;">Supported</mark>    |
-| Woocommerce  | <mark style="color:green;">Supported</mark>    |
-| Bigcommerce  | <mark style="color:yellow;">Coming soon</mark> |
-| Shopify      | <mark style="color:red;">Not supported</mark>  |
+|              |                                                                                                                        |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| HTML         | <mark style="color:green;">Supported</mark>                                                                            |
+| React        | <mark style="color:green;">Supported</mark>                                                                            |
+| Java         | <mark style="color:green;">Supported</mark>                                                                            |
+| Swift        | <mark style="color:green;">Supported</mark>                                                                            |
+| React Native | <mark style="color:green;">Supported</mark>                                                                            |
+| Woocommerce  | <mark style="color:green;">Supported</mark>                                                                            |
+| Bigcommerce  | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Shopify      | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 {% endtabs %}
 
