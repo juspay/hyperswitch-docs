@@ -18,11 +18,11 @@ In the Default Fallback , if the active routing rules are not applicable, the pr
 
 _**Step 1:**_ Click on `Manage` for configuring Default fallback
 
-<figure><img src="../../.gitbook/assets/smartrouter- C-step1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/smartrouter- C-step1.png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** You will see a list of all of your configured processors. This list can be reordered based on what you want your default processor priority to be when either :-
 
 * You have no routing algorithm active
 * The payment method for the current payment is not enabled for the processor(s) returned by the active routing algorithm
 
-<figure><img src="../../.gitbook/assets/smartrouter-C-step2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/smartrouter-C-step2.png" alt=""><figcaption></figcaption></figure>

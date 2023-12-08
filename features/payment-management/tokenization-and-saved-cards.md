@@ -10,13 +10,13 @@ In this section, you will learn how to store your customers cards securely and u
 
 Hyperswitch provides you with the capability to store your customers cards securely in a centralized PCI DSS Level 1 compliant vault. Our Unified checkout automatically handles saved cards flow. Customers choose the 'Save card details' checkbox while providing their card details for the payment and the transaction is successfully processed while the card is tokenized and stored securely in the card vault.
 
-<figure><img src="../.gitbook/assets/savedCards1.png" alt="" width="280"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/savedCards1.png" alt="" width="280"><figcaption></figcaption></figure>
 
 For a returning customer, our Unified Checkout automatically shows the list of their saved cards from previous sessions if the same `customer_id` is passed during payments/create API call from your server.
 
 The list customer payment methods API is used here which retrieve the list of cards saved against that customer in a tokenized form. These payment\_tokens can then be used to confirm a payment. ([API Reference](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer-1))
 
-<figure><img src="../.gitbook/assets/savedCards2.png" alt="" width="300"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/savedCards2.png" alt="" width="300"><figcaption></figcaption></figure>
 
 Once the user selects a particular card on the checkout page, the corresponding `payment_token` is used by Hyperswitch to  communicate with the card vault and securely retrieve card information to make the payment.
 

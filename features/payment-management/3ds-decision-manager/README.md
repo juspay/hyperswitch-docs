@@ -12,13 +12,13 @@ Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules
 
 ## How does it work?
 
-<figure><img src="../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 
 * Hyperswitch supports 3D Secure card payments via multiple payment processors
 * The [3DS Decision Manager](https://app.hyperswitch.io/3ds) on the Hyperswitch Control Center allows you to configure advanced rules based on payment parameters to decide when to enforce 3DS on card payments for supported processors
 * For example, if you want to enforce 3DS authentication for all payments of value greater than $100 then you could setup the following rule on the 3DS Decision Manager and all the payment requests conforming to that rule would have `authentication_type` set as `three_ds`
 
-<figure><img src="../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
 
 **Note:** If an explicit value is passed on `/payments` request using the `authentication_type` parameter it will override the 3DS Decision Manager - [API Reference](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)
 
@@ -28,8 +28,8 @@ Some payment processors mandate a 3D Secure authentication for all payments whic
 
 Follow the below guidelines to configure the 3DS Decision Manager
 
-* [Setup](3ds-decision-manager/setup.md)
-* [FAQs](3ds-decision-manager/faqs.md)
+* [Setup](setup.md)
+* [FAQs](faqs.md)
 
 
 

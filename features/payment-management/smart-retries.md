@@ -41,13 +41,13 @@ Primary processor is a first choice of payment processor for the particular tran
 
 The flow looks like below.
 
-<figure><img src="../.gitbook/assets/smartRetry-arch.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/smartRetry-arch.png" alt=""><figcaption></figcaption></figure>
 
 ## How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
 
-<figure><img src="../.gitbook/assets/smartretry-1 (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/smartretry-1 (2).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
 

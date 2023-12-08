@@ -10,7 +10,7 @@ With this section, understand out how the Hyperswitch Smart Router works to impr
 
 ## Prerequisites
 
-To get started with Smart Router, ensure to have one or more Payment Processor integrated. You can integrate the Payment Processor of their choice on the Control Center by following the [Connector Integration](../hyperswitch-cloud/connectors/) guide.
+To get started with Smart Router, ensure to have one or more Payment Processor integrated. You can integrate the Payment Processor of their choice on the Control Center by following the [Connector Integration](../../../hyperswitch-cloud/connectors/) guide.
 
 ## What is smart payment routing?
 
@@ -28,7 +28,7 @@ While channelling payments across multiple processors on a daily basis is cumber
 
 Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
-<figure><img src="../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
 
 ## How to configure the Smart Router?
 
@@ -36,7 +36,7 @@ Hyperswitch Smart Router Engine evaluates every payment request against your pre
 \
 
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="smart-router/rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="smart-router/volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="smart-router/default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
 
 ## Next step&#x20;
 

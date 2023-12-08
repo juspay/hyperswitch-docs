@@ -10,7 +10,7 @@ After reading this section, you will know about Payout features, supported proce
 
 Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using our automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage our infrastructure to streamline and orchestrate your payout processes efficiently.
 
-<figure><img src="../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
 
 ## Payouts combined with Payments
 
@@ -44,25 +44,25 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 ## How does it work?
 
-<figure><img src="../.gitbook/assets/payouts_swimlane.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payouts_swimlane.png" alt=""><figcaption></figcaption></figure>
 
 ## How to get started?
 
 **Step 1:** Log in to your [Hyperswitch account](https://app.hyperswitch.io/login).
 
-<figure><img src="../.gitbook/assets/step1-payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step1-payouts.png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** Navigate to the 'Payout Processors' tab.
 
-<figure><img src="../.gitbook/assets/step2-payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step2-payouts.png" alt=""><figcaption></figcaption></figure>
 
 **Step 3:** Select the payout processor(s) you want to use. And provide your processor credentials and configure your preferred payment methods.
 
-<figure><img src="../.gitbook/assets/step3-payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step3-payouts.png" alt=""><figcaption></figcaption></figure>
 
 **Step 4:** Provide your processor credentials and configure your preferred payment methods.&#x20;
 
-<figure><img src="../.gitbook/assets/step4-payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step4-payouts.png" alt=""><figcaption></figcaption></figure>
 
 **Step 5:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) to integrate the Payouts API and start testing payouts.
 

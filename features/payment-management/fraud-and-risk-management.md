@@ -39,13 +39,13 @@ You can enable the FRM solution of your choice with few clicks and very minimal 
 
 In the PreAuth flow, the FRM solution is invoked before authorizing a payment with your Payment processor. When a customer attempts to make a payment, the transaction details are sent to the FRM solution for analysis. The FRM solution assesses the risk associated with the transaction based on various parameters such as the customer's historical behavior, transaction patterns, location, device information, and any other relevant data. It then provides a risk score or recommendation to the Payment Gateway. Based on the risk score or recommendation, one can decide whether to proceed with the transaction, decline it, or take additional verification steps to ensure its legitimacy. The goal is to prevent potentially fraudulent transactions from being authorized in the first place.
 
-<figure><img src="../.gitbook/assets/frm-pre_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-pre_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Post-Authorization Flow
 
 In the PostAuth flow, the FRM solution is called into action after the payment has been processed by the Payment processor. Once the transaction is completed, the details of the transaction are sent to the FRM solution for a second layer of validation. The FRM solution reevaluates the transaction using the latest data available and cross-references it with historical patterns and known fraud indicators. The PostAuth flow acts as a safety net to catch any suspicious or fraudulent transactions that might have slipped through the PreAuth flow. If the FRM solution identifies a transaction as potentially fraudulent during the PostAuth flow, appropriate actions can be taken, such as issuing a chargeback, notifying the customer, or initiating further investigation.
 
-<figure><img src="../.gitbook/assets/frm-post_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-post_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Supported FRM Processors
 
@@ -61,17 +61,17 @@ If your FRM processor of choice is not available in the above list, please drop 
 
 **Step 1:** Log in to your [Hyperswitch account](https://app.hyperswitch.io/login).
 
-<figure><img src="../.gitbook/assets/frm-step1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-step1.png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** Navigate to the 'Fraud & Risk' tab.
 
-<figure><img src="../.gitbook/assets/frm-step2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-step2.png" alt=""><figcaption></figcaption></figure>
 
 **Step 3:** Select the FRM processor(s) you want to use. And provide your processor credentials and configure your preferred payment methods.
 
-<figure><img src="../.gitbook/assets/frm-step3a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-step3a.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/frm-step3b.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/frm-step3b.png" alt=""><figcaption></figcaption></figure>
 
 **Step 4:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
 

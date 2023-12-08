@@ -28,7 +28,7 @@ Hyperswitch's unified disputes module uses the following stages and statuses to 
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -82,7 +82,7 @@ Hyperswitch communicates to your server whenever a dispute is raised or whenever
 
 You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard
 
-<figure><img src="../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Generating Dispute Reports:
 
@@ -92,7 +92,7 @@ You can view all your disputes by going to Operations -> Disputes section on you
 
 Clicking one of the dispute will take you to a page where you can see further information about the particular dispute
 
-<figure><img src="../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 
 ### 4. Accepting/Challenging a Dispute
 

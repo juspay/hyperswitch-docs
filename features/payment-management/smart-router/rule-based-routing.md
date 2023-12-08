@@ -28,27 +28,27 @@ A Rule-based Routing Configuration comprises of one or more rules with each rule
 
 _**Step 1:**_ Click on `Setup` for Rule Based Configuration
 
-<figure><img src="../../.gitbook/assets/Astep1-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep1-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 2:**_ Save the rule name and description
 
-<figure><img src="../../.gitbook/assets/Astep2-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep2-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 3:**_ Use the no-code UI to configure your desired rules as per your business logic (an instance for configuring rule is displayed)
 
-<figure><img src="../../.gitbook/assets/Astep3-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep3-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 4:**_ Select your default preferred processors and click on Configure Rule
 
-<figure><img src="../../.gitbook/assets/Astep4-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep4-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 5:**_ In the popup, select the appropriate action based on whether you want to simply `save the rule`, or `save and also activate` it for all payments henceforth
 
-<figure><img src="../../.gitbook/assets/Astep5-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep5-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 6:**_ You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
 
-<figure><img src="../../.gitbook/assets/Astep6-smartrouter.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Astep6-smartrouter.png" alt=""><figcaption></figcaption></figure>
 
 ## How does Rule Based Routing works
 
