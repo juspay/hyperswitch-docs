@@ -1,16 +1,16 @@
 ---
-description: >-
-  Accept payments from around the globe with a secure, Unified Checkout that
-  gives your customers the best in class payment experience
+description: Run the checkout page locally
 ---
 
 # 💻 Run web client
 
 {% hint style="info" %}
-In this section, you will run the Hyperswitch web client SDK on your machine.&#x20;
+In this section, you will run the Hyperswitch web client SDK on your machine
 {% endhint %}
 
-#### [Clone the repository](https://github.com/juspay/hyperswitch-web/tree/main#clone-the-repository) <a href="#user-content-clone-the-repository" id="user-content-clone-the-repository"></a>
+Accept payments from around the globe with a secure, Unified Checkout that gives your customers the best in class payment experience
+
+## Clone the repository <a href="#user-content-clone-the-repository" id="user-content-clone-the-repository"></a>
 
 Clone the repository from Github and save in your folder.
 
@@ -21,7 +21,7 @@ cd hyperswitch-web
 
 Once the repository is cloned, switch to the project directory.
 
-#### [Setup the repository](https://github.com/juspay/hyperswitch-web/tree/main#setup-the-repository) <a href="#user-content-setup-the-repository" id="user-content-setup-the-repository"></a>
+## Setup the repository <a href="#user-content-setup-the-repository" id="user-content-setup-the-repository"></a>
 
 First install all the node modules by running the following command
 

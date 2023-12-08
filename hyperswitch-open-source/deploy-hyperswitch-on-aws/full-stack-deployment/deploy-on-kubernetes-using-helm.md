@@ -1,10 +1,16 @@
+---
+description: Cloud provider agnostic deployment
+---
+
 # Deploy on Kubernetes using Helm
 
-The Helm chart is designed to facilitate the deployment of Hyperswitch services, including the AppServer, Control Center, Scheduler services, and the Demo web application
+{% hint style="info" %}
+This section outlines cloud-provider agnostic deployment steps for easy installation of the Hyperswitch stack on your K8s cluster
+{% endhint %}
 
 ## Prerequisites
 
-1. Active redis service
+1. Active Redis service
 2. Create a Postgres database and run the schema migration using the below commands
 
 {% code fullWidth="false" %}
@@ -124,6 +130,3 @@ Use the Hyperswitch Demo app and [make a payment with test card](https://opensou
 Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs\
 
 
-
-
-\

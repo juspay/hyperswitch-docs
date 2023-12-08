@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# 🛠 Overview of the OSS setup
+# 🛠 Overview
 
 {% hint style="info" %}
 After going through this guide, you should be able to:
@@ -33,7 +33,7 @@ You don’t need any special hardware or software — we’ll show you how to us
 This guide is designed for people with some coding experience, who want learn about Payments Switches and deploy Hyperswitch in their preferred mode. You will then be able to make payments via Hyperswitch and try its different components -&#x20;
 
 * App Server - The core payments engine responsible for managing payment flows, payment unification and smart routing &#x20;
-* Web Client (SDK) - An inclusive, consistent and blended payment experience optimized for the best payment conversions.
+* Web Client (SDK) - An inclusive, consistent and blended payment experience optimized for the best payment conversions
 * Control center - A dashboard for payment analytics and operations, managing payment processors or payment methods and configuring payment routing rules
 
 ## **Running Payments yourself**

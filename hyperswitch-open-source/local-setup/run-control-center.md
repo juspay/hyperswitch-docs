@@ -8,12 +8,7 @@ description: The one-stop dashboard to manage all your payment operations
 In this section, you would be running the control center through which you can manage and control your payments
 {% endhint %}
 
-## Features
-
-1. Connect to multiple payment processors like Stripe, Braintree, Adyen etc. in a few clicks
-2. View and manage payments (payments, refunds, disputes) processed through multiple processors
-3. Easily configure routing rules (volume-based, rule-based) to intelligently route your payments
-4. Advanced analytics to make sense of your payments data
+The Hyperswitch control center is the unified dashboard to manage all your payment operations and analytics. You can connect multiple payment processors, view & manage transactions, configure customized payment routing rules and access advanced analytics to make sense of your payments data.
 
 ***
 
@@ -22,7 +17,7 @@ In this section, you would be running the control center through which you can m
 ### Pre-Requisites
 
 {% hint style="info" %}
-Node.js and npm installed on your machine.
+Ensure Node.js and npm are installed on your machine.
 {% endhint %}
 
 ### Installation Steps
