@@ -53,4 +53,8 @@ So eventually you are left with 10 PCI Requirements and 182 controls to comply w
 This is the reason behind our recommendation of installing a simple setup without the card vault, if your business processes less than 6 million card transactions
 {% endhint %}
 
-So, lets get started with the Card Vault installation !!
+## Next step:
+
+{% content-ref url="completing-the-saq.md" %}
+[completing-the-saq.md](completing-the-saq.md)
+{% endcontent-ref %}

@@ -172,3 +172,8 @@ That's it! You have successfully integrated your hosted web client on your web a
 
 The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
 
+## Next step:
+
+{% content-ref url="../../../account-setup/" %}
+[account-setup](../../../account-setup/)
+{% endcontent-ref %}

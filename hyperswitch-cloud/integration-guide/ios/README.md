@@ -32,5 +32,3 @@ Revolutionize your app's payment capabilities with the Hyperswitch iOS SDK, deli
 * **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
 
 Experience the flexibility to modify and experiment, ensuring your app's payment journey aligns precisely with your business requirements and user expectations. Elevate your iOS app's payment experience with the Hyperswitch iOS SDK.
-
-\

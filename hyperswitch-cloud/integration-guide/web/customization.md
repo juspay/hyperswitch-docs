@@ -194,8 +194,10 @@ We support the following locales -
 * English (en)
 * Japanese (ja)
 
-If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team.
+If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
+## Next step:
 
-
-Now you can test the payments on your app and go-live!
+{% content-ref url="../../payment-methods-setup/" %}
+[payment-methods-setup](../../payment-methods-setup/)
+{% endcontent-ref %}

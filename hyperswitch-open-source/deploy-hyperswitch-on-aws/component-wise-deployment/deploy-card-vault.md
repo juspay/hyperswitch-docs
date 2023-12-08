@@ -4,7 +4,11 @@ description: Deploy the Hyperswitch Card Vault on the cloud
 
 # 🔐 Deploy card vault
 
-If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../../full-stack-deployment/deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
+{% hint style="info" %}
+This section covers the steps for deploying the Hyperswitch card vault as an individual component
+{% endhint %}
+
+If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../full-stack-deployment/deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
 
 ## Standalone deployment of the Hyperswitch Card Vault
 
@@ -21,7 +25,7 @@ Pre-requisites
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure your AWS credentials in your terminal
 
@@ -34,7 +38,7 @@ For this step you would need the following from your AWS account
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 
@@ -123,3 +127,8 @@ ROUTER__JWEKEY__VAULT_ENCRYPTION_KEY= # add the JWE public key of locker generat
 ROUTER__JWEKEY__VAULT_PUBLIC_KEY= # add the JWE private key of tenant generated above
 ```
 
+## Next step:
+
+{% content-ref url="../../test-a-payment.md" %}
+[test-a-payment.md](../../test-a-payment.md)
+{% endcontent-ref %}

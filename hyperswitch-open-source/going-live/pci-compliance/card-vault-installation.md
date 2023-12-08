@@ -1,12 +1,12 @@
 ---
-description: >-
-  This section will guide introduce you to the card vault and instructions to
-  set it up for different use-cases
+description: Introducing the Hyperswitch card vault
 ---
 
 # 🗄 Hyperswitch Card Vault
 
-***
+{% hint style="info" %}
+This section will guide you to set up your own secure card vault from scratch
+{% endhint %}
 
 The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;
 
@@ -34,6 +34,6 @@ Custodian Keys - AES generated key that is used to encrypt and decrypt the maste
 
 ## Setting up your Card Vault
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Automated Script to Deploy - Standalone</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/">deploy-card-vault</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr><tr><td>Manual Setup - Cloud (AWS)</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/manual-setup.md">manual-setup.md</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr><tr><td>Automated Script to Deploy - Fullstack (along with other  components of Hyperswitch)</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/full-stack-deployment/">full-stack-deployment</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Automated Script to Deploy - Standalone</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault.md">deploy-card-vault.md</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr><tr><td>Manual Setup - Cloud (AWS)</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/manual-setup.md">manual-setup.md</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr><tr><td>Automated Script to Deploy - Fullstack (along with other  components of Hyperswitch)</td><td></td><td></td><td><a href="../../deploy-hyperswitch-on-aws/full-stack-deployment/">full-stack-deployment</a></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr></tbody></table>
 
 ###

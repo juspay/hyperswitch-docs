@@ -305,3 +305,9 @@ Callback for these event will be triggered with following event object.
 ```
 
 Congratulations! Now that you have integrated the  unified checkout on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
+
+## Next step:
+
+{% content-ref url="../../payment-methods-setup/" %}
+[payment-methods-setup](../../payment-methods-setup/)
+{% endcontent-ref %}

@@ -20,3 +20,9 @@ For growing businesses, sticking to one payment processor and offering only a ha
    * **Meeting Local Regulations:** Different countries have specific regulations regarding payment processing. Merchants operating globally need to comply with local regulations, and having multiple processors allows them to adapt their payment methods to meet these regulatory requirements.
 7. **Conversion Optimization:**
    * **Reducing Checkout Friction:** Some customers may abandon a purchase if their preferred payment method is not available. Offering a variety of payment options reduces checkout friction, increasing the likelihood of conversion and encouraging customers to complete their transactions.
+
+## Next step:
+
+{% content-ref url="use-paypal-with-stripe.md" %}
+[use-paypal-with-stripe.md](use-paypal-with-stripe.md)
+{% endcontent-ref %}

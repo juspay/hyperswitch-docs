@@ -29,7 +29,7 @@ Here's a quick summary of everything you would need for going live with Hyperswi
 ### PCI Compliance
 
 * [ ] Make sure your system is meeting the PCI compliance requirements for your business
-* [ ] If you are storing card data make sure your [card vault is set up](pci-compliance/hyperswitch-card-vault.md) as per our instructions
+* [ ] If you are storing card data make sure your [card vault is set up](pci-compliance/card-vault-installation.md) as per our instructions
 
 ### Security
 

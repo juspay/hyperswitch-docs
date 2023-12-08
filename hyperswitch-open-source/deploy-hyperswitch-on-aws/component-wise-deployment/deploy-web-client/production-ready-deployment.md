@@ -8,14 +8,7 @@ description: Deploy web client on AWS
 In this section, you will be deploying the web client on your AWS account
 {% endhint %}
 
-
-
-**End goal**
-
-* Hyperswitch Web SDK deployed and active on your AWS account.
-* The script to be accessible to anybody who tries to fetch it and be able to open the SDK using that.
-
-**What do you need to get started**
+## **What do you need to get started**
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em\_127222\&redirect\_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
 
@@ -138,7 +131,7 @@ Once the script is executed, you will receive an URL as the response (e.g. `http
 {% hint style="success" %}
 That's it! Hyperswitch web client should be up and running on your AWS account
 
-Verify the health of the web client by hitting `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js`. You should be able to see the bundled code in your browser.
+Verify the health of the web client at `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js`. You should be able to see the bundled code in your browser.
 {% endhint %}
 
 **Great!**\
@@ -146,4 +139,8 @@ Your Web Client is hosted and can be accessed by this URL.
 
 Now that the web client is hosted, you can integrate it with your app and go live. The detailed steps follow.
 
-##
+## Next step:
+
+{% content-ref url="integrate-web-client-on-your-web-app.md" %}
+[integrate-web-client-on-your-web-app.md](integrate-web-client-on-your-web-app.md)
+{% endcontent-ref %}

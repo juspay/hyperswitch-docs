@@ -11,3 +11,9 @@ description: Deploy the Hyperswitch server on the cloud
 ***
 
 This guide is aimed at helping you deploy the Hyperswitch application on the cloud and access our APIs over the internet.
+
+## Next step:
+
+{% content-ref url="deploy-control-center.md" %}
+[deploy-control-center.md](deploy-control-center.md)
+{% endcontent-ref %}

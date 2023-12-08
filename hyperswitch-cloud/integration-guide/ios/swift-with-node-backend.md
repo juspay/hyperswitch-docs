@@ -284,3 +284,9 @@ VStack {
 ```
 
 Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;
+
+## Next step:
+
+{% content-ref url="../../payment-methods-setup/" %}
+[payment-methods-setup](../../payment-methods-setup/)
+{% endcontent-ref %}

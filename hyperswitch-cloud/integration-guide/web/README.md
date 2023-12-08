@@ -8,8 +8,6 @@ description: Integrate unified checkout with your web app
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your Web App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-12 at 11.57.45 AM.png" alt="" width="563"><figcaption></figcaption></figure>
-
 ## Global Checkout Experience
 
 Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
@@ -20,6 +18,10 @@ Hyperswitch Unified Checkout is an inclusive, consistent and blended payment exp
 | <img src="../../../.gitbook/assets/image (103).png" alt="" data-size="original"> | <p><strong>Blended</strong><br>The Unified Checkout includes 40+ styling APIs, which could be tweaked to make the payment experience blend with your product. Your users will get a fully native and embedded payment experience within your app or website</p>                     |
 
 ## Modify and Experiment
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-12 at 11.57.45 AM.png" alt="" width="563"><figcaption></figcaption></figure>
+
+##
 
 While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch does not restrict you to stick to a one-size-fits-all approach. Using Hyperswitch SDK APIs, you get complete control over modifying the payment experience by,
 

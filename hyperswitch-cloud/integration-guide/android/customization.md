@@ -48,3 +48,9 @@ Modify the corner radius and border width used across the payment page using `ap
 | cornerRadiusDp      | Corner radius of the input fields, tabs and other components                                   |
 
 Now you can test the payments on your app and go-live!
+
+## Next step:
+
+{% content-ref url="../../payment-methods-setup/" %}
+[payment-methods-setup](../../payment-methods-setup/)
+{% endcontent-ref %}

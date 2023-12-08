@@ -163,3 +163,9 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 ```bash
 curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswitch_web_cleanup_setup.sh | bash
 ```
+
+## Next step:
+
+{% content-ref url="../../../account-setup/" %}
+[account-setup](../../../account-setup/)
+{% endcontent-ref %}
