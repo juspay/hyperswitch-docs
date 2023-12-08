@@ -130,7 +130,6 @@
   * [💵 Payouts](features/payment-flows-and-management/payouts.md)
   * [0 Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
   * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
-  * [🍕 Manual Capture/Multiple Partial captures](features/payment-flows-and-management/manual-capture-multiple-partial-captures.md)
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
 * [🔑 Account management](features/account-management/README.md)
   * [🤹 Multiple accounts & profiles](features/account-management/multiple-accounts-and-profiles.md)
