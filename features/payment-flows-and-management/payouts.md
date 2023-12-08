@@ -25,11 +25,11 @@ A way of paying out third parties combined with Hyperswitch's payments processin
     _Hyperswitch currently supports Adyen, Wise, and Stripe for payouts, with new processors added within 10 days._
 * **Simplify Operations**
   * All-in-One View: Monitor all payouts across partners in a single dashboard view
-  * Bulk Payouts (Coming Soon): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
-  * Recurring Payouts (Coming Soon): Set up scheduled fixed-value payouts.
+  * Bulk Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
+  * Recurring Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Set up scheduled fixed-value payouts.
 * **Stay Secure**
   * Secure Card Handling: PCI-compliant methods to accept, authenticate, and safely store card details. Plus, independent tokenization, irrespective of your payment processor.
-  * Tokenize Bank Details (Coming Soon): Checkout page to accept and verify bank account verification for Stripe, along with processor-agnostic tokenization of bank details.
+  * Tokenize Bank Details (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Checkout page to accept and verify bank account verification for Stripe, along with processor-agnostic tokenization of bank details.
 
 ## Supported Processors and Payment Methods
 
@@ -38,7 +38,7 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 | Adyen      | <ul><li>Cards</li><li>Bank Transfers</li></ul> |
 | Wise       | <ul><li>Banks</li></ul>                        |
 
-**Payouts for Stripe Connect users \[Upcoming]**
+**Payouts for Stripe Connect users (submit a feature request** [**here**](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)**)**
 
 * Business continuity with compatibility ensured for your Stripe connect onboarded sellers, merchants and service providers
 

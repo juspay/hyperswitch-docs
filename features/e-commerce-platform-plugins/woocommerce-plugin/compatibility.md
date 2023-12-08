@@ -1,5 +1,5 @@
 ---
-description: List of the supported plugins (Coming Soon)
+description: List of the supported plugins
 ---
 
 # Compatibility

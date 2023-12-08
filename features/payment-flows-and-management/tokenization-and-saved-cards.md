@@ -22,8 +22,8 @@ Once the user selects a particular card on the checkout page, the corresponding 
 
 ## Migrating your customers’ saved cards from your processors to Hyperswitch
 
-Hyperswitch also supports migrating your customers’ saved cards from your processors’ vaults to Hyperswitch. This process typically involves requesting your processor’s support team to share your customers’ saved cards data to Hyperswitch in a secure file transfer format and may involve sharing Hyperswitch’s PCI DSS certificate with them. Please write to biz@<mark style="color:blue;">hyperswitch.io</mark> to know more and kickstart your card migration process.
+Hyperswitch also supports migrating your customers’ saved cards from your processors’ vaults to Hyperswitch. This process typically involves requesting your processor’s support team to share your customers’ saved cards data to Hyperswitch in a secure file transfer format and may involve sharing Hyperswitch’s PCI DSS certificate with them. Please write to <mark style="color:blue;">biz@hyperswitch.io</mark> to know more and kickstart your card migration process.
 
-## Network Tokenization (coming soon)
+## Network Tokenization
 
-Hyperswitch will soon be able to support Network Tokenization which will enable you to securely store your customers’ card details with various networks such as Visa, Mastercard, American Express, etc. This would bring in additional benefits such as higher authorization rates, fraud reduction, liability shift, lower network fees in some cases, etc. Request for this feature [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
+This features is current not present in Hyperswitch. Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests). Hyperswitch can support Network Tokenization which will enable you to securely store your customers’ card details with various networks such as Visa, Mastercard, American Express, etc. This would bring in additional benefits such as higher authorization rates, fraud reduction, liability shift, lower network fees in some cases, etc.&#x20;
