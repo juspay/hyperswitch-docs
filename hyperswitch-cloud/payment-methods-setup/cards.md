@@ -44,9 +44,3 @@ Follow the below guide to learn how to make a recurring payment with Hyperswitch
 ## Auth and Capture
 
 By default, all payments are auto-captured during authorization in Hyperswitch, but you can choose to separate capture from authorization by manually capturing an authorized payment later. Setting the `capture` field in payments/confirm API to `manual` will block the stated amount on the customer’s card without charging them. To charge the customer an amount equal to or lesser than the blocked amount, use the payments/capture endpoint with the relevant details.
-
-Follow the below guide to learn how to make an Auth & Capture payment
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
