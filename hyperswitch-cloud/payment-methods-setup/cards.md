@@ -25,10 +25,28 @@ You could use Hyperswitch’s PCI Compliant secure vault to safely store your cu
 
 The Saved cards feature comes out of the box without any additional integration steps. The Unified Checkout SDK will fetch the saved cards details and show them to your users. All you need to do is create a customer or send a customer id when you call the Payments API. The cards belonging to that customer ID are securely stored and retrived from the card vault.
 
+Follow the below guide to learn how to make a saved card payment using Hyperswitch
+
+{% content-ref url="../../features/payment-flows-and-management/tokenization-and-saved-cards.md" %}
+[tokenization-and-saved-cards.md](../../features/payment-flows-and-management/tokenization-and-saved-cards.md)
+{% endcontent-ref %}
+
 ## Recurring Payments - Mandate through cards
 
-Currently, Hyperswitch supports the creation of mandates for card transactions through the following payment processors: - Adyen - Checkout
+Hyperswitch supports the creation of mandates for card transactions through various payment processors to collect card information from the customer and authorize a mandate. The mandate can then be charged against at specific intervals and specific amounts based on the mandate setup.&#x20;
 
-## Placing a hold for later capture
+Follow the below guide to learn how to make a recurring payment with Hyperswitch
+
+{% content-ref url="../../features/payment-flows-and-management/mandates-and-recurring-payments.md" %}
+[mandates-and-recurring-payments.md](../../features/payment-flows-and-management/mandates-and-recurring-payments.md)
+{% endcontent-ref %}
+
+## Auth and Capture
 
 By default, all payments are auto-captured during authorization in Hyperswitch, but you can choose to separate capture from authorization by manually capturing an authorized payment later. Setting the `capture` field in payments/confirm API to `manual` will block the stated amount on the customer’s card without charging them. To charge the customer an amount equal to or lesser than the blocked amount, use the payments/capture endpoint with the relevant details.
+
+Follow the below guide to learn how to make an Auth & Capture payment
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
