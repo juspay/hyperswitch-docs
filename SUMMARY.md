@@ -129,6 +129,7 @@
 * [🔗 Payment links](features/payment-links.md)
 * [🚩 Disputes/Chargebacks Management](features/disputes.md)
 * [🤹 Multiple accounts & profiles](features/multiple-accounts-and-profiles.md)
+* [🍕 Manual Capture/Multiple Partial captures](features/manual-capture-multiple-partial-captures.md)
 
 ## Learn more
 
