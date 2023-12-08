@@ -160,4 +160,10 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 ## **Resources**
 
-* To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3).
+* To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3)
+
+## Next step:
+
+{% content-ref url="../test-a-payment.md" %}
+[test-a-payment.md](../test-a-payment.md)
+{% endcontent-ref %}

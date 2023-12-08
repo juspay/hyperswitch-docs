@@ -59,3 +59,8 @@ This step will prompt you to enter 3 details that you must have received in the 
 Congratulations! You will now see the web app running on `http://localhost:9060` where you can test your payments.
 {% endhint %}
 
+## Next step:
+
+{% content-ref url="../account-setup/" %}
+[account-setup](../account-setup/)
+{% endcontent-ref %}

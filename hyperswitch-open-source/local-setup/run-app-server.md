@@ -40,3 +40,8 @@ The expected response here is `200 OK` status code. This indicates that the serv
 
 In the next chapter, we'll run payments through your local Hyperswitch setup by setting up the necessary accounts, API credentials and try out payments and refunds.
 
+## Next step:
+
+{% content-ref url="run-control-center.md" %}
+[run-control-center.md](run-control-center.md)
+{% endcontent-ref %}

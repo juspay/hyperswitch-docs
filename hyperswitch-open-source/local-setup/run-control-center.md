@@ -57,4 +57,8 @@ Follow these simple steps to set up Hyperswitch on your local machine.
     ```
 7. Access the application in your browser at [http://localhost:9000](http://localhost:9000/).
 
-**Further Steps :-** [Setup for the web client](run-web-client.md) and complete the local setup.
+## Next step:
+
+{% content-ref url="run-web-client.md" %}
+[run-web-client.md](run-web-client.md)
+{% endcontent-ref %}

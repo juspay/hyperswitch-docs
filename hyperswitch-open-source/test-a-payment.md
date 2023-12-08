@@ -46,8 +46,6 @@ In case you have integrated the web client on your app and want to test a paymen
 
 The app server is more powerful than just processing the payments. You can test refunds, subscription payments and more using the app server.
 
-
-
 <details>
 
 <summary>Troubleshooting/FAQs</summary>
@@ -68,3 +66,9 @@ The app server is more powerful than just processing the payments. You can test 
    An exhaustive list of error and the corrective items are [here](https://api-reference.hyperswitch.io/essentials/error\_codes).
 
 </details>
+
+## Next step:
+
+{% content-ref url="going-live/" %}
+[going-live](going-live/)
+{% endcontent-ref %}

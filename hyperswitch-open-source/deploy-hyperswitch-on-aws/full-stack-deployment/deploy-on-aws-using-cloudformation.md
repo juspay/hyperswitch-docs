@@ -4,8 +4,6 @@ description: Use our CDK script to deploy our production-ready K8s setup inside 
 
 # Deploy on AWS using CloudFormation
 
-
-
 {% hint style="info" %}
 In this chapter, you will deploy our full-stack application on AWS EKS. This will deploy our app server, web client and control center
 {% endhint %}
@@ -144,3 +142,9 @@ That's it! Hyperswitch should be up and running on your AWS account. Open the De
 16. **Where can I find further documentation on Hyperswitch?** You can find additional documentation, tutorials, and support resources on our website and in our api docs.
 
 </details>
+
+## Next step:
+
+{% content-ref url="../../account-setup/" %}
+[account-setup](../../account-setup/)
+{% endcontent-ref %}

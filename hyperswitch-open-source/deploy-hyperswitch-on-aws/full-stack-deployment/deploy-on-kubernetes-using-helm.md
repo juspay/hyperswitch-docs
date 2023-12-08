@@ -127,6 +127,10 @@ helm upgrade --install hyperswitch-v1 . -n hyperswitch -f values.yaml
 
 Use the Hyperswitch Demo app and [make a payment with test card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
 
-Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs\
+Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs
 
+## Next step:
 
+{% content-ref url="../../account-setup/" %}
+[account-setup](../../account-setup/)
+{% endcontent-ref %}

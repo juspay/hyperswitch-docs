@@ -65,3 +65,9 @@ Currently, you can configure two types of routing with more on the way:
 
 1. Volume based routing: As the name suggests, this routing is based on the volume provided. You can assign percentage volumes that needs to be processed with the connected processors and Hyperswitch will route in a way to ensure that the volume distribution is maintained
 2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment\_method, card\_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails
+
+## Next step
+
+{% content-ref url="../test-a-payment.md" %}
+[test-a-payment.md](../test-a-payment.md)
+{% endcontent-ref %}
