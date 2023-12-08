@@ -28,5 +28,3 @@ Your customers’ payment method would be charged automatically in most cases wi
 
 * To setup a mandate, make a request to the [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint with **`mandate_data`** object along with other necessary fields  (**`amount, currency, payment_method, payment_method_type, payment_method_data`**) and **`confirm=true`**
 * Make a recurring payment by making another request to  [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint by passing the **`mandate_id`** received in the previous step along with **`off_session`** field
-
-## Troubleshooting: Common errors and workarounds
