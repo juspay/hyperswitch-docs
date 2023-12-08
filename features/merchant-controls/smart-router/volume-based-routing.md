@@ -1,5 +1,5 @@
 ---
-description: Route transaction through processors based on volume distribution
+description: Route transactions through processors based on volume distribution
 ---
 
 # Volume Based Routing
