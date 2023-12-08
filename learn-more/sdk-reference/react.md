@@ -1,5 +1,5 @@
 ---
-description: Detailed SDK methods and props to customize your payments experience
+description: To customize your payments experience
 ---
 
 # React

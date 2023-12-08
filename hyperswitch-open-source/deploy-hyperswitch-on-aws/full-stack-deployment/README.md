@@ -1,7 +1,3 @@
----
-description: Easy installation of Hyperswitch on AWS
----
-
 # Full stack deployment
 
 {% hint style="info" %}

@@ -118,7 +118,6 @@
 * [📋 3DS decision manager](features/3ds-decision-manager.md)
   * [Setup](features/3ds-decision-manager/setup.md)
   * [FAQs](features/3ds-decision-manager/faqs.md)
-* [📊 Business units manager](features/business-units-manager.md)
 * [🎛 Payment operations](features/payment-operations.md)
 * [🛍 E-commerce platform plugins](features/e-commerce-platform-plugins/README.md)
   * [WooCommerce Plugin](features/e-commerce-platform-plugins/woocommerce-plugin/README.md)
@@ -128,6 +127,7 @@
     * [FAQs](features/e-commerce-platform-plugins/woocommerce-plugin/faqs.md)
 * [🔗 Payment links](features/payment-links.md)
 * [🚩 Disputes/Chargebacks Management](features/disputes.md)
+* [🤹 Multiple accounts & profiles](features/multiple-accounts-and-profiles.md)
 
 ## Learn more
 

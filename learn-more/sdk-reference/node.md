@@ -1,5 +1,5 @@
 ---
-description: Node SDK to access the Hyperswitch API
+description: Node to access the Hyperswitch API
 ---
 
 # Node

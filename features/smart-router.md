@@ -1,5 +1,5 @@
 ---
-description: Route your payments seamlessly with the Smart Router.
+description: Infinite control over managing your payments
 ---
 
 # 🛣 Smart Router
