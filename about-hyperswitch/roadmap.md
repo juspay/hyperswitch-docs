@@ -38,19 +38,19 @@ There a lot of problems to be solved in payments, but our majority of our curren
 ### Developer Experience
 
 * 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
-* 🟩 Publish developer documentation for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
+* 🟩 Publish developer docs for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
 * 🟩 Hyperswitch Woocommerce plugin for Wordpress users. [Install the Woocommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
 * 🟧 AWS menu driven Hyperswitch installation support
 * 🟧 Optimizing Hyperswitch application overhead from 30ms to 20ms
 
 ### Reducing Payment Costs
 
-* 🟩 Reduce chargeback costs by enabling Signifyd and Riskified (Fraud and Risk provider). [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
-* 🟩 Support for Gocardless bank direct debits. [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
+* 🟩 Reduce chargebacks by enabling Signifyd and Riskified (FRMs). [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
+* 🟩 Support for Gocardless bank direct debits. [Try it out by signing up for Hyperswitch](https://app.hyperswitch.io/register)
 * 🟧 Specialized low cost processor integration - Helcim
 * 🟩 Open sourcing Smart Routing Framework for self hosting
 * 🟧 Support Plaid for ACH account verification
-* 🟧 Enabling surcharge for specific payment methods to promote low cost payment methods among users
+* 🟧 Enabling surcharge for specific payment methods to promote low cost payment methods
 * 🟥 Direct bank integration - Wells Fargo
 
 ### Improving Authorization Rates
@@ -68,7 +68,7 @@ There a lot of problems to be solved in payments, but our majority of our curren
 
 ### Community Feature Requests
 
-* 🟩 Open sourcing Web checkout (Hyperswitch Unified Checkout) for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
+* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
 * 🟩 Open sourcing Card Vault application code for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault)
 * 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping)
 * 🟧 Direct bank integration - Bank of America
