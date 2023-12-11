@@ -115,6 +115,7 @@ On successful execution of the script, you will receive the following outputs
 | Control Center URL          | Access the Hyperswitch control center and explore multiple settings                                                                                         |
 | Hyperloader.js URL          | Use the `hyperloader` to [integrate our web client](../component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md) in your website |
 | Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                                              |
+| Locker URL                  | Access the Hyperswitch card vault using this host URL                                                                                                       |
 
 {% hint style="success" %}
 That's it! Hyperswitch should be up and running on your AWS account. Open the Demo Store and make a test transaction using any test card :tada::tada:
