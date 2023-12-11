@@ -27,11 +27,11 @@ Hyperswitch supports the following processors for 3DS Step-up retries.
 * Bluesnap
 * Stripe
 
-In case you wish more processors to be covered for 3DS Step-up retry, please submit a request to hyperswitch@juspay.in. Support will be added within 7 working days.
+In case you wish more processors to be covered for 3DS Step-up retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
 ## How to enable 3DS Step-up retries?
 
-Drop a request to hyperswitch@juspay.in with confirmation to enable 3DS Step-up retry
+Drop a request to biz@hyperswitch.io with confirmation to enable 3DS Step-up retry
 
 ## FAQs
 

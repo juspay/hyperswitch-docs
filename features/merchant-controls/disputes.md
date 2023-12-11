@@ -58,7 +58,7 @@ Even after a successful dispute challenge, a payment method issuer might deem th
 
 
 
-## #Managing Disputes on Hyperswitch through Dashboard
+## Managing Disputes on Hyperswitch through Dashboard
 
 ### 1. Viewing Disputes on Hyperswitch dashboard
 
