@@ -112,7 +112,6 @@
     * [Zen](hyperswitch-cloud/connectors/available-connectors/zen.md)
   * [Activate connector on Hyperswitch](hyperswitch-cloud/connectors/activate-connector-on-hyperswitch.md)
   * [Test a Payment with connector](hyperswitch-cloud/connectors/test-a-payment-with-connector.md)
-  * [FAQ](hyperswitch-cloud/connectors/faq.md)
 
 ## Features
 
