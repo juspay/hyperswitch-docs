@@ -1,6 +1,10 @@
+---
+description: Enable Apple pay on your iOS app
+---
+
 # iOS Application
 
-#### **Prerequisites**
+## **Prerequisites**
 
 Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
@@ -9,7 +13,7 @@ Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites ne
 
 Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to setting up Apple Pay -
 
-#### **Creating an Apple MerchantID**
+## **Creating an Apple MerchantID**
 
 You can create an Apple MerchantID referencing the video or following the steps mentioned below&#x20;
 
@@ -19,7 +23,7 @@ You can create an Apple MerchantID referencing the video or following the steps 
 * Enter a unique descriptive identifier _(like merchant.com.testdomain.sandbox)_ and click Continue
 * Verify the description and identifier and click on Register
 
-#### **Validating Merchant Domain**
+## **Validating Merchant Domain**
 
 You can validate the merchant domain by following the steps mentioned below -
 
@@ -29,10 +33,9 @@ You can validate the merchant domain by following the steps mentioned below -
 * Click on Download and a **.txt** file will be downloaded
 * Host this file on _merchant\_domain_/.well-known/apple-developer-merchantid-domain-association.txt
 * Once you host the .txt file in the path mentioned above, click on Verify
-* Make sure the status is verified as shown in the following image\
+* Make sure the status is verified as shown in the following image
 
-
-#### **Creating Apple MerchantID Certificate and Private Key**
+## **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key referencing the video below or following the steps mentioned below -
 
@@ -58,7 +61,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Creating Apple Pay Payment Processing Certificate**
+## **Creating Apple Pay Payment Processing Certificate**
 
 * You will need to get a **.csr** file from your processor's dashboard, _(like Adyen)_
 * Upload the **.cer** file you received while creating Apple MerchantID Certificate on the processor's dashboard
@@ -67,7 +70,7 @@ openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 * After answering whether the Merchant ID will be processed exclusively in China mainland, click on Continue
 * Upload the **.csr** you received from your processor and click Continue
 
-#### **Configuring Apple Pay on Hyperswitch**
+## **Configuring Apple Pay on Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
 

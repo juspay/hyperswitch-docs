@@ -6,8 +6,6 @@ description: Get started integrating the Hyperswitch web client in your app
 
 <img src="../../.gitbook/assets/Screenshot 2023-12-05 at 12.22.44 PM.png" alt="Unified Checkout - Web" data-size="original">                             <img src="../../.gitbook/assets/image (85).png" alt="Unified Checkout - App" data-size="original">
 
-
-
 Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
 | <img src="../../.gitbook/assets/image (94).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
@@ -25,8 +23,8 @@ While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch
 * **Prioritizing payment methods:** You can make an impact on the payment mix or conversion rates by prioritizing/ promoting specific payment methods for your customers.
 * **Switching themes and layouts of checkout page:** The Unified Checkout comes with a wide range of pre-designed themes and layouts which you can choose from.
 
-
-
 ## How to get started?
 
-[Click here](https://app.hyperswitch.io/register) to signup for Hyperswitch.
+Pick the platform / framework of your choice to get started with integrating the client SDK on your application
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Hyperswitch Web</strong></td><td></td><td></td><td><a href="../../.gitbook/assets/61.png">61.png</a></td></tr><tr><td><strong>Hyperswitch Android</strong></td><td></td><td></td><td><a href="../../.gitbook/assets/60 (1).png">60 (1).png</a></td></tr><tr><td><strong>Hyperswitch iOS</strong></td><td></td><td></td><td><a href="../../.gitbook/assets/62.png">62.png</a></td></tr><tr><td><strong>Hyperswitch React Native</strong></td><td></td><td></td><td><a href="../../.gitbook/assets/63.png">63.png</a></td></tr></tbody></table>

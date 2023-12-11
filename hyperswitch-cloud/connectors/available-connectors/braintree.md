@@ -14,7 +14,7 @@ Braintree is a payment processor that allows online businesses to accept payment
 
 ## Activating via Hyperswitch
 
-## I. Prerequisites
+### Prerequisites
 
 1. You need to be registered with Braintree in order to proceed. In case you dont, you can quickly signup by visiting the Braintree's Website.
 2. You should have setup you account using Hyperswitch dashboard

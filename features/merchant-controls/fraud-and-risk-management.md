@@ -1,5 +1,5 @@
 ---
-description: Effectively enhance fraud detection via FRM solution of your choice
+description: Effectively enhance fraud detection across 40+ countries
 ---
 
 # 🛡 Fraud & risk management
@@ -71,6 +71,10 @@ If your FRM processor of choice is not available in the above list, please put a
 <figure><img src="../../.gitbook/assets/frm-step3b.png" alt=""><figcaption></figcaption></figure>
 
 **Step 4:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
+
+{% content-ref url="../../hyperswitch-open-source/test-a-payment.md" %}
+[test-a-payment.md](../../hyperswitch-open-source/test-a-payment.md)
+{% endcontent-ref %}
 
 ## FAQs
 

@@ -8,7 +8,7 @@ description: Make test payments through preferred connector via Hyperswitch
 This section gives you an overview of how to make test payments via Hyperswitch.
 {% endhint %}
 
-### Test the Configuration using Dashboard
+## Test the Configuration using Dashboard
 
 1. Upon configuration of the Connector, navigate to the dashboard [home page](https://app.hyperswitch.io/home)
 2. Proceed with the "Try a test payment" option on the home page of the dashboard
@@ -21,7 +21,7 @@ This section gives you an overview of how to make test payments via Hyperswitch.
    \- Click on Operations -> Payments \
    \- Your transactions should be visible under the order management tab
 
-### Test Credentials
+## Test Credentials
 
 #### Test Cards for popular connectors <a href="#test-cards-for-popular-connectors" id="test-cards-for-popular-connectors"></a>
 
@@ -67,7 +67,7 @@ In order to test ApplePay, you will need to follow these steps written in [Apple
 
 Apple Pay provides test cards from various card companies and supported regions as well. To pay you can use TouchID on the Macbook or your iPhone. These devices should be configured in your apple account.
 
-**Unable to test Applepay successfully?**
+## **Unable to test Applepay successfully?**
 
 1. Applepay sandbox testing is supported only if you are located in any of these [15 countries](https://developer.apple.com/apple-pay/sandbox-testing/).
 2. Your Safari browser automatically detects your location from your System Preferences.

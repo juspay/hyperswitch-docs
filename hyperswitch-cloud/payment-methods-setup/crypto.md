@@ -8,11 +8,9 @@ description: Accept crypto payments on your application
 This section gives you an overview of how to accept crypto payment methods through Hyperswitch.
 {% endhint %}
 
-## Crypto
-
 Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethereum, and Litecoin. It's fast, cheap, and private compared to traditional payment methods. Crypto payments use blockchain technology to record transactions securely and transparently without the need for intermediaries like banks.
 
-### **How does a crypto payment work?**
+## **How does a crypto payment work?**
 
 1. The customer selects the crypto payment option on the merchant's checkout page
 2. The customer is redirected to the cryptocurrency wallet to complete the payment
@@ -20,7 +18,7 @@ Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethe
 4. The customer confirms the transaction in their wallet and sends the payment to the recipient's public address on the cryptocurrency network
 5. Once the payment is confirmed and processed by the cryptocurrency network, the merchant can access the payment in their cryptocurrency wallet
 
-### **Configuring Crypto on Hyperswitch**
+## **Configuring Crypto on Hyperswitch**
 
 You can configure Crypto on Hyperswitch by following the steps mentioned below -
 

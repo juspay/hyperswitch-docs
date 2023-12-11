@@ -26,15 +26,12 @@ Some payment processors mandate a 3D Secure authentication for all payments whic
 
 ### Configure 3DS Decision Manager
 
-Follow the below guidelines to configure the 3DS Decision Manager
-
-* [Setup](merchant-controls/3ds-decision-manager/setup.md)
-* [FAQs](merchant-controls/3ds-decision-manager/faqs.md)
-
-
+Follow the [setup guide](merchant-controls/3ds-decision-manager/setup-guide.md) to configure the 3DS Decision Manager
 
 ## Next step&#x20;
 
 To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
 
-##
+{% content-ref url="../hyperswitch-open-source/test-a-payment.md" %}
+[test-a-payment.md](../hyperswitch-open-source/test-a-payment.md)
+{% endcontent-ref %}

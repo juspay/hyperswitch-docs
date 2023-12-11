@@ -12,7 +12,7 @@ This section gives you an overview of how to make payments via Checkout through 
 
 Checkout.com is a global payment company that provides a gateway, an acquirer and processor as part of its end-to-end solution. They provide solutions to help businesses and their communities thrive in the digital economy. To know about more about payment methods supported by Checkout via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-#### &#x20;Prerequisites
+## &#x20;Prerequisites
 
 1. You need to be registered with Checkout in order to proceed. In case you aren't, you can quickly setup your Checkout account [here](https://www.checkout.com/get-test-account).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

@@ -14,7 +14,7 @@ BlueSnap is a payment platform that allows businesses to easily accept online an
 
 ### Activating Bluesnap via Hyperswitch
 
-#### I. Prerequisites
+#### Prerequisites
 
 1. You need to be registered with Bluesnap in order to proceed. In case you aren't, you can quickly setup your Bluesnap account [here](https://home.bluesnap.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

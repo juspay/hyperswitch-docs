@@ -14,7 +14,7 @@ Bank Debits enables merchants to directly pull funds from the customers' bank ac
 
 Bank debits are delayed notification payment methods (it might take up to 2-7 days for the payment status to be updated).
 
-**Payments Flow:**
+## **Payments Flow**
 
 a. Customer selects bank debit on the checkout page
 

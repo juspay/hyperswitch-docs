@@ -16,7 +16,7 @@ dLocal Limited is a Uruguayan financial technology company. dLocal powers local 
 
 ### Activating dLocal via Hyperswitch
 
-#### I. Prerequisites
+#### Prerequisites
 
 1. You need to be registered with dLocal in order to proceed. In case you aren't, you can quickly setup your dLocal account [here](https://dlocal.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

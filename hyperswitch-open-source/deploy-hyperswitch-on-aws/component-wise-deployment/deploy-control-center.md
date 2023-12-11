@@ -14,7 +14,7 @@ In this chapter, you will deploy Hyperswitch control center on AWS cloud. You ca
 
 ## Standalone deployment
 
-### This setup includes:
+This setup includes:
 
 | Component | Instance Type | Default Configuration |
 | --------- | ------------- | --------------------- |
@@ -26,15 +26,11 @@ In this chapter, you will deploy Hyperswitch control center on AWS cloud. You ca
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 
-
-
-### **Let's begin!**
-
 > #### Note
 >
 > You can directly start from [Step 3](deploy-control-center.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
-#### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="Linux x86 (64-bit)" %}
@@ -101,7 +97,7 @@ which aws
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-#### Step 2 - Configure the AWS CLI
+### Step 2 - Configure the AWS CLI
 
 For this step you would need the following from you AWS account
 
@@ -119,7 +115,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch
+### Step 3 - Setup Hyperswitch
 
 You can now deploy the hyperswitch application by running the below command in the same terminal session.
 
@@ -135,7 +131,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aw
 
 Once the script is executed, you will receive a `Public IP` as the response (e.g. `http://34.207.75.225`). This IP is the base URL for accessing the application's APIs
 
-#### Clean Up
+### Clean Up
 
 If you want to delete the application from your account simply run the below clean up script
 
@@ -147,3 +143,8 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_cleanup_setup.sh | bash
 ```
 
+## Next step:
+
+{% content-ref url="../deploy-web-client/" %}
+[deploy-web-client](../deploy-web-client/)
+{% endcontent-ref %}

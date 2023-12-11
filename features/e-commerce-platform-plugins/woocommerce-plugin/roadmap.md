@@ -21,6 +21,4 @@ Our roadmap is open and community driven.
 * Address verification system
 * Multi-locale support
 
-Hyperswitch Woocommerce Plugin is now open source.&#x20;
-
 You can check our roadmap, work in progress and completed items [here](https://github.com/juspay/hyperswitch-woocommerce-plugin). You can also add issues, or pick up issues and contribute to the public repo.&#x20;

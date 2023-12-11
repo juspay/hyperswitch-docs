@@ -16,7 +16,7 @@ Coinbase Commerce is the easiest way to start accepting crypto payments. It prov
 
 ### Activating Coinbase via Hyperswitch
 
-#### I. Prerequisites
+#### Prerequisites
 
 1. You need to be registered with Coinbase in order to proceed. In case you aren't, you can quickly setup your Coinbase account [here](https://www.coinbase.com/commerce)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register)

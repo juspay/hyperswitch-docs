@@ -16,7 +16,7 @@ Fiserv is a global fintech and payments company with solutions for banking, glob
 
 ### Activating Fiserv via Hyperswitch
 
-#### I. Prerequisites
+#### Prerequisites
 
 1. You need to be registered with Fiserv in order to proceed. In case you aren't, you can quickly setup your Fiserv account [here](https://www.fiserv.com/en.html)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
