@@ -26,7 +26,8 @@
       * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
       * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
     * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault.md)
-      * [Manual Setup](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/manual-setup.md)
+      * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
+      * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
 * [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
   * [🎛 Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
@@ -36,7 +37,6 @@
   * [🏛 PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
     * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
     * [🗒 Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-    * [🗄 Hyperswitch Card Vault](hyperswitch-open-source/going-live/pci-compliance/card-vault-installation.md)
   * [🔐 Security](hyperswitch-open-source/going-live/security.md)
   * [♻ Updates](hyperswitch-open-source/going-live/updates.md)
 
