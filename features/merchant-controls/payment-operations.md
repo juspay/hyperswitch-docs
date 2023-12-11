@@ -1,16 +1,16 @@
 ---
-description: One and only dashboard for all your payment operations needs!
+description: Single dashboard for all your payment operations needs!
 ---
 
 # 🎛 Payment operations
 
 {% hint style="info" %}
-This section covers the day-to-day use cases of payments operations which hyperswitch dashboard can boost
+This section covers the day-to-day use cases of payments operations which Hyperswitch dashboard can support
 {% endhint %}
 
 ## Payment Operations
 
-"Payment Operations" refers to the operation time and effort spent by businesses beyond the payment processing step to manage the entire lifecycle of payments. It is cross-functional responsibility and shared across various teams of your business which is responsible for Customer Experience, Finance and Business Growth.
+"Payment Operations" refers to the operational time and effort spent by businesses beyond the payment processing step to manage the entire lifecycle of payments. It is cross-functional responsibility and shared across various teams of your business which is responsible for Customer Experience, Finance and Business Growth.
 
 And, as you begin to process payments through multiple payment processors, the complexity increases multifold, thereby increasing fixed costs and siphoning out mind share from focussing on the core business.
 

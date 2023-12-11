@@ -1,5 +1,5 @@
 ---
-description: Effectively enhance fraud detection across 40+ countries
+description: Effectively enhance fraud detection via FRM solution of your choice
 ---
 
 # 🛡 Fraud & risk management
@@ -8,7 +8,7 @@ description: Effectively enhance fraud detection across 40+ countries
 With this section you will get a good understanding of FRM, it's need, use cases, architecture and steps to integrate it in your system.
 {% endhint %}
 
-The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection across more than 40 countries and various currencies within your payment ecosystem.
+The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
 
 ## Benefits
 
@@ -36,13 +36,13 @@ You can enable the FRM solution of your choice with few clicks and very minimal 
 
 ## Pre-Authorization Flow
 
-In the PreAuth flow, the FRM solution is invoked before authorizing a payment with your Payment processor. When a customer attempts to make a payment, the transaction details are sent to the FRM solution for analysis. The FRM solution assesses the risk associated with the transaction based on various parameters such as the customer's historical behavior, transaction patterns, location, device information, and any other relevant data. It then provides a risk score or recommendation to the Payment Gateway. Based on the risk score or recommendation, one can decide whether to proceed with the transaction, decline it, or take additional verification steps to ensure its legitimacy. The goal is to prevent potentially fraudulent transactions from being authorized in the first place.
+In the PreAuth flow, the FRM solution is invoked before authorizing a payment with your Payment processor. When a customer attempts to make a payment, the transaction details are sent to the FRM solution for analysis. The FRM solution assesses the risk associated with the transaction based on various parameters such as the customer's historical behaviour, transaction patterns, location, device information, and any other relevant data. It then provides a risk score or recommendation. Based on the risk score or recommendation, one can decide whether to proceed with the transaction, decline it, or take additional verification steps to ensure its legitimacy. The goal is to prevent potentially fraudulent transactions from being authorized in the first place.
 
 <figure><img src="../../.gitbook/assets/frm-pre_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Post-Authorization Flow
 
-In the PostAuth flow, the FRM solution is called into action after the payment has been processed by the Payment processor. Once the transaction is completed, the details of the transaction are sent to the FRM solution for a second layer of validation. The FRM solution reevaluates the transaction using the latest data available and cross-references it with historical patterns and known fraud indicators. The PostAuth flow acts as a safety net to catch any suspicious or fraudulent transactions that might have slipped through the PreAuth flow. If the FRM solution identifies a transaction as potentially fraudulent during the PostAuth flow, appropriate actions can be taken, such as issuing a chargeback, notifying the customer, or initiating further investigation.
+In the PostAuth flow, the FRM solution is called into action after the payment has been processed by the Payment processor. Once the transaction is completed, the details of the transaction are sent to the FRM solution for a second layer of validation. The FRM solution re-evaluates the transaction using the latest data available and cross-references it with historical patterns and known fraud indicators. The PostAuth flow acts as a safety net to catch any suspicious or fraudulent transactions that might have slipped through the PreAuth flow. If the FRM solution identifies a transaction as potentially fraudulent during the PostAuth flow, appropriate actions can be taken, such as issuing a chargeback, notifying the customer, or initiating further investigation.
 
 <figure><img src="../../.gitbook/assets/frm-post_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
 

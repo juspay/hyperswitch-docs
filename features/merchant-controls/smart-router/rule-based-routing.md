@@ -1,6 +1,6 @@
 ---
 description: >-
-  Route transaction through processors with advanced logic rules on the basis of
+  Route transaction through processors with advanced rules on the basis of
   various payment parameters
 ---
 
@@ -12,7 +12,7 @@ This section will guide you on how to setup Rule based routing using the Hypersw
 
 ## Get started with Rule Based Routing
 
-A Rule-based Routing Configuration comprises of one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.&#x20;
+A rule-based routing configuration comprises of one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.&#x20;
 
 **Condition:** A condition is constructed with dimensions and logical operators. Routing rules can be pivoted upon numerous dimensions which include payment method, amount of payment, currency, etc. Also, there are six logical operators - equal to, greater than, lesser than, is, is not, contains, not contains, which are used to evaluate the condition.
 
