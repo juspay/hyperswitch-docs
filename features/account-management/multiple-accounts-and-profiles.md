@@ -7,7 +7,7 @@ description: >-
 # 🤹 Multiple accounts & profiles
 
 {% hint style="info" %}
-Follow this guide to understand where your business use case fits with hyperswitch architcture.
+Follow this guide to understand where your business use case fits with hyperswitch architecture.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -16,13 +16,13 @@ If there are more than one `business_profiles` for a merchant account, then pass
 
 Hyperswitch Architecture supports&#x20;
 
-* Creating multiple merchant accounts under an Organization.
+* Creating multiple merchant accounts under an organization.
 * Creating multiple business profiles under each merchant account.
-* Create multiple instances of a processor ( stripe, adyen etc ) under a business profile.
+* Create multiple instances of a processor ( Stripe, Adyen etc ) under a business profile.
 
-Let's have a visual of how the Architecture looks like.
+Here's how the architecture would look like.
 
-<figure><img src="../../.gitbook/assets/hyps_org_architecture.drawio.png" alt="" width="486"><figcaption><p>The architecture of hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hyps_org_architecture.drawio.png" alt="" width="486"><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
 
 ### Let's understand the hierarchy
 
@@ -37,16 +37,16 @@ A merchant account is associated with an `api_key` and `publishable_key` which i
 #### Business profile
 
 {% hint style="info" %}
-Every merchant account has atleast one business profile. For easier integration`profile_id` is not mandatory if there is only one business profile.&#x20;
+Every merchant account has at least one business profile. For easier integration`profile_id` is not mandatory if there is only one business profile.&#x20;
 {% endhint %}
 
-A Business profile serves as a logical separation of businesses for seamless integration and onboarding. Every business profile  is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
+A business profile serves as a logical separation of businesses for seamless integration and onboarding. Every business profile  is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
 
 * Routing Algorithm.
 
-_Only gateways that are available under the business profile can be used to configure the routing algorithm._&#x20;
+Only gateways that are available under the business profile can be used to configure the routing algorithm.&#x20;
 
-_If a routing algorithm is not available, a default fallback, which consists of all the processors configured under the business profile based on priority order would be used. The priority of processors in the default fallback can be configured_
+If a routing algorithm is not available, a default fallback, which consists of all the processors configured under the business profile based on priority order would be used. The priority of processors in the default fallback can be configured
 
 * Webhook url and Return url for payments.
 
@@ -100,8 +100,16 @@ To create more merchant accounts, click the merchant account dropdown from the r
 
 In order to route a payment to a specific merchant account, the [payment create API](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call has to be made from the merchant server using the correct API key attached to the required merchant account. To route the payment to a particular profile, the `profile_id` parameter of the required profile is to be passed.
 
-<figure><img src="../../.gitbook/assets/api_key" alt=""><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure>
+<div align="left" data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/profile_id" alt=""><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api_key" alt="" width="563"><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure>
 
-When a payment is created under a business profile, it would use the routing algorithm ( if available ) that is configured for that business profile, to choose an appropriate gateway. All the **Refunds, Mandates** that are created for a payment will be under the same business profile as the payment.
+</div>
+
+<div align="left" data-full-width="false">
+
+<figure><img src="../../.gitbook/assets/profile_id" alt="" width="563"><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure>
+
+</div>
+
+When a payment is created under a business profile, it would use the routing algorithm ( if available) that is configured for that business profile, to choose an appropriate gateway. All the **Refunds, Mandates** that are created for a payment will be under the same business profile as the payment.
