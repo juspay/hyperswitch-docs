@@ -1,5 +1,5 @@
 ---
-description: Best way to offer postpaid payment services
+description: Best way to validate customer payment data and charge the customer later
 ---
 
 # 0 Zero Amount Authorization
@@ -8,14 +8,13 @@ description: Best way to offer postpaid payment services
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero amount authorization flow in Hyperswitch allows the merchant to offer postpaid payment services. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method for recurring payments. A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
+The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point (one-time or multi-use). A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
 ## How to use the zero amount authorization flow?
 
-1. Creating a 0 amount payment along with the mandate data to set up a mandate with customer’s payment details (Customer initiated transaction)\
-
+1. Creating a 0 amount payment along with the mandate data to set up a mandate with customer’s payment details (Customer initiated transaction)
 
 ```shell
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -101,9 +100,7 @@ curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/co
 }'
 ```
 
-3.  Charging a customer against the mandate issued in the future (Merchant initiated Transaction)
-
-    \
+3.  Charging a customer against the mandate issued in the future (Merchant initiated Transaction)\
 
 
     You can use the List Mandates API to retrieve the list of mandates issued against a customer and their status.
