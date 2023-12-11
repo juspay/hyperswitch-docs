@@ -18,7 +18,6 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 *   **Supercharge Conversions**
 
-    * Accept payments from 40+ processors\*
     * Effortlessly send funds to bank accounts or cards using your preferred method
     * Boost success with smart retries.
 
@@ -70,5 +69,4 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 * **Can I use Hyperswitch solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
 * **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Hyperswitch. (We tokenize only when the user permits us to save their card/bank info)
-* **How do I get support if I face issues?** You can reach out via the 'Help' section in your Hyperswitch dashboard, drop an email or contact us via Slack.
 

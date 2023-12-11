@@ -102,13 +102,13 @@ In order to route a payment to a specific merchant account, the [payment create 
 
 <div align="left" data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/api_key" alt="" width="563"><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api_key" alt=""><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure>
 
 </div>
 
 <div align="left" data-full-width="false">
 
-<figure><img src="../../.gitbook/assets/profile_id" alt="" width="563"><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/profile_id" alt=""><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure>
 
 </div>
 
