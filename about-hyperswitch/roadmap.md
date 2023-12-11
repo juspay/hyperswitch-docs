@@ -15,25 +15,25 @@ Before the beginning of every quarter we come together to develop the next roadm
 Our core values have pretty much remained the same since the early days and here they are:
 
 * Make payments more `accessible` and `affordable` to every digital business
-* Staying `simple` and `super-lightweight` at the same time `reliable` and `scalable` payment switch
+* Staying `simple` and `super-lightweight`, at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
 ## Themes for Roadmap
 
-There a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below. We intend to add more themes as the community grows further.
+There a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
 * 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
 * 💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able reduce payment processing costs by embracing the diversity in payments.
 * 📈 **Improving Authorization Rates:** Ensuring a best-in-class payment experience and access to latest innovations in the payments ecosystem for all businesses.
-* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence Hyperswitch intends to eliminate all such operational burden so that businesses can focus on the core activities.
-*   🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme because one of our goals to explore new problem statements and themes from the community before scheduling actual feature work.
+* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burden so that businesses can focus on the core activities.
+* 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
-    | Legend | Description      |
-    | ------ | ---------------- |
-    | 🟩     | Work completed   |
-    | 🟧     | Work in progress |
-    | 🟥     | Work not started |
-    | 💪     | Stretch target   |
+| Legend | Description      |
+| ------ | ---------------- |
+| 🟩     | Work completed   |
+| 🟧     | Work in progress |
+| 🟥     | Work not started |
+| 💪     | Stretch target   |
 
 ### Developer Experience
 
@@ -47,7 +47,7 @@ There a lot of problems to be solved in payments, but our majority of our curren
 
 * 🟩 Reduce chargebacks by enabling Signifyd and Riskified (FRMs). [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
 * 🟩 Support for Gocardless bank direct debits. [Try it out by signing up for Hyperswitch](https://app.hyperswitch.io/register)
-* 🟧 Specialized low cost processor integration - Helcim
+* 🟩 Specialized low cost processor integration - Helcim
 * 🟩 Open sourcing Smart Routing Framework for self hosting
 * 🟧 Support Plaid for ACH account verification
 * 🟧 Enabling surcharge for specific payment methods to promote low cost payment methods
@@ -60,11 +60,11 @@ There a lot of problems to be solved in payments, but our majority of our curren
 * 💪 Enhancing 3DS experience with Delegated Authentication and Visa''s Digital Authentication Framework (for SCA markets)
 * 💪 Improve authorization rates for bank payments through Open banking integration for UK/EU
 
-### Reducing Payment Operations Rates
+### Reducing Payment Operations
 
-* 🟧 System health metrics monitoring module on Hyperswitch Control Centre
 * 🟧 Support for exporting hyperswitch data to third party data warehouse
 * 🟧 Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
+* 💪 System health metrics monitoring module on Hyperswitch Control Centre
 
 ### Community Feature Requests
 
