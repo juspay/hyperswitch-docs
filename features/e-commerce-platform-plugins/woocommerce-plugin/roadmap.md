@@ -5,7 +5,7 @@ description: Roadmap for Woocommerce plugin
 # Roadmap
 
 {% hint style="info" %}
-This section covers features in our future roadmap
+This section covers features in our future roadmap. Please reach out to us [here](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) if you are looking for any of the features listed in this section.
 {% endhint %}
 
 ### Roadmap
