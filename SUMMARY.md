@@ -134,6 +134,7 @@
   * [🔼 3DS Step-up retries](features/merchant-controls/3ds-step-up-retries.md)
   * [🚩 Disputes/Chargebacks Management](features/merchant-controls/disputes.md)
 * [🔑 Account management](features/account-management/README.md)
+  * [🔢 Exporting payments data](features/account-management/exporting-payments-data.md)
   * [🤹 Multiple accounts & profiles](features/account-management/multiple-accounts-and-profiles.md)
 * [🛍 E-commerce platform plugins](features/e-commerce-platform-plugins/README.md)
   * [WooCommerce Plugin](features/e-commerce-platform-plugins/woocommerce-plugin/README.md)
