@@ -1,3 +1,7 @@
+---
+description: List of all connectors currently supported by Hyperswitch
+---
+
 # 🖲 Available Connectors
 
 Here are the available connectors:

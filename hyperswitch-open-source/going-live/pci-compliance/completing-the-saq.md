@@ -1,3 +1,7 @@
+---
+description: Simplifying Self-Assessment Questionnaire
+---
+
 # 🗒 Completing the SAQ
 
 {% hint style="warning" %}
@@ -41,3 +45,4 @@ You are PCI compliant now!!&#x20;
 
 You can now upload the Network scan report and the SAQ on your payment processor/ acquirer dashboard. However, most acquirers insist on sharing the compliance reports through email, hence you might have to do that on a quarterly basis.
 {% endhint %}
+

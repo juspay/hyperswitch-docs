@@ -1,3 +1,7 @@
+---
+description: Demystifying PCI compliance and it's requirements
+---
+
 # 🍰 It's no rocket science
 
 {% hint style="info" %}

@@ -1,3 +1,7 @@
+---
+description: Install Hyperswitch on K8s using Helm
+---
+
 # Deploy on Kubernetes using Helm
 
 {% hint style="info" %}

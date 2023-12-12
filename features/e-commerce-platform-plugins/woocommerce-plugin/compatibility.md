@@ -1,3 +1,7 @@
+---
+description: List of all compatible WooCommerce plugins
+---
+
 # Compatibility
 
 {% hint style="info" %}
