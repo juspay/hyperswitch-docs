@@ -23,7 +23,7 @@ The following components and services will be deployed in a **new stack** in you
 | EKS (1 Cluster)      | t3.medium      | 2 Nodes               |
 | Load Balancer        | Application LB | 2 LBs                 |
 | RDS                  | t4g.medium     | 2 cluster             |
-| ElasticCache         | t4g.medium     | 1 cluster             |
+| ElastiCache          | t4g.medium     | 1 cluster             |
 | S3 (for hyperloader) | -              | Public bucket         |
 | EC2                  | t3.medium      | 1 instance            |
 
@@ -33,7 +33,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 | ---------------------- | ------------------------------------------- | ------------------------------------ |
 | Hyperswitch App Server | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
 | Producer (Scheduler)   | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Consumer (Scheduler)   | 2 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Consumer (Scheduler)   | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 | Promtail               | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
 | Loki                   | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
 | Grafana                | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
