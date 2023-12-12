@@ -1,5 +1,5 @@
 ---
-description: Get started with Hyperswitch in 4 easy steps
+description: Start accepting one time payments with Hyperswitch in 4 easy steps
 ---
 
 # ⚡ Quickstart
