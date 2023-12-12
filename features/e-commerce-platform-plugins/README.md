@@ -12,4 +12,8 @@ Designed to seamlessly integrate with popular E-commerce platforms such as Shopi
 
 Hyperswitch web client supports the popular E-commerce plugins. Plugin integration is seamless and quick. You can try it out in the subsequent sections.
 
+Looking for a Hyperswitch plugin for a specific E-commerce platform? Reach out to us on Slack:
+
+{% embed url="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg" %}
+
 \
