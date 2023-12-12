@@ -115,12 +115,12 @@
 
 ## Features
 
-* [🔀 Payment flows](features/payment-flows/README.md)
-  * [🔁 Mandates & recurring payments](features/payment-flows/mandates-and-recurring-payments.md)
-  * [💵 Payouts](features/payment-flows/payouts.md)
-  * [0 Zero Amount Authorization](features/payment-flows/zero-amount-authorization.md)
-  * [🔓 Tokenization & saved cards](features/payment-flows/tokenization-and-saved-cards.md)
-  * [🔗 Payment links](features/payment-flows/payment-links.md)
+* [🔀 Payment flows](features/payment-flows-and-management/README.md)
+  * [🔁 Mandates & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
+  * [💵 Payouts](features/payment-flows-and-management/payouts.md)
+  * [0 Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
+  * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
+  * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
 * [🕹 Merchant controls](features/merchant-controls/README.md)
   * [🛣 Smart Router](features/smart-router.md)
     * [Rule Based Routing](features/merchant-controls/smart-router/rule-based-routing.md)
@@ -128,7 +128,7 @@
     * [Default Fallback Routing](features/merchant-controls/smart-router/default-fallback-routing.md)
   * [🛡 Fraud & risk management](features/merchant-controls/fraud-and-risk-management.md)
   * [🔃 Smart retries](features/smart-retries.md)
-  * [🎛 Payment operations](features/merchant-controls/payment-operations.md)
+  * [🎛 Analytics & operations](features/merchant-controls/analytics-and-operations.md)
   * [📋 3DS decision manager](features/3ds-decision-manager.md)
     * [Setup guide](features/merchant-controls/3ds-decision-manager/setup-guide.md)
   * [🔼 3DS Step-up retries](features/merchant-controls/3ds-step-up-retries.md)
