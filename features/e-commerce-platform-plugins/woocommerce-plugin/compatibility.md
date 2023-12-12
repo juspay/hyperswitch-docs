@@ -15,16 +15,6 @@ In case you want additional support to extend compatibility for plugins out of t
 
  <table data-view="cards">
       <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
       </thead>
       <tbody>
  <tr><td><img src=https://ps.w.org/activecampaign-for-woocommerce/assets/icon-256x256.png?rev=1925389 width="128px" alt="" /><p>ActiveCampaign for WooCommerce</p></td></tr>
