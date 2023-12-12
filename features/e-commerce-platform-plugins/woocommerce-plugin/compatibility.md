@@ -27,7 +27,6 @@ In case you want additional support to extend compatibility for plugins out of t
         </tr>
       </thead>
       <tbody>
-
  <tr><td><img src=https://ps.w.org/activecampaign-for-woocommerce/assets/icon-256x256.png?rev=1925389 width="128px" alt="" /><p>ActiveCampaign for WooCommerce</p></td></tr>
  <tr><td><img src=https://ps.w.org/add-to-cart-button-custom-text/assets/icon-128x128.png?rev=1339513 width="128px" alt="" /><p>Add to Cart Button Custom Text</p></td></tr>
  <tr><td><img src=https://ps.w.org/woo-advanced-shipment-tracking/assets/icon-128x128.png?rev=2166296 width="128px" alt="" /><p>Advanced Shipment Tracking for Woo</p></td></tr>
@@ -143,7 +142,6 @@ In case you want additional support to extend compatibility for plugins out of t
  <tr><td><img src=https://ps.w.org/woocommerce-menu-bar-cart/assets/icon-128x128.png?rev=2190481 width="128px" alt="" /><p>Menu Cart for WooCommerce</p></td></tr>
  <tr><td><img src=https://ps.w.org/mobile-assistant-connector/assets/icon-128x128.png?rev=2247547 width="128px" alt="" /><p>Mobile Assistant Connector</p></td></tr>
  <tr><td><img src=https://ps.w.org/yaycurrency/assets/icon-128x128.png?rev=2900864 width="128px" alt="" /><p>YayCurrency</p></td></tr>
- <tr><td><img src=https://ps.w.org/woo-ajax-add-to-cart/assets/icon-128x128.jpg?rev=2911672 width="128px" alt="" /><p>Ajax add to cart for WooCommerce</p></td></tr>
-        
+ <tr><td><img src=https://ps.w.org/woo-ajax-add-to-cart/assets/icon-128x128.jpg?rev=2911672 width="128px" alt="" /><p>Ajax add to cart for WooCommerce</p></td></tr>       
       </tbody>
     </table>
