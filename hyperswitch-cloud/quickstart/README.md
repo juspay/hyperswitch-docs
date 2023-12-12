@@ -54,4 +54,31 @@ The control center provides complete control on your payment operations.
 * **Track payment and refund information:** The unified control center allows you to query upon a particular payment or refund. You may also initiate refunds from the control center.
 * **Smart payment routing:** You will have the complete capability to dynamically set the payment routing logic based on 20+ variables. Use this to optimize your payment processing goals.
 
-Learn how to enable all payment methods [here](../payment-methods-setup/cards.md) starting with Cards.
+<details>
+
+<summary>FAQs</summary>
+
+#### What is a connector?
+
+Hyperswitch refers to payment processors, fraud / risk engines and other payment integrations as connectors. Hyperswitch currently supports 50+ global payment processors that you can use to process payments on your application
+
+#### How can I decide the best payment methods for my business?
+
+Hyperswitch supports 100+ payment methods across various payment processors. There is no one size fits all payment methods but you can learn more about how you can decide the best payment methods for you business [here](../payment-methods-setup/).
+
+#### What will the completed integration look like?
+
+Hyperswitch offers various customization options but you can try out our demo store [here](https://demo-hyperswitch.netlify.app/checkout) to test the checkout experience
+
+#### Are there any sample integrations for reference?
+
+Here are a few demo integrations for various tech stacks:
+
+* [Hyperswitch React-Node](https://github.com/juspay/hyperswitch-react-node)
+* [Hyperswitch HTML-Node](https://github.com/juspay/hyperswitch-html-node)
+* [Hyperswitch React-Java](https://github.com/juspay/hyperswitch-react-java)
+* [Hyperswitch Next-Node](https://github.com/juspay/hyperswitch-next-node)
+
+
+
+</details>
