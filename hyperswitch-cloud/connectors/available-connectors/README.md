@@ -1,6 +1,6 @@
-# Available Connectors
+# 🖲 Available Connectors
 
-Here are the available connector
+Here are the available connectors:
 
 {% content-ref url="aci.md" %}
 [aci.md](aci.md)
