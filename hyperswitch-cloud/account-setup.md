@@ -10,6 +10,14 @@ In this section, you will be creating a Hyperswitch account and connecting your 
 
 ***
 
+Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
+
+* Real-time analytics
+* Checkout analytics
+* Automated Reports
+* Alerts automation
+* Managing user roles and access
+
 ## Getting started with the dashboard - Login / Register
 
 Navigate to the control center's landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.

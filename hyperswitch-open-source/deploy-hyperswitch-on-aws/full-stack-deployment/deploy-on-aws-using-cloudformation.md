@@ -12,7 +12,7 @@ In this chapter, you will deploy our full-stack application on AWS EKS. This wil
 
 ## Video
 
-{% embed url="https://www.youtube.com/watch?v=fmFNPOwqXEE" %}
+{% embed url="https://www.youtube.com/watch?v=NyHqT25orls" %}
 
 ## What is included in this setup
 
