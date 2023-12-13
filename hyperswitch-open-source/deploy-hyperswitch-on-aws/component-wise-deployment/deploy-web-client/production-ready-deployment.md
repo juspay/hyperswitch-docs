@@ -118,7 +118,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 On running the above command, you will get an option to configure the following&#x20;
 
 1. **AWS region** - This is the AWS region that you want your SDK to be deployed to. In case not provided, it will default to us-east-2
-2. **Option to either create a new bucket on S3 or use your existing S3 bucket** - You can enter either Y (yes) or N (No) to create a new bucket depending on your preference.
+2. **Option to either create a new bucket on S3 or use your existing S3 bucket** - You can enter either Y (Yes) or N (No) to create a new bucket depending on your preference.
 3. **Bucket Details** - If you choose to use your existing S3 bucket, you need to provide your S3 bucket location here. In case you choose to create a new S3 bucket, please provide a unique name here.
 4. Self-hosted App server URL - This is the self hosted app server URL (eg., `http://34.207.75.225` ). If not provided, this will default to `https://sandbox.hyperswitch.io` and will work with Hyperswitch's SaaS app server.&#x20;
 
@@ -138,6 +138,21 @@ Verify the health of the web client at `http://my-bucket.s3.us-east-2.amazonaws.
 Your Web Client is hosted and can be accessed by this URL.
 
 Now that the web client is hosted, you can integrate it with your app and go live. The detailed steps follow.
+
+<details>
+
+<summary>Troubleshooting/ FAQs</summary>
+
+* **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**\
+  Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.\
+
+* **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**\
+  Please re-run the script and enter an unique name for the S3 bucket.\
+
+* **AWS is throwing many errors while running the script**\
+  Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
+
+</details>
 
 ## Next step:
 

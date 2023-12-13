@@ -2,7 +2,7 @@
 description: Quickly deploy your web client playground and see it in action
 ---
 
-# Playground deployment for prototyping (OPTIONAL)
+# Playground deployment for prototyping (optional)
 
 {% hint style="info" %}
 Explore the web client's full stack playground for rapid prototyping using a single script to experience the product before integrating it into your app. You can also test your deployment on cloud, CDN configurations, etc. with this demo playground, before deploying your app.
@@ -163,6 +163,22 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 ```bash
 curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswitch_web_cleanup_setup.sh | bash
 ```
+
+##
+
+<details>
+
+<summary>Troubleshooting/ FAQs</summary>
+
+* **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
+  Please check your AWS EC2 details and make sure that the EC2 is created and has all the permissions required to run the server and create security groups. Post this, re-run the script to do a re-deployment.
+
+<!---->
+
+* **AWS is throwing many errors while running the script**\
+  Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
+
+</details>
 
 ## Next step:
 

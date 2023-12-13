@@ -172,6 +172,21 @@ That's it! You have successfully integrated your hosted web client on your web a
 
 The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../hyperswitch-cloud/integration-guide/web/customization.md) for more details.&#x20;
 
+<details>
+
+<summary>Troubleshooting/ FAQs</summary>
+
+* **I am getting an error while loading the HyperLoader.js script**\
+  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\
+
+* **I am unable to see the SDK running, or it is in a perpetual loading state**\
+  Please make sure that the correct publishable key is used to instantiate the SDK.\
+
+* **After completing the payment, I am redirected to a non existent web page**\
+  Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
+
+</details>
+
 ## Next step:
 
 {% content-ref url="../../../account-setup/" %}

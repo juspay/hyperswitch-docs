@@ -59,6 +59,26 @@ This step will prompt you to enter 3 details that you must have received in the 
 Congratulations! You will now see the web app running on `http://localhost:9060` where you can test your payments.
 {% endhint %}
 
+##
+
+<details>
+
+<summary>Troubleshooting/ FAQs</summary>
+
+
+
+* **I cannot see the Web app playground running on `http://localhost:9060`**\
+  Please recheck the publishable key and secret key that you have provided along with the URLs that you entered during the setup. Make sure that the self-hosted Hyperswitch server URL is your app server URL and the application server URL is the playground server URL\
+
+* **npm commands are throwing errors**\
+  Please ensure you have the latest version of npm installed on your system. Once that is done, please reinstall the client application. You can also use `yarn` instead.\
+
+* **I don't know my Self-hosted Hyperswitch Server URL**\
+  You should get this as an output when you ran the app server. Running the app server is a pre-requisite for the client playground to run. Please ensure that you have followed steps for[ running the app server](run-app-server.md).\
+
+
+</details>
+
 ## Next step:
 
 {% content-ref url="../account-setup/" %}
