@@ -41,9 +41,3 @@ This guide is designed for people with some coding experience, who want learn ab
 Hyperswitch allows you to deploy and run your own payments stack. We offer support in terms answering queries, maintenance and feature enhancements.
 
 Within 15-minutes, you should be able to deploye Hyperswitch in your local machine and can run payments through any payment provider of your choice. You'll be equipped to run payments for your own pet project, or a D2C website, or as an internship project, or just to learn Payments.
-
-## **Resources**
-
-* [Github repo](https://github.com/juspay/hyperswitch)
-* [Slack channel](https://hyperswitch-io.slack.com/join/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) for queries
-* [Discord channel](https://discord.com/invite/wJZ7DVW8mm) for queries

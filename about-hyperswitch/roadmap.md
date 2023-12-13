@@ -4,7 +4,7 @@ description: Hyperswitch roadmap (Oct to Dec'23)
 
 # 🛣 Roadmap
 
-🗺️ Our Roadmap typically pans out over 3 month period and we establish topics we work on upfront.
+🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
 Before the beginning of every quarter we come together to develop the next roadmap based on our core values, findings over the previous quarter, what we heard from the community as issues and feature requests, in face-to-face discussions and social media.
 
@@ -20,12 +20,12 @@ Our core values have pretty much remained the same since the early days and here
 
 ## Themes for Roadmap
 
-There a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
+There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
 * 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
 * 💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able reduce payment processing costs by embracing the diversity in payments.
 * 📈 **Improving Authorization Rates:** Ensuring a best-in-class payment experience and access to latest innovations in the payments ecosystem for all businesses.
-* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burden so that businesses can focus on the core activities.
+* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burdens so that businesses can focus on the core activities.
 * 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
 | Legend | Description      |
@@ -40,7 +40,7 @@ There a lot of problems to be solved in payments, but our majority of our curren
 * 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
 * 🟩 Publish developer docs for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
 * 🟩 Hyperswitch Woocommerce plugin for Wordpress users. [Install the Woocommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
-* 🟧 AWS menu driven Hyperswitch installation support
+* 🟧 AWS menu-driven Hyperswitch installation support
 * 🟧 Optimizing Hyperswitch application overhead from 30ms to 20ms
 
 ### Reducing Payment Costs
