@@ -121,7 +121,7 @@
   * [0 Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
   * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
-  * [Manual Capture](features/payment-flows-and-management/manual-capture.md)
+  * [💰 Manual Capture](features/payment-flows-and-management/manual-capture.md)
 * [🕹 Merchant controls](features/merchant-controls/README.md)
   * [🛣 Smart Router](features/smart-router.md)
     * [Rule Based Routing](features/merchant-controls/smart-router/rule-based-routing.md)
