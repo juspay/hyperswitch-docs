@@ -8,11 +8,11 @@ description: Onboard new payment integrations without code
 
 As your business grows faster, there would be a need to expand payment offerings with more payment processors. This need might arise due to multiple reasons:
 
-* Launching a business in new geography with a local payment processor, or
-* Offering local payment methods for your customers, or
-* Offering new payment methods for your customers, or
-* Optimizing payment processing costs with an additional processor, or
+* Launching a business in new geography with a local payment processor
+* Offering local or new payment methods for your customers
+* Optimizing payment processing costs with an additional processor
 * Reducing dependency on a single processor
+* Migrating to a new processor, gradually, over time&#x20;
 
 Integrating and maintaining multiple payment processors is a complex activity and could drain significant tech bandwidth from your core business activities.
 
@@ -22,7 +22,7 @@ Integrating and maintaining multiple payment processors is a complex activity an
 
 ## What is Click and Connect?
 
-Hyperswitch is pre-integrated with 40+ payment processors, and adding a new payment processor is fully automated. Hence it can be managed without development effort. By using Hyperswitch Click and Connect, all that you need to do would be four steps to enable a new payment processor.
+Hyperswitch is pre-integrated with 50+ payment processors, and adding a new payment processor is fully automated. Hence it can be managed without development effort. By using Hyperswitch Click and Connect, all that you need to do would be four steps to enable a new payment processor.
 
 **Step 1**: Procure the API secret credentials from the payment processor of your choice. Typically most payment processors have an online self-signup portal. In other cases, you may have to reach out to the payment processor’s sales team to procure the API secret credentials.
 
