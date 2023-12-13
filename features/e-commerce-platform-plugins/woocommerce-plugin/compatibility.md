@@ -10,10 +10,10 @@ This section enlists all the plugins which are compatible with the Hyperswitch W
 
 Hyperswitch Woocommerce plugin is compatible with most of the other woocommerce plugins. You can find the exhaustive list [here](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommerceCompatibility).
 
-In case you want additional support to extend compatibility for plugins out of this list, you can add it as an issue on our [public repo](https://github.com/juspay/hyperswitch-woocommerce-plugin). You can also pick up issues and contribute so that others benefit!
+In case you want additional support to extend compatibility for plugins out of this list, you can add it as an issue on our [public repo](https://github.com/juspay/hyperswitch-woocommerce-plugin). You can also pick up issues and contribute so that others benefitssssss!
 
 
- <table data-view="cards">
+ <table data-view="cards" style="background-color:red" >
       <thead>
       </thead>
       <tbody style="width:500px" >
