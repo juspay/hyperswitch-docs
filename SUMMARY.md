@@ -122,7 +122,7 @@
   * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
   * [Manual & Multiple Partial Captures](features/payment-flows-and-management/manual-and-multiple-partial-captures.md)
-  * [Manual Capture/Multiple Partial Captures](features/payment-flows-and-management/manual-capture-multiple-partial-captures.md)
+  * [Manual Capture](features/payment-flows-and-management/manual-capture.md)
 * [🕹 Merchant controls](features/merchant-controls/README.md)
   * [🛣 Smart Router](features/smart-router.md)
     * [Rule Based Routing](features/merchant-controls/smart-router/rule-based-routing.md)
