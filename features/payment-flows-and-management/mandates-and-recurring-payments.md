@@ -61,14 +61,14 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 **Sample curl:**
 
-```bash
-curl --location 'https://sandbox.hyperswitch.io/payments' \
+````bash
+curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/confirm' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: <your_publishable_key>' \
 --data '{
+    "client_secret": "<client_secret_of_the_original_payment>",
     "payment_method": "card",
-    "client_secret": "pay_TYtpYW650Min7UDITagb_secret_Qs9dyorBjYioGSzYsKZE",
     "payment_method_data": {
         "card": {
             "card_number": "4242424242424242",
@@ -80,16 +80,17 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     },
     "mandate_data": {
         "customer_acceptance": {
-            "acceptance_type": "offline",
-            "accepted_at": "1963-05-03T04:07:52.723Z",
+            "acceptance_type": "online",
+            "accepted_at": "2023-11-03T04:07:52.723Z",
             "online": {
                 "ip_address": "127.0.0.1",
-                "user_agent": "amet irure esse"
+                "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
             }
         }
     }
 }'
 ```
+````
 
 ### 3. Make a recurring payment from your server by passing mandate\_id and off\_session fields:
 
@@ -97,8 +98,6 @@ Once you've created a mandate, store the `mandate_id` from the previous step. Wh
 
 * `off_session=true` to indicate that the customer is not in the flow&#x20;
 * `confirm=true` to confirm the payment in one-step
-
-
 
 ````bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -109,33 +108,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "confirm": true,
-    "customer_id": "StripeCustomer",
+    "customer_id": "cus_abc_123",
     "authentication_type": "no_three_ds",
     "mandate_id": "<mandate_id>",
-    "off_session": true,
-    "shipping": {
-        "address": {
-            "line1": "1467",
-            "line2": "Harrison Street",
-            "line3": "Harrison Street",
-            "city": "San Fransico",
-            "state": "California",
-            "zip": "94122",
-            "country": "US",
-            "first_name": "sundari"
-        }
-    },
-    "statement_descriptor_name": "joseph",
-    "statement_descriptor_suffix": "JS",
-    "metadata": {
-        "udf1": "value1",
-        "new_customer": "true",
-        "login_date": "2019-09-10T10:11:12Z"
-    },
-    "routing": {
-        "type": "single",
-        "data": "stripe"
-    }
+    "off_session": true
 }'
 ```
 ````
