@@ -17,7 +17,7 @@ In case you want additional support to extend compatibility for plugins out of t
       <thead>
       </thead>
       <tbody>
-      <tr><td width="128px" height="128px" ><img src=https://ps.w.org/activecampaign-for-woocommerce/assets/icon-256x256.png?rev=1925389 width="128px" height="128px" alt="" /><p>ActiveCampaign for WooCommerce</p></td></tr>
+      <tr><td width="128px" height="128px" ><img src=https://ps.w.org/activecampaign-for-woocommerce/assets/icon-256x256.png?rev=1925389 width="128px" height="128px" alt="" style="width:128px"/><p>ActiveCampaign for WooCommerce</p></td></tr>
  <tr><td><img src=https://ps.w.org/add-to-cart-button-custom-text/assets/icon-128x128.png?rev=1339513 width="128px" height="128px" alt="" /><p>Add to Cart Button Custom Text</p></td></tr>
  <tr><td><img src=https://ps.w.org/woo-advanced-shipment-tracking/assets/icon-128x128.png?rev=2166296 width="128px" height="128px" alt="" /><p>Advanced Shipment Tracking for Woo</p></td></tr>
  <tr><td><img src=https://ps.w.org/advanced-woo-search/assets/icon-128x128.jpg?rev=2244825 width="128px" height="128px" alt="" /><p>Advanced Woo Search</p></td></tr>
