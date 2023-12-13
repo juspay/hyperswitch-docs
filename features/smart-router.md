@@ -52,3 +52,12 @@ To test the Smart Router, after activating one rule, we can make a Test Payment 
 
 {% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}
 
+<details>
+
+<summary>FAQs</summary>
+
+1. What parameters can I use to configure routing rules?
+
+The rule-based routing supports setting up advanced rule configuration based on all critical /payments parameters such as Payment Method, Payment Method Type, Country, Currency, Amount etc.
+
+</details>
