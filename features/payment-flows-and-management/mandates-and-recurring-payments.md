@@ -55,9 +55,94 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }
 ```
 
-### **2.  Confirm the mandate payment after collecting payment\_method\_data and customer\_acceptance**
+### **2.  Confirm the mandate payment after collecting payment\_method\_data and customer\_acceptance from Unified checkout**
+
+**Collect payment method information like card number or bank account number along with an acceptance from the customer stating that you would be storing their payment method details and charging them later even if they aren't in the flow. Pass these information in payments/confirm API. If you're using Unified checkout, this is taken care by it automatically.**
+
+**Sample curl:**
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <your_publishable_key>' \
+--data '{
+    "payment_method": "card",
+    "client_secret": "pay_TYtpYW650Min7UDITagb_secret_Qs9dyorBjYioGSzYsKZE",
+    "payment_method_data": {
+        "card": {
+            "card_number": "4242424242424242",
+            "card_exp_month": "10",
+            "card_exp_year": "25",
+            "card_holder_name": "joseph Doe",
+            "card_cvc": "123"
+        }
+    },
+    "mandate_data": {
+        "customer_acceptance": {
+            "acceptance_type": "offline",
+            "accepted_at": "1963-05-03T04:07:52.723Z",
+            "online": {
+                "ip_address": "127.0.0.1",
+                "user_agent": "amet irure esse"
+            }
+        }
+    }
+}'
+```
+
+### 3. Make a recurring payment from your server by passing mandate\_id and off\_session fields:
+
+Once you've created a mandate, store the `mandate_id` from the previous step. Whenever you want to make a recurring payment against the customer, pass the `mandate_id` in payments/create request along with:
+
+* `off_session=true` to indicate that the customer is not in the flow&#x20;
+* `confirm=true` to confirm the payment in one-step
 
 
 
-*
-* Make a recurring payment by making another request to  [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint by passing the **`mandate_id`** received in the previous step along with **`off_session`** field
+````bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <your_api_key>' \
+--data '{
+    "amount": 6540,
+    "currency": "USD",
+    "confirm": true,
+    "customer_id": "StripeCustomer",
+    "authentication_type": "no_three_ds",
+    "mandate_id": "<mandate_id>",
+    "off_session": true,
+    "shipping": {
+        "address": {
+            "line1": "1467",
+            "line2": "Harrison Street",
+            "line3": "Harrison Street",
+            "city": "San Fransico",
+            "state": "California",
+            "zip": "94122",
+            "country": "US",
+            "first_name": "sundari"
+        }
+    },
+    "statement_descriptor_name": "joseph",
+    "statement_descriptor_suffix": "JS",
+    "metadata": {
+        "udf1": "value1",
+        "new_customer": "true",
+        "login_date": "2019-09-10T10:11:12Z"
+    },
+    "routing": {
+        "type": "single",
+        "data": "stripe"
+    }
+}'
+```
+````
+
+## FAQ:
+
+### **1. Does Hyperswitch support Automatic recurring payments/subscriptions at pre-defined intervals?**
+
+No, Hyperswitch doesn't currently support automatic recurring payments at pre-defined intervals. This feature would be available soon under our Subscription module that is in development (Q1 2024). Until then, merchants can trigger recurring payments from their server by setting up the trigger schedules in their server.
+
