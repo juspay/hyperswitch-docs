@@ -13,6 +13,7 @@ Hyperswitch Woocommerce plugin is compatible with most of the other woocommerce 
 In case you want additional support to extend compatibility for plugins out of this list, you can add it as an issue on our [public repo](https://github.com/juspay/hyperswitch-woocommerce-plugin). You can also pick up issues and contribute so that others benefitssssss!
 
 
+<div style="width:548px" >
  <table data-view="cards" style="background-color:red" >
       <thead>
       </thead>
@@ -135,3 +136,4 @@ In case you want additional support to extend compatibility for plugins out of t
  <tr><td><img src=https://ps.w.org/woo-ajax-add-to-cart/assets/icon-128x128.jpg?rev=2911672 width="128px" height="128px" alt="" /><p>Ajax add to cart for WooCommerce</p></td></tr> 
       </tbody>
     </table>
+</div>
