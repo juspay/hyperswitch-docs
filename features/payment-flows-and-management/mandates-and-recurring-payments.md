@@ -24,7 +24,40 @@ Once you have the **mandate\_id**, you can pass the **mandate\_id** in payments/
 
 Your customers’ payment method would be charged automatically in most cases without any Strong Customer Authentication (SCA) prompts. In case your customers are required to perform a SCA authentication by the processor, Hyperswitch will transition the payment’s status to ‘requires\_customer\_action’ state and you would need to notify your customer to come to the checkout flow to complete the authentication and payment.
 
-## Try a Mandate/Recurring payment on Hyperswitch
+## Try creating a Mandate/Recurring payment on Hyperswitch
 
-* To setup a mandate, make a request to the [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint with **`mandate_data`** object along with other necessary fields  (**`amount, currency, payment_method, payment_method_type, payment_method_data`**) and **`confirm=true`**
+### **1.  Create a mandate payment from your server:**&#x20;
+
+Make a request to the [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint with **`mandate_data`** object along with other necessary fields  (**`amount, currency, payment_method, payment_method_type, payment_method_data`**) and **`confirm=true`**
+
+**Sample curl:**
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <your-hyperswitch-api-key>' \
+--data '{
+    "amount": 6540,
+    "currency": "USD",
+    "confirm": false,
+    "customer_id":"StripeCustomer123",
+    "authentication_type": "no_three_ds",
+    "setup_future_usage": "off_session",
+    "mandate_data": {
+        "mandate_type": {
+            "single_use": {
+                "amount": 7000,
+                "currency": "USD"
+            }
+        }
+    }
+}
+```
+
+### **2.  Confirm the mandate payment after collecting payment\_method\_data and customer\_acceptance**
+
+
+
+*
 * Make a recurring payment by making another request to  [payments](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) endpoint by passing the **`mandate_id`** received in the previous step along with **`off_session`** field
