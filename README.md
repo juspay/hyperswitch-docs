@@ -20,10 +20,6 @@ layout:
 
 # 👋 Hello world
 
-{% hint style="info" %}
-Note that we are still moving things around and adding new sections to this document, please expect changes as you navigate and integrate Hyperswitch
-{% endhint %}
-
 ## Hyperswitch and the payments ecosystem
 
 Hyperswitch is a unified API to connect with dozens of different payment processors, each with very different internal APIs and SDKs. In other words, our payment switch is a set of payments domain abstractions, built over the capabilities of leading payment processors, wallets, Buy Now Pay Later (BNPL) providers and banks.
