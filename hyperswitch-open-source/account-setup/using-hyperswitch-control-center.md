@@ -10,7 +10,11 @@ description: >-
 Here, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
 {% endhint %}
 
+## Video <a href="#user-content-set-up-your-merchant-account" id="user-content-set-up-your-merchant-account"></a>
+
 ***
+
+{% embed url="https://youtu.be/6SpQJu1celA" %}
 
 ## Getting started with the dashboard - Login / Register
 

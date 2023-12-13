@@ -10,7 +10,11 @@ description: >-
 In this chapter, you will deploy Hyperswitch control center on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
 {% endhint %}
 
+## Video
+
 ***
+
+{% embed url="https://youtu.be/WuYjUBb6F6E" %}
 
 ## Standalone deployment
 

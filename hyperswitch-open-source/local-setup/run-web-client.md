@@ -10,6 +10,12 @@ In this section, you will run the Hyperswitch web client SDK on your machine
 
 Accept payments from around the globe with a secure, Unified Checkout that gives your customers the best in class payment experience
 
+## Video
+
+***
+
+{% embed url="https://youtu.be/1ZJW6ioxJQM" %}
+
 ## Clone the repository <a href="#user-content-clone-the-repository" id="user-content-clone-the-repository"></a>
 
 Clone the repository from Github and save in your folder.

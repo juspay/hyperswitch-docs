@@ -10,11 +10,13 @@ In this section, you would be running the control center through which you can m
 
 The Hyperswitch control center is the unified dashboard to manage all your payment operations and analytics. You can connect multiple payment processors, view & manage transactions, configure customized payment routing rules and access advanced analytics to make sense of your payments data.
 
+## Video
+
 ***
 
-## Standard Installation
+{% embed url="https://youtu.be/3-KxwGUBybE" %}
 
-### Pre-Requisites
+## Standard Installation
 
 {% hint style="info" %}
 Ensure Node.js and npm are installed on your machine.
