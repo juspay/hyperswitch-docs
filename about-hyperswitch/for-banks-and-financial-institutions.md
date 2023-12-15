@@ -12,13 +12,15 @@ We believe that payments should be basic utility like water or electricity. Hype
 
 One of the means to achieve our vision is by enabling more merchants to directly connect with the banks to process payments.&#x20;
 
-If you resonate with our vision, you can learn more about how you can join the movement as a financial institution !
+If you resonate with our vision, you can learn more about how you can join the movement as a financial institution!
 
 ## Benefits
 
 ### I. Acquire more merchants for your bank's acquiring solution&#x20;
 
-Banks can self deploy Hyperswitch on their own infrastructure, whitelabel the product and start distributing to their merchants. With Hyperswitch, merchants could benefit by connecting to your bank's acquiring solution and at the same time access multiple payment methods including wallets, buy now pay later and many more.
+Banks can deploy Hyperswitch on their own infrastructure, whitelabel the product and start distributing to their merchants. With Hyperswitch, merchants could benefit by connecting to your bank's acquiring solution and at the same time access multiple payment methods including wallets, buy now pay later and many more.
+
+In addition to processing payments, you can leverage the Hyperswitch SDK to manage your customers checkout experience and offer a full stack payment solution to merchants.
 
 Hyperswitch offer an out-of-the-box migration capability to seamlessly migrate merchants from Stripe to your bank's acquiring solution. So you do not have to worry about long integration lead times if your merchants are already integrated to Stripe.
 
