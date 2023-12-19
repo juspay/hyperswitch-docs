@@ -14,6 +14,8 @@ In this section, you will get an overview of the Hyperswitch Unified Checkout fo
 
 {% embed url="https://hyperswitch-demo.netlify.app/mobile" fullWidth="false" %}
 
+{% @hyperswitch-iframe/hyperswitch-iframe fullWidth="false" %}
+
 Revolutionize your app's payment capabilities with the Hyperswitch Android SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on Android is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 
