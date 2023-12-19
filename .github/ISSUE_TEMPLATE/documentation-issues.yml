@@ -1,0 +1,68 @@
+name: Documentation Issues
+description: "Thanks for taking the time to make our documentation better \U0001F64F"
+title: "\U0001F4DA[MISSING DOCS]"
+labels: ["C-doc", "S-awaiting-triage", "Developer Experience"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We value your time and effort in submitting this documentation improvisation. Here are a few things to check before clicking the submit button :)
+
+  - type: textarea
+    id: category-of-documentation
+    attributes:
+      label: Category
+      description: |
+        - [ ] About Hyperswitch
+        - [ ] Hyperswitch Open Source
+        - [ ] Hyperswitch Cloud
+        - [ ] Features
+        - [ ] API Reference
+        - [ ] Installation Guide
+        - [ ] Troubleshooting
+        - [ ] Missing Connector
+        - [ ] Other (Specify)
+      placeholder: This is where it needs to be...
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the documentation change briefly.
+      placeholder: The change is...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide background information or context for the missing documentation. Explain why this documentation is essential or how it impacts users.
+      placeholder: It should be there because...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: read-contributing-guidelines
+    attributes:
+      label: Have you read the Contributing Guidelines?
+      options:
+        - label: I have read the [Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
+          required: true
+
+  - type: dropdown
+    id: willing-to-submit-pr
+    attributes:
+      label: Are you willing to submit a PR?
+      description: This is absolutely not required, but we are happy to guide you in the contribution process.
+      options:
+        - Yes, I am willing to submit a PR!
+        - No, but I'm happy to collaborate on a PR with someone else
+        - No, I don't have time to work on this right now
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to Hyperswitch!
