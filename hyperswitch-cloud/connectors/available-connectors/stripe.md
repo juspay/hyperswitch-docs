@@ -24,4 +24,17 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 5. Select all the payment methods you wish to use Stripe for. Ensure that this is the same as the ones configured on your Stripe dashboard under Settings -> Payments -> Payment methods
 6. Webhooks: Navigate to the webhooks section of your Stripe dashboard (Developers -> Webhooks) and create a new webhook by clicking on \`Add an endpoint\`.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Stripe on Hyperswitch control center.
+### Confugring webhooks
+
+Step 1: Setup your webhook endpoint on Hyperswitch dashboard under Settings -> Payment settings -> Click on the profile
+
+<figure><img src="../../../.gitbook/assets/webhook1.png" alt=""><figcaption></figcaption></figure>
+
+Step 2: Configure Hyperswitch’s webhooks endpoint on your Stripe dashboard. You can find Hyperswitch’s endpoint for your Stripe account by clicking Processors -> Stripe
+
+<figure><img src="../../../.gitbook/assets/webhook2.png" alt=""><figcaption></figcaption></figure>
+
+This will ensure that if your Stripe transaction was sent through Hypweswitch,
+
+* Stripe sends webhooks to Hyperswitch endpoint in Step 2
+* Hyperswitch sends these corresponding webhooks to your endpoint in Step 1

@@ -4,7 +4,7 @@ description: >-
   either fully or partially and either in one-go or multiple times
 ---
 
-# Manual Capture
+# 💰 Manual Capture
 
 ## What is Manual Capture?
 

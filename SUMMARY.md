@@ -119,7 +119,7 @@
 * [🔀 Payment flows](features/payment-flows-and-management/README.md)
   * [🔁 Mandates & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
   * [💵 Payouts](features/payment-flows-and-management/payouts.md)
-  * [0 Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
+  * [0 0 Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
   * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
   * [💰 Manual Capture](features/payment-flows-and-management/manual-capture.md)
