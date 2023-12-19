@@ -1,5 +1,7 @@
 ---
-description: Use our CDK script to deploy our production-ready K8s setup inside your stack
+description: >-
+  Use our CDK script to deploy the entire Hyperswitch application inside your
+  stack
 ---
 
 # Deploy on AWS using CloudFormation
