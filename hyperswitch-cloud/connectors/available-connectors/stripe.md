@@ -24,7 +24,7 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 5. Select all the payment methods you wish to use Stripe for. Ensure that this is the same as the ones configured on your Stripe dashboard under Settings -> Payments -> Payment methods
 6. Webhooks: Navigate to the webhooks section of your Stripe dashboard (Developers -> Webhooks) and create a new webhook by clicking on \`Add an endpoint\`.
 
-### Confugring webhooks
+### Configuring webhooks
 
 Step 1: Setup your webhook endpoint on Hyperswitch dashboard under Settings -> Payment settings -> Click on the profile
 
