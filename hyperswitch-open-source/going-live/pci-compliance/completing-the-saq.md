@@ -29,9 +29,7 @@ You don't have to. We have simplified the recipe to help you get this done faste
 3. **Scripts:** Automation scripts which can help you close most of the Infrastructure activities in few minutes.
 
 {% hint style="info" %}
-Reachout to us on biz@hyperswitch.io or [slack](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to get access to the above recipe.
-
-You can also book a call with hyperswitch team to understand more about the process.
+Reachout to us on biz@hyperswitch.io to access more information. You may also book a call with hyperswitch team to understand more about the process.
 {% endhint %}
 
 ### Final steps
