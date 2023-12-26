@@ -76,7 +76,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
            maven {
-            url "https://maven.hyperswitch.io/release/production"
+            url "https://maven.hyperswitch.io/release/production/android/maven/1.2.7"
         }
     }
 }
@@ -86,7 +86,7 @@ dependencyResolutionManagement {
 
 Add hyperswitch-android to the dependencies block of your build.gradle file to install the SDK
 
-```js
+```groovy
 dependencies {
 
     // Hyperswitch Android SDK
@@ -98,7 +98,7 @@ dependencies {
 
 Implement the HyperInterface to your CheckoutActivity
 
-```js
+```java
 class CheckoutActivity : AppCompatActivity(), HyperInterface {
 
     // ...
@@ -110,9 +110,16 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 
 Setup the SDK with your publishable key
 
-```js
+```java
 PaymentConfiguration.init(applicationContext, "YOUR_PUBLISHABLE_KEY");
 ```
+
+{% hint style="warning" %}
+Note: For Open Source Setup, initialise PaymentConfiguration as:
+
+<pre class="language-bash"><code class="lang-bash"><strong>PaymentConfiguration.initWithBackend(applicationContext, "YOUR_PUBLISHABLE_KEY", "YOUR_SERVER_URL");
+</strong></code></pre>
+{% endhint %}
 
 Fetch a payment by requesting your server for a payment as soon as your view is loaded. Store a reference to the `client_secret` returned by the server; the Payment Sheet will use this secret to complete the payment later.
 
@@ -120,7 +127,7 @@ Fetch a payment by requesting your server for a payment as soon as your view is 
 
 Create a PaymentSheet instance using the `client_secret` retrieved from the previous step. Present the payment page from your view controller and use the PaymentSheet.Configuration struct for customising your payment page.
 
-```js
+```java
 val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 
 // Present Payment Page
@@ -129,7 +136,7 @@ paymentSheet.presentWithPaymentIntent(paymentIntentClientSecret, configuration)
 
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
-```js
+```java
 private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
         when (paymentResult) {
             is PaymentSheetResult.Completed -> {
@@ -145,7 +152,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
     }
 ```
 
-Congratulations! Now that you have integrated the Android SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Android SDK, you can customise the payment sheet to blend with the rest of your app.&#x20;
 
 ## Next step:
 

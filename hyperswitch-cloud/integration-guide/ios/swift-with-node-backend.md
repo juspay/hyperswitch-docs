@@ -113,6 +113,13 @@ Fetch a payment by requesting your server for a payment as soon as your view is 
 STPAPIClient.shared.publishableKey = <YOUR_PUBLISHABLE_KEY>
 ```
 
+{% hint style="warning" %}
+Note: For Open Source Setup, initialise your custom Backend app URL as:
+
+<pre class="language-bash"><code class="lang-bash"><strong>STPAPIClient.shared.customBackendUrl = &#x3C;YOUR_SERVER_URL>
+</strong></code></pre>
+{% endhint %}
+
 ## 3. Complete the payment on your app
 
 ## 3.1 Swift
