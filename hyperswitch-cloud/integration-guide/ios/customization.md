@@ -16,7 +16,7 @@ Set `typography.fontResId` to your custom font’s resource ID to customize your
 
 ```swift
 var configuration = PaymentSheet.Configuration()
-configuration.appearance.font.base = UIFont(name: "Helvetica", size: UIFont.systemFontSize)!
+configuration.appearance?.font?.base? = UIFont(name: "Helvetica", size: UIFont.systemFontSize)!
 configuration.allowsDelayedPaymentMethods = true
 configuration.defaultBillingDetails =
     ["address":
