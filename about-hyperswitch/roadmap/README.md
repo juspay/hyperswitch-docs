@@ -56,13 +56,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burdens so that businesses can focus on the core activities.
 
-| **Legend** | **Description**              |
-| ---------- | ---------------------------- |
-| 🟩         | Feature completed            |
-| 🟧         | Feature in progress          |
-| 🟥         | Work not started             |
-| 💪         | Stretch target               |
-| 🚛         | Backlog feature from Q4 2023 |
+<table data-header-hidden><thead><tr><th width="125"></th><th></th></tr></thead><tbody><tr><td><strong>Legend</strong></td><td><strong>Description</strong></td></tr><tr><td>🟩</td><td>Feature completed</td></tr><tr><td>🟧</td><td>Feature in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td>🚛</td><td>Backlog feature from Q4 2023</td></tr></tbody></table>
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
