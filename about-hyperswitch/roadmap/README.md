@@ -5,7 +5,7 @@ description: Hyperswitch roadmap (Jan to Mar'24)
 # 🛣 Roadmap - Q1 2024
 
 {% hint style="info" %}
-This roadmap is still in draft stage and being finalized. The final version will be updated by second week on January 2024.
+This roadmap is still in draft stage and being finalized. The final version will be updated by second week of January 2024.
 {% endhint %}
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -70,10 +70,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟥 Code restructuring for enhancing readability and ease of contributions
-* 🟧 Helm charts enhancement to enable easy installation on Azure, Google Cloud and withing existing Kubernetes clusters
+* 🟧 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
 * 🟧 Helm charts will support installation of `hyperswitch-card-vault`
 * 🟥 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
-* 🟥 Enabling Hyperswitch installation as a microservice within an existing AWS cloud infrastructure setup (without the need for creating a new EKS cluster)
 * 🟧 Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
 * 💪 Open sourcing the Native Unified Checkout SDK (Android and iOS)
 * 🟥 Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
@@ -94,7 +93,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟧 Support for Hosted Checkout Page on Web&#x20;
 * 🟧 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
 * 🟥 Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre
-* 🟥 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
+* 🟥 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
 * 🟥 Create and manage payment links from the Hyperswitch control centre
 * 🟥 Dispute management and evidence submission workflow on Hyperswitch Control Centre
 * 🟥 Hyperswitch Control Centre will allow to customize payment methods at country and currency level and support more configurations
