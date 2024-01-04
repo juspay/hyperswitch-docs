@@ -26,11 +26,7 @@ There are multiple stages in a Payment flow depending on the payment methods tha
 
 Here's a more detailed version of the payment flow:
 
-<div data-full-width="false">
-
-<figure><img src="../.gitbook/assets/Hyperswitch Payments flow [Cards].svg" alt=""><figcaption><p><strong>Payments Lifecycle</strong></p></figcaption></figure>
-
-</div>
+<figure><img src="../.gitbook/assets/payment_flow.png" alt=""><figcaption></figcaption></figure>
 
 
 
