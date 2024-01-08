@@ -1,49 +1,80 @@
 ---
-description: Better safe than sorry!
+description: Comprehensive Measures Safeguarding Data Integrity within Hyperswitch
 ---
 
-# 🔐 Security
+# 🔐 Data Security
 
 {% hint style="info" %}
-In this chapter, you will learn how to secure your application. Let's break down the setup into its constituents and understand how they can be secured
+In this chapter, you will learn about the security principles employed in the design on the Hyperswitch application
 {% endhint %}
 
-***
+Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.&#x20;
 
-## **Cloud**&#x20;
+The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).&#x20;
 
-* The Cloud Provider that you are planning to use, should provide guarantees around data handling and how security is implemented for the hardware machine in their data centers.
-* For business requirements, the cloud provider must facilitate ways to perform compliance checks on infrastructure.
-* IAM must be used throughout the application to make sure that each component of application must only have access to actions that it’s supposed to perform. Limiting policies per IAM role would benefit the application. To allow very specific policies for specific application residing in Kubernetes using service account instead of providing the policy to all the nodes in the Kubernetes is preferred.
+## Handling Sensitive Data
 
-***
+The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data."
 
-## **Networking**
+<figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
-* The infrastructure that is used internally must not be exposed to the internet directly. Measures should be taken to add a DMZ layer on-top of the application infrastructure.
-* Communication between critical services must be end-to-end encrypted with TLS. For infrastructure components that resides in Kubernetes this can be achieved using service mesh (Istio / Linkerd).
-* Adding separate subnets for different layers of the application will provide modularity around how the networking will take place between components.
-* Communications with managed components must be explicitly defined around the use-cases. It should not be exposed by default.
-* The application and storage layer must reside in a private subnet with no connection to the internet. Any traffic inbound/outbound from outside must pass though proxies to provide more control on data that is flowing through the application
-* Firewalls must be used to prevent any unwanted/malicious traffic from entering the application network.
+### 1. Accepting Card Data
 
-***
+Card information initially comes from the Hyperswitch SDK, where it's encrypted using the SSL/TLS protocol. This establishes end-to-end encryption between the SDK and the Hyperswitch backend.
 
-## **Storage**&#x20;
+### 2. Storing Card Data (vaulting)
 
-* The storage layer must be isolated from other infrastructure, preventing any direct access from the internet.
-* The snapshots of the database must be stored securely.
+When a payment is made using a saved card, the card details get stored in a secure storage system called the Hyperswitch Card Vault. The Hyperswitch App Server utilizes JWS and JWE to secure card data during its transmission to our Card Vault service, which is then decrypted and verified by Card Vault. The transfer and validation of this data involve a few steps:
 
-***
+**Card Data Preparation:** The card details undergo two important security measures:
 
-## **Application**&#x20;
+* They're signed using the private key of the hyperswitch app server to ensure the integrity of the data.
+* Then, the details are encrypted using the public key of the locker, ensuring their confidentiality during transmission.
 
-* Using secure passwords for internal applications. Using Key Management Utilities (similar to KMS).
-* The application container image must be verified before running and must be managed securely.
-* Sensitive data that is to be passed to the application must be managed in secrets and the access should be restricted based on Roles.
-* The application data that is sensitive and contains PII (Personally Identifiable Information) is to be encrypted and multiple level encryption is to be maintained to protect details in merchant confidentiality and customer data.
-* Sensitive data, i.e. payment related data that is being passed through the system must be protected and should not leave any trace behind once it exits the system.
+**Data Storage Process:**&#x20;
 
-{% hint style="danger" %}
-Security considerations for the web client and the dashboard will be updated soon!
+* The card vault, after receiving the validated and encrypted data, further secures it by internally applying AES encryption.
+* Finally, the data, now doubly encrypted, is stored in the database, ensuring an added layer of security for the stored information.
+* For more details on how the locker internally handles the encryption and decryption you can visit the Github repository [juspay/hyperswitch-card-vault](https://github.com/juspay/hyperswitch-card-vault/blob/main/README.md)
+
+### 3. Using Card Data for Analytics and Payment Operations
+
+To provide transaction information and analytics, only partially masked card details (first 4 and last 4 digits) are sent to the Control Center from the Hyperswitch app server. This allows a high-level view of payments without revealing full customer information.
+
+
+
+## Data Encryption Overview
+
+The application places a high priority on safeguarding sensitive information tied to `external API credentials`, `customers`, and `card details` and uses multi-layered encryption for the same.
+
+During transmission, data remains masked and never gets permanently stored on the local system, ensuring added security.
+
+<figure><img src="../../.gitbook/assets/system-Page-2 (2).jpg" alt=""><figcaption></figcaption></figure>
+
+### Key Management System (KMS) Encryption
+
+{% hint style="info" %}
+The current Hyperswitch setup only uses AWS KMS for storing and managing sensitive data and configurations. Support will be added for other 3rd party vault solutions (e.g., Hashicorp Vault) in the future.
 {% endhint %}
+
+* Sensitive keys crucial for the application's operation undergo encryption at startup.
+* These encrypted keys are then stored securely in environment variables or configuration files using AWS's KMS service.
+* Examples of encrypted values include the master key, database passwords, and RSA certificates, ensuring their confidentiality.
+
+### Merchant-Specific Encryption
+
+* Each merchant account is assigned a unique data encryption key generated internally and stored securely.
+* This merchant-specific key undergoes encryption using AES-256 symmetric encryption via the master key, further securing it.
+
+### Data Encryption for each Merchant account
+
+* Data pertinent to individual merchant accounts, such as connector API keys, confidential merchant information, and any Personally Identifiable Information (PII) of customers, is encrypted using the same encryption method.
+* However, this encryption process utilizes the unique data encryption key specific to that particular merchant, ensuring that each set of data remains protected and accessible only to authorized parties associated with that merchant.
+* By employing a multi-layered encryption approach involving KMS encryption for critical keys, unique encryption keys for each merchant, and data-specific encryption, the application ensures robust security measures are in place to safeguard sensitive information at various levels.
+
+### Concealing Sensitive Data in Logs
+
+* For masking sensitive data, the application framework is designed with a wrapper type that categorizes all sensitive data as `Secret`.&#x20;
+* This approach capitalizes on the advantages of `Rust` - a strongly typed language. Creating a wrapper type like `Secret<T>` offers a robust way to handle sensitive data.&#x20;
+* Instead of logging the actual sensitive content, such as passwords or personal information, this approach logs the data type itself (e.g., `*** alloc::string::String ***`).&#x20;
+* This practice of masking the data at source ensures that sensitive information remains protected and prevents inadvertent exposure in logs or debug outputs.

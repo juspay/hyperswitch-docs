@@ -38,7 +38,7 @@
   * [🏛 PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
     * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
     * [🗒 Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-  * [🔐 Security](hyperswitch-open-source/going-live/security.md)
+  * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
   * [♻ Updates](hyperswitch-open-source/going-live/updates.md)
 
 ## Hyperswitch Cloud
