@@ -1,5 +1,5 @@
 ---
-description: Comprehensive Measures Safeguarding Data Integrity within Hyperswitch
+description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
 ---
 
 # 🔐 Data Security
