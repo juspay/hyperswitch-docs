@@ -5,14 +5,8 @@ description: Integrate hyper SDK to your Swift App using hyperswitch-node
 # Swift with Node Backend
 
 {% hint style="info" %}
-In this section, you will get detailed instructions for integrating the Hyperswitch native iOS SDK for your Android app
+Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
-
-{% hint style="info" %}
-Use this guide to integrate hyper SDK to your iOS app. You can use the following app as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [App on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
-{% endhint %}
-
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip)
 
 ## Requirements
 
@@ -87,7 +81,7 @@ Add these lines to your Podfile:
 
 ```
 
-For M1, M2 mac (arm64 arch), use the below post install script
+For M1, M2 or M3 macs (arm64 architecture), use the below post install script
 
 ```ruby
 post_install do |installer|
@@ -119,12 +113,23 @@ Fetch a payment by requesting your server for a payment as soon as your view is 
 STPAPIClient.shared.publishableKey = <YOUR_PUBLISHABLE_KEY>
 ```
 
+{% hint style="warning" %}
+Note: For Open Source Setup, initialise your custom Backend app URL as:
+
+<pre class="language-bash"><code class="lang-bash"><strong>STPAPIClient.shared.customBackendUrl = &#x3C;YOUR_SERVER_URL>
+</strong></code></pre>
+{% endhint %}
+
 ## 3. Complete the payment on your app
 
 ## 3.1 Swift
 
 Create a PaymentSheet instance using the `client_secret` retrieved from the previous step. Present the payment page from your view controller and use the PaymentSheet.Configuration struct for customising your payment page.
 
+
+
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
 var paymentSheet: PaymentSheet?
 var paymentResult: PaymentSheetResult?
@@ -135,9 +140,25 @@ configuration.merchantDisplayName = "Example, Inc."
 // Present Payment Page
 paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
 ```
+{% endtab %}
+
+{% tab title="SwiftUI" %}
+```swift
+@ObservedObject var model = BackendModel()
+@Published var paymentSheet: HyperPaymentSheet?
+@Published var paymentResult: HyperPaymentSheetResult?
+
+
+// Present Payment Page
+paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
+```
+{% endtab %}
+{% endtabs %}
 
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
+{% tabs %}
+{% tab title="Swift" %}
 ```swift
 @objc
 func openPaymentSheet(_ sender: Any) { //present payment sheet
@@ -153,23 +174,9 @@ func openPaymentSheet(_ sender: Any) { //present payment sheet
     })
 }
 ```
+{% endtab %}
 
-## 3.2 Swift UI
-
-Create a PaymentSheet instance using the `client_secret` retrieved from the previous step. Present the payment page from your view controller and use the PaymentSheet.Configuration struct for customising your payment page.
-
-```swift
-@ObservedObject var model = BackendModel()
-@Published var paymentSheet: HyperPaymentSheet?
-@Published var paymentResult: HyperPaymentSheetResult?
-
-
-// Present Payment Page
-paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
-```
-
-Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
-
+{% tab title="SwiftUI" %}
 ```swift
 VStack {
   if let paymentSheet = model.paymentSheet {
@@ -194,18 +201,21 @@ VStack {
       }
   }
 }.onAppear { model.preparePaymentSheet() }
-
 ```
+{% endtab %}
+{% endtabs %}
 
 ## 4. Card Element
 
 ## 4.1 Swift
 
-Create a card element view and pay button.
+Create a card element view and pay button and handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
-```swift
-lazy var hyperCardTextField: STPPaymentCardTextField = {
-    let cardTextField = STPPaymentCardTextField()
+{% tabs %}
+{% tab title="Swift" %}
+<pre class="language-swift"><code class="lang-swift"><strong>//Create a card element view and pay button.
+</strong><strong>lazy var hyperCardTextField: STPPaymentCardTextField = {
+</strong>    let cardTextField = STPPaymentCardTextField()
     return cardTextField
 }()
 
@@ -217,11 +227,8 @@ lazy var payButton: UIButton = {
     button.addTarget(self, action: #selector(pay), for: .touchUpInside)
     return button
 }()
-```
 
-Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
-```swift
 @objc
 func pay() {
   guard let paymentIntentClientSecret = model.paymentIntentClientSecret else {
@@ -245,21 +252,18 @@ func pay() {
     }
   }
 }
-```
+</code></pre>
+{% endtab %}
 
-## 4.2 Swift UI
-
-Create a card element view and pay button and handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
-
+{% tab title="SwiftUI" %}
 ```swift
-  @ObservedObject var model = BackendModel()
-  @State var paymentMethodParams: STPPaymentMethodParams?
-```
+@ObservedObject var model = BackendModel()
+@State var paymentMethodParams: STPPaymentMethodParams?
 
-```swift
 VStack {
   STPPaymentCardTextField.Representable(paymentMethodParams: $paymentMethodParams)
     .padding()
+  //Create a card element view and pay button.
   if let paymentIntent = model.paymentIntentParams {
     Button("Buy")
     {
@@ -282,6 +286,8 @@ VStack {
   }
 }.onAppear { model.preparePaymentIntent() }
 ```
+{% endtab %}
+{% endtabs %}
 
 Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;
 

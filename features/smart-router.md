@@ -56,8 +56,29 @@ To test the Smart Router, after activating one rule, we can make a Test Payment 
 
 <summary>FAQs</summary>
 
-1. What parameters can I use to configure routing rules?
+### 1. What parameters can I use to configure routing rules?
 
 The rule-based routing supports setting up advanced rule configuration based on all critical /payments parameters such as Payment Method, Payment Method Type, Country, Currency, Amount etc.
+
+### 2. Why did my payment go through 'Y' connector even though I have specified 'X' in my routing configuration? OR Why is it showing me 'Abc' payment method in SDK checkout even though I have not enabled it for the 'X' connector that I'm routing my payments through?
+
+There can be multiple reasons why this happened but all of them can be boiled down to a "connector eligibility failure" for a given payment. We'll walk through a common scenario to examine what this really means.
+
+* Imagine that you configured two connectors for your account. Say `Stripe`, then `Adyen`, in that order. Since you configured them in that order, your default fallback looks like this: `[Stripe, Adyen]` (connectors are appended to the end of your default fallback list when configured for the first time)
+* In your connectors dashboard, you enable Cards for Stripe, and ApplePay for Adyen.
+* Now you create a new Volume-based routing configuration, and you configure it to route 100% of your traffic through Stripe for now.
+* Now you go ahead and open up the Hyperswitch SDK to make a test payment. In the payment method selection area, you can see two buttons, one for `Cards` and one for `ApplePay`.&#x20;
+  * This is where you run into your first question. "Why is it showing me ApplePay even though I have configured 100% of my payments to go through Stripe, and ApplePay is not enabled for Stripe?"
+  * The answer to this is, the payment methods that are shown to the customer in the SDK aren't conscious of your routing configuration. We prioritize giving your customers the complete spread of all enabled payment methods across all of your enabled connectors. Therefore, if you specifically do not wish for ApplePay to appear on your checkout screen, you need to disable it in `Adyen` here, even though your routing configuration makes no mention of Adyen.
+* Now you select `ApplePay`, go through the required steps, confirm the payment, and it succeeds. You go to your payments dashboard and see that the payment went through `Adyen`.
+  * This is where you run into the second question. "Why is the payment going through `Adyen` even though I have set my routing configuration to route 100% of my payments through `Stripe`?
+  * The answer to this carries over from the previous point. Since we displayed `ApplePay` on the checkout screen even though it wasn't enabled for your preferred connector `Stripe`, we need to adhere to your connector payment method configuration and ensure the payment goes through the right connector, here, `Adyen` since `ApplePay` is only enabled for Adyen. To briefly explain how Hyperswitch reaches this conclusion :-
+    * Hyperswitch runs your configured routing algorithm. Since this is `100% Stripe`, Hyperswitch receives `Stripe` as the outuput.
+    * Hyperswitch then runs an Eligibility Analysis on the output (`Stripe`) to gauge its eligibility for the current payment. The Eligibility Analysis fails once Hyperswitch realizes that the payment is made through `ApplePay` which is not enabled for `Stripe`
+    * The application then goes into fallback mode and loads your `default fallback`, which is `[Stripe, Adyen]` as seen earlier.
+    * The application looks through the list in order. It ignores `Stripe` since it has already failed the Eligibility Analysis. It instead subjects `Adyen` (the next connector in the list) to the same Eligibility Analysis.
+    * This time the analysis passes since `ApplePay` is enabled for `Adyen`.
+    * Hyperswitch takes `Adyen` as the final connector to make the payment through even though your configuration says `100% Stripe`.
+  * This fallback flow is taken when none of the connectors in the output of routing are eligible for the payment. This is done in an effort to maximize the success rate of the payment even if it means deviating from the currently active routing configuration.
 
 </details>
