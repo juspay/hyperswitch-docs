@@ -32,7 +32,7 @@ Lets start with a short recap of Q4 2023
 
 :face\_with\_hand\_over\_mouth:Last but not least. We were overwhelmed !!! At the beginning of Q4 2023, we allocated 30% of bandwidth for community feature requests and managing community contributions. But we were surprised by the overwhelming response and passion from the community in terms of `Feature requests` and `contributions`.
 
-> Hence, Q1 2024 is “For the Community”. Because, we will be dedicating 50% of our bandwidth for community feature requests and managing community contributions.&#x20;
+> Hence, Q1 2024 is “For the Community”. Because, we will be dedicating 50% of our bandwidth for community feature requests.&#x20;
 
 ## Core Values <a href="#core-values" id="core-values"></a>
 
@@ -63,9 +63,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟥 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting and optional 3DS verification before vaulting
-* 🟥 Enhance MIT payments (Merchant Initiated Transactions) to accept raw card data and `network_reference_id`
+* 🟥 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
 * 🟥 Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways
-* 🟥 New connector Integrations - Place2Pay, Billwerk _(the list of connectors will keep expanding as we more requests from the community!!! )_
+* 🟥 New connector Integrations - Place2Pay, Billwerk _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
 
 ### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
