@@ -1,6 +1,6 @@
 name: Documentation Issues
 description: "Thanks for taking the time to make our documentation better \U0001F64F"
-title: "\U0001F4DA[MISSING DOCS]"
+title: "\U0001F4DA[DOCS ISSUES]"
 labels: ["C-doc", "S-awaiting-triage", "Developer Experience"]
 body:
   - type: markdown
@@ -8,21 +8,20 @@ body:
       value: |
         We value your time and effort in submitting this documentation improvisation. Here are a few things to check before clicking the submit button :)
 
-  - type: textarea
+  - type: checkboxes
     id: category-of-documentation
     attributes:
       label: Category
-      description: |
-        - [ ] About Hyperswitch
-        - [ ] Hyperswitch Open Source
-        - [ ] Hyperswitch Cloud
-        - [ ] Features
-        - [ ] API Reference
-        - [ ] Installation Guide
-        - [ ] Troubleshooting
-        - [ ] Missing Connector
-        - [ ] Other (Specify)
-      placeholder: This is where it needs to be...
+      options:
+        - label: About Hyperswitch
+        - label: Hyperswitch Open Source
+        - label: Hyperswitch Cloud
+        - label: Features
+        - label: API Reference
+        - label: Installation Guide
+        - label: Troubleshooting
+        - label: Missing Connector
+        - label: Other (Specify)
     validations:
       required: true
 
@@ -30,7 +29,7 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: Describe the documentation change briefly.
+      description: Describe the documentation change briefly and attach screenshot whenever possible.
       placeholder: The change is...
     validations:
       required: true
@@ -42,15 +41,7 @@ body:
       description: Provide background information or context for the missing documentation. Explain why this documentation is essential or how it impacts users.
       placeholder: It should be there because...
     validations:
-      required: true
-
-  - type: checkboxes
-    id: read-contributing-guidelines
-    attributes:
-      label: Have you read the Contributing Guidelines?
-      options:
-        - label: I have read the [Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
-          required: true
+      required: false
 
   - type: dropdown
     id: willing-to-submit-pr
