@@ -14,7 +14,7 @@ The below sections highlight how Hyperswitch handles sensitive data such as mast
 
 ## Handling Sensitive Data
 
-The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data."
+The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
 <figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
