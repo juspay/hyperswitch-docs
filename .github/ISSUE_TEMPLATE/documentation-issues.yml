@@ -29,7 +29,7 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: Describe the documentation change briefly and attach screenshot whenever possible.
+      description: Describe the documentation change briefly and attach screenshots wherever possible.
       placeholder: The change is...
     validations:
       required: true
