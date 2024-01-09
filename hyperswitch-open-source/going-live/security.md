@@ -78,3 +78,9 @@ The current Hyperswitch setup only uses AWS KMS for storing and managing sensiti
 * This approach capitalizes on the advantages of `Rust` - a strongly typed language. Creating a wrapper type like `Secret<T>` offers a robust way to handle sensitive data.&#x20;
 * Instead of logging the actual sensitive content, such as passwords or personal information, this approach logs the data type itself (e.g., `*** alloc::string::String ***`).&#x20;
 * This practice of masking the data at source ensures that sensitive information remains protected and prevents inadvertent exposure in logs or debug outputs.
+
+{% hint style="info" %}
+**Database at rest Encryption**
+
+In the cloud-hosted version of Hyperswitch, we've encrypted the DB instances to offer an added layer of security, safeguarding the data from unauthorized access. For merchants self-hosting Hyperswitch, we highly recommend adopting similar practices to ensure robust protection for their data.
+{% endhint %}
