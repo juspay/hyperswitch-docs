@@ -27,7 +27,7 @@ Introducing Payment Links – a game-changer in simplifying transactions. Seamle
 
 Say you already have a profile created under your Hyperswitch account
 
-### Step 1: Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payment\_link\_config by passing the below object in the request body
+### 1. Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payment\_link\_config by passing the below object in the request body
 
 {% code fullWidth="true" %}
 ```
@@ -41,35 +41,13 @@ Say you already have a profile created under your Hyperswitch account
 ```
 {% endcode %}
 
+### 2. [Create a payment link ](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)by using the same payments/create endpoint
 
+\- Set "payment\_link" = "true" to create a payment link with default payment\_link\_configs configs set in business profile update mentioned in Step 1
 
-### Step 2: [Create a payment](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) by sending payment\_link as true which will create a payment link with default payment\_link\_configs configs set in business profile update mentioned in Step 1
-
-Sample curl:
+\- You can also pass the  "session\_expiry" field in seconds to indicate the expiry of the payment link. By default it is 900 seconds (15 minutes)
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/payments' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: YOUR_API_KEY' \
---data '{
-    "amount": 1130,
-    "currency": "USD",
-    "confirm": false,
-    "customer_id": "cus_123",
-    "return_url": "https://hyperswitch.io",
-    "description": "For selling Tshirt",
-    "payment_link": true
-}'
-```
-
-### Customizing Payment link while creating a payment:
-
-You can also customize a specific payment link by including the payment\_link\_config object while creating a link during [payments/create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
-
-Sample curl:
-
-```markup
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -82,15 +60,35 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "return_url": "https://hyperswitch.io",
     "description": "For selling Tshirt",
     "payment_link": true,
-"payment_link_config": {
-      "theme":null,
-      "logo":"https://i.pinimg.com/736x/4d/83/5c/4d835ca8aafbbb15f84d07d926fda473.jpg",
-      "seller_name":"teeskraft”
-}
+    "session_expiry": 2592000
 }'
 ```
 
+### 3. Customizing a Payment link during creation:
 
+You can also customize a specific payment link by including the payment\_link\_config object while creating a link during [payments/create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
+
+<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: YOUR_API_KEY' \
+--data '{
+    "amount": 1130,
+    "currency": "USD",
+    "confirm": false,
+    "customer_id": "cus_123",
+    "return_url": "https://hyperswitch.io",
+    "description": "For selling Tshirt",
+    "payment_link": true,
+    "session_expiry": 2592000,
+<strong>    "payment_link_config": {
+</strong>      "theme":"#014E28",
+      "logo":"https://i.pinimg.com/736x/4d/83/5c/4d835ca8aafbbb15f84d07d926fda473.jpg",
+      "seller_name":"teeskraft”,
+      "sdk_layout":"tabs"
+}
+}'
+</code></pre>
 
 ## FAQ?
 
