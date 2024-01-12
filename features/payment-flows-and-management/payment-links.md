@@ -51,7 +51,7 @@ Sample curl:
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: snd_vJw0nXHwTkwNDj2w9EHov3qr30piyBVj0u55smXWnZLzqgwYlv2pzMg4JMDormsA' \
+--header 'api-key: YOUR_API_KEY' \
 --data '{
     "amount": 1130,
     "currency": "USD",
@@ -73,7 +73,7 @@ Sample curl:
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: snd_vJw0nXHwTkwNDj2w9EHov3qr30piyBVj0u55smXWnZLzqgwYlv2pzMg4JMDormsA' \
+--header 'api-key: YOUR_API_KEY' \
 --data '{
     "amount": 1130,
     "currency": "USD",
@@ -102,4 +102,4 @@ This involves adding CNAME records and TLS certificates which ends up being a sl
 
 ### 2. Can I configure Payment links through Hyperswitch Control centre?
 
-Currently, the Control centre's capability to create payment links is under development and will be available by Mar'24.
+Currently, the Control centre's capability to create payment links is under development and will be available by Q1'24.
