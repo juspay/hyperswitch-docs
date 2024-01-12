@@ -122,7 +122,7 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
 }
 ```
 
-3. Block a fingerprint using the Blocklist endpoint:
+3. Block a fingerprint using the [Blocklist endpoint](https://api-reference.hyperswitch.io/api-reference/blocklist/post-blocklist):
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/blocklist' \
@@ -134,7 +134,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 }
 ```
 
-4. Show Blocked fingerprints
+4. [Show Blocked fingerprints](https://api-reference.hyperswitch.io/api-reference/blocklist/get-blocklist)
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_method' \
@@ -153,7 +153,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_meth
    }
 ```
 
-6. Unblock a fingerprint
+6. [Unblock a fingerprint](https://api-reference.hyperswitch.io/api-reference/blocklist/delete-blocklist)
 
 ```
 curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
@@ -184,8 +184,8 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 --header 'Content-Type: application/json' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
-    "type": "fingerprint",
-    "data": "fingerprint_CKz5s9W4FX03eydwgGun"
+    "type": "extended_card_bin",
+    "data": "42424242"
 }
 ```
 
