@@ -132,6 +132,7 @@
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
   * [💰 Manual Capture](features/payment-flows-and-management/manual-capture.md)
   * [🛑 Fraud Blocklist](features/payment-flows-and-management/fraud-blocklist.md)
+  * [🔁 Subscriptions](features/payment-flows-and-management/subscriptions.md)
 * [🕹 Merchant controls](features/merchant-controls/README.md)
   * [🛣 Smart Router](features/smart-router.md)
     * [Rule Based Routing](features/merchant-controls/smart-router/rule-based-routing.md)
