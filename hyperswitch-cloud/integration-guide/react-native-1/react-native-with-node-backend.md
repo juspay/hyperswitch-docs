@@ -137,6 +137,18 @@ Call `initPaymentSheet` through the object created above to customise paymentshe
   }
 ```
 
+{% hint style="info" %}
+When utilizing a custom backend or logging system, you can add the following parameters to PaymentSheetParams:&#x20;
+{% endhint %}
+
+```dart
+PaymentSheetParams params = PaymentSheetParams(
+        ...
+        customBackendUrl:"YOUR_CUSTOM_BACKEND_URL" // for your custom backend URL 
+        customLogUrl:"YOUR_CUSTOM_LOG_URL"         // for your custom Log endpoint
+);
+```
+
 ### 3.4 Handle Payment Response
 
 To display the Payment Sheet, integrate a "**Pay Now**" button within the checkout page, which, when clicked, invokes the `presentPaymentSheet()`method and handles the payment response.
