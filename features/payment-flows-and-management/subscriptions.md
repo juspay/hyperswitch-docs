@@ -1,33 +1,31 @@
 ---
-description: Use Hyperswitch with you preferred subscription provider
+description: >-
+  Augments payment processing capabilities with your preferred Subscription
+  Solution provider
 ---
 
 # 🔁 Subscriptions
 
 {% hint style="info" %}
-In this section we will cover how Hyperswitch supports different subscription providers, ways to integrate, supported subscription providers and how to get started with it.
+In this section we will cover how you can leverage the benefits of Hyperswitch for payments processing while managing subscriptions with your preferred Subscription Solution Provider
 {% endhint %}
 
-### Why are we doing this?
+### Benefits
 
-Hyperswitch subscription framework allows you to work with your preferred subscription provider while having the flexibility to work with multiple payment processors and payment methods. The advantages "Hyperswitch + Subscription Provider" set up offers are
+Hyperswitch allows you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you get with using Hyperswitch integration as a supplement with your Subscription Solution Provider are as follows:
 
 * Flexibility to work with any payment processor of your choice based on better costs or auth rates
-* Flexibility to offer preferred payment methods to the customer for setting up subscriptions&#x20;
-* Flexibility to route subscriptions to multiple processors to improve the success rate ([part of Q1 roadmap](https://docs.hyperswitch.io/about-hyperswitch/roadmap)) with advanced routing rules &#x20;
-
-### What kind of business can adopt this?
-
-* Simple to adopt  for businesses who are already working with a subscription provider with custom flows and a payment processor . It allows to expand the payment processing to multiple processors
-* Medium complexity of adoption for business that are new to subscriptions. It offers the flexibility to work with multiple payment providers from the start
-* Medium to Hard complexity for businesses who are already working with a subscription provider with no customisations
-* Hyperswitch can also handle the one-time payment use cases and therefore offering you the flexibility of working with multiple processors for better costs and auth rates
+* Expand to local payment methods across global markets
+* Smart route recurring payments across multiple payment processors to improve the success rate ([part of Q1 roadmap](https://docs.hyperswitch.io/about-hyperswitch/roadmap))
+* Unified solution to manage one-time payments use cases (e-commerce use case) and recurring payments use cases (subscription payments)
 
 ### What subscription providers do we support?
 
-Recurly and Chargebee&#x20;
+All major Subscription Solution Providers offer integration points to manage payments with external payment processors. And the integration solution proposed below should work universal across any subscription provider.
 
-### What subscription use cases do we support ?
+In case of queries, or if you need a specific payment method of payment processor integration - please drop an email to biz@hyperswitch.io
+
+### Use cases supported
 
 * User flow 1 - User selects a plan followed by selecting the payment method and adding the payment method details to make the payment and start subscription.&#x20;
 * User flow 2 -  User selects a payment method and adds the payment method details which are saved. User finally selects the plan to start the subscription
@@ -66,7 +64,7 @@ User selects a payment method and adds the payment method details which are save
 
 #### Subscription management portal
 
-The customer-facing subscription management portal allows the customers to modify their billing address, add new payment method details for subscripotion payments and cancel subscription. If a merchant offers a subscription management portal then here's how Hyperswitch can support:
+The customer-facing subscription management interface allows the customers to modify their billing address, add new payment method details for subscripotion payments and cancel subscription. If a merchant offers a subscription management portal then here's how Hyperswitch can support:
 
 * User updates billing address  - The merchant will update the new billing address with both Hyperswitch and the subscription provider using the customer ID.
 * User updates payment method details -  The merchant will load Hyperswitch SDK to allow the user to select the payment method and add the relevant payment method details. Merchant will validate and add this payment method with Hyperswitch using $0 mandate and create a new mandate.
@@ -95,10 +93,19 @@ The merchant can use the Hyperswitch Payment links when sending email reminders 
 
 ### FAQ
 
-1. Can I bring my own subscription provider ?
+<details>
 
-Yes, we support any subscription provider using the above framework
+<summary>Can I bring in my own subscription provider ? </summary>
 
-2. Can I process both one-time payments and recurring payments via the same setup?
+Yes, we support any subscription provider using the above framework.
+
+</details>
+
+<details>
+
+<summary>Can I process both one-time payments and recurring payments via the same setup?</summary>
 
 Yes, once you're integrated with Hyperswitch, you'll be able to process both one-time payments and recurring payments.
+
+</details>
+
