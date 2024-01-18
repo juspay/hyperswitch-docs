@@ -63,6 +63,7 @@ Consider the below code for your reference.
 
 ```dart
   Configuration configuration= Configuration(appearance: appearance)
+  configuration.disableSaveCards = true; // to disable save cards
   PaymentSheetParams params = PaymentSheetParams(
       publishableKey: "YOUR_PUBLISHABLE_KEY",
       clientSecret: clientSecret,
@@ -70,7 +71,11 @@ Consider the below code for your reference.
     );
 ```
 
-Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](react-native-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
+{% hint style="info" %}
+Set disableSaveCards`key to false to disable saved cards.`
+{% endhint %}
+
+&#x20;Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](react-native-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
 
 {% hint style="info" %}
 Note To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
