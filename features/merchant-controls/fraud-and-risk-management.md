@@ -72,8 +72,8 @@ If your FRM processor of choice is not available in the above list, please put a
 
 **Step 4:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
 
-{% content-ref url="../../hyperswitch-open-source/test-a-payment.md" %}
-[test-a-payment.md](../../hyperswitch-open-source/test-a-payment.md)
+{% content-ref url="../../hyperswitch-open-source/testing/test-a-payment.md" %}
+[test-a-payment.md](../../hyperswitch-open-source/testing/test-a-payment.md)
 {% endcontent-ref %}
 
 ## FAQs

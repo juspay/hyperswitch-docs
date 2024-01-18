@@ -164,6 +164,6 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 ## Next step:
 
-{% content-ref url="../test-a-payment.md" %}
-[test-a-payment.md](../test-a-payment.md)
+{% content-ref url="../testing/test-a-payment.md" %}
+[test-a-payment.md](../testing/test-a-payment.md)
 {% endcontent-ref %}

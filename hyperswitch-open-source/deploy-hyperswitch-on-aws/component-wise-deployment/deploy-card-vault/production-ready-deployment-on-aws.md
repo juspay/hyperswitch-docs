@@ -129,6 +129,6 @@ ROUTER__JWEKEY__VAULT_PUBLIC_KEY= # add the JWE private key of tenant generated 
 
 ## Next step:
 
-{% content-ref url="../../../test-a-payment.md" %}
-[test-a-payment.md](../../../test-a-payment.md)
+{% content-ref url="../../../testing/test-a-payment.md" %}
+[test-a-payment.md](../../../testing/test-a-payment.md)
 {% endcontent-ref %}
