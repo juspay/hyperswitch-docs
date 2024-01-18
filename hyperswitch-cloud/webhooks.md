@@ -56,3 +56,39 @@ Click [**here**](https://juspay-78.mintlify.app/api-reference/schemas/outgoing--
 
 * **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.
 * **Retries:** In case of 3xx, 4xx, or 5xx response or no response from your endpoint for webhooks, Hyperswitch has a retry mechanism that tries sending the webhooks again up to 3 times before marking the event as failed.
+
+### Webhook Signature Verification
+
+While creating a business\_profile, `payments_response_hash_key` can be provided, this is used as a key for signature verification, If not specified, a 64-character long randomized key with high entropy is generated. This key will be used to hash both the redirect payment response and webhooks.\
+\
+**Webhook Signature Generation**:\
+Creating a signature for the webhook involves these steps:
+
+* Webhook payload is encoded to JSON string.
+* `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
+* The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
+
+**Webhook Validation**:\
+To validate the webhook’s authenticity:
+
+* Retrieve the content of the webhook and encode it as a JSON string.
+* Generate a  `Hmac-SHA512` signature using the payload and payment\_response\_hash\_key.
+* Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
+
+
+
+### Troubleshooting
+
+If you are sure that the payload is from Hyperswitch but the signature verification fails:
+
+* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256,  you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm&#x20;
+* Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
+
+<details>
+
+<summary><strong>Why SHA-512 ?</strong></summary>
+
+SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
+
+</details>
+
