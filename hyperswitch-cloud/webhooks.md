@@ -54,8 +54,7 @@ Hyperswitch’s webhook endpoint format is as follows:
 
 Click [**here**](https://juspay-78.mintlify.app/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
 
-* **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.
-* **Retries:** In case of 3xx, 4xx, or 5xx response or no response from your endpoint for webhooks, Hyperswitch has a retry mechanism that tries sending the webhooks again up to 3 times before marking the event as failed.
+* **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
 
 ### Webhook Signature Verification
 
