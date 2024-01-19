@@ -211,6 +211,68 @@ let loggingLevel = "DEBUG";
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-24 at 5.00.03 PM.png" alt=""><figcaption><p>Understanding Logging Levels</p></figcaption></figure>
 
+<details>
+
+<summary>Log Structure</summary>
+
+Logs are sent to the `logEndpoint` as an array of objects of type `logFile` as defined below.
+
+<pre class="language-rescript"><code class="lang-rescript">type logFile = {
+  timestamp: string,
+  logType: logType,
+  category: logCategory,
+  source: string,
+  version: string,
+  value: string,
+  internalMetadata: string,
+  sessionId: string,
+  merchantId: string,
+  paymentId: string,
+  appId: string,
+  platform: string,
+  browserName: string,
+  browserVersion: string,
+  userAgent: string,
+  eventName: string,
+  latency: string,
+  firstEvent: bool,
+  paymentMethod: string,
+  metadata: Js.Json.t,
+}
+
+/* 
+  The metadata field can be set to accept a custom object 
+  while initialising the SDK, and be used for internal analytics. 
+<strong>*/
+</strong>
+type request = {
+ data: array&#x3C;logFile>
+}
+</code></pre>
+
+A sample cURL is shared below:
+
+```bash
+curl --location 'https://sandbox.juspay.io/godel/analytics' \
+  -H 'authority: sandbox.juspay.io' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'content-type: text/plain;charset=UTF-8' \
+  -H 'origin: https://beta.hyperswitch.io' \
+  -H 'referer: https://beta.hyperswitch.io/' \
+  -H 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: no-cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --data-raw '{"data":[{"timestamp":"1705662824541","log_type":"INFO","component":"WEB","category":"USER_EVENT","source":"ORCA-PAYMENT-PAGE","version":"0.18.1","value":"","internal_metadata":"","session_id":"oBGDyzBKbPctmFH3wucbJJ7Lr2Io7z5X","merchant_id":"pk_snd_3b33cd9404234113804aa1accaabe22f","payment_id":"pay_PvJi6EKkNPMMrkvSHOTd","app_id":"","platform":"MACINTEL","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","event_name":"SAMPLE_EVENT","browser_name":"CHROME","browser_version":"120.0.0","latency":"","first_event":"true","payment_method":""}]}' \
+  --compressed
+```
+
+</details>
+
 ## Next Steps
 
 Once you've completed the aforementioned steps for logging and monitoring, you can initiate a payment via the SDK and trace it within the logging dashboard using identifiers such as the request ID or order ID.
