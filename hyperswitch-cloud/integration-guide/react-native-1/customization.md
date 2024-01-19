@@ -57,6 +57,8 @@ ColorsObject colorsObject = ColorsObject(
     );
 ```
 
+## Configuration and Appearance
+
 Now, create an instance of `Configuration` class by invoking its constructor and passing the object of `Appearance` class created above. Then, you have to create an instance of `PaymentSheetParams` class by invoking its constructor and passing  the object of `Configuration` class created earlier.
 
 Consider the below code for your reference.
