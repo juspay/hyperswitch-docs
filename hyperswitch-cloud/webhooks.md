@@ -18,47 +18,50 @@ Webhooks are HTTP-based real-time push notifications that Hyperswitch would use 
 
 #### Create an endpoint on your server
 
-You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Hyperswitch server2
+You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Hyperswitch server.
 
-#### Update your webhook endpoint on Hyperswitch Dashboard
+#### Configure your webhook endpoint on Hyperswitch Dashboard
 
-Update the above endpoint on your Hyperswitch dashboard under Settings -> Webhooks3
+Configure the above endpoint on your Hyperswitch dashboard under Settings -> Webhooks.
 
 #### Update Hyperswitch’s webhook endpoints on your connector Dashboard
 
-In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints
+In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
 
-Hyperswitch’s webhook endpoint format is as follows:
+Hyperswitch's webhook endpoint format is as specified below, or you can obtain the endpoint from the control center under the Processors tab.
 
-| Environment | Webhook Endpoint                                                   |
-| ----------- | ------------------------------------------------------------------ |
-| Sandbox     | sandbox.hyperswitch.io/webhooks/`{merchant_id}`/`{connector_name}` |
-| Production  | api.hyperswitch.io/webhooks/`{merchant_id}`/`{connector_name}`     |
+| Environment | Webhook Endpoint                                                          |
+| ----------- | ------------------------------------------------------------------------- |
+| Sandbox     | sandbox.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}` |
+| Production  | api.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}`     |
 
 ### [​](https://api-reference.hyperswitch.io/essentials/webhooks#handling-webhooks)Handling Webhooks <a href="#handling-webhooks" id="handling-webhooks"></a>
 
-* **Select the events for Webhooks:** On the same page on the dashboard, select the events for which you would like to receive notifications. Currently, Webhooks are available on Hyperswitch for the following events:
-  1. payment\_succeeded
-  2. payment\_failed
-  3. payment\_processing
-  4. action\_required
-  5. refund\_succeeded
-  6. refund\_failed
-  7. dispute\_opened
-  8. dispute\_expired
-  9. dispute\_accepted
-  10. dispute\_cancelled
-  11. dispute\_challenged
-  12. dispute\_won
-  13. dispute\_lost
+* Below are list of events for which you will receive the webhooks:
+  1. `payment_succeeded`
+  2. `payment_failed`
+  3. `payment_processing`
+  4. `payment_cancelled`
+  5. `payment_authorized`
+  6. `payment_captured`
+  7. `action_required`
+  8. `refund_succeeded`
+  9. `refund_failed`
+  10. `dispute_opened`
+  11. `dispute_expired`
+  12. `dispute_accepted`
+  13. `dispute_cancelled`
+  14. `dispute_challenged`
+  15. `dispute_won`
+  16. `dispute_lost`
+  17. `mandate_active`
+  18. `mandate_revoked`
 
 Click [**here**](https://juspay-78.mintlify.app/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
 
-* **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
-
 ### Webhook Signature Verification
 
-While creating a business\_profile, `payments_response_hash_key` can be provided, this is used as a key for signature verification, If not specified, a 64-character long randomized key with high entropy is generated. This key will be used to hash both the redirect payment response and webhooks.\
+While creating a business\_profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.\
 \
 **Webhook Signature Generation**:\
 Creating a signature for the webhook involves these steps:
@@ -91,3 +94,6 @@ SHA-512 is a robust cryptographic hash function designed for security. It genera
 
 </details>
 
+
+
+* **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
