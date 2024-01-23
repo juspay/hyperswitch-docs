@@ -48,7 +48,14 @@ Hyperswitch Recon gives you complete control of your reconciliation process, mak
 
 <summary>How do I raise access to Recon module?</summary>
 
-
+Log into the Hyperswitch dashboard and then goto the Reconciliation section and click on `Request access`.
 
 </details>
 
+<details>
+
+<summary>Is the Recon module available for open-source users as well?</summary>
+
+The Recon module is currently available only in the cloud-hosted version of Hyperswitch.
+
+</details>

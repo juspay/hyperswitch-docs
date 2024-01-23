@@ -173,7 +173,7 @@ Yes, we do support 3-way reconciliation between merchant, PSP, and bank. You nee
 
 <details>
 
-<summary>Can i configure the file format in recon dashboard for existing PSP or new PSP?</summary>
+<summary>Can I configure the file format in Recon dashboard for existing PSP or a new PSP?</summary>
 
 No, the Recon team will configure your desired transaction report for you
 
