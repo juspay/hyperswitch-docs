@@ -148,6 +148,8 @@
     * [Setup guide](features/merchant-controls/3ds-decision-manager/setup-guide.md)
   * [🔼 3DS Step-up retries](features/merchant-controls/3ds-step-up-retries.md)
   * [🚩 Disputes/Chargebacks Management](features/merchant-controls/disputes.md)
+  * [🤝 Reconciliation](features/merchant-controls/reconciliation/README.md)
+    * [Getting Started with Recon](features/merchant-controls/reconciliation/getting-started-with-recon.md)
 * [🔑 Account management](features/account-management/README.md)
   * [🔢 Exporting payments data](features/account-management/exporting-payments-data.md)
   * [🤹 Multiple accounts & profiles](features/account-management/multiple-accounts-and-profiles.md)
