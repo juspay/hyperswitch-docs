@@ -10,13 +10,13 @@ description: >-
 This section covers detailed understanding of how to use and configure Hyperswitch Recon to streamline your financial processes
 {% endhint %}
 
-Hyperswitch Recon module allows reconciliation between the transaction data from Hyperswitch,  the settlement data shared by payment gateways and the mercahnt account statement from the bank. This process is designed to ensure financial accuracy and streamlines settlement processes. The system ensures that businesses receive reconciliation results promptly, fostering informed decision-making.
+Hyperswitch Recon module allows reconciliation between the transaction data from Hyperswitch,  the settlement data shared by payment gateways and the merchant account statement from the bank. This process is designed to ensure financial accuracy and streamlines settlement processes. The system ensures that businesses receive reconciliation results promptly, fostering informed decision-making.
 
 ## Why should you use Hyperswitch reconciliation?
 
-As organisations grow and the transaction volumes increase, payments start flowing in and out of single or multiple payment partners. Manual or excel based reconciliation becomes highly complex and time-consuming. Manual processes make it challenging to handle the varied fee structures and taxes across multiple currencies. **Status lags, deferring provider capabilities, and operational problems all lead to risks of duplicity, mismatches, and transactional fraud.**
+As organisations grow and the transaction volumes increase, payments start flowing in and out of single or multiple payment partners. Manual or excel based reconciliation becomes highly complex and time-consuming. Manual processes make it challenging to handle the varied fee structures and taxes across multiple currencies. Status lags and operational problems lead to risks of duplicity, mismatches, and transactional fraud.
 
-Hyperswitch Recon gives you complete control of your reconciliation process, making it faster, efficient, and scalable. It lets you automate your data collection across different partners with zero development effort, thus giving you instant access to summarized results of open items, state of receivables, and any settlement discrepancies. **It then suggests actions for corrections while tactfully minimizing your workload.**&#x20;
+Hyperswitch Recon gives you complete control of your reconciliation process, making it faster, efficient, and scalable. It lets you automate your data collection across different partners with zero development effort, thus giving you instant access to summarised results of open items, state of receivables, and any settlement discrepancies.&#x20;
 
 ## Steps to setup Reconciliation on Hyperswitch control center
 
