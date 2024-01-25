@@ -16,9 +16,10 @@ Braintree is a payment processor that allows online businesses to accept payment
 
 ### Prerequisites
 
-1. You need to be registered with Braintree in order to proceed. In case you dont, you can quickly signup by visiting the Braintree's Website.
-2. You should have setup you account using Hyperswitch dashboard
+1. You need to be registered with Braintree in order to proceed. In case you dont, you can quickly signup by visiting the Braintree's [Website](https://www.braintreepayments.com/sandbox).&#x20;
+2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/register).
 3. The Braintree Merchant ID, Public key and Private key are available in your Braintree dashboard under - Home page -> Settings (on the top right) -> API
+4. To set webhooks, Navigate to  Home page -> Settings (on the top right) -> API -> Webhooks and create a new webhook.&#x20;
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Braintree on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Braintree on Hyperswitch control center.
 

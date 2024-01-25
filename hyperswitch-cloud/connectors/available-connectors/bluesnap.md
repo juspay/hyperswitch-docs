@@ -21,4 +21,4 @@ BlueSnap is a payment platform that allows businesses to easily accept online an
 3. The Bluesnap API keys  **Username** and **Password** can be found in your Bluesnap dashboard under API settings.
 4. Select all the payment methods you wish to use Bluesnap for. Ensure that this is the same as the ones configured on your Bluesnap dashboard under Checkout Page -> Payment methods
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Bluesnap on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Bluesnap on Hyperswitch control center.

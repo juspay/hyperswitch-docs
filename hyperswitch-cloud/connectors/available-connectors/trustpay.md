@@ -21,4 +21,4 @@ TrustPay belongs to the first financial institutions within the region to provid
 3. Enter your Country, Business Label and TrustPay **API Key**, **Project ID** and **Secret Key**. The TrustPay keys can be found in your TrustPay dashboard.
 4. Select all the payment methods you wish to use TrustPay for. Ensure that this is the same as the ones configured on your TrustPay dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate TrustPay on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate TrustPay on Hyperswitch control center.

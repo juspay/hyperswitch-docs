@@ -21,4 +21,4 @@ Airwallex is a financial technology company that provides businesses with global
 3. The Airwallex API key and Client ID can be found in your Airwallex dashboard under API settings.
 4. Select all the payment methods you wish to use Airwallex for. Ensure that this is the same as the ones configured on your Airwallex dashboard under Developer -> API Keys
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate ACI on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate ACI on Hyperswitch control center.

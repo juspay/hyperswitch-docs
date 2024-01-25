@@ -34,7 +34,9 @@ Step 2: Configure Hyperswitch’s webhooks endpoint on your Stripe dashboard. Yo
 
 <figure><img src="../../../.gitbook/assets/webhook2.png" alt=""><figcaption></figcaption></figure>
 
-This will ensure that if your Stripe transaction was sent through Hypweswitch,
+This will ensure that if your Stripe transaction was sent through Hyperswitch,
 
 * Stripe sends webhooks to Hyperswitch endpoint in Step 2
 * Hyperswitch sends these corresponding webhooks to your endpoint in Step 1
+
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Stripe on Hyperswitch control center.

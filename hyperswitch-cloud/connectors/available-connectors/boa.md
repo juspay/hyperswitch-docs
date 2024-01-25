@@ -22,4 +22,4 @@ The Bank of America Corporation is an American multinational investment bank and
 4. On your dashboard, visit Payment Configuration -> Key Management and generate key, you will receive **Shared Secret** and **API Secret**.
 5. Select all the payment methods you wish to use BOA for. Ensure that this is the same as the ones configured on your BOA dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate BOA on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate BOA on Hyperswitch control center.

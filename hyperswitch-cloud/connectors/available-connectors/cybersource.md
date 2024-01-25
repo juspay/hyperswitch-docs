@@ -21,5 +21,5 @@ Cybersource offers global payment solutions to help businesses accept payments a
 3. Cybersource apikeys **API Key**, **Secret Key** and **Merchant ID** can be found in your Cybersource dashboard.
 4. Select all the payment methods you wish to use Cybersource for. Ensure that this is the same as the ones configured on your Cybersource dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Cybersource on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Cybersource on Hyperswitch control center.
 

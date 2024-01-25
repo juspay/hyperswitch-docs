@@ -23,4 +23,4 @@ Nuvei is a payment technology company that provides payment processing and acqui
 3. The Nuvei API key can be found in your Nuvei dashboard under Settings -> My Account -> Account Details.
 4. Select all the payment methods you wish to use Nuvei for. Ensure that this is the same as the ones configured on your Nuvei dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Nuvei on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Nuvei on Hyperswitch control center.

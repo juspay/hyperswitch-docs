@@ -22,4 +22,4 @@ dLocal Limited is a Uruguayan financial technology company. dLocal powers local 
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. D-Local apikeys **Login**, **Secret Key** and **Trans Key** can be found in your dLocal dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate d-local on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate d-local on Hyperswitch control center.

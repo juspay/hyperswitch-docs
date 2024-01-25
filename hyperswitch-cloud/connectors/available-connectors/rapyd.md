@@ -21,4 +21,4 @@ Rapyd allows businesses to accept and send payments to any business or consumer 
 3. The Rapyd **Access Key** and **API Secret** can be found in your Rapyd dashboard under Developers -> Access & Secret Keys.
 4. Select all the payment methods you wish to use Rapyd for. Ensure that this is the same as the ones configured on your Rapyd dashboard
 
-&#x20;[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Rapyd on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Rapyd on Hyperswitch control center.

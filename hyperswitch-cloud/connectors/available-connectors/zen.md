@@ -18,4 +18,4 @@ Zen is a modern and responsive payments portal with low fees for conversion boos
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io).
 3. Request the Zen support team to enable handling raw card data for your account. This will enable Hyperswitch to securely handle your customer's payment details.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Zen on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Zen on Hyperswitch control center.

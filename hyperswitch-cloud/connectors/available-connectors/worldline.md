@@ -21,4 +21,4 @@ Worldline is a payment service provider that offers in-store payment services, o
 3. Worldline **API Key ID**, **Secret API Key** and **Merchant ID** can be found in your Worldline dashboard under API Keys.
 4. Select all the payment methods you wish to use Worldline for. Ensure that this is the same as the ones configured on your Worldline dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Worldline on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Worldline on Hyperswitch control center.

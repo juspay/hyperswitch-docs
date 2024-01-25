@@ -20,4 +20,4 @@ Checkout.com is a global payment company that provides a gateway, an acquirer an
 4. Chekcout api keys Checkout API key, Processing Channel ID and Checkout Secret Key are available in your Checkout dashboard under the [Developers section](https://dashboard.sandbox.checkout.com/developers/get-started).
 5. To configure new webhook endpoint, Navigate to the webhooks section of your Checkout dashboard and create a new Webhook.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Checkout on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Checkout on Hyperswitch control center.

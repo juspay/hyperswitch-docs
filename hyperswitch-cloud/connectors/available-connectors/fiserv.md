@@ -23,4 +23,4 @@ Fiserv is a global fintech and payments company with solutions for banking, glob
 3. Fiserv api keys **API Key**, **API Secret**, **Merchant ID** and **Terminal ID** can be found in your Fiserv dashboard under Credentials.
 4. Select all the payment methods you wish to use Fiserv for. Ensure that this is the same as the ones configured on your Fiserv dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Fiserv on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Fiserv on Hyperswitch control center.

@@ -23,4 +23,4 @@ OpenNode makes it easy to accept bitcoin payments or send bitcoin payouts while 
 3. The OpenNode API key can be found in your OpenNode dashboard.
 4. Select all the payment methods you wish to use OpenNode for. Ensure that this is the same as the ones configured on your OpenNode dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate OpenNode on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate OpenNode on Hyperswitch control center.

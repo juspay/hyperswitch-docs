@@ -23,4 +23,4 @@ GoCardless is a fintech company that specialises in bank payments including recu
 3. GoCardless **Access Token** and other details can be found in your GoCardless dashboard under Developers -> Create -> Access Token.
 4. Select all the payment methods you wish to use GoCardless for. Ensure that this is the same as the ones configured on your GoCardless dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate GoCardless on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate GoCardless on Hyperswitch control center.

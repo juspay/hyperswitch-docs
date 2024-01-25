@@ -21,4 +21,4 @@ FIS Worldpay is a payment processor that offers businesses a range of payment so
 3. Worldpay **Username** and **Password** can be found in your Worldpay's dashboard.
 4. Select all the payment methods you wish to use Worldpay for. Ensure that this is the same as the ones configured on your Worldpay dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Worldpay on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Worldpay on Hyperswitch control center.

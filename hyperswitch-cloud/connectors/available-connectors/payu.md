@@ -23,4 +23,4 @@ PayU is a payment service provider that allows online businesses to accept and p
 3. PayU's **API Key** and **Merchant POS ID** can be found in your PayU dashboard under My Shops.
 4. Select all the payment methods you wish to use PayU for. Ensure that this is the same as the ones configured on your PayU dashboard
 
-&#x20;[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate PayU on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate PayU on Hyperswitch control center.

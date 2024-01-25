@@ -22,4 +22,4 @@ Volt-io is a payment platform that intends to build a global infrastructure and 
 4. On your dashboard, visit Configuration->Customers and click on the merchant's name. Scroll down to the Credentials section to get the **Username** and an option to regenerate the **Password**.
 5. Select all the payment methods you wish to use Volt for. Ensure that this is the same as the ones configured on your Volt dashboard.
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Volt on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Volt on Hyperswitch control center.

@@ -25,4 +25,4 @@ Prophetpay is a payment service provider that allows online businesses to accept
 3. Once registered with Prophetpay, you will obtain the **Profile** and **Token**(Optional) from the dashboard.
 4. Select all the payment methods you wish to use Prophetpay for. Ensure that this is the same as the ones configured on your Prophetpay dashboard
 
-&#x20;[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Prophetpay on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Prophetpay on Hyperswitch control center.

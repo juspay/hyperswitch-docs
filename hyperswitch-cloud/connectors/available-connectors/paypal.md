@@ -23,4 +23,4 @@ Paypal provides a secure, open payment gateway. Merchants can choose that PayPal
 3. The Paypal's **Client Secret** and **Client ID** can be found in your Paypal dashboard.
 4. Select all the payment methods you wish to use Paypal for. Ensure that this is the same as the ones configured on your Paypal dashboard
 
-&#x20;[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Paypal on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Paypal on Hyperswitch control center.

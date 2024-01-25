@@ -23,4 +23,4 @@ Global Payments allows businesses to accept over 140 payment types across severa
 3. GlobalPayments **App Key**, **App ID** and **Account Name** keys and other details can be found in your GlobalPayments dashboard under My Account -> My Apps & Keys.
 4. Select all the payment methods you wish to use GlobalPayments for. Ensure that this is the same as the ones configured on your GlobalPayments dashboard
 
-[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Globalpayments on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Globalpayments on Hyperswitch control center.

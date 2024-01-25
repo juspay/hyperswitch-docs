@@ -19,4 +19,4 @@ Shift4 is a payment processing company that provides secure payment processing s
 3. The Shift4 API key can be found in your Shift4 dashboard on Home page.
 4. Select all the payment methods you wish to use Shift4 for. Ensure that this is the same as the ones configured on your Shift4 dashboard.
 
-&#x20;[Steps](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/388/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Shift4 on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Shift4 on Hyperswitch control center.
