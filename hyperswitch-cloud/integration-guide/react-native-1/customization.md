@@ -77,7 +77,23 @@ Consider the below code for your reference.
 Set disableSaveCards`key to false to disable saved cards.`
 {% endhint %}
 
-&#x20;Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](react-native-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
+## Custom Placeholders And Branding
+
+To set custom placeholder text for card number, expiry date or cvv input fields, you may set the `placeholder` property for these as shown below.
+
+```dart
+configuration.placeholder.cardNumber = "YOUR_CUSTOM_CARD_NUMBER_PLACEHOLDER"
+configuration.placeholder.expiryDate = "YOUR_CUSTOM_EXPIRY_DATE_PLACEHOLDER"
+configuration.placeholder.cvv = "YOUR_CUSTOM_CVV_PLACEHOLDER"
+```
+
+To disable Hyperswitch branding in the SDK, you may set the `disableBranding` property to true
+
+```dart
+configuration.disableBranding = true
+```
+
+Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](react-native-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
 
 {% hint style="info" %}
 Note To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
@@ -130,6 +146,26 @@ You can customize the border radius, border width, and shadow used throughout th
 ```
 
 Now you can test the payments on your app and go-live!
+
+## Languages
+
+Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
+
+```dart
+Appearance appearance = Appearance(
+     ...
+      locale: 'LOCALE_CODE'
+    );
+```
+
+We support the following locales -
+
+* Arabic (ar)
+* Hebrew (he)
+* French (fr)
+* German (de)
+* English (en)
+* Japanese (ja)
 
 ## Next step:
 
