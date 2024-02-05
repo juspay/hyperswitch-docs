@@ -32,10 +32,27 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 ## Supported Processors and Payment Methods
 
-| Processors | Payment Methods                                |
-| ---------- | ---------------------------------------------- |
-| Adyen      | <ul><li>Cards</li><li>Bank Transfers</li></ul> |
-| Wise       | <ul><li>Banks</li></ul>                        |
+
+
+#### Adyen
+
+| Regions       | Cards          | Banks       | Wallets                      |
+| ------------- | -------------- | ----------- | ---------------------------- |
+| Europe        | Major Networks | SEPA, SWIFT | Paypal, Neteller\*, Skrill\* |
+| North America | Major Networks | ACH         | Paypal                       |
+| Others        | Major Networks | SWIFT       | Paypal                       |
+
+#### Wise
+
+| Regions       | Cards          | Banks       | Wallets |
+| ------------- | -------------- | ----------- | ------- |
+| Europe        | Major Networks | SEPA, SWIFT | -       |
+| North America | Major Networks | ACH         | -       |
+| Others        | Major Networks | SWIFT       | -       |
+
+**\*** _Payout methods supported by processor but not recommended (can be enabled upon request)_
+
+
 
 **Payouts for Stripe Connect users (submit a feature request** [**here**](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)**)**
 
