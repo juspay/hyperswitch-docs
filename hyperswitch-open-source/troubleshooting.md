@@ -1,7 +1,7 @@
 ---
 description: >-
-  This guide explains how to troubleshoot Hyperswitch to see if it's ready to
-  serve traffic or not
+  This guide explains how to troubleshoot the Hyperswitch setup and verify if
+  all the components are up and running as expected
 ---
 
 # ⚒ Troubleshooting
