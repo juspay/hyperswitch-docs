@@ -32,6 +32,7 @@
 * [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
   * [🎛 Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
+* [⚒ Troubleshooting](hyperswitch-open-source/troubleshooting.md)
 * [🧪 Testing](hyperswitch-open-source/testing/README.md)
   * [💵 Test a payment](hyperswitch-open-source/testing/test-a-payment.md)
   * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
