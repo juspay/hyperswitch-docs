@@ -4,10 +4,6 @@ description: Hyperswitch roadmap (Jan to Mar'24)
 
 # 🛣 Roadmap - Q1 2024
 
-{% hint style="info" %}
-This roadmap is still in draft stage and being finalized. The final version will be updated by second week of January 2024.
-{% endhint %}
-
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
 Before the beginning of every quarter we come together to develop the next roadmap based on our core values, [previous roadmap](roadmap.md), findings over the previous quarter, what we heard from the community as feature requests.
@@ -63,19 +59,25 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟥 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting and optional 3DS verification before vaulting
-* 🟥 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
-* 🟥 Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways
-* 🟥 New connector Integrations - Place2Pay, Billwerk _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
+* 🟧 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
+* _(removed from the Q1 roadmap)_ Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways&#x20;
+*   🟥 New connector and payment method Integrations&#x20;
+
+    * Place2Pay
+    * Billwerk
+    * Pix and Boleto via Adyen
+
+    _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
 
 ### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟥 Code restructuring for enhancing readability and ease of contributions
-* 🟧 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
-* 🟧 Helm charts will support installation of `hyperswitch-card-vault`
-* 🟥 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
+* 🟧 Code restructuring for enhancing readability and ease of contributions
+* 🟩 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
+* 🟩 Helm charts will support installation of `hyperswitch-card-vault`
+* 🟧 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
 * 🟧 Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
 * 💪 Open sourcing the Native Unified Checkout SDK (Android and iOS)
-* 🟥 Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
+* 🟧  Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
 
 ### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
 
@@ -84,13 +86,13 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
-* 🟥 Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
-* 🚛 🟧 Paypal Vault flows for improving repeat user payment experience
+* 🟧 Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
+* 🚛 🟥 Paypal Vault flows for improving repeat user payment experience
 
 ### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🚛 🟧 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
-* 🟧 Support for Hosted Checkout Page on Web&#x20;
+* 🟩 Support for Hosted Checkout Page on Web&#x20;
 * 🟧 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
 * 🟥 Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre
 * 🟥 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
