@@ -43,7 +43,7 @@ All infrastructure components are deployed across multiple Availability Zones. T
 
 ## Scalability
 
-Hyperswitch support for 80 RPS per merchant account as default scale. Higher enterprise workloads can be processed on request basis.
+Hyperswitch support for 80 RPS per merchant account and rate limits applicable beyond. Higher enterprise workloads can be processed on request basis.
 
 ### Scaling Infrastructure components
 
