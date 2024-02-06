@@ -14,8 +14,8 @@ We support deployments in more geographies for merchants who wish to restrict da
 
 <table><thead><tr><th width="180"></th><th width="304">Global Server (US)</th><th>EU Residency Server</th></tr></thead><tbody><tr><td>Live endpoints</td><td><code>api.hyperswitch.io</code></td><td>Available on request</td></tr></tbody></table>
 
-{% hint style="info" %}
-Note: Hyperswitch is a super lightweight payment switch with Infrastructure-as-Code capability. So we can quickly deploy in new geographies (AWS regions) as data residency requirements emerge across countries around the world.
+{% hint style="success" %}
+**Note:** Hyperswitch is a super lightweight payment switch with Infrastructure-as-Code capability. So we can quickly deploy in new geographies (AWS regions) as data residency requirements emerge across countries around the world.
 {% endhint %}
 
 ## Latency
@@ -24,8 +24,8 @@ The application latency of Hyperswitch is optimized to `sub-30 milliseconds` (90
 
 Inter-regional network latency is optimized by fronting the API endpoints with Cloud Delivery Network (AWS Cloudfront).
 
-{% hint style="success" %}
-Note: In case you are opting for the Hyperswitch Open Source offering, you will be able to run the software like a microservice within your own deployment.
+{% hint style="info" %}
+**Note:** In case you are opting for the Hyperswitch Open Source offering, you will be able to run the software like a microservice within your own deployment.
 {% endhint %}
 
 ## Reliability
@@ -49,9 +49,9 @@ Hyperswitch support for 80 RPS per merchant account and rate limits applicable b
 
 Scaling of each component in the Hyperswitch setup is achieved as follows
 
-* Incoming proxy layer is deployed using Automatic Scaling Group (ASG)
+* Incoming proxy layer is deployed using Auto Scaling Group (ASG)
 * Application layer is managed using Kubernetes with Horizontal Pod Autoscaler (HPA)&#x20;
-* Outgoing Proxy is deployed using Automatic Scaling Group (ASG)
+* Outgoing Proxy is deployed using Auto Scaling Group (ASG)
 
 ### Handling traffic spikes
 
