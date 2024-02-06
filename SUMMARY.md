@@ -161,6 +161,12 @@
     * [Compatibility](features/e-commerce-platform-plugins/woocommerce-plugin/compatibility.md)
     * [FAQs](features/e-commerce-platform-plugins/woocommerce-plugin/faqs.md)
 
+## SECURITY AND COMPLIANCE
+
+* [🔏 Overview](security-and-compliance/overview.md)
+* [💳 PCI Compliance](security-and-compliance/pci-compliance.md)
+* [🔐 Data Security](security-and-compliance/security.md)
+
 ## Learn more
 
 * [🚀 API Reference](https://api-reference.hyperswitch.io/introduction)
