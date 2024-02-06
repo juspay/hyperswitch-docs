@@ -154,6 +154,7 @@
 * [🔑 Account management](features/account-management/README.md)
   * [🔢 Exporting payments data](features/account-management/exporting-payments-data.md)
   * [🤹 Multiple accounts & profiles](features/account-management/multiple-accounts-and-profiles.md)
+  * [🛂 Manage your team](features/account-management/manage-your-team.md)
 * [🛍 E-commerce platform plugins](features/e-commerce-platform-plugins/README.md)
   * [WooCommerce Plugin](features/e-commerce-platform-plugins/woocommerce-plugin/README.md)
     * [Setup](features/e-commerce-platform-plugins/woocommerce-plugin/setup.md)
