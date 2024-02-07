@@ -168,6 +168,7 @@
 * [💳 PCI Compliance](security-and-compliance/pci-compliance.md)
 * [🔐 Data Security](security-and-compliance/security.md)
 * [💽 GDPR compliance](security-and-compliance/gdpr-compliance.md)
+* [🕵 Identity and Access management](security-and-compliance/identity-and-access-management.md)
 
 ## Learn more
 
