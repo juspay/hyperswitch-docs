@@ -5,7 +5,7 @@ description: >-
   efficiently managed platform
 ---
 
-# 🕵 Identity and Access management
+# 🕵 Identity and Access Management
 
 ## Authentication Methodology for Hyperswitch APIs
 
