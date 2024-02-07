@@ -72,7 +72,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟧 Code restructuring for enhancing readability and ease of contributions
-* 🟩 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
+* 🟧 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
 * 🟩 Helm charts will support installation of `hyperswitch-card-vault`
 * 🟧 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
 * 🟧 Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
