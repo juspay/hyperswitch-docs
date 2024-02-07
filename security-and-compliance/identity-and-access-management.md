@@ -40,5 +40,3 @@ Hyperswitch operates on a distributed access model, ensuring that no individual 
 #### Limiting Permissions:
 
 Hyperswitch empowers administrators to limit permissions effectively. Through the IAM (Identity and Access Management) module, access policies are crafted following the Principle of Least Privilege. This means that each user, admin is granted the minimum permissions necessary to perform their tasks, minimizing the risk of unauthorized access.
-
-In conclusion, the authentication methodology, access controls, and RBAC in Hyperswitch collectively contribute to a secure, user-friendly, and well-managed environment, fostering trust among users, administrators, and customers alike.
