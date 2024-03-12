@@ -87,6 +87,6 @@ Congratulations! You will now see the web app running on `http://localhost:9060`
 
 ## Next step:
 
-{% content-ref url="../account-setup/" %}
-[account-setup](../account-setup/)
+{% content-ref url="run-control-center.md" %}
+[run-control-center.md](run-control-center.md)
 {% endcontent-ref %}

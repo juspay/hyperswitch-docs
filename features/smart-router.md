@@ -2,11 +2,13 @@
 description: Infinite control over managing your payments
 ---
 
-# 🛣 Smart Router
+# 🛣️ Smart Router
 
 {% hint style="info" %}
 With this section, understand how the Hyperswitch Smart Router works to improve your conversion rates and reduces processing costs by intelligently routing payments across various processors
 {% endhint %}
+
+{% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}
 
 ## Prerequisites
 
@@ -47,10 +49,6 @@ To test the Smart Router, after activating one rule, we can make a Test Payment 
 {% content-ref url="../hyperswitch-open-source/testing/test-a-payment.md" %}
 [test-a-payment.md](../hyperswitch-open-source/testing/test-a-payment.md)
 {% endcontent-ref %}
-
-## How to setup the Smart Router?
-
-{% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}
 
 <details>
 

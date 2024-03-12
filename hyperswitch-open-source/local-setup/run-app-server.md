@@ -8,7 +8,7 @@ description: Use Docker to set up Hyperswitch app server
 Let's hit the ground running – within five minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
 {% endhint %}
 
-{% embed url="https://www.loom.com/embed/a9b2b42fb72e4691a06e6121b330ebe9?sid=76bf9484-8f0f-462e-95a2-b4f551cd51ed" %}
+{% embed url="https://youtu.be/6yJCvskbc80" %}
 
 ## **Setting up with Docker**
 
@@ -42,6 +42,6 @@ In the next chapter, we'll run payments through your local Hyperswitch setup by 
 
 ## Next step:
 
-{% content-ref url="run-control-center.md" %}
-[run-control-center.md](run-control-center.md)
+{% content-ref url="run-web-client.md" %}
+[run-web-client.md](run-web-client.md)
 {% endcontent-ref %}

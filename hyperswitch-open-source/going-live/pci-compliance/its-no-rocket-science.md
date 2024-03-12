@@ -8,9 +8,7 @@ description: Demystifying PCI compliance and it's requirements
 In this chapter, we will look at the levels of PCI compliance, key requirements and we will understand why it is not as complex as it seems to be to obtain PCI compliance.
 {% endhint %}
 
-## Video
-
-{% embed url="https://www.loom.com/share/258b6a7eec414d79a13838186f34ae62?sid=a44f5383-7f7b-495a-a865-e0d7d2cf7eb3" %}
+{% embed url="https://youtu.be/dBl3vNX3zXE" %}
 
 Businesses subject to PCI-DSS must annually demonstrate compliance with the regulation. And PCI-DSS lays out two ways of doing so:
 

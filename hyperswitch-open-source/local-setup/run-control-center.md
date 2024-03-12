@@ -61,6 +61,6 @@ Follow these simple steps to set up Hyperswitch on your local machine.
 
 ## Next step:
 
-{% content-ref url="run-web-client.md" %}
-[run-web-client.md](run-web-client.md)
+{% content-ref url="../account-setup/" %}
+[account-setup](../account-setup/)
 {% endcontent-ref %}

@@ -10,6 +10,8 @@ This section covers the steps to setup 3ds decision manager using the Hyperswitc
 
 ## Steps to setup a rule on 3DS Decision Manager?
 
+{% embed url="https://hyperswitch.io/video/3ds_demo.mp4" %}
+
 **Step 1:** Go to 3DS Decision Manager tab on the Hyperswitch Control Center
 
 **Step 2:** Click on create new rule&#x20;
@@ -35,8 +37,6 @@ This section covers the steps to setup 3ds decision manager using the Hyperswitc
 **Step 7:** Your rule is now successfully configured and 3D Secure authentication would be enforced all payments conforming to this rule
 
 **Note:** 3DS decision manager supports only one active configuration at a time. Multiple rules can be combined into a single configuration as shown in the example
-
-{% embed url="https://hyperswitch.io/video/3ds_demo.mp4" %}
 
 ### FAQs
 
