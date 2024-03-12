@@ -29,7 +29,7 @@ d. The merchant can opt for microdeposits (only on Stripe) or allow the customer
 | ACH                 | United States                    | USD                      |
 | SEPA                | EU                               | EUR                      |
 | BACS                | UK                               | GBP                      |
-| BECS                | Austria                          | AUD                      |
+| BECS                | Australia                        | AUD                      |
 
 Hyperswitch currently supports the following Bank Direct Debits:
 
