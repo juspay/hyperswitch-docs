@@ -33,6 +33,7 @@ In summary, a blocklist feature empowers merchants to proactively manage the sec
 ## How does Blocklist work at Hyperswitch?
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin.
+But before using any of these features. We need to enable our Blocklist Guard.
 
 ### For Card Bin and Extended Card Bin:
 
@@ -50,6 +51,13 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
 
     block the card.
 * Try the payment again (should fail)
+
+## How to enable Blocklist Guard on Hyperswitch using API?
+
+```
+curl --location --request POST 'http://localhost:8080/blocklist/toggle?status=true' \
+--header 'api-key: dev_xxxxxxxxxxxxxxxx'
+```
 
 ## How to configure Blocklist on Hyperswitch using API?
 
@@ -118,7 +126,7 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
   ...
   
   
-   "fingerprint": "fingerprint_CKz5s9W4FX03eydwgGun"
+   "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
 ```
 
@@ -130,7 +138,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
     "type": "fingerprint",
-    "data": "fingerprint_CKz5s9W4FX03eydwgGun"
+    "data": "CKz5s9W4FX03eydwgGun"
 }
 ```
 
@@ -161,7 +169,7 @@ curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
     "type": "fingerprint",
-    "data": "fingerprint_FtYY2OGsTokIrLN7TE9Y"
+    "data": "FtYY2OGsTokIrLN7TE9Y"
 }
 ```
 
