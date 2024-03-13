@@ -239,6 +239,44 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
+## 7. More Configurations
+
+### Branding
+
+You can decide whether to display the Hyperswitch branding using the `branding` prop
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
+</strong> ...,
+ branding: "never", // choose between "never" and "always"
+}
+
+&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
+</code></pre>
+
+### Payment Methods Header Text
+
+Customize the header text for the section displaying available payment methods.
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
+</strong> ...,
+ paymentMethodsHeaderText: "Select Payment Method",
+}
+
+&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
+</code></pre>
+
+### Saved Payment Methods Header Text
+
+Customize the header text for the section displaying saved payment methods.
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
+</strong> ...,
+ savedPaymentMethodsHeaderText: "Saved Payment Methods",
+}
+
+&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
+</code></pre>
+
 ## Next step:
 
 {% content-ref url="../../payment-methods-setup/" %}
