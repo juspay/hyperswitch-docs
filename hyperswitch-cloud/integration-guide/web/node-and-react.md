@@ -196,6 +196,34 @@ const handleSubmit = async (e) => {
 };
 ```
 
+<details>
+
+<summary>Alternate Implementation: SDK handles the Confirm Button</summary>
+
+For SDK to render the confirm button and handle the confirm payment, in  paymentElementOptions, you can send:
+
+```javascript
+var unifiedCheckoutOptions = {
+  ...,
+  sdkHandleConfirmPayment: {
+     handleConfirm: true,
+     buttonText: "SDK Pay Now",
+     confirmParams: {
+       return_url: "https://example.com/complete",
+     },
+   },
+};
+```
+
+1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
+2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
+3. **`buttonText (optional)`** -  The text to display on the payment button. \
+   Default value: **Pay Now**
+
+For customization, please follow the [`Customization docs`](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/681/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
+
+</details>
+
 #### 3.3 Display payment status message
 
 When Hyperswitch redirects the customer to the `return_url`, the `payment_client_secret` query parameter is appended by hyper-js. Use this to retrieve the Payment to determine what to show to your customer.

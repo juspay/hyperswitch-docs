@@ -196,6 +196,21 @@ We support the following locales -
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
+## 5. Confirm Button
+
+The Styling APIs could be used to blend the Confirm Payment Button (handled by SDK) with your app.
+
+| Variable              | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| buttonBackgroundColor | Sets the background color of the payment button                    |
+| buttonHeight          | Define the height of the payment button                            |
+| buttonWidth           | Specify the width of the payment button                            |
+| buttonBorderRadius    | Adjust the border radius of the payment button for rounded corners |
+| buttonBorderColor     | Sets the color of the border surrounding the payment button        |
+| buttonTextColor       | Define the color of the text displayed on the payment button       |
+| buttonTextFontSize    | Customize the font size of the text on the payment button          |
+| buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
+
 ## Next step:
 
 {% content-ref url="../../payment-methods-setup/" %}

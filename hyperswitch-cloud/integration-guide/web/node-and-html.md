@@ -174,6 +174,34 @@ async function handleSubmit(e) {
 
 Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 
+<details>
+
+<summary>Alternate Implementation: SDK handles the Confirm Button</summary>
+
+For SDK to render the confirm button and handle the confirm payment, in  paymentElementOptions, you can send:
+
+```html
+const unifiedCheckoutOptions = {
+  ...,
+  sdkHandleConfirmPayment: {
+     handleConfirm: true,
+     buttonText: "SDK Pay Now",
+     confirmParams: {
+       return_url: "https://example.com/complete",
+     },
+   },
+};
+```
+
+1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
+2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
+3. **`buttonText (optional)`** -  The text to display on the payment button. \
+   Default value: **Pay Now**
+
+For customization, please follow the [`Customization docs`](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/681/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
+
+</details>
+
 ### 3.2 Display a payment status message
 
 When Hyper redirects the customer to the `return_url`, the `payment_intent_client_secret` query parameter is appended by `HyperLoader`. Use this to retrieve the `Payment` to determine what to show to your customer.
