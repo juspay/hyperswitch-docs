@@ -211,6 +211,34 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontSize    | Customize the font size of the text on the payment button          |
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 
+## 6. Handle Saved Payment Methods
+
+### Screen
+
+You can enable/disable saved payment methods screen using the following prop:
+
+```javascript
+var paymentElementOptions = {
+ ...,
+ displaySavedPaymentMethods: true,
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
+### Checkbox
+
+You can stop your users from saving their payment methods using the following prop:
+
+```javascript
+var paymentElementOptions = {
+ ...,
+ displaySavedPaymentMethodsCheckbox: false,
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
 ## Next step:
 
 {% content-ref url="../../payment-methods-setup/" %}
