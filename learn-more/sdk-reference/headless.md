@@ -8,7 +8,7 @@ description: >-
 # Headless
 
 {% hint style="info" %}
-This section guides you through the integration of Hyperswitch Headless for both web and mobile clients.&#x20;
+This section guides you through the integration of Hyperswitch Headless for both web and mobile clients
 {% endhint %}
 
 ### Customize the payment experience using Headless functions
