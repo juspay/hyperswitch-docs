@@ -198,7 +198,7 @@ const unifiedCheckoutOptions = {
 3. **`buttonText (optional)`** -  The text to display on the payment button. \
    Default value: **Pay Now**
 
-For customization, please follow the [`Customization docs`](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/\~/changes/681/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
+For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
 
 </details>
 
