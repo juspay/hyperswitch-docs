@@ -83,7 +83,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 
 ### 2.3 Initialize HyperLoader
 
-Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get an publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```js
 const hyper = Hyper("YOUR_PUBLISHABLE_KEY");
