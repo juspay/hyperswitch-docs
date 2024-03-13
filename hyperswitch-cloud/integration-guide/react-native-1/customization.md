@@ -65,7 +65,9 @@ Consider the below code for your reference.
 
 ```dart
   Configuration configuration= Configuration(appearance: appearance)
-  configuration.disableSaveCards = true; // to disable save cards
+  configuration.displaySavedPaymentMethods: true,
+  configuration.displaySavedPaymentMethodsCheckbox: true,
+ 
   PaymentSheetParams params = PaymentSheetParams(
       publishableKey: "YOUR_PUBLISHABLE_KEY",
       clientSecret: clientSecret,
@@ -74,8 +76,12 @@ Consider the below code for your reference.
 ```
 
 {% hint style="info" %}
-Set disableSaveCards`key to false to disable saved cards.`
+Set `displaySavedPaymentMethods` to false to disable saved cards.
+
+Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods
 {% endhint %}
+
+
 
 ## Custom Placeholders And Branding
 
@@ -162,10 +168,36 @@ We support the following locales -
 
 * Arabic (ar)
 * Hebrew (he)
-* French (fr)
 * German (de)
 * English (en)
+* English (en-GB )
 * Japanese (ja)
+* French (fr)
+* French (Belgium) (fr-BE)
+* Spanish (es)
+* Catalan (ca)
+* Portuguese (pt)
+* Italian (it)
+* Polish (pl)
+* German (de)
+* Dutch (nl)
+* Dutch (Belgium) (nl-BE)
+* Swedish (sv)
+* Russian (ru)
+* Lithuanian (lt)
+* Czech (cs)
+* Slovak (sk)
+* Icelandic (is)
+* Welsh (cy)
+* Greek (el)
+* Estonian (et)
+* Arabic (ar)
+* Finnish (fi)
+* Norwegian (nb)
+* Bosnian (bs)
+* Danish (da)
+* Malay (ms)
+* Turkish (tr-CY)
 
 ## Next step:
 
