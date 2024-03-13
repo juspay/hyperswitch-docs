@@ -52,7 +52,7 @@ But before using any of these features. We need to enable our Blocklist Guard.
     block the card.
 * Try the payment again (should fail)
 
-## How to enable Blocklist Guard on Hyperswitch using API?
+## How to enable Blocklist Guard on Hyperswitch?
 
 ```
 curl --location --request POST 'http://localhost:8080/blocklist/toggle?status=true' \
@@ -203,4 +203,4 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 
 ### 1. Can I configure Fraud Blocklist through Hyperswitch Control centre?
 
-Currently, the Control centre's capability to configure fraud blocklist is under development and will be available in Q1'24.
+Currently, the Control centre's capability to configure fraud blocklist is under development and will be available in Q2'24.
