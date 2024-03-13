@@ -78,7 +78,10 @@ Consider the below code for your reference.
 {% hint style="info" %}
 Set `displaySavedPaymentMethods` to false to disable saved cards.
 
-Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods
+Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.\
+Set `disableBranding` to false to disable Hyperswitch branding.\
+Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
+Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
 
 
