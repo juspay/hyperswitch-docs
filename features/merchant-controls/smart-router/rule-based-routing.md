@@ -10,6 +10,8 @@ description: >-
 This section will guide you on how to setup Rule based routing using the Hyperswitch Control Center
 {% endhint %}
 
+{% embed url="https://youtu.be/Zs6H1vAKTJM" %}
+
 ## Get started with Rule Based Routing
 
 A rule-based routing configuration comprises of one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.&#x20;

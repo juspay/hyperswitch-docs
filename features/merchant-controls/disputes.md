@@ -6,6 +6,8 @@ description: >-
 
 # 🚩 Disputes/Chargebacks Management
 
+{% embed url="https://youtu.be/P0TVAsmBWTI" %}
+
 A dispute occurs when a customer contacts their payment method issuer (card issuer/bank/wallet) to question or challenge a particular transaction so that the payment can be reversed.&#x20;
 
 {% hint style="info" %}

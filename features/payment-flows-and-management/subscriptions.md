@@ -23,7 +23,7 @@ Hyperswitch allows you to work with your preferred subscription provider while h
 
 All major Subscription Solution Providers offer integration points to manage payments with external payment processors. And the integration solution proposed below should work universal across any subscription provider.
 
-In case of queries, or if you need a specific payment method of payment processor integration - please drop an email to biz@hyperswitch.io
+We also support [Kill Bill](https://killbill.io/) (an open source subscription solution provider) via a direct [Plugin](https://github.com/juspay/hyperswitch-killbill-plugin).
 
 ### Use cases supported
 

@@ -1,8 +1,8 @@
 ---
-description: Effectively enhance fraud detection across 40+ countries
+description: Effectively enhance fraud detection
 ---
 
-# 🛡 Fraud & risk management
+# 🛡️ Fraud & risk management
 
 {% hint style="info" %}
 With this section you will get a good understanding of FRM, it's need, use cases, architecture and steps to integrate it in your system.
@@ -36,21 +36,21 @@ You can enable the FRM solution of your choice with few clicks and very minimal 
 
 ## Pre-Authorization Flow
 
-In the PreAuth flow, the FRM solution is invoked before authorizing a payment with your Payment processor. When a customer attempts to make a payment, the transaction details are sent to the FRM solution for analysis. The FRM solution assesses the risk associated with the transaction based on various parameters such as the customer's historical behaviour, transaction patterns, location, device information, and any other relevant data. It then provides a risk score or recommendation. Based on the risk score or recommendation, one can decide whether to proceed with the transaction, decline it, or take additional verification steps to ensure its legitimacy. The goal is to prevent potentially fraudulent transactions from being authorized in the first place.
+In the PreAuth flow, the FRM solution is invoked before authorizing a payment with your payment processor. When a customer attempts to make a payment, the transaction details are sent to the FRM solution for analysis. The FRM solution assesses the risk associated with the transaction based on various parameters such as the customer's historical behaviour, transaction patterns, location, device information, and any other relevant data. It then provides a risk score or recommendation. Based on the risk score or recommendation, one can decide whether to proceed with the transaction, decline it, or take additional verification steps to ensure its legitimacy. The goal is to prevent potentially fraudulent transactions from being authorized in the first place.
 
-<figure><img src="../../.gitbook/assets/frm-pre_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
 ## Post-Authorization Flow
 
-In the PostAuth flow, the FRM solution is called into action after the payment has been processed by the Payment processor. Once the transaction is completed, the details of the transaction are sent to the FRM solution for a second layer of validation. The FRM solution re-evaluates the transaction using the latest data available and cross-references it with historical patterns and known fraud indicators. The PostAuth flow acts as a safety net to catch any suspicious or fraudulent transactions that might have slipped through the PreAuth flow. If the FRM solution identifies a transaction as potentially fraudulent during the PostAuth flow, appropriate actions can be taken, such as issuing a chargeback, notifying the customer, or initiating further investigation.
+In the PostAuth flow, the FRM solution is called into action after the authorization has been completed by the payment processor. Once the transaction is authorized, the details are sent to the FRM solution for a second layer of validation. The FRM solution re-evaluates the transaction using the latest data available and cross-references it with historical patters and known fraud indicators. The PostAuth flow acts as a safety net to catch any suspicious or fraudulent transactions that might have slipped through during the PreAuth flow. If the FRM solution identifies a transaction as potentially fraudulent during the PostAuth flow, it is flagged for manual review. Manual review requires human intervention for either accepting or rejecting the payment. If accepted, the amount is captured by the payment processor. If rejected, the transaction is voided.
 
-<figure><img src="../../.gitbook/assets/frm-post_auth_flow.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
 ## Supported FRM Processors
 
-| Processors | Supported Flows                              | Supported Actions                                                                                | Processor Features                                                                                                 |
-| ---------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Signifyd   | <ul><li>Pre-auth</li><li>Post-auth</li></ul> | <ul><li>Cancel or flag for Manual Review</li><li>Auto Refund or flag for Manual Review</li></ul> | <ul><li>Guaranteed Fraud Protection</li><li>Complete Chargeback Protection</li><li>Auth Rate Conversions</li></ul> |
+| Processors           | Supported Flows                            | Supported Actions                                                    | Processor Features                                                                                                 |
+| -------------------- | ------------------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Signifyd / Riskified | <ul><li>PreAuth</li><li>PostAuth</li></ul> | <ul><li>Cancel Transactions</li><li>Flag for Manual Review</li></ul> | <ul><li>Guaranteed Fraud Protection</li><li>Complete Chargeback Protection</li><li>Auth Rate Conversions</li></ul> |
 
 If your FRM processor of choice is not available in the above list, please put a new features request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
@@ -60,17 +60,19 @@ If your FRM processor of choice is not available in the above list, please put a
 
 <figure><img src="../../.gitbook/assets/frm-step1.png" alt=""><figcaption></figcaption></figure>
 
-**Step 2:** Navigate to the 'Fraud & Risk' tab.
+**Step 2:** Navigate to the 'Fraud & Risk' tab and select the FRM processor you want to integrate.
 
-<figure><img src="../../.gitbook/assets/frm-step2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-**Step 3:** Select the FRM processor(s) you want to use. And provide your processor credentials and configure your preferred payment methods.
+**Step 3:** Configure payment methods and preferred actions for the enabled payment methods.
 
-<figure><img src="../../.gitbook/assets/frm-step3a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/frm-step3b.png" alt=""><figcaption></figcaption></figure>
+**Step 4:** Provide API credentials for the FRM processor.
 
-**Step 4:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+
+**Step 5:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
 
 {% content-ref url="../../hyperswitch-open-source/testing/test-a-payment.md" %}
 [test-a-payment.md](../../hyperswitch-open-source/testing/test-a-payment.md)

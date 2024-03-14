@@ -1,180 +1,186 @@
 ---
-description: Detailed description about Hyperswitch Reconcilation dashboard
+description: Detailed description about Hyperswitch Reconciliation module
 ---
 
 # Getting Started with Recon
 
 {% hint style="info" %}
-This section addresses the supported features of Hyperswitch Recon and provides guidance on how to utilize them.
+This section outlines the supported features of Hyperswitch Reconciliation module and provides guidance on how to use them.
 {% endhint %}
 
-## Reconciliation Features&#x20;
+## Using the Reconciliation module is a 5-step process &#x20;
 
-* [File Management](getting-started-with-recon.md#file-management)
-* [Recon engine ](getting-started-with-recon.md#recon-engine-capabilities-precision)
-* [Recon Dashboard](getting-started-with-recon.md#recon-dashboard-components)
-* [Recon Report ](getting-started-with-recon.md#recon-reports)
-* [Recon open issues ](getting-started-with-recon.md#recon-open-issues)
+1. [Upload & prepare file](getting-started-with-recon.md#id-1.-upload-and-prepare-files)
+2. [Run Reconciliation](getting-started-with-recon.md#id-2.-run-reconciliation)
+3. [Reconciliation Report ](getting-started-with-recon.md#id-3.-reconciliation-reports)
+4. [Reconciliation Analytics](getting-started-with-recon.md#id-4.-reconciliation-analytics)
+5. [Post Reconciliation run](getting-started-with-recon.md#id-5.-post-reconciliation-run)
 
-### File management
+### 1. Upload & prepare files
 
-Efficient file management is at the core of Hyperswitch Recon's data integration process. It ensures that your financial data is seamlessly processed, validated, and transformed before being fed into the Recon Engine. This section elaborates on the 3-step journey—Upload, Validate, and Transform—involved in preparing files for reconciliation.
+Efficient file management is at the core of Hyperswitch Recon's data integration process. This entire stage usually takes < 30 secs post file upload. Following are the 3-steps involved in preparing files for reconciliation —&#x20;
 
-#### **Step 1: Uploader**
+Upload, Validate, and Transform
 
-The first phase of the process involves uploading your data files into the Recon system. Hyperswitch Recon provides multiple methods for this purpose:
+#### **1.1 Upload**
 
-1. **Manual upload to the dashboard:** For ease of use, manually upload your files directly through the Recon Dashboard.
+The first phase of the process involves uploading your data files into the Reconciliation system. Hyperswitch Reconciliation provides multiple methods for this purpose:
 
-**In order to feed your PSP and bank files to the Recon module you can**
-
-1. **Via Recon uploader API:** Utilize the Recon Uploader API to programmatically submit your files for reconciliation.
-2. **Via Merchant's SFTP:** Leverage your own Secure File Transfer Protocol (SFTP) infrastructure to securely transfer files.
+* **Manual upload to the dashboard:** For ease of use, manually upload your files directly through the Reconciliation Dashboard.
 
 {% hint style="info" %}
-Files need to be uploaded in **PGName\_yyyymmdd/MERCHANTNAME\_yyyymmdd** format.
+Files need to be uploaded in **PGName\_yyyymmdd/ MERCHANTNAME\_yyyymmdd/ BANK\_NAME\_yyyymmdd** format.
 {% endhint %}
 
-#### **Step 2: Validator**
+* **Automated upload to dashboard:** In order to feed your PSP and bank files to the Reconciliation module you can select one of the below options during configuration. In case of automated upload of files, case all subsequent steps are also executed in an automated fashion and the reconciliation output is generated.
+  * Via Recon uploader API: The Reconciliation module can ingest reports via APIs in case the payment processor and banks support that feature. This feature needs to be enabled during the activation and configuration stage. In order to enable this feature the merchant will need to specify &#x20;
+    * API endpoint, API keys and schedule
+  * Via Merchant's SFTP: We allow files to be transferred to the Reconciliation module via pull based connection. You can specify a location where you'd place the files to be reconciled. Hyperswitch will pull the files from that location on a periodic basis using.an SFTP connection. This feature needs to be enabled during the activation and configuration. In order to enable this feature the merchant will need to specify&#x20;
+    * &#x20;Portal User ID, Portal password and SFTP url and pick up schedule
 
-After the files are uploaded, they enter the Validator phase, where records undergo  validation to ensure data integrity. This phase involves a series of checks to vet records based on various conditions, including:
+Possible errors at this stage are:
+
+* File naming convention error - The files need to be named as specified above to avoid any error in upload
+* Invalid file format - The following file formats are supported - csv, excel and XML
+
+#### **1.2 Validate**
+
+After the files are uploaded, they enter the Validate phase, where records undergo validation to ensure data integrity. This phase involves a series of checks to vet records based on various conditions, including:
 
 * **Column check:** Verify that all required columns are present and correctly formatted.
 * **Data type validation:** Validate data types to ensure they conform to the expected format.
 * **Duplicate value detection:** Identify and eliminate duplicate records to prevent redundancy.
-* **Date format verification:** Ensure date values are correctly formatted and consistent.
-* **Other custom conditions:** Apply additional custom conditions relevant to your business use case.
+* **Date format verification:** Ensure date values are correctly formatted and are consistent.
+* **Other custom conditions:** Apply additional custom conditions relevant to your use case.
 
-Records that fail any of these validation checks are identified and separated from the dataset. These failed records are not forwarded to subsequent steps, minimizing the risk of inaccurate reconciliations.
+Records that fail any of these validation checks are identified and separated from the dataset. These failed records are not forwarded to subsequent steps, minimising the risk of inaccurate reconciliations.
 
-#### Step 3: Transformer
+Possible errors at this stage are:
 
-The final stage of the File Management process is the Transformer phase. In this phase, various computations and transformations are applied to the validated records to prepare them for reconciliation within the Recon Engine. These transformations can include:
+* Report content invalid  - The format, structure and content of the files need to be in line with what was configured during the activation and configuration stage.
+
+#### 1.3 Transform
+
+The final stage of the File Management process is the Transform phase. In this phase, various computations and transformations are applied to the validated records to prepare them for reconciliation within the engine.&#x20;
 
 * **Settled amount calculation:** Compute settled amounts based on transaction values and statuses.
-* **Fee & tax computation:** Calculate applicable fees and taxes associated with transactions.
-* **Offers customization:** Apply customizable offer computations to reflect promotional adjustments.
+* **Fee & tax computation:** These primarily include fees and tax calculations to enable us to reconcile the settlement report with the bank after deduction of these values. These transformations need to be enabled as part of the activation and configuration stage. In case those are not explicitly present in the payment processor's report, the merchant will need to specify them.
 
-Merchants are granted the flexibility to tailor Fee, Tax, and Offer computations to their specific business needs. This customization empowers you to align the reconciliation process with your unique financial requirements.
+This below specified table indicates the progress and outcome across each section.&#x20;
 
-### Recon Engine - Capabilities&#x20;
+* Yellow status :  The particular stage is being initiated for execution
+* Green status : The particular stage is successfully executed&#x20;
+* Red status : The particular stage has some errors which need to be rectified
+* Partial Red status : Some of the records are invalid and have been excluded from the process
 
-This section delves deeper into the engine's capabilities, including multi-dimensional reconciliation and advanced techniques to enhance performance.
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-#### The automatic trigger
+### 2. Run Reconciliation&#x20;
 
-When all the respective merchant files are seamlessly ingested into the Recon system, the Reconciliation Engine gets auto triggered.&#x20;
+Once the files are uploaded and prepared, we need to run the reconciliation engine. In case of automated Reconciliation, the recon engine would move to the next step automatically. Automated reconciliation needs to be enabled during the activation and configuration stage. The Run Recon section is divided into 4 parts:
 
-#### Multi-dimensional reconciliation
+Date selection, File selection, Recon status and Engine capabilities&#x20;
 
-Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fee & Taxes, and more, as stipulated in the Configurator.
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-#### Confidence score-potential matched
+#### 2.1 Date selection
 
-In the intricate landscape of transactions, entities often share identifiers across various columns due to nuances like refunds and split transactions. In response, the Recon Engine employs an innovative approach—confidence score-based reconciliation. This technique, built upon transaction identifiers, enhances overall performance by confidently matching transactions even in complex scenarios.
+Specify the dates for which you want to see the output of Reconciliation engine run. In case of both automated and manual Reconciliation, all the records would be picked for processing.
 
-#### Backdated Reconnaissance
+**2.2** **File selection**&#x20;
 
-The Recon engine's effectively performs backdated recon by scrutinizing entries from previous dates. If matching entries are found, reconciliation is seamlessly executed, ensuring historical accuracy. By default, the engine considers backdated entries spanning the last 7 days, fostering precision in historical data alignment.
+Select the files on which you need to run reconciliation. In case of automated Reconciliation this step is not needed&#x20;
 
-### Recon Dashboard components
+#### 2.3 Recon status&#x20;
 
-The Recon Dashboard is characterised by several components that facilitate analysis:
+The Green status signifies that the reconciliation engine has run successfully
 
-1. **Single stats snapshot:** Gain immediate insights into reconciliation results with a concise overview. The dashboard showcases counts of **matched**, **mismatched**, **missing**, and even matched with a buffer for the selected time range. The below snapshot encapsulates the essence of reconciliation outcomes at a glance.
-2. **Time series graph:** Visualize reconciliation trends over time with a dynamic time series graph. Dive into historical patterns, observe fluctuations, and identify performance benchmarks for enhanced strategic decision-making.
-3. **Amount calculation insights:** Unveil deeper financial insights through calculated amounts, including Balance from the last period, amount expected/received, and balance receivable. These calculations provide a comprehensive picture of your financial alignment.
-4. **Bank <> PSP <> Merchant transactions:**  The Recon Dashboard maps bank, PSP, and merchant transactions, fostering a holistic understanding of your financial ecosystem.
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-01-23 at 3.58.02 PM.png" alt=""><figcaption></figcaption></figure>
+In case you face any errors at this stage please contact the Hyperswitch support team.
 
-### Recon reports
+### 3. Reconciliation Reports
 
-The **Reports** module within the Recon Dashboard empowers users with a detailed and structured exploration of reconciliation outcomes.&#x20;
+Once the uploaded files are processed by the Reconciliation engine, the output is shown on the Reports section. The Reports section is largely divided into 3 parts: &#x20;
 
-#### **Transaction-level reconnaissance**
+Date selection, Reconciliation reports and Reconciliation output table
 
-This dynamic platform consolidates transaction data, facilitating thorough evaluation and informed decision-making.
+#### 3.1 Date selection&#x20;
 
-#### Recon statuses:&#x20;
+It allows you to see the reconciliation status for any time window of your choice. The Reconciliation modules stores all the data that is ingested in it to ensure you have a view of reconciliation that's driven by dates or length-of-time.&#x20;
 
-* **Matched :** Transactions that are matched across systems.&#x20;
-* **Mis-matched :** Transactions are present across the systems, but any of the fields, such as amount, tax, or currency, is mismatched.
-* **Missing :** Transactions which are not present in at least one of the files
+The reconciliation engine performs backdated reconciliation by reviewing entries from previous dates. If matching entries are found, reconciliation is seamlessly executed, ensuring historical accuracy. By default, the engine considers backdated entries spanning the last 90-days, configurable based on merchant needs.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-01-23 at 3.18.15 PM.png" alt=""><figcaption></figcaption></figure>
-
-#### Variety of report options
+#### 3.2 Reconciliation reports
 
 Within the Reports module, users can access an array of essential reports that cover various aspects of the reconciliation process:
 
 * **Overall transaction report:** Gain a comprehensive view of reconciliation outcomes across all transactions.
-* **Merchant transaction report:** Focus specifically on merchant-level transaction alignment, fostering granular insight.
-* **PSP settlement report:** Analyze transaction reconciliation outcomes within the context of PSP settlements.
+* **Merchant transaction report:** Focus specifically on merchant-level transaction alignment.
+* **PSP settlement report:** Analyse transaction reconciliation outcomes within the context of PSP settlements.
 * **Bank settlement report:** Gain insights into transaction alignment concerning bank settlements.
 
-#### Specific information availability
+#### 3.3 Reconciliation output table
 
-The Reports module provides access to specific information categories such as Gateway, Status, and Sub-status. These intricate details enable users to dissect reconciliation outcomes based on diverse attributes, facilitating pinpoint analysis.
+The output table provides access to specific information categories such as Gateway, Status, and Sub-status. These intricate details enable users to dissect reconciliation outcomes based on diverse attributes, facilitating pinpoint analysis.&#x20;
 
-#### Customizable column views
-
-Users have the ability to customize their column views within the Reports module:
+\-> Customisable column views: Users have the ability to customise their column views within the output table:
 
 * **Select desired columns:** Choose which columns to view, tailoring the report to focus on specific attributes like transaction ID, amount, status, and reconciliation status.
-* **Column naming:** Assign specific names to columns, enhancing clarity and alignment with your business's terminology.
-* **Streamlined insights:** View only the columns that are relevant to your analysis, ensuring a streamlined and efficient reporting experience.
+* **Column naming:** Assign specific names to columns, enhancing clarity and alignment with your business's terminology. This change needs to be done by the Hyperswitch team.
+* **Column positioning :** Assign a specific order to columns, enhancing clarity and alignment with your business' requirements . This change needs to be done by the Hyperswitch team.
 
-#### **PSP level summary reports**
+\-> Key columns and status definitions (these are the default names) :&#x20;
 
-The Recon Dashboard extends its analytical reach, allowing users to access PSP level summary reports. These reports present transaction reconciliation outcomes at a more detailed level, including:
+* **Recon status -** This is the reconciliation status between the Merchant report and the PSP report. Possible values are&#x20;
+  * Matched : Transactions that are matched across systems.&#x20;
+  * Mismatch: Transactions are present across the systems, but any of the fields, such as amount, tax, or currency, is mismatched.
+  * Missing : Transactions which are not present in at least one of the files
+* **Recon sub-status -** This column is available only for 3-way recon. Possible values are&#x20;
+  * Matched: Transactions that are matched across systems.&#x20;
+  * Probable\_match : Potential match for a transaction which is identified using the secondary identifier column.
+  * Amount\_mismatch : Transactions that have matched, but there is a discrepancy in the amount. Merchants can configure column-level mismatch statuses while onboarding.
+  * Missing : Transactions which are not present in both the systems but present in bank file
+  * Missing\_in : Transactions which are not present in at least one system
+* **Secondary status** - This is the reconciliation status between the PSP report and the Bank report. This column is available only for 3-way recon.  Possible values are similar to Recon status
+* **Secondary sub-status** - This column is available only for 3-way recon. Possible values are similar to Recon sub status.&#x20;
 
-* **Order-level Reconciliation**: Delve into order-level reconciliation results, shedding light on the alignment between transactions and settlements.
-* **Refund-level reconciliation**: Uncover insights into refund-level reconciliation outcomes, ensuring precise financial accuracy across various refund scenarios.
-* **Bank settlement <> PSP <> Merchant transaction report**: Gain unparalleled visibility into the transaction journey across bank, PSP, and merchant realms, facilitating comprehensive analysis.
+In case of 3-way recon, the columns Recon status and Recon sub-status are used to indicate the reconciliation outcome of Hyperswitch and PSP file whereas columns secondary status and Secondary sub-status are used to indicate the reconciliation outcome of PSP and bank file. In case of 2-way recon a single column from the above is displayed along with the respective status.
 
-### **Recon open issues**
+\-> Confidence score-potential matched : Recon happens on transaction identifiers however at times payment entities (banks, PSPs) share different identifiers for refund, split transactions etc. For such cases, Reconciliation module would check for a nearby match and assign a confidence score to that reconciled row.
 
-The O**pen issues** module within HyperSwitch Recon serves as a dynamic platform for addressing reconciliation discrepancies head-on. This section elucidates the functionality of the Open Issues module, offering users a structured pathway to identify, resolve, and re-evaluate transactions with mismatched or missing reconciliation statuses.
+\-> Download Data : The reconciliation module allows merchants to download data in the form of excel.
 
-#### **Addressing mismatched and missing recon statuses**
+### 4. Reconciliation Analytics
 
-The Open Issues module is a pivotal component that enables users to tackle reconciliation anomalies with precision. All transactions with a Recon status marked as **Mismatched** or **Missing** find their place within this module. These records serve as focal points for addressing discrepancies and enhancing financial alignment.
+The Recon Dashboard is characterised by several components that facilitate analysis:
 
-#### The Resolution process
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
-To initiate the resolution process, users can follow these straightforward steps:
+**4.1  User controls :** The merchant can specify the date, type of report (monthly, daily), PSP and settlement currency for which analytics should be displayed on dashboard.
 
-1. **Select records:** Users can meticulously choose the records with mismatched or missing reconciliation statuses that require resolution.
-2. **Resolve button:** Click the "Resolve" button, which serves as the gateway to rectifying the discrepancies.
+**4.2 Statistical analytics :** This section contains of four components
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-01-23 at 3.11.42 PM.png" alt=""><figcaption><p>This is a representation of the dashboard with sample data.</p></figcaption></figure>
+* Matched - Number of transactions and total amount that have been matched across all the systems after reconciliation.&#x20;
+* Matched buffer - A buffer amount can be set by the merchant during the activation and configuration stage. Number of transactions and total amount that have been matched with the buffer across all the systems after reconciliation.
+* Mismatched - Number of transactions and total amount that have mismatched data in at least one of the systems.
+* Not found - Number of transactions and total amount that have not been found in at least one system.
 
-#### Data entry and modification
+**4.3 Graphical analytics :** Bar graph representation of Number of transactions vs date range.
 
-Upon clicking the **Resolve** button, users enter the resolution arena. This involves entering data into the respective fields relevant to the transaction. After furnishing the required information, users simply save their changes.
+**4.4 Summary table :** This table contains information about pending amount from last period, amount expected, amount received and balance receivable for all PSP's after last reconciliation run.
 
-**Dynamic recon status modification**
+* Balance last period : Balance left to receive from all previous reconciliation runs.
+* Amount expected : Amount that is expected from PSP as per merchant report.
+* Amount  received : Amount that is received from PSP  as per PSP report.
+* Balance receivable : Sum of balance last period and difference between amount expected and amount received.
 
-Upon successful resolution, the Open Issues module triggers a sequence of actions:
+### 5. Post reconciliation run
 
-1. **Reconciliation update:** The Recon Engine re-evaluates the transaction with the updated data.
-2. **Status modification:** The transaction's Recon status is dynamically modified in response to the resolution outcome.
+Once the reconciliation engine has been executed, there maybe a few records which fall under the mismatched or missing category. &#x20;
 
-## FAQs
+1. Missing category&#x20;
+   * Majority of records that fall in this category are essentially missed in one of the files due to different systems following different cut over times. To elaborate, PSP or bank or Hyperswitch will have their own cut over times for generating report, settling transactions etc. Therefore a few records may just be missed due to the difference in the cut over time.
+   * The reconciliation engine performs backdated reconciliation by reviewing entries from previous dates. If matching entries are found, reconciliation is seamlessly executed, ensuring historical accuracy. By default, the engine considers backdated entries spanning the last 90-days, configurable based on merchant needs.&#x20;
 
-<details>
-
-<summary>Is 3-way reconciliation supported ?</summary>
-
-Yes, we do support 3-way reconciliation between merchant, PSP, and bank. You need configure your bank report by raising request via email or slack.
-
-</details>
-
-<details>
-
-<summary>Can I configure the file format in Recon dashboard for existing PSP or a new PSP?</summary>
-
-No, the Recon team will configure your desired transaction report for you
-
-</details>
+Records that don't fall under the purview of the above examples will need to be investigated with the respective teams (Hyperswitch, PSP or bank). We are also working on a feature that will enable you to track and  close Reconciliation issues within the Reconciliation module ([Recon open issues](broken-reference)).

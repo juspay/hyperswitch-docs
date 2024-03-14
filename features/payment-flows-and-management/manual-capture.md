@@ -6,6 +6,8 @@ description: >-
 
 # 💰 Manual Capture
 
+{% embed url="https://youtu.be/XtOMZVhvLwQ" %}
+
 ## What is Manual Capture?
 
 In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.&#x20;

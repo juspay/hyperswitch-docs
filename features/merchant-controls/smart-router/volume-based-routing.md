@@ -8,6 +8,8 @@ description: Route transactions through processors based on volume distribution
 This section will guide you on how to setup Volume based routing using the Hyperswitch Control Center
 {% endhint %}
 
+{% embed url="https://youtu.be/xpU3zmyD4b8" %}
+
 ## Steps to configure Volume Based Configuration in Smart Router:
 
 _**Step 1:**_ Click on `Setup` for Volume Based Configuration

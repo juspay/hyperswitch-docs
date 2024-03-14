@@ -2,7 +2,7 @@
 description: Hyperswitch roadmap (Jan to Mar'24)
 ---
 
-# 🛣 Roadmap - Q1 2024
+# 🛣️ Roadmap - Q1 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -94,12 +94,12 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🚛 🟧 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
 * 🟩 Support for Hosted Checkout Page on Web&#x20;
 * 🟧 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
+* 🟧 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
+* 🟧 Dispute management and evidence submission workflow on Hyperswitch Control Centre
+* 🟧 Hyperswitch Control Centre will allow to customize payment methods at country and currency level and support more configurations
+* 💪🟧  Create custom roles for Identity and Access Management
 * 🟥 Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre
-* 🟥 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
 * 🟥 Create and manage payment links from the Hyperswitch control centre
-* 🟥 Dispute management and evidence submission workflow on Hyperswitch Control Centre
-* 🟥 Hyperswitch Control Centre will allow to customize payment methods at country and currency level and support more configurations
-* 💪🟥 Create custom roles for Identity and Access Management
 
 ### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 

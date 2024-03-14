@@ -2,11 +2,13 @@
 description: Single dashboard for all your payment operations needs!
 ---
 
-# 🎛 Analytics & operations
+# 🎛️ Analytics & operations
 
 {% hint style="info" %}
 This section covers the day-to-day use cases of payments operations which Hyperswitch dashboard can support
 {% endhint %}
+
+{% embed url="https://youtu.be/z_NzW3_9A_w" %}
 
 ## Payment Analytics
 

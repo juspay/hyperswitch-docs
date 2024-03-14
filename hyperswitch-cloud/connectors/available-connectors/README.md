@@ -2,7 +2,7 @@
 description: List of all connectors currently supported by Hyperswitch
 ---
 
-# 🖲 Available Connectors
+# 🖲️ Available Connectors
 
 Here are the available connectors:
 
@@ -46,8 +46,8 @@ Here are the available connectors:
 [coinbase.md](coinbase.md)
 {% endcontent-ref %}
 
-{% content-ref url="cybersource.md" %}
-[cybersource.md](cybersource.md)
+{% content-ref url="cybersource/" %}
+[cybersource](cybersource/)
 {% endcontent-ref %}
 
 {% content-ref url="dlocal.md" %}
