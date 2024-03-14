@@ -26,12 +26,12 @@ Here are the available connectors:
 [bambora.md](bambora.md)
 {% endcontent-ref %}
 
-{% content-ref url="bluesnap.md" %}
-[bluesnap.md](bluesnap.md)
-{% endcontent-ref %}
-
 {% content-ref url="boa.md" %}
 [boa.md](boa.md)
+{% endcontent-ref %}
+
+{% content-ref url="bluesnap.md" %}
+[bluesnap.md](bluesnap.md)
 {% endcontent-ref %}
 
 {% content-ref url="braintree.md" %}
