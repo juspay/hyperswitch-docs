@@ -68,4 +68,8 @@ We recommend to pass this fields while creating the Payment Intent with Hyperswi
 * On the Cybersource Console, if you are prompted to provide this file upload the same **.cer file** (apple\_pay.cer)
 * Now you can configure the genreated certificates into Hyperswitch Control Center for Cybersource by following these [steps](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
 
+{% hint style="info" %}
+To enable ApplePay in your iOS Application, please refer to the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#integrate-with-xcode)
+{% endhint %}
+
 [^1]: 
