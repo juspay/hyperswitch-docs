@@ -26,12 +26,12 @@ Here are the available connectors:
 [bambora.md](bambora.md)
 {% endcontent-ref %}
 
-{% content-ref url="boa.md" %}
-[boa.md](boa.md)
-{% endcontent-ref %}
-
 {% content-ref url="bluesnap.md" %}
 [bluesnap.md](bluesnap.md)
+{% endcontent-ref %}
+
+{% content-ref url="boa.md" %}
+[boa.md](boa.md)
 {% endcontent-ref %}
 
 {% content-ref url="braintree.md" %}
@@ -104,6 +104,10 @@ Here are the available connectors:
 
 {% content-ref url="shift4.md" %}
 [shift4.md](shift4.md)
+{% endcontent-ref %}
+
+{% content-ref url="stripe.md" %}
+[stripe.md](stripe.md)
 {% endcontent-ref %}
 
 {% content-ref url="trustpay.md" %}
