@@ -128,3 +128,9 @@ app.post("/create-payment", async (req, res) => {
   }
 });
 ```
+
+## Integrate with Xcode
+
+Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
+
+<figure><img src="../../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
