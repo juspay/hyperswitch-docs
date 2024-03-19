@@ -35,6 +35,8 @@ You can validate the merchant domain by following the steps mentioned below -
 * Once you host the .txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
+<figure><img src="../../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
+
 ## **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key by following the steps mentioned below -
