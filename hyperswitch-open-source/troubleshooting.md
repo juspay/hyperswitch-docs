@@ -4,11 +4,7 @@ description: >-
   all the components are up and running as expected
 ---
 
-# ⚒ Troubleshooting
-
-{% hint style="info" %}
-The deep health check endpoint will be rolled out in the monthly stable version release planned for February 2024
-{% endhint %}
+# ⚒️ Troubleshooting
 
 ## System Health Check
 
