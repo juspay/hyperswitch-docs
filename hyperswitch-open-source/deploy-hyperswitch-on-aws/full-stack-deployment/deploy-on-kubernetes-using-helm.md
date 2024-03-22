@@ -20,6 +20,31 @@ diesel migration --database-url postgres://{{user}}:{{password}}@{{host_name}}:5
 ```
 {% endcode %}
 
+3. Kubernetes Cluster
+4. Add the following label to your node group &#x20;
+
+```
+node-type: generic-compute
+```
+
+{% hint style="info" %}
+The concept of a "Node group" is a term used in both AWS and GCP to describe a collection of nodes within a cluster. In Azure, however, this is referred to as a "Node pool" within the hierarchy
+{% endhint %}
+
+5. Create a namespace `hyperswitch` in your kubernetes cluster using the below commands
+
+```
+kubectl create namespace hyperswitch
+```
+
+6. Load Balancer Controller Service specific to your Kubernetes cluster provider
+
+{% hint style="info" %}
+On Amazon Web Services (AWS) Cloud, deploy the [AWS Load Balancer Controller](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)\
+On Azure Cloud, utilize the [Application Gateway Ingress Controller](https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview)\
+On Google Cloud Platform (GCP), deploy the [GKE Ingress Controller](https://cloud.google.com/compute/docs/labeling-resources)
+{% endhint %}
+
 ## Installation
 
 ### Step 1 - Clone repo and Update Configurations
