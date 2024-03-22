@@ -58,14 +58,14 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟥 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting and optional 3DS verification before vaulting
+* 🟧 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting and optional 3DS verification before vaulting
 * 🟧 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
 * _(removed from the Q1 roadmap)_ Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways&#x20;
-*   🟥 New connector and payment method Integrations&#x20;
+*   🟧 New connector and payment method Integrations&#x20;
 
-    * Place2Pay
+    * 🟩 Place2Pay
     * Billwerk
-    * Pix and Boleto via Adyen
+    * 🟩 Pix and Boleto via Adyen
 
     _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
 
@@ -77,11 +77,11 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟧 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
 * 🟧 Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
 * 💪 Open sourcing the Native Unified Checkout SDK (Android and iOS)
-* 🟧  Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
+* 🟩 Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
 
 ### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
 
-* 🚛 🟧 Enabling surcharge for specific payment methods to promote low cost payment methods
+* 🟩 Enabling surcharge for specific payment methods to promote low cost payment methods
 * 🚛 🟧 Support Plaid for ACH account verification
 
 ### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
@@ -93,7 +93,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 * 🟩 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
 * 🟩 Support for Hosted Checkout Page on Web&#x20;
-* 🟧 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
+* 🟩 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
 * 🟧 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
 * 🟧 Dispute management and evidence submission workflow on Hyperswitch Control Centre
 * 🟧 Hyperswitch Control Centre will allow to customize payment methods at country and currency level and support more configurations
