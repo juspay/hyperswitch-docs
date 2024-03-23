@@ -15,7 +15,7 @@ This section guides you through the integration of Hyperswitch Headless for both
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize `Hyper` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` which you can call to create a Headless Payment Session.  To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize `Hyper` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` which you can call to create a Headless Payment Session. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 {% tabs %}
 {% tab title="HTML + JavaScript" %}
@@ -57,7 +57,8 @@ paymentSession = hyper.initPaymentSession({
 
 {% tab title="Flutter" %}
 ```dart
-Session paymentSession = await hyper.initPaymentSession(PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET'));
+final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET')
+Session _sessionId = await hyper.initPaymentSession(params);
 ```
 {% endtab %}
 {% endtabs %}
@@ -119,50 +120,50 @@ function handlePress() {
 {% endtab %}
 
 {% tab title="Flutter" %}
-<pre class="language-dart"><code class="lang-dart">paymentMethodSession = await paymentSession.getCustomerSavedPaymentMethods();
+```dart
+SavedSession? _savedSessionId = await _hyper.getCustomerSavedPaymentMethods(_sessionId!);
 
 // use the customer_default_saved_payment_method_data to fulfill your usecases
-Object customer_default_saved_payment_method_data = paymentMethodSession?.getCustomerDefaultSavedPaymentMethodData();
-
-if (customer_default_saved_payment_method_data is Card) {
-<strong>    displayCard(customer_default_saved_payment_method_data);
-</strong>} else if (customer_default_saved_payment_method_data is Wallet) {
-    displayWallet(customer_default_saved_payment_method_data);
-} else if (customer_default_saved_payment_method_data is Error) {
-    // handle the case where no default customer payment method is not present
-    handleError(customer_default_saved_payment_method_data);
+final customer_default_saved_payment_method_data = await _hyper.getCustomerDefaultSavedPaymentMethodData(_savedSessionId!);
+if (customer_default_saved_payment_method_data != null) {
+    final paymentMethod = customer_default_saved_payment_method_data.left;
+    if (paymentMethod != null) {
+       final card = paymentMethod.left;
+       if (card != null) {
+          setState(() {
+            _defaultPMText = "${card.nickName}  ${card.cardNumber}  ${card.expiryDate}";
+          });
+       } else {
+          final wallet = paymentMethod.right;
+          if (wallet != null) {
+            setState(() {
+              _defaultPMText = wallet.walletType;
+            });
+          }
+       }
+    } else {
+      final err = customer_default_saved_payment_method_data.right;
+      setState(() {
+        _defaultPMText = err?.message ?? "No Default Payment Method present";
+      });
+    }
+  }
 }
 
 // use the confirmWithCustomerDefaultPaymentMethod function to confirm and handle the payment session response
-Future&#x3C;void> onPress() async {
-    PaymentResult confirmWithCustomerDefaultPaymentMethodResponse = await paymentMethodSession?.confirmWithCustomerDefaultPaymentMethod();
-    var status = confirmWithCustomerDefaultPaymentMethodResponse.status;
-    var message = confirmWithCustomerDefaultPaymentMethodResponse.message;
-    
-    // use paymentSheetResponseType, paymentSheetResponseMessage to complete the payment journey
-    switch (status) {
-      case "cancelled":
-        // handle cancelled case
-        break;
-      case "failed":
-        // handle failed case
-        break;
-      case "completed":
-          switch (message) {
-              case "succeeded":
-                // handle succeeded case
-                break;
-              case "processing":
-                // handle requires_capture case
-                break;
-              default:
-                // handle the default case
-                break;
-        }
-        break;
+Future<void> _confirmPayment() async {
+  final confirmWithCustomerDefaultPaymentMethodResponse = 
+    await _hyper.confirmWithCustomerDefaultPaymentMethod(_savedSessionId!);
+  if (confirmWithCustomerDefaultPaymentMethodResponse != null) {
+    final message = confirmWithCustomerDefaultPaymentMethodResponse.message;
+    if (message.isLeft) {
+      _confirmStatusText = "${confirmWithCustomerDefaultPaymentMethodResponse.status.name}\n${message.left!.name}";
+    } else {
+      _confirmStatusText = "${confirmWithCustomerDefaultPaymentMethodResponse.status.name}\n${message.right}";
     }
+  }
 }
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 

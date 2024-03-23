@@ -83,9 +83,9 @@ flutter pub get
 
 ## 3. Complete the checkout on the client
 
-### 3.1 Initialize the Hyperswitch SDK
+### 3.1 Initialise the Hyperswitch SDK
 
-Initialize `Hyper` onto your app with your publishable key with the `Hyper` constructor. To get a PublishableKey please find it [here](https://app.hyperswitch.io/developers).
+Initialise `Hyper` onto your app with your publishable key with the `Hyper` constructor. To get a PublishableKey please find it [here](https://app.hyperswitch.io/developers).
 
 ```dart
 import 'package:flutter_hyperswitch/flutter_hyperswitch.dart';
@@ -94,7 +94,7 @@ _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY', customBackendUrl
 ```
 
 {% hint style="info" %}
-When utilizing a custom backend or logging system, you can add the customBackendUrl to HyperConfig
+When utilising a custom backend or logging system, you can add the customBackendUrl to HyperConfig
 {% endhint %}
 
 ### 3.2  Create a Payment Intent
@@ -117,46 +117,35 @@ Future<String> fetchPaymentParams() async {
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
 ```dart
- Session paymentSession = await hyper.initPaymentSession(PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET'));
+final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET');
+Session? _sessionId = await _hyper.initPaymentSession(params);
 ```
 
 ### 3.4 Present payment sheet and handle response
 
 To display the Payment Sheet, integrate a "**Pay Now**" button within the checkout page, which, when clicked, invokes the `presentPaymentSheet()`method and handles the payment response.
 
-Consider the below function, it invokes and `presentPaymentSheet` and handles various payment results.
+Consider the below function, it invokes `presentPaymentSheet` and handles payment results.
 
+{% code fullWidth="false" %}
 ```dart
-void openPaymentSheet() async {
-    PaymentResult presentPaymentSheetResponse = await paymentSession.presentPaymentSheet();
-
-    var status = confirmWithCustomerDefaultPaymentMethodResponse.status;
-    var message = confirmWithCustomerDefaultPaymentMethodResponse.message;
-    
-    // use paymentSheetResponseType, paymentSheetResponseMessage to complete the payment journey
-    switch (status) {
-      case "cancelled":
-        // handle cancelled case
-        break;
-      case "failed":
-        // handle failed case
-        break;
-      case "completed":
-          switch (message) {
-              case "succeeded":
-                // handle succeeded case
-                break;
-              case "processing":
-                // handle requires_capture case
-                break;
-              default:
-                // handle the default case
-                break;
-        }
-        break;
-    }
+Future<void> _presentPaymentSheet() async {
+  final presentPaymentSheetResponse = await _hyper.presentPaymentSheet(_sessionId!);
+  if (presentPaymentSheetResponse != null) {
+    final message = presentPaymentSheetResponse.message;
+    setState(() {
+      if (message.isLeft) {
+        _statusText =
+            "${presentPaymentSheetResponse.status.name}\n${message.left!.name}";
+      } else {
+        _statusText =
+            "${presentPaymentSheetResponse.status.name}\n${message.right}";
+      }
+    });
   }
+}
 ```
+{% endcode %}
 
 Congratulations! Now that you have integrated the  Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.&#x20;
 

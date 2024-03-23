@@ -141,6 +141,19 @@ DynamicColors colors = DynamicColors(light: lightColorsObject,dark: darkColorsOb
 
 ```
 
+## Shadow
+
+You can customize the border radius, border width, and shadow used throughout the mobile Payment Element. Using an Object of inbuilt class `Shapes`.
+
+| Shape Category | Usage                                                           |
+| -------------- | --------------------------------------------------------------- |
+| color          | shadow color of components of the payment page                  |
+| intensity      | shadow intensity across input fields, tabs and other components |
+
+```dart
+Shadow shadow = Shadow(color:10.0, intensity: 10.0);
+```
+
 ## Shapes
 
 You can customize the border radius, border width, and shadow used throughout the mobile Payment Element. Using an Object of inbuilt class `Shapes`.
@@ -149,9 +162,10 @@ You can customize the border radius, border width, and shadow used throughout th
 | -------------- | --------------------------------------------------------------------------------------- |
 | borderRadius   | radius of the border of the input fields, tabs and other components of the payment page |
 | borderWidth    | width of the border used to across input fields, tabs and other components              |
+| shadow         | add Shadow to components                                                                |
 
 ```dart
- Shapes shapes=Shapes(borderRadius:10.0 ,borderWidth: 10.0);
+Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 ```
 
 Now you can test the payments on your app and go-live!
