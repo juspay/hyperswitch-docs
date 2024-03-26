@@ -125,6 +125,11 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 
 ```js
 const appearance = {
+  variables: {
+      buttonBackgroundColor: "#FFFFFF",
+      buttonTextColor: "#000000",
+      // ... along with other variables
+  },
   rules: {
     ".TabLabel": {
       overflowWrap: "break-word",

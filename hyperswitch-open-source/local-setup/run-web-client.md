@@ -5,7 +5,7 @@ description: Run the checkout page locally
 # 💻 Run web client
 
 {% hint style="info" %}
-In this section, you will run the Hyperswitch web client SDK on your machine
+\`\`\`In this section, you will run the Hyperswitch web client SDK on your machine
 {% endhint %}
 
 Accept payments from around the globe with a secure, Unified Checkout that gives your customers the best in class payment experience
@@ -55,11 +55,12 @@ npm run start:playground
 
 This step will prompt you to enter 3 details that you must have received in the previous step when you set up the app server -&#x20;
 
-| **Publishable Key**                                   |  This is a public key that resides on your client side for authentication                                                                                                                   |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Secret Key**                                        | This is the API key which should only be restricted to your app server                                                                                                                      |
-| **Self-hosted Hyperswitch Server URL**                |  This is the URL of your self-hosted[ **Hyperswitch app server**](run-app-server.md) (for eg., `http://localhost:8080`)                                                                     |
-| **Application Server URL (URL of your node server)**  | This is the URL of your playground server. Please note that this is just a playground setup for quick development and hence contains the server.js file. (for eg., `http://localhost:5252)` |
+| **Publishable Key**                         |  This is a public key that resides on your client side for authentication                                                       |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Secret Key**                              | This is the API key which should only be restricted to your app server                                                          |
+| **Profile ID**                              | This is the Id related to business profile that you choose in control center                                                    |
+| **Self-hosted Hyperswitch Server URL**      |  This is the URL of your self-hosted[ **Hyperswitch app server**](run-app-server.md) (for eg., `http://localhost:8080`)         |
+| **Self-hosted Hyperswitch Web client URL**  | <p>This is the URL of your self-hosted<a href="run-app-server.md"> </a>(for eg., </p><p><code>http://localhost:9050</code>)</p> |
 
 {% hint style="success" %}
 Congratulations! You will now see the web app running on `http://localhost:9060` where you can test your payments.
