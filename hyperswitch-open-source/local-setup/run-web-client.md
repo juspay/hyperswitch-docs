@@ -35,10 +35,16 @@ First install all the node modules by running the following command
 npm install
 ```
 
-Once the installation is successful, you can run the app with the following command -&#x20;
+Once the installation is successful, you can compile the app with the following command on one terminal -&#x20;
 
 ```bash
-npm run start:dev
+npm run re:start
+```
+
+and can run the server with the following command on another terminal&#x20;
+
+```bash
+npm run start
 ```
 
 This will trigger a build of the project. On a successful build, you should see a message `Compiled successfully` in your terminal.&#x20;
@@ -58,7 +64,6 @@ This step will prompt you to enter 3 details that you must have received in the 
 | **Publishable Key**                         |  This is a public key that resides on your client side for authentication                                                       |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Secret Key**                              | This is the API key which should only be restricted to your app server                                                          |
-| **Profile ID**                              | This is the Id related to business profile that you choose in control center                                                    |
 | **Self-hosted Hyperswitch Server URL**      |  This is the URL of your self-hosted[ **Hyperswitch app server**](run-app-server.md) (for eg., `http://localhost:8080`)         |
 | **Self-hosted Hyperswitch Web client URL**  | <p>This is the URL of your self-hosted<a href="run-app-server.md"> </a>(for eg., </p><p><code>http://localhost:9050</code>)</p> |
 
