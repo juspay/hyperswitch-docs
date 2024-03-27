@@ -15,8 +15,7 @@ As an open-source payment orchestrator, Hyperswitch offers a flexible and scalab
 Let's get started on building a robust and secure payment environment with Hyperswitch and Helm.
 
 1. **Hardened Machine Images**
-   * Utilize hardened machine images for the nodes in the Kubernetes cluster.
-   * These images should include security tools like Wazuh, ClamAV, Suricata, or similar software for threat detection and mitigation.
+   * Utilize hardened machine images for the nodes in the Kubernetes cluster, ensuring they include security tools such as an SIEM tool, anti-malware, and threat/intrusion detection and prevention system.
 2. **Restricted Internet Access**
    * Configure the Kubernetes cluster to have no direct access to the internet to reduce attack surface.
    * Ensure that necessary updates and patches are applied through controlled channels.
