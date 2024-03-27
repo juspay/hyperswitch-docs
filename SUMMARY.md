@@ -16,9 +16,7 @@
   * [💻 Run web client](hyperswitch-open-source/local-setup/run-web-client.md)
   * [🔌 Run control center](hyperswitch-open-source/local-setup/run-control-center.md)
 * [☁️ Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
-  * [Full stack deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/full-stack-deployment/README.md)
-    * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/full-stack-deployment/deploy-on-aws-using-cloudformation.md)
-    * [Deploy on Kubernetes using Helm](hyperswitch-open-source/deploy-hyperswitch-on-aws/full-stack-deployment/deploy-on-kubernetes-using-helm.md)
+  * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
     * [🗄️ Deploy app server](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server.md)
     * [🎛️ Deploy Control Center](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center.md)
@@ -29,6 +27,7 @@
     * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault.md)
       * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
+* [☸️ Deploy Hyperswitch on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm.md)
 * [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
   * [🎛️ Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
@@ -43,6 +42,7 @@
     * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
   * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
   * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
+  * [🗄️ On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
 
 ## Hyperswitch Cloud
 

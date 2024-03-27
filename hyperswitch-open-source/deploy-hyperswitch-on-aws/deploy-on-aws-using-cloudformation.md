@@ -43,7 +43,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 
 
-<figure><img src="../../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
 
 ## Steps to Deploy Hyperswitch on AWS
 
@@ -58,7 +58,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure your AWS credentials in your terminal
 
@@ -71,7 +71,7 @@ For this step you would need the following from your AWS account
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 
@@ -109,14 +109,14 @@ Make sure to save the passwords you provide while running the script
 
 On successful execution of the script, you will receive the following outputs
 
-| Output                      | What is it used for                                                                                                                                         |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hostname of the app server  | Access the application's APIs using the given base URL                                                                                                      |
-| Hostname of the log server  | View real-time logs for all processes                                                                                                                       |
-| Control Center URL          | Access the Hyperswitch control center and explore multiple settings                                                                                         |
-| Hyperloader.js URL          | Use the `hyperloader` to [integrate our web client](../component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md) in your website |
-| Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                                              |
-| Locker URL                  | Access the Hyperswitch card vault using this host URL                                                                                                       |
+| Output                      | What is it used for                                                                                                                                      |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hostname of the app server  | Access the application's APIs using the given base URL                                                                                                   |
+| Hostname of the log server  | View real-time logs for all processes                                                                                                                    |
+| Control Center URL          | Access the Hyperswitch control center and explore multiple settings                                                                                      |
+| Hyperloader.js URL          | Use the `hyperloader` to [integrate our web client](component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md) in your website |
+| Demo App URL                | Test payments quickly using our web checkout in the demo store                                                                                           |
+| Locker URL                  | Access the Hyperswitch card vault using this host URL                                                                                                    |
 
 {% hint style="success" %}
 That's it! Hyperswitch should be up and running on your AWS account. Open the Demo Store and make a test transaction using any test card :tada::tada:
@@ -151,10 +151,10 @@ The table below offers an estimated cost for operating the setup generated by th
 8. **Can I use Amazon Elastic Cache (Redis) as a caching layer with Hyperswitch?** Yes, you can configure Hyperswitch to use Amazon Elastic Cache (Redis) for caching purposes, which can improve performance.
 9. **What Redis configurations are recommended for optimal performance with Hyperswitch?** The recommended Redis configurations can vary based on your workload, but you should typically configure Redis to use the appropriate instance type and set the eviction policies correctly.
 10. **How can I scale Hyperswitch on EKS to handle increased traffic?** You can scale Hyperswitch by adjusting the number of pods in the deployment or using Kubernetes' Horizontal Pod Autoscaling based on resource utilization.
-11. **How can I monitor the performance and health of Hyperswitch on EKS?** You can Use AWS CloudWatch, Prometheus, or other monitoring solutions to track performance metrics and set up alerts. Refer [our guide](../../going-live/monitoring.md) for more information
+11. **How can I monitor the performance and health of Hyperswitch on EKS?** You can Use AWS CloudWatch, Prometheus, or other monitoring solutions to track performance metrics and set up alerts. Refer [our guide](../going-live/monitoring.md) for more information
 12. **Is there a recommended backup and disaster recovery strategy for Hyperswitch and associated AWS resources?** Yes, it's essential to implement regular backups for RDS and have a disaster recovery plan in place. AWS provides tools and services for this purpose.
-13. **Are there any specific security considerations when deploying Hyperswitch on AWS EKS?** You should follow our [best practices](../../going-live/security.md) for securing your EKS cluster and your Hyperswitch application, including network policies, IAM roles, and encryption.
-14. **How do I upgrade Hyperswitch and its dependencies on EKS?** Please refer to the [Updates](../../going-live/updates.md) section for more details
+13. **Are there any specific security considerations when deploying Hyperswitch on AWS EKS?** You should follow our [best practices](../going-live/security.md) for securing your EKS cluster and your Hyperswitch application, including network policies, IAM roles, and encryption.
+14. **How do I upgrade Hyperswitch and its dependencies on EKS?** Please refer to the [Updates](../going-live/updates.md) section for more details
 15. **What do I do if I encounter issues during the deployment process?** If you encounter issues, consult the troubleshooting section of the documentation or [reach out to our support team](https://hyperswitch.io/contact) for assistance.
 16. **Where can I find further documentation on Hyperswitch?** You can find additional documentation, tutorials, and support resources on our website and in our api docs.
 
@@ -162,6 +162,6 @@ The table below offers an estimated cost for operating the setup generated by th
 
 ## Next step:
 
-{% content-ref url="../../account-setup/" %}
-[account-setup](../../account-setup/)
+{% content-ref url="../account-setup/" %}
+[account-setup](../account-setup/)
 {% endcontent-ref %}

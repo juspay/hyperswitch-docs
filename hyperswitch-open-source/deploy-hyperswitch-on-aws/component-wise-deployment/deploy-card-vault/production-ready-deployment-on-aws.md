@@ -8,7 +8,7 @@ description: CDK script to deploy Hyperswitch Card Vault on AWS
 This section covers the steps for deploying the Hyperswitch card vault as an individual component
 {% endhint %}
 
-If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../../full-stack-deployment/deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
+If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../../deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
 
 ## Standalone deployment of the Hyperswitch Card Vault
 

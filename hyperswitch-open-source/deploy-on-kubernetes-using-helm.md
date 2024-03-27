@@ -1,8 +1,8 @@
 ---
-description: Install Hyperswitch on K8s using Helm
+description: Install Hyperswitch on your K8s setup using our Helm charts
 ---
 
-# Deploy on Kubernetes using Helm
+# ☸️ Deploy Hyperswitch on Kubernetes
 
 {% hint style="info" %}
 This section outlines cloud-provider agnostic deployment steps for easy installation of the Hyperswitch stack on your K8s cluster
@@ -121,6 +121,6 @@ helm repo update
 
 ## Next step:
 
-{% content-ref url="../../account-setup/" %}
-[account-setup](../../account-setup/)
+{% content-ref url="account-setup/" %}
+[account-setup](account-setup/)
 {% endcontent-ref %}
