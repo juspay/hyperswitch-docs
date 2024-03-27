@@ -30,8 +30,8 @@ Let's get started on building a robust and secure payment environment with Hyper
    * Route incoming traffic to the Hyperswitch-server through an incoming proxy.
    * This proxy should handle traffic filtering(WAF), rate limiting, request validation, and integration with DDoS protection services before traffic reaches the Kubernetes cluster.
 6. **IP Whitelisting**
-   * Implement IP whitelisting on the Kubernetes cluster to restrict access to a predefined set of IPs.
-   * These IPs can include corporate VPN IPs or other trusted sources for accessing the cluster.
+   * Implement IP whitelisting on the Kubernetes cluster to restrict access to a predefined set of IPs, such as corporate VPN IPs or other trusted sources for accessing the cluster.
+   * Note that this whitelisting is intended solely for managing the Kubernetes cluster by developers and does not apply to whitelisting API traffic.
 7. **Separate Node group for Card vault**
    * Host the locker-service which is handling sensitive data in separate node group.
    * Ensure that this node group follows appropriate security measures and access controls.
