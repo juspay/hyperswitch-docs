@@ -8,13 +8,13 @@ description: Best way to validate customer payment data and charge the customer 
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point (one-time or multi-use). A mandate would be created and issued to the merchant. And in the future they can charge against this mandate.
+The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point (one-time or multi-use). A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
 ## How to use the zero amount authorization flow?
 
-1. Creating a 0 amount payment along with the mandate data to set up a mandate with customer’s payment details (Customer initiated transaction)
+1. Creating a 0 amount payment along with `setup_future_usage= off_session` to set up a mandate to store and charge the customer's payment method later **( Called as 'CIT' : Customer initiated transaction)**
 
 ```shell
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -97,10 +97,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-4. Charging a customer later by passing the payment\_method\_id  (Merchant initiated Transaction)\
+4. Charge the customer later by passing the payment\_method\_id  **(Called as 'MIT': Merchant initiated Transaction)**\
 
 
-Pass the above `payment_method_id` along with `off_session=true` in the payments request and confirm the payment
+Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment
 
 ```bash
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -112,7 +112,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
     "currency": "USD",
     "confirm": true,
     "customer_id": "GC222",
-    "email": "m.arjunkarthik@gmail.com",
+    "email": "abcd@gmail.com",
     "name": "John Doe",
     "billing": {
         "address": {
@@ -132,7 +132,10 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
         }
     },
     "description": "Its my first payment request",
-    "payment_method_id": "pm_wvgqN9hdMawRaRzRpsXj",
-    "off_session": true
+    "off_session": true,
+    "recurring_details": {
+        "type": "payment_method_id",
+        "data": "pm_lmTnIO5EdCiiMgRPrV9x"
+    },
 }'
 ```
