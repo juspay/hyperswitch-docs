@@ -11,7 +11,7 @@ This section covers how you can set up your outgoing webhooks from Hyperswitch
 Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 
 * Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
-* Prevent payment reconciliation issues where payments change from “Failed” to “Succeeded”.
+* Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
 * Providing the best payment experience for the end-user by instantly communicating payment status and fulfilling the purchase.
 
 ### Configuring Webhooks
@@ -61,23 +61,23 @@ Click [**here**](https://api-reference.hyperswitch.io/api-reference/schemas/outg
 
 ### Webhook Signature Verification
 
-While creating a business\_profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.\
-\
-**Webhook Signature Generation**:\
+While creating a business profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.
+
+**Webhook Signature Generation**:
+
 Creating a signature for the webhook involves these steps:
 
 * Webhook payload is encoded to JSON string.
 * `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
 * The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
 
-**Webhook Validation**:\
+**Webhook Validation**:
+
 To validate the webhook’s authenticity:
 
 * Retrieve the content of the webhook and encode it as a JSON string.
-* Generate a  `Hmac-SHA512` signature using the payload and payment\_response\_hash\_key.
+* Generate a  `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
 * Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
-
-
 
 ### Troubleshooting
 
@@ -93,7 +93,5 @@ If you are sure that the payload is from Hyperswitch but the signature verificat
 SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
 
 </details>
-
-
 
 * **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
