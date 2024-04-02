@@ -14,7 +14,7 @@ Webhooks are HTTP-based real-time push notifications that Hyperswitch would use 
 * Prevent payment reconciliation issues where payments change from “Failed” to “Succeeded”.
 * Providing the best payment experience for the end-user by instantly communicating payment status and fulfilling the purchase.
 
-### [​](https://api-reference.hyperswitch.io/essentials/webhooks#configuring-webhooks)Configuring Webhooks <a href="#configuring-webhooks" id="configuring-webhooks"></a>
+### Configuring Webhooks
 
 #### Create an endpoint on your server
 
@@ -35,7 +35,7 @@ Hyperswitch's webhook endpoint format is as specified below, or you can obtain t
 | Sandbox     | sandbox.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}` |
 | Production  | api.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}`     |
 
-### [​](https://api-reference.hyperswitch.io/essentials/webhooks#handling-webhooks)Handling Webhooks <a href="#handling-webhooks" id="handling-webhooks"></a>
+### Handling Webhooks
 
 * Below are list of events for which you will receive the webhooks:
   1. `payment_succeeded`
