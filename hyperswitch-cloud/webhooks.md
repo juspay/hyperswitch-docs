@@ -57,7 +57,7 @@ Hyperswitch's webhook endpoint format is as specified below, or you can obtain t
   17. `mandate_active`
   18. `mandate_revoked`
 
-Click [**here**](https://juspay-78.mintlify.app/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
+Click [**here**](https://api-reference.hyperswitch.io/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
 
 ### Webhook Signature Verification
 
