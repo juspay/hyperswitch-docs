@@ -31,6 +31,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 "phone": "999999999",
 "phone_country_code": "+1",
 "description": "Its my first payment request",
+"profile_id": <enter the relevant profile id>,
 "setup_future_usage": "off_session"
 }'
 
@@ -97,10 +98,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-4. Charge the customer later by passing the payment\_method\_id  **(Called as 'MIT': Merchant initiated Transaction)**\
+4. Charge the customer later by passing the payment\_method\_id  **(Called as 'MIT': Merchant initiated Transaction)**
 
-
-Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment
+Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment. Make sure you are using the same `customer_id` and `profile_id` from the CIT.
 
 ```bash
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -111,27 +111,8 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
     "amount": 1231,
     "currency": "USD",
     "confirm": true,
-    "customer_id": "GC222",
-    "email": "abcd@gmail.com",
-    "name": "John Doe",
-    "billing": {
-        "address": {
-            "line1": "1467",
-            "line2": "Harrison Street",
-            "line3": "Harrison Street",
-            "city": "San Fransico",
-            "state": "California",
-            "zip": "94122",
-            "country": "US",
-            "first_name": "joseph",
-            "last_name": "Doe"
-        },
-        "phone": {
-            "number": "8056594427",
-            "country_code": "+91"
-        }
-    },
-    "description": "Its my first payment request",
+    "customer_id": "zero_auth_test_customer",
+    "profile_id": <enter the relevant profile id>
     "off_session": true,
     "recurring_details": {
         "type": "payment_method_id",
