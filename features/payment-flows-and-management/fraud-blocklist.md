@@ -33,7 +33,7 @@ In summary, a blocklist feature empowers merchants to proactively manage the sec
 ## How does Blocklist work at Hyperswitch?
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin.
-But before using any of these features. We need to enable our Blocklist Guard.
+A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
 ### For Card Bin and Extended Card Bin:
 
@@ -55,7 +55,7 @@ But before using any of these features. We need to enable our Blocklist Guard.
 ## How to enable Blocklist Guard on Hyperswitch?
 
 ```
-curl --location --request POST 'http://localhost:8080/blocklist/toggle?status=true' \
+curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 --header 'api-key: dev_xxxxxxxxxxxxxxxx'
 ```
 
