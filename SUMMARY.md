@@ -5,8 +5,9 @@
 * [👋 Hello world](README.md)
 * [🛒 For online businesses](about-hyperswitch/for-online-businesses.md)
 * [🏦 For banks & financial institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
-* [🛣️ Roadmap - Q1 2024](about-hyperswitch/roadmap/README.md)
-  * [🛣️ Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap.md)
+* [🛣️ Roadmap - Q2 2024](about-hyperswitch/roadmap/README.md)
+  * [🛣️ Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap.md)
+  * [🛣️ Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-1.md)
 
 ## Hyperswitch open source
 

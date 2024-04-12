@@ -1,75 +1,70 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'23)
+description: Hyperswitch roadmap (Jan to Mar' 24)
 ---
 
-# 🛣 Previous roadmap - Q4 2023&#x20;
+# 🛣️ Previous roadmap - Q1 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
-Before the beginning of every quarter we come together to develop the next roadmap based on our core values, findings over the previous quarter, what we heard from the community as issues and feature requests, in face-to-face discussions and social media.
+Before the beginning of every quarter we come together to develop the next roadmap based on our core values, [previous roadmap](roadmap-1.md), findings over the previous quarter, what we heard from the community as feature requests.
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-## Core Values
+## Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
 * Make payments more `accessible` and `affordable` to every digital business
-* Staying `simple` and `super-lightweight`, at the same time `reliable` and `scalable` payment switch
+* Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-## Themes for Roadmap
+<table data-header-hidden><thead><tr><th width="125"></th><th></th></tr></thead><tbody><tr><td><strong>Legend</strong></td><td><strong>Description</strong></td></tr><tr><td>🟩</td><td>Feature completed</td></tr><tr><td>🟧</td><td>Feature in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td>🚛</td><td>Backlog feature from Q4 2023</td></tr></tbody></table>
 
-There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-* 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
-* 💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able reduce payment processing costs by embracing the diversity in payments.
-* 📈 **Improving Authorization Rates:** Ensuring a best-in-class payment experience and access to latest innovations in the payments ecosystem for all businesses.
-* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burdens so that businesses can focus on the core activities.
-* 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
+### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-<table><thead><tr><th width="148">Legend</th><th>Description</th></tr></thead><tbody><tr><td>🟩</td><td>Work completed</td></tr><tr><td>🟧</td><td>Work in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f69b">🚛</span></td><td>Backlogged for next quarter</td></tr></tbody></table>
+* 🟩 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting
+* 🟩 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
+* _(removed from the Q1 roadmap)_ Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways&#x20;
+*   🟩 New connector and payment method Integrations&#x20;
 
-### Developer Experience
+    * 🟩 Place2Pay
+    * 🚛 Billwerk
+    * 🟩 Pix and Boleto via Adyen
 
-* 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
-* 🟩 Publish developer docs for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
-* 🟩 Hyperswitch Woocommerce plugin for Wordpress users. [Install the Woocommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
-* 🟩 AWS menu-driven Hyperswitch installation support
-* 🟩 Optimizing Hyperswitch application overhead from 30ms to 20ms
+    _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
 
-### Reducing Payment Costs
+### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟩 Reduce chargebacks by enabling Signifyd and Riskified (FRMs). [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
-* 🟩 Support for Gocardless bank direct debits. [Try it out by signing up for Hyperswitch](https://app.hyperswitch.io/register)
-* 🟩 Specialized low cost processor integration - Helcim
-* 🟩 Open sourcing Smart Routing Framework for self hosting
-* 🟧 Support Plaid for ACH account verification
-* 🟧 Enabling surcharge for specific payment methods to promote low cost payment methods
-* ~~🟥 Direct bank integration - Wells Fargo~~ \[Dropped]
+* 🚛 Code restructuring for enhancing readability and ease of contributions
+* 🟩 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
+* 🟩 Helm charts will support installation of `hyperswitch-card-vault`
+* 🚛  PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
+* 🟩Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
+* 💪🚛 Open sourcing the Native Unified Checkout SDK (Android and iOS)
+* 🟩 Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
 
-### Improving Authorization Rates
+### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
 
-* 🟩 Smart retry with 3DS for fraud declined payments. [Learn more about the feature](https://hyperswitch.io/docs/features/smartRetries)
-* :articulated\_lorry: Paypal Vault flows for improving repeat user experience
-* :articulated\_lorry:💪 Enhancing 3DS experience with Delegated Authentication and Visa's Digital Authentication Framework (for SCA markets)
-* :articulated\_lorry:💪 Improve authorization rates for bank payments through Open banking integration for UK/EU
+* 🟩 Enabling surcharge for specific payment methods to promote low cost payment methods
+* 🚛 🟩 Support Plaid for ACH account verification
 
-### Reducing Payment Operations
+### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
-* 🟩 Support for exporting hyperswitch data to third party data warehouse
-* :articulated\_lorry: Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
-* :articulated\_lorry:💪 System health metrics monitoring module on Hyperswitch Control Centre
+* 🟩Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
+* ~~🚛 Paypal Vault flows for improving repeat user payment experience~~
 
-### Community Feature Requests
+### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
-* 🟩 Open sourcing Card Vault application code for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault)
-* 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping)
-* 🟩 Direct bank integration - Bank of America
-* 🟩💪 Open sourcing Fraud and Risk Management Integrations
-* 🟩💪 Open sourcing Payouts module
+* 🟩 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
+* 🟩 Support for Hosted Checkout Page on Web&#x20;
+* 🟩 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
+* 🟩 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
+* 🟩 Dispute management and evidence submission workflow on Hyperswitch Control Centre
+* 🟩 Hyperswitch Control Centre will allow to customize payment methods at country and currency&#x20;
+* 🟩 Create custom roles for Identity and Access Management
 
-## **Want to contribute to the roadmap?**
+### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
