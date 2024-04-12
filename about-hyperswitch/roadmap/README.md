@@ -67,7 +67,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟥 New connector and payment method Integrations
   * [Planet.com](http://planet.com) for card payments
   * Netcetera for 3DS service
-  * Billwerk integration for supporting payins in North European countries
 
 _(list of connectors will keep expanding as we receive more requests from the community!!! )_
 

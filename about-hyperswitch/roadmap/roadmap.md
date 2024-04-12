@@ -30,7 +30,7 @@ Our core values have pretty much remained the same since the early days and here
 *   🟩 New connector and payment method Integrations&#x20;
 
     * 🟩 Place2Pay
-    * 🚛 Billwerk
+    * 🟩 Billwerk
     * 🟩 Pix and Boleto via Adyen
 
     _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
@@ -48,12 +48,12 @@ Our core values have pretty much remained the same since the early days and here
 ### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
 
 * 🟩 Enabling surcharge for specific payment methods to promote low cost payment methods
-* 🚛 🟩 Support Plaid for ACH account verification
+* 🚛 🟩 Hyperswitch API supports for Plaid for ACH account verification
 
 ### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
 * 🟩Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
-* ~~🚛 Paypal Vault flows for improving repeat user payment experience~~
+* 🚛 Paypal Vault flows for improving repeat user payment experience
 
 ### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
