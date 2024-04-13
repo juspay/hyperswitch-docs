@@ -86,13 +86,13 @@ If you are sure that the payload is from Hyperswitch but the signature verificat
 * Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256,  you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
 * Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
-  <details>
+<details>
 
-  <summary><strong>Why SHA-512 ?</strong></summary>
+<summary><strong>Why SHA-512 ?</strong></summary>
 
-  SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
+SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
 
-  </details>
+</details>
 
 ### Webhook Delivery Behavior
 
