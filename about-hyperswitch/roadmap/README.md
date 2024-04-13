@@ -31,7 +31,6 @@ Lets start with a short recap on what was released new in Q1 2024
 * Global ID based search in control center to quickly access a payment record
 * Block lists to prevent fraudulent card payments based on card issuers and fingerprints
 * Interface to dynamically select components (Storage Backend, Secrets Manager) during runtime
-*
 
 ## Core Values <a href="#core-values" id="core-values"></a>
 
