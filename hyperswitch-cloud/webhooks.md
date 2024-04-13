@@ -94,4 +94,44 @@ If you are sure that the payload is from Hyperswitch but the signature verificat
 
   </details>
 
-* **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
+### Webhook Delivery Behavior
+
+To consider a webhook delivery as successful, Hyperswitch expects the HTTP status code to be `2XX` from your server.
+If Hyperswitch doesn't receive a `2XX` status code, the delivery of the webhook is retried with an increasing delay over the next 24 hours.
+
+The intervals at which webhooks will be retried are:
+
+| Retries           | Interval    |
+| ----------------- | ----------- |
+| 1                 |  1 minute   |
+| 2, 3              |  5 minutes  |
+| 4, 5, 6, 7, 8     | 10 minutes  |
+| 9, 10, 11, 12, 13 |  1 hour     |
+| 14, 15, 16        |  6 hours    |
+
+The interval for the first retry in the above table is the duration since the original webhook delivery attempt, while the intervals for the subsequent retries are the durations since the previous webhook delivery attempt.
+
+#### Handling Duplicates
+
+Due to webhook retries, your application may receive the same webhook more than once.
+You can handle duplicate deliveries of webhooks by examining the `event_id` field in the request body, which uniquely identifies a webhook event.
+
+For example, your application could do the following for each webhook received:
+
+1. Obtain the `event_id` from the webhook request body and store it in a persistent store such as a relational database or Redis.
+2. Check whether the `event_id` has already been processed.
+3. If the webhook has not been processed, then process the webhook; otherwise, it is a duplicate event so can be ignored.
+4. Also, since the last retry for a webhook delivery happens at around 24 hours after the original webhook trigger, store the processed `event_id`s for at least 24 hours. In other words, you may purge the stored `event_id`s that are more than 24 hours old.
+
+#### Handling Out-of-order Deliveries
+
+Hyperswitch may deliver webhooks to your application in any order.
+This could be due to network delays or webhook delivery failures.
+However, you can handle this by examining the `updated` field of the resource sent in the webhook request body.
+For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
+
+For example, if you wish to sync resource changes from Hyperswitch to your application, you could:
+
+1. Obtain the value (`timestamp1`) of the `updated` field of the resource in the webhook request body.
+2. Obtain the value (`timestamp2`) of the `updated` field of the resource stored on your side.
+3. If `timestamp1` > `timestamp2`, process the resource; otherwise, ignore.
