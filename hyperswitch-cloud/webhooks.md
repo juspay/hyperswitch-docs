@@ -63,7 +63,7 @@ Click [**here**](https://api-reference.hyperswitch.io/api-reference/schemas/outg
 
 While creating a business profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.
 
-**Webhook Signature Generation**:
+#### Webhook Signature Generation
 
 Creating a signature for the webhook involves these steps:
 
@@ -71,7 +71,7 @@ Creating a signature for the webhook involves these steps:
 * `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
 * The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
 
-**Webhook Validation**:
+#### Webhook Validation
 
 To validate the webhook’s authenticity:
 
@@ -79,19 +79,19 @@ To validate the webhook’s authenticity:
 * Generate a  `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
 * Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
 
-### Troubleshooting
+#### Troubleshooting Signature Verification Failures
 
 If you are sure that the payload is from Hyperswitch but the signature verification fails:
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256,  you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm&#x20;
+* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256,  you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
 * Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
-<details>
+  <details>
 
-<summary><strong>Why SHA-512 ?</strong></summary>
+  <summary><strong>Why SHA-512 ?</strong></summary>
 
-SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
+  SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
 
-</details>
+  </details>
 
 * **Return a 2xx response:** Your server must return a successful 2xx response on successful receipt of webhooks.&#x20;
