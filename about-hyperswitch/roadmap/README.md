@@ -12,8 +12,13 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ## Recap of Q1 2024 <a href="#recap-of-q4-2023" id="recap-of-q4-2023"></a>
 
-Lets start with a short recap on what was release new in Q1 2024
+Lets start with a short recap on what was released new in Q1 2024
 
+* New connector integrations
+  * Cybersource support for ApplePay, GooglePay
+  * PlacetoPay support for card payments
+  * [3Dsecure.io](http://3dsecure.io) integration for 3DS authentication
+  * Pix and Boleto via Adyen
 * Card vault was enhanced to support fingerprinting and MIT recurring payments
 * Payment gateway agnostic MIT payments through Stripe, Adyen and Cybersource
 * Upgraded helm charts to support cloud agnostic installation of Hyperswitch
@@ -26,11 +31,7 @@ Lets start with a short recap on what was release new in Q1 2024
 * Global ID based search in control center to quickly access a payment record
 * Block lists to prevent fraudulent card payments based on card issuers and fingerprints
 * Interface to dynamically select components (Storage Backend, Secrets Manager) during runtime
-* New connector integrations
-  * Cybersource support for ApplePay, GooglePay
-  * PlacetoPay support for card payments
-  * [3Dsecure.io](http://3dsecure.io) integration for 3DS authentication
-  * Pix and Boleto via Adyen
+*
 
 ## Core Values <a href="#core-values" id="core-values"></a>
 
