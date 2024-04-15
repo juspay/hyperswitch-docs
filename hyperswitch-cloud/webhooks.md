@@ -101,13 +101,13 @@ If Hyperswitch doesn't receive a `2XX` status code, the delivery of the webhook 
 
 The intervals at which webhooks will be retried are:
 
-| Retry Attempt                                                                      | Interval    |
-| ---------------------------------------------------------------------------------- | ----------- |
-| 1<sup>st</sup>                                                                     |  1 minute   |
-| 2<sup>nd</sup>, 3<sup>rd</sup>                                                     |  5 minutes  |
-| 4<sup>th</sup>, 5<sup>th</sup>, 6<sup>th</sup>, 7<sup>th</sup>, 8<sup>th</sup>     | 10 minutes  |
-| 9<sup>th</sup>, 10<sup>th</sup>, 11<sup>th</sup>, 12<sup>th</sup>, 13<sup>th</sup> |  1 hour     |
-| 14<sup>th</sup>, 15<sup>th</sup>, 16<sup>th</sup>                                  |  6 hours    |
+| Retry Attempt               | Interval    |
+| --------------------------- | ----------- |
+| 1st                         |  1 minute   |
+| 2nd, 3rd                    |  5 minutes  |
+| 4th, 5th, 6th, 7th, 8th     | 10 minutes  |
+| 9th, 10th, 11th, 12th, 13th |  1 hour     |
+| 14th, 15th, 16th            |  6 hours    |
 
 The interval for the first retry attempt in the above table is the duration since the original webhook delivery attempt, while the intervals for the subsequent retry attempts are the durations since the previous webhook delivery attempt.
 
