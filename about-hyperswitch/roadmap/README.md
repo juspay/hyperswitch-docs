@@ -31,6 +31,8 @@ Lets start with a short recap on what was released new in Q1 2024
 * Global ID based search in control center to quickly access a payment record
 * Block lists to prevent fraudulent card payments based on card issuers and fingerprints
 * Interface to dynamically select components (Storage Backend, Secrets Manager) during runtime
+* Enhancement of Payouts module - Save payout details, Payouts routing, Payout retries (same provider & different provider).
+* Subscriptions - Payment processing support for all major subscription solution providers and plug-in support for Kill Bill subscription solution.
 
 ## Core Values <a href="#core-values" id="core-values"></a>
 
