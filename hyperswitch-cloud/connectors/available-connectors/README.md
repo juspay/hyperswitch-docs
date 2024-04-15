@@ -30,7 +30,9 @@ Here are the available connectors:
 [boa.md](boa.md)
 {% endcontent-ref %}
 
-{% embed url="https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/~/changes/729/hyperswitch-cloud/connectors/available-connectors/billwerk" %}
+{% content-ref url="payu.md" %}
+[payu.md](payu.md)
+{% endcontent-ref %}
 
 {% content-ref url="bluesnap.md" %}
 [bluesnap.md](bluesnap.md)
@@ -92,8 +94,8 @@ Here are the available connectors:
 [paypal.md](paypal.md)
 {% endcontent-ref %}
 
-{% content-ref url="payu-1.md" %}
-[payu-1.md](payu-1.md)
+{% content-ref url="payu (1).md" %}
+[payu (1).md](<payu (1).md>)
 {% endcontent-ref %}
 
 {% content-ref url="prophetpay.md" %}

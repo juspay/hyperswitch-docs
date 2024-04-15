@@ -116,7 +116,7 @@
     * [Nuvei](hyperswitch-cloud/connectors/available-connectors/nuvei.md)
     * [OpenNode](hyperswitch-cloud/connectors/available-connectors/opennode.md)
     * [Paypal](hyperswitch-cloud/connectors/available-connectors/paypal.md)
-    * [PayU](hyperswitch-cloud/connectors/available-connectors/payu-1.md)
+    * [PayU](<hyperswitch-cloud/connectors/available-connectors/payu (1).md>)
     * [Prophetpay](hyperswitch-cloud/connectors/available-connectors/prophetpay.md)
     * [Rapyd](hyperswitch-cloud/connectors/available-connectors/rapyd.md)
     * [Shift4](hyperswitch-cloud/connectors/available-connectors/shift4.md)

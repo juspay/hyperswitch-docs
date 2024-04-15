@@ -8,7 +8,11 @@ description: Accept payments through Billwerk via Hyperswitch
 This section gives you an overview of how to make payments via Billwerk through Hyperswitch
 {% endhint %}
 
-![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/payuLogo.svg)
+<div align="left">
+
+<figure><img src="../../../.gitbook/assets/ic_Billwerk+Pay3X.svg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ### About
 
