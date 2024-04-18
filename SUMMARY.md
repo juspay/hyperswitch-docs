@@ -133,7 +133,7 @@
 ## Features
 
 * [🔀 Payment flows](features/payment-flows-and-management/README.md)
-  * [🔁 Mandates & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
+  * [🔁 Saving payment methods & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
   * [💵 Payouts](features/payment-flows-and-management/payouts.md)
   * [0️ Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization.md)
   * [0️ Zero Amount Authorization - Payment Method flow](features/payment-flows-and-management/zero-amount-authorization-1.md)
