@@ -2,7 +2,7 @@
 description: Instructions to setup Card Vault on AWS manually
 ---
 
-# Manual Setup
+# Cloud setup guide
 
 {% hint style="info" %}
 This guide will help you to setup the card vault on AWS manually by setting up the various components
@@ -166,8 +166,8 @@ LOCKER__SECRETS__MASTER_KEY= # kms encrypted master key
 LOCKER__SECRETS__LOCKER_PRIVATE_KEY= # kms encrypted locker private key
 LOCKER__SECRETS__TENANT_PUBLIC_KEY= # kms encrypted locker private key
 
-LOCKER__KMS__KEY_ID= # kms id used to encrypt it below
-LOCKER__KMS__REGION= # kms region used
+LOCKER__AWS_KMS__KEY_ID= # kms id used to encrypt it below
+LOCKER__AWS_KMS__REGION= # kms region used
 ```
 
 #### Running the Locker
