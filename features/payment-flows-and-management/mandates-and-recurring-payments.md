@@ -57,7 +57,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 ## :digit\_two: Saving a payment method for future MIT payments
 
-Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to charged and number of charges.
+Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
 
 Based on the payment processors support, this functionality is also available for other payment methods like Apple Pay and Google Pay Wallets.
 
@@ -109,7 +109,7 @@ Once a customer's payment method is saved for MIT payments you can start chargin
 
 ***
 
-## :digit\_three: Setting up a Mandate
+## :digit\_three: Setting up a Mandate (India Specific)
 
 You can set up a recurring payment by creating a mandate by passing the **mandate\_type** details under the **`mandate_data`** object and the **`setup_future_usage`** field with value as ‘off\_session’ during payments-create API request.
 
