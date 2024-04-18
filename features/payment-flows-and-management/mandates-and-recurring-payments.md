@@ -8,7 +8,11 @@ description: Setting up and managing recurring payments
 This sections deals with the various ways in which you can save a payment method and how to use them in recurring payments
 {% endhint %}
 
-Hyperswitch supports recurring payments by creating mandates - a record of the permission that your customer provides to debit their payment method such as cards, wallets, etc for the specified amount and period, at a later point in time. You can also work with a subscription provider of your choice and use Hyperswitch for payments, both one-time and recurring ([more details](https://docs.hyperswitch.io/features/payment-flows-and-management/subscriptions))
+Hyperswitch supports the following ways of saving a payment method for future payments
+
+1. Saving for future customer on-session payments (COF-CIT)
+2. Saving for future customer off-session payments (MIT)
+3. Saving with the creation of a mandate (India specific)
 
 ## :digit\_one: Saving a payment method for future on-session payments (COF CIT)
 
