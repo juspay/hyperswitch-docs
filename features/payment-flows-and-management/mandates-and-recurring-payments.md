@@ -13,7 +13,7 @@ Hyperswitch supports the following ways of saving a payment method used in a suc
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
-## Saving a payment method for future on-session payments (COF CIT)
+## :credit\_card: Saving a payment method for future on-session payments (COF CIT)
 
 To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.&#x20;
 
@@ -50,11 +50,9 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
 
-
-
 ***
 
-## Saving a payment method for future MIT payments
+## :floppy\_disk: Saving a payment method for future MIT payments
 
 Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
 
@@ -97,7 +95,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 
 ***
 
-## Using a saved payment method to da a MIT payment
+## :money\_with\_wings: Using a saved payment method to do a MIT payment
 
 Once a customer's payment method is saved for MIT payments you can start charging the customer by sending the following details in the `/payments` request
 
@@ -117,6 +115,8 @@ curl --request GET \
   --url https://sandbox.hyperswitch.io/customers/{customer_id}/payment_methods \
   --header 'api-key: <api-key>'
 ```
+
+***
 
 ## FAQ:
 
