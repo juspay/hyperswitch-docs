@@ -124,7 +124,7 @@ curl --request GET \
 
 Hyperswitch allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
 
-This is specifically useful when have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
+This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
 \
 Refer to this page to see how to use it -  [Link](zero-amount-authorization-1.md)
 
