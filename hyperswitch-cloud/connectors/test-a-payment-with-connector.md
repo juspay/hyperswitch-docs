@@ -39,7 +39,7 @@ This section gives you an overview of how to make test payments via Hyperswitch.
 | Worldline       | 4012000033330026 | 12/25             | 123                  | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
 
 #### Dummy Connector test cards
-- Different flows are used for dummy connector transactions, determined by the card number.
+- Different flows are available for dummy connector transactions, determined by the card number.
 - For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
 - Dummy connectors only support payments and refunds.
 - Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments. 
