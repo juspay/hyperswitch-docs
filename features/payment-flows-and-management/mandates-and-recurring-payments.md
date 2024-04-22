@@ -85,7 +85,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 {% endhint %}
 
-Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making&#x20;
+Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
