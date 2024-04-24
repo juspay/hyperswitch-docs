@@ -33,6 +33,7 @@ In summary, a blocklist feature empowers merchants to proactively manage the sec
 ## How does Blocklist work at Hyperswitch?
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin.
+A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
 ### For Card Bin and Extended Card Bin:
 
@@ -50,6 +51,13 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
 
     block the card.
 * Try the payment again (should fail)
+
+## How to enable Blocklist Guard on Hyperswitch?
+
+```
+curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
+--header 'api-key: dev_xxxxxxxxxxxxxxxx'
+```
 
 ## How to configure Blocklist on Hyperswitch using API?
 
@@ -118,7 +126,7 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
   ...
   
   
-   "fingerprint": "fingerprint_CKz5s9W4FX03eydwgGun"
+   "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
 ```
 
@@ -130,7 +138,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
     "type": "fingerprint",
-    "data": "fingerprint_CKz5s9W4FX03eydwgGun"
+    "data": "CKz5s9W4FX03eydwgGun"
 }
 ```
 
@@ -161,7 +169,7 @@ curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
     "type": "fingerprint",
-    "data": "fingerprint_FtYY2OGsTokIrLN7TE9Y"
+    "data": "FtYY2OGsTokIrLN7TE9Y"
 }
 ```
 
@@ -195,4 +203,4 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 
 ### 1. Can I configure Fraud Blocklist through Hyperswitch Control centre?
 
-Currently, the Control centre's capability to configure fraud blocklist is under development and will be available in Q1'24.
+Currently, the Control centre's capability to configure fraud blocklist is under development and will be available in Q2'24.
