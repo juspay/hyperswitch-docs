@@ -89,10 +89,10 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-* .Tab, .Label, .Input
-* .Tab:focus
-* .Input--invalid, .Label--invalid
-* .Input::placeholder
+- .Tab, .Label, .Input
+- .Tab:focus
+- .Input--invalid, .Label--invalid
+- .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -106,10 +106,10 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 | fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
 | spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
-* .Tab, .Label, .Input
-* .Tab:focus
-* .Input--invalid, .Label--invalid
-* .Input::placeholder
+- .Tab, .Label, .Input
+- .Tab:focus
+- .Input--invalid, .Label--invalid
+- .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -126,9 +126,9 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 ```js
 const appearance = {
   variables: {
-      buttonBackgroundColor: "#FFFFFF",
-      buttonTextColor: "#000000",
-      // ... along with other variables
+    buttonBackgroundColor: "#FFFFFF",
+    buttonTextColor: "#000000",
+    // ... along with other variables
   },
   rules: {
     ".TabLabel": {
@@ -192,12 +192,12 @@ Hyperswitch Unified Checkout supports localization in 6 languages. By default, t
 
 We support the following locales -
 
-* Arabic (ar)
-* Hebrew (he)
-* French (fr)
-* German (de)
-* English (en)
-* Japanese (ja)
+- Arabic (ar)
+- Hebrew (he)
+- French (fr)
+- German (de)
+- English (en)
+- Japanese (ja)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
@@ -216,7 +216,20 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontSize    | Customize the font size of the text on the payment button          |
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 
-## 6. Handle Saved Payment Methods
+## 6. Hide Expired Saved Payment Methods
+
+You can hide the **Expired Saved Payment Methods** via passing this following prop:
+
+```javascript
+var paymentElementOptions = {
+ ...,
+ hideExpiredPaymentMethods: true, // default - false
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
+## 7. Handle Saved Payment Methods
 
 ### Screen
 
