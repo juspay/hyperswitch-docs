@@ -53,7 +53,7 @@ These problems can only be solved by open systems and this is what Hyperswitch i
 
 {% hint style="success" %}
 **Do you prefer a Fully Managed Solution ?**\
-We also offer a Hyperswitch Cloud Hosted solution which comes with out-of-the-box PCI compliance and carries the all features as the open source offering.\
+We also offer a Hyperswitch Cloud Hosted solution which comes with out-of-the-box PCI compliance and carries all the features as the open source offering.\
 \
 [Click here](https://opensource.hyperswitch.io/hyperswitch-cloud/quickstart) to get started quickly.
 {% endhint %}
