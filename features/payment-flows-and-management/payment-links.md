@@ -110,6 +110,10 @@ To enable wallet flows such as Apple Pay or Google Pay for payment links, domain
 
 Once done, you can contact us for getting the custom domain TLS certificate from us.
 
+After you have setup custom domain in your cloud, you need to get respective google pay, apple pay certificate for your new domain, and register the same in our dashboard.
+
+5. How to setup custom domain within your cloud
+
 * Identify your DNS provider
 
 > First, determine which service is handling your DNS records. This will guide you to the correct platform where you can log in and set up the new records.
