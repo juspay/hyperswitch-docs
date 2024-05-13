@@ -100,17 +100,7 @@ You can also customize a specific payment link by including the payment\_link\_c
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 
-<pre class="language-markup"><code class="lang-markup">curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_profile/:profile_id' \
---header 'Content-Type: application/json' \
---header 'api-key: {{api_key}}' \
---data '{
-  "payment_link_config":{
-      "domain_name":"pay.xyz.com",
-  }
-}'
-</code></pre>
-
-Once done, you can contact us for getting the custom domain TLS certificate from us.
+For getting it configured you can contact us! Once done, we will configure your custom domain and give you a TLS certificate.
 
 After you have setup custom domain in your cloud, you need to get respective google pay, apple pay certificate for your new domain, and register the same in our dashboard.
 
