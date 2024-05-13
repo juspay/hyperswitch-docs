@@ -31,6 +31,8 @@ API Level Overview of Payment Links with Hyperswitch
 
 #### Using Payment links
 
+>> Note: Domain name might vary based on the testing and production environment.
+
 #### 1. Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payment\_link\_config by passing the below object in the request body
 
 {% code fullWidth="true" %}
@@ -100,7 +102,7 @@ To enable wallet flows such as Apple Pay or Google Pay for payment links, domain
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_profile/:profile_id' \
 --header 'Content-Type: application/json' \
---header 'api-key: test_admin' \
+--header 'api-key: {{api_key}}' \
 --data '{
   "payment_link_config":{
       "domain_name":"pay.xyz.com",
@@ -149,8 +151,8 @@ Enter the following values and save the new DNS record.
 >| FIELD | INSTRUCTIONS | DESCRIPTION |
 |----------|----------|----------|
 | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. |
-| Name | if your custom domain is `pay.xyz.com`, enter hyperswitch-paymentlink| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).|
-| Value |Enter `sandbox.hyperswitch.juspay.in` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
+| Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).|
+| Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
 | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
 
 
@@ -165,7 +167,7 @@ Step 4: Create your TXT record
 >| FIELD | INSTRUCTIONS | DESCRIPTION |
 |----------|----------|----------|
 | Type | Select `TXT` from the dropdown | What kind of DNS record this is. |
-| Name | If your custom domain is `pay.xyz.com`, enter _acme-challenge.hyperswitch-paymentlink| For TXT records, this field is the subdomain portion of your domain. |
+| Name | If your custom domain is `paymentlink.xyz.com`, enter _acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. |
 | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification |
 | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.|
 
@@ -177,7 +179,7 @@ Step 5. Verify your CNAME record setup
 >> Please allow up to 10 minutes for your DNS provider to update its nameservers.
 >> Replace "pay.xyz.com" with your custom domain in the command below, and then run it in your terminal:
 ```shell
-$ nslookup -querytype=CNAME pay.xyz.com
+$ nslookup -querytype=CNAME paymentlink.xyz.com
 ```
 
 your should get a output like this
@@ -196,7 +198,7 @@ Step 6. Verify your TXT record
 >> Replace pay.xyz.com with your custom domain in the following command and run it from your terminal:
 
 ```shell
-$ nslookup -querytype=TXT _acme-challenge.hyperswitch-paymentlink
+$ nslookup -querytype=TXT _acme-challenge.paymentlink
 ```
 
 your should get a output like this
