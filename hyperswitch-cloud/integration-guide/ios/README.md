@@ -8,7 +8,7 @@ description: Integrate unified checkout with your iOS app
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your iOS App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (113).png" alt="" width="563"><figcaption></figcaption></figure>
 
 #### &#x20;                       Checkout the working demo of unified checkout by clicking on the link below
 
@@ -20,10 +20,10 @@ Revolutionize your app's payment capabilities with the Hyperswitch iOS SDK, deli
 
 
 
-| <img src="../../../.gitbook/assets/image (97).png" alt="" data-size="original"> | **Inclusive:**  Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution. |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="../../../.gitbook/assets/image (98).png" alt="" data-size="original"> | **Consistent:**  Enjoy a singular and consistent payment experience across platforms, whether on the web, Android, or iOS. Driven by smart payment forms, minimal redirections, and intelligent retries, the Unified Checkout ensures a reliable and uniform payment process.                                 |
-| <img src="../../../.gitbook/assets/image (99).png" alt="" data-size="original"> | **Blended:** Tailor the payment experience to seamlessly integrate with your product using 40+ styling APIs. Achieve a fully native and embedded payment experience within your Android app or website, creating a cohesive and branded checkout environment.                                                 |
+| <img src="../../../.gitbook/assets/image (130).png" alt="" data-size="original"> | **Inclusive:**  Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution. |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../../../.gitbook/assets/image (131).png" alt="" data-size="original"> | **Consistent:**  Enjoy a singular and consistent payment experience across platforms, whether on the web, Android, or iOS. Driven by smart payment forms, minimal redirections, and intelligent retries, the Unified Checkout ensures a reliable and uniform payment process.                                 |
+| <img src="../../../.gitbook/assets/image (132).png" alt="" data-size="original"> | **Blended:** Tailor the payment experience to seamlessly integrate with your product using 40+ styling APIs. Achieve a fully native and embedded payment experience within your Android app or website, creating a cohesive and branded checkout environment.                                                 |
 
 **Modify and Experiment:** While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch iOS SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you to:
 

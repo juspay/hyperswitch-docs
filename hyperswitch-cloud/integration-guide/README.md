@@ -14,10 +14,10 @@ Pick the platform / framework of your choice to get started with integrating the
 
 Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
-| <img src="../../.gitbook/assets/image (94).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
-| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="../../.gitbook/assets/image (95).png" alt="" data-size="original"> | <p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p>      |
-| <img src="../../.gitbook/assets/image (96).png" alt="" data-size="original"> | <p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p>                                                          |
+| <img src="../../.gitbook/assets/image (127).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../../.gitbook/assets/image (128).png" alt="" data-size="original"> | <p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p>      |
+| <img src="../../.gitbook/assets/image (129).png" alt="" data-size="original"> | <p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p>                                                          |
 
 While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch does not restrict you to stick to a one-size-fits-all approach. Using Hyperswitch SDK APIs, you get complete control over modifying the payment experience by,
 

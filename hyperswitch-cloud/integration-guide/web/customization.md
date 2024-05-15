@@ -89,10 +89,10 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-- .Tab, .Label, .Input
-- .Tab:focus
-- .Input--invalid, .Label--invalid
-- .Input::placeholder
+* .Tab, .Label, .Input
+* .Tab:focus
+* .Input--invalid, .Label--invalid
+* .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -106,16 +106,16 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 | fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
 | spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
-- .Tab, .Label, .Input
-- .Tab:focus
-- .Input--invalid, .Label--invalid
-- .Input::placeholder
+* .Tab, .Label, .Input
+* .Tab:focus
+* .Input--invalid, .Label--invalid
+* .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
 ### Tabs
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name   | States     | Pseudo-Classes                     | Pseudo-Elements |
 | ------------ | ---------- | ---------------------------------- | --------------- |
@@ -168,7 +168,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Form Inputs
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name | States             | Pseudo-Classes                       | Pseudo-Elements            |
 | ---------- | ------------------ | ------------------------------------ | -------------------------- |
@@ -178,7 +178,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Checkbox
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name     | States    | Pseudo-Classes | Pseudo-Elements |
 | -------------- | --------- | -------------- | --------------- |
@@ -192,12 +192,12 @@ Hyperswitch Unified Checkout supports localization in 6 languages. By default, t
 
 We support the following locales -
 
-- Arabic (ar)
-- Hebrew (he)
-- French (fr)
-- German (de)
-- English (en)
-- Japanese (ja)
+* Arabic (ar)
+* Hebrew (he)
+* French (fr)
+* German (de)
+* English (en)
+* Japanese (ja)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
