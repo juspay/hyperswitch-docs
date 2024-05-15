@@ -15,7 +15,7 @@ Introducing Payment Links – Seamlessly integrate into Hyperswitch without writ
 * Social Media Commerce
 * Cross-channel customer reactivation
 * Automated Payment Reminders to automate collections
-* A substitute for Cash-on-delivery and point-of-sale
+* Substitute for Cash-on-delivery and point-of-sale
 * Streamlining  over-the-phone transactions
 
 {% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
