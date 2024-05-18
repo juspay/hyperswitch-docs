@@ -28,12 +28,9 @@ Should the need arise, merchants can selectively unblock specific fingerprints, 
 
 In summary, a blocklist feature empowers merchants to proactively manage the security of their payment processing systems by blocking specific fingerprints, card bins, or extended card bins. This not only safeguards against potential fraud but also provides a customizable and flexible approach to control and monitor payment transactions effectively.
 
-
-
 ## How does Blocklist work at Hyperswitch?
 
-Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin.
-A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
+Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin. A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
 ### For Card Bin and Extended Card Bin:
 
@@ -149,8 +146,6 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_meth
 --header 'api-key: YOUR_API_KEY'
 ```
 
-
-
 5. Now create and confirm a payment using the same card details. The payment will fail with error:
 
 ```
@@ -196,11 +191,3 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
     "data": "42424242"
 }
 ```
-
-
-
-## FAQ:
-
-### 1. Can I configure Fraud Blocklist through Hyperswitch Control centre?
-
-Currently, the Control centre's capability to configure fraud blocklist is under development and will be available in Q2'24.
