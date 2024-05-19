@@ -2,7 +2,7 @@
 description: Set up your Hyperswitch account on the control center
 ---
 
-# ⚙ Control Centre Account setup
+# ⚙️ Control Centre Account setup
 
 {% hint style="info" %}
 In this section, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
@@ -84,4 +84,4 @@ Currently, you can configure two types of routing with more on the way:
 [integration-guide](integration-guide/)
 {% endcontent-ref %}
 
-You can also refer to the [Smart Router](../features/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../hyperswitch-open-source/testing/test-a-payment.md).
+You can also refer to the [Smart Router](../features/merchant-controls/smart-router/) section to learn more about how you can route your payments and then later you can [Test a Payment](../hyperswitch-open-source/testing/test-a-payment.md).

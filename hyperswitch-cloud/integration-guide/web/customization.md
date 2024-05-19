@@ -115,7 +115,7 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 
 ### Tabs
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name   | States     | Pseudo-Classes                     | Pseudo-Elements |
 | ------------ | ---------- | ---------------------------------- | --------------- |
@@ -126,9 +126,9 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 ```js
 const appearance = {
   variables: {
-      buttonBackgroundColor: "#FFFFFF",
-      buttonTextColor: "#000000",
-      // ... along with other variables
+    buttonBackgroundColor: "#FFFFFF",
+    buttonTextColor: "#000000",
+    // ... along with other variables
   },
   rules: {
     ".TabLabel": {
@@ -168,7 +168,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Form Inputs
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name | States             | Pseudo-Classes                       | Pseudo-Elements            |
 | ---------- | ------------------ | ------------------------------------ | -------------------------- |
@@ -178,7 +178,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### Checkbox
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name     | States    | Pseudo-Classes | Pseudo-Elements |
 | -------------- | --------- | -------------- | --------------- |
@@ -216,7 +216,20 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontSize    | Customize the font size of the text on the payment button          |
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 
-## 6. Handle Saved Payment Methods
+## 6. Hide Expired Saved Payment Methods
+
+You can hide the **Expired Saved Payment Methods** via passing this following prop:
+
+```javascript
+var paymentElementOptions = {
+ ...,
+ hideExpiredPaymentMethods: true, // default - false
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
+## 7. Handle Saved Payment Methods
 
 ### Screen
 

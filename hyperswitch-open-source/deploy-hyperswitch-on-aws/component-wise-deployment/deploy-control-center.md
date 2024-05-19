@@ -4,7 +4,7 @@ description: >-
   AWS quickly
 ---
 
-# 🎛 Deploy Control Center
+# 🎛️ Deploy Control Center
 
 {% hint style="info" %}
 In this chapter, you will deploy Hyperswitch control center on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
@@ -149,6 +149,6 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aw
 
 ## Next step:
 
-{% content-ref url="../deploy-web-client/" %}
-[deploy-web-client](../deploy-web-client/)
+{% content-ref url="deploy-web-client/" %}
+[deploy-web-client](deploy-web-client/)
 {% endcontent-ref %}

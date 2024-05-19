@@ -44,7 +44,7 @@ The payment flow begins once your user has added products to a shopping cart and
 
 **Step 5:** Upon successful payment, the customer is automatically redirected to your payment status confirmation page.
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 ## Configure and manage payment methods on the Hyperswitch Control Center
 

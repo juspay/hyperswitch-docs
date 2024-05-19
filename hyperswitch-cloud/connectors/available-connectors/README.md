@@ -94,8 +94,8 @@ Here are the available connectors:
 [paypal.md](paypal.md)
 {% endcontent-ref %}
 
-{% content-ref url="payu (1).md" %}
-[payu (1).md](<payu (1).md>)
+{% content-ref url="payu-1.md" %}
+[payu-1.md](payu-1.md)
 {% endcontent-ref %}
 
 {% content-ref url="prophetpay.md" %}
