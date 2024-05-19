@@ -16,7 +16,7 @@ Introducing Payment Links – Seamlessly integrate into Hyperswitch without writ
 * Cross-channel customer reactivation
 * Automated Payment Reminders to automate collections
 * Substitute for Cash-on-delivery and point-of-sale
-* Streamlining  over-the-phone transactions
+* Streamlining over-the-phone transactions
 
 {% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
 API Level Overview of Payment Links with Hyperswitch
@@ -31,7 +31,7 @@ API Level Overview of Payment Links with Hyperswitch
 
 #### Using Payment links
 
->> Note: Domain name might vary based on the testing and production environment.
+> > Note: Domain name might vary based on the testing and production environment.
 
 #### 1. Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payment\_link\_config by passing the below object in the request body
 
@@ -49,9 +49,9 @@ API Level Overview of Payment Links with Hyperswitch
 
 #### 2. [Create a payment link ](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)by using the same payments/create endpoint
 
-\- Set "payment\_link" = "true" to create a payment link with default payment\_link\_configs configs set in business profile update mentioned in Step 1
+\- Set "payment\_link" = "true" to create a payment link with default **payment\_link\_configs** configs set in business profile update mentioned in Step 1
 
-\- You can also pass the  "session\_expiry" field in seconds to indicate the expiry of the payment link. By default it is 900 seconds (15 minutes)
+\- You can also pass the "session\_expiry" field in seconds to indicate the expiry of the payment link. By default it is 900 seconds (15 minutes)
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -72,7 +72,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 #### 3. Customizing a Payment link during creation:
 
-You can also customize a specific payment link by including the payment\_link\_config object while creating a link during [payments/create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
+You can also customize a specific payment link by including the **payment\_link\_config object** while creating a link during [payments/create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
@@ -102,23 +102,23 @@ To enable wallet flows such as Apple Pay or Google Pay for payment links, domain
 
 For getting it configured you can contact us! Once done, we will configure your custom domain and give you a TLS certificate.
 
-After you have setup custom domain in your cloud, you need to get respective google pay, apple pay certificate for your new domain, and register the same in our dashboard.
+After you have setup custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.
 
-5. How to setup custom domain within your cloud
+#### 5. **How to setup custom domain within your cloud**
 
 * Identify your DNS provider
 
 > First, determine which service is handling your DNS records. This will guide you to the correct platform where you can log in and set up the new records.
 
->Your DNS provider may be the same as your domain registrar, but it's possible they are different entities.
+> Your DNS provider may be the same as your domain registrar, but it's possible they are different entities.
 
->If you're unsure about your DNS provider, you can search for your domain's nameservers using the following command, replacing "hyperswitch.com" with your own domain:
+> If you're unsure about your DNS provider, you can search for your domain's nameservers using the following command, replacing "hyperswitch.com" with your own domain:
 
 ```shell
 $ nslookup -querytype=NS hyperswitch.com
 ```
 
->You’ll see a list of nameservers for your domain in the output.
+> You’ll see a list of name servers for your domain in the output.
 
 * Create required DNS records
 
@@ -138,36 +138,24 @@ Step 3: Create CNAME record
 
 Enter the following values and save the new DNS record.
 
->| FIELD | INSTRUCTIONS | DESCRIPTION |
-|----------|----------|----------|
-| Type | Select `CNAME` from the dropdown | What kind of DNS record this is. |
-| Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).|
-| Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
-| TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
-
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
 
 Step 4: Create your TXT record
 
->Navigate to your DNS control panel and proceed to add a new TXT record.
+> Navigate to your DNS control panel and proceed to add a new TXT record.
 
->> This TXT record is essential for domain ownership verification. It's a necessary step to obtain TLS certificates for your domain, ensuring secure payment processing.
+> > This TXT record is essential for domain ownership verification. It's a necessary step to obtain TLS certificates for your domain, ensuring secure payment processing.
 
->Enter these values and save the new DNS record:
+> Enter these values and save the new DNS record:
 
->| FIELD | INSTRUCTIONS | DESCRIPTION |
-|----------|----------|----------|
-| Type | Select `TXT` from the dropdown | What kind of DNS record this is. |
-| Name | If your custom domain is `paymentlink.xyz.com`, enter _acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. |
-| Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification |
-| TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.|
-
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `TXT` from the dropdown | What kind of DNS record this is. | | Name | If your custom domain is `paymentlink.xyz.com`, enter \_acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. | | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.|
 
 Step 5. Verify your CNAME record setup
 
 > After you save your DNS record, verify that it has the correct values.
 
->> Please allow up to 10 minutes for your DNS provider to update its nameservers.
->> Replace "pay.xyz.com" with your custom domain in the command below, and then run it in your terminal:
+> > Please allow up to 10 minutes for your DNS provider to update its name servers. Replace "pay.xyz.com" with your custom domain in the command below, and then run it in your terminal:
+
 ```shell
 $ nslookup -querytype=CNAME paymentlink.xyz.com
 ```
@@ -184,8 +172,7 @@ Step 6. Verify your TXT record
 
 > After you save your DNS record, verify that it has the correct values.
 
->> Please allow up to 10 minutes for your DNS provider to update its nameservers.
->> Replace pay.xyz.com with your custom domain in the following command and run it from your terminal:
+> > Please allow up to 10 minutes for your DNS provider to update its nameservers. Replace pay.xyz.com with your custom domain in the following command and run it from your terminal:
 
 ```shell
 $ nslookup -querytype=TXT _acme-challenge.paymentlink
@@ -209,7 +196,7 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 <summary>Can I create a payment link pointing to my custom domain?</summary>
 
-Yes. Your custom domain can be included in the default payment\_link\_config object as part of the business profile update.&#x20;
+Yes. Your custom domain can be included in the default payment\_link\_config object as part of the business profile update.
 
 This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
 
@@ -243,6 +230,6 @@ The payment link is valid for 15-minutes by default. However you can increase th
 
 <summary>How can I send Payment links via Emails?</summary>
 
-Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to  have a mail server integration at your end and ingest the payment links to the emails being sent
+Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
 
 </details>
