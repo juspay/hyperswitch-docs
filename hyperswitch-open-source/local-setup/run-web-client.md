@@ -5,7 +5,7 @@ description: Run the checkout page locally
 # 💻 Run web client
 
 {% hint style="info" %}
-\`\`\`In this section, you will run the Hyperswitch web client SDK on your machine
+In this section, you will run the Hyperswitch web client SDK on your machine
 {% endhint %}
 
 Accept payments from around the globe with a secure, Unified Checkout that gives your customers the best in class payment experience
