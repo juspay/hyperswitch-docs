@@ -4,7 +4,7 @@ description: A brief summary of PCI compliance for Hyperswitch Cloud users
 
 # 💳 PCI Compliance
 
-Hyperswitch Cloud offers out-of-the-box PCI compliance, so that you do not have to worry about securing and storing customers's cards.
+Hyperswitch Cloud offers **out-of-the-box PCI compliance**, so that you do not have to worry about securing and storing customers's cards.
 
 ## PCI DSS Level 1 compliance <a href="#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715" id="docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715"></a>
 
