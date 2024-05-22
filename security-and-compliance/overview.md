@@ -8,7 +8,7 @@ description: >-
 
 ## Data center locations <a href="#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715" id="docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715"></a>
 
-Hyperswitch Cloud is hosted on the AWS platform and served out of the US (N.Virginia region) by default. Hyperswitch is listed partner on [AWS Partner Network](https://partners.amazonaws.com/partners/0018W00001wtpU1QAI/Juspay#solutions--tech-product).
+Hyperswitch Cloud is hosted on the AWS platform and served out of the **US (N.Virginia region)** by default. Hyperswitch is listed partner on [AWS Partner Network](https://partners.amazonaws.com/partners/0018W00001wtpU1QAI/Juspay#solutions--tech-product).
 
 We support deployments in more geographies for merchants who wish to restrict data transfer across geographies. Each deployment is supported with at least two redundant Availability Zones for ensuring reliability.
 
