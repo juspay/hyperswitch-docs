@@ -15,7 +15,7 @@ Let's hit the ground running – within five minutes, you’ll see a complete en
 If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
 
 ```
-git clone https://github.com/juspay/hyperswitch
+git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
 ```
 
 Once the repository is cloned, switch to the project directory.
