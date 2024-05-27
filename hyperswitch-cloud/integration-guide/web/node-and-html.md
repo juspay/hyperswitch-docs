@@ -54,6 +54,10 @@ app.post("/create-payment", async (req, res) => {
 });
 ```
 
+{% hint style="info" %}
+In case your integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
+{% endhint %}
+
 ## 2. Build checkout page on the client
 
 ### 2.1 Load HyperLoader
@@ -95,6 +99,8 @@ Immediately make a request to the endpoint on your server to create a new Paymen
 
 > Important: Make sure to never share your API key with your client application as this could potentially compromise your payment flow
 
+{% tabs %}
+{% tab title="UnifiedCheckout" %}
 Following this, create a `unifiedCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe with a dynamic form that displays configured payment method types available from the `Payment`, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
 ```js
@@ -126,10 +132,49 @@ async function initialize() {
   unifiedCheckout.mount("#unified-checkout");
 }
 ```
+{% endtab %}
+
+{% tab title="ExpressCheckout" %}
+The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
+
+Create an `expressCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe that displays configured payment method types supported by the browser available for the payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details (including shipping details) for the selected payment method type.
+
+```js
+<script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>;
+// Fetches a payment intent and captures the client secret
+async function initialize() {
+  const response = await fetch("/create-payment", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
+  });
+  const { clientSecret } = await response.json();
+
+  const appearance = {
+    theme: "midnight",
+  };
+
+  widgets = hyper.widgets({ appearance, clientSecret });
+
+  const expressCheckoutOptions = {
+    wallets: {
+      walletReturnUrl: "https://example.com/complete",
+      //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+    },
+  };
+
+  const expressCheckout = widgets.create("expressCheckout", expressCheckoutOptions);
+  expressCheckout.mount("#express-checkout");
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ## 3. Complete payment on the client
 
 ### 3.1 Handle the submit event and complete the payment
+
+> Note: This step is only required for Unified Checkout
 
 Listen to the form’s submit event to know when to confirm the payment through the hyper API.
 

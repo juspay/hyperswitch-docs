@@ -54,6 +54,10 @@ app.post("/create-payment", async (req, res) => {
 });
 ```
 
+{% hint style="info" %}
+In case your integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
+{% endhint %}
+
 ### 2. Build checkout page on the client
 
 #### 2.1 Install the `hyper-js` and `react-hyper-js` libraries
@@ -134,9 +138,11 @@ const widgets = useWidgets();
 
 ### 3. Complete the checkout on the client
 
+{% tabs %}
+{% tab title="UnifiedCheckout" %}
 #### 3.1 Add the UnifiedCheckout
 
-Add the `UnifiedCheckout` to your Checkout. This embeds an iframe with a dynamic form that displays configured payment method types available from the Payment, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
+Add the `UnifiedCheckout` to your Checkout. This embeds an iframe with a dynamic form that displays configured payment method types available for the Payment, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
 (Optional) Define paymentElementOptions:
 
@@ -223,6 +229,31 @@ var unifiedCheckoutOptions = {
 For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
 
 </details>
+{% endtab %}
+
+{% tab title="ExpressCheckout" %}
+The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
+
+#### 3.1 Add the ExpressCheckout
+
+Add the `ExpressCheckout` to your Checkout.  This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
+
+Define paymentElementOptions:
+
+```js
+var expressCheckoutOptions = {
+  wallets: {
+    walletReturnUrl: "https://example.com/complete",
+    //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+  },
+};
+```
+
+```js
+<ExpressCheckoutElement id="express-checkout" options={expressCheckoutOptions} />
+```
+{% endtab %}
+{% endtabs %}
 
 #### 3.3 Display payment status message
 
