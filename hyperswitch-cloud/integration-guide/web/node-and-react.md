@@ -5,10 +5,10 @@ description: Integrate hyper SDK to your React Web App using Hyperswitch-node
 # Node And React
 
 {% hint style="info" %}
-In this section, you will get details to Integrate Unified Checkout using Node Backend and React Frontend
+In this section, you will get details to Integrate Hyperswitch SDK using Node Backend and React Frontend
 {% endhint %}
 
-**Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyper` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
+**Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
 
@@ -140,7 +140,9 @@ const widgets = useWidgets();
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-#### 3.1 Add the UnifiedCheckout
+#### 3.1.A Add the UnifiedCheckout
+
+<figure><img src="../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
 
 Add the `UnifiedCheckout` to your Checkout. This embeds an iframe with a dynamic form that displays configured payment method types available for the Payment, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
@@ -159,7 +161,7 @@ var unifiedCheckoutOptions = {
 <UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
 ```
 
-#### 3.2 Complete the payment and handle errors
+#### 3.1.B Complete the payment and handle errors
 
 Call `confirmPayment()`, passing along the `UnifiedCheckout` and a return\_url to indicate where `hyper` should redirect the user after they complete the payment. For payments that require additional authentication, `hyper` redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the return\_url.
 
@@ -232,9 +234,11 @@ For customization, please follow the [`Customization docs`](https://docs.hypersw
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
-
 #### 3.1 Add the ExpressCheckout
+
+<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+
+> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
 Add the `ExpressCheckout` to your Checkout.  This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
 
@@ -255,7 +259,7 @@ var expressCheckoutOptions = {
 {% endtab %}
 {% endtabs %}
 
-#### 3.3 Display payment status message
+#### 3.2 Display payment status message
 
 When Hyperswitch redirects the customer to the `return_url`, the `payment_client_secret` query parameter is appended by hyper-js. Use this to retrieve the Payment to determine what to show to your customer.
 
@@ -363,7 +367,7 @@ Callback for these event will be triggered with following event object.
 }
 ```
 
-Congratulations! Now that you have integrated the  unified checkout on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
 
 ## Next step:
 
