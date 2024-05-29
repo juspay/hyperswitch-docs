@@ -34,6 +34,6 @@ Follow the [setup guide](setup-guide.md) to configure the 3DS Decision Manager
 
 To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../../../hyperswitch-open-source/testing/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/testing/test-a-payment.md)
+{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
+[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
 {% endcontent-ref %}

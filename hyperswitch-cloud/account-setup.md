@@ -84,4 +84,4 @@ Currently, you can configure two types of routing with more on the way:
 [integration-guide](integration-guide/)
 {% endcontent-ref %}
 
-You can also refer to the [Smart Router](../features/merchant-controls/smart-router/) section to learn more about how you can route your payments and then later you can [Test a Payment](../hyperswitch-open-source/testing/test-a-payment.md).
+You can also refer to the [Smart Router](../features/merchant-controls/smart-router/) section to learn more about how you can route your payments and then later you can [Test a Payment](../hyperswitch-open-source/account-setup/test-a-payment.md).

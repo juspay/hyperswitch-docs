@@ -17,10 +17,7 @@
 ## Hyperswitch open source
 
 * [🛠️ Overview](hyperswitch-open-source/overview.md)
-* [💻 Local setup](hyperswitch-open-source/local-setup/README.md)
-  * [🐳 Run app server](hyperswitch-open-source/local-setup/run-app-server.md)
-  * [💻 Run web client](hyperswitch-open-source/local-setup/run-web-client.md)
-  * [🔌 Run control center](hyperswitch-open-source/local-setup/run-control-center.md)
+* [💻 Local Setup](hyperswitch-open-source/run-app-server.md)
 * [☁️ Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
   * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
@@ -36,10 +33,10 @@
 * [☸️ Deploy Hyperswitch on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm.md)
 * [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
   * [🎛️ Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
+  * [💵 Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
   * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [⚒️ Troubleshooting](hyperswitch-open-source/troubleshooting.md)
 * [🧪 Testing](hyperswitch-open-source/testing/README.md)
-  * [💵 Test a payment](hyperswitch-open-source/testing/test-a-payment.md)
   * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
 * [🚀 Going live](hyperswitch-open-source/going-live/README.md)
   * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)

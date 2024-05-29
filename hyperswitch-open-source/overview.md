@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# 🛠 Overview
+# 🛠️ Overview
 
 {% hint style="info" %}
 After going through this guide, you should be able to:
@@ -34,10 +34,10 @@ This guide is designed for people with some coding experience, who want learn ab
 * Web Client (SDK) - An inclusive, consistent and blended payment experience optimized for the best payment conversions
 * Control center - A dashboard for payment analytics and operations, managing payment processors or payment methods and configuring payment routing rules
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Run Hyperswitch locally</strong></td><td>Run the app server, control center and web client locallhy on your machine</td><td></td><td><a href="local-setup/">local-setup</a></td><td><a href="../.gitbook/assets/Payment flow (2).png">Payment flow (2).png</a></td></tr><tr><td><strong>Deploy Hyperswitch on AWS</strong></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Run Hyperswitch locally</strong></td><td>Run the app server, control center and web client locallhy on your machine</td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Payment flow (2) (1).png">Payment flow (2) (1).png</a></td></tr><tr><td><strong>Deploy Hyperswitch on AWS</strong></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/aws.jpg">aws.jpg</a></td></tr></tbody></table>
 
 ## **Running Payments yourself**
 
 Hyperswitch allows you to deploy and run your own payments stack. We offer support in terms answering queries, maintenance and feature enhancements.
 
-Within 15-minutes, you should be able to deploye Hyperswitch in your local machine and can run payments through any payment provider of your choice. You'll be equipped to run payments for your own pet project, or a D2C website, or as an internship project, or just to learn Payments.
+Within 15-minutes, you should be able to deploy Hyperswitch in your local machine and can run payments through any payment provider of your choice. You'll be equipped to run payments for your own pet project, or a D2C website, or as an internship project, or just to learn Payments.
