@@ -14,6 +14,16 @@ In the following MIT payments basis the enablement of the feature and the availa
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-02-01 at 3.58.28 AM.png" alt=""><figcaption><p>MIT payment flow</p></figcaption></figure>
 
+## Supported Payment processors
+
+Hyperswitch supports the following processors for PG Agnostic Recurring Payments.
+
+* Stripe
+* Adyen
+* Cybersource
+
+In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
+
 ### How to enable PG agnostic MITs?
 
 To start routing MIT payments across all supported connectors in addition to the connector through which the recurring payment was set up, use the below API to enable it for a business profile
@@ -34,7 +44,7 @@ All the payment methods saved with `setup_future_usage : off_session` after enab
 
 #### 1. How can I set up connector preferences for the MIT payments?
 
-You can use the payments routing module in the Hyperswitch Control Center to set up volume and rule based routing algorithm. As of now there is no specific keys to set rules only for MIT payments (We will setup&#x20;
+You can use the payments routing module in the Hyperswitch Control Center to set up volume and rule based routing algorithm. As of now there is no specific keys to set rules only for MIT payments.
 
 #### 2. How are authentication rates affected in PG agnostic MITs?
 
