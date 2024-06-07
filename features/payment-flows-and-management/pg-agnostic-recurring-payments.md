@@ -56,6 +56,8 @@ Then, you can configure the rule as shown below using the metadata field in the 
 
 <figure><img src="../../.gitbook/assets/Routing rule for pg agnostic recurring payments.png" alt=""></figure>
 
+This rule would be used in conjunction with the other active routing rules that you have configured.
+
 Once the rule is configured, you would need to send the following metadata as per the payment request:
 
 -> Metadata to be sent in CITs
