@@ -63,7 +63,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟧 🚛 Vaulting payment methods in non-payment flows
-* 🟥 Support business continuity for MIT payment through PSP tokens
+*   🟥 ~~Support business continuity for MIT payment through PSP tokens~~&#x20;
+
+    (Will be facilitated by custom migration APIs)
 * 🟥 Card vaulting enhancements - support nickname updation
 * 🟧 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay
 * 🟥 New connector and payment method Integrations
@@ -88,7 +90,7 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 ### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟥 Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre
+* 🟥 ~~Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre~~
 * 🟧 Hyperswitch Headless SDK methods to support payment account management experience for users - this will allow customers to add, update, edit and delete payment methods
 * 🟥 Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
 
