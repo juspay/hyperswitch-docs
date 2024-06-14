@@ -215,6 +215,7 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextColor       | Define the color of the text displayed on the payment button       |
 | buttonTextFontSize    | Customize the font size of the text on the payment button          |
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
+| buttonBorderWidth     | Specify the border width of the button                             |
 
 ## 6. Hide Expired Saved Payment Methods
 
