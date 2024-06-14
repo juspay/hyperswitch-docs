@@ -2,10 +2,10 @@
 description: >-
   Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your payments experience.
+  flexibility to customize your checkout UI.
 ---
 
-# Headless
+# Headless SDK
 
 {% hint style="info" %}
 This section guides you through the integration of Hyperswitch Headless for both web and mobile clients
@@ -15,7 +15,7 @@ This section guides you through the integration of Hyperswitch Headless for both
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize `Hyper` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` which you can call to create a Headless Payment Session. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 {% tabs %}
 {% tab title="HTML + JavaScript" %}
@@ -30,6 +30,20 @@ Initialize `Hyper` onto your app with your publishable key with the `Hyper` cons
 // run the following command to fetch and install the dependencies flutter pub get
 import 'package:flutter_hyperswitch/flutter_hyperswitch.dart';
 _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY'));
+```
+{% endtab %}
+
+{% tab title="React Native (Beta)" %}
+```javascript
+import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";
+
+function App() {
+  return (
+    <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY">
+      // Your app code here
+    </HyperProvider>
+  );
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -59,6 +73,27 @@ paymentSession = hyper.initPaymentSession({
 ```dart
 final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET')
 Session _sessionId = await hyper.initPaymentSession(params);
+```
+{% endtab %}
+
+{% tab title="React Native  (Beta)" %}
+```javascript
+import { useHyper } from "@juspay-tech/react-native-hyperswitch";
+
+const { initPaymentSession } = useHyper();
+const [paymentSession,setPaymentSession]=React.useState(null);
+const initializeHeadless = async () => {
+
+  const { clientSecret } = await fetchPaymentParams();
+  const params={clientSecret:clientSecret}
+  const paymentSession = await initPaymentSession(params);
+  setPaymentSession(_=>paymentSession)
+};
+
+useEffect(() => {
+  initializeHeadless();
+}, []);
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -165,11 +200,46 @@ Future<void> _confirmPayment() async {
 }
 ```
 {% endtab %}
+
+{% tab title="React Native  (Beta)" %}
+```javascript
+import { useHyper } from "@juspay-tech/react-native-hyperswitch";
+
+const { getCustomerSavedPaymentMethods,
+        getCustomerDefaultSavedPaymentMethodData,
+        confirmWithCustomerDefaultPaymentMethod } = useHyper();
+
+const [defaultPaymentMethodData,setDefaultPaymentMethodData]=React.useState(null)
+
+React.useEffect(()=>{
+    const getPaymentMethods=async()=>{
+    const paymentMethodSession = await getCustomerSavedPaymentMethods(paymentSession);
+    const customer_default_saved_payment_method_data = await getCustomerDefaultSavedPaymentMethodData(paymentMethodSession);
+    setDefaultPaymentMethodData(_=>customer_default_saved_payment_method_data)
+    }
+    getPaymentMethods()
+},[])
+
+let confirmDefaultPaymentMethod=()=>{
+const status = await confirmWithCustomerDefaultPaymentMethod(paymentMethodSession);
+// handle status of payment   
+ if (status != null) {
+    const message = status.message;
+    console.log(message)
+    }
+}
+
+return(
+//build the ui using defaultPaymentMethodData
+//on click of pay use confirmDefaultPaymentMethod()
+)
+```
+{% endtab %}
 {% endtabs %}
 
 &#x20;**Payload for** `confirmWithCustomerDefaultPaymentMethod(payload)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><strong>(web only)</strong> <strong>Can be either 'always' or 'if_required'</strong> By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</td></tr></tbody></table>
+<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>(web only)</strong> <strong>Can be either 'always' or 'if_required'</strong> </p><p>By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
 
 **ConfirmParams object**
 

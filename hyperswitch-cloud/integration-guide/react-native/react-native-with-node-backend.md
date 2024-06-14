@@ -2,7 +2,13 @@
 description: Integrate hyper SDK to your React Native App using hyperswitch-node
 ---
 
-# React Native with Node Backend
+# React Native with Node Backend (Beta)
+
+
+
+{% hint style="info" %}
+Currently in beta please contact to get early access
+{% endhint %}
 
 {% hint style="info" %}
 Use this guide to integrate `hyper` SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
@@ -71,7 +77,7 @@ app.post("/create-payment", async (req, res) => {
 Install the packages and import it into your code
 
 ```js
-$ npm install @juspay-tech/react-native-hyperswitch
+$ npm install @juspay-tech/hyperswitch-sdk-react-native
 
 ```
 
@@ -84,10 +90,7 @@ yarn add react-native-code-push
 yarn add react-native-gesture-handler
 yarn add react-native-inappbrowser-reborn
 yarn add react-native-klarna-inapp-sdk
-yarn add react-native-pager-view
-yarn add react-native-reanimated
 yarn add react-native-safe-area-context
-yarn add react-native-screens
 yarn add react-native-svg
 yarn add @sentry/react-native
 
@@ -177,8 +180,8 @@ const fetchPaymentParams = async () => {
 Call initPaymentSheet from the useHyper hook to customise paymentsheet, billing or shipping addresses and initialize paymentsheet
 
 ```js
-const { initPaymentSheet, presentPaymentSheet } = useHyper();
-
+const { initPaymentSession, presentPaymentSheet } = useHyper();
+const [paymentSession,setPaymentSession]=React.useState(null);
 const initializePaymentSheet = async () => {
   const { clientSecret } = await fetchPaymentParams();
 
@@ -189,12 +192,13 @@ const initializePaymentSheet = async () => {
       },
     },
   };
-
-  const { error } = await initPaymentSheet({
-    merchantDisplayName: "Example, Inc.",
-    paymentIntentClientSecret: clientSecret,
-    appearance: customAppearance,
-  });
+  const params={
+      merchantDisplayName: "Example, Inc.",
+      clientSecret: clientSecret,
+      appearance: customAppearance,
+  }
+  const paymentSession = await initPaymentSession(params);
+  setPaymentSession(_=>paymentSession)
 };
 
 useEffect(() => {
@@ -208,9 +212,9 @@ To display the Payment Sheet, integrate a "Pay Now" button within the checkout p
 
 ```js
 const openPaymentSheet = async () => {
-  const res = await presentPaymentSheet();
-  console.log("presentPaymentSheet response: ", res);
-  const { error, paymentOption } = res;
+  const status = await presentPaymentSheet(paymentSession);
+  console.log("presentPaymentSheet response: ", status);
+  const { error, paymentOption } = status;
   if (error) {
     switch (error.code) {
       case "cancelled":
