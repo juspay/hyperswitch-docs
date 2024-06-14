@@ -4,8 +4,6 @@ description: Integrate hyper SDK to your React Native App using hyperswitch-node
 
 # React Native with Node Backend (Beta)
 
-
-
 {% hint style="info" %}
 Currently in beta please contact to get early access
 {% endhint %}
@@ -177,7 +175,7 @@ const fetchPaymentParams = async () => {
 
 ### 3.3 Collect Payment details
 
-Call initPaymentSheet from the useHyper hook to customise paymentsheet, billing or shipping addresses and initialize paymentsheet
+Call initPaymentSession from the useHyper hook to customise paymentsheet, billing or shipping addresses and initialize paymentsheet
 
 ```js
 const { initPaymentSession, presentPaymentSheet } = useHyper();
@@ -253,4 +251,4 @@ return (
 );
 ```
 
-Congratulations! Now that you have integrated the Android SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the payment sheet&#x20;
