@@ -245,6 +245,19 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
+## 8. Hide Card Nickname Field
+
+You can **hide** the **Card Nickname Field** by passing the following prop:
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  hideCardNicknameField: true, // default - false
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
 ### Checkbox
 
 You can stop your users from saving their payment methods using the following prop:
