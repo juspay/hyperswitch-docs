@@ -4,7 +4,7 @@ description: Low-code solution to accept payouts
 
 # 🔗 Payout links
 
-Introducing Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer/vendor/ partner experience by making instant payouts in their preferred mode of transaction with preferred processor.
+Introducing Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer / vendor / partner's experience by making instant payouts in their preferred mode of transaction with preferred processor.
 
 ### Use cases for Payout links
 
@@ -21,7 +21,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 #### Prerequisites
 
 - Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../account-management/multiple-accounts-and-profiles.md))
-- Add a payout processor to you account
+- Add a payout processor to your account
 
 #### Using Payout links
 
@@ -34,16 +34,16 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 ```
 “payout_link_config” : {
    “theme”: Option<String> // Custom theme color for your payout link, Can be any html color hex code Eg. #143F1E
-   “logo”: Option<String> // Custom logo for your company; Can be any hosted image url Eg. “https://i.pinimg.com/736x/4d/83/5c/4d835ca8aafbbb15f84d07d926fda473.jpg”,
+   “logo”: Option<String> // Custom logo for your company; Can be any hosted image url Eg. “https://hyperswitch.io/favicon.ico”,
    “merchant_name”: Option<String> // Name of your company;Eg: Shoekraft
 }
 ```
 
 {% endcode %}
 
-#### 2. [Create a payout link ](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)by using the same payouts/create endpoint
+#### 2. [Create a payout link ](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)by using the create payouts endpoint
 
-\- Set "payout_link" = "true" to create a payout link with default **payout_link_configs** configs set in business profile update mentioned in Step 1
+\- Set "payout_link" = "true" to create a payout link with default **payout_link_config** set in business profile update mentioned in Step 1
 
 \- You can also pass the "session_expiry" field in seconds to indicate the expiry of the payout link. By default it is 900 seconds (15 minutes)
 
@@ -85,7 +85,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 #### 3. Customizing a payout link during creation:
 
-You can also customize a specific payout link by including the **payout_link_config object** while creating a link during [payouts/create](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) call as well. Except for domain_name field from the same object in business_profile/update, you could customize the remaining fields.
+You can also customize a specific payout link by including the **payout_link_config** object while creating a link during [payouts/create](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) call as well. The UI is customizable during link creation. However, domain_name cannot be customized and is always read from a business profile's config.
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
@@ -152,7 +152,7 @@ Payout links simplify the process of sending money, eliminating the operational 
 
 <summary>How long is the Payout link valid for?</summary>
 
-The payout link is valid for 15-minutes by default. However you can increase the validity to upto 3-months (7890000) by passing the time in seconds in`session expiry` in the create payout link call
+The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session expiry` in the create payout link call
 
 </details>
 
