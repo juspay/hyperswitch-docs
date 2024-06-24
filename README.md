@@ -1,26 +1,12 @@
----
-description: The complete guide to setting up and managing your own payments switch
-cover: .gitbook/assets/Frame.png
-coverY: -1.5791666666666666
-layout:
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
+<p align="center">
+  <img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-logo-dark.svg#gh-dark-mode-only" alt="Hyperswitch-Logo" width="40%" />
+  <img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-logo-light.svg#gh-light-mode-only" alt="Hyperswitch-Logo" width="40%" />
+</p>
 
-# 👋 Hello world
+<h1 align="center">The open-source payments switch</h1>
 
-{% embed url="https://www.youtube.com/watch?v=p6vqGHsoc0s" %}
+[![](https://img.youtube.com/vi/p6vqGHsoc0s/maxresdefault.jpg)](https://www.youtube.com/watch?v=p6vqGHsoc0s)
+
 
 ## Hyperswitch and the payments ecosystem
 
@@ -51,12 +37,10 @@ These problems can only be solved by open systems and this is what Hyperswitch i
 
 ## What to expect
 
-{% hint style="success" %}
 **Do you prefer a Fully Managed Solution ?**\
 We also offer a Hyperswitch Cloud Hosted solution which comes with out-of-the-box PCI compliance and carries the all features as the open source offering.\
 \
 [Click here](https://opensource.hyperswitch.io/hyperswitch-cloud/quickstart) to get started quickly.
-{% endhint %}
 
 <details>
 
