@@ -62,15 +62,19 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟧 🚛 Vaulting payment methods in non-payment flows
+* 🟩 Vaulting payment methods in non-payment flows
 *   🟥 ~~Support business continuity for MIT payment through PSP tokens~~&#x20;
 
-    (Will be facilitated by custom migration APIs)
-* 🟥 Card vaulting enhancements - support nickname updation
-* 🟧 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay
-* 🟥 New connector and payment method Integrations
-  * [Planet.com](http://planet.com) for card payments
-  * Netcetera for 3DS service
+    (Will be supported with custom migration APIs)
+* 🟩 Card vaulting enhancements - support nickname updation
+* 🟩 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay&#x20;
+* New connector and payment method Integrations
+  * 🟧 Datatrans ([Planet.com](http://planet.com)) for card payments&#x20;
+  * 🟩 Netcetera for 3DS service&#x20;
+  * 🟩 3DSecure.io for 3DS service&#x20;
+  * 🟩 ZSL for bank transfer payments
+  * 🟩 Mifinity for wallet payments&#x20;
+  * 🟩 Payone for payouts
 
 _(list of connectors will keep expanding as we receive more requests from the community!!! )_
 
@@ -78,21 +82,22 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 * 🟧 🚛 Code restructuring for enhancing readability, reducing compile & build times
 * 🟧 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we undertook the certification starting Feb 2024 to further augment our security standards. _Expected closure by June 2024_
-* 🟥 Open sourcing the Native Unified Checkout SDK (Android and iOS)
+* 🟩 Upgraded to PCI DSS 4.0 certification
+* 🟩 Open sourcing the Native Unified Checkout SDK (Android and iOS)
 
 ### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
-* 🟧 🚛 Enable scanning of cards to reduce manual entry of card details by the customer
-* 🟧 Native 3DS on Android and iOS apps
-* 🚛 🟥 Paypal Vault flows for improving repeat user payment experience
-* 🟥 Customer initiated payment retries on Hyperswitch Unified Checkout
-* 🟥 Account verification for bank payment methods like ACH and SEPA
+* 🟩 🚛 Enable scanning of cards to reduce manual entry of card details by the customer
+* 🟩 Native 3DS on Android and iOS apps
+* 🚛 🟧 Paypal Vault flows for improving repeat user payment experience&#x20;
+* 🟧 Customer initiated payment retries on Hyperswitch Unified Checkout
+* 🟧 💪 Account verification for bank payment methods like ACH and SEPA
 
 ### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟥 ~~Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre~~
 * 🟧 Hyperswitch Headless SDK methods to support payment account management experience for users - this will allow customers to add, update, edit and delete payment methods
-* 🟥 Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
+* 🟧  Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
 
 ### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
