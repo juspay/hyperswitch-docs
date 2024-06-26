@@ -16,19 +16,20 @@ Effortlessly facilitate swift payouts to your global network of sellers, merchan
 
 A way of paying out third parties combined with Hyperswitch's payments processing
 
-*   **Supercharge Conversions**
+- **Supercharge Conversions**
 
-    * Effortlessly send funds to bank accounts or cards using your preferred method
-    * Boost success with smart retries.
+  - Effortlessly send funds to bank accounts or cards using your preferred method
+  - Boost success with smart retries.
 
-    _Hyperswitch currently supports Adyen and Wise_
-* **Simplify Operations**
-  * All-in-One View: Monitor all payouts across partners in a single dashboard view
-  * Bulk Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
-  * Recurring Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Set up scheduled fixed-value payouts.
-* **Stay Secure**
-  * Secure Card Handling: PCI-compliant methods to accept, authenticate, and safely store card details. Plus, independent tokenization, irrespective of your payment processor.
-  * Tokenize Bank Details (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Checkout page to accept and verify bank account verification for Stripe, along with processor-agnostic tokenization of bank details.
+  _Hyperswitch currently supports Adyen and Wise_
+
+- **Simplify Operations**
+  - All-in-One View: Monitor all payouts across partners in a single dashboard view
+  - Bulk Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
+  - Recurring Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Set up scheduled fixed-value payouts.
+- **Stay Secure**
+  - Secure Card Handling: PCI-compliant methods to accept, authenticate, and safely store card details. Plus, independent tokenization, irrespective of your payment processor.
+  - Tokenize Bank Details (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Checkout page to accept and verify bank account verification for Stripe, along with processor-agnostic tokenization of bank details.
 
 ## Supported Processors and Payment Methods
 
@@ -48,10 +49,9 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 **Payouts for Stripe Connect users (submit a feature request** [**here**](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)**)**
 
-* Business continuity with compatibility ensured for your Stripe connect onboarded sellers, merchants and service providers.
+- Business continuity with compatibility ensured for your Stripe connect onboarded sellers, merchants and service providers.
 
 ## FAQs?
 
-* **Can I use Hyperswitch solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
-* **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Hyperswitch. (We tokenize only when the user permits us to save their card/bank info)
-
+- **Can I use Hyperswitch solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
+- **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Hyperswitch. (We tokenize only when the user permits us to save their card/bank info)

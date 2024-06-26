@@ -27,27 +27,27 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 > Note: Domain name might vary based on the testing and production environment.
 
-#### 1. Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payout_link_config by passing the below object in the request body
+#### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout_link_config by passing the below object in the request body
 
 {% code fullWidth="true" %}
 
-```
-“payout_link_config” : {
-   “theme”: Option<String> // Custom theme color for your payout link, Can be any html color hex code Eg. #143F1E
-   “logo”: Option<String> // Custom logo for your company; Can be any hosted image url Eg. “https://hyperswitch.io/favicon.ico”,
-   “merchant_name”: Option<String> // Name of your company;Eg: Shoekraft
+```jsonc
+"payout_link_config": {
+   "theme": "#143F1E", // Custom theme color for your payout link. Can be any html color hex code. Optional.
+   "logo": "https://hyperswitch.io/favicon.ico", // Custom logo for your company. Can be any hosted image URL. Optional.
+   "merchant_name": "Shoekraft", // Name of your company. Optional.
 }
 ```
 
 {% endcode %}
 
-#### 2. [Create a payout link ](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)by using the create payouts endpoint
+#### 2. [Create a payout link](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) by using the create payouts endpoint
 
 \- Set "payout_link" = "true" to create a payout link with default **payout_link_config** set in business profile update mentioned in Step 1
 
 \- You can also pass the "session_expiry" field in seconds to indicate the expiry of the payout link. By default it is 900 seconds (15 minutes)
 
-```
+```shell
 curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -146,13 +146,11 @@ This involves adding CNAME records and TLS certificates which ends up being a sl
 Payout links simplify the process of sending money, eliminating the operational complexities of bank transfers or payouts. With just a few clicks, you can create a payout link. Once generated, we notify the recipient, who can redeem the money at their convenience.
 </details>
 
-</details>
-
 <details>
 
 <summary>How long is the Payout link valid for?</summary>
 
-The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session expiry` in the create payout link call
+The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call
 
 </details>
 
