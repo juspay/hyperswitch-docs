@@ -9,7 +9,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 ### Use cases for Payout links
 
 - Corporates - Pay marketing affiliates and reimburse employees.
-- BFSI - Settle insurance claims and pay DSA incentives.
+- BFSI (Banking, Financial Services, and Insurance) - Settling insurance claims and paying DSA (Direct Selling Agents) incentives.
 - Healthcare - Pay field agents, handle reimbursements, and issue refunds.
 - Travel and Hospitality - Pay commissions to vendors, handle reimbursements and do refunds.
 - Rental Business - Process Security Deposit Refunds for all rental business like car, housing, furniture and appliances.
@@ -73,7 +73,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
             "last_name": "Doe"
         },
         "phone": {
-            "number": "8056594427",
+            "number": "9000000001",
             "country_code": "+91"
         }
     },
@@ -112,7 +112,7 @@ You can also customize a specific payout link by including the **payout_link_con
             "last_name": "Doe"
         },
         "phone": {
-            "number": "8056594427",
+            "number": "9000000001",
             "country_code": "+91"
         }
     },
@@ -126,8 +126,6 @@ You can also customize a specific payout link by including the **payout_link_con
     }
 }'
 </code></pre>
-
-<figure><img src="../../../.gitbook/assets/payout_links.png" alt=""><figcaption></figcaption></figure>
 
 ### FAQ
 
