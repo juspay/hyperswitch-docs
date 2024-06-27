@@ -33,9 +33,16 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 ```jsonc
 "payout_link_config": {
-   "theme": "#143F1E", // Custom theme color for your payout link. Can be any html color hex code. Optional.
-   "logo": "https://hyperswitch.io/favicon.ico", // Custom logo for your company. Can be any hosted image URL. Optional.
-   "merchant_name": "Shoekraft", // Name of your company. Optional.
+  // Custom theme color for your payout link.
+  // Can be any html color hex code. Optional.
+  "theme": "#143F1E",
+
+  // Custom logo for your company.
+  // Can be any hosted image URL. Optional.
+  "logo": "https://hyperswitch.io/favicon.ico",
+
+  // Name of your company. Optional.
+  "merchant_name": "Shoekraft"
 }
 ```
 
