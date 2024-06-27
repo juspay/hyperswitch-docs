@@ -1,10 +1,10 @@
 ---
 description: >-
   This guide will walk you through the process of setting up and running the app
-  server and control center on your local machine using Docker
+  server and control center on your local machine using Docker.
 ---
 
-# 💻 Local Setup
+# 🪢 Unified Local Setup using Docker
 
 {% hint style="info" %}
 Let's hit the ground running – within five minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
@@ -48,6 +48,6 @@ If you're **looking to Contribute to Hyperswitch**, try [setting up a **developm
 
 ## Next step:
 
-{% content-ref url="account-setup/" %}
-[account-setup](account-setup/)
+{% content-ref url="../account-setup/" %}
+[account-setup](../account-setup/)
 {% endcontent-ref %}

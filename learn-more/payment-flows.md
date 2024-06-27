@@ -8,6 +8,10 @@ description: Understand the flow of a transaction through Hyperswitch
 This chapter will cover the payment flows available with Hyperswitch. Please reach out to us to learn more about the payment flows supported!
 {% endhint %}
 
+## [Payments 101](https://hyperswitch.io/blogs/payments-101-for-a-developer)
+
+If you're complete beginner to Digital Payments, take a look at this [Payments 101 ](https://hyperswitch.io/blogs/payments-101-for-a-developer)blog to get familiar with terminologies.&#x20;
+
 ## **Payments flow**
 
 There are multiple stages in a Payment flow depending on the payment methods that are involved. Considering an one-time payment method where there was no redirection involved, the following stages form the Payment flow:
