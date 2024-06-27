@@ -29,7 +29,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 #### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout_link_config by passing the below object in the request body
 
-{% code fullWidth="true" %}
+{% code %}
 
 ```jsonc
 "payout_link_config": {
