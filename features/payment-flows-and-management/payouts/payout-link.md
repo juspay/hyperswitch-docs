@@ -58,6 +58,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "customer_id": "cus_123",
     "name": "John Doe",
     "phone": "999999999",
+    "email": "payout_customer@example.com",
     "phone_country_code": "+65",
     "description": "Its my first payout request",
     "billing": {
@@ -135,7 +136,7 @@ You can also customize a specific payout link by including the **payout_link_con
 
 Yes. Your custom domain can be included in the default payout_link_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
+This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2awm23agh-p_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
 
 </details>
 
@@ -148,7 +149,7 @@ Payout links simplify the process of sending money, eliminating the operational 
 
 <summary>How long is the Payout link valid for?</summary>
 
-The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call
+The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call.
 
 </details>
 
@@ -156,6 +157,6 @@ The payout link is valid for 15 minutes by default. However you can increase the
 
 <summary>How can I send Payout links via Emails?</summary>
 
-Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent
+Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
 
 </details>
