@@ -17,7 +17,9 @@
 ## Hyperswitch open source
 
 * [🛠️ Overview](hyperswitch-open-source/overview.md)
-* [💻 Local Setup](hyperswitch-open-source/run-app-server.md)
+* [💻 Local Setup Guide](hyperswitch-open-source/local-setup-guide/README.md)
+  * [🪢 Unified Local Setup using Docker](hyperswitch-open-source/local-setup-guide/unified-local-setup-using-docker.md)
+  * [🔢 Local Setup using Individual Components](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components.md)
 * [☁️ Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
   * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
