@@ -83,7 +83,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
             "last_name": "Doe"
         },
         "phone": {
-            "number": "8056594427",
+            "number": "9000000001",
             "country_code": "+91"
         }
     }
