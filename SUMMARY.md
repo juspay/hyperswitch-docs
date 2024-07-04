@@ -84,6 +84,7 @@
     * [Flutter with Node Backend](hyperswitch-cloud/integration-guide/react-native-1/react-native-with-node-backend.md)
     * [Customization](hyperswitch-cloud/integration-guide/react-native-1/customization.md)
   * [Headless SDK](hyperswitch-cloud/integration-guide/headless.md)
+  * [Payment Methods Management](hyperswitch-cloud/integration-guide/payment-methods-management.md)
 * [💳 Payment methods setup](hyperswitch-cloud/payment-methods-setup/README.md)
   * [💳 Cards](hyperswitch-cloud/payment-methods-setup/cards.md)
   * [📱 Wallets](hyperswitch-cloud/payment-methods-setup/wallets/README.md)

@@ -162,8 +162,6 @@ const appearance = {
 };
 
 const elements = hyper.elements({ clientSecret, appearance });
-
-const elements = hyper.elements({ clientSecret, appearance });
 ```
 
 ### Form Inputs
