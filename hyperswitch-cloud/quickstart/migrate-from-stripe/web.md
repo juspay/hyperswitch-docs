@@ -48,14 +48,14 @@ const paymentIntent = await stripe.paymentIntents.create({
 const paymentIntent = await hyper.paymentIntents.create({
 ```
 
-**Step 3:** Call loadHyper() with you Hyperswitch publishable key to configure the SDK library, from your website
+**Step 3:** Call loadHyper() with your Hyperswitch publishable key to configure the SDK library, from your website
 
 ```js
 // from
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 // to
-import { loadStripe } from "@juspay-tech/hyper-js";
+import { loadHyper } from "@juspay-tech/hyper-js";
 import { hyperElements } from "@juspay-tech/react-hyper-js";
 ```
 
