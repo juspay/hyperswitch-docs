@@ -10,27 +10,25 @@ This section covers the steps to setup 3ds decision manager using the Hyperswitc
 
 ## Steps to setup a rule on 3DS Decision Manager?
 
-{% embed url="https://hyperswitch.io/video/3ds_demo.mp4" %}
-
 **Step 1:** Go to 3DS Decision Manager tab on the Hyperswitch Control Center
 
-**Step 2:** Click on create new rule&#x20;
+**Step 2:** Click on create new rule
 
 <figure><img src="../../../.gitbook/assets/3ds_step2.png" alt=""><figcaption></figcaption></figure>
 
-**Step 3:** Save the rule name and description&#x20;
+**Step 3:** Save the rule name and description
 
 <figure><img src="../../../.gitbook/assets/3ds_step3.png" alt=""><figcaption></figcaption></figure>
 
-**Step 4:** Configure your desired rule by selecting the operators and values for the various fields&#x20;
+**Step 4:** Configure your desired rule by selecting the operators and values for the various fields
 
 <figure><img src="../../../.gitbook/assets/3ds_step4.png" alt=""><figcaption></figcaption></figure>
 
-**Step 5:** Add more rules using the plus icon on the top right of the current rule panel&#x20;
+**Step 5:** Add more rules using the plus icon on the top right of the current rule panel
 
 <figure><img src="../../../.gitbook/assets/3ds_step5.png" alt=""><figcaption></figcaption></figure>
 
-**Step 6:** Click save to configure and activate the rule&#x20;
+**Step 6:** Click save to configure and activate the rule
 
 <figure><img src="../../../.gitbook/assets/3ds_step6.png" alt=""><figcaption></figcaption></figure>
 

@@ -8,8 +8,6 @@ description: Configure advanced rules with various payment parameters
 Through this section, you will understand the working of 3DS Decision Manager and how to configure it.
 {% endhint %}
 
-{% embed url="https://youtu.be/-VTnngditlU" %}
-
 Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
 
 ## How does it work?
@@ -30,10 +28,10 @@ Some payment processors mandate a 3D Secure authentication for all payments whic
 
 Follow the [setup guide](merchant-controls/3ds-decision-manager/setup-guide.md) to configure the 3DS Decision Manager
 
-## Next step&#x20;
+## Next step
 
-To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
+To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}

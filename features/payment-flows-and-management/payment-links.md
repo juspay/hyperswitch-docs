@@ -18,10 +18,6 @@ Introducing Payment Links – Seamlessly integrate into Hyperswitch without writ
 * Substitute for Cash-on-delivery and point-of-sale
 * Streamlining over-the-phone transactions
 
-{% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
-API Level Overview of Payment Links with Hyperswitch
-{% endembed %}
-
 ### How to configure Payment links through Hyperswitch API?
 
 #### Prerequisites

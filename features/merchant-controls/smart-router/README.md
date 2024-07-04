@@ -8,11 +8,9 @@ description: Infinite control over managing your payments
 With this section, understand how the Hyperswitch Smart Router works to improve your conversion rates and reduces processing costs by intelligently routing payments across various processors
 {% endhint %}
 
-{% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}
-
 ## Prerequisites
 
-To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](../../../hyperswitch-cloud/connectors/) guide.
+To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](../../../hyperswitch-pay-cloud/connectors/) guide.
 
 ## What is smart payment routing?
 
@@ -37,35 +35,34 @@ Hyperswitch Smart Router Engine evaluates every payment request against your pre
 ## How to configure the Smart Router?
 
 [Hyperswitch dashboard](https://app.hyperswitch.io/routing) provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Hyperswitch currently supports.\
-\
-
+\\
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
 
-## Next step&#x20;
+## Next step
 
-To test the Smart Router, after activating one rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
+To test the Smart Router, after activating one rule, we can make a Test Payment using the [Hyperswitch Dashboard](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 <details>
 
 <summary>FAQs</summary>
 
-### 1. What parameters can I use to configure routing rules?
+#### 1. What parameters can I use to configure routing rules?
 
 The rule-based routing supports setting up advanced rule configuration based on all critical /payments parameters such as Payment Method, Payment Method Type, Country, Currency, Amount etc.
 
-### 2. Why did my payment go through 'Y' connector even though I have specified 'X' in my routing configuration? OR Why is it showing me 'Abc' payment method in SDK checkout even though I have not enabled it for the 'X' connector that I'm routing my payments through?
+#### 2. Why did my payment go through 'Y' connector even though I have specified 'X' in my routing configuration? OR Why is it showing me 'Abc' payment method in SDK checkout even though I have not enabled it for the 'X' connector that I'm routing my payments through?
 
 There can be multiple reasons why this happened but all of them can be boiled down to a "connector eligibility failure" for a given payment. We'll walk through a common scenario to examine what this really means.
 
 * Imagine that you configured two connectors for your account. Say `Stripe`, then `Adyen`, in that order. Since you configured them in that order, your default fallback looks like this: `[Stripe, Adyen]` (connectors are appended to the end of your default fallback list when configured for the first time)
 * In your connectors dashboard, you enable Cards for Stripe, and ApplePay for Adyen.
 * Now you create a new Volume-based routing configuration, and you configure it to route 100% of your traffic through Stripe for now.
-* Now you go ahead and open up the Hyperswitch SDK to make a test payment. In the payment method selection area, you can see two buttons, one for `Cards` and one for `ApplePay`.&#x20;
+* Now you go ahead and open up the Hyperswitch SDK to make a test payment. In the payment method selection area, you can see two buttons, one for `Cards` and one for `ApplePay`.
   * This is where you run into your first question. "Why is it showing me ApplePay even though I have configured 100% of my payments to go through Stripe, and ApplePay is not enabled for Stripe?"
   * The answer to this is, the payment methods that are shown to the customer in the SDK aren't conscious of your routing configuration. We prioritize giving your customers the complete spread of all enabled payment methods across all of your enabled connectors. Therefore, if you specifically do not wish for ApplePay to appear on your checkout screen, you need to disable it in `Adyen` here, even though your routing configuration makes no mention of Adyen.
 * Now you select `ApplePay`, go through the required steps, confirm the payment, and it succeeds. You go to your payments dashboard and see that the payment went through `Adyen`.

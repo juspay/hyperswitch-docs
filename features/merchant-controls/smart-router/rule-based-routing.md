@@ -10,11 +10,9 @@ description: >-
 This section will guide you on how to setup Rule based routing using the Hyperswitch Control Center
 {% endhint %}
 
-{% embed url="https://youtu.be/Zs6H1vAKTJM" %}
-
 ## Get started with Rule Based Routing
 
-A rule-based routing configuration comprises of one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.&#x20;
+A rule-based routing configuration comprises of one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.
 
 **Condition:** A condition is constructed with dimensions and logical operators. Routing rules can be pivoted upon numerous dimensions which include payment method, amount of payment, currency, etc. Also, there are six logical operators - equal to, greater than, lesser than, is, is not, contains, not contains, which are used to evaluate the condition.
 
@@ -25,8 +23,6 @@ A rule-based routing configuration comprises of one or more rules with each rule
 3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, Paypal)
 
 ## Steps to configure Rule Based Configuration in Smart Router:
-
-
 
 _**Step 1:**_ Click on `Setup` for Rule Based Configuration
 
@@ -51,7 +47,3 @@ _**Step 5:**_ In the popup, select the appropriate action based on whether you w
 _**Step 6:**_ You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
 
 <figure><img src="../../../.gitbook/assets/Astep6-smartrouter.png" alt=""><figcaption></figcaption></figure>
-
-## How does Rule Based Routing works
-
-{% embed url="https://hyperswitch.io/video/Rule_Based_video.mp4" %}

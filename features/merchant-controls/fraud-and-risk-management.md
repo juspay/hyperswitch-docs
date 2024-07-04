@@ -102,8 +102,8 @@ Currently, HyperSwitch offers only a single way of integrating with the underlyi
 
 **Step 5:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
 
-{% content-ref url="../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## FAQs

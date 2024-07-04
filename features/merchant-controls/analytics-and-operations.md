@@ -8,8 +8,6 @@ description: Single dashboard for all your payment operations needs!
 This section covers the day-to-day use cases of payments operations which Hyperswitch dashboard can support
 {% endhint %}
 
-{% embed url="https://youtu.be/z_NzW3_9A_w" %}
-
 ## Payment Analytics
 
 Typical payment conversion funnel of a user through Hyperswitch involves five stages as shown below.
@@ -56,7 +54,7 @@ Sum of amount of all payments with status = succeeded.
 
 _Please note that there could be payments which could be authorized but not captured. Such payments are not included in the processed amount, because non-captured payments will be be settled to your merchant account by your payment processor._
 
-#### **Average ticket size**&#x20;
+#### **Average ticket size**
 
 The total amount for which payments were created divided by the total number of payments created.
 

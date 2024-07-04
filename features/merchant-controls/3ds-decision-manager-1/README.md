@@ -16,8 +16,6 @@ A surcharge, sometimes called a checkout fee or service fee, is an additional fe
 
 ## How does it work?
 
-
-
 <figure><img src="../../../.gitbook/assets/Surcharge.drawio (1).svg" alt=""><figcaption></figcaption></figure>
 
 Hyperswitch supports surcharge for most payment processors and you can configure surcharge through two ways:
@@ -26,18 +24,18 @@ Hyperswitch supports surcharge for most payment processors and you can configure
 
 Surcharge can be applied to a payment using `surcharge_details` field in [payments/create API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)
 
-**ii) Configuring Surcharge rules using Hyperswitch Control Center**&#x20;
+**ii) Configuring Surcharge rules using Hyperswitch Control Center**
 
 * The Surcharge Manager on the Hyperswitch Control Center allows you to configure advanced rules based on payment parameters to decide when and how much surcharge to apply to the payment
 * Surcharge Decision Manager supports rules based on various payment parameters like payment\_amount, payment\_method, card\_network etc. Follow this [setup guide](setup-guide.md) to configure rules using the Surcharge Decision Manager
-* For example, if you want to apply 5% surcharge for all payments of value greater than $100 then you could setup the following rule on the Surcharge Manager and all the payment requests conforming to that rule would have sucharge of 5% of the original amount being applied to it. ie, If payment amount is 1000$, 1050$ will be sent as authorization amount to the payment processor.&#x20;
+* For example, if you want to apply 5% surcharge for all payments of value greater than $100 then you could setup the following rule on the Surcharge Manager and all the payment requests conforming to that rule would have sucharge of 5% of the original amount being applied to it. ie, If payment amount is 1000$, 1050$ will be sent as authorization amount to the payment processor.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-01 at 11.52.18 AM.png" alt=""><figcaption></figcaption></figure>
 
-## Next step&#x20;
+## Next step
 
-To test the Surcharge Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
+To test the Surcharge Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
