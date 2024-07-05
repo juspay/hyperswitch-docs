@@ -24,10 +24,17 @@ Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To
 </code></pre>
 {% endtab %}
 
+{% tab title="iOS" %}
+```swift
+// pod 'hyperswitch-sdk-ios'
+paymentSession = PaymentSession(publishableKey: publishableKey)
+```
+{% endtab %}
+
 {% tab title="Android" %}
 ```kotlin
-// dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+'
-val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
+// dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+' val 
+paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
 ```
 {% endtab %}
 
@@ -68,17 +75,23 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
 {% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-paymentSession = hyper.initPaymentSession({
-  clientSecret: client_secret,
-});
+{% tab title="iOS" %}
+```swift
+paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 ```kotlin
 paymentSession.initPaymentSession(paymentIntentClientSecret)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+paymentSession = hyper.initPaymentSession({
+  clientSecret: client_secret,
+});
 ```
 {% endtab %}
 
@@ -120,6 +133,44 @@ useEffect(() => {
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
 
 {% tabs %}
+{% tab title="iOS" %}
+<pre class="language-swift"><code class="lang-swift">private var handler: PaymentSessionHandler?
+ 
+func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Void {
+        self.handler = handler
+        }
+    
+@objc func launchHeadless(_ sender: Any) {
+    hyperViewModel.paymentSession?.getCustomerSavedPaymentMethods(initSavedPaymentMethodSessionCallback)
+    getDefault.isEnabled = true
+    getLast.isEnabled = true
+    getData.isEnabled = true
+<strong>    }
+</strong>    
+@objc func getCustomerDefaultSavedPaymentMethodData(_ sender: Any) {
+    let paymentMethod = self.handler?.getCustomerDefaultSavedPaymentMethodData()
+    }
+</code></pre>
+{% endtab %}
+
+{% tab title="Android" %}
+```kotlin
+var handler: PaymentSessionHandler? = null
+
+paymentSession.getCustomerSavedPaymentMethods { paymentSessionHandler ->
+    handler = paymentSessionHandler
+}
+
+val savedPaymentMethid = handler!!.getCustomerDefaultSavedPaymentMethodData()
+
+button.setOnClickListener { 
+    handler!!.confirmWithCustomerDefaultPaymentMethod { paymentResult -> 
+        println(paymentResult)
+    }
+}
+```
+{% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 paymentMethodSession = await paymentSession.getCustomerSavedPaymentMethods();
@@ -162,24 +213,6 @@ function handlePress() {
             // handle payment status
             handlePaymentStatus(status);
         }
-    }
-}
-```
-{% endtab %}
-
-{% tab title="Android" %}
-```kotlin
-var handler: PaymentSessionHandler? = null
-
-paymentSession.getCustomerSavedPaymentMethods { paymentSessionHandler ->
-    handler = paymentSessionHandler
-}
-
-val savedPaymentMethid = handler!!.getCustomerDefaultSavedPaymentMethodData()
-
-button.setOnClickListener { 
-    handler!!.confirmWithCustomerDefaultPaymentMethod { paymentResult -> 
-        println(paymentResult)
     }
 }
 ```
