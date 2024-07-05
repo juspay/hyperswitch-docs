@@ -136,6 +136,8 @@
     * [Worldline](hyperswitch-cloud/connectors/available-connectors/worldline.md)
     * [Worldpay](hyperswitch-cloud/connectors/available-connectors/worldpay.md)
     * [Zen](hyperswitch-cloud/connectors/available-connectors/zen.md)
+    * [Netcetera](hyperswitch-cloud/connectors/available-connectors/zen-1/README.md)
+      * [Authenticating Payments via Netcetera Through HyperSwitch SDK](hyperswitch-cloud/connectors/available-connectors/zen-1/authenticating-payments-via-netcetera-through-hyperswitch-sdk.md)
   * [Activate connector on Hyperswitch](hyperswitch-cloud/connectors/activate-connector-on-hyperswitch.md)
   * [Test a Payment with connector](hyperswitch-cloud/connectors/test-a-payment-with-connector.md)
 * [🪝 Webhooks](hyperswitch-cloud/webhooks.md)
