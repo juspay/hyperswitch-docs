@@ -24,6 +24,13 @@ Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To
 </code></pre>
 {% endtab %}
 
+{% tab title="Android" %}
+```kotlin
+// dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+'
+val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
+```
+{% endtab %}
+
 {% tab title="Flutter" %}
 ```dart
 // dependencies: flutter_hyperswitch: ^version_number
@@ -66,6 +73,12 @@ Initialize a Payment Session by passing the clientSecret to the `initPaymentSess
 paymentSession = hyper.initPaymentSession({
   clientSecret: client_secret,
 });
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```kotlin
+paymentSession.initPaymentSession(paymentIntentClientSecret)
 ```
 {% endtab %}
 
@@ -149,6 +162,24 @@ function handlePress() {
             // handle payment status
             handlePaymentStatus(status);
         }
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Android" %}
+```kotlin
+var handler: PaymentSessionHandler? = null
+
+paymentSession.getCustomerSavedPaymentMethods { paymentSessionHandler ->
+    handler = paymentSessionHandler
+}
+
+val savedPaymentMethid = handler!!.getCustomerDefaultSavedPaymentMethodData()
+
+button.setOnClickListener { 
+    handler!!.confirmWithCustomerDefaultPaymentMethod { paymentResult -> 
+        println(paymentResult)
     }
 }
 ```
