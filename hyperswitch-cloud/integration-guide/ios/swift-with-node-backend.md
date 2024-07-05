@@ -99,7 +99,8 @@ pod install --repo-update
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
-<pre class="language-swift"><code class="lang-swift"><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
+<pre class="language-swift"><code class="lang-swift"><strong>import Hyperswitch
+</strong><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
 </strong></code></pre>
 
 {% hint style="warning" %}
