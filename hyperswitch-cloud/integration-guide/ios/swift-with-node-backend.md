@@ -10,7 +10,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 
 ## Requirements
 
-* iOS 12.4 and above
+* iOS 13.0 and above
 * CocoaPods
 * npm
 
@@ -76,7 +76,7 @@ Add these lines to your Podfile:
 ```ruby
 #use_frameworks!
 #target 'YourAPP' do
-  pod 'HyperswitchCore'
+  pod 'hyperswitch-sdk-ios'
 #end
 
 ```
@@ -97,53 +97,53 @@ pod install --repo-update
 
 ### 2.2 Setup the SDK and fetch a Payment
 
-Fetch a payment by requesting your server for a payment as soon as your view is loaded. Store a reference to the `client_secret` returned by the server, the Payment Sheet will use this secret to complete the payment later. Setup the SDK with your publishable key.
+Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
-```swift
-STPAPIClient.shared.publishableKey = <YOUR_PUBLISHABLE_KEY>
-```
+<pre class="language-swift"><code class="lang-swift"><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
+</strong></code></pre>
 
 {% hint style="warning" %}
 Note: For Open Source Setup, initialise your custom Backend app URL as:
 
-<pre class="language-bash"><code class="lang-bash"><strong>STPAPIClient.shared.customBackendUrl = &#x3C;YOUR_SERVER_URL>
-</strong></code></pre>
+```swift
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
+                                customBackendUrl: <YOUR_SERVER_URL>)
+```
 {% endhint %}
 
-## 3. Complete the payment on your app
+### 2.3 Complete the payment on your app
 
-## 3.1 Swift
+#### **Fetch a Payment**
 
-Create a PaymentSheet instance using the `client_secret` retrieved from the previous step. Present the payment page from your view controller and use the PaymentSheet.Configuration struct for customising your payment page.
-
-
+Request your server to fetch a payment as soon as your view is loaded. Store the client\_secret returned by your server. The `PaymentSession` will use this secret to complete the payment process.
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-var paymentSheet: PaymentSheet?
-var paymentResult: PaymentSheetResult?
+var paymentSession: PaymentSession?
 
-var configuration = PaymentSheet.Configuration()
-configuration.merchantDisplayName = "Example, Inc."
-
-// Present Payment Page
-paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
+paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 {% endtab %}
 
 {% tab title="SwiftUI" %}
 ```swift
 @ObservedObject var model = BackendModel()
-@Published var paymentSheet: HyperPaymentSheet?
-@Published var paymentResult: HyperPaymentSheetResult?
+@Published var paymentSheet: PaymentSession?
+@Published var paymentResult: PaymentSheetResult?
 
-
-// Present Payment Page
-paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
+// handle result
+func onPaymentCompletion(result: PaymentSheetResult) {
+        DispatchQueue.main.async {
+            self.paymentResult = result
+        }
+}
+paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 {% endtab %}
 {% endtabs %}
+
+#### **Handle Payment Result**
 
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
@@ -152,7 +152,13 @@ Handle the payment result in the completion block and display appropriate messag
 ```swift
 @objc
 func openPaymentSheet(_ sender: Any) { //present payment sheet
-    self.paymentSheet?.present(from: self, completion: { result in
+
+var configuration = PaymentSheet.Configuration()
+configuration.merchantDisplayName = "Example, Inc."
+
+    paymentSession?.presentPaymentSheet(viewController: self, 
+                                        configuration: configuration, 
+                                        completion: { result in
         switch result {
         case .completed:
             print("Payment complete")
@@ -169,10 +175,12 @@ func openPaymentSheet(_ sender: Any) { //present payment sheet
 {% tab title="SwiftUI" %}
 ```swift
 VStack {
-  if let paymentSheet = model.paymentSheet {
-    HyperPaymentSheet.PaymentButton(paymentSheet: paymentSheet,
-    onCompletion: model.onPaymentCompletion)
-    { Text("Hyper Payment Sheet")
+  if let paymentSession = model.paymentSession {
+    PaymentSheet.PaymentButton(paymentSession: paymentSession, 
+                                               configuration: configuration(),
+                                               onCompletion: model.onPaymentCompletion)
+    {
+     Text("Hyper Payment Sheet")
         .padding()
         .background(.blue)
         .foregroundColor(.white)
@@ -191,21 +199,26 @@ VStack {
       }
   }
 }.onAppear { model.preparePaymentSheet() }
+
+// setup configuration for payment sheet
+func configuration() -> PaymentSheet.Configuration {
+        var configuration = PaymentSheet.Configuration()
+        configuration.merchantDisplayName = "Example, Inc."
+        return configuration
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-## 4. Card Element
-
-## 4.1 Swift
+### 3. Card Element (Beta)
 
 Create a card element view and pay button and handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
 {% tabs %}
 {% tab title="Swift" %}
 <pre class="language-swift"><code class="lang-swift"><strong>//Create a card element view and pay button.
-</strong><strong>lazy var hyperCardTextField: STPPaymentCardTextField = {
-</strong>    let cardTextField = STPPaymentCardTextField()
+</strong><strong>lazy var hyperCardTextField: PaymentCardTextField = {
+</strong>    let cardTextField = PaymentCardTextField()
     return cardTextField
 }()
 
@@ -224,8 +237,8 @@ func pay() {
   guard let paymentIntentClientSecret = model.paymentIntentClientSecret else {
       return
   }
-  let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
-  let paymentHandler = STPPaymentHandler.shared()
+  let paymentIntentParams = PaymentIntentParams(clientSecret: paymentIntentClientSecret)
+  let paymentHandler = PaymentHandler.shared()
 
   paymentHandler.confirmPayment(paymentIntentParams, with: self)
   { (status, paymentIntent, error) in
@@ -248,10 +261,10 @@ func pay() {
 {% tab title="SwiftUI" %}
 ```swift
 @ObservedObject var model = BackendModel()
-@State var paymentMethodParams: STPPaymentMethodParams?
+@State var paymentMethodParams: PaymentMethodParams?
 
 VStack {
-  STPPaymentCardTextField.Representable(paymentMethodParams: $paymentMethodParams)
+  PaymentCardTextField.Representable(paymentMethodParams: $paymentMethodParams)
     .padding()
   //Create a card element view and pay button.
   if let paymentIntent = model.paymentIntentParams {
