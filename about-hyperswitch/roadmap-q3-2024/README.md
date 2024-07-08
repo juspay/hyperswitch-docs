@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Jul to Jun'24)
+description: Hyperswitch roadmap (July to Sept'24)
 ---
 
 # 🛣️ Roadmap - Q3 2024

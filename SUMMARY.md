@@ -11,7 +11,7 @@
 * [📦 For marketplace/platforms](about-hyperswitch/for-marketplace-platforms.md)
 * [🏦 For banks & financial institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
 * [🛣️ Roadmap - Q3 2024](about-hyperswitch/roadmap-q3-2024/README.md)
-  * [🛣️ Roadmap - Q2 2024](about-hyperswitch/roadmap-q3-2024/roadmap.md)
+  * [🛣️ Previous Roadmap - Q2 2024](about-hyperswitch/roadmap-q3-2024/roadmap.md)
   * [🛣️ Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q3-2024/roadmap-1.md)
   * [🛣️ Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q3-2024/roadmap-1-1.md)
 
