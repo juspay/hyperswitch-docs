@@ -2,7 +2,7 @@
 
 ## About Hyperswitch
 
-* [👋 Hello world](README.md)
+* [👋 Overview](README.md)
 * [🛒 For online businesses](about-hyperswitch/for-online-businesses.md)
 * [🪜 For small & medium enterprises](about-hyperswitch/for-sme.md)
 * [🏢 For enterprises](about-hyperswitch/for-enterprises.md)
@@ -15,42 +15,7 @@
   * [🛣️ Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q3-2024/roadmap-1.md)
   * [🛣️ Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q3-2024/roadmap-1-1.md)
 
-## Hyperswitch open source
-
-* [🛠️ Overview](hyperswitch-open-source/overview.md)
-* [💻 Local Setup Guide](hyperswitch-open-source/local-setup-guide/README.md)
-  * [🪢 Unified Local Setup using Docker](hyperswitch-open-source/local-setup-guide/unified-local-setup-using-docker.md)
-  * [🔢 Local Setup using Individual Components](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components.md)
-* [☁️ Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
-  * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
-  * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
-    * [🗄️ Deploy app server](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server.md)
-    * [🎛️ Deploy Control Center](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center.md)
-    * [🖥️ Deploy web client](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/README.md)
-      * [Production ready deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment.md)
-      * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
-      * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
-    * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
-      * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
-      * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
-* [☸️ Deploy Hyperswitch on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm.md)
-* [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
-  * [🎛️ Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
-  * [💵 Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
-  * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
-* [⚒️ Troubleshooting](hyperswitch-open-source/troubleshooting.md)
-* [🧪 Testing](hyperswitch-open-source/testing/README.md)
-  * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
-* [🚀 Going live](hyperswitch-open-source/going-live/README.md)
-  * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)
-  * [🏛️ PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
-    * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
-    * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-  * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
-  * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
-  * [🗄️ On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
-
-## Hyperswitch Cloud
+## Hyperswitch Enterprise <a href="#hyperswitch-cloud" id="hyperswitch-cloud"></a>
 
 * [⚡ Quickstart](hyperswitch-cloud/quickstart/README.md)
   * [📥 Migrate from Stripe](hyperswitch-cloud/quickstart/migrate-from-stripe/README.md)
@@ -194,6 +159,41 @@
 * [🔐 Data Security](security-and-compliance/security.md)
 * [💽 GDPR compliance](security-and-compliance/gdpr-compliance.md)
 * [🕵️ Identity and Access Management](security-and-compliance/identity-and-access-management.md)
+
+## Hyperswitch open source
+
+* [🛠️ Overview](hyperswitch-open-source/overview.md)
+* [💻 Local Setup Guide](hyperswitch-open-source/local-setup-guide/README.md)
+  * [🪢 Unified Local Setup using Docker](hyperswitch-open-source/local-setup-guide/unified-local-setup-using-docker.md)
+  * [🔢 Local Setup using Individual Components](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components.md)
+* [☁️ Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
+  * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
+  * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
+    * [🗄️ Deploy app server](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server.md)
+    * [🎛️ Deploy Control Center](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center.md)
+    * [🖥️ Deploy web client](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/README.md)
+      * [Production ready deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment.md)
+      * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
+      * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
+    * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
+      * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
+      * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
+* [☸️ Deploy Hyperswitch on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm.md)
+* [🔧 Account setup](hyperswitch-open-source/account-setup/README.md)
+  * [🎛️ Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
+  * [💵 Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
+  * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
+* [⚒️ Troubleshooting](hyperswitch-open-source/troubleshooting.md)
+* [🧪 Testing](hyperswitch-open-source/testing/README.md)
+  * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
+* [🚀 Going live](hyperswitch-open-source/going-live/README.md)
+  * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)
+  * [🏛️ PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
+    * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
+    * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
+  * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
+  * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
+  * [🗄️ On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
 
 ## Learn more
 
