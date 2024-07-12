@@ -11,7 +11,7 @@ Add these lines to your Podfile:
 ```ruby
 #use_frameworks!
 #target 'YourAPP' do
-  pod 'hyperswitch-sdk-ios', :subspecs => ['core', 'scan-card']
+  pod 'hyperswitch-sdk-ios/scancard'
 #end
 ```
 
