@@ -23,19 +23,19 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 * Setup 3DS Authenticator&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.27.58 PM.png" alt=""><figcaption><p>Add new 3DS authenticator</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.27.58 PM.png" alt=""><figcaption><p>Add new 3DS authenticator</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
 * Setup payment processor
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
 
 * Go to Developers -> Payment Settings -> Choose default setting and add Authentication Connectors
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.36.36 PM.png" alt=""><figcaption><p>Add required urls and set the authentication connector</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.36.36 PM.png" alt=""><figcaption><p>Add required urls and set the authentication connector</p></figcaption></figure>
 
 * Create/Collect your API key and Publishable key
 

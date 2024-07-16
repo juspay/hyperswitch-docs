@@ -8,7 +8,7 @@ description: >-
 
 Please specify the payment needs to externally authenticated via Netcetera by passing the below field&#x20;
 
-in create payments call. You can read more about it [here](../../../../features/payment-flows-and-management/external-authentication-for-3ds.md#id-1.-create-a-payment-from-your-server-with-request\_external\_three\_ds\_authentication-as-true).
+in create payments call. You can read more about it [here](../../../../features/payment-flows-and-management/external-authentication-for-3ds/#id-1.-create-a-payment-from-your-server-with-request\_external\_three\_ds\_authentication-as-true).
 
 ```
 "request_external_three_ds_authentication": true

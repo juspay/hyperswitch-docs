@@ -18,6 +18,6 @@ Netcetera offers  EMV® 3DS 2.X transactions processing. It provides an ecosyste
 
 
 
-[Steps](../../../../features/payment-flows-and-management/external-authentication-for-3ds.md) to activate Netcetera on Hyperswitch control center.
+[Steps](../../../../features/payment-flows-and-management/external-authentication-for-3ds/) to activate Netcetera on Hyperswitch control center.
 
 [Steps](authenticating-payments-via-netcetera-through-hyperswitch-sdk.md) to integrate Netcetera in HyperSwitch Payments SDK.

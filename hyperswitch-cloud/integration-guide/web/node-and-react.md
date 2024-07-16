@@ -139,6 +139,44 @@ const widgets = useWidgets();
 ### 3. Complete the checkout on the client
 
 {% tabs %}
+{% tab title="ExpressCheckout" %}
+**Key Features of Hyperswitch's Express Checkout**
+
+* Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
+* Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
+* Easy Integration: Our SDK can be easily integrated with web applications.
+
+**Benefits of Hyperswitch's Express Checkout Feature**
+
+* Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
+* Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
+* Great for Mobile: Optimized for mobile shopping with ApplePay, Paypal and GooglePay integration for quick purchases on smartphones.
+* Collect billing and shipping details directly from the ApplePay, Klarna, GooglePay, Paypal
+
+### **3.1 Add the ExpressCheckout**
+
+<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+
+> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
+
+Add the `ExpressCheckout` to your Checkout.  This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
+
+Define paymentElementOptions:
+
+```js
+var expressCheckoutOptions = {
+  wallets: {
+    walletReturnUrl: "https://example.com/complete",
+    //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+  },
+};
+```
+
+```js
+<ExpressCheckoutElement id="express-checkout" options={expressCheckoutOptions} />
+```
+{% endtab %}
+
 {% tab title="UnifiedCheckout" %}
 #### 3.1.A Add the UnifiedCheckout
 
@@ -231,31 +269,6 @@ var unifiedCheckoutOptions = {
 For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
 
 </details>
-{% endtab %}
-
-{% tab title="ExpressCheckout" %}
-#### 3.1 Add the ExpressCheckout
-
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
-
-> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
-
-Add the `ExpressCheckout` to your Checkout.  This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
-
-Define paymentElementOptions:
-
-```js
-var expressCheckoutOptions = {
-  wallets: {
-    walletReturnUrl: "https://example.com/complete",
-    //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
-  },
-};
-```
-
-```js
-<ExpressCheckoutElement id="express-checkout" options={expressCheckoutOptions} />
-```
 {% endtab %}
 {% endtabs %}
 
