@@ -17,3 +17,5 @@ By integrating directly with third-party 3DS service providers like Netcetera an
 3. **Access to Advanced Authentication Products:**
    * **Innovative Solutions:** Leverage the latest innovations in the authentication space without diverting focus from your core business operations.
    * **Third-Party Integrations:** Seamlessly integrate with leading 3DS service providers like Netcetera and 3dsecure.io, ensuring that you offer the most advanced and secure authentication methods to your customers.
+
+Visit [this page](https://docs.hyperswitch.io/features/payment-flows-and-management/external-authentication-for-3ds#how-to-get-started) to learn more about enabling this feature.
