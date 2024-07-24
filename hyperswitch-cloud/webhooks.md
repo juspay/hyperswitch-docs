@@ -144,4 +144,4 @@ A merchant can set custom headers for sending data to a specified webhook endpoi
 2. Select Business profile (you must provide a webhook URL to set custom HTTP headers).
 3. Update your webhook custom HTTP headers as shown below.
 
-<figure><img src="../.gitbook/assets/webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
