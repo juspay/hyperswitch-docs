@@ -135,3 +135,13 @@ For example, if you wish to sync resource changes from Hyperswitch to your appli
 1. Obtain the value (`timestamp1`) of the `updated` field of the resource in the webhook request body.
 2. Obtain the value (`timestamp2`) of the `updated` field of the resource stored on your side.
 3. If `timestamp1` > `timestamp2`, process the resource; otherwise, ignore.
+
+### Add webhook custom HTTP headers
+
+A merchant can set custom headers for sending data to a specified webhook endpoint. These custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Here are the steps to set up webhook custom HTTP headers:
+
+1. Go to Developer -> Payment settings.
+2. Select Business profile (you must provide a webhook URL to set custom HTTP headers).
+3. Update your webhook custom HTTP headers as shown below.
+
+<figure><img src="../.gitbook/assets/webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
