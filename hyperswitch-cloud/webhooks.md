@@ -141,7 +141,7 @@ For example, if you wish to sync resource changes from Hyperswitch to your appli
 A merchant can set custom headers for sending data to a specified webhook endpoint. These custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Here are the steps to set up webhook custom HTTP headers:
 
 1. Go to Developer -> Payment settings.
-2. Select Business profile (you must provide a webhook URL to set custom HTTP headers).
-3. Update your webhook custom HTTP headers as shown below.
+2. Select Business profile.
+3. Update your webhook custom HTTP headers as shown below (you must provide a webhook URL to set custom HTTP headers).
 
 <figure><img src="../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
