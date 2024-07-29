@@ -64,8 +64,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟥 Using Digital Authentication Framework to reduce friction for 3DS authentication on web and mobile devices for non-PSD2 markets&#x20;
-* 🟥 Integrating Juspay 3DS server for external 3DS authentication&#x20;
 * 🟥 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
