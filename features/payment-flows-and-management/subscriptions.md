@@ -45,7 +45,7 @@ User selects a plan followed by selecting the payment method and adding the paym
   * In case the subscription start date is in future and the customer need not be charged immediately then the merchant should initiate a $0 mandate with Hyperswitch ([more details](https://docs.hyperswitch.io/features/payment-flows-and-management/zero-amount-authorization)).  &#x20;
 * Make MIT transactions - The subscription provider will trigger a webhook to the merchant on the date of the scheduled payment for subscription. Upon receiving the webhook, the merchant should initiate a payment with Hyperswitch using the customer ID and mandate ID. The merchant will share the invoice with the customer upon successful payment
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 #### User flow-2
 
@@ -60,7 +60,7 @@ User selects a payment method and adds the payment method details which are save
   * In case the subscription start date is in future and the customer need not be charged immediately then no payment is inittaed with Hyperswitch
 * Make MIT transactions - The subscription provider will trigger a webhook to the merchant on the date of the scheduled payment for subscription. Upon receiving the webhook, the merchant should initiate a payment with Hyperswitch using the customer ID and mandate ID. The merchant will share the invoice with the customer upon successful payment
 
-<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
 #### Subscription management portal
 
@@ -70,7 +70,7 @@ The customer-facing subscription management interface allows the customers to mo
 * User updates payment method details -  The merchant will load Hyperswitch SDK to allow the user to select the payment method and add the relevant payment method details. Merchant will validate and add this payment method with Hyperswitch using $0 mandate and create a new mandate.
 * User cancels subscriptions - The merchant will revoke the mandate with Hyperswitch post which they will cancel the subscription with the subscription provider.
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 #### Subscription payment retries&#x20;
 
@@ -89,7 +89,7 @@ The merchant can use the Hyperswitch Payment links when sending email reminders 
 * The customer is redirected to the payment link hosted page (with a validity of 15-mins) which allows them to make the payment using any payment option
 * Once the payment is successful, the merchant should mark the invoice as paid with their subscription provider and return the invoice to the customer
 
-<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
 ### FAQ
 

@@ -2,9 +2,7 @@
 description: Stay up to date with minimal maintenance effort!
 ---
 
-# ♻ Updates
-
-
+# ♻️ Updates
 
 {% hint style="info" %}
 This chapter covers everything you need to know about handling maintenance and updates for your application.
@@ -93,7 +91,7 @@ You can reach out to us about new features or report bugs on GitHub:
 
 1. You can [request for a new feature](https://github.com/juspay/hyperswitch/issues/new?assignees=\&labels=C-feature%2CS-awaiting-triage\&projects=\&template=feature\_request.yml\&title=%5BFEATURE%5D+) if it hasn't been requested already on [our issue tracker](https://github.com/juspay/hyperswitch/issues?q=is%3Aissue+is%3Aopen).
 2. You can [report a bug](https://github.com/juspay/hyperswitch/issues/new?assignees=\&labels=C-bug%2CS-awaiting-triage\&projects=\&template=bug\_report.yml\&title=%5BBUG%5D+) if there isn't hasn't been reported already on [our issue tracker](https://github.com/juspay/hyperswitch/issues?q=is%3Aissue+is%3Aopen).
-3. You can [open a GitHub discussion](https://github.com/juspay/hyperswitch/discussions/new/choose), or reach out to us on our [Discord server](https://discord.gg/wJZ7DVW8mm) or [Slack workspace](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) for any general help or queries that you may have.
+3. You can [open a GitHub discussion](https://github.com/juspay/hyperswitch/discussions/new/choose), or reach out to us on our [Discord server](https://discord.gg/wJZ7DVW8mm) or [Slack workspace](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-2jqxmpsbm-WXUENx022HjNEy\~Ark7Orw) for any general help or queries that you may have.
 
 {% hint style="danger" %}
 Steps for updating and maintaining the Control Centre would be updated in this chapter soon!

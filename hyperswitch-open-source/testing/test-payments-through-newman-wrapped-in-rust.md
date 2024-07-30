@@ -12,7 +12,7 @@ To begin with, a fork of Newman needs to be installed by executing `npm install 
 
 This Newman fork has built-in support exporting and importing a postman collection in the form directory unlike having a single large `.json` collection file.
 
-<figure><img src="../../.gitbook/assets/image (114).png" alt="" width="375"><figcaption><p>The main feature of the newman fork, directory support</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147).png" alt="" width="375"><figcaption><p>The main feature of the newman fork, directory support</p></figcaption></figure>
 
 To see the features that the fork of `newman` supports, click [_**here**_](https://github.com/knutties/newman/blob/feature/newman-dir/DIR\_COMMANDS.md)
 

@@ -4,7 +4,7 @@ description: >-
   center
 ---
 
-# 🎛 Using Hyperswitch control center
+# 🎛️ Using Hyperswitch control center
 
 {% hint style="info" %}
 Here, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
@@ -72,6 +72,6 @@ Currently, you can configure two types of routing with more on the way:
 
 ## Next step
 
-{% content-ref url="../testing/test-a-payment.md" %}
-[test-a-payment.md](../testing/test-a-payment.md)
+{% content-ref url="test-a-payment.md" %}
+[test-a-payment.md](test-a-payment.md)
 {% endcontent-ref %}

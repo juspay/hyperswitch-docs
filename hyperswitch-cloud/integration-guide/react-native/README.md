@@ -2,13 +2,13 @@
 description: Integrate unified checkout with your react native app
 ---
 
-# ⏺ React Native
+# ⏺️ React Native
 
 {% hint style="info" %}
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your React Native App
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt="" width="286"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112).png" alt="" width="286"><figcaption></figcaption></figure>
 
 Revolutionize your app's payment capabilities with the Hyperswitch React Native SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on React native is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 

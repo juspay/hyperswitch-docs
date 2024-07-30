@@ -2,10 +2,10 @@
 description: Deploy the Hyperswitch server on the cloud
 ---
 
-# 🗄 Deploy app server
+# 🗄️ Deploy app server
 
 {% hint style="info" %}
-If you wish to deploy app server seperately, please request access [here](https://docs.google.com/forms/d/e/1FAIpQLSeflqUqLYBwhoHJQhwQOKjjfbxx2zj-VNrR3QdzX\_u5WqTxzQ/viewform?usp=sf\_link)&#x20;
+If you wish to deploy app server seperately, please request access using this [form](https://docs.google.com/forms/d/e/1FAIpQLSeflqUqLYBwhoHJQhwQOKjjfbxx2zj-VNrR3QdzX\_u5WqTxzQ/viewform?usp=sf\_link).
 {% endhint %}
 
 ***

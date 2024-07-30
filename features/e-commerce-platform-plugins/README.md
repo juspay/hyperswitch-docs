@@ -2,9 +2,9 @@
 description: Hyperswitch plugins for the e-commerce platform you use
 ---
 
-# 🛍 E-commerce platform plugins
+# 🛍️ E-commerce platform plugins
 
-<figure><picture><source srcset="../../.gitbook/assets/eCommerceDark.jpg" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (86).png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/eCommerceDark.jpg" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (115).png" alt=""></picture><figcaption></figcaption></figure>
 
 In the dynamic landscape of online retail, E-commerce Platform Plugins emerge as powerful tools that transform and augment the functionality of digital storefronts. These plugins, also referred to as extensions or add-ons, serve as modular enhancements to existing E-commerce platforms, enabling businesses to tailor their online presence to meet specific needs and preferences.
 

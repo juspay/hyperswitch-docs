@@ -30,7 +30,7 @@ Hyperswitch's unified disputes module uses the following stages and statuses to 
 
 <div data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -66,7 +66,7 @@ Even after a successful dispute challenge, a payment method issuer might deem th
 
 You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Generating Dispute Reports:
 
@@ -76,7 +76,7 @@ You can view all your disputes by going to Operations -> Disputes section on you
 
 Clicking one of the dispute will take you to a page where you can see further information about the particular dispute
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
 ### 4. Accepting/Challenging a Dispute
 
