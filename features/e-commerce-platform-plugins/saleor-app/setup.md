@@ -150,7 +150,7 @@ OR
 - You can use the `externalUrl` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
 
 
-#### Retrieve the transaction
+### Retrieve the transaction
 The payment status will be automatically updated by the plugin in the backend upon Hyperswitch receiving a webhook from the connector. Alternatively, you can call Saleor's Transaction Process mutation to retrieve the status of an initiated payment.
 ```
 mutation TransactionProcess {
