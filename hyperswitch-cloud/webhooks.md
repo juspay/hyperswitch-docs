@@ -22,7 +22,13 @@ You would need to set up a dedicated HTTPS or HTTP endpoint on your server with 
 
 #### Configure your webhook endpoint on Hyperswitch Dashboard
 
-Configure the above endpoint on your Hyperswitch dashboard under Settings -> Webhooks.
+Configure the above endpoint on your Hyperswitch dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Setup section to configure webhook details.
+
+#### Add webhook custom HTTP headers
+
+In case a merchant wants to set custom headers for sending data to a specified webhook endpoint, these custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Update your webhook custom HTTP headers as shown below (you must provide a webhook URL to set custom HTTP headers).
+
+<figure><img src="../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
 
 #### Update Hyperswitch’s webhook endpoints on your connector Dashboard
 
@@ -135,3 +141,4 @@ For example, if you wish to sync resource changes from Hyperswitch to your appli
 1. Obtain the value (`timestamp1`) of the `updated` field of the resource in the webhook request body.
 2. Obtain the value (`timestamp2`) of the `updated` field of the resource stored on your side.
 3. If `timestamp1` > `timestamp2`, process the resource; otherwise, ignore.
+
