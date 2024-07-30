@@ -10,8 +10,8 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ## Prerequisites
 
-1. Sign up on the Hyperswitch dashboard [here](https://app.hyperswitch.io/) and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
-   - **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch. Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
+1. [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
+> **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch. Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
 2. Sign up for [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
 
@@ -32,9 +32,9 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 2. Click on `Add new configuration`. This will open a form to collect hyperswitch credentials
 - Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
 - Enter your Hyperswitch API Key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
-- Enter your Hyperswitch Publishable Key. You can find this key under the Developers > API Keys section of hyperswitch dasboard.
+- Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
 - Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
-- Enter your Hyperswitch Payment Response Hash Key. You can find this key under the Developers > API Keys section of hyperswitch dasboard
+- Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
 
@@ -45,7 +45,7 @@ Now Hyperswitch Saleor App is configured to recieve payments
 
 
 
-# Accept payments through hyperswitch
+## 2. Accept payments through hyperswitch
 
 ### Get available payment gateways
 
@@ -111,18 +111,18 @@ mutation StripeTransactionInitialize($data: JSON!) {
 You can pass additional fields while initiating the transaction through the $data JSON object. 
 The additional fields you can pass include:
 
-1. customerId: [Optional String] The identifier for the customer
-2. connector: [Optional String] The connector used for the payment
-3. authenticationType: Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no_three_ds' here and vice versa. Default value is 'no_three_ds' if not set
+1. `customerId`: [Optional String] The identifier for the customer
+2. `connector`: [Optional String] The connector used for the payment
+3. `authenticationType`: Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no_three_ds' here and vice versa. Default value is 'no_three_ds' if not set
    Available options: `three_ds`, `no_three_ds`
-4. billingEmail [Optional String]
-5. shippingEmail [Optional String]
-6. statementDescriptorName: [Optional String] For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
-7. statementDescriptorSuffix: [Optional String] Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
-8. description: [Optional String] A description for the payment
-9. returnUrl: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
-10. allowedPaymentMethodTypes: [Option array of string] Use this parameter to restrict the Payment Method Types to show for a given PaymentIntent.
-11. manualRetryAllowed: [Optional Boolean] If true the payment can be retried with same or different payment method which means the confirm call can be made again.
+4. `billingEmail`: [Optional String] customer's billing email
+5. `shippingEmail` : [Optional String] customer's shipping email
+6. `statementDescriptorName`: [Optional String] For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
+7. `statementDescriptorSuffix`: [Optional String] Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
+8. `description`: [Optional String] A description for the payment
+9. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
+10. `allowedPaymentMethodTypes`: [Option array of string] Use this parameter to restrict the Payment Method Types to show for a given PaymentIntent.
+11. `manualRetryAllowed`: [Optional Boolean] If true the payment can be retried with same or different payment method which means the confirm call can be made again.
 
 Response of transaction initialize 
 
@@ -144,7 +144,7 @@ Response of transaction initialize
       }
 ```
 
-##### Handle transaction initialize response
+Handle transaction initialize response
 - You can use `clientSecret` and `publishableKey` to invoke the [Hyperswitch SDK](https://docs.hyperswitch.io/learn-more/sdk-reference) </br>
 OR
 - You can use the `externalUrl` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
