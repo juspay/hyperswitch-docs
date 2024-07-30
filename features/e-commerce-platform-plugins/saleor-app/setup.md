@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch-Saleor Payment App Setup
+description: Hyperswitch Saleor Payment App Setup
 ---
 
 # Setup
