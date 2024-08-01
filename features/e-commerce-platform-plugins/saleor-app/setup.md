@@ -13,13 +13,13 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 1. [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
 > **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch. Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
-2. Sign up for [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
+2. Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
 
 ## 1. Setting up the App on your Saleor Dashboard
 
 ### 1.1 Install the App
 
-1. To access the Hyperswitch-Saleor Payment App, [click here](https://github.com/juspay/hyperswitch-saleor-payment-app). You will be directed to a form where you can enter your Saleor API URL.
+1. To access the Hyperswitch-Saleor Payment App, [click here](https://hyperswitch-saleor-payment-app-wh8j.vercel.app/). You will be directed to a form where you can enter your Saleor API URL.
 <figure><img src="../../../.gitbook/assets/hyperswitchSaleorInstall.png" alt=""><figcaption></figcaption></figure>
 
 2. Input your Saleor API URL and click `Add to Saleor`. This action will start the installation process and display the installation page.
