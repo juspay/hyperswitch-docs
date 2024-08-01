@@ -104,11 +104,12 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 </strong></code></pre>
 
 {% hint style="warning" %}
-Note: For Open Source Setup, initialise your custom Backend app URL as:
+Note: For Open Source Setup, initialise your custom Backend app & log URL as:
 
 ```swift
 paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
-                                customBackendUrl: <YOUR_SERVER_URL>)
+                                customBackendUrl: <YOUR_SERVER_URL>,
+                                customLogUrl: <YOUR_LOG_URL>)
 ```
 {% endhint %}
 
