@@ -23,7 +23,7 @@ description: Enable Apple pay on your web domains
 - Click on verify and enable to complete your setup
 
 {% hint style="warning" %}
-Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you would need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
