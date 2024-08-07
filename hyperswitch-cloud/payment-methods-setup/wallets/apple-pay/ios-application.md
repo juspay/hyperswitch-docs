@@ -95,6 +95,8 @@ base64 -i certificate_sandbox.key
 {% tabs %}
 {% tab title="Payment Processing Details At Connector" %}
 
+</br>
+
 <figure><img src="../../../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
 
 - You will need to get a **.csr** file from your processor's dashboard, _(like Adyen, Cybersource)_
@@ -110,6 +112,8 @@ This final step is specific to the processor being used and is not necessary in 
 {% endtab %}
 
 {% tab title="Payment Processing Details At Hyperswitch" %}
+
+</br>
 
 <figure><img src="../../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
 
