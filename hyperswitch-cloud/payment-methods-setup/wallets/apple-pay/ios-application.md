@@ -49,7 +49,7 @@ You can create an Apple MerchantID certificate and private key by following the 
 openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_sandbox.key
 ```
 
-- Enter your details asked in the prompt and when asked to enter a challenge password, you can leave it as blank. You will get a **.csr** and **.key** file
+- Enter your details asked in the prompt. You will get a **.csr** and **.key** file
 - Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to Identifiers and select the Merchant ID you created previously
 - Under the **Apple Pay Merchant Identity Certificate** section _(make sure you are not in the Apple Pay Payment Processing Certificate section)_, click on Create Certificate
 - Upload the **.csr** file you just created by running the command _(it would be called **uploadMe.csr** if you copy-pasted the command)_ and click on Continue
@@ -122,7 +122,7 @@ You can create an Apple Payment Processing Certificate and Payment Processing Ke
 openssl ecparam -name prime256v1 -genkey -noout -out ppc_private.key
 ```
 
-- You can create .**csr** file using the following command and enter your details asked in the prompt and when asked to enter a challenge password, you can leave it as blank. You will get a .**csr** file.
+- You can create .**csr** file using the following command and enter your details asked in the prompt. You will get a .**csr** file.
 
 ```
 openssl req -out ppc_uploadMe.csr -new -key ppc_private.key
