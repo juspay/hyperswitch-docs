@@ -117,7 +117,7 @@
     * [🛣️ Route your payout transactions using Smart Router](features/payment-flows-and-management/payouts/route-your-payout-transactions-using-smart-router.md)
     * [♻️ Smart Retries in Payout](features/payment-flows-and-management/payouts/smart-retries-in-payout.md)
     * [🔗 Payout links](features/payment-flows-and-management/payouts/payout-link.md)
-  * [0️ 0️ 0️ 0️ 0️ Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization-1.md)
+  * [0️ Zero Amount Authorization](features/payment-flows-and-management/zero-amount-authorization-1.md)
   * [🔓 Tokenization & saved cards](features/payment-flows-and-management/tokenization-and-saved-cards.md)
   * [🔗 Payment links](features/payment-flows-and-management/payment-links.md)
   * [⏭️ External Authentication for 3DS](features/payment-flows-and-management/external-authentication-for-3ds/README.md)
