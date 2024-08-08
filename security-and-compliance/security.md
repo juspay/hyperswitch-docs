@@ -56,14 +56,15 @@ During transmission, data remains masked and never gets permanently stored on th
 
 * Sensitive keys crucial for the application's operation undergo encryption at startup.
 * These encrypted keys are then stored securely in environment variables or configuration files using AWS's KMS service.
-* Examples of encrypted values include the master key, database passwords, and RSA certificates, ensuring their confidentiality.
+* Examples of encrypted values include the database passwords, and RSA certificates, ensuring their confidentiality.
 
-### Merchant-Specific Encryption
+### Key Manager Service Encryption
+**Merchant-Specific Encryption:**
 
-* Each merchant account is assigned a unique data encryption key generated internally and stored securely.
-* This merchant-specific key undergoes encryption using AES-256 symmetric encryption via the master key, further securing it.
+* Each merchant account is assigned a unique data encryption key(DEK) generated internally and stored securely within the Key Manager Service.
+* This merchant-specific key undergoes encryption using secrets manager like AWS KMS, further securing it.
 
-### Data Encryption for each Merchant account
+**Data Encryption for each Merchant account:**
 
 * Data pertinent to individual merchant accounts, such as connector API keys, confidential merchant information, and any Personally Identifiable Information (PII) of customers, is encrypted using the same encryption method.
 * However, this encryption process utilizes the unique data encryption key specific to that particular merchant, ensuring that each set of data remains protected and accessible only to authorized parties associated with that merchant.
