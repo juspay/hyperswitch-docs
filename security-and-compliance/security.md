@@ -61,12 +61,12 @@ During transmission, data remains masked and never gets permanently stored on th
 ### Key Manager Service Encryption
 **Merchant-Specific Encryption:**
 
-* Each merchant account is assigned a unique data encryption key(DEK) generated internally and stored securely within the Key Manager Service.
+* Application utilises Key Manager Service for secure generation and storage of a unique data encryption key(DEK) for each merchant.
 * This merchant-specific key undergoes encryption using secrets manager like AWS KMS, further securing it.
 
 **Data Encryption for each Merchant account:**
 
-* Data pertinent to individual merchant accounts, such as connector API keys, confidential merchant information, and any Personally Identifiable Information (PII) of customers, is encrypted using the same encryption method.
+* Data pertinent to individual merchant accounts, such as connector API keys, confidential merchant information, and any Personally Identifiable Information (PII) of customers, is encrypted using the same encryption method within the Key Manager Service.
 * However, this encryption process utilizes the unique data encryption key specific to that particular merchant, ensuring that each set of data remains protected and accessible only to authorized parties associated with that merchant.
 * By employing a multi-layered encryption approach involving KMS encryption for critical keys, unique encryption keys for each merchant, and data-specific encryption, the application ensures robust security measures are in place to safeguard sensitive information at various levels.
 
