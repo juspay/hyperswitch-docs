@@ -177,7 +177,7 @@ The additional fields you can pass include:
 9. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
 10. `allowedPaymentMethodTypes`: [Option array of string] Use this parameter to restrict the Payment Method Types to show for a given PaymentIntent.
 11. `manualRetryAllowed`: [Optional Boolean] If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-12. `gatewayReferenceId`: [Optional String] This refers to the gateway that you configured in your hypercheckout dashboard for making payments.
+12. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. Sending this id will route the transaction via selected gateway.
 
 Response of transaction initialize 
 
