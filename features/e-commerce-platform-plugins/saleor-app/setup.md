@@ -28,8 +28,9 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ### 1.2 Configure the App
 
+#### 1.2.1 Configure for non indian payments
 1. Open Hyperswitch App installed on your saleor dashboard.
-2. Click on `Add new configuration`. This will open a form to collect hyperswitch credentials
+2. Click on `Add new configuration` which opens a popup to select non indian payments. This will open a form to collect credentials.
 - Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
 - Enter your Hyperswitch API Key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
 - Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
@@ -38,7 +39,19 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
 
-### 1.2 Assign Channel to your configuration
+#### 1.2.2 Configure for indian payments
+1. Open Hyperswitch App installed on your saleor dashboard.
+2. Click on `Add new configuration` which opens a popup to select indian payments. This will open a form to collect credentials.
+- Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
+- Enter your Juspay API Key. You can get API key from `Payments > Setting > Security`. For more instructions on how to create an API Key with Juspay, refer to [this guide](https://docs.juspay.in/dashboard/docs/ec-operations/settings-module#Settings-Security).
+- Enter your juspay merchant id. You can find this by clicking on your account symbol on navbar.
+- Enter your username to recieve webhooks. To get username visit `Payments > Setting > Webhooks`.
+- Enter your password to recieve webhooks. To get passowrd visit `Payments > Setting > Webhooks`.
+- Enter your juspay client id. To get client id you can visit studio from sidebar `Payment Page > Studio`. 
+3. Click on `Save Configuration`
+4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [Juspay dashboard](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/webhooks)
+
+### 1.3 Assign Channel to your configuration
 For each channel, payments will be processed using the Hyperswitch configurations assigned to it.
 
 Now Hyperswitch Saleor App is configured to recieve payments 
@@ -74,6 +87,45 @@ Response
           "name": "Hyperswitch"
         }
       ]
+    }
+  }
+}
+```
+
+### Initialize the payment gateway
+
+This call returns whether the payment is going through hyperswitch or juspay.
+```
+mutation MyMutation {
+  paymentGatewayInitialize(id: "payment_gateway_id") {
+    gatewayConfigs {
+      data
+      id
+    }
+  }
+}
+```
+
+Response
+
+```
+{
+  "data": {
+    "paymentGatewayInitialize": {
+      "gatewayConfigs": [
+        {
+          "data": {
+            "orchestra": "HYPERSWITCH/Juspay"
+          },
+          "id": "app.saleor.hyperswitch"
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 0,
+      "maximumAvailable": 50000
     }
   }
 }
