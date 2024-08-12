@@ -28,30 +28,30 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ### 1.2 Configure the App
 
-#### 1.2.1 Configure for non indian payments
+#### 1.2.1 Configure for non Indian payments
 1. Open Hyperswitch App installed on your saleor dashboard.
-2. Click on `Add new configuration` which opens a popup to select non indian payments. This will open a form to collect credentials.
+2. Click on `Add new configuration`, which opens a popup to select non Indian payments. This will open a form to collect credentials.
 - Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
-- Enter your Hyperswitch API Key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
+- Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
 - Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
 - Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
 - Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
 
-#### 1.2.2 Configure for indian payments
+#### 1.2.2 Configure for Indian payments
 1. Open Hyperswitch App installed on your saleor dashboard.
-2. Click on `Add new configuration` which opens a popup to select indian payments. This will open a form to collect credentials.
+2. Click on `Add new configuration`, which opens a popup to select Indian payments. This will open a form to collect credentials.
 - Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
-- Enter your Hypercheckout API Key. You can get API key in Hypercheckout dashboard under `Payments > Setting > Security`. For more instructions on how to create an API Key, refer to [this guide](https://docs.juspay.in/dashboard/docs/ec-operations/settings-module#Settings-Security).
-- Enter your Hypercheckout merchant id. You can find this by clicking on your account symbol on navbar.
-<figure><img src="../../../.gitbook/assets/hyperCheckoutMid.png" alt=""><figcaption></figcaption></figure>
+- Enter your Hypercheckout API key. You can get API key in Hypercheckout dashboard under `Payments > Setting > Security`. For more instructions on how to create an API Key, refer to [this guide](https://docs.juspay.in/dashboard/docs/ec-operations/settings-module#Settings-Security).
+- Enter your Hypercheckout merchant id. You can find this by clicking on your account symbol in navbar.
+  <figure><img src="../../../.gitbook/assets/hyperCheckoutMid.png" alt=""><figcaption></figcaption></figure>
 - Enter your username to receive webhooks. To get username visit `Payments > Setting > Webhooks`.
 - Enter your password to receive webhooks. To get passowrd visit `Payments > Setting > Webhooks`.
-- Enter your Hypercheckout client id. To get client id you can visit studio from sidebar `Payment Page > Studio`. 
-<figure><img src="../../../.gitbook/assets/hyperCheckoutCid.png" alt=""><figcaption></figcaption></figure>
+- Enter your Hypercheckout client id. To get client id you can visit studio from the sidebar `Payment Page > Studio`. 
+  <figure><img src="../../../.gitbook/assets/hyperCheckoutCid.png" alt=""><figcaption></figcaption></figure>
 3. Click on `Save Configuration`
-4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [Hypercheckout dashboard](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/webhooks)
+4. Once you save the configuration, you will be provided with a webhook URL, Please update it in your [Hypercheckout dashboard](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/webhooks)
 
 ### 1.3 Assign Channel to your configuration
 For each channel, payments will be processed using the Hyperswitch configurations assigned to it.
@@ -177,6 +177,7 @@ The additional fields you can pass include:
 9. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
 10. `allowedPaymentMethodTypes`: [Option array of string] Use this parameter to restrict the Payment Method Types to show for a given PaymentIntent.
 11. `manualRetryAllowed`: [Optional Boolean] If true the payment can be retried with same or different payment method which means the confirm call can be made again.
+12. `gatewayReferenceId`: [Optional String] This refers to the gateway that you configured in your hypercheckout dashboard for making payments.
 
 Response of transaction initialize 
 
