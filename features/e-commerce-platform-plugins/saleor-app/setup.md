@@ -10,12 +10,21 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ## Prerequisites
 
-1. [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
-> **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch. Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
+#### 1. Signup to payments dashboard
+##### 1.1 Non Indian payments dashboard signup
+[Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
+> **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch.
 
-2. Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
+##### 1.2 Indian payments dashboard signup
+[Sign up](https://sandbox.portal.juspay.in/) to Hypercheckout dashboard and navigate to `Payments > PG Control Centre` to configure payment gateways and enable various Payment Methods.
+> **Note:** While configuring payment gateways, please ensure that you also set up it's webhook with hypercheckout dashboard [refer](https://docs.juspay.in/resources/docs/common-resources/webhooks#Configuring-Webhooks). 
 
-## 1. Setting up the App on your Saleor Dashboard
+Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
+
+#### 2. Signup to Saleor dashboard
+Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
+
+## 1. Setting up the Hyperswitch App on your Saleor Dashboard
 
 ### 1.1 Install the App
 
@@ -54,7 +63,7 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 4. Once you save the configuration, you will be provided with a webhook URL, Please update it in your [Hypercheckout dashboard](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/webhooks)
 
 ### 1.3 Assign Channel to your configuration
-For each channel, payments will be processed using the Hyperswitch configurations assigned to it.
+For each channel, payments will be processed according to configurations assigned to it.
 
 Now Hyperswitch Saleor App is configured to receive payments 
 
@@ -96,7 +105,7 @@ Response
 
 ### Initialize the payment gateway
 
-This call returns whether the payment is going through hyperswitch or juspay.
+This call returns whether the payment is going through hyperswitch or hypercheckout.
 ```
 mutation MyMutation {
   paymentGatewayInitialize(id: "payment_gateway_id") {
@@ -138,7 +147,7 @@ Response
 To initialize the transaction with hyperswitch, one needs to create a transaction in Saleor by calling the transactionInitialize mutation.
 
 ```
-mutation StripeTransactionInitialize($data: JSON!) {
+mutation HyperswitchTransactionInitialize($data: JSON!) {
   transactionInitialize(
     id: "saleor_checkout_id"
     amount: 54.24
@@ -166,49 +175,132 @@ You can pass additional fields while initiating the transaction through the $dat
 The additional fields you can pass include:
 
 1. `customerId`: [Optional String] The identifier for the customer
-2. `connector`: [Optional String] The connector used for the payment
-3. `authenticationType`: Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no_three_ds' here and vice versa. Default value is 'no_three_ds' if not set
+2. `authenticationType`: This is used for non Indian payments. Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no_three_ds' here and vice versa. Default value is 'no_three_ds' if not set
    Available options: `three_ds`, `no_three_ds`
-4. `billingEmail`: [Optional String] customer's billing email
-5. `shippingEmail` : [Optional String] customer's shipping email
-6. `statementDescriptorName`: [Optional String] For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
-7. `statementDescriptorSuffix`: [Optional String] Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
-8. `description`: [Optional String] A description for the payment
-9. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
-10. `allowedPaymentMethodTypes`: [Option array of string] Use this parameter to restrict the Payment Method Types to show for a given PaymentIntent.
-11. `manualRetryAllowed`: [Optional Boolean] If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-12. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. Sending this id will route the transaction via selected gateway.
+3. `billingEmail`: [Optional String] customer's billing email
+4. `shippingEmail` : [Optional String] customer's shipping email
+5. `statementDescriptorName`: [Optional String] This is used for non Indian payments. For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
+6. `statementDescriptorSuffix`: [Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
+7. `description`: [Optional String] A description for the payment
+8. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
+10. `manualRetryAllowed`: [Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
+11. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.[Refer](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for more info.
 
-Response of transaction initialize 
+#### Sample response of Hyperswitch transaction initialize 
 
 ```
-"transactionEvent": {
-        "pspReference": "hyperswitch_payment_id",
+{
+  "data": {
+    "transactionInitialize": {
+      "transactionEvent": {
+        "pspReference": "pay_ezKjsngnqMCYbx0ke8PK",
         "amount": {
-          "amount": 50,
+          "amount": 18,
           "currency": "USD"
         },
-        "type": "AUTHORIZATION_ACTION_REQUIRED",
-        "externalUrl": "payment_link_url"
+        "type": "CHARGE_ACTION_REQUIRED"
       },
       "data": {
-        "clientSecret": "hyperswitch_client_secret",
-        "publishableKey": "hyperswitch_publishable_key",
-        "paymentLinkId": "hyperswitch_payment_link_id",
+        "paymentLinks": {
+          "paymentLinkId": "payment_link_id",
+          "web": "payment_link"
+        },
+        "sdkPayload": {
+          "payload": {
+            "clientSecret": "pay_exxxxxxxxxxx",
+            "publishableKey": "pk_snd_xxxxxxx"
+          }
+        },
         "errors": []
+      },
+      "errors": [],
+      "transaction": {
+        "id": "VHJhbnNhY3Rxxxxxxxxxxxx,
+        "token": "a795d869xxxxxxxx"
       }
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 0,
+      "maximumAvailable": 50000
+    }
+  }
+}
 ```
 
-Handle transaction initialize response
+Handle Hyperswitch transaction initialize response
 - You can use `clientSecret` and `publishableKey` to invoke the [Hyperswitch SDK](https://docs.hyperswitch.io/learn-more/sdk-reference) </br>
 OR
-- You can use the `externalUrl` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
+- You can use the `paymentLinks.web` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
+
+#### Sample response of Juspay transaction initialize 
+
+```
+{
+  "data": {
+    "transactionInitialize": {
+      "transactionEvent": {
+        "pspReference": "8b2e87ac-xxxxx-xxxx-xxxx",
+        "amount": {
+          "amount": 200,
+          "currency": "INR"
+        },
+        "type": "CHARGE_ACTION_REQUIRED"
+      },
+      "data": {
+        "paymentLinks": {
+          "web": "https://sandbox.assets.juspay.in/payment-page/order/ordeh_9b82xxxxxxxxxxx",
+          "expiry": "2024-08-15T11:33:59Z"
+        },
+        "sdkPayload": {
+          "requestId": "f2724dd953394f04bxxxxxxxxxxxxx",
+          "service": "in.juspay.hyperpay",
+          "payload": {
+            "clientId": "xxxxxx",
+            "amount": "200.0",
+            "merchantId": "merchant_success",
+            "clientAuthToken": "tkn_5f2c7edebf7143a7bfxxxxxxxxxxxxx",
+            "clientAuthTokenExpiry": "2024-08-12T11:48:59Z",
+            "environment": "sandbox",
+            "lastName": "Doe",
+            "action": "paymentPage",
+            "returnUrl": "https://www.google.com/",
+            "currency": "INR",
+            "firstName": "Rayan",
+            "customerEmail": "customer@example.com",
+            "orderId": "8b2e87ac-a238-4d79-bedb-xxxxxxxxxxxxx"
+          },
+          "expiry": "2024-08-15T11:33:59Z"
+        },
+        "errors": []
+      },
+      "errors": [],
+      "transaction": {
+        "id": "VHJhbnNhY3Rpb25JdGVtOjUzYzdjNTFjLTY5NWYtxxxxxxxxxxxxx==",
+        "token": "53c7c51c-695f-464d-b78d-xxxxxxxxxxxxx"
+      }
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 0,
+      "maximumAvailable": 50000
+    }
+  }
+}
+```
+
+Handle Juspay transaction initialize response
+- You can use `sdkPayload` to invoke the [Juspay SDK](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/initiating-sdk) </br>
+OR
+- You can use the `paymentLinks.web` to redirect the customer to Juspay payment page. Additionally, this URL can also be embedded within an iframe
 
 
 ### Retrieve the transaction
 The payment status will be automatically updated by the plugin in the backend upon Hyperswitch receiving a webhook from the connector. Alternatively, you can call Saleor's Transaction Process mutation to retrieve the status of an initiated payment.
 ```
-mutation TransactionProcess {
+mutation HyperswitchTransactionProcess {
   transactionProcess(
     id: "saleor_transaction_id"
   ) {
@@ -232,5 +324,5 @@ mutation TransactionProcess {
 
 The Hyperswitch Saleor Plugin also supports additional flows such as payment capture, cancellation, and refunds. These actions can be triggered directly through the Saleor dashboard. 
 
->Note: If you trigger refunds through the Hyperswitch dashboard instead of the Saleor dashboard, you will need to manually update the refund status in the Saleor dashboard.
+>Note: If you trigger refunds through the Hyperswitch/Hypercheckout dashboard instead of the Saleor dashboard, you will need to manually update the refund status in the Saleor dashboard.
 
