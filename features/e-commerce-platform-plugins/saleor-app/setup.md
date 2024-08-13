@@ -10,7 +10,7 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ## Prerequisites
 
-#### 1. Signup to payments dashboard
+### 1. Signup to payments dashboard
 ##### 1.1 Non Indian payments dashboard signup
 [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
 > **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch.
@@ -21,14 +21,14 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
-#### 2. Signup to Saleor dashboard
+### 2. Signup to Saleor dashboard
 Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
 
 ## 1. Setting up the Hyperswitch App on your Saleor Dashboard
 
 ### 1.1 Install the App
 
-1. To access the Hyperswitch-Saleor Payment App, [click here](https://hyperswitch-saleor-payment-app-wh8j.vercel.app/). You will be directed to a form where you can enter your Saleor API URL.
+1. To access the Hyperswitch-Saleor Payment App, [click here](https://hyperswitch-saleor-payment-app-two.vercel.app/). You will be directed to a form where you can enter your Saleor API URL.
 <figure><img src="../../../.gitbook/assets/hyperswitchSaleorInstall.png" alt=""><figcaption></figcaption></figure>
 
 2. Input your Saleor API URL and click `Add to Saleor`. This action will start the installation process and display the installation page.
@@ -184,7 +184,7 @@ The additional fields you can pass include:
 7. `description`: [Optional String] A description for the payment
 8. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
 10. `manualRetryAllowed`: [Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-11. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.[Refer](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for more info.
+11. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
 
 #### Sample response of Hyperswitch transaction initialize 
 
