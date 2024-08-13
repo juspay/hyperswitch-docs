@@ -10,18 +10,18 @@ This section covers the steps to setup Hyperswitch payment app through saleor
 
 ## Prerequisites
 
-### 1. Signup to payments dashboard
-##### 1.1 Non Indian payments dashboard signup
+### 1. Sign up to payments dashboard
+##### 1.1 Non Indian payments dashboard sign up
 [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
 > **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch.
 
-##### 1.2 Indian payments dashboard signup
+##### 1.2 Indian payments dashboard sign up
 [Sign up](https://sandbox.portal.juspay.in/) to Hypercheckout dashboard and navigate to `Payments > PG Control Centre` to configure payment gateways and enable various Payment Methods.
 > **Note:** While configuring payment gateways, please ensure that you also set up it's webhook with hypercheckout dashboard [refer](https://docs.juspay.in/resources/docs/common-resources/webhooks#Configuring-Webhooks). 
 
 Hyperswitch-Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
-### 2. Signup to Saleor dashboard
+### 2. Sign up to Saleor dashboard
 Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
 
 ## 1. Setting up the Hyperswitch App on your Saleor Dashboard
