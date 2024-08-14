@@ -2,17 +2,15 @@
 description: Juspay Saleor Payment App Setup
 ---
 
-This plugin facilitates seamless integration between Juspay, a leading payment gateway, and Saleor, an open-source e-commerce platform. The plugin allows merchants to leverage Juspay's secure and efficient payment processing capabilities directly within their Saleor storefront, ensuring a smooth and reliable checkout experience for customers both inside and outside India.
+This app provides a seamless integration between Juspay, a leading payment gateway, and Saleor, an open-source e-commerce platform. It enables merchants to utilize Juspay’s secure and efficient payment processing directly within their Saleor storefront, delivering a smooth and dependable checkout experience for customers both within India and globally.
 
-Through Juspay Saleor Payments App, merchants can access Juspay's Hyperswitch for non-Indian payments and Hypercheckout for Indian payments, optimizing the payment process across different regions.
+Merchants can access Juspay's Hyperswitch for non-Indian payments and Hypercheckout for Indian payments, optimizing the payment process across different regions.
 
 #### [Juspay Hypercheckout](https://juspay.in/hypercheckout) - for Indian payments
 HyperCheckout combines the power of native checkout experiences, robust payment orchestration & advanced analytics. HyperCheckout is not a PA/PG, it is an Experience and Orchestration/Routing layer that connects with 100+ PA/PGs. 
 
 #### [Juspay Hyperswitch](https://hyperswitch.io/) - for Non-Indian payments
 Access the entire payment ecosystem with a Single API. Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts. Built on Rust as an open-source product.
-
-# Setup
 
 {% hint style="info" %}
 This section covers the steps to setup Juspay payment app through saleor
