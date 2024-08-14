@@ -1,7 +1,7 @@
 ---
 description: Juspay Saleor Payment App Setup
 ---
-This app connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
+Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
 
 {% hint style="info" %}
 This section covers the steps to setup Juspay payment app through saleor
@@ -46,6 +46,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 - Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
+> **Note:**: To customize, your payment link. Please contact [hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email) 
 
 #### 1.2.2 Configure for Indian payments
 1. Open Hyperswitch App installed on your saleor dashboard.
@@ -106,7 +107,7 @@ Response
 
 This call returns whether the payment is going through hyperswitch or hypercheckout.
 ```
-mutation MyMutation {
+mutation JuspaypaymentGatewayInitialize {
   paymentGatewayInitialize(id: "payment_gateway_id") {
     gatewayConfigs {
       data
@@ -228,7 +229,7 @@ The additional fields you can pass include:
 }
 ```
 
-Handle Hyperswitch transaction initialize response
+Handle Response for Initializing Non-Indian Payment Transactions
 - You can use `clientSecret` and `publishableKey` to invoke the [Hyperswitch SDK](https://docs.hyperswitch.io/learn-more/sdk-reference) </br>
 OR
 - You can use the `paymentLinks.web` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
@@ -290,7 +291,7 @@ OR
 }
 ```
 
-Handle Juspay transaction initialize response
+Hanlde Response for Initializing Indian Payment Transactions
 - You can use `sdkPayload` to invoke the [Hypercheckout SDK](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/initiating-sdk) </br>
 OR
 - You can use the `paymentLinks.web` to redirect the customer to Hypercheckout payment page. Additionally, this URL can also be embedded within an iframe
@@ -321,7 +322,7 @@ mutation JuspayTransactionProcess {
 ```
 
 
-The Juspay Saleor Plugin also supports additional flows such as payment capture, cancellation, and refunds. These actions can be triggered directly through the Saleor dashboard. 
+The Juspay Saleor App also supports additional flows such as payment capture, cancellation, and refunds. These actions can be triggered directly through the Saleor dashboard. 
 
 >Note: If you trigger refunds through the Hyperswitch/Hypercheckout dashboard instead of the Saleor dashboard, you will need to manually update the refund status in the Saleor dashboard.
 
