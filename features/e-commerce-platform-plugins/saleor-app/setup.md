@@ -94,7 +94,7 @@ Response
     "checkout": {
       "availablePaymentGateways": [
         {
-          "id": "app.saleor.hyperswitch",
+          "id": "app.saleor.hyperswitch-dev",
           "name": "Hyperswitch"
         }
       ]
@@ -107,7 +107,7 @@ Response
 
 This call returns whether the payment is going through hyperswitch or hypercheckout.
 ```
-mutation MyMutation {
+mutation HyperswitchGatewayInitialize {
   paymentGatewayInitialize(id: "payment_gateway_id") {
     gatewayConfigs {
       data
@@ -126,9 +126,9 @@ Response
       "gatewayConfigs": [
         {
           "data": {
-            "orchestra": "HYPERSWITCH/Juspay"
+            "orchestra": "HYPERSWITCH/HYPERCHECKOUT"
           },
-          "id": "app.saleor.hyperswitch"
+          "id": "app.saleor.hyperswitch-dev"
         }
       ]
     }
@@ -151,7 +151,7 @@ mutation HyperswitchTransactionInitialize($data: JSON!) {
   transactionInitialize(
     id: "saleor_checkout_id"
     amount: 54.24
-    paymentGateway: { id: "app.saleor.hyperswitch", data: $data }
+    paymentGateway: { id: "app.saleor.hyperswitch-dev", data: $data }
   ) {
     transactionEvent {
       pspReference
