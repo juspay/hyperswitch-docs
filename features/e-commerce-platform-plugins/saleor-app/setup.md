@@ -96,7 +96,7 @@ Response
     "checkout": {
       "availablePaymentGateways": [
         {
-          "id": "app.saleor.juspay-dev",
+          "id": "app.saleor.juspay-test",
           "name": "Juspay"
         }
       ]
@@ -130,7 +130,7 @@ Response
           "data": {
             "orchestra": "HYPERSWITCH/HYPERCHECKOUT"
           },
-          "id": "app.saleor.juspay-dev"
+          "id": "app.saleor.juspay-test"
         }
       ]
     }
@@ -153,7 +153,7 @@ mutation JuspayTransactionInitialize($data: JSON!) {
   transactionInitialize(
     id: "saleor_checkout_id"
     amount: 54.24
-    paymentGateway: { id: "app.saleor.juspay-dev", data: $data }
+    paymentGateway: { id: "app.saleor.juspay-test", data: $data }
   ) {
     transactionEvent {
       pspReference
