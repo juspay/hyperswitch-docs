@@ -28,7 +28,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 ### 1.1 Install the App
 
 1. To access the Juspay Saleor Payment App, [click here](https://hyperswitch-saleor-payment-app-two.vercel.app/). You will be directed to a form where you can enter your Saleor API URL.
-<figure><img src="../../../.gitbook/assets/hyperswitchSaleorInstall.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/juspaySaleorInstall.png" alt=""><figcaption></figcaption></figure>
 
 2. Input your Saleor API URL and click `Add to Saleor`. This action will start the installation process and display the installation page.
 3. Finally, click on `Install App`, this will install the app in your dashboard    
@@ -42,8 +42,10 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 - Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
 - Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
 - Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+- Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+<figure><img src="../../../.gitbook/assets/hyperswitchPublishableKey.png" alt=""><figcaption></figcaption></figure>
+
 - Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
-- Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
 > **Note:**: To customize, your payment link. Please contact [hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email) 
