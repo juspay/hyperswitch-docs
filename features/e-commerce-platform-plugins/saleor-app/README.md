@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch Payments App for Saleor by hyperswitch.io
+description: Juspay Payments App for Saleor by hyperswitch.io
 ---
 
 # Hyperswitch Saleor Payment App
