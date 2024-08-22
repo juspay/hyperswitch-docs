@@ -185,8 +185,11 @@ The additional fields you can pass include:
 6. `statementDescriptorSuffix`: [Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
 7. `description`: [Optional String] A description for the payment
 8. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
-10. `manualRetryAllowed`: [Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-11. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
+9. `manualRetryAllowed`: [Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
+10. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
+11. `allowedPaymentMethods`: [Optional JSON] This helps you to select which payment options you want to show on your payment page.
+    - **Indian Payments**: This expects a json object to enable and disable payment options. For more info refer [here](https://docs.juspay.in/hyper-checkout/android/resources/payment-locking).
+    - **Non-Indian Payments**: This expects a json array of enums to enable and disable payment options. For more info refer `allowed_payment_method_types` in [payments-create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 
 #### Example Response for Initializing a Non-Indian Transaction
 
