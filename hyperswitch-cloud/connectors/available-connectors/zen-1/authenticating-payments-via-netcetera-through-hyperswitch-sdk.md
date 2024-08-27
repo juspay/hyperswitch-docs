@@ -17,12 +17,17 @@ in create payments call. You can read more about it [here](../../../../features/
 Pass your Netcetera SDK API key to HyperSwitch SDK like below.
 
 {% tabs %}
-{% tab title="Android" %}
-```kotlin
-configuration = PaymentSheet.Configuration.Builder("Example, Inc.")
-                .netceteraSDKApiKey("YOUR_NETCETERA_API_KEY")
-                .build()
+{% tab title="Flutter" %}
+```dart
+configuration: Configuration(netceteraSDKApiKey: "<YOUR_NETCETERA_API_KEY>")
 ```
+{% endtab %}
+
+{% tab title="Android" %}
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>configuration = PaymentSheet.Configuration.Builder("Example, Inc.")
+</strong>                .netceteraSDKApiKey("YOUR_NETCETERA_API_KEY")
+                .build()
+</code></pre>
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -50,9 +55,9 @@ This certificate is required is required to decrypt response from Netcetera's Pr
 
 **Android**
 
-Put the obtained certifcate in assets directory in your android project.&#x20;
+Put the obtained certificate in assets directory in your android project.&#x20;
 
 #### iOS
 
-Put the obtained certifcate in the root directory in your iOS project.&#x20;
+Put the obtained certificate in the root directory in your iOS project.&#x20;
 
