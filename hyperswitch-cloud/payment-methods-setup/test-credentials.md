@@ -26,20 +26,49 @@ You might have configured multiple connectors on the Hyperswitch Dashboard. If y
 
 Simulate a successful test card payment with the following credentials
 
-| Connector       | Card Number      | MM/YY             | CVV                  | Reference - More Test Credentials                                                                           |
-| --------------- | ---------------- | ----------------- | -------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Dummy Connector | 4242424242424242 | (Any future date) | (Any 3 digit number) | -                                                                                                           |
-| Dummy Connector | 4111111111111111 | (Any future date) | (Any 3 digit number) | -                                                                                                           |
-| Adyen           | 4000020000000000 | 03/30             | 737                  | [Click here](https://docs.adyen.com/development-resources/testing/test-card-numbers)                        |
-| Bluesnap        | 6011000180331112 | 02/26             | 123                  | [Click here](https://developers.bluesnap.com/reference/test-credit-cards)                                   |
-| Authorize.net   | 4242424242424242 | 12/25             | 100                  | [Click here](https://developer.authorize.net/hello\_world/testing\_guide.html)                              |
-| Braintree       | 4111111111111111 | 12/25             | 100                  | [Click here](https://developer.paypal.com/braintree/docs/reference/general/testing/php#credit-card-numbers) |
-| Checkout        | 4242424242424242 | 12/25             | 100                  | [Click here](https://www.checkout.com/docs/testing/test-cards)                                              |
-| Fiserv          | 4005550000000019 | 02/35             | 123                  | -                                                                                                           |
-| Global Payments | 4263970000005262 | 12/25             | 100                  | [Click here](https://developer.globalpay.com/resources/test-card-numbers)                                   |
-| Nuvei           | 4444333322221111 | 12/25             | 123                  | [Click here](https://helpdesk.nuvei.com/doku.php?id=developer:integration\_docs:testing-guide)              |
-| Stripe          | 4242424242424242 | 12/25             | 100                  | [Click here](https://stripe.com/docs/testing#cards)                                                         |
-| Worldline       | 4012000033330026 | 12/25             | 123                  | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
+| Connector       | Card Number      | MM/YY | CVV | Reference - More Test Credentials                                                                           |
+| --------------- | ---------------- | ----- | --- | ----------------------------------------------------------------------------------------------------------- |
+| Adyen           | 4000020000000000 | 03/30 | 737 | [Click here](https://docs.adyen.com/development-resources/testing/test-card-numbers)                        |
+| Bluesnap        | 6011000180331112 | 02/26 | 123 | [Click here](https://developers.bluesnap.com/reference/test-credit-cards)                                   |
+| Authorize.net   | 4242424242424242 | 12/25 | 100 | [Click here](https://developer.authorize.net/hello\_world/testing\_guide.html)                              |
+| Braintree       | 4111111111111111 | 12/25 | 100 | [Click here](https://developer.paypal.com/braintree/docs/reference/general/testing/php#credit-card-numbers) |
+| Checkout        | 4242424242424242 | 12/25 | 100 | [Click here](https://www.checkout.com/docs/testing/test-cards)                                              |
+| Fiserv          | 4005550000000019 | 02/35 | 123 | -                                                                                                           |
+| Global Payments | 4263970000005262 | 12/25 | 100 | [Click here](https://developer.globalpay.com/resources/test-card-numbers)                                   |
+| Nuvei           | 4444333322221111 | 12/25 | 123 | [Click here](https://helpdesk.nuvei.com/doku.php?id=developer:integration\_docs:testing-guide)              |
+| Stripe          | 4242424242424242 | 12/25 | 100 | [Click here](https://stripe.com/docs/testing#cards)                                                         |
+| Worldline       | 4012000033330026 | 12/25 | 123 | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
+
+**Dummy Connector test cards**
+
+* Different flows are available for dummy connector transactions, determined by the card number.
+* For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
+* Dummy connectors only support payments and refunds.
+* Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
+
+**Non 3DS flows**
+
+* Success
+  * 4111111111111111
+  * 4242424242424242
+  * 5555555555554444
+  * 38000000000006
+  * 378282246310005
+  * 6011111111111117
+* Card declined
+  * 5105105105105100
+  * 4000000000000002
+* Insufficient funds
+  * 4000000000009995
+* Lost card
+  * 4000000000009987
+* Stolen card
+  * 4000000000009979
+
+**3DS flows**
+
+* Success
+  * 4000003800000446
 
 ### Payment Methods Testing
 

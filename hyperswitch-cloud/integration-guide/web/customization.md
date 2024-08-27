@@ -93,6 +93,9 @@ The rules option is a map of CSS-like selectors to CSS properties, allowing gran
 * .Tab:focus
 * .Input--invalid, .Label--invalid
 * .Input::placeholder
+* .billing-section, .billing-details-text
+
+
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -191,11 +194,22 @@ Hyperswitch Unified Checkout supports localization in 6 languages. By default, t
 We support the following locales -
 
 * Arabic (ar)
-* Hebrew (he)
-* French (fr)
-* German (de)
+* Catalan (ca)
+* Chinese (zh)
+* Deutsch (de)
+* Dutch (nl)
 * English (en)
-* Japanese (ja)
+* EnglishGB (en-GB)&#x20;
+* FrenchBelgium (fr-BE)
+* French (fr)
+* Hebrew (he)
+* Italian (it)
+* Japanese (ja)&#x20;
+* Polish (pl)
+* Portuguese (pt)&#x20;
+* Russian (ru)
+* Spanish (es)
+* Swedish (sv)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
