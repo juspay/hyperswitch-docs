@@ -14,7 +14,7 @@ The complexity around PCI compliance is often exaggerated, creating closed syste
 
 The current payment networks are built on a chain of trust between banks, card networks, payment processors and merchants. And the result is that _"everyone needs to take responsibility"_ for secure handling of card information.
 
-> PCI compliance is not determined not enforced by any Government body. It is a set of standards created by the Payment Card Industry Security Standards Council.
+> PCI compliance is not determined nor enforced by any Government body. It is a set of standards created by the Payment Card Industry Security Standards Council.
 
 Payment Card Industry Security Standards Council (PCI-SSC), was an independent body created by the card networks in 2006. The independent body publishes and manages PCI security standards. However, the enforcement of these standards falls to the card networks and payment processors.
 
