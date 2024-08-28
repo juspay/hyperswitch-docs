@@ -48,7 +48,7 @@ Depending on the payments brands you accept and your country of operation, if yo
 
 Lets assume all your software systems are cloud native and do not depend upon on-premise servers. In such case your staff will not be able to physically access any cardholder data and hence your business is exempted from Requirement 9.
 
-That is one PCI Requirement less for your business and 22 controls will be automatically exempted.
+That is one PCI Requirement less for your business and 22 controls would be automatically exempted.
 
 ### Requirement 3
 
