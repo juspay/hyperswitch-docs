@@ -18,7 +18,7 @@ The current payment networks are built on a chain of trust between banks, card n
 
 Payment Card Industry Security Standards Council (PCI-SSC), was an independent body created by the card networks in 2006. The independent body publishes and manages PCI security standards. However, the enforcement of these standards falls to the card networks and payment processors.
 
-We have  open sourced our PCI certified card vault application code along with the deployment scripts which you can self-host. By the time you complete this guide, you will be running a PCI complaint card vault on your server and also be ready to get PCI certification.
+We have open sourced our PCI certified card vault application code along with the deployment scripts which you can self-host. By the time you complete this guide, you will be running a PCI complaint card vault on your server and also be ready to get PCI certification.
 
 {% embed url="https://docs.google.com/presentation/d/1inTRp-yvIUjiIuo1f-FBFd1zbUq5IxIbUMzEYpAAUNI/edit?usp=sharing" fullWidth="false" %}
 
