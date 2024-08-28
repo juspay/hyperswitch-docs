@@ -1,5 +1,5 @@
 ---
-description: It's no rocket science
+description: It's not rocket science
 ---
 
 # 🏛 PCI compliance
