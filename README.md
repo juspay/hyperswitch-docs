@@ -66,7 +66,7 @@ layout:
 
 ***
 
-### **Quickstart with Hyperswitch**
+## **Quickstart with Hyperswitch**
 
 1. [For Enterprises](hyperswitch-cloud/quickstart/)&#x20;
 2. [For Contributors](hyperswitch-open-source/overview.md)
