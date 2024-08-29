@@ -16,14 +16,14 @@ Businesses subject to PCI-DSS must annually demonstrate compliance with the regu
 2. **Report on Compliance (ROC):** An independent third-party QSA or ISA certified by the PCI-SSC will have to perform the audit and share the findings.
 
 {% hint style="success" %}
-Companies that fall into PCI DSS Levels 2-4 are only required to complete a Self-Assessment Questionnaire (SAQ) and submit to the respective payment processor or acquirer. And that would be all !!
+Companies that fall into PCI DSS Levels 2-4 are only required to complete a Self-Assessment Questionnaire (SAQ) and submit to the respective payment processor or acquirer.
 {% endhint %}
 
 ## Level of PCI compliance
 
-Depending on the number of transactions your business processes, you could be subject to different levels of PCI compliance.
+Depending on the number of transactions your business processes and payment brands accepted, you could be subject to different levels of PCI compliance.
 
-<table><thead><tr><th width="186">Parameter</th><th width="144">PCI Level 1</th><th width="142">PCI Level 2</th><th width="138">PCI Level 3</th><th>PCI Level 4</th></tr></thead><tbody><tr><td>Number of card transactions</td><td>Over 6 million</td><td>6 million to 1 million</td><td>1 million to 20,000</td><td>Less than 20,000</td></tr><tr><td>Compliance Report</td><td>Report on Compliance (ROC)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td></tr><tr><td>Assessment type</td><td>Independent QSA or ISA</td><td>Self assessment</td><td>Self assessment</td><td>Self assessment</td></tr><tr><td>Quarterly network scan by approve QSA</td><td>Applicable</td><td>Applicable</td><td>Applicable</td><td>Applicable</td></tr></tbody></table>
+<table><thead><tr><th width="186">Parameter</th><th width="144">PCI Level 1</th><th width="142">PCI Level 2</th><th width="138">PCI Level 3</th><th>PCI Level 4</th></tr></thead><tbody><tr><td>Number of annual card transactions (typical)</td><td>Over 6 million</td><td>6 million to 1 million</td><td>1 million to 20,000</td><td>Less than 20,000</td></tr><tr><td>Compliance Report</td><td>Report on Compliance (ROC)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td></tr><tr><td>Assessment type</td><td>Independent QSA or ISA</td><td>Self assessment</td><td>Self assessment</td><td>Self assessment</td></tr><tr><td>Quarterly network scan by approve QSA</td><td>Applicable</td><td>Applicable</td><td>Applicable</td><td>Applicable</td></tr></tbody></table>
 
 _Sources:_ [_Mastercard guidelines_](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html)_,_ [_Visa Guidelines_](https://www.visa.co.in/support/small-business/security-compliance.html)_,_ [_PCI SSC document library_](https://www.pcisecuritystandards.org/document\_library/?category=pcidss\&hsCtaTracking=8aa4514c-37d0-40bc-b864-ed4c4aebb5de%7C8d5a5e5f-7860-4a8c-97cc-d91f17654660)_._&#x20;
 
@@ -37,22 +37,27 @@ In general PCI compliance is consolidated into 12 Requirements and 224 controls.
 
 ### Self assess your business for PCI compliance
 
-If you are an online business processing less than 6 million card transactions a month, all that you will have to do is a self assessment of PCI compliance as per [SAQ D](https://listings.pcisecuritystandards.org/documents/SAQ\_D\_v3\_Merchant.pdf).
+Depending on the payments brands you accept and your country of operation, if you are an online business processing less than a certain number of transactions per year, you will only need to do a self assessment of PCI compliance. Some examples:
+
+- [Visa (India): Less than 6 million transactions annually](https://www.visa.co.in/support/small-business/security-compliance.html)
+- [Visa (USA): Less than 6 million transactions annually](https://usa.visa.com/support/small-business/security-compliance.html)
+- [MasterCard (USA): Less than 6 million transactions annually](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html)
+- [American Express (USA): Less than 2.5 million transactions annually](https://www.americanexpress.com/us/merchant/us-data-security.html#PCI)
 
 ### Requirement 9
 
 Lets assume all your software systems are cloud native and do not depend upon on-premise servers. In such case your staff will not be able to physically access any cardholder data and hence your business is exempted from Requirement 9.
 
-That is one PCI Requirement less for your business and 22 controls automatically exempted.
+That is one PCI Requirement less for your business and 22 controls would be automatically exempted.
 
 ### Requirement 3
 
-If you choose not to store card holder data on your servers, you will be exmepted from Requirement 3.
+If you choose not to store card holder data on your servers, you will be exempted from Requirement 3.
 
 So eventually you are left with 10 PCI Requirements and 182 controls to comply with.&#x20;
 
 {% hint style="info" %}
-This is the reason behind our recommendation of installing a simple setup without the card vault, if your business processes less than 6 million card transactions
+This is the reason behind our recommendation of installing a simple setup without the card vault, if your business qualifies as a PCI DSS Level 2-4 provider
 {% endhint %}
 
 ## Next step:
