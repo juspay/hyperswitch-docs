@@ -27,17 +27,19 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 > Note: Domain name might vary based on the testing and production environment.
 
-> Info: Payout links are secure by nature and should only be opened within an iframe of whitelisted domains in production. For ease of use, these links can be used in a test mode (for non production env) which removes the necessity of configuring whitelisted domains and loading these links within an iframe.
+> Info: Payout links are secure by nature and should only be opened within an iframe of whitelisted domains in production. For ease of access, these links can be used in a test mode (for non production env) which removes the necessity of configuring whitelisted domains and loading these links within an iframe.
 
 There are a couple of ways for using payout links.
+
 - Creating default links
 - Customizing UI of individual links
 - Serving links from a custom domain
-- (TEST MODE) Opening non-iframed links
+- **[TEST MODE]** Opening non-iframed links
 
 #### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout_link_config by passing the below object in the request body
 
 {% code %}
+
 ```jsonc
 "payout_link_config": {
   // (optional) Custom theme color for your payout link.
@@ -60,17 +62,19 @@ There are a couple of ways for using payout links.
   "payout_test_mode": false
 }
 ```
+
 {% endcode %}
 
 > Note: It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
 
-
-#### 2. [Create a default payout link](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) by using create payouts endpoint
+#### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
+>
 > This creates a default payout link using the payout link config that was configured for the profile. In case payout config is not configured and not passed during create request, a default set of UI config is used.
 
 - Set `payout_link` to true
 
 {% code %}
+
 ```shell
 curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
@@ -107,13 +111,14 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "session_expiry":2592000
 }'
 ```
+
 {% endcode %}
 
 <figure><img src="../../../.gitbook/assets/payout-link-default.png" alt=""><figcaption>Default payout link opened in an iframe hosted locally</figcaption></figure>
 
-#### 3. Customizing a payout link during creation:
+#### 3. Customizing a payout link during creation
 
-> Each payout link can be configured inidividually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create), by including the `payout_link_config` object. UI config and access control (test_mode) can be specified during link creation. However, `domain_name` cannot be customized during individual link creation and is always configured at a profile level.
+> Each payout link can be configured inidividually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create), by including the `payout_link_config` object. UI config and access control (test_mode) can be specified during creation. However, `domain_name` is always configured at a profile level.
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
@@ -125,7 +130,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "confirm": false,
     "customer_id": "cus_123",
     "return_url": "https://hyperswitch.io",
-    "description": "For selling Tshirt",
+    "description": "Cashback from RetroRecords",
     "payout_link": true,
     "billing": {
         "address": {
@@ -146,9 +151,9 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     },
     "session_expiry": 2592000,
 <strong>    "payout_link_config"</strong>: {
-        "logo": "https://i.imgur.com/N18JAS2.jpg",
-        "theme": "#143F1E",
-        "merchant_name": "SunFlower Inc."
+        "logo": "https://img.freepik.com/premium-vector/music-vector-logo-illustration-design-template_593008-640.jpg?w=1480",
+        "theme": "#92817A",
+        "merchant_name": "Retro Records"
     }
 }'
 </code></pre>
@@ -156,20 +161,23 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 <figure><img src="../../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption>Customized payout link opened in an iframe hosted locally</figcaption></figure>
 
 #### 4. Opening non-iframed links
+
 > Note: This feature is available only in non-production environment. This essentially bypasses the server side and client side validations which are in place for making sure links are only opened within an iframe of a whitelisted domain.
 
 > Note: This can be achieved by either setting this behaviour at the business profile level, or can be set in individual link create requests.
 
 ##### Setting at business profile level
 
-- Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set test mode 
+- Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
 
 {% code %}
+
 ```jsonc
 "payout_link_config": {
   "payout_test_mode": true
 }
 ```
+
 {% endcode %}
 
 - Any new payout links created for this business profile will be accessible through browser's new tab.
@@ -188,7 +196,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "confirm": false,
     "customer_id": "cus_123",
     "return_url": "https://hyperswitch.io",
-    "description": "For selling Tshirt",
+    "description": "Rewards from HyperSwitch",
     "payout_link": true,
     "billing": {
         "address": {
@@ -208,11 +216,8 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
         }
     },
     "session_expiry": 2592000,
-<strong>    "payout_link_config"</strong>: {
-        "logo": "https://i.imgur.com/N18JAS2.jpg",
-        "theme": "#143F1E",
-        "merchant_name": "SunFlower Inc.",
-        "test_mode": true
+    "payout_link_config": {
+<strong>        "test_mode": true</strong>
     }
 }'
 </code></pre>
