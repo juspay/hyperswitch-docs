@@ -192,7 +192,7 @@
 * [🚀 Going live](hyperswitch-open-source/going-live/README.md)
   * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)
   * [🏛️ PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
-    * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
+    * [🍰 It's not rocket science](hyperswitch-open-source/going-live/pci-compliance/its-not-rocket-science.md)
     * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
   * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
   * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
