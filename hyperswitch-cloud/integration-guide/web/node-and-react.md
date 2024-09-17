@@ -84,7 +84,10 @@ import { hyperElements } from "@juspay-tech/react-hyper-js";
 Call `loadHyper` with your publishable API keys to configure the library. To get an publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```js
-const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY");
+const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY",{
+    customBackendUrl: "YOUR_BACKEND_URL",
+    //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
+});
 ```
 
 #### 2.4 Fetch the Payment and Initialise `hyperElements`
@@ -140,13 +143,13 @@ const widgets = useWidgets();
 
 {% tabs %}
 {% tab title="ExpressCheckout" %}
-**Key Features of Hyperswitch's Express Checkout**
+#### **Key Features of Hyperswitch's Express Checkout**
 
 * Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
 * Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
 * Easy Integration: Our SDK can be easily integrated with web applications.
 
-**Benefits of Hyperswitch's Express Checkout Feature**
+#### **Benefits of Hyperswitch's Express Checkout Feature**
 
 * Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
 * Time Savings: Speeds up the checkout process, saving time for both customers and merchants.

@@ -20,7 +20,10 @@ Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To
 {% tabs %}
 {% tab title="HTML + JavaScript" %}
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
-</strong>hyper = Hyper.init(YOUR_PUBLISHABLE_KEY);
+</strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{
+    customBackendUrl: "YOUR_BACKEND_URL",
+    //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
+});
 </code></pre>
 {% endtab %}
 

@@ -104,7 +104,10 @@ async function initialize() {
  
   let hyper; 
   script.onload = () => {
-      hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
+      hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
+      customBackendUrl: "YOUR_BACKEND_URL",
+      //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
+      })
       const appearance = {
           theme: "midnight",
       };
