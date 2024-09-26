@@ -1,7 +1,7 @@
 ---
 description: >-
-  Create multiple merchant accounts and business profiles for seamless
-  integration with your business.
+  Create multiple merchant accounts, profiles and users for seamless integration
+  with your business.
 ---
 
 # 🤹 Multiple accounts & profiles
@@ -11,7 +11,7 @@ Follow this guide to understand where your business use case fits with hyperswit
 {% endhint %}
 
 {% hint style="warning" %}
-If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory
+If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory.
 {% endhint %}
 
 Hyperswitch Architecture supports&#x20;
@@ -28,19 +28,21 @@ Here's how the architecture would look like.
 
 #### Organization
 
-Organization refers to the main business. Roles and permissions for users can be assigned at the organization level. When a new user registers, an organization is created and the user assumes the role of organization admin.
+Organization refers to the main business. When a new user registers, an organization is created and the user assumes the role of organization admin.
 
 #### Merchant Account
 
 A merchant account is associated with an `api_key` and `publishable_key` which is used for authentication. There can be many merchant accounts that can be created under an organization by an organization admin.&#x20;
 
-#### Business profile
+#### Profile
 
 {% hint style="info" %}
-Every merchant account has at least one business profile. For easier integration`profile_id` is not mandatory if there is only one business profile.&#x20;
+Every merchant account has at least one profile. For easier integration,`profile_id` is not mandatory if there is only one business profile.&#x20;
 {% endhint %}
 
-A business profile serves as a logical separation of businesses for seamless integration and onboarding. Every business profile  is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
+A profile can also be considered to be a business profile for practical purposes, it serves as a logical separation of businesses for seamless integration and onboarding. Every business profile is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
+
+> Roles and permissions for users can be assigned at the organization level, and merchant level.&#x20;
 
 * Routing Algorithm.
 
@@ -82,17 +84,19 @@ For Marketplace merchants with multiple sub-merchants, the parent merchant can c
 
 ### How to configure multiple merchant accounts
 
-When you sign up on Hyperswitch, a merchant account is created under your Organization and every merchant account automatically has one profile created under it.
+When you sign up on Hyperswitch, a merchant account and a profile is created under your organisation account by default.&#x20;
 
-To create more merchant accounts, click the merchant account dropdown from the right top corner in your Hyperswitch dashboard.
+To create more merchant accounts, click the merchant account dropdown from the left top corner in your Hyperswitch dashboard, and click on the create new merchant option.
 
-<figure><img src="../../.gitbook/assets/create_merchant_account.png" alt=""><figcaption><p>Creating additional merchant accounts</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-09-19 at 11.37.33 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### How to configure multiple business profiles
 
-* On your Hyperswitch dashboard, visit Settings → Business Profiles, click ‘Add' button to create another business profile. Here you will also see a list of already configured business profiles for your merchant account. As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can also be found here.
+To create more profiles, click the profile dropdown from the right top corner in your Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.&#x20;
 
-<figure><img src="../../.gitbook/assets/add_business_profile" alt=""><figcaption><p>Add a business profile</p></figcaption></figure>
+* As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can be found under Settings → Business Profiles.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-09-19 at 11.40.12 AM.png" alt=""><figcaption></figcaption></figure>
 
 * Enter a name for your profile in the next pop-up screen and click ‘Add’ again. A new profile with the given ‘profile\_name’ and an automatically generated ‘profile\_id’ is created.
 

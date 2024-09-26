@@ -16,6 +16,11 @@ Businesses subject to PCI-DSS must annually demonstrate compliance with the regu
 2. **Report on Compliance (ROC):** An independent third-party QSA or ISA certified by the PCI-SSC will have to perform the audit and share the findings.
 
 {% hint style="success" %}
+Hyperswitch's PCI Attestation of Compliance can be found in the Hyperswitch Dashboard. \
+To locate -> Go to Settings -> Compliance&#x20;
+{% endhint %}
+
+{% hint style="success" %}
 Companies that fall into PCI DSS Levels 2-4 are only required to complete a Self-Assessment Questionnaire (SAQ) and submit to the respective payment processor or acquirer. And that would be all !!
 {% endhint %}
 

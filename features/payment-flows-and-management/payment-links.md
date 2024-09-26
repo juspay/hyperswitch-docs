@@ -4,6 +4,8 @@ description: Low-code solution to accept payments
 
 # 🔗 Payment links
 
+> This feature is still under development. We will update this section, as soon as it is live.
+
 Introducing Payment Links – Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
 ### Use cases for Payment links

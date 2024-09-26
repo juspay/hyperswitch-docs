@@ -17,7 +17,7 @@ Apart from regular one-time payments, Hyperswitch supports saving a card, recurr
 
 ## Integration Steps
 
-1. Go to Hyperswitch dashboard and to connectors tab [here](https://app.hyperswitch.io/) and enable card.
+1. Go to Hyperswitch dashboard and to connectors tab [here](https://app.hyperswitch.io/dashboard/connectors) and enable card.
 
 ## Saved Cards
 
