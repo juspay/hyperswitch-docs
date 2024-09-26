@@ -58,31 +58,33 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 * 🟧 Payment Method Management experience to enabled customer and payment method related operations in non-purchase user journeys&#x20;
 * New connector and payment method Integrations (more will be added as we progress)
-  * 🟧 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
+  * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
   * 🟧 Razorpay for UPI payments&#x20;
-  * PAZE
+  * 🟧 PAZE checkout
+  * 🟩 TaxJar for dynamic tax calculations
+
+
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟥 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
+* 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* 🟧 Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
-  * Wells Fargo (US)
-  * JP Morgan (US)
-* 🟧 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience&#x20;
+* Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
+  * 🟧 Wells Fargo (US)
+  * 🟩 Deutsche Bank (DE)
+* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience&#x20;
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* Enhancing multi-rail payouts orchestration for speed and cost - Same-day ACH (US), RTP (US), FedWire (US), VisaDirect (Global) and MasterSend (Global)&#x20;
-* Experience for Payout payment method verification and tokenization&#x20;
-* 🟧 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
+* 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
+* 🟧  User management and dashboard analytics views at entity level granularity (org to profile)
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟧 Payment plugins for Commerce Tools Headless commerce platform to facilitate faster integrations&#x20;
-* 🟧 🚛 PCI Software Security Standard (S3) certification&#x20;
+* 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
