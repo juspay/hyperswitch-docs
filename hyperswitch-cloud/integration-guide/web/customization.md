@@ -350,6 +350,24 @@ Customize the header text for the section displaying saved payment methods.
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
 
+### Custom Message for Card Terms
+
+We provide a default message for card terms i.e.
+
+```rescript
+`By providing your card information, you allow ${company_name} to charge your card for future payments in accordance with their terms.`
+```
+
+If you would like to customize this message, you can do so by using the `customMessageForCardTerms` property in the `paymentElementOptions` object.
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
+</strong> ...,
+ customMessageForCardTerms: "Custom message for Card terms",
+}
+
+&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
+</code></pre>
+
 ## Next step:
 
 {% content-ref url="../../payment-methods-setup/" %}
