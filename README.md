@@ -22,6 +22,8 @@ layout:
 
 # 👋 Hyperswitch: Global Payments Switch
 
+## [🚨Participate in Hacktoberfest to get rewarded for your contributions!](https://hyperswitch.io/hacktoberfest)
+
 ## Products
 
 {% tabs %}

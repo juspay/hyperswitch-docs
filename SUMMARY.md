@@ -63,7 +63,7 @@
     * [Bank Debits](hyperswitch-cloud/payment-methods-setup/banks/bank-debits.md)
     * [Bank Redirects](hyperswitch-cloud/payment-methods-setup/banks/bank-redirects.md)
     * [Bank Transfers](hyperswitch-cloud/payment-methods-setup/banks/bank-transfers.md)
-    * [\[WIP\] Open Banking](hyperswitch-cloud/payment-methods-setup/banks/wip-open-banking.md)
+    * [Open Banking](hyperswitch-cloud/payment-methods-setup/banks/open-banking.md)
   * [🪙 Crypto](hyperswitch-cloud/payment-methods-setup/crypto.md)
   * [🔑 Test Credentials](hyperswitch-cloud/payment-methods-setup/test-credentials.md)
 * [🔌 Connectors](hyperswitch-cloud/connectors/README.md)
