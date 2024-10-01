@@ -1,8 +1,8 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Hyperswitch roadmap (Oct to Dec'24)
 ---
 
-# 🛣️ Roadmap - Q3 2024
+# 🛣️ Roadmap - Q4 2024 \[Draft]
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -10,17 +10,29 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Recap of Q2 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods&#x20;
-* Vaulting payment methods with Hyperswitch for on-session payments
-* Natively authenticating payments using Third party 3DS service providers - Netcetra, 3dsecure.io
-* Integrations for alternate payment methods via Mifinity and ZSL
-* Scan a card experience on Unified Checkout
-* Open-sourced the Native SDK for Unified Checkout
-* Control Centre support for Two Factor Authentication for user login
-* One-click Express Checkout through Applepay, Klarna, GooglePay
-* Secure payout iframe to collect payout details and trigger payouts
+* Hyperswitch is now PCI Software Security Standard (S3) certified
+* Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reducing interchange fee
+* Payment Method Management experience to view, add and delete payment methods (for Web platform)
+* New connector and payment method integrations
+  * Datatrans ([Planet.com](http://planet.com/)) for card payments
+  * Wells Fargo (US) for card payments
+  * Deutsche Bank (DE) for direct debits
+  * Novalnet for card payments
+  * Fiuu for cards, bank transfer and inter-operable QR based payments
+  * Itau Bank for instant payments
+  * Payouts via PayOne, and Wells Fargo
+  * Razorpay UPI payments
+* Pay by Bank Experience through Plaid Open banking. This is to allow merchants to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience
+* Account verification via Plaid for pull payments (ACH, SEPA) in the EU and US
+* React Native SDK was Open Sourced
+* Native 3DS Authentication Experience via Netcetera for mobile
+* Merchant Initiated Transactions (MIT) were made PSP agnostic with Network Transaction ID (NTI)
+* User management and dashboard analytics views at entity level granularity (org to profile)
+* Payment plugin for Saleor - headless commerce platform to facilitate faster integrations
+* Localisation support for Payouts across 17 languages
+* Control Centre - Enable SSO sign in with Okta
 
 ### Core Values <a href="#core-values" id="core-values"></a>
 
@@ -56,35 +68,41 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟧 Payment Method Management experience to enabled customer and payment method related operations in non-purchase user journeys&#x20;
-* New connector and payment method Integrations (more will be added as we progress)
-  * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
-  * 🟧 Razorpay for UPI payments&#x20;
-  * 🟧 PAZE checkout
-  * 🟩 TaxJar for dynamic tax calculations
-
-
+* 🟥 More payment authorization workflows - split payments and incremental authorization
+* New integrations -&#x20;
+  * 🟥 Paymentwall for cards and alternate payment methods
+  * 🟥 Digital Virgo integration for Direct Carrier Billing
+  * 🟧 SamsungPay
+  * 🟥 Nexi Xpay card payments
+  * 🟧 Deutche Bank for card payments and payouts
+  * 🟥 CMI Maroc card payments
+* 🟧 🚛 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
+* 🟥 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
+* 🟥 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
+* 🟥 Implement MPAN (merchant tokens) for Applepay recurring payments
+* 🟧  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas\_scof/use-case1/) - For Mastercard cards, provide Biometric authentication to the customers
+* 🟧 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
+* 🟥 Migration of Network Tokens for business continuity
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
-  * 🟧 Wells Fargo (US)
-  * 🟩 Deutsche Bank (DE)
-* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience&#x20;
+* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US ([through Fiserv](https://developer.fiserv.com/product/CommerceHub/docs/?path=docs/Resources/Guides/Debit/Debit.md\&branch=main))
+* New Integrations:\
+  \- 🟧 Chase\
+  \- 🟧 JP Morgan
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
-* 🟧  User management and dashboard analytics views at entity level granularity (org to profile)
+* 🟧 Data reporting on an organisation, merchant and profile level for easier reconciliation
+* 🟧 Advanced Analytics for Refunds, Disputes and Smart Retries
+* 🟥🚛 Experience enhancements for Payouts payment method verification and tokenization
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟧 Payment plugins for Commerce Tools Headless commerce platform to facilitate faster integrations&#x20;
-* 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
+* 🟥💪Customizable Address Element for merchants to directly collect billing and shipping addresses for Ecom delivery, tax purposes, etc.
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
