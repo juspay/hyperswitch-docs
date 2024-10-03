@@ -13,12 +13,12 @@ Before the beginning of every quarter we come together to develop the next roadm
 ### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
 * Hyperswitch is now PCI Software Security Standard (S3) certified
-* Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reducing interchange fee
+* Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reduce the interchange fee
 * Payment Method Management experience to view, add and delete payment methods (for Web platform)
 * New connector and payment method integrations
   * Datatrans ([Planet.com](http://planet.com/)) for card payments
   * Wells Fargo (US) for card payments
-  * Deutsche Bank (DE) for direct debits
+  * Deutsche Bank (DE) for SEPA direct debits
   * Novalnet for card payments
   * Fiuu for cards, bank transfer and inter-operable QR based payments
   * Itau Bank for instant payments
@@ -74,8 +74,8 @@ There are a lot of problems to be solved in payments, but our majority of our cu
   * 🟥 Digital Virgo integration for Direct Carrier Billing
   * 🟧 SamsungPay
   * 🟥 Nexi Xpay card payments
-  * 🟧 Deutche Bank for card payments and payouts
-  * 🟥 CMI Maroc card payments
+  * 🟧 Deutche Bank for card payins and SEPA payouts
+  * 🟧 🚛 PAZE for card payments in the US
 * 🟧 🚛 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
@@ -83,26 +83,26 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟥 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
 * 🟥 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
 * 🟥 Implement MPAN (merchant tokens) for Applepay recurring payments
-* 🟧  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas\_scof/use-case1/) - For Mastercard cards, provide Biometric authentication to the customers
+* 🟧  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas\_scof/use-case1/) with Mastercard cards. This is to provide seamless payment authentication experience (with Biometrics) and liability shift for merchants
 * 🟧 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
 * 🟥 Migration of Network Tokens for business continuity
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US ([through Fiserv](https://developer.fiserv.com/product/CommerceHub/docs/?path=docs/Resources/Guides/Debit/Debit.md\&branch=main))
-* New Integrations:\
-  \- 🟧 Chase\
-  \- 🟧 JP Morgan
+* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US
+* More direct bank acquirer integrations
+  * 🟧 Chase
+  * 🟧 JP Morgan
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟧 Data reporting on an organisation, merchant and profile level for easier reconciliation
-* 🟧 Advanced Analytics for Refunds, Disputes and Smart Retries
-* 🟥🚛 Experience enhancements for Payouts payment method verification and tokenization
+* 🟧 Data reporting at an organization, merchant and profile level for easier reconciliation
+* 🟧 Enhancements in analytics module for Refunds, Disputes and Smart Retries
+* 🟥 🚛 Experience enhancements for Payouts payment method verification and tokenization
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟥💪Customizable Address Element for merchants to directly collect billing and shipping addresses for Ecom delivery, tax purposes, etc.
+* 🟥 💪 Customizable Address Element for merchants to directly collect billing and shipping addresses for Ecom delivery, tax purposes, etc.
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
