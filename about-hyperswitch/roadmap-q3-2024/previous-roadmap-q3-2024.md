@@ -74,7 +74,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
   * 🟧 Wells Fargo (US)
   * 🟩 Deutsche Bank (DE)
-* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience&#x20;
+* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 

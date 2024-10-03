@@ -24,7 +24,7 @@ Before the beginning of every quarter we come together to develop the next roadm
   * Itau Bank for instant payments
   * Payouts via PayOne, and Wells Fargo
   * Razorpay UPI payments
-* Pay by Bank Experience through Plaid Open banking. This is to allow merchants to enable instant bank transfer (push payments) in the US, UK and EU via with support for app2app redirection experience
+* Pay by Bank Experience through [Plaid Open banking](../../hyperswitch-cloud/payment-methods-setup/banks/open-banking.md). This is to allow merchants to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience
 * Account verification via Plaid for pull payments (ACH, SEPA) in the EU and US
 * React Native SDK was Open Sourced
 * Native 3DS Authentication Experience via Netcetera for mobile
