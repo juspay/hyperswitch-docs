@@ -56,12 +56,16 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟧 Payment Method Management experience to enabled customer and payment method related operations in non-purchase user journeys&#x20;
+* 🟩 Payment Method Management experience to view, add and delete payment methods (for Web platform)
 * New connector and payment method Integrations (more will be added as we progress)
   * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
-  * 🟧 Razorpay for UPI payments&#x20;
-  * 🟧 PAZE checkout
-  * 🟩 TaxJar for dynamic tax calculations
+  * 🟩 Razorpay for UPI payments&#x20;
+  * 🟧 PAZE checkout _(extending to Q4)_
+  * 🟧 TaxJar for dynamic tax calculations _(extending to Q4)_
+  * 🟩 Novalnet for card payments
+  * 🟩 Fiuu for cards, bank transfer and inter-operable QR based payments
+  * 🟩 Itau Bank for instant payments
+  * 🟩 Payouts via PayOne, and Wells Fargo
 
 
 
@@ -72,18 +76,18 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
 * Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
-  * 🟧 Wells Fargo (US)
+  * 🟩 Wells Fargo (US)
   * 🟩 Deutsche Bank (DE)
 * 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
-* 🟧  User management and dashboard analytics views at entity level granularity (org to profile)
+* 🟩  User management and dashboard analytics views at entity level granularity (org to profile)
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟧 Payment plugins for Commerce Tools Headless commerce platform to facilitate faster integrations&#x20;
+* 🟩 Payment plugins for ~~Commerce Tools~~ Saleor - Headless commerce platform to facilitate faster integrations
 * 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
