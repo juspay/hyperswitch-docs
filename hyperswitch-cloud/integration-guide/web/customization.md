@@ -77,6 +77,36 @@ The wallet customization feature lets users configure payment options like Apple
 | <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>                    | Determines the visibility of Apple Pay, Google Pay, Paypal and Klarna.                                                                                                                                                                                                                                                                | <p></p><p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                             |
 | <p>style: {<br>   theme: theme,<br>   type: styleType,<br>   height: int,<br>   buttonRadius: int,<br>}</p> | <p></p><p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
+### 2.1 SDK Handle One Click Confirm Payment
+
+The one-click confirm feature allows merchants to take control of the payment confirmation process for wallet methods like Google Pay or Apple Pay. When enabled, the merchant can handle the payment trigger, perform any necessary actions, and then return control to the SDK to complete the transaction. By default, the SDK handles this process, but merchants can opt to manage it themselves by passing `sdkHandleOneClickConfirmPayment` as false.
+
+```javascript
+window.addEventListener("message", function (event) {
+  // Check if one-click confirmation has been triggered by the SDK
+  if (event.data && event.data.oneClickConfirmTriggered) {
+    // Merchant can perform any custom actions here, such as validations or logging
+    console.log("One-click confirmation requested by SDK");
+
+    // After completing necessary tasks, send a message back to the SDK
+    const msg = {
+      oneClickDoSubmit: true, // Notify SDK to proceed with payment submission
+    };
+    event.source.postMessage(msg, "*"); // Send the message back to the SDK
+  }
+});
+
+var paymentElementOptions = {
+  sdkHandleOneClickConfirmPayment: false,
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
+| Variable                              | Description                                                                                                                                                                                                                                                                                                            | Values                                                                                                                        |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| sdkHandleOneClickConfirmPayment: bool | The `sdkHandleOneClickConfirmPayment` is a prop that, when set to `false`, allows the merchant to handle the click event for all wallet payment methods (e.g., Google Pay, Apple Pay). The control is passed to the merchant to perform any required actions before returning to the SDK to complete the payment flow. | The `sdkHandleOneClickConfirmPayment` prop is a boolean that can be set to `true` or `false`, with a default value of `true`. |
+
 ## 3. Styling variables
 
 The Styling APIs could be used to blend the Unified Checkout with the rest of your app or website.
