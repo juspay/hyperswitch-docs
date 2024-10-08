@@ -1,11 +1,27 @@
 ---
 description: Hyperswitch is designed to facilitate the management of saved payment methods
+icon: bars-progress
 ---
 
 # Payment Methods Management
 
 {% hint style="info" %}
-This section guides you through the integration of Hyperswitch Payment Methods Management
+This section guides you through the Hyperswitch Payment Methods Management, and how to integrate it.
+{% endhint %}
+
+## **Key Features of Payment Method Management in Hyperswitch**
+
+Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
+
+1. **Payment Method Creation**: Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
+2. **Storing Payment Methods**: Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
+3. **Retrieving Payment Methods**: Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
+4. **Deleting/Deactivating Payment Methods**: Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-10-03 at 12.27.38 PM.png" alt="" width="563"><figcaption><p>image displaying the payment method management UI.</p></figcaption></figure>
+
+{% hint style="info" %}
+As of now, Hyperswitch only supports management of the payment methods saved during checkout, We will soon roll out the feature enabling you to add a payment method for a non-purchase journey.
 {% endhint %}
 
 ### 1. Setup the server
@@ -164,4 +180,4 @@ async function initialize() {
 {% endtab %}
 {% endtabs %}
 
-Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize the it to blend with the rest of your app.
+Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize the it to blend with the rest of your website.

@@ -1,17 +1,14 @@
 # ⏭️ External Authentication for 3DS
 
-Simplify 3DS authentication, stay compliant, offer latest authentication methods to the customers, improve customer experience with Native Challenge and improve conversion rates - All with the Hyperswitch 3DS authentication module
+{% content-ref url="native-3ds-authentication-for-mobile-payments.md" %}
+[native-3ds-authentication-for-mobile-payments.md](native-3ds-authentication-for-mobile-payments.md)
+{% endcontent-ref %}
 
-## Why do we need external authentication?
+Up until now, merchants relied on the payment processors to complete the authentication and authorization. But it comes with its own challenges like Poor data availability and customer experience.
 
-3DS authentication for cards is a crucial step before authorization. Designed to enhance security, reduce fraud, and improve customer experience, the 3DS authentication is mandatory in many markets. Up until now, merchants relied on the payment processors to complete the authentication and authorization. But it comes with its own challenges.
+To help merchants these issues, Hyperswitch allows them to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts.
 
-* **Poor data availability** - In the processor authentication flow, the merchant has no visibility on authentication metrics independently. They cannot distinguish failures that happen in the authentication leg from those that happen in the authorization leg. Therefore, it becomes difficult to take corrective actions.
-* **Poor customer experience** - No matter the flow, challenge or frictionless, the customer has to be redirected at least once when the authentication is done via the payment processor. Redirections in the payment journey lead to customer drop offs.&#x20;
-* **Compliance management** - With continuously evolving security standards and payment regulations, merchants have to stay on top of the 3DS compliance guide to make sure that they fulfill all the regulatory requirements.&#x20;
-* **New innovative products in the authentication space** - To cope up with the regulations and at the same time enhance security and customer experience, there are multiple innovative products out there in the authentication space. To focus on these innovations, instead of the core business, is a real distraction for the merchants.
-
-## How to get started?
+## How to setup External 3DS authentication via Hyperswitch?
 
 We will be using HyperSwitch's hosted dashboard and Postman API collection for configuring connectors and processing payouts. You can find API reference [here](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication).
 
@@ -19,23 +16,27 @@ Backend API endpoint - https://sandbox.hyperswitch.io
 
 Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
+{% hint style="info" %}
+The below tutorial enable you to set-up External 3DS authentication for both, Website and Mobiles apps.
+{% endhint %}
+
 ### Pre-requisites
 
 * Setup 3DS Authenticator&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.27.58 PM.png" alt=""><figcaption><p>Add new 3DS authenticator</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.27.58 PM.png" alt=""><figcaption><p>Add new 3DS authenticator</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
 * Setup payment processor
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
 
 * Go to Developers -> Payment Settings -> Choose default setting and add Authentication Connectors
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.36.36 PM.png" alt=""><figcaption><p>Add required urls and set the authentication connector</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-09 at 3.36.36 PM.png" alt=""><figcaption><p>Add required urls and set the authentication connector</p></figcaption></figure>
 
 * Create/Collect your API key and Publishable key
 
@@ -150,8 +151,8 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 
 After the challenge is completed, the status should go to 'succeeded' status
 
-{% hint style="info" %}
-Visit [this](../../../hyperswitch-cloud/connectors/available-connectors/zen-1/authenticating-payments-via-netcetera-through-hyperswitch-sdk.md) page to know more about enabling this feature steps in SDK
+{% hint style="warning" %}
+**Visit** [**this**](../../hyperswitch-cloud/connectors/available-connectors/zen-1/authenticating-payments-via-netcetera-through-hyperswitch-sdk.md) **page to complete few additional steps to enable this feature for Mobile SDK.**
 {% endhint %}
 
 {% hint style="success" %}
