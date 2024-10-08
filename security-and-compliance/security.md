@@ -8,9 +8,9 @@ description: Comprehensive measures safeguarding Data Integrity within Hyperswit
 In this chapter, you will learn about the security principles employed in the design on the Hyperswitch application
 {% endhint %}
 
-Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.&#x20;
+Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.
 
-The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).&#x20;
+The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).
 
 ## Handling Sensitive Data
 
@@ -31,7 +31,7 @@ When a payment is made using a saved card, the card details get stored in a secu
 * They're signed using the private key of the hyperswitch app server to ensure the integrity of the data.
 * Then, the details are encrypted using the public key of the locker, ensuring their confidentiality during transmission.
 
-**Data Storage Process:**&#x20;
+**Data Storage Process:**
 
 * The card vault validates the signed data using the public key of the hyperswitch app server and decrypts the data.
 * The data is then secured by the card vault by internally applying AES encryption and stored in the database.
@@ -42,15 +42,13 @@ When a payment is made using a saved card, the card details get stored in a secu
 
 To provide transaction information and analytics, only partially masked card details (first 4 and last 4 digits) are sent to the Control Center from the Hyperswitch app server. This allows a high-level view of payments without revealing full customer information.
 
-
-
 ## Data Encryption Overview
 
 The application places a high priority on safeguarding sensitive information tied to `external API credentials`, `customers`, and `card details` and uses multi-layered encryption for the same.
 
 During transmission, data remains masked and never gets permanently stored on the local system, ensuring added security.
 
-<figure><img src="../.gitbook/assets/system-Page-2 (2).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Key Manager Service (1).jpg" alt=""><figcaption></figcaption></figure>
 
 ### Key Management System (KMS) Encryption
 
@@ -59,6 +57,7 @@ During transmission, data remains masked and never gets permanently stored on th
 * Examples of encrypted values include the database passwords, and RSA certificates, ensuring their confidentiality.
 
 ### Key Manager Service Encryption
+
 **Merchant-Specific Encryption:**
 
 * Application utilises Key Manager Service for secure generation and storage of a unique data encryption key(DEK) for each merchant.
@@ -72,9 +71,9 @@ During transmission, data remains masked and never gets permanently stored on th
 
 ### Concealing Sensitive Data in Logs
 
-* For masking sensitive data, the application framework is designed with a wrapper type that categorizes all sensitive data as `Secret`.&#x20;
-* This approach capitalizes on the advantages of `Rust` - a strongly typed language. Creating a wrapper type like `Secret<T>` offers a robust way to handle sensitive data.&#x20;
-* Instead of logging the actual sensitive content, such as passwords or personal information, this approach logs the data type itself (e.g., `*** alloc::string::String ***`).&#x20;
+* For masking sensitive data, the application framework is designed with a wrapper type that categorizes all sensitive data as `Secret`.
+* This approach capitalizes on the advantages of `Rust` - a strongly typed language. Creating a wrapper type like `Secret<T>` offers a robust way to handle sensitive data.
+* Instead of logging the actual sensitive content, such as passwords or personal information, this approach logs the data type itself (e.g., `*** alloc::string::String ***`).
 * This practice of masking the data at source ensures that sensitive information remains protected and prevents inadvertent exposure in logs or debug outputs.
 
 {% hint style="info" %}
