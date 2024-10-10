@@ -2,7 +2,7 @@
 description: Hyperswitch roadmap (Oct to Dec'24)
 ---
 
-# 🛣️ Roadmap - Q4 2024 \[Draft]
+# 🛣️ Roadmap - Q4 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -85,24 +85,23 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟥 Implement MPAN (merchant tokens) for Applepay recurring payments
 * 🟧  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas\_scof/use-case1/) with Mastercard cards. This is to provide seamless payment authentication experience (with Biometrics) and liability shift for merchants
 * 🟧 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
-* 🟥 Migration of Network Tokens for business continuity
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
 * 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US
 * More direct bank acquirer integrations
-  * 🟧 Chase
   * 🟧 JP Morgan
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟧 Data reporting at an organization, merchant and profile level for easier reconciliation
 * 🟧 Enhancements in analytics module for Refunds, Disputes and Smart Retries
-* 🟥 🚛 Experience enhancements for Payouts payment method verification and tokenization
+* 🟥  Add support for bulk network tokenization
+* 🟥 Migration of Network Tokens for business continuity
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟥 💪 Customizable Address Element for merchants to directly collect billing and shipping addresses for Ecom delivery, tax purposes, etc.
+* 🟥 Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
