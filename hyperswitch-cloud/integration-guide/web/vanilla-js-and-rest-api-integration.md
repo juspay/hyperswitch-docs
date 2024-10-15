@@ -31,7 +31,7 @@ app.post("/create-payment", async (req, res) => {
       {
         method: "POST",
         headers: { "Content-Type": "application/json", "api-key": "YOUR_API_KEY" },
-        body: JSON.stringify(req.body),
+        body: JSON.stringify(req.body), //body to have amount, currency and profile_id
       });
     const paymentIntent = await response.json()
     // Send publishable key and PaymentIntent details to client
@@ -86,6 +86,8 @@ Immediately make a request to the endpoint on your server to create a new Paymen
 > Important: Make sure to never share your API key with your client application as this could potentially compromise your payment flow
 
 Following this, create a `unifiedCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe with a dynamic form that displays configured payment method types available from the `Payment`, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
+
+Incase, you want the SDK to be loaded on a particular event (like button click), you can call the initialize function on that event.
 
 ```js
 // Fetches a payment intent and captures the client secret
