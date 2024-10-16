@@ -389,6 +389,7 @@ Congratulations! Now that you have integrated the Hyperswitch SDK on your app, y
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
+* **onPaymentButtonClick:** This callback is triggered immediately after the user clicks any wallet button.
 * **onPaymentComplete:** This callback is triggered after the payment is completed,  just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
@@ -399,12 +400,20 @@ This document outlines the details and functionality of an optional callback and
 **Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
 {% endhint %}
 
+{% hint style="danger" %}
+The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
+{% endhint %}
+
 **Example Usage for React Integration**
 
 ```jsx
 <PaymentElement
   id="payment-element"
   options={options}
+  onPaymentButtonClick={() => {
+    console.log("This is a SYNC CLICK");
+    // Add any custom logic for when the payment button is clicked, such as logging or tracking
+  }}
   onPaymentComplete={() => {
     console.log("OnPaymentComplete");
     // Add any custom post-payment logic here, such as redirection or displaying a success message
