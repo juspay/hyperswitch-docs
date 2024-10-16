@@ -385,6 +385,33 @@ Callback for these event will be triggered with following event object.
 
 Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
 
+## 5. Additional Callback Handling for Wallets Payment Process
+
+This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
+
+* **onPaymentComplete:** This callback is triggered after the payment is completed,  just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+
+{% hint style="warning" %}
+**Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
+{% endhint %}
+
+{% hint style="info" %}
+**Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
+{% endhint %}
+
+**Example Usage for React Integration**
+
+```jsx
+<PaymentElement
+  id="payment-element"
+  options={options}
+  onPaymentComplete={() => {
+    console.log("OnPaymentComplete");
+    // Add any custom post-payment logic here, such as redirection or displaying a success message
+  }}
+/>
+```
+
 ## Next step:
 
 {% content-ref url="../../payment-methods-setup/" %}
