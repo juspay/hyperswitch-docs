@@ -43,7 +43,7 @@
     * [Customization](hyperswitch-cloud/integration-guide/ios/customization.md)
     * [Features](hyperswitch-cloud/integration-guide/ios/features.md)
   * [⏺️ React Native](hyperswitch-cloud/integration-guide/react-native/README.md)
-    * [React Native with Node Backend (Beta)](hyperswitch-cloud/integration-guide/react-native/react-native-with-node-backend.md)
+    * [React Native with Node Backend](hyperswitch-cloud/integration-guide/react-native/react-native-with-node-backend.md)
     * [Card Widget (Beta)](hyperswitch-cloud/integration-guide/react-native/react-native-with-node-backend-1.md)
     * [Customization](hyperswitch-cloud/integration-guide/react-native/customization.md)
   * [⏺️ Flutter](hyperswitch-cloud/integration-guide/react-native-1/README.md)
