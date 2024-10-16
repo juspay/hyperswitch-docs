@@ -4,7 +4,7 @@ description: >-
   checkout wallets
 ---
 
-# Automatic Tax calculation for Express Checkout wallets
+# 💲 Automatic Tax calculation for Express Checkout wallets
 
 Hyperswitch supports configuring [Taxjar](https://www.taxjar.com/) in your dashboard as a tax connector so that tax amount can be calculated automatically whenever your customers change their shipping address on Express Checkout wallets like Apple pay and Paypal
 
