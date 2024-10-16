@@ -111,6 +111,7 @@
 
 ## Features
 
+* [Multi-Tenancy with Hyperswitch](features/multi-tenancy-with-hyperswitch.md)
 * [🔀 Payment flows](features/payment-flows-and-management/README.md)
   * [🔁 Saving payment methods & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
   * [💵 Payouts](features/payment-flows-and-management/payouts/README.md)
