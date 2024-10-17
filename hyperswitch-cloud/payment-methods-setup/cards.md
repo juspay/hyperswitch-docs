@@ -27,8 +27,8 @@ The Saved cards feature comes out of the box without any additional integration 
 
 Follow the below guide to learn how to make a saved card payment using Hyperswitch
 
-{% content-ref url="../../features/payment-flows-and-management/tokenization-and-saved-cards.md" %}
-[tokenization-and-saved-cards.md](../../features/payment-flows-and-management/tokenization-and-saved-cards.md)
+{% content-ref url="../../features/payment-flows-and-management/tokenization-and-saved-cards/" %}
+[tokenization-and-saved-cards](../../features/payment-flows-and-management/tokenization-and-saved-cards/)
 {% endcontent-ref %}
 
 ## Recurring Payments - Mandate through cards
