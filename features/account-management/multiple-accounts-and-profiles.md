@@ -22,7 +22,7 @@ Hyperswitch Architecture supports&#x20;
 
 Here's how the architecture would look like.
 
-<figure><img src="../../.gitbook/assets/hyps_org_architecture.drawio.png" alt="" width="486"><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.jpg" alt=""><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
 
 ### Let's understand the hierarchy
 
@@ -66,21 +66,21 @@ A processor  created under one business profile cannot be used in another busine
 
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
 
-<figure><img src="../../.gitbook/assets/mult_mid_a.drawio.png" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
 In case of Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account (with an API key) for themself and as many separate merchant accounts as they need for the sub-merchants under them with separate API keys for each of them
 
-<figure><img src="../../.gitbook/assets/multi_mid_b.drawio.png" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
 * **Multiple business Profiles - For merchants who want to manage all businesses with one API key**
 
 For a merchant A with three different businesses (A\_Clothing, A\_Shoes, A\_Bags) they can create just one merchant account on Hyperswitch with three business profiles (Clothing, Shoes, Bags) under it. This way, the merchant can use only one Hyperswitch API key to manage transactions for all three businesses.
 
-<figure><img src="../../.gitbook/assets/multi_profiles_a.drawio.png" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
 
 For Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account with an API key access and multiple business profiles under it to represent the different sub-merchants. This way the parent merchant will be able to manage their multiple sub-merchants tightly under one Hyperswitch merchant account and API key.
 
-<figure><img src="../../.gitbook/assets/multi_profiles_b.drawio.png" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
 
 ### How to configure multiple merchant accounts
 
