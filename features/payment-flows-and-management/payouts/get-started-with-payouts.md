@@ -56,3 +56,9 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 <figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Updating env variables in postman collection</p></figcaption></figure>
 
 **Step 3 -** Head to "Process payouts" section for processing payouts.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.10.26 PM.png" alt=""><figcaption></figcaption></figure>
+
+{% content-ref url="process-payouts-using-saved-payment-methods.md" %}
+[process-payouts-using-saved-payment-methods.md](process-payouts-using-saved-payment-methods.md)
+{% endcontent-ref %}

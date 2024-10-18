@@ -52,4 +52,12 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 3 -** Navigate to UseCase #1 section in the collection and execute in order.
 
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.40 PM.png" alt=""><figcaption></figcaption></figure>
+
 **Step 4 -** Navigate to UseCase #2 section in the collection and execute in order.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.55 PM.png" alt=""><figcaption></figcaption></figure>
+
+{% content-ref url="route-your-payout-transactions-using-smart-router.md" %}
+[route-your-payout-transactions-using-smart-router.md](route-your-payout-transactions-using-smart-router.md)
+{% endcontent-ref %}
