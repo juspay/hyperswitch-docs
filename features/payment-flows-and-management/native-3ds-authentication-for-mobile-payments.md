@@ -4,7 +4,7 @@
 
 ## What is 3DS?
 
-3DS is a security protocol designed to reduce credit/ debit card fraud in Card-Not-Present (CNP) transactions, where customer doesn't present the physical card to merchant during the transaction. The customer is authenticated using multi factor authentication (usually through passive data, biometric, SMS or email-based one-time passcode). This enables the issuer to have more trust over the authenticity of the transaction.
+3D Secure is a security protocol designed to reduce credit/ debit card fraud in Card-Not-Present (CNP) transactions, where customer doesn't present the physical card to merchant during the transaction. The customer is authenticated using multi factor authentication (usually through passive data, biometric, SMS or email-based one-time passcode). This enables the issuer to have more trust over the authenticity of the transaction.
 
 The latest version of 3DS - **3DS 2.0** supports two flows - **Frictionless and Challenge**. In the Challenge flow, the cardholder is authenticated with an active interaction like entering an email OTP or authentication on the bank app. In the frictionless flow, however, the acquirer, issuer and the card scheme exchange the necessary data in the background and the issuer passively authenticates the cardholder.
 
@@ -15,13 +15,13 @@ The latest version of 3DS - **3DS 2.0** supports two flows - **Frictionless and 
 3. **Improved User Experience over 3DS 1.0:** Using more data, the issuers can passively authenticate most of the cardholders without friction. If the transaction is deemed risky, a challenge flow is triggered. The ecosystem has tried to optimize this challenge flow experience by providing a consistent, and a mobile friendly interface.
 4. **Higher Approval Rates**: As a lot more data is exchanged under 3DS protocol, merchants see an uplift in their transaction approval rates.
 
-## What is Native 3DS?
+## What is Native 3D Secure 2.0?
 
-Native 3DS refers to the seamless integration of 3D Secure (3DS) authentication directly within a merchant's app or website, without redirecting the user to an external page for authentication. By eliminating redirections and embedding authentication directly into the checkout process, native 3DS enhances both customer satisfaction and conversion rates, making it a preferred choice for merchants looking to optimize their payment flow.
+Native 3D Secure refers to the seamless integration of 3D Secure (3DS) authentication directly within a merchant's app or website, without redirecting the user to an external page for authentication. By eliminating redirections and embedding authentication directly into the checkout process, native 3DS enhances both customer satisfaction and conversion rates, making it a preferred choice for merchants looking to optimize their payment flow.
 
 <figure><img src="../../.gitbook/assets/DAF-firsttime.gif" alt="" width="300"><figcaption><p><strong>Sample of Native Authentication on mobile</strong> </p></figcaption></figure>
 
-## Why Native 3DS?
+## Why Native 3D Secure?
 
 ### **1. Enhance Customer Experience**:&#x20;
 
@@ -37,7 +37,7 @@ By providing a native 3DS experience, the users never leave the merchant app. It
 
 Since the authentication occurs natively, merchants have more control over the branding and design of the authentication experience. This keeps the look and feel consistent with the rest of the app or website, offering a smoother, more professional user experience.
 
-## Native 3DS on Hyperswitch
+## Native 3D Secure on Hyperswitch
 
 1. **In-line 3DS Challenge for web** - No redirections for the user.
 
