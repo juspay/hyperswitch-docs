@@ -113,6 +113,7 @@
 
 * [Multi-Tenancy with Hyperswitch](features/multi-tenancy-with-hyperswitch.md)
 * [🔀 Payment flows](features/payment-flows-and-management/README.md)
+  * [Co-badged Cards with Hyperswitch](features/payment-flows-and-management/co-badged-cards-with-hyperswitch.md)
   * [🔁 Saving payment methods & recurring payments](features/payment-flows-and-management/mandates-and-recurring-payments.md)
   * [💵 Payouts](features/payment-flows-and-management/payouts/README.md)
     * [➕ Get started with payouts!](features/payment-flows-and-management/payouts/get-started-with-payouts.md)
