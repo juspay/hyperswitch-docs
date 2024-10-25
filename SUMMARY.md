@@ -131,6 +131,7 @@
   * [🛑 Fraud Blocklist](features/payment-flows-and-management/fraud-blocklist.md)
   * [🔁 Subscriptions](features/payment-flows-and-management/subscriptions.md)
   * [🔃 PG Agnostic Recurring Payments](features/payment-flows-and-management/pg-agnostic-recurring-payments.md)
+  * [Incremental Authorization](features/payment-flows-and-management/incremental-authorization.md)
   * [💲 Automatic Tax calculation for Express Checkout wallets](features/payment-flows-and-management/automatic-tax-calculation-for-express-checkout-wallets.md)
 * [🕹️ Merchant controls](features/merchant-controls/README.md)
   * [🛣️ Smart Router](features/merchant-controls/smart-router/README.md)
