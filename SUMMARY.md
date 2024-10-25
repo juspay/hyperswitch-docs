@@ -149,7 +149,6 @@
   * [🚩 Disputes/Chargebacks Management](features/merchant-controls/disputes.md)
   * [🤝 Reconciliation](features/merchant-controls/reconciliation/README.md)
     * [Getting Started with Recon](features/merchant-controls/reconciliation/getting-started-with-recon.md)
-  * [Multi-Tenancy for Merchants within Hyperswitch](features/merchant-controls/multi-tenancy-for-merchants-within-hyperswitch.md)
 * [🔑 Account management](features/account-management/README.md)
   * [Hyperswitch Account Structure](features/account-management/hyperswitch-account-structure.md)
   * [🤹 Multiple accounts & profiles](features/account-management/multiple-accounts-and-profiles.md)
