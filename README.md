@@ -22,10 +22,6 @@ layout:
 
 # 👋 Hyperswitch: Global Payments Switch
 
-This is the documentation for Hyperswitch, a global payments switch that enables businesses to accept payments from customers across the globe.
-
-## Link to the live docs: https://docs.hyperswitch.io/
-
 ## Products
 
 {% tabs %}
@@ -45,7 +41,6 @@ This is the documentation for Hyperswitch, a global payments switch that enables
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Payment data</strong></td><td>Enhance analytics by leveraging high-performance query capabilities.</td><td></td><td><a href="features/account-management/exporting-payments-data.md">exporting-payments-data.md</a></td><td><a href=".gitbook/assets/Payment data.png">Payment data.png</a></td></tr><tr><td><strong>Team management</strong></td><td>Efficiently manage your payment ops team.</td><td></td><td><a href="features/account-management/manage-your-team.md">manage-your-team.md</a></td><td><a href=".gitbook/assets/Team management.png">Team management.png</a></td></tr><tr><td><strong>Multiple accounts &#x26; profile management</strong> </td><td>Create &#x26; manage multiple merchant accounts.</td><td></td><td><a href="features/account-management/multiple-accounts-and-profiles.md">multiple-accounts-and-profiles.md</a></td><td><a href=".gitbook/assets/Multiple account &#x26; profile management.png">Multiple account &#x26; profile management.png</a></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
-
 
 {% tabs %}
 {% tab title="E-Commerce Plugins" %}
