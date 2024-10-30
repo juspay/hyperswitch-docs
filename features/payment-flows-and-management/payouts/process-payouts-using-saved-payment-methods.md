@@ -38,7 +38,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 #### Steps
 
-**Step 1 -** Import Postman collection from [here](https://api.postman.com/collections/9906252-c718fec5-b0ef-4fdb-b617-58e2dcb99a7b?access\_key=PMAT-01HP15F4SQTYT15XYETDWFP3DZ).
+**Step 1 -** Import Postman collection from [here](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
 <figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
