@@ -2,7 +2,7 @@
 description: Best way to validate customer payment data and charge the customer later
 ---
 
-# 0️ Zero Amount Authorization
+# Zero Amount Authorization
 
 {% hint style="info" %}
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption

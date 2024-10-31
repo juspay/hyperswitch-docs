@@ -43,7 +43,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 #### Steps for processing payouts
 
-**Step 1 -** Import postman collection from [here](https://api.postman.com/collections/9906252-c9297c5d-dbfe-421c-a7e2-e6542e81bfe4?access\_key=PMAT-01HP1F7QC8HPHHPVGKXG1Y2NFD).
+**Step 1 -** Import postman collection from [here](https://www.postman.com/hs-payouts/hyperswitch/collection/u6uep7u/payouts-w-hyperswitch).
 
 <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 
