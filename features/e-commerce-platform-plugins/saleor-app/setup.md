@@ -27,7 +27,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 ### 1.1 Install the App
 
-1. To access the Juspay Saleor Payment App, [click here](https://hyperswitch-saleor-payment-app-two.vercel.app/). You will be directed to a form where you can enter your Saleor API URL.
+1. To access the Juspay Saleor Payment App, [click here](https://live.hyperswitch.io/saleor). You will be directed to a form where you can enter your Saleor API URL.
 <figure><img src="../../../.gitbook/assets/juspaySaleorInstall.png" alt=""><figcaption></figcaption></figure>
 
 2. Input your Saleor API URL and click `Add to Saleor`. This action will start the installation process and display the installation page.
