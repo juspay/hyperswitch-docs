@@ -28,7 +28,7 @@ API Level Overview of Payment Links with Hyperswitch
 
 #### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../account-management/multiple-accounts-and-profiles.md))
+* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../account-management/multiple-accounts-and-profiles/))
 * Add a payment processor to you account
 
 #### Using Payment links
