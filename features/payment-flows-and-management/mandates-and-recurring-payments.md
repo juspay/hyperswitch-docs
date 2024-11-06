@@ -118,6 +118,31 @@ curl --request GET \
 
 ***
 
+***
+
+## 🔓 Processing MIT Payments Without a Saved Payment Method
+
+If a merchant is PCI-compliant and has the customer payment method details stored, an MIT payment can be performed by passing the card details and the network transaction id directly in the confirm call.
+
+<pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
+</strong>"recurring_details": {
+        "type": "network_transaction_id_and_card_details",
+        "data": {
+            "card_number": "4242424242424242",
+            "card_exp_month": "10",
+            "card_exp_year": "25",
+            "card_holder_name": "joseph Doe",
+            "network_transaction_id": "MCC5ZRGMI0925" //scheme transaction id
+        }
+}
+</code></pre>
+
+Certain connectors, such as Stripe, Adyen, and Cybersource, support this flow, with only the straight-through routing algorithm available.
+
+If you would like additional processors to support this flow or want to enable volume-based and priority-based routing algorithms, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
+
+***
+
 ## FAQ:
 
 ### **1. I want to onboard my customers by collecting their card details, authenticate and store for future MIT payments without charging them now. How can I vault a payment method with Hyperswitch?**&#x20;
@@ -126,5 +151,4 @@ Hyperswitch allows you to vault a payment method without charging the customer b
 
 This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
 \
-Refer to this page to see how to use it -  [Link](zero-amount-authorization-1.md)
-
+Refer to this page to see how to use it - [Link](zero-amount-authorization-1.md)
