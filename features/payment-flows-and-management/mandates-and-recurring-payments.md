@@ -139,6 +139,16 @@ If a merchant is PCI-compliant and has the customer payment method details store
 
 Certain connectors, such as Stripe, Adyen, and Cybersource, support this flow, with only the straight-through routing algorithm available.
 
+Straight-through algorithm to be passed in the `/payments` request
+<pre class="language-bash"><code class="lang-bash"></strong>"routing": {
+        "type": "single",
+        "data": {
+            "connector": "cybersource", //connector name
+            "merchant_connector_id": "mca_VRmwU23zUmlmgAPrJ8rF" //merchant connector id
+        }
+    }
+</code></pre>
+
 If you would like additional processors to support this flow or want to enable volume-based and priority-based routing algorithms, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
 ***
