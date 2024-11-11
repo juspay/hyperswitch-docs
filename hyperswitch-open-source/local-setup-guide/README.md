@@ -2,9 +2,10 @@
 description: >-
   This guide will walk you through the process of setting up and running the
   Hyperswitch locally on your machine.
+icon: desktop
 ---
 
-# 💻 Local Setup Guide
+# Local Setup Guide
 
 ## Dashboard Signup -&#x20;
 

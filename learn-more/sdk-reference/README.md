@@ -1,8 +1,9 @@
 ---
 description: SDK method details
+icon: chart-candlestick
 ---
 
-# 🍡 SDK Reference
+# SDK Reference
 
 Hyperswitch offers a frontend as well as a backend integration solution in the form of SDK.&#x20;
 

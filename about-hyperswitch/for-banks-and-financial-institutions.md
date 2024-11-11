@@ -2,6 +2,7 @@
 description: >-
   Become a connector of Hyperswitch or use Hyperswitch to augment your acquiring
   solution
+hidden: true
 ---
 
 # 🏦 For banks & financial institutions
@@ -24,7 +25,7 @@ In addition to processing payments, you can leverage the Hyperswitch SDK to mana
 
 Hyperswitch offer an out-of-the-box migration capability to seamlessly migrate merchants from Stripe to your bank's acquiring solution. So you do not have to worry about long integration lead times if your merchants are already integrated to Stripe.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Migrate from Stripe</strong></td><td>Learn how you can quickly migrate merchants from Stripe to Hyperswitch</td><td></td><td><a href="../hyperswitch-cloud/quickstart/migrate-from-stripe/">migrate-from-stripe</a></td><td><a href="../.gitbook/assets/StripeMigration.jpg">StripeMigration.jpg</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Migrate from Stripe</strong></td><td>Learn how you can quickly migrate merchants from Stripe to Hyperswitch</td><td></td><td><a href="../explore-hyperswitch/payment-flows-and-management/quickstart/migrate-from-stripe/">migrate-from-stripe</a></td><td><a href="../.gitbook/assets/StripeMigration.jpg">StripeMigration.jpg</a></td></tr></tbody></table>
 
 ### II. Unifying the diverse acquiring solutions within your bank
 

@@ -1,8 +1,9 @@
 ---
 description: Install Hyperswitch on your K8s setup using our Helm charts
+icon: dharmachakra
 ---
 
-# ☸️ Deploy Hyperswitch on Kubernetes
+# Deploy Hyperswitch on Kubernetes
 
 {% hint style="info" %}
 This section outlines cloud-provider agnostic deployment steps for easy installation of the Hyperswitch stack on your K8s cluster

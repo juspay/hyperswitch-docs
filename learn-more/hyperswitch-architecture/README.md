@@ -1,8 +1,9 @@
 ---
 description: A 30,000 feet view of Hyperswitch's architecture
+icon: folder-tree
 ---
 
-# 📐 Hyperswitch architecture
+# Hyperswitch architecture
 
 {% hint style="info" %}
 This chapter will help you quickly understand the Hyperswitch application's architecture

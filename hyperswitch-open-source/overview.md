@@ -1,5 +1,6 @@
 ---
 description: The complete guide to setting up & managing your own payments switch
+icon: screwdriver-wrench
 cover: ../.gitbook/assets/Frame.png
 coverY: -1.5791666666666666
 layout:
@@ -18,7 +19,7 @@ layout:
     visible: true
 ---
 
-# 🛠️ Overview
+# Overview
 
 {% hint style="info" %}
 After going through this guide, you should be able to:

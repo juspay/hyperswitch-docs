@@ -1,8 +1,9 @@
 ---
 description: Overview of everything you would need for going live
+icon: rocket-launch
 ---
 
-# 🚀 Going live
+# Going live
 
 {% hint style="info" %}
 This chapter will give you an overview of everything you would need for going live with your cloud setup&#x20;
