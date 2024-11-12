@@ -1,4 +1,8 @@
-# ♻️ Smart Retries in Payout
+---
+icon: magnifying-glass-arrows-rotate
+---
+
+# Smart Retries in Payout
 
 Retries are attempts to make payouts after initial failure. Retries are used for recovering failed payouts. Smart Retries enables retry based on error type and connectors available. This significantly increase the success rate of the payout.
 

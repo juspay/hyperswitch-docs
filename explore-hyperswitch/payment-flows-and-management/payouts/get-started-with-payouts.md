@@ -1,4 +1,8 @@
-# ➕ Get started with payouts!
+---
+icon: flag-checkered
+---
+
+# Get started!
 
 For getting started with payouts, make sure you have signed up for the underlying payout processors supported by HyperSwitch.
 

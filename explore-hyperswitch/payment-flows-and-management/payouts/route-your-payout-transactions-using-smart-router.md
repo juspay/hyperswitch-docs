@@ -1,4 +1,8 @@
-# 🛣️ Route your payout transactions using Smart Router
+---
+icon: swap
+---
+
+# Smart Router for Payouts
 
 _Before continuing further, refer to_ [_this_](https://docs.hyperswitch.io/features/merchant-controls/smart-router) _comprehensive guide on Smart Router._
 

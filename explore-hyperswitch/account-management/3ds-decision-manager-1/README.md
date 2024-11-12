@@ -1,8 +1,9 @@
 ---
 description: Configure advanced rules with various payment parameters
+icon: clipboard-list-check
 ---
 
-# 📋 Surcharge
+# Surcharge
 
 {% hint style="info" %}
 Through this section, you will understand the working of Surcharge feature and how to configure it.

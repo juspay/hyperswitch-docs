@@ -1,8 +1,9 @@
 ---
 description: Low-code solution to accept payments
+icon: link
 ---
 
-# 🔗 Payment Links
+# Payment Links
 
 > This feature is still under development. We will update this section, as soon as it is live.
 

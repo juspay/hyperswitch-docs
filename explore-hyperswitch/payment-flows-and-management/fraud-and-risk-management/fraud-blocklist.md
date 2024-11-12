@@ -1,4 +1,8 @@
-# 🛑 Fraud Blocklist
+---
+icon: ban
+---
+
+# Fraud Blocklist
 
 ## What is Blocklist?
 

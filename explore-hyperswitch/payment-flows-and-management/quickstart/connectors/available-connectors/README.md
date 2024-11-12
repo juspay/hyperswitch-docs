@@ -1,8 +1,9 @@
 ---
 description: List of all connectors currently supported by Hyperswitch
+icon: badge-check
 ---
 
-# 🖲️ Available Connectors
+# Available Connectors
 
 Here are the available connectors:
 

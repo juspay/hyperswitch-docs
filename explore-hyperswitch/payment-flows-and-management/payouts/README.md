@@ -1,8 +1,9 @@
 ---
 description: Swift and streamlined payout automation
+icon: file-invoice-dollar
 ---
 
-# 💵 Payouts
+# Process Payouts
 
 {% hint style="info" %}
 After reading this section, you will know about Payout features, supported processors, methods, working and how to get started with it.

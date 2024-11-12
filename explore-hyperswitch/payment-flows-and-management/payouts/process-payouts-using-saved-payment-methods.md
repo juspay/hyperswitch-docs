@@ -1,4 +1,8 @@
-# 🔗 Process payouts using saved payment methods
+---
+icon: repeat
+---
+
+# Using Saved Payment Methods
 
 Payment method details of users are stored in a secure PCI-compliant locker, for processing payouts in future. These stored payment method details can be listed for a given customer, which returns a `payment_token` for processing payouts.
 
@@ -9,7 +13,7 @@ Payment method details of users are stored in a secure PCI-compliant locker, for
 There are two entry points to storing payment methods for a given customer.
 
 * Persisting payment methods prior to processing transactions
-  * &#x20;Payment methods can be created for a given customer using `/payment_methods` API.
+  * Payment methods can be created for a given customer using `/payment_methods` API.
   * This basically stores the passed payment method details in secure PCI-compliant locker.
 * Persisting payment methods post a successful transaction
   * If a payment request was created with `"setup_future_usage": "off_session"` or if a payout request was created with `"recurring": true`, the payment method details will be stored in the secure locker once the transaction completes with a successful status.

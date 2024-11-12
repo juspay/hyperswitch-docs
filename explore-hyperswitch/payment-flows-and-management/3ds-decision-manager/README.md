@@ -1,8 +1,9 @@
 ---
 description: Configure advanced rules with various payment parameters
+icon: badge-check
 ---
 
-# 📋 3DS / Strong Customer Authentication
+# 3DS / Strong Customer Authentication
 
 {% hint style="info" %}
 Through this section, you will understand the working of 3DS Decision Manager and how to configure it.

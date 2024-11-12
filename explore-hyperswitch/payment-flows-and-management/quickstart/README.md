@@ -1,8 +1,9 @@
 ---
 description: Start accepting one time payments with Hyperswitch in 4 easy steps
+icon: bolt
 ---
 
-# ⚡ Accept Payments
+# Accept Payments
 
 {% hint style="info" %}
 This section gives you the steps to get started with Hyperswitch, configure your payment processor, integrate with your application and accept your first payment in minutes

@@ -1,8 +1,9 @@
 ---
 description: Onboard new payment integrations without code
+icon: plug
 ---
 
-# 🔌 Connectors
+# Connectors
 
 ## Enablement of multiple processors
 
@@ -18,7 +19,7 @@ Integrating and maintaining multiple payment processors is a complex activity an
 
 ## Available connectors and roadmap <a href="#available-connectors-and-future-roadmap" id="available-connectors-and-future-roadmap"></a>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Hyperswitch Connectors</strong></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td><a href="../../.gitbook/assets/Payment flow (1).jpg">Payment flow (1).jpg</a></td></tr><tr><td><strong>Request connectors</strong></td><td>Don't see your payment processor? You can request addition of your connector to Hyperswitch</td><td></td><td><a href="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg">https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg</a></td><td><a href="../../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Hyperswitch Connectors</strong></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td><a href="../../../../.gitbook/assets/Payment flow (1).jpg">Payment flow (1).jpg</a></td></tr><tr><td><strong>Request connectors</strong></td><td>Don't see your payment processor? You can request addition of your connector to Hyperswitch</td><td></td><td><a href="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg">https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg</a></td><td><a href="../../../../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr></tbody></table>
 
 ## What is Click and Connect?
 

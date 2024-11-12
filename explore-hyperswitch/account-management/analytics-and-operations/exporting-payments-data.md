@@ -1,8 +1,9 @@
 ---
 description: Export your payments data to Redshift from Hyperswitch
+icon: tachograph-digital
 ---
 
-# 🔢 Exporting payments data
+# Exporting payments data
 
 {% hint style="info" %}
 In this section, you would be able to understand how you can export your payments data to Redshift from Hyperswitch, the architecture behind it, schema and the queries.

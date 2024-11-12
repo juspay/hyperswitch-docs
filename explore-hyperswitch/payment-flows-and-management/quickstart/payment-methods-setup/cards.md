@@ -1,8 +1,9 @@
 ---
 description: Accept debit and credit card payments on your application
+icon: credit-card
 ---
 
-# 💳 Cards
+# Cards
 
 {% hint style="info" %}
 This section gives you an overview of how to enable debit and credit cards on Hyperswitch along with how to configure the web client to securely save your customers' card details for future payments

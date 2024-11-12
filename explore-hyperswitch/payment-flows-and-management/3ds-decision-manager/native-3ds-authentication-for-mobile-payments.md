@@ -1,4 +1,8 @@
-# 🌠 Native 3DS Authentication
+---
+icon: star-shooting
+---
+
+# Native 3DS Authentication
 
 <figure><img src="../../../.gitbook/assets/Frame 48095845.png" alt=""><figcaption></figcaption></figure>
 

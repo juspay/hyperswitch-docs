@@ -1,8 +1,9 @@
 ---
 description: Effectively enhance fraud detection
+icon: shield-check
 ---
 
-# 🛡️ Fraud & Risk Management
+# Fraud & Risk Management
 
 {% hint style="info" %}
 With this section you will get a good understanding of FRM, it's need, use cases, architecture and steps to integrate it in your system.

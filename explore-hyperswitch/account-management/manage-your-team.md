@@ -1,8 +1,9 @@
 ---
 description: Assign roles and permission to users
+icon: screen-users
 ---
 
-# 🛂 Manage your team
+# Manage Your Team
 
 {% hint style="info" %}
 Follow this guide to understand how to set up your team in Hyperswitch and to manage access through roles and permissions

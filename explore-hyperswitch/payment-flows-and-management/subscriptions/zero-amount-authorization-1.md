@@ -1,8 +1,9 @@
 ---
 description: Best way to validate customer payment data and charge the customer later
+icon: circle-0
 ---
 
-# Zero Amount Authorization
+# 0️ Zero Amount Authorization
 
 {% hint style="info" %}
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
@@ -98,7 +99,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-4. Charge the customer later by passing the payment\_method\_id  **(Called as 'MIT': Merchant initiated Transaction)**
+4. Charge the customer later by passing the payment\_method\_id **(Called as 'MIT': Merchant initiated Transaction)**
 
 Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment. Make sure you are using the same `customer_id` and `profile_id` from the CIT.
 

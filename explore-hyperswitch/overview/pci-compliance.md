@@ -1,8 +1,9 @@
 ---
 description: A brief summary of PCI compliance for Hyperswitch Cloud users
+icon: credit-card
 ---
 
-# 💳 PCI Compliance
+# PCI Compliance
 
 Hyperswitch Cloud offers **out-of-the-box PCI compliance**, so that you do not have to worry about securing and storing customers's cards.
 

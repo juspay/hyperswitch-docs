@@ -1,8 +1,9 @@
 ---
 description: Store your customers cards securely in a centralized and PCI compliant vault
+icon: lock-keyhole
 ---
 
-# 🔓 Tokenization & PCI Compliance
+# Tokenization & PCI Compliance
 
 {% hint style="info" %}
 In this section, you will learn how to store your customers cards securely and use them on subsequent payments

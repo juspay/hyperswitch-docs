@@ -1,8 +1,9 @@
 ---
 description: Hyperswitch roadmap (Oct to Dec'23)
+icon: road
 ---
 
-# 🛣 Previous roadmap - Q4 2023&#x20;
+# Previous roadmap - Q4 2023
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 

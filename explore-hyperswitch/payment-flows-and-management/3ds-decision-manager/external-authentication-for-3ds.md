@@ -1,4 +1,8 @@
-# ⏭️ External Authentication for 3DS
+---
+icon: up-right-from-square
+---
+
+# External Authentication for 3DS
 
 {% content-ref url="native-3ds-authentication-for-mobile-payments.md" %}
 [native-3ds-authentication-for-mobile-payments.md](native-3ds-authentication-for-mobile-payments.md)

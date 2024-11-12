@@ -1,8 +1,9 @@
 ---
 description: Key to configure and test different connectors in Hyperswitch
+icon: key
 ---
 
-# 🔑 Test Credentials
+# Test Credentials
 
 {% hint style="info" %}
 This section gives you an overview of how to you can make test transactions for the payment methods you have enabled

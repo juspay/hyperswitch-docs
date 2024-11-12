@@ -2,9 +2,10 @@
 description: >-
   Understand how to place a hold on your customers' funds and capture them later
   either fully or partially and either in one-go or multiple times
+icon: sack-dollar
 ---
 
-# 💰 Manual Capture
+# Manual Capture
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}
 

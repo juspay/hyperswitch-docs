@@ -2,9 +2,10 @@
 description: >-
   Automatically retry failed non-3DS payments by stepping them up to 3DS
   authentication
+icon: angles-up
 ---
 
-# 🔼 3DS Step-up Retries
+# 3DS Step-up Retries
 
 {% hint style="info" %}
 This section covers how 3DS Step-up retries function, the supported payment processors, and how to enable it.

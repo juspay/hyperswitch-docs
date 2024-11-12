@@ -1,8 +1,9 @@
 ---
 description: Setting up and managing recurring payments
+icon: repeat
 ---
 
-# 🔁 Save a Payment Method
+# Save a Payment Method
 
 {% hint style="info" %}
 This sections deals with the various ways in which you can save a payment method and how to use them in recurring payments

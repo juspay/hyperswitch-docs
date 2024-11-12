@@ -3,9 +3,10 @@ description: >-
   This section offers an outline of the best practices implemented within the
   Hyperswitch cloud environment, aimed at ensuring a secure, user-friendly, and
   efficiently managed platform
+icon: id-card-clip
 ---
 
-# 🕵 Identity and Access Management
+# Identity and Access Management
 
 ## Authentication Methodology for Hyperswitch APIs
 

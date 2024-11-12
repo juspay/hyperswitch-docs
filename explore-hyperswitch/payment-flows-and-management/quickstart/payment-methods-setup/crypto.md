@@ -1,8 +1,9 @@
 ---
 description: Accept crypto payments on your application
+icon: bitcoin-sign
 ---
 
-# 🪙 Crypto
+# Crypto
 
 {% hint style="info" %}
 This section gives you an overview of how to accept crypto payment methods through Hyperswitch.

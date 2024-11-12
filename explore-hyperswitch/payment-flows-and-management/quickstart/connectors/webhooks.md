@@ -1,8 +1,9 @@
 ---
 description: Configure outgoing webhooks from Hyperswitch
+icon: anchor
 ---
 
-# 🪝 Webhooks
+# Webhooks
 
 {% hint style="info" %}
 This section covers how you can set up your outgoing webhooks from Hyperswitch

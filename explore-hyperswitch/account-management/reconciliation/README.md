@@ -2,9 +2,10 @@
 description: >-
   A platform that gives you complete control of your reconciliation process,
   making it faster, efficient, and scalable
+icon: handshake-simple
 ---
 
-# 🤝 Reconciliation
+# Reconciliation
 
 {% hint style="info" %}
 This section outlines how to configure and use Hyperswitch Reconciliation module to streamline your financial processes

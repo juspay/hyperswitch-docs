@@ -2,9 +2,10 @@
 description: >-
   Create multiple merchant accounts, profiles and users for seamless integration
   with your business.
+icon: file-user
 ---
 
-# 🤹 Multiple accounts & profiles
+# Managing Accounts and Profiles
 
 {% hint style="info" %}
 Follow this guide to understand where your business use case fits with hyperswitch architecture.

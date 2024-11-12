@@ -1,8 +1,9 @@
 ---
 description: A brief summary of measures taken at Hyperswitch to ensure GDPR compliance
+icon: compact-disc
 ---
 
-# 💽 GDPR compliance
+# GDPR compliance
 
 {% hint style="info" %}
 In this section you will learn about our initiatives to prioritise and improve the security and privacy of Customer Data and Personally Identifiable Information (PII).

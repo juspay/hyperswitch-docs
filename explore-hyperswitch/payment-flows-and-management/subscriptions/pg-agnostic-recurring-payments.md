@@ -1,8 +1,9 @@
 ---
 description: Make recurring payments across processors
+icon: arrows-repeat
 ---
 
-# 🔃 PG Agnostic Card Forwarding
+# PG Agnostic Card Forwarding
 
 ### How does PG agnostic MITs work?
 
