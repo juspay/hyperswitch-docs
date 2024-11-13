@@ -1,8 +1,9 @@
 ---
 description: Get started integrating the Hyperswitch web client in your app
+icon: puzzle-piece
 ---
 
-# 📦 Customizable and Native Integrations
+# Customizable and Native Integrations
 
 ## How to get started?
 

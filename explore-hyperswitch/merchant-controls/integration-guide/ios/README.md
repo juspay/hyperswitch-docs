@@ -1,8 +1,9 @@
 ---
 description: Integrate unified checkout with your iOS app
+icon: apple
 ---
 
-# 📱 iOS
+# iOS
 
 {% hint style="info" %}
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your iOS App

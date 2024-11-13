@@ -1,8 +1,9 @@
 ---
 description: Integrate unified checkout on your android app
+icon: mobile
 ---
 
-# 📱 Android
+# Android
 
 {% hint style="info" %}
 In this section, you will get an overview of the Hyperswitch Unified Checkout for your Android App

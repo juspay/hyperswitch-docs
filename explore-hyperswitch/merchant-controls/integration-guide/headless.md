@@ -3,9 +3,10 @@ description: >-
   Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
+icon: table-cells-large
 ---
 
-# 🥫 Headless SDK
+# Headless SDK
 
 {% hint style="info" %}
 This section guides you through the integration of Hyperswitch Headless for both web and mobile clients
