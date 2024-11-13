@@ -23,7 +23,7 @@ Provide hassle-free, native checkout experiences that align with your brand, mak
 Optimize payment costs by ensuring that every transaction flows through the most cost-effective processor, and get actionable insights to reduce costs with AI, along with deeper visibility into transaction fees and anomaly detection.
 
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
-* [<mark style="color:blue;">AI Ops cost observability with</mark> Hypersense (Beta)](https://juspay.io/blog/introducing-hypersense)
+* [AI Ops cost observability with HyperSense (Beta)](https://juspay.io/blog/introducing-hypersense)
 
 #### Simplified Payment Operations&#x20;
 
