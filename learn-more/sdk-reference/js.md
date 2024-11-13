@@ -30,11 +30,9 @@ Use `hyper.confirmPayment` to confirm a PaymentIntent using data collected by th
 
 **ConfirmParams object**
 
-| confirmParams                  | Description                                                                                                                                                                                                                                                                                                               |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `return_url(string)`           | **Required**. The url your customer will be directed to after they complete payment.                                                                                                                                                                                                                                      |
-| `shipping (object)`            | The shipping details for the payment, if collected.                                                                                                                                                                                                                                                                       |
-| `payment_method_data (object)` | When you call `hyper.confirmPayment`, payment details are collected from the `HyperElement` and passed to the PaymentIntents confirm endpoint as the `payment_method_data` parameter. You can also include additional payment\_method\_data fields, which will be merged with the data collected from the `HyperElement`. |
+| confirmParams        | Description                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `return_url(string)` | **Required**. The url your customer will be directed to after they complete payment. |
 
 #### 2. `hyper.elements(options)`
 
