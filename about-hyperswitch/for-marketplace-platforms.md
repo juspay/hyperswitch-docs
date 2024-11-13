@@ -1,9 +1,9 @@
 ---
-description: All the payment use cases for marketplace/platforms
 icon: shop
+description: All the payment use-cases for marketplace/platforms
 ---
 
-# For marketplace/platforms
+# For Marketplace/Platforms
 
 {% hint style="success" %}
 Get started now! Start here if you are a marketplace/platforms business looking to accept one time or recurring online payments for your website

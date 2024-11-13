@@ -5,7 +5,7 @@ icon: flux-capacitor
 # Intelligent Routing
 
 {% hint style="info" %}
-Beta Feature: You will be notified when it becomes available to everyone.
+This feature is in beta for North American and European markets. To gain access please drop an email to biz@hyperswitch.io
 {% endhint %}
 
 ## What is Intelligent Routing?&#x20;

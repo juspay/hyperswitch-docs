@@ -1,6 +1,6 @@
 ---
 icon: desktop
-description: All the payment use cases for SaaS providers
+description: All the payment use-cases for SaaS providers
 ---
 
 # For SaaS Businesses
