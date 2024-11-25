@@ -258,61 +258,7 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 | buttonBorderWidth     | Specify the border width of the button                             |
 
-## 7. Hide Expired Saved Payment Methods
-
-You can hide the **Expired Saved Payment Methods** via passing this following prop:
-
-```javascript
-var paymentElementOptions = {
- ...,
- hideExpiredPaymentMethods: true, // default - false
-}
-
-<PaymentElement id="payment-element" options={paymentElementOptions} />
-```
-
-## 8. Handle Saved Payment Methods
-
-### Screen
-
-You can enable/disable saved payment methods screen using the following prop:
-
-```javascript
-var paymentElementOptions = {
- ...,
- displaySavedPaymentMethods: true,
-}
-
-<PaymentElement id="payment-element" options={paymentElementOptions} />
-```
-
-## 9. Hide Card Nickname Field
-
-You can **hide** the **Card Nickname Field** by passing the following prop:
-
-```javascript
-var paymentElementOptions = {
-  ...,
-  hideCardNicknameField: true, // default - false
-};
-
-<PaymentElement id="payment-element" options={paymentElementOptions} />
-```
-
-### Checkbox
-
-You can stop your users from saving their payment methods using the following prop:
-
-```javascript
-var paymentElementOptions = {
- ...,
- displaySavedPaymentMethodsCheckbox: false,
-}
-
-<PaymentElement id="payment-element" options={paymentElementOptions} />
-```
-
-## 10. More Configurations
+## 7. More Configurations
 
 ### Branding
 
@@ -367,6 +313,133 @@ If you would like to customize this message, you can do so by using the `customM
 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
+
+### Hide Card Nickname Field
+
+The `hideCardNicknameField` property allows you to hide the card nickname field when saving a card.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  hideCardNicknameField: true,  // default - false
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Hide Expired Saved Payment Methods
+
+The `hideExpiredPaymentMethods` property allows you to control whether expired saved payment methods are hidden or not.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  hideExpiredPaymentMethods: false, // default - false
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Show Card Form by Default
+
+The `showCardFormByDefault` property determines whether the card form is displayed by default or not.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  showCardFormByDefault: true,
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Terms
+
+The `terms` property allows you to configure the display of terms for various payment methods.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  terms: {
+    auBecsDebit: "always",
+    bancontact: "auto",
+    card: "never",
+    ideal: "auto",
+    sepaDebit: "always",
+    sofort: "never",
+    usBankAccount: "auto",
+  },
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Display Saved Payment Methods
+
+The `displaySavedPaymentMethods` property determines whether saved payment methods are displayed.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  displaySavedPaymentMethods: false,
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Display Saved Payment Methods Checkbox
+
+The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save payment methods" checkbox is displayed.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  displaySavedPaymentMethodsCheckbox: false, 
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Payment Method Order
+
+The `paymentMethodOrder` property allows you to specify the order in which payment methods are displayed.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  paymentMethodOrder: ["card", "ideal", "sepaDebit", "sofort"],
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Business
+
+The `business` property allows you to specify a business name to be attached to the terms. By default merchant name will be taken as business name.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  business: {
+    name: "Example Business",
+  },
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+### Read Only
+
+The `readOnly` property puts the SDK into read-only mode, disabling all interactions.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  readOnly: true,
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
 
 ## Next step:
 
