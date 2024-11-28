@@ -149,6 +149,7 @@
     * [Hyperswitch Account Structure](explore-hyperswitch/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
   * [Manage Your Team](explore-hyperswitch/account-management/manage-your-team.md)
   * [Analytics & operations](explore-hyperswitch/account-management/analytics-and-operations/README.md)
+    * [Hypersense: AI powered payment operations](explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations.md)
     * [Exporting payments data](explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
   * [Disputes / Chargebacks](explore-hyperswitch/account-management/disputes.md)
   * [Reconciliation](explore-hyperswitch/account-management/reconciliation/README.md)
