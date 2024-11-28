@@ -142,6 +142,7 @@
       * [Customization](explore-hyperswitch/merchant-controls/integration-guide/react-native-1/customization.md)
     * [Headless SDK](explore-hyperswitch/merchant-controls/integration-guide/headless.md)
   * [Payment Methods Management](explore-hyperswitch/merchant-controls/payment-methods-management.md)
+  * [Click To Pay](explore-hyperswitch/merchant-controls/click-to-pay.md)
 * [Payment Operations](explore-hyperswitch/account-management/README.md)
   * [Managing Accounts and Profiles](explore-hyperswitch/account-management/multiple-accounts-and-profiles/README.md)
     * [⚙️ Control Centre Account setup](explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup.md)
