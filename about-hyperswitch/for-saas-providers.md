@@ -5,10 +5,47 @@ description: All the payment use-cases for SaaS providers
 
 # For SaaS Businesses
 
-{% hint style="success" %}
-Start here if you are a SaaS business looking to accept one time or recurring online payments for your website
-{% endhint %}
+Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.&#x20;
 
-Hyperswitch supports 55+ payment processors, all major payment methods and multiple payment flows. With Hyperswitch, SaaS businesses can quickly integrate with new payment processors without any hassle. Hyperswitch also offers flexibility to work at various levels of hierarchy.
+Whether you're a startup or an established enterprise, Hyperswitch provides the tools needed to deliver seamless payment experiences for your users.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Integration guide</strong></td><td>Get started with integrating the client SDK on your application </td><td></td><td><a href="../.gitbook/assets/Payment flow (6).png">Payment flow (6).png</a></td><td><a href="../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><strong>Control center</strong></td><td>Single interface for all payment operations &#x26; analytics use-cases</td><td></td><td><a href="../.gitbook/assets/Payment flow (15) (1).png">Payment flow (15) (1).png</a></td><td><a href="../explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup.md">account-setup.md</a></td></tr><tr><td><strong>Setup mandates &#x26; recurring payments</strong></td><td>Setup payments for a future date or charge your customers on a recurring basis</td><td></td><td><a href="../.gitbook/assets/Payment flow (7) (1).png">Payment flow (7) (1).png</a></td><td><a href="../explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments.md">mandates-and-recurring-payments.md</a></td></tr><tr><td><strong>Create payment links</strong> </td><td>Accept payments through reusable links without writing any code</td><td></td><td><a href="../.gitbook/assets/Payment flow (2).png">Payment flow (2).png</a></td><td><a href="../explore-hyperswitch/payment-flows-and-management/quickstart/payment-links.md">payment-links.md</a></td></tr><tr><td><strong>Manage payouts</strong></td><td>Facilitate payouts for global network of partners &#x26; service providers</td><td></td><td><a href="../.gitbook/assets/Payment flow (3).png">Payment flow (3).png</a></td><td><a href="../explore-hyperswitch/payment-flows-and-management/payouts/">payouts</a></td></tr><tr><td><strong>Fraud &#x26; risk solutions</strong></td><td>A comprehensive unified API designed to cater to your specific payment validation needs</td><td></td><td><a href="../.gitbook/assets/Payment flow (16).png">Payment flow (16).png</a></td><td><a href="../explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/">fraud-and-risk-management</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Seamless subscription management</mark></td><td></td><td></td><td><a href="for-saas-providers.md#seamless-subscription-management">#seamless-subscription-management</a></td></tr><tr><td><mark style="color:blue;">Passive churn reduction</mark></td><td></td><td></td><td><a href="for-saas-providers.md#passive-churn-reduction">#passive-churn-reduction</a></td></tr><tr><td><mark style="color:blue;">Optimize payment costs</mark></td><td></td><td></td><td><a href="for-saas-providers.md#optimize-payment-costs">#optimize-payment-costs</a></td></tr><tr><td><mark style="color:blue;">Global payment support with no code connector integrations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#global-payment-support-with-no-code-connector-integrations">#global-payment-support-with-no-code-connector-integrations</a></td></tr><tr><td><mark style="color:blue;">Simplified payment operations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#simplified-payment-operations">#simplified-payment-operations</a></td></tr></tbody></table>
+
+#### Seamless subscription management
+
+Automate and streamline recurring payments with flexible subscription models, ensuring a hassle-free experience for both customers and teams.
+
+* [Saving a payment method for future recurring payments ](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments#saving-a-payment-method-for-future-mit-payments)
+* [PG agnostic card forwarding for recurring payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions/pg-agnostic-recurring-payments)
+
+#### Passive churn reduction
+
+Maximize revenue by minimising payment failures in recurring payment with smart retries.
+
+* [Reducing passive churn with smart retries for failed recurring payments](https://juspay.io/blog/juspay-aiops-solution-to-reduce-passive-churn)
+
+#### Optimize payment costs
+
+With Hyperswitch Intelligent Routing you can ensure that every transaction is being processed through the route with least cost, to reduce payment costs
+
+* [Intelligent Routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing)
+
+#### Global payment support with no code connector integrations&#x20;
+
+Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
+
+* [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
+* [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+
+#### Simplified payment operations&#x20;
+
+Enhance efficiency in your payment operations by accessing unified analytics, managing teams with custom roles and profiles, and more, all with just a few clicks from the powerful Hyperswitch Control Center.
+
+* [Access unified analytics ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
+* [Manage your team ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
+
+
+
+{% content-ref url="for-b2b-saas-businesses.md" %}
+[for-b2b-saas-businesses.md](for-b2b-saas-businesses.md)
+{% endcontent-ref %}
