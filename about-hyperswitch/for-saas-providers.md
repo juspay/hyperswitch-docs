@@ -9,9 +9,9 @@ Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable
 
 Whether you're a startup or an established enterprise, Hyperswitch provides the tools needed to deliver seamless payment experiences for your users.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Seamless subscription management</mark></td><td></td><td></td><td><a href="for-saas-providers.md#seamless-subscription-management">#seamless-subscription-management</a></td></tr><tr><td><mark style="color:blue;">Passive churn reduction</mark></td><td></td><td></td><td><a href="for-saas-providers.md#passive-churn-reduction">#passive-churn-reduction</a></td></tr><tr><td><mark style="color:blue;">Optimize payment costs</mark></td><td></td><td></td><td><a href="for-saas-providers.md#optimize-payment-costs">#optimize-payment-costs</a></td></tr><tr><td><mark style="color:blue;">Global payment support with no code connector integrations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#global-payment-support-with-no-code-connector-integrations">#global-payment-support-with-no-code-connector-integrations</a></td></tr><tr><td><mark style="color:blue;">Simplified payment operations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#simplified-payment-operations">#simplified-payment-operations</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Seamless recurring payments</mark></td><td></td><td></td><td><a href="for-saas-providers.md#seamless-subscription-management">#seamless-subscription-management</a></td></tr><tr><td><mark style="color:blue;">Passive churn reduction</mark></td><td></td><td></td><td><a href="for-saas-providers.md#passive-churn-reduction">#passive-churn-reduction</a></td></tr><tr><td><mark style="color:blue;">Optimize payment costs</mark></td><td></td><td></td><td><a href="for-saas-providers.md#optimize-payment-costs">#optimize-payment-costs</a></td></tr><tr><td><mark style="color:blue;">Global payment support with no code connector integrations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#global-payment-support-with-no-code-connector-integrations">#global-payment-support-with-no-code-connector-integrations</a></td></tr><tr><td><mark style="color:blue;">Simplified payment operations</mark></td><td></td><td></td><td><a href="for-saas-providers.md#simplified-payment-operations">#simplified-payment-operations</a></td></tr></tbody></table>
 
-#### Seamless subscription management
+#### Seamless recurring payments
 
 Automate and streamline recurring payments with flexible subscription models, ensuring a hassle-free experience for both customers and teams.
 
@@ -20,15 +20,16 @@ Automate and streamline recurring payments with flexible subscription models, en
 
 #### Passive churn reduction
 
-Maximize revenue by minimising payment failures in recurring payment with smart retries.
+Maximize revenue by reducing passive churn due to payment failures in recurring payment.
 
 * [Reducing passive churn with smart retries for failed recurring payments](https://juspay.io/blog/juspay-aiops-solution-to-reduce-passive-churn)
 
-#### Optimize payment costs
+**Optimize Payment Costs**
 
-With Hyperswitch Intelligent Routing you can ensure that every transaction is being processed through the route with least cost, to reduce payment costs
+Optimize payment costs by ensuring that every transaction flows through the most cost-effective processor, and get actionable insights to reduce costs with AI, along with deeper visibility into transaction fees and anomaly detection.
 
-* [Intelligent Routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing)
+* [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
+* [AI Ops cost observability with HyperSense (Beta)](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
 
 #### Global payment support with no code connector integrations&#x20;
 
