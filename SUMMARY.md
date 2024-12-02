@@ -217,6 +217,7 @@
   * [Node](learn-more/sdk-reference/node.md)
   * [React](learn-more/sdk-reference/react.md)
   * [JS](learn-more/sdk-reference/js.md)
+  * [Custom Events](learn-more/sdk-reference/custom-events.md)
 * [Hyperswitch architecture](learn-more/hyperswitch-architecture/README.md)
   * [Router](learn-more/hyperswitch-architecture/router.md)
   * [Storage](learn-more/hyperswitch-architecture/storage.md)
