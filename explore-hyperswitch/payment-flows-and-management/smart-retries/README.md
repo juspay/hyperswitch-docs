@@ -1,6 +1,6 @@
 ---
-description: Automatically retry payments with an alternative processor
 icon: magnifying-glass-arrows-rotate
+description: Automatically retry payments with an alternative processor
 ---
 
 # Smart Retries
@@ -27,10 +27,15 @@ There are two possible types of payment retry flows:
 
 Hyperswitch supports the following primary processors for automatic retries.
 
+* Adyen
 * Stripe
 * Bluesnap
 * Checkout.com
+* Deutsche Bank
+* Fiuu
+* Novalnet
 * Trustpay
+* Worldpay
 
 In case you wish more primary processors to be covered for automatic retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
