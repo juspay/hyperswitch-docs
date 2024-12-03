@@ -10,7 +10,7 @@
 * [For B2B SaaS Businesses](about-hyperswitch/for-b2b-saas-businesses.md)
 * [For E-Commerce Businesses](about-hyperswitch/for-e-commerce-businesses.md)
 * [For Marketplace/Platforms](about-hyperswitch/for-marketplace-platforms.md)
-* [🏦 For banks & financial institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
+* [For Banks & Financial Institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
 * [Roadmap - Q4 2024](about-hyperswitch/roadmap-q3-2024/README.md)
   * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap-q3-2024/previous-roadmap-q3-2024.md)
   * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap-q3-2024/roadmap.md)

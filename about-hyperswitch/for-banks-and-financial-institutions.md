@@ -1,55 +1,75 @@
 ---
-description: >-
-  Become a connector of Hyperswitch or use Hyperswitch to augment your acquiring
-  solution
-hidden: true
+icon: building-columns
 ---
 
-# 🏦 For banks & financial institutions
+# For Banks & Financial Institutions
 
-{% hint style="success" %}
-We believe that payments should be basic utility like water or electricity. Hyperswitch is an effort towards enhancing accessibility, bridging diversity and reducing the cost involved in processing payments.
-{% endhint %}
+Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.
 
-One of the means to achieve our vision is by enabling more merchants to directly connect with the banks to process payments.&#x20;
+Hyperswitch enables banks to offer a suite of advanced tools, including an orchestrator, vault, and custom checkout for merchants, delivering the best payment experience for customers while streamlining operations for internal teams.
 
-If you resonate with our vision, you can learn more about how you can join the movement as a financial institution!
+The Hyperswitch infrastructure has demonstrated its reliability by handling over 175 million transactions per day with 99.99% uptime, processing more than $670 billion in annualized total processed volume.
 
-## Benefits
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Bank-Centric Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#bank-centric-capabilities">#bank-centric-capabilities</a></td></tr><tr><td><mark style="color:blue;">Merchant-Centric Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#merchant-centric-capabilities">#merchant-centric-capabilities</a></td></tr><tr><td><mark style="color:blue;">Infrastructure Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#infrastructure-capabilities">#infrastructure-capabilities</a></td></tr></tbody></table>
 
-### I. Acquire more merchants for your bank's acquiring solution&#x20;
+## Bank-Centric Capabilities
 
-Banks can deploy Hyperswitch on their own infrastructure, whitelabel the product and start distributing to their merchants. With Hyperswitch, merchants could benefit by connecting to your bank's acquiring solution and at the same time access multiple payment methods including wallets, buy now pay later and many more.
+Hyperswitch helps banks streamline operations, manage merchants, and improve payment performance.
 
-In addition to processing payments, you can leverage the Hyperswitch SDK to manage your customers checkout experience and offer a full stack payment solution to merchants.
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Merchant Management</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#merchant-management">#merchant-management</a></td></tr><tr><td><mark style="color:blue;">Payments and Transactions</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payments-and-transactions">#payments-and-transactions</a></td></tr><tr><td><mark style="color:blue;">Insights and Automation</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#insights-and-automation">#insights-and-automation</a></td></tr></tbody></table>
 
-Hyperswitch offer an out-of-the-box migration capability to seamlessly migrate merchants from Stripe to your bank's acquiring solution. So you do not have to worry about long integration lead times if your merchants are already integrated to Stripe.
+#### Merchant Management
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Migrate from Stripe</strong></td><td>Learn how you can quickly migrate merchants from Stripe to Hyperswitch</td><td></td><td><a href="../explore-hyperswitch/payment-flows-and-management/quickstart/migrate-from-stripe/">migrate-from-stripe</a></td><td><a href="../.gitbook/assets/StripeMigration.jpg">StripeMigration.jpg</a></td></tr></tbody></table>
+* [Seamless merchant onboarding](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles): Easily onboard merchants with just a few clicks via the dashboard and allow them to invite their team with different roles and profiles.
+* [White-label solutions](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multi-tenancy-with-hyperswitch): Support custom branding for merchants on payment pages, links, and other tools, providing extensive control over the customer’s payment experience.
 
-### II. Unifying the diverse acquiring solutions within your bank
+#### Payments and Transactions
 
-If you bank's acquiring technology is diverse with multiple technology solutions (may be due to recent acquisitions, or mergers, or any other reasons) you can unify them all under Hyperswitch. And banks can self deploy Hyperswitch on your own infrastructure, whitelabel and start distributing to your merchants.&#x20;
+* [Recurring payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions): Support recurring payments with PG-agnostic card forwarding, and reduce churn by retrying failed recurring payments.
+* [Intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing): Intelligently route transactions to alternative PSPs during failures, minimizing the impact on authentication rates.
+* [Multi-rail payouts](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/payouts): Support multiple rails for payouts such as Visa Direct, Mastercard, SEPA, and Same Day ACH.
+* [Global token requestor](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards): Tokenize payment details in a way that allows tokens to be used across PSPs for repeat transactions, eliminating dependence on a single PSP.
 
-This will significantly enhance the merchant onboarding experience and reduce the cost of managing multiple acquiring solutions within your bank.
+#### Insights and Automation
 
-## Next steps?
+* [Analytics and insights](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations): Access all payment-related data from different PSPs, payment methods, business units, and costs in a single unified dashboard with global search capabilities across the organization’s payment data.
+* [Zero ops burden](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team): Automate routine tasks like settlements and reconciliations to save time and manage teams with different profiles and roles directly from the dashboard.
 
-### I want to become a connector of Hyperswitch
+## Merchant-Centric Capabilities
 
-Currently, Hyperswitch supports 50+ payment processors as connectors and we are in the process of adding more bank integrations. Because, we feel that if merchants directly connect to the bank it can help them reduce the cost of processing payments.
+Hyperswitch empowers banks to provide merchants with tools to improve customer experiences, simplify operations, and grow efficiently.
 
-If you wish your bank's payment processing solution to be added as one of the connectors, you can reach out to us at <mark style="color:blue;">biz@hyperswitch.io</mark>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Payment Orchestration</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payment-orchestration">#payment-orchestration</a></td></tr><tr><td><mark style="color:blue;">Checkout Experience</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#checkout-experience">#checkout-experience</a></td></tr><tr><td><mark style="color:blue;">Security and Compliance</mark> </td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#security-and-compliance">#security-and-compliance</a></td></tr><tr><td><mark style="color:blue;">Simplified Operations</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#simplified-operations">#simplified-operations</a></td></tr></tbody></table>
 
-### I want to augment my acquiring solution with Hyperswitch
+#### Payment Orchestration
 
-If you are considering to augment your acquiring solution with Hyperswitch open source, you might want to understand three important facts
+* [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router): Route transactions across PSPs in real time to boost authentication, and optimise payment costs.
+* [Global and local integrations](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors): Offer no-code integration with 70+ connectors for 150+ payment methods and wallets, ensuring better conversions by fulfilling diverse payment preferences.
 
-* Hyperswitch is 100% open source and Apache 2.0 licensed.
-* The project is fully maintained and run by Juspay Technologies - South Asia's leading payment orchestrator processing 75 million transactions per day and 11 years experience in payment orchestration. Juspay is backed by investors such as Accel, Softbank, VEF and Wellington.
-* Hyperswitch open source project is also being offered as a managed service (Hyperswitch Cloud) for digital business who wish to opt for a fully managed payment solution. Learn more about the [pricing plans and support](https://hyperswitch.io/pricing).
+#### Checkout Experience
 
-You may get started by installing Hyperswitch in your own infastructure. If you need support, you can email us at <mark style="color:blue;">biz@hyperswitch.io</mark>
+* [Custom checkout experiences](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide): Create branded, user-friendly checkout pages that provide a native, redirect-free payment experience, reducing drop-offs and increasing sales.
+* <mark style="color:blue;">Authentication</mark>: Enable advanced authentication methods like [Native 3DS](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/3ds-decision-manager/native-3ds-authentication-for-mobile-payments) and [Click to Pay](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/click-to-pay) in the user journey without increasing friction.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Explore Hyperswitch on sandbox</strong></td><td>The Hyperswitch Cloud control center is free to access on Sandbox. You can explore it to a quick tour of all the supported integrations and features</td><td></td><td><a href="../.gitbook/assets/tryHyperswitch.jpg">tryHyperswitch.jpg</a></td><td><a href="https://app.hyperswitch.io/register?_gl=1*1j39jxb*_ga*MTYzNTE0Mjg1LjE3MDEwOTAxODQ.*_ga_1X38KQVJ1S*MTcwMjA0MDc0NS4zMS4xLjE3MDIwNDQ2OTIuMjguMC4w">https://app.hyperswitch.io/register?_gl=1*1j39jxb*_ga*MTYzNTE0Mjg1LjE3MDEwOTAxODQ.*_ga_1X38KQVJ1S*MTcwMjA0MDc0NS4zMS4xLjE3MDIwNDQ2OTIuMjguMC4w</a></td></tr><tr><td><strong>Deploy Hyperswitch on your stack</strong></td><td>Deploy our full stack open source solution to augment your payment solutions. You can use our deployment scripts to run Hyperswitch on your stack</td><td></td><td><a href="../.gitbook/assets/GitHub.jpg">GitHub.jpg</a></td><td><a href="../hyperswitch-open-source/overview.md">overview.md</a></td></tr></tbody></table>
+#### Security and Compliance
+
+* [Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards): Ensure world-class security for customer and payment details with PCI-compliant tokenization, providing safe and secure storage with Hyperswitch Vault.
+* [Fully managed compliance](https://docs.hyperswitch.io/explore-hyperswitch/overview): Get rid of hassle of fulfilling the ever advancing compliance needs, enabling you to focus on your core business&#x20;
+
+#### Simplified Operations
+
+* [Control center](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup): Manage everything from connectors, payment methods, transactions to teams from a single, easy-to-use dashboard.
+
+## Infrastructure Capabilities
+
+Hyperswitch offers a robust, scalable, and transparent platform to meet your payment needs
+
+* <mark style="color:blue;">Reliability</mark>: Handles over 175+ million transactions daily with 99.99% uptime.
+* <mark style="color:blue;">Scalability</mark>: Effortlessly scale to support more customers and higher transaction volumes during peak times.
+* <mark style="color:blue;">Adaptability</mark>: Adjust to market changes and new regulations with ease, meeting compliance standards across the globe.
+* <mark style="color:blue;">Transparency</mark>: Access real-time data, dashboards, alerts, and insights to effectively manage payments.
+
+{% content-ref url="roadmap-q3-2024/" %}
+[roadmap-q3-2024](roadmap-q3-2024/)
+{% endcontent-ref %}
 
