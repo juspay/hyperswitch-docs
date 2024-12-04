@@ -10,7 +10,7 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 ### Payment Journey for Click to pay signed up users
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdKGwPYQVZzv0VjaofiRYOFRDZhlCrNPac63cFwyauAk3tqZsYpsrcmnvWlVGkj2rrfC8UJ1f7CfHy0pU8hyy033_NIT2cmHCrLG4Y8tgMpSPXfKQkwGil9c0qPWVQWz1LRVwOfTA?key=5QuaGpfwlrXa0BS9q8_rIifp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Key benefits of the Click to Pay with Passkey Service:
 

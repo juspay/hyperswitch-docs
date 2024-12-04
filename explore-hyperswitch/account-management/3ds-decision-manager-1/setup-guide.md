@@ -34,7 +34,7 @@ To create a test payment, Go to Home and click on Try a test payment.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-02 at 1.04.09 PM.png" alt=""><figcaption><p>Test payment</p></figcaption></figure>
 
-**Note:**Surcharge manager supports only one active configuration at a time. Multiple rules can be combined into a single configuration as shown in the example
+**Note:**&#x53;urcharge manager supports only one active configuration at a time. Multiple rules can be combined into a single configuration as shown in the example
 
 ### FAQs
 
