@@ -2,7 +2,11 @@
 icon: brain-circuit
 ---
 
-# Hypersense: AI powered payment operations
+# AI Powered Cost Observability
+
+{% hint style="info" %}
+This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
+{% endhint %}
 
 Enterprises often face challenges and find difficulty in understanding and managing their payment processing costs, due to complexity, variability of the underlying fee structures and the entities involved. These fees typically consist of:
 
@@ -27,10 +31,6 @@ HyperSense solves this problem by transforming unstructured payment fee data fro
 **Audit**: Detects discrepancies such as PSP errors, invoice mismatches, overcharges. This auditing process often uncovers significant cost savings without requiring additional engineering effort.
 
 **Optimize**: Offers actionable insights designed to help businesses achieve maximum savings by improving interchange qualifications, reducing scheme fees, and minimizing penalties. These recommendations ensure proactive cost optimization insights.
-
-### How to Enable:
-
-Hypersense is currently under development with on-demand demo, feel free to reach out at hyperswitch@juspay.in
 
 {% content-ref url="exporting-payments-data.md" %}
 [exporting-payments-data.md](exporting-payments-data.md)

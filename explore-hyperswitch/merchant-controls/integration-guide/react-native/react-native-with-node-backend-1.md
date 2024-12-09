@@ -2,10 +2,10 @@
 description: Integrate Card widget to your React Native App using hyperswitch-node
 ---
 
-# Card Widget (Beta)
+# Card Widget
 
 {% hint style="info" %}
-Currently in beta please contact to get early access
+This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
 {% endhint %}
 
 {% hint style="info" %}

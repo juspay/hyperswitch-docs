@@ -4,6 +4,10 @@ icon: chevrons-right
 
 # Click To Pay
 
+{% hint style="info" %}
+This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
+{% endhint %}
+
 Click to Pay is a secure and user-friendly digital payment solution designed to simplify the online checkout process. With Click to Pay, consumers can use their saved payment cards without manually entering card details or recalling a password for each purchase. All payment information is securely stored within a single, centralized profile tied to the user via an email/phone, making it easy to manage various payment methods.
 
 This solution is built on [EMVCo](https://www.emvco.com/) standards and is supported by major global card networks, enabling international interoperability and secure transaction acceptance. By streamlining the payment process, Click to Pay reduces cart abandonment, providing a smooth user experience while strengthening security through [tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards).
@@ -35,10 +39,6 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 By combining the tokenization of payment credentials with seamless biometric authentication, Click to Pay is bringing [EMVCo](https://www.emvco.com/), [World Wide Web Consortium](https://www.w3.org/) and the[ FIDO Alliance](https://fidoalliance.org/) industry standards together to speed and secure checkouts.&#x20;
 
 On the customers' side, many are hesitant to enter their card details on a merchant website due to lack of trust and security concerns. With Click to Pay, these customers need not enter their card details manually, but fetch those from a secured, known EMVCo SRC system. This reduces the cart abandonment rate and increased sales for the merchants who offer Click to Pay.
-
-#### How to enable it?
-
-This is an on demand feature for merchants, please reach out to us at hyperswitch@juspay.in
 
 {% content-ref url="../account-management/" %}
 [account-management](../account-management/)
