@@ -4,8 +4,6 @@ icon: arrow-up-right-dots
 
 # Incremental Authorization
 
-## What is Incremental Authorization?
-
 Generally for any payment transaction, the payable amount from the payment request is authorized and then captured. But in some situations like hotel bookings, car rentals, or services where the final cost is uncertain, we might need to increase the authorized amount.&#x20;
 
 Incremental authorization in Hyperswitch allows merchants to request additional funds after the initial authorization, giving them the flexibility to handle changing costs without disrupting the customer’s payment experience.
@@ -59,7 +57,3 @@ curl --request POST \
 }'
 ```
 
-\
-
-
-\

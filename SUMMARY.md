@@ -92,7 +92,7 @@
     * [Incremental Authorization](explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization.md)
     * [Tokenization & PCI Compliance](explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards/README.md)
       * [Network Tokenisation](explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards/network-tokenisation.md)
-    * [Vaulting Workflows](explore-hyperswitch/payment-flows-and-management/quickstart/payment-workflows.md)
+    * [Supported Payment Workflows](explore-hyperswitch/payment-flows-and-management/quickstart/payment-workflows.md)
     * [Co-badged Cards](explore-hyperswitch/payment-flows-and-management/quickstart/co-badged-cards-with-hyperswitch.md)
     * [Webhooks](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/webhooks.md)
   * [Process Payouts](explore-hyperswitch/payment-flows-and-management/payouts/README.md)
