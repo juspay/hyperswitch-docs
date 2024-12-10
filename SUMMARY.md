@@ -31,7 +31,7 @@
     * [🥗 Payment Recipes](explore-hyperswitch/payment-flows-and-management/quickstart/payment-recipes/README.md)
       * [Use PayPal With Stripe](explore-hyperswitch/payment-flows-and-management/quickstart/payment-recipes/use-paypal-with-stripe.md)
     * [Connectors](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/README.md)
-      * [Activate connector on Hyperswitch](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/activate-connector-on-hyperswitch.md)
+      * [Activate Connector on Hyperswitch](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/activate-connector-on-hyperswitch.md)
       * [Try a Payment](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/test-a-payment-with-connector.md)
       * [Available Connectors](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/available-connectors/README.md)
         * [ACI](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/available-connectors/aci.md)

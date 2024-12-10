@@ -1,26 +1,31 @@
 ---
-description: Make test payments through preferred connector via Hyperswitch
 icon: vial-circle-check
 ---
 
 # Try a Payment
 
-{% hint style="info" %}
-This section gives you an overview of how to make test payments via Hyperswitch.
-{% endhint %}
-
 ## Test the Configuration using Dashboard
 
 1. Upon configuration of the Connector, navigate to the dashboard [home page](https://app.hyperswitch.io/home)
-2. Proceed with the "Try a test payment" option on the home page of the dashboard
+2.  Proceed with the "Try a test payment" option on the home page of the dashboard\
+
+
+    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-12-10 at 11.45.52 AM (1).png" alt=""><figcaption></figcaption></figure>
 3. Setup your demo checkout page by providing Business profile, Profile Id, Currency and Amount
-4. Click on Show Preview, Your demo checkout page will be visible at preview section
+4.  Click on Show Preview, Your demo checkout page will be visible at preview section\
+
+
+    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message&#x20;
 7. Validate transaction on Hyperswitch dashboard. \
    \- Goto the left pane on the Hyperswitch dashboard \
    \- Click on Operations -> Payments \
    \- Your transactions should be visible under the order management tab
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.03 AM.png" alt=""><figcaption></figcaption></figure>
 
 ## Test Credentials
 
@@ -30,12 +35,12 @@ This section gives you an overview of how to make test payments via Hyperswitch.
 | --------------- | ---------------- | ------------ | --- | ----------------------------------------------------------------------------------------------------------- |
 | Adyen           | 4000020000000000 | 03/30        | 737 | [Click here](https://docs.adyen.com/development-resources/testing/test-card-numbers)                        |
 | Bluesnap        | 6011000180331112 | 02/26        | 123 | [Click here](https://developers.bluesnap.com/reference/test-credit-cards)                                   |
-| Authorize.net   | 4242424242424242 | 12/25        | 100 | [Click here](https://developer.authorize.net/hello\_world/testing\_guide.html)                              |
+| Authorize.net   | 4242424242424242 | 12/25        | 100 | [Click here](https://developer.authorize.net/hello_world/testing_guide.html)                                |
 | Braintree       | 4111111111111111 | 12/25        | 100 | [Click here](https://developer.paypal.com/braintree/docs/reference/general/testing/php#credit-card-numbers) |
 | Checkout        | 4242424242424242 | 12/25        | 100 | [Click here](https://www.checkout.com/docs/testing/test-cards)                                              |
 | Fiserv          | 4005550000000019 | 02/35        | 123 | -                                                                                                           |
 | Global Payments | 4263970000005262 | 12/25        | 100 | [Click here](https://developer.globalpay.com/resources/test-card-numbers)                                   |
-| Nuvei           | 4444333322221111 | 12/25        | 123 | [Click here](https://helpdesk.nuvei.com/doku.php?id=developer:integration\_docs:testing-guide)              |
+| Nuvei           | 4444333322221111 | 12/25        | 123 | [Click here](https://helpdesk.nuvei.com/doku.php?id=developer:integration_docs:testing-guide)               |
 | Stripe          | 4242424242424242 | 12/25        | 100 | [Click here](https://stripe.com/docs/testing#cards)                                                         |
 | Worldline       | 4012000033330026 | 12/25        | 123 | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
 
@@ -104,3 +109,4 @@ Apple Pay provides test cards from various card companies and supported regions 
 3. If you are not located in the supported countried, but still wish to test Applepay, please change your Region using Mac System preferences > Language & Region > choose any of the 15 supported countries.
 
 <figure><img src="../../../../.gitbook/assets/languageRegion (2).png" alt=""><figcaption></figcaption></figure>
+
