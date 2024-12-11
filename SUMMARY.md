@@ -125,6 +125,7 @@
       * [Error Codes](explore-hyperswitch/merchant-controls/integration-guide/web/error-codes.md)
       * [Node and HTML](explore-hyperswitch/merchant-controls/integration-guide/web/node-and-html.md)
       * [Vanilla JS and REST API Integration](explore-hyperswitch/merchant-controls/integration-guide/web/vanilla-js-and-rest-api-integration.md)
+      * [Server Setup](explore-hyperswitch/merchant-controls/integration-guide/web/server-setup.md)
     * [Android](explore-hyperswitch/merchant-controls/integration-guide/android/README.md)
       * [Kotlin with Node Backend](explore-hyperswitch/merchant-controls/integration-guide/android/kotlin-with-node-backend.md)
       * [Customization](explore-hyperswitch/merchant-controls/integration-guide/android/customization.md)

@@ -15,42 +15,7 @@ In this section, you will get details to Integrate Hyperswitch SDK using Node Ba
 
 ## 1. Setup the server
 
-### 1.1 Create a payment
-
-Get your API key from [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1).
-
-Add an endpoint on your server that creates a Payment. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the `client_secret` obtained in the response to securely complete the payment on the client.
-
-```js
-// Create a Payment intent
-const app = express();
-
-app.post("/create-payment", async (req, res) => {
-  try {
-    const response = await fetch(`https://sandbox.hyperswitch.io/payments`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "api-key": "YOUR_API_KEY" },
-        body: JSON.stringify(req.body), //body to have amount, currency and profile_id
-      });
-    const paymentIntent = await response.json()
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
-  }
-});
-```
-
-{% hint style="info" %}
-In case your integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
-{% endhint %}
+Follow the [Server Setup](server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
