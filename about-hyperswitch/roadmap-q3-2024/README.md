@@ -75,7 +75,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
   * 🟥 ~~Digital Virgo integration for Direct Carrier Billing~~
   * 🟧 SamsungPay
   * 🟩 Nexi Xpay card payments
-  * 🟧 ~~Deutche Bank for card payins and SEPA payouts~~
+  * 🟥 ~~Deutche Bank for card payins and SEPA payouts~~
   * 🟩 PAZE for card payments in the US
 * 🟩 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
 
