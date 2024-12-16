@@ -1,6 +1,6 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'24)
 icon: road
+description: Hyperswitch roadmap (Oct to Dec'24)
 ---
 
 # Roadmap - Q4 2024
@@ -69,27 +69,26 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟥 More payment authorization workflows - split payments and incremental authorization
+* 🟧  More payment authorization workflows - split payments and incremental authorization
 * New integrations -&#x20;
-  * 🟥 Paymentwall for cards and alternate payment methods
-  * 🟥 Digital Virgo integration for Direct Carrier Billing
+  * 🟥[ Paymentwall for cards and alternate payment methods](#user-content-fn-1)[^1] _(Expected Closure by Mar'2025)_
+  * 🟥 ~~Digital Virgo integration for Direct Carrier Billing~~
   * 🟧 SamsungPay
-  * 🟥 Nexi Xpay card payments
-  * 🟧 Deutche Bank for card payins and SEPA payouts
-  * 🟧 🚛 PAZE for card payments in the US
-* 🟧 🚛 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
+  * 🟩 Nexi Xpay card payments
+  * 🟧 ~~Deutche Bank for card payins and SEPA payouts~~
+  * 🟩 PAZE for card payments in the US
+* 🟩 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟥 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
-* 🟥 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
-* 🟥 Implement MPAN (merchant tokens) for Applepay recurring payments
-* 🟧  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas\_scof/use-case1/) with Mastercard cards. This is to provide seamless payment authentication experience (with Biometrics) and liability shift for merchants
+* 🟧 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
+* 🟧 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
+* 🟧 Implement MPAN (merchant tokens) for Applepay recurring payments
+* 🟥  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas_scof/use-case1/) with Mastercard cards. This is to provide seamless payment authentication experience (with Biometrics) and liability shift for merchants _(Expected Closure by Mar'2025)_
 * 🟧 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US
 * More direct bank acquirer integrations
   * 🟧 JP Morgan
 
@@ -97,13 +96,15 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 * 🟧 Data reporting at an organization, merchant and profile level for easier reconciliation
 * 🟧 Enhancements in analytics module for Refunds, Disputes and Smart Retries
-* 🟥  Add support for bulk network tokenization
-* 🟥 Migration of Network Tokens for business continuity
+* 🟥  Add support for bulk network tokenization _(Expected Closure by Mar'2025)_
+* 🟩 Migration of Network Tokens for business continuity
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟥 Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
+* 🟧 Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+
+[^1]: 
