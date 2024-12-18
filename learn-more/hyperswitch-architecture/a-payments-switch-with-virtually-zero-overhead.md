@@ -78,13 +78,9 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 The latency of the entire Hyperswitch application is just \~25 ms&#x20;
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<div data-full-width="false">
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-10-23 at 12.07.08 AM.png" alt="" width="563"><figcaption></figcaption></figure>
-
-</div>
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/Screenshot 2023-10-23 at 12.07.08 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 ### **Seamless Integration - Just another microservice in your system**
 
