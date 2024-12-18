@@ -10,11 +10,11 @@ We support modular, embeddable alternate payment methods (APMs) known as **Hyper
 
 Let us understand with an example-
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FHvba2UHKd3RMuF95EYEA%2FPayment%20Flow.png?alt=media&#x26;token=1645cd83-0e8a-4e7a-8eaf-a30af1510383" alt=""><figcaption><p>Checkout page only has Cards and PayPal offered by their current PSP</p></figcaption></figure>
+In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FiLlgOXAtqI31c2nQvRzG%2FPayment%20Flow-1.png?alt=media&#x26;token=7e8a1266-ca69-432d-8909-e5a07fd7cd33" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FHvba2UHKd3RMuF95EYEA%2FPayment%20Flow.png?alt=media&#x26;token=1645cd83-0e8a-4e7a-8eaf-a30af1510383" alt="" width="563"><figcaption><p>Checkout page only has Cards and PayPal offered by their current PSP</p></figcaption></figure>
 
-In the above checkout screen the merchant only has Cards and Paypal offered by their current PSP, but if the merchant decides to enable more alternate payment methods (APMs), the problems can be multifold:
+But, if the merchant decides to enable more alternate payment methods (APMs), the problems can be multifold:
 
 1. **Availability** - Current PSP may not support the desired alternate payment method requiring the merchant to do a direct integration or use a different PSP.
 2. **Complex to integrate** - In case a PSP supports a desired payment method, integrating it into the existing checkout is tedious and often requires high engineering effort. Hyperwidets offers a low code solution for such a scenario where a merchant can not only choose to have their preferred payment method through a wide range of connectors, but also integrate it with minimal engineering effort.
@@ -22,15 +22,15 @@ In the above checkout screen the merchant only has Cards and Paypal offered by t
    1. Hyperwidget offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
 4. **Integration overhead to enable more APMs on the same PSP**: Some PSPs require the merchant to do some additional integration steps to enable an APM. This can be time consuming and require significant tech bandwidth from the merchant. Examples can be when certain APMs are only available on new API versions of the PSP, certification from Apple/ Google is required to go-live for some wallet flows, adding a frontend library/ javascript to add certain APMs, and so on.
 
-**Additional examples:**
+in the image below you can find a checkout page with more alternate payment methods via Hyperwidget.
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FzFhf33ZBiGwXvInNN3Ma%2FFrame%201321316973.png?alt=media&#x26;token=cd12e266-9e04-4688-8a35-84d8b6813a64" alt=""><figcaption><p>Additional Example 1: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FiLlgOXAtqI31c2nQvRzG%2FPayment%20Flow-1.png?alt=media&#x26;token=7e8a1266-ca69-432d-8909-e5a07fd7cd33" alt="" width="563"><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2F5V5WWx1Q4KQglFRvGp13%2FGroup%201000003880.png?alt=media&#x26;token=e34dcdf3-c715-484c-ab81-0a78c5865632" alt=""><figcaption><p>Additional Example 1: Checkout page with more alternate payment methods</p></figcaption></figure>
+**Additional example:**
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Additional Example 2: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FzFhf33ZBiGwXvInNN3Ma%2FFrame%201321316973.png?alt=media&#x26;token=cd12e266-9e04-4688-8a35-84d8b6813a64" alt="" width="563"><figcaption><p>Example: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Additional Example 2: Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2F5V5WWx1Q4KQglFRvGp13%2FGroup%201000003880.png?alt=media&#x26;token=e34dcdf3-c715-484c-ab81-0a78c5865632" alt="" width="563"><figcaption><p>Example: Checkout page with more alternate payment methods</p></figcaption></figure>
 
 ### How is Hyperwidget engineered:&#x20;
 
@@ -73,9 +73,7 @@ Merchants can build their own UI for each payment method and call Hyperwidget co
 * **Setup A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
 * **Setup B** - Merchant is indirectly integrated with 1 PSP via a middle layer (Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK). The merchant is looking to enable APMs via the same or different PSP
 
-| **via PSP or middle layer**                                                                                                                                                                                                                                                                                                                                                                                                                                         | **via Hyperwidgets**                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| <p><mark style="color:blue;">Existing APMs</mark></p><ul><li>Apple Pay - <mark style="color:red;">2-3 weeks of engineering effort</mark></li><li>Klarna - <mark style="color:red;">2-3 weeks of engineering effort</mark></li></ul><p><mark style="color:blue;">New innovations</mark></p><ul><li>Paze - <mark style="color:red;">Not available via most players</mark></li><li>Click2Pay - <mark style="color:red;">Not available via most player</mark></li></ul> | <mark style="color:blue;">One time effort of 2-weeks to enable all existing APMs and new innovations via the same integration</mark> |
+<table><thead><tr><th width="374">via PSP or middle layer</th><th>via Hyperwidgets</th></tr></thead><tbody><tr><td><p><mark style="color:blue;">Existing APMs</mark></p><ul><li>Apple Pay - <mark style="color:red;">2-3 weeks of engineering effort</mark></li><li>Klarna - <mark style="color:red;">2-3 weeks of engineering effort</mark></li></ul><p><mark style="color:blue;">New innovations</mark></p><ul><li>Paze - <mark style="color:red;">Not available via most players</mark></li><li>Click2Pay - <mark style="color:red;">Not available via most player</mark></li></ul></td><td><p>⠀</p><p>One time effort of <mark style="color:blue;">2-weeks</mark> to enable all existing APMs and new innovations via the same integration</p></td></tr></tbody></table>
 
 {% content-ref url="hyperwidget-integration-guide.md" %}
 [hyperwidget-integration-guide.md](hyperwidget-integration-guide.md)

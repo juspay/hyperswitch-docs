@@ -40,12 +40,12 @@ To start collecting payments via the APM of your choice, follow these simple ste
 
 #### For React Integration:
 
-```
+```javascript
 npm install @juspay-tech/hyper-js
 npm install @juspay-tech/react-hyper-js
 ```
 
-```
+```javascript
 import React, { useState, useEffect } from "react";
 import { loadHyper } from "@juspay-tech/hyper-js";
 import { hyperElements } from "@juspay-tech/react-hyper-js";
@@ -77,7 +77,7 @@ useEffect(() => {
 
 Now add this component to the PaymentElement -&#x20;
 
-```
+```javascript
 var unifiedCheckoutOptions = {
  wallets: {
    walletReturnUrl: "https://example.com/complete",
