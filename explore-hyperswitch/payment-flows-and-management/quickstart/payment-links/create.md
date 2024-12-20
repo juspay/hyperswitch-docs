@@ -47,6 +47,7 @@ curl --location '{{BASE_URL}}/payments' \
             "enabled_saved_payment_method": true,
             "hide_card_nickname_field": true,
             "show_card_form_by_default": true,
+            "payment_button_text": "Proceed to Payment!",
             "transaction_details": [
                 {
                     "key": "Policy Number",

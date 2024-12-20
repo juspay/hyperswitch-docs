@@ -24,6 +24,7 @@ Payment link UI can be configured at a business profile and the same configurati
     enabled_saved_payment_method: bool, /// Render option to save the payment method for payment widget (works only in secure payment links)
     hide_card_nickname_field: bool, /// Hide card nickname field in payment widget
     show_card_form_by_default: bool, /// Show card form by default in payment widget
+    payment_button_text: String, /// Custom text to be rendered on the SDK pay button
 }
 ```
 {% endcode %}
@@ -146,6 +147,12 @@ A boolean value for toggling visibility of the card nickname input in the paymen
 
 A boolean value for controlling the first rendered form in the payment widget. Enabling this renders the form for card payment method when payment link is opened.
 
+#### Payment button text
+
+A custom text that can be rendered on the payment widget's pay now button.
+
+<figure><img src="../../../../.gitbook/assets/payment-links-payment-button-text.png" alt=""><figcaption>Custom text for payment widget's button</figcaption></figure>
+
 ## Other configurations
 
 These configurations can only be made at business profile level and cannot be overridden during payment links creation.
@@ -228,6 +235,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
             "enabled_saved_payment_method": true,
             "hide_card_nickname_field": true,
             "show_card_form_by_default": true,
+            "payment_button_text": "Proceed to Payment!",
             "transaction_details": [
                 {
                     "key": "Policy Number",
