@@ -42,7 +42,7 @@ A custom logo can be used in the details section of the payment links. This is a
 
 Example: https://hyperswitch.io/favicon.ico
 
-<figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption>Primary theme</figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/payment-links-details-section.png" alt=""><figcaption>Primary theme</figcaption></figure>
 
 #### Merchant name
 
@@ -50,7 +50,7 @@ A custom display name that can be rendered in the details section of the payment
 
 Example: HyperSwitch Inc.
 
-<figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption>Custom seller name</figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/payment-links-details-section.png" alt=""><figcaption>Custom seller name</figcaption></figure>
 
 #### Dynamic details
 
@@ -118,7 +118,7 @@ Configure layout for the payment widget of the payment links. For a list of avai
 
 Example: accordion
 
-<figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption>Layout 2</figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption>SDK accordion layout</figcaption></figure>
 
 #### Render only payment widget
 
@@ -130,13 +130,17 @@ A boolean value for rendering only the payment widget of the payment links. `fal
 
 A boolean value for rendering saved payment methods for a customer and also to render a checkbox for saving new payment methods in the payment widget. This can only be rendered in secure payment links.
 
-<figure><img src="../../../../.gitbook/assets/payment-links-saved-payment-methods.png" alt=""><figcaption>Show saved payment methods and checkbox to save payment methods</figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/payment-links-spm-checkbox.png" alt=""><figcaption>Save payment method checkbox</figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/payment-links-spm.png" alt=""><figcaption>Saved payment methods</figcaption></figure>
 
 #### Hide card nickname input
 
 A boolean value for toggling visibility of the card nickname input in the payment widget.
 
-<figure><img src="../../../../.gitbook/assets/payment-links-hide-card-nickname.png" alt=""><figcaption>Hide card nickname field when card is requested to be saved</figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/payment-links-hidden-card-nickname.png" alt=""><figcaption>Hidden card nickname field when card is requested to be saved</figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/payment-links-visible-card-nickname.png" alt=""><figcaption>Visible card nickname field when card is requested to be saved</figcaption></figure>
 
 #### Show card form by default
 
