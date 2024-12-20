@@ -5,14 +5,14 @@ icon: link
 
 # Payment Links
 
-Introducing Payment Links – Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
+Introducing Payment Links - Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
 ### Use cases for Payment links
 
 * Email/SMS marketing or selling online with a website.
 * Having multiple customer segments - to create tailored payment pages that are optimized for each bucket of customers.
 * Fundraising or collecting donations.
-* Accepting payments in person but don’t have the hardware.
+* Accepting payments in person but don't have the hardware.
 * Social Media Commerce
 * Cross-channel customer reactivation
 * Automated Payment Reminders to automate collections

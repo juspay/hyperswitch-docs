@@ -2,17 +2,21 @@
 description: Secure payment links
 ---
 
-Payment links which are embedded in an iframe of a trusted domain are secure payment links. These links can only be embedded in an iframe and cannot be directly opened in a browser tab. Customers can view their saved payment methods and also save new payment methods in this link.
+Secure payment links are those embedded within the iframe of a trusted domain. These links cannot be directly opened in a browser tab and are designed to provide a safe environment for users to view and save their payment methods.
 
 # Using secure Payment links
 
-A list of trusted allowed domains must be configured in business profile for provisioning secure payment links. Once `allowed_domains` are configured, creating payment links will give back two URLs - one for open payment links which can be opened in a browser tab, and a secure link which can only be embedded in an iframe of a parent HTML. Domain name of the parent webpage should be configured in the `allowed_domains` field in business profile.
+To use secure payment links, you need to configure a list of trusted domains in the business profile under the `allowed_domains` field. Once set up, any payment link you create will include two URLs: 
+1. An open link for direct browser access.
+2. A secure link intended for embedding in an iframe.
+
+The domain of the parent webpage embedding the secure link must match one of the domains listed in `allowed_domains`.
 
 #### Steps for using secure payment links
 
 **1. Configure `allowed_domains` in business profile**
 
-Below configuration sets up `localhost:5500` as trusted domain.
+Set up a trusted domain, such as `localhost:5500`, by updating the business profile configuration.
 
 {% code %}
 ```
@@ -31,6 +35,8 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 
 **2. Create payment links**
 
+Use the following API request to create payment links, which will return both the open and secure links.
+
 {% code %}
 ```
 curl --location '{{BASE_URL}}/payments' \
@@ -45,7 +51,7 @@ curl --location '{{BASE_URL}}/payments' \
 ```
 {% endcode %}
 
-This returns back two links in the response
+The response includes the following fields:
 
 {% code %}
 ```
@@ -64,6 +70,8 @@ This returns back two links in the response
 {% endcode %}
 
 **3. Embedding secure payment links in an iframe**
+
+To embed a secure payment link, include it in an iframe within your HTML:
 
 {% code %}
 ```

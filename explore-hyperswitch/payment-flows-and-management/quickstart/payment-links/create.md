@@ -4,11 +4,16 @@ description: Create Payment Links
 
 Payment links are created using [Payments Create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) API. `payment_link` field should be sent as true in the request. Payment links cannot be confirmed during creation, hence `confirm` cannot be true.
 
-Each field in the request uses a fallback logic. Preference is always given to the config sent in the payment create request, next to the business profile config and default config is used as a fallback. Refer to [this](explore-hyperswitch/payment-flows-and-management/quickstart/payment-link/configurations.md) section for a default UI for payment links.
+Each field in the request uses a fallback logic. Below is the order of preference -
+- Config sent during payment link creation
+- Config set for the business profile
+- Default values for payment link config
 
-# Create default Payment links
+Refer to [this](explore-hyperswitch/payment-flows-and-management/quickstart/payment-links/configurations.md) section for a default UI for payment links.
 
-Creating a payment link uses the configured UI config for the given profile in the request.
+# Create Payment link using business profile config
+
+Creating a payment link uses the UI config set for the given profile in the request.
 
 {% code %}
 ```
@@ -26,7 +31,7 @@ curl --location '{{BASE_URL}}/payments' \
 
 # Configure UI during Payment link creation
 
-Payment link's UI can be configured on-demand during payment link creation as well.
+You can set payment link's UI during payment link creation.
 
 {% code %}
 ```
@@ -65,6 +70,8 @@ curl --location '{{BASE_URL}}/payments' \
 {% endcode %}
 
 # For using a specific style ID
+
+If you've set multiple payment link configs in the profile, the style ID can be sent in `payment_link_config_id` during payment link creation.
 
 {% code %}
 ```
