@@ -32,7 +32,9 @@ Payment link UI can be configured at a business profile and the same configurati
 
 Primary color the payment link can be configured using `theme` field in the config. This is represented using a hex value.
 
-Example: #4E6ADD
+Example: #2167AE
+
+<figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption>Primary theme</figcaption></figure>
 
 #### Merchant logo
 
@@ -40,11 +42,15 @@ A custom logo can be used in the details section of the payment links. This is a
 
 Example: https://hyperswitch.io/favicon.ico
 
+<figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption>Primary theme</figcaption></figure>
+
 #### Merchant name
 
 A custom display name that can be rendered in the details section of the payment links.
 
 Example: HyperSwitch Inc.
+
+<figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption>Custom seller name</figcaption></figure>
 
 #### Dynamic details
 
@@ -72,6 +78,8 @@ Example: {% code %}
 ```
 {% endcode %}
 
+<figure><img src="../../../../.gitbook/assets/payment-links-dynamic-details.png" alt=""><figcaption>Dynamic details</figcaption></figure>
+
 #### Background image
 
 This section offers options for configuring a custom background image in the details section.
@@ -90,11 +98,19 @@ Example: {% code %}
 
 For available options, refer to API reference.
 
+<figure><img src="../../../../.gitbook/assets/payment-links-background-image.png" alt=""><figcaption>Background image</figcaption></figure>
+
 #### Details section layout
 
 Configure layout for details section of the payment links. A layout can be selected from the below numbered options -
 
 Example: layout2
+
+<figure><img src="../../../../.gitbook/assets/payment-links-layout-1.png" alt=""><figcaption>Default layout</figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/payment-links-layout-2.png" alt=""><figcaption>Layout 2</figcaption></figure>
+
+Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) for adding any custom layouts needed for this.
 
 #### SDK layout
 
@@ -102,17 +118,25 @@ Configure layout for the payment widget of the payment links. For a list of avai
 
 Example: accordion
 
+<figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption>Layout 2</figcaption></figure>
+
 #### Render only payment widget
 
 A boolean value for rendering only the payment widget of the payment links. `false` by default.
+
+<figure><img src="../../../../.gitbook/assets/payment-links-display-sdk-only.png" alt=""><figcaption>Render only the payment widget</figcaption></figure>
 
 #### Saved payment methods
 
 A boolean value for rendering saved payment methods for a customer and also to render a checkbox for saving new payment methods in the payment widget. This can only be rendered in secure payment links.
 
+<figure><img src="../../../../.gitbook/assets/payment-links-saved-payment-methods.png" alt=""><figcaption>Show saved payment methods and checkbox to save payment methods</figcaption></figure>
+
 #### Hide card nickname input
 
 A boolean value for toggling visibility of the card nickname input in the payment widget.
+
+<figure><img src="../../../../.gitbook/assets/payment-links-hide-card-nickname.png" alt=""><figcaption>Hide card nickname field when card is requested to be saved</figcaption></figure>
 
 #### Show card form by default
 
@@ -173,6 +197,11 @@ Example: `["localhost:5500", "my.custom.domain.com"]`
 #### Branding visibility
 
 A boolean value for toggling the visibility of HyperSwitch branding in the payment links.
+
+<figure><img src="../../../../.gitbook/assets/payment-links-visible-branding.png" alt=""><figcaption>Visible branding (default behaviour)</figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/payment-links-hidden-branding.png" alt=""><figcaption>Hidden branding</figcaption></figure>
+
 
 # Configure Payment links in business profile
 
