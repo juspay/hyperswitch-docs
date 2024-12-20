@@ -117,7 +117,7 @@ Please reach out to our **[Support](https://join.slack.com/t/hyperswitch-io/shar
 
 ### SDK layout
 
-Configure layout for the payment widget of the payment links. For a list of available options, refer to this section - **[SDK layouts](explore-hyperswitch/merchant-controls/integration-guide/web/customization.md#id-1.-layouts)**.
+Configure layout for the payment widget of the payment links. For a list of available options, refer to this section - **[SDK layouts](../../../merchant-controls/integration-guide/web/customization.md#id-1.-layouts)**.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption>Accordion layout</figcaption></figure>
 
@@ -172,7 +172,7 @@ These configurations can only be made at business profile level and cannot be ov
 
 A custom domain for hosting payment links.
 
-> **Note:** custom domains must be enabled before setting the custom domain name. Refer to this section for setting up custom domain names - [custom domain name for payment links](explore-hyperswitch/payment-flows-and-management/quickstart/payment-link/setup-custom-domain.md).
+> **Note:** custom domains must be enabled before setting the custom domain name. Refer to this section for setting up custom domain names - [custom domain name for payment links](./setup-custom-domain.md).
 
 ### Multiple style IDs
 
@@ -201,7 +201,7 @@ Style IDs are used during payment link creation, which can be specified using `p
 
 ### Allowed domains
 
-This is a list of trusted domains where payment links can be embedded in an iframe. This is used only for secure payment links. More info on secure links [here](explore-hyperswitch/payment-flows-and-management/quickstart/payment-link/secure-payment-links.md).
+This is a list of trusted domains where payment links can be embedded in an iframe. This is used only for secure payment links. More info on secure links [here](./secure-payment-links.md).
 
 Example: `["localhost:5500", "my.custom.domain.com"]`
 

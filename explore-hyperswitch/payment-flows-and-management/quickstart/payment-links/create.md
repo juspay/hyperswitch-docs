@@ -9,7 +9,7 @@ Each field in the request uses a fallback logic. Below is the order of preferenc
 - Config set for the business profile
 - Default values for payment link config
 
-Refer to [this](explore-hyperswitch/payment-flows-and-management/quickstart/payment-links/configurations.md) section for a default UI for payment links.
+Refer to [this](./configurations#list-of-defaults-for-the-payment-link-ui-config) section for a default UI for payment links.
 
 # Create Payment link using business profile config
 
