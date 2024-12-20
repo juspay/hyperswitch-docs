@@ -14,7 +14,7 @@ A list of trusted allowed domains must be configured in business profile for pro
 
 Below configuration sets up `localhost:5500` as trusted domain.
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE_ID}}' \
     --header 'Content-Type: application/json' \
@@ -31,7 +31,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 
 **2. Create payment links**
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/payments' \
     --header 'Content-Type: application/json' \
@@ -47,7 +47,7 @@ curl --location '{{BASE_URL}}/payments' \
 
 This returns back two links in the response
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 {
   ...
@@ -65,7 +65,7 @@ This returns back two links in the response
 
 **3. Embedding secure payment links in an iframe**
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 <html>
   <head>

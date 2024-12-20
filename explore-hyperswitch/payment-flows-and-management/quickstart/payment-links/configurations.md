@@ -10,7 +10,7 @@ description: Configure Payment Links UI
 
 Payment link UI can be configured at a business profile and the same configuration will be used when payment links are created for that profile. This UI can be configured during payment links creation as well, doing this overrides any configuration that was set in the business profile.
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 {
     theme: String, /// Primary color for the payment link
@@ -52,7 +52,7 @@ A list of key-value pair for rendering details in the details section of payment
 
 Note: This list is rendered in the same order. `position` can be used to specify the position of the entry in the list.
 
-Example: {% code fullWidth="true" %}
+Example: {% code %}
 ```
 [
     {
@@ -76,7 +76,7 @@ Example: {% code fullWidth="true" %}
 
 This section offers options for configuring a custom background image in the details section.
 
-Example: {% code fullWidth="true" %}
+Example: {% code %}
 ```
 {
   "url": "https://img.freepik.com/free-photo/abstract-blue-geometric-shapes-background_24972-1841.jpg",
@@ -122,7 +122,7 @@ A boolean value for controlling the first rendered form in the payment widget. E
 
 These configurations can only be made at business profile level and cannot be overridden during payment links creation.
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 {
     domain_name: String, /// Custom domain name to be used for hosting the link
@@ -143,7 +143,7 @@ Note: custom domains must be enabled before setting the custom domain name. Refe
 
 This is for configuring multiple styles. This is a key value pair where key represents the style ID and value is the UI configurations which were mentioned above. These configs are set in profile and later consumed during payment link creation.
 
-Example: {% code fullWidth="true" %}
+Example: {% code %}
 ```
 {
     "style1": {
@@ -180,7 +180,7 @@ Payment link config can be configured at business profile level which will be us
 
 Refer to API reference for updating business profile [here](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update#response-payment-link-config).
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE_ID}}' \
     --header 'Content-Type: application/json' \

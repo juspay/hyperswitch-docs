@@ -10,7 +10,7 @@ Each field in the request uses a fallback logic. Preference is always given to t
 
 Creating a payment link uses the configured UI config for the given profile in the request.
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/payments' \
     --header 'Content-Type: application/json' \
@@ -28,7 +28,7 @@ curl --location '{{BASE_URL}}/payments' \
 
 Payment link's UI can be configured on-demand during payment link creation as well.
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/payments' \
     --header 'Content-Type: application/json' \
@@ -65,7 +65,7 @@ curl --location '{{BASE_URL}}/payments' \
 
 # For using a specific style ID
 
-{% code fullWidth="true" %}
+{% code %}
 ```
 curl --location '{{BASE_URL}}/payments' \
     --header 'Content-Type: application/json' \
