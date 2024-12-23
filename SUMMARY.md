@@ -17,8 +17,6 @@
   * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q3-2024/roadmap-1.md)
   * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q3-2024/roadmap-1-1.md)
 
-## Hyperswitch Enterprise <a href="#hyperswitch-cloud" id="hyperswitch-cloud"></a>
-
 ## Explore Hyperswitch
 
 * [Payment Orchestration](explore-hyperswitch/payment-flows-and-management/README.md)
@@ -181,8 +179,6 @@
   * [Saleor App](explore-hyperswitch/e-commerce-platform-plugins/saleor-app/README.md)
     * [Setup](explore-hyperswitch/e-commerce-platform-plugins/saleor-app/setup.md)
   * [Automatic Tax calculation for Express Checkout wallets](explore-hyperswitch/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets.md)
-
-## SECURITY AND COMPLIANCE
 
 ## Hyperswitch open source
 
