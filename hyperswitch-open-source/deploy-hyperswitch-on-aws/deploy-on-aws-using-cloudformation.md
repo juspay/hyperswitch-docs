@@ -14,7 +14,7 @@ In this chapter, you will deploy our full-stack application on AWS EKS. This wil
 
 ## Video
 
-{% embed url="https://www.youtube.com/watch?v=fmFNPOwqXEE" %}
+{% embed url="https://www.youtube.com/watch?v=c2igjE3-EDc" %}
 
 ## What is included in this setup
 
@@ -51,7 +51,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 * `git` installed on your local machine
 * node version 18
-* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 ### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
@@ -69,7 +69,7 @@ For this step you would need the following from your AWS account
 3. Secret Access Key
 4. Session Token (if you MFA set up)
 
-You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
+You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
