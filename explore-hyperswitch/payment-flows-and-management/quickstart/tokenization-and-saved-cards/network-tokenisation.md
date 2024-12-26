@@ -40,8 +40,8 @@ Network Tokenisation is an on-request offering from Hyperswitch.&#x20;
 
 To enable Network Tokenisation for your merchant account, Kindly reach out to hyperswitch@juspay.in
 
-{% content-ref url="../payment-links.md" %}
-[payment-links.md](../payment-links.md)
+{% content-ref url="../payment-links/" %}
+[payment-links](../payment-links/)
 {% endcontent-ref %}
 
 \

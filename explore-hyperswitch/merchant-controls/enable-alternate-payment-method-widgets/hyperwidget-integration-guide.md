@@ -89,6 +89,6 @@ var unifiedCheckoutOptions = {
 
 ```
 
-{% content-ref url="../click-to-pay.md" %}
-[click-to-pay.md](../click-to-pay.md)
+{% content-ref url="../click-to-pay/" %}
+[click-to-pay](../click-to-pay/)
 {% endcontent-ref %}
