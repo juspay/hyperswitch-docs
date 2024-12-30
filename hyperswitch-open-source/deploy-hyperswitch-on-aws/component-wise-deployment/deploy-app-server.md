@@ -1,12 +1,12 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
 icon: server
+description: Deploy the Hyperswitch server on the cloud
 ---
 
 # Deploy app server
 
 {% hint style="info" %}
-If you wish to deploy app server seperately, please reach out to us at hyperswitch@juspay.in.
+If you wish to deploy app server seperately, please reach out to us at hyperswitch@juspay.in
 {% endhint %}
 
 ***
