@@ -1,8 +1,9 @@
 ---
 description: Deploy web client on the cloud
+icon: globe-wifi
 ---
 
-# 🖥️ Deploy web client
+# Deploy web client
 
 {% hint style="info" %}
 This section is aimed at helping you deploy the Web client on the cloud and access it over the internet

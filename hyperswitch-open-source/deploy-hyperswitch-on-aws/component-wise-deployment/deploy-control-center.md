@@ -2,9 +2,10 @@
 description: >-
   Use the standalone deployment script to deploy Hyperswitch control center on
   AWS quickly
+icon: building-columns
 ---
 
-# 🎛️ Deploy Control Center
+# Deploy Control Center
 
 {% hint style="info" %}
 In this chapter, you will deploy Hyperswitch control center on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
@@ -28,7 +29,7 @@ This setup includes:
 
 ### **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 > #### Note
 >
@@ -108,7 +109,7 @@ For this step you would need the following from you AWS account
 1. Access key ID
 2. Secret Access Key
 
-You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_credentials\_access-keys.html#Using\_CreateAccessKey)
+You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-10-12 at 6.00.50 PM.png" alt=""><figcaption></figcaption></figure>
 

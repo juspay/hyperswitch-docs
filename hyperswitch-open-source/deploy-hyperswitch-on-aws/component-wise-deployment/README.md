@@ -1,5 +1,6 @@
 ---
 description: Deploy each Hyperswitch component individually
+icon: list-ol
 ---
 
 # Component-wise Deployment

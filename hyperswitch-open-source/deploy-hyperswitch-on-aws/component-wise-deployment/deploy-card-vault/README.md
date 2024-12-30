@@ -1,8 +1,9 @@
 ---
 description: Deploy the Hyperswitch Card Vault on the cloud
+icon: vault
 ---
 
-# 🔐 Deploy card vault
+# Deploy card vault
 
 {% hint style="info" %}
 This section aims at installing the Card vault and using it with the Hyperswitch application to make successful saved card payments

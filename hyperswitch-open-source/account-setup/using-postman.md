@@ -1,8 +1,9 @@
 ---
 description: Create your Hyperswitch account and add a payment provider through postman
+icon: rocket-launch
 ---
 
-# 🚀 Using postman
+# Using postman
 
 ## Account setup using Postman <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
@@ -82,7 +83,7 @@ Run the below cURL to set up your preferred payment processor an API key. You'll
 In the below cURL update the following details&#x20;
 
 * Under  `connector_name` and `connector_account_details` fields. `Connector_name`is the name of the Payment provider you want to process payment through&#x20;
-* `Connector_account_details`are the respective details of the payment provider in order to complete the authentication succesfully. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22\_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
+* `Connector_account_details`are the respective details of the payment provider in order to complete the authentication succesfully. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
 * Update URL of the below cURL request with the `merchant_id` obtained in the previous step
 
 <details>

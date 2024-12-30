@@ -1,8 +1,9 @@
 ---
 description: Make your first payment and refund through Hyperswitch
+icon: money-bills
 ---
 
-# 💵 Test a payment
+# Test a payment
 
 {% hint style="info" %}
 Here, you'll be making a payment using your Hyperswitch setup, via your preferred payment provider.
@@ -63,7 +64,7 @@ The app server is more powerful than just processing the payments. You can test 
    This can be a demo playground issue and not an issue with the web client. Please make sure that the return URL is correctly set.
 5. **My transactions are  failing.** \
    This can happen when the connector is not correctly configured. Please make sure that the configured API keys are correct. In case of card payments, make sure that you have enabled raw card processing on the connector dashboard.\
-   An exhaustive list of error and the corrective items are [here](https://api-reference.hyperswitch.io/essentials/error\_codes).
+   An exhaustive list of error and the corrective items are [here](https://api-reference.hyperswitch.io/essentials/error_codes).
 
 </details>
 

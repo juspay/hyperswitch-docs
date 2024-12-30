@@ -2,6 +2,7 @@
 description: >-
   Use our CDK script to deploy the entire Hyperswitch application inside your
   stack
+icon: aws
 ---
 
 # Deploy on AWS using CloudFormation

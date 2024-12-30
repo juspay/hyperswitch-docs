@@ -2,9 +2,10 @@
 description: >-
   Create your Hyperswitch account and add a payment provider via the control
   center
+icon: building-columns
 ---
 
-# 🎛️ Using Hyperswitch control center
+# Using Hyperswitch control center
 
 {% hint style="info" %}
 Here, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
