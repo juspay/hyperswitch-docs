@@ -1,25 +1,40 @@
 ---
-description: Store your customers cards securely in a centralized and PCI compliant vault
 icon: lock-keyhole
+description: Store your customers cards securely in a centralized and PCI compliant vault
 ---
 
-# Tokenization & PCI Compliance
+# Tokenization & Card Vault
 
-{% hint style="info" %}
-In this section, you will learn how to store your customers cards securely and use them on subsequent payments
-{% endhint %}
+The Hyperswitch Card Vault enables you to securely store customer card details in a centralized, PCI DSS Level 1-compliant vault. It simplifies payment flows by offering tokenized card storage and retrieval. This ensures secure and seamless transactions, particularly for recurring payments, enhancing user experience and operational efficiency.
 
-Hyperswitch provides you with the capability to store your customers cards securely in a centralized PCI DSS Level 1 compliant vault. Our Unified checkout automatically handles saved cards flow. Customers choose the 'Save card details' checkbox while providing their card details for the payment and the transaction is successfully processed while the card is tokenized and stored securely in the card vault.
+### Benefits:
+
+* **Enhanced Security**: By tokenizing and securely storing sensitive card details, the feature reduces the risk of data breaches and simplifies compliance.
+* **Improved User Experience**: Customers can reuse saved cards across transactions, reducing checkout friction.
+* **Seamless Recurring Payments**: Automatic updates to tokenized card details ensure uninterrupted subscription payments, minimizing churn.
+* **Global Compatibility**: Supports various payment processors and is compliant with international standards like PCI DSS and PCI SSS.
+
+### How to store cards?
+
+During checkout, customers can opt to save their card details by selecting the **'Save card details' checkbox** while entering their card information for payment. Once the transaction is successfully processed:
+
+* The card details are securely tokenized and stored in the Hyperswitch Card Vault.
+* A `payment_token` is generated, which can be used for future transactions, ensuring a seamless payment experience.
 
 <figure><img src="../../../../.gitbook/assets/savedCards1.png" alt="" width="280"><figcaption></figcaption></figure>
 
-For a returning customer, our Unified Checkout automatically shows the list of their saved cards from previous sessions if the same `customer_id` is passed during payments/create API call from your server.
+### **How to retrieve saved cards?**
 
-The list customer payment methods API is used here which retrieve the list of cards saved against that customer in a tokenized form. These payment\_tokens can then be used to confirm a payment. ([API Reference](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer-1))
+When a returning customer initiates a payment:
+
+1. The [`list-customer-saved-payment-methods-for-a-payment` API](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-customer-saved-payment-methods-for-a-payment) retrieves saved card details using the customer's unique `customer_id` .
+2. These saved cards are displayed in the Unified Checkout, enabling the customer to select a card for payment.
 
 <figure><img src="../../../../.gitbook/assets/savedCards2.png" alt="" width="300"><figcaption></figcaption></figure>
 
-Once the user selects a particular card on the checkout page, the corresponding `payment_token` is used by Hyperswitch to  communicate with the card vault and securely retrieve card information to make the payment.
+### **How to use a saved card?**
+
+Once a card is selected, the `payment_token` is used to securely retrieve the card details from the vault for payment processing.
 
 ## Vaulting a payment method in non-purchase flows
 
@@ -47,10 +62,6 @@ curl --request POST \
 If you are not able to handle the sensitive payment card info, you can collect it using the Hyperswitch Unified Checkout. Use the client secret obtained from the above API's response to initialise the SDK.
 
 Cards saved using this API will be listed under saved payment methods for future on-session payments for the customers to use.
-
-## Migrating your customers’ saved cards from your processors to Hyperswitch
-
-Hyperswitch also supports migrating your customers’ saved cards from your processors’ vaults to Hyperswitch. This process typically involves requesting your processor’s support team to share your customers’ saved cards data to Hyperswitch in a secure file transfer format and may involve sharing Hyperswitch’s PCI DSS certificate with them. Please write to <mark style="color:blue;">biz@hyperswitch.io</mark> to know more and kickstart your card migration process.
 
 <details>
 

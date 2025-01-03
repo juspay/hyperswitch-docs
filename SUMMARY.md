@@ -92,7 +92,7 @@
     * [Save a Payment Method](explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments.md)
     * [Manual Capture](explore-hyperswitch/payment-flows-and-management/quickstart/manual-capture.md)
     * [Incremental Authorization](explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization.md)
-    * [Tokenization & PCI Compliance](explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards/README.md)
+    * [Tokenization & Card Vault](explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards/README.md)
       * [Network Tokenisation](explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards/network-tokenisation.md)
     * [Supported Payment Workflows](explore-hyperswitch/payment-flows-and-management/quickstart/payment-workflows.md)
     * [Co-badged Cards](explore-hyperswitch/payment-flows-and-management/quickstart/co-badged-cards-with-hyperswitch.md)
