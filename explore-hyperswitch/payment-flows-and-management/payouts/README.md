@@ -86,7 +86,7 @@ Methods marked with `*` are supported but not enabled by default.
 Methods marked with `**` are in beta.
 {% endhint %}
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td>Getting started with payouts </td><td></td><td></td></tr><tr><td>Payouts using saved payment methods</td><td></td><td></td></tr><tr><td>Smart router for payout</td><td></td><td></td></tr><tr><td>Smart retries for payouts</td><td></td><td></td></tr><tr><td>Payout links</td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;">Getting started with payouts</mark> </td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payouts using saved payment methods</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart router for payout</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart retries for payouts</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payout links</mark></td><td></td><td></td></tr></tbody></table>
 
 ## FAQs?
 
