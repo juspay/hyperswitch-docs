@@ -1,35 +1,42 @@
 ---
-description: Swift and streamlined payout automation
 icon: file-invoice-dollar
+description: Swift and streamlined payout automation
 ---
 
 # Process Payouts
 
-{% hint style="info" %}
-After reading this section, you will know about Payout features, supported processors, methods, working and how to get started with it.
-{% endhint %}
-
-Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using our automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage our infrastructure to streamline and orchestrate your payout processes efficiently.
+Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using Hyperswitch's advanced automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage this infrastructure to streamline and orchestrate your payout processes efficiently.
 
 <figure><img src="../../../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
 
-## Payouts combined with Payments
+The payouts feature enables businesses to transfer funds to third parties, such as sellers, service providers, or affiliates, using a wide range of payment methods, including bank accounts, cards, and wallets. Hyperswitch integrates seamlessly with global payment processors to facilitate these transactions. It helps:&#x20;
 
-A way of paying out third parties combined with Hyperswitch's payments processing
+* Streamline and automate recurring and bulk payouts.
+* Centralize payout tracking and improve operational efficiency.
+* Reduce payout failures with smart retries tailored to specific errors.
+* Ensure PCI-compliance and secure handling of sensitive payment information.
 
-*   **Supercharge Conversions**
+### Benefits
 
-    * Effortlessly send funds to bank accounts or cards using your preferred method
-    * Boost success with smart retries.
+**Supercharge Conversions**
 
-    _Hyperswitch currently supports Adyen and Wise_
-* **Simplify Operations**
-  * All-in-One View: Monitor all payouts across partners in a single dashboard view
-  * Bulk Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
-  * Recurring Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Set up scheduled fixed-value payouts.
-* **Stay Secure**
-  * Secure Card Handling: PCI-compliant methods to accept, authenticate, and safely store card details. Plus, independent tokenization, irrespective of your payment processor.
-  * Tokenize Bank Details (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Checkout page to accept and verify bank account verification for Stripe, along with processor-agnostic tokenization of bank details.
+* **Effortless Transfers**: Send funds to bank accounts or cards through your preferred payout method.
+* **Smart Retries**: Enhance payout success rates with retries intelligently configured based on error types and connectors available.
+* [List](https://hyperswitch.io/pm-list) of supported connectors.
+
+**Simplify Operations**
+
+* **Unified Dashboard**: Monitor all payouts across processors and partners from a single view.
+* **Bulk Payouts**: Upload .xlsx or .csv files to manage large-scale payouts with ease.
+* **Recurring Payouts**: Automate fixed-value payouts on a scheduled basis.
+
+**Stay Secure**
+
+* **Secure Card Handling**: PCI-compliant methods ensure safe acceptance, authentication, and storage of card details.
+* **Independent Tokenization**: Tokenize card and bank data securely, independent of payment processors.
+* **Bank Account Verification**: Enable verification for accounts with Stripe or other supported processors.
+
+Business continuity with compatibility ensured for your Stripe connect onboarded sellers, merchants and service providers.
 
 ## Supported Processors and Payment Methods
 
@@ -73,18 +80,18 @@ A way of paying out third parties combined with Hyperswitch's payments processin
 
 <table><thead><tr><th width="200">Regions</th><th>Cards</th><th>Banks</th><th>Wallets</th></tr></thead><tbody><tr><td>Europe</td><td>Major Networks</td><td>SEPA, SWIFT</td><td>-</td></tr><tr><td>North America</td><td>Major Networks</td><td>ACH</td><td>-</td></tr><tr><td>Others</td><td>Major Networks</td><td>SWIFT</td><td>-</td></tr></tbody></table>
 
+{% hint style="info" %}
+Methods marked with `*` are supported but not enabled by default.
 
+Methods marked with `**` are in beta.
+{% endhint %}
 
-
-
-**\*** _Payout methods supported by processor but not recommended (can be enabled upon request)_
-
-_\*\* Payout method beta tested_
-
-Business continuity with compatibility ensured for your Stripe connect onboarded sellers, merchants and service providers.
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td>Getting started with payouts </td><td></td><td></td></tr><tr><td>Payouts using saved payment methods</td><td></td><td></td></tr><tr><td>Smart router for payout</td><td></td><td></td></tr><tr><td>Smart retries for payouts</td><td></td><td></td></tr><tr><td>Payout links</td><td></td><td></td></tr></tbody></table>
 
 ## FAQs?
 
-* **Can I use Hyperswitch solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
-* **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Hyperswitch. (We tokenize only when the user permits us to save their card/bank info)
-
+* **Can I use Hyperswitch solely for payouts without payments?** \
+  Yes, Hyperswitch allows you to handle payouts independently. You can process payouts either through embedded payments or directly to a third party by providing direct payment information or using a token ID​​.
+* **What does "independent tokenization" mean?** \
+  Independent tokenization refers to the secure conversion of sensitive card and bank data into a token without dependency on any specific payment processor. \
+  With Hyperswitch, this is possible when users permit saving their card or bank information. This ensures flexibility, allowing tokens to be used across various payment processors while maintaining data security and compliance​​.

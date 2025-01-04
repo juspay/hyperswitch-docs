@@ -98,7 +98,7 @@
     * [Co-badged Cards](explore-hyperswitch/payment-flows-and-management/quickstart/co-badged-cards-with-hyperswitch.md)
     * [Webhooks](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/webhooks.md)
   * [Process Payouts](explore-hyperswitch/payment-flows-and-management/payouts/README.md)
-    * [Get started!](explore-hyperswitch/payment-flows-and-management/payouts/get-started-with-payouts.md)
+    * [How to](explore-hyperswitch/payment-flows-and-management/payouts/get-started-with-payouts.md)
     * [Using Saved Payment Methods](explore-hyperswitch/payment-flows-and-management/payouts/process-payouts-using-saved-payment-methods.md)
     * [Smart Router for Payouts](explore-hyperswitch/payment-flows-and-management/payouts/route-your-payout-transactions-using-smart-router.md)
     * [Smart Retries in Payout](explore-hyperswitch/payment-flows-and-management/payouts/smart-retries-in-payout.md)
