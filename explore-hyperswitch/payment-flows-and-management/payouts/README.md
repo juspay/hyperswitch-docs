@@ -16,7 +16,7 @@ The payouts feature enables businesses to transfer funds to third parties, such 
 * Reduce payout failures with smart retries tailored to specific errors.
 * Ensure PCI-compliance and secure handling of sensitive payment information.
 
-### Benefits
+### How it helps your business?
 
 **Supercharge Conversions**
 
