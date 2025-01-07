@@ -11,12 +11,12 @@
 * [For E-Commerce Businesses](about-hyperswitch/for-e-commerce-businesses.md)
 * [For Marketplace/Platforms](about-hyperswitch/for-marketplace-platforms.md)
 * [For Banks & Financial Institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
-* [Roadmap - Q1 2025](about-hyperswitch/roadmap-q3-2024/README.md)
-  * [Previous Roadmap - Q4 2024](about-hyperswitch/roadmap-q3-2024/previous-roadmap-q4-2024.md)
-  * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap-q3-2024/previous-roadmap-q3-2024.md)
-  * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap-q3-2024/roadmap.md)
-  * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q3-2024/roadmap-1.md)
-  * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q3-2024/roadmap-1-1.md)
+* [Roadmap - Q1 2025](about-hyperswitch/roadmap-q1-2025/README.md)
+  * [Previous Roadmap - Q4 2024](about-hyperswitch/roadmap-q1-2025/previous-roadmap-q4-2024.md)
+  * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap-q1-2025/previous-roadmap-q3-2024.md)
+  * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap-q1-2025/roadmap.md)
+  * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q1-2025/roadmap-1.md)
+  * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q1-2025/roadmap-1-1.md)
 
 ## Explore Hyperswitch
 
