@@ -1,9 +1,9 @@
 ---
 icon: road
-description: Hyperswitch roadmap (Oct to Dec'24)
+description: Hyperswitch roadmap (Jan to Mar'25)
 ---
 
-# Roadmap - Q4 2024
+# Roadmap - Q1 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -11,29 +11,28 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+### Recap of Q4 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Hyperswitch is now PCI Software Security Standard (S3) certified
-* Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reduce the interchange fee
-* Payment Method Management experience to view, add and delete payment methods (for Web platform)
+* Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar
+* Smart retries extended to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
+* Implementation of MPAN (merchant tokens) flow for Applepay recurring payments
+* Enablement of guest checkout flow with Click to Pay
+* Pass through Split payments through Stripe Connect and Adyen Platforms
 * New connector and payment method integrations
-  * Datatrans ([Planet.com](http://planet.com/)) for card payments
-  * Wells Fargo (US) for card payments
-  * Deutsche Bank (DE) for SEPA direct debits
-  * Novalnet for card payments
-  * Fiuu for cards, bank transfer and inter-operable QR based payments
-  * Itau Bank for instant payments
-  * Payouts via PayOne, and Wells Fargo
-  * Razorpay UPI payments
-* Pay by Bank Experience through [Plaid Open banking](../../explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/banks/open-banking.md). This is to allow merchants to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience
-* Account verification via Plaid for pull payments (ACH, SEPA) in the EU and US
-* React Native SDK was Open Sourced
-* Native 3DS Authentication Experience via Netcetera for mobile
-* Merchant Initiated Transactions (MIT) were made PSP agnostic with Network Transaction ID (NTI)
-* User management and dashboard analytics views at entity level granularity (org to profile)
-* Payment plugin for Saleor - headless commerce platform to facilitate faster integrations
-* Localisation support for Payouts across 17 languages
-* Control Centre - Enable SSO sign in with Okta
+  * Nexixpay (Cards)
+  * Fiuu (Duitnow QR, Apple Pay, Google Pay)
+  * Cybersource (Paze Wallet, Samsung Pay)
+  * Bankofamerica (Samsung Pay)
+  * Novalnet (Paypal, Google Pay)
+  * Paypal Vaulting (via Cards and Paypal Wallet)
+  * Adyen (Paze Wallet)
+  * Elavon (Cards)
+  * Klarna Kustom Checkout
+  * JPMorgan (Cards)
+  * Deutsche Bank(Cards 3DS)
+* Data reporting at an organization, merchant and profile level for easier reconciliation
+* Enhancements in analytics module for Refunds, Disputes and Smart Retries
+* Support for migration of Network Tokens for business continuity
 
 ### Core Values <a href="#core-values" id="core-values"></a>
 
@@ -67,44 +66,65 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Roadmap <a href="#roadmap" id="roadmap"></a>
 
+#### Modular and Composable Payments <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
+
+In Q1’25, Hyperswitch will be offering the following composable services as standalone modules on Hyperswitch SaaS version. This activity would be the major focus for the team and each of these modules address one or more of the above roadmap themes
+
+* 🟧 **Payment Methods Service (includes Vault):** Merchants will be able use the standalone Payment methods service to do various levels of tokenization \[PCI tokenization, Network tokenization, PSP tokenization - one-time/multi-use]. PCI compliant merchants will be able to leverage server-to-server flow for tokenization.
+* 🟧 **Reconciliation Service:** Reconciliation module will have an upgraded user experience; and allow FinOps teams to use the module independently without having to use Hyperswitch as the transaction processing technology
+* 🟧 **Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report
+* 🟧 **Churn Recovery Service:** For merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring transactions and retry those transactions that have failed
+
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟧  More payment authorization workflows - split payments and incremental authorization
-* New integrations -&#x20;
-  * 🟥[ Paymentwall for cards and alternate payment methods](#user-content-fn-1)[^1] _(Expected Closure by Mar'2025)_
-  * 🟥 ~~Digital Virgo integration for Direct Carrier Billing~~
-  * 🟧 SamsungPay
-  * 🟩 Nexi Xpay card payments
-  * 🟥 ~~Deutche Bank for card payins and SEPA payouts~~
-  * 🟩 PAZE for card payments in the US
-* 🟩 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
+* 🟧 New integrations
+  * Redsys
+  * Santander
+  * Banco de Brasil
+  * Caixa
+  * Bancoob
+  * Bradesco
+  * BBVA
+  * Inespay
+  * Amazon Pay
+  * 2Checkout
+  * FastSpring
+  * Xendit
+  * Digital Virgo integration for Direct Carrier Billing
+  * Deutsche Bank for card payments and payouts
+* 🟥 Scan Card Feature for MWeb
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
+* 🟧 **Intelligent Routing:** Intelligent Routing module tracks the auth rates of various processor in realtime at a granular level to select the most optimal processor to boost conversions&#x20;
+  * **Outages and acute failures:** Provides a failsafe system that proactively identifies incidents and holds off traffic to processors that are facing temporary downtimes or failures
+  * **Volume Commitments:** Helps select the appropriate PSP for getting volume tier benefits from the processor by routing sufficient payments volume to necessary processors in accordance with their SLA or contracts
+* **🟧 Churn Recovery Service:** For all merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring txns and retry only those transactions that have failed
+  * **Split retries -** Merchants will be able to split retries between their subscription engine and the Passive retry service
+  * **User Notifications outsourced -** Upon reaching the terminal state the Churn Recovery service will trigger notification for external subscription engine
+  * **Single PSP -** The Churn Recovery service will interact with only a single PSP for a transaction
+  * **Basic Retry logic -** The Churn Recovery service will have a very basic error code & region based logic to retry transactions
+* 🟧 Secure Card on File (SCOF) with Passkeys - For Mastercard cards, provide Biometric authentication to the customers&#x20;
+* 🟧 **One time tokenization:** During CIT payments, merchants will be able to do collect, validate and do one-time tokenization of cards & other PMs and use these one-time tokens later in the checkout flow once the customer confirms their purchase&#x20;
 * 🟧 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
-* 🟩 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
-* 🟧 Implement MPAN (merchant tokens) for Applepay recurring payments
-* 🟥  [Secure Card on File (SCOF) with Passkeys](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/token-authentication/tas_scof/use-case1/) with Mastercard cards. This is to provide seamless payment authentication experience (with Biometrics) and liability shift for merchants _(Expected Closure by Mar'2025)_
-* 🟩  Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
+* 🟧 More payment authorization workflows - Estimated auth and Over-capture
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* More direct bank acquirer integrations
-  * 🟧 JP Morgan
+* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩  Data reporting at an organization, merchant and profile level for easier reconciliation
-* 🟩  Enhancements in analytics module for Refunds, Disputes and Smart Retries
-* 🟥  Add support for bulk network tokenization _(Expected Closure by Mar'2025)_
-* 🟩 Migration of Network Tokens for business continuity
+* **🟧 Revamped Recon module** to support self exploration with transaction source agnostic recon and 2-way or 3-way level capabilities
+* **🟧 Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report
+* 🟥 Split Payments through Hyperswitch’s Org-MID-Profile architecture&#x20;
+* 🟧 Data reporting on an organisation, merchant and profile level for easier reconciliation&#x20;
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟩  Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
+* 🟥 Enhancing Hyperswitch's self-deployment process to be even more seamless and self-serve, enabling merchants to deploy a fully compliant payments stack independently
+* 🟥 Revamped connector <> payment method matrix view
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
-
-[^1]: 
