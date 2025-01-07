@@ -92,6 +92,42 @@ async function initialize() {
   document.body.appendChild(script);
 }
 ```
+
+### 2.3 Additional Callback Handling for Wallets Payment Process
+
+This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
+
+* **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
+* **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+
+{% hint style="warning" %}
+**Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
+{% endhint %}
+
+{% hint style="info" %}
+**Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
+{% endhint %}
+
+{% hint style="danger" %}
+The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
+{% endhint %}
+
+#### **Example Usage**
+
+```javascript
+const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
+unifiedCheckout.mount("#unified-checkout");
+
+unifiedCheckout.onSDKHandleClick(()=>{
+  // Add any custom logic for when the payment button is clicked, such as logging or tracking
+  console.log("On Click Wallets")
+})
+
+unifiedCheckout.on("completeDoThis",()=>{
+  console.log("On Payment Complete")
+  // Add any custom post-payment logic here, such as redirection or displaying a success message
+})
+```
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
