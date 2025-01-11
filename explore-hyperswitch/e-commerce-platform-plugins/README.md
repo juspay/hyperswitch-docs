@@ -1,20 +1,22 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
 icon: plug-circle-bolt
+description: Hyperswitch plugins for the e-commerce platform you use
 ---
 
-# Plugin Ecosystem
+# E-commerce Platform Plugins by Hyperswitch
 
-<figure><picture><source srcset="../../.gitbook/assets/eCommerceDark.jpg" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (115).png" alt=""></picture><figcaption></figcaption></figure>
 
-In the dynamic landscape of online retail, E-commerce Platform Plugins emerge as powerful tools that transform and augment the functionality of digital storefronts. These plugins, also referred to as extensions or add-ons, serve as modular enhancements to existing E-commerce platforms, enabling businesses to tailor their online presence to meet specific needs and preferences.
 
-Designed to seamlessly integrate with popular E-commerce platforms such as Shopify, WooCommerce, Magento, and others, these plugins extend the core capabilities of the platforms. From optimizing user experience and enhancing payment gateways to introducing advanced analytics and marketing features, E-commerce Platform Plugins empower businesses to customize and scale their online operations.
+Hyperswitch plugins enable businesses to extend and enhance the functionality of leading E-commerce platforms, offering seamless integration and advanced capabilities for payment optimization, user experience, and analytics.
 
-Hyperswitch web client supports the popular E-commerce plugins. Plugin integration is seamless and quick. You can try it out in the subsequent sections.
+From enabling express checkout and multi-currency payments to ensuring compliance with tax regulations, Hyperswitch plugins are designed to scale with your business, delivering unmatched flexibility and control.
 
-Looking for a Hyperswitch plugin for a specific E-commerce platform? Reach out to us on Slack:
+#### Explore Our Plugins
 
-{% embed url="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg" %}
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>WooCommerce Plugin</strong></td><td>Unlock advanced payment features, express checkout options, and fraud protection for your WooCommerce store.</td><td></td><td><a href="woocommerce-plugin/">woocommerce-plugin</a></td></tr><tr><td><strong>Saleor App</strong></td><td>Power your headless storefront with global payment support, intelligent routing, and unified analytics.</td><td></td><td><a href="saleor-app/">saleor-app</a></td></tr><tr><td><strong>Automatic Tax Calculation for Express Checkout Wallets</strong></td><td>Simplify tax compliance during wallet-based express checkouts with real-time accuracy.</td><td></td><td><a href="automatic-tax-calculation-for-express-checkout-wallets.md">automatic-tax-calculation-for-express-checkout-wallets.md</a></td></tr></tbody></table>
 
-\
+Seamlessly integrate these plugins to elevate your platform’s performance and optimize your payment operations.&#x20;
+
+{% hint style="info" %}
+Need a plugin for another platform? Reach out to us at **hyperswitch@juspay.in**
+{% endhint %}

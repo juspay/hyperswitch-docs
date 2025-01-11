@@ -172,7 +172,7 @@
   * [Data Security](explore-hyperswitch/overview/security.md)
   * [GDPR compliance](explore-hyperswitch/overview/gdpr-compliance.md)
   * [Identity and Access Management](explore-hyperswitch/overview/identity-and-access-management.md)
-* [Plugin Ecosystem](explore-hyperswitch/e-commerce-platform-plugins/README.md)
+* [E-commerce Platform Plugins by Hyperswitch](explore-hyperswitch/e-commerce-platform-plugins/README.md)
   * [🔌 WooCommerce Plugin](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/README.md)
     * [Setup](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/setup.md)
     * [Roadmap](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/roadmap.md)
