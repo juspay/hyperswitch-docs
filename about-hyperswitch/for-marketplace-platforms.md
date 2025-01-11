@@ -30,7 +30,7 @@ Enhance the buyer experience with a seamless checkout&#x20;
 Optimize payment costs by ensuring that every transaction flows through the most cost-effective processor, and get actionable insights to reduce costs with AI, along with deeper visibility into transaction fees and anomaly detection.
 
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
-* [AI Ops cost observability with HyperSense (Beta)](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
+* [AI Ops cost observability with HyperSense](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
 
 #### Global payment support with no code connector integrations&#x20;
 
