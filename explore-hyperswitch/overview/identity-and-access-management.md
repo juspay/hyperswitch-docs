@@ -1,43 +1,40 @@
 ---
-description: >-
-  This section offers an outline of the best practices implemented within the
-  Hyperswitch cloud environment, aimed at ensuring a secure, user-friendly, and
-  efficiently managed platform
 icon: id-card-clip
 ---
 
 # Identity and Access Management
 
-## Authentication Methodology for Hyperswitch APIs
+Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
 
-### Admin Services Authentication:
+### Authentication Methodology for Hyperswitch APIs
 
-Administrative services, crucial for managing the back end of Hyperswitch, are protected using multi-layered authentication mechanisms. Access to the admin services involves an additional API key, restricted to a select few individuals with the Hyperswitch team.
+**1. Admin Services Authentication**
 
-### Merchant Authentication:
+Administrative services require robust, multi-layered authentication. Access is limited to specific personnel within the Hyperswitch team via an additional API key to maintain backend security.
 
-For merchants accessing Hyperswitch, we have a strong authentication mechanism to ensure the confidentiality and integrity of their accounts. Further details can be found [here](https://api-reference.hyperswitch.io/introduction#authentication-and-api-keys).
+**2. Merchant Authentication**
 
-### Vault Authentication:
+Merchants accessing Hyperswitch APIs benefit from strong authentication mechanisms to safeguard their accounts and transactions. For detailed guidance on merchant authentication, refer to the API documentation​​.
 
-Hyperswitch Vault has a security setup where key custodians are in charge of managing distributed keys. To start the vault application, all these key custodians must work together.&#x20;
+**3. Vault Authentication**
 
-The design ensures that no single custodian possesses the capability to independently tamper with the vault application, enhancing the overall security of the system.
+The Hyperswitch Vault employs a distributed key management approach. Key custodians must collaborate to initiate the application, ensuring no single individual can independently alter or access the vault. This design prevents unauthorized tampering and enhances the overall security framework​​.
 
-## Identity and Access Management in AWS
+### Identity and Access Management in AWS
 
-### User Authentication:
+**1. User Authentication**
 
-Hyperswitch employs a robust authentication methodology for users, ensuring secure access to the platform. Users are authenticated by Multi-Factor Authentication combined with network and device-level whitelisting
+Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
 
-### Access Controls and RBAC:
+**2. Access Controls and Role-Based Access Control (RBAC)**
 
-Access controls in Hyperswitch are finely tuned through Role-Based Access Control (RBAC). Distinct administrative roles are defined, each with granular permissions tailored to specific responsibilities. This ensures that users, admins only have access to the resources and functionalities necessary for their roles.
+* **Granular Permissions:** Administrative roles are clearly defined with specific permissions, ensuring users only access functionalities necessary for their roles.
+* **Distributed Access Model:** Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
+* **Principle of Least Privilege:** Permissions are restricted to essential tasks to mitigate unauthorized access risks.
 
-#### Admin Role:
+### Benefits of Hyperswitch IAM
 
-Hyperswitch operates on a distributed access model, ensuring that no individual possesses complete administrative control.
-
-#### Limiting Permissions:
-
-Hyperswitch empowers administrators to limit permissions effectively. Through the IAM (Identity and Access Management) module, access policies are crafted following the Principle of Least Privilege. This means that each user, admin is granted the minimum permissions necessary to perform their tasks, minimizing the risk of unauthorized access.
+1. **Enhanced Security:** Multi-layered authentication, key management, and RBAC reduce vulnerabilities.
+2. **Operational Efficiency:** Clear role definitions and access models ensure streamlined workflows.
+3. **Compliance Assurance:** Meets global regulatory requirements, including PCI DSS and ISO 27001 standards​​.
+4. **User Trust:** By minimizing risks and safeguarding data, Hyperswitch fosters confidence among merchants and partners.
