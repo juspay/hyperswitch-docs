@@ -1,15 +1,11 @@
 ---
+icon: angles-up
 description: >-
   Automatically retry failed non-3DS payments by stepping them up to 3DS
   authentication
-icon: angles-up
 ---
 
 # 3DS Step-up Retries
-
-{% hint style="info" %}
-This section covers how 3DS Step-up retries function, the supported payment processors, and how to enable it.
-{% endhint %}
 
 3DS Step-up Retries is a Hyperswitch feature designed to enhance non-3DS payment success rates. If a non-3DS payment fails and we detect a relevant error message suggesting the potential for improved success with 3DS authentication, we seamlessly step up the authentication and attempt the payment again with same payment processor to increase the likelihood of a successful transaction.
 
@@ -32,7 +28,7 @@ In case you wish more processors to be covered for 3DS Step-up retry, please sub
 
 ## How to enable 3DS Step-up retries?
 
-Drop a request to biz@hyperswitch.io with confirmation to enable 3DS Step-up retry
+Drop a request to hyperswitch@juspay.in with confirmation to enable 3DS Step-up retry
 
 ## FAQs
 

@@ -1,13 +1,9 @@
 ---
-description: Setting up and managing recurring payments
 icon: repeat
+description: Setting up and managing recurring payments
 ---
 
 # Save a Payment Method
-
-{% hint style="info" %}
-This sections deals with the various ways in which you can save a payment method and how to use them in recurring payments
-{% endhint %}
 
 Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 

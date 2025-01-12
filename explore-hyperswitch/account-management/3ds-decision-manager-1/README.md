@@ -1,13 +1,9 @@
 ---
-description: Configure advanced rules with various payment parameters
 icon: clipboard-list-check
+description: Configure advanced rules with various payment parameters
 ---
 
 # Surcharge
-
-{% hint style="info" %}
-Through this section, you will understand the working of Surcharge feature and how to configure it.
-{% endhint %}
 
 Hyperswitch Surcharge feature allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to apply surcharges to payments.
 

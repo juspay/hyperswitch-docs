@@ -1,13 +1,9 @@
 ---
-description: Integrate unified checkout with your Flutter app
 icon: flutter
+description: Integrate unified checkout with your Flutter app
 ---
 
 # Flutter
-
-{% hint style="info" %}
-In this section, you will get an overview of the Hyperswitch Unified Checkout for your Flutter App
-{% endhint %}
 
 <figure><img src="../../../../.gitbook/assets/image (112).png" alt="" width="286"><figcaption></figcaption></figure>
 

@@ -1,13 +1,9 @@
 ---
-description: Accept PayPal, GPay and Apple Pay through Hyperswitch
 icon: mobile-retro
+description: Accept PayPal, GPay and Apple Pay through Hyperswitch
 ---
 
 # Wallets
-
-{% hint style="info" %}
-This section gives you an overview of how to enable PayPal, Google Pay and Apple Pay on Hyperswitch
-{% endhint %}
 
 Hyperswitch supports leading international wallets which include:
 

@@ -1,13 +1,9 @@
 ---
-description: Infinite control over managing your payments
 icon: swap
+description: Infinite control over managing your payments
 ---
 
 # Smart Routing
-
-{% hint style="info" %}
-With this section, understand how the Hyperswitch Smart Router works to improve your conversion rates and reduces processing costs by intelligently routing payments across various processors
-{% endhint %}
 
 {% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}
 

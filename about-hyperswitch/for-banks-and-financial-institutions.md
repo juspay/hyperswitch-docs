@@ -1,5 +1,6 @@
 ---
 icon: building-columns
+hidden: true
 ---
 
 # For Banks & Financial Institutions

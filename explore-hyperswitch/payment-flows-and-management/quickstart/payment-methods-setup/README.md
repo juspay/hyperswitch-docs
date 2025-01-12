@@ -1,13 +1,9 @@
 ---
-description: Setup the payment methods that you will be accepting
 icon: credit-card
+description: Setup the payment methods that you will be accepting
 ---
 
 # Setup Payment Methods
-
-{% hint style="info" %}
-This section explains everything you need to know about payment methods. You can use this as a reference to decide which payments best support your business use cases and how to enable them
-{% endhint %}
 
 The checkout page marks the final step of a customer's exploration on your website or app, and the payment methods presented at this juncture can determine whether the experience is smooth and seamless or poses a potential obstacle.
 

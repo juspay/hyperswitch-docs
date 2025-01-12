@@ -1,13 +1,9 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
 icon: anchor
+description: Configure outgoing webhooks from Hyperswitch
 ---
 
 # Webhooks
-
-{% hint style="info" %}
-This section covers how you can set up your outgoing webhooks from Hyperswitch
-{% endhint %}
 
 Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 

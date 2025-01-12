@@ -1,15 +1,11 @@
 ---
+icon: file-user
 description: >-
   Create multiple merchant accounts, profiles and users for seamless integration
   with your business.
-icon: file-user
 ---
 
 # Managing Accounts and Profiles
-
-{% hint style="info" %}
-Follow this guide to understand where your business use case fits with hyperswitch architecture.
-{% endhint %}
 
 {% hint style="warning" %}
 If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory.
@@ -105,16 +101,8 @@ To create more profiles, click the profile dropdown from the right top corner in
 
 In order to route a payment to a specific merchant account, the [payment create API](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call has to be made from the merchant server using the correct API key attached to the required merchant account. To route the payment to a particular profile, the `profile_id` parameter of the required profile is to be passed.
 
-<div align="left" data-full-width="true">
+<div align="left" data-full-width="true"><figure><img src="../../../.gitbook/assets/api_key" alt=""><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure></div>
 
-<figure><img src="../../../.gitbook/assets/api_key" alt=""><figcaption><p>api key to be passed in headers when creating a payment</p></figcaption></figure>
-
-</div>
-
-<div align="left" data-full-width="false">
-
-<figure><img src="../../../.gitbook/assets/profile_id" alt=""><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure>
-
-</div>
+<div align="left" data-full-width="false"><figure><img src="../../../.gitbook/assets/profile_id" alt=""><figcaption><p>profile id to be passed in the body when creating the payment</p></figcaption></figure></div>
 
 When a payment is created under a business profile, it would use the routing algorithm ( if available) that is configured for that business profile, to choose an appropriate gateway. All the **Refunds, Mandates** that are created for a payment will be under the same business profile as the payment.

@@ -1,15 +1,11 @@
 ---
+icon: ruler
 description: >-
   Route transaction through processors with advanced rules on the basis of
   various payment parameters
-icon: ruler
 ---
 
 # Rule Based Routing
-
-{% hint style="info" %}
-This section will guide you on how to setup Rule based routing using the Hyperswitch Control Center
-{% endhint %}
 
 {% embed url="https://youtu.be/Zs6H1vAKTJM" %}
 

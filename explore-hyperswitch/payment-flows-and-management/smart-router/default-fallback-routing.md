@@ -1,15 +1,11 @@
 ---
+icon: shield-exclamation
 description: >-
   Fallback is a priority order of all the configured processors which is used to
   route traffic standalone or when other routing rules are not applicable.
-icon: shield-exclamation
 ---
 
 # Default Fallback Routing
-
-{% hint style="info" %}
-This section will guide you on how to manage Default fallback routing using the Hyperswitch Control Center by drag and drop
-{% endhint %}
 
 {% embed url="https://youtu.be/5ymPEkOf-BQ" %}
 

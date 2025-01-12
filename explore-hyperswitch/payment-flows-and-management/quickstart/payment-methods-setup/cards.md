@@ -5,10 +5,6 @@ description: Accept debit and credit card payments on your application
 
 # Cards
 
-{% hint style="info" %}
-This section gives you an overview of how to enable debit and credit cards on Hyperswitch along with how to configure the web client to securely save your customers' card details for future payments
-{% endhint %}
-
 ![logo\_discord](https://hyperswitch.io/logos/logo_diners.svg)![logo\_discord](https://hyperswitch.io/logos/logo_visa.svg)![logo\_discord](https://hyperswitch.io/logos/logo_mastercard.svg)![logo\_discord](https://hyperswitch.io/logos/logo_amex.svg)
 
 Hyperswitch supports credit and debit card payments through all our payment processor connector&#x73;**.** \

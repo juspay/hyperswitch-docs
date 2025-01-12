@@ -5,10 +5,6 @@ description: Automatically retry payments with an alternative processor
 
 # Smart Retries
 
-{% hint style="info" %}
-This section covers how smart retries function, the supported payment processors, and how to enable it.
-{% endhint %}
-
 Smart retry is a Hyperswitch feature to improve the payment success rates in a multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with an alternative payment processor to increase the chances of making the payment successful.
 
 There are two possible types of payment retry flows:
@@ -55,7 +51,7 @@ The flow looks like below.
 
 <figure><img src="../../../.gitbook/assets/smartretry-1 (2).png" alt=""><figcaption></figcaption></figure>
 
-**Step 2:** Drop a request to biz@hyperswitch.io with the below information.
+**Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
 
 * Confirmation to enable automatic retry
 * Maximum number of payment retry attempts (It is recommended to start with 1 retry attempt. However we can support more retry attempts based on the number of processors)

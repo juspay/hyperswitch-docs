@@ -1,15 +1,11 @@
 ---
+icon: repeat
 description: >-
   Augments payment processing capabilities with your preferred Subscription
   Solution provider
-icon: repeat
 ---
 
 # Subscriptions
-
-{% hint style="info" %}
-In this section we will cover how you can leverage the benefits of Hyperswitch for payments processing while managing subscriptions with your preferred Subscription Solution Provider
-{% endhint %}
 
 ### Benefits
 

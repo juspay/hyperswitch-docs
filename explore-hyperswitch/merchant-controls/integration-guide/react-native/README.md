@@ -1,13 +1,9 @@
 ---
-description: Integrate unified checkout with your react native app
 icon: react
+description: Integrate unified checkout with your react native app
 ---
 
 # React Native
-
-{% hint style="info" %}
-In this section, you will get an overview of the Hyperswitch Unified Checkout for your React Native App
-{% endhint %}
 
 <figure><img src="../../../../.gitbook/assets/image (112).png" alt="" width="286"><figcaption></figcaption></figure>
 

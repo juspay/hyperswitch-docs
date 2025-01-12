@@ -1,13 +1,9 @@
 ---
-description: Integrate unified checkout with your web app
 icon: globe-wifi
+description: Integrate unified checkout with your web app
 ---
 
 # Web
-
-{% hint style="info" %}
-In this section, you will get an overview of the Hyperswitch Unified Checkout for your Web App
-{% endhint %}
 
 ## Global Checkout Experience
 

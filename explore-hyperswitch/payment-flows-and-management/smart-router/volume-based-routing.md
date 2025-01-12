@@ -1,13 +1,9 @@
 ---
-description: Route transactions through processors based on volume distribution
 icon: chart-simple
+description: Route transactions through processors based on volume distribution
 ---
 
 # Volume Based Routing
-
-{% hint style="info" %}
-This section will guide you on how to setup Volume based routing using the Hyperswitch Control Center
-{% endhint %}
 
 {% embed url="https://youtu.be/xpU3zmyD4b8" %}
 

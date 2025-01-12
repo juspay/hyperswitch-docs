@@ -1,13 +1,9 @@
 ---
-description: Assign roles and permission to users
 icon: screen-users
+description: Assign roles and permission to users
 ---
 
 # Manage Your Team
-
-{% hint style="info" %}
-Follow this guide to understand how to set up your team in Hyperswitch and to manage access through roles and permissions
-{% endhint %}
 
 You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
 

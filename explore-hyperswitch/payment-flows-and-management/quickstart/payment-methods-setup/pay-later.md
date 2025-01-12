@@ -1,13 +1,9 @@
 ---
-description: Accept pay later options through Hyperswitch
 icon: calendar-day
+description: Accept pay later options through Hyperswitch
 ---
 
 # Pay Later
-
-{% hint style="info" %}
-This section gives you an overview of how to enable buy now pay later payments with Klarna, Affirm and Afterpay/Clearpay
-{% endhint %}
 
 ## Klarna, Affirm, Afterpay/Clearpay - Redirection flow
 

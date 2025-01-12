@@ -4,12 +4,6 @@ description: Set up your Hyperswitch account on the control center
 
 # ⚙️ Control Centre Account setup
 
-{% hint style="info" %}
-In this section, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
-{% endhint %}
-
-***
-
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
 
 * Realtime Analytics for Payments, Refunds and Smart Retries.

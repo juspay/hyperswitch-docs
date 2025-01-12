@@ -1,13 +1,9 @@
 ---
-description: Effectively enhance fraud detection
 icon: shield-check
+description: Effectively enhance fraud detection
 ---
 
 # Fraud & Risk Management
-
-{% hint style="info" %}
-With this section you will get a good understanding of FRM, it's need, use cases, architecture and steps to integrate it in your system.
-{% endhint %}
 
 The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
 

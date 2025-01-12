@@ -1,13 +1,9 @@
 ---
-description: 3DS Decision Manager Setup
 icon: screwdriver-wrench
+description: 3DS Decision Manager Setup
 ---
 
 # Setup Guide
-
-{% hint style="info" %}
-This section covers the steps to setup 3ds decision manager using the Hyperswitch Control Center
-{% endhint %}
 
 ## Steps to setup a rule on 3DS Decision Manager?
 

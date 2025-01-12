@@ -1,5 +1,4 @@
 ---
-description: Juspay Payments App for Saleor by hyperswitch.io
 icon: plug-circle-bolt
 ---
 
