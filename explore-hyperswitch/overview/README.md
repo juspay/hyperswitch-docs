@@ -1,60 +1,34 @@
 ---
+icon: arrow-down-up-lock
 description: >-
   A brief summary of Hyperswitch infrastructure ensuring compliance and data
   privacy
-icon: arrow-down-up-lock
 ---
 
 # Security and Compliance
 
-## Data center locations <a href="#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715" id="docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715"></a>
+At Hyperswitch, we redefine how businesses handle payments by delivering secure, reliable, and scalable solutions tailored to your unique needs. Whether you're managing subscriptions, running a global marketplace, or scaling your e-commerce platform, Hyperswitch empowers you to optimize payments and grow with confidence.
 
-Hyperswitch Cloud is hosted on the AWS platform and served out of the **US (N.Virginia region)** by default. Hyperswitch is listed partner on [AWS Partner Network](https://partners.amazonaws.com/partners/0018W00001wtpU1QAI/Juspay#solutions--tech-product).
+**Security and Compliance at the Core**
 
-We support deployments in more geographies for merchants who wish to restrict data transfer across geographies. Each deployment is supported with at least two redundant Availability Zones for ensuring reliability.
+Hyperswitch ensures compliance with global standards like PCI DSS 4.0 and GDPR, safeguarding your transactions and sensitive data. With flexible deployment options, we meet data residency requirements across regions.
 
-<table><thead><tr><th width="180"></th><th width="304">Global Server (US)</th><th>EU Residency Server</th></tr></thead><tbody><tr><td>Live endpoints</td><td><code>api.hyperswitch.io</code></td><td>Available on request</td></tr></tbody></table>
+**Global Reach with Local Adaptability**
 
-{% hint style="success" %}
-**Note:** Hyperswitch is a super lightweight payment switch with Infrastructure-as-Code capability. So we can quickly deploy in new geographies (AWS regions) as data residency requirements emerge across countries around the world.
-{% endhint %}
+Built on AWS infrastructure, Hyperswitch supports global operations with low-latency performance and localized deployment options, ensuring compliance and efficiency wherever you do business.
 
-## Latency
+**Performance You Can Trust**
 
-The application latency of Hyperswitch is optimized to `sub-30 milliseconds` (90 percentile) to ensure that the application by itself does not add any latency cost. [Read here](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead) to know more about it.
+Hyperswitch is designed for speed, keeping application latency under 30 milliseconds and optimizing inter-regional traffic with AWS CloudFront.
 
-Inter-regional network latency is optimized by fronting the API endpoints with Cloud Delivery Network (AWS Cloudfront).
+### Key Features
 
-{% hint style="info" %}
-**Note:** In case you are opting for the Hyperswitch Open Source offering, you will be able to run the software like a microservice within your own deployment.
-{% endhint %}
+* **Modular Architecture:** Customize your payment setup to match your business requirements.
+* **Unified Analytics:** Access actionable insights to optimize costs and monitor performance.
+* **Advanced Fraud Prevention:** Protect transactions with 3DS authentication and risk management tools.
+* **No-Code Integrations:** Quickly enable 70+ payment connectors and 150+ payment methods with minimal effort
 
-## Reliability
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><strong>PCI Compliance</strong></td><td></td><td></td></tr><tr><td><strong>Data Security</strong></td><td></td><td></td></tr><tr><td><strong>GDPR compliance</strong></td><td></td><td></td></tr><tr><td><p><strong>Identity and Access Management</strong></p><p></p></td><td></td><td></td></tr></tbody></table>
 
-Reliability is ensured as a primitive in each component of Hyperswitch to offer 99.99% uptime guarantee.
-
-All infrastructure components are deployed across multiple Availability Zones. This includes:
-
-* Load Balancers
-* Proxy instances for incoming and outgoing APIs
-* Kubernetes clusters powering core application, analytics and async services
-* Aurora PSQL Database (primary storage)
-* Elasticache storage (cache)
-* Vault service
-
-## Scalability
-
-Hyperswitch support for 80 RPS per merchant account and rate limits applicable beyond. Higher enterprise workloads can be processed on request basis.
-
-### Scaling Infrastructure components
-
-Scaling of each component in the Hyperswitch setup is achieved as follows
-
-* Incoming proxy layer is deployed using Auto Scaling Group (ASG)
-* Application layer is managed using Kubernetes with Horizontal Pod Autoscaler (HPA)&#x20;
-* Outgoing Proxy is deployed using Auto Scaling Group (ASG)
-
-### Handling traffic spikes
-
-Database provides consistency, but it more often becomes a bottleneck and a failure point in case of sudden traffic spikes. Hyperswitch can be configured (on request basis) to use Cache as Data storage in case of sudden spikes in the traffic to reduce the friction of database latency. All the data is drained from cache to the database.
+&#x20; &#x20;
 
