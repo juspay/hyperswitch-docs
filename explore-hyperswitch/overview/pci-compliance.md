@@ -1,31 +1,48 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
 icon: credit-card
+description: A brief summary of PCI compliance for Hyperswitch Cloud users
 ---
 
 # PCI Compliance
 
-Hyperswitch Cloud offers **out-of-the-box PCI compliance**, so that you do not have to worry about securing and storing customers's cards.
+Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that sensitive cardholder data is securely processed, stored, and transmitted.&#x20;
 
-## PCI DSS Level 1 compliance <a href="#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715" id="docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715"></a>
+**Hyperswitch Cloud provides out-of-the-box PCI DSS Level 1 compliance**—the highest level of certification—so you can handle payments securely without worrying about card storage or compliance complexities yourself.
 
-Hyperswitch is Level 1 PCI DSS 3.2.1 certified which is the strictest level of compliance to handle card data securely.
+### **Key Features of PCI Compliance on Hyperswitch Cloud**
 
-The infrastructure and application are annually audited with a PCI approved scanning vendor to keep the PCI compliance up to date.
+**PCI DSS Level 1 Certification**\
+Hyperswitch is certified for PCI DSS 3.2.1 Level 1, ensuring robust security measures for card and other payments data.
 
-## Enabling raw card acceptance with payment processors <a href="#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715" id="docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715"></a>
+**Annual Audits**\
+Infrastructure and applications are audited annually by a PCI-approved scanning vendor to maintain compliance.
 
-While you are using Hyperswitch, your customers' cards will be securely tokenized and stored on Hyperswitch Cloud vault.&#x20;
+**Tokenization for Secure Card Handling**\
+Hyperswitch tokenizes and stores customer card details in its cloud vault, reducing the need for merchants to store sensitive data.
 
-However this will require the payment processors to enable raw card acceptance at their end (which most payment processor do not offer as default setting). You will have to send Hyperswitch PCI AOC to your payment processor's support team and request to enable the setting against your merchant account.
+### **Enabling Raw Card Acceptance with Payment Processors**
 
-> Stripe used to allow merchants to enable raw card processing in S2S API requests via its Merchant Dashboard, but this feature has recently been [deprecated](https://support.stripe.com/questions/enabling-access-to-raw-card-data-apis).&#x20;
->
-> To enable this, you must share your or the third-party service provider's PCI DSS compliance certificate, which will process the raw card data for Stripe support. If you are using Hyperswitch for this, you can download it from the Hyperswitch Dashboard under the Compliance section under settings.
+To process raw card data securely through Hyperswitch:
 
-{% hint style="info" %}
-Please drop a note to `biz@hyperswitch.io` to get access to the Hyperswitch PCI AOC (applicable only for Hyperswitch Cloud users).\
-Alternatively, you can download it from the Hyperswitch Dashboard under the Compliance section under settings.
-{% endhint %}
+#### **Processor Configuration:**
 
-If you are planning to use Hyperswitch Open Source, please [refer here](../../hyperswitch-open-source/going-live/pci-compliance/) for more notes about ensuring PCI compliance when you self deploy Hyperswitch
+Many payment processors disable raw card acceptance by default. To enable it:
+
+* Share Hyperswitch’s PCI Attestation of Compliance (AOC) with your processor's support team.
+* Request them to enable raw card processing for your merchant account.
+
+#### **Stripe Integration Update:**
+
+* Stripe no longer allows raw card acceptance via its Merchant Dashboard.
+* If required, share the PCI DSS compliance certificate of Hyperswitch or the third-party service provider managing raw card data with Stripe support.
+
+#### **Accessing the PCI AOC Document:**
+
+* Hyperswitch Cloud users can download the PCI AOC from the Compliance section under settings in the Hyperswitch Dashboard.
+* Alternatively, email **hyperswitch@juspay.in** for assistance.
+
+### **Why Choose Hyperswitch for PCI Compliance?**
+
+* Simplified compliance management with automatic tokenization and secure storage.
+* Global security standards maintained across all integrations.
+* Reduced complexity and liability for merchants in handling sensitive card data.
