@@ -28,4 +28,6 @@ The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive 
 If your FRM processor of choice is not available in the above list, please put a new features request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 {% endhint %}
 
-##
+{% content-ref url="activating-frm-in-hyperswitch.md" %}
+[activating-frm-in-hyperswitch.md](activating-frm-in-hyperswitch.md)
+{% endcontent-ref %}
