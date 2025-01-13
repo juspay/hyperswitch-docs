@@ -116,6 +116,7 @@
     * [Native 3DS Authentication](explore-hyperswitch/payment-flows-and-management/3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md)
     * [External Authentication for 3DS](explore-hyperswitch/payment-flows-and-management/3ds-decision-manager/external-authentication-for-3ds.md)
   * [Fraud & Risk Management](explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/README.md)
+    * [Activating FRM in Hyperswitch](explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/activating-frm-in-hyperswitch.md)
     * [Fraud Blocklist](explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/fraud-blocklist.md)
   * [Subscriptions](explore-hyperswitch/payment-flows-and-management/subscriptions/README.md)
     * [PG Agnostic Card Forwarding](explore-hyperswitch/payment-flows-and-management/subscriptions/pg-agnostic-recurring-payments.md)
