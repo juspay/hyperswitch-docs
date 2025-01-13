@@ -1,35 +1,45 @@
 ---
 icon: badge-check
-description: Configure advanced rules with various payment parameters
 ---
 
 # 3DS / Strong Customer Authentication
 
-{% embed url="https://youtu.be/-VTnngditlU" %}
+3D Secure (3DS) is a robust security protocol designed to prevent fraud in card-not-present transactions. By employing multi-factor authentication mechanisms such as biometrics or OTPs, 3DS helps issuers verify the authenticity of transactions.&#x20;
+
+The **Hyperswitch 3DS Decision Manager** allows merchants to define advanced rules based on payment parameters, ensuring that 3DS authentication is selectively enforced for high-risk transactions.
+
+### Benefits of Using the 3DS Decision Manager:
+
+* **Fraud Reduction:** Enforce 3DS on high-risk transactions to mitigate fraudulent activities.
+* **Enhanced Compliance:** Meet regulatory requirements for Strong Customer Authentication (SCA) in regions like the EEA.
+* **Improved Customer Experience:** Apply 3DS only when necessary, minimizing friction during checkout for low-risk transactions.
 
 Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
 
+{% embed url="https://youtu.be/-VTnngditlU" %}
+
 ## How does it work?
+
+#### 3DS Decision Flow:
+
+Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.&#x20;
 
 <figure><img src="../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 
-* Hyperswitch supports 3D Secure card payments via multiple payment processors
-* The [3DS Decision Manager](https://app.hyperswitch.io/3ds) on the Hyperswitch Control Center allows you to configure advanced rules based on payment parameters to decide when to enforce 3DS on card payments for supported processors
-* For example, if you want to enforce 3DS authentication for all payments of value greater than $100 then you could setup the following rule on the 3DS Decision Manager and all the payment requests conforming to that rule would have `authentication_type` set as `three_ds`
+The **3DS Decision Manager** in the Hyperswitch Control Center provides merchants with a rule-based interface to enforce authentication selectively.
+
+For example: If you wish to enforce 3DS for transactions over $100, you can define a rule that automatically sets `authentication_type` as `three_ds` for such transactions. Payments meeting this rule will trigger 3DS authentication.
 
 <figure><img src="../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
 
-**Note:** If an explicit value is passed on `/payments` request using the `authentication_type` parameter it will override the 3DS Decision Manager - [API Reference](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)
+{% hint style="danger" %}
+* Rules set in the **3DS Decision Manager** can be overridden if an explicit value is passed in the `/payments` request using the `authentication_type` parameter. ([API Reference](https://api-reference.hyperswitch.io/api-reference/payments/payments--create))
+* Some processors may mandate 3DS regardless of your configuration.
+{% endhint %}
 
-Some payment processors mandate a 3D Secure authentication for all payments which will be enforced regardless of the `authentication_type` in `/payments` request
-
-### Configure 3DS Decision Manager
-
-Follow the [setup guide](setup-guide.md) to configure the 3DS Decision Manager
-
-## Next step&#x20;
-
-To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
+{% content-ref url="setup-guide.md" %}
+[setup-guide.md](setup-guide.md)
+{% endcontent-ref %}
 
 {% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
 [test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
