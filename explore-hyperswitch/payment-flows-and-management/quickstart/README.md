@@ -26,6 +26,8 @@ You will use both a server-side and a client-side component of Hyperswitch to co
 
 #### **Steps to Integrate Hyperswitch**
 
+<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+
 1. **Initiate Payment on Server**:\
    Your server creates a payment request with the Hyperswitch server to obtain a `client_secret`.
 2. **Render Payment Widget**:\
@@ -36,8 +38,6 @@ You will use both a server-side and a client-side component of Hyperswitch to co
    The Hyperswitch SDK securely transmits the payment information to the Hyperswitch server, which processes the payment using the most suitable processor as determined by your smart routing algorithm.
 5. **Payment Confirmation**:\
    Upon successful payment, the customer is automatically redirected to your payment status confirmation page.
-
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Don’t want to write code? Check out the [Hyperswitch Postman Collection](https://docs.hyperswitch.io) for a no-code way to get started with Hyperswitch's API.
