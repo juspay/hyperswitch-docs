@@ -8,8 +8,6 @@ icon: flux-capacitor
 This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
 {% endhint %}
 
-## What is Intelligent Routing?&#x20;
-
 Intelligent Routing is a smart payment routing system that helps businesses choose the best way to process payments by adjusting routing rules in real time.&#x20;
 
 Unlike static routing, which follows fixed rules, Intelligent Routing uses up-to-the-minute data—such as success rates, past transaction patterns, and processor issues. By combining past data with real-time insights, it picks the best processor for each payment.
@@ -18,7 +16,7 @@ This automation saves businesses from manually updating rules, adapting automati
 
 <figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
-## How Intelligent Routing Benefits Businesses?
+## Key Benefits:
 
 * **Boosted Conversion Rates:** Intelligent Routing directs payments to processors with the highest success rates, using real-time data and past patterns. For example, if a particular card type is approved more often with a certain processor, payments with that card are routed there.
 * **Regional Optimization:** For global businesses, Intelligent Routing sends payments to processors that perform best in each area. This means using processors with strong connections in Europe for EU payments and ones with strong U.S. connections for payments in the U.S.
