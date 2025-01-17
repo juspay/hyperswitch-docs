@@ -132,7 +132,7 @@ description: Install Hyperswitch on your K8s setup using our Helm charts
    * Ensure all pods are in the `Running` state.
 
 {% hint style="success" %}
-That's it! Hyperswitch should be up and running on your AWS account 🎉 🎉
+That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
 {% endhint %}
 
 ## Post-Deployment Checklist
@@ -159,23 +159,7 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 
 #### Step 2 - Deploy card vault
 
-If you intend to save cards of your customers for future usage then you need a Card Vault. This helm chart doesn't cover inbuilt card vault support as it will violate PCI compliance. You can install manually by following the steps [here](https://opensource.hyperswitch.io/going-live/pci-compliance/card-vault-installation) or use [this doc to deploy card vault in aws](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault)
-
-### Contribution guidelines
-
-When you want others to use the changes you have added you need to package it and then index it
-
-```
-helm package .
-helm repo index . --url https://juspay.github.io/hyperswitch-helm
-```
-
-#### Get Repo Info
-
-```
-helm repo add hyperswitch-helm https://juspay.github.io/hyperswitch-helm
-helm repo update
-```
+If you intend to save cards of your customers for future usage then you need a Card Vault. This helm chart doesn't cover inbuilt card vault support as it will violate PCI compliance. You can install manually by following the steps [here](https://opensource.hyperswitch.io/going-live/pci-compliance/card-vault-installation) or use [this doc to deploy card vault in aws](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault).
 
 ## Next step:
 
