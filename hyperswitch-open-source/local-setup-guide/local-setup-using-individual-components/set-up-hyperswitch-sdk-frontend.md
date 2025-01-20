@@ -1,3 +1,7 @@
+---
+icon: desktop
+---
+
 # Set up Hyperswitch SDK (Frontend)
 
 You will need to understand and configure a few configurations before starting the local setup. -

@@ -1,3 +1,7 @@
+---
+icon: laptop
+---
+
 # Set up Hyperswitch Control Center
 
 ### Prerequisites

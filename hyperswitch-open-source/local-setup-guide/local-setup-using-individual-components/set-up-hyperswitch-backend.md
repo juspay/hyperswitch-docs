@@ -1,3 +1,7 @@
+---
+icon: server
+---
+
 # Set up Hyperswitch Backend
 
 ## Run hyperswitch using Docker Compose
