@@ -78,7 +78,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟩 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
 * 🟩 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
 * 🟩 Implement MPAN (merchant tokens) for Applepay recurring payments
 * 🟩  Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
