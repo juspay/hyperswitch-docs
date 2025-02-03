@@ -28,8 +28,6 @@ For subscription-based businesses, involuntary churn from failed recurring payme
    2. The engine schedules retries based on failure type, retry limits, and past patterns.
    3. Successful retries update invoice statuses in real time. Failed retries proceed to the next retry schedule until limits are reached.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXddg7TQDgLePSQPvXPd_RQkAllWxds1tid9PIernK6Fl5bbpcNoiGks65sQBsY7BRyDntqRtkza30RpDZeWm_UO8mqP2zpvKAeIJzaj0hSw7N44xevz24_Ef9xd4o49PzrGn0Bv?key=cHgdxb1Lhs4GiUI5nVy70xe4" alt=""><figcaption></figcaption></figure>
-
 ### Key Features
 
 * **Retry Optimization**:
