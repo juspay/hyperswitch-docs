@@ -11,6 +11,7 @@
 * [For E-Commerce Businesses](about-hyperswitch/for-e-commerce-businesses.md)
 * [For Marketplace/Platforms](about-hyperswitch/for-marketplace-platforms.md)
 * [For Banks & Financial Institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
+* [Modular Payment App](about-hyperswitch/modular-payment-app.md)
 * [Roadmap - Q1 2025](about-hyperswitch/roadmap-q1-2025/README.md)
   * [Previous Roadmap - Q4 2024](about-hyperswitch/roadmap-q1-2025/previous-roadmap-q4-2024.md)
   * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap-q1-2025/previous-roadmap-q3-2024.md)
