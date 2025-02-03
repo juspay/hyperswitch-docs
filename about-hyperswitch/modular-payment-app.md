@@ -21,7 +21,7 @@ To address these needs, we introduced modularization, allowing Hyperswitch to be
 
 #### Orchestration
 
-Streamline payment processes by connecting to multiple payment processors and gateways through a single API without writing any code. Our orchestration module centralizes your payment operations, improving efficiency and reducing integration complexities. Scale globally with ease while optimizing performance across all channels. Read more at&#x20;
+Streamline payment processes by connecting to multiple payment processors and gateways through a single API without writing any code. Our orchestration module centralizes your payment operations, improving efficiency and reducing integration complexities. Scale globally with ease while optimizing performance across all channels.&#x20;
 
 #### **Revenue Recovery**
 
