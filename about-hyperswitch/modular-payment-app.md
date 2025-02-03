@@ -25,7 +25,7 @@ Streamline payment processes by connecting to multiple payment processors and ga
 
 #### **Revenue Recovery**
 
-Recover lost revenue with tools designed to optimize retries, prevent declines, and reduce chargebacks. This module employs smart retries and advanced data insights to maximize authorization rates. Ensure every transaction counts with our comprehensive recovery capabilities.
+Recover lost revenue with tools designed to optimize retries, prevent declines, and reduce chargebacks. This module employs smart retries and advanced data insights to maximize authorization rates. Ensure every transaction counts with our comprehensive recovery capabilities. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions/revenue-recovery)
 
 #### Vault
 
@@ -33,19 +33,19 @@ Securely store and tokenize sensitive payment data with our PCI-compliant Vault 
 
 #### Intelligent Routing
 
-Boost authorization rates with dynamic payment routing based on real-time data. Our intelligent routing module selects the best processor for each transaction, minimizing failures. Maximize revenue and reduce costs with optimized routing strategies.
+Boost authorization rates with dynamic payment routing based on real-time data. Our intelligent routing module selects the best processor for each transaction, minimizing failures. Maximize revenue and reduce costs with optimized routing strategies. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing)
 
 #### Reconciliation
 
-Simplify payment operations with unified reconciliation framework with automated data fetching from multiple processors and banks. This module reduces manual effort, minimizes errors, and provides clear visibility into payment data. Achieve operational efficiency with seamless reconciliation.
+Simplify payment operations with unified reconciliation framework with automated data fetching from multiple processors and banks. This module reduces manual effort, minimizes errors, and provides clear visibility into payment data. Achieve operational efficiency with seamless reconciliation. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/reconciliation).
 
 #### Cost Observability
 
-Gain full transparency into payment costs with detailed analytics and insights. Track processor fees, interchange rates, and other expenses to identify savings opportunities. Optimize your payment strategy with actionable data on cost metrics.
+Gain full transparency into payment costs with detailed analytics and insights. Track processor fees, interchange rates, and other expenses to identify savings opportunities. Optimize your payment strategy with actionable data on cost metrics. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/ai-powered-cost-observability)
 
 #### Alternative Payment Methods
 
-Expand your reach by offering popular alternative payment methods tailored to local markets. This module enables seamless integration of digital wallets, BNPL, and other options. Fulfill diverse customer preferences and drive higher conversion rates.
+Expand your reach by offering popular alternative payment methods tailored to local markets. This module enables seamless integration of digital wallets, BNPL, and other options. Fulfill diverse customer preferences and drive higher conversion rates. [Read more.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/enable-alternate-payment-method-widgets)
 
 And more coming soon ...
 
