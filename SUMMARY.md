@@ -122,6 +122,7 @@
   * [Subscriptions](explore-hyperswitch/payment-flows-and-management/subscriptions/README.md)
     * [PG Agnostic Card Forwarding](explore-hyperswitch/payment-flows-and-management/subscriptions/pg-agnostic-recurring-payments.md)
     * [Zero Amount Authorization](explore-hyperswitch/payment-flows-and-management/subscriptions/zero-amount-authorization-1.md)
+    * [Revenue Recovery](explore-hyperswitch/payment-flows-and-management/subscriptions/revenue-recovery.md)
 * [Checkout Experience](explore-hyperswitch/merchant-controls/README.md)
   * [Customizable and Native Integrations](explore-hyperswitch/merchant-controls/integration-guide/README.md)
     * [Web](explore-hyperswitch/merchant-controls/integration-guide/web/README.md)
