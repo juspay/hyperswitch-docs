@@ -1,20 +1,62 @@
 ---
 icon: handshake-simple
-description: >-
-  A platform that gives you complete control of your reconciliation process,
-  making it faster, efficient, and scalable
 ---
 
 # Reconciliation
 
-## Overview&#x20;
+The Reconciliation module in Hyperswitch automates financial reconciliation, providing businesses with greater accuracy and control over their financial processes. It simplifies transaction matching for financial operations (FinOps) teams, ensuring seamless verification of payments, settlements, and ledger entries with 99% reconciliation accuracy.
 
-Hyperswitch Reconciliation module allows reconciliation between the transaction data from Hyperswitch,  the settlement data shared by payment gateways and the merchant account statement from the bank. This process is designed to ensure financial accuracy and streamlines settlement processes. The system ensures that businesses receive reconciliation results promptly.
+Financial reconciliation is essential for maintaining transparency, identifying revenue leakages, and ensuring regulatory compliance. Without an efficient reconciliation system, businesses risk financial discrepancies, accounting errors, and increased manual effort. Hyperswitch offers a robust solution that streamlines reconciliation and enhances operational efficiency.
+
+By integrating Hyperswitch’s reconciliation module, businesses can:
+
+* **Ensure transactional accuracy** – Handle large transaction volumes with minimal discrepancies.
+* **Achieve high reconciliation rates** – Reduce financial mismatches and missing transactions with a 99% reconciliation rate.
+* **Automate error resolution** – Minimize manual intervention by automatically resolving 80% of reconciliation exceptions.
+* **Improve processing efficiency** – Accelerate reconciliation workflows, leading to a 60% increase in efficiency and faster financial closing.
+
+### Benefits for Merchants
+
+* **Accurate Financial Reporting**
+  * Ensures every transaction is properly recorded and reconciled.
+  * Reduces accounting errors and revenue losses.
+  * Generates audit-ready reports for compliance.
+* **Automated Reconciliation with Minimal Effort**
+  * Matches transactions across PSPs, banks, and internal ledgers.
+  * Resolves 80% of discrepancies automatically.
+  * Reduces dependency on manual intervention.
+* **Improved Efficiency and Faster Closing**
+  * Automates reconciliation workflows for 60% faster processing.
+  * Provides real-time visibility into financial operations.
+* **Fraud Detection & Compliance**
+  * Flags missing, duplicate, or suspicious transactions automatically.
+  * Maintains audit-ready records to meet regulatory standards.
+* **Scalability for Business Growth**
+  * Supports multi-region transactions with different currencies and tax structures.
+  * Handles high transaction volumes efficiently.
+
+### Key Features
+
+* **Multi-Source Reconciliation**
+  * Matches transactions across PSPs, banks, and internal ledgers.
+  * Supports global payments with multi-currency handling.
+* **Automated Anomaly Detection**
+  * Instantly identifies mismatched or missing transactions.
+  * Uses machine learning to reduce manual reviews.
+* **Error Categorization & Reporting**
+  * Detects processing fee mismatches, chargebacks, refunds, and duplicate charges.
+  * Provides structured reports for easy issue resolution.
+* **Custom Rules & Configurations**
+  * Enables flexible reconciliation formats tailored to business needs.
+  * Supports SaaS, on-premise, and open-source deployments.
+* **Seamless Automation**
+  * Schedules reconciliation workflows for real-time transaction matching.
+  * Generates instant reports and alerts for better financial control.
 
 ## Use cases
 
-1. Three-way recon - Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fees & Taxes, and more, as stipulated during configuration.
-2. Two-way recon - Hyperswitch Recon Engine also offers the flexibility to execute 2-way reconciliation between the Merchant and PSP.
+1. **Three-way recon** - Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fees & Taxes, and more, as stipulated during configuration.
+2. **Two-way recon** - Hyperswitch Recon Engine also offers the flexibility to execute 2-way reconciliation between the Merchant and PSP.
 
 ## Activate & Configure the Reconciliation module
 
