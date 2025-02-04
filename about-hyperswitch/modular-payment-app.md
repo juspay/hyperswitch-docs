@@ -4,49 +4,49 @@ icon: diamonds-4
 
 # Modular Payment App
 
-At Hyperswitch, we’ve revolutionized how businesses manage payments globally by offering a unified system that seamlessly connects merchants to multiple payment processors, fraud management tools, payout systems, and more. Initially designed as a comprehensive suite, our platform simplifies and optimizes the entire payment process through a single API.
+At Juspay, we believe that payments infrastructure should be transparent, adaptable, and built for merchant control—not vendor lock-in. That’s why we made the bold decision to take our Payment Orchestrator open source.
 
-As we collaborated with our merchants and gained a deeper understanding of their needs, we recognized that not every business seeks to build a full-stack payments infrastructure. Many aim to enhance their existing payments stack with capabilities like smart routing to boost authorization rates or reconciliation solutions to reduce payment operations overhead.
+Enterprise merchants operate in a world where payment agility is a competitive advantage. Traditional closed-loop platforms dictate their own rules, pricing, and pace of innovation. Based on our 12-years of experience building and scaling global payment systems, we decided to take a different approach—giving merchants the power to customize, optimize, and scale payments to fit their unique business needs.
 
-To address these needs, we introduced modularization, allowing Hyperswitch to be “unbundled” into independent, standalone services. This approach enables businesses to access and deploy precisely the features they need—such as fraud management, payment routing, or alternative payment method integrations—while maintaining the flexibility to scale with additional modules as their requirements evolve. Our modularized solution empowers merchants to tackle specific challenges effortlessly, ensuring seamless integration into their existing payment ecosystem.
+Since our 2024 enterprise go-lives (e.g. Flowbird), we have been working on unbundling a range of stand-alone solutions from our broader technology stack to make them more accessible to merchants looking to expand their in-house system engineering capability. These stand-alone solutions range from services for intelligent / dynamic payment routing, payment methods vaulting, cost observability, PSP-agnostic authentication, and an APMs widget that can be embedded anywhere.
 
-### Why Modularization?
+Hyperswitch is an Open Source payments stack offering  -&#x20;
 
-1. **Flexibility for Merchants**: You can integrate only the features you need, reducing complexity and costs.
-2. **Scalable Solutions**: Our standalone modules enable you to address your immediate challenges and scale with more modules as needed.
-3. **Non-Disruptive Integration**: Our modular solutions fit seamlessly into your existing payment ecosystems without requiring a complete system overhaul.
-4. **Optimized Performance**: By focusing on specific challenges, you can use tailored solutions that maximize efficiency and boost results.
+* **Complete Transparency & Confidence**
+* **Open roadmap, Open innovation**
+* **Speed to market by building consensus faster**&#x20;
 
-### Hyperswitch Modules
+It is built on the principles of - **Modular, Composable, Well Architected**
 
-#### Orchestration
+* **Sub-systems**: To orchestrate a unified checkout, payment methods and credentials (tokens, PANs), trust providers, dynamic routing - across PSPs & acquirers, and debit networks, designed for redundancy & reliability, state-of-the-art transaction level payments intelligence to increase conversions and reduce costs, and to unify payment operations - observability, optimizations, reconciliation.
+* **Modular**: Pick only the components you need—intelligent routing, vault, reconciliation, cost observability, smart retries, APM widgets—without overhauling your stack.
+* **Scalable**: Ability to handle peakings transactions up to 5K TPS (horizontal scaling)
+* **Reliable**: Ensuring zero downtime and safe mode for handling exceptions (with retries, multi-region, Active-active)
+* **Observable**: Providing deep insights into transactions and failures (logging, monitoring, tracing, drill downs, audits, optimizations - auth-lift and cost reduction)
+* **Composable**: Easily integrate Hyperswitch into any existing payments infrastructure, reducing migration friction.
+* **Future-proof**: Swap out or upgrade internal systems and providers without rebuilding from scratch—a level of flexibility closed platforms can’t match.
 
-Streamline payment processes by connecting to multiple payment processors and gateways through a single API without writing any code. Our orchestration module centralizes your payment operations, improving efficiency and reducing integration complexities. Scale globally with ease while optimizing performance across all channels.&#x20;
+In addition to the full-stack end-to-end payment orchestration, the different Hyperswitch modules
 
-#### **Revenue Recovery**
+1. **Cost observability**\
+   It is an advanced observability tool for payment cost optimization. It empowers businesses to uncover hidden cost-saving opportunities, review fees, downgrades & penalties, optimize processing strategies, and detect anomalies-all through a self-serve dashboard designed to Audit, Observe and Optimize payments costs. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/ai-powered-cost-observability)
+2. **Revenue recovery**\
+   It tackles passive churn by optimizing recurring payments with intelligent retry strategies tailored to diverse parameters like card bin, ticket size, region, payment method & 15 more. It integrates seamlessly with existing payment stacks and boosts recurring success rates while reducing penalties and operational complexities. It focuses on - Ease of integration, transparency of payment attempts and control - kind of retry algorithm, penalty budget, retry split and more. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions/revenue-recovery)
+3. **Vault**\
+   Payment Methods and Vaulting Service to securely store tokens, bank & wallet credentials and raw card details, ensuring data safety and compliance. It provides a unified view of all user-linked payment methods, enabling efficient management and seamless transaction experience for repeat users.
+4. **Intelligent routing**\
+   Improve authorization rates and reduce payment costs with our rule-based, volume-based, and machine-learning driven routing algorithms. Our machine-learning driven routing algorithms optimize transactions in real-time, ensuring the highest First Attempt Authorization Rate (FAAR) while minimizing failures, retries, and downtime risks. It seamlessly integrates into your existing multi-PSP setup for a frictionless and cost-efficient payment experience. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing)
+5. **Reconciliation** \
+   Simplify payment operations with a unified reconciliation framework for 2-way or 3-way reconciliation, with automated data fetching from multiple processors and banks. This module reduces manual effort, minimizes errors, and provides clear visibility into payment data with features like - back-date and staggered recon, output customization and more. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/reconciliation)
+6. **Alternate payment methods**\
+   Embeddable payment buttons for seamless one-click checkout with alternate payment methods like PayPal, Apple Pay, Google Pay, Samsung Pay, Pay by Bank or BNPL providers like Klarna. The widget routes the transaction independently and dynamically to one or more connected PSPs, maximizing conversions. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/enable-alternate-payment-method-widgets)
 
-Recover lost revenue with tools designed to optimize retries, prevent declines, and reduce chargebacks. This module employs smart retries and advanced data insights to maximize authorization rates. Ensure every transaction counts with our comprehensive recovery capabilities. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions/revenue-recovery)
+#### The Bottom Line for Merchants
 
-#### Vault
-
-Securely store and tokenize sensitive payment data with our PCI-compliant Vault module. Protect customer information while enabling seamless payment experiences across channels. Enhance trust and security with cutting-edge encryption and compliance standards.
-
-#### Intelligent Routing
-
-Boost authorization rates with dynamic payment routing based on real-time data. Our intelligent routing module selects the best processor for each transaction, minimizing failures. Maximize revenue and reduce costs with optimized routing strategies. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing)
-
-#### Reconciliation
-
-Simplify payment operations with unified reconciliation framework with automated data fetching from multiple processors and banks. This module reduces manual effort, minimizes errors, and provides clear visibility into payment data. Achieve operational efficiency with seamless reconciliation. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/reconciliation).
-
-#### Cost Observability
-
-Gain full transparency into payment costs with detailed analytics and insights. Track processor fees, interchange rates, and other expenses to identify savings opportunities. Optimize your payment strategy with actionable data on cost metrics. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/ai-powered-cost-observability)
-
-#### Alternative Payment Methods
-
-Expand your reach by offering popular alternative payment methods tailored to local markets. This module enables seamless integration of digital wallets, BNPL, and other options. Fulfill diverse customer preferences and drive higher conversion rates. [Read more.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/enable-alternate-payment-method-widgets)
+With Hyperswitch, you get the best of both worlds—the control and security of an enterprise-grade platform, with the agility and transparency of open source. Whether you’re optimizing cost, expanding into new markets, or reducing vendor reliance, HyperSwitch puts you in the driver’s seat.
 
 And more coming soon ...
 
-\
+{% content-ref url="roadmap-q1-2025/" %}
+[roadmap-q1-2025](roadmap-q1-2025/)
+{% endcontent-ref %}
