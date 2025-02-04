@@ -8,7 +8,7 @@ Revenue Recovery module of Hyperswitch is designed to act as a failsafe for recu
 
 ### **Why is Revenue Recovery Important?**
 
-For subscription-based businesses, involuntary churn from failed recurring payments can significantly impact revenue. Payment failures may result from insufficient funds, fraud checks, or issuer restrictions. A simple dunning setup is not effective in retrieving these failed payments. Revenue recovery’s Intelligent retry engine analyzes 30+ transaction parameters to find best retry strategy to recover the given payment.
+For subscription-based businesses, involuntary churn from failed recurring payments can significantly impact revenue. Payment failures may result from insufficient funds, fraud checks, or issuer restrictions. A simple dunning setup is not effective in retrieving these failed payments. Revenue recovery’s Intelligent retry engine analyzes 20+ transaction parameters to find best retry strategy to recover the given payment.
 
 ### Benefits for SaaS Businesses
 
