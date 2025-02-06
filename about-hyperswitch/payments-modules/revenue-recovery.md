@@ -26,7 +26,7 @@ For subscription-based businesses, involuntary churn from failed recurring payme
 2. **Recovery in action**\
    Once the setup is complete, Revenue Recovery automatically begins monitoring transactions via webhook. When a failed transaction is detected, the system evaluates over 20 parameters to intelligently schedule a retry, aiming to recover the payment. These transactions are then recorded back into the subscription platform to avoid subscription cancellations.
 
-<figure><img src="../../../.gitbook/assets/Passive churn - Frame 6.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Passive churn - Frame 6.jpg" alt=""><figcaption></figcaption></figure>
 
 ### Key Features
 
@@ -39,6 +39,6 @@ For subscription-based businesses, involuntary churn from failed recurring payme
   * Enhances recovery rates without disrupting current dunning setups.
   * Supports integration with billing platforms for automation of payment recovery.
 
-{% content-ref url="../../merchant-controls/" %}
-[merchant-controls](../../merchant-controls/)
+{% content-ref url="../../explore-hyperswitch/merchant-controls/" %}
+[merchant-controls](../../explore-hyperswitch/merchant-controls/)
 {% endcontent-ref %}

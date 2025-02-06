@@ -70,7 +70,7 @@ Hyperswitch offers a robust, scalable, and transparent platform to meet your pay
 * <mark style="color:blue;">Adaptability</mark>: Adjust to market changes and new regulations with ease, meeting compliance standards across the globe.
 * <mark style="color:blue;">Transparency</mark>: Access real-time data, dashboards, alerts, and insights to effectively manage payments.
 
-{% content-ref url="roadmap-q1-2025/" %}
-[roadmap-q1-2025](roadmap-q1-2025/)
+{% content-ref url="../about-hyperswitch/roadmap-q1-2025/" %}
+[roadmap-q1-2025](../about-hyperswitch/roadmap-q1-2025/)
 {% endcontent-ref %}
 

@@ -2,7 +2,7 @@
 icon: brain-circuit
 ---
 
-# AI Powered Cost Observability
+# Cost Observability
 
 {% hint style="info" %}
 This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
@@ -32,6 +32,6 @@ HyperSense solves this problem by transforming unstructured payment fee data fro
 
 **Optimize**: Offers actionable insights designed to help businesses achieve maximum savings by improving interchange qualifications, reducing scheme fees, and minimizing penalties. These recommendations ensure proactive cost optimization insights.
 
-{% content-ref url="exporting-payments-data.md" %}
-[exporting-payments-data.md](exporting-payments-data.md)
+{% content-ref url="../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md" %}
+[exporting-payments-data.md](../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
 {% endcontent-ref %}

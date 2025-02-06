@@ -89,6 +89,6 @@ var unifiedCheckoutOptions = {
 
 ```
 
-{% content-ref url="../click-to-pay/" %}
-[click-to-pay](../click-to-pay/)
+{% content-ref url="../../../explore-hyperswitch/merchant-controls/click-to-pay/" %}
+[click-to-pay](../../../explore-hyperswitch/merchant-controls/click-to-pay/)
 {% endcontent-ref %}

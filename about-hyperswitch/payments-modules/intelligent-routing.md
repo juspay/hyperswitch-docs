@@ -14,7 +14,7 @@ Unlike static routing, which follows fixed rules, Intelligent Routing uses up-to
 
 This automation saves businesses from manually updating rules, adapting automatically to current conditions for smoother, more efficient payment processing.
 
-<figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
 ## Key Benefits:
 
@@ -24,6 +24,6 @@ This automation saves businesses from manually updating rules, adapting automati
 * **Real-Time Outage Handling:** If a processor is down, Intelligent Routing avoids it and reroutes payments to working processors. When the processor is stable again, it gradually resumes use.\
 
 
-{% content-ref url="../../merchant-controls/" %}
-[merchant-controls](../../merchant-controls/)
+{% content-ref url="../../explore-hyperswitch/merchant-controls/" %}
+[merchant-controls](../../explore-hyperswitch/merchant-controls/)
 {% endcontent-ref %}
