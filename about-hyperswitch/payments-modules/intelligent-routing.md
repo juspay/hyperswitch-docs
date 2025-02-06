@@ -4,10 +4,6 @@ icon: flux-capacitor
 
 # Intelligent Routing
 
-{% hint style="info" %}
-This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
-{% endhint %}
-
 Intelligent Routing is a smart payment routing system that helps businesses choose the best way to process payments by adjusting routing rules in real time.&#x20;
 
 Unlike static routing, which follows fixed rules, Intelligent Routing uses up-to-the-minute data—such as success rates, past transaction patterns, and processor issues. By combining past data with real-time insights, it picks the best processor for each payment.
