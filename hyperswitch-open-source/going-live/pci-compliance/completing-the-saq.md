@@ -1,4 +1,8 @@
-# 🗒️ Completing the SAQ
+---
+icon: clipboard-question
+---
+
+# Completing the SAQ
 
 {% hint style="warning" %}
 There are multiple [variants of SAQs](https://listings.pcisecuritystandards.org/documents/Understanding_SAQs_PCI_DSS_v3.pdf) applicable for Merchants willing to be PCI compliant. This document explains compliance to SAQ D only.

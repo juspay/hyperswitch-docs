@@ -1,8 +1,9 @@
 ---
 description: It's no rocket science
+icon: user-police-tie
 ---
 
-# 🏛 PCI compliance
+# PCI compliance
 
 {% hint style="info" %}
 The complexity around PCI compliance is often exaggerated, creating closed systems and walled gardens. This section aims to simplify the process of obtaining PCI compliance and includes a project tracker, documentation templates & automation scripts

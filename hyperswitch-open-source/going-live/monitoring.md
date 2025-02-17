@@ -1,8 +1,9 @@
 ---
 description: Visibility and control over your application
+icon: eyes
 ---
 
-# 👀 Monitoring
+# Monitoring
 
 {% hint style="info" %}
 In this chapter, you will learn to setup logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
