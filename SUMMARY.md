@@ -220,15 +220,15 @@
   * [Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
 * [Testing](hyperswitch-open-source/testing/README.md)
-  * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
+  * [Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
 * [Going live](hyperswitch-open-source/going-live/README.md)
-  * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)
-  * [🏛️ PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
-    * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
-    * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-  * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
-  * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
-  * [🗄️ On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
+  * [Monitoring](hyperswitch-open-source/going-live/monitoring.md)
+  * [PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
+    * [Get started](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
+    * [Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
+  * [Data Security](hyperswitch-open-source/going-live/security.md)
+  * [Updates](hyperswitch-open-source/going-live/updates.md)
+  * [On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
 
 ## Learn more
 

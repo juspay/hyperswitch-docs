@@ -2,9 +2,10 @@
 description: >-
   Test payments through CLI version of Postman, Newman which resides in a Rust
   wrapper called as Rustman
+icon: stethoscope
 ---
 
-# 🩺 Test payments through Newman wrapped in Rust
+# Test payments through Newman wrapped in Rust
 
 ### Newman
 
@@ -14,7 +15,7 @@ This Newman fork has built-in support exporting and importing a postman collecti
 
 <figure><img src="../../.gitbook/assets/image (147).png" alt="" width="375"><figcaption><p>The main feature of the newman fork, directory support</p></figcaption></figure>
 
-To see the features that the fork of `newman` supports, click [_**here**_](https://github.com/knutties/newman/blob/feature/newman-dir/DIR\_COMMANDS.md)
+To see the features that the fork of `newman` supports, click [_**here**_](https://github.com/knutties/newman/blob/feature/newman-dir/DIR_COMMANDS.md)
 
 ### Test Utils Usage
 

@@ -4,10 +4,6 @@ icon: brain-circuit
 
 # Cost Observability
 
-{% hint style="info" %}
-This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
-{% endhint %}
-
 Enterprises often face challenges and find difficulty in understanding and managing their payment processing costs, due to complexity, variability of the underlying fee structures and the entities involved. These fees typically consist of:
 
 **Interchange Fees**: Paid to the customer bank for processing a card-based transaction. These fees vary based on factors such as card type, transaction type, region and certain qualification criteria defined by card networks.

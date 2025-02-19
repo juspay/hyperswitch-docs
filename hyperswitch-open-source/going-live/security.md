@@ -1,8 +1,9 @@
 ---
 description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+icon: lock-keyhole
 ---
 
-# 🔐 Data Security
+# Data Security
 
 {% hint style="info" %}
 In this chapter, you will learn about the security principles employed in the design on the Hyperswitch application

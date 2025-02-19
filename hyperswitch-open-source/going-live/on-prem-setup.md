@@ -2,9 +2,10 @@
 description: >-
   Follow the below guidelines for going live with Hyperswitch on K8s in your own
   data center
+icon: drone
 ---
 
-# 🗄️ On-Prem Setup
+# On-Prem Setup
 
 {% hint style="info" %}
 In this chapter, you will learn about  the various best practices to be followed while deploying Hyperswitch on your own on-premise k8s cluster. This will help secure your system and meet the PCI compliance standards
