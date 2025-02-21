@@ -15,7 +15,7 @@ window.addEventListener("message", (ev) => {
   });
 ```
 
-## Listen to Payment Methods Info event
+## Listen to Payment Method event
 
 Merchants can listen to the Payment Method Info event to receive real-time updates when a customer selects or changes their payment method. This event provides essential details about the selected payment method, allowing merchants to implement custom checks, validations, or UI updates based on the received data.
 
@@ -26,9 +26,9 @@ For card payments, the event will include additional details such as:
 ```javascript
 // CheckoutForm.js
 window.addEventListener("message", (ev) => {
-    // Collecting Payment Method Info
-    if (ev.data.paymentMethodInfo) {
-      console.log("Payment method info => ", ev.data.paymentMethodInfo);
+    // Collecting Expiry Date
+    if (ev.data.expiryDate) {
+      console.log("Expiry date => ", ev.data.expiryDate);
     }
   });
 ```

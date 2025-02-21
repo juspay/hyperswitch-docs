@@ -1,6 +1,6 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
 icon: lock-keyhole
+description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
 ---
 
 # Data Security
@@ -17,7 +17,7 @@ The below sections highlight how Hyperswitch handles sensitive data such as mast
 
 The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
-<figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
 ### 1. Accepting Card Data
 
@@ -50,7 +50,7 @@ The application places a high priority on safeguarding sensitive information tie
 
 During transmission, data remains masked and never gets permanently stored on the local system, ensuring added security.
 
-<figure><img src="../../.gitbook/assets/system-Page-2 (2).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/system-Page-2 (2).jpg" alt=""><figcaption></figcaption></figure>
 
 ### Key Management System (KMS) Encryption
 

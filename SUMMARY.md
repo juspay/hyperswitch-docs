@@ -221,14 +221,18 @@
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
 * [Testing](hyperswitch-open-source/testing/README.md)
   * [Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
-* [Going live](hyperswitch-open-source/going-live/README.md)
-  * [Monitoring](hyperswitch-open-source/going-live/monitoring.md)
-  * [PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
-    * [Get started](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
-    * [Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-  * [Data Security](hyperswitch-open-source/going-live/security.md)
-  * [Updates](hyperswitch-open-source/going-live/updates.md)
-  * [On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
+
+## Check list for Production
+
+* [Going live](check-list-for-production/going-live/README.md)
+  * [For SaaS Setup](check-list-for-production/going-live/for-saas-setup.md)
+  * [For On-Prem Setup](check-list-for-production/going-live/for-on-prem-setup/README.md)
+    * [Monitoring](check-list-for-production/going-live/for-on-prem-setup/monitoring.md)
+    * [PCI compliance](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/README.md)
+      * [Get started](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science.md)
+      * [Completing the SAQ](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/completing-the-saq.md)
+    * [Data Security](check-list-for-production/going-live/for-on-prem-setup/security.md)
+    * [Updates](check-list-for-production/going-live/for-on-prem-setup/updates.md)
 
 ## Learn more
 

@@ -1,6 +1,6 @@
 ---
-description: Make your first payment and refund through Hyperswitch
 icon: money-bills
+description: Make your first payment and refund through Hyperswitch
 ---
 
 # Test a payment
@@ -70,6 +70,6 @@ The app server is more powerful than just processing the payments. You can test 
 
 ## Next step:
 
-{% content-ref url="../going-live/" %}
-[going-live](../going-live/)
+{% content-ref url="../../check-list-for-production/going-live/" %}
+[going-live](../../check-list-for-production/going-live/)
 {% endcontent-ref %}
