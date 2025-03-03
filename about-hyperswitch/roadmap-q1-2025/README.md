@@ -13,12 +13,12 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ### Recap of Q4 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar
-* Smart retries extended to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
+* [Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar](https://docs.hyperswitch.io/explore-hyperswitch/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets)
+* [Smart retries extended to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-retries)
 * Implementation of MPAN (merchant tokens) flow for Applepay recurring payments
-* Enablement of guest checkout flow with Click to Pay
-* Pass through Split payments through Stripe Connect and Adyen Platforms
-* New connector and payment method integrations
+* [Enablement of guest checkout flow with Click to Pay](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/click-to-pay#easier-and-customizable-integration)
+* [Pass through Split payments through Stripe Connect and Adyen Platforms](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/split-payments)
+* [New connector and payment method integrations](https://hyperswitch.io/pm-list)
   * Nexixpay (Cards)
   * Fiuu (Duitnow QR, Apple Pay, Google Pay)
   * Cybersource (Paze Wallet, Samsung Pay)
@@ -32,7 +32,7 @@ Before the beginning of every quarter we come together to develop the next roadm
   * Deutsche Bank(Cards 3DS)
 * Data reporting at an organization, merchant and profile level for easier reconciliation
 * Enhancements in analytics module for Refunds, Disputes and Smart Retries
-* Support for migration of Network Tokens for business continuity
+* [Support for migration of Network Tokens for business continuity](https://docs.hyperswitch.io/explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch)
 
 ### Core Values <a href="#core-values" id="core-values"></a>
 
