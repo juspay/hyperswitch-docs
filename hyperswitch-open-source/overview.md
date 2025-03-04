@@ -1,12 +1,12 @@
 ---
 icon: screwdriver-wrench
 description: The complete guide to setting up & managing your own payments switch
-cover: ../.gitbook/assets/Frame.png
-coverY: -1.5791666666666666
+cover: ../.gitbook/assets/Hero visual V6 (2).png
+coverY: 0
 layout:
   cover:
     visible: true
-    size: full
+    size: hero
   title:
     visible: true
   description:
