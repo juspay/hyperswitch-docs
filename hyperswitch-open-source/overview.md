@@ -20,33 +20,19 @@ layout:
 
 # Overview
 
-{% hint style="info" %}
-After going through this guide, you should be able to:
+At Juspay, we believe payment infrastructure should be transparent, adaptable, and under merchants' control—not confined by vendor restrictions. That's why we've made the bold move to open-source our Payment Orchestrator.​
 
-* Run Hyperswitch locally - Set up Hyperswitch on your local system & make a test payment
-* Deploy Hyperswitch on AWS - Create a production-ready setup on cloud & make a test payment
-* Go live - Go live with you own payments setup
-{% endhint %}
+This modular, composable platform allows you to deploy on-premise for full access or select only the components you need.&#x20;
 
-This guide is designed for people with some coding experience, who want to learn about Payments Switches and deploy Hyperswitch in their preferred mode. You will then be able to make payments via Hyperswitch and try its different components.
+To run Hyperswitch locally, follow our Docker setup guide. Alternatively, explore our cloud deployment guides for additional options. ​
 
-## **Running Payments yourself**
+## Local Setup
 
-Hyperswitch allows you to deploy and run your own payments stack. We offer support in terms answering queries, maintenance and feature enhancements.
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Unified Local Setup using Docker</strong></mark></td><td>Simplified local setup of all components, using a single command with the help of docker.</td><td></td><td><a href="local-setup-guide/unified-local-setup-using-docker.md">unified-local-setup-using-docker.md</a></td><td><a href="../.gitbook/assets/HS x Docker.png">HS x Docker.png</a></td></tr><tr><td><mark style="color:blue;"><strong>Local Setup of Individual Components</strong></mark></td><td>Customised local setup to fulfil different use-cases.</td><td></td><td><a href="local-setup-guide/local-setup-using-individual-components/">local-setup-using-individual-components</a></td><td><a href="../.gitbook/assets/HS + Components (3).png">HS + Components (3).png</a></td></tr></tbody></table>
 
-Within 5 minutes, you should be able to deploy Hyperswitch in your local machine and can run payments through any payment provider of your choice. You'll be equipped to run payments for your own pet project, or a D2C website, or as an internship project, or just to learn Payments
+## Cloud Setup
 
-## Components&#x20;
-
-Hyperswitch has three components -&#x20;
-
-* **App Server -** The core payments engine responsible for managing payment flows, payment unification and smart routing &#x20;
-* **Web Client (SDK) -** An inclusive, consistent and blended payment experience optimized for the best payment conversions
-* **Control center -** A dashboard for payment analytics and operations, managing payment processors or payment methods and configuring payment routing rules.
-
-## Setup Options
-
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Run Hyperswitch locally</strong></mark></td><td>Run the app server, control center and web client locally on your machine</td><td></td><td><a href="local-setup-guide/">local-setup-guide</a></td><td><a href="../.gitbook/assets/HS x Kubernates (1).png">HS x Kubernates (1).png</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/HS x AWS.png">HS x AWS.png</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on your K8s setup using our Helm charts</td><td></td><td><a href="deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td><td><a href="../.gitbook/assets/HS x Kubernates.png">HS x Kubernates.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components.</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/HS x AWS.png">HS x AWS.png</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on GCP or Azure using our Helm charts.</td><td></td><td><a href="deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td><td><a href="../.gitbook/assets/HS x Kubernates.png">HS x Kubernates.png</a></td></tr></tbody></table>
 
 {% hint style="success" %}
 Want to try without deploying? Use our dashboard on [sandbox](https://app.hyperswitch.io/).

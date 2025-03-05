@@ -1,8 +1,5 @@
 ---
 icon: diamonds-4
-description: >-
-  This guide will walk you through the process of setting up and running all the
-  components of Hyperswitch individually on the local setup.
 ---
 
 # Local Setup using Individual Components
@@ -17,5 +14,5 @@ Hyperswitch has three components, and all three components have a very detailed 
 
 ### Setup Guides
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Hyperswitch Backend</strong></mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>SDK (Frontend)</strong></mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Control Center</strong></mark></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Hyperswitch Backend</strong></mark></td><td></td><td></td><td><a href="set-up-hyperswitch-backend.md">set-up-hyperswitch-backend.md</a></td></tr><tr><td><mark style="color:blue;"><strong>SDK (Frontend)</strong></mark></td><td></td><td></td><td><a href="set-up-hyperswitch-sdk-frontend.md">set-up-hyperswitch-sdk-frontend.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Control Center</strong></mark></td><td></td><td></td><td><a href="set-up-hyperswitch-control-center.md">set-up-hyperswitch-control-center.md</a></td></tr></tbody></table>
 
