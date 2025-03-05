@@ -1,6 +1,5 @@
 ---
 icon: screwdriver-wrench
-description: The complete guide to setting up & managing your own payments switch
 cover: ../.gitbook/assets/Hero visual V6 (2).png
 coverY: 0
 layout:
@@ -47,4 +46,12 @@ Hyperswitch has three components -&#x20;
 
 ## Setup Options
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Run Hyperswitch locally</strong></td><td>Run the app server, control center and web client locally on your machine</td><td></td><td><a href="local-setup-guide/">local-setup-guide</a></td><td><a href="../.gitbook/assets/HS x Kubernates (1).png">HS x Kubernates (1).png</a></td></tr><tr><td><strong>Deploy Hyperswitch on AWS</strong></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/HS x AWS.png">HS x AWS.png</a></td></tr><tr><td><strong>Deploy Hyperswitch on Kubernetes</strong></td><td>Install Hyperswitch on your K8s setup using our Helm charts</td><td></td><td><a href="deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td><td><a href="../.gitbook/assets/HS x Kubernates.png">HS x Kubernates.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Run Hyperswitch locally</strong></mark></td><td>Run the app server, control center and web client locally on your machine</td><td></td><td><a href="local-setup-guide/">local-setup-guide</a></td><td><a href="../.gitbook/assets/HS x Kubernates (1).png">HS x Kubernates (1).png</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components</td><td></td><td><a href="deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td><a href="../.gitbook/assets/HS x AWS.png">HS x AWS.png</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on your K8s setup using our Helm charts</td><td></td><td><a href="deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td><td><a href="../.gitbook/assets/HS x Kubernates.png">HS x Kubernates.png</a></td></tr></tbody></table>
+
+{% hint style="success" %}
+Want to try without deploying? Use our dashboard on [sandbox](https://app.hyperswitch.io/).
+{% endhint %}
+
+### Learning Resources
+
+In case you are completely new to payments - You can comeback to setup after reading the [Payment 101 Blog](https://github.com/juspay/hyperswitch/wiki/Payments-101-for-a-Developer), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
