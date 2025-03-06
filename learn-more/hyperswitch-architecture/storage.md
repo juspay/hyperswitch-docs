@@ -1,12 +1,4 @@
----
-description: For low latency data transfers and for backups
----
-
 # Storage
-
-{% hint style="info" %}
-In this section, we will cover the different storages involved in the payment orchestration with Hyperswitch.
-{% endhint %}
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.
 
@@ -22,4 +14,6 @@ Since Payment data should never be lost, the data is persisted in normal databas
 
 ## Drainer
 
-The Payment related events are written to a queue (like kafka) and the drainers take the events and populate/update the persistent storage in near realtime. This allows hyperswitch to handle cache failures and provide near time view of payments data to users.
+The Payment related events are written to a queue (like kafka) and the drainer takes the events and populate/update the persistent storage in near realtime. This allows hyperswitch to handle traffic at scale and not bottleneck the database.
+
+\

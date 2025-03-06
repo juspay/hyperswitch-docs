@@ -1,12 +1,4 @@
----
-description: Lightning fast with a near-invisible presence
----
-
 # A Payments Switch with virtually zero overhead
-
-{% hint style="info" %}
-In this section, we will learn how hyperswitch provides lightning fast payments for your customers
-{% endhint %}
 
 When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.&#x20;
 
