@@ -1,5 +1,8 @@
 ---
 icon: building-columns
+description: >-
+  Create your Hyperswitch account and add a payment provider via the control
+  center
 ---
 
 # Using Hyperswitch Control Center
