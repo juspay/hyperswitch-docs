@@ -1,25 +1,21 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider via the control
-  center
 icon: building-columns
 ---
 
-# Using Hyperswitch control center
-
-{% hint style="info" %}
-Here, you will be creating a Hyperswitch account and connecting your payment processor via the Hyperswitch control center
-{% endhint %}
+# Using Hyperswitch Control Center
 
 ## Video <a href="#user-content-set-up-your-merchant-account" id="user-content-set-up-your-merchant-account"></a>
 
-***
-
 {% embed url="https://youtu.be/6SpQJu1celA" %}
 
-## Getting started with the dashboard - Login / Register
+## Getting started - Login / Register
 
-During the local setup, a user has been configured automatically for you. You can use username: admin, password: admin to access the dashboard
+During the local setup, a user has been configured automatically for you. You can use following credentials to access the dashboard.
+
+```
+username: admin
+password: admin 
+```
 
 Alternatively, on the landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.
 
@@ -69,9 +65,9 @@ By default, a priority-based routing based on the processor created time (first 
 Currently, you can configure two types of routing with more on the way:
 
 1. Volume based routing: As the name suggests, this routing is based on the volume provided. You can assign percentage volumes that needs to be processed with the connected processors and Hyperswitch will route in a way to ensure that the volume distribution is maintained
-2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment\_method, card\_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails
+2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment\_method, card\_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails.
 
-## Next step
+## Next step:
 
 {% content-ref url="test-a-payment.md" %}
 [test-a-payment.md](test-a-payment.md)

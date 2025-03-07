@@ -5,10 +5,6 @@ description: Understand the flow of a transaction through Hyperswitch
 
 # Payment flows
 
-{% hint style="info" %}
-This chapter will cover the payment flows available with Hyperswitch. Please reach out to us to learn more about the payment flows supported!
-{% endhint %}
-
 ## [Payments 101](https://hyperswitch.io/blogs/payments-101-for-a-developer)
 
 If you're complete beginner to Digital Payments, take a look at this [Payments 101 ](https://hyperswitch.io/blogs/payments-101-for-a-developer)blog to get familiar with terminologies.&#x20;

@@ -219,7 +219,7 @@
   * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
   * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
 * [Account setup](hyperswitch-open-source/account-setup/README.md)
-  * [Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
+  * [Using Hyperswitch Control Center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
   * [Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
