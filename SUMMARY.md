@@ -196,13 +196,13 @@
 
 ## Hyperswitch open source
 
-* [Overview](hyperswitch-open-source/overview.md)
-* [Local Setup Guide](hyperswitch-open-source/local-setup-guide/README.md)
-  * [Unified Local Setup using Docker](hyperswitch-open-source/local-setup-guide/unified-local-setup-using-docker.md)
-  * [Local Setup using Individual Components](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components/README.md)
-    * [Set up Hyperswitch Backend](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components/set-up-hyperswitch-backend.md)
-    * [Set up Hyperswitch SDK (Frontend)](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
-    * [Set up Hyperswitch Control Center](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
+* [Overview](hyperswitch-open-source/overview/README.md)
+  * [Unified Local Setup using Docker](hyperswitch-open-source/overview/unified-local-setup-using-docker.md)
+  * [Local Setup using Individual Components](hyperswitch-open-source/overview/local-setup-using-individual-components/README.md)
+    * [Set up Hyperswitch Backend](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-backend.md)
+    * [Set up Hyperswitch SDK (Frontend)](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
+    * [Set up Hyperswitch Control Center](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
+* [Local Setup Guide](hyperswitch-open-source/local-setup-guide.md)
 * [Deploy on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
   * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)

@@ -11,7 +11,7 @@ Here, you'll be making a payment using your Hyperswitch setup, via your preferre
 
 ## Test on web client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-Once you have successfully run the [control centre](../local-setup-guide/), you should be able to test the payments.&#x20;
+Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.&#x20;
 
 {% hint style="warning" %}
 [Account setup ](./)is a pre-requisite before you can test the payments.
