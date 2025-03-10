@@ -481,26 +481,22 @@ The `readOnly` property puts the SDK into read-only mode, disabling all interact
 </strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />;
 </code></pre>
 
-### Custom Surcharge Message
+### Show Short Surcharge Message
 
-The `customSurchargeMessage` property allows merchants to display a custom message when a surcharge is applied, instead of the default message provided by the SDK.
+The `showShortSurchargeMessage` property allows merchants to display a short message when a surcharge is applied, instead of the default message provided by the SDK.
 
-{% hint style="info" %}
-To include the surcharge amount and currency dynamically, merchants must use the `{{amountAndCurrency}}` placeholder within their message.
+{% hint style="success" %}
+The short message format will be: **`Fee: {Currency} {Amount}`**
 {% endhint %}
 
 ```javascript
 var paymentElementOptions = {
   ...,
-  customSurchargeMessage: "A surcharge of {{amountAndCurrency}} applies to this transaction."
+  showShortSurchargeMessage: true, // default - false
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
-
-{% hint style="warning" %}
-Locale or language support for the message should be handled as needed.
-{% endhint %}
 
 ## Next step:
 
