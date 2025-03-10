@@ -6,7 +6,7 @@ icon: badge-check
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
-## **Setting up with Docker**
+## Setup using Docker
 
 If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
 
@@ -34,9 +34,11 @@ curl --head --request GET 'http://localhost:8080/health'
 
 The expected response here is `200 OK` status code. This indicates that the server and all of its dependent services such as the database and Redis are functioning correctly.
 
-**Access the Control Centre in your browser at** [**http://localhost:9000**](http://localhost:9000/)**.**
+**Access the Control Centre in your browser at** [**http://localhost:9000**](http://localhost:9000/)
 
-In the next chapter, we'll **run payments** through your local Hyperswitch setup by setting up the necessary accounts, API credentials and try out payments and refunds.
+{% hint style="warning" %}
+If you face any issues during setup, please feel free to post in the #dev-support channel in our [Slack community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw), and our team will respond as soon as possible.
+{% endhint %}
 
 If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
 
