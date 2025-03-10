@@ -1,15 +1,8 @@
 ---
-description: >-
-  This guide will walk you through the process of setting up and running the app
-  server and control center on your local machine using Docker.
 icon: badge-check
 ---
 
 # Unified Local Setup using Docker
-
-{% hint style="info" %}
-Let's hit the ground running – within five minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
-{% endhint %}
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
