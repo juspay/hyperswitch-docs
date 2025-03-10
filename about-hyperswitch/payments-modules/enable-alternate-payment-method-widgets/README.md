@@ -2,7 +2,7 @@
 icon: bolt-lightning
 ---
 
-# Enable Alternate Payment Method Widgets
+# Alternate Payment Method Widgets
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
 
@@ -12,19 +12,20 @@ Let us understand with an example-
 
 In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FHvba2UHKd3RMuF95EYEA%2FPayment%20Flow.png?alt=media&#x26;token=1645cd83-0e8a-4e7a-8eaf-a30af1510383" alt="" width="563"><figcaption><p>Checkout page only has Cards and PayPal offered by their current PSP</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
 
 But, if the merchant decides to enable more alternate payment methods (APMs), the problems can be multifold:
 
 1. **Availability** - Current PSP may not support the desired alternate payment method requiring the merchant to do a direct integration or use a different PSP.
 2. **Complex to integrate** - In case a PSP supports a desired payment method, integrating it into the existing checkout is tedious and often requires high engineering effort. Hyperwidets offers a low code solution for such a scenario where a merchant can not only choose to have their preferred payment method through a wide range of connectors, but also integrate it with minimal engineering effort.
-3. **Complex to enhance** - Tradition PSPs and Middle layers ((Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK)) offer separate integration for every new APM, requiring ongoing engineering effort for enhancements. Hyperwidets offers a way for merchants to extend APMs from just “Apple Pay” to “Apple Pay + Google Pay” to “Apple Pay + Google Pay + Amazon Pay + 10 more” with the same integration and no additional engineering effort.
-   1. Hyperwidget offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
+3. **Complex to enhance** - Traditional PSPs and Middle layers ((Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK)) offer separate integration for every new APM, requiring ongoing engineering effort for enhancements.&#x20;
+   * Hyperwidets offers a way for merchants to extend APMs from just “Apple Pay” to “Apple Pay + Google Pay” to “Apple Pay + Google Pay + Amazon Pay + 10 more” with the same integration and no additional engineering effort.
+   * Hyperwidgets also offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
 4. **Integration overhead to enable more APMs on the same PSP**: Some PSPs require the merchant to do some additional integration steps to enable an APM. This can be time consuming and require significant tech bandwidth from the merchant. Examples can be when certain APMs are only available on new API versions of the PSP, certification from Apple/ Google is required to go-live for some wallet flows, adding a frontend library/ javascript to add certain APMs, and so on.
 
-in the image below you can find a checkout page with more alternate payment methods via Hyperwidget.
+in the image below you can find a checkout page with more alternate payment methods via Hyperwidgets.
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FiLlgOXAtqI31c2nQvRzG%2FPayment%20Flow-1.png?alt=media&#x26;token=7e8a1266-ca69-432d-8909-e5a07fd7cd33" alt="" width="563"><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
 
 **Additional example:**
 
