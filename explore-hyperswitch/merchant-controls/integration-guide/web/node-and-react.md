@@ -2,7 +2,7 @@
 
 **Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
+## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
 
 ### 1. Setup the server
 
