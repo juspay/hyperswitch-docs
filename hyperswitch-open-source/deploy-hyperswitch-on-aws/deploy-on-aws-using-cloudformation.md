@@ -1,17 +1,11 @@
 ---
-icon: aws
 description: >-
   Use our CDK script to deploy the entire Hyperswitch application inside your
   stack
+icon: aws
 ---
 
 # Deploy on AWS using CloudFormation
-
-{% hint style="info" %}
-In this chapter, you will deploy our full-stack application on AWS EKS. This will deploy our app server, web client and control center
-{% endhint %}
-
-***
 
 ## Video
 
@@ -42,7 +36,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 | Control Center         | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 | Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 
-
+### Architecture Diagram
 
 <figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
 
@@ -51,7 +45,7 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 ### **Prerequisites**
 
 * `git` installed on your local machine
-* node version 18
+* node version 18+
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 ### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
@@ -103,7 +97,7 @@ Once the script is run you will have to provide the following as inputs
 After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal
 
 {% hint style="warning" %}
-Make sure to save the passwords you provide while running the script
+Make sure to save the passwords you provide while running the script.
 {% endhint %}
 
 ### Output
