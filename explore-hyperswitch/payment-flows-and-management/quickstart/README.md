@@ -6,19 +6,22 @@ icon: bolt
 
 We at Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.&#x20;
 
-This guide provides a step-by-step walkthrough for getting started, configuring payment processors, and integrating payment capabilities into your application.
-
-## Getting Started: The Steps
+## Get Started
 
 ### **1. Get your Hyperswitch API key**
 
-* **Sign up for a sandbox account**: If you haven’t already, create a sandbox account via the [Hyperswitch signup page](https://app.hyperswitch.io/).
-* **Locate API key**: Access your API key from the **Settings** section in the Control Center.
+* **Sign up on Hyperswitch Control Centre**: If you haven’t already, create an account on the [Hyperswitch Control Centre](https://app.hyperswitch.io/).&#x20;
+* **Locate API key**: Access your API key from the **Settings > Developers** section in the Control Center.
 
 ### 2. Configure your payment processor
 
-* **Set up payment processor:** Navigate to the Connectors tab in the Hyperswitch Control Center to configure your preferred payment processor. You’ll need API credentials for the processor.
-* **Use the dummy processors:** If credentials are unavailable, you can configure the dummy processors, pre-built into the sandbox environment. These processors help simulate payment flows during integration and provide a risk-free testing environment.
+* **Set up payment processor:** Navigate to the Connectors tab in the Control Center to configure your preferred payment processor. You’ll need API credentials for the processor.
+
+{% hint style="success" %}
+**Use the dummy processors:** If credentials are unavailable, you can configure the dummy processors, pre-built into the Control Center.&#x20;
+
+These processors help simulate payment flows during integration and provide a risk-free testing environment.
+{% endhint %}
 
 ### 3. Integrate Hyperswitch
 
@@ -26,7 +29,7 @@ You will use both a server-side and a client-side component of Hyperswitch to co
 
 #### **Steps to Integrate Hyperswitch**
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
 
 1. **Initiate Payment on Server**:\
    Your server creates a payment request with the Hyperswitch server to obtain a `client_secret`.
