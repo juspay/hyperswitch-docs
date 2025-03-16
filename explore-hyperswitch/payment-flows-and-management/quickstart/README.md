@@ -29,7 +29,7 @@ You will use both a server-side and a client-side component of Hyperswitch to co
 
 #### **Steps to Integrate Hyperswitch**
 
-<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 1. **Initiate Payment on Server**:\
    Your server creates a payment request with the Hyperswitch server to obtain a `client_secret`.
