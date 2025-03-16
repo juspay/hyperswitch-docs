@@ -1,15 +1,10 @@
 ---
 icon: money-bills
-description: Make your first payment and refund through Hyperswitch
 ---
 
 # Test a payment
 
-{% hint style="info" %}
-Here, you'll be making a payment using your Hyperswitch setup, via your preferred payment provider.
-{% endhint %}
-
-## Test on web client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
+## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
 Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.&#x20;
 
@@ -17,7 +12,9 @@ Once you have successfully run the [control centre](../local-setup-guide.md), yo
 [Account setup ](./)is a pre-requisite before you can test the payments.
 {% endhint %}
 
-**Local:** Once you have got the Control Centre running (at [http://localhost:9000](http://localhost:9000/dashboard/home)) and have configured your payment processor via it. You can go to Home section in Control Centre, and you will find a "try it out" button (Highlighted with blue colour in the image below).
+There are three conditions in which you might want to make a test payment:
+
+**Local:** Once you have got the Control Centre running (at [http://localhost:9000](http://localhost:9000/dashboard/home)) and have configured your payment processor via it. You can go to Home section in Control Centre, and you will find a `"try it out"` button (Highlighted with blue colour in the image below).
 
 **Self Hosted Web App:** In case you have hosted the SDK and integrated it on your app, you can do a usual release of your app. Post successful deployment, you can test the payments on your app url.
 
@@ -44,8 +41,6 @@ Congrats! You have successfully tested an end-to-end payment with your own app s
 {% hint style="warning" %}
 In case you have integrated the web client on your app and want to test a payment, the payment status confirmation screen has to be handled by you. You will see that post payment confirmation.
 {% endhint %}
-
-The app server is more powerful than just processing the payments. You can test refunds, subscription payments and more using the app server.
 
 <details>
 
