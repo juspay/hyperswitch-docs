@@ -76,14 +76,14 @@ Hyperswitch Vault offers integration options tailored to different security and 
 
 #### **For Non-PCI Compliant Merchants**
 
-Quickly integrate the **secure Vault SDK**.
+Quickly integrate the **secure Vault SDK -** [**Learn how to**](vault-sdk-integration.md)
 
 * Collect card details without handling sensitive data.
 * Maintain **full PCI compliance** without additional certification.
 
 **For PCI Compliant Merchants**
 
-**Direct server-to-server integration** for greater control.
+**Direct server-to-server integration** for greater control - **-** [**Learn how to**](server-to-server-vault-tokenization.md)
 
 * Securely send card data from your **own infrastructure** while maintaining existing security workflows.
 
@@ -93,6 +93,6 @@ Quickly integrate the **secure Vault SDK**.
 * Enable **Network Tokenization** as needed.
 * Generate **single-use or multi-use tokens** based on payment flow requirements.
 
-{% content-ref url="intelligent-routing.md" %}
-[intelligent-routing.md](intelligent-routing.md)
+{% content-ref url="../intelligent-routing.md" %}
+[intelligent-routing.md](../intelligent-routing.md)
 {% endcontent-ref %}
