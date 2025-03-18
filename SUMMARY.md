@@ -119,7 +119,6 @@
     * [Smart Router for Payouts](explore-hyperswitch/payment-flows-and-management/payouts/route-your-payout-transactions-using-smart-router.md)
     * [Smart Retries in Payout](explore-hyperswitch/payment-flows-and-management/payouts/smart-retries-in-payout.md)
     * [Payout Links](explore-hyperswitch/payment-flows-and-management/payouts/payout-link.md)
-    * [Page 1](explore-hyperswitch/payment-flows-and-management/payouts/page-1.md)
   * [Smart Routing](explore-hyperswitch/payment-flows-and-management/smart-router/README.md)
     * [Rule Based Routing](explore-hyperswitch/payment-flows-and-management/smart-router/rule-based-routing.md)
     * [Volume Based Routing](explore-hyperswitch/payment-flows-and-management/smart-router/volume-based-routing.md)
