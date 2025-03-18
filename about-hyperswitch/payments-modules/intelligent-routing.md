@@ -38,13 +38,13 @@ To try success-based routing, which routes payments to processors with the highe
     * **none:** Disables success-based routing.
 
     ```bash
-    --location --request POST '{{base_url}}/account/{{merchant_id}}/business_profile/{{profile_id}}/dynamic_routing/success_based/toggle?enable=metrics' \
+    curl --location --request POST '{{base_url}}/account/{{merchant_id}}/business_profile/{{profile_id}}/dynamic_routing/success_based/toggle?enable=metrics' \
     --header 'api-key: {{api_key}}'
     ```
 2.  **Configure the volume of payments sent through intelligent-routing:**
 
     ```bash
-    --location --request POST '{{base_url}}/account/{{merchant_id}}/business_profile/{{profile_id}}/dynamic_routing/set_volume_split?split=100' \
+    curl --location --request POST '{{base_url}}/account/{{merchant_id}}/business_profile/{{profile_id}}/dynamic_routing/set_volume_split?split=100' \
     --header 'api-key: {{api_key}}'
     ```
 3. **Monitor performance:** You can check the `dynamic_routing_stats` table for entries to analyze the performance of your intelligent routing configuration. Key fields in the dynamic\_routing\_stats table:
