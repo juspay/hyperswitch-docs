@@ -48,20 +48,21 @@
        ```bash
        gcloud container clusters create hypers-cluster \
            --zone us-central1-a \
-           --num-nodes 3 \
-           --machine-type e2-standard-4
+           --num-nodes 1 \
+           --machine-type e2-standard-4    
        ```
 2. **Verify the Cluster**:
-   *   Fetch cluster credentials to allow `kubectl` to interact with it:
 
-       ```bash
-       gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE>
-       ```
-   *   Confirm the nodes are ready:
+*   Fetch cluster credentials to allow `kubectl` to interact with it:
 
-       ```bash
-       kubectl get nodes
-       ```
+    ```bash
+    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE>
+    ```
+*   Confirm the nodes are ready:
+
+    ```bash
+    kubectl get nodes
+    ```
 
 ## Part 2: Deploy Hyperswitch on Kubernetes Using Helm
 
