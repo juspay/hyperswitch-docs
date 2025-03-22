@@ -96,23 +96,25 @@
    *   Create a dedicated namespace for Hyperswitch:
 
        ```bash
-       kubectl create namespace hyperswitch
+       kubectl create namespace <namespace>
        ```
 
 #### Step 3: Install Hyperswitch
 
-1.  Install Hyperswitch services using Helm:
+1. Deploy Hyperswitch using Helm. Replace `<release-name>` with your desired release name and `<namespace>` with the namespace you created:
+
+```bash
+helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
+```
+
+2. Verify the Deployment:
+
+*   Check the status of all deployed pods:
 
     ```bash
-    helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
+    kubectl get pods -n <namespace>
     ```
-2. Verify the Deployment:
-   *   Check the status of all deployed pods:
-
-       ```bash
-       kubectl get pods -n hyperswitch
-       ```
-   * Ensure all pods are in the `Running` state.
+* Ensure all pods are in the `Running` state.
 
 {% hint style="success" %}
 That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
