@@ -5,15 +5,15 @@ description: >-
 icon: stethoscope
 ---
 
-# Test payments through Newman wrapped in Rust
+# Testing Payments
 
-### Newman
+### Test payments through Newman wrapped in Rust
 
 To begin with, a fork of Newman needs to be installed by executing `npm install -g 'https://github.com/knutties/newman.git#feature/newman-dir'`
 
 This Newman fork has built-in support exporting and importing a postman collection in the form directory unlike having a single large `.json` collection file.
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt="" width="375"><figcaption><p>The main feature of the newman fork, directory support</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (147).png" alt="" width="375"><figcaption><p>The main feature of the newman fork, directory support</p></figcaption></figure>
 
 To see the features that the fork of `newman` supports, click [_**here**_](https://github.com/knutties/newman/blob/feature/newman-dir/DIR_COMMANDS.md)
 
@@ -34,7 +34,7 @@ Required fields:
 * `--base-url` -- Base URL of the environment. `http://127.0.0.1:8080` / `http://localhost:8080` is the Base URL for running locally
 * `--connector-name` -- Name of the connector that you wish to run. Example: `adyen`, `shift4`, `stripe`
 
-Optional fields:
+#### Optional fields:
 
 * `--delay` -- To add a delay between requests in milliseconds.
   * Maximum delay is 4294967295 milliseconds or 4294967.295 seconds or 71616 minutes or 1193.6 hours or 49.733 days
@@ -49,7 +49,9 @@ Optional fields:
     * Example: `--header "key1:value1" --header "key2:value2"`
 * `--verbose` -- A boolean to print detailed logs (requests and responses)
 
-**Note:** Passing `--verbose` will also print the connector as well as admin API keys in the logs. So, make sure you don't push the commands with `--verbose` to any public repository.
+{% hint style="warning" %}
+Passing `--verbose` will also print the connector as well as admin API keys in the logs. So, make sure you don't push the commands with `--verbose` to any public repository.
+{% endhint %}
 
 #### Running tests
 
@@ -61,6 +63,10 @@ Optional fields:
     --folder "<folder_name_1>,<folder_name_2>,...<folder_name_n>" --verbose
     ```
 
-**Note**: You can omit `--package test_utils` at the time of running the above command since it is optional.
+{% hint style="warning" %}
+You can omit `--package test_utils` at the time of running the above command since it is optional.
+{% endhint %}
 
+{% hint style="warning" %}
 The command `cargo run --package test_utils --bin test_utils -- --connector-name=<connector_name> --base-url=<base_url> --admin-api-key=<admin_api_key>`  will generate newman commands on the go and execute the collection.
+{% endhint %}

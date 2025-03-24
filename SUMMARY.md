@@ -225,8 +225,10 @@
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
   * [Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
-* [Testing](hyperswitch-open-source/testing/README.md)
-  * [Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
+
+***
+
+* [Testing Payments](test-payments-through-newman-wrapped-in-rust.md)
 
 ## Check list for Production
 
