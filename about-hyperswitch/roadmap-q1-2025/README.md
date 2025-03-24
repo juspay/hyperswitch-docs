@@ -1,6 +1,6 @@
 ---
-icon: road
 description: Hyperswitch roadmap (Jan to Mar'25)
+icon: road
 ---
 
 # Roadmap - Q1 2025
@@ -70,60 +70,49 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 In Q1’25, Hyperswitch will be offering the following composable services as standalone modules on Hyperswitch SaaS version. This activity would be the major focus for the team and each of these modules address one or more of the above roadmap themes
 
-* 🟧 **Payment Methods Service (includes Vault):** Merchants will be able use the standalone Payment methods service to do various levels of tokenization \[PCI tokenization, Network tokenization, PSP tokenization - one-time/multi-use]. PCI compliant merchants will be able to leverage server-to-server flow for tokenization.
-* 🟧 **Reconciliation Service:** Reconciliation module will have an upgraded user experience; and allow FinOps teams to use the module independently without having to use Hyperswitch as the transaction processing technology
-* 🟧 **Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report
-* 🟧 **Churn Recovery Service:** For merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring transactions and retry those transactions that have failed
+* 🟧 **Payment Methods Service (includes Vault):** Merchants will be able use the standalone Payment methods service to do various levels of tokenization \[PCI tokenization, Network tokenization, PSP tokenization - one-time/multi-use]. PCI compliant merchants will be able to leverage server-to-server flow for tokenization. _(Larger-scope initiative extending into Q2)_
+* 🟧 **Reconciliation Service:** Reconciliation module will have an upgraded user experience; and allow FinOps teams to use the module independently without having to use Hyperswitch as the transaction processing technology _(Larger-scope initiative extending into Q2)_
+* 🟧 **Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report _(Larger-scope initiative extending into Q2)_
+* 🟧 **Churn Recovery Service:** For merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring transactions and retry those transactions that have failed _(Larger-scope initiative extending into Q2)_
 
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟧 New integrations
-  * Redsys
-  * Santander
-  * Banco de Brasil
-  * Caixa
-  * Bancoob
-  * Bradesco
-  * BBVA
-  * Inespay
-  * Amazon Pay
-  * 2Checkout
-  * FastSpring
-  * Xendit
-  * Digital Virgo integration for Direct Carrier Billing
-  * Deutsche Bank for card payments and payouts
-* 🟥 Scan Card Feature for MWeb
+* New integrations
+  * 🟩  Deutsche Bank for card payments
+  * 🟩 Redsys
+  * 🟩 Inespay
+  * 🟩 Xendit
+  * 🟧 Amazon Pay _(moved to Q2)_
+* 🟥 Scan Card Feature for MWeb _(moved to Q2)_
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
 * 🟧 **Intelligent Routing:** Intelligent Routing module tracks the auth rates of various processor in realtime at a granular level to select the most optimal processor to boost conversions&#x20;
-  * **Outages and acute failures:** Provides a failsafe system that proactively identifies incidents and holds off traffic to processors that are facing temporary downtimes or failures
-  * **Volume Commitments:** Helps select the appropriate PSP for getting volume tier benefits from the processor by routing sufficient payments volume to necessary processors in accordance with their SLA or contracts
-* **🟧 Churn Recovery Service:** For all merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring txns and retry only those transactions that have failed
-  * **Split retries -** Merchants will be able to split retries between their subscription engine and the Passive retry service
-  * **User Notifications outsourced -** Upon reaching the terminal state the Churn Recovery service will trigger notification for external subscription engine
-  * **Single PSP -** The Churn Recovery service will interact with only a single PSP for a transaction
-  * **Basic Retry logic -** The Churn Recovery service will have a very basic error code & region based logic to retry transactions
-* 🟧 Secure Card on File (SCOF) with Passkeys - For Mastercard cards, provide Biometric authentication to the customers&#x20;
-* 🟧 **One time tokenization:** During CIT payments, merchants will be able to do collect, validate and do one-time tokenization of cards & other PMs and use these one-time tokens later in the checkout flow once the customer confirms their purchase&#x20;
-* 🟧 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
-* 🟧 More payment authorization workflows - Estimated auth and Over-capture
+  * 🟥 **Outages and acute failures:** Provides a failsafe system that proactively identifies incidents and holds off traffic to processors that are facing temporary downtimes or failures _(Larger-scope initiative extending into Q2)_
+  * 🟥 **Volume Commitments:** Helps select the appropriate PSP for getting volume tier benefits from the processor by routing sufficient payments volume to necessary processors in accordance with their SLA or contracts _(Larger-scope initiative extending into Q2)_
+* **🟧 Churn Recovery Service:** For all merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring txns and retry only those transactions that have failed _(Larger-scope initiative extending into Q2)_
+  * 🟩 **Split retries -** Merchants will be able to split retries between their subscription engine and the Passive retry service
+  * 🟩 **Single PSP -** The Churn Recovery service will interact with only a single PSP for a transaction
+  * 🟩 **Basic Retry logic -** The Churn Recovery service will have a very basic error code & region based logic to retry transactions
+* 🟧 Secure Card on File (SCOF) with Passkeys - For Mastercard cards, provide Biometric authentication to the customers _(extending to Q2)_
+* 🟧 **One time tokenization:** During CIT payments, merchants will be able to do collect, validate and do one-time tokenization of cards & other PMs and use these one-time tokens later in the checkout flow once the customer confirms their purchase _(extending to Q2)_
+* 🟩 Smart retry enhancements using Clear PAN as fallback for Network Tokens/ Gateway tokens to improve auth rates
+* 🟩 More payment authorization workflows - Estimated auth and Over-capture
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* 🟥 PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US
+* **🟧** PINless Debit routing - enable cost savings through regulated/ unregulated transactions in US _(extending to Q2)_
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* **🟧 Revamped Recon module** to support self exploration with transaction source agnostic recon and 2-way or 3-way level capabilities
-* **🟧 Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report
-* 🟥 Split Payments through Hyperswitch’s Org-MID-Profile architecture&#x20;
-* 🟧 Data reporting on an organisation, merchant and profile level for easier reconciliation&#x20;
+* **🟧 Revamped Recon module** to support self exploration with transaction source agnostic recon and 2-way or 3-way level capabilities _(Larger-scope initiative extending into Q2)_
+* **🟧 Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report _(Larger-scope initiative extending into Q2)_
+* 🟩 Data reporting on an organisation, merchant and profile level for easier reconciliation
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟥 Enhancing Hyperswitch's self-deployment process to be even more seamless and self-serve, enabling merchants to deploy a fully compliant payments stack independently
-* 🟥 Revamped connector <> payment method matrix view
+* 🟧 Enhancing Hyperswitch's self-deployment process to be even more seamless and self-serve, enabling merchants to deploy a fully compliant payments stack independently _(Larger-scope initiative extending into Q2)_
+* 🟧 Revamped connector <> payment method matrix view _(extending to Q2)_
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
