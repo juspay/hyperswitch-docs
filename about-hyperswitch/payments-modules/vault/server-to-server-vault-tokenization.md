@@ -35,7 +35,54 @@ To implement server-to-server tokenization, you need:
 
 ### API Requests for Server to Server Tokenization
 
-#### 1. Create a Payment Method Token
+#### 1. Create a Customer
+
+* Endpoint: `POST /customers`
+* Purpose: Create a customer to enable storing their payment methods
+
+```bash
+curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
+--header 'Content-Type: application/json' \
+--header 'x-profile-id: <profile-id>' \
+--header 'api-key: <api_key>' \
+--data-raw '{   
+    "merchant_reference_id": "customer_1742551597",
+    "name": "John Doe",
+    "email": "guest@example.com",
+    "phone": "999999999",
+    "phone_country_code": "+65",
+    "description": "First customer",
+    "default_billing_address": {
+        "line1": "1467",
+        "line2": "Harrison Street",
+        "line3": "Harrison Street",
+        "city": "San Fransico",
+        "state": "California",
+        "zip": "94122",
+        "country": "US",
+        "first_name": "joseph",
+        "last_name": "Doe"
+    },
+    "default_shipping_address": {
+        "line1": "1467",
+        "line2": "Harrison Street",
+        "line3": "Harrison Street",
+        "city": "San Fransico",
+        "state": "California",
+        "zip": "94122",
+        "country": "US",
+        "first_name": "joseph",
+        "last_name": "Doe"
+    },
+    "metadata": {
+        "udf1": "value1",
+        "new_customer": "true",
+        "login_date": "2019-09-10T10:11:12Z"
+    }
+}'
+```
+
+#### 2. Create a Payment Method Token
 
 * Endpoint: `POST /payment_methods`
 * Purpose: Generate a token for a card
@@ -43,6 +90,7 @@ To implement server-to-server tokenization, you need:
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 --header 'Content-Type: application/json' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>' \
 --data '{
   "payment_method_type": "card",
@@ -91,6 +139,7 @@ Use the same endpoint to generate PSP tokens for a card by passing the following
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 --header 'Content-Type: application/json' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>' \
 --data '{
   "payment_method_type": "card",
@@ -143,6 +192,7 @@ Use the same endpoint to generate network tokens for a card by passing the follo
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 --header 'Content-Type: application/json' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>' \
 --data '{
   "payment_method_type": "card",
@@ -194,6 +244,7 @@ curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 
 ```bash
 curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>'
 ```
 
@@ -205,6 +256,7 @@ curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id
 ```bash
 curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}/update-saved-payment-method' \
 --header 'Content-Type: application/json' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>' \
 --data '{
   "payment_method_data": {
@@ -227,5 +279,6 @@ curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/pay
 
 ```bash
 curl --location --globoff --request DELETE 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \
+--header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api-key>'
 ```
