@@ -3,11 +3,7 @@ description: Deploy the Hyperswitch Card Vault on the cloud
 icon: vault
 ---
 
-# Deploy card vault
-
-{% hint style="info" %}
-This section aims at installing the Card vault and using it with the Hyperswitch application to make successful saved card payments
-{% endhint %}
+# Deploy Card Vault
 
 The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;
 
@@ -17,7 +13,7 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 ## How does it work?
 
-<figure><img src="../../../../.gitbook/assets/general-block-diagram.png" alt=""><figcaption><p>Locker usage flow</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).jpg" alt=""><figcaption></figcaption></figure>
 
 * The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
@@ -31,8 +27,8 @@ Master Key - AES generated key to that is encrypted/decrypted by the custodian k
 
 Custodian Keys - AES generated key that is used to encrypt and decrypt the master key. It broken into two keys (`key 1` and `key 2`) and available with two custodians to enhance security.
 
-<figure><img src="../../../../.gitbook/assets/locker-key-hierarchy.png" alt=""><figcaption><p>Key Hierarchy of Tartarus</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Setting up your Card Vault
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>

@@ -214,7 +214,7 @@
       * [Production ready deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment.md)
       * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
       * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
-    * [Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
+    * [Deploy Card Vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
       * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
 * [Deploy on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm/README.md)
