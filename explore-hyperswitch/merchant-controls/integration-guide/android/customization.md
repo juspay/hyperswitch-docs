@@ -14,7 +14,7 @@ Create a `PaymentSheet.Configuration` object with an `appearance` object in orde
 
 Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
 
-```js
+```kotlin
 val appearance = PaymentSheet.Appearance(
   typography = PaymentSheet.Typography(10.0f, R.font.MY_FONT)
 )

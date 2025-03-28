@@ -15,8 +15,8 @@ Use this guide to integrate `hyper` SDK to your Flutter app.&#x20;
 ## Requirements
 
 * Android 5.0 (API level 21) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1
-* [Gradle](https://gradle.org/releases/) 7.5.1+
+* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+* [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 * iOS 13.0 and above
 * CocoaPods
@@ -28,7 +28,7 @@ Use this guide to integrate `hyper` SDK to your Flutter app.&#x20;
 
 Install the package and import it in your code
 
-```js
+```sh
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
@@ -70,7 +70,7 @@ app.post("/create-payment", async (req, res) => {
 
 Add `flutter_hyperswitch` to your `pubspec.yaml` file
 
-```js
+```yaml
 dependencies:
   flutter_hyperswitch: ^version_number
 ```
@@ -80,6 +80,16 @@ Run the following command to fetch and install the dependencies.
 ```sh
 flutter pub get
 ```
+
+{% hint style="info" %}
+To apply plugins using Flutter, run the following command:
+
+```sh
+dart run flutter_hyperswitch:apply_plugins
+```
+
+This command configures the necessary Flutter plugins for your project using the `flutter_hyperswitch` package. Ensure you have the package installed and configured correctly in your project. If you encounter any issues, check the package documentation for more details.
+{% endhint %}
 
 ## 3. Complete the checkout on the client
 

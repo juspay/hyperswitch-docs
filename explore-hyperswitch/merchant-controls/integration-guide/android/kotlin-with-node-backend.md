@@ -16,9 +16,9 @@ Use this guide to integrate hyper SDK to your Android app. You can use this as a
 
 ## Requirements
 
-* Android 5.0 (API level 21) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1
-* [Gradle](https://gradle.org/releases/) 7.5.1+
+* Android 6.0 (API level 23) and above
+* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+* [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
@@ -27,7 +27,7 @@ Use this guide to integrate hyper SDK to your Android app. You can use this as a
 
 Install the package and import it in your code
 
-```js
+```sh
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
@@ -65,22 +65,36 @@ app.post("/create-payment", async (req, res) => {
 
 ## 2. Build checkout page on your app
 
-### 2.1 Add the Hyperswitch dependency
+### 2.1 Add the Buildscript Classpath
 
-To start integrating the Hyperswitch SDK, add the following dependency to the `dependencies` block of your `build.gradle` file:
+To start integrating the Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
 
-```groovy
-dependencies {
-    // Hyperswitch Android SDK
-    implementation 'io.hyperswitch:hyperswitch-sdk-android:+'
+<pre class="language-gradle"><code class="lang-gradle">buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.hyperswitch:hyperswitch-gradle-plugin:<a data-footnote-ref href="#user-content-fn-1">$latest_version</a>"
+    }
+}
+</code></pre>
+
+### 2.1 Add the Buildscript Classpath
+
+Add the following plugin to the `plugins` block of your app-level `build.gradle` file:
+
+```gradle
+plugins {
+    // Apply Hyperswitch Plugin
+    id 'io.hyperswitch.plugin'
 }
 ```
 
-### 2.2 Implement the HyperInterface
+### 2.3 Implement the HyperInterface
 
 Next, implement the `HyperInterface` in your `CheckoutActivity`. This involves extending `FragmentActivity` and implementing the `HyperInterface`:
 
-```java
+```kotlin
 class CheckoutActivity : AppCompatActivity(), HyperInterface {
     // ...
 }
@@ -111,7 +125,7 @@ PaymentSession needs to be initialised in onCreate method of your `FragmentActiv
 
 For an open-source setup, use the following parameters:
 
-```java
+```kotlin
 val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", "YOUR_CUSTOM_BACKEND_URL", "YOUR_CUSTOM_LOG_URL")
 ```
 {% endhint %}
@@ -134,7 +148,7 @@ paymentSession.initPaymentSession(paymentIntentClientSecret)
 
 Handle the payment result in the completion block. Display appropriate messages to your customer based on the outcome of the payment:
 
-```java
+```kotlin
 private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
     when (paymentResult) {
         is PaymentSheetResult.Completed -> {
@@ -154,7 +168,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 
 Create a configuration object to customize the payment sheet and present the payment page:
 
-```java
+```kotlin
 val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 
 // Present Payment Page
@@ -170,3 +184,5 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 {% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
+
+[^1]: &#x20;[Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
