@@ -1,14 +1,15 @@
 ---
-icon: chart-candlestick
 description: SDK method details
+icon: chart-candlestick
 ---
 
 # SDK Reference
 
-Hyperswitch offers a frontend as well as a backend integration solution in the form of SDK.&#x20;
+​Hyperswitch provides frontend integration solutions through SDKs tailored for various frameworks, including React and JavaScript. These SDKs come with pre-built support for the frameworks used in your application, eliminating the need for additional code to ensure compatibility. The following documentation offers detailed information on the APIs of these SDKs, outlining their methods and purposes:​
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>React + HTML</td><td></td><td></td><td><a href="../../.gitbook/assets/reactHtml.jpg">reactHtml.jpg</a></td><td><a href="react.md">react.md</a></td></tr></tbody></table>
+* **React SDK Reference**: Explore the React SDK methods and their parameters to customize your payment experience. ​
+* **JavaScript SDK Reference**: Discover the JavaScript SDK methods available for tailoring your payment integration.
 
-These SDKs come with pre-built support for the framework that you use in your application. In the usual case where you might need to write code to fit with your framework, these SDKs will prevent you from writing them and provide a usable code.\
-\
-The following documentation gives you more details on the API of these SDKs and lists down methods and their purpose.
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>React + HTML</strong></mark></td><td></td><td></td><td><a href="../../.gitbook/assets/reactHtml.jpg">reactHtml.jpg</a></td><td><a href="react.md">react.md</a></td></tr><tr><td><mark style="color:blue;"><strong>JS</strong></mark></td><td></td><td></td><td><a href="../../.gitbook/assets/Payment flow (4) (1).png">Payment flow (4) (1).png</a></td><td></td></tr></tbody></table>
+
+These resources provide comprehensive guidance to help you effectively integrate Hyperswitch's payment solutions into your applications.
