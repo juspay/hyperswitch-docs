@@ -22,47 +22,13 @@ Use this guide to integrate `hyper` SDK to your Flutter app.&#x20;
 * CocoaPods
 * npm
 
-## 1. Setup the server
-
-### 1.1 Install the `hyperswitch-node` library
-
-Install the package and import it in your code
-
-```sh
+```js
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
-### 1.2 Create a payment
+## 1. Setup the server
 
-Before creating a payment, import the hyper dependencies and initialize it with your API key. Get your API key from [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1).
-
-```js
-const hyper = require("@juspay-tech/hyperswitch-node")(‘YOUR_API_KEY’);
-```
-
-Add an endpoint on your server that creates a Payment. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the client\_secret obtained in the response to securely complete the payment on the client.
-
-```js
-// Create a Payment with the order amount and currency
-app.post("/create-payment", async (req, res) => {
-  try {
-    const paymentIntent = await hyper.paymentIntents.create({
-      currency: "USD",
-      amount: 100,
-    });
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
-  }
-});
-```
+Follow the [Server Setup](../server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
@@ -158,6 +124,10 @@ Future<void> _presentPaymentSheet() async {
 {% endcode %}
 
 Congratulations! Now that you have integrated the  Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.&#x20;
+
+{% hint style="danger" %}
+Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+{% endhint %}
 
 ## Next step:
 

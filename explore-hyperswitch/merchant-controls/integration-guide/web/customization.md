@@ -4,10 +4,6 @@ description: Customize your Web unified checkout
 
 # Customization
 
-{% hint style="info" %}
-You can customize the Unified Checkout to support your checkout context and brand guidelines by using Layouts and Styling APIs
-{% endhint %}
-
 ## 1. Layouts
 
 Choose a layout that fits well with your UI pattern. There are two types of layout options as listed below. The layout defaults to accordion if not explicitly specified.

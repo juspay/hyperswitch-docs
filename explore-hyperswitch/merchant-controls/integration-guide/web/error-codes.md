@@ -4,10 +4,6 @@ description: Handle errors appropriately!
 
 # Error Codes
 
-{% hint style="info" %}
-In this section, you will find the exhaustive list of errors that you may see during your integration phase or go-live
-{% endhint %}
-
 ## Error codes
 
 The following table lists client error codes that the Hyperswitch SDK returns to your website for graceful handling.

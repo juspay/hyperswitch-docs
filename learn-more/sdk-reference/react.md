@@ -1,12 +1,4 @@
----
-description: To customize your payments experience
----
-
 # React
-
-{% hint style="info" %}
-This section covers different methods and their params of the Hyperswitch React SDK
-{% endhint %}
 
 Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount.  You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.\
 \

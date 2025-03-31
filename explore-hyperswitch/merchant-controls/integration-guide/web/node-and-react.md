@@ -6,7 +6,7 @@
 
 ### 1. Setup the server
 
-Follow the [Server Setup](server-setup.md) section.
+Follow the [Server Setup](../server-setup.md) section.
 
 ### 2. Build checkout page on the client
 
@@ -257,6 +257,10 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
   }
 });
 ```
+
+{% hint style="danger" %}
+Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+{% endhint %}
 
 ### 4. Elements Events
 
