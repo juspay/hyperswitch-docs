@@ -4,8 +4,6 @@ description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
 
 # Kotlin with Node Backend
 
-##
-
 ## [Demo App](https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip)
 
 ## Requirements
@@ -21,7 +19,7 @@ description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
-Follow the [Server Setup](../server-setup.md) section.
+Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on your app
 

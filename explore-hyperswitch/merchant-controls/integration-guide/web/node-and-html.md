@@ -10,7 +10,7 @@ description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../server-setup.md) section.
+Follow the [Server Setup](server-setup.md) section.
 
 ## 2. Build checkout page on the client
 

@@ -24,7 +24,7 @@ Use this guide to integrate `hyperswitch` SDK to your React Native app. You can 
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../server-setup.md) section.
+Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on the client
 

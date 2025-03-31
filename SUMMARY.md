@@ -163,7 +163,7 @@
       * [Flutter with Node Backend](explore-hyperswitch/merchant-controls/integration-guide/react-native-1/react-native-with-node-backend.md)
       * [Customization](explore-hyperswitch/merchant-controls/integration-guide/react-native-1/customization.md)
     * [Headless SDK](explore-hyperswitch/merchant-controls/integration-guide/headless.md)
-    * [Server Setup](explore-hyperswitch/merchant-controls/integration-guide/server-setup.md)
+    * [Server Setup](explore-hyperswitch/merchant-controls/integration-guide/web/server-setup.md)
   * [Click To Pay](explore-hyperswitch/merchant-controls/click-to-pay/README.md)
     * [Visa Click to Pay: V1 to V2 Migration](explore-hyperswitch/merchant-controls/click-to-pay/visa-click-to-pay-v1-to-v2-migration.md)
   * [Payment Methods Management](explore-hyperswitch/merchant-controls/payment-methods-management.md)

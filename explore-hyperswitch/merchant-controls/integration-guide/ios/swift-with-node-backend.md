@@ -16,7 +16,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../server-setup.md) section.
+Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
