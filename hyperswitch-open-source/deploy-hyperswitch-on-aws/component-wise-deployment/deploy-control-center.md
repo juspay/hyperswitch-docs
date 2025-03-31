@@ -7,10 +7,6 @@ icon: building-columns
 
 # Deploy Control Center
 
-{% hint style="info" %}
-In this chapter, you will deploy Hyperswitch control center on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
-{% endhint %}
-
 ## Video
 
 ***
@@ -38,6 +34,25 @@ This setup includes:
 ### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
+{% tab title="MacOS" %}
+{% code title="Run this on your terminal" %}
+```bash
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+```
+{% endcode %}
+
+To verify that the shell can find and run the aws command in your $PATH, use the following commands
+
+{% code title="Verify AWS CLI is installed" %}
+```bash
+which aws
+```
+{% endcode %}
+
+`/usr/local/bin/aws` --> expected response
+{% endtab %}
+
 {% tab title="Linux x86 (64-bit)" %}
 {% code title="Run this on your terminal" fullWidth="false" %}
 ```bash
@@ -76,25 +91,6 @@ aws --version
 {% endcode %}
 
 `aws-cli/2.10.0 Python/3.11.2 Linux/4.14.133-113.105.amzn2.x86_64 botocore/2.4.5` --> expected response
-{% endtab %}
-
-{% tab title="MacOS" %}
-{% code title="Run this on your terminal" %}
-```bash
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
-```
-{% endcode %}
-
-To verify that the shell can find and run the aws command in your $PATH, use the following commands
-
-{% code title="Verify AWS CLI is installed" %}
-```bash
-which aws
-```
-{% endcode %}
-
-`/usr/local/bin/aws` --> expected response
 {% endtab %}
 {% endtabs %}
 
