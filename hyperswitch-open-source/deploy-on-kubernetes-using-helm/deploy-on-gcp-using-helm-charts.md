@@ -97,7 +97,7 @@
    *   Create a dedicated namespace for Hyperswitch:
 
        ```bash
-       kubectl create namespace <namespace>
+       kubectl create namespace hyperswitch
        ```
 
 #### Step 3: Install Hyperswitch
@@ -105,7 +105,7 @@
 1. Deploy Hyperswitch using Helm. Replace `<release-name>` with your desired release name and `<namespace>` with the namespace you created:
 
 ```bash
-helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
+helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 ```
 
 2. Verify the Deployment:
@@ -113,7 +113,7 @@ helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
 *   Check the status of all deployed pods:
 
     ```bash
-    kubectl get pods -n <namespace>
+    kubectl get pods -n hyperswitch
     ```
 * Ensure all pods are in the `Running` state.
 
@@ -126,12 +126,12 @@ That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
 Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
 
 ```bash
-kubectl port-forward service/hyperswitch-server 8080:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-control-center 9000:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-web 9050:9050 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/<release-name>-grafana 3000:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/<release-name>-vector 3103:3103 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/mailhog 8025:8025 -n <namespace> > /dev/null 2>&1 &
+kubectl port-forward service/hyperswitch-server 8080:80 -n hyperswitch > /dev/null 2>&1 & \
+kubectl port-forward service/hyperswitch-control-center 9000:80 -n hyperswitch > /dev/null 2>&1 & \
+kubectl port-forward service/hyperswitch-web 9050:9050 -n hyperswitch > /dev/null 2>&1 & \
+kubectl port-forward service/hypers-v1-grafana 3000:80 -n hyperswitch > /dev/null 2>&1 & \
+kubectl port-forward service/hypers-v1-vector 3103:3103 -n hyperswitch > /dev/null 2>&1 & \
+kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
 ```
 
 Access the services at:
@@ -149,20 +149,20 @@ Access the services at:
     To check logs for a specific pod in Google Kubernetes Engine (GKE):
 
     ```sh
-    kubectl logs <pod-name> -n <namespace>
+    kubectl logs <pod-name> -n hyperswitch
     ```
 *   **View Events:**\
     To list events in the namespace sorted by creation time:
 
     ```sh
-    kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
+    kubectl get events -n hyperswitch --sort-by='.metadata.creationTimestamp'
     ```
 *   **Deploy Hyperswitch Helm Chart on GKE:**\
     If deploying for the first time or reinstalling, run:
 
     ```sh
-    helm uninstall <release-name> -n <namespace>
-    helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
+    helm uninstall hypers-v1 -n hyperswitch
+    helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
     ```
 
 ### **Customization & Configuration**
@@ -176,7 +176,7 @@ git clone https://github.com/juspay/hyperswitch-helm.git
 Update the `values.yaml` file inside `hyperswitch-stack/` and apply changes with:
 
 ```sh
-helm upgrade --install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
+helm upgrade --install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 ```
 
 ### **Uninstall Hyperswitch & Delete GKE Cluster**
@@ -184,7 +184,7 @@ helm upgrade --install <release-name> hyperswitch/hyperswitch-stack -n <namespac
 To uninstall Hyperswitch:
 
 ```sh
-helm uninstall <release-name> -n <namespace>
+helm uninstall hypers-v1 -n hyperswitch
 ```
 
 To delete the GKE cluster completely:
