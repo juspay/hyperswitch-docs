@@ -8,7 +8,7 @@ icon: badge-check
 
 ## Setup using Docker
 
-If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
+If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website (Or use [Orbstack](https://orbstack.dev/) as an alternative). Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
 
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
