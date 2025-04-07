@@ -20,7 +20,7 @@ layout:
 
 # Introduction
 
-Hyperswitch is an open-source payments platform from [Juspay](https://juspay.io/us), designed to simplify global payments for digital businesses. [Juspay](https://juspay.io/us) has been a global leader offering payment infrastructure solution for banks and merchants for **12+ years**, processing over **175 million daily transactions** and an annualized total payment value of **$670 billion**.
+Hyperswitch is an open-source payments platform from [Juspay](https://juspay.io/us), designed to simplify global payments for digital businesses. [Juspay](https://juspay.io/us) has been a global leader offering payment infrastructure solution for banks and merchants for **12+ years**, processing over **200 million daily transactions** and an annualized total payment value of **$900 billion**.
 
 #### We offer two distinct solutions:
 

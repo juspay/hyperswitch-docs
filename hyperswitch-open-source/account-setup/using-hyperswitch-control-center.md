@@ -1,8 +1,8 @@
 ---
-icon: building-columns
 description: >-
   Create your Hyperswitch account and add a payment provider via the control
   center
+icon: building-columns
 ---
 
 # Using Hyperswitch Control Center
@@ -15,12 +15,7 @@ description: >-
 
 During the local setup, a user has been configured automatically for you. You can use following credentials to access the dashboard.
 
-```
-username: admin
-password: admin 
-```
-
-Alternatively, on the landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.
+On the landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.
 
 The signup process will create a user with the provided email id. A merchant is also created which will be tagged to the user.&#x20;
 
