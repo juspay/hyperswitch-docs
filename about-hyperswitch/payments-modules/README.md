@@ -25,6 +25,6 @@ Each module is **independent and purpose-built** to optimize different aspects o
 
 And more coming soon ...
 
-{% content-ref url="../roadmap-q1-2025/" %}
-[roadmap-q1-2025](../roadmap-q1-2025/)
+{% content-ref url="../roadmap-q2-2025/" %}
+[roadmap-q2-2025](../roadmap-q2-2025/)
 {% endcontent-ref %}
