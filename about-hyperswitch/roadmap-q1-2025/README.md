@@ -21,7 +21,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 7 product modules is provided below :
+Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
 
 1. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
 2. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
