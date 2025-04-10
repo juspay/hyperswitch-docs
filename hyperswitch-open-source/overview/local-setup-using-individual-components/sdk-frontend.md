@@ -2,7 +2,11 @@
 icon: desktop
 ---
 
-# Set up Hyperswitch SDK (Frontend)
+# SDK (Frontend)
+
+{% hint style="danger" %}
+This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+{% endhint %}
 
 You will need to understand and configure a few configurations before starting the local setup. -
 
@@ -13,7 +17,7 @@ You will need to understand and configure a few configurations before starting t
     * **`HYPERSWITCH_PUBLISHABLE_KEY`:** The publishable key of your Hyperswitch account. This key will start with `pk_dev_` for local development, `pk_snd_` for sandbox, and `pk_prd_` for production.
     * **`HYPERSWITCH_SECRET_KEY`:** The API key of your Hyperswitch account that is used to authenticate API requests from your merchant server.
     * **`HYPERSWITCH_SERVER_URL`:** The URL of the Hyperswitch backend server. You may use our Sandbox URL ([https://sandbox.hyperswitch.io](https://sandbox.hyperswitch.io/)). To do this, go to the Hyperswitch Dashboard, find the "Developers" section, then click on [API Keys](https://app.hyperswitch.io/dashboard/developer-api-keys). Here you can generate an API key (`HYPERSWITCH_SECRET_KEY`) and copy your publishable key (`HYPERSWITCH_PUBLISHABLE_KEY`).\
-      Alternatively, you can specify that your backend is running locally (e.g. [http://localhost:8080](http://localhost:8080/)). In this case, you will need to create the API key and publishable key locally. Read this [hyperswitch docs](set-up-hyperswitch-backend.md) on how to do this.
+      Alternatively, you can specify that your backend is running locally (e.g. [http://localhost:8080](http://localhost:8080/)). In this case, you will need to create the API key and publishable key locally. Read this [hyperswitch docs](backend/) on how to do this.
     * **`HYPERSWITCH_CLIENT_URL`:** The URL of your hosted Hyperswitch SDK (e.g. [http://localhost:9050](http://localhost:9050/)). You may also use our Sandbox URL ([https://beta.hyperswitch.io/v1](https://beta.hyperswitch.io/v1)).
     * **`SELF_SERVER_URL`:** The URL of the hosted server file for generating client-secret and for fetching urls & configs (eg: [http://localhost:5252](http://localhost:5252/)).
 *   **Env Configs for SDK**

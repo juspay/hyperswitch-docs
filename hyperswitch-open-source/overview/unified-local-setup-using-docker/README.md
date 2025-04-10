@@ -2,13 +2,22 @@
 icon: badge-check
 ---
 
-# Unified Local Setup using Docker
+# Run Hyperswitch Locally Using Docker
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
+{% hint style="danger" %}
+This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
+{% endhint %}
+
 ## Setup using Docker
 
-If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website (Or use [Orbstack](https://orbstack.dev/) as an alternative). Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
+If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. \
+Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
+
+{% hint style="danger" %}
+You can alternatively use [Orbstack](https://orbstack.dev/) or [Podman](https://podman.io/) instead of docker.
+{% endhint %}
 
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
@@ -44,6 +53,6 @@ If you're **looking to Contribute to Hyperswitch**, try [setting up a **developm
 
 ## Next step:
 
-{% content-ref url="../account-setup/" %}
-[account-setup](../account-setup/)
+{% content-ref url="../../account-setup/" %}
+[account-setup](../../account-setup/)
 {% endcontent-ref %}
