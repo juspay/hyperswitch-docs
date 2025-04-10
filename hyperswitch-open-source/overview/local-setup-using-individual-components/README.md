@@ -14,7 +14,7 @@ These setup guides are meant for development. If you want a quick trial of Hyper
 
 ### **Hyperswitch Components**
 
-Hyperswitch is built as a modular system, comprising three key components. Each component is designed for specific roles in the payment stack and has detailed development environment setup guides, available in their individual repositories.
+Hyperswitch is built as a modular system, comprising three key components. Each component is designed for specific roles in the payment stack and has detailed development environment setup guides, linked above and also available in their individual repositories.
 
 ### [**Hyperswitch App Server**](https://github.com/juspay/hyperswitch):&#x20;
 

@@ -10,7 +10,7 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
 
 ## Supported Methods:
 
-<table data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Using docker compose</strong></mark></td></tr><tr><td><mark style="color:blue;"><strong>Rust environment setup along with other dependencies</strong></mark></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Setup</strong></mark> <mark style="color:blue;"><strong>using docker compose</strong></mark></td></tr><tr><td><mark style="color:blue;"><strong>Rust environment setup along with other dependencies</strong></mark></td></tr></tbody></table>
 
 ## Set up a development environment using Docker Compose
 
