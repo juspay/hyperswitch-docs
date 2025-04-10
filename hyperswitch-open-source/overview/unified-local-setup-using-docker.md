@@ -53,6 +53,6 @@ If you're **looking to Contribute to Hyperswitch**, try [setting up a **developm
 
 ## Next step:
 
-{% content-ref url="../../account-setup/" %}
-[account-setup](../../account-setup/)
+{% content-ref url="../account-setup/" %}
+[account-setup](../account-setup/)
 {% endcontent-ref %}

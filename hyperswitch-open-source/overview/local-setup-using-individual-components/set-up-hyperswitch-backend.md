@@ -29,18 +29,18 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
     ```
 
     This will compile the payments router, the primary component within hyperswitch and then start it. Depending on the specifications of your machine, compilation can take around 15 minutes.
-5. (Optional) You can also choose to [start the scheduler and/or monitoring services](./#running-additional-services) in addition to the payments router.
+5. (Optional) You can also choose to [start the scheduler and/or monitoring services](set-up-hyperswitch-backend.md#running-additional-services) in addition to the payments router.
 6.  Verify that the server is up and running by hitting the health endpoint:
 
     ```bash
     curl --head --request GET 'http://localhost:8080/health'
     ```
 
-    If the command returned a `200 OK` status code, proceed with [trying out our APIs](./#try-out-our-apis).
+    If the command returned a `200 OK` status code, proceed with [trying out our APIs](set-up-hyperswitch-backend.md#try-out-our-apis).
 
 ## Set up a Rust environment and other dependencies
 
-If you are using `nix`, please skip the setup dependencies step and jump to [Set up the database](./#set-up-the-database).
+If you are using `nix`, please skip the setup dependencies step and jump to [Set up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up dependencies on Ubuntu-based systems
 
@@ -89,7 +89,7 @@ This section of the guide provides instructions to install dependencies on Ubunt
     sudo apt install pkg-config libssl-dev
     ```
 
-Once you're done with setting up the dependencies, proceed with [setting up the database](./#set-up-the-database).
+Once you're done with setting up the dependencies, proceed with [setting up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up dependencies on Windows (Ubuntu on WSL2)
 
@@ -152,7 +152,7 @@ This section of the guide provides instructions to install dependencies on Ubunt
     sudo apt install pkg-config libssl-dev
     ```
 
-Once you're done with setting up the dependencies, proceed with [setting up the database](./#set-up-the-database).
+Once you're done with setting up the dependencies, proceed with [setting up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up dependencies on Windows
 
@@ -176,7 +176,7 @@ We'll be using [`winget`](https://github.com/microsoft/winget-cli) in this secti
     winget install openssl
     ```
 
-Once you're done with setting up the dependencies, proceed with [setting up the database](./#set-up-the-database).
+Once you're done with setting up the dependencies, proceed with [setting up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up dependencies on MacOS
 
@@ -240,7 +240,7 @@ We'll be using [Homebrew](https://brew.sh/) in this section of the guide. You ca
     cargo install just
     ```
 
-Once you're done with setting up the dependencies, proceed with [setting up the database](./#set-up-the-database).
+Once you're done with setting up the dependencies, proceed with [setting up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up the database
 
@@ -299,6 +299,6 @@ Once you're done with setting up the dependencies, proceed with [setting up the 
 
 Once you're done with setting up the database, proceed with configuring the application.
 
-{% content-ref url="configuring-and-running-the-application.md" %}
-[configuring-and-running-the-application.md](configuring-and-running-the-application.md)
+{% content-ref url="backend/configuring-and-running-the-application.md" %}
+[configuring-and-running-the-application.md](backend/configuring-and-running-the-application.md)
 {% endcontent-ref %}
