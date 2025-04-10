@@ -1,3 +1,7 @@
+---
+icon: arrows-to-circle
+---
+
 # Run Additional Services
 
 The default behaviour for docker compose only runs the following services:

@@ -4,7 +4,7 @@ icon: server
 
 # Backend
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
@@ -299,6 +299,6 @@ Once you're done with setting up the dependencies, proceed with [setting up the 
 
 Once you're done with setting up the database, proceed with configuring the application.
 
-{% content-ref url="backend/configuring-and-running-the-application.md" %}
-[configuring-and-running-the-application.md](backend/configuring-and-running-the-application.md)
+{% content-ref url="backend/configure-and-run-the-application.md" %}
+[configure-and-run-the-application.md](backend/configure-and-run-the-application.md)
 {% endcontent-ref %}

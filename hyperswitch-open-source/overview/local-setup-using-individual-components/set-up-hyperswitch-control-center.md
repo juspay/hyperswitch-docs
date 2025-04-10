@@ -4,7 +4,7 @@ icon: laptop
 
 # Control Center
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 

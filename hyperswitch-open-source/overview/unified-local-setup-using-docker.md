@@ -6,7 +6,7 @@ icon: badge-check
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
-{% hint style="danger" %}
+{% hint style="success" %}
 This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 {% endhint %}
 
@@ -15,7 +15,7 @@ This setup automatically runs all three components of Hyperswitch (Backend, Cont
 If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. \
 Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 You can alternatively use [Orbstack](https://orbstack.dev/) or [Podman](https://podman.io/) instead of docker.
 {% endhint %}
 

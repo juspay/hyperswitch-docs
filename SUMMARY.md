@@ -204,7 +204,7 @@
     * [Run Additional Services](hyperswitch-open-source/overview/unified-local-setup-using-docker/run-additional-services.md)
   * [Development Environment Setup](hyperswitch-open-source/overview/local-setup-using-individual-components/README.md)
     * [Backend](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-backend.md)
-      * [Configuring and Running the Application](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/configuring-and-running-the-application.md)
+      * [Configure and Run the Application](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/configure-and-run-the-application.md)
       * [Try out APIs](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/try-out-apis.md)
     * [SDK (Frontend)](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
     * [Control Center](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)

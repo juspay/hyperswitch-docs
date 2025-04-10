@@ -1,4 +1,8 @@
-# Configuring and Running the Application
+---
+icon: panel-ews
+---
+
+# Configure and Run the Application
 
 ## Configure the application
 
@@ -14,7 +18,7 @@ Refer to [`config.example.toml`](https://github.com/juspay/hyperswitch/blob/main
 
 Ensure to update the [`development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml) file if you opted to use different database credentials as compared to the sample ones included in this guide.
 
-Once you're done with configuring the application, proceed with [running the application](configuring-and-running-the-application.md#run-the-application).
+Once you're done with configuring the application, proceed with [running the application](configure-and-run-the-application.md#run-the-application).
 
 ### Run the application
 
