@@ -12,38 +12,21 @@ This setup automatically runs all three components of Hyperswitch (Backend, Cont
 
 ## Setup using Docker
 
-If you don't already have Docker, you can [download](https://docs.docker.com/get-docker/) it from the official Docker website. \
-Once Docker is installed, launch the Docker app, then use the following commands at the command line to clone the Hyperswitch repository.
+You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/) after cloning this repository. We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
 {% hint style="warning" %}
 You can alternatively use [Orbstack](https://orbstack.dev/) or [Podman](https://podman.io/) instead of docker.
 {% endhint %}
 
+Once Docker is installed, launch the Docker app, then use the following command at the command line to clone the Hyperswitch repository.
+
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
-```
-
-Once the repository is cloned, switch to the project directory.
-
-```
 cd hyperswitch
-```
-
-Now, we'll start all services using Docker Compose. This will pull Hyperswitch Docker images and then start the server. Wait for the `migration_runner` container to finish running migrations (approximately 2 minutes) before proceeding further.
-
-```
 docker compose up -d
+# This script verifies the setup and provides links to the individual components.
+scripts/docker_output.sh
 ```
-
-Congratulations! You've now setup Hyperswitch in your local machine. In order to verify that the server is up and running hit the health endpoint.
-
-```
-curl --head --request GET 'http://localhost:8080/health'
-```
-
-The expected response here is `200 OK` status code. This indicates that the server and all of its dependent services such as the database and Redis are functioning correctly.
-
-**Access the Control Centre in your browser at** [**http://localhost:9000**](http://localhost:9000/)
 
 {% hint style="warning" %}
 If you face any issues during setup, please feel free to post in the #dev-support channel in our [Slack community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw), and our team will respond as soon as possible.
