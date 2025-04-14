@@ -12,13 +12,13 @@ This setup automatically runs all three components of Hyperswitch (Backend, Cont
 
 ## Setup using Docker
 
-You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/) after cloning this repository. We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
+You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
 {% hint style="warning" %}
 You can alternatively use [Orbstack](https://orbstack.dev/) or [Podman](https://podman.io/) instead of docker.
 {% endhint %}
 
-Once Docker is installed, launch the Docker app, then use the following command at the command line to clone the Hyperswitch repository.
+Once Docker is installed, launch the Docker app, then use the following command at the command line.
 
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
@@ -31,6 +31,12 @@ scripts/docker_output.sh
 {% hint style="warning" %}
 If you face any issues during setup, please feel free to post in the #dev-support channel in our [Slack community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw), and our team will respond as soon as possible.
 {% endhint %}
+
+As the result of the above command you should see the below output:
+
+<div align="left"><figure><img src="../../.gitbook/assets/Screenshot 2025-04-14 at 8.05.55 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
+
+
 
 If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
 
