@@ -1,8 +1,8 @@
 ---
-icon: plug
 description: >-
   Integrate with more than 70+ Connectors enabling 150+ payment methods with
   zero development effort.
+icon: plug
 ---
 
 # Connectors
@@ -31,7 +31,7 @@ Click and Connect refers to the ability to quickly connect with a PSP or enablin
 
 **Step 4**: Launch the production environment and monitor performance metrics using Hyperswitch Dashboard.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Activate connector on Hyperswitch</strong></mark></td><td><p></p><p>A detailed guide on how to configure a connector along with payment methods in a few steps </p></td><td></td><td><a href="activate-connector-on-hyperswitch.md">activate-connector-on-hyperswitch.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>List of available connectors and payment methods</strong></mark></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Raise a request for a new connector or payment method integration</strong></mark></td><td>Don't see payment processor of your choice? Raise a integration request, we will be happy to help!</td><td></td><td><a href="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg">https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Activate connector on Hyperswitch</strong></mark></td><td><p></p><p>A detailed guide on how to configure a connector along with payment methods in a few steps </p></td><td></td><td><a href="activate-connector-on-hyperswitch.md">activate-connector-on-hyperswitch.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>List of available connectors and payment methods</strong></mark></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Raise a request for a new connector or payment method integration</strong></mark></td><td>Don't see payment processor of your choice? Raise a integration request, we will be happy to help!</td><td></td><td><a href="https://join.slack.com/t/hyperswitch-io/shared_invite/zt-3404vci5c-ydaLSM_FvrskTnK~02H0aw">https://join.slack.com/t/hyperswitch-io/shared_invite/zt-3404vci5c-ydaLSM_FvrskTnK~02H0aw</a></td><td></td></tr></tbody></table>
 
 {% content-ref url="activate-connector-on-hyperswitch.md" %}
 [activate-connector-on-hyperswitch.md](activate-connector-on-hyperswitch.md)
