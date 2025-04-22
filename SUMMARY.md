@@ -261,3 +261,7 @@
   * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
 * [Payment flows](learn-more/payment-flows.md)
 * [Blog](https://hyperswitch.io/blog)
+
+***
+
+* [Community Guidelines](community-guidelines.md)
