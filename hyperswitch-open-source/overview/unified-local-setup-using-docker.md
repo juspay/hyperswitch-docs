@@ -28,10 +28,6 @@ docker compose up -d
 scripts/docker_output.sh
 ```
 
-{% hint style="warning" %}
-If you face any issues during setup, please feel free to post in the #dev-support channel in our [Slack community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw), and our team will respond as soon as possible.
-{% endhint %}
-
 As the result of the above command you should see the below output:
 
 <div align="left"><figure><img src="../../.gitbook/assets/Screenshot 2025-04-14 at 8.05.55 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
