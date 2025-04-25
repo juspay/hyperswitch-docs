@@ -36,9 +36,13 @@ As the result of the above command you should see the below output:
 
 <div align="left"><figure><img src="../../.gitbook/assets/Screenshot 2025-04-14 at 8.05.55 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
-
-
 If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
+
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}
 
 ## Next step:
 

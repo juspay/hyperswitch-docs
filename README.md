@@ -63,3 +63,9 @@ It is built on the principles of - **Modular, Composable, Well Architected**
 * **Future-proof**: Swap out or upgrade internal systems and providers without rebuilding from scratch—a level of flexibility closed platforms can’t match.
 
 **Get ready! We welcome you to the future of digital payments!**
+
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}

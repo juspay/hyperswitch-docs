@@ -25,6 +25,12 @@ Each module is **independent and purpose-built** to optimize different aspects o
 
 And more coming soon ...
 
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}
+
 {% content-ref url="../roadmap-q2-2025/" %}
 [roadmap-q2-2025](../roadmap-q2-2025/)
 {% endcontent-ref %}

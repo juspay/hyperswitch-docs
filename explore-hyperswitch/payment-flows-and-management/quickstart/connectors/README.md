@@ -36,3 +36,9 @@ Click and Connect refers to the ability to quickly connect with a PSP or enablin
 {% content-ref url="activate-connector-on-hyperswitch.md" %}
 [activate-connector-on-hyperswitch.md](activate-connector-on-hyperswitch.md)
 {% endcontent-ref %}
+
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}

@@ -1,6 +1,6 @@
 ---
-icon: desktop
 description: All the payment use-cases for SaaS providers
+icon: desktop
 ---
 
 # For SaaS Businesses
@@ -45,7 +45,11 @@ Enhance efficiency in your payment operations by accessing unified analytics, ma
 * [Access unified analytics ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
 * [Manage your team ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
 
-
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}
 
 {% content-ref url="for-b2b-saas-businesses.md" %}
 [for-b2b-saas-businesses.md](for-b2b-saas-businesses.md)

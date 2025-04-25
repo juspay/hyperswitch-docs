@@ -32,3 +32,9 @@ Hyperswitch provides a open-source, lightweight and full-stack solution to effor
 #### **Developer Resources**
 
 <table data-column-title-hidden data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Signup and try a payment</mark> </td><td><a href="https://app.hyperswitch.io/">https://app.hyperswitch.io/</a></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Integrate with your app</mark></td><td><a href="https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide">https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide</a></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;">API Reference</mark></td><td><a href="https://api-reference.hyperswitch.io/introduction">https://api-reference.hyperswitch.io/introduction</a></td><td></td><td></td><td></td></tr></tbody></table>
+
+{% hint style="info" %}
+**Have Questions?**\
+Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+{% endhint %}
