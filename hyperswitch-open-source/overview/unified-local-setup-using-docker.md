@@ -15,22 +15,27 @@ This setup automatically runs all three components of Hyperswitch (Backend, Cont
 You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
 {% hint style="warning" %}
-You can alternatively use [Orbstack](https://orbstack.dev/) or [Podman](https://podman.io/) instead of docker.
+You can alternatively use [Podman](https://podman.io/) or [Orbstack](https://orbstack.dev/) (for macOS) instead of docker.
 {% endhint %}
 
-Once Docker is installed, launch the Docker app, then use the following command at the command line.
+Once Docker is installed, launch the Docker desktop app, then use the following command at the command line.
 
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
 cd hyperswitch
-docker compose up -d
-# This script verifies the setup and provides links to the individual components.
-scripts/docker_output.sh
+scripts/setup.sh
 ```
 
-As the result of the above command you should see the below output:
+The above command will:
 
-<div align="left"><figure><img src="../../.gitbook/assets/Screenshot 2025-04-14 at 8.05.55 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
+* Check for prerequisites (Docker Compose/Podman)
+* Set up necessary configurations (PostgreSQL, Redis)
+* Let you select a setup option:
+  * **Standard**: (Recommended) App server + Control Center + Web SDK
+  * **Full**: Standard + Monitoring + Scheduler
+  * **Standalone App Server**: Core services only App Server
+* Start the selected services
+* Provide link to access various components
 
 If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
 
