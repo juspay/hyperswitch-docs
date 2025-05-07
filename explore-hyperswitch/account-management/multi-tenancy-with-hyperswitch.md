@@ -46,6 +46,6 @@ Each tenant onboarded on Hyperswitch will have white-labeled links for the follo
 
 Once these white-labeled endpoints are available, tenants will be onboarded on Dashboard. Link to set credentials will be sent via email. Post logging in to Dashboard, tenants can onboard merchants.
 
-{% content-ref url="../payment-flows-and-management/" %}
-[payment-flows-and-management](../payment-flows-and-management/)
+{% content-ref url="../payment-orchestration/" %}
+[payment-orchestration](../payment-orchestration/)
 {% endcontent-ref %}

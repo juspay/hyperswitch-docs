@@ -264,6 +264,6 @@ Congratulations! Now that you have integrated the iOS SDK, you can customize the
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

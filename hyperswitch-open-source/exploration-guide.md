@@ -12,7 +12,7 @@ This guide walks you through the full capabilities of Hyperswitch, from explorin
 
 * [ ] [Setup your Hyperswitch account](https://docs.hyperswitch.io/hyperswitch-open-source/account-setup)&#x20;
 * [ ] [Configure payment connectors](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors/activate-connector-on-hyperswitch)
-* [ ] [Process your first test payment](../explore-hyperswitch/payment-flows-and-management/quickstart/connectors/test-a-payment-with-connector.md)
+* [ ] [Process your first test payment](../explore-hyperswitch/payment-orchestration/quickstart/connectors/test-a-payment-with-connector.md)
 * [ ] [Setup rule based routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/rule-based-routing)
 
 - [ ] <mark style="background-color:yellow;">(Optional)</mark> <mark style="color:blue;">Checkout more workflows</mark>

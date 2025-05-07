@@ -10,7 +10,7 @@ Use this guide to integrate `hyperswitch` SDK to your React Native app. You can 
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/juspay/hyperswitch-sdk-react-native)
 
-**Before following these steps, please configure your payment methods** [here](../../../payment-flows-and-management/quickstart/payment-methods-setup/cards.md).
+**Before following these steps, please configure your payment methods** [here](../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
 ## Requirements
 

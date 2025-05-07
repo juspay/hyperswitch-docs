@@ -143,8 +143,8 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
 
 [^1]: &#x20;[Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
