@@ -65,17 +65,6 @@ Parameter:
 
 * **revert\_platform\_fee**: Toggle for reverting the application fee that was collected for the payment. If set to false, the funds are pulled from the destination account.
 
-**Refund Response**&#x20;
-
-```
- "split_refunds": {
-        "stripe_split_refund": {
-            "revert_platform_fee": true,
-            "revert_transfer": null
-        }
-    }
-```
-
 
 
 2. **If "charge\_type": "Destination"**
@@ -91,14 +80,3 @@ Parameter:
 Parameter:
 
 * **revert\_transfer**: Toggle for reverting the transfer that was made during the charge. If set to false, the funds are pulled from the main platform's account.
-
-**Refund Response**&#x20;
-
-```
- "split_refunds": {
-        "stripe_split_refund": {
-            "revert_platform_fee": null,
-            "revert_transfer": true
-        }
-    }
-```
