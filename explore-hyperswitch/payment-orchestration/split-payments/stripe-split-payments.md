@@ -47,35 +47,58 @@ Payments Response
     }
 ```
 
-## Split Stripe refunds  via Hyperswitch
+## Split Stripe refunds via Hyperswitch
 
-In the refund create request, include the following according to your split rule
+In the case of charge typeIn the refund create request, include the following according to your split rule
+
+1. **If "charge\_type": "direct"**
 
 ```
-
       "split_refunds": {
     		"stripe_split_refund": {
-        		"revert_platform_fee": true,
-        		"revert_transfer": true
+        		"revert_platform_fee": true
     		}
 	}
-
 ```
 
-Parameters
+Parameter:
 
-* **revert\_platform\_fee**: Toggle for reverting the application fee that was collected for the payment. If set to false, the funds are pulled from the destination account.\
+* **revert\_platform\_fee**: Toggle for reverting the application fee that was collected for the payment. If set to false, the funds are pulled from the destination account.
 
-* **revert\_transfer**: Toggle for reverting the transfer that was made during the charge. If set to false, the funds are pulled from the main platform's account.
-
-\
-Refund Response&#x20;
+**Refund Response**&#x20;
 
 ```
  "split_refunds": {
         "stripe_split_refund": {
             "revert_platform_fee": true,
             "revert_transfer": null
+        }
+    }
+```
+
+
+
+2. **If "charge\_type": "Destination"**
+
+```
+      "split_refunds": {
+    		"stripe_split_refund": {
+        		"revert_transfer": true
+    		}
+	}
+```
+
+Parameter:
+
+* **revert\_transfer**: Toggle for reverting the transfer that was made during the charge. If set to false, the funds are pulled from the main platform's account.
+
+**Refund Response**&#x20;
+
+```
+ "split_refunds": {
+        "stripe_split_refund": {
+            "revert_platform_fee": null,
+            "revert_transfer": true
         }
     }
 ```
