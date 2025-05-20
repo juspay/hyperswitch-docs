@@ -261,19 +261,19 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 </details>
 
-### 🙋 Need Help?
+### Need Help?
 
-* 💬 [Join our Slack Community →](https://join.slack.com/t/hyperswitch/shared_invite/zt-1y6kp2mwb-GqJqD4RwJkN4zN1IvYrW0Q)\
+* [Join our Slack Community →](https://join.slack.com/t/hyperswitch/shared_invite/zt-1y6kp2mwb-GqJqD4RwJkN4zN1IvYrW0Q)\
   Ask questions, share ideas, and connect with other developers building on Hyperswitch.
-* 📩 [Contact Us →](https://www.hyperswitch.io/contact)\
+* [Contact Us →](https://www.hyperswitch.io/contact)\
   Prefer direct support? We’re happy to help.
 
 ***
 
-### 📚 Developer Resources
+### Developer Resources
 
-* 📘 [API Reference →](https://docs.hyperswitch.io/api-reference/introduction)
-* 📚 [SDK Documentation →](https://docs.hyperswitch.io/sdk-reference/introduction)
-* 📥 [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
-* ❓ [FAQs →](https://docs.hyperswitch.io/faqs)
-* 🌍 [GitHub Repository →](https://github.com/juspay/hyperswitch)
+* [API Reference →](https://docs.hyperswitch.io/api-reference/introduction)
+* [SDK Documentation →](https://docs.hyperswitch.io/sdk-reference/introduction)
+* [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
+* [FAQs →](https://docs.hyperswitch.io/faqs)
+* [GitHub Repository →](https://github.com/juspay/hyperswitch)
