@@ -22,6 +22,14 @@ layout:
 
 Hyperswitch is an open-source payments platform from [Juspay](https://juspay.io/us), designed to simplify global payments for digital businesses. [Juspay](https://juspay.io/us) has been a global leader offering payment infrastructure solution for banks and merchants for **12+ years**, processing over **200 million daily transactions** and an annualized total payment value of **$900 billion**.
 
+<details>
+
+<summary>Tittle</summary>
+
+
+
+</details>
+
 #### We offer two distinct solutions:
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4><mark style="color:blue;"><strong>Payments Suite</strong></mark></h4></td><td>An end-to-end orchestration layer that unifies payments across providers, networks, and channels. It enables seamless checkout, dynamic routing, and redundancy for reliability.</td><td><strong>Optimize payments at scale without adding complexity to your infrastructure.</strong></td><td></td><td><a href="README (1).md">README (1).md</a></td></tr><tr><td><h4><mark style="color:blue;"><strong>Payment Modules</strong></mark></h4></td><td>A flexible, modular approach to integrate only the payment capabilities you need. Choose from intelligent routing, vault, reconciliation, cost observability, smart retries, and APM widgets.</td><td><strong>Enhance performance without overhauling your existing payment stack.</strong></td><td></td><td><a href="about-hyperswitch/payments-modules/">payments-modules</a></td></tr></tbody></table>
