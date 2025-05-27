@@ -3,7 +3,7 @@
 ## About Hyperswitch
 
 * [Exploration Guide](README.md)
-* [Introduction](<README (2).md>)
+* [Overview](about-hyperswitch/overview.md)
 * [Payments Suite](<README (1).md>)
 * [Payments Modules](about-hyperswitch/payments-modules/README.md)
   * [Cost Observability](about-hyperswitch/payments-modules/ai-powered-cost-observability.md)
