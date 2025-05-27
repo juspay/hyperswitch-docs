@@ -1,5 +1,6 @@
 ---
 description: Learn how to tokenize cards at Hyperswitch Vault Service using our Vault SDK
+icon: desktop
 ---
 
 # Vault SDK Integration

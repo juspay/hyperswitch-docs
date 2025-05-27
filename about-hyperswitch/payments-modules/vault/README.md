@@ -35,7 +35,13 @@ With Hyperswitch Vault, you can:
 * **Scales to 50,000 Transactions Per Second (TPS)** – Designed for high-volume transactions.
 * **Sub-50ms Response Time** – Optimized for ultra-fast token generation and retrieval.
 
-### How It Works?
+**Proxy Payments support for PCI compliance**
+
+* **No PSP re-integration needed -** Use tokens stored in Vault to make direct API calls to PSPs. Hyperswitch intercepts, detokenizes, and securely forwards requests—no need to modify existing PSP integrations or handle raw card data
+* **PCI DSS scope reduction** – Raw card data stays within Vault
+* **Centralized token management** – One vault, many PSPs
+
+### How does it work?
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfjHOvBRI1bfnMRf5zmWz9_yw4ieV0v5IEJUwhnBwu6iqxoI2yvHE-gfZ-du--dwemuLMv9AemXN5k0BubnmF0fqwO8gtGCyuRBT2L5DQW5DiFYgZmZpEEgSVXHJW1hTjqZJf4S?key=wWT-6TmmgS7GMTZGEfcB38Ke" alt=""><figcaption></figcaption></figure>
 
@@ -70,7 +76,7 @@ With Hyperswitch Vault, you can:
 * **Real-time token status tracking and updates**.
 * **Automatic card updates** and **network token refreshes**.
 
-### How to Integrate?
+### How to Integrate Vault?
 
 Hyperswitch Vault offers integration options tailored to different security and compliance needs.
 
@@ -83,15 +89,15 @@ Quickly integrate the **secure Vault SDK -** [**Learn how to**](vault-sdk-integr
 
 **For PCI Compliant Merchants**
 
-**Direct server-to-server integration** for greater control - **-** [**Learn how to**](server-to-server-vault-tokenization.md)
+**Direct server-to-server integration** for greater control - [**Learn how to**](server-to-server-vault-tokenization.md)
 
 * Securely send card data from your **own infrastructure** while maintaining existing security workflows.
 
-#### Customizable Tokenization
+### **Using Vault for Proxy-Based Payments**
 
-* **Choose** specific **PSPs** for token generation.
-* Enable **Network Tokenization** as needed.
-* Generate **single-use or multi-use tokens** based on payment flow requirements.
+Send payments to PSPs using Vault tokens without handling raw card data - [Learn how to](hyperswitch-vault-pass-through-proxy-payments.md)
+
+* Hyperswitch intercepts requests, detokenizes on the fly, and securely forwards them—no changes needed to existing PSP integrations.
 
 {% content-ref url="../intelligent-routing.md" %}
 [intelligent-routing.md](../intelligent-routing.md)
