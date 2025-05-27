@@ -2,7 +2,8 @@
 
 ## About Hyperswitch
 
-* [Introduction](README.md)
+* [Exploration Guide](README.md)
+* [Introduction](<README (2).md>)
 * [Payments Suite](<README (1).md>)
 * [Payments Modules](about-hyperswitch/payments-modules/README.md)
   * [Cost Observability](about-hyperswitch/payments-modules/ai-powered-cost-observability.md)
@@ -224,7 +225,6 @@
 * [Deploy on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm/README.md)
   * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
   * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
-* [Exploration Guide](hyperswitch-open-source/exploration-guide.md)
 * [Account setup](hyperswitch-open-source/account-setup/README.md)
   * [Using Hyperswitch Control Center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
