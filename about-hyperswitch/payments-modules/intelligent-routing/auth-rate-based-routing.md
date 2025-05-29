@@ -64,7 +64,7 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-
 --header 'api-key: <api-key>'
 ```
 
-### How to test these changes?
+### How to test the routing behaviour?
 
 You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour
 
