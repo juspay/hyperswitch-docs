@@ -99,6 +99,6 @@ Send payments to PSPs using Vault tokens without handling raw card data - [Learn
 
 * Hyperswitch intercepts requests, detokenizes on the fly, and securely forwards them—no changes needed to existing PSP integrations.
 
-{% content-ref url="../intelligent-routing.md" %}
-[intelligent-routing.md](../intelligent-routing.md)
+{% content-ref url="../intelligent-routing/" %}
+[intelligent-routing](../intelligent-routing/)
 {% endcontent-ref %}

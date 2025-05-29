@@ -21,22 +21,8 @@ Hyperswitch supports four intelligent routing strategies:
 * **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied \[BETA FEATURE]
 * **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]
 
-### Self Deploy and integrate it with your existing orchestrator&#x20;
+### Architecture Diagram
 
-Refer the the setup guide and API reference in this [repository](https://github.com/juspay/decision-engine)&#x20;
+<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-### Setting Up Auth Rate Based Routing for Hyperswitch Merchants
-
-1. Enabling your profile with Auth Rate based routing
-
-```
-curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant_id>/business_profile/<profile-id>/dynamic_routing/success_based/toggle?enable=dynamic_connector_selection' \
---header 'api-key: <api-key>'
-```
-
-2. Roll it out to the required split of payment traffic (Merchants can stagger a certain percentage to experiment)
-
-```
-curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/set_volume_split?split=100' \
---header 'api-key: <api-key>'
-```
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Self Deploy the Routing Engine</td><td><a href="../../../.gitbook/assets/image.png">image.png</a></td></tr><tr><td>Using Auth Rate based Routing for Hyperswitch</td><td><a href="../../../.gitbook/assets/tryHyperswitch.jpg">tryHyperswitch.jpg</a></td></tr></tbody></table>

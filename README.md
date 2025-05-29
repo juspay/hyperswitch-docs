@@ -166,7 +166,7 @@ Securely store and reuse customer payment credentials across processors to reduc
 
 Control how transactions flow across payment providers with configurable routing logic and fallback options
 
-[Intelligent Routing →](about-hyperswitch/payments-modules/intelligent-routing.md)
+[Intelligent Routing →](about-hyperswitch/payments-modules/intelligent-routing/)
 
 Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.[ ](about-hyperswitch/payments-modules/vault/)
 
