@@ -32,7 +32,7 @@ At Juspay, we believe that payments infrastructure should be transparent, adapta
 
 Enterprise merchants operate in a world where payment agility is a competitive advantage. Traditional closed-loop platforms dictate their own rules, pricing, and pace of innovation. Based on our 12-years of experience building and scaling global payment systems, we decided to take a different approach—giving merchants the power to customize, optimize, and scale payments to fit their unique business needs.
 
-Since our 2024 enterprise go-lives (e.g. Flowbird), we have been working on unbundling a range of stand-alone solutions from our broader technology stack to make them more accessible to merchants looking to expand their in-house system engineering capability. These stand-alone solutions range from services for intelligent / dynamic payment routing, payment methods vaulting, cost observability, PSP-agnostic authentication, and an APMs widget that can be embedded anywhere.
+Guiding by our learnings from our enterprise go-lives, we have been working on unbundling a range of stand-alone solutions from our broader technology stack to make them more accessible to merchants looking to expand their in-house system engineering capability. These stand-alone solutions range from services for intelligent / dynamic payment routing, payment methods vaulting, cost observability, PSP-agnostic authentication, and an APMs widget that can be embedded anywhere.
 
 ### Technical Foundation:
 
