@@ -68,7 +68,10 @@ cd hyperswitch-web
         ```
 
     Upon success, you should see a message _Compiled successfully_ message on both of your terminals.
-3.  Now that the build is generated successfully, on a third terminal, launch the playground.
+3. Make sure you have configured the [.env](https://github.com/juspay/hyperswitch-web/blob/main/Hyperswitch-React-Demo-App/.env) file correctly.
+   * Publishable Key `HYPERSWITCH_PUBLISHABLE_KEY` and API Key `HYPERSWITCH_SECRET_KEY` belong to the server `HYPERSWITCH_SERVER_URL`. If you use our Sandbox URL, use publishable key and API key from the hyperswitch website. If you are using your self-hosted backend, use your locally created publishable key and API Key.
+   * The URL's must not have a slash at the end
+4.  Now that the build is generated successfully, on a third terminal, launch the playground.
 
     ```
     cd Hyperswitch-React-Demo-App
