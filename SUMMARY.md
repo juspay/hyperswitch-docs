@@ -128,6 +128,7 @@
     * [Rule Based Routing](explore-hyperswitch/payment-orchestration/smart-router/rule-based-routing.md)
     * [Volume Based Routing](explore-hyperswitch/payment-orchestration/smart-router/volume-based-routing.md)
     * [Default Fallback Routing](explore-hyperswitch/payment-orchestration/smart-router/default-fallback-routing.md)
+    * [Least Cost Routing](explore-hyperswitch/payment-orchestration/smart-router/least-cost-routing.md)
   * [Smart Retries](explore-hyperswitch/payment-orchestration/smart-retries/README.md)
     * [3DS Step-up Retries](explore-hyperswitch/payment-orchestration/smart-retries/3ds-step-up-retries.md)
   * [3DS / Strong Customer Authentication](explore-hyperswitch/payment-orchestration/3ds-decision-manager/README.md)
