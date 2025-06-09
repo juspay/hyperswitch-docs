@@ -63,7 +63,9 @@ In the case of charge typeIn the refund create request, include the following ac
 
 Parameter:
 
-* **revert\_platform\_fee**: Toggle for reverting the application fee that was collected for the payment. If set to false, the funds are pulled from the destination account.
+**revert\_platform\_fee**: `Boolean`
+
+* Toggle for reverting the application fee that was collected for the payment. If set to false, the funds are pulled from the destination account.
 
 
 
@@ -72,6 +74,7 @@ Parameter:
 ```
       "split_refunds": {
     		"stripe_split_refund": {
+                        "revert_platform_fee": true,
         		"revert_transfer": true
     		}
 	}
@@ -79,4 +82,14 @@ Parameter:
 
 Parameter:
 
-* **revert\_transfer**: Toggle for reverting the transfer that was made during the charge. If set to false, the funds are pulled from the main platform's account.
+**revert\_platform\_fee**: `Boolean`&#x20;
+
+* Indicates whether the application fee should be refunded when refunding this charge.&#x20;
+* If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded.&#x20;
+* An application fee can be refunded only by the application that created the charge.
+
+**revert\_transfer**: `Boolean`&#x20;
+
+* Indicates whether the transfer should be reversed when refunding this charge.&#x20;
+* The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).
+* A transfer can be reversed only by the application that created the charge
