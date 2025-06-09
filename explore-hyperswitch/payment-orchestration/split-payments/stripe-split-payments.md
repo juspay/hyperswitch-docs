@@ -56,7 +56,7 @@ In the case of charge typeIn the refund create request, include the following ac
 ```
       "split_refunds": {
     		        "stripe_split_refund": {
-        		"revert_platform_fee": true
+                              "revert_platform_fee": true
     		}
 	}
 ```
@@ -75,7 +75,7 @@ Parameter:
       "split_refunds": {
     		"stripe_split_refund": {
                         "revert_platform_fee": true,
-        		"revert_transfer": true
+                        "revert_transfer": true
     		}
 	}
 ```
