@@ -54,11 +54,11 @@ In the case of charge typeIn the refund create request, include the following ac
 1. **If "charge\_type": "direct"**
 
 ```
-      "split_refunds": {
-    		        "stripe_split_refund": {
-                              "revert_platform_fee": true
-    		}
-	}
+"split_refunds": {
+    "stripe_split_refund": {
+        "revert_platform_fee": true
+    }
+}
 ```
 
 Parameter:
@@ -72,12 +72,12 @@ Parameter:
 2. **If "charge\_type": "Destination"**
 
 ```
-      "split_refunds": {
-    		"stripe_split_refund": {
-                        "revert_platform_fee": true,
-                        "revert_transfer": true
-    		}
-	}
+"split_refunds": {
+    "stripe_split_refund": {
+        "revert_platform_fee": true,
+        "revert_transfer": true
+    }
+}
 ```
 
 Parameter:
