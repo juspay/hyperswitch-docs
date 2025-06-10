@@ -4,14 +4,10 @@ description: Integrate hyper SDK to any Web App using hyperswitch-node
 
 # Vanilla JS and REST API Integration
 
-{% hint style="info" %}
-In this section, you will get details to Integrate Hyperswitch SDK using Node Backend and Vanilla JS&#x20;
-{% endhint %}
-
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](node-and-react.md)Integration to use a dedicated wrapper.\
 
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/hyperswitch-html-demo-app/archive/refs/heads/main.zip)
+## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
 ## 1. Setup the server
 

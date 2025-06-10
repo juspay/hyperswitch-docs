@@ -10,59 +10,25 @@ description: Integrate hyper SDK to your Flutter App using hyperswitch-node
 Use this guide to integrate `hyper` SDK to your Flutter app.&#x20;
 {% endhint %}
 
-**Before following these steps, please configure your payment methods** [here](../../../payment-flows-and-management/quickstart/payment-methods-setup/cards.md).
+**Before following these steps, please configure your payment methods** [here](../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
 ## Requirements
 
 * Android 5.0 (API level 21) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1
-* [Gradle](https://gradle.org/releases/) 7.5.1+
+* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+* [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 * iOS 13.0 and above
 * CocoaPods
 * npm
 
-## 1. Setup the server
-
-### 1.1 Install the `hyperswitch-node` library
-
-Install the package and import it in your code
-
 ```js
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
-### 1.2 Create a payment
+## 1. Setup the server
 
-Before creating a payment, import the hyper dependencies and initialize it with your API key. Get your API key from [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1).
-
-```js
-const hyper = require("@juspay-tech/hyperswitch-node")(‘YOUR_API_KEY’);
-```
-
-Add an endpoint on your server that creates a Payment. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the client\_secret obtained in the response to securely complete the payment on the client.
-
-```js
-// Create a Payment with the order amount and currency
-app.post("/create-payment", async (req, res) => {
-  try {
-    const paymentIntent = await hyper.paymentIntents.create({
-      currency: "USD",
-      amount: 100,
-    });
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
-  }
-});
-```
+Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
@@ -70,7 +36,7 @@ app.post("/create-payment", async (req, res) => {
 
 Add `flutter_hyperswitch` to your `pubspec.yaml` file
 
-```js
+```yaml
 dependencies:
   flutter_hyperswitch: ^version_number
 ```
@@ -80,6 +46,16 @@ Run the following command to fetch and install the dependencies.
 ```sh
 flutter pub get
 ```
+
+{% hint style="info" %}
+To apply plugins using Flutter, run the following command:
+
+```sh
+dart run flutter_hyperswitch:apply_plugins
+```
+
+This command configures the necessary Flutter plugins for your project using the `flutter_hyperswitch` package. Ensure you have the package installed and configured correctly in your project. If you encounter any issues, check the package documentation for more details.
+{% endhint %}
 
 ## 3. Complete the checkout on the client
 
@@ -149,8 +125,12 @@ Future<void> _presentPaymentSheet() async {
 
 Congratulations! Now that you have integrated the  Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.&#x20;
 
+{% hint style="danger" %}
+Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+{% endhint %}
+
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

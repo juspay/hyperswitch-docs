@@ -1,12 +1,4 @@
----
-description: To customize your payments experience
----
-
 # JS
-
-{% hint style="info" %}
-This section covers different methods and their params of the Hyperswitch JS SDK
-{% endhint %}
 
 Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
 

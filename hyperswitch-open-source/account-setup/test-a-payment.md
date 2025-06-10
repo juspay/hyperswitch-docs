@@ -1,31 +1,44 @@
 ---
 icon: money-bills
-description: Make your first payment and refund through Hyperswitch
 ---
 
 # Test a payment
 
-{% hint style="info" %}
-Here, you'll be making a payment using your Hyperswitch setup, via your preferred payment provider.
-{% endhint %}
+## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-## Test on web client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
-
-Once you have successfully run the [control centre](../local-setup-guide/), you should be able to test the payments.&#x20;
+Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.&#x20;
 
 {% hint style="warning" %}
 [Account setup ](./)is a pre-requisite before you can test the payments.
 {% endhint %}
 
-**Local:** Once you have got the Control Centre running (at [http://localhost:9000](http://localhost:9000/dashboard/home)) and have configured your payment processor via it. You can go to Home section in Control Centre, and you will find a "try it out" button (Highlighted with blue colour in the image below).
+There are three conditions in which you might want to make a test payment:
+
+**Local:** Once you have got the Control Centre running (at [http://localhost:9000](http://localhost:9000/dashboard/home)) and have configured your payment processor via it. You can go to Home section in Control Centre, and you will find a `"try it out"` button (Highlighted with blue colour in the image below).
 
 **Self Hosted Web App:** In case you have hosted the SDK and integrated it on your app, you can do a usual release of your app. Post successful deployment, you can test the payments on your app url.
 
 **Playground deployment:** In case you have [deployed the demo app playground](../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md), you will see the playground up and running on the public IP that you received after deployment.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-29 at 9.35.09 PM.png" alt=""><figcaption></figcaption></figure>
+***
 
-You can test a successful payment on Control Centre with the following test card -
+On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Processor**:
+
+<figure><img src="../../.gitbook/assets/2-connect-dummy-processor (1).png" alt=""><figcaption></figcaption></figure>
+
+Go ahead and connect any dummy processor, we'll show an example with the fauxpay processor:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+Just connect and proceed with the provided credentials:&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.38 PM.png" alt=""><figcaption></figcaption></figure>
+
+From there, navigate back to the **Home** page and click on **Try it out**:&#x20;
+
+<figure><img src="../../.gitbook/assets/1-try-it-out.png" alt=""><figcaption></figcaption></figure>
+
+&#x20;Input the credentials and Click on **Pay 100**: :
 
 ```
 Card Number - 4242 4242 4242 4242
@@ -33,19 +46,17 @@ Card Expiry - Any future date
 CVC - Any 3 digits
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-29 at 9.46.28 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.38.25 PM.png" alt=""><figcaption></figcaption></figure>
 
-On confirming the payment, you will see the the Payment confirmation screen.
+You'll see a successful Payment:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-05-29 at 9.49.06 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.39.43 PM.png" alt=""><figcaption></figcaption></figure>
 
-Congrats! You have successfully tested an end-to-end payment with your own app server and the control centre
+Congrats! You have successfully tested an end-to-end payment with your own app server and the control center
 
 {% hint style="warning" %}
 In case you have integrated the web client on your app and want to test a payment, the payment status confirmation screen has to be handled by you. You will see that post payment confirmation.
 {% endhint %}
-
-The app server is more powerful than just processing the payments. You can test refunds, subscription payments and more using the app server.
 
 <details>
 
@@ -73,3 +84,10 @@ The app server is more powerful than just processing the payments. You can test 
 {% content-ref url="../../check-list-for-production/going-live/" %}
 [going-live](../../check-list-for-production/going-live/)
 {% endcontent-ref %}
+
+### Explore Further
+
+Once you are done with the test payment, you can explore more about these:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router/">smart-router</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../about-hyperswitch/payments-modules/ai-powered-cost-observability.md">ai-powered-cost-observability.md</a></td></tr></tbody></table>
+

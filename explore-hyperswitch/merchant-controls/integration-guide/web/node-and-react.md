@@ -2,7 +2,7 @@
 
 **Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/aashu331998/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
+## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
 
 ### 1. Setup the server
 
@@ -258,6 +258,10 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
 });
 ```
 
+{% hint style="danger" %}
+Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+{% endhint %}
+
 ### 4. Elements Events
 
 Some events are emitted by payment elements, listening to those events is the only way to communicate with these elements. All events have a payload object with the type of the Element that emitted the event as an elementType property. Following events are emitted by payment elements.
@@ -373,6 +377,6 @@ The task within `onPaymentButtonClick` must be completed within 1 second. If an 
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

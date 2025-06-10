@@ -14,7 +14,7 @@ Create a `PaymentSheet.Configuration` object with an `appearance` object in orde
 
 Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
 
-```js
+```kotlin
 val appearance = PaymentSheet.Appearance(
   typography = PaymentSheet.Typography(10.0f, R.font.MY_FONT)
 )
@@ -51,6 +51,6 @@ Now you can test the payments on your app and go-live!
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

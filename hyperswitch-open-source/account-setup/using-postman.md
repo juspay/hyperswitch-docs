@@ -1,19 +1,22 @@
 ---
-description: Create your Hyperswitch account and add a payment provider through postman
+description: >-
+  Create your Hyperswitch account and add a payment provider using Hyperswitch
+  APIs through postman
 icon: rocket-launch
 ---
 
 # Using postman
 
-## Account setup using Postman <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
-
-***
-
 ## Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-In Hyperswitch, payments are processed for a merchant. Hyperswitch is multi-tenant, i.e. a single hyperswitch app server can support multiple merchants.
+​Hyperswitch operates on a multi-tenant architecture, enabling a single application server to support multiple merchants. To create a new merchant account, follow these steps:​
 
-Use the below cURL command to create a new merchant account. Set the admin API key you configured in the application configuration for `admin_api_key` variable in the cURL request. You can find the configuration file at `config/docker_compose.toml`, search for `api_key` to find the admin API key.  Trigger the request to create a merchant account. You should obtain a response containing the merchant ID and publishable key.
+1. **Locate the Admin API Key**:
+   * Find the `config/docker_compose.toml` file in your Hyperswitch setup.​
+   * Search for the `api_key` entry within this file to retrieve your admin API key.​
+2. **Execute the cURL Command**:
+   * Use the following cURL command to create a merchant account:​
+   * Replace `<admin-api-key>` with your actual admin API key.
 
 <details>
 
@@ -54,9 +57,17 @@ curl --location 'http://localhost:8080/accounts' \
 
 </details>
 
+3. **Receive the Response**:
+
+* Upon executing the command, you should receive a response containing the `merchant_id` and `publishable_key`.​
+
 ## Create an API key <a href="#user-content-create-an-api-key" id="user-content-create-an-api-key"></a>
 
-Use the below cURL command to create an API key. Update URL of the below cURL request with the `merchant_id` obtained in the previous step. Once you trigger the request, you will obtain a response containing the plaintext API key. Store the API key returned in the response securely.
+To generate an API key for your merchant account in Hyperswitch, follow these steps:​
+
+1. **Prepare the cURL Command**:
+   * Replace `<your_merchant_id>` with the `merchant_id` obtained from the previous step.​
+   * Replace `<admin-api-key>` with your admin API key.​
 
 <details>
 
@@ -76,15 +87,24 @@ curl --location 'http://localhost:8080/api_keys/<your_merchant_id>' \
 
 </details>
 
+2. **Secure the API Key**:
+
+* The response will include the plaintext API key. Store this key securely, as it is essential for authenticating API requests from your merchant server.​
+
 ## Set up a payment processor <a href="#user-content-set-up-a-payment-processor-account" id="user-content-set-up-a-payment-processor-account"></a>
 
-Run the below cURL to set up your preferred payment processor an API key. You'll need the  API keys of payment processor. In case you don't have an account with a payment provider, you can sign-up on any payment processor (say Stripe, Adyen, etc.) and get the necessary credentials.&#x20;
+​To integrate your preferred payment processor with Hyperswitch, follow these steps:​
 
-In the below cURL update the following details&#x20;
+**1. Obtain API Credentials from Your Payment Processor:**
 
-* Under  `connector_name` and `connector_account_details` fields. `Connector_name`is the name of the Payment provider you want to process payment through&#x20;
-* `Connector_account_details`are the respective details of the payment provider in order to complete the authentication succesfully. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
-* Update URL of the below cURL request with the `merchant_id` obtained in the previous step
+* Sign up with your chosen payment processor (e.g., Stripe, Adyen) and acquire the necessary API credentials.​
+
+2. **Set Up the Payment Processor in Hyperswitch:**
+   * Use the following cURL command to configure the payment processor
+     * Replace `<your_merchant_id>` with your merchant ID obtained earlier.
+     * Replace `<admin-api-key>` with your admin API key.
+     * Replace `<connector_name>` with the name of your payment processor (e.g., "stripe").
+     * Replace `<connector_api_key>` with the API key provided by your payment processor.
 
 <details>
 
@@ -157,11 +177,19 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 </details>
 
+**3. Customize Connector Account Details:**
+
+* The `connector_account_details` field requires specific authentication details for your chosen payment processor. For payment processors, the required fields may vary. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
+
+**4. Enable Payment Methods:**
+
+* In the `payment_methods_enabled` section, specify the payment methods and types you wish to enable. For example, to enable credit card payments via Visa and Mastercard, include them as shown in the cURL command above.
+
 ## **Resources**
 
 * To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3)
 
-## Next step:
+## Next step
 
 {% content-ref url="test-a-payment.md" %}
 [test-a-payment.md](test-a-payment.md)

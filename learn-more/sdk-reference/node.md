@@ -1,5 +1,6 @@
 ---
 description: Node to access the Hyperswitch API
+hidden: true
 ---
 
 # Node

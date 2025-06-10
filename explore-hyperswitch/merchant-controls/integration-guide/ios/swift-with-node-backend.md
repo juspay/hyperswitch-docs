@@ -16,45 +16,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 
 ## 1. Setup the server
 
-### 1.1 Install the `hyperswitch-node` library
-
-Install the package and import it in your code
-
-```js
-$ npm install @juspay-tech/hyperswitch-node
-```
-
-### 1.2 Create a payment
-
-Before creating a payment, import the `hyperswitch-node` dependencies and initialize it with your API key.
-
-```js
-const hyper = require("@juspay-tech/hyperwitch-node")(‘YOUR_API_KEY’);
-```
-
-Add an endpoint on your server that creates a Payment. Creating a Payment helps to establish the intent of the customer to start a payment. It also helps to track the customer’s payment lifecycle, keeping track of failed payment attempts and ensuring the customer is only charged once. Return the `client_secret` obtained in the response to securely complete the payment on the client.
-
-```js
-// Create a Payment with the order amount and currency
-app.post("/create-payment", async (req, res) => {
-  try {
-    const paymentIntent = await hyper.paymentIntents.create({
-      currency: "USD",
-      amount: 100,
-    });
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
-    });
-  }
-});
-```
+Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
@@ -172,6 +134,10 @@ configuration.merchantDisplayName = "Example, Inc."
     })
 }
 ```
+
+{% hint style="danger" %}
+Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+{% endhint %}
 {% endtab %}
 
 {% tab title="SwiftUI" %}
@@ -298,6 +264,6 @@ Congratulations! Now that you have integrated the iOS SDK, you can customize the
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

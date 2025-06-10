@@ -4,10 +4,6 @@ description: Customize your Web unified checkout
 
 # Customization
 
-{% hint style="info" %}
-You can customize the Unified Checkout to support your checkout context and brand guidelines by using Layouts and Styling APIs
-{% endhint %}
-
 ## 1. Layouts
 
 Choose a layout that fits well with your UI pattern. There are two types of layout options as listed below. The layout defaults to accordion if not explicitly specified.
@@ -118,11 +114,12 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-* .Tab, .Label, .Input
+* .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
 * .Tab:focus
-* .Input--invalid, .Label--invalid
+* .Input--invalid, .Label--invalid, .InputLogo--invalid
 * .Input::placeholder
 * .billing-section, .billing-details-text
+* .Input--empty, .InputLogo--empty
 
 
 
@@ -144,16 +141,6 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 * .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
-
-### Tabs
-
-<figure><img src="../../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
-
-| Class Name   | States     | Pseudo-Classes                     | Pseudo-Elements |
-| ------------ | ---------- | ---------------------------------- | --------------- |
-| .Tabs        | --selected | :hover, :focus, :active, :disabled |                 |
-| fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
-| spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
 ```js
 const appearance = {
@@ -215,6 +202,56 @@ const elements = hyper.elements({ clientSecret, appearance });
 | .Checkbox      | --checked | :hover         |                 |
 | .CheckboxLabel | --checked | :hover         |                 |
 | .CheckboxInput | --checked | :hover         |                 |
+
+### InputLogo
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.03.21 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name | States    | Pseudo-Classes | Pseudo-Elements |
+| ---------- | --------- | -------------- | --------------- |
+| .InputLogo |           | :hover         |                 |
+| .InputLogo | --invalid | :hover,        |                 |
+| .InputLogo | --empty   | :hover         |                 |
+
+### SaveWalletDetailsLabel
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name              | States | Pseudo-Classes | Pseudo-Elements |
+| ----------------------- | ------ | -------------- | --------------- |
+| .SaveWalletDetailsLabel |        | :hover         |                 |
+
+### OrPayUsingLabel
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name       | States | Pseudo-Classes | Pseudo-Elements |
+| ---------------- | ------ | -------------- | --------------- |
+| .OrPayUsingLabel |        | :hover         |                 |
+
+### OrPayUsingLine
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 3.02.49 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name      | States | Pseudo-Classes | Pseudo-Elements |
+| --------------- | ------ | -------------- | --------------- |
+| .OrPayUsingLine |        | :hover         |                 |
+
+### TermsTextLabel
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.18.00 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name      | States | Pseudo-Classes | Pseudo-Elements |
+| --------------- | ------ | -------------- | --------------- |
+| .TermsTextLabel |        | :hover         |                 |
+
+### InfoElement
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.21.32 PM.png" alt=""><figcaption></figcaption></figure>
+
+| Class Name   | States | Pseudo-Classes | Pseudo-Elements |
+| ------------ | ------ | -------------- | --------------- |
+| .InfoElement |        | :hover         |                 |
 
 ## 5. Languages
 
@@ -432,10 +469,26 @@ var paymentElementOptions = {
 
 The `readOnly` property puts the SDK into read-only mode, disabling all interactions.
 
+<pre class="language-javascript"><code class="lang-javascript">var paymentElementOptions = {
+  ...,
+  readOnly: true,
+};
+<strong>
+</strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />;
+</code></pre>
+
+### Show Short Surcharge Message
+
+The `showShortSurchargeMessage` property allows merchants to display a short message when a surcharge is applied, instead of the default message provided by the SDK.
+
+{% hint style="success" %}
+The short message format will be: **`Fee: {Currency} {Amount}`**
+{% endhint %}
+
 ```javascript
 var paymentElementOptions = {
   ...,
-  readOnly: true,
+  showShortSurchargeMessage: true, // default - false
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
@@ -443,6 +496,6 @@ var paymentElementOptions = {
 
 ## Next step:
 
-{% content-ref url="../../../payment-flows-and-management/quickstart/payment-methods-setup/" %}
-[payment-methods-setup](../../../payment-flows-and-management/quickstart/payment-methods-setup/)
+{% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+[payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}

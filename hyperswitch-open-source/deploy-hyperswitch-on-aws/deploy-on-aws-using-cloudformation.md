@@ -1,78 +1,83 @@
 ---
+description: Use our CDK script to deploy Hyperswitch into your AWS stack
 icon: aws
-description: >-
-  Use our CDK script to deploy the entire Hyperswitch application inside your
-  stack
 ---
 
 # Deploy on AWS using CloudFormation
 
-{% hint style="info" %}
-In this chapter, you will deploy our full-stack application on AWS EKS. This will deploy our app server, web client and control center
-{% endhint %}
-
-***
-
-## Video
-
 {% embed url="https://www.youtube.com/watch?v=c2igjE3-EDc" %}
-
-## What is included in this setup
-
-The following components and services will be deployed in a **new stack** in your AWS account
-
-| Component       | Instance Type  | Default Configuration |
-| --------------- | -------------- | --------------------- |
-| EKS (1 Cluster) | t3.medium      | 2 Nodes               |
-| Load Balancer   | Application LB | 2 LBs                 |
-| RDS             | t4g.medium     | 2 cluster             |
-| ElastiCache     | t4g.medium     | 1 cluster             |
-| EC2             | t3.medium      | 1 instance            |
-
-The following services will be installed in the 2 Nodes inside your EKS cluster
-
-| Service Name           | Number of Pods                              | Default Configuration                |
-| ---------------------- | ------------------------------------------- | ------------------------------------ |
-| Hyperswitch App Server | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
-| Producer (Scheduler)   | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Consumer (Scheduler)   | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Promtail               | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
-| Loki                   | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Grafana                | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Control Center         | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-
-
-
-<figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
 
 ## Steps to Deploy Hyperswitch on AWS
 
 ### **Prerequisites**
 
 * `git` installed on your local machine
-* node version 18
+* node version 18+
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
-### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
-
-* Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
-* While setting permissions, **provide admin access** to the user
+### Step 1 - \[Optional] - Create a new user with admin access&#x20;
 
 <figure><img src="../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
+
+If you do not have a user with admin access, follow these steps:
+
+#### 1. Sign into the AWS Management Console
+
+* Go to [https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)
+* In the left-hand menu, click **Users**
+* Click the **Add users** button
+
+#### 2. Set the username
+
+* **User name:** `hyperswitch`
+
+<figure><img src="../../.gitbook/assets/1-specify-user.png" alt=""><figcaption></figcaption></figure>
+
+#### 3. Attach Permissions
+
+* Choose **Attach policies directly**.
+* In the search bar, type `AdministratorAccess`
+* Check the box for:\
+  🔐 **AdministratorAccess** – _AWS managed, job function_
+
+<figure><img src="../../.gitbook/assets/2-policies.png" alt=""><figcaption></figcaption></figure>
+
+#### 4. Review and Create
+
+* Confirm the details:
+* User name: `hyperswitch`
+* Permissions: `AdministratorAccess`
+* Click on **Create user**
+
+<figure><img src="../../.gitbook/assets/3-create-user.png" alt=""><figcaption></figcaption></figure>
+
+#### 5. Save Access Credentials
+
+* Click on the newly created user `hyperswitch` to view its details.
+* Navigate to the **Security credentials** tab.
+*   Under the **Access keys** section:
+
+    * Click **Create access key**
+    * Choose **Command Line Interface (CLI)**)
+    * Click **Next**, then **Create access key**
+    * **Download the `.csv` file** or **securely copy** the:
+      * **Access Key ID**
+      * **Secret Access Key**
+
+    <figure><img src="../../.gitbook/assets/aws-access-key (1).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="warning" %}
+⚠️ You won’t be able to view the Secret Access Key again later — store it in a password manager or other secure location.
+{% endhint %}
 
 ### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
 
-1. Preferred AWS region
-2. Access key ID
-3. Secret Access Key
-4. Session Token (if you MFA set up)
-
-You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
+* Preferred AWS region
+* Access key ID
+* Secret Access Key
+* Session Token (if you MFA set up)
 
 Once you have the keys run the below command
 
@@ -93,17 +98,17 @@ cd hyperswitch-cdk
 bash install.sh
 ```
 
-Once the script is run you will have to provide the following as inputs
+Once the script is run you will have to provide the following as inputs:
 
-1. Provide a DB password of your choice (should be more than 8 chars)
-2. Provide an Admin Api key of your choice for Hyperswitch APIs&#x20;
+1. Create a DB password of your choice (should be more than 8 chars).
+2. Provide an Admin API key of your choosing via [Hyperswitch Dashboard](https://app.hyperswitch.io/dashboard/developer-api-keys).
 3. If you choose to opt-in for the card vault service, provide a master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
    * Provide the Locker DB password of your choice when prompted
 
-After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal
+After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal.
 
 {% hint style="warning" %}
-Make sure to save the passwords you provide while running the script
+Make sure to save the passwords you provide while running the script.
 {% endhint %}
 
 ### Output
@@ -161,8 +166,73 @@ The table below offers an estimated cost for operating the setup generated by th
 
 </details>
 
+## Tear down the AWS Deployment
+
+You'll need to destroy the Hyperswitch CDK Stack. To tear down all AWS resources provisioned by the Hyperswitch CDK stack, run the following command. This ensures the required `aws_arn` context is passed during the destroy process:
+
+```bash
+cdk destroy -c aws_arn=$(aws sts get-caller-identity --query Arn --output text)
+```
+
+You’ll be prompted to confirm the deletion. Type `y` when prompted to proceed.
+
+> 💡 This command removes all infrastructure created by the CDK, including EKS clusters, VPCs, IAM roles, and other resources.
+
+You can check to see if there is anything running:
+
+```
+aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE
+```
+
+If the CDK Toolkit exist, you can execute this command:
+
+```
+aws cloudformation delete-stack --stack-name CDKToolkit
+```
+
+## What you deployed in this tutorial
+
+The following components and services were provisioned as part of a new stack in your AWS account:
+
+| Component       | Instance Type  | Default Configuration |
+| --------------- | -------------- | --------------------- |
+| EKS (1 Cluster) | t3.medium      | 2 Nodes               |
+| Load Balancer   | Application LB | 2 LBs                 |
+| RDS             | t4g.medium     | 2 cluster             |
+| ElastiCache     | t4g.medium     | 1 cluster             |
+| EC2             | t3.medium      | 1 instance            |
+
+The following services are installed in the 2 Nodes across the EKS cluster
+
+| Service Name           | Number of Pods                              | Default Configuration                |
+| ---------------------- | ------------------------------------------- | ------------------------------------ |
+| Hyperswitch App Server | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
+| Producer (Scheduler)   | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Consumer (Scheduler)   | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Promtail               | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
+| Loki                   | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Grafana                | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Control Center         | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+
+### Architecture Diagram
+
+<figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
+
 ## Next step:
 
 {% content-ref url="../account-setup/" %}
 [account-setup](../account-setup/)
 {% endcontent-ref %}
+
+{% content-ref url="../../explore-hyperswitch/payment-orchestration/quickstart/connectors/test-a-payment-with-connector.md" %}
+[test-a-payment-with-connector.md](../../explore-hyperswitch/payment-orchestration/quickstart/connectors/test-a-payment-with-connector.md)
+{% endcontent-ref %}
+
+###
+
+### Explore Further
+
+Once you are done with the test payment, you can explore more about these:
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router/">smart-router</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../about-hyperswitch/payments-modules/ai-powered-cost-observability.md">ai-powered-cost-observability.md</a></td></tr></tbody></table>

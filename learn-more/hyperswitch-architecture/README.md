@@ -1,52 +1,50 @@
 ---
-description: A 30,000 feet view of Hyperswitch's architecture
 icon: folder-tree
+description: A 30,000 feet view of Hyperswitch's architecture
 ---
 
 # Hyperswitch architecture
 
-{% hint style="info" %}
-This chapter will help you quickly understand the Hyperswitch application's architecture
-{% endhint %}
+Hyperswitch comprises two distinct app services: **Router** and **Scheduler** which in turn consists of **Producer** and **Consumer**, where each service has its specific responsibilities to process payment-related tasks efficiently.
 
-***
+<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
 
-At high level, Hyperswitch has two main components,&#x20;
+### Router
 
-* router, which handles the incoming requests and talks to various connectors.
-* a low latency storage layer
+The Router is the main component of Hyperswitch, serving as the primary crate where all the core payment functionalities are implemented. It is a crucial component responsible for managing and coordinating different aspects of the payment processing system. Within the Router, the core payment flows serve as the central hub through which all payment activities are directed. When a payment request is received, it goes through the Router, which handles important processing and routing tasks.
 
-<figure><img src="../../.gitbook/assets/HS_architecture (2).png" alt=""><figcaption></figcaption></figure>
+### Scheduler
 
-## Core API Layer <a href="#core" id="core"></a>
+Suppose a scenario where a customer has saved their card details in your application, but for security reasons, you want to remove the saved card information after a certain period. To automate this process, Scheduler comes into picture. It schedules a task with a specific time for execution and stores it in the database. When the scheduled time arrives, the job associated with the task starts executing, here in this case, allowing the saved card details to be deleted automatically. One other situation in which we use this service in Hyperswitch is when we want to notify the merchant that their api key is about to expire.
 
-The "Core" is the unifying layer of Hyperswitch, which handles the incoming requests, authenticates, intelligently picks the connector(s) and processes the payments or refunds on behalf of the merchant. &#x20;
+#### Producer (Job scheduler)
 
-The incoming requests could be from merchant servers, the client SDK, or webhooks from the connectors. The core layer also contains other business intelligence like the connector routing logic.
+The Producer is one of the components responsible for the Scheduler's functionality. Its primary responsibility is to handle the tracking of tasks which are yet to be executed. When the Router Service inserts a new task into the database, specifying a scheduled time, the producer retrieves the task from the database when the scheduled time is up and proceeds to group or batch these tasks together. These batches of tasks are then stored in a Redis queue, ready for execution, which will be picked up by consumer service.
 
-## Connectors <a href="#connectors" id="connectors"></a>
+#### Consumer (Job executor)
 
-Hyperswitch treats external services as connectors. The connectors could be payment processors like stripe, paypal or fraud/risk prevention services like signifyd, or any other payment services. &#x20;
+The Consumer is another key component of the Scheduler. Its main role is to retrieve batches of tasks from the Redis queue for processing, which were previously added by the Producer. Once the tasks are retrieved, the Consumer executes them. It ensures that the tasks within the batches are handled promptly and in accordance with the required processing logic.
 
-The "Connector" module is a light weight stateless service, that contains the necessary logic to convert the hyperswitch payments data into a format required by the payment processor, connects to the appropriate endpoints, sends the requests, interprets the response, and provides the final status and message back to the Core.
+### Database
 
-This module is constructed as a stateless service and hence fully decoupled from the Core. This allows the Core to communicate with the diverse payment processor integrations and helps separate the detail-oriented data transformation layer from the Core.&#x20;
+#### Postgres
 
-The Core communicates with Connector through a standard interface abstracted to carry the payment use case and respective payment data.
+The application relies on a PostgreSQL database for storing various types of data, including customer information, merchant details, payment-related data, and other relevant information. The application maintains a master-database and replica-database setup to optimize read and write operations.
 
-## Storage <a href="#storage" id="storage"></a>
+#### Redis
 
-Persistence with consistency is quite crucial for a transactional system like Hyperswitch. However, the storage layer should not become a bottleneck for a high-performance application. The critical path of a payment lifecycle primarily characterizes frequent read and write to a record (lasting for a few minutes), post which the record is frequent read and rarely written (lasting up to 6 months).&#x20;
+In addition to the database, Hyperswitch incorporates Redis for two main purposes. It is used to **cache** frequently accessed data in order to decrease the application latencies and reduce the load on the database. It is also used as a **queuing mechanism** by the Scheduler.
 
-Hence, to ensure a high-performance system for processing peak transaction volumes, the storage is further divided into three sub-parts:
+### Locker
 
-* **Cache layer** to de-bottleneck the persistent (SQL) storage by exposing data essential for high-frequency read-write operations.&#x20;
-* **Persistent (SQL) storage** for ensuring persistence and consistency
-* **write-back / drainer** to write back the data to SQL storage layer for persistence and consistency.
+The application utilizes a Rust locker built with a GDPR compliant PII (personal identifiable information) storage. It also uses secure encryption algorithms to be fully compliant with **PCI DSS** (Payment Card Industry Data Security Standard) requirements, this ensures that all payment-related data is handled and stored securely. You can find the source code of locker [here](https://github.com/juspay/hyperswitch-card-vault).
 
-The router can still read data from SQL storage as necessary.
+### Monitoring
 
+<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-monitoring-architecture.png" alt=""><figcaption><p>HyperSwitch Monitoring Architecture</p></figcaption></figure>
 
+The monitoring services in Hyperswitch ensure the effective collection and analysis of metrics to monitor the system's performance.
 
+Hyperswitch pushes the metrics and traces in **OTLP** format to the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/). [Prometheus](https://prometheus.io/docs/introduction/overview/) utilizes a pull-based model, where it periodically retrieves application metrics from the OpenTelemetry collector. [Promtail](https://grafana.com/docs/loki/latest/clients/promtail/) scrapes application logs from the router, which in turn are pushed to the [Loki](https://grafana.com/docs/loki/latest/) instance. Users can query and visualize the logs in Grafana through Loki. [Tempo](https://grafana.com/docs/tempo/latest/) is used for querying the application traces.
 
-
+Except for the OpenTelemetry collector, all other monitoring services like Loki, Tempo, Prometheus can be easily replaced with a preferred equivalent, with minimal to no code changes.
