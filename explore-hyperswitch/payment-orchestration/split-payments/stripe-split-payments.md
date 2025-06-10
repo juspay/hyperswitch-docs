@@ -206,18 +206,6 @@ The `transfer_account_id` cannot be `platform_account_id`. This is because charg
             "application_fees": 10,
             "transfer_account_id": "STRIPE_CONNECT_ACCOUNT_ID"
         }
-    },
-    "browser_info": {
-        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/70.0.3538.110 Safari\/537.36",
-        "accept_header": "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
-        "language": "nl-NL",
-        "color_depth": 24,
-        "screen_height": 723,
-        "screen_width": 1536,
-        "time_zone": 0,
-        "java_enabled": true,
-        "java_script_enabled": true,
-        "ip_address": "128.0.0.1"
     }
 }
 ```
