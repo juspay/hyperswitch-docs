@@ -94,7 +94,9 @@ Parameter:
 * The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).
 * A transfer can be reversed only by the application that created the charge
 
-### Split recurring payments using Hyperswitch via Stripe 
+### Split recurring payments using Hyperswitch via Stripe
+
+
 
 1. In CIT call, passing customer\_id is mandatory. Along with that, the Stripe Split Payments object.
 
@@ -142,3 +144,111 @@ The `transfer_account_id` cannot be `platform_account_id`. This is because charg
     }
 
 ```
+
+<details>
+
+<summary>Example of CIT call</summary>
+
+```bash
+{
+    "amount": 200,
+    "currency": "USD",
+    "confirm": true,
+    "capture_method": "automatic",
+    "amount_to_capture": 200,
+    "customer_id": "cus_idxxxxxxx",
+    "setup_future_usage": "off_session",
+    "customer_acceptance": {
+        "acceptance_type": "offline",
+        "accepted_at": "1963-05-03T04:07:52.723Z",
+        "online": {
+            "ip_address": "125.0.0.1",
+            "user_agent": "amet irure esse"
+        }
+    },
+    "authentication_type": "no_three_ds",
+    "return_url": "",
+    "name": "John Doe",
+    "phone": "999999999",
+    "phone_country_code": "+65",
+    "description": "Its my first payment request",
+    "payment_method": "card",
+    "payment_method_type": "debit",
+    "payment_method_data": {
+        "card": {
+            "card_number": "4242424242424242",
+            "card_exp_month": "09",
+            "card_exp_year": "25",
+            "card_holder_name": "joseph Doe",
+            "card_cvc": "123"
+        }
+    },
+    "billing": {
+        "address": {
+            "line1": "1467",
+            "line2": "Harrison Street",
+            "line3": "Harrison Street",
+            "city": "San Fransico",
+            "state": "California",
+            "zip": "94122",
+            "country": "US",
+            "first_name": "joseph",
+            "last_name": "Doe"
+        },
+        "phone": {
+            "number": "8056XXX427",
+            "country_code": "+91"
+        }
+    },
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 10,
+            "transfer_account_id": "STRIPE_CONNECT_ACCOUNT_ID"
+        }
+    },
+    "browser_info": {
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/70.0.3538.110 Safari\/537.36",
+        "accept_header": "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
+        "language": "nl-NL",
+        "color_depth": 24,
+        "screen_height": 723,
+        "screen_width": 1536,
+        "time_zone": 0,
+        "java_enabled": true,
+        "java_script_enabled": true,
+        "ip_address": "128.0.0.1"
+    }
+}
+```
+
+</details>
+
+<details>
+
+<summary>Example of MIT call</summary>
+
+```bash
+{
+    "amount": 200,
+    "currency": "USD",
+    "customer_id": "cus_vnkxxxxxxxxjk",    // customer_id field received in CIT response
+    "description": "Subsequent Mandate Test Payment (MIT from New CIT Demo)",
+    "confirm": true,
+    "off_session": true,
+    "recurring_details": {
+        "type": "payment_method_id",
+        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response    
+    },
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 10,
+            "transfer_account_id": "STRIPE_CONNECT_ACCOUNT_ID"
+        }
+    }
+}
+
+```
+
+</details>
