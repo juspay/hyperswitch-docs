@@ -97,6 +97,7 @@
           * [iOS Application](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/wallets/apple-pay/ios-application.md)
         * [Google Pay](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/wallets/google-pay.md)
         * [PayPal](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/wallets/paypal.md)
+        * [Samsung Pay](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/wallets/samsung-pay.md)
       * [Pay Later](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/pay-later.md)
       * [Banks](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/banks/README.md)
         * [Bank Debits](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/banks/bank-debits.md)
