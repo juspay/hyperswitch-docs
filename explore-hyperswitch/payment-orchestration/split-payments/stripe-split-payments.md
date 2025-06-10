@@ -93,3 +93,52 @@ Parameter:
 * Indicates whether the transfer should be reversed when refunding this charge.&#x20;
 * The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).
 * A transfer can be reversed only by the application that created the charge
+
+### Split recurring payments using Hyperswitch via Stripe 
+
+1. In CIT call, passing customer\_id is mandatory. Along with that, the Stripe Split Payments object.
+
+```
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 10,
+            "transfer_account_id": "STRIPE_CONNECT_ACCOUNT_ID"
+        }
+    },
+```
+
+#### For charge type=direct
+
+The charge is created on the `connect_account` 's end and not on the platform. We should pass `connect_account_id` in `transfer_account_id` field. If `platform_id` is passed in `transfer_account_id` field then no `application_fees` should not be passed.
+
+#### For charge\_type = destination
+
+The `transfer_account_id` cannot be `platform_account_id`. This is because charge cannot be created on your own account itself. Stripe will throw an error.
+
+\
+2\. In CIT call, The merchant would also need to pass the `customer_acceptance` object
+
+```
+"customer_acceptance": {
+        "acceptance_type": "offline",
+        "accepted_at": "1963-05-03T04:07:52.723Z",
+        "online": {
+            "ip_address": "125.0.0.1",
+            "user_agent": "amet irure esse"
+        }
+    },
+```
+
+3\. In the response of the CIT call, the `payment_method_id` and `customer_id` received will be used in future MIT calls. Along with that the merchant would need to pass this object as well in the MIT call
+
+```
+"split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 10,
+            "transfer_account_id": "STRIPE_CONNECT_ACCOUNT_ID"
+        }
+    }
+
+```
