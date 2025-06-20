@@ -100,6 +100,14 @@ Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a Payment
 
 `clientSecret` is a required string.
 
+#### 5.  `hyper.initiateUpdateIntent()`
+
+Use `hyper.initiateUpdateIntent()` just before you start updating the payment intent on your end. It doesn't require any input. When invoked, it signals the system to prepare for the update process and returns a confirmation message indicating that the update has been initiated.
+
+#### 6.  `hyper.completeUpdateIntent(clientSecret)`
+
+Use `hyper.completeUpdateIntent(clientSecret)` after you’ve completed the payment intent update process on your side. It takes the updated `clientSecret` as input and signals the system to complete the update flow. It returns a response with a confirmation message indicating the update has been processed.
+
 ### useElements()
 
 This hook gives you access to methods in Elements API, which you can call.
