@@ -35,59 +35,9 @@ The unified dashboard offers the merchants ability to enable or disable APMs via
 
 To start collecting payments via the APM of your choice, follow these simple steps: ​
 
-* [Install the Hyperwidgets SDK following these steps. ​](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
-* [For customization and depending upon the merchant requirements for JS and React Integration.​](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
-
-#### For React Integration:
-
-```javascript
-npm install @juspay-tech/hyper-js
-npm install @juspay-tech/react-hyper-js
-```
-
-```javascript
-import React, { useState, useEffect } from "react";
-import { loadHyper } from "@juspay-tech/hyper-js";
-import { hyperElements } from "@juspay-tech/react-hyper-js";
-​
-const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY",{
-   customBackendUrl: "YOUR_BACKEND_URL",
-   //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
-});
-​
-useEffect(() => {
- // Create PaymentIntent as soon as the page loads
- fetch("/create-payment", {
-   method: "POST",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
- })
-   .then((res) => res.json())
-   .then((data) => setClientSecret(data.clientSecret));
-}, []);
-​
-<div className="App">
- {clientSecret && (
-   <HyperElements options={options} hyper={hyperPromise}>
-     <CheckoutForm />
-   </HyperElements>
- )}
-</div>
-```
-
-Now add this component to the PaymentElement -&#x20;
-
-```javascript
-var unifiedCheckoutOptions = {
- wallets: {
-   walletReturnUrl: "https://example.com/complete",
-   //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
- },
-};
-
-<UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
-
-```
+* [Install the Hyperwidgets SDK following these steps.](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
+  * As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
+* [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)&#x20;
 
 {% content-ref url="../../../explore-hyperswitch/merchant-controls/click-to-pay/" %}
 [click-to-pay](../../../explore-hyperswitch/merchant-controls/click-to-pay/)

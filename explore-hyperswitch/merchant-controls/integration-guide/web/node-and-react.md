@@ -1,16 +1,24 @@
 # Node And React
 
-**Before following these steps, please configure your payment methods** here. Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
+**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.&#x20;
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
+<details>
+
+<summary><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+
+You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
+
+Refer to it's&#x20;
+
+</details>
 
 ### 1. Setup the server
 
-Follow the [Server Setup](server-setup.md) section.
+1.1 Follow the [Server Setup](server-setup.md) section.
 
 ### 2. Build checkout page on the client
 
-#### 2.1 Install the `hyper-js` and `react-hyper-js` libraries
+#### 2.1 Install the [`hyper-js`](https://www.npmjs.com/package/@juspay-tech/hyper-js) and [`react-hyper-js`](https://www.npmjs.com/package/@juspay-tech/react-hyper-js) libraries
 
 Install the packages and import it into your code
 
