@@ -136,6 +136,7 @@
     * [Setting up 3DS Decision Manager](explore-hyperswitch/payment-orchestration/3ds-decision-manager/setup-guide.md)
     * [Native 3DS Authentication](explore-hyperswitch/payment-orchestration/3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md)
     * [External Authentication for 3DS](explore-hyperswitch/payment-orchestration/3ds-decision-manager/external-authentication-for-3ds.md)
+    * [3DS Intelligence Engine](explore-hyperswitch/payment-orchestration/3ds-decision-manager/3ds-intelligence-engine.md)
   * [Fraud & Risk Management](explore-hyperswitch/payment-orchestration/fraud-and-risk-management/README.md)
     * [Activating FRM in Hyperswitch](explore-hyperswitch/payment-orchestration/fraud-and-risk-management/activating-frm-in-hyperswitch.md)
     * [Fraud Blocklist](explore-hyperswitch/payment-orchestration/fraud-and-risk-management/fraud-blocklist.md)

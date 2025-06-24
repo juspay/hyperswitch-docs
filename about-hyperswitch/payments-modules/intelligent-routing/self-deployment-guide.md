@@ -4,7 +4,7 @@
 
 How it fits into your existing payments setup:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
 Local Setup guide:
 
