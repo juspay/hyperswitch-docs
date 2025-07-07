@@ -13,6 +13,8 @@ This MCP server is only meant for product exploration while using sandbox enviro
 
 ### Step 1: Install the MCP Server
 
+Open terminal and run the command given below
+
 ```bash
 npx mint-mcp add api-reference.hyperswitch.io
 ```
@@ -47,7 +49,8 @@ Once done, you will see this as output:
 ### Step 4: Enable in your MCP Client
 
 * Go to integrations (or MCP tools) section in your MCP client
-* Look for the locally available MCP tool: `api.reference.hyperswitch.io`
+* Look for the locally available MCP tool: `api.reference.hyperswitch.io` \
+  Eg. in Claude Desktop go to Search and Tools button in the chat box, or in Cursor go to the settings and then MCP tools section.&#x20;
 
 ### Step 5: Make your First Payment
 
