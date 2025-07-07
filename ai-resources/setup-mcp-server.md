@@ -4,6 +4,11 @@ icon: user-robot-xmarks
 
 # Setup MCP Server
 
+{% hint style="danger" %}
+This MCP server is only meant for product exploration while using sandbox environment.\
+**DO NOT USE Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
+{% endhint %}
+
 **Prerequisites**: Ensure you have an MCP client installed (Cursor, Claude Desktop, Cline, etc.)
 
 ### Step 1: Install the MCP Server
@@ -57,6 +62,6 @@ Make a payment of 100 USD via Hyperswitch.
 You can head on to payment section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/payments) and verify the payment with the time stamp and status as `REQUIRES_PAYMENT_METHOD` .
 
 {% hint style="warning" %}
-This MCP server is only meant for product exploration while using sandbox environment.\
-**DO NOT USE Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
+Responses from AI tools can be incorrect, use with caution.\
+and reach out to us on [slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
 {% endhint %}

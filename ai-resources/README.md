@@ -63,3 +63,7 @@ Execute real [Hyperswitch API](https://api-reference.hyperswitch.io/introduction
 [setup-mcp-server.md](setup-mcp-server.md)
 {% endcontent-ref %}
 
+{% hint style="warning" %}
+Responses from AI tools can be incorrect, use with caution.\
+and reach out to us on [slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
+{% endhint %}
