@@ -12,6 +12,7 @@
     * [Server to Server Vault tokenization](about-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization.md)
     * [Vault SDK Integration](about-hyperswitch/payments-modules/vault/vault-sdk-integration.md)
     * [Hyperswitch Vault: Pass Through Proxy Payments](about-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments.md)
+    * [Connect External Vaults to Hyperswitch Orchestration](about-hyperswitch/payments-modules/vault/connect-external-vaults-to-hyperswitch-orchestration.md)
   * [Intelligent Routing](about-hyperswitch/payments-modules/intelligent-routing/README.md)
     * [Auth Rate Based Routing](about-hyperswitch/payments-modules/intelligent-routing/auth-rate-based-routing.md)
     * [Self-Deployment Guide](about-hyperswitch/payments-modules/intelligent-routing/self-deployment-guide.md)
