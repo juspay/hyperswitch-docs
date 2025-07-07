@@ -27,6 +27,11 @@
   * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q2-2025/roadmap-1.md)
   * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q2-2025/roadmap-1-1.md)
 
+***
+
+* [AI Resources](ai-resources/README.md)
+  * [Setup MCP Server](ai-resources/setup-mcp-server.md)
+
 ## Use-Cases
 
 * [For SaaS Businesses](use-cases/for-saas-providers.md)
