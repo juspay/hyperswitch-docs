@@ -61,8 +61,14 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 **Cost Observability**
 
-* Building the end to end capability to derive fee names, estimate fees, audit fee accuracy and breakdown aggregated scheme fee details and support multiple Provider fee reports.
-* Building a modern AI-powered chat interface to simplify and streamline cost observability—making it as intuitive and conversational as today’s leading AI tools."
+* **Smarter Fee Attribution Engine:** Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources.
+* **Advanced Fee Auditing Capabilities**
+  * Audit applied interchange and scheme fees against both standard and contracted rates.
+  * Benchmark or compare processing fees applied by different providers to identify savings opportunities.
+  * Estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates.
+* **Conversational AI Interface:** Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly.
+* **AI-Powered Self-Serve Uploads & Instant Insights:** Empowering users to upload any report or transaction data, structured or unstructured and instantly receive meaningful insights, summaries, and potential optimization actions.
+* **Expanded Acquirer Coverage:** Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers.
 
 **Core Orchestration**
 
