@@ -4,40 +4,27 @@ icon: garage-car
 
 # Platform Org and Merchant Setup
 
-The Platform Merchant model enables your organization to **auto-onboard sellers** by creating merchant accounts entirely through API—removing the need for manual signup. This approach streamlines the traditional merchant setup by automating key steps like application, underwriting, and credentials issuance, delivering **instant onboarding and frictionless seller experience**
+A PlatformOrg is a specialized organization type containing exactly one Platform Merchant, which has elevated privileges across its entire organization:
 
-#### Key benefits include:
-
-* Auto-onboarding of sellers by creating merchant accounts via API
-* Programmatic generation and rotation of API keys for each merchant
-* Centralized tracking of merchant keys to manage payments, refunds, and settlements across sub-merchants
+* **Create Merchant Accounts**: Dynamically spin up new child merchant accounts via API.
+* **Manage Credentials**: Generate, revoke, and rotate API keys for child merchants programmatically.
+* **Full Visibility & Control**: Process payments, refunds, and other operations across all your sub-merchants by using API keys generated specifically for each merchant through your Platform Merchant account.
 
 ### &#x20;Platform Org and Merchant Structure
 
 ```mermaid
-graph TD
-  PlatformOrg --> PlatformMerchant
-  subgraph PlatformOrg
-    PlatformMerchant["Platform Merchant (privileged)"]
-    PlatformMerchant --> SubMerchant1
-    PlatformMerchant --> SubMerchant2
-    PlatformMerchant --> SubMerchant3
-  end
-  subgraph SubMerchant3Group["Sub‑Merchant #3"]
-    SubMerchant3 --> ProfileD
-    SubMerchant3 --> ProfileE
-  end
-  subgraph SubMerchant2Group["Sub‑Merchant #2"]
-    SubMerchant2 --> ProfileC
-  end
+flowchart TD
+  PlatformOrg["PlatformOrg"] --> PlatformMerchant["Platform Merchant (single, privileged merchant)"]
+  
+  PlatformMerchant --> SubMerchant1["Sub-Merchant #1"]
+  PlatformMerchant --> SubMerchant2["Sub-Merchant #2"]
+  PlatformMerchant --> SubMerchant3["Sub-Merchant #3"]
 
-  subgraph SubMerchant1Group["Sub‑Merchant #1"]
-    SubMerchant1 --> ProfileA
-    SubMerchant1 --> ProfileB
-  end  
+  SubMerchant1 --> ProfileA["Profile A"]
+  SubMerchant1 --> ProfileB["Profile B"]
+  SubMerchant2 --> ProfileC["Profile C"]
+  SubMerchant3 --> ProfileD["Profile D"]
 
-  classDef merchant fill:#f9f,stroke:#333,stroke-width:1px;
-  class PlatformMerchant,SubMerchant1,SubMerchant2,SubMerchant3 merchant;
 ```
 
 #### **Explanation:**
@@ -46,27 +33,41 @@ graph TD
 * Sub‑Merchants are standard merchant accounts managed by the Platform Merchant.
 * Profiles are transactional endpoints under each sub‑merchant.
 
-### Platform Org vs. Normal Org Capabilities:
+### Key Capabilities Comparison
 
-* Merchant creation via API: yes for Platform Merchant; no (dashboard only) for normal Org/Merchant.
-* API key generation per merchant: yes for Platform Merchant; no (dashboard only) for normal Org/Merchant.
+| **Capability**                  | **Platform Merchant** | **Normal Org/Merchant** |
+| ------------------------------- | --------------------- | ----------------------- |
+| Merchant creation via API       | ✔                     | ✘(Dashboard only)       |
+| Generate API keys for merchants | ✔                     | ✘ (Dashboard only)      |
 
-### API Workflows:
+### Typical API Workflows for Platform Merchant
 
-1. **Create Platform:**\
-   When you provision a PlatformOrg, the Platform Merchant account is automatically created with elevated API permissions.
-2. **Generate Platform API Key (Dashboard):**\
-   Use the Hyperswitch API Keys interface. Click “Create New API Key,” enter name/description, generate and store the key securely.
-3. **Create Sub‑Merchants (API):**\
-   Use the Platform Merchant API key to call POST /v1/merchant-account/merchant-account--create and spin up merchant accounts.
-4. **Generate Merchant-Specific API Keys:**\
-   After sub‑merchant creation, call POST /v1/api-key/api-key--create to generate a key for that merchant.
-5. **Manage Key Mappings and Operations:**\
-   Maintain an internal mapping of each sub‑merchant to its API key. Use these keys to execute payments, refunds, and settlements on behalf of sub‑merchants.
+1. **Create\_Platform**
+   1. When you set up a new platform, an organization and its associated platform merchant account are automatically created.
+   2. The platform merchant account holds elevated privileges for API-driven merchant management and operations.
+2. **Generate Platform API Key (Dashboard Step)**
+   1. Navigate to the[ Hyperswitch API Keys Dashboard](https://app.hyperswitch.io/dashboard/developer-api-keys).
+   2. Click on "Create New API Key."
+   3. Assign a name and description for your platform API key, then generate and securely store this key.
+3. **Create\_Merchant**
+   1. Using the Platform Merchant API key, you can dynamically create new merchant accounts within your platform.
+   2. API link: [https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create](https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create)
+4. **API\_keys**
+   1. After creating merchant accounts, you can generate API keys specific to each merchant
+   2. API link: [https://api-reference.hyperswitch.io/v1/api-key/api-key--create](https://api-reference.hyperswitch.io/v1/api-key/api-key--create)
+5. **Mapping and Usage of API Keys**
+   1. Maintain a secure internal mapping of generated API keys for each merchant account.
+   2. Utilize these merchant-specific API keys to perform standard operations such as payments, refunds, and settlements on behalf of each sub-merchant.
 
-#### Platform Merchant API Permissions:
+#### Merchant Account Operations(Platform API Key)
 
-* Create, list, retrieve, update merchant accounts
-* Create, list, retrieve, update, revoke API keys for merchants
-* Retrieve and update PlatformOrg details
-* Access organization‑level analytics and metrics
+* Create merchant accounts within the platform org
+* List merchant accounts
+* Retrieve a specific merchant account
+* Update a merchant account
+
+### Use Cases
+
+* Vertical SaaS Onboarding: Automate merchant creation and key management for new sellers via your own dashboard
+* Franchise Management: Centralized control over multiple franchise outlets.
+* White-label Payments: Programmatically manage merchant accounts for various clients.
