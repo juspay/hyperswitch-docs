@@ -36,13 +36,15 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Core Orchestration**
 
-* New connector integrations: Worldpay Vantiv (cnpAPI), Payload, Dwolla, Bluecode, GoMobi, Sift, Checkbook.io, Trust Payments, Nordea
-* Extension of payment methods for existing integrations: Multisafe, Airwallex, Braintree, Fiserv
-* Support for co-branded cards through direct issuer integration
-* Support for split payments
+* Expand Hyperswitch with new payment connector integrations including Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook.io, Trust Payments, Nordea, and Silverflow.
+* Extend support for additional payment methods across existing integrations such as Multisafe, Airwallex, Braintree, and Fiserv.
+* Enable gift card support through direct provider integrations.
+* Support co-branded card acceptance via direct issuer integrations.
+* Integrate long-term lending options through solution partners.
+* Introduce split payment support across
   * Gift cards
   * Long-term lending/leasing providers
-* Offers module support
+* Implement an asynchronous chargeback handling solution for connectors without webhook support.
 
 ### **Vault**
 
@@ -52,6 +54,14 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Authentication**
 
+* AI based 3DS Intelligence Engine for step-up/step-down decisions to optimize:
+  * Authentication success rate
+  * Overall transaction success rate
+  * Fraud rate
+* Authentication/Exemption Analytics to deeply understand the cardholder’s authentication journey, including:
+  * 3DS failures
+  * 3DS performance
+  * Variability across issuers, markets, and 20+ other payment dimensions
 * ML Based 3DS Intelligence engine to provide 3DS step-up/ step-down decisions, to optimize for&#x20;
   * Authentication success rate
   * Overall transaction success rate
