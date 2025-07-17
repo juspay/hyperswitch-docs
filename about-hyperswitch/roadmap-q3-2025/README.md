@@ -52,13 +52,10 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Authentication**
 
-* 3DS Intelligence Engine for step-up/step-down decisions to optimize:
+* ML Based 3DS Intelligence engine to provide 3DS step-up/ step-down decisions, to optimize for&#x20;
   * Authentication success rate
   * Overall transaction success rate
-* Enhanced Authentication Analytics to deeply understand the cardholder’s authentication journey, including:
-  * 3DS failures
-  * 3DS performance
-  * Variability across issuers, markets, and 20+ other payment dimensions
+* Authentication Observability to provide analytics and insights to merchants with tightly coupled Acquirer 3DS for better authentication and authorization results.
 
 ### **Revenue Recovery**
 
