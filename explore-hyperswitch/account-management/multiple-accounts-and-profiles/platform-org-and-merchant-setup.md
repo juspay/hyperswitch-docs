@@ -13,17 +13,25 @@ A PlatformOrg is a specialized organization type containing exactly one Platform
 ### &#x20;Platform Org and Merchant Structure
 
 ```mermaid
-flowchart TD
-  PlatformOrg["PlatformOrg"] --> PlatformMerchant["Platform Merchant (single, privileged merchant)"]
+graph TD
+    MO[Merchant Organisation]
+    MO --> PA[Platform Account]
+    MO --> S1[Seller 1]
+    MO --> S2[Seller 2]
+    
+    PA --> PP[Platform profile]
+    S1 --> SP1[Seller profile]
+    S2 --> SP2[Seller profile]
+    
   
-  PlatformMerchant --> SubMerchant1["Sub-Merchant #1"]
-  PlatformMerchant --> SubMerchant2["Sub-Merchant #2"]
-  PlatformMerchant --> SubMerchant3["Sub-Merchant #3"]
+    style MO fill:#b3d9ff
+    style PA fill:#b3d9ff
+    style S1 fill:#b3d9ff
+    style S2 fill:#b3d9ff
+    style PP fill:#b3d9ff
+    style SP1 fill:#b3d9ff
+    style SP2 fill:#b3d9ff
 
-  SubMerchant1 --> ProfileA["Profile A"]
-  SubMerchant1 --> ProfileB["Profile B"]
-  SubMerchant2 --> ProfileC["Profile C"]
-  SubMerchant3 --> ProfileD["Profile D"]
 
 ```
 
