@@ -6,36 +6,32 @@ How it fits into your existing payments setup:
 
 <figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-Local Setup guide:
-
 #### 1. Clone the Repository
 
-````
+```
 git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
+```
 
----
+#### 2. Install Docker
 
-## 2. Install Docker
-
+```
 Make sure Docker is installed on your system.
 You can download and install Docker Desktop from the below links.
 
 - Mac - https://docs.docker.com/desktop/setup/install/mac-install/
 - Windows - https://docs.docker.com/desktop/setup/install/windows-install/
 - Linux - https://docs.docker.com/desktop/setup/install/linux/
+```
 
----
+#### 3. Run the Project
 
-## 3. Run the Project
-
-### a. First-Time Setup
+**a. First-Time Setup**
 
 If you're setting up the environment for the first time, run:
 
-```bash
-make init
-````
+<pre><code><strong>make init
+</strong></code></pre>
 
 This command performs the following under the hood:
 
