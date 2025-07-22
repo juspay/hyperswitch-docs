@@ -1,6 +1,7 @@
 ---
-icon: swap
 description: Infinite control over managing your payments
+hidden: true
+icon: swap
 ---
 
 # Smart Routing
@@ -9,7 +10,7 @@ description: Infinite control over managing your payments
 
 ## Prerequisites
 
-To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](../quickstart/connectors/) guide.
+To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](quickstart/connectors/) guide.
 
 ## What is smart payment routing?
 
@@ -29,7 +30,7 @@ Hence, Hyperswitch’s smart router is designed as a no-code tool to provide com
 
 Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
-<figure><img src="../../../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
 
 ## How to configure the Smart Router?
 
@@ -37,14 +38,14 @@ Hyperswitch Smart Router Engine evaluates every payment request against your pre
 \
 
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="../../about-hyperswitch/payments-modules/intelligent-routing/rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="../../about-hyperswitch/payments-modules/intelligent-routing/volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="../../about-hyperswitch/payments-modules/intelligent-routing/default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
 
 ## Next step&#x20;
 
 To test the Smart Router, after activating one rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
+[test-a-payment.md](../../hyperswitch-open-source/account-setup/test-a-payment.md)
 {% endcontent-ref %}
 
 <details>

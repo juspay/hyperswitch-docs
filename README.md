@@ -148,7 +148,7 @@ Securely store and reuse customer payment credentials across processors to reduc
 
 [Get Started with Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).&#x20;
 
-[Routing →](explore-hyperswitch/payment-orchestration/smart-router/)
+[Routing →](explore-hyperswitch/payment-orchestration/smart-router.md)
 
 Control how transactions flow across payment providers with configurable routing logic and fallback options
 

@@ -1,3 +1,7 @@
+---
+icon: screwdriver-wrench
+---
+
 # Self-Deployment Guide
 
 ### Self Deploy and integrate it with your existing orchestrator&#x20;

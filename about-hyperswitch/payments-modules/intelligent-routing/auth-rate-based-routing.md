@@ -1,3 +1,7 @@
+---
+icon: badge-check
+---
+
 # Auth Rate Based Routing
 
 ### How does it work?
