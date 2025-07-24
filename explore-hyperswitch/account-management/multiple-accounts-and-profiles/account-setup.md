@@ -71,7 +71,32 @@ Currently, you can configure two types of routing with more on the way:
 1. Volume based routing: As the name suggests, this routing is based on the volume provided. You can assign percentage volumes that needs to be processed with the connected processors and Hyperswitch will route in a way to ensure that the volume distribution is maintained
 2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment\_method, card\_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails
 
-## **Next step:**
+## Custom Styling and Branding
+
+Through the theme configuration system, merchants (or internal administrators configuring on their behalf) can define the visual styling of their dashboard using a theme.json structure linked to their theme record. Merchants provide their brand palette, and an internal administrator sets up the corresponding theme to reflect it.
+
+The following key fields can be customized to align the dashboard with the merchant’s branding:
+
+1. **Primary Color:** Defines the primary brand color across the dashboard. It is used for key highlights, primary text, and important action areas.
+2. **Sidebar:** Merchants can fully customize the sidebar’s appearance. Enables merchants to reflect their brand palette directly in the navigation experience.
+   * **Primary:** Sets the sidebar background color
+   * **textColor:** Default sidebar text color
+   * **textColorPrimary:** Used for selected or active options in the sidebar
+3. **Buttons:** Button styling can be customized for both primary and secondary actions:
+   * **Primary buttons:**
+     * backgroundColor: Base background color
+     * textColor: Text color
+     * hoverBackgroundColor: Background color on hover
+   * **Secondary buttons:**
+     * backgroundColor: Base background color
+     * textColor: Text color
+     * hoverBackgroundColor: Background color on hover
+4. **Assets:**
+   * faviconUrl: Merchant-specific favicon for browser tabs
+   * logoUrl: Logo displayed in the dashboard interface
+5. **Email Branding:** Emails now display the merchant’s logo, brand name, and theme colors as configured.
+
+These UI customizations are scalable and can be extended upon merchant request.
 
 {% content-ref url="../../merchant-controls/integration-guide/" %}
 [integration-guide](../../merchant-controls/integration-guide/)
