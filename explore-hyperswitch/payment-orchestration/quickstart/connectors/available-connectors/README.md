@@ -5,7 +5,13 @@ icon: badge-check
 
 # Available Connectors
 
-Here are the available connectors:
+**For a comprehensive list of integrations with Hyperswitch, refer to:** [https://hyperswitch.io/pm-list](https://hyperswitch.io/pm-list)
+
+Most connector integrations follow a simple click-and-connect flow using your connector credentials. However, some connectors may require additional setup details, you can find these details below on the page for respective connector.&#x20;
+
+{% hint style="info" %}
+If you face any issues, feel free to reach out to us on [Slack](https://inviter.co/hyperswitch-slack)
+{% endhint %}
 
 {% content-ref url="aci.md" %}
 [aci.md](aci.md)
