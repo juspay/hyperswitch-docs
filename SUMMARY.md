@@ -6,7 +6,7 @@
 * [Overview](about-hyperswitch/overview.md)
 * [Payments Suite](<README (1).md>)
 * [Payments Modules](about-hyperswitch/payments-modules/README.md)
-  * [Cost Observability](about-hyperswitch/payments-modules/ai-powered-cost-observability/README.md)
+  * [Cost Observability](about-hyperswitch/payments-modules/ai-powered-cost-observability.md)
     * [Uploading Fee Reports for Analysis](about-hyperswitch/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis.md)
   * [Revenue Recovery](about-hyperswitch/payments-modules/revenue-recovery.md)
   * [Vault](about-hyperswitch/payments-modules/vault/README.md)

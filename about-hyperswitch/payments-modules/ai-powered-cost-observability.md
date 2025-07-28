@@ -28,6 +28,6 @@ HyperSense solves this problem by transforming unstructured payment fee data fro
 
 **Optimize**: Offers actionable insights designed to help businesses achieve maximum savings by improving interchange qualifications, reducing scheme fees, and minimizing penalties. These recommendations ensure proactive cost optimization insights.
 
-{% content-ref url="../../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md" %}
-[exporting-payments-data.md](../../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
+{% content-ref url="../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md" %}
+[exporting-payments-data.md](../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
 {% endcontent-ref %}
