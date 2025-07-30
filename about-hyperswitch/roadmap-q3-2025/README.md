@@ -36,35 +36,20 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Core Orchestration**
 
-* Expand Hyperswitch with new payment connector integrations including Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook.io, Trust Payments, Nordea, and Silverflow.
-* Extend support for additional payment methods across existing integrations such as Multisafe, Airwallex, Braintree, and Fiserv.
-* Enable gift card support through direct provider integrations.
-* Support co-branded card acceptance via direct issuer integrations.
-* Integrate long-term lending options through solution partners.
-* Introduce split payment support across
-  * Gift cards
-  * Long-term lending/leasing providers
-* Implement an asynchronous chargeback handling solution for connectors without webhook support.
+* Expand Hyperswitch with new payment connector integrations including Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook.io, Trust Payments, Nordea, and Silverflow
+* Extend support for additional payment methods across existing integrations such as Multisafe, Airwallex, Braintree, and Fiserv
+* Introduce split payment support across - Gift cards, Long-term lending/leasing providers
+* File exchange based integration for payment method verification, payment processing and settlement instructions
+* Asynchronous chargeback handling for connectors without webhook support
+* L2 and L3 card data enablement across key acquirers
 
 ### **Vault**
 
-* Make Hyperswitch interoperable with any third-party card vault
-* Enable merchants self-hosting Hyperswitch to outsource PCI compliance as a managed service to Hyperswitch’s managed card vault or other third-party vaults
-* Single-use PCI token generation for guest checkout use cases
+* Standalone Network Tokenization service for SaaS merchants
 
 ### **Authentication**
 
-* AI based 3DS Intelligence Engine for step-up/step-down decisions to optimize:
-  * Authentication success rate
-  * Overall transaction success rate
-  * Fraud rate
-* Authentication/Exemption Analytics to deeply understand the cardholder’s authentication journey, including:
-  * 3DS failures
-  * 3DS performance
-  * Variability across issuers, markets, and 20+ other payment dimensions
-* ML Based 3DS Intelligence engine to provide 3DS step-up/ step-down decisions, to optimize for&#x20;
-  * Authentication success rate
-  * Overall transaction success rate
+* Improve authentication rates and user experience with EMVCo certified Juspay 3DS Server and Juspay 3DS SDK
 * Authentication Observability to provide analytics and insights to merchants with tightly coupled Acquirer 3DS for better authentication and authorization results.
 
 ### **Revenue Recovery**
@@ -73,7 +58,6 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 * Multi-card retries: The system will intelligently utilize payment methods already present with the customer to perform retries on a given invoice
 * Intelligent invoice retrying: Automatically retries invoices declined due to hard decline error codes, within the retry budget specified by the merchant
 * Custom subscription support: Enables integration with the merchant’s in-house subscription management platform to recover failed payments
-* Account Updater: Automatically updates stored card information when a customer's card details change
 
 ### **Intelligent Routing**
 
@@ -83,16 +67,17 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Cost Observability**
 
-* Smarter Fee Attribution Engine: Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources.
-* Advanced Fee Auditing Capabilities
-  * Audit applied interchange and scheme fees against both standard and contracted rates.
-  * Benchmark or compare processing fees applied by different providers to identify savings opportunities.
-  * Estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates.
-* Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly.
-* AI-Powered Self-Serve Uploads & Instant Insights: Empowering users to upload any report or transaction data, structured or unstructured and instantly receive meaningful insights, summaries, and potential optimization actions.
-* Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers.
+* Smarter Fee Attribution Engine: Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
+* Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly
+* Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers
 
+### Reconciliation
 
+* N‑way ingestion & transformation: implement backend‑configured pipelines for any mix of OMS, PSP and bank asources to define normalization and transformation rules
+* Reconciliation summary views: display real‑time n‑way match rates, exception counts and trend charts in dashboard widgets, with click‑through to transaction‑ vs. entry‑level drill‑downs and one‑click resolution actions.
+* Transaction‑level audit logs: capture every transaction event in full detail with immutable records to ensure no information is lost
+* Custom export & reporting: enable merchants to generate and download tailored reconciliation reports
+* Adyen integration & auto‑fetch: provide a one‑click Adyen connector that securely pulls transactions on a schedule, auto‑maps fields and normalizes into your unified schema
 
 **Want to contribute to the roadmap?**
 
