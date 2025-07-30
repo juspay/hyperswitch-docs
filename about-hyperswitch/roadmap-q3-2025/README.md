@@ -63,7 +63,6 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 * Audit Trail and observability dashboard: Allows monitoring of performance across various routing modules
 * Extension of Least Cost Routing to wallet payments: Includes Apple Pay and Google Pay
-* Multi-objective routing modules: Simultaneously optimize for authentication rate, cost, and volume commitments (Stretch Target)
 
 ### **Cost Observability**
 
