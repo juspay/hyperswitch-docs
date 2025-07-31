@@ -198,6 +198,7 @@
   * [Data migration](explore-hyperswitch/account-management/data-migration/README.md)
     * [Import data to Hyperswitch](explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch.md)
     * [Export data from Hyperswitch](explore-hyperswitch/account-management/data-migration/export-data-from-hyperswitch.md)
+  * [SMTP Server Integration](explore-hyperswitch/account-management/smtp-server-integration.md)
 * [Security and Compliance](explore-hyperswitch/overview/README.md)
   * [PCI Compliance](explore-hyperswitch/overview/pci-compliance.md)
   * [Data Security](explore-hyperswitch/overview/security.md)
