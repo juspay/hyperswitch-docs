@@ -1,6 +1,6 @@
 ---
-icon: repeat
 description: Setting up and managing recurring payments
+icon: repeat
 ---
 
 # Save a Payment Method
@@ -45,7 +45,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
 
 ***
 
@@ -156,8 +156,12 @@ If you would like additional processors to support this flow or want to enable v
 
 ### **1. I want to onboard my customers by collecting their card details, authenticate and store for future MIT payments without charging them now. How can I vault a payment method with Hyperswitch?**
 
-Hyperswitch allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](../subscriptions/zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
+Hyperswitch allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
 
 This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
 \
-Refer to this page to see how to use it - [Link](../subscriptions/zero-amount-authorization-1.md)
+Refer to this page to see how to use it:&#x20;
+
+{% content-ref url="zero-amount-authorization-1.md" %}
+[zero-amount-authorization-1.md](zero-amount-authorization-1.md)
+{% endcontent-ref %}

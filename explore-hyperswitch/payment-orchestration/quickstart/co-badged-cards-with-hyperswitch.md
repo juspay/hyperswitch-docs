@@ -2,7 +2,7 @@
 icon: credit-card
 ---
 
-# Co-badged Cards with Hyperswitch
+# Co-badged Cards
 
 Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a global network (e.g., Visa, Mastercard).&#x20;
 
@@ -40,6 +40,6 @@ In the IFR, Article 8 mandates that customers must be free to choose their netwo
 
 Merchants can choose not to support one of the networks, and in such cases, transactions will be routed through the supported network.
 
-{% content-ref url="mandates-and-recurring-payments.md" %}
-[mandates-and-recurring-payments.md](mandates-and-recurring-payments.md)
+{% content-ref url="tokenization-and-saved-cards/mandates-and-recurring-payments.md" %}
+[mandates-and-recurring-payments.md](tokenization-and-saved-cards/mandates-and-recurring-payments.md)
 {% endcontent-ref %}

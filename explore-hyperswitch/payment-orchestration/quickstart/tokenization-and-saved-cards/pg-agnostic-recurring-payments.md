@@ -13,7 +13,7 @@ To mitigate this we would be storing the Network Transaction ID which will be a 
 
 In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-02-01 at 3.58.28 AM.png" alt=""><figcaption><p>MIT payment flow</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-02-01 at 3.58.28 AM.png" alt=""><figcaption><p>MIT payment flow</p></figcaption></figure>
 
 ## Supported Payment processors
 
@@ -55,13 +55,13 @@ The [Hyperswitch dashboard](https://app.hyperswitch.io/dashboard/routing/rule) p
 
 Then, you can configure the rule as shown below using the metadata field in the Rule-Based Configuration.
 
-<figure><img src="../../../.gitbook/assets/Routing rule for pg agnostic recurring payments.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Routing rule for pg agnostic recurring payments.png" alt=""><figcaption></figcaption></figure>
 
 This rule would be used in conjunction with the other active routing rules that you have configured.
 
 Once the rule is configured, you would need to send the following metadata as per the payment request:
 
-\-> Metadata to be sent in CITs
+-> Metadata to be sent in CITs
 
 ```
 "metadata": {
@@ -69,7 +69,7 @@ Once the rule is configured, you would need to send the following metadata as pe
 }
 ```
 
-\-> Metadata to be sent in MITs
+-> Metadata to be sent in MITs
 
 ```
 "metadata": {

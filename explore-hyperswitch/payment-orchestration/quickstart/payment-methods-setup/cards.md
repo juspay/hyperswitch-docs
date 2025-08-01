@@ -1,6 +1,6 @@
 ---
-icon: credit-card
 description: Accept debit and credit card payments on your application
+icon: credit-card
 ---
 
 # Cards
@@ -34,8 +34,8 @@ Hyperswitch supports the creation of mandates for card transactions through vari
 
 Follow the below guide to learn how to make a recurring payment with Hyperswitch
 
-{% content-ref url="../mandates-and-recurring-payments.md" %}
-[mandates-and-recurring-payments.md](../mandates-and-recurring-payments.md)
+{% content-ref url="../tokenization-and-saved-cards/mandates-and-recurring-payments.md" %}
+[mandates-and-recurring-payments.md](../tokenization-and-saved-cards/mandates-and-recurring-payments.md)
 {% endcontent-ref %}
 
 ## Auth and Capture
