@@ -29,7 +29,7 @@ As more issuers and networks prioritize token-first infrastructure, network toke
 
 A network token is scoped to a Merchant, Customer & Token Requestor ensuring a more secure payment experience. Every entity to the left of Network will transact using a token and the entities to the right will have card details. Each token is also unique to the Network provider.
 
-<div data-full-width="true"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdTTFA15C5uBOpzeRHfpxLyVSOXUgTzo8hhhECmHMzVp_Tg8NvSQ2PBi1ptG99ZhinPI5seKzESVf4IBoku_NYKe-CYn6zfV4gnC9yTMevLJmETNa8U8D39B8eNZOBisNzBGmPSXw?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdTTFA15C5uBOpzeRHfpxLyVSOXUgTzo8hhhECmHMzVp_Tg8NvSQ2PBi1ptG99ZhinPI5seKzESVf4IBoku_NYKe-CYn6zfV4gnC9yTMevLJmETNa8U8D39B8eNZOBisNzBGmPSXw?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 ### Key Advantages for Merchants:
 
@@ -92,7 +92,7 @@ In this flow:
 
 #### Flow Summary: 
 
-<div data-full-width="true"><figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
 
 1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay’s TRID to request network tokens
@@ -118,7 +118,7 @@ In this flow:
 
 #### Flow Summary:
 
-<div data-full-width="true"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 1. Merchant signs up for [Hyperswitch’s standalone vault service ](../../../../about-hyperswitch/payments-modules/vault/)and requests network tokenization in every payment method session create request
 2. Card details are captured from the end users via Hyperswitch’s PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
@@ -133,7 +133,7 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 ***
 
-### 3. Standalone Network Tokenization Service
+### 3. Standalone Network Tokenization Service (via Juspay Tokenization service)
 
 This is a lightweight, standalone integration when you:
 
@@ -142,7 +142,7 @@ This is a lightweight, standalone integration when you:
 
 #### Flow Summary:
 
-<div data-full-width="true"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 * You sign up for Juspay’s Network Tokenization service by reaching out to our support team
 * You can either use Juspay’s TR ID or setup your own TR ID
