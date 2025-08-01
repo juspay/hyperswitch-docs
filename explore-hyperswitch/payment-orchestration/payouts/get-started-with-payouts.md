@@ -31,7 +31,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 2** - Navigate to _**Payout Processors**_ tab.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
 
 **Step 3 -** Select the payout processor you'd want to use and provide the processor's credentials.
 
