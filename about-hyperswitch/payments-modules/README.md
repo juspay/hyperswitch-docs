@@ -31,6 +31,6 @@ Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
-{% content-ref url="../roadmap-q3-2025/roadmap-q2-2025.md" %}
-[roadmap-q2-2025.md](../roadmap-q3-2025/roadmap-q2-2025.md)
+{% content-ref url="../roadmap/roadmap-q2-2025.md" %}
+[roadmap-q2-2025.md](../roadmap/roadmap-q2-2025.md)
 {% endcontent-ref %}
