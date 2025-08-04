@@ -27,12 +27,12 @@
     * [Hyperwidget Integration Guide](about-hyperswitch/payments-modules/enable-alternate-payment-method-widgets/hyperwidget-integration-guide.md)
 * [Roadmap - Q3 2025](about-hyperswitch/roadmap/README.md)
   * [Previous Roadmap - Q2 2025](about-hyperswitch/roadmap/roadmap-q2-2025.md)
-  * [Previous Roadmap - Q1 2025](about-hyperswitch/roadmap/previous-roadmap-q1-2025.md)
-  * [Previous Roadmap - Q4 2024](about-hyperswitch/roadmap/previous-roadmap-q4-2024.md)
-  * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap/previous-roadmap-q3-2024.md)
-  * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap/roadmap.md)
-  * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap-1.md)
-  * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-1-1.md)
+  * [Previous Roadmap - Q1 2025](about-hyperswitch/roadmap/roadmap-q1-2025.md)
+  * [Previous Roadmap - Q4 2024](about-hyperswitch/roadmap/roadmap-q4-2024.md)
+  * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap/roadmap-q3-2024.md)
+  * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap/roadmap-q2-2024.md)
+  * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap-q1-2024.md)
+  * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-q4-2023.md)
 
 ***
 

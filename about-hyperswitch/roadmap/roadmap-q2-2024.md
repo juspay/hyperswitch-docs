@@ -7,7 +7,7 @@ icon: road
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
-Before the beginning of every quarter we come together to develop the next roadmap based on our core values, [previous roadmap](roadmap-1-1.md), findings over the previous quarter, what we heard from the community as feature requests.
+Before the beginning of every quarter we come together to develop the next roadmap based on our core values, [previous roadmap](roadmap-q4-2023.md), findings over the previous quarter, what we heard from the community as feature requests.
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
