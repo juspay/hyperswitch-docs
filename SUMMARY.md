@@ -277,7 +277,8 @@
   * [Router](learn-more/hyperswitch-architecture/router.md)
   * [Storage](learn-more/hyperswitch-architecture/storage.md)
   * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
-* [Payment flows](learn-more/payment-flows.md)
+  * [Connector Payment Flows](learn-more/hyperswitch-architecture/connector-payment-flows.md)
+* [SDK Payment flows](learn-more/sdk-payment-flows.md)
 * [Blog](https://hyperswitch.io/blog)
 
 ***
