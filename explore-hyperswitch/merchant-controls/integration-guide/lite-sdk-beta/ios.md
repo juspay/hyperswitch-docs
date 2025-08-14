@@ -8,7 +8,7 @@ description: Integrate Hyperswitch Lite SDK to your IOS App
 
 #### Lightweight Integration
 
-* **Smaller bundle size**: 282.84 KB
+* **Smaller bundle size**
 * **Faster initialization**: Streamlined setup process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
@@ -46,8 +46,7 @@ pod 'hyperswitch-sdk-ios/lite'
 pod 'hyperswitch-sdk-ios/lite+scancard'
 ```
 
-> **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.\
-> Replace `Latest_version` with the actual version number.
+> **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.
 
 #### 2.2 Setup the Lite SDK and Fetch a Payment
 
