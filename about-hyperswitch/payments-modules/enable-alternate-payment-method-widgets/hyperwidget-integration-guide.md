@@ -39,6 +39,6 @@ To start collecting payments via the APM of your choice, follow these simple ste
   * As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
 * [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)&#x20;
 
-{% content-ref url="../../../explore-hyperswitch/merchant-controls/click-to-pay/" %}
-[click-to-pay](../../../explore-hyperswitch/merchant-controls/click-to-pay/)
+{% content-ref url="../../../explore-hyperswitch/merchant-controls/payment-features/click-to-pay/" %}
+[click-to-pay](../../../explore-hyperswitch/merchant-controls/payment-features/click-to-pay/)
 {% endcontent-ref %}

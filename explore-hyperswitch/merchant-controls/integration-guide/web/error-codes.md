@@ -1,5 +1,6 @@
 ---
 description: Handle errors appropriately!
+icon: ban
 ---
 
 # Error Codes

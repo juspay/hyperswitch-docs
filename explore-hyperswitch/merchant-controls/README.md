@@ -15,7 +15,7 @@ Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout
 
 With Hyperswitch, you optimize the payment journey while maintaining **trust, security, and a frictionless user experience**.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Customizable and Native Integrations</mark></td><td></td><td></td><td><a href="integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;">Payment Methods Management</mark></td><td></td><td></td><td><a href="payment-methods-management.md">payment-methods-management.md</a></td></tr><tr><td><mark style="color:blue;">Click To Pay</mark></td><td></td><td></td><td><a href="click-to-pay/">click-to-pay</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Customizable and Native Integrations</mark></td><td></td><td></td><td><a href="integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;">Payment Methods Management</mark></td><td></td><td></td><td><a href="payment-features/payment-methods-management.md">payment-methods-management.md</a></td></tr><tr><td><mark style="color:blue;">Click To Pay</mark></td><td></td><td></td><td><a href="payment-features/click-to-pay/">click-to-pay</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Have Questions?**\

@@ -1,5 +1,6 @@
 ---
 description: Customize your Web unified checkout
+icon: bars-progress
 ---
 
 # Customization

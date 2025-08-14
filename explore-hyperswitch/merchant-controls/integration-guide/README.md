@@ -9,7 +9,7 @@ icon: puzzle-piece
 
 Pick the platform / framework of your choice to get started with integrating the client SDK on your application
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Hyperswitch Web</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Hyperswitch Android</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Hyperswitch iOS</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Hyperswitch React Native</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Hyperswitch Flutter</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Headless SDK</strong></mark></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Server Setup</strong></mark></td><td></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><a data-footnote-ref href="#user-content-fn-1"><mark style="color:blue;"><strong>Hyperswitch Web</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="mobile/android/kotlin-with-node-backend.md"><mark style="color:blue;"><strong>Hyperswitch Android</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="mobile/ios/swift-with-node-backend.md"><mark style="color:blue;"><strong>Hyperswitch iOS</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="mobile/cross-platform/react-native/react-native-with-node-backend.md"><mark style="color:blue;"><strong>Hyperswitch React Native</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="mobile/cross-platform/react-native-1/react-native-with-node-backend.md"><mark style="color:blue;"><strong>Hyperswitch Flutter</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-features/"><mark style="color:blue;"><strong>Payment Features</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="web/server-setup.md"><mark style="color:blue;"><strong>Server Setup</strong></mark></a></td><td></td><td></td><td></td></tr></tbody></table>
 
 ## Modify and Experiment
 
@@ -26,3 +26,6 @@ While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch
 * **Prioritizing payment methods:** You can make an impact on the payment mix or conversion rates by prioritizing/ promoting specific payment methods for your customers.
 * **Switching themes and layouts of checkout page:** The Unified Checkout comes with a wide range of pre-designed themes and layouts which you can choose from.
 
+
+
+[^1]: 

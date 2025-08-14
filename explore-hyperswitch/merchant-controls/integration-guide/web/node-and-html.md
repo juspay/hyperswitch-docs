@@ -1,8 +1,9 @@
 ---
 description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+icon: html5
 ---
 
-# Node and HTML
+# HTML with Node Integration
 
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
 

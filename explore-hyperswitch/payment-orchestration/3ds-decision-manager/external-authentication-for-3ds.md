@@ -156,7 +156,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 After the challenge is completed, the status should go to 'succeeded' status
 
 {% hint style="warning" %}
-**Visit** [**this**](../quickstart/connectors/available-connectors/zen-1/authenticating-payments-via-netcetera-through-hyperswitch-sdk.md) **page to complete few additional steps to enable this feature for Mobile SDK.**
+**Visit** [**this**](broken-reference) **page to complete few additional steps to enable this feature for Mobile SDK.**
 {% endhint %}
 
 {% hint style="success" %}
