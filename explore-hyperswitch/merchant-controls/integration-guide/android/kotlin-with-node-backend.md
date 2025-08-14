@@ -15,10 +15,6 @@ description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
 
 ## 1. Setup the server
 
-```js
-$ npm install @juspay-tech/hyperswitch-node
-```
-
 Follow the [Server Setup](../web/server-setup.md) section.
 
 ## 2. Build checkout page on your app
@@ -146,5 +142,7 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 {% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
+
+
 
 [^1]: &#x20;[Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

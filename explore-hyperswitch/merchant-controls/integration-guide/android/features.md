@@ -25,3 +25,12 @@ dependencies {
 }
 ```
 
+#### For Lite SDK
+
+Add this scan card dependency to your `build.gradle` file:
+
+```gradle
+dependencies {
+    implementation 'io.hyperswitch:hyperswitch-scan-card-lite:+'
+}
+```

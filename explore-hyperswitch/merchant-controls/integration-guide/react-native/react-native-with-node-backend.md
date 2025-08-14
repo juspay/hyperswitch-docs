@@ -61,8 +61,9 @@ yarn add react-native-klarna-inapp-sdk
 
 Run `pod install` in iOS folder
 
-<pre class="language-js"><code class="lang-js"><strong>pod install
-</strong></code></pre>
+```js
+pod install
+```
 
 ### 2.4 Android Only
 
