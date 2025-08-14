@@ -10,7 +10,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 
 ## Requirements
 
-* iOS 13.0 and above
+* iOS 13.4 and above
 * CocoaPods
 * npm
 

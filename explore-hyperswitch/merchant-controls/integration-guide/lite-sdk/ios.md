@@ -2,7 +2,7 @@
 description: Integrate Hyperswitch Lite SDK to your IOS App
 ---
 
-# IOS
+# iOS
 
 ## Key Features of Lite SDK
 
@@ -22,7 +22,7 @@ description: Integrate Hyperswitch Lite SDK to your IOS App
 ## Requirements
 
 * IOS 13.4+
-* Cocoa Pods​
+* Cocoapods​
 
 ## 1. Setup the server
 
@@ -37,13 +37,13 @@ In your **`Podfile`**:
 **Lite SDK only**
 
 ```ruby
-pod 'hyperswitch-sdk-ios/lite', 'Latest_version'
+pod 'hyperswitch-sdk-ios/lite'
 ```
 
 **Lite SDK with Scan Card functionality**
 
 ```ruby
-pod 'hyperswitch-sdk-ios/lite+scancard', 'Latest_version'
+pod 'hyperswitch-sdk-ios/lite+scancard'
 ```
 
 > **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.\
@@ -54,34 +54,31 @@ pod 'hyperswitch-sdk-ios/lite+scancard', 'Latest_version'
 **Initialize PaymentSession:**
 
 ```swift
-let paymentSession = PaymentSession()
+import Hyperswitch
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
 
 // Initialize with client secret
-paymentSession.initPaymentSession(paymentIntentClientSecret: "your_client_secret_here")
+paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 
 **Complete Payment**
 
 ```swift
 // Present the PaymentSheet Lite
-paymentSession.presentPaymentSheetLite(
-    viewController: self,
-    configuration: configuration
-) { result in
-    switch result {
-    case .completed(let data):
-        print("Payment completed: \(data)")
-        // Handle successful payment
-
-    case .canceled(let data):
-        print("Payment canceled: \(data)")
-        // Handle cancellation
-
-    case .failed(let error):
-        print("Payment failed: \(error)")
-        // Handle error
-    }
-}
+paymentSession.presentPaymentSheetLite(viewController: self, 
+                                       configuration: configuration, 
+                                       completion: { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .completed:
+                    self.statusLabel.text = "Payment complete"
+                case .failed(let error):
+                    self.statusLabel.text =  "Payment failed: \(error)"
+                case .canceled:
+                    self.statusLabel.text = "Payment canceled."
+                }
+            }
+        })
 ```
 
 **Final Step**
