@@ -47,7 +47,7 @@ Enhance efficiency in your payment operations by accessing unified analytics, ma
 
 {% hint style="info" %}
 **Have Questions?**\
-Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Join our [Slack Community](https://inviter.co/hyperswitch-slack) to ask questions, share feedback, and collaborate.\
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 

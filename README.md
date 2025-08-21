@@ -262,7 +262,7 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 ### Need Help?
 
-* [Join our Slack Community →](https://join.slack.com/t/hyperswitch/shared_invite/zt-1y6kp2mwb-GqJqD4RwJkN4zN1IvYrW0Q)\
+* [Join our Slack Community →](https://inviter.co/hyperswitch-slack)\
   Ask questions, share ideas, and connect with other developers building on Hyperswitch.
 * [Contact Us →](https://www.hyperswitch.io/contact)\
   Prefer direct support? We’re happy to help.
