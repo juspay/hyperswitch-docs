@@ -3,7 +3,7 @@ description: Integrate hyper SDK to your Flutter App using hyperswitch-node
 icon: puzzle-piece
 ---
 
-# Flutter with Node Integration
+# Flutter with REST API Integration
 
 
 
@@ -72,7 +72,7 @@ When utilising a custom backend or logging system, you can add the customBackend
 
 ### 3.2  Create a Payment Intent
 
-Make a network request to the backend endpoint you created in the [previous step](react-native-with-node-backend.md#id-1.2-create-a-payment). The clientSecret returned by your endpoint is used to complete the payment.
+Make a network request to the backend endpoint you created in the [previous step](flutter-with-rest-api-integration.md#id-1.2-create-a-payment). The clientSecret returned by your endpoint is used to complete the payment.
 
 ```dart
 Future<String> fetchPaymentParams() async {

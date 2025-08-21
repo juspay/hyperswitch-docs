@@ -5,7 +5,7 @@ icon: square-js
 
 # JS with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](node-and-react.md)Integration to use a dedicated wrapper.\
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\
 
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)

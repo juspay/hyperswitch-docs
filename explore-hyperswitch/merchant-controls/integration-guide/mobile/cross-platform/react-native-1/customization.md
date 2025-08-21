@@ -103,7 +103,7 @@ To disable Hyperswitch branding in the SDK, you may set the `disableBranding` pr
 configuration.disableBranding = true
 ```
 
-Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](react-native-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
+Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](flutter-with-rest-api-integration.md#id-3.3-collect-payment-details).&#x20;
 
 {% hint style="info" %}
 Note To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
