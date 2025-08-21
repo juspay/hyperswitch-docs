@@ -35,7 +35,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 3 -** Select the payout processor you'd want to use and provide the processor's credentials.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
 
 **Step 4 -** Enable preferred payment methods.
 

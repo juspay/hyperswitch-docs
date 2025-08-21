@@ -92,7 +92,7 @@ In this flow:
 
 #### Flow Summary: 
 
-<div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure></div>
 
 1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay’s TRID to request network tokens
