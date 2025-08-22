@@ -1,6 +1,6 @@
 # Update Helm Charts to Hyperswitch's Latest Nightly Release
 
-Update values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.
+Update charts/incubator/hyperswitch-stack/values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.
 
 ```
 services:
