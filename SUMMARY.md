@@ -265,6 +265,7 @@
   * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
   * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
   * [Deploy on Local using Helm Charts and Minikube](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md)
+  * [Update Helm Charts to Hyperswitch's Latest Nightly Release](hyperswitch-open-source/deploy-on-kubernetes-using-helm/update-helm-charts-to-hyperswitchs-latest-nightly-release.md)
 * [Account setup](hyperswitch-open-source/account-setup/README.md)
   * [Using Hyperswitch Control Center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
