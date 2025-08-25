@@ -48,7 +48,7 @@ env\_specific.toml contains environment-specific configurations and secrets, inc
 * Feature flags and operational parameters
 * Logging and monitoring configurations
 
-Run the below command to generate the difference and update misc.toml file
+Run the below command to generate the differences and update misc.toml file
 
 ```
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/env_specific.toml
