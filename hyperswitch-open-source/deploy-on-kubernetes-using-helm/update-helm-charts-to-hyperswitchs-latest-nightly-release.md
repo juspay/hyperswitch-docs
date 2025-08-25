@@ -31,7 +31,7 @@ sandbox.toml contains sandbox/test environment configurations, including:
 * Connector-specific test credentials and endpoints
 * Dummy connector settings for testing
 
-Run the below command to generate the differences and update the sandbox.toml file
+Run the below command to generate the differences and update the router-sandbox.toml file
 
 ```
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/sandbox.toml
@@ -48,7 +48,7 @@ env\_specific.toml contains environment-specific configurations and secrets, inc
 * Feature flags and operational parameters
 * Logging and monitoring configurations
 
-Run the below command to generate the difference and update env\_specific.toml file
+Run the below command to generate the difference and update misc.toml file
 
 ```
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/env_specific.toml
