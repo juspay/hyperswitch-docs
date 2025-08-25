@@ -5,126 +5,129 @@ description: Configure outgoing webhooks from Hyperswitch
 
 # Webhooks
 
-Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
+Webhooks are HTTP-based real-time push notifications that **Hyperswitch** uses to communicate instant status updates to your server. They are essential in payment processing for several reasons:
 
-* Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
-* Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
-* Providing the best payment experience for the end-user by instantly communicating payment status and fulfilling the purchase.
+- **Prevent transaction delays** – Ensuring real-time status updates helps avoid lost revenue in time-sensitive transactions like flight or movie reservations.
+- **Ensure accurate payment reconciliation** – Handling cases where a payment status changes from "Failed" to "Succeeded."
+- **Enhance user experience** – Real-time updates enable seamless order fulfillment and improve customer satisfaction.
 
-### Configuring Webhooks
+## Configuring Webhooks
 
-#### Create an endpoint on your server
+### 1. Create a Webhook Listener on Your Server
+To receive webhook events from Hyperswitch, you must create an **HTTP or HTTPS endpoint** that listens for incoming `POST` requests containing JSON payloads.
 
-You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Hyperswitch server.
+#### Example: Basic Webhook Listener in Node.js (Express)
+```javascript
+const express = require('express');
+const bodyParser = require('body-parser');
 
-#### Configure your webhook endpoint on Hyperswitch Dashboard
+const app = express();
+app.use(bodyParser.json());
 
-Configure the above endpoint on your Hyperswitch dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Setup section to configure webhook details.
+app.post('/webhook', (req, res) => {
+    console.log('Received webhook:', req.body);
+    res.sendStatus(200);
+});
 
-#### Add webhook custom HTTP headers
+app.listen(3000, () => console.log('Webhook listener running on port 3000'));
+```
+This endpoint will receive JSON payloads from Hyperswitch and log them for processing.
 
-In case a merchant wants to set custom headers for sending data to a specified webhook endpoint, these custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Update your webhook custom HTTP headers as shown below (you must provide a webhook URL to set custom HTTP headers).
+### 2. Configure Webhooks on the Hyperswitch Dashboard
 
-<figure><img src="../../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
+Go to **Developer → Payment Settings** in the Hyperswitch Dashboard, select your business profile, and configure the webhook settings by providing your endpoint URL.
 
-#### Update Hyperswitch’s webhook endpoints on your connector Dashboard
+### 3. Add Custom HTTP Headers (Optional)
+If your webhook endpoint requires custom HTTP headers for authentication, you can specify them in the **Webhook Setup** section.
 
-In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
+<figure><img src="../../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt="Webhook Custom Headers"></figure>
 
-Hyperswitch's webhook endpoint format is as specified below, or you can obtain the endpoint from the control center under the Processors tab.
+### 4. Register Hyperswitch Webhooks in Your Connector Dashboard
+For Hyperswitch to receive updates from payment connectors, you must update the webhook endpoint in the respective connector dashboard.
 
-| Environment | Webhook Endpoint                                                          |
-| ----------- | ------------------------------------------------------------------------- |
-| Sandbox     | sandbox.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}` |
-| Production  | api.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}`     |
+**Webhook Endpoint Format:**
 
-### Handling Webhooks
+| Environment | Webhook Endpoint |
+|------------|----------------|
+| Sandbox | `https://sandbox.hyperswitch.io/webhooks/{merchant_id}/{merchant_connector_id}` |
+| Production | `https://api.hyperswitch.io/webhooks/{merchant_id}/{merchant_connector_id}` |
 
-* Below are list of events for which you will receive the webhooks:
-  1. `payment_succeeded`
-  2. `payment_failed`
-  3. `payment_processing`
-  4. `payment_cancelled`
-  5. `payment_authorized`
-  6. `payment_captured`
-  7. `action_required`
-  8. `refund_succeeded`
-  9. `refund_failed`
-  10. `dispute_opened`
-  11. `dispute_expired`
-  12. `dispute_accepted`
-  13. `dispute_cancelled`
-  14. `dispute_challenged`
-  15. `dispute_won`
-  16. `dispute_lost`
-  17. `mandate_active`
-  18. `mandate_revoked`
+## Handling Webhooks
 
-Click [**here**](https://api-reference.hyperswitch.io/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
+### Webhook Events
+You will receive webhooks for the following events:
 
-### Webhook Signature Verification
+| Event Name | Description |
+|------------|-------------|
+| `payment_succeeded` | Payment was successful. |
+| `payment_failed` | Payment attempt failed. |
+| `payment_processing` | Payment is in progress. |
+| `payment_cancelled` | Payment was canceled. |
+| `payment_authorized` | Payment was authorized but not captured. |
+| `payment_captured` | Payment was successfully captured. |
+| `action_required` | Additional user action is needed. |
+| `refund_succeeded` | Refund was processed successfully. |
+| `refund_failed` | Refund attempt failed. |
+| `dispute_opened` | A dispute was opened. |
+| `dispute_won` | Dispute was won. |
+| `dispute_lost` | Dispute was lost. |
+| `mandate_active` | Payment mandate is active. |
+| `mandate_revoked` | Payment mandate was revoked. |
 
-While creating a business profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.
+Refer to the [API reference](https://api-reference.hyperswitch.io/api-reference/schemas/outgoing--webhook) for webhook payload details.
 
-#### Webhook Signature Generation
+## Webhook Signature Verification
+To ensure webhook security, Hyperswitch signs each payload with a **HMAC-SHA512** signature using your `payment_response_hash_key`.
 
-Creating a signature for the webhook involves these steps:
+### Signature Generation Process
+1. Encode the JSON webhook payload.
+2. Generate an **HMAC-SHA512** signature using the payload and your secret key.
+3. The signature is included in the `x-webhook-signature-512` header.
 
-* Webhook payload is encoded to JSON string.
-* `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
-* The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
+#### Example: Verifying Webhook Signature in Python
+```python
+import hmac
+import hashlib
+import json
 
-#### Webhook Validation
+def verify_webhook_signature(payload, secret_key, received_signature):
+    computed_signature = hmac.new(secret_key.encode(), json.dumps(payload).encode(), hashlib.sha512).hexdigest()
+    return computed_signature == received_signature
+```
 
-To validate the webhook’s authenticity:
+### Troubleshooting Signature Verification
+- Use the `x-webhook-signature-512` header for HMAC-SHA512 verification.
+- If your system doesn't support SHA512, use the `x-webhook-signature-256` header for HMAC-SHA256 verification.
 
-* Retrieve the content of the webhook and encode it as a JSON string.
-* Generate a `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
-* Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
+## Webhook Delivery Behavior
+Hyperswitch expects a **2XX** HTTP response for successful webhook processing. If no `2XX` response is received, it retries webhook delivery for up to **24 hours** with exponential backoff.
 
-#### Troubleshooting Signature Verification Failures
+| Retry Attempt | Interval |
+|--------------|----------|
+| 1st         | 1 min    |
+| 2nd, 3rd    | 5 min    |
+| 4th–8th     | 10 min   |
+| 9th–13th    | 1 hour   |
+| 14th–16th   | 6 hours  |
 
-If you are sure that the payload is from Hyperswitch but the signature verification fails:
+### Handling Duplicates
+Since webhook retries can result in duplicate events, you should track the `event_id` in your system to prevent duplicate processing.
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
-* Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
+#### Example: Deduplicating Webhooks in Python
+```python
+import redis
 
-<details>
+db = redis.Redis()
 
-<summary><strong>Why SHA-512 ?</strong></summary>
+def process_webhook(event_id, data):
+    if db.get(event_id):
+        print("Duplicate event. Skipping...")
+        return
+    db.set(event_id, 1, ex=86400)  # Store for 24 hours
+    print("Processing webhook:", data)
+```
 
-SHA-512 is a robust cryptographic hash function designed for security. It generates a fixed-size 512-bit (64-byte) output, making it suitable for tasks such as creating digital signatures, password hashing, and ensuring data integrity.
-
-</details>
-
-### Webhook Delivery Behavior
-
-To consider a webhook delivery as successful, Hyperswitch expects the HTTP status code to be `2XX` from your server. If Hyperswitch doesn't receive a `2XX` status code, the delivery of the webhook is retried with an increasing delay over the next 24 hours.
-
-The intervals at which webhooks will be retried are:
-
-| Retry Attempt               | Interval   |
-| --------------------------- | ---------- |
-| 1st                         | 1 minute   |
-| 2nd, 3rd                    | 5 minutes  |
-| 4th, 5th, 6th, 7th, 8th     | 10 minutes |
-| 9th, 10th, 11th, 12th, 13th | 1 hour     |
-| 14th, 15th, 16th            | 6 hours    |
-
-The interval for the first retry attempt in the above table is the duration since the original webhook delivery attempt, while the intervals for the subsequent retry attempts are the durations since the previous webhook delivery attempt.
-
-#### Handling Duplicates
-
-Due to webhook retries, your application may receive the same webhook more than once. You can handle duplicate deliveries of webhooks by examining the `event_id` field in the request body, which uniquely identifies a webhook event.
-
-For example, your application could do the following for each webhook received:
-
-1. Obtain the `event_id` from the webhook request body and store it in a persistent store such as a relational database or Redis.
-2. Check whether the `event_id` has already been processed.
-3. If the webhook has not been processed, then process the webhook; otherwise, it is a duplicate event so can be ignored.
-4. Also, since the last retry for a webhook delivery happens at around 24 hours after the original webhook trigger, store the processed `event_id`s for at least 24 hours. In other words, you may purge the stored `event_id`s that are more than 24 hours old.
-
-#### Handling Out-of-order Deliveries
+### Handling Out-of-order Webhooks
 
 Hyperswitch may deliver webhooks to your application in any order. This could be due to network delays or webhook delivery failures. However, you can handle this by examining the `updated` field of the resource sent in the webhook request body. For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
 
@@ -133,3 +136,14 @@ For example, if you wish to sync resource changes from Hyperswitch to your appli
 1. Obtain the value (`timestamp1`) of the `updated` field of the resource in the webhook request body.
 2. Obtain the value (`timestamp2`) of the `updated` field of the resource stored on your side.
 3. If `timestamp1` > `timestamp2`, process the resource; otherwise, ignore.
+
+## Testing Webhooks
+
+Before going live, test your webhooks using tools like below. They provide you with a public HTTP endpoint for receiving event payloads, inspecting and routing them to the localhost/development box.
+
+| Tool | Description |
+|------|-------------|
+| [Beeceptor](https://beeceptor.com/) | You can receive payloads for discovery and routing to the localhost service in real-time. Free to use. |
+| [RequestBin by Pipedream](https://pipedream.com/requestbin) | You can receive and inspect HTTP requests in real-time. Free to use. |
+
+You can configure Hyperswitch to send test webhooks to these services and inspect the payloads before deploying them to production.
