@@ -33,18 +33,19 @@ V1 was intentionally engineered to be the right tool for the right problems — 
   * Merchants can supply a conversion rate that applies to a specific reconciliation
   * Post FX gains/losses separately to an FX gain/loss account so conversions are auditable, traceable, and don’t break reconciliation
 
-| Module                | Feature                                                                                                           | Reconciliation v1 | Reconciliation v2 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| Matching Engine       | <p>2-way and 3-way matching</p><p><br></p>                                                                        | ✅(Partially)      | ✅                 |
-| Reporting & Analytics | Analytics                                                                                                         | ✅                 | ✅(Partially)      |
-| Reporting & Analytics | Scheduled Reconciliation Reports                                                                                  | ✅                 | ✅                 |
-| Reporting & Analytics | Self Serve Reporting                                                                                              | ✅                 | ❌                 |
-| Exceptions            | Ability to highlight amount, status exceptions                                                                    | ✅                 | ✅                 |
-| Exceptions            | Ability to resolve exceptions via UI                                                                              | ✅                 | ❌                 |
-| Accounts & Ledger     | Accounts are modeled after a ledger — each is typed as Debit or Credit, enabling point-in-time balance visibility | ❌                 | ✅                 |
-| Accounts & Ledger     | Ability to add as many accounts as required                                                                       | ❌                 | ✅                 |
-| Ingestion             | Manual uploads & basic scheduled fetch                                                                            | ✅                 | ✅                 |
-| Auditability          | Immutable transaction evolution with audit trail                                                                  | ❌                 | ✅                 |
+| Module                | Feature                                                                                                           | Reconciliation v1 | Reconciliation v2  |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------ |
+| Matching Engine       | <p>2-way and 3-way matching</p><p><br></p>                                                                        | ✅                 | ✅                  |
+| Matching Engine       | N-way matching                                                                                                    | ❌                 | ✅                  |
+| Reporting & Analytics | Analytics                                                                                                         | ✅                 | ✅                  |
+| Reporting & Analytics | Scheduled Reconciliation Reports                                                                                  | ✅                 | ✅                  |
+| Reporting & Analytics | Self Serve Reporting                                                                                              | ✅                 | ❌(Part of Roadmap) |
+| Exceptions            | Ability to highlight amount, status exceptions                                                                    | ✅                 | ✅                  |
+| Exceptions            | Ability to resolve exceptions via UI                                                                              | ✅                 | ❌(Part of Roadmap) |
+| Accounts & Ledger     | Accounts are modeled after a ledger — each is typed as Debit or Credit, enabling point-in-time balance visibility | ❌                 | ✅                  |
+| Accounts & Ledger     | Ability to add as many accounts as required                                                                       | ❌                 | ✅                  |
+| Ingestion             | Manual uploads & basic scheduled fetch                                                                            | ✅                 | ✅                  |
+| Auditability          | Immutable transaction evolution with audit trail                                                                  | ❌                 | ✅                  |
 
 ## Our Design
 
