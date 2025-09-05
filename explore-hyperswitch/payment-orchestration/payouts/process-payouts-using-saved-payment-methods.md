@@ -62,6 +62,4 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.55 PM.png" alt=""><figcaption></figcaption></figure>
 
-{% content-ref url="route-your-payout-transactions-using-smart-router.md" %}
 [route-your-payout-transactions-using-smart-router.md](route-your-payout-transactions-using-smart-router.md)
-{% endcontent-ref %}
