@@ -1,13 +1,23 @@
 # Roadmap
 
-#### Interface to fix Reconciliation Exceptions - 9 Sept
+{% hint style="info" %}
+**Note**:
 
-* Instantly resolve mismatches in transaction amounts, status, or other metadata through a simple interface
-* The system will provide the ability to view discrepancies in side-by-side comparisons across multiple sources, highlight the exact mismatched fields, and offer resolution options such as editing values while maintaining a clear audit trail for every action taken
+Reconciliation V2 is currently in Beta. For Reconciliation V1, please check [here](../reconciliation/).
+
+We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
+
+All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
+{% endhint %}
 
 #### Advanced Data Management - 15 Sep
 
 * A dedicated module that isolates problematic records during ingestion, prevents them from polluting the reconciliation flow, and provides tools for users to review and correct them before reprocessing
+
+#### Interface to fix Reconciliation Exceptions - 19 Sept
+
+* Instantly resolve mismatches in transaction amounts, status, or other metadata through a simple interface
+* The system will provide the ability to view discrepancies in side-by-side comparisons across multiple sources, highlight the exact mismatched fields, and offer resolution options such as editing values while maintaining a clear audit trail for every action taken
 
 #### Smarter Rules for Advanced Businesses - 29 Sep
 
