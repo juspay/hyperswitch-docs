@@ -307,7 +307,5 @@
   * [Connector Payment Flows](learn-more/hyperswitch-architecture/connector-payment-flows.md)
 * [SDK Payment flows](learn-more/sdk-payment-flows.md)
 * [Blog](https://hyperswitch.io/blog)
-
-***
-
-* [Community Guidelines](community-guidelines.md)
+* [Community](learn-more/community/README.md)
+  * [Community Guidelines](learn-more/community/community-guidelines.md)
