@@ -1,6 +1,6 @@
 ---
-icon: credit-card
 description: A brief summary of PCI compliance for Hyperswitch Cloud users
+icon: credit-card
 ---
 
 # PCI Compliance
@@ -12,10 +12,10 @@ Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that s
 ### **Key Features of PCI Compliance on Hyperswitch Cloud**
 
 **PCI DSS Level 1 Certification**\
-Hyperswitch is certified for PCI DSS 3.2.1 Level 1, ensuring robust security measures for card and other payments data.
+Hyperswitch is validated as a **PCI DSS v4.0 Level 1 Service Provider**, the highest level of PCI certification for service providers. This ensures robust security controls for storing, processing, and transmitting cardholder data.
 
 **Annual Audits**\
-Infrastructure and applications are audited annually by a PCI-approved scanning vendor to maintain compliance.
+Hyperswitch undergoes an annual PCI DSS audit performed by an independent Qualified Security Assessor (QSA). In addition, quarterly vulnerability scans are conducted by a PCI-approved scanning vendor (ASV), as required by PCI DSS.
 
 **Tokenization for Secure Card Handling**\
 Hyperswitch tokenizes and stores customer card details in its cloud vault, reducing the need for merchants to store sensitive data.
