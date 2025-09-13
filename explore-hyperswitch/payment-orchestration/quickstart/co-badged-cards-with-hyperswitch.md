@@ -12,21 +12,23 @@ Customers benefit from the global scope, security, and consumer protection of in
 
 ## What’s in it for Your Business:
 
-* Increased Payment Flexibility: Merchants can offer customers the ability to select their preferred network, optimizing the payment experience and accommodating different payment preferences.
-* Better Dispute Resolution: In many cases, for high-value items, global networks like Visa and Mastercard provide better consumer protection and dispute resolution. Customers can choose these for international transactions, while using local networks for domestic purchases.
-* Compliance with Global Standards: Co-badged cards support local regulations, such as Article 8 of the [Interchange Fee Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R0751) (IFR) issued by the European Union, ensuring full compliance while maintaining flexibility for merchants outside the EEA.
+* **Increased Payment Flexibility**: Merchants can offer customers the ability to select their preferred network, optimizing the payment experience and accommodating different payment preferences.
+* **Better Dispute Resolution**: In many cases, for high-value items, global networks like Visa and Mastercard provide better consumer protection and dispute resolution. Customers can choose these for international transactions, while using local networks for domestic purchases.
+* **Compliance with Global Standards**: Co-badged cards support local regulations, such as Article 8 of the [Interchange Fee Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R0751) (IFR) issued by the European Union, ensuring full compliance while maintaining flexibility for merchants outside the EEA.
+* **Cost Optimization**: The platform's debit routing engine automatically selects the most cost-effective network based on real-time data and merchant preferences.
 
 ## How to enable support for Co-badged cards with Hyperswitch?
 
-To enable this, you only need to select all the card networks you support in the dashboard during the payment method selection step while configuring the payment processors. Follow the steps shown below to enable it.
+Co-badged card support is **automatically enabled** when you configure multiple card networks in your business profile. The system will:
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfPduE2_wvZBZ7QgbiLygL26GGZNLw-cKVW1egGzBhr2yhZgX9LV00nZ_0RMPDlBlhPyCiXjISA3lBICyj3npvU-G1_RLnfUOVMQdad3QD6OSMSzKHfLpddstR5o_N_QEMohpcIwBJusMS7byt5qhiVDtmd?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
+1. Automatically detect co-badged cards during payment processing
+2. Apply intelligent routing based on your configured preferences
+3. Maintain compliance with applicable regulations
+4. Provide detailed network information in payment responses
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeE7RC8Xyyp5OKRX63yML5-6furutp_oV4vckflcPqVwSwbWY2zoVcy2Kuwegj69d-9zhfjXSZLrbde7kNeLLa51eJDzU4eHfcYBGw-5Gar2ud6vM2I2C4qxtkZ8NF_tJOEoihkDEIDUCr_uRszPL43GX4P?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
+No additional configuration is required beyond selecting the card networks you support during payment processor setup.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfnJ4MKRmiV4Qrp28ofV_tUVb5YwBE8Lb2LWSm42GUIr3UKfD7f7Lqvn4ID2worjh8GhiSb5wJZz9Di25NXGTWIV27brvSsCve692TXVjdJooo-FWFSU309BQfC3YW2CAQjj4t-N1_ocvlSiq8eTvT3Nmi7?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
-
-## FAQs
+### FAQs
 
 #### Are co-badged cards the same as co-branded cards?&#x20;
 
