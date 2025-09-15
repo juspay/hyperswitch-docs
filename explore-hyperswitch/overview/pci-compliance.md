@@ -34,11 +34,11 @@ Many payment processors disable raw card acceptance by default. To enable it:
 #### **Stripe Integration Update:**
 
 * Stripe no longer allows raw card acceptance via its Merchant Dashboard.
-* If required, share the PCI DSS compliance certificate of Hyperswitch or the third-party service provider managing raw card data with Stripe support.
+* If required, share Hyperswitch’s PCI DSS Attestation of Compliance (AOC) with Stripe support.
 
 #### **Accessing the PCI AOC Document:**
 
-* Hyperswitch Cloud users can download the PCI AOC from the Compliance section under settings in the Hyperswitch Dashboard.
+* A redacted version of Hyperswitch’s PCI DSS Attestation of Compliance (AOC) is available to Cloud users under NDA. It can be downloaded from the Compliance section in the Dashboard.
 * Alternatively, email **hyperswitch@juspay.in** for assistance.
 
 ### **Why Choose Hyperswitch for PCI Compliance?**
