@@ -3,7 +3,7 @@ description: Integrate hyperswitch SDK to your React Native App using hyperswitc
 icon: puzzle-piece
 ---
 
-# React Native with Node Integration
+# React Native with REST API Integration
 
 {% hint style="info" %}
 Use this guide to integrate `hyperswitch` SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
@@ -44,7 +44,6 @@ $ npm install @juspay-tech/hyperswitch-sdk-react-native
 Install the following dependencies
 
 ```js
-yarn add react-native-code-push
 yarn add react-native-gesture-handler
 yarn add react-native-inappbrowser-reborn
 yarn add react-native-safe-area-context
@@ -53,10 +52,7 @@ yarn add @sentry/react-native
 yarn add react-native-pager-view
 yarn add react-native-screens
 yarn add react-native-hyperswitch-kount
-yarn add react-native-klarna-inapp-sdk
 ```
-
-**Note:** If you encounter any issues with `react-native-klarna-inapp-sdk`, please remove it from the dependencies.
 
 ### 2.3 iOS Only
 
@@ -66,47 +62,9 @@ Run `pod install` in iOS folder
 pod install
 ```
 
-### 2.4 Android Only
+### 2.4 Use `HyperProvider`
 
-In the Android Folder inside strings.xml file `(android/app/src/main/res/values/strings.xml)` add the below line
-
-```
-<string name="CodePushDeploymentKey">HyperswitchRNDemo</string>
-```
-
-In the `android/settings.gradle` file, add the following line to link react-native-code-push:
-
-```
-include(":react-native-code-push");
-
-project(":react-native-code-push").projectDir = new File(
-  rootProject.projectDir,
-  "../node_modules/react-native-code-push/android/app"
-);
-```
-
-In the Android folder inside main (android/app/src/main/AndroidManifest.xml) add these below lines to the existing code.
-
-```
-<manifest xmlns:tools="http://schemas.android.com/tools">
-  <application
-    tools:replace="android:allowBackup">
-    <!-- Other existing elements in the <application> tag -->
-  </application>
-</manifest>
-```
-
-### 2.5 Add `HyperProvider` to your React Native app
-
-Use `HyperProvider` to ensure that you stay PCI compliant by sending payment details directly to Hyperswitch server.
-
-```js
-import { HyperProvider } from "@juspay-tech/hyperswitch-sdk-react-native";
-```
-
-### 2.6 Use `HyperProvider`
-
-To initialize Hyperswitch in your React Native app, wrap your payment screen with the HyperProvider component. Only the API publishable key in publishableKey is required. The following example shows how to initialize Hyperswitch using the HyperProvider component.
+To initialise Hyperswitch in your React Native app, wrap your payment screen with the HyperProvider component. Only the API publishable key in publishableKey is required. The following example shows how to initialise Hyperswitch using the HyperProvider component.
 
 ```js
 import { HyperProvider } from '@juspay-tech/hyperswitch-sdk-react-native';
@@ -169,8 +127,12 @@ const initializePaymentSheet = async () => {
       clientSecret: clientSecret,
       appearance: customAppearance,
   }
-  const paymentSession = await initPaymentSession(params);
-  setPaymentSession(_=>paymentSession)
+  const result = await initPaymentSession(params);
+  if (result.error) {
+        console.error('Payment session initialization failed:', result.error);
+  } else {
+      setPaymentSession(_ => paymentSession)
+  }
 };
 
 useEffect(() => {
@@ -184,32 +146,22 @@ To display the Payment Sheet, integrate a "Pay Now" button within the checkout p
 
 ```js
   const openPaymentSheet = async () => {
-    console.log("Payment Session Params --> ", paymentSession);
-    const status = await presentPaymentSheet(paymentSession);
-    console.log('presentPaymentSheet response: ', status);
-    const {error, paymentOption} = status;
-    if (error) {
-      switch (error.code) {
-        case 'cancelled':
-          console.log('cancelled', `PaymentSheet was closed`);
-          break;
-        case 'failed':
-          console.log('failed', `Payment failed`);
-          break;
-        default:
-          console.log('status not captured', 'Please check the integration');
-          break;
-      }
+    const result = await presentPaymentSheet(paymentSession);
 
+    if (result.error) {
       console.log(`Error code: ${error.code}`, error.message);
-    } else if (paymentOption) {
-      switch (paymentOption.label) {
+    } else if (result.status) {
+      switch (result.status) {
         case 'succeeded':
           console.log('succeeded', `Your order is succeeded`);
           break;
         case 'requires_capture':
           console.log('requires_capture', `Your order is requires_capture`);
           break;
+        case 'cancelled':
+          console.log('cancelled', `Payment is cancelled`);
+        case 'failed':
+          console.log('failed', `Payment is failed`);
         default:
           console.log('status not captured', 'Please check the integration');
           break;
