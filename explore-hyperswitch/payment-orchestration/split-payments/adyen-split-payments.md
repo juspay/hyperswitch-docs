@@ -35,49 +35,40 @@ In the payment create request, include the Adyen split rule as provided below.
     }
 ```
 
-Parameters
+#### Field Specifications
 
-1.  **store**  \[Optional - not required for Adyen Marketplace ]
+**`store`** (Optional): Required only for Adyen Platform implementations, not needed for Adyen Marketplace.
 
-    Your unique ID for the Adyen platform store.
-2.  **split\_items**\
-    Split Rules Array
+**`split_items`**: Array of split rules where the sum of all `amount` values must equal the total payment amount.
 
-    The array contains a set of split rules where the sum of the `amount` parameter of each item must equal the total payment amount. \
-    \
-    Each split item includes the following fields \
+**Split Item Fields**
 
+**`split_type`**: Defines the payment portion allocation. Supported values:
 
-    * **split\_type**: \
-      Defines the part of the payment you want to book to the specified account.  Possible values \
-      \
-      &#xNAN;_**BalanceAccount**_**:** Books split amount to the specified account\
-      &#xNAN;_**AcquiringFees**_**:** The aggregated amount of the interchange and scheme fees\
-      &#xNAN;_**PaymentFee**_**:** The aggregated amount of all transaction fees\
-      &#xNAN;_**AdyenFees**_**:** The aggregated amount of Adyen's commission and markup fees\
-      &#xNAN;_**AdyenCommission**_**:** The transaction fees due to Adyen under blended rates\
-      &#xNAN;_**AdyenMarkup**_**:** The transaction fees due to Adyen under Interchange ++ pricing\
-      &#xNAN;_**Interchange**_**:** The fees paid to the issuer for each payment made with the card network\
-      &#xNAN;_**SchemeFee**_**:** The fees paid to the card scheme for using their network\
-      &#xNAN;_**Commission**_**:** Your platform's commission on the payment (specified in amount), booked to your liable balance account\
-      &#xNAN;_**TopUp**_**:** Allows you and your users to top up balance accounts using direct debit, card payments, or other payment methods\
-      &#xNAN;_**Vat**_**:** The value-added tax charged on the payment, booked to your platforms liable balance account
+* `BalanceAccount`: Direct allocation to specified account (requires `account` field)
+* `Commission`: Platform commission (requires `amount` field)
+* `Vat`: Value-added tax allocation
+* `TopUp`: Balance account funding (requires `account`, not available with Platform)
+* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
 
+**`amount`**: Split amount in minor units. Required for `Commission`, `Vat`, and `TopUp` types; optional for fee types as they're calculated by Adyen.
 
+**`account`**: Target account identifier. Required for `BalanceAccount` and `TopUp` types.
 
-    * **amount** \[Optional-depending on the [split\_type](https://docs.adyen.com/platforms/online-payments/split-transactions/#split-types)]\
-      The value of the part of the payment you want to the specified account.  You do not need to specify this field for transaction fees, because they are not known at the time of payment.\
+**`reference`**: Unique identifier for tracking.&#x20;
 
-    * **account**\[Optional-depending on the [split\_type](https://docs.adyen.com/platforms/online-payments/split-transactions/#split-types)]\
-      The account that will receive (or be charged) the split amount \
+**`description`**: Optional description for reporting.
 
-    * **reference**\
-      Your unique identifier for the part of the payment you want to book to the specified account\
+#### Validation Rules
 
-    * **description**\[Optional]\
-      &#x20;Your description for the part of the payment you want to booking to the specified account, returned in Adyen reports.
+Hyperswitch enforces several validation rules:
 
-Payments Response
+* Split amounts must sum to total payment amount
+* `BalanceAccount` and `TopUp` types require `account` field
+* `Commission`, `Vat`, and `TopUp` types require `amount` field
+* `TopUp` splits are incompatible with Platform store configuration
+
+#### Payments Response
 
 ```
     "split_payments": {
@@ -105,7 +96,7 @@ Payments Response
 
 ***
 
-## Split Adyen refunds  via Hyperswitch
+## Split Adyen refunds via Hyperswitch
 
 In the refund create request, include the following according to your split rule
 
@@ -132,7 +123,17 @@ In the refund create request, include the following according to your split rule
     }
 ```
 
-Refund Response&#x20;
+The request structure includes fields:
+
+* `store`: Optional store identifier for Adyen Platform
+* `split_items`: Array of split items with the same structure as payment splits
+* `split_type`: The type of split (BalanceAccount, Commission, etc.)
+* `amount`: Split amount in minor units
+* `account`: Target account identifier
+* `reference`: Unique identifier for tracking
+* `description`: Optional description
+
+#### Refund Response&#x20;
 
 ```
    "split_refund": {
