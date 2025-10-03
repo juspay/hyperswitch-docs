@@ -18,6 +18,15 @@ Think of it as a “meta-organization” that can:
 
 
 
+API keys for Platform Merchant Account has **two purposes**:
+
+1. It can be used **like any normal merchant API key** for the Platform Merchant’s _own account_ (payments, refunds, connectors, etc.)
+2. It can also be used to **create sibling merchants** and **generate API keys for those sibling merchants**
+   1. Platform API Key = dual-purpose key
+   2. Sibling Merchant API Keys = operational keys for those merchants
+
+
+
 This model is particularly useful for:
 
 * **SaaS platforms** offering payments to their merchants
@@ -71,8 +80,6 @@ graph TD
     style NP3 fill:#ffcc99
 ```
 
-#### **Explanation:**
-
 * Platform Organisation hosts exactly one Platform Merchant with elevated privileges
 * Sibling Merchants are standard merchant accounts managed by the Platform Merchant
 
@@ -110,7 +117,7 @@ graph TD
 
 #### Step 5 — Perform Payment Operations Using Merchant Keys
 
-Once sibling merchants are created and their API keys generated, these keys become the **operational keys**. The Platform API Key cannot directly run payments or connector actions; it is only for management
+Once sibling merchants are created and their API keys are generated, those keys become the **operational keys** for those merchants — meaning all payment operations (payments, refunds) and connector actions must be carried out with the sibling merchant’s own API key. The **Platform API Key cannot directly perform payments or connector operations for sibling merchants**; its role there is only to create merchants and issue their keys. However, the Platform API Key **does work like a normal merchant key for the Platform Merchant itself**, so it can connect connectors and process payments on the Platform Merchant’s own account.
 
 **5.1 Connector Setup**
 
