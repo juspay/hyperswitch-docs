@@ -17,6 +17,6 @@ Hyperswitch provides **seamless cross-platform payment integrations** for both *
 [react-native](react-native/)
 {% endcontent-ref %}
 
-{% content-ref url="react-native-1/" %}
-[react-native-1](react-native-1/)
+{% content-ref url="flutter/" %}
+[flutter](flutter/)
 {% endcontent-ref %}

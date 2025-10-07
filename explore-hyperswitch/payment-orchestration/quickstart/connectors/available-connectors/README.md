@@ -37,8 +37,8 @@ If you face any issues, feel free to reach out to us on [Slack](https://inviter.
 [boa.md](boa.md)
 {% endcontent-ref %}
 
-{% content-ref url="payu.md" %}
-[payu.md](payu.md)
+{% content-ref url="billwerk.md" %}
+[billwerk.md](billwerk.md)
 {% endcontent-ref %}
 
 {% content-ref url="bluesnap.md" %}

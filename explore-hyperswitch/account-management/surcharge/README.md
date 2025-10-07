@@ -26,7 +26,7 @@ Surcharge can be applied to a payment using `surcharge_details` field in [paymen
 **ii) Configuring Surcharge rules using Hyperswitch Control Center**&#x20;
 
 * The Surcharge Manager on the Hyperswitch Control Center allows you to configure advanced rules based on payment parameters to decide when and how much surcharge to apply to the payment
-* Surcharge Decision Manager supports rules based on various payment parameters like payment\_amount, payment\_method, card\_network etc. Follow this [setup guide](setup-guide.md) to configure rules using the Surcharge Decision Manager
+* Surcharge Decision Manager supports rules based on various payment parameters like payment\_amount, payment\_method, card\_network etc. Follow this [setup guide](surcharge-setup-guide.md) to configure rules using the Surcharge Decision Manager
 * For example, if you want to apply 5% surcharge for all payments of value greater than $100 then you could setup the following rule on the Surcharge Manager and all the payment requests conforming to that rule would have sucharge of 5% of the original amount being applied to it. ie, If payment amount is 1000$, 1050$ will be sent as authorization amount to the payment processor.&#x20;
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-01 at 11.52.18 AM.png" alt=""><figcaption></figcaption></figure>

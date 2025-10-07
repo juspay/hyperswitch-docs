@@ -287,6 +287,6 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 
 ### Next step:
 
-{% content-ref url="create.md" %}
-[create.md](create.md)
+{% content-ref url="create-payment-links.md" %}
+[create-payment-links.md](create-payment-links.md)
 {% endcontent-ref %}

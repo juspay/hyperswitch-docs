@@ -42,6 +42,6 @@ In the IFR, Article 8 mandates that customers must be free to choose their netwo
 
 Merchants can choose not to support one of the networks, and in such cases, transactions will be routed through the supported network.
 
-{% content-ref url="tokenization-and-saved-cards/mandates-and-recurring-payments.md" %}
-[mandates-and-recurring-payments.md](tokenization-and-saved-cards/mandates-and-recurring-payments.md)
+{% content-ref url="tokenization-and-saved-cards/save-a-payment-method.md" %}
+[save-a-payment-method.md](tokenization-and-saved-cards/save-a-payment-method.md)
 {% endcontent-ref %}

@@ -37,8 +37,8 @@ For example: If you wish to enforce 3DS for transactions over $100, you can defi
 * Some processors may mandate 3DS regardless of your configuration.
 {% endhint %}
 
-{% content-ref url="setup-guide.md" %}
-[setup-guide.md](setup-guide.md)
+{% content-ref url="get-started-with-3ds-decision-manager.md" %}
+[get-started-with-3ds-decision-manager.md](get-started-with-3ds-decision-manager.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
