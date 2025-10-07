@@ -1,5 +1,9 @@
 # Deploy on GCP Using Helm Charts
 
+{% hint style="info" %}
+**Note:** This tutorial deploys the full Hyperswitch stack, launching multiple services that may exceed compute limits on smaller clusters.
+{% endhint %}
+
 Part 1: Setting Up a Kubernetes Cluster on GCP
 
 #### Step 1: Set Up GCP Account and Enable Kubernetes Engine API

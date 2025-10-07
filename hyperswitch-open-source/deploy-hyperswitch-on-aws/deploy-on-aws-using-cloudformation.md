@@ -9,6 +9,10 @@ icon: aws
 
 ## Steps to Deploy Hyperswitch on AWS
 
+{% hint style="info" %}
+**Note:** This tutorial deploys the full Hyperswitch stack, launching multiple services that may exceed compute limits on smaller clusters.
+{% endhint %}
+
 ### **Prerequisites**
 
 * `git` installed on your local machine

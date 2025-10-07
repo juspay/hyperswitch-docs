@@ -2,6 +2,10 @@
 
 ### Prerequisites
 
+{% hint style="info" %}
+**Note:** This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the **Developer Support Plan ($29/month)** to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
+{% endhint %}
+
 Ensure the following tools are installed and configured:
 
 **1. Azure CLI**
@@ -107,6 +111,10 @@ Once it's registered, you can proceed with creating your AKS cluster.
 6. **Create an AKS Cluster**
 
 Create an AKS cluster with your specified parameters. Replace `<resource-group-name>` with your resource group name, `<cluster-name>` with your desired AKS cluster name, and adjust other parameters as needed:
+
+{% hint style="warning" %}
+If you encounter limitations with the `Standard_A4_v2` VM size, consider upgrading to the **Developer Support Plan ($29/month)** to increase your regional vCPU quota and enable successful cluster provisioning. If you do upgrade to the support plan, try the `Standard_D4_v3` for the `node-vm-size` .
+{% endhint %}
 
 ```bash
 az aks create --resource-group <resource-group-name> \
