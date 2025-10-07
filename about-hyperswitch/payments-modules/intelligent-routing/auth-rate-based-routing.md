@@ -47,16 +47,18 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant
 3. To update the setting of the routing model use the below API:
 
 ```
-curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \
---header 'Content-Type: application/json' \
---header 'api-key: <api-key>' \
---data '{
-        "min_aggregates_size": 5, // Min. no. of buckets used to caluclate score
-        "max_aggregates_size": 8, // Max. no. of buckets used to calculate score
-        "current_block_threshold": {
-            "max_total_count": 5, // Number of payments in a Bucket 
-            "exploration_percent": 20.0 
-        }
+curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \  
+--header 'Content-Type: application/json' \  
+--header 'api-key: <api-key>' \  
+--data '{  
+        "config": {  
+            "min_aggregates_size": 5,  
+            "max_aggregates_size": 8,  
+            "current_block_threshold": {  
+                "max_total_count": 5  
+            },  
+            "exploration_percent": 20.0  
+        }  
 }'
 ```
 
@@ -70,12 +72,12 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-
 
 ### How to test the routing behaviour?
 
-You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour
+You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour.
 
 Access the tool using this URL - [https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
 
 1. Create a merchant on Hyperswitch Control Center
-2. Ensure to configure atleast two payment processors for the merhcant profile
+2. Ensure to configure at least two payment processors for the merhcant profile
 3. Enter the sandbox API key, merchant id and profile id in the modal that pops-up once you click the 'Start Simulation' button on the top-right corner
 4. Head to the 'routing' tab on the left nav bar and toggle the Success Based Routing button
 5. Select the desired routing configuration settings
