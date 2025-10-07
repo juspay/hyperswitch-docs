@@ -27,9 +27,9 @@ _**Step 3:**_ Enable one or more [local debit networks](least-cost-routing.md#ne
 _**Step 1:**_ Configure Prerequisites \
 Ensure that connectors supporting transactions through local networks are set up with local networks enabled
 
-_**Step 2:**_ Click on `Manage` for configuring Least Cost Routing
+_**Step 2:**_ Navigate to `Workflow` -> `Payout Routing`.  Under `Active configuration` Click on `Manage` for configuring Least Cost Routing:
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-26 at 5.39.03 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1-payout-lcr.png" alt=""><figcaption></figcaption></figure>
 
 _**Step 3:**_ A popup will guide you to confirm the three prerequisites (connector setup, debit card enablement, local networks configuration). Click on `Enable`  to activate LCR
 
