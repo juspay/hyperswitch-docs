@@ -25,16 +25,16 @@ npx mint-mcp add api-reference.hyperswitch.io
 
 
 
-    <figure><img src="../.gitbook/assets/Screenshot 2025-07-07 at 6.59.56 AM (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 6.59.56 AM (1).png" alt=""><figcaption></figcaption></figure>
 *   Select your preferred MCP client from the prompt.
 
-    <figure><img src="../.gitbook/assets/Screenshot 2025-07-07 at 7.00.02 AM (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.00.02 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Run the Server
 
 On completing step 2, you will get an output similar to&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-07-07 at 7.02.01 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.02.01 AM.png" alt=""><figcaption></figcaption></figure>
 
 You can then just copy the command and run it:
 
@@ -44,7 +44,7 @@ node <path to your local folder>/.mcp/api-reference.hyperswitch.io/src/index.js
 
 Once done, you will see this as output:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-07-07 at 7.07.18 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.07.18 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 4: Enable in your MCP Client
 
