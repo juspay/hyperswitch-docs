@@ -273,10 +273,6 @@
 * [🏢 For enterprises](use-cases/for-enterprises.md)
 * [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
 
-***
-
-* [Testing Payments](test-payments-through-newman-wrapped-in-rust.md)
-
 ## Check list for Production
 
 * [Going live](check-list-for-production/going-live/README.md)
@@ -304,6 +300,7 @@
   * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
   * [Connector Payment Flows](learn-more/hyperswitch-architecture/connector-payment-flows.md)
 * [SDK Payment flows](learn-more/sdk-payment-flows.md)
+* [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
 * [Blog](https://hyperswitch.io/blog)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
