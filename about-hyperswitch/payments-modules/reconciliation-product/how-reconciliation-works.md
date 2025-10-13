@@ -3,7 +3,7 @@
 {% hint style="info" %}
 **Note**:
 
-Reconciliation V2 is currently in Beta. For Reconciliation V1, please check [here](../reconciliation/).
+For Reconciliation V1, please check [here](../reconciliation/).
 
 We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
 
