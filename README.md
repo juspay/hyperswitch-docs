@@ -164,7 +164,7 @@ Recover failed payments using ML-driven retry strategies optimized for timing, i
 
 Easily manage and automate disbursements to sellers, vendors, or partners with flexible payout logic.&#x20;
 
-[Subscriptions → ](explore-hyperswitch/payment-orchestration/subscriptions/)
+[Subscriptions → ](explore-hyperswitch/payment-orchestration/subscriptions.md)
 
 Handle recurring payments seamlessly with built-in support for subscription billing and invoicing.
 

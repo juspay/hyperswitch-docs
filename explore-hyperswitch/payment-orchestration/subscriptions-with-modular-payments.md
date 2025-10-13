@@ -1,17 +1,18 @@
 ---
 description: Augment your subscriptions with payments orchestration capabilities
+icon: repeat
 ---
 
 # Subscriptions with Modular Payments
 
-For businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payment operations from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100 % of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and\
+For businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payment operations from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and\
 other focused third parties, modularized to work with each other)
 
 ### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors&#x20;
 2. Improved reliability with a multi-PSP setup
-3. Intelligent Routing capabilities to improve Authorization Rates and minimise Procesing costs
+3. Intelligent Routing capabilities to improve Authorization Rates and minimise Processing costs
 4. Greater coverage of PMs, APMs and features offered by the PSPs
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
@@ -24,6 +25,16 @@ other focused third parties, modularized to work with each other)
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
+
+### Flow Diagram
+
+#### Initial Subscription create flow (with CIT Payment)
+
+<figure><img src="../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
+
+#### MIT payment flow in subsequent billing cycle
+
+<figure><img src="../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
 ### Integration Guide
 
@@ -264,7 +275,7 @@ Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned
 {% endstep %}
 
 {% step %}
-Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../merchant-controls/integration-guide/web/react-with-rest-api-integration.md)
+Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../merchant-controls/integration-guide/web/react-with-rest-api-integration.md)
 {% endstep %}
 
 {% step %}
