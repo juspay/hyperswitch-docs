@@ -1,9 +1,9 @@
 ---
-description: Jul '25 to Sep '25
+description: Oct '25 to Dec '25
 icon: road
 ---
 
-# Roadmap - Q3 2025
+# Roadmap - Q4 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -34,49 +34,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-### **Core Orchestration**
-
-* Expand Hyperswitch with new payment connector integrations including Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook.io, Trust Payments, Nordea, and Silverflow
-* Extend support for additional payment methods across existing integrations such as Multisafe, Airwallex, Braintree, and Fiserv
-* Introduce split payment support across - Gift cards, Long-term lending/leasing providers
-* File exchange based integration for payment method verification, payment processing and settlement instructions
-* Asynchronous chargeback handling for connectors without webhook support
-* L2 and L3 card data enablement across key acquirers
-
-### **Vault**
-
-* Standalone Network Tokenization service for SaaS merchants
-
-### **Authentication**
-
-* Improve authentication rates and user experience with EMVCo certified Juspay 3DS Server and Juspay 3DS SDK
-* Authentication Observability to provide analytics and insights to merchants with tightly coupled Acquirer 3DS for better authentication and authorization results.
-
-### **Revenue Recovery**
-
-* Open-source revenue recovery: Merchants will be able to self-deploy Hyperswitch's integrations and intelligence services onto their own stack
-* Multi-card retries: The system will intelligently utilize payment methods already present with the customer to perform retries on a given invoice
-* Intelligent invoice retrying: Automatically retries invoices declined due to hard decline error codes, within the retry budget specified by the merchant
-* Custom subscription support: Enables integration with the merchant’s in-house subscription management platform to recover failed payments
-
-### **Intelligent Routing**
-
-* Audit Trail and observability dashboard: Allows monitoring of performance across various routing modules
-* Extension of Least Cost Routing to wallet payments: Includes Apple Pay and Google Pay
-
-### **Cost Observability**
-
-* Smarter Fee Attribution Engine: Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
-* Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly
-* Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers
-
-### Reconciliation
-
-* N‑way ingestion & transformation: implement backend‑configured pipelines for any mix of OMS, PSP and bank asources to define normalization and transformation rules
-* Reconciliation summary views: display real‑time n‑way match rates, exception counts and trend charts in dashboard widgets, with click‑through to transaction‑ vs. entry‑level drill‑downs and one‑click resolution actions.
-* Transaction‑level audit logs: capture every transaction event in full detail with immutable records to ensure no information is lost
-* Custom export & reporting: enable merchants to generate and download tailored reconciliation reports
-* Adyen integration & auto‑fetch: provide a one‑click Adyen connector that securely pulls transactions on a schedule, auto‑maps fields and normalizes into your unified schema
+WIP
 
 **Want to contribute to the roadmap?**
 

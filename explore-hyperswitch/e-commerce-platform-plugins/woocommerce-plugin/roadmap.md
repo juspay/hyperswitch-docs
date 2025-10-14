@@ -1,5 +1,6 @@
 ---
 description: Roadmap for Woocommerce plugin
+hidden: true
 ---
 
 # Roadmap
