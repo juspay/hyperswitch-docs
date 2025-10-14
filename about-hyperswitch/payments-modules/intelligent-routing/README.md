@@ -18,8 +18,8 @@ Hyperswitch supports four intelligent routing strategies:
   * The sensitivity of the system can be tweaked by the merchants by configuring settings such as Bucket Sizes, Parameters to be considered and Hedging Percentage
   * The hedging percentage decides the exploration factor of the model&#x20;
 * **Least Cost Routing:** Picks the least cost network for every transaction basis the availability of back-of-the-card network and processor compatibility
-* **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied \[BETA FEATURE]
-* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]
+* **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied.
+* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]&#x20;
 
 ### Architecture Diagram
 

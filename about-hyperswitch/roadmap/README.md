@@ -34,7 +34,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-WIP
+Our team is currently refining the upcoming roadmap through active internal discussions and community feedback. We are aligning priorities across ongoing initiatives and newly proposed features to ensure a thoughtful, high-impact plan. The updated version will be published soon.
 
 **Want to contribute to the roadmap?**
 
