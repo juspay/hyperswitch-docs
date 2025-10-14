@@ -5,14 +5,13 @@ icon: repeat
 
 # Subscriptions with Modular Payments
 
-For businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payment operations from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and\
-other focused third parties, modularized to work with each other)
+Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
 ### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors&#x20;
 2. Improved reliability with a multi-PSP setup
-3. Intelligent Routing capabilities to improve Authorization Rates and minimise Processing costs
+3. Intelligent Routing capabilities to improve Authorization Rates and minimize Processing costs
 4. Greater coverage of PMs, APMs and features offered by the PSPs
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
@@ -25,6 +24,7 @@ other focused third parties, modularized to work with each other)
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
+8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../about-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.&#x20;
 
 ### Flow Diagram
 
@@ -38,7 +38,7 @@ other focused third parties, modularized to work with each other)
 
 ### Integration Guide
 
-#### 1. For PCI Compliant merchants handling the entire checkout experience
+#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK&#x20;
 
 {% stepper %}
 {% step %}
@@ -119,6 +119,48 @@ Response:
 
 {% step %}
 Display the retrieved Plan and Price Details to the user to make their selection
+{% endstep %}
+
+{% step %}
+Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
+
+```
+curl --location '<baseurl>/subscriptions/create' \
+--header 'Content-Type: application/json' \
+--header 'X-Profile-Id: <profile_id>' \
+--header 'api-key: <api-key>' \
+--data '{
+    "customer_id": "cus_uBtUJLSVSICr8ctmoL8i",
+    "amount": 14100,
+    "currency": "USD",
+    "payment_details": {
+        "authentication_type": "no_three_ds",
+        "setup_future_usage": "off_session",
+        "capture_method": "automatic",
+        "return_url": "https://google.com"
+    }
+}'
+```
+{% endstep %}
+
+{% step %}
+Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
+{% endstep %}
+
+{% step %}
+Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../merchant-controls/integration-guide/web/react-with-rest-api-integration.md)
+{% endstep %}
+
+{% step %}
+Sync with the subscription status for disbursement of services and future billing cycles
+{% endstep %}
+{% endstepper %}
+
+#### 2. For PCI Compliant merchants handling the entire checkout experience
+
+{% stepper %}
+{% step %}
+Follow the same steps as above to create a billing connector, fetch plan details and display the retrieved Plan and Price Details to the user to make their selection
 {% endstep %}
 
 {% step %}
@@ -238,48 +280,6 @@ RESPONSE:
 
 {% step %}
 Monitor incoming webhooks for renewal during subsequent cycles
-{% endstep %}
-{% endstepper %}
-
-#### 2. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
-
-{% stepper %}
-{% step %}
-Follow the same steps as above to create a billing connector, fetch plan details and display the retrieved Plan and Price Details to the user to make their selection
-{% endstep %}
-
-{% step %}
-Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
-
-```
-curl --location '<baseurl>/subscriptions/create' \
---header 'Content-Type: application/json' \
---header 'X-Profile-Id: <profile_id>' \
---header 'api-key: <api-key>' \
---data '{
-    "customer_id": "cus_uBtUJLSVSICr8ctmoL8i",
-    "amount": 14100,
-    "currency": "USD",
-    "payment_details": {
-        "authentication_type": "no_three_ds",
-        "setup_future_usage": "off_session",
-        "capture_method": "automatic",
-        "return_url": "https://google.com"
-    }
-}'
-```
-{% endstep %}
-
-{% step %}
-Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
-{% endstep %}
-
-{% step %}
-Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../merchant-controls/integration-guide/web/react-with-rest-api-integration.md)
-{% endstep %}
-
-{% step %}
-Sync with the subscription status for disbursement of services and future billing cycles
 {% endstep %}
 {% endstepper %}
 
