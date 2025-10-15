@@ -11,6 +11,22 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
+### Recap of Q3 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+
+* **Connectors**
+  * **New PSP integrations** - Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook, Trust Payments, Nordea, and Silverflow
+  * **Integration enhancements** - Multisafe, Airwallex, Braintree, and Fiserv
+  * **New category of integration** - Support for subscription management providers to augment the plan management and record-keeping capabilities of the subscription engine with payment orchestration
+  * **Feature depth** - L2/L3 data standardization across PSPs, support merchant decryption and decrypted payload for Apple Pay and Google Pay, return MAC codes in API response, chargeback support for PSPs with no webhook support, and MIT category fields
+* **Core orchestration** - Support for over-capture, extended authorization, and manual/user-triggered retries
+* **Standalone Network Tokenization** Service with support for Visa, Mastercard, and Amex\
+  Standalone EMVCo-certified Juspay 3DS Server and 3DS SDK
+* **Revenue recovery** - New capabilities to handle partial capture, support in-house billing engines, invoice queuing or grouping of all pending invoices, hard decline smart retry
+* **Intelligent routing** analytics added to offer real-time insights into transaction flow and gateway performance
+* **Reconciliation** - New capabilities to support transaction-level audit logs to ensure every transaction can be traced from initiation to settlement, strengthening compliance and operational accountability
+* **Cost observability** - New capabilities to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs, advanced fee auditing capabilities, estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates, conversational AI interface, and expanded acquirer coverage: adding support for five or more new acquirer report formats (AIBMS, Elavon, PayPal, Stripe, and Amex)
+* **Control Center** - Support for platform org and merchant to allow programmatic API-driven merchant account creation, management, and configuration
+
 #### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
