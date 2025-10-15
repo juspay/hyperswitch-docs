@@ -1,5 +1,6 @@
 ---
 description: Accept payments through OpenNode via Hyperswitch
+hidden: true
 ---
 
 # OpenNode

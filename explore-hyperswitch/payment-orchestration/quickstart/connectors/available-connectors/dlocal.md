@@ -1,5 +1,6 @@
 ---
 description: Accept payments through d-local via Hyperswitch
+hidden: true
 ---
 
 # dLocal

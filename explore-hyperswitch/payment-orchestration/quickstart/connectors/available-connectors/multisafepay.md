@@ -1,5 +1,6 @@
 ---
 description: Accept payments through MultiSafepay via Hyperswitch
+hidden: true
 ---
 
 # MultiSafepay

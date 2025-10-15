@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Zen via Hyperswitch
+hidden: true
 ---
 
 # Zen

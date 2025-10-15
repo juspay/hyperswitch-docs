@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Bambora via Hyperswitch
+hidden: true
 ---
 
 # Bambora

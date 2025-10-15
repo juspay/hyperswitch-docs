@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Rapyd via Hyperswitch
+hidden: true
 ---
 
 # Rapyd

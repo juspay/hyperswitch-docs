@@ -1,5 +1,6 @@
 ---
 description: Accept payments through GoCardless via Hyperswitch
+hidden: true
 ---
 
 # GoCardless

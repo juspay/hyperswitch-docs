@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Coinbase via Hyperswitch
+hidden: true
 ---
 
 # Coinbase

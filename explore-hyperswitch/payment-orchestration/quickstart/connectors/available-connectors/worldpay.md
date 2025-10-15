@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Worldpay via Hyperswitch
+hidden: true
 ---
 
 # Worldpay

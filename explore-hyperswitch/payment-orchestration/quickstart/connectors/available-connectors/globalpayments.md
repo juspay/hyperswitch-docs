@@ -1,5 +1,6 @@
 ---
 description: Accept payments through GlobalPayments via Hyperswitch
+hidden: true
 ---
 
 # GlobalPayments

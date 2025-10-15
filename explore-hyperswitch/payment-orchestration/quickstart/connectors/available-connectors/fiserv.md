@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Fiserv via Hyperswitch
+hidden: true
 ---
 
 # Fiserv

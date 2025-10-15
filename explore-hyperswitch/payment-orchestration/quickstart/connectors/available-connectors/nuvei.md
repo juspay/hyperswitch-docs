@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Nuvei via Hyperswitch
+hidden: true
 ---
 
 # Nuvei

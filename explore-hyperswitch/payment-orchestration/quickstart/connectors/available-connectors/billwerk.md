@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Billwerk via Hyperswitch
+hidden: true
 ---
 
 # Billwerk

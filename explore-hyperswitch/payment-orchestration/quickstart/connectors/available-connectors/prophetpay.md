@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Prophetpay via Hyperswitch
+hidden: true
 ---
 
 # Prophetpay

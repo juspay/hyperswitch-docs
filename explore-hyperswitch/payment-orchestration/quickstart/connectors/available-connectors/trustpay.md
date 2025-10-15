@@ -1,5 +1,6 @@
 ---
 description: Accept payments through TrustPay via Hyperswitch
+hidden: true
 ---
 
 # TrustPay

@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Bank of America via Hyperswitch
+hidden: true
 ---
 
 # Bank of America

@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Mollie via Hyperswitch
+hidden: true
 ---
 
 # Mollie

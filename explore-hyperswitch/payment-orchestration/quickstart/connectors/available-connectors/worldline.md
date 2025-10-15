@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Worldline via Hyperswitch
+hidden: true
 ---
 
 # Worldline

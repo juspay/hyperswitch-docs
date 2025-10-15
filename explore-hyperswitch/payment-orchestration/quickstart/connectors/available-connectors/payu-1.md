@@ -1,5 +1,6 @@
 ---
 description: Accept payments through PayU via Hyperswitch
+hidden: true
 ---
 
 # PayU

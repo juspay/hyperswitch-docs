@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Airwallex via Hyperswitch
+hidden: true
 ---
 
 # Airwallex

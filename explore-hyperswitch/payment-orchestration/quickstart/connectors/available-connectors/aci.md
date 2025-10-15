@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Aci via Hyperswitch
+hidden: true
 ---
 
 # ACI

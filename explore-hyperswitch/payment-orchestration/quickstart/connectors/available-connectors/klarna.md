@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Klarna via Hyperswitch
+hidden: true
 ---
 
 # Klarna

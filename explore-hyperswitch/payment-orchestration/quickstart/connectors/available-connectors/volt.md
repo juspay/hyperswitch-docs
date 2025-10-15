@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Volt via Hyperswitch
+hidden: true
 ---
 
 # Volt

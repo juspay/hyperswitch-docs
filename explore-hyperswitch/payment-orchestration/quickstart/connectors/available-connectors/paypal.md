@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Paypal via Hyperswitch
+hidden: true
 ---
 
 # Paypal

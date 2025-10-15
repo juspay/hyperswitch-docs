@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Authorizedotnet via Hyperswitch
+hidden: true
 ---
 
 # Authorizedotnet

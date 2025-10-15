@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Checkout via Hyperswitch
+hidden: true
 ---
 
 # Checkout

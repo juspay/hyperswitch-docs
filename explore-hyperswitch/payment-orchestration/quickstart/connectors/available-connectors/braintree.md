@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Braintree via Hyperswitch
+hidden: true
 ---
 
 # Braintree

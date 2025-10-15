@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Shift4 via Hyperswitch
+hidden: true
 ---
 
 # Shift4

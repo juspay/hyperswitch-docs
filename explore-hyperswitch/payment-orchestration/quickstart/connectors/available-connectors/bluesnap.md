@@ -1,5 +1,6 @@
 ---
 description: Accept payments through Bluesnap via Hyperswitch
+hidden: true
 ---
 
 # Bluesnap
