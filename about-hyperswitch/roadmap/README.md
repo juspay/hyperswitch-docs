@@ -50,7 +50,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-**Vault**
+#### **Vault**
 
 *   **Guest Checkout Tokenization in Hyperswitch Vault**
 
@@ -67,9 +67,9 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
     Additionally, the Proxy API will support multiple request formats, including form-URL-encoded and XML, to ensure easier interoperability with existing gateway or legacy systems.
 
-Learn more about the existing Vault Services and workflows [here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
+_<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-**Authentication and Checkout Experience**
+#### **Authentication and Checkout Experience**
 
 *   **Authentication Observability**\
     We plan to introduce Authentication Observability, a dedicated analytics layer that provides merchants with detailed visibility into authentication performance across acquirers, issuers, and 3DS flows.
@@ -92,16 +92,16 @@ Learn more about the existing Vault Services and workflows [here](https://docs.h
 
     We plan to enhance Payout Links with an improved user experience. We will add advanced customization support to payout links so that the payout links are in line with the merchant's branding and styling.
 
-**Revenue Recovery**
+#### **Revenue Recovery**
 
 * **Advanced retry logic for Hard declines**\
   The system intelligently identifies and retries transactions that were falsely marked as hard declines. This feature aims to recover transactions that were previously considered unrecoverable. Merchants will be able to manage these retries by setting a configurable budget that limits the number retry attempts.
 * **Account Updater:**\
   The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
-Learn more about the existing Revenue Recovery and workflows [here](../payments-modules/revenue-recovery.md)
+_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/revenue-recovery.md)
 
-**Intelligent Routing**
+#### **Intelligent Routing**
 
 *   **Multi-Objective Routing Modules**
 
@@ -113,10 +113,14 @@ Learn more about the existing Revenue Recovery and workflows [here](../payments-
 
     We plan to introduce savings and benefits reporting for routing, providing merchants with detailed visibility into the financial and operational impact of their routing configurations. The reporting will include insights into cost savings, authorization uplift, and volume distribution across acquirers, helping merchants measure the tangible benefits of intelligent routing and refine their strategies over time.
 
-**Cost Observability**
+_<mark style="color:blue;">Learn more about the existing Intelligent Routing features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/intelligent-routing/)
+
+#### **Cost Observability**
 
 * **Payment fees estimation using transaction data:** Estimate expected interchange and scheme fees for every transaction of merchant and reconcile them against actual applied rates from transaction fee reports from Acquirers.
 * **Conversational AI Interface:** Enhance the AI-powered chat experience that allows users to explore questions and information on payment processing fees. In addition making cost observability more interactive, insightful, and highly contextual for logged in users to interact with their data using AI powered chat.
+
+_<mark style="color:blue;">Learn more about the existing Cost Observability features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/ai-powered-cost-observability.md)
 
 #### Reconciliation
 
@@ -133,9 +137,9 @@ Learn more about the existing Revenue Recovery and workflows [here](../payments-
 * **Advanced Data Management**\
   Dedicated ingestion integrity module to isolate problematic records, prevent data contamination, and enable review and correction before reprocessing
 
-Learn more about the existing Reconciliation features and workflows [here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation-product)
+_<mark style="color:blue;">Learn more about the existing Reconciliation features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation-product)
 
-**Core Orchestration and Connectors**
+#### **Core Orchestration and Connectors**
 
 * **Connectors**\
   We plan to expand connector coverage with new integrations including
@@ -173,6 +177,8 @@ Learn more about the existing Reconciliation features and workflows [here](https
 
     * **Card Eligibility by BIN**: Verifying card eligibility upfront based on BIN (Bank Identification Number) data to prevent declines related to unsupported networks, regions, or card types.
     * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
+
+_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/payment-orchestration/quickstart/connectors/)
 
 **Community Requests**\
 Based on popular community requests, we plan to take up the following features this quarter:
