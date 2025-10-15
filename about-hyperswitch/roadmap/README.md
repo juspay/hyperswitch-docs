@@ -143,19 +143,19 @@ Learn more about the existing Reconciliation features and workflows [here](https
   * **Enhancing existing integrations:** Stripe (Mobilepay, Sofort, Paypal,Blik) , Braintree(Venmo)
 * **Core Orchestration**
   * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
-* Su**bscriptions enhancements**
+* **Subscriptions enhancements**
   *   **Coupons Handling**
 
       We plan to enhance the subscriptions module with coupon handling capabilities, allowing merchants to define, apply, and manage promotional discounts for recurring billing plans.
   *   **Outgoing Webhooks**
 
-      We’re introducing outgoing webhooks to enable real-time communication with merchant systems during key subscription lifecycle events
+      We're introducing outgoing webhooks to enable real-time communication with merchant systems during key subscription lifecycle events
   *   **Entitlements Management**
 
       We plan to add entitlements management to help merchants link subscription plans to feature access or service tiers.
   *   **Lifecycle Management**
 
-      We’re enhancing subscription lifecycle management to handle complex state transitions such as trial activation, pausing, resuming, renewal, and cancellation.
+      We're enhancing subscription lifecycle management to handle complex state transitions such as trial activation, pausing, resuming, renewal, and cancellation.
   *   **Plans SDK**
 
       We plan to introduce a Plans SDK to provide merchants with a unified interface for displaying subscription plans and collecting payments.
@@ -174,8 +174,7 @@ Learn more about the existing Reconciliation features and workflows [here](https
     * **Card Eligibility by BIN**: Verifying card eligibility upfront based on BIN (Bank Identification Number) data to prevent declines related to unsupported networks, regions, or card types.
     * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
 
-**Community Requests**
-
+**Community Requests**\
 Based on popular community requests, we plan to take up the following features this quarter:
 
 * **Chase Connector Integration**: Addition of card processing support through Chase.
