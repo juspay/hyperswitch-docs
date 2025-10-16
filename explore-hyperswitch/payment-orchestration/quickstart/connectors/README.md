@@ -35,7 +35,7 @@ Most connector integrations follow a simple click-and-connect flow on Hyperswitc
 
 * Choose the payment methods you want to utilize with Authorize.net by navigating to the next screen on Hyperswitch.&#x20;
 * Enable the PSP once you're done.
-* Complete list of Hyperswitch integrations can be found here - [https://hyperswitch.io/pm-list](https://hyperswitch.io/pm-list)
+* Complete list of Hyperswitch integrations can be found here - [https://integrations.hyperswitch.io/](https://integrations.hyperswitch.io/)
 
 ### Connector types
 
@@ -62,7 +62,7 @@ Hyperswitch supports a wide range of parameters through the **Payments Create AP
 
 <figure><img src="../../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Activate connector on Hyperswitch</strong></mark></td><td><p></p><p>A detailed guide on how to configure a connector along with payment methods in a few steps </p></td><td></td><td><a href="activate-connector-on-hyperswitch.md">activate-connector-on-hyperswitch.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>List of available connectors and payment methods</strong></mark></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Raise a request for a new connector or payment method integration</strong></mark></td><td>Don't see payment processor of your choice? Raise a integration request, we will be happy to help!</td><td></td><td><a href="https://hyperswitch-io.slack.com/ssb/redirect">https://hyperswitch-io.slack.com/ssb/redirect</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Activate connector on Hyperswitch</strong></mark></td><td><p></p><p>A detailed guide on how to configure a connector along with payment methods in a few steps </p></td><td></td><td><a href="activate-connector-on-hyperswitch.md">activate-connector-on-hyperswitch.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>List of available connectors and payment methods</strong></mark></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://integrations.hyperswitch.io/">https://integrations.hyperswitch.io/</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Raise a request for a new connector or payment method integration</strong></mark></td><td>Don't see payment processor of your choice? Raise a integration request, we will be happy to help!</td><td></td><td><a href="https://hyperswitch-io.slack.com/ssb/redirect">https://hyperswitch-io.slack.com/ssb/redirect</a></td><td></td></tr></tbody></table>
 
 {% content-ref url="activate-connector-on-hyperswitch.md" %}
 [activate-connector-on-hyperswitch.md](activate-connector-on-hyperswitch.md)
