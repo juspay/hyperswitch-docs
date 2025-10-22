@@ -292,7 +292,7 @@
 ## Learn more
 
 * [API Reference](https://api-reference.hyperswitch.io/introduction)
-* [Connectors Supported](https://hyperswitch.io/pm-list)
+* [Connectors Supported](https://integrations.hyperswitch.io/)
 * [SDK Reference](learn-more/sdk-reference/README.md)
   * [Node](learn-more/sdk-reference/node.md)
   * [React](learn-more/sdk-reference/react.md)
