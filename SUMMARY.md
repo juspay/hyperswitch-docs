@@ -137,6 +137,7 @@
   * [Smart Routing](explore-hyperswitch/payment-orchestration/smart-router.md)
   * [Smart Retries](explore-hyperswitch/payment-orchestration/smart-retries/README.md)
     * [3DS Step-up Retries](explore-hyperswitch/payment-orchestration/smart-retries/3ds-step-up-retries.md)
+    * [Manual/User triggere Retries](explore-hyperswitch/payment-orchestration/smart-retries/manual-user-triggere-retries.md)
   * [3DS / Strong Customer Authentication](explore-hyperswitch/payment-orchestration/3ds-decision-manager/README.md)
     * [Get Started with 3DS Decision Manager](explore-hyperswitch/payment-orchestration/3ds-decision-manager/get-started-with-3ds-decision-manager.md)
     * [Native 3DS Authentication](explore-hyperswitch/payment-orchestration/3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md)
