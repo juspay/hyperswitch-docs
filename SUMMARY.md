@@ -123,6 +123,8 @@
       * [Zero Amount Authorization](explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1.md)
     * [Manual Capture](explore-hyperswitch/payment-orchestration/quickstart/manual-capture.md)
     * [Incremental Authorization](explore-hyperswitch/payment-orchestration/quickstart/incremental-authorization.md)
+    * [Overcapture](explore-hyperswitch/payment-orchestration/quickstart/overcapture.md)
+    * [Extended Authorization](explore-hyperswitch/payment-orchestration/quickstart/extended-authorization.md)
     * [Supported Payment Workflows](explore-hyperswitch/payment-orchestration/quickstart/payment-workflows.md)
     * [Co-badged Cards](explore-hyperswitch/payment-orchestration/quickstart/co-badged-cards-with-hyperswitch.md)
     * [Webhooks](explore-hyperswitch/payment-orchestration/quickstart/webhooks.md)
