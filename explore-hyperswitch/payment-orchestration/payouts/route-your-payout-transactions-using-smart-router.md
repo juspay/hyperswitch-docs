@@ -10,7 +10,7 @@ _Before continuing further, refer to_ [_this_](https://docs.hyperswitch.io/featu
 
 ## How to get started?
 
-Routing rules can be configured using Hyperswitch's dashboard _(beta feature)_ or via APIs. We will be using Hyperswitch's dashboard as it provides a simple, intuitive UI for configuring these rules.
+Routing rules can be configured using Hyperswitch's dashboard or via APIs. We will be using Hyperswitch's dashboard as it provides a simple, intuitive UI for configuring these rules.
 
 Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
