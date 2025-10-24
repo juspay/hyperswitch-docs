@@ -19,22 +19,6 @@ There are two possible types of payment retry flows:
 
 **Note:** Currently, Hyperswitch supports Smart retries as an out-of-the-box capability. In order to enable user consent based retry for payment failures, you can create a fresh payment and re-trigger the Hyperswitch checkout.
 
-## Supported Payment processors
-
-Hyperswitch supports the following primary processors for automatic retries.
-
-* Adyen
-* Stripe
-* Bluesnap
-* Checkout.com
-* Deutsche Bank
-* Fiuu
-* Novalnet
-* Trustpay
-* Worldpay
-
-In case you wish more primary processors to be covered for automatic retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
-
 ## How does it work?
 
 Smart retry will be attempted whenever the payment fails through the Primary Processor for card transactions.
