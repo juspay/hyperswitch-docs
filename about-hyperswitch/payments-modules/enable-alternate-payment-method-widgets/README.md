@@ -65,10 +65,6 @@ All the transactions that are processed through Hyperwidgets can be seen on a un
 
 The engineering ensures support for emerging payment methods and new PSPs without requiring additional engineering work, ensuring a scalable one-time only integration for the merchants.
 
-#### Complete control over UI \[Coming soon]
-
-Merchants can build their own UI for each payment method and call Hyperwidget confirm() function with the relevant payment method data to process a transaction. This way, the merchant retains complete control over the way they want to display the payment methods, handle UI interactions and selectively use Hyperwidgets for certain payment methods. &#x20;
-
 ### Supported merchant setups :
 
 * **Setup A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
