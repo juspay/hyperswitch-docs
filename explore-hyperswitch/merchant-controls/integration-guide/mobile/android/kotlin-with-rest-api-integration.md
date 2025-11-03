@@ -16,8 +16,8 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 ## Requirements
 
 * Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
+* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
+* [Gradle](https://gradle.org/releases/) 8.13+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
@@ -61,17 +61,7 @@ hyperswitch {
     sdkVersion = "1.1.5"
     
     // Optional features - only add what you need
-    enablePaypal = true
-    enableKount = true
-    enableScanCard = true
-    enableKlarna = true
-    enableNetcetera3ds = true
-    enableSamsungPay = true
-    
-    // Optional: Override individual feature versions (uses recommended versions if not specified)
-    paypalVersion = "0.0.6"
-    kountVersion = "0.0.6"
-    // scanCardVersion = "0.0.6"  // Will use recommended version
+    features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }
 ```
 
