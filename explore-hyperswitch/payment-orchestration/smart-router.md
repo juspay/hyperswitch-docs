@@ -10,7 +10,7 @@ icon: swap
 
 ## Prerequisites
 
-To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](quickstart/connectors/) guide.
+To get started with Smart Router, ensure to have one or more payment processors integrated. You can integrate the payment processor of your choice on the Control Center by following the [Connector Integration](../connectors/) guide.
 
 ## What is smart payment routing?
 

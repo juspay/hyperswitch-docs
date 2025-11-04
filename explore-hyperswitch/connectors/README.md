@@ -5,7 +5,18 @@ description: >-
 icon: plug
 ---
 
-# Connectors
+# Connectors Integration
+
+### Overview
+
+Connectors are integrations that allow Hyperswitch to talk to external payment services such as PSPs, Acquirers, APMs, Card vaults, 3DS authentications, Fraud management, Subscription, Payouts and more. They act as bridges between your Hyperswitch setup and the third-party services that move or manage money for your business.
+
+Every provider has its own APIs, authentication methods, and feature sets. Hyperswitch standardizes these differences through connectors, exposing a single unified Payments API.\
+This means you can add, switch, or remove processors without rewriting your code, just plug in credentials and start transacting.
+
+Connectors form the foundation of Hyperswitch's **payment orchestration layer**, enabling you to manage payments, routing, 3DS authentication, fraud checks, and payouts through a single interface.
+
+> Browse the complete list of live integrations here: [**Hyperswitch Integrations Directory →**](https://integrations.hyperswitch.io/)
 
 ### Why multiple processors?
 
@@ -47,20 +58,20 @@ Hyperswitch supports a wide range of parameters through the **Payments Create AP
 
 1. **Parameters flows supported for cards -** Hyperswitch enables multiple card payment flow configurations, designed to support a wide range of industry-specific use cases.
 
-<figure><img src="../../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt=""><figcaption></figcaption></figure>
 
 2. **Parameters supported for cards -** Hyperswitch supports an extensive set of card-specific parameters through the Payments API. These parameters ensure flexibility across multiple regions, issuers, and use cases, from retail to subscription billing. Merchants can easily configure and pass these parameters to optimize for conversion, compliance, and cost efficiency.
 
-<figure><img src="../../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt=""><figcaption></figcaption></figure>
 
 3. **Parameters supported for wallets -** Hyperswitch provides comprehensive wallet integration parameters that streamline setup and transaction management across leading digital wallets.\
    It supports key attributes such as tokenization, wallet identifiers, and more. This ensures a seamless checkout experience while allowing merchant to maintaining the right control.
 
-<figure><img src="../../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt=""><figcaption></figcaption></figure>
 
 4. **Parameters supported for Refunds, Disputes and Errors -** Hyperswitch offers structured support for **refunds, disputes, and error handling**, ensuring transparency and control throughout the payment lifecycle. Merchants can track, respond, and reconcile outcomes across multiple PSPs from a unified interface. Detailed error codes and dispute attributes enable faster resolution and automated workflow orchestration.
 
-<figure><img src="../../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Activate connector on Hyperswitch</strong></mark></td><td><p></p><p>A detailed guide on how to configure a connector along with payment methods in a few steps </p></td><td></td><td><a href="activate-connector-on-hyperswitch.md">activate-connector-on-hyperswitch.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>List of available connectors and payment methods</strong></mark></td><td>Learn more about all the available connectors and payments methods on Hyperswitch</td><td></td><td><a href="https://integrations.hyperswitch.io/">https://integrations.hyperswitch.io/</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Raise a request for a new connector or payment method integration</strong></mark></td><td>Don't see payment processor of your choice? Raise a integration request, we will be happy to help!</td><td></td><td><a href="https://hyperswitch-io.slack.com/ssb/redirect">https://hyperswitch-io.slack.com/ssb/redirect</a></td><td></td></tr></tbody></table>
 
