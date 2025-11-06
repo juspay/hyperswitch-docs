@@ -150,6 +150,21 @@ Straight-through algorithm to be passed in the `/payments` request
 
 If you would like additional processors to support this flow or want to enable volume-based and priority-based routing algorithms, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
+{% hint style="info" %}
+⚠️ **Stripe Configuration Required**
+
+This feature is not enabled by default and must be explicitly enabled by Stripe.\
+
+
+If you receive the error `Received unknown parameter: payment_method_options[card][mit_exemption]`, follow the steps below to request activation.
+
+**Email Stripe Support** requesting:
+
+* Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
+* Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
+* Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
+{% endhint %}
+
 ***
 
 ## FAQ:
