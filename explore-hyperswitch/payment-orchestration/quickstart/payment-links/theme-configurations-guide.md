@@ -14,6 +14,10 @@ Style IDs are design templates for your payment links, allowing you to create di
 - Display preferences (how forms behave)
 - Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
 
+{% hint style="info" %}
+**Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
+{% endhint %}
+
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.
 
 **Examples of Style IDs you might create:**
@@ -23,7 +27,50 @@ Style IDs are design templates for your payment links, allowing you to create di
 
 ---
 
-## **2. Smart Text Handling**
+## **2. Configuration Hierarchy & Cascading**
+
+Payment link configurations work in a flexible, cascading manner that gives you control at multiple levels:
+
+**Three levels of configuration:**
+
+1. **Default Style ID** - Set at the business profile level
+   - Applied to all payment links by default
+   - Your baseline theme and settings
+
+2. **Named Style IDs** - Also configured at business profile level
+   - Create multiple pre-defined themes (e.g., `premium`, `holiday-2024`, `regional-eu`)
+   - Reference by name when creating payment links
+
+3. **API configuration which overrides** - Applied during payment link creation
+   - Override any configuration for maximum granular control
+   - Perfect for one-off customizations or special cases
+
+**How cascading works:**
+
+```
+Default Style ID
+    ↓
+Named Style ID (if specified in payment link creation)
+    ↓
+API config overrides (if provided during creation)
+    ↓
+Final Payment Link Appearance
+```
+
+**Example workflow:**
+
+1. Set your default theme at business profile level with your standard brand colors
+2. Create a `holiday-sale` style ID with special promotional colors
+3. When creating a payment link:
+   - Use default: Don't specify any `payment_link_config_id` → gets default theme
+   - Use named style: Specify `payment_link_config_id: "holiday-sale"` → gets holiday theme
+   - One-off customization: Specify `payment_link_config_id: "holiday-sale"` AND provide API configuration overrides → gets holiday theme with your custom tweaks
+
+This cascading approach means you can maintain consistency while having flexibility for special cases!
+
+---
+
+## **3. Smart Text Handling**
 
 **The system works intelligently by default:**
 
@@ -57,7 +104,7 @@ This works whether your customer is paying now, setting up a subscription, or ju
 
 ---
 
-## **3. Choosing Your Approach**
+## **4. Choosing Your Approach**
 
 You have two ways to set up your payment link themes:
 
@@ -83,7 +130,7 @@ You have two ways to set up your payment link themes:
 
 ---
 
-## **4. Real-World Use Cases**
+## **5. Real-World Use Cases**
 
 **Running multiple brands?**
 Create a style ID for each brand (like `brand-a-default`, `brand-b-default`). When you create a payment link, just specify which brand's theme to use. Each brand keeps its own look and feel!
@@ -96,9 +143,13 @@ Create a special campaign theme (`holiday-2024`, `summer-sale`) that you can eas
 
 ---
 
-## **5. Handling Different Transaction Types**
+## **6. Handling Different Transaction Types**
 
-**Zero-dollar authorizations (like verifying a card without charging):**
+Payment links support three main transaction types. Here's how to handle messaging for each:
+
+**0 amount authorizations (verifying a card without charging):**
+
+[Learn more about 0 amount authorizations](../tokenization-and-saved-cards/zero-amount-authorization-1.md)
 
 Use messaging that covers both charging AND just storing:
 ```
@@ -107,6 +158,20 @@ charge your payment method or store your payment details as applicable."
 ```
 
 This works whether you're charging now or just verifying the card!
+
+**Manual captures:**
+
+For manual capture flows where authorization happens first and capture occurs later:
+- Use language that acknowledges the two-step process
+- Example: "By submitting your payment information, you authorize [Your Business Name] to verify and later capture payment"
+- This sets the right expectation that the charge won't be immediate
+
+**Normal payments (immediate capture):**
+
+For standard payment flows where authorization and capture happen together:
+- Straightforward messaging about the immediate charge
+- Example: "By submitting your payment information, you authorize [Your Business Name] to charge your payment method"
+- Clear and direct about the immediate transaction
 
 **Saving payment methods for later:**
 - Stick with universal language that focuses on permission
@@ -119,3 +184,7 @@ This works whether you're charging now or just verifying the card!
 - This way, customers understand they're authorizing both setup and future billing
 
 ---
+
+**Document Version**: 1.0  
+**Last Updated**: November 2025  
+**Maintained By**: Hyperswitch Team

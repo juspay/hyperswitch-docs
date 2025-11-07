@@ -74,7 +74,7 @@
       * [Test Credentials](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials.md)
     * [Payment Links](explore-hyperswitch/payment-orchestration/quickstart/payment-links/README.md)
       * [Configurations](explore-hyperswitch/payment-orchestration/quickstart/payment-links/configurations.md)
-      * [Theme configurations FAQ](explore-hyperswitch/payment-orchestration/quickstart/payment-links/theme-configurations-faq.md)
+      * [Theme configurations Guide](explore-hyperswitch/payment-orchestration/quickstart/payment-links/theme-configurations-guide.md)
       * [Create Payment Links](explore-hyperswitch/payment-orchestration/quickstart/payment-links/create-payment-links.md)
       * [Secure Payment Links](explore-hyperswitch/payment-orchestration/quickstart/payment-links/secure-payment-links.md)
       * [Setup Custom Domain](explore-hyperswitch/payment-orchestration/quickstart/payment-links/setup-custom-domain.md)
