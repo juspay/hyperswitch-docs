@@ -64,7 +64,7 @@ Final Payment Link Appearance
 3. When creating a payment link:
    - Use default: Don't specify any `payment_link_config_id` → gets default theme
    - Use named style: Specify `payment_link_config_id: "holiday-sale"` → gets holiday theme
-   - One-off customization: Specify `payment_link_config_id: "holiday-sale"` AND provide API configuration overrides → gets holiday theme with your custom tweaks
+   - One-off customization: Specify `payment_link_config_id: "holiday-sale"` AND provide API config overrides → gets holiday theme with your custom tweaks
 
 This cascading approach means you can maintain consistency while having flexibility for special cases!
 
@@ -145,46 +145,38 @@ Create a special campaign theme (`holiday-2024`, `summer-sale`) that you can eas
 
 ## **6. Handling Different Transaction Types**
 
-Payment links support three main transaction types. Here's how to handle messaging for each:
+Payment links support three main transaction types. Here's the recommended messaging for each:
 
-**0 amount authorizations (verifying a card without charging):**
+**[0 amount authorizations](../tokenization-and-saved-cards/zero-amount-authorization-1.md) (doing 0 amount auth (CIT) for future MITs):**
 
-[Learn more about 0 amount authorizations](../tokenization-and-saved-cards/zero-amount-authorization-1.md)
-
-Use messaging that covers both charging AND just storing:
+Universal messaging that works for this flow:
 ```
 "By submitting your payment information, you authorize [Your Business Name] to 
 charge your payment method or store your payment details as applicable."
 ```
 
-This works whether you're charging now or just verifying the card!
-
 **Manual captures:**
 
-For manual capture flows where authorization happens first and capture occurs later:
-- Use language that acknowledges the two-step process
-- Example: "By submitting your payment information, you authorize [Your Business Name] to verify and later capture payment"
-- This sets the right expectation that the charge won't be immediate
+Authorization happens first, capture occurs later. Use messaging that acknowledges this two-step process:
+```
+"By submitting your payment information, you authorize [Your Business Name] to 
+reserve and later capture payment from your payment method."
+```
 
 **Normal payments (immediate capture):**
 
-For standard payment flows where authorization and capture happen together:
-- Straightforward messaging about the immediate charge
-- Example: "By submitting your payment information, you authorize [Your Business Name] to charge your payment method"
-- Clear and direct about the immediate transaction
+Authorization and capture happen together. Use straightforward messaging about the immediate charge:
+```
+"By submitting your payment information, you authorize [Your Business Name] to 
+charge your payment method."
+```
 
-**Saving payment methods for later:**
-- Stick with universal language that focuses on permission
-- Avoid mentioning specific amounts
-- Focus on the authorization to store their credentials
+**Saving payment methods / Subscriptions:**
 
-**Setting up subscriptions:**
-- Your messaging should cover both storing the payment method AND future charges
-- Example: "...to charge your payment method or store your payment details as applicable"
-- This way, customers understand they're authorizing both setup and future billing
+Cover both storing credentials and future charges with universal language:
+```
+"By submitting your payment information, you authorize [Your Business Name] to 
+charge your payment method or store your payment details as applicable."
+```
 
 ---
-
-**Document Version**: 1.0  
-**Last Updated**: November 2025  
-**Maintained By**: Hyperswitch Team
