@@ -6,7 +6,7 @@ icon: bolt-lightning
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Let us understand with an example-
 
@@ -18,7 +18,7 @@ But, if the merchant decides to enable more alternate payment methods (APMs), th
 
 1. **Availability** - Current PSP may not support the desired alternate payment method requiring the merchant to do a direct integration or use a different PSP.
 2. **Complex to integrate** - In case a PSP supports a desired payment method, integrating it into the existing checkout is tedious and often requires high engineering effort. Hyperwidets offers a low code solution for such a scenario where a merchant can not only choose to have their preferred payment method through a wide range of connectors, but also integrate it with minimal engineering effort.
-3. **Complex to enhance** - Traditional PSPs and Middle layers ((Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK)) offer separate integration for every new APM, requiring ongoing engineering effort for enhancements.&#x20;
+3. **Complex to enhance** - Traditional PSPs and Middle layers ((Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK)) offer separate integration for every new APM, requiring ongoing engineering effort for enhancements.
    * Hyperwidets offers a way for merchants to extend APMs from just “Apple Pay” to “Apple Pay + Google Pay” to “Apple Pay + Google Pay + Amazon Pay + 10 more” with the same integration and no additional engineering effort.
    * Hyperwidgets also offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
 4. **Integration overhead to enable more APMs on the same PSP**: Some PSPs require the merchant to do some additional integration steps to enable an APM. This can be time consuming and require significant tech bandwidth from the merchant. Examples can be when certain APMs are only available on new API versions of the PSP, certification from Apple/ Google is required to go-live for some wallet flows, adding a frontend library/ javascript to add certain APMs, and so on.
@@ -33,7 +33,7 @@ in the image below you can find a checkout page with more alternate payment meth
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FzFhf33ZBiGwXvInNN3Ma%2FFrame%201321316973.png?alt=media&#x26;token=cd12e266-9e04-4688-8a35-84d8b6813a64" alt="" width="563"><figcaption><p>Example: Checkout page with more alternate payment methods</p></figcaption></figure>
 
-### How is Hyperwidget engineered:&#x20;
+### How is Hyperwidget engineered:
 
 Hyperwidgets are engineered to simplify and streamline the integration of alternate payment methods (APMs) for merchants, regardless of their existing payment setup. The design focuses on providing a modular, embeddable, and low-code solution, reducing the engineering effort traditionally required to add or enhance payment options.
 
@@ -47,7 +47,7 @@ The Hyperwidget provides seamless integration for merchants using different fram
 
 #### Configuring PSPs is independent from integration
 
-The Hyperwidget integration is a one time effort. To manage the different payment methods across business lines, geographies, etc. the merchant bears no additional overhead. Adding/ removing PSPs and routing the transaction through different PSPs is a dashboard configuration.&#x20;
+The Hyperwidget integration is a one time effort. To manage the different payment methods across business lines, geographies, etc. the merchant bears no additional overhead. Adding/ removing PSPs and routing the transaction through different PSPs is a dashboard configuration.
 
 #### Modular fit with other integrations
 
@@ -55,7 +55,7 @@ Merchants can work with multiple PSPs or middle layers, such as subscription pro
 
 #### High customization
 
-The Hyperwidgets UI is highly customizable and can completely blend in with the merchant app. Using a customization object, merchants can very easily control the UI parameters like background color, corner radius of the buttons,font size, etc. to match their branding. Some of the examples to highlight the customization options of the checkout are -&#x20;
+The Hyperwidgets UI is highly customizable and can completely blend in with the merchant app. Using a customization object, merchants can very easily control the UI parameters like background color, corner radius of the buttons,font size, etc. to match their branding. Some of the examples to highlight the customization options of the checkout are -
 
 #### Unified Analytics and order management
 

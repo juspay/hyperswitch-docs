@@ -9,19 +9,17 @@ icon: barcode-read
 #### Key Features of Hyperswitch's Card Scanning Technology
 
 1. **Accuracy**: Leveraging optical character recognition (OCR) technology, Hyperswitch's card scanning feature accurately extracts credit card details in real-time. This significantly reduces the likelihood of manual entry errors and speeds up the checkout process.
-2. **Seamless Integration**: Hyperswitch offers a developer-friendly SDK that makes it easy to integrate the card scanning feature into various platforms, including native mobile apps ([iOS](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/ios/features) and [Android](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/android/features)), cross-platform frameworks, and even in-browser applications.&#x20;
+2. **Seamless Integration**: Hyperswitch offers a developer-friendly SDK that makes it easy to integrate the card scanning feature into various platforms, including native mobile apps ([iOS](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/ios/features) and [Android](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/android/features)), cross-platform frameworks, and even in-browser applications.
 
 #### Benefits of Hyperswitch's Card Scanning Feature
 
 1. **Improved User Experience**: By eliminating the need for manual card data entry, the card scanning feature significantly enhances the user experience, potentially leading to higher conversion rates for businesses.
-2. **Reduced Error Rates**: The scanning technology minimizes the risk of mistyped card information, reducing transaction errors and potential disputes.&#x20;
+2. **Reduced Error Rates**: The scanning technology minimizes the risk of mistyped card information, reducing transaction errors and potential disputes.
 3. **Time-Saving Efficiency**: For both customers and merchants, the card scanning feature saves valuable time during the checkout process, potentially leading to increased customer satisfaction and loyalty.
-
-
 
 {% tabs %}
 {% tab title="Android" %}
-### 1.0 Add the Scan Card dependency
+#### 1.0 Add the Scan Card dependency
 
 Add this scan card dependency to your build.gradle file
 
@@ -37,7 +35,7 @@ hyperswitch {
 {% endtab %}
 
 {% tab title="iOS" %}
-### 1.0 Configure pods to support Scan Card feature&#x20;
+#### 1.0 Configure pods to support Scan Card feature
 
 Scan Card Setup
 
@@ -64,7 +62,7 @@ To update to the latest version of the SDK, run:
 pod install --repo-update
 ```
 
-### 1.1 Enable scan card support for iOS app&#x20;
+#### 1.1 Enable scan card support for iOS app
 
 To enable scan card support, set the `NSCameraUsageDescription` (**Privacy - Camera Usage Description**) in the Info.plist of your application, and provide a reason for accessing the camera (for example, “camera access required to scan cards”). Devices with iOS 13 or higher support card scanning.
 
@@ -72,7 +70,7 @@ To enable scan card support, set the `NSCameraUsageDescription` (**Privacy - Cam
 {% endtab %}
 
 {% tab title="Android Lite" %}
-### 1.0 Add the Scan Card Lite dependency
+#### 1.0 Add the Scan Card Lite dependency
 
 Add this scan card lite dependency to your build.gradle file
 
@@ -83,6 +81,3 @@ dependencies {
 ```
 {% endtab %}
 {% endtabs %}
-
-
-

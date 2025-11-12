@@ -57,9 +57,9 @@ const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-### 2.4 Fetch the Payment and create the Unified Checkout
+#### 2.4 Fetch the Payment and create the Unified Checkout
 
-<figure><img src="../../../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -99,9 +99,9 @@ async function initialize() {
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-### 2.4 Fetch the Payment and create the Express Checkout
+#### 2.4 Fetch the Payment and create the Express Checkout
 
-<figure><img src="../../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
@@ -195,7 +195,7 @@ Also if there are any immediate errors (for example, your customer’s card is d
 
 <summary>Alternate Implementation: SDK handles the Confirm Button</summary>
 
-For SDK to render the confirm button and handle the confirm payment, in  paymentElementOptions, you can send:
+For SDK to render the confirm button and handle the confirm payment, in paymentElementOptions, you can send:
 
 ```html
 const unifiedCheckoutOptions = {
@@ -212,7 +212,7 @@ const unifiedCheckoutOptions = {
 
 1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
 2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
-3. **`buttonText (optional)`** -  The text to display on the payment button. \
+3. **`buttonText (optional)`** - The text to display on the payment button.\
    Default value: **Pay Now**
 
 For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
@@ -253,4 +253,4 @@ async function checkStatus() {
 }
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.

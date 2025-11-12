@@ -68,11 +68,11 @@ The wallet customization feature lets users configure payment options like Apple
 <strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </strong></code></pre>
 
-| Variable                                                                                                    | Description                                                                                                                                                                                                                                                                                                                           | Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| walletReturnUrl: string                                                                                     | Defines the URL to redirect users to after completing a payment.                                                                                                                                                                                                                                                                      | This will take a **URL string** as its value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>                    | Determines the visibility of Apple Pay, Google Pay, Paypal and Klarna.                                                                                                                                                                                                                                                                | <p></p><p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                             |
-| <p>style: {<br>   theme: theme,<br>   type: styleType,<br>   height: int,<br>   buttonRadius: int,<br>}</p> | <p></p><p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
+| Variable                                                                                        | Description                                                                                                                                                                                                                                                                                                                    | Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| walletReturnUrl: string                                                                         | Defines the URL to redirect users to after completing a payment.                                                                                                                                                                                                                                                               | This will take a **URL string** as its value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, Paypal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
+| <p>style: {<br>theme: theme,<br>type: styleType,<br>height: int,<br>buttonRadius: int,<br>}</p> | <p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
 ## 3. Styling variables
 
@@ -121,8 +121,6 @@ The rules option is a map of CSS-like selectors to CSS properties, allowing gran
 * .Input::placeholder
 * .billing-section, .billing-details-text
 * .Input--empty, .InputLogo--empty
-
-
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -266,14 +264,14 @@ We support the following locales -
 * Deutsch (de)
 * Dutch (nl)
 * English (en)
-* EnglishGB (en-GB)&#x20;
+* EnglishGB (en-GB)
 * FrenchBelgium (fr-BE)
 * French (fr)
 * Hebrew (he)
 * Italian (it)
-* Japanese (ja)&#x20;
+* Japanese (ja)
 * Polish (pl)
-* Portuguese (pt)&#x20;
+* Portuguese (pt)
 * Russian (ru)
 * Spanish (es)
 * Swedish (sv)
@@ -438,6 +436,19 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
+### Saved Payment Methods Checkbox Checked By Default
+
+The `savedPaymentMethodsCheckboxCheckedByDefault` property determines whether the "Save payment methods" checkbox is checked by default when displayed.
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  savedPaymentMethodsCheckboxCheckedByDefault: false, // default - false
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
 ### Payment Method Order
 
 The `paymentMethodOrder` property allows you to specify the order in which payment methods are displayed.
@@ -470,13 +481,14 @@ var paymentElementOptions = {
 
 The `readOnly` property puts the SDK into read-only mode, disabling all interactions.
 
-<pre class="language-javascript"><code class="lang-javascript">var paymentElementOptions = {
+```javascript
+var paymentElementOptions = {
   ...,
   readOnly: true,
 };
-<strong>
-</strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />;
-</code></pre>
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
 
 ### Show Short Surcharge Message
 

@@ -25,7 +25,7 @@ Pre-requisites
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../../.gitbook/assets/aws user (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 2 - Configure your AWS credentials in your terminal
 
@@ -93,7 +93,7 @@ chmod 400 locker-jump.pem
 ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
-* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.&#x20;
+* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
 * The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash
@@ -117,7 +117,7 @@ On successful deployment of the Card Vault you will receive the following
 Make sure to save the keys and passwords you provide while running the script
 {% endhint %}
 
-### Integrating it with your Application&#x20;
+### Integrating it with your Application
 
 To start using it with Hyperswitch update the following environment variables while deploying. You can use it with any other tenant application using the respective card vault URL and JWE keys.
 

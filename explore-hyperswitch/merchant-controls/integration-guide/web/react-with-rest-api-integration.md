@@ -4,7 +4,7 @@ icon: react
 
 # React with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.&#x20;
+**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.
 
 <details>
 
@@ -103,26 +103,26 @@ const widgets = useWidgets();
 
 {% tabs %}
 {% tab title="ExpressCheckout" %}
-#### **Key Features of Hyperswitch's Express Checkout**
+**Key Features of Hyperswitch's Express Checkout**
 
 * Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
 * Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
 * Easy Integration: Our SDK can be easily integrated with web applications.
 
-#### **Benefits of Hyperswitch's Express Checkout Feature**
+**Benefits of Hyperswitch's Express Checkout Feature**
 
 * Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
 * Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
 * Great for Mobile: Optimized for mobile shopping with ApplePay, Paypal and GooglePay integration for quick purchases on smartphones.
 * Collect billing and shipping details directly from the ApplePay, Klarna, GooglePay, Paypal
 
-### **3.1 Add the ExpressCheckout**
+#### **3.1 Add the ExpressCheckout**
 
-<figure><img src="../../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
-Add the `ExpressCheckout` to your Checkout.  This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
+Add the `ExpressCheckout` to your Checkout. This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
 
 Define paymentElementOptions:
 
@@ -141,9 +141,9 @@ var expressCheckoutOptions = {
 {% endtab %}
 
 {% tab title="UnifiedCheckout" %}
-#### 3.1.A Add the UnifiedCheckout
+**3.1.A Add the UnifiedCheckout**
 
-<figure><img src="../../../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
 Add the `UnifiedCheckout` to your Checkout. This embeds an iframe with a dynamic form that displays configured payment method types available for the Payment, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
@@ -162,7 +162,7 @@ var unifiedCheckoutOptions = {
 <UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
 ```
 
-#### 3.1.B Complete the payment and handle errors
+**3.1.B Complete the payment and handle errors**
 
 Call `confirmPayment()`, passing along the `UnifiedCheckout` and a return\_url to indicate where `hyper` should redirect the user after they complete the payment. For payments that require additional authentication, `hyper` redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the return\_url.
 
@@ -209,7 +209,7 @@ const handleSubmit = async (e) => {
 
 <summary>Alternate Implementation: SDK handles the Confirm Button</summary>
 
-For SDK to render the confirm button and handle the confirm payment, in  paymentElementOptions, you can send:
+For SDK to render the confirm button and handle the confirm payment, in paymentElementOptions, you can send:
 
 ```javascript
 var unifiedCheckoutOptions = {
@@ -226,7 +226,7 @@ var unifiedCheckoutOptions = {
 
 1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
 2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
-3. **`buttonText (optional)`** -  The text to display on the payment button. \
+3. **`buttonText (optional)`** - The text to display on the payment button.\
    Default value: **Pay Now**
 
 For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
@@ -347,14 +347,14 @@ Callback for these event will be triggered with following event object.
 }
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
 
 ## 5. Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
 * **onPaymentButtonClick:** This callback is triggered immediately after the user clicks any wallet button.
-* **onPaymentComplete:** This callback is triggered after the payment is completed,  just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+* **onPaymentComplete:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.

@@ -44,7 +44,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 1 -** Import Postman collection from [here](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
 **Step 2 -** Navigate to collection's _**Variables**_ tab to set up below variables
 
@@ -52,7 +52,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 * `merchant_id`
 * `api_key`
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
 
 **Step 3 -** Navigate to UseCase #1 section in the collection and execute in order.
 

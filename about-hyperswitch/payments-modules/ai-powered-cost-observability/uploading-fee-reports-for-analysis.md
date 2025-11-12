@@ -8,7 +8,7 @@ Login to the Cost Observability [dashoard](https://hyperswitch.io/cost-observabi
 
 {% stepper %}
 {% step %}
-### Select processors
+#### Select processors
 
 Choose the processor for which you want to use the data to visualise.
 
@@ -20,7 +20,7 @@ After selecting the processor click "Proceed to next"
 {% endstep %}
 
 {% step %}
-### Upload fee reports
+#### Upload fee reports
 
 After completing the step 1, you will see the below screen to select date range, and upload fee reports.
 
@@ -32,7 +32,7 @@ Step 2.1: Selecting date range
 
 Step 2.2: Uploading the fee reports
 
-For Adyen, we will need the following reports, always check the required reports for a processor.&#x20;
+For Adyen, we will need the following reports, always check the required reports for a processor.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-07-22 at 2.33.29 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +42,7 @@ You will need to upload all the types of reports for each month seperately.
 {% endstep %}
 
 {% step %}
-### Processing and insights
+#### Processing and insights
 
 After uploading the reports, it will take around 10-15 minutes to analyse the reports and build the dashboard.
 
@@ -50,7 +50,7 @@ After uploading the reports, it will take around 10-15 minutes to analyse the re
 {% endstep %}
 
 {% step %}
-### View Dashboard
+#### View Dashboard
 
 Click on view dashboard button once the analysis is done.
 

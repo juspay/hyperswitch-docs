@@ -90,13 +90,13 @@ In this flow:
 * If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
 * Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
 
-#### Flow Summary: 
+#### Flow Summary:
 
-<div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (163) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay’s TRID to request network tokens
-2. The end user enters their card details on your checkout&#x20;
+2. The end user enters their card details on your checkout
 3. Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
 4. If tokenization succeeds, Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
 5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
@@ -155,4 +155,4 @@ This is a lightweight, standalone integration when you:
 
 Contact our support to set up your credentials and get access to our Token Provisioning and Cryptogram APIs.
 
-\
+\\

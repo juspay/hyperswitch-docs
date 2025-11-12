@@ -49,7 +49,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 1 -** Import postman collection from [here](https://www.postman.com/hs-payouts/hyperswitch/collection/u6uep7u/payouts-w-hyperswitch).
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 
 **Step 2 -** Navigate to _**Variables**_ tab to set up below variables
 

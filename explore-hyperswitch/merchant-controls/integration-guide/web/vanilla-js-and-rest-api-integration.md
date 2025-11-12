@@ -5,8 +5,7 @@ icon: square-js
 
 # JS with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\
-
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\\
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
@@ -22,7 +21,7 @@ Follow the [Server Setup](server-setup.md) section.
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
 {% endhint %}
 
-Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.&#x20;
+Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
 
 ```js
 <form id="payment-form">
@@ -39,7 +38,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-### 2.2 Fetch the Payment and create the Unified Checkout
+#### 2.2 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
@@ -90,7 +89,7 @@ async function initialize() {
 }
 ```
 
-### 2.3 Additional Callback Handling for Wallets Payment Process
+#### 2.3 Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
@@ -109,7 +108,7 @@ This document outlines the details and functionality of an optional callback `co
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
 {% endhint %}
 
-#### **Example Usage**
+**Example Usage**
 
 ```javascript
 const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
@@ -128,9 +127,9 @@ unifiedCheckout.on("completeDoThis",()=>{
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-### 2.2 Fetch the Payment and create the Express Checkout
+#### 2.2 Fetch the Payment and create the Express Checkout
 
-<figure><img src="../../../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
@@ -260,4 +259,4 @@ async function checkStatus() {
 }
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.

@@ -8,8 +8,6 @@ icon: arrows-rotate-reverse
 
 # Over-the-Air (OTA) Updates
 
-
-
 #### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>
 
 **Purpose**
@@ -48,4 +46,4 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 ***
 
 For more information, [Airborne](https://github.com/juspay/airborne)​[\
-](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/~/diff/~/revisions/NIN50A3QoITTHFHb4scS/explore-hyperswitch/merchant-controls/integration-guide/server-setup)
+](../../integration-guide/web/server-setup.md)
