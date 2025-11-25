@@ -1,5 +1,6 @@
 ---
 description: All the payment use-cases for SaaS providers
+hidden: true
 icon: desktop
 ---
 
