@@ -277,6 +277,8 @@
 * [🪜 For small & medium enterprises](use-cases/for-sme.md)
 * [🏢 For enterprises](use-cases/for-enterprises.md)
 * [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
+* [SaaS Platforms](use-cases/saas-platforms.md)
+* [Fintech Business](use-cases/fintech-business.md)
 
 ## Check list for Production
 
