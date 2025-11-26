@@ -44,6 +44,19 @@
 * [AI Resources](about-hyperswitch/ai-resources/README.md)
   * [Setup MCP Server](about-hyperswitch/ai-resources/setup-mcp-server.md)
 
+## Use-Cases
+
+* [For SaaS Businesses](use-cases/for-saas-providers.md)
+* [For B2B SaaS Businesses](use-cases/for-b2b-saas-businesses.md)
+* [For E-Commerce Businesses](use-cases/for-e-commerce-businesses.md)
+* [For Marketplace/Platforms](use-cases/for-marketplace-platforms.md)
+* [🛒 For online businesses](use-cases/for-online-businesses.md)
+* [🪜 For small & medium enterprises](use-cases/for-sme.md)
+* [🏢 For enterprises](use-cases/for-enterprises.md)
+* [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
+* [SaaS Platforms](use-cases/saas-platforms.md)
+* [Fintech Business](use-cases/fintech-business.md)
+
 ## Explore Hyperswitch
 
 * [Payment Orchestration](explore-hyperswitch/payment-orchestration/README.md)
@@ -266,19 +279,6 @@
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
   * [Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
-
-## Use-Cases
-
-* [For SaaS Businesses](use-cases/for-saas-providers.md)
-* [For B2B SaaS Businesses](use-cases/for-b2b-saas-businesses.md)
-* [For E-Commerce Businesses](use-cases/for-e-commerce-businesses.md)
-* [For Marketplace/Platforms](use-cases/for-marketplace-platforms.md)
-* [🛒 For online businesses](use-cases/for-online-businesses.md)
-* [🪜 For small & medium enterprises](use-cases/for-sme.md)
-* [🏢 For enterprises](use-cases/for-enterprises.md)
-* [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
-* [SaaS Platforms](use-cases/saas-platforms.md)
-* [Fintech Business](use-cases/fintech-business.md)
 
 ## Check list for Production
 
