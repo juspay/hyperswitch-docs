@@ -1,5 +1,6 @@
 ---
 description: All the payment use-cases for e-commerce businesses
+hidden: true
 icon: buildings
 ---
 
@@ -25,25 +26,25 @@ Optimize payment costs by ensuring that every transaction flows through the most
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
 * [AI Ops cost observability with HyperSense](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
 
-#### Simplified payment operations&#x20;
+#### Simplified payment operations
 
 Enhance efficiency in your payment operations by accessing unified analytics, managing teams with custom roles and profiles, and more, all with just a few clicks from the powerful Hyperswitch Control Center.
 
-* [Access unified analytics ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
-* [Role base access for your team ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
+* [Access unified analytics](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
+* [Role base access for your team](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
 
 #### Reduce fraud and chargebacks
 
 Enjoy global standards of payment security with Hyperswitch’s advanced fraud and risk management engine. Leverage 3DS authentication for an additional layer of verification on risky transactions, or use the blocklist feature to block any suspicious cards, card BINs, or extended card BINs.
 
-* [Setup 3DS authentication](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/3ds-decision-manager)&#x20;
+* [Setup 3DS authentication](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/3ds-decision-manager)
 * [Fraud blocklist](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/fraud-blocklist)
 
 #### Enable alternate and local payment methods at ease
 
 Take advantage of our no-code integrations with 70+ global connectors and 150+ payment methods to enable preferred alternate and local payment methods for your customers.
 
-* [View list of supported integrations](https://hyperswitch.io/pm-list) &#x20;
+* [View list of supported integrations](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
 {% content-ref url="for-marketplace-platforms.md" %}

@@ -1,11 +1,12 @@
 ---
 description: All the payment use-cases for marketplace/platforms
+hidden: true
 icon: shop
 ---
 
 # For Marketplace/Platforms
 
-Hyperswitch provides a powerful and adaptable payment infrastructure designed to handle the complexities of multi-party transaction flows in marketplace and platform environments.&#x20;
+Hyperswitch provides a powerful and adaptable payment infrastructure designed to handle the complexities of multi-party transaction flows in marketplace and platform environments.
 
 With features like multi-rail payouts, intelligent routing, and Hypersense, Hyperswitch enables marketplaces to scale efficiently, improve conversion rates, and reduce operational costs—all while ensuring security and compliance.
 
@@ -19,7 +20,7 @@ Efficiently process payouts using diverse rails to suit business needs and custo
 
 #### Improve conversion rates
 
-Enhance the buyer experience with a seamless checkout&#x20;
+Enhance the buyer experience with a seamless checkout
 
 * [Enable express checkout payment option for users](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web/node-and-react#id-3.-complete-the-checkout-on-the-client)
 * [Customize your Checkout page](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web/customization)
@@ -32,24 +33,23 @@ Optimize payment costs by ensuring that every transaction flows through the most
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
 * [AI Ops cost observability with HyperSense](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
 
-#### Global payment support with no code connector integrations&#x20;
+#### Global payment support with no code connector integrations
 
 Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
 
 * [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
-#### Modular card vaulting options&#x20;
+#### Modular card vaulting options
 
 Fulfill diverse client needs with customizable card vaulting options, including platform-level (unified), PSP-specific, and client-scoped vaulting.
 
-* [Card vaulting and tokenisation](https://docs.hyperswitch.io/features/payment-flows-and-management/tokenization-and-saved-cards)&#x20;
+* [Card vaulting and tokenisation](https://docs.hyperswitch.io/features/payment-flows-and-management/tokenization-and-saved-cards)
 
-#### Fully managed compliance and security&#x20;
+#### Fully managed compliance and security
 
 Enjoy hassle-free compliance with evolving regulatory standards, maintaining top-notch security without added complexity.
 
 * [Compliance and data security](https://docs.hyperswitch.io/security-and-compliance/overview)
 * [Data privacy](https://docs.hyperswitch.io/security-and-compliance/security)
 * [PCI compliance](https://docs.hyperswitch.io/security-and-compliance/pci-compliance)
-

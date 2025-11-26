@@ -2,7 +2,6 @@
 description: >-
   Common payment augmentation patterns for FinTech enterprises, from adding
   processors to improving routing, vaulting, and operational visibility.
-hidden: true
 icon: watch-calculator
 ---
 
@@ -32,6 +31,11 @@ Hyperswitch supports a **Connector-First Augmentation Mode** where enterprises i
 
 This approach reduces engineering overhead and avoids disruptions to existing payment flows
 
+#### Relevant Documentation
+
+* [Connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
+* [Webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
 ### Use Case 2 - Preference for self-hosted, infrastructure-level deployment
 
 Several FinTech enterprises prefer to run orchestration components inside their own infrastructure due to strict compliance requirements, internal security policies, data governance rules, or established PCI boundaries. This pattern is especially common among companies operating at enterprise scale or serving regulated markets.
@@ -48,6 +52,10 @@ Hyperswitch supports a fully self-hosted deployment model:
 * Ability to run Hyperswitch as an internal microservice
 
 This provides the flexibility needed to fit within existing enterprise security and compliance frameworks
+
+#### Relevant Documentation
+
+* [Self-Hosted Guide](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1)
 
 ### Use Case 3 - Augmenting routing and retry systems to improve authorization performance
 
@@ -67,6 +75,11 @@ Hyperswitch provides a modular routing engine that can be inserted after an ente
 
 This allows enterprises to enhance routing performance without rewriting internal systems.
 
+#### Relevant Documentation
+
+* [Routing](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/intelligent-routing)
+* [Retry Logic](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries)
+
 ### Use Case 4 - Vaulting and token augmentation (PSP vaults, external vaults, network tokens)
 
 In enterprise discussions, vault-related concerns surface frequently: token portability, region-based vault segmentation, support for network tokens, account updater flows, or the ability to migrate PSP vaults without disrupting existing merchants. These appear especially during global expansion or PSP migrations.
@@ -84,6 +97,11 @@ Hyperswitch provides flexible vaulting models:
 * Support for zero-downtime token migrations
 
 These patterns help enterprises manage token flows cleanly while maintaining PCI and architectural boundaries.
+
+#### Relevant Documentation
+
+* [Vaulting](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
+* [Network Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)
 
 ### Use Case 5 - Partial lifecycle control through Relay APIs
 

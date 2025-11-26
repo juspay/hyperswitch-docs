@@ -1,6 +1,5 @@
 ---
 description: All the payment use-cases for SaaS providers
-hidden: true
 icon: desktop
 ---
 
@@ -26,6 +25,10 @@ Hyperswitch provides a connector layer that standardizes PSP interactions, enabl
 
 These patterns reduce onboarding time and simplify multi-PSP support.
 
+#### Relevant Documentation
+
+* [Connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
+
 ### Use Case 2 - Maintaining merchant-level isolation (Org → Merchant → Profile)
 
 Most SaaS platforms require clean separation between merchants — including PSP keys, routing preferences, business units, and operational users. Engineering teams often highlight the friction of building and maintaining custom multi-tenant boundaries.
@@ -41,6 +44,10 @@ Hyperswitch provides a built-in **Organization → Merchant → Profile** hierar
 * Produce merchant-specific reports and analytics
 
 This structure simplifies multi-tenant support and reduces custom permissioning work.
+
+#### Relevant Documentation
+
+* [Merchant Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles)
 
 ### Use Case 3 - Programmatic merchant onboarding (MoR & Non-MoR)
 
@@ -77,6 +84,11 @@ Hyperswitch normalizes:
 
 This allows SaaS platforms to expose a single, unified flow while still supporting multiple processors.
 
+#### Relevant Documentation
+
+* [Connector Payment Flows](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/connector-payment-flows)
+* [3DS](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/payment-features/3d-secure-3ds)
+
 ### Use Case 5 - Flexible vaulting for multi-merchant environments
 
 Vaulting requirements vary widely across merchants. Some rely on PSP-native vaults; others require unified vaults, external vaults, or merchant-scoped setups. SaaS engineering teams often note the difficulty of supporting multiple vaulting choices consistently.
@@ -91,6 +103,11 @@ Hyperswitch supports multiple vaulting models used across SaaS platforms:
 4. **Merchant-Scoped Vaults**
 
 These options help platforms satisfy different merchant requirements without custom implementations.
+
+#### Relevant Documentation
+
+* [Vaulting](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
+* [Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)
 
 ### Use Case 6 - Participating in only part of the payment lifecycle
 
@@ -140,3 +157,7 @@ Hyperswitch provides:
 * Merchant/profile-level SLA segmentation
 
 These tools help SaaS teams maintain reliable operations at scale.
+
+#### Relevant Documentation
+
+* [Ops Dashboard](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)

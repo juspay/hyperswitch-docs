@@ -1,11 +1,12 @@
 ---
 description: All the payment use-cases for SaaS providers
+hidden: true
 icon: desktop
 ---
 
 # For SaaS Businesses
 
-Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.&#x20;
+Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.
 
 Whether you're a startup or an established enterprise, Hyperswitch provides the tools needed to deliver seamless payment experiences for your users.
 
@@ -15,7 +16,7 @@ Whether you're a startup or an established enterprise, Hyperswitch provides the 
 
 Automate and streamline recurring payments with flexible subscription models, ensuring a hassle-free experience for both customers and teams.
 
-* [Saving a payment method for future recurring payments ](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments#saving-a-payment-method-for-future-mit-payments)
+* [Saving a payment method for future recurring payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments#saving-a-payment-method-for-future-mit-payments)
 * [PG agnostic card forwarding for recurring payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions/pg-agnostic-recurring-payments)
 
 #### Passive churn reduction
@@ -31,19 +32,19 @@ Optimize payment costs by ensuring that every transaction flows through the most
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router)
 * [AI Ops cost observability with HyperSense](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations/hypersense-ai-powered-payment-operations)
 
-#### Global payment support with no code connector integrations&#x20;
+#### Global payment support with no code connector integrations
 
 Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
 
 * [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
-#### Simplified payment operations&#x20;
+#### Simplified payment operations
 
 Enhance efficiency in your payment operations by accessing unified analytics, managing teams with custom roles and profiles, and more, all with just a few clicks from the powerful Hyperswitch Control Center.
 
-* [Access unified analytics ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
-* [Manage your team ](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
+* [Access unified analytics](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
+* [Manage your team](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
 
 {% hint style="info" %}
 **Have Questions?**\
