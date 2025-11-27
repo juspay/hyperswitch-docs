@@ -55,7 +55,7 @@
 * [🏢 For enterprises](use-cases/for-enterprises.md)
 * [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
 * [SaaS Platforms](use-cases/saas-platforms.md)
-* [Fintech Business](use-cases/fintech-business.md)
+* [Fintech Businesses](use-cases/fintech-businesses.md)
 
 ## Explore Hyperswitch
 
