@@ -71,16 +71,10 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 
 #### **Authentication and Checkout Experience**
 
-*   **Authentication Observability**\
-    We plan to introduce Authentication Observability, a dedicated analytics layer that provides merchants with detailed visibility into authentication performance across acquirers, issuers, and 3DS flows.
-
-    This will include insights such as 3DS success ratios, challenge vs. frictionless breakdowns, and issuer response patterns, allowing merchants to identify friction points and optimize their authentication strategies.
 *   **Authorization Uplift**
 
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
 
-    * **Payment Method Prioritization**: The checkout SDK will automatically prioritize payment methods based on a customer’s most recently used or highest-success options, improving the likelihood of first-attempt approvals.
-    * **Real-Time Outage Awareness**: SDK-level alerts will notify merchants of ongoing payment method or network outages, enabling them to hide or reorder affected options dynamically.
     * **Fallback Recommendations**: In the event of a failed payment attempt, customers will be prompted with alternate payment methods such as wallets, BNPL, or UPI to complete their transaction seamlessly.
 *   **Integration with Cardinal SDK**
 
@@ -88,9 +82,6 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 *   **SDK Accessibility Enhancements**
 
     We are enhancing the checkout SDK to ensure accessibility compliance and inclusivity for all users. Updates will include improved keyboard navigation, screen reader support, and visual contrast adjustments aligned with WCAG accessibility standards.
-*   **Payout Links Enhancements**
-
-    We plan to enhance Payout Links with an improved user experience. We will add advanced customization support to payout links so that the payout links are in line with the merchant's branding and styling.
 
 #### **Revenue Recovery**
 
@@ -101,44 +92,6 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 
 _<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/revenue-recovery.md)
 
-#### **Intelligent Routing**
-
-*   **Multi-Objective Routing Modules**
-
-    We plan to introduce multi-objective routing capabilities that enable Hyperswitch to optimize transaction routing across multiple business goals simultaneously — such as authorization rate, processing cost, and volume commitments. This will allow merchants to configure and balance routing priorities dynamically, ensuring optimal performance and cost efficiency across connectors.
-*   **Expanded LCR (Least Cost Routing) Based on Acquirer Costs**
-
-    We are extending the scope of Least Cost Routing (LCR) to incorporate acquirer-specific cost structures. This enhancement will allow routing decisions to factor in interchange, scheme, and acquirer fees in real time, ensuring each transaction is processed through the most cost-efficient path without compromising reliability or compliance.
-*   **Routing Savings and Benefits Reporting**
-
-    We plan to introduce savings and benefits reporting for routing, providing merchants with detailed visibility into the financial and operational impact of their routing configurations. The reporting will include insights into cost savings, authorization uplift, and volume distribution across acquirers, helping merchants measure the tangible benefits of intelligent routing and refine their strategies over time.
-
-_<mark style="color:blue;">Learn more about the existing Intelligent Routing features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/intelligent-routing/)
-
-#### **Cost Observability**
-
-* **Payment fees estimation using transaction data:** Estimate expected interchange and scheme fees for every transaction of merchant and reconcile them against actual applied rates from transaction fee reports from Acquirers.
-* **Conversational AI Interface:** Enhance the AI-powered chat experience that allows users to explore questions and information on payment processing fees. In addition making cost observability more interactive, insightful, and highly contextual for logged in users to interact with their data using AI powered chat.
-
-_<mark style="color:blue;">Learn more about the existing Cost Observability features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/ai-powered-cost-observability.md)
-
-#### Reconciliation
-
-* **Revamped Exception Resolution Interface**\
-  Instantly resolve mismatches in transaction amounts, status, or other metadata through a clean, side-by-side interface. The system highlights exact discrepancies across multiple sources and provides guided resolution options while maintaining a full audit trail for every action
-* **Smarter Rules for Advanced Businesses**\
-  Support for one-to-many and many-to-one reconciliation rules, enabling flexible handling of complex payment and payout scenarios (e.g., one payout covering many sales or vice versa)
-* **Forex Handling**\
-  Support for merchant-provided exchange rates in cross-currency reconciliation. This enables automatic alignment of settlements and deposits across currencies, eliminating manual conversions
-* **Exceptions Aging & Tolerance Handling**\
-  Monitor how long each exception remains unresolved and surface those breaching SLA thresholds to drive faster closure.Configure tolerance levels for acceptable amount variances so minor differences don’t block reconciliation.
-* **AI-Driven Exception Handling**\
-  AI-powered recommendations to automatically analyze mismatches and suggest likely matches based on amounts, dates, and references — dramatically reducing exception resolution time
-* **Advanced Data Management**\
-  Dedicated ingestion integrity module to isolate problematic records, prevent data contamination, and enable review and correction before reprocessing
-
-_<mark style="color:blue;">Learn more about the existing Reconciliation features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation-product)
-
 #### **Core Orchestration and Connectors**
 
 * **Connectors**\
@@ -147,22 +100,6 @@ _<mark style="color:blue;">Learn more about the existing Reconciliation features
   * **Enhancing existing integrations:** Stripe (Mobilepay, Sofort, Paypal,Blik) , Braintree(Venmo)
 * **Core Orchestration**
   * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
-* **Subscriptions enhancements**
-  *   **Coupons Handling**
-
-      We plan to enhance the subscriptions module with coupon handling capabilities, allowing merchants to define, apply, and manage promotional discounts for recurring billing plans.
-  *   **Outgoing Webhooks**
-
-      We're introducing outgoing webhooks to enable real-time communication with merchant systems during key subscription lifecycle events
-  *   **Entitlements Management**
-
-      We plan to add entitlements management to help merchants link subscription plans to feature access or service tiers.
-  *   **Lifecycle Management**
-
-      We're enhancing subscription lifecycle management to handle complex state transitions such as trial activation, pausing, resuming, renewal, and cancellation.
-  *   **Plans SDK**
-
-      We plan to introduce a Plans SDK to provide merchants with a unified interface for displaying subscription plans and collecting payments.
 * **Improve Auth rate**
   *   **Error Code Enhancements**
 
