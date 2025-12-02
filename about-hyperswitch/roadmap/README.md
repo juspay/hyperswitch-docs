@@ -76,9 +76,6 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
 
     * **Fallback Recommendations**: In the event of a failed payment attempt, customers will be prompted with alternate payment methods such as wallets, BNPL, or UPI to complete their transaction seamlessly.
-*   **Integration with Cardinal SDK**
-
-    We are integrating the CardinalCommerce SDK to strengthen 3DS authentication across global transactions.
 *   **SDK Accessibility Enhancements**
 
     We are enhancing the checkout SDK to ensure accessibility compliance and inclusivity for all users. Updates will include improved keyboard navigation, screen reader support, and visual contrast adjustments aligned with WCAG accessibility standards.
