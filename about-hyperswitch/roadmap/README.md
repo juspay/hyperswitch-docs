@@ -43,12 +43,36 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 2. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
 3. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
 4. **Authentication:** Data driven 3DS routing decision system and unified authentication SDK to encompass the diversity of authentication products.
-5. **Intelligent Routing:** Routing service to dynamically select the most optimal PSP/ network in real time exploring/exploiting/managing multiple objectives simultaneously.
-6. ​​**Alternate Payment Method Widgets:** Embracing the ever expanding diversity of payment methods and payment experiences through orchestration, and a simple add-on button to Checkout.
-7. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
-8. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
+5. ​​**Alternate Payment Method Widgets:** Embracing the ever expanding diversity of payment methods and payment experiences through orchestration, and a simple add-on button to Checkout.
+6. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
+7. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
+
+#### **Core Orchestration and Connectors**
+
+* **Connectors**\
+  We plan to expand connector coverage with new integrations including
+  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Applepay,Googlepay), Paysafe (Cards, Applepay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Applepay, Googlepay), Sift (FRM)
+  * **Enhancing existing integrations:** Stripe (Mobilepay, Sofort, Paypal,Blik) , Braintree(Venmo)
+* **Core Orchestration**
+  * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
+* **Improve Auth rate**
+  *   **Error Code Enhancements**
+
+      We plan to enhance our error-handling framework to improve visibility and precision in transaction outcomes.
+
+      *   **Issuer Error Codes in GSM Table**: Issuer-specific error codes will be added to the GSM (Gateway Status Mapping) table to improve accuracy in mapping responses. These will be leveraged to make better retry decisions during payment flows, helping merchants reduce unnecessary retries and improve approval rates.
+
+          **Unified Error Codes and User-Facing Messages**: We will expand the existing unified error code system to generate clearer, user-focused error messages. This ensures consistency in how payment failures are communicated across channels, improving transparency for both merchants and end users.
+*   **Real-Time Payment Method Eligibility Checks**
+
+    We plan to introduce real-time eligibility validation for payment methods during checkout. This will include:
+
+    * **Card Eligibility by BIN**: Verifying card eligibility upfront based on BIN (Bank Identification Number) data to prevent declines related to unsupported networks, regions, or card types.
+    * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
+
+_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
 
 #### **Vault**
 
@@ -88,31 +112,6 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
   The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
 _<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/revenue-recovery.md)
-
-#### **Core Orchestration and Connectors**
-
-* **Connectors**\
-  We plan to expand connector coverage with new integrations including
-  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Applepay,Googlepay), Paysafe (Cards, Applepay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Applepay, Googlepay), Sift (FRM)
-  * **Enhancing existing integrations:** Stripe (Mobilepay, Sofort, Paypal,Blik) , Braintree(Venmo)
-* **Core Orchestration**
-  * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
-* **Improve Auth rate**
-  *   **Error Code Enhancements**
-
-      We plan to enhance our error-handling framework to improve visibility and precision in transaction outcomes.
-
-      *   **Issuer Error Codes in GSM Table**: Issuer-specific error codes will be added to the GSM (Gateway Status Mapping) table to improve accuracy in mapping responses. These will be leveraged to make better retry decisions during payment flows, helping merchants reduce unnecessary retries and improve approval rates.
-
-          **Unified Error Codes and User-Facing Messages**: We will expand the existing unified error code system to generate clearer, user-focused error messages. This ensures consistency in how payment failures are communicated across channels, improving transparency for both merchants and end users.
-*   **Real-Time Payment Method Eligibility Checks**
-
-    We plan to introduce real-time eligibility validation for payment methods during checkout. This will include:
-
-    * **Card Eligibility by BIN**: Verifying card eligibility upfront based on BIN (Bank Identification Number) data to prevent declines related to unsupported networks, regions, or card types.
-    * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
-
-_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
 
 **Community Requests**\
 Based on popular community requests, we plan to take up the following features this quarter:
