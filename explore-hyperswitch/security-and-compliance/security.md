@@ -68,7 +68,7 @@ Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive
 
 ## Key Manager Service Encryption (Optional)
 
-Key Manager Service (KMS) encryption is optional. It is required only for PCI SSS certification and is **not** mandatory for PCI DSS certification.
+Key Manager Service (KMS) encryption is optional. It is required only for PCI SSS certification and is **not** mandatory for PCI DSS certification. If it is not implemented, the application itself will handle key management.
 
 **Merchant-Specific Encryption**
 
