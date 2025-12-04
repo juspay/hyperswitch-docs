@@ -17,7 +17,8 @@ There are two possible types of payment retry flows:
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers).Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
-**Note:** Currently, Hyperswitch supports Smart retries as an out-of-the-box capability. In order to enable user consent based retry for payment failures, you can create a fresh payment and re-trigger the Hyperswitch checkout.
+**Note:** Currently, Hyperswitch supports Smart retries as an out-of-the-box capability for Card Payments. In order to enable user consent based retry for payment failures, you can create a fresh payment and re-trigger the Hyperswitch checkout.\
+For Smart Retry support with Alternative Payment Methods (APMs), please reach out to our team.
 
 ## How does it work?
 
