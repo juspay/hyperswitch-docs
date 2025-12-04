@@ -57,6 +57,8 @@ At Hyperswitch, we place the utmost importance on safeguarding sensitive data, i
 
 <figure><img src="../../.gitbook/assets/Key Manager Service (1).jpg" alt=""><figcaption></figcaption></figure>
 
+From the image above, the Key Manager Service is optional. If it is not implemented, the application itself will handle key management.
+
 ## Key Management System (KMS) Encryption
 
 Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive keys required for the application’s operation.
@@ -64,11 +66,13 @@ Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive
 1. **Startup Encryption**: Sensitive keys, such as database passwords and RSA certificates, are encrypted at the startup.
 2. **Secure Storage**: These encrypted keys are securely stored in environment variables or configuration files, ensuring their confidentiality and protection against unauthorized access.
 
-## Key Manager Service Encryption
+## Key Manager Service Encryption (Optional)
+
+Key Manager Service (KMS) encryption is optional. It is required only for PCI SSS certification and is **not** mandatory for PCI DSS certification.
 
 **Merchant-Specific Encryption**
 
-Hyperswitch utilizes a **Key Manager Service** to ensure the secure generation and storage of a **unique Data Encryption Key (DEK)** for each merchant.&#x20;
+Hyperswitch utilizes a **Key Manager Service** to ensure the secure generation and storage of a **unique Data Encryption Key (DEK)** for each merchant.
 
 These merchant-specific DEKs undergo further encryption using a secrets manager, such as **AWS KMS**, to provide an additional layer of security.
 
@@ -93,7 +97,7 @@ At Hyperswitch, we take extra care to protect sensitive information, even in sys
 * **Source-Level Protection**: By masking sensitive data at its source, we ensure that sensitive information is never inadvertently exposed, even in debug outputs or logs.
 
 {% hint style="info" %}
-#### Database at Rest Encryption
+**Database at Rest Encryption**
 
 At Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
 {% endhint %}
