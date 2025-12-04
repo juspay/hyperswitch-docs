@@ -29,13 +29,13 @@ Spin up a working integration with minimal effort. Choose the path that fits you
 <summary><strong>Cloud Sandbox</strong></summary>
 
 [Try Hyperswitch →](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)\
-Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.&#x20;
+Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.
 
 </details>
 
 <details>
 
-<summary> <strong>Local Deployment (Docker)</strong></summary>
+<summary><strong>Local Deployment (Docker)</strong></summary>
 
 [Set up Docker Locally →](hyperswitch-open-source/overview/unified-local-setup-using-docker.md)\
 Perfect for developers who want local control and flexibility. You'll launch a ready-to-use Control Center environment.
@@ -58,9 +58,9 @@ Build a custom backend integration from scratch.
 
 <details>
 
-<summary> <strong>Launch a Scalable Hyperswitch Instance on AWS</strong></summary>
+<summary><strong>Launch a Scalable Hyperswitch Instance on AWS</strong></summary>
 
-&#x20;[AWS Deployment →](hyperswitch-open-source/deploy-hyperswitch-on-aws/)
+[AWS Deployment →](hyperswitch-open-source/deploy-hyperswitch-on-aws/)
 
 Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployment guide. Ideal for teams looking for flexibility, control, and production-ready scalability.
 
@@ -68,7 +68,7 @@ Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployme
 
 <details>
 
-<summary><strong>Scalable, Self-Hosted Deployment |  Helm Charts  for GCP &#x26; Azure</strong></summary>
+<summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for GCP &#x26; Azure</strong></summary>
 
 [Deploy on GCP or Azure →](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
 
@@ -76,17 +76,17 @@ Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernete
 
 </details>
 
-### Your first payment&#x20;
+### Your first payment
 
 See Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker setup or directly via API.
 
 <details>
 
-<summary><strong>Test a payment |  Your First Hello World with Hyperswitch</strong><a href="https://docs.hyperswitch.io/hyperswitch-open-source/account-setup/test-a-payment"> </a></summary>
+<summary><strong>Test a payment | Your First Hello World with Hyperswitch</strong></summary>
 
 [Control Center](hyperswitch-open-source/account-setup/test-a-payment.md) | Accessible through cloud sandbox or Docker
 
-[API ](hyperswitch-open-source/account-setup/using-postman.md) | Accessible through the Postman Collection
+[API ](hyperswitch-open-source/account-setup/using-postman.md)| Accessible through the Postman Collection
 
 [Learn how the SDK, control center and backend work together](hyperswitch-open-source/overview/local-setup-using-individual-components/)
 
@@ -142,11 +142,11 @@ Power only what you need with Hyperswitch’s modular architecture. Integrate ju
 
 Automate and optimize how payments are routed, authorized, and split across providers with Hyperswitch’s flexible payment orchestration engine.
 
-[Tokenization and Card Vault → ](about-hyperswitch/payments-modules/vault/)
+[Tokenization and Card Vault →](about-hyperswitch/payments-modules/vault/)
 
-Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.&#x20;
+Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.
 
-[Get Started with Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).&#x20;
+[Get Started with Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).
 
 [Routing →](explore-hyperswitch/payment-orchestration/smart-router.md)
 
@@ -154,17 +154,17 @@ Control how transactions flow across payment providers with configurable routing
 
 [Intelligent Routing →](about-hyperswitch/payments-modules/intelligent-routing/)
 
-Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.[ ](about-hyperswitch/payments-modules/vault/)
+Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.
 
 [Smart Retries →](about-hyperswitch/payments-modules/revenue-recovery.md)
 
 Recover failed payments using ML-driven retry strategies optimized for timing, issuer behavior, and card type.
 
-[Payouts → ](explore-hyperswitch/payment-orchestration/payouts/)
+[Payouts →](explore-hyperswitch/payment-orchestration/payouts/)
 
-Easily manage and automate disbursements to sellers, vendors, or partners with flexible payout logic.&#x20;
+Easily manage and automate disbursements to sellers, vendors, or partners with flexible payout logic.
 
-[Subscriptions → ](explore-hyperswitch/payment-orchestration/subscriptions.md)
+[Subscriptions →](explore-hyperswitch/payment-orchestration/subscriptions.md)
 
 Handle recurring payments seamlessly with built-in support for subscription billing and invoicing.
 
@@ -188,13 +188,13 @@ Embed a native, responsive checkout experience into your website with full contr
 [Click to Pay →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets)\
 Enable frictionless, one-click payments for returning users using wallets and saved cards.
 
-&#x20;[Payment Methods Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
+[Payment Methods Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
 Dynamically configure and prioritize payment methods based on geography, currency, and user preference.
 
 [Alternate Payment Methods (APMs) →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
 Offer support for UPI, wallets, and local payment options to meet your customers where they are.
 
-&#x20;[Integration Guide Overview →](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)\
+[Integration Guide Overview →](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)\
 Explore the full set of tools and options to deliver a branded and consistent payment experience across platforms.
 
 </details>
@@ -219,14 +219,14 @@ Monitor, respond to, and manage disputes or chargebacks from a centralized opera
 [Surcharge Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/surcharge)\
 Apply dynamic surcharges or convenience fees based on card type, geography, or business logic.
 
-&#x20;[Full Operations Overview →](https://docs.hyperswitch.io/explore-hyperswitch/account-management)\
+[Full Operations Overview →](https://docs.hyperswitch.io/explore-hyperswitch/account-management)\
 Explore the complete set of tools available for scaling your payment operations with confidence.
 
 </details>
 
 ### Scalability, Relability, and Security
 
-Take your Hyperswitch integration to production with confidence.  Set up environments, secure credentials, monitor performance, and scale seamlessly as your business grows.
+Take your Hyperswitch integration to production with confidence. Set up environments, secure credentials, monitor performance, and scale seamlessly as your business grows.
 
 <details>
 
@@ -242,7 +242,7 @@ Scale effortlessly with a stateless architecture designed to handle high-through
 
 Here's how [Hyperswitch handles horizontal scaling under high throughput](https://deepwiki.com/search/how-does-hyperswitch-handle-ho_8bba708f-e768-465c-8e24-953f7a60da72#1)
 
-&#x20;[Reliability →](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture)\
+[Reliability →](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture)\
 Achieve consistent uptime and resiliency through modular design and built-in fault tolerance.
 
 Here's how [Hyperswitch handles idempotency and message ordering](https://deepwiki.com/search/what-guarantees-does-the-syste_1bc51ad9-d897-4d9a-bce6-7d0a19cf00c4#1).
@@ -255,7 +255,7 @@ Here's how [Hyperswitch handles idempotency and message ordering](https://deepwi
 
 <summary>Take Hyperswitch into production</summary>
 
-&#x20;[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
+[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
 Follow our go-live checklist to launch with confidence — covering setup, credentials, security, and monitoring.
 
 </details>
@@ -271,8 +271,7 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 ### Developer Resources
 
-* [API Reference →](https://docs.hyperswitch.io/api-reference/introduction)
-* [SDK Documentation →](https://docs.hyperswitch.io/sdk-reference/introduction)
+* [API Reference →](https://api-reference.hyperswitch.io/introduction)
+* [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
 * [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
-* [FAQs →](https://docs.hyperswitch.io/faqs)
 * [GitHub Repository →](https://github.com/juspay/hyperswitch)
