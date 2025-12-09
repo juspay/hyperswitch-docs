@@ -113,6 +113,15 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 
 _<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../payments-modules/revenue-recovery.md)
 
+#### **Reconciliation**
+
+* **Rule Types Expansion**\
+  Support for 1:many and many:1 rule types to enable flexible matching across split, aggregated, and multi-attempt transaction flows
+* **Support for Lumpsum Reconciliation**\
+  Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction level
+
+
+
 **Community Requests**\
 Based on popular community requests, we plan to take up the following features this quarter:
 
