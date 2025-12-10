@@ -156,4 +156,4 @@ async function initialize() {
 initialize();
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize the it to blend with the rest of your website.
+Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.
