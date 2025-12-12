@@ -22,7 +22,7 @@ The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive 
 
 ### Supported FRM Processors
 
-<table><thead><tr><th width="220">Processors</th><th>Supported Flows</th><th>Supported Actions</th><th>Processor Features</th></tr></thead><tbody><tr><td><strong>Signifyd / Riskified</strong></td><td><ul><li>PreAuth</li><li>PostAuth</li></ul></td><td><ul><li>Cancel Transactions</li><li>Flag for Manual Review</li></ul></td><td><ul><li>Guaranteed Fraud Protection</li><li>Complete Chargeback Protection</li><li>Auth Rate Conversions</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="220">Processors</th><th>Supported Flows</th><th>Supported Actions</th><th>Processor Features</th></tr></thead><tbody><tr><td><strong>Signifyd / Riskified</strong></td><td><ul><li>PreAuth</li><li>PostAuth</li></ul></td><td><ul><li>Cancel Transactions</li><li>Flag for Manual Review on FRM dashboard</li></ul></td><td><ul><li>Guaranteed Fraud Protection</li><li>Complete Chargeback Protection</li><li>Auth Rate Conversions</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 If your FRM processor of choice is not available in the above list, please put a new features request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
