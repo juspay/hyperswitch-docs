@@ -10,9 +10,9 @@ Hyperswitch is more than an open-source payments orchestration engine. It’s a 
 
 ### Community Touchpoints
 
-#### 🗓️ Office Hours
+#### 🗓️ Office Hours (Every Thursday, 11 AM ET / 8:30 PM IST)
 
-Drop into our weekly[ Office Hours](https://meet.google.com/grq-pxuh-zvr) to connect directly with maintainers and contributors.
+Drop into our weekly [Office Hours](https://meet.google.com/grq-pxuh-zvr) to connect directly with maintainers and contributors.&#x20;
 
 * Live demos & product walkthroughs
 * Open Q\&A on anything Hyperswitch

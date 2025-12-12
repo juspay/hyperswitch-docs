@@ -38,7 +38,3 @@ For subscription-based businesses, involuntary churn from failed recurring payme
 * **Integration with Existing Workflows**:
   * Enhances recovery rates without disrupting current dunning setups.
   * Supports integration with billing platforms for automation of payment recovery.
-
-{% content-ref url="../../explore-hyperswitch/merchant-controls/" %}
-[merchant-controls](../../explore-hyperswitch/merchant-controls/)
-{% endcontent-ref %}

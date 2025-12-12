@@ -26,12 +26,5 @@ Hyperswitch Cost Observability solves this problem by transforming unstructured 
 
 **Optimize**: Offers actionable insights designed to help businesses achieve maximum savings by improving interchange qualifications, reducing scheme fees, and minimizing penalties. These recommendations ensure proactive cost optimization insights.
 
-**Forecast:** Merchants can forecast the cost impact of network updates on their payment costs for any organization via brand/region/connector with monthly deltas and effective dates.&#x20;
+**Forecast:** Merchants can forecast the cost impact of network updates on their payment costs for any organization via brand/region/connector with monthly deltas and effective dates.
 
-Check out the [Cost Observability Demo ](https://app.gitbook.com/u/TnBpl9FYRPRAt0h4uNdT6jiBWS93) and try it out!&#x20;
-
-
-
-{% content-ref url="../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md" %}
-[exporting-payments-data.md](../../explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
-{% endcontent-ref %}
