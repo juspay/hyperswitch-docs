@@ -26,7 +26,7 @@ Spin up a working integration with minimal effort. Choose the path that fits you
 
 <details>
 
-<summary><strong>Cloud Sandbox</strong></summary>
+<summary><strong>Cloud Sandbox (Hyperswitch Hosted Test Environment)</strong></summary>
 
 [Try Hyperswitch →](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)\
 Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.
@@ -52,7 +52,7 @@ Build a custom backend integration from scratch.
 
 > ⚠️ To authenticate API requests, you’ll need a username and password from either:\
 > • the [Cloud Sandbox](https://app.hyperswitch.io)\
-> • or your [Docker setup](https://docs.hyperswitch.io/hyperswitch-open-source/docker/local-setup)
+> • or your [Docker setup](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1/unified-local-setup-using-docker)
 
 </details>
 
@@ -120,11 +120,11 @@ Gain real-time visibility into your processing costs and optimize spend across p
 
 Automatically match transaction data across banks, PSPs, and internal systems to reduce manual effort.
 
-[3DS Decision Manager →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/3ds-decision-manager)
+[3DS Decision Manager →](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/3ds-decision-manager)
 
 Apply 3DS only when necessary, minimizing friction while keeping fraud under control.
 
-[Payment Orchestration →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/split-payments)
+[Payment Orchestration →](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration)
 
 Automate disbursements to vendors or sellers with rule-based routing logic.
 
@@ -213,10 +213,10 @@ Create, manage, and operate across multiple merchant accounts and profiles with 
 [Analytics and Operations →](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)\
 Gain real-time visibility into transaction performance, routing behavior, and operational metrics.
 
-[Disputes and Chargebacks →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/disputes-and-chargebacks)\
+[Disputes and Chargebacks →](https://docs.hyperswitch.io/explore-hyperswitch/account-management/disputes)\
 Monitor, respond to, and manage disputes or chargebacks from a centralized operations interface.
 
-[Surcharge Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/surcharge)\
+[Surcharge Management →](https://docs.hyperswitch.io/explore-hyperswitch/account-management/surcharge)\
 Apply dynamic surcharges or convenience fees based on card type, geography, or business logic.
 
 [Full Operations Overview →](https://docs.hyperswitch.io/explore-hyperswitch/account-management)\
@@ -264,7 +264,7 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 * [Join our Slack Community →](https://inviter.co/hyperswitch-slack)\
   Ask questions, share ideas, and connect with other developers building on Hyperswitch.
-* [Contact Us →](https://www.hyperswitch.io/contact)\
+* [Contact Us →](https://hyperswitch.io/contact-us)\
   Prefer direct support? We’re happy to help.
 
 ***
