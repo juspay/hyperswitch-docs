@@ -1,13 +1,15 @@
 ---
-description: Learn how to tokenize cards at Hyperswitch Vault Service using our Vault SDK
+description: >-
+  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
+  Methods Management SDK
 icon: desktop
 ---
 
-# Vault SDK JS with REST API Integration
+# Payment Methods Management SDK - JS with REST API Integration
 
-## Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK
+## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
 
-The Hyperswitch Vault SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 
@@ -17,9 +19,9 @@ The Hyperswitch Vault SDK provides a secure solution for merchants to handle and
 * **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
 * **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
-## Vault SDK Integration Walkthrough
+## Payment Methods Management SDK Integration Walkthrough
 
-This document provides step-by-step instructions for integrating the Hyperswitch Vault SDK into your application.
+This document provides step-by-step instructions for integrating the Hyperswitch Payment Methods Management SDK into your application.
 
 ### 1. Server-Side Setup
 
@@ -82,30 +84,30 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 ### 2. Client-Side Integration
 
-Once your server endpoint is set up, you'll need to integrate the Vault SDK into your client application.
+Once your server endpoint is set up, you'll need to integrate the Payment Methods Management SDK into your client application.
 
 #### 2.1 Define the Payment Methods Management Form
 
-Add one empty placeholder `div` to your page for the Vault widget that you'll mount.
+Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
 
 ```html
-<form id="vault-form">
-  <div id="vault-elements">
-    <!--HyperLoader injects the Vault SDK-->
+<form id="payment-methods-management-form">
+  <div id="payment-methods-management-elements">
+    <!--HyperLoader injects the Payment Methods Management SDK-->
   </div>
 </form>
 ```
 
-#### 2.2 Fetch the Payment Method Session and Mount the Vault Element
+#### 2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element
 
 Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods.\
 \
-Following this, create a `vaultElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
+Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
 > Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
 
 ```javascript
-// Fetches a payment method session and mounts the vault element
+// Fetches a payment method session and mounts the payment methods management element
 async function initialize() {
   // Step 1: Create payment method session
   const response = await fetch("/create-payment-method-session", {
@@ -136,18 +138,18 @@ async function initialize() {
     };
 
     // Step 5: Create payment methods management elements
-    const vaultSDK =
-      hyper.vaultSDK({
+    const paymentMethodsManagementElements =
+      hyper.paymentMethodsManagementElements({
         appearance,
         pmSessionId: id,
         pmClientSecret: clientSecret,
       });
 
-    // Step 6: Create and mount the vault element
-    const vaultElements = vaultSDK.create(
-      "vaultElements"
+    // Step 6: Create and mount the paymentMethodsManagement element
+    const paymentMethodsManagement = paymentMethodsManagementElements.create(
+      "paymentMethodsManagement"
     );
-    vaultElements.mount("#vault-elements");
+    paymentMethodsManagement.mount("#payment-methods-management-elements");
   };
   document.body.appendChild(script);
 }
