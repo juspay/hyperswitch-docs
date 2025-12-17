@@ -10,6 +10,8 @@ The goal of resolution here is to either invalidate the source record (if it sho
 
 Unlike "Mismatched" exceptions (which are actual data breaks), `EXPECTED` exceptions are often temporary. In most cases, these resolve automatically when the counterparty sends their settlement batch (e.g., T+1 or T+2)
 
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.33.55 PM.png" alt=""><figcaption></figcaption></figure>
+
 ***
 
 ### Pathway A: Voiding Invalid Data
@@ -29,7 +31,11 @@ This action is used when the source transaction (the "Expected" item) is invalid
 
 Action: `Fix Entries`
 
-If the source transaction is valid and represents real money, but the automated match hasn't happened, users can intervene using the three options below.
+If the source transaction is valid and represents real money, but the automated match hasn't happened, users can intervene using the three options below
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.34.16 PM.png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### Option 1: Edit Entry
 
@@ -67,3 +73,12 @@ This allows you to unlink the current "Expected" entry and replace it with a dif
 * When to use:
   * Wrong Ledger Account: The expectation was generated for the "USD Ledger" but the transaction actually belongs to the "EUR Ledger." You replace it with the correctly parsed entry
   * Corrupted Source Data: The source event was malformed. You replace it with a clean version of the event so the system can properly search for the counterparty
+
+#### Summary: Which Button Should I Click?
+
+| If your problem is...                                                                                                                         | Use this Resolution |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| <p>"This expectation is valid, but the amount/data is wrong."<br><br>(e.g., You know the bank will send $95, but the system expects $100)</p> | Edit Entry          |
+| <p>"I see the money in the bank, but no file is coming."<br><br>(e.g., Cash, Check, or missing API feed)</p>                                  | Mark as Received    |
+| <p>"This is a duplicate or test record."<br><br>(e.g., A developer test transaction)</p>                                                      | Ignore Transaction  |
+| <p>"The system generated this expectation from the wrong data."<br><br>(e.g., Linked to the wrong ledger entity)</p>                          | Replace Entry       |
