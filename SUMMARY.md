@@ -30,6 +30,7 @@
     * [Example: E Commerce](about-hyperswitch/payments-modules/reconciliation-product/example-e-commerce.md)
     * [Exception Handling](about-hyperswitch/payments-modules/reconciliation-product/example-e-commerce-1/README.md)
       * [Resolution Strategies for Mismatched Exceptions](about-hyperswitch/payments-modules/reconciliation-product/example-e-commerce-1/resolution-strategies-for-mismatched-exceptions.md)
+      * [Resolution Strategies for 'Expected' Exceptions](about-hyperswitch/payments-modules/reconciliation-product/example-e-commerce-1/resolution-strategies-for-expected-exceptions.md)
     * [Roadmap](about-hyperswitch/payments-modules/reconciliation-product/roadmap.md)
   * [Reconciliation V1](about-hyperswitch/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](about-hyperswitch/payments-modules/reconciliation/getting-started-with-recon.md)
