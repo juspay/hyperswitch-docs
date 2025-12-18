@@ -43,6 +43,8 @@ If the source transaction is valid and represents real money, but the automated 
 
 Unlike the Mismatched workflow where you are fixing a break, here you are modifying the Source Expectation itself—often _before_ the counterparty data has even arrived. This is used when you realize the internal system generated an incorrect expectation and you want to correct it so that when the bank file _does_ arrive, it matches automatically
 
+> ⚠️ **Important Operational Note**: Modifying an entry manually removes it from the automated reconciliation queue. Because you have manually intervened, the system will stop trying to "guess" a match for this transaction. When the counterparty data (Right Side) finally arrives, you must manually reconcile or "Mark as Received" to close this expectation.
+
 * Primary Purpose: To correct the internal source record (Left Side) because the upstream data was wrong, ensuring a clean match when the partner data finally lands
 * Target: Modifies the `Expected_Amount` or metadata of the source entry.
 * When to use:
