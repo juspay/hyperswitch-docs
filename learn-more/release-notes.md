@@ -62,7 +62,7 @@ Highlights
 
 <details>
 
-<summary>December 6th - 15th, 2025</summary>
+<summary>December 6th - 12th, 2025</summary>
 
 Highlights
 
