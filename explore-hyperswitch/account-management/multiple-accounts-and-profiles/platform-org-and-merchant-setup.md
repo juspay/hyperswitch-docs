@@ -18,12 +18,14 @@ Think of it as a “meta-organization” that can:
 
 
 
-API keys for Platform Merchant Account has **two purposes**:
+The **Platform API Key** has a single, specific purpose:
 
-1. It can be used **like any normal merchant API key** for the Platform Merchant’s _own account_ (payments, refunds, connectors, etc.)
-2. It can also be used to **create sibling merchants** and **generate API keys for those sibling merchants**
-   1. Platform API Key = dual-purpose key
-   2. Sibling Merchant API Keys = operational keys for those merchants
+* Management Only: It is used strictly to create sibling merchants and generate API keys for those sibling merchants.
+
+> Important Distinction:
+>
+> * Platform API Key: A purely administrative key. It cannot be used for payment processing, refunds, or connector configuration (even for the Platform Merchant itself).
+> * Sibling Merchant API Keys: Operational keys used to actually process payments and connect connectors.
 
 
 
@@ -117,7 +119,11 @@ graph TD
 
 #### Step 5 — Perform Payment Operations Using Merchant Keys
 
-Once sibling merchants are created and their API keys are generated, those keys become the **operational keys** for those merchants — meaning all payment operations (payments, refunds) and connector actions must be carried out with the sibling merchant’s own API key. The **Platform API Key cannot directly perform payments or connector operations for sibling merchants**; its role there is only to create merchants and issue their keys. However, the Platform API Key **does work like a normal merchant key for the Platform Merchant itself**, so it can connect connectors and process payments on the Platform Merchant’s own account.
+Once sibling merchants are created and their API keys are generated, those keys become the **operational keys** for those merchants — meaning all payment operations (payments, refunds) and connector actions must be carried out with the sibling merchant’s own API key.
+
+The **Platform API Key cannot directly perform payments or connector operations for sibling merchants**; its role there is only to create merchants and issue their keys.
+
+
 
 **5.1 Connector Setup**
 
@@ -143,15 +149,11 @@ To process payments, refunds etc., the platform uses the sibling merchant’s AP
 
 This ensures **isolation**: every payment is always tied to the correct merchant account, even if the platform is the one initiating it.
 
-**5.3 Payments via the Platform Merchant Itself**
-
-In addition to operating sibling merchants, the platform can also make payments **on its own account** (for example, if it needs to use its own connector account)
-
-* In this case, the **Platform Merchant** (the one created when Platform Org was enabled) can:
-  * Connect connectors to its own account either via API call or directly through the **Dashboard** (like any other merchant)
-  * Use its own API keys to process payments as a normal merchant
-
 ### Difference Between Regular Organization and Platform Organization
 
-<table><thead><tr><th>Aspect</th><th width="230">Regular Organization</th><th>Platform Organization</th></tr></thead><tbody><tr><td><strong>Who creates new merchants</strong></td><td><strong>Org admin</strong> must log in to the Hyperswitch Dashboard and manually create merchants.</td><td>All Regular Org capabilities <strong>+ Platform Merchant account</strong> (via Platform API Key) can programmatically create new merchants through APIs.</td></tr><tr><td><strong>Who generates API keys for merchants</strong></td><td><strong>Org admin</strong> uses the Dashboard to generate API keys for each merchant manually.</td><td>All Regular Org capabilities <strong>+ Platform Merchant account</strong> can use the <strong>Platform API Key</strong> to generate merchant API keys via APIs for sibling merchants.</td></tr><tr><td><strong>Connector setup</strong></td><td><p>We have three valid paths:</p><p><strong>A) Dashboard (Org Admin)</strong>:<br>• Org Admin logs in → navigates to target Merchant → Connectors pages → adds/configures connectors <strong>manually</strong><br></p><p><strong>B) Dashboard (Merchant Admin)</strong>:<br>• Merchant Admin logs in → its own Merchant → Connectors pages →  adds/configures connector  <strong>manually</strong><br></p><p><strong>C) API (Merchant)</strong>:<br>• Use the Merchant’s own API key to hit connector endpoints <strong>programmatically</strong> for that merchant</p></td><td><p>All Regular Org connector options + <strong>platform-driven programmatic setup</strong><br></p><p><strong>How Platform does it (critical rule)</strong>:<br>• <strong>Generate a Merchant API Key</strong> for the target sibling merchant (using the Platform API Key)<br>• Use that <strong>Merchant API Key</strong> to call connector endpoints for that merchant.<br>• The Platform API Key itself cannot connect connectors; it’s a <strong>management key</strong><br></p><p><strong>Also valid (same as regular):</strong><br>• Org/Merchant Admin can still do manual setup in Dashboard for their own merchant</p></td></tr></tbody></table>
-
+| Feature                   | Regular Organization                                                                                                               | Platform Organization                                                                                                                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Who creates new merchants | Org Admin must log in to the Dashboard and manually create merchants.                                                              | Platform Merchant (via Platform API Key) can programmatically create new merchants through APIs.                                                                                              |
+| Who generates API keys    | Org Admin uses the Dashboard to generate API keys manually.                                                                        | Platform Merchant can use the Platform API Key to generate merchant API keys programmatically for any sibling merchant.                                                                       |
+| Connector Setup           | <p>Manual: Org/Merchant Admin configures connectors via Dashboard.<br><br>API: Merchant uses its own key to configure via API.</p> | <p>Programmatic: The platform generates a Sibling Merchant Key and uses that key to configure connectors via API.<br><br>(Note: The Platform API Key itself cannot configure connectors).</p> |
+| Payment Processing        | Standard: Merchant uses their own API key.                                                                                         | Delegated: Platform uses the specific Sibling Merchant Key to process payments on their behalf.                                                                                               |
