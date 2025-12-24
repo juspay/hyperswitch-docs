@@ -24,9 +24,11 @@ Add it via CLI:
 claude mcp add --transport http mint-hyperswitch https://api-reference.hyperswitch.io/mcp
 ```
 On successfully adding this, you should see this output in CLI:
+
 ![mcp-add](../../.gitbook/assets/mcp-add.png)
 
 Run `claude` and verify if MCP was configured properly using `/mcp`. You should see an output similar to:
+
 ![mcp-verify](../../.gitbook/assets/mcp-verify.png)
 
 #### For configuring other MCP clients (Cursor / Claude Desktop / etc.)
