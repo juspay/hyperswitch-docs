@@ -1,5 +1,6 @@
 ---
 description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+hidden: true
 ---
 
 # 🔌 WooCommerce Plugin
@@ -49,7 +50,5 @@ In addition to the above, Hyperswitch also offers
 * **Refunds** - In cases where you need to issue a refund to a customer, the Hyperswitch plugin streamlines this process within your Woocommerce Dashboard.
 * **Sync Payments** - With the Hyperswitch plugin integrated into your Woocommerce Dashboard, you have the flexibility to manually sync payment status whenever necessary. This feature allows you to ensure accurate payment status representation and maintain consistent order management.
 * **Real-time Order Updates** - Hyperswitch facilitates seamless order updates through **webhooks**, allowing you to automate various order management processes.
-
-
 
 ###
