@@ -11,58 +11,41 @@ This MCP server is only meant for product exploration while using sandbox enviro
 
 **Prerequisites**: Ensure you have an MCP client installed (Cursor, Claude Desktop, Cline, etc.)
 
-### Step 1: Install the MCP Server
+**MCP URL:** `https://api-reference.hyperswitch.io/mcp`
 
-Open terminal and run the command given below
+### Step 1: Configure the HyperSwitch-Mintlify MCP server
+
+HyperSwitch's Mintlify MCP server lets your AI client search HyperSwitch docs and safely explore Sandbox APIs as tools (e.g., create a payment and get a 3DS/redirect URL).
+
+#### Recommended: Claude Code
+
+Add it via CLI:
+```bash
+claude mcp add --transport http mint-hyperswitch https://api-reference.hyperswitch.io/mcp
+```
+On successfully adding this, you should see this output in CLI:
+![mcp-add](../../.gitbook/assets/mcp-add.png)
+
+Run `claude` and verify if MCP was configured properly using `/mcp`. You should see an output similar to:
+![mcp-verify](../../.gitbook/assets/mcp-verify.png)
+
+#### For configuring other MCP clients (Cursor / Claude Desktop / etc.)
+
+Follow Mintlify's [client-specific setup guide](https://www.mintlify.com/docs/ai/model-context-protocol?_gl=1*1m5cmfd*_gcl_au*MTY1NjU2NDE1LjE3NjY0NzY1MzE.#example:-connect-to-the-mintlify-mcp-server) using the same MCP: `https://api-reference.hyperswitch.io/mcp`
+
+
+### Step 2: Make your first payment
+
+Paste below prompt in your AI client after replacing with your sandbox `API_KEY`:
 
 ```bash
-npx mint-mcp add api-reference.hyperswitch.io
-```
-
-### Step 2: Configure your MCP Server
-
-*   Enter your Hyperswitch API key (You can generate one from the developer section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/developer-api-keys))
-
-
-
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 6.59.56 AM (1).png" alt=""><figcaption></figcaption></figure>
-*   Select your preferred MCP client from the prompt.
-
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.00.02 AM (1).png" alt=""><figcaption></figcaption></figure>
-
-### Step 3: Run the Server
-
-On completing step 2, you will get an output similar to&#x20;
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.02.01 AM.png" alt=""><figcaption></figcaption></figure>
-
-You can then just copy the command and run it:
-
-```
-node <path to your local folder>/.mcp/api-reference.hyperswitch.io/src/index.js
-```
-
-Once done, you will see this as output:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-07-07 at 7.07.18 AM.png" alt=""><figcaption></figcaption></figure>
-
-### Step 4: Enable in your MCP Client
-
-* Go to integrations (or MCP tools) section in your MCP client
-* Look for the locally available MCP tool: `api.reference.hyperswitch.io` \
-  Eg. in Claude Desktop go to Search and Tools button in the chat box, or in Cursor go to the settings and then MCP tools section.&#x20;
-
-### Step 5: Make your First Payment
-
-Paste this prompt in your MCP Client:
-
-```
-Make a payment of 100 USD via Hyperswitch.
+Make a 100 EUR payment via Hyperswitch V1 in sandbox.
+Sandbox API key: <YOUR_SANDBOX_API_KEY>
 ```
 
 #### **Output:**&#x20;
 
-You can head on to payment section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/payments) and verify the payment with the time stamp and status as `REQUIRES_PAYMENT_METHOD` .
+You can head on to payment section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/payments) and verify the payment with the time stamp and status as `REQUIRES_CUSTOMER_ACTION` (depending on the flow you selected - 3DS vs No3DS).
 
 {% hint style="warning" %}
 Responses from AI tools can be incorrect, use with caution.\
