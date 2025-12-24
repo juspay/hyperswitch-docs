@@ -234,7 +234,6 @@
     * [Import data to Hyperswitch](explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch.md)
     * [Export data from Hyperswitch](explore-hyperswitch/account-management/data-migration/export-data-from-hyperswitch.md)
   * [SMTP Server Integration](explore-hyperswitch/account-management/smtp-server-integration.md)
-  * [\[Beta\] Embeddable Components](explore-hyperswitch/account-management/beta-embeddable-components.md)
 * [Security and Compliance](explore-hyperswitch/security-and-compliance/README.md)
   * [PCI Compliance](explore-hyperswitch/security-and-compliance/pci-compliance.md)
   * [Data Security](explore-hyperswitch/security-and-compliance/security.md)
