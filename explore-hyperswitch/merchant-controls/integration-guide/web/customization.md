@@ -45,6 +45,26 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
+### 1.3 Saved Methods Customization
+
+In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.\
+\
+This layout optimizes for faster repeat payments while still supporting new payment method entry in a single, seamless flow.\
+\
+**One-click wallets** such as Google Pay, Apple Pay, and PayPal are always shown at the top of the checkout to enable faster, low-friction payments. This is available for both Accordion and Tabs layout.
+
+```
+var paymentElementOptions = {
+   layout: {
+    savedMethodCustomization: {
+      groupingBehavior: "groupByPaymentMethods",
+    }
+  }
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
 ## 2. Wallets
 
 The wallet customization feature lets users configure payment options like Apple Pay, Google Pay, PayPal, and Klarna. It includes a `walletReturnUrl` for post-payment redirects and a `style` property to customize the wallet's appearance, offering flexibility for seamless integration.
