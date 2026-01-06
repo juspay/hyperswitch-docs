@@ -100,3 +100,38 @@ With these sections:
 * Infrastructure Fixes: Increased `RUST_MIN_STACK` size to prevent stack overflow errors in heavy environments and improved error handling for 3DS authentication strategies. \[[#10730](https://github.com/juspay/hyperswitch/pull/10730), [#10722](https://github.com/juspay/hyperswitch/pull/10722)]
 
 </details>
+
+<details>
+
+<summary>December 25th - 31st, 2025</summary>
+
+#### Highlights
+
+* Advanced Error Structuring: Introduced structured error details to `payment_attempts`, allowing for a more granular breakdown of failures at each stage of the transaction attempt.
+* Redirection & SDK Session Support: Refactored the order creation interface to support seamless redirection and SDK session tokens for Trustpay and Payme, improving high-conversion checkout flows.
+* Proxy V2 Volatile ID Support: Added support for volatile payment method IDs within Proxy V2, enabling more flexible and secure handling of temporary payment method tokens.
+* Unified Payment Architecture: Transitioned core logic from "Preprocessing" to "Granular Flow" and unified gateway context handling to simplify payment processing and improve overall system reliability.
+* Payout Transparency: Enhanced connector event logging to propagate `payout_id`, providing better audit trails and visibility for payout lifecycle management.
+
+#### Connector expansions and enhancements
+
+* Zift: Updated transaction logic to use `Ecommerce` industry type categorization instead of simple card-present/not-present flags for more accurate processing. \[[#10775](https://github.com/juspay/hyperswitch/pull/10775)]
+* FINIX: Added comprehensive support for webhooks and statement descriptors to improve reconciliation and transaction clarity on bank statements. \[[#10758](https://github.com/juspay/hyperswitch/pull/10758)]
+* Finix (WASM): Enhanced security for the WASM integration by adding merchant source verification keys. \[[#10792](https://github.com/juspay/hyperswitch/pull/10792)]
+* Trustpay & Payme: Refactored the create order interface to better handle redirection and SDK-based session tokens. \[[#10779](https://github.com/juspay/hyperswitch/pull/10779)]
+* WorldpayWPG: Fixed a critical bug in the 3DS challenge endpoint to ensure smooth cardholder authentication. \[[#10772](https://github.com/juspay/hyperswitch/pull/10772)]
+
+#### Customer and access management
+
+* Proxy V2 Enhancement: Integrated volatile payment method ID support, allowing for more dynamic management of temporary payment identifiers in proxy-based workflows. \[[#10597](https://github.com/juspay/hyperswitch/pull/10597)]
+* Platform Trackers: Added support for update trackers within the platform payment models, enabling better state monitoring across different entities. \[[#10691](https://github.com/juspay/hyperswitch/pull/10691)]
+* Payout Updates: Introduced a manual update API for payouts, giving merchants more control over modifying payout statuses when automated syncs are unavailable. \[[#10539](https://github.com/juspay/hyperswitch/pull/10539)]
+
+#### Routing and core improvements
+
+* Granular Flow Architecture: Successfully migrated core preprocessing logic to the new Granular Flow, optimizing how requests are handled before authorization. \[[#10778](https://github.com/juspay/hyperswitch/pull/10778)]
+* Error Detail Framework: Enhanced the `payment_attempts` model to include structured error details, which helps in identifying whether failures originated from the issuer, network, or connector. \[[#10646](https://github.com/juspay/hyperswitch/pull/10646)]
+* Unified Context Handling: Simplified the payment processing logic by unifying gateway context handling (v2), reducing technical debt and improving performance. \[[#10774](https://github.com/juspay/hyperswitch/pull/10774)]
+* Connector Event Enrichment: Enabled the propagation of `payout_id` within connector events to ensure end-to-end traceability for every payout attempt. \[[#10518](https://github.com/juspay/hyperswitch/pull/10518)]
+
+</details>
