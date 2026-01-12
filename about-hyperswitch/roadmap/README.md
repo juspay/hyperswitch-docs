@@ -87,7 +87,7 @@ We plan to expand connector coverage with new PSP integrations including Banco D
 
 We also plan to enhance existing integrations to expand payment method coverage and improve reliability. This will include Payload (ACH), Itau Bank (Pix, Boleto), Stripe Connect (Apple Pay, Google Pay), Dwolla (ACH recurring), Worldpay WPG (3DS cards with fraud ID), Xendit (QRIS), and Deutsche Bank.
 
-Learn more about the existing Connectors supported in Hyperswitch [here](https://docs.hyperswitch.io/explore-hyperswitch/connectors).
+[Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
 ### Vault
 
@@ -111,7 +111,7 @@ We plan to support configurable and merchant-defined token formats across Vault 
 
 We plan to add analytics, audit trails, and observability capabilities for the Vault service, improving traceability, governance, and operational debugging.
 
-Learn more about the existing Vault Services and workflows [here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault).
+[Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
 ### Authentication and Checkout Experience
 
@@ -143,7 +143,7 @@ We plan to enable subscription-based events across SDK flows, allowing merchants
 
 We plan to support custom in SDK messaging so merchants can configure and display contextual messages (info, warnings, errors, compliance text) within the Hyperswitch SDK UI, with an optional fallback to default SDK messaging for a consistent user experience.
 
-Learn more about the existing Authentication and Checkout Experience capabilities [here](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls).
+[Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls)
 
 ### Revenue Recovery
 
@@ -159,7 +159,7 @@ We plan to add analytics that provide merchants with real-time visibility into r
 
 We plan to support using self-hosted orchestration with Juspay-hosted revenue recovery, enabling merchants to adopt recovery improvements without changing their orchestration deployment model.
 
-Learn more about the existing Revenue Recovery features and workflows [here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery).
+[Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
 ### Reconciliation
 
@@ -175,7 +175,7 @@ We plan to enable merchants to establish tolerance rules for automatic reconcili
 
 We plan to offer a comprehensive end-to-end reconciliation view of a transaction across multiple systems, improving auditability and issue triage.
 
-Learn more about the existing Reconciliation features and workflows here.
+[Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 
 ### Control Centre
 
