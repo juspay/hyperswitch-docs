@@ -163,17 +163,11 @@ We plan to support using self-hosted orchestration with Juspay-hosted revenue re
 
 ### Reconciliation
 
-**Aging**
+**Tolerance & Aging**
 
-We plan to provide visibility into transactions awaiting a match and allow time-based threshold monitoring to help teams track stale reconciliation items.
+We are enhancing reconciliation with **Tolerance Rules** and **Aging** to reduce manual effort and improve operational visibility. Merchants can define variance thresholds for automatic reconciliation, with any residual differences routed to a dedicated tolerance account for tracking and auditability.
 
-**Tolerance Rules**
-
-We plan to enable merchants to establish tolerance rules for automatic reconciliation when transaction amounts fall within a specified variance threshold.
-
-**Linked Analytics**
-
-We plan to offer a comprehensive end-to-end reconciliation view of a transaction across multiple systems, improving auditability and issue triage.
+Aging provides visibility into unmatched transactions and enables configurable time-based thresholds to proactively identify stale items. We plan to provide visibility into transactions awaiting a match and allow time-based threshold monitoring to help teams track stale reconciliation items.
 
 [Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 
@@ -193,7 +187,9 @@ We plan to introduce widgets for payment configuration and operations that can b
 
 **Theme Management UI**
 
-We plan to build a dedicated UI to configure and manage dashboard and email themes across organization, merchant, and profile levels. The UI will support brand colors, logos, favicons, and email branding with clear theme precedence and live preview.<br>
+We are building a self-serve Theme Management UI that allows merchants to configure and manage dashboard and email branding across **Organization, Merchant, and Profile** levels. Merchants can customize brand colors, sidebar styles, buttons, logos, favicons, and email branding, with a **live preview** to instantly visualize changes before applying them.
+
+Themes follow a clear precedence model (**Profile → Merchant → Organization**), enabling flexible overrides without duplication. Organizations can define a base theme, merchants can override it for distinct brands, and profiles can further customize when needed—ensuring consistent yet scalable branding across complex setup<br>
 
 **Want to contribute to the roadmap?**
 
