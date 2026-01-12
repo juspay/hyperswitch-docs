@@ -44,14 +44,14 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
+Last year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap includes updates for each module. A summary of these product modules is provided below :
 
-1. **Core Orchestration:** The core module supporting workflows unifying various connector
+1. **Orchestration:** The core module supporting workflows unifying various connector
 2. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
-3. **Authentication:** Data-driven 3DS routing decision system and unified authentication SDK to encompass the diversity of authentication products.
-4. ​​**Alternate Payment Method Widgets:** Embracing the ever-expanding diversity of payment methods and payment experiences through orchestration, and a simple add-on button to Checkout.
-5. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
-6. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
+3. **Authentication:** Data driven 3DS routing decision system and unified authentication SDK to encompass the diversity of authentication products.
+4. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
+5. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
+6. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
@@ -181,7 +181,7 @@ We plan to offer a comprehensive end-to-end reconciliation view of a transaction
 
 **Developer Observability & Self-Service Diagnostics**
 
-We plan to expose real-time technical metrics and system health insights for platforms, enabling faster self-diagnosis and reducing support dependency.
+We plan to expose real-time technical metrics and system health insights for platforms, enabling faster self-diagnosis and reducing dependency on support.
 
 **Contextual Alerts & Configurable Automation**
 
@@ -193,7 +193,7 @@ We plan to introduce widgets for payment configuration and operations that can b
 
 **Theme Management UI**
 
-We plan to build a dedicated UI to configure and manage dashboard and email themes across organization, merchant, and profile levels. The UI will support brand colors, logos, favicons, and email branding with clear theme precedence and live preview.
+We plan to build a dedicated UI to configure and manage dashboard and email themes across organization, merchant, and profile levels. The UI will support brand colors, logos, favicons, and email branding with clear theme precedence and live preview.<br>
 
 **Want to contribute to the roadmap?**
 
