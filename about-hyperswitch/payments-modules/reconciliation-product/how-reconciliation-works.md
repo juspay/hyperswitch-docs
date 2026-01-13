@@ -1,15 +1,5 @@
 # How Reconciliation Works
 
-{% hint style="info" %}
-**Note**:
-
-For Reconciliation V1, please check [here](../reconciliation/).
-
-We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
-
-All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
-{% endhint %}
-
 ### Reconciliation Engine: Rule-Based Architecture
 
 The Reconciliation Engine is the intelligent core that automatically matches and validates financial data. It does this by evaluating incoming **Staging Entries** against a set of configurable business rules. These rules dictate how transactions are processed and matched, providing the flexibility to handle complex reconciliation scenarios without code changes
@@ -97,4 +87,3 @@ This mode is for subsequent entries that confirm a previous transaction and allo
 3. **Validation**: Once a match is found, the engine evaluates the rule's match rules to ensure the fields (e.g., amounts, currencies) are consistent
 4. **Transaction Evolution**: If all match rules pass, the transaction is **evolved**. A new version of the transaction is created, marking the `EXPECTED` entry as **POSTED**. The old version is archived, preserving a complete, immutable audit trail
 5. **Final Balance Update**: The system's balances are updated to reflect the posted transaction, moving the money from the `EXPECTED` to the `POSTED` state
-

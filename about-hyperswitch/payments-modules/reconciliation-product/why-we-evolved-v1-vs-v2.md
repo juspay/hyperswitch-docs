@@ -1,16 +1,6 @@
 # Why we evolved(V1 vs V2)
 
-{% hint style="info" %}
-**Note**:
-
-For Reconciliation V1, please check [here](../reconciliation/).
-
-We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
-
-All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
-{% endhint %}
-
-Our V1 Reconciliation Engine has supported merchants since 5 years. It was purpose-built to solve high-volume transaction-matching problems like 2-way (processor ↔ internal) matches&#x20;
+Our V1 Reconciliation Engine has supported merchants since 5 years. It was purpose-built to solve high-volume transaction-matching problems like 2-way (processor ↔ internal) matches
 
 By focusing narrowly on the high-frequency scenarios, it could optimize its parsers and rule engine for speed and accuracy, rather than spreading complexity across edge cases
 
@@ -38,4 +28,3 @@ This comprehensive auditability includes:
 * Ingestion: A clear record of every file upload or scheduled data pull
 * Transformation: Visibility into how raw data from a source file was processed and transformed into a standardized, reconciliation-ready format
 * Transaction Evolution: An immutable history of every change to a transaction, ensuring that nothing is ever lost or altered without a record
-

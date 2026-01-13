@@ -1,15 +1,5 @@
 # Roadmap
 
-{% hint style="info" %}
-**Note**:
-
-For Reconciliation V1, please check [here](../reconciliation/).
-
-We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
-
-All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
-{% endhint %}
-
 #### Smarter Rules for Advanced Businesses
 
 * Support for **one-to-many & many-to-one rules** ensure the system works whether a single payout covers many sales or one sale spans multiple payouts

@@ -1,15 +1,5 @@
 # Core Concepts
 
-{% hint style="info" %}
-**Note**:
-
-For Reconciliation V1, please check [here](../reconciliation/).
-
-We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
-
-All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
-{% endhint %}
-
 ### How We Model Money
 
 At its core, our system treats money as **accounting data**. This approach, known as double-entry bookkeeping, provides powerful guarantees for financial integrity. It ensures that money is never created or lost, gives you a full audit trail, and provides clear, point-in-time balances for your finance and operations teams
