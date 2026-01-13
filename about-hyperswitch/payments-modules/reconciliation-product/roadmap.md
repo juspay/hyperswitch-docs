@@ -1,9 +1,5 @@
 # Roadmap
 
-#### Smarter Rules for Advanced Businesses
-
-* Support for **one-to-many & many-to-one rules** ensure the system works whether a single payout covers many sales or one sale spans multiple payouts
-
 #### Forex Handling
 
 * Support for merchant-provided exchange rates in cross-currency reconciliation. This will allow settlements and bank deposits in different currencies to be automatically aligned using the chosen FX rate, removing the need for manual conversions
