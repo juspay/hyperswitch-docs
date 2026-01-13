@@ -4,16 +4,6 @@ icon: database
 
 # Reconciliation
 
-{% hint style="info" %}
-**Note**:
-
-For Reconciliation V1, please check [here](../reconciliation/).
-
-We will continue to support Reconciliation V1 for all existing merchants. With the launch of V2, reconciliation is now a configurable experience — merchants will have the choice to continue with V1 or opt into V2 directly from the dashboard
-
-All your existing configurations and setups will seamlessly carry over to V2 with no additional effort required on your end. We recommend beginning the transition to Reconciliation V2 to take advantage of the latest features.
-{% endhint %}
-
 Are you truly confident that every customer payment lands in your bank account? For most businesses, the path from transaction to settlement is a complex maze of different providers, inconsistent data, and manual checks—a system ripe for revenue leakage, reporting errors, and compliance risks
 
 The reconciliation problem is further compounded by following factors:
@@ -30,4 +20,4 @@ Our Reconciliation Module is built on a powerful, accounting-grade ledger, apply
 | ------------------------------------------ | -------------------------------------------- |
 | [Roadmap](roadmap.md)                      | [Reconciliation V1](../reconciliation/)      |
 
-\
+\\
