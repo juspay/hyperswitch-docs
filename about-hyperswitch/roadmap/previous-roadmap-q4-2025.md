@@ -53,8 +53,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 * **Connectors**\
   We plan to expand connector coverage with new integrations including
-  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Applepay,Googlepay), Paysafe (Cards, Applepay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Applepay, Googlepay), Sift (FRM)
-  * **Enhancing existing integrations:** Stripe (Mobilepay, Sofort, Paypal,Blik) , Braintree(Venmo)
+  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Applepay,Googlepay), Paysafe (Cards, Applepay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Applepay, Googlepay)
 * **Core Orchestration**
   * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
 * **Improve Auth rate**
@@ -69,7 +68,6 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
     We plan to introduce real-time eligibility validation for payment methods during checkout. This will include:
 
-    * **Card Eligibility by BIN**: Verifying card eligibility upfront based on BIN (Bank Identification Number) data to prevent declines related to unsupported networks, regions, or card types.
     * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
 
 _<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
@@ -79,17 +77,12 @@ _<mark style="color:blue;">Learn more about the existing Core Orchestration and 
 *   **Guest Checkout Tokenization in Hyperswitch Vault**
 
     We plan to extend our vault capabilities to support guest checkout tokenization. This will allow merchants to create tokens without generating a customer ID in Hyperswitch, enabling secure and PCI-compliant handling of one-time or repeat transactions. Merchants will also have the flexibility to map these tokens to their own unique identifiers as needed.
-*   **Alt ID Flow for Network Tokenization in Guest Checkout**
-
-    We plan to support Alt ID–based network tokenization for guest checkout, allowing merchants to tokenize cards without customer creation. The Alt ID issued by the network replaces PAN in all downstream operations, ensuring PCI and network compliance while simplifying secure guest transactions.
 *   **Volatile Tokenization for PAN and Network Tokens**
 
     We plan to add support for volatile tokenization, allowing merchants to generate temporary tokens valid for a limited time. This will be particularly useful for transient payment flows such as session-based authorizations or one-time payments, providing enhanced flexibility and security without long-term storage in the vault.
 *   **Proxy API for Vault-Only Integrations**
 
     We are expanding the Proxy API to support merchants who choose to integrate solely with Hyperswitch Vault services. This will allow merchants to pass a card token in their requests, which Hyperswitch will substitute with the actual card details before routing the call to the target connector.
-
-    Additionally, the Proxy API will support multiple request formats, including form-URL-encoded and XML, to ensure easier interoperability with existing gateway or legacy systems.
 
 _<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
@@ -98,11 +91,6 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 *   **Authorization Uplift**
 
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
-
-    * **Fallback Recommendations**: In the event of a failed payment attempt, customers will be prompted with alternate payment methods such as wallets, BNPL, or UPI to complete their transaction seamlessly.
-*   **SDK Accessibility Enhancements**
-
-    We are enhancing the checkout SDK to ensure accessibility compliance and inclusivity for all users. Updates will include improved keyboard navigation, screen reader support, and visual contrast adjustments aligned with WCAG accessibility standards.
 
 #### **Revenue Recovery**
 
@@ -121,12 +109,6 @@ _<mark style="color:blue;">Learn more about the existing Revenue Recovery featur
   Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction level
 
 
-
-**Community Requests**\
-Based on popular community requests, we plan to take up the following features this quarter:
-
-* **Chase Connector Integration**: Addition of card processing support through Chase.
-* **Agentic Shopping Framework**: Enable merchants to embed payments within chatbots and AI-driven commerce experiences, aligned with emerging standards like Stripe’s agentic commerce and Google's AP2 initiatives.
 
 **Want to contribute to the roadmap?**
 
