@@ -105,6 +105,10 @@ With these sections:
 
 <summary>December 25th - 31st, 2025</summary>
 
+{% hint style="info" %}
+This will be deployed in production on or before 8th January 2025
+{% endhint %}
+
 #### Highlights
 
 * Advanced Error Structuring: Introduced structured error details to `payment_attempts`, allowing for a more granular breakdown of failures at each stage of the transaction attempt.
@@ -133,5 +137,57 @@ With these sections:
 * Error Detail Framework: Enhanced the `payment_attempts` model to include structured error details, which helps in identifying whether failures originated from the issuer, network, or connector. \[[#10646](https://github.com/juspay/hyperswitch/pull/10646)]
 * Unified Context Handling: Simplified the payment processing logic by unifying gateway context handling (v2), reducing technical debt and improving performance. \[[#10774](https://github.com/juspay/hyperswitch/pull/10774)]
 * Connector Event Enrichment: Enabled the propagation of `payout_id` within connector events to ensure end-to-end traceability for every payout attempt. \[[#10518](https://github.com/juspay/hyperswitch/pull/10518)]
+
+</details>
+
+<details>
+
+<summary>January 1st- 7th, 2025</summary>
+
+{% hint style="info" %}
+This will be deployed in production on or before 15th January 2025
+{% endhint %}
+
+#### **Highlights**
+
+1. Expanded analytics coverage for payouts with new audit and reporting capabilities.
+2. Improved platform visibility with richer payment response fields and better processor tracking.
+3. Strengthened connector support for Google Pay, mandates, and authentication flows.
+4. Continued improvements in tokenisation, routing accuracy, and API reliability.
+
+#### Connector expansions and enhancements
+
+1. Adyen and Barclaycard: authentication and wallet improvements
+   * Added Google Pay pre-decryption support for Adyen, improving wallet processing reliability ([#10806](https://github.com/juspay/hyperswitch/pull/10806))
+   * Introduced authentication flows for Barclaycard, enabling stronger step-up handling where required ([#10810](https://github.com/juspay/hyperswitch/pull/10810))
+2. Airwallex, Redsys, and Stripe: mandate and request handling fixes
+   * Fixed order creation consistency across all Airwallex flows ([#10768](https://github.com/juspay/hyperswitch/pull/10768))
+   * Resolved base64 padding and 3DS transaction ID mapping issues for Redsys ([#10757](https://github.com/juspay/hyperswitch/pull/10757), [#10784](https://github.com/juspay/hyperswitch/pull/10784))
+   * Added support for customer-initiated mandate payments and ensured `setup_future_usage` is passed for tokenised cards in Stripe flows ([#10815](https://github.com/juspay/hyperswitch/pull/10815))
+3. Paysafe and JPMorgan: token and request correctness
+   * Introduced a PaymentMethodToken flow for Paysafe connectors ([#10541](https://github.com/juspay/hyperswitch/pull/10541))
+   * Ensured correct field propagation in capture and void requests for JPMorgan ([#10617](https://github.com/juspay/hyperswitch/pull/10617))
+
+#### Customer and access management
+
+1. Platform-connected customer access
+   * Added support to retrieve customer details in platform-based payment flows, improving visibility in multi-merchant setups ([#10684](https://github.com/juspay/hyperswitch/pull/10684))
+2. Authentication model improvements
+   * Restructured authentication to use a unified platform model with initiator tracking, laying groundwork for more consistent auth handling across flows ([#10746](https://github.com/juspay/hyperswitch/pull/10746))
+
+#### Routing and core improvements
+
+1. Analytics and reporting
+   * Added compatibility for payouts in the Analytics API and introduced a payout audit table to support richer payout reporting and reconciliation ([#10479](https://github.com/juspay/hyperswitch/pull/10479), [#10842](https://github.com/juspay/hyperswitch/pull/10842), [#10588](https://github.com/juspay/hyperswitch/pull/10588))
+2. Payment response enrichment
+   * Added `processor_merchant_id` and `initiator` fields to payment responses, improving downstream observability and debugging ([#10804](https://github.com/juspay/hyperswitch/pull/10804))
+   * Updated post-update tracking to accept processor information for better lifecycle visibility ([#10743](https://github.com/juspay/hyperswitch/pull/10743))
+3. Tokenisation and payment method APIs
+   * Introduced CVC token payment method APIs (v2) and updated token generation and consumption logic to align with newer payment flows ([#10787](https://github.com/juspay/hyperswitch/pull/10787), [#10835](https://github.com/juspay/hyperswitch/pull/10835))
+4. Network and error handling
+   * Added `connector_response_reference_id` to error responses, improving traceability across failed requests ([#10816](https://github.com/juspay/hyperswitch/pull/10816))
+   * Began passing network tokens directly in payment requests for supported flows ([#9975](https://github.com/juspay/hyperswitch/pull/9975))
+5. Routing correctness and stability
+   * Ensured `setup_future_usage` is populated using intent data within router state, reducing inconsistencies in saved payment behaviour ([#10829](https://github.com/juspay/hyperswitch/pull/10829))
 
 </details>
