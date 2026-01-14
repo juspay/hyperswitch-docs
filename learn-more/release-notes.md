@@ -6,6 +6,10 @@ description: >-
 
 # Release Notes
 
+{% hint style="info" %}
+These release notes are exclusively applicable to the Hyperswitch SaaS (Hosted) platform. If you are utilizing the self-hosted version, please refer to the Hyperswitch Open Source release notes available [here](https://github.com/juspay/hyperswitch/releases).
+{% endhint %}
+
 Hyperswitch is a fast-moving open source payments orchestration platform. We ship improvements across routing, vaulting, reconciliation, connectors, SDKs, and developer experience.
 
 This page serves as a central place to track what is shipping in Hyperswitch.
@@ -191,3 +195,7 @@ This will be deployed in production on or before 15th January 2025
    * Ensured `setup_future_usage` is populated using intent data within router state, reducing inconsistencies in saved payment behaviour ([#10829](https://github.com/juspay/hyperswitch/pull/10829))
 
 </details>
+
+{% hint style="info" %}
+Need granular technical details? You can access the full Changelog [here](https://github.com/juspay/hyperswitch/blob/main/CHANGELOG.md).
+{% endhint %}
