@@ -25,7 +25,7 @@ With these sections:
 
 <details>
 
-<summary>December 12th - 17th, 2025</summary>
+<summary>December 10th - 16th, 2025</summary>
 
 #### Highlights
 
@@ -64,7 +64,7 @@ With these sections:
 
 <details>
 
-<summary>December 18th - 24th, 2025</summary>
+<summary>December 17th - 23th, 2025</summary>
 
 #### Highlights
 
@@ -103,7 +103,7 @@ With these sections:
 
 <details>
 
-<summary>December 25th - 31st, 2025</summary>
+<summary>December 24th - 30th, 2025</summary>
 
 {% hint style="info" %}
 This will be deployed in production on or before 8th January 2025
@@ -142,7 +142,7 @@ This will be deployed in production on or before 8th January 2025
 
 <details>
 
-<summary>January 1st- 7th, 2025</summary>
+<summary>December 31st 2025 - January 6th, 2026</summary>
 
 {% hint style="info" %}
 This will be deployed in production on or before 15th January 2025
