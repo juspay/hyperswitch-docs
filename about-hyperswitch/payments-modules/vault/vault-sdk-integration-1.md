@@ -1,15 +1,15 @@
 ---
 description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+  Learn how to tokenize cards at Hyperswitch Vault Service using our
+  Vault/Payment Methods Management SDK
 icon: desktop
 ---
 
-# Payment Methods Management SDK - JS with REST API Integration
+# Vault SDK - JS with REST API Integration
 
 ## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 
@@ -19,9 +19,9 @@ The Hyperswitch Payment Methods Management SDK provides a secure solution for me
 * **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
 * **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
-## Payment Methods Management SDK Integration Walkthrough
+## Vault SDK Integration Walkthrough
 
-This document provides step-by-step instructions for integrating the Hyperswitch Payment Methods Management SDK into your application.
+This document provides step-by-step instructions for integrating the Hyperswitch Vault/Payment Methods Management SDK into your application.
 
 ### 1. Server-Side Setup
 
@@ -84,7 +84,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 ### 2. Client-Side Integration
 
-Once your server endpoint is set up, you'll need to integrate the Payment Methods Management SDK into your client application.
+Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
 
 #### 2.1 Define the Payment Methods Management Form
 
@@ -156,6 +156,65 @@ async function initialize() {
 
 // Call initialize when page loads or when user clicks a button
 initialize();
+```
+
+#### 2.3 Complete tokenization and handle errors
+
+Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
+
+If there are any immediate errors (for example, invalid request parameters), Hyper returns an error object. Show this error message to your customer so they can try again.
+
+```javascript
+async function handleSubmit(e) {
+  setMessage("");
+  e.preventDefault();
+
+  // Ensure Hyper is initialized
+  if (!hyper || !paymentMethodsManagementElements) {
+    return;
+  }
+
+  setIsLoading(true);
+
+  try {
+    const response = await hyper.confirmTokenization({
+      paymentMethodsManagementElements,
+      confirmParams: {
+        // URL to redirect the user after authentication (if required)
+        return_url: "https://example.com/complete",
+      },
+      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
+    });
+
+    // Tokenization succeeded
+    if (response?.id) {
+      // You can use the returned payment method/session token here
+      handleTokenRetrieval(response);
+    } else {
+      // Handle immediate errors returned by Hyper
+      const error = response?.error;
+
+      if (error) {
+        if (error.type === "card_error" || error.type === "validation_error") {
+          setMessage(error.message);
+        } else {
+          if (error.message) {
+            setMessage(error.message);
+          } else {
+            setMessage("An unexpected error occurred.");
+          }
+        }
+      } else {
+        setMessage("An unexpected error occurred.");
+      }
+    }
+  } catch (err) {
+    setMessage(err.message || "An unexpected error occurred.");
+  } finally {
+    setIsLoading(false);
+  }
+}
+
 ```
 
 Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.
