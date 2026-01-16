@@ -198,7 +198,7 @@ This will be deployed in production on or before 15th January 2025
 
 <details>
 
-<summary>January 7th - 14th, 2026</summary>
+<summary>January 7th - 13th, 2026</summary>
 
 {% hint style="info" %}
 This will be deployed in production on or before 22nd January 2025
