@@ -146,7 +146,7 @@ This will be deployed in production on or before 8th January 2025
 
 <details>
 
-<summary>December 31st 2025 - January 6th, 2026</summary>
+<summary>December 31st, 2025 - January 6th, 2026</summary>
 
 {% hint style="info" %}
 This will be deployed in production on or before 15th January 2025
@@ -193,6 +193,50 @@ This will be deployed in production on or before 15th January 2025
    * Began passing network tokens directly in payment requests for supported flows ([#9975](https://github.com/juspay/hyperswitch/pull/9975))
 5. Routing correctness and stability
    * Ensured `setup_future_usage` is populated using intent data within router state, reducing inconsistencies in saved payment behaviour ([#10829](https://github.com/juspay/hyperswitch/pull/10829))
+
+</details>
+
+<details>
+
+<summary>January 7th - 14th, 2026</summary>
+
+{% hint style="info" %}
+This will be deployed in production on or before 22nd January 2025
+{% endhint %}
+
+#### Highlights
+
+* Introduced decrypted wallet flows for **Apple Pay and Google Pay**, expanding secure wallet acceptance across supported connectors.
+* Expanded UPI, QR, and local payment method coverage with new connector capabilities.
+* Strengthened authentication, webhook reliability, and payment error visibility across core flows.
+
+#### Connector expansions and enhancements
+
+* Added **Apple Pay and Google Pay decrypted flow support** for wallet payments([#10329](https://github.com/hyperswitch/hyperswitch/pull/10329))
+* Enabled **QRIS payment methods** for the Xendit connector([#10759](https://github.com/hyperswitch/hyperswitch/pull/10759))
+* Added **gift card balance check support** for the Blackhawknetwork connector([#10897](https://github.com/hyperswitch/hyperswitch/pull/10897))
+* Enabled **Trustly and Interac** payment methods in the HS<>UCS tunnel([#10838](https://github.com/hyperswitch/hyperswitch/pull/10838))
+* Added **UPI source support** for UPI payments in UCS([#10675](https://github.com/hyperswitch/hyperswitch/pull/10675))
+* Extended **network token passthrough** support for Peach Payments at the merchant level([#10864](https://github.com/hyperswitch/hyperswitch/pull/10864))
+* Introduced **Worldpay Modular connector** support([#10795](https://github.com/hyperswitch/hyperswitch/pull/10795))
+
+#### Customer and access management
+
+* Added a **virtual machine for authentication CTP flows**, improving authentication scalability([#10803](https://github.com/hyperswitch/hyperswitch/pull/10803))
+* Introduced **pending authentication status** to authentication attempt tracking([#10833](https://github.com/hyperswitch/hyperswitch/pull/10833))
+* Added **authentication type filtering** for tokenisation flows([#10828](https://github.com/hyperswitch/hyperswitch/pull/10828))
+* Added **card expiry support** to Payment Methods v2([#10811](https://github.com/hyperswitch/hyperswitch/pull/10811))
+
+#### Routing and core improvements
+
+* Added **error details** to payment responses for improved failure diagnostics([#10799](https://github.com/hyperswitch/hyperswitch/pull/10799))
+* Introduced **intent\_fulfillment\_time configuration** for the temporary locker([#10877](https://github.com/hyperswitch/hyperswitch/pull/10877))
+* Added **webhook setup capabilities** to merchant routing responses([#10793](https://github.com/hyperswitch/hyperswitch/pull/10793))
+* Enabled **processor acceptance** for trigger payment webhooks([#10794](https://github.com/hyperswitch/hyperswitch/pull/10794))
+* Improved **payout webhook behaviour** when source verification is disabled([#10903](https://github.com/hyperswitch/hyperswitch/pull/10903))
+* Improved **shipping cost and tax handling** in payment update operations([#10805](https://github.com/hyperswitch/hyperswitch/pull/10805))
+* Added **MCC list support** to WASM for enhanced validation([#10780](https://github.com/hyperswitch/hyperswitch/pull/10780))
+* Improved **payment error propagation and masking**, including UCS and external service responses([#10865](https://github.com/hyperswitch/hyperswitch/pull/10865), [#10848](https://github.com/hyperswitch/hyperswitch/pull/10848))
 
 </details>
 
