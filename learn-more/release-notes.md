@@ -246,37 +246,43 @@ This will be deployed in production on or before 22nd January 2025
 
 Highlights
 
-Improved wallet payment support, helping more Apple Pay and Google Pay transactions go through smoothly across supported connectors.
-
-Expanded payment method coverage with stronger QR and gift card capabilities, improving local payment acceptance options.
-
-Made payments more reliable and easier to troubleshoot with clearer failure reasons, better webhook behaviour, and safer updates to payment details.
+* Improved authentication and platform access controls, with clearer separation between platform operations and connected account scope, along with better authentication event integration for smoother monitoring.
+* Expanded connector capabilities across order creation, split settlements, and enriched request metadata support to improve payment coverage and simplify reconciliation workflows.
+* Strengthened overall reliability with improved cancel flow visibility, safer refund validations, better retry traceability, and multiple connector specific stability fixes.
 
 ### Connector expansions and enhancements
 
-* Added support for Apple Pay and Google Pay decrypted wallet flows for wider wallet acceptance. ([#10329](https://github.com/juspay/hyperswitch/pull/10329))
-* Enabled QRIS payments via Xendit to support more QR-based checkout options. ([#10759](https://github.com/juspay/hyperswitch/pull/10759))
-* Added gift card balance check support for Blackhawknetwork. ([#10897](https://github.com/juspay/hyperswitch/pull/10897))
-* Improved network token support for Peach Payments, giving more flexibility for merchant token handling. ([#10864](https://github.com/juspay/hyperswitch/pull/10864))
-* Introduced Worldpay Modular connector support to expand gateway options. ([#10795](https://github.com/juspay/hyperswitch/pull/10795))
+* Enabled order creation support for the Nordea connector, allowing merchants to support order first workflows where an order reference is created before payment confirmation ([#10945](https://github.com/juspay/hyperswitch/pull/10945))
+* Added settlement split flow support for card payments in the Xendit connector, enabling platform and marketplace use cases where a single payment needs to be split across multiple recipients or settlement routes ([#10916](https://github.com/juspay/hyperswitch/pull/10916))
+* Enabled processing\_account\_id support via metadata across connector payload flows, improving compatibility for setups that require account level identifiers to correctly route or process transactions ([#10904](https://github.com/juspay/hyperswitch/pull/10904))
+* Enabled merchant order reference id support in CyberSource payment requests, improving reconciliation and making it easier for merchants to match connector transactions with internal order systems ([#10723](https://github.com/juspay/hyperswitch/pull/10723))
 
 ### Customer and access management
 
-* Improved scalability for authentication flows to better handle higher traffic volumes. ([#10803](https://github.com/juspay/hyperswitch/pull/10803))
-* Added better tracking for authentication attempts, including “pending” states for clearer visibility. ([#10833](https://github.com/juspay/hyperswitch/pull/10833))
-* Made tokenisation flows easier to manage with added filtering options. ([#10828](https://github.com/juspay/hyperswitch/pull/10828))
-* Added card expiry support in Payment Methods v2 for more complete saved payment method details. ([#10811](https://github.com/juspay/hyperswitch/pull/10811))
+* Distinguished platform self operations from connected scope operations for clearer access boundaries, reducing ambiguity in permissions and improving safety for platforms managing multiple connected merchants ([#10913](https://github.com/juspay/hyperswitch/pull/10913))
+* Added webhook integration for Authentication Service events, enabling merchants to subscribe to authentication related updates and build more responsive workflows around authentication outcomes ([#10900](https://github.com/juspay/hyperswitch/pull/10900))
+* Implemented embedded tokens to simplify authentication flows, reducing integration overhead and improving consistency in how authentication tokens are generated and passed across systems ([#10424](https://github.com/juspay/hyperswitch/pull/10424))
 
 ### Routing and core improvements
 
-* Added clearer error details in payment responses to speed up troubleshooting. ([#10799](https://github.com/juspay/hyperswitch/pull/10799))
-* Added configuration support to better control how long payment intents can remain active. ([#10877](https://github.com/juspay/hyperswitch/pull/10877))
-* Expanded webhook setup information inside routing responses for easier integrations. ([#10793](https://github.com/juspay/hyperswitch/pull/10793))
-* Improved trigger payment webhook handling to support more processor acceptance scenarios. ([#10794](https://github.com/juspay/hyperswitch/pull/10794))
-* Improved payout webhook behaviour for more consistent payout updates. ([#10903](https://github.com/juspay/hyperswitch/pull/10903))
-* Improved payment update handling for shipping cost and tax changes. ([#10805](https://github.com/juspay/hyperswitch/pull/10805))
-* Strengthened validation support for merchant category code (MCC) lists. ([#10780](https://github.com/juspay/hyperswitch/pull/10780))
-* Improved error handling and masking for safer and cleaner payment responses. ([#10865](https://github.com/juspay/hyperswitch/pull/10865), [#10848](https://github.com/juspay/hyperswitch/pull/10848))
+* Introduced MIT support using Limited Card Data, improving support for follow on payment scenarios such as subscriptions, top ups, and recurring merchant initiated charges without relying on full card detail storage ([#10965](https://github.com/juspay/hyperswitch/pull/10965))
+* Extended Cancel Flow support by enabling whole\_connector\_response in responses, giving merchants better visibility into connector side behaviour and making it easier to debug cancel or void failures ([#10981](https://github.com/juspay/hyperswitch/pull/10981))
+* Introduced balance check support at the core layer for stronger validation flows, helping support payment methods that require available balance checks before completing a transaction ([#10896](https://github.com/juspay/hyperswitch/pull/10896))
+* Added dual refunds validation for Chargeback + Refund scenarios, reducing the risk of conflicting post payment operations and improving correctness for refunds and dispute related flows ([#10533](https://github.com/juspay/hyperswitch/pull/10533))
+* Generated request id for every retry attempt in the consumer workflow to improve traceability, making retries easier to observe in logs and simplifying investigations during intermittent connector failures ([#10919](https://github.com/juspay/hyperswitch/pull/10919))
+* Added authentication data field in transaction responses for better debugging visibility, enabling merchants to more easily understand authentication state and outcomes during payment processing ([#10995](https://github.com/juspay/hyperswitch/pull/10995))
+
+### Fixes and stability improvements
+
+* Improved router error handling by changing “role info not found in redis” from 5xx to 4xx, reducing false server error signals and making failures easier to classify as configuration or access issues ([#10949](https://github.com/juspay/hyperswitch/pull/10949))
+* Fixed delayed capture automatic behaviour in the Adyen connector, improving stability for flows where payments are authorized first and captured later based on fulfilment or confirmation steps ([#10947](https://github.com/juspay/hyperswitch/pull/10947))
+* Improved PayPal error handling for clearer failure visibility, making it easier for merchants to debug issues and understand PayPal specific failure reasons ([#10942](https://github.com/juspay/hyperswitch/pull/10942))
+* Fixed Novalnet connector transaction id population during 2xx failure responses, improving reconciliation and investigation workflows even when failures are returned with successful HTTP codes ([#10901](https://github.com/juspay/hyperswitch/pull/10901))
+* Updated WorldpayWPG connector\_request\_reference\_id generation back to default logic, improving consistency and reducing unexpected differences in connector request identifiers ([#10961](https://github.com/juspay/hyperswitch/pull/10961))
+* Fixed Adyen mandate flows by skipping serialization of empty fields, improving connector compatibility and reducing avoidable request side failures in mandate based payments ([#10964](https://github.com/juspay/hyperswitch/pull/10964))
+* Re introduced legacy key store decryption behaviour for backward compatibility, helping ensure older integrations and encrypted data flows continue to work without disruption ([#10899](https://github.com/juspay/hyperswitch/pull/10899))
+* Fixed callback\_url placeholder value for the Payjustnowinstore connector, improving callback reliability and preventing incorrect placeholder values from being used in production flows ([#10937](https://github.com/juspay/hyperswitch/pull/10937))
+* Trimmed whitespace from phone numbers and country code in core flows, reducing formatting related validation failures and improving input consistency across integrations ([#10754](https://github.com/juspay/hyperswitch/pull/10754))
 
 </details>
 

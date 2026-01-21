@@ -17,7 +17,9 @@ In the Orchestrator Model, Hyperswitch acts as the central intelligence layer. Y
 
 ### Integration Flavors
 
-Depending on your UI requirements and where you choose to store sensitive card data, the Orchestrator Model supports four distinct implementation combination :
+Depending on your UI requirements and data sovereignty needs, the Orchestrator Model supports several implementation patterns. These configurations allow you to strike the optimal balance between User Experience (UX), Engineering Effort, and PCI Compliance Scope.
+
+Below are the four primary patterns:
 
 
 
