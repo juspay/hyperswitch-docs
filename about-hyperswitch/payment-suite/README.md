@@ -26,7 +26,7 @@ With the components defined, the next step is to select your integration archite
 
 There are two primary integration models:
 
-**1. Orchestrator Model :** You leverage Hyperswitch’s intelligent core to manage the payment lifecycle. Hyperswitch route payments dynamically to global processors (Stripe, Adyen, etc.) using the pre-built Connectors.
+**1.** [**Orchestrator Model** ](https://docs.hyperswitch.io/~/revisions/ym3YeydjfXLSnBIreBYp/about-hyperswitch/payment-suite/orchestrator-model)**:** You leverage Hyperswitch’s intelligent core to manage the payment lifecycle. Hyperswitch route payments dynamically to global processors (Stripe, Adyen, etc.) using the pre-built Connectors.
 
-**2. Vault and Proxy Model :** You utilize Hyperswitch strictly as a secure infrastructure layer (Vault & Pipe). You act as the orchestrator, defining the specific destination yourself, while Hyperswitch securely forwards the payload along with sensitive card data via a Proxy API.
+**2.** [**Vault and Proxy Model**](https://docs.hyperswitch.io/~/revisions/ym3YeydjfXLSnBIreBYp/about-hyperswitch/payment-suite/vault-and-proxy-model) **:** You utilize Hyperswitch strictly as a secure infrastructure layer (Vault & Pipe). You act as the orchestrator, defining the specific destination yourself, while Hyperswitch securely forwards the payload along with sensitive card data via a Proxy API.
 
