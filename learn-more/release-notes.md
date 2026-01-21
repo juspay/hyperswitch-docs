@@ -240,6 +240,46 @@ This will be deployed in production on or before 22nd January 2025
 
 </details>
 
+<details>
+
+<summary>January 14th - 20th, 2026</summary>
+
+Highlights
+
+Improved wallet payment support, helping more Apple Pay and Google Pay transactions go through smoothly across supported connectors.
+
+Expanded payment method coverage with stronger QR and gift card capabilities, improving local payment acceptance options.
+
+Made payments more reliable and easier to troubleshoot with clearer failure reasons, better webhook behaviour, and safer updates to payment details.
+
+### Connector expansions and enhancements
+
+* Added support for Apple Pay and Google Pay decrypted wallet flows for wider wallet acceptance. ([#10329](https://github.com/juspay/hyperswitch/pull/10329))
+* Enabled QRIS payments via Xendit to support more QR-based checkout options. ([#10759](https://github.com/juspay/hyperswitch/pull/10759))
+* Added gift card balance check support for Blackhawknetwork. ([#10897](https://github.com/juspay/hyperswitch/pull/10897))
+* Improved network token support for Peach Payments, giving more flexibility for merchant token handling. ([#10864](https://github.com/juspay/hyperswitch/pull/10864))
+* Introduced Worldpay Modular connector support to expand gateway options. ([#10795](https://github.com/juspay/hyperswitch/pull/10795))
+
+### Customer and access management
+
+* Improved scalability for authentication flows to better handle higher traffic volumes. ([#10803](https://github.com/juspay/hyperswitch/pull/10803))
+* Added better tracking for authentication attempts, including “pending” states for clearer visibility. ([#10833](https://github.com/juspay/hyperswitch/pull/10833))
+* Made tokenisation flows easier to manage with added filtering options. ([#10828](https://github.com/juspay/hyperswitch/pull/10828))
+* Added card expiry support in Payment Methods v2 for more complete saved payment method details. ([#10811](https://github.com/juspay/hyperswitch/pull/10811))
+
+### Routing and core improvements
+
+* Added clearer error details in payment responses to speed up troubleshooting. ([#10799](https://github.com/juspay/hyperswitch/pull/10799))
+* Added configuration support to better control how long payment intents can remain active. ([#10877](https://github.com/juspay/hyperswitch/pull/10877))
+* Expanded webhook setup information inside routing responses for easier integrations. ([#10793](https://github.com/juspay/hyperswitch/pull/10793))
+* Improved trigger payment webhook handling to support more processor acceptance scenarios. ([#10794](https://github.com/juspay/hyperswitch/pull/10794))
+* Improved payout webhook behaviour for more consistent payout updates. ([#10903](https://github.com/juspay/hyperswitch/pull/10903))
+* Improved payment update handling for shipping cost and tax changes. ([#10805](https://github.com/juspay/hyperswitch/pull/10805))
+* Strengthened validation support for merchant category code (MCC) lists. ([#10780](https://github.com/juspay/hyperswitch/pull/10780))
+* Improved error handling and masking for safer and cleaner payment responses. ([#10865](https://github.com/juspay/hyperswitch/pull/10865), [#10848](https://github.com/juspay/hyperswitch/pull/10848))
+
+</details>
+
 {% hint style="info" %}
 Need granular technical details? You can access the full Changelog [here](https://github.com/juspay/hyperswitch/blob/main/CHANGELOG.md).
 {% endhint %}
