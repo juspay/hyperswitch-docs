@@ -15,7 +15,7 @@ This model is ideal if you are planning to keep existing processor integrations 
 
 ### Integration Flavors
 
-You can implement this model using two primary combinations:
+Below are the common combinations using this model :
 
 1. [**Using Hyperswitch SDK and Hyperswitch Vault**](https://docs.hyperswitch.io/~/revisions/wda8x2AP0s0eeYYw2jGt/about-hyperswitch/payment-suite/using-hyperswitch-sdk-and-vault-hs-as-external-vault-solution)
 2. [**Using Merchant SDK and Hyperswitch Vault**](https://docs.hyperswitch.io/~/revisions/MdbUFT5VyrEZi4hV6Si5/about-hyperswitch/payment-suite/using-merchant-sdk-and-vault-hs-as-external-vault-solution)
