@@ -48,6 +48,7 @@
   * [Vault](explore-hyperswitch/payments-modules/vault/README.md)
     * [Server to Server Vault tokenization](about-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization.md)
     * [Vault SDK Integration](about-hyperswitch/payments-modules/vault/vault-sdk-integration.md)
+    * [Payment Methods Management SDK](explore-hyperswitch/payments-modules/vault/payment-methods-management-sdk.md)
     * [Vault SDK - JS with REST API Integration](about-hyperswitch/payments-modules/vault/vault-sdk-integration-1.md)
     * [Hyperswitch Vault: Pass Through Proxy Payments](explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments.md)
     * [Connect External Vaults to Hyperswitch Orchestration](explore-hyperswitch/payments-modules/vault/connect-external-vaults-to-hyperswitch-orchestration.md)
