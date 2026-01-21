@@ -10,7 +10,7 @@ Navigating these choices is easier when you view the ecosystem as four main bloc
 
 #### **The Four Core Components**
 
-**1.The SDK (Frontend) :** It is the client-side interface that resides in your website or mobile app; securely collects sensitive payment information like card numbers and pass on it to the backend.
+**1.The SDK (Frontend) :** The entry point for your payment flow. It resides in your frontend and is responsible for securely capturing sensitive payment information.
 
 **2. Intelligent Routing & Orchestration (Backend) :** The core of the operation. It manages the payment lifecycle, executes routing logic, and handles post-payment operations like refunds.
 
