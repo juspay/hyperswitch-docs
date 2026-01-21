@@ -6,7 +6,7 @@ icon: money-bills
 
 ## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.&#x20;
+Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.
 
 {% hint style="warning" %}
 [Account setup ](./)is a pre-requisite before you can test the payments.
@@ -30,15 +30,15 @@ Go ahead and connect any dummy processor, we'll show an example with the fauxpay
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.24 PM.png" alt=""><figcaption></figcaption></figure>
 
-Just connect and proceed with the provided credentials:&#x20;
+Just connect and proceed with the provided credentials:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.38 PM.png" alt=""><figcaption></figcaption></figure>
 
-From there, navigate back to the **Home** page and click on **Try it out**:&#x20;
+From there, navigate back to the **Home** page and click on **Try it out**:
 
 <figure><img src="../../.gitbook/assets/1-try-it-out.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;Input the credentials and Click on **Pay 100**: :
+Input the credentials and Click on **Pay 100**: :
 
 ```
 Card Number - 4242 4242 4242 4242
@@ -73,7 +73,7 @@ In case you have integrated the web client on your app and want to test a paymen
    Also make sure that you have configured at least 1 connector.
 4. **After payment, I see a `Page Not Found` error.**\
    This can be a demo playground issue and not an issue with the web client. Please make sure that the return URL is correctly set.
-5. **My transactions are  failing.** \
+5. **My transactions are failing.**\
    This can happen when the connector is not correctly configured. Please make sure that the configured API keys are correct. In case of card payments, make sure that you have enabled raw card processing on the connector dashboard.\
    An exhaustive list of error and the corrective items are [here](https://api-reference.hyperswitch.io/essentials/error_codes).
 
@@ -89,5 +89,4 @@ In case you have integrated the web client on your app and want to test a paymen
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../about-hyperswitch/payments-modules/ai-powered-cost-observability.md">ai-powered-cost-observability.md</a></td></tr></tbody></table>
-
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>

@@ -142,7 +142,7 @@ Power only what you need with Hyperswitch’s modular architecture. Integrate ju
 
 Automate and optimize how payments are routed, authorized, and split across providers with Hyperswitch’s flexible payment orchestration engine.
 
-[Tokenization and Card Vault →](about-hyperswitch/payments-modules/vault/)
+[Tokenization and Card Vault →](explore-hyperswitch/payments-modules/vault/)
 
 Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.
 
@@ -152,11 +152,11 @@ Securely store and reuse customer payment credentials across processors to reduc
 
 Control how transactions flow across payment providers with configurable routing logic and fallback options
 
-[Intelligent Routing →](about-hyperswitch/payments-modules/intelligent-routing/)
+[Intelligent Routing →](explore-hyperswitch/payments-modules/intelligent-routing/)
 
 Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.
 
-[Smart Retries →](about-hyperswitch/payments-modules/revenue-recovery.md)
+[Smart Retries →](explore-hyperswitch/payments-modules/revenue-recovery.md)
 
 Recover failed payments using ML-driven retry strategies optimized for timing, issuer behavior, and card type.
 

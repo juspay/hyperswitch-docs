@@ -44,7 +44,7 @@ Use the following command, replacing `<resource-group-name>` with your desired n
 az group create --name <resource-group-name> --location <location>
 ```
 
-&#x20;**Example:**
+**Example:**
 
 ```bash
 az group create --name myAKSResourceGroup --location eastus
@@ -125,7 +125,7 @@ az aks create --resource-group <resource-group-name> \
     --generate-ssh-keys
 ```
 
-_For example:_&#x20;
+_For example:_
 
 ```
 az aks create \
@@ -143,7 +143,7 @@ _Note_: The `--generate-ssh-keys` parameter will create SSH keys if they do not 
 
 Once your AKS cluster is created, you can connect to it using `kubectl`.
 
-8. &#x20;**Retrieve the cluster credentials:**
+8. **Retrieve the cluster credentials:**
 
 This command configures your local `kubectl` context to interact with the AKS cluster:
 
@@ -159,7 +159,7 @@ Run the following to ensure you're connected and the node is active:
 kubectl get nodes
 ```
 
-You should see an output similar to the one below. Make sure to note the **Name** of your node.  You’ll need it in Part 2
+You should see an output similar to the one below. Make sure to note the **Name** of your node. You’ll need it in Part 2
 
 ```
 NAME                                STATUS   ROLES    AGE    VERSION
@@ -186,13 +186,13 @@ helm repo update
 
 * **Label the Node for Hyperswitch**:
 
-Replace `<node-name>` with the name of your node (use `kubectl get nodes` to find it). We saved the name on  Part I, Step 7.&#x20;
+Replace `<node-name>` with the name of your node (use `kubectl get nodes` to find it). We saved the name on Part I, Step 7.
 
 ```bash
 kubectl label nodes <node-name> node-type=generic-compute
 ```
 
-For example:&#x20;
+For example:
 
 ```
 kubectl label nodes aks-nodepool1-40058682-vmss000000 node-type=generic-compute
@@ -258,9 +258,9 @@ helm list -n <namespace>
 helm list -n hyperswitch
 ```
 
-That's it! Hyperswitch should be up and running on your Azure account 🎉&#x20;
+That's it! Hyperswitch should be up and running on your Azure account 🎉
 
-### Expose Hyperswitch Services Locally&#x20;
+### Expose Hyperswitch Services Locally
 
 Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
 
@@ -294,7 +294,7 @@ Afterwards, you’ll be taken straight to the Control Center. If you're just tak
 
 ### Test a payment
 
-Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).&#x20;
+Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
 
 Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
 
@@ -373,6 +373,4 @@ Update the `values.yaml` file inside `hyperswitch-stack/` and apply changes with
 helm upgrade --install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
 ```
 
-
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../about-hyperswitch/payments-modules/ai-powered-cost-observability.md">ai-powered-cost-observability.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>

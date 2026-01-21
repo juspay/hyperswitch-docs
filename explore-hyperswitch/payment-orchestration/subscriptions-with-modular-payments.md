@@ -9,7 +9,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Benefits
 
-1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors&#x20;
+1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
 2. Improved reliability with a multi-PSP setup
 3. Intelligent Routing capabilities to improve Authorization Rates and minimize Processing costs
 4. Greater coverage of PMs, APMs and features offered by the PSPs
@@ -19,12 +19,12 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 1. Integrate your subscription provider as a billing processor on Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
-3. During the checkout process use Hyperswitch for Payments&#x20;
+3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../about-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.&#x20;
+8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
@@ -38,7 +38,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK&#x20;
+#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
 {% stepper %}
 {% step %}
@@ -168,7 +168,7 @@ Once the user selects a particular Plan, create a customer on Hyperswitch ([API 
 {% endstep %}
 
 {% step %}
-After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API&#x20;
+After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API
 
 ```
 curl --location 'http://localhost:8080/subscriptions/' \

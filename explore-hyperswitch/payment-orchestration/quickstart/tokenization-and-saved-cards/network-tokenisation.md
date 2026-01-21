@@ -112,7 +112,7 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 In this flow:
 
-* You integrate with [Hyperswitch’s standalone Vault service](../../../../about-hyperswitch/payments-modules/vault/).
+* You integrate with [Hyperswitch’s standalone Vault service](../../../payments-modules/vault/).
 * Card details are securely captured and stored alongside PSP tokens and network tokens
 * These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
 
@@ -120,7 +120,7 @@ In this flow:
 
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
-1. Merchant signs up for [Hyperswitch’s standalone vault service ](../../../../about-hyperswitch/payments-modules/vault/)and requests network tokenization in every payment method session create request
+1. Merchant signs up for [Hyperswitch’s standalone vault service ](../../../payments-modules/vault/)and requests network tokenization in every payment method session create request
 2. Card details are captured from the end users via Hyperswitch’s PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
 3. Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
 4. The network token along with PSP tokens and NTI (if returned by the PSP) is passed back to the merchant

@@ -14,7 +14,7 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 
 2. **Create a Project**:
 
-* &#x20;Open your project picker:
+* Open your project picker:
 
 <figure><img src="../../.gitbook/assets/2-my-first-project.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -22,7 +22,7 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 
 <figure><img src="../../.gitbook/assets/3-create-new-project.png" alt=""><figcaption></figcaption></figure>
 
-* &#x20;Provide a project name, and click **Create:**
+* Provide a project name, and click **Create:**
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.16.21 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -32,7 +32,7 @@ If you are using an existing project, note the project ID for later use.
 
 3. **Enable Kubernetes Engine API**:
 
-* Navigate to **APIs & Services > Library** or search for it:&#x20;
+* Navigate to **APIs & Services > Library** or search for it:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.18.32 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -41,7 +41,7 @@ If you are using an existing project, note the project ID for later use.
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.19.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-You'll need to provide billing information in order to proceed further.  Follow the necessary steps and ensure the Kubernetes Engine API is enabled.&#x20;
+You'll need to provide billing information in order to proceed further. Follow the necessary steps and ensure the Kubernetes Engine API is enabled.
 {% endhint %}
 
 #### Step 2: Install Required Tools
@@ -55,7 +55,7 @@ The Google Cloud Command-Line Interface (CLI) is a cross-platform tool that allo
 `kubectl` is the command-line tool for interacting with Kubernetes clusters. To install `kubectl`, please refer to the [Kubernetes documentation](https://pwittrock.github.io/docs/tasks/tools/install-kubectl/).
 
 {% hint style="info" %}
-Ensure you only have 1 version of kubectl installed to avoid enviornmental conflict.&#x20;
+Ensure you only have 1 version of kubectl installed to avoid enviornmental conflict.
 {% endhint %}
 
 3. **Helm**
@@ -125,7 +125,7 @@ helm repo add hyperswitch https://juspay.github.io/hyperswitch-helm
 
 #### Step 2: Prepare the Kubernetes Cluster
 
-1. **Label Kubernetes Nodes**: Ensure nodes meet the minimum requirements: **4 CPUs and 6GB memory**.&#x20;
+1. **Label Kubernetes Nodes**: Ensure nodes meet the minimum requirements: **4 CPUs and 6GB memory**.
 
 * Label your nodes:
 
@@ -202,7 +202,7 @@ Afterwards, you’ll be taken straight to the Control Center. If you're just tak
 
 ### Test a payment
 
-Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).&#x20;
+Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
 
 Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
 
@@ -256,7 +256,4 @@ gcloud container clusters delete <cluster-name> --region <region> --project <pro
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../about-hyperswitch/payments-modules/ai-powered-cost-observability.md">ai-powered-cost-observability.md</a></td></tr></tbody></table>
-
-
-
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide/">integration-guide</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
