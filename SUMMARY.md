@@ -325,6 +325,7 @@
 * [SDK Payment flows](learn-more/sdk-payment-flows.md)
 * [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
 * [Blog](https://hyperswitch.io/blog)
+* [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
