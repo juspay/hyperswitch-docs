@@ -43,7 +43,7 @@ The most requested feature is now our first embeddable module: The Connector Com
 * Instant Validation: We validate credentials in real-time before saving.
 * Zero Maintenance: When a processor changes their API requirements, we update the component. You don't change a line of code.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-12-24 at 10.53.27 AM.png" alt=""><figcaption><p>A seamless, white-labeled configuration experience embedded directly into a demo dashboard.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-12-24 at 10.53.27 AM.png" alt=""><figcaption><p>A seamless, white-labeled configuration experience embedded directly into a demo dashboard.</p></figcaption></figure>
 
 ***
 
