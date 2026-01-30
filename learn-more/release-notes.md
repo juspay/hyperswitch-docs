@@ -7,6 +7,8 @@ hidden: true
 
 # Release Notes
 
+### <mark style="color:$danger;">Latest Release Notes are available on -</mark> [<mark style="color:$danger;">https://hyperswitch-release-notes.vercel.app/</mark>](https://hyperswitch-release-notes.vercel.app/)
+
 {% hint style="info" %}
 These release notes are exclusively applicable to the Hyperswitch SaaS (Hosted) platform. If you are utilizing the self-hosted version, please refer to the Hyperswitch Open Source release notes available [here](https://github.com/juspay/hyperswitch/releases).
 {% endhint %}
@@ -150,7 +152,7 @@ This will be deployed in production on or before 8th January 2025
 <summary>December 31st, 2025 - January 6th, 2026</summary>
 
 {% hint style="info" %}
-This will be deployed in production on or before 15th January 2025
+This will be deployed in production on or before 15th January 2026
 {% endhint %}
 
 #### **Highlights**
@@ -202,7 +204,7 @@ This will be deployed in production on or before 15th January 2025
 <summary>January 7th - 13th, 2026</summary>
 
 {% hint style="info" %}
-This will be deployed in production on or before 22nd January 2025
+This will be deployed in production on or before 22nd January 2026
 {% endhint %}
 
 #### Highlights
@@ -284,6 +286,84 @@ Highlights
 * Re introduced legacy key store decryption behaviour for backward compatibility, helping ensure older integrations and encrypted data flows continue to work without disruption ([#10899](https://github.com/juspay/hyperswitch/pull/10899))
 * Fixed callback\_url placeholder value for the Payjustnowinstore connector, improving callback reliability and preventing incorrect placeholder values from being used in production flows ([#10937](https://github.com/juspay/hyperswitch/pull/10937))
 * Trimmed whitespace from phone numbers and country code in core flows, reducing formatting related validation failures and improving input consistency across integrations ([#10754](https://github.com/juspay/hyperswitch/pull/10754))
+
+</details>
+
+<details>
+
+<summary>January 21st - 27th, 2026</summary>
+
+{% hint style="info" %}
+This will be deployed in production on or before 5th February 2026
+{% endhint %}
+
+### Highlights
+
+* Expanded platform payment capabilities with improved card redirection, 3DS support, and processor context handling.
+* Enhanced payment responses with richer authorization and error details for better observability.
+* Strengthened platform authentication, merchant onboarding, and payment method lifecycle management.
+* Continued performance and reliability improvements across core payment flows and routing logic.
+
+### Connector expansions and enhancements
+
+* Added **authorization code support** to Adyen payment responses, improving reconciliation and post-payment workflows\
+  ([#10985](https://github.com/hyperswitch/hyperswitch/pull/10985))
+* Fixed **Google Pay FPAN and 3DS handling** for Adyen, ensuring correct wallet and authentication processing\
+  ([#11022](https://github.com/hyperswitch/hyperswitch/pull/11022))
+* Added **pre-decrypted Google Pay and Apple Pay mandate support** for Checkout connectors, improving wallet mandate reliability\
+  ([#11000](https://github.com/hyperswitch/hyperswitch/pull/11000))
+* Implemented **PayJustNow In-Store payment webhooks**, enabling event-driven updates for in-store payment flows\
+  ([#11043](https://github.com/hyperswitch/hyperswitch/pull/11043))
+* Fixed **webhook handling and request enrichment** for NMI by including shipping and billing address data\
+  ([#10983](https://github.com/hyperswitch/hyperswitch/pull/10983))
+* Improved **error handling in Nuvei redirection flows**, ensuring more reliable failure propagation\
+  ([#10967](https://github.com/hyperswitch/hyperswitch/pull/10967))
+
+### Customer and access management
+
+* Introduced **JWT-based authentication for platform integrations**, enabling secure and scalable platform access\
+  ([#10988](https://github.com/hyperswitch/hyperswitch/pull/10988))
+* Enabled **conversion of organizations to platform organizations**, simplifying onboarding for platform use cases\
+  ([#10910](https://github.com/hyperswitch/hyperswitch/pull/10910))
+* Enabled **connected merchant creation in sandbox** for platform organizations, improving testability of multi-merchant flows\
+  ([#11039](https://github.com/hyperswitch/hyperswitch/pull/11039))
+
+
+
+### Routing and core improvements
+
+#### Platform and payment processing
+
+* Added support for **card redirection flows**, improving compatibility with redirect-based card payments\
+  ([#10924](https://github.com/hyperswitch/hyperswitch/pull/10924))
+* Enabled **3DS payments in platform flows**, supporting step-up authentication for connected merchants\
+  ([#11011](https://github.com/hyperswitch/hyperswitch/pull/11011))
+* Passed **processor context into core payment execution**, improving connector behavior consistency\
+  ([#11002](https://github.com/hyperswitch/hyperswitch/pull/11002))
+* Added support to **pass network\_transaction\_id** in `/v2/update payment method` requests, improving continuity for repeat payments\
+  ([#10920](https://github.com/hyperswitch/hyperswitch/pull/10920))
+* Refactored **server-to-server payment method APIs** to securely store CVC where required\
+  ([#10912](https://github.com/hyperswitch/hyperswitch/pull/10912))
+* Enhanced **payment method session update APIs** to include `payment_method_data` in responses and fixed fingerprint ID handling during deletion\
+  ([#11021](https://github.com/hyperswitch/hyperswitch/pull/11021))
+
+#### Performance and stability
+
+* Avoided unnecessary **database calls for on-session payments**, improving throughput and reducing latency\
+  ([#11038](https://github.com/hyperswitch/hyperswitch/pull/11038))
+* Fixed **network token API payload handling**, ensuring correct parameter usage\
+  ([#11025](https://github.com/hyperswitch/hyperswitch/pull/11025))
+
+#### Error handling and extensibility
+
+* Populated **detailed error information** in API responses, improving failure observability and debugging\
+  ([#10837](https://github.com/hyperswitch/hyperswitch/pull/10837))
+* Added support for **storing ACH bank debit details** in the locker, enabling broader payment method coverage\
+  ([#10614](https://github.com/hyperswitch/hyperswitch/pull/10614))
+* Introduced a **modular payment method client**, laying the groundwork for extensible payment method integrations\
+  ([#10960](https://github.com/hyperswitch/hyperswitch/pull/10960))
+* Deprecated the legacy **preprocessing flow**, simplifying routing and execution paths\
+  ([#10987](https://github.com/hyperswitch/hyperswitch/pull/10987))
 
 </details>
 
