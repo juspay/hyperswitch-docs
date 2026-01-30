@@ -2,6 +2,8 @@
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
+Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
+
 ### Prerequisites & Compatibility
 
 Before you begin, ensure your environment meets the following requirements:
@@ -229,4 +231,5 @@ Context provider that holds the authentication state.
 The UI Component that renders the settings form.
 
 * url (string): The base URL for the Hyperswitch Dashboard API.
-  * Sandbox: https://app.hyperswitch.io/api
+  * Sandbox: `https://app.hyperswitch.io/api`
+  * Default: `http://localhost:9000` (Used for local development)
