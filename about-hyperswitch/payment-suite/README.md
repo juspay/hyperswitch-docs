@@ -1,13 +1,12 @@
 ---
-hidden: true
 icon: container-storage
 ---
 
 # Payments Suite
 
-Integrating a payment layer is a significant milestone. That is why Hyperswitch is modular by design: you can adopt the full stack for a unified experience, or selectively integrate specific modules like Vault or Smart Router.
+Integrating a payment layer is a major milestone for any business. Hyperswitch is built with a modular architecture to support you at every stage of that journey. You can adopt the full stack for a unified payments experience or selectively integrate individual modules such as Vault or Smart Router based on your specific requirements.
 
-Navigating these choices is easier when you view the ecosystem as four main blocks. By defining who owns which block—Hyperswitch or your team—you can quickly identify the architecture that suits your needs.
+To simplify decision-making, it helps to view the ecosystem as four core building blocks. By defining ownership of each block whether managed by Hyperswitch or your team you can quickly determine the architecture that best aligns with your technical and business goals.
 
 #### **The Four Core Components**
 
@@ -23,11 +22,15 @@ Each Component can be handled by Hyperswitch, managed by your own team, or even 
 
 #### **Integration Architecture**
 
-With the components defined, the next step is to select your integration architecture. This choice hinges on a single question:  _Who controls the orchestration and processing logic?_
+With the components defined, the next step is to select your integration architecture. This choice hinges on a single question:  _Who controls the orchestration and processing logic ?_
 
-There are two primary integration models:
+There are three primary integration Flow :
 
-**1.** [**Orchestrator Model** ](https://docs.hyperswitch.io/~/revisions/ym3YeydjfXLSnBIreBYp/about-hyperswitch/payment-suite/orchestrator-model)**:** You leverage Hyperswitch’s intelligent core to manage the payment lifecycle. Hyperswitch route payments dynamically to global processors (Stripe, Adyen, etc.) using the pre-built Connectors.
+**1.** [**Payment with Vault**](https://docs.hyperswitch.io/~/revisions/QSGzCRIrWguIX4tCwjpZ/about-hyperswitch/payment-suite-1/orchestrator-model)**:** You leverage Hyperswitch’s intelligent core to manage the payment lifecycle. Hyperswitch route payments dynamically to global processors (Stripe, Adyen, etc.) using the pre-built Connectors.
 
-**2.** [**Vault and Proxy Model**](https://docs.hyperswitch.io/~/revisions/ym3YeydjfXLSnBIreBYp/about-hyperswitch/payment-suite/vault-and-proxy-model) **:** You utilize Hyperswitch strictly as a secure infrastructure layer (Vault & Pipe). You act as the orchestrator, defining the specific destination yourself, while Hyperswitch securely forwards the payload along with sensitive card data via a Proxy API.
+**2.** [**Vault and Forward**](https://docs.hyperswitch.io/~/revisions/QSGzCRIrWguIX4tCwjpZ/about-hyperswitch/payment-suite-1/direct-payment-control-model)**:** You utilize Hyperswitch strictly as a secure infrastructure layer (Vault & Pipe). You act as the orchestrator, defining the specific destination yourself, while Hyperswitch securely forwards the payload along with sensitive card data via a Proxy API.
+
+**3.** [**Vault with S2S flow**](https://docs.hyperswitch.io/~/revisions/QSGzCRIrWguIX4tCwjpZ/about-hyperswitch/payment-suite-1/token-first-model-setup)**:** In this model you store the card first during initial checkout without charging the customer and later leverage Hyperswitch’s intelligent core to manage the payment lifecycle.
+
+
 

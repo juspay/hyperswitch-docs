@@ -24,8 +24,6 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitc
 4. **Forward to PSP**: The request is sent to the PSP
 5. **Return Response**: Vault returns PSP response to the merchant
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Proxy Payments Service Sequence Diagram</p></figcaption></figure>
-
 #### 🧪 Proxy Payment Request
 
 Include the following details:
