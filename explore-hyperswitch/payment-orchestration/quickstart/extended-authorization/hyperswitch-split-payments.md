@@ -1,6 +1,6 @@
 ---
 description: Get started with Split Payments via Hyperswitch
-icon: stripe
+icon: split
 ---
 
 # Split Payments
