@@ -1,4 +1,5 @@
 ---
+hidden: true
 icon: star-shooting
 ---
 
@@ -15,7 +16,7 @@ The latest version of 3DS - **3DS 2.0** supports two flows - **Frictionless and 
 ## What are the benefits of 3DS 2.0?
 
 1. **Liability Shift**: The most important benefit of 3DS 2.0 for the merchant is the shifting of fraud liability to the issuer. When the issuer authenticates the cardholder, the issuer takes the liability in case a chargeback is filed for such a transaction.
-2. **Regulatory Compliance**: In the EEA(European Economic Area) region, where [PSD2](https://hyperswitch.io/blog/simplifying-acquirer-exemptions-in-PSD2-markets) mandates strong customer authentication (SCA), 3DS 2.0 helps merchants comply with the regulatory requirements.&#x20;
+2. **Regulatory Compliance**: In the EEA(European Economic Area) region, where [PSD2](https://hyperswitch.io/blog/simplifying-acquirer-exemptions-in-PSD2-markets) mandates strong customer authentication (SCA), 3DS 2.0 helps merchants comply with the regulatory requirements.
 3. **Improved User Experience over 3DS 1.0:** Using more data, the issuers can passively authenticate most of the cardholders without friction. If the transaction is deemed risky, a challenge flow is triggered. The ecosystem has tried to optimize this challenge flow experience by providing a consistent, and a mobile friendly interface.
 4. **Higher Approval Rates**: As a lot more data is exchanged under 3DS protocol, merchants see an uplift in their transaction approval rates.
 
@@ -23,11 +24,11 @@ The latest version of 3DS - **3DS 2.0** supports two flows - **Frictionless and 
 
 Native 3D Secure refers to the seamless integration of 3D Secure (3DS) authentication directly within a merchant's app or website, without redirecting the user to an external page for authentication. By eliminating redirections and embedding authentication directly into the checkout process, native 3DS enhances both customer satisfaction and conversion rates, making it a preferred choice for merchants looking to optimize their payment flow.
 
-<figure><img src="../../../.gitbook/assets/DAF-firsttime.gif" alt="" width="300"><figcaption><p><strong>Sample of Native Authentication on mobile</strong> </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/DAF-firsttime.gif" alt="" width="300"><figcaption><p><strong>Sample of Native Authentication on mobile</strong></p></figcaption></figure>
 
 ## Why Native 3D Secure?
 
-### **1. Enhance Customer Experience**:&#x20;
+### **1. Enhance Customer Experience**:
 
 Even though 3DS 2.0 greatly optimizes the customer experience, it still has some scope for improvement. The multiple redirections for both challenge and frictionless flows lead to poor customer experience and increased dropouts. The customer authentication experience also varies according to the issuers, depending on the capabilities and upgrades of the issuers’ technology.
 

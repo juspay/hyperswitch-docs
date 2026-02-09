@@ -45,7 +45,11 @@ The Post-Auth flow occurs **after payment authorization** by the processor and i
 If the connector doesn’t support manual capture, Post-Authorization manual review should be avoided during configuration setup for the respective connector.
 {% endhint %}
 
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
 ## FRM status and decisions
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 FRM connectors generally provide a decision based on rules or data models along with a risk score associated with the transaction. Some integrations require providing the model to be used explicitly. For example, Signifyd can be configured to respond with only scores or decision + scores, etc.
 

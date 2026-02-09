@@ -4,7 +4,7 @@ icon: badge-check
 
 # 3DS / Strong Customer Authentication
 
-3D Secure (3DS) is a robust security protocol designed to prevent fraud in card-not-present transactions. By employing multi-factor authentication mechanisms such as biometrics or OTPs, 3DS helps issuers verify the authenticity of transactions.&#x20;
+3D Secure (3DS) is a robust security protocol designed to prevent fraud in card-not-present transactions. By employing multi-factor authentication mechanisms such as biometrics or OTPs, 3DS helps issuers verify the authenticity of transactions.
 
 The **Hyperswitch 3DS Decision Manager** allows merchants to define advanced rules based on payment parameters, ensuring that 3DS authentication is selectively enforced for high-risk transactions.
 
@@ -22,7 +22,7 @@ Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules
 
 #### 3DS Decision Flow:
 
-Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.&#x20;
+Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
 
 <figure><img src="../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 
@@ -37,8 +37,8 @@ For example: If you wish to enforce 3DS for transactions over $100, you can defi
 * Some processors may mandate 3DS regardless of your configuration.
 {% endhint %}
 
-{% content-ref url="get-started-with-3ds-decision-manager.md" %}
-[get-started-with-3ds-decision-manager.md](get-started-with-3ds-decision-manager.md)
+{% content-ref url="3ds-intelligence-engine/get-started-with-3ds-decision-manager.md" %}
+[get-started-with-3ds-decision-manager.md](3ds-intelligence-engine/get-started-with-3ds-decision-manager.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}

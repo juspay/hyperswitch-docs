@@ -31,8 +31,6 @@ The transformation service handles virtually any data format your payment proces
 * JSON: Nested data structures with complex field extraction
 * Fixed-Width: Legacy formats like COBOL with position-based field extraction
 
-
-
 **Flexible Configuration**
 
 * Custom transformation rules per connection
@@ -45,4 +43,4 @@ The transformation service handles virtually any data format your payment proces
 * Detailed error categorization and resolution guidance
 * Automatic alerts for systematic data issues
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>

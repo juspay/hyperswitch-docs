@@ -2,6 +2,7 @@
 description: >-
   Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
   Methods Management SDK
+hidden: true
 icon: desktop
 ---
 

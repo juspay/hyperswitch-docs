@@ -2,6 +2,7 @@
 description: >-
   Ideal for teams seeking data independence in a neutral vault combined with
   Hyperswitch’s optimized payment UI and routing .
+icon: square-up-right
 ---
 
 # Hyperswitch SDK + External Vault Setup

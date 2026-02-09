@@ -2,32 +2,15 @@
 description: >-
   Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
   Methods Management SDK
-icon: gear
-coverY: 0
-layout:
-  width: default
-  cover:
-    visible: false
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
+hidden: true
+icon: desktop
 ---
 
-# Payment Methods Management SDK
+# Vault SDK Integration
 
-## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
+## Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 
@@ -37,9 +20,9 @@ The Hyperswitch Payment Methods Management SDK provides a secure solution for me
 * **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
 * **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
-## Payment Methods Management SDK Integration Walkthrough
+## Vault SDK Integration Walkthrough
 
-This document provides step-by-step instructions for integrating the Hyperswitch Payment Methods Management SDK into your application.
+This document provides step-by-step instructions for integrating the Hyperswitch Vault SDK into your application.
 
 ### 1. Server-Side Setup
 
@@ -50,6 +33,11 @@ First, you'll need to set up your server to create payment method sessions, whic
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 #### Creating a Payment Methods Session Endpoint
+
+Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
+
+> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.\
+> For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 {% hint style="info" %}
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
@@ -63,11 +51,6 @@ To generate your Vault API keys, follow these steps:
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 {% endhint %}
-
-Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
-
-> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.\
-> For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create) reference documentation.
 
 ```javascript
 // Create-Payment-Methods-Session
@@ -108,7 +91,7 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
 
 ### 2. Client-Side Integration (React)
 
-Once your server endpoint is set up, you'll need to integrate the Payment Methods Management SDK into your client application. The following steps outline the process for a React application.
+Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application. The following steps outline the process for a React application.
 
 #### 2.1 Install Required Libraries
 
@@ -137,6 +120,10 @@ Configure the library with your publishable API key and profile ID:
 const hyperPromise = loadHyper({
   publishableKey: "YOUR_PUBLISHABLE_KEY",
   profileId: "YOUR_PROFILE_ID",
+},{
+  customBackendUrl: "BE_URL",
+  env: "ENVIRONMENT"
+  version: "VERSION",
 });
 ```
 
@@ -178,7 +165,7 @@ const options = {
 
 return (
   <div className="App">
-    {pmSessionId && pmClientSecret && (
+    {pmSessionId && pmClientSecret && hyperPromise && (
       <HyperManagementElements options={options} hyper={hyperPromise}>
         <PaymentMethodsManagementElementForm />
       </HyperManagementElements>
@@ -187,7 +174,18 @@ return (
 );
 ```
 
-#### 2.6 Add the Payment Methods Management Elements
+#### 2.6 Store a reference to `Hyper`
+
+Access the `hyper-js` library in your `PaymentMethodsManagementElementForm` component by using the `useHyper()` and `useWidgets()` hooks.
+
+```javascript
+import { useHyper, useWidgets } from "@juspay-tech/react-hyper-js";
+
+const hyper = useHyper();
+const widgets = useWidgets();
+```
+
+#### 2.7 Add the Payment Methods Management Elements
 
 Create a `PaymentMethodsManagementElementForm` component that includes the `PaymentMethodsManagementElement`:
 
@@ -202,6 +200,66 @@ const PaymentMethodsManagementElementForm = () => {
     </div>
   );
 };
+```
+
+#### 2.8 Complete Tokenization and handle errors
+
+After rendering the `PaymentMethodsManagementElement`, you must explicitly confirm the tokenization to save or update a payment method. This is done by calling `hyper.confirmTokenization()` when the user submits the form.
+
+`confirmTokenization()` collects the data entered in the Payment Methods Management Element and securely tokenizes it. If additional authentication is required, Hyper automatically handles the redirection flow and returns the user to the provided `return_url`.
+
+If there are any immediate errors (for example, invalid request parameters), `hyper-js` returns an error object. You should display this error to the customer so they can retry.
+
+```javascript
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Prevent submission if Hyper.js is not ready or a request is already in progress
+  if (!hyper || !elements || isProcessing) return;
+
+  setIsProcessing(true);
+  setMessage(null);
+
+  try {
+    const response = await hyper.confirmTokenization({
+      elements,
+      confirmParams: {
+        // Make sure to change this to your completion page
+        return_url: window.location.origin,
+      },
+      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
+    });
+
+    // Handle successful tokenization
+    if (response?.id) {
+      // Tokenization succeeded
+      // You can use the returned payment method/session token
+      handleTokenRetrieval(response);
+    } else {
+      // Handle error returned by Hyper.js
+      const error = response?.error;
+
+      if (error) {
+        if (error.type === "card_error" || error.type === "validation_error") {
+          setMessage(error.message);
+        } else {
+          if (error.message) {
+            setMessage(error.message);
+          } else {
+            setMessage("An unexpected error occurred.");
+          }
+        }
+      } else {
+        setMessage("An unexpected error occurred.");
+      }
+    }
+  } catch (err) {
+    setMessage(err.message || "An unexpected error occurred.");
+  } finally {
+    setIsProcessing(false);
+  }
+};
+
 ```
 
 The `PaymentMethodsManagementElement` embeds an iframe with a dynamic form that displays saved payment methods, allowing your customers to view, manage, and save new payment methods securely.

@@ -34,6 +34,6 @@ The Hyperswitch Card Vault enables you to securely store customer card details i
 
 #### Learn about our Standalone Vault service - No payment orchestration required:
 
-{% content-ref url="../../../payments-modules/vault/" %}
-[vault](../../../payments-modules/vault/)
+{% content-ref url="../../../workflows/vault/" %}
+[vault](../../../workflows/vault/)
 {% endcontent-ref %}

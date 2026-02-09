@@ -2,6 +2,7 @@
 description: >-
   Automatically retry failed non-3DS payments by stepping them up to 3DS
   authentication
+hidden: true
 icon: angles-up
 ---
 
@@ -42,7 +43,4 @@ While Smart Retry attempts both to retry all the eligible business and technical
 
 ### What if the failure is eligible for both 3DS Step-up retry and Smart retry?
 
-If a non-3DS payment failure is eligible for both types of retries, we choose to proceed with 3DS Step-up Retry. We attempt the payment by enforcing 3DS authentication with the same processor, as this reduces chargeback cases and ensures the transaction is not fraudulent.&#x20;
-
-
-
+If a non-3DS payment failure is eligible for both types of retries, we choose to proceed with 3DS Step-up Retry. We attempt the payment by enforcing 3DS authentication with the same processor, as this reduces chargeback cases and ensures the transaction is not fraudulent.

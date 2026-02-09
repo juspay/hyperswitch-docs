@@ -2,6 +2,7 @@
 description: >-
   Best for teams with strict existing vault dependencies who want to leverage
   Hyperswitch for payment routing.
+icon: up-right-from-square
 ---
 
 # External SDK + External Vault Setup

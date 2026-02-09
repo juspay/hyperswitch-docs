@@ -66,8 +66,7 @@ if (manualRetryAllowed && existingClientSecret) {
 
 * The SDK is re-initialized on the same Payment Intent.
 * The customer can retry payment by entering updated details.
-* The SDK then performs /payments/confirm again under the same payment\_id.\
-
+* The SDK then performs /payments/confirm again under the same payment\_id.\\
 
 ### API Workflow
 
@@ -128,8 +127,7 @@ If this payment fails, the response will include:
 
 #### 3️⃣ Retry the Payment (If Allowed)
 
-If `manual_retry_allowed :  true` , you can retry on the same Payment Intent.\
-
+If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
 
 * For redirect flows, this can be done by remounting the SDK as described earlier.
 * For SDK-managed (non-redirect) flows, Hyperswitch automatically handles this internally.
@@ -183,9 +181,3 @@ Specifies whether manual retry is supported for a failed payment.
 2. Payment fails → manual\_retry\_allowed = true in response
 3. Merchant frontend remounts Hyperswitch SDK with the same client\_secret
 4. Customer retries payment → payment succeeds
-
-### Support
-
-For any questions, PSP enablement requests, or integration issues related to Manual Retries,  please reach out to the Hyperswitch Support Team.
-
-\
