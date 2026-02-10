@@ -2,6 +2,7 @@
 description: >-
   Best for merchants who do not want to handle card data and want to maintain
   their current integration with the processors.
+hidden: true
 ---
 
 # Vault and Forward

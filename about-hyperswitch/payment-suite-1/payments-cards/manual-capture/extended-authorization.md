@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Extended Authorization
 
 #### **Overview**
@@ -11,14 +15,6 @@ This is particularly useful for industries where the final transaction amount or
 * Fuel & utilities (variable usage-based billing)
 
 Example: A hotel may authorize a card for $500 during check-in but extend the authorization period if the guest extends their stay.
-
-### Current PSP Support
-
-Hyperswitch currently supports Extended Authorization for the following PSPs:
-
-* Stripe
-
-If you require Extended Authorization for other PSPs, please reach out to the Hyperswitch Support Team.
 
 ### How to Enable Extended Authorization
 

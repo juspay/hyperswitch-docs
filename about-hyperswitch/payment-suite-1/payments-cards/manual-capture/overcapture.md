@@ -1,8 +1,12 @@
+---
+icon: chart-diagram
+---
+
 # Overcapture
 
-## Overview
+### Overview
 
-In card payments, Overcapture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
+In card payments, Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
 
 This is particularly useful in scenarios such as:
 
@@ -10,30 +14,17 @@ This is particularly useful in scenarios such as:
 * Price adjustments made after initial authorization.
 * Reducing the risk of under-capturing when final order values differ.
 
-With Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
-
-### Supported PSPs
-
-Currently, Hyperswitch supports Overcapture for the following PSPs:
-
-* Stripe
-* Adyen
-
-👉 If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
-
-### How to Enable Overcapture
-
-Overcapture can be enabled in two ways:
+### Enabling Over Capture
 
 #### 1. Profile-level Configuration (via Dashboard)
 
-1. Navigate to:\
-   Developer → Payment Settings → Always Enable Overcapture
-2. Toggle Enable/Disable as required.
+* Navigate to:\
+  Developer → Payment Settings → Always Enable Over Capture
+* Toggle Enable/Disable as required.
 
 #### 2. Per-request Configuration (via API)
 
-Use the boolean field enable\_overcapture in your payment request.
+Use the boolean field `enable_overcapture` in your payment request.
 
 This flag can be set in the following API calls:
 
@@ -43,8 +34,8 @@ This flag can be set in the following API calls:
 
 ⚠️ Note:
 
-* The request-level enable\_overcapture will override the profile-level setting.
-* Overcapture is only applicable for manual capture payments (capture\_method = manual).
+* The request-level `enable_overcapture` will override the profile-level setting.
+* Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
 
 ### Example: API Request
 
@@ -107,8 +98,3 @@ This flag can be set in the following API calls:
 * Use Dashboard settings for global enablement
 * Use API overrides for payment-specific enablement
 * Monitor capturable and received amounts to track final settlements
-* Contact Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
-
-✅ With Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
-
-\\

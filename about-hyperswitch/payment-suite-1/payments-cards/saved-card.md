@@ -8,9 +8,7 @@ In this approach, the Hyperswitch SDK is used on the frontend to capture card de
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
-#### **Understanding Payment and Vault flow**
-
-#### **New User (Unified Checkout SDK)**
+#### **New User (Unified Checkout or Payments SDK)**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
 
@@ -31,9 +29,7 @@ The SDK submits a `payments/confirm` request to Hyperswitch. Hyperswitch authori
 **5. Return Status**\
 The final payment and vaulting status is returned to the SDK, which redirects the customer to the merchant’s configured `return_url`.
 
-
-
-#### **Returning User (Unified Checkout SDK)**
+#### **Returning User (Unified Checkout or Payments SDK)**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 
@@ -52,9 +48,7 @@ The SDK sends a `payments/confirm` request with the selected `payment_method_id`
 **5. Return Status**\
 The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant’s `return_url` with the payment outcome.
 
-
-
-#### **Guest checkout (Using Vault SDK)**
+#### **Guest checkout (Unified Checkout or Payments SDK)**
 
 <figure><img src="../../../.gitbook/assets/Untitled (15).svg" alt=""><figcaption></figcaption></figure>
 
@@ -72,4 +66,3 @@ The processor returns the authorization result to Hyperswitch, which forwards th
 {% hint style="info" %}
 When using the HS SDK, the response always contains a temp token and you will need to exchange it to get the PM ID via a S2S call. For guest checkout flow the PM ID is NOT unique to Customer + Payment method combination
 {% endhint %}
-

@@ -2,6 +2,7 @@
 description: >-
   Best for PCI compliant merchants who wants to store the card during initial
   checkout phase without charging their customers.
+hidden: true
 ---
 
 # S2S Vault flow

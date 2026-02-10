@@ -21,9 +21,9 @@ But in some cases, merchants would like to place a hold on the customer's funds 
 
 ## **How to do Manual Capture?**
 
-### 1. Create a payment from your server with "`capture_method" = "manual"`
+### 1. Create a payment from your server with `"capture_method" = "manual"`
 
-The 'capture\_method' field determines the type of capture for a particular payment and it defaults to 'automatic' if not passed. So, to do manual capture, set "`capture_method" = "manual"` when creating a payment from your server
+The 'capture\_method' field determines the type of capture for a particular payment and it defaults to 'automatic' if not passed. So, to do manual capture, set `"capture_method" = "manual"` when creating a payment from your server
 
 **Sample curl:**
 
@@ -57,6 +57,8 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 ### 2. Confirm the payment after collecting payment\_method details
 
 Confirm the payment after collecting the payment\_method details from your customer and informing them that the funds in their account would be blocked and charged later once the goods and services are delivered. Unified checkout handles this for automatically. On successful authorization, the payment would transition to `'requires_capture'` status.
+
+Note - You can mark `"confirm" = "true"` in the previous step and directly move to the capture flow.&#x20;
 
 **Sample curl:**
 
@@ -98,9 +100,11 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
 }'
 ```
 
-## **'Full' vs 'Partial' Capture:**
+## **Capture types available :**
 
-Now, the merchant can either:
+1. **Full capture -** Capture the full amount that was authorized - Here the payments status transitions to 'SUCCEEDED' as soon the  `payments/capture` API endpoint is executed for the `payment_id` .<br>
+2. **Partial Capture -** Capture only a partial amount from the total amount that was authorized. Once the transaction is executed, the status goes to either `partially_captured` or `partially_captured_and_capturable` &#x20;
+   1. When capture method is manual & single capture is supported - `partially_captured`
+   2. When capture method is manual & multiple captures are supported - `partially_captured_and_capturable`  <br>
+3.  **Over Capture** - Details are shared [here](https://docs.hyperswitch.io/~/revisions/KHifKaZGv4c5XEloMvlu/about-hyperswitch/payment-suite-1/payments-cards/manual-capture/overcapture)&#x20;
 
-* capture the full amount that was authorized - '**Full capture'**. Here the payments status transitions to 'SUCCEEDED'.
-* capture only a partial amount that was authorized - '**Partial Capture**'. Here the payments status transitions to 'PARTIALLY\_CAPTURED' and the remaining amount is automatically voided at the processor's end.
