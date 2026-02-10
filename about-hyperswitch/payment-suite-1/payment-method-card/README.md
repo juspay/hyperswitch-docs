@@ -1,5 +1,4 @@
 ---
-hidden: true
 icon: hand-holding-circle-dollar
 ---
 
