@@ -18,164 +18,206 @@ Hyperswitch simplifies the complexities of payment method management, so you can
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-03 at 12.27.38 PM.png" alt="" width="563"><figcaption><p>image displaying the payment method management UI.</p></figcaption></figure>
 
-{% hint style="info" %}
-As of now, Hyperswitch only supports management of the payment methods saved during checkout, We will soon roll out the feature enabling you to add a payment method for a non-purchase journey.
-{% endhint %}
+#### 1. Server-Side Setup <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
 
-### 1. Setup the server
+First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 
-#### 1.1 Create an ephemeral key
+**Obtaining Your API Keys**
 
-Get your API key from [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1).
+Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
-Add an endpoint on your server that creates an Ephemeral Key. An **ephemeral key** is a temporary, short-lived key used to securely manage sensitive operations, such as updating or deleting payment methods, without exposing full access credentials. It has a limited validity period and restricted capabilities, ensuring that it can only be used for specific tasks and not for initiating payments. This enhances security by minimizing the risk of unauthorized access and reducing the exposure of sensitive data. Return the `secret` obtained in the response to setup Payment Methods Management on client.
+All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
-```js
-// Create an Ephemeral Key
-const app = express();
+To generate your Vault API keys, follow these steps:
 
-app.post("/create-ephemeral-key", async (req, res) => {
+1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
+3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
+4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
+
+**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+
+**Creating a Payment Methods Session Endpoint**
+
+Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application.
+
+```
+// Create-Payment-Methods-Session
+const app = express()
+
+app.post("/create-payment-method-session", async (req, res) => {
   try {
-    const response = await fetch(`https://sandbox.hyperswitch.io/ephemeral_keys`,
+    // Create payment method session on Hyperswitch
+    const response = await fetch(
+      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json", "api-key": "YOUR_API_KEY" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-profile-id": YOUR_PROFILE_ID,
+          Authorization: `api-key=${YOUR_API_KEY}`,
+        },
         body: JSON.stringify(req.body),
+      }
+    );
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Hyperswitch API Error:", data);
+      return res.status(response.status).json({
+        error: data.error || "Failed to create payment method session",
       });
-    const ephemeralKey = await response.json()
-    // Send publishable key and PaymentIntent details to client
-    res.send({
-      ephemeralKey: ephemeralKey.secret,
+    }
+    // Return Payment method session ID and client secret to the frontend
+    res.json({
+      id: data.id,
+      clientSecret: data.client_secret,
     });
-  } catch (err) {
-    return res.status(400).send({
-      error: {
-        message: err.message,
-      },
+  } catch (error) {
+    console.error("Server Error:", error);
+    res.status(500).json({
+      error: "Internal server error",
+      message: error.message,
     });
   }
 });
 ```
 
-### 2. Build Payment Management Page on the client
+> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
 
-{% tabs %}
-{% tab title="React" %}
-**2.1 Install the `hyper-js` and `react-hyper-js` libraries**
+#### 2. Client-Side Integration <a href="#id-2.-client-side-integration" id="id-2.-client-side-integration"></a>
 
-Install the packages and import it into your code
+Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
 
-```js
-$ npm install @juspay-tech/hyper-js
-$ npm install @juspay-tech/react-hyper-js
-```
-
-**2.2 Add `hyper` to your React app**
-
-```js
-import React, { useState, useEffect } from "react";
-import { loadHyper } from "@juspay-tech/hyper-js";
-import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
-```
-
-**2.3 Load `hyper-js`**
-
-Call `loadHyper` with your publishable API keys to configure the library. To get an publishable Key please find it [here](https://app.hyperswitch.io/developers).
-
-```js
-const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY");
-```
-
-**2.4 Fetch the Payment**
-
-Make a request to the endpoint on your server to create a new Ephemeral Key. The `ephemeralKey` returned by your endpoint is used to fetch all the customer saved payment methods.
-
-```js
-useEffect(() => {
-  // Create PaymentIntent as soon as the page loads
-  fetch("/create-ephemeral-key", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({customer_id: "hyperswitch_sdk_demo_id"}),
-  })
-    .then((res) => res.json())
-    .then((data) => setEphemeralKey(data.ephemeralKey));
-}, []);
-```
-
-**2.5 Initialise `HyperManagementElements`**
-
-Pass the promise from `loadHyper` to the `HyperManagementElements` component. This allows the child components to access the Hyper service via the `HyperManagementElements` parent component. Additionally, pass the `ephemeralKey` in [options](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/customization) to the `HyperManagementElements` component.
-
-```js
-<div className="App">
-  {ephemeralKey && (
-    <HyperManagementElements options={options} hyper={hyperPromise}>
-      <PaymentMethodsManagementForm />
-    </HyperManagementElements>
-  )}
-</div>
-```
-
-**2.6 Add the Payment Methods Management Element**
-
-Add the `PaymentMethodsManagementElement` to your Payment Management Form. This embeds an iframe with a dynamic form that displays saved payment methods, allowing your customer to see all their saved payment methods and delete them.
-
-```js
-<PaymentMethodsManagementElement id="payment-methods-management-element" />
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 **2.1 Define the Payment Methods Management Form**
 
-Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount.
+Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
 
-```js
+```
 <form id="payment-methods-management-form">
-  <div id="payment-methods-management-element">
-   <!--HyperLoader injects the Payment Methods Management-->
+  <div id="payment-methods-management-elements">
+    <!--HyperLoader injects the Payment Methods Management SDK-->
   </div>
 </form>
 ```
 
-**2.1 Fetch the Ephemeral Key and mount the Payment Methods Management Element**
+**2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
 
-Make a request to the endpoint on your server to create a new Ephemeral Key. The `ephemeralKey` returned by your endpoint is used to fetch all the customer saved payment methods.
+Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
-> Important: Make sure to never share your API key with your client application as this could potentially compromise your payment flow
+> Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
 
-Following this, create a `paymentMethodsManagement` and mount it to the placeholder `div` in your payment form. This embeds an iframe with a dynamic form that displays saved payment methods, allowing your customer to see all their saved payment methods and delete them.
-
-```js
-// Fetches an ephemeral key and captures the secret
+```
+// Fetches a payment method session and mounts the payment methods management element
 async function initialize() {
-  const response = await fetch("/create-ephemeral-key", {
+  // Step 1: Create payment method session
+  const response = await fetch("/create-payment-method-session", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({customer_id: "hyperswitch_sdk_demo_id"}),
+    body: JSON.stringify({
+      customer_id: "CUSTOMER_ID",
+    }),
   });
-  const { ephemeralKey } = await response.json();
-  
-  // Initialise Hyperloader.js
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+  const { id, clientSecret } = await response.json();
+
+  // Step 2: Initialize HyperLoader.js
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
+
+  let hyper;
   script.onload = () => {
-      hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
-      const appearance = {
-          theme: "midnight",
-      };
-      const paymentMethodsManagementElements = hyper.paymentMethodsManagementElements({ appearance, ephemeralKey });
-      const paymentMethodsManagement = paymentMethodsManagementElements.create("paymentMethodsManagement");
-      paymentMethodsManagement.mount("#payment-methods-management-element");
+    // Step 3: Initialize Hyper with your publishable key and profile ID
+    hyper = window.Hyper({
+      publishableKey: "YOUR_PUBLISHABLE_KEY",
+      profileId: "YOUR_PROFILE_ID",
+    });
+
+    // Step 4: Configure appearance
+    const appearance = {
+      theme: "default",
+    };
+
+    // Step 5: Create payment methods management elements
+    const paymentMethodsManagementElements =
+      hyper.paymentMethodsManagementElements({
+        appearance,
+        pmSessionId: id,
+        pmClientSecret: clientSecret,
+      });
+
+    // Step 6: Create and mount the paymentMethodsManagement element
+    const paymentMethodsManagement = paymentMethodsManagementElements.create(
+      "paymentMethodsManagement"
+    );
+    paymentMethodsManagement.mount("#payment-methods-management-elements");
   };
   document.body.appendChild(script);
 }
-```
-{% endtab %}
-{% endtabs %}
 
-Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize the it to blend with the rest of your website.
+// Call initialize when page loads or when user clicks a button
+initialize();
+```
+
+**2.3 Complete tokenization and handle errors**
+
+Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
+
+If there are any immediate errors (for example, invalid request parameters), Hyper returns an error object. Show this error message to your customer so they can try again.
+
+```
+async function handleSubmit(e) {
+  setMessage("");
+  e.preventDefault();
+
+  // Ensure Hyper is initialized
+  if (!hyper || !paymentMethodsManagementElements) {
+    return;
+  }
+
+  setIsLoading(true);
+
+  try {
+    const response = await hyper.confirmTokenization({
+      paymentMethodsManagementElements,
+      confirmParams: {
+        // URL to redirect the user after authentication (if required)
+        return_url: "https://example.com/complete",
+      },
+      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
+    });
+
+    // Tokenization succeeded
+    if (response?.id) {
+      // You can use the returned payment method/session token here
+      handleTokenRetrieval(response);
+    } else {
+      // Handle immediate errors returned by Hyper
+      const error = response?.error;
+
+      if (error) {
+        if (error.type === "card_error" || error.type === "validation_error") {
+          setMessage(error.message);
+        } else {
+          if (error.message) {
+            setMessage(error.message);
+          } else {
+            setMessage("An unexpected error occurred.");
+          }
+        }
+      } else {
+        setMessage("An unexpected error occurred.");
+      }
+    }
+  } catch (err) {
+    setMessage(err.message || "An unexpected error occurred.");
+  } finally {
+    setIsLoading(false);
+  }
+}
+```
+
+Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.
+
+\
+<br>
