@@ -178,10 +178,3 @@ Include the following details:
     }
 }
 ```
-
-
-
-**Integration Documetation :**&#x20;
-
-* [Vault SDK Integration](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/vault-sdk-integration)
-* [Proxy Payment Integration Guide](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments)

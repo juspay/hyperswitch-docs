@@ -6,7 +6,15 @@ icon: file-invoice-dollar
 
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+### Integration Path
+
+#### Client-Side SDK Payments
+
+Refer to Payments (Cards) section  if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 ### One-Time Payment Patterns
 
@@ -16,19 +24,7 @@ Hyperswitch provides flexible payment processing with multiple flow patterns to 
 
 **Endpoint:** `POST /payments`
 
-
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Hyperswitch
-    participant Processor
-    
-    Client->>Hyperswitch: POST /payments<br/>{confirm: true, capture_method: "automatic"}
-    Hyperswitch->>Processor: Authorize + Capture
-    Processor-->>Hyperswitch: Payment Complete
-    Hyperswitch-->>Client: Status: succeeded
-```
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 **Required Fields:**
 
@@ -40,26 +36,9 @@ sequenceDiagram
 
 #### 2. Two-Step Manual Capture
 
-**Use Case:** Deferred settlement (e.g., ship before charging)
+**Use Case:** Deferred capture (e.g., ship before charging)
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Hyperswitch
-    participant Processor
-    
-    Client->>Hyperswitch: POST /payments<br/>{confirm: true, capture_method: "manual"}
-    Hyperswitch->>Processor: Authorize Only
-    Processor-->>Hyperswitch: Authorization Hold
-    Hyperswitch-->>Client: Status: requires_capture
-    
-    Note over Client: Ship goods, then capture
-    
-    Client->>Hyperswitch: POST /payments/{id}/capture
-    Hyperswitch->>Processor: Capture Funds
-    Processor-->>Hyperswitch: Capture Complete
-    Hyperswitch-->>Client: Status: succeeded
-```
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 **Flow:**
 
@@ -68,29 +47,13 @@ sequenceDiagram
 3. **Capture:** `POST /payments/{payment_id}/capture`
 4. **Final Status:** `succeeded`
 
+Read more - [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/about-hyperswitch/payment-suite-1/payments-cards/manual-capture)
+
 #### 3. Fully Decoupled Flow
 
 **Use Case:** Complex checkout journeys with multiple modification steps. Useful in headless checkout or B2B portals where data is filled progressively.
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Hyperswitch
-    
-    Client->>Hyperswitch: POST /payments<br/>(Create Intent)
-    Hyperswitch-->>Client: payment_id + client_secret
-    
-    Client->>Hyperswitch: POST /payments/{id}<br/>(Update: customer, amount, etc.)
-    Hyperswitch-->>Client: Updated Intent
-    
-    Client->>Hyperswitch: POST /payments/{id}/confirm<br/>(Final Confirmation)
-    Hyperswitch-->>Client: Status: succeeded/requires_capture
-    
-    opt Manual Capture
-        Client->>Hyperswitch: POST /payments/{id}/capture
-        Hyperswitch-->>Client: Status: succeeded
-    end
-```
+<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 **Endpoints:**
 
@@ -103,22 +66,7 @@ sequenceDiagram
 
 **Use Case:** Enhanced security with customer authentication
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Hyperswitch
-    participant Customer
-    participant Bank
-    
-    Client->>Hyperswitch: POST /payments<br/>{authentication_type: "three_ds"}
-    Hyperswitch-->>Client: Status: requires_customer_action<br/>+ redirect_url
-    
-    Client->>Customer: Redirect to 3DS page
-    Customer->>Bank: Complete 3DS Challenge
-    Bank-->>Hyperswitch: Authentication Result
-    Hyperswitch->>Hyperswitch: Resume Payment Processing
-    Hyperswitch-->>Client: Status: succeeded
-```
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 **Additional Fields:**
 
@@ -126,19 +74,11 @@ sequenceDiagram
 
 **Status Progression:** `processing` → `requires_customer_action` → `succeeded`
 
-### Payment Method Management
+Read more - [link](https://docs.hyperswitch.io/~/revisions/9QlGypixZFcbkq8oGjaF/explore-hyperswitch/workflows/3ds-decision-manager) &#x20;
+
+### Recurring payments and Payment storage
 
 #### 1. Saving Payment Methods
-
-```mermaid
-graph LR
-    A["Payment Request"] --> B["Add setup_future_usage"]
-    B --> C{"Usage Type"}
-    C -->|"off_session"| D["For Recurring/MIT"]
-    C -->|"on_session"| E["For Customer-Present"]
-    D --> F["payment_method_id Returned"]
-    E --> F
-```
 
 **During Payment Creation:**
 
@@ -153,20 +93,7 @@ graph LR
 
 #### 2. Using Saved Payment Methods
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Hyperswitch
-    
-    Client->>Hyperswitch: POST /payments/create<br/>{customer_id}
-    Hyperswitch-->>Client: client_secret
-    
-    Client->>Hyperswitch: GET /customers/payment_methods<br/>{client_secret, publishable_key}
-    Hyperswitch-->>Client: List of payment_tokens
-    
-    Client->>Hyperswitch: POST /payments/{id}/confirm<br/>{payment_token}
-    Hyperswitch-->>Client: Payment Result
-```
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 **Steps:**
 
@@ -182,66 +109,19 @@ Storing `payment_method_id` (which is a token representing the actual payment in
 
 #### 3. Customer-Initiated Transaction (CIT) Setup
 
-```mermaid
-graph TD
-    A["CIT Setup"] --> B{"Setup Type"}
-    B -->|"With Charge"| C["Amount > 0<br/>setup_future_usage: off_session"]
-    B -->|"Zero Dollar Auth"| D["Amount: 0<br/>payment_type: setup_mandate"]
-    C --> E["payment_method_id"]
-    D --> E
-```
+<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-**Option 1 - Setup with Charge:**
-
-* `setup_future_usage: "off_session"`
-* `amount > 0`
-
-**Option 2 - Zero Dollar Authorization:**
-
-* `setup_future_usage: "off_session"`
-* `amount: 0`
-* `payment_type: "setup_mandate"`
+Read more - [link](https://docs.hyperswitch.io/~/revisions/j00Urtz9MpwPggJzRCsi/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments)
 
 #### 4. Merchant-Initiated Transaction (MIT) Execution
 
-```mermaid
-sequenceDiagram
-    participant Merchant
-    participant Hyperswitch
-    participant Processor
-    
-    Note over Merchant: Subscription billing trigger
-    
-    Merchant->>Hyperswitch: POST /payments<br/>{off_session: true, recurring_details}
-    Hyperswitch->>Processor: Process with saved payment_method_id
-    Processor-->>Hyperswitch: Payment Result
-    Hyperswitch-->>Merchant: Status: succeeded
-```
+<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
-**Required Fields:**
-
-* `off_session: true`
-* `recurring_details: { "type": "payment_method_id", "data": "<from_setup>"}`
-
-**Use Case:** Subscription charges, scheduled billing without customer interaction
+Read more - [link](https://docs.hyperswitch.io/~/revisions/j00Urtz9MpwPggJzRCsi/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments)
 
 ### Status Flow Summary
 
-```mermaid
-stateDiagram-v2
-    [*] --> RequiresConfirmation
-    RequiresConfirmation --> Processing: confirm=true
-    Processing --> RequiresCustomerAction: 3DS needed
-    RequiresCustomerAction --> Processing: 3DS complete
-    Processing --> RequiresCapture: manual capture
-    Processing --> Succeeded: automatic capture
-    RequiresCapture --> Succeeded: capture API call
-    RequiresCapture --> PartiallyCaptured: partial capture
-    PartiallyCaptured --> [*]
-    Succeeded --> [*]
-    Processing --> Failed: payment failed
-    Failed --> [*]
-```
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 ### Notes
 

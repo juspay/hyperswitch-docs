@@ -15,6 +15,7 @@
     * [Saved Card](about-hyperswitch/payment-suite-1/payments/saved-card.md)
   * [Payment Method (Card)](about-hyperswitch/payment-suite-1/payment-method-card/README.md)
     * [Payments](about-hyperswitch/payment-suite-1/payment-method-card/payments.md)
+    * [Copy of Payments](about-hyperswitch/payment-suite-1/payment-method-card/copy-of-payments.md)
     * [Proxy](about-hyperswitch/payment-suite-1/payment-method-card/proxy.md)
     * [Payment Methods Management](about-hyperswitch/payment-suite-1/payment-method-card/payment-methods-management.md)
   * [Payment with Vault Flow](about-hyperswitch/payment-suite-1/payment-with-vault-flow/README.md)
