@@ -4,7 +4,7 @@ icon: credit-card
 
 # Co-badged Cards
 
-Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a global network (e.g., Visa, Mastercard).&#x20;
+Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a global network (e.g., Visa, Mastercard).
 
 Customers benefit from the global scope, security, and consumer protection of international networks while enjoying local perks, such as better discounts and lower fees. Co-badged cards enhance payment flexibility, especially in markets with strong local payment networks.
 
@@ -30,18 +30,18 @@ No additional configuration is required beyond selecting the card networks you s
 
 ### FAQs
 
-#### Are co-badged cards the same as co-branded cards?&#x20;
+#### Are co-badged cards the same as co-branded cards?
 
 No. Co-badged cards feature multiple networks (e.g., Visa and Cartes Bancaires), allowing customers to choose the network for transactions. Co-branded cards are a partnership between a merchant and a network, offering perks specific to the merchant’s store.
 
-#### Can the merchant choose the network for co-badged cards?&#x20;
+#### Can the merchant choose the network for co-badged cards?
 
 In the IFR, Article 8 mandates that customers must be free to choose their network. In non-EEA regions, merchants can set default network preferences or automatically route transactions based on cost and success rates.
 
-#### What if the merchant doesn’t support one of the networks on the co-badged card?&#x20;
+#### What if the merchant doesn’t support one of the networks on the co-badged card?
 
 Merchants can choose not to support one of the networks, and in such cases, transactions will be routed through the supported network.
 
-{% content-ref url="tokenization-and-saved-cards/save-a-payment-method.md" %}
-[save-a-payment-method.md](tokenization-and-saved-cards/save-a-payment-method.md)
+{% content-ref url="../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+[save-a-payment-method.md](../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
 {% endcontent-ref %}

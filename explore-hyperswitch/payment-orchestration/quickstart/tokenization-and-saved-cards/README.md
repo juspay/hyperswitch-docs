@@ -16,8 +16,8 @@ The Hyperswitch Card Vault enables you to securely store customer card details i
 
 #### Learn how to save a payment method in Hyperswitch during payments:
 
-{% content-ref url="save-a-payment-method.md" %}
-[save-a-payment-method.md](save-a-payment-method.md)
+{% content-ref url="../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+[save-a-payment-method.md](../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
 {% endcontent-ref %}
 
 #### Learn about PG Agnostic Recurring payments/Card Forwarding through Hyperswitch:

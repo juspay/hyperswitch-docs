@@ -10,7 +10,7 @@ The merchant uses the Hyperswitch Dashboard to configure connectors, routing rul
 
 #### **New User (Payments SDK)**
 
-<figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -35,7 +35,7 @@ The final payment and vaulting status is returned to the SDK, which redirects th
 
 #### **Returning or Repeat User (Payments SDK)**
 
-<figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 
 **1. Create Payment (Server-Side)**\
 The merchant server initiates the payment by calling the [`payments/create`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with transaction details such as amount and currency. Hyperswitch responds with a `payment_id` , `customer_id` and `client_secret`, which are required for client-side processing.

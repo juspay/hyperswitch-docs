@@ -1,5 +1,6 @@
 ---
 description: Make recurring payments across processors
+hidden: true
 icon: arrows-repeat
 ---
 

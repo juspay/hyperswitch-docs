@@ -34,8 +34,8 @@ Hyperswitch supports the creation of mandates for card transactions through vari
 
 Follow the below guide to learn how to make a recurring payment with Hyperswitch
 
-{% content-ref url="../tokenization-and-saved-cards/save-a-payment-method.md" %}
-[save-a-payment-method.md](../tokenization-and-saved-cards/save-a-payment-method.md)
+{% content-ref url="../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+[save-a-payment-method.md](../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
 {% endcontent-ref %}
 
 ## Auth and Capture

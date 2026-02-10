@@ -1,5 +1,5 @@
 ---
-hidden: true
+icon: square-tenge
 ---
 
 # Extended Authorization

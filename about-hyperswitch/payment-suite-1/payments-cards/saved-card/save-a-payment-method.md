@@ -3,7 +3,7 @@ description: Setting up and managing recurring payments
 icon: repeat
 ---
 
-# Save a Payment Method
+# Use cases for Saved card
 
 Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
@@ -115,8 +115,6 @@ curl --request GET \
 
 ***
 
-***
-
 ## 🔓 Processing MIT Payments Without a Saved Payment Method
 
 If a merchant is PCI-compliant and has the customer payment method details stored, an MIT payment can be performed by passing the card details and the network transaction id directly in the confirm call.
@@ -134,49 +132,4 @@ If a merchant is PCI-compliant and has the customer payment method details store
 }
 </code></pre>
 
-Certain connectors, such as Stripe, Adyen, and Cybersource, support this flow, with only the straight-through routing algorithm available.
-
-Straight-through algorithm to be passed in the `/payments` request
-
-```bash
-"routing": {
-        "type": "single",
-        "data": {
-            "connector": "cybersource", //connector name
-            "merchant_connector_id": "mca_VRmwU23zUmlmgAPrJ8rF" //merchant connector id
-        }
-    }
-```
-
-If you would like additional processors to support this flow or want to enable volume-based and priority-based routing algorithms, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
-
-{% hint style="info" %}
-⚠️ **Stripe Configuration Required**
-
-This feature is not enabled by default and must be explicitly enabled by Stripe.\
-
-
-If you receive the error `Received unknown parameter: payment_method_options[card][mit_exemption]`, follow the steps below to request activation.
-
-**Email Stripe Support** requesting:
-
-* Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
-* Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
-* Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
-{% endhint %}
-
 ***
-
-## FAQ:
-
-### **1. I want to onboard my customers by collecting their card details, authenticate and store for future MIT payments without charging them now. How can I vault a payment method with Hyperswitch?**
-
-Hyperswitch allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
-
-This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
-\
-Refer to this page to see how to use it:&#x20;
-
-{% content-ref url="zero-amount-authorization-1.md" %}
-[zero-amount-authorization-1.md](zero-amount-authorization-1.md)
-{% endcontent-ref %}
