@@ -5,9 +5,7 @@ icon: bars-progress
 
 # Payment Methods Management
 
-{% hint style="info" %}
-This section guides you through the Hyperswitch Payment Methods Management, and how to integrate it.
-{% endhint %}
+The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## **Key Features of Payment Method Management in Hyperswitch**
 
@@ -63,7 +61,7 @@ app.post("/create-ephemeral-key", async (req, res) => {
 
 {% tabs %}
 {% tab title="React" %}
-#### 2.1 Install the `hyper-js` and `react-hyper-js` libraries
+**2.1 Install the `hyper-js` and `react-hyper-js` libraries**
 
 Install the packages and import it into your code
 
@@ -72,7 +70,7 @@ $ npm install @juspay-tech/hyper-js
 $ npm install @juspay-tech/react-hyper-js
 ```
 
-#### 2.2 Add `hyper` to your React app
+**2.2 Add `hyper` to your React app**
 
 ```js
 import React, { useState, useEffect } from "react";
@@ -80,7 +78,7 @@ import { loadHyper } from "@juspay-tech/hyper-js";
 import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
 ```
 
-#### 2.3 Load `hyper-js`
+**2.3 Load `hyper-js`**
 
 Call `loadHyper` with your publishable API keys to configure the library. To get an publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -88,7 +86,7 @@ Call `loadHyper` with your publishable API keys to configure the library. To get
 const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY");
 ```
 
-#### 2.4 Fetch the Payment
+**2.4 Fetch the Payment**
 
 Make a request to the endpoint on your server to create a new Ephemeral Key. The `ephemeralKey` returned by your endpoint is used to fetch all the customer saved payment methods.
 
@@ -105,7 +103,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### 2.5 Initialise `HyperManagementElements`
+**2.5 Initialise `HyperManagementElements`**
 
 Pass the promise from `loadHyper` to the `HyperManagementElements` component. This allows the child components to access the Hyper service via the `HyperManagementElements` parent component. Additionally, pass the `ephemeralKey` in [options](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/customization) to the `HyperManagementElements` component.
 
@@ -119,7 +117,7 @@ Pass the promise from `loadHyper` to the `HyperManagementElements` component. Th
 </div>
 ```
 
-#### 2.6 Add the Payment Methods Management Element
+**2.6 Add the Payment Methods Management Element**
 
 Add the `PaymentMethodsManagementElement` to your Payment Management Form. This embeds an iframe with a dynamic form that displays saved payment methods, allowing your customer to see all their saved payment methods and delete them.
 
@@ -129,7 +127,7 @@ Add the `PaymentMethodsManagementElement` to your Payment Management Form. This 
 {% endtab %}
 
 {% tab title="Javascript" %}
-#### 2.1 Define the Payment Methods Management Form
+**2.1 Define the Payment Methods Management Form**
 
 Add one empty placeholder `div` to your checkout form for each Widget that youâ€™ll mount.
 
@@ -141,7 +139,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that youâ€
 </form>
 ```
 
-#### 2.1 Fetch the Ephemeral Key and mount the Payment Methods Management Element
+**2.1 Fetch the Ephemeral Key and mount the Payment Methods Management Element**
 
 Make a request to the endpoint on your server to create a new Ephemeral Key. The `ephemeralKey` returned by your endpoint is used to fetch all the customer saved payment methods.
 

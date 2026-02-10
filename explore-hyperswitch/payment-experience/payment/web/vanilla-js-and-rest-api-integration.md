@@ -1,29 +1,21 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
-icon: html5
+description: Integrate hyper SDK to any Web App using hyperswitch-node
+icon: square-js
 ---
 
-# HTML with REST API Integration
+# JS with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\\
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
 ## 1. Setup the server
 
-Follow the [Server Setup](server-setup.md) section.
+Follow the [Server Setup](../server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
-### 2.1 Load HyperLoader
-
-Use `HyperLoader` to ensure PCI compliant means of accepting payment details from your customer and sending it directly to the hyperswitch server. Always load `hyperLoader` from `https://beta.hyperswitch.io/v1/HyperLoader.js` to ensure compliance. Please refrain from including the script in a bundle or hosting it yourself.
-
-```js
-<script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
-```
-
-### 2.2 Define the payment form
+### 2.1 Define the payment form
 
 {% hint style="info" %}
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
@@ -44,22 +36,11 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 </form>
 ```
 
-### 2.3 Initialize HyperLoader
-
-Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
-
-```js
-const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
-    customBackendUrl: "YOUR_BACKEND_URL",
-    //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
-});
-```
-
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-#### 2.4 Fetch the Payment and create the Unified Checkout
+#### 2.2 Fetch the Payment and create the Unified Checkout
 
-<figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -67,39 +48,86 @@ Immediately make a request to the endpoint on your server to create a new Paymen
 
 Following this, create a `unifiedCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe with a dynamic form that displays configured payment method types available from the `Payment`, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
+Incase, you want the SDK to be loaded on a particular event (like button click), you can call the initialize function on that event.
+
 ```js
-<script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>;
 // Fetches a payment intent and captures the client secret
 async function initialize() {
   const response = await fetch("/create-payment", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
+    body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-
-  const appearance = {
-    theme: "midnight",
+  
+  // Initialise Hyperloader.js
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+ 
+  let hyper; 
+  script.onload = () => {
+      hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
+      customBackendUrl: "YOUR_BACKEND_URL",
+      //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
+      })
+      const appearance = {
+          theme: "midnight",
+      };
+      const widgets = hyper.widgets({ appearance, clientSecret });
+      const unifiedCheckoutOptions = {
+          layout: "tabs",
+          wallets: {
+              walletReturnUrl: "https://example.com/complete",
+              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+          },
+      };
+      const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
+      unifiedCheckout.mount("#unified-checkout");
   };
-
-  widgets = hyper.widgets({ appearance, clientSecret });
-
-  const unifiedCheckoutOptions = {
-    layout: "tabs",
-    wallets: {
-      walletReturnUrl: "https://example.com/complete",
-      //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
-    },
-  };
-
-  const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
-  unifiedCheckout.mount("#unified-checkout");
+  document.body.appendChild(script);
 }
+```
+
+#### 2.3 Additional Callback Handling for Wallets Payment Process
+
+This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
+
+* **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
+* **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+
+{% hint style="warning" %}
+**Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
+{% endhint %}
+
+{% hint style="info" %}
+**Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
+{% endhint %}
+
+{% hint style="danger" %}
+The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
+{% endhint %}
+
+**Example Usage**
+
+```javascript
+const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
+unifiedCheckout.mount("#unified-checkout");
+
+unifiedCheckout.onSDKHandleClick(()=>{
+  // Add any custom logic for when the payment button is clicked, such as logging or tracking
+  console.log("On Click Wallets")
+})
+
+unifiedCheckout.on("completeDoThis",()=>{
+  console.log("On Payment Complete")
+  // Add any custom post-payment logic here, such as redirection or displaying a success message
+})
 ```
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-#### 2.4 Fetch the Payment and create the Express Checkout
+#### 2.2 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -112,31 +140,37 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 Create an `expressCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe that displays configured payment method types supported by the browser available for the payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
 
 ```js
-<script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>;
 // Fetches a payment intent and captures the client secret
 async function initialize() {
   const response = await fetch("/create-payment", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
+    body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-
-  const appearance = {
-    theme: "midnight",
+  
+  // Initialise Hyperloader.js
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+ 
+  let hyper; 
+  script.onload = () => {
+      hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
+      const appearance = {
+          theme: "midnight",
+      };
+      const widgets = hyper.widgets({ appearance, clientSecret });
+      const expressCheckoutOptions = {
+          wallets: {
+              walletReturnUrl: "https://example.com/complete",
+              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+          },
+      };
+      const expressCheckout = widgets.create("expressCheckout", expressCheckoutOptions);
+      expressCheckout.mount("#express-checkout");
   };
-
-  widgets = hyper.widgets({ appearance, clientSecret });
-
-  const expressCheckoutOptions = {
-    wallets: {
-      walletReturnUrl: "https://example.com/complete",
-      //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
-    },
-  };
-
-  const expressCheckout = widgets.create("expressCheckout", expressCheckoutOptions);
-  expressCheckout.mount("#express-checkout");
+  document.body.appendChild(script);
 }
 ```
 {% endtab %}
@@ -190,34 +224,6 @@ async function handleSubmit(e) {
 ```
 
 Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
-
-<details>
-
-<summary>Alternate Implementation: SDK handles the Confirm Button</summary>
-
-For SDK to render the confirm button and handle the confirm payment, in paymentElementOptions, you can send:
-
-```html
-const unifiedCheckoutOptions = {
-  ...,
-  sdkHandleConfirmPayment: {
-     handleConfirm: true,
-     buttonText: "SDK Pay Now",
-     confirmParams: {
-       return_url: "https://example.com/complete",
-     },
-   },
-};
-```
-
-1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
-2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
-3. **`buttonText (optional)`** - The text to display on the payment button.\
-   Default value: **Pay Now**
-
-For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
-
-</details>
 
 ### 3.2 Display a payment status message
 

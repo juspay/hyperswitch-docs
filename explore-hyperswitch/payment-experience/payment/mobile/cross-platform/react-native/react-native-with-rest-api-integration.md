@@ -25,7 +25,7 @@ Use this guide to integrate `hyperswitch` SDK to your React Native app. You can 
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../../web/server-setup.md) section.
+Follow the [Server Setup](../../../server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
@@ -183,4 +183,4 @@ return (
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
-Congratulations! Now that you have integrated the payment sheet&#x20;
+Congratulations! Now that you have integrated the payment sheet

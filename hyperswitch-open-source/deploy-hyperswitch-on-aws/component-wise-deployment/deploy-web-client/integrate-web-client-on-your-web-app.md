@@ -8,7 +8,7 @@ description: Integrate web client for a seamless, blended and an unified payment
 In this section, you will learn to integrate the web client on your web app
 {% endhint %}
 
-Assuming that the web client is hosted successfully, you can now integrate the web client on your HTML web app with the following steps.&#x20;
+Assuming that the web client is hosted successfully, you can now integrate the web client on your HTML web app with the following steps.
 
 {% hint style="info" %}
 If your web app is in other tech stack (for eg., React, Angular, etc.), you can follow our [documentation](https://app.gitbook.com/o/JKqEWJaaVJcFy28N5Z3d/s/kf7BGdsPkCw9nalhAIlE/) for reference integrations.
@@ -43,7 +43,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 
 #### 1.3 Initialize HyperLoader <a href="#id-23-initialize-hyperloader" id="id-23-initialize-hyperloader"></a>
 
-Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client.&#x20;
+Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client.
 
 ```javascript
 const hyper = Hyper("YOUR_PUBLISHABLE_KEY");
@@ -170,18 +170,16 @@ async function checkStatus() {
 That's it! You have successfully integrated your hosted web client on your web app. Now you can collect payments from your customers in a secure way.
 {% endhint %}
 
-The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../explore-hyperswitch/merchant-controls/integration-guide/web/customization.md) for more details.&#x20;
+The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../explore-hyperswitch/payment-experience/payment/web/customization.md) for more details.
 
 <details>
 
 <summary>Troubleshooting/ FAQs</summary>
 
 * **I am getting an error while loading the HyperLoader.js script**\
-  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\
-
+  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\\
 * **I am unable to see the SDK running, or it is in a perpetual loading state**\
-  Please make sure that the correct publishable key is used to instantiate the SDK.\
-
+  Please make sure that the correct publishable key is used to instantiate the SDK.\\
 * **After completing the payment, I am redirected to a non existent web page**\
   Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
 

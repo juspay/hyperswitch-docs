@@ -1,5 +1,5 @@
 ---
-icon: bars-staggered
+icon: file-invoice-dollar
 ---
 
 # Payments (cards)

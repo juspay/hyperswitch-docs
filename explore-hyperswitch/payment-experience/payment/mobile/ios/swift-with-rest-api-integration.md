@@ -17,7 +17,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../web/server-setup.md) section.
+Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
@@ -261,7 +261,7 @@ VStack {
 {% endtab %}
 {% endtabs %}
 
-Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.
 
 ## Next step:
 

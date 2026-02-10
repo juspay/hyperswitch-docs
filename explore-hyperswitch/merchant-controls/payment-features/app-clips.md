@@ -72,6 +72,6 @@ icon: app-store
 
 To use this feature add Lite SDK in your AppClips
 
-{% content-ref url="../integration-guide/mobile/ios/lite-sdk.md" %}
-[lite-sdk.md](../integration-guide/mobile/ios/lite-sdk.md)
+{% content-ref url="../../payment-experience/payment/mobile/ios/lite-sdk.md" %}
+[lite-sdk.md](../../payment-experience/payment/mobile/ios/lite-sdk.md)
 {% endcontent-ref %}

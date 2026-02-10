@@ -15,7 +15,7 @@ Hyperswitch Control Center is a single interface that all your teams will be req
 
 Navigate to the control center's landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.
 
-The signup process will create a user with the provided email id. A merchant is also created which will be tagged to the user.&#x20;
+The signup process will create a user with the provided email id. A merchant is also created which will be tagged to the user.
 
 On the left nav bar, click on your email on the bottom to access the profile section, where you can see all the details.
 
@@ -58,13 +58,13 @@ To connect a payment processor:
 
 ## Setup Routing
 
-The Hyperswitch control center gives you full control on how and where you route your payments.&#x20;
+The Hyperswitch control center gives you full control on how and where you route your payments.
 
 In the left nav bar, navigate to workflow --> routing to access the smart routing module.
 
 <figure><img src="../../../.gitbook/assets/Routing.gif" alt=""><figcaption></figcaption></figure>
 
-By default, a priority-based routing based on the processor created time (first connected processor with highest priority) is enabled for you. This also acts as your fallback routing - which means if all else fails, routing will follow this priority.&#x20;
+By default, a priority-based routing based on the processor created time (first connected processor with highest priority) is enabled for you. This also acts as your fallback routing - which means if all else fails, routing will follow this priority.
 
 Currently, you can configure two types of routing with more on the way:
 
@@ -98,8 +98,8 @@ The following key fields can be customized to align the dashboard with the merch
 
 These UI customizations are scalable and can be extended upon merchant request.
 
-{% content-ref url="../../merchant-controls/integration-guide/" %}
-[integration-guide](../../merchant-controls/integration-guide/)
+{% content-ref url="../../merchant-controls/integration-guide.md" %}
+[integration-guide.md](../../merchant-controls/integration-guide.md)
 {% endcontent-ref %}
 
 You can also refer to the [Smart Router](../../payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../../../hyperswitch-open-source/account-setup/test-a-payment.md).

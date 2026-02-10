@@ -117,7 +117,7 @@ Please reach out to our [**Support**](https://join.slack.com/t/hyperswitch-io/sh
 
 #### SDK layout
 
-Configure layout for the payment widget of the payment links. For a list of available options, refer to this section - [**SDK layouts**](../../../merchant-controls/integration-guide/web/customization.md#id-1.-layouts).
+Configure layout for the payment widget of the payment links. For a list of available options, refer to this section - [**SDK layouts**](../../../payment-experience/payment/web/customization.md#id-1.-layouts).
 
 <figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption><p>Accordion layout</p></figcaption></figure>
 

@@ -181,7 +181,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 {% endstep %}
 
 {% step %}
-Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../../explore-hyperswitch/merchant-controls/integration-guide/web/react-with-rest-api-integration.md)
+Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../../explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration.md)
 {% endstep %}
 
 {% step %}

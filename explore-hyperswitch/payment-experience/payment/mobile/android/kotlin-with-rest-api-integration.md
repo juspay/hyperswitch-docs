@@ -22,7 +22,7 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../web/server-setup.md) section.
+Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
@@ -84,7 +84,7 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 ```
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 `PaymentSession` is designed to work with AndroidX activities. Ensure that your `CheckoutActivity` extends `FragmentActivity` or its subclass from the AndroidX library
 {% endhint %}
@@ -98,13 +98,13 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY");
 ```
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 PaymentSession needs to be initialised in onCreate method of your `FragmentActivity`
 {% endhint %}
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 For an open-source setup, use the following parameters:
 
@@ -172,6 +172,4 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
 
-
-
-[^1]: &#x20;[Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
+[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

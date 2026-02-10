@@ -5,10 +5,8 @@ icon: puzzle-piece
 
 # Flutter with REST API Integration
 
-
-
 {% hint style="info" %}
-Use this guide to integrate `hyperswitch` SDK to your Flutter app.&#x20;
+Use this guide to integrate `hyperswitch` SDK to your Flutter app.
 {% endhint %}
 
 **Before following these steps, please configure your payment methods** [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
@@ -25,7 +23,7 @@ Use this guide to integrate `hyperswitch` SDK to your Flutter app.&#x20;
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../../web/server-setup.md) section.
+Follow the [Server Setup](../../../server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
@@ -70,7 +68,7 @@ _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY', customBackendUrl
 When utilising a custom backend or logging system, you can add the customBackendUrl to HyperConfig
 {% endhint %}
 
-### 3.2  Create a Payment Intent
+### 3.2 Create a Payment Intent
 
 Make a network request to the backend endpoint you created in the [previous step](flutter-with-node-backend.md#id-1.2-create-a-payment). The clientSecret returned by your endpoint is used to complete the payment.
 
@@ -120,7 +118,7 @@ Future<void> _presentPaymentSheet() async {
 ```
 {% endcode %}
 
-Congratulations! Now that you have integrated the  Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.&#x20;
+Congratulations! Now that you have integrated the Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.
 
 {% hint style="danger" %}
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.

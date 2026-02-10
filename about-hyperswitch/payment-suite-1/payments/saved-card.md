@@ -48,21 +48,4 @@ The SDK sends a `payments/confirm` request with the selected `payment_method_id`
 **5. Return Status**\
 The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant’s `return_url` with the payment outcome.
 
-#### **Guest checkout (Unified Checkout or Payments SDK)**
-
-<figure><img src="../../../.gitbook/assets/Untitled (15).svg" alt=""><figcaption></figcaption></figure>
-
-1. Create a PM session using the [Session Create API ](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)to get a [client secret](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-client-secret)
-2. For guest user, pass `storage_type` as `volatile` and skip sending the Customer ID
-3. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the client secret and session\_id&#x20;
-4. The SDK now takes care of the following flows based on user action:
-   1. Card form element to collect new card details&#x20;
-   2. Listing the previously saved cards for customers to select&#x20;
-   3. Updating the existing card with CVV
-5. Post which the SDK submits the card details via the [PM Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) and returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the response
-6. Pass this PM token to the merchant Server and exchange for a PM ID from the server using the [PM token exchange API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--payment-method-token-to-payment-method-id-v1)
-7. Use this PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm).
-
-{% hint style="info" %}
-When using the HS SDK, the response always contains a temp token and you will need to exchange it to get the PM ID via a S2S call. For guest checkout flow the PM ID is NOT unique to Customer + Payment method combination
-{% endhint %}
+#### **Guest checkout (Using Vault SDK)**

@@ -12,7 +12,7 @@ icon: mobile-screen
 * **Faster initialization**: Streamlined setup process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK  uses the same `PaymentSession` options as the main SDK, including:**
+* **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
   * Appearance customization
   * Billing details
   * Shipping information
@@ -26,7 +26,7 @@ icon: mobile-screen
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../web/server-setup.md) section.
+Follow the [Server Setup](../../server-setup.md) section.
 
 ### 2. Build Checkout in Your App
 

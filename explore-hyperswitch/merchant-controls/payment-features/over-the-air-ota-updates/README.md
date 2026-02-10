@@ -45,5 +45,4 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 
 ***
 
-For more information, [Airborne](https://github.com/juspay/airborne)​[\
-](../../integration-guide/web/server-setup.md)
+For more information, [Airborne](https://github.com/juspay/airborne)​[<br>](../../../payment-experience/payment/server-setup.md)

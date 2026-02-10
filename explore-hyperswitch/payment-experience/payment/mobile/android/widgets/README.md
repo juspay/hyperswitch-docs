@@ -22,7 +22,7 @@ icon: cubes
 $ npm install @juspay-tech/hyperswitch-node
 ```
 
-Follow the [Server Setup](../../../web/server-setup.md) section.
+Follow the [Server Setup](../../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
@@ -72,8 +72,6 @@ private fun initialiseSDK() {
 }
 ```
 
-
-
 ## 3. Implementation
 
 Choose from list of available widgets to integrate:
@@ -93,4 +91,4 @@ Congratulations! You have successfully integrated Hyperswitch widgets into your 
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
 
-[^1]: &#x20;[Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
+[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

@@ -16,7 +16,7 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 ### 1. Setup the server
 
-1.1 Follow the [Server Setup](server-setup.md) section.
+1.1 Follow the [Server Setup](../server-setup.md) section.
 
 ### 2. Build checkout page on the client
 

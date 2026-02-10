@@ -1,3 +1,7 @@
+---
+icon: almost-equal-to
+---
+
 # Proxy
 
 **📌 What is it?**

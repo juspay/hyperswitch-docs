@@ -13,7 +13,7 @@ icon: mobile-screen
 * **Faster initialization**: Streamlined setup process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
-* #### Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:
+* **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
   * Appearance customization
   * Billing details
   * Shipping information
@@ -29,7 +29,7 @@ icon: mobile-screen
 
 ## 1. Setup the server
 
-Follow the [Server Setup](../../web/server-setup.md) section.
+Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
@@ -54,13 +54,13 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
 ```
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 PaymentSession needs to be initialized in onCreate method of your `FragmentActivity`
 {% endhint %}
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 For an open-source setup, use the following parameters:
 
@@ -127,4 +127,3 @@ Congratulations! You have successfully integrated the Hyperswitch Lite SDK into 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
-
