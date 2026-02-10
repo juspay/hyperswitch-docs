@@ -160,7 +160,7 @@ Automatically route transactions based on geography, success rate, or cost to ma
 
 Recover failed payments using ML-driven retry strategies optimized for timing, issuer behavior, and card type.
 
-[Payouts →](explore-hyperswitch/payment-orchestration/payouts/)
+[Payouts →](explore-hyperswitch/connectors/payouts/)
 
 Easily manage and automate disbursements to sellers, vendors, or partners with flexible payout logic.
 
@@ -168,7 +168,7 @@ Easily manage and automate disbursements to sellers, vendors, or partners with f
 
 Handle recurring payments seamlessly with built-in support for subscription billing and invoicing.
 
-[Split Payments →](explore-hyperswitch/payment-orchestration/split-payments/)
+[Split Payments →](explore-hyperswitch/connectors/split-payments/)
 
 Divide transactions between multiple parties or accounts with precision and control.
 

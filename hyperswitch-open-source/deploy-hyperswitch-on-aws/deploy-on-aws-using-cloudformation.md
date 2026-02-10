@@ -229,8 +229,8 @@ The following services are installed in the 2 Nodes across the EKS cluster
 [account-setup](../account-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="../../explore-hyperswitch/connectors/test-a-payment-with-connector.md" %}
-[test-a-payment-with-connector.md](../../explore-hyperswitch/connectors/test-a-payment-with-connector.md)
+{% content-ref url="../../explore-hyperswitch/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}
+[test-a-payment-with-connector.md](../../explore-hyperswitch/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 {% endcontent-ref %}
 
 ###

@@ -9,11 +9,11 @@ icon: vial-circle-check
 1. Upon configuration of the Connector, navigate to the dashboard [home page](https://app.hyperswitch.io/home)
 2.  Proceed with the "Try a test payment" option on the home page of the dashboard\\
 
-    <figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.45.52 AM (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.45.52 AM (1).png" alt=""><figcaption></figcaption></figure>
 3. Setup your demo checkout page by providing Business profile, Profile Id, Currency and Amount
 4.  Click on Show Preview, Your demo checkout page will be visible at preview section\\
 
-    <figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message
 7. Validate transaction on Hyperswitch dashboard.\
@@ -21,9 +21,9 @@ icon: vial-circle-check
    \- Click on Operations -> Payments\
    \- Your transactions should be visible under the order management tab
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.03 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.03 AM.png" alt=""><figcaption></figcaption></figure>
 
 ## Test Credentials
 
@@ -106,4 +106,4 @@ Apple Pay provides test cards from various card companies and supported regions 
 2. Your Safari browser automatically detects your location from your System Preferences.
 3. If you are not located in the supported countried, but still wish to test Applepay, please change your Region using Mac System preferences > Language & Region > choose any of the 15 supported countries.
 
-<figure><img src="../../.gitbook/assets/languageRegion (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/languageRegion (1).png" alt=""><figcaption></figcaption></figure>
