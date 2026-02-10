@@ -1,5 +1,6 @@
 ---
 description: Set up Google pay on your application
+icon: google
 ---
 
 # Google Pay

@@ -1,7 +1,6 @@
 ---
 description: Accept PayPal, GPay and Apple Pay through Hyperswitch
-hidden: true
-icon: mobile-retro
+icon: wallet
 ---
 
 # Wallets

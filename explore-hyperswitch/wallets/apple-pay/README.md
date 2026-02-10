@@ -1,5 +1,6 @@
 ---
 description: Guide to using Apple Pay payment method on Hyperswitch
+icon: apple-pay
 ---
 
 # Apple Pay
