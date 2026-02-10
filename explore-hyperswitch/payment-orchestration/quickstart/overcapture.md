@@ -1,4 +1,5 @@
 ---
+hidden: true
 icon: plus
 ---
 
@@ -41,7 +42,7 @@ Use the boolean field enable\_overcapture in your payment request.
 
 This flag can be set in the following API calls:
 
-* /payments/create with `confirm = false`&#x20;
+* /payments/create with `confirm = false`
   * /payments/update
 * /payments/create call with `confirm = true`
 
@@ -115,4 +116,4 @@ This flag can be set in the following API calls:
 
 ✅ With Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
 
-\
+\\

@@ -2,6 +2,7 @@
 description: >-
   Understand how to place a hold on your customers' funds and capture them later
   either fully or partially and either in one-go or multiple times
+hidden: true
 icon: sack-dollar
 ---
 
@@ -9,7 +10,7 @@ icon: sack-dollar
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}
 
-In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.&#x20;
+In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.
 
 But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Hyperswitch, we call this the '**Manual Capture'** flow.
 
@@ -82,7 +83,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/c
 
 ### 3. Capture the payment after delivering the goods and services:
 
-After delivering the goods and services, capture the payment by passing the `payment_id` from above step to `payments/capture` API endpoint.  On successful capture, the payment would transition from `'requires_capture'` to `'succeeded'` status.
+After delivering the goods and services, capture the payment by passing the `payment_id` from above step to `payments/capture` API endpoint. On successful capture, the payment would transition from `'requires_capture'` to `'succeeded'` status.
 
 **Sample curl:**
 
