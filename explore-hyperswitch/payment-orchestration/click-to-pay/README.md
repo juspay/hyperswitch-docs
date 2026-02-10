@@ -14,7 +14,7 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 ### Payment Journey for Click to pay signed up users
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### What Makes Hyperswitch’s Implementation Unique?
 
@@ -57,10 +57,10 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 * Merchants benefit from a chargeback liability shift to the issuer when transactions are authenticated via Click to Pay with Passkeys.
 
-By combining the tokenization of payment credentials with seamless biometric authentication, Click to Pay is bringing [EMVCo](https://www.emvco.com/), [World Wide Web Consortium](https://www.w3.org/) and the[ FIDO Alliance](https://fidoalliance.org/) industry standards together to speed and secure checkouts.&#x20;
+By combining the tokenization of payment credentials with seamless biometric authentication, Click to Pay is bringing [EMVCo](https://www.emvco.com/), [World Wide Web Consortium](https://www.w3.org/) and the[ FIDO Alliance](https://fidoalliance.org/) industry standards together to speed and secure checkouts.
 
 On the customers' side, many are hesitant to enter their card details on a merchant website due to lack of trust and security concerns. With Click to Pay, these customers need not enter their card details manually, but fetch those from a secured, known EMVCo SRC system. This reduces the cart abandonment rate and increased sales for the merchants who offer Click to Pay.
 
-{% content-ref url="../../../account-management/" %}
-[account-management](../../../account-management/)
+{% content-ref url="../../account-management/" %}
+[account-management](../../account-management/)
 {% endcontent-ref %}

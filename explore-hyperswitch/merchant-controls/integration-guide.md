@@ -1,5 +1,6 @@
 ---
 description: Get started integrating the Hyperswitch web client in your app
+hidden: true
 icon: puzzle-piece
 ---
 

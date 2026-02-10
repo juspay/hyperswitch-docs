@@ -2,13 +2,7 @@
 icon: laptop-code
 ---
 
-# \[Beta] Embeddable Components
-
-{% hint style="info" %}
-**Developer** **Note**:
-
-Active Beta: This feature is currently in active development. While the core architecture is stable, specific API contracts, SDK methods, and implementation details are subject to change as we refine the product
-{% endhint %}
+# Embeddable Components
 
 #### Introduction
 
