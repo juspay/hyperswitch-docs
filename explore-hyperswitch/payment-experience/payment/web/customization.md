@@ -45,6 +45,30 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
+### 1.2.1 Tabs layout - Grid arrangement
+
+By default, the tabs layout shows excess payment methods inside a dropdown. If you want to display all payment methods at once in a grid view, you can customize the tabs layout using `paymentMethodsArrangementForTabs`.\
+\
+When `paymentMethodsArrangementForTabs` is set to `grid`, the tabs layout switches to a grid style
+
+`paymentMethodsArrangementForTabs` supports the following values:
+
+* `default` – Shows excess payment methods in a dropdown (default).
+* `grid` – Shows all payment methods in a grid without a dropdown.
+
+To enable the grid arrangement in tabs layout, configure the layout object as shown below.
+
+```javascript
+var paymentElementOptions = {
+  layout: {
+    type: 'tabs',
+    paymentMethodsArrangementForTabs: 'grid' 
+  }
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
 ### 1.3 Saved Methods Customization
 
 In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.\
@@ -64,6 +88,34 @@ var paymentElementOptions = {
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
+
+### 1.4 One Click Payment Methods Customization
+
+By default, one-click payment methods such as Google Pay and Apple Pay are always displayed at the top of the checkout, regardless of the selected layout (Accordion or Tabs).
+
+If you want to display one-click payment methods alongside other payment methods inside the layout instead of at the top, you can disable this behavior using `displayOneClickPaymentMethodsOnTop`.
+
+When `displayOneClickPaymentMethodsOnTop` is set to `false`:
+
+* Supported one-click methods are moved into the selected layout (Tabs or Accordion).
+* Unsupported one-click methods are hidden.
+
+To customize one-click payment method placement, configure the layout object as shown below.
+
+```javascript
+var paymentElementOptions = {
+   layout: {
+    type: 'tabs',
+    displayOneClickPaymentMethodsOnTop: false, //Default - true
+  }
+}
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+```
+
+{% hint style="info" %}
+Note: Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being moved into the layout. Other one-click methods are hidden when this option is disabled.
+{% endhint %}
 
 ## 2. Wallets
 
@@ -391,19 +443,6 @@ The `hideExpiredPaymentMethods` property allows you to control whether expired s
 var paymentElementOptions = {
   ...,
   hideExpiredPaymentMethods: false, // default - false
-};
-
-<PaymentElement id="payment-element" options={paymentElementOptions} />;
-```
-
-### Show Card Form by Default
-
-The `showCardFormByDefault` property determines whether the card form is displayed by default or not.
-
-```javascript
-var paymentElementOptions = {
-  ...,
-  showCardFormByDefault: true,
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
