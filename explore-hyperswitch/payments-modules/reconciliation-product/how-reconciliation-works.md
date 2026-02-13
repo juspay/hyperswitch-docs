@@ -15,7 +15,7 @@ The reconciliation process follows a robust, end-to-end flow to ensure that ever
 5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules
 6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctl
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Rules Architecture
 

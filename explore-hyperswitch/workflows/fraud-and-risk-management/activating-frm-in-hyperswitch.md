@@ -49,7 +49,7 @@ If the connector doesn’t support manual capture, Post-Authorization manual rev
 
 ## FRM status and decisions
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 FRM connectors generally provide a decision based on rules or data models along with a risk score associated with the transaction. Some integrations require providing the model to be used explicitly. For example, Signifyd can be configured to respond with only scores or decision + scores, etc.
 

@@ -28,7 +28,7 @@ The below tutorial enable you to set-up External 3DS authentication for both, We
 
 * Setup 3DS Authenticator. You can select Juspay 3DS or any other external 3DS server
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 

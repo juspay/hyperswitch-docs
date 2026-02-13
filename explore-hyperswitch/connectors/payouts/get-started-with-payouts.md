@@ -39,7 +39,7 @@ Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
 
 **Step 4 -** Enable preferred payment methods.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
 
 **Step 5 -** Hooray! You've successfully set up your payout processor!
 
