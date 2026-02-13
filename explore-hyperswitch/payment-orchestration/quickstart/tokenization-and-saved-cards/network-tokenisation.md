@@ -3,20 +3,6 @@ description: >-
   Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
   with Minimal Changes
 icon: shield-check
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
 ---
 
 # Network Tokenisation

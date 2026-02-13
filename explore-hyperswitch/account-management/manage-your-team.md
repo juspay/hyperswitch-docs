@@ -7,6 +7,8 @@ icon: screen-users
 
 You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
 
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+
 ### Default Roles
 
 Our system currently offers a set of default roles, each with predefined permissions:
@@ -98,7 +100,7 @@ Our system currently offers a set of default roles, each with predefined permiss
 * Can access transaction details and customer information needed for handling support queries.
 * View access to merchant operations, analytics, users, and merchant details.
 
-<table><thead><tr><th width="239">Permissions</th><th width="40" data-type="checkbox">Org Admin</th><th width="162" data-type="checkbox">Merchant Admin</th><th width="173" data-type="checkbox">Payment Operator</th><th width="169" data-type="checkbox">Customer Support</th><th width="113" data-type="checkbox">Developer</th><th width="68" data-type="checkbox">IAM</th><th data-type="checkbox">View All</th></tr></thead><tbody><tr><td>View operations</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Manage operations</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View connectors</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Manage connectors</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View workflows (routing, 3DS)</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Manage workflows</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View analytics</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>View team / user</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Manage team / users</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td>View merchant details</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Manage merchant details</td><td>true</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td><td>false</td></tr><tr><td>Create a merchant</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr></tbody></table>
+<table><thead><tr><th width="239">Permissions</th><th width="117.6328125" data-type="checkbox">Org Admin</th><th width="162" data-type="checkbox">Merchant Admin</th><th width="173" data-type="checkbox">Payment Operator</th><th width="169" data-type="checkbox">Customer Support</th><th width="123.76953125" data-type="checkbox">Developer</th><th width="93.43359375" data-type="checkbox">IAM</th><th data-type="checkbox">View All</th></tr></thead><tbody><tr><td>View operations</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>false</td><td>true</td></tr><tr><td>Manage operations</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View connectors</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Manage connectors</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View workflows (routing, 3DS)</td><td>true</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td></tr><tr><td>Manage workflows</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>View analytics</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>View team / user</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Manage team / users</td><td>true</td><td>true</td><td>false</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td>View merchant details</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td><td>true</td></tr><tr><td>Manage merchant details</td><td>true</td><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td><td>false</td></tr><tr><td>Create a merchant</td><td>true</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr></tbody></table>
 
 These roles are designed to cater to the common operational hierarchies in most organizations.
 
@@ -106,7 +108,7 @@ These roles are designed to cater to the common operational hierarchies in most 
 
 This feature allows organisations to create roles with specific permissions that perfectly align with their unique operational structures and requirements. Custom roles can only be created at merchant roles.
 
-#### Steps to create a custom role -&#x20;
+#### Steps to create a custom role -
 
 * Go to Settings -> Users in the Hyperswitch Dashboard.
 * Switch to the Roles tab, and click on Create Custom Roles.
@@ -127,4 +129,3 @@ The process of assigning roles and permissions is straightforward:
 <figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 1.20.54 PM 2 (1).png" alt=""><figcaption></figcaption></figure>
 
 3. **Modifying Roles**: Existing users’ roles can be adjusted as needed, accommodating changes in responsibilities or positions. This is an upcoming feature.
-

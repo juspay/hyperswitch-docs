@@ -1,12 +1,16 @@
----
-description: Enable Apple pay on your web domains
-hidden: true
-icon: globe-wifi
----
+# Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
 
-# Web Domain
+In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
 
-## **Steps to configure Apple Pay on Hyperswitch**
+**Mechanism:**
+
+1. Frontend sends apple pay payment token to Hyperswitch.
+2. Hyperswitch unwraps the token using your private key stored in its secure vault.
+3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
+
+### **Configuration :**&#x20;
+
+#### **Steps to configure Apple Pay on Hyperswitch**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
