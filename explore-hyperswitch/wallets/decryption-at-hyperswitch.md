@@ -1,2 +1,0 @@
-# Decryption at Hyperswitch
-

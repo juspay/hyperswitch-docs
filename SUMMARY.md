@@ -147,7 +147,6 @@
     * [In-App and Web Transactions Processed Using PSP Decryption](explore-hyperswitch/wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
   * [PayPal](explore-hyperswitch/wallets/paypal.md)
   * [Samsung Pay](explore-hyperswitch/wallets/samsung-pay.md)
-  * [Decryption at Hyperswitch](explore-hyperswitch/wallets/decryption-at-hyperswitch.md)
 * [Authorizations](explore-hyperswitch/authorizations/README.md)
   * [Incremental Authorization](explore-hyperswitch/authorizations/incremental-authorization.md)
   * [$0 Authorization](explore-hyperswitch/authorizations/zero-amount-authorization-1.md)
