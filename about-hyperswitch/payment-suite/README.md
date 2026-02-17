@@ -13,11 +13,11 @@ To simplify decision-making, it helps to view the ecosystem as four core buildin
 
 Choose the integration method that best aligns with your payment flow requirements:
 
-#### 1. Client-Side SDK Payments
+#### 1. Client-Side SDK Payments (Tokenise Post Payment)
 
 Refer to Payments (Cards) section  if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 
-#### 2. Server-to-Server (S2S) Payments
+#### 2. Server-to-Server (S2S) Payments (Tokenise Pre Payment)
 
 Refer to the Payment Method (Cards) section if you intend to use the SDK exclusively for vaulting/storing card details. In this scenario, the actual payment execution is handled via S2S API calls from your backend to Hyperswitch, offering you more granular control over the transaction lifecycle.
 {% endhint %}

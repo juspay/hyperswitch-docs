@@ -9,7 +9,7 @@ Hyperswitch provides flexible payment processing with multiple flow patterns to 
 {% hint style="info" %}
 ### Integration Path
 
-#### Client-Side SDK Payments
+#### Client-Side SDK Payments (Tokenise Post Payment)
 
 Refer to Payments (Cards) section  if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 {% endhint %}

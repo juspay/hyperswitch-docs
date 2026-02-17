@@ -91,6 +91,18 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
+
+
+### Gateway error code mapping
+
+Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. By leveraging an advanced AI model, we analyze error codes returned from payment processors to determine the root cause of a failure.
+
+Upon receiving an error from a processor, the system classifies the transaction into one of two primary categories: Non-Retryable , Retryable. If an error is deemed Retryable, the AI dynamically selects the optimal retry strategy from the following categories:
+
+
+
+
+
 ## How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
