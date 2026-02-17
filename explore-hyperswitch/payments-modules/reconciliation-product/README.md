@@ -16,8 +16,7 @@ Our Reconciliation Module is built on a powerful, accounting-grade ledger, apply
 
 #### Jump to:
 
-| [Architecture](why-we-evolved-v1-vs-v2.md) | [Example: E Commerce](example-e-commerce.md) |
-| ------------------------------------------ | -------------------------------------------- |
-| [Roadmap](roadmap.md)                      | [Reconciliation V1](../reconciliation/)      |
-
-\\
+| [Core Concepts](core-concepts.md)                           | [How Reconciliation Works](how-reconciliation-works.md) |
+| ----------------------------------------------------------- | ------------------------------------------------------- |
+| [Example: E Commerce](example-e-commerce.md)                | [Exception Handling](exception-handling/)               |
+| [Statuses in Reconciliation](statuses-in-reconciliation.md) | [Roadmap](roadmap.md)                                   |
