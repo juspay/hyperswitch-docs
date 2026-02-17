@@ -118,11 +118,11 @@ Primary processor is the first choice of processor for the particular transactio
 
 <details>
 
-<summary>How to know if the Smart retry was done for a payment ?</summary>
+<summary>How can I verify if a Smart Retry was performed for a payment?</summary>
 
-All payment attempts are logged against their payment\_id and are accessible via the Hyperswitch Control Center, under operations > Payments > Select the payment ID, here you will be able to find all the payment details against each attempt.
+You can verify this in the Hyperswitch Control Center. Navigate to the specific transaction using the Payment ID. If a Smart Retry was triggered, you will see multiple payment attempts listed under that single ID in the transaction timeline.
 
-Additionally, we provides a dedicated Smart Retries dashboard under the Analytics section. This view offers comprehensive metrics on retry performance, allowing you to track success rates and optimization impact in real-time.
+Additionally, you can view aggregate data in the Analytics section under the Smart Retries tab to see overall retry performance.
 
 </details>
 
