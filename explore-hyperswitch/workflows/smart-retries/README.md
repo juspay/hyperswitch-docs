@@ -93,16 +93,6 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 
 
-### Gateway error code mapping
-
-Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. By leveraging an advanced AI model, we analyze error codes returned from payment processors to determine the root cause of a failure.
-
-Upon receiving an error from a processor, the system classifies the transaction into one of two primary categories: Non-Retryable , Retryable. If an error is deemed Retryable, the AI dynamically selects the optimal retry strategy from the following categories:
-
-
-
-
-
 ## How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
@@ -112,13 +102,33 @@ Upon receiving an error from a processor, the system classifies the transaction 
 * Confirmation on the retry flows to be enaled&#x20;
 * Maximum number of payment retry attempts&#x20;
 
+####
+
+
+
 ## FAQs
 
-### What is a primary processor?
+<details>
+
+<summary>What is a primary processor?</summary>
 
 Primary processor is the first choice of processor for the particular transaction to be processed. This is evaluated based on the smart routing rules configured in the Hyperswitch dashboard’s routing module.
 
-### Why can I not enable Automatic Retry from the Hyperswitch dashboard?
+</details>
+
+<details>
+
+<summary>How to know if the Smart retry was done for a payment ?</summary>
+
+All payment attempts are logged against their payment\_id and are accessible via the Hyperswitch Control Center, under operations > Payments > Select the payment ID, here you will be able to find all the payment details against each attempt.
+
+Additionally, we provides a dedicated Smart Retries dashboard under the Analytics section. This view offers comprehensive metrics on retry performance, allowing you to track success rates and optimization impact in real-time.
+
+</details>
+
+<details>
+
+<summary>Why can I not enable Automatic Retry from the Hyperswitch dashboard?</summary>
 
 For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (hyperswitch@juspay.in).
 
@@ -130,12 +140,22 @@ For example, if the merchant had sent pay\_abcd145efg, then Hyperswitch will sen
 * Payment attempt 2: pay\_abcd145efg\_2
 * Payment attempt 3: pay\_abcd145efg\_3
 
-### What will the user experience look like during Smart Retry?
+</details>
+
+<details>
+
+<summary>What will the user experience look like during Smart Retry?</summary>
 
 The user experience will not be different from a regular checkout experience, since all retry attempts will happen silently in the background. However, there is a possibility of the user receiving multiple payment attempt notifications / sms from the card issuing bank due to the card payment being attempted for more than once.
 
-### What is the difference between fallback and smart retry?
+</details>
+
+<details>
+
+<summary>What is the difference between fallback and smart retry?</summary>
 
 Fallback is a pecking order of all the configured processors which is used to route traffic standalone or when other smart routing rules are not applicable for the particular transaction. You can reorder the list with simple drag and drop from the Routing > Default fallback > Manage section in the dashboard.
 
 Smart retry is a feature to improve the chances of success of a payment by silently retrying with an alternative processor.
+
+</details>

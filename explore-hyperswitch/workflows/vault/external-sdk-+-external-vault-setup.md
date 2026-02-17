@@ -28,7 +28,7 @@ When utilizing External Vaults, merchants have the flexibility to define how pay
 
 #### **Layered Integration**
 
-<figure><img src="../../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
 
 **1. Payment Initialization**
 
@@ -74,7 +74,7 @@ Once the processor provides a final status, the response is relayed back from th
 
 #### **Independent Integration**
 
-<figure><img src="../../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
 
 **1.Card Tokenization**
 
