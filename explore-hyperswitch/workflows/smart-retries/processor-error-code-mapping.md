@@ -6,9 +6,18 @@ icon: signs-post
 
 Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors to determine the root cause of failure in real-time.
 
-Upon receiving an error, the system classifies the transaction as either Non-Retryable or Retryable. If an error is deemed retryable, the AI dynamically selects the optimal recovery strategy from the following: **Cascading Retry,** **Step-Up Retry**, **Clear PAN Retry**, or **Global Network Retry**.
+Upon receiving an error, the system classifies the transaction as either Non-Retryable or Retryable. If an error is deemed retryable, the AI dynamically selects the optimal recovery strategy from the following:&#x20;
+
+| Category        | Example                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cascading retry | Refused, System malfunction, Processing temporarily unavailable                                                                                          |
+| Step-up retry   | Step-up retry                                                                                                                                            |
+| Clear PAN retry | Invalid cryptogram, Network token not supported, Payment token expired                                                                                   |
+| Network retry   | <p>Transaction not permitted on this network, Invalid card for selected network, Function not supported</p><h4 id="merchant-config-enablement"><br></h4> |
 
 To illustrate the classification process, the following tables lists few sample Stripe error codes and how our AI model categorizes them into Retryable versus Non-Retryable workflows.
+
+
 
 #### **Error codes categorize as Retryable :** &#x20;
 
