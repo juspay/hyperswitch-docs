@@ -43,7 +43,7 @@ The Hyperswitch Advantage: Infrastructure-as-Code
 
 Treat merchant onboarding as an API call, not a support ticket. Hyperswitch exposes [Management APIs](https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create#merchant-account-create) to fully automate the lifecycle.
 
-* Instant Onboarding: Create a new merchant entity and inject their Stripe/Adyen keys via the [Connector Configuration API](https://api-reference.hyperswitch.io/merchant-connector-account/merchant-connector--create).
+* Instant Onboarding: Create a new merchant entity and inject their Stripe/Adyen keys via the [Connector Configuration API](https://api-reference.hyperswitch.io/v1/merchant-connector-account/merchant-connector--create#merchant-connector-create).
 * Flexible Liability: Support both Merchant of Record (MoR) models (platform holds funds) and Connected Account models (merchant holds funds).
 
 #### Pattern 4: Standardizing Complex Payment Flows
