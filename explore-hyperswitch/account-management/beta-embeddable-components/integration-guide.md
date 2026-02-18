@@ -4,6 +4,8 @@ This SDK allows you to embed the Hyperswitch connector configuration directly in
 
 Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
 
+Demo URL: [https://embedded-ssr.netlify.app/](https://embedded-ssr.netlify.app/)
+
 ### Prerequisites & Compatibility
 
 Before you begin, ensure your environment meets the following requirements:
