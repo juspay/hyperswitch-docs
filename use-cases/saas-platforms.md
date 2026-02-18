@@ -5,159 +5,97 @@ icon: desktop
 
 # SaaS Platforms
 
-Across SaaS platforms operating in commerce, bookings, operations, professional services, and other verticals, several common payment patterns appear consistently. These platforms typically onboard multiple merchants, each with their own PSPs, routing needs, onboarding workflows, and operational requirements. A recurring theme we observe is the need for a composable payment layer that standardizes these differences without requiring custom engineering for each merchant.
+SaaS platforms operating in commerce, bookings, and professional services face a unique challenge: they must act as the central nervous system for thousands of distinct merchants.
 
-Hyperswitch supports SaaS providers with modular capabilities that help streamline merchant onboarding, unify diverse PSP behaviors, and create consistent payment experiences across verticals — while fitting into the platform’s existing product and operational model.
+A recurring theme we observe is the friction between scalability (standardizing payments) and flexibility (allowing merchants to bring their own processors). Hyperswitch resolves this by providing a composable payment mesh that standardizes these differences without requiring custom engineering for each merchant.
 
-The sections below outline the most frequent patterns seen across SaaS platforms.
+The sections below outline the architectural patterns required to scale a multi-tenant payment infrastructure.
 
-### Use Case 1 - Supporting merchants who bring their own PSPs
+#### Pattern 1: "Bring Your Own Processor" (BYOP)
 
-A large number of SaaS platforms onboard merchants who already use specific PSPs or APMs. Patterns across teams show challenges around maintaining multiple processor integrations, normalizing APIs, handling different webhook types, and safely collecting PSP credentials. This often slows down merchant onboarding cycles.
+The Business Friction: High-value merchants often refuse to migrate their payment processing to the SaaS platform because they have pre-negotiated rates or historical data with specific providers (e.g., Stripe, Adyen, Worldpay). Supporting these "brownfield" merchants usually requires building and maintaining dozens of custom integrations.
 
-#### Solution
+The Hyperswitch Advantage: Decoupled Connectivity
 
-Hyperswitch provides a connector layer that standardizes PSP interactions, enabling SaaS teams to support merchant-specific processors without building custom integrations. Platforms typically adopt one of three models:
+Hyperswitch acts as a Connector Abstraction Layer. You integrate our SDK once, and we dynamically route the transaction to the merchant’s preferred processor based on their configuration.
 
-* **Full-Stack Mode** - Hyperswitch manages UI, tokenization, 3DS, and routing.
-* **Backend-Only Mode** - the platform keeps its UI but uses Hyperswitch for processor calls.
-* **Stateless Mode** - used when merchants require strict data boundaries.
+* Unified API: We normalize 50+ processor APIs into a single [Payment Intent Flow](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration).
+* Zero-Code Integration: New processors are added via configuration, not code. See our [Supported Connectors](https://juspay.io/integrations) list.
+* Deployment Models: Choose between Full-Stack Mode (we handle UI & Tokenization) or Backend-Only (you own the UI).
 
-These patterns reduce onboarding time and simplify multi-PSP support.
+#### Pattern 2: Multi-Tenant Data Isolation
 
-#### Relevant Documentation
+The Business Friction: SaaS platforms must ensure that one merchant's routing rules, API keys, and customer data never leak to another. Building this "tenancy logic" from scratch is risky and delays time-to-market.
 
-* [Connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
+The Hyperswitch Advantage: Native Hierarchy
 
-### Use Case 2 - Maintaining merchant-level isolation (Org → Merchant → Profile)
+We provide a built-in [Organization → Merchant → Profile](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles) data model designed specifically for platforms.
 
-Most SaaS platforms require clean separation between merchants — including PSP keys, routing preferences, business units, and operational users. Engineering teams often highlight the friction of building and maintaining custom multi-tenant boundaries.
+* Granular Control: Isolate API keys and routing rules at the Merchant ID level.
+* Business Unit Segmentation: Use Profiles to manage regional splits (e.g., "Merchant A - US Store" vs. "Merchant A - EU Store").
+* Team Access: Map your dashboard users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
 
-#### Solution
+#### Pattern 3: Automated Merchant Provisioning
 
-Hyperswitch provides a built-in **Organization → Merchant → Profile** hierarchy that platforms use to:
+The Business Friction: Manual onboarding via a dashboard is an operational bottleneck. To scale, platforms need to provision sub-merchants, inject credentials, and configure webhooks programmatically at the moment of signup.
 
-* Segment PSP configurations
-* Separate routing logic
-* Manage dashboards and operational roles
-* Maintain regional or business-unit splits
-* Produce merchant-specific reports and analytics
+The Hyperswitch Advantage: Infrastructure-as-Code
 
-This structure simplifies multi-tenant support and reduces custom permissioning work.
+Treat merchant onboarding as an API call, not a support ticket. Hyperswitch exposes [Management APIs](https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create#merchant-account-create) to fully automate the lifecycle.
 
-#### Relevant Documentation
+* Instant Onboarding: Create a new merchant entity and inject their Stripe/Adyen keys via the [Connector Configuration API](https://api-reference.hyperswitch.io/merchant-connector-account/merchant-connector--create).
+* Flexible Liability: Support both Merchant of Record (MoR) models (platform holds funds) and Connected Account models (merchant holds funds).
 
-* [Merchant Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles)
+#### Pattern 4: Standardizing Complex Payment Flows
 
-### Use Case 3 - Programmatic merchant onboarding (MoR & Non-MoR)
+The Business Friction: Different verticals require different flows (e.g., $0 Auth for hotels, 3DS for EU retail, Recurring for subscriptions). Fragmentation across PSP capabilities (e.g., "Stripe supports 3DS, but does Authorize.net?") often forces platforms to write "spaghetti code."
 
-A recurring requirement among SaaS platforms is a predictable, programmatic onboarding flow. Some platforms act as Merchant-of-Record (MoR), while others allow merchants to use their own PSP keys. Across both models, teams often look for ways to streamline credential onboarding while maintaining security.
+The Hyperswitch Advantage: The Universal State Machine
 
-#### Solution
+We normalize complex flows into a standard state machine. Your frontend handles a single response type, regardless of the underlying complexity.
 
-Hyperswitch’s **Platform Account APIs** support:
+* Compliance Ready: We automatically handle [3D Secure (3DS)](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/payment-features/3d-secure-3ds) challenges across all processors.
+* Unified Lifecycle: Perform [Auth, Capture, and Void](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/connector-payment-flows) operations using a single API syntax, even if the underlying PSP (e.g., Klarna vs. Visa) behaves differently.
 
-* Creating merchants via API
-* Uploading or connecting PSP accounts
-* Handling MoR and non-MoR flows
-* Embedding credential setup into the SaaS product
-* Standardizing all merchants into a single payment lifecycle format
+#### Pattern 5: Vendor-Agnostic Vaulting (Tokenization)
 
-This reduces onboarding overhead and provides consistent onboarding behavior across merchants and PSPs.
+The Business Friction: If a merchant stores card data in a PSP-specific vault (e.g., Stripe Customer ID), they are vendor-locked. Switching providers means losing all saved customer cards, which destroys recurring revenue.
 
-### Use Case 4 - Standardizing diverse payment flows across verticals
+The Hyperswitch Advantage: Portable Tokenization
 
-SaaS platforms commonly support varied flows depending on their vertical — including $0 auth, 3DS, multi-capture, partial refunds, or recurring billing. Teams often highlight PSP fragmentation as a recurring operational challenge.
+We offer a neutral [Payment Vault (Locker)](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault) that exists independently of the processor.
 
-#### Solution
+* Ownership: You or the merchant own the tokens, not the PSP.
+* Interoperability: A card saved during a Stripe transaction can be seamlessly charged via Adyen later using our [Network Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards) logic.
+* Security: Offload PCI-DSS compliance by using our certified secure storage.
 
-Hyperswitch normalizes:
+#### Pattern 6: Operational Efficiency & Unified Support
 
-* $0 verification flows
-* 3DS flows
-* Auth / capture sequences
-* Partial and multi-capture
-* Refund and dispute flows
-* Wallet parameters
-* L2/L3 data requirements
-* Raw PSP response delivery
+The Business Friction: Support teams struggle when every PSP returns different error codes (e.g., "Do Not Honor" vs. "Refusal" vs. "Error 402"). Debugging requires deep knowledge of 10+ different vendor systems.
 
-This allows SaaS platforms to expose a single, unified flow while still supporting multiple processors.
+The Hyperswitch Advantage: Normalized Observability We translate the chaos of vendor responses into a clean, standardized language for your support and engineering teams.
 
-#### Relevant Documentation
+* Unified Errors: We map thousands of PSP error codes into a [Standardized Error Reference](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/error-codes) (e.g., `card_expired`), so your UI can show consistent messages.
+* Single Source of Truth: Use the [Operations Dashboard](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations) to view transaction logs, refunds, and disputes across all merchants and processors in one view.
 
-* [Connector Payment Flows](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/connector-payment-flows)
-* [3DS](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/payment-features/3d-secure-3ds)
+#### Pattern 7: Unified Post-Payment Operations
 
-### Use Case 5 - Flexible vaulting for multi-merchant environments
+The Business Friction: The payment lifecycle doesn't end at "Checkout." SaaS platforms must also build portals for their merchants to handle Refunds, Disputes, and Webhooks. Building these operational interfaces is painful because every processor has a different API schema for refunds and a different JSON payload for webhooks.
 
-Vaulting requirements vary widely across merchants. Some rely on PSP-native vaults; others require unified vaults, external vaults, or merchant-scoped setups. SaaS engineering teams often note the difficulty of supporting multiple vaulting choices consistently.
+The Hyperswitch Advantage: Normalized Event Streams
 
-#### Solution
+We standardize the chaotic "Day 2" operations into a clean, unified interface. Your engineering team builds one refund handler and one webhook listener, and it works for all connected processors.
 
-Hyperswitch supports multiple vaulting models used across SaaS platforms:
+* Universal Webhooks: We ingest disparate events and transform them into a [Standardized Webhook Schema](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks). You receive the same JSON structure regardless of the upstream provider.
+* Dispute Management: Manage chargebacks centrally. We normalize the [Disputes Lifecycle](https://docs.hyperswitch.io/explore-hyperswitch/account-management/disputes) so you can surface evidence submission flows directly in your SaaS dashboard.
+* Stateless Operations: Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to trigger refunds or voids by passing the `connector_resource_id`, even if the original payment wasn't processed through Hyperswitch.
 
-1. **External Vault** (merchant-owned vault)
-2. **Unified Vault** (portable tokens across PSPs)
-3. **PSP-Native Vaulting**
-4. **Merchant-Scoped Vaults**
+#### Pattern 8: Platform Reliability & SLA Monitoring
 
-These options help platforms satisfy different merchant requirements without custom implementations.
+The Business Friction: Global SaaS platforms cannot afford downtime. When a processor like Stripe US-East experiences latency, your merchants blame _you_, not Stripe. Without granular visibility into processor performance, your engineering team is flying blind, unable to reroute traffic or uphold SLAs for VIP merchants.
 
-#### Relevant Documentation
+The Hyperswitch Advantage: Real-Time Observability We treat payments as "Critical Infrastructure." Hyperswitch provides deep visibility into the health of your payment mesh, allowing you to proactively manage reliability.
 
-* [Vaulting](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
-* [Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)
-
-### Use Case 6 - Participating in only part of the payment lifecycle
-
-Some SaaS platforms do not manage full payment flows; they only need to perform operations like refunds, captures, or voids. Teams frequently highlight the challenge of interacting with PSPs consistently across different processors.
-
-#### Solution
-
-Hyperswitch’s **Relay APIs** provide a common interface for:
-
-* Captures
-* Refunds
-* Voids and cancels
-* Metadata updates
-* Retrieving PSP transaction state
-
-This allows platforms to integrate operational workflows without orchestrating checkout or auth.
-
-### Use Case 7 - Unifying operational workflows across merchants
-
-Many SaaS teams highlight the operational overhead of managing refunds, disputes, errors, and webhooks across different PSPs. Differences in payloads and flows frequently cause support friction.
-
-#### Solution
-
-Hyperswitch unifies:
-
-* Refund and dispute workflows
-* Error models
-* Transaction statuses
-* Webhook structures
-* Operational logs and metadata
-
-This helps platforms maintain consistent support tooling and operational flows across PSPs.
-
-### Use Case 8 - Monitoring & SLA visibility for multi-merchant platforms
-
-SaaS platforms often need detailed operational visibility - connector health, PSP performance, incident context, and merchant-level SLAs. This is especially common in platforms with global merchant distribution.
-
-#### Solution
-
-Hyperswitch provides:
-
-* Real-time connector health checks
-* PSP latency/performance metrics
-* Retry/fallback visibility
-* Audit logs
-* Distributed tracing
-* Merchant/profile-level SLA segmentation
-
-These tools help SaaS teams maintain reliable operations at scale.
-
-#### Relevant Documentation
-
-* [Ops Dashboard](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
+* Connector Health: We continuously monitor the success rates and latency of every connected processor. If a provider degrades, our [Smart Router](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) can automatically failover traffic to a healthy alternative.
+* Open Telemetry: We emit standard OTel Traces for every request. You can pipe these directly into Datadog, Prometheus, or Grafana to visualize P99 latency per merchant.
+* System Status: Access the System Health API to build your own internal status pages, giving your support team instant context during incidents.
