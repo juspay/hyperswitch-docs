@@ -31,7 +31,7 @@ Use our headless SDK to have full control over your checkout while using the pay
 
 Use our mobile SDK to accept payments in [Android](payment/mobile/android/) or [iOS](payment/mobile/ios/) apps.
 
-#### [Build an APM-only integration](payment/web/enable-alternate-payment-method-widgets/)
+#### [Build an APM-only integration](payment/enable-alternate-payment-method-widgets/)
 
 Use our Alternate Payment Method widget (APM widget) to power the global APMs in the unified format. This augments your existing checkout in a low code manner.
 
