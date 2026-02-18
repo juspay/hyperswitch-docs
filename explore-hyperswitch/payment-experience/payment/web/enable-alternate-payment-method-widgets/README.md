@@ -6,13 +6,13 @@ icon: bolt-lightning
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (2).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Let us understand with an example-
 
 In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
 
 But, if the merchant decides to enable more alternate payment methods (APMs), the problems can be multifold:
 
@@ -25,7 +25,7 @@ But, if the merchant decides to enable more alternate payment methods (APMs), th
 
 in the image below you can find a checkout page with more alternate payment methods via Hyperwidgets.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
 
 **Additional example:**
 

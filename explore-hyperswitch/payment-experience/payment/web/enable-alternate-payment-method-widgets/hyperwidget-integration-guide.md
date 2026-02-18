@@ -10,7 +10,7 @@ Hyperswitch provides a code transformer that allows the merchant to leverage the
 
 The unified dashboard offers the merchants ability to enable or disable APMs via any PSP. The dashboard also offers capabilities like - Analytics, Operations, Refunds, Chargebacks, and Reconciliation.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported APM features:
 
@@ -39,6 +39,6 @@ To start collecting payments via the APM of your choice, follow these simple ste
   * As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
 * [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
 
-{% content-ref url="../../payment-orchestration/click-to-pay/" %}
-[click-to-pay](../../payment-orchestration/click-to-pay/)
+{% content-ref url="../../../../payment-orchestration/click-to-pay/" %}
+[click-to-pay](../../../../payment-orchestration/click-to-pay/)
 {% endcontent-ref %}
