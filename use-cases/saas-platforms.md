@@ -19,7 +19,7 @@ The Hyperswitch Advantage: Decoupled Connectivity
 
 Hyperswitch acts as a Connector Abstraction Layer. You integrate our SDK once, and we dynamically route the transaction to the merchant’s preferred processor based on their configuration.
 
-* Unified API: We normalize 50+ processor APIs into a single [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create).
+* Unified API: We normalize 300+ processor APIs into a single [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create).
 * Zero-Code Integration: New processors are added via configuration, not code. See our [Supported Connectors](https://juspay.io/integrations) list.
 * Deployment Models: Choose between Full-Stack Mode (we handle UI & Tokenization) or Backend-Only (you own the UI).
 
