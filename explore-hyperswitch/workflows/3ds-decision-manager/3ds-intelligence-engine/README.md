@@ -25,17 +25,16 @@ But one more complexity emerges after authentication. Even when a transaction is
 ### Merchant Benefits
 
 * **Balance user experience with fraud**: A merchant's 3DS exemption strategy should prioritize a holistic user experience, not just fraud prevention. The 3DS Intelligence engine analyzes various factors like customer behavior and device details to optimize authentication success while managing fraud and authorization failures.
-*   **Define custom rules to suit your business**: Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
+* **Define custom rules to suit your business**: Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
+  * Some of the examples of these rules are:
+    * If Issuer Country = "France" and Issuer = "HSBC" and Amount > 200 €, then ThreeDS Preference = "No Preference"
+    * If Customer Device Screen Size = 150px\*200px or Customer Device Platform = "Android" and Card Network = "Visa", then ThreeDS Preference = "ThreeDS Exemption Requested" and ThreeDS Exemption Type Preference = "TRA"
+    * If BIN range in between 400000 and 420000 and Customer Device = "Gaming Console" then ThreeDS Preference = "Challenge Requested"
 
-    * Some of the examples of these rules are:
-      * If Issuer Country = "France" and Issuer = "HSBC" and Amount > 200 €, then ThreeDS Preference = "No Preference"
-      * If Customer Device Screen Size = 150px\*200px or Customer Device Platform = "Android" and Card Network = "Visa", then ThreeDS Preference = "ThreeDS Exemption Requested" and ThreeDS Exemption Type Preference = "TRA"
-      * If BIN range in between 400000 and 420000 and Customer Device = "Gaming Console" then ThreeDS Preference = "Challenge Requested"
-    *
+<figure><img src="../../../../.gitbook/assets/Intelligence_1.png" alt=""><figcaption></figcaption></figure>
 
-    ```
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd9kmlNHFTPHQiZ_VrmXvNTj9alCfR0_Q_GSGgWVJaTFGlsrIw1EhyEFD82wwH9bNRNJxJxjs1BNnPEtcDNyB1RodEFOw0qobLkCLDgqpL_GOG6eiixCcS7xYBsUhESXTHFbV-O?key=_Z6FgFhZVDQ6aD_zv9MxKA" alt=""><figcaption></figcaption></figure>
-    ```
+
+
 *   **Advanced Analytics for Continuous Optimization:** As regulations, issuer behavior, and customer expectations evolve, merchants can analyze trends, refine rules, and boost approval rates. The Hyperswitch Control Center offers detailed insights into user journeys, exemption lifecycles, and top failure reasons, with the 3DS engine continuously learning and optimizing based on new data. \*
 
     ```
