@@ -97,5 +97,5 @@ The Business Friction: Global SaaS platforms cannot afford downtime. When a proc
 The Hyperswitch Advantage: Real-Time Observability We treat payments as "Critical Infrastructure." Hyperswitch provides deep visibility into the health of your payment mesh, allowing you to proactively manage reliability.
 
 * Connector Health: We continuously monitor the success rates and latency of every connected processor. If a provider degrades, our [Smart Router](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) can automatically failover traffic to a healthy alternative.
-* Open Telemetry: We emit standard OTel Traces for every request. You can pipe these directly into Datadog, Prometheus, or Grafana to visualize P99 latency per merchant.
+* Open Telemetry: We emit standard [OTel Traces](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) for every request. You can pipe these directly into Datadog, Prometheus, or Grafana to visualize P99 latency per merchant.
 * System Status: Access the [System Health API](https://live.hyperswitch.io/api/health) to build your own internal status pages, giving your support team instant context during incidents.
