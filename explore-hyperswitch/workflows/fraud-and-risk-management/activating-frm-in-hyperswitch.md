@@ -21,8 +21,8 @@ The Pre-Auth flow is executed before payment authorization and is available for 
 2. Steps:
    1. Transaction details are sent to the FRM solution for analysis.
    2. Based on the FRM risk score or recommendation, below actions are taken:
-      * Continue on Accept: Proceed with the transaction.
-      * Halt on Decline: Mark the transaction as cancelled.
+      * Continue on `Accept`: Proceed with the transaction.
+      * Halt on `Decline`: Mark the transaction as cancelled.
 3. The merchant can influence the outcome of FRM by making changes on their dashboard, so that the FRM risk score or recommendation reflects their Risk appetite.    &#x20;
 
 #### Post-Authorization Flow
@@ -34,12 +34,12 @@ The Post-Auth flow occurs after payment authorization by the processor and is on
   1. Post-authorization details are sent to the FRM solution.
   2. Transactions flagged as fraudulent are queued for manual review with a status "Requires Merchant Action" on Hyperswitch.
   3. Merchants review on FRM dashboard and decide next steps on that transaction. Hyperswitch consumes the webhooks from the FRM to:
-     * Continue on Accept: Continue with the transaction.
-     * Halt on Decline: Mark the transaction as cancelled.
-     * Approve/Decline on Review:
+     * Continue on `Accept`: Continue with the transaction.
+     * Halt on `Decline`: Mark the transaction as cancelled.
+     * Approve/Decline on `Review`:
        * Hold the transaction in manual review state. Merchants can list and review such transactions.
-       * If approved: Capture the payment.
-       * If declined: Void the payment.
+       * If `approved`: Capture the payment.
+       * If `declined`: Void the payment.
 
 {% hint style="warning" %}
 If the connector doesn’t support manual capture, Post-Authorization manual review should be avoided during configuration setup for the respective connector.
