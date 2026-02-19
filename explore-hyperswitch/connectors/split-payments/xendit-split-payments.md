@@ -2,9 +2,9 @@
 icon: hexagon-xmark
 ---
 
-# Xendit Split Payments
+# Xendit Split Settlement
 
-If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split payments between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple ways to route your payments based on your specific use cases.
+If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple ways to route your payments based on your specific use cases.
 
 * Partner to Platform
 * Partner to Partner
@@ -17,7 +17,7 @@ For more information on these types, refer [here](https://docs.xendit.co/xenplat
 
 ## Split Xendit payments via Hyperswitch
 
-Split payments between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
+Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 
 #### Example with flat amount only:
 
@@ -162,14 +162,14 @@ Each route in the `routes` array has these parameters payments.rs:331-343 :
 
 #### SingleSplit Parameters
 
-For single split payments, the structure is simpler domain.rs:55-58 :
+For single split settlements, the structure is simpler domain.rs:55-58 :
 
 **`for_user_id`** (string, **required**)
 
 * The sub-account user-id that you want to make this transaction for
 * Required field for single split scenarios
 
-#### Split Payment Response Types
+#### Split Settlement Response Types
 
 **Multiple Splits Response**
 
@@ -220,7 +220,7 @@ Document the transformation process:
 
 #### Important Documentation Points
 
-**Field Usage Distinction**:  `split_payments` is used in requests while `charges` is used in responses. This is a common source of confusion.
+**Field Usage Distinction**: `split_payments` is used in requests while `charges` is used in responses. This is a common source of confusion.
 
 **Preprocessing Context**: For multiple splits, the response includes data from the preprocessing step where split rules are created.
 
@@ -237,4 +237,3 @@ If you have made a split payment using `for_user_id`, whether for multiple split
         }
     }
 ```
-

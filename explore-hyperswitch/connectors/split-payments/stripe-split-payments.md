@@ -1,13 +1,13 @@
 ---
-description: Get started with Stripe Split Payments via Hyperswitch
+description: Get started with Stripe Split Settlements via Hyperswitch
 icon: stripe
 ---
 
-# Stripe Split Payments
+# Stripe Split Settlement
 
-Stripe's Split Payments functionality allows you to create charges and distribute payments between your platform and connected accounts (sellers or service providers). This feature is implemented in Hyperswitch through the `SplitPaymentsRequest`  and supports both payment authorization and refund processing.
+Stripe's Split Settlements functionality allows you to create charges and distribute payments between your platform and connected accounts (sellers or service providers). This feature is implemented in Hyperswitch through the `SplitPaymentsRequest` and supports both payment authorization and refund processing.
 
-## Stripe Split payments via Hyperswitch
+## Stripe Split settlements via Hyperswitch
 
 In the payment create request, include the Stripe split rule as provided below.
 
@@ -25,18 +25,16 @@ In the payment create request, include the Stripe split rule as provided below.
 Parameters
 
 * **transfer\_account\_id**: Identifier of a Connected Account created using Stripe's API or Dashboard. \{{CONNECTED\_ACCOUNT\_ID\}}
-* **charge\_type:** It is of two types: \
+* **charge\_type:** It is of two types:\
   \
   **1.** [**Direct**](https://docs.stripe.com/connect/direct-charges) : Customers transact directly with your connected account. The charge is created on the connected account, and you can choose whether Stripe fees are debited from the connected account or your platform.\
   \
-  **2.** [**Destination**](https://docs.stripe.com/connect/destination-charges): Customers transact with your platform for products/services provided by your connected account. Stripe fees are debited from your platform account. The funds are then transferred to the destination account.\
-
-* **application\_fees**: Platform fee amount deducted from the transaction (in minor currency units. The `application_fee_amount` is transferred to the platform.\
-
+  **2.** [**Destination**](https://docs.stripe.com/connect/destination-charges): Customers transact with your platform for products/services provided by your connected account. Stripe fees are debited from your platform account. The funds are then transferred to the destination account.\\
+* **application\_fees**: Platform fee amount deducted from the transaction (in minor currency units. The `application_fee_amount` is transferred to the platform.\\
 
 ### Payment Response
 
-The response includes charge details for split payments:
+The response includes charge details for split settlements:
 
 ```
     "split_payments": {
@@ -76,23 +74,23 @@ For refunds, include the appropriate split refund configuration based on the ori
 
 **Refund Parameters:**
 
-**revert\_platform\_fee**: `Boolean`&#x20;
+**revert\_platform\_fee**: `Boolean`
 
-* Indicates whether the application fee should be refunded when refunding this charge.&#x20;
-* If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded.&#x20;
+* Indicates whether the application fee should be refunded when refunding this charge.
+* If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded.
 * An application fee can be refunded only by the application that created the charge.
 
-**revert\_transfer**: `Boolean`&#x20;
+**revert\_transfer**: `Boolean`
 
-* Indicates whether the transfer should be reversed when refunding this charge.&#x20;
+* Indicates whether the transfer should be reversed when refunding this charge.
 * The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).
 * A transfer can be reversed only by the application that created the charge
 
-### Recurring Payments (CIT/MIT) with Split Payments
+### Recurring Payments (CIT/MIT) with Split Settlements
 
 **Customer-Initiated Transaction (CIT)**
 
-1. In CIT call, passing `customer_id` is mandatory. Along with that, the Stripe Split Payments object.
+1. In CIT call, passing `customer_id` is mandatory. Along with that, the Stripe Split settlements object.
 
 ```
 {  
@@ -115,13 +113,13 @@ For refunds, include the appropriate split refund configuration based on the ori
 }
 ```
 
-The split payment metadata is stored in the mandate for future MIT calls.
+The split settlement metadata is stored in the mandate for future MIT calls.
 
 #### Important Implementation Notes
 
-* For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.&#x20;
+* For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.
 * For **destination** charges, the `transfer_account_id` cannot be your platform account ID as Stripe doesn't allow charges to your own account.
-* The system validates that MIT calls match the split payment configuration from the original CIT call.&#x20;
+* The system validates that MIT calls match the split settlement configuration from the original CIT call.
 
 <details>
 
