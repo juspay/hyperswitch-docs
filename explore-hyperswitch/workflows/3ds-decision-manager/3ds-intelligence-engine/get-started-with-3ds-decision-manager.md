@@ -6,7 +6,7 @@ icon: screwdriver-wrench
 # 3DS Decision Manager
 
 {% hint style="warning" %}
-[3DS intelligence engine](./) is the latest upgrade to our 3DS workflows. Please refer to that section henceforth
+[3DS intelligence engine](./) is the latest upgrade to our 3DS workflows. Please refer to that section for advanced controls.
 {% endhint %}
 
 ### Benefits of Using the 3DS Decision Manager:
