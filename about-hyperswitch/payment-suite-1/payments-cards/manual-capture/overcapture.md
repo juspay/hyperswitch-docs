@@ -26,37 +26,33 @@ This is particularly useful in scenarios such as:
 
 Use the boolean field `enable_overcapture` in your payment request.
 
-This flag can be set in the following API calls:
+This can be passed in:
 
-* /payments/create with `confirm = false`
-  * /payments/update
-* /payments/create call with `confirm = true`
+[POST /payments ](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+
+[POST /payments/:id/update](https://api-reference.hyperswitch.io/v1/payments/payments--update)
 
 ⚠️ Note:
 
 * The request-level `enable_overcapture` will override the profile-level setting.
 * Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
 
+***
+
 ### Example: API Request
 
-```
-{
+```json
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <your_publishable_key>' \
+--data '{
   "amount": 100,
   "currency": "USD",
   "confirm": true,
   "capture_method": "manual",
   "enable_overcapture": true,
-  "payment_method": "card",
-  "payment_method_type": "credit",
-  "payment_method_data": {
-    "card": {
-      "card_number": "4111111111111111",
-      "card_exp_month": "03",
-      "card_exp_year": "30",
-      "card_cvc": "7373"
-    }
-  }
-}
+}'
 
 ```
 
@@ -81,12 +77,25 @@ This flag can be set in the following API calls:
 
 ```
 
-* `enable_overcapture`
-  * `true` → Overcapture was requested for this payment.
-  * `false` → Overcapture was not requested.
-* `is_overcapture_enabled`
-  * `true` → Connector enabled Overcapture for this payment.
-  * `false` → Overcapture is not applicable for this PSP/payment.
+#### Field Semantics
+
+`enable_overcapture` Indicates merchant intent.
+
+| Value   | Meaning                    |
+| ------- | -------------------------- |
+| `true`  | Over-capture requested     |
+| `false` | Over-capture not requested |
+
+***
+
+`is_overcapture_enabled` Indicates connector capability acceptance.
+
+| Value   | Meaning                                     |
+| ------- | ------------------------------------------- |
+| `true`  | Connector supports and enabled over-capture |
+| `false` | Connector does not support over-capture     |
+
+***
 
 ### Monitoring & Settlement
 
