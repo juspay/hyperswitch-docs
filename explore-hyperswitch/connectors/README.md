@@ -59,7 +59,7 @@ Hyperswitch supports a wide variety of connectors to manage your entire financia
 
 * Core Payments: Payment Processors, Acquirers & APMs.
 * Platforms: Payment platforms and Payouts Processors.
-* Recurring Billing: Subscription Providers.
+* Recurring Billing: [Subscription Providers](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions).
 * Security & Risk: &#x20;
   * [Card Vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault)
   * [3DS Authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)
