@@ -1,66 +1,37 @@
 ---
+description: Use Rules to reduce cardholder friction on transactions
 icon: screwdriver-wrench
 ---
 
 # 3DS Decision Manager
 
-### Video Tutorial:
-
-{% embed url="https://hyperswitch.io/video/3ds_demo.mp4" %}
-
-## Setup Steps:
-
-**Step 1:** Go to 3DS Decision Manager tab on the Hyperswitch Control Center
-
-**Step 2:** Click on create new rule
-
-<figure><img src="../../../../.gitbook/assets/3ds_step2.png" alt="" width="563"><figcaption></figcaption></figure>
-
-**Step 3:** Save the rule name and description
-
-<figure><img src="../../../../.gitbook/assets/3ds_step3.png" alt="" width="563"><figcaption></figcaption></figure>
-
-**Step 4:** Configure your desired rule by selecting the operators and values for the various fields
-
-<figure><img src="../../../../.gitbook/assets/3ds_step4.png" alt="" width="563"><figcaption></figcaption></figure>
-
-**Step 5:** Add more rules using the plus icon on the top right of the current rule panel
-
-<figure><img src="../../../../.gitbook/assets/3ds_step5.png" alt="" width="563"><figcaption></figcaption></figure>
-
-**Step 6:** Click save to configure and activate the rule
-
-<figure><img src="../../../../.gitbook/assets/3ds_step6.png" alt="" width="563"><figcaption></figcaption></figure>
-
-**Step 7:** Your rule is now successfully configured and 3D Secure authentication would be enforced all payments conforming to this rule.
-
 {% hint style="warning" %}
-3DS decision manager supports only one active configuration at a time. Multiple rules can be combined into a single configuration as shown in the example.
+[3DS intelligence engine](./) is the latest upgrade to our 3DS workflows. Please refer to that section henceforth
 {% endhint %}
 
-## Next step
+### Benefits of Using the 3DS Decision Manager:
 
-To test the 3DS Decision Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard](https://app.hyperswitch.io/sdk)
+* Fraud Reduction: Enforce 3DS on high-risk transactions to mitigate fraudulent activities.
+* Enhanced Compliance: Meet regulatory requirements for Strong Customer Authentication (SCA) in regions like the EEA.
+* Improved Customer Experience: Apply 3DS only when necessary, minimizing friction during checkout for low-risk transactions.
 
-<details>
+Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
 
-<summary>FAQs</summary>
+{% embed url="https://youtu.be/-VTnngditlU" %}
 
-**What are some of the payment parameters that I can use to configure 3DS rules?**
+### 3DS Decision Flow:
 
-You can define rules using parameters such as:
+Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
 
-* **Amount (amount):** Apply rules to specific transaction values or ranges.
-* **Currency (currency):** Restrict rules to certain currencies.
-* **Card Type/Network (card\_type/card\_network):** Define rules for debit, credit, or specific networks.
-* **Billing Country (billing\_country):** Target transactions based on the customer's billing country.
+<figure><img src="../../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 
-**How do I update the current configuration?**
+The 3DS Decision Manager in the Hyperswitch Control Center provides merchants with a rule-based interface to enforce authentication selectively.
 
-Click on Create New and configure a new rule that would replace the existing configuration
+For example: If you wish to enforce 3DS for transactions over $100, you can define a rule that automatically sets `authentication_type` as `three_ds` for such transactions. Payments meeting this rule will trigger 3DS authentication.
 
-**What happens if I set `authentication_type` as `three_ds` in `/payments` request?**
+<figure><img src="../../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
 
-3D Secure will be enforced and override the 3DS Decision Manager's decision
-
-</details>
+{% hint style="danger" %}
+* Rules set in the **3DS Decision Manager** can be overridden if an explicit value is passed in the `/payments` request using the `authentication_type` parameter. ([API Reference](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type))
+* Some processors may mandate 3DS regardless of your configuration.
+{% endhint %}

@@ -4,43 +4,8 @@ icon: badge-check
 
 # 3DS / Strong Customer Authentication
 
-3D Secure (3DS) is a robust security protocol designed to prevent fraud in card-not-present transactions. By employing multi-factor authentication mechanisms such as biometrics or OTPs, 3DS helps issuers verify the authenticity of transactions.
+3D Secure (3DS) is an authentication protocol that adds an extra layer of protection to card transactions. It helps confirm that the person making the purchase is the legitimate cardholder, reducing the risk of fraud for both businesses and customers. When 3DS is triggered, the issuing bank may prompt the cardholder to authenticate using methods such as a password, a one-time code sent to their mobile device, or biometric verification. Many customers recognize this experience through familiar card network brands like Visa Secure, Mastercard Identity Check, or American Express SafeKey.
 
-The **Hyperswitch 3DS Decision Manager** allows merchants to define advanced rules based on payment parameters, ensuring that 3DS authentication is selectively enforced for high-risk transactions.
+Strong Customer Authentication (SCA), introduced under PSD2 in the European Economic Area and reflected in similar regulations in the UK, India, Japan, and Australia, may require the use of 3DS for certain card payments. In other regions, 3DS remains optional but can still be used strategically to help reduce fraud.
 
-### Benefits of Using the 3DS Decision Manager:
-
-* **Fraud Reduction:** Enforce 3DS on high-risk transactions to mitigate fraudulent activities.
-* **Enhanced Compliance:** Meet regulatory requirements for Strong Customer Authentication (SCA) in regions like the EEA.
-* **Improved Customer Experience:** Apply 3DS only when necessary, minimizing friction during checkout for low-risk transactions.
-
-Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
-
-{% embed url="https://youtu.be/-VTnngditlU" %}
-
-## How does it work?
-
-#### 3DS Decision Flow:
-
-Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
-
-<figure><img src="../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
-
-The **3DS Decision Manager** in the Hyperswitch Control Center provides merchants with a rule-based interface to enforce authentication selectively.
-
-For example: If you wish to enforce 3DS for transactions over $100, you can define a rule that automatically sets `authentication_type` as `three_ds` for such transactions. Payments meeting this rule will trigger 3DS authentication.
-
-<figure><img src="../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="danger" %}
-* Rules set in the **3DS Decision Manager** can be overridden if an explicit value is passed in the `/payments` request using the `authentication_type` parameter. ([API Reference](https://api-reference.hyperswitch.io/api-reference/payments/payments--create))
-* Some processors may mandate 3DS regardless of your configuration.
-{% endhint %}
-
-{% content-ref url="3ds-intelligence-engine/get-started-with-3ds-decision-manager.md" %}
-[get-started-with-3ds-decision-manager.md](3ds-intelligence-engine/get-started-with-3ds-decision-manager.md)
-{% endcontent-ref %}
-
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
-{% endcontent-ref %}
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><a href="authenticate-with-3d-secure-via-psp.md">Authenticate with 3D Secure via PSP</a></td><td align="center">Perform 3D Secure (3DS) via the PSP that is processing the transaction</td></tr><tr><td align="center"><a href="external-authentication-for-3ds.md">Standalone 3D Secure <br>(via Hyperswitch)</a></td><td align="center">Run 3D Secure (3DS) via any 3DS server (Juspay, Netcetra, 3DSecure.io) while processing the subsequent payment on a third party gateway </td></tr><tr><td align="center"><a href="import-3d-secure-results.md">Import 3D Secure results</a></td><td align="center">Process payments via Hyperswitch when 3DS Secure (3DS) runs outside Hyperswitch </td></tr><tr><td align="center"><a href="3ds-intelligence-engine/">3D secure Intelligence Engine</a></td><td align="center">Use Rules and SCA exemptions to reduce cardholder friction on eligible transactions</td></tr></tbody></table>

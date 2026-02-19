@@ -2,10 +2,11 @@
 description: >-
   Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
   authorize the payment with any payment provider (PSP).
+hidden: true
 icon: up-right-from-square
 ---
 
-# Standalone 3D Secure (via Hyperswitch)
+# Copy of Standalone 3D Secure (via Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
 
@@ -47,7 +48,7 @@ Initiate a Payments Create API from your server with [external authentication](h
  "request_external_three_ds_authentication": "true"
 ```
 
-This flows follows the same steps as highlighted in authenticate with 3D secure via PSP.&#x20;
+This flows follows the same steps as highlighted in authenticate with 3D secure via PSP&#x20;
 
 Do a create payment call to initiate the transaction. The status of the response should be 'requres\_customer\_action" and should contain the "next\_action" object.
 
@@ -153,3 +154,11 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 ```
 
 After the challenge is completed, the status should go to 'succeeded' status
+
+{% hint style="warning" %}
+**Visit** [**this**](../../payment-orchestration/3ds-decision-manager/broken-reference/) **page to complete few additional steps to enable this feature for Mobile SDK.**
+{% endhint %}
+
+{% hint style="success" %}
+Being a payments product, Hyperswitch is always up to date with the latest regulations globally. On that front, the merchants need not worry about compliance. For merchants who want to integrate the latest authentication products to offer a frictionless payment flow to their customers, but also enjoy the liability shift, Hyperswitch has got you covered. Products like Digital Authentication Framework (DAF), Delegated Authentication (DA), Secure Payment Confirmation (SPC), Click to Pay (CTP), etc. are in our roadmap. Check out the product on sandbox or get in touch with us for more information.
+{% endhint %}
