@@ -5,151 +5,92 @@ description: >-
 icon: watch-calculator
 ---
 
-# Fintech Business
+# Fintech Businesses
 
-Across conversations with multiple FinTech enterprises, a clear pattern emerges: most teams already operate mature payment infrastructures - including internal routing engines, risk systems, vaults, PCI boundaries, monitoring layers, and merchant-facing platforms. These teams are not looking to replace their systems. Instead, they look for ways to **augment** their existing architecture with additional PSP coverage, better routing logic, expanded authentication flows, token portability, and improved operational observability.
+Fintech enterprises rarely build payment stacks from scratch. Most established players already operate mature internal ledgers, risk engines, and reconciliation systems. The challenge isn't replacing these systems; it's augmenting them to support new markets, APMs, and compliance requirements without accruing technical debt.
 
-Hyperswitch is designed to act as an augmentation layer that integrates cleanly into existing FinTech stacks. Each capability - connectors, routing, retries, vaulting, relay APIs, webhooks, and monitoring, can be adopted independently, without requiring a full-stack migration.
+Hyperswitch is designed as a modular middleware layer that injects specific capabilities—such as Smart Routing or Network Tokenization—into your existing stack without requiring a full platform migration.
 
-Below are the FinTech-specific augmentation patterns observed consistently across enterprise conversations.
+The sections below outline the architectural patterns for augmenting a Fintech payment stack.
 
-### Use Case 1 - Connector-first expansion of PSPs, APMs, 3DS, fraud, and token services
+#### Instant Processor Expansion
 
-A recurring theme among FinTech enterprises, especially those scaling globally, is the increasing need to onboard **additional processors**, **regional acquirers**, **APMs**, **3DS providers**, and **fraud/Risk engines**. This typically appears when entering new markets, supporting large merchant requirements, or attempting to diversify processing pathways. Engineering teams often highlight the operational and maintenance cost of building and maintaining these integrations internally.
+The Engineering Bottleneck: Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
-#### Solution
+The Hyperswitch Augmentation:
 
-Hyperswitch supports a **Connector-First Augmentation Mode** where enterprises integrate only the connector layer without adopting routing or checkout systems. This enables:
+Hyperswitch acts as a stateless integration layer. You can utilize our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 50+ global processors without writing a single line of integration code.
 
-* Faster onboarding of new PSPs/APMs
-* Unified request and response schemas
-* Unified webhook handling across connectors
-* Optional stateless translation mode for internal hosting
-* Integration of 3DS providers, fraud systems, and risk tooling
-* PSP-aware retry semantics
-* The ability for enterprise teams to contribute connectors directly (common in open-source collaboration models)
+* Unified Schema: We map disparate upstream APIs (Stripe, Adyen, Checkout.com) into a single [Request/Response Model](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create).
+* Rapid Expansion: Enable local payment methods (LPMs) like Klarna, WeChat Pay, or Afterpay via simple configuration changes.
+* Open Contribution: Need a niche connector? Because we are [Open Source](https://github.com/juspay/hyperswitch), your team can fork the repo, add the connector, and run it locally, or contribute it back.
 
-This approach reduces engineering overhead and avoids disruptions to existing payment flows
+#### Self-Hosted Infrastructure
 
-#### Relevant Documentation
+The Engineering Bottleneck: Fintechs dealing with high-value transactions or strict regulatory bodies (e.g., CCPA, GDPR) often cannot use shared SaaS infrastructure due to Data Sovereignty and PCI-DSS requirements.
 
-* [Connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
-* [Webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+The Hyperswitch Augmentation:
 
-### Use Case 2 - Preference for self-hosted, infrastructure-level deployment
+We support a "Bring Your Own Cloud" model. You can deploy the entire Hyperswitch stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC.
 
-Several FinTech enterprises prefer to run orchestration components inside their own infrastructure due to strict compliance requirements, internal security policies, data governance rules, or established PCI boundaries. This pattern is especially common among companies operating at enterprise scale or serving regulated markets.
+* Zero Data Egress: Sensitive card data (PAN) never leaves your infrastructure. You maintain full ownership of the logs and database.
+* Compliance Control: You define the TLS Termination and key management strategies (AWS KMS, HashiCorp Vault) to meet internal security policies.
+* No Vendor Lock-in: Since you host the code, you are not dependent on an external vendor's uptime or roadmap.
 
-#### Solution
+#### Smart Routing & Retries
 
-Hyperswitch supports a fully self-hosted deployment model:
+The Engineering Bottleneck: Internal routing engines often struggle to scale. Hardcoding rules like _"If transaction > $500, route to Adyen"_ creates a fragile codebase. Furthermore, implementing Smart Retries (e.g., retrying a soft decline on a secondary processor) requires complex state management.
 
-* Deploy connectors, routing, vaulting, and relay services inside the enterprise cloud
-* Ensure no external data egress
-* Maintain full control of logs, audits, and PCI boundaries
-* Dedicated enterprise support lanes
-* Predictable upgrade paths
-* Ability to run Hyperswitch as an internal microservice
+The Hyperswitch Augmentation:
 
-This provides the flexibility needed to fit within existing enterprise security and compliance frameworks
+Insert Hyperswitch downstream of your Risk Engine to act as a dynamic Smart Router.
 
-#### Relevant Documentation
+* DSL-Based Routing: Configure complex logic based on BIN, Currency, Amount, or Metadata using our [Routing DSL](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/intelligent-routing).
+* Auto-Retries: We automatically identify [Soft Declines](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) (e.g., generic failures) and retry the transaction on a secondary connector, potentially boosting auth rates by 2-5%.
+* A/B Testing: Run traffic experiments (e.g., "Send 10% of traffic to Worldpay") to benchmark processor performance in real-time.
 
-* [Self-Hosted Guide](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1)
+#### Vendor-Agnostic Vaulting
 
-### Use Case 3 - Augmenting routing and retry systems to improve authorization performance
+The Engineering Bottleneck: Relying on PSP-specific tokens (like Stripe `cus_` objects) creates vendor lock-in. Migrating millions of saved cards to a new processor is a high-risk operation that often causes churn.
 
-Many FinTech teams already maintain routing engines internally, but often surface challenges related to scaling them: adding new PSP pathways, implementing decline-aware retries, supporting regional fallback logic, and balancing performance-based routing rules. Improving CIT/MIT authorization rates is frequently mentioned as a priority.
+The Hyperswitch Augmentation:
 
-#### Solution
+Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault) that detaches the stored credential from the processor.
 
-Hyperswitch provides a modular routing engine that can be inserted after an enterprise’s risk system and before its processors, enabling:
+* Network Tokens: We integrate directly with schemes (Visa/Mastercard) to provision [Network Tokens](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation), which offer higher authorization rates and auto-updates for expired cards.
+* Token Portability: A card saved during a transaction on Processor A can be seamlessly charged via Processor B.
+* [External Vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault): Already have a vault? We can configure Hyperswitch to "pass-through" tokens or integrate with external VGS/Forter setups.
 
-* Routing based on BIN, region, PSP performance, card network, geography
-* A/B routing tests
-* PSP-aware retries (e.g., soft declines → alternate PSP)
-* Real-time routing configuration updates
-* Geo-fallback logic for redundancy
-* Full visibility into routing decisions
-* Preservation of raw PSP responses for data science teams
+#### Headless Payment Operations
 
-This allows enterprises to enhance routing performance without rewriting internal systems.
+The Engineering Bottleneck: Some Fintechs only need to control specific parts of the lifecycle—like issuing refunds or capturing authorized funds—without routing the initial checkout.
 
-#### Relevant Documentation
+The Hyperswitch Augmentation:
 
-* [Routing](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/intelligent-routing)
-* [Retry Logic](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries)
+Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to interact with underlying processors in a "Headless" mode.
 
-### Use Case 4 - Vaulting and token augmentation (PSP vaults, external vaults, network tokens)
+* Unified Refunds: Issue a refund by passing the `connector_resource_id`. We handle the upstream API call (e.g., `stripe.refunds.create`) and return a standardized response.
+* State Reconciliation: Poll the status of any transaction across any connected processor using a single API endpoint.
 
-In enterprise discussions, vault-related concerns surface frequently: token portability, region-based vault segmentation, support for network tokens, account updater flows, or the ability to migrate PSP vaults without disrupting existing merchants. These appear especially during global expansion or PSP migrations.
+#### Unified Error Handling
 
-#### Solution
+The Engineering Bottleneck: Handling webhooks and error codes from 10+ different processors is a maintenance nightmare. A "Do Not Honor" from one bank might be a "suspected\_fraud" from another, making it impossible to build consistent retry logic or user feedback.
 
-Hyperswitch provides flexible vaulting models:
+The Hyperswitch Augmentation:
 
-* **External Vault Mode** (use enterprise’s existing vault)
-* **Unified Vault** for token portability across PSPs
-* **PSP-Native Vaulting** with normalized APIs
-* **Regionally scoped vaults** for multi-market operations
-* **Network Tokenization** (where supported by PSPs)
-* **Account Updater support**
-* Support for zero-downtime token migrations
+We normalize the chaos of the global payment ecosystem into a strict schema.
 
-These patterns help enterprises manage token flows cleanly while maintaining PCI and architectural boundaries.
+* Canonical Errors: We map thousands of upstream error codes to a Standardized Enum (e.g., `insufficient_funds`, `expired_card`).
+* Unified Webhooks: You listen to [One Webhook Format](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks). We ingest the raw PSP webhooks, parse them, and forward a clean JSON payload to your ledger.
 
-#### Relevant Documentation
+#### Real-Time Observability
 
-* [Vaulting](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
-* [Network Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)
+The Engineering Bottleneck: Blind spots in processor performance lead to lost revenue. If a specific BIN range is failing on Adyen, you need to know immediately—not when the monthly report comes out.
 
-### Use Case 5 - Partial lifecycle control through Relay APIs
+The Hyperswitch Augmentation:
 
-Some FinTech enterprises do not orchestrate end-to-end payment flows; instead, they operate only on specific lifecycle events such as captures, voids, or refunds. Teams often look for ways to interact with payments made through different PSPs without rewriting internal workflows.
+We treat observability as a first-class citizen.
 
-#### Solution
+* OpenTelemetry (OTel): The Router emits high-cardinality [OTel Traces](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) for every API call. Pipe this data directly into Datadog, Prometheus, or Honeycomb.
+* Granular SLAs: Monitor latency and success rates per Connector, Merchant, or Region. Set alerts for anomalies (e.g., "Latency > 2s on Stripe US").
 
-Hyperswitch’s Relay API layer enables enterprises to:
-
-* Issue PSP-native refunds, voids, and captures
-* Retrieve PSP-native transaction state
-* Update metadata or supplemental fields
-* Trigger ops flows (post-auth updates, reconciliation hooks)
-* Perform partial lifecycle control without adopting a full orchestration system
-
-This modular approach helps maintain existing operational structures while expanding capabilities.
-
-### Use Case 6 - Normalizing PSP webhooks, error codes, and status models
-
-Enterprises frequently mention the operational complexity caused by differing webhook formats, error codes, settlement statuses, and dispute flows across processors. This fragmentation increases the load on internal ops and engineering teams.
-
-#### Solution
-
-Hyperswitch provides:
-
-* A unified error taxonomy
-* Consistent webhook event structures
-* Normalized dispute/chargeback flows
-* Raw PSP payloads preserved for audit and analysis
-* Retry-safe semantics
-* Consistent transaction status lineage
-
-This consolidation streamlines operational tooling and reduces maintenance complexity.
-
-### Use Case 7 - Enterprise-grade observability, SLAs, and monitoring
-
-Enterprise teams often highlight the need for granular operational visibility — PSP latency metrics, routing outcomes, retries, audit trails, and SLA-level visibility across merchants or regions.
-
-#### Solution
-
-Hyperswitch provides:
-
-* Connector health checks and telemetry
-* PSP-level latency and performance monitoring
-* Complete audit logs
-* Replayable webhook and event logs
-* Retry and fallback visibility
-* Distributed tracing endpoints
-* Region/merchant/profile-based SLA segmentation
-
-These capabilities help enterprise teams monitor and optimize payment infrastructure with precision.
