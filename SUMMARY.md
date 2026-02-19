@@ -191,7 +191,7 @@
   * [Click To Pay](explore-hyperswitch/payment-orchestration/click-to-pay/README.md)
     * [Visa Click to Pay: V1 to V2 Migration](explore-hyperswitch/payment-orchestration/click-to-pay/visa-click-to-pay-v1-to-v2-migration.md)
 * [Connectors Integration](explore-hyperswitch/connectors/README.md)
-  * [Payment Processors](explore-hyperswitch/connectors/payment-processors.md)
+  * [Payment Processor Capabilities](explore-hyperswitch/connectors/payment-processor-capabilities.md)
   * [Processors with Split Settlement](explore-hyperswitch/connectors/split-payments/README.md)
     * [Stripe Split Settlement](explore-hyperswitch/connectors/split-payments/stripe-split-payments.md)
     * [Adyen Split Settlement](explore-hyperswitch/connectors/split-payments/adyen-split-payments.md)
