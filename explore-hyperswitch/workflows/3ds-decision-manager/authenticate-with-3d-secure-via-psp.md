@@ -20,9 +20,4 @@ To invoke 3DS through the underlying PSP pass the below parameter in the [Paymen
  "authentication_type": "three_ds"
 ```
 
-Note - Certain PSPs do not support 3DS and require the merchant to perform authentication independently before sending the transaction&#x20;
-
-3. If 3DS
-   1. Not required
-   2.
-
+Note - Certain PSPs do not support 3DS and require the merchant to perform authentication independently before sending the transaction.&#x20;
