@@ -3,13 +3,13 @@ description: Swift and streamlined payout automation
 icon: file-invoice-dollar
 ---
 
-# Process Payouts
+# Payouts Processors
 
 Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using Hyperswitch's advanced automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage this infrastructure to streamline and orchestrate your payout processes efficiently.
 
 <figure><img src="../../../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
 
-The payouts feature enables businesses to transfer funds to third parties, such as sellers, service providers, or affiliates, using a wide range of payment methods, including bank accounts, cards, and wallets. Hyperswitch integrates seamlessly with global payment processors to facilitate these transactions. It helps:&#x20;
+The payouts feature enables businesses to transfer funds to third parties, such as sellers, service providers, or affiliates, using a wide range of payment methods, including bank accounts, cards, and wallets. Hyperswitch integrates seamlessly with global payment processors to facilitate these transactions. It helps:
 
 * Streamline and automate recurring and bulk payouts.
 * Centralize payout tracking and improve operational efficiency.
@@ -22,7 +22,7 @@ The payouts feature enables businesses to transfer funds to third parties, such 
 
 * **Effortless Transfers**: Send funds to bank accounts or cards through your preferred payout method.
 * **Smart Retries**: Enhance payout success rates with retries intelligently configured based on error types and connectors available.
-* [List](https://hyperswitch.io/pm-list) of supported connectors.
+* [List](https://juspay.io/integrations) of supported connectors.
 
 **Simplify Operations**
 
@@ -42,15 +42,15 @@ Business continuity with compatibility ensured for your Stripe connect onboarded
 
 #### Adyen
 
-<table><thead><tr><th>Regions</th><th>Cards</th><th width="160">Banks</th><th>Wallets</th></tr></thead><tbody><tr><td>Europe</td><td>Major Networks </td><td>SEPA, SWIFT</td><td>Paypal, Neteller*, Skrill*</td></tr><tr><td>North America</td><td>Major Networks</td><td>ACH</td><td>Paypal</td></tr><tr><td>Others</td><td>Major Networks</td><td>SWIFT</td><td>Paypal</td></tr></tbody></table>
+<table><thead><tr><th>Regions</th><th>Cards</th><th width="160">Banks</th><th>Wallets</th></tr></thead><tbody><tr><td>Europe</td><td>Major Networks</td><td>SEPA, SWIFT</td><td>Paypal, Neteller*, Skrill*</td></tr><tr><td>North America</td><td>Major Networks</td><td>ACH</td><td>Paypal</td></tr><tr><td>Others</td><td>Major Networks</td><td>SWIFT</td><td>Paypal</td></tr></tbody></table>
 
 #### Cybersource
 
-| Regions       | Cards           | Banks | Wallets |
-| ------------- | --------------- | ----- | ------- |
-| Europe        | Major Networks  | -     | -       |
-| North America | Major Networks  | -     | -       |
-| Others        | Major Networks  | -     | -       |
+| Regions       | Cards          | Banks | Wallets |
+| ------------- | -------------- | ----- | ------- |
+| Europe        | Major Networks | -     | -       |
+| North America | Major Networks | -     | -       |
+| Others        | Major Networks | -     | -       |
 
 #### Ebanx
 
@@ -70,11 +70,11 @@ Business continuity with compatibility ensured for your Stripe connect onboarded
 
 #### Stripe
 
-| Regions       | Cards           | Banks | Wallets |
-| ------------- | --------------- | ----- | ------- |
-| Europe        | Major Networks  | SEPA  | -       |
-| North America | Major Networks  | -     | -       |
-| Others        | Major Networks  | -     | -       |
+| Regions       | Cards          | Banks | Wallets |
+| ------------- | -------------- | ----- | ------- |
+| Europe        | Major Networks | SEPA  | -       |
+| North America | Major Networks | -     | -       |
+| Others        | Major Networks | -     | -       |
 
 #### Wise
 
@@ -86,12 +86,12 @@ Methods marked with `*` are supported but not enabled by default.
 Methods marked with `**` are in beta.
 {% endhint %}
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;">Getting started with payouts</mark> </td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payouts using saved payment methods</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart router for payout</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart retries for payouts</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payout links</mark></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;">Getting started with payouts</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payouts using saved payment methods</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart router for payout</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Smart retries for payouts</mark></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Payout links</mark></td><td></td><td></td></tr></tbody></table>
 
 ## FAQs?
 
-* **Can I use Hyperswitch solely for payouts without payments?** \
+* **Can I use Hyperswitch solely for payouts without payments?**\
   Yes, Hyperswitch allows you to handle payouts independently. You can process payouts either through embedded payments or directly to a third party by providing direct payment information or using a token ID​​.
-* **What does "independent tokenization" mean?** \
-  Independent tokenization refers to the secure conversion of sensitive card and bank data into a token without dependency on any specific payment processor. \
+* **What does "independent tokenization" mean?**\
+  Independent tokenization refers to the secure conversion of sensitive card and bank data into a token without dependency on any specific payment processor.\
   With Hyperswitch, this is possible when users permit saving their card or bank information. This ensures flexibility, allowing tokens to be used across various payment processors while maintaining data security and compliance​​.
