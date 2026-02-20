@@ -198,7 +198,7 @@
     * [Xendit Split Settlement](explore-hyperswitch/connectors/split-payments/xendit-split-payments.md)
   * [Payouts Processors](explore-hyperswitch/connectors/payouts/README.md)
     * [Getting Started with Payouts](explore-hyperswitch/connectors/payouts/get-started-with-payouts.md)
-    * [Using Saved Payment Methods](explore-hyperswitch/connectors/payouts/process-payouts-using-saved-payment-methods.md)
+    * [Payouts with Saved Payment Methods](explore-hyperswitch/connectors/payouts/process-payouts-using-saved-payment-methods.md)
     * [Smart Router for Payouts](explore-hyperswitch/connectors/payouts/route-your-payout-transactions-using-smart-router.md)
     * [Smart Retries in Payout](explore-hyperswitch/connectors/payouts/smart-retries-in-payout.md)
     * [Payout Links](explore-hyperswitch/connectors/payouts/payout-link.md)
