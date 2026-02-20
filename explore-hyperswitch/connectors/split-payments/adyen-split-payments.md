@@ -5,15 +5,17 @@ icon: space-awesome
 
 # Adyen Split Settlement
 
-Adyen's Split Settlements functionality allows businesses to divide a single transaction into multiple payouts, ensuring funds are accurately distributed across various accounts. This feature is supported through their Platform solutions and implemented via Hyperswitch. Hyperswitch facilitates splitting payments during authorization and refund processing, ensuring smooth fund distribution at all transaction stages
+### Overview
 
-***
+Adyen's Split Settlements functionality allows businesses to divide a single transaction into multiple payouts, ensuring funds are accurately distributed across various accounts. This feature is supported through their Platform solutions and implemented via Hyperswitch.
+
+Hyperswitch facilitates splitting payments during both authorization and refund processing, ensuring smooth fund distribution at all transaction stages.
 
 ## Split Adyen payments via Hyperswitch
 
-In the payment create request, include the Adyen split rule as provided below.
+In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payments--create) request, include the Adyen split rule as provided below.
 
-```
+```json
      "split_payments": {
         "adyen_split_payment": {
             "store": "4935y84385736",
@@ -70,7 +72,7 @@ Hyperswitch enforces several validation rules:
 
 #### Payments Response
 
-```
+```json
     "split_payments": {
         "AdyenSplitPayment": {
             "store": "4935y84385736",
@@ -94,13 +96,11 @@ Hyperswitch enforces several validation rules:
     },
 ```
 
-***
-
 ## Split Adyen refunds via Hyperswitch
 
-In the refund create request, include the following according to your split rule
+In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create), include the following according to your split rule
 
-```
+```json
 
      "split_refund": {
         "adyen_split_refund": {
@@ -135,7 +135,7 @@ The request structure includes fields:
 
 #### Refund Response
 
-```
+```json
    "split_refund": {
         "adyen_split_refund": {
             "store": "4935y84385736",
