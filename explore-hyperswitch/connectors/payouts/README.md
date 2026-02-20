@@ -53,6 +53,8 @@ Methods marked with `**` are in beta.
 
 ### FAQ
 
-Can I use Hyperswitch solely for payouts without payments? Yes. Hyperswitch is modular. You can use our infrastructure to handle payouts independently of your payment collection. You can initiate payouts via direct payment info or by using an existing Token ID.
+Can I use Hyperswitch solely for payouts without payments? \
+Yes. Hyperswitch is modular. You can use our infrastructure to handle payouts independently of your payment collection. You can initiate payouts via direct payment info or by using an existing Token ID.
 
-What is the benefit of independent tokenization? It prevents vendor lock-in. By tokenizing sensitive data independently of the underlying processor, you retain ownership of your data and can route payouts to any supported connector without asking your users to re-enter their information.
+What is the benefit of independent tokenization?\
+It prevents vendor lock-in. By tokenizing sensitive data independently of the underlying processor, you retain ownership of your data and can route payouts to any supported connector without asking your users to re-enter their information.
