@@ -4,35 +4,31 @@ icon: magnifying-glass-arrows-rotate
 
 # Smart Retries in Payout
 
-Retries are attempts to make payouts after initial failure. Retries are used for recovering failed payouts. Smart Retries enables retry based on error type and connectors available. This significantly increase the success rate of the payout.
+Smart Retries enable the automatic recovery of failed payout attempts by re-initiating transactions based on specific error types and connector availability. This mechanism optimizes the success rate of disbursements by evaluating whether a retry is likely to resolve the initial failure.
 
-{% hint style="info" %}
-Please drop a note to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to enable Smart Retries for Payout (applicable only for Hyperswitch Cloud users).
-{% endhint %}
+### How Smart Retries Work
 
-Smart retries are configured based on error specific to connector and would retry only if the error configuration is suitable to increase transaction's success rate.
+Smart Retries are triggered based on connector-specific error configurations. A retry is only attempted if the error is categorized as recoverable and the configuration suggests a high probability of success upon re-attempt.
 
-#### Types of Smart Retries
+#### Retry Strategies
 
-{% tabs %}
-{% tab title="Single Connector Retry" %}
-If a single connector is enabled to merchant for a particular payment method, eligible errors would be attempted for retry through the same connector
-{% endtab %}
+Hyperswitch employs two primary strategies for payout recovery:
 
-{% tab title="Multiple Connector Retry" %}
-In case of multiple available connectors for merchant for a particular payment method, eligible error would trigger retry through other available connectors on the priority list&#x20;
-{% endtab %}
-{% endtabs %}
+* Single Connector Retry: If only one connector is configured for a specific payout method, eligible errors are retried through that same connector.
+* Multi-Connector Retry: If multiple connectors are available for a payout method, Hyperswitch attempts the retry using the next available connector in your priority list.
 
-#### Available Payout Methods for Smart Retries
+#### Supported Payout Methods by Connector
+
+Smart Retries are available for the following connector and method combinations:
 
 <table><thead><tr><th width="243">Connector</th><th>Payout Methods</th></tr></thead><tbody><tr><td>Adyen</td><td>Cards, Banks and Wallets</td></tr><tr><td>Cybersource</td><td>Cards</td></tr><tr><td>Ebanx</td><td>Banks</td></tr><tr><td>Paypal</td><td>Wallets</td></tr><tr><td>Stripe</td><td>Cards and Banks</td></tr><tr><td>Wise</td><td>Banks</td></tr></tbody></table>
 
-#### Retry Conditions
+### Conditions and Constraints
 
-* Multi Connector Retry will work  if there are multiple connectors available with a specific payout method enabled. The payout method is not changed in this case.
-* Single Connector Retry will not change its payout method for retrying the payment
-* Error Configuration must be loaded on our end (can be submitted by merchant)
-* Retry Count is set for every connector, which is 5 by default but can be customised as per merchant.&#x20;
-* Smart Retry is continued till the payout is successful, retry count is exhausted or connectors are exhausted
+The execution of a Smart Retry is governed by the following logic:
 
+* Method Consistency: The payout method remains unchanged during a retry. For example, a failed bank transfer will not be retried as a card payout.
+* Error Configuration: Retries are only initiated for error codes that have been loaded into the Hyperswitch engine. Merchants can submit custom error configurations to the Hyperswitch team.
+* Retry Limits: \* The system continues retrying until the payout is successful, the retry count is exhausted, or all eligible connectors are exhausted.
+  * The default Retry Count is 5 per connector, which can be customized based on merchant requirements.
+* Multi-Connector Eligibility: Multi-connector retries require at least two active [payout connectors](https://www.google.com/search?q=/docs/payouts/connectors) to be configured for the same payout method.
