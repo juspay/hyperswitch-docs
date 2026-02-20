@@ -99,7 +99,7 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 }
 ```
 
-3. Block a fingerprint using the [Blocklist endpoint](https://api-reference.hyperswitch.io/api-reference/blocklist/post-blocklist):
+3. Block a fingerprint using the [Blocklist endpoint](https://api-reference.hyperswitch.io/v1/blocklist/post-blocklist):
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/blocklist' \
@@ -111,14 +111,15 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 }
 ```
 
-4. [Show Blocked fingerprints](https://api-reference.hyperswitch.io/api-reference/blocklist/get-blocklist)
+4. [Show Blocked fingerprints](https://api-reference.hyperswitch.io/v1/blocklist/get-blocklist)
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_method' \
 --header 'api-key: YOUR_API_KEY'
 ```
 
-5. Now when we create a payment using the same card details, thhe payment will fail with error:
+5. [Toggle blocklist guard](https://api-reference.hyperswitch.io/v1/blocklist/post-blocklisttoggle), which will block the payment from the bins that are blocked.
+6. Now when we create a payment using the same card details, the payment will fail with error:
 
 ```
    "error": {
@@ -128,7 +129,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_meth
    }
 ```
 
-6. [Unblock a fingerprint](https://api-reference.hyperswitch.io/api-reference/blocklist/delete-blocklist)
+6. [Unblock a fingerprint](https://api-reference.hyperswitch.io/v1/blocklist/delete-blocklist)
 
 ```
 curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
