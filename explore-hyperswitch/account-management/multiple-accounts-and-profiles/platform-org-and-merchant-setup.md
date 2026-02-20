@@ -14,18 +14,19 @@ Think of it as a “meta-organization” that can:
 
 * Create and manage other **Merchant Accounts** under its umbrella
 * Generate **API keys** not just for itself, but also for the merchants it creates
-* **Use those merchant keys itself** to act on behalf of merchants — including **processing payments** and **connecting connectors**
+* Host exactly **one Platform Merchant Account** and can **create and manage multiple Merchant Accounts**, which can be either **Standard** or **Connected**.
+* Support two operational modes:
+  * The Platform Merchant can use **its own API key** to directly manage and operate Connected merchants
+  * The Platform Merchant can maintain **merchant-specific API key mappings** to perform payments, connector configuration, and profile management for **both Connected and Standard merchants**, with correct merchant scoping.
 
+#### Purpose of the Platform API Key
 
+The Platform API Key is a privileged credential owned by the Platform Merchant that serves the following controlled purposes within a Platform Organization.
 
-The **Platform API Key** has a single, specific purpose:
+* It is used for **management operations**, such as creating merchant accounts (Standard or Connected), generating API keys, and managing platform-level configurations.
+* In a **Connected merchant setup**, it can be used to initiate and execute operations on behalf of Connected merchants, including processing payments, configuring connectors, creating profiles, and performing other merchant-scoped operations.&#x20;
 
-* Management Only: It is used strictly to create sibling merchants and generate API keys for those sibling merchants.
-
-> Important Distinction:
->
-> * Platform API Key: A purely administrative key. It cannot be used for payment processing, refunds, or connector configuration (even for the Platform Merchant itself).
-> * Sibling Merchant API Keys: Operational keys used to actually process payments and connect connectors.
+The Platform API Key cannot be used to perform payment or connector operations for Standard merchants, ensuring correct isolation and ownership boundaries.
 
 
 
@@ -37,7 +38,7 @@ This model is particularly useful for:
 
 ### Platform Org and Merchant Structure
 
-<figure><img src="../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (3).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/unknown (2).png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 graph TD
@@ -84,43 +85,84 @@ graph TD
     style NP3 fill:#ffcc99
 ```
 
-* Platform Organisation hosts exactly one Platform Merchant with elevated privileges
-* Sibling Merchants are standard merchant accounts managed by the Platform Merchant
-
 ### Merchant Classification in a Platform Organization
 
-When a merchant is created under a Platform Organization, it must be configured as either:
+In a **Platform Organization**, every merchant account created under the org must be classified as either **Connected** or **Standard**. This classification is chosen by the **Platform Merchant** at creation time and determines how **Customers** and **Payment Methods** behave across the organization.
 
-* **Connected**
-* **Standard**
+> Once a merchant is created as **Connected** or **Standard**, any classification changes must be requested through your **Admins.**
 
-This classification determines how Customers and Payment Methods behave within the organization.
+A Platform Organization consists of:
 
-* Connected merchants participate in shared Customer and Payment Method behavior.
-* Standard merchants maintain isolated Customers and Payment Methods.
+* Exactly **one Platform Merchant** (the privileged parent / control - plane merchant)
+* Multiple merchant accounts, each configured as **Connected** or **Standard**
 
-The Platform Merchant determines this classification during merchant creation.
+This classification controls resource-sharing boundaries:
 
-Once configured, a merchant’s classification cannot be changed.
+* **Connected merchants** participate in **shared Customers and Payment Methods** across the platform’s shared scope.
+* **Standard merchants** maintain **isolated Customers and Payment Methods**, even though they belong to the same Platform Organization.
+
+#### Platform Merchant
+
+The **Platform Merchant** is the privileged parent merchant within a Platform Organization.
+
+* **Owns the shared resource scope** for **Customers** and **Payment Methods**
+* Performs **management operations** across the platform (merchant creation, governance, and administration)
+* Can **act on behalf of Connected merchants** (operational capabilities when acting for connected accounts)
+* Does **not** replace a regular merchant - it is a **control-plane entity** with **optional operational capabilities** and it cannot process payments for itself.
+
+#### Connected Merchants
+
+**Connected merchants** participate in the shared resource model of the Platform Organization.
+
+* **Share Customers and Payment Methods** with the Platform Merchant and other **Connected** merchants
+* Execute payments using their **own merchant context** (clear merchant attribution)
+* Can be operated in two modes:
+  * **Direct (self-initiated):** Connected merchant performs operations using its own credentials
+  * **On behalf (platform-initiated):** Platform Merchant performs operations **on behalf of** the connected merchant using the Platform API Key
+
+**What this enables?**
+
+* **Unified saved-payment-method experience** across business units (shared Customer/Payment Method scope)
+* **Centralized orchestration** with clear ownership and attribution (platform acting on behalf when needed)
+
+#### Standard Merchants
+
+**Standard merchants** are fully isolated merchant accounts within the same Platform Organization, but **outside** the shared resource group.
+
+#### Key characteristics
+
+* Maintain **isolated Customers and Payment Methods**
+* Do **not** participate in platform-level sharing
+* The Platform Merchant **cannot act operationally** on their behalf beyond standard org-level management permissions
+* Best suited when **contractual, regulatory, or data-boundary isolation** is required
+
+#### Resource Behavior Summary
+
+| Merchant Type | Customers                     | Payment Methods               | Platform can act on behalf?                                              |
+| ------------- | ----------------------------- | ----------------------------- | ------------------------------------------------------------------------ |
+| **Connected** | Shared across Connected group | Shared across Connected group | **Yes**                                                                  |
+| **Standard**  | Isolated per merchant         | Isolated per merchant         | **No** (but it can create the merchant and generate/manage its API keys) |
+
+***
 
 ### The Platform Organization Workflow
 
-#### Step 1 — Request Platform Organization Setup
+#### Step 1 - Request Platform Organization Setup
 
 * A merchant who wants to operate as a platform must **contact Hyperswitch**
 * Hyperswitch will **enable Platform Organization mode** for that merchant
 * Once enabled, the merchant is now considered a **Platform Org** and has one **Platform Merchant** associated with it
 
-#### Step 2 — Generate a Platform API Key
+#### Step 2 - Generate a Platform API Key
 
 * Using the Hyperswitch Dashboard, the Platform Merchant generates a **Platform API Key**
   * Sandbox url for API Key page: [https://app.hyperswitch.io/dashboard/developer-api-keys](https://app.hyperswitch.io/dashboard/developer-api-keys)
 * This key is **special**:
   * It authorizes access to create and manage new merchant accounts
-  * It does **not** perform payment operations directly
-* Think of this as the “key” for managing sub-merchants
+  * It does not perform payment operations for **Standard** merchants—think of it as the “key” for managing merchant accounts
+  * It **can** perform payment operations **on behalf of Connected merchants**.
 
-#### Step 3 — Create New Merchants (Sibling-Merchants)
+#### Step 3 - Create New Merchants (Sibling-Merchants)
 
 * Using the **Platform API Key**, the platform calls the `Merchant Account Create` API
   * API link: [https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create](https://api-reference.hyperswitch.io/v1/merchant-account/merchant-account--create)
@@ -128,20 +170,19 @@ Once configured, a merchant’s classification cannot be changed.
 * These new merchants behave just like regular merchants in terms of profiles, transactions, routing, etc.
 * Example: A SaaS platform might create one merchant for each of its customers
 
-#### Step 4 — Generate API Keys for New Merchants
+#### Step 4 - Generate API Keys for New Merchants
 
 * Once a new merchant is created, the **Platform API Key** can be used to **generate merchant-specific API keys via** API Key - Create
   * API link: [https://api-reference.hyperswitch.io/v1/api-key/api-key--create](https://api-reference.hyperswitch.io/v1/api-key/api-key--create)
 * These keys are scoped to that merchant only and are identical to regular api keys generated for a merchant account
 * The platform can then securely hand over these keys to the merchant or use them internally on behalf of the merchant
 
-#### Step 5 — Perform Payment Operations Using Merchant Keys
+#### Step 5 - Perform Payment Operations Using Merchant Keys
 
-Once sibling merchants are created and their API keys are generated, those keys become the **operational keys** for those merchants — meaning all payment operations (payments, refunds) and connector actions must be carried out with the sibling merchant’s own API key.
+Once merchant accounts are created and their API keys are generated, those keys become the **operational keys** for that merchant account.
 
-The **Platform API Key cannot directly perform payments or connector operations for sibling merchants**; its role there is only to create merchants and issue their keys.
-
-
+* **Standard merchant accounts:** All payment operations (payments, refunds) and connector actions **must** be performed using the **Standard merchant’s own API key**. The **Platform API Key** is limited to **management** (creating standard merchants and generating/managing their API keys).
+* **Connected merchant accounts:** Operations can be performed either using the **Connected merchant’s own API key** or using the **Platform API Key acting on behalf of the Connected merchant** (including payments/refunds and connector configuration).
 
 **5.1 Connector Setup**
 
@@ -149,27 +190,43 @@ With the **Merchant API Key** of a sibling merchant, the platform can connect pa
 
 * **API:** [Merchant Connector Account - Create](https://api-reference.hyperswitch.io/v1/merchant-connector-account/merchant-connector--create)
 * **How it works:**
-  * Platform generates a Merchant API Key for the sibling merchant
-  * Using that key, the platform calls the above endpoint to add/configure connectors for that merchant
-  * This ensures connectors are always scoped correctly to the merchant account
 
-Important: In a **regular organization**, Org Admin or Merchant Admin can configure connectors manually via the **Dashboard**, or the merchant can use its **own API key** to configure them via API. In a **platform organization**, the platform does the same thing **programmatically** by using the sibling merchant’s API key
+A **Connected merchant** can connect/configure connectors in any of these ways:
+
+* Using the **Connected merchant’s own API key**
+* Via the **Dashboard** (with the Org Admin / Merchant Admin permissions)
+* **Via the Platform Merchant**, where the platform uses the **Platform API key** to configure connectors **on behalf of** the Connected merchant
+
+A **Standard merchant** can connect/configure connectors only in these ways:
+
+* Using the **Standard merchant’s own API key**
+* Via the **Dashboard** (with the Org Admin / Merchant Admin permissions)
+
+> The **Platform API key cannot be used to configure connectors on behalf of Standard merchants**.
 
 **5.2 Payments and Other Operations**
 
-To process payments, refunds etc., the platform uses the sibling merchant’s API key:
+For payment operations (payments, refunds, captures, etc.), the **allowed key depends on the merchant type**.
 
 * **API:** [Payments - Create](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 * **Other Payment APIs** work identically as they do for a regular merchant account
 * **How it works:**
-  * **Platform keeps an internal mapping of merchant accounts ↔ merchant API keys**
-  * When processing a payment for a particular merchant, it uses the appropriate merchant API key
-
-This ensures **isolation**: every payment is always tied to the correct merchant account, even if the platform is the one initiating it.
+  * **Standard merchants**
+    * The standard merchant must use the **their own merchant API key** to perform payment operations.
+      * The **Platform API key cannot** be used to run payments/refunds on behalf of a Standard merchant.
+    * **Connected merchants**
+      * Payment operations can be performed either:
+        * Using the **Connected merchant’s own API key**, **or**
+        * Using the **Platform API key** **on behalf of** the Connected merchant.
+  * The platform identifies which merchant account the operation is for (Standard vs Connected).
+  * It then uses the correct credential for that merchant type:
+    * **Standard → Standard merchant API key**
+    * **Connected → Connected merchant API key OR Platform API key (on-behalf)**
+  * This ensures every operation is always scoped to the **correct merchant account context**, even when initiated by the platform.
 
 ### Shared and Isolated Resource Behavior
 
-<figure><img src="../../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (2).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Emailers (1).jpg" alt=""><figcaption></figcaption></figure>
 
 _Connected merchants share Customers and Payment Methods. Standard merchants operate with isolated resources._
 
@@ -181,25 +238,25 @@ Within a Platform Organization:
 
 All operational flows continue to use the respective Merchant API Keys. Resource sharing affects visibility and ownership within Connected merchants but does not change transaction scoping.
 
-### Difference Between Regular Organization and Platform Organization
+### Difference Between Standard Organization and Platform Organization
 
-| Feature                 | Regular Organization                                                   | Platform Organization                                                                                        |
-| ----------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Organization Structure  | Organization contains merchants that operate independently.            | Organization contains one Platform Merchant and one or more child merchants (Connected or Standard).         |
-| Merchant Creation       | Org Admin creates merchants manually via Dashboard.                    | Platform Merchant uses the Platform API Key to programmatically create child merchants via API.              |
-| Merchant Classification | All merchants operate independently.                                   | Each child merchant is configured as Connected or Standard at creation time.                                 |
-| Customer Scope          | Customers are scoped to a single merchant.                             | Customers are shared across Connected merchants. Standard merchants maintain isolated Customers.             |
-| Payment Method Scope    | Payment Methods are scoped to a single merchant.                       | Payment Methods are shared across Connected merchants. Standard merchants maintain isolated Payment Methods. |
-| API Key Generation      | Org Admin generates API keys manually.                                 | Platform Merchant generates Merchant API Keys programmatically for child merchants.                          |
-| Connector Setup         | Merchant configures connectors via Dashboard or using its own API key. | Platform uses the specific Merchant API Key of a child merchant to configure connectors programmatically.    |
-| Payment Processing      | Merchant uses its own API key.                                         | Platform uses the specific Merchant API Key of a child merchant to process payments on their behalf.         |
-| Merchant Type Changes   | Not applicable.                                                        | Merchant classification cannot be changed after creation.                                                    |
+| Feature                 | Standard Organization                                                  | Platform Organization                                                                                                                                                            |
+| ----------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Organization Structure  | Organization contains Standard Merchants that operate independently.   | Organization contains one Platform Merchant and one or more child merchants (Connected or Standard).                                                                             |
+| Merchant Creation       | Org Admin creates merchants manually via Dashboard.                    | Platform Merchant uses the Platform API Key to programmatically create child merchants via API.                                                                                  |
+| Merchant Classification | All merchants operate independently.                                   | Each child merchant is configured as Connected or Standard at creation time.                                                                                                     |
+| Customer Scope          | Customers are scoped to a single merchant.                             | Customers are shared across Connected merchants. Standard merchants maintain isolated Customers.                                                                                 |
+| Payment Method Scope    | Payment Methods are scoped to a single merchant.                       | Payment Methods are shared across Connected merchants. Standard merchants maintain isolated Payment Methods.                                                                     |
+| API Key Generation      | Org Admin generates API keys manually.                                 | Platform Merchant generates Merchant API Keys programmatically for child merchants.                                                                                              |
+| Connector Setup         | Merchant configures connectors via Dashboard or using its own API key. | Merchants can configure their own connectors using their API key, and the platform can configure connectors on behalf of **Connected** merchants using the **Platform API key**. |
+| Payment Processing      | Merchant uses its own API key.                                         | Merchants can process payments using their API key, and the platform can process payments on behalf of **Connected** merchants using the **Platform API key**.                   |
+| Merchant Type Changes   | Not applicable.                                                        | Merchant classification is set at creation, for any changes, contact your **Admins**.                                                                                            |
 
-Limitations
+### Roadmap (Platform-Connected Setup)
 
-The following transitions are not supported:
+* The current Platform-Connected setup supports **Payments** flows end-to-end.
+* Support for additional operational flows - such as **Refunds** and **Disputes** - is planned and will be added in upcoming releases to expand the set of on-behalf capabilities for Connected merchants.
+* For **Standard merchants** in a Platform Organization, all capabilities available to a **Standard merchant** in a standard (non-platform) organization are **already supported**.
 
-* A merchant cannot be moved from Connected to Standard.
-* A merchant cannot be moved from Standard to Connected.
 
-Merchant classification is fixed after configuration.
+

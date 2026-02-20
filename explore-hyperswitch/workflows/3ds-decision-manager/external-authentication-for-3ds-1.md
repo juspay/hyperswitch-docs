@@ -25,7 +25,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
 2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 

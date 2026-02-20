@@ -34,19 +34,19 @@ Log in to the [Hyperswitch Dashboard](https://app.hyperswitch.io) and follow the
 
 Navigate to Payout Processors: Select the Payout Processors tab from the sidebar and Select Processor: Choose a processor from the supported list to open the configuration modal.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
 
 Provide Credentials: Enter the authentication keys required by the specific processor to enable communication.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
 
 Enable Payment Methods: Select the specific payout methods (e.g., Bank Transfer, Cards) you intend to use for this processor.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
 
 Confirm Configuration: Once saved, the processor will appear as "Active" in your list.
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
 
 #### Processing Payouts via API
 

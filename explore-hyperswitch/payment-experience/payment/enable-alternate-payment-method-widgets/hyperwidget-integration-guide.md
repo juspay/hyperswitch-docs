@@ -10,7 +10,7 @@ Hyperswitch provides a code transformer that allows the merchant to leverage the
 
 The unified dashboard offers the merchants ability to enable or disable APMs via any PSP. The dashboard also offers capabilities like - Analytics, Operations, Refunds, Chargebacks, and Reconciliation.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported APM features:
 

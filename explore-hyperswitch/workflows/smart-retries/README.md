@@ -16,7 +16,7 @@ The Auto Retry engine handles varied Retry strategy based on the type of error e
 
 Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 100+ processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
 
-<figure><img src="../../../.gitbook/assets/unknown (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/unknown (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Error code segregation
 

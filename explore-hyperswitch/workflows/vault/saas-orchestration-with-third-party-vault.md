@@ -47,7 +47,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **2. Hyperswitch SDK loading external vault SDK**
 
@@ -78,7 +78,7 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 
 1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **3. External vault SDK and storage**
 

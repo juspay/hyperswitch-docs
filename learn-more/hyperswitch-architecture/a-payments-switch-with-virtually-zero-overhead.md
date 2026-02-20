@@ -1,8 +1,8 @@
 # A Payments Switch with virtually zero overhead
 
-When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.&#x20;
+When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.
 
-Merchants who operate in this digital arena understand the importance of **offering multiple payment options to their customers**. The challenge lies in integrating these payment processors seamlessly into their existing systems without wasting dev effort or introducing performance overhead.&#x20;
+Merchants who operate in this digital arena understand the importance of **offering multiple payment options to their customers**. The challenge lies in integrating these payment processors seamlessly into their existing systems without wasting dev effort or introducing performance overhead.
 
 {% hint style="success" %}
 Enter Hyperswitch, a game-changing solution designed to be lightning fast and add **virtually zero overhead** to your payment processing infrastructure!
@@ -12,7 +12,7 @@ Enter Hyperswitch, a game-changing solution designed to be lightning fast and ad
 
 **Clarifying latency overhead**
 
-> The latency overhead of Hyperswitch refers specifically to the time taken by the Hyperswitch application itself within the transaction flow.&#x20;
+> The latency overhead of Hyperswitch refers specifically to the time taken by the Hyperswitch application itself within the transaction flow.
 
 While Hyperswitch optimizes its internal processes to add almost zero overhead, it's important to recognize that the overall transaction latency isn't solely determined by Hyperswitch alone. The entire transaction process involves multiple components, including the payment processor as shown below
 
@@ -67,10 +67,10 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 </details>
 
 {% hint style="info" %}
-The latency of the entire Hyperswitch application is just \~25 ms&#x20;
+The latency of the entire Hyperswitch application is just \~25 ms
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <div data-full-width="false"><figure><img src="../../.gitbook/assets/Screenshot 2023-10-23 at 12.07.08 AM.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
@@ -86,7 +86,6 @@ One of the remarkable features of Hyperswitch is its ability to seamlessly integ
 
 ### **Bottomline**
 
-By adding almost zero overhead, Hyperswitch ensures that the lion's share of the transaction's latency, as experienced by the end user, is determined by the payment processor's inherent processing time.&#x20;
+By adding almost zero overhead, Hyperswitch ensures that the lion's share of the transaction's latency, as experienced by the end user, is determined by the payment processor's inherent processing time.
 
 In essence, Hyperswitch acts as the invisible hand behind the scenes by connecting merchants with multiple payment processors in the blink of an eye without adding any noticeable overhead.
-
