@@ -1,19 +1,18 @@
 ---
 description: >-
-  Ideal for teams seeking data independence in a neutral vault combined with
-  Hyperswitch’s optimized payment UI and routing .
+  Ideal for teams seeking to continue with their existing vault provider and
+  avoid data migration
+hidden: true
 icon: square-up-right
 ---
 
-# Hyperswitch SDK + External Vault Setup
+# Hyperswitch SDK + External Vault
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
 The merchant configures connectors and routing rules in the Hyperswitch Dashboard. Hyperswitch backend translates orchestration decisions into PSP specific requests using the provided external vault tokens.
 
-#### **Understanding Payment and Vault flow**
-
-**Vaulting**
+#### **Payment and Vault flow for 'New' customer**
 
 <figure><img src="../../../.gitbook/assets/external_vault_external_SDK_saving.svg" alt=""><figcaption></figcaption></figure>
 
@@ -41,9 +40,7 @@ After the processor confirms the payment is successful, Hyperswitch sends the ca
 
 The Hyperswitch Server sends the final transaction status (Success or Failure) back to the SDK. Finally, the SDK redirects the customer to your specified `return_url`, where you can display a confirmation message and proceed with order fulfillment.
 
-
-
-**Payment using stored card**&#x20;
+#### **Payment and Vault flow for 'Repeat' customer**
 
 <figure><img src="../../../.gitbook/assets/Untitled (8).svg" alt=""><figcaption></figcaption></figure>
 

@@ -38,11 +38,11 @@ Navigate to Payout Processors: Select the Payout Processors tab from the sidebar
 
 Provide Credentials: Enter the authentication keys required by the specific processor to enable communication.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
 
 Enable Payment Methods: Select the specific payout methods (e.g., Bank Transfer, Cards) you intend to use for this processor.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
 
 Confirm Configuration: Once saved, the processor will appear as "Active" in your list.
 

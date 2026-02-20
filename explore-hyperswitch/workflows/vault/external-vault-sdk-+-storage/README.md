@@ -2,10 +2,11 @@
 description: >-
   Best for teams with strict existing vault dependencies who want to leverage
   Hyperswitch for payment routing.
+hidden: true
 icon: up-right-from-square
 ---
 
-# External SDK + External Vault Setup
+# External  Vault SDK + Storage
 
 In this approach, card data is captured and tokenized using an external vault SDK. Hyperswitch backend receives vault tokens and handles orchestration, routing, retries, and PSP communication via connectors.
 
@@ -28,7 +29,7 @@ When utilizing External Vaults, merchants have the flexibility to define how pay
 
 #### **Layered Integration**
 
-<figure><img src="../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
 
 **1. Payment Initialization**
 
@@ -74,7 +75,7 @@ Once the processor provides a final status, the response is relayed back from th
 
 #### **Independent Integration**
 
-<figure><img src="../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
 
 **1.Card Tokenization**
 

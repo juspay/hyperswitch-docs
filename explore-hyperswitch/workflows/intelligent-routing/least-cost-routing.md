@@ -28,11 +28,11 @@ Ensure that connectors supporting transactions through local networks are set up
 
 _**Step 2:**_ Navigate to `Workflow` ->`Routing` -> `Least Cost Routing`
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 _**Step 3:**_ A popup will guide you to confirm the three prerequisites - 1.) Connector setup, 2.) Debit card enablement, and 3.) Local networks configuration. Click on `Enable` to activate LCR
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routing algorithm along with all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
 
@@ -57,7 +57,7 @@ We perform real-time computation to see if a Global network (Visa/ Mastercard) v
 
 * We calculate transaction cost estimate using the MCC code supplied by merchant&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 * We look into amount (value) of transaction and Card Issuer bank to compute a cost of transction and determine the right network to process.
 * The system has default values baked-in to compute cost of transaction and make decisions. The LCR system is being designed to accept cost inputs from merchants. Specifically, if they have any PSP–Network level contracts that should be considered during network selection.
