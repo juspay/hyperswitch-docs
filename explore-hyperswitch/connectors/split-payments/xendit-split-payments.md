@@ -4,7 +4,9 @@ icon: hexagon-xmark
 
 # Xendit Split Settlement
 
-If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple ways to route your payments based on your specific use cases.
+### Overview
+
+If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple routing methods to support diverse use cases:
 
 * Partner to Platform
 * Partner to Partner
@@ -13,15 +15,13 @@ If your platform charges a fee or commission when facilitating payments for your
 
 For more information on these types, refer [here](https://docs.xendit.co/xenplatform/split-payments)
 
-***
-
 ## Split Xendit payments via Hyperswitch
 
 Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 
-#### Example with flat amount only:
+#### Example: Flat amount Split
 
-```
+```json
 {  
   "amount": 10000,  
   "currency": "IDR",  
@@ -51,9 +51,9 @@ Split settlements between multiple sub-merchants, partners, or platforms by incl
 }
 ```
 
-#### Example with percentage amount
+#### Example: Percentage-Based Split
 
-```
+```json
 {  
   "amount": 10000,  
   "currency": "IDR",  
