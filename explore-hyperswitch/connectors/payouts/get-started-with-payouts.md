@@ -4,62 +4,67 @@ icon: flag-checkered
 
 # Getting Started with Payouts
 
-For getting started with payouts, make sure you have signed up for the underlying payout processors supported by HyperSwitch.
+To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
 
-## How does it work?
+## Overview
+
+The following diagram illustrates the interaction between your application, the Hyperswitch orchestration layer, and the underlying payout processors.
 
 <figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-## How to get started?
+### Configuration Resources
 
-We will be using HyperSwitch's hosted dashboard and Postman API collection for configuring connectors and processing payouts. You can find API reference [here](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create).
+Implementation requires the Hyperswitch Dashboard for configuration and the API for transaction processing.
 
-Backend API endpoint - https://sandbox.hyperswitch.io
+* API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
+* Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
+* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
 
-Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
+#### Prerequisites
 
-#### Pre-requisites
+Before configuring your first payout, ensure you have the following credentials from your Dashboard:
 
-* Make sure you have an account by signing up at the [dashboard](https://app.hyperswitch.io).
-* Log in to the dashboard
-* Make sure you have an API key by navigating to _**Developers**_ section
-* Note down your `merchant_id` from the home page.
+1. A Hyperswitch account.
+2. An API Key (located in the Developers section).
+3. Your Merchant ID (available on the Home page).
 
-#### Steps for configuring payout processors
+#### Configuring Payout Processors
 
-**Step 1 -** Login to your [HyperSwitch account](https://app.hyperswitch.io).
+Log in to the [Hyperswitch Dashboard](https://app.hyperswitch.io) and follow these steps to connect your processors.
 
-**Step 2** - Navigate to _**Payout Processors**_ tab.
+Navigate to Payout Processors: Select the Payout Processors tab from the sidebar and Select Processor: Choose a processor from the supported list to open the configuration modal.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
 
-**Step 3 -** Select the payout processor you'd want to use and provide the processor's credentials.
+Provide Credentials: Enter the authentication keys required by the specific processor to enable communication.
 
 <figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
 
-**Step 4 -** Enable preferred payment methods.
+Enable Payment Methods: Select the specific payout methods (e.g., Bank Transfer, Cards) you intend to use for this processor.
 
 <figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
 
-**Step 5 -** Hooray! You've successfully set up your payout processor!
+Confirm Configuration: Once saved, the processor will appear as "Active" in your list.
 
 <figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
 
-#### Steps for processing payouts
+#### Processing Payouts via API
 
-**Step 1 -** Import postman collection from [here](https://www.postman.com/hs-payouts/hyperswitch/collection/u6uep7u/payouts-w-hyperswitch).
+For testing and initial integration, you can use the [Hyperswitch Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/u6uep7u/payouts-w-hyperswitch).
+
+Import Collection: Download and import the collection into your Postman workspace.
 
 <figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 
-**Step 2 -** Navigate to _**Variables**_ tab to set up below variables
+Configure Environment Variables: In the Variables tab, set the following parameters:
 
-* `baseUrl`
-* `merchant_id`
-* `api_key`
+* `baseUrl`: `https://sandbox.hyperswitch.io`
+* `merchant_id`: Your unique merchant identifier.
+* `api_key`: Your Hyperswitch API secret key.
 
 <figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Updating env variables in postman collection</p></figcaption></figure>
 
-**Step 3 -** Head to "Process payouts" section for processing payouts.
+Execute Payout: Navigate to the Process Payouts section of the collection to send a `POST` request to the `/payouts/create` endpoint.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.10.26 PM.png" alt=""><figcaption></figcaption></figure>
 
