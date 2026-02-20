@@ -10,7 +10,7 @@ Hyperswitch supports the following ways of saving a payment method used in a suc
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
-## :credit\_card: Saving a payment method for future on-session payments (COF CIT)
+### Saving a payment method for future on-session payments (COF CIT)
 
 To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.
 
@@ -23,10 +23,22 @@ For saving a customer's payment method used in a successful transaction:
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
-"setup_future_usage": "on_session"
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
+--data-raw '{
+    "amount": 6540,
+    "currency": "USD",
+    "profile_id": <enter the relevant profile id>,
+    "setup_future_usage":"on_session", 
+    "customer_id": "customer123",
+    "description": "Its my first payment request",
+    "return_url": "https://example.com", // 
+}'
 ```
 
-* Pass the customer's consent to store the card in the `/payments/:id:/confirm` request
+* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -49,7 +61,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 ***
 
-## :floppy\_disk: Saving a payment method for future MIT payments
+### Saving a payment method for future MIT payments
 
 Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
 
@@ -60,10 +72,22 @@ Based on the payment processors support, this functionality is also available fo
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
-"setup_future_usage": "off_session"
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
+--data-raw '{
+    "amount": 6540,
+    "currency": "USD",
+    "profile_id": <enter the relevant profile id>,
+    "setup_future_usage":"off_session", 
+    "customer_id": "customer123",
+    "description": "Its my first payment request",
+    "return_url": "https://example.com", // 
+}'
 ```
 
-* Pass the customer's consent to store the card in the `/payments/:id:/confirm` request
+* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -92,7 +116,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 
 ***
 
-## :money\_with\_wings: Using a saved payment method to do a MIT payment
+### Using a saved payment method to do a MIT payment
 
 Once a customer's payment method is saved for MIT payments you can start charging the customer by sending the following details in the `/payments` request
 
@@ -115,7 +139,7 @@ curl --request GET \
 
 ***
 
-## 🔓 Processing MIT Payments Without a Saved Payment Method
+### Processing MIT Payments Without a Saved Payment Method
 
 If a merchant is PCI-compliant and has the customer payment method details stored, an MIT payment can be performed by passing the card details and the network transaction id directly in the confirm call.
 

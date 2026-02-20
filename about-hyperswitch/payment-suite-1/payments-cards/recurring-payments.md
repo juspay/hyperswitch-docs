@@ -34,7 +34,6 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "authentication_type": "no_three_ds",
     "setup_future_usage":"off_session", 
     "customer_id": "customer123",
     "description": "Its my first payment request",
