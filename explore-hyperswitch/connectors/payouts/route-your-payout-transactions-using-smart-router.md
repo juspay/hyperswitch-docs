@@ -4,38 +4,49 @@ icon: swap
 
 # Smart Router for Payouts
 
-_Before continuing further, refer to_ [_this_](https://docs.hyperswitch.io/features/merchant-controls/smart-router) _comprehensive guide on Smart Router._
+The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
 
-**Note: routing rules are distinct for payment and payout operations. Configuring one does not affect the other and vice-versa.**
+> Note: Routing configurations for payout operations are isolated from payment operations. Modifying payout routing rules will not impact your payment routing logic and vice-versa.
 
-## How to get started?
+For a conceptual deep dive into the routing engine, refer to the [Smart Router Overview](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/route-your-payout-transactions-using-smart-router).
 
-Routing rules can be configured using Hyperswitch's dashboard or via APIs. We will be using Hyperswitch's dashboard as it provides a simple, intuitive UI for configuring these rules.
+#### Configuration Options
 
-Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
+You can manage your routing logic via the [Hyperswitch Dashboard](https://app.hyperswitch.io) or the [Routing APIs](https://api-reference.hyperswitch.io/v1/routing/routing--list). The dashboard provides a visual interface for constructing and activating these rules.
 
-#### Pre-requisites
+#### Prerequisites
 
-Make sure there are at least two or more payout processors integrated with your account. You can follow [this](https://docs.hyperswitch.io/features/payment-flows-and-management/payouts/get-started-with-payouts#how-to-get-started) guide for integrating a payout connector of your choice.
+To utilize Smart Routing, you must have at least two payout processors integrated and active on your account. Follow the [Getting Started with Payouts](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/get-started-with-payouts) guide to add connectors.
 
-#### Steps for configuring routing rules for payouts
+### Setting Up Payout Routing
 
-**Step 1 -** Head to _**Workflow -> Payout Routing**_
+Access Routing Settings
+
+Navigate to Workflow -> Payout Routing in your [Dashboard](https://app.hyperswitch.io).
 
 <figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption><p>Head to Payout Routing</p></figcaption></figure>
 
-**Step 2 -** From here, you can select one of the three routing rule formats for creating a routing rule and follow one of the below guides for configuring your routing rule
+Select a Routing Strategy
+
+Hyperswitch supports three distinct formats for payout orchestration:
+
+* [Volume-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/volume-based-routing): Distribute a percentage of total payout traffic across multiple connectors.&#x20;
+* [Rule-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing): Create conditional logic (if/then) to route payouts based on specific attributes like currency, region, or method.&#x20;
+* [Default Fallback Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/default-fallback-routing): Establish a static priority list. If a primary processor is unavailable, the system attempts the payout with the next processor in the sequence.&#x20;
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>Volume Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (12).png">image (12).png</a></td></tr><tr><td></td><td>Rule Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (13).png">image (13).png</a></td></tr><tr><td></td><td>Default fallback Routing</td><td></td><td><a href="../../../.gitbook/assets/image (14).png">image (14).png</a></td></tr></tbody></table>
 
-**Step 3 -** You can view the created routing rules at the main page
-
 <figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption><p>View configured rules</p></figcaption></figure>
 
-**Step 4 -** Only a single routing rule can be activated at a given time. For selecting a different rule, click on the rule and click `Activate Configuration`
+Manage and Activate Configurations
+
+Once your rules are defined, you can manage them from the Payout Routing summary page.
+
+* Activation: Only one routing configuration (Volume, Rule, or Fallback) can be active at any given time.
+* Switching Rules: To change the active logic, select a saved configuration and click `Activate Configuration`.
 
 <figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Activate routing rule</p></figcaption></figure>
 
-**Step 5 -** If none of the rules are activated, the transaction is routed in the order listed in Default Fallback Priority
+Fallback Behavior: If no custom routing rule is activated, Hyperswitch will automatically process transactions based on the order defined in your Default Fallback Priority list.
 
 <figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
