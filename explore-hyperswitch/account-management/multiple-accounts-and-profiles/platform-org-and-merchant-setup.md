@@ -198,8 +198,8 @@ All operational flows continue to use the respective Merchant API Keys. Resource
 | Payment Processing      | Merchant uses its own API key.                                         | Merchants can process payments using their API key, and the platform can process payments on behalf of **Connected** merchants using the **Platform API key**.                   |
 | Merchant Type Changes   | Not applicable.                                                        | Merchant classification is set at creation, for any changes, contact your **Admins**.                                                                                            |
 
-Roadmap (Platform-Connected Setup)
+**Roadmap (Platform-Connected Setup)**
 
-* The current Platform-Connected setup supports Payments flows end-to-end.
+* The current Platform-Connected setup supports Payments flows end-to-end including 3DS payments
 * Support for additional operational flows - such as Refunds and Disputes - is planned and will be added in upcoming releases to expand the set of on-behalf capabilities for Connected merchants.
-* For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a standard (non-platform) organization are already supported.
+* For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a standard (non-platform) Organization are already supported.
