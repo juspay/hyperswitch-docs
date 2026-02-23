@@ -13,9 +13,42 @@ The reconciliation process follows a robust, end-to-end flow to ensure that ever
 3. **Expectation Creation**: When a rule matches a staging entry, the system creates an **Expectation**. An expectation is a record that defines what a corresponding transaction should look like from a target system
 4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process
 5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules
-6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctl
+6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+{% code title="How Reconciliation Works" fullWidth="true" %}
+```mermaid
+flowchart TB
+    OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
+    PD["Payment Data"] -- Ingested via automated connection --> DI
+    DI -- Transformed via defined configurations --> DT["Data Transformation"]
+    DT -- Order Data Stored --> ODB[("Order Data")]
+    DT -- Payment Data Stored --> PDB[("Payment Data")]
+    ODB -- Evaluated against Reconciliation Rules for Expectation Creation --> RE["Rule Engine"]
+    RE -- Expected Payment created based on specified rule --> ECS["Expectation Creation Success"]
+    RE --> ECF["Expectation Creation Failure"]
+    PDB --> TC["Transaction Created"]
+    ECS --> MA["Matching Attempted by Recon Engine"]
+    TC --> MA
+    MA --> M["Matched"] & MM["Mismatched"]
+    MM -- Manual Adjustment --> EM["Exception Management"]
+    EM -- Transaction sent for matching after correction --> MA
+
+    style OD fill:#FFF9C4
+    style DI fill:#C8E6C9
+    style PD fill:#FFF9C4
+    style DT fill:#C8E6C9
+    style ODB fill:#FFF9C4
+    style PDB fill:#FFF9C4
+    style RE fill:#C8E6C9
+    style ECS fill:#BBDEFB
+    style ECF fill:#FFCDD2
+    style TC fill:#BBDEFB
+    style MA fill:#C8E6C9
+    style M fill:#BBDEFB
+    style MM fill:#FFCDD2
+    style EM fill:#C8E6C9
+```
+{% endcode %}
 
 ### Rules Architecture
 
