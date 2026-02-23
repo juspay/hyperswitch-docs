@@ -1,10 +1,9 @@
 ---
+description: Platform Organization Setup & Workflow
 icon: garage-car
 ---
 
 # Platform Org and Merchant Setup
-
-### Platform Organization Setup & Workflow
 
 #### Overview of Platform Organization
 
@@ -42,7 +41,7 @@ This model is particularly useful for:
 
 In a Platform Organization, every merchant account created under the org must be classified as either Connected or Standard. This classification is chosen by the Platform Merchant at creation time and determines how Customers and Payment Methods behave across the organization.
 
-> Once a merchant is created as **Connected** or **Standard**, any classification changes must be requested through your **Admins.**
+> Once a merchant is created as Connected or Standard, any classification changes must be requested through your Admins.
 
 Platform Organization consists of:
 
