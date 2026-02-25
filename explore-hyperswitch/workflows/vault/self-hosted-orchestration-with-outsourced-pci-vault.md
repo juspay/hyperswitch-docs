@@ -1,3 +1,7 @@
+---
+icon: up-right-from-square
+---
+
 # Self-Hosted Orchestration with Outsourced PCI Vault
 
 > **Deployment Model:** Merchant self-hosts Hyperswitch · **PCI Scope:** Outsourced to an external vault provider
