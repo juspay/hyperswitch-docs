@@ -131,6 +131,7 @@
     * [Payment Methods Management SDK](explore-hyperswitch/workflows/vault/payment-methods-management-sdk.md)
     * [Vault SDK - JS with REST API Integration](explore-hyperswitch/workflows/vault/vault-sdk-integration-1.md)
     * [Hyperswitch Vault: Pass Through Proxy Payments](explore-hyperswitch/workflows/vault/hyperswitch-vault-pass-through-proxy-payments.md)
+    * [Self-Hosted Orchestration with Outsourced PCI Vault](explore-hyperswitch/workflows/vault/self-hosted-orchestration-with-outsourced-pci-vault.md)
   * [Smart Retries](explore-hyperswitch/workflows/smart-retries/README.md)
     * [3DS Step-up Retries](explore-hyperswitch/workflows/smart-retries/3ds-step-up-retries.md)
     * [Manual/User triggered Retries](explore-hyperswitch/workflows/smart-retries/manual-user-triggered-retries.md)
