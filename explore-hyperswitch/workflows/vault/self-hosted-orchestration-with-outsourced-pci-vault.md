@@ -48,41 +48,7 @@ Merchants who already have an existing relationship with a third-party vault —
 
 ### Architecture
 
-```
-┌─────────────┐        ┌──────────────────────┐        ┌─────────────────┐        ┌───────┐
-│  End User /  │        │  Hyperswitch          │        │  External Vault  │        │  PSP  │
-│  Browser/SDK │        │  (Self-Hosted)        │        │  (Juspay/VGS/   │        │       │
-│              │        │                      │        │   Tokenex)       │        │       │
-└──────┬───────┘        └──────────┬───────────┘        └────────┬────────┘        └───┬───┘
-       │                           │                              │                    │
-       │  1. Card details          │                              │                    │
-       │  ───────────────────────► │                              │                    │
-       │                           │                              │                    │
-       │                           │  2. Tokenize card            │                    │
-       │                           │  ──────────────────────────► │                    │
-       │                           │                              │                    │
-       │                           │  3. vault_token              │                    │
-       │                           │  ◄────────────────────────── │                    │
-       │                           │                              │                    │
-       │                           │  4. PSP payload with         │                    │
-       │                           │     vault_token (via proxy)  │                    │
-       │                           │  ──────────────────────────► │                    │
-       │                           │                              │                    │
-       │                           │                              │  5. Detokenize &   │
-       │                           │                              │     forward to PSP │
-       │                           │                              │  ────────────────► │
-       │                           │                              │                    │
-       │                           │                              │  6. PSP response   │
-       │                           │                              │  ◄──────────────── │
-       │                           │                              │                    │
-       │                           │  7. Payment result +         │                    │
-       │                           │     psp_token                │                    │
-       │                           │  ◄────────────────────────── │                    │
-       │                           │                              │                    │
-       │  8. payment_method_id     │                              │                    │
-       │  ◄─────────────────────── │                              │                    │
-       │                           │                              │                    │
-```
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-25 at 3.00.15 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Integration Options
 
