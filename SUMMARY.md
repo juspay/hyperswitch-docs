@@ -37,6 +37,11 @@
 * [AI Resources](about-hyperswitch/ai-resources/README.md)
   * [Setup MCP Server](about-hyperswitch/ai-resources/setup-mcp-server.md)
 
+## Try Hyperswitch
+
+* [API reference](https://api-reference.hyperswitch.io/introduction)
+* [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
+
 ## Use-Cases
 
 * [For SaaS Businesses](use-cases/for-saas-providers.md)
