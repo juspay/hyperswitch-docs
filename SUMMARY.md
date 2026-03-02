@@ -353,6 +353,10 @@
     * [Data Security](check-list-for-production/going-live/for-on-prem-setup/security.md)
     * [Updates](check-list-for-production/going-live/for-on-prem-setup/updates.md)
 
+## FAQs
+
+* [Payment Orchestration FAQ](faqs/payment-orchestration-faq.md)
+
 ## Learn more
 
 * [API Reference](https://api-reference.hyperswitch.io/introduction)
