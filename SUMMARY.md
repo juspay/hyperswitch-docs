@@ -356,6 +356,7 @@
 ## FAQs
 
 * [Payment Orchestration FAQ](faqs/payment-orchestration-faq.md)
+* [Cost and Margin Optimization FAQs](faqs/cost-and-margin-optimization-faqs.md)
 
 ## Learn more
 
