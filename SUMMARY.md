@@ -272,6 +272,7 @@
     * [Data Migration From Hyperswitch](explore-hyperswitch/account-management/data-migration/export-data-from-hyperswitch.md)
   * [Embeddable Components](explore-hyperswitch/account-management/beta-embeddable-components/README.md)
     * [Integration Guide](explore-hyperswitch/account-management/beta-embeddable-components/integration-guide.md)
+    * [Integration Reference](explore-hyperswitch/account-management/beta-embeddable-components/integration-reference.md)
 * [Security and Compliance](explore-hyperswitch/security-and-compliance/README.md)
   * [PCI Compliance](explore-hyperswitch/security-and-compliance/pci-compliance.md)
   * [Data Security](explore-hyperswitch/security-and-compliance/security.md)
