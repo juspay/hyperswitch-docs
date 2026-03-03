@@ -16,13 +16,13 @@ Key Highlights:
 
 ### Third party vault integration options&#x20;
 
-<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Hyperswitch SDK and external vault</strong></td><td align="center">In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault</td></tr><tr><td align="center"><strong>Hyperswitch SDK loading external vault SDK</strong></td><td align="center">The External Vault SDK is loaded onto the Hyperswitch Unified Checkout SDK. The card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>External vault SDK and storage</strong></td><td align="center">The merchant directly integrates with the external vault SDK and card data is captured and tokenized using the external vault SDK</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Merchant managed client with external vault's card form</strong></td><td align="center">The merchant directly integrates with the external vault SDK and card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with External Vault's card form</strong></td><td align="center">The External Vault SDK is loaded onto the Hyperswitch Unified Checkout SDK. The card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with native card form</strong></td><td align="center">In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault</td></tr></tbody></table>
 
-Configuring External Vault on Hyperswitch
+**Configuring External Vault on Hyperswitch**
 
 For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
 
-#### **1. Hyperswitch SDK and external vault**
+#### **1. Hyperswitch managed client and card form**
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
@@ -49,7 +49,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 <figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### **2. Hyperswitch SDK loading external vault SDK**
+#### **2. Hyperswitch managed client with External Vault's card form**
 
 In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
 
@@ -80,7 +80,7 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 
 <figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### **3. External vault SDK and storage**
+#### **3. Merchant managed client with external vault's card form**
 
 The merchant integrated with external vault SDK which manages the card data and user experience entirely independent of the Hyperswitch. The card is tokenized directly with the chosen vault, after which merchant will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
 
