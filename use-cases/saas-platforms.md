@@ -19,7 +19,7 @@ The sections below outline the architectural patterns required to scale a multi-
 
 ---
 
-## How does the Connector Abstraction Layer support BYOP?
+## How can SaaS platforms support high-value accounts that demand their own processors?
 
 High-value accounts often refuse to migrate their payment processing to the SaaS platform because they have pre-negotiated rates or historical data with specific providers. Supporting these "brownfield" accounts usually requires building and maintaining dozens of custom integrations.
 
@@ -34,7 +34,7 @@ Juspay Hyperswitch acts as a Connector Abstraction Layer. You integrate our chec
 
 ---
 
-## How does hierarchical tenant isolation work?
+## How can SaaS platforms ensure data isolation between accounts?
 
 SaaS platforms must ensure that one account's routing rules, API keys, and customer data never leak to another. Building this "tenancy logic" from scratch is risky and delays time-to-market.
 
@@ -90,7 +90,7 @@ curl --request POST \
 
 ---
 
-## How does the unified state machine handle 3DS?
+## How can SaaS platforms standardise complex payment flows across processors?
 
 Different verticals require different flows (e.g., $0 Auth for hotels, 3DS for EU retail, Recurring for subscriptions). Fragmentation across PSP capabilities (e.g., some processors support 3DS, others don't) often forces platforms to write "spaghetti code."
 
@@ -119,7 +119,7 @@ Use the [Payment Vault](https://docs.hyperswitch.io/explore-hyperswitch/payment-
 
 ---
 
-## How does error code mapping improve observability?
+## How can SaaS platforms simplify support workflows across multiple providers?
 
 Support teams struggle when every PSP returns different error codes (e.g., "Do Not Honour" vs. "Refusal" vs. "Error 402"). Debugging requires deep knowledge of 10+ different vendor systems.
 
@@ -132,7 +132,7 @@ Juspay Hyperswitch translates the chaos of vendor responses into a clean, standa
 
 ---
 
-## What are normalised event streams?
+## How can SaaS platforms build unified operational interfaces for refunds, disputes, and webhooks?
 
 The payment lifecycle doesn't end at "Checkout." SaaS platforms must also build portals for their accounts to handle Refunds, Disputes, and Webhooks. Building these operational interfaces is painful because every processor has a different API schema for refunds and a different JSON payload for webhooks.
 
@@ -146,7 +146,7 @@ Juspay Hyperswitch standardises the chaotic "Day 2" operations into a clean, uni
 
 ---
 
-## How does high availability and automated failover work?
+## How can SaaS platforms maintain payment uptime during processor outages?
 
 Global SaaS platforms cannot afford downtime. When a processor in a specific region experiences latency or outages, your accounts blame *you*, not the processor. Without granular visibility into processor performance, your engineering team is flying blind, unable to reroute traffic or uphold SLAs for Enterprise accounts.
 
