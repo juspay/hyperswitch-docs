@@ -9,7 +9,7 @@ icon: watch-calculator
 
 ## TL;DR
 
-Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy it as a stateless integration layer or self-manage it within your own infrastructure for complete data sovereignty.
+Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the connector service as a stateless integration layer (the full platform includes stateful components like Router, Scheduler, Postgres, and Redis), or self-manage it within your own infrastructure for complete data sovereignty.
 
 ---
 
@@ -21,7 +21,7 @@ Hyperswitch is designed as a modular middleware layer that injects specific capa
 
 ---
 
-## How can I add new processors instantly?
+## How can fintechs expand into new geographies faster?
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
@@ -37,7 +37,7 @@ Hyperswitch acts as a stateless integration layer. You can utilise our [Connecto
 
 ## How does self-managed deployment work?
 
-Fintechs dealing with high-value transactions or strict regulatory bodies (e.g., CCPA, GDPR) often cannot use shared SaaS infrastructure due to Data Sovereignty and PCI-DSS requirements.
+Fintechs dealing with high-value transactions or strict regulatory bodies (e.g., CCPA, GDPR) may need to maintain payment data within their own infrastructure for data sovereignty reasons. While SaaS providers can be PCI-DSS compliant, some organizations require additional control over where data resides and how it's processed.
 
 Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC.
 
@@ -49,7 +49,7 @@ Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire s
 
 ---
 
-## How does Smart Routing improve authorisation rates?
+## How can fintechs boost authorisation rates without rebuilding routing logic?
 
 Internal routing engines often struggle to scale. Hardcoding rules like *"If transaction > $500, route to Adyen"* creates a fragile codebase. Implementing Smart Retries (e.g., retrying a soft decline on a secondary processor) requires complex state management.
 
@@ -69,6 +69,12 @@ Relying on PSP-specific tokens (like Stripe `cus_` objects) creates vendor lock-
 
 Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards) that detaches the stored credential from the processor.
 
+**Key benefits:**
+
+1. **PSP-agnostic storage**: Cards are tokenized independently of any specific processor, enabling true portability
+2. **Standalone offering**: Use the Vault Service as a standalone component without adopting the full orchestration platform
+3. **External vault support**: Already have a vault? Configure Hyperswitch to pass-through tokens or integrate with external providers like VGS or Forter
+
 | Capability | Description | Reference |
 |------------|-------------|-----------|
 | Network Tokens | Integrate directly with schemes (Visa/Mastercard) to provision Network Tokens, which offer higher authorisation rates and auto-update for expired cards | [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation) |
@@ -79,9 +85,9 @@ Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/ex
 
 ## How can I manage payments without routing checkout?
 
-Some Fintechs only need to control specific parts of the lifecycle—like issuing refunds or capturing authorized funds—without routing the initial checkout.
+Some Fintechs only need to control specific parts of the lifecycle—like issuing refunds or capturing authorized funds—without routing the initial checkout through Hyperswitch.
 
-Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to interact with underlying processors in a "Headless" mode.
+Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to interact with underlying processors directly. This "passthrough" mode lets you leverage Hyperswitch's unified API for post-payment operations while keeping your existing checkout flow intact.
 
 | Capability | Description | Reference |
 |------------|-------------|-----------|
@@ -90,29 +96,38 @@ Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-c
 
 ---
 
-## How does unified error handling reduce complexity?
+## How can fintechs maintain consistent retry logic across multiple processors?
 
-Handling webhooks and error codes from 10+ different processors is a maintenance nightmare. A "Do Not Honor" from one bank might be a "suspected_fraud" from another, making it impossible to build consistent retry logic or user feedback.
+Handling error codes from 10+ different processors is a maintenance nightmare. A "Do Not Honor" from one bank might be a "suspected_fraud" from another, making it impossible to build consistent retry logic or user feedback.
 
 Hyperswitch normalises the chaos of the global payment ecosystem into a strict schema.
+
+**Error Code Unification Example:**
+
+| Source | Error Code | Error Message |
+|--------|------------|---------------|
+| PSP 1 | `101` | "Invalid card number" |
+| PSP 2 | `1314` | "Invalid card" |
+| **Hyperswitch** | `US_1000` | "Issue with payment method" |
+
+This shows how disparate PSP error codes are mapped to a unified, intelligible standard—enabling consistent retry logic and clearer user feedback.
 
 | Capability | Description | Reference |
 |------------|-------------|-----------|
 | Canonical Errors | Maps thousands of upstream error codes to a Standardised Enum (e.g., `insufficient_funds`, `expired_card`) | [Error Codes](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/error-codes) |
-| Unified Webhooks | Listen to One Webhook Format; we ingest raw PSP webhooks, parse them, and forward a clean JSON payload to your ledger | [Webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) |
 
 ---
 
 ## How does real-time observability protect revenue?
 
-Blind spots in processor performance lead to lost revenue. If a specific BIN range is failing on Adyen, you need to know immediately—not when the monthly report comes out.
+Blind spots in processor performance can lead to lost revenue. If a specific BIN range is failing on a processor, you need to know promptly—not when the monthly report comes out.
 
-Hyperswitch treats observability as a first-class citizen.
+Hyperswitch provides observability capabilities to help monitor payment operations.
 
 | Capability | Description | Reference |
 |------------|-------------|-----------|
-| OpenTelemetry (OTel) | The Router emits high-cardinality OTel Traces for every API call; pipe directly into Datadog, Prometheus, or Honeycomb | [Monitoring Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) |
-| Granular SLAs | Monitor latency and success rates per Connector, Account, or Region; set alerts for anomalies (e.g., "Latency > 2s on Stripe US") | [Analytics and Operations](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations) |
+| OpenTelemetry (OTel) | The Router can emit OTel Traces for API calls; integrate with observability tools like Datadog, Prometheus, or Honeycomb | [Monitoring Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) |
+| Granular Metrics | Monitor latency and success rates per Connector, Account, or Region; set alerts for anomalies | [Analytics and Operations](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations) |
 
 ---
 
