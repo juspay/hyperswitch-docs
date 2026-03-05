@@ -85,7 +85,7 @@
       * [Cross Platform](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/README.md)
         * [React Native](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/README.md)
           * [React Native with REST API Integration](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-rest-api-integration.md)
-          * [Card Widget](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-node-backend-1.md)
+          * [Payment Widget](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-node-backend-1.md)
           * [Headless SDK](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/headless.md)
           * [Customization](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/customization.md)
         * [Flutter](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/flutter/README.md)

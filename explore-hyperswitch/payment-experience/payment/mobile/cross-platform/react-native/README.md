@@ -21,6 +21,5 @@ Revolutionize your app's payment capabilities with the Hyperswitch React Native 
 * **Prioritize Payment Methods:** Impact your payment mix and conversion rates by prioritizing or promoting specific payment methods based on your customer preferences.
 * **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
 
-Experience the flexibility to modify and experiment, ensuring your app's payment journey aligns precisely with your business requirements and user expectations. Elevate your Android app's payment experience with the Hyperswitch React Native  SDK.
+Experience the flexibility to modify and experiment, ensuring your app's payment journey aligns precisely with your business requirements and user expectations. Elevate your Android app's payment experience with the Hyperswitch React Native SDK.
 
-\

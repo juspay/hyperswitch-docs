@@ -1,38 +1,45 @@
 ---
-description: Integrate Card widget to your React Native App using hyperswitch-node
 icon: input-numeric
 ---
 
-# Card Widget
+# Payment Widget
 
-{% hint style="info" %}
-This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
-{% endhint %}
+The **PaymentWidget** component renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
-{% hint style="info" %}
-Hyperswitch recommends using the PaymentSheet instead of the Card Widget. Using only the Payment Element, you can accept multiple payment methods.
-{% endhint %}
+## 1. Basic Usage
 
-## 1. Build card widget on the client
+### 1.1 Install the react native sdk
 
-### 1.1 Add `HyperProvider` to your React Native app
-
-Use `HyperProvider` to ensure that you stay PCI compliant by sending payment details directly to Hyperswitch server.
-
-```js
-import { HyperProvider } from "@juspay-tech/react-native-hyperswitch";
+```shellscript
+npm install @juspay-tech/react-native-hyperswitch
+# or
+yarn add @juspay-tech/react-native-hyperswitch
 ```
 
-### 1.2 Use `HyperProvider`
+#### 1.1.1 Install Peer Dependencies
 
-To initialize Hyperswitch in your React Native app, wrap your payment screen with the HyperProvider component. Only the API publishable key in publishableKey is required. The following example shows how to initialize Hyperswitch using the HyperProvider component.
+The SDK requires the following peer dependencies to be installed in your project:
+
+```shellscript
+yarn add react-native-inappbrowser-reborn
+yarn add react-native-svg
+yarn add @sentry/react-native
+# or
+npm install react-native-inappbrowser-reborn
+npm install react-native-svg
+npm install @sentry/react-native
+```
+
+### 1.2 Wrap your app with `HyperProvider`
+
+To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
 ```js
 import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";
 
 function App() {
   return (
-    <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY">
+    <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY" profileId="YOUR_PROFILE_ID">
       // Your app code here
     </HyperProvider>
   );
@@ -41,130 +48,81 @@ function App() {
 
 ### 1.3 Fetch the PaymentIntent client Secret
 
-Make a network request to the backend endpoint you created in the previous step. The clientSecret returned by your endpoint is used to complete the payment.
+Send a network request to the backend endpoint created in the previous step to retrieve the **clientSecret**. This **clientSecret** returned from the endpoint is required to complete the payment.
 
 ```js
-const fetchPaymentParams = async () => {
-  const response = await fetch(`${API_URL}/create-payment`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
-  });
-  const val = await response.json();
-  return val;
-};
-```
-
-### 1.4 Render your card widget
-
-Use Hyperswitch `CardField` component to display a text field to securely collect card details. By using `CardField`, you guarantee that sensitive card details never touch your server.
-
-<pre class="language-js"><code class="lang-js">import {CardField, useHyper} from '@stripe/stripe-react-native';
-
-return(
- &#x3C;View>
-      &#x3C;CardField
-        postalCodeEnabled={true}
-        placeholders={{
-          number: '4242 4242 4242 4242',
-        }}
-        cardStyle={{
-          backgroundColor: '#FFFFFF',
-          textColor: '#000000',
-        }}
-        style={{
-          width: '100%',
-          height: 50,
-          marginVertical: 30,
-        }}
-        onCardChange={cardDetails => {
-          console.log('cardDetails', cardDetails);
-        }}
-        onFocus={focusedField => {
-          console.log('focusField', focusedField);
-        }}
-<strong>        onBlur={blurField => {
-</strong>          console.log('blurField', blurField);
-        }}
-      />
-      &#x3C;Button onPress={handlePayPress} title="Pay" disabled={loading} />
-    &#x3C;/View>
-)
-</code></pre>
-
-### 1.5 Initiate payment session
-
-Pass the PaymentIntent’s `clientSecret` to initPaymentSession() function. Hyperswitch SDK automatically collects the card details from `CardField` component.
-
-```js
-import {CardField, useHyper} from '@stripe/stripe-react-native';
-
-const { initPaymentSession, confirmWithCardForm } = useHyper();
-const [paymentSession,setPaymentSession]=React.useState(null);
-
-const initializePaymentSession = async () => {
-  const { clientSecret } = await fetchPaymentParams();
-  const params={
-      clientSecret: clientSecret,
-  }
-  const paymentSession = await initPaymentSession(params);
-  await setPaymentSession(_=>paymentSession)
-};
-
 useEffect(() => {
-  initializePaymentSheet();
+    fetch('https://your-server.com/create-payment-intent', { method: 'POST' })
+      .then((res) => res.json())
+      .then(({ clientSecret, sdkAuthorization, }) => {
+        setClientSecret(clientSecret));
+        setAuthorization(sdkAuthorization);
+        }
 }, []);
 ```
 
+### 1.4 Render your Payment widget
 
-
-### 3.4 Confirm the payment
-
-To confirm the Payment, integrate a "Pay Now" button within the checkout page, which, when clicked, invokes the confirmWithCardForm() function. This function will return an asynchronous payment response with various payment status.
+Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
 ```js
-const handlePayPress = async () => {
-  const status = await confirmWithCardForm(paymentSession);
-  console.log("presentPaymentSheet response: ", status);
-  const { error, paymentOption } = status;
-  if (error) {
-    switch (error.code) {
-      case "cancelled":
-        Alert.alert("cancelled", `PaymentSheet was closed`);
-        break;
-      case "failed":
-        Alert.alert("failed", `Payment failed`);
-        break;
-      default:
-        Alert.alert("status not captured", "Please check the integration");
-        break;
-    }
+import {PaymentWidget} from '@juspay-tech/react-native-hyperswitch';
 
-    Alert.alert(`Error code: ${error.code}`, error.message);
-  } else if (paymentOption) {
-    switch (paymentOption.label) {
-      case "succeeded":
-        Alert.alert("succeeded", `Your order is succeeded`);
-        break;
-      case "requires_capture":
-        Alert.alert("requires_capture", `Your order is requires_capture`);
-        break;
-      default:
-        Alert.alert("status not captured", "Please check the integration");
-        break;
+return(
+ <PaymentWidget
+  widgetId="checkout-widget"
+  widgetType="PAYMENT_SHEET"
+  options={{ clientSecret, sdkAuthorization, appearance: { theme: 'light' } }}
+  onPaymentResult={(result) => {
+    if (result.errorMessage) {
+      // Payment failed
+      console.error('Payment failed:', result.errorMessage);
+    } else if (result.status === 'succeeded') {
+      // Payment succeeded
+      console.log('Payment succeeded!');
+    } else if (result.status === 'cancelled') {
+      // User cancelled the payment
     }
-  } else {
-    Alert.alert("Something went wrong", "Please check the integration");
-  }
-};
-
-return (
-  <Screen>
-    <Button variant="primary" title="Pay with card form" onPress={handlePayPress} />
-  </Screen>
-);
+  }}
+  style={{ width: '100%', height: 600 }}
+/>
+)
 ```
 
-Congratulations! Now that you have integrated the Card Widget
+Avoid placing the `PaymentWidget` inside a `ScrollView`. If necessary, ensure that the parent scroll is disabled while the user interacts with the widget to prevent scrolling conflicts.
+
+### 1.5 `onPaymentResult` Callback
+
+The `onPaymentResult` callback is triggered when the payment flow finishes. It provides a result object containing the payment outcome.
+
+```
+onPaymentResult={(result) => {
+  console.log(result);
+}}
+```
+
+```
+// type result:  {
+    status?: string;        // "succeeded", "cancelled", or "Failed"
+    errorMessage?: string;  // Present if an error occurred
+}
+```
+
+#### **Congratulations! You have successfully integrated the Payment Widget into your application.**
+
+### Props
+
+<table><thead><tr><th width="157.87109375">Prop</th><th width="242.58984375">Type</th><th width="155.9609375">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>widgetId</code></td><td><code>string</code></td><td>true</td><td>A unique identifier for the widget instance</td></tr><tr><td><code>widgetType</code></td><td><code>string</code></td><td>optional</td><td>default is <code>"PAYMENT_SHEET"</code></td></tr><tr><td><code>options</code></td><td><code>PresentPaymentSheetParams</code></td><td>true</td><td>Configuration and appearance options. When using <code>PaymentWidget</code>, pass the <code>clientSecret</code> &#x26; <code>sdkAuthorization</code> here instead of calling <code>initPaymentSession</code>.</td></tr><tr><td><code>onPaymentResult</code></td><td><p><code>(result:</code></p><p><code>PaymentWidgetResult) => void</code></p></td><td>optional</td><td>Callback triggered when the payment completes, fails, or is cancelled</td></tr><tr><td><code>style</code></td><td><code>StyleProp&#x3C;ViewStyle></code></td><td>width &#x26; height are required</td><td>Defines the size and layout of the widget container</td></tr></tbody></table>
+
+## Troubleshooting
+
+1. If you encounter issues related to the **Android browser dependency**, ensure that the required AndroidX Browser version is defined in your project.
+
+&#x20;Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
+
+```
+ext {
+    androidXBrowser = "1.8.0"
+    androidXAnnotation = "1.7.1"
+}
+```
