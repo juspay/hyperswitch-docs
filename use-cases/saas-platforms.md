@@ -48,6 +48,7 @@ Juspay Hyperswitch provides a built-in [Organisation → Account → Profile](ht
 
 Additional capabilities:
 
+- **Platform Setup**: Configure hierarchical organizations with programmatic merchant onboarding. See [Platform Org and Merchant Setup](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup).
 - **Granular Control**: Isolate API keys and routing rules at the Account ID level.
 - **Team Access**: Map your control center users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
 

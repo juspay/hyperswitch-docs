@@ -9,7 +9,7 @@ icon: watch-calculator
 
 ## TL;DR
 
-Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the connector service as a stateless integration layer (the full platform includes stateful components like Router, Scheduler, Postgres, and Redis), or self-manage it within your own infrastructure for complete data sovereignty.
+Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the [connector service](https://github.com/juspay/connector-service) as a stateless integration layer, or self-host within your own infrastructure for complete data sovereignty.
 
 ---
 
@@ -35,11 +35,11 @@ Hyperswitch acts as a stateless integration layer. You can utilise our [Connecto
 
 ---
 
-## How does self-managed deployment work?
+## How can fintechs maintain data sovereignty with self-hosted deployment?
 
-Fintechs dealing with high-value transactions or strict regulatory bodies (e.g., CCPA, GDPR) may need to maintain payment data within their own infrastructure for data sovereignty reasons. While SaaS providers can be PCI-DSS compliant, some organizations require additional control over where data resides and how it's processed.
+Fintechs dealing with high-value transactions or strict regulatory requirements (e.g., CCPA, GDPR) often need full control over their payment infrastructure. While Hyperswitch's SaaS offering is PCI-DSS compliant, self-hosting gives you complete ownership of your data and infrastructure.
 
-Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC.
+Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC—without the operational overhead of managing a payment platform from scratch.
 
 | Capability | Description | Reference |
 |------------|-------------|-----------|
