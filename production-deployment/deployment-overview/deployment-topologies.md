@@ -11,25 +11,24 @@ In an Active-Active setup, the merchant would deploy Hyperswitch instances in mu
 
 This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 
-<figure><img src="../../.gitbook/assets/ChatGPT Image Mar 6, 2026 at 01_06_10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ChatGPT Image Mar 6, 2026 at 05_53_52 PM.png" alt=""><figcaption></figcaption></figure>
 
 #### Implementation
 
-1. Infrastructure Duplication: Identical infrastructure in multiple regions.
-2. Database Synchronization: This is the most complex part. Introducing KV (Redis) and a drainer, which helps in keeping the database sync across the regions.
-3. Affinity Proxy: This service helps in the stickiness part. A transaction which started in one stack should always go to the same stack, because of the delayed sync in the data.
+1. **Infrastructure Duplication:** Identical infrastructure in multiple regions.
+2. **Database Synchronization:** This is achieved by introducing a **distributed key-value store (Redis)** and a **drainer service**. The application publishes database change events to Redis, which are then consumed by the drainer to replicate the corresponding updates to the secondary region. This mechanism ensures near real-time propagation of state changes between regions while minimizing coupling between the primary transaction flow and cross-region replication.
+3. **Affinity Proxy:** Ensures request stickiness by maintaining transaction-level routing affinity. Once a transaction begins processing in a specific region, all subsequent requests related to that transaction are directed to the same region. This prevents inconsistencies that could arise if requests are routed to a region where the latest transaction state has not yet been replicated.
 
 #### Pros:
 
-* Extremely Low Downtime: Near-zero downtime (RTO: 30 secs, RPO: 30 secs) as traffic is automatically routed away from failing instances or regions.
-* Highest Availability: Provides the highest level of resilience against regional outages.
-* Potential Cost Optimization: While initial setup is costly, it can be more cost-effective than Active-Passive if both regions are fully utilized, as there's no idle infrastructure.
+* **Extremely Low Downtime:** Near-zero downtime **(RTO ≈ 30 seconds, RPO ≈ 30 seconds)** as traffic can be automatically routed to healthy regions during failures.
+* **High Availability:** Active-Active deployments provide strong resilience against infrastructure or regional outages.
+* **Efficient Infrastructure Utilization:** Both regions actively process production traffic, improving infrastructure utilization compared to Active-Passive architectures.
 
 #### Cons:
 
-* Complexity: The most complex option to implement and manage, primarily due to database synchronization and affinity control.
-
-Initial Cost: Requires upfront investment in infrastructure.
+* **Operational Complexity:** Requires careful management of cross-region database synchronization, transaction affinity, and distributed system behavior.
+* **Higher Initial Setup Effort:** Implementing Active-Active infrastructure requires additional routing, synchronization, and monitoring components compared to simpler deployment models.
 
 ### Multi Region Active - Passive Setup
 
@@ -39,16 +38,16 @@ In an Active - Passive setup, the merchant would deploy two identical Hyperswitc
 
 #### Implementation
 
-1. Infrastructure Duplication: Provision identical server infrastructure (VMs, networking, storage) in a secondary, geographically distinct region.
-2. Database Replication: Implement Asynchronous database replication from the active region's database to the passive region's database. This is critical for data consistency.
-3. Failover Mechanism: Implement a mechanism (DNS failover, load balancer failover, or manual switch) to redirect traffic to the passive region upon detection of an active region failure. This involves updating DNS records and a DB flip.
+1. **Infrastructure Duplication:** Provision identical infrastructure in a secondary, geographically separate region. This includes compute resources, networking configuration, storage, and all supporting platform components to ensure environment parity.
+2. **Database Replication:** Configure **asynchronous database replication** from the primary region to the secondary region to maintain data continuity. Replication lag determines the achievable Recovery Point Objective (RPO).
+3. **Failover Mechanism:** Implement a controlled failover mechanism to redirect traffic to the secondary region when a primary region outage is detected. This can be achieved through **DNS failover, load balancer failover, or an operational failover procedure**, typically accompanied by a database role switch (DB flip).
 
-#### **Pros:**
+#### Pros
 
-* Very Low Downtime: In case of a regional outage, downtime is limited to the failover time (RTO: <10 mins, RPO: 30 secs)
-* Disaster Recovery: Provides excellent protection against regional disasters.
+* **Low Downtime During Failover:** In the event of a regional outage, service restoration time is limited to the failover window (**RTO < 10 minutes, RPO ≈ 30 seconds** **depending on replication delay)**.
+* **Strong Disaster Recovery Posture:** Provides effective protection against regional failures by maintaining a ready standby environment.
 
-#### **Cons:**
+#### Cons
 
-* High Cost: Requires duplicating the entire infrastructure stack.
-* Operational Overhead: Maintaining two identical environments, including database replication and configuration synchronization
+* **Higher Infrastructure Cost:** Requires provisioning and maintaining a fully replicated infrastructure stack in a secondary region.
+* **Operational Management Overhead:** Requires ongoing management of environment parity, database replication health, and failover readiness procedures.
