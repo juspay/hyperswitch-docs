@@ -47,7 +47,7 @@ If the connector doesn’t support manual capture, Post-Authorization manual rev
 
 #### FRM workflow
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### FRM status and decisions
 

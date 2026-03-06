@@ -342,17 +342,29 @@
 * [SMTP Server Integration](hyperswitch-open-source/smtp-server-integration.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
 
-## Check list for Production
+## PRODUCTION DEPLOYMENT
 
-* [Going live](check-list-for-production/going-live/README.md)
-  * [For SaaS Setup](check-list-for-production/going-live/for-saas-setup.md)
-  * [For On-Prem Setup](check-list-for-production/going-live/for-on-prem-setup/README.md)
-    * [Monitoring](check-list-for-production/going-live/for-on-prem-setup/monitoring.md)
-    * [PCI compliance](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/README.md)
-      * [Get started](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science.md)
-      * [Completing the SAQ](check-list-for-production/going-live/for-on-prem-setup/pci-compliance/completing-the-saq.md)
-    * [Data Security](check-list-for-production/going-live/for-on-prem-setup/security.md)
-    * [Updates](check-list-for-production/going-live/for-on-prem-setup/updates.md)
+* [Architecture Overview](production-deployment/architecture-overview.md)
+* [Deployment Overview](production-deployment/deployment-overview/README.md)
+  * [Deployment Topologies](production-deployment/deployment-overview/deployment-topologies.md)
+  * [Recommended Tooling Stack](production-deployment/deployment-overview/recommended-tooling-stack.md)
+  * [System Requirements](production-deployment/deployment-overview/system-requirements.md)
+  * [Enterprise Deployment](production-deployment/deployment-overview/enterprise-deployment.md)
+  * [Configuration and Management](production-deployment/deployment-overview/configuration-and-management.md)
+  * [Card Vault & Key Management](production-deployment/deployment-overview/card-vault-and-key-management.md)
+  * [Upgrade Hyperswitch](production-deployment/deployment-overview/upgrade-hyperswitch.md)
+* [Scale and Reliability](production-deployment/scale-and-reliability.md)
+* [Security and Compliance](production-deployment/security-and-compliance.md)
+* [Monitoring and Alerts](production-deployment/monitoring-and-alerts.md)
+* [Going live](production-deployment/going-live/README.md)
+  * [For SaaS Setup](production-deployment/going-live/for-saas-setup.md)
+  * [For On-Prem Setup](production-deployment/going-live/for-on-prem-setup/README.md)
+    * [Monitoring](production-deployment/going-live/for-on-prem-setup/monitoring.md)
+    * [PCI compliance](production-deployment/going-live/for-on-prem-setup/pci-compliance/README.md)
+      * [Get started](production-deployment/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science.md)
+      * [Completing the SAQ](production-deployment/going-live/for-on-prem-setup/pci-compliance/completing-the-saq.md)
+    * [Data Security](production-deployment/going-live/for-on-prem-setup/security.md)
+    * [Updates](production-deployment/going-live/for-on-prem-setup/updates.md)
 
 ## FAQs
 

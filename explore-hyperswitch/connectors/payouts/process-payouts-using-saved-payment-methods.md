@@ -45,7 +45,7 @@ Import Testing Collection
 
 Download and import the [Saved Payment Methods Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
 Configure Environment
 
@@ -55,7 +55,7 @@ In the Variables tab of the collection, define the following global parameters:
 * `merchant_id`: Your unique identifier.
 * `api_key`: Your secret API key.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
 
 Direct Vaulting: Follow the sequence to create a payment method and immediately utilize the resulting token for a payout.
 
