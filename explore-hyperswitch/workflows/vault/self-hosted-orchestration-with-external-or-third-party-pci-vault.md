@@ -63,7 +63,8 @@ The merchant client/checkout integrates the external vault SDK **directly** whic
 
 <summary><strong>Merchant-Initiated Transaction (MIT) Flow</strong></summary>
 
-The merchant triggers an [MIT or Recurring transaction](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments) using the `vault_token` directly (since the merchant manages the vault relationship)
+* The merchant triggers an [MIT or Recurring transaction](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments) using the `payment_method_id.`
+* Hyperswitch resolves the `payment_method_id` to identify the associated `psp_token` and processes the payment by sending the transaction to the corresponding PSP as a MIT
 
 </details>
 
@@ -93,8 +94,8 @@ This is an extension of the previous approach where instead of the merchant clie
 <summary><strong>Repeat User Payment Flow</strong></summary>
 
 * The Hyperswitch SDK loads stored payment methods using the `customer_id` from the [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create) request.
-* The end user selects a saved card and enters their CVV.
-* The SDK sends a [Payment Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request.
+* The end user selects a saved card
+* The SDK sends a [Payment Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request and sends the corresponding `payment_method_id`
 * Hyperswitch resolves the `payment_method_id` to identify the associated `psp_token` and processes the payment by sending the transaction to the corresponding PSP as a MIT
 
 </details>
@@ -103,8 +104,8 @@ This is an extension of the previous approach where instead of the merchant clie
 
 <summary><strong>Merchant-Initiated Transaction (MIT) Flow</strong></summary>
 
-* The merchant triggers an [MIT or Recurring transaction](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments) using the `payment_method_id`.
-* Hyperswitch resolves the token chain and processes the payment via the vault proxy
+* The merchant triggers an [MIT or Recurring transaction](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments) using the `payment_method_id.`
+* Hyperswitch resolves the `payment_method_id` to identify the associated `psp_token` and processes the payment by sending the transaction to the corresponding PSP as a MIT
 
 </details>
 
