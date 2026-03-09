@@ -37,17 +37,17 @@ Due to necessary time and cost considerations, only the Hyperswitch build compat
 
 It is strongly recommended to use the following software to ensure easy external validation such as PCI DSS certification and achieve the required performance from the installation.
 
-Operating system
+#### Operating system
 
 Linux version Ubuntu is 24.04 LTS is recommended.
 
-Database
+#### Database
 
 PostgreSQL version 14.x is recommended for persistent storage.&#x20;
 
 Redis version 7.x is recommended for caching
 
-Versioning
+#### Versioning
 
 The [hyperswitch-suite](https://github.com/juspay/hyperswitch-suite) is a singular reference repository to be followed for application updates. This is to ensure compatibility across application components. Semantic versioning is followed across all application components.
 
@@ -58,7 +58,7 @@ The stable releases are announced on a monthly basis on the [Releases page](http
 * New features
 * Bug fixes
 * Database migrations
-* Breaking changes (if any)<br>
+* Breaking changes (if any)
 
 A Continuous deployment engine automatically updates the nightly releases on a daily/ weekly basis. The nightly releases are developer builds which are not officially tested, nor deployed for production use (alpha).&#x20;
 

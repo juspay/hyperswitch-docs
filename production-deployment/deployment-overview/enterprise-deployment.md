@@ -20,8 +20,8 @@ The documentation outlines the following:&#x20;
 {% hint style="info" %}
 **Note:** Terraform needs to provision resources in the following order to ensure an error-free deployment  -&#x20;
 
-1. VPC
-2. EKS
+1. Virtual Private Cloud (VPC)
+2. Elastic Kubernetes Service (EKS)
 3. Cloudfront
 4. Rest of the resources
 {% endhint %}
@@ -43,7 +43,7 @@ Hyperswitch can be installed in 3 different environments -&#x20;
 
 1. Production
 2. Sandbox
-3. Integration Test
+3. Integration Test (integ)
 
 The recommended method to install Hyperswitch is by running the Helm charts present in the **‘hyperswitch-helm’** repository. It contains the **‘values.yaml’** file that renders the configuration TOML file required by the application.&#x20;
 
