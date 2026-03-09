@@ -346,6 +346,7 @@
 
 ## PRODUCTION DEPLOYMENT
 
+* [Deployment Models](production-deployment/deployment-models.md)
 * [Architecture Overview](production-deployment/architecture-overview.md)
 * [Deployment Overview](production-deployment/deployment-overview/README.md)
   * [Deployment Topologies](production-deployment/deployment-overview/deployment-topologies.md)
