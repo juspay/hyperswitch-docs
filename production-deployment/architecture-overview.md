@@ -15,12 +15,12 @@ The Hyperswitch App Server is the core engine for processing payments. It offers
 1. Core Operations: Authorization, authentication, voids, captures, refunds, and chargeback handling.
 2. Post-Payment Management: Robust handling of disputes and reconciliations.
 3. Routing Flexibility:
-4. Success-rate-based routing
-5. Rule-based routing
-6. Volume distribution
-7. Fallback strategies
-8. Intelligent retries using error-code-specific flows
-9. Extensibility: Connects with external fraud risk management (FRM) tools, 3DS authentication providers and queuing of refunds, webhooks and recurring payments.&#x20;
+   1. Success-rate-based routing
+   2. Rule-based routing
+   3. Volume distribution
+   4. Fallback strategies
+   5. Intelligent retries using error-code-specific flows
+4. Extensibility: Connects with external fraud risk management (FRM) tools, 3DS authentication providers and queuing of refunds, webhooks and recurring payments.&#x20;
 
 The hyperswitch-app is dockerized with two sub-components -&#x20;
 
