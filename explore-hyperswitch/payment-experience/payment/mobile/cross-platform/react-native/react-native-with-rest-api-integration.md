@@ -9,9 +9,9 @@ icon: puzzle-piece
 Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
 {% endhint %}
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/juspay/hyperswitch-sdk-react-native)
+## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
 
-**Before following these steps, please configure your payment methods** [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
+Before proceeding with these steps, please ensure that your payment methods are configured [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
 ## Requirements
 
@@ -34,9 +34,9 @@ Follow the [Server Setup](../../../server-setup.md) section.
 Install the packages and import it into your code
 
 ```bash
-$ yarn add @juspay-tech/react-native-hyperswitch
+yarn add @juspay-tech/react-native-hyperswitch
 or
-$ npm install @juspay-tech/react-native-hyperswitch
+npm install @juspay-tech/react-native-hyperswitch
 ```
 
 ### 2.2 Peer Dependencies
@@ -120,8 +120,8 @@ const initializePaymentSheet = async () => {
   const params={
       merchantDisplayName: "Example, Inc.",
       clientSecret: clientSecret,
-      sdkAuthorization: sdkAuthorization
-      appearance: customAppearance,
+      sdkAuthorization: sdkAuthorization,
+      appearance: customAppearance
   }
   const result = await initPaymentSession(params);
   if (result.error) {

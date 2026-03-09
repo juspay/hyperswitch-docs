@@ -88,6 +88,8 @@
           * [Payment Widget](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-node-backend-1.md)
           * [Headless SDK](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/headless.md)
           * [Customization](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/customization.md)
+          * [Expo integration](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/react-native/expo-integration.md)
+        * [Troubleshooting](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/troubleshooting.md)
         * [Flutter](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/flutter/README.md)
           * [Flutter with REST API Integration](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/flutter/flutter-with-node-backend.md)
           * [Headless SDK](explore-hyperswitch/payment-experience/payment/mobile/cross-platform/flutter/headless.md)

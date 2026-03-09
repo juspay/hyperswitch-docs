@@ -6,6 +6,8 @@ icon: input-numeric
 
 The **PaymentWidget** component renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
+## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
+
 ## 1. Basic Usage
 
 ### 1.1 Install the react native sdk
@@ -57,7 +59,7 @@ useEffect(() => {
       .then(({ clientSecret, sdkAuthorization, }) => {
         setClientSecret(clientSecret));
         setAuthorization(sdkAuthorization);
-        }
+      }
 }, []);
 ```
 
@@ -66,27 +68,33 @@ useEffect(() => {
 Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
 ```js
-import {PaymentWidget} from '@juspay-tech/react-native-hyperswitch';
+import { PaymentWidget } from '@juspay-tech/react-native-hyperswitch';
 
-return(
- <PaymentWidget
-  widgetId="checkout-widget"
-  widgetType="PAYMENT_SHEET"
-  options={{ clientSecret, sdkAuthorization, appearance: { theme: 'light' } }}
-  onPaymentResult={(result) => {
-    if (result.errorMessage) {
-      // Payment failed
-      console.error('Payment failed:', result.errorMessage);
-    } else if (result.status === 'succeeded') {
-      // Payment succeeded
-      console.log('Payment succeeded!');
-    } else if (result.status === 'cancelled') {
-      // User cancelled the payment
-    }
-  }}
-  style={{ width: '100%', height: 600 }}
-/>
-)
+export default function PaymentUI() {
+  // rest of your logic
+  return (
+    <PaymentWidget
+      widgetId="checkout-widget"
+      options={{
+        clientSecret,
+        sdkAuthorization,
+        appearance: { theme: 'light' },
+      }}
+      onPaymentResult={(result) => {
+        if (result.errorMessage) {
+          // Payment failed
+          console.error('Payment failed:', result.errorMessage);
+        } else if (result.status === 'succeeded') {
+          // Payment succeeded
+          console.log('Payment succeeded!');
+        } else if (result.status === 'cancelled') {
+          // User cancelled the payment
+        }
+      }}
+      style={{ width: '100%', height: 600 }}
+    />
+  );
+}
 ```
 
 Avoid placing the `PaymentWidget` inside a `ScrollView`. If necessary, ensure that the parent scroll is disabled while the user interacts with the widget to prevent scrolling conflicts.
@@ -102,7 +110,7 @@ onPaymentResult={(result) => {
 ```
 
 ```
-// type result:  {
+// type PaymentWidgetResult:  {
     status?: string;        // "succeeded", "cancelled", or "Failed"
     errorMessage?: string;  // Present if an error occurred
 }
@@ -112,17 +120,29 @@ onPaymentResult={(result) => {
 
 ### Props
 
-<table><thead><tr><th width="157.87109375">Prop</th><th width="242.58984375">Type</th><th width="155.9609375">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>widgetId</code></td><td><code>string</code></td><td>true</td><td>A unique identifier for the widget instance</td></tr><tr><td><code>widgetType</code></td><td><code>string</code></td><td>optional</td><td>default is <code>"PAYMENT_SHEET"</code></td></tr><tr><td><code>options</code></td><td><code>PresentPaymentSheetParams</code></td><td>true</td><td>Configuration and appearance options. When using <code>PaymentWidget</code>, pass the <code>clientSecret</code> &#x26; <code>sdkAuthorization</code> here instead of calling <code>initPaymentSession</code>.</td></tr><tr><td><code>onPaymentResult</code></td><td><p><code>(result:</code></p><p><code>PaymentWidgetResult) => void</code></p></td><td>optional</td><td>Callback triggered when the payment completes, fails, or is cancelled</td></tr><tr><td><code>style</code></td><td><code>StyleProp&#x3C;ViewStyle></code></td><td>width &#x26; height are required</td><td>Defines the size and layout of the widget container</td></tr></tbody></table>
+**`widgetId`** `string` · Required
 
-## Troubleshooting
+A unique identifier for the widget instance.
 
-1. If you encounter issues related to the **Android browser dependency**, ensure that the required AndroidX Browser version is defined in your project.
+***
 
-&#x20;Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
+**`options`** `PresentPaymentSheetParams` · Required
 
-```
-ext {
-    androidXBrowser = "1.8.0"
-    androidXAnnotation = "1.7.1"
-}
-```
+Configuration and appearance options.&#x20;
+
+When using `PaymentWidget`, pass the `clientSecret` & `sdkAuthorization` here.
+
+For more customizations follow [this](customization.md)
+
+***
+
+**`onPaymentResult`** `(result: PaymentWidgetResult) => void` · Optional
+
+Callback triggered when the payment completes, fails, or is cancelled.
+
+***
+
+**`style`** `StyleProp<ViewStyle>` · `width` & `height` required
+
+Defines the size and layout of the widget container.
+
