@@ -69,7 +69,7 @@ A lightweight performant service to encrypt/ decrypt data, key management and ma
 
 A typical production deployment blueprint of Hyperswitch looks like the following diagram.&#x20;
 
-It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service, encryption service, load testing service which will be explained during the installation and configuration process.<br>
+It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service. <br>
 
 <figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
 
