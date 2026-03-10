@@ -1,231 +1,546 @@
 ---
-description: Hyperswitch is designed to facilitate the management of saved payment methods
+description: Comprehensive guide for managing saved payment methods in Hyperswitch - save cards, handle PCI compliance, process recurring payments, and manage token lifecycles
 icon: bars-progress
 ---
 
 # Payment Methods Management
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+## TL;DR
 
-### **Key Features of Payment Method Management in Hyperswitch**
+Payment methods management lets customers save cards and other payment instruments for one-click checkout and recurring payments. **Use client-side tokenization (Hyperswitch SDK) to avoid PCI compliance scope.** Tokenized payment methods are reusable across sessions, support 3D Secure authentication, and trigger lifecycle webhooks you can monitor.
 
-Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
+| What you need | How to do it |
+|---------------|--------------|
+| Save a card during checkout | Set `setup_future_usage: on_session` or `off_session` in your payment request |
+| Save a card without a payment | Use the `/payment_methods` endpoint with tokenized card data |
+| List saved cards | `GET /customers/{customer_id}/payment_methods` |
+| Charge a saved card | Pass `payment_method_id` instead of raw card details |
+| Handle 3D Secure | Use `on_session` for customer-present flows; expect `requires_customer_action` |
 
-#### **Payment Method Creation**:&#x20;
+---
 
-Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
+## Overview
 
-#### **Storing Payment Methods**:&#x20;
+Payment methods represent stored credentials that can be reused for future transactions without requiring customers to re-enter their details. This includes cards, bank accounts, wallets, and other payment instruments.
 
-Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
+### Key Concepts
 
-#### **Retrieving Payment Methods**:&#x20;
+| Term | Description |
+|------|-------------|
+| `payment_method_id` | Unique identifier for a stored payment method |
+| `customer_id` | Identifier linking payment methods to a customer |
+| `payment_method` | Type of payment (card, wallet, bank_transfer) |
+| `payment_method_data` | Encrypted sensitive credential data |
+| `client_secret` | Temporary token used to confirm payment intent |
 
-Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
+---
 
-#### **Deleting/Deactivating Payment Methods**:
+## Security & PCI Compliance
 
-Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
+> ⚠️ **CRITICAL: Never send raw card details from your server**
+>
+> Sending unencrypted card data from your server requires full PCI DSS compliance certification—a complex and expensive process. **Always use client-side tokenization** to stay out of PCI scope.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-03 at 12.27.38 PM.png" alt="" width="563"><figcaption><p>image displaying the payment method management UI.</p></figcaption></figure>
+### PCI Compliance Options
 
-### Integration Guide :  <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
+| Approach | PCI Scope | When to Use |
+|----------|-----------|-------------|
+| **Hyperswitch SDK (Recommended)** | SAQ A (minimal) | Always prefer this for web/mobile |
+| Self-hosted vault with encryption | SAQ D (full) | Only if you have dedicated security teams |
 
-#### 1. Server-Side Setup <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
+### Client-Side Tokenization Flow
 
-First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
+│   Customer  │────▶│  Your App    │────▶│ Hyperswitch SDK │
+│   Browser   │     │   (Frontend) │     │  (Tokenization) │
+└─────────────┘     └──────────────┘     └─────────────────┘
+                                                │
+                                                ▼
+                                        ┌─────────────────┐
+                                        │  Juspay Vault   │
+                                        │ (PCI Compliant) │
+                                        └─────────────────┘
+                                                │
+                                                ▼
+                                        ┌─────────────────┐
+                                        │  Your Server    │
+                                        │ (Token Only)    │
+                                        └─────────────────┘
+```
 
-**Obtaining Your API Keys :**&#x20;
+**How it works:**
+1. Customer enters card details in your payment form
+2. Hyperswitch SDK encrypts and tokenizes the card directly in the browser
+3. Your server receives only a `payment_token`—never the raw card number
+4. You use the token to create payment methods or process payments
 
-* Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
+---
 
-To generate your Vault API keys, follow these steps:
+## setup_future_usage Values
 
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
-2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
-3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
+The `setup_future_usage` parameter determines how a saved payment method can be used:
 
-**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+| Value | Description | Use Case |
+|-------|-------------|----------|
+| `on_session` | Card can be used when customer is present | One-click checkout, customer-initiated payments |
+| `off_session` | Card can be used without customer present | Subscription renewals, automated billing |
+| `null` | Card is not saved | Single-use payments only |
 
-**Creating a Payment Methods Session Endpoint**
+### When to Use Each
 
-Add an endpoint on your server that creates [payment methods sessions](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1). This endpoint will return the necessary session information to your client application.
+**`on_session`** — Customer is actively using your application:
+- Guest checkout with "save card for next time" option
+- Logged-in customer making a purchase
+- Any flow where customer can complete 3D Secure if required
+
+**`off_session`** — Payment happens without customer interaction:
+- Monthly subscription renewals
+- Usage-based billing at month end
+- Retry of failed subscription payments
+
+> ⚠️ **Note:** `off_session` payments may fail if the issuer requires authentication. Implement retry logic with `on_session` fallback for failed off-session payments.
+
+---
+
+## Save a Payment Method
+
+### Method 1: Client-Side Tokenization (Recommended)
+
+> ⚠️ **PCI Compliance:** Even on the client side, handle raw card data carefully. Always use the official Hyperswitch SDK which encrypts data before transmission. Never log or store card details in your application code.
+
+First, tokenize the card using Hyperswitch SDK:
 
 ```javascript
-// Create-Payment-Methods-Session
-const app = express()
-
-app.post("/create-payment-method-session", async (req, res) => {
-  try {
-    // Create payment method session on Hyperswitch
-    const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-profile-id": YOUR_PROFILE_ID,
-          Authorization: `api-key=${YOUR_API_KEY}`,
-        },
-        body: JSON.stringify(req.body),
-      }
-    );
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error("Hyperswitch API Error:", data);
-      return res.status(response.status).json({
-        error: data.error || "Failed to create payment method session",
-      });
-    }
-    // Return Payment method session ID and client secret to the frontend
-    res.json({
-      id: data.id,
-      clientSecret: data.client_secret,
-    });
-  } catch (error) {
-    console.error("Server Error:", error);
-    res.status(500).json({
-      error: "Internal server error",
-      message: error.message,
-    });
+// Using Hyperswitch SDK
+const { token } = await hyperswitch.createToken({
+  card: {
+    number: '4111111111111111',
+    card_exp_month: 12,
+    card_exp_year: 2027,
+    cvc: '123'
   }
 });
 ```
 
-> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
+Then create the payment method on your server:
 
-#### 2. Client-Side Integration <a href="#id-2.-client-side-integration" id="id-2.-client-side-integration"></a>
-
-Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
-
-**2.1 Define the Payment Methods Management Form**
-
-Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
-
-```html
-<form id="payment-methods-management-form">
-  <div id="payment-methods-management-elements">
-    <!--HyperLoader injects the Payment Methods Management SDK-->
-  </div>
-</form>
-```
-
-**2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
-
-Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
-
-> Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
-
-```js
-// Fetches a payment method session and mounts the payment methods management element
-async function initialize() {
-  // Step 1: Create payment method session
-  const response = await fetch("/create-payment-method-session", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      customer_id: "CUSTOMER_ID",
-    }),
-  });
-  const { id, clientSecret } = await response.json();
-
-  // Step 2: Initialize HyperLoader.js
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
-
-  let hyper;
-  script.onload = () => {
-    // Step 3: Initialize Hyper with your publishable key and profile ID
-    hyper = window.Hyper({
-      publishableKey: "YOUR_PUBLISHABLE_KEY",
-      profileId: "YOUR_PROFILE_ID",
-    });
-
-    // Step 4: Configure appearance
-    const appearance = {
-      theme: "default",
-    };
-
-    // Step 5: Create payment methods management elements
-    const paymentMethodsManagementElements =
-      hyper.paymentMethodsManagementElements({
-        appearance,
-        pmSessionId: id,
-        pmClientSecret: clientSecret,
-      });
-
-    // Step 6: Create and mount the paymentMethodsManagement element
-    const paymentMethodsManagement = paymentMethodsManagementElements.create(
-      "paymentMethodsManagement"
-    );
-    paymentMethodsManagement.mount("#payment-methods-management-elements");
-  };
-  document.body.appendChild(script);
-}
-
-// Call initialize when page loads or when user clicks a button
-initialize();
-```
-
-**2.3 Complete tokenization and handle errors**
-
-Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
-
-If there are any immediate errors (for example, invalid request parameters), Hyper returns an error object. Show this error message to your customer so they can try again.
-
-```js
-async function handleSubmit(e) {
-  setMessage("");
-  e.preventDefault();
-
-  // Ensure Hyper is initialized
-  if (!hyper || !paymentMethodsManagementElements) {
-    return;
-  }
-
-  setIsLoading(true);
-
-  try {
-    const response = await hyper.confirmTokenization({
-      paymentMethodsManagementElements,
-      confirmParams: {
-        // URL to redirect the user after authentication (if required)
-        return_url: "https://example.com/complete",
-      },
-      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
-    });
-
-    // Tokenization succeeded
-    if (response?.id) {
-      // You can use the returned payment method/session token here
-      handleTokenRetrieval(response);
-    } else {
-      // Handle immediate errors returned by Hyper
-      const error = response?.error;
-
-      if (error) {
-        if (error.type === "card_error" || error.type === "validation_error") {
-          setMessage(error.message);
-        } else {
-          if (error.message) {
-            setMessage(error.message);
-          } else {
-            setMessage("An unexpected error occurred.");
-          }
-        }
-      } else {
-        setMessage("An unexpected error occurred.");
-      }
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payment_methods \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "customer_id": "cust_12345",
+    "payment_method": "card",
+    "payment_method_data": {
+      "card_token": "tok_abcdefghijklmnopqrstuvwxyz"
     }
-  } catch (err) {
-    setMessage(err.message || "An unexpected error occurred.");
-  } finally {
-    setIsLoading(false);
+  }'
+```
+
+**Response:**
+```json
+{
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+  "customer_id": "cust_12345",
+  "payment_method": "card",
+  "card": {
+    "scheme": "visa",
+    "last4": "1111",
+    "card_exp_month": "12",
+    "card_exp_year": "27"
+  },
+  "created": "2026-03-10T12:00:00Z"
+}
+```
+
+### Method 2: During Payment (with setup_future_usage)
+
+Save a card automatically when processing a payment:
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "customer_id": "cust_12345",
+    "payment_method": "card",
+    "payment_method_data": {
+      "card": {
+        "card_number": "4111111111111111",
+        "card_exp_month": "12",
+        "card_exp_year": "27",
+        "card_holder_name": "John Doe"
+      }
+    },
+    "setup_future_usage": "on_session",
+    "confirm": true
+  }'
+```
+
+**Response includes `payment_method_id`:**
+```json
+{
+  "payment_id": "pay_abcdefghijklmnopqrstuvwxyz",
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+  "status": "succeeded",
+  "customer_id": "cust_12345"
+}
+```
+
+---
+
+## Token Lifecycle
+
+Payment method tokens follow a defined lifecycle:
+
+```
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+│  ACTIVE  │───▶│ REQUIRES │───▶│  ACTIVE  │───▶│  DELETED │
+│          │    │  ACTION  │    │          │    │          │
+└──────────┘    └──────────┘    └──────────┘    └──────────┘
+     │                               ▲              ▲
+     │                               │              │
+     └───────────────────────────────┘              │
+              (authentication                      │
+               successful)                   (explicit delete
+                                              or expired)
+```
+
+### Token States
+
+| State | Description |
+|-------|-------------|
+| `active` | Token is valid and ready for use |
+| `requires_customer_action` | 3D Secure or other authentication needed |
+| `inactive` | Temporarily disabled (e.g., suspected fraud) |
+| `expired` | Token has reached expiration date |
+| `deleted` | Permanently removed |
+
+### Token Expiration
+
+- **Card tokens** expire when the underlying card expires
+- You can update expiration dates without re-collecting the full card number
+- Expired tokens return `error_type: invalid_request` with `error_code: payment_method_expired`
+
+---
+
+## List Customer Payment Methods
+
+Retrieve all saved payment methods for a customer:
+
+```bash
+curl -X GET "https://api.hyperswitch.io/v1/customers/cust_12345/payment_methods" \
+  -H "api-key: YOUR_API_KEY"
+```
+
+**Response:**
+```json
+{
+  "data": [
+    {
+      "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+      "customer_id": "cust_12345",
+      "payment_method": "card",
+      "card": {
+        "scheme": "visa",
+        "last4": "1111",
+        "card_exp_month": "12",
+        "card_exp_year": "27"
+      },
+      "created": "2026-03-10T12:00:00Z"
+    }
+  ]
+}
+```
+
+---
+
+## Use Saved Payment Method
+
+Reference a saved payment method when creating a payment:
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "customer_id": "cust_12345",
+    "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+    "confirm": true
+  }'
+```
+
+---
+
+## 3D Secure for Saved Cards
+
+When using saved cards, 3D Secure may still be required:
+
+### on_session Flow (Customer Present)
+
+```bash
+# Initial request
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "customer_id": "cust_12345",
+    "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+    "setup_future_usage": "on_session",
+    "confirm": true,
+    "authentication_type": "three_ds",
+    "return_url": "https://your-site.com/payment/complete"
+  }'
+```
+
+**If 3DS is required, response will be:**
+```json
+{
+  "payment_id": "pay_abcdefghijklmnopqrstuvwxyz",
+  "status": "requires_customer_action",
+  "next_action": {
+    "type": "three_ds_invoke",
+    "three_ds_invoke": {
+      "three_ds_url": "https://acs.bank.com/3ds?token=xyz"
+    }
+  },
+  "client_secret": "pay_abcdefghijklmnopqrstuvwxyz_secret_xyzzy"
+}
+```
+
+**Redirect the customer to complete authentication, then confirm:**
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payments/pay_abcdefghijklmnopqrstuvwxyz/confirm \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "client_secret": "pay_abcdefghijklmnopqrstuvwxyz_secret_xyzzy"
+  }'
+```
+
+### off_session Flow (Merchant Initiated)
+
+For recurring payments without customer present:
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "customer_id": "cust_12345",
+    "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+    "setup_future_usage": "off_session",
+    "confirm": true,
+    "mandate_id": "man_abcdefghijklmnopqrstuvwxyz"
+  }'
+```
+
+> ℹ️ **Note:** `off_session` payments require a valid mandate. The initial `on_session` payment that saved the card should have `setup_mandate: true` to create this mandate.
+
+---
+
+## Error Handling
+
+### Common Error Scenarios
+
+#### Payment Method Expired
+```json
+{
+  "error_type": "invalid_request",
+  "error_code": "payment_method_expired",
+  "message": "The payment method has expired. Please update the expiration date or use a different payment method.",
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz"
+}
+```
+
+#### Payment Method Not Found
+```json
+{
+  "error_type": "invalid_request",
+  "error_code": "resource_missing",
+  "message": "Payment method 'pm_abcdefghijklmnopqrstuvwxyz' not found or does not belong to this customer"
+}
+```
+
+#### Insufficient Funds (Off-Session)
+```json
+{
+  "error_type": "processing_error",
+  "error_code": "insufficient_funds",
+  "message": "The card issuer declined the payment due to insufficient funds.",
+  "decline_code": "insufficient_funds",
+  "next_action": {
+    "type": "retry_with_customer_present",
+    "suggested_usage": "on_session"
   }
 }
 ```
 
-Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.<br>
+#### 3D Secure Required
+```json
+{
+  "error_type": "processing_error",
+  "error_code": "three_ds_required",
+  "message": "This transaction requires 3D Secure authentication. Please retry with customer present.",
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz"
+}
+```
+
+### Error Handling Pattern
+
+```javascript
+async function processPayment(paymentMethodId) {
+  try {
+    const response = await createPayment({
+      payment_method_id: paymentMethodId,
+      setup_future_usage: 'off_session'
+    });
+    
+    if (response.status === 'succeeded') {
+      return { success: true, paymentId: response.payment_id };
+    }
+  } catch (error) {
+    if (error.error_code === 'payment_method_expired') {
+      // Prompt customer to update card
+      return { 
+        success: false, 
+        requiresUpdate: true,
+        paymentMethodId: error.payment_method_id 
+      };
+    }
+    
+    if (error.error_code === 'three_ds_required' || 
+        error.next_action?.suggested_usage === 'on_session') {
+      // Fall back to on_session flow
+      return { 
+        success: false, 
+        requiresCustomerPresent: true,
+        paymentMethodId: paymentMethodId
+      };
+    }
+    
+    // Log and alert for other errors
+    console.error('Payment failed:', error);
+    throw error;
+  }
+}
+```
+
+---
+
+## Delete Payment Method
+
+Remove a saved payment method:
+
+```bash
+curl -X DELETE https://api.hyperswitch.io/v1/payment_methods/pm_abcdefghijklmnopqrstuvwxyz \
+  -H "api-key: YOUR_API_KEY"
+```
+
+**Response:**
+```json
+{
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+  "deleted": true
+}
+```
+
+---
+
+## Update Payment Method
+
+Update details like expiration date:
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payment_methods/pm_abcdefghijklmnopqrstuvwxyz \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "card": {
+      "card_exp_month": "06",
+      "card_exp_year": "27"
+    }
+  }'
+```
+
+> ⚠️ **Note:** You cannot update the card number. If the card number changes, create a new payment method and delete the old one.
+
+---
+
+## Webhook Events
+
+Monitor payment method lifecycle through webhooks:
+
+| Event | Description |
+|-------|-------------|
+| `payment_method.created` | A new payment method was saved |
+| `payment_method.updated` | Payment method details were modified |
+| `payment_method.authenticated` | 3D Secure authentication completed successfully |
+| `payment_method.expiring_soon` | Card expires within 30 days |
+| `payment_method.expired` | Card has expired |
+| `payment_method.deleted` | Payment method was removed |
+
+### Webhook Payload Example
+
+```json
+{
+  "event_type": "payment_method.created",
+  "event_id": "evt_abcdefghijklmnopqrstuvwxyz",
+  "timestamp": "2026-03-10T12:00:00Z",
+  "data": {
+    "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+    "customer_id": "cust_12345",
+    "payment_method": "card",
+    "card": {
+      "scheme": "visa",
+      "last4": "1111",
+      "card_exp_month": "12",
+      "card_exp_year": "27"
+    },
+    "setup_future_usage": "on_session"
+  }
+}
+```
+
+### Important Webhook Considerations
+
+1. **Verify signatures** — Always verify webhook signatures to ensure authenticity
+2. **Handle idempotency** — Process each event only once using `event_id`
+3. **Respond quickly** — Return 200 OK within 5 seconds; defer processing if needed
+4. **Retry logic** — Hyperswitch retries failed webhooks with exponential backoff
+
+---
+
+## PCI Compliance Summary
+
+| Scenario | PCI Requirement | Recommendation |
+|----------|-----------------|----------------|
+| Using Hyperswitch SDK | SAQ A | ✅ Preferred approach |
+| Using hosted fields | SAQ A-EP | Acceptable alternative |
+| Server-side card handling | SAQ D | ❌ Avoid unless certified |
+| Storing CVV | Prohibited | Never store CVV codes |
+
+### Checklist for Compliance
+
+- [ ] Card data never touches your server
+- [ ] Use Hyperswitch SDK for tokenization
+- [ ] Store only `payment_method_id` tokens
+- [ ] Implement webhook signature verification
+- [ ] Log and monitor payment method events
+- [ ] Have a data retention policy
+
+---
+
+## Next Steps
+
+- [Implement saved card checkout](../../payment-experience/payment/saved-card.md)
+- [Set up recurring payments](../payments-cards/recurring-payments.md)
+- [Configure vault options](../../workflows/vault.md)
+- [Handle 3D Secure authentication](../payments-cards/3ds-authentication.md)
