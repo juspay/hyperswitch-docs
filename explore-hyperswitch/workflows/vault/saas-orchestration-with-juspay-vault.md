@@ -1,59 +1,481 @@
 ---
 description: >-
-  Leverage the integrated vault that comes with Hyperswitch Orchestration
-  account to store cards
+  Combine Juspay's PCI-compliant vault service with your self-hosted Juspay
+  hyperswitch orchestration layer to store sensitive payment credentials securely
+  while maintaining full control over payment routing and business logic.
 icon: box-circle-check
 ---
 
 # SaaS Orchestration with Juspay Vault
 
-This is the fully managed Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.\
-Merchants can tokenize, vault, and process without any PCI exposure.
+## TL;DR
 
-Key Highlights:
+Combine Juspay's PCI-compliant vault service with your self-hosted Juspay hyperswitch orchestration layer to store sensitive payment credentials securely while maintaining full control over payment routing and business logic. This deployment model reduces your PCI scope (your frontend qualifies for **SAQ A**, your backend for **SAQ D full**) by having Juspay handle Level 1 PCI DSS compliance for card storage. You retain control over routing, business logic, and processor relationships while offloading the compliance burden for card storage.
 
-* No PCI compliance overhead.
-* Automatic network tokenization and lifecycle management.
-* Simplified setup — single integration for orchestration + vault.
+---
 
-### SaaS orchestration - Payments and vaulting flow
+## Overview
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+This deployment model combines Juspay's hosted vault (PCI scope handled by Juspay) with your self-hosted Juspay hyperswitch orchestration layer. You retain control over routing, business logic, and processor relationships while offloading PCI compliance for card storage.
 
-The sequence diagram above outlines how a SaaS merchant performs payments and vaulting
+**Payment Service Provider (PSP)** refers to a company that enables merchants to accept electronic payments (also called processor, acquirer, or gateway). **PCI DSS** (Payment Card Industry Data Security Standard) defines the security standards for organisations that handle credit card information. **SAQ** (Self-Assessment Questionnaire) is a validation tool merchants use to evaluate their PCI DSS compliance.
 
-**New user payments flow**
+---
 
-1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
-2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
-3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Hyperswitch
-4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.
-5. The card is stored in Hyperswitch vault and a `payment_method_id` is generated. A `payment_method_id` is a versatile token and connects a lot of entities together&#x20;
+## Architecture
 
-Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
+```
+┌─────────────────┐
+│  Your Frontend  │
+│  (PCI SAQ A)    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────────┐
+│ Juspay hyperswitch  │
+│ SDK (Tokenisation)  │
+└────────┬────────────┘
+         │
+         ▼
+┌─────────────────────┐     ┌──────────────────┐
+│ Juspay Vault        │◄────│ Your Backend     │
+│ (PCI DSS Level 1)   │     │ (Juspay          │
+│ - Store card data   │     │  hyperswitch)    │
+│ - Token generation  │     │ - Routing logic  │
+└────────┬────────────┘     │ - Business rules │
+         │                  └────────┬─────────┘
+         │                           │
+         │    ┌──────────────────────┘
+         │    │
+         ▼    ▼
+    ┌─────────────────┐
+    │ PSP/Connectors  │
+    │ (Stripe, Adyen) │
+    └─────────────────┘
+```
 
-The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
+*Architecture diagram showing the flow of payment data from the frontend through Juspay hyperswitch SDK to Juspay Vault, with the backend orchestrating payments and routing to Payment Service Providers (PSPs). Card data flows directly from SDK to Vault (bypassing merchant servers), while the backend manages tokens and routing logic.*
 
-* Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
-* Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
+---
 
-| **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
-| --------------- | --------------------------------- | --------------------- |
-| 123             | Visa ending in 4242               | `PM1`                 |
-| 123             | Mastercard ending in 1111         | `PM2`                 |
-| 456             | Visa ending in 4242               | `PM3`                 |
-| 123             | PayPal Account (`user@email.com`) | `PM4`                 |
+## Benefits
 
-6. This `Payment_method_id` is returned to the merchant via webhooks
+| Benefit | Description |
+|---------|-------------|
+| **Reduced PCI Scope** | Juspay handles Level 1 PCI DSS compliance |
+| **Orchestration Control** | You own routing and business logic |
+| **Multi-PSP** | Route to any supported processor |
+| **Token Portability** | Use tokens across multiple processors |
 
-**Repeat user payments flow**
+---
 
-1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
-2. The end-user can select the desired payment option and add their `CVV`&#x20;
-3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`&#x20;
-4. The Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
-5. It sends payload with appropriate credential to the payment provider or PSP downstream based on the merchant configurations
+## Prerequisites
 
-**Merchant Initiated Transaction (MIT) flow**
+Before integrating with Juspay Vault, ensure you have:
 
-1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
+| Requirement | Description |
+|-------------|-------------|
+| **API Key** | Obtain your API key from the [Juspay hyperswitch Control Centre](https://app.hyperswitch.io) |
+| **Base URL** | Production: `https://api.hyperswitch.io/v1` or Sandbox: `https://sandbox.hyperswitch.io/v1` |
+| **Authentication** | Include your API key in the `api-key` header for all requests |
+| **Webhook Endpoint** | Configure a HTTPS endpoint to receive asynchronous payment status updates |
+| **HTTPS** | Your checkout pages must be served over HTTPS for secure data transmission |
+
+### API Key Procurement
+
+To obtain your Juspay hyperswitch API keys:
+
+1. **Sign up** at [Juspay hyperswitch Control Centre](https://app.hyperswitch.io)
+2. **Complete account verification** via email confirmation
+3. **Navigate to Developers → API Keys**
+4. **Copy your API keys:**
+   - **Publishable Key** (for frontend/SDK): Starts with `pk_`
+   - **Secret API Key** (for backend): Starts with `snd_` (sandbox) or `live_` (production)
+5. **Store keys securely** — never commit secret keys to version control
+
+### Quick Authentication Test
+
+```bash
+curl -X GET https://sandbox.hyperswitch.io/v1/health \
+  -H "api-key: YOUR_API_KEY"
+```
+
+---
+
+## Token Types Explained
+
+Understanding the difference between vault tokens and network tokens is essential for designing your payment architecture.
+
+### Vault Tokens
+
+**Vault tokens** are merchant-specific identifiers generated by Juspay Vault when card data is stored. They act as a reference to the actual card data held securely in Juspay's PCI DSS Level 1 compliant vault.
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Generation** | Created when a card is saved to Juspay Vault |
+| **Scope** | Specific to your merchant account |
+| **Usage** | Used to retrieve card data for payments |
+| **Format** | Alphanumeric string (e.g., `pm_abcdefghijklmnopqrstuvwxyz`) |
+| **PCI Scope** | Tokens are not considered sensitive data |
+
+### Network Tokens
+
+**Network tokens** are card network-specific tokens (Visa, Mastercard, etc.) that replace the primary account number (PAN) at the network level. These tokens are recognised and accepted across the card network ecosystem.
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Generation** | Created by card networks when enrolled |
+| **Scope** | Recognised across the card network |
+| **Usage** | Used directly with PSPs that support network tokenisation |
+| **Security** | Reduces fraud risk as tokens are useless if stolen |
+| **PCI Scope** | Network tokens further reduce PCI scope |
+
+### When to Use Each Token Type
+
+| Scenario | Recommended Token |
+|----------|-------------------|
+| Standard payment processing | Vault tokens |
+| Multi-PSP routing | Vault tokens (portable across processors) |
+| Maximum fraud protection | Network tokens (where supported) |
+| Recurring/subscription payments | Either — vault tokens provide flexibility |
+
+---
+
+## Setup
+
+### Step 1: Configure Vault Connection
+
+In your Juspay hyperswitch configuration:
+
+```yaml
+vault:
+  provider: juspay
+  credentials:
+    api_key: YOUR_JUSPAY_VAULT_API_KEY
+    environment: production
+```
+
+### Step 2: Tokenise Payment Methods
+
+When a customer enters card details:
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payment_methods \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "customer_id": "cust_12345",
+    "payment_method": "card",
+    "payment_method_data": {
+      "card": {
+        "card_number": "4111111111111111",
+        "card_exp_month": "12",
+        "card_exp_year": "25"
+      }
+    },
+    "vault_provider": "juspay"
+  }'
+```
+
+**Response:**
+
+```json
+{
+  "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+  "customer_id": "cust_12345",
+  "payment_method": "card",
+  "card": {
+    "scheme": "Visa",
+    "last4_digits": "1111",
+    "exp_month": "12",
+    "exp_year": "25"
+  },
+  "created": "2026-03-10T12:00:00Z"
+}
+```
+
+The card data is sent directly to Juspay Vault. Your system only receives a token.
+
+### Step 3: Use Token for Payments
+
+```bash
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "customer_id": "cust_12345",
+    "payment_method_id": "pm_abcdefghijklmnopqrstuvwxyz",
+    "confirm": true
+  }'
+```
+
+Juspay hyperswitch retrieves the actual card data from Juspay Vault and sends it to the selected processor.
+
+---
+
+## Detokenisation Mechanics
+
+Detokenisation is the process of retrieving the original card data using a vault token. Understanding how this works helps you design secure payment flows.
+
+### How Detokenisation Works
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│ Your Backend    │────▶│ Juspay          │────▶│ Juspay Vault    │
+│ (with token)    │     │ hyperswitch     │     │ (PCI DSS L1)    │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+         │                       │                       │
+         │                       │◄───── card data ──────┤
+         │                       │                       │
+         │◄──── confirmation ────┤                       │
+         │                       │                       │
+         ▼                       ▼                       ▼
+   Token remains           Card data sent to        Original card
+   in your system          PSP (not stored          data never
+   (not sensitive)         in your backend)         touches your
+                                                    servers
+```
+
+### Detokenisation Flow
+
+1. **Payment Request**: Your backend sends a payment request with `payment_method_id`
+2. **Token Lookup**: Juspay hyperswitch identifies the vault provider from the token prefix
+3. **Secure Retrieval**: Juspay hyperswitch requests card data from Juspay Vault using authenticated API call
+4. **Payment Processing**: Retrieved card data is sent directly to the selected PSP
+5. **No Storage**: Card data never persists in your backend or Juspay hyperswitch orchestration layer
+
+### Security Controls
+
+| Control | Implementation |
+|---------|----------------|
+| **Authentication** | Mutual TLS between Juspay hyperswitch and Juspay Vault |
+| **Encryption** | TLS 1.3 for all data in transit |
+| **Access Logging** | All detokenisation requests are logged for audit |
+| **Rate Limiting** | Requests throttled to prevent abuse |
+| **Token Binding** | Tokens are bound to your merchant ID — cannot be used by others |
+
+---
+
+## Error Handling
+
+Handle these common error scenarios in your integration:
+
+### Token Not Found
+
+```json
+{
+  "error": {
+    "type": "invalid_request_error",
+    "code": "payment_method_not_found",
+    "message": "The payment method pm_abc123 does not exist or has been deleted"
+  }
+}
+```
+
+**Action:** Check the token ID is correct. The token may have expired or been deleted by the customer.
+
+```bash
+# Example: Handle token not found
+curl -X POST https://api.hyperswitch.io/v1/payments \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "amount": 10000,
+    "currency": "USD",
+    "payment_method_id": "pm_check_if_valid"
+  }' || {
+    # Token invalid — prompt customer to re-enter card details
+    echo "Please re-enter your payment details"
+  }
+```
+
+### Vault Provider Error
+
+```json
+{
+  "error": {
+    "type": "api_error",
+    "code": "vault_provider_error",
+    "message": "Unable to retrieve card data from vault provider"
+  }
+}
+```
+
+**Action:** Retry with exponential backoff. If persistent, check vault provider status and contact Juspay support.
+
+```python
+import time
+
+def create_payment_with_retry(payment_data, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = create_payment(payment_data)
+            return response
+        except VaultProviderError as e:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)  # Exponential backoff
+            else:
+                raise  # Max retries exceeded
+```
+
+### Expired Card
+
+```json
+{
+  "error": {
+    "type": "card_error",
+    "code": "expired_card",
+    "message": "The card has expired",
+    "exp_month": "12",
+    "exp_year": "2023"
+  }
+}
+```
+
+**Action:** Prompt the customer to update their card expiry date.
+
+```bash
+# Update expired card
+curl -X POST https://api.hyperswitch.io/v1/payment_methods/pm_abc123 \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -d '{
+    "card": {
+      "exp_month": "12",
+      "exp_year": "2028"
+    }
+  }'
+```
+
+### Invalid API Key
+
+```json
+{
+  "error": {
+    "type": "authentication_error",
+    "code": "invalid_api_key",
+    "message": "Invalid API key provided"
+  }
+}
+```
+
+**Action:** Verify your API key is correct and has not expired. Check you're using the right environment (sandbox vs production).
+
+### Network/Timeout Errors
+
+```json
+{
+  "error": {
+    "type": "api_connection_error",
+    "message": "Network error communicating with vault provider"
+  }
+}
+```
+
+**Action:** Retry with exponential backoff. Use idempotency keys to prevent duplicate tokenisation.
+
+```bash
+# Using idempotency key
+curl -X POST https://api.hyperswitch.io/v1/payment_methods \
+  -H "Content-Type: application/json" \
+  -H "api-key: YOUR_API_KEY" \
+  -H "Idempotency-Key: unique-key-123" \
+  -d '{
+    "customer_id": "cust_12345",
+    "payment_method": "card",
+    "payment_method_data": {
+      "card": {
+        "card_number": "4111111111111111",
+        "card_exp_month": "12",
+        "card_exp_year": "25"
+      }
+    }
+  }'
+```
+
+---
+
+## PCI Compliance
+
+Understanding your PCI DSS (Payment Card Industry Data Security Standard) scope is critical when designing your payment architecture.
+
+| Component | PCI Scope |
+|-----------|-----------|
+| Your Frontend | SAQ A (lowest) — card data never touches your servers |
+| Your Backend (Juspay hyperswitch) | SAQ D full — full assessment required for self-hosted orchestration |
+| Juspay Vault | Level 1 (handled entirely by Juspay) |
+| PSP/Connector | Handled by PSP |
+
+### Important: Backend PCI Scope
+
+When you **self-host** the Juspay hyperswitch orchestration layer:
+
+- Your backend systems are in scope for **SAQ D full** (Self-Assessment Questionnaire D — full assessment)
+- This is **not** a reduced scope — it is the full PCI DSS assessment
+- The orchestration layer handles payment flows but does not store card data
+- Card data flows through your infrastructure only during transaction processing (detokenised by Juspay Vault, sent to PSP)
+
+### Scope Reduction Strategies
+
+To minimise your compliance burden:
+
+1. **Use Juspay hyperswitch Cloud** — Juspay-managed orchestration reduces your backend scope
+2. **Tokenise at the edge** — Use Juspay hyperswitch SDK to capture card data directly into Juspay Vault
+3. **Never log card data** — Ensure your application logs do not capture PANs or CVV codes
+4. **Use HTTPS everywhere** — All payment-related traffic must be encrypted
+
+---
+
+## Token Lifecycle
+
+1. **Creation**: Token created when card is saved
+2. **Usage**: Token used for payments (card data retrieved transparently via detokenisation)
+3. **Update**: Expiry date can be updated without re-entering full card
+4. **Deletion**: Token deleted when customer removes card
+
+---
+
+## Migration from Other Vaults
+
+Migrate existing tokens to Juspay Vault:
+
+1. Export tokens from existing vault (securely)
+2. Import to Juspay Vault via secure migration process
+3. Update your systems to reference new token IDs
+4. Coordinate with Juspay support for bulk migration
+
+---
+
+## Security Considerations
+
+- Tokens are processor-agnostic
+- Network tokens supported for major card networks
+- Encryption in transit (TLS 1.3)
+- Encryption at rest (AES-256)
+
+---
+
+## Next Steps
+
+- [Configure external vault](../../workflows/vault/connect-external-vaults-to-hyperswitch-orchestration.md)
+- [Understand PCI scope implications](../../../about-hyperswitch/pci-compliance.md)
+- [Set up multi-PSP routing](../intelligent-routing.md)
+
+---
+
+## Key Terms and Acronyms
+
+| Term | Definition |
+|------|------------|
+| **PCI DSS** | Payment Card Industry Data Security Standard — Security standards for organisations that handle credit card information. |
+| **PSP** | Payment Service Provider — A company that enables merchants to accept electronic payments (also called processor, acquirer, or gateway). |
+| **SAQ** | Self-Assessment Questionnaire — A validation tool for merchants and service providers to evaluate their PCI DSS compliance. |
+| **SAQ A** | Self-Assessment Questionnaire A — For card-not-present merchants whose cardholder data functions are fully outsourced. |
+| **SAQ D** | Self-Assessment Questionnaire D — For merchants who store, process, or transmit cardholder data. |
+| **Tokenisation** | The process of replacing sensitive card data with a non-sensitive equivalent (token) that can be used for subsequent transactions. |
+| **Detokenisation** | The reverse process of retrieving the original card data using a token. |
+| **Vault Token** | A merchant-specific identifier that references card data stored in Juspay Vault. |
+| **Network Token** | A card network-specific token that replaces the primary account number at the network level. |
+| **Orchestration** | The coordination and management of payment flows across multiple processors and services. |
