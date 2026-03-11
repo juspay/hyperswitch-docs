@@ -373,6 +373,7 @@
 
 * [Payment Orchestration FAQ](faqs/payment-orchestration-faq.md)
 * [Cost and Margin Optimization FAQs](faqs/cost-and-margin-optimization-faqs.md)
+* [Frequently Asked Questions](faqs/frequently-asked-questions.md)
 
 ## Learn more
 
