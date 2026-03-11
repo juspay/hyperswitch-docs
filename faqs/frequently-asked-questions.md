@@ -1144,3 +1144,102 @@ Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
 
 </details>
+
+## Vault & Tokenization
+
+<details>
+
+<summary>How do I migrate existing tokens from another provider to Hyperswitch?</summary>
+
+Hyperswitch provides a structured process for importing existing payment tokens from another provider.
+
+#### Migration process
+
+1. The merchant requests a data import from the Hyperswitch team.
+2. Hyperswitch shares its **PCI Attestation of Compliance (AoC)** certificate with the merchant.
+3. The merchant requests a secure data export from their existing payment processor using the Hyperswitch AoC.
+4. Hyperswitch provides a **public PGP key** for encryption.
+5. The existing processor encrypts the token data and transfers it via **SFTP**.
+6. Hyperswitch imports the data into its vault.
+7. Updated customer and payment method reference IDs are shared with the merchant.
+
+#### Required fields for card import
+
+The following fields are typically required when importing card data.
+
+• card\_number (PAN)\
+• card\_expiry\_month\
+• card\_expiry\_year\
+• payment\_instrument\_id (PSP token used for mapping)\
+• original\_network\_transaction\_id (required for connector-agnostic merchant initiated transactions)
+
+#### Optional fields
+
+Additional customer or card details may also be included:
+
+• customer name\
+• email address\
+• phone number\
+• billing address\
+• card scheme
+
+After the import is completed, merchants can begin using the migrated tokens through the Hyperswitch APIs.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch](https://docs.hyperswitch.io/explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch)
+
+</details>
+
+<details>
+
+<summary>Can tokens be used across multiple connectors or processors?</summary>
+
+Yes. Hyperswitch supports token portability across connectors through its unified token model.
+
+#### Universal payment method token
+
+Hyperswitch provides a **unified `payment_method_id`**, which abstracts connector-specific tokens.
+
+This token can represent:
+
+• vault\_token\
+• psp\_token\
+• customer\_id
+
+This abstraction allows merchants to route payments through different processors without re-collecting card details.
+
+#### Connector-agnostic merchant initiated transactions
+
+Hyperswitch supports **connector-agnostic merchant initiated transactions (MIT)**.
+
+When a customer performs an initial **customer initiated transaction (CIT)**, Hyperswitch stores the **network transaction ID** returned by the processor.
+
+This network transaction ID can later be used to process recurring or merchant initiated payments through different eligible connectors.
+
+#### Enabling connector-agnostic MIT
+
+Merchants can enable this capability through an API call.
+
+POST /account/:merchant\_id/business\_profile/:profile\_id/toggle\_connector\_agnostic\_mit
+
+Request body
+
+{\
+"enabled": true\
+}
+
+#### Supported processors
+
+Connector-agnostic recurring payments are currently supported with processors including:
+
+• Stripe\
+• Adyen\
+• Cybersource
+
+This approach allows merchants to change processors without requiring customers to re-enter payment details.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/pg-agnostic-recurring-payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/pg-agnostic-recurring-payments)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/self-hosted-orchestration-with-outsourced-pci-vault](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/self-hosted-orchestration-with-outsourced-pci-vault)
+
+</details>
