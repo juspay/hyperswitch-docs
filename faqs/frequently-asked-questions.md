@@ -966,3 +966,181 @@ Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost-observability](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost-observability)
 
 </details>
+
+## Webhooks
+
+<details>
+
+<summary>How do I verify webhook signatures for security?</summary>
+
+Hyperswitch uses HMAC-based signature verification to ensure webhook authenticity.
+
+When a business profile is created, a secret key is configured in the `payment_response_hash_key` field. If no key is provided, Hyperswitch generates a secure random key automatically.
+
+#### Signature generation process
+
+1. The webhook payload is encoded as a JSON string.
+2. A signature is generated using the **HMAC-SHA512** algorithm with the `payment_response_hash_key`.
+3. The generated digest is included in the webhook header:
+
+`x-webhook-signature-512`
+
+#### Verification steps
+
+To verify webhook authenticity:
+
+1. Retrieve the webhook payload.
+2. Encode the payload as a JSON string.
+3. Generate an HMAC-SHA512 signature using your stored `payment_response_hash_key`.
+4. Compare the generated signature with the `x-webhook-signature-512` header.
+
+If both values match, the webhook request is authentic and has not been modified.
+
+If your system does not support SHA512, you can use the alternative header:
+
+`x-webhook-signature-256`
+
+This header contains a signature generated using **HMAC-SHA256**.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
+
+<details>
+
+<summary>What is the retry policy for failed webhook deliveries?</summary>
+
+A webhook delivery is considered successful when the receiving server returns an **HTTP 2XX response**.
+
+If a webhook request does not receive a 2XX response, Hyperswitch automatically retries delivery using increasing intervals for up to **24 hours**.
+
+#### Retry schedule
+
+| Retry attempt      | Interval   |
+| ------------------ | ---------- |
+| 1st retry          | 1 minute   |
+| 2nd and 3rd retry  | 5 minutes  |
+| 4th to 8th retry   | 10 minutes |
+| 9th to 13th retry  | 1 hour     |
+| 14th to 16th retry | 6 hours    |
+
+The first retry interval is measured from the initial delivery attempt. Subsequent retries are measured from the previous retry attempt.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
+
+<details>
+
+<summary>How do I handle duplicate webhook events?</summary>
+
+Because webhook deliveries may be retried, your system may receive the same webhook event multiple times.
+
+Each webhook payload contains a unique field:
+
+`event_id`
+
+This identifier can be used to detect duplicate events.
+
+#### Recommended handling process
+
+1. Extract the `event_id` from the webhook payload.
+2. Store processed `event_id` values in a persistent datastore such as a relational database or Redis.
+3. Before processing a webhook, check whether the `event_id` has already been processed.
+4. If it exists, ignore the event as a duplicate.
+5. If it does not exist, process the event and store the `event_id`.
+
+Since webhooks may retry for up to **24 hours**, it is recommended to retain processed event IDs for at least that duration.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
+
+<details>
+
+<summary>Are webhooks delivered in order? How should I handle out-of-order events?</summary>
+
+Webhook events are delivered asynchronously and may occasionally arrive out of order due to network latency or retry behavior.
+
+To ensure your system processes the most recent state of an object:
+
+Use the `updated` timestamp field in the webhook payload.
+
+#### Recommended approach
+
+1. Extract the `updated` timestamp from the webhook payload.
+2. Compare it with the latest known timestamp for the same payment or object.
+3. Only apply updates if the incoming event reflects a more recent state.
+
+This ensures that older events do not overwrite the latest payment state in your system.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
+
+<details>
+
+<summary>What timeout should my webhook endpoint support?</summary>
+
+Webhook requests should return an HTTP 2XX response after successful processing.
+
+If the endpoint does not respond successfully, Hyperswitch treats the delivery as failed and schedules retries according to the retry policy.
+
+#### Recommended implementation practices
+
+• Ensure webhook endpoints respond quickly to avoid retries.\
+• Process heavy business logic asynchronously if needed.\
+• Return a success response once the event has been accepted for processing.
+
+If your webhook processing requires longer execution time, consider using message queues or background workers to process events after acknowledging the request.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
+
+<details>
+
+<summary>What webhook events are available?</summary>
+
+Hyperswitch emits webhook events for multiple payment lifecycle stages.
+
+#### Payment events
+
+• payment\_succeeded\
+• payment\_failed\
+• payment\_processing\
+• payment\_cancelled\
+• payment\_authorized\
+• payment\_captured
+
+#### Refund events
+
+• refund\_succeeded\
+• refund\_failed
+
+#### Dispute events
+
+• dispute\_opened\
+• dispute\_expired\
+• dispute\_accepted\
+• dispute\_cancelled\
+• dispute\_challenged\
+• dispute\_won\
+• dispute\_lost
+
+#### Mandate events
+
+• mandate\_active\
+• mandate\_revoked
+
+These events allow merchants to synchronize payment states with internal systems such as order management, accounting, or customer notifications.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)
+
+</details>
