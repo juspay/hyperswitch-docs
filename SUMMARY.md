@@ -369,6 +369,58 @@
     * [Data Security](production-deployment/going-live/for-on-prem-setup/security.md)
     * [Updates](production-deployment/going-live/for-on-prem-setup/updates.md)
 
+## Connector Service
+
+* [Overview](connector-service/README.md)
+* [Architecture](connector-service/architecture/README.md)
+  * [Architecture Overview](connector-service/architecture/overview.md)
+* [API Reference](connector-service/api-reference/README.md)
+  * [Domain Schema](connector-service/api-reference/domain-schema/README.md)
+  * Payment Service
+    * [Overview](connector-service/api-reference/services/payment-service/README.md)
+    * [Create Order](connector-service/api-reference/services/payment-service/create-order.md)
+    * [Authorize](connector-service/api-reference/services/payment-service/authorize.md)
+    * [Capture](connector-service/api-reference/services/payment-service/capture.md)
+    * [Void](connector-service/api-reference/services/payment-service/void.md)
+    * [Refund](connector-service/api-reference/services/payment-service/refund.md)
+    * [Get](connector-service/api-reference/services/payment-service/get.md)
+    * [Reverse](connector-service/api-reference/services/payment-service/reverse.md)
+    * [Setup Recurring](connector-service/api-reference/services/payment-service/setup-recurring.md)
+    * [Incremental Authorization](connector-service/api-reference/services/payment-service/incremental-authorization.md)
+    * [Verify Redirect Response](connector-service/api-reference/services/payment-service/verify-redirect-response.md)
+  * Customer Service
+    * [Overview](connector-service/api-reference/services/customer-service/README.md)
+    * [Create](connector-service/api-reference/services/customer-service/create.md)
+  * Refund Service
+    * [Overview](connector-service/api-reference/services/refund-service/README.md)
+    * [Get](connector-service/api-reference/services/refund-service/get.md)
+  * Dispute Service
+    * [Overview](connector-service/api-reference/services/dispute-service/README.md)
+    * [Accept](connector-service/api-reference/services/dispute-service/accept.md)
+    * [Defend](connector-service/api-reference/services/dispute-service/defend.md)
+    * [Get](connector-service/api-reference/services/dispute-service/get.md)
+    * [Submit Evidence](connector-service/api-reference/services/dispute-service/submit-evidence.md)
+  * Event Service
+    * [Overview](connector-service/api-reference/services/event-service/README.md)
+    * [Handle](connector-service/api-reference/services/event-service/handle.md)
+  * Payment Method Service
+    * [Overview](connector-service/api-reference/services/payment-method-service/README.md)
+    * [Tokenize](connector-service/api-reference/services/payment-method-service/tokenize.md)
+  * Payment Method Authentication Service
+    * [Overview](connector-service/api-reference/services/payment-method-authentication-service/README.md)
+    * [Pre-authenticate](connector-service/api-reference/services/payment-method-authentication-service/pre-authenticate.md)
+    * [Authenticate](connector-service/api-reference/services/payment-method-authentication-service/authenticate.md)
+    * [Post-authenticate](connector-service/api-reference/services/payment-method-authentication-service/post-authenticate.md)
+  * Merchant Authentication Service
+    * [Overview](connector-service/api-reference/services/merchant-authentication-service/README.md)
+    * [Create Access Token](connector-service/api-reference/services/merchant-authentication-service/create-access-token.md)
+    * [Create Session Token](connector-service/api-reference/services/merchant-authentication-service/create-session-token.md)
+    * [Create SDK Session Token](connector-service/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
+  * Recurring Payment Service
+    * [Overview](connector-service/api-reference/services/recurring-payment-service/README.md)
+    * [Charge](connector-service/api-reference/services/recurring-payment-service/charge.md)
+    * [Revoke](connector-service/api-reference/services/recurring-payment-service/revoke.md)
+
 ## FAQs
 
 * [Payment Orchestration FAQ](faqs/payment-orchestration-faq.md)
@@ -395,4 +447,5 @@
 * [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
-  * [Community Guidelines](learn-more/community/community-guidelines.md)
+   * [Community Guidelines](learn-more/community/community-guidelines.md)
+
