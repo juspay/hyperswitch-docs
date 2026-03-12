@@ -1,3 +1,8 @@
+---
+hidden: true
+noIndex: true
+---
+
 # Payment Orchestration FAQ
 
 ### What is payment orchestration?

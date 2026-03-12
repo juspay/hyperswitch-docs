@@ -1,3 +1,8 @@
+---
+hidden: true
+noIndex: true
+---
+
 # Cost and Margin Optimization FAQs
 
 ### Reducing Credit Card Processing Fees
