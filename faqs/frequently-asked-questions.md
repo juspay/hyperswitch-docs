@@ -1985,3 +1985,164 @@ Documentation:\
 
 </details>
 
+## Decline Codes & Error Handling
+
+
+
+<details>
+
+<summary>What do different decline codes mean (insufficient_funds, do_not_honor, etc.)?</summary>
+
+Hyperswitch standardises decline codes returned by different processors and issuers into a unified set of error enums.
+
+These standardised decline codes help merchants handle payment failures consistently across multiple payment processors.
+
+#### Common decline codes
+
+| Decline Code                         | Meaning                                                                                               |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| insufficient\_funds                  | The customer's account does not have enough funds to complete the payment                             |
+| do\_not\_honor / card\_declined      | Generic decline indicating the card cannot be used for the purchase                                   |
+| fraudulent                           | The processor declined the transaction due to suspected fraud                                         |
+| call\_issuer                         | The issuer declined the transaction for an unspecified reason; the customer should contact their bank |
+| card\_not\_supported                 | The card does not support the requested transaction type                                              |
+| invalid\_cvc                         | The card's security code is invalid                                                                   |
+| incorrect\_number                    | The card number is invalid                                                                            |
+| invalid\_expiry\_month/year          | The expiration date on the card is invalid                                                            |
+| account\_closed                      | The bank account linked to the payment method has been closed                                         |
+| pickup\_card                         | The card cannot be used, often because it has been reported lost or stolen                            |
+| pin\_try\_exceeded                   | The maximum number of PIN attempts has been exceeded                                                  |
+| card\_decline\_rate\_limit\_exceeded | The card has been declined too many times and cannot be retried for 24 hours                          |
+
+These decline codes allow applications to implement consistent error handling logic across different payment processors.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processor-error-code-mapping](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processor-error-code-mapping)<br>
+
+</details>
+
+<details>
+
+<summary>How do I handle bank-level declines that I cannot control?</summary>
+
+Bank-level declines originate from the **card issuer** and are outside the merchant’s direct control.
+
+Examples of bank-level declines include:
+
+* insufficient\_funds
+* call\_issuer
+* account\_closed
+* pickup\_card
+
+These declines typically occur due to issues with the customer’s card or bank account.
+
+#### Smart retry mechanisms
+
+Hyperswitch provides several retry strategies to recover failed transactions where possible.
+
+**Cascading retry**
+
+Attempts the payment again through an alternative processor.
+
+**Step-up retry**
+
+Retries the payment with additional authentication, such as 3D Secure, when fraud is suspected.
+
+**Network retry**
+
+Attempts the transaction through different debit networks when available.
+
+#### Manual retries
+
+Merchants can also allow customers to retry payments manually when the issue can be resolved.
+
+This can be enabled using the `manual_retry_allowed` setting.
+
+For example:
+
+* Customers can update card details
+* Customers can retry with a different payment method
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/manual-user-triggered-retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/manual-user-triggered-retries)
+
+</details>
+
+## Account Management
+
+<details>
+
+<summary>What is the account structure in Hyperswitch?</summary>
+
+Hyperswitch uses a **three-level account hierarchy** to organise merchants, operational units, and payment configurations.
+
+#### Account hierarchy
+
+| Level                      | Description                            | Use Case                                          |
+| -------------------------- | -------------------------------------- | ------------------------------------------------- |
+| Organisation               | Top-level entity                       | Corporate parent or holding company               |
+| Merchant                   | Business entity under the organisation | Individual business or subsidiary                 |
+| Profile (Business Profile) | Operational unit within a merchant     | Website, mobile app, brand, or regional operation |
+
+#### Example hierarchy
+
+```
+Organisation: Acme Corp
+├── Merchant: Acme US
+│   ├── Profile: acme.com (US website)
+│   └── Profile: Acme Mobile App
+├── Merchant: Acme EU
+│   ├── Profile: acme.de
+│   └── Profile: acme.fr
+└── Merchant: Acme UK
+    └── Profile: acme.co.uk
+```
+
+#### Benefits of the hierarchy
+
+This structure enables:
+
+* Centralised management across multiple business units
+* Separate payment configurations for different products or regions
+* Consolidated reporting at the organisation level
+* Role-based access control across different levels
+
+#### Configuration isolation
+
+Each **business profile** maintains independent configurations, including:
+
+* Payment method configurations
+* Connector credentials
+* Routing rules
+* Webhook endpoints
+* API keys
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure)
+
+</details>
+
+<details>
+
+<summary>What roles and permissions are available for team management?</summary>
+
+Hyperswitch supports **role-based access control (RBAC)** for managing team access across organisations, merchants, and profiles.
+
+#### Predefined roles
+
+| Role               | Access Level | Capabilities                                        |
+| ------------------ | ------------ | --------------------------------------------------- |
+| Organisation Admin | Organisation | Full access across all merchants and profiles       |
+| Merchant Admin     | Merchant     | Full access across all profiles within the merchant |
+| Profile Admin      | Profile      | Full access to a specific business profile          |
+| Merchant Developer | Merchant     | Manage API keys and view analytics                  |
+| Profile Developer  | Profile      | Manage profile API keys and view analytics          |
+| Merchant Operator  | Merchant     | Manage operational workflows and view analytics     |
+| Profile Operator   | Profile      | Perform operational tasks within a profile          |
+| Customer Support   | Merchant     | View transactions and search payments               |
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
+
+</details>
