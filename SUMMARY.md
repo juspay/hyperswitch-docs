@@ -373,7 +373,7 @@
 
 * [Overview](connector-service/README.md)
 * [Architecture](connector-service/architecture/README.md)
-  * [Architecture Overview](connector-service/architecture/overview.md)
+  * [Architecture Overview](connector-service/architecture/architecture-overview.md)
 * [API Reference](connector-service/api-reference/README.md)
   * [Domain Schema](connector-service/api-reference/domain-schema/README.md)
   * [Payment Service](connector-service/api-reference/payment-service/README.md)
