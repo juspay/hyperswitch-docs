@@ -1404,3 +1404,370 @@ Source:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/self-hosted-orchestration-with-outsourced-pci-vault](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/self-hosted-orchestration-with-outsourced-pci-vault)
 
 </details>
+
+## 3DS & Authentication
+
+
+
+<details>
+
+<summary>What is the 3DS Decision Manager and how does it work?</summary>
+
+The Hyperswitch **3DS Decision Manager** is an authentication system that determines when to apply 3D Secure (3DS) during a payment transaction.
+
+It helps merchants balance fraud protection and conversion optimisation by deciding:
+
+* When to trigger 3DS authentication
+* When to request Strong Customer Authentication (SCA) exemptions
+* Which authentication flow to use
+
+#### Key capabilities
+
+**Intelligent 3DS routing**
+
+Determines whether 3DS should be triggered based on transaction risk, regulatory requirements, and merchant-configured rules.
+
+**Exemption management**
+
+Requests SCA exemptions where applicable.
+
+**Native 3DS support**
+
+Allows authentication flows to occur inside mobile apps without browser redirects.
+
+**External 3DS import**
+
+Supports importing authentication results from external 3DS providers.
+
+#### Decision factors
+
+The decision engine evaluates several parameters, including:
+
+* Transaction amount and currency
+* Customer device and location
+* Card issuer country and risk profile
+* Historical transaction patterns
+* Merchant-configured rules
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
+
+</details>
+
+<details>
+
+<summary>How do I configure 3DS exemption rules in Hyperswitch?</summary>
+
+Merchants can configure **3DS exemption rules** through the Hyperswitch Control Centre.
+
+Navigate to:
+
+Workflow → 3DS Exemption Rules
+
+Rules are defined using **conditions** and **outcomes**.
+
+#### Condition parameters
+
+Rules can be created using parameters such as:
+
+* Card network (Visa, Mastercard, Amex)
+* Issuer country
+* Transaction amount
+* Currency
+* Customer device type
+* Transaction type (CIT or MIT)
+
+#### Outcome options
+
+Each rule can specify one of the following outcomes:
+
+* Request 3DS exemption
+* Apply 3DS authentication
+* No preference (default behaviour)
+
+#### Example rules
+
+Example rule conditions include:
+
+* If issuer country is **France** and amount is greater than **€200**, set 3DS preference to **No Preference**
+* If card network is **Visa** and device type is **Android**, request a **3DS exemption**
+* If amount is **below €30**, request a **low-value exemption**
+
+#### Supported exemption types
+
+Hyperswitch supports exemption categories such as:
+
+* Low-value exemptions
+* Transaction Risk Analysis (TRA) exemptions
+* Merchant-initiated transaction exemptions
+* Recurring transaction exemptions
+
+Source:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
+
+</details>
+
+<details>
+
+<summary>How do I implement native 3DS authentication for mobile apps?</summary>
+
+Hyperswitch supports **native 3DS authentication** that allows customers to complete authentication within the mobile application instead of being redirected to a browser.
+
+#### Supported 3DS providers
+
+Native 3DS can be implemented using supported providers such as:
+
+* Netcetera
+* 3dsecure.io
+* Juspay native 3DS solution
+
+#### Android setup
+
+Add the Netcetera feature in the SDK configuration.
+
+Example configuration:
+
+```
+hyperswitch {
+    features = [HyperFeature.NETCETERA]
+}
+```
+
+The SDK manages the authentication flow inside the application.
+
+#### iOS setup
+
+For iOS:
+
+* Configure the 3DS provider during SDK initialisation
+* Handle authentication challenges directly inside the application
+
+#### Benefits of native 3DS
+
+Native authentication enables:
+
+* Frictionless flows with risk-based authentication
+* Native OTP experience instead of web views
+* In-app challenge handling without redirects
+* Improved checkout conversion
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments)\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/kotlin-with-rest-api-integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/kotlin-with-rest-api-integration)
+
+</details>
+
+<details>
+
+<summary>Which versions of 3D Secure does Hyperswitch support?</summary>
+
+Hyperswitch supports multiple versions of the **3D Secure protocol**.
+
+#### Supported versions
+
+| Version | Description       | Key features                              |
+| ------- | ----------------- | ----------------------------------------- |
+| 3DS 1.0 | Original protocol | Browser redirect flow, static passwords   |
+| 3DS 2.0 | Enhanced protocol | Risk-based authentication, mobile support |
+| 3DS 2.1 | Current standard  | SCA compliant, device data collection     |
+| 3DS 2.2 | Latest version    | Improved exemption support                |
+
+#### Version selection
+
+Hyperswitch automatically determines the appropriate version based on issuer capabilities.
+
+* If the issuer supports **3DS 2.x**, the newer protocol is used.
+* If the issuer does not support **3DS 2.x**, the system falls back to **3DS 1.0**.
+
+The protocol version is determined during authentication initiation with the card network.
+
+#### SCA compliance
+
+3DS 2.x protocols are compliant with **PSD2 Strong Customer Authentication (SCA)** requirements.
+
+Source:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)
+
+</details>
+
+<details>
+
+<summary>Can I import 3DS authentication results from an external provider?</summary>
+
+Yes. Hyperswitch allows merchants to import **3DS authentication results from external providers**.
+
+This is useful when authentication occurs outside Hyperswitch but the result needs to be used during payment processing.
+
+#### Example use cases
+
+* Authentication performed by the merchant’s 3DS provider
+* Pre-authenticated transactions from partner platforms
+* Migration of authenticated sessions from another system
+
+#### Implementation
+
+Include the external authentication data in the **Payments Create API request**.
+
+Example request:
+
+```
+"three_ds_data": {
+  "authentication_cryptogram": {
+    "cavv": {
+      "authentication_cryptogram": "3q2+78r+ur7erb7vyv66vv////8="
+    }
+  },
+  "ds_trans_id": "c4e59ceb-a382-4d6a-bc87-385d591fa09d",
+  "version": "2.1.0",
+  "eci": "05",
+  "transaction_status": "Y",
+  "exemption_indicator": "low_value"
+}
+```
+
+#### Required fields
+
+* `ds_trans_id` — Transaction ID from the external 3DS server
+* `authentication_value` (CAVV/AEV) — Cryptographic proof of authentication
+* `eci` — Electronic Commerce Indicator
+
+Source:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/import-3d-secure-results](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/import-3d-secure-results)
+
+</details>
+
+<details>
+
+<summary>How do I test 3DS flows in the sandbox environment?</summary>
+
+Hyperswitch provides several ways to test **3DS authentication flows** in the sandbox environment.
+
+#### Test card
+
+| Scenario    | Card number      |
+| ----------- | ---------------- |
+| 3DS success | 4000003800000446 |
+
+#### Testing approaches
+
+**1. Demo playground**
+
+You can test 3DS scenarios using the demo store:
+
+[https://demostore3ds.netlify.app/](https://demostore3ds.netlify.app/)
+
+**2. Control Centre configuration**
+
+Navigate to:
+
+Workflow → 3DS Exemption Rules
+
+Create test rules and run transactions to verify rule behaviour.
+
+**3. SDK testing**
+
+* Use the sandbox environment: `sandbox.hyperswitch.io`
+* Configure test 3DS providers
+* Test both redirect-based and native authentication flows
+
+#### Test scenarios
+
+Supported test scenarios include:
+
+* Frictionless authentication flow
+* Challenge flow with OTP
+* Biometric challenge flow
+* Exemption-based authentication
+* Failure scenarios
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
+
+</details>
+
+<details>
+
+<summary>How does 3DS authentication interact with payment routing decisions?</summary>
+
+In Hyperswitch, **3DS authentication and payment routing interact during transaction processing**.
+
+#### Pre-authentication routing
+
+Routing rules can consider 3DS requirements when selecting a processor.
+
+For example:
+
+* Some processors may support better 3DS pass-through rates.
+* Routing rules may prioritise processors that support certain exemption types.
+
+#### Post-authentication processing
+
+After authentication completes:
+
+* The payment is sent to the selected processor.
+* 3DS authentication data such as **CAVV** and **ECI** are included in the transaction request.
+
+#### Connector 3DS capabilities
+
+Connectors may handle authentication differently.
+
+Some processors:
+
+* Perform **3DS internally**
+
+Others:
+
+* Accept **external authentication data from Hyperswitch**
+
+Routing rules can be configured based on these capabilities.
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)
+
+</details>
+
+<details>
+
+<summary>How does Hyperswitch help with Strong Customer Authentication (SCA) compliance?</summary>
+
+Hyperswitch supports **Strong Customer Authentication (SCA)** requirements under the **PSD2 regulation** in the European Economic Area.
+
+#### SCA requirements
+
+SCA requires two of the following authentication factors:
+
+* Something the customer **knows** (password, PIN)
+* Something the customer **has** (mobile device, hardware token)
+* Something the customer **is** (biometric verification)
+
+#### Hyperswitch SCA features
+
+**3DS 2.x support**
+
+Hyperswitch supports 3DS versions 2.0, 2.1, and 2.2.
+
+**Exemption management**
+
+Supports exemptions including:
+
+* Low-value transactions
+* Transaction Risk Analysis (TRA)
+* Merchant-initiated transactions
+* Recurring transactions
+
+**3DS intelligence engine**
+
+Automatically determines when exemptions apply and applies merchant-defined rules.
+
+**Delegated authentication**
+
+Supports authentication performed by merchant systems or device-based biometrics.
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
+
+</details>
