@@ -1987,8 +1987,6 @@ Documentation:\
 
 ## Decline Codes & Error Handling
 
-
-
 <details>
 
 <summary>What do different decline codes mean (insufficient_funds, do_not_honor, etc.)?</summary>
@@ -2144,5 +2142,230 @@ Hyperswitch supports **role-based access control (RBAC)** for managing team acce
 
 Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team)
+
+</details>
+
+## Platform Overview
+
+<details>
+
+<summary>What is Juspay Hyperswitch and what does it offer?</summary>
+
+Juspay Hyperswitch is an **open-source payments platform** designed to simplify global payments for digital businesses.
+
+Built by Juspay, Hyperswitch is designed to handle high-scale payment processing infrastructure. The platform processes **over 300 million daily transactions** with an **annualised total payment value exceeding $1 trillion**.
+
+Hyperswitch provides two main solutions.
+
+#### Payments Suite
+
+An end-to-end orchestration layer that unifies payments across providers, networks, and channels.
+
+Capabilities include:
+
+* Unified checkout experiences
+* Dynamic payment routing
+* Retry mechanisms for failed transactions
+* Redundancy for payment reliability
+
+#### Payment Modules
+
+A modular set of payment capabilities that can be integrated individually depending on business needs.
+
+Available modules include:
+
+* Intelligent routing
+* Payment vault
+* Reconciliation
+* Cost observability
+* Smart retries
+* Alternative payment method widgets
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payments-modules](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules)\
+[https://docs.hyperswitch.io/about-hyperswitch/payment-suite](https://docs.hyperswitch.io/about-hyperswitch/payment-suite)
+
+</details>
+
+<details>
+
+<summary>What is payment orchestration?</summary>
+
+Payment orchestration is a platform approach used to manage multiple payment service providers and payment methods through a single system.
+
+It simplifies payment operations by providing a unified layer that coordinates payment processing across different providers.
+
+Payment orchestration supports multiple stages of the payment lifecycle, including:
+
+* Accepting payments from customers
+* Managing payouts
+* Processing recurring payments
+
+#### Key capabilities
+
+Payment orchestration platforms typically support:
+
+* Integration with multiple payment processors
+* Unified payment APIs
+* Smart routing across providers
+* Smart retries for failed transactions
+* 3DS authentication and Strong Customer Authentication
+* Fraud and risk management
+* Subscription payment management
+
+These capabilities allow businesses to manage complex payment infrastructures through a single integration.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration)
+
+</details>
+
+<details>
+
+<summary>How is Hyperswitch different from a PSP (payment service provider)?</summary>
+
+Hyperswitch is **not a payment service provider**.\
+It is a **payment orchestrator** that sits between the merchant and multiple PSPs.
+
+#### Key differences
+
+| Aspect         | PSP                                          | Hyperswitch                                        |
+| -------------- | -------------------------------------------- | -------------------------------------------------- |
+| Providers      | Single payment processor                     | Multiple processors through one integration        |
+| Vendor lock-in | Processor-specific tokens and infrastructure | Merchant-owned tokens through a neutral vault      |
+| Routing        | Limited routing capabilities                 | Dynamic routing across processors                  |
+| Integration    | Separate integration per PSP                 | Unified API across multiple processors             |
+| Operations     | Multiple PSP dashboards                      | Single Control Center for operations and analytics |
+
+Hyperswitch connects merchants to **multiple processors through a single integration**, allowing businesses to switch or combine providers without rebuilding payment infrastructure.
+
+</details>
+
+<details>
+
+<summary>How is Hyperswitch different from a payment processor?</summary>
+
+Hyperswitch is not a payment processor. It acts as a **payments switch** that routes transactions to multiple payment processors.
+
+#### Key differences
+
+| Aspect      | Payment Processor                                  | Hyperswitch                               |
+| ----------- | -------------------------------------------------- | ----------------------------------------- |
+| Function    | Executes transactions with card networks and banks | Routes transactions to optimal processors |
+| Coverage    | Single processor capabilities                      | Supports multiple processors              |
+| Latency     | Direct processing                                  | Adds minimal routing overhead (\~25ms)    |
+| Failover    | Single processor dependency                        | Automatic retries across processors       |
+| Integration | Processor-specific APIs                            | Unified schemas across processors         |
+
+Hyperswitch normalises processor APIs, error codes, and webhook formats into a unified interface.
+
+</details>
+
+<details>
+
+<summary>How is Hyperswitch different from a payment gateway?</summary>
+
+Hyperswitch differs from traditional payment gateways by providing a broader orchestration layer.
+
+#### Key differences
+
+| Aspect         | Payment Gateway                         | Hyperswitch                                   |
+| -------------- | --------------------------------------- | --------------------------------------------- |
+| Scope          | Single gateway connection to processors | Full payment orchestration platform           |
+| Integration    | Individual integrations required        | Connector-based integrations                  |
+| Routing        | Basic routing                           | Intelligent routing using multiple parameters |
+| Platform model | Proprietary systems                     | Open-source platform                          |
+| Architecture   | Monolithic                              | Modular architecture                          |
+
+Hyperswitch allows businesses to integrate only the components they need, such as routing, vault, or reconciliation modules.
+
+</details>
+
+## Deployment Options
+
+<details>
+
+<summary>What deployment options are available for Hyperswitch?</summary>
+
+Hyperswitch supports two primary deployment models: **SaaS (hosted)** and **self hosted (open source)**.\
+The deployment model determines how infrastructure, security, compliance, and operational responsibilities are managed.
+
+### SaaS (Hosted Deployment)
+
+The SaaS deployment model provides a hosted environment managed by Juspay.
+
+This option allows businesses to start accepting payments without managing infrastructure, security operations, or platform upgrades.
+
+#### Characteristics
+
+* Hosted infrastructure managed by Juspay
+* Ready to use Control Center environment
+* Faster onboarding and deployment
+* Managed upgrades and platform maintenance
+* Integrated monitoring and operational tooling
+
+#### Typical use cases
+
+* Businesses that want to integrate payments quickly
+* Teams that prefer managed infrastructure
+* Organisations that do not want to operate PCI compliant infrastructure
+
+### Self Hosted Deployment
+
+In the self hosted model, merchants deploy and operate Hyperswitch on their own infrastructure.
+
+This option provides greater control over infrastructure, data residency, and platform customisation.
+
+#### Deployment methods
+
+**Docker deployment**
+
+Run Hyperswitch locally using Docker Compose for development or small deployments.
+
+**Kubernetes deployment**
+
+Production deployments typically use Kubernetes with infrastructure tools such as:
+
+* AWS EKS
+* Terraform
+* Helm charts
+
+**Component level setup**
+
+The backend, Control Center, and SDK components can also be deployed independently depending on architecture requirements.
+
+#### Typical use cases
+
+* Organisations requiring full infrastructure control
+* Companies with internal platform teams
+* Businesses with strict data residency or compliance requirements
+
+### SaaS vs Self Hosted comparison
+
+| Factor                      | SaaS (Hosted)                         | Self Hosted                                                     |
+| --------------------------- | ------------------------------------- | --------------------------------------------------------------- |
+| Infrastructure management   | Managed by Juspay                     | Managed by merchant                                             |
+| Setup time                  | Minutes to hours                      | Hours to days depending on infrastructure                       |
+| Platform upgrades           | Managed automatically                 | Managed by merchant                                             |
+| Monitoring and reliability  | Managed by Juspay                     | Merchant responsible for monitoring and uptime                  |
+| Data residency              | Hosted in Juspay cloud infrastructure | Controlled by merchant                                          |
+| Customisation               | Limited to configuration              | Full platform customisation                                     |
+| Scaling                     | Managed automatically                 | Merchant responsible for scaling infrastructure                 |
+| PCI DSS responsibility      | Juspay maintains PCI DSS              | Merchant responsible for operating PCI compliant infrastructure |
+| Security operations         | Managed by Juspay security team       | Merchant responsible for security operations                    |
+| Operational overhead        | Low                                   | High                                                            |
+| Control over infrastructure | Limited                               | Full control                                                    |
+
+### Choosing the right deployment model
+
+Businesses typically choose the deployment model based on their operational needs.
+
+**SaaS deployment** is suited for organisations that want a managed payment infrastructure with minimal operational overhead.
+
+**Self hosted deployment** is suited for organisations that require full control over infrastructure, compliance management, and platform customisation.
+
+Documentation:\
+[https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker)\
+https://docs.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-hyperswitch
 
 </details>
