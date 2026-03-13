@@ -1838,7 +1838,7 @@ Documentation:\
 
 Yes. Hyperswitch allows routing transactions through specific connectors based on payment parameters.
 
-This is configured using the **Smart Router**.
+This is configured using the **Intelligent Routing**.
 
 #### Routing configuration types
 
@@ -1861,7 +1861,6 @@ Traffic can be distributed across processors using percentage-based routing.
 If no routing rule applies, Hyperswitch uses the configured priority order of processors.
 
 Documentation:\
-https://docs.hyperswitch.io/features/smart-router\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing)
 
