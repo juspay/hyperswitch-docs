@@ -1407,8 +1407,6 @@ Source:\
 
 ## 3DS & Authentication
 
-
-
 <details>
 
 <summary>What is the 3DS Decision Manager and how does it work?</summary>
@@ -1771,3 +1769,127 @@ Sources:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
 
 </details>
+
+## Payment Methods
+
+<details>
+
+<summary>What payment methods are available in different regions?</summary>
+
+Hyperswitch supports multiple payment method categories across different regions.
+
+The complete list of supported payment methods and processor integrations can be viewed here:
+
+[https://juspay.io/integrations](https://juspay.io/integrations)
+
+This page provides an overview of available payment methods and processors supported by Hyperswitch.
+
+</details>
+
+<details>
+
+<summary>How do I enable a new payment method for my account?</summary>
+
+To enable a new payment method in Hyperswitch, configure it through the **Connectors section** in the Control Centre.
+
+#### Steps
+
+**1. Access the connectors section**
+
+Navigate to the **Connectors** section in the Hyperswitch Control Centre:
+
+app.hyperswitch.io/connectors
+
+Select the desired connector and click **+ Connect**.
+
+**2. Configure connector credentials**
+
+Enter the authentication credentials from your payment processor dashboard.
+
+**3. Enable payment methods**
+
+Select the payment methods you want to enable for the connector from the payment methods configuration screen.
+
+**4. Configure webhooks (optional)**
+
+If the connector supports webhooks:
+
+* Copy the webhook URL from the Control Centre
+* Configure the webhook endpoint in the connector dashboard
+
+**5. Activate the connector**
+
+Once configuration is complete, enable the connector to start processing payments.
+
+#### Prerequisites
+
+* You must have an account with the payment processor.
+* You must have access to the Hyperswitch Control Centre.
+
+Sources:\
+[https://docs.hyperswitch.io/explore-hyperswitch/connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)\
+[https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch](https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch)
+
+</details>
+
+<details>
+
+<summary>Can I route specific payment methods through specific connectors?</summary>
+
+Yes. Hyperswitch allows routing transactions through specific connectors based on payment parameters.
+
+This is configured using the **Smart Router**.
+
+#### Routing configuration types
+
+**Rule-based routing**
+
+Routing rules can be configured based on parameters such as:
+
+* Payment method
+* Payment method type
+* Transaction amount
+* Currency
+* Customer country
+
+**Volume-based routing**
+
+Traffic can be distributed across processors using percentage-based routing.
+
+**Default fallback routing**
+
+If no routing rule applies, Hyperswitch uses the configured priority order of processors.
+
+Sources:\
+https://docs.hyperswitch.io/features/smart-router\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)\
+[https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing)
+
+</details>
+
+<details>
+
+<summary>How do I integrate Apple Pay, Google Pay, and other wallets?</summary>
+
+Integration guides for wallets are available in the Hyperswitch documentation.
+
+#### Wallet integration guides
+
+Apple Pay\
+[https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay](https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay)
+
+Google Pay\
+[https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay](https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay)
+
+PayPal\
+[https://docs.hyperswitch.io/explore-hyperswitch/wallets/paypal](https://docs.hyperswitch.io/explore-hyperswitch/wallets/paypal)
+
+If you would like to request support for additional wallets, you can raise a request in the Hyperswitch community.
+
+</details>
+
+
+
+***
+
+###
