@@ -1447,7 +1447,7 @@ The decision engine evaluates several parameters, including:
 * Historical transaction patterns
 * Merchant-configured rules
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
 
@@ -1501,7 +1501,7 @@ Hyperswitch supports exemption categories such as:
 * Merchant-initiated transaction exemptions
 * Recurring transaction exemptions
 
-Source:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
 
 </details>
@@ -1550,7 +1550,7 @@ Native authentication enables:
 * In-app challenge handling without redirects
 * Improved checkout conversion
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments)\
 [https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/kotlin-with-rest-api-integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/kotlin-with-rest-api-integration)
 
@@ -1584,7 +1584,7 @@ The protocol version is determined during authentication initiation with the car
 
 3DS 2.x protocols are compliant with **PSD2 Strong Customer Authentication (SCA)** requirements.
 
-Source:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)
 
 </details>
@@ -1630,7 +1630,7 @@ Example request:
 * `authentication_value` (CAVV/AEV) — Cryptographic proof of authentication
 * `eci` — Electronic Commerce Indicator
 
-Source:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/import-3d-secure-results](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/import-3d-secure-results)
 
 </details>
@@ -1679,7 +1679,7 @@ Supported test scenarios include:
 * Exemption-based authentication
 * Failure scenarios
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
 
@@ -1721,7 +1721,7 @@ Others:
 
 Routing rules can be configured based on these capabilities.
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)
 
@@ -1764,7 +1764,7 @@ Automatically determines when exemptions apply and applies merchant-defined rule
 
 Supports authentication performed by merchant systems or device-based biometrics.
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3ds-intelligence-engine)
 
@@ -1826,7 +1826,7 @@ Once configuration is complete, enable the connector to start processing payment
 * You must have an account with the payment processor.
 * You must have access to the Hyperswitch Control Centre.
 
-Sources:\
+Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/connectors](https://docs.hyperswitch.io/explore-hyperswitch/connectors)\
 [https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch](https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch)
 
@@ -1860,7 +1860,7 @@ Traffic can be distributed across processors using percentage-based routing.
 
 If no routing rule applies, Hyperswitch uses the configured priority order of processors.
 
-Sources:\
+Documentation:\
 https://docs.hyperswitch.io/features/smart-router\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing)
@@ -1888,8 +1888,100 @@ If you would like to request support for additional wallets, you can raise a req
 
 </details>
 
+## Refunds
 
+<details>
 
-***
+<summary>What happens when a refund fails?</summary>
 
-###
+When a refund fails, Hyperswitch sends a **`refund_failed` webhook event** to the configured webhook endpoint.
+
+#### Failure handling
+
+When a refund attempt fails:
+
+* The refund status is updated to **failed**
+* A webhook notification is sent with the failure details
+* The refund can be inspected using the Refunds Retrieve API
+* The failed refund appears in the **Payment Operations dashboard** for monitoring
+
+Hyperswitch uses **unified error handling**, which maps processor-specific errors into a consistent format.
+
+Documentation:\
+[https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks)\
+[https://docs.hyperswitch.io/explore-hyperswitch/connectors/payment-processor-capabilities](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payment-processor-capabilities)\
+[https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations)
+
+</details>
+
+<details>
+
+<summary>How long do refunds take to appear on customer statements?</summary>
+
+Refund timing depends on the **payment processor and card issuer**.
+
+In most cases, refunds typically appear on customer statements within:
+
+**5 to 14 business days**
+
+The exact timing may vary depending on:
+
+* The payment processor
+* The issuing bank
+* Card network processing timelines
+
+</details>
+
+<details>
+
+<summary>How do I track refund status and completion?</summary>
+
+Refund status can be tracked using several mechanisms.
+
+#### API polling
+
+You can retrieve the current refund status using the **Refunds Retrieve API** with the `refund_id`.
+
+Example:
+
+```
+GET /refunds/{refund_id}
+```
+
+#### Webhooks
+
+Refund status updates can be received through webhook notifications.
+
+Common events include:
+
+* `refund_succeeded`
+* `refund_failed`
+
+#### Control Centre
+
+Refund status can also be viewed in the **Payment Operations dashboard** within the Hyperswitch Control Centre.
+
+This dashboard provides visibility into refund history and status updates.
+
+Documentation:\
+[https://api-reference.hyperswitch.io/v1/refunds/refunds--retrieve#refunds-retrieve](https://api-reference.hyperswitch.io/v1/refunds/refunds--retrieve#refunds-retrieve)
+
+</details>
+
+<details>
+
+<summary>Can I issue multiple partial refunds for a single payment?</summary>
+
+Yes. Hyperswitch supports **multiple partial refunds for a single payment**.
+
+Each refund can be created by specifying a portion of the original payment amount.
+
+The **total refunded amount must not exceed the original payment value**.
+
+Each partial refund is processed as a separate refund operation linked to the original payment.
+
+Documentation:\
+[https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create)
+
+</details>
+
