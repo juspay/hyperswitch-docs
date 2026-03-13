@@ -76,7 +76,7 @@ grpcurl -H "x-connector: stripe" \
     "test_mode": true
   }' \
   localhost:8080 \
-  types.MerchantAuthenticationService/CreateSessionToken
+  ucs.v2.MerchantAuthenticationService/CreateSessionToken
 ```
 
 ### Response

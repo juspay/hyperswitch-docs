@@ -71,7 +71,7 @@ grpcurl -H "x-connector: stripe" \
     "dispute_id": "dp_1Oxxx..."
   }' \
   localhost:8080 \
-  types.DisputeService/Accept
+  ucs.v2.DisputeService/Accept
 ```
 
 ### Response

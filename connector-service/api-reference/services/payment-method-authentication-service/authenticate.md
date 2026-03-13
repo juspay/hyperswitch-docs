@@ -94,7 +94,7 @@ grpcurl -H "x-connector: stripe" \
     "return_url": "https://your-app.com/3ds/return"
   }' \
   localhost:8080 \
-  types.PaymentMethodAuthenticationService/Authenticate
+  ucs.v2.PaymentMethodAuthenticationService/Authenticate
 ```
 
 ### Response

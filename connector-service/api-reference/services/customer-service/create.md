@@ -86,7 +86,7 @@ grpcurl -H "x-connector: stripe" \
     "test_mode": true
   }' \
   localhost:8080 \
-  types.CustomerService/Create
+  ucs.v2.CustomerService/Create
 ```
 
 ### Response

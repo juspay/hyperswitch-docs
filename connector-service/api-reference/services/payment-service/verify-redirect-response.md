@@ -79,7 +79,7 @@ grpcurl -H "x-connector: stripe" \
     }
   }' \
   localhost:8080 \
-  types.PaymentService/VerifyRedirectResponse
+  ucs.v2.PaymentService/VerifyRedirectResponse
 ```
 
 ### Response

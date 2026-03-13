@@ -106,7 +106,7 @@ grpcurl -H "x-connector: stripe" \
     }
   }' \
   localhost:8080 \
-  types.PaymentMethodAuthenticationService/PreAuthenticate
+  ucs.v2.PaymentMethodAuthenticationService/PreAuthenticate
 ```
 
 ### Response (Frictionless)

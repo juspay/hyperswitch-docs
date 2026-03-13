@@ -101,7 +101,7 @@ grpcurl -H "x-connector: stripe" \
     }
   }' \
   localhost:8080 \
-  types.PaymentMethodAuthenticationService/PostAuthenticate
+  ucs.v2.PaymentMethodAuthenticationService/PostAuthenticate
 ```
 
 ### Response

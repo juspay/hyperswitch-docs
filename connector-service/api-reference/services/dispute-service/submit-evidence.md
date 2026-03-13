@@ -98,7 +98,7 @@ grpcurl -H "x-connector: stripe" \
     ]
   }' \
   localhost:8080 \
-  types.DisputeService/SubmitEvidence
+  ucs.v2.DisputeService/SubmitEvidence
 ```
 
 ### Response

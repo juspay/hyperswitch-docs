@@ -77,7 +77,7 @@ grpcurl -H "x-connector: stripe" \
     "reason": "Room service charges added"
   }' \
   localhost:8080 \
-  types.PaymentService/IncrementalAuthorization
+  ucs.v2.PaymentService/IncrementalAuthorization
 ```
 
 ### Response

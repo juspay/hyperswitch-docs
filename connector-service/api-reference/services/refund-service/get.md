@@ -83,7 +83,7 @@ grpcurl -H "x-connector: stripe" \
     "test_mode": true
   }' \
   localhost:8080 \
-  types.RefundService/Get
+  ucs.v2.RefundService/Get
 ```
 
 ### Response

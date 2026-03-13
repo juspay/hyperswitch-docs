@@ -72,7 +72,7 @@ grpcurl -H "x-connector: stripe" \
     "reason_code": "goods_services_received"
   }' \
   localhost:8080 \
-  types.DisputeService/Defend
+  ucs.v2.DisputeService/Defend
 ```
 
 ### Response

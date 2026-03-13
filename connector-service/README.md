@@ -350,9 +350,3 @@ Made with by [Juspay hyperswitch](https://hyperswitch.io)
 
 
 </div>
-
-## Test Sync
-This is a test to verify docs sync workflow.
-
-
-Test auto-trigger

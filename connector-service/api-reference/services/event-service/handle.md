@@ -103,7 +103,7 @@ grpcurl -H "x-connector: stripe" \
     }
   }' \
   localhost:8080 \
-  types.EventService/Handle
+  ucs.v2.EventService/Handle
 ```
 
 ### Response

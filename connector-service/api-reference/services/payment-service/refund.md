@@ -95,7 +95,7 @@ grpcurl -H "x-connector: stripe" \
     "test_mode": true
   }' \
   localhost:8080 \
-  types.PaymentService/Refund
+  ucs.v2.PaymentService/Refund
 ```
 
 ### Response

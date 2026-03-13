@@ -114,7 +114,7 @@ grpcurl -H "x-connector: stripe" \
     "test_mode": true
   }' \
   localhost:8080 \
-  types.RecurringPaymentService/Charge
+  ucs.v2.RecurringPaymentService/Charge
 ```
 
 ### Response (Success)
