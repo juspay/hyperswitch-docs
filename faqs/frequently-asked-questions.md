@@ -2152,7 +2152,7 @@ Documentation:\
 
 Juspay Hyperswitch is an **open-source payments platform** designed to simplify global payments for digital businesses.
 
-Built by Juspay, Hyperswitch is designed to handle high-scale payment processing infrastructure. The platform processes **over 300 million daily transactions** with an **annualised total payment value exceeding $1 trillion**.
+Built by Juspay, Hyperswitch is designed to handle high-scale payment processing infrastructure. [Juspay](https://juspay.io/) processes **over 300 million daily transactions** with an **annualised total payment value exceeding $1 trillion**.
 
 Hyperswitch provides two main solutions.
 
