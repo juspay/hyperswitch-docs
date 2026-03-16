@@ -3,6 +3,7 @@ description: >-
   This page is a central archive of Hyperswitch release notes. It summarises
   recent product updates.
 hidden: true
+noIndex: true
 ---
 
 # Release Notes

@@ -1,6 +1,7 @@
 ---
 description: All the payment use cases for SMEs
 hidden: true
+noIndex: true
 ---
 
 # 🪜 For small & medium enterprises

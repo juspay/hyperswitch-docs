@@ -1,6 +1,7 @@
 ---
 description: Hyperswitch plugins for the e-commerce platform you use
 hidden: true
+noIndex: true
 icon: plug-circle-bolt
 ---
 

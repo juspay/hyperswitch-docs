@@ -1,6 +1,7 @@
 ---
 description: All the payment use cases for enterprise merchants
 hidden: true
+noIndex: true
 ---
 
 # 🏢 For enterprises

@@ -1,6 +1,7 @@
 ---
 description: All the payment use-cases for B2B SaaS Businesses
 hidden: true
+noIndex: true
 icon: block-brick
 ---
 

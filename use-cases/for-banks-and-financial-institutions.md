@@ -1,5 +1,6 @@
 ---
 hidden: true
+noIndex: true
 icon: building-columns
 ---
 
@@ -40,7 +41,7 @@ Hyperswitch helps banks streamline operations, manage merchants, and improve pay
 
 Hyperswitch empowers banks to provide merchants with tools to improve customer experiences, simplify operations, and grow efficiently.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Payment Orchestration</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payment-orchestration">#payment-orchestration</a></td></tr><tr><td><mark style="color:blue;">Checkout Experience</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#checkout-experience">#checkout-experience</a></td></tr><tr><td><mark style="color:blue;">Security and Compliance</mark> </td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#security-and-compliance">#security-and-compliance</a></td></tr><tr><td><mark style="color:blue;">Simplified Operations</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#simplified-operations">#simplified-operations</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Payment Orchestration</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payment-orchestration">#payment-orchestration</a></td></tr><tr><td><mark style="color:blue;">Checkout Experience</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#checkout-experience">#checkout-experience</a></td></tr><tr><td><mark style="color:blue;">Security and Compliance</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#security-and-compliance">#security-and-compliance</a></td></tr><tr><td><mark style="color:blue;">Simplified Operations</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#simplified-operations">#simplified-operations</a></td></tr></tbody></table>
 
 #### Payment Orchestration
 
@@ -55,7 +56,7 @@ Hyperswitch empowers banks to provide merchants with tools to improve customer e
 #### Security and Compliance
 
 * [Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards): Ensure world-class security for customer and payment details with PCI-compliant tokenization, providing safe and secure storage with Hyperswitch Vault.
-* [Fully managed compliance](https://docs.hyperswitch.io/explore-hyperswitch/overview): Get rid of hassle of fulfilling the ever advancing compliance needs, enabling you to focus on your core business&#x20;
+* [Fully managed compliance](https://docs.hyperswitch.io/explore-hyperswitch/overview): Get rid of hassle of fulfilling the ever advancing compliance needs, enabling you to focus on your core business
 
 #### Simplified Operations
 
@@ -73,4 +74,3 @@ Hyperswitch offers a robust, scalable, and transparent platform to meet your pay
 {% content-ref url="../about-hyperswitch/roadmap/roadmap-q2-2025.md" %}
 [roadmap-q2-2025.md](../about-hyperswitch/roadmap/roadmap-q2-2025.md)
 {% endcontent-ref %}
-

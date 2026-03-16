@@ -1,6 +1,7 @@
 ---
 description: All the payment use cases for your online business
 hidden: true
+noIndex: true
 ---
 
 # 🛒 For online businesses

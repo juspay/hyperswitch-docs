@@ -1,6 +1,7 @@
 ---
 description: All the payment use-cases for e-commerce businesses
 hidden: true
+noIndex: true
 icon: buildings
 ---
 

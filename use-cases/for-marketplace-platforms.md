@@ -1,6 +1,7 @@
 ---
 description: All the payment use-cases for marketplace/platforms
 hidden: true
+noIndex: true
 icon: shop
 ---
 
