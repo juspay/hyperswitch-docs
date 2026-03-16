@@ -12,7 +12,9 @@ Integrate the Juspay Hyperswitch iOS SDK using CocoaPods. The SDK requires iOS 1
 
 1. Add the Hyperswitch SDK to your Podfile.
 
+```
 pod 'hyperswitch-sdk-ios'
+```
 
 2. Install dependencies.
 
