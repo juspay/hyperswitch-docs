@@ -1058,7 +1058,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/security-and-compliance/security
 
 </details>
 
-### Control Centre — Ops, Recon, Onboarding
+### Control Centre
 
 <details>
 
@@ -1079,7 +1079,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/security-and-compliance/security
 **Health check endpoint**
 
 ```
-curl http://localhost:8080/health/ready
+https://live.hyperswitch.io/api/health
 ```
 
 Verifies database connectivity, Redis connectivity, vault availability, analytics component health, and outgoing network connectivity.
@@ -1549,7 +1549,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and
 
 </details>
 
-### Revenue Recovery
+### Revenue Recovery & Refunds
 
 <details>
 
@@ -2496,7 +2496,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/au
 
 </details>
 
-### Extend Connectors — APMs, Fraud, New PSPs
+### Extend Connectors
 
 <details>
 
