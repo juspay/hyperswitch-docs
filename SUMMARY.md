@@ -41,6 +41,7 @@
 
 * [API reference](https://api-reference.hyperswitch.io/introduction)
 * [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
+* [Playground](https://hs-demo.netlify.app/?flow=automatic)
 
 ## Use-Cases
 
