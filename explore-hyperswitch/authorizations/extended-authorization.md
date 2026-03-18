@@ -1,7 +1,7 @@
 ---
 icon: square-tenge
+description: Implement extended authorization workflows to extend payment authorization windows for deferred capture.
 ---
-
 # Extended Authorization
 
 #### **Overview**

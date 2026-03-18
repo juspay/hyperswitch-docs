@@ -1,3 +1,6 @@
+---
+description: Understand Hyperswitch's system architecture and design principles for building scalable payment infrastructure using the storage configuration.
+---
 # Storage
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.

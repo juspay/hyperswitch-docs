@@ -1,7 +1,7 @@
 ---
 icon: box-ballot
+description: Set up self-hosted vault with in-house PCI compliance to maintain complete control over payment data storage.
 ---
-
 # Self-hosted & in-house PCI
 
 In this deployment, merchants self-host Hyperswitch and also manage their own PCI DSS compliance.

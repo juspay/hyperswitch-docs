@@ -1,7 +1,7 @@
 ---
 icon: layer-plus
+description: Hyperswitch provides seamless cross-platform payment integrations for both React Native and Flutter, enabling you to deliver a consistent payment expe.
 ---
-
 # Cross Platform
 
 Hyperswitch provides **seamless cross-platform payment integrations** for both **React Native** and **Flutter**, enabling you to deliver a consistent payment experience across iOS, Android, and Web.

@@ -1,11 +1,7 @@
 ---
-description: >-
-  Hyperswitch is designed to facilitate the integration and management of
-  payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your checkout UI.
+description: Develop cross-platform payment flows with Flutter SDK to enable consistent checkout experiences across iOS and Android using the headless configuration.
 icon: table-cells-large
 ---
-
 # Headless SDK
 
 ### Customize the payment experience using Headless functions

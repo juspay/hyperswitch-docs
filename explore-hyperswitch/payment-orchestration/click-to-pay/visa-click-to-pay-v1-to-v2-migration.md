@@ -1,11 +1,7 @@
 ---
-description: >-
-  Visa Click to Pay is evolving to provide a better checkout experience with
-  enhanced security features and improved performance. This guide will help you
-  migrate from V1 to V2 in less than 30 minutes.
+description: Learn about evolution from Click to Pay V1 to V2 represents a fundamental shift in digital payment capabilities, addressing key merchant and consumer pain poi.
 icon: cc-visa
 ---
-
 # Visa Click to Pay: V1 to V2 Migration
 
 The evolution from Click to Pay V1 to V2 represents a fundamental shift in digital payment capabilities, addressing key merchant and consumer pain points while setting new standards for security and user experience. V2 introduces significant architectural improvements and feature enhancements that align with the industry's movement toward passwordless authentication and seamless checkout experiences. This transformation comes at a crucial time when digital commerce demands both frictionless transactions and robust security measures.

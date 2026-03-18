@@ -1,8 +1,7 @@
 ---
-description: Jan '26 to March '26
+description: View the README roadmap to see upcoming features and development plans.
 icon: road
 ---
-
 # Roadmap - Q1 2026
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.

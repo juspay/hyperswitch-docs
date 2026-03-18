@@ -1,8 +1,7 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the deploy app server configuration.
 icon: server
 ---
-
 # Deploy app server
 
 {% hint style="info" %}

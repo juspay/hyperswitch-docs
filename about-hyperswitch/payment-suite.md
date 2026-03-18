@@ -2,8 +2,8 @@
 hidden: true
 noIndex: true
 icon: suitcase
+description: Configure payment suite in the Payment Suite to enable specific payment processing functionality.
 ---
-
 # Payment Suite
 
 Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:

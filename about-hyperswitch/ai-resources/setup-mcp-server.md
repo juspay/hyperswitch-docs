@@ -1,7 +1,7 @@
 ---
 icon: user-robot-xmarks
+description: Leverage AI resources and MCP servers to enhance payment operations with intelligent automation using the setup mcp server configuration.
 ---
-
 # Setup MCP Server
 
 {% hint style="danger" %}

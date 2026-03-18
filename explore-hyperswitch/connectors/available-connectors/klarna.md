@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Klarna via Hyperswitch
+description: Configure Klarna payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Klarna
 
 {% hint style="info" %}

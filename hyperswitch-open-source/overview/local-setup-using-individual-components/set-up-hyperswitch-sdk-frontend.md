@@ -1,7 +1,7 @@
 ---
 icon: desktop
+description: Configure the Hyperswitch frontend SDK locally to build and test checkout experiences.
 ---
-
 # SDK (Frontend)
 
 {% hint style="warning" %}

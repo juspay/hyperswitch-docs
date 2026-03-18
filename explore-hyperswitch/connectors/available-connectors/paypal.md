@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Paypal via Hyperswitch
+description: Configure Paypal payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Paypal
 
 {% hint style="info" %}

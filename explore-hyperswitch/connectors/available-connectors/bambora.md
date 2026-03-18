@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Bambora via Hyperswitch
+description: Configure Bambora payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Bambora
 
 {% hint style="info" %}

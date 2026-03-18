@@ -1,7 +1,6 @@
 ---
-description: Set up Samsung pay on your application
+description: Enable digital wallet payments to offer customers fast, secure checkout options like Apple Pay and Google Pay.
 ---
-
 # Samsung Pay
 
 Samsung Pay is a secure and convenient payment solution that allows customers to make payments using their Samsung devices. By adding credit, debit, or loyalty cards to the Samsung Pay app, users can complete transactions with a tap on NFC-enabled terminals or even on older magnetic stripe terminals using MST (Magnetic Secure Transmission) technology.

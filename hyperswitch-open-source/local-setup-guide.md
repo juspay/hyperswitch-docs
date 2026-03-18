@@ -2,8 +2,8 @@
 hidden: true
 noIndex: true
 icon: desktop
+description: Follow the local setup guide to run Hyperswitch with Docker for development and testing.
 ---
-
 # Local Setup Guide
 
 ## Setup Options -

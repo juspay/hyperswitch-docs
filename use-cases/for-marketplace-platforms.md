@@ -1,10 +1,9 @@
 ---
-description: All the payment use-cases for marketplace/platforms
+description: Build marketplace payment flows with split payments, vendor payouts, and platform commission handling.
 hidden: true
 noIndex: true
 icon: shop
 ---
-
 # For Marketplace/Platforms
 
 Hyperswitch provides a powerful and adaptable payment infrastructure designed to handle the complexities of multi-party transaction flows in marketplace and platform environments.

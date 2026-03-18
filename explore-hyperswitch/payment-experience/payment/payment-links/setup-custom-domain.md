@@ -1,7 +1,6 @@
 ---
-description: Setup custom domains
+description: A custom domain name can be used for payment links.
 ---
-
 # Setup Custom Domain
 
 A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.

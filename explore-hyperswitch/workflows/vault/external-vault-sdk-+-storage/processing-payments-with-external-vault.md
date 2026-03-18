@@ -1,7 +1,7 @@
 ---
 icon: money-bill-wave
+description: Connect external vault SDKs to Hyperswitch to use third-party tokenization services using the processing payments with external vault configuration.
 ---
-
 # Processing payments with external vault
 
 

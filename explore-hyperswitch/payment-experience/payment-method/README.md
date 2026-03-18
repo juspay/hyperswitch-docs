@@ -1,7 +1,7 @@
 ---
 icon: arrow-progress
+description: Learn about payment method management with support for cards, wallets, and alternative payment methods.
 ---
-
 # Payment Method
 
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

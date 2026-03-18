@@ -1,7 +1,7 @@
 ---
 icon: server
+description: ### Create a payment using S2S Call.
 ---
-
 # Server Setup
 
 ### Create a payment using S2S Call

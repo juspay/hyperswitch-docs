@@ -1,7 +1,6 @@
 ---
-description: Use Docker to set up Hyperswitch app server
+description: Let's hit the ground running – in the first fifteen minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment v.
 ---
-
 # 🐳 Run Hyperswitch
 
 {% hint style="info" %}

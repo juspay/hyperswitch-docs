@@ -1,3 +1,6 @@
+---
+description: In reconciliation, status is the fastest way to understand what’s happening to your data — from file upload to posted ledger transactions.
+---
 # Statuses in Reconciliation
 
 In reconciliation, **status** is the fastest way to understand what’s happening to your data — from file upload to posted ledger transactions.\

@@ -1,7 +1,7 @@
 ---
 icon: cubes-stacked
+description: Set up multi-tenant architecture to support multiple merchants or business units within a single Hyperswitch deployment.
 ---
-
 # Multi-Tenancy
 
 ## What is Multi-Tenancy?

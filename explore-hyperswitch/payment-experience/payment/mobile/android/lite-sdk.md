@@ -1,8 +1,7 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Configure the Lite SDK for Android to enable lightweight mobile payment processing.
 icon: mobile-screen
 ---
-
 # Lite SDK
 
 ## Key Features of Lite SDK

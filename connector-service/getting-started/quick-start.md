@@ -1,3 +1,6 @@
+---
+description: Follow the quick start guide to implement your first Connector Service API integration within minutes.
+---
 # Quick Start
 
 ---

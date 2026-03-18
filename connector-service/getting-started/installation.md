@@ -1,3 +1,6 @@
+---
+description: Install Connector Service SDKs for Node.js, Java, Python, or Rust to begin payment integration.
+---
 # Installation
 
 ---

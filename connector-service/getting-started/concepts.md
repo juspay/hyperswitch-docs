@@ -1,3 +1,6 @@
+---
+description: Learn Connector Service core concepts including payments, mandates, and unified schema architecture.
+---
 # Core Concepts
 
 ---

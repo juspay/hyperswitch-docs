@@ -1,8 +1,7 @@
 ---
-description: Accept debit and credit card payments on your application
+description: Configure card payment processing to accept credit and debit card payments from major networks like Visa and Mastercard.
 icon: credit-card
 ---
-
 # Cards
 
 ![logo\_discord](https://hyperswitch.io/logos/logo_diners.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_visa.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_mastercard.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_amex.svg)

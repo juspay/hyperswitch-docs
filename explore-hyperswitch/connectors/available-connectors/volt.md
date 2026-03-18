@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Volt via Hyperswitch
+description: Configure Volt payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Volt
 
 {% hint style="info" %}

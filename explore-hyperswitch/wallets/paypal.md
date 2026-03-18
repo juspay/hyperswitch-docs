@@ -1,8 +1,7 @@
 ---
-description: Setup PayPal on your application
+description: Paypal is a digital wallet that lets customers load balance onto the wallet and as well as save their cards for quicker one-touch checkout.
 icon: paypal
 ---
-
 # PayPal
 
 Paypal is a digital wallet that lets customers load balance onto the wallet and as well as save their cards for quicker one-touch checkout. Paypal currently supports 200+ countries and 25 currencies.

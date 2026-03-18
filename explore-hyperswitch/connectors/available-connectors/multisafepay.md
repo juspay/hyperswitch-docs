@@ -1,8 +1,7 @@
 ---
-description: Accept payments through MultiSafepay via Hyperswitch
+description: Configure Multisafepay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # MultiSafepay
 
 {% hint style="info" %}

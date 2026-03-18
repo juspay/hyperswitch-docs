@@ -1,7 +1,7 @@
 ---
 icon: file-invoice-dollar
+description: Explore flexible payment processing patterns including one-time payments, saved methods, and recurring billing.
 ---
-
 # Payment
 
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

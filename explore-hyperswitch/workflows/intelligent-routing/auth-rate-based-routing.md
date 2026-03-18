@@ -1,7 +1,7 @@
 ---
 icon: badge-check
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the auth rate based routing configuration.
 ---
-
 # Auth Rate Based Routing
 
 ### How does it work?

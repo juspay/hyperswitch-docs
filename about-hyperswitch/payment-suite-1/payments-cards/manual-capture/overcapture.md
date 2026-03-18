@@ -1,7 +1,7 @@
 ---
 icon: chart-diagram
+description: Configure overcapture protection in the Payment Suite to prevent capturing more than authorized amounts.
 ---
-
 # Overcapture
 
 ### Overview

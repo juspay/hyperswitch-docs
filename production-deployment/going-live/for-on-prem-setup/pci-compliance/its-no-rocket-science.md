@@ -1,8 +1,7 @@
 ---
-description: Demystifying PCI compliance and it's requirements
+description: In this chapter, we will look at the levels of PCI compliance, key requirements and we will understand why it is not as complex as it seems to be to o.
 icon: cake-slice
 ---
-
 # Get started
 
 {% hint style="info" %}

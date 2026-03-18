@@ -1,3 +1,6 @@
+---
+description: * Hyperswitch forwards the encrypted Apple Pay token to the connector.
+---
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this model:

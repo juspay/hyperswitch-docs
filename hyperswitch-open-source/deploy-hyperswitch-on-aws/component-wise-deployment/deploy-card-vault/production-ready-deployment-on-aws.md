@@ -1,7 +1,6 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the production ready deployment on aws configuration.
 ---
-
 # Production ready deployment on AWS
 
 {% hint style="info" %}

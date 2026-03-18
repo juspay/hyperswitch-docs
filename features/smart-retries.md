@@ -1,7 +1,6 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: This section covers how smart retries function, the supported payment processors, and how to enable it.
 ---
-
 # 🔃 Smart retries
 
 {% hint style="info" %}

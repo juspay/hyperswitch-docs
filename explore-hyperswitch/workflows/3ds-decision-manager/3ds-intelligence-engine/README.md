@@ -1,10 +1,7 @@
 ---
-description: >-
-  Use Rules and SCA exemptions to reduce cardholder friction on eligible
-  transactions
+description: Configure the 3DS Intelligence Engine to apply smart rules and exemptions for authentication using the README configuration.
 icon: chart-simple-horizontal
 ---
-
 # 3DS Intelligence Engine
 
 The **Juspay 3DS Intelligence Engine** is an advanced, data-driven decisioning system that enables merchants to optimize their authentication workflows. The 3DS intelligence engine performs a multi-faceted analysis of historical and real-time data, including authentication results, authorization outcomes, fraud signals, and chargeback information to determine the best route for each authentication request.

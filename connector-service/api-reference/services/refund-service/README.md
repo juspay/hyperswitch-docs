@@ -1,3 +1,6 @@
+---
+description: Process refunds through Refund Service API to return funds to customers for cancelled or disputed transactions using the README configuration.
+---
 # Refund Service
 
 <!--

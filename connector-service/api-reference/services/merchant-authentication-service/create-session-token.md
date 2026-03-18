@@ -1,3 +1,6 @@
+---
+description: Access create session token Connector Service documentation to implement specific payment integration features.
+---
 # CreateSessionToken RPC
 
 <!--

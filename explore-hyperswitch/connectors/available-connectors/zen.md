@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Zen via Hyperswitch
+description: Configure Zen payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Zen
 
 {% hint style="info" %}

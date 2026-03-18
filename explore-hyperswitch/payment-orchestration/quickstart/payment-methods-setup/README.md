@@ -1,8 +1,7 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: Learn about checkout page marks the final step of a customer's exploration on your website or app, and the payment methods presented at this juncture can dete.
 icon: credit-card
 ---
-
 # Setup Payment Methods
 
 The checkout page marks the final step of a customer's exploration on your website or app, and the payment methods presented at this juncture can determine whether the experience is smooth and seamless or poses a potential obstacle.

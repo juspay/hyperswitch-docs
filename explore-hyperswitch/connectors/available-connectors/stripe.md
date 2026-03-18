@@ -1,7 +1,6 @@
 ---
-description: Accept payments through Stripe via Hyperswitch
+description: Configure Stripe payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 ---
-
 # Stripe
 
 {% hint style="info" %}

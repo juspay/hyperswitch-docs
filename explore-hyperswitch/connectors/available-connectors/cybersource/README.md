@@ -1,7 +1,6 @@
 ---
-description: Accept payments through Cybersource via Hyperswitch
+description: Configure CyberSource connector to process payments through the CyberSource payment gateway.
 ---
-
 # Cybersource
 
 {% hint style="info" %}

@@ -1,7 +1,7 @@
 ---
 icon: apple
+description: Learn to configure iOS to enhance your payment processing capabilities using the ios configuration.
 ---
-
 # iOS
 
 ### Configuration

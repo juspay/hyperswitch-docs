@@ -1,7 +1,7 @@
 ---
 icon: laptop
+description: Run the Hyperswitch Control Center locally to manage payments through the admin dashboard.
 ---
-
 # Control Center
 
 {% hint style="warning" %}

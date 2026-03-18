@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Checkout via Hyperswitch
+description: Configure Checkout payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Checkout
 
 {% hint style="info" %}

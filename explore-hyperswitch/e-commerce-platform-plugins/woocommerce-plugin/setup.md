@@ -1,7 +1,6 @@
 ---
-description: WooCommerce Plugin Setup
+description: Integrate Hyperswitch with WooCommerce to add payment processing to your WordPress store using the setup configuration.
 ---
-
 # Setup
 
 {% hint style="info" %}

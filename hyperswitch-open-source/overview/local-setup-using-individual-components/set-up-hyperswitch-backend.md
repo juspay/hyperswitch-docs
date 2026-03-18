@@ -1,7 +1,7 @@
 ---
 icon: server
+description: Set up the Hyperswitch backend locally to run the core payment processing API using the set up hyperswitch backend configuration.
 ---
-
 # Backend
 
 {% hint style="warning" %}

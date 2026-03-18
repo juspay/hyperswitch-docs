@@ -1,3 +1,6 @@
+---
+description: View the reconciliation module roadmap to see upcoming enhancements for payment reconciliation.
+---
 # Roadmap
 
 #### **AI-Driven Exception Handling**

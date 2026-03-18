@@ -1,10 +1,7 @@
 ---
-description: >-
-  Create multiple merchant accounts, profiles and users for seamless integration
-  with your business.
+description: If there are more than one `businessprofiles` for a merchant account, then passing `profileid` when creating a payment is mandatory.
 icon: file-user
 ---
-
 # Managing Accounts and Profiles
 
 {% hint style="warning" %}

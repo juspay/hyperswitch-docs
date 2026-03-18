@@ -1,7 +1,7 @@
 ---
 icon: hexagon-xmark
+description: Configure split payment settlements to distribute funds between multiple parties for marketplace and platform business models using the xendit split payments configuration.
 ---
-
 # Xendit Split Settlement
 
 ### Overview

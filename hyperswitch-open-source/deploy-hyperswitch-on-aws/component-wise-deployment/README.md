@@ -1,8 +1,7 @@
 ---
-description: Deploy each Hyperswitch component individually
+description: Overview of component-wise AWS deployment to deploy Hyperswitch app server, control center, web client, and card vault independently.
 icon: list-ol
 ---
-
 # Component-wise Deployment
 
 To deploy Hyperswitch components individually on AWS, follow the outlined steps for each component. This approach allows for tailored configurations and scaling based on specific requirements.​

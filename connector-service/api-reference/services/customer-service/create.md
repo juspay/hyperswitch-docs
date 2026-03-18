@@ -1,3 +1,6 @@
+---
+description: Manage customer profiles through Customer Service API to store payment preferences and transaction history using the create configuration.
+---
 # Create RPC
 
 <!--

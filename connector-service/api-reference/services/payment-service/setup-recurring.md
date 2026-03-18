@@ -1,3 +1,6 @@
+---
+description: Configure recurring payment setups through the API to establish subscription billing agreements.
+---
 # SetupRecurring RPC
 
 <!--

@@ -1,7 +1,6 @@
 ---
-description: Deploy web client on AWS
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the production ready deployment configuration.
 ---
-
 # Production ready deployment
 
 {% hint style="info" %}

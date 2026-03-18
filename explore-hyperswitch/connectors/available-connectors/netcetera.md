@@ -1,7 +1,6 @@
 ---
-description: Payments authentication through Netcetera via Hyperswitch
+description: Configure Netcetera payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 ---
-
 # Netcetera
 
 <div align="left"><figure><img src="../../../.gitbook/assets/Screenshot 2024-07-05 at 1.27.28 PM.png" alt="" width="201"><figcaption></figcaption></figure></div>

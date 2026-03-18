@@ -1,8 +1,7 @@
 ---
-description: Use Rules to reduce cardholder friction on transactions
+description: Configure the 3DS Intelligence Engine to apply smart rules and exemptions for authentication using the get started with 3ds decision manager configuration.
 icon: screwdriver-wrench
 ---
-
 # 3DS Decision Manager
 
 {% hint style="warning" %}

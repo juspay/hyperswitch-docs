@@ -1,7 +1,7 @@
 ---
 icon: diamonds-4
+description: Set up README locally with Docker for development and testing.
 ---
-
 # Development Environment Setup
 
 {% hint style="warning" %}

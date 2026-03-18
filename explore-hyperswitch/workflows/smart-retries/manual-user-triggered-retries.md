@@ -1,7 +1,7 @@
 ---
 icon: person-walking-arrow-loop-left
+description: Configure smart retry rules to automatically recover failed payments and boost authorization rates across processors using the manual user triggered retries configuration.
 ---
-
 # Manual/User triggered Retries
 
 ### Overview

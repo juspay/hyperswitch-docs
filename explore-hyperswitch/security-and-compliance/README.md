@@ -1,10 +1,7 @@
 ---
-description: >-
-  A brief summary of Hyperswitch infrastructure ensuring compliance and data
-  privacy
+description: Implement security measures and compliance controls to protect payment data and meet regulatory requirements using the README configuration.
 icon: arrow-down-up-lock
 ---
-
 # Security and Compliance
 
 At Hyperswitch, we redefine how businesses handle payments by delivering secure, reliable, and scalable solutions tailored to your unique needs. Whether you're managing subscriptions, running a global marketplace, or scaling your e-commerce platform, Hyperswitch empowers you to optimize payments and grow with confidence.

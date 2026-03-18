@@ -1,3 +1,6 @@
+---
+description: Learn about capacity is defined in terms of RPS or Requests per second.
+---
 # System Requirements
 
 ### **Hardware**

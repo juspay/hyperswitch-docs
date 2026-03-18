@@ -1,8 +1,7 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Activate and test payment connectors to validate integrations before processing live transactions using the README configuration.
 icon: chart-network
 ---
-
 # Activate Connector on Hyperswitch
 
 ### Steps to activate connector on the Hyperswitch Control Center

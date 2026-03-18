@@ -1,8 +1,7 @@
 ---
-description: A brief summary of measures taken at Hyperswitch to ensure GDPR compliance
+description: Ensure GDPR compliance with data protection measures and privacy controls for handling customer information.
 icon: compact-disc
 ---
-
 # GDPR compliance
 
 The[ General Data Protection Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679) (GDPR) lays out the definition of Data Controller, Data Processor and Data Subject as below:

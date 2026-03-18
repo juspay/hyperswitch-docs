@@ -1,7 +1,6 @@
 ---
-description: Payment Links & Theme Customization Guide
+description: Learn to configure Theme configurations Guide to enhance your payment processing capabilities.
 ---
-
 # Theme configurations Guide
 
 ## **1. Understanding Style IDs**

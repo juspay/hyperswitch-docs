@@ -1,10 +1,9 @@
 ---
-description: All the payment use-cases for B2B SaaS Businesses
+description: Implement payment solutions for SaaS businesses to handle subscriptions, usage-based billing, and multi-tenancy using the for b2b saas businesses configuration.
 hidden: true
 noIndex: true
 icon: block-brick
 ---
-
 # For B2B SaaS Businesses
 
 Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.

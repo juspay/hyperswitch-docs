@@ -1,11 +1,8 @@
 ---
-description: >-
-  Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
-  merchants
+description: Configure server-to-server vault tokenization to programmatically store payment methods via API calls.
 hidden: true
 icon: server
 ---
-
 # Server to Server Vault tokenization
 
 ### Secure, Direct Card Tokenization from Your Server

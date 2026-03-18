@@ -1,10 +1,7 @@
 ---
-description: >-
-  Test payments through CLI version of Postman, Newman which resides in a Rust
-  wrapper called as Rustman
+description: ### Test payments through Newman wrapped in Rust.
 icon: stethoscope
 ---
-
 # Testing Payments
 
 ### Test payments through Newman wrapped in Rust

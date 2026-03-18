@@ -1,9 +1,6 @@
 ---
-description: >-
-  Account Verification and Payment Initiation Services using open banking
-  providers
+description: Set up bank transfer and redirect payment methods to accept direct bank payments and account-based transactions using the open banking configuration.
 ---
-
 # Open Banking
 
 ### Overview

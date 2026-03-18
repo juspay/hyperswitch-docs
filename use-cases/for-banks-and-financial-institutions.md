@@ -2,8 +2,8 @@
 hidden: true
 noIndex: true
 icon: building-columns
+description: Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whet.
 ---
-
 # For Banks & Financial Institutions
 
 Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.

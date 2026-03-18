@@ -1,3 +1,6 @@
+---
+description: ### Mapping Hyperswitch Org/Merchant/Profile to Recon.
+---
 # Merchant & Profile Mapping in Recon
 
 ### Mapping Hyperswitch Org/Merchant/Profile to Recon

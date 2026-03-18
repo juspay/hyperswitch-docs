@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Mollie via Hyperswitch
+description: Configure Mollie payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Mollie
 
 {% hint style="info" %}

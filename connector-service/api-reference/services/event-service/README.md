@@ -1,3 +1,6 @@
+---
+description: Use the Event Service API to handle webhooks and payment event notifications from multiple processors.
+---
 # Event Service
 
 <!--

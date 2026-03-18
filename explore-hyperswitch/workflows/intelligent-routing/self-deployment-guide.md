@@ -1,7 +1,7 @@
 ---
 icon: screwdriver-wrench
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the self deployment guide configuration.
 ---
-
 # Self-Deployment Guide
 
 ### Self Deploy and integrate it with your existing orchestrator&#x20;

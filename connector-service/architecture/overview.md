@@ -1,3 +1,6 @@
+---
+description: Understand Connector Service architecture and design patterns for building payment integrations using the overview configuration.
+---
 # Architecture Overview
 
 ## <!--

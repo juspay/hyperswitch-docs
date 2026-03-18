@@ -1,7 +1,6 @@
 ---
-description: Surcharge Manager Setup
+description: Configure dynamic surcharging rules to pass payment processing fees to customers based on payment method and region using the surcharge setup guide configuration.
 ---
-
 # Surcharge Setup guide
 
 {% hint style="info" %}

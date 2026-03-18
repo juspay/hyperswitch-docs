@@ -1,8 +1,7 @@
 ---
-description: iOS Unified Checkout Customization
+description: Customize the iOS SDK appearance and behavior to create seamless branded checkout experiences in iOS apps.
 icon: bars-progress
 ---
-
 # Customization
 
 {% hint style="info" %}

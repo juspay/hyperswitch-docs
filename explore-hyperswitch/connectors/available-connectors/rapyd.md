@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Rapyd via Hyperswitch
+description: Configure Rapyd payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Rapyd
 
 {% hint style="info" %}

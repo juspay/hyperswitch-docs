@@ -1,8 +1,7 @@
 ---
-description: Learn about integration options for accepting payments online.
+description: Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch.
 icon: sidebar-flip
 ---
-
 # Payment Experience
 
 Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements

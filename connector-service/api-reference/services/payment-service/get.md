@@ -1,3 +1,6 @@
+---
+description: Use Payment Service API get to manage specific payment operations.
+---
 # Get RPC
 
 <!--

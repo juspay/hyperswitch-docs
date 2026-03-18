@@ -1,10 +1,7 @@
 ---
-description: >-
-  Integrate with more than 200+ Connectors enabling 150+ payment methods with
-  zero development effort.
+description: Connectors are integrations that allow Hyperswitch to talk to external payment services such as PSPs, Acquirers, APMshttps://docs.
 icon: plug
 ---
-
 # Connectors Integration
 
 ### Overview

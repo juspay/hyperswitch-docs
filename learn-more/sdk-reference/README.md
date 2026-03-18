@@ -1,8 +1,7 @@
 ---
-description: SDK method details
+description: Access SDK API reference documentation for detailed method signatures and implementation guidance using the README configuration.
 icon: chart-candlestick
 ---
-
 # SDK Reference
 
 ​Hyperswitch provides frontend integration solutions through SDKs tailored for various frameworks, including React and JavaScript. These SDKs come with pre-built support for the frameworks used in your application, eliminating the need for additional code to ensure compatibility. The following documentation offers detailed information on the APIs of these SDKs, outlining their methods and purposes:​

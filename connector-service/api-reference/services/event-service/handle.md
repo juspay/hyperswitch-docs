@@ -1,3 +1,6 @@
+---
+description: Access handle Connector Service documentation to implement specific payment integration features.
+---
 # Handle RPC
 
 <!--

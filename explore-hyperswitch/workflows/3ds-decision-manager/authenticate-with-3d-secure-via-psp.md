@@ -1,7 +1,7 @@
 ---
 icon: rotate-exclamation
+description: Configure 3DS authentication through payment service providers to leverage existing 3DS infrastructure.
 ---
-
 # Authenticate with 3D Secure via PSP
 
 You can integrate 3D Secure (3DS) authentication into your checkout flow on multiple platforms, including Web, iOS, Android, and React Native. The most basic form of invoking a 3DS is via the payment provider (PSP) through which the transaction is being processed. This ties the transaction to that PSP and any subsequent retries of transaction with a different payment provider would need to re-invoke 3DS

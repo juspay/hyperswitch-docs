@@ -1,8 +1,7 @@
 ---
-description: Node to access the Hyperswitch API
+description: Access SDK API reference documentation for detailed method signatures and implementation guidance using the node configuration.
 hidden: true
 ---
-
 # Node
 
 {% hint style="info" %}

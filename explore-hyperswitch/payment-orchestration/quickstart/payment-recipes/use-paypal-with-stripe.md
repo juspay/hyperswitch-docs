@@ -1,7 +1,6 @@
 ---
-description: 'Payment Recipe #1'
+description: This section will highlight the benefits of complementing your Stripe integration with Paypal.
 ---
-
 # Use PayPal With Stripe
 
 {% hint style="info" %}

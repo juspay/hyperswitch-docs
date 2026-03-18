@@ -1,7 +1,6 @@
 ---
-description: Migrate from Stripe on your web app
+description: Migrate from Stripe on your web app in less than 15 mins!.
 ---
-
 # Web
 
 {% hint style="info" %}

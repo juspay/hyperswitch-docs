@@ -1,7 +1,7 @@
 ---
 icon: mobile-screen
+description: Configure the Lite SDK for iOS to enable lightweight payment processing with minimal footprint.
 ---
-
 # Lite SDK
 
 ## Key Features of Lite SDK

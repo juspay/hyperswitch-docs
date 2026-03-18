@@ -1,9 +1,8 @@
 ---
-description: Get started integrating the Hyperswitch web client in your app
+description: Learn to configure Customizable and Native Integrations to enhance your payment processing capabilities.
 hidden: true
 icon: puzzle-piece
 ---
-
 # Customizable and Native Integrations
 
 ## How to get started?

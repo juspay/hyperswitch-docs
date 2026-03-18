@@ -1,8 +1,7 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Set up your Hyperswitch account and configure payment connectors to start processing transactions using the README configuration.
 icon: wrench
 ---
-
 # Account setup
 
 This guide is aimed at helping you create a Hyperswitch account and create payment processors as per your requirement. You can choose any of the following methods for this:

@@ -1,8 +1,7 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Implement payment solutions for SaaS businesses to handle subscriptions, usage-based billing, and multi-tenancy using the saas platforms configuration.
 icon: desktop
 ---
-
 # SaaS Platforms
 
 ### TL;DR

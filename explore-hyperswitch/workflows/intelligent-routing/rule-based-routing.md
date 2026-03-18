@@ -1,10 +1,7 @@
 ---
-description: >-
-  Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the rule based routing configuration.
 icon: ruler
 ---
-
 # Rule Based Routing
 
 {% embed url="https://youtu.be/Zs6H1vAKTJM" %}

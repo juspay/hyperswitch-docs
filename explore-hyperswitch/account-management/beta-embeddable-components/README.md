@@ -1,7 +1,7 @@
 ---
 icon: laptop-code
+description: As a SaaS platform or marketplace, your value lies in your core product, not in rebuilding payment setting screens.
 ---
-
 # Embeddable Components
 
 #### Introduction

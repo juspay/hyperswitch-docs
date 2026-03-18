@@ -1,9 +1,8 @@
 ---
-description: Make recurring payments across processors
+description: Implement tokenization to securely store payment methods and enable one-click checkout for returning customers using the pg agnostic recurring payments configuration.
 hidden: true
 icon: arrows-repeat
 ---
-
 # PG Agnostic Card Forwarding
 
 ### How does PG agnostic MITs work?

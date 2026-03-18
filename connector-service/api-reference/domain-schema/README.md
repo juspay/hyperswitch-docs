@@ -1,3 +1,6 @@
+---
+description: Explore the Connector Service domain schema definitions for unified payment data structures.
+---
 # Domain Schema
 
 <!--

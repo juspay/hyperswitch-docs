@@ -1,7 +1,6 @@
 ---
-description: Secure payment links
+description: Secure payment links are those embedded within the iframe of a trusted domain.
 ---
-
 # Secure Payment Links
 
 Secure payment links are those embedded within the iframe of a trusted domain. These links cannot be directly opened in a browser tab and are designed to provide a safe environment for users to view and save their payment methods.

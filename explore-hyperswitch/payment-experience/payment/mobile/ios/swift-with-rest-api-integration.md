@@ -1,8 +1,7 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: Implement iOS payment processing with Swift SDK to create seamless native checkout experiences for Apple devices.
 icon: swift
 ---
-
 # Swift with REST API Integration
 
 {% hint style="info" %}

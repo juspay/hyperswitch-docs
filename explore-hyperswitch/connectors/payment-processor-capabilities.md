@@ -1,10 +1,7 @@
 ---
-description: >-
-  A technical reference for the parameters and lifecycle flows supported across
-  card and wallet integrations.
+description: Learn to configure Payment Processor Capabilities to enhance your payment processing capabilities.
 icon: money-bill-1-wave
 ---
-
 # Payment Processor Capabilities
 
 ### Core Payment Flows

@@ -1,9 +1,6 @@
 ---
-description: >-
-  Best for PCI compliant merchants requiring full control over UI rendering
-  while leveraging Hyperswitch Vault for secure storage and payment routing.
+description: Set up vault-integrated payment flows to store payment methods and process transactions with saved credentials using the merchant sdk + hyperswitch vault setup configuration.
 ---
-
 # Merchant SDK + Hyperswitch Vault Setup
 
 In this approach, the merchant uses their own frontend SDK to capture card details. Card data is sent to Hyperswitch backend and stored in Hyperswitch Vault. The merchant must ensure PCI DSS compliance for card capture.

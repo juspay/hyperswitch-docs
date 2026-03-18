@@ -1,9 +1,6 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Launch a standalone Hyperswitch deployment on AWS for prototyping and development testing using the standalone control center deployment for prototyping configuration.
 ---
-
 # Standalone control center deployment for prototyping
 
 {% hint style="info" %}

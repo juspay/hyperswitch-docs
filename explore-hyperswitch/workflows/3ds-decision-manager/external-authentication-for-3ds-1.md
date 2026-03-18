@@ -1,11 +1,8 @@
 ---
-description: >-
-  Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
-  authorize the payment with any payment provider (PSP).
+description: Set up external 3DS authentication to use third-party 3DS servers with Hyperswitch processing using the external authentication for 3ds 1 configuration.
 hidden: true
 icon: up-right-from-square
 ---
-
 # Copy of Standalone 3D Secure (via Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.

@@ -1,11 +1,8 @@
 ---
-description: >-
-  Best for teams with strict existing vault dependencies who want to leverage
-  Hyperswitch for payment routing.
+description: Connect external vault SDKs to Hyperswitch to use third-party tokenization services using the README configuration.
 hidden: true
 icon: up-right-from-square
 ---
-
 # External  Vault SDK + Storage
 
 In this approach, card data is captured and tokenized using an external vault SDK. Hyperswitch backend receives vault tokens and handles orchestration, routing, retries, and PSP communication via connectors.

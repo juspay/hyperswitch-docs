@@ -1,11 +1,8 @@
 ---
-description: >-
-  Ideal for teams seeking to continue with their existing vault provider and
-  avoid data migration
+description: Combine Hyperswitch SDK with external vaults to process payments while storing tokens outside Hyperswitch.
 hidden: true
 icon: square-up-right
 ---
-
 # Hyperswitch SDK + External Vault
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.

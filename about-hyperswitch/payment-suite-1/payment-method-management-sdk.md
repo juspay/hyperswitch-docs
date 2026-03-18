@@ -1,7 +1,7 @@
 ---
 hidden: true
+description: Manage saved payment methods using the Payment Suite SDK to enable secure storage and retrieval of customer payment credentials.
 ---
-
 # Payment Method Management SDK
 
 The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.

@@ -1,7 +1,7 @@
 ---
 icon: swap
+description: Implement payout processing to send funds to customers, vendors, or partners through your preferred payment providers using the route your payout transactions using smart router configuration.
 ---
-
 # Smart Router for Payouts
 
 The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.

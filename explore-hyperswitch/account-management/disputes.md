@@ -1,10 +1,7 @@
 ---
-description: >-
-  Use Hyperswitch's unified Disputes module to track and manage disputes across
-  multiple processors
+description: Handle payment disputes and chargebacks through a unified interface to manage responses and track case resolutions.
 icon: circle-exclamation
 ---
-
 # Disputes / Chargebacks
 
 {% embed url="https://youtu.be/P0TVAsmBWTI" %}

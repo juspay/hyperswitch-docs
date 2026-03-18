@@ -1,7 +1,7 @@
 ---
 icon: paypal
+description: Learn to configure PayPal to enhance your payment processing capabilities.
 ---
-
 # PayPal
 
 **Purpose:** PayPal payments

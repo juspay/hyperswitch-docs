@@ -1,10 +1,7 @@
 ---
-description: >-
-  Best for PCI compliant merchants who wants to store the card during initial
-  checkout phase without charging their customers.
+description: Configure server-to-server vault integration to tokenize payment data without frontend SDK dependencies.
 hidden: true
 ---
-
 # S2S Vault flow
 
 The Payment method SDK allows you to securely collect payment information and give customers the option to save their payment details for future transactions. By vaulting these details during the initial checkout phase.

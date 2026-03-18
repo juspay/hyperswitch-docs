@@ -1,7 +1,6 @@
 ---
-description: Configure Payment Links UI
+description: > Note: Payment Links can currently only be configured via APIs.
 ---
-
 # Configurations
 
 > **Note:** Payment Links can currently only be configured via APIs. Configuration through the HyperSwitch dashboard is under development, and this section will be updated once it is available.

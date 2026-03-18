@@ -1,8 +1,7 @@
 ---
-description: Roadmap for Woocommerce plugin
+description: Integrate Hyperswitch with WooCommerce to add payment processing to your WordPress store using the roadmap configuration.
 hidden: true
 ---
-
 # Roadmap
 
 {% hint style="info" %}

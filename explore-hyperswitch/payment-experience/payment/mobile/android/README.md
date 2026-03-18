@@ -1,8 +1,7 @@
 ---
-description: Integrate unified checkout on your android app
+description: Learn to configure Android to enhance your payment processing capabilities using the README configuration.
 icon: android
 ---
-
 # Android
 
 <figure><img src="../../../../../.gitbook/assets/Screenshot_20250814_193709.png" alt="" width="375"><figcaption></figcaption></figure>

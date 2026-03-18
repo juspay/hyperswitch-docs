@@ -1,3 +1,6 @@
+---
+description: Process refunds through the API to return funds to customers for completed transactions.
+---
 # Refund RPC
 
 <!--

@@ -2,8 +2,8 @@
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket
+description: Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.
 ---
-
 # Checkout Experience
 
 Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.

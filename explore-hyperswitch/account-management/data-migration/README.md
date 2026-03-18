@@ -1,7 +1,7 @@
 ---
 icon: utility-pole-double
+description: Migration of data is a crucial step in ensuring business continuity without any interruptions.
 ---
-
 # Data migration
 
 Migration of data is a crucial step in ensuring business continuity without any interruptions. We will work with you and your current payment service provider (PSP) to transfer the data securely.

@@ -1,8 +1,7 @@
 ---
-description: Accept payments through d-local via Hyperswitch
+description: Configure Dlocal payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # dLocal
 
 {% hint style="info" %}

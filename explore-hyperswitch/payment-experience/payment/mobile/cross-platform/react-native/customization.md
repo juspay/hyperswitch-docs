@@ -1,8 +1,7 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: Customize React Native SDK appearance and behavior to match your mobile app branding.
 icon: bars-progress
 ---
-
 # Customization
 
 {% hint style="info" %}

@@ -1,3 +1,6 @@
+---
+description: Use the Payment Method Authentication Service to securely authenticate and verify payment methods.
+---
 # Payment Method Authentication Service
 
 <!--

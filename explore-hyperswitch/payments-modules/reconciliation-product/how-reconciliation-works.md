@@ -1,3 +1,6 @@
+---
+description: ### Reconciliation Engine: Rule-Based Architecture.
+---
 # How Reconciliation Works
 
 ### Reconciliation Engine: Rule-Based Architecture

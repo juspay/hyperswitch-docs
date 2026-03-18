@@ -1,7 +1,7 @@
 ---
 icon: globe-pointer
+description: Integrate web SDK for browser-based payment processing with support for multiple payment methods and customizable UI components using the vault sdk js with rest api integration configuration.
 ---
-
 # Vault SDK - JS with REST API Integration
 
 ## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK

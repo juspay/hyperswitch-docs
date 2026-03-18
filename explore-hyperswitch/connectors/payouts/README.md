@@ -1,8 +1,7 @@
 ---
-description: Swift and streamlined payout automation
+description: Implement payout processing to send funds to customers, vendors, or partners through your preferred payment providers using the README configuration.
 icon: file-invoice-dollar
 ---
-
 # Payouts Processors
 
 ### Overview

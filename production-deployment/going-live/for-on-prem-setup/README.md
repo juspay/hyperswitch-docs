@@ -1,7 +1,7 @@
 ---
 icon: clipboard-question
+description: In order to use Hyperswitch for accepting digital payments through a consumer facing website or mobile application there are three main prerequisites.
 ---
-
 # For On-Prem Setup
 
 ## Prerequisites

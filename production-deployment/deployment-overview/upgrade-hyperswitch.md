@@ -1,3 +1,6 @@
+---
+description: ### GitOps-Based Deployment using ArgoCD App-of-Apps Pattern.
+---
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)

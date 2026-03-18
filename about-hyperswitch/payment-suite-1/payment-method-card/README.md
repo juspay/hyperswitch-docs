@@ -1,7 +1,7 @@
 ---
 icon: hand-holding-circle-dollar
+description: Implement card-based payment flows using tokenization to process credit and debit card transactions.
 ---
-
 # Payment Method (Card)
 
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

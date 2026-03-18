@@ -1,3 +1,6 @@
+---
+description: Capture authorized payments through the API to complete transactions and collect funds.
+---
 # Capture RPC
 
 <!--

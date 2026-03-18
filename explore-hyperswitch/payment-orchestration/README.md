@@ -1,7 +1,7 @@
 ---
 icon: arrow-progress
+description: Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring .
 ---
-
 # Payment Orchestration
 
 Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.

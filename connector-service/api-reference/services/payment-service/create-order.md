@@ -1,3 +1,6 @@
+---
+description: Create payment orders through the API to initiate transactions with specific amounts and currencies.
+---
 # CreateOrder RPC
 
 <!--

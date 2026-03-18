@@ -1,8 +1,7 @@
 ---
-description: Guide to using Apple Pay payment method on Hyperswitch
+description: Apple Pay allows customers to securely pay from their saved cards in their Apple Pay account in macOS Safari or iOS using Touch ID and Face ID and the.
 icon: apple-pay
 ---
-
 # Apple Pay
 
 Apple Pay allows customers to securely pay from their saved cards in their Apple Pay account in macOS (Safari) or iOS using Touch ID and Face ID and thereby eliminating the need for them to manually type in their card and shipping details. Apple Pay is currently supported by [participating banks and card issuers in 75+ countries](https://support.apple.com/en-us/HT207957).

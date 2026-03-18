@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Braintree via Hyperswitch
+description: Configure Braintree payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Braintree
 
 {% hint style="info" %}

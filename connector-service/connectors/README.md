@@ -1,3 +1,6 @@
+---
+description: This document provides a comprehensive overview of all supported payment connectors and their integration status across various operations.
+---
 # Connectors Overview
 
 This document provides a comprehensive overview of all supported payment connectors and their integration status across various operations.

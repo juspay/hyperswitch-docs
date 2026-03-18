@@ -1,7 +1,7 @@
 ---
 icon: money-bills
+description: Set up your Hyperswitch account and configure payment connectors to start processing transactions using the test a payment configuration.
 ---
-
 # Test a payment
 
 ## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>

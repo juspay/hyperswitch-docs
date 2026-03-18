@@ -1,7 +1,6 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Set up your Hyperswitch account and configure payment connectors to start processing transactions using the account setup configuration.
 ---
-
 # 🔧 Account setup
 
 {% hint style="info" %}

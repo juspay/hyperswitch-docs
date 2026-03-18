@@ -1,8 +1,7 @@
 ---
-description: Handle errors appropriately!
+description: Integrate web SDK for browser-based payment processing with support for multiple payment methods and customizable UI components using the error codes configuration.
 icon: ban
 ---
-
 # Error Codes
 
 ## Error codes

@@ -1,3 +1,6 @@
+---
+description: OD"Order Data" -- Ingested via automated connection --> DI"Data Ingestion".
+---
 # Example: E Commerce
 
 ```mermaid

@@ -1,8 +1,7 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Configure smart retry rules to automatically recover failed payments and boost authorization rates across processors using the README configuration.
 icon: magnifying-glass-arrows-rotate
 ---
-
 # Smart Retries
 
 Smart retry is a Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.

@@ -1,10 +1,7 @@
 ---
-description: >-
-  Leverage the integrated vault that comes with Hyperswitch Orchestration
-  account to store cards
+description: Configure SaaS orchestration with Juspay Vault to securely store and manage payment tokens.
 icon: box-circle-check
 ---
-
 # SaaS Orchestration with Juspay Vault
 
 This is the fully managed Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.\

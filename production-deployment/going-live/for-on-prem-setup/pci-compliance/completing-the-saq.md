@@ -1,7 +1,7 @@
 ---
 icon: clipboard-question
+description: There are multiple variants of SAQshttps://listings.
 ---
-
 # Completing the SAQ
 
 {% hint style="warning" %}

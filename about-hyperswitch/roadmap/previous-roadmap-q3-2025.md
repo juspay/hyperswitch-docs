@@ -1,8 +1,7 @@
 ---
-description: Jul '25 to Sep '25
+description: View the Q3 2025 (July-September) roadmap to see features, improvements, and milestones planned for this quarter.
 icon: road
 ---
-
 # Previous Roadmap - Q3 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.

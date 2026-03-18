@@ -1,7 +1,7 @@
 ---
 icon: chevrons-right
+description: This feature is currently in Beta.
 ---
-
 # Click To Pay
 
 {% hint style="info" %}

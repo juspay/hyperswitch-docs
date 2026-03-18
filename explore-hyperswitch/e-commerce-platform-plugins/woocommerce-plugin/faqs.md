@@ -1,7 +1,6 @@
 ---
-description: Quick answers to commonly asked questions about Hyperswitch
+description: Integrate Hyperswitch with WooCommerce to add payment processing to your WordPress store using the faqs configuration.
 ---
-
 # FAQs
 
 {% hint style="info" %}

@@ -1,7 +1,6 @@
 ---
-description: Instructions to setup Card Vault on AWS manually
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the cloud setup guide configuration.
 ---
-
 # Cloud setup guide
 
 {% hint style="info" %}

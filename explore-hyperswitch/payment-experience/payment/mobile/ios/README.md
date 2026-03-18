@@ -1,8 +1,7 @@
 ---
-description: Integrate unified checkout with your iOS app
+description: Learn to configure iOS to enhance your payment processing capabilities using the README configuration.
 icon: apple
 ---
-
 # iOS
 
 <figure><img src="../../../../../.gitbook/assets/image (113).png" alt="" width="563"><figcaption></figcaption></figure>

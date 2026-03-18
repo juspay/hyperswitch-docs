@@ -1,3 +1,6 @@
+---
+description: Void authorized payments through the API to release held funds without charging.
+---
 # Void RPC
 
 <!--

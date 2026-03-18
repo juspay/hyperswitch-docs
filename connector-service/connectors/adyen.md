@@ -1,3 +1,6 @@
+---
+description: description: Adyen integration guide for Connector Service - global payments, 3DS, and local methods.
+---
 # Adyen
 
 <!--

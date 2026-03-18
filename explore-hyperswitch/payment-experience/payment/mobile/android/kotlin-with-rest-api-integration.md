@@ -1,8 +1,7 @@
 ---
-description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
+description: Build Android payment flows with Kotlin SDK integration to enable secure in-app checkout experiences with native UI components.
 icon: k
 ---
-
 # Kotlin with REST API Integration
 
 <details>

@@ -1,7 +1,6 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Configure Google Pay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 ---
-
 # Google Pay
 
 {% hint style="info" %}

@@ -1,7 +1,7 @@
 ---
 icon: bolt-lightning
+description: We support modular, embeddable alternate payment methods APMs known as Hyperwidgets, which a merchant can use to augment their existing checkout in a .
 ---
-
 # Alternate Payment Method Widgets
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.

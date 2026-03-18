@@ -1,8 +1,7 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Configure split payment settlements to distribute funds between multiple parties for marketplace and platform business models using the stripe split payments configuration.
 icon: stripe
 ---
-
 # Stripe Split Settlement
 
 ### Overview

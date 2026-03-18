@@ -1,8 +1,7 @@
 ---
-description: Effectively enhance fraud detection with your preferred FRM engine
+description: Activate fraud and risk management tools to detect and prevent suspicious payment activities using the README configuration.
 icon: shield-check
 ---
-
 # Fraud & Risk Management
 
 The Hyperswitch Fraud and Risk Management (FRM) workflow offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.

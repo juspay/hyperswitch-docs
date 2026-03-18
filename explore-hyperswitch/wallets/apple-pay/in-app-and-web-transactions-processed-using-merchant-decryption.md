@@ -1,7 +1,7 @@
 ---
 hidden: true
+description: ### Direct Token Decryption: Pre-requisites.
 ---
-
 # In-App and Web Transactions Processed Using Merchant Decryption
 
 ### Direct Token Decryption: Pre-requisites

@@ -1,8 +1,8 @@
 ---
 hidden: true
 icon: clock
+description: Configure extended authorization in quickstart flows to hold funds for longer periods before capture.
 ---
-
 # Extended Authorization
 
 ### Overview

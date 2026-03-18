@@ -1,3 +1,6 @@
+---
+description: Understand Hyperswitch's system architecture and design principles for building scalable payment infrastructure using the a payments switch with virtually zero overhead configuration.
+---
 # A Payments Switch with virtually zero overhead
 
 When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.

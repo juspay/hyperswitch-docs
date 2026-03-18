@@ -1,8 +1,7 @@
 ---
-description: Customize your Web unified checkout
+description: Customize the web SDK appearance and behavior to match your brand identity with 40+ styling APIs.
 icon: bars-progress
 ---
-
 # Customization
 
 ## 1. Layouts

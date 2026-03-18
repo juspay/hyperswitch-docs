@@ -1,8 +1,7 @@
 ---
-description: Process payments when 3D Secure runs outside Hyperswitch
+description: Import external 3DS authentication results to complete payments processed outside Hyperswitch.
 icon: shield-slash
 ---
-
 # Import 3D Secure results
 
 Importing 3DS results is an advanced payment flow that enables you to use external 3DS authentication with your Hyperswitch payments. Instead of running authentication within Hyperswitch, you can pass the completed authentication outcome directly into the payment flow.

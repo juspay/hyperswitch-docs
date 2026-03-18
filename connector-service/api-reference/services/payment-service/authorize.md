@@ -1,3 +1,6 @@
+---
+description: Authorize payments through the API to hold funds before final capture.
+---
 # Authorize RPC
 
 <!--

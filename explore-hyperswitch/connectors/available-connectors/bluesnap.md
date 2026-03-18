@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Bluesnap via Hyperswitch
+description: Configure Bluesnap payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Bluesnap
 
 {% hint style="info" %}

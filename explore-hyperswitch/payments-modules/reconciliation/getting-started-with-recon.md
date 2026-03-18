@@ -1,7 +1,6 @@
 ---
-description: Detailed description about Hyperswitch Reconciliation module
+description: This section outlines the supported features of Hyperswitch Reconciliation module and provides guidance on how to use them.
 ---
-
 # Getting Started with Recon
 
 {% hint style="info" %}

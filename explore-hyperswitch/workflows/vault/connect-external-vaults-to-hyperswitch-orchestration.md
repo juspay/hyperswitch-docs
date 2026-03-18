@@ -1,11 +1,8 @@
 ---
-description: >-
-  Connect external vaults to store cards instead of the integrated vault that
-  comes within your Hyperswitch Orchestration account
+description: Connect external vaults to Hyperswitch orchestration to use existing token storage providers.
 hidden: true
 icon: plug
 ---
-
 # Connect External Vaults to Hyperswitch Orchestration
 
 ### Modular Vaulting in Hyperswitch

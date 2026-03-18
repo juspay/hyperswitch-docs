@@ -1,3 +1,6 @@
+---
+description: Overview of Connector Service - a unified payment abstraction library for integrating 50+ payment processors.
+---
 <div align="center">
 
 

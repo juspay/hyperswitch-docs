@@ -1,7 +1,7 @@
 ---
 icon: panel-ews
+description: Set up the Hyperswitch backend locally to run the core payment processing API using the configure and run the application configuration.
 ---
-
 # Configure and Run the Application
 
 ## Configure the application

@@ -1,8 +1,7 @@
 ---
-description: Integrate unified checkout with your Flutter app
+description: Develop cross-platform payment flows with Flutter SDK to enable consistent checkout experiences across iOS and Android using the README configuration.
 icon: flutter
 ---
-
 # Flutter
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_193709.png" alt="" width="375"><figcaption></figcaption></figure>

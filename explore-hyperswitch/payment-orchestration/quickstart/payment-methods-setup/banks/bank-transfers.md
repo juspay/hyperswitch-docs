@@ -1,7 +1,6 @@
 ---
-description: Bank Transfer payment methods
+description: Set up bank transfer and redirect payment methods to accept direct bank payments and account-based transactions using the bank transfers configuration.
 ---
-
 # Bank Transfers
 
 {% hint style="info" %}

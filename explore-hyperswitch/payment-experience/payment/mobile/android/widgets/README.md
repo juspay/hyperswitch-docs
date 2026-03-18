@@ -1,10 +1,7 @@
 ---
-description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
-  control over your payment flow.
+description: <div align="center"><figure><img src=".
 icon: cubes
 ---
-
 # Widgets
 
 <div align="center"><figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_200303.jpeg" alt="" width="375"><figcaption></figcaption></figure></div>

@@ -1,8 +1,7 @@
 ---
-description: It's no rocket science
+description: Learn about complexity around PCI compliance is often exaggerated, creating closed systems and walled gardens.
 icon: user-police-tie
 ---
-
 # PCI compliance
 
 {% hint style="info" %}
