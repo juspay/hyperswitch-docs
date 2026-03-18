@@ -1,5 +1,6 @@
 ---
 hidden: true
+noIndex: true
 icon: brain-circuit
 description: Leverage AI resources and MCP servers to enhance payment operations with intelligent automation using the README configuration.
 ---

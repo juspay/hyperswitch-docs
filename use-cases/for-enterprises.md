@@ -1,6 +1,7 @@
 ---
 description: Configure enterprise-grade payment infrastructure with high availability, compliance, and multi-region support.
 hidden: true
+noIndex: true
 ---
 # 🏢 For enterprises
 

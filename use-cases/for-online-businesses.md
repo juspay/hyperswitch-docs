@@ -1,6 +1,7 @@
 ---
 description: Start here if you are an online business looking to accept one time or recurring online payments on your website.
 hidden: true
+noIndex: true
 ---
 # 🛒 For online businesses
 

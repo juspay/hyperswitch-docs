@@ -1,5 +1,6 @@
 ---
 hidden: true
+noIndex: true
 icon: suitcase
 description: Configure payment suite in the Payment Suite to enable specific payment processing functionality.
 ---

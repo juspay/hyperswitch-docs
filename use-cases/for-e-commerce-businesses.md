@@ -1,6 +1,7 @@
 ---
 description: Set up e-commerce payment processing with support for multiple methods, currencies, and international transactions.
 hidden: true
+noIndex: true
 icon: buildings
 ---
 # For E-Commerce Businesses

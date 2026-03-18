@@ -1,6 +1,7 @@
 ---
 description: Implement payment solutions for SaaS businesses to handle subscriptions, usage-based billing, and multi-tenancy using the for saas providers configuration.
 hidden: true
+noIndex: true
 icon: desktop
 ---
 # For SaaS Businesses

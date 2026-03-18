@@ -30,251 +30,439 @@ Regenerate: python3 scripts/generate-connector-docs.py cybersource
 Authorize a payment amount on a payment method. This reserves funds without capturing them, essential for verifying availability before finalizing.
 
 | | Message |
-|---|---|---------|
-| Request | `PaymentServiceAuthorizeRequest` |
-| Response | `PaymentServiceAuthorizeResponse` |
+|---|---------|
+| **Request** | `PaymentServiceAuthorizeRequest` |
+| **Response** | `PaymentServiceAuthorizeResponse` |
 
-##### Request Fields
+**Supported payment method types:**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `payment_method_data` | `PaymentMethodData` | ✅ | Payment method details (card, wallet, bank transfer, etc.) |
-| `connector_auth` | `ConnectorAuth` | ✅ | Authentication credentials specific to the connector |
-| `capture_method` | `CaptureMethod` | ✅ | When to capture funds (Automatic, Manual, Scheduled) |
+| Payment Method | Supported |
+|----------------|:---------:|
+| Card | ✓ |
+| Google Pay | ✓ |
+| Apple Pay | ✓ |
 
-##### Response Fields
+**Card (Raw PAN)**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Current payment status (Succeeded, Failed, Pending, Cancelled) |
-| `connector_transaction_id` | `String` | Transaction identifier from the connector |
-| `payment_method_data` | `PaymentMethodData` | Payment method details used/returned |
+```json
+{
+  "merchant_transaction_id": "probe_txn_001",
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  },
+  "payment_method": {
+    "card": {
+      "card_number": "4111111111111111",
+      "card_exp_month": "03",
+      "card_exp_year": "2030",
+      "card_cvc": "737",
+      "card_holder_name": "John Doe"
+    }
+  },
+  "capture_method": "AUTOMATIC",
+  "customer": {
+    "name": "John Doe",
+    "email": "test@example.com",
+    "id": "cust_probe_123",
+    "phone_number": "4155552671",
+    "phone_country_code": "+1"
+  },
+  "address": {
+    "shipping_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    },
+    "billing_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    }
+  },
+  "auth_type": "NO_THREE_DS",
+  "return_url": "https://example.com/return",
+  "webhook_url": "https://example.com/webhook",
+  "complete_authorize_url": "https://example.com/complete",
+  "browser_info": {
+    "color_depth": 24,
+    "screen_height": 900,
+    "screen_width": 1440,
+    "java_enabled": false,
+    "java_script_enabled": true,
+    "language": "en-US",
+    "time_zone_offset_minutes": -480,
+    "accept_header": "application/json",
+    "user_agent": "Mozilla/5.0 (probe-bot)",
+    "accept_language": "en-US,en;q=0.9",
+    "ip_address": "1.2.3.4"
+  }
+}
+```
+
+**Google Pay**
+
+```json
+{
+  "merchant_transaction_id": "probe_txn_001",
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  },
+  "payment_method": {
+    "google_pay": {
+      "type": "CARD",
+      "description": "Visa 1111",
+      "info": {
+        "card_network": "VISA",
+        "card_details": "1111"
+      },
+      "tokenization_data": {
+        "encrypted_data": {
+          "token": "{\"version\":\"ECv2\",\"signature\":\"<sig>\",\"intermediateSigningKey\":{\"signedKey\":\"<signed_key>\",\"signatures\":[\"<sig>\"]},\"signedMessage\":\"<signed_message>\"}",
+          "token_type": "PAYMENT_GATEWAY"
+        }
+      }
+    }
+  },
+  "capture_method": "AUTOMATIC",
+  "customer": {
+    "name": "John Doe",
+    "email": "test@example.com",
+    "id": "cust_probe_123",
+    "phone_number": "4155552671",
+    "phone_country_code": "+1"
+  },
+  "address": {
+    "shipping_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    },
+    "billing_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    }
+  },
+  "auth_type": "NO_THREE_DS",
+  "return_url": "https://example.com/return",
+  "webhook_url": "https://example.com/webhook",
+  "complete_authorize_url": "https://example.com/complete",
+  "browser_info": {
+    "color_depth": 24,
+    "screen_height": 900,
+    "screen_width": 1440,
+    "java_enabled": false,
+    "java_script_enabled": true,
+    "language": "en-US",
+    "time_zone_offset_minutes": -480,
+    "accept_header": "application/json",
+    "user_agent": "Mozilla/5.0 (probe-bot)",
+    "accept_language": "en-US,en;q=0.9",
+    "ip_address": "1.2.3.4"
+  }
+}
+```
+
+**Apple Pay**
+
+```json
+{
+  "merchant_transaction_id": "probe_txn_001",
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  },
+  "payment_method": {
+    "apple_pay": {
+      "payment_data": {
+        "encrypted_data": "<base64_encoded_apple_pay_payment_token>"
+      },
+      "payment_method": {
+        "display_name": "Visa 1111",
+        "network": "Visa",
+        "type": "debit"
+      },
+      "transaction_identifier": "<apple_pay_transaction_identifier>"
+    }
+  },
+  "capture_method": "AUTOMATIC",
+  "customer": {
+    "name": "John Doe",
+    "email": "test@example.com",
+    "id": "cust_probe_123",
+    "phone_number": "4155552671",
+    "phone_country_code": "+1"
+  },
+  "address": {
+    "shipping_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    },
+    "billing_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    }
+  },
+  "auth_type": "NO_THREE_DS",
+  "return_url": "https://example.com/return",
+  "webhook_url": "https://example.com/webhook",
+  "complete_authorize_url": "https://example.com/complete",
+  "browser_info": {
+    "color_depth": 24,
+    "screen_height": 900,
+    "screen_width": 1440,
+    "java_enabled": false,
+    "java_script_enabled": true,
+    "language": "en-US",
+    "time_zone_offset_minutes": -480,
+    "accept_header": "application/json",
+    "user_agent": "Mozilla/5.0 (probe-bot)",
+    "accept_language": "en-US,en;q=0.9",
+    "ip_address": "1.2.3.4"
+  }
+}
+```
 
 #### PaymentService.Capture
 
-Capture funds from a previously authorized payment. This completes the transaction and transfers funds to your account.
+Finalize an authorized payment transaction. Transfers reserved funds from customer to merchant account, completing the payment lifecycle.
 
 | | Message |
 |---|---------|
-| Request | `PaymentServiceCaptureRequest` |
-| Response | `PaymentServiceCaptureResponse` |
+| **Request** | `PaymentServiceCaptureRequest` |
+| **Response** | `PaymentServiceCaptureResponse` |
 
-##### Request Fields
+**Minimum Request**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `connector_transaction_id` | `String` | ✅ | The transaction ID from the original authorization |
-| `amount` | `Amount` | ✅ | Amount to capture (can be partial) |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Current capture status |
-| `connector_capture_id` | `String` | Capture identifier from the connector |
+```json
+{
+  "merchant_capture_id": "probe_capture_001",
+  "connector_transaction_id": "probe_connector_txn_001",
+  "amount_to_capture": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  }
+}
+```
 
 #### PaymentService.Get
 
-Retrieve the current status and details of a payment.
+Retrieve current payment status from the payment processor. Enables synchronization between your system and payment processors for accurate state tracking.
 
 | | Message |
 |---|---------|
-| Request | `PaymentServiceGetRequest` |
-| Response | `PaymentServiceGetResponse` |
+| **Request** | `PaymentServiceGetRequest` |
+| **Response** | `PaymentServiceGetResponse` |
 
-##### Request Fields
+**Minimum Request**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `connector_transaction_id` | `String` | ✅ | Transaction ID from the connector |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Current payment status |
-| `amount` | `Amount` | Payment amount details |
-| `payment_method_data` | `PaymentMethodData` | Payment method information |
+```json
+{
+  "connector_transaction_id": "probe_connector_txn_001",
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  }
+}
+```
 
 #### PaymentService.Refund
 
-Return funds to a customer for a completed payment (full or partial).
+Initiate a refund to customer's payment method. Returns funds for returns, cancellations, or service adjustments after original payment.
 
 | | Message |
 |---|---------|
-| Request | `PaymentServiceRefundRequest` |
-| Response | `PaymentServiceRefundResponse` |
+| **Request** | `PaymentServiceRefundRequest` |
+| **Response** | `RefundResponse` |
 
-##### Request Fields
+**Minimum Request**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `connector_transaction_id` | `String` | ✅ | Original transaction ID |
-| `amount` | `Amount` | ✅ | Refund amount (can be partial) |
-| `reason` | `String` | | Reason for refund |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Refund status |
-| `connector_refund_id` | `String` | Refund identifier from connector |
+```json
+{
+  "merchant_refund_id": "probe_refund_001",
+  "connector_transaction_id": "probe_connector_txn_001",
+  "payment_amount": 1000,
+  "refund_amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  },
+  "reason": "customer_request"
+}
+```
 
 #### PaymentService.SetupRecurring
 
-Create a mandate/recurring payment authorization for future charges without customer intervention.
+Setup a recurring payment instruction for future payments/ debits. This could be for SaaS subscriptions, monthly bill payments, insurance payments and similar use cases.
 
 | | Message |
 |---|---------|
-| Request | `PaymentServiceSetupRecurringRequest` |
-| Response | `PaymentServiceSetupRecurringResponse` |
+| **Request** | `PaymentServiceSetupRecurringRequest` |
+| **Response** | `PaymentServiceSetupRecurringResponse` |
 
-##### Request Fields
+**Minimum Request**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `payment_method_data` | `PaymentMethodData` | ✅ | Payment method to store |
-| `connector_auth` | `ConnectorAuth` | ✅ | Authentication credentials |
-| `mandate_type` | `MandateType` | ✅ | Single-use or multi-use mandate |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Setup status |
-| `mandate_id` | `String` | Mandate identifier for future charges |
+```json
+{
+  "merchant_recurring_payment_id": "probe_mandate_001",
+  "amount": {
+    "minor_amount": 0,
+    "currency": "USD"
+  },
+  "payment_method": {
+    "card": {
+      "card_number": "4111111111111111",
+      "card_exp_month": "03",
+      "card_exp_year": "2030",
+      "card_cvc": "737",
+      "card_holder_name": "John Doe"
+    }
+  },
+  "customer": {
+    "name": "John Doe",
+    "email": "test@example.com",
+    "id": "cust_probe_123",
+    "phone_number": "4155552671",
+    "phone_country_code": "+1"
+  },
+  "address": {
+    "billing_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "line1": "123 Main St",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101",
+      "country_alpha2_code": "US",
+      "email": "test@example.com",
+      "phone_number": "4155552671",
+      "phone_country_code": "+1"
+    }
+  },
+  "auth_type": "NO_THREE_DS",
+  "enrolled_for_3ds": false,
+  "metadata": "{}",
+  "return_url": "https://example.com/mandate-return",
+  "setup_future_usage": "OFF_SESSION",
+  "request_incremental_authorization": false,
+  "customer_acceptance": {
+    "acceptance_type": "OFFLINE",
+    "accepted_at": 0
+  },
+  "browser_info": {
+    "color_depth": 24,
+    "screen_height": 900,
+    "screen_width": 1440,
+    "java_enabled": false,
+    "java_script_enabled": true,
+    "language": "en-US",
+    "time_zone_offset_minutes": -480,
+    "accept_header": "application/json",
+    "user_agent": "Mozilla/5.0 (probe-bot)",
+    "accept_language": "en-US,en;q=0.9",
+    "ip_address": "1.2.3.4"
+  }
+}
+```
 
 #### PaymentService.Void
 
-Cancel an authorized payment that hasn't been captured yet.
+Cancel an authorized payment before capture. Releases held funds back to customer, typically used when orders are cancelled or abandoned.
 
 | | Message |
 |---|---------|
-| Request | `PaymentServiceVoidRequest` |
-| Response | `PaymentServiceVoidResponse` |
+| **Request** | `PaymentServiceVoidRequest` |
+| **Response** | `PaymentServiceVoidResponse` |
 
-##### Request Fields
+**Minimum Request**
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `connector_transaction_id` | `String` | ✅ | Transaction ID to void |
-| `reason` | `String` | | Reason for voiding |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Void status |
+```json
+{
+  "merchant_void_id": "probe_void_001",
+  "connector_transaction_id": "probe_connector_txn_001",
+  "cancellation_reason": "requested_by_customer",
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  }
+}
+```
 
 ### Mandates
 
 #### RecurringPaymentService.Charge
 
-Charge a stored payment method using an existing mandate.
+Charge using an existing stored recurring payment instruction. Processes repeat payments for subscriptions or recurring billing without collecting payment details.
 
 | | Message |
 |---|---------|
-| Request | `RecurringPaymentServiceChargeRequest` |
-| Response | `RecurringPaymentServiceChargeResponse` |
+| **Request** | `RecurringPaymentServiceChargeRequest` |
+| **Response** | `RecurringPaymentServiceChargeResponse` |
 
-##### Request Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `mandate_id` | `String` | ✅ | Mandate ID from setup |
-| `amount` | `Amount` | ✅ | Amount to charge |
-| `connector_auth` | `ConnectorAuth` | ✅ | Authentication credentials |
-
-##### Response Fields
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | `Status` | Charge status |
-| `connector_transaction_id` | `String` | New transaction ID |
-
-## Authentication
-
-Cybersource requires specific authentication credentials:
+**Minimum Request**
 
 ```json
 {
-  "api_key": "your_api_key",
-  "api_secret": "your_api_secret",
-  "merchant_id": "your_merchant_id"
+  "connector_recurring_payment_id": {
+    "mandate_id_type": {
+      "connector_mandate_id": "probe_mandate_123"
+    }
+  },
+  "amount": {
+    "minor_amount": 1000,
+    "currency": "USD"
+  },
+  "payment_method": {
+    "token": "probe_pm_token"
+  },
+  "return_url": "https://example.com/recurring-return",
+  "connector_customer_id": "probe_cust_connector_001",
+  "payment_method_type": "PAY_PAL",
+  "off_session": true
 }
 ```
-
-## Configuration
-
-```rust
-use connector_service::ConnectorConfig;
-
-let config = ConnectorConfig {
-    connector: Connector::Cybersource,
-    auth: CybersourceAuth {
-        api_key: "key".to_string(),
-        api_secret: "secret".to_string(),
-        merchant_id: "merchant".to_string(),
-    },
-    sandbox: false,
-};
-```
-
-## Error Handling
-
-Cybersource uses standard HTTP status codes and returns detailed error messages:
-
-| Status Code | Meaning |
-|-------------|---------|
-| 200 | Success |
-| 400 | Bad Request - Invalid parameters |
-| 401 | Unauthorized - Authentication failed |
-| 402 | Payment Required - Transaction declined |
-| 404 | Not Found - Resource doesn't exist |
-| 500 | Server Error - Cybersource internal error |
-
-## Webhooks
-
-Cybersource supports webhooks for real-time event notifications:
-
-| Event Type | Description |
-|------------|-------------|
-| `payment.authorize` | Authorization completed |
-| `payment.capture` | Capture completed |
-| `payment.refund` | Refund processed |
-| `payment.void` | Payment voided |
-
-Configure webhook endpoints in your Cybersource merchant dashboard.
-
-## Testing
-
-### Sandbox Environment
-
-Use Cybersource's sandbox environment for testing:
-
-```rust
-let config = ConnectorConfig {
-    sandbox: true,
-    // ... other config
-};
-```
-
-### Test Cards
-
-| Card Number | Type | Result |
-|-------------|------|--------|
-| 4111111111111111 | Visa | Success |
-| 4000000000000002 | Visa | Decline |
-| 5555555555554444 | Mastercard | Success |
-
-## Additional Resources
-
-- [Cybersource API Documentation](https://developer.cybersource.com/)
-- [Cybersource Testing Guide](https://developer.cybersource.com/hello-world/testing-guide.html)
-- [Connector Service SDK](/connector-service/sdks/)
-
-## Support
-
-For issues or questions:
-- [GitHub Issues](https://github.com/juspay/hyperswitch/issues)
-- [Discord Community](https://discord.gg/hyperswitch)

@@ -1,6 +1,7 @@
 ---
 description: Build marketplace payment flows with split payments, vendor payouts, and platform commission handling.
 hidden: true
+noIndex: true
 icon: shop
 ---
 # For Marketplace/Platforms

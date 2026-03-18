@@ -94,6 +94,10 @@ This creates a namespace called hyperswitch-dev where you can deploy and manage 
 
 Please refer to the link for a standard **values.yaml** file in the hyperswitch-helm chart that needs to be modified for a production ready setup - [Link](https://github.com/juspay/hyperswitch-helm/blob/main/charts/incubator/hyperswitch-stack/values.yaml)&#x20;
 
+{% hint style="info" %}
+**Note:** You can further customize each component of the stack by modifying the values.yaml file under each component folder. The component specific values file contains several more parameters compared to the standard values file and can give you more control over your deployment.&#x20;
+{% endhint %}
+
 You can run the following command to see the default schema:
 
 `helm show values hyperswitch/hyperswitch-stack`

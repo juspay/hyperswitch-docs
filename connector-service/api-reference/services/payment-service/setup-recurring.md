@@ -83,7 +83,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `connector_registration_id` | string | Identifier for the mandate registration |
+| `connector_recurring_payment_id` | string | Identifier for the mandate registration |
 | `status` | PaymentStatus | Status of the mandate setup attempt |
 | `error` | ErrorInfo | Error details if setup failed |
 | `status_code` | uint32 | HTTP status code from the connector |
@@ -105,7 +105,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 
 ```bash
 grpcurl -H "x-connector: stripe" \
-  -H "x-connector-auth: {\"Stripe\":{\"api_key\":\"$STRIPE_API_KEY\"}}" \
+  -H "x-connector-config: {\"config\":{\"Stripe\":{\"api_key\":\"$STRIPE_API_KEY\"}}}" \
   -d '{
     "merchant_recurring_payment_id": "recurring_001",
     "amount": {
@@ -136,14 +136,14 @@ grpcurl -H "x-connector: stripe" \
     "setup_future_usage": "OFF_SESSION"
   }' \
   localhost:8080 \
-  ucs.v2.PaymentService/SetupRecurring
+  types.PaymentService/SetupRecurring
 ```
 
 ### Response
 
 ```json
 {
-  "connector_registration_id": "seti_3Oxxx...",
+  "connector_recurring_payment_id": "seti_3Oxxx...",
   "status": "AUTHORIZED",
   "status_code": 200,
   "mandate_reference": {

@@ -41,6 +41,7 @@
 
 * [API reference](https://api-reference.hyperswitch.io/introduction)
 * [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
+* [Playground](https://hs-demo.netlify.app/?flow=automatic)
 
 ## Use-Cases
 
@@ -111,7 +112,7 @@
       * [Hyperwidget Integration Guide](explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets/hyperwidget-integration-guide.md)
   * [Payment Method](explore-hyperswitch/payment-experience/payment-method/README.md)
     * [Web](explore-hyperswitch/payment-experience/payment-method/web/README.md)
-      * [Vault SDK  - React with REST API Integration](explore-hyperswitch/payment-experience/payment-method/web/vault-sdk-react-with-rest-api-integration.md)
+      * [Vault SDK - React with REST API Integration](explore-hyperswitch/payment-experience/payment-method/web/vault-sdk-react-with-rest-api-integration.md)
       * [Vault SDK - JS with REST API Integration](explore-hyperswitch/payment-experience/payment-method/web/vault-sdk-js-with-rest-api-integration.md)
 * [Workflows](explore-hyperswitch/workflows/README.md)
   * [3DS / Strong Customer Authentication](explore-hyperswitch/workflows/3ds-decision-manager/README.md)
@@ -131,7 +132,7 @@
     * [Self-hosted & in-house PCI](explore-hyperswitch/workflows/vault/self-hosted-and-in-house-pci.md)
     * [Connect External Vaults to Hyperswitch Orchestration](explore-hyperswitch/workflows/vault/connect-external-vaults-to-hyperswitch-orchestration.md)
     * [Hyperswitch SDK + External Vault](explore-hyperswitch/workflows/vault/hyperswitch-sdk-+-external-vault.md)
-    * [External  Vault SDK + Storage](explore-hyperswitch/workflows/vault/external-vault-sdk-+-storage/README.md)
+    * [External Vault SDK + Storage](explore-hyperswitch/workflows/vault/external-vault-sdk-+-storage/README.md)
       * [Processing payments with external vault](explore-hyperswitch/workflows/vault/external-vault-sdk-+-storage/processing-payments-with-external-vault.md)
     * [Server to Server Vault tokenization](explore-hyperswitch/workflows/vault/server-to-server-vault-tokenization.md)
     * [Vault SDK Integration](explore-hyperswitch/workflows/vault/vault-sdk-integration.md)
@@ -264,7 +265,7 @@
     * [⚙️ Control Centre Account setup](explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup.md)
   * [Manage Your Team](explore-hyperswitch/account-management/manage-your-team.md)
   * [Analytics & operations](explore-hyperswitch/account-management/analytics-and-operations/README.md)
-    * [Export  Payments Data To Redshift for Analytics](explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
+    * [Export Payments Data To Redshift for Analytics](explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
   * [Disputes / Chargebacks](explore-hyperswitch/account-management/disputes.md)
   * [Surcharge](explore-hyperswitch/account-management/surcharge/README.md)
     * [Surcharge Setup guide](explore-hyperswitch/account-management/surcharge/surcharge-setup-guide.md)
@@ -373,10 +374,10 @@
 
 * [Overview](connector-service/README.md)
 * [Architecture](connector-service/architecture/README.md)
-  * [Architecture Overview](connector-service/architecture/overview.md)
+  * [Architecture Overview](connector-service/architecture/architecture-overview.md)
 * [API Reference](connector-service/api-reference/README.md)
   * [Domain Schema](connector-service/api-reference/domain-schema/README.md)
-  * Payment Service
+  * [Payment Service](connector-service/api-reference/payment-service/README.md)
     * [Overview](connector-service/api-reference/services/payment-service/README.md)
     * [Create Order](connector-service/api-reference/services/payment-service/create-order.md)
     * [Authorize](connector-service/api-reference/services/payment-service/authorize.md)
@@ -388,35 +389,35 @@
     * [Setup Recurring](connector-service/api-reference/services/payment-service/setup-recurring.md)
     * [Incremental Authorization](connector-service/api-reference/services/payment-service/incremental-authorization.md)
     * [Verify Redirect Response](connector-service/api-reference/services/payment-service/verify-redirect-response.md)
-  * Customer Service
+  * [Customer Service](connector-service/api-reference/customer-service/README.md)
     * [Overview](connector-service/api-reference/services/customer-service/README.md)
     * [Create](connector-service/api-reference/services/customer-service/create.md)
-  * Refund Service
+  * [Refund Service](connector-service/api-reference/refund-service/README.md)
     * [Overview](connector-service/api-reference/services/refund-service/README.md)
     * [Get](connector-service/api-reference/services/refund-service/get.md)
-  * Dispute Service
+  * [Dispute Service](connector-service/api-reference/dispute-service/README.md)
     * [Overview](connector-service/api-reference/services/dispute-service/README.md)
     * [Accept](connector-service/api-reference/services/dispute-service/accept.md)
     * [Defend](connector-service/api-reference/services/dispute-service/defend.md)
     * [Get](connector-service/api-reference/services/dispute-service/get.md)
     * [Submit Evidence](connector-service/api-reference/services/dispute-service/submit-evidence.md)
-  * Event Service
+  * [Event Service](connector-service/api-reference/event-service/README.md)
     * [Overview](connector-service/api-reference/services/event-service/README.md)
     * [Handle](connector-service/api-reference/services/event-service/handle.md)
-  * Payment Method Service
+  * [Payment Method Service](connector-service/api-reference/payment-method-service/README.md)
     * [Overview](connector-service/api-reference/services/payment-method-service/README.md)
     * [Tokenize](connector-service/api-reference/services/payment-method-service/tokenize.md)
-  * Payment Method Authentication Service
+  * [Payment Method Authentication Service](connector-service/api-reference/payment-method-authentication-service/README.md)
     * [Overview](connector-service/api-reference/services/payment-method-authentication-service/README.md)
     * [Pre-authenticate](connector-service/api-reference/services/payment-method-authentication-service/pre-authenticate.md)
     * [Authenticate](connector-service/api-reference/services/payment-method-authentication-service/authenticate.md)
     * [Post-authenticate](connector-service/api-reference/services/payment-method-authentication-service/post-authenticate.md)
-  * Merchant Authentication Service
+  * [Merchant Authentication Service](connector-service/api-reference/merchant-authentication-service/README.md)
     * [Overview](connector-service/api-reference/services/merchant-authentication-service/README.md)
     * [Create Access Token](connector-service/api-reference/services/merchant-authentication-service/create-access-token.md)
     * [Create Session Token](connector-service/api-reference/services/merchant-authentication-service/create-session-token.md)
     * [Create SDK Session Token](connector-service/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
-  * Recurring Payment Service
+  * [Recurring Payment Service](connector-service/api-reference/recurring-payment-service/README.md)
     * [Overview](connector-service/api-reference/services/recurring-payment-service/README.md)
     * [Charge](connector-service/api-reference/services/recurring-payment-service/charge.md)
     * [Revoke](connector-service/api-reference/services/recurring-payment-service/revoke.md)
@@ -447,5 +448,4 @@
 * [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
-   * [Community Guidelines](learn-more/community/community-guidelines.md)
-
+  * [Community Guidelines](learn-more/community/community-guidelines.md)

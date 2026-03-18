@@ -1,6 +1,7 @@
 ---
 description: ### <mark style="color:$danger;">Latest Release Notes are available on -</mark> <mark style="color:$danger;">https://hyperswitch-release-notes.
 hidden: true
+noIndex: true
 ---
 # Release Notes
 

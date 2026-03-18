@@ -1,8 +1,9 @@
 ---
 hidden: true
 noIndex: true
-description: Find answers to common questions about Hyperswitch setup, configuration, and troubleshooting using the cost and margin optimization faqs configuration.
+description: How to reduce payment processing fees and costs?
 ---
+
 # Cost and Margin Optimization FAQs
 
 ### Reducing Credit Card Processing Fees

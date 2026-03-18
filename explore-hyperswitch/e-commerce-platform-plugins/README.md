@@ -1,6 +1,7 @@
 ---
 description: Integrate Hyperswitch with README to enable platform-specific payment processing.
 hidden: true
+noIndex: true
 icon: plug-circle-bolt
 ---
 # E-commerce Platform Plugins by Hyperswitch
