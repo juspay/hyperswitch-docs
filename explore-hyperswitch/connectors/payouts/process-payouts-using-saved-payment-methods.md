@@ -1,7 +1,7 @@
 ---
 icon: repeat
+description: Implement payout processing to send funds to customers, vendors, or partners through your preferred payment providers using the process payouts using saved payment methods configuration.
 ---
-
 # Payouts with Saved Payment Methods
 
 Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.

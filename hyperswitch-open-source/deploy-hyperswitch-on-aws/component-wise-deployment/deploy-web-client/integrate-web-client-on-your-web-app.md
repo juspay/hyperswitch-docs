@@ -1,7 +1,6 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the integrate web client on your web app configuration.
 ---
-
 # Integrate web client on your web app
 
 {% hint style="info" %}

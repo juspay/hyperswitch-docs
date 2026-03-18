@@ -1,12 +1,9 @@
 ---
-description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+description: Integrate the Payment Methods Management SDK to securely handle and store customer payment credentials.
 hidden: true
 icon: gear
 coverY: 0
 ---
-
 # Payment Methods Management SDK
 
 ## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK

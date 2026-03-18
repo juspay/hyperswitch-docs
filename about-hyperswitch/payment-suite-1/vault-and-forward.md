@@ -1,10 +1,7 @@
 ---
-description: >-
-  Best for merchants who do not want to handle card data and want to maintain
-  their current integration with the processors.
+description: Implement vault-and-forward flow to securely store cards and forward them to payment processors for processing.
 hidden: true
 ---
-
 # Vault and Forward
 
 In this approach, the Direct Payment Control Model functions by treating Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.

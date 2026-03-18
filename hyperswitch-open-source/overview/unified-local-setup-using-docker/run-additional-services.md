@@ -1,7 +1,7 @@
 ---
 icon: arrows-to-circle
+description: Run the unified Hyperswitch stack locally with Docker to test all components together using the run additional services configuration.
 ---
-
 # Run Additional Services
 
 The default behaviour for docker compose only runs the following services:

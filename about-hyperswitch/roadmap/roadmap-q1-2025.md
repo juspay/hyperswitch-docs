@@ -1,8 +1,7 @@
 ---
-description: Jan'25 - Mar'25
+description: View the Q1 2025 (January-March) roadmap to see features, improvements, and milestones planned for this quarter.
 icon: road
 ---
-
 # Previous Roadmap - Q1 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.

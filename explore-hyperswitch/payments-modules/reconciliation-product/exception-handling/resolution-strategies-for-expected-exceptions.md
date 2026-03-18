@@ -1,3 +1,6 @@
+---
+description: An exception in the `EXPECTED` state indicates a timing or availability issue.
+---
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview

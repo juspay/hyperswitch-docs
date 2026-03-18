@@ -1,10 +1,7 @@
 ---
-description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+description: Implement tokenization to securely store payment methods and enable one-click checkout for returning customers using the network tokenisation configuration.
 icon: shield-check
 ---
-
 # Network Tokenisation
 
 ## What is Network Tokenization?

@@ -1,7 +1,6 @@
 ---
-description: List of all compatible WooCommerce plugins
+description: Integrate Hyperswitch with WooCommerce to add payment processing to your WordPress store using the compatibility configuration.
 ---
-
 # Compatibility
 
 {% hint style="info" %}

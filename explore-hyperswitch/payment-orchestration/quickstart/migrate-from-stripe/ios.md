@@ -1,7 +1,6 @@
 ---
-description: Migrate from Stripe on your iOS app
+description: Migrate from Stripe on your iOS app in less than 15 mins!.
 ---
-
 # iOS
 
 {% hint style="info" %}

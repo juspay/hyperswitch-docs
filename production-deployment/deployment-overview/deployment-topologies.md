@@ -1,3 +1,6 @@
+---
+description: There are two primary deployment topologies to enhance the reliability of enterprise setups:.
+---
 # Deployment Topologies
 
 There are two primary deployment topologies to enhance the reliability of enterprise setups:

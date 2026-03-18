@@ -1,8 +1,7 @@
 ---
-description: Fast migration guide for Stripe users
+description: This sections explains how you can migrate from Stripe to Hyperswitch in less than 15 minutes.
 hidden: true
 ---
-
 # 📥 Migrate from Stripe
 
 {% hint style="info" %}

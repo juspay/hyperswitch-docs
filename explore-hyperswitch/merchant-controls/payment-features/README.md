@@ -1,7 +1,7 @@
 ---
 icon: sparkles
+description: HyperSwitch SDKs provide client-side payment capabilities across web and mobile platforms.
 ---
-
 # Payment Features
 
 HyperSwitch SDKs provide client-side payment capabilities across web and mobile platforms. Our frontend SDKs handle secure payment collection, user authentication, and seamless checkout experiences while maintaining PCI compliance.

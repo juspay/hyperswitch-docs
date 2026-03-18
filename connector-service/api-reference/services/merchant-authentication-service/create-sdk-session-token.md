@@ -1,3 +1,6 @@
+---
+description: Create SDK session tokens to securely authenticate client-side SDK requests to Connector Service.
+---
 # CreateSdkSessionToken RPC
 
 <!--

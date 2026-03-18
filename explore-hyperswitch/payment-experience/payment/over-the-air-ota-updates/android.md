@@ -1,7 +1,7 @@
 ---
 icon: android
+description: Learn to configure Android to enhance your payment processing capabilities using the android configuration.
 ---
-
 # Android
 
 ### Configuration

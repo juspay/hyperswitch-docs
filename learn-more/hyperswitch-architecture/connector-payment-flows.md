@@ -1,9 +1,6 @@
 ---
-description: >-
-  This page outlines the various payment flows you may come across while
-  building a connector.
+description: Understand Hyperswitch's system architecture and design principles for building scalable payment infrastructure using the connector payment flows configuration.
 ---
-
 # Connector Payment Flows
 
 ### Pre-processing

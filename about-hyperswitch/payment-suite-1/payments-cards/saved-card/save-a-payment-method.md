@@ -1,8 +1,7 @@
 ---
-description: Setting up and managing recurring payments
+description: Configure secure storage of payment methods in the Payment Suite for faster future checkouts.
 icon: repeat
 ---
-
 # Use cases for Saved card
 
 Hyperswitch supports the following ways of saving a payment method used in a successful payment:

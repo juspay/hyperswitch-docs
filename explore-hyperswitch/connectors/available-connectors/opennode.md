@@ -1,8 +1,7 @@
 ---
-description: Accept payments through OpenNode via Hyperswitch
+description: Configure Opennode payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # OpenNode
 
 {% hint style="info" %}

@@ -1,7 +1,7 @@
 ---
 icon: flag-checkered
+description: Implement payout processing to send funds to customers, vendors, or partners through your preferred payment providers using the get started with payouts configuration.
 ---
-
 # Getting Started with Payouts
 
 To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).

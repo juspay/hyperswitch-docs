@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Aci via Hyperswitch
+description: Configure Aci payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # ACI
 
 {% hint style="info" %}

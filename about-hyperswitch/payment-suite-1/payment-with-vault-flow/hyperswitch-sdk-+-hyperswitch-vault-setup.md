@@ -1,9 +1,6 @@
 ---
-description: >-
-  Best for merchants seeking a pre-built, optimized payment UI backed by the
-  full Hyperswitch stack for secure data storage and routing.
+description: Set up vault-integrated payment flows to store payment methods and process transactions with saved credentials using the hyperswitch sdk + hyperswitch vault setup configuration.
 ---
-
 # Hyperswitch SDK + Hyperswitch Vault Setup
 
 In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.

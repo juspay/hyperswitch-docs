@@ -1,7 +1,7 @@
 ---
 icon: wave
+description: ## Payments 101https://hyperswitch.
 ---
-
 # SDK Payment flows
 
 ## [Payments 101](https://hyperswitch.io/blogs/payments-101-for-a-developer)

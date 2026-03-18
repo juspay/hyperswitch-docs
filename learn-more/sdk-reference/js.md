@@ -1,3 +1,6 @@
+---
+description: Access SDK API reference documentation for detailed method signatures and implementation guidance using the js configuration.
+---
 # JS
 
 Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.

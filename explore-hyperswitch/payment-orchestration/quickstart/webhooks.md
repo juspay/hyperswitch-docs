@@ -1,8 +1,7 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
+description: Configure webhooks to receive real-time notifications about payment events and transaction status updates.
 icon: anchor
 ---
-
 # Webhooks
 
 Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:

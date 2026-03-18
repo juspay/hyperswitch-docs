@@ -1,7 +1,7 @@
 ---
 icon: badge-check
+description: Run the unified Hyperswitch stack locally with Docker to test all components together using the unified local setup using docker configuration.
 ---
-
 # Run Hyperswitch Locally Using Docker
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}

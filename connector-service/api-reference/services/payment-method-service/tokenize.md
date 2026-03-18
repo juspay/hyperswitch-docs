@@ -1,3 +1,6 @@
+---
+description: Manage saved payment methods through Payment Method Service API to enable tokenized payments using the tokenize configuration.
+---
 # Tokenize RPC
 
 <!--

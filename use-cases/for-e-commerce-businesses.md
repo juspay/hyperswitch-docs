@@ -1,9 +1,8 @@
 ---
-description: All the payment use-cases for e-commerce businesses
+description: Set up e-commerce payment processing with support for multiple methods, currencies, and international transactions.
 hidden: true
 icon: buildings
 ---
-
 # For E-Commerce Businesses
 
 Hyperswitch provides e-commerce businesses with a reliable and flexible payment system, whether you are a small store or a large business.

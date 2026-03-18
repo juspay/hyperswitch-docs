@@ -1,10 +1,7 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the deploy control center configuration.
 icon: building-columns
 ---
-
 # Deploy Control Center
 
 ## Video

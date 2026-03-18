@@ -1,7 +1,7 @@
 ---
 icon: react
+description: Integrate Hyperswitch with Expo to enable payments in React Native apps built with Expo.
 ---
-
 # Expo integration
 
 {% hint style="info" %}

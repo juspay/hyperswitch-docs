@@ -1,9 +1,6 @@
 ---
-description: >-
-  Code of conduct and Slack participation guide for the Hyperswitch open-source
-  community
+description: Join the Hyperswitch community to connect with developers, get support, and contribute to the project using the community guidelines configuration.
 ---
-
 # Community Guidelines
 
 🤝 Hyperswitch Community Code of Conduct & Slack Guidelines

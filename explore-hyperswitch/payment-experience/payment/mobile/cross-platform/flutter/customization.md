@@ -1,8 +1,7 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: Develop cross-platform payment flows with Flutter SDK to enable consistent checkout experiences across iOS and Android using the customization configuration.
 icon: bars-progress
 ---
-
 # Customization
 
 {% hint style="info" %}

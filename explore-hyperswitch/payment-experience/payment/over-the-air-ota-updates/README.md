@@ -1,11 +1,7 @@
 ---
-description: >-
-  Airborne is an open-source project by Juspay designed to help developers
-  integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
-  Native applications effortlessly.
+description: #### Airborne SDK Overview <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>.
 icon: arrows-rotate-reverse
 ---
-
 # Over-the-Air (OTA) Updates
 
 #### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>

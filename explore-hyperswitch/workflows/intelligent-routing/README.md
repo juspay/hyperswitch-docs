@@ -1,7 +1,7 @@
 ---
 icon: flux-capacitor
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the README configuration.
 ---
-
 # Intelligent Routing
 
 The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.

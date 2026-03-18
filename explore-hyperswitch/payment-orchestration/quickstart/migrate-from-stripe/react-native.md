@@ -1,7 +1,6 @@
 ---
-description: Migrate from Stripe on your react native app
+description: Migrate from Stripe on your React Native app in less than 15 mins!.
 ---
-
 # React Native
 
 {% hint style="info" %}

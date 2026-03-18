@@ -1,7 +1,7 @@
 ---
 icon: rocket-launch
+description: Before going live with Hyperswitch, ensure that your integration is production-ready by following our comprehensive setup checklists.
 ---
-
 # Going live
 
 Before going live with Hyperswitch, ensure that your integration is production-ready by following our comprehensive setup checklists. These checklists help you verify that your payment processing is optimized, secure, and fully functional for a seamless merchant experience.

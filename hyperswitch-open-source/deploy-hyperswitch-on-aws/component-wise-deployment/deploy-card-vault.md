@@ -1,7 +1,6 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the deploy card vault configuration.
 ---
-
 # 🔐 Deploy card vault
 
 {% hint style="info" %}

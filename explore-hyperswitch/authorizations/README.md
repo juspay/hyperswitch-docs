@@ -1,7 +1,7 @@
 ---
 icon: building-magnifying-glass
+description: ### Advanced Authorization Types.
 ---
-
 # Authorizations
 
 ### **Advanced Authorization Types**

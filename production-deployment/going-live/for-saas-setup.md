@@ -1,7 +1,7 @@
 ---
 icon: gift
+description: Refer to this checklist for a seamless transition as you prepare to go live with your integration.
 ---
-
 # For SaaS Setup
 
 Refer to this checklist for a seamless transition as you prepare to go live with your integration.

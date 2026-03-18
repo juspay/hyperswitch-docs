@@ -1,7 +1,6 @@
 ---
-description: Accept payments through Adyen via Hyperswitch
+description: Configure Adyen payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 ---
-
 # Adyen
 
 {% hint style="info" %}

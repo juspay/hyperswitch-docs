@@ -1,8 +1,7 @@
 ---
-description: Integrate unified checkout with your web app
+description: Integrate the web SDK for browser-based payment processing with customizable checkout experiences.
 icon: globe-wifi
 ---
-
 # Web
 
 ## Global Checkout Experience

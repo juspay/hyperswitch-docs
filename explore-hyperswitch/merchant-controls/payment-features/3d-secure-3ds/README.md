@@ -1,8 +1,8 @@
 ---
 hidden: true
 icon: shield-check
+description: Learn to configure 3D Secure (3DS) to enhance your payment processing capabilities.
 ---
-
 # 3D Secure (3DS)
 
 <figure><img src="../../../../.gitbook/assets/Frame 48095845.png" alt=""><figcaption></figcaption></figure>

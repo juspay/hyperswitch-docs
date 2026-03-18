@@ -1,8 +1,7 @@
 ---
-description: Hyperswitch roadmap (Jan to Mar' 24)
+description: View the Q1 2024 (January-March) roadmap to see features, improvements, and milestones planned for this quarter.
 icon: road
 ---
-
 # Previous roadmap - Q1 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.

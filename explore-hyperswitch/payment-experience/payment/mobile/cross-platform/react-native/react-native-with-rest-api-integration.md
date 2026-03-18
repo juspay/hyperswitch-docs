@@ -1,8 +1,7 @@
 ---
-description: Integrate hyperswitch SDK to your React Native App using hyperswitch-node
+description: Integrate React Native SDK to build cross-platform mobile payment experiences using the react native with rest api integration configuration.
 icon: puzzle-piece
 ---
-
 # React Native with REST API Integration
 
 {% hint style="info" %}

@@ -1,8 +1,7 @@
 ---
-description: Deploy web client on the cloud
+description: Deploy the Hyperswitch web client on AWS to serve the checkout SDK and payment interface to customers.
 icon: globe-wifi
 ---
-
 # Deploy web client
 
 {% hint style="info" %}

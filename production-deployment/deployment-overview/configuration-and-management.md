@@ -1,3 +1,6 @@
+---
+description: Learn to configure Configuration and Management to enhance your payment processing capabilities.
+---
 # Configuration and Management
 
 ### Configuration Files&#x20;

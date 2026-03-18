@@ -1,8 +1,7 @@
 ---
-description: Platform Organization Setup & Workflow
+description: #### Overview of Platform Organization.
 icon: garage-car
 ---
-
 # Platform Org and Merchant Setup
 
 #### Overview of Platform Organization

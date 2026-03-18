@@ -1,9 +1,8 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
+description: Integrate Hyperswitch with README to enable platform-specific payment processing.
 hidden: true
 icon: plug-circle-bolt
 ---
-
 # E-commerce Platform Plugins by Hyperswitch
 
 Hyperswitch plugins enable businesses to extend and enhance the functionality of leading E-commerce platforms, offering seamless integration and advanced capabilities for payment optimization, user experience, and analytics.

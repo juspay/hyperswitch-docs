@@ -1,8 +1,7 @@
 ---
-description: A 30,000 feet view of Hyperswitch's architecture
+description: Understand Hyperswitch's system architecture and design principles for building scalable payment infrastructure using the README configuration.
 icon: folder-tree
 ---
-
 # Hyperswitch architecture
 
 Hyperswitch comprises two distinct app services: **Router** and **Scheduler** which in turn consists of **Producer** and **Consumer**, where each service has its specific responsibilities to process payment-related tasks efficiently.

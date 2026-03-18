@@ -1,3 +1,6 @@
+---
+description: Integrate Recurring Payment Service API to set up and manage subscription billing cycles using the revoke configuration.
+---
 # Revoke RPC
 
 <!--

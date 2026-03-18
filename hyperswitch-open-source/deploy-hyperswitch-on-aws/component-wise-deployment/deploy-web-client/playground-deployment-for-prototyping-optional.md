@@ -1,7 +1,6 @@
 ---
-description: Quickly deploy your web client playground and see it in action
+description: Deploy Hyperswitch components individually on AWS for granular control over each service deployment using the playground deployment for prototyping optional configuration.
 ---
-
 # Playground deployment for prototyping (optional)
 
 {% hint style="info" %}

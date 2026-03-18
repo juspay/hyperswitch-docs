@@ -1,7 +1,7 @@
 ---
 icon: server
+description: ​Airborne requires a backend endpoint to serve the `config.
 ---
-
 # Server setup
 
 

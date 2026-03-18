@@ -1,7 +1,7 @@
 ---
 icon: barcode-read
+description: Learn to configure Card Scanning to enhance your payment processing capabilities.
 ---
-
 # Card Scanning
 
 <figure><img src="../../../.gitbook/assets/Frame 48095844.png" alt=""><figcaption></figcaption></figure>

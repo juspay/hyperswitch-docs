@@ -2,8 +2,8 @@
 hidden: true
 noIndex: true
 icon: handshake-simple
+description: Learn about Reconciliation module in Hyperswitch automates financial reconciliation, providing businesses with greater accuracy and control over their financi.
 ---
-
 # Reconciliation V1
 
 The Reconciliation module in Hyperswitch automates financial reconciliation, providing businesses with greater accuracy and control over their financial processes. It simplifies transaction matching for financial operations (FinOps) teams, ensuring seamless verification of payments, settlements, and ledger entries with 99% reconciliation accuracy.

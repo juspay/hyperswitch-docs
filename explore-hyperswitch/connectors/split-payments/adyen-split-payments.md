@@ -1,8 +1,7 @@
 ---
-description: Get started with Adyen Split Settlements via Hyperswitch
+description: Configure split payment settlements to distribute funds between multiple parties for marketplace and platform business models using the adyen split payments configuration.
 icon: space-awesome
 ---
-
 # Adyen Split Settlement
 
 ### Overview

@@ -1,3 +1,6 @@
+---
+description: This SDK allows you to embed the Hyperswitch connector configuration directly into your React application.
+---
 # Integration Reference
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.

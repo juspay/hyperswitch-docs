@@ -1,7 +1,7 @@
 ---
 icon: arrow-up-triangle-square
+description: Set up the Hyperswitch backend locally to run the core payment processing API using the try out apis configuration.
 ---
-
 # Try out APIs
 
 ### Set up your merchant account

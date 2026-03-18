@@ -1,8 +1,7 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy the Hyperswitch Card Vault on AWS to securely store and manage tokenized payment credentials with PCI compliance.
 icon: vault
 ---
-
 # Deploy Card Vault
 
 The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;

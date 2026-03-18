@@ -1,8 +1,8 @@
 ---
 hidden: true
 icon: brain-circuit
+description: Leverage AI resources and MCP servers to enhance payment operations with intelligent automation using the README configuration.
 ---
-
 # AI Resources
 
 AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.

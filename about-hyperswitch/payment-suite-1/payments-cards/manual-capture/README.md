@@ -1,10 +1,7 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Set up manual capture workflows in the Payment Suite to authorize payments and capture funds later.
 icon: transmission
 ---
-
 # Manual Capture
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}

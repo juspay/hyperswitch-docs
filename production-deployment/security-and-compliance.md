@@ -1,7 +1,7 @@
 ---
 icon: shield-check
+description: ### Data Protection & Encryption.
 ---
-
 # Security and Compliance
 
 ### Data Protection & Encryption

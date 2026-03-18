@@ -1,7 +1,6 @@
 ---
-description: Make your first payment and refund through Hyperswitch
+description: Here, you'll be making a Payment using your local Hyperswitch setup, via your preferred payment provider.
 ---
-
 # 💵 Test a payment
 
 {% hint style="info" %}

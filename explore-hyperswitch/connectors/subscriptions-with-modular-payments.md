@@ -1,8 +1,7 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Businesses that run on subscription model powered by providers viz.
 icon: repeat
 ---
-
 # Subscriptions with Modular Payments
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)

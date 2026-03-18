@@ -1,9 +1,8 @@
 ---
-description: Enable Apple pay on your web domains
+description: ## Steps to configure Apple Pay on Hyperswitch.
 hidden: true
 icon: globe-wifi
 ---
-
 # Web Domain
 
 ## **Steps to configure Apple Pay on Hyperswitch**

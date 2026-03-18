@@ -1,8 +1,7 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Access payment analytics and operations dashboard to monitor transactions, track performance, and manage payment operations using the exporting payments data configuration.
 icon: tachograph-digital
 ---
-
 # Exporting payments data
 
 Exporting your payments data to Amazon Redshift enhances analytics by leveraging Redshift's high-performance query capabilities. This allows for efficient data analysis, reporting, and business intelligence there by deriving valuable insights

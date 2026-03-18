@@ -1,7 +1,6 @@
 ---
-description: Use our CDK script to deploy our production-ready K8s setup inside your stack
+description: Deploy production-ready Hyperswitch infrastructure on AWS with high availability and scalability configurations.
 ---
-
 # Production ready deployment
 
 {% hint style="info" %}

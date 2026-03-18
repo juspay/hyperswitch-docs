@@ -1,9 +1,8 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Implement payment solutions for SaaS businesses to handle subscriptions, usage-based billing, and multi-tenancy using the for saas providers configuration.
 hidden: true
 icon: desktop
 ---
-
 # For SaaS Businesses
 
 Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.

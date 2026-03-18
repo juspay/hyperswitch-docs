@@ -1,3 +1,6 @@
+---
+description: Browse the Connector Service API documentation summary to find all available endpoints and resources.
+---
 # Summary
 
 ## Getting Started

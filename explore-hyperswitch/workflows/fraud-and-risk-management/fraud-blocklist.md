@@ -1,8 +1,7 @@
 ---
-description: Blocking card bins selectively based on observed fraudulent activity
+description: Activate fraud and risk management tools to detect and prevent suspicious payment activities using the fraud blocklist configuration.
 icon: ban
 ---
-
 # Fraud Blocklist
 
 ### Card bin blocklist

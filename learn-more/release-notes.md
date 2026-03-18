@@ -1,10 +1,7 @@
 ---
-description: >-
-  This page is a central archive of Hyperswitch release notes. It summarises
-  recent product updates.
+description: ### <mark style="color:$danger;">Latest Release Notes are available on -</mark> <mark style="color:$danger;">https://hyperswitch-release-notes.
 hidden: true
 ---
-
 # Release Notes
 
 ### <mark style="color:$danger;">Latest Release Notes are available on -</mark> [<mark style="color:$danger;">https://hyperswitch-release-notes.vercel.app/</mark>](https://hyperswitch-release-notes.vercel.app/)

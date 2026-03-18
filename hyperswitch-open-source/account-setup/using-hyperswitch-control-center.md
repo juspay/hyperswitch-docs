@@ -1,10 +1,7 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider via the control
-  center
+description: Set up your Hyperswitch account and configure payment connectors to start processing transactions using the using hyperswitch control center configuration.
 icon: building-columns
 ---
-
 # Using Hyperswitch Control Center
 
 ## Video <a href="#user-content-set-up-your-merchant-account" id="user-content-set-up-your-merchant-account"></a>

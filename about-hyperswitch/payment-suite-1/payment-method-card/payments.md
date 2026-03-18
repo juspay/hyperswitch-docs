@@ -1,7 +1,7 @@
 ---
 icon: money-bills-simple
+description: Process card payments using the Payment Method flow with server-to-server API integration.
 ---
-
 # Payments
 
 The Payment Method SDK and `/payment-methods` API work in tandem with the `/payments` API to achieve any business objective as listed below. &#x20;

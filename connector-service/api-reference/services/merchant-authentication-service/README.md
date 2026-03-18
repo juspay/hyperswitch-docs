@@ -1,3 +1,6 @@
+---
+description: Integrate the Merchant Authentication Service API to securely authenticate and authorize merchant requests.
+---
 # Merchant Authentication Service
 
 <!--

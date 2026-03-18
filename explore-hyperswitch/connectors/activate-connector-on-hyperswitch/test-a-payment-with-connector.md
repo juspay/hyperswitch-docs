@@ -1,7 +1,7 @@
 ---
 icon: vial-circle-check
+description: Activate and test payment connectors to validate integrations before processing live transactions using the test a payment with connector configuration.
 ---
-
 # Try a Payment
 
 ## Test the Configuration using Dashboard

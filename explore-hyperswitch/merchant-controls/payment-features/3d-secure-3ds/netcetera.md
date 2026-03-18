@@ -1,7 +1,7 @@
 ---
 icon: link-simple
+description: Please specify the payment needs to externally authenticated via Netcetera by passing the below field.
 ---
-
 # Netcetera
 
 Please specify the payment needs to externally authenticated via Netcetera by passing the below field

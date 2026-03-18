@@ -1,3 +1,6 @@
+---
+description: Verify redirect responses through the API to confirm payment authentication results.
+---
 # VerifyRedirectResponse RPC
 
 <!--

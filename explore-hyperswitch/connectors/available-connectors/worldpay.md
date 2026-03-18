@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Worldpay via Hyperswitch
+description: Configure Worldpay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Worldpay
 
 {% hint style="info" %}

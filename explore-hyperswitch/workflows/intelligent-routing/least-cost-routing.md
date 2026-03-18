@@ -1,10 +1,7 @@
 ---
-description: >-
-  Optimize processing fees on debit payments by routing traffic to the cheapest
-  available debit network
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the least cost routing configuration.
 icon: hand-holding-dollar
 ---
-
 # Least Cost Routing
 
 ## Get started with Least Cost Routing

@@ -1,7 +1,7 @@
 ---
 icon: arrows-rotate-reverse
+description: Implement recurring payment capabilities in the Payment Suite for subscription billing cycles.
 ---
-
 # Recurring payments
 
 Recurring payments via Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;

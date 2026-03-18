@@ -1,3 +1,6 @@
+---
+description: Learn to configure Core Concepts to enhance your payment processing capabilities.
+---
 # Core Concepts
 
 ### How We Model Money

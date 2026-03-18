@@ -1,8 +1,7 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: Configure dynamic surcharging rules to pass payment processing fees to customers based on payment method and region using the README configuration.
 icon: clipboard-list-check
 ---
-
 # Surcharge
 
 Hyperswitch Surcharge feature allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to apply surcharges to payments.

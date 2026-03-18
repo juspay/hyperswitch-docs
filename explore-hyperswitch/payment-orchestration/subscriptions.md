@@ -1,11 +1,8 @@
 ---
-description: >-
-  Augments payment processing capabilities with your preferred Subscription
-  Solution provider
+description: Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and.
 hidden: true
 icon: repeat
 ---
-
 # Subscriptions
 
 Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:

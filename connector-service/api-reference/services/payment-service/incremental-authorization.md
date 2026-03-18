@@ -1,3 +1,6 @@
+---
+description: Increase authorization amounts through the API to adjust held funds for variable-cost transactions.
+---
 # IncrementalAuthorization RPC
 
 <!--

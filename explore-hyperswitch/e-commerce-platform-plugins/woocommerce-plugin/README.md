@@ -1,8 +1,7 @@
 ---
-description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Integrate Hyperswitch with WooCommerce to add payment processing to your WordPress store using the README configuration.
 hidden: true
 ---
-
 # 🔌 WooCommerce Plugin
 
 <figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>

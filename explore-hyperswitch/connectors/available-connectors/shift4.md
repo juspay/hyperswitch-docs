@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Shift4 via Hyperswitch
+description: Configure Shift4 payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Shift4
 
 {% hint style="info" %}

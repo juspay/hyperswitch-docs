@@ -1,7 +1,7 @@
 ---
 icon: hard-drive
+description: Implement saved card functionality in the Payment Suite to let customers store and reuse payment methods.
 ---
-
 # Saved Card
 
 In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.

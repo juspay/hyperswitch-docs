@@ -1,7 +1,7 @@
 ---
 icon: flux-capacitor
+description: Learn to configure Deployment Models to enhance your payment processing capabilities.
 ---
-
 # Deployment Models
 
 ## Supported Deployment Models

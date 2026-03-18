@@ -1,7 +1,6 @@
 ---
-description: Join the Hyperswitch Community
+description: Join the Hyperswitch community to connect with developers, get support, and contribute to the project using the README configuration.
 ---
-
 # Community
 
 ## Hyperswitch Community

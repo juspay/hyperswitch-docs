@@ -1,7 +1,7 @@
 ---
 icon: google
+description: Learn to configure Google Pay to enhance your payment processing capabilities.
 ---
-
 # Google Pay
 
 **Purpose:** Google Pay payments

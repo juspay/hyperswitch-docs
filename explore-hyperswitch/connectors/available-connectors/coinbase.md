@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Coinbase via Hyperswitch
+description: Configure Coinbase payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Coinbase
 
 {% hint style="info" %}

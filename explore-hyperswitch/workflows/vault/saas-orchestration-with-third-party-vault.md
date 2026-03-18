@@ -1,8 +1,7 @@
 ---
-description: Connect external vaults to store cards
+description: Integrate third-party vaults with SaaS orchestration to leverage existing token storage infrastructure.
 icon: plug
 ---
-
 # SaaS Orchestration with Third-Party Vault
 
 Merchants using Hyperswitch SaaS can still integrate an external PCI-compliant vault.\

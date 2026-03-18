@@ -1,9 +1,8 @@
 ---
-description: Infinite control over managing your payments
+description: To get started with Smart Router, ensure to have one or more payment processors integrated.
 hidden: true
 icon: swap
 ---
-
 # Smart Routing
 
 {% embed url="https://hyperswitch.io/video/edit_conf.mp4" %}

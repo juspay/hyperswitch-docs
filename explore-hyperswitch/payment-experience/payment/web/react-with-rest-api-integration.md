@@ -1,7 +1,7 @@
 ---
 icon: react
+description: Integrate React SDK with REST APIs to build customizable web checkout experiences.
 ---
-
 # React with REST API Integration
 
 **Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.

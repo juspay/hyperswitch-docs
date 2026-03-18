@@ -1,7 +1,6 @@
 ---
-description: Integrate ApplePay via Cybersource in Hyperswitch
+description: Configure Apple Pay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 ---
-
 # Apple Pay
 
 {% hint style="info" %}

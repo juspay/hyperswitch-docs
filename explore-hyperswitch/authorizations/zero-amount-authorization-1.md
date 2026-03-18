@@ -1,8 +1,7 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: In this section, we will understand zero-auth flow, it's usage, and webhook consumption.
 icon: circle-0
 ---
-
 # Zero Amount Authorization
 
 {% hint style="info" %}

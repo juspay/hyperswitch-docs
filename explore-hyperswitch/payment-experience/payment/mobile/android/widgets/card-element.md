@@ -1,7 +1,7 @@
 ---
 icon: credit-card
+description: Learn to configure Card Element to enhance your payment processing capabilities.
 ---
-
 # Card Element
 
 **Purpose:** Card payments

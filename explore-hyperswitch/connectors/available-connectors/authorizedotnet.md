@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Authorizedotnet via Hyperswitch
+description: Configure Authorizedotnet payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Authorizedotnet
 
 {% hint style="info" %}

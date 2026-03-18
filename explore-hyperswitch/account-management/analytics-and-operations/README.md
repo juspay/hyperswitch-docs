@@ -1,8 +1,7 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: Access payment analytics and operations dashboard to monitor transactions, track performance, and manage payment operations using the README configuration.
 icon: chart-pie-simple-circle-dollar
 ---
-
 # Analytics & operations
 
 {% embed url="https://youtu.be/z_NzW3_9A_w" %}

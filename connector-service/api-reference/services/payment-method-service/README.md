@@ -1,3 +1,6 @@
+---
+description: Integrate the Payment Method Service API to store, retrieve, and manage customer payment credentials.
+---
 # Payment Method Service
 
 <!--

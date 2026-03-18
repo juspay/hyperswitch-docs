@@ -1,8 +1,7 @@
 ---
-description: All the payment use cases for enterprise merchants
+description: Configure enterprise-grade payment infrastructure with high availability, compliance, and multi-region support.
 hidden: true
 ---
-
 # 🏢 For enterprises
 
 {% hint style="success" %}

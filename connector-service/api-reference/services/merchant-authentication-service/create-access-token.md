@@ -1,3 +1,6 @@
+---
+description: Access create access token Connector Service documentation to implement specific payment integration features.
+---
 # CreateAccessToken RPC
 
 <!--

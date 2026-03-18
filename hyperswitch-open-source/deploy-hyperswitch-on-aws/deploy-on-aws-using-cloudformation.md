@@ -1,8 +1,7 @@
 ---
-description: Use our CDK script to deploy Hyperswitch into your AWS stack
+description: Deploy Hyperswitch on AWS using CloudFormation templates to launch production-ready payment infrastructure with automated setup.
 icon: aws
 ---
-
 # Deploy on AWS using CloudFormation
 
 {% embed url="https://www.youtube.com/watch?v=c2igjE3-EDc" %}

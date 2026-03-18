@@ -1,11 +1,7 @@
 ---
-description: >-
-  Simplify implementation of orchestration and payment outcomes by taking
-  advantage of normalized request and response fields and values to avoid
-  changes by engineering teams
+description: Workflows allow merchants to control the flow of payments by invoking different systems/ connectors or set of rules :.
 icon: arrow-progress
 ---
-
 # Workflows
 
 Workflows allow merchants to control the flow of payments by invoking different systems/ connectors or set of rules :

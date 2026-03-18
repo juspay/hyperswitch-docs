@@ -1,7 +1,6 @@
 ---
-description: Infinite control over managing your payments
+description: With this section, understand how the Hyperswitch Smart Router works to improve your conversion rates and reduces processing costs by intelligently ro.
 ---
-
 # 🛣️ Smart Router
 
 {% hint style="info" %}

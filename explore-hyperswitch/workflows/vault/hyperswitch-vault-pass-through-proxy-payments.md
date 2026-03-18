@@ -1,9 +1,8 @@
 ---
-description: Send payments to PSPs using Vault tokens without handling raw card data
+description: Implement vault pass-through proxy to route payment data through Hyperswitch without storing it locally.
 hidden: true
 icon: arrows-repeat
 ---
-
 # Hyperswitch Vault: Pass Through Proxy Payments
 
 **📌 What is it?**

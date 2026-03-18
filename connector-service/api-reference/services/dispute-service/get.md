@@ -1,3 +1,6 @@
+---
+description: Manage payment disputes through Dispute Service API to handle chargebacks and customer claims using the get configuration.
+---
 # Get RPC
 
 <!--

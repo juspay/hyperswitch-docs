@@ -1,8 +1,7 @@
 ---
-description: Accept payments through TrustPay via Hyperswitch
+description: Configure Trustpay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # TrustPay
 
 {% hint style="info" %}

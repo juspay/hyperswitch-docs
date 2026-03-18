@@ -1,8 +1,8 @@
 ---
 hidden: true
 noIndex: true
+description: Find answers to common questions about Hyperswitch setup, configuration, and troubleshooting using the payment orchestration faq configuration.
 ---
-
 # Payment Orchestration FAQ
 
 ### What is payment orchestration?

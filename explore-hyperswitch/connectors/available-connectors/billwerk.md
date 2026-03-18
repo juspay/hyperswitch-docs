@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Billwerk via Hyperswitch
+description: Configure Billwerk payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Billwerk
 
 {% hint style="info" %}

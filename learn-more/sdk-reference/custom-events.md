@@ -1,3 +1,6 @@
+---
+description: Access SDK API reference documentation for detailed method signatures and implementation guidance using the custom events configuration.
+---
 # Custom Events
 
 ## Listen to Expiry Date event

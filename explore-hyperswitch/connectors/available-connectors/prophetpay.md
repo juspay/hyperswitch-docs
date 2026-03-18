@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Prophetpay via Hyperswitch
+description: Configure Prophetpay payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Prophetpay
 
 

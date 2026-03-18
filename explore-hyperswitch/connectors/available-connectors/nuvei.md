@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Nuvei via Hyperswitch
+description: Configure Nuvei payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Nuvei
 
 {% hint style="info" %}

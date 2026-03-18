@@ -1,8 +1,7 @@
 ---
-description: Visibility and control over your application
+description: In this chapter, you will learn to setup logs and monitoring on your application.
 icon: eyes
 ---
-
 # Monitoring
 
 {% hint style="info" %}

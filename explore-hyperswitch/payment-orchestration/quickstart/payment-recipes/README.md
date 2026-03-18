@@ -1,8 +1,7 @@
 ---
-description: Diversify your payments offering
+description: For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option.
 hidden: true
 ---
-
 # 🥗 Payment Recipes
 
 For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option. With Hyperswitch, you can diversify your payment options, and add payment processors without additional integration effort. You can consider trying out different payment recipes for multiple benefits like-&#x20;

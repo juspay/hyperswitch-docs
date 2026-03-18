@@ -1,7 +1,7 @@
 ---
 hidden: true
+description: Learn to configure Services to enhance your payment processing capabilities.
 ---
-
 # Services
 
 ### Data Management

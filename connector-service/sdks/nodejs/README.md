@@ -1,3 +1,6 @@
+---
+description: Complete Node.js SDK reference documentation for integrating Connector Service APIs in JavaScript applications.
+---
 # Node.js SDK Reference
 
 ---

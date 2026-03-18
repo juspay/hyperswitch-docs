@@ -1,7 +1,7 @@
 ---
 icon: input-numeric
+description: Connect React Native SDK to a Node.js backend to process mobile payments.
 ---
-
 # Payment Widget
 
 The **PaymentWidget** component renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.

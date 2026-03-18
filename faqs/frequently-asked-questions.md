@@ -1,3 +1,6 @@
+---
+description: Find answers to common questions about Hyperswitch setup, configuration, and troubleshooting using the frequently asked questions configuration.
+---
 # Frequently Asked Questions
 
 ## Mobile SDKs

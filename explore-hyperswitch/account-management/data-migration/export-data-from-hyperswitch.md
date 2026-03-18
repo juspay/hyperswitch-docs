@@ -1,7 +1,7 @@
 ---
 icon: left-from-bracket
+description: We believe customers fully own their data.
 ---
-
 # Export data from Hyperswitch
 
 We believe customers fully own their data. If you decide to export data from Hyperswitch, we will work with your new payment service provider to safely export your data.

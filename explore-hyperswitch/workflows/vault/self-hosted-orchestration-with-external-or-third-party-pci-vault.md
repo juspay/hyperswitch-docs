@@ -1,7 +1,7 @@
 ---
 icon: up-right-from-square
+description: Configure self-hosted orchestration with external vaults to separate payment processing from token storage.
 ---
-
 # Self-Hosted Orchestration with external or third party PCI Vault
 
 > **Deployment Model:** Merchant self-hosts Hyperswitch Orchestration Layer

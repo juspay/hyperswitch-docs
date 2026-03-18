@@ -1,8 +1,7 @@
 ---
-description: Assign roles and permission to users
+description: Manage team members and permissions to control access to payment operations and administrative functions.
 icon: screen-users
 ---
-
 # Manage Your Team
 
 You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.

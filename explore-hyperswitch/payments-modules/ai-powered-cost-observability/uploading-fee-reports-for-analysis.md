@@ -1,7 +1,7 @@
 ---
 icon: books
+description: Login to the Cost Observability dashoardhttps://hyperswitch.
 ---
-
 # Uploading Fee Reports for Analysis
 
 Login to the Cost Observability [dashoard](https://hyperswitch.io/cost-observability/app/home) and go to the [onboarding page](https://hyperswitch.io/cost-observability/app/on-boarding).

@@ -1,8 +1,7 @@
 ---
-description: Accept payments through PayU via Hyperswitch
+description: Configure Payu 1 payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # PayU
 
 {% hint style="info" %}

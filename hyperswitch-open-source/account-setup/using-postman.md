@@ -1,10 +1,7 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider using Hyperswitch
-  APIs through postman
+description: Set up your Hyperswitch account and configure payment connectors to start processing transactions using the using postman configuration.
 icon: rocket-launch
 ---
-
 # Using postman
 
 ## Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>

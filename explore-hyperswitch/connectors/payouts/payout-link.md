@@ -1,8 +1,7 @@
 ---
-description: Low-code solution to accept payouts
+description: Implement payout processing to send funds to customers, vendors, or partners through your preferred payment providers using the payout link configuration.
 icon: link
 ---
-
 # Payout Links
 
 Introducing Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer / vendor / partner's experience by making instant payouts in their preferred mode of transaction with preferred processor.

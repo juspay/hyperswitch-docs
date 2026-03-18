@@ -1,7 +1,7 @@
 ---
 icon: rocket-vertical
+description: Integrate Vault SDK with React to securely tokenize payment methods and store them for future use.
 ---
-
 # Vault SDK Integration
 
 ## Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK

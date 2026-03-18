@@ -1,7 +1,7 @@
 ---
 hidden: true
+description: <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.
 ---
-
 # Integration Guide
 
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>

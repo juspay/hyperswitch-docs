@@ -1,8 +1,7 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: View the Q3 2024 (July-September) roadmap to see features, improvements, and milestones planned for this quarter.
 icon: road
 ---
-
 # Previous Roadmap - Q3 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.

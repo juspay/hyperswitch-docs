@@ -1,7 +1,6 @@
 ---
-description: Migrate from Stripe on your android app
+description: Migrate from Stripe on your Android app in less than 15 mins!.
 ---
-
 # Android
 
 {% hint style="info" %}

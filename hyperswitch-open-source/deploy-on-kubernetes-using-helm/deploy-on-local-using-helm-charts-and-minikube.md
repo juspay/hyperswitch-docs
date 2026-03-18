@@ -1,9 +1,6 @@
 ---
-description: >-
-  A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
-  with setup, access, cleanup, and troubleshooting instructions.
+description: Deploy Hyperswitch on Kubernetes using Helm charts to enable containerized, scalable payment orchestration using the deploy on local using helm charts and minikube configuration.
 ---
-
 # Deploy on Local using Helm Charts and Minikube
 
 ## **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**

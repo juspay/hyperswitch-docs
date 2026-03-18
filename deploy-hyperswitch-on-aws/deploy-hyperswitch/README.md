@@ -1,7 +1,6 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
+description: Deploy Hyperswitch on AWS with options for full-stack or component-wise deployment strategies.
 ---
-
 # 🗄 Deploy Hyperswitch
 
 {% hint style="info" %}

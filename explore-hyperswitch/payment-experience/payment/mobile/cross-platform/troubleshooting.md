@@ -1,3 +1,6 @@
+---
+description: Learn to configure Troubleshooting to enhance your payment processing capabilities.
+---
 # Troubleshooting
 
 ## Android

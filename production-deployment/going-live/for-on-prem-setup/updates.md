@@ -1,8 +1,7 @@
 ---
-description: Stay up to date with minimal maintenance effort!
+description: This chapter covers everything you need to know about handling maintenance and updates for your application.
 icon: recycle
 ---
-
 # Updates
 
 {% hint style="info" %}

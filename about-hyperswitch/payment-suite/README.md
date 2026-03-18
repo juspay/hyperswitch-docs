@@ -1,8 +1,7 @@
 ---
-description: Open, Modular, Self-Hostable Payment Infrastructure
+description: Overview of the Payment Suite architecture including SDK, routing, connectors, and vault components.
 icon: container-storage
 ---
-
 # Payments Suite
 
 Hyperswitch is built for teams that want engineering-grade control over payments.

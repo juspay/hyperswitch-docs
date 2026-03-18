@@ -1,8 +1,7 @@
 ---
-description: Modular vaulting in Hyperswitch
+description: Configure README vault integration to securely store payment methods.
 icon: vault
 ---
-
 # Vault
 
 Hyperswitch offers flexible vault deployment options to suit different merchant PCI profiles and hosting preferences. Whether you’re self-hosting Hyperswitch with your own PCI setup or leveraging the fully managed SaaS orchestration layer, Hyperswitch’s modular vault architecture adapts seamlessly to your compliance boundary.\

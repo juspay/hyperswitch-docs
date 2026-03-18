@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Bank of America via Hyperswitch
+description: Configure Boa payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Bank of America
 
 {% hint style="info" %}

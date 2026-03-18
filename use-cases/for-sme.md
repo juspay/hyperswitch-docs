@@ -1,8 +1,7 @@
 ---
-description: All the payment use cases for SMEs
+description: Start here if you are an SME looking to accept one time or recurring online payments for your website.
 hidden: true
 ---
-
 # 🪜 For small & medium enterprises
 
 {% hint style="success" %}

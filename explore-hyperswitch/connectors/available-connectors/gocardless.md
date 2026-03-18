@@ -1,8 +1,7 @@
 ---
-description: Accept payments through GoCardless via Hyperswitch
+description: Configure Gocardless payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # GoCardless
 
 {% hint style="info" %}

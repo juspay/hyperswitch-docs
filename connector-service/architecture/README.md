@@ -1,3 +1,6 @@
+---
+description: Understand Connector Service architecture and design patterns for building payment integrations using the README configuration.
+---
 ## The Problem
 
 If you've integrated multiple payment providers, you know the pain:

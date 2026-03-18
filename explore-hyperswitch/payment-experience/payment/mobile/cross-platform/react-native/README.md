@@ -1,8 +1,7 @@
 ---
-description: Integrate unified checkout with your react native app
+description: Integrate React Native SDK to build cross-platform mobile payment experiences using the README configuration.
 icon: react
 ---
-
 # React Native
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_193709.png" alt="" width="375"><figcaption></figcaption></figure>

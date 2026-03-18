@@ -1,8 +1,7 @@
 ---
-description: Integrate hyper SDK to your Flutter App using hyperswitch-node
+description: Develop cross-platform payment flows with Flutter SDK to enable consistent checkout experiences across iOS and Android using the flutter with node backend configuration.
 icon: puzzle-piece
 ---
-
 # Flutter with REST API Integration
 
 {% hint style="info" %}

@@ -1,3 +1,6 @@
+---
+description: NPM package documentation for the Connector Service Node.js SDK with installation and usage guide.
+---
 # hs-playlib
 
 **Universal Connector Service — Node.js SDK**

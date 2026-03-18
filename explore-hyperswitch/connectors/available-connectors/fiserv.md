@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Fiserv via Hyperswitch
+description: Configure Fiserv payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Fiserv
 
 {% hint style="info" %}

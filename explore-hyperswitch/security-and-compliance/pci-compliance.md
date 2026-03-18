@@ -1,8 +1,7 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: Achieve PCI compliance with Hyperswitch's secure infrastructure and guidance for handling cardholder data.
 icon: credit-card
 ---
-
 # PCI Compliance
 
 Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that sensitive cardholder data is securely processed, stored, and transmitted.&#x20;

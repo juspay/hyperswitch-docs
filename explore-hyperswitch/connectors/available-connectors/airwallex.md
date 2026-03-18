@@ -1,8 +1,7 @@
 ---
-description: Accept payments through Airwallex via Hyperswitch
+description: Configure Airwallex payment processor to enable payment processing through this provider with Hyperswitch orchestration.
 hidden: true
 ---
-
 # Airwallex
 
 

@@ -1,10 +1,7 @@
 ---
-description: >-
-  Fallback is a priority order of all the configured processors which is used to
-  route traffic standalone or when other routing rules are not applicable.
+description: Set up intelligent payment routing to optimize costs, improve success rates, and ensure payment reliability using the default fallback routing configuration.
 icon: shield-exclamation
 ---
-
 # Default Fallback Routing
 
 {% embed url="https://youtu.be/5ymPEkOf-BQ" %}

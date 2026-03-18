@@ -1,8 +1,7 @@
 ---
-description: Customize your Android Unified checkout
+description: Customize the Android SDK appearance and behavior to match your mobile app branding and design.
 icon: bars-progress
 ---
-
 # Customization
 
 {% hint style="info" %}

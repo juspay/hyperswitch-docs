@@ -1,7 +1,7 @@
 ---
 icon: monitor-waveform
+description: Reliable operation of a production Hyperswitch deployment requires comprehensive observability across infrastructure, application behavior, and transa.
 ---
-
 # Monitoring and Alerts
 
 Reliable operation of a production Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.

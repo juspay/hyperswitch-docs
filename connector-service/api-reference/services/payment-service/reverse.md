@@ -1,3 +1,6 @@
+---
+description: Reverse payments through the API to cancel transactions and return funds.
+---
 # Reverse RPC
 
 <!--

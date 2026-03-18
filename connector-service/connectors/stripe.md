@@ -1,3 +1,6 @@
+---
+description: description: Stripe integration guide for Connector Service - payments, refunds, webhooks, and more.
+---
 # Stripe
 
 <!--

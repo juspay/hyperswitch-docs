@@ -1,8 +1,7 @@
 ---
-description: Accept crypto payments on your application
+description: Configure cryptocurrency payment processing to accept digital currency payments from blockchain networks.
 icon: bitcoin-sign
 ---
-
 # Crypto
 
 Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethereum, and Litecoin. It's fast, cheap, and private compared to traditional payment methods. Crypto payments use blockchain technology to record transactions securely and transparently without the need for intermediaries like banks.

@@ -1,7 +1,7 @@
 ---
 icon: brain-circuit
+description: Enterprises often face challenges and find difficulty in understanding and managing their payment processing costs, due to complexity, variability of .
 ---
-
 # Cost Observability
 
 Enterprises often face challenges and find difficulty in understanding and managing their payment processing costs, due to complexity, variability of the underlying fee structures and the entities involved. These fees typically consist of:
