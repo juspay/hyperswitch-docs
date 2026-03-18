@@ -1,6 +1,4 @@
 ---
-hidden: true
-noIndex: true
 description: Answers to the most frequently asked questions about Juspay Hyperswitch
 
 ---
