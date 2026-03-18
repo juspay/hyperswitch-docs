@@ -1,12 +1,8 @@
 ---
 description: Complete Node.js SDK reference documentation for integrating Connector Service APIs in JavaScript applications.
----
-# Node.js SDK Reference
-
----
-description: Complete reference for integrating payments using the hs-playlib Node.js SDK with the Connector Service.
 last_updated: 2026-03-11
 ---
+# Node.js SDK Reference
 
 ## Overview
 

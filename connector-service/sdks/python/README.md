@@ -1,3 +1,3 @@
 ---
-description: Python SDK documentation for integrating Connector Service APIs into your Python applications.
+description: Python SDK reference for integrating Connector Service APIs to process payments across multiple providers.
 ---
