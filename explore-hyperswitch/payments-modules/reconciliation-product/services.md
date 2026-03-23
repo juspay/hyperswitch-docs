@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: Our ingestion service connects to merchant and processor data sources using secure, flexible channels so you get timely, reliable inputs without manual work
 ---
 
 # Services

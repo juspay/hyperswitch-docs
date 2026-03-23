@@ -1,5 +1,6 @@
 ---
 icon: server
+description: To create a payment intent, send a request to either our sandbox or production endpoint. For detailed information, refer to the API Reference documentation.
 ---
 
 # Server Setup

@@ -1,5 +1,6 @@
 ---
 icon: laptop-code
+description: As a SaaS platform or marketplace, your value lies in your core product, not in rebuilding payment setting screens. Yet, to offer financial services to your users ("sub-merchants"), you often face ...
 ---
 
 # Embeddable Components

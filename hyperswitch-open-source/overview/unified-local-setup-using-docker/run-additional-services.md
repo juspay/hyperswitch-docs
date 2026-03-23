@@ -1,5 +1,6 @@
 ---
 icon: arrows-to-circle
+description: The default behaviour for docker compose only runs the following services:
 ---
 
 # Run Additional Services

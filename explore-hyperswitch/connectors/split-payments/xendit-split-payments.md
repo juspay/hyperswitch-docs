@@ -1,5 +1,6 @@
 ---
 icon: hexagon-xmark
+description: If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatical...
 ---
 
 # Xendit Split Settlement

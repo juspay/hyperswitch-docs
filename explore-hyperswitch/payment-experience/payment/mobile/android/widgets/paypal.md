@@ -1,5 +1,6 @@
 ---
 icon: paypal
+description: Purpose: PayPal payments
 ---
 
 # PayPal

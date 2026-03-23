@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: desktop
+description: 1. Unified local Setup using Docker - Simplified local setup of all components, using a single command with the help of docker.
 ---
 
 # Local Setup Guide

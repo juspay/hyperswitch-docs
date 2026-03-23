@@ -1,5 +1,6 @@
 ---
 icon: arrows-maximize
+description: This section provides reference guidance for scaling Hyperswitch deployments and ensuring their reliability in production environments.
 ---
 
 # Scale and Reliability

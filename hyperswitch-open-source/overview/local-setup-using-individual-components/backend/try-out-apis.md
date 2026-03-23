@@ -1,5 +1,6 @@
 ---
 icon: arrow-up-triangle-square
+description: 1. Sign up or sign in to Postman. 2. Open our Postman collection and switch to the "Variables" tab. Update the value under the "current value" column for the baseUrl variable to have the hostname a...
 ---
 
 # Try out APIs

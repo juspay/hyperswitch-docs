@@ -1,5 +1,6 @@
 ---
 icon: screwdriver-wrench
+description: How it fits into your existing payments setup:
 ---
 
 # Self-Deployment Guide

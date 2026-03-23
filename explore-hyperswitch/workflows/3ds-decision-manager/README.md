@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: 3D Secure (3DS) is an authentication protocol that adds an extra layer of protection to card transactions. It helps confirm that the person making the purchase is the legitimate cardholder, reducin...
 ---
 
 # 3DS / Strong Customer Authentication

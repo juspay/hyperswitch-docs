@@ -1,5 +1,6 @@
 ---
 icon: flag-checkered
+description: To begin processing payouts with Hyperswitch, you must first establish accounts with your supported payout processors.
 ---
 
 # Getting Started with Payouts

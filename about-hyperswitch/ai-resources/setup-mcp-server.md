@@ -1,5 +1,6 @@
 ---
 icon: user-robot-xmarks
+description: This MCP server is only meant for product exploration while using sandbox environment.\
 ---
 
 # Setup MCP Server

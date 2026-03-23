@@ -1,5 +1,6 @@
 ---
 icon: cloud
+description: You can deploy it as an independent stack by leveraging our full-stack deployment solution. Alternatively, you can utilize the component-wise section to deploy it within an existing stack using a c...
 ---
 
 # Deploy on AWS

@@ -1,3 +1,7 @@
+---
+description: Prism follows Semantic Versioning 2.0.0. A minor version upgrade or a patch will never break your existing integration.
+---
+
 # Versioning
 
 Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.

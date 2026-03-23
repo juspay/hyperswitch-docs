@@ -1,3 +1,7 @@
+---
+description: Exploration Guide  Overview.md>)  Payment Suite  Payments Suite
+---
+
 # Table of contents
 
 ## About Hyperswitch

@@ -1,5 +1,6 @@
 ---
 icon: diamonds-4
+description: Hyperswitch offers a modular, open-source payments infrastructure designed for flexibility and control. Apart from our Payment Suite offering, this solution allows businesses to pick and integrate ...
 ---
 
 # Payments Modules

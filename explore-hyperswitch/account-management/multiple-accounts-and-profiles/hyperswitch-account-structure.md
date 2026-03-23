@@ -1,5 +1,6 @@
 ---
 icon: people-roof
+description: Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your bus...
 ---
 
 # Organization, Merchant and Profile Setup

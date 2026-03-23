@@ -1,3 +1,7 @@
+---
+description: Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
+---
+
 # Merchant & Profile Mapping in Recon
 
 ### Mapping Hyperswitch Org/Merchant/Profile to Recon

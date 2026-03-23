@@ -1,5 +1,6 @@
 ---
 icon: clock-rotate-left
+description: Revenue Recovery module of Hyperswitch is designed to act as a failsafe for recurring payments. It seamlessly integrates with merchants' existing subscription management systems and performs intell...
 ---
 
 # Revenue Recovery

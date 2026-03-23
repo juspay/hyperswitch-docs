@@ -1,3 +1,7 @@
+---
+description: This event is triggered when the expiry date changes. Merchants can listen to this event and implement checks and validations based on the received value.\
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event

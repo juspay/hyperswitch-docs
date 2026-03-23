@@ -1,5 +1,6 @@
 ---
 icon: hard-drive
+description: In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, ...
 ---
 
 # Saved Card

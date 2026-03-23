@@ -1,5 +1,6 @@
 ---
 icon: arrow-up-right-dots
+description: Generally for any payment transaction, the payable amount from the payment request is authorized and then captured. But in some situations like hotel bookings, car rentals, or services where the fi...
 ---
 
 # Incremental Authorization

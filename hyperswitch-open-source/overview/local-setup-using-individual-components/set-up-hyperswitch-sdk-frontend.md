@@ -1,5 +1,6 @@
 ---
 icon: desktop
+description: This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use this guide.
 ---
 
 # SDK (Frontend)

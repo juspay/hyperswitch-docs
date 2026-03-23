@@ -1,5 +1,6 @@
 ---
 icon: joystick
+description: Hyperswitch Control Center streamlines the complexities of managing payments, ensuring operational efficiency and control over every aspect of payment flow. From account management to real-time ana...
 ---
 
 # Payment Operations

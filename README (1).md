@@ -2,6 +2,7 @@
 icon: screwdriver-wrench
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
+description: At Juspay, we believe payment infrastructure should be transparent, adaptable, and under merchants' control—not confined by vendor restrictions. That's why we've made the bold move to open-source o...
 ---
 
 # Get Started

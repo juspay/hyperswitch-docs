@@ -1,3 +1,7 @@
+---
+description: Start by installing the library for the programming language of your choice.
+---
+
 # Installation
 
 Start by installing the library for the programming language of your choice.

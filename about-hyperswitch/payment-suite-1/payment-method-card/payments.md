@@ -1,5 +1,6 @@
 ---
 icon: money-bills-simple
+description: The Payment Method SDK and /payment-methods API work in tandem with the /payments API to achieve any business objective as listed below. &#x20;
 ---
 
 # Payments

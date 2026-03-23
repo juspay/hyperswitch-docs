@@ -1,3 +1,7 @@
+---
+description: An exception in the EXPECTED state indicates a timing or availability issue. The system has a record on one side (typically the internal Source/Ledger) but is still waiting for the corresponding re...
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview

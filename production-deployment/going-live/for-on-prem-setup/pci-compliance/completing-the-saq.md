@@ -1,5 +1,6 @@
 ---
 icon: clipboard-question
+description: There are multiple variants of SAQs applicable for Merchants willing to be PCI compliant. This document explains compliance to SAQ D only.
 ---
 
 # Completing the SAQ

@@ -1,3 +1,7 @@
+---
+description: This document outlines the documentation structure, organization, and strategy for the Unified Prism (UCS) project.
+---
+
 # Documentation Strategy
 
 

@@ -1,5 +1,6 @@
 ---
 icon: android
+description: 1. When initializing HyperOTAReact, ensure the release config URL (ending in config.json) is set for the correct environment (Sandbox or Production) and version. This is where HyperOTA will check f...
 ---
 
 # Android

@@ -1,3 +1,7 @@
+---
+description: title: Architecture Overview description: How Prism library is architected for multi-language SDKs and unified payment processing
+---
+
 # Architecture Overview
 
 ##

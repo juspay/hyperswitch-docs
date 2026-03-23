@@ -2,11 +2,12 @@
 hidden: true
 noIndex: true
 icon: building-columns
+description: Juspay Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterpri...
 ---
 
 # For Banks & Financial Institutions
 
-Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.
+**Juspay Hyperswitch** empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.
 
 Hyperswitch enables banks to offer a suite of advanced tools, including an orchestrator, vault, and custom checkout for merchants, delivering the best payment experience for customers while streamlining operations for internal teams.
 

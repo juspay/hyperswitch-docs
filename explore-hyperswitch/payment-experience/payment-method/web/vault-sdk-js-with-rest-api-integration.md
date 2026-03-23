@@ -1,5 +1,6 @@
 ---
 icon: globe-pointer
+description: The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By lever...
 ---
 
 # Vault SDK - JS with REST API Integration

@@ -1,5 +1,6 @@
 ---
 icon: google
+description: Purpose: Google Pay payments
 ---
 
 # Google Pay

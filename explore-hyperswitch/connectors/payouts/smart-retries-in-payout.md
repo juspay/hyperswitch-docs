@@ -1,5 +1,6 @@
 ---
 icon: magnifying-glass-arrows-rotate
+description: Smart Retries enable the automatic recovery of failed payout attempts by re-initiating transactions based on specific error types and connector availability. This mechanism optimizes the success ra...
 ---
 
 # Smart Retries in Payout

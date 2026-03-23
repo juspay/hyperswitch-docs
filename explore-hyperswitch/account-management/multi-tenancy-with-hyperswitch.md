@@ -1,5 +1,6 @@
 ---
 icon: cubes-stacked
+description: Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Hyperswitch enables each of it's tenants to have cus...
 ---
 
 # Multi-Tenancy

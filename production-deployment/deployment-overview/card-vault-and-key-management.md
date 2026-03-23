@@ -1,3 +1,7 @@
+---
+description: This document describes how to configure secure key management for Hyperswitchdeployments in enterprise environments.
+---
+
 # Card Vault & Key Management
 
 ### Enterprise Key Management for Hyperswitch Card Vault and Application

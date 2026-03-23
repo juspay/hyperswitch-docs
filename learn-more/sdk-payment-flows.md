@@ -1,5 +1,6 @@
 ---
 icon: wave
+description: If you're complete beginner to Digital Payments, take a look at this Payments 101 blog to get familiar with terminologies.
 ---
 
 # SDK Payment flows

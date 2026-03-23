@@ -1,3 +1,7 @@
+---
+description: Note: This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the Developer Support Pl...
+---
+
 # Deploy on Azure Using Helm Charts
 
 ### Prerequisites

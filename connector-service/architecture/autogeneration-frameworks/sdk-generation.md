@@ -1,3 +1,7 @@
+---
+description: You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Prism generates language-specific bindings from the same protobuf definitions, ensuring ev...
+---
+
 # SDK Generation
 
 You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Prism generates language-specific bindings from the same protobuf definitions, ensuring every SDK stays synchronized with the core API.

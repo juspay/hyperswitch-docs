@@ -1,5 +1,6 @@
 ---
 icon: mobile-screen
+description: Smaller artifact size: <300 KB  Faster initialization: Streamlined setup process
 ---
 
 # Lite SDK

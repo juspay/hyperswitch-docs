@@ -1,5 +1,6 @@
 ---
 icon: server
+description: ​Airborne requires a backend endpoint to serve the config.json and updated bundles to client apps. This server is responsible for:
 ---
 
 # Server setup

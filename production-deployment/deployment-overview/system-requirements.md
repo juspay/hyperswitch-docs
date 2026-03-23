@@ -1,3 +1,7 @@
+---
+description: The capacity is defined in terms of RPS or Requests per second.&#x20;
+---
+
 # System Requirements
 
 ### **Hardware**

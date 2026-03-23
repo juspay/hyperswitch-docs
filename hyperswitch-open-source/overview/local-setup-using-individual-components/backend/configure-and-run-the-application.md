@@ -1,5 +1,6 @@
 ---
 icon: panel-ews
+description: The application configuration files are present under the config directory.
 ---
 
 # Configure and Run the Application

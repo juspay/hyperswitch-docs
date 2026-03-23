@@ -1,3 +1,7 @@
+---
+description: Payment integrations are often confusing due to different formats in which payment amount is accepted and processed. A small error can cause large ramifications in terms of business impact.
+---
+
 # The Money Struct
 
 Payment integrations are often confusing due to different formats in which payment amount is accepted and processed. A small error can cause large ramifications in terms of business impact.

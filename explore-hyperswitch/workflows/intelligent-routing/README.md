@@ -1,5 +1,6 @@
 ---
 icon: flux-capacitor
+description: The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth r...
 ---
 
 # Intelligent Routing

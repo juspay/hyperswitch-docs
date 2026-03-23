@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 ---
 
 # Run Hyperswitch Locally Using Docker
