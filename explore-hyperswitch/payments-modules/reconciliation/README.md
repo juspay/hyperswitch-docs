@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: handshake-simple
+description: The Reconciliation module in Hyperswitch automates financial reconciliation, providing businesses with greater accuracy and control over their financial processes. It simplifies transaction matchin...
 ---
 
 # Reconciliation V1

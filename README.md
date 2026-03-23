@@ -2,6 +2,7 @@
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
+description: Juspay Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get s...
 ---
 
 # Exploration Guide

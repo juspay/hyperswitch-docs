@@ -1,3 +1,7 @@
+---
+description: After completing your first payment, this guide shows you how to implement additional payment flows and capabilities.
+---
+
 # Extending to More Flows
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.

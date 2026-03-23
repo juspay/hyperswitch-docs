@@ -1,5 +1,6 @@
 ---
 icon: vial-circle-check
+description: 1. Upon configuration of the Connector, navigate to the dashboard home page
 ---
 
 # Try a Payment

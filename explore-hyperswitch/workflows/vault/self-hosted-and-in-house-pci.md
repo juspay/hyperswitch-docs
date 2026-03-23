@@ -1,5 +1,6 @@
 ---
 icon: box-ballot
+description: In this deployment, merchants self-host Hyperswitch and also manage their own PCI DSS compliance.
 ---
 
 # Self-hosted & in-house PCI

@@ -1,5 +1,6 @@
 ---
 icon: shield-check
+description: Data protection and encryption are critical for a Hyperswitch production installation to safeguard sensitive information and comply with GDPR, PCI DSS requirements.
 ---
 
 # Security and Compliance

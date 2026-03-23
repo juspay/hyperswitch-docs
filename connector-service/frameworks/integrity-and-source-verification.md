@@ -1,3 +1,7 @@
+---
+description: Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to ...
+---
+
 # Integrity and Source Verification
 
 Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks:

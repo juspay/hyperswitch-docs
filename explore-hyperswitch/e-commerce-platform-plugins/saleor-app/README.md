@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: plug-circle-bolt
+description: This app provides a seamless integration between Saleor (an open source ecommerce platform) and Juspay’s payment orchestration products: Hyperswitch (for global payment acceptance) and Hypercheckou...
 ---
 
 # Saleor App

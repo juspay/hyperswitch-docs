@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: building-columns
+description: Juspay Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterpri...
 ---
 
 # For Banks & Financial Institutions

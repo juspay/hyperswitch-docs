@@ -1,3 +1,7 @@
+---
+description: When a transaction falls into the MISMATCHED state, it indicates that while records exist on both sides, their key attributes (Amount, Currency, Status) do not align, or the data quality is insuffi...
+---
+
 # Resolution Strategies for Mismatched Exceptions
 
 ### Overview

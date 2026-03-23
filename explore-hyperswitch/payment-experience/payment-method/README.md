@@ -1,5 +1,6 @@
 ---
 icon: arrow-progress
+description: Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring bil...
 ---
 
 # Payment Method

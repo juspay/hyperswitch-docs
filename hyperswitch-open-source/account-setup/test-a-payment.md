@@ -1,5 +1,6 @@
 ---
 icon: money-bills
+description: Once you have successfully run the control centre, you should be able to test the payments.
 ---
 
 # Test a payment

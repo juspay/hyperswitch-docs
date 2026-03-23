@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: suitcase
+description: Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
 ---
 
 # Payment Suite

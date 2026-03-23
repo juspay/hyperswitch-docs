@@ -1,5 +1,6 @@
 ---
 icon: repeat
+description: Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a custo...
 ---
 
 # Payouts with Saved Payment Methods

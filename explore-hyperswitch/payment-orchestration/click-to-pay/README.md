@@ -1,5 +1,6 @@
 ---
 icon: chevrons-right
+description: This feature is currently in Beta. For access, please contact us at hyperswitch@juspay.in
 ---
 
 # Click To Pay

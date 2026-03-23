@@ -1,5 +1,6 @@
 ---
 icon: flux-capacitor
+description: The Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
 ---
 
 # Deployment Models

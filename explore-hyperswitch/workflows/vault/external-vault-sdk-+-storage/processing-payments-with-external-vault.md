@@ -1,5 +1,6 @@
 ---
 icon: money-bill-wave
+description: When working with an external vault provider, here’re the options available to handle a saved card transaction.&#x20;
 ---
 
 # Processing payments with external vault

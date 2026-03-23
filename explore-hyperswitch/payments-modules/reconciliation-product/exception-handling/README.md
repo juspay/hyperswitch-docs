@@ -1,3 +1,7 @@
+---
+description: The Exception Module is responsible for capturing, classifying, and managing anomalies detected during the reconciliation process. This module ensures that no transaction is lost and that financial...
+---
+
 # Exception Handling
 
 ## Module: Reconciliation Exception Handling

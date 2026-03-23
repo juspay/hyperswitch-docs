@@ -1,3 +1,7 @@
+---
+description: 1. If you encounter issues related to the Android browser dependency, ensure that the required AndroidX Browser version is defined in your project.
+---
+
 # Troubleshooting
 
 ## Android

@@ -1,5 +1,6 @@
 ---
 icon: shield-plus
+description: You can enable the FRM solution of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Hyperswitch.
 ---
 
 # Activating FRM in Hyperswitch

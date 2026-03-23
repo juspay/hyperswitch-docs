@@ -1,5 +1,6 @@
 ---
 icon: books
+description: Login to the Cost Observability dashoard and go to the onboarding page.
 ---
 
 # Uploading Fee Reports for Analysis

@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: brain-circuit
+description: AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask ...
 ---
 
 # AI Resources

@@ -1,5 +1,6 @@
 ---
 icon: cart-shopping-fast
+description: Purpose: One click solution for last used saved payment method
 ---
 
 # Express Checkout

@@ -1,5 +1,6 @@
 ---
 icon: react
+description: Note: Expo Go is not supported.\ The Hyperswitch SDK uses native modules, so the app must be built with native Android and iOS code.
 ---
 
 # Expo integration

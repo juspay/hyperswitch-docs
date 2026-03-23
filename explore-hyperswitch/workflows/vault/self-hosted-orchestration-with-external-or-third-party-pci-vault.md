@@ -1,5 +1,6 @@
 ---
 icon: up-right-from-square
+description: > Deployment Model: Merchant self-hosts Hyperswitch Orchestration Layer > > PCI Scope: Outsourced to an external vault provider like VGS
 ---
 
 # Self-Hosted Orchestration with external or third party PCI Vault

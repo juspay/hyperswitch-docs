@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: money-bills-simple
+description: The Payment Method SDK provides APIs to securely capture and tokenize payment credentials, with support for vaulting payment details during the initial checkout flow. Upon successful vaulting, a pe...
 ---
 
 # Copy of Payments

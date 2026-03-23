@@ -1,5 +1,6 @@
 ---
 icon: mobile-signal
+description: Samsung Pay is a secure and convenient payment solution that allows customers to make payments using their Samsung devices. By adding credit, debit, or loyalty cards to the Samsung Pay app, users c...
 ---
 
 # Samsung Pay

@@ -1,5 +1,6 @@
 ---
 icon: barcode-read
+description: 1. Accuracy: Leveraging optical character recognition (OCR) technology, Hyperswitch's card scanning feature accurately extracts credit card details in real-time. This significantly reduces the like...
 ---
 
 # Card Scanning

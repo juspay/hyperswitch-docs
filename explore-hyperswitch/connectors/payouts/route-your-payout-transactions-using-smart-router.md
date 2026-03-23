@@ -1,5 +1,6 @@
 ---
 icon: swap
+description: The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes prog...
 ---
 
 # Smart Router for Payouts

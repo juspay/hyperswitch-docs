@@ -1,5 +1,6 @@
 ---
 icon: sign-posts-wrench
+description: For an Enterprise-grade production installation of Hyperswitch the recommended approach is to deploy Kubernetes on a managed cloud - Google Cloud Platform, Amazon Web Services or Microsoft Azure.
 ---
 
 # Deployment Overview

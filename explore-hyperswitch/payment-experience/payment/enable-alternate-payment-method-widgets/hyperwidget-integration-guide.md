@@ -1,5 +1,6 @@
 ---
 icon: plug-circle-bolt
+description: Once the merchant signs up onto the unified dashboard, they’ll get their API keys and can enable the APMs <> PSP combinations that they would like to provide on their checkout.
 ---
 
 # Hyperwidget Integration Guide

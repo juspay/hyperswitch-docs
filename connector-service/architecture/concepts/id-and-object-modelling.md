@@ -1,3 +1,7 @@
+---
+description: Payment processors can't agree on how to name their IDs. Stripe uses pi3MqSCR2eZvKYlo2C1. Adyen uses 7914073381344578. Razorpay uses payABCdef123. This inconsistency breaks code completion, confuse...
+---
+
 # ID and Object Modeling
 
 Payment processors can't agree on how to name their IDs. Stripe uses `pi_3MqSCR2eZvKYlo2C1`. Adyen uses `7914073381344578`. Razorpay uses `pay_ABCdef123`. This inconsistency breaks code completion, confuses LLMs, and forces you to maintain different ID handling logic for each connector.

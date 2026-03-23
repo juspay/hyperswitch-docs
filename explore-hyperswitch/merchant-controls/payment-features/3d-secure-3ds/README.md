@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: shield-check
+description: 3D Secure is a security protocol designed to reduce credit/ debit card fraud in Card-Not-Present (CNP) transactions, where customer doesn't present the physical card to merchant during the transact...
 ---
 
 # 3D Secure (3DS)

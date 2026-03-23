@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: If you choose to handle Apple Pay decryption internally rather than through a Payment Service Provider (PSP), your infrastructure must meet the following criteria:
 ---
 
 # In-App and Web Transactions Processed Using Merchant Decryption

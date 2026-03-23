@@ -1,5 +1,6 @@
 ---
 icon: react
+description: Before following these steps, please configure your payment methods here. Use this guide to integrate hyperswitch SDK to your React app.
 ---
 
 # React with REST API Integration

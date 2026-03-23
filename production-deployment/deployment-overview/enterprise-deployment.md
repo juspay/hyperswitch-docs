@@ -1,3 +1,7 @@
+---
+description: In case you are setting up your payments infrastructure on Amazon Web Services for the first time you can use Hyperswitch’s Terraform configuration files to do so.&#x20;
+---
+
 # Enterprise Deployment
 
 ### Use Terraform to Provision and Maintain Infrastructure Resources&#x20;

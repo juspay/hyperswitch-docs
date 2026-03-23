@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: plus
+description: In card payments, Overcapture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
 ---
 
 # Overcapture

@@ -1,5 +1,6 @@
 ---
 icon: code-compare
+description: Hyperswitch’s three-level profile architecture enables support for composable payment workflows, fulfilling the majority of use cases for a Vertical SaaS platform.&#x20;
 ---
 
 # Supported Payment Workflows

@@ -1,3 +1,7 @@
+---
+description: | Field       | Value                                    | |-------------|------------------------------------------| | Status  | Draft                                    |
+---
+
 # RFC: Unified Payment Protocol (UPP)
 
 | Field       | Value                                    |

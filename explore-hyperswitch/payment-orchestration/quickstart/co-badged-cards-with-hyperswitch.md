@@ -1,5 +1,6 @@
 ---
 icon: credit-card
+description: Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a gl...
 ---
 
 # Co-badged Cards

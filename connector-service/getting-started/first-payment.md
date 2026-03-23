@@ -1,3 +1,7 @@
+---
+description: You will have paymentmethodid from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI compliant raw card data, that will suff...
+---
+
 # First Payment with Error Handling
 
 You will have `payment_method_id` from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI compliant raw card data, that will suffice to make the first payment.

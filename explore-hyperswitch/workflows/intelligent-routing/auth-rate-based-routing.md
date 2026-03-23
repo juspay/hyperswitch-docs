@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Auth Rate Based Routing is a smart, adaptive approach to optimize transaction success across multiple gateways.&#x20;
 ---
 
 # Auth Rate Based Routing

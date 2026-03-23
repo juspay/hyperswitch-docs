@@ -1,3 +1,7 @@
+---
+description: AI-powered recommendations to help resolve unmatched transactions faster. When an exception occurs, the system will automatically analyze metadata (amounts, dates, identifiers, references) and sur...
+---
+
 # Roadmap
 
 #### **AI-Driven Exception Handling**

@@ -1,3 +1,7 @@
+---
+description: If you've integrated multiple payment providers, you know the pain: - Stripe uses PaymentIntents
+---
+
 ## The Problem
 
 If you've integrated multiple payment providers, you know the pain:

@@ -1,3 +1,7 @@
+---
+description: The Reconciliation Engine is the intelligent core that automatically matches and validates financial data. It does this by evaluating incoming Staging Entries against a set of configurable business...
+---
+
 # How Reconciliation Works
 
 ### Reconciliation Engine: Rule-Based Architecture

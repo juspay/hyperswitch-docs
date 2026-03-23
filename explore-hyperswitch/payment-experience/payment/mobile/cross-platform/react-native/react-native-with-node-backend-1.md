@@ -1,5 +1,6 @@
 ---
 icon: input-numeric
+description: The PaymentWidget component renders an embedded, inline payment form directly inside your screen, instead of opening a modal payment sheet. This approach is useful for custom checkout pages where y...
 ---
 
 # Payment Widget

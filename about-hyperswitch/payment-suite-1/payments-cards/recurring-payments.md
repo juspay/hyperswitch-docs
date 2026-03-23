@@ -1,5 +1,6 @@
 ---
 icon: arrows-rotate-reverse
+description: Recurring payments via Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge ...
 ---
 
 # Recurring payments

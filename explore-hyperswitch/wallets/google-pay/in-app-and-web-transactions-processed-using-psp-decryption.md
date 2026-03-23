@@ -1,3 +1,7 @@
+---
+description: In this flow PSP decrypts the Google Pay token using your keys configured at PSP.
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.

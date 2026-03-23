@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging ...
 ---
 
 # Payment Method Management SDK

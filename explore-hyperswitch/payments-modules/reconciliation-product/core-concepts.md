@@ -1,3 +1,7 @@
+---
+description: At its core, our system treats money as accounting data. This approach, known as double-entry bookkeeping, provides powerful guarantees for financial integrity. It ensures that money is never creat...
+---
+
 # Core Concepts
 
 ### How We Model Money

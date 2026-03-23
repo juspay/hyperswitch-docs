@@ -1,3 +1,7 @@
+---
+description: In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this directory.
+---
+
 # Configuration and Management
 
 ### Configuration Files&#x20;

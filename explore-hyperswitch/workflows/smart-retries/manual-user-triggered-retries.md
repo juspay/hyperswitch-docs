@@ -1,5 +1,6 @@
 ---
 icon: person-walking-arrow-loop-left
+description: The Manual or User triggered Retries feature in Hyperswitch allows customers to retry a failed payment attempt under the same Payment Intent, without needing to restart the entire checkout flow.
 ---
 
 # Manual/User triggered Retries

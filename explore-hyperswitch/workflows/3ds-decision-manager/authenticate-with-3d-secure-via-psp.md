@@ -1,5 +1,6 @@
 ---
 icon: rotate-exclamation
+description: You can integrate 3D Secure (3DS) authentication into your checkout flow on multiple platforms, including Web, iOS, Android, and React Native. The most basic form of invoking a 3DS is via the payme...
 ---
 
 # Authenticate with 3D Secure via PSP

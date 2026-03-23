@@ -1,5 +1,6 @@
 ---
 icon: building-magnifying-glass
+description: This section outlines the specialized authorization flows supported by Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring ...
 ---
 
 # Authorizations

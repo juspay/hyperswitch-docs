@@ -1,5 +1,6 @@
 ---
 icon: apple
+description: 1.  Set the HyperOTA Endpoint
 ---
 
 # iOS

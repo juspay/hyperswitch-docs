@@ -1,5 +1,6 @@
 ---
 icon: bolt
+description: We at Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.
 ---
 
 # Accept Payments

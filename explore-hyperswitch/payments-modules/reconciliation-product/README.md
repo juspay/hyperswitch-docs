@@ -1,5 +1,6 @@
 ---
 icon: database
+description: Are you truly confident that every customer payment lands in your bank account? For most businesses, the path from transaction to settlement is a complex maze of different providers, inconsistent d...
 ---
 
 # Reconciliation

@@ -1,5 +1,6 @@
 ---
 icon: signs-post
+description: Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors t...
 ---
 
 # Processor error code mapping

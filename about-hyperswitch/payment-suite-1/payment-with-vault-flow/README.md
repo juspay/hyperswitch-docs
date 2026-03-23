@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: In the Payment with Vault flow setup, Hyperswitch acts as the central intelligence layer. You interact with a single unified API, and Hyperswitch manages the entire payment lifecycle across multipl...
 ---
 
 # Payment with Vault Flow

@@ -1,5 +1,6 @@
 ---
 icon: square-tenge
+description: Extended Authorization allows merchants to extend the authorization hold period beyond the standard window — giving more flexibility before a transaction is captured or settled.
 ---
 
 # Extended Authorization

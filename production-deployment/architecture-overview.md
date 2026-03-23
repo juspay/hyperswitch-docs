@@ -1,5 +1,6 @@
 ---
 icon: sitemap
+description: Hyperswitch uses the following components to deploy and manage a payment stack:
 ---
 
 # Architecture Overview

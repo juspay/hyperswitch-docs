@@ -1,3 +1,7 @@
+---
+description: One integration. Any payment processor. Zero lock-in.
+---
+
 <div align="center">
 
 

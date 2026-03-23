@@ -1,3 +1,7 @@
+---
+description: Using a GitOps orchestration platform such as Argo CD allows Hyperswitch deployments to be managed declaratively via Git.
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)

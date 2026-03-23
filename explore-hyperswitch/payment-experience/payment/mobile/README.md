@@ -1,5 +1,6 @@
 ---
 icon: mobile
+description: Hyperswitch SDK offers powerful and flexible mobile SDKs to integrate secure, customizable, and high-performance payments into your iOS and Android apps — whether you’re building with native framew...
 ---
 
 # Mobile

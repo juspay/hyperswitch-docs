@@ -1,5 +1,6 @@
 ---
 icon: credit-card
+description: Purpose: Card payments
 ---
 
 # Card Element

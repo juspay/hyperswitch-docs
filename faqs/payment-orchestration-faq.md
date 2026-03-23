@@ -1,6 +1,7 @@
 ---
 hidden: true
 noIndex: true
+description: Payment orchestration is a control layer that sits between your application and multiple payment processors or acquirers. It provides a unified API while enabling routing, retries, failover, observ...
 ---
 
 # Payment Orchestration FAQ
