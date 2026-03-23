@@ -1,8 +1,9 @@
 ---
 icon: brain-circuit
+description: Understand Juspay Hyperswitch Cost Observability to monitor interchange fees, detect anomalies, and optimize your payment processing costs across all processors
 ---
 
-# Cost Observability
+# Juspay Hyperswitch Cost Observability
 
 Enterprises often face challenges and find difficulty in understanding and managing their payment processing costs, due to complexity, variability of the underlying fee structures and the entities involved. These fees typically consist of:
 
@@ -16,9 +17,9 @@ The complexity of these fee structures, combined with the need to manage multipl
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdpyD2v2VNTbT08KqjY00fCeaMf6l5BUwUsM_KypdJ179pjBdz2Z8bYXhqIOiPSxSF0IkVYHFoRzdr4umY4TAssdU6Ay6T_UOfNFFAK4WvGfgZ9fsYc_DT117Eoq1i0hZYXHH1V?key=PipEi-OXE_VL80TT0iDkN2IY" alt=""><figcaption></figcaption></figure>
 
-Hyperswitch Cost Observability solves this problem by transforming unstructured payment fee data from multiple sources into comprehensive insights, providing better visibility into payment costs for different user personas within an organization. It enables businesses to monitor card payment cost, detect monthly anomalies (cost spikes), and identify optimization opportunities to reduce payment costs efficiently.
+Juspay Hyperswitch Cost Observability solves this problem by transforming unstructured payment fee data from multiple sources into comprehensive insights, providing better visibility into payment costs for different user personas within an organization. It enables businesses to monitor card payment cost, detect monthly anomalies (cost spikes), and identify optimization opportunities to reduce payment costs efficiently.
 
-### Key Features
+## Key Features
 
 **Observe/Monitor**: Monitor trends across cost categories such as interchange fees, downgrades, scheme fees, and processor fees over different periods of time (e.g., 1 to N months). This system enables businesses to identify anomalies and cost deviations improving payment cost visibility.
 
@@ -27,4 +28,3 @@ Hyperswitch Cost Observability solves this problem by transforming unstructured 
 **Optimize**: Offers actionable insights designed to help businesses achieve maximum savings by improving interchange qualifications, reducing scheme fees, and minimizing penalties. These recommendations ensure proactive cost optimization insights.
 
 **Forecast:** Merchants can forecast the cost impact of network updates on their payment costs for any organization via brand/region/connector with monthly deltas and effective dates.
-

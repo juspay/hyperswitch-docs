@@ -1,6 +1,48 @@
+---
+description: Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify payments flow from your order system through PSPs to your bank accurately
+---
+
 # Example: E Commerce
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#FFFFFF",
+    "primaryColor": "#346DDB",
+    "primaryTextColor": "#FFFFFF",
+    "primaryBorderColor": "#1E4FAA",
+    "secondaryColor": "#F6F9FC",
+    "secondaryTextColor": "#0A2540",
+    "secondaryBorderColor": "#D1D9E0",
+    "tertiaryColor": "#F6F9FC",
+    "tertiaryTextColor": "#0A2540",
+    "tertiaryBorderColor": "#D1D9E0",
+    "mainBkg": "#F6F9FC",
+    "nodeBorder": "#D1D9E0",
+    "clusterBkg": "#F6F9FC",
+    "clusterBorder": "#D1D9E0",
+    "lineColor": "#346DDB",
+    "edgeLabelBackground": "#FFFFFF",
+    "titleColor": "#0A2540",
+    "textColor": "#0A2540",
+    "labelColor": "#0A2540",
+    "labelBoxBkgColor": "#F6F9FC",
+    "labelBoxBorderColor": "#D1D9E0",
+    "loopTextColor": "#0A2540",
+    "noteBkgColor": "#F6F9FC",
+    "noteBorderColor": "#D1D9E0",
+    "noteTextColor": "#0A2540",
+    "activationBkgColor": "#EBF1FC",
+    "activationBorderColor": "#346DDB",
+    "actorBkg": "#F6F9FC",
+    "actorBorder": "#D1D9E0",
+    "actorTextColor": "#0A2540",
+    "actorLineColor": "#D1D9E0",
+    "fontFamily": "Inter, sans-serif",
+    "fontSize": "14px"
+  }
+}}%%
 flowchart TB
     OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
     PD["Payment Data"] -- Ingested via automated connection --> DI
@@ -16,24 +58,9 @@ flowchart TB
     MA --> M["Matched"] & MM["Mismatched"]
     MM -- Manual Adjustment --> EM["Exception Management"]
     EM -- Transaction sent for matching after correction --> MA
-
-    style OD fill:#FFF9C4
-    style DI fill:#C8E6C9
-    style PD fill:#FFF9C4
-    style DT fill:#C8E6C9
-    style ODB fill:#FFF9C4
-    style PDB fill:#FFF9C4
-    style RE fill:#C8E6C9
-    style ECS fill:#BBDEFB
-    style ECF fill:#FFCDD2
-    style TC fill:#BBDEFB
-    style MA fill:#C8E6C9
-    style M fill:#BBDEFB
-    style MM fill:#FFCDD2
-    style EM fill:#C8E6C9
 ```
 
-#### E-commerce Three-Way Reconciliation
+## E-commerce Three-Way Reconciliation
 
 Three-way reconciliation is the process of verifying the flow of money across three independent systems to ensure financial accuracy. For a typical e-commerce business, this involves reconciling data from:
 
@@ -43,11 +70,11 @@ Three-way reconciliation is the process of verifying the flow of money across th
 
 We solve this complex problem by breaking it down into two interconnected reconciliation processes: **Order → PSP** and **PSP → Bank**. This approach ensures every step of the payment journey is tracked and validated.
 
-### The Reconciliation Flow: A Step-by-Step Guide
+## The Reconciliation Flow: A Step-by-Step Guide
 
 The reconciliation engine follows a structured process to automatically match and validate transactions across all three systems.
 
-#### **Step 1: Account Setup**
+### Step 1: Account Setup
 
 First, we establish the accounts that represent the source and destination of funds in your ledger. This ensures that every transaction is categorized correctly from the start.
 
@@ -63,11 +90,11 @@ First, we establish the accounts that represent the source and destination of fu
 * `PSP Settlement Account`: `account_type: Debit, currency: USD`
 * `Bank Account`: `account_type: Debit, currency: USD`
 
-#### **Step 2: Reconciliation Rules Configuration**
+### Step 2: Reconciliation Rules Configuration
 
 The core of our reconciliation engine is the rule-based architecture. Rules define exactly how transactions should be matched and what conditions must be met for a successful reconciliation.
 
-**Rule 1: Order-to-PSP Matching**
+#### Rule 1: Order-to-PSP Matching
 
 * **Purpose**: Match customer orders from your OMS with the corresponding payments recorded by your PSP.
 * **Rule Settings**:
@@ -80,7 +107,7 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
     * `Order currency = PSP currency`
     * `Order ID = PSP original reference`
 
-**Rule 2: PSP-to-Bank Matching**
+#### Rule 2: PSP-to-Bank Matching
 
 * **Purpose**: Match the net settlements from your PSP with the actual deposits that appear in your bank statement.
 * **Rule Settings**:
@@ -93,7 +120,7 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
     * `PSP currency = Bank currency`
     * `Settlement date = Bank value date`
 
-#### **Step 3: The Transaction Journey**
+### Step 3: The Transaction Journey
 
 This is a sample journey of a single customer order moving through the system, with each state transition being handled by the reconciliation engine
 
