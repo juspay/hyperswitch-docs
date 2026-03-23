@@ -1,5 +1,8 @@
 ---
-description: Master the five-step reconciliation workflow on Juspay Hyperswitch to efficiently process reports and resolve financial discrepancies through automated matching
+description: >-
+  Master the five-step reconciliation workflow on Juspay Hyperswitch to
+  efficiently process reports and resolve financial discrepancies through
+  automated matching
 ---
 
 # Getting Started with Recon
@@ -73,15 +76,11 @@ This below specified table indicates the progress and outcome across each sectio
 * Red status : The particular stage has some errors which need to be rectified
 * Partial Red status : Some of the records are invalid and have been excluded from the process
 
-<figure><img src="../../../about-hyperswitch/payments-modules/reconciliation/broken-reference" alt=""><figcaption></figcaption></figure>
-
 ## Run Reconciliation
 
 Once the files are uploaded and prepared, we need to run the reconciliation engine. In case of automated Reconciliation, the recon engine would move to the next step automatically. Automated reconciliation needs to be enabled during the activation and configuration stage. The Run Recon section is divided into 4 parts:
 
 Date selection, File selection, Recon status and Engine capabilities
-
-<figure><img src="../../../about-hyperswitch/payments-modules/reconciliation/broken-reference" alt=""><figcaption></figcaption></figure>
 
 ### Date selection
 
@@ -94,8 +93,6 @@ Select the files on which you need to run reconciliation. In case of automated R
 ### Recon status
 
 The Green status signifies that the reconciliation engine has run successfully
-
-<figure><img src="../../../about-hyperswitch/payments-modules/reconciliation/broken-reference" alt=""><figcaption></figcaption></figure>
 
 In case you face any errors at this stage please contact the Juspay Hyperswitch support team.
 
@@ -154,8 +151,6 @@ In case of 3-way recon, the columns Recon status and Recon sub-status are used t
 ## Reconciliation Analytics
 
 The Recon Dashboard is characterised by several components that facilitate analysis:
-
-<figure><img src="../../../about-hyperswitch/payments-modules/reconciliation/broken-reference" alt=""><figcaption></figcaption></figure>
 
 ### User controls
 

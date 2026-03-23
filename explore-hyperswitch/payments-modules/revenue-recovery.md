@@ -1,9 +1,11 @@
 ---
+description: >-
+  Configure Juspay Hyperswitch Revenue Recovery to automatically retry failed
+  recurring payments and reduce subscription churn for your SaaS business
 icon: clock-rotate-left
-description: Configure Juspay Hyperswitch Revenue Recovery to automatically retry failed recurring payments and reduce subscription churn for your SaaS business
 ---
 
-# Juspay Hyperswitch Revenue Recovery
+# Revenue Recovery
 
 Revenue Recovery module of Juspay Hyperswitch is designed to act as a failsafe for recurring payments. It seamlessly integrates with merchants' existing subscription management systems and performs intelligent retries to recover failed transactions. With minimal effort from merchants, Revenue Recovery delivers an uplift in authorization rates, helping businesses reduce churn, recover lost revenue, and maximize customer lifetime value.
 
@@ -22,6 +24,7 @@ For subscription-based businesses, involuntary churn from failed recurring payme
 ### Integration
 
 Merchants can configure Revenue Recovery entirely through the dashboard without writing any code. This configuration can be completed using the following three steps.
+
 1. **Step 1:** Provide credentials for payment processors and set up our webhooks with these processors.
 2. **Step 2:** Provide credentials for the subscription platform used and set up our webhook within this platform.
 3. **Step 3:** Configure the recovery plan (retry budget, start retry after etc.)
@@ -30,60 +33,7 @@ Merchants can configure Revenue Recovery entirely through the dashboard without 
 
 Once the setup is complete, Revenue Recovery automatically begins monitoring transactions via webhook. When a failed transaction is detected, the system evaluates over 20 parameters to intelligently schedule a retry, aiming to recover the payment. These transactions are then recorded back into the subscription platform to avoid subscription cancellations.
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Inter", "fontSize": "14px"}}}%%
-sequenceDiagram
-    participant Merchant
-    participant BillingPlatform as Billing Platform
-    participant RRDashboard as RR Dashboard
-    participant RetryEngine as Retry Engine
-    participant PaymentService as Payment Service
-    participant PaymentProcessor as Payment Processor
-    
-    rect rgb(240, 240, 240)
-        Note over Merchant,PaymentProcessor: Onboarding Flow
-        Merchant->>RRDashboard: Connect Payment Processor
-        RRDashboard-->>Merchant: Get Webhook URL
-        Merchant->>PaymentProcessor: Setup Webhook in Payment Processor
-        Merchant->>RRDashboard: Connect Billing Platform and provide retry configurations
-        RRDashboard-->>Merchant: Get Webhook URL
-        Merchant->>BillingPlatform: Setup Webhook in Billing Platform
-    end
-    
-    rect rgb(240, 240, 240)
-        Note over Merchant,PaymentProcessor: Recovery in Action
-        BillingPlatform->>PaymentService: Trigger subscription payment
-        PaymentService->>PaymentProcessor: Process payment
-        PaymentProcessor-->>PaymentService: Failed Response
-        PaymentService-->>BillingPlatform: Failed Response
-        RetryEngine->>PaymentService: Trigger Retry = 1
-        PaymentService->>PaymentProcessor: Process payment
-        PaymentProcessor-->>PaymentService: Failed Response
-        PaymentService-->>RetryEngine: Failed Response
-        RetryEngine->>PaymentService: Trigger Retry = x
-        PaymentService->>PaymentProcessor: Process payment
-        PaymentProcessor-->>PaymentService: Failed Response
-        PaymentService-->>RetryEngine: Failed Response
-        RetryEngine->>BillingPlatform: Failed Transaction and Invoice
-        RetryEngine->>RRDashboard: Schedule Retry = x + 1
-        RRDashboard-->>BillingPlatform: Update retry schedule time for the invoice
-        RetryEngine->>PaymentService: Trigger Transaction
-        PaymentService->>PaymentProcessor: Process payment
-        PaymentProcessor-->>PaymentService: Failed Response
-        PaymentService-->>RetryEngine: Failed Response
-        RetryEngine->>RRDashboard: Record transaction for the invoice
-        RRDashboard-->>BillingPlatform: Record transaction for the invoice
-        Merchant->>BillingPlatform: Check transaction
-        Merchant->>RRDashboard: Check transaction
-        RetryEngine->>PaymentService: Schedule Retry if retry count not exhausted or response != terminal error
-        RetryEngine->>PaymentService: Trigger Transaction
-        PaymentService->>PaymentProcessor: Process payment
-        PaymentProcessor-->>PaymentService: Success/Failed Response
-        PaymentService-->>RetryEngine: Success/Failed Response
-        RetryEngine->>RRDashboard: Record transaction and close the invoice
-        RRDashboard-->>BillingPlatform: Record transaction or change the invoice status
-    end
-```
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 ## Key Features
 

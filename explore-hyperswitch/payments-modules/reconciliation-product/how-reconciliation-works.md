@@ -1,5 +1,8 @@
 ---
-description: Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based architecture to automatically match transactions and resolve financial discrepancies
+description: >-
+  Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
+  architecture to automatically match transactions and resolve financial
+  discrepancies
 ---
 
 # How Reconciliation Works
@@ -12,16 +15,18 @@ The Reconciliation Engine is the intelligent core that automatically matches and
 
 The reconciliation process follows a robust, end-to-end flow to ensure that every transaction is accounted for
 
-1. **Staging Entry Processing**: After a file has been ingested and transformed, all standardized data becomes a **Staging Entry**. This is a temporary, validated but unreconciled record waiting for processing by the engine
-2. **Rule Evaluation**: The reconciliation engine continuously evaluates each new staging entry against your configured business rules to determine the appropriate action
-3. **Expectation Creation**: When a rule matches a staging entry, the system creates an **Expectation**. An expectation is a record that defines what a corresponding transaction should look like from a target system
-4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process
-5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules
-6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
+1. **Staging Entry Processing**: After a file has been ingested and transformed, all standardized data becomes a **Staging Entry**. This is a temporary, validated but unreconciled record waiting for processing by the engine.
+2. **Rule Evaluation**: The reconciliation engine continuously evaluates each new staging entry against your configured business rules to determine the appropriate action.
+3. **Expectation Creation**: When a rule matches a staging entry, the system creates an **Expectation**. An expectation is a record that defines what a corresponding transaction should look like from a target system.
+4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process.
+5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules.
+6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly.
+7. \
+   **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
+8.
 
 {% code title="How Reconciliation Works" fullWidth="true" %}
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Inter", "fontSize": "14px"}}}%%
 flowchart TB
     OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
     PD["Payment Data"] -- Ingested via automated connection --> DI
