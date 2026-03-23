@@ -1,9 +1,9 @@
 ---
 icon: database
-description: Are you truly confident that every customer payment lands in your bank account? For most businesses, the path from transaction to settlement is a complex maze of different providers, inconsistent d...
+description: Explore Juspay Hyperswitch Reconciliation module to eliminate revenue leakage through automated matching across order management, PSP, and bank systems
 ---
 
-# Reconciliation
+# Juspay Hyperswitch Reconciliation
 
 Are you truly confident that every customer payment lands in your bank account? For most businesses, the path from transaction to settlement is a complex maze of different providers, inconsistent data, and manual checks—a system ripe for revenue leakage, reporting errors, and compliance risks
 
@@ -15,7 +15,7 @@ The reconciliation problem is further compounded by following factors:
 
 Our Reconciliation Module is built on a powerful, accounting-grade ledger, applying the precision of double-entry bookkeeping to your entire payment flow
 
-#### Jump to:
+## Jump to:
 
 | [Core Concepts](core-concepts.md)                           | [How Reconciliation Works](how-reconciliation-works.md) |
 | ----------------------------------------------------------- | ------------------------------------------------------- |
