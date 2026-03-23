@@ -1,11 +1,11 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Configure your preferred payment connector on Juspay Hyperswitch to start accepting payments
 icon: chart-network
 ---
 
-# Activate Connector on Hyperswitch
+# Activate Connector on Juspay Hyperswitch
 
-### Steps to activate connector on the Hyperswitch Control Center
+## Steps to activate connector on the Hyperswitch Control Center
 
 1.  **Access connectors section**
 
@@ -41,7 +41,7 @@ icon: chart-network
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)
 {% endcontent-ref %}
 
-### Edit connector credentials on the Hyperswitch Control Center
+## Edit connector credentials on the Hyperswitch Control Center
 
 {% hint style="warning" %}
 To update connector credentials on Hyperswitch you will need to re-enter all the fields required for credentials.

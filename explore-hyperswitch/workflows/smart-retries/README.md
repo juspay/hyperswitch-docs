@@ -1,11 +1,11 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Automatically retry failed payments with an alternative processor to increase success rates
 icon: magnifying-glass-arrows-rotate
 ---
 
 # Smart Retries
 
-Smart retry is a Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
+Smart retry is a Juspay Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
 
 The Auto Retry engine handles varied Retry strategy based on the type of error encountered such as:
 
@@ -14,11 +14,11 @@ The Auto Retry engine handles varied Retry strategy based on the type of error e
 3. **Clear PAN Retry -** Re-attempting a tokenised authorization request with a Clear PAN in case of de-tokenisation failures
 4. **Global Network Retry -** Re-attempting an authorization request with a signature network in case of debit network failure
 
-Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 100+ processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
+Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 300+ connectors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
 
 <figure><img src="../../../.gitbook/assets/unknown (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Error code segregation
+## Error code segregation
 
 1. For each PSP all the published + encountered error codes are segregated in two categories “Retriable” and “Non-retriable”
 2. This is a dynamic list and continue to grow for each PSP as they change their error mapping or introduce new errors
@@ -33,13 +33,13 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | Clear PAN retry                    | Invalid cryptogram, Network token not supported, Payment token expired                               |
 | Network retry                      | Transaction not permitted on this network, Invalid card for selected network, Function not supported |
 
-### Merchant config enablement&#x20;
+## Merchant config enablement&#x20;
 
 1. Merchant needs to be enabled across the required flows
 2. Merchant can be eligible to all 4 or some of retry flows - **Cascading Retry, Step-Up Retry, Clear PAN Retry, Global Network Retry**&#x20;
 3. Merchant needs to specify N = Number of retries permitted
 
-### Retry Decision Flow&#x20;
+## Retry Decision Flow&#x20;
 
 1. Payment fails → GSM lookup determines retry eligibility retry
 2. Check retry flags:
@@ -49,7 +49,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 3. Execute _retry via do\_retry()_ function retry with SAME or ENHANCED payload
 4. Exhaustion handling → Stop when retries/connectors depleted retry
 
-### How it all comes together
+## How it all comes together
 
 #### Use Case 1
 

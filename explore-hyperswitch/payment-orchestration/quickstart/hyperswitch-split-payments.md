@@ -1,35 +1,35 @@
 ---
-description: Get started with Split Payments via Hyperswitch
+description: Enable split payments to increase checkout conversion and flexibility
 icon: split
 ---
 
 # Split Payments
 
-Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
+Juspay Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
 
 This capability helps merchants:
 
-* Increase conversion when gift card balances are insufficient
-* Improve customer flexibility at checkout
-* Support common retail and digital wallet experiences
+- Increase conversion when gift card balances are insufficient
+- Improve customer flexibility at checkout
+- Support common retail and digital wallet experiences
 
 Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
 
-### Supported Configurations
+## Supported Configurations
 
 Currently, Hyperswitch supports:
 
-* Atmost one gift cards combined with **at most one credit/debit card** (Non-3DS card)
-* Gift Cards via Givex (through Adyen)
+- At most one gift card combined with **at most one credit/debit card** (Non-3DS card)
+- Gift Cards via Givex (through Adyen)
 
 These configurations are designed to cover the most common real-world split payment use cases while maintaining predictable authorization behavior
 
-### Steps to Enable Split Payments
+## Steps to Enable Split Payments
 
-To activate split Transactions:
+To activate split transactions:
 
-1. Enable **Split Transaction** flag from Hyperswitch Control Center under Payment Settings.
-2. Configure at least one connector that supports gift cards (e.g., Adyen).
+1. Enable **Split Transaction** flag from Juspay Hyperswitch Control Center under Payment Settings
+2. Configure at least one connector that supports gift cards (e.g., Adyen)
 
 No custom orchestration logic is required on the merchant side beyond standard SDK integration.
 
@@ -37,25 +37,25 @@ No custom orchestration logic is required on the merchant side beyond standard S
 
 
 
-### Hyperswitch Split Payments Flow
+## Hyperswitch Split Payments Flow
 
 <figure><img src="../../../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
 
 
 
-#### 1. Payment Initialization
+### 1. Payment Initialization
 
 After the [payment intent](https://api-reference.hyperswitch.io/v1/payments/payments--create) is created, the checkout SDK is initialized. The SDK retrieves and displays all supported payment methods configured for the merchant, including gift cards if they are enabled.
 
-#### 2. Gift Card Application and Validation
+### 2. Gift Card Application and Validation
 
 When a customer applies a gift card during checkout, the SDK collects the gift card details and sends them for validation.
 
 The backend service then communicates with the configured gift card provider to:
 
-* Validate the gift card credentials
-* Retrieve the available balance
-* Determine whether an additional payment method is required
+- Validate the gift card credentials
+- Retrieve the available balance
+- Determine whether an additional payment method is required
 
 The SDK receives the balance and eligibility response and updates the checkout interface accordingly.
 
@@ -63,17 +63,17 @@ If the gift card balance fully covers the transaction amount, the customer can p
 
 If the balance is insufficient, the customer is prompted to add another payment method. The remaining payable amount is automatically calculated and displayed.
 
-#### 3. Payment Confirmation
+### 3. Payment Confirmation
 
 When the customer confirms the payment, the SDK submits all selected payment method details to Hyperswitch.
 
 At this stage, the system:
 
-* Uses the previously validated gift card balance
-* Calculates the amount to be charged to each payment method
-* Initiates sequential authorization of the payment methods
+- Uses the previously validated gift card balance
+- Calculates the amount to be charged to each payment method
+- Initiates sequential authorization of the payment methods
 
-#### 4. Sequential Payment Processing
+### 4. Sequential Payment Processing
 
 Split payments are processed in a fixed order to maintain transaction consistency and avoid partial payment risks.
 
@@ -93,13 +93,13 @@ If the gift card authorization succeeds, the transaction proceeds toward complet
 
 If the gift card authorization fails after the card payment has already been processed, refund handling is automatically triggered for the card payment to maintain transaction consistency.
 
-#### 5. Payment Completion
+### 5. Payment Completion
 
 Once all payment methods are processed, the final transaction status is returned to the SDK.
 
 
 
-#### API Details :&#x20;
+### API Details:&#x20;
 
 
 

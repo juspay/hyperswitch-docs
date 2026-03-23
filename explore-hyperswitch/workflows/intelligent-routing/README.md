@@ -1,27 +1,28 @@
 ---
+description: Optimize payment success rates and minimize costs through intelligent real-time processor routing
 icon: flux-capacitor
 ---
 
 # Intelligent Routing
 
-The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
+Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
 
-### Types of Intelligent Routing
+## Types of Intelligent Routing
 
-Hyperswitch supports four intelligent routing strategies:
+Juspay Hyperswitch supports four intelligent routing strategies:
 
-* **Auth Rate Based Routing:** Uses real-time success rates and ML-driven optimisation to route transactions to the best-performing gateway.&#x20;
-  * The Auth Rates for the payments are tracked at a granular level of payment parameters like payment method, payment method type, amount, currency, authentication type, card network etc.&#x20;
-  * **The model** uses a Multi-Armed Bandit (MAB) problem with Delayed Feedback, where each Gateway is an "arm" with fluctuating success rates and varying latency for success and failure. The approach used to solve this problem is driven by **explore-exploit** strategy.
-    * **Exploration:** We continuously evaluate all gateways by sending a small percentage of traffic to ensure up-to-date performance data.
-    * **Exploitation:** We continuously route most traffic to the best-performing Gateway to maximise the overall success rate.
-  * The sensitivity of the system can be tweaked by the merchants by configuring settings such as Bucket Sizes, Parameters to be considered and Hedging Percentage
-  * The hedging percentage decides the exploration factor of the model&#x20;
-* **Least Cost Routing:** Picks the least cost network for every transaction basis the availability of back-of-the-card network and processor compatibility
-* **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied.
-* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]&#x20;
+- **Auth Rate Based Routing:** Uses real-time success rates and ML-driven optimisation to route transactions to the best-performing gateway
+  - The Auth Rates for the payments are tracked at a granular level of payment parameters like payment method, payment method type, amount, currency, authentication type, card network etc
+  - **The model** uses a Multi-Armed Bandit (MAB) problem with Delayed Feedback, where each Gateway is an "arm" with fluctuating success rates and varying latency for success and failure. The approach used to solve this problem is driven by **explore-exploit** strategy
+    - **Exploration:** We continuously evaluate all gateways by sending a small percentage of traffic to ensure up-to-date performance data
+    - **Exploitation:** We continuously route most traffic to the best-performing Gateway to maximise the overall success rate
+  - The sensitivity of the system can be tweaked by the merchants by configuring settings such as Bucket Sizes, Parameters to be considered and Hedging Percentage
+  - The hedging percentage decides the exploration factor of the model
+- **Least Cost Routing:** Picks the least cost network for every transaction basis the availability of back-of-the-card network and processor compatibility
+- **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied
+- **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments [BETA FEATURE]
 
-### Architecture Diagram
+## Architecture Diagram
 
 <figure><img src="../../../.gitbook/assets/image (157) (1).png" alt=""><figcaption></figcaption></figure>
 
