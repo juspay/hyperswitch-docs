@@ -1,11 +1,11 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'24)
+description: Review Juspay Hyperswitch roadmap and upcoming features for Q2 2024
 icon: road
 ---
 
 # Previous Roadmap - Q2 2024
 
-🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
+🗺️ Our Roadmap typically spans out over a 3-month period and we establish topics we work on upfront.
 
 Before the beginning of every quarter we come together to develop the next roadmap based on our core values, [previous roadmap](roadmap-q4-2023.md), findings over the previous quarter, what we heard from the community as feature requests.
 
@@ -13,27 +13,27 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ## Recap of Q1 2024 <a href="#recap-of-q4-2023" id="recap-of-q4-2023"></a>
 
-Lets start with a short recap on what was released new in Q1 2024
+Let's start with a short recap on what was released new in Q1 2024
 
-* New connector integrations
-  * Cybersource support for ApplePay, GooglePay
-  * PlacetoPay support for card payments
-  * [3Dsecure.io](http://3dsecure.io) integration for 3DS authentication
-  * Pix and Boleto via Adyen
-* Card vault was enhanced to support fingerprinting and MIT recurring payments
-* Payment gateway agnostic MIT payments through Stripe, Adyen and Cybersource
-* Upgraded helm charts to support cloud agnostic installation of Hyperswitch
-* Enhanced audit trail for visibility into payment flows
-* Decoupled 3DS authentication for smoother payment experience and better conversion rates authorization rates
-* Customs roles on Control center for identity & access management
-* Retries for failed webhooks
-* Enabling surcharge for specific payment methods to promote low cost payment methods
-* Control center can manage support tracking, submitting evidences for disputes (via Stripe) - we will be extending to more processors in the upcoming quarters.
-* Global ID based search in control center to quickly access a payment record
-* Block lists to prevent fraudulent card payments based on card issuers and fingerprints
-* Interface to dynamically select components (Storage Backend, Secrets Manager) during runtime
-* Enhancement of Payouts module - Save payout details, Payouts routing, Payout retries (same provider & different provider).
-* Subscriptions - Payment processing support for all major subscription solution providers and plug-in support for Kill Bill subscription solution.
+- New connector integrations
+  - Cybersource support for ApplePay, GooglePay
+  - PlacetoPay support for card payments
+  - [3Dsecure.io](http://3dsecure.io) integration for 3DS authentication
+  - Pix and Boleto via Adyen
+- Card vault was enhanced to support fingerprinting and MIT recurring payments
+- Payment gateway agnostic MIT payments through Stripe, Adyen and Cybersource
+- Upgraded helm charts to support cloud agnostic installation of Hyperswitch
+- Enhanced audit trail for visibility into payment flows
+- Decoupled 3DS authentication for smoother payment experience and better conversion rates
+- Custom roles on Control Center for identity & access management
+- Retries for failed webhooks
+- Enabling surcharge for specific payment methods to promote low cost payment methods
+- Control Center can manage support tracking, submitting evidences for disputes (via Stripe) - we will be extending to more processors in the upcoming quarters
+- Global ID based search in Control Center to quickly access a payment record
+- Block lists to prevent fraudulent card payments based on card issuers and fingerprints
+- Interface to dynamically select components (Storage Backend, Secrets Manager) during runtime
+- Enhancement of Payouts module - Save payout details, Payouts routing, Payout retries (same provider & different provider)
+- Subscriptions - Payment processing support for all major subscription solution providers and plug-in support for Kill Bill subscription solution
 
 ## Core Values <a href="#core-values" id="core-values"></a>
 
@@ -45,7 +45,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
+There are a lot of problems to be solved in payments, but the majority of our current focus falls under 5 themes below.
 
 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 

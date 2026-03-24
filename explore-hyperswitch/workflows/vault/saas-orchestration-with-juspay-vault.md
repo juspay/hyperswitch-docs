@@ -1,7 +1,5 @@
 ---
-description: >-
-  Leverage the integrated vault that comes with Hyperswitch Orchestration
-  account to store cards
+description: Use the integrated Juspay Vault with your Hyperswitch orchestration account to securely store payment methods
 icon: box-circle-check
 ---
 

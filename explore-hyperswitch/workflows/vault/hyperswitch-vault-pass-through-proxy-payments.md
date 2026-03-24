@@ -1,23 +1,23 @@
 ---
-description: Send payments to PSPs using Vault tokens without handling raw card data
+description: Send payments to PSPs using Vault tokens to avoid handling raw card data
 hidden: true
 icon: arrows-repeat
 ---
 
-# Hyperswitch Vault: Pass Through Proxy Payments
+# Juspay Hyperswitch Vault: Pass Through Proxy Payments
 
-**📌 What is it?**
+## What is it?
 
-The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
+The **Proxy Payments Service** allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
 
-#### ✅ Why use it?
+## Why use it?
 
 * **No PSP re-integration needed** – Keep your existing PSP connections.
 * **PCI DSS scope reduction** – Raw card data stays within Vault.
 * **Data security** – Detokenization happens only during the request lifecycle.
 * **Centralized token management** – One vault, many PSPs.
 
-#### ⚙️ How it works
+## How it works
 
 1. **Tokenize cards using Vault**: Tokenize your customers' cards using the [Vault service](./) and store the payment\_method\_id of each card
 2. **Send your proxy payment request**: Send your PSP payment request to the Vault proxy endpoint including the target PSP's url as the destination url and payment\_method\_id that was received in Step 1
@@ -25,7 +25,7 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitc
 4. **Forward to PSP**: The request is sent to the PSP
 5. **Return Response**: Vault returns PSP response to the merchant
 
-#### 🧪 Proxy Payment Request
+## Proxy Payment Request
 
 Include the following details:
 
@@ -86,7 +86,7 @@ Include the following details:
 }'
 </code></pre>
 
-#### 📥 Sample Response
+## Sample Response
 
 ```bash
 {
