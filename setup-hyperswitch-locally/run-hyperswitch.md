@@ -1,8 +1,8 @@
 ---
-description: Use Docker to set up Hyperswitch app server
+description: Set up Juspay Hyperswitch locally using Docker to start processing payments in under 15 minutes
 ---
 
-# 🐳 Run Hyperswitch
+# Run Juspay Hyperswitch
 
 {% hint style="info" %}
 Let's hit the ground running – in the first fifteen minutes, you’ll see a complete end-to-end example of installing Hyperswitch and making a Payment via a Payment provider of your choice. So, let’s get started!
