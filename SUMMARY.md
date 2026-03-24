@@ -449,3 +449,11 @@
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
+
+## PRISM
+- [Overview](prism/README.md)
+- [Getting Started](prism/getting-started/installation.md)
+- [Architecture](prism/architecture/README.md)
+- [API Reference](prism/api-reference/README.md)
+- [Connectors](prism/connectors/README.md)
+- [SDKs](prism/sdks/node/README.md)
