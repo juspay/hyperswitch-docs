@@ -450,10 +450,163 @@
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
 
+
 ## PRISM
+
+### Getting Started
 - [Overview](prism/README.md)
-- [Getting Started](prism/getting-started/installation.md)
-- [Architecture](prism/architecture/README.md)
-- [API Reference](prism/api-reference/README.md)
-- [Connectors](prism/connectors/README.md)
-- [SDKs](prism/sdks/node/README.md)
+- [Installation & Configuration](prism/getting-started/installation.md)
+- [Create Payment Order](prism/getting-started/create-order.md)
+- [First Payment](prism/getting-started/first-payment.md)
+- [Extend to More Flows](prism/getting-started/extend-to-more-flows.md)
+
+### Architecture
+- [Architecture Overview](prism/architecture/README.md)
+  - [Core Components](prism/architecture/concepts/core-components.md)
+  - [PCI Compliance](prism/architecture/compliance/compliance.md)
+  - [Connector Settings and Overrides](prism/architecture/concepts/connector-settings-and-overrides.md)
+  - [Connectors, Services and Methods](prism/architecture/concepts/connectors-services-subservices-methods.md)
+  - [Environment Settings](prism/architecture/concepts/environment-settings.md)
+  - [Error Handling](prism/architecture/concepts/error-handling.md)
+  - [Error Mapping](prism/architecture/concepts/error-mapping.md)
+  - [ID and Object Modelling](prism/architecture/concepts/id-and-object-modelling.md)
+  - [Modes of Usage](prism/architecture/concepts/library-modes-of-usage.md)
+  - [Domain specific language](prism/architecture/concepts/specs-and-dsl.md)
+  - [Integrity and Source Verification](prism/architecture/frameworks/integrity-and-source-verification.md)
+  - [Money Struct](prism/architecture/frameworks/money-struct.md)
+  - [Versioning](prism/architecture/versioning.md)
+  - [Code Generation](prism/architecture/autogeneration-frameworks/code-generation.md)
+  - [Docs Generation](prism/architecture/autogeneration-frameworks/docs-generation.md)
+  - [SDK Generation](prism/architecture/autogeneration-frameworks/sdk-generation.md)
+  - [Test Generation](prism/architecture/autogeneration-frameworks/test-generation.md)
+
+### API Reference
+- [API Reference Overview](prism/api-reference/README.md)
+- [Domain Schema](prism/api-reference/domain-schema/README.md)
+
+#### Payment Service
+- [Payment Service Overview](prism/api-reference/services/payment-service/README.md)
+- [Create Order](prism/api-reference/services/payment-service/create-order.md)
+- [Authorize](prism/api-reference/services/payment-service/authorize.md)
+- [Capture](prism/api-reference/services/payment-service/capture.md)
+- [Void](prism/api-reference/services/payment-service/void.md)
+- [Refund](prism/api-reference/services/payment-service/refund.md)
+- [Get](prism/api-reference/services/payment-service/get.md)
+- [Reverse](prism/api-reference/services/payment-service/reverse.md)
+- [Setup Recurring](prism/api-reference/services/payment-service/setup-recurring.md)
+- [Incremental Authorization](prism/api-reference/services/payment-service/incremental-authorization.md)
+- [Verify Redirect Response](prism/api-reference/services/payment-service/verify-redirect-response.md)
+
+#### Recurring Payment Service
+- [Recurring Payment Service Overview](prism/api-reference/services/recurring-payment-service/README.md)
+- [Charge](prism/api-reference/services/recurring-payment-service/charge.md)
+- [Revoke](prism/api-reference/services/recurring-payment-service/revoke.md)
+
+#### Refund Service
+- [Refund Service Overview](prism/api-reference/services/refund-service/README.md)
+- [Get](prism/api-reference/services/refund-service/get.md)
+
+#### Dispute Service
+- [Dispute Service Overview](prism/api-reference/services/dispute-service/README.md)
+- [Accept](prism/api-reference/services/dispute-service/accept.md)
+- [Defend](prism/api-reference/services/dispute-service/defend.md)
+- [Get](prism/api-reference/services/dispute-service/get.md)
+- [Submit Evidence](prism/api-reference/services/dispute-service/submit-evidence.md)
+
+#### Event Service
+- [Event Service Overview](prism/api-reference/services/event-service/README.md)
+- [Handle](prism/api-reference/services/event-service/handle.md)
+
+#### Payment Method Service
+- [Payment Method Service Overview](prism/api-reference/services/payment-method-service/README.md)
+- [Tokenize](prism/api-reference/services/payment-method-service/tokenize.md)
+
+#### Customer Service
+- [Customer Service Overview](prism/api-reference/services/customer-service/README.md)
+- [Create](prism/api-reference/services/customer-service/create.md)
+
+#### Payment Method Authentication Service
+- [Payment Method Authentication Service Overview](prism/api-reference/services/payment-method-authentication-service/README.md)
+- [Pre-authenticate](prism/api-reference/services/payment-method-authentication-service/pre-authenticate.md)
+- [Authenticate](prism/api-reference/services/payment-method-authentication-service/authenticate.md)
+- [Post-authenticate](prism/api-reference/services/payment-method-authentication-service/post-authenticate.md)
+
+#### Merchant Authentication Service
+- [Merchant Authentication Service Overview](prism/api-reference/services/merchant-authentication-service/README.md)
+- [Create Access Token](prism/api-reference/services/merchant-authentication-service/create-access-token.md)
+- [Create Session Token](prism/api-reference/services/merchant-authentication-service/create-session-token.md)
+- [Create SDK Session Token](prism/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
+
+### Connectors
+- [All Connectors](prism/all_connector.md)
+- [Connectors Overview](prism/connectors/README.md)
+- [ACI](prism/connectors/aci.md)
+- [Adyen](prism/connectors/adyen.md)
+- [Airwallex](prism/connectors/airwallex.md)
+- [Authorize.Net](prism/connectors/authorizedotnet.md)
+- [Authipay](prism/connectors/authipay.md)
+- [Bambora](prism/connectors/bambora.md)
+- [Bambora APAC](prism/connectors/bamboraapac.md)
+- [Bank of America](prism/connectors/bankofamerica.md)
+- [Barclaycard](prism/connectors/barclaycard.md)
+- [Billwerk](prism/connectors/billwerk.md)
+- [Bluesnap](prism/connectors/bluesnap.md)
+- [Braintree](prism/connectors/braintree.md)
+- [Calida](prism/connectors/calida.md)
+- [Celero](prism/connectors/celero.md)
+- [Checkout.com](prism/connectors/checkout.md)
+- [Cryptopay](prism/connectors/cryptopay.md)
+- [Cybersource](prism/connectors/cybersource.md)
+- [Datatrans](prism/connectors/datatrans.md)
+- [Dlocal](prism/connectors/dlocal.md)
+- [Fiserv](prism/connectors/fiserv.md)
+- [Fiuu](prism/connectors/fiuu.md)
+- [Noon](prism/connectors/noon.md)
+- [PayPal](prism/connectors/paypal.md)
+- [PaySafe](prism/connectors/paysafe.md)
+- [Paytm](prism/connectors/paytm.md)
+- [PayU](prism/connectors/payu.md)
+- [Placetopay](prism/connectors/placetopay.md)
+- [Powertranz](prism/connectors/powertranz.md)
+- [Rapyd](prism/connectors/rapyd.md)
+- [Razorpay](prism/connectors/razorpay.md)
+- [Razorpay v2](prism/connectors/razorpayv2.md)
+- [Redsys](prism/connectors/redsys.md)
+- [Revolut](prism/connectors/revolut.md)
+- [Revolv3](prism/connectors/revolv3.md)
+- [Shift4](prism/connectors/shift4.md)
+- [Silverflow](prism/connectors/silverflow.md)
+- [Stax](prism/connectors/stax.md)
+- [Stripe](prism/connectors/stripe.md)
+- [Trustpay](prism/connectors/trustpay.md)
+- [TrustPayments](prism/connectors/trustpayments.md)
+- [Truelayer](prism/connectors/truelayer.md)
+- [Volt](prism/connectors/volt.md)
+- [Wells Fargo](prism/connectors/wellsfargo.md)
+- [Worldpay](prism/connectors/worldpay.md)
+- [Worldpay Vantiv](prism/connectors/worldpayvantiv.md)
+- [Worldpay XML](prism/connectors/worldpayxml.md)
+- [Xendit](prism/connectors/xendit.md)
+- [Zift](prism/connectors/zift.md)
+
+### SDKs
+- [Node.js SDK](prism/sdks/node/README.md)
+- [Python SDK](prism/sdks/python/README.md)
+
+### Test Suite
+- [Test Suite Overview](prism/test-suite/README.md)
+- [Architecture](prism/test-suite/architecture.md)
+- [Best Practices](prism/test-suite/best-practices.md)
+- [CI/CD](prism/test-suite/ci-cd.md)
+- [Configuration](prism/test-suite/configuration.md)
+- [Global Suites](prism/test-suite/global-suites.md)
+- [Overrides](prism/test-suite/overrides.md)
+- [Test Structure](prism/test-suite/test-structure.md)
+- [Usage](prism/test-suite/usage.md)
+
+### Blogs
+- [Why We Built a Unified Payment Integration Library](prism/blogs/why-we-built-a-unified-payment-integration-library.md)
+
+### Additional Resources
+- [Glossary](prism/glossary.md)
+- [LLMs.txt](prism/llms.txt)
