@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Worldline via Hyperswitch
+description: Learn about Worldline to optimize your payment infrastructure
 hidden: true
 ---
 
 # Worldline
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Worldline through Hyperswitch
@@ -17,7 +21,7 @@ Worldline is a payment service provider that offers in-store payment services, o
 
 #### Prerequisites
 
-1. You need to be registered with Worldline in order to proceed. In case you aren't, you can quickly setup your Worldline account [here](https://worldline.com/)
+1. You need to be registered with Worldline in order to proceed. In case you aren't, you can quickly set up your Worldline account [here](https://worldline.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/)
 3. Worldline **API Key ID**, **Secret API Key** and **Merchant ID** can be found in your Worldline dashboard under API Keys.
 4. Select all the payment methods you wish to use Worldline for. Ensure that this is the same as the ones configured on your Worldline dashboard

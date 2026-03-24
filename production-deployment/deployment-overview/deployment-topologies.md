@@ -1,3 +1,7 @@
+---
+description: Deploy Hyperswitch payment infrastructure on your preferred cloud platform
+---
+
 # Deployment Topologies
 
 There are two primary deployment topologies to enhance the reliability of enterprise setups:
@@ -9,7 +13,7 @@ There are two primary deployment topologies to enhance the reliability of enterp
 
 In an Active-Active setup, the merchant would deploy Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions.&#x20;
 
-This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
+This set up offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 
 <figure><img src="../../.gitbook/assets/ChatGPT Image Mar 9, 2026 at 11_49_29 AM.png" alt="Architecture diagram of the Active-Active setup"><figcaption></figcaption></figure>
 
@@ -28,7 +32,7 @@ This setup offers the highest level of availability and can also improve perform
 #### Cons:
 
 * **Operational Complexity:** Requires careful management of cross-region database synchronization, transaction affinity, and distributed system behavior.
-* **Higher Initial Setup Effort:** Implementing Active-Active infrastructure requires additional routing, synchronization, and monitoring components compared to simpler deployment models.
+* **Higher Initial Set up Effort:** Implementing Active-Active infrastructure requires additional routing, synchronization, and monitoring components compared to simpler deployment models.
 
 ### Multi Region Active - Passive Setup
 

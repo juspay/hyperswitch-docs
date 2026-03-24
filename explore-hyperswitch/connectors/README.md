@@ -1,15 +1,17 @@
 ---
-description: >-
-  Integrate with more than 200+ Connectors enabling 150+ payment methods with
-  zero development effort.
+description: Browse available payment connectors and integration guides for your preferred processors
 icon: plug
 ---
 
 # Connectors Integration
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 ### Overview
 
-Connectors are integrations that allow Hyperswitch to talk to external payment services such as PSPs, Acquirers, [APMs](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets), [Card vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault), [3DS authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager), [Fraud management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management), [Subscription](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), Payouts and more. They act as bridges between your Hyperswitch setup and the third-party services that move or manage money for your business.
+Connectors are integrations that allow Hyperswitch to talk to external payment services such as PSPs, Acquirers, [APMs](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets), [Card vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault), [3DS authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager), [Fraud management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management), [Subscription](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), Payouts and more. They act as bridges between your Hyperswitch set up and the third-party services that move or manage money for your business.
 
 Every provider has its own APIs, authentication methods, and feature sets. Hyperswitch standardizes these differences through connectors, exposing a single unified Payments API. This means you can add, switch, or remove processors without rewriting your code—just plug in credentials and start transacting.
 
@@ -29,11 +31,11 @@ Integrating and maintaining multiple payment processors and their different vers
 
 #### Adding a Connector
 
-Most connector integrations follow a simple click-and-connect flow on Hyperswitch using your connector credentials. However, some connectors may require additional setup details as required on the control center.
+Most connector integrations follow a simple click-and-connect flow on Hyperswitch using your connector credentials. However, some connectors may require additional set up details as required on the control center.
 
-Standard Setup Steps
+Standard Set up Steps
 
-1. PSP Registration: You need to be registered with the PSP in order to proceed. In case you aren't, you can quickly setup your account by signing up on their dashboard.
+1. PSP Registration: You need to be registered with the PSP in order to proceed. In case you aren't, you can quickly set up your account by signing up on their dashboard.
 2. Platform Access: You should have registered on [Hyperswitch Control center](https://app.hyperswitch.io/).
 3. Credential Mapping: Add the PSP authentication credentials from their dashboard into the Hyperswitch Control center.
 

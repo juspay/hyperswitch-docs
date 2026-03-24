@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Klarna via Hyperswitch
+description: Learn about Klarna to optimize your payment infrastructure
 hidden: true
 ---
 
 # Klarna
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Klarna through Hyperswitch
@@ -17,7 +21,7 @@ It allows businesses to provide direct payments, pay later options, and installm
 
 #### Prerequisites
 
-1. You need to be registered with Klarna in order to proceed. In case you aren't, you can quickly setup your Klarna account [here](https://www.klarna.com/us/business/)
+1. You need to be registered with Klarna in order to proceed. In case you aren't, you can quickly set up your Klarna account [here](https://www.klarna.com/us/business/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. The Klarna API key can be found in your Klarna dashboard under settings
 

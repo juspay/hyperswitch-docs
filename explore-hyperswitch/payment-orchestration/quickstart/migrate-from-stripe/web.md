@@ -138,4 +138,3 @@ const hyper = Hyper("your_hyperswitch_publishable_key");
 </details>
 
 Want an easy migration from Stripe for Apps? We got you covered. Follow the docs for Android, iOS and React Native apps.
-

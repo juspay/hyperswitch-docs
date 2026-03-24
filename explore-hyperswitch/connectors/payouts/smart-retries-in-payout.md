@@ -1,5 +1,6 @@
 ---
 icon: magnifying-glass-arrows-rotate
+description: Enable automatic payment retries to recover failed transactions and boost authorization rates
 ---
 
 # Smart Retries in Payout

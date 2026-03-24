@@ -1,5 +1,6 @@
 ---
 icon: plug-circle-bolt
+description: Follow this guide to implement Hyperwidget Integration successfully
 ---
 
 # Hyperwidget Integration Guide

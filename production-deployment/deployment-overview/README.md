@@ -1,10 +1,11 @@
 ---
 icon: sign-posts-wrench
+description: Access deployment guides to set up Hyperswitch on your infrastructure
 ---
 
 # Deployment Overview
 
-For an Enterprise-grade production installation of Hyperswitch the recommended approach is to deploy Kubernetes on a managed cloud - Google Cloud Platform, Amazon Web Services or Microsoft Azure.
+For an Enterprise-grade production installation of Juspay Hyperswitch the recommended approach is to deploy Kubernetes on a managed cloud - Google Cloud Platform, Amazon Web Services or Microsoft Azure.
 
 The following is the high-level flow for a Hyperswitch deployment:&#x20;
 

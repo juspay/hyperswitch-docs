@@ -1,5 +1,5 @@
 ---
-description: Use Docker to set up Hyperswitch app server
+description: Learn about Run Hyperswitch to optimize your payment infrastructure
 ---
 
 # 🐳 Run Hyperswitch
@@ -30,7 +30,7 @@ Now, we'll start all services using Docker Compose. This will compile Hyperswitc
 docker compose up -d
 ```
 
-Congratulations! you've now setup Hyperswitch in your local machine. In order to verify that the server is up and running hit the health endpoint.
+Congratulations! you've now set up Hyperswitch in your local machine. In order to verify that the server is up and running hit the health endpoint.
 
 ```
 curl --head --request GET 'http://localhost:8080/health'
@@ -38,9 +38,9 @@ curl --head --request GET 'http://localhost:8080/health'
 
 The expected response here is `200 OK` status code. This indicates that the server and all of its dependent services such as the database and Redis are functioning correctly.
 
-In the next chapter, we'll run payments through your local Hyperswitch setup by setting up the necessary accounts, API credentials and try out payments and refunds.
+In the next chapter, we'll run payments through your local Hyperswitch set up by setting up the necessary accounts, API credentials and try out payments and refunds.
 
-**Note** : In case you want to set up Hyperswitch from scratch in your local system, please goto this tutorial - [Setup Hyperswitch from scratch](broken-reference)&#x20;
+**Note** : In case you want to set up Hyperswitch from scratch in your local system, please goto this tutorial - [Set up Hyperswitch from scratch](broken-reference)&#x20;
 
 ## Run web client
 
@@ -59,7 +59,7 @@ cd hyperswitch-web
 
 Once the repository is cloned, switch to the project directory.
 
-#### [Setup the repository](https://github.com/juspay/hyperswitch-web/tree/main#setup-the-repository) <a href="#user-content-setup-the-repository" id="user-content-setup-the-repository"></a>
+#### [Set up the repository](https://github.com/juspay/hyperswitch-web/tree/main#setup-the-repository) <a href="#user-content-setup-the-repository" id="user-content-setup-the-repository"></a>
 
 First install all the node modules by running the following command
 
@@ -92,4 +92,3 @@ This step will prompt you to enter 3 details that you must have received in the 
 
 
 Congratulations! You will now see the playground running on `http://localhost:4242` where you can test your payments.
-

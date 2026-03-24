@@ -1,8 +1,13 @@
 ---
 hidden: true
+description: Follow this guide to implement Integration successfully
 ---
 
 # Integration Guide
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>
 
@@ -47,7 +52,7 @@ Since the package is currently hosted on GitHub (not yet on the public npm regis
 npm install
 ```
 
-### Step 2: Backend Setup (Server-Side)
+### Step 2: Backend Set up (Server-Side)
 
 Security Warning: Never expose your Hyperswitch API-Key on the frontend. You must create a backend endpoint that acts as a proxy.
 

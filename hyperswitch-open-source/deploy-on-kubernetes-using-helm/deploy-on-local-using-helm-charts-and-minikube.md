@@ -1,7 +1,5 @@
 ---
-description: >-
-  A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
-  with setup, access, cleanup, and troubleshooting instructions.
+description: Deploy Hyperswitch using Kubernetes and Helm for containerized payment infrastructure
 ---
 
 # Deploy on Local using Helm Charts and Minikube

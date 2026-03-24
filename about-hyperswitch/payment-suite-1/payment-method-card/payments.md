@@ -1,5 +1,6 @@
 ---
 icon: money-bills-simple
+description: Learn about Payments to optimize your payment infrastructure
 ---
 
 # Payments
@@ -57,7 +58,7 @@ Note -  When using the HS SDK, the response always contains a temp token and you
 1. Create a PM session using the [Session Create API ](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)to get a [client secret](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-client-secret)
 2. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the client secret and session\_id
 3. The SDK lists the previously saved cards for customers to select&#x20;
-4. If the card has been vaulted previously with an MIT setup for it, CVV is not collected for it and the SDK returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the responseNote - The PM ID in case of guest checkout is volatile in nature and has a default expiry of 1-hour which can be extended by Merchant at a session level
+4. If the card has been vaulted previously with an MIT set up for it, CVV is not collected for it and the SDK returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the responseNote - The PM ID in case of guest checkout is volatile in nature and has a default expiry of 1-hour which can be extended by Merchant at a session level
 
 {% hint style="info" %}
 When using the HS SDK, the response always contains a temp token and you’ll need to exchange it to get the PM ID via a S2S call. Highlighted in detail in (4.)

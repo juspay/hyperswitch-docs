@@ -1,10 +1,11 @@
 ---
 icon: swap
+description: Configure intelligent routing rules to optimize transaction success across multiple payment processors
 ---
 
 # Smart Router for Payouts
 
-The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
+The Juspay Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
 
 > Note: Routing configurations for payout operations are isolated from payment operations. Modifying payout routing rules will not impact your payment routing logic and vice-versa.
 

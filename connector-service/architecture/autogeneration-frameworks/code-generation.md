@@ -1,3 +1,7 @@
+---
+description: Learn about Code Generation to optimize your payment infrastructure
+---
+
 # Code Generation
 
 You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.
@@ -33,13 +37,13 @@ Grace has two interfaces: a CLI tool and a skill/prompt system for LLMs.
 Generate a connector scaffold from an OpenAPI spec:
 
 ```bash
-# Generate from OpenAPI spec
+## Generate from OpenAPI spec
 grace generate \
   --spec ./adyen-openapi.json \
   --connector adyen \
   --output ./backend/connector-integration/src/connectors/adyen/
 
-# Generate with custom LLM model
+## Generate with custom LLM model
 grace generate \
   --spec ./adyen-openapi.json \
   --connector adyen \
@@ -59,13 +63,13 @@ The CLI produces:
 Grace includes a skill definition that any LLM can use. Connect your own model:
 
 ```bash
-# Start Grace with custom model endpoint
+## Start Grace with custom model endpoint
 grace server \
   --model-endpoint https://api.anthropic.com/v1/messages \
   --model claude-3-opus-20240229 \
   --api-key $ANTHROPIC_API_KEY
 
-# Use via the skill
+## Use via the skill
 grace skill generate-connector \
   --spec ./provider-api.json \
   --name "new-provider"
@@ -154,7 +158,7 @@ Grace validates generated code:
 - Error case handling
 
 ```bash
-# Validate generated connector
+## Validate generated connector
 grace validate \
   --connector ./backend/connector-integration/src/connectors/adyen/
 ```
@@ -162,15 +166,15 @@ grace validate \
 ## Adding a New Connector
 
 ```bash
-# 1. Obtain API spec from provider
-# 2. Generate scaffold
+## 1. Obtain API spec from provider
+## 2. Generate scaffold
 grace generate --spec ./spec.json --connector new-provider --output ./connectors/
 
-# 3. Implement TODOs (authentication, special cases)
-# 4. Validate
+## 3. Implement TODOs (authentication, special cases)
+## 4. Validate
 grace validate --connector ./connectors/new-provider/
 
-# 5. Run tests
+## 5. Run tests
 make test-connector CONNECTOR=new-provider
 ```
 

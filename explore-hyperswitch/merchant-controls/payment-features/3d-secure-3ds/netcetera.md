@@ -1,5 +1,6 @@
 ---
 icon: link-simple
+description: Learn about Netcetera to optimize your payment infrastructure
 ---
 
 # Netcetera

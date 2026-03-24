@@ -58,7 +58,7 @@ If you choose not to store card holder data on your servers, you will be exmepte
 So eventually you are left with 10 PCI Requirements and 182 controls to comply with.&#x20;
 
 {% hint style="info" %}
-This is the reason behind our recommendation of installing a simple setup without the card vault, if your business processes less than 6 million card transactions
+This is the reason behind our recommendation of installing a simple set up without the card vault, if your business processes less than 6 million card transactions
 {% endhint %}
 
 ## Next step:

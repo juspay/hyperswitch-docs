@@ -1,10 +1,11 @@
 ---
 icon: repeat
+description: Set up payout processing to automate disbursements to vendors, sellers, or partners
 ---
 
 # Payouts with Saved Payment Methods
 
-Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
+Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
 
 #### Tokenizing Payment Methods
 
@@ -23,7 +24,7 @@ To process a payout, fetch the identifiers for a customer’s saved methods via 
 
 The `payment_token` is passed in the [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) request to trigger the fund transfer using the customer's vaulted credentials.
 
-### Setup and Integration
+### Set up and Integration
 
 Utilize the Hyperswitch Dashboard and the specialized Postman collection to test vaulted payout flows.
 

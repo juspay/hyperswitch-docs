@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: Learn about Services to optimize your payment infrastructure
 ---
 
 # Services

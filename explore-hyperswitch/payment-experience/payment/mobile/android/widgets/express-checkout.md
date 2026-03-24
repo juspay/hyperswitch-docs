@@ -1,5 +1,6 @@
 ---
 icon: cart-shopping-fast
+description: Learn about Express Checkout to optimize your payment infrastructure
 ---
 
 # Express Checkout
@@ -66,4 +67,3 @@ private fun onExpressCheckoutResult(result: ExpressCheckoutPaymentMethodLauncher
     }
 }
 ```
-

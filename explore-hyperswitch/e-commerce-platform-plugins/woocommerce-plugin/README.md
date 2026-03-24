@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Overview and guides for woocommerce plugin
 hidden: true
 ---
 

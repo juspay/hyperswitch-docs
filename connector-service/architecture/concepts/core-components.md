@@ -1,3 +1,7 @@
+---
+description: Learn about Core Components to optimize your payment infrastructure
+---
+
 # Core Components
 
 Prism breaks down into four components that each solve a specific integration pain point. Understanding them helps you decide how to deploy and extend the system.

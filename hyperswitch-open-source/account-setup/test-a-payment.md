@@ -1,15 +1,20 @@
 ---
 icon: money-bills
+description: Test payment flows to validate integration and ensure transaction processing works correctly
 ---
 
 # Test a payment
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
 Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.
 
 {% hint style="warning" %}
-[Account setup ](./)is a pre-requisite before you can test the payments.
+[Account set up ](./)is a pre-requisite before you can test the payments.
 {% endhint %}
 
 There are three conditions in which you might want to make a test payment:
@@ -69,7 +74,7 @@ In case you have integrated the web client on your app and want to test a paymen
    Please check the console errors. Please make sure that the publishable key and api key are correct. Please verify if the web client is initiated with a valid client secret.\
    Also make sure that HyperLoader.js is hosted successfully. You can open that URL on browser and see if the bundle is correct. In Network tab, check if the HyperLoader.js is called correctly. If not, please verify the env file and make sure that the correct URL is set.
 3. **I am unable to complete the payment**\
-   There can be multiple reasons for this. Please make sure that you have correctly followed all the steps in [account setup ](./)section.\
+   There can be multiple reasons for this. Please make sure that you have correctly followed all the steps in [account set up ](./)section.\
    Also make sure that you have configured at least 1 connector.
 4. **After payment, I see a `Page Not Found` error.**\
    This can be a demo playground issue and not an issue with the web client. Please make sure that the return URL is correctly set.

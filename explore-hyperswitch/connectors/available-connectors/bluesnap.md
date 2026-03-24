@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Bluesnap via Hyperswitch
+description: Learn about Bluesnap to optimize your payment infrastructure
 hidden: true
 ---
 
 # Bluesnap
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Bluesnap through Hyperswitch
@@ -17,7 +21,7 @@ BlueSnap is a payment platform that allows businesses to easily accept online an
 
 #### Prerequisites
 
-1. You need to be registered with Bluesnap in order to proceed. In case you aren't, you can quickly setup your Bluesnap account [here](https://home.bluesnap.com/)
+1. You need to be registered with Bluesnap in order to proceed. In case you aren't, you can quickly set up your Bluesnap account [here](https://home.bluesnap.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. The Bluesnap API keys  **Username** and **Password** can be found in your Bluesnap dashboard under API settings.
 4. Select all the payment methods you wish to use Bluesnap for. Ensure that this is the same as the ones configured on your Bluesnap dashboard under Checkout Page -> Payment methods

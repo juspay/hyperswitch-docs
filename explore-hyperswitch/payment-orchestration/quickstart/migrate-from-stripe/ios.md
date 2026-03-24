@@ -45,9 +45,9 @@ source 'https://cdn.cocoapods.org/'
 _**Step 4:**_ Replace StripePaymentSheet with hyperswitch in your podfile
 
 ```ruby
-# from
+## from
 pod 'StripePaymentSheet'
-# to
+## to
 pod 'hyperswitch', '1.0.0-alpha01'
 ```
 

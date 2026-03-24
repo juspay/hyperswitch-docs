@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: shield-check
+description: Overview and guides for 3d secure 3ds
 ---
 
 # 3D Secure (3DS)

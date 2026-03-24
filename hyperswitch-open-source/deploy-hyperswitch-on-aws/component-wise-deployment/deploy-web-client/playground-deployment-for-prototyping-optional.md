@@ -107,7 +107,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch web client playground
+#### Step 3 - Set up Hyperswitch web client playground
 
 {% hint style="danger" %}
 The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperswitch-web` setups the playground for you-> which is a fullstack application. We ensure that the **secret key stays in the server side** and the publishable key stays in the client side, we insist you do the same for your application when you move to a Production ready setup
@@ -149,7 +149,7 @@ Once the script is executed, you will receive a `Public IP` as the response (e.g
 {% hint style="success" %}
 That's it! Hyperswitch web client should be up and running on your AWS account
 
-Verify the application by opening this public IP in a web browser. Sometimes AWS can take upto 5 mins to initiate the EC2 instance.
+Verify the application by opening this public IP in a web browser. Sometimes AWS can take up to 5 mins to initiate the EC2 instance.
 {% endhint %}
 
 #### Clean Up

@@ -1,11 +1,13 @@
 ---
-description: >-
-  Unify your marketplace settlement logic across multiple processors through a
-  single configuration.
+description: Overview and guides for split payments
 icon: split
 ---
 
 # Processors with Split Settlement
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ### Overview
 
@@ -22,7 +24,7 @@ Each connector has distinct validation rules, data structures, and split models 
 Configuration Requirements
 
 * Business Profile: Split Settlement must be enabled at the business profile level through the `split_txns_enabled` flag. This allows merchants to configure this functionality per profile.
-* Account Setup: Proper merchant connector account (MCA) setup is required before split settlement can be utilized.
+* Account Setup: Proper merchant connector account (MCA) set up is required before split settlement can be utilized.
 
 #### Connector-Specific Split Models
 

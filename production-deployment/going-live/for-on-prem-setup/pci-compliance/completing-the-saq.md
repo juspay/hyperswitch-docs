@@ -1,5 +1,6 @@
 ---
 icon: clipboard-question
+description: Learn about Completing the SAQ to optimize your payment infrastructure
 ---
 
 # Completing the SAQ
@@ -34,4 +35,3 @@ You are PCI compliant now!!&#x20;
 It's essential to submit your network scan report and Self-Assessment Questionnaire (SAQ) to your payment processor or acquirer.&#x20;
 
 **Submission methods vary;** some processors provide a dashboard for uploads, while others prefer email communication. Ensure you adhere to your processor's specific requirements and submission schedule, typically on a quarterly basis.
-

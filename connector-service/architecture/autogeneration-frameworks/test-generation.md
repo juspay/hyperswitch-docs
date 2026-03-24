@@ -1,3 +1,7 @@
+---
+description: Test payment flows to validate integration and ensure transaction processing works correctly
+---
+
 # Test Generation
 
 You get regression tests for every connector without writing them by hand. Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.
@@ -93,13 +97,13 @@ When you add a new connector, the generator creates:
 ## Running Generated Tests
 
 ```bash
-# Generate tests from specs
+## Generate tests from specs
 make generate-tests
 
-# Run against sandboxes
+## Run against sandboxes
 STRIPE_API_KEY=$TEST_KEY make test-connectors
 
-# Run SDK tests across all languages
+## Run SDK tests across all languages
 make test-sdks
 ```
 

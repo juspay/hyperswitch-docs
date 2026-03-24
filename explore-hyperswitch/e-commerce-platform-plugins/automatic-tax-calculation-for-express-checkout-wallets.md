@@ -1,7 +1,5 @@
 ---
-description: >-
-  Setup Taxjar on Hyperswitch to automatically calculate tax in case of Express
-  checkout wallets
+description: Explore payment solutions designed for your specific business use case
 icon: filter-circle-dollar
 ---
 

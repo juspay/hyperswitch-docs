@@ -1,8 +1,16 @@
+---
+description: Learn about Level 2 and Level 3 data to optimize your payment infrastructure
+---
+
 # Level 2 and Level 3 data
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ### Overview
 
-Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
+Juspay Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
 
 * Level 2: Adds tax, invoice, and reference-level data
 * Level 3: Adds full line-item details (e.g., item quantity, commodity code, shipping, duty)

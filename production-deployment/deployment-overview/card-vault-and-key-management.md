@@ -1,8 +1,12 @@
+---
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
+---
+
 # Card Vault & Key Management
 
 ### Enterprise Key Management for Hyperswitch Card Vault and Application
 
-This document describes how to configure **secure key management** for **Hyperswitch**deployments in enterprise environments.
+This document describes how to configure **secure key management** for **Juspay Hyperswitch**deployments in enterprise environments.
 
 Hyperswitch processes **highly sensitive data**, including:
 

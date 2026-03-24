@@ -1,7 +1,6 @@
 ---
-description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
+Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
 icon: shield-check
 ---
 
@@ -100,7 +99,7 @@ In this flow:
 
 * You integrate with [Hyperswitch’s standalone Vault service](../../../workflows/vault/).
 * Card details are securely captured and stored alongside PSP tokens and network tokens
-* These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
+* These tokens can be used across multiple gateways via your own payments set up or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
 
 #### Flow Summary:
 
@@ -131,7 +130,7 @@ This is a lightweight, standalone integration when you:
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 * You sign up for Juspay’s Network Tokenization service by reaching out to our support team
-* You can either use Juspay’s TR ID or setup your own TR ID
+* You can either use Juspay’s TR ID or set up your own TR ID
 * You use [Juspay’s Tokenization APIs](https://juspay.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
   * Generate Network Tokens for a given PAN
   * Update or delete tokens

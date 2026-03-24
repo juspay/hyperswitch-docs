@@ -1,3 +1,7 @@
+---
+description: Browse available payment connectors and integration guides for your preferred processors
+---
+
 <div align="center">
 
 
@@ -287,16 +291,16 @@ Each flow uses the same unified schema regardless of the underlying processor's 
 ### Building from Source
 
 ```bash
-# Clone the repository
+## Clone the repository
 git clone https://github.com/manojradhakrishnan/connector-service.git
 cd connector-service
 
 
-# Build
+## Build
 cargo build --release
 
 
-# Run tests
+## Run tests
 cargo test
 ```
 

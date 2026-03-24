@@ -5,8 +5,8 @@ icon: plug
 
 # SaaS Orchestration with Third-Party Vault
 
-Merchants using Hyperswitch SaaS can still integrate an external PCI-compliant vault.\
-This setup is ideal for merchants who already have existing token infrastructure (e.g., VGS, Tokenex and more).
+Merchants using Juspay Hyperswitch SaaS can still integrate an external PCI-compliant vault.\
+This set up is ideal for merchants who already have existing token infrastructure (e.g., VGS, Tokenex and more).
 
 Key Highlights:
 

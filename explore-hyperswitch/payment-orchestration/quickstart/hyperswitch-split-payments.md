@@ -1,11 +1,11 @@
 ---
-description: Get started with Split Payments via Hyperswitch
+description: Implement split payments to divide transactions between multiple parties or accounts
 icon: split
 ---
 
 # Split Payments
 
-Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
+Juspay Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
 
 This capability helps merchants:
 

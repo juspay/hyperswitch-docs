@@ -1,10 +1,11 @@
 ---
 icon: arrow-progress
+description: Overview and guides for payment orchestration
 ---
 
 # Payment Orchestration
 
-Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.
+Juspay Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.
 
 Whether you're:
 

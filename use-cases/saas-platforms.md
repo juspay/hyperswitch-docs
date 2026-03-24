@@ -68,7 +68,7 @@ Treat account onboarding as an API call, not a support ticket. Juspay Hyperswitc
 #### Example: Create an account
 
 ```bash
-# Note: Use sandbox endpoint for testing
+## Note: Use sandbox endpoint for testing
 curl --request POST \
   --url https://api.hyperswitch.io/accounts \
   --header 'api-key: YOUR_API_KEY' \

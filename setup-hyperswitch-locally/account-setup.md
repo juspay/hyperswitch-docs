@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Create and configure your Hyperswitch account to start processing payments
 ---
 
 # 🔧 Account setup
@@ -49,7 +49,7 @@ To connect a payment processor:
 3. Configure the relevant payment methods (like cards, wallets) to be enabled for this processor
 4. Review and confirm the connection
 
-## Setup Routing
+## Set up Routing
 
 The Hyperswitch control center gives you full control on how and where you route your payments.&#x20;
 

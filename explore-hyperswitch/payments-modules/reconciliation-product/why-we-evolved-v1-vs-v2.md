@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: Learn about Why we evolved(V1 vs V2) to optimize your payment infrastructure
 ---
 
 # Why we evolved(V1 vs V2)

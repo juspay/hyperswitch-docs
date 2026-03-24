@@ -1,12 +1,13 @@
 ---
 icon: flux-capacitor
+description: Deploy Hyperswitch payment infrastructure on your preferred cloud platform
 ---
 
 # Deployment Models
 
 ## Supported Deployment Models
 
-The Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
+The Juspay Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
 
 ### Overview
 

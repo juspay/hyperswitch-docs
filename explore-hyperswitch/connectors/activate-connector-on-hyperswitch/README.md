@@ -1,5 +1,5 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Browse available payment connectors and integration guides for your preferred processors
 icon: chart-network
 ---
 

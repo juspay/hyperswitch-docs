@@ -1,8 +1,13 @@
 ---
 icon: react
+description: Integrate with Hyperswitch APIs to implement custom payment processing workflows
 ---
 
 # React with REST API Integration
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 **Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.
 
@@ -14,7 +19,7 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 </details>
 
-### 1. Setup the server
+### 1. Set up the server
 
 1.1 Follow the [Server Setup](../server-setup.md) section.
 
@@ -81,7 +86,7 @@ Pass the promise from `loadHyper` to the `HyperElements` component. This allows 
 </div>
 ```
 
-#### 2.6 Setup the state (optional)
+#### 2.6 Set up the state (optional)
 
 Initialize a state to keep track of payment, display errors and control the user interface.
 

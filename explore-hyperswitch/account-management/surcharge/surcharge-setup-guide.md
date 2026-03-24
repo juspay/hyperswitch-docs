@@ -2,13 +2,13 @@
 description: Surcharge Manager Setup
 ---
 
-# Surcharge Setup guide
+# Surcharge Set up guide
 
 {% hint style="info" %}
-This section covers the steps to setup surcharge manager using the Hyperswitch Control Center
+This section covers the steps to set up surcharge manager using the Hyperswitch Control Center
 {% endhint %}
 
-## Steps to setup a rule on Surcharge Manager?
+## Steps to set up a rule on Surcharge Manager?
 
 **Step 1:** Go to Workflow -> Surcharge tab on the Hyperswitch Control Center
 

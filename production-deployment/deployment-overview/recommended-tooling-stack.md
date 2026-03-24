@@ -1,3 +1,7 @@
+---
+description: Learn about Recommended Tooling Stack to optimize your payment infrastructure
+---
+
 # Recommended Tooling Stack
 
 The recommended tooling stack for production deployments is:
@@ -143,7 +147,7 @@ However, some supporting infrastructure components may still require manual inst
 * Monitoring services
 * Remote monitoring infrastructure
 * Load testing services
-* Card Vault setup and lifecycle management
+* Card Vault set up and lifecycle management
 
 Detailed instructions for these components are provided in the subsequent sections.
 

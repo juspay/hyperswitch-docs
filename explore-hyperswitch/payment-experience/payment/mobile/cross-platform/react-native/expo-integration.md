@@ -1,5 +1,6 @@
 ---
 icon: react
+description: Integrate Expo to expand payment capabilities
 ---
 
 # Expo integration
@@ -14,10 +15,10 @@ The Hyperswitch SDK uses native modules, so the app must be built with native An
 The Hyperswitch SDK has peer dependencies that must be installed before installing the SDK.
 
 ```
-# Install peer dependencies
+## Install peer dependencies
 yarn add @sentry/react-native react-native-inappbrowser-reborn react-native-svg
 
-# Install Hyperswitch SDK
+## Install Hyperswitch SDK
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
@@ -46,4 +47,3 @@ After completing the Expo setup, **follow the same steps as the React Native int
 4. Present the payment sheet using **presentPaymentSheet**
 
 Refer to the [**React Native integration steps**](react-native-with-rest-api-integration.md) for the complete payment flow implementation.
-

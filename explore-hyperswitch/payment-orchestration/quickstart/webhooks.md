@@ -1,11 +1,11 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
+description: Configure webhooks to receive real-time notifications for payment events and updates
 icon: anchor
 ---
 
 # Webhooks
 
-Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
+Webhooks are HTTP-based real-time push notifications that Juspay Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 
 * Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
 * Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
@@ -19,7 +19,7 @@ You would need to set up a dedicated HTTPS or HTTP endpoint on your server with 
 
 #### Configure your webhook endpoint on Hyperswitch Dashboard
 
-Configure the above endpoint on your Hyperswitch dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Setup section to configure webhook details.
+Configure the above endpoint on your Hyperswitch dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Set up section to configure webhook details.
 
 #### Add webhook custom HTTP headers
 

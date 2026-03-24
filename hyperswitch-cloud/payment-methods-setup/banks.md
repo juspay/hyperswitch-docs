@@ -4,6 +4,10 @@ description: Accept bank payment methods on your application
 
 # 🏦 Banks
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 {% hint style="info" %}
 This section gives you an overview of how to enable bank transfers, bank debits and bank redirect payment methods through Hyperswitch
 {% endhint %}
@@ -31,4 +35,3 @@ Apart from cards (47%) and digital wallets (28%), bank transfer (9%) is the thir
 ##
 
 ## Bank Transfers
-

@@ -1,5 +1,6 @@
 ---
 icon: arrow-up-triangle-square
+description: Integrate with Hyperswitch APIs to implement custom payment processing workflows
 ---
 
 # Try out APIs

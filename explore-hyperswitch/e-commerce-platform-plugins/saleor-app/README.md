@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: plug-circle-bolt
+description: Overview and guides for saleor app
 ---
 
 # Saleor App

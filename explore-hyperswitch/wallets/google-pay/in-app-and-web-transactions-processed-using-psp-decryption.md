@@ -1,3 +1,7 @@
+---
+description: Learn about In-App and Web Transactions Processed Using PSP Decryption to optimize your payment infrastructure
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.

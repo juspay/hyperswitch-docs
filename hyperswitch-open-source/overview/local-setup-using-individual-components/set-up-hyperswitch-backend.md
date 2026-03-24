@@ -1,16 +1,21 @@
 ---
 icon: server
+description: Learn about Backend to optimize your payment infrastructure
 ---
 
 # Backend
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 {% hint style="warning" %}
-This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+This set up is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
 ## Supported Methods:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Setup</strong></mark> <mark style="color:blue;"><strong>using docker compose</strong></mark></td></tr><tr><td><mark style="color:blue;"><strong>Rust environment setup along with other dependencies</strong></mark></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Setup</strong></mark> <mark style="color:blue;"><strong>using docker compose</strong></mark></td></tr><tr><td><mark style="color:blue;"><strong>Rust environment set up along with other dependencies</strong></mark></td></tr></tbody></table>
 
 ## Set up a development environment using Docker Compose
 
@@ -40,7 +45,7 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
 
 ## Set up a Rust environment and other dependencies
 
-If you are using `nix`, please skip the setup dependencies step and jump to [Set up the database](set-up-hyperswitch-backend.md#set-up-the-database).
+If you are using `nix`, please skip the set up dependencies step and jump to [Set up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
 ### Set up dependencies on Ubuntu-based systems
 

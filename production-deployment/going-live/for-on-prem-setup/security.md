@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Implement security best practices to protect payment data and maintain PCI compliance
 icon: lock-keyhole
 ---
 
@@ -55,7 +55,7 @@ During transmission, data remains masked and never gets permanently stored on th
 ### Key Management System (KMS) Encryption
 
 {% hint style="info" %}
-The current Hyperswitch setup only uses AWS KMS for storing and managing sensitive data and configurations. Support will be added for other 3rd party vault solutions (e.g., Hashicorp Vault) in the future.
+The current Hyperswitch set up only uses AWS KMS for storing and managing sensitive data and configurations. Support will be added for other 3rd party vault solutions (e.g., Hashicorp Vault) in the future.
 {% endhint %}
 
 * Sensitive keys crucial for the application's operation undergo encryption at startup.

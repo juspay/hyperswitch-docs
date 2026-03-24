@@ -1,9 +1,13 @@
 ---
-description: Integrate hyperswitch SDK to your React Native App using hyperswitch-node
+description: Integrate with Hyperswitch APIs to implement custom payment processing workflows
 icon: puzzle-piece
 ---
 
 # React Native with REST API Integration
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
@@ -23,7 +27,7 @@ Before proceeding with these steps, please ensure that your payment methods are 
 * CocoaPods
 * npm
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../../server-setup.md) section.
 

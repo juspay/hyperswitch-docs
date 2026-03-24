@@ -1,10 +1,10 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Create and configure your Hyperswitch account to start processing payments
 ---
 
 # ⚙️ Control Centre Account setup
 
-Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
+Juspay Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
 
 * Realtime Analytics for Payments, Refunds and Smart Retries.
 * Consolidated Payment Operations
@@ -56,7 +56,7 @@ To connect a payment processor:
 3. Configure the relevant payment methods (like cards, wallets) to be enabled for this processor
 4. Review and confirm the connection
 
-## Setup Routing
+## Set up Routing
 
 The Hyperswitch control center gives you full control on how and where you route your payments.
 

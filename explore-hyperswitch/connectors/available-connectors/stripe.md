@@ -1,8 +1,12 @@
 ---
-description: Accept payments through Stripe via Hyperswitch
+description: Learn about Stripe to optimize your payment infrastructure
 ---
 
 # Stripe
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Stripe through Hyperswitch
@@ -16,7 +20,7 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 
 #### Prerequisites
 
-1. You need to be registered with Stripe in order to proceed. In case you aren't, you can quickly setup your Stripe account [here](https://dashboard.stripe.com/register)
+1. You need to be registered with Stripe in order to proceed. In case you aren't, you can quickly set up your Stripe account [here](https://dashboard.stripe.com/register)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Enable handling raw card data for your Stripe account by sending a request to the stripe support (Visit [here](https://docs.hyperswitch.io/security-and-compliance/pci-compliance#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715-1) for more details).  This will enable Hyperswitch to securely handle your customer's payment details in a PCI compliant manner.
 4. Enter your Country, Business Label and Stripe API Key. The Stripe API key can be found in your Stripe dashboard under \[Developers -> API keys]\(https://dashboard.stripe.com/test/apikeys) as \*\*Secret Key\*\*\
@@ -26,7 +30,7 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 
 ### Configuring webhooks
 
-Step 1: Setup your webhook endpoint on Hyperswitch dashboard under Settings -> Payment settings -> Click on the profile
+Step 1: Set up your webhook endpoint on Hyperswitch dashboard under Settings -> Payment settings -> Click on the profile
 
 <figure><img src="../../../../../.gitbook/assets/webhook1.png" alt=""><figcaption></figcaption></figure>
 

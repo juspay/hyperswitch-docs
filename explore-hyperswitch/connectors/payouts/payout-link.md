@@ -237,7 +237,7 @@ Payout links simplify the process of sending money, eliminating the operational 
 
 <summary>How long is the Payout link valid for?</summary>
 
-The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call.
+The payout link is valid for 15 minutes by default. However you can increase the validity to up to 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call.
 
 </details>
 

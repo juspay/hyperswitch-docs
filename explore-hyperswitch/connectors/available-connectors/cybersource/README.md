@@ -1,8 +1,12 @@
 ---
-description: Accept payments through Cybersource via Hyperswitch
+description: Overview and guides for cybersource
 ---
 
 # Cybersource
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Cybersource through Hyperswitch
@@ -16,10 +20,9 @@ Cybersource offers global payment solutions to help businesses accept payments a
 
 #### Prerequisites
 
-1. You need to be registered with Cybersource in order to proceed. In case you aren't, you can quickly setup your Cybersource account [here](https://www.cybersource.com/en-gb.html)
+1. You need to be registered with Cybersource in order to proceed. In case you aren't, you can quickly set up your Cybersource account [here](https://www.cybersource.com/en-gb.html)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. Cybersource apikeys **API Key**, **Secret Key** and **Merchant ID** can be found in your Cybersource dashboard.
 4. Select all the payment methods you wish to use Cybersource for. Ensure that this is the same as the ones configured on your Cybersource dashboard.
 
 [Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Cybersource on Hyperswitch control center.
-

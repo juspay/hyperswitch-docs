@@ -1,5 +1,6 @@
 ---
 icon: mobile-screen
+description: Implement Hyperswitch SDKs to add payment capabilities to your applications
 ---
 
 # Lite SDK
@@ -9,7 +10,7 @@ icon: mobile-screen
 #### Lightweight Integration
 
 * **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
+* **Faster initialization**: Streamlined set up process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
 * **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
@@ -24,7 +25,7 @@ icon: mobile-screen
 * IOS 15.1+
 * Cocoapods​
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
@@ -49,7 +50,7 @@ pod 'hyperswitch-sdk-ios-lite/scancard'
 > **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.\
 > Replace `Latest_version` with the actual version number.
 
-#### 2.2 Setup the Lite SDK and Fetch a Payment
+#### 2.2 Set up the Lite SDK and Fetch a Payment
 
 **Initialize PaymentSession:**
 

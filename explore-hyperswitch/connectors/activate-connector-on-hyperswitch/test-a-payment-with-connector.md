@@ -1,5 +1,6 @@
 ---
 icon: vial-circle-check
+description: Configure payment connectors to enable multi-processor payment processing
 ---
 
 # Try a Payment
@@ -10,7 +11,7 @@ icon: vial-circle-check
 2.  Proceed with the "Try a test payment" option on the home page of the dashboard\\
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.45.52 AM (1).png" alt=""><figcaption></figcaption></figure>
-3. Setup your demo checkout page by providing Business profile, Profile Id, Currency and Amount
+3. Set up your demo checkout page by providing Business profile, Profile Id, Currency and Amount
 4.  Click on Show Preview, Your demo checkout page will be visible at preview section\\
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>

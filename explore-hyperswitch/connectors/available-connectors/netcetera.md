@@ -1,5 +1,5 @@
 ---
-description: Payments authentication through Netcetera via Hyperswitch
+description: Learn about Netcetera to optimize your payment infrastructure
 ---
 
 # Netcetera

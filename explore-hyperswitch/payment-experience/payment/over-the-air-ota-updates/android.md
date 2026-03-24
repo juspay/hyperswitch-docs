@@ -1,5 +1,6 @@
 ---
 icon: android
+description: Learn about Android to optimize your payment infrastructure
 ---
 
 # Android
@@ -45,4 +46,3 @@ override fun getJSBundleFile(): String {
 ```
 
 For more information, [Airborne](https://github.com/juspay/airborne)
-

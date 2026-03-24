@@ -1,3 +1,7 @@
+---
+description: Learn about Documentation Generation to optimize your payment infrastructure
+---
+
 # Documentation Generation
 
 You get API reference docs that stay current without anyone manually updating markdown files every time a field changes. Prism generates all `/docs-generated` content from the source proto definitions and a rules file that enforces consistency.

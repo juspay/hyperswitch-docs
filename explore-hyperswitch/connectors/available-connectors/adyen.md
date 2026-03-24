@@ -1,8 +1,12 @@
 ---
-description: Accept payments through Adyen via Hyperswitch
+description: Learn about Adyen to optimize your payment infrastructure
 ---
 
 # Adyen
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Adyen through Hyperswitch
@@ -17,7 +21,7 @@ Adyen is a global payments company allowing businesses to accept payments on a g
 
 #### I. Prerequisites
 
-1. You need to be registered with Adyen in order to proceed. In case you aren't, you can quickly setup your Adyen account [here](https://www.adyen.com/signup)
+1. You need to be registered with Adyen in order to proceed. In case you aren't, you can quickly set up your Adyen account [here](https://www.adyen.com/signup)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/register).
 3. Request the Adyen support team to enable handling raw card data for your Adyen account via email (support@adyen.com). This will enable Hyperswitch to securely handle your customer's payment details.
 4. The Adyen API key and Account ID are available in your Adyen dashboard under - Home page -> Developers -> API credentials.

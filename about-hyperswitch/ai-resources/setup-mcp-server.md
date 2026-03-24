@@ -1,8 +1,9 @@
 ---
 icon: user-robot-xmarks
+description: Set up Hyperswitch infrastructure to enable payment processing capabilities
 ---
 
-# Setup MCP Server
+# Set up MCP Server
 
 {% hint style="danger" %}
 This MCP server is only meant for product exploration while using sandbox environment.\
@@ -33,7 +34,7 @@ Run `claude` and verify if MCP was configured properly using `/mcp`. You should 
 
 #### For configuring other MCP clients (Cursor / Claude Desktop / etc.)
 
-Follow Mintlify's [client-specific setup guide](https://www.mintlify.com/docs/ai/model-context-protocol?_gl=1*1m5cmfd*_gcl_au*MTY1NjU2NDE1LjE3NjY0NzY1MzE.#example:-connect-to-the-mintlify-mcp-server) using the same MCP: `https://api-reference.hyperswitch.io/mcp`
+Follow Mintlify's [client-specific set up guide](https://www.mintlify.com/docs/ai/model-context-protocol?_gl=1*1m5cmfd*_gcl_au*MTY1NjU2NDE1LjE3NjY0NzY1MzE.#example:-connect-to-the-mintlify-mcp-server) using the same MCP: `https://api-reference.hyperswitch.io/mcp`
 
 
 ### Step 2: Make your first payment

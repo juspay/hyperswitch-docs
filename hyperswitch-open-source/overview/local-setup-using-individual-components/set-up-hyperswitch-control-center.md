@@ -1,11 +1,16 @@
 ---
 icon: laptop
+description: Deploy the web-based control center to manage payments through an intuitive interface
 ---
 
 # Control Center
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 {% hint style="warning" %}
-This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+This set up is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
 ### Prerequisites
@@ -57,4 +62,3 @@ Follow these simple steps to set up Hyperswitch on your local machine.
 ### Accessing the Application
 
 Once the containers are up and running, you can access the application by navigating to [http://localhost:9000](http://localhost:9000/) in your web browser.
-

@@ -1,18 +1,19 @@
 ---
 icon: arrows-rotate-reverse
+description: Learn about Recurring payments to optimize your payment infrastructure
 ---
 
 # Recurring payments
 
-Recurring payments via Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
+Recurring payments via Juspay Hyperswitch can be set up by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
 
-### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
+### Programmatic Card-on-File Set up with Immediate Charge (CIT + Save)
 
 When setting up subscription there are two distinct implementation flows. The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+#### 1. The Set up with Charge Flow
 
-**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges. For this call Payments API with the below configuration parameters.
+**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a set up fee) while simultaneously saving the card details for future automatic charges. For this call Payments API with the below configuration parameters.
 
 **Required API Configuration**
 

@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Hyperswitch
+description: Learn about Pay Later to optimize your payment infrastructure
 icon: calendar-day
 ---
 

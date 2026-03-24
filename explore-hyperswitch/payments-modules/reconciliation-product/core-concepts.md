@@ -1,3 +1,7 @@
+---
+description: Learn about Core Concepts to optimize your payment infrastructure
+---
+
 # Core Concepts
 
 ### How We Model Money

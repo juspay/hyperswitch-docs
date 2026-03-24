@@ -224,4 +224,3 @@ We support the following locales -
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
-

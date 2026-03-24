@@ -1,9 +1,13 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: Integrate with Hyperswitch APIs to implement custom payment processing workflows
 icon: swift
 ---
 
 # Swift with REST API Integration
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
@@ -15,7 +19,7 @@ Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the fol
 * CocoaPods
 * npm
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
@@ -23,7 +27,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ### 2.1 Configure your repository with Hyperswitch dependency
 
-CocoaPods Setup (only required if not already done)
+CocoaPods Set up (only required if not already done)
 
 1. Install the latest version of CocoaPods
 2. To create a Podfile run the following command
@@ -58,7 +62,7 @@ To update to the latest version of the SDK, run:
 pod install --repo-update
 ```
 
-### 2.2 Setup the SDK and fetch a Payment
+### 2.2 Set up the SDK and fetch a Payment
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
@@ -169,7 +173,7 @@ VStack {
   }
 }.onAppear { model.preparePaymentSheet() }
 
-// setup configuration for payment sheet
+// set up configuration for payment sheet
 func configuration() -> PaymentSheet.Configuration {
         var configuration = PaymentSheet.Configuration()
         configuration.merchantDisplayName = "Example, Inc."

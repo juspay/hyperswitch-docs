@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
-  authorize the payment with any payment provider (PSP).
+description: Configure 3DS authentication rules to balance fraud prevention with checkout conversion
 hidden: true
 icon: up-right-from-square
 ---
@@ -20,16 +18,16 @@ When a Standalone 3DS authentication completes successfully, it generates a 3DS 
 
 Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are - Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io
 
-### Setup External 3DS authentication via Hyperswitch
+### Set up External 3DS authentication via Hyperswitch
 
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
-2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
+2. Under Connectors > set up 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
-3. Under Connectors > setup the payment provders (PSP) that you wish to use for payment processing&#x20;
+3. Under Connectors > set up the payment provders (PSP) that you wish to use for payment processing&#x20;
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
 

@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Bank of America via Hyperswitch
+description: Learn about Bank of America to optimize your payment infrastructure
 hidden: true
 ---
 
 # Bank of America
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via BOA through Hyperswitch
@@ -17,7 +21,7 @@ The Bank of America Corporation is an American multinational investment bank and
 
 #### I. Prerequisites
 
-1. You need to be registered with BOA in order to proceed. In case you aren't, you can quickly setup your BOA account [here](https://developer.cybersource.com/hello-world/sandbox.html).
+1. You need to be registered with BOA in order to proceed. In case you aren't, you can quickly set up your BOA account [here](https://developer.cybersource.com/hello-world/sandbox.html).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. On your dashboard, collect the **Merchant Id** from the top once you are logged in.
 4. On your dashboard, visit Payment Configuration -> Key Management and generate key, you will receive **Shared Secret** and **API Secret**.

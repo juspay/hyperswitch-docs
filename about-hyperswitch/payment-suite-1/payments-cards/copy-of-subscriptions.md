@@ -90,7 +90,7 @@ Configure Hyperswitch Webhook endpoint for invoice events on the subscription pr
 {% endstep %}
 
 {% step %}
-Fetch the plan details (to be setup prior on subscription provider)
+Fetch the plan details (to be set up prior on subscription provider)
 
 ```
 curl --location 'http://<base_url>/subscriptions/plans' \
@@ -154,9 +154,9 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+#### 1. The Set up with Charge Flow
 
-**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
+**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a set up fee) while simultaneously saving the card details for future automatic charges.
 
 **Configuration Parameters :**&#x20;
 
@@ -210,9 +210,9 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+#### 1. The Set up with Charge Flow
 
-**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
+**Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a set up fee) while simultaneously saving the card details for future automatic charges.
 
 **Configuration Parameters :**&#x20;
 

@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Mollie via Hyperswitch
+description: Learn about Mollie to optimize your payment infrastructure
 hidden: true
 ---
 
 # Mollie
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Mollie through Hyperswitch
@@ -19,10 +23,9 @@ Mollie is a payments platform that offers effortless payments, seamless checkout
 
 #### Prerequisites
 
-1. You need to be registered with Mollie in order to proceed. In case you aren't, you can quickly setup your Mollie account [here](https://www.mollie.com/)
+1. You need to be registered with Mollie in order to proceed. In case you aren't, you can quickly set up your Mollie account [here](https://www.mollie.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. Mollie **API Key** and **Password** can be found in your Mollie dashboard.
 4. Select all the payment methods you wish to use Mollie for. Ensure that this is the same as the ones configured on your Mollie dashboard
 
 [Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Mollie on Hyperswitch control center.
-

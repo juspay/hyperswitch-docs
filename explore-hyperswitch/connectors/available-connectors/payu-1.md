@@ -1,9 +1,13 @@
 ---
-description: Accept payments through PayU via Hyperswitch
+description: Learn about PayU to optimize your payment infrastructure
 hidden: true
 ---
 
 # PayU
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via PayU through Hyperswitch
@@ -19,7 +23,7 @@ PayU is a payment service provider that allows online businesses to accept and p
 
 #### Prerequisites
 
-1. You need to be registered with PayU in order to proceed. In case you aren't, you can quickly setup your PayU account [here](https://corporate.payu.com/).
+1. You need to be registered with PayU in order to proceed. In case you aren't, you can quickly set up your PayU account [here](https://corporate.payu.com/).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. PayU's **API Key** and **Merchant POS ID** can be found in your PayU dashboard under My Shops.
 4. Select all the payment methods you wish to use PayU for. Ensure that this is the same as the ones configured on your PayU dashboard

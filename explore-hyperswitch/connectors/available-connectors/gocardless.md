@@ -1,9 +1,13 @@
 ---
-description: Accept payments through GoCardless via Hyperswitch
+description: Configure card payment processing to accept credit and debit card transactions
 hidden: true
 ---
 
 # GoCardless
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via GoCardless through Hyperswitch
@@ -19,7 +23,7 @@ GoCardless is a fintech company that specialises in bank payments including recu
 
 #### Prerequisites
 
-1. You need to be registered with GoCardless in order to proceed. In case you aren't, you can quickly setup your GoCardless account [here](https://manage-sandbox.gocardless.com/sign-up).
+1. You need to be registered with GoCardless in order to proceed. In case you aren't, you can quickly set up your GoCardless account [here](https://manage-sandbox.gocardless.com/sign-up).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. GoCardless **Access Token** and other details can be found in your GoCardless dashboard under Developers -> Create -> Access Token.
 4. Select all the payment methods you wish to use GoCardless for. Ensure that this is the same as the ones configured on your GoCardless dashboard

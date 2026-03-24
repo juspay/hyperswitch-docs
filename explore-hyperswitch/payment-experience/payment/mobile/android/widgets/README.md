@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
-  control over your payment flow.
+description: Overview and guides for widgets
 icon: cubes
 ---
 
@@ -16,7 +14,7 @@ icon: cubes
 * [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-## 1. Setup the server
+## 1. Set up the server
 
 ```js
 $ npm install @juspay-tech/hyperswitch-node

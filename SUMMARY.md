@@ -1,4 +1,12 @@
+---
+description: Navigate the complete Hyperswitch documentation with this structured table of contents
+---
+
 # Table of contents
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ## About Hyperswitch
 
@@ -35,7 +43,7 @@
   * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap-q1-2024.md)
   * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-q4-2023.md)
 * [AI Resources](about-hyperswitch/ai-resources/README.md)
-  * [Setup MCP Server](about-hyperswitch/ai-resources/setup-mcp-server.md)
+  * [Set up MCP Server](about-hyperswitch/ai-resources/setup-mcp-server.md)
 
 ## Try Hyperswitch
 
@@ -101,7 +109,7 @@
       * [Theme configurations Guide](explore-hyperswitch/payment-experience/payment/payment-links/theme-configurations-guide.md)
       * [Create Payment Links](explore-hyperswitch/payment-experience/payment/payment-links/create-payment-links.md)
       * [Secure Payment Links](explore-hyperswitch/payment-experience/payment/payment-links/secure-payment-links.md)
-      * [Setup Custom Domain](explore-hyperswitch/payment-experience/payment/payment-links/setup-custom-domain.md)
+      * [Set up Custom Domain](explore-hyperswitch/payment-experience/payment/payment-links/setup-custom-domain.md)
     * [Over-the-Air (OTA) Updates](explore-hyperswitch/payment-experience/payment/over-the-air-ota-updates/README.md)
       * [Android](explore-hyperswitch/payment-experience/payment/over-the-air-ota-updates/android.md)
       * [iOS](explore-hyperswitch/payment-experience/payment/over-the-air-ota-updates/ios.md)
@@ -177,7 +185,7 @@
       * [React Native](explore-hyperswitch/payment-orchestration/quickstart/migrate-from-stripe/react-native.md)
     * [🥗 Payment Recipes](explore-hyperswitch/payment-orchestration/quickstart/payment-recipes/README.md)
       * [Use PayPal With Stripe](explore-hyperswitch/payment-orchestration/quickstart/payment-recipes/use-paypal-with-stripe.md)
-    * [Setup Payment Methods](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/README.md)
+    * [Set up Payment Methods](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/README.md)
       * [Cards](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/cards.md)
       * [Pay Later](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/pay-later.md)
       * [Banks](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/banks/README.md)
@@ -268,7 +276,7 @@
     * [Export Payments Data To Redshift for Analytics](explore-hyperswitch/account-management/analytics-and-operations/exporting-payments-data.md)
   * [Disputes / Chargebacks](explore-hyperswitch/account-management/disputes.md)
   * [Surcharge](explore-hyperswitch/account-management/surcharge/README.md)
-    * [Surcharge Setup guide](explore-hyperswitch/account-management/surcharge/surcharge-setup-guide.md)
+    * [Surcharge Set up guide](explore-hyperswitch/account-management/surcharge/surcharge-setup-guide.md)
   * [Multi-Tenancy](explore-hyperswitch/account-management/multi-tenancy-with-hyperswitch.md)
   * [Data migration](explore-hyperswitch/account-management/data-migration/README.md)
     * [Data Migration from PSP to Hyperswitch](explore-hyperswitch/account-management/data-migration/import-data-to-hyperswitch.md)
@@ -320,7 +328,7 @@
       * [Try out APIs](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/try-out-apis.md)
     * [SDK (Frontend)](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
     * [Control Center](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
-* [Local Setup Guide](hyperswitch-open-source/local-setup-guide.md)
+* [Local Set up Guide](hyperswitch-open-source/local-setup-guide.md)
 * [Deploy on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
   * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
   * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
@@ -332,7 +340,7 @@
       * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
     * [Deploy Card Vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
       * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
-      * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
+      * [Cloud set up guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
 * [Deploy on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm/README.md)
   * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
   * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
@@ -386,7 +394,7 @@
     * [Refund](connector-service/api-reference/payment-service/refund.md)
     * [Get](connector-service/api-reference/payment-service/get.md)
     * [Reverse](connector-service/api-reference/payment-service/reverse.md)
-    * [Setup Recurring](connector-service/api-reference/payment-service/setup-recurring.md)
+    * [Set up Recurring](connector-service/api-reference/payment-service/setup-recurring.md)
     * [Incremental Authorization](connector-service/api-reference/payment-service/incremental-authorization.md)
     * [Verify Redirect Response](connector-service/api-reference/payment-service/verify-redirect-response.md)
   * [Customer Service](connector-service/api-reference/customer-service/README.md)

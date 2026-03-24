@@ -4,7 +4,7 @@ hidden: true
 icon: arrows-repeat
 ---
 
-# Hyperswitch Vault: Pass Through Proxy Payments
+# Juspay Hyperswitch Vault: Pass Through Proxy Payments
 
 **📌 What is it?**
 

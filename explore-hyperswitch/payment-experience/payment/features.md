@@ -1,5 +1,6 @@
 ---
 icon: barcode-read
+description: Learn about Card Scanning to optimize your payment infrastructure
 ---
 
 # Card Scanning

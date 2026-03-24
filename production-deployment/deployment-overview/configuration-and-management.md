@@ -1,3 +1,7 @@
+---
+description: Learn about Configuration and Management to optimize your payment infrastructure
+---
+
 # Configuration and Management
 
 ### Configuration Files&#x20;

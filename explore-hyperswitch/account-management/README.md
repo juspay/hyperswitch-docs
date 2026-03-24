@@ -1,10 +1,11 @@
 ---
 icon: joystick
+description: Overview and guides for account management
 ---
 
 # Payment Operations
 
-Hyperswitch Control Center streamlines the complexities of managing payments, ensuring operational efficiency and control over every aspect of payment flow. From account management to real-time analytics, Hyperswitch empowers businesses with the tools to simplify operations, reduce errors, and enhance decision-making.
+Juspay Hyperswitch Control Center streamlines the complexities of managing payments, ensuring operational efficiency and control over every aspect of payment flow. From account management to real-time analytics, Hyperswitch empowers businesses with the tools to simplify operations, reduce errors, and enhance decision-making.
 
 With advanced features like dispute resolution, reconciliation, and multi-tenancy support, businesses can focus on growth while we handle the operational details.
 

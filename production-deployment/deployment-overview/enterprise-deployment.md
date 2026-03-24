@@ -1,8 +1,12 @@
+---
+description: Deploy Hyperswitch payment infrastructure on your preferred cloud platform
+---
+
 # Enterprise Deployment
 
 ### Use Terraform to Provision and Maintain Infrastructure Resources&#x20;
 
-In case you are setting up your payments infrastructure on **Amazon Web Services** for the first time you can use **Hyperswitch’s Terraform configuration files** to do so.&#x20;
+In case you are setting up your payments infrastructure on **Amazon Web Services** for the first time you can use **Juspay Hyperswitch’s Terraform configuration files** to do so.&#x20;
 
 **Using Terraform -**
 
@@ -89,7 +93,7 @@ This creates a namespace called hyperswitch-dev where you can deploy and manage 
 
 #### 4. Customize the Helm Chart
 
-Please refer to the link for a standard **values.yaml** file in the hyperswitch-helm chart that needs to be modified for a production ready setup - [Link](https://github.com/juspay/hyperswitch-helm/blob/main/charts/incubator/hyperswitch-stack/values.yaml)&#x20;
+Please refer to the link for a standard **values.yaml** file in the hyperswitch-helm chart that needs to be modified for a production ready set up - [Link](https://github.com/juspay/hyperswitch-helm/blob/main/charts/incubator/hyperswitch-stack/values.yaml)&#x20;
 
 {% hint style="info" %}
 **Note:** You can further customize each component of the stack by modifying the values.yaml file under each component folder. The component specific values file contains several more parameters compared to the standard values file and can give you more control over your deployment.&#x20;
@@ -124,7 +128,7 @@ If the merchant is using the Community Edition of Hyperswitch it is recommended 
 There are 3 primary scenarios merchants can use to install Hyperswitch on Kubernetes:&#x20;
 
 1. All 3 environments in the same Kubernetes cluster under different namespaces
-2. Production environment in a separate cluster and Integ and Sandbox in one cluster - Minimum recommended setup for enterprise deployments
+2. Production environment in a separate cluster and Integ and Sandbox in one cluster - Minimum recommended set up for enterprise deployments
 3. All 3 environments in separate Kubernetes clusters - Strongest isolation and security
 
 
@@ -196,7 +200,7 @@ This gives you maximum isolation between environments and ensures scaling, appli
 
 For enterprise grade deployments merchants can deploy Production in a separate managed cloud account/tenant depending on their requirements.&#x20;
 
-This is the most optimal setup for large-scale deploymenets.&#x20;
+This is the most optimal set up for large-scale deploymenets.&#x20;
 {% endhint %}
 
 #### 6. Verify Installation

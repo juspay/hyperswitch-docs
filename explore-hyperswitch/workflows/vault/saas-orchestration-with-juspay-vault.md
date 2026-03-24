@@ -1,7 +1,5 @@
 ---
-description: >-
-  Leverage the integrated vault that comes with Hyperswitch Orchestration
-  account to store cards
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 icon: box-circle-check
 ---
 
@@ -14,7 +12,7 @@ Key Highlights:
 
 * No PCI compliance overhead.
 * Automatic network tokenization and lifecycle management.
-* Simplified setup — single integration for orchestration + vault.
+* Simplified set up — single integration for orchestration + vault.
 
 ### SaaS orchestration - Payments and vaulting flow
 

@@ -1,6 +1,7 @@
 ---
 hidden: true
 icon: star-shooting
+description: Configure 3DS authentication rules to balance fraud prevention with checkout conversion
 ---
 
 # Native 3DS Authentication

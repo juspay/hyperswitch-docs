@@ -1,12 +1,17 @@
 ---
 icon: hexagon-xmark
+description: Implement split payments to divide transactions between multiple parties or accounts
 ---
 
 # Xendit Split Settlement
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 ### Overview
 
-If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple routing methods to support diverse use cases:
+If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Juspay Hyperswitch offers multiple routing methods to support diverse use cases:
 
 * Partner to Platform
 * Partner to Partner

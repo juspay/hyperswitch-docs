@@ -1,10 +1,11 @@
 ---
 icon: at
+description: Integrate SMTP Server to expand payment capabilities
 ---
 
 # SMTP Server Integration
 
-Previously, **Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As we grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.
+Previously, **Juspay Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As we grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.
 
 Thus we upgraded Hyperswitch's email service to allow pluggable support for **any SMTP-compliant email service provider**, offering merchants greater flexibility.
 
@@ -19,7 +20,7 @@ hyperswitch/config/docker_compose.toml
 For SMTP-based email sending, update the `[email.smtp]` section as shown:
 
 ```toml
-# Configuration for smtp, applicable when the active email client is SMTP
+## Configuration for smtp, applicable when the active email client is SMTP
 [email.smtp]
 host = "mailhog"          # SMTP host (e.g., smtp.gmail.com)
 port = 1025               # SMTP port (e.g., 25, 587)

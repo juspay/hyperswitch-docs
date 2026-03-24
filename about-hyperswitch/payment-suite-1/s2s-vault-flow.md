@@ -1,7 +1,5 @@
 ---
-description: >-
-  Best for PCI compliant merchants who wants to store the card during initial
-  checkout phase without charging their customers.
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 hidden: true
 ---
 

@@ -1,3 +1,7 @@
+---
+description: Set up Hyperswitch infrastructure to enable payment processing capabilities
+---
+
 # Installation
 
 Start by installing the library for the programming language of your choice.

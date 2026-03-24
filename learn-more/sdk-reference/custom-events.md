@@ -1,3 +1,7 @@
+---
+description: Learn about Custom Events to optimize your payment infrastructure
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event

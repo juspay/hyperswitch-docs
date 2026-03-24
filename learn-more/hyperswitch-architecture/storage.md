@@ -1,3 +1,7 @@
+---
+description: Learn about Storage to optimize your payment infrastructure
+---
+
 # Storage
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.

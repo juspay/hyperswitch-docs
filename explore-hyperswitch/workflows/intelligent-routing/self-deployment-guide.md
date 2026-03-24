@@ -1,5 +1,6 @@
 ---
 icon: screwdriver-wrench
+description: Deploy Hyperswitch payment infrastructure on your preferred cloud platform
 ---
 
 # Self-Deployment Guide

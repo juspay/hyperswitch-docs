@@ -5,7 +5,7 @@ icon: container-storage
 
 # Payments Suite
 
-Hyperswitch is built for teams that want engineering-grade control over payments.
+Juspay Hyperswitch is built for teams that want engineering-grade control over payments.
 
 To simplify architectural decisions, the ecosystem can be viewed as four independent building blocks.\
 By defining ownership of each block — Hyperswitch-managed, self-hosted, or third-party — you can design an architecture aligned with your compliance posture, performance requirements, and internal engineering capabilities.

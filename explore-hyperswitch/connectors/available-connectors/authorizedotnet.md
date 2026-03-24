@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Authorizedotnet via Hyperswitch
+description: Learn about Authorizedotnet to optimize your payment infrastructure
 hidden: true
 ---
 
 # Authorizedotnet
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Authorizedotnet through Hyperswitch
@@ -15,7 +19,7 @@ Authorizedotnet, a Visa solution, is a US-based payment gateway service provider
 
 ### Prerequisites
 
-1. You need to be registered with Authorizedotnet in order to proceed. In case you aren't, you can quickly setup your Authorizedotnet account [here](https://www.authorize.net/)
+1. You need to be registered with Authorizedotnet in order to proceed. In case you aren't, you can quickly set up your Authorizedotnet account [here](https://www.authorize.net/)
 2. You should have registered and completed settings on [Hyperswitch Control center](https://hyperswitch.io/contact-sales).
 3. The Authorizedotnet **API Login ID** and **Transaction Key**. can be found in your Authorizedotnet dashboard under the Account section (Security settings) .
 4. Choose the payment methods you want to utilize with Authorize.net by navigating to Account -> Digital Payment Solutions in the Authorize.net dashboard.

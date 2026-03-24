@@ -1,8 +1,12 @@
+---
+description: Manage merchant accounts and profiles to organize payment operations across businesses
+---
+
 # Merchant & Profile Mapping in Recon
 
 ### Mapping Hyperswitch Org/Merchant/Profile to Recon
 
-Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
+Juspay Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
 
 * **Organisation (Org)**: Top-level container for your company/platform.\
   This is the parent boundary for all merchants, products, and users
@@ -30,7 +34,7 @@ flowchart TB
 In Recon:
 
 1. **A Merchant account is the level at which the Recon product is enabled/mapped** (Recon is available under a Merchant within an Org)
-2. **Isolation of reconciliation logic, rules, and setup can be achieved at either:**
+2. **Isolation of reconciliation logic, rules, and set up can be achieved at either:**
    * **Merchant level** (by enabling Recon for multiple merchants / using multiple Recon merchants under the Org), or
    * **Profile level** (by creating multiple Recon profiles under the same Recon merchant)
 
@@ -60,9 +64,9 @@ The practical difference is mostly about:
 
 ### Two common setups, and how they map to Recon
 
-#### Setup A: One Org, multiple Merchants (merchant-per-Business Unit) + Recon merchant adjacent
+#### Set up A: One Org, multiple Merchants (merchant-per-Business Unit) + Recon merchant adjacent
 
-This setup is preferred when you want **separate merchant workspaces per Business Unit/segment**, primarily to control:
+This set up is preferred when you want **separate merchant workspaces per Business Unit/segment**, primarily to control:
 
 * **How users are invited** (Business Unit-level teams invited to their own merchant workspace)
 * **How operational views are separated** (exceptions/reports owned and viewed per Business Unit)
@@ -108,7 +112,7 @@ flowchart TB
   BU2Recon --> BU2ReconP2["Recon Profile - Enterprise - Partners"]
 ```
 
-#### When Setup A is the best fit
+#### When Set up A is the best fit
 
 Choose “merchant-per-Business-Unit” if you want:
 
@@ -118,9 +122,9 @@ Choose “merchant-per-Business-Unit” if you want:
 
 
 
-### **Setup B: One Org, one Payments merchant, business units as Profiles + Recon merchant adjacent**
+### **Set up B: One Org, one Payments merchant, business units as Profiles + Recon merchant adjacent**
 
-This setup is preferred when you want:
+This set up is preferred when you want:
 
 * a shared Payments merchant workspace (simpler merchant management)
 * but still want isolated reconciliation setups per **business unit** / segment using profiles
@@ -161,12 +165,12 @@ flowchart TB
   ReconM --> ReconP3["Recon Profile: BU International"]
 ```
 
-#### When Setup B is the best fit
+#### When Set up B is the best fit
 
 Choose “single merchant + multiple profiles” if you want:
 
 * one shared umbrella for merchant management
-* isolation of recon setup inside that umbrella using profiles
+* isolation of recon set up inside that umbrella using profiles
 * simpler merchant sprawl management (fewer merchants)
 * separation where it matters (rules, logic, workflows, ops ownership) at profile level
 
@@ -174,7 +178,7 @@ Choose “single merchant + multiple profiles” if you want:
 
 #### **Scenario C: Payments under one merchant, reconciliation separated (Recon profiles) + Recon merchant under Org**
 
-This keeps the “payments unified” setup intact, while enabling **business unit**-level isolation in reconciliation
+This keeps the “payments unified” set up intact, while enabling **business unit**-level isolation in reconciliation
 
 A common real-world driver here is:
 

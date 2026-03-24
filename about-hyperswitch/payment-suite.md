@@ -2,11 +2,12 @@
 hidden: true
 noIndex: true
 icon: suitcase
+description: Learn about Payment Suite to optimize your payment infrastructure
 ---
 
 # Payment Suite
 
-Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
+Juspay Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
 
 * **Payment Orchestration** – Unified API and no-code integrations for all 60+ payment processors and numerous payment methods. Enables improving authorization rates with built-in intelligent routing.
 * **Checkout Experience** – Seamless, fast, and intuitive checkout experience for end users, improving conversions.

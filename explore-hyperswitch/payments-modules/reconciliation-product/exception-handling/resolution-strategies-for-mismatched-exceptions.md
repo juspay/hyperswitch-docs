@@ -1,4 +1,12 @@
+---
+description: Explore payment solutions designed for your specific business use case
+---
+
 # Resolution Strategies for Mismatched Exceptions
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ### Overview
 

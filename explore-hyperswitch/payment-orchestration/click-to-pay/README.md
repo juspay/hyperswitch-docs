@@ -1,5 +1,6 @@
 ---
 icon: chevrons-right
+description: Overview and guides for click to pay
 ---
 
 # Click To Pay

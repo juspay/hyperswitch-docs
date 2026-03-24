@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Aci via Hyperswitch
+description: Learn about ACI to optimize your payment infrastructure
 hidden: true
 ---
 
 # ACI
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via ACI through Hyperswitch
@@ -17,7 +21,7 @@ ACI Worldwide enables corporations to process and manage digital payments, power
 
 #### Prerequisites
 
-1. You need to be registered with ACI in order to proceed. In case you aren't, you can quickly setup your ACI account [here](https://www.aciworldwide.com/).
+1. You need to be registered with ACI in order to proceed. In case you aren't, you can quickly set up your ACI account [here](https://www.aciworldwide.com/).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. ACI **API Key** and **Entity ID** can be found in your ACI dashboard.
 

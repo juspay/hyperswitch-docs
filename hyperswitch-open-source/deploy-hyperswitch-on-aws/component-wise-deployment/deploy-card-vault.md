@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 ---
 
 # 🔐 Deploy card vault
@@ -34,4 +34,4 @@ Custodian Keys - AES generated key that is used to encrypt and decrypt the maste
 
 ## Setting up your Card Vault
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual set up of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>

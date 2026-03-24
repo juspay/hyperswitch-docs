@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Set up Hyperswitch locally for development, testing, and integration work
 ---
 
 # Run Hyperswitch Locally Using Docker
@@ -7,10 +8,10 @@ icon: badge-check
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
 {% hint style="success" %}
-This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
+This set up automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 {% endhint %}
 
-## Setup using Docker
+## Set up using Docker
 
 You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
@@ -30,7 +31,7 @@ The above command will:
 
 * Check for prerequisites (Docker Compose/Podman)
 * Set up necessary configurations (PostgreSQL, Redis)
-* Let you select a setup option:
+* Let you select a set up option:
   * **Standard**: (Recommended) App server + Control Center + Web SDK
   * **Full**: Standard + Monitoring + Scheduler
   * **Standalone App Server**: Core services only App Server

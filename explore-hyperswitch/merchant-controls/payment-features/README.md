@@ -1,5 +1,6 @@
 ---
 icon: sparkles
+description: Discover Hyperswitch features to optimize payment processing and increase revenue
 ---
 
 # Payment Features

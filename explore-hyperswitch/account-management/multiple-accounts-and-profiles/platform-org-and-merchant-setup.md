@@ -5,9 +5,13 @@ icon: garage-car
 
 # Platform Org and Merchant Setup
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 #### Overview of Platform Organization
 
-A Platform Organization is a special type of organization in Hyperswitch designed for businesses who want to manage and onboard multiple merchants under them, programmatically. Think of it as a “meta-organization” that can:
+A Platform Organization is a special type of organization in Juspay Hyperswitch designed for businesses who want to manage and onboard multiple merchants under them, programmatically. Think of it as a “meta-organization” that can:
 
 * Create and manage other Merchant Accounts under its umbrella
 * Generate API keys not just for itself, but also for the merchants it creates
@@ -194,12 +198,12 @@ All operational flows continue to use the respective Merchant API Keys. Resource
 | Customer Scope          | Customers are scoped to a single merchant.                             | Customers are shared across Connected merchants. Standard merchants maintain isolated Customers.                                                                                 |
 | Payment Method Scope    | Payment Methods are scoped to a single merchant.                       | Payment Methods are shared across Connected merchants. Standard merchants maintain isolated Payment Methods.                                                                     |
 | API Key Generation      | Org Admin generates API keys manually.                                 | Platform Merchant generates Merchant API Keys programmatically for child merchants.                                                                                              |
-| Connector Setup         | Merchant configures connectors via Dashboard or using its own API key. | Merchants can configure their own connectors using their API key, and the platform can configure connectors on behalf of **Connected** merchants using the **Platform API key**. |
+| Connector Set up         | Merchant configures connectors via Dashboard or using its own API key. | Merchants can configure their own connectors using their API key, and the platform can configure connectors on behalf of **Connected** merchants using the **Platform API key**. |
 | Payment Processing      | Merchant uses its own API key.                                         | Merchants can process payments using their API key, and the platform can process payments on behalf of **Connected** merchants using the **Platform API key**.                   |
 | Merchant Type Changes   | Not applicable.                                                        | Merchant classification is set at creation, for any changes, contact your **Admins**.                                                                                            |
 
 **Roadmap (Platform-Connected Setup)**
 
-* The current Platform-Connected setup supports Payments flows end-to-end including 3DS payments
+* The current Platform-Connected set up supports Payments flows end-to-end including 3DS payments
 * Support for additional operational flows - such as Refunds and Disputes - is planned and will be added in upcoming releases to expand the set of on-behalf capabilities for Connected merchants.
 * For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a standard (non-platform) Organization are already supported.

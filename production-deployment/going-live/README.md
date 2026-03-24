@@ -1,10 +1,11 @@
 ---
 icon: rocket-launch
+description: Overview and guides for going live
 ---
 
 # Going live
 
-Before going live with Hyperswitch, ensure that your integration is production-ready by following our comprehensive setup checklists. These checklists help you verify that your payment processing is optimized, secure, and fully functional for a seamless merchant experience.
+Before going live with Juspay Hyperswitch, ensure that your integration is production-ready by following our comprehensive set up checklists. These checklists help you verify that your payment processing is optimized, secure, and fully functional for a seamless merchant experience.
 
 #### Choose Your Deployment Model:
 
@@ -19,4 +20,4 @@ Each deployment has its own set of requirements and configurations. Select the c
 
 |                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p>This checklist covers:</p><ul><li>API Key and PSP Credential Configuration</li><li>Webhook Setup for Real-time Updates</li><li>Payment Routing and Retry Rules</li><li>Compliance and Security Checks</li><li>Testing Transactions in Production Mode</li></ul> | <p>This checklist includes:</p><ul><li>Infrastructure and Database Configuration</li><li>Security and Compliance Setup</li><li>PSP Key Management</li><li>Monitoring and Logging Setup</li><li>Production Readiness Testing</li></ul> |
+| <p>This checklist covers:</p><ul><li>API Key and PSP Credential Configuration</li><li>Webhook Set up for Real-time Updates</li><li>Payment Routing and Retry Rules</li><li>Compliance and Security Checks</li><li>Testing Transactions in Production Mode</li></ul> | <p>This checklist includes:</p><ul><li>Infrastructure and Database Configuration</li><li>Security and Compliance Setup</li><li>PSP Key Management</li><li>Monitoring and Logging Setup</li><li>Production Readiness Testing</li></ul> |

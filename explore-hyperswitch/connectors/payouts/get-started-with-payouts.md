@@ -1,8 +1,13 @@
 ---
 icon: flag-checkered
+description: Set up payout processing to automate disbursements to vendors, sellers, or partners
 ---
 
 # Getting Started with Payouts
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
 

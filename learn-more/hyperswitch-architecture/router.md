@@ -1,3 +1,7 @@
+---
+description: Implement smart routing to optimize payment processing across multiple connectors
+---
+
 # Router
 
 The router service is implemented in Rust to ensure type safety and high performance. It follows a hexagonal architecture, promoting modularity by allowing independent management of different components. ​[l-lin.github.io](https://l-lin.github.io/programming-languages/rust/master-hexagonal-architecture-in-Rust)

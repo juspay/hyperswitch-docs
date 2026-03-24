@@ -1,5 +1,5 @@
 ---
-description: Quick answers to commonly asked questions about Hyperswitch
+description: Find answers to common questions about Hyperswitch features and implementation
 ---
 
 # FAQs

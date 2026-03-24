@@ -1,3 +1,7 @@
+---
+description: Integrate Why we built a Unified Payment  Library? to expand payment capabilities
+---
+
 # Why we built a Unified Payment Integration Library?
 
 If you have ever integrated a payment processor, you know the drill. You read through a PDF that was last updated in 2019, figure out what combination of API keys goes in which header, discover that "decline code 51" means something subtly different on this processor than the last one you dealt with, and then do it all over again when your business decides to add a second processor.

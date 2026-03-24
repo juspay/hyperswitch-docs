@@ -1,5 +1,6 @@
 ---
 icon: right-from-bracket
+description: Learn about Import data to Hyperswitch to optimize your payment infrastructure
 ---
 
 # Import data to Hyperswitch

@@ -1,4 +1,12 @@
+---
+description: Learn about Extending to More Flows to optimize your payment infrastructure
+---
+
 # Extending to More Flows
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.
 
@@ -118,14 +126,14 @@ async fn add_tip(
 
 Set up and process recurring payments:
 
-### Step 1: Setup Recurring
+### Step 1: Set up Recurring
 
 ```rust
 async fn setup_recurring(
     client: &UcsClient,
     payment_method_id: String
 ) -> Result<RecurringSetup, UcsError> {
-    let setup = client
+    let set up = client
         .recurring_payment_service()
         .setup_recurring(SetupRecurringRequest {
             payment_method_id,
@@ -340,7 +348,7 @@ Refund:
   Create Order → Authorize → Capture → Refund
 
 Recurring:
-  Setup Recurring → (schedule) → Charge → Charge → Revoke
+  Set up Recurring → (schedule) → Charge → Charge → Revoke
 ```
 
 ## Next Steps

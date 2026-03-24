@@ -1,5 +1,5 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Enable digital wallet payments to offer customers fast, secure checkout options
 ---
 
 # Google Pay
@@ -56,4 +56,4 @@ We recommend to pass this fields while creating the Payment Intent with Hyperswi
 
 
 
-[^1]: 
+[^1]:

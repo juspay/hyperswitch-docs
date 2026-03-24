@@ -1,5 +1,6 @@
 ---
 icon: server
+description: Set up Hyperswitch infrastructure to enable payment processing capabilities
 ---
 
 # Server setup
@@ -13,4 +14,4 @@ icon: server
 * Managing rollout strategies (e.g., staged rollouts, feature flags).
 * Ensuring version compatibility between client and bundle.
 
-**For complete server setup instructions and example implementations, see the** [**Airborne**](https://github.com/juspay/airborne/)**.**
+**For complete server set up instructions and example implementations, see the** [**Airborne**](https://github.com/juspay/airborne/)**.**

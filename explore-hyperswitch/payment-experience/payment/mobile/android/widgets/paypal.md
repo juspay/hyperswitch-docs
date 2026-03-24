@@ -1,5 +1,6 @@
 ---
 icon: paypal
+description: Learn about PayPal to optimize your payment infrastructure
 ---
 
 # PayPal
@@ -65,4 +66,3 @@ private fun onPayPalResult(result: PayPalPaymentMethodLauncher.Result) {
     }
 }    
 ```
-

@@ -1,5 +1,5 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: Implement security best practices to protect payment data and maintain PCI compliance
 icon: credit-card
 ---
 

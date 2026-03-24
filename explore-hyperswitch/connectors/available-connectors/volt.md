@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Volt via Hyperswitch
+description: Learn about Volt to optimize your payment infrastructure
 hidden: true
 ---
 
 # Volt
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Volt through Hyperswitch

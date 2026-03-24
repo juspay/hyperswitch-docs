@@ -5,7 +5,7 @@ icon: link
 
 # Payment Links
 
-Introducing Payment Links - Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
+Introducing Payment Links - Seamlessly integrate into Juspay Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
 ### Use cases for Payment links
 
@@ -55,7 +55,7 @@ No, at the moment we do not support creation of static payment links ([request f
 
 <summary>How long is the Payment link valid for?</summary>
 
-The payment link is valid for 15-minutes by default. However you can increase the validity to upto 3-months (7890000) by passing the time in seconds in`session expiry` in the create payment link call
+The payment link is valid for 15-minutes by default. However you can increase the validity to up to 3-months (7890000) by passing the time in seconds in`session expiry` in the create payment link call
 
 </details>
 

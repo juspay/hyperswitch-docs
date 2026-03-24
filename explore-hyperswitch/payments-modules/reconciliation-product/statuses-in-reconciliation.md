@@ -1,11 +1,12 @@
 ---
-description: >-
-  Master all reconciliation statuses on Juspay Hyperswitch to track transaction
-  progress from ingestion through final posting and resolve exceptions
-  efficiently
+description: Implement automated reconciliation to streamline financial reporting and reduce manual effort
 ---
 
 # Statuses in Reconciliation
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 In reconciliation, **status** is the fastest way to understand what's happening to your data — from file upload to posted ledger transactions.\ This guide explains statuses at four layers of the workflow: **Ingestion**, **Transformation**, **Staging Entries**, and **Transactions (Ledger)**
 

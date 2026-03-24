@@ -1,9 +1,13 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Implement split payments to divide transactions between multiple parties or accounts
 icon: stripe
 ---
 
 # Stripe Split Settlement
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ### Overview
 

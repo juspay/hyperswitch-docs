@@ -1,12 +1,13 @@
 ---
 icon: cubes-stacked
+description: Learn about Multi-Tenancy to optimize your payment infrastructure
 ---
 
 # Multi-Tenancy
 
 ## What is Multi-Tenancy?
 
-Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
+Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Juspay Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
 
 Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
 

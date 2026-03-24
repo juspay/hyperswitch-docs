@@ -1,7 +1,5 @@
 ---
-description: >-
-  Test payments through CLI version of Postman, Newman which resides in a Rust
-  wrapper called as Rustman
+description: Test payment flows to validate integration and ensure transaction processing works correctly
 icon: stethoscope
 ---
 
@@ -59,7 +57,7 @@ Passing `--verbose` will also print the connector as well as admin API keys in t
 
     ```shell
     cargo run --package test_utils --bin test_utils -- --connector-name=<connector_name> --base-url=<base_url> --admin-api-key=<admin_api_key> \
-    # optionally
+## optionally
     --folder "<folder_name_1>,<folder_name_2>,...<folder_name_n>" --verbose
     ```
 

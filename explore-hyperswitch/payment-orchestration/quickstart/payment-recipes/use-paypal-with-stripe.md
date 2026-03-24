@@ -1,5 +1,5 @@
 ---
-description: 'Payment Recipe #1'
+description: Learn about Use PayPal With Stripe to optimize your payment infrastructure
 ---
 
 # Use PayPal With Stripe
@@ -33,6 +33,6 @@ If you wish to start offering Paypal to your customers, Hyperswitch offers you a
 
 
 
-You can [migrate from Stripe](../migrate-from-stripe/) to Hyperswitch in less than 15 mins and enable Paypal in a couple of clicks. Please follow the account setup (next section) to enable different payment methods of Stripe with Paypal.
+You can [migrate from Stripe](../migrate-from-stripe/) to Hyperswitch in less than 15 mins and enable Paypal in a couple of clicks. Please follow the account set up (next section) to enable different payment methods of Stripe with Paypal.
 
 ###

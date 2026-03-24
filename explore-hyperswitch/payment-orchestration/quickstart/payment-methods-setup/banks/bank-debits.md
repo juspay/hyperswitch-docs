@@ -18,7 +18,7 @@ a. Customer selects bank debit on the checkout page
 
 b. They are shown a form to enter their bank details followed by a checkbox to authorize the merchant to debit their bank account later. This authorization from the customer is called mandate
 
-c. The customers are notified about the mandate setup and every time funds are debited from their account
+c. The customers are notified about the mandate set up and every time funds are debited from their account
 
 d. The merchant can opt for microdeposits (only on Stripe) or allow the customer to link their bank account in order to verify the authenticity of the bank details.
 
@@ -41,16 +41,16 @@ Since ACH Direct Debit is a delayed notification payment method, it can take up 
 
 SEPA allows direct bank debits payment for EUR denominated bank accounts in the SEPA region (list of countries). The customer accepts a mandate that authorizes the merchant to debit the account.
 
-Since SEPA Direct Debit is a delayed notification payment method, it can take upto 14 business days for the payment status to be updated after initiating a debit from the customer’s account.
+Since SEPA Direct Debit is a delayed notification payment method, it can take up to 14 business days for the payment status to be updated after initiating a debit from the customer’s account.
 
 ### BACS
 
 BACS is a popular bank debit payment method for customers with UK bank accounts where the customers authorize a mandate for debit through the Bankers' Automated Clearing Services (BACS).
 
-Since BACS Direct Debit is a delayed notification payment method, it can take upto 6 business days for the payment status to be updated after initiating a debit from the customer’s account.
+Since BACS Direct Debit is a delayed notification payment method, it can take up to 6 business days for the payment status to be updated after initiating a debit from the customer’s account.
 
 ### BECS
 
 BECS is a bank debit that is used for recurring payments for customers with Australian bank accounts who authorize a mandate for debit through the Bulk Electronic Clearing System (BECS).
 
-Since BECS Direct Debit is a delayed notification payment method, it can take upto 3 business days for the payment status to be updated after initiating a debit from the customer’s account.
+Since BECS Direct Debit is a delayed notification payment method, it can take up to 3 business days for the payment status to be updated after initiating a debit from the customer’s account.

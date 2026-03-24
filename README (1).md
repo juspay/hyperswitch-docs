@@ -2,6 +2,7 @@
 icon: screwdriver-wrench
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
+description: Learn about Get Started to optimize your payment infrastructure
 ---
 
 # Get Started
@@ -10,11 +11,11 @@ At Juspay, we believe payment infrastructure should be transparent, adaptable, a
 
 This modular, composable platform allows you to deploy on-premise for full access or select only the components you need.&#x20;
 
-To run Hyperswitch locally, follow our Docker setup guide. Alternatively, explore our cloud deployment guides for additional options. ​
+To run Hyperswitch locally, follow our Docker set up guide. Alternatively, explore our cloud deployment guides for additional options. ​
 
 ## Local Setup
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Unified Local Setup using Docker (Recommended)</strong></mark></td><td>Simplified local setup of all components, using a single command with the help of docker.</td><td></td><td><a href="hyperswitch-open-source/overview/unified-local-setup-using-docker.md">unified-local-setup-using-docker.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Development Environment Setup</strong></mark></td><td>Local setup of development environment to build with Hyperswitch</td><td></td><td><a href="hyperswitch-open-source/overview/local-setup-using-individual-components/">local-setup-using-individual-components</a></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Unified Local Set up using Docker (Recommended)</strong></mark></td><td>Simplified local set up of all components, using a single command with the help of docker.</td><td></td><td><a href="hyperswitch-open-source/overview/unified-local-setup-using-docker.md">unified-local-setup-using-docker.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Development Environment Setup</strong></mark></td><td>Local set up of development environment to build with Hyperswitch</td><td></td><td><a href="hyperswitch-open-source/overview/local-setup-using-individual-components/">local-setup-using-individual-components</a></td><td></td></tr></tbody></table>
 
 ## Cloud Setup
 
@@ -26,7 +27,7 @@ Want to try without deploying? Use our dashboard on [sandbox](https://app.hypers
 
 ### Learning Resources
 
-In case you are completely new to payments - You can comeback to setup after reading the [Payment 101 Blog](https://github.com/juspay/hyperswitch/wiki/Payments-101-for-a-Developer), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
+In case you are completely new to payments - You can comeback to set up after reading the [Payment 101 Blog](https://github.com/juspay/hyperswitch/wiki/Payments-101-for-a-Developer), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
 
 {% hint style="info" %}
 **Have Questions?**\

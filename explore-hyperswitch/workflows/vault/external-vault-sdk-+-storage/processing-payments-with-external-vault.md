@@ -1,5 +1,6 @@
 ---
 icon: money-bill-wave
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 ---
 
 # Processing payments with external vault
@@ -23,4 +24,3 @@ When working with an external vault provider, here’re the options available to
 * **Option 3 -** Merchant server uses proxy payments flow of external vaults to send vault tokens in the Hyperswitch payment request. These tokens are replaced with raw card data by the external vault before the request is forwarded to the Hyperswitch. This Hyperswitch request with raw card info is sent to the PSP by Hyperswitch.
 
 <figure><img src="../../../../.gitbook/assets/unknown (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
-

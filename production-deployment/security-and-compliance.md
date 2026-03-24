@@ -1,12 +1,13 @@
 ---
 icon: shield-check
+description: Implement security best practices to protect payment data and maintain PCI compliance
 ---
 
 # Security and Compliance
 
 ### Data Protection & Encryption
 
-Data protection and encryption are critical for a Hyperswitch production installation to safeguard sensitive information and comply with GDPR, PCI DSS requirements.
+Data protection and encryption are critical for a Juspay Hyperswitch production installation to safeguard sensitive information and comply with GDPR, PCI DSS requirements.
 
 It is recommended to ensure that
 

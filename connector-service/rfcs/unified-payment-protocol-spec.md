@@ -1,3 +1,7 @@
+---
+description: Learn about RFC: Unified Payment Protocol (UPP) to optimize your payment infrastructure
+---
+
 # RFC: Unified Payment Protocol (UPP)
 
 | Field       | Value                                    |

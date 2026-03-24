@@ -1,5 +1,5 @@
 ---
-description: Integrate ApplePay via Cybersource in Hyperswitch
+description: Enable digital wallet payments to offer customers fast, secure checkout options
 ---
 
 # Apple Pay

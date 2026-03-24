@@ -1,3 +1,7 @@
+---
+description: Learn about System Requirements to optimize your payment infrastructure
+---
+
 # System Requirements
 
 ### **Hardware**

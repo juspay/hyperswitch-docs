@@ -1,14 +1,15 @@
 ---
 icon: box-ballot
+description: Implement security best practices to protect payment data and maintain PCI compliance
 ---
 
 # Self-hosted & in-house PCI
 
-In this deployment, merchants self-host Hyperswitch and also manage their own PCI DSS compliance.
+In this deployment, merchants self-host Juspay Hyperswitch and also manage their own PCI DSS compliance.
 
 All card storage and tokenization are handled through the native Hyperswitch Vault, which is deployed within the merchant’s controlled environment.
 
-This setup ensures full data ownership while leveraging Hyperswitch’s built-in PCI-compliant vault stack.
+This set up ensures full data ownership while leveraging Hyperswitch’s built-in PCI-compliant vault stack.
 
 Key Highlights:
 

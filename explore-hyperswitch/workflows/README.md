@@ -1,8 +1,5 @@
 ---
-description: >-
-  Simplify implementation of orchestration and payment outcomes by taking
-  advantage of normalized request and response fields and values to avoid
-  changes by engineering teams
+description: Overview and guides for workflows
 icon: arrow-progress
 ---
 

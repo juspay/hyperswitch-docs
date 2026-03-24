@@ -7,7 +7,7 @@ icon: globe-wifi
 
 ## Global Checkout Experience
 
-Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
+Juspay Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
 | <img src="../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong><br>A variety of global payment methods including cards, buy now pay later and digital wallets are supported by the Unified Checkout, with adaptation to local preferences and ability to local language customization.</p>                            |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
