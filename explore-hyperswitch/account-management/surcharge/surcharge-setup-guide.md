@@ -1,5 +1,5 @@
 ---
-description: Surcharge Manager Setup
+description: Set up surcharge rules through the Control Center to automatically apply fees based on payment amount, method, card network, and other parameters
 ---
 
 # Surcharge Setup guide

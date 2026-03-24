@@ -1,5 +1,5 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
+description: Configure outgoing webhooks from Hyperswitch to receive real-time payment status notifications and ensure instant communication with your systems
 icon: anchor
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Common payment augmentation patterns for FinTech enterprises, from adding
-  processors to improving routing, vaulting, and operational visibility.
+description: Augment your fintech payment stack with modular orchestration to expand into new geographies, improve authorization rates, and maintain data sovereignty
 icon: watch-calculator
 ---
 

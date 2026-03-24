@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your react native app
+description: Migrate from Stripe to Hyperswitch on your React Native app to access multiple processors and smart routing capabilities with minimal code changes
 ---
 
 # React Native

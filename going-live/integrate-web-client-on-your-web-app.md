@@ -1,5 +1,5 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Integrate Hyperswitch web client on your web app to provide a seamless unified checkout experience for customers
 ---
 
 # 🖥 Integrate web client on your web app

@@ -1,5 +1,5 @@
 ---
-description: Assign roles and permission to users
+description: Manage team members by assigning roles and permissions to control access levels across your payment operations
 icon: screen-users
 ---
 

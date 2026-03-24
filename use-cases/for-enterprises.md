@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for enterprise merchants
+description: Deploy enterprise-grade payment infrastructure to handle high-volume transactions, ensure compliance, and gain unified operational control across all payment processors
 hidden: true
 noIndex: true
 ---

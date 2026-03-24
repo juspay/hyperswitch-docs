@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Augment subscription billing with payment orchestration to control card vaulting, retry logic, and routing while maintaining your existing subscription provider
 icon: repeat
 ---
 

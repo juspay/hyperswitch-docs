@@ -1,5 +1,5 @@
 ---
-description: Use Docker to set up Hyperswitch app server
+description: Set up Hyperswitch app server locally using Docker to build and run the complete payment infrastructure on your machine
 ---
 
 # 🐳 Run Hyperswitch

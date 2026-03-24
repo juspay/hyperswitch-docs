@@ -1,5 +1,5 @@
 ---
-description: SDK method details
+description: Reference SDK methods for React and JavaScript to customize and integrate payment experiences into your applications
 icon: chart-candlestick
 ---
 

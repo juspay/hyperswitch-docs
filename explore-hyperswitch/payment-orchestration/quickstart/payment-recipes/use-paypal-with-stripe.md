@@ -1,5 +1,5 @@
 ---
-description: 'Payment Recipe #1'
+description: Integrate PayPal alongside Stripe to expand your US and global customer reach with access to 400 million active PayPal users
 ---
 
 # Use PayPal With Stripe

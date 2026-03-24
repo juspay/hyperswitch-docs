@@ -1,5 +1,5 @@
 ---
-description: It's no rocket science
+description: Understand and achieve PCI compliance using self-assessment questionnaires, documentation templates, and automation scripts
 icon: user-police-tie
 ---
 

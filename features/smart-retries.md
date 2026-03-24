@@ -1,5 +1,5 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Enable automatic payment retries across alternative processors to recover failed transactions and boost authorization rates
 ---
 
 # 🔃 Smart retries

@@ -1,5 +1,5 @@
 ---
-description: A 30,000 feet view of Hyperswitch's architecture
+description: Understand Hyperswitch's architecture including Router, Scheduler, Database, Locker, and Monitoring components at a high level
 icon: folder-tree
 ---
 

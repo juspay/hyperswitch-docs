@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Configure subscription payment solutions for SaaS businesses to reduce churn, optimize costs, and scale globally with automated recurring billing
 hidden: true
 noIndex: true
 icon: desktop

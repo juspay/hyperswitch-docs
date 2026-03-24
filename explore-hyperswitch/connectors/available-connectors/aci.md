@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Aci via Hyperswitch
+description: Configure ACI Worldwide to process digital payments, manage omni-commerce transactions, and implement fraud risk management solutions
 hidden: true
 ---
 

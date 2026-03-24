@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Zen via Hyperswitch
+description: Configure Zen as your payment processor to benefit from low conversion fees and a modern responsive payment portal for increased revenue
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Diversify your payments offering
+description: Explore payment recipes to diversify your payment options, expand globally, mitigate risks, and optimize processing costs across multiple processors
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your web app
+description: Migrate from Stripe to Hyperswitch on your web app for React and HTML frontends to unlock multi-processor capabilities
 ---
 
 # Web

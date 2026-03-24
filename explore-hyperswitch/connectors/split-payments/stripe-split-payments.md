@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Configure Stripe split settlements to distribute payments between your platform and connected accounts with support for direct and destination charges
 icon: stripe
 ---
 

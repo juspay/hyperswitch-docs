@@ -1,5 +1,5 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Set up your Hyperswitch account on the Control Center to generate API keys, configure payment processors, and customize dashboard branding
 ---
 
 # ⚙️ Control Centre Account setup

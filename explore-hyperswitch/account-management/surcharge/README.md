@@ -1,5 +1,5 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: Configure surcharge rules based on payment parameters to pass processing fees to customers and offset payment method costs
 icon: clipboard-list-check
 ---
 

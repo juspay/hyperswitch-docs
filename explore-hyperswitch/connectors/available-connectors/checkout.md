@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Checkout via Hyperswitch
+description: Configure Checkout.com as your payment processor to access a global gateway, acquirer, and processor through a single end-to-end solution
 hidden: true
 ---
 
