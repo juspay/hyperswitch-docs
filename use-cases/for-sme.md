@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for SMEs
+description: Implement tailored payment solutions for SMEs to expand customer reach and streamline transaction processing with minimal technical effort
 hidden: true
 noIndex: true
 ---

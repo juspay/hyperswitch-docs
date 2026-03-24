@@ -1,5 +1,5 @@
 ---
-description: Infinite control over managing your payments
+description: Configure intelligent payment routing rules to optimize authorization rates, reduce costs, and manage processor failover automatically
 ---
 
 # 🛣️ Smart Router

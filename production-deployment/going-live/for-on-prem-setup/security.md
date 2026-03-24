@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Implement multi-layered encryption and security measures to safeguard sensitive data and maintain PCI compliance
 icon: lock-keyhole
 ---
 

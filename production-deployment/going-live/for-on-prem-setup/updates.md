@@ -1,5 +1,5 @@
 ---
-description: Stay up to date with minimal maintenance effort!
+description: Keep your Hyperswitch deployment up to date with automated updates, database migrations, and configuration management for minimal maintenance
 icon: recycle
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your android app
+description: Migrate from Stripe to Hyperswitch on your Android app to enable smart routing and access 40+ payment processors with minimal integration changes
 ---
 
 # Android

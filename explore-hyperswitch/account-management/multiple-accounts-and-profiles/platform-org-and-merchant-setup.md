@@ -1,5 +1,5 @@
 ---
-description: Platform Organization Setup & Workflow
+description: Set up a Platform Organization to programmatically onboard and manage multiple merchant accounts with shared resources and centralized control
 icon: garage-car
 ---
 

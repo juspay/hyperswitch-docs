@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Create your Hyperswitch account, generate API keys, and configure payment processors through the dashboard or API endpoints
 ---
 
 # 🔧 Account setup

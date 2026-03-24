@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for B2B SaaS Businesses
+description: Build flexible payment infrastructure for B2B SaaS platforms to onboard enterprise clients with customizable vaulting and composable workflows
 hidden: true
 noIndex: true
 icon: block-brick

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Augments payment processing capabilities with your preferred Subscription
-  Solution provider
+description: Augment subscription billing with payment orchestration to enable flexible processor choice and improved recurring payment success rates
 hidden: true
 icon: repeat
 ---

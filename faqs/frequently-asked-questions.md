@@ -1,5 +1,5 @@
 ---
-description: Answers to the most frequently asked questions about Juspay Hyperswitch
+description: Find answers to common questions about Juspay Hyperswitch features, integration, pricing, and payment processing capabilities
 
 ---
 # Frequently Asked Questions

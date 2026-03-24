@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your iOS app
+description: Migrate from Stripe to Hyperswitch on your iOS app to access multiple payment processors and smart routing features
 ---
 
 # iOS

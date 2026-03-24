@@ -1,5 +1,5 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: Monitor payment analytics and manage operations through a unified dashboard to track conversion rates, success metrics, and operational workflows
 icon: chart-pie-simple-circle-dollar
 ---
 

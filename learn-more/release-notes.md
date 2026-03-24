@@ -1,7 +1,5 @@
 ---
-description: >-
-  This page is a central archive of Hyperswitch release notes. It summarises
-  recent product updates.
+description: Track Hyperswitch product updates, connector enhancements, and platform improvements through centralized release notes
 hidden: true
 noIndex: true
 ---

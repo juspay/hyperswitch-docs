@@ -1,5 +1,5 @@
 ---
-description: Jan '26 to March '26
+description: Explore the Q1 2026 roadmap covering core orchestration, connectors, vault, authentication, and revenue recovery enhancements
 icon: road
 ---
 

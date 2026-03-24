@@ -1,5 +1,5 @@
 ---
-description: Demystifying PCI compliance and it's requirements
+description: Understand PCI compliance levels, requirements, and self-assessment processes to simplify achieving certification for your payment infrastructure
 icon: cake-slice
 ---
 

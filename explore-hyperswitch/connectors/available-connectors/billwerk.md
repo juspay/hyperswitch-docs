@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Billwerk via Hyperswitch
+description: Configure Billwerk+ Pay as an acquirer-independent gateway to access competitive rates and a wide variety of payment methods
 hidden: true
 ---
 

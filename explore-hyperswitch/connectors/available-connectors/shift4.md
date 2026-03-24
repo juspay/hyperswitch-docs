@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Shift4 via Hyperswitch
+description: Configure Shift4 as your payment processor to accept secure card payments with fast processing and reliable payment network capabilities
 hidden: true
 ---
 

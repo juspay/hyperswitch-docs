@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for e-commerce businesses
+description: Optimize e-commerce payment flows to improve conversion rates, reduce fraud, and enable global payment methods with intelligent routing
 hidden: true
 noIndex: true
 icon: buildings

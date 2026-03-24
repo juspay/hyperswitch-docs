@@ -1,5 +1,5 @@
 ---
-description: Get started with Adyen Split Settlements via Hyperswitch
+description: Configure Adyen split settlements to divide transactions across multiple accounts with support for commissions, balance accounts, and automatic fee handling
 icon: space-awesome
 ---
 

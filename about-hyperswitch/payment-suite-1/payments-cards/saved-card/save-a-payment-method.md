@@ -1,5 +1,5 @@
 ---
-description: Setting up and managing recurring payments
+description: Set up and manage saved payment methods to enable one-click checkout and recurring billing for returning customers
 icon: repeat
 ---
 

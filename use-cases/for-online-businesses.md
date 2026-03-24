@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for your online business
+description: Integrate comprehensive payment processing for online businesses to accept global payments, manage recurring billing, and optimize conversion rates
 hidden: true
 noIndex: true
 ---

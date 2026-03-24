@@ -1,5 +1,5 @@
 ---
-description: Fast migration guide for Stripe users
+description: Migrate from Stripe to Hyperswitch in under 15 minutes to access multiple processors, smart routing, and unified analytics
 hidden: true
 ---
 

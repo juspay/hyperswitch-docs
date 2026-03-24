@@ -1,5 +1,5 @@
 ---
-description: Visibility and control over your application
+description: Set up comprehensive monitoring with Promtail, Loki, OpenTelemetry, and Grafana to track application logs and performance metrics
 icon: eyes
 ---
 

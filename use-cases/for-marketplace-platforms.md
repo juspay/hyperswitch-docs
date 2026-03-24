@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for marketplace/platforms
+description: Implement multi-party payment infrastructure for marketplaces to handle complex transaction flows, multi-rail payouts, and merchant onboarding seamlessly
 hidden: true
 noIndex: true
 icon: shop
