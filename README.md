@@ -2,33 +2,34 @@
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
+description: Explore Juspay Hyperswitch capabilities to integrate multiple payment processors and optimize your payment infrastructure
 ---
 
 # Exploration Guide
 
-Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
+Juspay Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
 
 This guide helps you:
 
-* Quickly install Hyperswitch with minimal setup
-* Try your first hello world by making a payment
-* Learn about Hyperswitch’s modular architecture
-* Improve and streamline your checkout experience
-* See how Hyperswitch embeds security, reliability, and scalability into its core architecture
+- Quickly install Juspay Hyperswitch with minimal setup
+- Try your first hello world by making a payment
+- Learn about Juspay Hyperswitch's modular architecture
+- Improve and streamline your checkout experience
+- See how Juspay Hyperswitch embeds security, reliability, and scalability into its core architecture
 
 ***
 
-### Try Hyperswitch Quickly
+## Try Juspay Hyperswitch Quickly
 
-#### Get a Sandbox Ready in under 10 Minutes
+### Get a Sandbox Ready in under 10 Minutes
 
 Spin up a working integration with minimal effort. Choose the path that fits your needs:
 
 <details>
 
-<summary><strong>Cloud Sandbox (Hyperswitch Hosted Test Environment)</strong></summary>
+<summary><strong>Cloud Sandbox (Juspay Hyperswitch Hosted Test Environment)</strong></summary>
 
-[Try Hyperswitch →](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)\
+[Try Juspay Hyperswitch →](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)\
 Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.
 
 </details>
@@ -50,7 +51,7 @@ Perfect for developers who want local control and flexibility. You'll launch a r
 [Use Postman Collection →](hyperswitch-open-source/account-setup/using-postman.md)\
 Build a custom backend integration from scratch.
 
-> ⚠️ To authenticate API requests, you’ll need a username and password from either:\
+> ⚠️ To authenticate API requests, you'll need a username and password from either:\
 > • the [Cloud Sandbox](https://app.hyperswitch.io)\
 > • or your [Docker setup](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1/unified-local-setup-using-docker)
 
@@ -58,47 +59,47 @@ Build a custom backend integration from scratch.
 
 <details>
 
-<summary><strong>Launch a Scalable Hyperswitch Instance on AWS</strong></summary>
+<summary><strong>Launch a Scalable Juspay Hyperswitch Instance on AWS</strong></summary>
 
 [AWS Deployment →](hyperswitch-open-source/deploy-hyperswitch-on-aws/)
 
-Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployment guide. Ideal for teams looking for flexibility, control, and production-ready scalability.
+Launch Juspay Hyperswitch on your own AWS infrastructure with our step-by-step deployment guide. Ideal for teams looking for flexibility, control, and production-ready scalability.
 
 </details>
 
 <details>
 
-<summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for GCP &#x26; Azure</strong></summary>
+<summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for GCP & Azure</strong></summary>
 
 [Deploy on GCP or Azure →](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
 
-Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernetes. This method gives you full control over your environment and is ideal for teams deploying on GCP, Azure, or any Kubernetes-compatible platform.
+Install Juspay Hyperswitch on your cloud infrastructure using Helm charts for Kubernetes. This method gives you full control over your environment and is ideal for teams deploying on GCP, Azure, or any Kubernetes-compatible platform.
 
 </details>
 
-### Your first payment
+## Your First Payment
 
-See Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker setup or directly via API.
+See Juspay Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker setup or directly via API.
 
 <details>
 
-<summary><strong>Test a payment | Your First Hello World with Hyperswitch</strong></summary>
+<summary><strong>Test a Payment | Your First Hello World with Juspay Hyperswitch</strong></summary>
 
 [Control Center](hyperswitch-open-source/account-setup/test-a-payment.md) | Accessible through cloud sandbox or Docker
 
-[API ](hyperswitch-open-source/account-setup/using-postman.md)| Accessible through the Postman Collection
+[API](hyperswitch-open-source/account-setup/using-postman.md)| Accessible through the Postman Collection
 
 [Learn how the SDK, control center and backend work together](hyperswitch-open-source/overview/local-setup-using-individual-components/)
 
 </details>
 
-### Hyperswitch Capabilities Overview
+## Juspay Hyperswitch Capabilities Overview
 
-Power only what you need with Hyperswitch’s modular architecture. You can pick and integrate the components that solve your specific payment challenges without unnecessary overhead.
+Power only what you need with Juspay Hyperswitch's modular architecture. You can pick and integrate the components that solve your specific payment challenges without unnecessary overhead.
 
 <details>
 
-<summary><strong>Power Only What You Need with Hyperswitch’s Modular Architecture</strong></summary>
+<summary><strong>Power Only What You Need with Juspay Hyperswitch's Modular Architecture</strong></summary>
 
 [Intelligent Routing →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/intelligent-routing)
 
@@ -106,7 +107,7 @@ Dynamically route transactions based on geography, cost, or success rate to redu
 
 [Revenue Recovery →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
-Recover failed payments using machine learning–based retry logic that adapts to card network behavior.
+Recover failed payments using machine learning-based retry logic that adapts to card network behavior.
 
 [Vault (Tokenization) →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
@@ -130,9 +131,9 @@ Automate disbursements to vendors or sellers with rule-based routing logic.
 
 </details>
 
-### Explore Core Payment Flows and Capabilities
+## Explore Core Payment Flows and Capabilities
 
-Power only what you need with Hyperswitch’s modular architecture. Integrate just the components that solve your payment challenges, without the extra overhead.
+Power only what you need with Juspay Hyperswitch's modular architecture. Integrate just the components that solve your payment challenges, without the extra overhead.
 
 <details>
 
@@ -140,13 +141,13 @@ Power only what you need with Hyperswitch’s modular architecture. Integrate ju
 
 [Payment Orchestration →](explore-hyperswitch/payment-orchestration/)
 
-Automate and optimize how payments are routed, authorized, and split across providers with Hyperswitch’s flexible payment orchestration engine.
+Automate and optimize how payments are routed, authorized, and split across providers with Juspay Hyperswitch's flexible payment orchestration engine.
 
 [Tokenization and Card Vault →](explore-hyperswitch/workflows/vault/)
 
 Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.
 
-[Get Started with Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).
+[Get Started with Juspay Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).
 
 [Routing →](explore-hyperswitch/payment-orchestration/smart-router.md)
 
@@ -174,7 +175,7 @@ Divide transactions between multiple parties or accounts with precision and cont
 
 </details>
 
-### Improve Your Checkout and Payment Experience
+## Improve Your Checkout and Payment Experience
 
 Deliver seamless, flexible, and localized payment flows that drive higher conversion and customer trust.
 
@@ -199,7 +200,7 @@ Explore the full set of tools and options to deliver a branded and consistent pa
 
 </details>
 
-### Manage and Monitor Your Payment Operations
+## Manage and Monitor Your Payment Operations
 
 Operate at scale with tools to manage accounts, monitor transactions, handle disputes, and apply business rules.
 
@@ -224,9 +225,9 @@ Explore the complete set of tools available for scaling your payment operations 
 
 </details>
 
-### Scalability, Relability, and Security
+## Scalability, Reliability, and Security
 
-Take your Hyperswitch integration to production with confidence. Set up environments, secure credentials, monitor performance, and scale seamlessly as your business grows.
+Take your Juspay Hyperswitch integration to production with confidence. Set up environments, secure credentials, monitor performance, and scale seamlessly as your business grows.
 
 <details>
 
@@ -240,38 +241,38 @@ Protect sensitive data and meet global compliance standards like PCI DSS with se
 [Latency →](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead)\
 Scale effortlessly with a stateless architecture designed to handle high-throughput payment workloads with near-zero overhead.
 
-Here's how [Hyperswitch handles horizontal scaling under high throughput](https://deepwiki.com/search/how-does-hyperswitch-handle-ho_8bba708f-e768-465c-8e24-953f7a60da72#1)
+Here's how [Juspay Hyperswitch handles horizontal scaling under high throughput](https://deepwiki.com/search/how-does-hyperswitch-handle-ho_8bba708f-e768-465c-8e24-953f7a60da72#1)
 
 [Reliability →](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture)\
 Achieve consistent uptime and resiliency through modular design and built-in fault tolerance.
 
-Here's how [Hyperswitch handles idempotency and message ordering](https://deepwiki.com/search/what-guarantees-does-the-syste_1bc51ad9-d897-4d9a-bce6-7d0a19cf00c4#1).
+Here's how [Juspay Hyperswitch handles idempotency and message ordering](https://deepwiki.com/search/what-guarantees-does-the-syste_1bc51ad9-d897-4d9a-bce6-7d0a19cf00c4#1).
 
 </details>
 
-### Go Live with Hyperswitch
+## Go Live with Juspay Hyperswitch
 
 <details>
 
-<summary>Take Hyperswitch into production</summary>
+<summary>Take Juspay Hyperswitch into production</summary>
 
-[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
+[How to Go Live with Juspay Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
 Follow our go-live checklist to launch with confidence — covering setup, credentials, security, and monitoring.
 
 </details>
 
-### Need Help?
+## Need Help?
 
-* [Join our Slack Community →](https://inviter.co/hyperswitch-slack)\
-  Ask questions, share ideas, and connect with other developers building on Hyperswitch.
-* [Contact Us →](https://hyperswitch.io/contact-us)\
-  Prefer direct support? We’re happy to help.
+- [Join our Slack Community →](https://inviter.co/hyperswitch-slack)\
+  Ask questions, share ideas, and connect with other developers building on Juspay Hyperswitch.
+- [Contact Us →](https://hyperswitch.io/contact-us)\
+  Prefer direct support? We're happy to help.
 
 ***
 
-### Developer Resources
+## Developer Resources
 
-* [API Reference →](https://api-reference.hyperswitch.io/introduction)
-* [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
-* [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
-* [GitHub Repository →](https://github.com/juspay/hyperswitch)
+- [API Reference →](https://api-reference.hyperswitch.io/introduction)
+- [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
+- [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
+- [GitHub Repository →](https://github.com/juspay/hyperswitch)

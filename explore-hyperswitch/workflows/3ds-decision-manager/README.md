@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Configure 3D Secure authentication and Strong Customer Authentication to reduce fraud while optimizing customer experience
 ---
 
 # 3DS / Strong Customer Authentication

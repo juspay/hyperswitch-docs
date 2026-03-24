@@ -1,5 +1,6 @@
 ---
 icon: sign-posts-wrench
+description: Plan your Juspay Hyperswitch enterprise deployment with guidance on topologies, environments, and critical infrastructure decisions
 ---
 
 # Deployment Overview

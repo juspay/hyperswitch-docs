@@ -1,3 +1,7 @@
+---
+description: Hardware and software requirements for deploying Juspay Hyperswitch in production environments with PCI compliance
+---
+
 # System Requirements
 
 ### **Hardware**

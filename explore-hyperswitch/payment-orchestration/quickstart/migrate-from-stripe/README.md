@@ -3,7 +3,7 @@ description: Fast migration guide for Stripe users
 hidden: true
 ---
 
-# 📥 Migrate from Stripe
+# Migrate from Stripe
 
 {% hint style="info" %}
 This sections explains how you can migrate from Stripe to Hyperswitch in less than 15 minutes

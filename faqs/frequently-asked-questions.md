@@ -1,7 +1,7 @@
 ---
-description: Answers to the most frequently asked questions about Juspay Hyperswitch
-
+description: Get answers to common questions about Juspay Hyperswitch capabilities integration options and payment orchestration features
 ---
+
 # Frequently Asked Questions
 
 ## Getting Started
@@ -12,7 +12,7 @@ description: Answers to the most frequently asked questions about Juspay Hypersw
 
 Juspay Hyperswitch is an **open-source payments platform** designed to simplify global payments for digital businesses.
 
-Built by Juspay, Hyperswitch is designed to handle high-scale payment processing infrastructure. Juspay processes **over 300 million daily transactions** with an **annualised total payment value exceeding $1 trillion**.
+Built by Juspay, Hyperswitch is designed to handle high-scale payment processing infrastructure. Juspay processes **over 300 million daily transactions** with an **annualized total payment value exceeding $1 trillion**.
 
 Hyperswitch provides two main solutions.
 
@@ -22,10 +22,10 @@ An end-to-end orchestration layer that unifies payments across providers, networ
 
 Capabilities include:
 
-* Unified checkout experiences
-* Dynamic payment routing
-* Retry mechanisms for failed transactions
-* Redundancy for payment reliability
+- Unified checkout experiences
+- Dynamic payment routing
+- Retry mechanisms for failed transactions
+- Redundancy for payment reliability
 
 **Payment Modules**
 
@@ -33,12 +33,12 @@ A modular set of payment capabilities that can be integrated individually depend
 
 Available modules include:
 
-* Intelligent routing
-* Payment vault
-* Reconciliation
-* Cost observability
-* Smart retries
-* Alternative payment method widgets
+- Intelligent routing
+- Payment vault
+- Reconciliation
+- Cost observability
+- Smart retries
+- Alternative payment method widgets
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payments-modules\
@@ -56,21 +56,21 @@ It simplifies payment operations by providing a unified layer that coordinates p
 
 Payment orchestration supports multiple stages of the payment lifecycle, including:
 
-* Accepting payments from customers
-* Managing payouts
-* Processing recurring payments
+- Accepting payments from customers
+- Managing payouts
+- Processing recurring payments
 
 **Key capabilities**
 
 Payment orchestration platforms typically support:
 
-* Integration with multiple payment processors
-* Unified payment APIs
-* Smart routing across providers
-* Smart retries for failed transactions
-* 3DS authentication and Strong Customer Authentication
-* Fraud and risk management
-* Subscription payment management
+- Integration with multiple payment processors
+- Unified payment APIs
+- Smart routing across providers
+- Smart retries for failed transactions
+- 3DS authentication and Strong Customer Authentication
+- Fraud and risk management
+- Subscription payment management
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration
@@ -109,7 +109,7 @@ Hyperswitch is not a payment processor. It acts as a **payments switch** that ro
 | ----------- | -------------------------------------------------- | ----------------------------------------- |
 | Function    | Executes transactions with card networks and banks | Routes transactions to optimal processors |
 | Coverage    | Single processor capabilities                      | Supports multiple processors              |
-| Latency     | Direct processing                                  | Adds minimal routing overhead (\~25ms)    |
+| Latency     | Direct processing                                  | Adds minimal routing overhead (~25ms)    |
 | Failover    | Single processor dependency                        | Automatic retries across processors       |
 | Integration | Processor-specific APIs                            | Unified schemas across processors         |
 
@@ -149,17 +149,17 @@ The SaaS deployment model provides a hosted environment managed by Juspay. This 
 
 Characteristics:
 
-* Hosted infrastructure managed by Juspay
-* Ready-to-use Control Centre environment
-* Faster onboarding and deployment
-* Managed upgrades and platform maintenance
-* Integrated monitoring and operational tooling
+- Hosted infrastructure managed by Juspay
+- Ready-to-use Control Centre environment
+- Faster onboarding and deployment
+- Managed upgrades and platform maintenance
+- Integrated monitoring and operational tooling
 
 Typical use cases:
 
-* Businesses that want to integrate payments quickly
-* Teams that prefer managed infrastructure
-* Organisations that do not want to operate PCI compliant infrastructure
+- Businesses that want to integrate payments quickly
+- Teams that prefer managed infrastructure
+- Organisations that do not want to operate PCI compliant infrastructure
 
 **Self-Hosted Deployment**
 
@@ -167,9 +167,9 @@ In the self-hosted model, merchants deploy and operate Hyperswitch on their own 
 
 Deployment methods:
 
-* Docker deployment — run Hyperswitch locally using Docker Compose for development or small deployments
-* Kubernetes deployment — production deployments using AWS EKS, Terraform, and Helm charts
-* Component level setup — backend, Control Centre, and SDK can be deployed independently
+- Docker deployment — run Hyperswitch locally using Docker Compose for development or small deployments
+- Kubernetes deployment — production deployments using AWS EKS, Terraform, and Helm charts
+- Component level setup — backend, Control Centre, and SDK can be deployed independently
 
 **SaaS vs Self-Hosted comparison**
 
@@ -219,9 +219,9 @@ Run the backend, Control Centre, and SDK components independently.
 
 Typical configuration steps include:
 
-* Configure payment processors through the **Connectors** tab in the Control Centre
-* Use dummy processors such as **fauxpay** for testing without real PSP credentials
-* Configure routing rules through **Workflow → Routing**
+- Configure payment processors through the **Connectors** tab in the Control Centre
+- Use dummy processors such as **fauxpay** for testing without real PSP credentials
+- Configure routing rules through **Workflow → Routing**
 
 Documentation:\
 https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker\
@@ -237,7 +237,7 @@ https://docs.hyperswitch.io/hyperswitch-open-source/account-setup
 | ---------------------- | ---------------------- | ------------------ |
 | API URL                | sandbox.hyperswitch.io | api.hyperswitch.io |
 | SDK Endpoint           | beta.hyperswitch.io/v1 | api.hyperswitch.io |
-| Publishable key prefix | pk\_snd\_              | pk\_prd\_          |
+| Publishable key prefix | pk_snd_              | pk_prd_          |
 | Connector credentials  | Test credentials       | Live credentials   |
 | Transactions           | Test transactions      | Real payments      |
 
@@ -245,12 +245,12 @@ https://docs.hyperswitch.io/hyperswitch-open-source/account-setup
 
 Before switching to production:
 
-* Sign the Hyperswitch services agreement
-* Configure production connectors with live credentials
-* Enable payment methods on processor dashboards
-* Secure API keys and avoid exposing them in frontend applications
-* Configure webhook endpoints
-* Implement error handling and validation for payment responses
+- Sign the Hyperswitch services agreement
+- Configure production connectors with live credentials
+- Enable payment methods on processor dashboards
+- Secure API keys and avoid exposing them in frontend applications
+- Configure webhook endpoints
+- Implement error handling and validation for payment responses
 
 Documentation:\
 https://docs.hyperswitch.io/check-list-for-production/going-live
@@ -459,20 +459,26 @@ pod 'hyperswitch-sdk-ios'
 
 2. Install dependencies.
 
+```
 pod install
+```
 
 3. Initialize the SDK with your publishable key.
 
-import Hyperswitch\
-paymentSession = PaymentSession(publishableKey: \<YOUR\_PUBLISHABLE\_KEY>)
+```
+import Hyperswitch
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
+```
 
 4. For open source deployments, configure custom backend endpoints.
 
-paymentSession = PaymentSession(\
-publishableKey: \<YOUR\_PUBLISHABLE\_KEY>,\
-customBackendUrl: \<YOUR\_SERVER\_URL>,\
-customLogUrl: \<YOUR\_LOG\_URL>\
+```
+paymentSession = PaymentSession(
+  publishableKey: <YOUR_PUBLISHABLE_KEY>,
+  customBackendUrl: <YOUR_SERVER_URL>,
+  customLogUrl: <YOUR_LOG_URL>
 )
+```
 
 5. Create the payment session on your backend to generate the client secret.
 6. Initialize the payment session with the client secret and present the payment sheet.
@@ -492,28 +498,36 @@ Integrate the Juspay Hyperswitch Android SDK using Gradle. The SDK requires Andr
 
 1. Add the classpath to your project-level build.gradle.
 
-buildscript {\
- dependencies {\
-  classpath "io.hyperswitch:hyperswitch-gradle-plugin:$latest\_version"\
- }\
+```
+buildscript {
+  dependencies {
+    classpath "io.hyperswitch:hyperswitch-gradle-plugin:$latest_version"
+  }
 }
+```
 
 2. Add the plugin to your app-level build.gradle.
 
-plugins {\
- id 'io.hyperswitch.plugin'\
+```
+plugins {
+  id 'io.hyperswitch.plugin'
 }
+```
 
 3. Configure SDK options.
 
-hyperswitch {\
- sdkVersion = "1.1.5"\
- features = \[HyperFeature.SCANCARD, HyperFeature.NETCETERA]\
+```
+hyperswitch {
+  sdkVersion = "1.1.5"
+  features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }
+```
 
 4. Implement HyperInterface in your Activity and initialize PaymentSession.
 
-val paymentSession = PaymentSession(applicationContext, "YOUR\_PUBLISHABLE\_KEY")
+```
+val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
+```
 
 5. Present the payment sheet and handle results.
 
@@ -532,28 +546,40 @@ Hyperswitch provides a migration path from Stripe SDK integrations.
 
 Install dependencies.
 
+```
 npm install @juspay-tech/react-native-hyperswitch @juspay-tech/hyper-node
+```
 
 Update server-side import.
 
-From:\
-const stripe = require("stripe")("your\_stripe\_api\_key");
+From:
+```
+const stripe = require("stripe")("your_stripe_api_key");
+```
 
-To:\
-const stripe = require("@juspay-tech/hyper-node")("your\_hyperswitch\_api\_key");
+To:
+```
+const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
+```
 
 Update Podfile sources.
 
-source '[https://github.com/juspay/hyperswitch-pods.git](https://github.com/juspay/hyperswitch-pods.git)'\
-source '[https://cdn.cocoapods.org/](https://cdn.cocoapods.org/)'
+```
+source 'https://github.com/juspay/hyperswitch-pods.git'
+source 'https://cdn.cocoapods.org/'
+```
 
 Replace Stripe dependency.
 
-From:\
+From:
+```
 pod 'StripePaymentSheet'
+```
 
-To:\
+To:
+```
 pod 'hyperswitch', '1.0.0-alpha01'
+```
 
 Update imports from StripePaymentSheet to hyperswitch.
 
@@ -561,17 +587,23 @@ Update imports from StripePaymentSheet to hyperswitch.
 
 Install dependency.
 
+```
 npm install @juspay-tech/hyperswitch-node
+```
 
 Replace dependency.
 
-From:\
+From:
+```
 implementation 'com.stripe:stripe-android:20.27.3'
+```
 
-To:\
+To:
+```
 implementation 'io.hyperswitch:hyperswitch-android:1.0.1'
+```
 
-Update imports from com.stripe.android.\* to io.hyperswitch.\*.
+Update imports from com.stripe.android.* to io.hyperswitch.*.
 
 Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/migrate-from-stripe/ios](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/migrate-from-stripe/ios)\
@@ -587,23 +619,23 @@ Hyperswitch supports multiple wallet payment methods on mobile.
 
 **Apple Pay**
 
-• Available in 75+ countries\
-• Supported on iOS (in-app) and Web (Safari)\
-• Requires Apple Developer Account, Merchant ID, and domain verification\
-• Supports both Hyperswitch decryption and PSP decryption flows
+- Available in 75+ countries
+- Supported on iOS (in-app) and Web (Safari)
+- Requires Apple Developer Account, Merchant ID, and domain verification
+- Supports both Hyperswitch decryption and PSP decryption flows
 
 **Google Pay**
 
-• Available in 70+ countries on Web and Android\
-• iOS support limited to US and India\
-• Supports in-app and web transactions\
-• Requires Google Pay test cards for sandbox testing\
-• Production deployment requires Google approval
+- Available in 70+ countries on Web and Android
+- iOS support limited to US and India
+- Supports in-app and web transactions
+- Requires Google Pay test cards for sandbox testing
+- Production deployment requires Google approval
 
 **Other wallets**
 
-• PayPal\
-• Samsung Pay
+- PayPal
+- Samsung Pay
 
 The Android SDK also provides widgets for Google Pay, PayPal, and Express Checkout.
 
@@ -621,9 +653,9 @@ Hyperswitch supports native 3DS authentication designed to minimize redirections
 
 **Native 3DS authentication**
 
-• In-line 3DS challenge flows\
-• Frictionless authentication using risk-based evaluation\
-• Native OTP experience instead of web views
+- In-line 3DS challenge flows
+- Frictionless authentication using risk-based evaluation
+- Native OTP experience instead of web views
 
 External 3DS providers such as Netcetera and 3DSecure.io can be integrated.
 
@@ -631,10 +663,10 @@ External 3DS providers such as Netcetera and 3DSecure.io can be integrated.
 
 The SDK automatically handles redirects for:
 
-• 3DS card payments\
-• Bank redirects such as iDEAL, Giropay, eps\
-• Wallet flows such as PayPal and Klarna\
-• Bank transfer flows
+- 3DS card payments
+- Bank redirects such as iDEAL, Giropay, eps
+- Wallet flows such as PayPal and Klarna
+- Bank transfer flows
 
 Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments)
@@ -651,29 +683,31 @@ Yes. Hyperswitch provides customization options for payment sheet UI on both iOS
 
 Configure custom fonts using:
 
-• typography.fontResId on Android\
-• configuration.appearance.font.base on iOS
+- typography.fontResId on Android
+- configuration.appearance.font.base on iOS
 
 **Colors**
 
-appBarIcon — icons in payment page\
-component — background of inputs\
-componentBorder — border color for components\
-error — error message colors\
-primary — primary theme color\
-surface — payment page background\
+appBarIcon — icons in payment page
+component — background of inputs
+componentBorder — border color for components
+error — error message colors
+primary — primary theme color
+surface — payment page background
 placeholderText — input placeholder text
 
 **Shapes**
 
-cornerRadiusDp — corner radius for input fields\
+cornerRadiusDp — corner radius for input fields
 borderStrokeWidthDp — border width for components
 
 Example Android configuration:
 
-val appearance = PaymentSheet.Appearance(\
- typography = PaymentSheet.Typography(10.0f, R.font.MY\_FONT)\
+```
+val appearance = PaymentSheet.Appearance(
+  typography = PaymentSheet.Typography(10.0f, R.font.MY_FONT)
 )
+```
 
 Documentation:\
 [https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/customization](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/customization)\
@@ -689,22 +723,22 @@ Hyperswitch provides two SDK variants.
 
 **Lite SDK**
 
-• Artifact size under 300 KB\
-• Web-based UI components\
-• Minimal dependencies\
-• Faster initialization\
-• Full payment processing capabilities
+- Artifact size under 300 KB
+- Web-based UI components
+- Minimal dependencies
+- Faster initialization
+- Full payment processing capabilities
 
 **Full SDK**
 
-• Larger artifact size\
-• Native UI components\
-• Additional features including card scanning and Netcetera 3DS
+- Larger artifact size
+- Native UI components
+- Additional features including card scanning and Netcetera 3DS
 
 **Platform requirements**
 
-Android — 7.0 (API 24)\
-Android Lite — 6.0 (API 23)\
+Android — 7.0 (API 24)
+Android Lite — 6.0 (API 23)
 iOS — 15.1
 
 Documentation:\
@@ -721,17 +755,17 @@ Yes. The Hyperswitch SDK supports multiple payment methods and adapts to regiona
 
 **Supported payment method categories**
 
-* Cards — Visa, Mastercard, Amex, Discover, Diners, and others
-* Wallets — Apple Pay, Google Pay, PayPal, Samsung Pay
-* Bank redirects — iDEAL, Giropay, EPS, and others
-* Bank transfers — ACH, SEPA, BACS, BECS, Multibanco
-* Buy Now Pay Later — Klarna, Afterpay, and others
+- Cards — Visa, Mastercard, Amex, Discover, Diners, and others
+- Wallets — Apple Pay, Google Pay, PayPal, Samsung Pay
+- Bank redirects — iDEAL, Giropay, EPS, and others
+- Bank transfers — ACH, SEPA, BACS, BECS, Multibanco
+- Buy Now Pay Later — Klarna, Afterpay, and others
 
 **Region-specific flows**
 
-* 3DS authentication for card payments, including native 3DS for mobile
-* PSD2 Strong Customer Authentication for European transactions
-* Local wallet flows such as Apple Pay (75+ countries) and Google Pay (70+ countries)
+- 3DS authentication for card payments, including native 3DS for mobile
+- PSD2 Strong Customer Authentication for European transactions
+- Local wallet flows such as Apple Pay (75+ countries) and Google Pay (70+ countries)
 
 Payment methods displayed in the checkout are determined by the connector and payment method configuration set in the relevant business profile, allowing different payment method sets to be presented for different regions or storefronts.
 
@@ -781,23 +815,23 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 **Apple Pay**
 
-* Available in 75+ countries
-* Supported on iOS (in-app) and Web (Safari)
-* Requires Apple Developer Account, Merchant ID, and domain verification
-* Supports both Hyperswitch decryption and PSP decryption flows
+- Available in 75+ countries
+- Supported on iOS (in-app) and Web (Safari)
+- Requires Apple Developer Account, Merchant ID, and domain verification
+- Supports both Hyperswitch decryption and PSP decryption flows
 
 **Google Pay**
 
-* Available in 70+ countries on Web and Android
-* iOS support limited to US and India
-* Supports in-app and web transactions
-* Requires Google Pay test cards for sandbox testing
-* Production deployment requires Google approval
+- Available in 70+ countries on Web and Android
+- iOS support limited to US and India
+- Supports in-app and web transactions
+- Requires Google Pay test cards for sandbox testing
+- Production deployment requires Google approval
 
 **Other wallets**
 
-* PayPal
-* Samsung Pay
+- PayPal
+- Samsung Pay
 
 The Android SDK also provides widgets for Google Pay, PayPal, and Express Checkout.
 
@@ -815,9 +849,9 @@ Hyperswitch supports native 3DS authentication designed to minimize redirections
 
 **Native 3DS authentication**
 
-* In-line 3DS challenge flows
-* Frictionless authentication using risk-based evaluation
-* Native OTP experience instead of web views
+- In-line 3DS challenge flows
+- Frictionless authentication using risk-based evaluation
+- Native OTP experience instead of web views
 
 External 3DS providers such as Netcetera and 3DSecure.io can be integrated.
 
@@ -838,23 +872,23 @@ Yes. Hyperswitch provides customization options for payment sheet UI on both iOS
 
 **Fonts**
 
-* `typography.fontResId` on Android
-* `configuration.appearance.font.base` on iOS
+- `typography.fontResId` on Android
+- `configuration.appearance.font.base` on iOS
 
 **Colors**
 
-* `appBarIcon` — icons in payment page
-* `component` — background of inputs
-* `componentBorder` — border color for components
-* `error` — error message colors
-* `primary` — primary theme color
-* `surface` — payment page background
-* `placeholderText` — input placeholder text
+- `appBarIcon` — icons in payment page
+- `component` — background of inputs
+- `componentBorder` — border color for components
+- `error` — error message colors
+- `primary` — primary theme color
+- `surface` — payment page background
+- `placeholderText` — input placeholder text
 
 **Shapes**
 
-* `cornerRadiusDp` — corner radius for input fields
-* `borderStrokeWidthDp` — border width for components
+- `cornerRadiusDp` — corner radius for input fields
+- `borderStrokeWidthDp` — border width for components
 
 Example Android configuration:
 
@@ -878,23 +912,23 @@ Hyperswitch provides two SDK variants.
 
 **Lite SDK**
 
-* Artifact size under 300 KB
-* Web-based UI components
-* Minimal dependencies
-* Faster initialization
-* Full payment processing capabilities
+- Artifact size under 300 KB
+- Web-based UI components
+- Minimal dependencies
+- Faster initialization
+- Full payment processing capabilities
 
 **Full SDK**
 
-* Larger artifact size
-* Native UI components
-* Additional features including card scanning and Netcetera 3DS
+- Larger artifact size
+- Native UI components
+- Additional features including card scanning and Netcetera 3DS
 
 **Platform requirements**
 
-* Android — 7.0 (API 24)
-* Android Lite — 6.0 (API 23)
-* iOS — 15.1
+- Android — 7.0 (API 24)
+- Android Lite — 6.0 (API 23)
+- iOS — 15.1
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/mobile/android/lite-sdk\
@@ -1005,14 +1039,14 @@ When a payment request is received, Hyperswitch accepts the request in its unifi
 
 What is normalised across all connectors:
 
-* Payment request and response schemas
-* Error codes and decline reasons mapped to unified enums
-* Webhook event formats
-* Payment status values
+- Payment request and response schemas
+- Error codes and decline reasons mapped to unified enums
+- Webhook event formats
+- Payment status values
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/connectors\
-https://api-reference.hyperswitch.io/essentials/error\_codes
+https://api-reference.hyperswitch.io/essentials/error_codes
 
 </details>
 
@@ -1050,9 +1084,9 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries
 
 **Security model**
 
-* Each merchant account has a unique **Data Encryption Key (DEK)** used to encrypt connector API keys.
-* Credentials are encrypted using **AES-256 symmetric encryption** through a master key.
-* Sensitive values are masked during transmission and are not stored on local systems.
+- Each merchant account has a unique **Data Encryption Key (DEK)** used to encrypt connector API keys.
+- Credentials are encrypted using **AES-256 symmetric encryption** through a master key.
+- Sensitive values are masked during transmission and are not stored on local systems.
 
 Connector credential management permissions are available to Merchant Developer and Profile Developer roles.
 
@@ -1101,10 +1135,10 @@ readinessProbe:
 
 **Key metrics to monitor**
 
-* Payment success and failure rates per connector
-* Gateway latency for successful and failed transactions
-* Distribution of processor error codes
-* Webhook delivery success rates
+- Payment success and failure rates per connector
+- Gateway latency for successful and failed transactions
+- Distribution of processor error codes
+- Webhook delivery success rates
 
 Documentation:\
 https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
@@ -1130,9 +1164,9 @@ Retryable categories include system malfunction, processing temporarily unavaila
 
 **Configuration options**
 
-* `exploration_percent`
-* routing bucket size
-* aggregation pipeline size
+- `exploration_percent`
+- routing bucket size
+- aggregation pipeline size
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing\
@@ -1160,12 +1194,12 @@ https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/reconciliation-
 
 Yes. The following configurations can be updated in real time through the Control Centre without any code changes or redeployment:
 
-* Routing rules — rule-based, volume-based, and fallback routing
-* Connector priority order
-* Active connectors and payment methods per profile
-* 3DS exemption rules
-* Webhook endpoints
-* API key management
+- Routing rules — rule-based, volume-based, and fallback routing
+- Connector priority order
+- Active connectors and payment methods per profile
+- 3DS exemption rules
+- Webhook endpoints
+- API key management
 
 Navigate to **Workflow → Routing** to update routing rules. Changes are applied immediately to live traffic.
 
@@ -1323,11 +1357,11 @@ https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost
 
 Hyperswitch supports the following routing types, all configurable through the Control Centre without code deployment:
 
-* **Rule-based routing** — conditions based on payment method, amount, currency, card network, and customer country
-* **Volume-based routing** — percentage-based traffic distribution across multiple connectors
-* **Elimination routing** — connectors with elevated failure rates are deprioritised dynamically
-* **Default fallback routing** — the configured connector priority order is used if no rule applies
-* **Authorization rate based routing** — a Multi-Armed Bandit (MAB) model continuously evaluates and adjusts routing based on real-time authorisation performance
+- **Rule-based routing** — conditions based on payment method, amount, currency, card network, and customer country
+- **Volume-based routing** — percentage-based traffic distribution across multiple connectors
+- **Elimination routing** — connectors with elevated failure rates are deprioritised dynamically
+- **Default fallback routing** — the configured connector priority order is used if no rule applies
+- **Authorization rate based routing** — a Multi-Armed Bandit (MAB) model continuously evaluates and adjusts routing based on real-time authorisation performance
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing\
@@ -1343,9 +1377,9 @@ Hyperswitch classifies decline codes into retryable and non-retryable categories
 
 **Retry types**
 
-* **Cascading retry** — retry through an alternative processor
-* **Step-up retry** — retry with 3DS authentication added for suspected fraud declines
-* **Network retry** — retry through alternative debit networks where available
+- **Cascading retry** — retry through an alternative processor
+- **Step-up retry** — retry with 3DS authentication added for suspected fraud declines
+- **Network retry** — retry through alternative debit networks where available
 
 The `manual_retry_allowed` flag permits customers to retry payments manually, for example by updating card details or selecting a different payment method.
 
@@ -1387,9 +1421,9 @@ Bank-level declines originate from the card issuer and are outside the merchant'
 
 **Smart retry mechanisms**
 
-* **Cascading retry** — attempts the payment through an alternative processor
-* **Step-up retry** — retries with 3DS authentication when fraud is suspected
-* **Network retry** — attempts through different debit networks when available
+- **Cascading retry** — attempts the payment through an alternative processor
+- **Step-up retry** — retries with 3DS authentication when fraud is suspected
+- **Network retry** — attempts through different debit networks when available
 
 The `manual_retry_allowed` setting allows customers to update card details or use a different payment method.
 
@@ -1417,7 +1451,7 @@ Fraud declines should generally not be retried automatically, as repeated attemp
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processor-error-code-mapping\
-https://api-reference.hyperswitch.io/essentials/error\_codes
+https://api-reference.hyperswitch.io/essentials/error_codes
 
 </details>
 
@@ -1477,14 +1511,14 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processo
 
 **HTTP status codes**
 
-* `400` — Invalid request or missing required fields
-* `401` — Authentication failure
-* `404` — Resource not found
-* `422` — Unprocessable entity
-* `500` — Internal server error
+- `400` — Invalid request or missing required fields
+- `401` — Authentication failure
+- `404` — Resource not found
+- `422` — Unprocessable entity
+- `500` — Internal server error
 
 Documentation:\
-https://api-reference.hyperswitch.io/essentials/error\_codes
+https://api-reference.hyperswitch.io/essentials/error_codes
 
 </details>
 
@@ -1503,7 +1537,7 @@ Hyperswitch maps processor-specific error codes into a unified set of error enum
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processor-error-code-mapping\
-https://api-reference.hyperswitch.io/essentials/error\_codes
+https://api-reference.hyperswitch.io/essentials/error_codes
 
 </details>
 
@@ -1528,10 +1562,10 @@ https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost
 
 The cost observability module detects:
 
-* **Processor billing discrepancies** — differences between expected and actual processor invoices
-* **Invoice mismatches** — amounts charged that do not match expected fee structures
-* **Unexpected fee changes** — sudden changes in processing rates or fee categories
-* **Cost anomalies** — unusual patterns in processing costs
+- **Processor billing discrepancies** — differences between expected and actual processor invoices
+- **Invoice mismatches** — amounts charged that do not match expected fee structures
+- **Unexpected fee changes** — sudden changes in processing rates or fee categories
+- **Cost anomalies** — unusual patterns in processing costs
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost-observability
@@ -1563,9 +1597,9 @@ When a payment fails, Hyperswitch analyses the error code and automatically retr
 
 **Retry types**
 
-* **Cascading retry** — routes through an alternative processor
-* **Step-up retry** — retries with 3DS authentication added for suspected fraud declines
-* **Network retry** — retries through alternative debit networks where available
+- **Cascading retry** — routes through an alternative processor
+- **Step-up retry** — retries with 3DS authentication added for suspected fraud declines
+- **Network retry** — retries through alternative debit networks where available
 
 Elimination routing automatically deprioritises connectors with elevated failure rates.
 
@@ -1624,8 +1658,8 @@ GET /refunds/{refund_id}
 
 **Webhooks**
 
-* `refund_succeeded`
-* `refund_failed`
+- `refund_succeeded`
+- `refund_failed`
 
 **Control Centre**
 
@@ -1651,10 +1685,10 @@ https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create
 
 <summary>What refund reason codes are available?</summary>
 
-* `duplicate` — The payment was processed more than once
-* `fraudulent` — The transaction was identified as fraudulent
-* `customer_request` — The customer requested the refund
-* `other` — Any other refund reason
+- `duplicate` — The payment was processed more than once
+- `fraudulent` — The transaction was identified as fraudulent
+- `customer_request` — The customer requested the refund
+- `other` — Any other refund reason
 
 The `reason` field is optional.
 
@@ -1705,16 +1739,16 @@ curl http://localhost:8080/health/ready
 
 **Kubernetes deployment**
 
-* Horizontal pod autoscaling
-* Readiness and liveness probes
-* Automatic pod restart on failure
-* Multi-availability-zone deployments
+- Horizontal pod autoscaling
+- Readiness and liveness probes
+- Automatic pod restart on failure
+- Multi-availability-zone deployments
 
 **Multi-connector failover**
 
-* Elimination routing — deprioritises connectors with elevated failure rates
-* Smart retries — routes failed transactions to alternative connectors
-* Fallback routing — defaults to a secondary connector if a primary is unavailable
+- Elimination routing — deprioritises connectors with elevated failure rates
+- Smart retries — routes failed transactions to alternative connectors
+- Fallback routing — defaults to a secondary connector if a primary is unavailable
 
 Documentation:\
 https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
@@ -1741,25 +1775,25 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 **API key management**
 
-* Never expose secret keys in frontend code or public repositories
-* Use publishable keys (`pk_snd_` or `pk_prd_`) only in client-side code
-* Rotate credentials if a key is suspected to be compromised
+- Never expose secret keys in frontend code or public repositories
+- Use publishable keys (`pk_snd_` or `pk_prd_`) only in client-side code
+- Rotate credentials if a key is suspected to be compromised
 
 **Webhook security**
 
-* Verify all incoming webhook requests using the `x-webhook-signature-512` header
-* Reject requests with invalid or missing signatures
-* Use HTTPS endpoints for webhook receivers
+- Verify all incoming webhook requests using the `x-webhook-signature-512` header
+- Reject requests with invalid or missing signatures
+- Use HTTPS endpoints for webhook receivers
 
 **Connector credentials**
 
-* Encrypted using AES-256 symmetric encryption with a unique DEK per merchant account
-* Avoid storing in unencrypted configuration files or environment variables
+- Encrypted using AES-256 symmetric encryption with a unique DEK per merchant account
+- Avoid storing in unencrypted configuration files or environment variables
 
 **Access control**
 
-* Use role-based access control to restrict team member permissions
-* Regularly review and revoke access for team members who no longer require it
+- Use role-based access control to restrict team member permissions
+- Regularly review and revoke access for team members who no longer require it
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/security-and-compliance/security\
@@ -1849,8 +1883,8 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 Create the initial payment with `setup_future_usage`:
 
-* `on_session` — for future customer-present payments
-* `off_session` — for merchant-initiated payments
+- `on_session` — for future customer-present payments
+- `off_session` — for merchant-initiated payments
 
 Include `customer_acceptance` in the request. The response returns a `payment_method_id` to store for future transactions.
 
@@ -1908,17 +1942,17 @@ The **3DS Decision Manager** determines when to apply 3D Secure during a payment
 
 **Key capabilities**
 
-* Intelligent 3DS routing based on transaction risk and merchant-configured rules
-* Exemption management for SCA
-* Native 3DS support inside mobile apps
-* External 3DS result import
+- Intelligent 3DS routing based on transaction risk and merchant-configured rules
+- Exemption management for SCA
+- Native 3DS support inside mobile apps
+- External 3DS result import
 
 **Decision factors**
 
-* Transaction amount and currency
-* Customer device and location
-* Card issuer country and risk profile
-* Merchant-configured rules
+- Transaction amount and currency
+- Customer device and location
+- Card issuer country and risk profile
+- Merchant-configured rules
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager\
@@ -2046,10 +2080,10 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing
 
 Hyperswitch supports **SCA** requirements under **PSD2** in the European Economic Area.
 
-* 3DS 2.x support (versions 2.0, 2.1, and 2.2)
-* Exemption management — low-value, TRA, MIT, and recurring
-* 3DS intelligence engine — automatically applies merchant-defined exemption rules
-* Delegated authentication support
+- 3DS 2.x support (versions 2.0, 2.1, and 2.2)
+- Exemption management — low-value, TRA, MIT, and recurring
+- 3DS intelligence engine — automatically applies merchant-defined exemption rules
+- Delegated authentication support
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager\
@@ -2209,7 +2243,7 @@ Stolen card — 4000000000009979
 Hyperswitch standardises upstream processor error codes into common enums such as `insufficient_funds`, `expired_card`, `card_declined`, and `risk_decline`.
 
 Documentation:\
-https://api-reference.hyperswitch.io/essentials/error\_codes
+https://api-reference.hyperswitch.io/essentials/error_codes
 
 </details>
 
@@ -2264,7 +2298,10 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 <summary>How do I run load tests through Hyperswitch? Are test calls billed?</summary>
 
-\`\`\` npm install -g 'https://github.com/knutties/newman.git#feature/newman-dir' \`\`\` \`\`\` cargo run --package test\_utils --bin test\_utils -- \ --connector-name= \ --base-url=http://127.0.0.1:8080 \ --admin-api-key=test\_admin \`\`\`
+``` npm install -g 'https://github.com/knutties/newman.git#feature/newman-dir' ``` ``` cargo run --package test_utils --bin test_utils -- \
+--connector-name= \
+--base-url=http://127.0.0.1:8080 \
+--admin-api-key=test_admin ```
 
 Routing simulation tool: https://hyperswitch-ten.vercel.app/
 
@@ -2311,7 +2348,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/payouts
 
 <summary>How do I track the status of payouts?</summary>
 
-\`\`\` GET /payouts/{payout\_id} \`\`\`
+``` GET /payouts/{payout_id} ```
 
 | Status                 | Description                |
 | ---------------------- | -------------------------- |
@@ -2385,10 +2422,10 @@ Yes. The **SaaS (hosted) deployment** provides the fastest path to accepting pay
 
 Key advantages:
 
-* No infrastructure setup required
-* Ready-to-use Control Centre environment
-* Single integration to access multiple payment processors
-* Modular architecture — integrate only the components you need
+- No infrastructure setup required
+- Ready-to-use Control Centre environment
+- Single integration to access multiple payment processors
+- Modular architecture — integrate only the components you need
 
 The open-source nature of Hyperswitch also means smaller teams can start with a self-hosted deployment at no licensing cost.
 
@@ -2412,13 +2449,13 @@ https://docs.hyperswitch.io/about-hyperswitch/payment-suite
 
 <summary>What are the key benefits of using Hyperswitch?</summary>
 
-* **Single integration, multiple processors** — connect to multiple payment processors through a single API
-* **Improved payment reliability** — smart retries and fallback routing reduce failed transactions
-* **Improved authorisation rates** — intelligent routing directs transactions to the processor most likely to authorise them
-* **Reduced vendor lock-in** — a unified token vault allows switching processors without re-collecting card details
-* **Unified operations** — single Control Centre for all processors
-* **Open-source and extensible** — full codebase available for customisation
-* **Modular architecture** — adopt only the modules you need
+- **Single integration, multiple processors** — connect to multiple payment processors through a single API
+- **Improved payment reliability** — smart retries and fallback routing reduce failed transactions
+- **Improved authorisation rates** — intelligent routing directs transactions to the processor most likely to authorise them
+- **Reduced vendor lock-in** — a unified token vault allows switching processors without re-collecting card details
+- **Unified operations** — single Control Centre for all processors
+- **Open-source and extensible** — full codebase available for customisation
+- **Modular architecture** — adopt only the modules you need
 
 Documentation:\
 https://docs.hyperswitch.io/about-hyperswitch/payment-suite\

@@ -1,3 +1,7 @@
+---
+description: Configure secure key management and encryption for Juspay Hyperswitch Card Vault in enterprise environments
+---
+
 # Card Vault & Key Management
 
 ### Enterprise Key Management for Hyperswitch Card Vault and Application
