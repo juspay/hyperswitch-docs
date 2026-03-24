@@ -1,3 +1,7 @@
+---
+description: Upgrade Juspay Hyperswitch using GitOps with ArgoCD blue-green deployment strategy for zero-downtime updates
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)

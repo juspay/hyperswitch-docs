@@ -1,5 +1,6 @@
 ---
 icon: joystick
+description: Manage payment operations efficiently with Juspay Hyperswitch Control Center for streamlined workflows and real-time analytics
 ---
 
 # Payment Operations

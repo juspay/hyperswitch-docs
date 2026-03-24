@@ -21,9 +21,6 @@ The reconciliation process follows a robust, end-to-end flow to ensure that ever
 4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process.
 5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules.
 6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly.
-7. \
-   **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
-8.
 
 {% code title="How Reconciliation Works" fullWidth="true" %}
 ```mermaid

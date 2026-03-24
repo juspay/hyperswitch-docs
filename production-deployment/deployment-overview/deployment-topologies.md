@@ -1,3 +1,7 @@
+---
+description: Multi-region deployment topologies for Juspay Hyperswitch including Active-Active and Active-Passive setups for high availability
+---
+
 # Deployment Topologies
 
 There are two primary deployment topologies to enhance the reliability of enterprise setups:

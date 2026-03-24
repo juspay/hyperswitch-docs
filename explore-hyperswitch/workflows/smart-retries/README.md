@@ -57,7 +57,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | --------------------------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                    | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (frictionless flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data        | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data        | Successful       |
 
 #### Use case 2
 
@@ -65,21 +65,21 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | ------------------------------------------ | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                 | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (challenge flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data     | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data     | Successful       |
 
 ### Use case 3
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>              | <h4>Outcome</h4> |
 | ---------------- | ------------ | -------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds) | Generic decline  |
-| 2                | PSP2         | Original payload (non-3ds) | Succesful        |
+| 2                | PSP2         | Original payload (non-3ds) | Successful       |
 
 ### Use case 4
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                                                                                             | <h4>Outcome</h4> |
 | ---------------- | ------------ | --------------------------------------------------------------------------------------------------------- | ---------------- |
 | 1                | PSP1         | <p>Original payload (non-3ds)<br><br>Limited data fields on customer info, device/IP, product details</p> | Generic decline  |
-| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Succesful        |
+| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Successful       |
 
 ### Use case 5
 
