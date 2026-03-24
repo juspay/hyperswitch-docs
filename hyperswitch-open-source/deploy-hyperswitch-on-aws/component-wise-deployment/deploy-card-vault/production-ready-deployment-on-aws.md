@@ -1,5 +1,5 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: Deploy Hyperswitch on AWS infrastructure for scalable production payment processing
 ---
 
 # Production ready deployment on AWS
@@ -73,7 +73,7 @@ Note: The VPC should have at least one private subnet with egress to deploy the 
 
 ### **Unlocking the Card Vault**
 
-At this point your locker setup on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
+At this point your locker set up on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
 
 * Run the following command to generate the key for the jump-server
 

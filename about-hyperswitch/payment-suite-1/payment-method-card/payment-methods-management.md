@@ -1,11 +1,11 @@
 ---
-description: Hyperswitch is designed to facilitate the management of saved payment methods
+description: Configure payment methods to offer customers their preferred payment options
 icon: bars-progress
 ---
 
 # Payment Methods Management
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ### **Key Features of Payment Method Management in Hyperswitch**
 
@@ -31,7 +31,7 @@ Keep payment options up to date by allowing customers to manage outdated or inac
 
 ### Integration Guide :  <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
 
-#### 1. Server-Side Setup <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
+#### 1. Server-Side Set up <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
 
 First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 

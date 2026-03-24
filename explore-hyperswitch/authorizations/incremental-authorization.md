@@ -1,5 +1,6 @@
 ---
 icon: arrow-up-right-dots
+description: Learn about Incremental Authorization to optimize your payment infrastructure
 ---
 
 # Incremental Authorization
@@ -56,4 +57,3 @@ curl --request POST \
   "reason": "<string>"
 }'
 ```
-

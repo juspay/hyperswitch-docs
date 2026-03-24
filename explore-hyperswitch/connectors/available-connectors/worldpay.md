@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Worldpay via Hyperswitch
+description: Learn about Worldpay to optimize your payment infrastructure
 hidden: true
 ---
 
 # Worldpay
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Worldpay through Hyperswitch
@@ -17,7 +21,7 @@ FIS Worldpay is a payment processor that offers businesses a range of payment so
 
 #### Prerequisites
 
-1. You need to be registered with Worldpay in order to proceed. In case you aren't, you can quickly setup your Worldpay account [here](https://online.worldpay.com/)
+1. You need to be registered with Worldpay in order to proceed. In case you aren't, you can quickly set up your Worldpay account [here](https://online.worldpay.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. Worldpay **Username** and **Password** can be found in your Worldpay's dashboard.
 4. Select all the payment methods you wish to use Worldpay for. Ensure that this is the same as the ones configured on your Worldpay dashboard

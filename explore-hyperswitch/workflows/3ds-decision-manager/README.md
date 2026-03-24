@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Overview and guides for 3ds decision manager
 ---
 
 # 3DS / Strong Customer Authentication

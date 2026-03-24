@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Billwerk via Hyperswitch
+description: Learn about Billwerk to optimize your payment infrastructure
 hidden: true
 ---
 
 # Billwerk
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Billwerk through Hyperswitch
@@ -19,7 +23,7 @@ Billwerk+ Pay is an acquirer independent payment gateway that helps you get the 
 
 #### Prerequisites
 
-1. You need to be registered with Billwerk+ Pay in order to proceed. In case you aren't, you can quickly setup your Billwerk+ Pay account [here](https://signup.billwerk.plus/).
+1. You need to be registered with Billwerk+ Pay in order to proceed. In case you aren't, you can quickly set up your Billwerk+ Pay account [here](https://signup.billwerk.plus/).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. Billwerk+ Pay's **Private API Key** and **Public API Key** can be found in your Billwerk's dashboard under Developers > API Credentials.
 4. Select all the payment methods you wish to use Billwerk for via Hyperswitch. Ensure that this is the same as the ones configured on your Billwerk's dashboard under Configurations Tab.

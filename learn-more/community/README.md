@@ -1,12 +1,12 @@
 ---
-description: Join the Hyperswitch Community
+description: Join the Hyperswitch community to contribute, collaborate, and connect with other developers
 ---
 
 # Community
 
 ## Hyperswitch Community
 
-Hyperswitch is more than an open-source payments orchestration engine. It’s a global community of developers, product people, and payments experts who collaborate to make payments transparent, reliable, and developer-first. Whether you want to contribute to the codebase, get help with integration, or simply exchange ideas, our community spaces are open and welcoming.
+Juspay Hyperswitch is more than an open-source payments orchestration engine. It’s a global community of developers, product people, and payments experts who collaborate to make payments transparent, reliable, and developer-first. Whether you want to contribute to the codebase, get help with integration, or simply exchange ideas, our community spaces are open and welcoming.
 
 ### Community Touchpoints
 

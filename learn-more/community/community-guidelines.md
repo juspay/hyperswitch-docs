@@ -1,12 +1,14 @@
 ---
-description: >-
-  Code of conduct and Slack participation guide for the Hyperswitch open-source
-  community
+description: Join the Hyperswitch community to contribute, collaborate, and connect with other developers
 ---
 
 # Community Guidelines
 
-🤝 Hyperswitch Community Code of Conduct & Slack Guidelines
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
+🤝 Juspay Hyperswitch Community Code of Conduct & Slack Guidelines
 
 Version 1.0 | Last updated: April 2025
 

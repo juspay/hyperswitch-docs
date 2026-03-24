@@ -1,8 +1,5 @@
 ---
-description: >-
-  Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
-  architecture to automatically match transactions and resolve financial
-  discrepancies
+description: Implement automated reconciliation to streamline financial reporting and reduce manual effort
 ---
 
 # How Reconciliation Works
@@ -68,7 +65,7 @@ Each rule consists of three core components that work together to define your ma
 2. **Identifiers**: Defines the unique fields used to find a matching transaction
 3. **Rules**: Specifies the conditions that must be met for a successful match
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 2.20.42 PM.png" alt="Image showing rules setup in the reconciliation product"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 2.20.42 PM.png" alt="Image showing rules set up in the reconciliation product"><figcaption></figcaption></figure>
 
 ### Filters: Defining the "When"
 

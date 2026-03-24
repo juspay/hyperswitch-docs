@@ -1,3 +1,7 @@
+---
+description: Overview and guides for architecture
+---
+
 ## The Problem
 
 If you've integrated multiple payment providers, you know the pain:

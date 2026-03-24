@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'25)
+description: Learn about Previous Roadmap - Q2 2025 to optimize your payment infrastructure
 icon: road
 ---
 

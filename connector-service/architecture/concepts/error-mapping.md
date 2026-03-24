@@ -1,3 +1,7 @@
+---
+description: Learn about Error Mapping to optimize your payment infrastructure
+---
+
 # Error Mapping
 
 Payment processors speak different error languages. Stripe says "card_declined." Adyen says "Refused." PayPal says "INSTRUMENT_DECLINED." Prism translates all of them into a single set of error codes your application handles once.

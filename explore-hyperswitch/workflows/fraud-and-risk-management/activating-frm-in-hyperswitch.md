@@ -1,5 +1,6 @@
 ---
 icon: shield-plus
+description: Learn about Activating FRM in Hyperswitch to optimize your payment infrastructure
 ---
 
 # Activating FRM in Hyperswitch
@@ -42,7 +43,7 @@ The Post-Auth flow occurs after payment authorization by the processor and is on
        * If `declined`: Void the payment.
 
 {% hint style="warning" %}
-If the connector doesn’t support manual capture, Post-Authorization manual review should be avoided during configuration setup for the respective connector.
+If the connector doesn’t support manual capture, Post-Authorization manual review should be avoided during configuration set up for the respective connector.
 {% endhint %}
 
 #### FRM workflow

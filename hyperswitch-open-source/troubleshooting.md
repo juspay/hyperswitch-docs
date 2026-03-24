@@ -1,7 +1,5 @@
 ---
-description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+description: Troubleshoot common issues to resolve payment processing problems and integration errors
 icon: hammer-brush
 ---
 
@@ -9,7 +7,7 @@ icon: hammer-brush
 
 ## System Health Check
 
-Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
+Juspay Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
 
 ```bash
 curl http://localhost:8080/health/ready

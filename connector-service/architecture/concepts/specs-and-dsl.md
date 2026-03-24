@@ -1,3 +1,7 @@
+---
+description: Learn about Specs and DSL to optimize your payment infrastructure
+---
+
 # Specs and DSL
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers that catches integration errors at compile time. Instead of discovering you forgot a required field in production, you get a compiler error immediately.
@@ -202,7 +206,7 @@ An LLM generating Prism code has a clear spec to follow—the proto definitions 
 When the DSL changes, the compiler tells you what broke:
 
 ```bash
-# Proto field renamed: merchant_id -> merchant_order_id
+## Proto field renamed: merchant_id -> merchant_order_id
 $ make generate
 $ cargo build
 

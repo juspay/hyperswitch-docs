@@ -1,6 +1,10 @@
+---
+description: Learn about Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID) to optimize your payment infrastructure
+---
+
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
 
-In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
+In this flow Juspay Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
 
 **Mechanism:**
 

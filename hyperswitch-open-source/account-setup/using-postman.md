@@ -1,7 +1,5 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider using Hyperswitch
-  APIs through postman
+description: Learn about Using postman to optimize your payment infrastructure
 icon: rocket-launch
 ---
 
@@ -9,7 +7,7 @@ icon: rocket-launch
 
 ## Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-​Hyperswitch operates on a multi-tenant architecture, enabling a single application server to support multiple merchants. To create a new merchant account, follow these steps:​
+​Juspay Hyperswitch operates on a multi-tenant architecture, enabling a single application server to support multiple merchants. To create a new merchant account, follow these steps:​
 
 1. **Locate the Admin API Key**:
    * Find the `config/docker_compose.toml` file in your Hyperswitch setup.​

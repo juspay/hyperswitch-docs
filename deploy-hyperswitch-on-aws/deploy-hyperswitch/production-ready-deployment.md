@@ -16,7 +16,7 @@ In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either
 
 ## Production ready deployment
 
-### This setup includes:
+### This set up includes:
 
 | Component       | Instance Type  | Default Configuration |
 | --------------- | -------------- | --------------------- |

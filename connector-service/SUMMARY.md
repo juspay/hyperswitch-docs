@@ -1,4 +1,12 @@
+---
+description: Navigate the complete Hyperswitch documentation with this structured table of contents
+---
+
 # Summary
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ## Getting Started
 - [Overview](README.md)
@@ -30,7 +38,7 @@
   - [Refund](api-reference/services/payment-service/refund.md)
   - [Get](api-reference/services/payment-service/get.md)
   - [Reverse](api-reference/services/payment-service/reverse.md)
-  - [Setup Recurring](api-reference/services/payment-service/setup-recurring.md)
+  - [Set up Recurring](api-reference/services/payment-service/setup-recurring.md)
   - [Incremental Authorization](api-reference/services/payment-service/incremental-authorization.md)
   - [Verify Redirect Response](api-reference/services/payment-service/verify-redirect-response.md)
 - [Customer Service](api-reference/services/customer-service/README.md)

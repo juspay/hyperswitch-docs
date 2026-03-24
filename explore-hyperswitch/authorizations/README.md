@@ -1,12 +1,13 @@
 ---
 icon: building-magnifying-glass
+description: Overview and guides for authorizations
 ---
 
 # Authorizations
 
 ### **Advanced Authorization Types**
 
-This section outlines the specialized authorization flows supported by Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring the customer to re-enter their details.
+This section outlines the specialized authorization flows supported by Juspay Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring the customer to re-enter their details.
 
 **1. $0 Authorization (Account Verification)**
 

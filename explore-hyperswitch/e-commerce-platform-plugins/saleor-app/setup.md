@@ -7,7 +7,7 @@ description: Juspay Saleor Payment App Setup
 Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
 
 {% hint style="info" %}
-This section covers the steps to setup Juspay payment app through saleor
+This section covers the steps to set up Juspay payment app through saleor
 {% endhint %}
 
 ### Prerequisites

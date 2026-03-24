@@ -1,8 +1,12 @@
+---
+description: Learn about Upgrade Hyperswitch to optimize your payment infrastructure
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)
 
-Using a GitOps orchestration platform such as **Argo CD** allows Hyperswitch deployments to be managed declaratively via Git.
+Using a GitOps orchestration platform such as **Argo CD** allows Juspay Hyperswitch deployments to be managed declaratively via Git.
 
 Benefits include:
 

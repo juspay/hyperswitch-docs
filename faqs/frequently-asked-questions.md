@@ -1,8 +1,12 @@
 ---
-description: Answers to the most frequently asked questions about Juspay Hyperswitch
-
+description: Learn about Frequently Asked Questions to optimize your payment infrastructure
 ---
+
 # Frequently Asked Questions
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ## Getting Started
 
@@ -169,14 +173,14 @@ Deployment methods:
 
 * Docker deployment — run Hyperswitch locally using Docker Compose for development or small deployments
 * Kubernetes deployment — production deployments using AWS EKS, Terraform, and Helm charts
-* Component level setup — backend, Control Centre, and SDK can be deployed independently
+* Component level set up — backend, Control Centre, and SDK can be deployed independently
 
 **SaaS vs Self-Hosted comparison**
 
 | Factor                    | SaaS (Hosted)            | Self-Hosted                 |
 | ------------------------- | ------------------------ | --------------------------- |
 | Infrastructure management | Managed by Juspay        | Managed by merchant         |
-| Setup time                | Minutes to hours         | Hours to days               |
+| Set up time                | Minutes to hours         | Hours to days               |
 | Platform upgrades         | Managed automatically    | Managed by merchant         |
 | Data residency            | Hosted in Juspay cloud   | Controlled by merchant      |
 | Customisation             | Limited to configuration | Full platform customisation |
@@ -203,7 +207,7 @@ SDK sandbox endpoint: https://beta.hyperswitch.io/v1
 
 Publishable keys for sandbox environments start with `pk_snd_`
 
-**Option B: Local setup using Docker**
+**Option B: Local set up using Docker**
 
 ```
 git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
@@ -2385,7 +2389,7 @@ Yes. The **SaaS (hosted) deployment** provides the fastest path to accepting pay
 
 Key advantages:
 
-* No infrastructure setup required
+* No infrastructure set up required
 * Ready-to-use Control Centre environment
 * Single integration to access multiple payment processors
 * Modular architecture — integrate only the components you need

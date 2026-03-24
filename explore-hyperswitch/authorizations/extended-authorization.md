@@ -1,8 +1,13 @@
 ---
 icon: square-tenge
+description: Learn about Extended Authorization to optimize your payment infrastructure
 ---
 
 # Extended Authorization
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 #### **Overview**
 
@@ -157,4 +162,3 @@ If the connector doesn’t provide the capture deadline, the `capture_by` field 
 ### Monitoring
 
 After authorization, you can view the capture deadline under `capture_by` in the More Payment Details section of the dashboard. This helps you ensure capture occurs before the authorization hold expires. If `capture_by` is not available use the `extended_authorization_last_applied_at` parameter to compute the capture window&#x20;
-

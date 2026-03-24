@@ -5,8 +5,12 @@ icon: eyes
 
 # Monitoring
 
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
 {% hint style="info" %}
-In this chapter, you will learn to setup logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
+In this chapter, you will learn to set up logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
 {% endhint %}
 
 ***
@@ -89,7 +93,7 @@ sudo apt-get install helm --yes
 
 **Step 2: Install Loki**
 
-Once Helm is installed, you can proceed with the installation of Loki. Loki can be installed in various modes, and [here](https://grafana.com/docs/loki/latest/setup/install/helm/install-scalable/), we provide a setup guide for installing Loki in a scalable monolithic mode.
+Once Helm is installed, you can proceed with the installation of Loki. Loki can be installed in various modes, and [here](https://grafana.com/docs/loki/latest/setup/install/helm/install-scalable/), we provide a set up guide for installing Loki in a scalable monolithic mode.
 
 Make sure you install grafana/loki in a specific kubernetes namespace that you desire using command
 
@@ -136,13 +140,13 @@ By following these steps, you will configure Promtail to utilize the specified "
 You can proceed with the installation of the Helm chart for Grafana using the following commands:
 
 ```bash
-# Add the Grafana Helm chart repository
+## Add the Grafana Helm chart repository
 helm repo add grafana https://grafana.github.io/helm-charts
 
-# Update the Helm repositories
+## Update the Helm repositories
 helm repo update
 
-# Install Grafana using Helm, specifying the namespace and creating it if necessary
+## Install Grafana using Helm, specifying the namespace and creating it if necessary
 helm install grafana grafana/grafana --namespace your_namespace --create-namespace
 ```
 

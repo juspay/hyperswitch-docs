@@ -1,3 +1,7 @@
+---
+description: Learn about Error Handling to optimize your payment infrastructure
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
@@ -40,7 +44,7 @@ Errors fall into four categories based on root cause:
 |----------|-------------|---------|------------|
 | **PAYMENT_ERROR** | Customer's payment method failed | Declined card, expired card | No |
 | **NETWORK_ERROR** | Connectivity issues | Timeout, connection refused | Yes |
-| **CONFIGURATION_ERROR** | Setup problems | Invalid API key, wrong credentials | No |
+| **CONFIGURATION_ERROR** | Set up problems | Invalid API key, wrong credentials | No |
 | **VALIDATION_ERROR** | Request issues | Invalid amount, missing field | No |
 
 ## Handling Errors in Code

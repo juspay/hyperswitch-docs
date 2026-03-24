@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Braintree via Hyperswitch
+description: Learn about Braintree to optimize your payment infrastructure
 hidden: true
 ---
 
 # Braintree
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Bluesnap through Hyperswitch
@@ -23,4 +27,3 @@ Braintree is a payment processor that allows online businesses to accept payment
 4. To set webhooks, Navigate to  Home page -> Settings (on the top right) -> API -> Webhooks and create a new webhook.&#x20;
 
 [Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Braintree on Hyperswitch control center.
-

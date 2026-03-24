@@ -1,11 +1,11 @@
 ---
-description: SDK method details
+description: Explore SDK documentation to integrate payment processing into your applications
 icon: chart-candlestick
 ---
 
 # SDK Reference
 
-​Hyperswitch provides frontend integration solutions through SDKs tailored for various frameworks, including React and JavaScript. These SDKs come with pre-built support for the frameworks used in your application, eliminating the need for additional code to ensure compatibility. The following documentation offers detailed information on the APIs of these SDKs, outlining their methods and purposes:​
+​Juspay Hyperswitch provides frontend integration solutions through SDKs tailored for various frameworks, including React and JavaScript. These SDKs come with pre-built support for the frameworks used in your application, eliminating the need for additional code to ensure compatibility. The following documentation offers detailed information on the APIs of these SDKs, outlining their methods and purposes:​
 
 * **React SDK Reference**: Explore the React SDK methods and their parameters to customize your payment experience. ​
 * **JavaScript SDK Reference**: Discover the JavaScript SDK methods available for tailoring your payment integration.

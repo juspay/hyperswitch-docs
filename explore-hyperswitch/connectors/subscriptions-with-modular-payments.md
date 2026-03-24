@@ -87,7 +87,7 @@ Configure Hyperswitch Webhook endpoint for invoice events on the subscription pr
 {% endstep %}
 
 {% step %}
-Fetch the plan details (to be setup prior on subscription provider)
+Fetch the plan details (to be set up prior on subscription provider)
 
 ```
 curl --location 'http://<base_url>/subscriptions/plans' \

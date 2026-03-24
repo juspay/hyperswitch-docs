@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Fiserv via Hyperswitch
+description: Learn about Fiserv to optimize your payment infrastructure
 hidden: true
 ---
 
 # Fiserv
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Fiserv through Hyperswitch
@@ -19,7 +23,7 @@ Fiserv is a global fintech and payments company with solutions for banking, glob
 
 #### Prerequisites
 
-1. You need to be registered with Fiserv in order to proceed. In case you aren't, you can quickly setup your Fiserv account [here](https://www.fiserv.com/en.html)
+1. You need to be registered with Fiserv in order to proceed. In case you aren't, you can quickly set up your Fiserv account [here](https://www.fiserv.com/en.html)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. Fiserv api keys **API Key**, **API Secret**, **Merchant ID** and **Terminal ID** can be found in your Fiserv dashboard under Credentials.
 4. Select all the payment methods you wish to use Fiserv for. Ensure that this is the same as the ones configured on your Fiserv dashboard.

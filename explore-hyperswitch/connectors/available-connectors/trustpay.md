@@ -1,9 +1,13 @@
 ---
-description: Accept payments through TrustPay via Hyperswitch
+description: Learn about TrustPay to optimize your payment infrastructure
 hidden: true
 ---
 
 # TrustPay
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Trustpay through Hyperswitch
@@ -17,7 +21,7 @@ TrustPay belongs to the first financial institutions within the region to provid
 
 #### Prerequisites
 
-1. You need to be registered with TrustPay in order to proceed. In case you aren't, you can quickly setup your TrustPay account [here](https://www.trustpay.eu/)
+1. You need to be registered with TrustPay in order to proceed. In case you aren't, you can quickly set up your TrustPay account [here](https://www.trustpay.eu/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. Enter your Country, Business Label and TrustPay **API Key**, **Project ID** and **Secret Key**. The TrustPay keys can be found in your TrustPay dashboard.
 4. Select all the payment methods you wish to use TrustPay for. Ensure that this is the same as the ones configured on your TrustPay dashboard.

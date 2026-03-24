@@ -1,8 +1,13 @@
 ---
 icon: laptop-code
+description: Overview and guides for beta embeddable components
 ---
 
 # Embeddable Components
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 #### Introduction
 

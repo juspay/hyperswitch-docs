@@ -103,7 +103,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch Web Client
+#### Step 3 - Set up Hyperswitch Web Client
 
 You can now deploy the Hyperswitch web client by running the below command in the same terminal session
 

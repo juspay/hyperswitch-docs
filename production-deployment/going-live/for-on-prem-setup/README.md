@@ -1,12 +1,13 @@
 ---
 icon: clipboard-question
+description: Overview and guides for for on prem setup
 ---
 
 # For On-Prem Setup
 
 ## Prerequisites
 
-In order to use Hyperswitch for accepting digital payments through a consumer facing website or mobile application there are three main prerequisites
+In order to use Juspay Hyperswitch for accepting digital payments through a consumer facing website or mobile application there are three main prerequisites
 
 <table data-header-hidden><thead><tr><th width="187"></th><th></th></tr></thead><tbody><tr><td>Resources</td><td><ul><li>Account with cloud service provider (AWS/ GCP/Own Cloud) to host Hyperswitch application</li><li>Contractual relationship and active processing account with payment processor or acquirer (this will be in the form of API keys or merchant identifier)</li></ul></td></tr><tr><td>Technical Know How</td><td><ul><li>For deploying and managing application using Kubernetes</li><li>Handling a Web application written in Rust using Postgres (primary datastore), Redis (distributed key-value store for cached lookups), Prometheus/Grafana (monitoring), S3/CDN (serving static files)</li></ul></td></tr><tr><td>Ensuring Compliance </td><td><p><a href="pci-compliance/its-no-rocket-science.md">Refer here</a> to find out which level of PCI compliance applies to your business.</p><ul><li><strong>Report on Compliance (ROC):</strong> Engage an independent third-party Qualified Security Assessor (QSA) certified by the PCI-SSC to perform the PCI audit and share the findings. The ROC will be prepared by the QSA at the end of the PCI compliance activity. <em>This is required only if your online business processes greater than 1 million card transactions per annum.</em></li></ul><ul><li><strong>Quarterly Network scans:</strong> Engage an <a href="https://listings.pcisecuritystandards.org/assessors_and_solutions/approved_scanning_vendors">Approved Scanning Vendor</a> for conducting quarterly network scans and submitting the scan reports to the payment processor/ acquirer</li></ul><ul><li><strong>Self Assessment Questionnaire (SAQ):</strong> This is an assessment which can be self-completed by a business without engaging an Independent PCI Auditor, <em>if your business processes less than 1 million card transactions per annum</em>. A person responsible for the payment infrastructure within your organization fills out the SAQ. This could be the stakeholder who is the closest to your payment infrastructure - your Dev Ops Manager, or Information Security Officer, or CTO.</li></ul></td></tr></tbody></table>
 
@@ -24,7 +25,7 @@ Here's a quick summary of everything you would need for going live with Hyperswi
 ### Apple Pay Certificate
 
 * [ ] To enable Apple Pay payments, request the required certificate: `Hyperswitch-app.server.secrets.apple_pay_merchant_cert`. \
-  Follow the official setup guide: [Apple Pay Setup](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets/apple-pay/ios-application).
+  Follow the official set up guide: [Apple Pay Setup](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets/apple-pay/ios-application).
 
 ### Deploying the Application
 
@@ -51,8 +52,8 @@ Hyperswitch does not share card BIN data automatically. BIN (Bank Identification
 ### Monitoring
 
 * [ ] Make sure logs are being printed for all components in your setup
-* [ ] Aggregate your logs across instances and [setup a logging system](monitoring.md) (e.g. Grafana Loki) for storing and viewing your logs
-* [ ] Make sure your metrics pipeline is setup and provides visibility into both application and system performance
+* [ ] Aggregate your logs across instances and [set up a logging system](monitoring.md) (e.g. Grafana Loki) for storing and viewing your logs
+* [ ] Make sure your metrics pipeline is set up and provides visibility into both application and system performance
 
 ### PCI Compliance
 

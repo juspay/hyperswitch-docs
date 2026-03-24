@@ -1,14 +1,12 @@
 ---
-description: >-
-  Augments payment processing capabilities with your preferred Subscription
-  Solution provider
+description: Configure subscription billing to automate recurring payments and manage billing cycles
 hidden: true
 icon: repeat
 ---
 
 # Subscriptions
 
-Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
+Juspay Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
 
 * **Flexibility with Payment Processors**
   * Choose any payment processor based on better costs or authorization rates.
@@ -47,7 +45,7 @@ User selects a payment method and adds the payment method details which are save
 
 User selects a plan followed by selecting the payment method and adding the payment method details to start subscription. This flow can be broken into 5 parts
 
-* **Integration and set up** - Merchants will setup their account and generate API keys with the subscription provider and Hyperswitch as well as integrate with both of them. Merchants will set up their plans with the subscription provider and set up their payment providers with Hyperswitch.
+* **Integration and set up** - Merchants will set up their account and generate API keys with the subscription provider and Hyperswitch as well as integrate with both of them. Merchants will set up their plans with the subscription provider and set up their payment providers with Hyperswitch.
 * **Retrieve plans and create subscription** - Merchants will retrieve the eligible plans and display them on their website. The customer will select one of the plans shown to them. Merchant will use the selected plan to create a customer and a subscription with the subscription provider. &#x20;
 * **Collect payment method details** - Once the subscription is created and the key fields are received by the merchant, they'll initiate a Payments create call with Hyperswitch and load the payment SDK on their website ([more on SDK integration](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide)) to collect payment details from the customer&#x20;
 * **Make payment and return invoice** - Using the payment details entered by the user the merchant will make a payment with Hyperswitch and create a mandate ([more details](https://docs.hyperswitch.io/features/payment-flows-and-management/mandates-and-recurring-payments)). The subscription is marked as active upon successful payment and the invoice with the customer.
@@ -60,7 +58,7 @@ User selects a plan followed by selecting the payment method and adding the paym
 
 User selects a payment method and adds the payment method details which are saved. User finally selects the plan to start the subscription. This flow can be broken into 5 parts
 
-* **Integration and set up** - Merchants will setup their account and generate API keys with the subscription provider and Hyperswitch as well as integrate with both of them. Merchants will set up their plans with the subscription provider and set up their payment providers with Hyperswitch. &#x20;
+* **Integration and set up** - Merchants will set up their account and generate API keys with the subscription provider and Hyperswitch as well as integrate with both of them. Merchants will set up their plans with the subscription provider and set up their payment providers with Hyperswitch. &#x20;
 * **Collect and store payment method details** - Merchant will initiate a Payments create call with Hyperswitch and load the payment SDK on their website ([more on SDK integration](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide)) to collect payment details from the customer.
   * Merchant will create a customer with the subscription provider
   * Merchant will initiate a $0 mandate with Hyperswitch ([more details](https://docs.hyperswitch.io/features/payment-flows-and-management/zero-amount-authorization)) to validate and store the payment details and create a mandate with Hyperswitch (using the same customer ID).  &#x20;

@@ -1,14 +1,12 @@
 ---
-description: >-
-  This page outlines the various payment flows you may come across while
-  building a connector.
+description: Configure payment connectors to enable multi-processor payment processing
 ---
 
 # Connector Payment Flows
 
 ### Pre-processing
 
-This refers to the two-step payment flow where preprocessing steps are executed before the main authorization call. If your connector does not use tokenization or does not require customer or access token flows, implement the pre-processing pattern described below. It's important to note that different connectors implement preprocessing differently. For example, Airwallex creates payment intents during preprocessing as one of the steps while Nuvei performs 3DS enrollment checks as a step. The preprocessing call does make a separate (second) call for the authorize flow. The preprocessing and authorization are implemented as distinct, sequential operations in Hyperswitch's payment processing pipeline.
+This refers to the two-step payment flow where preprocessing steps are executed before the main authorization call. If your connector does not use tokenization or does not require customer or access token flows, implement the pre-processing pattern described below. It's important to note that different connectors implement preprocessing differently. For example, Airwallex creates payment intents during preprocessing as one of the steps while Nuvei performs 3DS enrollment checks as a step. The preprocessing call does make a separate (second) call for the authorize flow. The preprocessing and authorization are implemented as distinct, sequential operations in Juspay Hyperswitch's payment processing pipeline.
 
 The preprocessing steps are executed first:
 
@@ -27,7 +25,7 @@ Then, the system proceeds to build the actual authorization request:
 
 * The connector issues temporary session credentials.
 * You need to make a discovery or configuration call before authorization.
-* No prior customer setup or vaulting is needed.
+* No prior customer set up or vaulting is needed.
 
 **Example Diagram**
 

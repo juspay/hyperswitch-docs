@@ -1,7 +1,5 @@
 ---
-description: >-
-  Common payment augmentation patterns for FinTech enterprises, from adding
-  processors to improving routing, vaulting, and operational visibility.
+description: Implement payment solutions tailored for fintech companies with optimized processing
 icon: watch-calculator
 ---
 

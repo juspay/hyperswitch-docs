@@ -1,6 +1,10 @@
+---
+description: Learn about JS to optimize your payment infrastructure
+---
+
 # JS
 
-Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
+Juspay Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
 
 ### Hyper()
 

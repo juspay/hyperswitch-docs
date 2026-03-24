@@ -1,5 +1,6 @@
 ---
 icon: mobile-signal
+description: Learn about Samsung Pay to optimize your payment infrastructure
 ---
 
 # Samsung Pay

@@ -1,8 +1,13 @@
 ---
 icon: chart-diagram
+description: Learn about Overcapture to optimize your payment infrastructure
 ---
 
 # Overcapture
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 ### Overview
 

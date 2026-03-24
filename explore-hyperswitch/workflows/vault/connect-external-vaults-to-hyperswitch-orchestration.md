@@ -1,7 +1,5 @@
 ---
-description: >-
-  Connect external vaults to store cards instead of the integrated vault that
-  comes within your Hyperswitch Orchestration account
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 hidden: true
 icon: plug
 ---
@@ -10,7 +8,7 @@ icon: plug
 
 ### Modular Vaulting in Hyperswitch
 
-Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
+Juspay Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
 
 Modular Vaulting is a key component of Juspay’s payment system, offering merchants the flexibility to either use Hyperswitch’s built-in PCI-compliant vault with advanced tokenization and security features or connect to any third party vault provider. This flexibility enables businesses to start simple and scale confidently without re-architecting their entire system.
 

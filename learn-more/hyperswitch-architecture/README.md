@@ -1,11 +1,11 @@
 ---
-description: A 30,000 feet view of Hyperswitch's architecture
+description: Overview and guides for hyperswitch architecture
 icon: folder-tree
 ---
 
-# Hyperswitch architecture
+# Juspay Hyperswitch architecture
 
-Hyperswitch comprises two distinct app services: **Router** and **Scheduler** which in turn consists of **Producer** and **Consumer**, where each service has its specific responsibilities to process payment-related tasks efficiently.
+Juspay Hyperswitch comprises two distinct app services: **Router** and **Scheduler** which in turn consists of **Producer** and **Consumer**, where each service has its specific responsibilities to process payment-related tasks efficiently.
 
 <figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
 
@@ -29,7 +29,7 @@ The Consumer is another key component of the Scheduler. Its main role is to retr
 
 #### Postgres
 
-The application relies on a PostgreSQL database for storing various types of data, including customer information, merchant details, payment-related data, and other relevant information. The application maintains a master-database and replica-database setup to optimize read and write operations.
+The application relies on a PostgreSQL database for storing various types of data, including customer information, merchant details, payment-related data, and other relevant information. The application maintains a master-database and replica-database set up to optimize read and write operations.
 
 #### Redis
 

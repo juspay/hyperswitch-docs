@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Prophetpay via Hyperswitch
+description: Learn about Prophetpay to optimize your payment infrastructure
 hidden: true
 ---
 

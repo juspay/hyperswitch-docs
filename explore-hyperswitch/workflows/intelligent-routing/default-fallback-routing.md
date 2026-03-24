@@ -1,7 +1,5 @@
 ---
-description: >-
-  Fallback is a priority order of all the configured processors which is used to
-  route traffic standalone or when other routing rules are not applicable.
+description: Configure fallback processor order to ensure payment continuity during outages
 icon: shield-exclamation
 ---
 

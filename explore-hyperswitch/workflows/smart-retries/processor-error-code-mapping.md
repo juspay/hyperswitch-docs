@@ -1,5 +1,6 @@
 ---
 icon: signs-post
+description: Learn about Processor error code mapping to optimize your payment infrastructure
 ---
 
 # Processor error code mapping
@@ -60,4 +61,3 @@ To illustrate the classification process, the following tables lists few sample 
 | card\_not\_supported                 | The card doesn’t support this type of purchase.                                                                                                                                                                                                          |
 | pin\_try\_exceeded                   | The allowable number of PIN tries was exceeded.                                                                                                                                                                                                          |
 | pickup\_card                         | The customer can’t use this card to make this payment (it’s possible it was reported lost or stolen).                                                                                                                                                    |
-

@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
+description: Access deployment guides to set up Hyperswitch on your infrastructure
 ---
 
 # 🗄 Deploy Hyperswitch
@@ -20,6 +20,6 @@ There are two methods in which you can deploy our application on the cloud. Depe
 
 
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Production Ready Deployment <code>Recommended</code></strong> </td><td><p></p><p>Use our CDK script to deploy a production-ready K8s setup inside your stack</p></td><td><ul><li>Setup a new K8s cluster for Hyperswitch using helm charts</li><li>Monitoring setup is included</li></ul></td><td><a href="../../.gitbook/assets/Group-42.jpg">Group-42.jpg</a></td><td><a href="production-ready-deployment.md">production-ready-deployment.md</a></td></tr><tr><td><p><strong>Standalone Deployment</strong> </p><p><strong><code>For prototyping</code></strong></p></td><td><p></p><p>Use the standalone deployment script to deploy Hyperswitch on AWS quickly</p></td><td><ul><li>Deploy in 3 steps in your own AWS account</li><li>Covered under AWS Free Tier</li></ul></td><td><a href="../../.gitbook/assets/1_q6F0j8HFHd8jeYXyQBqrCQ.jpg">1_q6F0j8HFHd8jeYXyQBqrCQ.jpg</a></td><td><a href="standalone-deployment-for-prototyping.md">standalone-deployment-for-prototyping.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Production Ready Deployment <code>Recommended</code></strong> </td><td><p></p><p>Use our CDK script to deploy a production-ready K8s set up inside your stack</p></td><td><ul><li>Set up a new K8s cluster for Hyperswitch using helm charts</li><li>Monitoring set up is included</li></ul></td><td><a href="../../.gitbook/assets/Group-42.jpg">Group-42.jpg</a></td><td><a href="production-ready-deployment.md">production-ready-deployment.md</a></td></tr><tr><td><p><strong>Standalone Deployment</strong> </p><p><strong><code>For prototyping</code></strong></p></td><td><p></p><p>Use the standalone deployment script to deploy Hyperswitch on AWS quickly</p></td><td><ul><li>Deploy in 3 steps in your own AWS account</li><li>Covered under AWS Free Tier</li></ul></td><td><a href="../../.gitbook/assets/1_q6F0j8HFHd8jeYXyQBqrCQ.jpg">1_q6F0j8HFHd8jeYXyQBqrCQ.jpg</a></td><td><a href="standalone-deployment-for-prototyping.md">standalone-deployment-for-prototyping.md</a></td></tr></tbody></table>
 
 ### Choose the right deployment method

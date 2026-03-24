@@ -1,6 +1,7 @@
 ---
 hidden: true
 noIndex: true
+description: Find answers to common questions about Hyperswitch features and implementation
 ---
 
 # Payment Orchestration FAQ
@@ -93,7 +94,7 @@ Implementation typically involves:
 Start here:
 
 * [Your First Payment Guide](https://docs.hyperswitch.io/#your-first-payment)
-* [Unified Local Setup Using Docker](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1/unified-local-setup-using-docker)
+* [Unified Local Set up Using Docker](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1/unified-local-setup-using-docker)
 
 For API details:
 

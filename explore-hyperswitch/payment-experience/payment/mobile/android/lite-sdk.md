@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Implement Hyperswitch SDKs to add payment capabilities to your applications
 icon: mobile-screen
 ---
 
@@ -10,7 +10,7 @@ icon: mobile-screen
 #### Lightweight Integration
 
 * **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
+* **Faster initialization**: Streamlined set up process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
 * **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
@@ -27,7 +27,7 @@ icon: mobile-screen
 * [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
@@ -43,7 +43,7 @@ dependencies {
 }
 ```
 
-### 2.2 Setup the Lite SDK and fetch a Payment
+### 2.2 Set up the Lite SDK and fetch a Payment
 
 Set up the Lite SDK using your publishable key. This is essential for initializing a `PaymentSession`:
 

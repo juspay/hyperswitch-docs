@@ -1,9 +1,13 @@
 ---
-description: Accept payments through OpenNode via Hyperswitch
+description: Learn about OpenNode to optimize your payment infrastructure
 hidden: true
 ---
 
 # OpenNode
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via OpenNode through Hyperswitch
@@ -19,7 +23,7 @@ OpenNode makes it easy to accept bitcoin payments or send bitcoin payouts while 
 
 #### Prerequisites
 
-1. You need to be registered with OpenNode in order to proceed. In case you aren't, you can quickly setup your OpenNode account [here](https://www.opennode.com/)
+1. You need to be registered with OpenNode in order to proceed. In case you aren't, you can quickly set up your OpenNode account [here](https://www.opennode.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. The OpenNode API key can be found in your OpenNode dashboard.
 4. Select all the payment methods you wish to use OpenNode for. Ensure that this is the same as the ones configured on your OpenNode dashboard.

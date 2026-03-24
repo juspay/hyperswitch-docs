@@ -1,5 +1,5 @@
 ---
-description: Oct '25 to Dec '25
+description: Learn about Previous Roadmap - Q4 2025 to optimize your payment infrastructure
 icon: road
 ---
 

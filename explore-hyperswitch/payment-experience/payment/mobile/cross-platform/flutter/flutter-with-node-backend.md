@@ -1,9 +1,13 @@
 ---
-description: Integrate hyper SDK to your Flutter App using hyperswitch-node
+description: Integrate Flutter with REST API to expand payment capabilities
 icon: puzzle-piece
 ---
 
 # Flutter with REST API Integration
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 Use this guide to integrate `hyperswitch` SDK to your Flutter app.
@@ -21,7 +25,7 @@ Use this guide to integrate `hyperswitch` SDK to your Flutter app.
 * CocoaPods
 * npm
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../../server-setup.md) section.
 

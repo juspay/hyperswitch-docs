@@ -89,4 +89,3 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% content-ref url="react-native.md" %}
 [react-native.md](react-native.md)
 {% endcontent-ref %}
-

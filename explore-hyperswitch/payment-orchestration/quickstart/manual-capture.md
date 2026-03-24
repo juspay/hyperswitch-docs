@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Learn about Manual Capture to optimize your payment infrastructure
 hidden: true
 icon: sack-dollar
 ---

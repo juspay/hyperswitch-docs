@@ -1,9 +1,13 @@
 ---
-description: Accept payments through Checkout via Hyperswitch
+description: Learn about Checkout to optimize your payment infrastructure
 hidden: true
 ---
 
 # Checkout
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Checkout through Hyperswitch
@@ -15,7 +19,7 @@ Checkout.com is a global payment company that provides a gateway, an acquirer an
 
 ## &#x20;Prerequisites
 
-1. You need to be registered with Checkout in order to proceed. In case you aren't, you can quickly setup your Checkout account [here](https://www.checkout.com/get-test-account).
+1. You need to be registered with Checkout in order to proceed. In case you aren't, you can quickly set up your Checkout account [here](https://www.checkout.com/get-test-account).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. Request the Checkout support team to enable handling raw card data for your Checkout account via email (support@checkout.com). This will enable Hyperswitch to securely handle your customer's payment details.
 4. Chekcout api keys Checkout API key, Processing Channel ID and Checkout Secret Key are available in your Checkout dashboard under the [Developers section](https://dashboard.sandbox.checkout.com/developers/get-started).

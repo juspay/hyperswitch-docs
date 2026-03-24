@@ -1,3 +1,7 @@
+---
+description: Learn about In-App and Web Transactions Processed Using PSP Decryption to optimize your payment infrastructure
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this model:

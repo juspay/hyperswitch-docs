@@ -5,7 +5,7 @@ icon: screen-users
 
 # Manage Your Team
 
-You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
+You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Juspay Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
 
 <figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 

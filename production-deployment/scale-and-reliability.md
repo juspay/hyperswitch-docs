@@ -1,10 +1,15 @@
 ---
 icon: arrows-maximize
+description: Learn about Scale and Reliability to optimize your payment infrastructure
 ---
 
 # Scale and Reliability
 
-This section provides reference guidance for scaling Hyperswitch deployments and ensuring their reliability in production environments.
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
+This section provides reference guidance for scaling Juspay Hyperswitch deployments and ensuring their reliability in production environments.
 
 The models presented here outline how compute, memory, database capacity, and caching layers should scale with increasing throughput. These guidelines assist operators in planning infrastructure capacity, designing resilient architectures, and validating system behavior through structured testing methodologies.
 
@@ -313,7 +318,7 @@ Ensure the Hyperswitch server is running.
 cd load-test
 ```
 
-**4. Run Setup Script**
+**4. Run Set up Script**
 
 ```
 bash setup.sh

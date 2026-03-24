@@ -1,9 +1,13 @@
 ---
-description: Accept payments through MultiSafepay via Hyperswitch
+description: Learn about MultiSafepay to optimize your payment infrastructure
 hidden: true
 ---
 
 # MultiSafepay
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Multisafepay through Hyperswitch
@@ -17,7 +21,7 @@ Multisafepay is a Dutch fintech company that provides a range of payment solutio
 
 #### Prerequisites
 
-1. You need to be registered with Multisafepay in order to proceed. In case you aren't, you can quickly setup your Multisafepay account [here](https://www.multisafepay.com/)
+1. You need to be registered with Multisafepay in order to proceed. In case you aren't, you can quickly set up your Multisafepay account [here](https://www.multisafepay.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. Multisafepay **API Key** can be found in your Multisafepay dashboard under Integrations -> Site.
 4. Select all the payment methods you wish to use Multisafepay for. Ensure that this is the same as the ones configured on your Multisafepay dashboard.

@@ -1,3 +1,7 @@
+---
+description: Troubleshoot common issues to resolve payment processing problems and integration errors
+---
+
 # Troubleshooting
 
 ## Android

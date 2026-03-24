@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
+description: Integrate with Hyperswitch APIs to implement custom payment processing workflows
 icon: k
 ---
 
@@ -20,7 +20,7 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 * [Gradle](https://gradle.org/releases/) 8.13+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-## 1. Setup the server
+## 1. Set up the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
@@ -89,7 +89,7 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 `PaymentSession` is designed to work with AndroidX activities. Ensure that your `CheckoutActivity` extends `FragmentActivity` or its subclass from the AndroidX library
 {% endhint %}
 
-### 2.5 Setup the SDK and fetch a Payment
+### 2.5 Set up the SDK and fetch a Payment
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`:
 

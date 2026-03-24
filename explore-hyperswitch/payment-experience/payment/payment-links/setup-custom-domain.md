@@ -2,11 +2,11 @@
 description: Setup custom domains
 ---
 
-# Setup Custom Domain
+# Set up Custom Domain
 
 A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
-## How to setup custom domain within your cloud
+## How to set up custom domain within your cloud
 
 * Identify your DNS provider
 
@@ -96,4 +96,4 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 
-After you have setup custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.
+After you have set up custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.

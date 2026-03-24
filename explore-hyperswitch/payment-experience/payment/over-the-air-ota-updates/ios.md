@@ -1,5 +1,6 @@
 ---
 icon: apple
+description: Learn about iOS to optimize your payment infrastructure
 ---
 
 # iOS
@@ -36,4 +37,3 @@ Make sure `releaseConfigURL` points to the `config.json` for the correct SDK ver
 {% endhint %}
 
 For more information, [Airborne](https://github.com/juspay/airborne)
-

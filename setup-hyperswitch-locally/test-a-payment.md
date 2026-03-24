@@ -1,5 +1,5 @@
 ---
-description: Make your first payment and refund through Hyperswitch
+description: Test payment flows to validate integration and ensure transaction processing works correctly
 ---
 
 # 💵 Test a payment

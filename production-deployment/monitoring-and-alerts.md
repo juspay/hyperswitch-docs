@@ -1,10 +1,11 @@
 ---
 icon: monitor-waveform
+description: Learn about Monitoring and Alerts to optimize your payment infrastructure
 ---
 
 # Monitoring and Alerts
 
-Reliable operation of a production Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.
+Reliable operation of a production Juspay Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.
 
 Observability in a Hyperswitch installation is based on two primary data sources:
 
@@ -227,7 +228,7 @@ The merchant's Prometheus server (or compatible monitoring system such as Victor
 
 This configuration allows merchants to retain full control over which metrics are shared externally.
 
-#### Setup Process
+#### Set up Process
 
 Before configuring remote monitoring, ensure that:
 

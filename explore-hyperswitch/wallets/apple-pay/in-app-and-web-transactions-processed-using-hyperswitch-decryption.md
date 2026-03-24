@@ -1,6 +1,10 @@
+---
+description: Learn about In-App and Web Transactions Processed Using Hyperswitch Decryption to optimize your payment infrastructure
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
-In this flow Hyperswitch decrypts the token internally using your uploaded certificates and then transforms the raw data for any downstream connector.
+In this flow Juspay Hyperswitch decrypts the token internally using your uploaded certificates and then transforms the raw data for any downstream connector.
 
 #### **Mechanism:**
 

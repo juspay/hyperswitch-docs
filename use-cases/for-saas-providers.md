@@ -7,7 +7,7 @@ icon: desktop
 
 # For SaaS Businesses
 
-Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.
+Juspay Hyperswitch empowers SaaS businesses with a comprehensive, modular, and scalable payment solution tailored to enhance subscription management, reduce passive churn, and optimize payment operations globally.
 
 Whether you're a startup or an established enterprise, Hyperswitch provides the tools needed to deliver seamless payment experiences for your users.
 

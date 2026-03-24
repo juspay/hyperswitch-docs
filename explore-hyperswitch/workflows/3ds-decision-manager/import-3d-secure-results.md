@@ -1,11 +1,11 @@
 ---
-description: Process payments when 3D Secure runs outside Hyperswitch
+description: Learn about Import 3D Secure results to optimize your payment infrastructure
 icon: shield-slash
 ---
 
 # Import 3D Secure results
 
-Importing 3DS results is an advanced payment flow that enables you to use external 3DS authentication with your Hyperswitch payments. Instead of running authentication within Hyperswitch, you can pass the completed authentication outcome directly into the payment flow.
+Importing 3DS results is an advanced payment flow that enables you to use external 3DS authentication with your Juspay Hyperswitch payments. Instead of running authentication within Hyperswitch, you can pass the completed authentication outcome directly into the payment flow.
 
 This approach is required when you use a third party provider to perform 3DS. In such cases, you can submit the card details and authentication cryptogram directly through the [Payment Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-three-ds-data), rather than relying on Hyperswitch SDK to collect payment information and execute 3DS.
 

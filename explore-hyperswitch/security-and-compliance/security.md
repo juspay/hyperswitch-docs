@@ -1,11 +1,11 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Implement security best practices to protect payment data and maintain PCI compliance
 icon: cloud-check
 ---
 
 # Data Security
 
-At Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
+At Juspay Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
 
 ### **Benefits of Our Security Framework**
 

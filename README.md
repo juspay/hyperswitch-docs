@@ -2,11 +2,16 @@
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
+description: Explore the complete guide to implementing Juspay Hyperswitch payment infrastructure
 ---
 
 # Exploration Guide
 
-Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
+
+> **Scale with Confidence:** Process payments with 300+ connectors, 200+ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
+
+Juspay Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
 
 This guide helps you:
 
@@ -29,7 +34,7 @@ Spin up a working integration with minimal effort. Choose the path that fits you
 <summary><strong>Cloud Sandbox (Hyperswitch Hosted Test Environment)</strong></summary>
 
 [Try Hyperswitch →](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)\
-Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.
+Launch a ready-to-use Control Center test environment. No set up required, just log in and run your first transaction.
 
 </details>
 
@@ -78,7 +83,7 @@ Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernete
 
 ### Your first payment
 
-See Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker setup or directly via API.
+See Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker set up or directly via API.
 
 <details>
 

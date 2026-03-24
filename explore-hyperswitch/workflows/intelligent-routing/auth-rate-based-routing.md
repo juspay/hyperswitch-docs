@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Implement smart routing to optimize payment processing across multiple connectors
 ---
 
 # Auth Rate Based Routing
@@ -28,7 +29,7 @@ Key Configurations
   * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
   * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
-### How to setup Auth Rate Based Routing for your Hyperswitch Merchant?
+### How to set up Auth Rate Based Routing for your Hyperswitch Merchant?
 
 1. Enabling your profile with Auth Rate based routing
 

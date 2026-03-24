@@ -5,7 +5,7 @@ hidden: true
 
 # 🥗 Payment Recipes
 
-For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option. With Hyperswitch, you can diversify your payment options, and add payment processors without additional integration effort. You can consider trying out different payment recipes for multiple benefits like-&#x20;
+For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option. With Juspay Hyperswitch, you can diversify your payment options, and add payment processors without additional integration effort. You can consider trying out different payment recipes for multiple benefits like-&#x20;
 
 1. **Customer Convenience:**
    * **Diverse Customer Preferences:** Customers have varying preferences when it comes to payment methods. Some prefer credit cards, others may prefer digital wallets, and some might opt for alternative methods like bank transfers or buy now, pay later services. Offering a range of payment methods caters to a broader audience and enhances the overall customer experience.

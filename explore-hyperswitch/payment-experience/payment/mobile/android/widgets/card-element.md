@@ -1,5 +1,6 @@
 ---
 icon: credit-card
+description: Configure card payment processing to accept credit and debit card transactions
 ---
 
 # Card Element
@@ -82,4 +83,3 @@ if (::cardPaymentLauncher.isInitialized) {
     Toast.makeText(this, "SDK is not initialised", Toast.LENGTH_SHORT).show()
 }
 ```
-

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Deploy Hyperswitch on AWS infrastructure for scalable production payment processing
 icon: building-columns
 ---
 
@@ -15,7 +13,7 @@ icon: building-columns
 
 ## Standalone deployment
 
-This setup includes:
+This set up includes:
 
 | Component | Instance Type | Default Configuration |
 | --------- | ------------- | --------------------- |
@@ -116,7 +114,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-### Step 3 - Setup Hyperswitch
+### Step 3 - Set up Hyperswitch
 
 You can now deploy the hyperswitch application by running the below command in the same terminal session.
 

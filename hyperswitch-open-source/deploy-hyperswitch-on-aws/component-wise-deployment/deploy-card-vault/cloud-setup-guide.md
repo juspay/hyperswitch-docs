@@ -2,10 +2,14 @@
 description: Instructions to setup Card Vault on AWS manually
 ---
 
-# Cloud setup guide
+# Cloud set up guide
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
-This guide will help you to setup the card vault on AWS manually by setting up the various components
+This guide will help you to set up the card vault on AWS manually by setting up the various components
 {% endhint %}
 
 #### Creating EC2 instance
@@ -42,7 +46,7 @@ After starting the docker run the following command to pull the `hyperswitch-car
 docker pull juspaydotin/hyperswitch-card-vault:latest
 ```
 
-#### Setup Database (AWRDS)
+#### Set up Database (AWRDS)
 
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
@@ -83,7 +87,7 @@ and paste the contents from the below mentioned migration files
 * [FILE - 1](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
 * [FILE - 2](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
 
-#### Setup KMS
+#### Set up KMS
 
 Before setting up KMS, create a new IAM role for your EC2 instance to allow connection to KMS. Use `AWS service` as the trusted entity type and add permissions for `AWSKeyManagementServicePowerUser` and create an inline policy allowing `All KMS actions`.
 
@@ -106,17 +110,17 @@ cargo run --bin utils -- master-key
 To generate the `JWE` and `JWS` keys run the following commands
 
 ```
-# Generating the private keys
+## Generating the private keys
 openssl genrsa -out locker-private-key.pem 2048
 openssl genrsa -out tenant-private-key.pem 2048
 
-# Generating the public keys
+## Generating the public keys
 openssl rsa -in locker-private-key.pem -pubout -out locker-public-key.pem
 openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 ```
 
 {% hint style="info" %}
-We recommend generating the Master and JWE/JWS keys as mentioned below in the local setup guide outside of this EC2 machine for better security
+We recommend generating the Master and JWE/JWS keys as mentioned below in the local set up guide outside of this EC2 machine for better security
 {% endhint %}
 
 #### KMS encrypting the keys
@@ -127,16 +131,16 @@ After generating your keys and setting up of KMS, run the following command to K
 function kms_encrypt() {
     xargs -I {} -0 echo -n "{}" | xargs -I {} -0 aws kms encrypt --key-id <your-kms-key-id> --region <your-kms-region> --plaintext "{}"
 }
-# substitute this in the above mentioned envfile (LOCKER__DATABASE__PASSWORD)
+## substitute this in the above mentioned envfile (LOCKER__DATABASE__PASSWORD)
 echo -n "<database password>" | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__MASTER_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__MASTER_KEY)
 echo -n "<generated master key>" | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__LOCKER_PRIVATE_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__LOCKER_PRIVATE_KEY)
 echo -n '<locker private key>' | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__TENANT_PUBLIC_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__TENANT_PUBLIC_KEY)
 echo -n '<tenant public key>' | kms_encrypt
  
 ```
@@ -187,7 +191,7 @@ The following cURLs are to be used to provide keys
 <pre class="language-bash"><code class="lang-bash"># temporary turn of saving to history to run the following commands
 unset HISTFILE 
 
-# key 1
+## key 1
 <strong> curl -X 'POST' \
 </strong>  'localhost:8080/custodian/key1' \
   -H 'accept: text/plain' \
@@ -196,7 +200,7 @@ unset HISTFILE
   "key": &#x3C;key 1>
 }'
 
-# key 2
+## key 2
  curl -X 'POST' \
   'localhost:8080/custodian/key2' \
   -H 'accept: text/plain' \
@@ -205,7 +209,7 @@ unset HISTFILE
   "key": &#x3C;key 2>
 }'
 
-# decrypt
+## decrypt
 <strong> curl -X 'POST' 'localhost:8080/custodian/decrypt'
 </strong></code></pre>
 

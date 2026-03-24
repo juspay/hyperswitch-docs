@@ -1,9 +1,13 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Test payment flows to validate integration and ensure transaction processing works correctly
 icon: key
 ---
 
 # Test Credentials
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 {% hint style="info" %}
 This section gives you an overview of how to you can make test transactions for the payment methods you have enabled

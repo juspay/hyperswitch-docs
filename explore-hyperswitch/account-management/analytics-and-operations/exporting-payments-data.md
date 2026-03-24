@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Learn about Exporting payments data to optimize your payment infrastructure
 icon: tachograph-digital
 ---
 
@@ -33,7 +33,7 @@ Exporting your payments data to Amazon Redshift enhances analytics by leveraging
 
 1. The files will be plain csv files with 1st row being a header
 2. The file path would look be s3://\<bucket>/\<merchant\_id>/\<version>/\<payments>/\<date>.csv
-3. There will be one csv file corresponding to each day upto 7 days. Updates to the payments data will be in-place
+3. There will be one csv file corresponding to each day up to 7 days. Updates to the payments data will be in-place
 4. Changes to file formats, content or likewise would change the version in the above path and would be communicated.
 
 ## Data updation frequency & retention:
@@ -158,13 +158,13 @@ drop table payments_stage;
 
 The above query creates a temporary table to load all the csv data & then merges this with the main table while deduplicating based on payment\_id
 
-## Self-Setup Guide for AWS
+## Self-Set up Guide for AWS
 
 If you want to set up payment data export at your end using AWS infrastructure, you can implement your own data pipeline. This approach gives you full control over the data export process and allows customization based on your specific requirements.
 
 ### Architecture Overview
 
-The self-setup approach involves three main components:
+The self-set up approach involves three main components:
 
 1. **Lambda Function/Server**: Queries payment data for the past 7 days from your Hyperswitch database
 2. **Scheduled Execution**: A cron job or EventBridge rule that invokes the Lambda with merchant-specific parameters
@@ -175,10 +175,10 @@ The self-setup approach involves three main components:
 First, set up the S3 bucket where payment data will be stored:
 
 ```bash
-# Create S3 bucket
+## Create S3 bucket
 aws s3 mb s3://your-payments-export-bucket --region us-east-1
 
-# Create IAM policy for S3 access
+## Create IAM policy for S3 access
 aws iam create-policy --policy-name PaymentsExportS3Policy --policy-document '{
   "Version": "2012-10-17",
   "Statement": [
@@ -226,18 +226,18 @@ You can deploy this Lambda function using AWS CLI, SAM, or the AWS Console with 
 Create an EventBridge rule to trigger the Lambda function periodically:
 
 ```bash
-# Create EventBridge rule for every 6 hours
+## Create EventBridge rule for every 6 hours
 aws events put-rule \
   --name payment-export-schedule \
   --schedule-expression "rate(6 hours)" \
   --description "Trigger payment data export every 6 hours"
 
-# Add Lambda as target
+## Add Lambda as target
 aws events put-targets \
   --rule payment-export-schedule \
   --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda","Input"='{"merchant_id":"merchant_123","date_range":7}'
 
-# Grant EventBridge permission to invoke Lambda
+## Grant EventBridge permission to invoke Lambda
 aws lambda add-permission \
   --function-name payment-export-lambda \
   --statement-id allow-eventbridge \
@@ -308,7 +308,7 @@ Create appropriate IAM roles for different components:
 For handling multiple merchants, modify the EventBridge configuration:
 
 ```bash
-# Create separate rules for each merchant
+## Create separate rules for each merchant
 aws events put-rule \
   --name payment-export-merchant-123 \
   --schedule-expression "rate(6 hours)" \
@@ -318,7 +318,7 @@ aws events put-targets \
   --rule payment-export-merchant-123 \
   --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda","Input"='{"merchant_id":"merchant_123"}'
 
-# Or use a single rule with different inputs
+## Or use a single rule with different inputs
 aws events put-targets \
   --rule payment-export-schedule \
   --targets file://merchant-targets.json
@@ -379,7 +379,7 @@ Once the data is in S3, you can control access using:
 Set up CloudWatch alarms to monitor the export process:
 
 ```bash
-# Create alarm for Lambda failures
+## Create alarm for Lambda failures
 aws cloudwatch put-metric-alarm \
   --alarm-name payment-export-failures \
   --alarm-description "Alert on Lambda function failures" \
@@ -400,4 +400,4 @@ aws cloudwatch put-metric-alarm \
 - **EventBridge**: Minimal costs for rule executions
 - **Data Transfer**: Consider costs if accessing from different regions
 
-This self-setup approach provides flexibility and control over your payment data export process while maintaining security and scalability.
+This self-set up approach provides flexibility and control over your payment data export process while maintaining security and scalability.

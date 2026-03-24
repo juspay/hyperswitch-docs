@@ -1,3 +1,7 @@
+---
+description: Learn about Documentation Strategy to optimize your payment infrastructure
+---
+
 # Documentation Strategy
 
 
@@ -77,9 +81,9 @@ docs/
    ├── why-we-built-ucs.md
    ├── why-llms-cannot-vibe-code-payments-for-production-use.md
    └── universal-grammar-for-payments.md
-       # A Universal Grammar for Payments — How Rust's Trait System,
-       # Types, and Macros Turned Fragmented Payment APIs into a
-       # Deterministic Language
+## A Universal Grammar for Payments — How Rust's Trait System,
+## Types, and Macros Turned Fragmented Payment APIs into a
+## Deterministic Language
 ```
 
 
@@ -187,7 +191,7 @@ A single workflow handles both handwritten and generated docs, merging them in t
 
 
 ```yaml
-# .github/workflows/sync-docs.yml
+## .github/workflows/sync-docs.yml
 name: Sync Docs to GitBook
 
 
@@ -214,7 +218,7 @@ jobs:
 
      - name: Generate documentation
        run: |
-         # Generate docs from proto files and code
+## Generate docs from proto files and code
          make generate-docs
          make generate-sdk-docs
          make generate-connector-docs
@@ -225,53 +229,53 @@ jobs:
          git clone https://github.com/juspay/hyperswitch-docs.git
 
 
-         # Clear existing UCS docs
+## Clear existing UCS docs
          rm -rf hyperswitch-docs/ucs/**
 
 
-         # Create UCS docs directory
+## Create UCS docs directory
          mkdir -p hyperswitch-docs/ucs
 
 
-         # Step 1: Copy handwritten docs first (base structure)
+## Step 1: Copy handwritten docs first (base structure)
          cp -r docs/** hyperswitch-docs/ucs/
 
 
-         # Step 2: Merge generated docs into corresponding sections
-         # Generated API reference overwrites/extends handwritten
+## Step 2: Merge generated docs into corresponding sections
+## Generated API reference overwrites/extends handwritten
          if [ -d "docs-generated/api-reference" ]; then
            cp -r docs-generated/api-reference/* hyperswitch-docs/ucs/api-reference/
          fi
 
 
-         # Generated SDKs
+## Generated SDKs
          if [ -d "docs-generated/sdks" ]; then
            mkdir -p hyperswitch-docs/ucs/sdks
            cp -r docs-generated/sdks/* hyperswitch-docs/ucs/sdks/
          fi
 
 
-         # Generated connector reference
+## Generated connector reference
          if [ -d "docs-generated/connectors" ]; then
            mkdir -p hyperswitch-docs/ucs/connectors
            cp -r docs-generated/connectors/* hyperswitch-docs/ucs/connectors/
          fi
 
 
-         # Copy generated SUMMARY.md if it exists
+## Copy generated SUMMARY.md if it exists
          if [ -f "docs-generated/SUMMARY.md" ]; then
            cp docs-generated/SUMMARY.md hyperswitch-docs/ucs/SUMMARY.md
          fi
 
 
-         # Configure git and commit
+## Configure git and commit
          cd hyperswitch-docs
          git config user.name "UCS Docs Bot"
          git config user.email "ucs-docs@juspay.in"
          git add ucs/
 
 
-         # Only commit if there are changes
+## Only commit if there are changes
          if git diff --cached --quiet; then
            echo "No changes to sync"
            exit 0
@@ -391,7 +395,7 @@ In `hyperswitch-docs/SUMMARY.md` (maintained in connector-service, synced to doc
 
 
 ```markdown
-# Summary
+## Summary
 
 
 ## Getting Started

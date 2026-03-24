@@ -1,5 +1,5 @@
 ---
-description: 'Hyperswitch: Open-Source Payments Platform by Juspay'
+description: Learn about Overview to optimize your payment infrastructure
 icon: earth-asia
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0

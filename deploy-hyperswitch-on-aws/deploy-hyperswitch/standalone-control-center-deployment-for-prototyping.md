@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Deploy Hyperswitch on AWS infrastructure for scalable production payment processing
 ---
 
 # Standalone control center deployment for prototyping
@@ -14,7 +12,7 @@ In this chapter, you will deploy Hyperswitch control center on AWS cloud. You ca
 
 ## Standalone deployment
 
-### This setup includes:
+### This set up includes:
 
 | Component | Instance Type | Default Configuration |
 | --------- | ------------- | --------------------- |
@@ -119,7 +117,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch
+#### Step 3 - Set up Hyperswitch
 
 You can now deploy the hyperswitch application by running the below command in the same terminal session
 
@@ -148,4 +146,3 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 ```json
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_cleanup_setup.sh | bash
 ```
-

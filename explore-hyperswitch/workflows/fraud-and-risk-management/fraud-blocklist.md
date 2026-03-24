@@ -39,7 +39,7 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
 
 #### For Card Bin and Extended Card Bin
 
-* Setup a Merchant Account and any Connector account.
+* Set up a Merchant Account and any Connector account.
 * Make a payment with a certain card (ensure it succeeds).
 * Block the card's card bin or extended card bin.
 * Try the payment again (should fail this time with an API response saying that the payment was blocked)

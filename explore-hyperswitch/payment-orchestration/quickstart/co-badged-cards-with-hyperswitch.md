@@ -1,5 +1,6 @@
 ---
 icon: credit-card
+description: Configure card payment processing to accept credit and debit card transactions
 ---
 
 # Co-badged Cards

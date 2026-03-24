@@ -1,10 +1,11 @@
 ---
 icon: people-roof
+description: Manage merchant accounts and profiles to organize payment operations across businesses
 ---
 
 # Organization, Merchant and Profile Setup
 
-Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs-
+Adapting the right account structure while setting up Juspay Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs-
 
 * Whether you are a business with multiple product lines and business units within each line, or a marketplace with multiple sub-merchants, each having multiple business units.
 * Whether you want to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own.

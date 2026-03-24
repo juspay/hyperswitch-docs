@@ -1,12 +1,13 @@
 ---
 icon: sitemap
+description: Understand Hyperswitch architecture to design scalable payment infrastructure
 ---
 
 # Architecture Overview
 
 ### Core Components
 
-Hyperswitch uses the following components to deploy and manage a payment stack:
+Juspay Hyperswitch uses the following components to deploy and manage a payment stack:
 
 #### Hyperswitch App&#x20;
 
@@ -73,4 +74,4 @@ It includes the 5 critical application components mentioned above along with non
 
 <figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
 
-The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Hyperswitch.&#x20;
+The next sections talk about the set up and deployment of the requisite infrastructure and platform to deploy Hyperswitch.&#x20;

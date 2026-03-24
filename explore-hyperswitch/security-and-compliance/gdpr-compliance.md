@@ -1,5 +1,5 @@
 ---
-description: A brief summary of measures taken at Hyperswitch to ensure GDPR compliance
+description: Implement security best practices to protect payment data and maintain PCI compliance
 icon: compact-disc
 ---
 

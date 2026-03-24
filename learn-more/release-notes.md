@@ -1,7 +1,5 @@
 ---
-description: >-
-  This page is a central archive of Hyperswitch release notes. It summarises
-  recent product updates.
+description: Review release notes to stay updated on new features, improvements, and fixes
 hidden: true
 noIndex: true
 ---
@@ -235,7 +233,7 @@ This will be deployed in production on or before 22nd January 2026
 
 * Added **error details** to payment responses for improved failure diagnostics([#10799](https://github.com/hyperswitch/hyperswitch/pull/10799))
 * Introduced **intent\_fulfillment\_time configuration** for the temporary locker([#10877](https://github.com/hyperswitch/hyperswitch/pull/10877))
-* Added **webhook setup capabilities** to merchant routing responses([#10793](https://github.com/hyperswitch/hyperswitch/pull/10793))
+* Added **webhook set up capabilities** to merchant routing responses([#10793](https://github.com/hyperswitch/hyperswitch/pull/10793))
 * Enabled **processor acceptance** for trigger payment webhooks([#10794](https://github.com/hyperswitch/hyperswitch/pull/10794))
 * Improved **payout webhook behaviour** when source verification is disabled([#10903](https://github.com/hyperswitch/hyperswitch/pull/10903))
 * Improved **shipping cost and tax handling** in payment update operations([#10805](https://github.com/hyperswitch/hyperswitch/pull/10805))

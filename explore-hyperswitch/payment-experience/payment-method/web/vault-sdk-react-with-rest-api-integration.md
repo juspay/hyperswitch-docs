@@ -1,12 +1,13 @@
 ---
 icon: rocket-vertical
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 ---
 
 # Vault SDK Integration
 
 ## Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK
 
-The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 

@@ -1,10 +1,11 @@
 ---
 icon: up-right-from-square
+description: Set up secure payment tokenization to store and reuse customer credentials across processors
 ---
 
 # Self-Hosted Orchestration with external or third party PCI Vault
 
-> **Deployment Model:** Merchant self-hosts Hyperswitch Orchestration Layer
+> **Deployment Model:** Merchant self-hosts Juspay Hyperswitch Orchestration Layer
 >
 > **PCI Scope:** Outsourced to an external vault provider like VGS
 
@@ -159,16 +160,16 @@ When self-hosting, ensure the following environment configuration in your `confi
 
 ```toml
 [vault]
-# Enable external vault integration
+## Enable external vault integration
 enabled = true
 
-# Vault provider: "juspay", "vgs", "tokenex", or "custom"
+## Vault provider: "juspay", "vgs", "tokenex", or "custom"
 provider = "juspay"
 
-# Base URL for the vault API
+## Base URL for the vault API
 base_url = "https://vault.juspay.in"
 
-# Base URL for the vault proxy endpoint
+## Base URL for the vault proxy endpoint
 proxy_url = "https://proxy.vault.juspay.in"
 ```
 
@@ -178,7 +179,7 @@ proxy_url = "https://proxy.vault.juspay.in"
 
 ### Comparison: Self-Hosted Vault Deployment Models
 
-<table><thead><tr><th width="138.015625">Feature</th><th>Self-Hosted + In-House PCI</th><th>Self-Hosted + Outsourced PCI (This Model)</th><th>SaaS + Outsourced PCI</th></tr></thead><tbody><tr><td><strong>Hosting</strong></td><td>Merchant</td><td>Merchant</td><td>Juspay (SaaS)</td></tr><tr><td><strong>PCI Scope</strong></td><td>Merchant (Level 1)</td><td>Vault Provider</td><td>Juspay + Vault Provider</td></tr><tr><td><strong>Vault</strong></td><td>Merchant's own vault</td><td>VGS / Tokenex</td><td>VGS / Tokenex</td></tr><tr><td><strong>Card Data on Server</strong></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td><strong>Orchestration Control</strong></td><td>Full</td><td>Full</td><td>Managed</td></tr><tr><td><strong>Setup Complexity</strong></td><td>High</td><td>Medium</td><td>Low</td></tr><tr><td><strong>Compliance Maintenance</strong></td><td>High</td><td>None</td><td>None</td></tr><tr><td><strong>Token Portability</strong></td><td>Depends</td><td>Yes (<code>payment_method_id</code>)</td><td>Yes (<code>payment_method_id</code>)</td></tr></tbody></table>
+<table><thead><tr><th width="138.015625">Feature</th><th>Self-Hosted + In-House PCI</th><th>Self-Hosted + Outsourced PCI (This Model)</th><th>SaaS + Outsourced PCI</th></tr></thead><tbody><tr><td><strong>Hosting</strong></td><td>Merchant</td><td>Merchant</td><td>Juspay (SaaS)</td></tr><tr><td><strong>PCI Scope</strong></td><td>Merchant (Level 1)</td><td>Vault Provider</td><td>Juspay + Vault Provider</td></tr><tr><td><strong>Vault</strong></td><td>Merchant's own vault</td><td>VGS / Tokenex</td><td>VGS / Tokenex</td></tr><tr><td><strong>Card Data on Server</strong></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td><strong>Orchestration Control</strong></td><td>Full</td><td>Full</td><td>Managed</td></tr><tr><td><strong>Set up Complexity</strong></td><td>High</td><td>Medium</td><td>Low</td></tr><tr><td><strong>Compliance Maintenance</strong></td><td>High</td><td>None</td><td>None</td></tr><tr><td><strong>Token Portability</strong></td><td>Depends</td><td>Yes (<code>payment_method_id</code>)</td><td>Yes (<code>payment_method_id</code>)</td></tr></tbody></table>
 
 ***
 

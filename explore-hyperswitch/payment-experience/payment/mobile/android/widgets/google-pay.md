@@ -1,5 +1,6 @@
 ---
 icon: google
+description: Enable digital wallet payments to offer customers fast, secure checkout options
 ---
 
 # Google Pay
@@ -82,4 +83,3 @@ private fun onGooglePayReady(isReady: Boolean) {
     googlePayButton.isEnabled = isReady
 }
 ```
-

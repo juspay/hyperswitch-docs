@@ -1,9 +1,13 @@
 ---
-description: Guide to using Apple Pay payment method on Hyperswitch
+description: Overview and guides for apple pay
 icon: apple-pay
 ---
 
 # Apple Pay
+
+
+> **Scale with Confidence:** Process payments with 300++ connectors, 200++ payment methods, and 2,000 TPS capacity. Join 40,000+ developers on [GitHub](https://github.com/juspay/hyperswitch).
+
 
 Apple Pay allows customers to securely pay from their saved cards in their Apple Pay account in macOS (Safari) or iOS using Touch ID and Face ID and thereby eliminating the need for them to manually type in their card and shipping details. Apple Pay is currently supported by [participating banks and card issuers in 75+ countries](https://support.apple.com/en-us/HT207957).
 
@@ -208,4 +212,3 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 
 <figure><img src="../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
-

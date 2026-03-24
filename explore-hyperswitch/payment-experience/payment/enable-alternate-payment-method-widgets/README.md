@@ -1,5 +1,6 @@
 ---
 icon: bolt-lightning
+description: Overview and guides for enable alternate payment method widgets
 ---
 
 # Alternate Payment Method Widgets
@@ -67,8 +68,8 @@ The engineering ensures support for emerging payment methods and new PSPs withou
 
 ### Supported merchant setups :
 
-* **Setup A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
-* **Setup B** - Merchant is indirectly integrated with 1 PSP via a middle layer (Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK). The merchant is looking to enable APMs via the same or different PSP
+* **Set up A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
+* **Set up B** - Merchant is indirectly integrated with 1 PSP via a middle layer (Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK). The merchant is looking to enable APMs via the same or different PSP
 
 <table><thead><tr><th width="374">via PSP or middle layer</th><th>via Hyperwidgets</th></tr></thead><tbody><tr><td><p><mark style="color:blue;">Existing APMs</mark></p><ul><li>Apple Pay - <mark style="color:red;">2-3 weeks of engineering effort</mark></li><li>Klarna - <mark style="color:red;">2-3 weeks of engineering effort</mark></li></ul><p><mark style="color:blue;">New innovations</mark></p><ul><li>Paze - <mark style="color:red;">Not available via most players</mark></li><li>Click2Pay - <mark style="color:red;">Not available via most player</mark></li></ul></td><td><p>⠀</p><p>One time effort of <mark style="color:blue;">2-weeks</mark> to enable all existing APMs and new innovations via the same integration</p></td></tr></tbody></table>
 

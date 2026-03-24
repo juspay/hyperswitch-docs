@@ -1,7 +1,5 @@
 ---
-description: >-
-  Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+description: Create custom routing rules to direct payments based on geography, currency, or payment method
 icon: ruler
 ---
 

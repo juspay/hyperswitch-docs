@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Overview and guides for manual capture
 icon: transmission
 ---
 
@@ -123,4 +121,3 @@ Possible states:
 #### Over Capture &#x20;
 
 Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. You can find detailed docs [here](https://docs.hyperswitch.io/~/revisions/KHifKaZGv4c5XEloMvlu/about-hyperswitch/payment-suite-1/payments-cards/manual-capture/overcapture)&#x20;
-
