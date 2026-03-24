@@ -452,6 +452,7 @@
 
 
 
+
 ## PRISM
 
 - [Product Overview](prism/README.md)
@@ -469,15 +470,11 @@
   - [Error Handling](prism/architecture/concepts/error-handling.md)
   - [Error Mapping](prism/architecture/concepts/error-mapping.md)
   - [ID and Object Modelling](prism/architecture/concepts/id-and-object-modelling.md)
-  - [Modes of Usage](prism/architecture/concepts/library-modes-of-usage.md)
+  - [Modes of Usage](prism/architecture/concepts/modes-of-usage.md)
   - [Domain specific language](prism/architecture/concepts/specs-and-dsl.md)
   - [Integrity and Source Verification](prism/architecture/frameworks/integrity-and-source-verification.md)
   - [Money Struct](prism/architecture/frameworks/money-struct.md)
   - [Versioning](prism/architecture/versioning.md)
-  - [Code Generation](prism/architecture/autogeneration-frameworks/code-generation.md)
-  - [Docs Generation](prism/architecture/autogeneration-frameworks/docs-generation.md)
-  - [SDK Generation](prism/architecture/autogeneration-frameworks/sdk-generation.md)
-  - [Test Generation](prism/architecture/autogeneration-frameworks/test-generation.md)
 
 - [API Reference Overview](prism/api-reference/README.md)
   - [Payment Service Overview](prism/api-reference/services/payment-service/README.md)
@@ -517,6 +514,3 @@
     - [Create SDK Session Token](prism/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
 
   - [Domain Schema](prism/api-reference/domain-schema/README.md)
-
-### Blogs
-- [Why We Built a Unified Payment Integration Library](prism/blogs/why-we-built-a-unified-payment-integration-library.md)
