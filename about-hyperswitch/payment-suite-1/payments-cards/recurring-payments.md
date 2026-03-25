@@ -1,7 +1,7 @@
 ---
+description: Implement recurring payment flows for subscription billing
 icon: arrows-rotate-reverse
 ---
-
 # Recurring payments
 
 Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;

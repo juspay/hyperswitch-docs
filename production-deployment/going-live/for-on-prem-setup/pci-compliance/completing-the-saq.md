@@ -1,7 +1,7 @@
 ---
+description: Complete PCI SAQ for on-premise production deployment compliance
 icon: clipboard-question
 ---
-
 # Completing the SAQ
 
 {% hint style="warning" %}

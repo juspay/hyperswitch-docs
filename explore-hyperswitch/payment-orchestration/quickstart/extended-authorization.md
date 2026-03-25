@@ -1,8 +1,8 @@
 ---
+description: Extend authorization hold periods beyond standard windows for manual capture
 hidden: true
 icon: clock
 ---
-
 # Extended Authorization
 
 ### Overview

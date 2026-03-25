@@ -1,7 +1,7 @@
 ---
+description: Choose between cloud and on-premise deployment models
 icon: flux-capacitor
 ---
-
 # Deployment Models
 
 ## Supported Deployment Models

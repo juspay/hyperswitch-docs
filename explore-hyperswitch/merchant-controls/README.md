@@ -1,9 +1,9 @@
 ---
+description: Manage merchant settings and payment feature configurations
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket
 ---
-
 # Checkout Experience
 
 Juspay Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.

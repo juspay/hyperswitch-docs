@@ -1,7 +1,7 @@
 ---
+description: Configure Netcetera 3DS server for secure authentication flows
 icon: link-simple
 ---
-
 # Netcetera
 
 Please specify the payment needs to externally authenticated via Netcetera by passing the below field

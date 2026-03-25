@@ -1,7 +1,7 @@
 ---
+description: Integrate Click to Pay with passkey authentication for streamlined checkout
 icon: chevrons-right
 ---
-
 # Click To Pay
 
 {% hint style="info" %}

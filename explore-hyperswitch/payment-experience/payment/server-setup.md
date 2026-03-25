@@ -1,7 +1,7 @@
 ---
+description: Configure backend server to handle payment sessions and authentication
 icon: server
 ---
-
 # Server Setup
 
 ### Create a payment using S2S Call

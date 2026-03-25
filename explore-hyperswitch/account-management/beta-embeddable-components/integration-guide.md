@@ -1,7 +1,7 @@
 ---
+description: Integrate embeddable SDK components into React applications using JWT authentication
 hidden: true
 ---
-
 # Integration Guide
 
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>

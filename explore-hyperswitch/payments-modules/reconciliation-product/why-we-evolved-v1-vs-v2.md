@@ -1,7 +1,7 @@
 ---
+description: Understand V2 improvements including N-way matching and enhanced accounting capabilities
 hidden: true
 ---
-
 # Why we evolved(V1 vs V2)
 
 Our V1 Reconciliation Engine has supported merchants since 5 years. It was purpose-built to solve high-volume transaction-matching problems like 2-way (processor ↔ internal) matches

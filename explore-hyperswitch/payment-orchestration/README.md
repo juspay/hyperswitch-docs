@@ -1,7 +1,7 @@
 ---
+description: Orchestrate payments, payouts, and recurring billing across multiple processors
 icon: arrow-progress
 ---
-
 # Payment Orchestration
 
 Juspay Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.

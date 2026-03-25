@@ -1,7 +1,7 @@
 ---
+description: Set up unified local development environment using Docker
 icon: badge-check
 ---
-
 # Run Juspay Hyperswitch Locally Using Docker
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}

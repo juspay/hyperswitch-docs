@@ -1,7 +1,7 @@
 ---
+description: Implement one-time, saved payment, and recurring payment flows via API
 icon: file-invoice-dollar
 ---
-
 # Payment
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

@@ -1,7 +1,7 @@
 ---
+description: Implement payment processing flows including capture and refund
 icon: file-invoice-dollar
 ---
-
 # Payments (cards)
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

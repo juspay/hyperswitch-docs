@@ -1,7 +1,7 @@
 ---
+description: Add express checkout widgets for one-click payments in Android apps
 icon: cart-shopping-fast
 ---
-
 # Express Checkout
 
 **Purpose:** One click solution for last used saved payment method

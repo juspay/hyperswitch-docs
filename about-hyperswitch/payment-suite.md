@@ -1,9 +1,9 @@
 ---
+description: Overview of the complete Hyperswitch payment suite capabilities
 hidden: true
 noIndex: true
 icon: suitcase
 ---
-
 # Payment Suite
 
 Juspay Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:

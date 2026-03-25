@@ -1,7 +1,7 @@
 ---
+description: Configure card payment methods and processing workflows
 icon: hand-holding-circle-dollar
 ---
-
 # Payment Method (Card)
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

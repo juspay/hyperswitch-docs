@@ -1,7 +1,7 @@
 ---
+description: Process payments using vaulted payment methods for secure transactions
 hidden: true
 ---
-
 # Payment with Vault Flow
 
 In the Payment with Vault flow setup, Juspay Hyperswitch acts as the central intelligence layer. You interact with a single unified API, and Hyperswitch manages the entire payment lifecycle across multiple processors.

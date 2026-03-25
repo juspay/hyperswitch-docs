@@ -1,7 +1,7 @@
 ---
+description: Integrate PayPal widget for Android applications using Hyperswitch SDK
 icon: paypal
 ---
-
 # PayPal
 
 **Purpose:** PayPal payments

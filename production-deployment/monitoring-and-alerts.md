@@ -1,7 +1,7 @@
 ---
+description: Set up monitoring and alerting for production systems
 icon: monitor-waveform
 ---
-
 # Monitoring and Alerts
 
 Reliable operation of a production Juspay Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.

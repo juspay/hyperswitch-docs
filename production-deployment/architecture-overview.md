@@ -1,7 +1,7 @@
 ---
+description: Understand Hyperswitch architecture for production deployments
 icon: sitemap
 ---
-
 # Architecture Overview
 
 ### Core Components

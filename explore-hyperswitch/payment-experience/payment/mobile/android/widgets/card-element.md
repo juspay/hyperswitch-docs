@@ -1,7 +1,7 @@
 ---
+description: Add card input widget for Android applications using Hyperswitch SDK
 icon: credit-card
 ---
-
 # Card Element
 
 **Purpose:** Card payments

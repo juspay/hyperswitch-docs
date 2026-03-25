@@ -1,7 +1,7 @@
 ---
+description: Understand SDK payment flows and integration patterns
 icon: wave
 ---
-
 # SDK Payment flows
 
 ## [Payments 101](https://hyperswitch.io/blogs/payments-101-for-a-developer)

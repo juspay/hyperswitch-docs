@@ -1,7 +1,7 @@
 ---
+description: Configure scaling and reliability for production workloads
 icon: arrows-maximize
 ---
-
 # Scale and Reliability
 
 This section provides reference guidance for scaling Juspay Hyperswitch deployments and ensuring their reliability in production environments.

@@ -1,7 +1,7 @@
 ---
+description: Configure HyperOTA for dynamic bundle updates in iOS applications
 icon: apple
 ---
-
 # iOS
 
 ### Configuration

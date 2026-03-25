@@ -1,7 +1,7 @@
 ---
+description: Explore SDK features including theming, localization, and payment methods
 icon: barcode-read
 ---
-
 # Card Scanning
 
 <figure><img src="../../../.gitbook/assets/Frame 48095844.png" alt=""><figcaption></figcaption></figure>

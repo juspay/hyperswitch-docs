@@ -1,7 +1,7 @@
 ---
+description: Enable extended authorization to increase hold periods for manual capture
 icon: square-tenge
 ---
-
 # Extended Authorization
 
 #### **Overview**

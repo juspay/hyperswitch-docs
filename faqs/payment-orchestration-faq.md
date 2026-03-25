@@ -1,8 +1,8 @@
 ---
+description: Find answers to frequently asked questions about payment orchestration
 hidden: true
 noIndex: true
 ---
-
 # Payment Orchestration FAQ
 
 ### What is payment orchestration?

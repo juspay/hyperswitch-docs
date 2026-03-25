@@ -1,7 +1,7 @@
 ---
+description: Configure Xendit split settlements to distribute payments across multiple accounts
 icon: hexagon-xmark
 ---
-
 # Xendit Split Settlement
 
 ### Overview

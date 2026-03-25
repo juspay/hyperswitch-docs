@@ -1,7 +1,7 @@
 ---
+description: Integrate Google Pay widget for Android applications using Hyperswitch SDK
 icon: google
 ---
-
 # Google Pay
 
 **Purpose:** Google Pay payments

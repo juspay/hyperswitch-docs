@@ -1,7 +1,7 @@
 ---
+description: Set up MCP server for AI-powered payment operations
 icon: user-robot-xmarks
 ---
-
 # Setup MCP Server
 
 {% hint style="danger" %}

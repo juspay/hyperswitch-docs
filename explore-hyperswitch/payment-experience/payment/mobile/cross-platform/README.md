@@ -1,7 +1,7 @@
 ---
+description: Implement cross-platform mobile payments using React Native SDK
 icon: layer-plus
 ---
-
 # Cross Platform
 
 Juspay Hyperswitch provides **seamless cross-platform payment integrations** for both **React Native** and **Flutter**, enabling you to deliver a consistent payment experience across iOS, Android, and Web.

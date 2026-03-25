@@ -1,7 +1,7 @@
 ---
+description: Configure payout processors and initiate fund transfers via API
 icon: flag-checkered
 ---
-
 # Getting Started with Payouts
 
 To begin processing payouts with Juspay Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).

@@ -1,9 +1,9 @@
 ---
+description: Complete guide for setting up Hyperswitch locally for development
 hidden: true
 noIndex: true
 icon: desktop
 ---
-
 # Local Setup Guide
 
 ## Setup Options -

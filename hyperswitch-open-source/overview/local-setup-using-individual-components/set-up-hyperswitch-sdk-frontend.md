@@ -1,7 +1,7 @@
 ---
+description: Set up Hyperswitch SDK frontend for local development
 icon: desktop
 ---
-
 # SDK (Frontend)
 
 {% hint style="warning" %}

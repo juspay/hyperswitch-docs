@@ -1,7 +1,7 @@
 ---
+description: Integrate Hyperswitch SDK with React applications using REST API
 icon: react
 ---
-
 # React with REST API Integration
 
 **Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.

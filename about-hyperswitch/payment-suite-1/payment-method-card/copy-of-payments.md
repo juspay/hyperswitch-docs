@@ -1,8 +1,8 @@
 ---
+description: Process card payments with full authorization and capture flows
 hidden: true
 icon: money-bills-simple
 ---
-
 # Copy of Payments
 
 The Payment Method SDK provides APIs to securely capture and tokenize payment credentials, with support for vaulting payment details during the initial checkout flow. Upon successful vaulting, a persistent payment method ID is generated, which merchants can store and use to programmatically initiate subsequent transactions without re-collecting sensitive payment data.

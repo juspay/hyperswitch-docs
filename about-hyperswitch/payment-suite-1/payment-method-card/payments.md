@@ -1,7 +1,7 @@
 ---
+description: Implement card payment processing with support for multiple networks
 icon: money-bills-simple
 ---
-
 # Payments
 
 The Payment Method SDK and `/payment-methods` API work in tandem with the `/payments` API to achieve any business objective as listed below. &#x20;

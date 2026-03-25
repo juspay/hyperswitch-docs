@@ -1,7 +1,7 @@
 ---
+description: Enable co-badged card support for local and global network flexibility
 icon: credit-card
 ---
-
 # Co-badged Cards
 
 Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a global network (e.g., Visa, Mastercard).

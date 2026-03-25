@@ -1,7 +1,7 @@
 ---
+description: Integrate external PCI vaults with Hyperswitch for secure payment storage
 icon: up-right-from-square
 ---
-
 # Self-Hosted Orchestration with external or third party PCI Vault
 
 > **Deployment Model:** Merchant self-hosts Juspay Hyperswitch Orchestration Layer

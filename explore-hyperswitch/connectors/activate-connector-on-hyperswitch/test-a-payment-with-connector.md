@@ -1,7 +1,7 @@
 ---
+description: Test connector configuration using test cards and demo checkout pages
 icon: vial-circle-check
 ---
-
 # Try a Payment
 
 ## Test the Configuration using Dashboard

@@ -1,7 +1,7 @@
 ---
+description: Process payments using tokens from external vault providers
 icon: money-bill-wave
 ---
-
 # Processing payments with external vault
 
 

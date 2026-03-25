@@ -1,7 +1,7 @@
 ---
+description: Configure SMTP server integration for email notifications
 icon: at
 ---
-
 # SMTP Server Integration
 
 Previously, **Juspay Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As we grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.

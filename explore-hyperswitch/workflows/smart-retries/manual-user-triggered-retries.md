@@ -1,7 +1,7 @@
 ---
+description: Implement manual retry mechanisms for failed payment transactions
 icon: person-walking-arrow-loop-left
 ---
-
 # Manual/User triggered Retries
 
 ### Overview

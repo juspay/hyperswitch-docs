@@ -1,7 +1,7 @@
 ---
+description: Prepare on-premise infrastructure for production deployment
 icon: clipboard-question
 ---
-
 # For On-Prem Setup
 
 ## Prerequisites

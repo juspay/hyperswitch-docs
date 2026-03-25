@@ -1,7 +1,7 @@
 ---
+description: Configure HyperOTA for dynamic bundle updates in Android applications
 icon: android
 ---
-
 # Android
 
 ### Configuration

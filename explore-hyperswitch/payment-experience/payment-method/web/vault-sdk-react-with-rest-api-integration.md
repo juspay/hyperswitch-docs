@@ -1,7 +1,7 @@
 ---
+description: Integrate vault SDK with React to securely store customer payment methods
 icon: rocket-vertical
 ---
-
 # Vault SDK Integration
 
 ## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Vault SDK

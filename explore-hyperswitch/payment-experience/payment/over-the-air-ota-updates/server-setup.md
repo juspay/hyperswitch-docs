@@ -1,7 +1,7 @@
 ---
+description: Set up OTA server infrastructure for mobile SDK bundle distribution
 icon: server
 ---
-
 # Server setup
 
 

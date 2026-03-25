@@ -1,7 +1,7 @@
 ---
+description: Set up Hyperswitch control center for local development
 icon: laptop
 ---
-
 # Control Center
 
 {% hint style="warning" %}

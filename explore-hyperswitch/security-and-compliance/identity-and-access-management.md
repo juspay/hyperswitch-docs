@@ -1,7 +1,7 @@
 ---
+description: Configure identity and access management for secure user authentication
 icon: id-card-clip
 ---
-
 # Identity and Access Management
 
 Identity and Access Management (IAM) in Juspay Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.

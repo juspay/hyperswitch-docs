@@ -1,7 +1,7 @@
 ---
+description: Enable overcapture to settle amounts exceeding original authorization
 icon: chart-diagram
 ---
-
 # Overcapture
 
 ### Overview

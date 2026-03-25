@@ -1,7 +1,7 @@
 ---
+description: Configure multi-tenant architecture for isolated business unit management
 icon: cubes-stacked
 ---
-
 # Multi-Tenancy
 
 ## What is Multi-Tenancy?

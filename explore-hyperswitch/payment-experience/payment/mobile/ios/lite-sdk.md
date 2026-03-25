@@ -1,7 +1,7 @@
 ---
+description: Integrate lightweight iOS SDK for streamlined mobile payment acceptance
 icon: mobile-screen
 ---
-
 # Lite SDK
 
 ## Key Features of Lite SDK

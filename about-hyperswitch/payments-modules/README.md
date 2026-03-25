@@ -1,7 +1,7 @@
 ---
+description: Learn about payment modules including orchestration and reconciliation
 icon: diamonds-4
 ---
-
 # Payments Modules
 
 Juspay Hyperswitch offers a **modular, open-source payments infrastructure** designed for flexibility and control. Apart from our Payment Suite offering, this solution allows businesses to **pick and integrate only the modules they need** on top of their existing payment stack without unnecessary complexity or vendor lock-in.

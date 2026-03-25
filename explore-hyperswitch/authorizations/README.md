@@ -1,7 +1,7 @@
 ---
+description: Manage payment authorizations including incremental and extended holds
 icon: building-magnifying-glass
 ---
-
 # Authorizations
 
 ### **Advanced Authorization Types**

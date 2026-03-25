@@ -1,8 +1,8 @@
 ---
+description: Enable overcapture to settle amounts greater than authorized for manual capture
 hidden: true
 icon: plus
 ---
-
 # Overcapture
 
 ## Overview

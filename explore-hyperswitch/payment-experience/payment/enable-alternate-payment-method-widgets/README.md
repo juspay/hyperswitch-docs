@@ -1,7 +1,7 @@
 ---
+description: Enable alternate payment method widgets to offer customers local and wallet payment options
 icon: bolt-lightning
 ---
-
 # Alternate Payment Method Widgets
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.

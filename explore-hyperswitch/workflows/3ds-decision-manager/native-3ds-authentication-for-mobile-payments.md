@@ -1,8 +1,8 @@
 ---
+description: Implement native 3DS authentication for mobile payment transactions
 hidden: true
 icon: star-shooting
 ---
-
 # Native 3DS Authentication
 
 <figure><img src="../../../.gitbook/assets/Frame 48095845.png" alt=""><figcaption></figcaption></figure>

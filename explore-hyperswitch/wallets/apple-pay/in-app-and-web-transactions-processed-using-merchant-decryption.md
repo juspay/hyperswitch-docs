@@ -1,7 +1,7 @@
 ---
+description: Process Apple Pay transactions using merchant decryption for secure payments
 hidden: true
 ---
-
 # In-App and Web Transactions Processed Using Merchant Decryption
 
 ### Direct Token Decryption: Pre-requisites

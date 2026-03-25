@@ -1,8 +1,8 @@
 ---
+description: Implement 3D Secure authentication for enhanced payment security
 hidden: true
 icon: shield-check
 ---
-
 # 3D Secure (3DS)
 
 <figure><img src="../../../../.gitbook/assets/Frame 48095845.png" alt=""><figcaption></figcaption></figure>

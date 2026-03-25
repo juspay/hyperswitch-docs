@@ -1,7 +1,7 @@
 ---
+description: Embed white-labeled connector configuration components into your application
 icon: laptop-code
 ---
-
 # Embeddable Components
 
 #### Introduction

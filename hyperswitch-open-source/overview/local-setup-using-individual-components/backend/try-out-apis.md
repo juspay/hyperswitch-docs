@@ -1,7 +1,7 @@
 ---
+description: Test Hyperswitch APIs after local backend setup
 icon: arrow-up-triangle-square
 ---
-
 # Try out APIs
 
 ### Set up your merchant account

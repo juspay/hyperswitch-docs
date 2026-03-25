@@ -1,7 +1,7 @@
 ---
+description: Implement vault SDK with JavaScript to securely store payment methods
 icon: globe-pointer
 ---
-
 # Vault SDK - JS with REST API Integration
 
 ## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Payment Methods Management SDK

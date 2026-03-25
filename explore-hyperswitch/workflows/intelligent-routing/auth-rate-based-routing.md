@@ -1,7 +1,7 @@
 ---
+description: Configure auth rate based routing to optimize authorization success rates
 icon: badge-check
 ---
-
 # Auth Rate Based Routing
 
 ### How does it work?

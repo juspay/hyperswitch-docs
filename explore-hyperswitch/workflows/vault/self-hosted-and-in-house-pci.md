@@ -1,7 +1,7 @@
 ---
+description: Deploy self-hosted vault infrastructure for in-house PCI compliance
 icon: box-ballot
 ---
-
 # Self-hosted & in-house PCI
 
 In this deployment, merchants self-host Juspay Hyperswitch and also manage their own PCI DSS compliance.

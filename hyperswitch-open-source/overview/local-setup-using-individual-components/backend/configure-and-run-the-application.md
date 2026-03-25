@@ -1,7 +1,7 @@
 ---
+description: Configure and run Hyperswitch backend application locally
 icon: panel-ews
 ---
-
 # Configure and Run the Application
 
 ## Configure the application

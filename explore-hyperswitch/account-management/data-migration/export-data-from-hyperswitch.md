@@ -1,7 +1,7 @@
 ---
+description: Export payment data securely to PCI-compliant processors using PGP encryption
 icon: left-from-bracket
 ---
-
 # Export data from Juspay Hyperswitch
 
 We believe customers fully own their data. If you decide to export data from Hyperswitch, we will work with your new payment service provider to safely export your data.

@@ -1,7 +1,7 @@
 ---
+description: Import payment method data from existing processors using encrypted CSV files
 icon: right-from-bracket
 ---
-
 # Import data to Juspay Hyperswitch
 
 We help you with smooth migration from your current payment processor, ensuring uninterrupted business operations.

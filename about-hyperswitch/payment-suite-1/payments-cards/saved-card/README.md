@@ -1,7 +1,7 @@
 ---
+description: Configure saved card functionality for faster customer checkout
 icon: hard-drive
 ---
-
 # Saved Card
 
 In this approach, the Juspay Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.

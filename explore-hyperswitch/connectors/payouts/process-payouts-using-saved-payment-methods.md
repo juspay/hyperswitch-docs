@@ -1,7 +1,7 @@
 ---
+description: Process payouts using vaulted payment tokens for recurring disbursements
 icon: repeat
 ---
-
 # Payouts with Saved Payment Methods
 
 Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
