@@ -1,5 +1,5 @@
 ---
-description: Use the standalone deployment script to deploy Juspay Hyperswitch on AWS quickly
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # Standalone deployment for prototyping

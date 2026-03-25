@@ -1,5 +1,5 @@
 ---
-description: Master Summary with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Summary

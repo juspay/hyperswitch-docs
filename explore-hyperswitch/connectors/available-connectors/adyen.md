@@ -1,5 +1,5 @@
 ---
-description: Set up Adyen to accept global card payments with local payment method support across 30+ countries
+description: Integrate Adyen to accept payments across 200 regions with unified APIs for cards wallets and local methods
 ---
 
 # Adyen

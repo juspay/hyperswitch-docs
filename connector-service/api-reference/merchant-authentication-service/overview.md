@@ -1,5 +1,5 @@
 ---
-description: Overview of merchant authentication APIs for secure access token management
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

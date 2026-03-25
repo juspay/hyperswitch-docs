@@ -1,5 +1,5 @@
 ---
-description: Modular vaulting in Juspay Hyperswitch
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: vault
 ---
 

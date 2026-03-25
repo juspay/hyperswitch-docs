@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your web app
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: globe-wifi
 ---
 

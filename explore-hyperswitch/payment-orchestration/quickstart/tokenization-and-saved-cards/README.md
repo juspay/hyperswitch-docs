@@ -1,5 +1,5 @@
 ---
-description: Store your customers cards securely in a centralized and PCI compliant vault
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: lock-keyhole
 ---
 

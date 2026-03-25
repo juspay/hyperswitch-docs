@@ -1,5 +1,5 @@
 ---
-description: Learn about integration options for accepting payments online.
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: sidebar-flip
 ---
 

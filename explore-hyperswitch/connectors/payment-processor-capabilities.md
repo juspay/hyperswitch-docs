@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   A technical reference for the parameters and lifecycle flows supported across
   card and wallet integrations.
 icon: money-bill-1-wave

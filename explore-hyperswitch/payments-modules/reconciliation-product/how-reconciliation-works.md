@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
   Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
   architecture to automatically match transactions and resolve financial
   discrepancies

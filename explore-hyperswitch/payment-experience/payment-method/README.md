@@ -1,5 +1,5 @@
 ---
-description: Configure payment method storage and vaulting across platforms
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: arrow-progress
 ---
 # Payment Method

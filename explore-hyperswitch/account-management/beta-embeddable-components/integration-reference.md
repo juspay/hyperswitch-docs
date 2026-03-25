@@ -1,5 +1,5 @@
 ---
-description: Master Integration Reference with Juspay Hyperswitch explore hyperswitch. Technical documentation for developers implementing payment orchestration solutions.
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # Integration Reference

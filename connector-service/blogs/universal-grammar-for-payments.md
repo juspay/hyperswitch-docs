@@ -1,4 +1,4 @@
 ---
-description: Learn about Universal Grammar For Payments in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Integrate and configure Universal Grammar For Payments to process payments through this connector with comprehensive API support
 ---
 

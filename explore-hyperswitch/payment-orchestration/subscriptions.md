@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
   Augments payment processing capabilities with your preferred Subscription
   Solution provider
 hidden: true

@@ -1,5 +1,5 @@
 ---
-description: Surcharge Manager Setup
+description: Configure payment surcharges to pass processing fees to customers based on card type and region
 ---
 
 # Surcharge Setup guide

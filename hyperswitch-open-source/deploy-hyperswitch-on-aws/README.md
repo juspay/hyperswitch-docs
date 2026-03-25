@@ -1,5 +1,5 @@
 ---
-description: Deploy Hyperswitch open source on AWS infrastructure
+description: Implement PCI compliant card vaulting to securely store tokenize and manage customer payment credentials for recurring and one-click payments
 icon: cloud
 ---
 # Deploy on AWS

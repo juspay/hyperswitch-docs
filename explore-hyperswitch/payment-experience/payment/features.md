@@ -1,5 +1,5 @@
 ---
-description: Explore SDK features including theming, localization, and payment methods
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: barcode-read
 ---
 # Card Scanning

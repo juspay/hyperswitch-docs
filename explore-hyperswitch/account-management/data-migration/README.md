@@ -1,5 +1,5 @@
 ---
-description: Migrate data to or from Hyperswitch with secure transfer protocols
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 icon: utility-pole-double
 ---
 # Data migration

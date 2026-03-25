@@ -1,5 +1,5 @@
 ---
-description: Configure Netcetera 3DS server for secure authentication flows
+description: Configure 3D Secure authentication to comply with Strong Customer Authentication requirements reduce fraud liability and improve authorization rates
 icon: link-simple
 ---
 # Netcetera

@@ -1,5 +1,5 @@
 ---
-description: Set up OTA server infrastructure for mobile SDK bundle distribution
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: server
 ---
 # Server setup

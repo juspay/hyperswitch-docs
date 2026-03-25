@@ -1,5 +1,5 @@
 ---
-description: Integrate Fiserv for comprehensive fintech solutions including merchant acquiring and POS
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 hidden: true
 ---
 

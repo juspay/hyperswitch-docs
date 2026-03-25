@@ -1,5 +1,5 @@
 ---
-description: Map payment processor errors to unified codes for consistent error handling across all connectors
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Error Mapping

@@ -1,5 +1,5 @@
 ---
-description: Quick answers to commonly asked questions about Juspay Hyperswitch
+description: Set up Checkout.com to accept global payments with advanced fraud detection real-time analytics and comprehensive payment method support
 ---
 
 # FAQs

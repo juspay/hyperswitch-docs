@@ -1,5 +1,5 @@
 ---
-description: Setup PayPal on your application
+description: Integrate PayPal to offer customers express checkout and pay later options across web and mobile
 icon: paypal
 ---
 

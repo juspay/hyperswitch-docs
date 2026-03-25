@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Juspay Hyperswitch
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: tachograph-digital
 ---
 

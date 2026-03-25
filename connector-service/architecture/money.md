@@ -1,4 +1,4 @@
 ---
-description: Handle money values with proper decimal precision and currency conversion
+description: Understand Juspay Hyperswitch system architecture design patterns and component interactions to build scalable payment infrastructure
 ---
 

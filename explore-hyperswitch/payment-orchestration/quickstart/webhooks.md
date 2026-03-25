@@ -1,5 +1,5 @@
 ---
-description: Configure outgoing webhooks from Juspay Hyperswitch
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 icon: anchor
 ---
 

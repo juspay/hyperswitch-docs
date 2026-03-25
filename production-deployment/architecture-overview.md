@@ -1,5 +1,5 @@
 ---
-description: Understand Hyperswitch architecture for production deployments
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: sitemap
 ---
 # Architecture Overview

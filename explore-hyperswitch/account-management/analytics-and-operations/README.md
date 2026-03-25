@@ -1,5 +1,5 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: chart-pie-simple-circle-dollar
 ---
 

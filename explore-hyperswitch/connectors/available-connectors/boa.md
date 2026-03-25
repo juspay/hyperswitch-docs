@@ -1,5 +1,5 @@
 ---
-description: Connect Bank of America to process enterprise payments with CyberSource integration
+description: Configure Cybersource as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

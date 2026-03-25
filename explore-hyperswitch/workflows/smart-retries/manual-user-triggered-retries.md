@@ -1,5 +1,5 @@
 ---
-description: Implement manual retry mechanisms for failed payment transactions
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: person-walking-arrow-loop-left
 ---
 # Manual/User triggered Retries

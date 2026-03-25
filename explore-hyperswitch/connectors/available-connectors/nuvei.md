@@ -1,5 +1,5 @@
 ---
-description: Set up Nuvei to process payments worldwide with focus on e-commerce and high-growth sectors
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

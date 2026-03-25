@@ -1,5 +1,5 @@
 ---
-description: Test Hyperswitch APIs after local backend setup
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: arrow-up-triangle-square
 ---
 # Try out APIs

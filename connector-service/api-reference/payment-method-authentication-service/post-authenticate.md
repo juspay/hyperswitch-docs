@@ -1,5 +1,5 @@
 ---
-description: Learn about Post Authenticate in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Post-authenticate

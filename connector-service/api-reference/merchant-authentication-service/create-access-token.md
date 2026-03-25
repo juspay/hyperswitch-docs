@@ -1,5 +1,5 @@
 ---
-description: Create secure access tokens for authenticating merchant API requests
+description: Use Create Access Token APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Create Access Token

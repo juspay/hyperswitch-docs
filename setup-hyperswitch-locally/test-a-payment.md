@@ -1,5 +1,5 @@
 ---
-description: Test your first payment and refund through Juspay Hyperswitch using test card credentials
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 ---
 
 # Test a Payment

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
   Create your Juspay Hyperswitch account and add a payment provider via the control
   center
 icon: building-columns

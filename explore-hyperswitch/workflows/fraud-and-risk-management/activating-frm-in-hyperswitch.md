@@ -1,5 +1,5 @@
 ---
-description: Activate fraud and risk management tools to prevent fraudulent transactions
+description: Set up fraud detection rules to identify suspicious transactions and prevent chargebacks before they occur
 icon: shield-plus
 ---
 # Activating FRM in Juspay Hyperswitch

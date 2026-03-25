@@ -1,4 +1,4 @@
 ---
-description: Master Core Components with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Integrate and configure Core Components to process payments through this connector with comprehensive API support
 ---
 

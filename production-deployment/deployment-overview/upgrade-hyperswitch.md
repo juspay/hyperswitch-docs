@@ -1,5 +1,5 @@
 ---
-description: Upgrade Juspay Hyperswitch using GitOps with ArgoCD blue-green deployment strategy for zero-downtime updates
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Upgrade Hyperswitch

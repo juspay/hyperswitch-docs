@@ -1,5 +1,5 @@
 ---
-description: Set up GoCardless to collect recurring bank debit payments across 30+ countries
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 hidden: true
 ---
 

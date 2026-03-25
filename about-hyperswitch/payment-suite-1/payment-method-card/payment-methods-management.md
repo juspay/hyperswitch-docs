@@ -1,5 +1,5 @@
 ---
-description: Juspay Hyperswitch is designed to facilitate the management of saved payment methods
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: bars-progress
 ---
 

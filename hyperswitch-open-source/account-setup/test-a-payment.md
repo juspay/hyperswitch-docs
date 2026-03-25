@@ -1,6 +1,6 @@
 ---
 icon: money-bills
-description: Test your first payment through Juspay Hyperswitch using the Control Centre or self-hosted web client with dummy processors
+description: Configure intelligent payment routing rules to automatically direct transactions to optimal processors based on cost performance and geography
 ---
 
 # Test a Payment

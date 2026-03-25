@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Understand how to place a hold on your customers' funds and capture them later
   either fully or partially and either in one-go or multiple times
 hidden: true

@@ -1,5 +1,5 @@
 ---
-description: Configure Apple Pay web payments with Hyperswitch handling token decryption internally
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 ---
 
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)

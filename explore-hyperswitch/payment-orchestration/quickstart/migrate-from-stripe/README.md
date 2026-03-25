@@ -1,5 +1,5 @@
 ---
-description: Fast migration guide for Stripe users
+description: Configure Stripe as your payment processor to accept cards wallets and bank debits globally with comprehensive APIs
 hidden: true
 ---
 

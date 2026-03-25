@@ -1,5 +1,5 @@
 ---
-description: Connect external vaults to store cards
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: plug
 ---
 

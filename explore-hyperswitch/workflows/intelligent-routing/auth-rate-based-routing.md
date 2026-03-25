@@ -1,5 +1,5 @@
 ---
-description: Configure auth rate based routing to optimize authorization success rates
+description: Set up smart routing algorithms to optimize transaction success rates by directing payments to best-performing processors dynamically
 icon: badge-check
 ---
 # Auth Rate Based Routing

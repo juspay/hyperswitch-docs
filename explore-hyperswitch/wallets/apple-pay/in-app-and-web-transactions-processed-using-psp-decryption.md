@@ -1,5 +1,5 @@
 ---
-description: Set up Apple Pay where the PSP decrypts and authorizes the encrypted token directly
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption

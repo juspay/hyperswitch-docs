@@ -1,5 +1,5 @@
 ---
-description: Manage merchant settings and payment feature configurations
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket

@@ -1,5 +1,5 @@
 ---
-description: Fix mismatched reconciliation exceptions by editing creating or replacing data entries
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Resolution Strategies for Mismatched Exceptions

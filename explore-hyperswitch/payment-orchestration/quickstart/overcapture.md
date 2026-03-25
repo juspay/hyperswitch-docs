@@ -1,5 +1,5 @@
 ---
-description: Enable overcapture to settle amounts greater than authorized for manual capture
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: plus
 ---

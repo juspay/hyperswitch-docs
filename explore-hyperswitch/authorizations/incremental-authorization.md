@@ -1,5 +1,5 @@
 ---
-description: Configure incremental authorization to extend hold periods on pre-authorized payments
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: arrow-up-right-dots
 ---
 # Incremental Authorization

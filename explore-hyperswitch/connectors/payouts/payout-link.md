@@ -1,5 +1,5 @@
 ---
-description: Low-code solution to accept payouts
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: link
 ---
 

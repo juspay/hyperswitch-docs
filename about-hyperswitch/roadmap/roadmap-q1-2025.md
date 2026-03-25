@@ -1,5 +1,5 @@
 ---
-description: Jan'25 - Mar'25
+description: Enable Previous Roadmap - Q1 2025 to optimize your payment processing and enhance transaction capabilities
 icon: road
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Handle reconciliation exceptions with automatic classification and resolution strategies
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Exception Handling

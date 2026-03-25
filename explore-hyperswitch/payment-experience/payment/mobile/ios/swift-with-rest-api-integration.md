@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: swift
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept crypto payments on your application
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: bitcoin-sign
 ---
 

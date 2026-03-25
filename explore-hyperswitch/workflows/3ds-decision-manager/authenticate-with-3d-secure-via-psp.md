@@ -1,5 +1,5 @@
 ---
-description: Authenticate with 3D Secure via PSP to comply with Strong Customer Authentication requirements
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: rotate-exclamation
 ---
 # Authenticate with 3D Secure via PSP

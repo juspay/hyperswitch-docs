@@ -1,5 +1,5 @@
 ---
-description: Bank Debits payment method
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Bank Debits

@@ -1,5 +1,5 @@
 ---
-description: Configure Authorize.Net to accept US credit cards and e-check payments through your website
+description: Configure Authorize.Net to process card payments with robust fraud tools automated recurring billing and comprehensive reporting
 hidden: true
 ---
 

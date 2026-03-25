@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
   Code of conduct and Slack participation guide for the Juspay Hyperswitch open-source
   community
 ---

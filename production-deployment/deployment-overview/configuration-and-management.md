@@ -1,5 +1,5 @@
 ---
-description: Configure and manage Juspay Hyperswitch deployments using ArgoCD for GitOps-based continuous delivery and drift detection
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Configuration and Management

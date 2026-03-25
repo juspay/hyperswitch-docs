@@ -1,5 +1,5 @@
 ---
-description: Configure Prophetpay to accept online payments for golf and club management businesses
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

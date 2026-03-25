@@ -1,5 +1,5 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Juspay Hyperswitch
+description: Configure Cybersource as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Google Pay

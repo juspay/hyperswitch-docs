@@ -1,5 +1,5 @@
 ---
-description: Complete reference for Readme in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 <div align="center">

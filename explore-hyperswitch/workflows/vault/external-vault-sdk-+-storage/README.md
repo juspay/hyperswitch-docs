@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
   Best for teams with strict existing vault dependencies who want to leverage
   Juspay Hyperswitch for payment routing.
 hidden: true

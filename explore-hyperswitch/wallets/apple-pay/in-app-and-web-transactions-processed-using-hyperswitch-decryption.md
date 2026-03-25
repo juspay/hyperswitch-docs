@@ -1,5 +1,5 @@
 ---
-description: Learn about In App And Web Transactions Processed Using Hyperswitch Decryption in Juspay Hyperswitch explore hyperswitch to optimize payment processing workflows and enhance transaction management capabilities.
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption

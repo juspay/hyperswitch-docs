@@ -1,5 +1,5 @@
 ---
-description: Integrate embeddable SDK components into React applications using JWT authentication
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 hidden: true
 ---
 # Integration Guide

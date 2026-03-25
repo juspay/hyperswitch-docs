@@ -1,5 +1,5 @@
 ---
-description: Deploy web client on AWS
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # Production ready deployment

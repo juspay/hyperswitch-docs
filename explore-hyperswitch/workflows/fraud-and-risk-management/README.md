@@ -1,5 +1,5 @@
 ---
-description: Effectively enhance fraud detection with your preferred FRM engine
+description: Set up fraud detection rules to identify suspicious transactions and prevent chargebacks before they occur
 icon: shield-check
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: credit-card
 ---
 

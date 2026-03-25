@@ -1,6 +1,6 @@
 ---
 icon: diamonds-4
-description: Set up Juspay Hyperswitch development environment with Backend SDK and Control Center for local development and contribution
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Development Environment Setup

@@ -1,5 +1,5 @@
 ---
-description: Master Extend To More Flows with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Extending to More Flows

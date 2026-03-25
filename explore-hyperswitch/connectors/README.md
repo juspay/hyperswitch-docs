@@ -1,5 +1,5 @@
 ---
-description: Integrate with 300+ connectors enabling 200+ payment methods through Juspay Hyperswitch with minimal development effort
+description: Configure Adyen as your payment processor to accept cards wallets and local payment methods globally
 icon: plug
 ---
 

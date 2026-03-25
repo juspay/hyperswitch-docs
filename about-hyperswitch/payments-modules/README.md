@@ -1,5 +1,5 @@
 ---
-description: Learn about payment modules including orchestration and reconciliation
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: diamonds-4
 ---
 # Payments Modules

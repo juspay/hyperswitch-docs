@@ -1,5 +1,5 @@
 ---
-description: Enable extended authorization to increase hold periods for manual capture
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: square-tenge
 ---
 # Extended Authorization

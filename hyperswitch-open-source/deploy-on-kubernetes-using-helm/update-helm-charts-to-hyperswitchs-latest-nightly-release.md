@@ -1,5 +1,5 @@
 ---
-description: Documentation for Update Helm Charts To Hyperswitchs Latest Nightly Release in Juspay Hyperswitch. Covers technical implementation, configuration parameters, and operational best practices.
+description: Configure Juspay Hyperswitch deployment on Kubernetes using Helm charts for orchestrated scalable container management and enhance transaction security with comprehensive payment method support
 ---
 
 # Update Helm Charts to Hyperswitch's Latest Nightly Release

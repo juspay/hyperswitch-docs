@@ -1,5 +1,5 @@
 ---
-description: Deploy full Hyperswitch stack on Google Cloud Platform using Kubernetes and Helm charts
+description: Configure Deploy on GCP Using Helm Charts to optimize your payment processing and enhance transaction capabilities
 ---
 
 # Deploy on GCP Using Helm Charts

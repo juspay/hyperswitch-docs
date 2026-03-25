@@ -1,5 +1,5 @@
 ---
-description: Bank Redirects payment methods
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Bank Redirects

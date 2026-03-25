@@ -1,5 +1,5 @@
 ---
-description: Integrate hyperswitch SDK to your React Native App using hyperswitch-node
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
 icon: puzzle-piece
 ---
 

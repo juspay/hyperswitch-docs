@@ -1,5 +1,5 @@
 ---
-description: Deploy each Juspay Hyperswitch component individually
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 icon: list-ol
 ---
 

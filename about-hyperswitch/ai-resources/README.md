@@ -1,5 +1,5 @@
 ---
-description: Explore AI resources and tools for payment optimization
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 hidden: true
 noIndex: true
 icon: brain-circuit

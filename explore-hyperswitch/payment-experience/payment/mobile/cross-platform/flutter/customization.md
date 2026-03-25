@@ -1,5 +1,5 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: bars-progress
 ---
 

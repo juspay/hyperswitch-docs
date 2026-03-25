@@ -1,5 +1,5 @@
 ---
-description: Configure MultiSafepay for European payment processing with digital wallets and fraud prevention
+description: Set up comprehensive fraud detection rules to identify suspicious transactions prevent chargebacks and protect your business from financial losses
 hidden: true
 ---
 

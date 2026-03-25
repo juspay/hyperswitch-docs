@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Flutter App using hyperswitch-node
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: puzzle-piece
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Generate SDK session tokens for authenticating frontend client operations
+description: Use Create SDK Session Token APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Create SDK Session Token

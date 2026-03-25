@@ -1,5 +1,5 @@
 ---
-description: Configure saved card functionality for faster customer checkout
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: hard-drive
 ---
 # Saved Card

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up smart routing algorithms to optimize transaction success rates by directing payments to best-performing processors dynamically
   Optimize processing fees on debit payments by routing traffic to the cheapest
   available debit network
 icon: hand-holding-dollar

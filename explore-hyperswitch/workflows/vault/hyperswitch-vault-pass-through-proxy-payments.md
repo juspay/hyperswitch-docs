@@ -1,5 +1,5 @@
 ---
-description: Send payments to PSPs using Vault tokens without handling raw card data
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 hidden: true
 icon: arrows-repeat
 ---

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Adyen as your payment processor to accept cards wallets and local payment methods globally
   Test payments through CLI version of Postman, Newman which resides in a Rust
   wrapper called as Rustman
 icon: stethoscope

@@ -1,5 +1,5 @@
 ---
-description: Secure payment links
+description: Use Secure Payment Links APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Secure Payment Links

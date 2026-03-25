@@ -1,5 +1,5 @@
 ---
-description: Understand SDK payment flows and integration patterns
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: wave
 ---
 # SDK Payment flows

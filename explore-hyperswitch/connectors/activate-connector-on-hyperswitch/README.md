@@ -1,5 +1,5 @@
 ---
-description: Configure your preferred connector on Juspay Hyperswitch
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: chart-network
 ---
 

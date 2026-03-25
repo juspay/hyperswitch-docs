@@ -1,5 +1,5 @@
 ---
-description: Retrieve payment details including status amount and transaction history
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Get

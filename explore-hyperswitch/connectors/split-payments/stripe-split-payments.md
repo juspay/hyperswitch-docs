@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Juspay Hyperswitch
+description: Configure Stripe as your payment processor to accept cards wallets and bank debits globally with comprehensive APIs
 icon: stripe
 ---
 

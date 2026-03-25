@@ -1,5 +1,5 @@
 ---
-description: Jul '25 to Sep '25
+description: Set up Previous Roadmap - Q3 2025 to optimize your payment processing and enhance transaction capabilities
 icon: road
 ---
 

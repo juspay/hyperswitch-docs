@@ -1,5 +1,5 @@
 ---
-description: Learn about Connectors Services Subservices Methods in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Services and Methods

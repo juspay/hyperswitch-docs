@@ -1,5 +1,5 @@
 ---
-description: Deploy enterprise-grade payment orchestration with Juspay Hyperswitch to achieve redundancy and cost optimization across multiple processors
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 hidden: true
 noIndex: true
 ---

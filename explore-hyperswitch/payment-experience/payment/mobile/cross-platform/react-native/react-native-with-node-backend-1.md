@@ -1,5 +1,5 @@
 ---
-description: Integrate React Native SDK with Node.js backend for mobile payment processing
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
 icon: input-numeric
 ---
 # Payment Widget

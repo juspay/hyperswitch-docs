@@ -1,4 +1,4 @@
 ---
-description: Master Docs Generation with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Integrate and configure Docs Generation to process payments through this connector with comprehensive API support
 ---
 

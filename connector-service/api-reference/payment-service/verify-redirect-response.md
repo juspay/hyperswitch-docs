@@ -1,5 +1,5 @@
 ---
-description: Technical guide for Verify Redirect Response in Juspay Hyperswitch connector service. Architecture details, API specifications, and integration workflows explained.
+description: Use Verify Redirect Response APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Verify Redirect Response

@@ -1,5 +1,5 @@
 ---
-description: Core architecture components including SDK transport service and adapter layers
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Core Components

@@ -1,5 +1,5 @@
 ---
-description: Configure secure key management and encryption for Juspay Hyperswitch Card Vault in enterprise environments
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 ---
 
 # Card Vault & Key Management

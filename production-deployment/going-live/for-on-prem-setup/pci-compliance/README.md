@@ -1,5 +1,5 @@
 ---
-description: It's no rocket science
+description: Implement PCI compliant card vaulting to securely store tokenize and manage customer payment credentials for recurring and one-click payments
 icon: user-police-tie
 ---
 

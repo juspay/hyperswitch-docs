@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
   Understand how to place a hold on your customers' funds and capture them later
   either fully or partially and either in one-go or multiple times
 icon: transmission

@@ -1,5 +1,5 @@
 ---
-description: Authenticate payment methods using 3DS or other verification methods
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Authenticate

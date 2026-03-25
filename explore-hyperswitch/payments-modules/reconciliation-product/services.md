@@ -1,5 +1,5 @@
 ---
-description: Configure data ingestion and transformation services to automate reconciliation workflows
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 hidden: true
 ---
 # Services

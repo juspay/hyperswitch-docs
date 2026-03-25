@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Airborne is an open-source project by Juspay designed to help developers
   integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
   Native applications effortlessly.

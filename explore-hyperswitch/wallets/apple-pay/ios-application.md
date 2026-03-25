@@ -1,5 +1,5 @@
 ---
-description: Enable Apple pay on your iOS app
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 hidden: true
 icon: apple
 ---

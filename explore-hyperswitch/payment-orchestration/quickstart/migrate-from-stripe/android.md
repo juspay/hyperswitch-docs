@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your android app
+description: Configure Stripe as your payment processor to accept cards wallets and bank debits globally with comprehensive APIs
 ---
 
 # Android

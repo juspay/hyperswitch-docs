@@ -1,5 +1,5 @@
 ---
-description: Extend authorization hold periods beyond standard windows for manual capture
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: clock
 ---

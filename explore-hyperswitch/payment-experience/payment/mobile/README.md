@@ -1,5 +1,5 @@
 ---
-description: Implement mobile payment flows for iOS and Android applications
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 icon: mobile
 ---
 # Mobile

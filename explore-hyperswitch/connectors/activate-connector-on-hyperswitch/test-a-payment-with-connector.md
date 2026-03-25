@@ -1,5 +1,5 @@
 ---
-description: Test connector configuration using test cards and demo checkout pages
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: vial-circle-check
 ---
 # Try a Payment

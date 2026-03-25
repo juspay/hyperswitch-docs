@@ -1,5 +1,5 @@
 ---
-description: Implement native 3DS authentication for mobile payment transactions
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: star-shooting
 ---

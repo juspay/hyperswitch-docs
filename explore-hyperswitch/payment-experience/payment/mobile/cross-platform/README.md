@@ -1,5 +1,5 @@
 ---
-description: Implement cross-platform mobile payments using React Native SDK
+description: Configure React Native SDK to enable cross-platform mobile payments with platform-specific wallets card scanning and biometric security
 icon: layer-plus
 ---
 # Cross Platform

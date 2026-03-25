@@ -1,5 +1,5 @@
 ---
-description: Set up Hyperswitch SDK frontend for local development
+description: Set up Juspay Hyperswitch locally using Docker Compose to develop test and validate your payment integration before production
 icon: desktop
 ---
 # SDK (Frontend)

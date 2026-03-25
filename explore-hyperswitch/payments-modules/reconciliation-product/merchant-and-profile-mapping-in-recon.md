@@ -1,5 +1,5 @@
 ---
-description: Configure merchant and profile hierarchies to isolate reconciliation logic and access control
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Merchant & Profile Mapping in Recon

@@ -1,5 +1,5 @@
 ---
-description: Choose between embedded SDK library or standalone microservice deployment for payment processing
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Library Modes of Usage

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Integrate Juspay Hyperswitch SDK using individual payment widgets for granular
   control over your payment flow.
 icon: cubes

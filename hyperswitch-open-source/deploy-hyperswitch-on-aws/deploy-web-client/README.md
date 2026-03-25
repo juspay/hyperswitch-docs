@@ -1,5 +1,5 @@
 ---
-description: Deploy web client on the cloud
+description: Test your payment integration using sandbox environments dummy processors and test card numbers to verify functionality before going live
 ---
 
 # 🖥 Deploy web client

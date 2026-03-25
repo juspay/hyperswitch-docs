@@ -1,5 +1,5 @@
 ---
-description: Master Setup Recurring with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 ---
 
 # Setup Recurring

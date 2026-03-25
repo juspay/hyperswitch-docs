@@ -1,5 +1,5 @@
 ---
-description: Overview of payment service APIs for authorization capture refund and void operations
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

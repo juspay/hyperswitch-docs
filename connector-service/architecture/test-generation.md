@@ -1,4 +1,4 @@
 ---
-description: Generate tests automatically for connector adapters and SDK functionality
+description: Integrate and configure Test Generation to process payments through this connector with comprehensive API support
 ---
 

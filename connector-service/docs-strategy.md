@@ -1,5 +1,5 @@
 ---
-description: Explore Docs Strategy in Juspay Hyperswitch. Detailed documentation covering configuration, integration, and optimization strategies for merchants.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Documentation Strategy

@@ -1,5 +1,5 @@
 ---
-description: 'Hyperswitch: Open-Source Payments Platform by Juspay'
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: earth-asia
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0

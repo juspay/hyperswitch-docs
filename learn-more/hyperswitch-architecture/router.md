@@ -1,5 +1,5 @@
 ---
-description: Router service architecture for routing payment requests to connectors with type safety
+description: Enable secure payment tokenization to replace sensitive card data with tokens reducing PCI scope and enabling saved payment methods
 ---
 
 # Router

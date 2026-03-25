@@ -1,5 +1,5 @@
 ---
-description: Integrate external PCI vaults with Hyperswitch for secure payment storage
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: up-right-from-square
 ---
 # Self-Hosted Orchestration with external or third party PCI Vault

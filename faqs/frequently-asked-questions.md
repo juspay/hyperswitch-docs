@@ -1,5 +1,5 @@
 ---
-description: Get answers to common questions about Juspay Hyperswitch capabilities integration options and payment orchestration features
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Frequently Asked Questions

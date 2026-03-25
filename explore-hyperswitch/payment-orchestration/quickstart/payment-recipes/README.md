@@ -1,5 +1,5 @@
 ---
-description: Diversify your payments offering
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Use Protocol Buffer DSL for type-safe payment operations with compile-time validation
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Specs and DSL

@@ -1,5 +1,5 @@
 ---
-description: Implement recurring payment flows for subscription billing
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: arrows-rotate-reverse
 ---
 # Recurring payments

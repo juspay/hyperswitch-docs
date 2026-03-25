@@ -1,5 +1,5 @@
 ---
-description: Run additional services for complete local development environment
+description: Set up Juspay Hyperswitch locally using Docker Compose to develop test and validate your payment integration before production
 icon: arrows-to-circle
 ---
 # Run Additional Services

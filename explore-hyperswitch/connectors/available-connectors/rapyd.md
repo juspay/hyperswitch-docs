@@ -1,5 +1,5 @@
 ---
-description: Set up Rapyd to send and receive global payments faster with local payment method collection
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

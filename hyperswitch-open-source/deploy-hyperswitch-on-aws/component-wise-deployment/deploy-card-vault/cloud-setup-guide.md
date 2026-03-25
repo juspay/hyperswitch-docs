@@ -1,5 +1,5 @@
 ---
-description: Instructions to setup Card Vault on AWS manually
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 ---
 
 # Cloud setup guide

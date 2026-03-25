@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Create your Juspay Hyperswitch account and add a payment provider using Hyperswitch
   APIs through postman
 icon: rocket-launch

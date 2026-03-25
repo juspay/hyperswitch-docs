@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: arrows-rotate-reverse
 ---

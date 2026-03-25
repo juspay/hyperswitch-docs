@@ -1,5 +1,5 @@
 ---
-description: Integrate Shift4 for secure payment processing with reliable fast network and 24/7 support
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

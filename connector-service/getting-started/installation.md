@@ -1,5 +1,5 @@
 ---
-description: Install the SDK library in Node.js Python Java or PHP for your payment integration
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Installation

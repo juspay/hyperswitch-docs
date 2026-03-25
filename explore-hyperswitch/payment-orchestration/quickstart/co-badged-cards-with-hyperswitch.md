@@ -1,5 +1,5 @@
 ---
-description: Enable co-badged card support for local and global network flexibility
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: credit-card
 ---
 # Co-badged Cards

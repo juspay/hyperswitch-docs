@@ -1,5 +1,5 @@
 ---
-description: Connect Worldpay to accept online in-store and mobile payments with fraud protection included
+description: Integrate Worldpay to accept global payments with support for 200 plus markets and local payment methods
 hidden: true
 ---
 

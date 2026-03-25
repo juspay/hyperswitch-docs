@@ -1,5 +1,5 @@
 ---
-description: Deploy Juspay Hyperswitch enterprise edition using Terraform and Helm on Kubernetes clusters
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # Enterprise Deployment

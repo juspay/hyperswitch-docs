@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
   Best for merchants who do not want to handle card data and want to maintain
   their current integration with the processors.
 hidden: true

@@ -1,5 +1,5 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: almost-equal-to
 ---
 

@@ -1,4 +1,4 @@
 ---
-description: Technical guide for Glossary in Juspay Hyperswitch connector service. Architecture details, API specifications, and integration workflows explained.
+description: Understand Juspay Hyperswitch system architecture design patterns and component interactions to build scalable payment infrastructure
 ---
 

@@ -1,7 +1,7 @@
 ---
 hidden: true
 noIndex: true
-description: How to reduce payment processing fees and costs?
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Cost and Margin Optimization FAQs

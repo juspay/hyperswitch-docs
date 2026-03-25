@@ -1,5 +1,5 @@
 ---
-description: Set up unified local development environment using Docker
+description: Integrate Juspay Hyperswitch Run Juspay Hyperswitch Locally Using Docker to embed secure payment collection into your application
 icon: badge-check
 ---
 # Run Juspay Hyperswitch Locally Using Docker

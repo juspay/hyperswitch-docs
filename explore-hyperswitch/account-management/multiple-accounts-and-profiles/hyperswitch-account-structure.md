@@ -1,5 +1,5 @@
 ---
-description: Set up organization hierarchy with merchant accounts and business profiles
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: people-roof
 ---
 # Organization, Merchant and Profile Setup

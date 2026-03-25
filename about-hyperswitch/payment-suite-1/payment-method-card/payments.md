@@ -1,5 +1,5 @@
 ---
-description: Implement card payment processing with support for multiple networks
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: money-bills-simple
 ---
 # Payments

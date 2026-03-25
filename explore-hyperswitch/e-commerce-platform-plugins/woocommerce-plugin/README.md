@@ -1,5 +1,5 @@
 ---
-description: Juspay Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

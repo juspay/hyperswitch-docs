@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Setup Taxjar on Juspay Hyperswitch to automatically calculate tax in case of Express
   checkout wallets
 icon: filter-circle-dollar

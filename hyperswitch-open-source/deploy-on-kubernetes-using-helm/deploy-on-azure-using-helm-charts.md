@@ -1,5 +1,5 @@
 ---
-description: Learn about Deploy On Azure Using Helm Charts in Juspay Hyperswitch hyperswitch open source to optimize payment processing workflows and enhance transaction management capabilities.
+description: Manage Deploy on Azure Using Helm Charts to optimize your payment processing and enhance transaction capabilities
 ---
 
 # Deploy on Azure Using Helm Charts

@@ -1,5 +1,5 @@
 ---
-description: Complete guide for setting up Hyperswitch locally for development
+description: Set up Juspay Hyperswitch locally using Docker Compose to develop test and validate your payment integration before production
 hidden: true
 noIndex: true
 icon: desktop

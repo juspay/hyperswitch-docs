@@ -1,5 +1,5 @@
 ---
-description: Process Apple Pay transactions using merchant decryption for secure payments
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 hidden: true
 ---
 # In-App and Web Transactions Processed Using Merchant Decryption

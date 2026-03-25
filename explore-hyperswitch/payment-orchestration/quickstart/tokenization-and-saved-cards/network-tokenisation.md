@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
   Network Tokenization in Juspay Hyperswitch: Increase Security and Authorization Rates
   with Minimal Changes
 icon: shield-check

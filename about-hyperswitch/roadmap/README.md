@@ -1,5 +1,5 @@
 ---
-description: Jan '26 to March '26
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: road
 ---
 

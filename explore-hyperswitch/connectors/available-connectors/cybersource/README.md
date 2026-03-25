@@ -1,5 +1,5 @@
 ---
-description: Set up Cybersource for global enterprise payments with fraud management and tokenization
+description: Configure Cybersource as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Cybersource

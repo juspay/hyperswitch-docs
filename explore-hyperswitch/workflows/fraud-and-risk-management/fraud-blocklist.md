@@ -1,5 +1,5 @@
 ---
-description: Blocking card bins selectively based on observed fraudulent activity
+description: Set up fraud detection rules to identify suspicious transactions and prevent chargebacks before they occur
 icon: ban
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Enable OpenNode to accept Bitcoin payments and send payouts with instant settlement globally
+description: Configure payout processing to disburse funds to vendors sellers affiliates and service providers across multiple payment methods and currencies
 hidden: true
 ---
 

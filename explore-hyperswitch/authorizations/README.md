@@ -1,5 +1,5 @@
 ---
-description: Manage payment authorizations including incremental and extended holds
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: building-magnifying-glass
 ---
 # Authorizations

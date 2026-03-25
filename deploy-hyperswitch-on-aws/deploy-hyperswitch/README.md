@@ -1,5 +1,5 @@
 ---
-description: Deploy the Juspay Hyperswitch server on the cloud
+description: Test your payment integration using sandbox environments dummy processors and test card numbers to verify functionality before going live
 ---
 
 # 🗄 Deploy Hyperswitch

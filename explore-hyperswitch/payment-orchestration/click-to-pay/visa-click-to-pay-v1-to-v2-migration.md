@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Visa Click to Pay is evolving to provide a better checkout experience with
   enhanced security features and improved performance. This guide will help you
   migrate from V1 to V2 in less than 30 minutes.

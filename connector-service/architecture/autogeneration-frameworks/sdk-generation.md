@@ -1,5 +1,5 @@
 ---
-description: Generate idiomatic SDKs in Node.js Python Java Rust and Go from protobuf definitions
+description: Configure Authorize.Net to process card payments with robust fraud tools automated recurring billing and comprehensive reporting
 ---
 
 # SDK Generation

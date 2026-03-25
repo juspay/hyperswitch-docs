@@ -1,5 +1,5 @@
 ---
-description: Resolve expected exceptions by voiding invalid data or manually confirming missing counterparties
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Resolution Strategies for 'Expected' Exceptions

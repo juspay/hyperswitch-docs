@@ -1,6 +1,6 @@
 ---
 icon: sign-posts-wrench
-description: Plan your Juspay Hyperswitch enterprise deployment with guidance on topologies, environments, and critical infrastructure decisions
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # Deployment Overview

@@ -1,5 +1,5 @@
 ---
-description: Integrate lightweight iOS SDK for streamlined mobile payment acceptance
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: mobile-screen
 ---
 # Lite SDK

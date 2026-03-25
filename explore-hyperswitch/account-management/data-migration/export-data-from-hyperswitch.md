@@ -1,5 +1,5 @@
 ---
-description: Export payment data securely to PCI-compliant processors using PGP encryption
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 icon: left-from-bracket
 ---
 # Export data from Juspay Hyperswitch

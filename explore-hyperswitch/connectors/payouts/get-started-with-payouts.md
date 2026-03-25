@@ -1,5 +1,5 @@
 ---
-description: Configure payout processors and initiate fund transfers via API
+description: Configure payout processing to disburse funds to vendors sellers affiliates and service providers across multiple payment methods and currencies
 icon: flag-checkered
 ---
 # Getting Started with Payouts

@@ -1,5 +1,5 @@
 ---
-description: Complete PCI SAQ for on-premise production deployment compliance
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: clipboard-question
 ---
 # Completing the SAQ

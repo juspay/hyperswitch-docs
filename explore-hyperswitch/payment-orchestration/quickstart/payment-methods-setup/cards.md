@@ -1,5 +1,5 @@
 ---
-description: Accept debit and credit card payments on your application
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: credit-card
 ---
 

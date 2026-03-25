@@ -1,5 +1,5 @@
 ---
-description: Map processor error codes to customize retry logic and failure handling
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: signs-post
 ---
 # Processor error code mapping

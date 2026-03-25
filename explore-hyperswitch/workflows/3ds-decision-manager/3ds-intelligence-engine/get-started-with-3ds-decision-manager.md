@@ -1,5 +1,5 @@
 ---
-description: Use Rules to reduce cardholder friction on transactions
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: screwdriver-wrench
 ---
 

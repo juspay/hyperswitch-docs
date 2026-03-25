@@ -1,5 +1,5 @@
 ---
-description: SDK method details
+description: Integrate SDK Reference to embed secure payment collection into your web or mobile application seamlessly
 icon: chart-candlestick
 ---
 

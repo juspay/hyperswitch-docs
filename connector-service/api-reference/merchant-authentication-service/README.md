@@ -1,5 +1,5 @@
 ---
-description: Merchant authentication service for generating secure access and session tokens
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Merchant Authentication Service

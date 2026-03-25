@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Enable smart payment retry logic to automatically recover failed transactions through alternate processors and boost success rates
   Configure Juspay Hyperswitch Revenue Recovery to automatically retry failed
   recurring payments and reduce subscription churn for your SaaS business
 icon: clock-rotate-left

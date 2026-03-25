@@ -1,4 +1,4 @@
 ---
-description: Compliance framework with PCI DSS requirements for payment processing
+description: Understand Juspay Hyperswitch system architecture design patterns and component interactions to build scalable payment infrastructure
 ---
 

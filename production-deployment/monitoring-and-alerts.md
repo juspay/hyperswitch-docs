@@ -1,5 +1,5 @@
 ---
-description: Set up monitoring and alerting for production systems
+description: Set up monitoring and alerting to track system health detect anomalies and ensure payment reliability
 icon: monitor-waveform
 ---
 # Monitoring and Alerts

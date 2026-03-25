@@ -1,5 +1,5 @@
 ---
-description: Configure Volt to build global payment infrastructure and remove e-commerce transaction barriers
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Join the Juspay Hyperswitch Community
+description: Configure and implement Community to optimize your payment processing workflow and enhance transaction capabilities successfully
 ---
 
 # Community

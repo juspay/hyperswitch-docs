@@ -1,5 +1,5 @@
 ---
-description: Integrate payment method management SDK for vaulting and storage
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 # Payment Method Management SDK

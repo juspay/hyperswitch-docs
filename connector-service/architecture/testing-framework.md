@@ -1,4 +1,4 @@
 ---
-description: Master Testing Framework with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Integrate and configure Testing Framework to process payments through this connector with comprehensive API support
 ---
 

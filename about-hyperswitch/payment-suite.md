@@ -1,5 +1,5 @@
 ---
-description: Overview of the complete Hyperswitch payment suite capabilities
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 noIndex: true
 icon: suitcase

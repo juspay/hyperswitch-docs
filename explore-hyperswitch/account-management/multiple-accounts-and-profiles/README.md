@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Create multiple merchant accounts, profiles and users for seamless integration
   with your business.
 icon: file-user

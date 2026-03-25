@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up smart routing algorithms to optimize transaction success rates by directing payments to best-performing processors dynamically
   Fallback is a priority order of all the configured processors which is used to
   route traffic standalone or when other routing rules are not applicable.
 icon: shield-exclamation

@@ -1,5 +1,5 @@
 ---
-description: Get started integrating the Juspay Hyperswitch web client in your app
+description: Set up Customizable and Native Integrations to optimize your payment processing and enhance transaction capabilities
 hidden: true
 icon: puzzle-piece
 ---

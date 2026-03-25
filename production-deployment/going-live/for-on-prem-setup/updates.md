@@ -1,5 +1,5 @@
 ---
-description: Stay up to date with minimal maintenance effort!
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: recycle
 ---
 

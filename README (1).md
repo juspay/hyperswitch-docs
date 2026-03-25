@@ -1,5 +1,5 @@
 ---
-description: Overview of Hyperswitch documentation and getting started resources
+description: Configure Juspay Hyperswitch deployment on Kubernetes using Helm charts for orchestrated scalable container management and enhance transaction security with comprehensive payment method support
 icon: screwdriver-wrench
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0

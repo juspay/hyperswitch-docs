@@ -1,5 +1,5 @@
 ---
-description: Overview of payment method authentication APIs for 3DS and verification
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

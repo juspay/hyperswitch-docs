@@ -1,5 +1,5 @@
 ---
-description: Configure scaling and reliability for production workloads
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 icon: arrows-maximize
 ---
 # Scale and Reliability

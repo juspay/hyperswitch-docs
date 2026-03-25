@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy our production-ready K8s setup inside your stack
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Production ready deployment

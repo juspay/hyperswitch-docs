@@ -1,5 +1,5 @@
 ---
-description: Process payments using vaulted payment methods for secure transactions
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 hidden: true
 ---
 # Payment with Vault Flow

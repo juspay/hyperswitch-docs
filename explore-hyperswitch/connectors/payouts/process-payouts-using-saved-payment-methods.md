@@ -1,5 +1,5 @@
 ---
-description: Process payouts using vaulted payment tokens for recurring disbursements
+description: Configure intelligent payment routing rules to automatically direct transactions to optimal processors based on cost performance and geography
 icon: repeat
 ---
 # Payouts with Saved Payment Methods

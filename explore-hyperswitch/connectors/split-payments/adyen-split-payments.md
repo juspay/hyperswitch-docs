@@ -1,5 +1,5 @@
 ---
-description: Get started with Adyen Split Settlements via Juspay Hyperswitch
+description: Integrate Adyen to accept payments across 200 regions with unified APIs for cards wallets and local methods
 icon: space-awesome
 ---
 

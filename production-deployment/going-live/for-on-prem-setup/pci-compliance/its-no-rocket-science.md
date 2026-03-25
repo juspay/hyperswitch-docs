@@ -1,5 +1,5 @@
 ---
-description: Demystifying PCI compliance and it's requirements
+description: Implement PCI compliant card vaulting to securely store tokenize and manage customer payment credentials for recurring and one-click payments
 icon: cake-slice
 ---
 

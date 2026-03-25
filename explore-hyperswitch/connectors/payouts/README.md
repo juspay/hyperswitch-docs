@@ -1,5 +1,5 @@
 ---
-description: Swift and streamlined payout automation
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: file-invoice-dollar
 ---
 

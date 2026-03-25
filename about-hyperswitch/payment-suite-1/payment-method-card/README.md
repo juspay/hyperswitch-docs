@@ -1,5 +1,5 @@
 ---
-description: Configure card payment methods and processing workflows
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: hand-holding-circle-dollar
 ---
 # Payment Method (Card)

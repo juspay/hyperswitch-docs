@@ -1,5 +1,5 @@
 ---
-description: Set up MCP server for AI-powered payment operations
+description: Configure 3D Secure authentication to comply with Strong Customer Authentication requirements reduce fraud liability and improve authorization rates
 icon: user-robot-xmarks
 ---
 # Setup MCP Server

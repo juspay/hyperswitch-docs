@@ -1,5 +1,5 @@
 ---
-description: Create your Juspay Hyperswitch account and add a payment provider
+description: Test your payment integration using sandbox environments dummy processors and test card numbers to verify functionality before going live
 icon: wrench
 ---
 

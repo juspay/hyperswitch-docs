@@ -1,5 +1,5 @@
 ---
-description: Prism unified payment abstraction layer for 100+ connectors with multi-language SDKs
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 ## The Problem

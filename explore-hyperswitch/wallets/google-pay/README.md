@@ -1,5 +1,5 @@
 ---
-description: Set up Google pay on your application
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 icon: google
 ---
 

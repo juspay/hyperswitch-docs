@@ -1,5 +1,5 @@
 ---
-description: A brief summary of measures taken at Juspay Hyperswitch to ensure GDPR compliance
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 icon: compact-disc
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Integrate Zen payments portal to boost conversion with low fees and responsive checkout experience
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 hidden: true
 ---
 

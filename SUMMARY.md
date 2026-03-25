@@ -1,5 +1,5 @@
 ---
-description: Technical guide for Summary in Juspay Hyperswitch Hyperswitch. Architecture details, API specifications, and integration workflows explained.
+description: Configure Paypal as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Table of contents

@@ -1,5 +1,5 @@
 ---
-description: Understand Juspay Hyperswitch architecture to learn how the Router Scheduler and Locker components process payments securely at scale
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 icon: folder-tree
 ---
 

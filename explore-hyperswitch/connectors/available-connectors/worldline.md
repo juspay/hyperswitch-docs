@@ -1,5 +1,5 @@
 ---
-description: Set up Worldline for omnichannel payments including in-store online and mobile transactions
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

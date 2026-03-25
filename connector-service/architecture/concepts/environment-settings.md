@@ -1,5 +1,5 @@
 ---
-description: Configure development sandbox and production environments with separate credentials and endpoints
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Environment Settings

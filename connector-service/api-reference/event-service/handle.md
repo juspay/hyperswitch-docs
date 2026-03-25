@@ -1,5 +1,5 @@
 ---
-description: Master Handle with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Handle

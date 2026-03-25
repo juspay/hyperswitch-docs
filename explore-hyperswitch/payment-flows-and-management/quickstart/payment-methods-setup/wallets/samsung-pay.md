@@ -1,5 +1,5 @@
 ---
-description: Set up Samsung pay on your application
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Samsung Pay

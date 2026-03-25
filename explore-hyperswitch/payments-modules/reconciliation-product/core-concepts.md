@@ -1,5 +1,5 @@
 ---
-description: Documentation for Core Concepts in Juspay Hyperswitch. Covers technical implementation, configuration parameters, and operational best practices.
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Core Concepts

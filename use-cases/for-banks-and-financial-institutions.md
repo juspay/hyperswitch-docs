@@ -1,5 +1,5 @@
 ---
-description: Explore payment orchestration solutions for banks and financial institutions
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 noIndex: true
 icon: building-columns

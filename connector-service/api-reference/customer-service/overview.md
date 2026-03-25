@@ -1,5 +1,5 @@
 ---
-description: Overview of customer management APIs for creating and managing customer profiles
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

@@ -1,5 +1,5 @@
 ---
-description: Process card payments with full authorization and capture flows
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: money-bills-simple
 ---

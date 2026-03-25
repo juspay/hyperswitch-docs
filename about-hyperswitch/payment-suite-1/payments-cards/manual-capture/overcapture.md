@@ -1,5 +1,5 @@
 ---
-description: Enable overcapture to settle amounts exceeding original authorization
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 icon: chart-diagram
 ---
 # Overcapture

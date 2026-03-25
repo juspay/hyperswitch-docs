@@ -1,5 +1,5 @@
 ---
-description: Node to access the Juspay Hyperswitch API
+description: Implement recurring billing and subscription management to automate payment collections handle upgrades downgrades and manage customer lifecycles
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Enable Apple Pay for web and iOS with Touch ID and Face ID authentication
+description: Integrate digital wallets to offer Apple Pay Google Pay and express checkout options to customers
 icon: apple-pay
 ---
 

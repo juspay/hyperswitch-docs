@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure 3D Secure authentication to comply with Strong Customer Authentication requirements reduce fraud liability and improve authorization rates
   Use Rules and SCA exemptions to reduce cardholder friction on eligible
   transactions
 icon: chart-simple-horizontal

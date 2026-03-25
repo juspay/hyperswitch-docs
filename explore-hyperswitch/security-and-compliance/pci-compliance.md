@@ -1,5 +1,5 @@
 ---
-description: A brief summary of PCI compliance for Juspay Hyperswitch Cloud users
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: credit-card
 ---
 

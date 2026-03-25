@@ -1,5 +1,5 @@
 ---
-description: Set up Checkout.com for end-to-end payment processing with gateway acquirer and processor combined
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
   Use the standalone deployment script to deploy Juspay Hyperswitch control center on
   AWS quickly
 ---

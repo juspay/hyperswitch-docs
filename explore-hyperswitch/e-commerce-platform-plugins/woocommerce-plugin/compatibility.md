@@ -1,5 +1,5 @@
 ---
-description: List of all compatible WooCommerce plugins
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 ---
 
 # Compatibility

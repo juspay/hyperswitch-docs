@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Braintree as your payment processor to accept cards wallets and local payment methods globally
   This page is a central archive of Juspay Hyperswitch release notes. It summarises
   recent product updates.
 hidden: true

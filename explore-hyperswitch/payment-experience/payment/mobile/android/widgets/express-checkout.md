@@ -1,5 +1,5 @@
 ---
-description: Add express checkout widgets for one-click payments in Android apps
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: cart-shopping-fast
 ---
 # Express Checkout

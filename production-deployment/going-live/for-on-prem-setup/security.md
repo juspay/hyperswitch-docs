@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Juspay Hyperswitch
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 icon: lock-keyhole
 ---
 

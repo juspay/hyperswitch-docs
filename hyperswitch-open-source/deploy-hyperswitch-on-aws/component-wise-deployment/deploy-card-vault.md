@@ -1,5 +1,5 @@
 ---
-description: Deploy the Juspay Hyperswitch Card Vault on the cloud
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 ---
 
 # 🔐 Deploy card vault

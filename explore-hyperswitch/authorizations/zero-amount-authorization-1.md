@@ -1,5 +1,5 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: circle-0
 ---
 

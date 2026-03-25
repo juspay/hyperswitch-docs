@@ -1,5 +1,5 @@
 ---
-description: Choose between cloud and on-premise deployment models
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 icon: flux-capacitor
 ---
 # Deployment Models

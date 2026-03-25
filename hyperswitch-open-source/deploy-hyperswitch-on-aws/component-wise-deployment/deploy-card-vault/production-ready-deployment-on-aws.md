@@ -1,5 +1,5 @@
 ---
-description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 ---
 
 # Production ready deployment on AWS

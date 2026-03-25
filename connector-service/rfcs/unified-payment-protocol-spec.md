@@ -1,5 +1,5 @@
 ---
-description: Master Unified Payment Protocol Spec with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Deploy RFC Unified Payment Protocol UPP to optimize your payment processing and enhance transaction capabilities
 ---
 
 # RFC: Unified Payment Protocol (UPP)

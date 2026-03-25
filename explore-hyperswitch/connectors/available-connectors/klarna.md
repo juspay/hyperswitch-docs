@@ -1,5 +1,5 @@
 ---
-description: Enable Klarna to offer buy now pay later options with installment plans at checkout
+description: Enable Klarna to provide buy now pay later options with flexible installment plans at checkout
 hidden: true
 ---
 

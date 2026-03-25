@@ -1,5 +1,5 @@
 ---
-description: Complete reference for Js in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # JS

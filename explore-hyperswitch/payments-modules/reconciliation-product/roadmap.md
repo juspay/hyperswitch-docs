@@ -1,5 +1,5 @@
 ---
-description: Review upcoming Juspay Hyperswitch Reconciliation enhancements including AI-driven exception handling and advanced data management capabilities
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Juspay Hyperswitch Reconciliation Roadmap

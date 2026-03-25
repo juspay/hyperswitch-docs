@@ -1,5 +1,5 @@
 ---
-description: Generate regression tests automatically for all connectors from test specifications
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Test Generation

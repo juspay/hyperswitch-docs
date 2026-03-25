@@ -1,5 +1,5 @@
 ---
-description: Set up React Native SDK with Expo to integrate mobile payments in cross-platform apps
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
 icon: react
 ---
 # Expo integration

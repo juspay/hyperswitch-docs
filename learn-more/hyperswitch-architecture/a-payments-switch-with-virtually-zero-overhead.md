@@ -1,5 +1,5 @@
 ---
-description: Understand how Hyperswitch achieves virtually zero latency overhead in payment processing
+description: Use A Payments Switch with virtually zero overhead APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # A Payments Switch with virtually zero overhead

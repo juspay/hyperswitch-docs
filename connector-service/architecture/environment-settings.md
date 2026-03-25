@@ -1,4 +1,4 @@
 ---
-description: Configure sandbox and production environments for payment connector testing
+description: Integrate and configure Environment Settings to process payments through this connector with comprehensive API support
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Understand the engineering decisions behind building Prism a unified payment integration library
+description: Configure Why we built a Unified Payment Integration Library to optimize your payment processing and enhance transaction capabilities
 ---
 
 # Why we built a Unified Payment Integration Library?

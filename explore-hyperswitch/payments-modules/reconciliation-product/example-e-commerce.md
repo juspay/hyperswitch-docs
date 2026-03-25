@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
   Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify
   payments flow from your order system through PSPs to your bank accurately
 ---

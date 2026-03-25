@@ -1,5 +1,5 @@
 ---
-description: Setup custom domains
+description: Create reusable payment links to accept payments without website integration through shareable URLs sent via email SMS or messaging
 ---
 
 # Setup Custom Domain

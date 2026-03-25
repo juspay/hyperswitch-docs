@@ -1,5 +1,5 @@
 ---
-description: Enable automatic payment retries in Juspay Hyperswitch to recover failed transactions and boost authorization rates across multiple processors
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Smart Retries

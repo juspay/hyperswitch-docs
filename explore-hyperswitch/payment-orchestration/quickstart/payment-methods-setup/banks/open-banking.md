@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Account Verification and Payment Initiation Services using open banking
   providers
 ---

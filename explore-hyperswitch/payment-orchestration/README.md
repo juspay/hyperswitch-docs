@@ -1,5 +1,5 @@
 ---
-description: Orchestrate payments, payouts, and recurring billing across multiple processors
+description: Configure intelligent payment routing rules to automatically direct transactions to optimal processors based on cost performance and geography
 icon: arrow-progress
 ---
 # Payment Orchestration

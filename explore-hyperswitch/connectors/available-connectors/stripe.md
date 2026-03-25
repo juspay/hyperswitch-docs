@@ -1,5 +1,5 @@
 ---
-description: Configure Stripe to accept cards wallets and bank transfers with comprehensive payment APIs
+description: Configure Stripe as your payment processor to accept cards wallets and bank debits globally with comprehensive APIs
 ---
 
 # Stripe

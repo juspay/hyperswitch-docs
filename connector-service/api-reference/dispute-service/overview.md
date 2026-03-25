@@ -1,5 +1,5 @@
 ---
-description: Overview of dispute management APIs to handle chargebacks and retrieval requests
+description: Manage payment disputes chargebacks and retrieval requests through a centralized interface with automated notifications and evidence submission
 ---
 
 # Overview

@@ -1,5 +1,5 @@
 ---
-description: Enable automatic retry logic for failed payout transactions
+description: Configure Adyen as your payment processor to accept cards wallets and local payment methods globally
 icon: magnifying-glass-arrows-rotate
 ---
 # Smart Retries in Payout

@@ -1,5 +1,5 @@
 ---
-description: Integrate Braintree to accept PayPal and card payments with merchant account included
+description: Enable Braintree to accept PayPal cards and Venmo with comprehensive vault and recurring billing features
 hidden: true
 ---
 

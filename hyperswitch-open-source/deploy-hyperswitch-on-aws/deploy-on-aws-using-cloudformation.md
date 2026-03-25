@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy Juspay Hyperswitch into your AWS stack
+description: Integrate Deploy on AWS using CloudFormation to optimize your payment processing and enhance transaction capabilities
 icon: aws
 ---
 

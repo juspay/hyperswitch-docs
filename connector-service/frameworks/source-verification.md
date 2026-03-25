@@ -1,5 +1,5 @@
 ---
-description: Verify payment redirect sources with cryptographic signature validation
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Source Verification

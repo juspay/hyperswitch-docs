@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
   Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.

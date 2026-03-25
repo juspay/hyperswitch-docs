@@ -2,7 +2,7 @@
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
-description: Explore Juspay Hyperswitch capabilities to integrate multiple payment processors and optimize your payment infrastructure
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Exploration Guide

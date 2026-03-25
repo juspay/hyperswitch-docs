@@ -1,5 +1,5 @@
 ---
-description: Configure per-connector settings and request-level overrides for payment behavior
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Connector Settings and Overrides

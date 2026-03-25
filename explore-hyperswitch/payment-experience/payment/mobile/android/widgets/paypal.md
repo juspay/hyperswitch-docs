@@ -1,5 +1,5 @@
 ---
-description: Integrate PayPal widget for Android applications using Hyperswitch SDK
+description: Integrate PayPal to offer customers express checkout and pay later options across web and mobile
 icon: paypal
 ---
 # PayPal

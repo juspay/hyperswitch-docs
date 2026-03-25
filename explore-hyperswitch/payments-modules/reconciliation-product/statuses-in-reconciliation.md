@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
   Master all reconciliation statuses on Juspay Hyperswitch to track transaction
   progress from ingestion through final posting and resolve exceptions
   efficiently

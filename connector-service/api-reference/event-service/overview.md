@@ -1,5 +1,5 @@
 ---
-description: Learn about Overview in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

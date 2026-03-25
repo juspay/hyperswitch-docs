@@ -1,5 +1,5 @@
 ---
-description: Route transactions through processors based on volume distribution
+description: Set up smart routing algorithms to optimize transaction success rates by directing payments to best-performing processors dynamically
 icon: chart-simple
 ---
 

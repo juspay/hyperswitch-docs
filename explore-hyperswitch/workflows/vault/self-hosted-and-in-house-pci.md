@@ -1,5 +1,5 @@
 ---
-description: Deploy self-hosted vault infrastructure for in-house PCI compliance
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: box-ballot
 ---
 # Self-hosted & in-house PCI

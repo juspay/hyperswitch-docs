@@ -1,5 +1,5 @@
 ---
-description: Implement one-time, saved payment, and recurring payment flows via API
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: file-invoice-dollar
 ---
 # Payment

@@ -1,5 +1,5 @@
 ---
-description: Juspay Saleor Payment App Setup
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Setup

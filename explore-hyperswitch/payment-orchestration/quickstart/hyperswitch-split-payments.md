@@ -1,5 +1,5 @@
 ---
-description: Get started with Split Payments via Juspay Hyperswitch
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: split
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Connect Global Payments to process worldwide transactions with integrated acquiring services
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

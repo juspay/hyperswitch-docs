@@ -1,5 +1,5 @@
 ---
-description: Low-code solution to accept payments
+description: Create reusable payment links to accept payments without website integration through shareable URLs sent via email SMS or messaging
 icon: link
 ---
 

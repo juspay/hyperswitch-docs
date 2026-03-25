@@ -1,5 +1,5 @@
 ---
-description: Set up Billwerk+ Pay to access multiple acquirers and payment methods through one gateway
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

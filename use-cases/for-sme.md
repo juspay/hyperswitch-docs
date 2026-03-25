@@ -1,5 +1,5 @@
 ---
-description: Set up multi-processor payments for small businesses to reduce costs and increase conversion rates
+description: Configure intelligent payment routing rules to automatically direct transactions to optimal processors based on cost performance and geography
 hidden: true
 noIndex: true
 ---

@@ -1,5 +1,5 @@
 ---
-description: Assign roles and permission to users
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 icon: screen-users
 ---
 

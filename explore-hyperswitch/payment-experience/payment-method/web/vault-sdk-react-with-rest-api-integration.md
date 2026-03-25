@@ -1,5 +1,5 @@
 ---
-description: Integrate vault SDK with React to securely store customer payment methods
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: rocket-vertical
 ---
 # Vault SDK Integration

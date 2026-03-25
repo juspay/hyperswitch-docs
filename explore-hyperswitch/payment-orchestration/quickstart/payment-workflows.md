@@ -1,5 +1,5 @@
 ---
-description: Configure composable payment workflows for vertical SaaS platforms
+description: Configure Authorize.Net to process card payments with robust fraud tools automated recurring billing and comprehensive reporting
 icon: code-compare
 ---
 # Supported Payment Workflows

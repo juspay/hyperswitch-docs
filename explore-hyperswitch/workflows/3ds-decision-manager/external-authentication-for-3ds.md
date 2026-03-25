@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
   Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
   authorize the payment with any payment provider (PSP).
 icon: up-right-from-square

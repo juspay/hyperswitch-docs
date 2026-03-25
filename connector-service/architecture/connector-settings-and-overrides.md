@@ -1,4 +1,4 @@
 ---
-description: Configure connector-specific settings and override payment behavior per request
+description: Integrate and configure Connector Settings And Overrides to process payments through this connector with comprehensive API support
 ---
 

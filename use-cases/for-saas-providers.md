@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Configure intelligent payment routing rules to automatically direct transactions to optimal processors based on cost performance and geography
 hidden: true
 noIndex: true
 icon: desktop

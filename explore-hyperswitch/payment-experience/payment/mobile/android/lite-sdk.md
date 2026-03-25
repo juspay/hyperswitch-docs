@@ -1,5 +1,5 @@
 ---
-description: Integrate Juspay Hyperswitch Lite SDK to your Kotlin App
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: mobile-screen
 ---
 

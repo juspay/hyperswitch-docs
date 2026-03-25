@@ -1,4 +1,4 @@
 ---
-description: Learn about Specs And Dsl in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Integrate and configure Specs And Dsl to process payments through this connector with comprehensive API support
 ---
 

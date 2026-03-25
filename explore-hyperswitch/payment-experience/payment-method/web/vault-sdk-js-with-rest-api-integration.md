@@ -1,5 +1,5 @@
 ---
-description: Implement vault SDK with JavaScript to securely store payment methods
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: globe-pointer
 ---
 # Vault SDK - JS with REST API Integration

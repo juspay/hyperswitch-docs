@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Enable Deploy on Local using Helm Charts and Minikube to optimize your payment processing and enhance transaction capabilities
   A step-by-step guide to deploying Juspay Hyperswitch locally using Helm and Minikube,
   with setup, access, cleanup, and troubleshooting instructions.
 ---

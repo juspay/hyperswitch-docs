@@ -1,4 +1,4 @@
 ---
-description: Technical guide for Integrity in Juspay Hyperswitch connector service. Architecture details, API specifications, and integration workflows explained.
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 

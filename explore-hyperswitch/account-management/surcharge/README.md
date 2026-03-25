@@ -1,5 +1,5 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: Configure payment surcharges to pass processing fees to customers based on card type and region
 icon: clipboard-list-check
 ---
 

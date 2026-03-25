@@ -1,5 +1,5 @@
 ---
-description: Connect Airwallex to enable cross-border payments with multi-currency support and FX management
+description: Set up comprehensive fraud detection rules to identify suspicious transactions prevent chargebacks and protect your business from financial losses
 hidden: true
 ---
 

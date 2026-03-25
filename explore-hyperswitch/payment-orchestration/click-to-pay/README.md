@@ -1,5 +1,5 @@
 ---
-description: Integrate Click to Pay with passkey authentication for streamlined checkout
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: chevrons-right
 ---
 # Click To Pay

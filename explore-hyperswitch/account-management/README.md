@@ -1,6 +1,6 @@
 ---
 icon: joystick
-description: Manage payment operations efficiently with Juspay Hyperswitch Control Center for streamlined workflows and real-time analytics
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 ---
 
 # Payment Operations

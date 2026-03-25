@@ -1,5 +1,5 @@
 ---
-description: Multi-region deployment topologies for Juspay Hyperswitch including Active-Active and Active-Passive setups for high availability
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 ---
 
 # Deployment Topologies

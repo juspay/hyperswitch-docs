@@ -1,5 +1,5 @@
 ---
-description: Configure identity and access management for secure user authentication
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 icon: id-card-clip
 ---
 # Identity and Access Management

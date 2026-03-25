@@ -1,5 +1,5 @@
 ---
-description: Create your Juspay Hyperswitch account and add a payment provider
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # 🔧 Account setup

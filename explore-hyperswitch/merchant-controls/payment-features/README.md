@@ -1,6 +1,6 @@
 ---
 icon: sparkles
-description: Explore Juspay Hyperswitch payment features across web and mobile platforms with secure checkout and PCI-compliant SDK capabilities
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Payment Features

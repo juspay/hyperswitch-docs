@@ -1,5 +1,5 @@
 ---
-description: Generate API reference documentation automatically from protobuf definitions
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Documentation Generation

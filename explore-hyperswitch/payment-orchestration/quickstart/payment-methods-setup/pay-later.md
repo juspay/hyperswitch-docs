@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Juspay Hyperswitch
+description: Configure Klarna as your payment processor to accept cards wallets and local payment methods globally
 icon: calendar-day
 ---
 

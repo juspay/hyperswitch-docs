@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Manage payment disputes chargebacks and retrieval requests through a centralized interface with automated notifications and evidence submission
   Use Juspay Hyperswitch's unified Disputes module to track and manage disputes across
   multiple processors
 icon: circle-exclamation

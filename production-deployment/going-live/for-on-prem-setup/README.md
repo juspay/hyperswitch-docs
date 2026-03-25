@@ -1,5 +1,5 @@
 ---
-description: Prepare on-premise infrastructure for production deployment
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: clipboard-question
 ---
 # For On-Prem Setup

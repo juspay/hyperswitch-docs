@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Common payment augmentation patterns for FinTech enterprises, from adding
   processors to improving routing, vaulting, and operational visibility.
 icon: watch-calculator

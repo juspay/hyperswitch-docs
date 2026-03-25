@@ -1,5 +1,5 @@
 ---
-description: Integrate Google Pay widget for Android applications using Hyperswitch SDK
+description: Test your payment integration using sandbox environments dummy processors and test card numbers to verify functionality before going live
 icon: google
 ---
 # Google Pay

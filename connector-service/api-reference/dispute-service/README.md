@@ -1,5 +1,5 @@
 ---
-description: Master Readme with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+description: Manage payment disputes chargebacks and retrieval requests through a centralized interface with automated notifications and evidence submission
 ---
 
 # Dispute Service

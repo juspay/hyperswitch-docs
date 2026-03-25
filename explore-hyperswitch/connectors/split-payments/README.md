@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Unify your marketplace settlement logic across multiple processors through a
   single configuration.
 icon: split

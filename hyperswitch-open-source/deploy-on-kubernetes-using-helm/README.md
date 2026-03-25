@@ -1,5 +1,5 @@
 ---
-description: Install Juspay Hyperswitch on your K8s setup using our Helm charts
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: dharmachakra
 ---
 

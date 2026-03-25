@@ -1,5 +1,5 @@
 ---
-description: Deploy intelligent routing engine on your infrastructure for custom routing logic
+description: Set up smart routing algorithms to optimize transaction success rates by directing payments to best-performing processors dynamically
 icon: screwdriver-wrench
 ---
 # Self-Deployment Guide

@@ -1,5 +1,5 @@
 ---
-description: Connector service architecture with multi-language SDKs and unified payment processing
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Architecture Overview
@@ -8,7 +8,7 @@ description: Connector service architecture with multi-language SDKs and unified
 
 <!-- 
 title: Architecture Overview
-description: How Prism library is architected for multi-language SDKs and unified payment processing
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 last_updated: 2026-03-03
 generated_from: N/A
 auto_generated: false

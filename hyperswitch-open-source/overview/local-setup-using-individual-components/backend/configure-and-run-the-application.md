@@ -1,5 +1,5 @@
 ---
-description: Configure and run Hyperswitch backend application locally
+description: Use Configure and Run the Application APIs to manage payments programmatically with REST endpoints and JSON responses
 icon: panel-ews
 ---
 # Configure and Run the Application

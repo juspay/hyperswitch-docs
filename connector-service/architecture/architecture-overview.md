@@ -1,5 +1,5 @@
 ---
-description: Learn about Architecture Overview in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+description: Integrate and configure Architecture Overview to process payments through this connector with comprehensive API support
 ---
 
 # Architecture Overview

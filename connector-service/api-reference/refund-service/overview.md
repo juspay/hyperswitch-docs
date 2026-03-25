@@ -1,5 +1,5 @@
 ---
-description: Explore Overview in Juspay Hyperswitch. Detailed documentation covering configuration, integration, and optimization strategies for merchants.
+description: Explore Juspay Hyperswitch overview to understand core capabilities architecture and how to integrate payments into your application
 ---
 
 # Overview

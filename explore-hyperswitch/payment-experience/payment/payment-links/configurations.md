@@ -1,5 +1,5 @@
 ---
-description: Configure Payment Links UI
+description: Implement PCI compliant card vaulting to securely store tokenize and manage customer payment credentials for recurring and one-click payments
 ---
 
 # Configurations

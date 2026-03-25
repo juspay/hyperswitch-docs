@@ -1,6 +1,6 @@
 ---
 icon: rocket-launch
-description: Complete the Juspay Hyperswitch go-live checklist to ensure your credentials webhooks and compliance requirements are production-ready before launch
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 ---
 
 # Going Live

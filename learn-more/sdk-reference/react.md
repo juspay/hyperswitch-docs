@@ -1,5 +1,5 @@
 ---
-description: Technical guide for React in Juspay Hyperswitch learn more. Architecture details, API specifications, and integration workflows explained.
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # React

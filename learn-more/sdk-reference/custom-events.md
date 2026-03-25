@@ -1,5 +1,5 @@
 ---
-description: Master Custom Events with Juspay Hyperswitch learn more. Technical documentation for developers implementing payment orchestration solutions.
+description: Set up Checkout.com to accept global payments with advanced fraud detection real-time analytics and comprehensive payment method support
 ---
 
 # Custom Events

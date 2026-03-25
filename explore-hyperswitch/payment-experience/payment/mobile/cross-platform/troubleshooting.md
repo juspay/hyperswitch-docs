@@ -1,5 +1,5 @@
 ---
-description: Fix common issues with Android browser dependencies and iOS SDK integration
+description: Set up Checkout.com to accept global payments with advanced fraud detection real-time analytics and comprehensive payment method support
 ---
 
 # Troubleshooting

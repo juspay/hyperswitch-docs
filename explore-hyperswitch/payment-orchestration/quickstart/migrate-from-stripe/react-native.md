@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your react native app
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
 ---
 
 # React Native

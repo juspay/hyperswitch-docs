@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your react native app
+description: Set up React Native SDK to enable cross platform mobile payments with platform specific wallets
 icon: react
 ---
 

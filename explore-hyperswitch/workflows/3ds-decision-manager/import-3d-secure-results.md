@@ -1,5 +1,5 @@
 ---
-description: Process payments when 3D Secure runs outside Juspay Hyperswitch
+description: Configure 3D Secure authentication to comply with Strong Customer Authentication requirements reduce fraud liability and improve authorization rates
 icon: shield-slash
 ---
 

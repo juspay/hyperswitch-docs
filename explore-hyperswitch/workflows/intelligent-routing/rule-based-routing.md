@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Route transaction through processors with advanced rules on the basis of
   various payment parameters
 icon: ruler

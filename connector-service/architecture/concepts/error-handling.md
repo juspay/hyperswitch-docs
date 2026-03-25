@@ -1,5 +1,5 @@
 ---
-description: Complete reference for Error Handling in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Error Handling

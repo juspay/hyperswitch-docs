@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
   Automatically retry failed non-3DS payments by stepping them up to 3DS
   authentication
 hidden: true

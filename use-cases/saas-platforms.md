@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: desktop
 ---
 

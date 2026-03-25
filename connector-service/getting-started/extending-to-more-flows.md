@@ -1,5 +1,5 @@
 ---
-description: Complete reference for Extending To More Flows in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+description: Configure Authorize.Net to process card payments with robust fraud tools automated recurring billing and comprehensive reporting
 ---
 
 # Extending to More Flows

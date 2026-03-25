@@ -1,5 +1,5 @@
 ---
-description: Documentation for Code Generation in Juspay Hyperswitch. Covers technical implementation, configuration parameters, and operational best practices.
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Code Generation

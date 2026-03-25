@@ -1,5 +1,5 @@
 ---
-description: Configure dLocal to accept local payment methods across Latin America APAC and MENA regions
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

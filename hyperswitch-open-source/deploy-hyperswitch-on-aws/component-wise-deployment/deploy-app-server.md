@@ -1,5 +1,5 @@
 ---
-description: Deploy the Juspay Hyperswitch server on the cloud
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 icon: server
 ---
 

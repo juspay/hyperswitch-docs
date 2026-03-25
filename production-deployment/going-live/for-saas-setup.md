@@ -1,6 +1,6 @@
 ---
 icon: gift
-description: Complete the Juspay Hyperswitch go-live checklist for SaaS deployment to ensure production readiness and secure payment processing
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # For SaaS Setup

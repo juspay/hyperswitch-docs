@@ -1,5 +1,5 @@
 ---
-description: Explore Readme in Juspay Hyperswitch. Detailed documentation covering configuration, integration, and optimization strategies for merchants.
+description: Use REST APIs to programmatically manage payments process refunds handle webhooks and integrate payment capabilities into your backend systems
 ---
 
 # Refund Service

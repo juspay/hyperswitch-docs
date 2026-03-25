@@ -1,5 +1,5 @@
 ---
-description: Connect PayU to process online payments across multiple integrated payment methods
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 ---
 
 # PayU

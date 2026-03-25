@@ -1,6 +1,6 @@
 ---
 icon: books
-description: Upload and process payment processor fee reports on Juspay Hyperswitch Cost Observability to visualize costs and identify savings opportunities
+description: Configure Adyen as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Uploading Fee Reports for Analysis

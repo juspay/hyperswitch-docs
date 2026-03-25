@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Juspay Hyperswitch-node
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: html5
 ---
 

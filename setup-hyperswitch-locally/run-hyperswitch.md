@@ -1,5 +1,5 @@
 ---
-description: Set up Juspay Hyperswitch locally using Docker to start processing payments in under 15 minutes
+description: Set up Juspay Hyperswitch locally using Docker Compose to develop test and validate your payment integration before production
 ---
 
 # Run Juspay Hyperswitch

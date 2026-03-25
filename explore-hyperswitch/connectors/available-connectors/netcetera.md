@@ -1,5 +1,5 @@
 ---
-description: Payments authentication through Netcetera via Juspay Hyperswitch
+description: Configure 3D Secure authentication to comply with Strong Customer Authentication requirements reduce fraud liability and improve authorization rates
 ---
 
 # Netcetera

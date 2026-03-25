@@ -1,5 +1,5 @@
 ---
-description: Configure ACI Worldwide to process omni-channel payments with fraud management capabilities
+description: Set up comprehensive fraud detection rules to identify suspicious transactions prevent chargebacks and protect your business from financial losses
 hidden: true
 ---
 

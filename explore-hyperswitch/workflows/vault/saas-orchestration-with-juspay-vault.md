@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
   Leverage the integrated vault that comes with Juspay Hyperswitch Orchestration
   account to store cards
 icon: box-circle-check

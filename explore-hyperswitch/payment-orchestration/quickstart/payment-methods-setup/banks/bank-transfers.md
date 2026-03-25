@@ -1,5 +1,5 @@
 ---
-description: Bank Transfer payment methods
+description: Set up bank transfer methods to accept ACH SEPA and direct debit payments from customer accounts
 ---
 
 # Bank Transfers

@@ -1,4 +1,4 @@
 ---
-description: Ensure data integrity with checksums and verification for payment transactions
+description: Understand Juspay Hyperswitch system architecture design patterns and component interactions to build scalable payment infrastructure
 ---
 

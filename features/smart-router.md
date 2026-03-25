@@ -1,5 +1,5 @@
 ---
-description: Configure intelligent payment routing rules in Juspay Hyperswitch to optimize for cost speed and success rates across multiple processors
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Smart Router

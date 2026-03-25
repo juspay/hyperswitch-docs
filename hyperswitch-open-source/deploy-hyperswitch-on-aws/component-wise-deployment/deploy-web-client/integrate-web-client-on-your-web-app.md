@@ -1,5 +1,5 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Integrate web client on your web app

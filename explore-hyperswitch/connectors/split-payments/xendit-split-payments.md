@@ -1,5 +1,5 @@
 ---
-description: Configure Xendit split settlements to distribute payments across multiple accounts
+description: Implement payment routing logic to distribute transactions across multiple processors for redundancy cost optimization and improved success
 icon: hexagon-xmark
 ---
 # Xendit Split Settlement

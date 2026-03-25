@@ -1,5 +1,5 @@
 ---
-description: Create session tokens for authenticated user sessions in the payment flow
+description: Use Create Session Token APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Create Session Token

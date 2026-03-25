@@ -1,5 +1,5 @@
 ---
-description: Understand V2 improvements including N-way matching and enhanced accounting capabilities
+description: Set up automated reconciliation to match transactions across PSPs banks and internal systems to identify and resolve discrepancies quickly
 hidden: true
 ---
 # Why we evolved(V1 vs V2)

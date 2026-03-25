@@ -1,5 +1,5 @@
 ---
-description: Hardware and software requirements for deploying Juspay Hyperswitch in production environments with PCI compliance
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 ---
 
 # System Requirements

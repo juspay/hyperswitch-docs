@@ -1,5 +1,5 @@
 ---
-description: Juspay Hyperswitch roadmap (Apr to Jun'25)
+description: Implement Previous Roadmap - Q2 2025 to optimize your payment processing and enhance transaction capabilities
 icon: road
 ---
 

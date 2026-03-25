@@ -1,5 +1,5 @@
 ---
-description: Defend a dispute by submitting evidence to challenge the chargeback claim
+description: Manage payment disputes chargebacks and retrieval requests through a centralized interface with automated notifications and evidence submission
 ---
 
 # Defend

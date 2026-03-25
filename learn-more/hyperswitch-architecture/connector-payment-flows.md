@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Configure Authorize.Net to process card payments with robust fraud tools automated recurring billing and comprehensive reporting
   This page outlines the various payment flows you may come across while
   building a connector.
 ---

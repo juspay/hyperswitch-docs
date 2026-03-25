@@ -1,5 +1,5 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: magnifying-glass-arrows-rotate
 ---
 

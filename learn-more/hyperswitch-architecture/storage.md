@@ -1,5 +1,5 @@
 ---
-description: Learn about Storage in Juspay Hyperswitch learn more to optimize payment processing workflows and enhance transaction management capabilities.
+description: Understand Juspay Hyperswitch system architecture design patterns and component interactions to build scalable payment infrastructure
 ---
 
 # Storage

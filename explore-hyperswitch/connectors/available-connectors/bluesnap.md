@@ -1,5 +1,5 @@
 ---
-description: Configure BlueSnap to accept global online payments with subscription billing support
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
   A brief summary of Juspay Hyperswitch infrastructure ensuring compliance and data
   privacy
 icon: arrow-down-up-lock

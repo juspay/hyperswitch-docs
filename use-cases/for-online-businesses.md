@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for your online business
+description: Enable secure payment tokenization to replace sensitive card data with tokens reducing PCI scope and enabling saved payment methods
 hidden: true
 noIndex: true
 ---

@@ -1,5 +1,5 @@
 ---
-description: Embed white-labeled connector configuration components into your application
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 icon: laptop-code
 ---
 # Embeddable Components

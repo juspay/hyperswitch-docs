@@ -1,5 +1,5 @@
 ---
-description: Create Payment Links
+description: Use Create Payment Links APIs to manage payments programmatically with REST endpoints and JSON responses
 ---
 
 # Create Payment Links

@@ -1,5 +1,5 @@
 ---
-description: Quickly deploy your web client playground and see it in action
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # Playground deployment for prototyping (optional)

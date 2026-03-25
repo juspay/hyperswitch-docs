@@ -1,5 +1,5 @@
 ---
-description: Configure backend server to handle payment sessions and authentication
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: server
 ---
 # Server Setup

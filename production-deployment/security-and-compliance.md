@@ -1,6 +1,6 @@
 ---
 icon: shield-check
-description: Implement security controls and compliance measures for your Juspay Hyperswitch production deployment to protect sensitive payment data
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 ---
 
 # Security and Compliance

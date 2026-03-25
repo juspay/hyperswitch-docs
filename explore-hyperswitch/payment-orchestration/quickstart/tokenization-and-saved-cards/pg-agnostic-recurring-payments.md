@@ -1,5 +1,5 @@
 ---
-description: Make recurring payments across processors
+description: Enable card processing to accept Visa Mastercard Amex and other major credit and debit cards
 hidden: true
 icon: arrows-repeat
 ---

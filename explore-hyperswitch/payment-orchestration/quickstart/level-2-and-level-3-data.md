@@ -1,5 +1,5 @@
 ---
-description: Include Level 2 and Level 3 enhanced data in payment requests to reduce interchange costs on commercial cards
+description: Follow the quickstart guide to rapidly integrate Juspay Hyperswitch configure your first connector and test payment processing
 ---
 
 # Level 2 and Level 3 data

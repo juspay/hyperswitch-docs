@@ -1,5 +1,5 @@
 ---
-description: Implement 3D Secure authentication for enhanced payment security
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 icon: shield-check
 ---

@@ -1,5 +1,5 @@
 ---
-description: Start accepting one-time payments with Hyperswitch integration in minutes
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: bolt
 ---
 # Accept Payments

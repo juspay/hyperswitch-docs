@@ -1,5 +1,5 @@
 ---
-description: Configure SMTP server integration for email notifications
+description: Implement security controls and compliance measures to protect sensitive payment data and meet PCI DSS
 icon: at
 ---
 # SMTP Server Integration

@@ -1,5 +1,5 @@
 ---
-description: Visibility and control over your application
+description: Set up monitoring and alerting to track system health detect anomalies and ensure payment reliability
 icon: eyes
 ---
 

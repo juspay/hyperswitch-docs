@@ -1,5 +1,5 @@
 ---
-description: Configure multi-tenant architecture for isolated business unit management
+description: Implement security controls encryption and compliance measures to protect sensitive payment data and meet PCI DSS requirements
 icon: cubes-stacked
 ---
 # Multi-Tenancy

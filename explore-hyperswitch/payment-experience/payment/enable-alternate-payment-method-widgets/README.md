@@ -1,5 +1,5 @@
 ---
-description: Enable alternate payment method widgets to offer customers local and wallet payment options
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 icon: bolt-lightning
 ---
 # Alternate Payment Method Widgets

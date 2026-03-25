@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
   Server to Server tokenization with Juspay Hyperswitch Vault Service for PCI compliant
   merchants
 hidden: true

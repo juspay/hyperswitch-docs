@@ -1,5 +1,5 @@
 ---
-description: Process payments using tokens from external vault providers
+description: Implement PCI compliant card vaulting to securely store payment credentials for recurring and one click payments
 icon: money-bill-wave
 ---
 # Processing payments with external vault

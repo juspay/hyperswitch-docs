@@ -1,5 +1,5 @@
 ---
-description: Import payment method data from existing processors using encrypted CSV files
+description: Configure Paypal as your payment processor to accept cards wallets and local payment methods globally
 icon: right-from-bracket
 ---
 # Import data to Juspay Hyperswitch

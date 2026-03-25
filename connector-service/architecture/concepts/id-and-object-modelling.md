@@ -1,5 +1,5 @@
 ---
-description: Unified ID system with strongly-typed identifiers for payment customer and refund entities
+description: Configure Stripe as your payment processor to accept cards wallets and local payment methods globally
 ---
 
 # ID and Object Modeling

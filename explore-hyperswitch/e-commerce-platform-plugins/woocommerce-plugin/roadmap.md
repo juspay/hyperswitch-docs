@@ -1,5 +1,5 @@
 ---
-description: Roadmap for Woocommerce plugin
+description: Configure Checkout as your payment processor to accept cards wallets and local payment methods globally
 hidden: true
 ---
 

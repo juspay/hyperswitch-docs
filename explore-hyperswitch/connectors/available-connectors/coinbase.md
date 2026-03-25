@@ -1,5 +1,5 @@
 ---
-description: Enable Coinbase Commerce to accept cryptocurrency payments with multi-asset support
+description: Access comprehensive payment analytics dashboards to monitor transaction volumes success rates revenue trends and business performance metrics
 hidden: true
 ---
 

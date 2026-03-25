@@ -1,4 +1,4 @@
 ---
-description: Explore Error Mapping in Juspay Hyperswitch. Detailed documentation covering configuration, integration, and optimization strategies for merchants.
+description: Integrate and configure Error Mapping to process payments through this connector with comprehensive API support
 ---
 
