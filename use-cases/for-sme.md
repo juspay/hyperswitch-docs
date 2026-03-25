@@ -1,5 +1,5 @@
 ---
-description: Integrate multi-processor payments for SMEs to reduce costs and boost conversion rates with Juspay Hyperswitch
+description: Set up multi-processor payments for small businesses to reduce costs and increase conversion rates
 hidden: true
 noIndex: true
 ---

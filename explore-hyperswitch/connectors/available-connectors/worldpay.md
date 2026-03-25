@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Worldpay via Juspay Hyperswitch
+description: Connect Worldpay to accept online in-store and mobile payments with fraud protection included
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Guide to Resolution Strategies For Mismatched Exceptions for Juspay Hyperswitch explore hyperswitch. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Fix mismatched reconciliation exceptions by editing creating or replacing data entries
 ---
 
 # Resolution Strategies for Mismatched Exceptions

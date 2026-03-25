@@ -1,4 +1,4 @@
 ---
-description: Reference documentation for Compliance in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Compliance framework with PCI DSS requirements for payment processing
 ---
 

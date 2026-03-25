@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Library Modes Of Usage for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Choose between embedded SDK library or standalone microservice deployment for payment processing
 ---
 
 # Library Modes of Usage

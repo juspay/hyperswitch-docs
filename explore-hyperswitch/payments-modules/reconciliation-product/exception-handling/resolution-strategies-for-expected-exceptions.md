@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Resolution Strategies For Expected Exceptions for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Resolve expected exceptions by voiding invalid data or manually confirming missing counterparties
 ---
 
 # Resolution Strategies for 'Expected' Exceptions

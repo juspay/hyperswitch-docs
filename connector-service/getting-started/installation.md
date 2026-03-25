@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Installation using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Install the SDK library in Node.js Python Java or PHP for your payment integration
 ---
 
 # Installation

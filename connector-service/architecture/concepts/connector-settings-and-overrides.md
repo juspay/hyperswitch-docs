@@ -1,5 +1,5 @@
 ---
-description: Guide to Connector Settings And Overrides for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Configure per-connector settings and request-level overrides for payment behavior
 ---
 
 # Connector Settings and Overrides

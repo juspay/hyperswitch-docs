@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Versioning in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Semantic versioning strategy for SDK releases with compatibility guarantees
 ---
 
 # Versioning

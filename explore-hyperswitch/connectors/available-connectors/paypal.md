@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Paypal via Juspay Hyperswitch
+description: Integrate PayPal to offer secure checkout with buyer protection and global wallet payments
 hidden: true
 ---
 

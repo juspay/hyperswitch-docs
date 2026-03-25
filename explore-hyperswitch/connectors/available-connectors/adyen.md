@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Adyen via Juspay Hyperswitch
+description: Set up Adyen to accept global card payments with local payment method support across 30+ countries
 ---
 
 # Adyen

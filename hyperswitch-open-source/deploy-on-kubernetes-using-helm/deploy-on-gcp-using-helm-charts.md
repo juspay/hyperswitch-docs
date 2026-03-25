@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Deploy On Gcp Using Helm Charts in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Deploy full Hyperswitch stack on Google Cloud Platform using Kubernetes and Helm charts
 ---
 
 # Deploy on GCP Using Helm Charts

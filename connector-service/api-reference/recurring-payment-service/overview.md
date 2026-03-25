@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Overview using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Overview of recurring payment APIs for subscription and stored credential charges
 ---
 
 # Overview

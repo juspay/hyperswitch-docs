@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Authorizedotnet via Juspay Hyperswitch
+description: Configure Authorize.Net to accept US credit cards and e-check payments through your website
 hidden: true
 ---
 

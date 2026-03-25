@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Overview in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Connector service architecture with multi-language SDKs and unified payment processing
 ---
 
 # Architecture Overview

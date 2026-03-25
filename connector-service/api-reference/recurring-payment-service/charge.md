@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Charge in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Charge a previously authorized payment or create a new recurring payment
 ---
 
 # Charge

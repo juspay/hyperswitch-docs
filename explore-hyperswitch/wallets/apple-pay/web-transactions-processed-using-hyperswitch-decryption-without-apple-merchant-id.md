@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Web Transactions Processed Using Hyperswitch Decryption Without Apple Merchant Id using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Configure Apple Pay web payments with Hyperswitch handling token decryption internally
 ---
 
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)

@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Recommended Tooling Stack for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Recommended tooling stack for production deployments with Terraform Kubernetes and ArgoCD
 ---
 
 # Recommended Tooling Stack

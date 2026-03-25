@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Shift4 via Juspay Hyperswitch
+description: Integrate Shift4 for secure payment processing with reliable fast network and 24/7 support
 hidden: true
 ---
 

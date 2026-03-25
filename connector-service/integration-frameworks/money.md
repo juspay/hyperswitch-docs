@@ -1,4 +1,4 @@
 ---
-description: Comprehensive guide to Money for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Handle currency amounts with decimal precision and multi-currency conversion
 ---
 

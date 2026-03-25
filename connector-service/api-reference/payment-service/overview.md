@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Overview in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Overview of payment service APIs for authorization capture refund and void operations
 ---
 
 # Overview

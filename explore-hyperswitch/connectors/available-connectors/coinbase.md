@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Coinbase via Juspay Hyperswitch
+description: Enable Coinbase Commerce to accept cryptocurrency payments with multi-asset support
 hidden: true
 ---
 

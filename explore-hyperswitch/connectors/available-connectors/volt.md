@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Volt via Juspay Hyperswitch
+description: Configure Volt to build global payment infrastructure and remove e-commerce transaction barriers
 hidden: true
 ---
 

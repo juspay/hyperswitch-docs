@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Test Generation in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Generate regression tests automatically for all connectors from test specifications
 ---
 
 # Test Generation

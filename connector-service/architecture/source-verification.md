@@ -1,4 +1,4 @@
 ---
-description: Reference documentation for Source Verification in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Verify webhook and callback sources with signature validation and checksums
 ---
 

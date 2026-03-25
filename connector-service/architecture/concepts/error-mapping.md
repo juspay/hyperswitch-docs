@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Error Mapping using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Map payment processor errors to unified codes for consistent error handling across all connectors
 ---
 
 # Error Mapping

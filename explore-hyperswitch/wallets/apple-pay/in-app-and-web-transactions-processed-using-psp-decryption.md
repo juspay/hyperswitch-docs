@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement In App And Web Transactions Processed Using Psp Decryption using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Set up Apple Pay where the PSP decrypts and authorizes the encrypted token directly
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption

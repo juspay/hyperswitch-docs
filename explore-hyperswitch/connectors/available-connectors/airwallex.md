@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Airwallex via Juspay Hyperswitch
+description: Connect Airwallex to enable cross-border payments with multi-currency support and FX management
 hidden: true
 ---
 

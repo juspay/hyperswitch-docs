@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Readme for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Handle reconciliation exceptions with automatic classification and resolution strategies
 ---
 
 # Exception Handling

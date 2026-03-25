@@ -1,5 +1,5 @@
 ---
-description: Accept payments through PayU via Juspay Hyperswitch
+description: Connect PayU to process online payments across multiple integrated payment methods globally
 hidden: true
 ---
 

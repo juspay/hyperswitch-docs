@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Authenticate for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Authenticate payment methods using 3DS or other verification methods
 ---
 
 # Authenticate

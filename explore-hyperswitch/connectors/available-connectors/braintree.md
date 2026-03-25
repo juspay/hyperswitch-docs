@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Braintree via Juspay Hyperswitch
+description: Integrate Braintree to accept PayPal and card payments with merchant account included
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through GlobalPayments via Juspay Hyperswitch
+description: Connect Global Payments to process worldwide transactions with integrated acquiring services
 hidden: true
 ---
 

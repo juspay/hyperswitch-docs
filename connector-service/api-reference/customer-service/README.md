@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Readme in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Customer service APIs for managing payment customers and associated payment methods
 ---
 
 # Customer Service

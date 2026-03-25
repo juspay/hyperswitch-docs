@@ -1,4 +1,4 @@
 ---
-description: Comprehensive guide to Integrity for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Ensure data integrity with checksums and verification for payment transactions
 ---
 

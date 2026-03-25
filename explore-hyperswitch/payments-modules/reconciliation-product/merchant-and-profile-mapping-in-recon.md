@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Merchant And Profile Mapping In Recon using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Configure merchant and profile hierarchies to isolate reconciliation logic and access control
 ---
 
 # Merchant & Profile Mapping in Recon

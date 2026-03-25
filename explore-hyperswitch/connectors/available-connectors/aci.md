@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Aci via Juspay Hyperswitch
+description: Configure ACI Worldwide to process omni-channel payments with fraud management capabilities
 hidden: true
 ---
 

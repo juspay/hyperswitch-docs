@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Accept in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Accept a dispute to acknowledge chargeback and forfeit the transaction amount
 ---
 
 # Accept

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through MultiSafepay via Juspay Hyperswitch
+description: Configure MultiSafepay for European payment processing with digital wallets and fraud prevention
 hidden: true
 ---
 

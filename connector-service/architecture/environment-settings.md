@@ -1,4 +1,4 @@
 ---
-description: Guide to Environment Settings for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Configure sandbox and production environments for payment connector testing
 ---
 

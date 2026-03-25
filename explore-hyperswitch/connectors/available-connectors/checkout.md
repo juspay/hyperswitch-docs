@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Checkout via Juspay Hyperswitch
+description: Set up Checkout.com for end-to-end payment processing with gateway acquirer and processor combined
 hidden: true
 ---
 

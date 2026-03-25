@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Overview for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Overview of customer management APIs for creating and managing customer profiles
 ---
 
 # Overview

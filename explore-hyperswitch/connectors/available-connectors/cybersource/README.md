@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Cybersource via Juspay Hyperswitch
+description: Set up Cybersource for global enterprise payments with fraud management and tokenization
 ---
 
 # Cybersource

@@ -1,5 +1,5 @@
 ---
-description: Guide to Defend for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Defend a dispute by submitting evidence to challenge the chargeback claim
 ---
 
 # Defend

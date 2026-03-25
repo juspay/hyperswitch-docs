@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Reverse using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Reverse authorized payments before capture to release held funds immediately
 ---
 
 # Reverse

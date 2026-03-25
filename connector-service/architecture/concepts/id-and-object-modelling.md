@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Id And Object Modelling using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Unified ID system with strongly-typed identifiers for payment customer and refund entities
 ---
 
 # ID and Object Modeling

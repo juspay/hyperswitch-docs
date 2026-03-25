@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Troubleshooting in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Fix common issues with Android browser dependencies and iOS SDK integration
 ---
 
 # Troubleshooting

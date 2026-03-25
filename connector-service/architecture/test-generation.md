@@ -1,4 +1,4 @@
 ---
-description: Reference documentation for Test Generation in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Generate tests automatically for connector adapters and SDK functionality
 ---
 

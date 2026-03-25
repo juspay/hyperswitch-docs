@@ -1,5 +1,5 @@
 ---
-description: Accept payments through TrustPay via Juspay Hyperswitch
+description: Enable TrustPay for secure EEA cross-border e-commerce payments with multiple local options
 hidden: true
 ---
 

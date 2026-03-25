@@ -1,5 +1,5 @@
 ---
-description: Accept payments through OpenNode via Juspay Hyperswitch
+description: Enable OpenNode to accept Bitcoin payments and send payouts with instant settlement globally
 hidden: true
 ---
 

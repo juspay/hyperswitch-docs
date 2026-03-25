@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bluesnap via Juspay Hyperswitch
+description: Configure BlueSnap to accept global online payments with subscription billing support
 hidden: true
 ---
 

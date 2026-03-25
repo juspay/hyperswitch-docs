@@ -1,5 +1,5 @@
 ---
-description: Guide to Get for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Retrieve payment details including status amount and transaction history
 ---
 
 # Get

@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Source Verification for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Verify payment redirect sources with cryptographic signature validation
 ---
 
 # Source Verification

@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Level 2 And Level 3 Data using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Include Level 2 and Level 3 enhanced data in payment requests to reduce interchange costs on commercial cards
 ---
 
 # Level 2 and Level 3 data

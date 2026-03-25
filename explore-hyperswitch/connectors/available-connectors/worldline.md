@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Worldline via Juspay Hyperswitch
+description: Set up Worldline for omnichannel payments including in-store online and mobile transactions
 hidden: true
 ---
 

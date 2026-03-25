@@ -1,5 +1,5 @@
 ---
-description: Guide to A Payments Switch With Virtually Zero Overhead for Juspay Hyperswitch learn more. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Understand how Hyperswitch achieves virtually zero latency overhead in payment processing
 ---
 
 # A Payments Switch with virtually zero overhead

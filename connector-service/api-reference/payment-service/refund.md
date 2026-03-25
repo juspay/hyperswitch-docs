@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Refund using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Process full or partial refunds for completed payments through the refund API
 ---
 
 # Refund

@@ -1,5 +1,5 @@
 ---
-description: Guide to using Apple Pay payment method on Juspay Hyperswitch
+description: Enable Apple Pay for web and iOS with Touch ID and Face ID authentication
 icon: apple-pay
 ---
 

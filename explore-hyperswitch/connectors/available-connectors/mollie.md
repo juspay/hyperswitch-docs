@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Mollie via Juspay Hyperswitch
+description: Integrate Mollie to access multiple European payment methods with seamless checkout experience
 hidden: true
 ---
 

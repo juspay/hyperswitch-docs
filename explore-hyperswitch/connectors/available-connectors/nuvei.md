@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Nuvei via Juspay Hyperswitch
+description: Set up Nuvei to process payments worldwide with focus on e-commerce and high-growth sectors
 hidden: true
 ---
 

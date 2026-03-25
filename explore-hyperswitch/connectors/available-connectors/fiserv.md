@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Fiserv via Juspay Hyperswitch
+description: Integrate Fiserv for comprehensive fintech solutions including merchant acquiring and POS
 hidden: true
 ---
 

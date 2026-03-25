@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Environment Settings using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Configure development sandbox and production environments with separate credentials and endpoints
 ---
 
 # Environment Settings

@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Create Session Token for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Create session tokens for authenticated user sessions in the payment flow
 ---
 
 # Create Session Token

@@ -1,5 +1,5 @@
 ---
-description: Learn how to implement Sdk Generation using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+description: Generate idiomatic SDKs in Node.js Python Java Rust and Go from protobuf definitions
 ---
 
 # SDK Generation

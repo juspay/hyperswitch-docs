@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Stripe via Juspay Hyperswitch
+description: Configure Stripe to accept cards wallets and bank transfers with comprehensive payment APIs
 ---
 
 # Stripe

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through d-local via Juspay Hyperswitch
+description: Configure dLocal to accept local payment methods across Latin America APAC and MENA regions
 hidden: true
 ---
 

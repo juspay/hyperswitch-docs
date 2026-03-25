@@ -1,5 +1,5 @@
 ---
-description: Guide to Readme for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Connector service API reference for payment refund dispute and customer operations
 ---
 
 # API Reference

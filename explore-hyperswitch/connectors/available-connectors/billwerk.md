@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Billwerk via Juspay Hyperswitch
+description: Set up Billwerk+ Pay to access multiple acquirers and payment methods through one gateway
 hidden: true
 ---
 

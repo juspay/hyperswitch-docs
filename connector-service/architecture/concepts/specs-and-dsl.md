@@ -1,5 +1,5 @@
 ---
-description: Guide to Specs And Dsl for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Use Protocol Buffer DSL for type-safe payment operations with compile-time validation
 ---
 
 # Specs and DSL

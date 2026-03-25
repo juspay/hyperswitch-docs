@@ -1,5 +1,5 @@
 ---
-description: Comprehensive guide to Why We Built A Unified Payment Integration Library for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+description: Understand the engineering decisions behind building Prism a unified payment integration library
 ---
 
 # Why we built a Unified Payment Integration Library?

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Klarna via Juspay Hyperswitch
+description: Enable Klarna to offer buy now pay later options with installment plans at checkout
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Prophetpay via Juspay Hyperswitch
+description: Configure Prophetpay to accept online payments for golf and club management businesses
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Zen via Juspay Hyperswitch
+description: Integrate Zen payments portal to boost conversion with low fees and responsive checkout experience
 hidden: true
 ---
 

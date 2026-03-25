@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bank of America via Juspay Hyperswitch
+description: Connect Bank of America to process enterprise payments with CyberSource integration
 hidden: true
 ---
 

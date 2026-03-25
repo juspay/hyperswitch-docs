@@ -1,5 +1,5 @@
 ---
-description: Guide to Router for Juspay Hyperswitch learn more. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Router service architecture for routing payment requests to connectors with type safety
 ---
 
 # Router

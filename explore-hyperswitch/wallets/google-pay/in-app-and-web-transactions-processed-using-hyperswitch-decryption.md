@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for In App And Web Transactions Processed Using Hyperswitch Decryption in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Configure Google Pay where Hyperswitch decrypts tokens and routes to any processor
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption

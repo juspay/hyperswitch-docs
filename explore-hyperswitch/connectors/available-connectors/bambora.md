@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bambora via Juspay Hyperswitch
+description: Integrate Bambora to process secure digital payments with Worldline payment infrastructure
 hidden: true
 ---
 

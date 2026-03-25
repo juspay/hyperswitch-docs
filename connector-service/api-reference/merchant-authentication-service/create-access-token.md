@@ -1,5 +1,5 @@
 ---
-description: Reference documentation for Create Access Token in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+description: Create secure access tokens for authenticating merchant API requests
 ---
 
 # Create Access Token

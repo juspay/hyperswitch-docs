@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Rapyd via Juspay Hyperswitch
+description: Set up Rapyd to send and receive global payments faster with local payment method collection
 hidden: true
 ---
 

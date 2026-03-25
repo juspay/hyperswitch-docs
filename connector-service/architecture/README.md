@@ -1,5 +1,5 @@
 ---
-description: Guide to Readme for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Prism unified payment abstraction layer for 100+ connectors with multi-language SDKs
 ---
 
 ## The Problem

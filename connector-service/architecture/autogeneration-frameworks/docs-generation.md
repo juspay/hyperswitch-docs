@@ -1,5 +1,5 @@
 ---
-description: Guide to Docs Generation for Juspay Hyperswitch connector service. Learn integration patterns, API usage, and implementation strategies for payments.
+description: Generate API reference documentation automatically from protobuf definitions
 ---
 
 # Documentation Generation

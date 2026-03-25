@@ -1,5 +1,5 @@
 ---
-description: Accept payments through GoCardless via Juspay Hyperswitch
+description: Set up GoCardless to collect recurring bank debit payments across 30+ countries
 hidden: true
 ---
 
