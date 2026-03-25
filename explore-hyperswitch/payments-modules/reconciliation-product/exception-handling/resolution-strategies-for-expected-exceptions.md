@@ -1,3 +1,7 @@
+---
+description: Comprehensive guide to Resolution Strategies For Expected Exceptions for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview
@@ -20,10 +24,10 @@ Action: `Ignore Transaction`
 
 This action is used when the source transaction (the "Expected" item) is invalid or should not be reconciled. Since the counterparty data has not arrived yet, "Ignoring" this record effectively cancels the expectation, preventing the system from waiting indefinitely
 
-* Logic: Marks the transaction status as `VOID` . It removes the item from the "Pending/Aging" queue
-* Common Use Cases:
-  * Test Transactions: An order created in the production environment for testing purposes that will never settle at the bank
-  * Cancelled Prior to Settlement: An authorization that was voided immediately at the gateway but was logged as "Pending" in the ledger
+- Logic: Marks the transaction status as `VOID` . It removes the item from the "Pending/Aging" queue
+- Common Use Cases:
+  - Test Transactions: An order created in the production environment for testing purposes that will never settle at the bank
+  - Cancelled Prior to Settlement: An authorization that was voided immediately at the gateway but was logged as "Pending" in the ledger
 
 ***
 
@@ -45,12 +49,12 @@ Unlike the Mismatched workflow where you are fixing a break, here you are modify
 
 > ⚠️ **Important Operational Note**: Modifying an entry manually removes it from the automated reconciliation queue. Because you have manually intervened, the system will stop trying to "guess" a match for this transaction. When the counterparty data (Right Side) finally arrives, you must manually reconcile or "Mark as Received" to close this expectation.
 
-* Primary Purpose: To correct the internal source record (Left Side) because the upstream data was wrong, ensuring a clean match when the partner data finally lands
-* Target: Modifies the `Expected_Amount` or metadata of the source entry.
-* When to use:
-  * Incorrect Source Amount: The Order Management System sent an expectation of $100, but you know a $5 discount was applied manually and the bank will only send $95. You edit the expectation to $95 _now_ so it matches later
-  * Wrong Currency: The source system erroneously flagged a transaction as `USD` instead of `CAD`. You fix it now to prevent a currency mismatch exception tomorrow
-  * Data Enrichment: The source stream missed a critical field (e.g., `Merchant_ID`) that will be required for the match logic to work once the file arrives
+- Primary Purpose: To correct the internal source record (Left Side) because the upstream data was wrong, ensuring a clean match when the partner data finally lands
+- Target: Modifies the `Expected_Amount` or metadata of the source entry.
+- When to use:
+  - Incorrect Source Amount: The Order Management System sent an expectation of $100, but you know a $5 discount was applied manually and the bank will only send $95. You edit the expectation to $95 _now_ so it matches later
+  - Wrong Currency: The source system erroneously flagged a transaction as `USD` instead of `CAD`. You fix it now to prevent a currency mismatch exception tomorrow
+  - Data Enrichment: The source stream missed a critical field (e.g., `Merchant_ID`) that will be required for the match logic to work once the file arrives
 
 #### Option 2: Mark as Received
 
@@ -58,12 +62,12 @@ Unlike the Mismatched workflow where you are fixing a break, here you are modify
 
 This option is unique to `EXPECTED` exceptions. It replaces the "Create Entry" workflow found in mismatches. Since the system is waiting for the right side to arrive, this action allows the user to say, _"Stop waiting. I have verified this funds myself."_
 
-* Primary Purpose: To force-close an open expectation when digital proof (a file/webhook) is missing but physical/offline proof exists
-* Process: User clicks "Mark as received" -> System generates a synthetic "Received" entry -> Transaction moves to `MATCHED`&#x20;
-* When to use:
-  * Cash & Check Deposits: Funds were physically deposited; no electronic file will ever arrive to match the ledger entry
-  * Missing Statements: The bank feed failed for a specific day, but the Operations team verified the balance via the online banking portal
-  * Lump Sum Settlements: The bank deposited a bulk amount, and you need to manually mark individual expected line items as "Received" against that bulk deposit
+- Primary Purpose: To force-close an open expectation when digital proof (a file/webhook) is missing but physical/offline proof exists
+- Process: User clicks "Mark as received" -> System generates a synthetic "Received" entry -> Transaction moves to `MATCHED`&#x20;
+- When to use:
+  - Cash & Check Deposits: Funds were physically deposited; no electronic file will ever arrive to match the ledger entry
+  - Missing Statements: The bank feed failed for a specific day, but the Operations team verified the balance via the online banking portal
+  - Lump Sum Settlements: The bank deposited a bulk amount, and you need to manually mark individual expected line items as "Received" against that bulk deposit
 
 #### Option 3: Replace Entry
 
@@ -71,10 +75,10 @@ This option is unique to `EXPECTED` exceptions. It replaces the "Create Entry" w
 
 This allows you to unlink the current "Expected" entry and replace it with a different transformed entry from the backlog. This is used when the system created an expectation based on the wrong upstream data packet
 
-* Primary Purpose: To swap the active source record with a correct one to restart the matching search
-* When to use:
-  * Wrong Ledger Account: The expectation was generated for the "USD Ledger" but the transaction actually belongs to the "EUR Ledger." You replace it with the correctly parsed entry
-  * Corrupted Source Data: The source event was malformed. You replace it with a clean version of the event so the system can properly search for the counterparty
+- Primary Purpose: To swap the active source record with a correct one to restart the matching search
+- When to use:
+  - Wrong Ledger Account: The expectation was generated for the "USD Ledger" but the transaction actually belongs to the "EUR Ledger." You replace it with the correctly parsed entry
+  - Corrupted Source Data: The source event was malformed. You replace it with a clean version of the event so the system can properly search for the counterparty
 
 #### Summary: Which Button Should I Click?
 

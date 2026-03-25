@@ -25,10 +25,10 @@ The production configuration recommended for 40 RPS capacity is as follows (excl
 {% hint style="info" %}
 **Note:** For enterprise deployments, scaling without a buffer is not recommended. The following additional capacity should be provisioned:
 
-* 30–50% headroom for traffic spikes and retries
-* N+1 redundancy for node-level failures
-* Additional margin for rolling deployments
-* Autoscaling thresholds set below maximum utilization
+- 30–50% headroom for traffic spikes and retries
+- N+1 redundancy for node-level failures
+- Additional margin for rolling deployments
+- Autoscaling thresholds set below maximum utilization
 
 For planning purposes, a 40% buffer for the application layer and 50% buffer for stateful components (Database and Redis) is recommended.
 
@@ -59,10 +59,10 @@ The approved and listed software version appears as "Hyperswitch, Version: 1.x" 
 
 The stable releases are announced on a monthly basis on the [Releases page](https://github.com/juspay/hyperswitch-suite/releases). This will include notes on each application component which includes
 
-* New features
-* Bug fixes
-* Database migrations
-* Breaking changes (if any)
+- New features
+- Bug fixes
+- Database migrations
+- Breaking changes (if any)
 
 A Continuous deployment engine automatically updates the nightly releases on a daily/ weekly basis. The nightly releases are developer builds which are not officially tested, nor deployed for production use (alpha).&#x20;
 
@@ -76,6 +76,6 @@ Installing and managing Hyperswitch requires a good operational expertise on Kub
 
 The minimum recommended versions for the devops software as follows:
 
-* Kubernetes v1.22+
-* Helm v3+
-* Kubectl v1.28+
+- Kubernetes v1.22+
+- Helm v3+
+- Kubectl v1.28+

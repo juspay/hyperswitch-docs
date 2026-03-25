@@ -10,7 +10,7 @@ This section covers the steps to setup woocommerce plugin on your website and ma
 
 ### Prerequisites
 
-1. Sign up on the Hyperswitch dashboard and navigate to connectors tab [here](https://app.hyperswitch.io/) to configure connector(s) and enable various Payment Methods.
+1. Sign up on the Juspay Hyperswitch dashboard and navigate to connectors tab [here](https://app.hyperswitch.io/) to configure connector(s) and enable various Payment Methods.
 2. WooCommerce plugin must be installed and enabled on your WordPress website. Visit [here](https://wordpress.org/plugins/woocommerce/) or go to your WordPress Admin dashboard and navigate to "Plugins" section to install and enable the WooCommerce Plugin.
 
 ### 1. Setting up the Plugin on your Website

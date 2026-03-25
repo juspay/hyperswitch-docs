@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Aci via Hyperswitch
+description: Accept payments through Aci via Juspay Hyperswitch
 hidden: true
 ---
 

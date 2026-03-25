@@ -15,7 +15,7 @@ Samsung Pay works only on supported Samsung devices. You can find the list of su
 Samsung Pay requires an Samsung Developer Account. You can [Sign Up](https://developer.samsung.com/pay/native/partner-onbarding.html#Sign-up%2FSign-in) following this.
 
 {% hint style="info" %}
-_Please feel free to reach out to_ [_Hyperswitch support_](https://inviter.co/hyperswitch-slack) _if you are stuck at any stage when integrating and testing Samsung Pay._
+_Please feel free to reach out to_ [_Juspay Hyperswitch support_](https://inviter.co/hyperswitch-slack) _if you are stuck at any stage when integrating and testing Samsung Pay._
 {% endhint %}
 
 ### **Create Samsung pay Web Online Payment Service**

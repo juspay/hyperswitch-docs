@@ -1,5 +1,5 @@
 ---
-description: Accept payments through GoCardless via Hyperswitch
+description: Accept payments through GoCardless via Juspay Hyperswitch
 hidden: true
 ---
 

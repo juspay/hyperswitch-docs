@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch is designed to facilitate the management of saved payment methods
+description: Juspay Hyperswitch is designed to facilitate the management of saved payment methods
 icon: bars-progress
 ---
 
@@ -37,7 +37,7 @@ First, you'll need to set up your server to create payment method sessions, whic
 
 **Obtaining Your API Keys :**&#x20;
 
-* Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
+- Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 To generate your Vault API keys, follow these steps:
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Billwerk via Hyperswitch
+description: Accept payments through Billwerk via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Use the standalone deployment script to deploy Hyperswitch on AWS quickly
+description: Use the standalone deployment script to deploy Juspay Hyperswitch on AWS quickly
 ---
 
 # Standalone deployment for prototyping
@@ -32,8 +32,8 @@ The Hyperswitch App server will be installed in the EC2 instance
 
 ### **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
-* PSQL installed on your local machine
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+- PSQL installed on your local machine
 
 ### **Let's begin!**
 

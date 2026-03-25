@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Juspay Hyperswitch Checkout for WooCommerce by hyperswitch.io
 hidden: true
 ---
 
@@ -37,18 +37,18 @@ With Hyperswitch private card vault, your business can exercise co control of yo
 
 In addition to the above, Hyperswitch also offers
 
-* Access to **40+ processors** and **80+** [**payment methods**](https://hyperswitch.io/docs/paymentMethods/testCredentials)
-* **PCI L1 certified** to store credit/debit card data
-* **GDPR ready** to store customer data
-* [**Smart routing engine**](https://hyperswitch.io/docs/features/smartRouter) to define business rules to optimize your payment processing costs and boost conversion rates
-* **Single unified dashboard** for analytics, payment operations, refunds
-* [**Smart retries**](https://hyperswitch.io/docs/features/smartRetries) to enhance conversion rate
-* **Local payment methods** for 40+ countries
-* [**Direct API and SDK Integrations**](https://api-reference.hyperswitch.io/introduction) to support your business as it grows multifold
-* **Customize your Payment Experience**, although this plugin is built to seamlessly tailor the payment experience to match your website’s branding by blending the payment sheet into your WordPress theme, if you wish to, you can further customize the “Appearance” and “Layout” of the payment sheet using styles or pre-built themes.
-* **Manual Capture** - You can choose to capture customer payments automatically or manually, as per your needs. Once a customer authorizes their payment, you can easily capture payments manually through the Woocommerce Dashboard.
-* **Refunds** - In cases where you need to issue a refund to a customer, the Hyperswitch plugin streamlines this process within your Woocommerce Dashboard.
-* **Sync Payments** - With the Hyperswitch plugin integrated into your Woocommerce Dashboard, you have the flexibility to manually sync payment status whenever necessary. This feature allows you to ensure accurate payment status representation and maintain consistent order management.
-* **Real-time Order Updates** - Hyperswitch facilitates seamless order updates through **webhooks**, allowing you to automate various order management processes.
+- Access to **40+ processors** and **80+** [**payment methods**](https://hyperswitch.io/docs/paymentMethods/testCredentials)
+- **PCI L1 certified** to store credit/debit card data
+- **GDPR ready** to store customer data
+- [**Smart routing engine**](https://hyperswitch.io/docs/features/smartRouter) to define business rules to optimize your payment processing costs and boost conversion rates
+- **Single unified dashboard** for analytics, payment operations, refunds
+- [**Smart retries**](https://hyperswitch.io/docs/features/smartRetries) to enhance conversion rate
+- **Local payment methods** for 40+ countries
+- [**Direct API and SDK Integrations**](https://api-reference.hyperswitch.io/introduction) to support your business as it grows multifold
+- **Customize your Payment Experience**, although this plugin is built to seamlessly tailor the payment experience to match your website’s branding by blending the payment sheet into your WordPress theme, if you wish to, you can further customize the “Appearance” and “Layout” of the payment sheet using styles or pre-built themes.
+- **Manual Capture** - You can choose to capture customer payments automatically or manually, as per your needs. Once a customer authorizes their payment, you can easily capture payments manually through the Woocommerce Dashboard.
+- **Refunds** - In cases where you need to issue a refund to a customer, the Hyperswitch plugin streamlines this process within your Woocommerce Dashboard.
+- **Sync Payments** - With the Hyperswitch plugin integrated into your Woocommerce Dashboard, you have the flexibility to manually sync payment status whenever necessary. This feature allows you to ensure accurate payment status representation and maintain consistent order management.
+- **Real-time Order Updates** - Hyperswitch facilitates seamless order updates through **webhooks**, allowing you to automate various order management processes.
 
 ###

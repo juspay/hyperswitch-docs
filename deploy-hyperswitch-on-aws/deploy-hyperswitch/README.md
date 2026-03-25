@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
+description: Deploy the Juspay Hyperswitch server on the cloud
 ---
 
 # 🗄 Deploy Hyperswitch

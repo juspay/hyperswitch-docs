@@ -1,7 +1,7 @@
 ---
 description: >-
   Best for PCI compliant merchants requiring full control over UI rendering
-  while leveraging Hyperswitch Vault for secure storage and payment routing.
+  while leveraging Juspay Hyperswitch Vault for secure storage and payment routing.
 ---
 
 # Merchant SDK + Hyperswitch Vault Setup

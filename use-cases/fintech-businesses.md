@@ -137,9 +137,9 @@ Hyperswitch provides observability capabilities to help monitor payment operatio
 
 Ready to augment your payment stack? Here are the next steps:
 
-* [Explore intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules
-* [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
-* [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
-* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Hyperswitch in your own infrastructure
+- [Explore intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules
+- [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
+- [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
+- [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
+- [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
+- [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Hyperswitch in your own infrastructure

@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Hyperswitch
+description: Accept pay later options through Juspay Hyperswitch
 icon: calendar-day
 ---
 
@@ -7,9 +7,9 @@ icon: calendar-day
 
 ## Klarna, Affirm, Afterpay/Clearpay - Redirection flow
 
-* Klarna is a global buy now pay later payment method that is available in more than 19 countries and supports 10 currencies.
-* Affirm is a buy now pay later payment method available to US customers and supports USD.
-* Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
+- Klarna is a global buy now pay later payment method that is available in more than 19 countries and supports 10 currencies.
+- Affirm is a buy now pay later payment method available to US customers and supports USD.
+- Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
 
 ## **How to configure pay later options (Redirection flow) on Hyperswitch?**
 

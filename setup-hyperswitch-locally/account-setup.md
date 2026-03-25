@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Create your Juspay Hyperswitch account and add a payment provider
 ---
 
 # 🔧 Account setup
@@ -137,9 +137,9 @@ Run the below cURL to set up your preferred payment processor an API key. You'll
 
 In the below cURL update the following details&#x20;
 
-* Under  `connector_name` and `connector_account_details` fields. `Connector_name`is the name of the Payment provider you want to process payment through&#x20;
-* `Connector_account_details`are the respective details of the payment provider in order to complete the authentication succesfully. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22\_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
-* Update URL of the below cURL request with the `merchant_id` obtained in the previous step
+- Under  `connector_name` and `connector_account_details` fields. `Connector_name`is the name of the Payment provider you want to process payment through&#x20;
+- `Connector_account_details`are the respective details of the payment provider in order to complete the authentication succesfully. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22\_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
+- Update URL of the below cURL request with the `merchant_id` obtained in the previous step
 
 <details>
 
@@ -214,4 +214,4 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 ## **Resources**
 
-* To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3).
+- To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3).

@@ -11,7 +11,7 @@ You can integrate 3D Secure (3DS) authentication into your checkout flow on mult
 In a typical [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type) flow that triggers 3DS:
 
 1. The user enters their payment information, which confirms a Payment, or attaches a Payment Method to a Customer.
-2. Hyperswitch assesses if the transaction supports and requires 3DS intelligence engine, and other criteria.
+2. Juspay Hyperswitch assesses if the transaction supports and requires 3DS intelligence engine, and other criteria.
 
 To invoke 3DS through the underlying PSP pass the below parameter in the [Payments Create API ](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type)call&#x20;
 

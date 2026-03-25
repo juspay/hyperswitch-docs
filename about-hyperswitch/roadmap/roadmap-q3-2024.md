@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Juspay Hyperswitch roadmap (July to Sept'24)
 icon: road
 ---
 
@@ -13,23 +13,23 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ### Recap of Q2 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods&#x20;
-* Vaulting payment methods with Hyperswitch for on-session payments
-* Natively authenticating payments using Third party 3DS service providers - Netcetra, 3dsecure.io
-* Integrations for alternate payment methods via Mifinity and ZSL
-* Scan a card experience on Unified Checkout
-* Open-sourced the Native SDK for Unified Checkout
-* Control Centre support for Two Factor Authentication for user login
-* One-click Express Checkout through Applepay, Klarna, GooglePay
-* Secure payout iframe to collect payout details and trigger payouts
+- Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods&#x20;
+- Vaulting payment methods with Hyperswitch for on-session payments
+- Natively authenticating payments using Third party 3DS service providers - Netcetra, 3dsecure.io
+- Integrations for alternate payment methods via Mifinity and ZSL
+- Scan a card experience on Unified Checkout
+- Open-sourced the Native SDK for Unified Checkout
+- Control Centre support for Two Factor Authentication for user login
+- One-click Express Checkout through Applepay, Klarna, GooglePay
+- Secure payout iframe to collect payout details and trigger payouts
 
 ### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
-* Make payments more `accessible` and `affordable` to every digital business
-* Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
-* Being `community-first` in ideation, planning and execution of features
+- Make payments more `accessible` and `affordable` to every digital business
+- Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
+- Being `community-first` in ideation, planning and execution of features
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
@@ -57,39 +57,39 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
-* 🟩 Payment Method Management experience to view, add and delete payment methods (for Web platform)
-* New connector and payment method Integrations (more will be added as we progress)
-  * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
-  * 🟩 Razorpay for UPI payments&#x20;
-  * 🟧 PAZE checkout _(extending to Q4)_
-  * 🟧 TaxJar for dynamic tax calculations _(extending to Q4)_
-  * 🟩 Novalnet for card payments
-  * 🟩 Fiuu for cards, bank transfer and inter-operable QR based payments
-  * 🟩 Itau Bank for instant payments
-  * 🟩 Payouts via PayOne, and Wells Fargo
+- 🟩 Payment Method Management experience to view, add and delete payment methods (for Web platform)
+- New connector and payment method Integrations (more will be added as we progress)
+  - 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
+  - 🟩 Razorpay for UPI payments&#x20;
+  - 🟧 PAZE checkout _(extending to Q4)_
+  - 🟧 TaxJar for dynamic tax calculations _(extending to Q4)_
+  - 🟩 Novalnet for card payments
+  - 🟩 Fiuu for cards, bank transfer and inter-operable QR based payments
+  - 🟩 Itau Bank for instant payments
+  - 🟩 Payouts via PayOne, and Wells Fargo
 
 
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
+- 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
-* Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
-  * 🟩 Wells Fargo (US)
-  * 🟩 Deutsche Bank (DE)
-* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
+- Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
+  - 🟩 Wells Fargo (US)
+  - 🟩 Deutsche Bank (DE)
+- 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
-* 🟩  User management and dashboard analytics views at entity level granularity (org to profile)
+- 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
+- 🟩  User management and dashboard analytics views at entity level granularity (org to profile)
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟩 Payment plugins for ~~Commerce Tools~~ Saleor - Headless commerce platform to facilitate faster integrations
-* 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
+- 🟩 Payment plugins for ~~Commerce Tools~~ Saleor - Headless commerce platform to facilitate faster integrations
+- 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 

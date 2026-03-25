@@ -8,21 +8,21 @@ icon: mobile-screen
 
 #### Lightweight Integration
 
-* **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
-* **Web-based UI**: Uses web components for payment forms
-* **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
-  * Appearance customization
-  * Billing details
-  * Shipping information
-  * Payment method preferences
-  * Branding options
+- **Smaller artifact size**: <300 KB
+- **Faster initialization**: Streamlined setup process
+- **Web-based UI**: Uses web components for payment forms
+- **Reduced dependencies**: Minimal impact on app size
+- **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
+  - Appearance customization
+  - Billing details
+  - Shipping information
+  - Payment method preferences
+  - Branding options
 
 ## Requirements
 
-* IOS 15.1+
-* Cocoapods​
+- IOS 15.1+
+- Cocoapods​
 
 ## 1. Setup the server
 
@@ -54,7 +54,7 @@ pod 'hyperswitch-sdk-ios-lite/scancard'
 **Initialize PaymentSession:**
 
 ```swift
-import HyperswitchLite
+import Juspay HyperswitchLite
 paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
 
 // Initialize with client secret

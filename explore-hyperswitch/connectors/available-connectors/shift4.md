@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Shift4 via Hyperswitch
+description: Accept payments through Shift4 via Juspay Hyperswitch
 hidden: true
 ---
 

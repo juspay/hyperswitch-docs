@@ -6,7 +6,7 @@ icon: eyes
 # Monitoring
 
 {% hint style="info" %}
-In this chapter, you will learn to setup logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
+In this chapter, you will learn to setup logs and monitoring on your application. Juspay Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
 {% endhint %}
 
 ***
@@ -17,10 +17,10 @@ In the world of application monitoring, two critical elements play pivotal roles
 
 To effectively utilize both aspects, Hyperswitch relies on the following
 
-* Promtail (for scraping logs)
-* Grafana's Loki (for storing and viewing logs)
-* OpenTelemetry collector (for application metrics)
-* Cloudwatch (for system metrics)
+- Promtail (for scraping logs)
+- Grafana's Loki (for storing and viewing logs)
+- OpenTelemetry collector (for application metrics)
+- Cloudwatch (for system metrics)
 
 This combination, along with Grafana for visualization, seamlessly integrates logs and metrics into intuitive, interactive dashboards.&#x20;
 
@@ -32,8 +32,8 @@ This combination, along with Grafana for visualization, seamlessly integrates lo
 
 ### 1. What is Grafana Loki and Promtail?
 
-* **Grafana Loki:** Grafana Loki is a standout in log aggregation. It draws inspiration from Prometheus and is designed to be horizontally scalable and highly available, with a focus on multi-tenancy. Unlike traditional logging systems, Loki doesn't index the content of logs but concentrates on a set of labels associated with each log stream. This approach not only keeps costs in check but also ensures swift access to logs during queries. Refer [here](https://grafana.com/docs/loki/latest/get-started/) for more details regarding Loki.
-* **Promtail:** Promtail serves as the agent that powers Loki by collecting logs. Tailored specifically for Loki, Promtail runs on each Kubernetes node and utilizes the same service discovery mechanisms as Prometheus. Before sending logs to Loki, Promtail labels, transforms, and filters them to ensure that only relevant data reaches Loki. This data processing streamlines the logging process. Additionally, Loki boasts its own query language, LogQL, which is compatible with its command-line interface and Grafana. Integration capabilities with Prometheus's Alert Manager further solidify Loki's position as a pivotal tool in modern logging. To know more about Promtail refer [here](https://grafana.com/docs/loki/latest/send-data/promtail/).
+- **Grafana Loki:** Grafana Loki is a standout in log aggregation. It draws inspiration from Prometheus and is designed to be horizontally scalable and highly available, with a focus on multi-tenancy. Unlike traditional logging systems, Loki doesn't index the content of logs but concentrates on a set of labels associated with each log stream. This approach not only keeps costs in check but also ensures swift access to logs during queries. Refer [here](https://grafana.com/docs/loki/latest/get-started/) for more details regarding Loki.
+- **Promtail:** Promtail serves as the agent that powers Loki by collecting logs. Tailored specifically for Loki, Promtail runs on each Kubernetes node and utilizes the same service discovery mechanisms as Prometheus. Before sending logs to Loki, Promtail labels, transforms, and filters them to ensure that only relevant data reaches Loki. This data processing streamlines the logging process. Additionally, Loki boasts its own query language, LogQL, which is compatible with its command-line interface and Grafana. Integration capabilities with Prometheus's Alert Manager further solidify Loki's position as a pivotal tool in modern logging. To know more about Promtail refer [here](https://grafana.com/docs/loki/latest/send-data/promtail/).
 
 ### 2. Installing Loki and Promtail
 
@@ -136,13 +136,13 @@ By following these steps, you will configure Promtail to utilize the specified "
 You can proceed with the installation of the Helm chart for Grafana using the following commands:
 
 ```bash
-# Add the Grafana Helm chart repository
+## Add the Grafana Helm chart repository
 helm repo add grafana https://grafana.github.io/helm-charts
 
-# Update the Helm repositories
+## Update the Helm repositories
 helm repo update
 
-# Install Grafana using Helm, specifying the namespace and creating it if necessary
+## Install Grafana using Helm, specifying the namespace and creating it if necessary
 helm install grafana grafana/grafana --namespace your_namespace --create-namespace
 ```
 
@@ -175,15 +175,15 @@ To configure Grafana's data sources and dashboard, follow these steps:
     This will provide you with the password required to log in.
 3. Log in to Grafana using the obtained credentials.
 4. Add Grafana Loki as a data source:
-   * Access the Grafana interface via http://localhost:8080/ or the respective URL if you have exposed it differently.
-   * Navigate to the Data Sources section in the Grafana UI.
-   * Click on "Add data source."
-   * Configure the data source with the following details:
-     * Name: Choose a descriptive name for the data source.
-     * Type: Select "Loki" from the list of available data sources.
-     * HTTP URL: Use the endpoint of the Grafana Loki gateway service. In your case, it appears to be: http://loki-loki-distributed-gateway.grafana-loki.svc.cluster.local.
-   * Test the data source to ensure it's working correctly.
-   * Save the data source configuration.
+   - Access the Grafana interface via http://localhost:8080/ or the respective URL if you have exposed it differently.
+   - Navigate to the Data Sources section in the Grafana UI.
+   - Click on "Add data source."
+   - Configure the data source with the following details:
+     - Name: Choose a descriptive name for the data source.
+     - Type: Select "Loki" from the list of available data sources.
+     - HTTP URL: Use the endpoint of the Grafana Loki gateway service. In your case, it appears to be: http://loki-loki-distributed-gateway.grafana-loki.svc.cluster.local.
+   - Test the data source to ensure it's working correctly.
+   - Save the data source configuration.
 
 Now you have successfully configured Grafana's data source with Grafana Loki, and you can proceed to create dashboards and visualize your data. Similarly, you can configure Prometheus for metrics.
 

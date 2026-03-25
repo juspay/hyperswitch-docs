@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use Hyperswitch's unified Disputes module to track and manage disputes across
+  Use Juspay Hyperswitch's unified Disputes module to track and manage disputes across
   multiple processors
 icon: circle-exclamation
 ---

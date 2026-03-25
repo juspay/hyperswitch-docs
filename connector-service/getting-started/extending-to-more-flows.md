@@ -1,3 +1,7 @@
+---
+description: Complete reference for Extending To More Flows in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+---
+
 # Extending to More Flows
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.

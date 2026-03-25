@@ -10,11 +10,11 @@ Using a GitOps orchestration platform such as **Argo CD** allows Hyperswitch dep
 
 Benefits include:
 
-* Version-controlled deployments
-* Automated reconciliation and drift detection
-* Reproducible environments
-* Simplified rollbacks
-* Centralized multi-cluster management
+- Version-controlled deployments
+- Automated reconciliation and drift detection
+- Reproducible environments
+- Simplified rollbacks
+- Centralized multi-cluster management
 
 Instead of manually executing Helm commands such as:
 
@@ -107,9 +107,9 @@ Provision a new cluster for the upgraded deployment.
 
 Supported platforms include:
 
-* managed Kubernetes services
-* self-managed Kubernetes clusters
-* on-prem Kubernetes environments
+- managed Kubernetes services
+- self-managed Kubernetes clusters
+- on-prem Kubernetes environments
 
 Verify cluster connectivity:
 
@@ -155,9 +155,9 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 Production deployments should expose ArgoCD through:
 
-* secure ingress
-* TLS certificates
-* SSO authentication
+- secure ingress
+- TLS certificates
+- SSO authentication
 
 #### 4. Register Clusters in ArgoCD
 
@@ -280,9 +280,9 @@ spec:
 
 ArgoCD will automatically:
 
-* pull the Helm chart
-* apply configuration
-* maintain cluster state
+- pull the Helm chart
+- apply configuration
+- maintain cluster state
 
 #### 8. Plan Database Migration
 

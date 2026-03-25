@@ -1,5 +1,5 @@
 ---
-description: Accept payments through TrustPay via Hyperswitch
+description: Accept payments through TrustPay via Juspay Hyperswitch
 hidden: true
 ---
 

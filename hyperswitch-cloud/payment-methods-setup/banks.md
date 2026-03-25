@@ -5,7 +5,7 @@ description: Accept bank payment methods on your application
 # 🏦 Banks
 
 {% hint style="info" %}
-This section gives you an overview of how to enable bank transfers, bank debits and bank redirect payment methods through Hyperswitch
+This section gives you an overview of how to enable bank transfers, bank debits and bank redirect payment methods through Juspay Hyperswitch
 {% endhint %}
 
 ## Bank payment methods

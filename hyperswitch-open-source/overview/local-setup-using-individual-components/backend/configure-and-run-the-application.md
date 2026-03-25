@@ -10,9 +10,9 @@ The application configuration files are present under the [`config`](https://git
 
 The configuration file read varies with the environment:
 
-* Development: [`config/development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml)
-* Sandbox: `config/sandbox.toml`
-* Production: `config/production.toml`
+- Development: [`config/development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml)
+- Sandbox: `config/sandbox.toml`
+- Production: `config/production.toml`
 
 Refer to [`config.example.toml`](https://github.com/juspay/hyperswitch/blob/main/config/config.example.toml) for all the available configuration options. Refer to [`development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml) for the recommended defaults for local development.
 

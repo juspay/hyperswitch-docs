@@ -1,6 +1,6 @@
 ---
 description: >-
-  Create your Hyperswitch account and add a payment provider via the control
+  Create your Juspay Hyperswitch account and add a payment provider via the control
   center
 icon: building-columns
 ---

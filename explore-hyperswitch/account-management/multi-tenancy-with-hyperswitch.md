@@ -6,7 +6,7 @@ icon: cubes-stacked
 
 ## What is Multi-Tenancy?
 
-Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
+Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Juspay Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
 
 Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
 
@@ -15,10 +15,10 @@ Each tenant operates in a logically isolated environment but shares the underlyi
 ## Benefits of Multi-tenancy with Hyperswitch
 
 1. **Configuration Options**: Hyperswitch provides configurable settings that allow tenants to customise the look and feel of the application, such as -&#x20;
-   * Branding (logo, colors, themes)&#x20;
-   * Email templates
-   * Language preferences&#x20;
-   * Feature toggles&#x20;
+   - Branding (logo, colors, themes)&#x20;
+   - Email templates
+   - Language preferences&#x20;
+   - Feature toggles&#x20;
 
 &#x20;       _These configurations can be managed by tenant users and will apply to merchants of tenants._
 
@@ -40,9 +40,9 @@ A tenant’s scope will include multiple organizations and their associated enti
 
 Each tenant onboarded on Hyperswitch will have white-labeled links for the following applications:
 
-* **Hyperswitch’s S2S APIs**
-* **Payment Page**
-* **Dashboard**
+- **Hyperswitch’s S2S APIs**
+- **Payment Page**
+- **Dashboard**
 
 Once these white-labeled endpoints are available, tenants will be onboarded on Dashboard. Link to set credentials will be sent via email. Post logging in to Dashboard, tenants can onboard merchants.
 

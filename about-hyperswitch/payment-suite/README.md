@@ -5,7 +5,7 @@ icon: container-storage
 
 # Payments Suite
 
-Hyperswitch is built for teams that want engineering-grade control over payments.
+Juspay Hyperswitch is built for teams that want engineering-grade control over payments.
 
 To simplify architectural decisions, the ecosystem can be viewed as four independent building blocks.\
 By defining ownership of each block — Hyperswitch-managed, self-hosted, or third-party — you can design an architecture aligned with your compliance posture, performance requirements, and internal engineering capabilities.
@@ -48,10 +48,10 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 #### When to Choose This Model
 
-* You want dynamic, frontend-driven payment experiences
-* You prefer minimal backend orchestration logic
-* You want SDK-triggered payment confirmation
-* You are optimizing for rapid checkout implementation
+- You want dynamic, frontend-driven payment experiences
+- You prefer minimal backend orchestration logic
+- You want SDK-triggered payment confirmation
+- You are optimizing for rapid checkout implementation
 
 #### High-level Flow
 
@@ -60,10 +60,10 @@ Choose the integration method that best aligns with your payment flow requiremen
 3. SDK triggers payment confirmation.
 4. SDK communicates with Hyperswitch backend.
 5. Hyperswitch:
-   * Applies [routing logic](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/intelligent-routing)
-   * Sends request to configured PSP
-   * Manages authorization/capture
-   * Returns final payment status
+   - Applies [routing logic](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/intelligent-routing)
+   - Sends request to configured PSP
+   - Manages authorization/capture
+   - Returns final payment status
 
 ***
 
@@ -73,43 +73,43 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 #### When to Choose This Model
 
-* You want granular control over transaction timing
-* You require backend-driven orchestration logic
-* You want to tokenize credentials before execution
-* You prefer decoupling vaulting from transaction processing
+- You want granular control over transaction timing
+- You require backend-driven orchestration logic
+- You want to tokenize credentials before execution
+- You prefer decoupling vaulting from transaction processing
 
 #### High-level Flow
 
 **Tokenisze Card :**&#x20;
 
-* Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
-*   Hyperswitch securely stores the credential and returns a reusable identifier - `payment_method_id`.
+- Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
+- Hyperswitch securely stores the credential and returns a reusable identifier - `payment_method_id`.
 
 
 
 **Trigger Payment Execution :**&#x20;
 
-*   Option A: Process via Hyperswitch Orchestration by calling /payments API.
+- Option A: Process via Hyperswitch Orchestration by calling /payments API.
 
-    *   Use this option if you want Hyperswitch to:
+    - Use this option if you want Hyperswitch to:
 
-        * Apply [routing logic](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/intelligent-routing)
-        * Select the optimal connector
-        * Manage [retries](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/smart-retries) and failover
-        * Handle authorization and capture lifecycle
+        - Apply [routing logic](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/intelligent-routing)
+        - Select the optimal connector
+        - Manage [retries](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/smart-retries) and failover
+        - Handle authorization and capture lifecycle
 
         This is the recommended model for merchants adopting Hyperswitch orchestration.
 
 
-* Option B: Process via Proxy API by calling [/proxy](https://docs.hyperswitch.io/~/revisions/wbGQKlHTQ8NT2yPUGcD2/about-hyperswitch/payment-suite-1/payment-method-card/proxy) API.&#x20;
-  *   Use this option if:
+- Option B: Process via Proxy API by calling [/proxy](https://docs.hyperswitch.io/~/revisions/wbGQKlHTQ8NT2yPUGcD2/about-hyperswitch/payment-suite-1/payment-method-card/proxy) API.&#x20;
+  - Use this option if:
 
-      * You do not want to change your existing PSP integration immediately
-      * You want Hyperswitch to act as a passthrough layer
-      * You are incrementally migrating to full orchestration
+      - You do not want to change your existing PSP integration immediately
+      - You want Hyperswitch to act as a passthrough layer
+      - You are incrementally migrating to full orchestration
 
       In this mode:
 
-      * Your existing integration contract remains unchanged
-      * Hyperswitch forwards requests to the configured processor
-      * You can progressively enable routing and orchestration features
+      - Your existing integration contract remains unchanged
+      - Hyperswitch forwards requests to the configured processor
+      - You can progressively enable routing and orchestration features

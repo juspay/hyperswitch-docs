@@ -14,7 +14,7 @@ The **PaymentWidget** component renders an **embedded, inline payment form direc
 
 ```shellscript
 npm install @juspay-tech/react-native-hyperswitch
-# or
+## or
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
@@ -26,7 +26,7 @@ The SDK requires the following peer dependencies to be installed in your project
 yarn add react-native-inappbrowser-reborn
 yarn add react-native-svg
 yarn add @sentry/react-native
-# or
+## or
 npm install react-native-inappbrowser-reborn
 npm install react-native-svg
 npm install @sentry/react-native
@@ -34,7 +34,7 @@ npm install @sentry/react-native
 
 ### 1.2 Wrap your app with `HyperProvider`
 
-To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
+To initialize Juspay Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
 ```js
 import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";

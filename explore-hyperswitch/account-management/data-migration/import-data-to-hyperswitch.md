@@ -2,7 +2,7 @@
 icon: right-from-bracket
 ---
 
-# Import data to Hyperswitch
+# Import data to Juspay Hyperswitch
 
 We help you with smooth migration from your current payment processor, ensuring uninterrupted business operations.
 
@@ -20,18 +20,18 @@ We help you with smooth migration from your current payment processor, ensuring 
 
 The CSV file for import should be formatted in accordance with the following requirements:
 
-* The first line contains the names of the fields.
-* Each subsequent line should contain the fields for a single record.
-* Delimit rows by a single newline character `\n (not \r\n)`.
-* Delimit columns by `,`
-* Leave empty fields entirely empty (no character in between delimiters). You must not denote a missing field with NULL, N/A, or any other value.
-* Fields can’t contain comma, newline characters `(\r or \n or ,)` within a field.&#x20;
-  * Example of what to avoid: `1st Ave\nApt 1`
-* All rows must have the same number of columns.
-* Field names and values are case-sensitive.
-* Multi-line fields are not allowed.
-* Save the file in UTF-8 format (to support non-western characters).
-* Encrypt the file using the public PGP key provided by Hyperswitch.
+- The first line contains the names of the fields.
+- Each subsequent line should contain the fields for a single record.
+- Delimit rows by a single newline character `\n (not \r\n)`.
+- Delimit columns by `,`
+- Leave empty fields entirely empty (no character in between delimiters). You must not denote a missing field with NULL, N/A, or any other value.
+- Fields can’t contain comma, newline characters `(\r or \n or ,)` within a field.&#x20;
+  - Example of what to avoid: `1st Ave\nApt 1`
+- All rows must have the same number of columns.
+- Field names and values are case-sensitive.
+- Multi-line fields are not allowed.
+- Save the file in UTF-8 format (to support non-western characters).
+- Encrypt the file using the public PGP key provided by Hyperswitch.
 
 ## To import card data:
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Worldpay via Hyperswitch
+description: Accept payments through Worldpay via Juspay Hyperswitch
 hidden: true
 ---
 

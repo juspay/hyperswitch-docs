@@ -1,3 +1,7 @@
+---
+description: Reference documentation for Versioning in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+---
+
 # Versioning
 
 Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.
@@ -150,16 +154,16 @@ All SDKs for version `1.2.x` speak the same protocol, support the same connector
 ## Checking Your Current Version
 
 ```bash
-# Node.js
+## Node.js
 npm list @juspay/connector-service-node
 
-# Python
+## Python
 pip show juspay-connector-service
 
-# Java
+## Java
 mvn dependency:tree | grep connector-service
 
-# Rust
+## Rust
 cargo tree | grep connector-service
 ```
 

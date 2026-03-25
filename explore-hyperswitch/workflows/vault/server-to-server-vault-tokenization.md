@@ -1,6 +1,6 @@
 ---
 description: >-
-  Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
+  Server to Server tokenization with Juspay Hyperswitch Vault Service for PCI compliant
   merchants
 hidden: true
 icon: server
@@ -14,18 +14,18 @@ Tokenize payment cards directly from your servers to Hyperswitch's Vault Service
 
 ### Key Features
 
-* **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
-* **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
-* **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
-* **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
+- **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
+- **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
+- **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
+- **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
 ### Prerequisites
 
 To implement server-to-server tokenization, you need:
 
-* **PCI DSS compliance to handle card data securely:** Make sure you have necessary PCI compliance to handle raw card data directly
-* **Secure API authentication to protect transactions:** Generate your Hyperswitch API key from Developers --> API Keys section on your Hyperswitch dashboard
-* **Robust error handling for tokenization failures:** Implement necessary handling for failure cases
+- **PCI DSS compliance to handle card data securely:** Make sure you have necessary PCI compliance to handle raw card data directly
+- **Secure API authentication to protect transactions:** Generate your Hyperswitch API key from Developers --> API Keys section on your Hyperswitch dashboard
+- **Robust error handling for tokenization failures:** Implement necessary handling for failure cases
 
 ### How It Works
 
@@ -52,8 +52,8 @@ To generate your Vault API keys, follow these steps:
 
 #### 1. Create a Customer
 
-* Endpoint: `POST /customers`
-* Purpose: Create a customer to enable storing their payment methods
+- Endpoint: `POST /customers`
+- Purpose: Create a customer to enable storing their payment methods
 
 ```bash
 curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
@@ -99,8 +99,8 @@ curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
 
 #### 2. Create a Payment Method Token
 
-* Endpoint: `POST /payment_methods`
-* Purpose: Generate a token for a card
+- Endpoint: `POST /payment_methods`
+- Purpose: Generate a token for a card
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
@@ -254,8 +254,8 @@ curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 
 #### 2. Retrieve a Payment Method Token
 
-* Endpoint: `GET /payment_methods/:pm_id`
-* Purpose: Fetch details of an existing token.
+- Endpoint: `GET /payment_methods/:pm_id`
+- Purpose: Fetch details of an existing token.
 
 ```bash
 curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \
@@ -265,8 +265,8 @@ curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id
 
 #### 3. Update a Payment Method Token
 
-* Endpoint: `PATCH /payment_methods/:pm_id/update_saved_payment_method`
-* Purpose: Modify token details.
+- Endpoint: `PATCH /payment_methods/:pm_id/update_saved_payment_method`
+- Purpose: Modify token details.
 
 ```bash
 curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}/update-saved-payment-method' \
@@ -289,8 +289,8 @@ curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/pay
 
 #### 4. Delete a Payment Method Token
 
-* Endpoint: `DELETE /payment_methods/:pm_id`
-* Purpose: Remove a token from the vault.
+- Endpoint: `DELETE /payment_methods/:pm_id`
+- Purpose: Remove a token from the vault.
 
 ```bash
 curl --location --globoff --request DELETE 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \

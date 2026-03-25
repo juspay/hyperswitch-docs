@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Coinbase via Hyperswitch
+description: Accept payments through Coinbase via Juspay Hyperswitch
 hidden: true
 ---
 

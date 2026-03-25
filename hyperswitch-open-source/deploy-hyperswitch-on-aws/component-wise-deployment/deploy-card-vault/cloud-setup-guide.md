@@ -44,12 +44,12 @@ docker pull juspaydotin/hyperswitch-card-vault:latest
 
 #### Setup Database (AWRDS)
 
-* Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
-* Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
+- Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
+- Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
 
 <figure><img src="../../../../.gitbook/assets/image (140).png" alt="" width="563"><figcaption><p>Creating an RDS</p></figcaption></figure>
 
-* To run the migrations install `psql` in the EC2 instance
+- To run the migrations install `psql` in the EC2 instance
 
 ```bash
 sudo yum install postgresql-server postgresql-contrib
@@ -59,7 +59,7 @@ sudo yum install postgresql-server postgresql-contrib
 sudo amazon-linux-extras install postgresql10
 ```
 
-* Run the migrations using the following commands
+- Run the migrations using the following commands
 
 ```bash
 export DB_USER="<your-database-user>"
@@ -80,8 +80,8 @@ sudo psql -h <database-url> -U $DB_USER -W locker
 
 and paste the contents from the below mentioned migration files
 
-* [FILE - 1](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
-* [FILE - 2](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
+- [FILE - 1](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
+- [FILE - 2](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
 
 #### Setup KMS
 
@@ -106,11 +106,11 @@ cargo run --bin utils -- master-key
 To generate the `JWE` and `JWS` keys run the following commands
 
 ```
-# Generating the private keys
+## Generating the private keys
 openssl genrsa -out locker-private-key.pem 2048
 openssl genrsa -out tenant-private-key.pem 2048
 
-# Generating the public keys
+## Generating the public keys
 openssl rsa -in locker-private-key.pem -pubout -out locker-public-key.pem
 openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 ```
@@ -127,23 +127,23 @@ After generating your keys and setting up of KMS, run the following command to K
 function kms_encrypt() {
     xargs -I {} -0 echo -n "{}" | xargs -I {} -0 aws kms encrypt --key-id <your-kms-key-id> --region <your-kms-region> --plaintext "{}"
 }
-# substitute this in the above mentioned envfile (LOCKER__DATABASE__PASSWORD)
+## substitute this in the above mentioned envfile (LOCKER__DATABASE__PASSWORD)
 echo -n "<database password>" | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__MASTER_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__MASTER_KEY)
 echo -n "<generated master key>" | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__LOCKER_PRIVATE_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__LOCKER_PRIVATE_KEY)
 echo -n '<locker private key>' | kms_encrypt
 
-# substitute this in the above mentioned envfile (LOCKER__SECRETS__TENANT_PUBLIC_KEY)
+## substitute this in the above mentioned envfile (LOCKER__SECRETS__TENANT_PUBLIC_KEY)
 echo -n '<tenant public key>' | kms_encrypt
  
 ```
 
 #### Update Config files
 
-* Create an `env-file` in the instance and paste the environment variables mentioned below
+- Create an `env-file` in the instance and paste the environment variables mentioned below
 
 ```bash
 LOCKER__SERVER__HOST=0.0.0.0
@@ -187,7 +187,7 @@ The following cURLs are to be used to provide keys
 <pre class="language-bash"><code class="lang-bash"># temporary turn of saving to history to run the following commands
 unset HISTFILE 
 
-# key 1
+## key 1
 <strong> curl -X 'POST' \
 </strong>  'localhost:8080/custodian/key1' \
   -H 'accept: text/plain' \
@@ -196,7 +196,7 @@ unset HISTFILE
   "key": &#x3C;key 1>
 }'
 
-# key 2
+## key 2
  curl -X 'POST' \
   'localhost:8080/custodian/key2' \
   -H 'accept: text/plain' \
@@ -205,13 +205,13 @@ unset HISTFILE
   "key": &#x3C;key 2>
 }'
 
-# decrypt
+## decrypt
 <strong> curl -X 'POST' 'localhost:8080/custodian/decrypt'
 </strong></code></pre>
 
 If the last cURL replies with `Decrypted Successfully`, we are ready to use the locker.
 
-#### Integrating it with Hyperswitch&#x20;
+#### Integrating it with Juspay Hyperswitch&#x20;
 
 To start using it with Hyperswitch application update the following environment variables while deploying the Hyperswitch Server. To use it with other applications use the Vault URL and JWE keys.
 

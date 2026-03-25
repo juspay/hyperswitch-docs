@@ -10,11 +10,11 @@ This document describes how to configure **secure key management** for **Hypersw
 
 Hyperswitch processes **highly sensitive data**, including:
 
-* Payment card information
-* Bank account details
-* API credentials
-* Database credentials
-* Personally Identifiable Information (PII)
+- Payment card information
+- Bank account details
+- API credentials
+- Database credentials
+- Personally Identifiable Information (PII)
 
 To ensure compliance with industry standards such as **Payment Card Industry Security Standards Council** requirements, encryption must be enforced across:
 
@@ -53,9 +53,9 @@ The vault requires **multiple key custodians** to unlock the master encryption k
 
 Purpose:
 
-* Prevents unilateral access to sensitive data
-* Enforces dual-control security policies
-* Aligns with PCI DSS key management principles
+- Prevents unilateral access to sensitive data
+- Enforces dual-control security policies
+- Aligns with PCI DSS key management principles
 
 At startup:
 
@@ -70,14 +70,14 @@ Production deployments should enforce **at least two custodians**.
 
 All communication between the **Hyperswitch Router** and the **Card Vault** is encrypted and signed using:
 
-* **JSON Web Encryption**
-* **JSON Web Signature**
+- **JSON Web Encryption**
+- **JSON Web Signature**
 
 This provides:
 
-* message confidentiality
-* message integrity
-* sender verification
+- message confidentiality
+- message integrity
+- sender verification
 
 This protection is applied **in addition to TLS**.
 
@@ -87,17 +87,17 @@ For enterprise deployments, encryption keys should **not be stored locally on th
 
 Instead, integrate Hyperswitch with an external Key Management System such as:
 
-* **HashiCorp Vault**
-* **AWS Key Management Service**
-* **Google Cloud KMS**
-* **Azure Key Vault**
+- **HashiCorp Vault**
+- **AWS Key Management Service**
+- **Google Cloud KMS**
+- **Azure Key Vault**
 
 These systems provide:
 
-* Hardware-backed key storage
-* Key rotation policies
-* Access auditing
-* Role-based access control
+- Hardware-backed key storage
+- Key rotation policies
+- Access auditing
+- Role-based access control
 
 Hyperswitch retrieves encryption keys dynamically during runtime.
 
@@ -126,8 +126,8 @@ cargo install --git https://github.com/juspay/hyperswitch-card-vault --bin utils
 
 The command generates:
 
-* Master encryption key
-* Key custodian key shares
+- Master encryption key
+- Key custodian key shares
 
 Immediately store these keys in a **secure secret management system**.
 
@@ -154,9 +154,9 @@ openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 
 In production deployments:
 
-* Store private keys in **secret management systems**
-* Inject keys into Kubernetes using **secret volumes**
-* Restrict access using RBAC
+- Store private keys in **secret management systems**
+- Inject keys into Kubernetes using **secret volumes**
+- Restrict access using RBAC
 
 Keys must **never be stored in public repositories or container images**.
 
@@ -166,9 +166,9 @@ The Hyperswitch Key Manager acts as an intermediary between the application and 
 
 It provides:
 
-* centralized key access
-* encryption services
-* audit logging
+- centralized key access
+- encryption services
+- audit logging
 
 The Key Manager should be deployed as an **independent Kubernetes service**.
 
@@ -176,20 +176,20 @@ The Key Manager should be deployed as an **independent Kubernetes service**.
 
 Communication between the following components must use **mutual TLS**:
 
-* Router
-* Card Vault
-* Key Manager
+- Router
+- Card Vault
+- Key Manager
 
 mTLS ensures:
 
-* encrypted communication
-* service identity verification
+- encrypted communication
+- service identity verification
 
 Certificates can be issued using:
 
-* **cert-manager**
-* corporate PKI infrastructure
-* service mesh certificate authorities
+- **cert-manager**
+- corporate PKI infrastructure
+- service mesh certificate authorities
 
 Example certificate generation script (for testing environments):
 
@@ -235,9 +235,9 @@ hyperswitch-app:
 
 Secrets should be injected using:
 
-* Kubernetes Secrets
-* External Secrets Operators
-* Vault secret injection
+- Kubernetes Secrets
+- External Secrets Operators
+- Vault secret injection
 
 Avoid using **environment variables for highly sensitive keys** where possible.
 
@@ -267,9 +267,9 @@ POST /custodian/decrypt
 
 Enterprise environments should restrict this operation to:
 
-* designated security administrators
-* audited secure access channels
-* controlled operational procedures
+- designated security administrators
+- audited secure access channels
+- controlled operational procedures
 
 ### 9. Key Rotation Strategy
 
@@ -285,24 +285,24 @@ Recommended rotation policies:
 
 Key rotation should be performed using:
 
-* KMS rotation features
-* automated certificate managers
-* controlled deployment pipelines
+- KMS rotation features
+- automated certificate managers
+- controlled deployment pipelines
 
 ### 10. Monitoring and Auditing
 
 To detect unauthorized access attempts, enable logging and monitoring for:
 
-* key access operations
-* vault unlock attempts
-* encryption failures
-* certificate validation errors
+- key access operations
+- vault unlock attempts
+- encryption failures
+- certificate validation errors
 
 Logs should be integrated with centralized logging systems such as:
 
-* **Elastic Stack**
-* **Grafana Loki**
-* **Splunk**
+- **Elastic Stack**
+- **Grafana Loki**
+- **Splunk**
 
 Security alerts should be configured for suspicious activity.
 
@@ -312,27 +312,27 @@ Enterprises deploying Hyperswitch should enforce the following controls:
 
 **Access control**
 
-* restrict key access to minimal roles
-* enforce multi-factor authentication
-* use role-based access policies
+- restrict key access to minimal roles
+- enforce multi-factor authentication
+- use role-based access policies
 
 **Secret protection**
 
-* never store secrets in source code
-* encrypt all secret storage
-* use dedicated secret managers
+- never store secrets in source code
+- encrypt all secret storage
+- use dedicated secret managers
 
 **Infrastructure security**
 
-* isolate vault components in private networks
-* restrict external access
-* enable firewall policies
+- isolate vault components in private networks
+- restrict external access
+- enable firewall policies
 
 **Operational controls**
 
-* audit all administrative actions
-* rotate credentials regularly
-* monitor security logs continuously
+- audit all administrative actions
+- rotate credentials regularly
+- monitor security logs continuously
 
 ### 12. Hardware Security Module (HSM) Backed Key Architecture
 
@@ -340,18 +340,18 @@ For highly regulated environments, encryption keys should be stored and managed 
 
 An HSM is a dedicated cryptographic device designed to:
 
-* securely generate encryption keys
-* prevent key extraction
-* perform cryptographic operations internally
-* enforce access control and auditing
+- securely generate encryption keys
+- prevent key extraction
+- perform cryptographic operations internally
+- enforce access control and auditing
 
 Common enterprise HSM-backed systems include:
 
-* **AWS CloudHSM**
-* **AWS Key Management Service**
-* **Azure Key Vault**
-* **Google Cloud KMS**
-* **HashiCorp Vault**
+- **AWS CloudHSM**
+- **AWS Key Management Service**
+- **Azure Key Vault**
+- **Google Cloud KMS**
+- **HashiCorp Vault**
 
 ### HSM-Based Key Hierarchy
 
@@ -369,17 +369,17 @@ Explanation:
 
 Benefits:
 
-* raw card encryption keys never leave the HSM
-* key compromise blast radius is minimized
-* cryptographic operations can be audited
+- raw card encryption keys never leave the HSM
+- key compromise blast radius is minimized
+- cryptographic operations can be audited
 
 ### Integrating HSM with Hyperswitch
 
 The Key Manager should:
 
-* retrieve encryption keys from the KMS
-* perform encryption operations through secure APIs
-* cache keys in memory only for limited time
+- retrieve encryption keys from the KMS
+- perform encryption operations through secure APIs
+- cache keys in memory only for limited time
 
 Keys should **never be written to disk**.
 
@@ -393,9 +393,9 @@ Example:
 
 The token can safely be stored and used for:
 
-* recurring payments
-* refunds
-* payment authorization
+- recurring payments
+- refunds
+- payment authorization
 
 Only the vault can resolve the token to the original card data.
 
@@ -412,9 +412,9 @@ Re-encryption process:
 
 Best practices:
 
-* perform re-encryption in controlled batches
-* throttle operations to avoid database overload
-* verify integrity after each batch
+- perform re-encryption in controlled batches
+- throttle operations to avoid database overload
+- verify integrity after each batch
 
 This process should run as a **background migration job**.
 
@@ -438,9 +438,9 @@ Recommended approach:
 
 Backups should be stored in:
 
-* separate geographic region
-* separate security domain
-* encrypted storage
+- separate geographic region
+- separate security domain
+- encrypted storage
 
 #### Multi-Region Key Replication
 
@@ -474,16 +474,16 @@ Organizations should maintain **controlled emergency access** procedures.
 
 Requirements:
 
-* dual authorization
-* full audit logging
-* time-limited access
-* security officer approval
+- dual authorization
+- full audit logging
+- time-limited access
+- security officer approval
 
 Break-glass access should only be used during:
 
-* disaster recovery
-* vault corruption
-* key recovery scenarios
+- disaster recovery
+- vault corruption
+- key recovery scenarios
 
 ### 15. Security Auditing and Compliance
 
@@ -500,12 +500,12 @@ Audit controls should cover:
 
 Logs should be integrated with centralized monitoring systems such as:
 
-* **Elastic Stack**
-* **Splunk**
-* **Grafana Loki**
+- **Elastic Stack**
+- **Splunk**
+- **Grafana Loki**
 
 Security teams should regularly review logs for:
 
-* unusual key access
-* unauthorized vault access
-* repeated authentication failures
+- unusual key access
+- unauthorized vault access
+- repeated authentication failures

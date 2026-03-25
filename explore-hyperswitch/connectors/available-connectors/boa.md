@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bank of America via Hyperswitch
+description: Accept payments through Bank of America via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -1,3 +1,7 @@
+---
+description: Complete reference for Error Handling in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.

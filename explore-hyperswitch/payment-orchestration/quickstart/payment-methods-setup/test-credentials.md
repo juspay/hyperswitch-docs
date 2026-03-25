@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Key to configure and test different connectors in Juspay Hyperswitch
 icon: key
 ---
 
@@ -42,34 +42,34 @@ Simulate a successful test card payment with the following credentials
 
 **Dummy Connector test cards**
 
-* Different flows are available for dummy connector transactions, determined by the card number.
-* For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
-* Dummy connectors only support payments and refunds.
-* Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
+- Different flows are available for dummy connector transactions, determined by the card number.
+- For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
+- Dummy connectors only support payments and refunds.
+- Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
 
 **Non 3DS flows**
 
-* Success
-  * 4111111111111111
-  * 4242424242424242
-  * 5555555555554444
-  * 38000000000006
-  * 378282246310005
-  * 6011111111111117
-* Card declined
-  * 5105105105105100
-  * 4000000000000002
-* Insufficient funds
-  * 4000000000009995
-* Lost card
-  * 4000000000009987
-* Stolen card
-  * 4000000000009979
+- Success
+  - 4111111111111111
+  - 4242424242424242
+  - 5555555555554444
+  - 38000000000006
+  - 378282246310005
+  - 6011111111111117
+- Card declined
+  - 5105105105105100
+  - 4000000000000002
+- Insufficient funds
+  - 4000000000009995
+- Lost card
+  - 4000000000009987
+- Stolen card
+  - 4000000000009979
 
 **3DS flows**
 
-* Success
-  * 4000003800000446
+- Success
+  - 4000003800000446
 
 ### Payment Methods Testing
 

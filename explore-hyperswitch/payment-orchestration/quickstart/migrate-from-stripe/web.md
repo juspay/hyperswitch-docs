@@ -10,7 +10,7 @@ Migrate from Stripe on your web app in less than 15 mins!
 
 ## Migrate from Stripe
 
-If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Unified analytics and many more.
+If you are already integrated to Stripe as your payment processor, we have made migrating to Juspay Hyperswitch much simpler for you. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Unified analytics and many more.
 
 {% hint style="info" %}
 Stripe’s `paymentRequestButton` is available under Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Zen via Hyperswitch
+description: Accept payments through Zen via Juspay Hyperswitch
 hidden: true
 ---
 

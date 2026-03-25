@@ -176,11 +176,11 @@ The web client allows you to customize the appearance according to your web app 
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I am getting an error while loading the HyperLoader.js script**\
+- **I am getting an error while loading the HyperLoader.js script**\
   Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\\
-* **I am unable to see the SDK running, or it is in a perpetual loading state**\
+- **I am unable to see the SDK running, or it is in a perpetual loading state**\
   Please make sure that the correct publishable key is used to instantiate the SDK.\\
-* **After completing the payment, I am redirected to a non existent web page**\
+- **After completing the payment, I am redirected to a non existent web page**\
   Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
 
 </details>

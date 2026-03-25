@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
+description: Juspay Hyperswitch plugins for the e-commerce platform you use
 hidden: true
 noIndex: true
 icon: plug-circle-bolt

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Rapyd via Hyperswitch
+description: Accept payments through Rapyd via Juspay Hyperswitch
 hidden: true
 ---
 

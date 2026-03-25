@@ -18,7 +18,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
@@ -160,8 +160,8 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Configuration Parameters :**&#x20;
 
-* `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
+- `setup_future_usage: "off_session"`
+- `amount > 0`&#x20;
 
 
 
@@ -173,10 +173,10 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Configuration Parameters :**&#x20;
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
-* `setup_future_usage: "off_session"`
-* `amount: 0`
-* `payment_type: "setup_mandate"`
+- Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+- `setup_future_usage: "off_session"`
+- `amount: 0`
+- `payment_type: "setup_mandate"`
 {% endhint %}
 {% endstep %}
 
@@ -216,8 +216,8 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Configuration Parameters :**&#x20;
 
-* `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
+- `setup_future_usage: "off_session"`
+- `amount > 0`&#x20;
 
 
 
@@ -229,10 +229,10 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Configuration Parameters :**&#x20;
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
-* `setup_future_usage: "off_session"`
-* `amount: 0`
-* `payment_type: "setup_mandate"`
+- Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+- `setup_future_usage: "off_session"`
+- `amount: 0`
+- `payment_type: "setup_mandate"`
 {% endhint %}
 
 ```

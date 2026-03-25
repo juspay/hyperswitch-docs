@@ -9,20 +9,20 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 ## Use cases for Payout links
 
-* Corporates - Pay marketing affiliates and reimburse employees.
-* BFSI (Banking, Financial Services, and Insurance) - Settling insurance claims and paying DSA (Direct Selling Agents) incentives.
-* Healthcare - Pay field agents, handle reimbursements, and issue refunds.
-* Travel and Hospitality - Pay commissions to vendors, handle reimbursements and do refunds.
-* Rental Business - Process Security Deposit Refunds for all rental business like car, housing, furniture and appliances.
-* Online gaming - Distribute prize money to players.
-* NGOs & Political Organisations - Reimburse field agents and volunteers.
+- Corporates - Pay marketing affiliates and reimburse employees.
+- BFSI (Banking, Financial Services, and Insurance) - Settling insurance claims and paying DSA (Direct Selling Agents) incentives.
+- Healthcare - Pay field agents, handle reimbursements, and issue refunds.
+- Travel and Hospitality - Pay commissions to vendors, handle reimbursements and do refunds.
+- Rental Business - Process Security Deposit Refunds for all rental business like car, housing, furniture and appliances.
+- Online gaming - Distribute prize money to players.
+- NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+## How to configure Payout links through Juspay Hyperswitch API?
 
 ### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
-* Add a payout processor to your account
+- Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
+- Add a payout processor to your account
 
 ### Using Payout links
 
@@ -32,10 +32,10 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 There are a couple of ways for using payout links.
 
-* Creating default links
-* Customizing UI of individual links
-* Serving links from a custom domain
-* **\[TEST MODE]** Opening non-iframed links
+- Creating default links
+- Customizing UI of individual links
+- Serving links from a custom domain
+- **\[TEST MODE]** Opening non-iframed links
 
 #### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
 
@@ -68,7 +68,7 @@ There are a couple of ways for using payout links.
 
 > This creates a default payout link using the payout link config that was configured for the profile. In case payout config is not configured and not passed during create request, a default set of UI config is used.
 
-* Set `payout_link` to true
+- Set `payout_link` to true
 
 ```shell
 curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
@@ -161,7 +161,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 **Setting at business profile level**
 
-* Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
+- Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
 
 ```jsonc
 "payout_link_config": {
@@ -169,11 +169,11 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }
 ```
 
-* Any new payout links created for this business profile will be accessible through browser's new tab.
+- Any new payout links created for this business profile will be accessible through browser's new tab.
 
 **Creating test links on demand**
 
-* Set `test_mode` during payout link creation
+- Set `test_mode` during payout link creation
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \

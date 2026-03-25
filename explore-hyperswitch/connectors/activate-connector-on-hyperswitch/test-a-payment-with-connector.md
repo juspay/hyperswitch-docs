@@ -16,7 +16,7 @@ icon: vial-circle-check
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message
-7. Validate transaction on Hyperswitch dashboard.\
+7. Validate transaction on Juspay Hyperswitch dashboard.\
    \- Goto the left pane on the Hyperswitch dashboard\
    \- Click on Operations -> Payments\
    \- Your transactions should be visible under the order management tab
@@ -44,45 +44,45 @@ icon: vial-circle-check
 
 **Dummy Connector test cards**
 
-* Different flows are available for dummy connector transactions, determined by the card number.
-* For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
-* Dummy connectors only support payments and refunds.
-* Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
+- Different flows are available for dummy connector transactions, determined by the card number.
+- For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
+- Dummy connectors only support payments and refunds.
+- Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
 
 **Non 3DS flows**
 
-* Success
-  * 4111111111111111
-  * 4242424242424242
-  * 5555555555554444
-  * 38000000000006
-  * 378282246310005
-  * 6011111111111117
-* Card declined
-  * 5105105105105100
-  * 4000000000000002
-* Insufficient funds
-  * 4000000000009995
-* Lost card
-  * 4000000000009987
-* Stolen card
-  * 4000000000009979
+- Success
+  - 4111111111111111
+  - 4242424242424242
+  - 5555555555554444
+  - 38000000000006
+  - 378282246310005
+  - 6011111111111117
+- Card declined
+  - 5105105105105100
+  - 4000000000000002
+- Insufficient funds
+  - 4000000000009995
+- Lost card
+  - 4000000000009987
+- Stolen card
+  - 4000000000009979
 
 **3DS flows**
 
-* Success
-  * 4000003800000446
+- Success
+  - 4000003800000446
 
 #### Klarna - Direct integration test credentials <a href="#klarna---direct-integration-test-credentials" id="klarna---direct-integration-test-credentials"></a>
 
 Simulate a successful payment with the following credentials
 
 1. **United States**
-   * Phone number: +1310668331
-   * OTP: 123456 (Random 6-digit different from 999999)
+   - Phone number: +1310668331
+   - OTP: 123456 (Random 6-digit different from 999999)
 2. **United Kingdom**
-   * Phone number: +4408082580300
-   * OTP: 123456 (Random 6-digit different from 999999)
+   - Phone number: +4408082580300
+   - OTP: 123456 (Random 6-digit different from 999999)
 
 For testing more scenarios, please refer [Klarna - Sample customer data](https://docs.klarna.com/resources/test-environment/sample-customer-data/)
 

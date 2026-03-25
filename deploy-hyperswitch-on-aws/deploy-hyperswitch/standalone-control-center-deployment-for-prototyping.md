@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
+  Use the standalone deployment script to deploy Juspay Hyperswitch control center on
   AWS quickly
 ---
 
@@ -26,7 +26,7 @@ In this chapter, you will deploy Hyperswitch control center on AWS cloud. You ca
 
 ### **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
 
 ### **Let's begin!**
 

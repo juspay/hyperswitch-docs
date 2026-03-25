@@ -1,3 +1,7 @@
+---
+description: Complete reference for Js in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+---
+
 # JS
 
 Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
@@ -110,8 +114,8 @@ This method retrieves a previously created Payment Element. Here the `type` is `
 
 elements.getElement('payment') returns one of the following:
 
-* An instance of a Unified Checkout.
-* `null`, when no Unified Checkout has been created.
+- An instance of a Unified Checkout.
+- `null`, when no Unified Checkout has been created.
 
 **2. `elements.create(type, options?)`**
 

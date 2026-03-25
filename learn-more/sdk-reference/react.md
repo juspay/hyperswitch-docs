@@ -1,3 +1,7 @@
+---
+description: Technical guide for React in Juspay Hyperswitch learn more. Architecture details, API specifications, and integration workflows explained.
+---
+
 # React
 
 Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount.  You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.\
@@ -122,8 +126,8 @@ This method retrieves a previously created Payment Element. Here the `type` is `
 
 elements.getElement('payment') returns one of the following:
 
-* An instance of a Unified Checkout.
-* `null`, when no Unified Checkout has been created.\
+- An instance of a Unified Checkout.
+- `null`, when no Unified Checkout has been created.\
 
 
 **2. `elements.create(type, options?)`**

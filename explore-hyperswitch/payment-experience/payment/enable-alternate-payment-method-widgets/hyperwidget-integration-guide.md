@@ -6,7 +6,7 @@ icon: plug-circle-bolt
 
 Once the merchant signs up onto the unified dashboard, they’ll get their API keys and can enable the APMs <> PSP combinations that they would like to provide on their checkout.
 
-Hyperswitch provides a code transformer that allows the merchant to leverage their existing integration (with PSP or middle layer) and make a call to Hyperswitch server with minimal changes. Hyperwidget acts as a Unified wrapper on top of all major APMs and simplifies up-scaling or down-scaling of these APMs across one or multiple PSPs.
+Juspay Hyperswitch provides a code transformer that allows the merchant to leverage their existing integration (with PSP or middle layer) and make a call to Hyperswitch server with minimal changes. Hyperwidget acts as a Unified wrapper on top of all major APMs and simplifies up-scaling or down-scaling of these APMs across one or multiple PSPs.
 
 The unified dashboard offers the merchants ability to enable or disable APMs via any PSP. The dashboard also offers capabilities like - Analytics, Operations, Refunds, Chargebacks, and Reconciliation.
 
@@ -35,9 +35,9 @@ The unified dashboard offers the merchants ability to enable or disable APMs via
 
 To start collecting payments via the APM of your choice, follow these simple steps: ​
 
-* [Install the Hyperwidgets SDK following these steps.](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
-  * As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
-* [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
+- [Install the Hyperwidgets SDK following these steps.](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
+  - As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
+- [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
 
 {% content-ref url="../../../payment-orchestration/click-to-pay/" %}
 [click-to-pay](../../../payment-orchestration/click-to-pay/)

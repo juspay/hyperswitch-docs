@@ -6,7 +6,7 @@ icon: react
 
 {% hint style="info" %}
 **Note:** **Expo Go is not supported.**\
-The Hyperswitch SDK uses native modules, so the app must be built with native Android and iOS code.
+The Juspay Hyperswitch SDK uses native modules, so the app must be built with native Android and iOS code.
 {% endhint %}
 
 ## 1. Install Required Dependencies
@@ -14,10 +14,10 @@ The Hyperswitch SDK uses native modules, so the app must be built with native An
 The Hyperswitch SDK has peer dependencies that must be installed before installing the SDK.
 
 ```
-# Install peer dependencies
+## Install peer dependencies
 yarn add @sentry/react-native react-native-inappbrowser-reborn react-native-svg
 
-# Install Hyperswitch SDK
+## Install Hyperswitch SDK
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
@@ -31,10 +31,10 @@ npx expo prebuild --clean
 
 This command will:
 
-* Generate **Android and iOS native folders**
-* Run **CocoaPods** for iOS dependencies
-* Configure **TurboModule code generation**
-* **Auto-link native modules**
+- Generate **Android and iOS native folders**
+- Run **CocoaPods** for iOS dependencies
+- Configure **TurboModule code generation**
+- **Auto-link native modules**
 
 ### 3. Implement the Payment Flow
 

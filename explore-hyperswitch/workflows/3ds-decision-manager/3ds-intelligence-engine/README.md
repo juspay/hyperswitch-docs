@@ -35,19 +35,19 @@ A merchant's 3DS exemption strategy should prioritize a holistic user experience
 
 Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
 
-* Some of the examples of these rules are:
-  * If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_ \
+- Some of the examples of these rules are:
+  - If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_ \
     then ThreeDS Preference = "No Preference"
-  * If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_ \
+  - If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_ \
     then ThreeDS Preference = "ThreeDS Exemption Requested" and ThreeDS Exemption Type Preference = "TRA"
-  * If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_ \
+  - If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_ \
     then ThreeDS Preference = "Challenge Requested"
 
 <figure><img src="../../../../.gitbook/assets/Intelligence_1.png" alt=""><figcaption></figcaption></figure>
 
 #### **Advanced Analytics for Continuous Optimization**
 
-As regulations, issuer behavior, and customer expectations evolve, merchants can analyze trends, refine rules, and boost approval rates. The Hyperswitch Control Center offers detailed insights into user journeys, exemption lifecycles, and top failure reasons, with the 3DS engine continuously learning and optimizing based on new data.
+As regulations, issuer behavior, and customer expectations evolve, merchants can analyze trends, refine rules, and boost approval rates. The Juspay Hyperswitch Control Center offers detailed insights into user journeys, exemption lifecycles, and top failure reasons, with the 3DS engine continuously learning and optimizing based on new data.
 
 #### **Factor in authorization, fraud and chargeback data**
 

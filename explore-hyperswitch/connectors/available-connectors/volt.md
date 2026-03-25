@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Volt via Hyperswitch
+description: Accept payments through Volt via Juspay Hyperswitch
 hidden: true
 ---
 

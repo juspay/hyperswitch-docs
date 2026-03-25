@@ -5,7 +5,7 @@ icon: repeat
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
@@ -20,7 +20,7 @@ This is typically limited for card payment methods and not for wallets (viz. App
 
 For saving a customer's payment method used in a successful transaction:
 
-* Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+- Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -38,7 +38,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+- If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -69,7 +69,7 @@ Based on the payment processors support, this functionality is also available fo
 
 ### To save a customer's payment method used in a successful transaction for future MIT payments:
 
-* Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+- Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -87,7 +87,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+- If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {

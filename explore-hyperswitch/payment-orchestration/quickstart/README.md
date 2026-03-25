@@ -4,18 +4,18 @@ icon: bolt
 
 # Accept Payments
 
-We at Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.
+We at Juspay Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.
 
 ## Get Started
 
 ### **1. Get your Hyperswitch API key**
 
-* **Sign up on Hyperswitch Control Centre**: If you haven’t already, create an account on the [Hyperswitch Control Centre](https://app.hyperswitch.io/).
-* **Locate API key**: Access your API key from the **Settings > Developers** section in the Control Center.
+- **Sign up on Hyperswitch Control Centre**: If you haven’t already, create an account on the [Hyperswitch Control Centre](https://app.hyperswitch.io/).
+- **Locate API key**: Access your API key from the **Settings > Developers** section in the Control Center.
 
 ### 2. Configure your payment processor
 
-* **Set up payment processor:** Navigate to the Connectors tab in the Control Center to configure your preferred payment processor. You’ll need API credentials for the processor.
+- **Set up payment processor:** Navigate to the Connectors tab in the Control Center to configure your preferred payment processor. You’ll need API credentials for the processor.
 
 {% hint style="success" %}
 **Use the dummy processors:** If credentials are unavailable, you can configure the dummy processors, pre-built into the Control Center.
@@ -74,9 +74,9 @@ Hyperswitch offers various customization options but you can try out our demo st
 
 Here are a few demo integrations for various tech stacks:
 
-* [Hyperswitch React-Node](https://github.com/juspay/hyperswitch-react-node)
-* [Hyperswitch HTML-Node](https://github.com/juspay/hyperswitch-html-node)
-* [Hyperswitch React-Java](https://github.com/juspay/hyperswitch-react-java)
-* [Hyperswitch Next-Node](https://github.com/juspay/hyperswitch-next-node)
+- [Hyperswitch React-Node](https://github.com/juspay/hyperswitch-react-node)
+- [Hyperswitch HTML-Node](https://github.com/juspay/hyperswitch-html-node)
+- [Hyperswitch React-Java](https://github.com/juspay/hyperswitch-react-java)
+- [Hyperswitch Next-Node](https://github.com/juspay/hyperswitch-next-node)
 
 </details>

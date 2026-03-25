@@ -1,3 +1,7 @@
+---
+description: Learn about Connectors Services Subservices Methods in Juspay Hyperswitch connector service to optimize payment processing workflows and enhance transaction management capabilities.
+---
+
 # Services and Methods
 
 Prism organizes payment operations into services that reflect how payments actually work in the real world. Some operations are independent. Others are follow-on actions that only make sense after a payment exists.

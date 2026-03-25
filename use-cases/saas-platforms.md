@@ -48,9 +48,9 @@ Juspay Hyperswitch provides a built-in [Organisation → Account → Profile](ht
 
 Additional capabilities:
 
-* **Platform Setup**: Configure hierarchical organizations with programmatic merchant onboarding. See [Platform Org and Merchant Setup](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup).
-* **Granular Control**: Isolate API keys and routing rules at the Account ID level.
-* **Team Access**: Map your control center users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
+- **Platform Setup**: Configure hierarchical organizations with programmatic merchant onboarding. See [Platform Org and Merchant Setup](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup).
+- **Granular Control**: Isolate API keys and routing rules at the Account ID level.
+- **Team Access**: Map your control center users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
 
 ***
 
@@ -68,7 +68,7 @@ Treat account onboarding as an API call, not a support ticket. Juspay Hyperswitc
 #### Example: Create an account
 
 ```bash
-# Note: Use sandbox endpoint for testing
+## Note: Use sandbox endpoint for testing
 curl --request POST \
   --url https://api.hyperswitch.io/accounts \
   --header 'api-key: YOUR_API_KEY' \
@@ -164,9 +164,9 @@ Juspay Hyperswitch treats payments as "Critical Infrastructure" and provides dee
 
 Ready to get started? Here are the next steps:
 
-* [Set up multiple accounts and profiles](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles) — Configure your platform hierarchy
-* [Configure intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules for your accounts
-* [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
-* [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
+- [Set up multiple accounts and profiles](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles) — Configure your platform hierarchy
+- [Configure intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules for your accounts
+- [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
+- [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
+- [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
+- [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production

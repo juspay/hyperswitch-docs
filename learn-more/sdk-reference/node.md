@@ -1,5 +1,5 @@
 ---
-description: Node to access the Hyperswitch API
+description: Node to access the Juspay Hyperswitch API
 hidden: true
 ---
 
@@ -21,7 +21,7 @@ Install the package with:
 
 ```sh
 npm install @juspay-tech/hyperswitch-node --save
-# or
+## or
 yarn add @juspay-tech/hyperswitch-node
 ```
 

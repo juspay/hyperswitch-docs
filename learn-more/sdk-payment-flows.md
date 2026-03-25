@@ -14,7 +14,7 @@ There are multiple stages in a Payment flow depending on the payment methods tha
 
 **a) Creating a Payment:** When your customer wants to checkout, create a payment by hitting the payments/create endpoint. Fetch and store the payment\_id and client\_secret
 
-**b) Loading the SDK:** After your customer checks out, load the Hyperswitch SDK by initiating it with the client\_secret and publishable\_key
+**b) Loading the SDK:** After your customer checks out, load the Juspay Hyperswitch SDK by initiating it with the client\_secret and publishable\_key
 
 **c) SDK being rendered:** After you initiate the SDK, the SDK makes several API calls involving the /sessions and /payment\_methods endpoints to load relevant payment methods and any saved cards associated with the customer
 

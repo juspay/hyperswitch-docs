@@ -13,13 +13,13 @@ Use this guide to integrate `hyperswitch` SDK to your Flutter app.
 
 ## Requirements
 
-* Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
-* iOS 13.0 and above
-* CocoaPods
-* npm
+- Android 7.0 (API level 24) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+- [Gradle](https://gradle.org/releases/) 8.8+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
+- iOS 13.0 and above
+- CocoaPods
+- npm
 
 ## 1. Setup the server
 
@@ -54,7 +54,7 @@ This command configures the necessary Flutter plugins for your project using the
 
 ## 3. Complete the checkout on the client
 
-### 3.1 Initialise the Hyperswitch SDK
+### 3.1 Initialise the Juspay Hyperswitch SDK
 
 Initialise `Hyper` onto your app with your publishable key with the `Hyper` constructor. To get a PublishableKey please find it [here](https://app.hyperswitch.io/developers).
 

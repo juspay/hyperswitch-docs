@@ -4,7 +4,7 @@ icon: arrows-maximize
 
 # Scale and Reliability
 
-This section provides reference guidance for scaling Hyperswitch deployments and ensuring their reliability in production environments.
+This section provides reference guidance for scaling Juspay Hyperswitch deployments and ensuring their reliability in production environments.
 
 The models presented here outline how compute, memory, database capacity, and caching layers should scale with increasing throughput. These guidelines assist operators in planning infrastructure capacity, designing resilient architectures, and validating system behavior through structured testing methodologies.
 
@@ -20,8 +20,8 @@ CPU generally scales approximately linearly with throughput, while memory scales
 
 #### Terminology
 
-* **RPS (Requests Per Second)** Number of API requests handled by the Hyperswitch Router.
-* **TPS (Transactions Per Second)** Number of payment transactions processed by the system.
+- **RPS (Requests Per Second)** Number of API requests handled by the Hyperswitch Router.
+- **TPS (Transactions Per Second)** Number of payment transactions processed by the system.
 
 A single transaction may involve multiple internal API calls. As a result, **RPS is typically higher than TPS**.
 
@@ -39,14 +39,14 @@ Actual ratios may vary depending on payment flow configuration and enabled servi
 
 The reference scaling model assumes the following application characteristics:
 
-* Services are **stateless**
-* **Horizontal Pod Autoscaler (HPA)** is enabled
-* Safe sustained throughput per pod is determined via load testing
-* Reference baseline: **\~15 RPS per pod**
-* **3 GB RAM requested per pod**
-* **20% cluster memory headroom**
-* Worker nodes sized at **64 GB RAM**
-* Pod density maintained well below Kubernetes default limits
+- Services are **stateless**
+- **Horizontal Pod Autoscaler (HPA)** is enabled
+- Safe sustained throughput per pod is determined via load testing
+- Reference baseline: **\~15 RPS per pod**
+- **3 GB RAM requested per pod**
+- **20% cluster memory headroom**
+- Worker nodes sized at **64 GB RAM**
+- Pod density maintained well below Kubernetes default limits
 
 These assumptions provide predictable scaling behavior while maintaining operational stability.
 
@@ -82,10 +82,10 @@ Kubernetes allows up to **110 pods per node by default**, however operating clos
 
 Maintaining lower pod density improves:
 
-* node stability
-* resource isolation
-* failure blast radius containment
-* scheduling reliability during autoscaling events
+- node stability
+- resource isolation
+- failure blast radius containment
+- scheduling reliability during autoscaling events
 
 **Recommended Pod Density Ranges:**
 
@@ -97,9 +97,9 @@ Maintaining lower pod density improves:
 
 Best practices:
 
-* Maintain pod count below **\~70% of configured `maxPods`**
-* Distribute pods across **multiple nodes and availability zones**
-* Avoid high pod concentration on a single node
+- Maintain pod count below **\~70% of configured `maxPods`**
+- Distribute pods across **multiple nodes and availability zones**
+- Avoid high pod concentration on a single node
 
 Even if technically possible through configuration adjustments, placing **150–200 pods on a single node is strongly discouraged**.
 
@@ -123,9 +123,9 @@ All production deployments should span **at least two availability zones**, with
 
 Application pods should be distributed using:
 
-* Kubernetes **topology spread constraints**
-* **Pod anti-affinity rules**
-* Node groups distributed across zones
+- Kubernetes **topology spread constraints**
+- **Pod anti-affinity rules**
+- Node groups distributed across zones
 
 This design reduces the impact of node failures or zone-level outages.
 
@@ -133,11 +133,11 @@ This design reduces the impact of node failures or zone-level outages.
 
 Assumptions:
 
-* 15 RPS per pod
-* 3 GB RAM per pod
-* 20% memory buffer
-* 64 GB worker nodes
-* Target pod density: \~40–50 pods per node
+- 15 RPS per pod
+- 3 GB RAM per pod
+- 20% memory buffer
+- 64 GB worker nodes
+- Target pod density: \~40–50 pods per node
 
 | Peak RPS | Pods Required | App CPU (vCPU) | Total App RAM (GB) | Recommended Nodes (64 GB) |
 | -------- | ------------- | -------------- | ------------------ | ------------------------- |
@@ -151,10 +151,10 @@ Assumptions:
 
 Notes:
 
-* Node count reflects balanced memory usage and safe pod density.
-* CPU limits must also be validated against chosen node types.
-* All production clusters should span **multiple availability zones**.
-* Autoscaling thresholds should avoid sustained utilization above **65–70%**.
+- Node count reflects balanced memory usage and safe pod density.
+- CPU limits must also be validated against chosen node types.
+- All production clusters should span **multiple availability zones**.
+- Autoscaling thresholds should avoid sustained utilization above **65–70%**.
 
 #### 2. Database Capacity Planning Model
 
@@ -162,12 +162,12 @@ The following model provides baseline guidance for scaling the primary transacti
 
 Baseline reference deployment:
 
-* **Writer node:** 4 vCPU
-* **Reader node:** 2 vCPU
-* **20 IOPS per transaction**
-* **2.5× IOPS safety factor**
-* **16 KB per transaction**
-* **5× storage safety factor**
+- **Writer node:** 4 vCPU
+- **Reader node:** 2 vCPU
+- **20 IOPS per transaction**
+- **2.5× IOPS safety factor**
+- **16 KB per transaction**
+- **5× storage safety factor**
 
 #### Reference Sizing Table
 
@@ -199,19 +199,19 @@ RAM requirements do not scale strictly linearly.
 
 Memory usage depends on:
 
-* working set size
-* index size
-* active connections
-* cache hit ratio
-* replication overhead
+- working set size
+- index size
+- active connections
+- cache hit ratio
+- replication overhead
 
 Beyond **256–512 GB per node**, vertical scaling becomes inefficient.
 
 At this stage, horizontal strategies are recommended:
 
-* read replicas
-* logical sharding
-* partitioned datasets
+- read replicas
+- logical sharding
+- partitioned datasets
 
 #### Storage and IOPS
 
@@ -223,8 +223,8 @@ IOPS = TPS × 50
 
 Recommendations:
 
-* Provisioned IOPS storage is recommended beyond **10,000 sustained IOPS**
-* Burst-credit storage classes should **not be used for production payment workloads**
+- Provisioned IOPS storage is recommended beyond **10,000 sustained IOPS**
+- Burst-credit storage classes should **not be used for production payment workloads**
 
 #### Connection Pooling
 
@@ -232,9 +232,9 @@ High throughput deployments should use **connection pooling** to prevent excessi
 
 Recommended approaches include:
 
-* PgBouncer
-* built-in connection pooling solutions
-* managed pooling layers provided by database platforms
+- PgBouncer
+- built-in connection pooling solutions
+- managed pooling layers provided by database platforms
 
 #### 4. Redis Scaling Model
 
@@ -242,11 +242,11 @@ Redis is typically used for caching, session management, and high-frequency look
 
 Baseline deployment for **40 TPS / \~280 RPS**:
 
-* **3 primary shards**
-* **1 replica per shard**
-* **6 total nodes**
-* **2 vCPU per node**
-* **\~8 GB RAM per node**
+- **3 primary shards**
+- **1 replica per shard**
+- **6 total nodes**
+- **2 vCPU per node**
+- **\~8 GB RAM per node**
 
 #### Reference Scaling Table
 
@@ -325,8 +325,8 @@ This installs required Python dependencies.
 
 You will be prompted to enter:
 
-* Hyperswitch server URL
-* Admin API key
+- Hyperswitch server URL
+- Admin API key
 
 **6. Enable Grafana Monitoring**
 
@@ -334,10 +334,10 @@ To monitor system behavior during testing:
 
 Provide:
 
-* Grafana URL
-* Service token
-* Username
-* Password
+- Grafana URL
+- Service token
+- Username
+- Password
 
 If using the internal Grafana service:
 
@@ -350,11 +350,11 @@ Password: admin
 
 Provide PostgreSQL credentials:
 
-* username
-* password
-* database name
-* host
-* port
+- username
+- password
+- database name
+- host
+- port
 
 If skipped, the script will generate a SQL query which can be executed manually.
 
@@ -378,18 +378,18 @@ Ensure the **Hyperswitch Router** continues processing payment requests even whe
 
 Core services:
 
-* Token service
-* Consumer
-* Producer
+- Token service
+- Consumer
+- Producer
 
 Analytics stack:
 
-* Grafana
-* Loki
-* ClickHouse
-* Kafka
-* OpenSearch
-* Prometheus / Vector
+- Grafana
+- Loki
+- ClickHouse
+- Kafka
+- OpenSearch
+- Prometheus / Vector
 
 #### Implementation Guidelines
 
@@ -409,10 +409,10 @@ All failures should be logged for operational visibility.
 
 The system is considered resilient if:
 
-* Router continues processing payment requests normally
-* No customer-facing impact occurs
-* Core routing logic remains operational
-* Router latency and error rates remain within acceptable operational thresholds
+- Router continues processing payment requests normally
+- No customer-facing impact occurs
+- Core routing logic remains operational
+- Router latency and error rates remain within acceptable operational thresholds
 
 ### Infrastructure Segmentation & Isolation
 
@@ -420,8 +420,8 @@ Production deployments should isolate core application workloads from supporting
 
 Recommended isolation principles:
 
-* Monitoring services should run in a **separate node group**
-* Event and logging systems should run in **separate node groups**
-* Remote monitoring and observability components should not share compute resources with the core router
+- Monitoring services should run in a **separate node group**
+- Event and logging systems should run in **separate node groups**
+- Remote monitoring and observability components should not share compute resources with the core router
 
 This segmentation prevents non-critical workloads from affecting payment processing performance.

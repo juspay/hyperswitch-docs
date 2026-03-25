@@ -1,3 +1,7 @@
+---
+description: Master First Payment with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+---
+
 # First Payment with Error Handling
 
 You will have `payment_method_id` from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI compliant raw card data, that will suffice to make the first payment.
@@ -298,18 +302,18 @@ console.log('Refund ID:', refund.refundId);
 {% tab title="Python" %}
 
 ```python
-# 1. Check payment status
+## 1. Check payment status
 status = client.payments.get(payment_id=auth.payment_id)
 print(f"Current status: {status.status}")
 
-# 2. Capture the funds
+## 2. Capture the funds
 capture = client.payments.capture(
     payment_id=auth.payment_id,
     amount={"minor_amount": 1000, "currency": Currency.USD}
 )
 print(f"Captured: {capture.status}")
 
-# 3. Process a partial refund
+## 3. Process a partial refund
 refund = client.payments.refund(
     payment_id=auth.payment_id,
     amount={"minor_amount": 500, "currency": Currency.USD},

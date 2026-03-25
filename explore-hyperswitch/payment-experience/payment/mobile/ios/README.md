@@ -11,7 +11,7 @@ icon: apple
 
 {% embed url="https://hyperswitch-demo.netlify.app/mobile" %}
 
-Revolutionize your app's payment capabilities with the Hyperswitch iOS SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on iOS is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
+Revolutionize your app's payment capabilities with the Juspay Hyperswitch iOS SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on iOS is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 | <img src="../../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | **Inclusive:** Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution. |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -20,8 +20,8 @@ Revolutionize your app's payment capabilities with the Hyperswitch iOS SDK, deli
 
 **Modify and Experiment:** While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch iOS SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you to:
 
-* **Include New Fields:** Adapt swiftly to various use cases by adding new fields to the payment form, such as collecting billing addresses or zip codes for additional information.
-* **Prioritize Payment Methods:** Impact your payment mix and conversion rates by prioritizing or promoting specific payment methods based on your customer preferences.
-* **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
+- **Include New Fields:** Adapt swiftly to various use cases by adding new fields to the payment form, such as collecting billing addresses or zip codes for additional information.
+- **Prioritize Payment Methods:** Impact your payment mix and conversion rates by prioritizing or promoting specific payment methods based on your customer preferences.
+- **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
 
 Experience the flexibility to modify and experiment, ensuring your app's payment journey aligns precisely with your business requirements and user expectations. Elevate your iOS app's payment experience with the Hyperswitch iOS SDK.

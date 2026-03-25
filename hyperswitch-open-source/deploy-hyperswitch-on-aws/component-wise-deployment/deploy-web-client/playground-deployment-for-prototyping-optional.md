@@ -10,11 +10,11 @@ Explore the web client's full stack playground for rapid prototyping using a sin
 
 Please note that this deployment is just for the demo-playground. This is **optional** and does not replace the integration step. In order to go-live, please integrate the web client onto your app before the deployment of your app
 
-## Steps to Deploy Hyperswitch web client on AWS
+## Steps to Deploy Juspay Hyperswitch web client on AWS
 
 ### **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 ### **Let's begin!**
 
@@ -170,7 +170,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
+- **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
   Please check your AWS EC2 details and make sure that the EC2 is created and has all the permissions required to run the server and create security groups. Post this, re-run the script to do a re-deployment.
 
 - **AWS is throwing many errors while running the script**\

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large

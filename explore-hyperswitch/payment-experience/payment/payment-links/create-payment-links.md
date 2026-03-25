@@ -8,9 +8,9 @@ Payment links are created using [Payments Create](https://api-reference.hyperswi
 
 Each field in the request uses a fallback logic. Below is the order of preference -
 
-* Config sent during payment link creation
-* Config set for the business profile
-* Default values for payment link config
+- Config sent during payment link creation
+- Config set for the business profile
+- Default values for payment link config
 
 Refer to [this](../../../payment-flows-and-management/quickstart/payment-links/configurations/#list-of-defaults-for-the-payment-link-ui-config) section for a default UI for payment links.
 

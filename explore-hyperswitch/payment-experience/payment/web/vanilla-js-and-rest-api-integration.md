@@ -93,8 +93,8 @@ async function initialize() {
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
-* **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
-* **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+- **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
+- **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
@@ -259,4 +259,4 @@ async function checkStatus() {
 }
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
+Congratulations! Now that you have integrated the Juspay Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.

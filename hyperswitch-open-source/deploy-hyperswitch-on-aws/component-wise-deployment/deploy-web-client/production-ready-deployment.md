@@ -10,7 +10,7 @@ In this section, you will be deploying the web client on your AWS account
 
 ## **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222\&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222\&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
 
 ### **Let's begin!**
 
@@ -103,7 +103,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch Web Client
+#### Step 3 - Setup Juspay Hyperswitch Web Client
 
 You can now deploy the Hyperswitch web client by running the below command in the same terminal session
 
@@ -143,13 +143,13 @@ Now that the web client is hosted, you can integrate it with your app and go liv
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**\
+- **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**\
   Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.\
 
-* **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**\
+- **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**\
   Please re-run the script and enter an unique name for the S3 bucket.\
 
-* **AWS is throwing many errors while running the script**\
+- **AWS is throwing many errors while running the script**\
   Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
 
 </details>

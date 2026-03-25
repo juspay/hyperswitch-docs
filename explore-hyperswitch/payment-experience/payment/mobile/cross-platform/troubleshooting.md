@@ -1,3 +1,7 @@
+---
+description: Reference documentation for Troubleshooting in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+---
+
 # Troubleshooting
 
 ## Android

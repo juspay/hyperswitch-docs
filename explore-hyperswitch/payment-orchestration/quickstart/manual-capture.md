@@ -10,7 +10,7 @@ icon: sack-dollar
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}
 
-In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.
+In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Juspay Hyperswitch we term this the '**Automatic Capture**' flow.
 
 But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Hyperswitch, we call this the '**Manual Capture'** flow.
 
@@ -103,5 +103,5 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
 
 Now, the merchant can either:
 
-* capture the full amount that was authorized - '**Full capture'**. Here the payments status transitions to 'SUCCEEDED'.
-* capture only a partial amount that was authorized - '**Partial Capture**'. Here the payments status transitions to 'PARTIALLY\_CAPTURED' and the remaining amount is automatically voided at the processor's end.
+- capture the full amount that was authorized - '**Full capture'**. Here the payments status transitions to 'SUCCEEDED'.
+- capture only a partial amount that was authorized - '**Partial Capture**'. Here the payments status transitions to 'PARTIALLY\_CAPTURED' and the remaining amount is automatically voided at the processor's end.

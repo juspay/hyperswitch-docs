@@ -5,7 +5,7 @@ icon: server
 # Backend
 
 {% hint style="warning" %}
-This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+This setup is meant for development. If you want a quick trial of Juspay Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
 ## Supported Methods:
@@ -285,13 +285,13 @@ Once you're done with setting up the dependencies, proceed with [setting up the 
 
     Run the migrations
 
-    * If you have just installed
+    - If you have just installed
 
     ```bash
     just migrate
     ```
 
-    * Using the diesel-cli command
+    - Using the diesel-cli command
 
     ```bash
     diesel migration run

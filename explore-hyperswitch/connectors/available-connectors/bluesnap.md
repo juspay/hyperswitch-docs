@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bluesnap via Hyperswitch
+description: Accept payments through Bluesnap via Juspay Hyperswitch
 hidden: true
 ---
 

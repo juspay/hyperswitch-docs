@@ -17,7 +17,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card

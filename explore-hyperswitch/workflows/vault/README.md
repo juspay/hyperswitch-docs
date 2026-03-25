@@ -1,5 +1,5 @@
 ---
-description: Modular vaulting in Hyperswitch
+description: Modular vaulting in Juspay Hyperswitch
 icon: vault
 ---
 

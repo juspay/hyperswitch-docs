@@ -1,5 +1,5 @@
 ---
-description: Accept payments through d-local via Hyperswitch
+description: Accept payments through d-local via Juspay Hyperswitch
 hidden: true
 ---
 

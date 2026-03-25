@@ -19,8 +19,8 @@ But, if the merchant decides to enable more alternate payment methods (APMs), th
 1. **Availability** - Current PSP may not support the desired alternate payment method requiring the merchant to do a direct integration or use a different PSP.
 2. **Complex to integrate** - In case a PSP supports a desired payment method, integrating it into the existing checkout is tedious and often requires high engineering effort. Hyperwidets offers a low code solution for such a scenario where a merchant can not only choose to have their preferred payment method through a wide range of connectors, but also integrate it with minimal engineering effort.
 3. **Complex to enhance** - Traditional PSPs and Middle layers ((Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK)) offer separate integration for every new APM, requiring ongoing engineering effort for enhancements.
-   * Hyperwidets offers a way for merchants to extend APMs from just “Apple Pay” to “Apple Pay + Google Pay” to “Apple Pay + Google Pay + Amazon Pay + 10 more” with the same integration and no additional engineering effort.
-   * Hyperwidgets also offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
+   - Hyperwidets offers a way for merchants to extend APMs from just “Apple Pay” to “Apple Pay + Google Pay” to “Apple Pay + Google Pay + Amazon Pay + 10 more” with the same integration and no additional engineering effort.
+   - Hyperwidgets also offers merchants the flexibility to surface the right set of APMs in the widget based on the order context - Value, Region and more.
 4. **Integration overhead to enable more APMs on the same PSP**: Some PSPs require the merchant to do some additional integration steps to enable an APM. This can be time consuming and require significant tech bandwidth from the merchant. Examples can be when certain APMs are only available on new API versions of the PSP, certification from Apple/ Google is required to go-live for some wallet flows, adding a frontend library/ javascript to add certain APMs, and so on.
 
 in the image below you can find a checkout page with more alternate payment methods via Hyperwidgets.
@@ -67,8 +67,8 @@ The engineering ensures support for emerging payment methods and new PSPs withou
 
 ### Supported merchant setups :
 
-* **Setup A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
-* **Setup B** - Merchant is indirectly integrated with 1 PSP via a middle layer (Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK). The merchant is looking to enable APMs via the same or different PSP
+- **Setup A** - Merchant is directly integrated with 1 PSP and is looking to enable APMs via same or a different PSP
+- **Setup B** - Merchant is indirectly integrated with 1 PSP via a middle layer (Subscription provider’s SDK or Token provider’s SDK or Orchestration provider’s SDK). The merchant is looking to enable APMs via the same or different PSP
 
 <table><thead><tr><th width="374">via PSP or middle layer</th><th>via Hyperwidgets</th></tr></thead><tbody><tr><td><p><mark style="color:blue;">Existing APMs</mark></p><ul><li>Apple Pay - <mark style="color:red;">2-3 weeks of engineering effort</mark></li><li>Klarna - <mark style="color:red;">2-3 weeks of engineering effort</mark></li></ul><p><mark style="color:blue;">New innovations</mark></p><ul><li>Paze - <mark style="color:red;">Not available via most players</mark></li><li>Click2Pay - <mark style="color:red;">Not available via most player</mark></li></ul></td><td><p>⠀</p><p>One time effort of <mark style="color:blue;">2-weeks</mark> to enable all existing APMs and new innovations via the same integration</p></td></tr></tbody></table>
 

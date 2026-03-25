@@ -6,7 +6,7 @@ icon: sitemap
 
 ### Core Components
 
-Hyperswitch uses the following components to deploy and manage a payment stack:
+Juspay Hyperswitch uses the following components to deploy and manage a payment stack:
 
 #### Hyperswitch App&#x20;
 
@@ -32,8 +32,8 @@ Responsible for managing and coordinating different aspects of the payment proce
 
 Automates periodic deletion of card information and notifies merchants of API key expiry. Consists of two sub-components -&#x20;
 
-* Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
-* hyperswitch-consumer - Retrieves task batches from the queue and executes them
+- Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
+- hyperswitch-consumer - Retrieves task batches from the queue and executes them
 
 #### Hyperswitch Web
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Fiserv via Hyperswitch
+description: Accept payments through Fiserv via Juspay Hyperswitch
 hidden: true
 ---
 

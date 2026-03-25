@@ -33,9 +33,9 @@ The most requested feature is now our first embeddable module: The Connector Com
 
 **Key Features:**
 
-* White-Labeled: No HyperSwitch branding.
-* Instant Validation: We validate credentials in real-time before saving.
-* Zero Maintenance: When a processor changes their API requirements, we update the component. You don't change a line of code.
+- White-Labeled: No HyperSwitch branding.
+- Instant Validation: We validate credentials in real-time before saving.
+- Zero Maintenance: When a processor changes their API requirements, we update the component. You don't change a line of code.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-12-24 at 10.53.27 AM.png" alt=""><figcaption><p>A seamless, white-labeled configuration experience embedded directly into a demo dashboard.</p></figcaption></figure>
 
@@ -45,6 +45,6 @@ The most requested feature is now our first embeddable module: The Connector Com
 
 We are rolling this out in stages. Following the Connector Component, we will release:
 
-* Native Analytics: charts and reports.
-* Operations Center: Refund and Payment management interfaces.
-* Support for theme customisation via Control Center.
+- Native Analytics: charts and reports.
+- Operations Center: Refund and Payment management interfaces.
+- Support for theme customisation via Control Center.

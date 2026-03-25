@@ -1,15 +1,15 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Set up your Juspay Hyperswitch account on the control center
 ---
 
-# ⚙️ Control Centre Account setup
+⚙ ️ Control Centre Account setup
 
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
 
-* Realtime Analytics for Payments, Refunds and Smart Retries.
-* Consolidated Payment Operations
-* Automated Reports
-* User roles and access with three level of hierarchy(organisation, merchant and profiles)
+- Realtime Analytics for Payments, Refunds and Smart Retries.
+- Consolidated Payment Operations
+- Automated Reports
+- User roles and access with three level of hierarchy(organisation, merchant and profiles)
 
 ## Getting started with the dashboard - Login / Register
 
@@ -79,21 +79,21 @@ The following key fields can be customized to align the dashboard with the merch
 
 1. **Primary Color:** Defines the primary brand color across the dashboard. It is used for key highlights, primary text, and important action areas.
 2. **Sidebar:** Merchants can fully customize the sidebar’s appearance. Enables merchants to reflect their brand palette directly in the navigation experience.
-   * **Primary:** Sets the sidebar background color
-   * **textColor:** Default sidebar text color
-   * **textColorPrimary:** Used for selected or active options in the sidebar
+   - **Primary:** Sets the sidebar background color
+   - **textColor:** Default sidebar text color
+   - **textColorPrimary:** Used for selected or active options in the sidebar
 3. **Buttons:** Button styling can be customized for both primary and secondary actions:
-   * **Primary buttons:**
-     * backgroundColor: Base background color
-     * textColor: Text color
-     * hoverBackgroundColor: Background color on hover
-   * **Secondary buttons:**
-     * backgroundColor: Base background color
-     * textColor: Text color
-     * hoverBackgroundColor: Background color on hover
+   - **Primary buttons:**
+     - backgroundColor: Base background color
+     - textColor: Text color
+     - hoverBackgroundColor: Background color on hover
+   - **Secondary buttons:**
+     - backgroundColor: Base background color
+     - textColor: Text color
+     - hoverBackgroundColor: Background color on hover
 4. **Assets:**
-   * faviconUrl: Merchant-specific favicon for browser tabs
-   * logoUrl: Logo displayed in the dashboard interface
+   - faviconUrl: Merchant-specific favicon for browser tabs
+   - logoUrl: Logo displayed in the dashboard interface
 5. **Email Branding:** Emails now display the merchant’s logo, brand name, and theme colors as configured.
 
 These UI customizations are scalable and can be extended upon merchant request.

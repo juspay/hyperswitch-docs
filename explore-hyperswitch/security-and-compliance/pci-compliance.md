@@ -1,5 +1,5 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: A brief summary of PCI compliance for Juspay Hyperswitch Cloud users
 icon: credit-card
 ---
 
@@ -28,21 +28,21 @@ To process raw card data securely through Hyperswitch:
 
 Many payment processors disable raw card acceptance by default. To enable it:
 
-* Share Hyperswitch’s PCI Attestation of Compliance (AOC) with your processor's support team.
-* Request them to enable raw card processing for your merchant account.
+- Share Hyperswitch’s PCI Attestation of Compliance (AOC) with your processor's support team.
+- Request them to enable raw card processing for your merchant account.
 
 #### **Stripe Integration Update:**
 
-* Stripe no longer allows raw card acceptance via its Merchant Dashboard.
-* If required, share Hyperswitch’s PCI DSS Attestation of Compliance (AOC) with Stripe support.
+- Stripe no longer allows raw card acceptance via its Merchant Dashboard.
+- If required, share Hyperswitch’s PCI DSS Attestation of Compliance (AOC) with Stripe support.
 
 #### **Accessing the PCI AOC Document:**
 
-* A redacted version of Hyperswitch’s PCI DSS Attestation of Compliance (AOC) is available to Cloud users under NDA. It can be downloaded from the Compliance section in the Dashboard.
-* Alternatively, email **hyperswitch@juspay.in** for assistance.
+- A redacted version of Hyperswitch’s PCI DSS Attestation of Compliance (AOC) is available to Cloud users under NDA. It can be downloaded from the Compliance section in the Dashboard.
+- Alternatively, email **hyperswitch@juspay.in** for assistance.
 
 ### **Why Choose Hyperswitch for PCI Compliance?**
 
-* Simplified compliance management with automatic tokenization and secure storage.
-* Global security standards maintained across all integrations.
-* Reduced complexity and liability for merchants in handling sensitive card data.
+- Simplified compliance management with automatic tokenization and secure storage.
+- Global security standards maintained across all integrations.
+- Reduced complexity and liability for merchants in handling sensitive card data.

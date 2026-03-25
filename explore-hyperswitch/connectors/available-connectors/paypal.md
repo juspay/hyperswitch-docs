@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Paypal via Hyperswitch
+description: Accept payments through Paypal via Juspay Hyperswitch
 hidden: true
 ---
 

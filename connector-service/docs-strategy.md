@@ -1,3 +1,7 @@
+---
+description: Explore Docs Strategy in Juspay Hyperswitch. Detailed documentation covering configuration, integration, and optimization strategies for merchants.
+---
+
 # Documentation Strategy
 
 
@@ -187,7 +191,7 @@ A single workflow handles both handwritten and generated docs, merging them in t
 
 
 ```yaml
-# .github/workflows/sync-docs.yml
+## .github/workflows/sync-docs.yml
 name: Sync Docs to GitBook
 
 
@@ -391,53 +395,53 @@ In `hyperswitch-docs/SUMMARY.md` (maintained in connector-service, synced to doc
 
 
 ```markdown
-# Summary
+## Summary
 
 
 ## Getting Started
-* [Overview](ucs/getting-started/README.md)
-* [Quick Start](ucs/getting-started/quick-start.md)
-* [Installation](ucs/getting-started/installation.md)
-* [Concepts](ucs/getting-started/concepts.md)
+- [Overview](ucs/getting-started/README.md)
+- [Quick Start](ucs/getting-started/quick-start.md)
+- [Installation](ucs/getting-started/installation.md)
+- [Concepts](ucs/getting-started/concepts.md)
 
 
 ## Architecture
-* [Overview](ucs/architecture/overview.md)
-* [Core Components](ucs/architecture/README.md)
+- [Overview](ucs/architecture/overview.md)
+- [Core Components](ucs/architecture/README.md)
 
 
 ## API Reference
-* [Overview](ucs/api-reference/README.md)
-* [Domain Schema](ucs/api-reference/domain-schema/README.md)
-* [Services](ucs/api-reference/services/README.md)
- * [Payment Service](ucs/api-reference/services/payment-service/README.md)
- * [Customer Service](ucs/api-reference/services/customer-service/README.md)
- * [Refund Service](ucs/api-reference/services/refund-service/README.md)
- * [Dispute Service](ucs/api-reference/services/dispute-service/README.md)
- * [Event Service](ucs/api-reference/services/event-service/README.md)
+- [Overview](ucs/api-reference/README.md)
+- [Domain Schema](ucs/api-reference/domain-schema/README.md)
+- [Services](ucs/api-reference/services/README.md)
+ - [Payment Service](ucs/api-reference/services/payment-service/README.md)
+ - [Customer Service](ucs/api-reference/services/customer-service/README.md)
+ - [Refund Service](ucs/api-reference/services/refund-service/README.md)
+ - [Dispute Service](ucs/api-reference/services/dispute-service/README.md)
+ - [Event Service](ucs/api-reference/services/event-service/README.md)
 
 
 ## SDKs
-* [Overview](ucs/sdks/README.md)
-* [Node.js](ucs/sdks/nodejs/README.md)
-* [Python](ucs/sdks/python/README.md)
+- [Overview](ucs/sdks/README.md)
+- [Node.js](ucs/sdks/nodejs/README.md)
+- [Python](ucs/sdks/python/README.md)
 
 
 ## Connectors
-* [Overview](ucs/connectors/README.md)
-* [Stripe](ucs/connectors/stripe.md)
-* [Adyen](ucs/connectors/adyen.md)
-* [Cybersource](ucs/connectors/cybersource.md)
+- [Overview](ucs/connectors/README.md)
+- [Stripe](ucs/connectors/stripe.md)
+- [Adyen](ucs/connectors/adyen.md)
+- [Cybersource](ucs/connectors/cybersource.md)
 
 
 ## Rules
-* [Overview](ucs/rules/README.md)
-* [Rules Reference](ucs/rules/rules.md)
+- [Overview](ucs/rules/README.md)
+- [Rules Reference](ucs/rules/rules.md)
 
 
 ## Blog
-* [Why We Built UCS](ucs/blog/why-we-built-ucs.md)
-* [Universal Grammar for Payments](ucs/blog/universal-grammar-for-payments.md)
+- [Why We Built UCS](ucs/blog/why-we-built-ucs.md)
+- [Universal Grammar for Payments](ucs/blog/universal-grammar-for-payments.md)
 ```
 
 

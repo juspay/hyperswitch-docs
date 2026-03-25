@@ -6,14 +6,14 @@ icon: money-simple-from-bracket
 
 # Checkout Experience
 
-Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
+Juspay Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
 
 #### **How we improve checkout experience for your customers:**
 
-* **Fewer Steps, Higher Conversions** – A streamlined checkout process reduces drop-offs and enhances customer satisfaction.
-* **Preferred Payment Options** – Presenting users with their preferred payment methods boosts convenience and conversion rates.
-* **Full Control Over Design & Functionality** – Customize both the appearance and behavior of the checkout experience.
-* **Advanced Security, No Redirection** – Seamlessly integrate **native 3DS** and **Click to Pay** for secure, frictionless transactions.
+- **Fewer Steps, Higher Conversions** – A streamlined checkout process reduces drop-offs and enhances customer satisfaction.
+- **Preferred Payment Options** – Presenting users with their preferred payment methods boosts convenience and conversion rates.
+- **Full Control Over Design & Functionality** – Customize both the appearance and behavior of the checkout experience.
+- **Advanced Security, No Redirection** – Seamlessly integrate **native 3DS** and **Click to Pay** for secure, frictionless transactions.
 
 With Hyperswitch, you optimize the payment journey while maintaining **trust, security, and a frictionless user experience**.
 

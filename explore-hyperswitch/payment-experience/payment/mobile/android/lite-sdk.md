@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Integrate Juspay Hyperswitch Lite SDK to your Kotlin App
 icon: mobile-screen
 ---
 
@@ -9,23 +9,23 @@ icon: mobile-screen
 
 #### Lightweight Integration
 
-* **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
-* **Web-based UI**: Uses web components for payment forms
-* **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
-  * Appearance customization
-  * Billing details
-  * Shipping information
-  * Payment method preferences
-  * Branding options
+- **Smaller artifact size**: <300 KB
+- **Faster initialization**: Streamlined setup process
+- **Web-based UI**: Uses web components for payment forms
+- **Reduced dependencies**: Minimal impact on app size
+- **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
+  - Appearance customization
+  - Billing details
+  - Shipping information
+  - Payment method preferences
+  - Branding options
 
 ## Requirements
 
-* Android 6.0 (API level 23) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
+- Android 6.0 (API level 23) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+- [Gradle](https://gradle.org/releases/) 8.8+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
 

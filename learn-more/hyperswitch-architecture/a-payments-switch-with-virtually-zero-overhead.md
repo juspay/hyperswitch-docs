@@ -1,3 +1,7 @@
+---
+description: Guide to A Payments Switch With Virtually Zero Overhead for Juspay Hyperswitch learn more. Learn integration patterns, API usage, and implementation strategies for payments.
+---
+
 # A Payments Switch with virtually zero overhead
 
 When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.
@@ -34,8 +38,8 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 
 <summary><strong>In-Memory Configuration Caching</strong></summary>
 
-* Hyperswitch eliminates the delays associated with fetching configuration data for each transaction by caching all merchant and processor-related configurations in memory
-* This ensures that transaction processing remains lightning quick, regardless of the specifics of each transaction
+- Hyperswitch eliminates the delays associated with fetching configuration data for each transaction by caching all merchant and processor-related configurations in memory
+- This ensures that transaction processing remains lightning quick, regardless of the specifics of each transaction
 
 </details>
 
@@ -43,8 +47,8 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 
 <summary><strong>Redis for Transaction Data</strong></summary>
 
-* To further accelerate transaction processing, Hyperswitch stores all transaction-related data reads in Redis, an in-memory key-value store
-* This choice of data storage allows for rapid access to transaction details, ensuring that every step of the process is nearly instantaneous.
+- To further accelerate transaction processing, Hyperswitch stores all transaction-related data reads in Redis, an in-memory key-value store
+- This choice of data storage allows for rapid access to transaction details, ensuring that every step of the process is nearly instantaneous.
 
 </details>
 
@@ -52,8 +56,8 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 
 <summary><strong>Asynchronous Data Persistence</strong></summary>
 
-* Hyperswitch optimizes the transaction workflow by making all data writes to Redis and then asynchronously draining this data to the database
-* This approach minimizes any potential delays in the critical transaction path, maintaining the rapid pace that customers expect
+- Hyperswitch optimizes the transaction workflow by making all data writes to Redis and then asynchronously draining this data to the database
+- This approach minimizes any potential delays in the critical transaction path, maintaining the rapid pace that customers expect
 
 </details>
 
@@ -61,8 +65,8 @@ At its core, Hyperswitch is a payments switch that effortlessly connects merchan
 
 <summary><strong>Parallelization</strong></summary>
 
-* Hyperswitch embraces parallelization wherever possible, ensuring that multiple operations can be executed simultaneously
-* This approach further enhances its speed and responsiveness, making it a true powerhouse in payment processing
+- Hyperswitch embraces parallelization wherever possible, ensuring that multiple operations can be executed simultaneously
+- This approach further enhances its speed and responsiveness, making it a true powerhouse in payment processing
 
 </details>
 

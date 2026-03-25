@@ -10,22 +10,22 @@ Style IDs are design templates for your payment links, allowing you to create di
 
 **What you can customize in each theme:**
 
-* Your brand's visual identity (colors, logos, backgrounds, button styles)
-* Custom messaging and terms & conditions
-* Display preferences (how forms behave)
-* Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
+- Your brand's visual identity (colors, logos, backgrounds, button styles)
+- Custom messaging and terms & conditions
+- Display preferences (how forms behave)
+- Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
 
 {% hint style="info" %}
-**Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
+**Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Juspay Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
 {% endhint %}
 
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.
 
 **Examples of Style IDs you might create:**
 
-* `brand-default` - Your main brand theme
-* `brand-premium` - Elevated experience for premium customers
-* `holiday-2024` - Special theme for seasonal promotions
+- `brand-default` - Your main brand theme
+- `brand-premium` - Elevated experience for premium customers
+- `holiday-2024` - Special theme for seasonal promotions
 
 ***
 
@@ -36,14 +36,14 @@ Payment link configurations work in a flexible, cascading manner that gives you 
 **Three levels of configuration:**
 
 1. **Default Style ID** - Set at the business profile level
-   * Applied to all payment links by default
-   * Your baseline theme and settings
+   - Applied to all payment links by default
+   - Your baseline theme and settings
 2. **Named Style IDs** - Also configured at business profile level
-   * Create multiple pre-defined themes (e.g., `premium`, `holiday-2024`, `regional-eu`)
-   * Reference by name when creating payment links
+   - Create multiple pre-defined themes (e.g., `premium`, `holiday-2024`, `regional-eu`)
+   - Reference by name when creating payment links
 3. **API configuration which overrides** - Applied during payment link creation
-   * Override any configuration for maximum granular control
-   * Perfect for one-off customizations or special cases
+   - Override any configuration for maximum granular control
+   - Perfect for one-off customizations or special cases
 
 **How cascading works:**
 
@@ -62,9 +62,9 @@ Final Payment Link Appearance
 1. Set your default theme at business profile level with your standard brand colors
 2. Create a `holiday-sale` style ID with special promotional colors
 3. When creating a payment link:
-   * Use default: Don't specify any `payment_link_config_id` → gets default theme
-   * Use named style: Specify `payment_link_config_id: "holiday-sale"` → gets holiday theme
-   * One-off customization: Specify `payment_link_config_id: "holiday-sale"` AND provide API config overrides → gets holiday theme with your custom tweaks
+   - Use default: Don't specify any `payment_link_config_id` → gets default theme
+   - Use named style: Specify `payment_link_config_id: "holiday-sale"` → gets holiday theme
+   - One-off customization: Specify `payment_link_config_id: "holiday-sale"` AND provide API config overrides → gets holiday theme with your custom tweaks
 
 This cascading approach means you can maintain consistency while having flexibility for special cases!
 
@@ -76,25 +76,25 @@ This cascading approach means you can maintain consistency while having flexibil
 
 Out of the box, the payment link automatically:
 
-* Adapts text based on the purpose of the payment link (payment, authorization, or payment method storage)
-* Changes button text to match the transaction type
-* Translates everything into your customer's language automatically (across 19+ languages!)
+- Adapts text based on the purpose of the payment link (payment, authorization, or payment method storage)
+- Changes button text to match the transaction type
+- Translates everything into your customer's language automatically (across 19+ languages!)
 
 **Important consideration when customizing text:**
 
 If you decide to write your own custom text for terms and conditions, here's what changes:
 
-* 💡 The system will use your exact text across all scenarios
-* 🌍 Automatic translations stop working - you'll need to provide translations for each language you support
-* 📝 Automatic text inference is lost since a single text is configured for all transaction types
+- 💡 The system will use your exact text across all scenarios
+- 🌍 Automatic translations stop working - you'll need to provide translations for each language you support
+- 📝 Automatic text inference is lost since a single text is configured for all transaction types
 
 **If you do customize text, here's a pro tip:**
 
 Write in a way that works for any scenario your customers might encounter:
 
-* ❌ **Don't say:** "By clicking Pay Now, you authorize..." (too specific - button might say something different!)
-* ✅ **Instead say:** "By submitting your payment information, you authorize..."
-* ✅ **Or even better:** "By completing this form, you authorize..."
+- ❌ **Don't say:** "By clicking Pay Now, you authorize..." (too specific - button might say something different!)
+- ✅ **Instead say:** "By submitting your payment information, you authorize..."
+- ✅ **Or even better:** "By completing this form, you authorize..."
 
 **Universal example that works everywhere:**
 
@@ -113,26 +113,26 @@ You have two ways to set up your payment link themes:
 
 **Option A: Keep It Simple**
 
-* Use one universal theme with messaging that works for everything
-* Easier to manage and maintain
-* Consistent brand experience for all customers
-* Recommended for streamlined operations
+- Use one universal theme with messaging that works for everything
+- Easier to manage and maintain
+- Consistent brand experience for all customers
+- Recommended for streamlined operations
 
 **Option B: Get Specific for Each Flow**
 
-* Create different themes for different purposes:
-  * `payment-flow-theme` - For regular purchases
-  * `authorization-flow-theme` - For payment verification
-  * `storage-flow-theme` - For saving payment methods
-* Use precise messaging for each scenario (like "By clicking 'Pay Now'..." for actual payments)
-* When creating a payment link, choose which theme fits that transaction
-* **What to know:** More control and precision, but more themes to keep updated
+- Create different themes for different purposes:
+  - `payment-flow-theme` - For regular purchases
+  - `authorization-flow-theme` - For payment verification
+  - `storage-flow-theme` - For saving payment methods
+- Use precise messaging for each scenario (like "By clicking 'Pay Now'..." for actual payments)
+- When creating a payment link, choose which theme fits that transaction
+- **What to know:** More control and precision, but more themes to keep updated
 
 **When specialized themes make sense:**
 
-* You want different experiences for different flows (like a simpler look for quick payments vs detailed for subscriptions)
-* You're optimizing conversion rates and want to test different approaches
-* You have the resources to maintain multiple themes
+- You want different experiences for different flows (like a simpler look for quick payments vs detailed for subscriptions)
+- You're optimizing conversion rates and want to test different approaches
+- You have the resources to maintain multiple themes
 
 ***
 

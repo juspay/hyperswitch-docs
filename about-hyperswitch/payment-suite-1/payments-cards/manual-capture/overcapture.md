@@ -10,17 +10,17 @@ In card payments, Over Capture occurs when a merchant captures (settles) an amou
 
 This is particularly useful in scenarios such as:
 
-* Additional charges (e.g., shipping, handling, gratuities).
-* Price adjustments made after initial authorization.
-* Reducing the risk of under-capturing when final order values differ.
+- Additional charges (e.g., shipping, handling, gratuities).
+- Price adjustments made after initial authorization.
+- Reducing the risk of under-capturing when final order values differ.
 
 ### Enabling Over Capture
 
 #### 1. Profile-level Configuration (via Dashboard)
 
-* Navigate to:\
+- Navigate to:\
   Developer → Payment Settings → Always Enable Over Capture
-* Toggle Enable/Disable as required.
+- Toggle Enable/Disable as required.
 
 #### 2. Per-request Configuration (via API)
 
@@ -34,8 +34,8 @@ This can be passed in:
 
 ⚠️ Note:
 
-* The request-level `enable_overcapture` will override the profile-level setting.
-* Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
+- The request-level `enable_overcapture` will override the profile-level setting.
+- Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
 
 ***
 
@@ -99,11 +99,11 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ### Monitoring & Settlement
 
-* After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
-* Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
+- After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
+- Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
 
 ### Merchant Action
 
-* Use Dashboard settings for global enablement
-* Use API overrides for payment-specific enablement
-* Monitor capturable and received amounts to track final settlements
+- Use Dashboard settings for global enablement
+- Use API overrides for payment-specific enablement
+- Monitor capturable and received amounts to track final settlements

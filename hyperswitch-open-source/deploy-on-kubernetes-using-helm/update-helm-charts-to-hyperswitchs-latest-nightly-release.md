@@ -1,3 +1,7 @@
+---
+description: Documentation for Update Helm Charts To Hyperswitchs Latest Nightly Release in Juspay Hyperswitch. Covers technical implementation, configuration parameters, and operational best practices.
+---
+
 # Update Helm Charts to Hyperswitch's Latest Nightly Release
 
 Update charts/incubator/hyperswitch-stack/values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.
@@ -25,11 +29,11 @@ Manually update configs based on the output of git diff command. Add configs tha
 \
 sandbox.toml contains sandbox/test environment configurations, including:
 
-* Test/sandbox base URLs for payment connectors
-* Bank configuration for redirect payment methods
-* Payment method filters by country and currency
-* Connector-specific test credentials and endpoints
-* Dummy connector settings for testing
+- Test/sandbox base URLs for payment connectors
+- Bank configuration for redirect payment methods
+- Payment method filters by country and currency
+- Connector-specific test credentials and endpoints
+- Dummy connector settings for testing
 
 Run the below command to generate the differences and update the router-sandbox.toml file
 
@@ -41,12 +45,12 @@ git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current vers
 
 env\_specific.toml contains environment-specific configurations and secrets, including:
 
-* Database connection settings (master and replica)
-* External service credentials (AWS, payment processors, etc.)
-* API keys and encryption keys
-* Service endpoints and authentication settings
-* Feature flags and operational parameters
-* Logging and monitoring configurations
+- Database connection settings (master and replica)
+- External service credentials (AWS, payment processors, etc.)
+- API keys and encryption keys
+- Service endpoints and authentication settings
+- Feature flags and operational parameters
+- Logging and monitoring configurations
 
 Run the below command to generate the differences and update misc.toml file
 

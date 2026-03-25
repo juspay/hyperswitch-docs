@@ -53,8 +53,8 @@ When `paymentMethodsArrangementForTabs` is set to `grid`, the tabs layout switch
 
 `paymentMethodsArrangementForTabs` supports the following values:
 
-* `default` – Shows excess payment methods in a dropdown (default).
-* `grid` – Shows all payment methods in a grid without a dropdown.
+- `default` – Shows excess payment methods in a dropdown (default).
+- `grid` – Shows all payment methods in a grid without a dropdown.
 
 To enable the grid arrangement in tabs layout, configure the layout object as shown below.
 
@@ -97,8 +97,8 @@ If you want to display one-click payment methods alongside other payment methods
 
 When `displayOneClickPaymentMethodsOnTop` is set to `false`:
 
-* Supported one-click methods are moved into the selected layout (Tabs or Accordion).
-* Unsupported one-click methods are hidden.
+- Supported one-click methods are moved into the selected layout (Tabs or Accordion).
+- Unsupported one-click methods are hidden.
 
 To customize one-click payment method placement, configure the layout object as shown below.
 
@@ -187,12 +187,12 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-* .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
-* .Tab:focus
-* .Input--invalid, .Label--invalid, .InputLogo--invalid
-* .Input::placeholder
-* .billing-section, .billing-details-text
-* .Input--empty, .InputLogo--empty
+- .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
+- .Tab:focus
+- .Input--invalid, .Label--invalid, .InputLogo--invalid
+- .Input::placeholder
+- .billing-section, .billing-details-text
+- .Input--empty, .InputLogo--empty
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -206,10 +206,10 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 | fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
 | spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
-* .Tab, .Label, .Input
-* .Tab:focus
-* .Input--invalid, .Label--invalid
-* .Input::placeholder
+- .Tab, .Label, .Input
+- .Tab:focus
+- .Input--invalid, .Label--invalid
+- .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -326,27 +326,27 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ## 5. Languages
 
-Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
+Juspay Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
 
 We support the following locales -
 
-* Arabic (ar)
-* Catalan (ca)
-* Chinese (zh)
-* Deutsch (de)
-* Dutch (nl)
-* English (en)
-* EnglishGB (en-GB)
-* FrenchBelgium (fr-BE)
-* French (fr)
-* Hebrew (he)
-* Italian (it)
-* Japanese (ja)
-* Polish (pl)
-* Portuguese (pt)
-* Russian (ru)
-* Spanish (es)
-* Swedish (sv)
+- Arabic (ar)
+- Catalan (ca)
+- Chinese (zh)
+- Deutsch (de)
+- Dutch (nl)
+- English (en)
+- EnglishGB (en-GB)
+- FrenchBelgium (fr-BE)
+- French (fr)
+- Hebrew (he)
+- Italian (it)
+- Japanese (ja)
+- Polish (pl)
+- Portuguese (pt)
+- Russian (ru)
+- Spanish (es)
+- Swedish (sv)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 

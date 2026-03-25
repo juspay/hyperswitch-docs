@@ -1,5 +1,5 @@
 ---
-description: Accept payments through GlobalPayments via Hyperswitch
+description: Accept payments through GlobalPayments via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -9,9 +9,9 @@ There are multiple [variants of SAQs](https://listings.pcisecuritystandards.org/
 
 Examples of merchant environments that would use SAQ D includes but not limited to:&#x20;
 
-* **E-commerce merchants** who **accept cardholder data** on their website.
-* Merchants with **electronic storage of cardholder data.**
-* Merchants that don’t store cardholder data electronically but that do not meet the criteria of another SAQ type.
+- **E-commerce merchants** who **accept cardholder data** on their website.
+- Merchants with **electronic storage of cardholder data.**
+- Merchants that don’t store cardholder data electronically but that do not meet the criteria of another SAQ type.
 {% endhint %}
 
 The [Official SAQ D](https://listings.pcisecuritystandards.org/documents/SAQ_D_v3_Merchant.pdf) has approximately 300 questions to be answered. Most of the aspects are general infrastructure controls, access controls and organizational policies. Answering the questions will be a cake walk if you close few activities upfront. We have divided the activities into three categories.

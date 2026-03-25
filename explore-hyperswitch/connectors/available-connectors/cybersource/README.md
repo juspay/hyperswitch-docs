@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Cybersource via Hyperswitch
+description: Accept payments through Cybersource via Juspay Hyperswitch
 ---
 
 # Cybersource

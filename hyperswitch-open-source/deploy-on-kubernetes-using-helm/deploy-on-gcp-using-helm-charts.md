@@ -1,3 +1,7 @@
+---
+description: Reference documentation for Deploy On Gcp Using Helm Charts in Juspay Hyperswitch. Includes implementation guides, configuration settings, and usage examples.
+---
+
 # Deploy on GCP Using Helm Charts
 
 {% hint style="info" %}
@@ -10,19 +14,19 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 
 1. **Sign In to Google Cloud Console**:
 
-* Navigate to the [Google Cloud Console](https://cloud.google.com/cloud-console), and click on **Go to my console.**
+- Navigate to the [Google Cloud Console](https://cloud.google.com/cloud-console), and click on **Go to my console.**
 
 2. **Create a Project**:
 
-* Open your project picker:
+- Open your project picker:
 
 <figure><img src="../../.gitbook/assets/2-my-first-project.png" alt="" width="563"><figcaption></figcaption></figure>
 
-* Click **New Project:**
+- Click **New Project:**
 
 <figure><img src="../../.gitbook/assets/3-create-new-project.png" alt=""><figcaption></figcaption></figure>
 
-* Provide a project name, and click **Create:**
+- Provide a project name, and click **Create:**
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.16.21 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -32,11 +36,11 @@ If you are using an existing project, note the project ID for later use.
 
 3. **Enable Kubernetes Engine API**:
 
-* Navigate to **APIs & Services > Library** or search for it:
+- Navigate to **APIs & Services > Library** or search for it:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.18.32 PM.png" alt=""><figcaption></figcaption></figure>
 
-* Search for **Kubernetes Engine API** and click **Enable:**
+- Search for **Kubernetes Engine API** and click **Enable:**
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.19.25 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -66,7 +70,7 @@ Helm is a package manager for Kubernetes applications. To install Helm, please r
 
 1. **Create the Cluster**:
 
-* Run the following command to create a Kubernetes cluster:
+- Run the following command to create a Kubernetes cluster:
 
 ```bash
 gcloud container clusters create <CLUSTER_NAME> \
@@ -77,10 +81,10 @@ gcloud container clusters create <CLUSTER_NAME> \
 
 Replace:
 
-* `<CLUSTER_NAME>`: A unique name for your cluster.
-* `<ZONE>`: The GCP zone (e.g., `us-central1-a`).
-* `<NUMBER_OF_NODES>`: Number of nodes in your cluster.
-* `e2-standard-4`: Machine type with 4 CPUs and 16GB RAM per node.
+- `<CLUSTER_NAME>`: A unique name for your cluster.
+- `<ZONE>`: The GCP zone (e.g., `us-central1-a`).
+- `<NUMBER_OF_NODES>`: Number of nodes in your cluster.
+- `e2-standard-4`: Machine type with 4 CPUs and 16GB RAM per node.
 
 Example:
 
@@ -97,12 +101,12 @@ Choose a **--zone** that's near you
 
 2. **Verify the Cluster**:
 
-*   Fetch cluster credentials to allow `kubectl` to interact with it:
+- Fetch cluster credentials to allow `kubectl` to interact with it:
 
     ```bash
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE>
     ```
-*   Confirm the nodes are ready:
+- Confirm the nodes are ready:
 
     ```bash
     kubectl get nodes
@@ -127,13 +131,13 @@ helm repo add hyperswitch https://juspay.github.io/hyperswitch-helm
 
 1. **Label Kubernetes Nodes**: Ensure nodes meet the minimum requirements: **4 CPUs and 6GB memory**.
 
-* Label your nodes:
+- Label your nodes:
 
 ```bash
 kubectl label nodes <your-node-name> node-type=generic-compute
 ```
 
-* List nodes to confirm labels:
+- List nodes to confirm labels:
 
 ```bash
 kubectl get nodes --show-labels
@@ -141,7 +145,7 @@ kubectl get nodes --show-labels
 
 2. **Create a Namespace**:
 
-* Create a dedicated namespace for Hyperswitch:
+- Create a dedicated namespace for Hyperswitch:
 
 ```
 kubectl create namespace hyperswitch
@@ -157,12 +161,12 @@ helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 
 2. Verify the Deployment:
 
-* Check the status of all deployed pods:
+- Check the status of all deployed pods:
 
 <pre><code><strong>kubectl get pods -n hyperswitch
 </strong></code></pre>
 
-* Ensure all pods are in the `Running` state.
+- Ensure all pods are in the `Running` state.
 
 {% hint style="success" %}
 That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
@@ -183,12 +187,12 @@ kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
 
 Access the services at:
 
-* App server: [http://localhost:8080](http://localhost:8080)
-* Control center: [http://localhost:9000](http://localhost:9000)
-* Hyperswitch Web: [http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
-* Grafana: [http://localhost:3000](http://localhost:3000)
-* Vector: [http://localhost:3103](http://localhost:3103)
-* Mailhog: [http://localhost:8025](http://localhost:8025)
+- App server: [http://localhost:8080](http://localhost:8080)
+- Control center: [http://localhost:9000](http://localhost:9000)
+- Hyperswitch Web: [http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
+- Grafana: [http://localhost:3000](http://localhost:3000)
+- Vector: [http://localhost:3103](http://localhost:3103)
+- Mailhog: [http://localhost:8025](http://localhost:8025)
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
@@ -208,17 +212,17 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 
 ### **Troubleshooting**
 
-* **View Pod Logs:** To check logs for a specific pod in Google Kubernetes Engine (GKE):
+- **View Pod Logs:** To check logs for a specific pod in Google Kubernetes Engine (GKE):
 
 <pre class="language-sh"><code class="lang-sh"><strong>kubectl logs &#x3C;pod-name> -n hyperswitch
 </strong></code></pre>
 
-* **View Events:** To list events in the namespace sorted by creation time:
+- **View Events:** To list events in the namespace sorted by creation time:
 
 <pre class="language-sh"><code class="lang-sh"><strong>kubectl get events -n hyperswitch --sort-by='.metadata.creationTimestamp'
 </strong></code></pre>
 
-* **Deploy Hyperswitch Helm Chart on GKE:** If deploying for the first time or reinstalling, run:
+- **Deploy Hyperswitch Helm Chart on GKE:** If deploying for the first time or reinstalling, run:
 
 <pre class="language-sh"><code class="lang-sh"><strong>helm uninstall hypers-v1 -n hyperswitch
 </strong>helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
@@ -240,13 +244,13 @@ helm upgrade --install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 
 ### **Uninstall Hyperswitch & Delete GKE Cluster**
 
-* To uninstall Hyperswitch:
+- To uninstall Hyperswitch:
 
 ```sh
 helm uninstall hypers-v1 -n hyperswitch
 ```
 
-* To delete the GKE cluster completely:
+- To delete the GKE cluster completely:
 
 ```sh
 gcloud container clusters delete <cluster-name> --region <region> --project <project-id> --quiet

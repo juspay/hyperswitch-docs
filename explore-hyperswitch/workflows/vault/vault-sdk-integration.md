@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
+  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment
   Methods Management SDK
 hidden: true
 icon: desktop
@@ -14,11 +14,11 @@ The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution 
 
 ## Key Benefits
 
-* **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
-* **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
-* **Reduced Cart Abandonment**: Enable one-click payments for returning customers
-* **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
-* **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
+- **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
+- **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
+- **Reduced Cart Abandonment**: Enable one-click payments for returning customers
+- **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
+- **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
 ## Vault SDK Integration Walkthrough
 

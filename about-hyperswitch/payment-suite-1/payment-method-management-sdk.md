@@ -4,7 +4,7 @@ hidden: true
 
 # Payment Method Management SDK
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 #### Why Integrate the Management SDK?
 
@@ -23,4 +23,4 @@ Hyperswitch simplifies the complexities of payment method management, so you can
 
 **Integration Documentation :**&#x20;
 
-* [PMM SDK integration Guide](https://docs.hyperswitch.io/~/revisions/0suhZ1q0uwhOXBI31wWf/explore-hyperswitch/payments-modules/vault/payment-methods-management-sdk)
+- [PMM SDK integration Guide](https://docs.hyperswitch.io/~/revisions/0suhZ1q0uwhOXBI31wWf/explore-hyperswitch/payments-modules/vault/payment-methods-management-sdk)

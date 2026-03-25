@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy the Juspay Hyperswitch Card Vault on the cloud
 icon: vault
 ---
 
@@ -15,11 +15,11 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 <figure><img src="../../../../.gitbook/assets/image (1).jpg" alt=""><figcaption></figcaption></figure>
 
-* The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
-* All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
-* The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
-* Cards are stored against the combination of merchant and customer identifiers.&#x20;
-* Internal hashing checks are in place to avoid data duplication.&#x20;
+- The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
+- All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
+- The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
+- Cards are stored against the combination of merchant and customer identifiers.&#x20;
+- Internal hashing checks are in place to avoid data duplication.&#x20;
 
 ## Key Hierarchy
 

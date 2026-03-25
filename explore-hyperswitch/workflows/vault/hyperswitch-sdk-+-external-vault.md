@@ -6,7 +6,7 @@ hidden: true
 icon: square-up-right
 ---
 
-# Hyperswitch SDK + External Vault
+# Juspay Hyperswitch SDK + External Vault
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
@@ -72,6 +72,6 @@ The connector returns the transaction status (e.g., "Succeeded" or "Failed") to 
 
 **Integration Documentation :**
 
-* [**Unified Checkout  Integration guide**](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
-* [**Payment Create API** ](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
-* [**Unified Checkout: Saving Payment Methods**](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)
+- [**Unified Checkout  Integration guide**](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
+- [**Payment Create API** ](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
+- [**Unified Checkout: Saving Payment Methods**](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)

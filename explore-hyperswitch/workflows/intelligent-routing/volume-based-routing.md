@@ -21,6 +21,6 @@ _**Step 3:**_ In the popup, select the appropriate action based on whether you w
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.48.04 PM.png" alt=""><figcaption></figcaption></figure>
 
-_**Step 4:**_ You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
+_**Step 4:**_ You can view your active routing algorithm as well as all previously configured algorithms on the [Juspay Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.49.47 PM.png" alt=""><figcaption></figcaption></figure>

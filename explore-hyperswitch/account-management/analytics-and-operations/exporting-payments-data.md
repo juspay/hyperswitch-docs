@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Export your payments data to Redshift from Juspay Hyperswitch
 icon: tachograph-digital
 ---
 
@@ -175,10 +175,10 @@ The self-setup approach involves three main components:
 First, set up the S3 bucket where payment data will be stored:
 
 ```bash
-# Create S3 bucket
+## Create S3 bucket
 aws s3 mb s3://your-payments-export-bucket --region us-east-1
 
-# Create IAM policy for S3 access
+## Create IAM policy for S3 access
 aws iam create-policy --policy-name PaymentsExportS3Policy --policy-document '{
   "Version": "2012-10-17",
   "Statement": [
@@ -226,18 +226,18 @@ You can deploy this Lambda function using AWS CLI, SAM, or the AWS Console with 
 Create an EventBridge rule to trigger the Lambda function periodically:
 
 ```bash
-# Create EventBridge rule for every 6 hours
+## Create EventBridge rule for every 6 hours
 aws events put-rule \
   --name payment-export-schedule \
   --schedule-expression "rate(6 hours)" \
   --description "Trigger payment data export every 6 hours"
 
-# Add Lambda as target
+## Add Lambda as target
 aws events put-targets \
   --rule payment-export-schedule \
   --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda","Input"='{"merchant_id":"merchant_123","date_range":7}'
 
-# Grant EventBridge permission to invoke Lambda
+## Grant EventBridge permission to invoke Lambda
 aws lambda add-permission \
   --function-name payment-export-lambda \
   --statement-id allow-eventbridge \
@@ -308,7 +308,7 @@ Create appropriate IAM roles for different components:
 For handling multiple merchants, modify the EventBridge configuration:
 
 ```bash
-# Create separate rules for each merchant
+## Create separate rules for each merchant
 aws events put-rule \
   --name payment-export-merchant-123 \
   --schedule-expression "rate(6 hours)" \
@@ -318,7 +318,7 @@ aws events put-targets \
   --rule payment-export-merchant-123 \
   --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda","Input"='{"merchant_id":"merchant_123"}'
 
-# Or use a single rule with different inputs
+## Or use a single rule with different inputs
 aws events put-targets \
   --rule payment-export-schedule \
   --targets file://merchant-targets.json
@@ -379,7 +379,7 @@ Once the data is in S3, you can control access using:
 Set up CloudWatch alarms to monitor the export process:
 
 ```bash
-# Create alarm for Lambda failures
+## Create alarm for Lambda failures
 aws cloudwatch put-metric-alarm \
   --alarm-name payment-export-failures \
   --alarm-description "Alert on Lambda function failures" \

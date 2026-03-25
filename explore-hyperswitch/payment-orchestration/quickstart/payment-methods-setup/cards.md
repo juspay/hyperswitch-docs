@@ -7,7 +7,7 @@ icon: credit-card
 
 ![logo\_discord](https://hyperswitch.io/logos/logo_diners.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_visa.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_mastercard.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_amex.svg)
 
-Hyperswitch supports credit and debit card payments through all our payment processor connector&#x73;**.**\
+Juspay Hyperswitch supports credit and debit card payments through all our payment processor connector&#x73;**.**\
 We accept cards from all major global and local card networks, such as Visa, Mastercard, American Express, Diners, Discover, JCB, Union Pay, etc. While Hyperswitch supports card payments in 135+ currencies and 150+ countries, each of these connectors and networks has limitations in terms of the number of countries and currencies they support.
 
 Apart from regular one-time payments, Hyperswitch supports saving a card, recurring payments, and placing a hold for later capture.

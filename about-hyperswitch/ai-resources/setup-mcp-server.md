@@ -6,7 +6,7 @@ icon: user-robot-xmarks
 
 {% hint style="danger" %}
 This MCP server is only meant for product exploration while using sandbox environment.\
-**DO NOT USE Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
+**DO NOT USE Juspay Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
 {% endhint %}
 
 **Prerequisites**: Ensure you have an MCP client installed (Cursor, Claude Desktop, Cline, etc.)

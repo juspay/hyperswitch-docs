@@ -45,10 +45,10 @@ docker-compose run --rm db-migrator && docker-compose up open-router
 
 This will:
 
-* Set up the environment
-* Set up the database with the required schema
-* Sets up redis and the server for running the application
-* Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
+- Set up the environment
+- Set up the database with the required schema
+- Sets up redis and the server for running the application
+- Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
 
 #### b. Start the Server (without resetting DB)
 

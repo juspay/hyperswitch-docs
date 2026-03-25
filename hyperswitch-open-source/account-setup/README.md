@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Create your Juspay Hyperswitch account and add a payment provider
 icon: wrench
 ---
 

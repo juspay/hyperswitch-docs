@@ -7,7 +7,7 @@ icon: globe-wifi
 
 ## Global Checkout Experience
 
-Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
+Juspay Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
 | <img src="../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong><br>A variety of global payment methods including cards, buy now pay later and digital wallets are supported by the Unified Checkout, with adaptation to local preferences and ability to local language customization.</p>                            |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -26,8 +26,8 @@ While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch
 
 You can further optimize Unified Checkout web SDK by preloading all the resources that are needed by the iframe. By the time iframe is to be mounted (checkout button), everything that is required can be fetched from their server and stored in the disk cache.
 
-* `<Elements/>` wrapper has to be used in the top-level of the merchants app , say web app has two pages eg: homepage and checkout page, the wrapper must be added in the homepage itself.
-* `<Elements/>` has the required props to load our Hyperloader (script) which will
+- `<Elements/>` wrapper has to be used in the top-level of the merchants app , say web app has two pages eg: homepage and checkout page, the wrapper must be added in the homepage itself.
+- `<Elements/>` has the required props to load our Hyperloader (script) which will
   1. Preload the all the resources that are required by the SDK ie. files, svgs, icons, css, fonts etc.
   2. Prefetch the two main API calls and is ready with response
 

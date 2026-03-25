@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Klarna via Hyperswitch
+description: Accept payments through Klarna via Juspay Hyperswitch
 hidden: true
 ---
 

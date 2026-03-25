@@ -9,7 +9,7 @@ icon: chart-pie-simple-circle-dollar
 
 ## Payment Analytics
 
-Typical payment conversion funnel of a user through Hyperswitch involves five stages as shown below.
+Typical payment conversion funnel of a user through Juspay Hyperswitch involves five stages as shown below.
 
 <figure><img src="../../../.gitbook/assets/analytics.png" alt=""><figcaption></figcaption></figure>
 
@@ -67,16 +67,16 @@ Total number of payments with status as succeeded.
 
 There are two aspects which you need to be aware of:
 
-* Once you start using the Hyperswitch, the role of the payment processor is involved only in the last leg of the payment processing (i.e) after the user enters payment information
-* Most payment processors report only the authorization rate excluding user dropouts on the checkout page and failed 3DS verifications.
+- Once you start using the Hyperswitch, the role of the payment processor is involved only in the last leg of the payment processing (i.e) after the user enters payment information
+- Most payment processors report only the authorization rate excluding user dropouts on the checkout page and failed 3DS verifications.
 
 Hyperswitch measures conversion rate including user dropouts, so that you get full visibility on your user dropouts and take appropriate measures to reduce user dropouts.
 
 Please refer here for detailed understanding how popular payment processors track payment lifecycle and measure conversion rates.
 
-* [Stripe - Conversion analysis](https://stripe.com/docs/dashboard/conversion-analysis)
-* [Adyen - Reporting and payment lifecycle](https://docs.adyen.com/reporting/reports-and-the-payments-lifecycle/)
-* [Paypal - Reports](https://developer.paypal.com/docs/reports/)
+- [Stripe - Conversion analysis](https://stripe.com/docs/dashboard/conversion-analysis)
+- [Adyen - Reporting and payment lifecycle](https://docs.adyen.com/reporting/reports-and-the-payments-lifecycle/)
+- [Paypal - Reports](https://developer.paypal.com/docs/reports/)
 
 #### **What should I do to improve my conversion rate?**
 
@@ -100,26 +100,26 @@ Below are some of the day-to-day use cases of payments operations across teams w
 
 ### **Customer Experience Team**
 
-* Issuing refunds to customers
-* Proactive monitoring of failed refunds and delayed refunds
-* Customer queries on double debits
-* Customer queries on incomplete/ delayed payments
+- Issuing refunds to customers
+- Proactive monitoring of failed refunds and delayed refunds
+- Customer queries on double debits
+- Customer queries on incomplete/ delayed payments
 
 ### **Finance Team**
 
-* Reconciliation of Payment Processed versus Amount Settled to Bank
-* Timely submission of evidence for chargeback claims from customers
-* Reducing the cost of fraud through monitoring
-* Optimizing payment processing cost with Smart Routing
-* Reporting across multiple business units / product lines
-* Triggering bulk refunds
+- Reconciliation of Payment Processed versus Amount Settled to Bank
+- Timely submission of evidence for chargeback claims from customers
+- Reducing the cost of fraud through monitoring
+- Optimizing payment processing cost with Smart Routing
+- Reporting across multiple business units / product lines
+- Triggering bulk refunds
 
 ### **Business Operations and Growth**
 
-* Tracking, analyzing, and enhancing payment authorization rate
-* Expanding to new markets and accepting new payment methods
-* Product Returns versus Refunds issued to customers
-* Reporting across multiple business units/ product lines
+- Tracking, analyzing, and enhancing payment authorization rate
+- Expanding to new markets and accepting new payment methods
+- Product Returns versus Refunds issued to customers
+- Reporting across multiple business units/ product lines
 
 Inadequate attention to payment operations might negatively impact your Net Promoter Score and impact the growth of your business.
 
@@ -129,10 +129,10 @@ Hyperswitch Control Center is a single interface that all your teams will be req
 
 In addition to the above, it also includes rich features to make operations more automated for your teams, such as
 
-* Real-time analytics
-* Checkout analytics
-* Automated Reports
-* Alerts automation
-* Managing user roles and access
+- Real-time analytics
+- Checkout analytics
+- Automated Reports
+- Alerts automation
+- Managing user roles and access
 
 ##

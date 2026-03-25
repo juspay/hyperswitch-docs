@@ -18,8 +18,8 @@ Account Information Services (AIS) in open banking allow authorized third-party 
 
 Regional Usage:
 
-* **U.S.**: AIS is mostly employed for one-time account verification, especially in direct debit payments.
-* **UK/EU**: AIS services are more widely adopted for a variety of use cases, like financial management, due to the robust open banking frameworks under PSD2.
+- **U.S.**: AIS is mostly employed for one-time account verification, especially in direct debit payments.
+- **UK/EU**: AIS services are more widely adopted for a variety of use cases, like financial management, due to the robust open banking frameworks under PSD2.
 
 #### Payment Initiation Service
 
@@ -27,11 +27,11 @@ Payment Initiation Services (PIS) in open banking allow authorized third-party p
 
 Regional Usage:
 
-* **UK/EU**: PIS is mostly dominant across Europe. Adoption in other regions, such as the U.S., is slower due to less-developed open banking frameworks.
+- **UK/EU**: PIS is mostly dominant across Europe. Adoption in other regions, such as the U.S., is slower due to less-developed open banking frameworks.
 
 ### **Steps to configure Account Verification for bank debits**
 
-1. On the Hyperswitch dashboard, head to Connectors Tab
+1. On the Juspay Hyperswitch dashboard, head to Connectors Tab
 2. Head on to the PM Authentication Tab and select your Open Banking AIS connector
 3. Add your credentials and you should be good to go.
 4. Head on to Payment Processor and configure a Payment Processor, on select payment methods like Bank debits, you'll be asked to select a PM authentication connector to link with the payment Processor&#x20;

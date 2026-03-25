@@ -5,7 +5,7 @@ icon: sidebar-flip
 
 # Payment Experience
 
-Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
+Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Juspay Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
 
 {% hint style="info" %}
 [Explore the demo](https://hyperswitch-demo-store.netlify.app/)

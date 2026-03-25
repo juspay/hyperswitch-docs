@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Prophetpay via Hyperswitch
+description: Accept payments through Prophetpay via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Deploy each Hyperswitch component individually
+description: Deploy each Juspay Hyperswitch component individually
 icon: list-ol
 ---
 

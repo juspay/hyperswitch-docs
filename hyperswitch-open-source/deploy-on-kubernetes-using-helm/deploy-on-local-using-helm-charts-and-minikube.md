@@ -1,6 +1,6 @@
 ---
 description: >-
-  A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
+  A step-by-step guide to deploying Juspay Hyperswitch locally using Helm and Minikube,
   with setup, access, cleanup, and troubleshooting instructions.
 ---
 
@@ -103,12 +103,12 @@ kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
 
 Access services at:
 
-* App server:[ http://localhost:8080](http://localhost:8080/)
-* Control center:[ http://localhost:9000](http://localhost:9000/)
-* Hyperswitch Web:[ http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
-* Grafana:[ http://localhost:3000](http://localhost:3000/)
-* Vector:[ http://localhost:3103](http://localhost:3103/)
-* Mailhog:[ http://localhost:8025](http://localhost:8025/)
+- App server:[ http://localhost:8080](http://localhost:8080/)
+- Control center:[ http://localhost:9000](http://localhost:9000/)
+- Hyperswitch Web:[ http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
+- Grafana:[ http://localhost:3000](http://localhost:3000/)
+- Vector:[ http://localhost:3103](http://localhost:3103/)
+- Mailhog:[ http://localhost:8025](http://localhost:8025/)
 
 ### **Cleanup** <a href="#id-13mcbknndl2h" id="id-13mcbknndl2h"></a>
 

@@ -4,7 +4,7 @@ icon: flag-checkered
 
 # Getting Started with Payouts
 
-To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
+To begin processing payouts with Juspay Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
 
 ## Overview
 
@@ -16,9 +16,9 @@ The following diagram illustrates the interaction between your application, the 
 
 Implementation requires the Hyperswitch Dashboard for configuration and the API for transaction processing.
 
-* API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
-* Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
-* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
+- API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
+- Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
+- Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
 
 #### Prerequisites
 
@@ -58,9 +58,9 @@ Import Collection: Download and import the collection into your Postman workspac
 
 Configure Environment Variables: In the Variables tab, set the following parameters:
 
-* `baseUrl`: `https://sandbox.hyperswitch.io`
-* `merchant_id`: Your unique merchant identifier.
-* `api_key`: Your Hyperswitch API secret key.
+- `baseUrl`: `https://sandbox.hyperswitch.io`
+- `merchant_id`: Your unique merchant identifier.
+- `api_key`: Your Hyperswitch API secret key.
 
 <figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in postman collection</p></figcaption></figure>
 

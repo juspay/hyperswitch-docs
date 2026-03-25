@@ -5,7 +5,7 @@ description: Use our CDK script to deploy our production-ready K8s setup inside 
 # Production ready deployment
 
 {% hint style="info" %}
-In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
+In this chapter, you will deploy Juspay Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
 {% endhint %}
 
 ***
@@ -44,8 +44,8 @@ The following services will be installed in the 2 Nodes inside your EKS cluster
 
 ### **What do you need to get started**
 
-* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
-* `git` installed on your local machine
+- An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em\_127222) if you do not have one)
+- `git` installed on your local machine
 
 <details>
 

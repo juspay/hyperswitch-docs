@@ -1,5 +1,5 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
 ---
 
 # Production ready deployment on AWS
@@ -15,15 +15,15 @@ If you're looking for a production grade deployment of the card vault to be used
 {% hint style="warning" %}
 Pre-requisites
 
-* `git` installed on your local machine
-* node version 18
-* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
+- `git` installed on your local machine
+- node version 18
+- An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 {% endhint %}
 
 ### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
-* Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
-* While setting permissions, **provide admin access** to the user
+- Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
+- While setting permissions, **provide admin access** to the user
 
 <figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
@@ -75,26 +75,26 @@ Note: The VPC should have at least one private subnet with egress to deploy the 
 
 At this point your locker setup on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
 
-* Run the following command to generate the key for the jump-server
+- Run the following command to generate the key for the jump-server
 
 ```bash
 aws ssm get-parameter --name /ec2/keypair/$(aws ec2 describe-key-pairs --filters Name=key-name,Values=LockerJump-ec2-keypair --query "KeyPairs[*].KeyPairId" --output text) --with-decryption --query Parameter.Value --output text > locker-jump.pem
 ```
 
-* Run the following command to update the permissions for your jump server key
+- Run the following command to update the permissions for your jump server key
 
 ```bash
 chmod 400 locker-jump.pem
 ```
 
-* Run the following command to SSH access your Card Vault instance through a jump server
+- Run the following command to SSH access your Card Vault instance through a jump server
 
 ```bash
 ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
-* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
-* The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
+- Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
+- The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash
 aws ssm get-parameter --name /locker/public_key:1 --query 'Parameter.Value' --output text

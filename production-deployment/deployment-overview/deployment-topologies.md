@@ -25,14 +25,14 @@ This setup offers the highest level of availability and can also improve perform
 
 #### Pros:
 
-* **Extremely Low Downtime:** Near-zero downtime **(RTO ≈ 30 seconds, RPO ≈ 30 seconds)** as traffic can be automatically routed to healthy regions during failures.
-* **High Availability:** Active-Active deployments provide strong resilience against infrastructure or regional outages.
-* **Efficient Infrastructure Utilization:** Both regions actively process production traffic, improving infrastructure utilization compared to Active-Passive architectures.
+- **Extremely Low Downtime:** Near-zero downtime **(RTO ≈ 30 seconds, RPO ≈ 30 seconds)** as traffic can be automatically routed to healthy regions during failures.
+- **High Availability:** Active-Active deployments provide strong resilience against infrastructure or regional outages.
+- **Efficient Infrastructure Utilization:** Both regions actively process production traffic, improving infrastructure utilization compared to Active-Passive architectures.
 
 #### Cons:
 
-* **Operational Complexity:** Requires careful management of cross-region database synchronization, transaction affinity, and distributed system behavior.
-* **Higher Initial Setup Effort:** Implementing Active-Active infrastructure requires additional routing, synchronization, and monitoring components compared to simpler deployment models.
+- **Operational Complexity:** Requires careful management of cross-region database synchronization, transaction affinity, and distributed system behavior.
+- **Higher Initial Setup Effort:** Implementing Active-Active infrastructure requires additional routing, synchronization, and monitoring components compared to simpler deployment models.
 
 ### Multi Region Active - Passive Setup
 
@@ -48,10 +48,10 @@ In an Active - Passive setup, the merchant would deploy two identical Hyperswitc
 
 #### Pros
 
-* **Low Downtime During Failover:** In the event of a regional outage, service restoration time is limited to the failover window (**RTO < 10 minutes, RPO ≈ 30 seconds** **depending on replication delay)**.
-* **Strong Disaster Recovery Posture:** Provides effective protection against regional failures by maintaining a ready standby environment.
+- **Low Downtime During Failover:** In the event of a regional outage, service restoration time is limited to the failover window (**RTO < 10 minutes, RPO ≈ 30 seconds** **depending on replication delay)**.
+- **Strong Disaster Recovery Posture:** Provides effective protection against regional failures by maintaining a ready standby environment.
 
 #### Cons
 
-* **Higher Infrastructure Cost:** Requires provisioning and maintaining a fully replicated infrastructure stack in a secondary region.
-* **Operational Management Overhead:** Requires ongoing management of environment parity, database replication health, and failover readiness procedures.
+- **Higher Infrastructure Cost:** Requires provisioning and maintaining a fully replicated infrastructure stack in a secondary region.
+- **Operational Management Overhead:** Requires ongoing management of environment parity, database replication health, and failover readiness procedures.

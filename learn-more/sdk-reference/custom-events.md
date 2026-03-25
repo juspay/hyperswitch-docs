@@ -1,3 +1,7 @@
+---
+description: Master Custom Events with Juspay Hyperswitch learn more. Technical documentation for developers implementing payment orchestration solutions.
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event
@@ -21,7 +25,7 @@ Merchants can listen to the Payment Method Info event to receive real-time updat
 
 For card payments, the event will include additional details such as:
 
-* **Card Brand**: The card network, e.g., **Visa, Mastercard,** etc.
+- **Card Brand**: The card network, e.g., **Visa, Mastercard,** etc.
 
 ```javascript
 // CheckoutForm.js

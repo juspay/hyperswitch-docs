@@ -2,7 +2,7 @@
 icon: badge-check
 ---
 
-# Run Hyperswitch Locally Using Docker
+# Run Juspay Hyperswitch Locally Using Docker
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
@@ -28,14 +28,14 @@ scripts/setup.sh
 
 The above command will:
 
-* Check for prerequisites (Docker Compose/Podman)
-* Set up necessary configurations (PostgreSQL, Redis)
-* Let you select a setup option:
-  * **Standard**: (Recommended) App server + Control Center + Web SDK
-  * **Full**: Standard + Monitoring + Scheduler
-  * **Standalone App Server**: Core services only App Server
-* Start the selected services
-* Provide link to access various components
+- Check for prerequisites (Docker Compose/Podman)
+- Set up necessary configurations (PostgreSQL, Redis)
+- Let you select a setup option:
+  - **Standard**: (Recommended) App server + Control Center + Web SDK
+  - **Full**: Standard + Monitoring + Scheduler
+  - **Standalone App Server**: Core services only App Server
+- Start the selected services
+- Provide link to access various components
 
 If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
 

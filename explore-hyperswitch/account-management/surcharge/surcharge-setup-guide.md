@@ -5,7 +5,7 @@ description: Surcharge Manager Setup
 # Surcharge Setup guide
 
 {% hint style="info" %}
-This section covers the steps to setup surcharge manager using the Hyperswitch Control Center
+This section covers the steps to setup surcharge manager using the Juspay Hyperswitch Control Center
 {% endhint %}
 
 ## Steps to setup a rule on Surcharge Manager?
@@ -40,13 +40,13 @@ To create a test payment, Go to Home and click on Try a test payment.
 
 1. What are some of the payment parameters that I can use to configure Surcharge rules?
 
-* Available Parameters:
-  * amount - set rules for a specific value or a range of values for the transaction amount
-  * currency - select the currency of transaction
-  * payment\_method - configure rules for different payment methods like card, wallet, direct bank debit etc.
-  * card\_type - choose between credit and debit cards
-  * card\_network - choose between card networks like visa, mastercard etc.
-  * billing\_country - to select the billing\_country
+- Available Parameters:
+  - amount - set rules for a specific value or a range of values for the transaction amount
+  - currency - select the currency of transaction
+  - payment\_method - configure rules for different payment methods like card, wallet, direct bank debit etc.
+  - card\_type - choose between credit and debit cards
+  - card\_network - choose between card networks like visa, mastercard etc.
+  - billing\_country - to select the billing\_country
 
 2. How do I update the current configuration?\
    Click on Create New and configure a new rule that would replace the existing configuration

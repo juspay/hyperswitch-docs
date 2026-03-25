@@ -10,7 +10,7 @@ icon: react
 
 <summary><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
-You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
+You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 
 </details>
 
@@ -105,16 +105,16 @@ const widgets = useWidgets();
 {% tab title="ExpressCheckout" %}
 **Key Features of Hyperswitch's Express Checkout**
 
-* Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
-* Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
-* Easy Integration: Our SDK can be easily integrated with web applications.
+- Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
+- Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
+- Easy Integration: Our SDK can be easily integrated with web applications.
 
 **Benefits of Hyperswitch's Express Checkout Feature**
 
-* Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
-* Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
-* Great for Mobile: Optimized for mobile shopping with ApplePay, Paypal and GooglePay integration for quick purchases on smartphones.
-* Collect billing and shipping details directly from the ApplePay, Klarna, GooglePay, Paypal
+- Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
+- Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
+- Great for Mobile: Optimized for mobile shopping with ApplePay, Paypal and GooglePay integration for quick purchases on smartphones.
+- Collect billing and shipping details directly from the ApplePay, Klarna, GooglePay, Paypal
 
 #### **3.1 Add the ExpressCheckout**
 
@@ -276,10 +276,10 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 
 Some events are emitted by payment elements, listening to those events is the only way to communicate with these elements. All events have a payload object with the type of the Element that emitted the event as an elementType property. Following events are emitted by payment elements.
 
-* change
-* ready
-* focus
-* blur
+- change
+- ready
+- focus
+- blur
 
 #### 4.1 Calling Elements events
 
@@ -353,8 +353,8 @@ Congratulations! Now that you have integrated the Hyperswitch SDK on your app, y
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
-* **onPaymentButtonClick:** This callback is triggered immediately after the user clicks any wallet button.
-* **onPaymentComplete:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+- **onPaymentButtonClick:** This callback is triggered immediately after the user clicks any wallet button.
+- **onPaymentComplete:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.

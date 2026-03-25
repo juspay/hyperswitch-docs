@@ -1,7 +1,7 @@
 ---
 description: >-
   Best for teams with strict existing vault dependencies who want to leverage
-  Hyperswitch for payment routing.
+  Juspay Hyperswitch for payment routing.
 hidden: true
 icon: up-right-from-square
 ---
@@ -20,8 +20,8 @@ For External Vaults to work with Hyperswitch you need to configure the required 
 
 When utilizing External Vaults, merchants have the flexibility to define how payment method details are collected. Depending on your security and user experience requirements, you can choose between two primary integration paths:
 
-* **Layered Integration:** In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
-* **Independent Integration:** The External Vault SDK manages the card data and user experience entirely independently of the Hyperswitch SDK. The card is tokenized directly with your chosen vault, after which  you will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
+- **Layered Integration:** In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
+- **Independent Integration:** The External Vault SDK manages the card data and user experience entirely independently of the Hyperswitch SDK. The card is tokenized directly with your chosen vault, after which  you will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
 
 
 
@@ -41,8 +41,8 @@ Your Merchant Server initiates the process by calling the [`payments/create`](ht
 
 The Hyperswitch SDK initializes on the frontend and performs two critical tasks:
 
-* Retrieval: It fetches the list of available payment methods from the Hyperswitch Server.
-* Vault Integration: It triggers the loading of the External Vault SDK. This creates a secure "iframe" or isolated field specifically for capturing card data.
+- Retrieval: It fetches the list of available payment methods from the Hyperswitch Server.
+- Vault Integration: It triggers the loading of the External Vault SDK. This creates a secure "iframe" or isolated field specifically for capturing card data.
 
 
 
@@ -50,8 +50,8 @@ The Hyperswitch SDK initializes on the frontend and performs two critical tasks:
 
 The customer enters their payment details into the checkout form.
 
-* Isolation: The card numbers are entered directly into the External Vault SDK fields.
-* Tokenization: Before the payment is even submitted to the processor, the external Vault SDK sends the details to the External Vault, which returns a secure token representing that card.
+- Isolation: The card numbers are entered directly into the External Vault SDK fields.
+- Tokenization: Before the payment is even submitted to the processor, the external Vault SDK sends the details to the External Vault, which returns a secure token representing that card.
 
 
 

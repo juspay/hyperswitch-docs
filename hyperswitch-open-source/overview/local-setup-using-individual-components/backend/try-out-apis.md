@@ -14,7 +14,7 @@ icon: arrow-up-triangle-square
 4. Open the ["Quick Start" folder](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/folder/25176162-0f61a2bb-f9d5-4c60-8b73-9b677bf8ebbc) in the collection.
 5.  Open the ["Merchant Account - Create"](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/request/25176162-3c5d5282-931b-4adc-a651-f88c8697ebcb) request, switch to the "Body" tab and update any request parameters as required.
 
-    * If you want to use a different connector for making payments with than the provided default, update the `data` field present in the `routing_algorithm` field to your liking.
+    - If you want to use a different connector for making payments with than the provided default, update the `data` field present in the `routing_algorithm` field to your liking.
 
     Click on the "Send" button to create a merchant account (You may need to "create a fork" to fork this collection to your own workspace to send a request). You should obtain a response containing most of the data included in the request, along with some additional fields. Store the merchant ID and publishable key returned in the response.
 
@@ -27,8 +27,8 @@ icon: arrow-up-triangle-square
 1. Sign up on the payment connector's (say Stripe, Adyen, etc.) dashboard and store your connector API key (and any other necessary secrets) securely.
 2.  Open the ["Payment Connector - Create"](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/request/25176162-295d83c8-957a-4524-95c8-589a26d751cf) request, switch to the "Body" tab and update any request parameters as required.
 
-    * Pay special attention to the `connector_name` and `connector_account_details` fields and update them. You can find connector-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
-    * Open the ["Variables" tab](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3?tab=variables) in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3) and set the `connector_api_key` variable to your connector's API key.
+    - Pay special attention to the `connector_name` and `connector_account_details` fields and update them. You can find connector-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
+    - Open the ["Variables" tab](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3?tab=variables) in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3) and set the `connector_api_key` variable to your connector's API key.
 
     Click on the "Send" button to create a payment connector account. You should obtain a response containing most of the data included in the request, along with some additional fields.
 3. Follow the above steps if you'd like to add more payment connector accounts.
@@ -38,7 +38,7 @@ icon: arrow-up-triangle-square
 Ensure that you have [set up your merchant account](try-out-apis.md#set-up-your-merchant-account) and [set up at least one payment connector account](try-out-apis.md#set-up-a-payment-connector-account) before trying to create a payment.
 
 1. Open the ["Payments - Create"](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/request/25176162-ee0549bf-dd38-41fd-9a8a-de74879f3cda) request, switch to the "Body" tab and update any request parameters as required. Click on the "Send" button to create a payment. If all goes well and you had provided the correct connector credentials, the payment should be created successfully. You should see the `status` field of the response body having a value of `succeeded` in this case.
-   * If the `status` of the payment created was `requires_confirmation`, set `confirm` to `true` in the request body and send the request again.
+   - If the `status` of the payment created was `requires_confirmation`, set `confirm` to `true` in the request body and send the request again.
 2. Open the ["Payments - Retrieve"](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/request/25176162-8baf2590-d2af-44d0-ba37-e9cab7ef891a) request and click on the "Send" button (without modifying anything). This should return the payment object for the payment created in Step 2.
 
 ### Create a Refund

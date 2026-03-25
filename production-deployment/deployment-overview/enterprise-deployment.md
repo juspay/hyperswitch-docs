@@ -14,12 +14,12 @@ Navigate to the Hyperswitch [Terraform Documentation](https://github.com/juspay/
 
 The documentation outlines the following:&#x20;
 
-* Terraform module architecture
-* Services available
-* Environment Types
-* Steps to Deploy
-* State Management
-* Troubleshooting
+- Terraform module architecture
+- Services available
+- Environment Types
+- Steps to Deploy
+- State Management
+- Troubleshooting
 
 {% hint style="info" %}
 **Note:** Terraform needs to provision resources in the following order to ensure an error-free deployment  -&#x20;
@@ -32,14 +32,14 @@ The documentation outlines the following:&#x20;
 
 In case you are setting up your infrastructure on any other managed cloud providers you need to ensure the following resources are provisioned before you proceed with the Hyperswitch application installation -&#x20;
 
-* Kubernetes cluster + node pools
-* Networking (VPC, subnets, firewall rules)
-* Load balancer + ingress
-* PostgreSQL database
-* Redis cache
-* Persistent storage
-* Secrets management
-* Monitoring/logging stack
+- Kubernetes cluster + node pools
+- Networking (VPC, subnets, firewall rules)
+- Load balancer + ingress
+- PostgreSQL database
+- Redis cache
+- Persistent storage
+- Secrets management
+- Monitoring/logging stack
 
 ### Deploying Hyperswitch
 
@@ -105,9 +105,9 @@ You can run the following command to see the default schema:
 
 After going through the file, the merchant can create minimal override files with the parameters they need customized for their deployment for each of the environments as follows -&#x20;
 
-* values-prod.yaml
-* values-sandbox.yaml
-* values-integ.yaml
+- values-prod.yaml
+- values-sandbox.yaml
+- values-integ.yaml
 
 These files will be passed as parameters  in the next step to install the different Hyperswitch environments
 

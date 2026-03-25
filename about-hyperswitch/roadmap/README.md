@@ -15,20 +15,20 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 **Connectors**
 
-* **New PSP integrations** – Gigadat and Loonio for Interac e Transfer; Tesouro for Cards, Apple Pay, and Google Pay; Paysafe for Cards, Apple Pay, Skrill, Interac e Transfer, and Paysafecards; Finix for Cards, Apple Pay, and Google Pay
-* **Integration depth** – Expanded wallet and alternative rail coverage across new connectors, adding broader support for Apple Pay and Google Pay, plus regional payment rails like Interac e Transfer, and additional tender types like Skrill and Paysafecards through Paysafe
+- **New PSP integrations** – Gigadat and Loonio for Interac e Transfer; Tesouro for Cards, Apple Pay, and Google Pay; Paysafe for Cards, Apple Pay, Skrill, Interac e Transfer, and Paysafecards; Finix for Cards, Apple Pay, and Google Pay
+- **Integration depth** – Expanded wallet and alternative rail coverage across new connectors, adding broader support for Apple Pay and Google Pay, plus regional payment rails like Interac e Transfer, and additional tender types like Skrill and Paysafecards through Paysafe
 
 **Core orchestration**
 
-* **Platform Merchants support:** Support for Platform merchant use-cases to share customers and payment methods across their managed-merchants
-* **Split Payments:** Support for split payments with gift cards to enable combined payments within a single transaction
-* **Error code enhancements** – Issuer error codes added to the Gateway Status Mapping table to improve response mapping and retry decisions; unified error codes expanded to generate clearer, consistent user facing error messages across channels
-* **Real time payment method eligibility** – Merchant level risk based eligibility checkpoints added before payment confirmation to reduce fraud exposure and improve authorization performance
+- **Platform Merchants support:** Support for Platform merchant use-cases to share customers and payment methods across their managed-merchants
+- **Split Payments:** Support for split payments with gift cards to enable combined payments within a single transaction
+- **Error code enhancements** – Issuer error codes added to the Gateway Status Mapping table to improve response mapping and retry decisions; unified error codes expanded to generate clearer, consistent user facing error messages across channels
+- **Real time payment method eligibility** – Merchant level risk based eligibility checkpoints added before payment confirmation to reduce fraud exposure and improve authorization performance
 
 **Vault**
 
-* **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
-* **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
+- **Guest checkout tokenization** – Token creation without customer creation in Juspay Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
+- **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
 
 **Revenue recovery**\
 \
@@ -38,9 +38,9 @@ Account Updater to automatically refresh stored card credentials for expired, re
 
 Our core values have pretty much remained the same since the early days and here they are:
 
-* Make payments more `accessible` and `affordable` to every digital business
-* Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
-* Being `community-first` in ideation, planning and execution of features
+- Make payments more `accessible` and `affordable` to every digital business
+- Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
+- Being `community-first` in ideation, planning and execution of features
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 

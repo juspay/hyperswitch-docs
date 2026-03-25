@@ -1,5 +1,5 @@
 ---
-description: Accept payments through OpenNode via Hyperswitch
+description: Accept payments through OpenNode via Juspay Hyperswitch
 hidden: true
 ---
 

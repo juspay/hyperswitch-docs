@@ -18,9 +18,9 @@ Reducing credit card processing fees begins with understanding your true effecti
 
 Processing fees typically consist of:
 
-* Interchange (set by card networks and issuing banks)
-* Network assessment fees
-* Processor markup
+- Interchange (set by card networks and issuing banks)
+- Network assessment fees
+- Processor markup
 
 Interchange is largely non-negotiable. Optimization typically occurs in markup negotiation, routing strategy, and transaction mix management.
 
@@ -28,9 +28,9 @@ Effective strategies include:
 
 1. Calculating blended effective rate\
    Total fees paid divided by total processed volume. Segment by:
-   * Card type (debit vs credit, rewards vs non-rewards)
-   * Domestic vs cross-border
-   * Processor
+   - Card type (debit vs credit, rewards vs non-rewards)
+   - Domestic vs cross-border
+   - Processor
 2. Negotiating interchange-plus pricing\
    Flat-rate pricing often results in higher blended cost at scale. Interchange-plus contracts provide transparency and better leverage for high-volume merchants.
 3. Optimizing routing\
@@ -50,22 +50,22 @@ Cost reduction is a data analysis problem first and a routing problem second.
 
 Routing cannot change interchange rates directly, as interchange is determined by:
 
-* Card type
-* Merchant category
-* Transaction attributes
+- Card type
+- Merchant category
+- Transaction attributes
 
 However, routing can influence:
 
-* Processor markup
-* Cross-border assessment fees
-* FX spread
-* Authorization performance
+- Processor markup
+- Cross-border assessment fees
+- FX spread
+- Authorization performance
 
 Processors may offer:
 
-* Different markup percentages
-* Volume-based discounts
-* Region-specific pricing advantages
+- Different markup percentages
+- Volume-based discounts
+- Region-specific pricing advantages
 
 Routing becomes financially meaningful when processors offer materially different pricing or performance characteristics.
 
@@ -87,17 +87,17 @@ Steps to compare effectively:
    Divide total fees by total processed volume.
 3. Segment by transaction type\
    Break down costs by:
-   * Domestic vs cross-border
-   * Card brand
-   * Debit vs credit
-   * Transaction size bands
+   - Domestic vs cross-border
+   - Card brand
+   - Debit vs credit
+   - Transaction size bands
 4. Include hidden and indirect fees\
    Consider:
-   * Chargeback fees
-   * Refund fees
-   * Monthly minimums
-   * Platform fees
-   * FX spread
+   - Chargeback fees
+   - Refund fees
+   - Monthly minimums
+   - Platform fees
+   - FX spread
 5. Model real transaction mix\
    Use historical transaction data to simulate cost under alternative pricing models.
 
@@ -117,15 +117,15 @@ Yes, if you have multiple processors and routing logic capable of evaluating cos
 
 Dynamic cost-based routing typically evaluates:
 
-* Card BIN
-* Geography
-* Currency
-* Processor markup agreements
+- Card BIN
+- Geography
+- Currency
+- Processor markup agreements
 
 For example:
 
-* Route domestic debit to Processor A
-* Route cross-border premium cards to Processor B
+- Route domestic debit to Processor A
+- Route cross-border premium cards to Processor B
 
 However, cost-based routing must incorporate approval rate data. The optimal processor is not necessarily the lowest-cost processor if approval rates are lower.
 
@@ -145,16 +145,16 @@ Often, yes, but not automatically.
 
 Multiple acquirers provide:
 
-* Negotiation leverage
-* Competitive benchmarking
-* Volume reallocation flexibility
-* Reduced single-provider dependency
+- Negotiation leverage
+- Competitive benchmarking
+- Volume reallocation flexibility
+- Reduced single-provider dependency
 
 Lower blended rates occur when:
 
-* Volume is strategically distributed
-* Processors compete on pricing
-* Routing directs volume to cost-efficient paths
+- Volume is strategically distributed
+- Processors compete on pricing
+- Routing directs volume to cost-efficient paths
 
 However, evenly splitting volume may weaken volume-based discount tiers. The optimal strategy balances concentration for discounts with diversification for leverage.
 
@@ -174,17 +174,17 @@ Retries can materially increase cost if not managed carefully.
 
 Each authorization attempt may incur:
 
-* Network assessment fees
-* Processor markup
-* Fraud screening costs
+- Network assessment fees
+- Processor markup
+- Fraud screening costs
 
 For example, if a $100 transaction is attempted three times before success, you may incur three sets of authorization-related fees.
 
 Effective retry strategies should:
 
-* Trigger only for soft declines
-* Limit retry attempts
-* Optionally route retries to alternate processors
+- Trigger only for soft declines
+- Limit retry attempts
+- Optionally route retries to alternate processors
 
 Uncontrolled retries increase fee load without improving net margin. Retry logic must be selective and performance-aware.
 
@@ -200,25 +200,25 @@ For merchants expanding internationally, cross-border fees often become a major 
 
 Cross-border transactions typically incur:
 
-* Higher interchange
-* Cross-border assessment fees
-* Foreign exchange spread
-* Elevated fraud risk
+- Higher interchange
+- Cross-border assessment fees
+- Foreign exchange spread
+- Elevated fraud risk
 
 Cross-border effective rates can be significantly higher than domestic rates.
 
 Example:
 
-* Domestic effective rate: 2.3%
-* Cross-border effective rate: 3.2–4.0%
+- Domestic effective rate: 2.3%
+- Cross-border effective rate: 3.2–4.0%
 
 At scale, international transaction mix can materially impact blended margin.
 
 Reducing cross-border cost often involves:
 
-* Using local acquiring in target markets
-* Settling in local currency
-* Minimizing unnecessary FX conversions
+- Using local acquiring in target markets
+- Settling in local currency
+- Minimizing unnecessary FX conversions
 
 </details>
 
@@ -232,9 +232,9 @@ Optimization requires a structured approach:
    Determine the percentage of domestic versus international volume.
 2. Evaluate local acquiring partners\
    Local acquirers often provide:
-   * Lower interchange for domestic cards
-   * Higher approval rates
-   * Reduced FX spread
+   - Lower interchange for domestic cards
+   - Higher approval rates
+   - Reduced FX spread
 3. Route based on card origin\
    Use BIN or country-level routing logic to direct transactions appropriately.
 4. Monitor both approval rates and cost\

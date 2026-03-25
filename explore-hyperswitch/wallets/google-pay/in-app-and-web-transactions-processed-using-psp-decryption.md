@@ -1,3 +1,7 @@
+---
+description: Guide to In App And Web Transactions Processed Using Psp Decryption for Juspay Hyperswitch explore hyperswitch. Learn integration patterns, API usage, and implementation strategies for payments.
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.

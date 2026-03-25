@@ -10,7 +10,7 @@ At Juspay, we believe payment infrastructure should be transparent, adaptable, a
 
 This modular, composable platform allows you to deploy on-premise for full access or select only the components you need.&#x20;
 
-To run Hyperswitch locally, follow our Docker setup guide. Alternatively, explore our cloud deployment guides for additional options. ​
+To run Juspay Hyperswitch locally, follow our Docker setup guide. Alternatively, explore our cloud deployment guides for additional options. ​
 
 ## Local Setup
 

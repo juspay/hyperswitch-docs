@@ -1,11 +1,15 @@
+---
+description: Comprehensive guide to Recommended Tooling Stack for Juspay Hyperswitch users. Implement payment solutions with step-by-step instructions and best practices.
+---
+
 # Recommended Tooling Stack
 
 The recommended tooling stack for production deployments is:
 
-* **Terraform** — Infrastructure provisioning and management (Infrastructure as Code)
-* **Kubernetes** — Container orchestration platform
-* **Helm** — Kubernetes package manager for application deployment
-* **ArgoCD** — GitOps-based continuous delivery system for Kubernetes
+- **Terraform** — Infrastructure provisioning and management (Infrastructure as Code)
+- **Kubernetes** — Container orchestration platform
+- **Helm** — Kubernetes package manager for application deployment
+- **ArgoCD** — GitOps-based continuous delivery system for Kubernetes
 
 Together, these tools form a layered deployment architecture:
 
@@ -38,21 +42,21 @@ This workflow allows infrastructure changes to be reviewed and approved before d
 
 #### Terraform allows merchants to
 
-* Define infrastructure declaratively using code
-* Version-control infrastructure changes
-* Review infrastructure updates via pull requests
-* Maintain environment parity across Dev, Staging, and Production
-* Reduce configuration drift across environments
+- Define infrastructure declaratively using code
+- Version-control infrastructure changes
+- Review infrastructure updates via pull requests
+- Maintain environment parity across Dev, Staging, and Production
+- Reduce configuration drift across environments
 
 #### Terraform can provision foundational infrastructure components such as
 
-* Virtual Private Cloud (VPC) and networking
-* Subnets
-* Internet Gateways and NAT Gateways
-* Security Groups and Network Policies
-* Kubernetes clusters (EKS / GKE / AKS or self-managed clusters)
-* Managed databases (Postgres, Cloud SQL, etc.)
-* Cache layers (Redis / ElastiCache)
+- Virtual Private Cloud (VPC) and networking
+- Subnets
+- Internet Gateways and NAT Gateways
+- Security Groups and Network Policies
+- Kubernetes clusters (EKS / GKE / AKS or self-managed clusters)
+- Managed databases (Postgres, Cloud SQL, etc.)
+- Cache layers (Redis / ElastiCache)
 
 {% hint style="info" %}
 **Note:** Terraform state should be stored remotely (for example, S3 with DynamoDB locking or equivalent mechanisms) to support team-based workflows and prevent state corruption.
@@ -66,11 +70,11 @@ Applications such as Hyperswitch are packaged as **containers** (Docker images).
 
 Kubernetes provides several built-in capabilities that are critical for production systems:
 
-* Automatic workload scheduling across nodes
-* Horizontal scaling of application replicas
-* Self-healing for failed containers
-* Service discovery and internal networking
-* Rolling updates with zero downtime
+- Automatic workload scheduling across nodes
+- Horizontal scaling of application replicas
+- Self-healing for failed containers
+- Service discovery and internal networking
+- Rolling updates with zero downtime
 
 #### Deployment Models
 
@@ -78,9 +82,9 @@ Kubernetes can be deployed in one of two models:
 
 **Managed Kubernetes Services (Recommended)** Examples include:
 
-* AWS Elastic Kubernetes Service (EKS)
-* Google Kubernetes Engine (GKE)
-* Azure Kubernetes Service (AKS)
+- AWS Elastic Kubernetes Service (EKS)
+- Google Kubernetes Engine (GKE)
+- Azure Kubernetes Service (AKS)
 
 Managed services reduce operational overhead by handling cluster management, control plane operations, and upgrades.
 
@@ -100,11 +104,11 @@ Instead of manually creating many Kubernetes configuration files, Helm allows ap
 
 A Helm chart defines:
 
-* Kubernetes deployments
-* services
-* configuration values
-* secrets
-* networking resources
+- Kubernetes deployments
+- services
+- configuration values
+- secrets
+- networking resources
 
 Helm templates allow these resources to be configured using environment-specific values.
 
@@ -125,9 +129,9 @@ This makes Helm a powerful mechanism for managing complex Kubernetes application
 
 Hyperswitch developer documentation also provides alternative installation methods:
 
-* Docker Compose installation
-* AWS Cloud Development Kit (CDK) installation
-* Installation from source
+- Docker Compose installation
+- AWS Cloud Development Kit (CDK) installation
+- Installation from source
 
 These methods are intended primarily for **developer environments or sandbox deployments**, and are not recommended for production installations.
 {% endhint %}
@@ -136,14 +140,14 @@ Using Helm charts significantly simplifies installation and lifecycle management
 
 However, some supporting infrastructure components may still require manual installation or separate management. These may include:
 
-* Firewall configuration
-* Ingress controllers
-* Inbound and outbound proxies
-* Load balancers
-* Monitoring services
-* Remote monitoring infrastructure
-* Load testing services
-* Card Vault setup and lifecycle management
+- Firewall configuration
+- Ingress controllers
+- Inbound and outbound proxies
+- Load balancers
+- Monitoring services
+- Remote monitoring infrastructure
+- Load testing services
+- Card Vault setup and lifecycle management
 
 Detailed instructions for these components are provided in the subsequent sections.
 
@@ -166,12 +170,12 @@ The typical GitOps workflow is:
 
 #### ArgoCD enables
 
-* Git as the single source of truth for cluster state
-* Automated synchronization between Git and Kubernetes
-* Drift detection and automatic reconciliation
-* Controlled and auditable application rollouts
-* Multi-environment promotion workflows (Dev → Staging → Production)
-* Rollback to previously known-good versions
+- Git as the single source of truth for cluster state
+- Automated synchronization between Git and Kubernetes
+- Drift detection and automatic reconciliation
+- Controlled and auditable application rollouts
+- Multi-environment promotion workflows (Dev → Staging → Production)
+- Rollback to previously known-good versions
 
 This GitOps model improves operational reliability and enables safer production deployments.
 
@@ -181,9 +185,9 @@ Collectively, this tooling stack enables a robust, scalable, and production-grad
 
 The responsibilities of each layer are clearly separated:
 
-* **Terraform** provisions the underlying infrastructure.
-* **Kubernetes** manages containerized workloads.
-* **Helm** packages and deploys application resources.
-* **ArgoCD** automates deployment and ensures configuration consistency through GitOps workflows.
+- **Terraform** provisions the underlying infrastructure.
+- **Kubernetes** manages containerized workloads.
+- **Helm** packages and deploys application resources.
+- **ArgoCD** automates deployment and ensures configuration consistency through GitOps workflows.
 
 This architecture provides repeatable infrastructure provisioning, automated deployments, and reliable lifecycle management for production payment systems.<br>

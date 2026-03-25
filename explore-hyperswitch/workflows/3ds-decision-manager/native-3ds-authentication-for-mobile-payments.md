@@ -42,7 +42,7 @@ By providing a native 3DS experience, the users never leave the merchant app. It
 
 Since the authentication occurs natively, merchants have more control over the branding and design of the authentication experience. This keeps the look and feel consistent with the rest of the app or website, offering a smoother, more professional user experience.
 
-## Native 3D Secure on Hyperswitch
+## Native 3D Secure on Juspay Hyperswitch
 
 1. **In-line 3DS Challenge for web** - No redirections for the user.
 

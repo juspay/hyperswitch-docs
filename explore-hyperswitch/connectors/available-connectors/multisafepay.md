@@ -1,5 +1,5 @@
 ---
-description: Accept payments through MultiSafepay via Hyperswitch
+description: Accept payments through MultiSafepay via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bambora via Hyperswitch
+description: Accept payments through Bambora via Juspay Hyperswitch
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Payments authentication through Netcetera via Hyperswitch
+description: Payments authentication through Netcetera via Juspay Hyperswitch
 ---
 
 # Netcetera

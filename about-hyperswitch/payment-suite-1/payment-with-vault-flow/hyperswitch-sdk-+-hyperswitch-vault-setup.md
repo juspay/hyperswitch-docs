@@ -1,7 +1,7 @@
 ---
 description: >-
   Best for merchants seeking a pre-built, optimized payment UI backed by the
-  full Hyperswitch stack for secure data storage and routing.
+  full Juspay Hyperswitch stack for secure data storage and routing.
 ---
 
 # Hyperswitch SDK + Hyperswitch Vault Setup
@@ -58,8 +58,8 @@ The processor returns the authorization result to Hyperswitch, which forwards th
 
 
 
-* **Integration Documentation :**&#x20;
-  * **Unified Checkout :**[ Integration guide](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
-  * [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
-  * [ Unified Checkout: Saving Payment Methods](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)
+- **Integration Documentation :**&#x20;
+  - **Unified Checkout :**[ Integration guide](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
+  - [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+  - [ Unified Checkout: Saving Payment Methods](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)
 

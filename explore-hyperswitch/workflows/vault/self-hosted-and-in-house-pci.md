@@ -4,7 +4,7 @@ icon: box-ballot
 
 # Self-hosted & in-house PCI
 
-In this deployment, merchants self-host Hyperswitch and also manage their own PCI DSS compliance.
+In this deployment, merchants self-host Juspay Hyperswitch and also manage their own PCI DSS compliance.
 
 All card storage and tokenization are handled through the native Hyperswitch Vault, which is deployed within the merchant’s controlled environment.
 
@@ -12,10 +12,10 @@ This setup ensures full data ownership while leveraging Hyperswitch’s built-in
 
 Key Highlights:
 
-* Native Hyperswitch Vault runs within the merchant’s infrastructure.
-* Merchant is fully responsible for PCI DSS certification and data handling.
-* Enables seamless use of Network Tokenization, Volatile Tokenization, and Guest Checkout Tokenization.
-* Ideal for highly regulated merchants (e.g., banks, payment institutions) that prefer on-prem control.
+- Native Hyperswitch Vault runs within the merchant’s infrastructure.
+- Merchant is fully responsible for PCI DSS certification and data handling.
+- Enables seamless use of Network Tokenization, Volatile Tokenization, and Guest Checkout Tokenization.
+- Ideal for highly regulated merchants (e.g., banks, payment institutions) that prefer on-prem control.
 
 ### Self-hosted orchestration - Payments and vaulting flow
 
@@ -35,8 +35,8 @@ Once the `payment_method_id` is generated, it serves as a reusable token. The bu
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
 
-* Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
-* Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
+- Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
+- Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
 | **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
 | --------------- | --------------------------------- | --------------------- |

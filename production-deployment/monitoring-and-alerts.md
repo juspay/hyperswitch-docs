@@ -4,7 +4,7 @@ icon: monitor-waveform
 
 # Monitoring and Alerts
 
-Reliable operation of a production Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.
+Reliable operation of a production Juspay Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.
 
 Observability in a Hyperswitch installation is based on two primary data sources:
 
@@ -29,11 +29,11 @@ Hyperswitch integrates with a standard observability stack that combines logging
 
 This stack enables unified dashboards where operators can correlate:
 
-* application metrics
-* system resource utilization
-* transaction behavior
-* error patterns
-* application logs
+- application metrics
+- system resource utilization
+- transaction behavior
+- error patterns
+- application logs
 
 This correlation significantly reduces the time required to diagnose issues in production systems.
 
@@ -74,10 +74,10 @@ J --> L[Hyperswitch Support Team]
 
 Hyperswitch services emit **application metrics** such as:
 
-* request rates
-* latency
-* authorization success rates
-* error rates
+- request rates
+- latency
+- authorization success rates
+- error rates
 
 These metrics are collected through the **OpenTelemetry Collector**, which forwards them to a **metrics backend such as Prometheus**.
 
@@ -85,10 +85,10 @@ These metrics are collected through the **OpenTelemetry Collector**, which forwa
 
 Infrastructure metrics such as:
 
-* node CPU usage
-* memory consumption
-* disk utilization
-* network usage
+- node CPU usage
+- memory consumption
+- disk utilization
+- network usage
 
 are typically collected from the **cloud provider monitoring system** (for example CloudWatch or equivalent).
 
@@ -96,31 +96,31 @@ are typically collected from the **cloud provider monitoring system** (for examp
 
 Application and system logs are collected by **Promtail**, which:
 
-* scrapes logs from containers and nodes
-* sends them to **Loki** for centralized log storage.
+- scrapes logs from containers and nodes
+- sends them to **Loki** for centralized log storage.
 
 #### Visualization Layer
 
 **Grafana** serves as the unified observability interface and provides:
 
-* infrastructure dashboards
-* application performance dashboards
-* transaction success rate monitoring
-* latency analysis
-* error analysis
+- infrastructure dashboards
+- application performance dashboards
+- transaction success rate monitoring
+- latency analysis
+- error analysis
 
 Grafana can visualize both:
 
-* metrics (Prometheus / cloud metrics)
-* logs (Loki)
+- metrics (Prometheus / cloud metrics)
+- logs (Loki)
 
 #### Optional Enterprise Remote Monitoring
 
 For **Enterprise Edition merchants**, a subset of metrics may be exported using **Prometheus Remote Write** to a **Hyperswitch-managed monitoring environment** to enable:
 
-* proactive operational support
-* performance analysis
-* infrastructure optimization recommendations.
+- proactive operational support
+- performance analysis
+- infrastructure optimization recommendations.
 
 ### Monitoring Dashboards
 
@@ -134,18 +134,18 @@ Infrastructure-level monitoring ensures that the underlying cluster remains heal
 
 Tracked metrics include:
 
-* CPU utilization by pods
-* Memory utilization by pods
-* CPU utilization by nodes
-* Memory utilization by nodes
-* Pod restart counts
-* Node health status
+- CPU utilization by pods
+- Memory utilization by pods
+- CPU utilization by nodes
+- Memory utilization by nodes
+- Pod restart counts
+- Node health status
 
 These metrics help detect:
 
-* resource exhaustion
-* pod instability
-* infrastructure bottlenecks
+- resource exhaustion
+- pod instability
+- infrastructure bottlenecks
 
 before they affect transaction processing.
 
@@ -155,17 +155,17 @@ Application dashboards provide visibility into API behavior and system performan
 
 Tracked metrics include:
 
-* API route performance
-* Request throughput by endpoint
-* API latency (P95 / P99)
-* HTTP status code distribution
-* Error rates across services
+- API route performance
+- Request throughput by endpoint
+- API latency (P95 / P99)
+- HTTP status code distribution
+- Error rates across services
 
 These metrics allow operators to quickly identify:
 
-* degraded API performance
-* abnormal error patterns
-* traffic spikes
+- degraded API performance
+- abnormal error patterns
+- traffic spikes
 
 #### Payment and Transaction Monitoring
 
@@ -173,22 +173,22 @@ Hyperswitch dashboards also provide deep insight into payment processing perform
 
 Tracked metrics include:
 
-* Total transactions initiated
-* Total transactions processed
-* Authorization success rate
-* Transaction status distribution
-* Error codes returned by processors
-* Payment method distribution
-* Payment method level authorization rate
-* Acquirer level authorization rate
-* Metric segmentation by organization, account, and profile
+- Total transactions initiated
+- Total transactions processed
+- Authorization success rate
+- Transaction status distribution
+- Error codes returned by processors
+- Payment method distribution
+- Payment method level authorization rate
+- Acquirer level authorization rate
+- Metric segmentation by organization, account, and profile
 
 These dashboards allow operators to detect:
 
-* processor outages
-* authorization rate degradation
-* routing inefficiencies
-* payment method performance issues
+- processor outages
+- authorization rate degradation
+- routing inefficiencies
+- payment method performance issues
 
 ### Monitoring Configuration
 
@@ -214,10 +214,10 @@ In this configuration, selected operational metrics are exported from the mercha
 
 This allows the Hyperswitch team to:
 
-* monitor transaction patterns and infrastructure utilization
-* assist in troubleshooting production issues
-* identify performance optimization opportunities
-* provide proactive recommendations to improve authorization rates
+- monitor transaction patterns and infrastructure utilization
+- assist in troubleshooting production issues
+- identify performance optimization opportunities
+- provide proactive recommendations to improve authorization rates
 
 ### Remote Monitoring Configuration
 
@@ -231,8 +231,8 @@ This configuration allows merchants to retain full control over which metrics ar
 
 Before configuring remote monitoring, ensure that:
 
-* Prometheus is running correctly in the Kubernetes cluster
-* application metrics are visible in Grafana dashboards
+- Prometheus is running correctly in the Kubernetes cluster
+- application metrics are visible in Grafana dashboards
 
 The configuration process typically involves:
 
@@ -246,8 +246,8 @@ Infrastructure rules may also need to be updated to allow outbound connections t
 
 After configuration, verify that:
 
-* remote write metrics are being exported successfully
-* the Hyperswitch team confirms receipt of the metrics
+- remote write metrics are being exported successfully
+- the Hyperswitch team confirms receipt of the metrics
 
 Note: Remote monitoring is available only for merchants subscribing to the Enterprise Edition.
 
@@ -270,10 +270,10 @@ Infrastructure alerts monitor system health and resource utilization.
 
 Infrastructure alerts should apply to:
 
-* application pods
-* database instances
-* Redis instances
-* cluster nodes
+- application pods
+- database instances
+- Redis instances
+- cluster nodes
 
 #### Application Alerts
 
@@ -286,9 +286,9 @@ Application alerts monitor API behavior.
 
 These alerts help identify:
 
-* application crashes
-* integration failures
-* misconfigurations
+- application crashes
+- integration failures
+- misconfigurations
 
 #### Business Alerts
 
@@ -302,24 +302,24 @@ Business alerts monitor the performance of payment processing.
 
 These alerts should be configured for:
 
-* overall authorization success rate
-* payment method level success rate
-* processor/acquirer level success rate
+- overall authorization success rate
+- payment method level success rate
+- processor/acquirer level success rate
 
 ### Logging and Log Archival
 
 Logging is essential for production environments for the following purposes:
 
-* troubleshooting and debugging
-* security monitoring
-* compliance and auditing
-* operational analysis
+- troubleshooting and debugging
+- security monitoring
+- compliance and auditing
+- operational analysis
 
 It is recommended to centralize logs using platforms such as:
 
-* Elasticsearch / Logstash / Kibana (ELK Stack)
-* Splunk
-* Grafana Loki
+- Elasticsearch / Logstash / Kibana (ELK Stack)
+- Splunk
+- Grafana Loki
 
 The following practices should be implemented in production environments.
 
@@ -337,9 +337,9 @@ Automated log rotation must be configured to prevent excessive disk usage and en
 
 Logs should be protected through:
 
-* encryption at rest
-* encryption in transit
-* restricted access for authorized personnel only
+- encryption at rest
+- encryption in transit
+- restricted access for authorized personnel only
 
 Although Hyperswitch does not log sensitive payment data, logs must still be handled securely to maintain compliance and prevent information leakage.
 
@@ -347,8 +347,8 @@ Although Hyperswitch does not log sensitive payment data, logs must still be han
 
 Access logs and operational logs should be periodically reviewed to detect:
 
-* unauthorized access
-* suspicious system activity
-* operational anomalies
+- unauthorized access
+- suspicious system activity
+- operational anomalies
 
 This process is commonly required during security audits and PCI compliance reviews.

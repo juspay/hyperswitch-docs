@@ -1,6 +1,6 @@
 ---
 description: >-
-  Code of conduct and Slack participation guide for the Hyperswitch open-source
+  Code of conduct and Slack participation guide for the Juspay Hyperswitch open-source
   community
 ---
 
@@ -20,45 +20,45 @@ We are committed to providing a harassment-free experience for everyone, regardl
 
 #### Expected Behavior
 
-* Be respectful, kind, and inclusive
-* Assume good intent; seek to understand before judging
-* Share feedback constructively and with empathy
-* Help others when you can; ask for help when needed
-* Use appropriate channels and keep discussions relevant
+- Be respectful, kind, and inclusive
+- Assume good intent; seek to understand before judging
+- Share feedback constructively and with empathy
+- Help others when you can; ask for help when needed
+- Use appropriate channels and keep discussions relevant
 
 #### Unacceptable Behavior
 
-* Harassment, hate speech, discrimination, or threats
-* Trolling, personal attacks, or aggressive criticism
-* Sharing private information without consent
-* Excessive self-promotion or unsolicited DMs
+- Harassment, hate speech, discrimination, or threats
+- Trolling, personal attacks, or aggressive criticism
+- Sharing private information without consent
+- Excessive self-promotion or unsolicited DMs
 
 ### 💬 Slack Participation Guidelines
 
 #### 1. Be a Good Citizen
 
-* Keep discussions respectful and on-topic
-* Avoid heated arguments — move complex topics to threads
-* Use inclusive language and emoji reactions to show appreciation
+- Keep discussions respectful and on-topic
+- Avoid heated arguments — move complex topics to threads
+- Use inclusive language and emoji reactions to show appreciation
 
 #### 2. Use Threads & Channels Properly
 
-* Always reply in threads to avoid noise
-* Use the right channels:
-  * \#dev-support – Technical questions here
-  * \#general – regular business discussion or Non-tech discussion
-* Avoid cross-posting the same message in multiple channels
+- Always reply in threads to avoid noise
+- Use the right channels:
+  - \#dev-support – Technical questions here
+  - \#general – regular business discussion or Non-tech discussion
+- Avoid cross-posting the same message in multiple channels
 
 #### 3. Ask Good Questions
 
-* Include relevant context: error logs, code snippets, links
-* Be patient and avoid tagging multiple team members unless urgent
+- Include relevant context: error logs, code snippets, links
+- Be patient and avoid tagging multiple team members unless urgent
 
 #### 5. Security, Privacy & Respect
 
-* Don’t share sensitive data (API keys, access tokens, etc.)
-* Don’t screenshot or share Slack content outside without permission
-* Respect others' time and privacy in DMs
+- Don’t share sensitive data (API keys, access tokens, etc.)
+- Don’t screenshot or share Slack content outside without permission
+- Respect others' time and privacy in DMs
 
 ### 🔧 Moderation & Admins
 
@@ -69,7 +69,7 @@ They may take action at their discretion to uphold these guidelines.
 
 ### 📌 Quick Links
 
-* [🔗 Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
-* [🌐 Hyperswitch Website](https://hyperswitch.io)
-* [🧑‍💻 GitHub Repository\
+- [🔗 Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
+- [🌐 Hyperswitch Website](https://hyperswitch.io)
+- [🧑‍💻 GitHub Repository\
   ](https://github.com/juspay/hyperswitch)\

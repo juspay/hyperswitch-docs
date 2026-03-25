@@ -1,6 +1,6 @@
 ---
 description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
+  This guide explains how to troubleshoot the Juspay Hyperswitch setup and verify if
   all the components are up and running as expected
 icon: hammer-brush
 ---

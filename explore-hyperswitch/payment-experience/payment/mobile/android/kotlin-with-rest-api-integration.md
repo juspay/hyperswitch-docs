@@ -7,7 +7,7 @@ icon: k
 
 <details>
 
-<summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+<summary><a href="https://github.com/aashu331998/Juspay Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
 You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
@@ -15,10 +15,10 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 ## Requirements
 
-* Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
-* [Gradle](https://gradle.org/releases/) 8.13+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
+- Android 7.0 (API level 24) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
+- [Gradle](https://gradle.org/releases/) 8.13+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
 
@@ -68,9 +68,9 @@ hyperswitch {
 {% hint style="warning" %}
 Note:
 
-* If you don't specify `sdkVersion`, the plugin will automatically use the latest available version
-* You only need to enable the features you plan to use
-* Individual feature versions are optional - the plugin will use recommended compatible versions
+- If you don't specify `sdkVersion`, the plugin will automatically use the latest available version
+- You only need to enable the features you plan to use
+- Individual feature versions are optional - the plugin will use recommended compatible versions
 {% endhint %}
 
 ### 2.4 Implement the HyperInterface

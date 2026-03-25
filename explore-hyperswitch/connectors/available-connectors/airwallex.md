@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Airwallex via Hyperswitch
+description: Accept payments through Airwallex via Juspay Hyperswitch
 hidden: true
 ---
 

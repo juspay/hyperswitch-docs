@@ -27,19 +27,19 @@ Guided by the learnings from our enterprise go-lives, we have been working on un
 
 ### Technical Foundation: Open System Architecture with Enterprise-Scale
 
-Hyperswitch's technical architecture combines open source innovation with enterprise-grade reliability, built to power modern payment operations.
+Juspay Hyperswitch's technical architecture combines open source innovation with enterprise-grade reliability, built to power modern payment operations.
 
 #### 1. Open-Source Transparency & Extensibility
 
-* Complete Transparency & Confidence: Full visibility into payment orchestration with no black boxes, enabling informed decision-making and customization. Hyperswitch is maintained publicly on [GitHub](https://github.com/juspay/hyperswitch)
-* [Open Roadmap & Innovation](about-hyperswitch/roadmap/): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
-* Speed to Market: Accelerate implementation and changes by building consensus faster through transparent architecture
+- Complete Transparency & Confidence: Full visibility into payment orchestration with no black boxes, enabling informed decision-making and customization. Hyperswitch is maintained publicly on [GitHub](https://github.com/juspay/hyperswitch)
+- [Open Roadmap & Innovation](about-hyperswitch/roadmap/): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
+- Speed to Market: Accelerate implementation and changes by building consensus faster through transparent architecture
 
 #### 2. Enterprise-Grade Reliability & Security Model
 
-* Built on battle-tested systems by Juspay's 1000+ engineers, the same team that powers 300M+ transactions daily for [global enterprises](https://juspay.io/customer-stories) like Amazon, Agoda, Zurich and many more.
-* [Comprehensive security framework](explore-hyperswitch/security-and-compliance/) including PCI compliance, tokenization, and security certifications
-* Proven reliability at scale, designed for high-performance payment processing
+- Built on battle-tested systems by Juspay's 1000+ engineers, the same team that powers 300M+ transactions daily for [global enterprises](https://juspay.io/customer-stories) like Amazon, Agoda, Zurich and many more.
+- [Comprehensive security framework](explore-hyperswitch/security-and-compliance/) including PCI compliance, tokenization, and security certifications
+- Proven reliability at scale, designed for high-performance payment processing
 
 ### [Core System Architecture Principles](https://hyperswitch.io/blog/building-hyperswitch-the-world-s-first-open-source-payments-platform)
 

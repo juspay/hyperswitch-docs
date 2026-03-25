@@ -1,3 +1,7 @@
+---
+description: Master Integrity And Source Verification with Juspay Hyperswitch connector service. Technical documentation for developers implementing payment orchestration solutions.
+---
+
 # Integrity and Source Verification
 
 Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks:
@@ -174,13 +178,13 @@ const client = new ConnectorServiceClient({
 Test with forged signatures to verify your rejection logic:
 
 ```bash
-# Send webhook with invalid signature
+## Send webhook with invalid signature
 curl -X POST http://localhost:8080/webhooks/stripe \
   -H "Content-Type: application/json" \
   -H "Stripe-Signature: forged_signature" \
   -d '{"type":"payment_intent.succeeded","id":"evt_test"}'
 
-# Expected: 401 Unauthorized
+## Expected: 401 Unauthorized
 ```
 
 ## Best Practices

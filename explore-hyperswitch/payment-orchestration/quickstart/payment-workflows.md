@@ -4,7 +4,7 @@ icon: code-compare
 
 # Supported Payment Workflows
 
-Hyperswitch’s three-level profile architecture enables support for composable payment workflows, fulfilling the majority of use cases for a Vertical SaaS platform.&#x20;
+Juspay Hyperswitch’s three-level profile architecture enables support for composable payment workflows, fulfilling the majority of use cases for a Vertical SaaS platform.&#x20;
 
 These workflows can be modularly organized to meet diverse business needs and provide flexibility based on client requirements. Here’s a breakdown of key workflows:
 

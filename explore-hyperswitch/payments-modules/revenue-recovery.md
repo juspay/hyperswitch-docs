@@ -37,11 +37,11 @@ Once the setup is complete, Revenue Recovery automatically begins monitoring tra
 
 ## Key Features
 
-* **Retry Optimization**:
-  * Reduces time between retries, enhancing recovery speed.
-* **Error Code Management**:
-  * Maps issuer-specific decline codes to identify root causes.
-  * Adapts retry strategies based on error categories (e.g., insufficient funds, fraud etc).
-* **Integration with Existing Workflows**:
-  * Enhances recovery rates without disrupting current dunning setups.
-  * Supports integration with billing platforms for automation of payment recovery.
+- **Retry Optimization**:
+  - Reduces time between retries, enhancing recovery speed.
+- **Error Code Management**:
+  - Maps issuer-specific decline codes to identify root causes.
+  - Adapts retry strategies based on error categories (e.g., insufficient funds, fraud etc).
+- **Integration with Existing Workflows**:
+  - Enhances recovery rates without disrupting current dunning setups.
+  - Supports integration with billing platforms for automation of payment recovery.

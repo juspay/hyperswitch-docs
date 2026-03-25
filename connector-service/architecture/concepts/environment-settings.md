@@ -1,3 +1,7 @@
+---
+description: Learn how to implement Environment Settings using Juspay Hyperswitch. Step-by-step tutorial with code examples and configuration details included.
+---
+
 # Environment Settings
 
 Your code behaves differently in development, staging, and production. Prism lets you configure environments explicitly so test transactions don't hit live payment processors and production keys don't leak into debug logs.
@@ -168,7 +172,7 @@ const client = new ConnectorServiceClient({
 Never commit credentials to version control:
 
 ```bash
-# .gitignore
+## .gitignore
 .env
 .env.local
 .env.production

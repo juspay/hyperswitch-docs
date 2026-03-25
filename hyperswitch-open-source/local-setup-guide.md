@@ -15,4 +15,4 @@ icon: desktop
 
 ## Dashboard Signup -
 
-To quickly experience the ease that Hyperswitch provides while handling the payment, You can signup on our [Dashboard](https://app.hyperswitch.io/), and try a payment.
+To quickly experience the ease that Juspay Hyperswitch provides while handling the payment, You can signup on our [Dashboard](https://app.hyperswitch.io/), and try a payment.

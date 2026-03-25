@@ -6,7 +6,7 @@ icon: flux-capacitor
 
 ## Supported Deployment Models
 
-The Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
+The Juspay Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
 
 ### Overview
 
@@ -26,21 +26,21 @@ Merchant deploys and runs the platform within their own infrastructure environme
 
 #### Scope of Services
 
-* Expert consultation from Juspay for deployment
-* Assistance with production readiness
-* Support during certification and go-live
+- Expert consultation from Juspay for deployment
+- Assistance with production readiness
+- Support during certification and go-live
 
 #### PCI Compliance
 
 Merchants can choose between:
 
-* **Self-certifying PCI compliance**
-* Using **Juspay’s hosted PCI / Tokenization service**
+- **Self-certifying PCI compliance**
+- Using **Juspay’s hosted PCI / Tokenization service**
 
 #### Reliability & Scalability
 
-* Infrastructure owned and managed by the merchant
-* Merchant responsible for scaling, monitoring, and reliability
+- Infrastructure owned and managed by the merchant
+- Merchant responsible for scaling, monitoring, and reliability
 
 ### Hosted Offering (SaaS)
 
@@ -52,20 +52,20 @@ Juspay operates the platform and exposes its capabilities through **hosted APIs 
 
 #### Scope of Services
 
-* Fully managed infrastructure
-* Hosted APIs and SDK integrations
-* Continuous platform maintenance and upgrades
+- Fully managed infrastructure
+- Hosted APIs and SDK integrations
+- Continuous platform maintenance and upgrades
 
 #### PCI Compliance
 
-* PCI compliance handled entirely by Juspay
-* Out-of-the-box compliance for merchants
+- PCI compliance handled entirely by Juspay
+- Out-of-the-box compliance for merchants
 
 #### Reliability & Scalability
 
-* **Guaranteed SLAs**
-* **99.999% uptime**
-* **Up to 3000 TPS processing capacity**
+- **Guaranteed SLAs**
+- **99.999% uptime**
+- **Up to 3000 TPS processing capacity**
 
 ### Point Solutions
 
@@ -79,16 +79,16 @@ Fully managed service provided by Juspay for targeted operational capabilities.
 
 Self-serve dashboards and tooling for:
 
-* **Reconciliation**
-* **Cost observability**
+- **Reconciliation**
+- **Cost observability**
 
 #### PCI Compliance
 
-* No PCI compliance requirements
+- No PCI compliance requirements
 
 #### Reliability & Scalability
 
-* Juspay provides guaranteed service SLAs
+- Juspay provides guaranteed service SLAs
 
 ### Feature Comparison
 

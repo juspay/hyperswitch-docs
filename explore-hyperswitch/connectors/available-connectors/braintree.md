@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Braintree via Hyperswitch
+description: Accept payments through Braintree via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -17,7 +17,7 @@ Braintree is a payment processor that allows online businesses to accept payment
 
 ### Prerequisites
 
-1. You need to be registered with Braintree in order to proceed. In case you dont, you can quickly signup by visiting the Braintree's [Website](https://www.braintreepayments.com/sandbox).&#x20;
+1. You need to be registered with Braintree in order to proceed. In case you don't, you can quickly signup by visiting the Braintree's [Website](https://www.braintreepayments.com/sandbox).&#x20;
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/register).
 3. The Braintree Merchant ID, Public key and Private key are available in your Braintree dashboard under - Home page -> Settings (on the top right) -> API
 4. To set webhooks, Navigate to  Home page -> Settings (on the top right) -> API -> Webhooks and create a new webhook.&#x20;

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Mollie via Hyperswitch
+description: Accept payments through Mollie via Juspay Hyperswitch
 hidden: true
 ---
 

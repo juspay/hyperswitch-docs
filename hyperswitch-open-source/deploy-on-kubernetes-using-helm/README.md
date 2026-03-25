@@ -1,5 +1,5 @@
 ---
-description: Install Hyperswitch on your K8s setup using our Helm charts
+description: Install Juspay Hyperswitch on your K8s setup using our Helm charts
 icon: dharmachakra
 ---
 
@@ -11,11 +11,11 @@ This setup is ideal for businesses seeking a resilient payment solution capable 
 
 ### Capabilities
 
-* **Scalability**: Easily scale up or down based on transaction volume.
-* **High Availability**: Achieve fault tolerance with multi-node setups.
-* **Flexibility**: Deploy across multiple cloud environments or on-premises.
-* **Automation**: Leverage Kubernetes orchestration for updates and workload management.
-* **Security**: Kubernetes integrates seamlessly with security solutions, ensuring compliance and data safety.
+- **Scalability**: Easily scale up or down based on transaction volume.
+- **High Availability**: Achieve fault tolerance with multi-node setups.
+- **Flexibility**: Deploy across multiple cloud environments or on-premises.
+- **Automation**: Leverage Kubernetes orchestration for updates and workload management.
+- **Security**: Kubernetes integrates seamlessly with security solutions, ensuring compliance and data safety.
 
 ### Deployment Guides
 

@@ -5,14 +5,14 @@ icon: almost-equal-to
 
 # Proxy
 
-The Proxy Payments Service allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
+The Proxy Payments Service allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
 
 Key Highlights:
 
-* No PSP re-integration needed – Keep your existing PSP connections.
-* PCI DSS scope reduction – Raw card data stays within Vault.
-* Data security – Detokenization happens only during the request lifecycle.
-* Centralized token management – One vault, many PSPs.
+- No PSP re-integration needed – Keep your existing PSP connections.
+- PCI DSS scope reduction – Raw card data stays within Vault.
+- Data security – Detokenization happens only during the request lifecycle.
+- Centralized token management – One vault, many PSPs.
 
 ### Vault and proxy - Vaulting and payments flow
 

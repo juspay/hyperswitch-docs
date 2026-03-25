@@ -6,15 +6,15 @@ hidden: true
 icon: up-right-from-square
 ---
 
-# Copy of Standalone 3D Secure (via Hyperswitch)
+# Copy of Standalone 3D Secure (via Juspay Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
 
 Enterprise teams often adopt Standalone 3DS to enhance payment performance by enabling:
 
-* Fine grained API control over 3DS requests and the checkout experience
-* Greater visibility into issuer authentication responses
-* Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
+- Fine grained API control over 3DS requests and the checkout experience
+- Greater visibility into issuer authentication responses
+- Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
 
 When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps is effective [Smart Retry](../smart-retries/) workflows where the same authentication can be succesfully used with multiple authorization attempts across different payment providers (PSP)
 

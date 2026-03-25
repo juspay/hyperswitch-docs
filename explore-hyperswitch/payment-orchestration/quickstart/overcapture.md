@@ -11,18 +11,18 @@ In card payments, Overcapture occurs when a merchant captures (settles) an amoun
 
 This is particularly useful in scenarios such as:
 
-* Additional charges (e.g., shipping, handling, gratuities).
-* Price adjustments made after initial authorization.
-* Reducing the risk of under-capturing when final order values differ.
+- Additional charges (e.g., shipping, handling, gratuities).
+- Price adjustments made after initial authorization.
+- Reducing the risk of under-capturing when final order values differ.
 
-With Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
+With Juspay Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
 
 ### Supported PSPs
 
 Currently, Hyperswitch supports Overcapture for the following PSPs:
 
-* Stripe
-* Adyen
+- Stripe
+- Adyen
 
 👉 If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
 
@@ -42,14 +42,14 @@ Use the boolean field enable\_overcapture in your payment request.
 
 This flag can be set in the following API calls:
 
-* /payments/create with `confirm = false`
-  * /payments/update
-* /payments/create call with `confirm = true`
+- /payments/create with `confirm = false`
+  - /payments/update
+- /payments/create call with `confirm = true`
 
 ⚠️ Note:
 
-* The request-level enable\_overcapture will override the profile-level setting.
-* Overcapture is only applicable for manual capture payments (capture\_method = manual).
+- The request-level enable\_overcapture will override the profile-level setting.
+- Overcapture is only applicable for manual capture payments (capture\_method = manual).
 
 ### Example: API Request
 
@@ -95,24 +95,24 @@ This flag can be set in the following API calls:
 
 ```
 
-* `enable_overcapture`
-  * `true` → Overcapture was requested for this payment.
-  * `false` → Overcapture was not requested.
-* `is_overcapture_enabled`
-  * `true` → Connector enabled Overcapture for this payment.
-  * `false` → Overcapture is not applicable for this PSP/payment.
+- `enable_overcapture`
+  - `true` → Overcapture was requested for this payment.
+  - `false` → Overcapture was not requested.
+- `is_overcapture_enabled`
+  - `true` → Connector enabled Overcapture for this payment.
+  - `false` → Overcapture is not applicable for this PSP/payment.
 
 ### Monitoring & Settlement
 
-* After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
-* Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
+- After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
+- Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
 
 ### Merchant Action
 
-* Use Dashboard settings for global enablement
-* Use API overrides for payment-specific enablement
-* Monitor capturable and received amounts to track final settlements
-* Contact Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
+- Use Dashboard settings for global enablement
+- Use API overrides for payment-specific enablement
+- Monitor capturable and received amounts to track final settlements
+- Contact Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
 
 ✅ With Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
 

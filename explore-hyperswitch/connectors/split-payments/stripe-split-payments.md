@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Get started with Stripe Split Settlements via Juspay Hyperswitch
 icon: stripe
 ---
 
@@ -79,8 +79,8 @@ JSON
 
 #### Refund Parameters
 
-* revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
-* revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
+- revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
+- revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
 
 ### Recurring Payments (CIT/MIT)
 
@@ -113,9 +113,9 @@ JSON
 
 ### Implementation Notes
 
-* For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.
-* For **destination** charges, the `transfer_account_id` cannot be your platform account ID as Stripe doesn't allow charges to your own account.
-* The system validates that MIT calls match the split settlement configuration from the original CIT call.
+- For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.
+- For **destination** charges, the `transfer_account_id` cannot be your platform account ID as Stripe doesn't allow charges to your own account.
+- The system validates that MIT calls match the split settlement configuration from the original CIT call.
 
 <details>
 

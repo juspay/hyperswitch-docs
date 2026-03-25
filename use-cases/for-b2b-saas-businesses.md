@@ -7,7 +7,7 @@ icon: block-brick
 
 # For B2B SaaS Businesses
 
-Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
+Juspay Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
 
 For B2B SaaS businesses, it is particularly valuable for onboarding large enterprises as clients who prefer to retain greater control over their customers' checkout experience.
 
@@ -17,35 +17,35 @@ For B2B SaaS businesses, it is particularly valuable for onboarding large enterp
 
 Simplify client onboarding to just a few clicks, with enhanced control at both the platform and client levels.
 
-* [Setup multiple accounts and profiles](https://docs.hyperswitch.io/features/account-management/hyperswitch-account-structure)
-* [Invite your clients to configure PSPs](https://docs.hyperswitch.io/features/account-management/hyperswitch-account-structure#features-useful-for-your-business)
+- [Setup multiple accounts and profiles](https://docs.hyperswitch.io/features/account-management/hyperswitch-account-structure)
+- [Invite your clients to configure PSPs](https://docs.hyperswitch.io/features/account-management/hyperswitch-account-structure#features-useful-for-your-business)
 
 #### Composable payment workflows
 
 Enable flexible workflows for direct client payments, customer acquisition payments with clients, and platform-managed end-to-end payment processing.
 
-* [Supported custom payment flows](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles/payment-workflows)
+- [Supported custom payment flows](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles/payment-workflows)
 
 #### Modular card vaulting options
 
 Fulfill diverse client needs with customizable card vaulting options, including platform-level (unified), PSP-specific, and client-scoped vaulting.
 
-* [Card vaulting and tokenisation](https://docs.hyperswitch.io/features/payment-flows-and-management/tokenization-and-saved-cards)
+- [Card vaulting and tokenisation](https://docs.hyperswitch.io/features/payment-flows-and-management/tokenization-and-saved-cards)
 
 #### Global payment support with no code connector integrations
 
 Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
 
-* [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
-* [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+- [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
+- [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
 #### Fully managed compliance and security
 
 Enjoy hassle-free compliance with evolving regulatory standards, maintaining top-notch security without added complexity.
 
-* [Compliance and data security](https://docs.hyperswitch.io/security-and-compliance/overview)
-* [Data privacy](https://docs.hyperswitch.io/security-and-compliance/security)
-* [PCI compliance](https://docs.hyperswitch.io/security-and-compliance/pci-compliance)
+- [Compliance and data security](https://docs.hyperswitch.io/security-and-compliance/overview)
+- [Data privacy](https://docs.hyperswitch.io/security-and-compliance/security)
+- [PCI compliance](https://docs.hyperswitch.io/security-and-compliance/pci-compliance)
 
 {% content-ref url="for-e-commerce-businesses.md" %}
 [for-e-commerce-businesses.md](for-e-commerce-businesses.md)

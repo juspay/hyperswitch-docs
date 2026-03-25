@@ -1,3 +1,7 @@
+---
+description: Learn about Deploy On Azure Using Helm Charts in Juspay Hyperswitch hyperswitch open source to optimize payment processing workflows and enhance transaction management capabilities.
+---
+
 # Deploy on Azure Using Helm Charts
 
 ### Prerequisites
@@ -184,7 +188,7 @@ helm repo update
 
 2. **Prepare the Kubernetes Cluster**
 
-* **Label the Node for Hyperswitch**:
+- **Label the Node for Hyperswitch**:
 
 Replace `<node-name>` with the name of your node (use `kubectl get nodes` to find it). We saved the name on Part I, Step 7.
 
@@ -198,7 +202,7 @@ For example:
 kubectl label nodes aks-nodepool1-40058682-vmss000000 node-type=generic-compute
 ```
 
-* **Create a Namespace**:
+- **Create a Namespace**:
 
 Namespaces help organize and isolate resources within your Kubernetes cluster. To create a new namespace, use the following command:
 
@@ -232,7 +236,7 @@ This command installs the Hyperswitch stack into the specified namespace, allowi
 
 4. **Verify Installation**
 
-* **Check Pod Status**:
+- **Check Pod Status**:
 
 Ensure all pods are in the `Running` state:
 
@@ -246,7 +250,7 @@ kubectl get pods -n <namespace>
 kubectl get pods -n hyperswitch
 ```
 
-* **Check Helm Release**:
+- **Check Helm Release**:
 
 ```bash
 helm list -n <namespace>
@@ -275,12 +279,12 @@ kubectl port-forward service/mailhog 8025:8025 -n <namespace> > /dev/null 2>&1 &
 
 Access the services at:
 
-* App server: [http://localhost:8080](http://localhost:8080)
-* Control center: [http://localhost:9000](http://localhost:9000)
-* Hyperswitch Web: [http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
-* Grafana: [http://localhost:3000](http://localhost:3000)
-* Vector: [http://localhost:3103](http://localhost:3103)
-* Mailhog: [http://localhost:8025](http://localhost:8025)
+- App server: [http://localhost:8080](http://localhost:8080)
+- Control center: [http://localhost:9000](http://localhost:9000)
+- Hyperswitch Web: [http://localhost:9050/HyperLoader.js](http://localhost:9050/HyperLoader.js)
+- Grafana: [http://localhost:3000](http://localhost:3000)
+- Vector: [http://localhost:3103](http://localhost:3103)
+- Mailhog: [http://localhost:8025](http://localhost:8025)
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
@@ -336,21 +340,21 @@ az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
 
 ### **Troubleshooting**
 
-*   **View Pod Logs**:
+- **View Pod Logs**:
 
     To view logs for a specific pod:
 
     ```bash
     kubectl logs <pod-name> -n <namespace>
     ```
-*   **View Events**:
+- **View Events**:
 
     To view events in the namespace:
 
     ```bash
     kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
     ```
-*   **Reinstall Chart**:
+- **Reinstall Chart**:
 
     If issues persist, uninstall and reinstall Hyperswitch:
 

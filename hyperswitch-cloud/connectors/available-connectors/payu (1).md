@@ -1,5 +1,5 @@
 ---
-description: Accept payments through PayU via Hyperswitch
+description: Accept payments through PayU via Juspay Hyperswitch
 ---
 
 # PayU

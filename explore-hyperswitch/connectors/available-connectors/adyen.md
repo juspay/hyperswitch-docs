@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Adyen via Hyperswitch
+description: Accept payments through Adyen via Juspay Hyperswitch
 ---
 
 # Adyen
@@ -29,15 +29,15 @@ Adyen is a global payments company allowing businesses to accept payments on a g
 #### II. Points to remember
 
 1. For Klarna, fields that are mandatory/recommended to improve the customer experience and conversion rates.
-   * `email`,
-   * `billing.first_name`,
-   * `billing.last_name`,
-   * `billing.city`,
-   * `billing.country`,
-   * `billing.line1`,
-   * `billing.line2`,
-   * `billing.zip`
-   * `order_details`
+   - `email`,
+   - `billing.first_name`,
+   - `billing.last_name`,
+   - `billing.city`,
+   - `billing.country`,
+   - `billing.line1`,
+   - `billing.line2`,
+   - `billing.zip`
+   - `order_details`
 2. For Klarna, `customer_id` is also a required field for which you have to create a customer using [Hyperswitch - Create Customer](https://api-reference.hyperswitch.io/api-reference/customers/customers--create).
 3.  Supported Country-Currency matrix
 
@@ -51,7 +51,7 @@ Adyen is a global payments company allowing businesses to accept payments on a g
     |       Sofort       |                                                             `AT,BE,DE,ES,CH,NL`                                                             |                                           `CHF,EUR`                                           |
     |       Klarna       |                                     `AU,AT,BE,CA,CZ,DK,FI,FR,DE,GR,IE,IT,NO,PL,PT,RO,ES,SE,CH,NL,GB,US`                                     |                       `AUD,EUR,CAD,CZK,DKK,NOK,PLN,RON,SEK,CHF,GBP,USD`                       |
 
-* If your desired country-currency combination is not listed here, please reach out to Hyperswitch Support to get it enabled.
+- If your desired country-currency combination is not listed here, please reach out to Hyperswitch Support to get it enabled.
 
 5. (Special Note): For Klarna and Paypal, In Adyen Sandbox environment, Automatic Capture is not working as intended. All the payments are required to be explicitly captured, and then only refunds are processing. This might be an account configuration issue from Adyen, there is no detected bugs/issues from Hyperswitch's end. If the same behvaiour persists on production please reach out to your Adyen Support or reach out to Hyperswitch Support to stop Automatic Captures for the same.
 6. (Special Note): For Sofort, Adyen has discontinued support for Sofort as payment method, Hyperswitch provides the integration of sofort via adyen but it is subject to availabilty by adyen on your account. Some or all features might not work if adyen has not enable it for you. Please contact Adyen support to resolve the same.

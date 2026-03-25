@@ -20,7 +20,7 @@ Allows the merchant to introduce a fraud and risk module in the following forms 
 
 #### [**Vault workflows**](vault/)
 
-Allows the merchant to introduce an external vault for storing the payment method details/ credentials in the following forms - collection using Hyperswitch SDK but storage in the external vault or collection using external vault SDK and storage in the external vault as well. The retrieval fo credentials from the external vault happens either using the tokenize-de-tokenize APIs or card forwarding. &#x20;
+Allows the merchant to introduce an external vault for storing the payment method details/ credentials in the following forms - collection using Juspay Hyperswitch SDK but storage in the external vault or collection using external vault SDK and storage in the external vault as well. The retrieval fo credentials from the external vault happens either using the tokenize-de-tokenize APIs or card forwarding. &#x20;
 
 #### [**Smart retry workflows** ](smart-retries/)
 

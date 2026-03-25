@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Nuvei via Hyperswitch
+description: Accept payments through Nuvei via Juspay Hyperswitch
 hidden: true
 ---
 

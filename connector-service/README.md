@@ -1,3 +1,7 @@
+---
+description: Complete reference for Readme in Juspay Hyperswitch. Includes setup instructions, configuration options, and troubleshooting guidance.
+---
+
 <div align="center">
 
 
@@ -47,7 +51,7 @@ Because every payment processor has diverse APIs, error codes, authentication me
 ---
 
 
-## ✨ Features
+✨ Features
 
 
 - **🔌 100+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
@@ -287,16 +291,16 @@ Each flow uses the same unified schema regardless of the underlying processor's 
 ### Building from Source
 
 ```bash
-# Clone the repository
+## Clone the repository
 git clone https://github.com/manojradhakrishnan/connector-service.git
 cd connector-service
 
 
-# Build
+## Build
 cargo build --release
 
 
-# Run tests
+## Run tests
 cargo test
 ```
 

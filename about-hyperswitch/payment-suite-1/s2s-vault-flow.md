@@ -11,10 +11,10 @@ The Payment method SDK allows you to securely collect payment information and gi
 
 #### **Key Features**
 
-* **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
-* **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
-* **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
-* **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
+- **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
+- **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
+- **Secure Storage** – Store tokens safely in Juspay Hyperswitch’s Vault.
+- **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
 #### Understanding Payment and Vault Flow
 
@@ -61,6 +61,6 @@ To generate your Vault API keys, follow these steps:
 
 **Integration Documentation -**&#x20;
 
-* [S2S Vault Tokenization](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization)
-* [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
-* [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)
+- [S2S Vault Tokenization](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization)
+- [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+- [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)

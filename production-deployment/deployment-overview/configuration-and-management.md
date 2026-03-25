@@ -10,9 +10,9 @@ In case you would like to use the configuration TOML files directly instead of u
 
 It contains the configs for deployments of Hyperswitch in the 3 different hosted environments:
 
-* Integration Test
-* Sandbox
-* Production
+- Integration Test
+- Sandbox
+- Production
 
 ### Setting Up ArgoCD for Enterprise GitOps & Drift Management
 
@@ -22,9 +22,9 @@ ArgoCD will act as the **deployment controller**, continuously reconciling Kuber
 
 The following prerequisites need to be in place:
 
-* A Kubernetes cluster already exists
-* Cluster access is configured (`kubectl` context)
-* Helm is available
+- A Kubernetes cluster already exists
+- Cluster access is configured (`kubectl` context)
+- Helm is available
 
 Infrastructure provisioning (networking, cluster, databases) should already be completed before this step.
 
@@ -36,19 +36,19 @@ ArgoCD should be deployed as a **platform service within the Kubernetes cluster*
 
 Recommended architecture:
 
-* Deploy ArgoCD in a **dedicated namespace**
-* Use **Helm-based installation**
-* Run in **High Availability (HA) mode**
-* Enable **SSO authentication**
-* Enforce **RBAC**
-* Enable **TLS**
-* Enable **automated reconciliation and drift detection**
+- Deploy ArgoCD in a **dedicated namespace**
+- Use **Helm-based installation**
+- Run in **High Availability (HA) mode**
+- Enable **SSO authentication**
+- Enforce **RBAC**
+- Enable **TLS**
+- Enable **automated reconciliation and drift detection**
 
 Production deployments should **not**:
 
-* expose the ArgoCD UI over insecure HTTP
-* rely on the default admin credentials
-* grant unrestricted `cluster-admin` privileges to users
+- expose the ArgoCD UI over insecure HTTP
+- rely on the default admin credentials
+- grant unrestricted `cluster-admin` privileges to users
 
 ArgoCD is a **platform-level component**, not application-specific. It will typically manage deployments for multiple services, including Hyperswitch.
 
@@ -115,9 +115,9 @@ ArgoCD checks for configuration drift approximately every 3 minutes.
 
 RBAC policies restrict who can:
 
-* deploy applications
-* trigger sync operations
-* modify configurations
+- deploy applications
+- trigger sync operations
+- modify configurations
 
 Organizations should integrate this with their identity provider groups.
 
@@ -198,8 +198,8 @@ ArgoCD must be exposed securely.
 
 Most clusters use an ingress controller such as:
 
-* NGINX Ingress Controller
-* Traefik
+- NGINX Ingress Controller
+- Traefik
 
 #### 3.1 Install Ingress Controller (if not already present)
 
@@ -228,15 +228,15 @@ server:
 
 TLS certificates may be provisioned using:
 
-* internal certificate management systems
-* Kubernetes certificate controllers
-* external load balancer TLS termination
+- internal certificate management systems
+- Kubernetes certificate controllers
+- external load balancer TLS termination
 
 Minimum security requirements:
 
-* TLS 1.2 or higher
-* trusted certificate authority
-* strong cipher suites
+- TLS 1.2 or higher
+- trusted certificate authority
+- strong cipher suites
 
 #### 4. Initial Login & Admin Hardening
 
@@ -255,9 +255,9 @@ argocd login argocd.company.com
 
 Immediately perform the following actions:
 
-* rotate the admin password
-* configure SSO
-* disable the admin user if SSO is enforced
+- rotate the admin password
+- configure SSO
+- disable the admin user if SSO is enforced
 
 #### Disable Admin User
 
@@ -298,9 +298,9 @@ kubectl create secret generic argocd-secret \
 
 Benefits:
 
-* centralized identity management
-* group-based RBAC
-* removal of static credentials
+- centralized identity management
+- group-based RBAC
+- removal of static credentials
 
 #### 6. Connecting Git Repositories
 
@@ -323,9 +323,9 @@ argocd repo add git@github.com:company/platform-config.git \
 
 Best practices:
 
-* use read-only deploy keys
-* restrict repository access to ArgoCD
-* store SSH credentials as Kubernetes secrets
+- use read-only deploy keys
+- restrict repository access to ArgoCD
+- store SSH credentials as Kubernetes secrets
 
 #### 7. Enabling Drift Detection & Self-Healing
 
@@ -464,17 +464,17 @@ Application deployments such as Hyperswitch require sensitive configuration.
 
 Examples:
 
-* database credentials
-* encryption keys
-* payment connector credentials
+- database credentials
+- encryption keys
+- payment connector credentials
 
 Secrets should not be stored directly in Git.
 
 Common approaches:
 
-* external secret managers
-* sealed secrets
-* runtime secret injection
+- external secret managers
+- sealed secrets
+- runtime secret injection
 
 The chosen method depends on the organization's security architecture.
 
@@ -498,10 +498,10 @@ Kubernetes clusters should restrict direct modification of resources.
 
 Recommended controls:
 
-* limit `kubectl` access
-* audit cluster changes
-* enforce policy validation
-* monitor configuration drift
+- limit `kubectl` access
+- audit cluster changes
+- enforce policy validation
+- monitor configuration drift
 
 Cloud infrastructure should also restrict manual changes outside the infrastructure pipeline.
 
@@ -509,7 +509,7 @@ Cloud infrastructure should also restrict manual changes outside the infrastruct
 
 ArgoCD ensures:
 
-* continuous reconciliation
-* Git as the source of truth
-* automated deployments
-* drift detection and remediation<br>
+- continuous reconciliation
+- Git as the source of truth
+- automated deployments
+- drift detection and remediation<br>

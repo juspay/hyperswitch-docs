@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Authorizedotnet via Hyperswitch
+description: Accept payments through Authorizedotnet via Juspay Hyperswitch
 hidden: true
 ---
 

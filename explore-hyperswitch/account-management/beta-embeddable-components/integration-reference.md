@@ -1,3 +1,7 @@
+---
+description: Master Integration Reference with Juspay Hyperswitch explore hyperswitch. Technical documentation for developers implementing payment orchestration solutions.
+---
+
 # Integration Reference
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
@@ -10,16 +14,16 @@ Demo URL: [https://embedded-ssr.netlify.app/](https://embedded-ssr.netlify.app/)
 
 Before you begin, ensure your environment meets the following requirements:
 
-* Runtime: Node.js (v18+)
-* Framework: React (v18.x - 20.x)
-* Hyperswitch Credentials:
-  * `API-Key` (Can be generated via Control Center)
-  * `Profile-ID` (The specific merchant profile you are configuring)
-* Support:
-  * ✅ Vite
-  * ✅ Webpack
-  * ✅ Next.js
-  * ✅ Create React App
+- Runtime: Node.js (v18+)
+- Framework: React (v18.x - 20.x)
+- Hyperswitch Credentials:
+  - `API-Key` (Can be generated via Control Center)
+  - `Profile-ID` (The specific merchant profile you are configuring)
+- Support:
+  - ✅ Vite
+  - ✅ Webpack
+  - ✅ Next.js
+  - ✅ Create React App
 
 ### Step 1: Backend Setup(Server-Side)
 
@@ -33,8 +37,8 @@ Create a route (e.g., /embedded/hyperswitch) in your backend application.
 
 Required Headers for Hyperswitch Call:
 
-* api-key: Your secret API key.
-* X-profile-id: The specific profile ID you want the embedded component to access.
+- api-key: Your secret API key.
+- X-profile-id: The specific profile ID you want the embedded component to access.
 
 {% code title="server.js" %}
 ```javascript
@@ -92,8 +96,8 @@ app.listen(port, () => {
 
 You must choose one:
 
-* Core (JavaScript Only / HTML)
-* React Integration
+- Core (JavaScript Only / HTML)
+- React Integration
 
 #### 2A: HTML-JS Integration
 
@@ -192,8 +196,8 @@ ConnectorConfiguration
 Key Concept:\
 The fetchToken function is lazy. It is called:
 
-* When the component first mounts.
-* Automatically whenever the SDK detects the session has expired (auto-refresh).
+- When the component first mounts.
+- Automatically whenever the SDK detects the session has expired (auto-refresh).
 
 ```javascript
 function App() {
@@ -265,22 +269,22 @@ Initializes the SDK logic.
 
 options.fetchToken () => Promise\<string | undefined>
 
-* Required.
-* A function that retrieves a fresh JWT from your backend.
-* Should return the JWT string on success.
-* Should return undefined on failure.
+- Required.
+- A function that retrieves a fresh JWT from your backend.
+- Should return the JWT string on success.
+- Should return undefined on failure.
 
 #### 2. HyperswitchProvider
 
 Context provider that holds the authentication state.
 
-* **hyperswitchInstance**: The object returned by loadHyperswitch.
+- **hyperswitchInstance**: The object returned by loadHyperswitch.
 
 #### 3. ConnectorConfiguration
 
 The UI Component that renders the settings form.
 
-* **url (string)**: The base URL for the Hyperswitch Dashboard API.
-  * Sandbox:[ https://app.hyperswitch.io](https://app.hyperswitch.io/api)
-  * Default:[ http://localhost:9000](http://localhost:9000)
+- **url (string)**: The base URL for the Hyperswitch Dashboard API.
+  - Sandbox:[ https://app.hyperswitch.io](https://app.hyperswitch.io/api)
+  - Default:[ http://localhost:9000](http://localhost:9000)
 

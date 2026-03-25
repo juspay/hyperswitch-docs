@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Stripe via Hyperswitch
+description: Accept payments through Stripe via Juspay Hyperswitch
 ---
 
 # Stripe
@@ -36,7 +36,7 @@ Step 2: Configure Hyperswitch’s webhooks endpoint on your Stripe dashboard. Yo
 
 This will ensure that if your Stripe transaction was sent through Hyperswitch,
 
-* Stripe sends webhooks to Hyperswitch endpoint in Step 2
-* Hyperswitch sends these corresponding webhooks to your endpoint in Step 1
+- Stripe sends webhooks to Hyperswitch endpoint in Step 2
+- Hyperswitch sends these corresponding webhooks to your endpoint in Step 1
 
 &#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Stripe on Hyperswitch control center.

@@ -4,7 +4,7 @@ icon: arrows-rotate-reverse
 
 # Recurring payments
 
-Recurring payments via Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
+Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
 
 ### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
@@ -144,9 +144,9 @@ You may receive errors such as `Received unknown parameter: payment_method_optio
 
 Email the PSP Support requesting:
 
-* Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
-* Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
-* Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
+- Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
+- Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
+- Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
 {% endhint %}
 
 #### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**&#x20;
