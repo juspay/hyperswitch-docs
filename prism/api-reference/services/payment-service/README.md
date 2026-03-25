@@ -1,3 +1,7 @@
+---
+description: Explore Payment Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Payment Service
 
 <!--
@@ -15,9 +19,9 @@ approved: true
 
 ## Overview
 
-The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 100+ connectors through a unified gRPC API, handling everything from initial authorization to refunds and recurring payments.
+The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 300+ connectors through a unified gRPC API, handling everything from initial authorization to refunds and recurring payments.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **E-commerce checkout** - Authorize funds at purchase, capture when items ship
 - **SaaS subscriptions** - Set up recurring payments with mandate management
 - **Marketplace platforms** - Hold funds from buyers, release to sellers on fulfillment
@@ -68,7 +72,7 @@ sequenceDiagram
     CS-->>App: Return status: CAPTURED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **CreateOrder** - Initialize a payment order at the processor before collecting payment details. This sets up the payment context and returns an `order_context` that improves authorization rates by associating the eventual payment with this initial order.
 
@@ -76,7 +80,7 @@ sequenceDiagram
 
 3. **Capture** - Once the order is shipped, call the `Capture` RPC with the `connector_transaction_id` from step 2. This finalizes the transaction and transfers the reserved funds from the customer to your merchant account. The status changes to `CAPTURED`.
 
-**Cancellation Path:**
+### Cancellation Path:
 If the customer cancels before shipping, call the `Void` RPC instead of `Capture` to release the held funds back to the customer.
 
 ---
@@ -110,7 +114,7 @@ sequenceDiagram
     CS-->>App: Return status: CHARGED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **SetupRecurring** - Before the first charge, call the `SetupRecurring` RPC to create a payment mandate at the processor. A mandate is the customer's authorization for future recurring charges. The response includes a `mandate_reference` that represents this stored consent.
 
@@ -157,7 +161,7 @@ sequenceDiagram
     CS-->>App: Return status: VOIDED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Authorize (initial hold)** - At booking or check-in, call the `Authorize` RPC with the room rate plus an additional amount for incidentals (e.g., $200). This reserves the total amount on the customer's card. The response includes a `connector_transaction_id` with status `AUTHORIZED`.
 

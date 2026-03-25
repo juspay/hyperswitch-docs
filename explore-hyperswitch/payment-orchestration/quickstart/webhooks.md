@@ -86,7 +86,7 @@ To validate the webhook’s authenticity:
 
 If you are sure that the payload is from Hyperswitch but the signature verification fails:
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
+* Make sure you are using the correct header. Juspay Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
 * Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
 <details>
@@ -126,7 +126,7 @@ For example, your application could do the following for each webhook received:
 
 #### Handling Out-of-order Deliveries
 
-Hyperswitch may deliver webhooks to your application in any order. This could be due to network delays or webhook delivery failures. However, you can handle this by examining the `updated` field of the resource sent in the webhook request body. For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
+Juspay Hyperswitch may deliver webhooks to your application in any order. This could be due to network delays or webhook delivery failures. However, you can handle this by examining the `updated` field of the resource sent in the webhook request body. For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
 
 For example, if you wish to sync resource changes from Hyperswitch to your application, you could:
 

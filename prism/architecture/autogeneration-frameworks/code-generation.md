@@ -1,3 +1,7 @@
+---
+description: Explore Code Generation on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Code Generation
 
 You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.

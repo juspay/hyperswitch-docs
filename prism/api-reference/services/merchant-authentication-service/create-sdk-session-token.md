@@ -1,3 +1,7 @@
+---
+description: Explore CreateSdkSessionToken RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # CreateSdkSessionToken RPC
 
 <!--
@@ -21,7 +25,7 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 
 ## Purpose
 
-**Why use SDK session tokens?**
+### Why use SDK session tokens?
 
 | Wallet | Purpose |
 |--------|---------|
@@ -29,7 +33,7 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 | **Google Pay** | Configure PaymentDataRequest with merchant info |
 | **PayPal SDK** | Set up checkout context |
 
-**Key outcomes:**
+### Key outcomes:
 - Wallet-specific session configuration
 - Merchant validation data
 - Supported payment methods list

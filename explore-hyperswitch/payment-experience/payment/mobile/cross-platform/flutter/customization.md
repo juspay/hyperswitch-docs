@@ -175,7 +175,7 @@ Now you can test the payments on your app and go-live!
 
 ## Languages
 
-Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
+Juspay Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
 ```dart
 Appearance appearance = Appearance(

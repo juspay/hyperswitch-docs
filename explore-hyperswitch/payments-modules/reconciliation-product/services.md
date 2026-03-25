@@ -1,4 +1,5 @@
 ---
+description: Explore Services on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 ---
 
@@ -10,7 +11,7 @@ hidden: true
 
 Our ingestion service connects to merchant and processor data sources using secure, flexible channels so you get timely, reliable inputs without manual work
 
-**Supported connection types**
+### Supported connection types
 
 * **Direct processor integrations (API / webhooks)**
   * Real-time ingestion via processor APIs or webhook events.
@@ -31,14 +32,14 @@ The transformation service handles virtually any data format your payment proces
 * JSON: Nested data structures with complex field extraction
 * Fixed-Width: Legacy formats like COBOL with position-based field extraction
 
-**Flexible Configuration**
+### Flexible Configuration
 
 * Custom transformation rules per connection
 * Support for multiple file formats from the same source
 * Configurable field mappings and business logic
 * Version control for transformation configurations
 
-**Error Management**
+### Error Management
 
 * Detailed error categorization and resolution guidance
 * Automatic alerts for systematic data issues

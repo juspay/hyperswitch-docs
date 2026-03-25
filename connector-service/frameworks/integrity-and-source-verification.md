@@ -1,3 +1,7 @@
+---
+description: Explore Integrity and Source Verification on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Integrity and Source Verification
 
 Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks:
@@ -32,7 +36,7 @@ const result = await client.events.handle({
 console.log(result.sourceVerified); // true or false
 ```
 
-**Supported Algorithms:**
+### Supported Algorithms:
 
 | Algorithm | Processors Using It | Security Level |
 |-----------|---------------------|----------------|
@@ -128,7 +132,7 @@ Prism tracks transaction IDs across the lifecycle. When a webhook arrives, it ve
 }
 ```
 
-**Common causes:**
+### Common causes:
 - Wrong webhook secret configured
 - Payload modified in transit (proxy, middleware)
 - Signature header missing or malformed
@@ -163,7 +167,7 @@ const client = new ConnectorServiceClient({
 });
 ```
 
-**Secret Rotation:**
+### Secret Rotation:
 - Generate new secret in processor dashboard
 - Update Prism configuration
 - Old secret continues working during transition

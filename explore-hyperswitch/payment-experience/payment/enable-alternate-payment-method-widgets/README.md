@@ -1,4 +1,5 @@
 ---
+description: Explore Alternate Payment Method Widgets on Juspay Hyperswitch to understand and implement this capability
 icon: bolt-lightning
 ---
 
@@ -27,7 +28,7 @@ in the image below you can find a checkout page with more alternate payment meth
 
 <figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
 
-**Additional example:**
+### Additional example:
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2F5V5WWx1Q4KQglFRvGp13%2FGroup%201000003880.png?alt=media&#x26;token=e34dcdf3-c715-484c-ab81-0a78c5865632" alt="" width="563"><figcaption><p>Example: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
 

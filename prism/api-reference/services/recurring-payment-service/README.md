@@ -1,3 +1,7 @@
+---
+description: Explore Recurring Payment Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Recurring Payment Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Recurring Payment Service enables you to process subscription billing and manage recurring payment mandates. Once a customer has set up a mandate (through the Payment Service's `SetupRecurring`), this service handles subsequent charges without requiring customer interaction, making it ideal for SaaS subscriptions, membership fees, and automated billing scenarios.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **SaaS subscriptions** - Charge customers monthly/yearly for software subscriptions
 - **Membership fees** - Process recurring membership dues for clubs and organizations
 - **Utility billing** - Automate monthly utility and service bill payments
@@ -64,7 +68,7 @@ sequenceDiagram
     CS-->>App: Return status: REVOKED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Charge (recurring)** - When a subscription billing cycle triggers (e.g., 30 days after signup), call the `Charge` RPC with the stored `mandate_reference` from the initial `SetupRecurring`. The processor creates a charge using the saved payment method without requiring customer interaction.
 
@@ -72,7 +76,7 @@ sequenceDiagram
 
 3. **Revoke on cancellation** - When a customer cancels their subscription, call the `Revoke` RPC with the `mandate_reference` to cancel the mandate. This stops all future automatic charges associated with that mandate.
 
-**Benefits:**
+### Benefits:
 - Fully automated billing without customer intervention
 - Consistent cash flow from recurring revenue
 - Reduced payment friction improves retention
@@ -107,7 +111,7 @@ sequenceDiagram
     App->>Cust: Send payment success confirmation
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Initial charge attempt** - Call the `Charge` RPC at the scheduled billing time. If the payment fails (e.g., insufficient funds, expired card), the response includes error details and FAILED status.
 
@@ -117,7 +121,7 @@ sequenceDiagram
 
 4. **Confirm success** - Notify the customer that the payment succeeded and their subscription remains active.
 
-**Retry Best Practices:**
+### Retry Best Practices:
 - Implement exponential backoff between retries (1 day, 3 days, 7 days)
 - Limit total retry attempts to avoid excessive failures
 - Provide clear customer communication at each step
@@ -148,13 +152,13 @@ sequenceDiagram
     CS-->>App: Return status: CHARGED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Prorated charge** - When a customer upgrades their plan mid-cycle, calculate the prorated difference and call the `Charge` RPC immediately with the `mandate_reference` to collect the upgrade fee.
 
 2. **Regular billing** - At the next regular billing cycle, call the `Charge` RPC with the new plan amount. The mandate continues to work for the new amount.
 
-**Benefits:**
+### Benefits:
 - Immediate revenue capture for upgrades
 - Seamless plan transitions for customers
 - No need to create new mandates for plan changes

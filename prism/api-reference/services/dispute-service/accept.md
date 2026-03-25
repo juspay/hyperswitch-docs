@@ -1,3 +1,7 @@
+---
+description: Explore Accept RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Accept RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Accept` RPC concedes a chargeback dispute and accepts the loss. Use this wh
 
 ## Purpose
 
-**When to accept disputes?**
+### When to accept disputes?
 
 | Scenario | Reason | Outcome |
 |----------|--------|---------|
@@ -31,7 +35,7 @@ The `Accept` RPC concedes a chargeback dispute and accepts the loss. Use this wh
 | **Evidence deadline passed** | Missed submission window | Accept as defense is no longer possible |
 | **Fraudulent transaction confirmed** | Internal investigation confirmed fraud | Accept and write off loss |
 
-**Key outcomes:**
+### Key outcomes:
 - Dispute status changes to ACCEPTED
 - Chargeback processed immediately
 - Funds debited from your account

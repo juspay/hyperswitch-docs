@@ -1,3 +1,7 @@
+---
+description: Explore Hyperswitch Prism on Juspay Hyperswitch to understand and implement this capability
+---
+
 <div align="center">
 
 
@@ -49,7 +53,7 @@ Because every payment processor has diverse APIs, error codes, authentication me
 ## ✨ Features
 
 
-- **🔌 100+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
+- **🔌 300+ connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
 - **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
 - **🚀 Zero Overhead** — Rust core with native bindings, no overhead
 - **🔒 PCI-Compliant by Design** — Stateless, no data storage

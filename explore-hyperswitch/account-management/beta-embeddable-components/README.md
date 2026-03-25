@@ -1,4 +1,5 @@
 ---
+description: Explore Embeddable Components on Juspay Hyperswitch to understand and implement this capability
 icon: laptop-code
 ---
 
@@ -31,7 +32,7 @@ The most requested feature is now our first embeddable module: The Connector Com
 
 **The Solution**: Embed the Connector Component. It provides a complete, self-serve interface for your users to select processors and enter credentials.
 
-**Key Features:**
+### Key Features:
 
 * White-Labeled: No HyperSwitch branding.
 * Instant Validation: We validate credentials in real-time before saving.
@@ -39,7 +40,7 @@ The most requested feature is now our first embeddable module: The Connector Com
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-12-24 at 10.53.27 AM.png" alt=""><figcaption><p>A seamless, white-labeled configuration experience embedded directly into a demo dashboard.</p></figcaption></figure>
 
-***
+### 
 
 #### What’s Next?
 

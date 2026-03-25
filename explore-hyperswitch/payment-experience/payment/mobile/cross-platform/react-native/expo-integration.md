@@ -1,4 +1,5 @@
 ---
+description: Explore Expo integration on Juspay Hyperswitch to understand and implement this capability
 icon: react
 ---
 

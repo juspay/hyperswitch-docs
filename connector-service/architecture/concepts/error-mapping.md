@@ -1,3 +1,7 @@
+---
+description: Explore Error Mapping on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Error Mapping
 
 Payment processors speak different error languages. Stripe says "card_declined." Adyen says "Refused." PayPal says "INSTRUMENT_DECLINED." Prism translates all of them into a single set of error codes your application handles once.
@@ -21,7 +25,7 @@ if (connector === 'stripe') {
         // handle decline
     }
 }
-// Repeat for 50+ connectors...
+// Repeat for 300+ connectors...
 ```
 
 With Prism, you write the handling logic once:

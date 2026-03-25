@@ -1,3 +1,7 @@
+---
+description: Explore Resolution Strategies for Mismatched Exceptions on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Resolution Strategies for Mismatched Exceptions
 
 ### Overview
@@ -19,7 +23,7 @@ This action effectively "soft deletes" the exception. It is used when the transa
   * Test Data: Developers generated $0.01 test transactions in the Production environment
   * Cancelled/Voided Orders: Transactions that were cancelled at the source but were erroneously synced to the reconciliation layer
 
-***
+### 
 
 ### Pathway B: Fixing Valid Data
 

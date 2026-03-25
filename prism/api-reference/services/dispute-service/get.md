@@ -1,3 +1,7 @@
+---
+description: Explore Get RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Get RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Get` RPC retrieves the current status and details of a dispute from the pay
 
 ## Purpose
 
-**Why retrieve dispute status?**
+### Why retrieve dispute status?
 
 | Scenario | Information Needed | Action |
 |----------|-------------------|--------|
@@ -30,7 +34,7 @@ The `Get` RPC retrieves the current status and details of a dispute from the pay
 | **Awaiting resolution** | Current status, bank review progress | Plan for potential loss/profit impact |
 | **Dispute resolved** | Final status (WON/LOST), funds movement | Update accounting records |
 
-**Key outcomes:**
+### Key outcomes:
 - Current dispute status and stage
 - Evidence submission deadline
 - Dispute reason and amount

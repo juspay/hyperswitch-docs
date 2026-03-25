@@ -1,3 +1,7 @@
+---
+description: Configure Configuration and Management on Juspay Hyperswitch to customize and optimize your payment processing
+---
+
 # Configuration and Management
 
 ### Configuration Files&#x20;
@@ -99,7 +103,7 @@ configs:
 
 #### Explanation of Important Settings
 
-**Reconciliation interval**
+### Reconciliation interval
 
 ```
 timeout.reconciliation: 180s
@@ -107,7 +111,7 @@ timeout.reconciliation: 180s
 
 ArgoCD checks for configuration drift approximately every 3 minutes.
 
-**RBAC**
+### RBAC
 
 RBAC policies restrict who can:
 
@@ -384,14 +388,14 @@ ingress controller
 monitoring stack
 logging stack
 application workloads
-Hyperswitch deployment
+Juspay Hyperswitch deployment
 ```
 
 The exact platform services deployed depend on the organization.
 
 #### 9. Deploying Hyperswitch via ArgoCD
 
-Hyperswitch is typically deployed using the official Helm chart.
+Juspay Hyperswitch is typically deployed using the official Helm chart.
 
 ArgoCD can manage Helm releases directly.
 
@@ -423,9 +427,9 @@ spec:
 Separate applications should exist for:
 
 ```
-Hyperswitch production
-Hyperswitch sandbox
-Hyperswitch integration
+Juspay Hyperswitch production
+Juspay Hyperswitch sandbox
+Juspay Hyperswitch integration
 ```
 
 Each environment should use its own namespace and configuration values.
@@ -444,7 +448,7 @@ Best practices vary depending on organizational architecture.
 
 Common models:
 
-**Single cluster per ArgoCD**
+### Single cluster per ArgoCD
 
 Simpler operations.
 

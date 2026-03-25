@@ -1,3 +1,7 @@
+---
+description: Explore VerifyRedirectResponse RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # VerifyRedirectResponse RPC
 
 <!--
@@ -21,7 +25,7 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 
 ## Purpose
 
-**Why use VerifyRedirectResponse?**
+### Why use VerifyRedirectResponse?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 | **Fraud prevention** | Suspicious redirect parameters detected - call `VerifyRedirectResponse` to validate before fulfilling order |
 | **Tampering detection** | URL parameters appear modified - call `VerifyRedirectResponse` to verify integrity |
 
-**Key outcomes:**
+### Key outcomes:
 - Confirms redirect response authenticity
 - Prevents fraudulent payment notifications
 - Extracts verified transaction details

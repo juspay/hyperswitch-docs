@@ -1,3 +1,7 @@
+---
+description: Explore Void RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Void RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Void` RPC cancels an authorized payment before it has been captured. This r
 
 ## Purpose
 
-**Why use Void instead of Refund?**
+### Why use Void instead of Refund?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Void` RPC cancels an authorized payment before it has been captured. This r
 | **Duplicate prevention** | Accidental double authorization - call `Void` on the duplicate to release the hold |
 | **Price adjustment** | Order total needs to change - `Void` the original, create new authorization with correct amount |
 
-**Key outcomes:**
+### Key outcomes:
 - No charge appears on customer's statement (authorization disappears within 1-3 business days)
 - Funds immediately available to customer (vs. 5-10 days for refunds)
 - Transaction moves to VOIDED status

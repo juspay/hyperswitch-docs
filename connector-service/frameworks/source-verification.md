@@ -1,3 +1,7 @@
+---
+description: Explore Source Verification on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Source Verification
 
 A customer returns from a 3D Secure challenge. The URL shows `status=success`. Do you ship the order? Not yet. That URL could be forged. Prism verifies the source before you fulfill a single order.
@@ -96,7 +100,7 @@ Prism abstracts these differences. You call one method. It handles all verificat
 }
 ```
 
-**When this happens:**
+### When this happens:
 - Customer modified URL parameters manually
 - Redirect was intercepted and tampered with
 - Wrong secrets configured

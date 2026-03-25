@@ -1,3 +1,7 @@
+---
+description: Explore Payment Method Authentication Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Payment Method Authentication Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Payment Method Authentication Service manages 3D Secure (3DS) authentication flows for card payments. It verifies cardholder identity through frictionless or challenge-based authentication to reduce fraud liability while maintaining a smooth checkout experience.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **Fraud prevention** - Verify cardholder identity for high-risk transactions
 - **SCA compliance** - Meet Strong Customer Authentication requirements (EU)
 - **Liability shift** - Transfer fraud liability to the issuing bank
@@ -62,7 +66,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id (AUTHORIZED)
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **PreAuthenticate** - After the customer enters their card details, call this RPC to initiate 3DS. The connector sends device data, transaction amount, and merchant info to the issuing bank. For low-risk transactions (based on amount, device fingerprint, merchant history), the bank approves frictionlessly.
 
@@ -105,7 +109,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id (AUTHORIZED)
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **PreAuthenticate** - Initiate 3DS authentication. For high-risk transactions, the bank responds that a challenge is required. The response includes `redirection_data` with a URL to the bank's challenge page.
 

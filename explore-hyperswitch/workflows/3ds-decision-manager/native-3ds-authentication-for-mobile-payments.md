@@ -1,4 +1,5 @@
 ---
+description: Explore Native 3DS Authentication on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 icon: star-shooting
 ---

@@ -5,7 +5,7 @@ icon: repeat
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
@@ -59,7 +59,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
 
-***
+### 
 
 ### Saving a payment method for future MIT payments
 
@@ -114,7 +114,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-***
+### 
 
 ### Using a saved payment method to do a MIT payment
 
@@ -137,7 +137,7 @@ curl --request GET \
   --header 'api-key: <api-key>'
 ```
 
-***
+### 
 
 ### Processing MIT Payments Without a Saved Payment Method
 
@@ -156,4 +156,4 @@ If a merchant is PCI-compliant and has the customer payment method details store
 }
 </code></pre>
 
-***
+### 

@@ -1,3 +1,7 @@
+---
+description: Explore Nexinets on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Nexinets
 
 <!--
@@ -100,7 +104,7 @@ Complete, runnable examples for common integration patterns. Each example shows 
 
 Authorize and capture in one call using `capture_method=AUTOMATIC`. Use for digital goods or immediate fulfillment.
 
-**Response status handling:**
+### Response status handling:
 
 | Status | Recommended action |
 |--------|-------------------|
@@ -114,7 +118,7 @@ Authorize and capture in one call using `capture_method=AUTOMATIC`. Use for digi
 
 Wallet payments pass an encrypted token from the browser/device SDK. Pass the token blob directly — do not decrypt client-side.
 
-**Response status handling:**
+### Response status handling:
 
 | Status | Recommended action |
 |--------|-------------------|
@@ -155,7 +159,7 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | **Request** | `PaymentServiceAuthorizeRequest` |
 | **Response** | `PaymentServiceAuthorizeResponse` |
 
-**Supported payment method types:**
+### Supported payment method types:
 
 | Payment Method | Supported |
 |----------------|:---------:|

@@ -14,7 +14,7 @@ Pick the platform / framework of your choice to get started with integrating the
 
 ## Modify and Experiment
 
-Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
+Juspay Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
 | <img src="../../.gitbook/assets/image (127).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

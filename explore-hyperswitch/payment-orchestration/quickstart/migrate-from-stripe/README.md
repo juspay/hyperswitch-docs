@@ -72,7 +72,7 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% endtab %}
 {% endtabs %}
 
-**Checkout the migration steps here:**
+### Checkout the migration steps here:
 
 {% content-ref url="web.md" %}
 [web.md](web.md)

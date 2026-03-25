@@ -1,3 +1,7 @@
+---
+description: Explore Glossary on Juspay Hyperswitch to understand and implement this capability
+---
+
 <!--
 @doc-guidance
 ────────────────────────────────────────────────────
@@ -78,7 +82,7 @@ A-Z reference for Connector Service terminology.
 
 **Capture Method** — `AUTOMATIC` (immediate) or `MANUAL` (merchant-initiated). Determines when funds transfer.
 
-**Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Connector Service supports 50+ connectors.
+**Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Connector Service supports 300+ connectors.
 
 **Connector Adapter** — Rust module that translates unified requests to connector-specific formats. See [Connectors](../../connectors/).
 

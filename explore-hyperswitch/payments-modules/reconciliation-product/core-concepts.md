@@ -1,3 +1,7 @@
+---
+description: Explore Core Concepts on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Core Concepts
 
 ### How We Model Money

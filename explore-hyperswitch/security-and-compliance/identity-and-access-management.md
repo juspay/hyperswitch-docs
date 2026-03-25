@@ -1,4 +1,5 @@
 ---
+description: Explore Identity and Access Management on Juspay Hyperswitch to understand and implement this capability
 icon: id-card-clip
 ---
 
@@ -8,23 +9,23 @@ Identity and Access Management (IAM) in Hyperswitch is designed to provide a sec
 
 ### Authentication Methodology for Hyperswitch APIs
 
-**1. Admin Services Authentication**
+### 1. Admin Services Authentication
 
 Administrative services require robust, multi-layered authentication. Access is limited to specific personnel within the Hyperswitch team via an additional API key to maintain backend security.
 
-**2. Merchant Authentication**
+### 2. Merchant Authentication
 
 Merchants accessing Hyperswitch APIs benefit from strong authentication mechanisms to safeguard their accounts and transactions. For detailed guidance on merchant authentication, refer to the API documentation​​.
 
-**3. Vault Authentication**
+### 3. Vault Authentication
 
-The Hyperswitch Vault employs a distributed key management approach. Key custodians must collaborate to initiate the application, ensuring no single individual can independently alter or access the vault. This design prevents unauthorized tampering and enhances the overall security framework​​.
+The Juspay Hyperswitch Vault employs a distributed key management approach. Key custodians must collaborate to initiate the application, ensuring no single individual can independently alter or access the vault. This design prevents unauthorized tampering and enhances the overall security framework​​.
 
 ### Identity and Access Management in AWS
 
-**1. User Authentication**
+### 1. User Authentication
 
-Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
+Juspay Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
 
 **2. Access Controls and Role-Based Access Control (RBAC)**
 

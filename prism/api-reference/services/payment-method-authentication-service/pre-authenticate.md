@@ -1,3 +1,7 @@
+---
+description: Explore PreAuthenticate RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # PreAuthenticate RPC
 
 <!--
@@ -21,7 +25,7 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 
 ## Purpose
 
-**Why pre-authenticate?**
+### Why pre-authenticate?
 
 | Scenario | Outcome |
 |----------|---------|
@@ -30,7 +34,7 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 | **SCA compliance** | Meet EU Strong Customer Authentication requirements |
 | **Liability shift** | Enable fraud liability protection |
 
-**Key outcomes:**
+### Key outcomes:
 - Authentication session initialized
 - Risk assessment performed
 - Challenge URL (if required)

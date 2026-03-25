@@ -1,3 +1,7 @@
+---
+description: Explore A Payments Switch with virtually zero overhead on Juspay Hyperswitch to understand and implement this capability
+---
+
 # A Payments Switch with virtually zero overhead
 
 When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.
@@ -8,9 +12,9 @@ Merchants who operate in this digital arena understand the importance of **offer
 Enter Hyperswitch, a game-changing solution designed to be lightning fast and add **virtually zero overhead** to your payment processing infrastructure!
 {% endhint %}
 
-***
+### 
 
-**Clarifying latency overhead**
+### Clarifying latency overhead
 
 > The latency overhead of Hyperswitch refers specifically to the time taken by the Hyperswitch application itself within the transaction flow.
 

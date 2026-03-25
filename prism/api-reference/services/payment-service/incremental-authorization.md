@@ -1,3 +1,7 @@
+---
+description: Explore IncrementalAuthorization RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # IncrementalAuthorization RPC
 
 <!--
@@ -21,7 +25,7 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 
 ## Purpose
 
-**Why use IncrementalAuthorization?**
+### Why use IncrementalAuthorization?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 | **Metered services** | Usage exceeds initial estimate - call `IncrementalAuthorization` to extend hold for actual consumption |
 | **Subscription upgrades** | Customer upgrades plan mid-cycle - call `IncrementalAuthorization` to cover prorated difference |
 
-**Key outcomes:**
+### Key outcomes:
 - Increased hold amount without new authorization
 - No additional card verification required
 - Combined final capture covers all charges

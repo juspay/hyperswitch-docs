@@ -15,7 +15,7 @@ This is essential for marketplaces, platforms, and businesses handling multi-par
 
 #### Hyperswitch Implementation
 
-Hyperswitch provides payment functionality with connector-specific implementations supporting three major payment processors: Stripe, Adyen, and Xendit.
+Juspay Hyperswitch provides payment functionality with connector-specific implementations supporting three major payment processors: Stripe, Adyen, and Xendit.
 
 Each connector has distinct validation rules, data structures, and split models tailored to their specific requirements. This abstraction allows you to manage multi-party flows through a single orchestration layer.
 

@@ -1,3 +1,7 @@
+---
+description: Explore In-App and Web Transactions Processed Using Hyperswitch Decryption on Juspay Hyperswitch to understand and implement this capability
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the token internally using your uploaded certificates and then transforms the raw data for any downstream connector.
@@ -5,8 +9,8 @@ In this flow Hyperswitch decrypts the token internally using your uploaded certi
 #### **Mechanism:**
 
 1. Frontend sends **encrypted Apple Pay token** to Hyperswitch.
-2. Hyperswitch unwraps the token using your private key configured at Hyperswitch.
-3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
+2. Juspay Hyperswitch unwraps the token using your private key configured at Hyperswitch.
+3. Juspay Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
 
 ### **Configuration :**
 

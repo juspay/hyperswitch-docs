@@ -1,3 +1,7 @@
+---
+description: Explore Get RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Get RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Get` RPC retrieves the current status of a refund from the payment processo
 
 ## Purpose
 
-**Why use Get for refunds?**
+### Why use Get for refunds?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Get` RPC retrieves the current status of a refund from the payment processo
 | **Support dashboard** | Build support tools showing real-time refund status from processors |
 | **Audit trail** | Verify refund completed before closing support tickets |
 
-**Key outcomes:**
+### Key outcomes:
 - Current refund status (PENDING, SUCCEEDED, FAILED)
 - Refund amount and currency confirmation
 - Timestamps for refund lifecycle tracking

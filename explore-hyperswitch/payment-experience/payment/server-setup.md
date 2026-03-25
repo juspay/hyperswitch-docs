@@ -1,4 +1,5 @@
 ---
+description: Set up Server Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
 icon: server
 ---
 

@@ -9,11 +9,11 @@ icon: recycle
 This chapter covers everything you need to know about handling maintenance and updates for your application.
 {% endhint %}
 
-***
+### 
 
 ## Hyperswitch version updates
 
-Hyperswitch requires minimal maintenance effort, and updating to newer versions is quite simple
+Juspay Hyperswitch requires minimal maintenance effort, and updating to newer versions is quite simple
 
 * Hyperswitch adheres to a **monthly release schedule**, with versions undergoing thorough internal testing before being deemed stable
 * Stay informed about updates by checking our [GitHub releases](https://github.com/juspay/hyperswitch/releases) page
@@ -33,15 +33,15 @@ Often, when you are upgrading to a latest version of Hyperswitch, you would also
 
 <summary>Database Schema Additions</summary>
 
-***
+### 
 
-**Why is this required?**
+### Why is this required?
 
 This is required due to any schema additions/ deletions required due to the new features
 
-***
+### 
 
-**How to update the schema?**
+### How to update the schema?
 
 * The SQL commands for database schema changes would be included in the `up.sql` files included in sub-directories of the `migrations` directory in the repository
 * You can easily obtain the commands to be run with a command like the one below
@@ -60,16 +60,16 @@ $ git diff --name-only <CURRENT_VERSION>..<NEW_VERSION> migrations/**/up.sql | s
 
 <summary>Configuration Updates (ENVs)</summary>
 
-***
+### 
 
-**Why is this required?**
+### Why is this required?
 
 * Environment variables typically store configuration data such as API endpoints, database connection details, security credentials, feature toggles, and application settings
 * Managing them in each new release is essential to accommodate changes, adapt to evolving requirements, maintain security, and ensure the application functions are as intended
 
-***
+### 
 
-**How to update the environment variables?**
+### How to update the environment variables?
 
 * Hyperswitch allows specifying application configuration variables from two sources a TOML file and environment variables, with environment variables having higher priority
 * Except for some values such as database connection information that must be provided, if a configuration variable has not been specified in either source, the application uses default values specified in code

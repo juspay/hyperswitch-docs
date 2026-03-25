@@ -20,7 +20,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 1. Integrate your subscription provider as a billing processor on Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
-4. Hyperswitch completes the payment, securely tokenises and stores the card
+4. Juspay Hyperswitch completes the payment, securely tokenises and stores the card
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments

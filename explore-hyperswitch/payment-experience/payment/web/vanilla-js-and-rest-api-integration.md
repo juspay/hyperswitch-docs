@@ -108,7 +108,7 @@ This document outlines the details and functionality of an optional callback `co
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
 {% endhint %}
 
-**Example Usage**
+### Example Usage
 
 ```javascript
 const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);

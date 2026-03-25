@@ -1,3 +1,7 @@
+---
+description: Explore ID and Object Modeling on Juspay Hyperswitch to understand and implement this capability
+---
+
 # ID and Object Modeling
 
 Payment processors can't agree on how to name their IDs. Stripe uses `pi_3MqSCR2eZvKYlo2C1`. Adyen uses `7914073381344578`. Razorpay uses `pay_ABCdef123`. This inconsistency breaks code completion, confuses LLMs, and forces you to maintain different ID handling logic for each connector.
@@ -198,4 +202,4 @@ These constraints prevent buffer overflows and ensure IDs fit in database indexe
 4. **Use type-safe wrappers** in strongly-typed languages
 5. **Never construct IDs manually**—always get them from Prism responses
 
-Your ID handling becomes simple, safe, and portable across all 50+ connectors.
+Your ID handling becomes simple, safe, and portable across all 300+ connectors.

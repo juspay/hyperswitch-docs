@@ -1,3 +1,7 @@
+---
+description: Explore Connector Flow Coverage on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Connector Flow Coverage
 
 <!--

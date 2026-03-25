@@ -1,4 +1,5 @@
 ---
+description: Explore Payments on Juspay Hyperswitch to understand and implement this capability
 icon: money-bills-simple
 ---
 

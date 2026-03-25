@@ -1,3 +1,7 @@
+---
+description: Explore Charge RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Charge RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Charge` RPC processes a recurring payment using a previously established ma
 
 ## Purpose
 
-**Why use Charge for recurring payments?**
+### Why use Charge for recurring payments?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Charge` RPC processes a recurring payment using a previously established ma
 | **Membership dues** | Automate monthly/quarterly membership fee collection |
 | **Prorated upgrades** | Call `Charge` immediately when customers upgrade plans mid-cycle |
 
-**Key outcomes:**
+### Key outcomes:
 - Payment processed using stored mandate (no customer interaction required)
 - Compliance with card network stored credential requirements
 - New transaction ID for each charge (distinct from original mandate)

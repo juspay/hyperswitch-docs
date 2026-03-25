@@ -5,7 +5,7 @@ icon: container-storage
 
 # Payments Suite
 
-Hyperswitch is built for teams that want engineering-grade control over payments.
+Juspay Hyperswitch is built for teams that want engineering-grade control over payments.
 
 To simplify architectural decisions, the ecosystem can be viewed as four independent building blocks.\
 By defining ownership of each block — Hyperswitch-managed, self-hosted, or third-party — you can design an architecture aligned with your compliance posture, performance requirements, and internal engineering capabilities.
@@ -34,7 +34,7 @@ The secure locker for sensitive card data to enable "One-Click" recurring paymen
 
 Each Component can be handled by Hyperswitch, managed or self-deployed by your own team, or even sourced from a third-party provider e.g. Vault ([reference](https://docs.hyperswitch.io/~/revisions/wA01t1OV6BPUckMZ2Pvg/explore-hyperswitch/workflows/vault/connect-external-vaults-to-hyperswitch-orchestration))
 
-***
+### 
 
 ### Integration Architecture
 
@@ -65,7 +65,7 @@ Choose the integration method that best aligns with your payment flow requiremen
    * Manages authorization/capture
    * Returns final payment status
 
-***
+### 
 
 #### Integration Model 2: Server-to-Server (S2S) Payments
 

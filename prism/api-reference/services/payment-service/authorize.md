@@ -1,3 +1,7 @@
+---
+description: Explore Authorize RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Authorize RPC
 
 <!--
@@ -30,7 +34,7 @@ The `Authorize` RPC reserves funds on a customer's payment method without transf
 | **Marketplace holds** | Secure funds from buyer before releasing to seller |
 | **Subscription trials** | Validate card at signup, first charge after trial ends |
 
-**Key outcomes:**
+### Key outcomes:
 - Guaranteed funds availability (typically 7-10 days hold)
 - Reduced fraud exposure through pre-verification
 - Better customer experience (no double charges for partial shipments)

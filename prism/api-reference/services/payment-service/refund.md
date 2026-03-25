@@ -1,3 +1,7 @@
+---
+description: Explore Refund RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Refund RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Refund` RPC returns funds to a customer's payment method after the original
 
 ## Purpose
 
-**Why use Refund?**
+### Why use Refund?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Refund` RPC returns funds to a customer's payment method after the original
 | **Duplicate charges** | Settled duplicate transaction - call `Refund` to return extra charges after settlement |
 | **Fraud goodwill** | Goodwill refund for unauthorized use - call `Refund` to resolve dispute amicably |
 
-**Key outcomes:**
+### Key outcomes:
 - Funds returned to customer's payment method (typically 5-10 business days)
 - Refund appears as separate transaction on customer's statement
 - Original payment remains captured and settled

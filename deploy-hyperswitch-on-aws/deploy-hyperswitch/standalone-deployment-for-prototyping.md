@@ -8,7 +8,7 @@ description: Use the standalone deployment script to deploy Hyperswitch on AWS q
 In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
 {% endhint %}
 
-***
+### 
 
 ## Video
 

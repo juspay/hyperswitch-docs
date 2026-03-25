@@ -1,3 +1,7 @@
+---
+description: Explore Modes of Usage on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Modes of Usage
 
 Prism can be used in two modes: **Library (SDK)** or **Microservice (gRPC)**.

@@ -1,4 +1,5 @@
 ---
+description: Choose between self-hosted, SaaS, or point solution deployment models for Juspay Hyperswitch based on your infrastructure and compliance requirements
 icon: flux-capacitor
 ---
 
@@ -6,102 +7,102 @@ icon: flux-capacitor
 
 ## Supported Deployment Models
 
-The Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
+The Juspay Hyperswitch platform supports multiple deployment models depending on the level of infrastructure control, compliance responsibility, and operational ownership required.
 
-### Overview
+## Overview
 
-| Model                                  | Best For                                                                                |
-| -------------------------------------- | --------------------------------------------------------------------------------------- |
-| **Self-Deployed (Enterprise Support)** | Enterprises that require full control over infrastructure and deployment                |
-| **Hosted Offering (SaaS)**             | Organizations that want a fully managed payments platform                               |
-| **Point Solutions**                    | Teams that only need specific capabilities such as reconciliation or cost observability |
+| Model | Best For |
+| ----- | -------- |
+| Self-Deployed (Enterprise Support) | Enterprises that require full control over infrastructure and deployment |
+| Hosted Offering (SaaS) | Organizations that want a fully managed payments platform |
+| Point Solutions | Teams that only need specific capabilities such as reconciliation or cost observability |
 
-### Self-Deployed (Enterprise Support)
+## Self-Deployed (Enterprise Support)
 
-> **Recommended for:** Enterprises requiring full infrastructure ownership and deployment flexibility.
+> Recommended for: Enterprises requiring full infrastructure ownership and deployment flexibility.
 
-#### Model
+### Model
 
-Merchant deploys and runs the platform within their own infrastructure environment, either **on-premise** or in a **cloud provider of their choice**.
+Merchant deploys and runs the platform within their own infrastructure environment, either on-premise or in a cloud provider of their choice.
 
-#### Scope of Services
+### Scope of Services
 
-* Expert consultation from Juspay for deployment
-* Assistance with production readiness
-* Support during certification and go-live
+- Expert consultation from Juspay for deployment
+- Assistance with production readiness
+- Support during certification and go-live
 
-#### PCI Compliance
+### PCI Compliance
 
 Merchants can choose between:
 
-* **Self-certifying PCI compliance**
-* Using **Juspay’s hosted PCI / Tokenization service**
+- Self-certifying PCI compliance
+- Using Juspay's hosted PCI / Tokenization service
 
-#### Reliability & Scalability
+### Reliability & Scalability
 
-* Infrastructure owned and managed by the merchant
-* Merchant responsible for scaling, monitoring, and reliability
+- Infrastructure owned and managed by the merchant
+- Merchant responsible for scaling, monitoring, and reliability
 
-### Hosted Offering (SaaS)
+## Hosted Offering (SaaS)
 
-> **Recommended for:** Teams that want a fully managed platform with minimal operational overhead.
+> Recommended for: Teams that want a fully managed platform with minimal operational overhead.
 
-#### Model
+### Model
 
-Juspay operates the platform and exposes its capabilities through **hosted APIs and SDKs**.
+Juspay operates the platform and exposes its capabilities through hosted APIs and SDKs.
 
-#### Scope of Services
+### Scope of Services
 
-* Fully managed infrastructure
-* Hosted APIs and SDK integrations
-* Continuous platform maintenance and upgrades
+- Fully managed infrastructure
+- Hosted APIs and SDK integrations
+- Continuous platform maintenance and upgrades
 
-#### PCI Compliance
+### PCI Compliance
 
-* PCI compliance handled entirely by Juspay
-* Out-of-the-box compliance for merchants
+- PCI compliance handled entirely by Juspay
+- Out-of-the-box compliance for merchants
 
-#### Reliability & Scalability
+### Reliability & Scalability
 
-* **Guaranteed SLAs**
-* **99.999% uptime**
-* **Up to 3000 TPS processing capacity**
+- Guaranteed SLAs
+- 99.999% uptime
+- Up to 2,000 TPS processing capacity
 
-### Point Solutions
+## Point Solutions
 
-> **Recommended for:** Organizations that need specific tools without deploying the full platform.
+> Recommended for: Organizations that need specific tools without deploying the full platform.
 
-#### Model
+### Model
 
 Fully managed service provided by Juspay for targeted operational capabilities.
 
-#### Scope of Services
+### Scope of Services
 
 Self-serve dashboards and tooling for:
 
-* **Reconciliation**
-* **Cost observability**
+- Reconciliation
+- Cost observability
 
-#### PCI Compliance
+### PCI Compliance
 
-* No PCI compliance requirements
+- No PCI compliance requirements
 
-#### Reliability & Scalability
+### Reliability & Scalability
 
-* Juspay provides guaranteed service SLAs
+- Juspay provides guaranteed service SLAs
 
-### Feature Comparison
+## Feature Comparison
 
-| Feature                       | Self-Deployed                   | Hosted Offering                 | Point Solutions     |
-| ----------------------------- | ------------------------------- | ------------------------------- | ------------------- |
-| Infrastructure Ownership      | Merchant                        | Juspay                          | Juspay              |
-| Platform Operations           | Merchant                        | Juspay                          | Juspay              |
-| PCI Compliance Responsibility | Merchant or Juspay Tokenization | Juspay                          | Not Required        |
-| Scaling & Performance         | Merchant                        | Juspay                          | Juspay              |
-| Typical Use Case              | Full platform deployment        | Managed payments infrastructure | Operational tooling |
+| Feature | Self-Deployed | Hosted Offering | Point Solutions |
+| ------- | ------------- | --------------- | --------------- |
+| Infrastructure Ownership | Merchant | Juspay | Juspay |
+| Platform Operations | Merchant | Juspay | Juspay |
+| PCI Compliance Responsibility | Merchant or Juspay Tokenization | Juspay | Not Required |
+| Scaling & Performance | Merchant | Juspay | Juspay |
+| Typical Use Case | Full platform deployment | Managed payments infrastructure | Operational tooling |
 
-***
+---
 
-This Production Deployment guide is to help merchants looking to self-deploy Hyperswitch in an enterprise-grade environment.&#x20;
+This Production Deployment guide is to help merchants looking to self-deploy Juspay Hyperswitch in an enterprise-grade environment.
 
-It is designed to provide you detailed guidance on deploying and scaling Hyperswitch in a secure and compliant manner.&#x20;
+It is designed to provide you detailed guidance on deploying and scaling Juspay Hyperswitch in a secure and compliant manner.

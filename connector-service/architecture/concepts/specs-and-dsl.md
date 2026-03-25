@@ -1,3 +1,7 @@
+---
+description: Explore Specs and DSL on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Specs and DSL
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers that catches integration errors at compile time. Instead of discovering you forgot a required field in production, you get a compiler error immediately.
@@ -25,7 +29,7 @@ You only find out when you run the code. In production. With real customers.
 
 Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language.
 
-**Proto definition:**
+### Proto definition:
 ```protobuf
 message AuthorizeRequest {
     Money amount = 1;                    // Required
@@ -46,7 +50,7 @@ message Money {
 }
 ```
 
-**Generated TypeScript:**
+### Generated TypeScript:
 ```typescript
 interface AuthorizeRequest {
     amount: Money;                    // Required—TypeScript enforces this

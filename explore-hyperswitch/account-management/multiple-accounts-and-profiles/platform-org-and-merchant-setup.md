@@ -95,7 +95,7 @@ Key characteristics
 | **Connected** | Shared across Connected group | Shared across Connected group | **Yes**                                                              |
 | **Standard**  | Isolated per merchant         | Isolated per merchant         | No (but it can create the merchant and generate/manage its API keys) |
 
-***
+### 
 
 ### The Platform Organization Workflow
 
@@ -136,7 +136,7 @@ Once merchant accounts are created and their API keys are generated, those keys 
 * Standard merchant accounts: All payment operations (payments, refunds) and connector actions must be performed using the Standard merchant’s own API key. The Platform API Key is limited to management (creating standard merchants and generating/managing their API keys).
 * Connected merchant accounts: Operations can be performed either using the Connected merchant’s own API key or using the Platform API Key acting on behalf of the Connected merchant (including payments/refunds and connector configuration).
 
-**5.1 Connector Setup**
+### 5.1 Connector Setup
 
 With the Merchant API Key of a sibling merchant, the platform can connect payment processors on behalf of that merchant:
 
@@ -151,7 +151,7 @@ With the Merchant API Key of a sibling merchant, the platform can connect paymen
 
 > The Platform API key cannot be used to configure connectors on behalf of Standard merchants.
 
-**5.2 Payments and Other Operations**
+### 5.2 Payments and Other Operations
 
 For payment operations (payments, refunds, captures, etc.), the allowed key depends on the merchant type.
 
@@ -198,7 +198,7 @@ All operational flows continue to use the respective Merchant API Keys. Resource
 | Payment Processing      | Merchant uses its own API key.                                         | Merchants can process payments using their API key, and the platform can process payments on behalf of **Connected** merchants using the **Platform API key**.                   |
 | Merchant Type Changes   | Not applicable.                                                        | Merchant classification is set at creation, for any changes, contact your **Admins**.                                                                                            |
 
-**Roadmap (Platform-Connected Setup)**
+### Roadmap (Platform-Connected Setup)
 
 * The current Platform-Connected setup supports Payments flows end-to-end including 3DS payments
 * Support for additional operational flows - such as Refunds and Disputes - is planned and will be added in upcoming releases to expand the set of on-behalf capabilities for Connected merchants.

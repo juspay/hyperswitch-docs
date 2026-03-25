@@ -206,19 +206,19 @@ aws iam create-policy --policy-name PaymentsExportS3Policy --policy-document '{
 
 Create a Lambda function that handles the data export logic:
 
-**Function Requirements:**
+### Function Requirements:
 - Query payment data from your Hyperswitch database for the past 7 days
 - Filter data based on merchant_id parameter received from the event
 - Generate CSV files with the same schema as mentioned in the table creation section
 - Upload the CSV files to S3 with the path format: `s3://bucket/merchant_id/v1/payments/date.csv`
 - Handle database connections, error handling, and logging
 
-**Environment Variables Needed:**
+### Environment Variables Needed:
 - Database connection details (host, name, user, password)
 - S3 bucket name
 - Any API endpoints if using Hyperswitch APIs instead of direct DB access
 
-**Deployment:**
+### Deployment:
 You can deploy this Lambda function using AWS CLI, SAM, or the AWS Console with appropriate IAM permissions for S3 and database access.
 
 ### Step 3: Set Up Scheduled Execution

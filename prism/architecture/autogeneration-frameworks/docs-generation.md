@@ -1,3 +1,7 @@
+---
+description: Explore Documentation Generation on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Documentation Generation
 
 You get API reference docs that stay current without anyone manually updating markdown files every time a field changes. Prism generates all `/docs-generated` content from the source proto definitions and a rules file that enforces consistency.
@@ -75,7 +79,7 @@ grpcurl -H "x-connector: stripe" \
   localhost:8080 types.PaymentService/Authorize
 ```
 
-Test credentials stay consistent across all 50+ connector examples. Developers copy-paste and it works.
+Test credentials stay consistent across all 300+ connectors examples. Developers copy-paste and it works.
 
 ## Keeping Docs in Sync
 

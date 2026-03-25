@@ -1,3 +1,7 @@
+---
+description: Explore Custom Events on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event

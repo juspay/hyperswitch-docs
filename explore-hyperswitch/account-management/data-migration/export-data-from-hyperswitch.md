@@ -1,4 +1,5 @@
 ---
+description: Explore Export data from Hyperswitch on Juspay Hyperswitch to understand and implement this capability
 icon: left-from-bracket
 ---
 

@@ -21,7 +21,7 @@ After receiving a dispute notification, merchants are given an opportunity to pr
 
 Each processor has their own standards or processes around how they notify about disputes and how merchants can challenge/accept them and thus it becomes cumbersome for a merchant using multiple processors to manage disputes across different processors on their own.
 
-Hyperswitch unifies all the dispute notifications from all your different processors and makes it easier for you to track, accept and as well as challenge them by uploading evidences across different processors from one place.
+Juspay Hyperswitch unifies all the dispute notifications from all your different processors and makes it easier for you to track, accept and as well as challenge them by uploading evidences across different processors from one place.
 
 ## Disputes Lifecycle on Hyperswitch
 

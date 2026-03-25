@@ -40,14 +40,14 @@ Simulate a successful test card payment with the following credentials
 | Stripe          | 4242424242424242 | 12/25 | 100 | [Click here](https://stripe.com/docs/testing#cards)                                                         |
 | Worldline       | 4012000033330026 | 12/25 | 123 | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
 
-**Dummy Connector test cards**
+### Dummy Connector test cards
 
 * Different flows are available for dummy connector transactions, determined by the card number.
 * For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
 * Dummy connectors only support payments and refunds.
 * Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
 
-**Non 3DS flows**
+### Non 3DS flows
 
 * Success
   * 4111111111111111
@@ -66,7 +66,7 @@ Simulate a successful test card payment with the following credentials
 * Stolen card
   * 4000000000009979
 
-**3DS flows**
+### 3DS flows
 
 * Success
   * 4000003800000446
@@ -79,14 +79,14 @@ In order to test payment methods like Klarna, Googlepay - follow the below instr
 
 Simulate a successful payment with the following credentials
 
-**United States**
+### United States
 
 ```
 Phone number: +1310668331
 OTP: 123456 (Random 6-digit different from 999999)
 ```
 
-**United Kingdom**
+### United Kingdom
 
 ```
 Phone number: +4408082580300
@@ -109,7 +109,7 @@ In order to test ApplePay, you will need to follow these steps written in [Apple
 
 Apple Pay provides test cards from various card companies and supported regions as well. To pay you can use TouchID on the Macbook or your iPhone. These devices should be configured in your apple account.
 
-**Unable to test Applepay successfully?**
+### Unable to test Applepay successfully?
 
 1. Applepay sandbox testing is supported only if you are located in any of these [15 countries](https://developer.apple.com/apple-pay/sandbox-testing/).
 2. Your Safari browser automatically detects your location from your System Preferences.

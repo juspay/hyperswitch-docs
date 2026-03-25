@@ -1,3 +1,7 @@
+---
+description: Set up SetupRecurring RPC on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+---
+
 # SetupRecurring RPC
 
 <!--
@@ -21,7 +25,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 
 ## Purpose
 
-**Why use SetupRecurring?**
+### Why use SetupRecurring?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 | **Installment payments** | Buy-now-pay-later setup - call `SetupRecurring` to create scheduled payment plan |
 | **Donation programs** | Monthly charity donations - call `SetupRecurring` to enable recurring contributions |
 
-**Key outcomes:**
+### Key outcomes:
 - Mandate reference created for future charges
 - Customer consent stored at processor level
 - No PCI exposure for stored payment methods

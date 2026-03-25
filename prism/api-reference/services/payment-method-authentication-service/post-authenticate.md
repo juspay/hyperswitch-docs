@@ -1,3 +1,7 @@
+---
+description: Explore PostAuthenticate RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # PostAuthenticate RPC
 
 <!--
@@ -21,7 +25,7 @@ The `PostAuthenticate` RPC validates 3D Secure authentication results with the i
 
 ## Purpose
 
-**Why post-authenticate?**
+### Why post-authenticate?
 
 | Scenario | Action |
 |----------|--------|
@@ -29,7 +33,7 @@ The `PostAuthenticate` RPC validates 3D Secure authentication results with the i
 | **Before payment** | Confirm authentication succeeded |
 | **For liability shift** | Obtain ECI/CAVV values |
 
-**Key outcomes:**
+### Key outcomes:
 - Authentication validated
 - ECI and CAVV values returned
 - Ready for payment authorization

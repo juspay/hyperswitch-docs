@@ -1,3 +1,7 @@
+---
+description: Explore Troubleshooting on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Troubleshooting
 
 ## Android

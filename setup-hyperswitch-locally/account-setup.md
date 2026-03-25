@@ -10,7 +10,7 @@ Here, you will be creating a Hyperswitch account and connecting your payment pro
 
 ## Video
 
-***
+### 
 
 {% embed url="https://www.loom.com/share/a9b2b42fb72e4691a06e6121b330ebe9?sid=839d6a7c-bd41-4cbb-ba23-d210e3de94cf" %}
 

@@ -1,4 +1,5 @@
 ---
+description: Explore Overcapture on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 icon: plus
 ---

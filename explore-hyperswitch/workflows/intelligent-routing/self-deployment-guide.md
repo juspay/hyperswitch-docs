@@ -1,4 +1,5 @@
 ---
+description: Follow this guide to implement Self-Deployment Guide on Juspay Hyperswitch for your business requirements
 icon: screwdriver-wrench
 ---
 
@@ -30,7 +31,7 @@ You can download and install Docker Desktop from the below links.
 
 #### 3. Run the Project
 
-**a. First-Time Setup**
+### a. First-Time Setup
 
 If you're setting up the environment for the first time, run:
 

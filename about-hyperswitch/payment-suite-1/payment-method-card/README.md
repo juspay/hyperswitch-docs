@@ -1,10 +1,11 @@
 ---
 icon: hand-holding-circle-dollar
+description: Implement server-to-server payment flows using Juspay Hyperswitch payment methods to separate credential capture from transaction execution for enhanced control
 ---
 
 # Payment Method (Card)
 
-Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
 ### Integration Path
@@ -20,19 +21,19 @@ The business can use the Payment Method SDK or `/payment-methods` API to first c
 
 The business can then use the `payment_method_id` in `/payments` API to perform all functionalities supported by the [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) flow.&#x20;
 
-### **Payment Method Lifecycle**
+## Payment Method Lifecycle
 
-The Payment Method flow leverages the full suite of Hyperswitch [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) capabilities while granting businesses granular control over the user journey. By utilizing Server-to-Server (S2S) APIs and unique identifiers `payment_method_id`, businesses can separate the collection of payment credentials from the actual transaction logic.
+The Payment Method flow leverages the full suite of Juspay Hyperswitch [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) capabilities while granting businesses granular control over the user journey. By utilizing Server-to-Server (S2S) APIs and unique identifiers `payment_method_id`, businesses can separate the collection of payment credentials from the actual transaction logic.
 
-#### **The Two-Step Integration Pattern**
+### The Two-Step Integration Pattern
 
 
 
-1. **Credential Capture & Vaulting**
+1. Credential Capture & Vaulting
 
 The business initiates the flow by capturing payment details (such as cards, wallets, or bank accounts) using either the Payment Method SDK or the `/payment-methods` API. This process securely vaults the payment instrument and generates a unique `payment_method_id`.
 
-2. **Transaction Execution**
+2. Transaction Execution
 
 Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
 

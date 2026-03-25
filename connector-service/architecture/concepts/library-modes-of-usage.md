@@ -1,3 +1,7 @@
+---
+description: Explore Library Modes of Usage on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Library Modes of Usage
 
 Prism fits into your architecture two ways: as an embedded library or as a standalone microservice. The choice depends on your scale, team structure, and how you want to manage payment logic.
@@ -35,7 +39,7 @@ const payment = await client.payments.authorize({
 });
 ```
 
-**Architecture:**
+### Architecture:
 
 ```
 Your App Process
@@ -50,21 +54,21 @@ Your App Process
 └── HTTP client (for connector calls)
 ```
 
-**Advantages:**
+### Advantages:
 
 - **Speed**: FFI calls are sub-millisecond. No network overhead.
 - **Simplicity**: Single deployable unit. No service mesh complexity.
 - **Type safety**: Full type checking at compile time.
 - **Debugging**: Step through payment logic in your debugger.
 
-**Your Responsibilities:**
+### Your Responsibilities:
 
 - Manage Prism version upgrades with your app releases
 - Handle library dependencies in your deployment
 - Monitor resource usage (the core runs in your process)
 - Configure TLS and connection pooling for connector calls
 
-**Best for:**
+### Best for:
 
 - Startups and small teams
 - Single-payment-processor use cases (easy to add more later)
@@ -88,7 +92,7 @@ const payment = await client.authorize({
 });
 ```
 
-**Architecture:**
+### Architecture:
 
 ```
 Your App Container          Prism Container
@@ -105,7 +109,7 @@ Your App Container          Prism Container
                             └──────────────────────────┘
 ```
 
-**Advantages:**
+### Advantages:
 
 - **Performance**: gRPC uses Protocol Buffers—binary serialization is 5-10x faster than JSON and produces 50-80% smaller payloads
 - **Isolation**: Payment logic failures don't crash your app
@@ -114,14 +118,14 @@ Your App Container          Prism Container
 - **Protocol efficiency**: HTTP/2 multiplexing handles concurrent requests on a single connection
 - **Polyglot support**: Any language with gRPC can call the service
 
-**Your Responsibilities:**
+### Your Responsibilities:
 
 - Deploy and operate the Prism container
 - Manage service discovery and load balancing
 - Monitor inter-service latency and error rates
 - Handle gRPC connection lifecycle (health checking, reconnection)
 
-**Best for:**
+### Best for:
 
 - Large organizations with platform teams
 - Multi-service architectures
@@ -185,13 +189,13 @@ No rewriting integration code. No retesting payment flows. Just swap the connect
 
 ## Choosing Your Mode
 
-**Choose Library Mode if:**
+### Choose Library Mode if:
 - You want the fastest possible payment calls
 - You're a small team managing your own infrastructure
 - You're starting with one processor and might add more
 - You prefer simplicity over separation
 
-**Choose Microservice Mode if:**
+### Choose Microservice Mode if:
 - You have a platform team managing shared services
 - You process high payment volumes (1000+ TPS)
 - You need independent scaling or deployment

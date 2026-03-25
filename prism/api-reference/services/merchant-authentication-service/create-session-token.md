@@ -1,3 +1,7 @@
+---
+description: Explore CreateSessionToken RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # CreateSessionToken RPC
 
 <!--
@@ -21,7 +25,7 @@ The `CreateSessionToken` RPC creates a session token for payment processing. Thi
 
 ## Purpose
 
-**Why use session tokens?**
+### Why use session tokens?
 
 | Scenario | Session Token Benefit |
 |----------|----------------------|
@@ -30,7 +34,7 @@ The `CreateSessionToken` RPC creates a session token for payment processing. Thi
 | **Multi-step checkout** | Track progress across pages |
 | **Security** | Bind payment to specific session |
 
-**Key outcomes:**
+### Key outcomes:
 - Session-scoped payment context
 - Secure state management
 - Cross-request continuity

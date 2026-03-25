@@ -1,3 +1,7 @@
+---
+description: Explore Event Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Event Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Event Service processes webhook notifications from payment processors. Instead of polling APIs for status updates, this service receives real-time events when payment states change, enabling immediate response to successful payments, failed transactions, refunds, and disputes.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **Real-time order fulfillment** - Trigger shipping when payment succeeds
 - **Failed payment handling** - Retry or notify customers immediately
 - **Refund tracking** - Update order status when refunds complete
@@ -62,7 +66,7 @@ sequenceDiagram
     end
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Receive webhook** - Payment processors send webhook notifications to your configured endpoint when events occur (payment success, failure, refund, dispute, etc.).
 
@@ -70,7 +74,7 @@ sequenceDiagram
 
 3. **Process event** - Based on the returned `event_type` and `event_response`, take appropriate action in your system. The response includes the full payment/refund/dispute details so you can update your database and trigger business logic.
 
-**Common Event Types:**
+### Common Event Types:
 - `PAYMENT_INTENT_SUCCESS` - Payment completed successfully
 - `PAYMENT_INTENT_PAYMENT_FAILED` - Payment attempt failed
 - `CHARGE_REFUNDED` - Refund was processed
@@ -110,7 +114,7 @@ sequenceDiagram
     end
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Receive webhook** - Your endpoint receives the webhook POST request from the payment processor.
 
@@ -120,7 +124,7 @@ sequenceDiagram
 
 4. **Process asynchronously** - Workers consume from the queue and process events. This decouples webhook receipt from business logic execution.
 
-**Retry Handling:**
+### Retry Handling:
 - Return 2xx status to stop retries
 - Return 5xx status to trigger processor retry
 - Processors typically retry 3-5 times with exponential backoff
@@ -129,13 +133,13 @@ sequenceDiagram
 
 ## Security Considerations
 
-**Webhook Verification:**
+### Webhook Verification:
 The Event Service automatically verifies webhook signatures using the connector's webhook secrets. This ensures events are genuinely from the payment processor and haven't been tampered with.
 
-**Idempotency:**
+### Idempotency:
 Payment processors may send the same event multiple times (retries). Use the `merchant_event_id` to deduplicate events in your system.
 
-**Timeout Handling:**
+### Timeout Handling:
 Process webhooks quickly and return 200 OK. If processing takes longer than 10-30 seconds, some processors will retry. Use a queue for heavy processing.
 
 ## Next Steps

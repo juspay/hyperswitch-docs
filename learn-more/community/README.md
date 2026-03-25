@@ -6,7 +6,7 @@ description: Join the Hyperswitch Community
 
 ## Hyperswitch Community
 
-Hyperswitch is more than an open-source payments orchestration engine. It’s a global community of developers, product people, and payments experts who collaborate to make payments transparent, reliable, and developer-first. Whether you want to contribute to the codebase, get help with integration, or simply exchange ideas, our community spaces are open and welcoming.
+Juspay Hyperswitch is more than an open-source payments orchestration engine. It’s a global community of developers, product people, and payments experts who collaborate to make payments transparent, reliable, and developer-first. Whether you want to contribute to the codebase, get help with integration, or simply exchange ideas, our community spaces are open and welcoming.
 
 ### Community Touchpoints
 
@@ -20,7 +20,7 @@ Drop into our weekly [Office Hours](https://meet.google.com/grq-pxuh-zvr) to con
 
 Bring your questions by filling out this [form](https://forms.gle/dtb2aiaS4bdYsHZK8), or just listen in (we have tons of dev who do this), you’ll always walk away learning something new.
 
-***
+### 
 
 #### 🔄 Community Sync
 
@@ -33,7 +33,7 @@ Once a month, the whole [community](https://www.linkedin.com/company/90383802/ad
 
 This is our town hall, so it's open, collaborative, and a chance to see Hyperswitch in action across the world.
 
-***
+### 
 
 #### 🐙 GitHub
 
@@ -44,7 +44,7 @@ Our [GitHub repo](https://github.com/juspay/hyperswitch?utm_source=chatgpt.com) 
 * Open discussions and PRs to shape the roadmap
 * Celebrate with us as the project continues to grow
 
-***
+### 
 
 #### 💬 Slack
 
@@ -57,7 +57,7 @@ For real-time conversations, join the [Hyperswitch Slack](https://join.slack.com
 
 Slack is our most active space! Please drop in and say hi!
 
-***
+### 
 
 ### 🚀 Why Join?
 
@@ -66,7 +66,7 @@ Slack is our most active space! Please drop in and say hi!
 * Contribute to one of the fastest-growing open-source payment projects (30k + stars & growing)
 * Build your expertise in Rust, orchestration, and open-source payments
 
-***
+### 
 
 👉 **Start your journey today:**
 

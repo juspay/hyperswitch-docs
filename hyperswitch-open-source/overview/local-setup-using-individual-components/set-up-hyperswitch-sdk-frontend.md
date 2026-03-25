@@ -1,4 +1,5 @@
 ---
+description: Explore SDK (Frontend) on Juspay Hyperswitch to understand and implement this capability
 icon: desktop
 ---
 

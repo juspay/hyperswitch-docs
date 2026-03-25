@@ -1,4 +1,5 @@
 ---
+description: Explore Completing the SAQ on Juspay Hyperswitch to understand and implement this capability
 icon: clipboard-question
 ---
 
@@ -22,7 +23,7 @@ The [Official SAQ D](https://listings.pcisecuritystandards.org/documents/SAQ_D_v
 For further assistance, please contact us at hyperswitch@juspay.in
 {% endhint %}
 
-**Final Steps**
+### Final Steps
 
 1. **Network Scan**: Select a PCI-approved scanning vendor from the official [list](https://listings.pcisecuritystandards.org/assessors_and_solutions/approved_scanning_vendors) and obtain a network scan report. This process, typically automated by Approved Scanning Vendors (ASVs), should be conducted quarterly and usually completes within a few hours.
 2. **Complete SAQ D**: Fill out the SAQ D and retain a copy for your records.

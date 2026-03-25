@@ -1,4 +1,5 @@
 ---
+description: Explore Mobile on Juspay Hyperswitch to understand and implement this capability
 icon: mobile
 ---
 

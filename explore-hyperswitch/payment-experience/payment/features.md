@@ -1,4 +1,5 @@
 ---
+description: Explore Card Scanning on Juspay Hyperswitch to understand and implement this capability
 icon: barcode-read
 ---
 

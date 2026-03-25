@@ -1,3 +1,7 @@
+---
+description: Explore Error Mapping on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Error Mapping
 
 Payment processors speak different error languages. 

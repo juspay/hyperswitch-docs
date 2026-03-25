@@ -1,3 +1,7 @@
+---
+description: Explore Reverse RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Reverse RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Reverse` RPC cancels a captured payment before the funds have been settled 
 
 ## Purpose
 
-**Why use Reverse instead of Refund?**
+### Why use Reverse instead of Refund?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Reverse` RPC cancels a captured payment before the funds have been settled 
 | **Fraud detected** | Fraudulent transaction caught post-capture - call `Reverse` to block settlement |
 | **Technical glitch** | System issue caused erroneous capture - call `Reverse` to prevent fund transfer |
 
-**Key outcomes:**
+### Key outcomes:
 - Funds recovered before settlement (typically same-day)
 - Faster than refunds (no 5-10 day wait)
 - Lower or no processing fees compared to refunds

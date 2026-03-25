@@ -1,3 +1,7 @@
+---
+description: Explore Capture RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Capture RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Capture` RPC finalizes an authorized payment by transferring the reserved f
 
 ## Purpose
 
-**Why use capture instead of immediate charge?**
+### Why use capture instead of immediate charge?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Capture` RPC finalizes an authorized payment by transferring the reserved f
 | **Partial shipments** | Call `Capture` for each shipped item with partial amounts, keep remaining authorization for future shipments |
 | **Tip adjustments** | Authorize base amount, capture higher amount including tip for hospitality transactions |
 
-**Key outcomes:**
+### Key outcomes:
 - Funds transferred to merchant account (typically 1-2 business days)
 - Customer sees final charge on their statement
 - Transaction moves to CAPTURED status for settlement

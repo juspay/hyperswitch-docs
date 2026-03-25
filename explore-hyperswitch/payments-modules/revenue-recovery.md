@@ -15,9 +15,9 @@ For subscription-based businesses, involuntary churn from failed recurring payme
 
 ## Benefits for SaaS Businesses
 
-1. **Reduced Passive Churn**: Intelligent retries ensure payments succeed on subsequent attempts, decreasing subscription cancellations.
-2. **Seamless Integration**: Easily integrate with existing billing platforms or custom systems without reengineering the payment architecture.
-3. **Data-Driven Recovery**: Leverage insights from transaction parameters like decline codes and issuer behaviors to tailor retry strategies.
+1. Reduced Passive Churn: Intelligent retries ensure payments succeed on subsequent attempts, decreasing subscription cancellations.
+2. Seamless Integration: Easily integrate with existing billing platforms or custom systems without reengineering the payment architecture.
+3. Data-Driven Recovery: Leverage insights from transaction parameters like decline codes and issuer behaviors to tailor retry strategies.
 
 ## How Does Revenue Recovery Work?
 

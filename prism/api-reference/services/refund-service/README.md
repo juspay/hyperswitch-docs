@@ -1,3 +1,7 @@
+---
+description: Explore Refund Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Refund Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Refund Service helps you track and synchronize refund statuses across payment processors. While the Payment Service handles initiating refunds, this service provides dedicated operations for retrieving refund information and handling asynchronous refund events, ensuring accurate customer communication and financial reconciliation.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **Refund status tracking** - Check the current status of pending refunds to inform customers
 - **Financial reconciliation** - Synchronize refund states with your internal accounting systems
 - **Webhook processing** - Handle asynchronous refund notifications from payment processors
@@ -61,7 +65,7 @@ sequenceDiagram
     Note over App: Update customer
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Initiate refund** - First, call the Payment Service's `Refund` RPC to initiate the refund. The payment processor returns a pending status and a `connector_refund_id` (e.g., Stripe's `re_xxx`).
 
@@ -69,7 +73,7 @@ sequenceDiagram
 
 3. **Poll for updates** - For refunds that start as PENDING, periodically call `Get` to check for status updates. Refunds typically transition from PENDING to SUCCEEDED (or FAILED) within minutes to hours depending on the processor.
 
-**Status Values:**
+### Status Values:
 - `PENDING` - Refund is being processed by the payment processor
 - `SUCCEEDED` - Refund has been completed and funds are being returned to the customer
 - `FAILED` - Refund could not be processed (insufficient funds, transaction too old, etc.)
@@ -96,7 +100,7 @@ sequenceDiagram
     Note over App: Update internal records
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Receive webhook** - When a refund status changes, the payment processor sends a webhook notification to your application with event details.
 
@@ -106,7 +110,7 @@ sequenceDiagram
 
 4. **Update records** - Use the returned unified event to update your internal refund records and notify the customer of status changes.
 
-**Benefits:**
+### Benefits:
 - Real-time refund status updates without polling
 - Reduced API calls to payment processors
 - Consistent event handling across different connectors
@@ -136,7 +140,7 @@ sequenceDiagram
     Note over App: Unified reconciliation report
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Retrieve Stripe refunds** - Call the `Get` RPC with Stripe connector headers to retrieve refund statuses from Stripe. The response is in the unified format regardless of processor-specific fields.
 
@@ -144,7 +148,7 @@ sequenceDiagram
 
 3. **Unified reporting** - Combine the unified responses from both processors into a single reconciliation report. The consistent response format simplifies multi-processor financial tracking.
 
-**Benefits:**
+### Benefits:
 - Single API for all refund status queries
 - Consistent data format across processors
 - Simplified financial reconciliation

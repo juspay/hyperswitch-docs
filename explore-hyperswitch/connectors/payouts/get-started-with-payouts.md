@@ -1,4 +1,5 @@
 ---
+description: Explore Getting Started with Payouts on Juspay Hyperswitch to understand and implement this capability
 icon: flag-checkered
 ---
 

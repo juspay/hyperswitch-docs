@@ -9,7 +9,7 @@ icon: user-police-tie
 The complexity around PCI compliance is often exaggerated, creating closed systems and walled gardens. This section aims to simplify the process of obtaining PCI compliance and includes a project tracker, documentation templates & automation scripts
 {% endhint %}
 
-***
+### 
 
 ## PCI Compliance - Why and What?
 

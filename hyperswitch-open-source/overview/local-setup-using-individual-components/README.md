@@ -1,4 +1,5 @@
 ---
+description: Set up Development Environment Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
 icon: diamonds-4
 ---
 
@@ -14,7 +15,7 @@ These setup guides are meant for development. If you want a quick trial of Hyper
 
 ### **Hyperswitch Components**
 
-Hyperswitch is built as a modular system, comprising three key components. Each component is designed for specific roles in the payment stack and has detailed development environment setup guides, linked above and also available in their individual repositories.
+Juspay Hyperswitch is built as a modular system, comprising three key components. Each component is designed for specific roles in the payment stack and has detailed development environment setup guides, linked above and also available in their individual repositories.
 
 ### [**Hyperswitch App Server**](https://github.com/juspay/hyperswitch):&#x20;
 

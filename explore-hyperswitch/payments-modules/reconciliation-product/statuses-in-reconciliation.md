@@ -9,7 +9,7 @@ description: >-
 
 In reconciliation, **status** is the fastest way to understand what's happening to your data — from file upload to posted ledger transactions.\ This guide explains statuses at four layers of the workflow: **Ingestion**, **Transformation**, **Staging Entries**, and **Transactions (Ledger)**
 
-***
+### 
 
 ## Ingestion Statuses (File Level)
 

@@ -8,7 +8,7 @@ description: Use our CDK script to deploy our production-ready K8s setup inside 
 In this chapter, you will deploy Hyperswitch server on AWS cloud. You can either try out a quick standalone deployment or a more scalable production ready setup
 {% endhint %}
 
-***
+### 
 
 ## Video
 

@@ -1,4 +1,5 @@
 ---
+description: Explore Netcetera on Juspay Hyperswitch to understand and implement this capability
 icon: link-simple
 ---
 
@@ -51,7 +52,7 @@ Please note the above step is not required for Production environment.
 
 ### Providing the root certificate to HyperSwitch SDK
 
-**Android**
+### Android
 
 Put the obtained certificate in assets directory in your android project.
 

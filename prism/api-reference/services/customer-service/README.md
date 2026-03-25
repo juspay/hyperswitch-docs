@@ -1,3 +1,7 @@
+---
+description: Explore Customer Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Customer Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Customer Service enables you to create and manage customer profiles at payment processors. Storing customer details with connectors streamlines future transactions, reduces checkout friction, and improves authorization rates by maintaining a consistent identity across multiple payments.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **E-commerce accounts** - Save customer profiles for faster checkout on return visits
 - **SaaS platforms** - Associate customers with subscription payments and billing histories
 - **Recurring billing** - Link customers to stored payment methods for automated billing
@@ -60,7 +64,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id (AUTHORIZED)
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Create customer** - Send customer details (name, email, phone) to the Customer Service. The connector creates a profile at the payment processor and returns a `connector_customer_id` (e.g., Stripe's `cus_xxx`). Store this ID in your user database for future reference.
 
@@ -68,7 +72,7 @@ sequenceDiagram
 
 3. **Future transactions** - For subsequent payments, reuse the same `connector_customer_id`. The payment processor recognizes the returning customer, which improves authorization rates and enables features like saved payment methods.
 
-**Benefits:**
+### Benefits:
 - Streamlined checkout for returning customers
 - Better authorization rates through customer history
 - Simplified payment method management
@@ -108,7 +112,7 @@ sequenceDiagram
     Note over App: Subsequent billing via RecurringPaymentService
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Create customer** - During signup, send customer details to Customer Service. The payment processor creates a customer profile and returns a `connector_customer_id`. This links all future transactions to this customer.
 

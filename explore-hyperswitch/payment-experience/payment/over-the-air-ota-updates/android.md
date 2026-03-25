@@ -1,4 +1,5 @@
 ---
+description: Explore Android on Juspay Hyperswitch to understand and implement this capability
 icon: android
 ---
 

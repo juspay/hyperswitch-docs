@@ -1,3 +1,7 @@
+---
+description: Explore Tokenize RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Tokenize RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 
 ## Purpose
 
-**Why use Tokenize?**
+### Why use Tokenize?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 | **Reduced PCI scope** | Tokenization shifts PCI compliance burden to the payment processor |
 | **Improved authorization rates** | Tokenized payments often have higher approval rates due to stored credential protocols |
 
-**Key outcomes:**
+### Key outcomes:
 - Secure storage of payment credentials at the processor
 - Token reference that can be used for future payments
 - Reduced PCI compliance requirements for your systems

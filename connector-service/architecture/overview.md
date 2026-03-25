@@ -1,3 +1,7 @@
+---
+description: Explore Architecture Overview on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Architecture Overview
 
 ##
@@ -62,7 +66,7 @@ The architecture prioritizes four important pillars
 │                   UNIFIED CONNECTOR LIBRARY - CORE                         │
 │  ┌────────────────────────────────────┐    ┌────────────────────────────┐  │
 │  │           gRPC Server              │    │    Connector Adapters      │  │
-│  │                                    │    │    (100+ connectors)       │  │
+│  │                                    │    │    (300+ connectors)       │  │
 │  │  ┌─────────┐ ┌─────────┐           │    │                            │  │
 │  │  │ Payment │ │ Refund  │           │───▶│  ┌─────────┐  ┌─────────┐  │  │
 │  │  │ Service │ │ Service │           │    │  │ Stripe  │  │  Adyen  │  │  │
@@ -125,7 +129,7 @@ sequenceDiagram
 
 Prism transforms unified requests to connector-specific formats.
 
-**Authorization Mapping:**
+### Authorization Mapping:
 
 | Unified Field                     | Stripe                         | Adyen                   |
 | --------------------------------- | ------------------------------ | ----------------------- |

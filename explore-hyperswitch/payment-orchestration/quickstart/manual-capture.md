@@ -26,7 +26,7 @@ But in some cases, merchants would like to place a hold on the customer's funds 
 
 The 'capture\_method' field determines the type of capture for a particular payment and it defaults to 'automatic' if not passed. So, to do manual capture, set "`capture_method" = "manual"` when creating a payment from your server
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -59,7 +59,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 Confirm the payment after collecting the payment\_method details from your customer and informing them that the funds in their account would be blocked and charged later once the goods and services are delivered. Unified checkout handles this for automatically. On successful authorization, the payment would transition to `'requires_capture'` status.
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/confirm' \
@@ -85,7 +85,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/c
 
 After delivering the goods and services, capture the payment by passing the `payment_id` from above step to `payments/capture` API endpoint. On successful capture, the payment would transition from `'requires_capture'` to `'succeeded'` status.
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQD/capture' \

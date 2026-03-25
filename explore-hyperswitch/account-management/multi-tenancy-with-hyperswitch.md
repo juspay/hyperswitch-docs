@@ -1,4 +1,5 @@
 ---
+description: Explore Multi-Tenancy on Juspay Hyperswitch to understand and implement this capability
 icon: cubes-stacked
 ---
 
@@ -8,7 +9,7 @@ icon: cubes-stacked
 
 Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
 
-Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
+Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Juspay Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FFEv2dQi7YAjfPthCFfXl%2FScreenshot%202024-10-11%20at%202.28.06%E2%80%AFAM.png?alt=media&#x26;token=a4cc712a-665b-492c-ad5c-d105446d0b23" alt="" width="563"><figcaption></figcaption></figure>
 

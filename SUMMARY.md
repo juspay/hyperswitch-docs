@@ -1,3 +1,7 @@
+---
+description: Explore Table of contents on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Table of contents
 
 ## About Hyperswitch

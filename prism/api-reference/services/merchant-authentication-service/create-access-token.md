@@ -1,3 +1,7 @@
+---
+description: Explore CreateAccessToken RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # CreateAccessToken RPC
 
 <!--
@@ -21,7 +25,7 @@ The `CreateAccessToken` RPC generates a short-lived authentication token for con
 
 ## Purpose
 
-**Why use short-lived access tokens?**
+### Why use short-lived access tokens?
 
 | Scenario | Risk Without Tokens | Solution |
 |----------|---------------------|----------|
@@ -29,7 +33,7 @@ The `CreateAccessToken` RPC generates a short-lived authentication token for con
 | **Mobile apps** | API keys in app bundle | Token generated per session |
 | **Third-party integrations** | Full API access granted | Scoped token with expiration |
 
-**Key outcomes:**
+### Key outcomes:
 - Temporary access token (1 hour typical)
 - Limited scope permissions
 - Safe for client-side use

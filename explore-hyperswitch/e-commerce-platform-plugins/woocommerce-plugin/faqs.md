@@ -19,7 +19,7 @@ No. Hyperswitch Woocommerce plugin does not share customer data across other plu
 If for any reason you happen to move out of Hyperswitch, you will be facilitated with the process of migrating the cards to any PCI compliant entity as you might wish.\
 
 
-**Who built and maintains the plugin?**
+### Who built and maintains the plugin?
 
 The plugin is built and maintained by Juspay Technologies - a leading payment orchestrator processing 50 Million transactions per day and backed by funding from Accel Partners and Softbank.\
 
@@ -34,7 +34,7 @@ The plugin ensures that the payment sheet automatically blends into the websiteâ
 Yes, this plugin can be used along with other payment plugins. However, we would advise **not** to use other payment plugins for better customer experience.\
 
 
-**How will I receive chargeback notifications?**
+### How will I receive chargeback notifications?
 
 This feature is currently being developed by Hyperswitch where any chargeback/refund notifications would be sent via Webhooks to your Wordpress server, which would then update the order status accordingly. Provided that Webhooks are enabled and Payment Response Hash Key is correctly configured, you would be able to receive these notifications realtime.\
 

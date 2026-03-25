@@ -9,7 +9,7 @@ icon: desktop
 
 Juspay Hyperswitch is an open-source payment orchestration platform that helps SaaS platforms scale multi-tenant payment infrastructure. It provides connector abstraction, hierarchical tenant isolation, and unified operations. You can onboard accounts programmatically, support BYOP (Bring Your Own Processor), and maintain unified observability across all connected payment providers.
 
-***
+### 
 
 ### Why do SaaS platforms struggle with multi-tenant payments?
 
@@ -17,7 +17,7 @@ SaaS platforms face a unique challenge: they must act as the central nervous sys
 
 The sections below outline the architectural patterns required to scale a multi-tenant payment infrastructure.
 
-***
+### 
 
 ### How can SaaS platforms support high-value accounts that demand their own processors?
 
@@ -32,7 +32,7 @@ Juspay Hyperswitch acts as a Connector Abstraction Layer. You integrate our chec
 | Deployment Model      | Self-hosted (run in your infrastructure) or SaaS (managed by Juspay) | [Deployment Options](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) |
 | Integration Model     | SDK (embedded checkout UI) or API (backend-only integration)         | [Platform Capabilities](https://docs.hyperswitch.io/explore-hyperswitch)                                         |
 
-***
+### 
 
 ### How can SaaS platforms ensure data isolation between accounts?
 
@@ -52,7 +52,7 @@ Additional capabilities:
 * **Granular Control**: Isolate API keys and routing rules at the Account ID level.
 * **Team Access**: Map your control center users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
 
-***
+### 
 
 ### How can I onboard accounts programmatically?
 
@@ -88,7 +88,7 @@ curl --request POST \
 
 > **Try it in sandbox:** Use `https://sandbox.hyperswitch.io` for testing. See our [Sandbox Guide](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) for details.
 
-***
+### 
 
 ### How can SaaS platforms standardise complex payment flows across processors?
 
@@ -101,7 +101,7 @@ Juspay Hyperswitch normalises complex flows into a standard state machine. Your 
 | Compliance Ready  | Automatically handles 3D Secure (3DS) challenges across all processors | [3D Secure (3DS)](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/payment-features/3d-secure-3ds) |
 | Unified Lifecycle | Perform Auth, Capture, and Void operations using a single API syntax   | [Connector Payment Flows](https://docs.hyperswitch.io/learn-more/hyperswitch-architecture/connector-payment-flows)  |
 
-***
+### 
 
 ### How can I help accounts avoid vendor lock-in with their saved cards?
 
@@ -117,7 +117,7 @@ Use the [Payment Vault](https://docs.hyperswitch.io/explore-hyperswitch/payment-
 
 **Reference**: [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)
 
-***
+### 
 
 ### How can SaaS platforms simplify support workflows across multiple providers?
 
@@ -130,7 +130,7 @@ Juspay Hyperswitch translates the chaos of vendor responses into a clean, standa
 | Unified Errors         | Maps thousands of PSP error codes into a Standardised Error Reference (e.g., `card_expired`) | [Error Codes](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/error-codes)               |
 | Single Source of Truth | View transaction logs, refunds, and disputes across all accounts and processors in one view  | [Analytics and Operations](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations) |
 
-***
+### 
 
 ### How can SaaS platforms build unified operational interfaces for refunds, disputes, and webhooks?
 
@@ -144,7 +144,7 @@ Juspay Hyperswitch standardises the chaotic "Day 2" operations into a clean, uni
 | Dispute Management   | Normalises the Disputes Lifecycle so you can surface evidence submission flows in your SaaS control center          | [Disputes](https://docs.hyperswitch.io/explore-hyperswitch/account-management/disputes)               |
 | Stateless Operations | Trigger refunds or voids using Relay APIs, even if the original payment wasn't processed through Juspay Hyperswitch | [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create)                        |
 
-***
+### 
 
 ### How can SaaS platforms maintain payment uptime during processor outages?
 
@@ -158,7 +158,7 @@ Juspay Hyperswitch treats payments as "Critical Infrastructure" and provides dee
 | Open Telemetry   | Emits standard OTel Traces for every request; pipe into Datadog, Prometheus, or Grafana                                  | [Monitoring](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) |
 | System Status    | Access the System Health API to build internal status pages for your support team                                        | [System Health API](https://live.hyperswitch.io/api/health)                                   |
 
-***
+### 
 
 ### What's next?
 

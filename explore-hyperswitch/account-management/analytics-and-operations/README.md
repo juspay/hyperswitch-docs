@@ -57,7 +57,7 @@ _Please note that there could be payments which could be authorized but not capt
 
 The total amount for which payments were created divided by the total number of payments created.
 
-**Successful payments**
+### Successful payments
 
 Total number of payments with status as succeeded.
 
@@ -70,7 +70,7 @@ There are two aspects which you need to be aware of:
 * Once you start using the Hyperswitch, the role of the payment processor is involved only in the last leg of the payment processing (i.e) after the user enters payment information
 * Most payment processors report only the authorization rate excluding user dropouts on the checkout page and failed 3DS verifications.
 
-Hyperswitch measures conversion rate including user dropouts, so that you get full visibility on your user dropouts and take appropriate measures to reduce user dropouts.
+Juspay Hyperswitch measures conversion rate including user dropouts, so that you get full visibility on your user dropouts and take appropriate measures to reduce user dropouts.
 
 Please refer here for detailed understanding how popular payment processors track payment lifecycle and measure conversion rates.
 

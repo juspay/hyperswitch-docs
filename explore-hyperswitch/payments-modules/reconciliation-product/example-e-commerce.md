@@ -57,13 +57,13 @@ The reconciliation engine follows a structured process to automatically match an
 
 First, we establish the accounts that represent the source and destination of funds in your ledger. This ensures that every transaction is categorized correctly from the start.
 
-**Account Structure:**
+### Account Structure:
 
 * **Orders Account (Credit type)**: Tracks customer order values and is the source of funds for the entire flow
 * **PSP Settlement Account (Debit type)**: An asset account that tracks the funds being held by your payment processor before they are deposited
 * **Bank Account (Debit type)**: An asset account that tracks the actual cash received in your bank
 
-**Configuration:**
+### Configuration:
 
 * `Orders Account`: `account_type: Credit, currency: USD`
 * `PSP Settlement Account`: `account_type: Debit, currency: USD`

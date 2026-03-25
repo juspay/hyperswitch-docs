@@ -1,12 +1,16 @@
+---
+description: Explore Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID) on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
 
 In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
 
-**Mechanism:**
+### Mechanism:
 
 1. Frontend sends apple pay payment token to Hyperswitch.
-2. Hyperswitch unwraps the token using your private key stored in its secure vault.
-3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
+2. Juspay Hyperswitch unwraps the token using your private key stored in its secure vault.
+3. Juspay Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
 
 ### **Configuration :**&#x20;
 

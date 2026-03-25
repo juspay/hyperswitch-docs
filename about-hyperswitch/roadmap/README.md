@@ -13,19 +13,19 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ### Recap of Q4 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-**Connectors**
+### Connectors
 
 * **New PSP integrations** – Gigadat and Loonio for Interac e Transfer; Tesouro for Cards, Apple Pay, and Google Pay; Paysafe for Cards, Apple Pay, Skrill, Interac e Transfer, and Paysafecards; Finix for Cards, Apple Pay, and Google Pay
 * **Integration depth** – Expanded wallet and alternative rail coverage across new connectors, adding broader support for Apple Pay and Google Pay, plus regional payment rails like Interac e Transfer, and additional tender types like Skrill and Paysafecards through Paysafe
 
-**Core orchestration**
+### Core orchestration
 
 * **Platform Merchants support:** Support for Platform merchant use-cases to share customers and payment methods across their managed-merchants
 * **Split Payments:** Support for split payments with gift cards to enable combined payments within a single transaction
 * **Error code enhancements** – Issuer error codes added to the Gateway Status Mapping table to improve response mapping and retry decisions; unified error codes expanded to generate clearer, consistent user facing error messages across channels
 * **Real time payment method eligibility** – Merchant level risk based eligibility checkpoints added before payment confirmation to reduce fraud exposure and improve authorization performance
 
-**Vault**
+### Vault
 
 * **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
 * **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
@@ -57,11 +57,11 @@ Last year, Hyperswitch was made more modular to provide businesses with focused 
 
 #### Core Orchestration
 
-**Platform Managed Payments**
+### Platform Managed Payments
 
 We plan to introduce platform capabilities that allow platforms to trigger and manage key payment operations on behalf of their managed merchants. This will include Payments, Refunds, Webhooks, and Disputes.
 
-**Recurring Payments Expansion**
+### Recurring Payments Expansion
 
 We plan to expand recurring payment capabilities across cards and bank-based methods, and improve lifecycle handling for recurring flows. This will include support for storing payment credentials and enabling recurring payments across ACH and other APMs, enabling PSP triggered recurring payments with lifecycle handling and reconciliation support, and supporting recurring payment flows using only card PAN and expiry without requiring Network Tokenization (NTI).
 
@@ -69,21 +69,21 @@ We plan to expand recurring payment capabilities across cards and bank-based met
 
 We plan to enhance retry tooling across APMs and merchant-initiated flows to help improve approval rates and reduce avoidable drop-offs. This will include automatic retries support for Google Pay and other APMs, support for manual retries in MIT flows, and support for merchants to configure retry rules for different error codes.
 
-**Relay for Post Payment Actions**
+### Relay for Post Payment Actions
 
 We plan to enable Hyperswitch to act as a relay to orchestrate incremental and post payment actions on the original order across PSPs. This will support workflows such as incremental authorization, capture, refund, void, and churn recovery.
 
-**Instalments**
+### Instalments
 
 We plan to support installment-based payments across supported payment methods, enabling merchants to offer flexible payment options without changing their orchestration setup.
 
 #### Connectors
 
-**New Integrations**
+### New Integrations
 
 We plan to expand connector coverage with new PSP integrations including Banco Do Brasil, Cielo, Caixa, Bradesco, Bancoob, Worldpay Access Modular, and HyperPG.
 
-**Enhancing Existing Integrations**
+### Enhancing Existing Integrations
 
 We also plan to enhance existing integrations to expand payment method coverage and improve reliability. This will include Payload (ACH), Itau Bank (Pix, Boleto), Stripe Connect (Apple Pay, Google Pay), Dwolla (ACH recurring), Worldpay WPG (3DS cards with fraud ID), Xendit (QRIS), and Deutsche Bank.
 
@@ -91,7 +91,7 @@ We also plan to enhance existing integrations to expand payment method coverage 
 
 ### Vault
 
-**Multi Vault Support**
+### Multi Vault Support
 
 We plan to expand Vault capabilities to enable seamless use of both Juspay-hosted and external vaults across self-hosted and SaaS Hyperswitch deployments.
 
@@ -99,15 +99,15 @@ We plan to expand Vault capabilities to enable seamless use of both Juspay-hoste
 
 We plan to enable alternate identifier-based flows for network tokenization in guest checkout scenarios, allowing tokenization without requiring full customer creation.
 
-**Extended Proxy API Payload Support**
+### Extended Proxy API Payload Support
 
 We plan to extend Proxy APIs to support non-JSON request formats such as application/x-www-form-urlencoded, XML, and other upstream formats, to improve compatibility with legacy gateway patterns.
 
-**Custom Token Formats**
+### Custom Token Formats
 
 We plan to support configurable and merchant-defined token formats across Vault and payment flows, giving merchants more control over token design and interoperability.
 
-**Vault Observability and Auditability**
+### Vault Observability and Auditability
 
 We plan to add analytics, audit trails, and observability capabilities for the Vault service, improving traceability, governance, and operational debugging.
 
@@ -115,31 +115,31 @@ We plan to add analytics, audit trails, and observability capabilities for the V
 
 ### Authentication and Checkout Experience
 
-**SDK Accessibility Enhancements**
+### SDK Accessibility Enhancements
 
 We are enhancing the checkout SDK to ensure accessibility compliance and inclusivity for all users. Updates will include improved keyboard navigation, screen reader support, and visual contrast adjustments aligned with WCAG accessibility standards.
 
-**Framework Compatibility Upgrades**
+### Framework Compatibility Upgrades
 
 We plan to add compatibility upgrades across Web and Native experiences. This will include support for React 19 for Web and support for React Native's new architecture for Native.
 
-**Swift Package Manager Migration (iOS)**
+### Swift Package Manager Migration (iOS)
 
 We plan to migrate iOS integration to Swift Package Manager to consolidate all frameworks into a unified and modular package with clear dependency boundaries. This will replace CocoaPods for simpler merchant integration and cleaner versioning.
 
-**Optional OTA Support for SDKs**
+### Optional OTA Support for SDKs
 
 We plan to introduce optional OTA (Airborne) support for Hyperswitch SDKs. Merchants will be able to opt into Hyperswitch-managed updates, approval-gated releases, self-hosted OTA, or fully disable OTA based on governance, compliance, and risk requirements.
 
-**Apple Pay Beyond Safari**
+### Apple Pay Beyond Safari
 
 We plan to enable Apple Pay support across non-Safari browsers where supported, improving reach and checkout conversion without changing existing integrations.
 
-**Subscription Based SDK Events**
+### Subscription Based SDK Events
 
 We plan to enable subscription-based events across SDK flows, allowing merchants to subscribe to granular lifecycle signals for real time decisioning, observability, and tighter integration with merchant systems. Examples include BIN, field validation outcomes, and button clicks.
 
-**Custom In SDK Messaging**
+### Custom In SDK Messaging
 
 We plan to support custom in SDK messaging so merchants can configure and display contextual messages (info, warnings, errors, compliance text) within the Hyperswitch SDK UI, with an optional fallback to default SDK messaging for a consistent user experience.
 
@@ -147,11 +147,11 @@ We plan to support custom in SDK messaging so merchants can configure and displa
 
 ### Revenue Recovery
 
-**Advanced Retry Logic for Hard Declines**
+### Advanced Retry Logic for Hard Declines
 
 We plan to introduce smarter recovery for hard declines, where the system identifies transactions that were falsely marked as hard declines and retries them intelligently.
 
-**Recovery Analytics in the Dashboard**
+### Recovery Analytics in the Dashboard
 
 We plan to add analytics that provide merchants with real-time visibility into recovery performance through the dashboard.
 
@@ -163,7 +163,7 @@ We plan to support using self-hosted orchestration with Juspay-hosted revenue re
 
 ### Reconciliation
 
-**Tolerance & Aging**
+### Tolerance & Aging
 
 We are enhancing reconciliation with **Tolerance Rules** and **Aging** to reduce manual effort and improve operational visibility. Merchants can define variance thresholds for automatic reconciliation, with any residual differences routed to a dedicated tolerance account for tracking and auditability.
 
@@ -177,20 +177,20 @@ Aging provides visibility into unmatched transactions and enables configurable t
 
 We plan to expose real-time technical metrics and system health insights for platforms, enabling faster self-diagnosis and reducing dependency on support.
 
-**Contextual Alerts & Configurable Automation**
+### Contextual Alerts & Configurable Automation
 
 We plan to add a configurable, multi-merchant alerting system to detect PSP downtimes, error spikes, and emerging failure patterns.
 
-**Embeddable Components**
+### Embeddable Components
 
 We plan to introduce widgets for payment configuration and operations that can be integrated directly into platform dashboards. This will enable platforms to manage payments, connector integrations, and refunds within their own dashboard experience.
 
-**Theme Management UI**
+### Theme Management UI
 
 We are building a self-serve Theme Management UI that allows merchants to configure and manage dashboard and email branding across **Organization, Merchant, and Profile** levels. Merchants can customize brand colors, sidebar styles, buttons, logos, favicons, and email branding, with a **live preview** to instantly visualize changes before applying them.
 
 Themes follow a clear precedence model (**Profile → Merchant → Organization**), enabling flexible overrides without duplication. Organizations can define a base theme, merchants can override it for distinct brands, and profiles can further customize when needed—ensuring consistent yet scalable branding across complex setup<br>
 
-**Want to contribute to the roadmap?**
+### Want to contribute to the roadmap?
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

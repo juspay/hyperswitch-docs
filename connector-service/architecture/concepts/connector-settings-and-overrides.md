@@ -1,3 +1,7 @@
+---
+description: Explore Connector Settings and Overrides on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Connector Settings and Overrides
 
 Sometimes you need to adjust behavior for a specific connector without changing your core integration logic. Prism gives you fine-grained control through settings and overrides that apply per-connector, per-request, or per-environment.

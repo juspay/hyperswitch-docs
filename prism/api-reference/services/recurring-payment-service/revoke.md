@@ -1,3 +1,7 @@
+---
+description: Explore Revoke RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Revoke RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Revoke` RPC cancels an existing recurring payment mandate, stopping all fut
 
 ## Purpose
 
-**Why use Revoke?**
+### Why use Revoke?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `Revoke` RPC cancels an existing recurring payment mandate, stopping all fut
 | **Failed payment cleanup** | After multiple failed retries, clean up by revoking the mandate |
 | **Plan downgrade** | Customer switches to non-recurring plan - revoke old mandate |
 
-**Key outcomes:**
+### Key outcomes:
 - Mandate cancelled at the payment processor
 - No future charges can be processed using this mandate
 - Compliance with card network requirements for subscription cancellations
@@ -109,7 +113,7 @@ grpcurl -H "x-connector: stripe" \
 
 ## Compliance Considerations
 
-**When to Revoke:**
+### When to Revoke:
 
 | Situation | Action Required |
 |-----------|----------------|
@@ -119,7 +123,7 @@ grpcurl -H "x-connector: stripe" \
 | Account closure | Revoke all mandates for the customer |
 | Plan downgrade to non-recurring | Revoke existing mandate |
 
-**Best Practices:**
+### Best Practices:
 
 1. **Immediate revocation** - Always revoke mandates as soon as cancellation is confirmed
 2. **Customer confirmation** - Send email confirmation when mandate is revoked

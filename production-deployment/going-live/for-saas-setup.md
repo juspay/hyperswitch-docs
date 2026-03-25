@@ -1,4 +1,5 @@
 ---
+description: Set up For SaaS Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
 icon: gift
 ---
 
@@ -15,7 +16,7 @@ The connector configurations set up in the sandbox need to be replicated on the 
 * [ ] &#x20;Ensure that the Hyperswitch services agreement is signed and shared with the Hyperswitch team. In case you need any help, please drop an email to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
 
 {% hint style="warning" %}
-The Hyperswitch team will share your production Hyperswitch credentials once the above process is completed.
+The Juspay Hyperswitch team will share your production Hyperswitch credentials once the above process is completed.
 {% endhint %}
 
 {% hint style="success" %}

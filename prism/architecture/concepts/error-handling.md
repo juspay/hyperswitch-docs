@@ -1,3 +1,7 @@
+---
+description: Explore Error Handling on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
@@ -10,12 +14,12 @@ Prism classifies errors into three types based on where they occur in the reques
 
 Request errors occur when the client cannot initiate the API call. These are client-side issues that prevent the request from reaching Prism.
 
-**Common causes:**
+### Common causes:
 - Invalid request payload (malformed JSON, missing required fields)
 - Client configuration errors (wrong endpoint, invalid timeout settings)
 - Serialization failures
 
-**Example:**
+### Example:
 ```json
 {
   "error": {
@@ -31,7 +35,7 @@ Request errors occur when the client cannot initiate the API call. These are cli
 
 Network errors occur when the API call is initiated but fails due to technical reasons before reaching the payment processor. These indicate infrastructure or connectivity issues.
 
-**Common causes:**
+### Common causes:
 - Connection timeouts
 - DNS resolution failures
 - TLS handshake errors
@@ -46,7 +50,7 @@ Network errors occur when the API call is initiated but fails due to technical r
 | `SERVICE_UNAVAILABLE` | Processor service temporarily down | Yes | Retry with exponential backoff |
 | `DNS_ERROR` | Cannot resolve processor hostname | Yes | Retry with exponential backoff |
 
-**Example:**
+### Example:
 ```json
 {
   "error": {
@@ -69,7 +73,7 @@ Business errors occur when the request reaches the processor, but the operation 
 
 The unified representation cures the complexity of errors and enables you to make the right decision—whether to retry or not retry the payment.
 
-**Example (All Fields):**
+### Example (All Fields):
 
 ```json
 {

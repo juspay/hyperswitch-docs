@@ -1,10 +1,11 @@
 ---
+description: Set up Organization, Merchant and Profile Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
 icon: people-roof
 ---
 
 # Organization, Merchant and Profile Setup
 
-Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs-
+Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Juspay Hyperswitch allows you to choose different account structures based on your business needs-
 
 * Whether you are a business with multiple product lines and business units within each line, or a marketplace with multiple sub-merchants, each having multiple business units.
 * Whether you want to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own.
@@ -35,7 +36,7 @@ Once a user signs up on the Hyperswitch Control Centre, they need to create an o
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcivUqB263o28dMqZCfxKiWkNnJUJOnbIi9Ri4L3qhOXwf6BF3wXnVwNCIISlqXM4Kwx363sB09zrDKJEYMJ8T6CsV-d2kvvc7WAxLulChyGxYtduwgra4H7MttVWjHV6iI8YhhB8E0hf69HiRGV9lZ2wTw?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
 
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeNBK4CDEvBeUV-Bo6lRKHzVCDKFSHnPWW-NaXjifjXFww3ADzbILjX-YoCGpErEL8UpgJA0Rq4ID0hAgf1WT3asLnlXG8Cse9paisbmUa63vnT8QxPq-wVD-qs8e5vVi1OW1WqYKPKalJ5HeJ6RPQh4bg?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
-*   **Exhaustive Data Visibility:** Payment lists, analytics, and teams are segregated at the profile, merchant, and organization levels. Hyperswitch allows top-down access to data; each level can access the payments data of the levels below it by switching into their levels, not vice versa.&#x20;
+*   **Exhaustive Data Visibility:** Payment lists, analytics, and teams are segregated at the profile, merchant, and organization levels. Juspay Hyperswitch allows top-down access to data; each level can access the payments data of the levels below it by switching into their levels, not vice versa.&#x20;
 
     * Each level can get an aggregated view of the payment transactions of all the sub-levels beneath it. Also, Using the global search within
     * Hyperswitch Control Centre, you can search for any data across any merchant account or profile of which the user is a part.&#x20;

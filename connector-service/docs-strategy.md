@@ -1,3 +1,7 @@
+---
+description: Explore Documentation Strategy on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Documentation Strategy
 
 
@@ -283,7 +287,7 @@ jobs:
 ```
 
 
-**Characteristics:**
+### Characteristics:
 - **Trigger**: On changes to `/docs`, protos, connectors, or SDKs; also on releases
 - **Frequency**: As needed (human-paced for docs, machine-paced for generated)
 - **Review**: Required via PR for handwritten changes; automated for generated

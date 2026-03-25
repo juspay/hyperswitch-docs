@@ -7,7 +7,7 @@ icon: shop
 
 # For Marketplace/Platforms
 
-Hyperswitch provides a powerful and adaptable payment infrastructure designed to handle the complexities of multi-party transaction flows in marketplace and platform environments.
+Juspay Hyperswitch provides a powerful and adaptable payment infrastructure designed to handle the complexities of multi-party transaction flows in marketplace and platform environments.
 
 With features like multi-rail payouts, intelligent routing, and Hypersense, Hyperswitch enables marketplaces to scale efficiently, improve conversion rates, and reduce operational costs—all while ensuring security and compliance.
 
@@ -38,7 +38,7 @@ Optimize payment costs by ensuring that every transaction flows through the most
 
 Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
 
-* [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
+* [List of 70+ supported connectors and 200+ payment methods](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
 #### Modular card vaulting options

@@ -8,7 +8,7 @@ description: Make your first payment and refund through Hyperswitch
 Here, you'll be making a Payment using your local Hyperswitch setup, via your preferred payment provider. The open source repositories for Dashboard will be available soon.
 {% endhint %}
 
-***
+### 
 
 ## Test on web client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 

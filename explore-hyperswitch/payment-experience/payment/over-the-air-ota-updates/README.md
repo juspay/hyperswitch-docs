@@ -10,7 +10,7 @@ icon: arrows-rotate-reverse
 
 #### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>
 
-**Purpose**
+### Purpose
 
 Airborne enables Hyperswitch SDK to receive live updates without requiring an app store release. This allows you to:
 
@@ -18,15 +18,15 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 * Roll out features gradually.
 * Control app behavior remotely via feature toggles.
 
-**Real-World Hyperswitch Scenarios**
+### Real-World Hyperswitch Scenarios
 
 * **Critical Checkout Fix** – Push a new JS bundle to resolve a bug affecting payments.
 * **Feature Rollout** – Show “One-Click Pay” to 5% of users, expand once results are good.
 * **Remote Toggles** – Enable/disable “Gift Card Support” instantly for specific merchants.
 
-***
+### 
 
-**OTA Flow**
+### OTA Flow
 
 1. App Launch
    * User opens the Hyperswitch-powered app.
@@ -43,6 +43,6 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 6. **Background Downloads**
    * Non-critical assets (lazy files) continue to download while the app runs, so the user is never blocked.
 
-***
+### 
 
 For more information, [Airborne](https://github.com/juspay/airborne)​[<br>](../../../payment-experience/payment/server-setup.md)

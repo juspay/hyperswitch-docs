@@ -1,3 +1,7 @@
+---
+description: Learn about and implement Juspay Hyperswitch features and capabilities
+---
+
 ## Architecture Overview
 
 If you've integrated multiple payment providers, you know the pain:
@@ -15,7 +19,6 @@ This problem exists in other domains too, but solved with well maintained develo
 | **Databases** | [Prisma](https://www.prisma.io/) | One ORM for PostgreSQL, MySQL, MongoDB, etc. |
 | **Cloud Storage** | [Rclone](https://rclone.org/) | One CLI for S3, GCS, Azure Blob, etc. |
 
-**But for payments, no such equivalent exists for developers.**
 
 Prism is the unified abstraction layer for payment processors—giving you one API, one set of types, and one mental model for 100+ payment connectors.
 
@@ -50,7 +53,7 @@ The Prism supports a three layered architecture, each solving a purpose. The arc
 │                                                                            │
 │  ┌────────────────────────────────────┐    ┌────────────────────────────┐  │
 │  │           gRPC Server              │    │    Connector Adapters      │  │
-│  │                                    │    │    (100+ connectors)       │  │
+│  │                                    │    │    (300+ connectors)       │  │
 │  │  ┌─────────┐ ┌─────────┐           │    │                            │  │
 │  │  │ Payment │ │ Refund  │           │───▶│  ┌─────────┐  ┌─────────┐  │  │
 │  │  │ Service │ │ Service │           │    │  │ Stripe  │  │  Adyen  │  │  │
@@ -115,7 +118,6 @@ sequenceDiagram
 
 The core value of the Prism is transformation from a single unified interface into multiple processor patterns. For easier understanding, a simple example of how a Stripe Authorize Request and an Adyen Authorize Request is mapped against the Unified interface.
 
-**Authorization Mapping:**
 
 | Unified Field | Stripe Request | Adyen Request |
 |---------------|----------------|---------------|

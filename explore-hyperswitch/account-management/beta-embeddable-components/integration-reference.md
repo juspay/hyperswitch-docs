@@ -1,3 +1,7 @@
+---
+description: Explore Integration Reference on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Integration Reference
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
@@ -97,13 +101,13 @@ You must choose one:
 
 #### 2A: HTML-JS Integration
 
-**2A.1 Install the package:**
+### 2A.1 Install the package:
 
 ```bash
 npm install @juspay-tech/hyperswitch-control-center-embed-core
 ```
 
-**2A.2 Import the SDK in Your Application**
+### 2A.2 Import the SDK in Your Application
 
 Import (ES Module):
 
@@ -111,7 +115,7 @@ Import (ES Module):
 import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
 ```
 
-**OR**
+### OR
 
 Import (CommonJS):
 
@@ -119,7 +123,7 @@ Import (CommonJS):
 const { loadHyperswitch } = require("@juspay-tech/hyperswitch-control-center-embed-core");
 ```
 
-**2A.3 : Example app.js Implementation**
+### 2A.3 : Example app.js Implementation
 
 ```javascript
 import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
@@ -168,13 +172,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 #### 2B: React Integration
 
-**2B.1 Install the package:**
+### 2B.1 Install the package:
 
 ```bash
 npm install @juspay-tech/hyperswitch-control-center-embed-react
 ```
 
-**2B.2 Import the SDK in Your Application**
+### 2B.2 Import the SDK in Your Application
 
 ```javascript
 import React, { useState } from 'react';
@@ -187,7 +191,7 @@ ConnectorConfiguration
 } from '@juspay-tech/hyperswitch-control-center-embed-react';
 ```
 
-**2B.3 Example app.js Implementation**
+### 2B.3 Example app.js Implementation
 
 Key Concept:\
 The fetchToken function is lazy. It is called:

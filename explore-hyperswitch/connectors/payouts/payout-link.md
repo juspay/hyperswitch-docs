@@ -159,7 +159,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 > Note: This can be achieved by either setting this behaviour at the business profile level, or can be set in individual link create requests.
 
-**Setting at business profile level**
+### Setting at business profile level
 
 * Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
 
@@ -171,7 +171,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 * Any new payout links created for this business profile will be accessible through browser's new tab.
 
-**Creating test links on demand**
+### Creating test links on demand
 
 * Set `test_mode` during payout link creation
 
@@ -245,6 +245,6 @@ The payout link is valid for 15 minutes by default. However you can increase the
 
 <summary>How can I send Payout links via Emails?</summary>
 
-Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
+Juspay Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
 
 </details>

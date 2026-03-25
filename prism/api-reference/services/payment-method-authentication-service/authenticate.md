@@ -1,3 +1,7 @@
+---
+description: Explore Authenticate RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Authenticate RPC
 
 <!--
@@ -21,14 +25,14 @@ The `Authenticate` RPC executes the 3D Secure authentication step. For frictionl
 
 ## Purpose
 
-**Why authenticate?**
+### Why authenticate?
 
 | Flow Type | What Happens |
 |-----------|--------------|
 | **Frictionless** | Completes authentication without customer action |
 | **Challenge** | Presents bank challenge page for customer verification |
 
-**Key outcomes:**
+### Key outcomes:
 - Authentication completed
 - Authentication data returned
 - Ready for payment authorization

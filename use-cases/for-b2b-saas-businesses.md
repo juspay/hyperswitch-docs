@@ -7,7 +7,7 @@ icon: block-brick
 
 # For B2B SaaS Businesses
 
-Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
+Juspay Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
 
 For B2B SaaS businesses, it is particularly valuable for onboarding large enterprises as clients who prefer to retain greater control over their customers' checkout experience.
 
@@ -36,7 +36,7 @@ Fulfill diverse client needs with customizable card vaulting options, including 
 
 Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
 
-* [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
+* [List of 70+ supported connectors and 200+ payment methods](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
 #### Fully managed compliance and security

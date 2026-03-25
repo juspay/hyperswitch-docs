@@ -1,4 +1,5 @@
 ---
+description: Explore Control Center on Juspay Hyperswitch to understand and implement this capability
 icon: laptop
 ---
 

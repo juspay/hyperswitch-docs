@@ -1,3 +1,7 @@
+---
+description: Explore Environment Settings on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Environment Settings
 
 Your code behaves differently in development, staging, and production. Prism lets you configure environments explicitly so test transactions don't hit live payment processors and production keys don't leak into debug logs.

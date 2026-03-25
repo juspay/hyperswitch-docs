@@ -10,7 +10,7 @@ icon: plug
 
 ### Modular Vaulting in Hyperswitch
 
-Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
+Juspay Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
 
 Modular Vaulting is a key component of Juspay’s payment system, offering merchants the flexibility to either use Hyperswitch’s built-in PCI-compliant vault with advanced tokenization and security features or connect to any third party vault provider. This flexibility enables businesses to start simple and scale confidently without re-architecting their entire system.
 
@@ -18,7 +18,7 @@ Modular Vaulting is a key component of Juspay’s payment system, offering merch
 
 ### Modular Vaulting Options <a href="#h8bov2tye5ch" id="h8bov2tye5ch"></a>
 
-Hyperswitch supports both an integrated vault as well as external vaults for merchants using Hyperswitch as their payments orchestration solution in both self-hosted and Juspay-hosted deployment modes.
+Juspay Hyperswitch supports both an integrated vault as well as external vaults for merchants using Hyperswitch as their payments orchestration solution in both self-hosted and Juspay-hosted deployment modes.
 
 <div align="center"><img src="../../../.gitbook/assets/1 (1).png" alt=""></div>
 
@@ -45,7 +45,7 @@ Through Hyperswitch, Merchants can add [external vault providers](https://juspay
 * Proxy Payments through External Vaults - Support for processing payments through Proxy layers to ensure PCI compliance
 * Card Forwarding & Receiving - To seamlessly transfer tokenized data across third-party endpoints, enabling effortless PSP migration
 
-**SDK Options for Third Party Vault**
+### SDK Options for Third Party Vault
 
 In case of using External vaults, merchants also have the option to choose which SDK to use to collect payment method details from their customers.
 
@@ -53,5 +53,5 @@ In case of using External vaults, merchants also have the option to choose which
 
 <p align="center"><em>Flexible External Vaulting with Choice of Vault SDK or Hyperswitch SDKs for Card Collection</em><br></p>
 
-1. Hyperswitch Unified Checkout SDK - Cards are collected via the Hyperswitch Unified Checkout SDK and sent to the Hyperswitch server, which tokenizes them in an external vault. When processing payments, the Hyperswitch server retrieves the raw card details using the vault token and forwards the complete payment request to the PSP.
+1. Juspay Hyperswitch Unified Checkout SDK - Cards are collected via the Hyperswitch Unified Checkout SDK and sent to the Hyperswitch server, which tokenizes them in an external vault. When processing payments, the Hyperswitch server retrieves the raw card details using the vault token and forwards the complete payment request to the PSP.
 2. External Vault SDK - The External Vault SDK can be loaded on the Hyperswitch Unified Checkout SDK or independently. Cards are captured and tokenized directly in the external vault, bypassing  Hyperswitch server. For payments, the Hyperswitch server sends vault tokens via the vault’s proxy flow, and the external vault de-tokenizes and forwards the request to the PSP.

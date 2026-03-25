@@ -1,3 +1,7 @@
+---
+description: Explore Defend RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Defend RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Defend` RPC submits a formal defense against a chargeback dispute. This pre
 
 ## Purpose
 
-**Why formally defend disputes?**
+### Why formally defend disputes?
 
 | Scenario | Defense Strategy | Reason Code |
 |----------|-----------------|-------------|
@@ -30,7 +34,7 @@ The `Defend` RPC submits a formal defense against a chargeback dispute. This pre
 | **Refund already issued** | Customer was already refunded | REFUND_ISSUED |
 | **Cancellation policy followed** | Customer cancelled outside policy window | CANCELLATION_POLICY_DISCLOSED |
 
-**Key outcomes:**
+### Key outcomes:
 - Dispute status changes to CHALLENGED
 - Defense submitted to issuing bank
 - Bank begins review process

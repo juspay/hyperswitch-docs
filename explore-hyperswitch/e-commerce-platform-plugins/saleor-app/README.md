@@ -1,4 +1,5 @@
 ---
+description: Explore Saleor App on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 icon: plug-circle-bolt
 ---
@@ -15,7 +16,7 @@ HyperCheckout combines the power of native checkout experiences, robust payment 
 
 ### [Juspay's Hyperswitch](https://hyperswitch.io/) - for Global payment acceptance
 
-Access the entire payment ecosystem with a Single API. Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts.
+Access the entire payment ecosystem with a Single API. Juspay Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts.
 
 {% content-ref url="setup.md" %}
 [setup.md](setup.md)

@@ -61,7 +61,7 @@ Our core values have pretty much remained the same since the early days and here
 * 🟩 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
 * 🟩 Support for Hosted Checkout Page on Web&#x20;
 * 🟩 Mitigating fraud by defining Block List rules to block transactions from specific customer ID, card bins, card numbers and more parameters
-* 🟩 Enhanced search using Global Identifiers for improved discoverability. Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
+* 🟩 Enhanced search using Global Identifiers for improved discoverability. Juspay Hyperswitch Cloud users can use the Control Center to search for payments, customers, refunds, connector transaction IDs and get all related data
 * 🟩 Dispute management and evidence submission workflow on Hyperswitch Control Centre
 * 🟩 Hyperswitch Control Centre will allow to customize payment methods at country and currency&#x20;
 * 🟩 Create custom roles for Identity and Access Management

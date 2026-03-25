@@ -1,4 +1,5 @@
 ---
+description: Explore Extended Authorization on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 icon: clock
 ---
@@ -19,7 +20,7 @@ Example: A hotel may authorize a card for $500 during check-in but extend the au
 
 ### Current PSP Support
 
-Hyperswitch currently supports Extended Authorization for the following PSPs:
+Juspay Hyperswitch currently supports Extended Authorization for the following PSPs:
 
 * Stripe
 

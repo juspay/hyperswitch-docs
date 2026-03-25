@@ -1,3 +1,7 @@
+---
+description: Explore Core Components on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Core Components
 
 Prism breaks down into four components that each solve a specific integration pain point. Understanding them helps you decide how to deploy and extend the system.
@@ -46,7 +50,7 @@ Prism breaks down into four components that each solve a specific integration pa
 
 **Why it matters:** You write `client.payments.authorize()` in Node.js, Python, Java, or Go. Same method signature, same behavior, native patterns. A Python developer uses async/await. A Java developer uses CompletableFuture. Both call the same underlying operation.
 
-**Impact on your code:**
+### Impact on your code:
 - Compile-time type checking catches integration errors
 - IDE autocomplete shows available methods and fields
 - Error handling follows your language's conventions (exceptions, Result types, error returns)
@@ -130,4 +134,4 @@ Adding a new connector? You only touch Component 4. Write an adapter that implem
 
 Adding a new language SDK? You touch Component 1. Generate bindings from protobuf, add idiomatic wrappers. The core and adapters work unchanged.
 
-This separation keeps the system maintainable at 50+ connectors and growing.
+This separation keeps the system maintainable at 300+ connectors and growing.

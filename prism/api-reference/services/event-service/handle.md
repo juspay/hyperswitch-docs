@@ -1,3 +1,7 @@
+---
+description: Explore Handle RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Handle RPC
 
 <!--
@@ -21,7 +25,7 @@ The `Handle` RPC processes raw webhook payloads from payment processors. It veri
 
 ## Purpose
 
-**Why use the Event Service for webhooks?**
+### Why use the Event Service for webhooks?
 
 | Challenge | How Handle RPC Helps |
 |-----------|---------------------|
@@ -30,7 +34,7 @@ The `Handle` RPC processes raw webhook payloads from payment processors. It veri
 | **Event parsing** | Extracts payment/refund/dispute IDs and status from complex payloads |
 | **Security** | Validates webhook secrets before processing |
 
-**Key outcomes:**
+### Key outcomes:
 - Verified webhook authenticity
 - Normalized event structure
 - Extracted entity details (payment, refund, dispute)

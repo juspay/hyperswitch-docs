@@ -1,43 +1,41 @@
 ---
-description: >-
-  Integrate with more than 200+ Connectors enabling 150+ payment methods with
-  zero development effort.
+description: Integrate with 300+ connectors enabling 200+ payment methods on Juspay Hyperswitch to expand your payment options with zero development effort
 icon: plug
 ---
 
 # Connectors Integration
 
-### Overview
+## Overview
 
-Connectors are integrations that allow Hyperswitch to talk to external payment services such as PSPs, Acquirers, [APMs](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets), [Card vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault), [3DS authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager), [Fraud management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management), [Subscription](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), Payouts and more. They act as bridges between your Hyperswitch setup and the third-party services that move or manage money for your business.
+Connectors are integrations that allow Juspay Hyperswitch to talk to external payment services such as PSPs, Acquirers, [APMs](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets), [Card vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault), [3DS authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager), [Fraud management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management), [Subscription](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), Payouts and more. They act as bridges between your Juspay Hyperswitch setup and the third-party services that move or manage money for your business.
 
-Every provider has its own APIs, authentication methods, and feature sets. Hyperswitch standardizes these differences through connectors, exposing a single unified Payments API. This means you can add, switch, or remove processors without rewriting your code—just plug in credentials and start transacting.
+Every provider has its own APIs, authentication methods, and feature sets. Juspay Hyperswitch standardizes these differences through connectors, exposing a single unified Payments API. This means you can add, switch, or remove processors without rewriting your code—just plug in credentials and start transacting.
 
-Connectors form the foundation of Hyperswitch's payment orchestration layer, enabling you to manage payments, routing, 3DS authentication, fraud checks, and payouts through a single interface.
+Connectors form the foundation of Juspay Hyperswitch's payment orchestration layer, enabling you to manage payments, routing, 3DS authentication, fraud checks, and payouts through a single interface.
 
-#### Why Multiple Processors?
+## Why Multiple Processors?
 
 As your business grows faster, there would be a need to expand payment offerings with more payment processors. This need might arise due to multiple reasons:
 
-* Vendor Independence: Reducing dependency on a single processor and reducing vendor lock-in.
-* Performance Optimization: Introducing a challenger processor for better cost and auth rates.
-* Global Reach: Launching a business in new geography with a local payment processor.
-* Localized Experience: Offering local or new payment methods for your customers.
-* Reliability: Reducing technical downtimes and improving success rates with a fallback.
+- Vendor Independence: Reducing dependency on a single processor and reducing vendor lock-in.
+- Performance Optimization: Introducing a challenger processor for better cost and auth rates.
+- Global Reach: Launching a business in new geography with a local payment processor.
+- Localized Experience: Offering local or new payment methods for your customers.
+- Reliability: Reducing technical downtimes and improving success rates with a fallback.
 
-Integrating and maintaining multiple payment processors and their different versions is a time and resource intensive process. Hyperswitch can add a new PSP in [2 weeks](https://hyperswitch.io/blog/part-1-5-payment-challenges-for-vertical-saas-businesses), allowing you to focus on your core business activities.
+Integrating and maintaining multiple payment processors and their different versions is a time and resource intensive process. Juspay Hyperswitch can add a new PSP in [2 weeks](https://hyperswitch.io/blog/part-1-5-payment-challenges-for-vertical-saas-businesses), allowing you to focus on your core business activities.
 
-#### Adding a Connector
+## Adding a Connector
 
-Most connector integrations follow a simple click-and-connect flow on Hyperswitch using your connector credentials. However, some connectors may require additional setup details as required on the control center.
+Most connector integrations follow a simple click-and-connect flow on Juspay Hyperswitch using your connector credentials. However, some connectors may require additional setup details as required on the control center.
 
-Standard Setup Steps
+### Standard Setup Steps
 
 1. PSP Registration: You need to be registered with the PSP in order to proceed. In case you aren't, you can quickly setup your account by signing up on their dashboard.
-2. Platform Access: You should have registered on [Hyperswitch Control center](https://app.hyperswitch.io/).
-3. Credential Mapping: Add the PSP authentication credentials from their dashboard into the Hyperswitch Control center.
+2. Platform Access: You should have registered on [Juspay Hyperswitch Control Center](https://app.hyperswitch.io/).
+3. Credential Mapping: Add the PSP authentication credentials from their dashboard into the Juspay Hyperswitch Control Center.
 
-Authentication Examples
+### Authentication Examples
 
 Authentication credentials vary across different PSPs. Common combinations include:
 
@@ -55,7 +53,7 @@ Authentication credentials vary across different PSPs. Common combinations inclu
 
 #### Connector Types
 
-Hyperswitch supports a wide variety of connectors to manage your entire financial stack:
+Juspay Hyperswitch supports a wide variety of connectors to manage your entire financial stack:
 
 * Core Payments: Payment Processors, Acquirers & APMs.
 * Platforms: Payment platforms and Payouts Processors.

@@ -1,4 +1,5 @@
 ---
+description: Explore Activating FRM in Hyperswitch on Juspay Hyperswitch to understand and implement this capability
 icon: shield-plus
 ---
 
@@ -33,7 +34,7 @@ The Post-Auth flow occurs after payment authorization by the processor and is on
 * Steps:
   1. Post-authorization details are sent to the FRM solution.
   2. Transactions flagged as fraudulent are queued for manual review with a status "Requires Merchant Action" on Hyperswitch.
-  3. Merchants review on FRM dashboard and decide next steps on that transaction. Hyperswitch consumes the webhooks from the FRM to:
+  3. Merchants review on FRM dashboard and decide next steps on that transaction. Juspay Hyperswitch consumes the webhooks from the FRM to:
      * Continue on `Accept`: Continue with the transaction.
      * Halt on `Decline`: Mark the transaction as cancelled.
      * Approve/Decline on `Review`:

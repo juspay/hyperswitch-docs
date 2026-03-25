@@ -1,3 +1,7 @@
+---
+description: Explore Deploy on Azure Using Helm Charts on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Deploy on Azure Using Helm Charts
 
 ### Prerequisites
@@ -8,17 +12,17 @@
 
 Ensure the following tools are installed and configured:
 
-**1. Azure CLI**
+### 1. Azure CLI
 
 The Azure Command-Line Interface (CLI) is a cross-platform tool that allows you to manage Azure resources. To install please visit the[ official Microsoft ](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)documentation.
 
 Before setting up AKS, you'll need to [create an Azure account](https://signup.azure.com/signup?offer=ms-azr-0044p\&appId=102\&ref=\&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%3Fsrc%3Dacom_free\&l=en-us). Simply follow the on-screen instructions. Note that billing information will be required during the sign-up process.
 
-**2. kubectl**
+### 2. kubectl
 
 `kubectl` is the command-line tool for interacting with Kubernetes clusters. To install `kubectl` please refer to the [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/).
 
-**3. Helm**
+### 3. Helm
 
 Helm is a package manager for Kubernetes applications. To install please refer to [helm documentation](https://helm.sh/docs/intro/install/#through-package-managers).
 
@@ -44,7 +48,7 @@ Use the following command, replacing `<resource-group-name>` with your desired n
 az group create --name <resource-group-name> --location <location>
 ```
 
-**Example:**
+### Example:
 
 ```bash
 az group create --name myAKSResourceGroup --location eastus
@@ -206,7 +210,7 @@ Namespaces help organize and isolate resources within your Kubernetes cluster. T
 kubectl create namespace <namespace>
 ```
 
-**Example:**
+### Example:
 
 ```bash
 kubectl create namespace hyperswitch
@@ -222,7 +226,7 @@ Use Helm to deploy Hyperswitch into your Kubernetes cluster. Replace `<release-n
 helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
 ```
 
-**Example:**
+### Example:
 
 ```bash
 helm install hyperswitch-dev hyperswitch/hyperswitch-stack -n hyperswitch
@@ -240,7 +244,7 @@ Ensure all pods are in the `Running` state:
 kubectl get pods -n <namespace>
 ```
 
-**Example:**
+### Example:
 
 ```
 kubectl get pods -n hyperswitch
@@ -252,7 +256,7 @@ kubectl get pods -n hyperswitch
 helm list -n <namespace>
 ```
 
-**Example:**
+### Example:
 
 ```
 helm list -n hyperswitch

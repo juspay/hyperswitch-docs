@@ -1,3 +1,7 @@
+---
+description: Explore System Requirements on Juspay Hyperswitch to understand and implement this capability
+---
+
 # System Requirements
 
 ### **Hardware**

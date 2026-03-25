@@ -6,7 +6,7 @@ icon: arrows-repeat
 
 # Hyperswitch Vault: Pass Through Proxy Payments
 
-**📌 What is it?**
+### 📌 What is it?
 
 The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
 
@@ -41,7 +41,7 @@ Include the following details:
       2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
    4. **Placeholders for token data:** In the `request_body`**,** Plug in the dynamic placeholders`{{$card_number}}`, `{{$card_exp_month}}`,`{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
 
-**Sample Proxy payment request (Checkout.com)**
+### Sample Proxy payment request (Checkout.com)
 
 <pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/proxy' \
 --header 'Content-Type: application/json' \

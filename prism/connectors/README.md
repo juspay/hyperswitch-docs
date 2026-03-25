@@ -1,3 +1,7 @@
+---
+description: Explore Connectors Overview on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Connectors Overview
 
 This document provides a comprehensive overview of all supported payment connectors and their integration status across various operations.

@@ -20,7 +20,7 @@ The flow looks like the following:
 
 ## Supported Payment processors
 
-Hyperswitch supports the following processors for 3DS Step-up retries.
+Juspay Hyperswitch supports the following processors for 3DS Step-up retries.
 
 * Bluesnap
 * Stripe

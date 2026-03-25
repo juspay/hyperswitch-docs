@@ -1,4 +1,5 @@
 ---
+description: Explore SMTP Server Integration on Juspay Hyperswitch to understand and implement this capability
 icon: at
 ---
 
@@ -42,7 +43,7 @@ connection = "plaintext"  # Supported values: "plaintext", "starttls"
 
 The email client is designed to work with standard SMTP servers by implementing the `EmailClient` trait for an internal `SmtpServer` struct.
 
-**Key Points of the Implementation**
+### Key Points of the Implementation
 
 * **Config Validation:** Ensures required fields like `host`, and credentials (if provided) are not empty.
 * **Connection Modes:** Supports both `StartTls` (recommended) and `Plaintext` (insecure) connections.

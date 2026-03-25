@@ -1,4 +1,5 @@
 ---
+description: Explore Google Pay on Juspay Hyperswitch to understand and implement this capability
 icon: google
 ---
 
@@ -6,7 +7,7 @@ icon: google
 
 **Purpose:** Google Pay payments
 
-**Add Google Pay Widget to Layout**
+### Add Google Pay Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -16,7 +17,7 @@ icon: google
     app:paymentMethod="google_pay" />
 ```
 
-**Initialize Google Pay Launcher**
+### Initialize Google Pay Launcher
 
 ```kotlin
 private lateinit var googlePayButton: BasePaymentWidget
@@ -48,7 +49,7 @@ private fun setupGooglePayLauncher() {
 }
 ```
 
-**Handle Google Pay Callbacks**
+### Handle Google Pay Callbacks
 
 ```kotlin
 private fun onGooglePayReady(isReady: Boolean) {

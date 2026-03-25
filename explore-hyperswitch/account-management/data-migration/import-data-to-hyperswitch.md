@@ -1,4 +1,5 @@
 ---
+description: Explore Import data to Hyperswitch on Juspay Hyperswitch to understand and implement this capability
 icon: right-from-bracket
 ---
 

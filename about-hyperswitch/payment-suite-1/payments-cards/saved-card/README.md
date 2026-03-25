@@ -1,4 +1,5 @@
 ---
+description: Explore Saved Card on Juspay Hyperswitch to understand and implement this capability
 icon: hard-drive
 ---
 

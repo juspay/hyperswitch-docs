@@ -1,3 +1,7 @@
+---
+description: Explore RFC: Unified Payment Protocol (UPP) on Juspay Hyperswitch to understand and implement this capability
+---
+
 # RFC: Unified Payment Protocol (UPP)
 
 | Field       | Value                                    |
@@ -268,7 +272,7 @@ The core service for payment lifecycle management.
 
 Initiates a payment authorization — reserving funds on the customer's payment method without capturing them.
 
-**Request fields:**
+### Request fields:
 - `payment_method` — The payment instrument (card, wallet, bank transfer, etc.)
 - `money` — Amount and currency
 - `customer` — Customer information
@@ -285,7 +289,7 @@ Initiates a payment authorization — reserving funds on the customer's payment 
 - `webhook_url`, `return_url` — URLs for async notification and redirect
 - `is_extended_authorization`, `is_incremental_authorization`, `is_partial_authorization` — Authorization variant flags
 
-**Response fields:**
+### Response fields:
 - `status` — `PaymentStatus` (see Section 8.1)
 - `connector_transaction_id` — The connector's transaction identifier
 - `redirect_form` — Redirect data if the flow requires customer redirection
@@ -300,13 +304,13 @@ Initiates a payment authorization — reserving funds on the customer's payment 
 
 Finalizes an authorized transaction, initiating the actual transfer of funds.
 
-**Request fields:**
+### Request fields:
 - `connector_transaction_id` — The transaction to capture
 - `money` — Amount to capture (may differ from authorized amount for partial captures)
 - `connector_state` — Session state
 - `multiple_capture_data` — For `MANUAL_MULTIPLE` capture flows
 
-**Response fields:**
+### Response fields:
 - `status` — Updated payment status
 - `connector_transaction_id` — Capture transaction ID
 - `error` — Error details if capture failed
@@ -315,12 +319,12 @@ Finalizes an authorized transaction, initiating the actual transfer of funds.
 
 Cancels an authorization before capture, releasing held funds.
 
-**Request fields:**
+### Request fields:
 - `connector_transaction_id` — The authorization to void
 - `connector_state` — Session state
 - `void_reason` — Reason for voiding
 
-**Response fields:**
+### Response fields:
 - `status` — Updated payment status (`VOIDED` on success)
 - `error` — Error details if void failed
 
@@ -334,13 +338,13 @@ Reverses a captured payment before settlement.
 
 Initiates a full or partial refund to the customer's original payment method.
 
-**Request fields:**
+### Request fields:
 - `connector_transaction_id` — The payment to refund
 - `payment_amount`, `refund_amount` — Original and refund amounts
 - `connector_state` — Session state
 - `webhook_url` — Notification URL for async refund updates
 
-**Response fields:**
+### Response fields:
 - `connector_refund_id` — Connector's refund identifier
 - `refund_status` — `RefundStatus` (see Section 8.2)
 - `error` — Error details
@@ -349,12 +353,12 @@ Initiates a full or partial refund to the customer's original payment method.
 
 Retrieves the current payment status from the connector, synchronizing local state.
 
-**Request fields:**
+### Request fields:
 - `connector_transaction_id` — The transaction to query
 - `connector_state` — Session state
 - `multiple_capture_sync_data` — For syncing multiple captures
 
-**Response fields:**
+### Response fields:
 - Full payment state including `status`, `connector_transaction_id`, `error`, `authentication_data`, and `mandate_reference`.
 
 #### 7.1.7 CreateOrder
@@ -369,7 +373,7 @@ Increases the authorized amount on an existing authorization. Common in hospital
 
 Establishes a recurring payment mandate — a standing instruction authorizing the merchant to charge the customer's payment method on a recurring basis.
 
-**Response fields:**
+### Response fields:
 - `mandate_reference` — The mandate identifier for future charges
 - `status` — Mandate status
 
@@ -385,13 +389,13 @@ Manages merchant-initiated transactions (MIT) using established mandates.
 
 Processes a payment using a previously established mandate, without requiring the customer to re-enter payment details.
 
-**Request fields:**
+### Request fields:
 - `mandate_reference` — Reference to the established mandate
 - `money` — Amount to charge
 - `connector_state` — Session state
 - `payment_method` — Payment method details (may be minimal for MIT)
 
-**Response fields:**
+### Response fields:
 - `status` — Payment status
 - `connector_transaction_id` — Transaction identifier
 
@@ -417,7 +421,7 @@ Manages chargebacks and payment disputes.
 
 Uploads evidence documents to contest a dispute.
 
-**Evidence Types:**
+### Evidence Types:
 - `CANCELLATION_POLICY` — Cancellation policy documentation
 - `CUSTOMER_COMMUNICATION` — Communication records with the customer
 - `CUSTOMER_SIGNATURE` — Customer signature proof
@@ -465,7 +469,7 @@ Validates the authentication results with the issuing bank. Returns the final `A
 - `trans_status` — Transaction status (success, failure, challenge required, etc.)
 - `exemption_indicator` — SCA exemption type if applicable
 
-**SCA Exemption Types:**
+### SCA Exemption Types:
 - `LOW_VALUE` — Transaction below exemption threshold
 - `SECURE_CORPORATE_PAYMENT` — Corporate card payment
 - `TRUSTED_LISTING` — Merchant on customer's trusted list
@@ -491,18 +495,18 @@ Creates a session token that maintains state across multiple payment operations.
 
 Initializes wallet payment sessions for Apple Pay, Google Pay, and PayPal. Returns wallet-specific session data:
 
-**Google Pay Session:**
+### Google Pay Session:
 - `merchant_info` — Merchant name and ID
 - `allowed_payment_methods` — Supported card networks and auth methods
 - `transaction_info` — Currency, amount, price status
 - `shipping_address_required`, `email_required` — Data collection flags
 
-**Apple Pay Session:**
+### Apple Pay Session:
 - `payment_request_data` — Payment request with merchant capabilities, supported networks, line items
 - `session_token_data` — Apple Pay session for domain validation
 - `connector_merchant_id` — Connector's merchant ID for Apple Pay
 
-**PayPal Session:**
+### PayPal Session:
 - `session_token` — PayPal session identifier
 - `client_token` — Client-side token for PayPal SDK
 
@@ -546,12 +550,12 @@ Combines access token refresh with payment status retrieval.
 
 Processes inbound webhooks from connectors and transforms them into typed, normalized events.
 
-**Request fields:**
+### Request fields:
 - `webhook_body` — Raw webhook payload
 - `webhook_headers` — HTTP headers from the webhook request
 - `webhook_secrets` — Connector secrets for signature verification
 
-**Response fields:**
+### Response fields:
 - `event_type` — Normalized event type (see Section 8.5)
 - `event_response` — Typed response (payment, refund, dispute, or incomplete)
 - `source_verified` — Whether the webhook signature was verified
@@ -665,7 +669,7 @@ MANDATE_PENDING ──► ACTIVE ──► REVOKED
 
 UPP normalizes 40+ connector-specific webhook events into a canonical set:
 
-**Payment events:**
+### Payment events:
 - `PAYMENT_INTENT_SUCCESS`, `PAYMENT_INTENT_FAILURE`, `PAYMENT_INTENT_PROCESSING`
 - `PAYMENT_INTENT_PARTIALLY_FUNDED`
 - `PAYMENT_INTENT_REQUIRES_CUSTOMER_ACTION`, `PAYMENT_INTENT_REQUIRES_MERCHANT_ACTION`
@@ -676,18 +680,18 @@ UPP normalizes 40+ connector-specific webhook events into a canonical set:
 - `PAYMENT_INTENT_VOIDED`, `PAYMENT_INTENT_VOID_FAILED`
 - `PAYMENT_INTENT_AUTHENTICATION_SUCCESS`
 
-**Refund events:**
+### Refund events:
 - `WEBHOOK_REFUND_SUCCESS`, `WEBHOOK_REFUND_FAILURE`
 
-**Dispute events:**
+### Dispute events:
 - `WEBHOOK_DISPUTE_OPENED`, `WEBHOOK_DISPUTE_EXPIRED`
 - `WEBHOOK_DISPUTE_ACCEPTED`, `WEBHOOK_DISPUTE_CANCELLED`
 - `WEBHOOK_DISPUTE_CHALLENGED`, `WEBHOOK_DISPUTE_WON`, `WEBHOOK_DISPUTE_LOST`
 
-**Mandate events:**
+### Mandate events:
 - `MANDATE_ACTIVE`, `MANDATE_REVOKED`
 
-**Payout events:**
+### Payout events:
 - `PAYOUT_SUCCESS`, `PAYOUT_FAILURE`, `PAYOUT_PROCESSING`
 - `PAYOUT_CANCELLED`, `PAYOUT_INITIATED`, `PAYOUT_EXPIRED`, `PAYOUT_REVERSED`
 

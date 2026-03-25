@@ -1,10 +1,14 @@
+---
+description: Explore Card Vault & Key Management on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Card Vault & Key Management
 
 ### Enterprise Key Management for Hyperswitch Card Vault and Application
 
 This document describes how to configure **secure key management** for **Hyperswitch**deployments in enterprise environments.
 
-Hyperswitch processes **highly sensitive data**, including:
+Juspay Hyperswitch processes **highly sensitive data**, including:
 
 * Payment card information
 * Bank account details
@@ -19,7 +23,7 @@ To ensure compliance with industry standards such as **Payment Card Industry Sec
 3. Key storage and access
 4. Application-level encryption
 
-Hyperswitch implements these protections through a **Card Vault**, **Key Manager**, and optional **external Key Management Systems**.
+Juspay Hyperswitch implements these protections through a **Card Vault**, **Key Manager**, and optional **external Key Management Systems**.
 
 ### 1. Encryption Architecture Overview
 
@@ -95,7 +99,7 @@ These systems provide:
 * Access auditing
 * Role-based access control
 
-Hyperswitch retrieves encryption keys dynamically during runtime.
+Juspay Hyperswitch retrieves encryption keys dynamically during runtime.
 
 ### 3. Master Key Generation
 
@@ -129,7 +133,7 @@ Immediately store these keys in a **secure secret management system**.
 
 ### 4. Service-to-Service Encryption Keys
 
-Hyperswitch uses **RSA keys** for secure communication between services.
+Juspay Hyperswitch uses **RSA keys** for secure communication between services.
 
 Two key pairs are required:
 
@@ -158,7 +162,7 @@ Keys must **never be stored in public repositories or container images**.
 
 ### 5. Deploying the Hyperswitch Key Manager
 
-The Hyperswitch Key Manager acts as an intermediary between the application and external key stores.
+The Juspay Hyperswitch Key Manager acts as an intermediary between the application and external key stores.
 
 It provides:
 
@@ -306,25 +310,25 @@ Security alerts should be configured for suspicious activity.
 
 Enterprises deploying Hyperswitch should enforce the following controls:
 
-**Access control**
+### Access control
 
 * restrict key access to minimal roles
 * enforce multi-factor authentication
 * use role-based access policies
 
-**Secret protection**
+### Secret protection
 
 * never store secrets in source code
 * encrypt all secret storage
 * use dedicated secret managers
 
-**Infrastructure security**
+### Infrastructure security
 
 * isolate vault components in private networks
 * restrict external access
 * enable firewall policies
 
-**Operational controls**
+### Operational controls
 
 * audit all administrative actions
 * rotate credentials regularly

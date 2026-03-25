@@ -1,4 +1,5 @@
 ---
+description: Explore Samsung Pay on Juspay Hyperswitch to understand and implement this capability
 icon: mobile-signal
 ---
 

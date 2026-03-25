@@ -1,3 +1,7 @@
+---
+description: Explore Resolution Strategies for 'Expected' Exceptions on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview
@@ -6,13 +10,13 @@ An exception in the `EXPECTED` state indicates a timing or availability issue. T
 
 The goal of resolution here is to either invalidate the source record (if it shouldn't exist) or manually confirm the missing side to close the loop
 
-**Important**: **The Self-Resolving Nature**
+### Important**: **The Self-Resolving Nature
 
 Unlike "Mismatched" exceptions (which are actual data breaks), `EXPECTED` exceptions are often temporary. In most cases, these resolve automatically when the counterparty sends their settlement batch (e.g., T+1 or T+2)
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.33.55 PM.png" alt=""><figcaption></figcaption></figure>
 
-***
+### 
 
 ### Pathway A: Voiding Invalid Data
 
@@ -25,7 +29,7 @@ This action is used when the source transaction (the "Expected" item) is invalid
   * Test Transactions: An order created in the production environment for testing purposes that will never settle at the bank
   * Cancelled Prior to Settlement: An authorization that was voided immediately at the gateway but was logged as "Pending" in the ledger
 
-***
+### 
 
 ### Pathway B: Fixing Valid Data
 

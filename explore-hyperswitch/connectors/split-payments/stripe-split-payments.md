@@ -52,7 +52,7 @@ JSON
 
 For [Refunds](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create), include the appropriate split refund configuration based on the original `charge_type`.
 
-**1. For "charge\_type": "direct"**
+### 1. For "charge\_type": "direct"
 
 JSON
 
@@ -64,7 +64,7 @@ JSON
 }
 ```
 
-**2. For "charge\_type": "destination"**
+### 2. For "charge\_type": "destination"
 
 JSON
 

@@ -1,4 +1,5 @@
 ---
+description: Explore React with REST API Integration on Juspay Hyperswitch to understand and implement this capability
 icon: react
 ---
 
@@ -141,7 +142,7 @@ var expressCheckoutOptions = {
 {% endtab %}
 
 {% tab title="UnifiedCheckout" %}
-**3.1.A Add the UnifiedCheckout**
+### 3.1.A Add the UnifiedCheckout
 
 <figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -162,7 +163,7 @@ var unifiedCheckoutOptions = {
 <UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
 ```
 
-**3.1.B Complete the payment and handle errors**
+### 3.1.B Complete the payment and handle errors
 
 Call `confirmPayment()`, passing along the `UnifiedCheckout` and a return\_url to indicate where `hyper` should redirect the user after they complete the payment. For payments that require additional authentication, `hyper` redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the return\_url.
 
@@ -368,7 +369,7 @@ This document outlines the details and functionality of an optional callback and
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
 {% endhint %}
 
-**Example Usage for React Integration**
+### Example Usage for React Integration
 
 ```jsx
 <PaymentElement

@@ -1,4 +1,5 @@
 ---
+description: Explore Checkout Experience on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket
@@ -6,7 +7,7 @@ icon: money-simple-from-bracket
 
 # Checkout Experience
 
-Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
+Juspay Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
 
 #### **How we improve checkout experience for your customers:**
 

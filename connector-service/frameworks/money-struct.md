@@ -1,3 +1,7 @@
+---
+description: Explore The Money Struct on Juspay Hyperswitch to understand and implement this capability
+---
+
 # The Money Struct
 
 Payment integrations are often confusing due to different formats in which payment amount is accepted and processed. A small error can cause large ramifications in terms of business impact.
@@ -81,10 +85,10 @@ However, you still send amounts in minor units. Prism adjusts for processors tha
 
 The Prism supports 160+ currencies via the ISO 4217 standard:
 
-**Major Currencies:**
+### Major Currencies:
 `USD`, `EUR`, `GBP`, `JPY`, `AUD`, `CAD`, `CHF`, `CNY`, `INR` and more
 
-**Regional:**
+### Regional:
 `AED`, `BRL`, `DKK`, `HKD`, `MXN`, `NOK`, `NZD`, `PLN`, `SEK`, `SGD`, `ZAR` and more
 
 ### Recommended Best Practices

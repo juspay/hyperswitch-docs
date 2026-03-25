@@ -1,4 +1,5 @@
 ---
+description: Explore Scale and Reliability on Juspay Hyperswitch to understand and implement this capability
 icon: arrows-maximize
 ---
 
@@ -27,7 +28,7 @@ A single transaction may involve multiple internal API calls. As a result, **RPS
 
 For reference models in this document, an approximate conversion of:
 
-**1 TPS ≈ \~7 API calls (RPS)**
+### 1 TPS ≈ \~7 API calls (RPS)
 
 is assumed.
 
@@ -87,7 +88,7 @@ Maintaining lower pod density improves:
 * failure blast radius containment
 * scheduling reliability during autoscaling events
 
-**Recommended Pod Density Ranges:**
+### Recommended Pod Density Ranges:
 
 | Node Size | Recommended Pod Range |
 | --------- | --------------------- |
@@ -188,7 +189,7 @@ The vCPU numbers above represent **aggregate compute capacity**, not a recommend
 
 Example:
 
-At **1000 TPS**, instead of a single 100-vCPU writer:
+At **2,000 TPS**, instead of a single 100-vCPU writer:
 
 Use **multiple 16–32 vCPU nodes** through partitioning or sharding strategies.
 {% endhint %}
@@ -273,7 +274,7 @@ Load testing validates system throughput capacity and resource utilization under
 
 #### Implementation Steps
 
-**1. Download Load Test Script**
+### 1. Download Load Test Script
 
 Clone the repository:
 
@@ -283,7 +284,7 @@ https://github.com/juspay/hyperswitch-suite/tree/main/load-test
 
 Extract the contents to a local directory.
 
-**2. Verify Prerequisites**
+### 2. Verify Prerequisites
 
 Ensure the following tools are installed:
 
@@ -307,13 +308,13 @@ psql --version
 
 Ensure the Hyperswitch server is running.
 
-**3. Navigate to Load Test Directory**
+### 3. Navigate to Load Test Directory
 
 ```
 cd load-test
 ```
 
-**4. Run Setup Script**
+### 4. Run Setup Script
 
 ```
 bash setup.sh
@@ -321,14 +322,14 @@ bash setup.sh
 
 This installs required Python dependencies.
 
-**5. Provide Required Configuration**
+### 5. Provide Required Configuration
 
 You will be prompted to enter:
 
 * Hyperswitch server URL
 * Admin API key
 
-**6. Enable Grafana Monitoring**
+### 6. Enable Grafana Monitoring
 
 To monitor system behavior during testing:
 
@@ -346,7 +347,7 @@ Username: admin
 Password: admin
 ```
 
-**7. Enable Storage Monitoring**
+### 7. Enable Storage Monitoring
 
 Provide PostgreSQL credentials:
 
@@ -358,7 +359,7 @@ Provide PostgreSQL credentials:
 
 If skipped, the script will generate a SQL query which can be executed manually.
 
-**8. Load Test Report**
+### 8. Load Test Report
 
 The generated report can be found at:
 
@@ -393,15 +394,15 @@ Analytics stack:
 
 #### Implementation Guidelines
 
-**Graceful Degradation**
+### Graceful Degradation
 
 Dependent services may fail without affecting core routing functionality.
 
-**Health Checks**
+### Health Checks
 
 Services should report failures without blocking request processing.
 
-**Observability**
+### Observability
 
 All failures should be logged for operational visibility.
 

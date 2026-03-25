@@ -1,12 +1,13 @@
 ---
 icon: diamonds-4
+description: Explore Juspay Hyperswitch modular payment components to add only the capabilities you need without vendor lock-in or unnecessary complexity
 ---
 
 # Payments Modules
 
-Hyperswitch offers a **modular, open-source payments infrastructure** designed for flexibility and control. Apart from our Payment Suite offering, this solution allows businesses to **pick and integrate only the modules they need** on top of their existing payment stack without unnecessary complexity or vendor lock-in.
+Juspay Hyperswitch offers a modular, open-source payments infrastructure designed for flexibility and control. Apart from our Payment Suite offering, this solution allows businesses to pick and integrate only the modules they need on top of their existing payment stack without unnecessary complexity or vendor lock-in.
 
-Each module is **independent and purpose-built** to optimize different aspects of payment processing:
+Each module is independent and purpose-built to optimize different aspects of payment processing:
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Cost observability</mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr><tr><td><mark style="color:blue;">Revenue recovery</mark></td><td><a href="../../explore-hyperswitch/payments-modules/revenue-recovery.md">revenue-recovery.md</a></td></tr><tr><td><mark style="color:blue;">Vault</mark></td><td><a href="../../explore-hyperswitch/workflows/vault/">vault</a></td></tr><tr><td><mark style="color:blue;">Intelligent routing</mark></td><td><a href="../../explore-hyperswitch/workflows/intelligent-routing/">intelligent-routing</a></td></tr><tr><td><mark style="color:blue;">Reconciliation</mark></td><td><a href="../../explore-hyperswitch/payments-modules/reconciliation/">reconciliation</a></td></tr><tr><td><mark style="color:blue;">Alternate payment methods</mark></td><td><a href="../../explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets/">enable-alternate-payment-method-widgets</a></td></tr></tbody></table>
 

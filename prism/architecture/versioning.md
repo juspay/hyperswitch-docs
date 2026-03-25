@@ -1,3 +1,7 @@
+---
+description: Explore Versioning on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Versioning
 
 Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.
@@ -79,19 +83,19 @@ This accepts any `1.2.x` version but not `1.3.0` or `2.0.0`.
 
 When you pin to `1.2.*`, your build system pulls these automatically:
 
-**Patch releases (automatic):**
+### Patch releases (automatic):
 - Security fixes for connector authentication
 - Bug fixes for specific PSP error parsing
 - Performance improvements
 - Documentation corrections
 
-**Minor releases (manual opt-in):**
+### Minor releases (manual opt-in):
 - New connector support (e.g., "Added Peach Payments")
 - New payment methods (e.g., "Added UPI")
 - New SDK features (e.g., "Added async streaming")
 - Deprecation warnings for old APIs
 
-**Major releases (manual migration):**
+### Major releases (manual migration):
 - Breaking changes to core types
 - Removal of deprecated methods
 - Fundamental architecture changes

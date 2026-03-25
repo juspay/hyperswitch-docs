@@ -12,17 +12,17 @@ description: >-
 
 #### **Step 1: Install Required Tools** <a href="#id-5nsuvyw3aien" id="id-5nsuvyw3aien"></a>
 
-**a. kubectl**
+### a. kubectl
 
 kubectl is the CLI for interacting with Kubernetes clusters.\
 To install it, refer to the official guide:[ Install kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-**b. Minikube**
+### b. Minikube
 
 Minikube is a local Kubernetes cluster for development/testing.\
 Install Minikube following the official documentation:[ Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-**c. Helm**
+### c. Helm
 
 Helm is a package manager for Kubernetes applications.\
 Install Helm using the instructions here:[ Install Helm](https://helm.sh/docs/intro/install/)
@@ -45,7 +45,7 @@ kubectl get nodes
 
 ### Option 2: Setting Up a Local Kubernetes Cluster using OrbStack (Only for macOS)
 
-**Step 1: Install Required Tools**
+### Step 1: Install Required Tools
 
 ```
 brew install helm
@@ -55,7 +55,7 @@ brew install helm
 brew install orbstack  # Download the OrbStack application
 ```
 
-**Step 2: Set Up Kubernetes in OrbStack**
+### Step 2: Set Up Kubernetes in OrbStack
 
 1. Open the OrbStack application.
 2. Navigate to the Pods section.

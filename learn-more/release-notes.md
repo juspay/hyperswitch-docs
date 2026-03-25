@@ -14,7 +14,7 @@ noIndex: true
 These release notes are exclusively applicable to the Hyperswitch SaaS (Hosted) platform. If you are utilizing the self-hosted version, please refer to the Hyperswitch Open Source release notes available [here](https://github.com/juspay/hyperswitch/releases).
 {% endhint %}
 
-Hyperswitch is a fast-moving open source payments orchestration platform. We ship improvements across routing, vaulting, reconciliation, connectors, SDKs, and developer experience.
+Juspay Hyperswitch is a fast-moving open source payments orchestration platform. We ship improvements across routing, vaulting, reconciliation, connectors, SDKs, and developer experience.
 
 This page serves as a central place to track what is shipping in Hyperswitch.
 

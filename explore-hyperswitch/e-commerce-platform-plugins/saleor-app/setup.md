@@ -14,13 +14,13 @@ This section covers the steps to setup Juspay payment app through saleor
 
 #### 1. Sign up to payments dashboard
 
-**1.1 Non Indian payments dashboard sign up**
+### 1.1 Non Indian payments dashboard sign up
 
 [Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
 
 > **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch.
 
-**1.2 Indian payments dashboard sign up**
+### 1.2 Indian payments dashboard sign up
 
 [Sign up](https://sandbox.portal.juspay.in/) to Hypercheckout dashboard and navigate to `Payments > PG Control Centre` to configure payment gateways and enable various Payment Methods.
 
@@ -45,7 +45,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 #### 1.2 Configure the App
 
-**1.2.1 Configure for non Indian payments**
+### 1.2.1 Configure for non Indian payments
 
 1. Open Hyperswitch App installed on your saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select non Indian payments. This will open a form to collect credentials.
@@ -64,7 +64,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 > **Note:** To customize, your payment page. Please contact [hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email)
 
-**1.2.2 Configure for Indian payments**
+### 1.2.2 Configure for Indian payments
 
 1. Open Hyperswitch App installed on your saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select Indian payments. This will open a form to collect credentials.

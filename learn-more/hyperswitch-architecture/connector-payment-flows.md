@@ -29,7 +29,7 @@ Then, the system proceeds to build the actual authorization request:
 * You need to make a discovery or configuration call before authorization.
 * No prior customer setup or vaulting is needed.
 
-**Example Diagram**
+### Example Diagram
 
 <figure><img src="../../.gitbook/assets/Slide 16_9 - 130.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -50,6 +50,6 @@ The flow includes intelligent decision-making capabilities:
 * **Authentication Type Decision**: Automatically steps up Google Pay transactions to 3DS when risk indicators are present
 * **Proceed Decision**: Determines whether to proceed with authorization based on preprocessing responses (e.g., skips authorization if redirection is required)
 
-**Example Diagram**
+### Example Diagram
 
 <figure><img src="../../.gitbook/assets/Slide 16_9 - 129.jpg" alt=""><figcaption></figcaption></figure>

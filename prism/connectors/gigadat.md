@@ -1,3 +1,7 @@
+---
+description: Explore Gigadat on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Gigadat
 
 <!--

@@ -1,3 +1,7 @@
+---
+description: Explore Recommended Tooling Stack on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Recommended Tooling Stack
 
 The recommended tooling stack for production deployments is:
@@ -84,7 +88,7 @@ Kubernetes can be deployed in one of two models:
 
 Managed services reduce operational overhead by handling cluster management, control plane operations, and upgrades.
 
-**Self-Managed Kubernetes Clusters**
+### Self-Managed Kubernetes Clusters
 
 Organizations with strong internal platform engineering capabilities may choose to operate their own clusters. However, this approach increases operational complexity and maintenance responsibilities.
 
@@ -123,7 +127,7 @@ This makes Helm a powerful mechanism for managing complex Kubernetes application
 {% hint style="info" %}
 #### Note on Alternative Installation Methods
 
-Hyperswitch developer documentation also provides alternative installation methods:
+Juspay Hyperswitch developer documentation also provides alternative installation methods:
 
 * Docker Compose installation
 * AWS Cloud Development Kit (CDK) installation

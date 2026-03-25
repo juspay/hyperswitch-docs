@@ -1,3 +1,7 @@
+---
+description: Explore Get RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Get RPC
 
 <!--
@@ -31,7 +35,7 @@ The `Get` RPC retrieves the current payment status from the payment processor. T
 | **Multi-system sync** | Call `Get` periodically to reconcile payment state across microservices |
 | **Dispute handling** | Call `Get` to verify payment details when responding to chargebacks |
 
-**Key outcomes:**
+### Key outcomes:
 - Accurate payment state for customer-facing displays
 - Recovery from missed or delayed webhooks
 - Confirmation before critical business actions (shipping, digital delivery)

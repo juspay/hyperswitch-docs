@@ -13,89 +13,89 @@ You can manage your team - invite / add new users, assign roles and update roles
 
 Our system currently offers a set of default roles, each with predefined permissions:
 
-**1. Organization Admin**
+### 1. Organization Admin
 
 * Full access to the platform, including user management, transaction oversight, system configuration, and reconciliation.
 * Can create new merchants from the dashboard.
 
-***
+### 
 
-**2. Merchant Admin**
+### 2. Merchant Admin
 
 * Full access to merchant-related information, including user management, transaction oversight, and system configuration.
 * Cannot create new merchants but can manage all other merchant operations.
 
-***
+### 
 
-**3. Profile Admin**
+### 3. Profile Admin
 
 * Full control over profile-level operations, connectors, workflows, analytics, users, and merchant details.
 * Can manage and configure all aspects of the profile.
 
-***
+### 
 
-**4. Merchant Developer**
+### 4. Merchant Developer
 
 * Can create and manage API keys.
 * Has view access to operations, connectors, analytics, users, and merchant details, with the ability to manage merchant details.
 
-***
+### 
 
-**5. Profile Developer**
+### 5. Profile Developer
 
 * Can create and manage API keys for the profile.
 * Has view and manage access to operations, connectors, analytics, users, and merchant details.
 
-***
+### 
 
-**6. Merchant Operator**
+### 6. Merchant Operator
 
 * Can view and manage payment-related information, including refunds, mandates, and disputes.
 * Has view-only access to workflows, connectors, analytics, users, and merchant details.
 
-***
+### 
 
-**7. Profile Operator**
+### 7. Profile Operator
 
 * Can manage payment-related operations for the profile.
 * Has view access to connectors, workflows, analytics, users, and merchant details.
 
-***
+### 
 
-**8. Merchant IAM**
+### 8. Merchant IAM
 
 * Can invite or add users to the merchant account.
 * Has restricted access to other modules, including operations, analytics, and merchant details.
 
-***
+### 
 
-**9. Profile IAM**
+### 9. Profile IAM
 
 * Can invite or manage users within the profile.
 * Has restricted access to operations, analytics, and merchant details.
 
-***
+### 
 
-**10. Profile View Only**
+### 10. Profile View Only
 
 * View-only access to all modules, including operations, connectors, workflows, analytics, users, and merchant details.
 
-***
+### 
 
-**11. Merchant View Only**
+### 11. Merchant View Only
 
 * View-only access to all modules within the merchant, including operations, connectors, workflows, analytics, users, and merchant details.
 
-***
+### 
 
-**12. Profile Customer Support**
+### 12. Profile Customer Support
 
 * Can view transaction details and customer information necessary for handling queries and support issues.
 * View access to operations, analytics, users, and merchant details.
 
-***
+### 
 
-**13. Customer Support**
+### 13. Customer Support
 
 * Can access transaction details and customer information needed for handling support queries.
 * View access to merchant operations, analytics, users, and merchant details.

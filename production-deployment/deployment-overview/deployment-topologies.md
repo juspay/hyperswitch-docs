@@ -1,3 +1,7 @@
+---
+description: Explore Deployment Topologies on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Deployment Topologies
 
 There are two primary deployment topologies to enhance the reliability of enterprise setups:

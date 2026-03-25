@@ -1,10 +1,11 @@
 ---
+description: Explore Payment Method on Juspay Hyperswitch to understand and implement this capability
 icon: arrow-progress
 ---
 
 # Payment Method
 
-Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
 ### Integration Path
@@ -22,11 +23,11 @@ The business can then use the `payment_method_id` in `/payments` API to perform 
 
 
 
-**Payment Method Lifecycle**
+### Payment Method Lifecycle
 
 The Payment Method flow leverages the full suite of Hyperswitch [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) capabilities while granting businesses granular control over the user journey. By utilizing Server-to-Server (S2S) APIs and unique identifiers `payment_method_id`, businesses can separate the collection of payment credentials from the actual transaction logic.
 
-**The Two-Step Integration Pattern**
+### The Two-Step Integration Pattern
 
 1. **Credential Capture & Vaulting**
 

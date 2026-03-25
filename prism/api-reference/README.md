@@ -1,3 +1,7 @@
+---
+description: Explore API Reference on Juspay Hyperswitch to understand and implement this capability
+---
+
 # API Reference
 
 Complete reference for all Prism API services, request/response types, and error handling.

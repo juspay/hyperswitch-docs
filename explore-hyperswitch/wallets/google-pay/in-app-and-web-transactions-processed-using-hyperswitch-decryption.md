@@ -1,3 +1,7 @@
+---
+description: Explore In-App and Web Transactions Processed Using Hyperswitch Decryption on Juspay Hyperswitch to understand and implement this capability
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the Google Pay token using your shared keys. This allows Hyperswitch to route the payment to any downstream processor.

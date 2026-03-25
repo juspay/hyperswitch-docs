@@ -1,4 +1,5 @@
 ---
+description: Explore Self-hosted & in-house PCI on Juspay Hyperswitch to understand and implement this capability
 icon: box-ballot
 ---
 
@@ -23,7 +24,7 @@ Key Highlights:
 
 The sequence diagram above outlines how a self-hosted merchant performs payments and vaulting
 
-**New user payments flow**
+### New user payments flow
 
 1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
 2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
@@ -47,7 +48,7 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 
 6. This `Payment_method_id` is returned to the merchant via webhooks
 
-**Repeat user payments flow**
+### Repeat user payments flow
 
 1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
 2. The end-user can select the desired payment option and add their `CVV`&#x20;
@@ -55,6 +56,6 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 4. The Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
 5. It sends payload with appropriate credential to the payment provider or PSP downstream based on the merchant configurations
 
-**Merchant Initiated Transaction (MIT) flow**
+### Merchant Initiated Transaction (MIT) flow
 
 1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`

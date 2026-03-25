@@ -15,7 +15,7 @@ To use secure payment links, you need to configure a list of trusted domains in 
 
 The domain of the parent webpage embedding the secure link must match one of the domains listed in `allowed_domains`.
 
-**Steps for using secure payment links**
+### Steps for using secure payment links
 
 **1. Configure `allowed_domains` in business profile**
 
@@ -34,7 +34,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
     }'
 ```
 
-**2. Create payment links**
+### 2. Create payment links
 
 Use the following API request to create payment links, which will return both the open and secure links.
 

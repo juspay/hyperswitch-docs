@@ -1,4 +1,5 @@
 ---
+description: Explore Payment Features on Juspay Hyperswitch to understand and implement this capability
 icon: sparkles
 ---
 
@@ -32,14 +33,14 @@ HyperSwitch SDKs provide client-side payment capabilities across web and mobile 
 
 #### Platform-Specific Features
 
-**Web SDK**
+### Web SDK
 
 * Payment Request API integration
 * Browser autofill support
 * Apple Pay (with domain verification)
 * Google Pay web integration
 
-**Mobile SDKs (iOS/Android)**
+### Mobile SDKs (iOS/Android)
 
 * Native wallet integration (Apple Pay/Google Pay)
 * NFC tap-to-pay support (Beta)
@@ -47,7 +48,7 @@ HyperSwitch SDKs provide client-side payment capabilities across web and mobile 
 * Biometric authentication
 * Native UI components
 
-**Cross-Platform (React Native/Flutter)**
+### Cross-Platform (React Native/Flutter)
 
 * Platform-appropriate wallet integration
 * Shared business logic with native UI

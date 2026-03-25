@@ -1,4 +1,5 @@
 ---
+description: Explore Processor error code mapping on Juspay Hyperswitch to understand and implement this capability
 icon: signs-post
 ---
 

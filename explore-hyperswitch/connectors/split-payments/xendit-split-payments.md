@@ -1,4 +1,5 @@
 ---
+description: Explore Xendit Split Settlement on Juspay Hyperswitch to understand and implement this capability
 icon: hexagon-xmark
 ---
 
@@ -121,7 +122,7 @@ For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
 * The sub-account user-id that you want to make this transaction for
 * Used when making payments on behalf of a sub-merchant
 
-**`routes`** (array, **required)**
+### `routes`** (array, **required)
 
 * Array of `XenditSplitRoute` objects that define how the platform wants to route the fees and to which accounts
 * Each route object represents a single payment split from the end user to a destination account
@@ -169,7 +170,7 @@ For single split settlements, the structure is simpler domain.rs:55-58 :
 
 #### Split Settlement Response Types
 
-**Multiple Splits Response**
+### Multiple Splits Response
 
 For multiple splits, the `charges` field contains detailed split rule information:
 
@@ -193,7 +194,7 @@ Key fields to document:
 * `for_user_id`: Optional sub-merchant identifier
 * `routes`: Array of split route details with amounts and destinations
 
-**Single Split Response**
+### Single Split Response
 
 For single splits, the structure is simpler transformers.rs:370-382 :
 

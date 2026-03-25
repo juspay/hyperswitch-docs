@@ -1,3 +1,7 @@
+---
+description: Explore Extending to More Flows on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Extending to More Flows
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.

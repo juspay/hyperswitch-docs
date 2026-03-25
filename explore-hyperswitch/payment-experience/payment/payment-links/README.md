@@ -63,7 +63,7 @@ The payment link is valid for 15-minutes by default. However you can increase th
 
 <summary>How can I send Payment links via Emails?</summary>
 
-Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
+Juspay Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
 
 </details>
 

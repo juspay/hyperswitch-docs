@@ -134,7 +134,7 @@ On running the above command, you will get an option to configure the following:
 You will either get these keys as an output when you host the app server, or for quick prototyping, you can create a new Hyperswitch sandbox account [here](https://app.hyperswitch.io/login) and get started.
 {% endhint %}
 
-**Optional:**
+### Optional:
 
 1. **URL where you have hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `https://sandbox.hyperswitch.io`
 2. **URL where you have hosted Hyperswitch Client SDK** - This is the HyperLoader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path})`. If not provided, this will default to `https://beta.hyperswitch.io/v1`

@@ -1,4 +1,5 @@
 ---
+description: Explore Incremental Authorization on Juspay Hyperswitch to understand and implement this capability
 icon: arrow-up-right-dots
 ---
 
@@ -10,7 +11,7 @@ Incremental authorization in Hyperswitch allows merchants to request additional 
 
 ## Why is it important?
 
-Incremental authorization extends the ability to request more funds beyond the original authorized amount, which is perfect for aforementioned situations like hotel bookings, car rentals, or services where the final cost is uncertain. Hyperswitch enables merchants to easily add charges during the checkout process without affecting the user journey for re-authorization.
+Incremental authorization extends the ability to request more funds beyond the original authorized amount, which is perfect for aforementioned situations like hotel bookings, car rentals, or services where the final cost is uncertain. Juspay Hyperswitch enables merchants to easily add charges during the checkout process without affecting the user journey for re-authorization.
 
 ### How Incremental Authorization Helps Businesses?
 

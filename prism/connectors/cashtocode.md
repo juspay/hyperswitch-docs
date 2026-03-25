@@ -1,3 +1,7 @@
+---
+description: Explore CashtoCode on Juspay Hyperswitch to understand and implement this capability
+---
+
 # CashtoCode
 
 <!--
@@ -32,7 +36,7 @@ Finalize an authorized payment transaction. Transfers reserved funds from custom
 | **Request** | `PaymentServiceCaptureRequest` |
 | **Response** | `PaymentServiceCaptureResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -54,7 +58,7 @@ Initialize an order in the payment processor system. Sets up payment context bef
 | **Request** | `PaymentServiceCreateOrderRequest` |
 | **Response** | `PaymentServiceCreateOrderResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -75,7 +79,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -96,7 +100,7 @@ Initiate a refund to customer's payment method. Returns funds for returns, cance
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -120,7 +124,7 @@ Reverse a captured payment before settlement. Recovers funds after capture but b
 | **Request** | `PaymentServiceReverseRequest` |
 | **Response** | `PaymentServiceReverseResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -138,7 +142,7 @@ Cancel an authorized payment before capture. Releases held funds back to custome
 | **Request** | `PaymentServiceVoidRequest` |
 | **Response** | `PaymentServiceVoidResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -158,7 +162,7 @@ Create customer record in the payment processor system. Stores customer details 
 | **Request** | `CustomerServiceCreateRequest` |
 | **Response** | `CustomerServiceCreateResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {
@@ -193,7 +197,7 @@ Generate short-lived connector authentication token. Provides secure credentials
 | **Request** | `MerchantAuthenticationServiceCreateAccessTokenRequest` |
 | **Response** | `MerchantAuthenticationServiceCreateAccessTokenResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {}
@@ -208,7 +212,7 @@ Create session token for payment processing. Maintains session state across mult
 | **Request** | `MerchantAuthenticationServiceCreateSessionTokenRequest` |
 | **Response** | `MerchantAuthenticationServiceCreateSessionTokenResponse` |
 
-**Minimum Request**
+### Minimum Request
 
 ```json
 {

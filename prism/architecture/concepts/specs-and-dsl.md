@@ -1,3 +1,7 @@
+---
+description: Explore Specs and DSL on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Specs and DSL
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust Types that catches integration errors at compile time. It enforces the right thing so that AI agents and Developers can code at ease when adding new integrations or enhancements to the Prism codebase.
@@ -8,7 +12,7 @@ Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust T
 
 The `ConnectorIntegration` trait defines the contract that every connector must implement. This trait ensures consistent behavior across all payment processor integrations. Mistakes are caught early at compile time, rather than late.
 
-**Core trait methods:**
+### Core trait methods:
 
 | Method | Purpose | When Called |
 |--------|---------|-------------|
@@ -20,7 +24,7 @@ The `ConnectorIntegration` trait defines the contract that every connector must 
 | `build_error_response` | Parse error responses | After 4xx/5xx response |
 | `get_connector_transaction_id` | Extract transaction ID | After successful response |
 
-**Example implementation:**
+### Example implementation:
 
 ```rust
 impl ConnectorIntegration<Authorize, AuthorizeRequest, AuthorizeResponse> for Stripe {
@@ -104,7 +108,7 @@ If you forget to implement `build_error_response`, the macro invocation fails at
 Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification.
 It provides compile-time guarantees irrespective of the programming languages you use the SDK with.
 
-**Proto definition:**
+### Proto definition:
 ```protobuf
 message AuthorizeRequest {
     Money amount = 1;                    // Required

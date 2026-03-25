@@ -47,7 +47,7 @@ app.post("/create-payment", async (req, res) => {
 });
 ```
 
-Hyperswitch currently supports the following Bank Redirects:
+Juspay Hyperswitch currently supports the following Bank Redirects:
 
 | **Bank** **Redirects**               | **Supported Customer Countries**                                                                                                     | **Supported Currencies** |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |

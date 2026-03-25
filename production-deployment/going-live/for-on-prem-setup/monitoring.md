@@ -6,10 +6,10 @@ icon: eyes
 # Monitoring
 
 {% hint style="info" %}
-In this chapter, you will learn to setup logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
+In this chapter, you will learn to setup logs and monitoring on your application. Juspay Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
 {% endhint %}
 
-***
+### 
 
 In the world of application monitoring, two critical elements play pivotal roles&#x20;
 
@@ -26,7 +26,7 @@ This combination, along with Grafana for visualization, seamlessly integrates lo
 
 <figure><img src="../../../.gitbook/assets/Monitoring architecture (3).jpg" alt=""><figcaption></figcaption></figure>
 
-***
+### 
 
 ## Logs with Grafana Loki and Promtail
 
@@ -39,7 +39,7 @@ This combination, along with Grafana for visualization, seamlessly integrates lo
 
 By following these installation steps, you can set up Grafana Loki and Promtail effectively, enabling comprehensive logging capabilities for your application monitoring needs.
 
-**Step 1: Install helm**
+### Step 1: Install helm
 
 {% tabs %}
 {% tab title="MacOs" %}
@@ -87,7 +87,7 @@ sudo apt-get install helm --yes
 {% endtab %}
 {% endtabs %}
 
-**Step 2: Install Loki**
+### Step 2: Install Loki
 
 Once Helm is installed, you can proceed with the installation of Loki. Loki can be installed in various modes, and [here](https://grafana.com/docs/loki/latest/setup/install/helm/install-scalable/), we provide a setup guide for installing Loki in a scalable monolithic mode.
 
@@ -97,7 +97,7 @@ Make sure you install grafana/loki in a specific kubernetes namespace that you d
 helm install --namespace your-namespace --values values.yaml loki grafana/loki
 ```
 
-**Step 3: Install Promtail**
+### Step 3: Install Promtail
 
 To set up the endpoint for Loki's gateway, which Promtail will use to transmit logs, we need to specify it in the Promtail chart's configuration values. In our specific scenario, the designated endpoint is "loki.grafana-loki.svc.cluster.local." Let's proceed by incorporating this endpoint into the Promtail chart values.
 

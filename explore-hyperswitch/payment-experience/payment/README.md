@@ -1,10 +1,11 @@
 ---
+description: Explore Payment on Juspay Hyperswitch to understand and implement this capability
 icon: file-invoice-dollar
 ---
 
 # Payment
 
-Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
 ### Integration Path
@@ -26,7 +27,7 @@ Refer to Payments (Cards) section  if your flow requires the SDK to initiate pay
 
 <figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
-**Required Fields:**
+### Required Fields:
 
 * `confirm: true`
 * `capture_method: "automatic"`
@@ -40,7 +41,7 @@ Refer to Payments (Cards) section  if your flow requires the SDK to initiate pay
 
 <figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-**Flow:**
+### Flow:
 
 1. **Authorize:** `POST /payments` with `capture_method: "manual"`
 2. **Status:** `requires_capture`
@@ -55,7 +56,7 @@ Read more - [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/
 
 <figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
-**Endpoints:**
+### Endpoints:
 
 * **Create:** `POST /payments`
 * **Update:** `POST /payments/{payment_id}`
@@ -68,7 +69,7 @@ Read more - [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/
 
 <figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-**Additional Fields:**
+### Additional Fields:
 
 * `authentication_type: "three_ds"`
 
@@ -80,13 +81,13 @@ Read more - [link](https://docs.hyperswitch.io/~/revisions/9QlGypixZFcbkq8oGjaF/
 
 #### 1. Saving Payment Methods
 
-**During Payment Creation:**
+### During Payment Creation:
 
 * Add `setup_future_usage: "off_session"` or `"on_session"`
 * Include `customer_id`
 * **Result:** `payment_method_id` returned on success
 
-**Understanding `setup_future_usage`:**
+### Understanding `setup_future_usage`:
 
 * **`on_session`**: Use when the customer is actively present during the transaction. This is typical for scenarios like saving card details for faster checkouts in subsequent sessions where the customer will still be present to initiate the payment (e.g., card vaulting for e-commerce sites).
 * **`off_session`**: Use when you intend to charge the customer later without their active involvement at the time of charge. This is suitable for subscriptions, recurring billing, or merchant-initiated transactions (MITs) where the customer has pre-authorized future charges.
@@ -95,7 +96,7 @@ Read more - [link](https://docs.hyperswitch.io/~/revisions/9QlGypixZFcbkq8oGjaF/
 
 <figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
-**Steps:**
+### Steps:
 
 1. **Initiate:** Create payment with `customer_id`
 2. **List:** Get saved cards via `GET /customers/payment_methods`

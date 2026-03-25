@@ -78,6 +78,6 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 * Custom export & reporting: enable merchants to generate and download tailored reconciliation reports
 * Adyen integration & auto‑fetch: provide a one‑click Adyen connector that securely pulls transactions on a schedule, auto‑maps fields and normalizes into your unified schema
 
-**Want to contribute to the roadmap?**
+### Want to contribute to the roadmap?
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

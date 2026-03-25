@@ -1,3 +1,7 @@
+---
+description: Explore JS on Juspay Hyperswitch to understand and implement this capability
+---
+
 # JS
 
 Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
@@ -20,7 +24,7 @@ Use `hyper.confirmPayment` to confirm a PaymentIntent using data collected by th
 | `confirmParams (object)` | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
 | `redirect (string)`      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
 
-**ConfirmParams object**
+### ConfirmParams object
 
 | confirmParams        | Description                                                                          |
 | -------------------- | ------------------------------------------------------------------------------------ |
@@ -113,13 +117,13 @@ elements.getElement('payment') returns one of the following:
 * An instance of a Unified Checkout.
 * `null`, when no Unified Checkout has been created.
 
-**2. `elements.create(type, options?)`**
+### 2. `elements.create(type, options?)`
 
 This method creates an instance of an individual Element. It takes the type of Element to create as well as an options object.
 
 The type can be ‘payment’ for UnifiedCheckout.
 
-**Options object**
+### Options object
 
 | options (Required)                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -133,7 +137,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 
 
-**Layout object**
+### Layout object
 
 | layout                                | Description                                                                                                                                                                                                                                                                                                |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -145,7 +149,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 
 
-**defaultValues object**
+### defaultValues object
 
 | defaultValues             | Description                                                                                                                                                                                                                 |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -167,13 +171,13 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `country (string)` |             |
 | `postal_code`      |             |
 
-**fields object**
+### fields object
 
 | layout                                   | Description                                                                                                                |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `billingDetails (never / auto / object)` | Please refer the above written structure of billingDetails, expect of them being string, they will be either never or auto |
 
-**terms object**
+### terms object
 
 | terms                                   | Description |
 | --------------------------------------- | ----------- |
@@ -185,7 +189,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `sepaDebit (auto / always / never)`     |             |
 | `sofort (auto / always / never)`        |             |
 
-**wallets object**
+### wallets object
 
 | wallets                    | Description                                                                                    |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -196,7 +200,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 
 
-**`3. elements.update(options)`**
+### `3. elements.update(options)`
 
 Updates the options the Element was initialized with. Updates are merged into the existing configuration.
 

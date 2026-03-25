@@ -11,7 +11,7 @@ icon: file-user
 If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory.
 {% endhint %}
 
-**Hyperswitch architecture supports:**
+### Hyperswitch architecture supports:
 
 * Creating multiple merchant accounts under an organization (Organization → Merchant → Profile model).
 * Creating multiple business profiles under each merchant account.

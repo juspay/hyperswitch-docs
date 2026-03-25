@@ -1,4 +1,5 @@
 ---
+description: Explore Express Checkout on Juspay Hyperswitch to understand and implement this capability
 icon: cart-shopping-fast
 ---
 
@@ -6,7 +7,7 @@ icon: cart-shopping-fast
 
 **Purpose:** One click solution for last used saved payment method
 
-**Add Express Checkout Widget to Layout**
+### Add Express Checkout Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -22,7 +23,7 @@ icon: cart-shopping-fast
     android:text="Confirm EC" />
 ```
 
-**Initialize Express Checkout Launcher**
+### Initialize Express Checkout Launcher
 
 ```kotlin
 private lateinit var ecLauncherInstance: UnifiedPaymentLauncher
@@ -45,7 +46,7 @@ private fun setupECLauncher() {
 }
 ```
 
-**Handle Express Checkout Callbacks**
+### Handle Express Checkout Callbacks
 
 ```kotlin
 private fun onExpressCheckoutReady(isReady: Boolean) {

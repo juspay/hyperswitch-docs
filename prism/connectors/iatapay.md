@@ -1,3 +1,7 @@
+---
+description: Explore Iatapay on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Iatapay
 
 <!--
@@ -112,7 +116,7 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | **Request** | `PaymentServiceAuthorizeRequest` |
 | **Response** | `PaymentServiceAuthorizeResponse` |
 
-**Supported payment method types:**
+### Supported payment method types:
 
 | Payment Method | Supported |
 |----------------|:---------:|

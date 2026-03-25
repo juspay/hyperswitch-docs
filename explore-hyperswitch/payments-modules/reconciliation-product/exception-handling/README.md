@@ -1,3 +1,7 @@
+---
+description: Explore Exception Handling on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Exception Handling
 
 ## Module: Reconciliation Exception Handling

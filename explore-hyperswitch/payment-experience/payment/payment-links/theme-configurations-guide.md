@@ -8,7 +8,7 @@ description: Payment Links & Theme Customization Guide
 
 Style IDs are design templates for your payment links, allowing you to create different themes for different purposes - separate looks for your premium brand, holiday sales, or regional markets.
 
-**What you can customize in each theme:**
+### What you can customize in each theme:
 
 * Your brand's visual identity (colors, logos, backgrounds, button styles)
 * Custom messaging and terms & conditions
@@ -21,19 +21,19 @@ Style IDs are design templates for your payment links, allowing you to create di
 
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.
 
-**Examples of Style IDs you might create:**
+### Examples of Style IDs you might create:
 
 * `brand-default` - Your main brand theme
 * `brand-premium` - Elevated experience for premium customers
 * `holiday-2024` - Special theme for seasonal promotions
 
-***
+### 
 
 ## **2. Configuration Hierarchy & Cascading**
 
 Payment link configurations work in a flexible, cascading manner that gives you control at multiple levels:
 
-**Three levels of configuration:**
+### Three levels of configuration:
 
 1. **Default Style ID** - Set at the business profile level
    * Applied to all payment links by default
@@ -45,7 +45,7 @@ Payment link configurations work in a flexible, cascading manner that gives you 
    * Override any configuration for maximum granular control
    * Perfect for one-off customizations or special cases
 
-**How cascading works:**
+### How cascading works:
 
 ```
 Default Style ID
@@ -57,7 +57,7 @@ API config overrides (if provided during creation)
 Final Payment Link Appearance
 ```
 
-**Example workflow:**
+### Example workflow:
 
 1. Set your default theme at business profile level with your standard brand colors
 2. Create a `holiday-sale` style ID with special promotional colors
@@ -68,11 +68,11 @@ Final Payment Link Appearance
 
 This cascading approach means you can maintain consistency while having flexibility for special cases!
 
-***
+### 
 
 ## **3. Smart Text Handling**
 
-**The system works intelligently by default:**
+### The system works intelligently by default:
 
 Out of the box, the payment link automatically:
 
@@ -88,7 +88,7 @@ If you decide to write your own custom text for terms and conditions, here's wha
 * 🌍 Automatic translations stop working - you'll need to provide translations for each language you support
 * 📝 Automatic text inference is lost since a single text is configured for all transaction types
 
-**If you do customize text, here's a pro tip:**
+### If you do customize text, here's a pro tip:
 
 Write in a way that works for any scenario your customers might encounter:
 
@@ -96,7 +96,7 @@ Write in a way that works for any scenario your customers might encounter:
 * ✅ **Instead say:** "By submitting your payment information, you authorize..."
 * ✅ **Or even better:** "By completing this form, you authorize..."
 
-**Universal example that works everywhere:**
+### Universal example that works everywhere:
 
 ```
 "By submitting your payment information, you authorize [Your Business Name] to 
@@ -105,20 +105,20 @@ charge your payment method or store your payment details as applicable."
 
 This works whether your customer is paying now, setting up a subscription, or just saving their card!
 
-***
+### 
 
 ## **4. Choosing Your Approach**
 
 You have two ways to set up your payment link themes:
 
-**Option A: Keep It Simple**
+### Option A: Keep It Simple
 
 * Use one universal theme with messaging that works for everything
 * Easier to manage and maintain
 * Consistent brand experience for all customers
 * Recommended for streamlined operations
 
-**Option B: Get Specific for Each Flow**
+### Option B: Get Specific for Each Flow
 
 * Create different themes for different purposes:
   * `payment-flow-theme` - For regular purchases
@@ -128,13 +128,13 @@ You have two ways to set up your payment link themes:
 * When creating a payment link, choose which theme fits that transaction
 * **What to know:** More control and precision, but more themes to keep updated
 
-**When specialized themes make sense:**
+### When specialized themes make sense:
 
 * You want different experiences for different flows (like a simpler look for quick payments vs detailed for subscriptions)
 * You're optimizing conversion rates and want to test different approaches
 * You have the resources to maintain multiple themes
 
-***
+### 
 
 ## **5. Real-World Use Cases**
 
@@ -144,7 +144,7 @@ You have two ways to set up your payment link themes:
 
 **Planning a seasonal promotion?** Create a special campaign theme (`holiday-2024`, `summer-sale`) that you can easily turn on for promotional periods and turn off when the campaign ends.
 
-***
+### 
 
 ## **6. Handling Different Transaction Types**
 
@@ -159,7 +159,7 @@ Universal messaging that works for this flow:
 charge your payment method or store your payment details as applicable."
 ```
 
-**Manual captures:**
+### Manual captures:
 
 Authorization happens first, capture occurs later. Use messaging that acknowledges this two-step process:
 
@@ -168,7 +168,7 @@ Authorization happens first, capture occurs later. Use messaging that acknowledg
 reserve and later capture payment from your payment method."
 ```
 
-**Normal payments (immediate capture):**
+### Normal payments (immediate capture):
 
 Authorization and capture happen together. Use straightforward messaging about the immediate charge:
 
@@ -177,7 +177,7 @@ Authorization and capture happen together. Use straightforward messaging about t
 charge your payment method."
 ```
 
-**Saving payment methods / Subscriptions:**
+### Saving payment methods / Subscriptions:
 
 Cover both storing credentials and future charges with universal language:
 
@@ -186,4 +186,4 @@ Cover both storing credentials and future charges with universal language:
 charge your payment method or store your payment details as applicable."
 ```
 
-***
+### 

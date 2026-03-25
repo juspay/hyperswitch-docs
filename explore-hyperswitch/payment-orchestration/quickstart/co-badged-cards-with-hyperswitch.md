@@ -1,4 +1,5 @@
 ---
+description: Explore Co-badged Cards on Juspay Hyperswitch to understand and implement this capability
 icon: credit-card
 ---
 

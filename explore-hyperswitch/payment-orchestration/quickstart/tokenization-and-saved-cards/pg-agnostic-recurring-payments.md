@@ -18,7 +18,7 @@ In the following MIT payments basis the enablement of the feature and the availa
 
 ## Supported Payment processors
 
-Hyperswitch supports the following processors for PG Agnostic Recurring Payments.
+Juspay Hyperswitch supports the following processors for PG Agnostic Recurring Payments.
 
 * Stripe
 * Adyen

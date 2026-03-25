@@ -1,4 +1,5 @@
 ---
+description: Explore Card Element on Juspay Hyperswitch to understand and implement this capability
 icon: credit-card
 ---
 
@@ -6,7 +7,7 @@ icon: credit-card
 
 **Purpose:** Card payments
 
-**Add Card Widget to Layout**
+### Add Card Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -22,7 +23,7 @@ icon: credit-card
     android:text="Pay with Card" />
 ```
 
-**Initialize Card Launcher**
+### Initialize Card Launcher
 
 ```kotlin
 private lateinit var cardPaymentLauncher: UnifiedPaymentLauncher
@@ -35,7 +36,7 @@ private fun setupCardPayment() {
 }
 ```
 
-**Handle Card Payment**
+### Handle Card Payment
 
 ```kotlin
 private fun processCardPayment() {

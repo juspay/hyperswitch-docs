@@ -1,3 +1,7 @@
+---
+description: Explore SubmitEvidence RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # SubmitEvidence RPC
 
 <!--
@@ -21,7 +25,7 @@ The `SubmitEvidence` RPC uploads supporting documentation to contest a chargebac
 
 ## Purpose
 
-**Why submit evidence for disputes?**
+### Why submit evidence for disputes?
 
 | Scenario | Evidence Type | Expected Outcome |
 |----------|---------------|------------------|
@@ -31,7 +35,7 @@ The `SubmitEvidence` RPC uploads supporting documentation to contest a chargebac
 | **Subscription cancellation** | Recurring transaction agreement, cancellation policy, usage logs | Show service was provided or properly disclosed |
 | **Duplicate charge** | Order details, refund records, transaction timestamps | Clarify distinct transactions |
 
-**Key outcomes:**
+### Key outcomes:
 - Evidence attached to dispute record
 - Evidence IDs returned for tracking
 - Status updated to reflect submission

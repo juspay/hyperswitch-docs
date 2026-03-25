@@ -5,11 +5,11 @@ icon: bars-progress
 
 # Payment Methods Management
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ### **Key Features of Payment Method Management in Hyperswitch**
 
-Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
+Juspay Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
 
 #### **Payment Method Creation**:&#x20;
 
@@ -17,7 +17,7 @@ Easily allow your customers to save new payment methods during checkout, providi
 
 #### **Storing Payment Methods**:&#x20;
 
-Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
+Juspay Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
 
 #### **Retrieving Payment Methods**:&#x20;
 
@@ -48,7 +48,7 @@ To generate your Vault API keys, follow these steps:
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 
-**Creating a Payment Methods Session Endpoint**
+### Creating a Payment Methods Session Endpoint
 
 Add an endpoint on your server that creates [payment methods sessions](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1). This endpoint will return the necessary session information to your client application.
 
@@ -170,7 +170,7 @@ async function initialize() {
 initialize();
 ```
 
-**2.3 Complete tokenization and handle errors**
+### 2.3 Complete tokenization and handle errors
 
 Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
 

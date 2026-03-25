@@ -49,7 +49,7 @@ The merchant client initializes the Hyperswitch SDK. The SDK requests eligible p
 The SDK displays the saved cards in the payment UI. The customer selects a saved card without re-entering card details.
 
 **4. Retrieve Card Data and Authorize**\
-The SDK sends a `payments/confirm` request with the selected `payment_method_id`. Hyperswitch securely retrieves the card data from the Hyperswitch Vault and submits the authorization request to the processor via the Hyperswitch Connector.
+The SDK sends a `payments/confirm` request with the selected `payment_method_id`. Juspay Hyperswitch securely retrieves the card data from the Hyperswitch Vault and submits the authorization request to the processor via the Hyperswitch Connector.
 
 **5. Return Status**\
 The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant’s `return_url` with the payment outcome.

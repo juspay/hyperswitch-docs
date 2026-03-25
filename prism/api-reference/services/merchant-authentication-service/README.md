@@ -1,3 +1,7 @@
+---
+description: Explore Merchant Authentication Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Merchant Authentication Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Merchant Authentication Service provides secure authentication mechanisms for payment processing. It generates short-lived access tokens for API access, session tokens for maintaining payment state, and SDK session tokens for wallet payments like Apple Pay and Google Pay.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **Client-side tokenization** - Generate tokens for browser/mobile apps without exposing API keys
 - **Session management** - Maintain state across multi-step payment flows
 - **Wallet payments** - Initialize Apple Pay, Google Pay sessions
@@ -63,7 +67,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **CreateAccessToken** - Your server calls this RPC to generate a short-lived access token (typically 1 hour). This token has limited scope and can be safely sent to client applications (browsers, mobile apps) without exposing your main API credentials.
 
@@ -103,7 +107,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **CreateSdkSessionToken** - When a customer chooses Apple Pay, your backend calls this RPC with payment details (amount, merchant ID). The connector initializes an Apple Pay session with Apple's servers and returns session data.
 
@@ -115,17 +119,17 @@ sequenceDiagram
 
 ## Security Best Practices
 
-**Token Expiration:**
+### Token Expiration:
 - Access tokens expire quickly (1 hour typical)
 - Don't cache tokens long-term
 - Generate new tokens for each session
 
-**Scope Limitation:**
+### Scope Limitation:
 - Tokens have limited permissions
 - Cannot perform sensitive operations
 - Designed for specific use cases
 
-**Server-Side Authorization:**
+### Server-Side Authorization:
 - Always process payments server-side
 - Never authorize payments from client
 - Use tokens only for tokenization/UI

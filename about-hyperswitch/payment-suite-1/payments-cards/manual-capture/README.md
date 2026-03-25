@@ -25,7 +25,7 @@ But in some cases, merchants would like to place a hold on the customer's funds 
 
 The 'capture\_method' field determines the type of capture for a particular payment and it defaults to 'automatic' if not passed. So, to do manual capture, set `"capture_method" = "manual"` when creating a payment from your server
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -60,7 +60,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 Note - You can mark `"confirm" = "true"` in the previous step and directly move to the capture flow.&#x20;
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/confirm' \
@@ -86,7 +86,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/c
 
 After delivering the goods and services, capture the payment by passing the `payment_id` from above step to `payments/capture` API endpoint. On successful capture, the payment would transition from `'requires_capture'` to `'succeeded'` status.
 
-**Sample curl:**
+### Sample curl:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQD/capture' \

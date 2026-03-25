@@ -1,3 +1,7 @@
+---
+description: Explore Error Handling on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
@@ -92,7 +96,7 @@ try {
 
 ### Declined Card (Stripe)
 
-**Stripe's raw response:**
+### Stripe's raw response:
 ```json
 {
     "error": {
@@ -103,7 +107,7 @@ try {
 }
 ```
 
-**Prism unified error:**
+### Prism unified error:
 ```json
 {
     "error": {
@@ -120,7 +124,7 @@ try {
 
 ### Invalid API Key (Adyen)
 
-**Adyen's raw response:**
+### Adyen's raw response:
 ```json
 {
     "status": 401,
@@ -130,7 +134,7 @@ try {
 }
 ```
 
-**Prism unified error:**
+### Prism unified error:
 ```json
 {
     "error": {
@@ -182,12 +186,12 @@ async function authorizeWithRetry(request, maxRetries = 3) {
 }
 ```
 
-**Retryable errors:**
+### Retryable errors:
 - `NETWORK_TIMEOUT`
 - `RATE_LIMIT_EXCEEDED`
 - `SERVICE_UNAVAILABLE`
 
-**Non-retryable errors:**
+### Non-retryable errors:
 - `PAYMENT_DECLINED`
 - `EXPIRED_CARD`
 - `INVALID_API_KEY`

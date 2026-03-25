@@ -103,7 +103,7 @@ The merchant server calls the "List Payment Methods" API using the `session_id`.
 
 The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 
-**New user payments flow**
+### New user payments flow
 
 1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch&#x20;
 2. [Initialize SDK (Client-Side) ](../../../explore-hyperswitch/payment-experience/payment-method/)The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
@@ -111,7 +111,7 @@ The merchant server initiates the payment by sending a request to the [Hyperswit
 4. Retrieve Payment Method ID (Server-Side) The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the&#x20;
 
-**Proxy Payment Request**
+### Proxy Payment Request
 
 Include the following details:
 
@@ -127,7 +127,7 @@ Include the following details:
       2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
    4. Placeholders for token data: In the `request_body`, Plug in the dynamic placeholders`{{$card_number}}`, `{{$card_exp_month}}`,`{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
 
-**Sample Proxy payment request (Checkout.com)**
+### Sample Proxy payment request (Checkout.com)
 
 <pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/proxy' \
 --header 'Content-Type: application/json' \

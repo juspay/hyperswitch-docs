@@ -1,3 +1,7 @@
+---
+description: Explore Upgrade Hyperswitch on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)
@@ -241,7 +245,7 @@ Each environment can deploy different versions or configurations.
 
 #### 7. Deploy Hyperswitch via Helm
 
-The Hyperswitch application definition references the Helm chart.
+The Juspay Hyperswitch application definition references the Helm chart.
 
 Example:
 

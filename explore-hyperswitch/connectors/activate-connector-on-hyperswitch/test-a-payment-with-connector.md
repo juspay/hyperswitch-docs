@@ -1,4 +1,5 @@
 ---
+description: Explore Try a Payment on Juspay Hyperswitch to understand and implement this capability
 icon: vial-circle-check
 ---
 
@@ -42,14 +43,14 @@ icon: vial-circle-check
 | Stripe          | 4242424242424242 | 12/25        | 100 | [Click here](https://stripe.com/docs/testing#cards)                                                         |
 | Worldline       | 4012000033330026 | 12/25        | 123 | [Click here](https://epayments.developer-ingenico.com/documentation/testcases/detail/visa)                  |
 
-**Dummy Connector test cards**
+### Dummy Connector test cards
 
 * Different flows are available for dummy connector transactions, determined by the card number.
 * For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
 * Dummy connectors only support payments and refunds.
 * Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
 
-**Non 3DS flows**
+### Non 3DS flows
 
 * Success
   * 4111111111111111
@@ -68,7 +69,7 @@ icon: vial-circle-check
 * Stolen card
   * 4000000000009979
 
-**3DS flows**
+### 3DS flows
 
 * Success
   * 4000003800000446

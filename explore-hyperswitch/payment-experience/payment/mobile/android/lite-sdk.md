@@ -69,13 +69,13 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", 
 ```
 {% endhint %}
 
-**Fetch a Payment**
+### Fetch a Payment
 
 Request your server to fetch a payment as soon as your view is loaded. Store the `client_secret` returned by your server. The `PaymentSession` (Lite) will use this secret to complete the payment process.
 
 ## 3. Complete the payment on your app
 
-**Initialize Payment Session**
+### Initialize Payment Session
 
 Initialize the payment session with the `client_secret`:
 
@@ -83,7 +83,7 @@ Initialize the payment session with the `client_secret`:
 paymentSession.initPaymentSession(paymentIntentClientSecret)
 ```
 
-**Handle Payment Result**
+### Handle Payment Result
 
 Handle the payment result in the completion block. Display appropriate messages to your customer based on the outcome of the payment:
 
@@ -107,7 +107,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
-**Present the Payment Page**
+### Present the Payment Page
 
 Create a configuration object to customize the payment sheet and present the payment page:
 

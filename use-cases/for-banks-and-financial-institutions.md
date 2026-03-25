@@ -1,4 +1,5 @@
 ---
+description: Explore For Banks & Financial Institutions on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 noIndex: true
 icon: building-columns
@@ -6,17 +7,17 @@ icon: building-columns
 
 # For Banks & Financial Institutions
 
-Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.
+Juspay Hyperswitch empowers banks and financial institutions with a modern, flexible, and secure payment infrastructure to better serve their customers, whether individual clients or large enterprises.
 
-Hyperswitch enables banks to offer a suite of advanced tools, including an orchestrator, vault, and custom checkout for merchants, delivering the best payment experience for customers while streamlining operations for internal teams.
+Juspay Hyperswitch enables banks to offer a suite of advanced tools, including an orchestrator, vault, and custom checkout for merchants, delivering the best payment experience for customers while streamlining operations for internal teams.
 
-The Hyperswitch infrastructure has demonstrated its reliability by handling over 175 million transactions per day with 99.99% uptime, processing more than $670 billion in annualized total processed volume.
+The Juspay Hyperswitch infrastructure has demonstrated its reliability by handling over 175 million transactions per day with 99.99% uptime, processing more than $670 billion in annualized total processed volume.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Bank-Centric Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#bank-centric-capabilities">#bank-centric-capabilities</a></td></tr><tr><td><mark style="color:blue;">Merchant-Centric Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#merchant-centric-capabilities">#merchant-centric-capabilities</a></td></tr><tr><td><mark style="color:blue;">Infrastructure Capabilities</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#infrastructure-capabilities">#infrastructure-capabilities</a></td></tr></tbody></table>
 
 ## Bank-Centric Capabilities
 
-Hyperswitch helps banks streamline operations, manage merchants, and improve payment performance.
+Juspay Hyperswitch helps banks streamline operations, manage merchants, and improve payment performance.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Merchant Management</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#merchant-management">#merchant-management</a></td></tr><tr><td><mark style="color:blue;">Payments and Transactions</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payments-and-transactions">#payments-and-transactions</a></td></tr><tr><td><mark style="color:blue;">Insights and Automation</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#insights-and-automation">#insights-and-automation</a></td></tr></tbody></table>
 
@@ -39,14 +40,14 @@ Hyperswitch helps banks streamline operations, manage merchants, and improve pay
 
 ## Merchant-Centric Capabilities
 
-Hyperswitch empowers banks to provide merchants with tools to improve customer experiences, simplify operations, and grow efficiently.
+Juspay Hyperswitch empowers banks to provide merchants with tools to improve customer experiences, simplify operations, and grow efficiently.
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Payment Orchestration</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payment-orchestration">#payment-orchestration</a></td></tr><tr><td><mark style="color:blue;">Checkout Experience</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#checkout-experience">#checkout-experience</a></td></tr><tr><td><mark style="color:blue;">Security and Compliance</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#security-and-compliance">#security-and-compliance</a></td></tr><tr><td><mark style="color:blue;">Simplified Operations</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#simplified-operations">#simplified-operations</a></td></tr></tbody></table>
 
 #### Payment Orchestration
 
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router): Route transactions across PSPs in real time to boost authentication, and optimise payment costs.
-* [Global and local integrations](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors): Offer no-code integration with 70+ connectors for 150+ payment methods and wallets, ensuring better conversions by fulfilling diverse payment preferences.
+* [Global and local integrations](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors): Offer no-code integration with 300+ connectors for 200+ payment methods and wallets, ensuring better conversions by fulfilling diverse payment preferences.
 
 #### Checkout Experience
 
@@ -64,7 +65,7 @@ Hyperswitch empowers banks to provide merchants with tools to improve customer e
 
 ## Infrastructure Capabilities
 
-Hyperswitch offers a robust, scalable, and transparent platform to meet your payment needs
+Juspay Hyperswitch offers a robust, scalable, and transparent platform to meet your payment needs
 
 * <mark style="color:blue;">Reliability</mark>: Handles over 175+ million transactions daily with 99.99% uptime.
 * <mark style="color:blue;">Scalability</mark>: Effortlessly scale to support more customers and higher transaction volumes during peak times.

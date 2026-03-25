@@ -1,4 +1,5 @@
 ---
+description: Explore Manual/User triggered Retries on Juspay Hyperswitch to understand and implement this capability
 icon: person-walking-arrow-loop-left
 ---
 
@@ -31,7 +32,7 @@ For payments without redirection (e.g., standard card transactions, wallet flows
 * The SDK automatically invokes the retry flow under the same payment\_id.
 * Customers can update their card or payment details directly in the checkout UI and reattempt payment — all within the same session.
 
-**Example Flow:**
+### Example Flow:
 
 1. Customer enters card details → clicks Pay Now.
 2. SDK triggers /payments/confirm internally.
@@ -132,7 +133,7 @@ If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
 * For redirect flows, this can be done by remounting the SDK as described earlier.
 * For SDK-managed (non-redirect) flows, Hyperswitch automatically handles this internally.
 
-**Example Retry Request (for redirect flows):**
+### Example Retry Request (for redirect flows):
 
 ```json
 {
@@ -167,7 +168,7 @@ Specifies whether manual retry is supported for a failed payment.
 
 ### Customer Journey Example
 
-**Frictionless Flow**
+### Frictionless Flow
 
 1. Customer fills card details → clicks Pay Now
 2. /payments/confirm triggered by SDK
@@ -175,7 +176,7 @@ Specifies whether manual retry is supported for a failed payment.
 4. Retry prompt shown → customer retries within same checkout
 5. Payment succeeds
 
-**Redirect Flow (e.g., 3DS)**
+### Redirect Flow (e.g., 3DS)
 
 1. Customer completes 3DS authentication → redirected back to merchant
 2. Payment fails → manual\_retry\_allowed = true in response

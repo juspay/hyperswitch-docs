@@ -1,4 +1,5 @@
 ---
+description: Explore SDK Payment flows on Juspay Hyperswitch to understand and implement this capability
 icon: wave
 ---
 
@@ -43,7 +44,7 @@ Hyperswitch uses the `PaymentIntent` object to track the status of a payment ini
 While `PaymentIntent` and `PaymentAttempt` have their own state machines, the various states in `PaymentAttempt` are also constrained by their respective mapping to the `PaymentIntent` statuses.
 
 \
-**PaymentIntent state machine:**
+### PaymentIntent state machine:
 
 The following is an abridged version of the `PaymentIntent` state machine flow that covers majority of the above payment use-cases.
 
@@ -77,7 +78,7 @@ A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod
  
 ```
 
-**PaymentAttempt state machine:**
+### PaymentAttempt state machine:
 
 The following is an abridged version of the `PaymentAttempt` state machine flow that covers majority of the above payment use-cases.
 

@@ -21,7 +21,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 1. Integrate your subscription provider as a billing processor on Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
-4. Hyperswitch completes the payment, securely tokenises and stores the card
+4. Juspay Hyperswitch completes the payment, securely tokenises and stores the card
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
@@ -350,7 +350,7 @@ Monitor incoming webhooks for renewal during subsequent cycles
 
 ### Decoupled CIT and MIT Flow&#x20;
 
-Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
+Juspay Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
 MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
 

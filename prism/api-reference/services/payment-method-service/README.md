@@ -1,3 +1,7 @@
+---
+description: Explore Payment Method Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Payment Method Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Payment Method Service enables you to securely store and manage customer payment methods at payment processors. By tokenizing payment details, you can offer one-click checkout experiences and recurring billing without handling sensitive card data or maintaining PCI compliance overhead.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **One-click checkout** - Returning customers pay with saved payment methods without re-entering card details
 - **Subscription billing** - Store payment methods for automated recurring charges
 - **Mobile wallet integration** - Securely vault wallet tokens for future payments
@@ -60,7 +64,7 @@ sequenceDiagram
     CS-->>App: Return connector_transaction_id (AUTHORIZED)
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Tokenize payment method** - When a customer enters their payment details for the first time, call the `Tokenize` RPC. The payment processor securely stores the card details and returns a `payment_method_token` (e.g., Stripe's `pm_xxx`). Store this token in your customer database for future use.
 
@@ -68,7 +72,7 @@ sequenceDiagram
 
 3. **Future purchases** - For subsequent purchases, retrieve the stored `payment_method_token` from your database and call the Payment Service's `Authorize` RPC with it. The customer does not need to re-enter their payment details, enabling a one-click checkout experience.
 
-**Benefits:**
+### Benefits:
 - Faster checkout for returning customers (fewer steps, reduced friction)
 - Reduced cart abandonment rates
 - No PCI compliance overhead for stored payment data
@@ -110,7 +114,7 @@ sequenceDiagram
     CS-->>App: Return status: CAPTURED
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Create customer** - First, call the Customer Service's `Create` RPC to create a customer profile at the payment processor. This returns a `connector_customer_id` that links all payment methods and transactions to the customer.
 
@@ -122,7 +126,7 @@ sequenceDiagram
 
 5. **Capture payment** - Call the Payment Service's `Capture` RPC to finalize the charge and transfer funds.
 
-**Benefits:**
+### Benefits:
 - Seamless subscription signup flow
 - Stored payment credentials for all future billing
 - Mandate-based recurring charges without customer interaction

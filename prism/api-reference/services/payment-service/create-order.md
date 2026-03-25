@@ -1,3 +1,7 @@
+---
+description: Explore CreateOrder RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # CreateOrder RPC
 
 <!--
@@ -21,7 +25,7 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 
 ## Purpose
 
-**Why use CreateOrder?**
+### Why use CreateOrder?
 
 | Scenario | Developer Implementation |
 |----------|-------------------------|
@@ -31,7 +35,7 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 | **Order tracking** | Complex order flows - call `CreateOrder` to establish order ID for tracking across systems |
 | **Session continuity** | Multi-page checkout - call `CreateOrder` to maintain payment context across pages |
 
-**Key outcomes:**
+### Key outcomes:
 - Order context established at processor
 - Session token for wallet payment SDKs
 - Improved authorization rates

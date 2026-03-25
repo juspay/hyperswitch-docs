@@ -1,4 +1,5 @@
 ---
+description: Explore Overcapture on Juspay Hyperswitch to understand and implement this capability
 icon: chart-diagram
 ---
 
@@ -37,7 +38,7 @@ This can be passed in:
 * The request-level `enable_overcapture` will override the profile-level setting.
 * Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
 
-***
+### 
 
 ### Example: API Request
 
@@ -86,7 +87,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 | `true`  | Over-capture requested     |
 | `false` | Over-capture not requested |
 
-***
+### 
 
 `is_overcapture_enabled` Indicates connector capability acceptance.
 
@@ -95,7 +96,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 | `true`  | Connector supports and enabled over-capture |
 | `false` | Connector does not support over-capture     |
 
-***
+### 
 
 ### Monitoring & Settlement
 

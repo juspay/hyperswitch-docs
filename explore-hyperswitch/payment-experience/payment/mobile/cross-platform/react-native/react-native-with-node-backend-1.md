@@ -1,4 +1,5 @@
 ---
+description: Explore Payment Widget on Juspay Hyperswitch to understand and implement this capability
 icon: input-numeric
 ---
 
@@ -124,7 +125,7 @@ onPaymentResult={(result) => {
 
 A unique identifier for the widget instance.
 
-***
+### 
 
 **`options`** `PresentPaymentSheetParams` · Required
 
@@ -134,13 +135,13 @@ When using `PaymentWidget`, pass the `clientSecret` & `sdkAuthorization` here.
 
 For more customizations follow [this](customization.md)
 
-***
+### 
 
 **`onPaymentResult`** `(result: PaymentWidgetResult) => void` · Optional
 
 Callback triggered when the payment completes, fails, or is cancelled.
 
-***
+### 
 
 **`style`** `StyleProp<ViewStyle>` · `width` & `height` required
 

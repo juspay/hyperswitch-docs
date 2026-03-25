@@ -42,7 +42,7 @@ _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routi
 
 **Geographies**: US
 
-**Networks**
+### Networks
 
 * Star
 * Pulse

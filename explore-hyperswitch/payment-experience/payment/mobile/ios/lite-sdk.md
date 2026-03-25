@@ -1,4 +1,5 @@
 ---
+description: Explore Lite SDK on Juspay Hyperswitch to understand and implement this capability
 icon: mobile-screen
 ---
 
@@ -34,13 +35,13 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 In your **`Podfile`**:
 
-**Lite SDK only**
+### Lite SDK only
 
 ```ruby
 pod 'hyperswitch-sdk-ios-lite'
 ```
 
-**Lite SDK with Scan Card functionality**
+### Lite SDK with Scan Card functionality
 
 ```ruby
 pod 'hyperswitch-sdk-ios-lite/scancard'
@@ -51,7 +52,7 @@ pod 'hyperswitch-sdk-ios-lite/scancard'
 
 #### 2.2 Setup the Lite SDK and Fetch a Payment
 
-**Initialize PaymentSession:**
+### Initialize PaymentSession:
 
 ```swift
 import HyperswitchLite
@@ -61,7 +62,7 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
 paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 
-**Complete Payment**
+### Complete Payment
 
 ```swift
 // Present the PaymentSheet Lite
@@ -83,7 +84,7 @@ paymentSession.presentPaymentSheetLite(
 })
 ```
 
-**Final Step**
+### Final Step
 
 You have successfully integrated the **Hyperswitch Lite SDK** into your iOS app.\
 The Lite SDK delivers **full payment processing** capabilities with a **smaller footprint**, perfect for apps where bundle size matters.

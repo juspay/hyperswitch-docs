@@ -5,7 +5,7 @@ icon: dharmachakra
 
 # Deploy on Kubernetes
 
-Hyperswitch can be deployed on Kubernetes **using Helm Charts**, a package manager for Kubernetes, to provide a robust, scalable, and containerized payment infrastructure. Kubernetes deployment ensures high availability, effortless scaling, and efficient orchestration of Hyperswitch services.&#x20;
+Juspay Hyperswitch can be deployed on Kubernetes **using Helm Charts**, a package manager for Kubernetes, to provide a robust, scalable, and containerized payment infrastructure. Kubernetes deployment ensures high availability, effortless scaling, and efficient orchestration of Hyperswitch services.&#x20;
 
 This setup is ideal for businesses seeking a resilient payment solution capable of handling enterprise-scale demands across various cloud environments. The deployment process is optimized for seamless management on cloud platforms such as **Google Cloud Platform (GCP)** and **Microsoft Azure.**
 

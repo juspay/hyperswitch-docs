@@ -1,3 +1,7 @@
+---
+description: Explore Dispute Service on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Dispute Service
 
 <!--
@@ -17,7 +21,7 @@ approved: true
 
 The Dispute Service helps you manage chargeback disputes across payment processors. When customers dispute transactions with their banks, this service enables you to track dispute status, submit evidence to defend against fraudulent claims, and make informed decisions about accepting or challenging disputes.
 
-**Business Use Cases:**
+### Business Use Cases:
 - **E-commerce fraud defense** - Submit delivery proof and receipts to contest illegitimate chargebacks
 - **Service businesses** - Provide service documentation and customer communication records
 - **Subscription disputes** - Submit recurring transaction agreements and cancellation policies
@@ -69,7 +73,7 @@ sequenceDiagram
     CS-->>App: Return status: WON or LOST
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Get dispute details** - When notified of a new dispute, call the `Get` RPC to retrieve dispute details including the reason code, amount, and evidence submission deadline. This helps you understand what evidence is needed and how much time you have.
 
@@ -104,13 +108,13 @@ sequenceDiagram
     Note over App: Account for chargeback loss
 ```
 
-**Flow Explanation:**
+### Flow Explanation:
 
 1. **Get dispute details** - Retrieve dispute information to understand the claim amount and reason. Evaluate whether you have sufficient evidence to defend.
 
 2. **Accept** - If evidence is insufficient, the dispute amount is small, or defense costs exceed potential recovery, call the `Accept` RPC to concede the dispute. This acknowledges liability and stops the defense process. The chargeback is processed and the funds are debited from your account.
 
-**When to Accept:**
+### When to Accept:
 - No delivery confirmation available
 - Customer complaint is valid
 - Dispute amount is less than defense costs

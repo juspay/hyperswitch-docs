@@ -1,10 +1,14 @@
+---
+description: Explore Enterprise Deployment on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Enterprise Deployment
 
 ### Use Terraform to Provision and Maintain Infrastructure Resources&#x20;
 
 In case you are setting up your payments infrastructure on **Amazon Web Services** for the first time you can use **Hyperswitch’s Terraform configuration files** to do so.&#x20;
 
-**Using Terraform -**
+### Using Terraform -
 
 Navigate to the Hyperswitch [Terraform Documentation](https://github.com/juspay/hyperswitch-suite/tree/main/terraform/aws) and refer to the **aws/live** folder for the type of environment you want to set up.&#x20;
 
@@ -39,7 +43,7 @@ In case you are setting up your infrastructure on any other managed cloud provid
 
 ### Deploying Hyperswitch
 
-Hyperswitch can be installed in 3 different environments -&#x20;
+Juspay Hyperswitch can be installed in 3 different environments -&#x20;
 
 1. Production
 2. Sandbox
@@ -129,7 +133,7 @@ There are 3 primary scenarios merchants can use to install Hyperswitch on Kubern
 
 
 
-**Scenario-1**
+### Scenario-1
 
 Use Helm to deploy Hyperswitch into your Kubernetes cluster. You need to run this for each environment you are deploying.&#x20;
 
@@ -143,9 +147,9 @@ Example:
 
 This command installs the Hyperswitch stack into the specified namespace, allowing you to manage and upgrade the deployment easily through Helm.
 
-***
+### 
 
-**Scenario-2**
+### Scenario-2
 
 To deploy Production environments in a separate cluster and Integ and Sandbox in another you need to first create the clusters and then switch context and install Hyperswitch in the specified namespace within the cluster.&#x20;
 
@@ -165,9 +169,9 @@ The cluster can be created directly via the cloud provider or using Terraform. A
 
 This creates a Hyperswitch release for Dev and Integ in 2 different namespaces in the same cluster and a release for Prod in a separate namespace in a different cluster.
 
-***
+### 
 
-**Scenario-3**
+### Scenario-3
 
 In this case you deploy each release in a separate cluster with its own namespace
 

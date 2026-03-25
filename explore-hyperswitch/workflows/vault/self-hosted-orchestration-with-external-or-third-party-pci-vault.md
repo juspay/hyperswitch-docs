@@ -1,4 +1,5 @@
 ---
+description: Explore Self-Hosted Orchestration with external or third party PCI Vault on Juspay Hyperswitch to understand and implement this capability
 icon: up-right-from-square
 ---
 
@@ -20,8 +21,8 @@ This architecture gives merchants full control over orchestration logic, routing
 
 #### **Supported providers include (but are not limited to):**
 
-* **VGS (Very Good Security)** — Provides inbound/outbound proxy routes for card data. Hyperswitch sends PSP payloads through VGS's forward proxy, which replaces tokens with raw card data in transit.
-* **Tokenex** — Offers a transparent gateway proxy. Hyperswitch sends tokenized payloads to Tokenex's proxy, which detokenizes and forwards to the PSP.
+* **VGS (Very Good Security)** — Provides inbound/outbound proxy routes for card data. Juspay Hyperswitch sends PSP payloads through VGS's forward proxy, which replaces tokens with raw card data in transit.
+* **Tokenex** — Offers a transparent gateway proxy. Juspay Hyperswitch sends tokenized payloads to Tokenex's proxy, which detokenizes and forwards to the PSP.
 * **Any vault with a proxy/detokenize API** — Hyperswitch's modular vault architecture supports any vault that exposes a tokenize + proxy (or detokenize) HTTP API.
 
 Hyperswitch's modular vault architecture supports configuring multiple vault connectors simultaneously. You can route different merchants or payment methods to different vaults based on your business logic.
@@ -135,7 +136,7 @@ This abstraction allows merchants to:
 * Switch vault providers without breaking existing customer references.
 * Use a single identifier across all payment flows (first-time, repeat, MIT/recurring).
 
-***
+### 
 
 ### Configuration Guide
 
@@ -174,13 +175,13 @@ proxy_url = "https://proxy.vault.juspay.in"
 
 > **Important:** Vault credentials should be stored securely (e.g., via environment variables or a secrets manager) and never committed to version control.
 
-***
+### 
 
 ### Comparison: Self-Hosted Vault Deployment Models
 
 <table><thead><tr><th width="138.015625">Feature</th><th>Self-Hosted + In-House PCI</th><th>Self-Hosted + Outsourced PCI (This Model)</th><th>SaaS + Outsourced PCI</th></tr></thead><tbody><tr><td><strong>Hosting</strong></td><td>Merchant</td><td>Merchant</td><td>Juspay (SaaS)</td></tr><tr><td><strong>PCI Scope</strong></td><td>Merchant (Level 1)</td><td>Vault Provider</td><td>Juspay + Vault Provider</td></tr><tr><td><strong>Vault</strong></td><td>Merchant's own vault</td><td>VGS / Tokenex</td><td>VGS / Tokenex</td></tr><tr><td><strong>Card Data on Server</strong></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td><strong>Orchestration Control</strong></td><td>Full</td><td>Full</td><td>Managed</td></tr><tr><td><strong>Setup Complexity</strong></td><td>High</td><td>Medium</td><td>Low</td></tr><tr><td><strong>Compliance Maintenance</strong></td><td>High</td><td>None</td><td>None</td></tr><tr><td><strong>Token Portability</strong></td><td>Depends</td><td>Yes (<code>payment_method_id</code>)</td><td>Yes (<code>payment_method_id</code>)</td></tr></tbody></table>
 
-***
+### 
 
 ### Security Considerations
 
@@ -190,7 +191,7 @@ proxy_url = "https://proxy.vault.juspay.in"
 * **Network Segmentation:** Even though PCI is outsourced, restrict network access between your Hyperswitch deployment and the vault to only the required endpoints and ports.
 * **Webhook Verification:** Always verify webhook signatures for `payment_method_id` callbacks to prevent spoofing.
 
-***
+### 
 
 ### FAQ
 
@@ -202,7 +203,7 @@ proxy_url = "https://proxy.vault.juspay.in"
 
 **Q: Can I use multiple vault providers simultaneously?** A: Hyperswitch's modular vault architecture supports configuring multiple vault connectors. You can route different merchants or payment methods to different vaults based on your business logic.
 
-***
+### 
 
 ### Related Documentation
 

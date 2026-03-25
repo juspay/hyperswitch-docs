@@ -1,4 +1,5 @@
 ---
+description: Set up For On-Prem Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
 icon: clipboard-question
 ---
 
@@ -45,7 +46,7 @@ The above installation guides include vault as well, but you will need to activa
 * This proxy should handle traffic filtering(WAF), rate limiting, request validation, and integration with DDoS protection services before traffic reaches the Kubernetes cluster.
 
 {% hint style="warning" %}
-Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
+Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
 {% endhint %}
 
 ### Monitoring

@@ -1,3 +1,7 @@
+---
+description: Explore Create RPC on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Create RPC
 
 <!--
@@ -30,7 +34,7 @@ The `Create` RPC creates a customer record at the payment processor. This stores
 | **Multiple payment methods** | Organize stored cards/wallets under one customer |
 | **Unified reporting** | Track all customer transactions in one view |
 
-**Key outcomes:**
+### Key outcomes:
 - Unique `connector_customer_id` for referencing this customer
 - Consistent identity across all payment operations
 - Foundation for payment method tokenization

@@ -1,4 +1,5 @@
 ---
+description: Explore Monitoring and Alerts on Juspay Hyperswitch to understand and implement this capability
 icon: monitor-waveform
 ---
 
@@ -17,7 +18,7 @@ Both logs and metrics together provide the necessary visibility to maintain **op
 
 ### Observability Stack
 
-Hyperswitch integrates with a standard observability stack that combines logging, metrics collection, and visualization.
+Juspay Hyperswitch integrates with a standard observability stack that combines logging, metrics collection, and visualization.
 
 | Component                                             | Function                                                    |
 | ----------------------------------------------------- | ----------------------------------------------------------- |
@@ -72,7 +73,7 @@ J --> L[Hyperswitch Support Team]
 
 #### Application Metrics
 
-Hyperswitch services emit **application metrics** such as:
+Juspay Hyperswitch services emit **application metrics** such as:
 
 * request rates
 * latency

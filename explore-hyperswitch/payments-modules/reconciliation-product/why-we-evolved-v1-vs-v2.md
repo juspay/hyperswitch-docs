@@ -1,4 +1,5 @@
 ---
+description: Explore Why we evolved(V1 vs V2) on Juspay Hyperswitch to understand and implement this capability
 hidden: true
 ---
 

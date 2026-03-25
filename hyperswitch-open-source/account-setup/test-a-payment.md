@@ -1,4 +1,5 @@
 ---
+description: Explore Test a payment on Juspay Hyperswitch to understand and implement this capability
 icon: money-bills
 ---
 
@@ -20,7 +21,7 @@ There are three conditions in which you might want to make a test payment:
 
 **Playground deployment:** In case you have [deployed the demo app playground](../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md), you will see the playground up and running on the public IP that you received after deployment.
 
-***
+### 
 
 On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Processor**:
 

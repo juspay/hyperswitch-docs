@@ -1,4 +1,5 @@
 ---
+description: Explore Recurring payments on Juspay Hyperswitch to understand and implement this capability
 icon: arrows-rotate-reverse
 ---
 
@@ -14,7 +15,7 @@ When setting up subscription there are two distinct implementation flows. The co
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges. For this call Payments API with the below configuration parameters.
 
-**Required API Configuration**
+### Required API Configuration
 
 Include below parameter and values while calling the [payments](https://api-reference.hyperswitch.io/v1/payments/payments--create) API.
 
@@ -23,7 +24,7 @@ Include below parameter and values while calling the [payments](https://api-refe
 | `amount`             | >0 (Greater than zero) |
 | `setup_future_usage` | `off_session`          |
 
-**Run-Ready API Example (CIT with Charge)**
+### Run-Ready API Example (CIT with Charge)
 
 ```json
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -47,7 +48,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
-**Required API Configuration**
+### Required API Configuration
 
 Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
 
@@ -57,7 +58,7 @@ Pass below parameters while calling payments API for [Zero Dollar Auth ](https:/
 | `amount`             | `0`            |
 | `payment_type`       | `payment_type` |
 
-**Run-Ready API Example (Zero Auth Mandate)**
+### Run-Ready API Example (Zero Auth Mandate)
 
 ```json
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -115,11 +116,11 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [
 
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 
-***
+### 
 
 ### Merchant-Initiated Transactions (MIT) – Decoupled Execution
 
-Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
+Juspay Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
 MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
 
@@ -157,7 +158,7 @@ Submit the network transaction identifier in combination with the corresponding 
 
 Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
-***
+### 
 
 ### Connector-Agnostic MIT Routing
 
@@ -185,7 +186,7 @@ curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_pro
 
 All the payment methods saved with `setup_future_usage : off_session` after enabling this feature would now be eligible to be routed across the list of supported connectors during the subsequent MIT payments
 
-***
+### 
 
 ### Routing example - CITs are routed through PSP-1 and all MITs through PSP-2
 

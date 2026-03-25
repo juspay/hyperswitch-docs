@@ -5,7 +5,7 @@ icon: split
 
 # Split Payments
 
-Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
+Juspay Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
 
 This capability helps merchants:
 
@@ -13,7 +13,7 @@ This capability helps merchants:
 * Improve customer flexibility at checkout
 * Support common retail and digital wallet experiences
 
-Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
+Juspay Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
 
 ### Supported Configurations
 
@@ -77,7 +77,7 @@ At this stage, the system:
 
 Split payments are processed in a fixed order to maintain transaction consistency and avoid partial payment risks.
 
-**Primary Payment Processing**
+### Primary Payment Processing
 
 If a secondary payment method such as a card is present, the remaining transaction amount is first authorized using that method.
 
@@ -85,7 +85,7 @@ If authorization succeeds, processing continues with the gift card charge.
 
 If authorization fails, the transaction is stopped and the gift card is not charged. The customer can retry using another payment method.
 
-**Gift Card Processing**
+### Gift Card Processing
 
 After successful authorization of the primary payment method, the gift card is authorized for its applicable amount.
 
@@ -103,7 +103,7 @@ Once all payment methods are processed, the final transaction status is returned
 
 
 
-**Apply a gift card**
+### Apply a gift card
 
 ```
 curl --request POST \
@@ -130,7 +130,7 @@ curl --request POST \
 
 
 
-**Payment Confirm with Split PM details**
+### Payment Confirm with Split PM details
 
 ```
 curl --request POST \

@@ -1,3 +1,7 @@
+---
+description: Explore Storage on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Storage
 
 Storage layer is built with caching layer and persistent storage. The goal is to provide low latency persistent storage at lower cost.

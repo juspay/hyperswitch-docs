@@ -1,4 +1,5 @@
 ---
+description: Explore Smart Retries in Payout on Juspay Hyperswitch to understand and implement this capability
 icon: magnifying-glass-arrows-rotate
 ---
 
@@ -12,7 +13,7 @@ Smart Retries are triggered based on connector-specific error configurations. A 
 
 #### Retry Strategies
 
-Hyperswitch employs two primary strategies for payout recovery:
+Juspay Hyperswitch employs two primary strategies for payout recovery:
 
 * Single Connector Retry: If only one connector is configured for a specific payout method, eligible errors are retried through that same connector.
 * Multi-Connector Retry: If multiple connectors are available for a payout method, Hyperswitch attempts the retry using the next available connector in your priority list.

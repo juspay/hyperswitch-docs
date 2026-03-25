@@ -24,7 +24,7 @@ There are two possible types of payment retry flows:
 
 ## Supported Payment processors
 
-Hyperswitch supports the following primary processors for automatic retries.
+Juspay Hyperswitch supports the following primary processors for automatic retries.
 
 * Stripe
 * Bluesnap

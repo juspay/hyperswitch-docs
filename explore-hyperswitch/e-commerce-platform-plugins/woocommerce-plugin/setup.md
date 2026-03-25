@@ -57,7 +57,7 @@ Once a customer authorizes their payment, you can easily capture payments manual
 
 <figure><img src="https://hyperswitch.io/img/site/wordpress_manual_capture.png" alt=""><figcaption></figcaption></figure>
 
-Hyperswitch will process the payment, update the payment status, and provide you with real-time payment details.
+Juspay Hyperswitch will process the payment, update the payment status, and provide you with real-time payment details.
 
 #### 2.2 Refunds:
 
@@ -65,7 +65,7 @@ In cases where you need to issue a refund to a customer, the Hyperswitch plugin 
 
 <figure><img src="https://hyperswitch.io/img/site/wordpress_refund.png" alt=""><figcaption></figcaption></figure>
 
-Note: Ensure you click on "Refund via Hyperswitch" and not the "Refund manually". Hyperswitch will handle the refund and update the payment status accordingly, ensuring a seamless refund experience for both you and your customers.
+Note: Ensure you click on "Refund via Hyperswitch" and not the "Refund manually". Juspay Hyperswitch will handle the refund and update the payment status accordingly, ensuring a seamless refund experience for both you and your customers.
 
 #### 2.3 Payment Sync:
 

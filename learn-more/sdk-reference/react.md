@@ -1,3 +1,7 @@
+---
+description: Explore React on Juspay Hyperswitch to understand and implement this capability
+---
+
 # React
 
 Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount.  You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.\
@@ -30,7 +34,7 @@ Use `hyper.confirmPayment` to confirm a PaymentIntent using data collected by th
 | `confirmParams (object)` | Parameters that will be passed on to the Hyper API.                                                                                                                                                                                                                                                |
 | `redirect (string)`      | **Can be either 'always' or 'if\_required'** By default, `hyper.confirmPayment` will always redirect to your `return_url` after a successful confirmation. If you set redirect: "if\_required", then hyper.confirmPayment will only redirect if your user chooses a redirect-based payment method. |
 
-**ConfirmParams object**
+### ConfirmParams object
 
 | confirmParams                  | Description                                                                                                                                                                                                                                                                                                               |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -126,13 +130,13 @@ elements.getElement('payment') returns one of the following:
 * `null`, when no Unified Checkout has been created.\
 
 
-**2. `elements.create(type, options?)`**
+### 2. `elements.create(type, options?)`
 
 This method creates an instance of an individual Element. It takes the type of Element to create as well as an options object.
 
 The type can be ‘payment’ for UnifiedCheckout.
 
-**Options object**
+### Options object
 
 | options (Required) | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -145,7 +149,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 
 
-**Classes object**
+### Classes object
 
 | classes    | Description                                                                              |
 | ---------- | ---------------------------------------------------------------------------------------- |
@@ -156,7 +160,7 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 
 
-**`3. element.update(options)`**
+### `3. element.update(options)`
 
 Updates the options the Element was initialized with. Updates are merged into the existing configuration.
 

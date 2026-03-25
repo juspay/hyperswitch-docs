@@ -9,13 +9,13 @@ icon: lock-keyhole
 In this chapter, you will learn about the security principles employed in the design on the Hyperswitch application
 {% endhint %}
 
-Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.&#x20;
+Juspay Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.&#x20;
 
 The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).&#x20;
 
 ## Handling Sensitive Data
 
-The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
+The Juspay Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
 <figure><img src="../../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -81,7 +81,7 @@ The current Hyperswitch setup only uses AWS KMS for storing and managing sensiti
 * This practice of masking the data at source ensures that sensitive information remains protected and prevents inadvertent exposure in logs or debug outputs.
 
 {% hint style="info" %}
-**Database at rest Encryption**
+### Database at rest Encryption
 
 In the cloud-hosted version of Hyperswitch, we've encrypted the DB instances to offer an added layer of security, safeguarding the data from unauthorized access. For merchants self-hosting Hyperswitch, we highly recommend adopting similar practices to ensure robust protection for their data.
 {% endhint %}

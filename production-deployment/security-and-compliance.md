@@ -1,4 +1,5 @@
 ---
+description: Explore Security and Compliance on Juspay Hyperswitch to understand and implement this capability
 icon: shield-check
 ---
 

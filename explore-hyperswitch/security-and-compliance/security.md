@@ -16,7 +16,7 @@ At Hyperswitch, we prioritize data security and adhere to PCI DSS standards to p
 
 ## Handling Sensitive Data
 
-The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
+The Juspay Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
 <figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -28,12 +28,12 @@ Card information is initially received from the Hyperswitch SDK. This data is en
 
 When a payment is made using a saved card, the card details are securely stored in the Hyperswitch Card Vault. This process involves multiple steps to ensure the confidentiality and integrity of the data:
 
-**Card Data Preparation:**
+### Card Data Preparation:
 
 * **Signing for Integrity**: The Hyperswitch App Server signs the card details using its private key, ensuring the data has not been altered.
 * **Encryption for Confidentiality**: The signed details are encrypted using the public key of the Card Vault (locker), securing the data during transmission.
 
-**Data Storage Process:**
+### Data Storage Process:
 
 1. **Validation**: The Hyperswitch Card Vault validates the signed data using the public key of the Hyperswitch App Server. This step ensures the integrity of the transmitted data.
 2. **Decryption**: The Card Vault decrypts the received data to make it usable for storage.
@@ -61,7 +61,7 @@ From the image above, the Key Manager Service is optional. If it is not implemen
 
 ## Key Management System (KMS) Encryption
 
-Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive keys required for the application’s operation.
+Juspay Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive keys required for the application’s operation.
 
 1. **Startup Encryption**: Sensitive keys, such as database passwords and RSA certificates, are encrypted at the startup.
 2. **Secure Storage**: These encrypted keys are securely stored in environment variables or configuration files, ensuring their confidentiality and protection against unauthorized access.
@@ -70,13 +70,13 @@ Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive
 
 Key Manager Service (KMS) encryption is optional. It is required only for PCI SSS certification and is **not** mandatory for PCI DSS certification. If it is not implemented, the application itself will handle key management.
 
-**Merchant-Specific Encryption**
+### Merchant-Specific Encryption
 
-Hyperswitch utilizes a **Key Manager Service** to ensure the secure generation and storage of a **unique Data Encryption Key (DEK)** for each merchant.
+Juspay Hyperswitch utilizes a **Key Manager Service** to ensure the secure generation and storage of a **unique Data Encryption Key (DEK)** for each merchant.
 
 These merchant-specific DEKs undergo further encryption using a secrets manager, such as **AWS KMS**, to provide an additional layer of security.
 
-**Data Encryption for Each Merchant Account**
+### Data Encryption for Each Merchant Account
 
 Data associated with individual merchant accounts is encrypted using the unique DEK for that merchant. This approach ensures robust protection of:
 
@@ -97,7 +97,7 @@ At Hyperswitch, we take extra care to protect sensitive information, even in sys
 * **Source-Level Protection**: By masking sensitive data at its source, we ensure that sensitive information is never inadvertently exposed, even in debug outputs or logs.
 
 {% hint style="info" %}
-**Database at Rest Encryption**
+### Database at Rest Encryption
 
 At Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
 {% endhint %}

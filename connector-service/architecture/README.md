@@ -1,3 +1,7 @@
+---
+description: Learn about and implement Juspay Hyperswitch features and capabilities
+---
+
 ## The Problem
 
 If you've integrated multiple payment providers, you know the pain:
@@ -15,7 +19,6 @@ This problem exists in other domains too, but solved with well maintained develo
 | **Databases** | [Prisma](https://www.prisma.io/) | One ORM for PostgreSQL, MySQL, MongoDB, etc. |
 | **Cloud Storage** | [Rclone](https://rclone.org/) | One CLI for S3, GCS, Azure Blob, etc. |
 
-**But for payments, no such equivalent exists for developers.**
 
 Prism is the unified abstraction layer for payment processors—giving you one API, one set of types, and one mental model for 100+ payment connectors.
 
@@ -50,7 +53,7 @@ The Prism supports a three layered architecture, each solving a purpose
 │                                                                            │
 │  ┌────────────────────────────────────┐    ┌────────────────────────────┐  │
 │  │           gRPC Server              │    │    Connector Adapters      │  │
-│  │                                    │    │    (100+ connectors)       │  │
+│  │                                    │    │    (300+ connectors)       │  │
 │  │  ┌─────────┐ ┌─────────┐           │    │                            │  │
 │  │  │ Payment │ │ Refund  │           │───▶│  ┌─────────┐  ┌─────────┐  │  │
 │  │  │ Service │ │ Service │           │    │  │ Stripe  │  │  Adyen  │  │  │
@@ -83,7 +86,7 @@ The Prism supports a three layered architecture, each solving a purpose
 | **SDK Interface** | Developers can think in their language's patterns whicle using the unified payments grammar provided by the library | You use `client.payments.authorize()` with idiomatic types in your codebase | Node.js, Python, Java, .NET, Go, Haskell |
 | **FFI / Binding Layer** | Each language needs native-performance gRPC | Seamless transport without language bridges; handles serialization, HTTP/2, streaming | tonic, grpcio, grpc-dotnet, go-grpc |
 | **gRPC Server** | Single source of truth for payment logic. Also offers freedom to use Prism as a separate microservice | One implementation of payment services serves all languages; unified errors, routing, types | Rust, tonic, protocol buffers |
-| **Connector Adapters** | Each connector has unique APIs and formats | You use one `AuthorizeRequest`; the library maps to Stripe's `PaymentIntent` or Adyen's `payments` | Rust, 100+ connector implementations |
+| **Connector Adapters** | Each connector has unique APIs and formats | You use one `AuthorizeRequest`; the library maps to Stripe's `PaymentIntent` or Adyen's `payments` | Rust, 300+ connectors implementations |
 
 ## Data Flow
 
@@ -120,7 +123,6 @@ sequenceDiagram
 
 The core value: Prism transforms unified requests to connector-specific formats.
 
-**Authorization Mapping:**
 
 | Unified Field | Stripe | Adyen |
 |---------------|--------|-------|

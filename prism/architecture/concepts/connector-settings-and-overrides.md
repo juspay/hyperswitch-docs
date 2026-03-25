@@ -1,3 +1,7 @@
+---
+description: Explore Connector Settings and Overrides on Juspay Hyperswitch to understand and implement this capability
+---
+
 # Connector Settings and Overrides
 
 Prism provides three configurable settings per connector: **Proxy**, **Timeout**, and **Retry**. 
