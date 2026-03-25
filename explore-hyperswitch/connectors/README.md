@@ -69,6 +69,7 @@ Quick Links
 
 | Resource                                                                                                               | Description                                                           |
 | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [**Find Your Payment Stack**](https://payment-discovery-service.up.railway.app)                                        | Interactive tool to discover the right PSPs by industry, region, and use case. |
 | [**Activate Connector**](https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch) | A detailed guide on how to configure a connector and payment methods. |
 | [**Integrations Directory**](https://juspay.io/integrations)                                                           | Learn more about all the available connectors and payments methods.   |
 | [**Request Integration**](https://hyperswitch-io.slack.com/ssb/redirect)                                               | Don't see your processor? Raise an integration request on Slack.      |
