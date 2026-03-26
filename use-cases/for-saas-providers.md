@@ -35,7 +35,7 @@ Optimize payment costs by ensuring that every transaction flows through the most
 
 #### Global payment support with no code connector integrations
 
-Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch’s no-code solution.
+Reduce weeks or even months of development on payment connector integrations and support for various payment methods with Hyperswitch's no-code solution.
 
 * [List of 70+ supported connectors and 150+ payment methods](https://hyperswitch.io/pm-list)
 * [How to configure a connector in few clicks](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
