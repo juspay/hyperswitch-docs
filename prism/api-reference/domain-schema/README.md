@@ -1,13 +1,8 @@
-# Domain Schema
-
-<!--
 ---
-title: Domain Schema
-description: Complete reference for all domain types, enums, and data structures used across Connector Service services
-last_updated: 2026-03-11
-generated_from: crates/types-traits/grpc-api-types/proto/
-auto_generated: false
-reviewed_by: engineering
+description: Complete reference for all domain types, enums, and data structures used across Connector Service
+---
+
+# Domain Schema
 reviewed_at: 2026-03-05
 approved: true
 ---

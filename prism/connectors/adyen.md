@@ -1,3 +1,7 @@
+---
+description: Configure Adyen connector for payments, wallets, bank transfers, and recurring operations
+---
+
 # Adyen
 
 <!--

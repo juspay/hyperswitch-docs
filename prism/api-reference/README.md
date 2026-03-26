@@ -1,3 +1,7 @@
+---
+description: Complete reference for Prism gRPC API services including payment, refund, recurring, and dispute operations
+---
+
 # API Reference
 
 Complete reference for all Prism API services, request/response types, and error handling.
