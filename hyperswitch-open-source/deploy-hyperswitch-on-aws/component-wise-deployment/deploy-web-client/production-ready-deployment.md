@@ -1,5 +1,5 @@
 ---
-description: Deploy web client on AWS
+description: Deploy the Hyperswitch web client on AWS infrastructure to enable production-ready payment processing for your applications
 ---
 
 # Production ready deployment
@@ -10,7 +10,7 @@ In this section, you will be deploying the web client on your AWS account
 
 ## **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222\&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
 
 ### **Let's begin!**
 
@@ -18,7 +18,7 @@ In this section, you will be deploying the web client on your AWS account
 >
 > You can directly start from [Step 3](production-ready-deployment.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
-#### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="Linux x86 (64-bit)" %}
@@ -85,12 +85,12 @@ which aws
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-#### Step 2 - Configure the AWS CLI
+### Step 2 - Configure the AWS CLI
 
-For this step you would need the following from you AWS account
+For this step you would need the following from your AWS account
 
-1. Access key ID
-2. Secret Access Key
+1. `Access key ID`
+2. `Secret Access Key`
 
 You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
@@ -103,7 +103,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch Web Client
+### Step 3 - Set up Hyperswitch Web Client
 
 You can now deploy the Hyperswitch web client by running the below command in the same terminal session
 
@@ -115,18 +115,18 @@ Takes around 10-15 min to execute successfully
 curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswitch_aws_production_deployment.sh | bash
 ```
 
-On running the above command, you will get an option to configure the following&#x20;
+On running the above command, you will get an option to configure the following
 
-1. **AWS region** - This is the AWS region that you want your SDK to be deployed to. In case not provided, it will default to us-east-2
+1. **AWS region** - This is the AWS region that you want your SDK to be deployed to. In case not provided, it will default to `us-east-2`
 2. **Option to either create a new bucket on S3 or use your existing S3 bucket** - You can enter either Y (Yes) or N (No) to create a new bucket depending on your preference.
 3. **Bucket Details** - If you choose to use your existing S3 bucket, you need to provide your S3 bucket location here. In case you choose to create a new S3 bucket, please provide a unique name here.
-4. Self-hosted App server URL - This is the self hosted app server URL (eg., `http://34.207.75.225` ). If not provided, this will default to `https://sandbox.hyperswitch.io` and will work with Hyperswitch's SaaS app server.&#x20;
+4. **Self-hosted app server URL** - This is the self hosted app server URL (eg., `http://34.207.75.225`). If not provided, this will default to `https://sandbox.hyperswitch.io` and will work with Hyperswitch's SaaS app server.
 
 {% hint style="warning" %}
 Depending on the API version and changes made to the web client, the web client may or may not be compatible with the SaaS app server.
 {% endhint %}
 
-Once the script is executed, you will receive an URL as the response (e.g. `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js`). This is the base URL of your web client.&#x20;
+Once the script is executed, you will receive an URL as the response (e.g. `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js`). This is the base URL of your web client.
 
 {% hint style="success" %}
 That's it! Hyperswitch web client should be up and running on your AWS account
@@ -143,13 +143,13 @@ Now that the web client is hosted, you can integrate it with your app and go liv
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**\
-  Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.\
+- **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**\
+  Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.
 
-* **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**\
-  Please re-run the script and enter an unique name for the S3 bucket.\
+- **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**\
+  Please re-run the script and enter an unique name for the S3 bucket.
 
-* **AWS is throwing many errors while running the script**\
+- **AWS is throwing many errors while running the script**\
   Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
 
 </details>

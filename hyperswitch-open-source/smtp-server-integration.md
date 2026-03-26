@@ -1,14 +1,15 @@
 ---
+description: Integrate SMTP servers to send emails through your preferred email service provider
 icon: at
 ---
 
-# SMTP Server Integration
+# SMTP server integration
 
-Previously, **Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As we grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.
+Previously, **Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As Hyperswitch grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.
 
-Thus we upgraded Hyperswitch's email service to allow pluggable support for **any SMTP-compliant email service provider**, offering merchants greater flexibility.
+Thus Hyperswitch's email service was upgraded to allow pluggable support for **any SMTP-compliant email service provider**, offering merchants greater flexibility.
 
-### Configuration
+## Configuration
 
 The configuration can be found in the following file:
 
@@ -27,22 +28,22 @@ timeout = 10              # Timeout for SMTP connection in seconds
 connection = "plaintext"  # Supported values: "plaintext", "starttls"
 ```
 
-#### Details
+### Details
 
 * **host**: SMTP server hostname used to send emails.\
-  &#xNAN;_&#x45;xample_: `"smtp.gmail.com"` or `"mailhog"` for local testing
+  _Example_: `"smtp.gmail.com"` or `"mailhog"` for local testing
 * **port**: Port on which the SMTP server is listening.\
-  &#xNAN;_&#x45;xample_: `587` (for STARTTLS), `25`, or `1025` (for MailHog)
+  _Example_: `587` (for STARTTLS), `25`, or `1025` (for MailHog)
 * **timeout**: Maximum time (in seconds) to wait while connecting to the SMTP server.\
-  &#xNAN;_&#x45;xample_: `10`
+  _Example_: `10`
 * **connection**: Type of SMTP connection.\
-  &#xNAN;_&#x45;xample_: `"starttls"` (recommended) or `"plaintext"` (insecure; for development only)
+  _Example_: `"starttls"` (recommended) or `"plaintext"` (insecure; for development only)
 
-### How does it work?
+## How does it work?
 
 The email client is designed to work with standard SMTP servers by implementing the `EmailClient` trait for an internal `SmtpServer` struct.
 
-**Key Points of the Implementation**
+### Key Points of the Implementation
 
 * **Config Validation:** Ensures required fields like `host`, and credentials (if provided) are not empty.
 * **Connection Modes:** Supports both `StartTls` (recommended) and `Plaintext` (insecure) connections.
@@ -54,5 +55,5 @@ The email client is designed to work with standard SMTP servers by implementing 
 This modular design ensures that merchants can plug in their preferred SMTP service provider without changing application logic.
 
 {% hint style="info" %}
-If you face any issues, feel free to reach out to us on [Slack](https://inviter.co/hyperswitch-slack)
+If you face any issues, reach out on [Slack](https://inviter.co/hyperswitch-slack)
 {% endhint %}

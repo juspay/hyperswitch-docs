@@ -1,13 +1,11 @@
 ---
-description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+description: Troubleshoot your Hyperswitch local deployment to verify all components are running correctly using the health check endpoints
 icon: hammer-brush
 ---
 
 # Troubleshooting
 
-## System Health Check
+## System health check
 
 Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
 
@@ -15,7 +13,9 @@ Hyperswitch provides a deep health check endpoint to check if the various compon
 curl http://localhost:8080/health/ready
 ```
 
-The above command will check the Database connection, Redis connection, Hyperswitch Vault connection (if enabled), ability to send outgoing requests, and the health of analytical components. If the components are up and running with the correct configurations, you will get a success response as shown below
+The above command will check the Database connection, Redis connection, Hyperswitch Vault connection (if enabled), ability to send outgoing requests, and the health of analytical components.
+
+If the components are up and running with the correct configurations, you will get a success response as shown below:
 
 ```json
 {
@@ -27,7 +27,9 @@ The above command will check the Database connection, Redis connection, Hyperswi
 }
 ```
 
-If there is an issue with one of the components, the API will return an error response which will indicate the reason for the failure. For example, if the app server is not able to connect with the database, the error response would be as follows
+If there is an issue with one of the components, the API will return an error response which will indicate the reason for the failure.
+
+For example, if the app server is not able to connect with the database, the error response would be as follows:
 
 ```json
 {
@@ -39,7 +41,7 @@ If there is an issue with one of the components, the API will return an error re
 }
 ```
 
-Additionally you can add this as a Readiness Probe in your Kubernetes Deployment
+Additionally, you can add this as a Readiness Probe in your Kubernetes Deployment:
 
 ```yaml
 readinessProbe:
@@ -50,7 +52,7 @@ readinessProbe:
   periodSeconds: 15
 ```
 
-In case the app server does not start due to the failure of the readiness probe, you can check the logs through Kubernetes Logs using the below command
+In case the app server does not start due to the failure of the readiness probe, you can check the logs through Kubernetes Logs using the below command:
 
 {% code fullWidth="false" %}
 ```bash

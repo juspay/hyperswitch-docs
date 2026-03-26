@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy the Juspay Hyperswitch Card Vault on AWS to securely store payment card data and enable PCI DSS compliant saved card transactions
 ---
 
 # 🔐 Deploy card vault
@@ -8,23 +8,23 @@ description: Deploy the Hyperswitch Card Vault on the cloud
 This section aims at installing the Card vault and using it with the Hyperswitch application to make successful saved card payments
 {% endhint %}
 
-The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.&#x20;
+The Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and a secure locker to save sensitive data such as payment card details, bank account details etc.
 
-It is designed in an polymorphic manner to handle and store any type of sensitive information making it highly scalable with extensive coverage of payment methods and processors.
+It is designed in a polymorphic manner to handle and store any type of sensitive information making it highly scalable with extensive coverage of payment methods and processors.
 
-Tartarus is built with a GDPR compliant personal identifiable information (PII) storage and  secure encryption algorithms to be fully compliant with PCI DSS requirements.
+Tartarus is built with a GDPR compliant personal identifiable information (PII) storage and secure encryption algorithms to be fully compliant with PCI DSS requirements.
 
 ## How does it work?
 
 <figure><img src="../../../.gitbook/assets/general-block-diagram.png" alt=""><figcaption><p>Locker usage flow</p></figcaption></figure>
 
-* The Hyperswitch application communicates with Tartarus via a middleware.&#x20;
-* All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.&#x20;
+* The Hyperswitch application communicates with Tartarus via a middleware.
+* All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.
 * The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
-* Cards are stored against the combination of merchant and customer identifiers.&#x20;
-* Internal hashing checks are in place to avoid data duplication.&#x20;
+* Cards are stored against the combination of merchant and customer identifiers.
+* Internal hashing checks are in place to avoid data duplication.
 
-## Key Hierarchy
+## Key hierarchy
 
 Master Key - AES generated key to that is encrypted/decrypted by the custodian keys to run the locker and associated configurations.
 
@@ -32,6 +32,6 @@ Custodian Keys - AES generated key that is used to encrypt and decrypt the maste
 
 <figure><img src="../../../.gitbook/assets/locker-key-hierarchy.png" alt=""><figcaption><p>Key Hierarchy of Tartarus</p></figcaption></figure>
 
-## Setting up your Card Vault
+## Setting up your card vault
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="deploy-card-vault/cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>

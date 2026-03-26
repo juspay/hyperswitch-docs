@@ -1,23 +1,23 @@
 ---
 description: >-
-  Create your Hyperswitch account and add a payment provider via the control
+  Create your Juspay Hyperswitch account and add a payment provider via the control
   center
 icon: building-columns
 ---
 
-# Using Hyperswitch Control Center
+# Using Juspay Hyperswitch Control Center
 
 ## Video <a href="#user-content-set-up-your-merchant-account" id="user-content-set-up-your-merchant-account"></a>
 
 {% embed url="https://youtu.be/6SpQJu1celA" %}
 
-## Getting started - Login / Register
+## Getting started - Login / register
 
 During the local setup, a user has been configured automatically for you. You can use following credentials to access the dashboard.
 
 On the landing page, click on the sign up button. Enter your email and set a strong password. Click on the sign up button.
 
-The signup process will create a user with the provided email id. A merchant is also created which will be tagged to the user.&#x20;
+The signup process will create a user with the provided email id. A merchant is also created which will be tagged to the user.
 
 On the left nav bar, click on your email on the bottom to access the profile section, where you can see all the details.
 
@@ -50,20 +50,20 @@ To connect a payment processor:
 3. Configure the relevant payment methods (like cards, wallets) to be enabled for this processor
 4. Review and confirm the connection
 
-## Setup Routing
+## Setup routing
 
-The Hyperswitch control center gives you full control on how and where you route your payments.&#x20;
+The Hyperswitch control center gives you full control on how and where you route your payments.
 
 In the left nav bar, navigate to workflow --> routing to access the smart routing module.
 
 <figure><img src="../../.gitbook/assets/Routing.gif" alt=""><figcaption></figcaption></figure>
 
-By default, a priority-based routing based on the processor created time (first connected processor with highest priority) is enabled for you. This also acts as your fallback routing - which means if all else fails, routing will follow this priority.&#x20;
+By default, a priority-based routing based on the processor created time (first connected processor with highest priority) is enabled for you. This also acts as your fallback routing - which means if all else fails, routing will follow this priority.
 
 Currently, you can configure two types of routing with more on the way:
 
 1. Volume based routing: As the name suggests, this routing is based on the volume provided. You can assign percentage volumes that needs to be processed with the connected processors and Hyperswitch will route in a way to ensure that the volume distribution is maintained
-2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment\_method, card\_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails.
+2. Rule based routing: Rule based routing gives you finer control over payment routing. It exposes payment parameters like amount, payment_method, card_type etc. with which you can configure multiple rules. Rule based routing also provides an option to enable default processors through which the routing will happen in case the rule fails.
 
 ## Next step:
 

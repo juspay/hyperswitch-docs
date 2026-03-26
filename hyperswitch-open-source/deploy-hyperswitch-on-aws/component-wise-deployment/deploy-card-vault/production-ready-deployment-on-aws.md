@@ -1,5 +1,5 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: Use automated CDK scripts to deploy the Juspay Hyperswitch Card Vault on AWS for production-grade secure payment data storage and management
 ---
 
 # Production ready deployment on AWS
@@ -8,7 +8,7 @@ description: CDK script to deploy Hyperswitch Card Vault on AWS
 This section covers the steps for deploying the Hyperswitch card vault as an individual component
 {% endhint %}
 
-If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../../deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
+If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the [full-stack deployment guide ](../../deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
 
 ## Standalone deployment of the Hyperswitch Card Vault
 
@@ -20,7 +20,7 @@ Pre-requisites
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 {% endhint %}
 
-### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
+### Step 1 - [Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
@@ -73,7 +73,7 @@ Note: The VPC should have at least one private subnet with egress to deploy the 
 
 ### **Unlocking the Card Vault**
 
-At this point your locker setup on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
+At this point the locker setup on the AWS account is complete. Follow the steps below to unlock the locker to make it ready for use.
 
 * Run the following command to generate the key for the jump-server
 

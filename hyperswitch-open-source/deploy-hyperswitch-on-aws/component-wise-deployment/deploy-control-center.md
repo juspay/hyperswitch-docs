@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Deploy the Juspay Hyperswitch Control Center on AWS using standalone scripts to manage and monitor your payment operations efficiently
 icon: building-columns
 ---
 
@@ -31,7 +29,7 @@ This setup includes:
 >
 > You can directly start from [Step 3](deploy-control-center.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
-### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or update the AWS CLI
 
 {% tabs %}
 {% tab title="MacOS" %}
@@ -100,7 +98,7 @@ For more information, [click here](https://docs.aws.amazon.com/cli/latest/usergu
 
 ### Step 2 - Configure the AWS CLI
 
-For this step you would need the following from you AWS account
+For this step you would need the following from your AWS account
 
 1. Access key ID
 2. Secret Access Key
@@ -116,7 +114,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-### Step 3 - Setup Hyperswitch
+### Step 3 - Set up Hyperswitch
 
 You can now deploy the hyperswitch application by running the below command in the same terminal session.
 
@@ -127,8 +125,6 @@ Takes around 10-15 min to execute successfully
 ```json
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_aws_setup.sh | bash
 ```
-
-
 
 Once the script is executed, you will receive a `Public IP` as the response (e.g. `http://34.207.75.225`). This IP is the base URL for accessing the application's APIs
 
