@@ -73,7 +73,9 @@ var paymentElementOptions = {
 
 In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.\
 \
-This layout optimizes for faster repeat payments while still supporting new payment method entry in a single, seamless flow.\
+This layout optimizes for faster repeat payments while still supporting new payment method entry in a single, seamless flow.
+
+`hideCardExpiry` - When `hideCardExpiry` is set to true, the expiry date displayed on saved card items is hidden, and the CVC input is rendered inline next to the card details instead of below them. This creates a more compact saved card view.\
 \
 **One-click wallets** such as Google Pay, Apple Pay, and PayPal are always shown at the top of the checkout to enable faster, low-friction payments. This is available for both Accordion and Tabs layout.
 
@@ -82,6 +84,7 @@ var paymentElementOptions = {
    layout: {
     savedMethodCustomization: {
       groupingBehavior: "groupByPaymentMethods",
+      hideCardExpiry: true, // default - false
     }
   }
 }
