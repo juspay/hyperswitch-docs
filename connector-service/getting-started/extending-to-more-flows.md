@@ -1,3 +1,7 @@
+---
+description: Extend payment integration with recurring payments, 3D Secure, and additional payment flows
+---
+
 # Extending to More Flows
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.

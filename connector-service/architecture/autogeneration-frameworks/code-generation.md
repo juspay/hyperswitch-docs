@@ -1,3 +1,7 @@
+---
+description: Generate connector adapter code automatically from provider API specs using Grace tool
+---
+
 # Code Generation
 
 You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.

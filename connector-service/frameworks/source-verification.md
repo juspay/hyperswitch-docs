@@ -1,3 +1,7 @@
+---
+description: Verify redirect response authenticity from payment processors to prevent forged callbacks
+---
+
 # Source Verification
 
 A customer returns from a 3D Secure challenge. The URL shows `status=success`. Do you ship the order? Not yet. That URL could be forged. Prism verifies the source before you fulfill a single order.

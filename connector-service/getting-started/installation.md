@@ -1,3 +1,7 @@
+---
+description: Install Prism SDK in Node.js, Python, Java, or PHP for your payment integration
+---
+
 # Installation
 
 Start by installing the library for the programming language of your choice.

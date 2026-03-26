@@ -1,3 +1,7 @@
+---
+description: Understand Prism architecture with SDK interface, FFI binding layer, and connector adapters
+---
+
 ## The Problem
 
 If you've integrated multiple payment providers, you know the pain:

@@ -1,3 +1,7 @@
+---
+description: Configure development, sandbox, and production environments for safe payment testing
+---
+
 # Environment Settings
 
 Your code behaves differently in development, staging, and production. Prism lets you configure environments explicitly so test transactions don't hit live payment processors and production keys don't leak into debug logs.

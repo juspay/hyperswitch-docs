@@ -1,3 +1,7 @@
+---
+description: Choose between embedded SDK library mode or standalone gRPC microservice mode
+---
+
 # Library Modes of Usage
 
 Prism fits into your architecture two ways: as an embedded library or as a standalone microservice. The choice depends on your scale, team structure, and how you want to manage payment logic.
