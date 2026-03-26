@@ -1,4 +1,5 @@
 ---
+description: Understand Hyperswitch architecture to design and deploy payment processing infrastructure
 icon: sitemap
 ---
 

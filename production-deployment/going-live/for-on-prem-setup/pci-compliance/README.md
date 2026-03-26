@@ -1,5 +1,5 @@
 ---
-description: It's no rocket science
+description: Navigate PCI compliance requirements to achieve certification for payment processing
 icon: user-police-tie
 ---
 

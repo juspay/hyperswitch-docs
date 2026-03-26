@@ -1,3 +1,7 @@
+---
+description: Review system requirements to provision adequate hardware and software for Hyperswitch deployment
+---
+
 # System Requirements
 
 ### **Hardware**

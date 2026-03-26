@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Implement data security controls to protect sensitive payment information and encryption keys
 icon: lock-keyhole
 ---
 
