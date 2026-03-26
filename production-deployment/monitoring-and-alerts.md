@@ -1,4 +1,5 @@
 ---
+description: Configure monitoring and alerting systems to maintain operational visibility and detect anomalies in production
 icon: monitor-waveform
 ---
 

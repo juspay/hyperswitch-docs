@@ -1,4 +1,5 @@
 ---
+description: Complete the Self-Assessment Questionnaire to obtain PCI DSS compliance certification
 icon: clipboard-question
 ---
 

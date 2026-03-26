@@ -1,5 +1,5 @@
 ---
-description: Stay up to date with minimal maintenance effort!
+description: Maintain and update Hyperswitch deployments to access new features and security patches
 icon: recycle
 ---
 

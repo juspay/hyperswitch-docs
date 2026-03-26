@@ -1,4 +1,5 @@
 ---
+description: Implement security and compliance controls to protect cardholder data and achieve PCI DSS certification
 icon: shield-check
 ---
 

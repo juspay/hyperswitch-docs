@@ -1,4 +1,5 @@
 ---
+description: Complete pre-launch checklist to ensure secure and compliant SaaS deployment of Hyperswitch
 icon: gift
 ---
 

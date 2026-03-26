@@ -1,4 +1,5 @@
 ---
+description: Scale Hyperswitch deployments to handle high transaction volumes with enterprise-grade reliability
 icon: arrows-maximize
 ---
 

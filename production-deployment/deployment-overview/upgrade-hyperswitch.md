@@ -1,3 +1,7 @@
+---
+description: Upgrade Hyperswitch using GitOps practices to deploy new versions with minimal downtime
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)

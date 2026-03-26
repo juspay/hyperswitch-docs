@@ -1,4 +1,5 @@
 ---
+description: Prepare on-premise infrastructure to deploy Hyperswitch with enterprise security and compliance
 icon: clipboard-question
 ---
 

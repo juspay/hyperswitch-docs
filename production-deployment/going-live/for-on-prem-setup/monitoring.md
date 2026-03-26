@@ -1,5 +1,5 @@
 ---
-description: Visibility and control over your application
+description: Set up monitoring and logging to gain visibility into application performance and health
 icon: eyes
 ---
 

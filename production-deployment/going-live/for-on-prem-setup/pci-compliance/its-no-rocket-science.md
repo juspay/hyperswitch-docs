@@ -1,5 +1,5 @@
 ---
-description: Demystifying PCI compliance and it's requirements
+description: Understand PCI compliance requirements to simplify certification and reduce compliance burden
 icon: cake-slice
 ---
 

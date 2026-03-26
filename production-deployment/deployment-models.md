@@ -1,4 +1,5 @@
 ---
+description: Choose deployment model to match infrastructure ownership and compliance requirements
 icon: flux-capacitor
 ---
 

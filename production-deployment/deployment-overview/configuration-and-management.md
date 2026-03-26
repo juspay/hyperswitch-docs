@@ -1,3 +1,7 @@
+---
+description: Configure ArgoCD and GitOps workflows to manage Hyperswitch deployments with drift detection
+---
+
 # Configuration and Management
 
 ### Configuration Files&#x20;
