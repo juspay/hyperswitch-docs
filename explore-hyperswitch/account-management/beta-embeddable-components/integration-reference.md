@@ -1,8 +1,13 @@
+---
+description: >-
+  Integrate Reference with Hyperswitch to enable seamless payment processing
+---
+
 # Integration Reference
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
-Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
+Repository URL: [https://GitHub.com/Juspay/Hyperswitch-control-center-embedded](https://GitHub.com/Juspay/Hyperswitch-control-center-embedded)
 
 Demo URL: [https://embedded-ssr.netlify.app/](https://embedded-ssr.netlify.app/)
 
@@ -27,9 +32,9 @@ Security Warning: Never expose your Hyperswitch API-Key on the frontend. You mus
 
 **Frontend → requests session → Your Backend → requests token (using API Key) → Hyperswitch API**
 
-#### Step 1.1: Create the Token Endpoint
+### Step 1.1: Create the Token Endpoint
 
-Create a route (e.g., /embedded/hyperswitch) in your backend application.
+Create a route (e.g., /embedded/Hyperswitch) in your backend application.
 
 Required Headers for Hyperswitch Call:
 
@@ -50,7 +55,7 @@ app.use(express.json());
 
 const HYPERSWITCH_BASE_URL = 'https://app.hyperswitch.io/api';
 
-app.get('/embedded/hyperswitch', async (req, res) => {
+app.get('/embedded/Hyperswitch', async (req, res) => {
   try {
     const response = await axios.get(
       `${HYPERSWITCH_BASE_URL}/api/embedded/token`,
@@ -95,12 +100,12 @@ You must choose one:
 * Core (JavaScript Only / HTML)
 * React Integration
 
-#### 2A: HTML-JS Integration
+### 2A: HTML-JS Integration
 
 **2A.1 Install the package:**
 
 ```bash
-npm install @juspay-tech/hyperswitch-control-center-embed-core
+npm install @juspay-tech/Hyperswitch-control-center-embed-core
 ```
 
 **2A.2 Import the SDK in Your Application**
@@ -108,7 +113,7 @@ npm install @juspay-tech/hyperswitch-control-center-embed-core
 Import (ES Module):
 
 ```javascript
-import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
+import { loadHyperswitch } from "@juspay-tech/Hyperswitch-control-center-embed-core";
 ```
 
 **OR**
@@ -116,20 +121,20 @@ import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-c
 Import (CommonJS):
 
 ```javascript
-const { loadHyperswitch } = require("@juspay-tech/hyperswitch-control-center-embed-core");
+const { loadHyperswitch } = require("@juspay-tech/Hyperswitch-control-center-embed-core");
 ```
 
 **2A.3 : Example app.js Implementation**
 
 ```javascript
-import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
+import { loadHyperswitch } from "@juspay-tech/Hyperswitch-control-center-embed-core";
 
 document.addEventListener("DOMContentLoaded", async function () {
 
   const fetchToken = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/embedded/hyperswitch",
+        "http://localhost:4000/embedded/Hyperswitch",
         {
           method: "GET",
           headers: {
@@ -152,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   };
 
-  const hyperswitch = loadHyperswitch({
+  const Hyperswitch = loadHyperswitch({
     fetchToken: fetchToken
   });
 
@@ -160,18 +165,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     url: "https://app.hyperswitch.io/api"
   });
 
-  connectorConfig.mount("#hyperswitch-root");
+  connectorConfig.mount("#Hyperswitch-root");
 
 });
 
 ```
 
-#### 2B: React Integration
+### 2B: React Integration
 
 **2B.1 Install the package:**
 
 ```bash
-npm install @juspay-tech/hyperswitch-control-center-embed-react
+npm install @juspay-tech/Hyperswitch-control-center-embed-react
 ```
 
 **2B.2 Import the SDK in Your Application**
@@ -180,11 +185,11 @@ npm install @juspay-tech/hyperswitch-control-center-embed-react
 import React, { useState } from 'react';
 import './App.css';
 import 'tailwindcss/tailwind.css';
-import { loadHyperswitch } from '@juspay-tech/hyperswitch-control-center-embed-core';
+import { loadHyperswitch } from '@juspay-tech/Hyperswitch-control-center-embed-core';
 import {
 HyperswitchProvider,
 ConnectorConfiguration
-} from '@juspay-tech/hyperswitch-control-center-embed-react';
+} from '@juspay-tech/Hyperswitch-control-center-embed-react';
 ```
 
 **2B.3 Example app.js Implementation**
@@ -204,7 +209,7 @@ function App() {
     const fetchToken = async () => {
       try {
         const response = await fetch(
-          'http://localhost:4000/embedded/hyperswitch',
+          'http://localhost:4000/embedded/Hyperswitch',
           {
             method: "GET",
             headers: {
@@ -259,7 +264,7 @@ export default App;
 
 ### API Reference
 
-#### 1. loadHyperswitch(options)
+### 1. loadHyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -270,13 +275,13 @@ options.fetchToken () => Promise\<string | undefined>
 * Should return the JWT string on success.
 * Should return undefined on failure.
 
-#### 2. HyperswitchProvider
+### 2. HyperswitchProvider
 
 Context provider that holds the authentication state.
 
 * **hyperswitchInstance**: The object returned by loadHyperswitch.
 
-#### 3. ConnectorConfiguration
+### 3. ConnectorConfiguration
 
 The UI Component that renders the settings form.
 

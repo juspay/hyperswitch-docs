@@ -1,7 +1,8 @@
 ---
-icon: paypal
+description: >-
+  Explore PayPal to enhance your payment orchestration capabilities
+icon: PayPal
 ---
-
 # PayPal
 
 **Purpose:** PayPal payments
@@ -13,7 +14,7 @@ icon: paypal
     android:id="@+id/payPalButton"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:paymentMethod="paypal" />
+    app:paymentMethod="PayPal" />
 ```
 
 **Initialize PayPal Launcher**
@@ -25,7 +26,7 @@ private lateinit var payPalLauncherInstance: UnifiedPaymentLauncher
 private fun setupPayPalLauncher() {
     payPalButton = findViewById(R.id.payPalButton)
     payPalButton.isEnabled = false
-    
+
     payPalLauncherInstance = UnifiedPaymentLauncher.createPayPalLauncher(
         activity = this,
         clientSecret = paymentIntentClientSecret,
@@ -63,6 +64,6 @@ private fun onPayPalResult(result: PayPalPaymentMethodLauncher.Result) {
             Toast.makeText(this, "PayPal payment failed: ${result.error.message}", Toast.LENGTH_LONG).show()
         }
     }
-}    
+}
 ```
 

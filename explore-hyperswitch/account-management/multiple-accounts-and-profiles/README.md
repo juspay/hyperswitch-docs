@@ -1,10 +1,9 @@
 ---
 description: >-
-  Create multiple merchant accounts, profiles and users for seamless integration
+  Configure account settings to manage your Hyperswitch organization and profiles
   with your business.
 icon: file-user
 ---
-
 # Managing Accounts and Profiles
 
 {% hint style="warning" %}
@@ -31,15 +30,15 @@ Here's how the architecture would look like.
 
 ### Let's understand the hierarchy
 
-#### Organization
+### Organization
 
 Organization refers to the main business. When a new user registers, an organization is created and the user assumes the role of organization admin.
 
-#### Merchant Account
+### Merchant Account
 
 A merchant account is associated with an `api_key` and `publishable_key` which is used for authentication. There can be many merchant accounts that can be created under an organization by an organization admin.&#x20;
 
-#### Profile
+### Profile
 
 {% hint style="info" %}
 Every merchant account has at least one profile. For easier integration,`profile_id` is not mandatory if there is only one business profile.&#x20;
@@ -57,7 +56,7 @@ If a routing algorithm is not available, a default fallback, which consists of a
 
 * Webhook url and Return url for payments.
 
-#### Processors
+### Processors
 
 There can be multiple processors configured under a business profile. Each processor is associated with a globally unique identifier `merchant_connector_id` and unique identifier under a business profile called `label`
 
@@ -66,7 +65,6 @@ A processor  created under one business profile cannot be used in another busine
 ### Use cases
 
 *   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
-
 
 
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.

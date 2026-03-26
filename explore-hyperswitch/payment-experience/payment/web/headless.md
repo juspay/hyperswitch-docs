@@ -1,16 +1,15 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Integrate mobile SDK to deliver seamless in-app payment experiences
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
 ---
-
 # Headless SDK
 
 ### Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
 Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -21,7 +20,7 @@ Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To
 });
 </code></pre>
 
-#### 2. Create a Payment Intent
+### 2. Create a Payment Intent
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
@@ -29,7 +28,7 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
 {% endhint %}
 
-#### 3. Initialize your Payment Session
+### 3. Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
@@ -37,13 +36,7 @@ Initialize a Payment Session by passing the clientSecret to the `initPaymentSess
 paymentSession = hyper.initPaymentSession({
   clientSecret: client_secret,
 });
-```
-
-| options (Required)                   | Description                                                      |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
-
-#### 4. Craft a customized payments experience
+``` | options (Required) | Description | | ------------------------------------ | ---------------------------------------------------------------- | | `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. | ### 4. Craft a customized payments experience
 
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
 
@@ -58,8 +51,8 @@ if (paymentMethodSession.error) {
         paymentMethodSession.getCustomerDefaultSavedPaymentMethodData();
 }
 
-//handle press for pay button 
-function handlePress() { 
+//handle press for pay button
+function handlePress() {
     if (paymentMethodSession.error) {
         // handle the case where no default customer payment method is not present
     } else {

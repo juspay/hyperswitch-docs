@@ -1,7 +1,8 @@
 ---
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: apple
 ---
-
 # iOS
 
 ### Configuration
@@ -20,12 +21,12 @@ let payload = [
                 "forceUpdate": true,
                 "localAssets": false,
                 "fileName": getHyperOTAPlist("fileName"),
-                "releaseConfigURL": getHyperOTAPlist(configKey) + 
+                "releaseConfigURL": getHyperOTAPlist(configKey) +
                  "/mobile-ota/ios/" + SDKVersion.current + "/config.json",
 ] as [String: Any]
 
-HyperOTAServices(payload: payload, 
-                loggerDelegate: logger, 
+HyperOTAServices(payload: payload,
+                loggerDelegate: logger,
                 baseBundle: Bundle(for: OTAServices.self))
 ```
 
@@ -35,5 +36,5 @@ Make sure `releaseConfigURL` points to the `config.json` for the correct SDK ver
 `Example : $baseURL/mobile-ota/ios/${BuildConfig.VERSION_NAME}/config.json`
 {% endhint %}
 
-For more information, [Airborne](https://github.com/juspay/airborne)
+For more information, [Airborne](https://GitHub.com/Juspay/airborne)
 

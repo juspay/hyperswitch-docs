@@ -1,8 +1,8 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: >-
+  Understand compliance requirements to ensure secure and regulated payment operations
 icon: credit-card
 ---
-
 # PCI Compliance
 
 Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that sensitive cardholder data is securely processed, stored, and transmitted.&#x20;
@@ -24,22 +24,22 @@ Hyperswitch tokenizes and stores customer card details in its cloud vault, reduc
 
 To process raw card data securely through Hyperswitch:
 
-#### **Processor Configuration:**
+### **Processor Configuration:**
 
 Many payment processors disable raw card acceptance by default. To enable it:
 
 * Share Hyperswitch’s PCI Attestation of Compliance (AOC) with your processor's support team.
 * Request them to enable raw card processing for your merchant account.
 
-#### **Stripe Integration Update:**
+### **Stripe Integration Update:**
 
 * Stripe no longer allows raw card acceptance via its Merchant Dashboard.
 * If required, share Hyperswitch’s PCI DSS Attestation of Compliance (AOC) with Stripe support.
 
-#### **Accessing the PCI AOC Document:**
+### **Accessing the PCI AOC Document:**
 
 * A redacted version of Hyperswitch’s PCI DSS Attestation of Compliance (AOC) is available to Cloud users under NDA. It can be downloaded from the Compliance section in the Dashboard.
-* Alternatively, email **hyperswitch@juspay.in** for assistance.
+* Alternatively, email **Hyperswitch@juspay.in** for assistance.
 
 ### **Why Choose Hyperswitch for PCI Compliance?**
 

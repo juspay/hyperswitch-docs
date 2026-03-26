@@ -1,8 +1,8 @@
 ---
-description: Get started with Split Payments via Hyperswitch
+description: >-
+  Explore Split Payments to enhance your payment orchestration capabilities
 icon: split
 ---
-
 # Split Payments
 
 Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
@@ -36,18 +36,16 @@ No custom orchestration logic is required on the merchant side beyond standard S
 <figure><img src="../../../.gitbook/assets/Screen Recording 2026-02-04 at 9 (1).gif" alt=""><figcaption></figcaption></figure>
 
 
-
 ### Hyperswitch Split Payments Flow
 
 <figure><img src="../../../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
 
 
-
-#### 1. Payment Initialization
+### 1. Payment Initialization
 
 After the [payment intent](https://api-reference.hyperswitch.io/v1/payments/payments--create) is created, the checkout SDK is initialized. The SDK retrieves and displays all supported payment methods configured for the merchant, including gift cards if they are enabled.
 
-#### 2. Gift Card Application and Validation
+### 2. Gift Card Application and Validation
 
 When a customer applies a gift card during checkout, the SDK collects the gift card details and sends them for validation.
 
@@ -63,7 +61,7 @@ If the gift card balance fully covers the transaction amount, the customer can p
 
 If the balance is insufficient, the customer is prompted to add another payment method. The remaining payable amount is automatically calculated and displayed.
 
-#### 3. Payment Confirmation
+### 3. Payment Confirmation
 
 When the customer confirms the payment, the SDK submits all selected payment method details to Hyperswitch.
 
@@ -73,7 +71,7 @@ At this stage, the system:
 * Calculates the amount to be charged to each payment method
 * Initiates sequential authorization of the payment methods
 
-#### 4. Sequential Payment Processing
+### 4. Sequential Payment Processing
 
 Split payments are processed in a fixed order to maintain transaction consistency and avoid partial payment risks.
 
@@ -93,14 +91,12 @@ If the gift card authorization succeeds, the transaction proceeds toward complet
 
 If the gift card authorization fails after the card payment has already been processed, refund handling is automatically triggered for the card payment to maintain transaction consistency.
 
-#### 5. Payment Completion
+### 5. Payment Completion
 
 Once all payment methods are processed, the final transaction status is returned to the SDK.
 
 
-
-#### API Details :&#x20;
-
+### API Details :&#x20;
 
 
 **Apply a gift card**
@@ -127,7 +123,6 @@ curl --request POST \
 '
 
 ```
-
 
 
 **Payment Confirm with Split PM details**
@@ -164,7 +159,7 @@ curl --request POST \
             "payment_method_type": "gift_card",
             "payment_method_subtype": "givex"
         }
-    ]  
+    ]
 }
 '
 

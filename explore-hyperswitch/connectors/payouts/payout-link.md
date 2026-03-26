@@ -1,8 +1,8 @@
 ---
-description: Low-code solution to accept payouts
+description: >-
+  Manage payout workflows to send funds to vendors and customers globally
 icon: link
 ---
-
 # Payout Links
 
 Introducing Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer / vendor / partner's experience by making instant payouts in their preferred mode of transaction with preferred processor.
@@ -37,7 +37,7 @@ There are a couple of ways for using payout links.
 * Serving links from a custom domain
 * **\[TEST MODE]** Opening non-iframed links
 
-#### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
+### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
 
 ```jsonc
 "payout_link_config": {
@@ -50,7 +50,7 @@ There are a couple of ways for using payout links.
   "logo": "https://hyperswitch.io/favicon.ico",
 
   // (optional) Name of your company.
-  "merchant_name": "HyperSwitch",
+  "merchant_name": "Hyperswitch",
 
   // (required in production) A list of domain glob patterns.
   // This is used as validation when payout link render request is received, and also helps block XSS on client.
@@ -64,7 +64,7 @@ There are a couple of ways for using payout links.
 
 > Note: It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
 
-#### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
+### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
 
 > This creates a default payout link using the payout link config that was configured for the profile. In case payout config is not configured and not passed during create request, a default set of UI config is used.
 
@@ -109,7 +109,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 <figure><img src="../../../.gitbook/assets/payout-link-default.png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
 
-#### 3. Customizing a payout link during creation
+### 3. Customizing a payout link during creation
 
 > Each payout link can be configured inidividually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create), by including the `payout_link_config` object. UI config and access control (test\_mode) can be specified during creation. However, `domain_name` is always configured at a profile level.
 
@@ -153,7 +153,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 <figure><img src="../../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
 
-#### 4. Opening non-iframed links
+### 4. Opening non-iframed links
 
 > Note: This feature is available only in non-production environment. This essentially bypasses the server side and client side validations which are in place for making sure links are only opened within an iframe of a whitelisted domain.
 
@@ -185,7 +185,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "confirm": false,
     "customer_id": "cus_123",
     "return_url": "https://hyperswitch.io",
-    "description": "Rewards from HyperSwitch",
+    "description": "Rewards from Hyperswitch",
     "payout_link": true,
     "billing": {
         "address": {
@@ -221,7 +221,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 Yes. Your custom domain can be included in the default payout\_link\_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2awm23agh-p_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
+This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/Hyperswitch-io/shared_invite/zt-2awm23agh-p_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
 
 </details>
 

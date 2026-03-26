@@ -1,8 +1,8 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: >-
+  Review security measures to protect payment data and maintain customer trust
 icon: cloud-check
 ---
-
 # Data Security
 
 At Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
@@ -20,11 +20,11 @@ The Hyperswitch application employs multiple layers of encryption to safeguard s
 
 <figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
-#### **1. Accepting Card Data**
+### **1. Accepting Card Data**
 
 Card information is initially received from the Hyperswitch SDK. This data is encrypted using SSL/TLS protocols, ensuring end-to-end encryption during transmission between the SDK and the Hyperswitch backend. This guarantees that sensitive card data is secure from the point of collection.
 
-#### **2. Storing Card Data (Vaulting)**
+### **2. Storing Card Data (Vaulting)**
 
 When a payment is made using a saved card, the card details are securely stored in the Hyperswitch Card Vault. This process involves multiple steps to ensure the confidentiality and integrity of the data:
 
@@ -42,7 +42,7 @@ When a payment is made using a saved card, the card details are securely stored 
    * This securely encrypted data is then stored in the database.
    * The database itself is encrypted at rest, providing an additional layer of security for the stored information.
 
-For more technical details about how the Hyperswitch Card Vault manages encryption and decryption, you can visit the [Hyperswitch Card Vault GitHub repository](https://github.com/juspay/hyperswitch-card-vault).
+For more technical details about how the Hyperswitch Card Vault manages encryption and decryption, you can visit the [Hyperswitch Card Vault GitHub repository](https://GitHub.com/Juspay/Hyperswitch-card-vault).
 
 **3. Using Card Data for Analytics and Payment Operations**
 

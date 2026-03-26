@@ -1,8 +1,8 @@
 ---
-description: Integrate unified checkout with your react native app
+description: >-
+  Explore React Native to enhance your payment orchestration capabilities
 icon: react
 ---
-
 # React Native
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_193709.png" alt="" width="375"><figcaption></figcaption></figure>

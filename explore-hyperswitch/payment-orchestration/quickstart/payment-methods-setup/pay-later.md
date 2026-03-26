@@ -1,8 +1,8 @@
 ---
-description: Accept pay later options through Hyperswitch
+description: >-
+  Explore Pay Later to enhance your payment orchestration capabilities
 icon: calendar-day
 ---
-
 # Pay Later
 
 ## Klarna, Affirm, Afterpay/Clearpay - Redirection flow

@@ -1,12 +1,13 @@
 ---
+description: >-
+  Explore Services to enhance your payment orchestration capabilities
 hidden: true
 ---
-
 # Services
 
 ### Data Management
 
-#### Data Ingestion Service
+### Data Ingestion Service
 
 Our ingestion service connects to merchant and processor data sources using secure, flexible channels so you get timely, reliable inputs without manual work
 
@@ -21,7 +22,7 @@ Our ingestion service connects to merchant and processor data sources using secu
 * **Manual file uploads / UI drag-and-drop**
   * Upload files through the dashboard for ad-hoc imports or backfills
 
-#### Data Transformation Service
+### Data Transformation Service
 
 The transformation service is the intelligent data processing engine that bridges the gap between diverse payment processor formats and your reconciliation requirements. It automatically converts raw financial data from any source into a standardized, reconciliation-ready format.
 

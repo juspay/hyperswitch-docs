@@ -1,9 +1,9 @@
 ---
-description: Make recurring payments across processors
+description: >-
+  Explore PG Agnostic Card Forwarding to enhance your payment orchestration capabilities
 hidden: true
 icon: arrows-repeat
 ---
-
 # PG Agnostic Card Forwarding
 
 ### How does PG agnostic MITs work?
@@ -24,14 +24,14 @@ Hyperswitch supports the following processors for PG Agnostic Recurring Payments
 * Adyen
 * Cybersource
 
-In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
+In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://GitHub.com/Juspay/Hyperswitch/discussions/new?category=ideas-feature-requests).
 
 ### How to enable PG agnostic MITs?
 
 To start routing MIT payments across all supported connectors in addition to the connector through which the recurring payment was set up, use the below API to enable it for a business profile
 
 ```bash
-curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_profile/:profile_id/toggle_connector_agnostic_mit' \
+curl --location 'http://sandbox.Hyperswitch/account/:merchant_id/business_profile/:profile_id/toggle_connector_agnostic_mit' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: api_key' \
@@ -44,13 +44,13 @@ All the payment methods saved with `setup_future_usage : off_session` after enab
 
 ## FAQs
 
-#### 1. How are authentication rates affected in PG agnostic MITs?
+### 1. How are authentication rates affected in PG agnostic MITs?
 
 Network Transaction ID which is provided by the card network itself is a reference to the original payment authenticated by the customer and authorized for recurring payments. Hence the MIT exemption is expected to have better auth rates with this.
 
 So the internal precedence would be to try the payment with Network Transaction ID if present else the corresponding PG token would be used.
 
-#### 2. How do I configure a routing rule so that all CITs are routed through one connector and all MITs through another?
+### 2. How do I configure a routing rule so that all CITs are routed through one connector and all MITs through another?
 
 The [Hyperswitch dashboard](https://app.hyperswitch.io/dashboard/routing/rule) provides UI to configure routing rules for PG Agnostic Recurring Payments. You can choose the profile for which you wish to configure the rule in the Smart Routing Configuration.
 

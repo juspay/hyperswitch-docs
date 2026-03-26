@@ -1,8 +1,8 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: >-
+  Configure Activate Connector on Hyperswitch to process payments through Hyperswitch orchestration platform
 icon: chart-network
 ---
-
 # Activate Connector on Hyperswitch
 
 ### Steps to activate connector on the Hyperswitch Control Center

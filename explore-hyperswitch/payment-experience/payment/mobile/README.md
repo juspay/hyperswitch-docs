@@ -1,7 +1,8 @@
 ---
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: mobile
 ---
-
 # Mobile
 
 Hyperswitch SDK offers **powerful and flexible mobile SDKs** to integrate secure, customizable, and high-performance payments into your iOS and Android apps — whether you’re building with native frameworks or cross-platform tools like React Native and Flutter.

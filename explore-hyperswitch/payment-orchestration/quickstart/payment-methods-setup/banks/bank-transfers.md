@@ -1,7 +1,7 @@
 ---
-description: Bank Transfer payment methods
+description: >-
+  Explore Bank Transfers to enhance your payment orchestration capabilities
 ---
-
 # Bank Transfers
 
 {% hint style="info" %}

@@ -1,8 +1,13 @@
+---
+description: >-
+  Explore In-App and Web Transactions Processed Using Hyperswitch Decryption to enhance your payment orchestration capabilities
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the token internally using your uploaded certificates and then transforms the raw data for any downstream connector.
 
-#### **Mechanism:**
+### **Mechanism:**
 
 1. Frontend sends **encrypted Apple Pay token** to Hyperswitch.
 2. Hyperswitch unwraps the token using your private key configured at Hyperswitch.
@@ -10,7 +15,7 @@ In this flow Hyperswitch decrypts the token internally using your uploaded certi
 
 ### **Configuration :**
 
-#### **Prerequisites**
+### **Prerequisites**
 
 Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
@@ -19,7 +24,7 @@ Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites ne
 
 Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to setting up Apple Pay -
 
-#### **Creating an Apple MerchantID**
+### **Creating an Apple MerchantID**
 
 You can create an Apple MerchantID referencing the video or following the steps mentioned below
 
@@ -29,7 +34,7 @@ You can create an Apple MerchantID referencing the video or following the steps 
 * Enter a unique descriptive identifier _(like merchant.com.testdomain.sandbox)_ and click Continue
 * Verify the description and identifier and click on Register
 
-#### **Validating Merchant Domain**
+### **Validating Merchant Domain**
 
 You can validate the merchant domain by following the steps mentioned below -
 
@@ -43,7 +48,7 @@ You can validate the merchant domain by following the steps mentioned below -
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
 
-#### **Creating Apple MerchantID Certificate and Private Key**
+### **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key by following the steps mentioned below -
 
@@ -66,7 +71,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Configuring Apple Pay on Hyperswitch**
+### **Configuring Apple Pay on Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
 
@@ -90,13 +95,13 @@ base64 -i certificate_sandbox.pem
 base64 -i certificate_sandbox.key
 ```
 
-* Display Name should be your merchant name that you want to present to the customers when the make ApplePay payment on your platform.
+* Display Name should be your merchant name that you want to present to the customers when the make Apple Pay payment on your platform.
 * In Domain, enter `web` in the form field.
 * In Domain Name, add the verified domain name you configured in Merchant Domains in Apple Developer Account.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-#### **Creating Apple Pay Payment Processing Certificate**
+### **Creating Apple Pay Payment Processing Certificate**
 
 <figure><img src="../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
 
@@ -127,7 +132,7 @@ base64 -i apple_pay.cer
 
 * In Payment Processing Key, copy the content from **ppc\_private.key** file and paste it.
 
-<figure><img src="../../../Users/shankar.singh/Documents/hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../Users/shankar.singh/Documents/Hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Please note since this flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
@@ -137,15 +142,15 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 
 <summary>You can use the following text in the email</summary>
 
-* Attach our PCI DSS AoC certificate and copy our Support team (hyperswitch@juspay.in).
+* Attach our PCI DSS AoC certificate and copy our Support team (Hyperswitch@juspay.in).
 * Stripe Account id: <`Enter your account id:` you can find it [here](https://dashboard.stripe.com/settings/user)>
 * A detailed business description: <`One sentence about your business`>. The business operates across `xx` countries and has customers across the world.
-* Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
+* Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple Pay tokens and send the decrypted Apple Pay tokens to Stripe. So, please enable processing decrypted Apple Pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
 
 </details>
 
-#### Integrate with Xcode
+### Integrate with Xcode
 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 
-<figure><img src="../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Apple Pay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>

@@ -1,7 +1,7 @@
 ---
-description: Payment Links & Theme Customization Guide
+description: >-
+  Follow this guide to implement Theme configurations and optimize payment flows
 ---
-
 # Theme configurations Guide
 
 ## **1. Understanding Style IDs**
@@ -99,7 +99,7 @@ Write in a way that works for any scenario your customers might encounter:
 **Universal example that works everywhere:**
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 
@@ -155,7 +155,7 @@ Payment links support three main transaction types. Here's the recommended messa
 Universal messaging that works for this flow:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 
@@ -164,7 +164,7 @@ charge your payment method or store your payment details as applicable."
 Authorization happens first, capture occurs later. Use messaging that acknowledges this two-step process:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 reserve and later capture payment from your payment method."
 ```
 
@@ -173,7 +173,7 @@ reserve and later capture payment from your payment method."
 Authorization and capture happen together. Use straightforward messaging about the immediate charge:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method."
 ```
 
@@ -182,7 +182,7 @@ charge your payment method."
 Cover both storing credentials and future charges with universal language:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 

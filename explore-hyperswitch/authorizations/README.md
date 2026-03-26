@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Authorizations to enhance your payment orchestration capabilities
 icon: building-magnifying-glass
 ---
-
 # Authorizations
 
 ### **Advanced Authorization Types**

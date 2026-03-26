@@ -1,14 +1,13 @@
 ---
 description: >-
-  Airborne is an open-source project by Juspay designed to help developers
+  Explore Over-the-Air OTA Updates to enhance your payment orchestration capabilities
   integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
   Native applications effortlessly.
 icon: arrows-rotate-reverse
 ---
-
 # Over-the-Air (OTA) Updates
 
-#### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>
+### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>
 
 **Purpose**
 
@@ -31,7 +30,7 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 1. App Launch
    * User opens the Hyperswitch-powered app.
 2. **Release Config Fetch**
-   * Airborne makes an API call to your server to fetch the latest release [configuration](https://github.com/juspay/airborne/) for the app.
+   * Airborne makes an API call to your server to fetch the latest release [configuration](https://GitHub.com/Juspay/airborne/) for the app.
 3. **Update Check**
    * If the config shows an update is available, Airborne immediately starts downloading the new JavaScript bundle.
 4. **Instant Install**
@@ -45,4 +44,4 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 
 ***
 
-For more information, [Airborne](https://github.com/juspay/airborne)​[<br>](../../../payment-experience/payment/server-setup.md)
+For more information, [Airborne](https://GitHub.com/Juspay/airborne)​[<br>](../../../payment-experience/payment/server-setup.md)

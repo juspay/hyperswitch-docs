@@ -1,13 +1,13 @@
 ---
-description: Integrate hyper SDK to any Web App using hyperswitch-node
+description: >-
+  Integrate JS with REST API with Hyperswitch to enable seamless payment processing
 icon: square-js
 ---
-
 # JS with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\\
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `Hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\\
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+## [<mark style="color:blue;">Demo App</mark>](https://GitHub.com/PritishBudhiraja/Hyperswitch-demo-app/archive/refs/heads/master.zip)
 
 ## 1. Setup the server
 
@@ -38,7 +38,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that youâ€
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-#### 2.2 Fetch the Payment and create the Unified Checkout
+### 2.2 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
@@ -59,13 +59,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+  script.src = "https://beta.Hyperswitch/v1/HyperLoader.js";
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
       customBackendUrl: "YOUR_BACKEND_URL",
@@ -79,7 +79,7 @@ async function initialize() {
           layout: "tabs",
           wallets: {
               walletReturnUrl: "https://example.com/complete",
-              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+              //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
           },
       };
       const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
@@ -89,7 +89,7 @@ async function initialize() {
 }
 ```
 
-#### 2.3 Additional Callback Handling for Wallets Payment Process
+### 2.3 Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
@@ -127,11 +127,11 @@ unifiedCheckout.on("completeDoThis",()=>{
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-#### 2.2 Fetch the Payment and create the Express Checkout
+### 2.2 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
-> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
+> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include Apple Pay, Google Pay and PayPal.
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -148,13 +148,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+  script.src = "https://beta.Hyperswitch/v1/HyperLoader.js";
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
       const appearance = {
@@ -164,7 +164,7 @@ async function initialize() {
       const expressCheckoutOptions = {
           wallets: {
               walletReturnUrl: "https://example.com/complete",
-              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+              //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
           },
       };
       const expressCheckout = widgets.create("expressCheckout", expressCheckoutOptions);

@@ -1,7 +1,7 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: >-
+  Set up Control Centre Account setup to start processing payments quickly
 ---
-
 # ⚙️ Control Centre Account setup
 
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations & analytics use cases. This provides more power to your team for managing payments seamlessly. It also includes rich features to make operations more automated for your teams, such as
@@ -102,4 +102,4 @@ These UI customizations are scalable and can be extended upon merchant request.
 [integration-guide.md](../../merchant-controls/integration-guide.md)
 {% endcontent-ref %}
 
-You can also refer to the [Smart Router](../../payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../../../hyperswitch-open-source/account-setup/test-a-payment.md).
+You can also refer to the [Smart Router](../../payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../../../Hyperswitch-open-source/account-setup/test-a-payment.md).

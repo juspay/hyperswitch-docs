@@ -1,8 +1,8 @@
 ---
-description: Learn about integration options for accepting payments online.
+description: >-
+  Explore Payment Experience to enhance your payment orchestration capabilities
 icon: sidebar-flip
 ---
-
 # Payment Experience
 
 Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
@@ -15,27 +15,27 @@ Optimize your payments integration and unlock higher revenue with the Optimized 
 
 Use Hyperswitch to accept payments for your business globally. The below variations allow you to learn about the different integration options available
 
-#### [Accept payments without code](payment/payment-links/)
+### [Accept payments without code](payment/payment-links/)
 
 Use payment links to accept payments without building any integration onto a website or an app.
 
-#### [Build a checkout](payment/web/)&#x20;
+### [Build a checkout](payment/web/)&#x20;
 
 Integrate the checkout in your website and [customize](payment/web/customization.md) it as per your requirements.
 
-#### [Build advanced integration](payment/web/headless.md)
+### [Build advanced integration](payment/web/headless.md)
 
 Use our headless SDK to have full control over your checkout while using the payment-related functionalities in a decoupled architecture.
 
-#### [Build an in-app integration ](payment/mobile/)
+### [Build an in-app integration ](payment/mobile/)
 
 Use our mobile SDK to accept payments in [Android](payment/mobile/android/) or [iOS](payment/mobile/ios/) apps.
 
-#### [Build an APM-only integration](payment/enable-alternate-payment-method-widgets/)
+### [Build an APM-only integration](payment/enable-alternate-payment-method-widgets/)
 
 Use our Alternate Payment Method widget (APM widget) to power the global APMs in the unified format. This augments your existing checkout in a low code manner.
 
-#### [Build a Vault SDK integration](payment-method/)
+### [Build a Vault SDK integration](payment-method/)
 
 Use our Vault SDK to tokenize the card first and the proceed with payment using a vault token. The Vault SDK is flexible to work with [Hyperswitch unified payments API ](https://api-reference.hyperswitch.io/v1/payments/payments--create)as well as the [Proxy or forwarding](https://api-reference.hyperswitch.io/v2/proxy/proxy-v1) API of Hyperswitch
 

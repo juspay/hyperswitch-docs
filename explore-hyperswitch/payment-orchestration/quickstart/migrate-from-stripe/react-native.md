@@ -1,7 +1,7 @@
 ---
-description: Migrate from Stripe on your react native app
+description: >-
+  Explore React Native to enhance your payment orchestration capabilities
 ---
-
 # React Native
 
 {% hint style="info" %}
@@ -17,7 +17,7 @@ The code from your Stripe integration to be removed and replaced is explained be
 **Step 1:** Install Hyperswitch’s SDK and server side dependencies from npm
 
 ```js
- $ npm install @juspay-tech/react-native-hyperswitch
+ $ npm install @juspay-tech/react-native-Hyperswitch
  $ npm install @juspay-tech/hyper-node --save-dev
 ```
 
@@ -31,22 +31,22 @@ Install peer dependencies:
 
 ```js
 // from
-const stripe = require("stripe")("your_stripe_api_key");
+const Stripe = require("Stripe")("your_stripe_api_key");
 // to
-const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
+const Stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
 ```
 
 **Step 3:** Call useStripe() with your Hyperswitch publishable key to configure the SDK library, from your website
 
 ```js
 // from
-import { StripeProvider } from "@stripe/stripe-react-native";
+import { StripeProvider } from "@Stripe/Stripe-react-native";
 // to
-import { HyperProvider } from "@juspay-tech/react-native-hyperswitch";
+import { HyperProvider } from "@juspay-tech/react-native-Hyperswitch";
 // from
-import { useStripe } from "@stripe/stripe-react-native";
+import { useStripe } from "@Stripe/Stripe-react-native";
 // to
-import { useStripe } from "@juspay-tech/react-native-hyperswitch";
+import { useStripe } from "@juspay-tech/react-native-Hyperswitch";
 ```
 
 **Step 4:** Configure your checkout form to import from Hyperswitch

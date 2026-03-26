@@ -1,8 +1,8 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: >-
+  Set up subscription payments to enable recurring billing for your customers
 icon: repeat
 ---
-
 # Subscriptions with Modular Payments
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
@@ -28,17 +28,17 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Flow Diagram
 
-#### Initial Subscription create flow (with CIT Payment)
+### Initial Subscription create flow (with CIT Payment)
 
 <figure><img src="../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
-#### MIT payment flow in subsequent billing cycle
+### MIT payment flow in subsequent billing cycle
 
 <figure><img src="../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+### 1. For non-PCI DSS compliant merchants who wants to use Hyperswitch Payments SDK
 
 {% stepper %}
 {% step %}
@@ -63,8 +63,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch", 
-        "additional_secret": "hyperswitch" 
+        "merchant_secret": "Hyperswitch",
+        "additional_secret": "Hyperswitch"
     },
     "metadata": {
         "site": "test"
@@ -156,7 +156,7 @@ Sync with the subscription status for disbursement of services and future billin
 {% endstep %}
 {% endstepper %}
 
-#### 2. For PCI Compliant merchants handling the entire checkout experience
+### 2. For PCI DSS compliant merchants handling the entire checkout experience
 
 {% stepper %}
 {% step %}
@@ -285,10 +285,10 @@ Monitor incoming webhooks for renewal during subsequent cycles
 
 ### FAQs
 
-#### 1. What are subscriptions providers that are currently supported?
+### 1. What are subscriptions providers that are currently supported?
 
 Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
 
-#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
 We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience (Tentatively by Q4 2025)

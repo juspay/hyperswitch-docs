@@ -1,7 +1,8 @@
 ---
+description: >-
+  Manage payout workflows to send funds to vendors and customers globally
 icon: magnifying-glass-arrows-rotate
 ---
-
 # Smart Retries in Payout
 
 Smart Retries enable the automatic recovery of failed payout attempts by re-initiating transactions based on specific error types and connector availability. This mechanism optimizes the success rate of disbursements by evaluating whether a retry is likely to resolve the initial failure.
@@ -10,18 +11,18 @@ Smart Retries enable the automatic recovery of failed payout attempts by re-init
 
 Smart Retries are triggered based on connector-specific error configurations. A retry is only attempted if the error is categorized as recoverable and the configuration suggests a high probability of success upon re-attempt.
 
-#### Retry Strategies
+### Retry Strategies
 
 Hyperswitch employs two primary strategies for payout recovery:
 
 * Single Connector Retry: If only one connector is configured for a specific payout method, eligible errors are retried through that same connector.
 * Multi-Connector Retry: If multiple connectors are available for a payout method, Hyperswitch attempts the retry using the next available connector in your priority list.
 
-#### Supported Payout Methods by Connector
+### Supported Payout Methods by Connector
 
 Smart Retries are available for the following connector and method combinations:
 
-<table><thead><tr><th width="243">Connector</th><th>Payout Methods</th></tr></thead><tbody><tr><td>Adyen</td><td>Cards, Banks and Wallets</td></tr><tr><td>Cybersource</td><td>Cards</td></tr><tr><td>Ebanx</td><td>Banks</td></tr><tr><td>Paypal</td><td>Wallets</td></tr><tr><td>Stripe</td><td>Cards and Banks</td></tr><tr><td>Wise</td><td>Banks</td></tr></tbody></table>
+<table><thead><tr><th width="243">Connector</th><th>Payout Methods</th></tr></thead><tbody><tr><td>Adyen</td><td>Cards, Banks and Wallets</td></tr><tr><td>Cybersource</td><td>Cards</td></tr><tr><td>Ebanx</td><td>Banks</td></tr><tr><td>PayPal</td><td>Wallets</td></tr><tr><td>Stripe</td><td>Cards and Banks</td></tr><tr><td>Wise</td><td>Banks</td></tr></tbody></table>
 
 ### Conditions and Constraints
 

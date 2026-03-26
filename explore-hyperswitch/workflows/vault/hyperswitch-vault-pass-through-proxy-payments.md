@@ -1,23 +1,23 @@
 ---
-description: Send payments to PSPs using Vault tokens without handling raw card data
+description: >-
+  Implement secure vault solutions to protect sensitive payment card data
 hidden: true
 icon: arrows-repeat
 ---
-
 # Hyperswitch Vault: Pass Through Proxy Payments
 
 **📌 What is it?**
 
 The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
 
-#### ✅ Why use it?
+### ✅ Why use it?
 
 * **No PSP re-integration needed** – Keep your existing PSP connections.
 * **PCI DSS scope reduction** – Raw card data stays within Vault.
 * **Data security** – Detokenization happens only during the request lifecycle.
 * **Centralized token management** – One vault, many PSPs.
 
-#### ⚙️ How it works
+### ⚙️ How it works
 
 1. **Tokenize cards using Vault**: Tokenize your customers' cards using the [Vault service](./) and store the payment\_method\_id of each card
 2. **Send your proxy payment request**: Send your PSP payment request to the Vault proxy endpoint including the target PSP's url as the destination url and payment\_method\_id that was received in Step 1
@@ -25,12 +25,12 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitc
 4. **Forward to PSP**: The request is sent to the PSP
 5. **Return Response**: Vault returns PSP response to the merchant
 
-#### 🧪 Proxy Payment Request
+### 🧪 Proxy Payment Request
 
 Include the following details:
 
 1. **Include the Hyperswitch Proxy payments related fields in the headers:**
-   1. **URL:** Proxy endpoint **(**&#x68;ttps://sandbox.hyperswitch.io/prox&#x79;**)**
+   1. **URL:** Proxy endpoint **(**&#x68;ttps://sandbox.Hyperswitch/prox&#x79;**)**
    2. **API Key:** Your API key for the merchant\_id under which the vault service was created on Hyperswitch dashboard
    3. **Profile\_id:** Your profile\_id for the merchant\_id under which the vault service was created on Hyperswitch dashboard
 2. **Include the following details in the body:**
@@ -74,7 +74,7 @@ Include the following details:
         "capture": true,
         "capture_on": "2019-09-10T10:11:12Z",
     },
-    "destination_url": "https://api.sandbox.checkout.com/payments",
+    "destination_url": "https://api.sandbox.Checkout.com/payments",
     "headers": {
         "Content-Type": "application/json",
         "Authorization": "Bearer sk_sbox_3uu..."
@@ -86,7 +86,7 @@ Include the following details:
 }'
 </code></pre>
 
-#### 📥 Sample Response
+### 📥 Sample Response
 
 ```bash
 {
@@ -131,7 +131,7 @@ Include the following details:
             "retrieval_reference_number": "404030119279",
             "merchant_category_code": "5815",
             "scheme_merchant_id": "75155",
-            "scheme": "VISA",
+            "scheme": "Visa",
             "aft": false,
             "pan_type_processed": "fpan",
             "cko_network_token_available": false,
@@ -140,16 +140,16 @@ Include the following details:
         "expires_on": "2025-06-20T10:10:42.7625936Z",
         "_links": {
             "self": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama"
             },
             "actions": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/actions"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/actions"
             },
             "capture": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/captures"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/captures"
             },
             "void": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/voids"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/voids"
             }
         }
     },
@@ -158,7 +158,7 @@ Include the following details:
         "date": "Wed, 21 May 2025 10:10:42 GMT",
         "cko-version": "1.1049.0+54597dfad",
         "strict-transport-security": "max-age=16000000; includeSubDomains; preload;",
-        "location": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama",
+        "location": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama",
         "content-length": "1883",
         "content-type": "application/json; charset=utf-8",
         "connection": "keep-alive",

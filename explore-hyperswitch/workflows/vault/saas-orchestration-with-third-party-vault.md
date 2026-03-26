@@ -1,8 +1,8 @@
 ---
-description: Connect external vaults to store cards
+description: >-
+  Implement secure vault solutions to protect sensitive payment card data
 icon: plug
 ---
-
 # SaaS Orchestration with Third-Party Vault
 
 Merchants using Hyperswitch SaaS can still integrate an external PCI-compliant vault.\
@@ -22,7 +22,7 @@ Key Highlights:
 
 For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
 
-#### **1. Hyperswitch managed client and card form**
+### **1. Hyperswitch managed client and card form**
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
@@ -45,11 +45,11 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 **Merchant Initiated Transaction (MIT) flow**
 
-1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
+1. The merchant can perform the [MIT or Recurring transactions](../../../about-Hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### **2. Hyperswitch managed client with External Vault's card form**
+### **2. Hyperswitch managed client with External Vault's card form**
 
 In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
 
@@ -76,11 +76,11 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 
 **Merchant Initiated Transaction (MIT) flow**
 
-1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
+1. The merchant can perform the [MIT or Recurring transactions](../../../about-Hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`
 
 <figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### **3. Merchant managed client with external vault's card form**
+### **3. Merchant managed client with external vault's card form**
 
 The merchant integrated with external vault SDK which manages the card data and user experience entirely independent of the Hyperswitch. The card is tokenized directly with the chosen vault, after which merchant will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
 
@@ -110,4 +110,4 @@ The merchant integrated with external vault SDK which manages the card data and 
 
 **Merchant Initiated Transaction (MIT) flow**
 
-1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `vault_token` &#x20;
+1. The merchant can perform the [MIT or Recurring transactions](../../../about-Hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `vault_token` &#x20;

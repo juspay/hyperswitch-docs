@@ -1,3 +1,8 @@
+---
+description: >-
+  Enable Google Pay with Hyperswitch decryption for seamless and secure payment processing
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the Google Pay token using your shared keys. This allows Hyperswitch to route the payment to any downstream processor.

@@ -1,12 +1,13 @@
 ---
+description: >-
+  Implement 3D Secure authentication to reduce fraud and meet compliance requirements
 icon: rotate-exclamation
 ---
-
 # Authenticate with 3D Secure via PSP
 
 You can integrate 3D Secure (3DS) authentication into your checkout flow on multiple platforms, including Web, iOS, Android, and React Native. The most basic form of invoking a 3DS is via the payment provider (PSP) through which the transaction is being processed. This ties the transaction to that PSP and any subsequent retries of transaction with a different payment provider would need to re-invoke 3DS
 
-#### Control the 3DS flows
+### Control the 3DS flows
 
 In a typical [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type) flow that triggers 3DS:
 

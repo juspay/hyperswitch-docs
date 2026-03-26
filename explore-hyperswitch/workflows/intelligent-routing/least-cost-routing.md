@@ -1,10 +1,9 @@
 ---
 description: >-
-  Optimize processing fees on debit payments by routing traffic to the cheapest
+  Configure intelligent routing rules to optimize payment success rates and costs
   available debit network
 icon: hand-holding-dollar
 ---
-
 # Least Cost Routing
 
 ## Get started with Least Cost Routing

@@ -1,8 +1,8 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: >-
+  Explore Zero Amount Authorization to enhance your payment orchestration capabilities
 icon: circle-0
 ---
-
 # Zero Amount Authorization
 
 {% hint style="info" %}
@@ -18,7 +18,7 @@ The following API cURLs demonstrate the usage of the zero-auth flow. The example
 1. Creating a 0 amount payment along with `setup_future_usage= off_session` to set up a mandate to store and charge the customer's payment method later **( Called as 'CIT' : Customer initiated transaction)**
 
 ```shell
-curl --location 'http://sandbox.hyperswitch.io/payments' \
+curl --location 'http://sandbox.Hyperswitch/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: <enter your Hyperswitch API key here>' \
@@ -40,7 +40,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 
 2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Hyperswitch Unified Checkout]**
 
-<pre class="language-bash"><code class="lang-bash"><strong>curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
+<pre class="language-bash"><code class="lang-bash"><strong>curl --location 'http://http://sandbox.Hyperswitch/payments/{{payment_id}}/confirm' \
 </strong>--header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 <strong>--header 'api-key: &#x3C;enter your Hyperswitch API key here>' \
@@ -104,7 +104,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment. Make sure you are using the same `customer_id` and `profile_id` from the CIT.
 
 ```bash
-curl --location 'http://sandbox.hyperswitch.io/payments' \
+curl --location 'http://sandbox.Hyperswitch/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: use your Hyperswitch API key' \

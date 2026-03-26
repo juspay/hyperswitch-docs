@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore ManualUser triggered Retries to enhance your payment orchestration capabilities
 icon: person-walking-arrow-loop-left
 ---
-
 # Manual/User triggered Retries
 
 ### Overview
@@ -22,7 +23,7 @@ Once enabled, the `manual_retry_allowed` field will be included in payment respo
 
 ### Integration Behavior
 
-#### Case 1: Frictionless Flows (No Redirection)
+### Case 1: Frictionless Flows (No Redirection)
 
 For payments without redirection (e.g., standard card transactions, wallet flows):
 
@@ -39,7 +40,7 @@ For payments without redirection (e.g., standard card transactions, wallet flows
 4. SDK detects `manual_retry_allowed : true` and displays retry UI.
 5. Customer re-enters updated payment details → retry succeeds.
 
-#### Case 2: Redirect Flows (e.g., 3DS / SCA)
+### Case 2: Redirect Flows (e.g., 3DS / SCA)
 
 For payment flows that involve redirection (like 3-D Secure authentication):
 
@@ -47,7 +48,7 @@ For payment flows that involve redirection (like 3-D Secure authentication):
 * If the payment fails and `manual_retry_allowed : true`, you should remount the Hyperswitch SDK using the same client\_secret corresponding to that Payment Intent.
 * This allows the customer to retry within the same checkout context.
 
-#### SDK Integration sample logic:
+### SDK Integration sample logic:
 
 ```javascript
 // Manual Retry: determine whether to reuse the existing client secret
@@ -70,7 +71,7 @@ if (manualRetryAllowed && existingClientSecret) {
 
 ### API Workflow
 
-#### 1️⃣ Create a Payment Intent
+### 1️⃣ Create a Payment Intent
 
 Create a Payment Intent before initiating checkout.
 
@@ -99,7 +100,7 @@ Create a Payment Intent before initiating checkout.
 
 ```
 
-#### 2️⃣ Confirm the Payment (Triggered by Checkout SDK)
+### 2️⃣ Confirm the Payment (Triggered by Checkout SDK)
 
 When the customer enters card details and clicks Pay Now, the Hyperswitch SDK automatically makes a /payments/confirm call.
 
@@ -125,7 +126,7 @@ If this payment fails, the response will include:
 
 `manual_retry_allowed : true`
 
-#### 3️⃣ Retry the Payment (If Allowed)
+### 3️⃣ Retry the Payment (If Allowed)
 
 If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
 
@@ -157,15 +158,7 @@ If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
 **Field:** `manual_retry_allowed`\
 **Type:** Boolean / null
 
-Specifies whether manual retry is supported for a failed payment.
-
-| Value   | Description                                            |
-| ------- | ------------------------------------------------------ |
-| `true`  | Manual retry is allowed on the same Payment Intent.    |
-| `false` | Manual retry is not allowed.                           |
-| `null`  | Manual retry is not enabled for this merchant profile. |
-
-### Customer Journey Example
+Specifies whether manual retry is supported for a failed payment. | Value | Description | | ------- | ------------------------------------------------------ | | `true` | Manual retry is allowed on the same Payment Intent. | | `false` | Manual retry is not allowed. | | `null` | Manual retry is not enabled for this merchant profile. | ### Customer Journey Example
 
 **Frictionless Flow**
 

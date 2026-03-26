@@ -1,7 +1,7 @@
 ---
-description: Accept payments through Stripe via Hyperswitch
+description: >-
+  Explore Stripe to enhance your payment orchestration capabilities
 ---
-
 # Stripe
 
 {% hint style="info" %}
@@ -10,15 +10,15 @@ This section gives you an overview of how to make payments via Stripe through Hy
 
 ![Stripe Logo](https://hyperswitch.io/icons/homePageIcons/logos/stripeLogo.svg)
 
-Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. It allows businesses to accept payments and scale faster. To know about more about payment methods supported by stripe via hyperswitch visit [here](https://hyperswitch.io/pm-list).
+Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. It allows businesses to accept payments and scale faster. To know about more about payment methods supported by Stripe via Hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
 ### Activating Stripe via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Stripe in order to proceed. In case you aren't, you can quickly setup your Stripe account [here](https://dashboard.stripe.com/register)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Enable handling raw card data for your Stripe account by sending a request to the stripe support (Visit [here](https://docs.hyperswitch.io/security-and-compliance/pci-compliance#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715-1) for more details).  This will enable Hyperswitch to securely handle your customer's payment details in a PCI compliant manner.
+3. Enable handling raw card data for your Stripe account by sending a request to the Stripe support (Visit [here](https://docs.hyperswitch.io/security-and-compliance/pci-compliance#docs-internal-guid-959e0903-7fff-fc13-1542-001b2640a715-1) for more details).  This will enable Hyperswitch to securely handle your customer's payment details in a PCI DSS compliant manner.
 4. Enter your Country, Business Label and Stripe API Key. The Stripe API key can be found in your Stripe dashboard under \[Developers -> API keys]\(https://dashboard.stripe.com/test/apikeys) as \*\*Secret Key\*\*\
    Note: Ensure to use the Secret Key -> Starts with \`sk\`
 5. Select all the payment methods you wish to use Stripe for. Ensure that this is the same as the ones configured on your Stripe dashboard under Settings -> Payments -> Payment methods
@@ -39,4 +39,4 @@ This will ensure that if your Stripe transaction was sent through Hyperswitch,
 * Stripe sends webhooks to Hyperswitch endpoint in Step 2
 * Hyperswitch sends these corresponding webhooks to your endpoint in Step 1
 
-&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Stripe on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/Hyperswitch-cloud/connectors/activate-connector-on-Hyperswitch) to activate Stripe on Hyperswitch control center.

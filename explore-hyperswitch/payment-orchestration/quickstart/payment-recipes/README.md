@@ -1,8 +1,8 @@
 ---
-description: Diversify your payments offering
+description: >-
+  Explore Payment Recipes to enhance your payment orchestration capabilities
 hidden: true
 ---
-
 # 🥗 Payment Recipes
 
 For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option. With Hyperswitch, you can diversify your payment options, and add payment processors without additional integration effort. You can consider trying out different payment recipes for multiple benefits like-&#x20;
@@ -24,6 +24,6 @@ For growing businesses, sticking to one payment processor and offering only a ha
 
 ## Next step:
 
-{% content-ref url="use-paypal-with-stripe.md" %}
-[use-paypal-with-stripe.md](use-paypal-with-stripe.md)
+{% content-ref url="use-PayPal-with-stripe.md" %}
+[use-PayPal-with-stripe.md](use-PayPal-with-stripe.md)
 {% endcontent-ref %}

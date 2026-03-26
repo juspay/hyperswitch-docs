@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Data migration to enhance your payment orchestration capabilities
 icon: utility-pole-double
 ---
-
 # Data migration
 
 Migration of data is a crucial step in ensuring business continuity without any interruptions. We will work with you and your current payment service provider (PSP) to transfer the data securely.
@@ -11,6 +12,6 @@ Migration of data is a crucial step in ensuring business continuity without any 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Import data to Hyperswitch</strong></mark></td><td></td><td></td><td><a href="import-data-to-hyperswitch.md">import-data-to-hyperswitch.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Export data from Hyperswitch</strong></mark></td><td></td><td></td><td><a href="export-data-from-hyperswitch.md">export-data-from-hyperswitch.md</a></td></tr></tbody></table>
 
 {% hint style="info" %}
-Kindly reach out to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to initiate your data migration request.&#x20;
+Kindly reach out to [Hyperswitch@juspay.in](mailto:Hyperswitch@juspay.in) to initiate your data migration request.&#x20;
 {% endhint %}
 

@@ -1,7 +1,7 @@
 ---
-description: Migrate from Stripe on your android app
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 ---
-
 # Android
 
 {% hint style="info" %}
@@ -17,16 +17,16 @@ The code from your Stripe integration to be removed and replaced is explained be
 **Step 1:** Install Hyperswitch’s SDK and server side dependencies from npm
 
 ```js
- $ npm install @juspay-tech/hyperswitch-node
+ $ npm install @juspay-tech/Hyperswitch-node
 ```
 
 **Step 2:** Change the API key on the server side and modify the paymentIntent endpoint from your server side. You can get the API key from [Developers](https://app.hyperswitch.io/developers) page on the dashboard.
 
 ```js
 // from
-const stripe = require("stripe")(your_stripe_api_key);
+const Stripe = require("Stripe")(your_stripe_api_key);
 // to
-const stripe = require("@juspay-tech/hyperswitch-node")(
+const Stripe = require("@juspay-tech/Hyperswitch-node")(
   "your_hyperswitch_api_key"
 );
 ```
@@ -39,7 +39,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url "https://maven.hyperswitch.io/release/production/android/maven/1.0.1"
+            url "https://maven.Hyperswitch/release/production/android/maven/1.0.1"
         }
     }
 }
@@ -49,9 +49,9 @@ dependencyResolutionManagement {
 
 ```java
 // from
-implementation 'com.stripe:stripe-android:20.27.3'
+implementation 'com.Stripe:Stripe-android:20.27.3'
 // to
-implementation 'io.hyperswitch:hyperswitch-android:1.0.1'
+implementation 'io.Hyperswitch:Hyperswitch-android:1.0.1'
 ```
 
 **Step 5:** Change these imports in your project
@@ -69,7 +69,7 @@ import io.hyperswitch.paymentsheet.PaymentSheetResult;
 
 ```
 
-**Step 6:** Add an extra import for HyperSwitch and implement HyperInterface
+**Step 6:** Add an extra import for Hyperswitch and implement HyperInterface
 
 ```java
 import io.hyperswitch.HyperInterface

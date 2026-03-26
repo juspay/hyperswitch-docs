@@ -1,8 +1,9 @@
 ---
+description: >-
+  Explore Overcapture to enhance your payment orchestration capabilities
 hidden: true
 icon: plus
 ---
-
 # Overcapture
 
 ## Overview
@@ -30,13 +31,13 @@ Currently, Hyperswitch supports Overcapture for the following PSPs:
 
 Overcapture can be enabled in two ways:
 
-#### 1. Profile-level Configuration (via Dashboard)
+### 1. Profile-level Configuration (via Dashboard)
 
 1. Navigate to:\
    Developer → Payment Settings → Always Enable Overcapture
 2. Toggle Enable/Disable as required.
 
-#### 2. Per-request Configuration (via API)
+### 2. Per-request Configuration (via API)
 
 Use the boolean field enable\_overcapture in your payment request.
 
@@ -82,7 +83,7 @@ This flag can be set in the following API calls:
   "status": "requires_capture",
   "amount": 100,
   "amount_capturable": 100,
-  "connector": "adyen",
+  "connector": "Adyen",
   "enable_overcapture": true,
   "is_overcapture_enabled": true,
   "capture_method": "manual",

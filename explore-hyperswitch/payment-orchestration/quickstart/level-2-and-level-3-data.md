@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Level 2 and Level 3 data to enhance your payment orchestration capabilities
+---
+
 # Level 2 and Level 3 data
 
 ### Overview
@@ -20,7 +25,7 @@ Hyperswitch exposes a set of generic fields in the payment\_create API that can 
 
 The fields are organized into two groups:
 
-#### 1. Top-Level Fields (apply to the entire order/payment)
+### 1. Top-Level Fields (apply to the entire order/payment)
 
 These fields represent order-wide attributes that are required by most connectors:
 
@@ -32,7 +37,7 @@ These fields represent order-wide attributes that are required by most connector
 * discount\_amount — any discount applied at the order level
 * tax\_status — whether the order is taxable or exempt
 
-#### 2. Nested Fields (grouped by domain for clarity)
+### 2. Nested Fields (grouped by domain for clarity)
 
 Some data is structured to align with domain-specific groupings, making it easier to map downstream:
 

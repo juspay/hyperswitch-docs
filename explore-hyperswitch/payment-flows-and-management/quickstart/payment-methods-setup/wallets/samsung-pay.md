@@ -1,10 +1,10 @@
 ---
-description: Set up Samsung pay on your application
+description: >-
+  Explore Samsung Pay to enhance your payment orchestration capabilities
 ---
-
 # Samsung Pay
 
-Samsung Pay is a secure and convenient payment solution that allows customers to make payments using their Samsung devices. By adding credit, debit, or loyalty cards to the Samsung Pay app, users can complete transactions with a tap on NFC-enabled terminals or even on older magnetic stripe terminals using MST (Magnetic Secure Transmission) technology.
+Samsung Pay is a secure and convenient payment solution that allows customers to make payments using their Samsung devices. By adding credit, debit, or loyalty cards to the Samsung Pay app, users can complete transactions with a tap on NFC-enabled terminals or even on older magnetic Stripe terminals using MST (Magnetic Secure Transmission) technology.
 
 Available in countries like the US, Canada, China (Transit only), Spain, UK, Singapore, Australia, Brazil, Russia, Malaysia, UAE, Sweden, Switzerland, Italy, and South Africa, Samsung Pay offers a seamless experience. It also includes multiple layers of security, such as tokenization and biometric authentication, making it a highly secure payment option.
 
@@ -16,7 +16,7 @@ Samsung Pay requires an Samsung Developer Account. You can [Sign Up](https://dev
 
 _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Samsung Pay._
 
-## **Create Samsung pay Web Online Payment Service**
+## **Create Samsung Pay Web Online Payment Service**
 
 To create a new service, follow the steps below:
 

@@ -1,10 +1,11 @@
 ---
+description: >-
+  Manage payout workflows to send funds to vendors and customers globally
 icon: flag-checkered
 ---
-
 # Getting Started with Payouts
 
-To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
+To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.in.io/integrations).
 
 ## Overview
 
@@ -17,10 +18,10 @@ The following diagram illustrates the interaction between your application, the 
 Implementation requires the Hyperswitch Dashboard for configuration and the API for transaction processing.
 
 * API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
-* Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
+* Hyperswitch Dashboard: [app.Hyperswitch](https://app.hyperswitch.io)
 * Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
 
-#### Prerequisites
+### Prerequisites
 
 Before configuring your first payout, ensure you have the following credentials from your Dashboard:
 
@@ -28,7 +29,7 @@ Before configuring your first payout, ensure you have the following credentials 
 2. An API Key (located in the Developers section).
 3. Your Merchant ID (available on the Home page).
 
-#### Configuring Payout Processors
+### Configuring Payout Processors
 
 Log in to the [Hyperswitch Dashboard](https://app.hyperswitch.io) and follow these steps to connect your processors.
 
@@ -48,9 +49,9 @@ Confirm Configuration: Once saved, the processor will appear as "Active" in your
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
 
-#### Processing Payouts via API
+### Processing Payouts via API
 
-For testing and initial integration, you can use the [Hyperswitch Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/u6uep7u/payouts-w-hyperswitch).
+For testing and initial integration, you can use the [Hyperswitch Postman Collection](https://www.postman.com/hs-payouts/Hyperswitch/collection/u6uep7u/payouts-w-Hyperswitch).
 
 Import Collection: Download and import the collection into your Postman workspace.
 

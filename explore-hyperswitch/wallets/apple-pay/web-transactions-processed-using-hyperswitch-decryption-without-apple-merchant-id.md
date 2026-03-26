@@ -1,3 +1,8 @@
+---
+description: >-
+  Enable Apple Pay without merchant ID for simplified web transaction processing
+---
+
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
 
 In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.

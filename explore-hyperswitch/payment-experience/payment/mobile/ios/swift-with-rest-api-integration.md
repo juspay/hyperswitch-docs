@@ -1,12 +1,12 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: >-
+  Integrate Swift with REST API with Hyperswitch to enable seamless payment processing
 icon: swift
 ---
-
 # Swift with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://GitHub.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
 ## Requirements
@@ -39,7 +39,7 @@ Add these lines to your Podfile:
 ```ruby
 #use_frameworks!
 #target 'YourAPP' do
-  pod 'hyperswitch-sdk-ios'
+  pod 'Hyperswitch-sdk-ios'
 #end
 
 ```
@@ -67,10 +67,10 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 </strong></code></pre>
 
 {% hint style="warning" %}
-Note: For Open Source Setup, initialise your custom Backend app & log URL as:
+Note: For open-source Setup, initialise your custom Backend app & log URL as:
 
 ```swift
-paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
                                 customBackendUrl: <YOUR_SERVER_URL>,
                                 customLogUrl: <YOUR_LOG_URL>)
 ```
@@ -78,7 +78,7 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
 
 ### 2.3 Complete the payment on your app
 
-#### **Fetch a Payment**
+### **Fetch a Payment**
 
 Request your server to fetch a payment as soon as your view is loaded. Store the client\_secret returned by your server. The `PaymentSession` will use this secret to complete the payment process.
 
@@ -108,7 +108,7 @@ paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClien
 {% endtab %}
 {% endtabs %}
 
-#### **Handle Payment Result**
+### **Handle Payment Result**
 
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
@@ -121,8 +121,8 @@ func openPaymentSheet(_ sender: Any) { //present payment sheet
 var configuration = PaymentSheet.Configuration()
 configuration.merchantDisplayName = "Example, Inc."
 
-    paymentSession?.presentPaymentSheet(viewController: self, 
-                                        configuration: configuration, 
+    paymentSession?.presentPaymentSheet(viewController: self,
+                                        configuration: configuration,
                                         completion: { result in
         switch result {
         case .completed:
@@ -145,7 +145,7 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 ```swift
 VStack {
   if let paymentSession = model.paymentSession {
-    PaymentSheet.PaymentButton(paymentSession: paymentSession, 
+    PaymentSheet.PaymentButton(paymentSession: paymentSession,
                                                configuration: configuration(),
                                                onCompletion: model.onPaymentCompletion)
     {
@@ -209,7 +209,7 @@ func pay() {
     let paymentIntentParams = PaymentIntentParams(clientSecret: paymentIntentClientSecret)
 let paymentHandler = PaymentHandler.shared()
 
-    paymentHandler.confirmPayment(paymentIntentParams, with: self) { 
+    paymentHandler.confirmPayment(paymentIntentParams, with: self) {
         (status, paymentIntent, error) in
             switch (status) {
                 case .failed:

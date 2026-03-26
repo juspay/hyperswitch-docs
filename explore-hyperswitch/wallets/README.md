@@ -1,8 +1,8 @@
 ---
-description: Accept PayPal, GPay and Apple Pay through Hyperswitch
+description: >-
+  Enable digital wallet payments to offer customers fast and secure checkout options
 icon: wallet
 ---
-
 # Wallets
 
 Hyperswitch supports leading international wallets which include:

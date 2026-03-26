@@ -1,8 +1,8 @@
 ---
-description: Get started with Adyen Split Settlements via Hyperswitch
+description: >-
+  Explore Adyen Split Settlement to enhance your payment orchestration capabilities
 icon: space-awesome
 ---
-
 # Adyen Split Settlement
 
 ### Overview
@@ -24,20 +24,20 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
             "amount": 900,
             "account": "*********",
             "reference":"7823648726",
-            "description": "adyen split test"
+            "description": "Adyen split test"
         },
         {
             "split_type": "Commission",
             "amount": 100,
             "account": "************",
             "reference":"7823648726",
-            "description": "adyen split test"
+            "description": "Adyen split test"
         }]
         }
     }
 ```
 
-#### Field Specifications
+### Field Specifications
 
 **`store`** (Optional): Required only for Adyen Platform implementations, not needed for Adyen Marketplace.
 
@@ -61,7 +61,7 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 **`description`**: Optional description for reporting.
 
-#### Validation Rules
+### Validation Rules
 
 Hyperswitch enforces several validation rules:
 
@@ -70,7 +70,7 @@ Hyperswitch enforces several validation rules:
 * `Commission`, `Vat`, and `TopUp` types require `amount` field
 * `TopUp` splits are incompatible with Platform store configuration
 
-#### Payments Response
+### Payments Response
 
 ```json
     "split_payments": {
@@ -82,14 +82,14 @@ Hyperswitch enforces several validation rules:
                     "split_type": "BalanceAccount",
                     "account": "*****************",
                     "reference": "7823648726",
-                    "description": "adyen split test"
+                    "description": "Adyen split test"
                 },
                 {
                     "amount": 100,
                     "split_type": "Commission",
                     "account": "**************",
                     "reference": "7823648726",
-                    "description": "adyen split test"
+                    "description": "Adyen split test"
                 }
             ]
         }
@@ -110,14 +110,14 @@ In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/r
             "amount": 900,
             "account": "*********",
             "reference":"7823648726",
-            "description": "adyen split test"
+            "description": "Adyen split test"
         },
         {
             "split_type": "Commission",
             "amount": 100,
             "account": "************",
             "reference":"7823648726",
-            "description": "adyen split test"
+            "description": "Adyen split test"
         }]
         }
     }
@@ -133,7 +133,7 @@ The request structure includes fields:
 * `reference`: Unique identifier for tracking
 * `description`: Optional description
 
-#### Refund Response
+### Refund Response
 
 ```json
    "split_refund": {
@@ -145,14 +145,14 @@ The request structure includes fields:
                     "split_type": "BalanceAccount",
                     "account": "*****************",
                     "reference": "7823648726",
-                    "description": "adyen split test"
+                    "description": "Adyen split test"
                 },
                 {
                     "amount": 100,
                     "split_type": "Commission",
                     "account": "**************",
                     "reference": "7823648726",
-                    "description": "adyen split test"
+                    "description": "Adyen split test"
                 }
             ]
         }

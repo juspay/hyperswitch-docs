@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Try a Payment to enhance your payment orchestration capabilities
 icon: vial-circle-check
 ---
-
 # Try a Payment
 
 ## Test the Configuration using Dashboard

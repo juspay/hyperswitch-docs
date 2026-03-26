@@ -1,9 +1,9 @@
 ---
+description: >-
+  Set up Server setup to start processing payments quickly
 icon: server
 ---
-
 # Server setup
-
 
 
 ​Airborne requires a backend endpoint to serve the **`config.json`** and updated bundles to client apps. This server is responsible for:
@@ -13,4 +13,4 @@ icon: server
 * Managing rollout strategies (e.g., staged rollouts, feature flags).
 * Ensuring version compatibility between client and bundle.
 
-**For complete server setup instructions and example implementations, see the** [**Airborne**](https://github.com/juspay/airborne/)**.**
+**For complete server setup instructions and example implementations, see the** [**Airborne**](https://GitHub.com/Juspay/airborne/)**.**

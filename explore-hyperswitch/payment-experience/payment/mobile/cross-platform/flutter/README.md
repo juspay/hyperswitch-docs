@@ -1,8 +1,8 @@
 ---
-description: Integrate unified checkout with your Flutter app
+description: >-
+  Explore Flutter to enhance your payment orchestration capabilities
 icon: flutter
 ---
-
 # Flutter
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_193709.png" alt="" width="375"><figcaption></figcaption></figure>
