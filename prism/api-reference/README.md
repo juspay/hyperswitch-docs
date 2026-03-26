@@ -1,5 +1,5 @@
 ---
-description: Explore API Reference on Juspay Hyperswitch to understand and implement this capability
+description: Initialize API Reference operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # API Reference

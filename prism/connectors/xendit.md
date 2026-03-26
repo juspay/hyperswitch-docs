@@ -1,5 +1,5 @@
 ---
-description: Explore Xendit on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Xendit operations through the unified API to process payments through Xendit
 ---
 
 # Xendit

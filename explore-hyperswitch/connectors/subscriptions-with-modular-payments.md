@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Integrate Subscriptions with Modular Payments to process payments through
 icon: repeat
 ---
 

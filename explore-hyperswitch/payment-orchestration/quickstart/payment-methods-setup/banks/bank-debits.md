@@ -1,5 +1,5 @@
 ---
-description: Bank Debits payment method
+description: Configure Bank Debits to start processing payments quickly
 ---
 
 # Bank Debits

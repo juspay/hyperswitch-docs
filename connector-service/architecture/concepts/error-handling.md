@@ -1,5 +1,5 @@
 ---
-description: Explore Error Handling on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Error Handling to process payments through Error Handling
 ---
 
 # Error Handling

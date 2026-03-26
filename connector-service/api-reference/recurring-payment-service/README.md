@@ -1,5 +1,5 @@
 ---
-description: Explore Recurring Payment Service on Juspay Hyperswitch to understand and implement this capability
+description: Process recurring payments and manage payment mandates for subscription billing and SaaS revenue
 ---
 
 # Recurring Payment Service

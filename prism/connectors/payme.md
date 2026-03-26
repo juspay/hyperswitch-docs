@@ -1,5 +1,5 @@
 ---
-description: Explore Payme on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Payme operations through the unified API to process payments through Payme
 ---
 
 # Payme

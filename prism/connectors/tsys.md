@@ -1,5 +1,5 @@
 ---
-description: Explore Tsys on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Tsys operations through the unified API to process payments through Tsys
 ---
 
 # Tsys

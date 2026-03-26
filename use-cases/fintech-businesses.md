@@ -1,7 +1,5 @@
 ---
-description: >-
-  Common payment augmentation patterns for FinTech enterprises, from adding
-  processors to improving routing, vaulting, and operational visibility.
+description: Build fintech products with embedded payments using Hyperswitch's unified API and infrastructure
 icon: watch-calculator
 ---
 

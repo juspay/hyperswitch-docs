@@ -1,8 +1,5 @@
 ---
-description: >-
-  Hyperswitch is designed to facilitate the integration and management of
-  payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your checkout UI.
+description: Implement Juspay Hyperswitch React SDK for seamless payment integration in React web applications
 icon: table-cells-large
 ---
 

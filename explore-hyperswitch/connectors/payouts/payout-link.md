@@ -1,5 +1,5 @@
 ---
-description: Low-code solution to accept payouts
+description: Integrate Payout Links to distribute funds to vendors and customers globally
 icon: link
 ---
 

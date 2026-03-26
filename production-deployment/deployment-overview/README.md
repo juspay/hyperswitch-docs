@@ -1,5 +1,5 @@
 ---
-description: Explore Deployment Overview on Juspay Hyperswitch to understand and implement this capability
+description: Configure Deployment Overview to start processing payments quickly
 icon: sign-posts-wrench
 ---
 

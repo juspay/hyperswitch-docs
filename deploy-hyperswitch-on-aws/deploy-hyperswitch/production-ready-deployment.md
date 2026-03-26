@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy our production-ready K8s setup inside your stack
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # Production ready deployment

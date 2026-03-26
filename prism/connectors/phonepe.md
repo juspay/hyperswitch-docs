@@ -1,5 +1,5 @@
 ---
-description: Explore PhonePe on Juspay Hyperswitch to understand and implement this capability
+description: Initialize PhonePe operations through the unified API to process payments through PhonePe
 ---
 
 # PhonePe

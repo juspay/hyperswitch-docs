@@ -1,5 +1,5 @@
 ---
-description: Explore Source Verification on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Source Verification to process payments through Source Verification
 ---
 
 # Source Verification

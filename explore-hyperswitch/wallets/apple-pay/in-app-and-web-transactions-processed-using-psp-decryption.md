@@ -1,5 +1,5 @@
 ---
-description: Explore In-App and Web Transactions Processed Using PSP Decryption on Juspay Hyperswitch to understand and implement this capability
+description: Integrate In-App and Web Transactions Processed Using PSP Decryption to optimize payment operations
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption

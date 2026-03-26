@@ -1,5 +1,5 @@
 ---
-description: Explore Resolution Strategies for 'Expected' Exceptions on Juspay Hyperswitch to understand and implement this capability
+description: Optimize payments for Resolution Strategies for 'Expected' Exceptions to optimize payment operations
 ---
 
 # Resolution Strategies for 'Expected' Exceptions

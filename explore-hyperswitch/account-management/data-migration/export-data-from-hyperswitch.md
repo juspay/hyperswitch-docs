@@ -1,5 +1,5 @@
 ---
-description: Explore Export data from Hyperswitch on Juspay Hyperswitch to understand and implement this capability
+description: Configure Export data from Hyperswitch to optimize payment operations
 icon: left-from-bracket
 ---
 

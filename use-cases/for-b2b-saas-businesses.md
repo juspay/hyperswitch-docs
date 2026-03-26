@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for B2B SaaS Businesses
+description: Optimize subscription payments and reduce churn for SaaS businesses using smart routing and retries
 hidden: true
 noIndex: true
 icon: block-brick

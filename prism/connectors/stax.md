@@ -1,5 +1,5 @@
 ---
-description: Explore Stax on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Stax operations through the unified API to process payments through Stax
 ---
 
 # Stax

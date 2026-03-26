@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Configure Previous Roadmap - Q3 2024 to start processing payments quickly
 icon: road
 ---
 

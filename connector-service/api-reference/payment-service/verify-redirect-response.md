@@ -1,5 +1,5 @@
 ---
-description: Explore Verify Redirect Response on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Verify Redirect Response operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # Verify Redirect Response

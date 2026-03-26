@@ -1,5 +1,5 @@
 ---
-description: Explore Why we built a Unified Payment Integration Library? on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Why we built a Unified Payment Integration Library? operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # Why we built a Unified Payment Integration Library?

@@ -1,5 +1,5 @@
 ---
-description: Create Payment Links
+description: Configure Create Payment Links to optimize payment operations
 ---
 
 # Create Payment Links

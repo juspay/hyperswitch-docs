@@ -1,5 +1,5 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: Configure Setup Payment Methods to start processing payments quickly
 icon: credit-card
 ---
 

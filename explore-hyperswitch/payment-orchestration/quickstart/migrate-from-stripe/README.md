@@ -1,5 +1,5 @@
 ---
-description: Fast migration guide for Stripe users
+description: Migrate from existing payment providers to Hyperswitch with minimal disruption to your business
 hidden: true
 ---
 

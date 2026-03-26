@@ -1,5 +1,5 @@
 ---
-description: Understand payment orchestration concepts and how Juspay Hyperswitch unifies multiple payment processors through a single integration
+description: Find answers to common questions about payment orchestration faq and payment best practices
 hidden: true
 noIndex: true
 ---

@@ -1,5 +1,5 @@
 ---
-description: Explore Web on Juspay Hyperswitch to understand and implement this capability
+description: Enable Web to offer customers their preferred ways to pay
 icon: globe-pointer
 ---
 

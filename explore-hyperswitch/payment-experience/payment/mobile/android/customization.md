@@ -1,5 +1,5 @@
 ---
-description: Customize your Android Unified checkout
+description: Follow this step-by-step guide to customization and optimize payment operations
 icon: bars-progress
 ---
 

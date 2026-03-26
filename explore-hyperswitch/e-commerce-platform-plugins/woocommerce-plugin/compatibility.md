@@ -1,5 +1,5 @@
 ---
-description: List of all compatible WooCommerce plugins
+description: Configure Compatibility to optimize payment operations and enhance customer experience
 ---
 
 # Compatibility

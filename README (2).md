@@ -1,5 +1,5 @@
 ---
-description: 'Hyperswitch: Open-Source Payments Platform by Juspay'
+description: Tokenize and securely store payment methods for one-click checkout and recurring billing without PCI exposure
 icon: earth-asia
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0

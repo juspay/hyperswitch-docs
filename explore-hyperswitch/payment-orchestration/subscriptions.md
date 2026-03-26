@@ -1,7 +1,5 @@
 ---
-description: >-
-  Augments payment processing capabilities with your preferred Subscription
-  Solution provider
+description: Integrate Subscriptions to optimize payment operations to optimize payment operations
 hidden: true
 icon: repeat
 ---

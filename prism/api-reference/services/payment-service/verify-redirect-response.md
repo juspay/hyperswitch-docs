@@ -1,5 +1,5 @@
 ---
-description: Explore VerifyRedirectResponse RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize VerifyRedirectResponse operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # VerifyRedirectResponse RPC

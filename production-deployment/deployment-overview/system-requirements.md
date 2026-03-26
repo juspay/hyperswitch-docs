@@ -1,5 +1,5 @@
 ---
-description: Explore System Requirements on Juspay Hyperswitch to understand and implement this capability
+description: Configure System Requirements to start processing payments quickly
 ---
 
 # System Requirements

@@ -1,5 +1,5 @@
 ---
-description: Explore Processing payments with external vault on Juspay Hyperswitch to understand and implement this capability
+description: Configure Processing payments with external vault to optimize payment operations
 icon: money-bill-wave
 ---
 

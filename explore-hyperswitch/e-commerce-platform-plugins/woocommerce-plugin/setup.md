@@ -1,5 +1,5 @@
 ---
-description: WooCommerce Plugin Setup
+description: Configure Setup to start processing payments quickly to start processing payments quickly
 ---
 
 # Setup

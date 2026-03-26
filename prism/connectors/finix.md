@@ -1,5 +1,5 @@
 ---
-description: Explore Finix on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Finix operations through the unified API to process payments through Finix
 ---
 
 # Finix

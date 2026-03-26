@@ -1,5 +1,5 @@
 ---
-description: Explore RFC: Unified Payment Protocol (UPP) on Juspay Hyperswitch to understand and implement this capability
+description: Initialize RFC: Unified Payment Protocol (UPP) operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # RFC: Unified Payment Protocol (UPP)

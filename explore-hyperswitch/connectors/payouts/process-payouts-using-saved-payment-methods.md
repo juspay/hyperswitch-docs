@@ -1,5 +1,5 @@
 ---
-description: Explore Payouts with Saved Payment Methods on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Payouts with Saved Payment Methods to distribute funds to vendors and customers globally
 icon: repeat
 ---
 

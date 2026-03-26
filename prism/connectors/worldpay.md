@@ -1,5 +1,5 @@
 ---
-description: Explore Worldpay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Worldpay operations through the unified API to process payments through Worldpay
 ---
 
 # Worldpay

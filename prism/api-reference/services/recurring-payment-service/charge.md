@@ -1,5 +1,5 @@
 ---
-description: Explore Charge RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Charge operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Charge RPC

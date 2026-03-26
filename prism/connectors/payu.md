@@ -1,5 +1,5 @@
 ---
-description: Explore PayU on Juspay Hyperswitch to understand and implement this capability
+description: Initialize PayU operations through the unified API to process payments through PayU
 ---
 
 # PayU

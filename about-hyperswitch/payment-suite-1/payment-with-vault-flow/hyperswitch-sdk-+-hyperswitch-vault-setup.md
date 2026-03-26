@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up Hyperswitch SDK + Hyperswitch Vault Setup to ensure PCI compliance and data security
   Best for merchants seeking a pre-built, optimized payment UI backed by the
   full Hyperswitch stack for secure data storage and routing.
 ---

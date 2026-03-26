@@ -1,5 +1,5 @@
 ---
-description: Explore Nexinets on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Nexinets operations through the unified API to process payments through Nexinets
 ---
 
 # Nexinets

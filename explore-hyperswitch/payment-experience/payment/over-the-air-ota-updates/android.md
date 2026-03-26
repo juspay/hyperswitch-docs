@@ -1,5 +1,5 @@
 ---
-description: Explore Android on Juspay Hyperswitch to understand and implement this capability
+description: Configure Android to start processing payments quickly to start processing payments quickly
 icon: android
 ---
 

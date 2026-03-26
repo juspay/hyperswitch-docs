@@ -1,5 +1,5 @@
 ---
-description: Explore React on Juspay Hyperswitch to understand and implement this capability
+description: Configure React to start processing payments quickly to start processing payments quickly
 ---
 
 # React

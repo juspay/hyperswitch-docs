@@ -1,6 +1,6 @@
 ---
 icon: hand-holding-circle-dollar
-description: Implement server-to-server payment flows using Juspay Hyperswitch payment methods to separate credential capture from transaction execution for enhanced control
+description: Configure card payment processing to accept credit and debit card transactions globally
 ---
 
 # Payment Method (Card)

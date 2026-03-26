@@ -1,7 +1,5 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider using Hyperswitch
-  APIs through postman
+description: Use Postman collections to explore and test Hyperswitch APIs without writing code
 icon: rocket-launch
 ---
 

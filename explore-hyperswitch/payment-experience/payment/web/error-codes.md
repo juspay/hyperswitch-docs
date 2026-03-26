@@ -1,5 +1,5 @@
 ---
-description: Handle errors appropriately!
+description: Learn about Error Codes to the following table lists client error codes that the hyperswitch
 icon: ban
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use Rules and SCA exemptions to reduce cardholder friction on eligible
-  transactions
+description: Configure 3DS Intelligence Engine to optimize payment operations
 icon: chart-simple-horizontal
 ---
 

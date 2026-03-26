@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your web app
+description: Configure Web to start processing payments quickly to start processing payments quickly
 ---
 
 # Web

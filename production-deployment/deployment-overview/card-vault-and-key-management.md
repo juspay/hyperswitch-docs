@@ -1,5 +1,5 @@
 ---
-description: Explore Card Vault & Key Management on Juspay Hyperswitch to understand and implement this capability
+description: Configure Card Vault & Key Management to start processing payments quickly
 ---
 
 # Card Vault & Key Management

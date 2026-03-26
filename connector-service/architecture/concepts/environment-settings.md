@@ -1,5 +1,5 @@
 ---
-description: Explore Environment Settings on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Environment Settings to process payments through Environment Settings
 ---
 
 # Environment Settings

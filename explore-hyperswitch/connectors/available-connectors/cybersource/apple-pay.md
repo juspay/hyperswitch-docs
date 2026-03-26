@@ -1,5 +1,5 @@
 ---
-description: Integrate ApplePay via Cybersource in Hyperswitch
+description: Learn about Apple Pay to {% hint style="info" %} this page consists of steps for
 ---
 
 # Apple Pay

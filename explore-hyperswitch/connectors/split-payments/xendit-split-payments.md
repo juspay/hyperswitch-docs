@@ -1,5 +1,5 @@
 ---
-description: Explore Xendit Split Settlement on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Xendit Split Settlement to process payments through Xendit Split Settlement
 icon: hexagon-xmark
 ---
 

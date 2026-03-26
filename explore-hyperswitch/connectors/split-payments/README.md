@@ -1,7 +1,5 @@
 ---
-description: >-
-  Unify your marketplace settlement logic across multiple processors through a
-  single configuration.
+description: Integrate Processors with Split Settlement to process payments through
 icon: split
 ---
 

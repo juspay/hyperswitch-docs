@@ -1,5 +1,5 @@
 ---
-description: Explore Handle RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Handle operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Handle RPC

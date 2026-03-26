@@ -1,5 +1,5 @@
 ---
-description: Explore Hipay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Hipay operations through the unified API to process payments through Hipay
 ---
 
 # Hipay

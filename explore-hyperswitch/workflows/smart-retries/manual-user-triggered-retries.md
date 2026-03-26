@@ -1,5 +1,5 @@
 ---
-description: Explore Manual/User triggered Retries on Juspay Hyperswitch to understand and implement this capability
+description: Enable smart retries to automatically recover failed payments based on error codes and retry strategies
 icon: person-walking-arrow-loop-left
 ---
 

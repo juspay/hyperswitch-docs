@@ -1,5 +1,5 @@
 ---
-description: Explore First Payment with Error Handling on Juspay Hyperswitch to understand and implement this capability
+description: Integrate First Payment with Error Handling to process payments through First
 ---
 
 # First Payment with Error Handling

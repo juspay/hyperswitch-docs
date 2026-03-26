@@ -1,5 +1,5 @@
 ---
-description: Set up SetupRecurring RPC on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Process recurring payments and manage payment mandates for subscription billing and SaaS revenue
 ---
 
 # SetupRecurring RPC

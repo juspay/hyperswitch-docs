@@ -1,5 +1,5 @@
 ---
-description: Explore Jpmorgan on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Jpmorgan operations through the unified API to process payments through Jpmorgan
 ---
 
 # Jpmorgan

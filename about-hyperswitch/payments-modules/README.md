@@ -1,6 +1,6 @@
 ---
 icon: diamonds-4
-description: Explore Juspay Hyperswitch modular payment components to add only the capabilities you need without vendor lock-in or unnecessary complexity
+description: Integrate Payments Modules to optimize payment operations to optimize payment operations
 ---
 
 # Payments Modules

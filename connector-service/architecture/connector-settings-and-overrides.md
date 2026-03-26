@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Connector Settings And Overrides to process payments through Settings And Overrides
 ---
 

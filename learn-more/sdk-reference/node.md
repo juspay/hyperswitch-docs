@@ -1,5 +1,5 @@
 ---
-description: Node to access the Hyperswitch API
+description: Configure Node to start processing payments quickly to start processing payments quickly
 hidden: true
 ---
 

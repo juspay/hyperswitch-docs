@@ -1,5 +1,5 @@
 ---
-description: Explore Documentation Generation on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Documentation Generation operations through the unified API to process payments through Documentation Generation
 ---
 
 # Documentation Generation

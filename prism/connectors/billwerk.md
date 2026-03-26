@@ -1,5 +1,5 @@
 ---
-description: Explore Billwerk on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Billwerk operations through the unified API to process payments through Billwerk
 ---
 
 # Billwerk

@@ -1,5 +1,5 @@
 ---
-description: Explore Completing the SAQ on Juspay Hyperswitch to understand and implement this capability
+description: Configure Completing the SAQ to start processing payments quickly
 icon: clipboard-question
 ---
 

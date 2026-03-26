@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Configure manual capture workflow to authorize payments first and capture funds separately when goods are shipped
 hidden: true
 icon: sack-dollar
 ---

@@ -1,5 +1,5 @@
 ---
-description: Explore Architecture on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Architecture operations through the unified API to integrate payment capabilities programmatically
 ---
 
 <!--

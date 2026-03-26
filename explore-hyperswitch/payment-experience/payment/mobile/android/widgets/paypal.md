@@ -1,5 +1,5 @@
 ---
-description: Explore PayPal on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Juspay Hyperswitch Android SDK to accept payments in native mobile applications
 icon: paypal
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Identity and Access Management on Juspay Hyperswitch to understand and implement this capability
+description: Implement security measures to protect payment data and ensure compliance with industry standards
 icon: id-card-clip
 ---
 

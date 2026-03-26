@@ -1,5 +1,5 @@
 ---
-description: Explore Adyen on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Adyen operations through the unified API to accept global payments across multiple methods
 ---
 
 # Adyen

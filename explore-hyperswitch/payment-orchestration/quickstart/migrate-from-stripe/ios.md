@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your iOS app
+description: Configure iOS to start processing payments quickly to start processing payments quickly
 ---
 
 # iOS

@@ -1,5 +1,5 @@
 ---
-description: Explore Saleor App on Juspay Hyperswitch to understand and implement this capability
+description: Configure Saleor App to optimize payment operations and enhance customer experience
 hidden: true
 icon: plug-circle-bolt
 ---

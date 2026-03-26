@@ -1,5 +1,5 @@
 ---
-description: Explore Novalnet on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Novalnet operations through the unified API to process payments through Novalnet
 ---
 
 # Novalnet

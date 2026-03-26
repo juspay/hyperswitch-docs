@@ -1,5 +1,5 @@
 ---
-description: Explore Samsung Pay on Juspay Hyperswitch to understand and implement this capability
+description: Learn about Samsung Pay to samsung pay is a secure and convenient payment solution that
 icon: mobile-signal
 ---
 

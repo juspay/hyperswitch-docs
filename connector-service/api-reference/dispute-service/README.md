@@ -1,5 +1,5 @@
 ---
-description: Explore Dispute Service on Juspay Hyperswitch to understand and implement this capability
+description: Manage chargeback disputes, submit evidence, and defend against fraudulent transaction claims
 ---
 
 # Dispute Service

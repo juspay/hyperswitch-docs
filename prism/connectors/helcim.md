@@ -1,5 +1,5 @@
 ---
-description: Explore Helcim on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Helcim operations through the unified API to process payments through Helcim
 ---
 
 # Helcim

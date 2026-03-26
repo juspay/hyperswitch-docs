@@ -1,5 +1,5 @@
 ---
-description: Explore Wellsfargo on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Wellsfargo operations through the unified API to process payments through Wellsfargo
 ---
 
 # Wellsfargo

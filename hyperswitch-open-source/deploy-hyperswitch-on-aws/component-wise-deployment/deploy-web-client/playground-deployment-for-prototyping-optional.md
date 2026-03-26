@@ -1,5 +1,5 @@
 ---
-description: Quickly deploy your web client playground and see it in action
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # Playground deployment for prototyping (optional)

@@ -1,5 +1,5 @@
 ---
-description: Explore Alternate Payment Method Widgets on Juspay Hyperswitch to understand and implement this capability
+description: Enable Alternate Payment Method Widgets to offer customers their preferred ways to pay
 icon: bolt-lightning
 ---
 

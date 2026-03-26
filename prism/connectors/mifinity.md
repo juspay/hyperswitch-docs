@@ -1,5 +1,5 @@
 ---
-description: Explore MiFinity on Juspay Hyperswitch to understand and implement this capability
+description: Initialize MiFinity operations through the unified API to process payments through MiFinity
 ---
 
 # MiFinity

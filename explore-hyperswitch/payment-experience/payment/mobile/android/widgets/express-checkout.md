@@ -1,5 +1,5 @@
 ---
-description: Explore Express Checkout on Juspay Hyperswitch to understand and implement this capability
+description: Learn about Express Checkout to **purpose:** one click solution for last used saved payment method
 icon: cart-shopping-fast
 ---
 

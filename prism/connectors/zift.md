@@ -1,5 +1,5 @@
 ---
-description: Explore Zift on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Zift operations through the unified API to process payments through Zift
 ---
 
 # Zift

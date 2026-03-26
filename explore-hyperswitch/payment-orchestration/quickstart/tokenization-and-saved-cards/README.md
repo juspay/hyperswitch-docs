@@ -1,5 +1,5 @@
 ---
-description: Store your customers cards securely in a centralized and PCI compliant vault
+description: Configure Tokenization & Vaulting to optimize payment operations
 icon: lock-keyhole
 ---
 

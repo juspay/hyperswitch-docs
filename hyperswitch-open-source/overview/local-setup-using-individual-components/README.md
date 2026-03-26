@@ -1,5 +1,5 @@
 ---
-description: Set up Development Environment Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Configure local development environment to build, test, and debug payment integrations
 icon: diamonds-4
 ---
 

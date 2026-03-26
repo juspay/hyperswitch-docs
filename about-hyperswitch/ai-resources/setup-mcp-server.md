@@ -1,5 +1,5 @@
 ---
-description: Set up Setup MCP Server on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Configure Setup MCP Server to start processing payments quickly
 icon: user-robot-xmarks
 ---
 

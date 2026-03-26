@@ -1,5 +1,5 @@
 ---
-description: Explore Global Test Suites on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Global Test Suites operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 <!--

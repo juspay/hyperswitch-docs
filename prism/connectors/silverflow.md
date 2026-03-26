@@ -1,5 +1,5 @@
 ---
-description: Explore Silverflow on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Silverflow operations through the unified API to process payments through Silverflow
 ---
 
 # Silverflow

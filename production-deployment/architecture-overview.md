@@ -1,5 +1,5 @@
 ---
-description: Understand Juspay Hyperswitch core components including App Server, Web SDK, Card Vault, and Control Center for production deployment
+description: Understand Architecture Overview architecture to design scalable and reliable payment infrastructure
 icon: sitemap
 ---
 

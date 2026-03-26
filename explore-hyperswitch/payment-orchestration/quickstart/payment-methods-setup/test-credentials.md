@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Configure Test Credentials to start processing payments quickly
 icon: key
 ---
 

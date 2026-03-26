@@ -1,5 +1,5 @@
 ---
-description: Explore Nexixpay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Nexixpay operations through the unified API to process payments through Nexixpay
 ---
 
 # Nexixpay

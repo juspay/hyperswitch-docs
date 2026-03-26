@@ -1,5 +1,5 @@
 ---
-description: Explore Services and Methods on Juspay Hyperswitch to understand and implement this capability
+description: Understand Services and Methods architecture to design scalable and reliable payment infrastructure
 ---
 
 # Services and Methods

@@ -1,5 +1,5 @@
 ---
-description: Explore Barclaycard on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Barclaycard operations through the unified API to process payments through Barclaycard
 ---
 
 # Barclaycard

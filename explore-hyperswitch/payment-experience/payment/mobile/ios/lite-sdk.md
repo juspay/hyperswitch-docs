@@ -1,5 +1,5 @@
 ---
-description: Explore Lite SDK on Juspay Hyperswitch to understand and implement this capability
+description: Integrate the iOS SDK to accept payments in iPhone and iPad applications with native experience
 icon: mobile-screen
 ---
 

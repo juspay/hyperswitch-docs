@@ -1,5 +1,5 @@
 ---
-description: Explore Self-Hosted Orchestration with external or third party PCI Vault on Juspay Hyperswitch to understand and implement this capability
+description: Configure Self-Hosted Orchestration with external or third party PCI Vault to optimize payment operations
 icon: up-right-from-square
 ---
 

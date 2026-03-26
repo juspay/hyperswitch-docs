@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy Hyperswitch into your AWS stack
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 icon: aws
 ---
 

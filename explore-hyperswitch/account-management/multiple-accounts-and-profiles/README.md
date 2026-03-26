@@ -1,7 +1,5 @@
 ---
-description: >-
-  Create multiple merchant accounts, profiles and users for seamless integration
-  with your business.
+description: Configure Managing Accounts and Profiles to optimize payment operations
 icon: file-user
 ---
 

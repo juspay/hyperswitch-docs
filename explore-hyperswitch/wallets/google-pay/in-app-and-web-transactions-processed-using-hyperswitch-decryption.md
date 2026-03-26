@@ -1,5 +1,5 @@
 ---
-description: Explore In-App and Web Transactions Processed Using Hyperswitch Decryption on Juspay Hyperswitch to understand and implement this capability
+description: Configure In-App and Web Transactions Processed Using Hyperswitch Decryption to optimize payment operations
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption

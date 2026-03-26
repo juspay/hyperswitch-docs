@@ -1,5 +1,5 @@
 ---
-description: Set up Google pay on your application
+description: Learn about Google Pay to google pay is a simple and secure way for customers
 icon: google
 ---
 

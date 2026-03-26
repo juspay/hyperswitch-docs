@@ -1,5 +1,5 @@
 ---
-description: Explore Worldpayvantiv on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Worldpayvantiv operations through the unified API to process payments through Worldpayvantiv
 ---
 
 # Worldpayvantiv

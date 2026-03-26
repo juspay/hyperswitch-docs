@@ -1,5 +1,5 @@
 ---
-description: Explore Getting Started with Payouts on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Getting Started with Payouts to distribute funds to vendors and customers globally
 icon: flag-checkered
 ---
 

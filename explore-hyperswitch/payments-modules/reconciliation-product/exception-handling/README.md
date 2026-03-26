@@ -1,5 +1,5 @@
 ---
-description: Explore Exception Handling on Juspay Hyperswitch to understand and implement this capability
+description: Handle reconciliation exceptions and resolve discrepancies in transaction matching
 ---
 
 # Exception Handling

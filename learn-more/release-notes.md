@@ -1,7 +1,5 @@
 ---
-description: >-
-  This page is a central archive of Hyperswitch release notes. It summarises
-  recent product updates.
+description: Configure manual capture workflow to authorize payments first and capture funds separately when goods are shipped
 hidden: true
 noIndex: true
 ---

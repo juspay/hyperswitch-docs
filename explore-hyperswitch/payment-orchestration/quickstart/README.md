@@ -1,5 +1,5 @@
 ---
-description: Explore Accept Payments on Juspay Hyperswitch to understand and implement this capability
+description: Configure manual capture workflow to authorize payments first and capture funds separately when goods are shipped
 icon: bolt
 ---
 

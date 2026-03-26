@@ -1,7 +1,5 @@
 ---
-description: >-
-  A technical reference for the parameters and lifecycle flows supported across
-  card and wallet integrations.
+description: Integrate Payment Processor Capabilities to process payments through Payment Processor Capabilities
 icon: money-bill-1-wave
 ---
 

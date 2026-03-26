@@ -1,5 +1,5 @@
 ---
-description: Explore Run Additional Services on Juspay Hyperswitch to understand and implement this capability
+description: Launch Juspay Hyperswitch locally using Docker to quickly start developing and testing payments
 icon: arrows-to-circle
 ---
 

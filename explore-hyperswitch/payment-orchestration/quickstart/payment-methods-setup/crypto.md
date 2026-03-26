@@ -1,5 +1,5 @@
 ---
-description: Accept crypto payments on your application
+description: Configure Crypto to start processing payments quickly to start processing payments quickly
 icon: bitcoin-sign
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Supported Payment Workflows on Juspay Hyperswitch to understand and implement this capability
+description: Configure Supported Payment Workflows to optimize payment operations
 icon: code-compare
 ---
 

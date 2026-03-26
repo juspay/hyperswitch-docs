@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+description: Configure Vault SDK - JS with REST API Integration to optimize payment operations
 hidden: true
 icon: desktop
 ---

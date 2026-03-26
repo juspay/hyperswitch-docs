@@ -1,5 +1,5 @@
 ---
-description: Explore Razorpay V2 on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Razorpay V2 operations through the unified API to process payments through Razorpay V2
 ---
 
 # Razorpay V2

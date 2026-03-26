@@ -1,5 +1,5 @@
 ---
-description: Explore Data migration on Juspay Hyperswitch to understand and implement this capability
+description: Learn about Data migration to migration of data is a crucial step in ensuring business
 icon: utility-pole-double
 ---
 

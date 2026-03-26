@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+description: Configure HTML with REST API Integration to optimize payment operations
 icon: html5
 ---
 

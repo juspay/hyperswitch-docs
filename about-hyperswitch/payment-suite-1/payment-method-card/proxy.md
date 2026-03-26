@@ -1,5 +1,5 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: Configure card payment processing to accept credit and debit card transactions globally
 icon: almost-equal-to
 ---
 

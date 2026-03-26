@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # 🔐 Deploy card vault

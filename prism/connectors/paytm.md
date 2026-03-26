@@ -1,5 +1,5 @@
 ---
-description: Explore Paytm on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Paytm operations through the unified API to process payments through Paytm
 ---
 
 # Paytm

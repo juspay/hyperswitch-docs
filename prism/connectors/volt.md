@@ -1,5 +1,5 @@
 ---
-description: Explore Volt on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Volt operations through the unified API to process payments through Volt
 ---
 
 # Volt

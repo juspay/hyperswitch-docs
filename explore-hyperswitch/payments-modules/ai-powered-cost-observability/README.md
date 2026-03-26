@@ -1,6 +1,6 @@
 ---
 icon: brain-circuit
-description: Understand Juspay Hyperswitch Cost Observability to monitor interchange fees, detect anomalies, and optimize your payment processing costs across all processors
+description: Configure Juspay Hyperswitch Cost Observability to optimize payment operations and enhance customer experience
 ---
 
 # Juspay Hyperswitch Cost Observability

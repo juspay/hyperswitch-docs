@@ -1,7 +1,5 @@
 ---
-description: >-
-  Code of conduct and Slack participation guide for the Hyperswitch open-source
-  community
+description: Configure Community Guidelines to start processing payments quickly
 ---
 
 # Community Guidelines

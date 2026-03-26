@@ -1,5 +1,5 @@
 ---
-description: Surcharge Manager Setup
+description: Configure Surcharge Setup guide to start processing payments quickly
 ---
 
 # Surcharge Setup guide

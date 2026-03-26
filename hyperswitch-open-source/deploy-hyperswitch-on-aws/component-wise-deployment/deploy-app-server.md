@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch server on the cloud
+description: Deploy app server with proper configuration for production payment processing
 icon: server
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Adyen via Hyperswitch
+description: Explore 300+ supported payment connectors to find the best processors for your business
 ---
 
 # Adyen

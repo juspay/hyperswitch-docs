@@ -1,5 +1,5 @@
 ---
-description: Explore Connectors Overview on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Connectors Overview operations through the unified API to process payments through s Overview
 ---
 
 # Connectors Overview

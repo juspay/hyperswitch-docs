@@ -1,5 +1,5 @@
 ---
-description: Explore Checkout.com on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Checkout.com operations through the unified API to process payments through Checkout.com
 ---
 
 # Checkout.com

@@ -1,5 +1,5 @@
 ---
-description: Explore Vault SDK - JS with REST API Integration on Juspay Hyperswitch to understand and implement this capability
+description: Enable Vault SDK - JS with REST API Integration payment methods to ensure PCI compliance and data security
 icon: globe-pointer
 ---
 

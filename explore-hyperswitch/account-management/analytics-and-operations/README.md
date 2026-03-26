@@ -1,5 +1,5 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: Find answers to common questions about analytics & operations and payment best practices
 icon: chart-pie-simple-circle-dollar
 ---
 

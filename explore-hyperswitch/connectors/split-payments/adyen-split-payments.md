@@ -1,5 +1,5 @@
 ---
-description: Get started with Adyen Split Settlements via Hyperswitch
+description: Integrate Adyen Split Settlement to accept global payments across multiple methods
 icon: space-awesome
 ---
 

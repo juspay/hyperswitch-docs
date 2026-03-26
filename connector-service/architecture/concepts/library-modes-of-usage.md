@@ -1,5 +1,5 @@
 ---
-description: Explore Library Modes of Usage on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Library Modes of Usage operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # Library Modes of Usage

@@ -1,5 +1,5 @@
 ---
-description: Explore Rapyd on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Rapyd operations through the unified API to process payments through Rapyd
 ---
 
 # Rapyd

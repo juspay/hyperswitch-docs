@@ -1,5 +1,5 @@
 ---
-description: Jan '26 to March '26
+description: Configure Roadmap - Q1 2026 to start processing payments quickly
 icon: road
 ---
 

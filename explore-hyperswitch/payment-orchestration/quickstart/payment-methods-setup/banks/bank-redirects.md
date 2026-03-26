@@ -1,5 +1,5 @@
 ---
-description: Bank Redirects payment methods
+description: Configure Bank Redirects to start processing payments quickly
 ---
 
 # Bank Redirects

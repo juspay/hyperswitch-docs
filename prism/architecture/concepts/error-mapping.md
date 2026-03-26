@@ -1,5 +1,5 @@
 ---
-description: Explore Error Mapping on Juspay Hyperswitch to understand and implement this capability
+description: Understand Error Mapping architecture to design scalable and reliable payment infrastructure
 ---
 
 # Error Mapping

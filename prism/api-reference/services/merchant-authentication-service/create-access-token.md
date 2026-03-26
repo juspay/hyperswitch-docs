@@ -1,5 +1,5 @@
 ---
-description: Explore CreateAccessToken RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize payment orders in your processor to set up transaction context before capturing customer payment details
 ---
 
 # CreateAccessToken RPC

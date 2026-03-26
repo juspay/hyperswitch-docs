@@ -1,5 +1,5 @@
 ---
-description: Payment Links & Theme Customization Guide
+description: Configure Theme configurations Guide to start processing payments quickly
 ---
 
 # Theme configurations Guide

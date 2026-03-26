@@ -1,5 +1,5 @@
 ---
-description: Setup custom domains
+description: Configure Setup Custom Domain to start processing payments quickly
 ---
 
 # Setup Custom Domain

@@ -1,5 +1,5 @@
 ---
-description: Explore Recommended Tooling Stack on Juspay Hyperswitch to understand and implement this capability
+description: Configure Recommended Tooling Stack to start processing payments quickly
 ---
 
 # Recommended Tooling Stack

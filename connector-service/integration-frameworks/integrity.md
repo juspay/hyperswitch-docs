@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Integrity to process payments through Integrity to process payments through Integrity
 ---
 

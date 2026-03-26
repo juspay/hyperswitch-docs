@@ -1,5 +1,5 @@
 ---
-description: Enable Apple pay on your iOS app
+description: Learn about iOS Application to before beginning to integrate apple pay with hyperswitch, below prerequisites
 hidden: true
 icon: apple
 ---

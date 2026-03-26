@@ -1,5 +1,5 @@
 ---
-description: Guide to using Apple Pay payment method on Hyperswitch
+description: Enable Apple Pay to let customers check out quickly using saved cards on their Apple devices
 icon: apple-pay
 ---
 

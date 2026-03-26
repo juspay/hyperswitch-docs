@@ -1,5 +1,5 @@
 ---
-description: Set up For On-Prem Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Configure For On-Prem Setup to start processing payments quickly
 icon: clipboard-question
 ---
 

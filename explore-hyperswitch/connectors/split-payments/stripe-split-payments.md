@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Integrate Stripe Split Settlement to process card payments with advanced fraud prevention
 icon: stripe
 ---
 

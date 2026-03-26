@@ -1,5 +1,5 @@
 ---
-description: Explore Deployment Topologies on Juspay Hyperswitch to understand and implement this capability
+description: Deploy Hyperswitch in production with proper configuration for high-availability payment processing
 ---
 
 # Deployment Topologies

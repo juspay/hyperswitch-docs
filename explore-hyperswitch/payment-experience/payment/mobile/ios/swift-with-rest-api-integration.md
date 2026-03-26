@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Swift App using hyperswitch-node
+description: Configure Swift with REST API Integration to start processing payments quickly
 icon: swift
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Integrate the Android SDK to accept payments in native mobile applications with customizable checkout
 icon: mobile-screen
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Scale and Reliability on Juspay Hyperswitch to understand and implement this capability
+description: Configure Scale and Reliability to start processing payments quickly
 icon: arrows-maximize
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Payment Widget on Juspay Hyperswitch to understand and implement this capability
+description: Set up the Hyperswitch backend application to handle payment processing and orchestration
 icon: input-numeric
 ---
 

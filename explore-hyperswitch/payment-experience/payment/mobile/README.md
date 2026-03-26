@@ -1,5 +1,5 @@
 ---
-description: Explore Mobile on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Mobile to optimize payment operations to optimize payment operations
 icon: mobile
 ---
 

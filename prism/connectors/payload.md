@@ -1,5 +1,5 @@
 ---
-description: Explore Payload on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Payload operations through the unified API to process payments through Payload
 ---
 
 # Payload

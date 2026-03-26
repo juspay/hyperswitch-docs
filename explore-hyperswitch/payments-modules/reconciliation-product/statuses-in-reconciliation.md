@@ -1,8 +1,5 @@
 ---
-description: >-
-  Master all reconciliation statuses on Juspay Hyperswitch to track transaction
-  progress from ingestion through final posting and resolve exceptions
-  efficiently
+description: Automate payment reconciliation to match transactions with processor settlements
 ---
 
 # Statuses in Reconciliation

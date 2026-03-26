@@ -1,5 +1,5 @@
 ---
-description: Explore Test a payment on Juspay Hyperswitch to understand and implement this capability
+description: Configure Test a payment to start processing payments quickly
 icon: money-bills
 ---
 

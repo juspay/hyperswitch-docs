@@ -1,5 +1,5 @@
 ---
-description: Explore Vault SDK Integration on Juspay Hyperswitch to understand and implement this capability
+description: Configure Vault SDK Integration to start processing payments quickly
 icon: rocket-vertical
 ---
 

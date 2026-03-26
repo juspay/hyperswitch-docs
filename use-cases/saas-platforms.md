@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Optimize subscription payments and reduce churn for SaaS businesses using smart routing and retries
 icon: desktop
 ---
 

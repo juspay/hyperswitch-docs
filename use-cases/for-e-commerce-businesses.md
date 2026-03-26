@@ -1,5 +1,5 @@
 ---
-description: Optimize conversions, reduce costs, and enable global payments for your e-commerce business using Juspay Hyperswitch's comprehensive payment orchestration platform
+description: Boost conversions and reduce costs for online stores with optimized checkout and intelligent routing
 hidden: true
 noIndex: true
 icon: buildings

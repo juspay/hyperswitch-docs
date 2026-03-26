@@ -1,5 +1,5 @@
 ---
-description: Implement advanced authorization flows on Juspay Hyperswitch including incremental, extended, and partial authorizations for flexible payment processing
+description: Configure Authorizations to optimize payment operations and enhance customer experience
 icon: building-magnifying-glass
 ---
 

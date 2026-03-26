@@ -1,5 +1,5 @@
 ---
-description: Explore Authenticate with 3D Secure via PSP on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Authenticate with 3D Secure via PSP to optimize payment operations
 icon: rotate-exclamation
 ---
 

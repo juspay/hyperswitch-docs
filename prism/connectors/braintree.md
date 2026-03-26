@@ -1,5 +1,5 @@
 ---
-description: Explore Braintree on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Braintree operations through the unified API to process payments through Braintree
 ---
 
 # Braintree

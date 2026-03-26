@@ -1,5 +1,5 @@
 ---
-description: Roadmap for Woocommerce plugin
+description: Explore upcoming features and enhancements planned for Juspay Hyperswitch platform
 hidden: true
 ---
 

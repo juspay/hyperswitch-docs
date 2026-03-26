@@ -1,5 +1,5 @@
 ---
-description: Explore Multi-Tenancy on Juspay Hyperswitch to understand and implement this capability
+description: Configure Multi-Tenancy to start processing payments quickly to start processing payments quickly
 icon: cubes-stacked
 ---
 

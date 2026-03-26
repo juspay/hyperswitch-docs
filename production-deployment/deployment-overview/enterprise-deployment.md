@@ -1,5 +1,5 @@
 ---
-description: Explore Enterprise Deployment on Juspay Hyperswitch to understand and implement this capability
+description: Configure Enterprise Deployment to start processing payments quickly
 ---
 
 # Enterprise Deployment

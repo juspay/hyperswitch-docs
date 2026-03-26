@@ -1,5 +1,5 @@
 ---
-description: Explore Payment Service on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Payment operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Payment Service

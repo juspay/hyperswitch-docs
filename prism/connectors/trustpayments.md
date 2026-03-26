@@ -1,5 +1,5 @@
 ---
-description: Explore Trustpayments on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Trustpayments operations through the unified API to process payments through Trustpayments
 ---
 
 # Trustpayments

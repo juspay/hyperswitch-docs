@@ -1,5 +1,5 @@
 ---
-description: Explore Nuvei on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Nuvei operations through the unified API to process payments through Nuvei
 ---
 
 # Nuvei

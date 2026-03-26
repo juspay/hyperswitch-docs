@@ -1,5 +1,5 @@
 ---
-description: Oct '25 to Dec '25
+description: Configure Previous Roadmap - Q4 2025 to optimize payment operations
 icon: road
 ---
 

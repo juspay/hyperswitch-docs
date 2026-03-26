@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Configure manual capture workflow to authorize payments first and capture funds separately when goods are shipped
 hidden: true
 ---
 

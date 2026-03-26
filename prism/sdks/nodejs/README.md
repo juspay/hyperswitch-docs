@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate the Readme SDK to integrate secure checkout into web and mobile applications
 ---
 

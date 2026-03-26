@@ -1,5 +1,5 @@
 ---
-description: Explore JS on Juspay Hyperswitch to understand and implement this capability
+description: Integrate the JS SDK to integrate secure checkout into web and mobile applications
 ---
 
 # JS

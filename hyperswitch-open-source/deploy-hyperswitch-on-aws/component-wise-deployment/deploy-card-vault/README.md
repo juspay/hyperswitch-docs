@@ -1,5 +1,5 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Plan your production deployment with guidance on topology, scale, security, and compliance requirements
 icon: vault
 ---
 

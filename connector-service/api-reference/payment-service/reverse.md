@@ -1,5 +1,5 @@
 ---
-description: Explore Reverse on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Reverse operations through the unified API to process payments through Reverse
 ---
 
 # Reverse

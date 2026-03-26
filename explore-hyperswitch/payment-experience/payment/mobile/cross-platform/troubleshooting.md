@@ -1,5 +1,5 @@
 ---
-description: Explore Troubleshooting on Juspay Hyperswitch to understand and implement this capability
+description: Diagnose and resolve common issues with your Hyperswitch setup and configuration
 ---
 
 # Troubleshooting

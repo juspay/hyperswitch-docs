@@ -1,5 +1,5 @@
 ---
-description: Explore Documentation Strategy on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Documentation Strategy operations through the unified API to process payments through Documentation Strategy
 ---
 
 # Documentation Strategy

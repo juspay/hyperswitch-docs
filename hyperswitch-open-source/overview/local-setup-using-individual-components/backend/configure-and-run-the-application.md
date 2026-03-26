@@ -1,5 +1,5 @@
 ---
-description: Configure Configure and Run the Application on Juspay Hyperswitch to customize and optimize your payment processing
+description: Configure local development environment to build, test, and debug payment integrations
 icon: panel-ews
 ---
 

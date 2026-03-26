@@ -1,7 +1,5 @@
 ---
-description: >-
-  Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+description: Configure rule-based routing to direct payments to optimal processors based on custom business logic
 icon: ruler
 ---
 

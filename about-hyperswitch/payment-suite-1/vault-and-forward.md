@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Learn about Vault and Forward to in this approach, the direct payment control model functions by
   Best for merchants who do not want to handle card data and want to maintain
   their current integration with the processors.
 hidden: true

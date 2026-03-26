@@ -1,5 +1,5 @@
 ---
-description: Effectively enhance fraud detection with your preferred FRM engine
+description: Configure Fraud & Risk Management to optimize payment operations
 icon: shield-check
 ---
 

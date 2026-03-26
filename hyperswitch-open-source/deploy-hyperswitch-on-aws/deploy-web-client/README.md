@@ -1,5 +1,5 @@
 ---
-description: Deploy web client on the cloud
+description: Plan your production deployment with guidance on topology, scale, security, and compliance requirements
 ---
 
 # 🖥 Deploy web client

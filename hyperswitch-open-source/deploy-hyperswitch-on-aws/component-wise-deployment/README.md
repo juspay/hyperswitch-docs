@@ -1,5 +1,5 @@
 ---
-description: Deploy each Hyperswitch component individually
+description: Plan your production deployment with guidance on topology, scale, security, and compliance requirements
 icon: list-ol
 ---
 

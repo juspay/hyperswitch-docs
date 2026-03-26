@@ -1,6 +1,6 @@
 ---
 icon: flux-capacitor
-description: Implement intelligent payment routing on Juspay Hyperswitch to dynamically optimize processor selection and maximize authorization rates while minimizing costs
+description: Configure intelligent payment routing to maximize authorization rates and minimize processing costs
 ---
 
 # Intelligent Routing

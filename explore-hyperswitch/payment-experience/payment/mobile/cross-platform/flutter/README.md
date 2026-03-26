@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your Flutter app
+description: Integrate Juspay Hyperswitch SDKs to enable payment acceptance across web and mobile platforms
 icon: flutter
 ---
 

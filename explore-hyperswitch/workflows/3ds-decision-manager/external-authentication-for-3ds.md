@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Optimize payments for Standalone 3D Secure (via Hyperswitch) to ensure PCI compliance and data security
   Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
   authorize the payment with any payment provider (PSP).
 icon: up-right-from-square

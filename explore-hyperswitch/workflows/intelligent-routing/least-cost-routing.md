@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optimize processing fees on debit payments by routing traffic to the cheapest
-  available debit network
+description: Configure intelligent payment routing to maximize authorization rates and minimize processing costs
 icon: hand-holding-dollar
 ---
 

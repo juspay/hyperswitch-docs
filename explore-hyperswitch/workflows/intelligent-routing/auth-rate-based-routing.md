@@ -1,5 +1,5 @@
 ---
-description: Explore Auth Rate Based Routing on Juspay Hyperswitch to understand and implement this capability
+description: Configure intelligent payment routing to maximize authorization rates and minimize processing costs
 icon: badge-check
 ---
 

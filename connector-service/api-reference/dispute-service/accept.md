@@ -1,5 +1,5 @@
 ---
-description: Explore Accept on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Accept operations through the unified API to process payments through Accept
 ---
 
 # Accept

@@ -1,5 +1,5 @@
 ---
-description: Explore Event Service on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Event operations through the unified API to process payments through Event
 ---
 
 # Event Service

@@ -1,5 +1,5 @@
 ---
-description: Explore Self-hosted & in-house PCI on Juspay Hyperswitch to understand and implement this capability
+description: Configure Self-hosted & in-house PCI to optimize payment operations
 icon: box-ballot
 ---
 

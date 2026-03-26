@@ -1,5 +1,5 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: Understand PCI DSS requirements and implement compliant payment data handling practices
 icon: credit-card
 ---
 

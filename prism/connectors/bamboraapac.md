@@ -1,5 +1,5 @@
 ---
-description: Explore Bamboraapac on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Bamboraapac operations through the unified API to process payments through Bamboraapac
 ---
 
 # Bamboraapac

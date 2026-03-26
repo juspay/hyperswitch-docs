@@ -1,5 +1,5 @@
 ---
-description: Explore Resolution Strategies for Mismatched Exceptions on Juspay Hyperswitch to understand and implement this capability
+description: Optimize payments for Resolution Strategies for Mismatched Exceptions to optimize payment operations
 ---
 
 # Resolution Strategies for Mismatched Exceptions

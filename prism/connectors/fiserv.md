@@ -1,5 +1,5 @@
 ---
-description: Explore Fiserv on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Fiserv operations through the unified API to process payments through Fiserv
 ---
 
 # Fiserv

@@ -1,5 +1,5 @@
 ---
-description: Explore Incremental Authorization on Juspay Hyperswitch to understand and implement this capability
+description: Configure Incremental Authorization to optimize payment operations and enhance customer experience
 icon: arrow-up-right-dots
 ---
 

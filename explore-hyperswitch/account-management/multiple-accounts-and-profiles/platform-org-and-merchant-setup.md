@@ -1,5 +1,5 @@
 ---
-description: Platform Organization Setup & Workflow
+description: Configure Platform Org and Merchant Setup to start processing payments quickly
 icon: garage-car
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Multisafepay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Multisafepay operations through the unified API to process payments through Multisafepay
 ---
 
 # Multisafepay

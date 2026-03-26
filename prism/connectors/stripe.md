@@ -1,5 +1,5 @@
 ---
-description: Explore Stripe on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Stripe operations through the unified API to process card payments with advanced fraud prevention
 ---
 
 # Stripe

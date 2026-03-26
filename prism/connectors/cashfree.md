@@ -1,5 +1,5 @@
 ---
-description: Explore Cashfree on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Cashfree operations through the unified API to process payments through Cashfree
 ---
 
 # Cashfree

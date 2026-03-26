@@ -1,5 +1,5 @@
 ---
-description: Explore A Payments Switch with virtually zero overhead on Juspay Hyperswitch to understand and implement this capability
+description: Understand A Payments Switch with virtually zero overhead architecture to design scalable and reliable payment infrastructure
 ---
 
 # A Payments Switch with virtually zero overhead

@@ -1,5 +1,5 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: Implement Juspay Hyperswitch React SDK for seamless payment integration in React web applications
 icon: bars-progress
 ---
 

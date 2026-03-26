@@ -1,5 +1,5 @@
 ---
-description: Explore Integrity and Source Verification on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Integrity and Source Verification to process payments through
 ---
 
 # Integrity and Source Verification

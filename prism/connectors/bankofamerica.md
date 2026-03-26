@@ -1,5 +1,5 @@
 ---
-description: Explore Bankofamerica on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Bankofamerica operations through the unified API to process payments through Bankofamerica
 ---
 
 # Bankofamerica

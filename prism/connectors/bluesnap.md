@@ -1,5 +1,5 @@
 ---
-description: Explore Bluesnap on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Bluesnap operations through the unified API to process payments through Bluesnap
 ---
 
 # Bluesnap

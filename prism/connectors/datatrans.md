@@ -1,5 +1,5 @@
 ---
-description: Explore Datatrans on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Datatrans operations through the unified API to process payments through Datatrans
 ---
 
 # Datatrans

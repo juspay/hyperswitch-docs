@@ -1,5 +1,5 @@
 ---
-description: Explore ACI on Juspay Hyperswitch to understand and implement this capability
+description: Initialize ACI operations through the unified API to process payments through ACI
 ---
 
 # ACI

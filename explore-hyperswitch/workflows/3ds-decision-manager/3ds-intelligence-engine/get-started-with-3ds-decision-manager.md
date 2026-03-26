@@ -1,5 +1,5 @@
 ---
-description: Use Rules to reduce cardholder friction on transactions
+description: Configure 3DS Decision Manager to optimize payment operations
 icon: screwdriver-wrench
 ---
 

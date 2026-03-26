@@ -1,5 +1,5 @@
 ---
-description: Explore Versioning on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Versioning to process payments through Versioning to process payments through Versioning
 ---
 
 # Versioning

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Test payments through CLI version of Postman, Newman which resides in a Rust
-  wrapper called as Rustman
+description: Configure Testing Payments to start processing payments quickly
 icon: stethoscope
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Upgrade Hyperswitch on Juspay Hyperswitch to understand and implement this capability
+description: Configure Upgrade Hyperswitch to start processing payments quickly
 ---
 
 # Upgrade Hyperswitch

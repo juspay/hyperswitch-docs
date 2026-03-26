@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up Visa Click to Pay: V1 to V2 Migration to ensure PCI compliance and data security
   Visa Click to Pay is evolving to provide a better checkout experience with
   enhanced security features and improved performance. This guide will help you
   migrate from V1 to V2 in less than 30 minutes.

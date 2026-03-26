@@ -1,5 +1,5 @@
 ---
-description: Explore Try a Payment on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Try a Payment to process payments through Try a Payment
 icon: vial-circle-check
 ---
 

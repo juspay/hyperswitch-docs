@@ -1,5 +1,5 @@
 ---
-description: Explore Juspay Hyperswitch roadmap features and integrations delivered from October to December 2024
+description: Configure Previous Roadmap - Q4 2024 - to start processing payments quickly
 icon: road
 ---
 

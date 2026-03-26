@@ -1,7 +1,7 @@
 ---
 hidden: true
 noIndex: true
-description: How to reduce payment processing fees and costs?
+description: Find answers to common questions about Cost and Margin Optimization FAQs implementation, configuration, and troubleshooting
 ---
 
 # Cost and Margin Optimization FAQs

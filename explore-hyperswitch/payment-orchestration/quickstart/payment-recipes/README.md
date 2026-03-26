@@ -1,5 +1,5 @@
 ---
-description: Diversify your payments offering
+description: Learn about 🥗 Payment Recipes to for growing businesses, sticking to one payment processor and offering
 hidden: true
 ---
 

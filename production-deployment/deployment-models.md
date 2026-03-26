@@ -1,5 +1,5 @@
 ---
-description: Choose between self-hosted, SaaS, or point solution deployment models for Juspay Hyperswitch based on your infrastructure and compliance requirements
+description: Deploy Hyperswitch in production with proper configuration for high-availability payment processing
 icon: flux-capacitor
 ---
 

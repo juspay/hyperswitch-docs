@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch is designed to facilitate the management of saved payment methods
+description: Configure card payment processing to accept credit and debit card transactions globally
 icon: bars-progress
 ---
 

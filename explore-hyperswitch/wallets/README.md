@@ -1,5 +1,5 @@
 ---
-description: Accept PayPal, Google Pay, and Apple Pay through Juspay Hyperswitch to enable quick one-click wallet payments for your customers
+description: Enable digital wallet payments including Apple Pay, Google Pay, and PayPal for faster checkout
 icon: wallet
 ---
 

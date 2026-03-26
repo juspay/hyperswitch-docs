@@ -1,5 +1,5 @@
 ---
-description: Explore React with REST API Integration on Juspay Hyperswitch to understand and implement this capability
+description: Configure React with REST API Integration to start processing payments quickly
 icon: react
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: Integrate Juspay Hyperswitch SDKs to enable payment acceptance across web and mobile platforms
 icon: bars-progress
 ---
 

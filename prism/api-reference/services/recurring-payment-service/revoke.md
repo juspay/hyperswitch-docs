@@ -1,5 +1,5 @@
 ---
-description: Explore Revoke RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Revoke operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Revoke RPC

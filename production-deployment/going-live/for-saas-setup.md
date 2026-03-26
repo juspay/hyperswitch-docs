@@ -1,5 +1,5 @@
 ---
-description: Set up For SaaS Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Configure For SaaS Setup to start processing payments quickly
 icon: gift
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Revolut on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Revolut operations through the unified API to process payments through Revolut
 ---
 
 # Revolut

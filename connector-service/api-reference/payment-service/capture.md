@@ -1,5 +1,5 @@
 ---
-description: Explore Capture on Juspay Hyperswitch to understand and implement this capability
+description: Capture authorized payments to transfer reserved funds and complete transaction settlement
 ---
 
 # Capture

@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Library Modes Of Usage to process payments through
 ---
 

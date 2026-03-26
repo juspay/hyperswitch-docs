@@ -1,5 +1,5 @@
 ---
-description: Explore Void on Juspay Hyperswitch to understand and implement this capability
+description: Cancel or reverse payments to release held funds before settlement when needed
 ---
 
 # Void

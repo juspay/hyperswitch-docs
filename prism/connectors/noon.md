@@ -1,5 +1,5 @@
 ---
-description: Explore Noon on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Noon operations through the unified API to process payments through Noon
 ---
 
 # Noon

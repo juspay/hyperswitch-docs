@@ -1,5 +1,5 @@
 ---
-description: Explore The Money Struct on Juspay Hyperswitch to understand and implement this capability
+description: Understand The Money Struct architecture to design scalable and reliable payment infrastructure
 ---
 
 # The Money Struct

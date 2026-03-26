@@ -1,5 +1,5 @@
 ---
-description: Explore Redsys on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Redsys operations through the unified API to process payments through Redsys
 ---
 
 # Redsys

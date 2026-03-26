@@ -1,5 +1,5 @@
 ---
-description: Explore Expo integration on Juspay Hyperswitch to understand and implement this capability
+description: Configure Expo integration to start processing payments quickly
 icon: react
 ---
 

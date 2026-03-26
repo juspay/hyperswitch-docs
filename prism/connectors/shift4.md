@@ -1,5 +1,5 @@
 ---
-description: Explore Shift4 on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Shift4 operations through the unified API to process payments through Shift4
 ---
 
 # Shift4

@@ -1,5 +1,5 @@
 ---
-description: Open, Modular, Self-Hostable Payment Infrastructure
+description: Process refunds to return funds to customers for returns, cancellations, or service adjustments
 icon: container-storage
 ---
 

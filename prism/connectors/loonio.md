@@ -1,5 +1,5 @@
 ---
-description: Explore Loonio on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Loonio operations through the unified API to process payments through Loonio
 ---
 
 # Loonio

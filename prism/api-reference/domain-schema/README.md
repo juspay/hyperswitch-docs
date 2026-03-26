@@ -1,5 +1,5 @@
 ---
-description: Explore Domain Schema on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Domain Schema operations through the unified API to ensure PCI compliance and data security
 ---
 
 # Domain Schema

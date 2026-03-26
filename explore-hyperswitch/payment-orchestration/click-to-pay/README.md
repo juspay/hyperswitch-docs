@@ -1,5 +1,5 @@
 ---
-description: Explore Click To Pay on Juspay Hyperswitch to understand and implement this capability
+description: Learn about Click To Pay to {% hint style="info" %} this feature is currently in beta.
 icon: chevrons-right
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Overrides on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Overrides operations through the unified API to integrate payment capabilities programmatically
 ---
 
 <!--

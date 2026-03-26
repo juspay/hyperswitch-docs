@@ -1,5 +1,5 @@
 ---
-description: Infinite control over managing your payments
+description: Configure intelligent payment routing to maximize authorization rates and minimize processing costs
 hidden: true
 icon: swap
 ---

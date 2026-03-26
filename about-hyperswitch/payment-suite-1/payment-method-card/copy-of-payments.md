@@ -1,5 +1,5 @@
 ---
-description: Explore Copy of Payments on Juspay Hyperswitch to understand and implement this capability
+description: Configure card payment processing to accept credit and debit card transactions globally
 hidden: true
 icon: money-bills-simple
 ---

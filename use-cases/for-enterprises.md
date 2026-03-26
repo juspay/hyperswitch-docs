@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for enterprise merchants
+description: Scale payment infrastructure for enterprise businesses with high-volume transaction processing
 hidden: true
 noIndex: true
 ---

@@ -1,5 +1,5 @@
 ---
-description: Stay up to date with minimal maintenance effort!
+description: Configure Updates to start processing payments quickly to start processing payments quickly
 icon: recycle
 ---
 

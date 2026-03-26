@@ -1,5 +1,5 @@
 ---
-description: Use the standalone deployment script to deploy Hyperswitch on AWS quickly
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # Standalone deployment for prototyping

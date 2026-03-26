@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Money to process payments through Money to process payments through Money
 ---
 

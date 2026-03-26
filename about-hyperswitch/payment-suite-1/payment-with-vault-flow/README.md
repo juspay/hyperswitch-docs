@@ -1,5 +1,5 @@
 ---
-description: Explore Payment with Vault Flow on Juspay Hyperswitch to understand and implement this capability
+description: Tokenize and securely store payment methods in the PCI-compliant vault for recurring billing and one-click payments
 hidden: true
 ---
 

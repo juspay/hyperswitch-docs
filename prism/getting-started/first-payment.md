@@ -1,5 +1,5 @@
 ---
-description: Explore First Payment on Juspay Hyperswitch to understand and implement this capability
+description: Learn about First Payment to in the next few steps you will authorize the payment,
 ---
 
 # First Payment

@@ -1,5 +1,5 @@
 ---
-description: Explore PlacetoPay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize PlacetoPay operations through the unified API to process payments through PlacetoPay
 ---
 
 # PlacetoPay

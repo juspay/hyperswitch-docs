@@ -1,5 +1,5 @@
 ---
-description: Explore Storage on Juspay Hyperswitch to understand and implement this capability
+description: Understand Storage architecture to design scalable and reliable payment infrastructure
 ---
 
 # Storage

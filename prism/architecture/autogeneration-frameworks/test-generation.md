@@ -1,5 +1,5 @@
 ---
-description: Explore Test Generation on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Test Generation operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Test Generation

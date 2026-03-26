@@ -1,5 +1,5 @@
 ---
-description: Setup PayPal on your application
+description: Integrate PayPal to enable one-click payments and express checkout for your customers
 icon: paypal
 ---
 

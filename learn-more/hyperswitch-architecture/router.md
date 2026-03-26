@@ -1,5 +1,5 @@
 ---
-description: Explore Router on Juspay Hyperswitch to understand and implement this capability
+description: Understand Router architecture to design scalable and reliable payment infrastructure
 ---
 
 # Router

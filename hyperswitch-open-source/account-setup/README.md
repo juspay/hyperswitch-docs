@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Configure Account setup to start processing payments quickly
 icon: wrench
 ---
 

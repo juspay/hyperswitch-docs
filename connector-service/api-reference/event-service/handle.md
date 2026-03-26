@@ -1,5 +1,5 @@
 ---
-description: Explore Handle on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Handle operations through the unified API to process payments through Handle
 ---
 
 # Handle

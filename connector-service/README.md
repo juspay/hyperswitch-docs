@@ -1,5 +1,5 @@
 ---
-description: Explore Hyperswitch Prism on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Hyperswitch Prism operations through the unified API to process payments through Hyperswitch Prism
 ---
 
 <div align="center">

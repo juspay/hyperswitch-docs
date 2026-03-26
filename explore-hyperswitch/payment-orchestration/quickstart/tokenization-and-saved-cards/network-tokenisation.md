@@ -1,7 +1,5 @@
 ---
-description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+description: Initialize Network Tokenisation operations through the unified API to integrate payment capabilities programmatically
 icon: shield-check
 ---
 

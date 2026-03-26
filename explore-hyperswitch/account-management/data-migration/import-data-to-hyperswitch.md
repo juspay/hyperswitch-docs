@@ -1,5 +1,5 @@
 ---
-description: Explore Import data to Hyperswitch on Juspay Hyperswitch to understand and implement this capability
+description: Configure Import data to Hyperswitch to optimize payment operations
 icon: right-from-bracket
 ---
 

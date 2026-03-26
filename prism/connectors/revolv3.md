@@ -1,5 +1,5 @@
 ---
-description: Explore Revolv3 on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Revolv3 operations through the unified API to process payments through Revolv3
 ---
 
 # Revolv3

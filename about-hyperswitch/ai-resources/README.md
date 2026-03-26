@@ -1,5 +1,5 @@
 ---
-description: Leverage AI-powered resources including DeepWikis and MCP Server to interact with Juspay Hyperswitch through conversational interfaces
+description: Tokenize and securely store payment methods for one-click checkout and recurring billing without PCI exposure
 hidden: true
 noIndex: true
 icon: brain-circuit

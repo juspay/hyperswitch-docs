@@ -1,5 +1,5 @@
 ---
-description: Secure payment links
+description: Configure Secure Payment Links to optimize payment operations
 ---
 
 # Secure Payment Links

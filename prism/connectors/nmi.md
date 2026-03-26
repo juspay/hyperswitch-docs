@@ -1,5 +1,5 @@
 ---
-description: Explore Nmi on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Nmi operations through the unified API to process payments through Nmi
 ---
 
 # Nmi

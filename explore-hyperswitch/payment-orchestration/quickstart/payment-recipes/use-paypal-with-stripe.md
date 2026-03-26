@@ -1,5 +1,5 @@
 ---
-description: 'Payment Recipe #1'
+description: Configure Use PayPal With Stripe to optimize payment operations
 ---
 
 # Use PayPal With Stripe

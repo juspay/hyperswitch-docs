@@ -1,5 +1,5 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: Configure Zero Amount Authorization to optimize payment operations
 icon: circle-0
 ---
 

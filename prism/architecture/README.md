@@ -1,5 +1,5 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Initialize Readme operations through the unified API to integrate payment capabilities programmatically
 ---
 
 ## Architecture Overview

@@ -1,5 +1,5 @@
 ---
-description: Explore Powertranz on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Powertranz operations through the unified API to process payments through Powertranz
 ---
 
 # Powertranz

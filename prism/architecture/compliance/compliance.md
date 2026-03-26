@@ -1,5 +1,5 @@
 ---
-description: Explore PCI Compliance on Juspay Hyperswitch to understand and implement this capability
+description: Understand PCI Compliance architecture to design scalable and reliable payment infrastructure
 ---
 
 # PCI Compliance

@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Set up Merchant SDK + Hyperswitch Vault Setup to ensure PCI compliance and data security
   Best for PCI compliant merchants requiring full control over UI rendering
   while leveraging Hyperswitch Vault for secure storage and payment routing.
 ---

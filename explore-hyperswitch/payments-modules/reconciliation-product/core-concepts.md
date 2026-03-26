@@ -1,5 +1,5 @@
 ---
-description: Explore Core Concepts on Juspay Hyperswitch to understand and implement this capability
+description: Understand reconciliation concepts and how transaction matching works in Hyperswitch
 ---
 
 # Core Concepts

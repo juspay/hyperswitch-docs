@@ -1,5 +1,5 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Explore 300+ supported payment connectors to find the best processors for your business
 ---
 
 # Google Pay

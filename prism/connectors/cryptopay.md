@@ -1,5 +1,5 @@
 ---
-description: Explore CryptoPay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize CryptoPay operations through the unified API to process payments through CryptoPay
 ---
 
 # CryptoPay

@@ -1,5 +1,5 @@
 ---
-description: Route transactions through processors based on volume distribution
+description: Set up volume-based routing to distribute traffic across processors using percentage allocations
 icon: chart-simple
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID) on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID) to ensure PCI compliance and data security
 ---
 
 # Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)

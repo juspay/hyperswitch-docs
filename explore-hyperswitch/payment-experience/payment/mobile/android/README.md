@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout on your android app
+description: Integrate Juspay Hyperswitch Android SDK to accept payments in native mobile applications
 icon: android
 ---
 

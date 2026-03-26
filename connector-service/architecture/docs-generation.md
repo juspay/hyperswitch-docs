@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Docs Generation to process payments through Docs Generation
 ---
 

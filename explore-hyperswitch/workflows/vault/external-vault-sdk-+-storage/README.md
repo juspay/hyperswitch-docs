@@ -1,7 +1,5 @@
 ---
-description: >-
-  Best for teams with strict existing vault dependencies who want to leverage
-  Hyperswitch for payment routing.
+description: Integrate External  Vault SDK + Storage to optimize payment operations
 hidden: true
 icon: up-right-from-square
 ---

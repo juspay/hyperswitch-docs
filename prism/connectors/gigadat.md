@@ -1,5 +1,5 @@
 ---
-description: Explore Gigadat on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Gigadat operations through the unified API to process payments through Gigadat
 ---
 
 # Gigadat

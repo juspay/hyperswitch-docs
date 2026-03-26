@@ -1,5 +1,5 @@
 ---
-description: Explore Merchant & Profile Mapping in Recon on Juspay Hyperswitch to understand and implement this capability
+description: Automate payment reconciliation to match transactions with processor settlements
 ---
 
 # Merchant & Profile Mapping in Recon

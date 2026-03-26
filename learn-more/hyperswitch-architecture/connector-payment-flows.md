@@ -1,7 +1,5 @@
 ---
-description: >-
-  This page outlines the various payment flows you may come across while
-  building a connector.
+description: Integrate Connector Payment Flows to process payments through Payment Flows
 ---
 
 # Connector Payment Flows

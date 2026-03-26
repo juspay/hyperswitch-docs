@@ -1,5 +1,5 @@
 ---
-description: Connect external vaults to store cards
+description: Configure SaaS Orchestration with Third-Party Vault to optimize payment operations
 icon: plug
 ---
 

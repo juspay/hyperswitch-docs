@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your react native app
+description: Implement Juspay Hyperswitch React SDK for seamless payment integration in React web applications
 icon: react
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Activating FRM in Hyperswitch on Juspay Hyperswitch to understand and implement this capability
+description: Configure Activating FRM in Hyperswitch to optimize payment operations
 icon: shield-plus
 ---
 

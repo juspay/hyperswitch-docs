@@ -1,8 +1,5 @@
 ---
-description: >-
-  Hyperswitch is designed to facilitate the integration and management of
-  payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your checkout UI.
+description: Integrate Juspay Hyperswitch iOS SDK to enable secure payment processing in iPhone and iPad apps
 icon: table-cells-large
 ---
 

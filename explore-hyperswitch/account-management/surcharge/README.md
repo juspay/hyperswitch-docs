@@ -1,5 +1,5 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: Configure dynamic surcharges to pass processing fees to customers based on payment method and amount
 icon: clipboard-list-check
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Saved Card on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Saved Card to optimize payment operations to optimize payment operations
 icon: hard-drive
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Connector Settings and Overrides on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Connector Settings and Overrides to process payments through Settings and Overrides
 ---
 
 # Connector Settings and Overrides

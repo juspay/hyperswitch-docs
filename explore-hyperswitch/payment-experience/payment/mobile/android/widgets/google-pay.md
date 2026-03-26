@@ -1,5 +1,5 @@
 ---
-description: Explore Google Pay on Juspay Hyperswitch to understand and implement this capability
+description: Configure Google Pay to offer fast, secure checkout using saved payment methods
 icon: google
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Security and Compliance on Juspay Hyperswitch to understand and implement this capability
+description: Configure Security and Compliance to start processing payments quickly
 icon: shield-check
 ---
 

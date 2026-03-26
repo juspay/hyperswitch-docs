@@ -1,5 +1,5 @@
 ---
-description: SDK method details
+description: Integrate the SDK Reference SDK to integrate secure checkout into web and mobile applications
 icon: chart-candlestick
 ---
 

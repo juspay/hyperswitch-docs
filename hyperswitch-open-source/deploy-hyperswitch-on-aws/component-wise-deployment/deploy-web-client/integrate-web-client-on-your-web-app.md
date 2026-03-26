@@ -1,5 +1,5 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Deploy Integrate web client on your web app to ensure PCI compliance and data security
 ---
 
 # Integrate web client on your web app

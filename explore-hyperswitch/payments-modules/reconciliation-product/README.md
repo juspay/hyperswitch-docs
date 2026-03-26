@@ -1,6 +1,6 @@
 ---
 icon: database
-description: Explore Juspay Hyperswitch Reconciliation module to eliminate revenue leakage through automated matching across order management, PSP, and bank systems
+description: Automate payment reconciliation to match transactions with processor settlements
 ---
 
 # Juspay Hyperswitch Reconciliation

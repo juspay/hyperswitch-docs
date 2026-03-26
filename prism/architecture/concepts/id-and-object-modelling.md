@@ -1,5 +1,5 @@
 ---
-description: Explore ID and Object Modeling on Juspay Hyperswitch to understand and implement this capability
+description: Understand ID and Object Modeling architecture to design scalable and reliable payment infrastructure
 ---
 
 # ID and Object Modeling

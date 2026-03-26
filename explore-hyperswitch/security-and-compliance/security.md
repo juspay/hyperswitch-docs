@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Implement security measures to protect payment data and ensure compliance with industry standards
 icon: cloud-check
 ---
 

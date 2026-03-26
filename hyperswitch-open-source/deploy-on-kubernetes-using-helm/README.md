@@ -1,5 +1,5 @@
 ---
-description: Install Hyperswitch on your K8s setup using our Helm charts
+description: Plan your production deployment with guidance on topology, scale, security, and compliance requirements
 icon: dharmachakra
 ---
 

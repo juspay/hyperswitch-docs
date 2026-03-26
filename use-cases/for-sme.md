@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for SMEs
+description: Access enterprise-grade payment capabilities designed for small and medium businesses
 hidden: true
 noIndex: true
 ---

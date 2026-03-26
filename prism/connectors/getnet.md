@@ -1,5 +1,5 @@
 ---
-description: Explore Getnet on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Getnet operations through the unified API to process payments through Getnet
 ---
 
 # Getnet

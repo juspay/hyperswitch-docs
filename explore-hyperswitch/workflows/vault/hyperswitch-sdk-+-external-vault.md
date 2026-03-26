@@ -1,7 +1,5 @@
 ---
-description: >-
-  Ideal for teams seeking to continue with their existing vault provider and
-  avoid data migration
+description: Configure Hyperswitch SDK + External Vault to optimize payment operations
 hidden: true
 icon: square-up-right
 ---

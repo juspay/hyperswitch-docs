@@ -1,5 +1,5 @@
 ---
-description: Explore Services and Methods on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Services and Methods to process payments through Services and Methods
 ---
 
 # Services and Methods

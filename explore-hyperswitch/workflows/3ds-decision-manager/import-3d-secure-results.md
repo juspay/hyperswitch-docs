@@ -1,5 +1,5 @@
 ---
-description: Process payments when 3D Secure runs outside Hyperswitch
+description: Configure Import 3D Secure results to optimize payment operations
 icon: shield-slash
 ---
 

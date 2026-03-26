@@ -1,5 +1,5 @@
 ---
-description: Explore Defend RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Defend operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Defend RPC

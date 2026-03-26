@@ -1,5 +1,5 @@
 ---
-description: Explore SDK Generation on Juspay Hyperswitch to understand and implement this capability
+description: Initialize SDK Generation operations through the unified API to process payments through SDK Generation
 ---
 
 # SDK Generation

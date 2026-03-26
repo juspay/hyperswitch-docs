@@ -1,5 +1,5 @@
 ---
-description: Integrate hyperswitch SDK to your React Native App using hyperswitch-node
+description: Configure React Native with REST API Integration to start processing payments quickly
 icon: puzzle-piece
 ---
 

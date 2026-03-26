@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
-  control over your payment flow.
+description: Configure Widgets to start processing payments quickly to start processing payments quickly
 icon: cubes
 ---
 

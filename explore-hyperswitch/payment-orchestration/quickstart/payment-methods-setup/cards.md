@@ -1,5 +1,5 @@
 ---
-description: Accept debit and credit card payments on your application
+description: Configure Cards to start processing payments quickly to start processing payments quickly
 icon: credit-card
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Jan'25 - Mar'25
+description: Configure Previous Roadmap - Q1 2025 to start processing payments quickly
 icon: road
 ---
 

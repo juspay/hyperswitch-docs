@@ -1,5 +1,5 @@
 ---
-description: Explore Summary on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Summary to process payments through Summary to process payments through Summary
 ---
 
 # Summary

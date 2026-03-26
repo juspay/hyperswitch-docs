@@ -1,5 +1,5 @@
 ---
-description: Set up Installation and Configuration on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Configure Installation and Configuration to start processing payments quickly
 ---
 
 # Installation and Configuration

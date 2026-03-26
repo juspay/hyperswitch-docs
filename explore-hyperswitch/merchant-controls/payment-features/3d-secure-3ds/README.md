@@ -1,5 +1,5 @@
 ---
-description: Explore 3D Secure (3DS) on Juspay Hyperswitch to understand and implement this capability
+description: Implement 3D Secure authentication to verify identity and reduce fraudulent transactions
 hidden: true
 icon: shield-check
 ---

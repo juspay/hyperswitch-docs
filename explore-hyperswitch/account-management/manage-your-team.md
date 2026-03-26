@@ -1,5 +1,5 @@
 ---
-description: Assign roles and permission to users
+description: Configure Manage Your Team to optimize payment operations
 icon: screen-users
 ---
 

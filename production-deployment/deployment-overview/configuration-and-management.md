@@ -1,5 +1,5 @@
 ---
-description: Configure Configuration and Management on Juspay Hyperswitch to customize and optimize your payment processing
+description: Configure Configuration and Management to start processing payments quickly
 ---
 
 # Configuration and Management

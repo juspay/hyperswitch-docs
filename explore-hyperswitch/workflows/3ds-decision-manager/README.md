@@ -1,5 +1,5 @@
 ---
-description: Implement 3D Secure and Strong Customer Authentication on Juspay Hyperswitch to reduce fraud while maintaining seamless checkout experiences
+description: Configure 3DS / Strong Customer Authentication to optimize payment operations
 icon: badge-check
 ---
 

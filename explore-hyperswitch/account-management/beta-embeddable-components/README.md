@@ -1,5 +1,5 @@
 ---
-description: Explore Embeddable Components on Juspay Hyperswitch to understand and implement this capability
+description: Process refunds to return funds to customers for returns, cancellations, or service adjustments
 icon: laptop-code
 ---
 

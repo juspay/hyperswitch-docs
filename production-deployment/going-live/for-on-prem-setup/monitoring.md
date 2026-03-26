@@ -1,5 +1,5 @@
 ---
-description: Visibility and control over your application
+description: Configure Monitoring to start processing payments quickly to start processing payments quickly
 icon: eyes
 ---
 

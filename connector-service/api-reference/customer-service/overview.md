@@ -1,5 +1,5 @@
 ---
-description: Explore Overview on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Overview operations through the unified API to process payments through Overview
 ---
 
 # Overview

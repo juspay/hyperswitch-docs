@@ -1,7 +1,5 @@
 ---
-description: >-
-  A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
-  with setup, access, cleanup, and troubleshooting instructions.
+description: Deploy Juspay Hyperswitch on Kubernetes using Helm charts for scalable container orchestration
 ---
 
 # Deploy on Local using Helm Charts and Minikube

@@ -1,5 +1,5 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Configure local development environment to build, test, and debug payment integrations
 ---
 
 # 🔧 Account setup

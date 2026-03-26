@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Configure Copy of Subscriptions to optimize payment operations
 hidden: true
 icon: arrows-rotate-reverse
 ---

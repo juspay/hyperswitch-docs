@@ -1,5 +1,5 @@
 ---
-description: Get started with Split Payments via Hyperswitch
+description: Process refunds to return funds to customers for returns, cancellations, or service adjustments
 icon: split
 ---
 

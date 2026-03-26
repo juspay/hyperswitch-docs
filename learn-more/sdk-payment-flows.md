@@ -1,5 +1,5 @@
 ---
-description: Explore SDK Payment flows on Juspay Hyperswitch to understand and implement this capability
+description: Integrate the SDK Payment flows SDK to integrate secure checkout into web and mobile applications
 icon: wave
 ---
 

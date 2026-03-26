@@ -1,5 +1,5 @@
 ---
-description: Explore Paypal on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Paypal operations through the unified API to offer a trusted digital wallet payment option
 ---
 
 # Paypal

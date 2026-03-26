@@ -1,5 +1,5 @@
 ---
-description: Set up Organization, Merchant and Profile Setup on Juspay Hyperswitch to enable and configure the feature for your payment infrastructure
+description: Follow this step-by-step guide to organization, merchant and profile setup and optimize payment performance and costs
 icon: people-roof
 ---
 

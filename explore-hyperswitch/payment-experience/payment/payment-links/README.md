@@ -1,5 +1,5 @@
 ---
-description: Low-code solution to accept payments
+description: Learn about Payment Links to introducing payment links - seamlessly integrate into hyperswitch without writing
 icon: link
 ---
 

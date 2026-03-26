@@ -1,7 +1,5 @@
 ---
-description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+description: Diagnose and resolve common issues with your Hyperswitch setup and configuration
 icon: hammer-brush
 ---
 

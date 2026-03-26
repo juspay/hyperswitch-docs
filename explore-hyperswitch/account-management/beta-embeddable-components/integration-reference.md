@@ -1,5 +1,5 @@
 ---
-description: Explore Integration Reference on Juspay Hyperswitch to understand and implement this capability
+description: Configure Integration Reference to start processing payments quickly
 ---
 
 # Integration Reference

@@ -1,5 +1,5 @@
 ---
-description: Explore For Banks & Financial Institutions on Juspay Hyperswitch to understand and implement this capability
+description: Optimize payments for For Banks & Financial Institutions to reduce passive churn and retain customers
 hidden: true
 noIndex: true
 icon: building-columns

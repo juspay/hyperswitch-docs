@@ -1,5 +1,5 @@
 ---
-description: Configure Payment Links UI
+description: Configure Configurations to optimize payment operations and enhance customer experience
 ---
 
 # Configurations

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Account Verification and Payment Initiation Services using open banking
-  providers
+description: Configure Open Banking to start processing payments quickly
 ---
 
 # Open Banking

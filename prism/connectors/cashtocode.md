@@ -1,5 +1,5 @@
 ---
-description: Explore CashtoCode on Juspay Hyperswitch to understand and implement this capability
+description: Initialize CashtoCode operations through the unified API to process payments through CashtoCode
 ---
 
 # CashtoCode

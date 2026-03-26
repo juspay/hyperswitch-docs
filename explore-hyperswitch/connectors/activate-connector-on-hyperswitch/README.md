@@ -1,5 +1,5 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Integrate Activate Connector on Hyperswitch to process payments through Activate  on Hyperswitch
 icon: chart-network
 ---
 

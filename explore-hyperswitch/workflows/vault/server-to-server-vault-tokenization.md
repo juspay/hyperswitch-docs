@@ -1,7 +1,5 @@
 ---
-description: >-
-  Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
-  merchants
+description: Configure Server to Server Vault tokenization to optimize payment operations
 hidden: true
 icon: server
 ---

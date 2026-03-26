@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Learn about S2S Vault flow to the payment method sdk allows you to securely collect payment
   Best for PCI compliant merchants who wants to store the card during initial
   checkout phase without charging their customers.
 hidden: true

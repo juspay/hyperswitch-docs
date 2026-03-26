@@ -1,5 +1,5 @@
 ---
-description: Explore Update Helm Charts to Hyperswitch's Latest Nightly Release on Juspay Hyperswitch to understand and implement this capability
+description: Deploy Update Helm Charts to Hyperswitch's Latest Nightly Release with proper configuration for production payment processing
 ---
 
 # Update Helm Charts to Hyperswitch's Latest Nightly Release

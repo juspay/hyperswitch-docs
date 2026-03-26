@@ -1,5 +1,5 @@
 ---
-description: Join the Hyperswitch Community
+description: Configure Community to optimize payment operations and enhance customer experience
 ---
 
 # Community

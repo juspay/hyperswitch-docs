@@ -1,5 +1,5 @@
 ---
-description: Instructions to setup Card Vault on AWS manually
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # Cloud setup guide

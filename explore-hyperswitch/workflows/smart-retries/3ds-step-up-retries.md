@@ -1,5 +1,5 @@
 ---
-description: >-
+description: Enable smart retries to automatically recover failed payments based on error codes and retry strategies
   Automatically retry failed non-3DS payments by stepping them up to 3DS
   authentication
 hidden: true

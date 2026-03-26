@@ -1,5 +1,5 @@
 ---
-description: Explore Deploy on GCP Using Helm Charts on Juspay Hyperswitch to understand and implement this capability
+description: Deploy Juspay Hyperswitch on Kubernetes using Helm charts for scalable container orchestration
 ---
 
 # Deploy on GCP Using Helm Charts

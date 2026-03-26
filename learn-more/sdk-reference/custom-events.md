@@ -1,5 +1,5 @@
 ---
-description: Explore Custom Events on Juspay Hyperswitch to understand and implement this capability
+description: Integrate the Custom Events SDK to integrate secure checkout into web and mobile applications
 ---
 
 # Custom Events

@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your android app
+description: Configure Android to start processing payments quickly to start processing payments quickly
 ---
 
 # Android

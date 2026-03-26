@@ -1,5 +1,5 @@
 ---
-description: Explore Recurring payments on Juspay Hyperswitch to understand and implement this capability
+description: Set up automatic capture to authorize and capture payments in a single step for immediate fulfillment
 icon: arrows-rotate-reverse
 ---
 

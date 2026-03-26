@@ -1,5 +1,5 @@
 ---
-description: Explore Payment Method Management SDK on Juspay Hyperswitch to understand and implement this capability
+description: Enable Payment Method Management SDK to offer customers their preferred ways to pay
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Connector Flow Coverage on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Connector Flow Coverage operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # Connector Flow Coverage

@@ -1,5 +1,5 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Configure ⚙️ Control Centre Account setup to start processing payments quickly
 ---
 
 # ⚙️ Control Centre Account setup

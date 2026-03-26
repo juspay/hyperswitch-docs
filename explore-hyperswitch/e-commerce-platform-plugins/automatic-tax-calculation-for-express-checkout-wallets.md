@@ -1,7 +1,5 @@
 ---
-description: >-
-  Setup Taxjar on Hyperswitch to automatically calculate tax in case of Express
-  checkout wallets
+description: Boost conversions and reduce costs for online stores with optimized checkout and intelligent routing
 icon: filter-circle-dollar
 ---
 

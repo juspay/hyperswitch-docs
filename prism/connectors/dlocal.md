@@ -1,5 +1,5 @@
 ---
-description: Explore dLocal on Juspay Hyperswitch to understand and implement this capability
+description: Initialize dLocal operations through the unified API to process payments through dLocal
 ---
 
 # dLocal

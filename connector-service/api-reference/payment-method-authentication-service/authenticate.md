@@ -1,5 +1,5 @@
 ---
-description: Explore Authenticate on Juspay Hyperswitch to understand and implement this capability
+description: Authorize payment amounts on customer methods to reserve funds before final capture
 ---
 
 # Authenticate

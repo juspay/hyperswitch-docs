@@ -1,5 +1,5 @@
 ---
-description: Use Docker to set up Hyperswitch app server
+description: Configure local development environment to build, test, and debug payment integrations
 ---
 
 # 🐳 Run Hyperswitch

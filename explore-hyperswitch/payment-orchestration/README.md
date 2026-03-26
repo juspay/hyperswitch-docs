@@ -1,6 +1,6 @@
 ---
 icon: arrow-progress
-description: Orchestrate payments across multiple PSPs and payment methods using Juspay Hyperswitch to optimize performance and minimize costs throughout the payment lifecycle
+description: Configure Payment Orchestration to optimize payment operations and enhance customer experience
 ---
 
 # Payment Orchestration

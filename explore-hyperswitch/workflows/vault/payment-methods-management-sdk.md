@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+description: Configure Payment Methods Management SDK to start processing payments quickly
 hidden: true
 icon: gear
 coverY: 0

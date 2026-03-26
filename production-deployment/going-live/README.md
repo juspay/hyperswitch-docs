@@ -1,5 +1,5 @@
 ---
-description: Complete the Juspay Hyperswitch go-live checklist to ensure your payment integration is production-ready, secure, and fully optimized
+description: Complete the production deployment checklist to safely launch Hyperswitch for live transactions
 icon: rocket-launch
 ---
 

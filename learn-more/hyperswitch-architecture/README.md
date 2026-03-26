@@ -1,5 +1,5 @@
 ---
-description: Understand Juspay Hyperswitch modular architecture with Router and Scheduler services for scalable payment processing
+description: Understand Architecture architecture to design scalable and reliable payment infrastructure
 icon: folder-tree
 ---
 

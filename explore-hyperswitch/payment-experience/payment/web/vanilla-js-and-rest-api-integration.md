@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to any Web App using hyperswitch-node
+description: Configure JS with REST API Integration to optimize payment operations
 icon: square-js
 ---
 

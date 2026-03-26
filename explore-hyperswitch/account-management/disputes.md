@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use Hyperswitch's unified Disputes module to track and manage disputes across
-  multiple processors
+description: Manage chargeback disputes and submit evidence to defend against fraudulent claims
 icon: circle-exclamation
 ---
 

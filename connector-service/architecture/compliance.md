@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Compliance to process payments through Compliance to process payments through Compliance
 ---
 

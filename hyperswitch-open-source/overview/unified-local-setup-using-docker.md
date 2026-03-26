@@ -1,5 +1,5 @@
 ---
-description: Run Juspay Hyperswitch locally using Docker to quickly set up the backend, Control Center, and SDK with a single command
+description: Launch Juspay Hyperswitch locally using Docker to quickly start developing and testing payments
 icon: badge-check
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Demystifying PCI compliance and it's requirements
+description: Configure Get started to start processing payments quickly
 icon: cake-slice
 ---
 

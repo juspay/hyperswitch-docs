@@ -1,5 +1,5 @@
 ---
-description: Explore Payment Method on Juspay Hyperswitch to understand and implement this capability
+description: Enable Payment Method to offer customers their preferred ways to pay
 icon: arrow-progress
 ---
 

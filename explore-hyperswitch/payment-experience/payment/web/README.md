@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your web app
+description: Configure Web to optimize payment operations and enhance customer experience
 icon: globe-wifi
 ---
 

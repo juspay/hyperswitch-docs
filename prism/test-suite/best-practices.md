@@ -1,5 +1,5 @@
 ---
-description: Explore Best Practices on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Best Practices operations through the unified API to ensure PCI compliance and data security
 ---
 
 <!--

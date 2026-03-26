@@ -1,5 +1,5 @@
 ---
-description: Make recurring payments across processors
+description: Integrate PG Agnostic Card Forwarding to optimize payment operations
 hidden: true
 icon: arrows-repeat
 ---

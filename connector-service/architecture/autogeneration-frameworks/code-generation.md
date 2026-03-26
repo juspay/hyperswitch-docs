@@ -1,5 +1,5 @@
 ---
-description: Explore Code Generation on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Code Generation to process payments through Code Generation
 ---
 
 # Code Generation

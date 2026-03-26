@@ -1,5 +1,5 @@
 ---
-description: Explore Juspay Hyperswitch modular vault deployment options to securely store payment credentials while meeting your PCI compliance and hosting requirements
+description: Configure secure vault solutions to tokenize payment methods and achieve PCI compliance
 icon: vault
 ---
 

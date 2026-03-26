@@ -1,5 +1,5 @@
 ---
-description: Setting up and managing recurring payments
+description: Configure card payment processing to accept credit and debit card transactions globally
 icon: repeat
 ---
 

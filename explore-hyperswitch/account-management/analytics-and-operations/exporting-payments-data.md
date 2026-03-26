@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Configure Exporting payments data to optimize payment operations
 icon: tachograph-digital
 ---
 

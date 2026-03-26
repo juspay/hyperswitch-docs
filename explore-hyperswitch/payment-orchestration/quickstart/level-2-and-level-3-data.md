@@ -1,5 +1,5 @@
 ---
-description: Explore Level 2 and Level 3 data on Juspay Hyperswitch to understand and implement this capability
+description: Implement 3D Secure authentication to verify identity and reduce fraudulent transactions
 ---
 
 # Level 2 and Level 3 data

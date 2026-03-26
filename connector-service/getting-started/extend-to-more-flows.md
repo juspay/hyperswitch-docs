@@ -1,5 +1,5 @@
 ---
-description: Explore Extending to More Flows on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Extending to More Flows to process payments through
 ---
 
 # Extending to More Flows

@@ -1,5 +1,5 @@
 ---
-description: Explore Processor error code mapping on Juspay Hyperswitch to understand and implement this capability
+description: Find answers to common questions about processor error code mapping and payment best practices
 icon: signs-post
 ---
 

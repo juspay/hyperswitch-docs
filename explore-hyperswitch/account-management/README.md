@@ -1,5 +1,5 @@
 ---
-description: Manage payment operations efficiently using Juspay Hyperswitch Control Center to streamline accounts, analytics, disputes, and reconciliation
+description: Configure Payment Operations to optimize payment operations and enhance customer experience
 icon: joystick
 ---
 

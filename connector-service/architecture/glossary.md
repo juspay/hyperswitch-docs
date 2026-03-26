@@ -1,4 +1,4 @@
 ---
-description: Learn about and implement Juspay Hyperswitch features and capabilities
+description: Integrate Glossary to process payments through Glossary to process payments through Glossary
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore Forte on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Forte operations through the unified API to process payments through Forte
 ---
 
 # Forte

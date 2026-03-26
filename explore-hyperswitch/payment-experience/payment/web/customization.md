@@ -1,5 +1,5 @@
 ---
-description: Customize your Web unified checkout
+description: Configure Customization to start processing payments quickly to start processing payments quickly
 icon: bars-progress
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore SubmitEvidence RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize SubmitEvidence operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # SubmitEvidence RPC

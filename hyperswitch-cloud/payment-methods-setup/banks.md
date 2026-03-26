@@ -1,5 +1,5 @@
 ---
-description: Accept bank payment methods on your application
+description: Configure 🏦 Banks to start processing payments quickly
 ---
 
 # 🏦 Banks

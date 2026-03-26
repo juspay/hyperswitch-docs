@@ -1,5 +1,5 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: Deploy Juspay Hyperswitch on AWS infrastructure for production-grade payment orchestration
 ---
 
 # Production ready deployment on AWS

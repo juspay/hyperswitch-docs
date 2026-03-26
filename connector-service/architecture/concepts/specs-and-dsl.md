@@ -1,5 +1,5 @@
 ---
-description: Explore Specs and DSL on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Specs and DSL to process payments through Specs and DSL
 ---
 
 # Specs and DSL

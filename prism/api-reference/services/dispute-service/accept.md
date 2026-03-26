@@ -1,5 +1,5 @@
 ---
-description: Explore Accept RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Accept operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Accept RPC

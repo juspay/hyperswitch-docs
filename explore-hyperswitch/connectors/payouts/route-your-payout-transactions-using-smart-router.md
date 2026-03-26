@@ -1,5 +1,5 @@
 ---
-description: Explore Smart Router for Payouts on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Smart Router for Payouts to distribute funds to vendors and customers globally
 icon: swap
 ---
 

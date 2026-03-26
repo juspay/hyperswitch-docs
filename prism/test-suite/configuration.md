@@ -1,5 +1,5 @@
 ---
-description: Configure Configuration on Juspay Hyperswitch to customize and optimize your payment processing
+description: Initialize Configuration operations through the unified API to integrate payment capabilities programmatically
 ---
 
 <!--

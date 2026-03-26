@@ -1,5 +1,5 @@
 ---
-description: Understand Juspay Hyperswitch security infrastructure and compliance certifications to ensure your payment data meets PCI DSS and GDPR requirements
+description: Implement security measures to protect payment data and ensure compliance with industry standards
 icon: arrow-down-up-lock
 ---
 

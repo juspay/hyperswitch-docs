@@ -1,5 +1,5 @@
 ---
-description: Explore Paysafe on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Paysafe operations through the unified API to process payments through Paysafe
 ---
 
 # Paysafe

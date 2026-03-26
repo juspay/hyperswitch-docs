@@ -1,5 +1,5 @@
 ---
-description: Explore Truelayer on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Truelayer operations through the unified API to process payments through Truelayer
 ---
 
 # Truelayer

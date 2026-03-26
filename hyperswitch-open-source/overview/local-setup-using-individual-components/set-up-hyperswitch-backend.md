@@ -1,5 +1,5 @@
 ---
-description: Explore Backend on Juspay Hyperswitch to understand and implement this capability
+description: Configure local development environment to build, test, and debug payment integrations
 icon: server
 ---
 

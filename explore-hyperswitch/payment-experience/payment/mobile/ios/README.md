@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your iOS app
+description: Integrate Juspay Hyperswitch iOS SDK to enable secure payment processing in iPhone and iPad apps
 icon: apple
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Explore CI/CD Integration on Juspay Hyperswitch to understand and implement this capability
+description: Configure CI/CD Integration to start processing payments quickly
 ---
 
 <!--

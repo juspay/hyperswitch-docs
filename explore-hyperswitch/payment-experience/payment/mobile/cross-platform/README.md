@@ -1,5 +1,5 @@
 ---
-description: Explore Cross Platform on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Juspay Hyperswitch SDKs to enable payment acceptance across web and mobile platforms
 icon: layer-plus
 ---
 

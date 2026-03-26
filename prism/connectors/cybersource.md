@@ -1,5 +1,5 @@
 ---
-description: Explore CyberSource on Juspay Hyperswitch to understand and implement this capability
+description: Initialize CyberSource operations through the unified API to process payments through CyberSource
 ---
 
 # CyberSource

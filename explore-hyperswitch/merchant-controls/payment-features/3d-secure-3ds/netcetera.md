@@ -1,5 +1,5 @@
 ---
-description: Explore Netcetera on Juspay Hyperswitch to understand and implement this capability
+description: Implement 3D Secure authentication to verify identity and reduce fraudulent transactions
 icon: link-simple
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Enable Apple pay on your web domains
+description: Enable Apple Pay to let customers check out quickly using saved cards on their Apple devices
 hidden: true
 icon: globe-wifi
 ---

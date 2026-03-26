@@ -1,5 +1,5 @@
 ---
-description: Integrate with 300+ connectors enabling 200+ payment methods on Juspay Hyperswitch to expand your payment options with zero development effort
+description: Integrate Connectors Integration to process payments through s Integration
 icon: plug
 ---
 

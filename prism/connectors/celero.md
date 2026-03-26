@@ -1,5 +1,5 @@
 ---
-description: Explore Celero on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Celero operations through the unified API to process payments through Celero
 ---
 
 # Celero

@@ -1,5 +1,5 @@
 ---
-description: It's no rocket science
+description: Configure PCI compliance to start processing payments quickly
 icon: user-police-tie
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: iOS Unified Checkout Customization
+description: Follow this step-by-step guide to customization and optimize payment operations
 icon: bars-progress
 ---
 

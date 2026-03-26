@@ -1,5 +1,5 @@
 ---
-description: Bank Transfer payment methods
+description: Configure Bank Transfers to start processing payments quickly
 ---
 
 # Bank Transfers

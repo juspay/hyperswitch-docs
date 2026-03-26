@@ -1,7 +1,5 @@
 ---
-description: >-
-  Connect external vaults to store cards instead of the integrated vault that
-  comes within your Hyperswitch Orchestration account
+description: Configure Connect External Vaults to Hyperswitch Orchestration to optimize payment operations
 hidden: true
 icon: plug
 ---

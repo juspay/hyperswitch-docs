@@ -1,5 +1,5 @@
 ---
-description: Explore Tokenize on Juspay Hyperswitch to understand and implement this capability
+description: Tokenize and securely store payment methods for one-click checkout and recurring billing without PCI exposure
 ---
 
 # Tokenize

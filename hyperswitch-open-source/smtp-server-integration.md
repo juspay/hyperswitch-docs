@@ -1,5 +1,5 @@
 ---
-description: Explore SMTP Server Integration on Juspay Hyperswitch to understand and implement this capability
+description: Configure SMTP Server Integration to optimize payment operations
 icon: at
 ---
 

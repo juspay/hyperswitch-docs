@@ -1,5 +1,5 @@
 ---
-description: Explore Globalpay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Globalpay operations through the unified API to process payments through Globalpay
 ---
 
 # Globalpay

@@ -1,5 +1,5 @@
 ---
-description: Explore Test Structure on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Test Structure operations through the unified API to ensure PCI compliance and data security
 ---
 
 <!--

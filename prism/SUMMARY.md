@@ -1,5 +1,5 @@
 ---
-description: Explore Summary on Juspay Hyperswitch to understand and implement this capability
+description: Configure Summary to start processing payments quickly to start processing payments quickly
 ---
 
 # Summary

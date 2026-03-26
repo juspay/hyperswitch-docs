@@ -2,7 +2,7 @@
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
-description: Explore Juspay Hyperswitch capabilities to quickly set up, integrate, and scale your payment infrastructure with minimal effort
+description: Tokenize and securely store payment methods for one-click checkout and recurring billing without PCI exposure
 ---
 
 # Exploration Guide

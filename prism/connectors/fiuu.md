@@ -1,5 +1,5 @@
 ---
-description: Explore Fiuu on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Fiuu operations through the unified API to process payments through Fiuu
 ---
 
 # Fiuu

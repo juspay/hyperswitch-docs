@@ -1,5 +1,5 @@
 ---
-description: Explore Get RPC on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Get operations through the unified API to integrate payment capabilities programmatically
 ---
 
 # Get RPC

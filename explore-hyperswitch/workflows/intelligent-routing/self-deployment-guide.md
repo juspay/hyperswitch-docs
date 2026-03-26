@@ -1,5 +1,5 @@
 ---
-description: Follow this guide to implement Self-Deployment Guide on Juspay Hyperswitch for your business requirements
+description: Configure Self-Deployment Guide to start processing payments quickly
 icon: screwdriver-wrench
 ---
 

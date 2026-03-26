@@ -1,5 +1,5 @@
 ---
-description: Explore Modes of Usage on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Modes of Usage operations to manage payment processing workflows through Juspay Hyperswitch unified API
 ---
 
 # Modes of Usage

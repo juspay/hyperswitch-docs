@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Flutter App using hyperswitch-node
+description: Set up the Hyperswitch backend application to handle payment processing and orchestration
 icon: puzzle-piece
 ---
 

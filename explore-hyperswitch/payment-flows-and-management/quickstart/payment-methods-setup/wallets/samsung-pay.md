@@ -1,5 +1,5 @@
 ---
-description: Configure Samsung Pay as a wallet payment method on Juspay Hyperswitch to enable secure tap-to-pay transactions for Samsung device users
+description: Configure Samsung Pay to start processing payments quickly
 ---
 
 # Samsung Pay

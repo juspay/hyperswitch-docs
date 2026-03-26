@@ -1,5 +1,5 @@
 ---
-description: Migrate from Stripe on your react native app
+description: Configure React Native to start processing payments quickly
 ---
 
 # React Native

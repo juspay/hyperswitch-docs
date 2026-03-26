@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for your online business
+description: Optimize payments for 🛒 For online businesses to optimize payment operations
 hidden: true
 noIndex: true
 ---

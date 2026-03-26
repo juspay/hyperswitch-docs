@@ -1,5 +1,5 @@
 ---
-description: Explore Glossary on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Glossary operations through the unified API to integrate payment capabilities programmatically
 ---
 
 <!--

@@ -1,5 +1,5 @@
 ---
-description: Explore Airwallex on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Airwallex operations through the unified API to process payments through Airwallex
 ---
 
 # Airwallex

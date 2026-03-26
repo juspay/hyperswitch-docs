@@ -1,5 +1,5 @@
 ---
-description: Explore Monitoring and Alerts on Juspay Hyperswitch to understand and implement this capability
+description: Configure Monitoring and Alerts to start processing payments quickly
 icon: monitor-waveform
 ---
 

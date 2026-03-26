@@ -1,5 +1,5 @@
 ---
-description: Explore Fiservemea on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Fiservemea operations through the unified API to process payments through Fiservemea
 ---
 
 # Fiservemea

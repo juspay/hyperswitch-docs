@@ -1,5 +1,5 @@
 ---
-description: Streamline subscription payments and reduce churn for your SaaS business using Juspay Hyperswitch's recurring billing and intelligent retry capabilities
+description: Optimize subscription payments and reduce churn for SaaS businesses using smart routing and retries
 hidden: true
 noIndex: true
 icon: desktop

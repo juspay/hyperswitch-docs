@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
+description: Configure E-commerce Platform Plugins by Hyperswitch to optimize payment operations
 hidden: true
 noIndex: true
 icon: plug-circle-bolt

@@ -1,5 +1,5 @@
 ---
-description: Make your first payment and refund through Hyperswitch
+description: Configure local development environment to build, test, and debug payment integrations
 ---
 
 # 💵 Test a payment

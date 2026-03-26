@@ -1,5 +1,5 @@
 ---
-description: Get started integrating the Hyperswitch web client in your app
+description: Configure Customizable and Native Integrations to start processing payments quickly
 hidden: true
 icon: puzzle-piece
 ---

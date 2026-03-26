@@ -1,5 +1,5 @@
 ---
-description: Explore Error Mapping on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Error Mapping to process payments through Error Mapping
 ---
 
 # Error Mapping

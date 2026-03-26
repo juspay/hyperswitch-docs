@@ -1,5 +1,5 @@
 ---
-description: Explore Charge on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Charge operations through the unified API to process payments through Charge
 ---
 
 # Charge

@@ -1,5 +1,5 @@
 ---
-description: Explore Native 3DS Authentication on Juspay Hyperswitch to understand and implement this capability
+description: Optimize payments for Native 3DS Authentication to optimize payment operations
 hidden: true
 icon: star-shooting
 ---

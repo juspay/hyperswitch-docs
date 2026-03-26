@@ -1,5 +1,5 @@
 ---
-description: Swift and streamlined payout automation
+description: Integrate Payouts Processors to distribute funds to vendors and customers globally
 icon: file-invoice-dollar
 ---
 

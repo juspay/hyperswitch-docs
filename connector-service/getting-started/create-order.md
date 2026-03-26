@@ -1,5 +1,5 @@
 ---
-description: Explore Quick Start on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Quick Start to process payments through Quick Start
 ---
 
 # Quick Start

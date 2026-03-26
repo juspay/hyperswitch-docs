@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
+description: Configure Kotlin with REST API Integration to optimize payment operations
 icon: k
 ---
 

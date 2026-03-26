@@ -1,5 +1,5 @@
 ---
-description: Explore Checkout Experience on Juspay Hyperswitch to understand and implement this capability
+description: Configure Checkout Experience to optimize payment operations and enhance customer experience
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket

@@ -1,5 +1,5 @@
 ---
-description: Explore Iatapay on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Iatapay operations through the unified API to process payments through Iatapay
 ---
 
 # Iatapay

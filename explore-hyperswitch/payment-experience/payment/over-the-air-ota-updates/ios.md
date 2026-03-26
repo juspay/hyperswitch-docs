@@ -1,5 +1,5 @@
 ---
-description: Explore iOS on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Juspay Hyperswitch iOS SDK to enable secure payment processing in iPhone and iPad apps
 icon: apple
 ---
 

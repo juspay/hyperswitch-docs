@@ -1,5 +1,5 @@
 ---
-description: Explore Smart Retries in Payout on Juspay Hyperswitch to understand and implement this capability
+description: Integrate Smart Retries in Payout to distribute funds to vendors and customers globally
 icon: magnifying-glass-arrows-rotate
 ---
 

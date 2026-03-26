@@ -1,7 +1,5 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider via the control
-  center
+description: Configure Using Hyperswitch Control Center to start processing payments quickly
 icon: building-columns
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for marketplace/platforms
+description: Enable multi-party payments and automated payouts for marketplace platforms and gig economy
 hidden: true
 noIndex: true
 icon: shop

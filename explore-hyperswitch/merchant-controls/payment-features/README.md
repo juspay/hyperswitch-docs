@@ -1,5 +1,5 @@
 ---
-description: Explore Payment Features on Juspay Hyperswitch to understand and implement this capability
+description: Learn about Payment Features to hyperswitch sdks provide client-side payment capabilities across web and mobile
 icon: sparkles
 ---
 

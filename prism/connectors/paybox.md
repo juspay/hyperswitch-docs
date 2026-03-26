@@ -1,5 +1,5 @@
 ---
-description: Explore Paybox on Juspay Hyperswitch to understand and implement this capability
+description: Initialize Paybox operations through the unified API to process payments through Paybox
 ---
 
 # Paybox
