@@ -1,8 +1,10 @@
+---
+description: Build unified payment integrations with a single library for 100+ connectors across any processor
+---
+
 <div align="center">
 
-
 # Hyperswitch Prism
-
 
 **One integration. Any payment processor. Zero lock-in.**
 
@@ -325,7 +327,7 @@ Please report security issues to [security@juspay.in](mailto:security@juspay.in)
 **[⬆ Back to Top](#connector-service)**
 
 
-Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
+Built and maintained by [Juspay Hyperswitch](https://hyperswitch.io)
 
 
 </div>

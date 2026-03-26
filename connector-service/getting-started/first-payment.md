@@ -1,8 +1,12 @@
+---
+description: Process your first payment with authorization, capture, refund, and error handling
+---
+
 # First Payment with Error Handling
 
 You will have `payment_method_id` from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI compliant raw card data, that will suffice to make the first payment.
 
-Int he next few steps you will authorize the payment, handle errors, capture funds, and process refunds. And then you will be ready to send payment to any payment processor, without writing specialized code for each.
+In the next few steps you will authorize the payment, handle errors, capture funds, and process refunds. And then you will be ready to send payment to any payment processor, without writing specialized code for each.
 
 ## Authorize with Payment Method ID
 

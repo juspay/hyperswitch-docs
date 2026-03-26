@@ -1,5 +1,8 @@
-# Documentation Strategy
+---
+description: Learn how documentation is organized, generated, and synced between connector-service and GitBook
+---
 
+# Documentation Strategy
 
 This document outlines the documentation structure, organization, and strategy for the Unified Prism (UCS) project.
 

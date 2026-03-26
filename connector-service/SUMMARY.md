@@ -1,3 +1,7 @@
+---
+description: Navigate the complete documentation structure for Juspay Hyperswitch Prism payment library
+---
+
 # Summary
 
 ## Getting Started
