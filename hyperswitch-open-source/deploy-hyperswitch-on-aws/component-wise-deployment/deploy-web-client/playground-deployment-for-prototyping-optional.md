@@ -1,5 +1,5 @@
 ---
-description: Quickly deploy your web client playground and see it in action
+description: Deploy the web client playground on AWS to rapidly prototype and test payment experiences before production integration
 ---
 
 # Playground deployment for prototyping (optional)
@@ -10,11 +10,11 @@ Explore the web client's full stack playground for rapid prototyping using a sin
 
 Please note that this deployment is just for the demo-playground. This is **optional** and does not replace the integration step. In order to go-live, please integrate the web client onto your app before the deployment of your app
 
-## Steps to Deploy Hyperswitch web client on AWS
+## Steps to deploy Hyperswitch web client on AWS
 
 ### **What do you need to get started**
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
+- An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 ### **Let's begin!**
 
@@ -22,7 +22,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 >
 > You can directly start from [Step 3](playground-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
-#### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="Linux x86 (64-bit)" %}
@@ -89,9 +89,9 @@ which aws
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-#### Step 2 - Configure the AWS CLI
+### Step 2 - Configure the AWS CLI
 
-For this step you would need the following from you AWS account
+For this step you would need the following from your AWS account
 
 1. `Access key ID`
 2. `Secret Access Key`
@@ -107,10 +107,10 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch web client playground
+### Step 3 - Set up Hyperswitch web client playground
 
 {% hint style="danger" %}
-The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperswitch-web` setups the playground for you-> which is a fullstack application. We ensure that the **secret key stays in the server side** and the publishable key stays in the client side, we insist you do the same for your application when you move to a Production ready setup
+The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperswitch-web` setups the playground for you-> which is a fullstack application. Hyperswitch ensures that the **secret key stays in the server side** and the publishable key stays in the client side. Do the same for your application when you move to a production ready setup
 {% endhint %}
 
 You can now deploy the Hyperswitch web client application by running the below command in the same terminal session
@@ -125,20 +125,20 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 On running the above command, you will get an option to configure the following:
 
-**Mandatory:**&#x20;
+**Mandatory:**
 
-1. **`Publishable Key` -** This is a public key that resides on your client side for authentication
-2. **`Secret Key` -** This is the API key which should only be restricted to your app server
+1. **`Publishable Key`** - This is a public key that resides on your client side for authentication
+2. **`Secret Key`** - This is the API key which should only be restricted to your app server
 
 {% hint style="info" %}
-You will either get these keys as an output when you host the app server, or for quick prototyping, you can create a new Hyperswitch sandbox account [here](https://app.hyperswitch.io/login) and get started.
+These keys are received as an output when hosting the app server, or for quick prototyping, create a new Hyperswitch sandbox account [here](https://app.hyperswitch.io/login) and get started.
 {% endhint %}
 
 **Optional:**
 
-1. **URL where you have hosted Hyperswitch Backend -** The base URL where you have hosted the app server. If not provided, this will default to `https://sandbox.hyperswitch.io`
-2. **URL where you have hosted Hyperswitch Client SDK** - This is the HyperLoader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path})`. If not provided, this will default to `https://beta.hyperswitch.io/v1`
-3. **AWS Region -** This is the AWS region where you will host you web client. If not provided, it will default to `us-east-2`.
+1. **URL where you have hosted Hyperswitch server** - The base URL where you have hosted the app server. If not provided, this will default to `https://sandbox.hyperswitch.io`
+2. **URL where you have hosted Hyperswitch Client SDK** - This is the HyperLoader.js path (for e.g. `https://{domain}.s3.amazonaws.com/{path}`). If not provided, this will default to `https://beta.hyperswitch.io/v1`
+3. **AWS Region** - This is the AWS region where you will host your web client. If not provided, it will default to `us-east-2`.
 
 {% hint style="warning" %}
 Depending on the API version and changes made to the web client, the web client may or may not be compatible with the SaaS app server.
@@ -152,7 +152,7 @@ That's it! Hyperswitch web client should be up and running on your AWS account
 Verify the application by opening this public IP in a web browser. Sometimes AWS can take upto 5 mins to initiate the EC2 instance.
 {% endhint %}
 
-#### Clean Up
+### Clean Up
 
 If you want to delete the application from your account simply run the below clean up script
 
@@ -170,7 +170,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
+- **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
   Please check your AWS EC2 details and make sure that the EC2 is created and has all the permissions required to run the server and create security groups. Post this, re-run the script to do a re-deployment.
 
 - **AWS is throwing many errors while running the script**\

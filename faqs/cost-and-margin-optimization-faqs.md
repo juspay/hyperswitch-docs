@@ -1,12 +1,12 @@
 ---
 hidden: true
 noIndex: true
-description: How to reduce payment processing fees and costs?
+description: Optimize payment processing costs and margins to reduce fees through intelligent routing, retry strategies, and international acquiring
 ---
 
 # Cost and Margin Optimization FAQs
 
-### Reducing Credit Card Processing Fees
+## Reducing Credit Card Processing Fees
 
 Optimizing processing fees begins with understanding how fees are structured and where margin erosion occurs. For most US merchants, the largest opportunity lies not in changing interchange rates, but in improving negotiation leverage, routing efficiency, retry discipline, and transaction mix management.
 
@@ -26,18 +26,18 @@ Interchange is largely non-negotiable. Optimization typically occurs in markup n
 
 Effective strategies include:
 
-1. Calculating blended effective rate\
+1. Calculating blended effective rate
    Total fees paid divided by total processed volume. Segment by:
    * Card type (debit vs credit, rewards vs non-rewards)
    * Domestic vs cross-border
    * Processor
-2. Negotiating interchange-plus pricing\
+2. Negotiating interchange-plus pricing
    Flat-rate pricing often results in higher blended cost at scale. Interchange-plus contracts provide transparency and better leverage for high-volume merchants.
-3. Optimizing routing\
+3. Optimizing routing
    If multiple processors are available, route transactions to the processor offering the best cost-performance combination.
-4. Reducing unnecessary retries\
+4. Reducing unnecessary retries
    Each retry may incur additional network and processor fees.
-5. Improving authorization rates\
+5. Improving authorization rates
    Failed transactions that later succeed often incur multiple authorization attempts, increasing total fee burden.
 
 Cost reduction is a data analysis problem first and a routing problem second.
@@ -81,31 +81,31 @@ Comparing processor pricing requires moving beyond advertised rates.
 
 Steps to compare effectively:
 
-1. Normalize pricing models\
+1. Normalize pricing models
    Convert flat-rate pricing into effective interchange-plus equivalents.
-2. Calculate blended effective rate\
+2. Calculate blended effective rate
    Divide total fees by total processed volume.
-3. Segment by transaction type\
+3. Segment by transaction type
    Break down costs by:
    * Domestic vs cross-border
    * Card brand
    * Debit vs credit
    * Transaction size bands
-4. Include hidden and indirect fees\
+4. Include hidden and indirect fees
    Consider:
    * Chargeback fees
    * Refund fees
    * Monthly minimums
    * Platform fees
    * FX spread
-5. Model real transaction mix\
+5. Model real transaction mix
    Use historical transaction data to simulate cost under alternative pricing models.
 
 True processor comparison requires transaction-level modeling rather than headline rate comparison.
 
 </details>
 
-### Cost-Based and Intelligent Routing
+## Cost-Based and Intelligent Routing
 
 Cost-based routing introduces flexibility into how transactions are distributed across processors. The objective is not simply lowest fee, but highest net revenue after considering approval rates and risk.
 
@@ -131,7 +131,7 @@ However, cost-based routing must incorporate approval rate data. The optimal pro
 
 Optimization should consider:
 
-Net revenue per transaction = (Approval Rate × Transaction Amount) − Processing Fees
+`Net revenue per transaction = (Approval Rate × Transaction Amount) − Processing Fees`
 
 Cost-only routing is incomplete without approval rate analysis.
 
@@ -162,7 +162,7 @@ Multi-acquirer architecture enables this flexibility.
 
 </details>
 
-### Retries and Their Impact on Cost
+## Retries and Their Impact on Cost
 
 Retry logic affects both conversion and cost. Poorly designed retry systems increase fee burden without improving revenue.
 
@@ -190,7 +190,7 @@ Uncontrolled retries increase fee load without improving net margin. Retry logic
 
 </details>
 
-### Cross-Border and International Optimization
+## Cross-Border and International Optimization
 
 For merchants expanding internationally, cross-border fees often become a major margin driver. An international mix can materially change the blended effective rate.
 
@@ -228,18 +228,18 @@ Reducing cross-border cost often involves:
 
 Optimization requires a structured approach:
 
-1. Analyze geographic transaction mix\
+1. Analyze geographic transaction mix
    Determine the percentage of domestic versus international volume.
-2. Evaluate local acquiring partners\
+2. Evaluate local acquiring partners
    Local acquirers often provide:
    * Lower interchange for domestic cards
    * Higher approval rates
    * Reduced FX spread
-3. Route based on card origin\
+3. Route based on card origin
    Use BIN or country-level routing logic to direct transactions appropriately.
-4. Monitor both approval rates and cost\
+4. Monitor both approval rates and cost
    Local acquiring may improve both cost efficiency and authorization performance.
-5. Balance operational complexity\
+5. Balance operational complexity
    Each additional acquirer increases reconciliation and operational overhead.
 
 Domestic versus international acquiring strategy is often one of the most financially impactful multi-processor optimizations available.

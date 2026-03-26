@@ -1,4 +1,8 @@
-# Update Helm Charts to Hyperswitch's Latest Nightly Release
+---
+description: Update Helm charts to Juspay Hyperswitch's latest nightly release to access new features and improvements in your Kubernetes deployment
+---
+
+# Update Helm charts to Hyperswitch's latest nightly release
 
 Update charts/incubator/hyperswitch-stack/values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.
 
@@ -19,10 +23,10 @@ services:
       version: nightly
 ```
 
-Manually update configs based on the output of git diff command. Add configs that are labelled as “+” and remove the ones that are labelled as “-” in the respective files 1,2 mentioned below.
+Manually update configs based on the output of git diff command. Add configs that are labelled as "+" and remove the ones that are labelled as "-" in the respective files 1, 2 mentioned below.
 
-1\. charts/incubator/hyperswitch-app/configs/router-sandbox.toml\
-\
+1. charts/incubator/hyperswitch-app/configs/router-sandbox.toml
+
 sandbox.toml contains sandbox/test environment configurations, including:
 
 * Test/sandbox base URLs for payment connectors
@@ -37,9 +41,9 @@ Run the below command to generate the differences and update the router-sandbox.
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/sandbox.toml
 ```
 
-2\. charts/incubator/hyperswitch-app/configs/misc.toml
+2. charts/incubator/hyperswitch-app/configs/misc.toml
 
-env\_specific.toml contains environment-specific configurations and secrets, including:
+env_specific.toml contains environment-specific configurations and secrets, including:
 
 * Database connection settings (master and replica)
 * External service credentials (AWS, payment processors, etc.)
@@ -48,10 +52,8 @@ env\_specific.toml contains environment-specific configurations and secrets, inc
 * Feature flags and operational parameters
 * Logging and monitoring configurations
 
-Run the below command to generate the differences and update misc.toml file
+Run the below command to generate the differences and update the misc.toml file
 
 ```
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/env_specific.toml
 ```
-
-\

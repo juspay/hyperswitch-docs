@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: building-columns
+description: Empower banks and financial institutions with modern payment infrastructure to streamline merchant operations and enhance customer payment experiences
 ---
 
 # For Banks & Financial Institutions
@@ -20,21 +21,21 @@ Hyperswitch helps banks streamline operations, manage merchants, and improve pay
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Merchant Management</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#merchant-management">#merchant-management</a></td></tr><tr><td><mark style="color:blue;">Payments and Transactions</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payments-and-transactions">#payments-and-transactions</a></td></tr><tr><td><mark style="color:blue;">Insights and Automation</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#insights-and-automation">#insights-and-automation</a></td></tr></tbody></table>
 
-#### Merchant Management
+### Merchant Management
 
 * [Seamless merchant onboarding](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles): Easily onboard merchants with just a few clicks via the dashboard and allow them to invite their team with different roles and profiles.
-* [White-label solutions](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multi-tenancy-with-hyperswitch): Support custom branding for merchants on payment pages, links, and other tools, providing extensive control over the customer’s payment experience.
+* [White-label solutions](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multi-tenancy-with-hyperswitch): Support custom branding for merchants on payment pages, links, and other tools, providing extensive control over the customer's payment experience.
 
-#### Payments and Transactions
+### Payments and Transactions
 
 * [Recurring payments](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/subscriptions): Support recurring payments with PG-agnostic card forwarding, and reduce churn by retrying failed recurring payments.
 * [Intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router/intelligent-routing): Intelligently route transactions to alternative PSPs during failures, minimizing the impact on authentication rates.
 * [Multi-rail payouts](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/payouts): Support multiple rails for payouts such as Visa Direct, Mastercard, SEPA, and Same Day ACH.
 * [Global token requestor](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards): Tokenize payment details in a way that allows tokens to be used across PSPs for repeat transactions, eliminating dependence on a single PSP.
 
-#### Insights and Automation
+### Insights and Automation
 
-* [Analytics and insights](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations): Access all payment-related data from different PSPs, payment methods, business units, and costs in a single unified dashboard with global search capabilities across the organization’s payment data.
+* [Analytics and insights](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations): Access all payment-related data from different PSPs, payment methods, business units, and costs in a single unified dashboard with global search capabilities across the organization's payment data.
 * [Zero ops burden](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team): Automate routine tasks like settlements and reconciliations to save time and manage teams with different profiles and roles directly from the dashboard.
 
 ## Merchant-Centric Capabilities
@@ -43,22 +44,22 @@ Hyperswitch empowers banks to provide merchants with tools to improve customer e
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Payment Orchestration</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#payment-orchestration">#payment-orchestration</a></td></tr><tr><td><mark style="color:blue;">Checkout Experience</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#checkout-experience">#checkout-experience</a></td></tr><tr><td><mark style="color:blue;">Security and Compliance</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#security-and-compliance">#security-and-compliance</a></td></tr><tr><td><mark style="color:blue;">Simplified Operations</mark></td><td></td><td></td><td><a href="for-banks-and-financial-institutions.md#simplified-operations">#simplified-operations</a></td></tr></tbody></table>
 
-#### Payment Orchestration
+### Payment Orchestration
 
 * [Smart routing](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/smart-router): Route transactions across PSPs in real time to boost authentication, and optimise payment costs.
 * [Global and local integrations](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors): Offer no-code integration with 70+ connectors for 150+ payment methods and wallets, ensuring better conversions by fulfilling diverse payment preferences.
 
-#### Checkout Experience
+### Checkout Experience
 
 * [Custom checkout experiences](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide): Create branded, user-friendly checkout pages that provide a native, redirect-free payment experience, reducing drop-offs and increasing sales.
 * <mark style="color:blue;">Authentication</mark>: Enable advanced authentication methods like [Native 3DS](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/3ds-decision-manager/native-3ds-authentication-for-mobile-payments) and [Click to Pay](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/click-to-pay) in the user journey without increasing friction.
 
-#### Security and Compliance
+### Security and Compliance
 
 * [Tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards): Ensure world-class security for customer and payment details with PCI-compliant tokenization, providing safe and secure storage with Hyperswitch Vault.
 * [Fully managed compliance](https://docs.hyperswitch.io/explore-hyperswitch/overview): Get rid of hassle of fulfilling the ever advancing compliance needs, enabling you to focus on your core business
 
-#### Simplified Operations
+### Simplified Operations
 
 * [Control center](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup): Manage everything from connectors, payment methods, transactions to teams from a single, easy-to-use dashboard.
 
