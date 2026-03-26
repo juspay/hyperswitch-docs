@@ -1,10 +1,7 @@
 ---
-description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
-  AWS quickly
+description: Deploy Control Center to manage payments through the web dashboard
 icon: building-columns
 ---
-
 # Deploy Control Center
 
 ## Video
@@ -118,7 +115,7 @@ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
 ### Step 3 - Setup Hyperswitch
 
-You can now deploy the hyperswitch application by running the below command in the same terminal session.
+You can now deploy the Hyperswitch application by running the below command in the same terminal session.
 
 {% hint style="info" %}
 Takes around 10-15 min to execute successfully
@@ -127,7 +124,6 @@ Takes around 10-15 min to execute successfully
 ```json
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_aws_setup.sh | bash
 ```
-
 
 
 Once the script is executed, you will receive a `Public IP` as the response (e.g. `http://34.207.75.225`). This IP is the base URL for accessing the application's APIs

@@ -1,7 +1,6 @@
 ---
-description: Deploy the Hyperswitch Card Vault on the cloud
+description: Deploy 🔐 card vault to securely store sensitive payment card data
 ---
-
 # 🔐 Deploy card vault
 
 {% hint style="info" %}

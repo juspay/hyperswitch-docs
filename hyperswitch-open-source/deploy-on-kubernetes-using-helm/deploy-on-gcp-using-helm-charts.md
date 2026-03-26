@@ -1,3 +1,7 @@
+---
+description: Deploy GCP Helm Charts on Kubernetes for containerized payment infrastructure
+---
+
 # Deploy on GCP Using Helm Charts
 
 {% hint style="info" %}
@@ -6,7 +10,7 @@
 
 Part 1: Setting Up a Kubernetes Cluster on GCP
 
-#### Step 1: Set Up GCP Account and Enable Kubernetes Engine API
+### Step 1: Set Up GCP Account and Enable Kubernetes Engine API
 
 1. **Sign In to Google Cloud Console**:
 
@@ -44,7 +48,7 @@ If you are using an existing project, note the project ID for later use.
 You'll need to provide billing information in order to proceed further. Follow the necessary steps and ensure the Kubernetes Engine API is enabled.
 {% endhint %}
 
-#### Step 2: Install Required Tools
+### Step 2: Install Required Tools
 
 1. **Google Cloud CLI (`gcloud`)**
 
@@ -62,7 +66,7 @@ Ensure you only have 1 version of kubectl installed to avoid enviornmental confl
 
 Helm is a package manager for Kubernetes applications. To install Helm, please refer to the [official Helm documentation](https://helm.sh/docs/intro/install/#through-package-managers).
 
-#### Step 3: Create a Kubernetes Cluster
+### Step 3: Create a Kubernetes Cluster
 
 1. **Create the Cluster**:
 
@@ -88,7 +92,7 @@ Example:
 gcloud container clusters create hypers-cluster \
     --zone us-central1-a \
     --num-nodes 1 \
-    --machine-type e2-standard-4    
+    --machine-type e2-standard-4
 ```
 
 {% hint style="info" %}
@@ -102,6 +106,7 @@ Choose a **--zone** that's near you
     ```bash
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE>
     ```
+
 *   Confirm the nodes are ready:
 
     ```bash
@@ -110,7 +115,7 @@ Choose a **--zone** that's near you
 
 ## Part 2: Deploy Hyperswitch on Kubernetes Using Helm
 
-#### Step 1: Add and Update the Hyperswitch Helm Repository
+### Step 1: Add and Update the Hyperswitch Helm Repository
 
 1. Add the Hyperswitch Helm repository:
 
@@ -123,7 +128,7 @@ helm repo add hyperswitch https://juspay.github.io/hyperswitch-helm
 <pre><code><strong>helm repo update
 </strong></code></pre>
 
-#### Step 2: Prepare the Kubernetes Cluster
+### Step 2: Prepare the Kubernetes Cluster
 
 1. **Label Kubernetes Nodes**: Ensure nodes meet the minimum requirements: **4 CPUs and 6GB memory**.
 
@@ -147,7 +152,7 @@ kubectl get nodes --show-labels
 kubectl create namespace hyperswitch
 ```
 
-#### Step 3: Install Hyperswitch
+### Step 3: Install Hyperswitch
 
 1. Deploy Hyperswitch using Helm. Replace `<release-name>` with your desired release name and `<namespace>` with the namespace you created:
 
@@ -159,7 +164,7 @@ helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 
 * Check the status of all deployed pods:
 
-<pre><code><strong>kubectl get pods -n hyperswitch
+<pre><code><strong>kubectl get pods -n Hyperswitch
 </strong></code></pre>
 
 * Ensure all pods are in the `Running` state.
@@ -210,18 +215,18 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 
 * **View Pod Logs:** To check logs for a specific pod in Google Kubernetes Engine (GKE):
 
-<pre class="language-sh"><code class="lang-sh"><strong>kubectl logs &#x3C;pod-name> -n hyperswitch
+<pre class="language-sh"><code class="lang-sh"><strong>kubectl logs &#x3C;pod-name> -n Hyperswitch
 </strong></code></pre>
 
 * **View Events:** To list events in the namespace sorted by creation time:
 
-<pre class="language-sh"><code class="lang-sh"><strong>kubectl get events -n hyperswitch --sort-by='.metadata.creationTimestamp'
+<pre class="language-sh"><code class="lang-sh"><strong>kubectl get events -n Hyperswitch --sort-by='.metadata.creationTimestamp'
 </strong></code></pre>
 
 * **Deploy Hyperswitch Helm Chart on GKE:** If deploying for the first time or reinstalling, run:
 
-<pre class="language-sh"><code class="lang-sh"><strong>helm uninstall hypers-v1 -n hyperswitch
-</strong>helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
+<pre class="language-sh"><code class="lang-sh"><strong>helm uninstall hypers-v1 -n Hyperswitch
+</strong>helm install hypers-v1 hyperswitch/hyperswitch-stack -n Hyperswitch
 </code></pre>
 
 ### **Customization & Configuration**

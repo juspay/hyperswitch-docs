@@ -1,3 +1,7 @@
+---
+description: Test payments to verify your integration works correctly before going live
+---
+
 # Update Helm Charts to Hyperswitch's Latest Nightly Release
 
 Update charts/incubator/hyperswitch-stack/values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.

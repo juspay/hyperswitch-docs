@@ -1,7 +1,7 @@
 ---
+description: Test payments to verify your integration works correctly before going live
 icon: money-bills
 ---
-
 # Test a payment
 
 ## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>

@@ -1,7 +1,6 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Explore Integrate web client on your web app to enhance your payment orchestration capabilities
 ---
-
 # Integrate web client on your web app
 
 {% hint style="info" %}
@@ -16,7 +15,7 @@ If your web app is in other tech stack (for eg., React, Angular, etc.), you can 
 
 ### 1. Build checkout page on the client <a href="#id-2-build-checkout-page-on-the-client" id="id-2-build-checkout-page-on-the-client"></a>
 
-#### 1.1 Load HyperLoader <a href="#id-21-load-hyperloader" id="id-21-load-hyperloader"></a>
+### 1.1 Load HyperLoader <a href="#id-21-load-hyperloader" id="id-21-load-hyperloader"></a>
 
 Use `HyperLoader` to accept payment details from your customer and send them to the your hosted app server. Load `HyperLoader` from `https://{{YOUR_WEB_CLIENT_URL}}/HyperLoader.js`
 
@@ -24,7 +23,7 @@ Use `HyperLoader` to accept payment details from your customer and send them to 
 <script src="https://{{YOUR_WEB_CLIENT_URL}}/HyperLoader.js"></script>
 ```
 
-#### 1.2 Define the payment form <a href="#id-22-define-the-payment-form" id="id-22-define-the-payment-form"></a>
+### 1.2 Define the payment form <a href="#id-22-define-the-payment-form" id="id-22-define-the-payment-form"></a>
 
 Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
 
@@ -41,7 +40,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 </form>
 ```
 
-#### 1.3 Initialize HyperLoader <a href="#id-23-initialize-hyperloader" id="id-23-initialize-hyperloader"></a>
+### 1.3 Initialize HyperLoader <a href="#id-23-initialize-hyperloader" id="id-23-initialize-hyperloader"></a>
 
 Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client.
 
@@ -49,7 +48,7 @@ Initialize `HyperLoader` onto your app with your publishable key with the `Hyper
 const hyper = Hyper("YOUR_PUBLISHABLE_KEY");
 ```
 
-#### 1.4 Fetch the Payment and create the Unified Checkout <a href="#id-24-fetch-the-payment-and-create-the-unified-checkout" id="id-24-fetch-the-payment-and-create-the-unified-checkout"></a>
+### 1.4 Fetch the Payment and create the Unified Checkout <a href="#id-24-fetch-the-payment-and-create-the-unified-checkout" id="id-24-fetch-the-payment-and-create-the-unified-checkout"></a>
 
 Immediately make a request to the endpoint on your server to create a new `Payment` as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -85,7 +84,7 @@ async function initialize() {
 
 ### 2. Complete payment on the client <a href="#id-3-complete-payment-on-the-client" id="id-3-complete-payment-on-the-client"></a>
 
-#### 2.1 Handle the submit event and complete the payment <a href="#id-31-handle-the-submit-event-and-complete-the-payment" id="id-31-handle-the-submit-event-and-complete-the-payment"></a>
+### 2.1 Handle the submit event and complete the payment <a href="#id-31-handle-the-submit-event-and-complete-the-payment" id="id-31-handle-the-submit-event-and-complete-the-payment"></a>
 
 Listen to the form’s submit event to know when to confirm the payment through the hyper API.
 
@@ -132,7 +131,7 @@ async function handleSubmit(e) {
 Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 {% endhint %}
 
-#### 2.2 Display a payment status message <a href="#id-32-display-a-payment-status-message" id="id-32-display-a-payment-status-message"></a>
+### 2.2 Display a payment status message <a href="#id-32-display-a-payment-status-message" id="id-32-display-a-payment-status-message"></a>
 
 When Hyper redirects the customer to the `return_url`, the `payment_intent_client_secret` query parameter is appended by `HyperLoader`. Use this to retrieve the Payment to determine what to show to your customer.
 
@@ -178,8 +177,10 @@ The web client allows you to customize the appearance according to your web app 
 
 * **I am getting an error while loading the HyperLoader.js script**\
   Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\\
+
 * **I am unable to see the SDK running, or it is in a perpetual loading state**\
   Please make sure that the correct publishable key is used to instantiate the SDK.\\
+
 * **After completing the payment, I am redirected to a non existent web page**\
   Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
 

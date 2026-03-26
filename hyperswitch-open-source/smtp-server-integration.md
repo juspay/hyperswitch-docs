@@ -1,7 +1,7 @@
 ---
+description: Integrate SMTP Server with Hyperswitch to enable seamless payment processing
 icon: at
 ---
-
 # SMTP Server Integration
 
 Previously, **Hyperswitch** relied solely on **AWS SES** for sending emails during signup and login flows. As we grew, many merchants requested support for **other email service providers** to better align with their existing infrastructure.
@@ -27,14 +27,17 @@ timeout = 10              # Timeout for SMTP connection in seconds
 connection = "plaintext"  # Supported values: "plaintext", "starttls"
 ```
 
-#### Details
+### Details
 
 * **host**: SMTP server hostname used to send emails.\
   &#xNAN;_&#x45;xample_: `"smtp.gmail.com"` or `"mailhog"` for local testing
+
 * **port**: Port on which the SMTP server is listening.\
   &#xNAN;_&#x45;xample_: `587` (for STARTTLS), `25`, or `1025` (for MailHog)
+
 * **timeout**: Maximum time (in seconds) to wait while connecting to the SMTP server.\
   &#xNAN;_&#x45;xample_: `10`
+
 * **connection**: Type of SMTP connection.\
   &#xNAN;_&#x45;xample_: `"starttls"` (recommended) or `"plaintext"` (insecure; for development only)
 

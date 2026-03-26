@@ -1,7 +1,6 @@
 ---
-description: Quickly deploy your web client playground and see it in action
+description: Deploy Playground deployment for prototyping (optional) to enable payment processing capabilities
 ---
-
 # Playground deployment for prototyping (optional)
 
 {% hint style="info" %}
@@ -22,7 +21,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 >
 > You can directly start from [Step 3](playground-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
-#### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="Linux x86 (64-bit)" %}
@@ -89,7 +88,7 @@ which aws
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-#### Step 2 - Configure the AWS CLI
+### Step 2 - Configure the AWS CLI
 
 For this step you would need the following from you AWS account
 
@@ -107,7 +106,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch web client playground
+### Step 3 - Setup Hyperswitch web client playground
 
 {% hint style="danger" %}
 The playground can help you get a look and feel of your checkout page and can be used for quickly prototyping your changes. The `React Demo App` in `hyperswitch-web` setups the playground for you-> which is a fullstack application. We ensure that the **secret key stays in the server side** and the publishable key stays in the client side, we insist you do the same for your application when you move to a Production ready setup
@@ -152,7 +151,7 @@ That's it! Hyperswitch web client should be up and running on your AWS account
 Verify the application by opening this public IP in a web browser. Sometimes AWS can take upto 5 mins to initiate the EC2 instance.
 {% endhint %}
 
-#### Clean Up
+### Clean Up
 
 If you want to delete the application from your account simply run the below clean up script
 

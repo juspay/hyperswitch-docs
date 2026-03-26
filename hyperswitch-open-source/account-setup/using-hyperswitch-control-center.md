@@ -1,10 +1,7 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider via the control
-  center
+description: Explore Using Hyperswitch Control Center to enhance your payment orchestration capabilities
 icon: building-columns
 ---
-
 # Using Hyperswitch Control Center
 
 ## Video <a href="#user-content-set-up-your-merchant-account" id="user-content-set-up-your-merchant-account"></a>

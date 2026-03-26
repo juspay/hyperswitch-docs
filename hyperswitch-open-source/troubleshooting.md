@@ -1,10 +1,7 @@
 ---
-description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+description: Troubleshoot common issues to ensure smooth payment operations
 icon: hammer-brush
 ---
-
 # Troubleshooting
 
 ## System Health Check

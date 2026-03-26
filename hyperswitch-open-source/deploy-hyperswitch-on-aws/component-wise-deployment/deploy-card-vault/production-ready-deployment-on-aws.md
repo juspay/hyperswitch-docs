@@ -1,7 +1,6 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: Deploy Production ready deployment AWS on AWS infrastructure for scalable payment processing
 ---
-
 # Production ready deployment on AWS
 
 {% hint style="info" %}
