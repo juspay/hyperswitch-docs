@@ -1,47 +1,48 @@
 ---
 hidden: true
 noIndex: true
+description: Understand payment orchestration concepts and implementation guidance to optimize your payment infrastructure
 ---
 
 # Payment Orchestration FAQ
 
-### What is payment orchestration?
+## What is payment orchestration?
 
 Payment orchestration is a control layer that sits between your application and multiple payment processors or acquirers. It provides a unified API while enabling routing, retries, failover, observability, and optimization across providers.
 
 Processors continue to handle authorization, clearing, and settlement. The orchestration layer determines how and where transactions are processed.
 
-If you're new to Hyperswitch, start here:
+If you are new to Hyperswitch, start here:
 
 * [What is Hyperswitch?](https://docs.hyperswitch.io/about-hyperswitch/readme-2)
 * [Architecture Overview](https://hyperswitch.io/blog/building-hyperswitch-the-world-s-first-open-source-payments-platform)
 
-### Does orchestration replace my payment processor?
+## Does orchestration replace my payment processor?
 
 No. Orchestration complements processors.
 
-Processors:
+**Processors:**
 
 * Connect to card networks
 * Authorize and settle transactions
 * Provide risk tooling
 
-Orchestration:
+**Orchestration:**
 
 * Routes transactions
 * Applies retry and failover logic
 * Normalizes responses
 * Centralizes configuration
-* Enables cross-PSP reporting
+* Enables cross-processor reporting
 
 For implementation details, see:
 
 * [Connector Integration](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
-* [Payments API Reference](https://api-reference.hyperswitch.io/introduction?_gl=1*1bcxxw7*_gcl_au*MTI0MjY2OTQyLjE3NjU5ODIzNTE.*_ga*MTY2MzIzNjM1OC4xNzI3NjA1NDEy*_ga_1X38KQVJ1S*czE3NzI0MjY1OTUkbzIzMiRnMSR0MTc3MjQyNzYwNSRqMjIkbDAkaDA.*_fplc*ZCUyRjdYWkhSbjAyaTRFM0I4TWRLalZzN00lMkJ6bjhyb2V0UTgyY2hNMEN5dUVLMkFmdUNEeWQlMkZjYUh6YnlKdGxnS1BLTFJzUHRFM0xoRyUyRnd0VHJjT2QxTGxOMXRib1FDJTJGU2QzQTRDdVRYb2hEaXk2dkpFQVQlMkJUYmlQQ0xaMnpRJTNEJTNE)
+* [Payments API Reference](https://api-reference.hyperswitch.io/introduction)
 
-### Why would I need orchestration if I already use a PSP?
+## Why would I need orchestration if I already use a payment service provider?
 
-A single PSP may be sufficient early on. Orchestration becomes relevant when payments materially impact revenue, cost, or availability.
+A single payment service provider (PSP) may be sufficient early on. Orchestration becomes relevant when payments materially impact revenue, cost, or availability.
 
 Common triggers include:
 
@@ -49,13 +50,13 @@ Common triggers include:
 * Reducing processing costs
 * Expanding to multiple regions
 * Avoiding single-provider dependency
-* Supporting marketplace or ISV complexity
+* Supporting marketplace or independent software vendor (ISV) complexity
 
 For routing and configuration examples:
 
 * [Routing Documentation](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing)
 
-### How does orchestration improve authorization rates?
+## How does orchestration improve authorization rates?
 
 Approval improvements typically come from:
 
@@ -68,7 +69,7 @@ For technical details:
 
 * [Routing Rules Configuration](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing)
 
-### How does orchestration reduce processing costs?
+## How does orchestration reduce processing costs?
 
 Cost optimization may involve:
 
@@ -81,7 +82,7 @@ To configure cost-based routing:
 
 * [Connector Matrix](https://juspay.io/integrations)
 
-### How complex is it to implement?
+## How complex is it to implement?
 
 Implementation typically involves:
 
@@ -97,9 +98,9 @@ Start here:
 
 For API details:
 
-* [API Reference](https://api-reference.hyperswitch.io/introduction?_gl=1*1bcxxw7*_gcl_au*MTI0MjY2OTQyLjE3NjU5ODIzNTE.*_ga*MTY2MzIzNjM1OC4xNzI3NjA1NDEy*_ga_1X38KQVJ1S*czE3NzI0MjY1OTUkbzIzMiRnMSR0MTc3MjQyNzYwNSRqMjIkbDAkaDA.*_fplc*ZCUyRjdYWkhSbjAyaTRFM0I4TWRLalZzN00lMkJ6bjhyb2V0UTgyY2hNMEN5dUVLMkFmdUNEeWQlMkZjYUh6YnlKdGxnS1BLTFJzUHRFM0xoRyUyRnd0VHJjT2QxTGxOMXRib1FDJTJGU2QzQTRDdVRYb2hEaXk2dkpFQVQlMkJUYmlQQ0xaMnpRJTNEJTNE)
+* [API Reference](https://api-reference.hyperswitch.io/introduction)
 
-### Can I migrate gradually?
+## Can I migrate gradually?
 
 Yes. Migration can be done incrementally using routing rules or traffic splitting.
 
@@ -110,7 +111,7 @@ Common strategies:
 * Run A/B comparisons across processors
 * Enable instant rollback
 
-### What happens if the orchestration layer fails?
+## What happens if the orchestration layer fails?
 
 High availability depends on deployment architecture.
 
@@ -125,7 +126,7 @@ See:
 
 * [Deployment Guide](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1)
 
-### How does orchestration affect PCI compliance?
+## How does orchestration affect PCI compliance?
 
 Compliance impact depends on deployment model and integration pattern.
 
@@ -140,7 +141,7 @@ For more details:
 
 * [Security and Compliance Overview](https://docs.hyperswitch.io/explore-hyperswitch/security-and-compliance)
 
-### How does orchestration handle multiple payment methods?
+## How does orchestration handle multiple payment methods?
 
 Orchestration normalizes payment methods across connectors while preserving connector-specific capabilities.
 
@@ -157,7 +158,7 @@ See:
 * [Supported Payment Methods](https://juspay.io/integrations)
 * [Connector Documentation](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
-### How does reporting and reconciliation work?
+## How does reporting and reconciliation work?
 
 Hyperswitch centralizes transaction metadata and routing decisions, enabling unified reporting across processors.
 
@@ -168,4 +169,4 @@ For logging and monitoring:
 
 This simplifies:
 
-* [Cross-PSP reconciliation](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/reconciliation-product)
+* [Cross-processor reconciliation](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/reconciliation-product)
