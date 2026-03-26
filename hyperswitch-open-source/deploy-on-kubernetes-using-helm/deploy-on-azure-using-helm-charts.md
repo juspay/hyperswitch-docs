@@ -1,18 +1,22 @@
-# Deploy on Azure Using Helm Charts
+---
+description: Deploy Hyperswitch on Azure Kubernetes Service using Helm charts to orchestrate scalable payment infrastructure in the cloud
+---
 
-### Prerequisites
+# Deploy on Azure using Helm charts
+
+## Prerequisites
 
 {% hint style="info" %}
-**Note:** This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the **Developer Support Plan ($29/month)** to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
+**Note:** This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, upgrading to the **Developer Support Plan ($29/month)** is recommended to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
 {% endhint %}
 
 Ensure the following tools are installed and configured:
 
 **1. Azure CLI**
 
-The Azure Command-Line Interface (CLI) is a cross-platform tool that allows you to manage Azure resources. To install please visit the[ official Microsoft ](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)documentation.
+The Azure Command-Line Interface (CLI) is a cross-platform tool that allows you to manage Azure resources. To install please visit the [official Microsoft](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) documentation.
 
-Before setting up AKS, you'll need to [create an Azure account](https://signup.azure.com/signup?offer=ms-azr-0044p\&appId=102\&ref=\&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%3Fsrc%3Dacom_free\&l=en-us). Simply follow the on-screen instructions. Note that billing information will be required during the sign-up process.
+Before setting up AKS, you'll need to [create an Azure account](https://signup.azure.com/signup?offer=ms-azr-0044p&appId=102&ref=&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%3Fsrc%3Dacom_free&l=en-us). Simply follow the on-screen instructions. Note that billing information will be required during the sign-up process.
 
 **2. kubectl**
 
@@ -22,7 +26,7 @@ Before setting up AKS, you'll need to [create an Azure account](https://signup.a
 
 Helm is a package manager for Kubernetes applications. To install please refer to [helm documentation](https://helm.sh/docs/intro/install/#through-package-managers).
 
-### **Part 1: Setting Up AKS**
+## Part 1: Setting Up AKS
 
 1. **Log In to Azure**
 
@@ -60,13 +64,13 @@ To use AKS, you must register the `Microsoft.Compute` resource provider:
 az provider register --namespace Microsoft.Compute
 ```
 
-If the registration state shows `"Registering"`, wait a few minutes for it to complete. You can check the current state with:
+If the registration state shows `Registering`, wait a few minutes for it to complete. You can check the current state with:
 
 ```bash
 az provider show --namespace Microsoft.Compute --query "registrationState"
 ```
 
-Proceed once the status returns `"Registered"`.
+Proceed once the status returns `Registered`.
 
 4. **Register the Operational Insights Resource Provider**
 
@@ -82,7 +86,7 @@ You can check the registration status with:
 az provider show --namespace Microsoft.OperationalInsights --query "registrationState"
 ```
 
-Wait until the status shows `"Registered"` before proceeding.
+Wait until the status shows `Registered` before proceeding.
 
 5. **Register the Microsoft.ContainerService Provider**
 
@@ -102,8 +106,8 @@ az provider show --namespace Microsoft.ContainerService --query "registrationSta
 
 Wait until the output returns:
 
-```bash
-"Registered"
+```
+Registered
 ```
 
 Once it's registered, you can proceed with creating your AKS cluster.
@@ -113,7 +117,7 @@ Once it's registered, you can proceed with creating your AKS cluster.
 Create an AKS cluster with your specified parameters. Replace `<resource-group-name>` with your resource group name, `<cluster-name>` with your desired AKS cluster name, and adjust other parameters as needed:
 
 {% hint style="warning" %}
-If you encounter limitations with the `Standard_A4_v2` VM size, consider upgrading to the **Developer Support Plan ($29/month)** to increase your regional vCPU quota and enable successful cluster provisioning. If you do upgrade to the support plan, try the `Standard_D4_v3` for the `node-vm-size` .
+If you encounter limitations with the `Standard_A4_v2` VM size, consider upgrading to the **Developer Support Plan ($29/month)** to increase your regional vCPU quota and enable successful cluster provisioning. If you do upgrade to the support plan, try the `Standard_D4_v3` for the `node-vm-size`.
 {% endhint %}
 
 ```bash
@@ -159,7 +163,7 @@ Run the following to ensure you're connected and the node is active:
 kubectl get nodes
 ```
 
-You should see an output similar to the one below. Make sure to note the **Name** of your node. You’ll need it in Part 2
+You should see an output similar to the one below. Make sure to note the **Name** of your node. You'll need it in Part 2:
 
 ```
 NAME                                STATUS   ROLES    AGE    VERSION
@@ -168,7 +172,7 @@ aks-nodepool1-40058682-vmss000000   Ready    <none>   3m6s   v1.31.8
 
 You should see your AKS node listed in the output. If so, you're now connected and ready to deploy to your cluster!
 
-### **Part 2: Deploy Hyperswitch Using Helm**
+## Part 2: Deploy Hyperswitch Using Helm
 
 1. **Add the Hyperswitch Helm Repository**
 
@@ -212,7 +216,7 @@ kubectl create namespace <namespace>
 kubectl create namespace hyperswitch
 ```
 
-This creates a namespace called `hyperswitch-dev` where you can deploy and manage related workloads separately from other environments.
+This creates a namespace called `hyperswitch` where you can deploy and manage related workloads separately from other environments.
 
 3. **Install Hyperswitch**
 
@@ -260,7 +264,7 @@ helm list -n hyperswitch
 
 That's it! Hyperswitch should be up and running on your Azure account 🎉
 
-### Expose Hyperswitch Services Locally
+## Expose Hyperswitch services locally
 
 Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
 
@@ -284,25 +288,25 @@ Access the services at:
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 A magic link will be sent to [Mailhog](http://localhost:8025/). Click on the link in white:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, you’ll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
+Afterwards, you'll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
 
-### Test a payment
+## Test a payment
 
-Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
+You can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
 
-Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
+Refer to the [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
 
-### Explore Further
+## Explore further
 
 Once you are done with the test payment, you can explore more about these:
 
-### **Uninstall Hyperswitch & Delete AKS Cluster**
+## Uninstall Hyperswitch and delete AKS cluster
 
 1. **Uninstall Hyperswitch:**
 
@@ -312,54 +316,62 @@ helm uninstall <release-name> -n <namespace>
 
 **Example**:
 
-`helm uninstall hyperswitch -n hyperswitch`
+```
+helm uninstall hyperswitch -n hyperswitch
+```
 
 2. **Delete the namespace:**
 
-`kubectl delete namespace <namespace>`
+```
+kubectl delete namespace <namespace>
+```
 
 **Example**:
 
-`kubectl delete namespace hyperswitch`
+```
+kubectl delete namespace hyperswitch
+```
 
 3. **Delete the AKS cluster completely**:
 
 ```sh
-az aks delete --name <cluster-name> --resource-group <resource-group> --yes --no-wai
+az aks delete --name <cluster-name> --resource-group <resource-group> --yes --no-wait
 ```
 
-**Example**:
+**Example:**
 
 ```
 az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
 ```
 
-### **Troubleshooting**
+## Troubleshooting
 
-*   **View Pod Logs**:
+* **View Pod Logs**:
 
-    To view logs for a specific pod:
+To view logs for a specific pod:
 
-    ```bash
-    kubectl logs <pod-name> -n <namespace>
-    ```
-*   **View Events**:
+```bash
+kubectl logs <pod-name> -n <namespace>
+```
 
-    To view events in the namespace:
+* **View Events**:
 
-    ```bash
-    kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
-    ```
-*   **Reinstall Chart**:
+To view events in the namespace:
 
-    If issues persist, uninstall and reinstall Hyperswitch:
+```bash
+kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
+```
 
-    ```bash
-    helm uninstall <release-name> -n <namespace>
-    helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
-    ```
+* **Reinstall Chart**:
 
-### **Customization & Configuration**
+If issues persist, uninstall and reinstall Hyperswitch:
+
+```bash
+helm uninstall <release-name> -n <namespace>
+helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
+```
+
+## Customization & Configuration
 
 To customize Hyperswitch, clone the Helm chart repository and modify `values.yaml`:
 

@@ -1,8 +1,9 @@
 ---
+description: Set up Hyperswitch locally using Docker to run all components with one command
 icon: badge-check
 ---
 
-# Run Hyperswitch Locally Using Docker
+# Run Hyperswitch locally using Docker
 
 {% embed url="https://youtu.be/6yJCvskbc80" %}
 
@@ -10,9 +11,9 @@ icon: badge-check
 This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 {% endhint %}
 
-## Setup using Docker
+## Set up using Docker
 
-You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
+You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). Docker Desktop is recommended for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
 {% hint style="warning" %}
 You can alternatively use [Podman](https://podman.io/) or [Orbstack](https://orbstack.dev/) (for macOS) instead of docker.
@@ -37,12 +38,12 @@ The above command will:
 * Start the selected services
 * Provide link to access various components
 
-If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
+If you're **looking to contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).
 
 {% hint style="info" %}
 **Have Questions?**\
-Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
-Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
+Join the [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Prefer direct support? Use the [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
 ## Next step:
