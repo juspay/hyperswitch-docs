@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Identity and Access Management to enhance your payment orchestration capabilities
 icon: id-card-clip
 ---
-
 # Identity and Access Management
 
 Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.

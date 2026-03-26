@@ -1,10 +1,10 @@
 ---
-description: Setup custom domains
+description: >-
+  Set up Custom Domain to start processing payments quickly
 ---
-
 # Setup Custom Domain
 
-A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
+A custom domain name can be used for payment links. This is your own domain name which is configured at Hyperswitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
 ## How to setup custom domain within your cloud
 
@@ -36,13 +36,11 @@ Step 2: Locate the page to manage the DNS for your domain
 
 Step 3: Create CNAME record
 
-> In your DNS control panel, create a new record that associates your chosen subdomain with 'hyperswitch payment link'. Your DNS provider will typically prompt you to specify the record type, name, value, and TTL (Time To Live) or expiration when adding a new record.
+> In your DNS control panel, create a new record that associates your chosen subdomain with 'Hyperswitch payment link'. Your DNS provider will typically prompt you to specify the record type, name, value, and TTL (Time To Live) or expiration when adding a new record.
 
 Enter the following values and save the new DNS record.
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
-
-Step 4: Create your TXT record
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.Hyperswitch` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. | Step 4: Create your TXT record
 
 > Navigate to your DNS control panel and proceed to add a new TXT record.
 
@@ -50,9 +48,7 @@ Step 4: Create your TXT record
 
 > Enter these values and save the new DNS record:
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `TXT` from the dropdown | What kind of DNS record this is. | | Name | If your custom domain is `paymentlink.xyz.com`, enter \_acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. | | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.|
-
-Step 5. Verify your CNAME record setup
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `TXT` from the dropdown | What kind of DNS record this is. | | Name | If your custom domain is `paymentlink.xyz.com`, enter \_acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. | | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.| Step 5. Verify your CNAME record setup
 
 > After you save your DNS record, verify that it has the correct values.
 
@@ -65,7 +61,7 @@ $ nslookup -querytype=CNAME paymentlink.xyz.com
 your should get a output like this
 
 ```shell
-<your subdomain> 	canonical name = sandbox.hyperswitch.io.
+<your subdomain> 	canonical name = sandbox.Hyperswitch.
 ```
 
 Once you observe the output, proceed to the next step.
@@ -96,4 +92,4 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 
-After you have setup custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.
+After you have setup custom domain in your cloud, you need to get respective Google Pay, Apple Pay certificate for your new domain, and register the same in our dashboard.

@@ -1,3 +1,8 @@
+---
+description: >-
+  Handle reconciliation exceptions to maintain financial data integrity and accuracy
+---
+
 # Exception Handling
 
 ## Module: Reconciliation Exception Handling

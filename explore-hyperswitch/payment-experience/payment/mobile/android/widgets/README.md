@@ -1,10 +1,9 @@
 ---
 description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
+  Explore Widgets to enhance your payment orchestration capabilities
   control over your payment flow.
 icon: cubes
 ---
-
 # Widgets
 
 <div align="center"><figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_200303.jpeg" alt="" width="375"><figcaption></figcaption></figure></div>
@@ -19,7 +18,7 @@ icon: cubes
 ## 1. Setup the server
 
 ```js
-$ npm install @juspay-tech/hyperswitch-node
+$ npm install @juspay-tech/Hyperswitch-node
 ```
 
 Follow the [Server Setup](../../../server-setup.md) section.
@@ -35,7 +34,7 @@ To start integrating the Hyperswitch SDK, add the following classpath to the `bu
         mavenCentral()
     }
     dependencies {
-        classpath "io.hyperswitch:hyperswitch-gradle-plugin:<a data-footnote-ref href="#user-content-fn-1">$latest_version</a>"
+        classpath "io.Hyperswitch:Hyperswitch-gradle-plugin:<a data-footnote-ref href="#user-content-fn-1">$latest_version</a>"
     }
 }
 </code></pre>
@@ -91,4 +90,4 @@ Congratulations! You have successfully integrated Hyperswitch widgets into your 
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
 
-[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
+[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.Hyperswitch/Hyperswitch-gradle-plugin/versions)

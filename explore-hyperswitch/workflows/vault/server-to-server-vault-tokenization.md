@@ -1,11 +1,10 @@
 ---
 description: >-
-  Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
+  Implement secure vault solutions to protect sensitive payment card data
   merchants
 hidden: true
 icon: server
 ---
-
 # Server to Server Vault tokenization
 
 ### Secure, Direct Card Tokenization from Your Server
@@ -50,17 +49,17 @@ To generate your Vault API keys, follow these steps:
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 {% endhint %}
 
-#### 1. Create a Customer
+### 1. Create a Customer
 
 * Endpoint: `POST /customers`
 * Purpose: Create a customer to enable storing their payment methods
 
 ```bash
-curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
+curl --location 'http://sandbox.Hyperswitch/v2/customers' \
 --header 'Content-Type: application/json' \
 --header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api_key>' \
---data-raw '{   
+--data-raw '{
     "merchant_reference_id": "customer_1742551597",
     "name": "John Doe",
     "email": "guest@example.com",
@@ -97,7 +96,7 @@ curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
 }'
 ```
 
-#### 2. Create a Payment Method Token
+### 2. Create a Payment Method Token
 
 * Endpoint: `POST /payment_methods`
 * Purpose: Generate a token for a card
@@ -252,7 +251,7 @@ curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
 }'
 ```
 
-#### 2. Retrieve a Payment Method Token
+### 2. Retrieve a Payment Method Token
 
 * Endpoint: `GET /payment_methods/:pm_id`
 * Purpose: Fetch details of an existing token.
@@ -263,7 +262,7 @@ curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id
 --header 'api-key: <api-key>'
 ```
 
-#### 3. Update a Payment Method Token
+### 3. Update a Payment Method Token
 
 * Endpoint: `PATCH /payment_methods/:pm_id/update_saved_payment_method`
 * Purpose: Modify token details.
@@ -287,7 +286,7 @@ curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/pay
 }'
 ```
 
-#### 4. Delete a Payment Method Token
+### 4. Delete a Payment Method Token
 
 * Endpoint: `DELETE /payment_methods/:pm_id`
 * Purpose: Remove a token from the vault.

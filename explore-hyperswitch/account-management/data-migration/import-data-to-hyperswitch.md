@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Import data to Hyperswitch to enhance your payment orchestration capabilities
 icon: right-from-bracket
 ---
-
 # Import data to Hyperswitch
 
 We help you with smooth migration from your current payment processor, ensuring uninterrupted business operations.

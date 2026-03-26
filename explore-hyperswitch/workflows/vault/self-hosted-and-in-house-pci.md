@@ -1,7 +1,8 @@
 ---
+description: >-
+  Understand compliance requirements to ensure secure and regulated payment operations
 icon: box-ballot
 ---
-
 # Self-hosted & in-house PCI
 
 In this deployment, merchants self-host Hyperswitch and also manage their own PCI DSS compliance.

@@ -1,7 +1,8 @@
 ---
+description: >-
+  Implement 3D Secure authentication to reduce fraud and meet compliance requirements
 icon: badge-check
 ---
-
 # 3DS / Strong Customer Authentication
 
 3D Secure (3DS) is an authentication protocol that adds an extra layer of protection to card transactions. It helps confirm that the person making the purchase is the legitimate cardholder, reducing the risk of fraud for both businesses and customers. When 3DS is triggered, the issuing bank may prompt the cardholder to authenticate using methods such as a password, a one-time code sent to their mobile device, or biometric verification. Many customers recognize this experience through familiar card network brands like Visa Secure, Mastercard Identity Check, or American Express SafeKey.

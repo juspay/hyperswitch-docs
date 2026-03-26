@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Alternate Payment Method Widgets to enhance your payment orchestration capabilities
 icon: bolt-lightning
 ---
-
 # Alternate Payment Method Widgets
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
@@ -10,7 +11,7 @@ We support modular, embeddable alternate payment methods (APMs) known as **Hyper
 
 Let us understand with an example-
 
-In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
+In the below checkout screen the merchant only has Cards and PayPal offered by their current PSP.
 
 <figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
 
@@ -37,31 +38,31 @@ in the image below you can find a checkout page with more alternate payment meth
 
 Hyperwidgets are engineered to simplify and streamline the integration of alternate payment methods (APMs) for merchants, regardless of their existing payment setup. The design focuses on providing a modular, embeddable, and low-code solution, reducing the engineering effort traditionally required to add or enhance payment options.
 
-#### Single SDK to manage all APMs
+### Single SDK to manage all APMs
 
-Hyperwidgets come packaged in a single SDK that merchants can integrate into their web app and route some of their APM traffic to. The widget is powered through a javascript which resides in the merchant's top level domain. Thus, it acts as an extension of the merchant checkout and powerful enough to offer a range of payment methods from Express Checkout payment options (like Applepay, Paypal, etc.), wallets ( like Wechatpay, Alipay, etc.), BNPLs (like Klarna, Affirm, etc.) to Bank Debits and Transfers (like ACH, BACS, SEPA, etc.)
+Hyperwidgets come packaged in a single SDK that merchants can integrate into their web app and route some of their APM traffic to. The widget is powered through a javascript which resides in the merchant's top level domain. Thus, it acts as an extension of the merchant checkout and powerful enough to offer a range of payment methods from Express Checkout payment options (like Apple Pay, PayPal, etc.), wallets ( like Wechatpay, Alipay, etc.), BNPLs (like Klarna, Affirm, etc.) to Bank Debits and Transfers (like ACH, BACS, SEPA, etc.)
 
-#### Seamless integration for all tech stacks
+### Seamless integration for all tech stacks
 
 The Hyperwidget provides seamless integration for merchants using different frameworks for their web app. This is done using multiple wrappers like React, HTML, Angular, etc. This ensures a low-code, low-effort integration for the merchants.
 
-#### Configuring PSPs is independent from integration
+### Configuring PSPs is independent from integration
 
 The Hyperwidget integration is a one time effort. To manage the different payment methods across business lines, geographies, etc. the merchant bears no additional overhead. Adding/ removing PSPs and routing the transaction through different PSPs is a dashboard configuration.
 
-#### Modular fit with other integrations
+### Modular fit with other integrations
 
 Merchants can work with multiple PSPs or middle layers, such as subscription providers or orchestration SDKs, without any conflicts from Hyperwidgets. The Hyperwidgets integration fits seamlessly in their existing checkout flow and business logic. They just need to invoke and handle callbacks at the right triggers in their checkout flow.
 
-#### High customization
+### High customization
 
 The Hyperwidgets UI is highly customizable and can completely blend in with the merchant app. Using a customization object, merchants can very easily control the UI parameters like background color, corner radius of the buttons,font size, etc. to match their branding. Some of the examples to highlight the customization options of the checkout are -
 
-#### Unified Analytics and order management
+### Unified Analytics and order management
 
 All the transactions that are processed through Hyperwidgets can be seen on a unified dashboard. The merchant can analyse data at a granular level to understand conversion across different payment methods, filter by customer id, transaction type (3DS, no-3DS), get a summary of failure reasons for failed transactions and much more. The unification is done across the PSPs/ Acquirers for each payment method.
 
-#### Future ready design
+### Future ready design
 
 The engineering ensures support for emerging payment methods and new PSPs without requiring additional engineering work, ensuring a scalable one-time only integration for the merchants.
 

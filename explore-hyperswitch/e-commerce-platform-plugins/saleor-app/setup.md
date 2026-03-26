@@ -1,7 +1,7 @@
 ---
-description: Juspay Saleor Payment App Setup
+description: >-
+  Set up  to start processing payments quickly
 ---
-
 # Setup
 
 Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
@@ -12,7 +12,7 @@ This section covers the steps to setup Juspay payment app through saleor
 
 ### Prerequisites
 
-#### 1. Sign up to payments dashboard
+### 1. Sign up to payments dashboard
 
 **1.1 Non Indian payments dashboard sign up**
 
@@ -28,22 +28,22 @@ This section covers the steps to setup Juspay payment app through saleor
 
 Juspay Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
-#### 2. Sign up to Saleor dashboard
+### 2. Sign up to Saleor dashboard
 
 Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/registration?client_id=cloud-console\&tab_id=ZC70teubjvo), set up a new project, and tailor your store to meet your unique needs.
 
 ### 1. Setting up the Juspay App on your Saleor Dashboard
 
-#### 1.1 Install the App
+### 1.1 Install the App
 
-1. To access the Juspay Saleor Payment App, [click here](https://live.hyperswitch.io/saleor). You will be directed to a form where you can enter your Saleor API URL.
+1. To access the Juspay Saleor Payment App, [click here](https://live.Hyperswitch/saleor). You will be directed to a form where you can enter your Saleor API URL.
 
 <figure><img src="../../../.gitbook/assets/juspaySaleorInstall.png" alt=""><figcaption></figcaption></figure>
 
 2. Input your Saleor API URL and click `Add to Saleor`. This action will start the installation process and display the installation page.
 3. Finally, click on `Install App`, this will install the app in your dashboard
 
-#### 1.2 Configure the App
+### 1.2 Configure the App
 
 **1.2.1 Configure for non Indian payments**
 
@@ -51,18 +51,18 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 2. Click on `Add new configuration`, which opens a popup to select non Indian payments. This will open a form to collect credentials.
 
 * Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
-* Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
-* Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
-* Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+* Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/Hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
+* Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of Hyperswitch dasboard.
+* Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of Hyperswitch dasboard.
 
 <figure><img src="../../../.gitbook/assets/hyperswitchPublishableKey.png" alt=""><figcaption></figcaption></figure>
 
 * Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
 
 3. Click on `Save Configuration`
-4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
+4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [Hyperswitch dashboard](https://docs.hyperswitch.io/Hyperswitch-cloud/webhooks)
 
-> **Note:** To customize, your payment page. Please contact [hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email)
+> **Note:** To customize, your payment page. Please contact [Hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email)
 
 **1.2.2 Configure for Indian payments**
 
@@ -83,7 +83,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 3. Click on `Save Configuration`
 4. Once you save the configuration, you will be provided with a webhook URL, Please update it in your [Hypercheckout dashboard](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/webhooks)
 
-#### 1.3 Assign Channel to your configuration
+### 1.3 Assign Channel to your configuration
 
 For each channel, payments will be processed according to configurations assigned to it.
 
@@ -91,7 +91,7 @@ Now Hyperswitch Saleor App is configured to receive payments
 
 ### 2. Accept payments through Juspay Saleor App
 
-#### Get available payment gateways
+### Get available payment gateways
 
 If you have configured Juspay in your Saleor dashboard, you will receive the Juspay App ID in the response
 
@@ -114,7 +114,7 @@ Response
     "checkout": {
       "availablePaymentGateways": [
         {
-          "id": "app.saleor.juspay-test",
+          "id": "app.saleor.Juspay-test",
           "name": "Juspay"
         }
       ]
@@ -123,9 +123,9 @@ Response
 }
 ```
 
-#### Initialize the payment gateway
+### Initialize the payment gateway
 
-This call returns whether the payment is going through hyperswitch or hypercheckout.
+This call returns whether the payment is going through Hyperswitch or hypercheckout.
 
 ```
 mutation JuspaypaymentGatewayInitialize {
@@ -147,9 +147,9 @@ Response
       "gatewayConfigs": [
         {
           "data": {
-            "orchestra": "HYPERSWITCH/HYPERCHECKOUT"
+            "orchestra": "Hyperswitch/HYPERCHECKOUT"
           },
-          "id": "app.saleor.juspay-test"
+          "id": "app.saleor.Juspay-test"
         }
       ]
     }
@@ -163,16 +163,16 @@ Response
 }
 ```
 
-#### Initialize the transaction
+### Initialize the transaction
 
-To initialize the transaction with hyperswitch, one needs to create a transaction in Saleor by calling the transactionInitialize mutation.
+To initialize the transaction with Hyperswitch, one needs to create a transaction in Saleor by calling the transactionInitialize mutation.
 
 ```
 mutation JuspayTransactionInitialize($data: JSON!) {
   transactionInitialize(
     id: "saleor_checkout_id"
     amount: 54.24
-    paymentGateway: { id: "app.saleor.juspay-test", data: $data }
+    paymentGateway: { id: "app.saleor.Juspay-test", data: $data }
   ) {
     transactionEvent {
       pspReference
@@ -255,7 +255,7 @@ Handle Response for Initializing Non-Indian Payment Transactions
 
 * You can use `clientSecret` and `publishableKey` to invoke the [Hyperswitch SDK](https://docs.hyperswitch.io/learn-more/sdk-reference)\
   OR
-* You can use the `paymentLinks.web` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
+* You can use the `paymentLinks.web` to redirect the customer to Hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
 
 **Example Response for Initializing a Indian Transaction**
 
@@ -278,7 +278,7 @@ Handle Response for Initializing Non-Indian Payment Transactions
         },
         "sdkPayload": {
           "requestId": "f2724dd953394f04bxxxxxxxxxxxxx",
-          "service": "in.juspay.hyperpay",
+          "service": "in.Juspay.hyperpay",
           "payload": {
             "clientId": "xxxxxx",
             "amount": "200.0",
@@ -320,7 +320,7 @@ Hanlde Response for Initializing Indian Payment Transactions
   OR
 * You can use the `paymentLinks.web` to redirect the customer to Hypercheckout payment page. Additionally, this URL can also be embedded within an iframe
 
-#### Retrieve the transaction
+### Retrieve the transaction
 
 The payment status will be automatically updated by the App in the backend upon Juspay receiving a webhook from the connector. Alternatively, you can call Saleor's Transaction Process mutation to retrieve the status of an initiated payment.
 

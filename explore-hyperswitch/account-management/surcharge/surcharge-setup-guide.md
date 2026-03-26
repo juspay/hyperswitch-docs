@@ -1,7 +1,7 @@
 ---
-description: Surcharge Manager Setup
+description: >-
+  Set up Surcharge  guide to start processing payments quickly
 ---
-
 # Surcharge Setup guide
 
 {% hint style="info" %}
@@ -45,7 +45,7 @@ To create a test payment, Go to Home and click on Try a test payment.
   * currency - select the currency of transaction
   * payment\_method - configure rules for different payment methods like card, wallet, direct bank debit etc.
   * card\_type - choose between credit and debit cards
-  * card\_network - choose between card networks like visa, mastercard etc.
+  * card\_network - choose between card networks like Visa, Mastercard etc.
   * billing\_country - to select the billing\_country
 
 2. How do I update the current configuration?\

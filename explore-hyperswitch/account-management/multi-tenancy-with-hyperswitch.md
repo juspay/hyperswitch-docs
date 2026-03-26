@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Multi-Tenancy to enhance your payment orchestration capabilities
 icon: cubes-stacked
 ---
-
 # Multi-Tenancy
 
 ## What is Multi-Tenancy?

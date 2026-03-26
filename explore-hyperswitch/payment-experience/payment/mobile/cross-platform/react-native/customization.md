@@ -1,8 +1,8 @@
 ---
-description: 'Visual customization: Colors, shapes, specific UI components'
+description: >-
+  Explore Customization to enhance your payment orchestration capabilities
 icon: bars-progress
 ---
-
 # Customization
 
 {% hint style="info" %}
@@ -72,14 +72,7 @@ colors: {
 
 ## Shapes
 
-Customize the border radius, border width, and shadow used across the payment UI.
-
-| Shape Category | Usage                                                             |
-| -------------- | ----------------------------------------------------------------- |
-| borderRadius   | Corner radius of input fields, tabs, and other components.        |
-| borderWidth    | Border thickness across input fields, tabs, and other components. |
-
-```js
+Customize the border radius, border width, and shadow used across the payment UI. | Shape Category | Usage | | -------------- | ----------------------------------------------------------------- | | borderRadius | Corner radius of input fields, tabs, and other components. | | borderWidth | Border thickness across input fields, tabs, and other components. | ```js
 shapes: {
     borderRadius: 10,
     borderWidth: 1,
@@ -111,10 +104,10 @@ primaryButton: {
 
 ```
 
-#### Google Pay Button
+### Google Pay Button
 
 ```
-googlePay: {
+Google Pay: {
   buttonType: 'BUY',   // BUY | BOOK | CHECKOUT | DONATE | ORDER | PAY | SUBSCRIBE | PLAIN
   buttonStyle: {
     light: 'dark',
@@ -126,7 +119,7 @@ googlePay: {
 ### Apple Pay Button
 
 ```
-applePay: {
+Apple Pay: {
   buttonType: 'buy',   // buy | setUp | inStore | donate | checkout | book | subscribe | plain
   buttonStyle: {
     light: 'black',    // white | whiteOutline | black

@@ -1,7 +1,8 @@
 ---
+description: >-
+  Follow this guide to implement Hyperwidget Integration and optimize payment flows
 icon: plug-circle-bolt
 ---
-
 # Hyperwidget Integration Guide
 
 Once the merchant signs up onto the unified dashboard, they’ll get their API keys and can enable the APMs <> PSP combinations that they would like to provide on their checkout.

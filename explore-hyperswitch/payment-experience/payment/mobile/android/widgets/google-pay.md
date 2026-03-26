@@ -1,7 +1,8 @@
 ---
+description: >-
+  Enable digital wallet payments to offer customers fast and secure checkout options
 icon: google
 ---
-
 # Google Pay
 
 **Purpose:** Google Pay payments
@@ -25,7 +26,7 @@ private lateinit var googlePayLauncherInstance: UnifiedPaymentLauncher
 private fun setupGooglePayLauncher() {
     googlePayButton = findViewById(R.id.googlePayButton)
     googlePayButton.isEnabled = false
-    
+
     googlePayLauncherInstance = UnifiedPaymentLauncher.createGooglePayLauncher(
         activity = this,
         clientSecret = paymentIntentClientSecret,

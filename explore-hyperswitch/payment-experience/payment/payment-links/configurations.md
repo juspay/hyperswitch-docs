@@ -1,10 +1,10 @@
 ---
-description: Configure Payment Links UI
+description: >-
+  Explore Configurations to enhance your payment orchestration capabilities
 ---
-
 # Configurations
 
-> **Note:** Payment Links can currently only be configured via APIs. Configuration through the HyperSwitch dashboard is under development, and this section will be updated once it is available.
+> **Note:** Payment Links can currently only be configured via APIs. Configuration through the Hyperswitch dashboard is under development, and this section will be updated once it is available.
 
 ## Available configurations
 
@@ -29,7 +29,7 @@ Payment link UI can be configured at a business profile level and the same confi
 }
 ```
 
-#### Primary color
+### Primary color
 
 The primary color of the payment link UI can be set using the `theme` field in the configuration. This color is represented as a hex value.
 
@@ -37,7 +37,7 @@ Example: **#2167AE**
 
 <figure><img src="../../../../.gitbook/assets/payment-links.png" alt=""><figcaption><p>Primary theme</p></figcaption></figure>
 
-#### Merchant logo
+### Merchant logo
 
 You can display a custom logo in the details section of the payment links by providing a URL.
 
@@ -45,15 +45,15 @@ Example: https://hyperswitch.io/favicon.ico
 
 <figure><img src="../../../../.gitbook/assets/payment-links-details-section.png" alt=""><figcaption><p>Primary theme</p></figcaption></figure>
 
-#### Merchant name
+### Merchant name
 
 Customize the display name shown in the details section of the payment links.
 
-Example: **HyperSwitch Inc.**
+Example: **Hyperswitch Inc.**
 
 <figure><img src="../../../../.gitbook/assets/payment-links-details-section.png" alt=""><figcaption><p>Custom seller name</p></figcaption></figure>
 
-#### Dynamic details
+### Dynamic details
 
 Include a list of key-value pairs in the details section of payment links. This list can be customized with optional configurations for each entry.
 
@@ -65,7 +65,7 @@ Example:
 [
     {
         "key": "Business Country",
-        "value": "Germany" 
+        "value": "Germany"
     },
     {
         "key": "Policy Number",
@@ -85,7 +85,7 @@ Example:
 
 <figure><img src="../../../../.gitbook/assets/payment-links-dynamic-details.png" alt=""><figcaption><p>Dynamic details</p></figcaption></figure>
 
-#### Background image
+### Background image
 
 Customize the details section with a background image.
 
@@ -105,7 +105,7 @@ For available options, refer to the API reference [**here**](https://api-referen
 
 <figure><img src="../../../../.gitbook/assets/payment-links-background-image.png" alt=""><figcaption><p>Background image</p></figcaption></figure>
 
-#### Details section layout
+### Details section layout
 
 Choose a layout for the details section of the payment links.
 
@@ -113,21 +113,21 @@ Choose a layout for the details section of the payment links.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-layout-2.png" alt=""><figcaption><p>Layout 2</p></figcaption></figure>
 
-Please reach out to our [**Support**](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2wpd0of0y-j61LQxcOsUEAeNMgFnSmxg) for adding any custom layouts needed for this.
+Please reach out to our [**Support**](https://join.slack.com/t/Hyperswitch-io/shared_invite/zt-2wpd0of0y-j61LQxcOsUEAeNMgFnSmxg) for adding any custom layouts needed for this.
 
-#### SDK layout
+### SDK layout
 
 Configure layout for the payment widget of the payment links. For a list of available options, refer to this section - [**SDK layouts**](../../../payment-experience/payment/web/customization.md#id-1.-layouts).
 
 <figure><img src="../../../../.gitbook/assets/payment-links-sdk-layout-accordion.png" alt=""><figcaption><p>Accordion layout</p></figcaption></figure>
 
-#### Render only payment widget
+### Render only payment widget
 
 Set a boolean value to render only the payment widget in the payment links. Defaults to false.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-display-sdk-only.png" alt=""><figcaption><p>Render only the payment widget</p></figcaption></figure>
 
-#### Saved payment methods
+### Saved payment methods
 
 Enable rendering of saved payment methods and allow customers to save new ones in the payment widget. This is available only for secure payment links.
 
@@ -135,7 +135,7 @@ Enable rendering of saved payment methods and allow customers to save new ones i
 
 <figure><img src="../../../../.gitbook/assets/payment-links-spm.png" alt=""><figcaption><p>Saved payment methods</p></figcaption></figure>
 
-#### Hide card nickname input
+### Hide card nickname input
 
 Toggle the visibility of the card nickname input field in the payment widget.
 
@@ -143,11 +143,11 @@ Toggle the visibility of the card nickname input field in the payment widget.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-visible-card-nickname.png" alt=""><figcaption><p>Visible card nickname field when card is requested to be saved</p></figcaption></figure>
 
-#### Show card form by default
+### Show card form by default
 
 Set a boolean value to control the default form rendered in the payment widget. Enabling this shows the card payment form by default when a payment link is opened.
 
-#### Payment button text
+### Payment button text
 
 Customize the text displayed on the "Pay Now" button in the payment widget.
 
@@ -162,17 +162,17 @@ These configurations can only be made at business profile level and cannot be ov
     domain_name: String, /// Custom domain name to be used for hosting the link
     business_specific_configs: HashMap<String, PaymentLinkConfigRequest>, /// List of UI configs for multi theme setup
     allowed_domains: HashSet<String>, /// A list of allowed domains (glob patterns) where secure links can be embedded in
-    branding_visibility: bool, /// Toggle for HyperSwitch branding visibility
+    branding_visibility: bool, /// Toggle for Hyperswitch branding visibility
 }
 ```
 
-#### Domain name
+### Domain name
 
 A custom domain for hosting payment links.
 
 > **Note:** custom domains must be enabled before setting the custom domain name. Refer to this section for setting up custom domain names - [custom domain name for payment links](setup-custom-domain.md).
 
-#### Multiple style IDs
+### Multiple style IDs
 
 This is for configuring multiple styles. This is a key value pair where key represents the style ID and value is the UI configurations which were mentioned above.
 
@@ -187,7 +187,7 @@ Example:
     "style1": {
         "theme": "#3B845E",
         "logo": "https://hyperswitch.io/favicon.ico",
-        "seller_name": "HyperSwitch Inc.",
+        "seller_name": "Hyperswitch Inc.",
         "display_sdk_only": true
     },
     "style2": {
@@ -201,15 +201,15 @@ Example:
 
 Style IDs are used during payment link creation, which can be specified using `payment_link_config_id` in the create request.
 
-#### Allowed domains
+### Allowed domains
 
 This is a list of trusted domains where payment links can be embedded in an iframe. This is used only for secure payment links. More info on secure links [here](secure-payment-links.md).
 
 Example: `["localhost:5500", "my.custom.domain.com"]`
 
-#### Branding visibility
+### Branding visibility
 
-A boolean value for toggling the visibility of HyperSwitch branding in the payment links.
+A boolean value for toggling the visibility of Hyperswitch branding in the payment links.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-visible-branding.png" alt=""><figcaption><p>Visible branding (default behaviour)</p></figcaption></figure>
 
@@ -229,7 +229,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
         "payment_link_config": {
             "theme": "#4E6ADD",
             "logo": "https://hyperswitch.io/favicon.ico",
-            "seller_name": "HyperSwitch Inc.",
+            "seller_name": "Hyperswitch Inc.",
             "sdk_layout": "accordion",
             "display_sdk_only": true,
             "enabled_saved_payment_method": true,
@@ -251,7 +251,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
                 "style1": {
                     "theme": "#3B845E",
                     "logo": "https://hyperswitch.io/favicon.ico",
-                    "seller_name": "HyperSwitch Inc.",
+                    "seller_name": "Hyperswitch Inc.",
                     "display_sdk_only": true
                 },
                 "style2": {
@@ -275,8 +275,8 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 ```
 {
     theme: "#212E46",
-    logo: "https://live.hyperswitch.io/payment-link-assets/Merchant_placeholder.png",
-    seller_name: "merchant_name", /// merchant name configured during account creation with HyperSwitch,
+    logo: "https://live.Hyperswitch/payment-link-assets/Merchant_placeholder.png",
+    seller_name: "merchant_name", /// merchant name configured during account creation with Hyperswitch,
     transaction_details: null,
     background_image: null,
     details_layout: "layout1",

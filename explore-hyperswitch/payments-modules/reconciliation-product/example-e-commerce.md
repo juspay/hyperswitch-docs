@@ -1,9 +1,8 @@
 ---
 description: >-
-  Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify
+  Explore Example E Commerce to enhance your payment orchestration capabilities
   payments flow from your order system through PSPs to your bank accurately
 ---
-
 # Example: E Commerce
 
 ```mermaid
@@ -73,7 +72,7 @@ First, we establish the accounts that represent the source and destination of fu
 
 The core of our reconciliation engine is the rule-based architecture. Rules define exactly how transactions should be matched and what conditions must be met for a successful reconciliation.
 
-#### Rule 1: Order-to-PSP Matching
+### Rule 1: Order-to-PSP Matching
 
 * **Purpose**: Match customer orders from your OMS with the corresponding payments recorded by your PSP.
 * **Rule Settings**:
@@ -86,7 +85,7 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
     * `Order currency = PSP currency`
     * `Order ID = PSP original reference`
 
-#### Rule 2: PSP-to-Bank Matching
+### Rule 2: PSP-to-Bank Matching
 
 * **Purpose**: Match the net settlements from your PSP with the actual deposits that appear in your bank statement.
 * **Rule Settings**:

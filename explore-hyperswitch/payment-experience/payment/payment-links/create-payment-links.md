@@ -1,7 +1,7 @@
 ---
-description: Create Payment Links
+description: >-
+  Explore Create Payment Links to enhance your payment orchestration capabilities
 ---
-
 # Create Payment Links
 
 Payment links are created using [Payments Create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) API. `payment_link` field should be sent as true in the request. Payment links cannot be confirmed during creation, hence `confirm` cannot be true.
@@ -46,7 +46,7 @@ curl --location '{{BASE_URL}}/payments' \
         "payment_link_config": {
             "theme": "#4E6ADD",
             "logo": "https://hyperswitch.io/favicon.ico",
-            "seller_name": "HyperSwitch Inc.",
+            "seller_name": "Hyperswitch Inc.",
             "sdk_layout": "accordion",
             "display_sdk_only": true,
             "enabled_saved_payment_method": true,

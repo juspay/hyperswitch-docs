@@ -1,28 +1,29 @@
 ---
+description: >-
+  Explore Payment Features to enhance your payment orchestration capabilities
 icon: sparkles
 ---
-
 # Payment Features
 
-HyperSwitch SDKs provide client-side payment capabilities across web and mobile platforms. Our frontend SDKs handle secure payment collection, user authentication, and seamless checkout experiences while maintaining PCI compliance.
+Hyperswitch SDKs provide client-side payment capabilities across web and mobile platforms. Our frontend SDKs handle secure payment collection, user authentication, and seamless checkout experiences while maintaining PCI compliance.
 
 ### Core SDK Features
 
-#### Payment Collection
+### Payment Collection
 
 * **Secure Card Input**: PCI-compliant form fields with real-time validation
 * **Payment Method Selection**: Support for cards, wallets, and local payment methods
 * **Tokenization**: Convert sensitive data to secure tokens on the client
 * **Auto-formatting**: Smart card number, expiry, and CVV formatting
 
-#### Authentication & Security
+### Authentication & Security
 
 * **3D Secure 2.0**: Seamless authentication with challenge flows when needed
 * **Biometric Authentication**: Touch ID, Face ID, and fingerprint support on mobile
 * **Encryption**: End-to-end encryption for all sensitive data
 * **Device Security**: Secure enclave and keystore utilization
 
-#### User Experience
+### User Experience
 
 * **Card Scanning**: Camera-based card input (mobile only)
 * **Saved Payment Methods**: Tokenized card storage and management
@@ -30,7 +31,7 @@ HyperSwitch SDKs provide client-side payment capabilities across web and mobile 
 * **Auto-complete**: Browser and device autofill integration
 * **Real-time Validation**: Instant feedback on form inputs
 
-#### Platform-Specific Features
+### Platform-Specific Features
 
 **Web SDK**
 

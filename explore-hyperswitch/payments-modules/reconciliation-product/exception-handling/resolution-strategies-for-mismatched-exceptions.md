@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Resolution Strategies for Mismatched Exceptions to enhance your payment orchestration capabilities
+---
+
 # Resolution Strategies for Mismatched Exceptions
 
 ### Overview
@@ -29,7 +34,7 @@ If the transaction is valid but simply incorrect or incomplete, users must selec
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 2.47.26 PM.png" alt=""><figcaption></figcaption></figure>
 
-#### Option 1: Edit Entry
+### Option 1: Edit Entry
 
 "The Data Correction Approach"
 
@@ -41,7 +46,7 @@ This option allows you to modify specific attributes of the existing Staging Ent
   * Processing Mode Errors: The transaction was flagged as "Test" instead of "Live" due to a configuration error
   * Typos: Correcting a reference number that was keyed in incorrectly (e.g., `INV-01` vs `INV-O1`)
 
-#### Option 2: Create Entry
+### Option 2: Create Entry
 
 "The Manual Injection Approach"
 
@@ -54,7 +59,7 @@ This option enables you to manually generate a missing side of the transaction. 
   * Legacy Data: Reconciling historical transactions where the source logs are no longer accessible via API
   * Manual Adjustments: Creating a "Fee" or "Tax" entry to explain a variance&#x20;
 
-#### Option 3: Replace Entry
+### Option 3: Replace Entry
 
 "The Swap Approach"
 
@@ -65,12 +70,4 @@ This option allows you to discard the current active entry and link the transact
   * Incorrect Mapping: The system auto-matched Transaction A to Ledger Entry X, but it should have matched to Ledger Entry Y
   * Corrupted Transformation: The current entry was parsed incorrectly (garbage data). You can swap it for a clean, re-parsed version of the entry that exists in the backlog
 
-#### Summary: Which Button Should I Click?
-
-| If the issue is...                             | Click this Action  |
-| ---------------------------------------------- | ------------------ |
-| "This record is garbage/fake."                 | Ignore Transaction |
-| "This is the right record, but it has a typo." | Edit Entry         |
-| "The record is missing entirely."              | Create Entry       |
-| "The system picked the wrong record."          | Replace Entry      |
-
+### Summary: Which Button Should I Click? | If the issue is... | Click this Action | | ---------------------------------------------- | ------------------ | | "This record is garbage/fake." | Ignore Transaction | | "This is the right record, but it has a typo." | Edit Entry | | "The record is missing entirely." | Create Entry | | "The system picked the wrong record." | Replace Entry | 

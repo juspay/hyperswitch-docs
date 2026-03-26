@@ -1,12 +1,12 @@
 ---
-description: Integrate hyper SDK to your Flutter App using hyperswitch-node
+description: >-
+  Integrate Flutter with REST API with Hyperswitch to enable seamless payment processing
 icon: puzzle-piece
 ---
-
 # Flutter with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate `hyperswitch` SDK to your Flutter app.
+Use this guide to integrate `Hyperswitch` SDK to your Flutter app.
 {% endhint %}
 
 **Before following these steps, please configure your payment methods** [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).

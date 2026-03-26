@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Payment Method to enhance your payment orchestration capabilities
 icon: arrow-progress
 ---
-
 # Payment Method
 
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.

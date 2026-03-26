@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Incremental Authorization to enhance your payment orchestration capabilities
 icon: arrow-up-right-dots
 ---
-
 # Incremental Authorization
 
 Generally for any payment transaction, the payable amount from the payment request is authorized and then captured. But in some situations like hotel bookings, car rentals, or services where the final cost is uncertain, we might need to increase the authorized amount.&#x20;

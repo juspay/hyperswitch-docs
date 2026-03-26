@@ -1,22 +1,22 @@
 ---
-description: Quick answers to commonly asked questions about Hyperswitch
+description: >-
+  Explore FAQs to enhance your payment orchestration capabilities
 ---
-
 # FAQs
 
 {% hint style="info" %}
-This section covers the frequently asked questions you might have around Hyperswitch product, features, payment process, PCI compliance, woocommerce, etc.\
+This section covers the frequently asked questions you might have around Hyperswitch product, features, payment process, PCI compliance, WooCommerce, etc.\
 We regularly update the common questions here.
 {% endhint %}
 
 **Is my customer information shared with other plugin users?**
 
-No. Hyperswitch Woocommerce plugin does not share customer data across other plugin users. Yours customer’s cards will be stored in a PCI compliant card vault powered by [Hyperswitch](https://hyperswitch.io/)\
+No. Hyperswitch WooCommerce plugin does not share customer data across other plugin users. Yours customer’s cards will be stored in a PCI DSS compliant card vault powered by [Hyperswitch](https://hyperswitch.io/)\
 
 
 **What will happen to my customers’ saved cards, if I move out of Hyperswitch?**
 
-If for any reason you happen to move out of Hyperswitch, you will be facilitated with the process of migrating the cards to any PCI compliant entity as you might wish.\
+If for any reason you happen to move out of Hyperswitch, you will be facilitated with the process of migrating the cards to any PCI DSS compliant entity as you might wish.\
 
 
 **Who built and maintains the plugin?**
@@ -36,7 +36,7 @@ Yes, this plugin can be used along with other payment plugins. However, we would
 
 **How will I receive chargeback notifications?**
 
-This feature is currently being developed by Hyperswitch where any chargeback/refund notifications would be sent via Webhooks to your Wordpress server, which would then update the order status accordingly. Provided that Webhooks are enabled and Payment Response Hash Key is correctly configured, you would be able to receive these notifications realtime.\
+This feature is currently being developed by Hyperswitch where any chargeback/refund notifications would be sent via Webhooks to your WordPress server, which would then update the order status accordingly. Provided that Webhooks are enabled and Payment Response Hash Key is correctly configured, you would be able to receive these notifications realtime.\
 
 
 **How do I cancel orders and trigger refunds with the Hyperswitch plugin?**
@@ -65,4 +65,4 @@ WooCommerce is not explicitly built to handle embedded checkouts so we had to bu
 
 Our ambition is always that our plugins should be compatible with as many functions and extensions as possible. We work actively with this and release regular updates that lead to a better experience, both for you as an e-retailer but also for your customers.
 
-Please feel free to drop a request to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) with the name of the plugin for which you need compatibility.
+Please feel free to drop a request to [Hyperswitch@juspay.in](mailto:Hyperswitch@juspay.in) with the name of the plugin for which you need compatibility.

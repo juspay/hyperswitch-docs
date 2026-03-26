@@ -1,8 +1,8 @@
 ---
-description: Route transactions through processors based on volume distribution
+description: >-
+  Configure intelligent routing rules to optimize payment success rates and costs
 icon: chart-simple
 ---
-
 # Volume Based Routing
 
 {% embed url="https://youtu.be/xpU3zmyD4b8" %}

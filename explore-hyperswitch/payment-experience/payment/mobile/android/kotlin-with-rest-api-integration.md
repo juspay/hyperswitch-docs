@@ -1,13 +1,13 @@
 ---
-description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
+description: >-
+  Integrate Kotlin with REST API with Hyperswitch to enable seamless payment processing
 icon: k
 ---
-
 # Kotlin with REST API Integration
 
 <details>
 
-<summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+<summary><a href="https://GitHub.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
 You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
@@ -35,7 +35,7 @@ To start integrating the Hyperswitch SDK, add the following classpath to the `bu
         mavenCentral()
     }
     dependencies {
-        classpath "io.hyperswitch:hyperswitch-gradle-plugin:<a data-footnote-ref href="#user-content-fn-1">$latest_version</a>"
+        classpath "io.Hyperswitch:Hyperswitch-gradle-plugin:<a data-footnote-ref href="#user-content-fn-1">$latest_version</a>"
     }
 }
 </code></pre>
@@ -56,10 +56,10 @@ plugins {
 Configure the Hyperswitch SDK in your app-level `build.gradle` file. You can specify the main SDK version and enable optional features:
 
 ```gradle
-hyperswitch {
+Hyperswitch {
     // Optional: Specify main SDK version (defaults to latest if not specified)
     sdkVersion = "1.1.5"
-    
+
     // Optional features - only add what you need
     features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }
@@ -162,7 +162,7 @@ val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 ```
 
-#### Final Step
+### Final Step
 
 Congratulations! You have successfully integrated the Hyperswitch Android SDK into your app. You can now customize the payment sheet to match the look and feel of your app.
 
@@ -172,4 +172,4 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
 
-[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
+[^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.Hyperswitch/Hyperswitch-gradle-plugin/versions)

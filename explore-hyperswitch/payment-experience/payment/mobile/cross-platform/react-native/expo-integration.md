@@ -1,7 +1,8 @@
 ---
+description: >-
+  Integrate Expo integration with Hyperswitch to enable seamless payment processing
 icon: react
 ---
-
 # Expo integration
 
 {% hint style="info" %}
@@ -18,7 +19,7 @@ The Hyperswitch SDK has peer dependencies that must be installed before installi
 yarn add @sentry/react-native react-native-inappbrowser-reborn react-native-svg
 
 # Install Hyperswitch SDK
-yarn add @juspay-tech/react-native-hyperswitch
+yarn add @juspay-tech/react-native-Hyperswitch
 ```
 
 ### 2. Prebuild the App

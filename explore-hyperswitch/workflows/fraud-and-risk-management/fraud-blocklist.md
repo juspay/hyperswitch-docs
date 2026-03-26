@@ -1,8 +1,8 @@
 ---
-description: Blocking card bins selectively based on observed fraudulent activity
+description: >-
+  Activate fraud management tools to protect your business from payment fraud
 icon: ban
 ---
-
 # Fraud Blocklist
 
 ### Card bin blocklist
@@ -11,23 +11,23 @@ A blocklist in the context of payment processing refers to a security feature th
 
 Merchants can utilize the blocklist functionality to enhance security and control over their payment processing systems. This capability enables them to thwart transactions from identified problematic sources or potentially fraudulent payment methods. Here's how the blocklist feature works:
 
-#### Blocking Specific Fingerprints
+### Blocking Specific Fingerprints
 
 Merchants can identify and block specific fingerprints associated with payment methods. This is particularly useful in preventing transactions from certain payment instruments (card in our case) that may have a history of suspicious activity.
 
-#### Blocking Card Bins
+### Blocking Card Bins
 
 The blocklist also allows merchants to block entire card bins, focusing on the first six digits of credit card numbers. Additionally, they can extend this restriction to cover the first eight digits(extended\_card\_bin), providing a more comprehensive control mechanism.
 
-#### Listing Blocklists
+### Listing Blocklists
 
 To manage and monitor these security measures, merchants have the option to list their specified blocklists. They can categorize these blocklists based on the type of restriction, such as payment method, card bin, or extended card bin.
 
-#### Specifying Blocklist Types:
+### Specifying Blocklist Types:
 
 Merchants can define the type of blocklist they want to view, allowing for a granular understanding of the restrictions in place. This categorization may include payment method blocklists, card bin blocklists, or extended card bin blocklists.
 
-#### Unblocking
+### Unblocking
 
 Should the need arise, merchants can selectively unblock specific fingerprints, or card bins from the blocklist. This flexibility ensures that legitimate transactions are not inadvertently hindered by the security measures in place.
 
@@ -37,14 +37,14 @@ In summary, a blocklist feature empowers merchants to proactively manage the sec
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin. A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
-#### For Card Bin and Extended Card Bin
+### For Card Bin and Extended Card Bin
 
 * Setup a Merchant Account and any Connector account.
 * Make a payment with a certain card (ensure it succeeds).
 * Block the card's card bin or extended card bin.
 * Try the payment again (should fail this time with an API response saying that the payment was blocked)
 
-#### For Payment Instrument
+### For Payment Instrument
 
 * Repeat steps 1 and 2 of previous section.
 *   In the payment confirm response, there will be an additional field called "fingerprint". This
@@ -54,7 +54,7 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
     block the card.
 * Try the payment again (should fail)
 
-#### Enabling blocklist guard on Hyperswitch
+### Enabling blocklist guard on Hyperswitch
 
 ```
 curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
@@ -75,7 +75,7 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
    "net_amount": 150,
    "currency": "USD",
    "amount_received": 150,
-   "connector": "stripe",
+   "connector": "Stripe",
    "payment_method": "card",
    "payment_method_data": {
        "card": {
@@ -91,10 +91,10 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
            "card_holder_name": "joseph Doe"
        }
    },
-  
+
   ...
-  
-  
+
+
    "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
 ```

@@ -1,8 +1,8 @@
 ---
 icon: books
-description: Upload and process payment processor fee reports on Juspay Hyperswitch Cost Observability to visualize costs and identify savings opportunities
+description: >-
+  Access payment analytics to gain insights and optimize business performance
 ---
-
 # Uploading Fee Reports for Analysis
 
 Login to the Cost Observability [dashoard](https://hyperswitch.io/cost-observability/app/home) and go to the [onboarding page](https://hyperswitch.io/cost-observability/app/on-boarding).

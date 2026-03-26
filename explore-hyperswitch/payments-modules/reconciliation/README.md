@@ -2,9 +2,9 @@
 hidden: true
 noIndex: true
 icon: handshake-simple
-description: Explore Juspay Hyperswitch Reconciliation V1 module to automate transaction matching across PSPs and banks with 99 percent accuracy and minimize manual effort
+description: >-
+  Automate payment reconciliation to match transactions with financial records
 ---
-
 # Juspay Hyperswitch Reconciliation V1
 
 The Reconciliation module in Juspay Hyperswitch automates financial reconciliation, providing businesses with greater accuracy and control over their financial processes. It simplifies transaction matching for financial operations (FinOps) teams, ensuring seamless verification of payments, settlements, and ledger entries with 99% reconciliation accuracy.

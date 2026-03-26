@@ -1,8 +1,8 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: >-
+  Explore Exporting payments data to enhance your payment orchestration capabilities
 icon: tachograph-digital
 ---
-
 # Exporting payments data
 
 Exporting your payments data to Amazon Redshift enhances analytics by leveraging Redshift's high-performance query capabilities. This allows for efficient data analysis, reporting, and business intelligence there by deriving valuable insights
@@ -19,15 +19,15 @@ Exporting your payments data to Amazon Redshift enhances analytics by leveraging
 
     <figure><img src="https://lh7-us.googleusercontent.com/r4vnr22w42Pz2k5V7O7TsVBrlVhDrfjYveoH-CWMnJW9XNR95k0XmJBlC9Q7lb1mpJa7aFyf9fRDDf6SHBoSLs-BP-TriQfwG57j3XhsdeJEW417zi0UO2069oDcxPEdzifYm_alen5GJsCGWhYOL2g" alt=""><figcaption><p>Example image of an IAM role created</p></figcaption></figure>
 3. After sharing the ARN with Hyperswitch, We will share the S3 bucket & path that is to be synced for data along with providing access to the IAM role from where you will be able to get files from the S3
-4.  Once the above step is done, you need to [create the table schema on Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
+4.  Once the above step is done, you need to [create the table schema on Redshift](https://opensource.Hyperswitch/features/account-management/exporting-payments-data#table-creation-schema)
 
     Post which you can proceed with the below
 
-    1. [Handle the ingestion & post processing of data](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema) using scripts
+    1. [Handle the ingestion & post processing of data](https://opensource.Hyperswitch/features/account-management/exporting-payments-data#table-creation-schema) using scripts
 
     (OR)
 
-    2. [Auto-ingestion using Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
+    2. [Auto-ingestion using Redshift](https://opensource.Hyperswitch/features/account-management/exporting-payments-data#table-creation-schema)
 
 ## File format and paths specifications
 
@@ -36,20 +36,12 @@ Exporting your payments data to Amazon Redshift enhances analytics by leveraging
 3. There will be one csv file corresponding to each day upto 7 days. Updates to the payments data will be in-place
 4. Changes to file formats, content or likewise would change the version in the above path and would be communicated.
 
-## Data updation frequency & retention:
-
-| Data update schedule        | 6 hours frequency up to 7 days                                                                                                        |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Data retention on S3 folder | 7 days                                                                                                                                |
-| Type of data exposed        | payments as per [schema](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema) |
-| Data storage location       | us-east-1                                                                                                                             |
-
-## Auto ingestion using Redshift
+## Data updation frequency & retention: | Data update schedule | 6 hours frequency up to 7 days | | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | | Data retention on S3 folder | 7 days | | Type of data exposed | payments as per [schema](https://opensource.Hyperswitch/features/account-management/exporting-payments-data#table-creation-schema) | | Data storage location | us-east-1 | ## Auto ingestion using Redshift
 
 1. Redshift supports ingesting csv data directly from S3 files which we’ll rely on.
 2. The ingestion to redshift would happen via a COPY job, this can be automated via the following options
    1. You can use the [auto copy job](https://docs.aws.amazon.com/redshift/latest/dg/loading-data-copy-job.html) if running a preview cluster
-   2. Or the more mainstream [lambda loader](https://github.com/awslabs/aws-lambda-redshift-loader)
+   2. Or the more mainstream [lambda loader](https://GitHub.com/awslabs/aws-lambda-redshift-loader)
 
 ## Table creation/schema
 
@@ -90,7 +82,7 @@ CREATE TABLE payments (
 ```sql
 create temp table payments_stage (like payments);
 
-copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments' 
+copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments'
 credentials 'aws_iam_role=<ARN_ROLE>'
 IGNOREHEADER 1
 timeformat 'YYYY-MM-DD HH:MI:SS'
@@ -250,7 +242,7 @@ aws lambda add-permission \
 
 Create appropriate IAM roles for different components:
 
-#### Lambda Execution Role:
+### Lambda Execution Role:
 
 ```json
 {
@@ -277,7 +269,7 @@ Create appropriate IAM roles for different components:
 }
 ```
 
-#### Data Access Role (for consumers):
+### Data Access Role (for consumers):
 
 ```json
 {
@@ -334,7 +326,7 @@ Where `merchant-targets.json` contains:
     "Input": "{\"merchant_id\":\"merchant_123\"}"
   },
   {
-    "Id": "2", 
+    "Id": "2",
     "Arn": "arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda",
     "Input": "{\"merchant_id\":\"merchant_456\"}"
   }
@@ -349,7 +341,7 @@ Once the data is in S3, you can control access using:
 2. **Bucket Policies**: Define fine-grained access controls
 3. **Cross-Account Access**: Allow trusted AWS accounts to access the data
 
-#### Example Cross-Account Bucket Policy:
+### Example Cross-Account Bucket Policy:
 
 ```json
 {

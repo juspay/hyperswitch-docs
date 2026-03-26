@@ -1,16 +1,15 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Integrate mobile SDK to deliver seamless in-app payment experiences
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
 ---
-
 # Headless SDK
 
 ### Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
 Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -21,7 +20,7 @@ import 'package:flutter_hyperswitch/flutter_hyperswitch.dart';
 _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY'));
 ```
 
-#### 2. Create a Payment Intent
+### 2. Create a Payment Intent
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
@@ -29,20 +28,14 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
 {% endhint %}
 
-#### 3. Initialize your Payment Session
+### 3. Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
 ```dart
 final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SECRET')
 Session _sessionId = await hyper.initPaymentSession(params);
-```
-
-| options (Required)                   | Description                                                      |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
-
-#### 4. Craft a customized payments experience
+``` | options (Required) | Description | | ------------------------------------ | ---------------------------------------------------------------- | | `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. | ### 4. Craft a customized payments experience
 
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
 
@@ -61,7 +54,7 @@ if (customer_last_used_saved_payment_method_data != null) {
 
 // use the confirmWithCustomerDefaultPaymentMethod function to confirm and handle the payment session response
 Future<void> _confirmPayment() async {
-  final confirmWithLastUsedPaymentMethodResponse = 
+  final confirmWithLastUsedPaymentMethodResponse =
     await _hyper.confirmWithLastUsedPaymentMethod(_savedSessionId!);
   if (confirmWithLastUsedPaymentMethodResponse != null) {
     final message = confirmWithLastUsedPaymentMethodResponse.message;
@@ -73,7 +66,6 @@ Future<void> _confirmPayment() async {
   }
 }
 ```
-
 
 
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`

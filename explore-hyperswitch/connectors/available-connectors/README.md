@@ -1,8 +1,8 @@
 ---
-description: List of all connectors currently supported by Hyperswitch
+description: >-
+  Configure Available Connectors to process payments through Hyperswitch orchestration platform
 hidden: true
 icon: badge-check
 ---
-
 # Available Connectors
 

@@ -1,8 +1,8 @@
 ---
-description: Assign roles and permission to users
+description: >-
+  Explore Manage Your Team to enhance your payment orchestration capabilities
 icon: screen-users
 ---
-
 # Manage Your Team
 
 You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
@@ -108,7 +108,7 @@ These roles are designed to cater to the common operational hierarchies in most 
 
 This feature allows organisations to create roles with specific permissions that perfectly align with their unique operational structures and requirements. Custom roles can only be created at merchant roles.
 
-#### Steps to create a custom role -
+### Steps to create a custom role -
 
 * Go to Settings -> Users in the Hyperswitch Dashboard.
 * Switch to the Roles tab, and click on Create Custom Roles.

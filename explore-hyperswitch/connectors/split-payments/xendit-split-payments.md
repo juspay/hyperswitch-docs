@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Xendit Split Settlement to enhance your payment orchestration capabilities
 icon: hexagon-xmark
 ---
-
 # Xendit Split Settlement
 
 ### Overview
@@ -17,71 +18,71 @@ If your platform charges a fee or commission when facilitating payments for your
 
 Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 
-#### Example: Flat amount Split
+### Example: Flat amount Split
 
 ```json
-{  
-  "amount": 10000,  
-  "currency": "IDR",  
-  "confirm": true,  
-  "split_payments": {  
-    "xendit_split_payment": {  
-      "multiple_splits": {  
-        "name": "Marketplace Split",  
-        "description": "Platform fee and merchant payment",  
-        "routes": [  
-          {  
-            "flat_amount": 1000,  
-            "currency": "IDR",  
-            "destination_account_id": "platform_account_123",  
-            "reference_id": "platform_fee"  
-          },  
-          {  
-            "flat_amount": 9000,  
-            "currency": "IDR",   
-            "destination_account_id": "merchant_account_456",  
-            "reference_id": "merchant_payment"  
-          }  
-        ]  
-      }  
-    }  
-  }  
+{
+  "amount": 10000,
+  "currency": "IDR",
+  "confirm": true,
+  "split_payments": {
+    "xendit_split_payment": {
+      "multiple_splits": {
+        "name": "Marketplace Split",
+        "description": "Platform fee and merchant payment",
+        "routes": [
+          {
+            "flat_amount": 1000,
+            "currency": "IDR",
+            "destination_account_id": "platform_account_123",
+            "reference_id": "platform_fee"
+          },
+          {
+            "flat_amount": 9000,
+            "currency": "IDR",
+            "destination_account_id": "merchant_account_456",
+            "reference_id": "merchant_payment"
+          }
+        ]
+      }
+    }
+  }
 }
 ```
 
-#### Example: Percentage-Based Split
+### Example: Percentage-Based Split
 
 ```json
-{  
-  "amount": 10000,  
-  "currency": "IDR",  
-  "confirm": true,  
-  "split_payments": {  
-    "xendit_split_payment": {  
-      "multiple_splits": {  
-        "name": "Percentage Split",  
-        "description": "Commission-based split",  
-        "routes": [  
-          {  
-            "percent_amount": 10,  
-            "currency": "IDR",  
-            "destination_account_id": "platform_account_123",  
-            "reference_id": "commission"  
-          },  
-          {  
-            "percent_amount": 90,  
-            "currency": "IDR",  
-            "destination_account_id": "merchant_account_456",   
-            "reference_id": "merchant_share"  
-          }  
-        ]  
-      }  
-    }  
-  }  
+{
+  "amount": 10000,
+  "currency": "IDR",
+  "confirm": true,
+  "split_payments": {
+    "xendit_split_payment": {
+      "multiple_splits": {
+        "name": "Percentage Split",
+        "description": "Commission-based split",
+        "routes": [
+          {
+            "percent_amount": 10,
+            "currency": "IDR",
+            "destination_account_id": "platform_account_123",
+            "reference_id": "commission"
+          },
+          {
+            "percent_amount": 90,
+            "currency": "IDR",
+            "destination_account_id": "merchant_account_456",
+            "reference_id": "merchant_share"
+          }
+        ]
+      }
+    }
+  }
 }
 ```
 
-#### Constraints & Validation Logic
+### Constraints & Validation Logic
 
 Constrains are that:
 
@@ -94,14 +95,14 @@ The validation ensures that:
 1. **Missing both fields**: Returns error `Expected either split_payments.xendit_split_payment.routes.flat_amount or split_payments.xendit_split_payment.routes.percent_amount to be provided`
 2. **Having both fields**: Returns error `Expected either split_payments.xendit_split_payment.routes.flat_amount or split_payments.xendit_split_payment.routes.percent_amount, but not both`
 
-#### **XenditSplitRequest Structure**
+### **XenditSplitRequest Structure**
 
 The main `XenditSplitRequest` enum supports two types:
 
 1. **MultipleSplits** - For splitting across multiple accounts
 2. **SingleSplit** - For routing to a single sub-merchant
 
-#### **MultipleSplits Parameters**
+### **MultipleSplits Parameters**
 
 For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
 
@@ -126,7 +127,7 @@ For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
 * Array of `XenditSplitRoute` objects that define how the platform wants to route the fees and to which accounts
 * Each route object represents a single payment split from the end user to a destination account
 
-#### **XenditSplitRoute Parameters**
+### **XenditSplitRoute Parameters**
 
 Each route in the `routes` array has these parameters payments.rs:331-343 :
 
@@ -158,7 +159,7 @@ Each route in the `routes` array has these parameters payments.rs:331-343 :
 * Used to distinguish routes when one split rule has multiple routes to the same destination
 * Must be unique and case-sensitive for every route object under the same split rule
 
-#### SingleSplit Parameters
+### SingleSplit Parameters
 
 For single split settlements, the structure is simpler domain.rs:55-58 :
 
@@ -167,7 +168,7 @@ For single split settlements, the structure is simpler domain.rs:55-58 :
 * The sub-account user-id that you want to make this transaction for
 * Required field for single split scenarios
 
-#### Split Settlement Response Types
+### Split Settlement Response Types
 
 **Multiple Splits Response**
 
@@ -176,14 +177,14 @@ For multiple splits, the `charges` field contains detailed split rule informatio
 <pre><code>{"charges": {
     "xendit_split_payment":{
 <strong>        "multiple_splits": {
-</strong>            "split_rule_id": "sr_12345", 
-            "for_user_id": "user_123", 
+</strong>            "split_rule_id": "sr_12345",
+            "for_user_id": "user_123",
             "name": "Split Rule Name",
             "description": "Split description",
-            "routes": [...]        
-            }      
+            "routes": [...]
+            }
         }
-    }  
+    }
 }
 </code></pre>
 
@@ -198,17 +199,17 @@ Key fields to document:
 For single splits, the structure is simpler transformers.rs:370-382 :
 
 ```
-{"charges": { 
+{"charges": {
     "xendit_split_payment": {
         "single_split": {
-            "for_user_id": "user_123"       
-         }      
-     }    
-   }  
+            "for_user_id": "user_123"
+         }
+     }
+   }
 }
 ```
 
-#### Response Processing Flow
+### Response Processing Flow
 
 Document the transformation process:
 
@@ -216,7 +217,7 @@ Document the transformation process:
 2. **Response Transformation**: Converted using the transformer logic transformers.rs:496-576
 3. **Charge Data Storage**: Split information preserved for subsequent operations
 
-#### Important Documentation Points
+### Important Documentation Points
 
 **Field Usage Distinction**: `split_payments` is used in requests while `charges` is used in responses. This is a common source of confusion.
 

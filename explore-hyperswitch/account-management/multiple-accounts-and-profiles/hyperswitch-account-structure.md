@@ -1,7 +1,8 @@
 ---
+description: >-
+  Set up Organization Merchant and Profile to start processing payments quickly
 icon: people-roof
 ---
-
 # Organization, Merchant and Profile Setup
 
 Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs-

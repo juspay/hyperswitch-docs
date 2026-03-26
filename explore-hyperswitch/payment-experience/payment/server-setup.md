@@ -1,7 +1,8 @@
 ---
+description: >-
+  Set up Server to start processing payments quickly
 icon: server
 ---
-
 # Server Setup
 
 ### Create a payment using S2S Call
@@ -15,7 +16,7 @@ Upon successful creation, you will receive a `client_secret`, which must be prov
 async function createPaymentIntent(request) {
   /* Add respective env enpoints
    - Sandbox - https://sandbox.hyperswitch.io
-   - Prod - https://api.hyperswitch.io
+   - Prod - https://api.Hyperswitch
   */
   const url = "https://sandbox.hyperswitch.io";
   const apiResponse = await fetch(`${url}/payments`, {

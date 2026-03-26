@@ -1,18 +1,17 @@
 ---
 description: >-
-  Ideal for teams seeking to continue with their existing vault provider and
+  Implement secure vault solutions to protect sensitive payment card data
   avoid data migration
 hidden: true
 icon: square-up-right
 ---
-
 # Hyperswitch SDK + External Vault
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
 The merchant configures connectors and routing rules in the Hyperswitch Dashboard. Hyperswitch backend translates orchestration decisions into PSP specific requests using the provided external vault tokens.
 
-#### **Payment and Vault flow for 'New' customer**
+### **Payment and Vault flow for 'New' customer**
 
 <figure><img src="../../../.gitbook/assets/external_vault_external_SDK_saving.svg" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +39,7 @@ After the processor confirms the payment is successful, Hyperswitch sends the ca
 
 The Hyperswitch Server sends the final transaction status (Success or Failure) back to the SDK. Finally, the SDK redirects the customer to your specified `return_url`, where you can display a confirmation message and proceed with order fulfillment.
 
-#### **Payment and Vault flow for 'Repeat' customer**
+### **Payment and Vault flow for 'Repeat' customer**
 
 <figure><img src="../../../.gitbook/assets/Untitled (8).svg" alt=""><figcaption></figcaption></figure>
 
@@ -69,9 +68,8 @@ The Hyperswitch Server forwards the raw card data, along with your merchant cred
 The connector returns the transaction status (e.g., "Succeeded" or "Failed") to the Hyperswitch Server. This status is passed down to the SDK, which then handles the final redirect to your `return_url`.
 
 
-
 **Integration Documentation :**
 
-* [**Unified Checkout  Integration guide**](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
+* [**Unified Checkout  Integration guide**](https://docs.hyperswitch.io/explore-Hyperswitch/merchant-controls/integration-guide)
 * [**Payment Create API** ](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
-* [**Unified Checkout: Saving Payment Methods**](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)
+* [**Unified Checkout: Saving Payment Methods**](https://docs.hyperswitch.io/explore-Hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)

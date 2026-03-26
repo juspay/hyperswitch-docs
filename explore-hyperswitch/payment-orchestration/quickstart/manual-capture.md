@@ -1,11 +1,10 @@
 ---
 description: >-
-  Understand how to place a hold on your customers' funds and capture them later
+  Explore Manual Capture to enhance your payment orchestration capabilities
   either fully or partially and either in one-go or multiple times
 hidden: true
 icon: sack-dollar
 ---
-
 # Manual Capture
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}

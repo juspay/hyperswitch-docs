@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Payment Orchestration to enhance your payment orchestration capabilities
 icon: arrow-progress
 ---
-
 # Payment Orchestration
 
 Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.
@@ -20,7 +21,7 @@ Built for businesses of all sizes and types—**e-commerce platforms, SaaS compa
 
 {% hint style="info" %}
 **Have Questions?**\
-Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
+Join our [Slack Community](https://join.slack.com/t/Hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 

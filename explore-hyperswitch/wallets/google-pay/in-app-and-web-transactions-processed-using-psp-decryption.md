@@ -1,3 +1,8 @@
+---
+description: >-
+  Enable Google Pay with PSP decryption to offer customers a fast and secure checkout experience
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.

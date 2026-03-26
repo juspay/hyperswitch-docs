@@ -1,7 +1,8 @@
 ---
+description: >-
+  Understand error codes to troubleshoot and resolve payment processing issues
 icon: signs-post
 ---
-
 # Processor error code mapping
 
 Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors to determine the root cause of failure in real-time.

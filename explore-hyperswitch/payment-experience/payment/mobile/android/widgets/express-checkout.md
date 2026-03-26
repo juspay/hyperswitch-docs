@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Express Checkout to enhance your payment orchestration capabilities
 icon: cart-shopping-fast
 ---
-
 # Express Checkout
 
 **Purpose:** One click solution for last used saved payment method

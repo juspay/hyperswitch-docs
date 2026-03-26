@@ -1,10 +1,9 @@
 ---
 description: >-
-  Master the five-step reconciliation workflow on Juspay Hyperswitch to
+  Automate payment reconciliation to match transactions with financial records
   efficiently process reports and resolve financial discrepancies through
   automated matching
 ---
-
 # Getting Started with Recon
 
 {% hint style="info" %}
@@ -188,4 +187,4 @@ Majority of records that fall in this category are essentially missed in one of 
 
 The reconciliation engine performs backdated reconciliation by reviewing entries from previous dates. If matching entries are found, reconciliation is seamlessly executed, ensuring historical accuracy. By default, the engine considers backdated entries spanning the last 90-days, configurable based on merchant needs.
 
-Records that don't fall under the purview of the above examples will need to be investigated with the respective teams (Juspay Hyperswitch, PSP or bank). We are also working on a feature that will enable you to track and close Reconciliation issues within the Reconciliation module ([Recon open issues](../../../about-hyperswitch/payments-modules/reconciliation/broken-reference/)).
+Records that don't fall under the purview of the above examples will need to be investigated with the respective teams (Juspay Hyperswitch, PSP or bank). We are also working on a feature that will enable you to track and close Reconciliation issues within the Reconciliation module ([Recon open issues](../../../about-Hyperswitch/payments-modules/reconciliation/broken-reference/)).

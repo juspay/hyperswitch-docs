@@ -1,7 +1,8 @@
 ---
+description: >-
+  Explore Card Element to enhance your payment orchestration capabilities
 icon: credit-card
 ---
-
 # Card Element
 
 **Purpose:** Card payments

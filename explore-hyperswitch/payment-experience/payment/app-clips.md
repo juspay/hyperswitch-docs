@@ -1,11 +1,10 @@
 ---
 description: >-
-  Hyperswitch App Clip is a lightweight version of your iOS app that launches
+  Explore App Clips to enhance your payment orchestration capabilities
   instantly (via QR code, NFC, or link) to let users complete payments quickly
   without installing the full app.
 icon: app-store
 ---
-
 # App Clips
 
 * A **lightweight, instant-launch** version of your iOS app.
@@ -22,18 +21,18 @@ icon: app-store
 
 ## Quick Steps
 
-#### 1. Create App Clip Target
+### 1. Create App Clip Target
 
 * Xcode → **File → New Target → App Clip**
 * Bundle ID: `your.main.app.bundle.id.Clip`
 * Same Team as main app.
 
-#### 2. Share Payment Logic
+### 2. Share Payment Logic
 
 * Make `HyperViewModel` target membership include **both** the main app and App Clip.
 * Or move shared code into a framework.
 
-#### 3. Minimal UI in App Clip
+### 3. Minimal UI in App Clip
 
 ```swift
 @objc func openPaymentSheet(_ sender: Any) {

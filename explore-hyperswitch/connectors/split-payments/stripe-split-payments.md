@@ -1,8 +1,8 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
-icon: stripe
+description: >-
+  Explore Stripe Split Settlement to enhance your payment orchestration capabilities
+icon: Stripe
 ---
-
 # Stripe Split Settlement
 
 ### Overview
@@ -23,15 +23,7 @@ In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/creat
 }
 ```
 
-#### Request Parameters
-
-| **Parameter**         | **Type**  | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| transfer\_account\_id | `string`  | Identifier of a [Connected Account](https://docs.stripe.com/connect/accounts) created using Stripe's API or Dashboard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| charge\_type          | `enum`    | <p>1. <a href="https://docs.stripe.com/connect/direct-charges">Direct</a>: Customers transact directly with your connected account. The charge is created on the connected account, and you can choose whether Stripe fees are debited from the connected account or your platform.</p><p><br><br></p><p>2. <a href="https://docs.stripe.com/connect/destination-charges">Destination</a>: Customers transact with your platform for products/services provided by your connected account. Stripe fees are debited from your platform account. The funds are then transferred to the destination account.</p> |
-| application\_fees     | `integer` | Platform fee amount deducted from the transaction (in minor currency units). The `application_fee_amount` is transferred to the platform.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-
-#### Payment Response
+### Request Parameters | **Parameter** | **Type** | **Description** | | --------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | transfer\_account\_id | `string` | Identifier of a [Connected Account](https://docs.stripe.com/connect/accounts) created using Stripe's API or Dashboard. | | charge\_type | `enum` | <p>1. <a href="https://docs.stripe.com/connect/direct-charges">Direct</a>: Customers transact directly with your connected account. The charge is created on the connected account, and you can choose whether Stripe fees are debited from the connected account or your platform.</p><p><br><br></p><p>2. <a href="https://docs.stripe.com/connect/destination-charges">Destination</a>: Customers transact with your platform for products/services provided by your connected account. Stripe fees are debited from your platform account. The funds are then transferred to the destination account.</p> | | application\_fees | `integer` | Platform fee amount deducted from the transaction (in minor currency units). The `application_fee_amount` is transferred to the platform. | ### Payment Response
 
 The response includes charge details for [Split Settlements](https://www.google.com/search?q=https://docs.hyperswitch.io/features/split-settlements) to verify distribution:
 
@@ -77,37 +69,37 @@ JSON
 }
 ```
 
-#### Refund Parameters
+### Refund Parameters
 
 * revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
 * revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
 
 ### Recurring Payments (CIT/MIT)
 
-#### Customer-Initiated Transaction (CIT)
+### Customer-Initiated Transaction (CIT)
 
 In a CIT call, passing `customer_id` is mandatory along with the Stripe Split settlements object. The split settlement metadata is stored in the mandate for future MIT calls.
 
 JSON
 
 ```json
-{  
-    "customer_id": "StripeCustomer123",  
-    "split_payments": {  
-        "stripe_split_payment": {  
-            "charge_type": "direct",  
-            "application_fees": 100,  
-            "transfer_account_id": "acct_123456789"  
-        }  
-    },  
-    "customer_acceptance": {  
-        "acceptance_type": "offline",  
-        "accepted_at": "1963-05-03T04:07:52.723Z",  
-        "online": {  
-            "ip_address": "125.0.0.1",  
-            "user_agent": "amet"  
-        }  
-    }  
+{
+    "customer_id": "StripeCustomer123",
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 100,
+            "transfer_account_id": "acct_123456789"
+        }
+    },
+    "customer_acceptance": {
+        "acceptance_type": "offline",
+        "accepted_at": "1963-05-03T04:07:52.723Z",
+        "online": {
+            "ip_address": "125.0.0.1",
+            "user_agent": "amet"
+        }
+    }
 }
 ```
 
@@ -198,7 +190,7 @@ JSON
     "off_session": true,
     "recurring_details": {
         "type": "payment_method_id",
-        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response    
+        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response
     },
     "split_payments": {
         "stripe_split_payment": {

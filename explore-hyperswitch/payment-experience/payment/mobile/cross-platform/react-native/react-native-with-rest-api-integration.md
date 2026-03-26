@@ -1,15 +1,15 @@
 ---
-description: Integrate hyperswitch SDK to your React Native App using hyperswitch-node
+description: >-
+  Integrate React Native with REST API with Hyperswitch to enable seamless payment processing
 icon: puzzle-piece
 ---
-
 # React Native with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
+Use this guide to integrate `Hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
 {% endhint %}
 
-## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
+## Find the demo app [here](https://GitHub.com/Juspay/react-native-Hyperswitch)
 
 Before proceeding with these steps, please ensure that your payment methods are configured [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
@@ -29,14 +29,14 @@ Follow the [Server Setup](../../../server-setup.md) section.
 
 ## 2. Build checkout page on the client
 
-### 2.1 Install the `@juspay-tech/react-native-hyperswitch` library
+### 2.1 Install the `@juspay-tech/react-native-Hyperswitch` library
 
 Install the packages and import it into your code
 
 ```bash
-yarn add @juspay-tech/react-native-hyperswitch
+yarn add @juspay-tech/react-native-Hyperswitch
 or
-npm install @juspay-tech/react-native-hyperswitch
+npm install @juspay-tech/react-native-Hyperswitch
 ```
 
 ### 2.2 Peer Dependencies
@@ -62,7 +62,7 @@ pod install
 To initialize Hyperswitch in your React Native app, wrap your payment screen with the **HyperProvider** component. The only required configuration is the **API publishable key**, which should be provided through the `publishableKey` prop.
 
 ```js
-import { HyperProvider } from '@juspay-tech/react-native-hyperswitch';
+import { HyperProvider } from '@juspay-tech/react-native-Hyperswitch';
 function App() {
   return (
     <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY" profileId="YOUR_PROFILE_ID">
@@ -79,7 +79,7 @@ function App() {
 In your checkout screen, import and use the **`useHyper()`** hook to access Hyperswitch payment methods and functionality.
 
 ```js
-import { useHyper } from '@juspay-tech/react-native-hyperswitch';
+import { useHyper } from '@juspay-tech/react-native-Hyperswitch';
 ```
 
 ### 3.2 Fetch the PaymentIntent client Secret

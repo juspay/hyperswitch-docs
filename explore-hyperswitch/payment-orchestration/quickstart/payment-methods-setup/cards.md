@@ -1,8 +1,8 @@
 ---
-description: Accept debit and credit card payments on your application
+description: >-
+  Explore Cards to enhance your payment orchestration capabilities
 icon: credit-card
 ---
-
 # Cards
 
 ![logo\_discord](https://hyperswitch.io/logos/logo_diners.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_visa.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_mastercard.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_amex.svg)
@@ -18,7 +18,7 @@ Apart from regular one-time payments, Hyperswitch supports saving a card, recurr
 
 ## Saved Cards
 
-You could use Hyperswitch’s PCI Compliant secure vault to safely store your customers’ card data and retrieve them when they return to pay on your website/app. In addition, our hyper SDK has a checkbox on the payment page that you can use to take customers’ consent to store their card data. To try out the save cards feature through API, include either of the values for the `setup_future_usage` field in your Payments API request body. This feature comes with [Unified Checkout](../../../payment-experience/payment/web/).
+You could use Hyperswitch’s PCI DSS compliant secure vault to safely store your customers’ card data and retrieve them when they return to pay on your website/app. In addition, our hyper SDK has a checkbox on the payment page that you can use to take customers’ consent to store their card data. To try out the save cards feature through API, include either of the values for the `setup_future_usage` field in your Payments API request body. This feature comes with [Unified Checkout](../../../payment-experience/payment/web/).
 
 The Saved cards feature comes out of the box without any additional integration steps. The Unified Checkout SDK will fetch the saved cards details and show them to your users. All you need to do is create a customer or send a customer id when you call the Payments API. The cards belonging to that customer ID are securely stored and retrived from the card vault.
 
@@ -34,8 +34,8 @@ Hyperswitch supports the creation of mandates for card transactions through vari
 
 Follow the below guide to learn how to make a recurring payment with Hyperswitch
 
-{% content-ref url="../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
-[save-a-payment-method.md](../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
+{% content-ref url="../../../../about-Hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+[save-a-payment-method.md](../../../../about-Hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
 {% endcontent-ref %}
 
 ## Auth and Capture

@@ -1,3 +1,8 @@
+---
+description: >-
+  Automate payment reconciliation to match transactions with financial records
+---
+
 # Merchant & Profile Mapping in Recon
 
 ### Mapping Hyperswitch Org/Merchant/Profile to Recon
@@ -25,7 +30,7 @@ flowchart TB
   M2 --> P22[Profile B2]
 ```
 
-#### Core principle: **“Recon can be segmented at both Merchant and Profile levels — choose the level based on how you want to group configuration and user access.”**
+### Core principle: **“Recon can be segmented at both Merchant and Profile levels — choose the level based on how you want to group configuration and user access.”**
 
 In Recon:
 
@@ -49,7 +54,7 @@ Whether you isolate via **separate merchants** or via **profiles**, Recon can is
 * ingestion configuration (connectors, file formats, mappings)
 * operational configuration (who sees/resolves what, exception ownership)
 
-#### What differs when choosing Merchant vs Profile
+### What differs when choosing Merchant vs Profile
 
 The practical difference is mostly about:
 
@@ -60,7 +65,7 @@ The practical difference is mostly about:
 
 ### Two common setups, and how they map to Recon
 
-#### Setup A: One Org, multiple Merchants (merchant-per-Business Unit) + Recon merchant adjacent
+### Setup A: One Org, multiple Merchants (merchant-per-Business Unit) + Recon merchant adjacent
 
 This setup is preferred when you want **separate merchant workspaces per Business Unit/segment**, primarily to control:
 
@@ -71,14 +76,14 @@ This setup is preferred when you want **separate merchant workspaces per Busines
 **Important:** This is not necessarily about legal entities.\
 It’s about **workspace separation and access boundaries**.
 
-#### Hyperswitch example
+### Hyperswitch example
 
 * Org = “Company”
 * Merchant A = “BU: Consumer”
 * Merchant B = “BU: Enterprise”
 * Merchant C = “BU: International”
 
-#### Recon mapping
+### Recon mapping
 
 Use the same structure:
 
@@ -108,14 +113,13 @@ flowchart TB
   BU2Recon --> BU2ReconP2["Recon Profile - Enterprise - Partners"]
 ```
 
-#### When Setup A is the best fit
+### When Setup A is the best fit
 
 Choose “merchant-per-Business-Unit” if you want:
 
 * invite and manage users at a **merchant workspace** boundary
 * separate Business Unit teams owning reconciliation independently
 * lower risk of cross-team interference (each Business Unit isolated at merchant scope)
-
 
 
 ### **Setup B: One Org, one Payments merchant, business units as Profiles + Recon merchant adjacent**
@@ -161,7 +165,7 @@ flowchart TB
   ReconM --> ReconP3["Recon Profile: BU International"]
 ```
 
-#### When Setup B is the best fit
+### When Setup B is the best fit
 
 Choose “single merchant + multiple profiles” if you want:
 
@@ -171,8 +175,7 @@ Choose “single merchant + multiple profiles” if you want:
 * separation where it matters (rules, logic, workflows, ops ownership) at profile level
 
 
-
-#### **Scenario C: Payments under one merchant, reconciliation separated (Recon profiles) + Recon merchant under Org**
+### **Scenario C: Payments under one merchant, reconciliation separated (Recon profiles) + Recon merchant under Org**
 
 This keeps the “payments unified” setup intact, while enabling **business unit**-level isolation in reconciliation
 
@@ -207,13 +210,13 @@ flowchart TB
 
 ## Practical guidance: how to decide Merchant vs Profile in Recon
 
-#### Create separate Recon Merchants under the Org when you want:
+### Create separate Recon Merchants under the Org when you want:
 
 * **merchant-level workspace boundaries** for teams
 * to invite users and scope access per merchant workspace
 * independent configuration lifecycle per segment (fewer coupling points)
 
-#### Create multiple Recon Profiles under the same Recon Merchant when you want:
+### Create multiple Recon Profiles under the same Recon Merchant when you want:
 
 * one shared merchant umbrella, but multiple isolated recon setups
 * profile-level separation for rules, workflows, ingestion, and ops ownership

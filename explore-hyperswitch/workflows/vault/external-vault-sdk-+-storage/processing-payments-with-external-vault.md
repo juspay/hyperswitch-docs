@@ -1,9 +1,9 @@
 ---
+description: >-
+  Implement secure vault solutions to protect sensitive payment card data
 icon: money-bill-wave
 ---
-
 # Processing payments with external vault
-
 
 
 When working with an external vault provider, here’re the options available to handle a saved card transaction.&#x20;

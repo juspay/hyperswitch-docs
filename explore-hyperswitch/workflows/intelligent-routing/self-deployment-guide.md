@@ -1,7 +1,8 @@
 ---
+description: >-
+  Follow this guide to implement Self-Deployment and optimize payment flows
 icon: screwdriver-wrench
 ---
-
 # Self-Deployment Guide
 
 ### Self Deploy and integrate it with your existing orchestrator&#x20;
@@ -10,14 +11,14 @@ How it fits into your existing payments setup:
 
 <figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-#### 1. Clone the Repository
+### 1. Clone the Repository
 
 ```
-git clone https://github.com/juspay/decision-engine.git
+git clone https://GitHub.com/Juspay/decision-engine.git
 cd decision-engine
 ```
 
-#### 2. Install Docker
+### 2. Install Docker
 
 ```
 Make sure Docker is installed on your system.
@@ -28,7 +29,7 @@ You can download and install Docker Desktop from the below links.
 - Linux - https://docs.docker.com/desktop/setup/install/linux/
 ```
 
-#### 3. Run the Project
+### 3. Run the Project
 
 **a. First-Time Setup**
 
@@ -50,7 +51,7 @@ This will:
 * Sets up redis and the server for running the application
 * Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
 
-#### b. Start the Server (without resetting DB)
+### b. Start the Server (without resetting DB)
 
 If the DB schema is already set up and you don't want to reset the DB, use:
 
@@ -62,4 +63,4 @@ make run
 
 After successful setup, the server will start running.
 
-#### Once the server is setup, you can refer to the [API reference](https://github.com/juspay/decision-engine/blob/main/docs/api-reference1.md) for usage
+### Once the server is setup, you can refer to the [API reference](https://GitHub.com/Juspay/decision-engine/blob/main/docs/api-reference1.md) for usage

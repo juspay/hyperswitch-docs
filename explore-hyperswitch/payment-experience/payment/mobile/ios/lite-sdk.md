@@ -1,12 +1,13 @@
 ---
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: mobile-screen
 ---
-
 # Lite SDK
 
 ## Key Features of Lite SDK
 
-#### Lightweight Integration
+### Lightweight Integration
 
 * **Smaller artifact size**: <300 KB
 * **Faster initialization**: Streamlined setup process
@@ -30,26 +31,26 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ### 2. Build Checkout in Your App
 
-#### 2.1 Add the Dependency
+### 2.1 Add the Dependency
 
 In your **`Podfile`**:
 
 **Lite SDK only**
 
 ```ruby
-pod 'hyperswitch-sdk-ios-lite'
+pod 'Hyperswitch-sdk-ios-lite'
 ```
 
 **Lite SDK with Scan Card functionality**
 
 ```ruby
-pod 'hyperswitch-sdk-ios-lite/scancard'
+pod 'Hyperswitch-sdk-ios-lite/scancard'
 ```
 
 > **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.\
 > Replace `Latest_version` with the actual version number.
 
-#### 2.2 Setup the Lite SDK and Fetch a Payment
+### 2.2 Setup the Lite SDK and Fetch a Payment
 
 **Initialize PaymentSession:**
 
@@ -66,9 +67,9 @@ paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClient
 ```swift
 // Present the PaymentSheet Lite
 paymentSession.presentPaymentSheetLite(
-    viewController: self, 
-    configuration: configuration, 
-    completion: { 
+    viewController: self,
+    configuration: configuration,
+    completion: {
         result in
             DispatchQueue.main.async {
                 switch result {

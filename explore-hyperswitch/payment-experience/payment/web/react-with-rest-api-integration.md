@@ -1,14 +1,15 @@
 ---
+description: >-
+  Integrate React with REST API with Hyperswitch to enable seamless payment processing
 icon: react
 ---
-
 # React with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app.
+**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `Hyperswitch` SDK to your React app.
 
 <details>
 
-<summary><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+<summary><a href="https://GitHub.com/PritishBudhiraja/Hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
 You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
 
@@ -20,7 +21,7 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 ### 2. Build checkout page on the client
 
-#### 2.1 Install the [`hyper-js`](https://www.npmjs.com/package/@juspay-tech/hyper-js) and [`react-hyper-js`](https://www.npmjs.com/package/@juspay-tech/react-hyper-js) libraries
+### 2.1 Install the [`hyper-js`](https://www.npmjs.com/package/@juspay-tech/hyper-js) and [`react-hyper-js`](https://www.npmjs.com/package/@juspay-tech/react-hyper-js) libraries
 
 Install the packages and import it into your code
 
@@ -29,9 +30,9 @@ npm install @juspay-tech/hyper-js
 npm install @juspay-tech/react-hyper-js
 ```
 
-#### 2.2 Add `hyper` to your React app
+### 2.2 Add `hyper` to your React app
 
-Use `hyper-js` to ensure that you stay PCI compliant by sending payment details directly to Hyperswitch server.
+Use `hyper-js` to ensure that you stay PCI DSS compliant by sending payment details directly to Hyperswitch server.
 
 ```js
 import React, { useState, useEffect } from "react";
@@ -39,7 +40,7 @@ import { loadHyper } from "@juspay-tech/hyper-js";
 import { hyperElements } from "@juspay-tech/react-hyper-js";
 ```
 
-#### 2.3 Load `hyper-js`
+### 2.3 Load `hyper-js`
 
 Call `loadHyper` with your publishable API keys to configure the library. To get an publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -50,7 +51,7 @@ const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY",{
 });
 ```
 
-#### 2.4 Fetch the Payment and Initialise `hyperElements`
+### 2.4 Fetch the Payment and Initialise `hyperElements`
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The clientSecret returned by your endpoint is used to complete the payment.
 
@@ -67,7 +68,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### 2.5 Initialise `HyperElements`
+### 2.5 Initialise `HyperElements`
 
 Pass the promise from `loadHyper` to the `HyperElements` component. This allows the child components to access the Hyper service via the `HyperElements` parent component. Additionally, pass the client secret as an [options](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/customization) to the `HyperElements` component.
 
@@ -81,7 +82,7 @@ Pass the promise from `loadHyper` to the `HyperElements` component. This allows 
 </div>
 ```
 
-#### 2.6 Setup the state (optional)
+### 2.6 Setup the state (optional)
 
 Initialize a state to keep track of payment, display errors and control the user interface.
 
@@ -90,7 +91,7 @@ const [message, setMessage] = useState(null);
 const [isLoading, setIsLoading] = useState(false);
 ```
 
-#### 2.7 Store a reference to `Hyper`
+### 2.7 Store a reference to `Hyper`
 
 Access the `hyper-js` library in your CheckoutForm component by using the `useHyper()` and `useWidgets()` hooks. If you need to access Widgets via a class component, use the `WidgetsConsumer` instead. If you need to access Widgets via a class component, use the `WidgetsConsumer` instead. You can find the API for these methods here.
 
@@ -106,21 +107,21 @@ const widgets = useWidgets();
 **Key Features of Hyperswitch's Express Checkout**
 
 * Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
-* Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
+* Multiple Payment Options: Supports Apple Pay,PayPal Klarna, and Google Pay, giving customers a variety of payment choices on top of the speed in checkout.
 * Easy Integration: Our SDK can be easily integrated with web applications.
 
 **Benefits of Hyperswitch's Express Checkout Feature**
 
 * Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
 * Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
-* Great for Mobile: Optimized for mobile shopping with ApplePay, Paypal and GooglePay integration for quick purchases on smartphones.
-* Collect billing and shipping details directly from the ApplePay, Klarna, GooglePay, Paypal
+* Great for Mobile: Optimized for mobile shopping with Apple Pay, PayPal and Google Pay integration for quick purchases on smartphones.
+* Collect billing and shipping details directly from the Apple Pay, Klarna, Google Pay, PayPal
 
-#### **3.1 Add the ExpressCheckout**
+### **3.1 Add the ExpressCheckout**
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
-> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
+> The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include Apple Pay, Google Pay and PayPal.
 
 Add the `ExpressCheckout` to your Checkout. This embeds an iframe that displays configured payment method types supported by the browser available for the Payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
 
@@ -130,7 +131,7 @@ Define paymentElementOptions:
 var expressCheckoutOptions = {
   wallets: {
     walletReturnUrl: "https://example.com/complete",
-    //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+    //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
   },
 };
 ```
@@ -153,7 +154,7 @@ Add the `UnifiedCheckout` to your Checkout. This embeds an iframe with a dynamic
 var unifiedCheckoutOptions = {
   wallets: {
     walletReturnUrl: "https://example.com/complete",
-    //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+    //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
   },
 };
 ```
@@ -229,13 +230,13 @@ var unifiedCheckoutOptions = {
 3. **`buttonText (optional)`** - The text to display on the payment button.\
    Default value: **Pay Now**
 
-For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
+For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/Hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
 
 </details>
 {% endtab %}
 {% endtabs %}
 
-#### 3.2 Display payment status message
+### 3.2 Display payment status message
 
 When Hyperswitch redirects the customer to the `return_url`, the `payment_client_secret` query parameter is appended by hyper-js. Use this to retrieve the Payment to determine what to show to your customer.
 
@@ -281,7 +282,7 @@ Some events are emitted by payment elements, listening to those events is the on
 * focus
 * blur
 
-#### 4.1 Calling Elements events
+### 4.1 Calling Elements events
 
 First create instance of widgets using `getElement` function. It will return `null` if no matching type is found.
 
@@ -296,7 +297,7 @@ if (paymentelement) {
 }
 ```
 
-#### 4.2 "change" event
+### 4.2 "change" event
 
 The "change" event will be triggered when value changes in Payment element.
 
@@ -317,7 +318,7 @@ Callback function will be fired when the event will be triggered. When called it
 }
 ```
 
-#### 4.3 "ready" event
+### 4.3 "ready" event
 
 The "ready" event will be triggered when payment element is full rendered and can accept "focus" event calls.
 
@@ -329,7 +330,7 @@ Callback for ready event will be triggered with following event object
 }
 ```
 
-#### 4.4 "focus", "blur" event
+### 4.4 "focus", "blur" event
 
 Focus and blur event triggered when respective event will be triggered in payment element.
 

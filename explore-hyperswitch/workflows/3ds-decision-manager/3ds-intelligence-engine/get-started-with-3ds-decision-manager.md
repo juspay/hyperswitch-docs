@@ -1,8 +1,8 @@
 ---
-description: Use Rules to reduce cardholder friction on transactions
+description: >-
+  Implement 3D Secure authentication to reduce fraud and meet compliance requirements
 icon: screwdriver-wrench
 ---
-
 # 3DS Decision Manager
 
 {% hint style="warning" %}

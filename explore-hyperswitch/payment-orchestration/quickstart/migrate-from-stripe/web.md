@@ -1,7 +1,7 @@
 ---
-description: Migrate from Stripe on your web app
+description: >-
+  Explore Web to enhance your payment orchestration capabilities
 ---
-
 # Web
 
 {% hint style="info" %}
@@ -27,16 +27,16 @@ The code from your Stripe integration to be removed and replaced is explained be
 ```js
   $ npm install @juspay-tech/react-hyper-js
   $ npm install @juspay-tech/hyper-js
-  $ npm install @juspay-tech/hyperswitch-node
+  $ npm install @juspay-tech/Hyperswitch-node
 ```
 
 **Step 2:** Change the API key on the server side and modify the paymentIntent endpoint from your server side. You can get the API key from [Developers](https://app.hyperswitch.io/developers) page on the dashboard.
 
 ```js
 // from
-const stripe = require("stripe")("your_stripe_api_key");
+const Stripe = require("Stripe")("your_stripe_api_key");
 // to
-const hyper = require("@juspay-tech/hyperswitch-node")(
+const hyper = require("@juspay-tech/Hyperswitch-node")(
   "your_hyperswitch_api_key"
 );
 ```
@@ -52,8 +52,8 @@ const paymentIntent = await hyper.paymentIntents.create({
 
 ```js
 // from
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@Stripe/Stripe-js";
+import { Elements } from "@Stripe/react-Stripe-js";
 // to
 import { loadStripe } from "@juspay-tech/hyper-js";
 import { hyperElements } from "@juspay-tech/react-hyper-js";
@@ -74,7 +74,7 @@ import {
   PaymentElement,
   useStripe,
   useElements,
-} from "@stripe/react-stripe-js";
+} from "@Stripe/react-Stripe-js";
 //to
 import {
   UnifiedCheckout,
@@ -94,16 +94,16 @@ import {
 **Step 1:** Install Hyperswitch's node server dependency from npm
 
 ```js
-  $ npm install @juspay-tech/hyperswitch-node
+  $ npm install @juspay-tech/Hyperswitch-node
 ```
 
 **Step 2:** Change the API key on the server side and modify the paymentIntent endpoint from your server side
 
 ```js
 // from
-const stripe = require("stripe")("your_stripe_api_key");
+const Stripe = require("Stripe")("your_stripe_api_key");
 // to
-const hyper = require("@juspay-tech/hyperswitch-node")(
+const hyper = require("@juspay-tech/Hyperswitch-node")(
   "your_hyperswitch_api_key"
 );
 ```
@@ -115,20 +115,20 @@ const paymentIntent = await stripe.paymentIntents.create({
 const paymentIntent = await hyper.paymentIntents.create({
 ```
 
-**Step 3:** Load the Hyperswitch directly from beta.hyperswitch.io to remain PCI compliant while collecting the customer's payment details
+**Step 3:** Load the Hyperswitch directly from beta.Hyperswitch to remain PCI DSS compliant while collecting the customer's payment details
 
 ```js
 // from
 <script src="https://js.stripe.com/v3/"></script>
 // to
-<script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
+<script src="https://beta.Hyperswitch/v1/HyperLoader.js"></script>
 ```
 
 **Step 4:** Initiate the SDK with your Hyperswitch publishable key from your website
 
 ```js
 // from
-const stripe = Stripe("your_stripe_publishable_key");
+const Stripe = Stripe("your_stripe_publishable_key");
 // to
 const hyper = Hyper("your_hyperswitch_publishable_key");
 ```

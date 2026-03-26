@@ -1,24 +1,25 @@
 ---
+description: >-
+  Explore Payment Widget to enhance your payment orchestration capabilities
 icon: input-numeric
 ---
-
 # Payment Widget
 
 The **PaymentWidget** component renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
-## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
+## Find the demo app [here](https://GitHub.com/Juspay/react-native-Hyperswitch/tree/main/example)
 
 ## 1. Basic Usage
 
 ### 1.1 Install the react native sdk
 
 ```shellscript
-npm install @juspay-tech/react-native-hyperswitch
+npm install @juspay-tech/react-native-Hyperswitch
 # or
-yarn add @juspay-tech/react-native-hyperswitch
+yarn add @juspay-tech/react-native-Hyperswitch
 ```
 
-#### 1.1.1 Install Peer Dependencies
+### 1.1.1 Install Peer Dependencies
 
 The SDK requires the following peer dependencies to be installed in your project:
 
@@ -37,7 +38,7 @@ npm install @sentry/react-native
 To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
 ```js
-import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";
+import { HyperProvider } from "@juspay-tech/react-native-Hyperswitch ";
 
 function App() {
   return (
@@ -68,7 +69,7 @@ useEffect(() => {
 Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
 ```js
-import { PaymentWidget } from '@juspay-tech/react-native-hyperswitch';
+import { PaymentWidget } from '@juspay-tech/react-native-Hyperswitch';
 
 export default function PaymentUI() {
   // rest of your logic
@@ -116,7 +117,7 @@ onPaymentResult={(result) => {
 }
 ```
 
-#### **Congratulations! You have successfully integrated the Payment Widget into your application.**
+### **Congratulations! You have successfully integrated the Payment Widget into your application.**
 
 ### Props
 

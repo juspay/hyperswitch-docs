@@ -1,7 +1,8 @@
 ---
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: android
 ---
-
 # Android
 
 ### Configuration
@@ -13,7 +14,7 @@ Example:
 ```kotlin
 HyperOTAReact(
     context.applicationContext,
-    "hyperswitch", // appId
+    "Hyperswitch", // appId
     "hyperswitch.bundle", // bundle name
     BuildConfig.VERSION_NAME, // app version
     hyperOTAUrl, // release config URL
@@ -44,5 +45,5 @@ override fun getJSBundleFile(): String {
 }
 ```
 
-For more information, [Airborne](https://github.com/juspay/airborne)
+For more information, [Airborne](https://GitHub.com/Juspay/airborne)
 

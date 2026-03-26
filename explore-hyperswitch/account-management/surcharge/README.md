@@ -1,18 +1,17 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: >-
+  Explore Surcharge to enhance your payment orchestration capabilities
 icon: clipboard-list-check
 ---
-
 # Surcharge
 
 Hyperswitch Surcharge feature allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to apply surcharges to payments.
 
 ## What is Surcharge?
 
-A surcharge, sometimes called a checkout fee or service fee, is an additional fee that merchants can impose onto a customer’s bill to cover the costs of credit card or other payment method processing. Each time a business accepts a credit card or online payment, they pay a small fee (either a percentage or a fixed rate) to various entities, including the card brand (Visa, Mastercard, American Express, etc.), issuers (Klarna, Paypal, Affirm, etc) and the payment processor. Usually, merchants absorb this expense. But with a surcharge program, customers pay for the convenience of using their credit card or other payment methods.
+A surcharge, sometimes called a checkout fee or service fee, is an additional fee that merchants can impose onto a customer’s bill to cover the costs of credit card or other payment method processing. Each time a business accepts a credit card or online payment, they pay a small fee (either a percentage or a fixed rate) to various entities, including the card brand (Visa, Mastercard, American Express, etc.), issuers (Klarna, PayPal, Affirm, etc) and the payment processor. Usually, merchants absorb this expense. But with a surcharge program, customers pay for the convenience of using their credit card or other payment methods.
 
 ## How does it work?
-
 
 
 <figure><img src="../../../.gitbook/assets/Surcharge.drawio (1).svg" alt=""><figcaption></figcaption></figure>
@@ -35,6 +34,6 @@ Surcharge can be applied to a payment using `surcharge_details` field in [paymen
 
 To test the Surcharge Manager, after activating the rule, we can make a Test Payment using the [Hyperswitch Dashboard ](https://app.hyperswitch.io/sdk)
 
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
+{% content-ref url="../../../Hyperswitch-open-source/account-setup/test-a-payment.md" %}
+[test-a-payment.md](../../../Hyperswitch-open-source/account-setup/test-a-payment.md)
 {% endcontent-ref %}

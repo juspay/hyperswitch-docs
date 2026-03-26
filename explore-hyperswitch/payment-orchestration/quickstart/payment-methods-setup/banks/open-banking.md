@@ -1,9 +1,8 @@
 ---
 description: >-
-  Account Verification and Payment Initiation Services using open banking
+  Explore Open Banking to enhance your payment orchestration capabilities
   providers
 ---
-
 # Open Banking
 
 ### Overview
@@ -12,7 +11,7 @@ Open banking enables the sharing of financial data between banks and third-party
 
 ### Open Banking Use-Cases
 
-#### Account Information Service
+### Account Information Service
 
 Account Information Services (AIS) in open banking allow authorized third-party providers to access and retrieve financial data from a user's bank account, with the customer's consent. This information can include transaction history, account balances, and spending patterns.
 
@@ -21,7 +20,7 @@ Regional Usage:
 * **U.S.**: AIS is mostly employed for one-time account verification, especially in direct debit payments.
 * **UK/EU**: AIS services are more widely adopted for a variety of use cases, like financial management, due to the robust open banking frameworks under PSD2.
 
-#### Payment Initiation Service
+### Payment Initiation Service
 
 Payment Initiation Services (PIS) in open banking allow authorized third-party providers to initiate payments directly from a customer's bank account, with their consent, without the need for traditional intermediaries like credit or debit card networks. PIS provides an alternative to conventional payment methods, making bank-to-bank transfers more seamless and efficient.
 
@@ -53,25 +52,25 @@ Regional Usage:
 ### **Payment flow for AIS based Bank debits:**
 
 1. Customers select a Bank debit method on your checkout page
-2. They are prompted to save the payment method with hyperswitch and your configured PM auth (open banking AIS) processor.
+2. They are prompted to save the payment method with Hyperswitch and your configured PM auth (open banking AIS) processor.
 3. Customer is then asked to select their bank account in Processor SDK for saving it with the PM auth processor.
 4. Hyperswitch connects with the PM auth processor to get the necessary information about their bank accounts and saves it.
-5. The customer can now select their saved bank account at hyperswitch to make payment.
+5. The customer can now select their saved bank account at Hyperswitch to make payment.
 
 {% embed url="https://www.youtube.com/watch?v=T-UIaQWUQFY" %}
 
 ### **Payment flow for PIS based Open banking payments:**
 
-1. Customers select a Open banking PIS method on hyperswitch checkout.
+1. Customers select a Open banking PIS method on Hyperswitch checkout.
 2. Customer is then asked to select their bank account in Processor SDK for authorizing the payment.
-3. Once the customer authorizes the payment via Processor SDK, hyperswitch does a sync call with the Processor to update the status of the payment and displays the same to the customer.
+3. Once the customer authorizes the payment via Processor SDK, Hyperswitch does a sync call with the Processor to update the status of the payment and displays the same to the customer.
 
 {% embed url="https://www.youtube.com/watch?v=kBYx6VRM9xo" %}
 
 ### **FAQ**
 
 1. Are there any other Open banking processors apart from Plaid? \
-   \- Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However,   Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a Github Issue.
+   \- Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However,   Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a GitHub Issue.
 2. Any extra configuration required for Android or IOS platform?\
    \- If using Plaid, the android package name (for android) and redirect uri (Universal Link for your application) (for IOS) needs to be passed from the merchant SDK while invoking the Hyperswitch SDK.&#x20;
 3. In which all geographies can I use open banking?

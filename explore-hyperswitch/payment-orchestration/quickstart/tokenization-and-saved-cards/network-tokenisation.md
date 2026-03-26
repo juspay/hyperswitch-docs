@@ -1,10 +1,9 @@
 ---
 description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
+  Implement tokenization to securely store and reuse payment methods
   with Minimal Changes
 icon: shield-check
 ---
-
 # Network Tokenisation
 
 ## What is Network Tokenization?
@@ -51,15 +50,15 @@ We also offer you the flexibility to bring your own Token Requestor credentials 
 
 Hyperswitch supports three distinct Network Tokenization flows, depending on how you’re integrated:
 
-#### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
 
 When you process payments using Hyperswitch’s orchestration layer, you can perform tokenized payments directly - Hyperswitch handles provisioning and using the network token dynamically at payment time. We also take care of optimizing authorization rates and latency by switching between network tokens and clear PAN.
 
-#### 2. Network Tokenization during Vaulting (via Hyperswitch Vault service)
+### 2. Network Tokenization during Vaulting (via Hyperswitch Vault service)
 
 You can network tokenize cards at the time of storage in Hyperswitch’s Vault service. These network tokens can later be used for recurring payments, subscriptions, or one-click checkouts in combination with NTID or cryptogram.
 
-#### 3. Standalone Network Tokenization API Service
+### 3. Standalone Network Tokenization API Service
 
 Use Juspay’s standalone Network Tokenization API service to provision, manage, or detokenize network tokens - without using Hyperswitch’s payment orchestration or vault services.
 
@@ -76,7 +75,7 @@ In this flow:
 * If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
 * Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
 
-#### Flow Summary:
+### Flow Summary:
 
 <div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (163) (1).png" alt=""><figcaption></figcaption></figure></div>
 
@@ -88,7 +87,7 @@ In this flow:
 5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
 6. If the end user had agreed to store the card, the Network token is stored in Hyperswitch vault and optionally, the token can be returned to the merchant for future use
 
-#### **How to Try:**
+### **How to Try:**
 
 Contact our support team to enable Network Tokenization on your merchant account and receive access. You can test tokenized payment flows in sandbox before going live.
 
@@ -102,7 +101,7 @@ In this flow:
 * Card details are securely captured and stored alongside PSP tokens and network tokens
 * These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
 
-#### Flow Summary:
+### Flow Summary:
 
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
@@ -113,7 +112,7 @@ In this flow:
 5. Token can be retrieved later by the merchant along with cryptogram using the Retrieve payment method endpoint
 6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system
 
-#### How to Try?
+### How to Try?
 
 Contact our support team to enable Network Tokenization on your merchant account and receive access. You can test tokenized payment flows in sandbox before going live. You can learn more and try out our Vault service here.
 
@@ -123,21 +122,21 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 This is a lightweight, standalone integration when you:
 
-* Already have your own PCI compliant vault or orchestration system but want to add Network Tokenization for better auth rates and lower costs
+* Already have your own PCI DSS compliant vault or orchestration system but want to add Network Tokenization for better auth rates and lower costs
 * You only want to use Juspay to provision and manage network tokens
 
-#### Flow Summary:
+### Flow Summary:
 
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 * You sign up for Juspay’s Network Tokenization service by reaching out to our support team
 * You can either use Juspay’s TR ID or setup your own TR ID
-* You use [Juspay’s Tokenization APIs](https://juspay.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
+* You use [Juspay’s Tokenization APIs](https://juspay.in.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
   * Generate Network Tokens for a given PAN
   * Update or delete tokens
   * Retrieve Network tokens and cryptogram to make payment through your own payments system
 
-#### How to Try?
+### How to Try?
 
 Contact our support to set up your credentials and get access to our Token Provisioning and Cryptogram APIs.
 

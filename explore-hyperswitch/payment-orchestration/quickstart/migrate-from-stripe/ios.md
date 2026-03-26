@@ -1,7 +1,7 @@
 ---
-description: Migrate from Stripe on your iOS app
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 ---
-
 # iOS
 
 {% hint style="info" %}
@@ -17,7 +17,7 @@ The code from your Stripe integration to be removed and replaced is explained be
 **Step 1:** Install Hyperswitch’s SDK and server side dependencies from npm
 
 ```js
- $ npm install @juspay-tech/react-native-hyperswitch $ npm install @juspay-tech/hyper-node --save-dev
+ $ npm install @juspay-tech/react-native-Hyperswitch $ npm install @juspay-tech/hyper-node --save-dev
 ```
 
 Install peer dependencies:
@@ -30,25 +30,25 @@ Install peer dependencies:
 
 ```js
 // from
-const stripe = require("stripe")("your_stripe_api_key");
+const Stripe = require("Stripe")("your_stripe_api_key");
 // to
-const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
+const Stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
 ```
 
 **Step 3:** Add these sources at the beginning of you podfile
 
 ```ruby
-source 'https://github.com/juspay/hyperswitch-pods.git'
+source 'https://GitHub.com/Juspay/Hyperswitch-pods.git'
 source 'https://cdn.cocoapods.org/'
 ```
 
-_**Step 4:**_ Replace StripePaymentSheet with hyperswitch in your podfile
+_**Step 4:**_ Replace StripePaymentSheet with Hyperswitch in your podfile
 
 ```ruby
 # from
 pod 'StripePaymentSheet'
 # to
-pod 'hyperswitch', '1.0.0-alpha01'
+pod 'Hyperswitch', '1.0.0-alpha01'
 ```
 
 **Step 5:** Change these imports in your project
@@ -57,7 +57,7 @@ pod 'hyperswitch', '1.0.0-alpha01'
 // from
 import StripePaymentSheet
 // to
-import hyperswitch
+import Hyperswitch
 ```
 
 **Step 6:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.

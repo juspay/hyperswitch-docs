@@ -1,16 +1,16 @@
 ---
+description: >-
+  Follow this guide to implement Integration and optimize payment flows
 hidden: true
 ---
-
 # Integration Guide
 
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>
 
 
-
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
-Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
+Repository URL: [https://GitHub.com/Juspay/Hyperswitch-control-center-embedded](https://GitHub.com/Juspay/Hyperswitch-control-center-embedded)
 
 Demo URL: [https://embedded-ssr.netlify.app/](https://embedded-ssr.netlify.app/)
 
@@ -38,7 +38,7 @@ Since the package is currently hosted on GitHub (not yet on the public npm regis
 
     ```json
     "dependencies": {
-      "hyperswitch-control-center-embedded": "github:juspay/hyperswitch-control-center-embedded"
+      "Hyperswitch-control-center-embedded": "GitHub:Juspay/Hyperswitch-control-center-embedded"
     }
     ```
 3. Run the installation command in your terminal:
@@ -53,9 +53,9 @@ Security Warning: Never expose your Hyperswitch API-Key on the frontend. You mus
 
 The flow is: Frontend → requests session → Your Backend → requests token (using API Key) → Hyperswitch API
 
-#### 2.1. Create the Token Endpoint
+### 2.1. Create the Token Endpoint
 
-Create a route (e.g., /embedded/hyperswitch) in your backend application (Node/Express example below).
+Create a route (e.g., /embedded/Hyperswitch) in your backend application (Node/Express example below).
 
 Required Headers for Hyperswitch Call:
 
@@ -74,9 +74,9 @@ const port = 4000;
 app.use(cors());
 app.use(express.json());
 
-const HYPERSWITCH_BASE_URL = 'https://app.hyperswitch.io/api'; 
+const HYPERSWITCH_BASE_URL = 'https://app.hyperswitch.io/api';
 
-app.get('/embedded/hyperswitch', async (req, res) => {
+app.get('/embedded/Hyperswitch', async (req, res) => {
   try {
     // Call Hyperswitch to generate a temporary JWT for the frontend
     const response = await axios.get(`${HYPERSWITCH_BASE_URL}/api/embedded/token`, {
@@ -88,19 +88,19 @@ app.get('/embedded/hyperswitch', async (req, res) => {
     });
 
     console.log('Hyperswitch Token Generated:', response.data);
-    
+
     // Return the token to your frontend
-    res.json({ 
-        success: true, 
-        message: 'Token fetched successfully', 
-        data: response.data 
+    res.json({
+        success: true,
+        message: 'Token fetched successfully',
+        data: response.data
     });
 
   } catch (error) {
     console.error('Error fetching token:', error.message);
-    res.status(500).json({ 
-        error: 'Failed to fetch token from Hyperswitch API', 
-        details: error.message 
+    res.status(500).json({
+        error: 'Failed to fetch token from Hyperswitch API',
+        details: error.message
     });
   }
 });
@@ -115,22 +115,22 @@ app.listen(port, () => {
 
 Now, configure the React application to load the SDK and consume the token from your new backend endpoint.
 
-#### 3.1. Import Components
+### 3.1. Import Components
 
 Import the necessary modules. Note that Tailwind CSS is used for styling in this example.
 
 ```javascript
 import React, { useState } from 'react';
-import './App.css'; 
-import 'tailwindcss/tailwind.css'; 
+import './App.css';
+import 'tailwindcss/tailwind.css';
 import {
   loadHyperswitch,
   HyperswitchProvider,
   ConnectorConfiguration,
-} from 'hyperswitch-control-center-embedded';
+} from 'Hyperswitch-control-center-embedded';
 ```
 
-#### 3.2. Implement the Component
+### 3.2. Implement the Component
 
 The core logic relies on the loadHyperswitch function. This function takes a fetchToken callback.
 
@@ -146,12 +146,12 @@ function App() {
 
   // Initialize the SDK instance once
   const [hyperswitchInstance] = useState(() => {
-    
+
     // Define the token fetching logic
     const fetchToken = async () => {
       try {
         // 1. Request token from YOUR backend (created in Step 2)
-        const response = await fetch('http://localhost:4000/embedded/hyperswitch', {
+        const response = await fetch('http://localhost:4000/embedded/Hyperswitch', {
           method: "GET",
           headers: {
             'Content-Type': 'application/json'
@@ -167,14 +167,14 @@ function App() {
         }
 
         const responseData = await response.json();
-        
+
         // 2. Extract the actual JWT string
         // Check both data.token (standard) or root token property depending on your backend response structure
         const token = responseData.data?.token || responseData.token;
-        
+
         console.log('Token received');
         return token;
-        
+
       } catch (err) {
         console.error('Exception during token fetch:', err);
         setErrorMessage(err.message);
@@ -190,7 +190,7 @@ function App() {
 
   return (
     <div className="h-screen bg-gray-100 p-10 text-gray-700">
-      
+
       {/* Error State Handling */}
       {errorMessage ? (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -202,13 +202,13 @@ function App() {
            hyperswitchInstance is passed down here.
         */
         <HyperswitchProvider hyperswitchInstance={hyperswitchInstance}>
-          
+
           {/* Render the actual UI.
              'url' prop points to the Hyperswitch Dashboard API.
-             Use "https://app.hyperswitch.io/api" for Sandbox 
+             Use "https://app.hyperswitch.io/api" for Sandbox
           */}
           <ConnectorConfiguration url="https://app.hyperswitch.io/api" />
-          
+
         </HyperswitchProvider>
       )}
     </div>
@@ -221,7 +221,7 @@ export default App;
 
 ### API Reference
 
-#### loadHyperswitch(options)
+### loadHyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -230,13 +230,13 @@ Initializes the SDK logic.
   * Should return the JWT string on success.
   * Should return `undefined` on failure.
 
-#### \<HyperswitchProvider>
+### \<HyperswitchProvider>
 
 Context provider that holds the authentication state.
 
 * **hyperswitchInstance**: The object returned by loadHyperswitch.
 
-#### \<ConnectorConfiguration>
+### \<ConnectorConfiguration>
 
 The UI Component that renders the settings form.
 

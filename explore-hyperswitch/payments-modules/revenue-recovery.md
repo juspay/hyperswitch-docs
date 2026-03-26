@@ -1,10 +1,9 @@
 ---
 description: >-
-  Configure Juspay Hyperswitch Revenue Recovery to automatically retry failed
+  Explore Revenue Recovery to enhance your payment orchestration capabilities
   recurring payments and reduce subscription churn for your SaaS business
 icon: clock-rotate-left
 ---
-
 # Revenue Recovery
 
 Revenue Recovery module of Juspay Hyperswitch is designed to act as a failsafe for recurring payments. It seamlessly integrates with merchants' existing subscription management systems and performs intelligent retries to recover failed transactions. With minimal effort from merchants, Revenue Recovery delivers an uplift in authorization rates, helping businesses reduce churn, recover lost revenue, and maximize customer lifetime value.

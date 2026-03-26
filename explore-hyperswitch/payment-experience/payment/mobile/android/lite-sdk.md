@@ -1,13 +1,13 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: mobile-screen
 ---
-
 # Lite SDK
 
 ## Key Features of Lite SDK
 
-#### Lightweight Integration
+### Lightweight Integration
 
 * **Smaller artifact size**: <300 KB
 * **Faster initialization**: Streamlined setup process
@@ -39,7 +39,7 @@ Add the Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation 'io.hyperswitch:hyperswitch-sdk-android-lite:+'
+    implementation 'io.Hyperswitch:Hyperswitch-sdk-android-lite:+'
 }
 ```
 
@@ -118,7 +118,7 @@ val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 ```
 
-#### Final Step
+### Final Step
 
 Congratulations! You have successfully integrated the Hyperswitch Lite SDK into your app. The Lite SDK provides the same powerful payment processing capabilities with a smaller footprint, making it ideal for apps where bundle size is a concern.
 

@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Resolution Strategies for Expected Exceptions to enhance your payment orchestration capabilities
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview
@@ -36,8 +41,7 @@ If the source transaction is valid and represents real money, but the automated 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.34.16 PM.png" alt=""><figcaption></figcaption></figure>
 
 
-
-#### Option 1: Edit Entry
+### Option 1: Edit Entry
 
 "The Pre-emptive Correction"
 
@@ -52,7 +56,7 @@ Unlike the Mismatched workflow where you are fixing a break, here you are modify
   * Wrong Currency: The source system erroneously flagged a transaction as `USD` instead of `CAD`. You fix it now to prevent a currency mismatch exception tomorrow
   * Data Enrichment: The source stream missed a critical field (e.g., `Merchant_ID`) that will be required for the match logic to work once the file arrives
 
-#### Option 2: Mark as Received
+### Option 2: Mark as Received
 
 "The Manual Verification Approach"
 
@@ -65,7 +69,7 @@ This option is unique to `EXPECTED` exceptions. It replaces the "Create Entry" w
   * Missing Statements: The bank feed failed for a specific day, but the Operations team verified the balance via the online banking portal
   * Lump Sum Settlements: The bank deposited a bulk amount, and you need to manually mark individual expected line items as "Received" against that bulk deposit
 
-#### Option 3: Replace Entry
+### Option 3: Replace Entry
 
 "The Swap Approach"
 
@@ -76,11 +80,4 @@ This allows you to unlink the current "Expected" entry and replace it with a dif
   * Wrong Ledger Account: The expectation was generated for the "USD Ledger" but the transaction actually belongs to the "EUR Ledger." You replace it with the correctly parsed entry
   * Corrupted Source Data: The source event was malformed. You replace it with a clean version of the event so the system can properly search for the counterparty
 
-#### Summary: Which Button Should I Click?
-
-| If your problem is...                                                                                                                         | Use this Resolution |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| <p>"This expectation is valid, but the amount/data is wrong."<br><br>(e.g., You know the bank will send $95, but the system expects $100)</p> | Edit Entry          |
-| <p>"I see the money in the bank, but no file is coming."<br><br>(e.g., Cash, Check, or missing API feed)</p>                                  | Mark as Received    |
-| <p>"This is a duplicate or test record."<br><br>(e.g., A developer test transaction)</p>                                                      | Ignore Transaction  |
-| <p>"The system generated this expectation from the wrong data."<br><br>(e.g., Linked to the wrong ledger entity)</p>                          | Replace Entry       |
+### Summary: Which Button Should I Click? | If your problem is... | Use this Resolution | | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | | <p>"This expectation is valid, but the amount/data is wrong."<br><br>(e.g., You know the bank will send $95, but the system expects $100)</p> | Edit Entry | | <p>"I see the money in the bank, but no file is coming."<br><br>(e.g., Cash, Check, or missing API feed)</p> | Mark as Received | | <p>"This is a duplicate or test record."<br><br>(e.g., A developer test transaction)</p> | Ignore Transaction | | <p>"The system generated this expectation from the wrong data."<br><br>(e.g., Linked to the wrong ledger entity)</p> | Replace Entry | 

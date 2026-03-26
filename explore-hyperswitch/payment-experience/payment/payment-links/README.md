@@ -1,8 +1,8 @@
 ---
-description: Low-code solution to accept payments
+description: >-
+  Explore Payment Links to enhance your payment orchestration capabilities
 icon: link
 ---
-
 # Payment Links
 
 Introducing Payment Links - Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
@@ -31,7 +31,7 @@ API Level Overview of Payment Links with Hyperswitch
 
 Yes. Your custom domain can be included in the default payment\_link\_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
+This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/Hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
 
 </details>
 
@@ -47,7 +47,7 @@ Currently, the Control centre's capability to create payment links is under deve
 
 <summary>Can I create a static payment link which can be used across users?</summary>
 
-No, at the moment we do not support creation of static payment links ([request for feature](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests))
+No, at the moment we do not support creation of static payment links ([request for feature](https://GitHub.com/Juspay/Hyperswitch/discussions/new?category=ideas-feature-requests))
 
 </details>
 
