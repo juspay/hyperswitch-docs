@@ -1,9 +1,12 @@
+---
+description: Learn how to listen to custom events from the Hyperswitch SDK for enhanced control
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event
 
-This event is triggered when the expiry date changes. Merchants can listen to this event and implement checks and validations based on the received value.\
-
+This event is triggered when the expiry date changes. Merchants can listen to this event and implement checks and validations based on the received value.
 
 ```javascript
 // CheckoutForm.js
@@ -26,9 +29,13 @@ For card payments, the event will include additional details such as:
 ```javascript
 // CheckoutForm.js
 window.addEventListener("message", (ev) => {
-    // Collecting Expiry Date
-    if (ev.data.expiryDate) {
-      console.log("Expiry date => ", ev.data.expiryDate);
+    // Collecting Payment Method Info
+    if (ev.data.paymentMethod) {
+      console.log("Payment method => ", ev.data.paymentMethod);
+    }
+    // Collecting Card Brand
+    if (ev.data.cardBrand) {
+      console.log("Card brand => ", ev.data.cardBrand);
     }
   });
 ```

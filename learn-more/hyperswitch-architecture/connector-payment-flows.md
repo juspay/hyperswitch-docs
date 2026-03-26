@@ -1,12 +1,10 @@
 ---
-description: >-
-  This page outlines the various payment flows you may come across while
-  building a connector.
+description: Learn about connector payment flows including preprocessing and authorization patterns
 ---
 
 # Connector Payment Flows
 
-### Pre-processing
+## Pre-processing
 
 This refers to the two-step payment flow where preprocessing steps are executed before the main authorization call. If your connector does not use tokenization or does not require customer or access token flows, implement the pre-processing pattern described below. It's important to note that different connectors implement preprocessing differently. For example, Airwallex creates payment intents during preprocessing as one of the steps while Nuvei performs 3DS enrollment checks as a step. The preprocessing call does make a separate (second) call for the authorize flow. The preprocessing and authorization are implemented as distinct, sequential operations in Hyperswitch's payment processing pipeline.
 
@@ -43,7 +41,7 @@ This flow represents the core payment authorization logic executed once all prer
 * **Preprocessing Steps**: Executes preprocessing logic
 * **Connector Customer Creation**: Creates customer records at the connector level
 
-#### **Decision Logic**
+### Decision Logic
 
 The flow includes intelligent decision-making capabilities:
 
