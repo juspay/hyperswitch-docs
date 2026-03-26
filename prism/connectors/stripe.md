@@ -1,3 +1,7 @@
+---
+description: Integrate Stripe payments with card, wallet, bank transfers, recurring payments, and tokenization support
+---
+
 # Stripe
 
 <!--

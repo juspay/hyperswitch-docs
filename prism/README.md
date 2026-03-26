@@ -1,3 +1,7 @@
+---
+description: High-performance payment abstraction library for 100+ connectors with multi-language SDK support
+---
+
 <div align="center">
 
 

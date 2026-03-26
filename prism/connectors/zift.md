@@ -1,3 +1,7 @@
+---
+description: Configure Zift connector and integrate payment flows including authorize, capture, refund, and void operations
+---
+
 # Zift
 
 <!--

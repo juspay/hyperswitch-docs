@@ -1,3 +1,7 @@
+---
+description: Implement advanced payment flows including recurring payments, incremental authorization, partial capture, and webhooks
+---
+
 # Extending to More Flows
 
 You have implemented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
