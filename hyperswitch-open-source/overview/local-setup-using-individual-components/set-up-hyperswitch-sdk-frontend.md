@@ -1,7 +1,7 @@
 ---
+description: Integrate mobile SDK to deliver seamless in-app payment experiences
 icon: desktop
 ---
-
 # SDK (Frontend)
 
 {% hint style="warning" %}
@@ -13,15 +13,14 @@ You will need to understand and configure a few configurations before starting t
 *   **Env Configs for Demo App**
 
 
-
     * **`HYPERSWITCH_PUBLISHABLE_KEY`:** The publishable key of your Hyperswitch account. This key will start with `pk_dev_` for local development, `pk_snd_` for sandbox, and `pk_prd_` for production.
     * **`HYPERSWITCH_SECRET_KEY`:** The API key of your Hyperswitch account that is used to authenticate API requests from your merchant server.
     * **`HYPERSWITCH_SERVER_URL`:** The URL of the Hyperswitch backend server. You may use our Sandbox URL ([https://sandbox.hyperswitch.io](https://sandbox.hyperswitch.io/)). To do this, go to the Hyperswitch Dashboard, find the "Developers" section, then click on [API Keys](https://app.hyperswitch.io/dashboard/developer-api-keys). Here you can generate an API key (`HYPERSWITCH_SECRET_KEY`) and copy your publishable key (`HYPERSWITCH_PUBLISHABLE_KEY`).\
-      Alternatively, you can specify that your backend is running locally (e.g. [http://localhost:8080](http://localhost:8080/)). In this case, you will need to create the API key and publishable key locally. Read this [hyperswitch docs](set-up-hyperswitch-backend.md) on how to do this.
+      Alternatively, you can specify that your backend is running locally (e.g. [http://localhost:8080](http://localhost:8080/)). In this case, you will need to create the API key and publishable key locally. Read this [Hyperswitch docs](set-up-hyperswitch-backend.md) on how to do this.
+
     * **`HYPERSWITCH_CLIENT_URL`:** The URL of your hosted Hyperswitch SDK (e.g. [http://localhost:9050](http://localhost:9050/)). You may also use our Sandbox URL ([https://beta.hyperswitch.io/v1](https://beta.hyperswitch.io/v1)).
     * **`SELF_SERVER_URL`:** The URL of the hosted server file for generating client-secret and for fetching urls & configs (eg: [http://localhost:5252](http://localhost:5252/)).
 *   **Env Configs for SDK**
-
 
 
     * **`ENV_BACKEND_URL`:** Sets the endpoint for all the APIs used within the SDK to interact with the backend service. If you are running your own backend service, you can configure and specify its endpoint here for local setups.
@@ -61,6 +60,7 @@ cd hyperswitch-web
         ```
         npm run re:start
         ```
+
     *   On the second terminal, run the following command for starting the SDK server (by default on [http://localhost:9050](http://localhost:9050/)).
 
         ```
@@ -69,7 +69,7 @@ cd hyperswitch-web
 
     Upon success, you should see a message _Compiled successfully_ message on both of your terminals.
 3. Make sure you have configured the [.env](https://github.com/juspay/hyperswitch-web/blob/main/Hyperswitch-React-Demo-App/.env) file correctly.
-   * Publishable Key `HYPERSWITCH_PUBLISHABLE_KEY` and API Key `HYPERSWITCH_SECRET_KEY` belong to the server `HYPERSWITCH_SERVER_URL`. If you use our Sandbox URL, use publishable key and API key from the hyperswitch website. If you are using your self-hosted backend, use your locally created publishable key and API Key.
+   * Publishable Key `HYPERSWITCH_PUBLISHABLE_KEY` and API Key `HYPERSWITCH_SECRET_KEY` belong to the server `HYPERSWITCH_SERVER_URL`. If you use our Sandbox URL, use publishable key and API key from the Hyperswitch website. If you are using your self-hosted backend, use your locally created publishable key and API Key.
    * The URL's must not have a slash at the end
 4.  Now that the build is generated successfully, on a third terminal, launch the playground.
 

@@ -1,8 +1,7 @@
 ---
-description: Install Hyperswitch on your K8s setup using our Helm charts
+description: Deploy Kubernetes on Kubernetes for containerized payment infrastructure
 icon: dharmachakra
 ---
-
 # Deploy on Kubernetes
 
 Hyperswitch can be deployed on Kubernetes **using Helm Charts**, a package manager for Kubernetes, to provide a robust, scalable, and containerized payment infrastructure. Kubernetes deployment ensures high availability, effortless scaling, and efficient orchestration of Hyperswitch services.&#x20;

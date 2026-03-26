@@ -1,8 +1,7 @@
 ---
-description: Create your Hyperswitch account and add a payment provider
+description: Deploy Account to enable payment processing capabilities
 icon: wrench
 ---
-
 # Account setup
 
 This guide is aimed at helping you create a Hyperswitch account and create payment processors as per your requirement. You can choose any of the following methods for this:

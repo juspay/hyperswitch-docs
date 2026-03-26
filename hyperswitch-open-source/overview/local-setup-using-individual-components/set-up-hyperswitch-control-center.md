@@ -1,7 +1,7 @@
 ---
+description: Explore Control Center to enhance your payment orchestration capabilities
 icon: laptop
 ---
-
 # Control Center
 
 {% hint style="warning" %}

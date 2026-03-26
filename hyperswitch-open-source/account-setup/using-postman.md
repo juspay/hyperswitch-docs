@@ -1,10 +1,7 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider using Hyperswitch
-  APIs through postman
+description: Explore Using postman to enhance your payment orchestration capabilities
 icon: rocket-launch
 ---
-
 # Using postman
 
 ## Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
@@ -103,7 +100,7 @@ curl --location 'http://localhost:8080/api_keys/<your_merchant_id>' \
    * Use the following cURL command to configure the payment processor
      * Replace `<your_merchant_id>` with your merchant ID obtained earlier.
      * Replace `<admin-api-key>` with your admin API key.
-     * Replace `<connector_name>` with the name of your payment processor (e.g., "stripe").
+     * Replace `<connector_name>` with the name of your payment processor (e.g., "Stripe").
      * Replace `<connector_api_key>` with the API key provided by your payment processor.
 
 <details>

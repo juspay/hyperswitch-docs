@@ -1,8 +1,7 @@
 ---
-description: Deploy each Hyperswitch component individually
+description: Deploy Component-wise Deployment to enable payment processing capabilities
 icon: list-ol
 ---
-
 # Component-wise Deployment
 
 To deploy Hyperswitch components individually on AWS, follow the outlined steps for each component. This approach allows for tailored configurations and scaling based on specific requirements.​

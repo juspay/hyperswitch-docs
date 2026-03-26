@@ -1,7 +1,7 @@
 ---
+description: Deploy Development Environment to enable payment processing capabilities
 icon: diamonds-4
 ---
-
 # Development Environment Setup
 
 {% hint style="warning" %}

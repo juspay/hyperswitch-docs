@@ -1,3 +1,7 @@
+---
+description: Deploy Azure Helm Charts on Kubernetes for containerized payment infrastructure
+---
+
 # Deploy on Azure Using Helm Charts
 
 ### Prerequisites
@@ -343,6 +347,7 @@ az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
     ```bash
     kubectl logs <pod-name> -n <namespace>
     ```
+
 *   **View Events**:
 
     To view events in the namespace:
@@ -350,6 +355,7 @@ az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
     ```bash
     kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
     ```
+
 *   **Reinstall Chart**:
 
     If issues persist, uninstall and reinstall Hyperswitch:

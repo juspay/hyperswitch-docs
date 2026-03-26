@@ -1,7 +1,7 @@
 ---
+description: Use the API to integrate payment capabilities into your application
 icon: arrow-up-triangle-square
 ---
-
 # Try out APIs
 
 ### Set up your merchant account

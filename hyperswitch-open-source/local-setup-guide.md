@@ -1,9 +1,9 @@
 ---
+description: Set up Local Guide in your local environment for development and testing
 hidden: true
 noIndex: true
 icon: desktop
 ---
-
 # Local Setup Guide
 
 ## Setup Options -

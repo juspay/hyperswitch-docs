@@ -1,7 +1,7 @@
 ---
+description: Explore Backend to enhance your payment orchestration capabilities
 icon: server
 ---
-
 # Backend
 
 {% hint style="warning" %}
@@ -28,7 +28,7 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
     docker compose --file docker-compose-development.yml up -d
     ```
 
-    This will compile the payments router, the primary component within hyperswitch and then start it. Depending on the specifications of your machine, compilation can take around 15 minutes.
+    This will compile the payments router, the primary component within Hyperswitch and then start it. Depending on the specifications of your machine, compilation can take around 15 minutes.
 5. (Optional) You can also choose to [start the scheduler and/or monitoring services](set-up-hyperswitch-backend.md#running-additional-services) in addition to the payments router.
 6.  Verify that the server is up and running by hitting the health endpoint:
 

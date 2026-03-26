@@ -1,7 +1,7 @@
 ---
+description: Explore Configure and Run the Application to enhance your payment orchestration capabilities
 icon: panel-ews
 ---
-
 # Configure and Run the Application
 
 ## Configure the application

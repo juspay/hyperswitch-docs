@@ -1,16 +1,13 @@
 ---
-description: >-
-  A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
-  with setup, access, cleanup, and troubleshooting instructions.
+description: Deploy Local Helm Charts and Minikube on Kubernetes for containerized payment infrastructure
 ---
-
 # Deploy on Local using Helm Charts and Minikube
 
 ## **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
 ### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
 
-#### **Step 1: Install Required Tools** <a href="#id-5nsuvyw3aien" id="id-5nsuvyw3aien"></a>
+### **Step 1: Install Required Tools** <a href="#id-5nsuvyw3aien" id="id-5nsuvyw3aien"></a>
 
 **a. kubectl**
 
@@ -27,7 +24,7 @@ Install Minikube following the official documentation:[ Install Minikube](https:
 Helm is a package manager for Kubernetes applications.\
 Install Helm using the instructions here:[ Install Helm](https://helm.sh/docs/intro/install/)
 
-#### **Step 2: Start Minikube** <a href="#v4ghhsu6urci" id="v4ghhsu6urci"></a>
+### **Step 2: Start Minikube** <a href="#v4ghhsu6urci" id="v4ghhsu6urci"></a>
 
 Start a Minikube cluster with sufficient resources:
 
@@ -63,14 +60,14 @@ brew install orbstack  # Download the OrbStack application
 
 ## **Part 2: Deploy Hyperswitch on Kubernetes Using Helm** <a href="#jqgk5qw5bkgo" id="jqgk5qw5bkgo"></a>
 
-#### **Step 1: Add and Update the Hyperswitch Helm Repository** <a href="#id-75zpwj4wb8db" id="id-75zpwj4wb8db"></a>
+### **Step 1: Add and Update the Hyperswitch Helm Repository** <a href="#id-75zpwj4wb8db" id="id-75zpwj4wb8db"></a>
 
 ```bash
 helm repo add hyperswitch https://juspay.github.io/hyperswitch-helm
 helm repo update
 ```
 
-#### **Step 2: Install Hyperswitch** <a href="#id-4ckek6lepkr2" id="id-4ckek6lepkr2"></a>
+### **Step 2: Install Hyperswitch** <a href="#id-4ckek6lepkr2" id="id-4ckek6lepkr2"></a>
 
 Install the Helm chart and create the namespace:
 
@@ -88,7 +85,7 @@ kubectl get pods -n hyperswitch
 That's it! Hyperswitch should be up and running on your Minikube Cluster🎉 🎉
 {% endhint %}
 
-#### **Step 3: Accessing Services** <a href="#id-6pkposi9l5fl" id="id-6pkposi9l5fl"></a>
+### **Step 3: Accessing Services** <a href="#id-6pkposi9l5fl" id="id-6pkposi9l5fl"></a>
 
 Expose services locally using port forwarding:
 
@@ -121,13 +118,13 @@ kubectl delete namespace hyperswitch
 
 ### **Troubleshooting** <a href="#ywgi5rvuean2" id="ywgi5rvuean2"></a>
 
-#### **View Pod Logs** <a href="#id-7wtmzixwrfeq" id="id-7wtmzixwrfeq"></a>
+### **View Pod Logs** <a href="#id-7wtmzixwrfeq" id="id-7wtmzixwrfeq"></a>
 
 ```bash
 kubectl logs <pod-name> -n hyperswitch
 ```
 
-#### **View Events** <a href="#ptykemgnnwf0" id="ptykemgnnwf0"></a>
+### **View Events** <a href="#ptykemgnnwf0" id="ptykemgnnwf0"></a>
 
 ```bash
 kubectl get events -n hyperswitch --sort-by='.metadata.creationTimestamp'

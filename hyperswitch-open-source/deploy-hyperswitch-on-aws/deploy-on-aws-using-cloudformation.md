@@ -1,8 +1,7 @@
 ---
-description: Use our CDK script to deploy Hyperswitch into your AWS stack
+description: Deploy AWS CloudFormation on AWS infrastructure for scalable payment processing
 icon: aws
 ---
-
 # Deploy on AWS using CloudFormation
 
 {% embed url="https://www.youtube.com/watch?v=c2igjE3-EDc" %}
@@ -25,19 +24,19 @@ icon: aws
 
 If you do not have a user with admin access, follow these steps:
 
-#### 1. Sign into the AWS Management Console
+### 1. Sign into the AWS Management Console
 
 * Go to [https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)
 * In the left-hand menu, click **Users**
 * Click the **Add users** button
 
-#### 2. Set the username
+### 2. Set the username
 
 * **User name:** `hyperswitch`
 
 <figure><img src="../../.gitbook/assets/1-specify-user.png" alt=""><figcaption></figcaption></figure>
 
-#### 3. Attach Permissions
+### 3. Attach Permissions
 
 * Choose **Attach policies directly**.
 * In the search bar, type `AdministratorAccess`
@@ -46,7 +45,7 @@ If you do not have a user with admin access, follow these steps:
 
 <figure><img src="../../.gitbook/assets/2-policies.png" alt=""><figcaption></figcaption></figure>
 
-#### 4. Review and Create
+### 4. Review and Create
 
 * Confirm the details:
 * User name: `hyperswitch`
@@ -55,7 +54,7 @@ If you do not have a user with admin access, follow these steps:
 
 <figure><img src="../../.gitbook/assets/3-create-user.png" alt=""><figcaption></figcaption></figure>
 
-#### 5. Save Access Credentials
+### 5. Save Access Credentials
 
 * Click on the newly created user `hyperswitch` to view its details.
 * Navigate to the **Security credentials** tab.

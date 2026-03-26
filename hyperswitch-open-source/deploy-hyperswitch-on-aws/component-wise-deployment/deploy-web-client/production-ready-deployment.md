@@ -1,7 +1,6 @@
 ---
-description: Deploy web client on AWS
+description: Deploy Production ready deployment to enable payment processing capabilities
 ---
-
 # Production ready deployment
 
 {% hint style="info" %}
@@ -18,7 +17,7 @@ In this section, you will be deploying the web client on your AWS account
 >
 > You can directly start from [Step 3](production-ready-deployment.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
-#### Step 1 - Install or Update the AWS CLI
+### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="Linux x86 (64-bit)" %}
@@ -85,7 +84,7 @@ which aws
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-#### Step 2 - Configure the AWS CLI
+### Step 2 - Configure the AWS CLI
 
 For this step you would need the following from you AWS account
 
@@ -103,7 +102,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-#### Step 3 - Setup Hyperswitch Web Client
+### Step 3 - Setup Hyperswitch Web Client
 
 You can now deploy the Hyperswitch web client by running the below command in the same terminal session
 

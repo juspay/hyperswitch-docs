@@ -1,14 +1,13 @@
 ---
-description: Instructions to setup Card Vault on AWS manually
+description: Deploy Cloud guide to enable payment processing capabilities
 ---
-
 # Cloud setup guide
 
 {% hint style="info" %}
 This guide will help you to setup the card vault on AWS manually by setting up the various components
 {% endhint %}
 
-#### Creating EC2 instance
+### Creating EC2 instance
 
 Log into your AWS account and create a new EC2 instance preferably on a t3.medium machine with an AMI that supports docker like Amazon Linux 2.
 
@@ -18,7 +17,7 @@ Log into your AWS account and create a new EC2 instance preferably on a t3.mediu
 Ensure to manage your instances' (EC2 and RDS) security group rules are selectively enabled for the application subnet and not exposed to the internet. (The locker application should not be accessible via internet)
 {% endhint %}
 
-#### Install docker on the EC2 instance
+### Install docker on the EC2 instance
 
 Connect to your EC2 instance using the SSH client via a terminal
 
@@ -42,7 +41,7 @@ After starting the docker run the following command to pull the `hyperswitch-car
 docker pull juspaydotin/hyperswitch-card-vault:latest
 ```
 
-#### Setup Database (AWRDS)
+### Setup Database (AWRDS)
 
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
@@ -83,7 +82,7 @@ and paste the contents from the below mentioned migration files
 * [FILE - 1](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
 * [FILE - 2](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
 
-#### Setup KMS
+### Setup KMS
 
 Before setting up KMS, create a new IAM role for your EC2 instance to allow connection to KMS. Use `AWS service` as the trusted entity type and add permissions for `AWSKeyManagementServicePowerUser` and create an inline policy allowing `All KMS actions`.
 
@@ -93,7 +92,7 @@ Now, create a KMS key pair on AWS with the key type as `symmetric` and the key u
 
 <figure><img src="../../../../.gitbook/assets/image (142).png" alt="" width="563"><figcaption><p>Creating IAM roles</p></figcaption></figure>
 
-#### Generating the keys
+### Generating the keys
 
 To generate the `master key` and the `custodian keys` use the following command after cloning the repository.
 
@@ -119,7 +118,7 @@ openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 We recommend generating the Master and JWE/JWS keys as mentioned below in the local setup guide outside of this EC2 machine for better security
 {% endhint %}
 
-#### KMS encrypting the keys
+### KMS encrypting the keys
 
 After generating your keys and setting up of KMS, run the following command to KMS encrypt the keys.
 
@@ -138,10 +137,10 @@ echo -n '<locker private key>' | kms_encrypt
 
 # substitute this in the above mentioned envfile (LOCKER__SECRETS__TENANT_PUBLIC_KEY)
 echo -n '<tenant public key>' | kms_encrypt
- 
+
 ```
 
-#### Update Config files
+### Update Config files
 
 * Create an `env-file` in the instance and paste the environment variables mentioned below
 
@@ -170,7 +169,7 @@ LOCKER__AWS_KMS__KEY_ID= # kms id used to encrypt it below
 LOCKER__AWS_KMS__REGION= # kms region used
 ```
 
-#### Running the Locker
+### Running the Locker
 
 After the above changes are done, run the following command to start the locker
 
@@ -178,14 +177,14 @@ After the above changes are done, run the following command to start the locker
 docker run --env-file envfile -d --net=host juspaydotin/hyperswitch-card-vault:latest
 ```
 
-#### Unlock the locker
+### Unlock the locker
 
 Once the locker is up and running, use the 2 key custodian keys generated earlier securely to unlock the locker for use.
 
 The following cURLs are to be used to provide keys
 
 <pre class="language-bash"><code class="lang-bash"># temporary turn of saving to history to run the following commands
-unset HISTFILE 
+unset HISTFILE
 
 # key 1
 <strong> curl -X 'POST' \
@@ -211,7 +210,7 @@ unset HISTFILE
 
 If the last cURL replies with `Decrypted Successfully`, we are ready to use the locker.
 
-#### Integrating it with Hyperswitch&#x20;
+### Integrating it with Hyperswitch&#x20;
 
 To start using it with Hyperswitch application update the following environment variables while deploying the Hyperswitch Server. To use it with other applications use the Vault URL and JWE keys.
 
