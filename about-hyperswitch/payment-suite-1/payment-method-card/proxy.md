@@ -1,8 +1,8 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: >-
+  Explore Proxy to enhance your payment orchestration capabilities
 icon: almost-equal-to
 ---
-
 # Proxy
 
 The Proxy Payments Service allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
@@ -18,7 +18,7 @@ Key Highlights:
 
 <figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
-#### **1. Create Payment Method Session (Server-Side)**&#x20;
+### **1. Create Payment Method Session (Server-Side)**&#x20;
 
 The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
@@ -35,7 +35,7 @@ curl --request POST \
 '
 ```
 
-#### **2. Initialize SDK (Client-Side)**&#x20;
+### **2. Initialize SDK (Client-Side)**&#x20;
 
 The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 
@@ -91,22 +91,22 @@ async function initialize() {
 initialize();
 ```
 
-#### **3. Collect and Vault Card (Client-Side)**&#x20;
+### **3. Collect and Vault Card (Client-Side)**&#x20;
 
 The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the /`Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
 
-#### **4. Retrieve Payment Method ID (Server-Side)**&#x20;
+### **4. Retrieve Payment Method ID (Server-Side)**&#x20;
 
 The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 
 **Execute Proxy Payment (Server-Side)**&#x20;
 
-The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
+The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-Hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 
 **New user payments flow**
 
 1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch&#x20;
-2. [Initialize SDK (Client-Side) ](../../../explore-hyperswitch/payment-experience/payment-method/)The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
+2. [Initialize SDK (Client-Side) ](../../../explore-Hyperswitch/payment-experience/payment-method/)The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 3. Collect and Vault Card (Client-Side) The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the /`Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
 4. Retrieve Payment Method ID (Server-Side) The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the&#x20;
@@ -160,7 +160,7 @@ Include the following details:
         "capture": true,
         "capture_on": "2019-09-10T10:11:12Z",
     },
-    "destination_url": "https://api.sandbox.checkout.com/payments",
+    "destination_url": "https://api.sandbox.Checkout.com/payments",
     "headers": {
         "Content-Type": "application/json",
         "Authorization": "Bearer sk_sbox_3uu..."
@@ -172,7 +172,7 @@ Include the following details:
 }'
 </code></pre>
 
-#### Sample Response
+### Sample Response
 
 ```bash
 {
@@ -217,7 +217,7 @@ Include the following details:
             "retrieval_reference_number": "404030119279",
             "merchant_category_code": "5815",
             "scheme_merchant_id": "75155",
-            "scheme": "VISA",
+            "scheme": "Visa",
             "aft": false,
             "pan_type_processed": "fpan",
             "cko_network_token_available": false,
@@ -226,16 +226,16 @@ Include the following details:
         "expires_on": "2025-06-20T10:10:42.7625936Z",
         "_links": {
             "self": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama"
             },
             "actions": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/actions"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/actions"
             },
             "capture": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/captures"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/captures"
             },
             "void": {
-                "href": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/voids"
+                "href": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama/voids"
             }
         }
     },
@@ -244,7 +244,7 @@ Include the following details:
         "date": "Wed, 21 May 2025 10:10:42 GMT",
         "cko-version": "1.1049.0+54597dfad",
         "strict-transport-security": "max-age=16000000; includeSubDomains; preload;",
-        "location": "https://api.sandbox.checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama",
+        "location": "https://api.sandbox.Checkout.com/payments/pay_7f6x6vki25futmy54uot5c3ama",
         "content-length": "1883",
         "content-type": "application/json; charset=utf-8",
         "connection": "keep-alive",
