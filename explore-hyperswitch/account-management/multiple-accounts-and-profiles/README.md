@@ -13,15 +13,15 @@ If there are more than one `business_profiles` for a merchant account, then pass
 
 **Hyperswitch architecture supports:**
 
-* Creating multiple merchant accounts under an organization (Organization → Merchant → Profile model).
-* Creating multiple business profiles under each merchant account.
-* Creating multiple instances of payment processors (Stripe, Adyen, etc.) under each business profile.
+- Creating multiple merchant accounts under an organization (Organization → Merchant → Profile model).
+- Creating multiple business profiles under each merchant account.
+- Creating multiple instances of payment processors (Stripe, Adyen, etc.) under each business profile.
 
 Additionally, with the new [Platform Org and Merchant model](platform-org-and-merchant-setup.md), you can:
 
-* Programmatically onboard sub‑merchant accounts via API (under a PlatformOrg).
-* Automatically generate and manage API keys for each sub‑merchant.
-* Maintain centralized visibility and control over payments, refunds, and settlements across all sub‑merchants.
+- Programmatically onboard sub‑merchant accounts via API (under a PlatformOrg).
+- Automatically generate and manage API keys for each sub‑merchant.
+- Maintain centralized visibility and control over payments, refunds, and settlements across all sub‑merchants.
 
 ## **1. Organization → Merchant → Profile Model**
 
@@ -49,13 +49,13 @@ A profile can also be considered to be a business profile for practical purposes
 
 > Roles and permissions for users can be assigned at the organization level, and merchant level.&#x20;
 
-* Routing Algorithm.
+- Routing Algorithm.
 
 Only gateways that are available under the business profile can be used to configure the routing algorithm.&#x20;
 
 If a routing algorithm is not available, a default fallback, which consists of all the processors configured under the business profile based on priority order would be used. The priority of processors in the default fallback can be configured
 
-* Webhook url and Return url for payments.
+- Webhook url and Return url for payments.
 
 #### Processors
 
@@ -65,8 +65,7 @@ A processor  created under one business profile cannot be used in another busine
 
 ### Use cases
 
-*   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
-
+- #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
 
 
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
@@ -77,7 +76,7 @@ In case of Marketplace merchants with multiple sub-merchants, the parent merchan
 
 <figure><img src="../../../.gitbook/assets/image (4).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
-* **Multiple business Profiles - For merchants who want to manage all businesses with one API key**
+- **Multiple business Profiles - For merchants who want to manage all businesses with one API key**
 
 For a merchant A with three different businesses (A\_Clothing, A\_Shoes, A\_Bags) they can create just one merchant account on Hyperswitch with three business profiles (Clothing, Shoes, Bags) under it. This way, the merchant can use only one Hyperswitch API key to manage transactions for all three businesses.
 
@@ -99,11 +98,11 @@ To create more merchant accounts, click the merchant account dropdown from the l
 
 To create more profiles, click the profile dropdown from the right top corner in your Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.&#x20;
 
-* As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can be found under Settings → Business Profiles.
+- As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can be found under Settings → Business Profiles.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-09-19 at 11.40.12 AM.png" alt=""><figcaption></figcaption></figure>
 
-* Enter a name for your profile in the next pop-up screen and click ‘Add’ again. A new profile with the given ‘profile\_name’ and an automatically generated ‘profile\_id’ is created.
+- Enter a name for your profile in the next pop-up screen and click ‘Add’ again. A new profile with the given ‘profile\_name’ and an automatically generated ‘profile\_id’ is created.
 
 **How to route a payment to a particular merchant account and a particular profile?**
 

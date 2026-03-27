@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via Billwerk through 
 
 <div align="left"><figure><img src="../../../../../.gitbook/assets/ic_Billwerk+Pay3X.svg" alt=""><figcaption></figcaption></figure></div>
 
-### About
+## About
 
 Billwerk+ Pay is an acquirer independent payment gateway that helps you get the best acquirer rates, select a wide variety of payment methods. To know about more about payment methods supported by Billwerk+ Pay via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 

@@ -1,4 +1,5 @@
 ---
+description: Implement native 3DS authentication for seamless in-app checkout experiences using Juspay Hyperswitch
 hidden: true
 icon: star-shooting
 ---
@@ -30,7 +31,7 @@ Native 3D Secure refers to the seamless integration of 3D Secure (3DS) authentic
 
 ### **1. Enhance Customer Experience**:
 
-Even though 3DS 2.0 greatly optimizes the customer experience, it still has some scope for improvement. The multiple redirections for both challenge and frictionless flows lead to poor customer experience and increased dropouts. The customer authentication experience also varies according to the issuers, depending on the capabilities and upgrades of the issuers’ technology.
+Even though 3DS 2.0 greatly optimizes the customer experience, it still has some scope for improvement. The multiple redirections for both challenge and frictionless flows lead to poor customer experience and increased dropouts. The customer authentication experience also varies according to the issuers, depending on the capabilities and upgrades of the issuers' technology.
 
 With native 3DS, the challenge can happen in the merchant app without redirections. This in-line, in-app experience greatly reduces the customer checkout time, and provides a consistent checkout experience. Native 3DS is optimized for mobile platforms. Since 3DS 2.0 supports mobile-friendly features like biometric verification (fingerprint or facial recognition), merchants can provide a more secure and intuitive experience for customers using smartphones or tablets.
 
@@ -42,7 +43,7 @@ By providing a native 3DS experience, the users never leave the merchant app. It
 
 Since the authentication occurs natively, merchants have more control over the branding and design of the authentication experience. This keeps the look and feel consistent with the rest of the app or website, offering a smoother, more professional user experience.
 
-## Native 3D Secure on Hyperswitch
+## Native 3D Secure on Juspay Hyperswitch
 
 1. **In-line 3DS Challenge for web** - No redirections for the user.
 

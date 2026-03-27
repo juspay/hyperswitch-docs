@@ -15,10 +15,10 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 ## Requirements
 
-* Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
-* [Gradle](https://gradle.org/releases/) 8.13+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
+- Android 7.0 (API level 24) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
+- [Gradle](https://gradle.org/releases/) 8.13+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
 
@@ -59,7 +59,7 @@ Configure the Hyperswitch SDK in your app-level `build.gradle` file. You can spe
 hyperswitch {
     // Optional: Specify main SDK version (defaults to latest if not specified)
     sdkVersion = "1.1.5"
-    
+
     // Optional features - only add what you need
     features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }
@@ -68,9 +68,9 @@ hyperswitch {
 {% hint style="warning" %}
 Note:
 
-* If you don't specify `sdkVersion`, the plugin will automatically use the latest available version
-* You only need to enable the features you plan to use
-* Individual feature versions are optional - the plugin will use recommended compatible versions
+- If you don't specify `sdkVersion`, the plugin will automatically use the latest available version
+- You only need to enable the features you plan to use
+- Individual feature versions are optional - the plugin will use recommended compatible versions
 {% endhint %}
 
 ### 2.4 Implement the HyperInterface
@@ -162,7 +162,7 @@ val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 ```
 
-#### Final Step
+### Final Step
 
 Congratulations! You have successfully integrated the Hyperswitch Android SDK into your app. You can now customize the payment sheet to match the look and feel of your app.
 

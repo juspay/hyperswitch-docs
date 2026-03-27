@@ -16,9 +16,9 @@ Incremental authorization extends the ability to request more funds beyond the o
 
 Incremental authorization can help businesses to fulfill the following use-cases:&#x20;
 
-* **Adjust Payments in Real-Time**: Handle unexpected increases in charges, such as additional services or extended stays without redirecting customers for re-authorization.
-* **Improve Customer Experience**: Avoid disruptions in the payment process, as customers do not need to reauthorize or re-enter their payment information.
-* **Streamline Settlements**: Hyperswitch combines the initial charge and all incremental authorizations into a single settlement, simplifying reconciliation.
+- **Adjust Payments in Real-Time**: Handle unexpected increases in charges, such as additional services or extended stays without redirecting customers for re-authorization.
+- **Improve Customer Experience**: Avoid disruptions in the payment process, as customers do not need to reauthorize or re-enter their payment information.
+- **Streamline Settlements**: Hyperswitch combines the initial charge and all incremental authorizations into a single settlement, simplifying reconciliation.
 
 ## Pre-requisites-&#x20;
 
@@ -56,4 +56,3 @@ curl --request POST \
   "reason": "<string>"
 }'
 ```
-

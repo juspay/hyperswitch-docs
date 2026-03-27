@@ -8,7 +8,7 @@ Hyperswitch’s three-level profile architecture enables support for composable 
 
 These workflows can be modularly organized to meet diverse business needs and provide flexibility based on client requirements. Here’s a breakdown of key workflows:
 
-### Possible Scenerios:
+## Possible Scenerios:
 
 **Direct Payments:** In the case of a client using a Vertical SaaS (VSaaS) platform, the client may prefer to authorize the customer’s card only after the service is fulfilled. Therefore, the Vertical SaaS solution will need to verify and vault the card with the PSP, returning the PSP card token to the client.
 

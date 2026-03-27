@@ -8,9 +8,9 @@ description: Migrate from Stripe on your android app
 Migrate from Stripe on your Android app in less than 15 mins!
 {% endhint %}
 
-If you are already integrated with Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Digital Payments Manager and many more.
+If you are already integrated with Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 300+ connectors and features such as Smart Router, Digital Payments Manager and many more.
 
-### Android - Node Backend and Kotlin Frontend
+## Android - Node Backend and Kotlin Frontend
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner.
 
@@ -69,7 +69,7 @@ import io.hyperswitch.paymentsheet.PaymentSheetResult;
 
 ```
 
-**Step 6:** Add an extra import for HyperSwitch and implement HyperInterface
+**Step 6:** Add an extra import for Hyperswitch and implement HyperInterface
 
 ```java
 import io.hyperswitch.HyperInterface
@@ -78,4 +78,4 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 
 ```
 
-**Step 7:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 7:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 300+ connectors.

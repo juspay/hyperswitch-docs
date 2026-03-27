@@ -12,13 +12,14 @@ The Payment method SDK allows you to securely collect payment information and gi
 #### **Key Features**
 
 * **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
+
 * **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
+
 * **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
+
 * **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
 #### Understanding Payment and Vault Flow
-
-
 
 <figure><img src="../../.gitbook/assets/Payment Method SDK (1).svg" alt=""><figcaption></figcaption></figure>
 
@@ -54,13 +55,18 @@ All Vault API (V2) requests require authentication using specific API keys gener
 To generate your Vault API keys, follow these steps:
 
 1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+
 2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
+
 3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
+
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
 {% endhint %}
 
 **Integration Documentation -**&#x20;
 
 * [S2S Vault Tokenization](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization)
+
 * [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+
 * [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)

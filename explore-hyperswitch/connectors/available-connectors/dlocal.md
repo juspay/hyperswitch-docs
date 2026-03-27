@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via d-local through H
 
 ![logo\_dlocal](https://hyperswitch.io/icons/homePageIcons/logos/dlocalLogo.svg)
 
-### About
+## About
 
 dLocal Limited is a Uruguayan financial technology company. dLocal powers local payments connecting merchants with billions of emerging market consumers through one single API. To know about more about payment methods supported by d-local via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 

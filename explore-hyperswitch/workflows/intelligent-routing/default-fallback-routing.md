@@ -1,7 +1,7 @@
 ---
 description: >-
   Fallback is a priority order of all the configured processors which is used to
-  route traffic standalone or when other routing rules are not applicable.
+  route traffic standalone or when other routing rules are not applicable using Juspay Hyperswitch.
 icon: shield-exclamation
 ---
 
@@ -21,7 +21,7 @@ _**Step 1:**_ Click on `Manage` for configuring **Default fallback**
 
 **Step 2:** You will see a list of all of your configured processors. This list can be reordered based on what you want your default processor priority to be when either :-
 
-* You have no routing algorithm active
-* The payment method for the current payment is not enabled for the processor(s) returned by the active routing algorithm
+- You have no routing algorithm active
+- The payment method for the current payment is not enabled for the processor(s) returned by the active routing algorithm
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.52.57 PM.png" alt=""><figcaption></figcaption></figure>

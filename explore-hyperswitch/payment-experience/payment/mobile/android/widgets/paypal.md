@@ -25,7 +25,7 @@ private lateinit var payPalLauncherInstance: UnifiedPaymentLauncher
 private fun setupPayPalLauncher() {
     payPalButton = findViewById(R.id.payPalButton)
     payPalButton.isEnabled = false
-    
+
     payPalLauncherInstance = UnifiedPaymentLauncher.createPayPalLauncher(
         activity = this,
         clientSecret = paymentIntentClientSecret,
@@ -63,6 +63,5 @@ private fun onPayPalResult(result: PayPalPaymentMethodLauncher.Result) {
             Toast.makeText(this, "PayPal payment failed: ${result.error.message}", Toast.LENGTH_LONG).show()
         }
     }
-}    
+}
 ```
-

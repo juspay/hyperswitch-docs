@@ -59,13 +59,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
       customBackendUrl: "YOUR_BACKEND_URL",
@@ -79,7 +79,7 @@ async function initialize() {
           layout: "tabs",
           wallets: {
               walletReturnUrl: "https://example.com/complete",
-              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+              //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
           },
       };
       const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
@@ -93,8 +93,8 @@ async function initialize() {
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
-* **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
-* **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
+- **onSDKHandleClick:** This callback is triggered immediately after the user clicks any wallet button.
+- **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
@@ -148,13 +148,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
       const appearance = {
@@ -164,7 +164,7 @@ async function initialize() {
       const expressCheckoutOptions = {
           wallets: {
               walletReturnUrl: "https://example.com/complete",
-              //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+              //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
           },
       };
       const expressCheckout = widgets.create("expressCheckout", expressCheckoutOptions);

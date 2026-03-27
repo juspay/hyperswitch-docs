@@ -5,7 +5,7 @@ icon: space-awesome
 
 # Adyen Split Settlement
 
-### Overview
+## Overview
 
 Adyen's Split Settlements functionality allows businesses to divide a single transaction into multiple payouts, ensuring funds are accurately distributed across various accounts. This feature is supported through their Platform solutions and implemented via Hyperswitch.
 
@@ -37,7 +37,7 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
     }
 ```
 
-#### Field Specifications
+### Field Specifications
 
 **`store`** (Optional): Required only for Adyen Platform implementations, not needed for Adyen Marketplace.
 
@@ -47,11 +47,11 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 **`split_type`**: Defines the payment portion allocation. Supported values:
 
-* `BalanceAccount`: Direct allocation to specified account (requires `account` field)
-* `Commission`: Platform commission (requires `amount` field)
-* `Vat`: Value-added tax allocation
-* `TopUp`: Balance account funding (requires `account`, not available with Platform)
-* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
+- `BalanceAccount`: Direct allocation to specified account (requires `account` field)
+- `Commission`: Platform commission (requires `amount` field)
+- `Vat`: Value-added tax allocation
+- `TopUp`: Balance account funding (requires `account`, not available with Platform)
+- Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
 
 **`amount`**: Split amount in minor units. Required for `Commission`, `Vat`, and `TopUp` types; optional for fee types as they're calculated by Adyen.
 
@@ -65,10 +65,10 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 Hyperswitch enforces several validation rules:
 
-* Split amounts must sum to total payment amount
-* `BalanceAccount` and `TopUp` types require `account` field
-* `Commission`, `Vat`, and `TopUp` types require `amount` field
-* `TopUp` splits are incompatible with Platform store configuration
+- Split amounts must sum to total payment amount
+- `BalanceAccount` and `TopUp` types require `account` field
+- `Commission`, `Vat`, and `TopUp` types require `amount` field
+- `TopUp` splits are incompatible with Platform store configuration
 
 #### Payments Response
 
@@ -125,15 +125,15 @@ In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/r
 
 The request structure includes fields:
 
-* `store`: Optional store identifier for Adyen Platform
-* `split_items`: Array of split items with the same structure as payment splits
-* `split_type`: The type of split (BalanceAccount, Commission, etc.)
-* `amount`: Split amount in minor units
-* `account`: Target account identifier
-* `reference`: Unique identifier for tracking
-* `description`: Optional description
+- `store`: Optional store identifier for Adyen Platform
+- `split_items`: Array of split items with the same structure as payment splits
+- `split_type`: The type of split (BalanceAccount, Commission, etc.)
+- `amount`: Split amount in minor units
+- `account`: Target account identifier
+- `reference`: Unique identifier for tracking
+- `description`: Optional description
 
-#### Refund Response
+### Refund Response
 
 ```json
    "split_refund": {

@@ -23,4 +23,3 @@ Braintree is a payment processor that allows online businesses to accept payment
 4. To set webhooks, Navigate to  Home page -> Settings (on the top right) -> API -> Webhooks and create a new webhook.&#x20;
 
 [Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Braintree on Hyperswitch control center.
-

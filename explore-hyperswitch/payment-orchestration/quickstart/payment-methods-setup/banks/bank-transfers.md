@@ -20,8 +20,8 @@ Bank Transfers are a popular way of transmitting money between different bank ac
 
 Hyperswitch supports the following Bank Transfers:
 
-* ACH Bank Transfer in US
-* SEPA Bank Transfer in EU
-* BACS Bank Transfer in UK
-* Multibanco in EU (Portugal)
-* All Indonesian bank transfers
+- ACH Bank Transfer in US
+- SEPA Bank Transfer in EU
+- BACS Bank Transfer in UK
+- Multibanco in EU (Portugal)
+- All Indonesian bank transfers

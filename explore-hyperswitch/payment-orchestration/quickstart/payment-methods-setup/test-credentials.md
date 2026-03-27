@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Key to configure and test different connectors in Juspay Hyperswitch
 icon: key
 ---
 
@@ -42,38 +42,38 @@ Simulate a successful test card payment with the following credentials
 
 **Dummy Connector test cards**
 
-* Different flows are available for dummy connector transactions, determined by the card number.
-* For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
-* Dummy connectors only support payments and refunds.
-* Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
+- Different flows are available for dummy connector transactions, determined by the card number.
+- For dummy connector cards, both the expiration date and CVV can be any future date and three-digit number, respectively.
+- Dummy connectors only support payments and refunds.
+- Payments made with dummy connectors expire after 2 days. Refunds will not be possible for expired payments.
 
 **Non 3DS flows**
 
-* Success
-  * 4111111111111111
-  * 4242424242424242
-  * 5555555555554444
-  * 38000000000006
-  * 378282246310005
-  * 6011111111111117
-* Card declined
-  * 5105105105105100
-  * 4000000000000002
-* Insufficient funds
-  * 4000000000009995
-* Lost card
-  * 4000000000009987
-* Stolen card
-  * 4000000000009979
+- Success
+  - 4111111111111111
+  - 4242424242424242
+  - 5555555555554444
+  - 38000000000006
+  - 378282246310005
+  - 6011111111111117
+- Card declined
+  - 5105105105105100
+  - 4000000000000002
+- Insufficient funds
+  - 4000000000009995
+- Lost card
+  - 4000000000009987
+- Stolen card
+  - 4000000000009979
 
 **3DS flows**
 
-* Success
-  * 4000003800000446
+- Success
+  - 4000003800000446
 
 ### Payment Methods Testing
 
-In order to test payment methods like Klarna, Googlepay - follow the below instructions
+In order to test payment methods like Klarna, Google Pay - follow the below instructions
 
 #### Klarna - Direct integration test credentials
 
@@ -95,13 +95,13 @@ OTP: 123456 (Random 6-digit different from 999999)
 
 For testing mmore scenarios, please refer [Klarna - Sample customer data](https://docs.klarna.com/resources/test-environment/sample-customer-data/)
 
-#### Googlepay - Test credentials
+#### Google Pay - Test credentials
 
-Inorder to test Googlepay, you will have to use your Gmail account and join [Google's test user group](https://groups.google.com/g/googlepay-test-mode-stub-data).
+Inorder to test Google Pay, you will have to use your Gmail account and join [Google's test user group](https://groups.google.com/g/googlepay-test-mode-stub-data).
 
 You will land on Google's page which says "Congratulations! You now have access to our test suite! No further action is required."
 
-Ensure that you are logged in to your Gmail account, hit the Googlepay option. You will automatically get all test cards on your user journey.
+Ensure that you are logged in to your Gmail account, hit the Google Pay option. You will automatically get all test cards on your user journey.
 
 #### ApplePay - Test credentials
 
@@ -109,10 +109,10 @@ In order to test ApplePay, you will need to follow these steps written in [Apple
 
 Apple Pay provides test cards from various card companies and supported regions as well. To pay you can use TouchID on the Macbook or your iPhone. These devices should be configured in your apple account.
 
-**Unable to test Applepay successfully?**
+**Unable to test Apple Pay successfully?**
 
-1. Applepay sandbox testing is supported only if you are located in any of these [15 countries](https://developer.apple.com/apple-pay/sandbox-testing/).
+1. Apple Pay sandbox testing is supported only if you are located in any of these [15 countries](https://developer.apple.com/apple-pay/sandbox-testing/).
 2. Your Safari browser automatically detects your location from your System Preferences.
-3. If you are not located in the supported countried, but still wish to test Applepay, please change your Region using Mac System preferences > Language & Region > choose any of the 15 supported countries.
+3. If you are not located in the supported countried, but still wish to test Apple Pay, please change your Region using Mac System preferences > Language & Region > choose any of the 15 supported countries.
 
 <figure><img src="../../../../.gitbook/assets/languageRegion (1).png" alt=""><figcaption></figcaption></figure>

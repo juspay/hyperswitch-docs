@@ -1,7 +1,7 @@
 ---
 description: >-
   Use Rules and SCA exemptions to reduce cardholder friction on eligible
-  transactions
+  transactions using Juspay Hyperswitch
 icon: chart-simple-horizontal
 ---
 
@@ -25,9 +25,9 @@ For merchants, managing 3DS authentications is a delicate balancing act. Too man
 
 But one more complexity emerges after authentication. Even when a transaction is successfully authenticated, whether through exemption or challenge, it can still be declined at the authorization stage. This disconnect introduces a hidden cost: customers may face friction or gain a false sense of completion, only to have their payment fail. These post-authentication declines can quietly chip away at both revenue and customer trust. In this context, it's not just fraud rates or conversion rates that matter most—it's the **authorization rate** that determines whether a transaction leads to a successful sale. It becomes the true control variable that merchants must protect when designing their exemption and challenge strategies.
 
-### Merchant Benefits
+## Merchant Benefits
 
-#### **Balance user experience with fraud**
+### **Balance user experience with fraud**
 
 A merchant's 3DS exemption strategy should prioritize a holistic user experience, not just fraud prevention. The 3DS Intelligence engine analyzes various factors like customer behavior and device details to optimize authentication success while managing fraud and authorization failures.
 
@@ -35,12 +35,12 @@ A merchant's 3DS exemption strategy should prioritize a holistic user experience
 
 Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
 
-* Some of the examples of these rules are:
-  * If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_ \
+- Some of the examples of these rules are:
+  - If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_ \
     then ThreeDS Preference = "No Preference"
-  * If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_ \
+  - If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_ \
     then ThreeDS Preference = "ThreeDS Exemption Requested" and ThreeDS Exemption Type Preference = "TRA"
-  * If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_ \
+  - If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_ \
     then ThreeDS Preference = "Challenge Requested"
 
 <figure><img src="../../../../.gitbook/assets/Intelligence_1.png" alt=""><figcaption></figcaption></figure>

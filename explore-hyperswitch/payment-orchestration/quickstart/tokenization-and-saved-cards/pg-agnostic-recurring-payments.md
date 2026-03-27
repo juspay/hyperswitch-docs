@@ -6,7 +6,7 @@ icon: arrows-repeat
 
 # PG Agnostic Card Forwarding
 
-### How does PG agnostic MITs work?
+## How does PG agnostic MITs work?
 
 The CIT used to set up recurring payments via MIT uses the PG token. This introduces a connector stickiness since the recurring payments can only go through the connector which issued the token.
 
@@ -20,9 +20,9 @@ In the following MIT payments basis the enablement of the feature and the availa
 
 Hyperswitch supports the following processors for PG Agnostic Recurring Payments.
 
-* Stripe
-* Adyen
-* Cybersource
+- Stripe
+- Adyen
+- Cybersource
 
 In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
@@ -44,7 +44,7 @@ All the payment methods saved with `setup_future_usage : off_session` after enab
 
 ## FAQs
 
-#### 1. How are authentication rates affected in PG agnostic MITs?
+### 1. How are authentication rates affected in PG agnostic MITs?
 
 Network Transaction ID which is provided by the card network itself is a reference to the original payment authenticated by the customer and authorized for recurring payments. Hence the MIT exemption is expected to have better auth rates with this.
 

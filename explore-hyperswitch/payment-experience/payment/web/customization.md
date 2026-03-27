@@ -53,8 +53,8 @@ When `paymentMethodsArrangementForTabs` is set to `grid`, the tabs layout switch
 
 `paymentMethodsArrangementForTabs` supports the following values:
 
-* `default` – Shows excess payment methods in a dropdown (default).
-* `grid` – Shows all payment methods in a grid without a dropdown.
+- `default` – Shows excess payment methods in a dropdown (default).
+- `grid` – Shows all payment methods in a grid without a dropdown.
 
 To enable the grid arrangement in tabs layout, configure the layout object as shown below.
 
@@ -62,7 +62,7 @@ To enable the grid arrangement in tabs layout, configure the layout object as sh
 var paymentElementOptions = {
   layout: {
     type: 'tabs',
-    paymentMethodsArrangementForTabs: 'grid' 
+    paymentMethodsArrangementForTabs: 'grid'
   }
 }
 
@@ -100,8 +100,8 @@ If you want to display one-click payment methods alongside other payment methods
 
 When `displayOneClickPaymentMethodsOnTop` is set to `false`:
 
-* Supported one-click methods are moved into the selected layout (Tabs or Accordion).
-* Unsupported one-click methods are hidden.
+- Supported one-click methods are moved into the selected layout (Tabs or Accordion).
+- Unsupported one-click methods are hidden.
 
 To customize one-click payment method placement, configure the layout object as shown below.
 
@@ -139,14 +139,14 @@ The wallet customization feature lets users configure payment options like Apple
       },
     },
   }
-  
+
 <strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </strong></code></pre>
 
 | Variable                                                                                        | Description                                                                                                                                                                                                                                                                                                                    | Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | walletReturnUrl: string                                                                         | Defines the URL to redirect users to after completing a payment.                                                                                                                                                                                                                                                               | This will take a **URL string** as its value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, Paypal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
+| <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, PayPal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
 | <p>style: {<br>theme: theme,<br>type: styleType,<br>height: int,<br>buttonRadius: int,<br>}</p> | <p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
 ## 3. Styling variables
@@ -190,12 +190,12 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-* .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
-* .Tab:focus
-* .Input--invalid, .Label--invalid, .InputLogo--invalid
-* .Input::placeholder
-* .billing-section, .billing-details-text
-* .Input--empty, .InputLogo--empty
+- .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
+- .Tab:focus
+- .Input--invalid, .Label--invalid, .InputLogo--invalid
+- .Input::placeholder
+- .billing-section, .billing-details-text
+- .Input--empty, .InputLogo--empty
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -209,10 +209,10 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 | fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
 | spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
-* .Tab, .Label, .Input
-* .Tab:focus
-* .Input--invalid, .Label--invalid
-* .Input::placeholder
+- .Tab, .Label, .Input
+- .Tab:focus
+- .Input--invalid, .Label--invalid
+- .Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -333,23 +333,23 @@ Hyperswitch Unified Checkout supports localization in 6 languages. By default, t
 
 We support the following locales -
 
-* Arabic (ar)
-* Catalan (ca)
-* Chinese (zh)
-* Deutsch (de)
-* Dutch (nl)
-* English (en)
-* EnglishGB (en-GB)
-* FrenchBelgium (fr-BE)
-* French (fr)
-* Hebrew (he)
-* Italian (it)
-* Japanese (ja)
-* Polish (pl)
-* Portuguese (pt)
-* Russian (ru)
-* Spanish (es)
-* Swedish (sv)
+- Arabic (ar)
+- Catalan (ca)
+- Chinese (zh)
+- Deutsch (de)
+- Dutch (nl)
+- English (en)
+- EnglishGB (en-GB)
+- FrenchBelgium (fr-BE)
+- French (fr)
+- Hebrew (he)
+- Italian (it)
+- Japanese (ja)
+- Polish (pl)
+- Portuguese (pt)
+- Russian (ru)
+- Spanish (es)
+- Swedish (sv)
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
@@ -492,7 +492,7 @@ The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save p
 ```javascript
 var paymentElementOptions = {
   ...,
-  displaySavedPaymentMethodsCheckbox: false, 
+  displaySavedPaymentMethodsCheckbox: false,
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;

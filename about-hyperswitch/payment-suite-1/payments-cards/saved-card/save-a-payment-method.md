@@ -8,6 +8,7 @@ icon: repeat
 Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
+
 2. Saving for future customer off-session payments (MIT)
 
 ### Saving a payment method for future on-session payments (COF CIT)
@@ -23,6 +24,7 @@ For saving a customer's payment method used in a successful transaction:
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -31,16 +33,18 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"on_session", 
+    "setup_future_usage":"on_session",
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
+
 ```
 
 * If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
+
 "customer_acceptance": {
         "acceptance_type": "online",
         "accepted_at": "1963-05-03T04:07:52.723Z",
@@ -49,6 +53,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
             "user_agent": "amet irure esse"
         }
     }
+
 ```
 
 {% hint style="info" %}
@@ -72,6 +77,7 @@ Based on the payment processors support, this functionality is also available fo
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -80,16 +86,18 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session", 
+    "setup_future_usage":"off_session",
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
+
 ```
 
 * If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
+
 "customer_acceptance": {
         "acceptance_type": "online",
         "accepted_at": "1963-05-03T04:07:52.723Z",
@@ -98,6 +106,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
             "user_agent": "amet irure esse"
         }
     }
+
 ```
 
 {% hint style="info" %}
@@ -109,9 +118,11 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
 --header 'Accept: application/json' \
 --header 'api-key: <enter your Hyperswitch API key here>' \
+
 ```
 
 ***
@@ -132,9 +143,11 @@ You would be using the same `payment_method_id` that was returned in the `/payme
 To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
 
 ```bash
+
 curl --request GET \
   --url https://sandbox.hyperswitch.io/customers/{customer_id}/payment_methods \
   --header 'api-key: <api-key>'
+
 ```
 
 ***

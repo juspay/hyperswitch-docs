@@ -1,7 +1,5 @@
 ---
-description: >-
-  Best for PCI compliant merchants requiring full control over UI rendering
-  while leveraging Hyperswitch Vault for secure storage and payment routing.
+description: Configure merchant SDK with Hyperswitch Vault to securely store payment methods and route transactions with full UI control
 ---
 
 # Merchant SDK + Hyperswitch Vault Setup
@@ -15,8 +13,6 @@ Once tokenized, Hyperswitch backend handles orchestration, routing, retries, and
 #### **Vaulting :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (6).svg" alt=""><figcaption></figcaption></figure>
-
-
 
 **1. Create Payment (Server-Side)**
 
@@ -45,8 +41,6 @@ After successful authorization, Hyperswitch securely stores the card data in the
 **7. Return Payment Response**
 
 Hyperswitch sends the final payment response, including transaction status and the vaulted `payment_method_id`, back to the merchant server.
-
-
 
 #### **Payment Using Stored Card :**&#x20;
 
@@ -82,11 +76,12 @@ The Hyperswitch Connector handles the synchronous handshake with the external pr
 
 The Hyperswitch Server sends the final transaction state (e.g., `succeeded`, `failed`) to  Merchant Server. This allows the backend to update the order status while the frontend notifies the user of the successful payment.
 
-
-
 **API Reference :**
 
 1. [Payment Create API ](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
+
 2. [Payment Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)&#x20;
+
 3. [List Payment Method](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-customer)
+
 4. [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)

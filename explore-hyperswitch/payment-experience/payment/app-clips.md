@@ -8,30 +8,30 @@ icon: app-store
 
 # App Clips
 
-* A **lightweight, instant-launch** version of your iOS app.
-* Lets users complete **fast Hyperswitch payments** without installing the full app.
-* Can be triggered via **QR code, NFC tag, Safari link, or Maps**.
-* Ideal for quick checkout use cases (parking, food ordering, event tickets, etc.)
+- A **lightweight, instant-launch** version of your iOS app.
+- Lets users complete **fast Hyperswitch payments** without installing the full app.
+- Can be triggered via **QR code, NFC tag, Safari link, or Maps**.
+- Ideal for quick checkout use cases (parking, food ordering, event tickets, etc.)
 
-### Requirements
+## Requirements
 
-* **iOS 14+**
-* **Xcode 12+**
-* Apple Developer Account
-* Hyperswitch SDK already integrated in main iOS app
+- **iOS 14+**
+- **Xcode 12+**
+- Apple Developer Account
+- Hyperswitch SDK already integrated in main iOS app
 
 ## Quick Steps
 
-#### 1. Create App Clip Target
+### 1. Create App Clip Target
 
-* Xcode → **File → New Target → App Clip**
-* Bundle ID: `your.main.app.bundle.id.Clip`
-* Same Team as main app.
+- Xcode → **File → New Target → App Clip**
+- Bundle ID: `your.main.app.bundle.id.Clip`
+- Same Team as main app.
 
 #### 2. Share Payment Logic
 
-* Make `HyperViewModel` target membership include **both** the main app and App Clip.
-* Or move shared code into a framework.
+- Make `HyperViewModel` target membership include **both** the main app and App Clip.
+- Or move shared code into a framework.
 
 #### 3. Minimal UI in App Clip
 

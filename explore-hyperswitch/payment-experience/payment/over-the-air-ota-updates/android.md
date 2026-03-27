@@ -4,7 +4,7 @@ icon: android
 
 # Android
 
-### Configuration
+## Configuration
 
 1. When initializing `HyperOTAReact`, ensure the **release config URL** (ending in `config.json`) is set for the correct **environment** (Sandbox or Production) and **version**. This is where HyperOTA will check for updates during app startup.
 
@@ -45,4 +45,3 @@ override fun getJSBundleFile(): String {
 ```
 
 For more information, [Airborne](https://github.com/juspay/airborne)
-

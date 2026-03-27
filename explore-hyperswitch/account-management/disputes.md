@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use Hyperswitch's unified Disputes module to track and manage disputes across
-  multiple processors
+description: Track and manage disputes across multiple processors using Hyperswitch's unified Disputes module
 icon: circle-exclamation
 ---
 
@@ -29,46 +27,46 @@ Hyperswitch's unified disputes module uses the following stages and statuses to 
 
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure></div>
 
-### Pre-Dispute stage
+### Pre-Dispute Stage
 
 Some payment method issuers start an investigation before creating a dispute on a transaction challenged by a customer. Such transactions are grouped under the 'Pre-Dispute' stage and these transactions could go through the following states:
 
-<table><thead><tr><th width="192">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when an investigation is opened and a dispute is created on Hyperswitch</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads evidence to support the original transaction</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time or if the investigation is closed</td></tr></tbody></table>
+<table><thead><tr><th width="192">dispute_state</th><th>Description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when an investigation is opened and a dispute is created on Hyperswitch</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads evidence to support the original transaction</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time or if the investigation is closed</td></tr></tbody></table>
 
-Visa or Mastercard do not open an investigation before creating a dispute and so most of your transactions would skip the Pre-Dispute stage
+Visa or Mastercard do not open an investigation before creating a dispute and so most of your transactions would skip the Pre-Dispute stage.
 
-### Dispute stage
+### Dispute Stage
 
 In most cases, the processors directly debit your account while reversing the payment made by a customer after a transaction has been challenged.
 
 For transactions that go through 'Pre-Dispute' stage, they will end up moving to 'Dispute' stage if the merchant's evidence was deemed not satisfactory.
 
-<table><thead><tr><th width="155">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when a dispute is opened and your processor has debited your account</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads an evidence to support their case</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time interval before which an issuer expects a response after the dispute was opened</td></tr><tr><td>Cancelled</td><td>Occurs when a customer withdraws their challenge</td></tr><tr><td>Accepted</td><td>Occurs when a merchant accepts a dispute as valid</td></tr><tr><td>Won</td><td>Occurs when the merchant's challenge was accepted successfully. Known as 'chargeback reversal' in cases of card payments</td></tr><tr><td>Lost</td><td>Occurs when a merchant's challenge was deemed not satisfctory</td></tr></tbody></table>
+<table><thead><tr><th width="155">dispute_state</th><th>Description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when a dispute is opened and your processor has debited your account</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads an evidence to support their case</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time interval before which an issuer expects a response after the dispute was opened</td></tr><tr><td>Cancelled</td><td>Occurs when a customer withdraws their challenge</td></tr><tr><td>Accepted</td><td>Occurs when a merchant accepts a dispute as valid</td></tr><tr><td>Won</td><td>Occurs when the merchant's challenge was accepted successfully. Known as 'chargeback reversal' in cases of card payments</td></tr><tr><td>Lost</td><td>Occurs when a merchant's challenge was deemed not satisfactory</td></tr></tbody></table>
 
-### Pre-Arbitration stage
+### Pre-Arbitration Stage
 
 Even after a successful dispute challenge, a payment method issuer might deem the evidence 'not satisfactory' and raise another review appeal. Such payments transition to 'Pre-Arbitration' stage.
 
-<table><thead><tr><th width="167">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal prcoess</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
+<table><thead><tr><th width="167">dispute_state</th><th>Description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal process</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
 
 ## Managing Disputes on Hyperswitch through Dashboard
 
-### 1. Viewing Disputes on Hyperswitch dashboard
+### Viewing Disputes on Hyperswitch Dashboard
 
-You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard
+You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard.
 
 <figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
-### 2. Generating Dispute Reports:
+### Generating Dispute Reports
 
-'Generate Reports' button here will generate a report containing details of all your disputes
+'Generate Reports' button here will generate a report containing details of all your disputes.
 
-### 3. Viewing a Dispute
+### Viewing a Dispute
 
-Clicking one of the dispute will take you to a page where you can see further information about the particular dispute
+Clicking one of the dispute will take you to a page where you can see further information about the particular dispute.
 
 <figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
-### 4. Accepting/Challenging a Dispute
+### Accepting/Challenging a Dispute
 
-This feature is supported by Hyperswitch across different PSPs. Actions such as accept dispute, counter dispute, evidence upload for a dispute are supported across different PSPs.
+This feature is supported by Hyperswitch across different PSPs. Actions such as accept dispute, counter dispute, evidence upload for a dispute are supported across different processors from one place.

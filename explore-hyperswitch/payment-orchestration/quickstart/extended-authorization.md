@@ -1,27 +1,28 @@
 ---
+description: Extend authorization hold period using Juspay Hyperswitch
 hidden: true
 icon: clock
 ---
 
 # Extended Authorization
 
-### Overview
+## Overview
 
 Extended Authorization allows merchants to extend the authorization hold period beyond the standard window — giving more flexibility before a transaction is captured or settled.
 
-This is particularly useful for industries where the final transaction amount or service completion time isn’t known upfront — such as:
+This is particularly useful for industries where the final transaction amount or service completion time isn't known upfront — such as:
 
-* Hospitality (room service or stay extensions)
-* Car rentals (extra mileage, damages)
-* Fuel & utilities (variable usage-based billing)
+- Hospitality (room service or stay extensions)
+- Car rentals (extra mileage, damages)
+- Fuel & utilities (variable usage-based billing)
 
 Example: A hotel may authorize a card for $500 during check-in but extend the authorization period if the guest extends their stay.
 
 ### Current PSP Support
 
-Hyperswitch currently supports Extended Authorization for the following PSPs:
+Juspay Hyperswitch currently supports Extended Authorization for the following PSPs:
 
-* Stripe
+- Stripe
 
 If you require Extended Authorization for other PSPs, please reach out to the Hyperswitch Support Team.
 
@@ -42,9 +43,9 @@ To enable it for specific transactions, include the boolean field request\_exten
 
 This flag can be used in the following API calls:
 
-* /payments/create with `confirm = false`
-  * /payments/update
-* /payments/create call with `confirm = true`
+- /payments/create with `confirm = false`
+  - /payments/update
+- /payments/create call with `confirm = true`
 
 > **⚠️ Note:**
 >
@@ -104,15 +105,14 @@ Some connectors require extended authorization to be triggered manually. This AP
 
 Currently, manual extended authorization is supported for:
 
-* Adyen
-* PayPal
+- Adyen
+- PayPal
 
 Calling this endpoint will initiate an extended authorization request. The actual behavior, including how much the capture or honor period is extended, depends on the specific connector and the issuing bank.&#x20;
 
 {% hint style="info" %}
 Be aware: With some connectors like Adyen, a failed extended authorization attempt may also cause the initial authorization to fail.
 {% endhint %}
-
 
 
 > **⚠️ Note:**
@@ -166,4 +166,3 @@ If the connector doesn’t provide the capture deadline, the `capture_by` field 
 ### Monitoring
 
 After authorization, you can view the capture deadline under `capture_by` in the More Payment Details section of the dashboard. This helps you ensure capture occurs before the authorization hold expires. If `capture_by` is not available use the `extended_authorization_last_applied_at` parameter to compute the capture window&#x20;
-

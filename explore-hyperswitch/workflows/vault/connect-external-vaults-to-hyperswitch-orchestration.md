@@ -1,16 +1,16 @@
 ---
 description: >-
   Connect external vaults to store cards instead of the integrated vault that
-  comes within your Hyperswitch Orchestration account
+  comes within your Juspay Hyperswitch Orchestration account
 hidden: true
 icon: plug
 ---
 
-# Connect External Vaults to Hyperswitch Orchestration
+# Connect External Vaults to Juspay Hyperswitch Orchestration
 
-### Modular Vaulting in Hyperswitch
+## Modular Vaulting in Juspay Hyperswitch
 
-Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
+Juspay Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
 
 Modular Vaulting is a key component of Juspay’s payment system, offering merchants the flexibility to either use Hyperswitch’s built-in PCI-compliant vault with advanced tokenization and security features or connect to any third party vault provider. This flexibility enables businesses to start simple and scale confidently without re-architecting their entire system.
 
@@ -18,7 +18,7 @@ Modular Vaulting is a key component of Juspay’s payment system, offering merch
 
 ### Modular Vaulting Options <a href="#h8bov2tye5ch" id="h8bov2tye5ch"></a>
 
-Hyperswitch supports both an integrated vault as well as external vaults for merchants using Hyperswitch as their payments orchestration solution in both self-hosted and Juspay-hosted deployment modes.
+Juspay Hyperswitch supports both an integrated vault as well as external vaults for merchants using Juspay Hyperswitch as their payments orchestration solution in both self-hosted and Juspay-hosted deployment modes.
 
 <div align="center"><img src="../../../.gitbook/assets/1 (1).png" alt=""></div>
 
@@ -41,9 +41,9 @@ Merchants can outsource their PCI compliance to Juspay by opting to use [Juspay�
 
 Through Hyperswitch, Merchants can add [external vault providers](https://juspay.io/integrations) such as VGS, HashiCorp, and Voltage, leveraging their SDKs to collect and tokenize cards. This ensures flexibility in vault selection while maintaining compliance, security, and seamless token management across multiple payment processors. Additionally, we also support other extended features vai an external vault such as:
 
-* Network Tokenization - Merchants can configure Network Tokenization through either Juspay as TSP or use the External Vault as TSP, ensuring flexibility and control over token provisioning
-* Proxy Payments through External Vaults - Support for processing payments through Proxy layers to ensure PCI compliance
-* Card Forwarding & Receiving - To seamlessly transfer tokenized data across third-party endpoints, enabling effortless PSP migration
+- Network Tokenization - Merchants can configure Network Tokenization through either Juspay as TSP or use the External Vault as TSP, ensuring flexibility and control over token provisioning
+- Proxy Payments through External Vaults - Support for processing payments through Proxy layers to ensure PCI compliance
+- Card Forwarding & Receiving - To seamlessly transfer tokenized data across third-party endpoints, enabling effortless PSP migration
 
 **SDK Options for Third Party Vault**
 

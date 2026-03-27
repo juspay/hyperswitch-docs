@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via PayU through Hype
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/payuLogo.svg)
 
-### About
+## About
 
 PayU is a payment service provider that allows online businesses to accept and process payments through different integrated payment methods. To know about more about payment methods supported by PayU via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 

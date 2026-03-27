@@ -11,20 +11,31 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 ### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
+
 2. Improved reliability with a multi-PSP setup
+
 3. Intelligent Routing capabilities to improve Authorization Rates and minimize Processing costs
+
 4. Greater coverage of PMs, APMs and features offered by the PSPs
+
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
 ### How does it work?
 
 1. Integrate your subscription provider as a billing processor on Hyperswitch
+
 2. Create and maintain plans on the subscription provider's dashboard
+
 3. During the checkout process use Hyperswitch for Payments
+
 4. Hyperswitch completes the payment, securely tokenises and stores the card
+
 5. Subscription is created at Hyperswitch and at the subscription provider's end
+
 6. First invoice is marked as paid and the subscription is activated
+
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
+
 8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
@@ -50,7 +61,9 @@ Configure your Subscription Provider with Hyperswitch and set it as billing conn
 _Note: Dashboard support for this configuration will be available soon_
 
 {% code overflow="wrap" fullWidth="false" %}
+
 ```
+
 curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -66,8 +79,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch", 
-        "additional_secret": "hyperswitch" 
+        "merchant_secret": "hyperswitch",
+        "additional_secret": "hyperswitch"
     },
     "metadata": {
         "site": "test"
@@ -81,7 +94,9 @@ curl --location 'http://<base_url>/account/<merchant_id>/business_profile/<profi
 --data '{
   "billing_processor_id": "<mca_id>"
 }'
+
 ```
+
 {% endcode %}
 {% endstep %}
 
@@ -93,6 +108,7 @@ Configure Hyperswitch Webhook endpoint for invoice events on the subscription pr
 Fetch the plan details (to be setup prior on subscription provider)
 
 ```
+
 curl --location 'http://<base_url>/subscriptions/plans' \
 --header 'Content-Type: application/json' \
 --header 'api-key: <api_key>'
@@ -118,6 +134,7 @@ Response:
 ]
 
 ```
+
 {% endstep %}
 
 {% step %}
@@ -128,6 +145,7 @@ Display the retrieved Plan and Price Details to the user to make their selection
 Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
 
 ```
+
 curl --location '<baseurl>/subscriptions/create' \
 --header 'Content-Type: application/json' \
 --header 'X-Profile-Id: <profile_id>' \
@@ -143,7 +161,9 @@ curl --location '<baseurl>/subscriptions/create' \
         "return_url": "https://google.com"
     }
 }'
+
 ```
+
 {% endstep %}
 
 {% step %}
@@ -161,21 +181,21 @@ The correct flow depends on whether you intend to charge the customer immediatel
 **Configuration Parameters :**&#x20;
 
 * `setup_future_usage: "off_session"`
+
 * `amount > 0`&#x20;
-
-
 
 #### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
-
-
 **Configuration Parameters :**&#x20;
 
 * Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+
 * `setup_future_usage: "off_session"`
+
 * `amount: 0`
+
 * `payment_type: "setup_mandate"`
 {% endhint %}
 {% endstep %}
@@ -188,8 +208,6 @@ Once the customer selects a payment method and enters the details and confirms t
 Sync with the subscription status for disbursement of services and future billing cycles
 {% endstep %}
 {% endstepper %}
-
-
 
 #### 2. For PCI Compliant merchants handling the entire checkout experience
 
@@ -217,25 +235,26 @@ The correct flow depends on whether you intend to charge the customer immediatel
 **Configuration Parameters :**&#x20;
 
 * `setup_future_usage: "off_session"`
+
 * `amount > 0`&#x20;
-
-
 
 #### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
-
-
 **Configuration Parameters :**&#x20;
 
 * Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+
 * `setup_future_usage: "off_session"`
+
 * `amount: 0`
+
 * `payment_type: "setup_mandate"`
 {% endhint %}
 
 ```
+
 curl --location 'http://<baseurl>/subscriptions/' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -290,6 +309,7 @@ curl --location 'http://<baseurl>/subscriptions/' \
 Response:
 
 ```
+
 {
   "id": "subscription_wBV1G9dhh6EBhTOTXRBA",
   "merchant_reference_id": null,
@@ -314,14 +334,18 @@ Response:
     "status": "InvoiceCreated"
   }
 }
+
 ```
+
 {% endstep %}
 
 {% step %}
 Sync with the status of the Subscription API to disburse services to subscribed users
 
 {% code overflow="wrap" %}
+
 ```
+
 curl --location 'http://<baseurl>/subscriptions/<subscripion_id>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -339,7 +363,9 @@ RESPONSE:
     "coupon_code": null,
     "customer_id": "<customer_id>"
 }
+
 ```
+
 {% endcode %}
 {% endstep %}
 

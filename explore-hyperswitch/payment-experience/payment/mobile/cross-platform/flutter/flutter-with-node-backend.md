@@ -13,13 +13,13 @@ Use this guide to integrate `hyperswitch` SDK to your Flutter app.
 
 ## Requirements
 
-* Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
-* iOS 13.0 and above
-* CocoaPods
-* npm
+- Android 7.0 (API level 24) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+- [Gradle](https://gradle.org/releases/) 8.8+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
+- iOS 13.0 and above
+- CocoaPods
+- npm
 
 ## 1. Setup the server
 

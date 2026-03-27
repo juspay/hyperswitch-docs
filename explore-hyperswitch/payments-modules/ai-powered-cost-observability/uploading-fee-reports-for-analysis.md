@@ -1,7 +1,6 @@
 ---
 icon: books
-description: Upload and process payment processor fee reports on Juspay Hyperswitch Cost Observability to visualize costs and identify savings opportunities
----
+description: Upload and process payment processor fee reports on Juspay Hyperswitch Cost Observability to visualize costs and identify savings opportunities---
 
 # Uploading Fee Reports for Analysis
 
@@ -33,7 +32,7 @@ For Adyen, we will need the following reports, always check the required reports
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-07-22 at 2.33.29 PM.png" alt=""><figcaption></figcaption></figure>
 
-You will need to upload all the types of reports for each month seperately.
+You will need to upload all the types of reports for each month separately.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-07-22 at 2.36.23 PM.png" alt=""><figcaption></figcaption></figure>
 

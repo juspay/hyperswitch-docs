@@ -4,11 +4,11 @@ description: Setup custom domains
 
 # Setup Custom Domain
 
-A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
+A custom domain name can be used for payment links. This is your own domain name which is configured at Hyperswitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
 ## How to setup custom domain within your cloud
 
-* Identify your DNS provider
+- Identify your DNS provider
 
 > First, determine which service is handling your DNS records. This will guide you to the correct platform where you can log in and set up the new records.
 
@@ -22,7 +22,7 @@ $ nslookup -querytype=NS hyperswitch.com
 
 > You’ll see a list of name servers for your domain in the output.
 
-* Create required DNS records
+- Create required DNS records
 
 > In this segment, you'll generate the necessary DNS records to link your domain. Follow the following steps to enable the same
 
@@ -90,10 +90,10 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 > Upon completing this step, your DNS records will be configured.
 
-* Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
+- Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
 
 ## How to use Wallets like Apple Pay & Google Pay in Payment Links?
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 
-After you have setup custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.
+After you have setup custom domain in your cloud, you need to get respective Google Pay, Apple Pay certificate for your new domain, and register the same in our dashboard.

@@ -5,13 +5,13 @@ icon: ban
 
 # Fraud Blocklist
 
-### Card bin blocklist
+## Card bin blocklist
 
 A blocklist in the context of payment processing refers to a security feature that allows merchants to restrict specific fingerprints associated with payment methods or block certain card bins. A fingerprint is a unique identifier linked to a particular payment method, and a card bin encompasses the first six digits of a credit card number, with an extended card bin covering the first eight digits.
 
 Merchants can utilize the blocklist functionality to enhance security and control over their payment processing systems. This capability enables them to thwart transactions from identified problematic sources or potentially fraudulent payment methods. Here's how the blocklist feature works:
 
-#### Blocking Specific Fingerprints
+### Blocking Specific Fingerprints
 
 Merchants can identify and block specific fingerprints associated with payment methods. This is particularly useful in preventing transactions from certain payment instruments (card in our case) that may have a history of suspicious activity.
 
@@ -39,20 +39,20 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
 
 #### For Card Bin and Extended Card Bin
 
-* Setup a Merchant Account and any Connector account.
-* Make a payment with a certain card (ensure it succeeds).
-* Block the card's card bin or extended card bin.
-* Try the payment again (should fail this time with an API response saying that the payment was blocked)
+- Setup a Merchant Account and any Connector account.
+- Make a payment with a certain card (ensure it succeeds).
+- Block the card's card bin or extended card bin.
+- Try the payment again (should fail this time with an API response saying that the payment was blocked)
 
 #### For Payment Instrument
 
-* Repeat steps 1 and 2 of previous section.
-*   In the payment confirm response, there will be an additional field called "fingerprint". This
+- Repeat steps 1 and 2 of previous section.
+- In the payment confirm response, there will be an additional field called "fingerprint". This
 
     is the fingerprint id that can be used to block a particular payment method. Use this to
 
     block the card.
-* Try the payment again (should fail)
+- Try the payment again (should fail)
 
 #### Enabling blocklist guard on Hyperswitch
 
@@ -91,10 +91,10 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
            "card_holder_name": "joseph Doe"
        }
    },
-  
+
   ...
-  
-  
+
+
    "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
 ```

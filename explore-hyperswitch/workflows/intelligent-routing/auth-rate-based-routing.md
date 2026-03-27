@@ -1,10 +1,11 @@
 ---
+description: Auth Rate Based Routing using Juspay Hyperswitch
 icon: badge-check
 ---
 
 # Auth Rate Based Routing
 
-### How does it work?
+## How does it work?
 
 **Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.&#x20;
 
@@ -12,8 +13,8 @@ At its core, the system treats each Gateway as a dynamic option in a decision-ma
 
 The routing strategy follows a two-part approach:
 
-* **Exploration**: A small share of traffic is continuously routed to all Gateways to gather current performance data.
-* **Exploitation**: The majority of traffic is directed to the top-performing Gateway to maximize success rates.
+- **Exploration**: A small share of traffic is continuously routed to all Gateways to gather current performance data.
+- **Exploitation**: The majority of traffic is directed to the top-performing Gateway to maximize success rates.
 
 To keep decisions current and responsive, the system uses a **sliding window** to track recent performance, enabling fast adaptation to changing conditions—without requiring any manual intervention or downtime.
 
@@ -23,10 +24,10 @@ By intelligently balancing experimentation with optimization, Auth Rate Based Ro
 
 Key Configurations
 
-* Bucket size : No. of payments included in a block limited by count or time period
-* Aggregate pipeline size :&#x20;
-  * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
-  * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
+- Bucket size : No. of payments included in a block limited by count or time period
+- Aggregate pipeline size :&#x20;
+  - Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
+  - Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
 ### How to setup Auth Rate Based Routing for your Hyperswitch Merchant?
 
@@ -47,18 +48,18 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant
 3. To update the setting of the routing model use the below API:
 
 ```
-curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \  
---header 'Content-Type: application/json' \  
---header 'api-key: <api-key>' \  
---data '{  
-        "config": {  
-            "min_aggregates_size": 5,  
-            "max_aggregates_size": 8,  
-            "current_block_threshold": {  
-                "max_total_count": 5  
-            },  
-            "exploration_percent": 20.0  
-        }  
+curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>' \
+--data '{
+        "config": {
+            "min_aggregates_size": 5,
+            "max_aggregates_size": 8,
+            "current_block_threshold": {
+                "max_total_count": 5
+            },
+            "exploration_percent": 20.0
+        }
 }'
 ```
 

@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via BOA through Hyper
 
 The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered at the Bank of America Corporate Center in Charlotte, North Carolina, with investment banking and auxiliary headquarters in Manhattan. To know  more about payment methods supported by BOA via Hyperswitch click [here](https://hyperswitch.io/pm-list).
 
-### Activating BOA via Hyperswitch
+## Activating BOA via Hyperswitch
 
-#### I. Prerequisites
+### I. Prerequisites
 
 1. You need to be registered with BOA in order to proceed. In case you aren't, you can quickly setup your BOA account [here](https://developer.cybersource.com/hello-world/sandbox.html).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

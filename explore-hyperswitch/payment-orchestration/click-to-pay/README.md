@@ -1,4 +1,5 @@
 ---
+description: Enable Click To Pay for seamless checkout experiences with Juspay Hyperswitch
 icon: chevrons-right
 ---
 
@@ -12,7 +13,7 @@ Click to Pay is a secure and user-friendly digital payment solution designed to 
 
 This solution is built on [EMVCo](https://www.emvco.com/) standards and is supported by major global card networks, enabling international interoperability and secure transaction acceptance. By streamlining the payment process, Click to Pay reduces cart abandonment, providing a smooth user experience while strengthening security through [tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards).
 
-### Payment Journey for Click to pay signed up users
+## Payment Journey for Click to pay signed up users
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -20,42 +21,42 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 #### Passkeys Support
 
-* Hyperswitch is among the first certified Mastercard and Visa partners for the passkey-enabled Click to Pay solution.
-* Unlike the older Click to Pay versions, which required OTPs or push provisioning, Hyperswitch enables seamless biometric authentication using passkeys.
+- Hyperswitch is among the first certified Mastercard and Visa partners for the passkey-enabled Click to Pay solution.
+- Unlike the older Click to Pay versions, which required OTPs or push provisioning, Hyperswitch enables seamless biometric authentication using passkeys.
 
 #### Unified SDK
 
-* A single integration with the Hyperswitch SDK supports Visa, Mastercard, Amex, and Discover cards on Click to Pay.
-* Hyperswitch ensures business continuity by intelligently switching between card systems if one network becomes unavailable, all while maintaining a single, blended UI.
+- A single integration with the Hyperswitch SDK supports Visa, Mastercard, Amex, and Discover cards on Click to Pay.
+- Hyperswitch ensures business continuity by intelligently switching between card systems if one network becomes unavailable, all while maintaining a single, blended UI.
 
 #### Easier and Customizable Integration
 
-* Hyperswitch simplifies integration with low-code options, allowing merchants to blend Click to Pay into their checkout page as part of the card section or offer it as a guest checkout button.
-* Offers UI customization to align with the merchant’s branding for a seamless user experience.
+- Hyperswitch simplifies integration with low-code options, allowing merchants to blend Click to Pay into their checkout page as part of the card section or offer it as a guest checkout button.
+- Offers UI customization to align with the merchant’s branding for a seamless user experience.
 
 #### Faster Go-live
 
-* Certified partnerships with Mastercard and Visa enable Hyperswitch to help merchants go live in days rather than months, minimizing merchant effort.
+- Certified partnerships with Mastercard and Visa enable Hyperswitch to help merchants go live in days rather than months, minimizing merchant effort.
 
 ### Benefits for Merchants
 
 #### Seamless Checkout
 
-* Eliminates the need for customers to re-enter card details after initial enrollment.
-* Fetches stored card details based on the customer’s email or phone number.
+- Eliminates the need for customers to re-enter card details after initial enrollment.
+- Fetches stored card details based on the customer’s email or phone number.
 
 #### Secured Transactions
 
-* Cards are tokenized and securely stored at the network's end.
-* Authentication is managed via passkeys using public-private key cryptography, making interception nearly impossible.
+- Cards are tokenized and securely stored at the network's end.
+- Authentication is managed via passkeys using public-private key cryptography, making interception nearly impossible.
 
 #### Enhanced Authentication
 
-* Passkeys enable a quick and secure authentication process using biometrics (e.g., fingerprint, face ID) instead of OTPs or push notifications.
+- Passkeys enable a quick and secure authentication process using biometrics (e.g., fingerprint, face ID) instead of OTPs or push notifications.
 
 #### Liability Shift
 
-* Merchants benefit from a chargeback liability shift to the issuer when transactions are authenticated via Click to Pay with Passkeys.
+- Merchants benefit from a chargeback liability shift to the issuer when transactions are authenticated via Click to Pay with Passkeys.
 
 By combining the tokenization of payment credentials with seamless biometric authentication, Click to Pay is bringing [EMVCo](https://www.emvco.com/), [World Wide Web Consortium](https://www.w3.org/) and the[ FIDO Alliance](https://fidoalliance.org/) industry standards together to speed and secure checkouts.
 

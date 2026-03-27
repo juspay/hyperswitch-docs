@@ -1,4 +1,5 @@
 ---
+description: Implement 3D Secure authentication and Strong Customer Authentication for secure payments with Juspay Hyperswitch
 icon: badge-check
 ---
 
