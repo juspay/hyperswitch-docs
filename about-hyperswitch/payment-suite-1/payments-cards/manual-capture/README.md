@@ -16,7 +16,9 @@ But in some cases, merchants would like to place a hold on the customer's funds 
 ### Benefits of Manual Capture
 
 1. Improved Control: Funds are captured only after goods or services are delivered.
+
 2. Flexibility: You can capture the full amount or a partial amount as per the delivery.
+
 3. Customer Satisfaction: Builds trust by charging customers only after fulfilling the order.
 
 ### How to do Manual Capture?
@@ -28,6 +30,7 @@ The 'capture\_method' field determines the type of capture for a particular paym
 **Sample curl:**
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -52,6 +55,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
         }
     }
 }'
+
 ```
 
 #### Step 2 — Confirm (Authorization Phase)
@@ -63,6 +67,7 @@ Note - You can mark `"confirm" = "true"` in the previous step and directly move 
 **Sample curl:**
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/confirm' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -80,6 +85,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/c
         }
     }
 }'
+
 ```
 
 #### Step 3 — Capture Funds via [Capture API](https://api-reference.hyperswitch.io/v1/payments/payments--capture#payments-capture)
@@ -89,6 +95,7 @@ After delivering the goods and services, capture the payment by passing the `pay
 **Sample curl:**
 
 ```bash
+
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQD/capture' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -98,6 +105,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
     "statement_descriptor_name": "Joseph",
     "statement_descriptor_suffix": "JS"
 }'
+
 ```
 
 ### Capture types available :
@@ -111,6 +119,7 @@ Capture the full amount that was authorized - Here the payments status transitio
 Capture only a partial amount from the total amount that was authorized. Once the transaction is executed, the status goes to either `partially_captured` or `partially_captured_and_capturable` &#x20;
 
 1. When capture method is manual & single capture is supported - `partially_captured`
+
 2. When capture method is manual & multiple captures are supported - `partially_captured_and_capturable`  <br>
 
 Possible states:
@@ -123,4 +132,3 @@ Possible states:
 #### Over Capture &#x20;
 
 Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. You can find detailed docs [here](https://docs.hyperswitch.io/~/revisions/KHifKaZGv4c5XEloMvlu/about-hyperswitch/payment-suite-1/payments-cards/manual-capture/overcapture)&#x20;
-

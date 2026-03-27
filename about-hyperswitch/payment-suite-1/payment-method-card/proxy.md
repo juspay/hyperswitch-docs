@@ -1,5 +1,5 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: Use vaulted card tokens with proxy endpoints to process secure payments through PSPs without handling raw card data
 icon: almost-equal-to
 ---
 
@@ -10,8 +10,11 @@ The Proxy Payments Service allows merchants to tokenize cards via Hyperswitch Va
 Key Highlights:
 
 * No PSP re-integration needed – Keep your existing PSP connections.
+
 * PCI DSS scope reduction – Raw card data stays within Vault.
+
 * Data security – Detokenization happens only during the request lifecycle.
+
 * Centralized token management – One vault, many PSPs.
 
 ### Vault and proxy - Vaulting and payments flow
@@ -23,6 +26,7 @@ Key Highlights:
 The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
 ```bash
+
 curl --request POST \
   --url https://sandbox.hyperswitch.io/v1/payment-method-sessions \
   --header 'Authorization: <api-key>' \
@@ -33,6 +37,7 @@ curl --request POST \
   "customer_id": "12345_cus_abcdefghijklmnopqrstuvwxyz"
 }
 '
+
 ```
 
 #### **2. Initialize SDK (Client-Side)**&#x20;
@@ -40,6 +45,7 @@ curl --request POST \
 The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 
 ```js
+
 // Fetches a payment method session and mounts the payment methods management element
 async function initialize() {
   // Step 1: Create payment method session
@@ -89,6 +95,7 @@ async function initialize() {
 
 // Call initialize when page loads or when user clicks a button
 initialize();
+
 ```
 
 #### **3. Collect and Vault Card (Client-Side)**&#x20;
@@ -106,9 +113,13 @@ The merchant server initiates the payment by sending a request to the [Hyperswit
 **New user payments flow**
 
 1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch&#x20;
+
 2. [Initialize SDK (Client-Side) ](../../../explore-hyperswitch/payment-experience/payment-method/)The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
+
 3. Collect and Vault Card (Client-Side) The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the /`Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
+
 4. Retrieve Payment Method ID (Server-Side) The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
+
 5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the&#x20;
 
 **Proxy Payment Request**
@@ -119,6 +130,7 @@ Include the following details:
    1. URL: Proxy endpoint (https://sandbox.hyperswitch.io/proxy)
    2. API Key: Your API key for the merchant\_id under which the vault service was created on Hyperswitch dashboard
    3. Profile\_id: Your profile\_id for the merchant\_id under which the vault service was created on Hyperswitch dashboard
+
 2. Include the following details in the body:
    1. `request_body`: Include the request body of the PSP payment request
    2. `destination_url`, `method`, `headers`: Pass your PSP url as destination url, PSP endpoint method and headers under the respective fields
@@ -175,6 +187,7 @@ Include the following details:
 #### Sample Response
 
 ```bash
+
 {
     "response": {
         "id": "pay_7f6x6vki25futmy54uot5c3ama",
@@ -251,4 +264,5 @@ Include the following details:
         "cko-request-id": "61354917-3541-44fc-8ec7-98dd385aa0b4"
     }
 }
+
 ```

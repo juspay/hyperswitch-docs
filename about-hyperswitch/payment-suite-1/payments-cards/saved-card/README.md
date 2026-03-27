@@ -1,5 +1,6 @@
 ---
 icon: hard-drive
+description: Implement secure saved card payments to reduce PCI burden and simplify returning customer checkout
 ---
 
 # Saved Card
@@ -12,13 +13,12 @@ The merchant uses the Hyperswitch Dashboard to configure connectors, routing rul
 
 <figure><img src="../../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
 
-
-
 #### **1. Create Payment (Server-Side)**
 
 The merchant server creates a payment by calling the Hyperswitch [`payments/create`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with transaction details such as amount and currency. Hyperswitch responds with a `payment_id` , `customer_id` and `client_secret`, which are required for client-side processing.
 
 ```json
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -29,8 +29,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "profile_id": <enter the relevant profile id>,
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
+
 ```
 
 {% hint style="info" %}
@@ -42,6 +43,7 @@ Note - In case the merchant does not pass the customer ID, then the transaction 
 The merchant client initializes the Hyperswitch SDK using the `client_secret` and `publishable_key`. The SDK fetches eligible payment methods from Hyperswitch and renders a secure payment UI.
 
 ```js
+
 // Fetches a payment intent and captures the client secret
 async function initialize() {
   const response = await fetch("/create-payment", {
@@ -50,13 +52,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
       customBackendUrl: "YOUR_BACKEND_URL",
@@ -78,6 +80,7 @@ async function initialize() {
   };
   document.body.appendChild(script);
 }
+
 ```
 
 #### **3. Collect Card Details**
@@ -101,6 +104,7 @@ The final payment and vaulting status is returned to the SDK, which redirects th
 The merchant server initiates the payment by calling the [`payments/create`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with transaction details such as amount and currency. Hyperswitch responds with a `payment_id` , `customer_id` and `client_secret`, which are required for client-side processing.
 
 ```json
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -111,8 +115,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "profile_id": <enter the relevant profile id>,
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
+
 ```
 
 {% hint style="info" %}
@@ -126,6 +131,7 @@ In case the merhcnat is not using the SDK then they need to use the List Custome
 The merchant client initializes the Hyperswitch SDK. The SDK requests eligible payment methods from Hyperswitch, including any saved cards associated with the customer.
 
 ```js
+
 // Fetches a payment intent and captures the client secret
 async function initialize() {
   const response = await fetch("/create-payment", {
@@ -134,13 +140,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
       customBackendUrl: "YOUR_BACKEND_URL",
@@ -162,6 +168,7 @@ async function initialize() {
   };
   document.body.appendChild(script);
 }
+
 ```
 
 #### **3. Customer Selects a Saved Card**
@@ -175,8 +182,6 @@ The SDK sends a [`payments/confirm`](https://api-reference.hyperswitch.io/v1/pay
 #### **5. Return Status**
 
 The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant’s `return_url` with the payment outcome.
-
-
 
 #### Integration Guide :&#x20;
 

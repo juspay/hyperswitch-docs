@@ -1,5 +1,6 @@
 ---
 icon: arrows-rotate-reverse
+description: Set up recurring payments to enable automatic billing and manage subscription charges with stored payment methods
 ---
 
 # Recurring payments
@@ -26,6 +27,7 @@ Include below parameter and values while calling the [payments](https://api-refe
 **Run-Ready API Example (CIT with Charge)**
 
 ```json
+
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -34,14 +36,13 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session", 
+    "setup_future_usage":"off_session",
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
+
 ```
-
-
 
 #### 2. Zero Dollar Authorization (Mandate-Only Setup)
 
@@ -60,6 +61,7 @@ Pass below parameters while calling payments API for [Zero Dollar Auth ](https:/
 **Run-Ready API Example (Zero Auth Mandate)**
 
 ```json
+
 curl --location 'http://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -77,6 +79,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 "profile_id": <enter the relevant profile id>,
 "setup_future_usage": "off_session"
 }'
+
 ```
 
 Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id`  can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transction_id`  (NTID) in its response to allow PICI compliant merchants to direct pass card + NTID for processing MIT recurring payments&#x20;
@@ -94,13 +97,12 @@ For example, you can refer the below table -&#x20;
 
 Internally the payment\_method\_id is mapped to a bunch of credentials -  PSP token, Raw card + NTID, Network token + NTID depending on functionalities enabled for the merchant.
 
-
-
 ### Customer Consent Capture (Mandate Compliance)
 
 If you are not using Hyperswitch SDK, then `customer_acceptance`  (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
 
 ```bash
+
 "customer_acceptance": {
         "acceptance_type": "online",
         "accepted_at": "1963-05-03T04:07:52.723Z",
@@ -109,6 +111,7 @@ If you are not using Hyperswitch SDK, then `customer_acceptance`  (customer's co
             "user_agent": "amet irure esse"
         }
     }
+
 ```
 
 If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request on the basis of customer clicking the save card radio button
@@ -145,7 +148,9 @@ You may receive errors such as `Received unknown parameter: payment_method_optio
 Email the PSP Support requesting:
 
 * Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
+
 * Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
+
 * Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
 {% endhint %}
 
@@ -174,6 +179,7 @@ In the following MIT payments basis the enablement of the feature and the availa
 To start routing MIT payments across all supported connectors in addition to the connector through which the recurring payment was set up, use the below API to enable it for a business profile
 
 ```bash
+
 curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_profile/:profile_id/toggle_connector_agnostic_mit' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -181,6 +187,7 @@ curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_pro
 --data '{
     "enabled": true
 }'
+
 ```
 
 All the payment methods saved with `setup_future_usage : off_session` after enabling this feature would now be eligible to be routed across the list of supported connectors during the subsequent MIT payments
@@ -202,17 +209,21 @@ Once the rule is configured, you would need to send the following metadata as pe
 #### **Metadata to be sent in CITs**
 
 ```
+
 "metadata": {
     "is_cit": "true"
 }
+
 ```
 
 #### **Metadata to be sent in MITs**
 
 ```
+
 "metadata": {
     "is_mit": "true"
 }
+
 ```
 
 According to the above configured rule all the CITs for the specific business profile should be routed through Stripe and MITs through Adyen.
