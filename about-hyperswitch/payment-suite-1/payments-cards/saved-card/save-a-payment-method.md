@@ -1,5 +1,5 @@
 ---
-description: Setting up and managing recurring payments
+description: Configure saved payment methods to enable faster customer checkouts and support seamless recurring merchant-initiated and customer-initiated transactions
 icon: repeat
 ---
 

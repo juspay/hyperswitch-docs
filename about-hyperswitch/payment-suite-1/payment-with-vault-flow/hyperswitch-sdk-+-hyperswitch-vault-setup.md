@@ -1,7 +1,5 @@
 ---
-description: >-
-  Best for merchants seeking a pre-built, optimized payment UI backed by the
-  full Hyperswitch stack for secure data storage and routing.
+description: Integrate Hyperswitch SDK and Vault to securely tokenize payment data and simplify PCI compliance while enabling seamless payment processing
 ---
 
 # Hyperswitch SDK + Hyperswitch Vault Setup
@@ -10,9 +8,9 @@ In this approach, the Hyperswitch SDK is used on the frontend to capture card de
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
-#### **Understanding Payment and Vault flow**
+## Understanding Payment and Vault Flow
 
-#### **Vaulting  :**&#x20;
+### Vaulting&#x20;
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
 
@@ -35,7 +33,7 @@ The final payment and vaulting status is returned to the SDK, which redirects th
 
 
 
-#### **Payment Using Stored Card :**&#x20;
+### Payment Using Stored Card&#x20;
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 
