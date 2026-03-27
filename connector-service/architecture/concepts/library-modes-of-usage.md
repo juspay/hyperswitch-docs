@@ -1,30 +1,23 @@
+---
+description: >-
+  Explore Library Modes of Usage to enhance your payment orchestration capabilities
+---
+
 # Library Modes of Usage
 
 Prism fits into your architecture two ways: as an embedded library or as a standalone microservice. The choice depends on your scale, team structure, and how you want to manage payment logic.
 
-## Mode Comparison
-
-| Factor | Library (SDK) | Microservice (gRPC) |
-|--------|---------------|---------------------|
-| **Latency** | < 1ms | 5-20ms |
-| **Deployment** | Embedded in your app | Separate container/service |
-| **Language support** | Node.js, Python, Java, Go, Rust | Any gRPC client |
-| **Scaling** | Scale with your app | Independent scaling |
-| **Team ownership** | Your team manages everything | Platform team owns payments |
-| **Resource isolation** | Shared resources | Dedicated resources |
-| **Upgrade cycle** | Tied to your app releases | Independent deployments |
-
-## Library Mode (SDK)
+## Mode Comparison | Factor | Library (SDK) | Microservice (gRPC) | |--------|---------------|---------------------| | **Latency** | < 1ms | 5-20ms | | **Deployment** | Embedded in your app | Separate container/service | | **Language support** | Node.js, Python, Java, Go, Rust | Any gRPC client | | **Scaling** | Scale with your app | Independent scaling | | **Team ownership** | Your team manages everything | Platform team owns payments | | **Resource isolation** | Shared resources | Dedicated resources | | **Upgrade cycle** | Tied to your app releases | Independent deployments | ## Library Mode (SDK)
 
 Use the SDK when you want payment logic in your application process.
 
 ```javascript
 // Your application code
-const { ConnectorClient } = require('@juspay/connector-service-node');
+const { ConnectorClient } = require('@Juspay/connector-service-node');
 
 const client = new ConnectorClient({
     connectors: {
-        stripe: { apiKey: process.env.STRIPE_API_KEY }
+        Stripe: { apiKey: process.env.STRIPE_API_KEY }
     }
 });
 
@@ -77,7 +70,7 @@ Run Prism as a standalone service when you need separation of concerns.
 
 ```javascript
 // Your application code
-const { ConnectorServiceClient } = require('@juspay/connector-service-grpc');
+const { ConnectorServiceClient } = require('@Juspay/connector-service-grpc');
 
 const client = new ConnectorServiceClient('connector-service.internal:8080');
 
@@ -130,18 +123,7 @@ Your App Container          Prism Container
 
 ## Why gRPC Over REST
 
-Prism uses gRPC for the microservice mode because:
-
-| Aspect | gRPC | REST/JSON |
-|--------|------|-----------|
-| **Serialization** | Binary (Protobuf) | Text (JSON) |
-| **Payload size** | ~60% smaller | Larger |
-| **Deserialization** | ~10x faster | Slower |
-| **Schema** | Strict (proto files) | Loose |
-| **Streaming** | Bidirectional | Limited |
-| **Code generation** | Automatic | Manual |
-
-For high-volume payment processing, these differences matter. A payment gateway handling 10,000 TPS saves significant bandwidth and CPU with gRPC.
+Prism uses gRPC for the microservice mode because: | Aspect | gRPC | REST/JSON | |--------|------|-----------| | **Serialization** | Binary (Protobuf) | Text (JSON) | | **Payload size** | ~60% smaller | Larger | | **Deserialization** | ~10x faster | Slower | | **Schema** | Strict (proto files) | Loose | | **Streaming** | Bidirectional | Limited | | **Code generation** | Automatic | Manual | For high-volume payment processing, these differences matter. A payment gateway handling 10,000 TPS saves significant bandwidth and CPU with gRPC.
 
 ## Switching Between Modes
 
@@ -170,13 +152,13 @@ Even if you only use Stripe today, using Prism SDK positions you for expansion:
 ```javascript
 // Today: Just Stripe
 const response = await client.payments.authorize({
-    connector: Connector.STRIPE,
+    connector: Connector.Stripe,
     amount: { ... }
 });
 
 // Tomorrow: Add Adyen with one line change
 const response = await client.payments.authorize({
-    connector: Connector.ADYEN,  // ← Only change
+    connector: Connector.Adyen,  // ← Only change
     amount: { ... }              // Everything else identical
 });
 ```

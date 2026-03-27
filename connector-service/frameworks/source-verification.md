@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Source Verification to enhance your payment orchestration capabilities
+---
+
 # Source Verification
 
 A customer returns from a 3D Secure challenge. The URL shows `status=success`. Do you ship the order? Not yet. That URL could be forged. Prism verifies the source before you fulfill a single order.
@@ -50,17 +55,7 @@ app.get('/payment/redirect', async (req, res) => {
 });
 ```
 
-## Verification Methods by Connector
-
-| Connector | Signature Location | Algorithm |
-|-----------|-------------------|-----------|
-| Stripe | `Stripe-Signature` header | HMAC-SHA256 |
-| Adyen | `Authorization` header | HMAC-SHA256 |
-| Checkout.com | Signature in body | HMAC-SHA256 |
-| PayPal | Certificate-based | RSA-SHA256 |
-| Worldpay | `MAC` query parameter | HMAC-SHA256 |
-
-Prism abstracts these differences. You call one method. It handles all verification schemes.
+## Verification Methods by Connector | Connector | Signature Location | Algorithm | |-----------|-------------------|-----------| | Stripe | `Stripe-Signature` header | HMAC-SHA256 | | Adyen | `Authorization` header | HMAC-SHA256 | | Checkout.com | Signature in body | HMAC-SHA256 | | PayPal | Certificate-based | RSA-SHA256 | | Worldpay | `MAC` query parameter | HMAC-SHA256 | Prism abstracts these differences. You call one method. It handles all verification schemes.
 
 ## Response Structure
 
@@ -75,22 +70,14 @@ Prism abstracts these differences. You call one method. It handles all verificat
   "merchant_order_id": "order_001",
   "status": "AUTHORIZED"
 }
-```
-
-| Field | Meaning |
-|-------|---------|
-| `source_verified` | Boolean. `true` only if cryptographically verified. |
-| `status` | Payment status after verification. Can be `AUTHORIZED`, `FAILED`, or `PENDING`. |
-| `response_amount` | Amount from the verified response. Check this matches your order total. |
-
-## Error: Verification Failed
+``` | Field | Meaning | |-------|---------| | `source_verified` | Boolean. `true` only if cryptographically verified. | | `status` | Payment status after verification. Can be `AUTHORIZED`, `FAILED`, or `PENDING`. | | `response_amount` | Amount from the verified response. Check this matches your order total. | ## Error: Verification Failed
 
 ```json
 {
   "error": {
     "code": "SOURCE_VERIFICATION_FAILED",
     "message": "Redirect response signature does not match expected value",
-    "connector": "stripe",
+    "connector": "Stripe",
     "suggestion": "Do not fulfill order. Check redirect parameters were not modified."
   }
 }

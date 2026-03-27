@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Services and Methods to enhance your payment orchestration capabilities
+---
+
 # Services and Methods
 
 Prism organizes payment operations into services that reflect how payments actually work in the real world. Some operations are independent. Others are follow-on actions that only make sense after a payment exists.
@@ -30,15 +35,7 @@ DisputeService (sub-service)
 
 A refund isn't a standalone operation. It requires a payment that was already captured. A recurring charge requires a payment method setup. A dispute arises from an existing transaction.
 
-Prism models this dependency explicitly:
-
-| Operation | Requires | Provided By |
-|-----------|----------|-------------|
-| `RefundService.refund()` | A captured payment | `PaymentService.capture()` |
-| `RecurringPaymentService.charge()` | A stored payment method | `PaymentService.setup_mandate()` |
-| `DisputeService.accept()` | A disputed transaction | Payment processor notification |
-
-This hierarchy prevents invalid state transitions. You can't refund a payment that was never captured. The service structure enforces this at the API level.
+Prism models this dependency explicitly: | Operation | Requires | Provided By | |-----------|----------|-------------| | `RefundService.refund()` | A captured payment | `PaymentService.capture()` | | `RecurringPaymentService.charge()` | A stored payment method | `PaymentService.setup_mandate()` | | `DisputeService.accept()` | A disputed transaction | Payment processor notification | This hierarchy prevents invalid state transitions. You can't refund a payment that was never captured. The service structure enforces this at the API level.
 
 ## PaymentService: The Core
 
@@ -133,18 +130,7 @@ await client.disputes.submitEvidence({
 });
 ```
 
-## Service Reference
-
-| Service | Primary Operations | Documentation |
-|---------|-------------------|---------------|
-| PaymentService | authorize, capture, void, refund, sync | [Payment Service](../../api-reference/services/payment-service/) |
-| RefundService | refund, sync | [Refund Service](../../api-reference/services/refund-service/) |
-| RecurringPaymentService | charge, revoke | [Recurring Payment Service](../../api-reference/services/recurring-payment-service/) |
-| DisputeService | accept, defend, submit_evidence | [Dispute Service](../../api-reference/services/dispute-service/) |
-| EventService | handle | [Event Service](../../api-reference/services/event-service/) |
-| CustomerService | create | [Customer Service](../../api-reference/services/customer-service/) |
-
-## Method Naming Conventions
+## Service Reference | Service | Primary Operations | Documentation | |---------|-------------------|---------------| | PaymentService | authorize, capture, void, refund, sync | [Payment Service](../../api-reference/services/payment-service/) | | RefundService | refund, sync | [Refund Service](../../api-reference/services/refund-service/) | | RecurringPaymentService | charge, revoke | [Recurring Payment Service](../../api-reference/services/recurring-payment-service/) | | DisputeService | accept, defend, submit_evidence | [Dispute Service](../../api-reference/services/dispute-service/) | | EventService | handle | [Event Service](../../api-reference/services/event-service/) | | CustomerService | create | [Customer Service](../../api-reference/services/customer-service/) | ## Method Naming Conventions
 
 Methods follow verb-noun patterns that describe the action:
 

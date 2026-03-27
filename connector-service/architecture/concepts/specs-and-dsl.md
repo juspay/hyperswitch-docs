@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Specs and DSL to enhance your payment orchestration capabilities
+---
+
 # Specs and DSL
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers that catches integration errors at compile time. Instead of discovering you forgot a required field in production, you get a compiler error immediately.
@@ -69,17 +74,7 @@ interface Money {
 
 Now missing required fields cause compile-time errors, not runtime failures.
 
-## Compile-Time Guarantees
-
-| Issue | Without DSL | With Prism DSL |
-|-------|-------------|---------------------------|
-| Missing required field | Runtime HTTP 400 | Compile-time error |
-| Wrong field type | Runtime type error | Compile-time type mismatch |
-| Invalid enum value | Runtime validation error | Auto-complete + type checking |
-| Typos in field names | Silent failure (undefined) | Compile-time "property doesn't exist" |
-| Breaking API changes | Runtime errors post-deploy | Compile-time errors during build |
-
-## Type-Safe Enum Handling
+## Compile-Time Guarantees | Issue | Without DSL | With Prism DSL | |-------|-------------|---------------------------| | Missing required field | Runtime HTTP 400 | Compile-time error | | Wrong field type | Runtime type error | Compile-time type mismatch | | Invalid enum value | Runtime validation error | Auto-complete + type checking | | Typos in field names | Silent failure (undefined) | Compile-time "property doesn't exist" | | Breaking API changes | Runtime errors post-deploy | Compile-time errors during build | ## Type-Safe Enum Handling
 
 Payment status is an enum, not a string:
 
@@ -140,18 +135,7 @@ const request: AuthorizeRequest = {
 
 ## Required vs Optional Fields
 
-The proto schema makes requirements explicit:
-
-| Field | Required? | Validation |
-|-------|-----------|------------|
-| `amount` | Yes | Must be present, must have `minor_amount` and `currency` |
-| `merchant_order_id` | Yes | Non-empty string |
-| `payment_method` | Yes | One payment method must be specified |
-| `capture_method` | Yes | Must be `MANUAL` or `AUTOMATIC` |
-| `customer_id` | No | Can be omitted |
-| `metadata` | No | Optional key-value map |
-
-## DSL for Connector Development
+The proto schema makes requirements explicit: | Field | Required? | Validation | |-------|-----------|------------| | `amount` | Yes | Must be present, must have `minor_amount` and `currency` | | `merchant_order_id` | Yes | Non-empty string | | `payment_method` | Yes | One payment method must be specified | | `capture_method` | Yes | Must be `MANUAL` or `AUTOMATIC` | | `customer_id` | No | Can be omitted | | `metadata` | No | Optional key-value map | ## DSL for Connector Development
 
 Prism also uses a DSL internally for building connectors. The macro system enforces that adapters implement required methods:
 
@@ -207,12 +191,7 @@ $ make generate
 $ cargo build
 
 error[E0560]: struct `AuthorizeRequest` has no field named `merchant_id`
-  --> src/main.rs:42:9
-   |
-42 |         merchant_id: "order-123",
-   |         ^^^^^^^^^^^ unknown field
-   |
-   = note: available fields are: `amount`, `merchant_order_id`, ...
+  --> src/main.rs:42:9 | 42 | merchant_id: "order-123", | ^^^^^^^^^^^ unknown field | = note: available fields are: `amount`, `merchant_order_id`, ...
 ```
 
 You fix it before deploying, not after customers complain.

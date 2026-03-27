@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Versioning to enhance your payment orchestration capabilities
+---
+
 # Versioning
 
 Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.
@@ -7,51 +12,43 @@ MAJOR.MINOR.PATCH
   1    .2    .3
 ```
 
-## Version Number Meanings
-
-| Position | When It Changes | What It Means for You |
-|----------|-----------------|----------------------|
-| **PATCH** (1.2.3 → 1.2.4) | Bug fixes, security patches | Update automatically. Zero code changes required. |
-| **MINOR** (1.2.x → 1.3.x) | New features, new connectors | Add capabilities without touching existing code. |
-| **MAJOR** (1.x.x → 2.x.x) | Breaking API changes | You must update your code. Migration guide provided. |
-
-## Pinning for Automatic Bug Fixes
+## Version Number Meanings | Position | When It Changes | What It Means for You | |----------|-----------------|----------------------| | **PATCH** (1.2.3 → 1.2.4) | Bug fixes, security patches | Update automatically. Zero code changes required. | | **MINOR** (1.2.x → 1.3.x) | New features, new connectors | Add capabilities without touching existing code. | | **MAJOR** (1.x.x → 2.x.x) | Breaking API changes | You must update your code. Migration guide provided. | ## Pinning for Automatic Bug Fixes
 
 It is strongly recommended You want security patches and critical fixes without manual updates. Pin your dependency to accept patch increments automatically.
 
 <!-- tabs:start -->
 
-#### **Node.js (package.json)**
+### **Node.js (package.json)**
 
 ```json
 {
   "dependencies": {
-    "@juspay/connector-service-node": "1.2.*"
+    "@Juspay/connector-service-node": "1.2.*"
   }
 }
 ```
 
-This accepts: `1.2.0`, `1.2.1`, `1.2.4`, `1.2.15`  
+This accepts: `1.2.0`, `1.2.1`, `1.2.4`, `1.2.15`
 This rejects: `1.3.0`, `2.0.0`
 
-#### **Python (requirements.txt)**
+### **Python (requirements.txt)**
 
 ```
-juspay-connector-service==1.2.*
+Juspay-connector-service==1.2.*
 ```
 
 Or in `pyproject.toml`:
 
 ```toml
 [tool.poetry.dependencies]
-juspay-connector-service = "1.2.*"
+Juspay-connector-service = "1.2.*"
 ```
 
-#### **Java (Maven)**
+### **Java (Maven)**
 
 ```xml
 <dependency>
-    <groupId>com.juspay</groupId>
+    <groupId>com.Juspay</groupId>
     <artifactId>connector-service</artifactId>
     <version>[1.2.0,1.3.0)</version>
 </dependency>
@@ -59,7 +56,7 @@ juspay-connector-service = "1.2.*"
 
 The `[1.2.0,1.3.0)` syntax means: 1.2.0 inclusive, 1.3.0 exclusive.
 
-#### **Rust (Cargo.toml)**
+### **Rust (Cargo.toml)**
 
 ```toml
 [dependencies]
@@ -96,7 +93,7 @@ When you pin to `1.2.*`, your build system pulls these automatically:
 ```json
 {
   "dependencies": {
-    "@juspay/connector-service-node": "1.2.3"
+    "@Juspay/connector-service-node": "1.2.3"
   }
 }
 ```
@@ -113,7 +110,7 @@ Your code works today. It breaks tomorrow when Stripe rotates certificates and y
 ```json
 {
   "dependencies": {
-    "@juspay/connector-service-node": "*"
+    "@Juspay/connector-service-node": "*"
   }
 }
 ```
@@ -138,23 +135,16 @@ Update minor versions intentionally when you need new connectors or features. Re
 
 ## Version Compatibility Matrix
 
-Prism maintains compatibility across SDK languages for the same minor version:
-
-| Prism Version | Node.js SDK | Python SDK | Java SDK | Rust SDK |
-|---------------------------|-------------|------------|----------|----------|
-| 1.2.x | 1.2.x | 1.2.x | 1.2.x | 1.2.x |
-| 1.3.x | 1.3.x | 1.3.x | 1.3.x | 1.3.x |
-
-All SDKs for version `1.2.x` speak the same protocol, support the same connectors, and handle the same error codes. Mixing SDK versions (Node.js at `1.2.5`, Python at `1.3.0`) works but may produce different behaviors for newer features.
+Prism maintains compatibility across SDK languages for the same minor version: | Prism Version | Node.js SDK | Python SDK | Java SDK | Rust SDK | |---------------------------|-------------|------------|----------|----------| | 1.2.x | 1.2.x | 1.2.x | 1.2.x | 1.2.x | | 1.3.x | 1.3.x | 1.3.x | 1.3.x | 1.3.x | All SDKs for version `1.2.x` speak the same protocol, support the same connectors, and handle the same error codes. Mixing SDK versions (Node.js at `1.2.5`, Python at `1.3.0`) works but may produce different behaviors for newer features.
 
 ## Checking Your Current Version
 
 ```bash
 # Node.js
-npm list @juspay/connector-service-node
+npm list @Juspay/connector-service-node
 
 # Python
-pip show juspay-connector-service
+pip show Juspay-connector-service
 
 # Java
 mvn dependency:tree | grep connector-service

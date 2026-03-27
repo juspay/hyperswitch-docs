@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Hyperswitch Prism to enhance your payment orchestration capabilities
+---
+
 <div align="center">
 
 
@@ -13,7 +18,7 @@
 *A high-performance payment abstraction library, and part of [Juspay Hyperswitch](https://hyperswitch.io/) — the open-source, composable payments platform with 40,000+ GitHub stars, trusted by leading brands worldwide.*
 
 
-[GitHub](https://github.com/juspay/hyperswitch) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
+[GitHub](https://GitHub.com/Juspay/hyperswitch) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
 
 
 </div>
@@ -25,7 +30,7 @@
 ## 🎯 Why Prism?
 
 
-Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort. 
+Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort.
 
 Because every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and above all - different behaviour in the actual environment when compared to documented specs. All this rests as tribal or undocumented knowledge making it harder AI agents which are very good at implementing clearly documented specification.
 
@@ -33,18 +38,7 @@ Because every payment processor has diverse APIs, error codes, authentication me
 
 **Prism offers hardened transformation through testing on payment processor environment & iterative bug fixing**
 
-**Prism can be embedded in you server application with its wide range of multi-language SDKs, or run as a rRPC microservice**
-
-
-| ❌ Without Prism | ✅ With Prism |
-|------------------------------|----------------------------|
-| 🗂️ 100+ different API schemas | 📋 Single unified schema |
-| ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven |
-| 🔗 Brittle, provider-specific code | 🔓 Portable, provider-agnostic code |
-| 🚫 Hard to switch providers | 🔄 Change providers in 1 line |
-
-
----
+**Prism can be embedded in you server application with its wide range of multi-language SDKs, or run as a rRPC microservice** | ❌ Without Prism | ✅ With Prism | |------------------------------|----------------------------| | 🗂️ 100+ different API schemas | 📋 Single unified schema | | ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven | | 🔗 Brittle, provider-specific code | 🔓 Portable, provider-agnostic code | | 🚫 Hard to switch providers | 🔄 Change providers in 1 line | ---
 
 
 ## ✨ Features
@@ -91,7 +85,7 @@ sequenceDiagram
    participant App as Your App
    participant SDK as Prism
    participant PSP as Payment Service Provider (PSP)
-   
+
    Note over App,PSP: Payment Authorization
    App->>SDK: paymentservice.authorize(amount, currency, payment_method)
    activate SDK
@@ -132,34 +126,34 @@ sequenceDiagram
 
 <!-- tabs:start -->
 
-#### **Node.js**
+### **Node.js**
 
 ```bash
-npm install @juspay-tech/hyperswitch-prism
+npm install @Juspay-tech/hyperswitch-prism
 ```
 
-#### **Python**
+### **Python**
 
 ```bash
-pip install hyperswitch-prism
+pip install Hyperswitch-prism
 ```
 
-#### **Java**
+### **Java**
 
 Add to your `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.juspay</groupId>
-    <artifactId>hyperswitch-prism</artifactId>
+    <groupId>com.Juspay</groupId>
+    <artifactId>Hyperswitch-prism</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
 
-#### **PHP**
+### **PHP**
 
 ```bash
-composer require juspay/hyperswitch-prism
+composer require Juspay/hyperswitch-prism
 ```
 
 <!-- tabs:end -->
@@ -172,15 +166,15 @@ For detailed installation instructions, see [Installation Guide](./getting-start
 
 <!-- tabs:start -->
 
-#### **Node.js**
+### **Node.js**
 
 ```javascript
-const { ConnectorClient, Currency } = require('@juspay/hyperswitch-prism');
+const { ConnectorClient, Currency } = require('@Juspay/hyperswitch-prism');
 
 async function main() {
   const client = new ConnectorClient({
     connectors: {
-      stripe: { apiKey: process.env.STRIPE_API_KEY }
+      Stripe: { apiKey: process.env.STRIPE_API_KEY }
     }
   });
 
@@ -200,16 +194,16 @@ main().catch(console.error);
 ```
 
 
-#### **Java**
+### **Java**
 
 
 ```java
-import com.juspay.hyperswitchprism.*;
+import com.Juspay.Hyperswitchprism.*;
 
 public class Example {
     public static void main(String[] args) {
         ConnectorClient client = ConnectorClient.builder()
-            .connector("stripe", StripeConfig.builder()
+            .connector("Stripe", StripeConfig.builder()
                 .apiKey(System.getenv("STRIPE_API_KEY"))
                 .build())
             .build();
@@ -241,7 +235,7 @@ Once the basic plumbing is implemented you can leverage Prism's core benefit - *
 // Before: Using Stripe
 const client = new ConnectorClient({
     connectors: {
-        stripe: { apiKey: process.env.STRIPE_API_KEY }
+        Stripe: { apiKey: process.env.STRIPE_API_KEY }
     }
 });
 
@@ -253,7 +247,7 @@ const order = await client.payments.createOrder({
 // After: Switching to Braintree
 const client = new ConnectorClient({
     connectors: {
-        braintree: {
+        Braintree: {
             publicKey: process.env.BRAINTREE_PUBLIC_KEY,
             privateKey: process.env.BRAINTREE_PRIVATE_KEY,
             merchantAccountId: process.env.BRAINTREE_MERCHANT_ID
@@ -288,7 +282,7 @@ Each flow uses the same unified schema regardless of the underlying processor's 
 
 ```bash
 # Clone the repository
-git clone https://github.com/manojradhakrishnan/connector-service.git
+git clone https://GitHub.com/manojradhakrishnan/connector-service.git
 cd connector-service
 
 
@@ -313,7 +307,7 @@ cargo test
 ### Reporting Vulnerabilities
 
 
-Please report security issues to [security@juspay.in](mailto:security@juspay.in).
+Please report security issues to [security@Juspay.in](mailto:security@Juspay.in).
 
 
 ---
@@ -325,7 +319,7 @@ Please report security issues to [security@juspay.in](mailto:security@juspay.in)
 **[⬆ Back to Top](#connector-service)**
 
 
-Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
+Built and maintained by [Juspay Hyperswitch](https://hyperswitch.io)
 
 
 </div>

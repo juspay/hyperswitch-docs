@@ -1,16 +1,13 @@
-# RFC: Unified Payment Protocol (UPP)
-
-| Field       | Value                                    |
-|-------------|------------------------------------------|
-| **Status**  | Draft                                    |
-| **Created** | 2026-05-15                               |
-| **Authors** | Natarajan Kannan, Arun Raj               |
-
 ---
+description: >-
+  Explore RFC Unified Payment Protocol UPP to enhance your payment orchestration capabilities
+---
+
+# RFC: Unified Payment Protocol (UPP) | Field | Value | |-------------|------------------------------------------| | **Status** | Draft | | **Created** | 2026-05-15 | | **Authors** | Natarajan Kannan, Arun Raj | ---
 
 ## 1. Abstract
 
-The Unified Payment Protocol (UPP) defines a standardized, connector-agnostic interface for processing payments across 110+ payment processors and 100+ payment method types. It provides a single gRPC-based API surface that normalizes the lifecycle of payments — from authorization through capture, refund, dispute, and recurring billing — while abstracting away connector-specific behaviors behind a consistent set of services, messages, and state machines.
+The Unified Payment Protocol (UPP) defines a standardized, connector-agnostic interface for processing payments across 110+ payment processors and 150+ payment methods types. It provides a single gRPC-based API surface that normalizes the lifecycle of payments — from authorization through capture, refund, dispute, and recurring billing — while abstracting away connector-specific behaviors behind a consistent set of services, messages, and state machines.
 
 This document specifies the protocol's architecture, service contracts, message schemas, state models, and behavioral semantics.
 
@@ -30,22 +27,7 @@ UPP solves this by defining:
 
 ---
 
-## 3. Terminology
-
-| Term | Definition |
-|------|-----------|
-| **Connector** | A third-party payment processor (e.g., Stripe, Adyen, Braintree). |
-| **Payment Method** | A specific instrument used to pay (e.g., a Visa card, UPI, Apple Pay). |
-| **Authorization** | A hold on funds without transferring them. |
-| **Capture** | The finalization of an authorized transaction, initiating fund transfer. |
-| **Void** | Cancellation of an authorization before capture. |
-| **Reversal** | Reversal of a captured payment before settlement. |
-| **Mandate** | A standing instruction authorizing future charges (recurring payments). |
-| **3DS** | 3-D Secure — a cardholder authentication protocol for online transactions. |
-| **Webhook** | An inbound HTTP callback from a connector notifying of a state change. |
-| **Minor Units** | The smallest currency unit (e.g., cents for USD, paise for INR). All monetary amounts in UPP are expressed in minor units. |
-
----
+## 3. Terminology | Term | Definition | |------|-----------| | **Connector** | A third-party payment processor (e.g., Stripe, Adyen, Braintree). | | **Payment Method** | A specific instrument used to pay (e.g., a Visa card, UPI, Apple Pay). | | **Authorization** | A hold on funds without transferring them. | | **Capture** | The finalization of an authorized transaction, initiating fund transfer. | | **Void** | Cancellation of an authorization before capture. | | **Reversal** | Reversal of a captured payment before settlement. | | **Mandate** | A standing instruction authorizing future charges (recurring payments). | | **3DS** | 3-D Secure — a cardholder authentication protocol for online transactions. | | **Webhook** | An inbound HTTP callback from a connector notifying of a state change. | | **Minor Units** | The smallest currency unit (e.g., cents for USD, paise for INR). All monetary amounts in UPP are expressed in minor units. | ---
 
 ## 4. Architecture Overview
 
@@ -192,24 +174,7 @@ message AccessToken {
 
 UPP defines a comprehensive payment method taxonomy organized into categories. Each payment method is represented as a variant in a `oneof` block within the `PaymentMethod` message.
 
-### 6.1 Categories
-
-| Range | Category | Examples |
-|-------|----------|----------|
-| 1–9 | Cards | Credit/debit cards, card redirects, tokenized cards |
-| 10–29 | Digital Wallets | Apple Pay, Google Pay, Samsung Pay, PayPal, Amazon Pay, Revolut Pay, WeChat Pay, Alipay |
-| 30–39 | UPI | UPI Collect, UPI Intent, UPI QR |
-| 40–59 | Online Banking / Redirects | iDEAL, Sofort, Giropay, EPS, Przelewy24, BLIK, Trustly, Open Banking, Interac, Bizum |
-| 60–69 | Mobile Payments | DuitNow |
-| 70–79 | Cryptocurrency | Configurable crypto networks |
-| 80–89 | Rewards & E-Vouchers | Classic Reward, E-Voucher |
-| 90–99 | Bank Transfers | ACH, SEPA, BACS, Multibanco, PIX, instant transfers |
-| 100–104 | Direct Debit | ACH, SEPA, BACS, BECS, SEPA Guaranteed |
-| 110–112 | Buy Now, Pay Later | Affirm, Afterpay/Clearpay, Klarna |
-| 120–121 | Network Transactions | Network Transaction ID, Network Token |
-| 130–155 | Regional Methods | Indonesian VA transfers, local bank transfers, vouchers (Boleto, OXXO, 7-Eleven, etc.) |
-
-### 6.2 Card Details
+### 6.1 Categories | Range | Category | Examples | |-------|----------|----------| | 1–9 | Cards | Credit/debit cards, card redirects, tokenized cards | | 10–29 | Digital Wallets | Apple Pay, Google Pay, Samsung Pay, PayPal, Amazon Pay, Revolut Pay, WeChat Pay, Alipay | | 30–39 | UPI | UPI Collect, UPI Intent, UPI QR | | 40–59 | Online Banking / Redirects | iDEAL, Sofort, Giropay, EPS, Przelewy24, BLIK, Trustly, Open Banking, Interac, Bizum | | 60–69 | Mobile Payments | DuitNow | | 70–79 | Cryptocurrency | Configurable crypto networks | | 80–89 | Rewards & E-Vouchers | Classic Reward, E-Voucher | | 90–99 | Bank Transfers | ACH, SEPA, BACS, Multibanco, PIX, instant transfers | | 100–104 | Direct Debit | ACH, SEPA, BACS, BECS, SEPA Guaranteed | | 110–112 | Buy Now, Pay Later | Affirm, Afterpay/Clearpay, Klarna | | 120–121 | Network Transactions | Network Transaction ID, Network Token | | 130–155 | Regional Methods | Indonesian VA transfers, local bank transfers, vouchers (Boleto, OXXO, 7-Eleven, etc.) | ### 6.2 Card Details
 
 ```protobuf
 message CardDetails {
@@ -243,20 +208,7 @@ Each wallet type has a dedicated message with wallet-specific fields:
 
 ### 6.4 Payment Experiences
 
-UPP supports multiple payment experiences per method:
-
-| Experience | Description |
-|-----------|-------------|
-| `REDIRECT_TO_URL` | Customer is redirected to an external URL for payment completion |
-| `INVOKE_SDK_CLIENT` | Payment is completed via a client-side SDK |
-| `DISPLAY_QR_CODE` | A QR code is displayed for scanning |
-| `ONE_CLICK` | Payment completes with a single click (stored credentials) |
-| `LINK_WALLET` | Customer links a wallet account |
-| `INVOKE_PAYMENT_APP` | A native payment app is invoked |
-| `DISPLAY_WAIT_SCREEN` | A waiting screen is shown during async processing |
-| `COLLECT_OTP` | An OTP is collected from the customer |
-
----
+UPP supports multiple payment experiences per method: | Experience | Description | |-----------|-------------| | `REDIRECT_TO_URL` | Customer is redirected to an external URL for payment completion | | `INVOKE_SDK_CLIENT` | Payment is completed via a client-side SDK | | `DISPLAY_QR_CODE` | A QR code is displayed for scanning | | `ONE_CLICK` | Payment completes with a single click (stored credentials) | | `LINK_WALLET` | Customer links a wallet account | | `INVOKE_PAYMENT_APP` | A native payment app is invoked | | `DISPLAY_WAIT_SCREEN` | A waiting screen is shown during async processing | | `COLLECT_OTP` | An OTP is collected from the customer | ---
 
 ## 7. Service Specifications
 
@@ -264,7 +216,7 @@ UPP supports multiple payment experiences per method:
 
 The core service for payment lifecycle management.
 
-#### 7.1.1 Authorize
+### 7.1.1 Authorize
 
 Initiates a payment authorization — reserving funds on the customer's payment method without capturing them.
 
@@ -296,7 +248,7 @@ Initiates a payment authorization — reserving funds on the customer's payment 
 - `network_transaction_id` — Network-level transaction identifier
 - `raw_connector_request` — Raw request sent to connector (for debugging)
 
-#### 7.1.2 Capture
+### 7.1.2 Capture
 
 Finalizes an authorized transaction, initiating the actual transfer of funds.
 
@@ -311,7 +263,7 @@ Finalizes an authorized transaction, initiating the actual transfer of funds.
 - `connector_transaction_id` — Capture transaction ID
 - `error` — Error details if capture failed
 
-#### 7.1.3 Void
+### 7.1.3 Void
 
 Cancels an authorization before capture, releasing held funds.
 
@@ -324,13 +276,13 @@ Cancels an authorization before capture, releasing held funds.
 - `status` — Updated payment status (`VOIDED` on success)
 - `error` — Error details if void failed
 
-#### 7.1.4 Reverse
+### 7.1.4 Reverse
 
 Reverses a captured payment before settlement.
 
 **Request/Response**: Similar structure to Void, operating on captured transactions.
 
-#### 7.1.5 Refund
+### 7.1.5 Refund
 
 Initiates a full or partial refund to the customer's original payment method.
 
@@ -345,7 +297,7 @@ Initiates a full or partial refund to the customer's original payment method.
 - `refund_status` — `RefundStatus` (see Section 8.2)
 - `error` — Error details
 
-#### 7.1.6 Get (Sync)
+### 7.1.6 Get (Sync)
 
 Retrieves the current payment status from the connector, synchronizing local state.
 
@@ -357,15 +309,15 @@ Retrieves the current payment status from the connector, synchronizing local sta
 **Response fields:**
 - Full payment state including `status`, `connector_transaction_id`, `error`, `authentication_data`, and `mandate_reference`.
 
-#### 7.1.7 CreateOrder
+### 7.1.7 CreateOrder
 
 Initializes an order context in the payment processor before the customer provides payment details. Used by connectors that require order pre-creation (e.g., PayPal, Razorpay).
 
-#### 7.1.8 IncrementalAuthorization
+### 7.1.8 IncrementalAuthorization
 
 Increases the authorized amount on an existing authorization. Common in hospitality (hotel stays, car rentals) where the final amount is not known at authorization time.
 
-#### 7.1.9 SetupRecurring
+### 7.1.9 SetupRecurring
 
 Establishes a recurring payment mandate — a standing instruction authorizing the merchant to charge the customer's payment method on a recurring basis.
 
@@ -373,7 +325,7 @@ Establishes a recurring payment mandate — a standing instruction authorizing t
 - `mandate_reference` — The mandate identifier for future charges
 - `status` — Mandate status
 
-#### 7.1.10 VerifyRedirectResponse
+### 7.1.10 VerifyRedirectResponse
 
 Validates redirect-based payment responses to confirm authenticity and prevent replay attacks.
 
@@ -381,7 +333,7 @@ Validates redirect-based payment responses to confirm authenticity and prevent r
 
 Manages merchant-initiated transactions (MIT) using established mandates.
 
-#### 7.2.1 Charge
+### 7.2.1 Charge
 
 Processes a payment using a previously established mandate, without requiring the customer to re-enter payment details.
 
@@ -395,17 +347,17 @@ Processes a payment using a previously established mandate, without requiring th
 - `status` — Payment status
 - `connector_transaction_id` — Transaction identifier
 
-#### 7.2.2 Revoke
+### 7.2.2 Revoke
 
 Cancels a recurring payment mandate, stopping all future automatic charges.
 
 ### 7.3 RefundService
 
-#### 7.3.1 Get
+### 7.3.1 Get
 
 Retrieves the current status of a refund from the connector.
 
-#### 7.3.2 HandleEvent
+### 7.3.2 HandleEvent
 
 Processes refund-related webhook notifications.
 
@@ -413,7 +365,7 @@ Processes refund-related webhook notifications.
 
 Manages chargebacks and payment disputes.
 
-#### 7.4.1 SubmitEvidence
+### 7.4.1 SubmitEvidence
 
 Uploads evidence documents to contest a dispute.
 
@@ -431,15 +383,15 @@ Uploads evidence documents to contest a dispute.
 
 Evidence can be provided as binary file content (`file_content` + `file_mime_type`), as a connector-hosted file reference (`provider_file_id`), or as text (`text_content`).
 
-#### 7.4.2 Defend
+### 7.4.2 Defend
 
 Submits a formal defense against a dispute with a reason code.
 
-#### 7.4.3 Accept
+### 7.4.3 Accept
 
 Concedes a dispute and accepts the chargeback.
 
-#### 7.4.4 Get
+### 7.4.4 Get
 
 Retrieves the current status and details of a dispute.
 
@@ -447,15 +399,15 @@ Retrieves the current status and details of a dispute.
 
 Implements the 3-D Secure authentication protocol as a three-phase flow.
 
-#### 7.5.1 PreAuthenticate
+### 7.5.1 PreAuthenticate
 
 Initiates the 3DS flow. Collects device fingerprint data and prepares the authentication context.
 
-#### 7.5.2 Authenticate
+### 7.5.2 Authenticate
 
 Executes the 3DS challenge (or frictionless verification). The customer may be presented with a challenge by their issuing bank.
 
-#### 7.5.3 PostAuthenticate
+### 7.5.3 PostAuthenticate
 
 Validates the authentication results with the issuing bank. Returns the final `AuthenticationData` including:
 - `eci` — Electronic Commerce Indicator
@@ -479,15 +431,15 @@ Validates the authentication results with the issuing bank. Returns the final `A
 
 Manages connector-level authentication and session tokens.
 
-#### 7.6.1 CreateAccessToken
+### 7.6.1 CreateAccessToken
 
 Generates a short-lived access token for connector API authentication. The token is returned in `ConnectorState` and must be passed to subsequent requests.
 
-#### 7.6.2 CreateSessionToken
+### 7.6.2 CreateSessionToken
 
 Creates a session token that maintains state across multiple payment operations.
 
-#### 7.6.3 CreateSdkSessionToken
+### 7.6.3 CreateSdkSessionToken
 
 Initializes wallet payment sessions for Apple Pay, Google Pay, and PayPal. Returns wallet-specific session data:
 
@@ -508,13 +460,13 @@ Initializes wallet payment sessions for Apple Pay, Google Pay, and PayPal. Retur
 
 ### 7.7 CustomerService
 
-#### 7.7.1 Create
+### 7.7.1 Create
 
 Creates a customer record in the payment processor, returning a `connector_customer_id` for use in subsequent operations.
 
 ### 7.8 PaymentMethodService
 
-#### 7.8.1 Tokenize
+### 7.8.1 Tokenize
 
 Tokenizes a payment method for secure storage and future use. Enables one-click payments and recurring billing without re-collecting sensitive card data.
 
@@ -522,7 +474,7 @@ Tokenizes a payment method for secure storage and future use. Enables one-click 
 
 Provides composite operations that combine multiple service calls into a single request for common workflows.
 
-#### 7.9.1 CompositeAuthorize
+### 7.9.1 CompositeAuthorize
 
 Combines access token creation, customer creation, and payment authorization into a single atomic operation. Each sub-operation's response includes a status code, response headers, and the typed result.
 
@@ -538,7 +490,7 @@ CompositeAuthorizeResponse:
   └── authorize_response (with status_code, response_headers)
 ```
 
-#### 7.9.2 CompositeGet
+### 7.9.2 CompositeGet
 
 Combines access token refresh with payment status retrieval.
 
@@ -751,17 +703,7 @@ message ConnectorErrorDetails {
 
 ## 10. Redirect and SDK Flows
 
-Many payment methods require customer interaction outside the direct API flow. UPP models these as `RedirectForm` variants:
-
-| Variant | Use Case |
-|---------|----------|
-| `FormData` | HTTP form POST redirect (endpoint, method, form fields) |
-| `HtmlData` | Full HTML page to render (e.g., 3DS challenge iframe) |
-| `UriData` | Simple URL redirect |
-| `BraintreeData` | Braintree-specific 3DS flow (client token, card token, ACS URL) |
-| `MifinityData` | Mifinity initialization token |
-
-After redirect completion, the connector response is validated via `VerifyRedirectResponse` using `RedirectResponseSecrets` for signature verification.
+Many payment methods require customer interaction outside the direct API flow. UPP models these as `RedirectForm` variants: | Variant | Use Case | |---------|----------| | `FormData` | HTTP form POST redirect (endpoint, method, form fields) | | `HtmlData` | Full HTML page to render (e.g., 3DS challenge iframe) | | `UriData` | Simple URL redirect | | `BraintreeData` | Braintree-specific 3DS flow (client token, card token, ACS URL) | | `MifinityData` | Mifinity initialization token | After redirect completion, the connector response is validated via `VerifyRedirectResponse` using `RedirectResponseSecrets` for signature verification.
 
 ---
 
@@ -797,17 +739,7 @@ message HttpConfig {
 
 ## 12. Capture Methods
 
-UPP supports five capture strategies:
-
-| Method | Behavior |
-|--------|----------|
-| `AUTOMATIC` | Funds are captured immediately upon authorization |
-| `MANUAL` | Merchant explicitly triggers a single capture after authorization |
-| `MANUAL_MULTIPLE` | Merchant triggers multiple partial captures against a single authorization |
-| `SCHEDULED` | Capture occurs at a scheduled time |
-| `SEQUENTIAL_AUTOMATIC` | Captures occur automatically in sequence |
-
----
+UPP supports five capture strategies: | Method | Behavior | |--------|----------| | `AUTOMATIC` | Funds are captured immediately upon authorization | | `MANUAL` | Merchant explicitly triggers a single capture after authorization | | `MANUAL_MULTIPLE` | Merchant triggers multiple partial captures against a single authorization | | `SCHEDULED` | Capture occurs at a scheduled time | | `SEQUENTIAL_AUTOMATIC` | Captures occur automatically in sequence | ---
 
 ## 13. Level 2 / Level 3 Data
 
@@ -872,19 +804,15 @@ Each connector implements a subset of UPP services based on its capabilities. Th
 ## 16. Design Principles
 
 1. **Connector Agnosticism**: The protocol abstracts away all connector-specific behavior. Callers interact with a single, uniform API regardless of the underlying processor.
-
 2. **Minor-Unit Precision**: All monetary amounts use integer minor units (cents, paise, etc.) to eliminate floating-point errors.
 
 3. **State Round-Tripping**: `ConnectorState` enables multi-step flows by carrying session-scoped data (tokens, IDs) between requests without server-side session storage.
-
-4. **Exhaustive Payment Coverage**: 100+ payment method types organized into a structured taxonomy, from traditional cards to crypto and regional vouchers.
+4. **Exhaustive Payment Coverage**: 150+ payment methods types organized into a structured taxonomy, from traditional cards to crypto and regional vouchers.
 
 5. **Secure by Default**: Sensitive data is structurally protected via `SecretString`, not by convention.
-
 6. **Webhook Normalization**: 40+ event types are normalized from connector-specific formats into a canonical event taxonomy.
 
 7. **Composability**: Composite services allow common multi-step workflows (token + customer + authorize) to be executed as a single request.
-
 8. **Extensibility**: New connectors and payment methods can be added by extending the respective `oneof` blocks without breaking existing integrations.
 
 ---
@@ -894,7 +822,7 @@ Each connector implements a subset of UPP services based on its capabilities. Th
 <details>
 <summary>Full connector enum (110+ connectors)</summary>
 
-ACH, ADYEN, AIRWALLEX, AUTHIPAY, AUTHORIZED_DOT_NET, BAMBORA, BANK_OF_AMERICA, BARCLAYCARD, BILLWERK, BLUESNAP, BOA, BRAINTREE, CALIDA, CASHFREE, CASHTOCODE, CELERO, CHECKOUT, COINBASE, COINGATE, CRYPTOPAY, CYBERSOURCE, DATATRANS, DLOCAL, EBANX, ELAVON, EWAY, FISERV, FISERV_EMEA, FORTE, GETNET, GIGADAT, GLOBALPAY, GLOBEPAY, GOCARDLESS, HELCIM, HIPAY, IATAPAY, ITAU_BANK, JPMORGAN, KLARNA, LOONIO, MERCADOPAGO, MIFINITY, MOLLIE, MULTISAFEPAY, NEXIXPAY, NOMUPAY, NOON, NOVALNET, NUVEI, PAYBOX, PAYEEZY, PAYME, PAYONEER, PAYPAL, PAYSAFE, PAYU, PHONEPE, PLAID, POWERTRANZ, PROPHETPAY, RAPYD, RAZORPAY, REDSYS, REVOLV3, REVOLUT, SCREENSTREAM, SHIFT4, SILVERFLOW, SQUARE, STAX, STRIPE, TAXJAR, THREEDSECUREIO, TRUSTPAY, TRUSTPAYMENTS, TSYS, UNIFIED_AUTHENTICATION, VOLT, WELLSFARGO, WELLSFARGO_VANTIV, WISE, WORLDPAY, WORLDPAY_XML, XENDIT, ZIFT, and more.
+ACH, Adyen, AIRWALLEX, AUTHIPAY, AUTHORIZED_DOT_NET, BAMBORA, BANK_OF_AMERICA, BARCLAYCARD, BILLWERK, BLUESNAP, BOA, Braintree, CALIDA, CASHFREE, CASHTOCODE, CELERO, CHECKOUT, COINBASE, COINGATE, CRYPTOPAY, CYBERSOURCE, DATATRANS, DLOCAL, EBANX, ELAVON, EWAY, FISERV, FISERV_EMEA, FORTE, GETNET, GIGADAT, GLOBALPAY, GLOBEPAY, GOCARDLESS, HELCIM, HIPAY, IATAPAY, ITAU_BANK, JPMORGAN, KLARNA, LOONIO, MERCADOPAGO, MIFINITY, MOLLIE, MULTISAFEPAY, NEXIXPAY, NOMUPAY, NOON, NOVALNET, NUVEI, PAYBOX, PAYEEZY, PAYME, PAYONEER, PayPal, PAYSAFE, PAYU, PHONEPE, PLAID, POWERTRANZ, PROPHETPAY, RAPYD, RAZORPAY, REDSYS, REVOLV3, REVOLUT, SCREENSTREAM, SHIFT4, SILVERFLOW, SQUARE, STAX, Stripe, TAXJAR, THREEDSECUREIO, TRUSTPAY, TRUSTPAYMENTS, TSYS, UNIFIED_AUTHENTICATION, VOLT, WELLSFARGO, WELLSFARGO_VANTIV, WISE, Worldpay, WORLDPAY_XML, XENDIT, ZIFT, and more.
 
 </details>
 

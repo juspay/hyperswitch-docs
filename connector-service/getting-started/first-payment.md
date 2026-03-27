@@ -1,6 +1,11 @@
+---
+description: >-
+  Explore First Payment with Error Handling to enhance your payment orchestration capabilities
+---
+
 # First Payment with Error Handling
 
-You will have `payment_method_id` from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI compliant raw card data, that will suffice to make the first payment.
+You will have `payment_method_id` from Stripe if you depend on your processor for PCI compliance. Alternatively if your Stripe API keys are enabled to accept PCI DSS compliant raw card data, that will suffice to make the first payment.
 
 Int he next few steps you will authorize the payment, handle errors, capture funds, and process refunds. And then you will be ready to send payment to any payment processor, without writing specialized code for each.
 
@@ -13,12 +18,12 @@ Use the `payment_method_id` from [Quick Start](./quick-start.md) to authorize th
 {% tab title="Node.js" %}
 
 ```javascript
-const { ConnectorClient, Currency, CaptureMethod } = require('@juspay/connector-service-node');
+const { ConnectorClient, Currency, CaptureMethod } = require('@Juspay/connector-service-node');
 
 async function authorizePayment(paymentMethodId) {
     const client = new ConnectorClient({
         connectors: {
-            stripe: { apiKey: process.env.STRIPE_API_KEY }
+            Stripe: { apiKey: process.env.STRIPE_API_KEY }
         }
     });
 
@@ -72,7 +77,7 @@ from connector_service import ConnectorClient, Currency, CaptureMethod
 from connector_service.errors import PaymentDeclinedError, NetworkTimeoutError
 
 client = ConnectorClient(
-    connectors={"stripe": {"api_key": os.environ["STRIPE_API_KEY"]}}
+    connectors={"Stripe": {"api_key": os.environ["STRIPE_API_KEY"]}}
 )
 
 def authorize_payment(payment_method_id):
@@ -101,12 +106,12 @@ def authorize_payment(payment_method_id):
 {% tab title="Java" %}
 
 ```java
-import com.juspay.connectorservice.*;
-import com.juspay.connectorservice.errors.*;
+import com.Juspay.connectorservice.*;
+import com.Juspay.connectorservice.errors.*;
 
 public class FirstPayment {
     public ConnectorClient client = ConnectorClient.builder()
-        .connector("stripe", StripeConfig.builder()
+        .connector("Stripe", StripeConfig.builder()
             .apiKey(System.getenv("STRIPE_API_KEY"))
             .build())
         .build();
@@ -147,7 +152,7 @@ use ConnectorService\Enum\CaptureMethod;
 
 $client = new ConnectorClient([
     'connectors' => [
-        'stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
+        'Stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
     ]
 ]);
 
@@ -178,9 +183,9 @@ function authorizePayment($paymentMethodId) use ($client) {
 
 {% endtabs %}
 
-## Authorize with Raw Card Details (PCI Compliant)
+## Authorize with Raw Card Details (PCI DSS compliant)
 
-If you're PCI compliant and collect card details directly:
+If you're PCI DSS compliant and collect card details directly:
 
 {% tabs %}
 

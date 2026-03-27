@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate mobile SDK to deliver seamless in-app payment experiences
+---
+
 # SDK Generation
 
 You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Prism generates language-specific bindings from the same protobuf definitions, ensuring every SDK stays synchronized with the core API.
@@ -14,16 +19,7 @@ Prism solves this by generating each SDK from the protobuf source with language-
 protobuf definitions → parse messages/services → language templates → SDK code
 ```
 
-The generator produces:
-
-| Component | Node.js | Python | Java | Rust | Go |
-|-----------|---------|--------|------|------|-----|
-| **Types** | TypeScript interfaces | dataclasses | POJOs | structs | structs |
-| **Client** | Promise-based | async/await | CompletableFuture | async/await | goroutines |
-| **Errors** | Error classes | Exceptions | Exceptions | Result<T,E> | error returns |
-| **Builders** | Object literals | dataclass instantiation | Builder pattern | struct init | struct literals |
-
-## FFI vs gRPC Bindings
+The generator produces: | Component | Node.js | Python | Java | Rust | Go | |-----------|---------|--------|------|------|-----| | **Types** | TypeScript interfaces | dataclasses | POJOs | structs | structs | | **Client** | Promise-based | async/await | CompletableFuture | async/await | goroutines | | **Errors** | Error classes | Exceptions | Exceptions | Result<T,E> | error returns | | **Builders** | Object literals | dataclass instantiation | Builder pattern | struct init | struct literals | ## FFI vs gRPC Bindings
 
 SDKs connect to the core through two paths:
 
@@ -151,15 +147,7 @@ Same test logic. Language-specific implementation.
 
 ## Versioning
 
-SDK versions follow the core:
-
-| Core Version | SDK Versions |
-|--------------|--------------|
-| 1.2.0 | `@juspay/connector-service-node@1.2.0` |
-| 1.2.0 | `connector-service-python==1.2.0` |
-| 1.2.0 | `com.juspay:connector-service-java:1.2.0` |
-
-Patch updates auto-generate. Minor and major versions sync with core releases.
+SDK versions follow the core: | Core Version | SDK Versions | |--------------|--------------| | 1.2.0 | `@Juspay/connector-service-node@1.2.0` | | 1.2.0 | `connector-service-python==1.2.0` | | 1.2.0 | `com.Juspay:connector-service-java:1.2.0` | Patch updates auto-generate. Minor and major versions sync with core releases.
 
 ## Adding a New Language
 

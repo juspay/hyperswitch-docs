@@ -1,3 +1,8 @@
+---
+description: >-
+  Configure Connector Settings and Overrides to process payments through Hyperswitch orchestration platform
+---
+
 # Connector Settings and Overrides
 
 Sometimes you need to adjust behavior for a specific connector without changing your core integration logic. Prism gives you fine-grained control through settings and overrides that apply per-connector, per-request, or per-environment.
@@ -22,15 +27,7 @@ Global Defaults
 Connector Configuration
     ↓ (overridden by)
 Request-Level Overrides
-```
-
-| Level | Scope | Use Case |
-|-------|-------|----------|
-| **Global** | All connectors | Default timeouts, retry policies |
-| **Connector** | Specific connector | API keys, endpoint URLs, feature flags |
-| **Request** | Single operation | Idempotency keys, custom metadata |
-
-## Global Settings
+``` | Level | Scope | Use Case | |-------|-------|----------| | **Global** | All connectors | Default timeouts, retry policies | | **Connector** | Specific connector | API keys, endpoint URLs, feature flags | | **Request** | Single operation | Idempotency keys, custom metadata | ## Global Settings
 
 Global settings define defaults across all connectors:
 
@@ -53,12 +50,12 @@ Each connector has its own configuration block:
 ```javascript
 const client = new ConnectorServiceClient({
     connectors: {
-        stripe: {
+        Stripe: {
             apiKey: process.env.STRIPE_API_KEY,
             apiVersion: '2023-10-16',
             idempotencyKeyStrategy: 'per-request'
         },
-        adyen: {
+        Adyen: {
             apiKey: process.env.ADYEN_API_KEY,
             merchantAccount: 'YourMerchantAccount',
             environment: 'test',        // or 'live'
@@ -82,10 +79,10 @@ Override settings for a single request:
 const response = await client.payments.authorize({
     amount: { minorAmount: 1000, currency: 'USD' },
     paymentMethod: { card: { ... } },
-    connector: Connector.STRIPE,
+    connector: Connector.Stripe,
     // Request-level override
     connectorSettings: {
-        stripe: {
+        Stripe: {
             idempotencyKey: `order-${orderId}-auth`,
             metadata: {
                 internalOrderId: orderId,
@@ -113,7 +110,7 @@ Prevent duplicate charges by providing your own idempotency key:
 const response = await client.payments.authorize({
     amount: { ... },
     connectorSettings: {
-        stripe: { idempotencyKey: `order-${orderId}` }
+        Stripe: { idempotencyKey: `order-${orderId}` }
     }
 });
 ```
@@ -128,7 +125,7 @@ Attach your internal identifiers for reconciliation:
 const response = await client.payments.authorize({
     amount: { ... },
     connectorSettings: {
-        stripe: {
+        Stripe: {
             metadata: {
                 orderId: 'order-123',
                 customerId: 'cust-456',
@@ -150,7 +147,7 @@ Some operations need more time:
 const response = await client.payments.authenticate({
     paymentId: 'pay_123',
     connectorSettings: {
-        adyen: { timeoutMs: 120000 }  // 2 minute timeout
+        Adyen: { timeoutMs: 120000 }  // 2 minute timeout
     }
 });
 ```
@@ -163,7 +160,7 @@ Enable connector-specific features:
 const response = await client.payments.authorize({
     amount: { ... },
     connectorSettings: {
-        adyen: {
+        Adyen: {
             enableNetworkTokenization: true,
             splitSettlement: {
                 primary: 800,    // 80% to primary account
@@ -185,14 +182,14 @@ const client = new ConnectorServiceClient({
         timeoutMs: 30000,
         maxRetries: 3
     },
-    
+
     // Connector-specific configuration
     connectors: {
-        stripe: {
+        Stripe: {
             apiKey: process.env.STRIPE_API_KEY,
             webhookSecret: process.env.STRIPE_WEBHOOK_SECRET
         },
-        adyen: {
+        Adyen: {
             apiKey: process.env.ADYEN_API_KEY,
             merchantAccount: process.env.ADYEN_MERCHANT_ACCOUNT,
             timeoutMs: 45000  // Adyen needs more time
@@ -204,9 +201,9 @@ const client = new ConnectorServiceClient({
 const response = await client.payments.authorize({
     amount: { minorAmount: 1000, currency: 'USD' },
     paymentMethod: { card: { ... } },
-    connector: Connector.STRIPE,
+    connector: Connector.Stripe,
     connectorSettings: {
-        stripe: {
+        Stripe: {
             idempotencyKey: `auth-${orderId}`,
             metadata: { orderId, customerId }
         }

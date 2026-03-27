@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate Why we built a Unified Payment  Library with Hyperswitch to enable seamless payment processing
+---
+
 # Why we built a Unified Payment Integration Library?
 
 If you have ever integrated a payment processor, you know the drill. You read through a PDF that was last updated in 2019, figure out what combination of API keys goes in which header, discover that "decline code 51" means something subtly different on this processor than the last one you dealt with, and then do it all over again when your business decides to add a second processor.
@@ -25,21 +30,7 @@ So we separated the integration layer out. The result is a library with a well-d
 >
 > The core requirement was multi-language client generation. We needed Python developers, Java developers, TypeScript developers, and Rust developers to all be able to consume this library with first-class, type-safe APIs — without anyone hand-writing SDK code in each language. Protobuf has the most mature ecosystem for this: `prost` for Rust, `protoc-gen-java` for Java, `grpc_tools.protoc` for Python, and so on. It also doubles as our gRPC interface description when the library is deployed as a server, which turned out to be a natural fit for the two deployment modes we wanted to support (more on that below).
 
-The specification lives in `backend/grpc-api-types/proto/` and covers the full payment lifecycle across nine services:
-
-| Service | What it does |
-|---|---|
-| `PaymentService` | Authorize, capture, void, refund, sync — the core lifecycle |
-| `RecurringPaymentService` | Charge and revoke mandates for subscriptions |
-| `RefundService` | Retrieve and sync refund statuses |
-| `DisputeService` | Submit evidence, defend, and accept chargebacks |
-| `EventService` | Process inbound webhook events |
-| `PaymentMethodService` | Tokenize and retrieve payment methods |
-| `CustomerService` | Create and manage customer profiles at connectors |
-| `MerchantAuthenticationService` | Access tokens, session tokens, Apple Pay / Google Pay session init |
-| `PaymentMethodAuthenticationService` | 3DS pre/authenticate/post flows |
-
-Everything is strongly typed. `PaymentService.Authorize` takes a `PaymentServiceAuthorizeRequest` — amount, currency, payment method details, customer, metadata, capture method — and returns a `PaymentServiceAuthorizeResponse` with a unified status enum, connector reference IDs, and structured error details. No freeform JSON blobs. No stringly-typed status fields. The spec is the contract.
+The specification lives in `backend/grpc-api-types/proto/` and covers the full payment lifecycle across nine services: | Service | What it does | |---|---| | `PaymentService` | Authorize, capture, void, refund, sync — the core lifecycle | | `RecurringPaymentService` | Charge and revoke mandates for subscriptions | | `RefundService` | Retrieve and sync refund statuses | | `DisputeService` | Submit evidence, defend, and accept chargebacks | | `EventService` | Process inbound webhook events | | `PaymentMethodService` | Tokenize and retrieve payment methods | | `CustomerService` | Create and manage customer profiles at connectors | | `MerchantAuthenticationService` | Access tokens, session tokens, Apple Pay / Google Pay session init | | `PaymentMethodAuthenticationService` | 3DS pre/authenticate/post flows | Everything is strongly typed. `PaymentService.Authorize` takes a `PaymentServiceAuthorizeRequest` — amount, currency, payment method details, customer, metadata, capture method — and returns a `PaymentServiceAuthorizeResponse` with a unified status enum, connector reference IDs, and structured error details. No freeform JSON blobs. No stringly-typed status fields. The spec is the contract.
 
 ---
 
@@ -179,17 +170,7 @@ sdk/javascript/
 >
 > The embedded SDK is great when you have a single-language service and want zero network overhead — serverless functions, edge deployments, or situations where adding a sidecar is painful. The gRPC server shines in polyglot environments: if your checkout service is in Java, your fraud service is in Python, and your reconciliation job is in Go, deploying one gRPC server gives all of them a shared, consistent integration layer without each one shipping a native binary. It also gives you process isolation if that matters for your threat model.
 >
-> The important point is that the choice is not a migration — your `PaymentServiceAuthorizeRequest` looks identical in both modes. You change a config flag, not your application code.
-
-| | SDK (embedded) | gRPC (network) |
-|---|---|---|
-| **Latency** | Microseconds (in-process) | Milliseconds (network) |
-| **Deployment** | Library inside your app | Separate service to run |
-| **Language support** | Python, JS, Java/Kotlin, Rust | Any language with gRPC |
-| **Connector HTTP** | Your app makes the calls | Server makes the calls |
-| **Best for** | Serverless, edge, single-language | Polyglot stacks, shared infra |
-
----
+> The important point is that the choice is not a migration — your `PaymentServiceAuthorizeRequest` looks identical in both modes. You change a config flag, not your application code. | | SDK (embedded) | gRPC (network) | |---|---|---| | **Latency** | Microseconds (in-process) | Milliseconds (network) | | **Deployment** | Library inside your app | Separate service to run | | **Language support** | Python, JS, Java/Kotlin, Rust | Any language with gRPC | | **Connector HTTP** | Your app makes the calls | Server makes the calls | | **Best for** | Serverless, edge, single-language | Polyglot stacks, shared infra | ---
 
 ## Code generation: the glue that holds it together
 
@@ -286,7 +267,7 @@ Let's trace what actually happens when a Python application calls `client.author
    b. authorize_req_transformer(request_bytes, options_bytes)
       ──── FFI boundary: Python → Rust shared library ────
       Rust: build_router_data! macro
-        ├── ConnectorEnum::from("stripe")   ← look up connector
+        ├── ConnectorEnum::from("Stripe")   ← look up connector
         ├── connector.get_connector_integration_v2()
         ├── proto bytes → PaymentFlowData + PaymentsAuthorizeData
         ├── construct RouterDataV2 { flow, request, auth, ... }

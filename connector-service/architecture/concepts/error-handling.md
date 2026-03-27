@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Error Handling to enhance your payment orchestration capabilities
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
@@ -19,31 +24,9 @@ Every error follows the same structure:
         suggested_action: "Ask customer to use different payment method"
     }
 }
-```
+``` | Field | Purpose | |-------|---------| | `code` | Unified error code you handle in your code | | `message` | Human-readable explanation | | `category` | Error type (PAYMENT_ERROR, NETWORK_ERROR, CONFIGURATION_ERROR) | | `connector_code` | Original error from the payment processor | | `connector_message` | Original message from the payment processor | | `request_id` | Unique ID for support/debugging | | `retryable` | Whether retrying might succeed | | `suggested_action` | Recommended next step | ## Error Categories
 
-| Field | Purpose |
-|-------|---------|
-| `code` | Unified error code you handle in your code |
-| `message` | Human-readable explanation |
-| `category` | Error type (PAYMENT_ERROR, NETWORK_ERROR, CONFIGURATION_ERROR) |
-| `connector_code` | Original error from the payment processor |
-| `connector_message` | Original message from the payment processor |
-| `request_id` | Unique ID for support/debugging |
-| `retryable` | Whether retrying might succeed |
-| `suggested_action` | Recommended next step |
-
-## Error Categories
-
-Errors fall into four categories based on root cause:
-
-| Category | Description | Example | Retryable? |
-|----------|-------------|---------|------------|
-| **PAYMENT_ERROR** | Customer's payment method failed | Declined card, expired card | No |
-| **NETWORK_ERROR** | Connectivity issues | Timeout, connection refused | Yes |
-| **CONFIGURATION_ERROR** | Setup problems | Invalid API key, wrong credentials | No |
-| **VALIDATION_ERROR** | Request issues | Invalid amount, missing field | No |
-
-## Handling Errors in Code
+Errors fall into four categories based on root cause: | Category | Description | Example | Retryable? | |----------|-------------|---------|------------| | **PAYMENT_ERROR** | Customer's payment method failed | Declined card, expired card | No | | **NETWORK_ERROR** | Connectivity issues | Timeout, connection refused | Yes | | **CONFIGURATION_ERROR** | Setup problems | Invalid API key, wrong credentials | No | | **VALIDATION_ERROR** | Request issues | Invalid amount, missing field | No | ## Handling Errors in Code
 
 ```javascript
 try {
@@ -58,28 +41,28 @@ try {
             // Show customer-friendly message
             showError('Your payment was declined. Please try a different card.');
             break;
-            
+
         case 'EXPIRED_CARD':
             showError('Your card has expired. Please check the expiration date.');
             break;
-            
+
         case 'INSUFFICIENT_FUNDS':
             showError('Insufficient funds. Please try a different payment method.');
             break;
-            
+
         case 'NETWORK_TIMEOUT':
             // Retry logic for network errors
             if (error.retryable) {
                 await retryWithBackoff(() => client.payments.authorize(request));
             }
             break;
-            
+
         case 'INVALID_API_KEY':
             // Log for ops team—this is a configuration issue
             logger.error('Invalid Stripe API key', { requestId: error.request_id });
             showError('Payment service temporarily unavailable.');
             break;
-            
+
         default:
             // Unknown error—log details and show generic message
             logger.error('Unexpected payment error', { error });
@@ -173,7 +156,7 @@ async function authorizeWithRetry(request, maxRetries = 3) {
             if (!error.retryable || attempt === maxRetries) {
                 throw error;
             }
-            
+
             // Exponential backoff: 1s, 2s, 4s
             const delay = Math.pow(2, attempt - 1) * 1000;
             await sleep(delay);
@@ -202,10 +185,10 @@ catch (error) {
     logger.error('Payment failed', {
         requestId: error.request_id,
         code: error.code,
-        connector: 'stripe',
+        connector: 'Stripe',
         amount: request.amount
     });
-    
+
     // Customer sees generic message
     showError('Payment failed. Reference: ' + error.request_id);
 }
@@ -230,7 +213,7 @@ Track errors to catch problems:
 // Track error rates
 catch (error) {
     metrics.increment(`payment_error.${error.category}.${error.code}`);
-    
+
     // Alert on configuration errors
     if (error.category === 'CONFIGURATION_ERROR') {
         pagerDuty.alert('Payment configuration error', { error });

@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Extending to More Flows to enhance your payment orchestration capabilities
+---
+
 # Extending to More Flows
 
 YOu have implemmented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
@@ -6,20 +11,7 @@ Beyond the basic authorization and capture, the library handles complex payment 
 
 ## Payment Flows Overview
 
-Below are some sample use cases to try out quickly, followed by some real world scenarios.
-
-| Flow | Use Case | Key Operations |
-|------|----------|----------------|
-| **Authorize + Capture** | Standard e-commerce | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`capture`](../../api-reference/services/payment-service/capture.md) |
-| **Authorize + Void** | Cancel pending order | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`void`](../../api-reference/services/payment-service/void.md) |
-| **Automatic Capture** | Digital goods, immediate charge | [`authorize`](../../api-reference/services/payment-service/authorize.md) with `AUTOMATIC` |
-| **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) |
-| **Partial Capture** | Multi-shipment orders | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount |
-| **Refunds** | Customer returns | [`refund`](../../api-reference/services/payment-service/refund.md) |
-| **Reucrring Payments** | SaaS billing and rer | [`setupMandate`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
-
-
-## Incremental Authorization
+Below are some sample use cases to try out quickly, followed by some real world scenarios. | Flow | Use Case | Key Operations | |------|----------|----------------| | **Authorize + Capture** | Standard e-commerce | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`capture`](../../api-reference/services/payment-service/capture.md) | | **Authorize + Void** | Cancel pending order | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`void`](../../api-reference/services/payment-service/void.md) | | **Automatic Capture** | Digital goods, immediate charge | [`authorize`](../../api-reference/services/payment-service/authorize.md) with `AUTOMATIC` | | **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) | | **Partial Capture** | Multi-shipment orders | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount | | **Refunds** | Customer returns | [`refund`](../../api-reference/services/payment-service/refund.md) | | **Reucrring Payments** | SaaS billing and rer | [`setupMandate`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) | ## Incremental Authorization
 
 Hotels and car rentals need to increase authorization amounts after the initial charge:
 
@@ -129,10 +121,10 @@ Process events from payment processors:
 app.post('/webhooks', async (req, res) => {
     const event = await client.events.handle({
         payload: req.body,
-        signature: req.headers['stripe-signature'],
-        connector: Connector.STRIPE
+        signature: req.headers['Stripe-signature'],
+        connector: Connector.Stripe
     });
-    
+
     switch (event.type) {
         case 'payment.captured':
             await fulfillOrder(event.paymentId);
@@ -144,7 +136,7 @@ app.post('/webhooks', async (req, res) => {
             await updateInventory(event.refundId);
             break;
     }
-    
+
     res.sendStatus(200);
 });
 ```

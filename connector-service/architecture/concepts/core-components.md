@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Core Components to enhance your payment orchestration capabilities
+---
+
 # Core Components
 
 Prism breaks down into four components that each solve a specific integration pain point. Understanding them helps you decide how to deploy and extend the system.
@@ -55,14 +60,7 @@ Prism breaks down into four components that each solve a specific integration pa
 
 **What it does:** Moves requests between your application and the core service.
 
-**Why it matters:** You choose the integration pattern that fits your architecture. FFI bindings load the Rust core as a shared library in your process. gRPC bindings connect to the core as a separate service.
-
-| Transport | Latency | Use Case |
-|-----------|---------|----------|
-| FFI | < 1ms | High-throughput, single-process applications |
-| gRPC | 5-20ms | Microservices, containerized deployments, shared core |
-
-**Impact on your code:** Same SDK methods work with either transport. Change one configuration line to switch modes.
+**Why it matters:** You choose the integration pattern that fits your architecture. FFI bindings load the Rust core as a shared library in your process. gRPC bindings connect to the core as a separate service. | Transport | Latency | Use Case | |-----------|---------|----------| | FFI | < 1ms | High-throughput, single-process applications | | gRPC | 5-20ms | Microservices, containerized deployments, shared core | **Impact on your code:** Same SDK methods work with either transport. Change one configuration line to switch modes.
 
 ## Component 3: Core Service Layer
 

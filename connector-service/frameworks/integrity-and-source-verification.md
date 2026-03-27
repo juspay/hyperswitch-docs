@@ -1,13 +1,11 @@
+---
+description: >-
+  Explore Integrity and Source Verification to enhance your payment orchestration capabilities
+---
+
 # Integrity and Source Verification
 
-Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks:
-
-| Verification Type | What It Checks | Attack Prevented |
-|-------------------|----------------|------------------|
-| **Integrity** | Amount, currency, and transaction ID match your records | Data tampering |
-| **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks |
-
-Before trusting any webhook or redirect response, the Prism helps you verifying both.
+Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks: | Verification Type | What It Checks | Attack Prevented | |-------------------|----------------|------------------| | **Integrity** | Amount, currency, and transaction ID match your records | Data tampering | | **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks | Before trusting any webhook or redirect response, the Prism helps you verifying both.
 
 ## Webhook Signature Verification
 
@@ -16,13 +14,13 @@ Typically Payment processors sign webhooks with a shared secret. You verify the 
 ```javascript
 // Incoming webhook from Stripe
 const payload = req.body;
-const signature = req.headers['stripe-signature'];
+const signature = req.headers['Stripe-signature'];
 
 // Prism verifies the signature
 const result = await client.events.handle({
   payload: payload,
   signature: signature,
-  connector: 'stripe',
+  connector: 'Stripe',
   webhookSecrets: {
     secret: process.env.STRIPE_WEBHOOK_SECRET
   }
@@ -32,27 +30,19 @@ const result = await client.events.handle({
 console.log(result.sourceVerified); // true or false
 ```
 
-**Supported Algorithms:**
-
-| Algorithm | Processors Using It | Security Level |
-|-----------|---------------------|----------------|
-| HMAC-SHA256 | Stripe, Adyen, Checkout.com | Recommended |
-| HMAC-SHA1 | Legacy systems | Acceptable |
-| HMAC-SHA512 | High-security connectors | Maximum |
-
-## The Verification Flow
+**Supported Algorithms:** | Algorithm | Processors Using It | Security Level | |-----------|---------------------|----------------| | HMAC-SHA256 | Stripe, Adyen, Checkout.com | Recommended | | HMAC-SHA1 | Legacy systems | Acceptable | | HMAC-SHA512 | High-security connectors | Maximum | ## The Verification Flow
 
 ```javascript
 // 1. Receive webhook
-app.post('/webhooks/stripe', async (req, res) => {
+app.post('/webhooks/Stripe', async (req, res) => {
   const payload = req.body;
-  const signature = req.headers['stripe-signature'];
+  const signature = req.headers['Stripe-signature'];
 
   // 2. Verify before processing
   const result = await client.events.handle({
     payload: payload,
     signature: signature,
-    connector: 'stripe',
+    connector: 'Stripe',
     webhookSecrets: { secret: process.env.STRIPE_WEBHOOK_SECRET }
   });
 
@@ -106,23 +96,14 @@ This prevents attacks where an attacker modifies the webhook payload to show a l
 
 ## Transaction ID Verification
 
-Prism tracks transaction IDs across the lifecycle. When a webhook arrives, it verifies the ID matches an in-flight transaction.
-
-| Check | Failure Mode |
-|-------|--------------|
-| ID exists in system | Reject unknown transaction IDs |
-| Status transition valid | Reject invalid state changes (e.g., SUCCEEDED → PENDING) |
-| Amount matches | Reject amount tampering |
-| Currency matches | Reject currency switching attacks |
-
-## Error: Signature Verification Failed
+Prism tracks transaction IDs across the lifecycle. When a webhook arrives, it verifies the ID matches an in-flight transaction. | Check | Failure Mode | |-------|--------------| | ID exists in system | Reject unknown transaction IDs | | Status transition valid | Reject invalid state changes (e.g., SUCCEEDED → PENDING) | | Amount matches | Reject amount tampering | | Currency matches | Reject currency switching attacks | ## Error: Signature Verification Failed
 
 ```json
 {
   "error": {
     "code": "SIGNATURE_VERIFICATION_FAILED",
     "message": "Webhook signature does not match payload",
-    "connector": "stripe",
+    "connector": "Stripe",
     "suggestion": "Check your webhook secret is correct and the payload was not modified"
   }
 }
@@ -154,7 +135,7 @@ Configure secrets per connector:
 
 ```javascript
 const client = new ConnectorServiceClient({
-  connector: 'stripe',
+  connector: 'Stripe',
   webhookSecrets: {
     secret: process.env.STRIPE_WEBHOOK_SECRET,
     // Some connectors use additional secrets
@@ -175,7 +156,7 @@ Test with forged signatures to verify your rejection logic:
 
 ```bash
 # Send webhook with invalid signature
-curl -X POST http://localhost:8080/webhooks/stripe \
+curl -X POST http://localhost:8080/webhooks/Stripe \
   -H "Content-Type: application/json" \
   -H "Stripe-Signature: forged_signature" \
   -d '{"type":"payment_intent.succeeded","id":"evt_test"}'

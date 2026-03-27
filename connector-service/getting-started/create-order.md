@@ -1,10 +1,15 @@
+---
+description: >-
+  Explore Quick Start to enhance your payment orchestration capabilities
+---
+
 # Quick Start
 
-Now that the library is installed, let's create your first payment order (different payment processor's use different terminology - order, intent, transaction and so on). Conceptually, it represents the user's intent to start a payment session. 
+Now that the library is installed, let's create your first payment order (different payment processor's use different terminology - order, intent, transaction and so on). Conceptually, it represents the user's intent to start a payment session.
 
-Once you implement this basic plumbing, you will be able to switch the request to any other payment processot, by changing one-line of code. 
+Once you implement this basic plumbing, you will be able to switch the request to any other payment processot, by changing one-line of code.
 
-- **If you depend on your Payment processor/ PCI vault for PCI compliance:** Lets start by creating a payment intent (order) with Stripe, which you can then use to complete the payment with Stripe.js on your frontend to collect payment details - if you are not PCI compliant.
+- **If you depend on your Payment processor/ PCI vault for PCI compliance:** Lets start by creating a payment intent (order) with Stripe, which you can then use to complete the payment with Stripe.js on your frontend to collect payment details - if you are not PCI DSS compliant.
 
 - **If you are managing PCI compliance on your own:** You should be able to collect card data from the user and directly pass it to the payment processor. Ignore this section and directly jump to [First Payment](./first-payment.md).
 
@@ -22,12 +27,12 @@ Create an order to get a `session_token` (client secret) from Stripe.
 {% tab title="Node.js" %}
 
 ```javascript
-const { ConnectorClient, Currency } = require('@juspay/connector-service-node');
+const { ConnectorClient, Currency } = require('@Juspay/connector-service-node');
 
 async function main() {
     const client = new ConnectorClient({
         connectors: {
-            stripe: { apiKey: process.env.STRIPE_API_KEY }
+            Stripe: { apiKey: process.env.STRIPE_API_KEY }
         }
     });
 
@@ -56,7 +61,7 @@ from connector_service import ConnectorClient, Currency
 
 client = ConnectorClient(
     connectors={
-        "stripe": {"api_key": os.environ["STRIPE_API_KEY"]}
+        "Stripe": {"api_key": os.environ["STRIPE_API_KEY"]}
     }
 )
 
@@ -74,12 +79,12 @@ print(f"Client Secret: {order.session_token.client_secret}")
 {% tab title="Java" %}
 
 ```java
-import com.juspay.connectorservice.*;
+import com.Juspay.connectorservice.*;
 
 public class QuickStart {
     public static void main(String[] args) {
         ConnectorClient client = ConnectorClient.builder()
-            .connector("stripe", StripeConfig.builder()
+            .connector("Stripe", StripeConfig.builder()
                 .apiKey(System.getenv("STRIPE_API_KEY"))
                 .build())
             .build();
@@ -110,7 +115,7 @@ use ConnectorService\Enum\Currency;
 
 $client = new ConnectorClient([
     'connectors' => [
-        'stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
+        'Stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
     ]
 ]);
 
@@ -151,7 +156,7 @@ Now, pass the `clientSecret` to your frontend and use it to initiate Stripe.js f
 ```html
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-const stripe = Stripe('pk_test_xxx'); // Your Stripe publishable key
+const Stripe = Stripe('pk_test_xxx'); // Your Stripe publishable key
 
 // Client secret from your backend
 const clientSecret = 'pi_3Oxxx..._secret_xxx';

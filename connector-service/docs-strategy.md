@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Documentation Strategy to enhance your payment orchestration capabilities
+---
+
 # Documentation Strategy
 
 
@@ -13,7 +18,7 @@ Become the **"Linux for Payments"** — a universal standard that makes payment 
 ## Overview
 
 
-Documentation is split into two distinct folders within the juspay/connector-service repo:
+Documentation is split into two distinct folders within the Juspay/connector-service repo:
 - **`/docs`** - Handwritten, curated content that explains concepts, provides guidance, and offers insights
 - **`/docs-generated`** - Auto-generated from code (API references, type definitions, SDK documentation)
 
@@ -110,9 +115,7 @@ docs-generated/
    └── ...
 
 
-
 ```
-
 
 
 ---
@@ -147,10 +150,10 @@ All generated documentation derives from proto definitions. Never manually edit 
 ---
 
 
-## CI/CD Integration with juspay/hyperswitch-docs
+## CI/CD Integration with Juspay/hyperswitch-docs
 
 
-To present a unified documentation experience on GitBook, we use a **merged sync strategy** that combines content from both `/docs` and `/docs-generated` into a single `ucs/` folder in the `juspay/hyperswitch-docs` repository.
+To present a unified documentation experience on GitBook, we use a **merged sync strategy** that combines content from both `/docs` and `/docs-generated` into a single `ucs/` folder in the `Juspay/hyperswitch-docs` repository.
 
 
 ### Architecture
@@ -158,7 +161,7 @@ To present a unified documentation experience on GitBook, we use a **merged sync
 
 ```
 ┌─────────────────────────────────┐         ┌──────────────────────────┐
-│  connector-service              │         │  juspay/hyperswitch-docs │
+│  connector-service              │         │  Juspay/hyperswitch-docs │
 │  (this repo)                    │         │  (docs repo)             │
 │                                 │         │                          │
 │  ┌──────────────────┐           │         │  ┌────────────────────┐  │
@@ -187,7 +190,7 @@ A single workflow handles both handwritten and generated docs, merging them in t
 
 
 ```yaml
-# .github/workflows/sync-docs.yml
+# .GitHub/workflows/sync-docs.yml
 name: Sync Docs to GitBook
 
 
@@ -213,61 +216,59 @@ jobs:
 
 
      - name: Generate documentation
-       run: |
-         # Generate docs from proto files and code
+       run: | # Generate docs from proto files and code
          make generate-docs
          make generate-sdk-docs
          make generate-connector-docs
 
 
-     - name: Sync to hyperswitch-docs
-       run: |
-         git clone https://github.com/juspay/hyperswitch-docs.git
+     - name: Sync to Hyperswitch-docs
+       run: | git clone https://GitHub.com/Juspay/hyperswitch-docs.git
 
 
          # Clear existing UCS docs
-         rm -rf hyperswitch-docs/ucs/**
+         rm -rf Hyperswitch-docs/ucs/**
 
 
          # Create UCS docs directory
-         mkdir -p hyperswitch-docs/ucs
+         mkdir -p Hyperswitch-docs/ucs
 
 
          # Step 1: Copy handwritten docs first (base structure)
-         cp -r docs/** hyperswitch-docs/ucs/
+         cp -r docs/** Hyperswitch-docs/ucs/
 
 
          # Step 2: Merge generated docs into corresponding sections
          # Generated API reference overwrites/extends handwritten
          if [ -d "docs-generated/api-reference" ]; then
-           cp -r docs-generated/api-reference/* hyperswitch-docs/ucs/api-reference/
+           cp -r docs-generated/api-reference/* Hyperswitch-docs/ucs/api-reference/
          fi
 
 
          # Generated SDKs
          if [ -d "docs-generated/sdks" ]; then
-           mkdir -p hyperswitch-docs/ucs/sdks
-           cp -r docs-generated/sdks/* hyperswitch-docs/ucs/sdks/
+           mkdir -p Hyperswitch-docs/ucs/sdks
+           cp -r docs-generated/sdks/* Hyperswitch-docs/ucs/sdks/
          fi
 
 
          # Generated connector reference
          if [ -d "docs-generated/connectors" ]; then
-           mkdir -p hyperswitch-docs/ucs/connectors
-           cp -r docs-generated/connectors/* hyperswitch-docs/ucs/connectors/
+           mkdir -p Hyperswitch-docs/ucs/connectors
+           cp -r docs-generated/connectors/* Hyperswitch-docs/ucs/connectors/
          fi
 
 
          # Copy generated SUMMARY.md if it exists
          if [ -f "docs-generated/SUMMARY.md" ]; then
-           cp docs-generated/SUMMARY.md hyperswitch-docs/ucs/SUMMARY.md
+           cp docs-generated/SUMMARY.md Hyperswitch-docs/ucs/SUMMARY.md
          fi
 
 
          # Configure git and commit
-         cd hyperswitch-docs
+         cd Hyperswitch-docs
          git config user.name "UCS Docs Bot"
-         git config user.email "ucs-docs@juspay.in"
+         git config user.email "ucs-docs@Juspay.in"
          git add ucs/
 
 
@@ -293,11 +294,11 @@ jobs:
 ### Merged GitBook Structure
 
 
-Content from both sources is merged into a unified structure in `juspay/hyperswitch-docs/ucs/`:
+Content from both sources is merged into a unified structure in `Juspay/hyperswitch-docs/ucs/`:
 
 
 ```
-hyperswitch-docs/
+Hyperswitch-docs/
 ├── README.md
 ├── SUMMARY.md                    # GitBook table of contents
 │
@@ -387,7 +388,7 @@ When syncing, content is merged in this order:
 ### GitBook Configuration
 
 
-In `hyperswitch-docs/SUMMARY.md` (maintained in connector-service, synced to docs repo):
+In `Hyperswitch-docs/SUMMARY.md` (maintained in connector-service, synced to docs repo):
 
 
 ```markdown

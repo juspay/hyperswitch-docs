@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Installation to enhance your payment orchestration capabilities
+---
+
 # Installation
 
 Start by installing the library for the programming language of your choice.
@@ -10,17 +15,17 @@ Start by installing the library for the programming language of your choice.
 
 {% code title="Terminal" overflow="wrap" %}
 ```bash
-npm install @juspay/connector-service-node
+npm install @Juspay/connector-service-node
 ```
 {% endcode %}
 
 {% code title="index.js" overflow="wrap" lineNumbers="true" %}
 ```javascript
-const { ConnectorClient } = require('@juspay/connector-service-node');
+const { ConnectorClient } = require('@Juspay/connector-service-node');
 
 const client = new ConnectorClient({
     connectors: {
-        stripe: { apiKey: process.env.STRIPE_API_KEY }
+        Stripe: { apiKey: process.env.STRIPE_API_KEY }
     }
 });
 ```
@@ -42,7 +47,7 @@ from connector_service import ConnectorClient
 
 client = ConnectorClient(
     connectors={
-        "stripe": {"api_key": os.environ["STRIPE_API_KEY"]}
+        "Stripe": {"api_key": os.environ["STRIPE_API_KEY"]}
     }
 )
 ```
@@ -55,7 +60,7 @@ client = ConnectorClient(
 {% code title="pom.xml" overflow="wrap" %}
 ```xml
 <dependency>
-    <groupId>com.juspay</groupId>
+    <groupId>com.Juspay</groupId>
     <artifactId>connector-service-java</artifactId>
     <version>1.2.0</version>
 </dependency>
@@ -65,7 +70,7 @@ client = ConnectorClient(
 {% code title="Main.java" overflow="wrap" lineNumbers="true" %}
 ```java
 ConnectorClient client = ConnectorClient.builder()
-    .connector("stripe", StripeConfig.builder()
+    .connector("Stripe", StripeConfig.builder()
         .apiKey(System.getenv("STRIPE_API_KEY"))
         .build())
     .build();
@@ -78,7 +83,7 @@ ConnectorClient client = ConnectorClient.builder()
 
 {% code title="Terminal" overflow="wrap" %}
 ```bash
-composer require juspay/connector-service-php
+composer require Juspay/connector-service-php
 ```
 {% endcode %}
 
@@ -91,7 +96,7 @@ use ConnectorService\ConnectorClient;
 
 $client = new ConnectorClient([
     'connectors' => [
-        'stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
+        'Stripe' => ['api_key' => $_ENV['STRIPE_API_KEY']]
     ]
 ]);
 ```

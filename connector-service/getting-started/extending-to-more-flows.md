@@ -1,23 +1,15 @@
+---
+description: >-
+  Explore Extending to More Flows to enhance your payment orchestration capabilities
+---
+
 # Extending to More Flows
 
 After completing your [first payment](./first-payment.md), this guide shows you how to implement additional payment flows and capabilities.
 
 ## Supported Payment Flows
 
-UCS supports a comprehensive set of payment operations:
-
-| Flow | Description | Use Case |
-|------|-------------|----------|
-| **Authorize** | Reserve funds on customer's card | Immediate authorization |
-| **Capture** | Collect authorized funds | Complete the transaction |
-| **Authorize + Capture** | Single-step payment | Standard one-time payment |
-| **Void** | Cancel authorized but not captured payment | Order cancellation |
-| **Refund** | Return funds to customer | Post-purchase returns |
-| **Incremental Authorization** | Increase authorized amount | Tips, add-ons |
-| **Recurring** | Stored credential payments | Subscriptions |
-| **Verify** | Validate card without charging | Account verification |
-
-## Refund Flow
+UCS supports a comprehensive set of payment operations: | Flow | Description | Use Case | |------|-------------|----------| | **Authorize** | Reserve funds on customer's card | Immediate authorization | | **Capture** | Collect authorized funds | Complete the transaction | | **Authorize + Capture** | Single-step payment | Standard one-time payment | | **Void** | Cancel authorized but not captured payment | Order cancellation | | **Refund** | Return funds to customer | Post-purchase returns | | **Incremental Authorization** | Increase authorized amount | Tips, add-ons | | **Recurring** | Stored credential payments | Subscriptions | | **Verify** | Validate card without charging | Account verification | ## Refund Flow
 
 Process a refund for a completed payment:
 

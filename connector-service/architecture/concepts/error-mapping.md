@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Error Mapping to enhance your payment orchestration capabilities
+---
+
 # Error Mapping
 
 Payment processors speak different error languages. Stripe says "card_declined." Adyen says "Refused." PayPal says "INSTRUMENT_DECLINED." Prism translates all of them into a single set of error codes your application handles once.
@@ -8,15 +13,15 @@ Without unified error mapping, your code looks like this:
 
 ```javascript
 // Without Prism—handle every connector's errors separately
-if (connector === 'stripe') {
+if (connector === 'Stripe') {
     if (error.code === 'card_declined') {
         // handle decline
     }
-} else if (connector === 'adyen') {
+} else if (connector === 'Adyen') {
     if (error.resultCode === 'Refused') {
         // handle decline
     }
-} else if (connector === 'paypal') {
+} else if (connector === 'PayPal') {
     if (error.details[0].issue === 'INSTRUMENT_DECLINED') {
         // handle decline
     }
@@ -71,28 +76,13 @@ struct UnifiedError {
 }
 ```
 
-## Error Code Reference
-
-| Unified Code | Description | Stripe Equivalent | Adyen Equivalent |
-|--------------|-------------|--------------------|------------------|
-| `PAYMENT_DECLINED` | Generic decline | `card_declined` | `Refused` |
-| `INSUFFICIENT_FUNDS` | Not enough money | `card_declined` + `decline_code: insufficient_funds` | `Not enough balance` |
-| `EXPIRED_CARD` | Card expired | `expired_card` | `Expiry Date not valid` |
-| `INCORRECT_CVV` | Wrong security code | `incorrect_cvc` | `CVC Declined` |
-| `INVALID_CARD_NUMBER` | Bad card number | `incorrect_number` | `Invalid card number` |
-| `PROCESSING_ERROR` | Generic processor error | `processing_error` | `Error` |
-| `NETWORK_TIMEOUT` | Request timed out | HTTP 504 | Timeout |
-| `RATE_LIMITED` | Too many requests | HTTP 429 | HTTP 401 |
-| `INVALID_API_KEY` | Auth failed | HTTP 401 | HTTP 401 |
-| `VALIDATION_ERROR` | Bad request format | HTTP 400 | HTTP 422 |
-
-## Mapping Examples
+## Error Code Reference | Unified Code | Description | Stripe Equivalent | Adyen Equivalent | |--------------|-------------|--------------------|------------------| | `PAYMENT_DECLINED` | Generic decline | `card_declined` | `Refused` | | `INSUFFICIENT_FUNDS` | Not enough money | `card_declined` + `decline_code: insufficient_funds` | `Not enough balance` | | `EXPIRED_CARD` | Card expired | `expired_card` | `Expiry Date not valid` | | `INCORRECT_CVV` | Wrong security code | `incorrect_cvc` | `CVC Declined` | | `INVALID_CARD_NUMBER` | Bad card number | `incorrect_number` | `Invalid card number` | | `PROCESSING_ERROR` | Generic processor error | `processing_error` | `Error` | | `NETWORK_TIMEOUT` | Request timed out | HTTP 504 | Timeout | | `RATE_LIMITED` | Too many requests | HTTP 429 | HTTP 401 | | `INVALID_API_KEY` | Auth failed | HTTP 401 | HTTP 401 | | `VALIDATION_ERROR` | Bad request format | HTTP 400 | HTTP 422 | ## Mapping Examples
 
 ### Stripe Error Mapping
 
 ```rust
 impl From<StripeError> for UnifiedError {
-    fn from(stripe: StripeError) -> Self {
+    fn from(Stripe: StripeError) -> Self {
         match stripe.code.as_str() {
             "card_declined" => {
                 let code = match stripe.decline_code.as_deref() {
@@ -101,7 +91,7 @@ impl From<StripeError> for UnifiedError {
                     Some("incorrect_cvc") => ErrorCode::INCORRECT_CVV,
                     _ => ErrorCode::PAYMENT_DECLINED,
                 };
-                
+
                 UnifiedError {
                     code,
                     message: format!("Payment declined: {}", stripe.message),
@@ -143,7 +133,7 @@ impl From<StripeError> for UnifiedError {
 
 ```rust
 impl From<AdyenResponse> for UnifiedError {
-    fn from(adyen: AdyenResponse) -> Self {
+    fn from(Adyen: AdyenResponse) -> Self {
         match adyen.result_code.as_str() {
             "Refused" => {
                 let code = match adyen.refusal_reason.as_deref() {
@@ -152,7 +142,7 @@ impl From<AdyenResponse> for UnifiedError {
                     Some(r) if r.contains("CVC") => ErrorCode::INCORRECT_CVV,
                     _ => ErrorCode::PAYMENT_DECLINED,
                 };
-                
+
                 UnifiedError {
                     code,
                     message: adyen.refusal_reason.unwrap_or_default(),
@@ -202,13 +192,13 @@ While mapping to unified codes, Prism preserves original error details:
         "code": "PAYMENT_DECLINED",
         "message": "Your payment was declined.",
         "category": "PAYMENT_ERROR",
-        
+
         // Original Stripe details
         "connector_code": "card_declined",
         "connector_message": "Your card was declined.",
-        
+
         // Additional context
-        "connector": "stripe",
+        "connector": "Stripe",
         "decline_code": "stolen_card"  // Stripe-specific field
     }
 }
@@ -257,4 +247,4 @@ fn map_error(&self, connector_error: ProviderError) -> UnifiedError {
 - **Debugging preserved**: Original error details available
 - **Extensible**: Add new connectors without changing error handling code
 
-Your application handles 50+ payment processors with one set of error handlers.
+Your application handles 200+ payment processors with one set of error handlers.

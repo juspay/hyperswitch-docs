@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Code Generation to enhance your payment orchestration capabilities
+---
+
 # Code Generation
 
 You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.
@@ -35,17 +40,17 @@ Generate a connector scaffold from an OpenAPI spec:
 ```bash
 # Generate from OpenAPI spec
 grace generate \
-  --spec ./adyen-openapi.json \
-  --connector adyen \
-  --output ./backend/connector-integration/src/connectors/adyen/
+  --spec ./Adyen-openapi.json \
+  --connector Adyen \
+  --output ./backend/connector-integration/src/connectors/Adyen/
 
 # Generate with custom LLM model
 grace generate \
-  --spec ./adyen-openapi.json \
-  --connector adyen \
+  --spec ./Adyen-openapi.json \
+  --connector Adyen \
   --model gpt-4 \
   --api-key $OPENAI_API_KEY \
-  --output ./backend/connector-integration/src/connectors/adyen/
+  --output ./backend/connector-integration/src/connectors/Adyen/
 ```
 
 The CLI produces:
@@ -86,7 +91,7 @@ Your LLM generates code that follows Prism conventions without training on propr
 ```rust
 impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
     type Error = ConnectorError;
-    
+
     fn try_from(req: AuthorizeRequest) -> Result<Self, Self::Error> {
         Ok(AdyenPaymentRequest {
             amount: req.amount.minor_amount,
@@ -104,7 +109,7 @@ impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
 ```rust
 impl TryFrom<AdyenPaymentResponse> for AuthorizeResponse {
     type Error = ConnectorError;
-    
+
     fn try_from(resp: AdyenPaymentResponse) -> Result<Self, Self::Error> {
         Ok(AuthorizeResponse {
             payment_id: resp.psp_reference.into(),
@@ -156,7 +161,7 @@ Grace validates generated code:
 ```bash
 # Validate generated connector
 grace validate \
-  --connector ./backend/connector-integration/src/connectors/adyen/
+  --connector ./backend/connector-integration/src/connectors/Adyen/
 ```
 
 ## Adding a New Connector

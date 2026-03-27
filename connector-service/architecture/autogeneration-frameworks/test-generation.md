@@ -1,3 +1,8 @@
+---
+description: >-
+  Explore Test Generation to enhance your payment orchestration capabilities
+---
+
 # Test Generation
 
 You get regression tests for every connector without writing them by hand. Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.
@@ -10,21 +15,13 @@ Generated tests solve this by deriving test cases from the source of truth: the 
 
 ## Test Generation Framework
 
-The framework has three layers:
-
-| Layer | Purpose | Input | Output |
-|-------|---------|-------|--------|
-| **Spec Parser** | Read test definitions | Test spec YAML + proto definitions | Internal test model |
-| **Generator** | Create test code | Test model + language templates | Rust/JavaScript/Python test files |
-| **Runner** | Execute and validate | Generated tests + sandbox credentials | Pass/fail results with diffs |
-
-## Test Specification Format
+The framework has three layers: | Layer | Purpose | Input | Output | |-------|---------|-------|--------| | **Spec Parser** | Read test definitions | Test spec YAML + proto definitions | Internal test model | | **Generator** | Create test code | Test model + language templates | Rust/JavaScript/Python test files | | **Runner** | Execute and validate | Generated tests + sandbox credentials | Pass/fail results with diffs | ## Test Specification Format
 
 Tests are declared, not written. A test spec for Stripe authorization looks like:
 
 ```yaml
 test: authorize_success
-connector: stripe
+connector: Stripe
 service: PaymentService
 operation: Authorize
 request:
@@ -60,7 +57,7 @@ async fn stripe_authorize_success() {
         .authorize(stripe_test_request())
         .await
         .expect("authorize should succeed");
-    
+
     assert_eq!(response.status, PaymentStatus::Authorized);
     assert!(response.payment_id.value.len() > 0);
 }
@@ -107,17 +104,7 @@ Tests run against live sandbox environments, not mocks. This catches real integr
 
 ## Test Coverage
 
-Generated tests cover:
-
-| Test Type | Coverage |
-|-----------|----------|
-| Happy path | Every operation for every connector |
-| Error cases | Invalid auth, declined cards, network timeouts |
-| Field validation | Required fields, type constraints, enum values |
-| Response mapping | Connector-specific responses transform correctly |
-| Webhooks | Event parsing and signature verification |
-
-## Updating Tests When APIs Change
+Generated tests cover: | Test Type | Coverage | |-----------|----------| | Happy path | Every operation for every connector | | Error cases | Invalid auth, declined cards, network timeouts | | Field validation | Required fields, type constraints, enum values | | Response mapping | Connector-specific responses transform correctly | | Webhooks | Event parsing and signature verification | ## Updating Tests When APIs Change
 
 When Adyen changes their response format:
 
