@@ -18,11 +18,10 @@ A rule-based routing configuration comprises of one or more rules with each rule
 **Processor Preference:** Every rule has an associated Processor Preference which dictates the processor(s) to route the ongoing payment through if the rule is fulfilled. A Processor Preference can be one of the following types:
 
 1. **Single choice of processor:** Only a single processor should be targeted for a specific condition Eg: (Stripe)
-2. **Split payments across processors:** The payment volume could be distributed across more than one processor. Eg: (Stripe: 70%, Paypal: 30%)
-3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, Paypal)
+2. **Split payments across processors:** The payment volume could be distributed across more than one processor. Eg: (Stripe: 70%, PayPal: 30%)
+3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, PayPal)
 
 ## Steps to configure Rule Based Configuration in Smart Router:
-
 
 
 _**Step 1:**_ Click on `Setup` for **Rule Based Configuration:**

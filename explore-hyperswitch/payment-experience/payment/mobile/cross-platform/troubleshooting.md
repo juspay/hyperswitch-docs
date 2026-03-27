@@ -1,10 +1,14 @@
+---
+description: Resolve common Android and iOS integration issues for cross-platform payments
+---
+
 # Troubleshooting
 
 ## Android
 
 1. If you encounter issues related to the **Android browser dependency**, ensure that the required AndroidX Browser version is defined in your project.
 
-&#x20;Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
+ Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
 
 ```
 ext {

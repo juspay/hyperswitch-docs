@@ -8,9 +8,9 @@ icon: table-cells-large
 
 # Headless SDK
 
-### Customize the payment experience using Headless functions
+## Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
 Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -76,9 +76,9 @@ const [defaultPaymentMethodData,setDefaultPaymentMethodData]=React.useState(null
 
 React.useEffect(()=>{
     const getPaymentMethods = async() => {
-        const paymentMethodSession 
+        const paymentMethodSession
                 = await getCustomerSavedPaymentMethods(paymentSession);
-        const customer_default_saved_payment_method_data 
+        const customer_default_saved_payment_method_data
                 = await getCustomerLastUsedSavedPaymentMethodData(paymentMethodSession);
         setDefaultPaymentMethodData(_=>customer_default_saved_payment_method_data)
     }
@@ -87,7 +87,7 @@ React.useEffect(()=>{
 
 let confirmDefaultPaymentMethod = () => {
 const status = await confirmWithCustomerLastUsedPaymentMethod(paymentMethodSession);
-    // handle status of payment   
+    // handle status of payment
     if (status != null) {
         const message = status.message;
         console.log(message)
@@ -101,8 +101,6 @@ return (
 ```
 
 
-
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-

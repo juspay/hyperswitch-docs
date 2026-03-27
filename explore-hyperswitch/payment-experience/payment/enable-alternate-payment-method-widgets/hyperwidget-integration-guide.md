@@ -12,11 +12,11 @@ The unified dashboard offers the merchants ability to enable or disable APMs via
 
 <figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Supported APM features:
+## Supported APM features:
 
 | Payment Method | Region  | Type         | Supported flow          | Shipping Address availability | Billing address availability |
 | -------------- | ------- | ------------ | ----------------------- | ----------------------------- | ---------------------------- |
-| Paypal         | US + EU | Wallet       | SDK flow, Redirect flow | Yes\*                         | Yes                          |
+| PayPal         | US + EU | Wallet       | SDK flow, Redirect flow | Yes\*                         | Yes                          |
 | Apple Pay      | US + EU | Wallet       | SDK flow                | Yes\*                         | Yes                          |
 | Google Pay     | US + EU | Wallet       | SDK flow                | Yes\*                         | Yes                          |
 | Paze           | US + EU | Wallet       | SDK flow                | No                            | Yes                          |
@@ -35,9 +35,9 @@ The unified dashboard offers the merchants ability to enable or disable APMs via
 
 To start collecting payments via the APM of your choice, follow these simple steps: ​
 
-* [Install the Hyperwidgets SDK following these steps.](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
-  * As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
-* [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
+- [Install the Hyperwidgets SDK following these steps.](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/node-and-react)
+  - As we have a single SDK to manage all APMs, thus the integration steps are similar to the ones for integrating Unified Checkout.
+- [For customizations on the Checkout Page follow this guide.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)
 
 {% content-ref url="../../../payment-orchestration/click-to-pay/" %}
 [click-to-pay](../../../payment-orchestration/click-to-pay/)

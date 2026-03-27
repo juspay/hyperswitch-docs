@@ -9,7 +9,7 @@ This app provides a seamless integration between Saleor (an open source ecommerc
 
 It enables merchants to utilize Juspay’s secure and efficient payment processing directly within their Saleor storefront, delivering a smooth and dependable checkout experience for customers both within India and globally.
 
-### [Juspay's Hypercheckout](https://juspay.in/hypercheckout) - for accepting payments in India (in compliance with Financial data residency requirements)
+## [Juspay's Hypercheckout](https://juspay.in/hypercheckout) - for accepting payments in India (in compliance with Financial data residency requirements)
 
 HyperCheckout combines the power of native checkout experiences, robust payment orchestration & advanced analytics. HyperCheckout is an Experience and Orchestration/Routing layer that connects with 100+ Payment Aggregators.
 

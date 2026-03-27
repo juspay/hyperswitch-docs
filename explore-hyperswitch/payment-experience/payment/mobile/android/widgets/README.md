@@ -11,10 +11,10 @@ icon: cubes
 
 ## Requirements
 
-* Android 6.0 (API level 23) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
+- Android 6.0 (API level 23) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+- [Gradle](https://gradle.org/releases/) 8.8+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
 

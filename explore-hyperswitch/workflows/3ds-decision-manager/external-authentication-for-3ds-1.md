@@ -12,15 +12,15 @@ Standalone 3DS separates authentication from authorization, giving you the flexi
 
 Enterprise teams often adopt Standalone 3DS to enhance payment performance by enabling:
 
-* Fine grained API control over 3DS requests and the checkout experience
-* Greater visibility into issuer authentication responses
-* Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
+- Fine grained API control over 3DS requests and the checkout experience
+- Greater visibility into issuer authentication responses
+- Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
 
-When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps is effective [Smart Retry](../smart-retries/) workflows where the same authentication can be succesfully used with multiple authorization attempts across different payment providers (PSP)
+When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps is effective [Smart Retry](../smart-retries/) workflows where the same authentication can be successfully used with multiple authorization attempts across different payment providers (PSP)
 
 Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are - Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io
 
-### Setup External 3DS authentication via Hyperswitch
+## Setup External 3DS authentication via Hyperswitch
 
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
 2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server

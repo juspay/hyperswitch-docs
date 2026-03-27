@@ -8,14 +8,14 @@ icon: table-cells-large
 
 # Headless SDK
 
-### Customize the payment experience using Headless functions
+## Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
 Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```kotlin
-// dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+' val 
+// dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+' val
 paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
 ```
 
@@ -51,8 +51,8 @@ paymentSession.getCustomerSavedPaymentMethods { paymentSessionHandler ->
 
 val savedPaymentMethid = handler!!.getCustomerLastUsedSavedPaymentMethodData()
 
-button.setOnClickListener { 
-    handler!!.confirmWithCustomerLastUsedPaymentMethod { paymentResult -> 
+button.setOnClickListener {
+    handler!!.confirmWithCustomerLastUsedPaymentMethod { paymentResult ->
         println(paymentResult)
     }
 }
@@ -63,4 +63,3 @@ button.setOnClickListener {
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (method)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-

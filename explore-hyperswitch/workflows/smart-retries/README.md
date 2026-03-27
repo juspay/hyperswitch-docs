@@ -18,7 +18,7 @@ Hyperswitch’s error handling engine is enriched with mappings for error codes 
 
 <figure><img src="../../../.gitbook/assets/unknown (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Error code segregation
+## Error code segregation
 
 1. For each PSP all the published + encountered error codes are segregated in two categories “Retriable” and “Non-retriable”
 2. This is a dynamic list and continue to grow for each PSP as they change their error mapping or introduce new errors
@@ -92,18 +92,16 @@ Each of the error codes are mapped individually as to whether they are eligible 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
 
-
 ## How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
 
 **Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
 
-* Confirmation on the retry flows to be enaled&#x20;
-* Maximum number of payment retry attempts&#x20;
+- Confirmation on the retry flows to be enaled&#x20;
+- Maximum number of payment retry attempts&#x20;
 
 ####
-
 
 
 ## FAQs
@@ -136,9 +134,9 @@ Since Smart retry involves multiple payment attempts for a single payment\_id, H
 
 For example, if the merchant had sent pay\_abcd145efg, then Hyperswitch will send the following payment\_id to the processors during each attempt:
 
-* Payment attempt 1: pay\_abcd145efg\_1
-* Payment attempt 2: pay\_abcd145efg\_2
-* Payment attempt 3: pay\_abcd145efg\_3
+- Payment attempt 1: pay\_abcd145efg\_1
+- Payment attempt 2: pay\_abcd145efg\_2
+- Payment attempt 3: pay\_abcd145efg\_3
 
 </details>
 

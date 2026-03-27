@@ -9,18 +9,18 @@ Hyperswitch enables split payments, allowing a single transaction to be complete
 
 This capability helps merchants:
 
-* Increase conversion when gift card balances are insufficient
-* Improve customer flexibility at checkout
-* Support common retail and digital wallet experiences
+- Increase conversion when gift card balances are insufficient
+- Improve customer flexibility at checkout
+- Support common retail and digital wallet experiences
 
 Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
 
-### Supported Configurations
+## Supported Configurations
 
 Currently, Hyperswitch supports:
 
-* Atmost one gift cards combined with **at most one credit/debit card** (Non-3DS card)
-* Gift Cards via Givex (through Adyen)
+- Atmost one gift cards combined with **at most one credit/debit card** (Non-3DS card)
+- Gift Cards via Givex (through Adyen)
 
 These configurations are designed to cover the most common real-world split payment use cases while maintaining predictable authorization behavior
 
@@ -36,11 +36,9 @@ No custom orchestration logic is required on the merchant side beyond standard S
 <figure><img src="../../../.gitbook/assets/Screen Recording 2026-02-04 at 9 (1).gif" alt=""><figcaption></figcaption></figure>
 
 
-
 ### Hyperswitch Split Payments Flow
 
 <figure><img src="../../../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
-
 
 
 #### 1. Payment Initialization
@@ -53,9 +51,9 @@ When a customer applies a gift card during checkout, the SDK collects the gift c
 
 The backend service then communicates with the configured gift card provider to:
 
-* Validate the gift card credentials
-* Retrieve the available balance
-* Determine whether an additional payment method is required
+- Validate the gift card credentials
+- Retrieve the available balance
+- Determine whether an additional payment method is required
 
 The SDK receives the balance and eligibility response and updates the checkout interface accordingly.
 
@@ -69,9 +67,9 @@ When the customer confirms the payment, the SDK submits all selected payment met
 
 At this stage, the system:
 
-* Uses the previously validated gift card balance
-* Calculates the amount to be charged to each payment method
-* Initiates sequential authorization of the payment methods
+- Uses the previously validated gift card balance
+- Calculates the amount to be charged to each payment method
+- Initiates sequential authorization of the payment methods
 
 #### 4. Sequential Payment Processing
 
@@ -98,9 +96,7 @@ If the gift card authorization fails after the card payment has already been pro
 Once all payment methods are processed, the final transaction status is returned to the SDK.
 
 
-
 #### API Details :&#x20;
-
 
 
 **Apply a gift card**
@@ -127,7 +123,6 @@ curl --request POST \
 '
 
 ```
-
 
 
 **Payment Confirm with Split PM details**
@@ -164,7 +159,7 @@ curl --request POST \
             "payment_method_type": "gift_card",
             "payment_method_subtype": "givex"
         }
-    ]  
+    ]
 }
 '
 

@@ -4,7 +4,7 @@ description: Configure Payment Links UI
 
 # Configurations
 
-> **Note:** Payment Links can currently only be configured via APIs. Configuration through the HyperSwitch dashboard is under development, and this section will be updated once it is available.
+> **Note:** Payment Links can currently only be configured via APIs. Configuration through the Hyperswitch dashboard is under development, and this section will be updated once it is available.
 
 ## Available configurations
 
@@ -49,7 +49,7 @@ Example: https://hyperswitch.io/favicon.ico
 
 Customize the display name shown in the details section of the payment links.
 
-Example: **HyperSwitch Inc.**
+Example: **Hyperswitch Inc.**
 
 <figure><img src="../../../../.gitbook/assets/payment-links-details-section.png" alt=""><figcaption><p>Custom seller name</p></figcaption></figure>
 
@@ -65,7 +65,7 @@ Example:
 [
     {
         "key": "Business Country",
-        "value": "Germany" 
+        "value": "Germany"
     },
     {
         "key": "Policy Number",
@@ -162,7 +162,7 @@ These configurations can only be made at business profile level and cannot be ov
     domain_name: String, /// Custom domain name to be used for hosting the link
     business_specific_configs: HashMap<String, PaymentLinkConfigRequest>, /// List of UI configs for multi theme setup
     allowed_domains: HashSet<String>, /// A list of allowed domains (glob patterns) where secure links can be embedded in
-    branding_visibility: bool, /// Toggle for HyperSwitch branding visibility
+    branding_visibility: bool, /// Toggle for Hyperswitch branding visibility
 }
 ```
 
@@ -187,7 +187,7 @@ Example:
     "style1": {
         "theme": "#3B845E",
         "logo": "https://hyperswitch.io/favicon.ico",
-        "seller_name": "HyperSwitch Inc.",
+        "seller_name": "Hyperswitch Inc.",
         "display_sdk_only": true
     },
     "style2": {
@@ -209,7 +209,7 @@ Example: `["localhost:5500", "my.custom.domain.com"]`
 
 #### Branding visibility
 
-A boolean value for toggling the visibility of HyperSwitch branding in the payment links.
+A boolean value for toggling the visibility of Hyperswitch branding in the payment links.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-visible-branding.png" alt=""><figcaption><p>Visible branding (default behaviour)</p></figcaption></figure>
 
@@ -229,7 +229,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
         "payment_link_config": {
             "theme": "#4E6ADD",
             "logo": "https://hyperswitch.io/favicon.ico",
-            "seller_name": "HyperSwitch Inc.",
+            "seller_name": "Hyperswitch Inc.",
             "sdk_layout": "accordion",
             "display_sdk_only": true,
             "enabled_saved_payment_method": true,
@@ -251,7 +251,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
                 "style1": {
                     "theme": "#3B845E",
                     "logo": "https://hyperswitch.io/favicon.ico",
-                    "seller_name": "HyperSwitch Inc.",
+            "seller_name": "Hyperswitch Inc.",
                     "display_sdk_only": true
                 },
                 "style2": {
@@ -276,7 +276,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 {
     theme: "#212E46",
     logo: "https://live.hyperswitch.io/payment-link-assets/Merchant_placeholder.png",
-    seller_name: "merchant_name", /// merchant name configured during account creation with HyperSwitch,
+    seller_name: "merchant_name", /// merchant name configured during account creation with Hyperswitch,
     transaction_details: null,
     background_image: null,
     details_layout: "layout1",

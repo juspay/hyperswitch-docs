@@ -10,7 +10,7 @@ Available in countries like the US, Canada, China (Transit only), Spain, UK, Sin
 
 Samsung Pay works only on supported Samsung devices. You can find the list of supported devices [here](https://www.samsung.com/my/samsung-pay/supported-devices/?srsltid=AfmBOoos-CYJiqjZ6eAFWxdZqQt81Np6hITzwZzYvbm0npr3ZmBbFSvZ)
 
-### **Prerequisites**
+## **Prerequisites**
 
 Samsung Pay requires an Samsung Developer Account. You can [Sign Up](https://developer.samsung.com/pay/native/partner-onbarding.html#Sign-up%2FSign-in) following this.
 

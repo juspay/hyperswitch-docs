@@ -1,10 +1,14 @@
+---
+description: Configure Google Pay with PSP decryption for secure payment processing
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.
 
-### **Configuration :**&#x20;
+## **Configuration :**
 
-#### **Prerequisites**
+### **Prerequisites**
 
 There are few prerequisites that need to be fulfilled before integrating Google Pay on Hyperswitch -
 
@@ -19,7 +23,7 @@ To configure Google Pay on Hyperswitch follow the steps given below -
 2. In the Connectors tab, select your processor
 3. While selecting Payment Methods, click on Google Pay in the Wallet section, In 'Choose Configuration Method' tab select 'Payment Gateway'.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-12 at 3.08.57 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-12 at 3.08.57 PM.png" alt=""><figcaption></figcaption></figure>
 
 4. Use this [link](https://developers.google.com/pay/api/web/guides/tutorial#tokenization) to search for your processor's input parameters. Get those parameters from the processor dashboard and configure them in Google Pay Merchant Key
 5. Enter required fields and save the changes.

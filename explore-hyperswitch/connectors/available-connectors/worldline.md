@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via Worldline through
 
 Worldline is a payment service provider that offers in-store payment services, online payment solutions for seamless transactions, Omnichannel capabilities and global online payments to increase conversion and approval rates. To know about more about payment methods supported by Worldline via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Worldline via Hyperswitch
+## Activating Worldline via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Worldline in order to proceed. In case you aren't, you can quickly setup your Worldline account [here](https://worldline.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/)

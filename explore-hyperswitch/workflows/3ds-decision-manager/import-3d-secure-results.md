@@ -9,7 +9,7 @@ Importing 3DS results is an advanced payment flow that enables you to use extern
 
 This approach is required when you use a third party provider to perform 3DS. In such cases, you can submit the card details and authentication cryptogram directly through the [Payment Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-three-ds-data), rather than relying on Hyperswitch SDK to collect payment information and execute 3DS.
 
-#### Process a payment&#x20;
+## Process a payment&#x20;
 
 1. Make a [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-three-ds-data) call with the external 3d Secure (3DS) data
 

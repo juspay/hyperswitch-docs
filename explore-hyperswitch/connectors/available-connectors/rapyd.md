@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via Rapyd through Hyp
 
 Rapyd allows businesses to accept and send payments to any business or consumer entity present anywhere in a faster, cheaper and easier manner. To know about more about payment methods supported by Rapyd via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Rapyd via Hyperswitch
+## Activating Rapyd via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Rapyd in order to proceed. In case you aren't, you can quickly setup your Rapyd account [here](https://www.rapyd.net/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/)

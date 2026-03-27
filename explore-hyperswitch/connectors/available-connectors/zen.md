@@ -13,7 +13,7 @@ This section gives you an overview of how to make payments via Zen through Hyper
 
 Zen is a modern and responsive payments portal with low fees for conversion boost and increased revenue. To know about more about payment methods supported by ACI via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-#### I. Prerequisites
+## I. Prerequisites
 
 1. You need to be registered with Zen and obtained the API Key from your Zen Account manager.
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io).

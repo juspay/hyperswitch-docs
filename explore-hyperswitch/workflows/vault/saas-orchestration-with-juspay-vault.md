@@ -12,11 +12,11 @@ Merchants can tokenize, vault, and process without any PCI exposure.
 
 Key Highlights:
 
-* No PCI compliance overhead.
-* Automatic network tokenization and lifecycle management.
-* Simplified setup — single integration for orchestration + vault.
+- No PCI compliance overhead.
+- Automatic network tokenization and lifecycle management.
+- Simplified setup — single integration for orchestration + vault.
 
-### SaaS orchestration - Payments and vaulting flow
+## SaaS orchestration - Payments and vaulting flow
 
 <figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
@@ -34,8 +34,8 @@ Once the `payment_method_id` is generated, it serves as a reusable token. The bu
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
 
-* Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
-* Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
+- Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
+- Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
 | **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
 | --------------- | --------------------------------- | --------------------- |

@@ -15,13 +15,13 @@ Before proceeding with these steps, please ensure that your payment methods are 
 
 ## Requirements
 
-* Android 7.0 (API level 24) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1
-* [Gradle](https://gradle.org/releases/) 7.5.1+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
-* iOS 12.4 and above
-* CocoaPods
-* npm
+- Android 7.0 (API level 24) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1
+- [Gradle](https://gradle.org/releases/) 7.5.1+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
+- iOS 12.4 and above
+- CocoaPods
+- npm
 
 ## 1. Setup the server
 

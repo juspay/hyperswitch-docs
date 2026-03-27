@@ -6,23 +6,23 @@ icon: mobile-screen
 
 ## Key Features of Lite SDK
 
-#### Lightweight Integration
+### Lightweight Integration
 
-* **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
-* **Web-based UI**: Uses web components for payment forms
-* **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
-  * Appearance customization
-  * Billing details
-  * Shipping information
-  * Payment method preferences
-  * Branding options
+- **Smaller artifact size**: <300 KB
+- **Faster initialization**: Streamlined setup process
+- **Web-based UI**: Uses web components for payment forms
+- **Reduced dependencies**: Minimal impact on app size
+- **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
+  - Appearance customization
+  - Billing details
+  - Shipping information
+  - Payment method preferences
+  - Branding options
 
 ## Requirements
 
-* IOS 15.1+
-* Cocoapods​
+- IOS 15.1+
+- Cocoapods​
 
 ## 1. Setup the server
 
@@ -66,9 +66,9 @@ paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClient
 ```swift
 // Present the PaymentSheet Lite
 paymentSession.presentPaymentSheetLite(
-    viewController: self, 
-    configuration: configuration, 
-    completion: { 
+    viewController: self,
+    configuration: configuration,
+    completion: {
         result in
             DispatchQueue.main.async {
                 switch result {

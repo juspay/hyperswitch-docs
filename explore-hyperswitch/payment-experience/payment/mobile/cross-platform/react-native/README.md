@@ -17,9 +17,8 @@ Revolutionize your app's payment capabilities with the Hyperswitch React Native 
 
 **Modify and Experiment:** While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch React Native SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you to:
 
-* **Include New Fields:** Adapt swiftly to various use cases by adding new fields to the payment form, such as collecting billing addresses or zip codes for additional information.
-* **Prioritize Payment Methods:** Impact your payment mix and conversion rates by prioritizing or promoting specific payment methods based on your customer preferences.
-* **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
+- **Include New Fields:** Adapt swiftly to various use cases by adding new fields to the payment form, such as collecting billing addresses or zip codes for additional information.
+- **Prioritize Payment Methods:** Impact your payment mix and conversion rates by prioritizing or promoting specific payment methods based on your customer preferences.
+- **Switch Themes and Layouts:** Choose from a wide range of pre-designed themes and layouts for the checkout page, aligning the Unified Checkout with your app's aesthetics.
 
 Experience the flexibility to modify and experiment, ensuring your app's payment journey aligns precisely with your business requirements and user expectations. Elevate your Android app's payment experience with the Hyperswitch React Native SDK.
-

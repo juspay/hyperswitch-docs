@@ -4,7 +4,7 @@ icon: building-magnifying-glass
 
 # Authorizations
 
-### **Advanced Authorization Types**
+## **Advanced Authorization Types**
 
 This section outlines the specialized authorization flows supported by Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring the customer to re-enter their details.
 

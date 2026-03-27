@@ -14,11 +14,11 @@ The **PaymentWidget** component renders an **embedded, inline payment form direc
 
 ```shellscript
 npm install @juspay-tech/react-native-hyperswitch
-# or
+## or
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
-#### 1.1.1 Install Peer Dependencies
+### 1.1.1 Install Peer Dependencies
 
 The SDK requires the following peer dependencies to be installed in your project:
 
@@ -26,7 +26,7 @@ The SDK requires the following peer dependencies to be installed in your project
 yarn add react-native-inappbrowser-reborn
 yarn add react-native-svg
 yarn add @sentry/react-native
-# or
+## or
 npm install react-native-inappbrowser-reborn
 npm install react-native-svg
 npm install @sentry/react-native
@@ -145,4 +145,3 @@ Callback triggered when the payment completes, fails, or is cancelled.
 **`style`** `StyleProp<ViewStyle>` · `width` & `height` required
 
 Defines the size and layout of the widget container.
-

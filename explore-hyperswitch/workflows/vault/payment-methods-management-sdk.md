@@ -15,11 +15,11 @@ The Hyperswitch Payment Methods Management SDK provides a secure solution for me
 
 ## Key Benefits
 
-* **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
-* **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
-* **Reduced Cart Abandonment**: Enable one-click payments for returning customers
-* **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
-* **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
+- **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
+- **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
+- **Reduced Cart Abandonment**: Enable one-click payments for returning customers
+- **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
+- **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
 ## Payment Methods Management SDK Integration Walkthrough
 
@@ -71,9 +71,9 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
         body: JSON.stringify(req.body),
       }
     );
-    
+
     const data = await response.json();
-    
+
     res.send({
       pmSessionId: data.id,
       pmClientSecret: data.client_secret,

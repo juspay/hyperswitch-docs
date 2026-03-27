@@ -11,11 +11,11 @@ Optimize your payments integration and unlock higher revenue with the Optimized 
 [Explore the demo](https://hyperswitch-demo-store.netlify.app/)
 {% endhint %}
 
-### Learn which payments integration fits your business
+## Learn which payments integration fits your business
 
 Use Hyperswitch to accept payments for your business globally. The below variations allow you to learn about the different integration options available
 
-#### [Accept payments without code](payment/payment-links/)
+### [Accept payments without code](payment/payment-links/)
 
 Use payment links to accept payments without building any integration onto a website or an app.
 

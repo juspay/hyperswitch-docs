@@ -25,7 +25,7 @@ private lateinit var googlePayLauncherInstance: UnifiedPaymentLauncher
 private fun setupGooglePayLauncher() {
     googlePayButton = findViewById(R.id.googlePayButton)
     googlePayButton.isEnabled = false
-    
+
     googlePayLauncherInstance = UnifiedPaymentLauncher.createGooglePayLauncher(
         activity = this,
         clientSecret = paymentIntentClientSecret,
@@ -82,4 +82,3 @@ private fun onGooglePayReady(isReady: Boolean) {
     googlePayButton.isEnabled = isReady
 }
 ```
-

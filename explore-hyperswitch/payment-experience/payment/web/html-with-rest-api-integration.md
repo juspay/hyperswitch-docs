@@ -88,7 +88,7 @@ async function initialize() {
     layout: "tabs",
     wallets: {
       walletReturnUrl: "https://example.com/complete",
-      //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+      //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
     },
   };
 
@@ -131,7 +131,7 @@ async function initialize() {
   const expressCheckoutOptions = {
     wallets: {
       walletReturnUrl: "https://example.com/complete",
-      //Mandatory parameter for Wallet Flows such as Googlepay, Paypal and Applepay
+      //Mandatory parameter for Wallet Flows such as Google Pay, PayPal and Apple Pay
     },
   };
 

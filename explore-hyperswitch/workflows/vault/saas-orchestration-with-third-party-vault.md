@@ -10,11 +10,11 @@ This setup is ideal for merchants who already have existing token infrastructure
 
 Key Highlights:
 
-* Combines the scalability of SaaS orchestration with external vault flexibility.
-* Supports Vault Proxy APIs for tokenization/de-tokenization.
-* Merchant retains token portability across platforms.
+- Combines the scalability of SaaS orchestration with external vault flexibility.
+- Supports Vault Proxy APIs for tokenization/de-tokenization.
+- Merchant retains token portability across platforms.
 
-### Third party vault integration options&#x20;
+## Third party vault integration options&#x20;
 
 <table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Merchant managed client with external vault's card form</strong></td><td align="center">The merchant directly integrates with the external vault SDK and card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with External Vault's card form</strong></td><td align="center">The External Vault SDK is loaded onto the Hyperswitch Unified Checkout SDK. The card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with native card form</strong></td><td align="center">In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault</td></tr></tbody></table>
 
@@ -22,7 +22,7 @@ Key Highlights:
 
 For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
 
-#### **1. Hyperswitch managed client and card form**
+### **1. Hyperswitch managed client and card form**
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 

@@ -4,13 +4,13 @@ icon: screwdriver-wrench
 
 # Self-Deployment Guide
 
-### Self Deploy and integrate it with your existing orchestrator&#x20;
+## Self Deploy and integrate it with your existing orchestrator&#x20;
 
 How it fits into your existing payments setup:
 
 <figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-#### 1. Clone the Repository
+### 1. Clone the Repository
 
 ```
 git clone https://github.com/juspay/decision-engine.git
@@ -45,10 +45,10 @@ docker-compose run --rm db-migrator && docker-compose up open-router
 
 This will:
 
-* Set up the environment
-* Set up the database with the required schema
-* Sets up redis and the server for running the application
-* Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
+- Set up the environment
+- Set up the database with the required schema
+- Sets up redis and the server for running the application
+- Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
 
 #### b. Start the Server (without resetting DB)
 

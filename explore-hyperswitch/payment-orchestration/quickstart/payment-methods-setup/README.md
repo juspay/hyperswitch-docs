@@ -9,9 +9,9 @@ The checkout page marks the final step of a customer's exploration on your websi
 
 There is no one size fits all solution when it comes to payment methods but selecting the right ones can help:
 
-* Improving conversion rates
-* Managing fraud and risk
-* Saving payment processing fees
+- Improving conversion rates
+- Managing fraud and risk
+- Saving payment processing fees
 
 ## Integration & testing
 

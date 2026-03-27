@@ -7,13 +7,13 @@ icon: anchor
 
 Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 
-* Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
-* Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
-* Providing the best payment experience for the end-user by instantly communicating payment status and fulfilling the purchase.
+- Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
+- Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
+- Providing the best payment experience for the end-user by instantly communicating payment status and fulfilling the purchase.
 
-### Configuring Webhooks
+## Configuring Webhooks
 
-#### Create an endpoint on your server
+### Create an endpoint on your server
 
 You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Hyperswitch server.
 
@@ -40,7 +40,7 @@ Hyperswitch's webhook endpoint format is as specified below, or you can obtain t
 
 ### Handling Webhooks
 
-* Below are list of events for which you will receive the webhooks:
+- Below are list of events for which you will receive the webhooks:
   1. `payment_succeeded`
   2. `payment_failed`
   3. `payment_processing`
@@ -70,24 +70,24 @@ While creating a business profile, you can specify a secret key in the `payments
 
 Creating a signature for the webhook involves these steps:
 
-* Webhook payload is encoded to JSON string.
-* `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
-* The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
+- Webhook payload is encoded to JSON string.
+- `Hmac-SHA512` signatured is generated using the payload and `payment_response_hash_key`.
+- The obtained digest is included as `x-webhook-signature-512` in the headers of the outgoing webhook.
 
 #### Webhook Validation
 
 To validate the webhook’s authenticity:
 
-* Retrieve the content of the webhook and encode it as a JSON string.
-* Generate a `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
-* Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
+- Retrieve the content of the webhook and encode it as a JSON string.
+- Generate a `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
+- Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
 
 #### Troubleshooting Signature Verification Failures
 
 If you are sure that the payload is from Hyperswitch but the signature verification fails:
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
-* Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
+- Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
+- Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
 <details>
 

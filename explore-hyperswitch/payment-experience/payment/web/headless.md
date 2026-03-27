@@ -8,9 +8,9 @@ icon: table-cells-large
 
 # Headless SDK
 
-### Customize the payment experience using Headless functions
+## Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
 Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -58,8 +58,8 @@ if (paymentMethodSession.error) {
         paymentMethodSession.getCustomerDefaultSavedPaymentMethodData();
 }
 
-//handle press for pay button 
-function handlePress() { 
+//handle press for pay button
+function handlePress() {
     if (paymentMethodSession.error) {
         // handle the case where no default customer payment method is not present
     } else {

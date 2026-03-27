@@ -14,7 +14,7 @@ In most online payments use-cases, a merchant would want to capture the funds fr
 
 But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Hyperswitch, we call this the '**Manual Capture'** flow.
 
-### Benefits of Manual Capture
+## Benefits of Manual Capture
 
 1. **Improved Control**: Funds are captured only after goods or services are delivered.
 2. **Flexibility**: You can capture the full amount or a partial amount as per the delivery.
@@ -103,5 +103,5 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
 
 Now, the merchant can either:
 
-* capture the full amount that was authorized - '**Full capture'**. Here the payments status transitions to 'SUCCEEDED'.
-* capture only a partial amount that was authorized - '**Partial Capture**'. Here the payments status transitions to 'PARTIALLY\_CAPTURED' and the remaining amount is automatically voided at the processor's end.
+- capture the full amount that was authorized - '**Full capture'**. Here the payments status transitions to 'SUCCEEDED'.
+- capture only a partial amount that was authorized - '**Partial Capture**'. Here the payments status transitions to 'PARTIALLY\_CAPTURED' and the remaining amount is automatically voided at the processor's end.

@@ -12,7 +12,7 @@ in create payments call. You can read more about it [here](../../../workflows/3d
 "request_external_three_ds_authentication": true
 ```
 
-Pass your Netcetera SDK API key to HyperSwitch SDK like below.
+Pass your Netcetera SDK API key to Hyperswitch SDK like below.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -49,12 +49,12 @@ This certificate is required is required to decrypt response from Netcetera's Pr
 Please note the above step is not required for Production environment.
 {% endhint %}
 
-### Providing the root certificate to HyperSwitch SDK
+## Providing the root certificate to Hyperswitch SDK
 
 **Android**
 
 Put the obtained certificate in assets directory in your android project.
 
-#### iOS
+### iOS
 
 Put the obtained certificate in the root directory in your iOS project.

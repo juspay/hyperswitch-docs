@@ -11,7 +11,7 @@ Hyperswitch plugins enable businesses to extend and enhance the functionality of
 
 From enabling express checkout and multi-currency payments to ensuring compliance with tax regulations, Hyperswitch plugins are designed to scale with your business, delivering unmatched flexibility and control.
 
-#### Explore Our Plugins
+## Explore Our Plugins
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>WooCommerce Plugin</strong></mark></td><td>Unlock advanced payment features, express checkout options, and fraud protection for your WooCommerce store.</td><td></td><td><a href="woocommerce-plugin/">woocommerce-plugin</a></td></tr><tr><td><mark style="color:blue;"><strong>Saleor App</strong></mark></td><td>Power your headless storefront with global payment support, intelligent routing, and unified analytics.</td><td></td><td><a href="saleor-app/">saleor-app</a></td></tr><tr><td><mark style="color:blue;"><strong>Automatic Tax Calculation for Express Checkout Wallets</strong></mark></td><td>Simplify tax compliance during wallet-based express checkouts with real-time accuracy.</td><td></td><td><a href="automatic-tax-calculation-for-express-checkout-wallets.md">automatic-tax-calculation-for-express-checkout-wallets.md</a></td></tr></tbody></table>
 

@@ -1,4 +1,5 @@
 ---
+description: Secure authentication and access control mechanisms for Hyperswitch
 icon: id-card-clip
 ---
 
@@ -6,7 +7,7 @@ icon: id-card-clip
 
 Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
 
-### Authentication Methodology for Hyperswitch APIs
+## Authentication Methodology for Hyperswitch APIs
 
 **1. Admin Services Authentication**
 
@@ -28,9 +29,9 @@ Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with networ
 
 **2. Access Controls and Role-Based Access Control (RBAC)**
 
-* **Granular Permissions:** Administrative roles are clearly defined with specific permissions, ensuring users only access functionalities necessary for their roles.
-* **Distributed Access Model:** Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
-* **Principle of Least Privilege:** Permissions are restricted to essential tasks to mitigate unauthorized access risks.
+- **Granular Permissions:** Administrative roles are clearly defined with specific permissions, ensuring users only access functionalities necessary for their roles.
+- **Distributed Access Model:** Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
+- **Principle of Least Privilege:** Permissions are restricted to essential tasks to mitigate unauthorized access risks.
 
 ### Benefits of Hyperswitch IAM
 

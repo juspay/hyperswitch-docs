@@ -7,19 +7,19 @@ icon: filter-circle-dollar
 
 # Automatic Tax calculation for Express Checkout wallets
 
-Hyperswitch supports configuring [Taxjar](https://www.taxjar.com/) in your dashboard as a tax connector so that tax amount can be calculated automatically whenever your customers change their shipping address on Express Checkout wallets like Apple pay and Paypal
+Hyperswitch supports configuring [Taxjar](https://www.taxjar.com/) in your dashboard as a tax connector so that tax amount can be calculated automatically whenever your customers change their shipping address on Express Checkout wallets like Apple Pay and PayPal
 
 ## How to configure Taxjar on Hyperswitch?
 
 You can enable taxjar from the hyperswitch dashboard:
 
-* Go to Sandbox dashboard: [https://app.hyperswitch.io](https://app.hyperswitch.io)
-* Click on Connectors and under Connectors click on Tax Processors.
-* To enable Taxjar click on the Connect button.
+- Go to Sandbox dashboard: [https://app.hyperswitch.io](https://app.hyperswitch.io)
+- Click on Connectors and under Connectors click on Tax Processors.
+- To enable Taxjar click on the Connect button.
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfw_4V1zufm4H1g4NIRI_PLzz7GsYvDLcLjjqhC_ZvyOPa3fr0RavKs9dPCORPHDh-yDxtiLZ6oPt5aZgFUfb1Eo9uT7RYyuuIvt1KBT4_upYYcG0z6RZuK9WB4hzPKa2NEV9riSN4xpZC70AyiO8tAGMS8?key=60G18knFKBKAyEyzRsD8JA" alt=""><figcaption></figcaption></figure>
 
-* Select the profile id and fill the sandbox token from your Taxjar dashboard. Also add Connector label as well, then click Connect and proceed.
+- Select the profile id and fill the sandbox token from your Taxjar dashboard. Also add Connector label as well, then click Connect and proceed.
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfSQL9j8A1VSqoj0J4Lmh3Adws7Zjr_2wrqOygaIeUkCTl8mXTFzs47hhB63GtEYJIqs0Guk-QsCTzctd6zC_dKRO2TPleduk0blC9OS1oLqgESLmxfwhKOU9guxvG1zlJYlGYQUDpCHnu_2k-AMDryR8Q?key=60G18knFKBKAyEyzRsD8JA" alt=""><figcaption></figcaption></figure>
 
@@ -29,8 +29,8 @@ You can now see Taxjar enabled on your account
 
 To enable collecting shipping details from Express checkout wallets, you need to enable '_<mark style="color:red;">Collect shipping details from wallets</mark>_' toggle.
 
-* Click on Developers then Payment Settings.
-* For the particular profile id enable the  '_<mark style="color:red;">Collect shipping details from wallets</mark>_'&#x20;
+- Click on Developers then Payment Settings.
+- For the particular profile id enable the  '_<mark style="color:red;">Collect shipping details from wallets</mark>_'&#x20;
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfcuPydxmKYpa-4hHwg9X6-SgJNg_2kz-MIiqHjvt8G-qKL-rk7nr1wLE8qP0vmO10xRXaDf3oNvzSR1g9tXXatXHraPB094wUDONI62yAn5sumturz9f6XWduNqScDndCa-ofR-BYtVJpQSjU2O-5Jvh0h?key=60G18knFKBKAyEyzRsD8JA" alt=""><figcaption></figcaption></figure>
 

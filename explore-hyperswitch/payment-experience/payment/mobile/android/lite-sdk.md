@@ -7,25 +7,25 @@ icon: mobile-screen
 
 ## Key Features of Lite SDK
 
-#### Lightweight Integration
+### Lightweight Integration
 
-* **Smaller artifact size**: <300 KB
-* **Faster initialization**: Streamlined setup process
-* **Web-based UI**: Uses web components for payment forms
-* **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
-  * Appearance customization
-  * Billing details
-  * Shipping information
-  * Payment method preferences
-  * Branding options
+- **Smaller artifact size**: <300 KB
+- **Faster initialization**: Streamlined setup process
+- **Web-based UI**: Uses web components for payment forms
+- **Reduced dependencies**: Minimal impact on app size
+- **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
+  - Appearance customization
+  - Billing details
+  - Shipping information
+  - Payment method preferences
+  - Branding options
 
 ## Requirements
 
-* Android 6.0 (API level 23) and above
-* [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
-* [Gradle](https://gradle.org/releases/) 8.8+
-* [AndroidX](https://developer.android.com/jetpack/androidx/)
+- Android 6.0 (API level 23) and above
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
+- [Gradle](https://gradle.org/releases/) 8.8+
+- [AndroidX](https://developer.android.com/jetpack/androidx/)
 
 ## 1. Setup the server
 
@@ -118,7 +118,7 @@ val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 ```
 
-#### Final Step
+### Final Step
 
 Congratulations! You have successfully integrated the Hyperswitch Lite SDK into your app. The Lite SDK provides the same powerful payment processing capabilities with a smaller footprint, making it ideal for apps where bundle size is a concern.
 

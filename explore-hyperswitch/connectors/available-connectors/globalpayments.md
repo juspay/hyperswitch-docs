@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via GlobalPayments th
 
 ![logo\_globalPayment](https://hyperswitch.io/icons/homePageIcons/logos/GlobalPaymentsLogo.svg)
 
-### About
+## About
 
 Global Payments allows businesses to accept over 140 payment types across several channels with industry-specific solutions. Merchants can use it to set up subscriptions and recurring automatic payments, along with multiple customizable options for checkout. To know about more about payment methods supported by Globalpayments via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 

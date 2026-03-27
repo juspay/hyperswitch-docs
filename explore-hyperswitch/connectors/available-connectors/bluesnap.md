@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via Bluesnap through 
 
 BlueSnap is a payment platform that allows businesses to easily accept online and mobile payments across the world. BlueSnap payment gateway integration can accept payments for e-commerce transactions, subscription billing models, and other online payment businesses need. To know about more about payment methods supported by Bluesanp via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Bluesnap via Hyperswitch
+## Activating Bluesnap via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Bluesnap in order to proceed. In case you aren't, you can quickly setup your Bluesnap account [here](https://home.bluesnap.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

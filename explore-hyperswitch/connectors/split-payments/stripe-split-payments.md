@@ -5,7 +5,7 @@ icon: stripe
 
 # Stripe Split Settlement
 
-### Overview
+## Overview
 
 Stripe's Split Settlements functionality allows you to create charges and distribute payments between your platform and connected accounts (sellers or service providers). This feature is implemented in Hyperswitch through the `SplitPaymentsRequest` and supports both payment authorization and [refund processing](https://docs.hyperswitch.io/api-reference/refunds).
 
@@ -79,8 +79,8 @@ JSON
 
 #### Refund Parameters
 
-* revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
-* revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
+- revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
+- revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
 
 ### Recurring Payments (CIT/MIT)
 
@@ -91,31 +91,31 @@ In a CIT call, passing `customer_id` is mandatory along with the Stripe Split se
 JSON
 
 ```json
-{  
-    "customer_id": "StripeCustomer123",  
-    "split_payments": {  
-        "stripe_split_payment": {  
-            "charge_type": "direct",  
-            "application_fees": 100,  
-            "transfer_account_id": "acct_123456789"  
-        }  
-    },  
-    "customer_acceptance": {  
-        "acceptance_type": "offline",  
-        "accepted_at": "1963-05-03T04:07:52.723Z",  
-        "online": {  
-            "ip_address": "125.0.0.1",  
-            "user_agent": "amet"  
-        }  
-    }  
+{
+    "customer_id": "StripeCustomer123",
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 100,
+            "transfer_account_id": "acct_123456789"
+        }
+    },
+    "customer_acceptance": {
+        "acceptance_type": "offline",
+        "accepted_at": "1963-05-03T04:07:52.723Z",
+        "online": {
+            "ip_address": "125.0.0.1",
+            "user_agent": "amet"
+        }
+    }
 }
 ```
 
 ### Implementation Notes
 
-* For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.
-* For **destination** charges, the `transfer_account_id` cannot be your platform account ID as Stripe doesn't allow charges to your own account.
-* The system validates that MIT calls match the split settlement configuration from the original CIT call.
+- For **direct** charges, the `transfer_account_id` must be the connected account ID, not your platform account ID.
+- For **destination** charges, the `transfer_account_id` cannot be your platform account ID as Stripe doesn't allow charges to your own account.
+- The system validates that MIT calls match the split settlement configuration from the original CIT call.
 
 <details>
 
@@ -198,7 +198,7 @@ JSON
     "off_session": true,
     "recurring_details": {
         "type": "payment_method_id",
-        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response    
+        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response
     },
     "split_payments": {
         "stripe_split_payment": {

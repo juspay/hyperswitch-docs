@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via Volt through Hype
 
 Volt-io is a payment platform that intends to build a global infrastructure and create a single gateway for global payments and transactions. This is an unprecedented attempt to transform the market and remove payment barriers in e-commerce. To know more about payment methods supported by Volt via Hyperswitch click [here](https://www.volt.io/demo/).
 
-### Activating Volt via Hyperswitch
+## Activating Volt via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Volt for account creation, you can register your Volt account [here](https://www.clubprophet.com/products---prophetpay).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).

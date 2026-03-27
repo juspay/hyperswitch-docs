@@ -7,9 +7,9 @@ icon: arrow-progress
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
-### Integration Path
+## Integration Path
 
-#### Server-to-Server (S2S) Payments
+### Server-to-Server (S2S) Payments
 
 Refer to this section if you intend to use the SDK exclusively for vaulting/storing card details. In this scenario, the actual payment execution is handled via S2S API calls from your backend to Hyperswitch, offering you more granular control over the transaction lifecycle.
 {% endhint %}
@@ -19,7 +19,6 @@ Payment method flows leverages all the capabilities available in [Payments](http
 The business can use the Payment Method SDK or `/payment-methods` API to first capture the card details and create a `payment_method_id` &#x20;
 
 The business can then use the `payment_method_id` in `/payments` API to perform all functionalities supported by the [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) flow.&#x20;
-
 
 
 **Payment Method Lifecycle**
@@ -38,8 +37,8 @@ Once the `payment_method_id` is generated, it serves as a reusable token. The bu
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
 
-* Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
-* Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
+- Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
+- Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
 | **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
 | --------------- | --------------------------------- | --------------------- |

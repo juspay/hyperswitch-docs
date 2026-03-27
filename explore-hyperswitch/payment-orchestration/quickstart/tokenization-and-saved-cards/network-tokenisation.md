@@ -36,8 +36,8 @@ Currently supported: Visa, Mastercard, American Express
 
 Juspay is certified as both a Token Requestor (TR) and Token Service Provider (TSP). This means:
 
-* As a Token Requestor, we initiate token provisioning with card networks on your behalf.
-* As a TSP, we securely manage token lifecycle events: provisioning, detokenization, refresh, suspension, and deletion.
+- As a Token Requestor, we initiate token provisioning with card networks on your behalf.
+- As a TSP, we securely manage token lifecycle events: provisioning, detokenization, refresh, suspension, and deletion.
 
 Juspay’s tokenization suite is capable of handling the complete token lifecycle management. We’ve issued more than 150 million network tokens globally.
 
@@ -51,7 +51,7 @@ We also offer you the flexibility to bring your own Token Requestor credentials 
 
 Hyperswitch supports three distinct Network Tokenization flows, depending on how you’re integrated:
 
-#### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
 
 When you process payments using Hyperswitch’s orchestration layer, you can perform tokenized payments directly - Hyperswitch handles provisioning and using the network token dynamically at payment time. We also take care of optimizing authorization rates and latency by switching between network tokens and clear PAN.
 
@@ -71,10 +71,10 @@ _No changes required to your PSP integrations — Hyperswitch handles the token 
 
 In this flow:
 
-* Hyperswitch dynamically provisions a network token at the time of payment.
-* The network token is used in real-time to complete the transaction.
-* If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
-* Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
+- Hyperswitch dynamically provisions a network token at the time of payment.
+- The network token is used in real-time to complete the transaction.
+- If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
+- Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
 
 #### Flow Summary:
 
@@ -98,9 +98,9 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 In this flow:
 
-* You integrate with [Hyperswitch’s standalone Vault service](../../../workflows/vault/).
-* Card details are securely captured and stored alongside PSP tokens and network tokens
-* These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
+- You integrate with [Hyperswitch’s standalone Vault service](../../../workflows/vault/).
+- Card details are securely captured and stored alongside PSP tokens and network tokens
+- These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
 
 #### Flow Summary:
 
@@ -123,19 +123,19 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 This is a lightweight, standalone integration when you:
 
-* Already have your own PCI compliant vault or orchestration system but want to add Network Tokenization for better auth rates and lower costs
-* You only want to use Juspay to provision and manage network tokens
+- Already have your own PCI compliant vault or orchestration system but want to add Network Tokenization for better auth rates and lower costs
+- You only want to use Juspay to provision and manage network tokens
 
 #### Flow Summary:
 
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
-* You sign up for Juspay’s Network Tokenization service by reaching out to our support team
-* You can either use Juspay’s TR ID or setup your own TR ID
-* You use [Juspay’s Tokenization APIs](https://juspay.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
-  * Generate Network Tokens for a given PAN
-  * Update or delete tokens
-  * Retrieve Network tokens and cryptogram to make payment through your own payments system
+- You sign up for Juspay’s Network Tokenization service by reaching out to our support team
+- You can either use Juspay’s TR ID or setup your own TR ID
+- You use [Juspay’s Tokenization APIs](https://juspay.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
+  - Generate Network Tokens for a given PAN
+  - Update or delete tokens
+  - Retrieve Network tokens and cryptogram to make payment through your own payments system
 
 #### How to Try?
 

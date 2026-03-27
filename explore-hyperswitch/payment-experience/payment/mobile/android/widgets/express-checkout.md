@@ -66,4 +66,3 @@ private fun onExpressCheckoutResult(result: ExpressCheckoutPaymentMethodLauncher
     }
 }
 ```
-

@@ -6,14 +6,13 @@ hidden: true
 # Prophetpay
 
 
-
 {% hint style="info" %}
 This section gives you an overview of how to make payments via Prophetpay through Hyperswitch
 {% endhint %}
 
 ![logo\_discord](../../../../../.gitbook/assets/logo_cps_new.jpg)
 
-### About
+## About
 
 Prophetpay is a payment service provider that allows online businesses to accept and process payments through different integrated payment methods. To know more about payment methods supported by Prophetpay via hyperswitch click [here](https://hyperswitch.io/pm-list).
 

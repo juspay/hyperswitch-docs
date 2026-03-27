@@ -4,7 +4,7 @@ icon: server
 
 # Server Setup
 
-### Create a payment using S2S Call
+## Create a payment using S2S Call
 
 To create a payment intent, send a request to either our sandbox or production endpoint. For detailed information, refer to the [**API Reference**](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) documentation.
 

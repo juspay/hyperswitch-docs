@@ -1,6 +1,5 @@
 ---
-description: Review upcoming Juspay Hyperswitch Reconciliation enhancements including AI-driven exception handling and advanced data management capabilities
----
+description: Review upcoming Juspay Hyperswitch Reconciliation enhancements including AI-driven exception handling and advanced data management capabilities---
 
 # Juspay Hyperswitch Reconciliation Roadmap
 

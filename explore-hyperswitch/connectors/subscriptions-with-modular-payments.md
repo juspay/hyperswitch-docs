@@ -1,13 +1,12 @@
 ---
 description: Augment your subscriptions with payments orchestration capabilities
-icon: repeat
----
+icon: repeat---
 
 # Subscriptions with Modular Payments
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
-### Benefits
+## Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
 2. Improved reliability with a multi-PSP setup
@@ -63,8 +62,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch", 
-        "additional_secret": "hyperswitch" 
+        "merchant_secret": "hyperswitch",
+        "additional_secret": "hyperswitch"
     },
     "metadata": {
         "site": "test"
@@ -87,7 +86,7 @@ Configure Hyperswitch Webhook endpoint for invoice events on the subscription pr
 {% endstep %}
 
 {% step %}
-Fetch the plan details (to be setup prior on subscription provider)
+Fetch the plan details (to be set up prior on subscription provider)
 
 ```
 curl --location 'http://<base_url>/subscriptions/plans' \

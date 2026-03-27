@@ -68,7 +68,7 @@ Consider the below code for your reference.
   Configuration configuration= Configuration(appearance: appearance)
   configuration.displaySavedPaymentMethods: true,
   configuration.displaySavedPaymentMethodsCheckbox: true,
- 
+
   PaymentSheetParams params = PaymentSheetParams(
       publishableKey: "YOUR_PUBLISHABLE_KEY",
       clientSecret: clientSecret,
@@ -84,7 +84,6 @@ Set `disableBranding` to false to disable Hyperswitch branding.\
 Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
-
 
 
 ## Custom Placeholders And Branding
@@ -123,7 +122,7 @@ ColorsObject lightColorsObject = ColorsObject(
       icon: '#F92672',
       error: '#F92672'
     );
-    
+
  ColorsObject darkColorsObject = ColorsObject(
       primary: '#00ff0099',
       background: '#ff0000',
@@ -172,7 +171,6 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 Now you can test the payments on your app and go-live!
 
 
-
 ## Languages
 
 Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
@@ -186,42 +184,41 @@ Appearance appearance = Appearance(
 
 We support the following locales -
 
-* Arabic (ar)
-* Hebrew (he)
-* German (de)
-* English (en)
-* English (en-GB )
-* Japanese (ja)
-* French (fr)
-* French (Belgium) (fr-BE)
-* Spanish (es)
-* Catalan (ca)
-* Portuguese (pt)
-* Italian (it)
-* Polish (pl)
-* German (de)
-* Dutch (nl)
-* Dutch (Belgium) (nl-BE)
-* Swedish (sv)
-* Russian (ru)
-* Lithuanian (lt)
-* Czech (cs)
-* Slovak (sk)
-* Icelandic (is)
-* Welsh (cy)
-* Greek (el)
-* Estonian (et)
-* Arabic (ar)
-* Finnish (fi)
-* Norwegian (nb)
-* Bosnian (bs)
-* Danish (da)
-* Malay (ms)
-* Turkish (tr-CY)
+- Arabic (ar)
+- Hebrew (he)
+- German (de)
+- English (en)
+- English (en-GB )
+- Japanese (ja)
+- French (fr)
+- French (Belgium) (fr-BE)
+- Spanish (es)
+- Catalan (ca)
+- Portuguese (pt)
+- Italian (it)
+- Polish (pl)
+- German (de)
+- Dutch (nl)
+- Dutch (Belgium) (nl-BE)
+- Swedish (sv)
+- Russian (ru)
+- Lithuanian (lt)
+- Czech (cs)
+- Slovak (sk)
+- Icelandic (is)
+- Welsh (cy)
+- Greek (el)
+- Estonian (et)
+- Arabic (ar)
+- Finnish (fi)
+- Norwegian (nb)
+- Bosnian (bs)
+- Danish (da)
+- Malay (ms)
+- Turkish (tr-CY)
 
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
-

@@ -13,9 +13,9 @@ This section gives you an overview of how to make payments via Klarna through Hy
 
 It allows businesses to provide direct payments, pay later options, and installment plans in a one-click purchase experience. To know about more about payment methods supported by Klarna via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Klarna via Hyperswitch
+## Activating Klarna via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with Klarna in order to proceed. In case you aren't, you can quickly setup your Klarna account [here](https://www.klarna.com/us/business/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

@@ -1,3 +1,7 @@
+---
+description: Configure Google Pay with Hyperswitch decryption for flexible processor routing
+---
+
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the Google Pay token using your shared keys. This allows Hyperswitch to route the payment to any downstream processor.
@@ -17,7 +21,7 @@ To configure Google Pay on Hyperswitch follow the steps given below -
 2. In the Connectors tab, select your processor
 3. While selecting Payment Methods, click on Google Pay in the Wallet section, In 'Choose Configuration Method' tab select 'Direct'.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-12 at 3.09.17 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-12 at 3.09.17 PM.png" alt=""><figcaption></figcaption></figure>
 
 4. Enter required fields and save the changes.
 5. In Google Pay Merchant Name, provide a user-visible merchant name

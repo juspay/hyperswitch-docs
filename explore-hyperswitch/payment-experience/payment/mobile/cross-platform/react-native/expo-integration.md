@@ -14,10 +14,10 @@ The Hyperswitch SDK uses native modules, so the app must be built with native An
 The Hyperswitch SDK has peer dependencies that must be installed before installing the SDK.
 
 ```
-# Install peer dependencies
+## Install peer dependencies
 yarn add @sentry/react-native react-native-inappbrowser-reborn react-native-svg
 
-# Install Hyperswitch SDK
+## Install Hyperswitch SDK
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
@@ -31,10 +31,10 @@ npx expo prebuild --clean
 
 This command will:
 
-* Generate **Android and iOS native folders**
-* Run **CocoaPods** for iOS dependencies
-* Configure **TurboModule code generation**
-* **Auto-link native modules**
+- Generate **Android and iOS native folders**
+- Run **CocoaPods** for iOS dependencies
+- Configure **TurboModule code generation**
+- **Auto-link native modules**
 
 ### 3. Implement the Payment Flow
 
@@ -46,4 +46,3 @@ After completing the Expo setup, **follow the same steps as the React Native int
 4. Present the payment sheet using **presentPaymentSheet**
 
 Refer to the [**React Native integration steps**](react-native-with-rest-api-integration.md) for the complete payment flow implementation.
-
