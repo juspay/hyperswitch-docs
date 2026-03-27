@@ -1,5 +1,5 @@
 ---
-description: Setup PayPal on your application
+description: Setup PayPal on your application using Juspay Hyperswitch
 icon: paypal
 ---
 
@@ -7,7 +7,7 @@ icon: paypal
 
 PayPal is a digital wallet that lets customers load balance onto the wallet and as well as save their cards for quicker one-touch checkout. PayPal currently supports 200+ countries and 25 currencies.
 
-## **How to configure PayPal on Hyperswitch?**
+## **How to configure PayPal on Juspay Hyperswitch?**
 
 Since PayPal is both a payment method (wallet) as well as a payment processor, Hyperswitch gives you the flexibility to configure PayPal through multiple avenues.
 

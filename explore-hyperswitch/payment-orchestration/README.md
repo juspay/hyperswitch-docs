@@ -1,11 +1,11 @@
 ---
-description: Unified payment orchestration platform for accepting payments, managing payouts, and recurring payments
+description: Juspay Hyperswitch's unified payment orchestration platform for accepting payments, managing payouts, and recurring payments
 icon: arrow-progress
 ---
 
 # Payment Orchestration
 
-Hyperswitch's Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.
+Juspay Hyperswitch's Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.
 
 Whether you're:
 
@@ -13,7 +13,7 @@ Whether you're:
 - **Managing payouts** to vendors
 - **Making recurring payments**
 
-Hyperswitch provides a **unified solution** to maximize efficiency while minimizing costs.
+Juspay Hyperswitch provides a **unified solution** to maximize efficiency while minimizing costs.
 
 Built for businesses of all sizes and types—**e-commerce platforms, SaaS companies, and marketplaces**—our orchestration platform ensures **reliability and flexibility**, helping you stay ahead in a competitive landscape.
 

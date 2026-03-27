@@ -1,4 +1,5 @@
 ---
+description: Extend authorization hold period using Juspay Hyperswitch
 hidden: true
 icon: clock
 ---
@@ -9,7 +10,7 @@ icon: clock
 
 Extended Authorization allows merchants to extend the authorization hold period beyond the standard window — giving more flexibility before a transaction is captured or settled.
 
-This is particularly useful for industries where the final transaction amount or service completion time isn’t known upfront — such as:
+This is particularly useful for industries where the final transaction amount or service completion time isn't known upfront — such as:
 
 - Hospitality (room service or stay extensions)
 - Car rentals (extra mileage, damages)
@@ -19,7 +20,7 @@ Example: A hotel may authorize a card for $500 during check-in but extend the au
 
 ### Current PSP Support
 
-Hyperswitch currently supports Extended Authorization for the following PSPs:
+Juspay Hyperswitch currently supports Extended Authorization for the following PSPs:
 
 - Stripe
 

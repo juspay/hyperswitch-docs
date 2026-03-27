@@ -1,7 +1,7 @@
 ---
 description: >-
   Use Rules and SCA exemptions to reduce cardholder friction on eligible
-  transactions
+  transactions using Juspay Hyperswitch
 icon: chart-simple-horizontal
 ---
 

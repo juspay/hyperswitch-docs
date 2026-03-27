@@ -1,4 +1,5 @@
 ---
+description: Extended Authorization using Juspay Hyperswitch
 icon: square-tenge
 ---
 

@@ -1,11 +1,11 @@
 ---
-description: Secure authentication and access control mechanisms for Hyperswitch
+description: Secure authentication and access control mechanisms for Juspay Hyperswitch
 icon: id-card-clip
 ---
 
 # Identity and Access Management
 
-Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
+Identity and Access Management (IAM) in Juspay Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
 
 ## Authentication Methodology for Hyperswitch APIs
 
@@ -19,13 +19,13 @@ Merchants accessing Hyperswitch APIs benefit from strong authentication mechanis
 
 **3. Vault Authentication**
 
-The Hyperswitch Vault employs a distributed key management approach. Key custodians must collaborate to initiate the application, ensuring no single individual can independently alter or access the vault. This design prevents unauthorized tampering and enhances the overall security framework​​.
+The Juspay Hyperswitch Vault employs a distributed key management approach. Key custodians must collaborate to initiate the application, ensuring no single individual can independently alter or access the vault. This design prevents unauthorized tampering and enhances the overall security framework​​.
 
 ### Identity and Access Management in AWS
 
 **1. User Authentication**
 
-Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
+Juspay Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
 
 **2. Access Controls and Role-Based Access Control (RBAC)**
 

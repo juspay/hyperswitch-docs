@@ -1,12 +1,12 @@
 ---
 description: >-
   Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
-  authorize the payment with any payment provider (PSP).
+  authorize the payment with any payment provider (PSP) using Juspay Hyperswitch.
 hidden: true
 icon: up-right-from-square
 ---
 
-# Copy of Standalone 3D Secure (via Hyperswitch)
+# Copy of Standalone 3D Secure (via Juspay Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
 

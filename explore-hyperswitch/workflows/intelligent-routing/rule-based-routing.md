@@ -1,7 +1,7 @@
 ---
 description: >-
   Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+  various payment parameters using Juspay Hyperswitch
 icon: ruler
 ---
 

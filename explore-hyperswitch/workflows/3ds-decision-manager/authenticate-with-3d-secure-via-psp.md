@@ -1,5 +1,5 @@
 ---
-description: Perform 3D Secure authentication through your payment service provider
+description: Perform 3D Secure authentication through your payment service provider using Juspay Hyperswitch
 icon: rotate-exclamation
 ---
 

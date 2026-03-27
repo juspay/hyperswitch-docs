@@ -1,14 +1,14 @@
 ---
 description: >-
   Augments payment processing capabilities with your preferred Subscription
-  Solution provider
+  Solution provider using Juspay Hyperswitch
 hidden: true
 icon: repeat
 ---
 
 # Subscriptions
 
-Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
+Juspay Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
 
 - **Flexibility with Payment Processors**
   - Choose any payment processor based on better costs or authorization rates.

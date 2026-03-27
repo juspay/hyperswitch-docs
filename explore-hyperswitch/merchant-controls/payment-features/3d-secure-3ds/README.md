@@ -1,4 +1,5 @@
 ---
+description: 3D Secure (3DS) authentication with Juspay Hyperswitch
 hidden: true
 icon: shield-check
 ---

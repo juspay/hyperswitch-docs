@@ -1,14 +1,14 @@
 ---
 description: >-
   Best for teams with strict existing vault dependencies who want to leverage
-  Hyperswitch for payment routing.
+  Juspay Hyperswitch for payment routing.
 hidden: true
 icon: up-right-from-square
 ---
 
 # External  Vault SDK + Storage
 
-In this approach, card data is captured and tokenized using an external vault SDK. Hyperswitch backend receives vault tokens and handles orchestration, routing, retries, and PSP communication via connectors.
+In this approach, card data is captured and tokenized using an external vault SDK. Juspay Hyperswitch backend receives vault tokens and handles orchestration, routing, retries, and PSP communication via connectors.
 
 The merchant configures connectors and orchestration logic in the Hyperswitch Dashboard. Hyperswitch does not participate in card capture or storage.
 

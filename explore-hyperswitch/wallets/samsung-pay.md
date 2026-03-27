@@ -1,4 +1,5 @@
 ---
+description: Set up Samsung Pay on your application using Juspay Hyperswitch
 icon: mobile-signal
 ---
 

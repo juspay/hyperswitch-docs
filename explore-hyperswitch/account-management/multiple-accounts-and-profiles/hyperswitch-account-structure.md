@@ -1,11 +1,11 @@
 ---
 icon: people-roof
-description: Set up organization, merchant, and profile hierarchy in Hyperswitch to manage multiple business units
+description: Set up organization, merchant, and profile hierarchy in Juspay Hyperswitch to manage multiple business units
 ---
 
 # Organization, Merchant and Profile Setup
 
-Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs:
+Adapting the right account structure while setting up Juspay Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs:
 
 - Whether you are a business with multiple product lines and business units within each line, or a marketplace with multiple sub-merchants, each having multiple business units
 - Whether you want to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own

@@ -1,5 +1,5 @@
 ---
-description: Payment processing options when using external vault providers for token management
+description: Payment processing options when using external vault providers for token management with Juspay Hyperswitch
 icon: money-bill-wave
 ---
 

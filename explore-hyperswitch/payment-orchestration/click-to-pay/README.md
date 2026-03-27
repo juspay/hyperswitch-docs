@@ -1,4 +1,5 @@
 ---
+description: Enable Click To Pay for seamless checkout experiences with Juspay Hyperswitch
 icon: chevrons-right
 ---
 

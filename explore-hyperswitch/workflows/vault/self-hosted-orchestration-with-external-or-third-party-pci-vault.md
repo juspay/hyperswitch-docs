@@ -1,11 +1,11 @@
 ---
-description: Self-host Hyperswitch while outsourcing PCI compliance to external vault providers
+description: Self-host Juspay Hyperswitch while outsourcing PCI compliance to external vault providers
 icon: up-right-from-square
 ---
 
 # Self-Hosted Orchestration with external or third party PCI Vault
 
-> **Deployment Model:** Merchant self-hosts Hyperswitch Orchestration Layer
+> **Deployment Model:** Merchant self-hosts Juspay Hyperswitch Orchestration Layer
 >
 > **PCI Scope:** Outsourced to an external vault provider like VGS
 

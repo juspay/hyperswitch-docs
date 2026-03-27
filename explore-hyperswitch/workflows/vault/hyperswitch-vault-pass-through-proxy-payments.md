@@ -1,14 +1,14 @@
 ---
-description: Send payments to PSPs using Vault tokens without handling raw card data
+description: Send payments to PSPs using Juspay Hyperswitch Vault tokens without handling raw card data
 hidden: true
 icon: arrows-repeat
 ---
 
-# Hyperswitch Vault: Pass Through Proxy Payments
+# Juspay Hyperswitch Vault: Pass Through Proxy Payments
 
 **📌 What is it?**
 
-The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
+The **Proxy Payments Service** allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
 
 ## ✅ Why use it?
 

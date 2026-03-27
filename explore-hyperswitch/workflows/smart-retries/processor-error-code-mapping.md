@@ -1,5 +1,5 @@
 ---
-description: AI-powered error code classification for intelligent payment retry strategies
+description: AI-powered error code classification for intelligent payment retry strategies using Juspay Hyperswitch
 icon: signs-post
 ---
 

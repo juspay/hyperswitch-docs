@@ -1,6 +1,6 @@
 ---
 description: >-
-  Simplify implementation of orchestration and payment outcomes by taking
+  Simplify implementation of orchestration and payment outcomes with Juspay Hyperswitch by taking
   advantage of normalized request and response fields and values to avoid
   changes by engineering teams
 icon: arrow-progress

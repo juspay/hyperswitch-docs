@@ -4,7 +4,7 @@ icon: flux-capacitor
 
 # Intelligent Routing
 
-The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
+The Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
 
 ## Types of Intelligent Routing
 

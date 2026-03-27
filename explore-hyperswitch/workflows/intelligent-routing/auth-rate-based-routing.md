@@ -1,4 +1,5 @@
 ---
+description: Auth Rate Based Routing using Juspay Hyperswitch
 icon: badge-check
 ---
 

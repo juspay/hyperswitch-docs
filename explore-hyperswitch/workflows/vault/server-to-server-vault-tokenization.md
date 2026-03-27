@@ -1,6 +1,6 @@
 ---
 description: >-
-  Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
+  Server to Server tokenization with Juspay Hyperswitch Vault Service for PCI compliant
   merchants
 hidden: true
 icon: server
@@ -10,7 +10,7 @@ icon: server
 
 ## Secure, Direct Card Tokenization from Your Server
 
-Tokenize payment cards directly from your servers to Hyperswitch's Vault Service, bypassing client-side tokenization. This server-to-server approach provides enhanced security and flexibility, ideal for PCI-compliant businesses managing payment methods programmatically.
+Tokenize payment cards directly from your servers to Juspay Hyperswitch's Vault Service, bypassing client-side tokenization. This server-to-server approach provides enhanced security and flexibility, ideal for PCI-compliant businesses managing payment methods programmatically.
 
 ### Key Features
 

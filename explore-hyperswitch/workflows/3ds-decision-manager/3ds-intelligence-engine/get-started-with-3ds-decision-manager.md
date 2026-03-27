@@ -1,5 +1,5 @@
 ---
-description: Use Rules to reduce cardholder friction on transactions
+description: Use Rules to reduce cardholder friction on transactions using Juspay Hyperswitch
 icon: screwdriver-wrench
 ---
 

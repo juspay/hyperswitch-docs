@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Hyperswitch
+description: Accept pay later options through Juspay Hyperswitch
 icon: calendar-day
 ---
 

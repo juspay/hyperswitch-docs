@@ -1,5 +1,5 @@
 ---
-description: Route transactions through processors based on volume distribution
+description: Route transactions through processors based on volume distribution using Juspay Hyperswitch
 icon: chart-simple
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Set up Google Pay on your application
+description: Set up Google Pay on your application using Juspay Hyperswitch
 icon: google
 ---
 

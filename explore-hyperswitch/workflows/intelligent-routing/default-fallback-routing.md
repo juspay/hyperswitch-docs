@@ -1,7 +1,7 @@
 ---
 description: >-
   Fallback is a priority order of all the configured processors which is used to
-  route traffic standalone or when other routing rules are not applicable.
+  route traffic standalone or when other routing rules are not applicable using Juspay Hyperswitch.
 icon: shield-exclamation
 ---
 

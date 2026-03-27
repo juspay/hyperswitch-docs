@@ -1,5 +1,5 @@
 ---
-description: Accept crypto payments on your application
+description: Accept crypto payments on your application using Juspay Hyperswitch
 icon: bitcoin-sign
 ---
 

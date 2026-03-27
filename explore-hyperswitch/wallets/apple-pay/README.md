@@ -1,5 +1,5 @@
 ---
-description: Guide to using Apple Pay payment method on Hyperswitch
+description: Guide to using Apple Pay payment method on Juspay Hyperswitch
 icon: apple-pay
 ---
 

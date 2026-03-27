@@ -1,11 +1,11 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Automatically retry payments with an alternative processor using Juspay Hyperswitch
 icon: magnifying-glass-arrows-rotate
 ---
 
 # Smart Retries
 
-Smart retry is a Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
+Smart retry is a Juspay Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
 
 The Auto Retry engine handles varied Retry strategy based on the type of error encountered such as:
 

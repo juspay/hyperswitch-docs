@@ -1,11 +1,11 @@
 ---
-description: Modular vaulting in Hyperswitch
+description: Modular vaulting in Juspay Hyperswitch
 icon: vault
 ---
 
 # Vault
 
-Hyperswitch offers flexible vault deployment options to suit different merchant PCI profiles and hosting preferences. Whether you’re self-hosting Hyperswitch with your own PCI setup or leveraging the fully managed SaaS orchestration layer, Hyperswitch’s modular vault architecture adapts seamlessly to your compliance boundary.\
+Juspay Hyperswitch offers flexible vault deployment options to suit different merchant PCI profiles and hosting preferences. Whether you’re self-hosting Hyperswitch with your own PCI setup or leveraging the fully managed SaaS orchestration layer, Hyperswitch’s modular vault architecture adapts seamlessly to your compliance boundary.\
 \
 This section outlines the various Vault Flavors supported by Hyperswitch - covering self-hosted and SaaS environments, in-house and outsourced PCI models, and integrations with Juspay-hosted or third-party vaults such as VGS and Tokenex. Each model includes sequence diagrams, supported feature sets, and references to relevant configuration guides.
 

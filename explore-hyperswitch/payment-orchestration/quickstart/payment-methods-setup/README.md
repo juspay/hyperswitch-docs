@@ -1,5 +1,5 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: Setup the payment methods that you will be accepting using Juspay Hyperswitch
 icon: credit-card
 ---
 

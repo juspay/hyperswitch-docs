@@ -1,13 +1,13 @@
 ---
-description: A brief summary of PCI compliance for Hyperswitch Cloud users
+description: A brief summary of PCI compliance for Juspay Hyperswitch Cloud users
 icon: credit-card
 ---
 
 # PCI Compliance
 
-Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that sensitive cardholder data is securely processed, stored, and transmitted.&#x20;
+Payment Card Industry Data Security Standard (PCI DSS) compliance ensures that sensitive cardholder data is securely processed, stored, and transmitted. 
 
-**Hyperswitch Cloud provides out-of-the-box PCI DSS Level 1 compliance**—the highest level of certification—so you can handle payments securely without worrying about card storage or compliance complexities yourself.
+**Juspay Hyperswitch Cloud provides out-of-the-box PCI DSS Level 1 compliance**—the highest level of certification—so you can handle payments securely without worrying about card storage or compliance complexities yourself.
 
 ## **Key Features of PCI Compliance on Hyperswitch Cloud**
 
