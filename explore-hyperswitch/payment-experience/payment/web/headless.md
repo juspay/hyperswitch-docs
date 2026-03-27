@@ -12,7 +12,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
 </strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{
@@ -39,13 +39,15 @@ paymentSession = hyper.initPaymentSession({
 });
 ```
 
-| options (Required)                   | Description                                                      |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
+| options (Required)                   | Description                                                     |
+| ------------------------------------ | --------------------------------------------------------------- |
+| `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
 #### 4. Craft a customized payments experience
 
-Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
+Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` function, using which you can confirm and handle the payment session.\
+\
+**4a. Confirm using Customer Default Payment Method:**
 
 ```javascript
 paymentMethodSession = await paymentSession.getCustomerSavedPaymentMethods();
@@ -58,8 +60,8 @@ if (paymentMethodSession.error) {
         paymentMethodSession.getCustomerDefaultSavedPaymentMethodData();
 }
 
-//handle press for pay button 
-function handlePress() { 
+// handle submit for pay button 
+function handleSubmit() { 
     if (paymentMethodSession.error) {
         // handle the case where no default customer payment method is not present
     } else {
@@ -92,10 +94,105 @@ function handlePress() {
 }
 ```
 
-&#x20;**Payload for** `confirmWithCustomerDefaultPaymentMethod(payload)`
+**Payload for** `confirmWithCustomerDefaultPaymentMethod(payload)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong> </p><p>By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
+<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
 
 **ConfirmParams object**
 
 <table><thead><tr><th width="281">confirmParams</th><th>Description</th></tr></thead><tbody><tr><td><code>return_url(string)</code></td><td>The url your customer will be directed to after they complete payment.</td></tr></tbody></table>
+
+**4b. Confirm using Last Used Payment Method:**
+
+```javascript
+paymentMethodSession = await paymentSession.getCustomerSavedPaymentMethods();
+
+if (paymentMethodSession.error) {
+    // handle the case where no default customer payment method is not present
+} else {
+    // use the customer_last_used_payment_method_data to fulfill your usecases (render UI)
+    const customer_last_used_payment_method_data =
+        paymentMethodSession.getCustomerLastUsedPaymentMethodData();
+}
+
+// handle submit for pay button 
+function handleSubmit() { 
+    if (paymentMethodSession.error) {
+        // handle the case where no default customer payment method is not present
+    } else {
+        // use the confirmWithLastUsedPaymentMethod function to confirm and handle the payment session response
+        const { error, status } = await
+        paymentMethodSession.
+            confirmWithLastUsedPaymentMethod({
+                confirmParams: {
+                    // Make sure to change this to your payment completion page
+                    return_url: "https://example.com/complete"
+                },
+                // if you wish to redirect always, otherwise it is defaulted to "if_required"
+                redirect: "always",
+            });
+
+        // use error, status to complete the payment journey
+        if (error) {
+            if (error.message) {
+                // handle error messages
+                setMessage(error.message);
+            } else {
+                setMessage("An unexpected error occurred.");
+            }
+        }
+        if (status) {
+            // handle payment status
+            handlePaymentStatus(status);
+        }
+    }
+}
+```
+
+**Payload for** `confirmWithLastUsedPaymentMethod(payload)`
+
+<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithLastUsedPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
+
+**ConfirmParams object**
+
+<table><thead><tr><th width="281">confirmParams</th><th>Description</th></tr></thead><tbody><tr><td><code>return_url(string)</code></td><td>The url your customer will be directed to after they complete payment.</td></tr></tbody></table>
+
+#### 5. Add CVC Collection (Non PCI Approach)
+
+The `CardCVCElement` renders a secure iframe to collect the customer’s CVC without exposing sensitive data to your application. You can follow the [React Integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration).
+
+```javascript
+import React, { useState, useEffect } from "react";
+import {
+  CardCVCElement,
+  useHyper,
+} from "@juspay-tech/react-hyper-js";
+
+export default function Checkout() {
+  const hyper = useHyper();
+
+ // handle submit for pay button 
+ function handleSubmit() {
+   // You can follow the same as mentioned in 4. Craft a customized payments experience
+ } 
+
+  return (
+    <div>
+      {/* Render your saved card UI here */}
+
+      {/* CVC Element */}
+      <div style={{ marginTop: "16px" }}>
+        <CardCVCElement id="card-cvc-element" />
+      </div>
+
+      {/* Pay Button */}
+      <button onClick={handleSubmit} disabled={isProcessing}>
+        {isProcessing ? "Processing..." : "Pay Now"}
+      </button>
+
+      {/* Error Message */}
+      {message && <div>{message}</div>}
+    </div>
+  );
+}
+```
