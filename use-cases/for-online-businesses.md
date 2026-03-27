@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for your online business
+description: Explore payment use cases to streamline your online payment integration
 hidden: true
 noIndex: true
 ---
