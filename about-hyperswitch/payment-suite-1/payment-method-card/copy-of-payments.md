@@ -26,7 +26,7 @@ The Payment Method SDK provides APIs to securely capture and tokenize payment cr
 
 **1. Create Customer (Server-Side)**
 
-Your server begins by calling the Hyperswitch [`/v2/customers`](https://api-reference.hyperswitch.io/v1/customers/customers--create) API to register the customer. Hyperswitch creates a profile and returns a unique `customer_id` that will be associated with the payment method.
+Your server begins by calling the Juspay Hyperswitch [`/v2/customers`](https://api-reference.hyperswitch.io/v1/customers/customers--create) API to register the customer. Hyperswitch creates a profile and returns a unique `customer_id` that will be associated with the payment method.
 
 **2. Collect Card Details**
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Vault and Forward
 
-In this approach, the Direct Payment Control Model functions by treating Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
+In this approach, the Direct Payment Control Model functions by treating Juspay Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
 
 For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
 
@@ -19,7 +19,7 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 **1. Create Payment Method Session (Server-Side)**
 
-The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
+The merchant server initiates the flow by calling the Juspay Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
 **2. Initialize SDK (Client-Side)**
 

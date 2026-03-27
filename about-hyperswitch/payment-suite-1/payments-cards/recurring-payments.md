@@ -5,7 +5,7 @@ description: Set up recurring payments to enable automatic billing and manage su
 
 # Recurring payments
 
-Recurring payments via Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
+Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highligted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
 
 ### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
