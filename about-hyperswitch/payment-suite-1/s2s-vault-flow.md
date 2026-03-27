@@ -1,28 +1,26 @@
 ---
 description: >-
-  Best for PCI compliant merchants who wants to store the card during initial
+  Implement secure vault solutions to protect sensitive payment card data
   checkout phase without charging their customers.
 hidden: true
 ---
-
 # S2S Vault flow
 
 The Payment method SDK allows you to securely collect payment information and give customers the option to save their payment details for future transactions. By vaulting these details during the initial checkout phase.
 
-#### **Key Features**
+### **Key Features**
 
 * **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
 * **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
 * **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
 * **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
-#### Understanding Payment and Vault Flow
-
+### Understanding Payment and Vault Flow
 
 
 <figure><img src="../../.gitbook/assets/Payment Method SDK (1).svg" alt=""><figcaption></figcaption></figure>
 
-#### **Vaulting :**
+### **Vaulting :**
 
 **1. Create Customer (Server-Side)**
 
@@ -44,7 +42,7 @@ Your server makes a [`/v2/payment-methods`](https://api-reference.hyperswitch.io
 
 Hyperswitch returns the `payment_method_id` in the response. You can use this payment method ID for future payments for this customer without handling sensitive card data again.
 
-#### **Payment :**&#x20;
+### **Payment :**&#x20;
 
 To charge the customer you will will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with  `confirm` as `true`&#x20;
 
@@ -61,6 +59,6 @@ To generate your Vault API keys, follow these steps:
 
 **Integration Documentation -**&#x20;
 
-* [S2S Vault Tokenization](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/server-to-server-vault-tokenization)
+* [S2S Vault Tokenization](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-Hyperswitch/payments-modules/vault/server-to-server-vault-tokenization)
 * [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 * [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)

@@ -1,8 +1,8 @@
 ---
-description: Jan '26 to March '26
+description: >-
+  Explore Roadmap - Q1 2026 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Roadmap - Q1 2026
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -27,14 +27,14 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 **Vault**
 
-* **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
+* **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI DSS compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
 * **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
 
 **Revenue recovery**\
 \
 Account Updater to automatically refresh stored card credentials for expired, replaced, or reissued cards, improving continuity for stored payment methods and recovering failures tied to outdated card data
 
-#### Core Values <a href="#core-values" id="core-values"></a>
+### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -55,7 +55,7 @@ Last year, Hyperswitch was made more modular to provide businesses with focused 
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### Core Orchestration
+### Core Orchestration
 
 **Platform Managed Payments**
 
@@ -77,7 +77,7 @@ We plan to enable Hyperswitch to act as a relay to orchestrate incremental and p
 
 We plan to support installment-based payments across supported payment methods, enabling merchants to offer flexible payment options without changing their orchestration setup.
 
-#### Connectors
+### Connectors
 
 **New Integrations**
 
@@ -87,7 +87,7 @@ We plan to expand connector coverage with new PSP integrations including Banco D
 
 We also plan to enhance existing integrations to expand payment method coverage and improve reliability. This will include Payload (ACH), Itau Bank (Pix, Boleto), Stripe Connect (Apple Pay, Google Pay), Dwolla (ACH recurring), Worldpay WPG (3DS cards with fraud ID), Xendit (QRIS), and Deutsche Bank.
 
-[Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
+[Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-Hyperswitch/connectors)
 
 ### Vault
 
@@ -111,7 +111,7 @@ We plan to support configurable and merchant-defined token formats across Vault 
 
 We plan to add analytics, audit trails, and observability capabilities for the Vault service, improving traceability, governance, and operational debugging.
 
-[Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
+[Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-Hyperswitch/payments-modules/vault)
 
 ### Authentication and Checkout Experience
 
@@ -143,7 +143,7 @@ We plan to enable subscription-based events across SDK flows, allowing merchants
 
 We plan to support custom in SDK messaging so merchants can configure and display contextual messages (info, warnings, errors, compliance text) within the Hyperswitch SDK UI, with an optional fallback to default SDK messaging for a consistent user experience.
 
-[Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls)
+[Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-Hyperswitch/merchant-controls)
 
 ### Revenue Recovery
 
@@ -159,7 +159,7 @@ We plan to add analytics that provide merchants with real-time visibility into r
 
 We plan to support using self-hosted orchestration with Juspay-hosted revenue recovery, enabling merchants to adopt recovery improvements without changing their orchestration deployment model.
 
-[Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
+[Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-Hyperswitch/payments-modules/revenue-recovery)
 
 ### Reconciliation
 
@@ -169,7 +169,7 @@ We are enhancing reconciliation with **Tolerance Rules** and **Aging** to reduce
 
 Aging provides visibility into unmatched transactions and enables configurable time-based thresholds to proactively identify stale items. We plan to provide visibility into transactions awaiting a match and allow time-based threshold monitoring to help teams track stale reconciliation items.
 
-[Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
+[Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-Hyperswitch/payments-modules/reconciliation).
 
 ### Control Centre
 
@@ -193,4 +193,4 @@ Themes follow a clear precedence model (**Profile → Merchant → Organization*
 
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

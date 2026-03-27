@@ -1,8 +1,8 @@
 ---
-description: Jul '25 to Sep '25
+description: >-
+  Explore Previous Roadmap - Q3 2025 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Previous Roadmap - Q3 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-#### Core Values <a href="#core-values" id="core-values"></a>
+### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -80,4 +80,4 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

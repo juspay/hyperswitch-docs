@@ -1,8 +1,8 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'24)
+description: >-
+  Explore Previous Roadmap - Q2 2024 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Previous Roadmap - Q2 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -16,7 +16,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 Lets start with a short recap on what was released new in Q1 2024
 
 * New connector integrations
-  * Cybersource support for ApplePay, GooglePay
+  * Cybersource support for Apple Pay, Google Pay
   * PlacetoPay support for card payments
   * [3Dsecure.io](http://3dsecure.io) integration for 3DS authentication
   * Pix and Boleto via Adyen
@@ -68,7 +68,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
     (Will be supported with custom migration APIs)
 * 🟩 Card vaulting enhancements - support nickname updation
-* 🟩 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay&#x20;
+* 🟩 Hyperswitch Widgets for Quick Checkout experience - PayPal, Apple Pay and Google Pay&#x20;
 * New connector and payment method Integrations
   * 🟧 Datatrans ([Planet.com](http://planet.com)) for card payments&#x20;
   * 🟩 Netcetera for 3DS service&#x20;
@@ -90,7 +90,7 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 * 🟩 🚛 Enable scanning of cards to reduce manual entry of card details by the customer
 * 🟩 Native 3DS on Android and iOS apps
-* 🚛 🟧 Paypal Vault flows for improving repeat user payment experience&#x20;
+* 🚛 🟧 PayPal Vault flows for improving repeat user payment experience&#x20;
 * 🟧 Customer initiated payment retries on Hyperswitch Unified Checkout
 * 🟧 💪 Account verification for bank payment methods like ACH and SEPA
 
@@ -102,4 +102,4 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 ### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

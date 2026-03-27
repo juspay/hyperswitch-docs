@@ -1,8 +1,8 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'23)
+description: >-
+  Explore Previous roadmap - Q4 2023 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Previous roadmap - Q4 2023
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -33,15 +33,15 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Developer Experience
 
-* 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
+* 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-Hyperswitch-on-aws/deploy-app-server)
 * 🟩 Publish developer docs for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
-* 🟩 Hyperswitch Woocommerce plugin for Wordpress users. [Install the Woocommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
+* 🟩 Hyperswitch WooCommerce plugin for WordPress users. [Install the WooCommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
 * 🟩 AWS menu-driven Hyperswitch installation support
 * 🟩 Optimizing Hyperswitch application overhead from 30ms to 20ms
 
 ### Reducing Payment Costs
 
-* 🟩 Reduce chargebacks by enabling Signifyd and Riskified (FRMs). [Try it out by signing up for hyperswitch](https://app.hyperswitch.io/register)
+* 🟩 Reduce chargebacks by enabling Signifyd and Riskified (FRMs). [Try it out by signing up for Hyperswitch](https://app.hyperswitch.io/register)
 * 🟩 Support for Gocardless bank direct debits. [Try it out by signing up for Hyperswitch](https://app.hyperswitch.io/register)
 * 🟩 Specialized low cost processor integration - Helcim
 * 🟩 Open sourcing Smart Routing Framework for self hosting
@@ -52,25 +52,25 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Improving Authorization Rates
 
 * 🟩 Smart retry with 3DS for fraud declined payments. [Learn more about the feature](https://hyperswitch.io/docs/features/smartRetries)
-* :articulated\_lorry: Paypal Vault flows for improving repeat user experience
+* :articulated\_lorry: PayPal Vault flows for improving repeat user experience
 * :articulated\_lorry:💪 Enhancing 3DS experience with Delegated Authentication and Visa's Digital Authentication Framework (for SCA markets)
 * :articulated\_lorry:💪 Improve authorization rates for bank payments through Open banking integration for UK/EU
 
 ### Reducing Payment Operations
 
-* 🟩 Support for exporting hyperswitch data to third party data warehouse
+* 🟩 Support for exporting Hyperswitch data to third party data warehouse
 * :articulated\_lorry: Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
 * :articulated\_lorry:💪 System health metrics monitoring module on Hyperswitch Control Centre
 
 ### Community Feature Requests
 
-* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
-* 🟩 Open sourcing Card Vault application code for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault)
-* 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping)
+* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-Hyperswitch-on-aws/deploy-app-server)
+* 🟩 Open sourcing Card Vault application code for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-Hyperswitch-on-aws/deploy-card-vault)
+* 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-Hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping)
 * 🟩 Direct bank integration - Bank of America
 * 🟩💪 Open sourcing Fraud and Risk Management Integrations
 * 🟩💪 Open sourcing Payouts module
 
 ## **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

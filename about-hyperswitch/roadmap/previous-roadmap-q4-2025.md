@@ -1,8 +1,8 @@
 ---
-description: Oct '25 to Dec '25
+description: >-
+  Explore Previous Roadmap - Q4 2025 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Previous Roadmap - Q4 2025
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -19,15 +19,15 @@ Before the beginning of every quarter we come together to develop the next roadm
   * **New category of integration** - Support for subscription management providers to augment the plan management and record-keeping capabilities of the subscription engine with payment orchestration
   * **Feature depth** - L2/L3 data standardization across PSPs, support merchant decryption and decrypted payload for Apple Pay and Google Pay, return MAC codes in API response, chargeback support for PSPs with no webhook support, and MIT category fields
 * **Core orchestration** - Support for over-capture, extended authorization, and manual/user-triggered retries
-* **Standalone Network Tokenization** Service with support for Visa, Mastercard, and Amex\
+* **Standalone Network Tokenization** Service with support for Visa, Mastercard, and American Express\
   Standalone EMVCo-certified Juspay 3DS Server and 3DS SDK
 * **Revenue recovery** - New capabilities to handle partial capture, support in-house billing engines, invoice queuing or grouping of all pending invoices, hard decline smart retry
 * **Intelligent routing** analytics added to offer real-time insights into transaction flow and gateway performance
 * **Reconciliation** - New capabilities to support transaction-level audit logs to ensure every transaction can be traced from initiation to settlement, strengthening compliance and operational accountability
-* **Cost observability** - New capabilities to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs, advanced fee auditing capabilities, estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates, conversational AI interface, and expanded acquirer coverage: adding support for five or more new acquirer report formats (AIBMS, Elavon, PayPal, Stripe, and Amex)
+* **Cost observability** - New capabilities to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs, advanced fee auditing capabilities, estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates, conversational AI interface, and expanded acquirer coverage: adding support for five or more new acquirer report formats (AIBMS, Elavon, PayPal, Stripe, and American Express)
 * **Control Centre** - Support for platform org and merchant to allow programmatic API-driven merchant account creation, management, and configuration
 
-#### Core Values <a href="#core-values" id="core-values"></a>
+### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -49,11 +49,11 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### **Core Orchestration and Connectors**
+### **Core Orchestration and Connectors**
 
 * **Connectors**\
   We plan to expand connector coverage with new integrations including
-  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Applepay,Googlepay), Paysafe (Cards, Applepay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Applepay, Googlepay)
+  * **New integrations:** Gigadat (Interac e-transfer), Loonio (Interac e-transfer), Tesouro (Cards,Apple Pay,Google Pay), Paysafe (Cards, Apple Pay, Skrill, Interac e-transfer, Paysafecards), Finix (Cards, Apple Pay, Google Pay)
 * **Core Orchestration**
   * We plan to introduce split-payment support for gift cards, enabling combined payments within a single transaction for greater flexibility across customer use cases.
 * **Improve Auth rate**
@@ -70,9 +70,9 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
     * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
 
-_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
+_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-Hyperswitch/connectors/)
 
-#### **Vault**
+### **Vault**
 
 *   **Guest Checkout Tokenization in Hyperswitch Vault**
 
@@ -84,24 +84,24 @@ _<mark style="color:blue;">Learn more about the existing Core Orchestration and 
 
     We are expanding the Proxy API to support merchants who choose to integrate solely with Hyperswitch Vault services. This will allow merchants to pass a card token in their requests, which Hyperswitch will substitute with the actual card details before routing the call to the target connector.
 
-_<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
+_<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-Hyperswitch/payments-modules/vault)
 
-#### **Authentication and Checkout Experience**
+### **Authentication and Checkout Experience**
 
 *   **Authorization Uplift**
 
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
 
-#### **Revenue Recovery**
+### **Revenue Recovery**
 
 * **Advanced retry logic for Hard declines**\
   The system intelligently identifies and retries transactions that were falsely marked as hard declines. This feature aims to recover transactions that were previously considered unrecoverable. Merchants will be able to manage these retries by setting a configurable budget that limits the number retry attempts.
 * **Account Updater:**\
   The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
-_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/payments-modules/revenue-recovery.md)
+_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-Hyperswitch/payments-modules/revenue-recovery.md)
 
-#### **Reconciliation**
+### **Reconciliation**
 
 * **Rule Types Expansion**\
   Support for 1:many and many:1 rule types to enable flexible matching across split, aggregated, and multi-attempt transaction flows
@@ -109,7 +109,6 @@ _<mark style="color:blue;">Learn more about the existing Revenue Recovery featur
   Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction level
 
 
-
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

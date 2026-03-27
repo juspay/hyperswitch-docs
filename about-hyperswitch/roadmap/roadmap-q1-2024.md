@@ -1,8 +1,8 @@
 ---
-description: Hyperswitch roadmap (Jan to Mar' 24)
+description: >-
+  Explore Previous roadmap - Q1 2024 to enhance your payment orchestration capabilities
 icon: road
 ---
-
 # Previous roadmap - Q1 2024
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
@@ -40,7 +40,7 @@ Our core values have pretty much remained the same since the early days and here
 
 * 🚛 Code restructuring for enhancing readability and ease of contributions
 * 🟩 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
-* 🟩 Helm charts will support installation of `hyperswitch-card-vault`
+* 🟩 Helm charts will support installation of `Hyperswitch-card-vault`
 * 🚛  PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we are undertaking the certification to further augment our security standards
 * 🟩Adding more developer help videos and improving developer documentations for Hyperswitch features, components and usage
 * 💪🚛 Open sourcing the Native Unified Checkout SDK (Android and iOS)
@@ -54,7 +54,7 @@ Our core values have pretty much remained the same since the early days and here
 ### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
 * 🟩Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
-* 🚛 Paypal Vault flows for improving repeat user payment experience
+* 🚛 PayPal Vault flows for improving repeat user payment experience
 
 ### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
@@ -68,4 +68,4 @@ Our core values have pretty much remained the same since the early days and here
 
 ### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://GitHub.com/Juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
