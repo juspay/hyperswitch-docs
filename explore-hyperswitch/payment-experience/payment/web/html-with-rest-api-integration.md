@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+description: Integrate hyper SDK to your HTML Web App using Juspay Hyperswitch-node
 icon: html5
 ---
 

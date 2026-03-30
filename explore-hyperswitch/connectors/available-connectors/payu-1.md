@@ -1,5 +1,5 @@
 ---
-description: Accept payments through PayU via Hyperswitch
+description: Accept payments through PayU via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -15,7 +15,7 @@ This section gives you an overview of how to make payments via PayU through Hype
 
 PayU is a payment service provider that allows online businesses to accept and process payments through different integrated payment methods. To know about more about payment methods supported by PayU via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating PayU via Hyperswitch
+### Activating PayU via Juspay Hyperswitch
 
 #### Prerequisites
 

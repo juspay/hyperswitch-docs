@@ -73,4 +73,3 @@ This option allows you to discard the current active entry and link the transact
 | "This is the right record, but it has a typo." | Edit Entry         |
 | "The record is missing entirely."              | Create Entry       |
 | "The system picked the wrong record."          | Replace Entry      |
-

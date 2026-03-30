@@ -6,7 +6,7 @@ icon: globe-wifi
 
 # Web Domain
 
-## **Steps to configure Apple Pay on Hyperswitch**
+## **Steps to configure Apple Pay on Juspay Hyperswitch**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
@@ -21,7 +21,7 @@ icon: globe-wifi
 * Click on verify and enable to complete your setup
 
 {% hint style="warning" %}
-Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since the Apple Pay Web Domain flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>

@@ -145,4 +145,3 @@ Callback triggered when the payment completes, fails, or is cancelled.
 **`style`** `StyleProp<ViewStyle>` · `width` & `height` required
 
 Defines the size and layout of the widget container.
-

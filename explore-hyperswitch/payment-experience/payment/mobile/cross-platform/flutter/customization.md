@@ -68,7 +68,7 @@ Consider the below code for your reference.
   Configuration configuration= Configuration(appearance: appearance)
   configuration.displaySavedPaymentMethods: true,
   configuration.displaySavedPaymentMethodsCheckbox: true,
- 
+
   PaymentSheetParams params = PaymentSheetParams(
       publishableKey: "YOUR_PUBLISHABLE_KEY",
       clientSecret: clientSecret,
@@ -84,7 +84,6 @@ Set `disableBranding` to false to disable Hyperswitch branding.\
 Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
-
 
 
 ## Custom Placeholders And Branding
@@ -123,7 +122,7 @@ ColorsObject lightColorsObject = ColorsObject(
       icon: '#F92672',
       error: '#F92672'
     );
-    
+
  ColorsObject darkColorsObject = ColorsObject(
       primary: '#00ff0099',
       background: '#ff0000',
@@ -170,7 +169,6 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 ```
 
 Now you can test the payments on your app and go-live!
-
 
 
 ## Languages
@@ -224,4 +222,3 @@ We support the following locales -
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
-

@@ -6,9 +6,9 @@ hidden: true
 icon: plug
 ---
 
-# Connect External Vaults to Hyperswitch Orchestration
+# Connect External Vaults to Juspay Hyperswitch Orchestration
 
-### Modular Vaulting in Hyperswitch
+### Modular Vaulting in Juspay Hyperswitch
 
 Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
 
@@ -39,7 +39,7 @@ Merchants can outsource their PCI compliance to Juspay by opting to use [Juspayâ
 
 #### Third Party Vault <a href="#id-65rhdjnka52m" id="id-65rhdjnka52m"></a>
 
-Through Hyperswitch, Merchants can add [external vault providers](https://juspay.io/integrations) such as VGS, HashiCorp, and Voltage, leveraging their SDKs to collect and tokenize cards. This ensures flexibility in vault selection while maintaining compliance, security, and seamless token management across multiple payment processors. Additionally, we also support other extended features vai an external vault such as:
+Through Juspay Hyperswitch, Merchants can add [external vault providers](https://juspay.io/integrations) such as VGS, HashiCorp, and Voltage, leveraging their SDKs to collect and tokenize cards. This ensures flexibility in vault selection while maintaining compliance, security, and seamless token management across multiple payment processors. Additionally, we also support other extended features vai an external vault such as:
 
 * Network Tokenization - Merchants can configure Network Tokenization through either Juspay as TSP or use the External Vault as TSP, ensuring flexibility and control over token provisioning
 * Proxy Payments through External Vaults - Support for processing payments through Proxy layers to ensure PCI compliance
@@ -49,9 +49,52 @@ Through Hyperswitch, Merchants can add [external vault providers](https://juspay
 
 In case of using External vaults, merchants also have the option to choose which SDK to use to collect payment method details from their customers.
 
-![](../../../.gitbook/assets/2.png)
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
 
-<p align="center"><em>Flexible External Vaulting with Choice of Vault SDK or Hyperswitch SDKs for Card Collection</em><br></p>
+flowchart TD
+    subgraph Option1["Option 1: Hyperswitch Unified Checkout SDK"]
+        A1[Customer Browser/App] -- Card details entered --> B1[Hyperswitch Unified Checkout SDK]
+        B1 -- Cards sent to --> C1[Hyperswitch Server]
+        C1 -- Tokenize cards --> D1[External Vault]
+        D1 -- Return vault token --> C1
+        C1 -- Store token --> E1[(Hyperswitch Database)]
+
+        F1[Payment Request] -- Retrieve vault token --> C1
+        C1 -- Get raw card details using token --> D1
+        D1 -- Return raw card details --> C1
+        C1 -- Forward complete payment request --> G1[PSP]
+    end
+
+    subgraph Option2["Option 2: External Vault SDK"]
+        A2[Customer Browser/App] -- Card details entered --> B2[External Vault SDK]
+        B2 -- Capture & tokenize directly --> C2[External Vault]
+        C2 -- Return vault token --> B2
+        B2 -- Token passed to --> D2[Hyperswitch Server]
+        D2 -- Store token --> E2[(Hyperswitch Database)]
+
+        F2[Payment Request] -- Send vault token via proxy flow --> D2
+        D2 -- Forward token to --> C2
+        C2 -- De-tokenize & forward request --> G2[PSP]
+    end
+
+    classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+```
+
+*Caption: This diagram illustrates the two flexible external vaulting options available in Hyperswitch. Option 1 uses the Hyperswitch Unified Checkout SDK where cards are collected by Hyperswitch and tokenized via the external vault, with the server retrieving raw card details for payment processing. Option 2 uses the External Vault SDK where cards are captured and tokenized directly in the external vault, bypassing Hyperswitch servers, and payments are processed through the vault's proxy flow.*
 
 1. Hyperswitch Unified Checkout SDK - Cards are collected via the Hyperswitch Unified Checkout SDK and sent to the Hyperswitch server, which tokenizes them in an external vault. When processing payments, the Hyperswitch server retrieves the raw card details using the vault token and forwards the complete payment request to the PSP.
 2. External Vault SDK - The External Vault SDK can be loaded on the Hyperswitch Unified Checkout SDK or independently. Cards are captured and tokenized directly in the external vault, bypassing  Hyperswitch server. For payments, the Hyperswitch server sends vault tokens via the vaultâ€™s proxy flow, and the external vault de-tokenizes and forwards the request to the PSP.

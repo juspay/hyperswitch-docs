@@ -21,7 +21,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
-### 2.1 Configure your repository with Hyperswitch dependency
+### 2.1 Configure your repository with Juspay Hyperswitch dependency
 
 CocoaPods Setup (only required if not already done)
 
@@ -70,7 +70,7 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 Note: For Open Source Setup, initialise your custom Backend app & log URL as:
 
 ```swift
-paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
                                 customBackendUrl: <YOUR_SERVER_URL>,
                                 customLogUrl: <YOUR_LOG_URL>)
 ```
@@ -121,8 +121,8 @@ func openPaymentSheet(_ sender: Any) { //present payment sheet
 var configuration = PaymentSheet.Configuration()
 configuration.merchantDisplayName = "Example, Inc."
 
-    paymentSession?.presentPaymentSheet(viewController: self, 
-                                        configuration: configuration, 
+    paymentSession?.presentPaymentSheet(viewController: self,
+                                        configuration: configuration,
                                         completion: { result in
         switch result {
         case .completed:
@@ -145,7 +145,7 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 ```swift
 VStack {
   if let paymentSession = model.paymentSession {
-    PaymentSheet.PaymentButton(paymentSession: paymentSession, 
+    PaymentSheet.PaymentButton(paymentSession: paymentSession,
                                                configuration: configuration(),
                                                onCompletion: model.onPaymentCompletion)
     {
@@ -209,7 +209,7 @@ func pay() {
     let paymentIntentParams = PaymentIntentParams(clientSecret: paymentIntentClientSecret)
 let paymentHandler = PaymentHandler.shared()
 
-    paymentHandler.confirmPayment(paymentIntentParams, with: self) { 
+    paymentHandler.confirmPayment(paymentIntentParams, with: self) {
         (status, paymentIntent, error) in
             switch (status) {
                 case .failed:

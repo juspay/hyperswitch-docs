@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Authorizedotnet via Hyperswitch
+description: Accept payments through Authorizedotnet via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via Authorizedotnet t
 
 Authorizedotnet, a Visa solution, is a US-based payment gateway service provider, allowing merchants to accept credit card and electronic check payments through their website and online. To know about more about payment methods supported by Authorizedotnet via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Authorizedotnet via Hyperswitch
+### Activating Authorizedotnet via Juspay Hyperswitch
 
 ### Prerequisites
 

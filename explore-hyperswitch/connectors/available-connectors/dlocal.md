@@ -1,5 +1,5 @@
 ---
-description: Accept payments through d-local via Hyperswitch
+description: Accept payments through d-local via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -15,7 +15,7 @@ This section gives you an overview of how to make payments via d-local through H
 
 dLocal Limited is a Uruguayan financial technology company. dLocal powers local payments connecting merchants with billions of emerging market consumers through one single API. To know about more about payment methods supported by d-local via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating dLocal via Hyperswitch
+### Activating dLocal via Juspay Hyperswitch
 
 #### Prerequisites
 

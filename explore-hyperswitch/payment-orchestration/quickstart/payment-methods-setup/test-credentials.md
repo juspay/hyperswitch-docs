@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Key to configure and test different connectors in Juspay Hyperswitch
 icon: key
 ---
 

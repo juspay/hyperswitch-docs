@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Rapyd via Hyperswitch
+description: Accept payments through Rapyd via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -13,7 +13,7 @@ This section gives you an overview of how to make payments via Rapyd through Hyp
 
 Rapyd allows businesses to accept and send payments to any business or consumer entity present anywhere in a faster, cheaper and easier manner. To know about more about payment methods supported by Rapyd via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Rapyd via Hyperswitch
+### Activating Rapyd via Juspay Hyperswitch
 
 #### Prerequisites
 

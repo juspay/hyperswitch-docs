@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Worldline via Hyperswitch
+description: Accept payments through Worldline via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -13,7 +13,7 @@ This section gives you an overview of how to make payments via Worldline through
 
 Worldline is a payment service provider that offers in-store payment services, online payment solutions for seamless transactions, Omnichannel capabilities and global online payments to increase conversion and approval rates. To know about more about payment methods supported by Worldline via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Worldline via Hyperswitch
+### Activating Worldline via Juspay Hyperswitch
 
 #### Prerequisites
 

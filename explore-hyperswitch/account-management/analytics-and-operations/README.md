@@ -123,7 +123,7 @@ Below are some of the day-to-day use cases of payments operations across teams w
 
 Inadequate attention to payment operations might negatively impact your Net Promoter Score and impact the growth of your business.
 
-## How could Hyperswitch simplify Payment Operations?
+## How could Juspay Hyperswitch simplify Payment Operations?
 
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all Payment Operations use cases. This provides more power to your team for managing payments seamlessly.
 

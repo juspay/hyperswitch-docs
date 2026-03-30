@@ -21,7 +21,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
-5. Subscription is created at Hyperswitch and at the subscription provider's end
+5. Subscription is created at Juspay Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
 8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
@@ -38,7 +38,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who wants to use Juspay Hyperswitch Payments SDK
 
 {% stepper %}
 {% step %}
@@ -63,8 +63,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch", 
-        "additional_secret": "hyperswitch" 
+        "merchant_secret": "hyperswitch",
+        "additional_secret": "hyperswitch"
     },
     "metadata": {
         "site": "test"

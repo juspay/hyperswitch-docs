@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Checkout via Hyperswitch
+description: Accept payments through Checkout via Juspay Hyperswitch
 hidden: true
 ---
 

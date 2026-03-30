@@ -22,7 +22,7 @@ Key Highlights:
 
 For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
 
-#### **1. Hyperswitch managed client and card form**
+#### **1. Juspay Hyperswitch managed client and card form**
 
 In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
@@ -49,7 +49,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### **2. Hyperswitch managed client with External Vault's card form**
+#### **2. Juspay Hyperswitch managed client with External Vault's card form**
 
 In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
 

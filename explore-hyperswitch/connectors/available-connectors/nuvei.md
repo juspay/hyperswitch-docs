@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Nuvei via Hyperswitch
+description: Accept payments through Nuvei via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -12,10 +12,9 @@ This section gives you an overview of how to make payments via Nuvei through Hyp
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/nuveiLogo.svg)
 
 
-
 Nuvei is a payment technology company that provides payment processing and acquiring services to merchants worldwide, with a focus on e-commerce and high-growth industries. To know about more about payment methods supported by Nuvei via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Nuvei via Hyperswitch
+### Activating Nuvei via Juspay Hyperswitch
 
 #### I. Prerequisites
 

@@ -15,7 +15,7 @@ This is particularly useful in scenarios such as:
 * Price adjustments made after initial authorization.
 * Reducing the risk of under-capturing when final order values differ.
 
-With Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
+With Juspay Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
 
 ### Supported PSPs
 

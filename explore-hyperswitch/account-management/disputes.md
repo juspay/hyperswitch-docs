@@ -23,7 +23,7 @@ Each processor has their own standards or processes around how they notify about
 
 Hyperswitch unifies all the dispute notifications from all your different processors and makes it easier for you to track, accept and as well as challenge them by uploading evidences across different processors from one place.
 
-## Disputes Lifecycle on Hyperswitch
+## Disputes Lifecycle on Juspay Hyperswitch
 
 Hyperswitch's unified disputes module uses the following stages and statuses to track your disputes:
 
@@ -51,7 +51,7 @@ Even after a successful dispute challenge, a payment method issuer might deem th
 
 <table><thead><tr><th width="167">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal prcoess</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
 
-## Managing Disputes on Hyperswitch through Dashboard
+## Managing Disputes on Juspay Hyperswitch through Dashboard
 
 ### 1. Viewing Disputes on Hyperswitch dashboard
 

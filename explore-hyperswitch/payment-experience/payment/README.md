@@ -4,7 +4,7 @@ icon: file-invoice-dollar
 
 # Payment
 
-Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
 ### Integration Path

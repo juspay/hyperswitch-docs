@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
@@ -61,7 +61,7 @@ if (customer_last_used_saved_payment_method_data != null) {
 
 // use the confirmWithCustomerDefaultPaymentMethod function to confirm and handle the payment session response
 Future<void> _confirmPayment() async {
-  final confirmWithLastUsedPaymentMethodResponse = 
+  final confirmWithLastUsedPaymentMethodResponse =
     await _hyper.confirmWithLastUsedPaymentMethod(_savedSessionId!);
   if (confirmWithLastUsedPaymentMethodResponse != null) {
     final message = confirmWithLastUsedPaymentMethodResponse.message;
@@ -75,8 +75,6 @@ Future<void> _confirmPayment() async {
 ```
 
 
-
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-

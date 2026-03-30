@@ -283,4 +283,3 @@ The UI Component that renders the settings form.
 * **url (string)**: The base URL for the Hyperswitch Dashboard API.
   * Sandbox:[ https://app.hyperswitch.io](https://app.hyperswitch.io/api)
   * Default:[ http://localhost:9000](http://localhost:9000)
-

@@ -14,7 +14,6 @@ A surcharge, sometimes called a checkout fee or service fee, is an additional fe
 ## How does it work?
 
 
-
 <figure><img src="../../../.gitbook/assets/Surcharge.drawio (1).svg" alt=""><figcaption></figcaption></figure>
 
 Hyperswitch supports surcharge for most payment processors and you can configure surcharge through two ways:

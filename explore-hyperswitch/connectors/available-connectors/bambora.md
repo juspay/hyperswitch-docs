@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Bambora via Hyperswitch
+description: Accept payments through Bambora via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -13,7 +13,7 @@ This section gives you an overview of how to make payments via Bambora through H
 
 Bambora, a Worldline solution, design and operate leading digital payment and transactional solutions that enable sustainable economic growth and reinforce trust and security. To know about more about payment methods supported by Bambora via hyperswitch click [here](https://hyperswitch.io/pm-list).
 
-### Activating Bambora via Hyperswitch
+### Activating Bambora via Juspay Hyperswitch
 
 #### I. Prerequisites
 

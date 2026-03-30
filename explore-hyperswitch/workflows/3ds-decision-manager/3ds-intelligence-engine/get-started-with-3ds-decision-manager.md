@@ -21,7 +21,7 @@ Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules
 
 ### 3DS Decision Flow:
 
-Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
+Juspay Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
 
 <figure><img src="../../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 

@@ -1,5 +1,5 @@
 ---
-description: Quick answers to commonly asked questions about Hyperswitch
+description: Quick answers to commonly asked questions about Juspay Hyperswitch
 ---
 
 # FAQs

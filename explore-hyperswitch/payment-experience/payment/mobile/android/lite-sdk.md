@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Integrate Juspay Hyperswitch Lite SDK to your Kotlin App
 icon: mobile-screen
 ---
 

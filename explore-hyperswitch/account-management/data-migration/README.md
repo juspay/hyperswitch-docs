@@ -13,4 +13,3 @@ Migration of data is a crucial step in ensuring business continuity without any 
 {% hint style="info" %}
 Kindly reach out to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to initiate your data migration request.&#x20;
 {% endhint %}
-

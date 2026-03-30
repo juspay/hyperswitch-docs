@@ -1,8 +1,7 @@
 ---
-description: List of all connectors currently supported by Hyperswitch
+description: List of all connectors currently supported by Juspay Hyperswitch
 hidden: true
 icon: badge-check
 ---
 
 # Available Connectors
-

@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Export your payments data to Redshift from Juspay Hyperswitch
 icon: tachograph-digital
 ---
 
@@ -90,7 +90,7 @@ CREATE TABLE payments (
 ```sql
 create temp table payments_stage (like payments);
 
-copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments' 
+copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments'
 credentials 'aws_iam_role=<ARN_ROLE>'
 IGNOREHEADER 1
 timeformat 'YYYY-MM-DD HH:MI:SS'
@@ -334,7 +334,7 @@ Where `merchant-targets.json` contains:
     "Input": "{\"merchant_id\":\"merchant_123\"}"
   },
   {
-    "Id": "2", 
+    "Id": "2",
     "Arn": "arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda",
     "Input": "{\"merchant_id\":\"merchant_456\"}"
   }

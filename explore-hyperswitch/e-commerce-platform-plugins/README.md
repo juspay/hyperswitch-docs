@@ -1,11 +1,11 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
+description: Juspay Hyperswitch plugins for the e-commerce platform you use
 hidden: true
 noIndex: true
 icon: plug-circle-bolt
 ---
 
-# E-commerce Platform Plugins by Hyperswitch
+# E-commerce Platform Plugins by Juspay Hyperswitch
 
 Hyperswitch plugins enable businesses to extend and enhance the functionality of leading E-commerce platforms, offering seamless integration and advanced capabilities for payment optimization, user experience, and analytics.
 

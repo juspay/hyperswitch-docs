@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Fiserv via Hyperswitch
+description: Accept payments through Fiserv via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -15,7 +15,7 @@ This section gives you an overview of how to make payments via Fiserv through Hy
 
 Fiserv is a global fintech and payments company with solutions for banking, global commerce, merchant acquiring, billing and payments, and point-of-sale. To know about more about payment methods supported by Fiserv via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Fiserv via Hyperswitch
+### Activating Fiserv via Juspay Hyperswitch
 
 #### Prerequisites
 

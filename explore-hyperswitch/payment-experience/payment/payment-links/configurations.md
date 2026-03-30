@@ -65,7 +65,7 @@ Example:
 [
     {
         "key": "Business Country",
-        "value": "Germany" 
+        "value": "Germany"
     },
     {
         "key": "Policy Number",

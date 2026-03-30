@@ -6,7 +6,7 @@ hidden: true
 icon: up-right-from-square
 ---
 
-# Copy of Standalone 3D Secure (via Hyperswitch)
+# Copy of Standalone 3D Secure (via Juspay Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
 
@@ -20,7 +20,7 @@ When a Standalone 3DS authentication completes successfully, it generates a 3DS 
 
 Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are - Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io
 
-### Setup External 3DS authentication via Hyperswitch
+### Setup External 3DS authentication via Juspay Hyperswitch
 
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
 2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server

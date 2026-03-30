@@ -68,7 +68,6 @@ A processor  created under one business profile cannot be used in another busine
 *   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
 
 
-
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>

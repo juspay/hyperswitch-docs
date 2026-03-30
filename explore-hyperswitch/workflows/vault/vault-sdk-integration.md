@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
+  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment
   Methods Management SDK
 hidden: true
 icon: desktop
@@ -8,7 +8,7 @@ icon: desktop
 
 # Vault SDK Integration
 
-## Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK
+## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Vault SDK
 
 The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
@@ -70,9 +70,9 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
         body: JSON.stringify(req.body),
       }
     );
-    
+
     const data = await response.json();
-    
+
     res.send({
       pmSessionId: data.id,
       pmClientSecret: data.client_secret,
@@ -102,7 +102,7 @@ $ npm install @juspay-tech/hyper-js
 $ npm install @juspay-tech/react-hyper-js
 ```
 
-#### 2.2 Add Hyperswitch to Your React App
+#### 2.2 Add Juspay Hyperswitch to Your React App
 
 Import the necessary components and hooks:
 
@@ -112,7 +112,7 @@ import { loadHyper } from "@juspay-tech/hyper-js";
 import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
 ```
 
-#### 2.3 Initialize the Hyperswitch Library
+#### 2.3 Initialize the Juspay Hyperswitch Library
 
 Configure the library with your publishable API key and profile ID:
 

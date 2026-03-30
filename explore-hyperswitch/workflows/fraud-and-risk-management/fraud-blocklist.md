@@ -33,7 +33,7 @@ Should the need arise, merchants can selectively unblock specific fingerprints, 
 
 In summary, a blocklist feature empowers merchants to proactively manage the security of their payment processing systems by blocking specific fingerprints, card bins, or extended card bins. This not only safeguards against potential fraud but also provides a customizable and flexible approach to control and monitor payment transactions effectively.
 
-### Blocklist via Hyperswitch
+### Blocklist via Juspay Hyperswitch
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin. A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
@@ -54,14 +54,14 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
     block the card.
 * Try the payment again (should fail)
 
-#### Enabling blocklist guard on Hyperswitch
+#### Enabling blocklist guard on Juspay Hyperswitch
 
 ```
 curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 --header 'api-key: dev_xxxxxxxxxxxxxxxx'
 ```
 
-### Configuring blocklist on Hyperswitch using API
+### Configuring blocklist on Juspay Hyperswitch using API
 
 1. Create card payment through Hyperswitch using [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 2. In the [Payments response](https://api-reference.hyperswitch.io/v1/payments/payments--create#response-fingerprint-one-of-0), make note of the `fingerprint` field which is the unique fingerprint for a card passed to Hyperswitch
@@ -91,10 +91,10 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
            "card_holder_name": "joseph Doe"
        }
    },
-  
+
   ...
-  
-  
+
+
    "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
 ```

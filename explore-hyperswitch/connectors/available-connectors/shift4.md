@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Shift4 via Hyperswitch
+description: Accept payments through Shift4 via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via Shift4 through Hy
 
 Shift4 is a payment processing company that provides secure payment processing solutions. It empowers merchants with a complete payment solution featuring a secure, reliable, and fast payment network available, backed by great technology and support. To know about more about payment methods supported by Shift4 via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Shift4 via Hyperswitch
+### Activating Shift4 via Juspay Hyperswitch
 
 #### Prerequisites
 

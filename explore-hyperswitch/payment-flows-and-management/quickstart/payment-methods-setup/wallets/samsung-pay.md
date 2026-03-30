@@ -31,7 +31,7 @@ To create a new service, follow the steps below:
 6. In the `SERVICE DOMAIN` field, enter your merchant_domain and click the `ADD` button. If there are multiple merchant domains, add them one after the other.
 7. Verify the details you've entered, check the `LEGAL AGREEMENTS` box, and click `SAVE AND NEXT`.
 
-## **Configuring Samsung Pay on Hyperswitch**
+## **Configuring Samsung Pay on Juspay Hyperswitch**
 
 To configure Samsung Pay on Hyperswitch, follow the steps below -
 

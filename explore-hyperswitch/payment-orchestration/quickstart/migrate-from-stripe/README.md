@@ -11,7 +11,7 @@ This sections explains how you can migrate from Stripe to Hyperswitch in less th
 
 If you are already integrated with the leading payment processor Stripe, Hyperswitch makes your integration fast, fun and easy.
 
-Below are the products and features of Stripe support for Hyperswitch quick migration. And once you migrate, get immediate access to 40+ payment processors and features of Hyperswitch.
+Below are the products and features of Stripe support for Hyperswitch quick migration. And once you migrate, get immediate access to 90+ payment processors and features of Hyperswitch.
 
 {% tabs %}
 {% tab title="Stripe Products" %}
@@ -89,4 +89,3 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% content-ref url="react-native.md" %}
 [react-native.md](react-native.md)
 {% endcontent-ref %}
-

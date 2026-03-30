@@ -1,9 +1,9 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Configure your preferred connector on Juspay Hyperswitch
 icon: chart-network
 ---
 
-# Activate Connector on Hyperswitch
+# Activate Connector on Juspay Hyperswitch
 
 ### Steps to activate connector on the Hyperswitch Control Center
 

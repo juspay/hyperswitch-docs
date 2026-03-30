@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Get started with Stripe Split Settlements via Juspay Hyperswitch
 icon: stripe
 ---
 
@@ -48,7 +48,7 @@ JSON
 }
 ```
 
-### Split Refunds via Hyperswitch
+### Split Refunds via Juspay Hyperswitch
 
 For [Refunds](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create), include the appropriate split refund configuration based on the original `charge_type`.
 
@@ -91,23 +91,23 @@ In a CIT call, passing `customer_id` is mandatory along with the Stripe Split se
 JSON
 
 ```json
-{  
-    "customer_id": "StripeCustomer123",  
-    "split_payments": {  
-        "stripe_split_payment": {  
-            "charge_type": "direct",  
-            "application_fees": 100,  
-            "transfer_account_id": "acct_123456789"  
-        }  
-    },  
-    "customer_acceptance": {  
-        "acceptance_type": "offline",  
-        "accepted_at": "1963-05-03T04:07:52.723Z",  
-        "online": {  
-            "ip_address": "125.0.0.1",  
-            "user_agent": "amet"  
-        }  
-    }  
+{
+    "customer_id": "StripeCustomer123",
+    "split_payments": {
+        "stripe_split_payment": {
+            "charge_type": "direct",
+            "application_fees": 100,
+            "transfer_account_id": "acct_123456789"
+        }
+    },
+    "customer_acceptance": {
+        "acceptance_type": "offline",
+        "accepted_at": "1963-05-03T04:07:52.723Z",
+        "online": {
+            "ip_address": "125.0.0.1",
+            "user_agent": "amet"
+        }
+    }
 }
 ```
 
@@ -198,7 +198,7 @@ JSON
     "off_session": true,
     "recurring_details": {
         "type": "payment_method_id",
-        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response    
+        "data": "pm_hxxxxxxxxoqw7"    // payment_method_id field received in CIT response
     },
     "split_payments": {
         "stripe_split_payment": {

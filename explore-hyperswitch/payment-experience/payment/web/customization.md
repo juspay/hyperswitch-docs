@@ -62,7 +62,7 @@ To enable the grid arrangement in tabs layout, configure the layout object as sh
 var paymentElementOptions = {
   layout: {
     type: 'tabs',
-    paymentMethodsArrangementForTabs: 'grid' 
+    paymentMethodsArrangementForTabs: 'grid'
   }
 }
 
@@ -139,7 +139,7 @@ The wallet customization feature lets users configure payment options like Apple
       },
     },
   }
-  
+
 <strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </strong></code></pre>
 
@@ -492,7 +492,7 @@ The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save p
 ```javascript
 var paymentElementOptions = {
   ...,
-  displaySavedPaymentMethodsCheckbox: false, 
+  displaySavedPaymentMethodsCheckbox: false,
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;

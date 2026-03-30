@@ -1,5 +1,5 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
+description: Configure outgoing webhooks from Juspay Hyperswitch
 icon: anchor
 ---
 
@@ -27,7 +27,7 @@ In case a merchant wants to set custom headers for sending data to a specified w
 
 <figure><img src="../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
 
-#### Update Hyperswitch’s webhook endpoints on your connector Dashboard
+#### Update Juspay Hyperswitch’s webhook endpoints on your connector Dashboard
 
 In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
 

@@ -10,7 +10,7 @@ Migrate from Stripe on your web app in less than 15 mins!
 
 ## Migrate from Stripe
 
-If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Unified analytics and many more.
+If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 90+ payment processors and features such as Smart Router, Unified analytics and many more.
 
 {% hint style="info" %}
 Stripe’s `paymentRequestButton` is available under Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
@@ -83,7 +83,7 @@ import {
 } from "@juspay-tech/react-hyper-js";
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
 
 </details>
 
@@ -133,9 +133,8 @@ const stripe = Stripe("your_stripe_publishable_key");
 const hyper = Hyper("your_hyperswitch_publishable_key");
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
 
 </details>
 
 Want an easy migration from Stripe for Apps? We got you covered. Follow the docs for Android, iOS and React Native apps.
-

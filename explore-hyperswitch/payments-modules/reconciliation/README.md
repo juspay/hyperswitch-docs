@@ -71,7 +71,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
    * We also allow merchants to specify the details of computations based on transaction values, fees, and taxes.
      * For instance, consider an order of $100 sent via Juspay Hyperswitch to the payment processor which will ultimately send this amount to the merchant's bank for settlement. However, in between, the payment procesor will deduct fees as well as taxes, let's say 5% each. Therefore, the settled amount will be $90, with a $5 fee and a $5 tax.
      * The payment processor report should contain these details. However, in case these details are not present in the report , the merchant can specify these values. Based on the merchant configured specifications, we will reconcile the bank's settled amount.
-3. Once reconciliation is active for your merchant account, you will be notified through an email. You can log into Juspay Hyperswitch dashboard and click on 'Go to recon tab'. You will be redirected to the Reconciliation dashboard.
+3. Once reconciliation is active for your merchant account, you will be notified through an email. You can log into Hyperswitch dashboard and click on 'Go to recon tab'. You will be redirected to the Reconciliation dashboard.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-01-23 at 1.23.01 PM.png" alt=""><figcaption></figcaption></figure>
 

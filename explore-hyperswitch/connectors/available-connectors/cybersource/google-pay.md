@@ -1,5 +1,5 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Integrate GooglePay (AndroidPay) via Cybersource in Juspay Hyperswitch
 ---
 
 # Google Pay
@@ -55,5 +55,4 @@ We recommend to pass this fields while creating the Payment Intent with Hyperswi
 {% endhint %}
 
 
-
-[^1]: 
+[^1]:

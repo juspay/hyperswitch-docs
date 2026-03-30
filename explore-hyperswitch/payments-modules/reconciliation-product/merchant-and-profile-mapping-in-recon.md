@@ -1,8 +1,8 @@
 # Merchant & Profile Mapping in Recon
 
-### Mapping Hyperswitch Org/Merchant/Profile to Recon
+### Mapping Juspay Hyperswitch Org/Merchant/Profile to Recon
 
-Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
+Juspay Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
 
 * **Organisation (Org)**: Top-level container for your company/platform.\
   This is the parent boundary for all merchants, products, and users
@@ -71,7 +71,7 @@ This setup is preferred when you want **separate merchant workspaces per Busines
 **Important:** This is not necessarily about legal entities.\
 It’s about **workspace separation and access boundaries**.
 
-#### Hyperswitch example
+#### Juspay Hyperswitch example
 
 * Org = “Company”
 * Merchant A = “BU: Consumer”
@@ -115,7 +115,6 @@ Choose “merchant-per-Business-Unit” if you want:
 * invite and manage users at a **merchant workspace** boundary
 * separate Business Unit teams owning reconciliation independently
 * lower risk of cross-team interference (each Business Unit isolated at merchant scope)
-
 
 
 ### **Setup B: One Org, one Payments merchant, business units as Profiles + Recon merchant adjacent**
@@ -169,7 +168,6 @@ Choose “single merchant + multiple profiles” if you want:
 * isolation of recon setup inside that umbrella using profiles
 * simpler merchant sprawl management (fewer merchants)
 * separation where it matters (rules, logic, workflows, ops ownership) at profile level
-
 
 
 #### **Scenario C: Payments under one merchant, reconciliation separated (Recon profiles) + Recon merchant under Org**

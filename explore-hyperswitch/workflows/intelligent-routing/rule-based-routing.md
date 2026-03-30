@@ -24,7 +24,6 @@ A rule-based routing configuration comprises of one or more rules with each rule
 ## Steps to configure Rule Based Configuration in Smart Router:
 
 
-
 _**Step 1:**_ Click on `Setup` for **Rule Based Configuration:**
 
 <figure><img src="../../../.gitbook/assets/routing-1.png" alt=""><figcaption></figcaption></figure>

@@ -1,5 +1,5 @@
 ---
-description: Guide to using Apple Pay payment method on Hyperswitch
+description: Guide to using Apple Pay payment method on Juspay Hyperswitch
 icon: apple-pay
 ---
 
@@ -26,7 +26,7 @@ Follow the below guide for setting up Apple Pay on Hyperswitch based on your use
 * Click on verify and enable to complete your setup
 
 {% hint style="warning" %}
-Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since the Apple Pay Web Domain flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
@@ -39,7 +39,6 @@ Please note since the Apple Pay Web Domain flow involves decryption at Hyperswit
 * Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
 
 </details>
-
 
 
 #### **Prerequisites**
@@ -99,9 +98,6 @@ openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
 
-
-
-
 ## **iOS Application**
 
 #### **Steps To Configure :**&#x20;
@@ -152,7 +148,7 @@ This final step is specific to the processor being used and is not necessary in 
 {% endhint %}
 {% endtab %}
 
-{% tab title="Payment Processing Details At Hyperswitch" %}
+{% tab title="Payment Processing Details At Juspay Hyperswitch" %}
 \\
 
 <figure><img src="../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
@@ -187,7 +183,7 @@ base64 -i apple_pay.cer
 <figure><img src="../../../Users/shankar.singh/Documents/hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-Please note since this flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since this flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
@@ -208,4 +204,3 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 
 <figure><img src="../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
-

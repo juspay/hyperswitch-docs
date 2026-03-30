@@ -59,13 +59,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY",{
       customBackendUrl: "YOUR_BACKEND_URL",
@@ -148,13 +148,13 @@ async function initialize() {
     body: JSON.stringify({currency: "USD",amount: 100}),
   });
   const { clientSecret } = await response.json();
-  
+
   // Initialise Hyperloader.js
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
- 
-  let hyper; 
+
+  let hyper;
   script.onload = () => {
       hyper = window.Hyper("YOUR_PUBLISHABLE_KEY")
       const appearance = {

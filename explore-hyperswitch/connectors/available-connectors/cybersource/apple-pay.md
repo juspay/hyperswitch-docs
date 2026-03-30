@@ -1,5 +1,5 @@
 ---
-description: Integrate ApplePay via Cybersource in Hyperswitch
+description: Integrate ApplePay via Cybersource in Juspay Hyperswitch
 ---
 
 # Apple Pay

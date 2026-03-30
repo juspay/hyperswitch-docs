@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Klarna via Hyperswitch
+description: Accept payments through Klarna via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -13,7 +13,7 @@ This section gives you an overview of how to make payments via Klarna through Hy
 
 It allows businesses to provide direct payments, pay later options, and installment plans in a one-click purchase experience. To know about more about payment methods supported by Klarna via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Klarna via Hyperswitch
+### Activating Klarna via Juspay Hyperswitch
 
 #### Prerequisites
 

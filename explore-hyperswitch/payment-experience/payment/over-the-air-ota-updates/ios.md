@@ -20,12 +20,12 @@ let payload = [
                 "forceUpdate": true,
                 "localAssets": false,
                 "fileName": getHyperOTAPlist("fileName"),
-                "releaseConfigURL": getHyperOTAPlist(configKey) + 
+                "releaseConfigURL": getHyperOTAPlist(configKey) +
                  "/mobile-ota/ios/" + SDKVersion.current + "/config.json",
 ] as [String: Any]
 
-HyperOTAServices(payload: payload, 
-                loggerDelegate: logger, 
+HyperOTAServices(payload: payload,
+                loggerDelegate: logger,
                 baseBundle: Bundle(for: OTAServices.self))
 ```
 
@@ -36,4 +36,3 @@ Make sure `releaseConfigURL` points to the `config.json` for the correct SDK ver
 {% endhint %}
 
 For more information, [Airborne](https://github.com/juspay/airborne)
-

@@ -63,7 +63,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Configuring Apple Pay on Hyperswitch**
+#### **Configuring Apple Pay on Juspay Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
 
@@ -92,7 +92,6 @@ base64 -i certificate_sandbox.key
 * In Domain Name, add the verified domain name you configured in Merchant Domains in Apple Developer Account.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
-
 
 
 #### **Creating Apple Pay Payment Processing Certificate**

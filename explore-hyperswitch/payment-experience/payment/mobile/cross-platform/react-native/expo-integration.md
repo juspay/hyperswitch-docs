@@ -46,4 +46,3 @@ After completing the Expo setup, **follow the same steps as the React Native int
 4. Present the payment sheet using **presentPaymentSheet**
 
 Refer to the [**React Native integration steps**](react-native-with-rest-api-integration.md) for the complete payment flow implementation.
-

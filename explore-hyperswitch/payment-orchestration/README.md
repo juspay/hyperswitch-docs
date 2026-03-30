@@ -12,7 +12,7 @@ Whether you're:
 * **Managing payouts** to vendors
 * **Making recurring payments**
 
-Hyperswitch provides a **unified solution** to maximize efficiency while minimizing costs.
+Juspay Hyperswitch provides a **unified solution** to maximize efficiency while minimizing costs.
 
 Built for businesses of all sizes and types—**e-commerce platforms, SaaS companies, and marketplaces**—our orchestration platform ensures **reliability and flexibility**, helping you stay ahead in a competitive landscape.
 

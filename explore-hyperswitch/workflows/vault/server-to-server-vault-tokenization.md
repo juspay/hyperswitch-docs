@@ -60,7 +60,7 @@ curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
 --header 'Content-Type: application/json' \
 --header 'x-profile-id: <profile-id>' \
 --header 'api-key: <api_key>' \
---data-raw '{   
+--data-raw '{
     "merchant_reference_id": "customer_1742551597",
     "name": "John Doe",
     "email": "guest@example.com",

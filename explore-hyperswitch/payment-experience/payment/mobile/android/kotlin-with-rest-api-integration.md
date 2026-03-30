@@ -59,7 +59,7 @@ Configure the Hyperswitch SDK in your app-level `build.gradle` file. You can spe
 hyperswitch {
     // Optional: Specify main SDK version (defaults to latest if not specified)
     sdkVersion = "1.1.5"
-    
+
     // Optional features - only add what you need
     features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }

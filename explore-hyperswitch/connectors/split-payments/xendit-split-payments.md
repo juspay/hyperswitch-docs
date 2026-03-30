@@ -13,71 +13,71 @@ If your platform charges a fee or commission when facilitating payments for your
 * Platform to Partner
 * Accepting Payments for Sub-Accounts
 
-## Split Xendit payments via Hyperswitch
+## Split Xendit payments via Juspay Hyperswitch
 
 Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 
 #### Example: Flat amount Split
 
 ```json
-{  
-  "amount": 10000,  
-  "currency": "IDR",  
-  "confirm": true,  
-  "split_payments": {  
-    "xendit_split_payment": {  
-      "multiple_splits": {  
-        "name": "Marketplace Split",  
-        "description": "Platform fee and merchant payment",  
-        "routes": [  
-          {  
-            "flat_amount": 1000,  
-            "currency": "IDR",  
-            "destination_account_id": "platform_account_123",  
-            "reference_id": "platform_fee"  
-          },  
-          {  
-            "flat_amount": 9000,  
-            "currency": "IDR",   
-            "destination_account_id": "merchant_account_456",  
-            "reference_id": "merchant_payment"  
-          }  
-        ]  
-      }  
-    }  
-  }  
+{
+  "amount": 10000,
+  "currency": "IDR",
+  "confirm": true,
+  "split_payments": {
+    "xendit_split_payment": {
+      "multiple_splits": {
+        "name": "Marketplace Split",
+        "description": "Platform fee and merchant payment",
+        "routes": [
+          {
+            "flat_amount": 1000,
+            "currency": "IDR",
+            "destination_account_id": "platform_account_123",
+            "reference_id": "platform_fee"
+          },
+          {
+            "flat_amount": 9000,
+            "currency": "IDR",
+            "destination_account_id": "merchant_account_456",
+            "reference_id": "merchant_payment"
+          }
+        ]
+      }
+    }
+  }
 }
 ```
 
 #### Example: Percentage-Based Split
 
 ```json
-{  
-  "amount": 10000,  
-  "currency": "IDR",  
-  "confirm": true,  
-  "split_payments": {  
-    "xendit_split_payment": {  
-      "multiple_splits": {  
-        "name": "Percentage Split",  
-        "description": "Commission-based split",  
-        "routes": [  
-          {  
-            "percent_amount": 10,  
-            "currency": "IDR",  
-            "destination_account_id": "platform_account_123",  
-            "reference_id": "commission"  
-          },  
-          {  
-            "percent_amount": 90,  
-            "currency": "IDR",  
-            "destination_account_id": "merchant_account_456",   
-            "reference_id": "merchant_share"  
-          }  
-        ]  
-      }  
-    }  
-  }  
+{
+  "amount": 10000,
+  "currency": "IDR",
+  "confirm": true,
+  "split_payments": {
+    "xendit_split_payment": {
+      "multiple_splits": {
+        "name": "Percentage Split",
+        "description": "Commission-based split",
+        "routes": [
+          {
+            "percent_amount": 10,
+            "currency": "IDR",
+            "destination_account_id": "platform_account_123",
+            "reference_id": "commission"
+          },
+          {
+            "percent_amount": 90,
+            "currency": "IDR",
+            "destination_account_id": "merchant_account_456",
+            "reference_id": "merchant_share"
+          }
+        ]
+      }
+    }
+  }
 }
 ```
 
@@ -176,14 +176,14 @@ For multiple splits, the `charges` field contains detailed split rule informatio
 <pre><code>{"charges": {
     "xendit_split_payment":{
 <strong>        "multiple_splits": {
-</strong>            "split_rule_id": "sr_12345", 
-            "for_user_id": "user_123", 
+</strong>            "split_rule_id": "sr_12345",
+            "for_user_id": "user_123",
             "name": "Split Rule Name",
             "description": "Split description",
-            "routes": [...]        
-            }      
+            "routes": [...]
+            }
         }
-    }  
+    }
 }
 </code></pre>
 
@@ -198,13 +198,13 @@ Key fields to document:
 For single splits, the structure is simpler transformers.rs:370-382 :
 
 ```
-{"charges": { 
+{"charges": {
     "xendit_split_payment": {
         "single_split": {
-            "for_user_id": "user_123"       
-         }      
-     }    
-   }  
+            "for_user_id": "user_123"
+         }
+     }
+   }
 }
 ```
 

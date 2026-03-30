@@ -4,7 +4,7 @@ icon: arrow-progress
 
 # Payment Method
 
-Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
 ### Integration Path
@@ -19,7 +19,6 @@ Payment method flows leverages all the capabilities available in [Payments](http
 The business can use the Payment Method SDK or `/payment-methods` API to first capture the card details and create a `payment_method_id` &#x20;
 
 The business can then use the `payment_method_id` in `/payments` API to perform all functionalities supported by the [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) flow.&#x20;
-
 
 
 **Payment Method Lifecycle**

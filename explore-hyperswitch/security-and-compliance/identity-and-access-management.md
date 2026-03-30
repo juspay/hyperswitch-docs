@@ -6,7 +6,7 @@ icon: id-card-clip
 
 Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
 
-### Authentication Methodology for Hyperswitch APIs
+### Authentication Methodology for Juspay Hyperswitch APIs
 
 **1. Admin Services Authentication**
 
@@ -32,7 +32,7 @@ Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with networ
 * **Distributed Access Model:** Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
 * **Principle of Least Privilege:** Permissions are restricted to essential tasks to mitigate unauthorized access risks.
 
-### Benefits of Hyperswitch IAM
+### Benefits of Juspay Hyperswitch IAM
 
 1. **Enhanced Security:** Multi-layered authentication, key management, and RBAC reduce vulnerabilities.
 2. **Operational Efficiency:** Clear role definitions and access models ensure streamlined workflows.

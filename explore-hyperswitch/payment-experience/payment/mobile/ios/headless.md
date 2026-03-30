@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
@@ -44,11 +44,11 @@ paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClien
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
 
 <pre class="language-swift"><code class="lang-swift">private var handler: PaymentSessionHandler?
- 
+
 func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Void {
     self.handler = handler
 }
-    
+
 @objc func launchHeadless(_ sender: Any) {
     paymentSession!.getCustomerSavedPaymentMethods(initSavedPaymentMethodSessionCallback)
 <strong>}
@@ -56,7 +56,7 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 @objc func confirmPayment(_ sender: Any) {
     let paymentMethod = self.handler!.getCustomerLastUsedSavedPaymentMethodData(callback)
 }
-    
+
 @objc func confirmPayment(_ sender: Any) {
     self.handler!.confirmWithLastUsedSavedPaymentMethodData(callback)
 }
@@ -67,4 +67,3 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-

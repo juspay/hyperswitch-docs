@@ -66,9 +66,9 @@ paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClient
 ```swift
 // Present the PaymentSheet Lite
 paymentSession.presentPaymentSheetLite(
-    viewController: self, 
-    configuration: configuration, 
-    completion: { 
+    viewController: self,
+    configuration: configuration,
+    completion: {
         result in
             DispatchQueue.main.async {
                 switch result {

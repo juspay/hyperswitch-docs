@@ -42,7 +42,7 @@ The Payments API supports an extensive set of card parameters to ensure regional
 
 #### Digital Wallet Integration
 
-Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
+Juspay Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt=""><figcaption></figcaption></figure>
 
@@ -51,7 +51,7 @@ Hyperswitch provides comprehensive parameters that streamline transaction manage
 
 #### Post-Transaction: Refunds, Disputes, and Errors
 
-Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
+Juspay Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
 

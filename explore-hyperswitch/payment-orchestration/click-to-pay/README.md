@@ -16,11 +16,11 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
 
-### What Makes Hyperswitch’s Implementation Unique?
+### What Makes Juspay Hyperswitch’s Implementation Unique?
 
 #### Passkeys Support
 
-* Hyperswitch is among the first certified Mastercard and Visa partners for the passkey-enabled Click to Pay solution.
+* Juspay Hyperswitch is among the first certified Mastercard and Visa partners for the passkey-enabled Click to Pay solution.
 * Unlike the older Click to Pay versions, which required OTPs or push provisioning, Hyperswitch enables seamless biometric authentication using passkeys.
 
 #### Unified SDK

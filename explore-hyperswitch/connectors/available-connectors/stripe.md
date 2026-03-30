@@ -1,5 +1,5 @@
 ---
-description: Accept payments through Stripe via Hyperswitch
+description: Accept payments through Stripe via Juspay Hyperswitch
 ---
 
 # Stripe
@@ -12,7 +12,7 @@ This section gives you an overview of how to make payments via Stripe through Hy
 
 Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. It allows businesses to accept payments and scale faster. To know about more about payment methods supported by stripe via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Stripe via Hyperswitch
+### Activating Stripe via Juspay Hyperswitch
 
 #### Prerequisites
 

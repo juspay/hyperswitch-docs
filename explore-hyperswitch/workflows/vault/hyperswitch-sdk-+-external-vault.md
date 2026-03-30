@@ -69,7 +69,6 @@ The Hyperswitch Server forwards the raw card data, along with your merchant cred
 The connector returns the transaction status (e.g., "Succeeded" or "Failed") to the Hyperswitch Server. This status is passed down to the SDK, which then handles the final redirect to your `return_url`.
 
 
-
 **Integration Documentation :**
 
 * [**Unified Checkout  Integration guide**](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)

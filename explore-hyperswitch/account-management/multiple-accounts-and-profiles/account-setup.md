@@ -1,5 +1,5 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Set up your Juspay Hyperswitch account on the control center
 ---
 
 # ⚙️ Control Centre Account setup

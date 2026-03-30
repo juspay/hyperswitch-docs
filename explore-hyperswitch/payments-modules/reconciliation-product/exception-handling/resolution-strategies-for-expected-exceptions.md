@@ -36,7 +36,6 @@ If the source transaction is valid and represents real money, but the automated 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.34.16 PM.png" alt=""><figcaption></figcaption></figure>
 
 
-
 #### Option 1: Edit Entry
 
 "The Pre-emptive Correction"

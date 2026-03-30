@@ -17,7 +17,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 * Online gaming - Distribute prize money to players.
 * NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+## How to configure Payout links through Juspay Hyperswitch API?
 
 ### Prerequisites
 

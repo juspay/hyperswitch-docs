@@ -1,5 +1,5 @@
 ---
-description: Accept payments through GoCardless via Hyperswitch
+description: Accept payments through GoCardless via Juspay Hyperswitch
 hidden: true
 ---
 
@@ -15,7 +15,7 @@ This section gives you an overview of how to make payments via GoCardless throug
 
 GoCardless is a fintech company that specialises in bank payments including recurring payments, Direct Debit processing and Open Banking. GoCardless is headquartered in London. To know  more about payment methods supported by GoCardless via hyperswitch click [here](https://hyperswitch.io/pm-list).
 
-### Activating GoCardless via Hyperswitch
+### Activating GoCardless via Juspay Hyperswitch
 
 #### Prerequisites
 

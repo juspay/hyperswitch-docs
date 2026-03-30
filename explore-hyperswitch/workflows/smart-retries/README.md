@@ -14,7 +14,7 @@ The Auto Retry engine handles varied Retry strategy based on the type of error e
 3. **Clear PAN Retry -** Re-attempting a tokenised authorization request with a Clear PAN in case of de-tokenisation failures
 4. **Global Network Retry -** Re-attempting an authorization request with a signature network in case of debit network failure
 
-Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 100+ processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
+Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 90+ payment processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
 
 <figure><img src="../../../.gitbook/assets/unknown (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -57,7 +57,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | --------------------------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                    | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (frictionless flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data        | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data        | Successful        |
 
 #### Use case 2
 
@@ -65,21 +65,21 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | ------------------------------------------ | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                 | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (challenge flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data     | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data     | Successful        |
 
 ### Use case 3
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>              | <h4>Outcome</h4> |
 | ---------------- | ------------ | -------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds) | Generic decline  |
-| 2                | PSP2         | Original payload (non-3ds) | Succesful        |
+| 2                | PSP2         | Original payload (non-3ds) | Successful        |
 
 ### Use case 4
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                                                                                             | <h4>Outcome</h4> |
 | ---------------- | ------------ | --------------------------------------------------------------------------------------------------------- | ---------------- |
 | 1                | PSP1         | <p>Original payload (non-3ds)<br><br>Limited data fields on customer info, device/IP, product details</p> | Generic decline  |
-| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Succesful        |
+| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Successful        |
 
 ### Use case 5
 
@@ -87,10 +87,9 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | ------------------------------------ | ---------------- |
 | 1                | PSP1         | Original payload (Network token PAN) | Do not honor     |
 | 2                | PSP1         | Original payload (Clear PAN)         | Generic decline  |
-| 3                | PSP2         | Original payload (Clear PAN)         | Succesful        |
+| 3                | PSP2         | Original payload (Clear PAN)         | Successful        |
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
-
 
 
 ## How to enable Smart Retries?
@@ -99,11 +98,10 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 **Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
 
-* Confirmation on the retry flows to be enaled&#x20;
+* Confirmation on the retry flows to be enabled&#x20;
 * Maximum number of payment retry attempts&#x20;
 
 ####
-
 
 
 ## FAQs
