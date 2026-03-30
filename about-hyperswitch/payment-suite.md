@@ -1,4 +1,5 @@
 ---
+description: Explore the comprehensive Juspay Hyperswitch payment suite covering orchestration, checkout experience, payment operations, and advanced enterprise capabilities
 hidden: true
 noIndex: true
 icon: suitcase
@@ -6,9 +7,9 @@ icon: suitcase
 
 # Payment Suite
 
-Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
+Juspay Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
 
-* **Payment Orchestration** – Unified API and no-code integrations for all 60+ payment processors and numerous payment methods. Enables improving authorization rates with built-in intelligent routing.
+* **Payment Orchestration** – Unified API and no-code integrations for all 300+ connectors and numerous payment methods. Enables improving authorization rates with built-in intelligent routing.
 * **Checkout Experience** – Seamless, fast, and intuitive checkout experience for end users, improving conversions.
 * **Payment Operations** – Simplifies management of all payment workflows and operations from a centralized dashboard.
 
@@ -34,7 +35,7 @@ Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) p
 
 #### Payments&#x20;
 
-<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Intelligent Payment Orchestration</strong></mark></td><td>Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.</td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Connectors (Processor Integrations)</strong></mark></td><td>Integrate with more than 200+ Connectors enabling 150+ payment methods with zero development effort.    </td><td><a href="../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Checkout</strong></mark></td><td>Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.</td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Payment Links</strong></mark></td><td>Seamlessly integrate into Hyperswitch without writing much code.</td><td><a href="../.gitbook/assets/Payment Links (1).png">Payment Links (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Control Centre</strong></mark></td><td>Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations &#x26; analytics use cases. This provides more power to your team for managing payments seamlessly.</td><td><a href="../.gitbook/assets/customization.jpg">customization.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Intelligent Payment Orchestration</strong></mark></td><td>Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.</td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Connectors (Processor Integrations)</strong></mark></td><td>Integrate with more than 300+ connectors enabling 300+ payment methods with zero development effort.    </td><td><a href="../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Checkout</strong></mark></td><td>Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.</td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Payment Links</strong></mark></td><td>Seamlessly integrate into Hyperswitch without writing much code.</td><td><a href="../.gitbook/assets/Payment Links (1).png">Payment Links (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Control Centre</strong></mark></td><td>Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations &#x26; analytics use cases. This provides more power to your team for managing payments seamlessly.</td><td><a href="../.gitbook/assets/customization.jpg">customization.jpg</a></td></tr></tbody></table>
 
 
 

@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Jan to Mar' 24)
+description: Review Juspay Hyperswitch Q1 2024 roadmap covering vault enhancements, connector integrations, and developer experience
 icon: road
 ---
 

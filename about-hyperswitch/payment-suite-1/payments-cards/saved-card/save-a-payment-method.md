@@ -1,18 +1,18 @@
 ---
-description: Setting up and managing recurring payments
+description: Save payment methods for future on-session and off-session payments to enable seamless Customer-Initiated and Merchant-Initiated transactions
 icon: repeat
 ---
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
 ### Saving a payment method for future on-session payments (COF CIT)
 
-To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.
+To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This also minimizes the risk of the customer entering incorrect card details.
 
 Saving for future on-session payments implies that the customer will be available online during the checkout and can authenticate the payment by entering CVV or complete 3DS verification. These are known as Card-on-File Customer Initiated Transactions (COF-CIT).
 
@@ -38,7 +38,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -87,7 +87,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -129,7 +129,7 @@ Once a customer's payment method is saved for MIT payments you can start chargin
 
 You would be using the same `payment_method_id` that was returned in the `/payments/:id:/retrieve` response for the initial transaction where the customer authorized saving for future use.
 
-To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
+To get all the payment methods saved for a customer use the [List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
 
 ```bash
 curl --request GET \

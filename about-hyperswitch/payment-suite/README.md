@@ -1,11 +1,11 @@
 ---
-description: Open, Modular, Self-Hostable Payment Infrastructure
+description: Understand the four core components of Juspay Hyperswitch payment infrastructure and select your optimal SDK or server-to-server integration architecture
 icon: container-storage
 ---
 
 # Payments Suite
 
-Hyperswitch is built for teams that want engineering-grade control over payments.
+Juspay Hyperswitch is built for teams that want engineering-grade control over payments.
 
 To simplify architectural decisions, the ecosystem can be viewed as four independent building blocks.\
 By defining ownership of each block — Hyperswitch-managed, self-hosted, or third-party — you can design an architecture aligned with your compliance posture, performance requirements, and internal engineering capabilities.
@@ -80,7 +80,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 #### High-level Flow
 
-**Tokenisze Card :**&#x20;
+**Tokenize Card :**&#x20;
 
 * Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
 *   Hyperswitch securely stores the credential and returns a reusable identifier - `payment_method_id`.

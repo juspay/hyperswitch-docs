@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'23)
+description: Review Juspay Hyperswitch Q4 2023 roadmap covering cloud deployment, fraud prevention, and open source releases
 icon: road
 ---
 
@@ -23,10 +23,10 @@ Our core values have pretty much remained the same since the early days and here
 
 There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
-* 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
+* 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Juspay Hyperswitch.
 * 💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able reduce payment processing costs by embracing the diversity in payments.
 * 📈 **Improving Authorization Rates:** Ensuring a best-in-class payment experience and access to latest innovations in the payments ecosystem for all businesses.
-* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Hyperswitch intends to eliminate all such operational burdens so that businesses can focus on the core activities.
+* 👍 **Reducing Payment Operations:** Managing payments across multiple countries, currencies and processors should not add to the administrative burden on businesses. Hence, Juspay Hyperswitch intends to eliminate all such operational burdens so that businesses can focus on the core activities.
 * 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
 <table><thead><tr><th width="148">Legend</th><th>Description</th></tr></thead><tbody><tr><td>🟩</td><td>Work completed</td></tr><tr><td>🟧</td><td>Work in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f69b">🚛</span></td><td>Backlogged for next quarter</td></tr></tbody></table>

@@ -1,5 +1,5 @@
 ---
-description: Jan'25 - Mar'25
+description: Review Juspay Hyperswitch Q1 2025 roadmap for modular payments, intelligent routing, and cost observability
 icon: road
 ---
 
@@ -107,7 +107,7 @@ In Q1’25, Hyperswitch will be offering the following composable services as st
 
 * **🟧 Revamped Recon module** to support self exploration with transaction source agnostic recon and 2-way or 3-way level capabilities _(Larger-scope initiative extending into Q2)_
 * **🟧 Cost observability service:** For merchants on interchange+ pricing, HyperSense will ingest their PSP invoices and reports to present the cost - trends, drill-downs, auto RCAs for any anomalies and audit of the report _(Larger-scope initiative extending into Q2)_
-* 🟩 Data reporting on an organisation, merchant and profile level for easier reconciliation
+* 🟩 Data reporting on an organization, merchant and profile level for easier reconciliation
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 

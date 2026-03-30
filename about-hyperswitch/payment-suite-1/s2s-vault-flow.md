@@ -1,13 +1,11 @@
 ---
-description: >-
-  Best for PCI compliant merchants who wants to store the card during initial
-  checkout phase without charging their customers.
+description: Store card details securely during checkout using server-to-server API calls for PCI-compliant merchants before processing subsequent payments
 hidden: true
 ---
 
 # S2S Vault flow
 
-The Payment method SDK allows you to securely collect payment information and give customers the option to save their payment details for future transactions. By vaulting these details during the initial checkout phase.
+The Juspay Hyperswitch Payment method SDK allows you to securely collect payment information and give customers the option to save their payment details for future transactions. By vaulting these details during the initial checkout phase.
 
 #### **Key Features**
 
@@ -46,7 +44,7 @@ Hyperswitch returns the `payment_method_id` in the response. You can use this pa
 
 #### **Payment :**&#x20;
 
-To charge the customer you will will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with  `confirm` as `true`&#x20;
+To charge the customer you will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with  `confirm` as `true`&#x20;
 
 {% hint style="info" %}
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.

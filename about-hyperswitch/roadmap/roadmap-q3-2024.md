@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Review Juspay Hyperswitch Q3 2024 roadmap covering network tokenization, bank integrations, and payment method management
 icon: road
 ---
 

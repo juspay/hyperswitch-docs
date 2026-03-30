@@ -1,4 +1,5 @@
 ---
+description: Configure overcapture functionality to settle amounts exceeding the original authorization for shipping fees, price adjustments, and additional charges
 icon: chart-diagram
 ---
 
@@ -28,14 +29,12 @@ Use the boolean field `enable_overcapture` in your payment request.
 
 This can be passed in:
 
-[POST /payments ](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+- `POST /payments`
+- `POST /payments/:id/update`
 
-[POST /payments/:id/update](https://api-reference.hyperswitch.io/v1/payments/payments--update)
-
-⚠️ Note:
-
-* The request-level `enable_overcapture` will override the profile-level setting.
-* Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
+> **Note:** The request-level `enable_overcapture` will override the profile-level setting.
+>
+> Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
 
 ***
 

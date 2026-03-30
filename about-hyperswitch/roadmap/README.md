@@ -1,5 +1,5 @@
 ---
-description: Jan '26 to March '26
+description: Explore Juspay Hyperswitch Q1 2026 roadmap for platform payments, vault services, and SDK enhancements
 icon: road
 ---
 

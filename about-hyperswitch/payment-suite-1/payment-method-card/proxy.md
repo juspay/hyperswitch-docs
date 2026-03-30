@@ -1,11 +1,11 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: Tokenize cards in Juspay Hyperswitch Vault and process payments through the proxy endpoint to any PSP
 icon: almost-equal-to
 ---
 
 # Proxy
 
-The Proxy Payments Service allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
+The Proxy Payments Service allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
 
 Key Highlights:
 
@@ -99,7 +99,7 @@ The customer enters their card details directly into the SDK-managed widget. Upo
 
 The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 
-**Execute Proxy Payment (Server-Side)**&#x20;
+**5. Execute Proxy Payment (Server-Side)**&#x20;
 
 The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 

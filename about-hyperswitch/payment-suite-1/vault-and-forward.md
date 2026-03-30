@@ -1,13 +1,11 @@
 ---
-description: >-
-  Best for merchants who do not want to handle card data and want to maintain
-  their current integration with the processors.
+description: Vault card data securely without handling sensitive information while maintaining your existing processor integrations and reducing PCI compliance scope
 hidden: true
 ---
 
 # Vault and Forward
 
-In this approach, the Direct Payment Control Model functions by treating Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
+In this approach, the Direct Payment Control Model functions by treating Juspay Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
 
 For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
 
@@ -37,7 +35,7 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 
 
-**Integration Documetation :**&#x20;
+**Integration Documentation :**&#x20;
 
 * [Vault SDK Integration](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/vault-sdk-integration)
 * [Proxy Payment Integration Guide](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments)

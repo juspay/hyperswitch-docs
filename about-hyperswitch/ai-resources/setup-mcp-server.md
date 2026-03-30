@@ -1,12 +1,13 @@
 ---
 icon: user-robot-xmarks
+description: Configure the Juspay Hyperswitch MCP server to execute sandbox API operations directly through conversational AI assistants
 ---
 
 # Setup MCP Server
 
 {% hint style="danger" %}
 This MCP server is only meant for product exploration while using sandbox environment.\
-**DO NOT USE Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
+**DO NOT USE Juspay Hyperswitch API Key from the PRODUCTION ENVIRONMENT.**
 {% endhint %}
 
 **Prerequisites**: Ensure you have an MCP client installed (Cursor, Claude Desktop, Cline, etc.)
@@ -51,5 +52,5 @@ You can head on to payment section in [Hyperswitch Control Center](https://app.h
 
 {% hint style="warning" %}
 Responses from AI tools can be incorrect, use with caution.\
-and reach out to us on [slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
+Reach out to us on [Slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
 {% endhint %}
