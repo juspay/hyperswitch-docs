@@ -1,19 +1,19 @@
 ---
 description: >-
-  Common payment augmentation patterns for FinTech enterprises, from adding
-  processors to improving routing, vaulting, and operational visibility.
+  Augment fintech payment stacks to enable seamless global expansion with smart
+  routing, vaulting, and observability
 icon: watch-calculator
 ---
 
 # Fintech Businesses
 
-### TL;DR
+## TL;DR
 
 Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the [connector service](https://github.com/juspay/connector-service) as a stateless integration layer, or self-host within your own infrastructure for complete data sovereignty.
 
 ***
 
-### Why do Fintechs need payment orchestration?
+## Why do Fintechs need payment orchestration?
 
 Fintech enterprises rarely build payment stacks from scratch. Most established players already operate mature internal ledgers, risk engines, and reconciliation systems. The challenge isn't replacing these systems; it's augmenting them to support new markets, APMs, and compliance requirements without accruing technical debt.
 
@@ -21,7 +21,7 @@ Hyperswitch is designed as a modular middleware layer that injects specific capa
 
 ***
 
-### How can fintechs expand into new geographies faster?
+## How can fintechs expand into new geographies faster?
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
@@ -35,7 +35,7 @@ Hyperswitch acts as a stateless integration layer. You can utilise our [Connecto
 
 ***
 
-### How can fintechs maintain data sovereignty with self-hosted deployment?
+## How can fintechs maintain data sovereignty with self-hosted deployment?
 
 Fintechs dealing with high-value transactions or strict regulatory requirements (e.g., CCPA, GDPR) often need full control over their payment infrastructure. While Hyperswitch's SaaS offering is PCI-DSS compliant, self-hosting gives you complete ownership of your data and infrastructure.
 
@@ -49,7 +49,7 @@ Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire s
 
 ***
 
-### How can fintechs boost authorisation rates without rebuilding routing logic?
+## How can fintechs boost authorisation rates without rebuilding routing logic?
 
 Internal routing engines often struggle to scale. Hardcoding rules like _"If transaction > $500, route to Adyen"_ creates a fragile codebase. Implementing Smart Retries (e.g., retrying a soft decline on a secondary processor) requires complex state management.
 
@@ -63,7 +63,7 @@ Insert Hyperswitch downstream of your Risk Engine to act as a dynamic Smart Rout
 
 ***
 
-### How can fintechs avoid processor lock-in when storing saved cards?
+## How can fintechs avoid processor lock-in when storing saved cards?
 
 Relying on PSP-specific tokens (like Stripe `cus_` objects) creates vendor lock-in. Migrating millions of saved cards to a new processor is a high-risk operation that often causes churn.
 
@@ -85,7 +85,7 @@ Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/ex
 
 ***
 
-### How can fintechs manage payment operations without replacing their checkout flow?
+## How can fintechs manage payment operations without replacing their checkout flow?
 
 Some Fintechs only need to control specific parts of the lifecycle—like issuing refunds or capturing authorized funds—without routing the initial checkout through Hyperswitch.
 
@@ -98,7 +98,7 @@ Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-c
 
 ***
 
-### How can fintechs maintain consistent retry logic across multiple processors?
+## How can fintechs maintain consistent retry logic across multiple processors?
 
 Handling error codes from 10+ different processors is a maintenance nightmare. A "Do Not Honor" from one bank might be a "suspected\_fraud" from another, making it impossible to build consistent retry logic or user feedback.
 
@@ -120,7 +120,7 @@ This shows how disparate PSP error codes are mapped to a unified, intelligible s
 
 ***
 
-### How can fintechs detect payment anomalies before they impact revenue?
+## How can fintechs detect payment anomalies before they impact revenue?
 
 Blind spots in processor performance can lead to lost revenue. If a specific BIN range is failing on a processor, you need to know promptly—not when the monthly report comes out.
 
@@ -133,13 +133,13 @@ Hyperswitch provides observability capabilities to help monitor payment operatio
 
 ***
 
-### What's next?
+## What's next?
 
 Ready to augment your payment stack? Here are the next steps:
 
-* [Explore intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules
-* [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
-* [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
-* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Hyperswitch in your own infrastructure
+- [Explore intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules
+- [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
+- [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
+- [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
+- [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
+- [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Hyperswitch in your own infrastructure
