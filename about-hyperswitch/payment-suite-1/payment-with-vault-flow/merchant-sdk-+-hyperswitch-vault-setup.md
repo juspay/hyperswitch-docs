@@ -10,7 +10,7 @@ In this approach, the merchant uses their own frontend SDK to capture card detai
 
 Once tokenized, Hyperswitch backend handles orchestration, routing, retries, and connector execution using vault tokens. All orchestration configuration is managed through the Hyperswitch Dashboard.
 
-#### Understanding Payment and Vault Workflow
+### Understanding Payment and Vault Workflow
 
 #### **Vaulting :**
 
@@ -48,7 +48,7 @@ Hyperswitch sends the final payment response, including transaction status and t
 
 
 
-#### **Payment Using Stored Card :**
+### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (7).svg" alt=""><figcaption></figcaption></figure>
 

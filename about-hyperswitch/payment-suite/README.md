@@ -12,21 +12,21 @@ By defining ownership of each block — Hyperswitch-managed, self-hosted, or thi
 
 
 
-## **The Four Core Components**
+### **The Four Core Components**
 
-### **The SDK (Frontend) :**&#x20;
+#### **The SDK (Frontend) :**&#x20;
 
 The entry point for your payment flow. It resides in your frontend and is responsible for securely capturing sensitive payment information.
 
-### **Intelligent Routing & Orchestration (Backend) :**&#x20;
+#### **Intelligent Routing & Orchestration (Backend) :**&#x20;
 
 The core of the operation. It manages the payment lifecycle, executes routing logic, and handles post-payment operations like refunds.
 
-### **Acquirer & Processor Connectivity (Connectors) :**
+#### **Acquirer & Processor Connectivity (Connectors) :**
 
 The actual pipelines that translates the transaction (e.g., Stripe, Adyen, Worldpay).
 
-### **Vault (Card Data Storage) :**&#x20;
+#### **Vault (Card Data Storage) :**&#x20;
 
 The secure locker for sensitive card data to enable "One-Click" recurring payments without the user re-entering details.
 
@@ -36,24 +36,24 @@ Each Component can be handled by Hyperswitch, managed or self-deployed by your o
 
 ***
 
-## Integration Architecture
+### Integration Architecture
 
 With the components defined, the next step is to select your integration architecture. This choice hinges on a single question:  Who controls the payment execution ?
 
 Choose the integration method that best aligns with your payment flow requirements:
 
-### Integration Model 1: Client-Side SDK Payments
+#### Integration Model 1: Client-Side SDK Payments
 
 (Tokenize Post-Payment | SDK-Initiated Execution)
 
-### When to Choose This Model
+#### When to Choose This Model
 
 * You want dynamic, frontend-driven payment experiences
 * You prefer minimal backend orchestration logic
 * You want SDK-triggered payment confirmation
 * You are optimizing for rapid checkout implementation
 
-### High-level Flow
+#### High-level Flow
 
 1. Merchant will call the [/payments](https://api-reference.hyperswitch.io/v1/payments/payments--create) API and load the [Payment SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment).
 2. SDK securely collects payment details.
@@ -67,18 +67,18 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 ***
 
-### Integration Model 2: Server-to-Server (S2S) Payments
+#### Integration Model 2: Server-to-Server (S2S) Payments
 
 (Tokenize Pre-Payment | Backend-Controlled Execution)
 
-### When to Choose This Model
+#### When to Choose This Model
 
 * You want granular control over transaction timing
 * You require backend-driven orchestration logic
 * You want to tokenize credentials before execution
 * You prefer decoupling vaulting from transaction processing
 
-### High-level Flow
+#### High-level Flow
 
 **Tokenisze Card :**&#x20;
 

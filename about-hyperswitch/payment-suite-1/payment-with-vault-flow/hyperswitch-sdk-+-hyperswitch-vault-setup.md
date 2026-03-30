@@ -10,7 +10,7 @@ In this approach, the Hyperswitch SDK is used on the frontend to capture card de
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
-#### **Understanding Payment and Vault flow**
+### **Understanding Payment and Vault flow**
 
 #### **Vaulting :**
 
@@ -35,7 +35,7 @@ The final payment and vaulting status is returned to the SDK, which redirects th
 
 
 
-#### **Payment Using Stored Card :**
+### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 
