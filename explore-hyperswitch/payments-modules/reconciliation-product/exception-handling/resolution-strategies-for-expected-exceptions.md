@@ -1,3 +1,7 @@
+---
+description: Understand reconciliation concepts, exception handling, and financial data mapping for accurate payment matching
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview

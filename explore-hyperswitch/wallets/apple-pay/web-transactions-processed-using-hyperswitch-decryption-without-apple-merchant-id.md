@@ -1,3 +1,7 @@
+---
+description: Configure Apple Pay for in-app and web transactions with secure payment processing capabilities
+---
+
 # Web Transactions Processed Using Juspay Hyperswitch Decryption (Without Apple Merchant ID)
 
 In this flow Juspay Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.

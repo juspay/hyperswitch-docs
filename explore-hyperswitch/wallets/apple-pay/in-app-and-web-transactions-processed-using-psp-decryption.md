@@ -1,3 +1,7 @@
+---
+description: Configure Apple Pay for in-app and web transactions with secure payment processing capabilities
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this model:

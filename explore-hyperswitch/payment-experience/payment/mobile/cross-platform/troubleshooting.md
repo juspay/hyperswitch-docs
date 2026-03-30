@@ -1,3 +1,7 @@
+---
+description: Troubleshoot common integration issues and resolve errors across mobile and web platforms
+---
+
 # Troubleshooting
 
 ## Android

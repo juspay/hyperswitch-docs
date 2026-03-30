@@ -1,3 +1,7 @@
+---
+description: Set up Google Pay integration for seamless in-app and web payment experiences
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.

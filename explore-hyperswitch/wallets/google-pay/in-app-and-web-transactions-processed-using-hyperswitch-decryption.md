@@ -1,3 +1,7 @@
+---
+description: Set up Google Pay integration for seamless in-app and web payment experiences
+---
+
 # In-App and Web Transactions Processed Using Juspay Hyperswitch Decryption
 
 In this flow Juspay Hyperswitch decrypts the Google Pay token using your shared keys. This allows Juspay Hyperswitch to route the payment to any downstream processor.

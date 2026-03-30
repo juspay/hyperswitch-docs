@@ -1,3 +1,7 @@
+---
+description: Understand reconciliation concepts, exception handling, and financial data mapping for accurate payment matching
+---
+
 # Merchant & Profile Mapping in Recon
 
 ### Mapping Juspay Hyperswitch Org/Merchant/Profile to Recon
