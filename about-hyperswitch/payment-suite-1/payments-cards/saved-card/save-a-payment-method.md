@@ -1,8 +1,8 @@
 ---
-description: Setting up and managing recurring payments
+description: >-
+  Explore Use cases for Saved card to enhance your payment orchestration capabilities
 icon: repeat
 ---
-
 # Use cases for Saved card
 
 Hyperswitch supports the following ways of saving a payment method used in a successful payment:
@@ -31,10 +31,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"on_session", 
+    "setup_future_usage":"on_session",
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
 ```
 
@@ -80,10 +80,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session", 
+    "setup_future_usage":"off_session",
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "return_url": "https://example.com", //
 }'
 ```
 

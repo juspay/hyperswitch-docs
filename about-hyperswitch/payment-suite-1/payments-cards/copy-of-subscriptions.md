@@ -1,9 +1,9 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: >-
+  Set up subscription payments to enable recurring billing for your customers
 hidden: true
 icon: arrows-rotate-reverse
 ---
-
 # Copy of Subscriptions
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
@@ -25,23 +25,23 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../../explore-Hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
-#### Initial Subscription create flow (with CIT Payment)
+### Initial Subscription create flow (with CIT Payment)
 
 <figure><img src="../../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
-#### MIT payment flow in subsequent billing cycle
+### MIT payment flow in subsequent billing cycle
 
 <figure><img src="../../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+### 1. For non-PCI DSS compliant merchants who wants to use Hyperswitch Payments SDK
 
-#### Initial Subscription create flow (with CIT Payment)
+### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
@@ -66,8 +66,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch", 
-        "additional_secret": "hyperswitch" 
+        "merchant_secret": "Hyperswitch",
+        "additional_secret": "Hyperswitch"
     },
     "metadata": {
         "site": "test"
@@ -154,7 +154,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -164,16 +164,14 @@ The correct flow depends on whether you intend to charge the customer immediatel
 * `amount > 0`&#x20;
 
 
-
-#### 2. The Zero Dollar Authorization Flow
+### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
 
-
 **Configuration Parameters :**&#x20;
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-Hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
 * `setup_future_usage: "off_session"`
 * `amount: 0`
 * `payment_type: "setup_mandate"`
@@ -181,7 +179,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 {% endstep %}
 
 {% step %}
-Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../../explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration.md)
+Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../../explore-Hyperswitch/payment-experience/payment/web/react-with-rest-api-integration.md)
 {% endstep %}
 
 {% step %}
@@ -190,8 +188,7 @@ Sync with the subscription status for disbursement of services and future billin
 {% endstepper %}
 
 
-
-#### 2. For PCI Compliant merchants handling the entire checkout experience
+### 2. For PCI DSS compliant merchants handling the entire checkout experience
 
 {% stepper %}
 {% step %}
@@ -210,7 +207,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -220,16 +217,14 @@ The correct flow depends on whether you intend to charge the customer immediatel
 * `amount > 0`&#x20;
 
 
-
-#### 2. The Zero Dollar Authorization Flow
+### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
 
-
 **Configuration Parameters :**&#x20;
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-Hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
 * `setup_future_usage: "off_session"`
 * `amount: 0`
 * `payment_type: "setup_mandate"`
@@ -364,10 +359,10 @@ MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswit
 
 ### FAQs
 
-#### 1. What are subscriptions providers that are currently supported?
+### 1. What are subscriptions providers that are currently supported?
 
 Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
 
-#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
 We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.
