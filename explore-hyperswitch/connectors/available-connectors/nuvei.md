@@ -6,7 +6,7 @@ hidden: true
 # Nuvei
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Nuvei through Hyperswitch
+This section gives you an overview of how to make payments via Nuvei through Juspay Hyperswitch
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/nuveiLogo.svg)
@@ -19,8 +19,8 @@ Nuvei is a payment technology company that provides payment processing and acqui
 #### I. Prerequisites
 
 1. You need to be registered with Nuvei in order to proceed. In case you aren't, you can quickly setup your Nuvei account [here](https://nuvei.com/)
-2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
+2. You should have a registered Juspay Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
 3. The Nuvei API key can be found in your Nuvei dashboard under Settings -> My Account -> Account Details.
 4. Select all the payment methods you wish to use Nuvei for. Ensure that this is the same as the ones configured on your Nuvei dashboard
 
-[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Nuvei on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Nuvei on Juspay Hyperswitch control center.

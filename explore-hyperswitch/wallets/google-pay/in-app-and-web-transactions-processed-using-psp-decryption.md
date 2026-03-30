@@ -6,14 +6,14 @@ In this flow PSP decrypts the Google Pay token using your keys configured at PSP
 
 #### **Prerequisites**
 
-There are few prerequisites that need to be fulfilled before integrating Google Pay on Hyperswitch -
+There are few prerequisites that need to be fulfilled before integrating Google Pay on Juspay Hyperswitch -
 
 1. Configure Google Pay on your processor's dashboard
 2. In order to test Google Pay integration you will need to add test cards to your google account. You can go to [Google Pay API Test Cards Allowlist](https://groups.google.com/g/googlepay-test-mode-stub-data?pli=1) and click on Join Group to automatically add test cards in your Google Developer Account
 
 #### **Configuring Google Pay on Juspay Hyperswitch**
 
-To configure Google Pay on Hyperswitch follow the steps given below -
+To configure Google Pay on Juspay Hyperswitch follow the steps given below -
 
 1. Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)
 2. In the Connectors tab, select your processor

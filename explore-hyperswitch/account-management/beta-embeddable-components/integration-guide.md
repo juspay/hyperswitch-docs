@@ -1,4 +1,7 @@
 ---
+description: >-
+  Legacy guide for embedding connector configuration into React applications with
+  JWT-based authentication
 hidden: true
 ---
 
@@ -7,7 +10,7 @@ hidden: true
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>
 
 
-This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
+This SDK allows you to embed the Juspay Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
 Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
 
@@ -19,7 +22,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 * Runtime: Node.js (v18+)
 * Framework: React (v18.x - 20.x)
-* Hyperswitch Credentials:
+* Juspay Hyperswitch Credentials:
   * `API-Key` (Can be generated via Control Center)
   * `Profile-ID` (The specific merchant profile you are configuring)
 * Support:
@@ -56,7 +59,7 @@ The flow is: Frontend → requests session → Your Backend → requests token (
 
 Create a route (e.g., /embedded/hyperswitch) in your backend application (Node/Express example below).
 
-Required Headers for Hyperswitch Call:
+Required Headers for Juspay Hyperswitch Call:
 
 * api-key: Your secret API key.
 * X-profile-id: The specific profile ID you want the embedded component to access.
@@ -77,7 +80,7 @@ const HYPERSWITCH_BASE_URL = 'https://app.hyperswitch.io/api';
 
 app.get('/embedded/hyperswitch', async (req, res) => {
   try {
-    // Call Hyperswitch to generate a temporary JWT for the frontend
+    // Call Juspay Hyperswitch to generate a temporary JWT for the frontend
     const response = await axios.get(`${HYPERSWITCH_BASE_URL}/api/embedded/token`, {
       headers: {
         'api-key': 'YOUR_ACTUAL_API_KEY_HERE', // STORE IN ENV VARIABLES
@@ -86,7 +89,7 @@ app.get('/embedded/hyperswitch', async (req, res) => {
       }
     });
 
-    console.log('Hyperswitch Token Generated:', response.data);
+    console.log('Juspay Hyperswitch Token Generated:', response.data);
 
     // Return the token to your frontend
     res.json({
@@ -123,15 +126,15 @@ import React, { useState } from 'react';
 import './App.css';
 import 'tailwindcss/tailwind.css';
 import {
-  loadHyperswitch,
-  HyperswitchProvider,
+  loadJuspay Hyperswitch,
+  Juspay HyperswitchProvider,
   ConnectorConfiguration,
 } from 'hyperswitch-control-center-embedded';
 ```
 
 #### 3.2. Implement the Component
 
-The core logic relies on the loadHyperswitch function. This function takes a fetchToken callback.
+The core logic relies on the loadJuspay Hyperswitch function. This function takes a fetchToken callback.
 
 Key Concept: The fetchToken function is "lazy." It is called:
 
@@ -182,7 +185,7 @@ function App() {
     };
 
     // Return the initialized loader
-    return loadHyperswitch({
+    return loadJuspay Hyperswitch({
       fetchToken: fetchToken,
     });
   });
@@ -203,7 +206,7 @@ function App() {
         <HyperswitchProvider hyperswitchInstance={hyperswitchInstance}>
 
           {/* Render the actual UI.
-             'url' prop points to the Hyperswitch Dashboard API.
+             'url' prop points to the Juspay Hyperswitch Dashboard API.
              Use "https://app.hyperswitch.io/api" for Sandbox
           */}
           <ConnectorConfiguration url="https://app.hyperswitch.io/api" />
@@ -220,7 +223,7 @@ export default App;
 
 ### API Reference
 
-#### loadHyperswitch(options)
+#### loadJuspay Hyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -233,12 +236,12 @@ Initializes the SDK logic.
 
 Context provider that holds the authentication state.
 
-* **hyperswitchInstance**: The object returned by loadHyperswitch.
+* **hyperswitchInstance**: The object returned by loadJuspay Hyperswitch.
 
 #### \<ConnectorConfiguration>
 
 The UI Component that renders the settings form.
 
-* url (string): The base URL for the Hyperswitch Dashboard API.
+* url (string): The base URL for the Juspay Hyperswitch Dashboard API.
   * Sandbox: `https://app.hyperswitch.io/api`
   * Default: `http://localhost:9000` (Used for local development)

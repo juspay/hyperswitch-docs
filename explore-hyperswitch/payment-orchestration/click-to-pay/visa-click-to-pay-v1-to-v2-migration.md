@@ -22,7 +22,7 @@ The evolution from Click to Pay V1 to V2 represents a fundamental shift in digit
 
 ### **Seamless Migration with Juspay Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
 
-The migration to V2 is powered by Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
+The migration to V2 is powered by Juspay Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
 
 This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less than 30 minutes. Our wrapper maintains backward compatibility while giving you access to V2's enhanced features.
 
@@ -43,7 +43,7 @@ This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less tha
 }%%
 
 flowchart TD
-    A[Client Browser/App] -- Initiates checkout --> B[Hyperswitch Wrapper]
+    A[Client Browser/App] -- Initiates checkout --> B[Juspay Hyperswitch Wrapper]
 
     B -- Version detection --> C{SDK Version}
     C -- V1 --> D[Visa Click to Pay V1 SDK]
@@ -55,7 +55,7 @@ flowchart TD
     B -- Request/Response mapping --> F[Visa Click to Pay Server]
     F -- Authentication response --> B
 
-    B -- Tokenized payment data --> G[Hyperswitch Payment Gateway]
+    B -- Tokenized payment data --> G[Juspay Hyperswitch Payment Gateway]
     G -- Payment processing --> H[Card Networks]
 
     subgraph WrapperFunctions["Wrapper Capabilities"]
@@ -76,7 +76,7 @@ flowchart TD
     class C decision
 ```
 
-*Caption: This architecture diagram shows how the Hyperswitch Wrapper mediates between the client application and Visa's Click to Pay server, automatically detecting the SDK version (V1 or V2) and providing backward compatibility. The wrapper handles request/response mapping while supporting enhanced V2 features like biometric authentication and quick checkout, ensuring a seamless migration path for merchants.*
+*Caption: This architecture diagram shows how the Juspay Hyperswitch Wrapper mediates between the client application and Visa's Click to Pay server, automatically detecting the SDK version (V1 or V2) and providing backward compatibility. The wrapper handles request/response mapping while supporting enhanced V2 features like biometric authentication and quick checkout, ensuring a seamless migration path for merchants.*
 
 ### Integration Methods
 

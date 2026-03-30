@@ -10,10 +10,10 @@ Migrate from Stripe on your web app in less than 15 mins!
 
 ## Migrate from Stripe
 
-If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 90+ payment processors and features such as Smart Router, Unified analytics and many more.
+If you are already integrated to Stripe as your payment processor, we have made migrating to Juspay Hyperswitch much simpler for you. And once you migrate, get immediate access to 90+ payment processors and features such as Smart Router, Unified analytics and many more.
 
 {% hint style="info" %}
-Stripe’s `paymentRequestButton` is available under Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
+Stripe’s `paymentRequestButton` is available under Juspay Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
 {% endhint %}
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner for both React and HTML frontend. You can find the details for both below.
@@ -22,7 +22,7 @@ The code from your Stripe integration to be removed and replaced is explained be
 
 <summary>Web - Node Backend and React Frontend</summary>
 
-**Step 1:** Install Hyperswitch's SDK and server side dependencies from npm
+**Step 1:** Install Juspay Hyperswitch's SDK and server side dependencies from npm
 
 ```js
   $ npm install @juspay-tech/react-hyper-js
@@ -48,7 +48,7 @@ const paymentIntent = await stripe.paymentIntents.create({
 const paymentIntent = await hyper.paymentIntents.create({
 ```
 
-**Step 3:** Call loadHyper() with you Hyperswitch publishable key to configure the SDK library, from your website
+**Step 3:** Call loadHyper() with you Juspay Hyperswitch publishable key to configure the SDK library, from your website
 
 ```js
 // from
@@ -66,7 +66,7 @@ const stripePromise = loadStripe("your_stripe_publishable_key");
 const hyperPromise = loadHyper("your_hyperswitch_publishable_key");
 ```
 
-**Step 4:** Configure your checkout form to import from Hyperswitch
+**Step 4:** Configure your checkout form to import from Juspay Hyperswitch
 
 ```js
 //from
@@ -83,7 +83,7 @@ import {
 } from "@juspay-tech/react-hyper-js";
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Juspay Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Juspay Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
 
 </details>
 
@@ -91,7 +91,7 @@ import {
 
 <summary>Web - Node Backend and HTML Frontend</summary>
 
-**Step 1:** Install Hyperswitch's node server dependency from npm
+**Step 1:** Install Juspay Hyperswitch's node server dependency from npm
 
 ```js
   $ npm install @juspay-tech/hyperswitch-node
@@ -115,7 +115,7 @@ const paymentIntent = await stripe.paymentIntents.create({
 const paymentIntent = await hyper.paymentIntents.create({
 ```
 
-**Step 3:** Load the Hyperswitch directly from beta.hyperswitch.io to remain PCI compliant while collecting the customer's payment details
+**Step 3:** Load the Juspay Hyperswitch directly from beta.hyperswitch.io to remain PCI compliant while collecting the customer's payment details
 
 ```js
 // from
@@ -124,7 +124,7 @@ const paymentIntent = await hyper.paymentIntents.create({
 <script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
 ```
 
-**Step 4:** Initiate the SDK with your Hyperswitch publishable key from your website
+**Step 4:** Initiate the SDK with your Juspay Hyperswitch publishable key from your website
 
 ```js
 // from
@@ -133,7 +133,7 @@ const stripe = Stripe("your_stripe_publishable_key");
 const hyper = Hyper("your_hyperswitch_publishable_key");
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Juspay Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Juspay Hyperswitch to your payments stack and you now have access to a suite of 90+ payment processors and acquirers.
 
 </details>
 

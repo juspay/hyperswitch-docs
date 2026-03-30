@@ -1,5 +1,7 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: >-
+  Monitor payment analytics, conversion funnels, and operations through a unified
+  dashboard with actionable insights for optimization
 icon: chart-pie-simple-circle-dollar
 ---
 
@@ -9,13 +11,13 @@ icon: chart-pie-simple-circle-dollar
 
 ## Payment Analytics
 
-Typical payment conversion funnel of a user through Hyperswitch involves five stages as shown below.
+Typical payment conversion funnel of a user through Juspay Hyperswitch involves five stages as shown below.
 
 <figure><img src="../../../.gitbook/assets/analytics.png" alt=""><figcaption></figcaption></figure>
 
 ### Understanding the payment conversion funnel <a href="#understanding-the-payment-conversion-funnel" id="understanding-the-payment-conversion-funnel"></a>
 
-Lets take a scenario where you website had initiated 100,000 payments with Hyperswitch.
+Lets take a scenario where you website had initiated 100,000 payments with Juspay Hyperswitch.
 
 | **Payments created**                                                                                                                                                                                                                                                                      | **100,000**                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -63,14 +65,14 @@ Total number of payments with status as succeeded.
 
 ### FAQs <a href="#faqs" id="faqs"></a>
 
-#### **Why is the conversion rate on my Payment processor dashboard higher that what I observe on Hyperswitch dashboard?**
+#### **Why is the conversion rate on my Payment processor dashboard higher that what I observe on Juspay Hyperswitch dashboard?**
 
 There are two aspects which you need to be aware of:
 
-* Once you start using the Hyperswitch, the role of the payment processor is involved only in the last leg of the payment processing (i.e) after the user enters payment information
+* Once you start using the Juspay Hyperswitch, the role of the payment processor is involved only in the last leg of the payment processing (i.e) after the user enters payment information
 * Most payment processors report only the authorization rate excluding user dropouts on the checkout page and failed 3DS verifications.
 
-Hyperswitch measures conversion rate including user dropouts, so that you get full visibility on your user dropouts and take appropriate measures to reduce user dropouts.
+Juspay Hyperswitch measures conversion rate including user dropouts, so that you get full visibility on your user dropouts and take appropriate measures to reduce user dropouts.
 
 Please refer here for detailed understanding how popular payment processors track payment lifecycle and measure conversion rates.
 
@@ -80,13 +82,13 @@ Please refer here for detailed understanding how popular payment processors trac
 
 #### **What should I do to improve my conversion rate?**
 
-The analytics section on the Hyperswitch dashboard offers you the tools to derive insights on patterns of payment failures. Here are some frequently faced problems and actionables.
+The analytics section on the Juspay Hyperswitch dashboard offers you the tools to derive insights on patterns of payment failures. Here are some frequently faced problems and actionables.
 
 | **Most frequent problems faced by merchants**                              | **Actionables**                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Majority of my users are dropping off at the checkout page                 | <ul><li>Offer a wide range of payment methods preferred by your target audience</li><li>Eliminate any inconsistency in the total amount displayed to user across the product catalog page, shopping cart, checkout page</li><li>Ensure that the proceed to pay button is clearly visible to the user within minimal clutter on the UX.</li></ul> |
-| I am facing lower conversion rates through my primary payment processor    | <ul><li>Enable an alternative payment processor via Hyperswitch and use Smart Routing to optimize conversion rate</li><li>Reachout to Hyperswitch support to enable Smart Retries</li></ul>                                                                                                                                                      |
-| I am facing low conversion rates for USD payments compared to EUR payments | <ul><li>Try enabling an alternative payment processor via Hyperswitch and use Smart Routing to route EUR payments (typically local payment processor offer higher conversion rates which you could benefit from)</li></ul>                                                                                                                       |
+| I am facing lower conversion rates through my primary payment processor    | <ul><li>Enable an alternative payment processor via Juspay Hyperswitch and use Smart Routing to optimize conversion rate</li><li>Reachout to Juspay Hyperswitch support to enable Smart Retries</li></ul>                                                                                                                                                      |
+| I am facing low conversion rates for USD payments compared to EUR payments | <ul><li>Try enabling an alternative payment processor via Juspay Hyperswitch and use Smart Routing to route EUR payments (typically local payment processor offer higher conversion rates which you could benefit from)</li></ul>                                                                                                                       |
 | I am facing zero conversion rate for a particular payment method/ currency | <ul><li>Check with your payment processor whether the payment method/ currency has been enabled for your merchant account</li></ul>                                                                                                                                                                                                              |
 | I need help and suggestions to improve conversion rate                     | <ul><li>Please drop a note to biz@hyperswitch.io with your query.</li></ul>                                                                                                                                                                                                                                                                      |
 

@@ -44,7 +44,7 @@ icon: chart-network
 ### Edit connector credentials on the Hyperswitch Control Center
 
 {% hint style="warning" %}
-To update connector credentials on Hyperswitch you will need to re-enter all the fields required for credentials.
+To update connector credentials on Juspay Hyperswitch you will need to re-enter all the fields required for credentials.
 {% endhint %}
 
 To update the credentials on the Hyperswitch Control Centre, You can follow the following steps -

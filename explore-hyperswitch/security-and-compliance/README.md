@@ -1,21 +1,21 @@
 ---
 description: >-
-  A brief summary of Hyperswitch infrastructure ensuring compliance and data
-  privacy
+  Explore comprehensive security measures ensuring PCI DSS 4.0 and GDPR
+  compliance with global data protection and infrastructure standards
 icon: arrow-down-up-lock
 ---
 
 # Security and Compliance
 
-At Juspay Hyperswitch, we redefine how businesses handle payments by delivering secure, reliable, and scalable solutions tailored to your unique needs. Whether you're managing subscriptions, running a global marketplace, or scaling your e-commerce platform, Hyperswitch empowers you to optimize payments and grow with confidence.
+At Juspay Hyperswitch, we redefine how businesses handle payments by delivering secure, reliable, and scalable solutions tailored to your unique needs. Whether you're managing subscriptions, running a global marketplace, or scaling your e-commerce platform, Juspay Hyperswitch empowers you to optimize payments and grow with confidence.
 
 **Security and Compliance at the Core**
 
-Hyperswitch ensures compliance with global standards like PCI DSS 4.0 and GDPR, safeguarding your transactions and sensitive data. With flexible deployment options, we meet data residency requirements across regions.
+Juspay Hyperswitch ensures compliance with global standards like PCI DSS 4.0 and GDPR, safeguarding your transactions and sensitive data. With flexible deployment options, we meet data residency requirements across regions.
 
 **Global Reach with Local Adaptability**
 
-Built on AWS infrastructure, Hyperswitch supports global operations with low-latency performance and localized deployment options, ensuring compliance and efficiency wherever you do business.
+Built on AWS infrastructure, Juspay Hyperswitch supports global operations with low-latency performance and localized deployment options, ensuring compliance and efficiency wherever you do business.
 
 **Performance You Can Trust**
 

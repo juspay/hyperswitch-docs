@@ -1,5 +1,7 @@
 ---
-description: Accept pay later options through Juspay Hyperswitch
+description: >-
+  Offer buy now pay later options including Klarna, Affirm, and Afterpay with
+  redirection and in-app SDK flows
 icon: calendar-day
 ---
 
@@ -14,7 +16,7 @@ icon: calendar-day
 ## **How to configure pay later options (Redirection flow) on Juspay Hyperswitch?**
 
 1. Make sure that the pay later options are enabled on your connector's dashboard
-2. Enable paylater options on Hyperswitch dashboard under "payment methods" tab while configuring your connector
+2. Enable paylater options on Juspay Hyperswitch dashboard under "payment methods" tab while configuring your connector
 3. Ensure that you add the additional mandatory parameters when you create a payment (using node SDK or /payments API) from your server-side.
 
 ```js
@@ -59,7 +61,7 @@ icon: calendar-day
 
 ![Klarna Logo](https://hyperswitch.io/icons/homePageIcons/logos/klarnaLogo.svg)
 
-Klarna In app flow in Hyperswitch is available if you configure Klarna as a payment processor. It provides a superior checkout flow for the customers compared to redirection flow.
+Klarna In app flow in Juspay Hyperswitch is available if you configure Klarna as a payment processor. It provides a superior checkout flow for the customers compared to redirection flow.
 
 To configure Klarna SDK flow, follow these steps. As a prerequisite, you would need to have a merchant account with Klarna. For Klarna SDK, need to add mandatory metaData object while creating a payment (/payments) from your server-side. The metaData object will look something like below.
 

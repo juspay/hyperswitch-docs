@@ -1,4 +1,7 @@
 ---
+description: >-
+  Configure PayPal wallet payments through native SDK or redirection flows with
+  support for 200 countries and 25 currencies
 description: Setup PayPal on your application
 icon: paypal
 ---
@@ -9,7 +12,7 @@ Paypal is a digital wallet that lets customers load balance onto the wallet and 
 
 ## **How to configure Paypal on Juspay Hyperswitch?**
 
-Since Paypal is both a payment method (wallet) as well as a payment processor, Hyperswitch gives you the flexibility to configure Paypal through multiple avenues.
+Since Paypal is both a payment method (wallet) as well as a payment processor, Juspay Hyperswitch gives you the flexibility to configure Paypal through multiple avenues.
 
 ### **Paypal native SDK experience:**
 
@@ -17,8 +20,8 @@ Since Paypal is both a payment method (wallet) as well as a payment processor, H
 2. Select the settings icon on the top right.
 3. Select Processing and enable the PayPal option.
 
-Currently, Hyperswitch supports Braintree’s [Vault](https://developer.paypal.com/braintree/docs/guides/paypal/overview) flow for Paypal as it offers seamless storing of payment methods for later use across Web, iOS and Android devices. The returning customers will be able to pay through Paypal with one-touch experience without logging in again after saving their card the first time.
+Currently, Juspay Hyperswitch supports Braintree’s [Vault](https://developer.paypal.com/braintree/docs/guides/paypal/overview) flow for Paypal as it offers seamless storing of payment methods for later use across Web, iOS and Android devices. The returning customers will be able to pay through Paypal with one-touch experience without logging in again after saving their card the first time.
 
 ### **Paypal Redirection experience**
 
-Configuring Paypal through other payment processors like Adyen, Checkout, etc on Hyperswitch will redirect the customers to Paypal’s website to complete the payment. For this approach, you just have to make sure that you enable Paypal on your respective processors’ dashboards and also, enable Paypal while configuring these processors on your Hyperswitch dashboard.
+Configuring Paypal through other payment processors like Adyen, Checkout, etc on Juspay Hyperswitch will redirect the customers to Paypal’s website to complete the payment. For this approach, you just have to make sure that you enable Paypal on your respective processors’ dashboards and also, enable Paypal while configuring these processors on your Juspay Hyperswitch dashboard.

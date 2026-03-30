@@ -9,11 +9,11 @@ icon: money-bill-1-wave
 
 ### Core Payment Flows
 
-Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
+Juspay Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
 
 Card Payment Flow Configurations
 
-Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
+Juspay Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt=""><figcaption></figcaption></figure>
 

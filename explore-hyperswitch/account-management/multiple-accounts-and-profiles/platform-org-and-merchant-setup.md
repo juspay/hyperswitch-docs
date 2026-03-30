@@ -1,5 +1,7 @@
 ---
-description: Platform Organization Setup & Workflow
+description: >-
+  Set up platform organizations to programmatically onboard and manage multiple
+  merchant accounts with controlled API access and scoping
 icon: garage-car
 ---
 
@@ -7,7 +9,7 @@ icon: garage-car
 
 #### Overview of Platform Organization
 
-A Platform Organization is a special type of organization in Hyperswitch designed for businesses who want to manage and onboard multiple merchants under them, programmatically. Think of it as a “meta-organization” that can:
+A Platform Organization is a special type of organization in Juspay Hyperswitch designed for businesses who want to manage and onboard multiple merchants under them, programmatically. Think of it as a “meta-organization” that can:
 
 * Create and manage other Merchant Accounts under its umbrella
 * Generate API keys not just for itself, but also for the merchants it creates
@@ -101,13 +103,13 @@ Key characteristics
 
 #### 1. Request Platform Organization Setup
 
-* A merchant who wants to operate as a platform must contact Hyperswitch
-* Hyperswitch will enable Platform Organization mode for that merchant
+* A merchant who wants to operate as a platform must contact Juspay Hyperswitch
+* Juspay Hyperswitch will enable Platform Organization mode for that merchant
 * Once enabled, the merchant is now considered a Platform Org and has one Platform Merchant associated with it
 
 #### 2. Generate a Platform API Key
 
-* Using the Hyperswitch Dashboard, the Platform Merchant generates a Platform API Key
+* Using the Juspay Hyperswitch Dashboard, the Platform Merchant generates a Platform API Key
   * Sandbox url for API Key page: [https://app.hyperswitch.io/dashboard/developer-api-keys](https://app.hyperswitch.io/dashboard/developer-api-keys)
 * This key is special:
   * It authorizes access to create and manage new merchant accounts

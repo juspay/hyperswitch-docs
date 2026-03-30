@@ -1,5 +1,7 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: >-
+  Set up cards, wallets, pay later, bank transfers, and crypto payment methods
+  to optimize checkout conversion and reduce fraud
 icon: credit-card
 ---
 

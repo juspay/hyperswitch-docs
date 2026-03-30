@@ -17,14 +17,14 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
-3. During the checkout process use Hyperswitch for Payments
-4. Hyperswitch completes the payment, securely tokenises and stores the card
+3. During the checkout process use Juspay Hyperswitch for Payments
+4. Juspay Hyperswitch completes the payment, securely tokenises and stores the card
 5. Subscription is created at Juspay Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
-7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+7. Subsequent billing cycles are handled independently by Juspay Hyperswitch through MIT payments
+8. Failed MIT payments can be smartly retries by Juspay Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
@@ -42,7 +42,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 {% stepper %}
 {% step %}
-Configure your Subscription Provider with Hyperswitch and set it as billing connector for the desired profile
+Configure your Subscription Provider with Juspay Hyperswitch and set it as billing connector for the desired profile
 
 _Note: Dashboard support for this configuration will be available soon_
 
@@ -83,7 +83,7 @@ curl --location 'http://<base_url>/account/<merchant_id>/business_profile/<profi
 {% endstep %}
 
 {% step %}
-Configure Hyperswitch Webhook endpoint for invoice events on the subscription provider's dashboard
+Configure Juspay Hyperswitch Webhook endpoint for invoice events on the subscription provider's dashboard
 {% endstep %}
 
 {% step %}
@@ -122,7 +122,7 @@ Display the retrieved Plan and Price Details to the user to make their selection
 {% endstep %}
 
 {% step %}
-Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
+Once the user selects a particular Plan, create a customer on Juspay Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
 
 ```
 curl --location '<baseurl>/subscriptions/create' \
@@ -144,7 +144,7 @@ curl --location '<baseurl>/subscriptions/create' \
 {% endstep %}
 
 {% step %}
-Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
+Initiate the Juspay Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
 {% endstep %}
 
 {% step %}
@@ -164,11 +164,11 @@ Follow the same steps as above to create a billing connector, fetch plan details
 {% endstep %}
 
 {% step %}
-Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
+Once the user selects a particular Plan, create a customer on Juspay Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
 {% endstep %}
 
 {% step %}
-After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API
+After the user enter card/PM details and confirms the payment, hit the Juspay Hyperswitch Subscriptions API
 
 ```
 curl --location 'http://localhost:8080/subscriptions/' \
@@ -291,4 +291,4 @@ Currently we support Chargebee integration. In the upcoming roadmap we are plann
 
 #### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
-We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience (Tentatively by Q4 2025)
+We are planning to release a Juspay Hyperswitch Subscriptions SDK that will take care of the end-to-end experience (Tentatively by Q4 2025)

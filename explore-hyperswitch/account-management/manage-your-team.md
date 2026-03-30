@@ -1,11 +1,13 @@
 ---
-description: Assign roles and permission to users
+description: >-
+  Assign roles and permissions to team members with seven default roles for
+  organization, merchant, and profile level access control
 icon: screen-users
 ---
 
 # Manage Your Team
 
-You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
+You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Juspay Hyperswitch control center. Currently, Juspay Hyperswitch provides 7 default roles for you to configure.
 
 <figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -110,7 +112,7 @@ This feature allows organisations to create roles with specific permissions that
 
 #### Steps to create a custom role -
 
-* Go to Settings -> Users in the Hyperswitch Dashboard.
+* Go to Settings -> Users in the Juspay Hyperswitch Dashboard.
 * Switch to the Roles tab, and click on Create Custom Roles.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 12.57.58 PM (2).png" alt=""><figcaption></figcaption></figure>

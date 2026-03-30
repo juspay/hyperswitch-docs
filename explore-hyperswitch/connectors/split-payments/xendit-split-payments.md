@@ -1,4 +1,7 @@
 ---
+description: >-
+  Configure Xendit split settlements to automatically distribute payments
+  between multiple parties and platforms
 icon: hexagon-xmark
 ---
 
@@ -6,7 +9,7 @@ icon: hexagon-xmark
 
 ### Overview
 
-If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Hyperswitch offers multiple routing methods to support diverse use cases:
+If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, this feature enables you to do so automatically. Xendit via Juspay Hyperswitch offers multiple routing methods to support diverse use cases:
 
 * Partner to Platform
 * Partner to Partner

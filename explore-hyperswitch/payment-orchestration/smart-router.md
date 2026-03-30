@@ -1,5 +1,7 @@
 ---
-description: Infinite control over managing your payments
+description: >-
+  Configure intelligent payment routing with volume, rule, and fallback-based
+  strategies to optimize costs and authorization rates across processors
 hidden: true
 icon: swap
 ---
@@ -16,7 +18,7 @@ To get started with Smart Router, ensure to have one or more payment processors 
 
 Selling globally or otherwise invariably brings in a requirement to adopt multiple payment processors to cater to a wide range of payment method needs of the customers and gives you the flexibility to switch between processors to manage down-time and , it could be vital to optimising your payment processing costs as your business can choose the most optimal payment processors for every payment based on the cost, region and customer.
 
-Hence, Hyperswitch’s smart router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
+Hence, Juspay Hyperswitch’s smart router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Juspay Hyperswitch supports below formats of Smart Routing.
 
 **Volume Based Configuration:** Define volume distribution among multiple payment processors using percentages.
 
@@ -28,13 +30,13 @@ Hence, Hyperswitch’s smart router is designed as a no-code tool to provide com
 
 ## How does the Smart Router work?
 
-Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
+Juspay Hyperswitch Smart Router Engine evaluates every payment request against your predefined routing logic and makes a decision on the best payment processor for the payment, and executes the transaction. If the payment fails or if the payment processor is down, the payment is automatically retried through a different processor.
 
-<figure><img src="../../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Hyperswitch Smart Router Flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Smart Routing Flow.drawio.png" alt=""><figcaption><p>Juspay Hyperswitch Smart Router Flow</p></figcaption></figure>
 
 ## How to configure the Smart Router?
 
-[Hyperswitch dashboard](https://app.hyperswitch.io/routing) provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Hyperswitch currently supports.\
+[Hyperswitch dashboard](https://app.hyperswitch.io/routing) provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Juspay Hyperswitch currently supports.\
 \\
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="../workflows/intelligent-routing/rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="../workflows/intelligent-routing/volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="../workflows/intelligent-routing/default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
@@ -67,13 +69,13 @@ There can be multiple reasons why this happened but all of them can be boiled do
   * The answer to this is, the payment methods that are shown to the customer in the SDK aren't conscious of your routing configuration. We prioritize giving your customers the complete spread of all enabled payment methods across all of your enabled connectors. Therefore, if you specifically do not wish for ApplePay to appear on your checkout screen, you need to disable it in `Adyen` here, even though your routing configuration makes no mention of Adyen.
 * Now you select `ApplePay`, go through the required steps, confirm the payment, and it succeeds. You go to your payments dashboard and see that the payment went through `Adyen`.
   * This is where you run into the second question. "Why is the payment going through `Adyen` even though I have set my routing configuration to route 100% of my payments through `Stripe`?
-  * The answer to this carries over from the previous point. Since we displayed `ApplePay` on the checkout screen even though it wasn't enabled for your preferred connector `Stripe`, we need to adhere to your connector payment method configuration and ensure the payment goes through the right connector, here, `Adyen` since `ApplePay` is only enabled for Adyen. To briefly explain how Hyperswitch reaches this conclusion :-
-    * Hyperswitch runs your configured routing algorithm. Since this is `100% Stripe`, Hyperswitch receives `Stripe` as the outuput.
-    * Hyperswitch then runs an Eligibility Analysis on the output (`Stripe`) to gauge its eligibility for the current payment. The Eligibility Analysis fails once Hyperswitch realizes that the payment is made through `ApplePay` which is not enabled for `Stripe`
+  * The answer to this carries over from the previous point. Since we displayed `ApplePay` on the checkout screen even though it wasn't enabled for your preferred connector `Stripe`, we need to adhere to your connector payment method configuration and ensure the payment goes through the right connector, here, `Adyen` since `ApplePay` is only enabled for Adyen. To briefly explain how Juspay Hyperswitch reaches this conclusion :-
+    * Juspay Hyperswitch runs your configured routing algorithm. Since this is `100% Stripe`, Juspay Hyperswitch receives `Stripe` as the outuput.
+    * Juspay Hyperswitch then runs an Eligibility Analysis on the output (`Stripe`) to gauge its eligibility for the current payment. The Eligibility Analysis fails once Juspay Hyperswitch realizes that the payment is made through `ApplePay` which is not enabled for `Stripe`
     * The application then goes into fallback mode and loads your `default fallback`, which is `[Stripe, Adyen]` as seen earlier.
     * The application looks through the list in order. It ignores `Stripe` since it has already failed the Eligibility Analysis. It instead subjects `Adyen` (the next connector in the list) to the same Eligibility Analysis.
     * This time the analysis passes since `ApplePay` is enabled for `Adyen`.
-    * Hyperswitch takes `Adyen` as the final connector to make the payment through even though your configuration says `100% Stripe`.
+    * Juspay Hyperswitch takes `Adyen` as the final connector to make the payment through even though your configuration says `100% Stripe`.
   * This fallback flow is taken when none of the connectors in the output of routing are eligible for the payment. This is done in an effort to maximize the success rate of the payment even if it means deviating from the currently active routing configuration.
 
 </details>

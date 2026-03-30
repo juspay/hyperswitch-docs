@@ -6,7 +6,7 @@ icon: swift
 # Swift with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Juspay Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
 ## Requirements
@@ -62,7 +62,7 @@ pod install --repo-update
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
-<pre class="language-swift"><code class="lang-swift"><strong>import Hyperswitch
+<pre class="language-swift"><code class="lang-swift"><strong>import Juspay Hyperswitch
 </strong><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
 </strong></code></pre>
 
@@ -137,7 +137,7 @@ configuration.merchantDisplayName = "Example, Inc."
 ```
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 {% endtab %}
 

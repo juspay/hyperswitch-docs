@@ -9,7 +9,7 @@ icon: k
 
 <summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
-You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
+You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 
 </details>
 
@@ -46,7 +46,7 @@ Add the following plugin to the `plugins` block of your app-level `build.gradle`
 
 ```gradle
 plugins {
-    // Apply Hyperswitch Plugin
+    // Apply Juspay Hyperswitch Plugin
     id 'io.hyperswitch.plugin'
 }
 ```
@@ -148,7 +148,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 ```
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
 **Present the Payment Page**
@@ -164,7 +164,7 @@ paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 
 #### Final Step
 
-Congratulations! You have successfully integrated the Hyperswitch Android SDK into your app. You can now customize the payment sheet to match the look and feel of your app.
+Congratulations! You have successfully integrated the Juspay Hyperswitch Android SDK into your app. You can now customize the payment sheet to match the look and feel of your app.
 
 ## Next step:
 

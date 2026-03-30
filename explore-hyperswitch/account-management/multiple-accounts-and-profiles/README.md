@@ -11,7 +11,7 @@ icon: file-user
 If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory.
 {% endhint %}
 
-**Hyperswitch architecture supports:**
+**Juspay Hyperswitch architecture supports:**
 
 * Creating multiple merchant accounts under an organization (Organization → Merchant → Profile model).
 * Creating multiple business profiles under each merchant account.
@@ -27,7 +27,7 @@ Additionally, with the new [Platform Org and Merchant model](platform-org-and-me
 
 Here's how the architecture would look like.
 
-<figure><img src="../../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>Architecture of Juspay Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
 
 ### Let's understand the hierarchy
 
@@ -68,35 +68,35 @@ A processor  created under one business profile cannot be used in another busine
 *   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
 
 
-    Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
+    Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Juspay Hyperswitch and get separate set of API keys for each of them.
 
 <figure><img src="../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
-In case of Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account (with an API key) for themself and as many separate merchant accounts as they need for the sub-merchants under them with separate API keys for each of them
+In case of Marketplace merchants with multiple sub-merchants, the parent merchant can create one Juspay Hyperswitch merchant account (with an API key) for themself and as many separate merchant accounts as they need for the sub-merchants under them with separate API keys for each of them
 
 <figure><img src="../../../.gitbook/assets/image (4).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
 * **Multiple business Profiles - For merchants who want to manage all businesses with one API key**
 
-For a merchant A with three different businesses (A\_Clothing, A\_Shoes, A\_Bags) they can create just one merchant account on Hyperswitch with three business profiles (Clothing, Shoes, Bags) under it. This way, the merchant can use only one Hyperswitch API key to manage transactions for all three businesses.
+For a merchant A with three different businesses (A\_Clothing, A\_Shoes, A\_Bags) they can create just one merchant account on Juspay Hyperswitch with three business profiles (Clothing, Shoes, Bags) under it. This way, the merchant can use only one Hyperswitch API key to manage transactions for all three businesses.
 
 <figure><img src="../../../.gitbook/assets/image (2) (1).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
 
-For Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account with an API key access and multiple business profiles under it to represent the different sub-merchants. This way the parent merchant will be able to manage their multiple sub-merchants tightly under one Hyperswitch merchant account and API key.
+For Marketplace merchants with multiple sub-merchants, the parent merchant can create one Juspay Hyperswitch merchant account with an API key access and multiple business profiles under it to represent the different sub-merchants. This way the parent merchant will be able to manage their multiple sub-merchants tightly under one Juspay Hyperswitch merchant account and API key.
 
 <figure><img src="../../../.gitbook/assets/image (3).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
 
 ### How to configure multiple merchant accounts
 
-When you sign up on Hyperswitch, a merchant account and a profile is created under your organisation account by default.&#x20;
+When you sign up on Juspay Hyperswitch, a merchant account and a profile is created under your organisation account by default.&#x20;
 
-To create more merchant accounts, click the merchant account dropdown from the left top corner in your Hyperswitch dashboard, and click on the create new merchant option.
+To create more merchant accounts, click the merchant account dropdown from the left top corner in your Juspay Hyperswitch dashboard, and click on the create new merchant option.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-09-19 at 11.37.33 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### How to configure multiple business profiles
 
-To create more profiles, click the profile dropdown from the right top corner in your Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.&#x20;
+To create more profiles, click the profile dropdown from the right top corner in your Juspay Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.&#x20;
 
 * As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can be found under Settings → Business Profiles.
 

@@ -1,10 +1,13 @@
 ---
+description: >-
+  Configure smart routing logic for payouts to distribute traffic across
+  processors for redundancy and cost optimization
 icon: swap
 ---
 
 # Smart Router for Payouts
 
-The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
+The Juspay Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
 
 > Note: Routing configurations for payout operations are isolated from payment operations. Modifying payout routing rules will not impact your payment routing logic and vice-versa.
 
@@ -28,7 +31,7 @@ Navigate to Workflow -> Payout Routing in your [Dashboard](https://app.hyperswit
 
 Select a Routing Strategy
 
-Hyperswitch supports three distinct formats for payout orchestration:
+Juspay Hyperswitch supports three distinct formats for payout orchestration:
 
 * [Volume-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/volume-based-routing): Distribute a percentage of total payout traffic across multiple connectors.&#x20;
 * [Rule-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing): Create conditional logic (if/then) to route payouts based on specific attributes like currency, region, or method.&#x20;
@@ -47,6 +50,6 @@ Once your rules are defined, you can manage them from the Payout Routing summary
 
 <figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Activate routing rule</p></figcaption></figure>
 
-Fallback Behavior: If no custom routing rule is activated, Hyperswitch will automatically process transactions based on the order defined in your Default Fallback Priority list.
+Fallback Behavior: If no custom routing rule is activated, Juspay Hyperswitch will automatically process transactions based on the order defined in your Default Fallback Priority list.
 
 <figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>

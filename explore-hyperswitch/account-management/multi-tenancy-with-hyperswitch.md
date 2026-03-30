@@ -1,4 +1,7 @@
 ---
+description: >-
+  Deploy isolated tenant environments with customizable branding, extensions, and
+  permissions while sharing underlying infrastructure securely
 icon: cubes-stacked
 ---
 
@@ -6,15 +9,15 @@ icon: cubes-stacked
 
 ## What is Multi-Tenancy?
 
-Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.
+Multi-tenancy refers to an architecture where a single instance of the software and its infrastructure serves multiple tenants. Multi-tenancy in Juspay Hyperswitch enables each of it's tenants to have customised offering of the Juspay Hyperswitch stack without the overhead of software and infrastructure maintenance.
 
-Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
+Each tenant operates in a logically isolated environment but shares the underlying infrastructure i.e. the data and customisations of each tenant are kept separate and secure, even though they use the same software instance. Juspay Hyperswitch uses a single application and multiple storage schema approach for multi-tenancy.
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FFEv2dQi7YAjfPthCFfXl%2FScreenshot%202024-10-11%20at%202.28.06%E2%80%AFAM.png?alt=media&#x26;token=a4cc712a-665b-492c-ad5c-d105446d0b23" alt="" width="563"><figcaption></figcaption></figure>
 
 ## Benefits of Multi-tenancy with Juspay Hyperswitch
 
-1. **Configuration Options**: Hyperswitch provides configurable settings that allow tenants to customise the look and feel of the application, such as -&#x20;
+1. **Configuration Options**: Juspay Hyperswitch provides configurable settings that allow tenants to customise the look and feel of the application, such as -&#x20;
    * Branding (logo, colors, themes)&#x20;
    * Email templates
    * Language preferences&#x20;
@@ -22,11 +25,11 @@ Each tenant operates in a logically isolated environment but shares the underlyi
 
 &#x20;       _These configurations can be managed by tenant users and will apply to merchants of tenants._
 
-2. **Tenant-Specific Extensions**: Tenants can extend the functionality of the Hyperswitch application to tailor it to their specific needs by installing or developing custom plugins, modules, or integrations. These extensions can be developed using standardised APIs, SDKs, or scripting languages, and should adhere to security and performance best practices.
-3. **Permission-Based Customisations**: Hyperswitch administrators manage access to control which customisations are available to each tenant. This ensures that tenants can only modify the aspects of the application they are authorised to, ensuring privacy and preventing access by unauthorised parties.
-4. **Testing and Sandbox Environments**: Hyperswitch provides sandbox environments for tenants to experiment with any features or customisations safely, without affecting the production environment. This allows tenants to validate changes and ensure they meet their requirements before deploying them to production.
+2. **Tenant-Specific Extensions**: Tenants can extend the functionality of the Juspay Hyperswitch application to tailor it to their specific needs by installing or developing custom plugins, modules, or integrations. These extensions can be developed using standardised APIs, SDKs, or scripting languages, and should adhere to security and performance best practices.
+3. **Permission-Based Customisations**: Juspay Hyperswitch administrators manage access to control which customisations are available to each tenant. This ensures that tenants can only modify the aspects of the application they are authorised to, ensuring privacy and preventing access by unauthorised parties.
+4. **Testing and Sandbox Environments**: Juspay Hyperswitch provides sandbox environments for tenants to experiment with any features or customisations safely, without affecting the production environment. This allows tenants to validate changes and ensure they meet their requirements before deploying them to production.
 5. **Documentation and Support**: Tenants can have their own version of developer docs white-listed on their hosts. Comprehensive documentation, tutorials, and support resources are provided to help tenants understand how to onboard and integrate merchants. This includes documentation for APIs, SDKs, best practices, and troubleshooting guides.
-6. **Tenant <> Merchant Communication** - Based on tenant's requirements, Hyperswitch can trigger SMS and Email notification on behalf of the tenant to the customers and merchants by integrating with their service provider.
+6. **Tenant <> Merchant Communication** - Based on tenant's requirements, Juspay Hyperswitch can trigger SMS and Email notification on behalf of the tenant to the customers and merchants by integrating with their service provider.
 
 ## Hierarchy of Entities in Juspay Hyperswitch
 
@@ -38,9 +41,9 @@ A tenant’s scope will include multiple organizations and their associated enti
 
 ### Tenant Onboarding:&#x20;
 
-Each tenant onboarded on Hyperswitch will have white-labeled links for the following applications:
+Each tenant onboarded on Juspay Hyperswitch will have white-labeled links for the following applications:
 
-* **Hyperswitch’s S2S APIs**
+* **Juspay Hyperswitch’s S2S APIs**
 * **Payment Page**
 * **Dashboard**
 

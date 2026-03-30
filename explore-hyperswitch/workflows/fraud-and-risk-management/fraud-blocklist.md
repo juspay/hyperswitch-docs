@@ -1,5 +1,7 @@
 ---
-description: Blocking card bins selectively based on observed fraudulent activity
+description: >-
+  Block fraudulent transactions by creating blocklists for card fingerprints, card
+  bins, and extended bins based on observed suspicious activity
 icon: ban
 ---
 
@@ -63,8 +65,8 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 
 ### Configuring blocklist on Juspay Hyperswitch using API
 
-1. Create card payment through Hyperswitch using [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
-2. In the [Payments response](https://api-reference.hyperswitch.io/v1/payments/payments--create#response-fingerprint-one-of-0), make note of the `fingerprint` field which is the unique fingerprint for a card passed to Hyperswitch
+1. Create card payment through Juspay Hyperswitch using [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+2. In the [Payments response](https://api-reference.hyperswitch.io/v1/payments/payments--create#response-fingerprint-one-of-0), make note of the `fingerprint` field which is the unique fingerprint for a card passed to Juspay Hyperswitch
 
 ```markup
 {

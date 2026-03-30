@@ -54,7 +54,7 @@ pod 'hyperswitch-sdk-ios-lite/scancard'
 **Initialize PaymentSession:**
 
 ```swift
-import HyperswitchLite
+import Juspay HyperswitchLite
 paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
 
 // Initialize with client secret
@@ -85,5 +85,5 @@ paymentSession.presentPaymentSheetLite(
 
 **Final Step**
 
-You have successfully integrated the **Hyperswitch Lite SDK** into your iOS app.\
+You have successfully integrated the **Juspay Hyperswitch Lite SDK** into your iOS app.\
 The Lite SDK delivers **full payment processing** capabilities with a **smaller footprint**, perfect for apps where bundle size matters.

@@ -1,4 +1,7 @@
 ---
+description: >-
+  Increase authorized amounts after initial authorization for hotels, rentals,
+  and services with uncertain final costs
 icon: arrow-up-right-dots
 ---
 
@@ -6,11 +9,11 @@ icon: arrow-up-right-dots
 
 Generally for any payment transaction, the payable amount from the payment request is authorized and then captured. But in some situations like hotel bookings, car rentals, or services where the final cost is uncertain, we might need to increase the authorized amount.&#x20;
 
-Incremental authorization in Hyperswitch allows merchants to request additional funds after the initial authorization, giving them the flexibility to handle changing costs without disrupting the customer’s payment experience.
+Incremental authorization in Juspay Hyperswitch allows merchants to request additional funds after the initial authorization, giving them the flexibility to handle changing costs without disrupting the customer’s payment experience.
 
 ## Why is it important?
 
-Incremental authorization extends the ability to request more funds beyond the original authorized amount, which is perfect for aforementioned situations like hotel bookings, car rentals, or services where the final cost is uncertain. Hyperswitch enables merchants to easily add charges during the checkout process without affecting the user journey for re-authorization.
+Incremental authorization extends the ability to request more funds beyond the original authorized amount, which is perfect for aforementioned situations like hotel bookings, car rentals, or services where the final cost is uncertain. Juspay Hyperswitch enables merchants to easily add charges during the checkout process without affecting the user journey for re-authorization.
 
 ### How Incremental Authorization Helps Businesses?
 
@@ -18,7 +21,7 @@ Incremental authorization can help businesses to fulfill the following use-cases
 
 * **Adjust Payments in Real-Time**: Handle unexpected increases in charges, such as additional services or extended stays without redirecting customers for re-authorization.
 * **Improve Customer Experience**: Avoid disruptions in the payment process, as customers do not need to reauthorize or re-enter their payment information.
-* **Streamline Settlements**: Hyperswitch combines the initial charge and all incremental authorizations into a single settlement, simplifying reconciliation.
+* **Streamline Settlements**: Juspay Hyperswitch combines the initial charge and all incremental authorizations into a single settlement, simplifying reconciliation.
 
 ## Pre-requisites-&#x20;
 

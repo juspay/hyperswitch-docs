@@ -5,7 +5,7 @@ description: Integrate ApplePay via Cybersource in Juspay Hyperswitch
 # Apple Pay
 
 {% hint style="info" %}
-This page consists of steps for how **ApplePay** can be enabled in Hyperswitch via Cybersource
+This page consists of steps for how **ApplePay** can be enabled in Juspay Hyperswitch via Cybersource
 {% endhint %}
 
 > This guide assumes that you have alreaedy configured Cybersource as a connector in your Hyperswitch Control Center. If not please follow the steps mentioned [here](./)
@@ -23,7 +23,7 @@ This page consists of steps for how **ApplePay** can be enabled in Hyperswitch v
 * Click on proceed after making the necessary changes to your API Keys (if required any).
 * Select Apple Pay under Wallet Section to enable it.
 * Prepare Apple Pay certificates for Cybersource by following the steps mentioned [here](apple-pay.md#steps-to-prepare-applepay-certificates-for-cybersource-integration).
-* To configure these steps in Hyperswitch dashboard please follow the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
+* To configure these steps in Juspay Hyperswitch dashboard please follow the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
 * Click on Enable and then Proceed, review your configuration and changes and click Done.
 
 #### Points to remember for ApplePay Payments via Cybersource
@@ -40,7 +40,7 @@ This page consists of steps for how **ApplePay** can be enabled in Hyperswitch v
     * Country
 
 {% hint style="warning" %}
-We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
+We recommend to pass this fields while creating the Payment Intent with Juspay Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
 {% endhint %}
 
 ### Steps to prepare ApplePay certificates for Cybersource Integration

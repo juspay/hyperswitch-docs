@@ -1,11 +1,13 @@
 ---
-description: Learn about integration options for accepting payments online.
+description: >-
+  Integrate optimized checkout experiences with customizable UIs, payment links,
+  and intelligent payment method display for higher conversions
 icon: sidebar-flip
 ---
 
 # Payment Experience
 
-Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
+Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Juspay Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
 
 {% hint style="info" %}
 [Explore the demo](https://hyperswitch-demo-store.netlify.app/)
@@ -13,7 +15,7 @@ Optimize your payments integration and unlock higher revenue with the Optimized 
 
 ### Learn which payments integration fits your business
 
-Use Hyperswitch to accept payments for your business globally. The below variations allow you to learn about the different integration options available
+Use Juspay Hyperswitch to accept payments for your business globally. The below variations allow you to learn about the different integration options available
 
 #### [Accept payments without code](payment/payment-links/)
 
@@ -37,7 +39,7 @@ Use our Alternate Payment Method widget (APM widget) to power the global APMs in
 
 #### [Build a Vault SDK integration](payment-method/)
 
-Use our Vault SDK to tokenize the card first and the proceed with payment using a vault token. The Vault SDK is flexible to work with [Hyperswitch unified payments API ](https://api-reference.hyperswitch.io/v1/payments/payments--create)as well as the [Proxy or forwarding](https://api-reference.hyperswitch.io/v2/proxy/proxy-v1) API of Hyperswitch
+Use our Vault SDK to tokenize the card first and the proceed with payment using a vault token. The Vault SDK is flexible to work with [Hyperswitch unified payments API ](https://api-reference.hyperswitch.io/v1/payments/payments--create)as well as the [Proxy or forwarding](https://api-reference.hyperswitch.io/v2/proxy/proxy-v1) API of Juspay Hyperswitch
 
 ### Intelligent Payment Method Display & Experience
 

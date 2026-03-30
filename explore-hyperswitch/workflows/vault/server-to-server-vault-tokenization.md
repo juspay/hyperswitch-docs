@@ -10,13 +10,13 @@ icon: server
 
 ### Secure, Direct Card Tokenization from Your Server
 
-Tokenize payment cards directly from your servers to Hyperswitch's Vault Service, bypassing client-side tokenization. This server-to-server approach provides enhanced security and flexibility, ideal for PCI-compliant businesses managing payment methods programmatically.
+Tokenize payment cards directly from your servers to Juspay Hyperswitch's Vault Service, bypassing client-side tokenization. This server-to-server approach provides enhanced security and flexibility, ideal for PCI-compliant businesses managing payment methods programmatically.
 
 ### Key Features
 
 * **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
 * **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
-* **Secure Storage** – Store tokens safely in Hyperswitch’s Vault.
+* **Secure Storage** – Store tokens safely in Juspay Hyperswitch’s Vault.
 * **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
 ### Prerequisites
@@ -24,15 +24,15 @@ Tokenize payment cards directly from your servers to Hyperswitch's Vault Service
 To implement server-to-server tokenization, you need:
 
 * **PCI DSS compliance to handle card data securely:** Make sure you have necessary PCI compliance to handle raw card data directly
-* **Secure API authentication to protect transactions:** Generate your Hyperswitch API key from Developers --> API Keys section on your Hyperswitch dashboard
+* **Secure API authentication to protect transactions:** Generate your Hyperswitch API key from Developers --> API Keys section on your Juspay Hyperswitch dashboard
 * **Robust error handling for tokenization failures:** Implement necessary handling for failure cases
 
 ### How It Works
 
 1. **Collect Card Details** – Your server collects card details (requires PCI compliance).
 2. **Send a Tokenization Request** – Make a POST request to /payment\_methods with the card details.
-3. **Token Creation & Validation** – Hyperswitch validates the request and generates a secure token in the vault.
-4. **PSP & Network Tokenization (Optional)** – If configured through your Hyperswitch dashboard, we also generate PSP and/or network tokens when you pass relevant parameters as mentioned below
+3. **Token Creation & Validation** – Juspay Hyperswitch validates the request and generates a secure token in the vault.
+4. **PSP & Network Tokenization (Optional)** – If configured through your Juspay Hyperswitch dashboard, we also generate PSP and/or network tokens when you pass relevant parameters as mentioned below
 5. **Receive Payment Method ID** – You get a pm\_id, which can be used for future payments.
 
 ### API Requests for Server to Server Tokenization
@@ -42,7 +42,7 @@ All Vault API (V2) requests require authentication using specific API keys gener
 
 To generate your Vault API keys, follow these steps:
 
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+1. **Access Dashboard:** Log into the Juspay Hyperswitch Dashboard.
 2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
 3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.

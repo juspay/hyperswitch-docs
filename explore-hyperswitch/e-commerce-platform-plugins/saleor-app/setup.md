@@ -4,7 +4,7 @@ description: Juspay Saleor Payment App Setup
 
 # Setup
 
-Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
+Connects Juspay's Juspay Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
 
 {% hint style="info" %}
 This section covers the steps to setup Juspay payment app through saleor
@@ -47,17 +47,17 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 **1.2.1 Configure for non Indian payments**
 
-1. Open Hyperswitch App installed on your saleor dashboard.
+1. Open Juspay Hyperswitch App installed on your saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select non Indian payments. This will open a form to collect credentials.
 
 * Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
-* Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
-* Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
-* Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+* Enter your Hyperswitch API key. For instructions on how to create an API Key with Juspay Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
+* Enter your Juspay Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+* Enter your Juspay Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
 
 <figure><img src="../../../.gitbook/assets/hyperswitchPublishableKey.png" alt=""><figcaption></figcaption></figure>
 
-* Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
+* Enter your Juspay Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
 
 3. Click on `Save Configuration`
 4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
@@ -66,7 +66,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 **1.2.2 Configure for Indian payments**
 
-1. Open Hyperswitch App installed on your saleor dashboard.
+1. Open Juspay Hyperswitch App installed on your saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select Indian payments. This will open a form to collect credentials.
 
 * Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
@@ -87,7 +87,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 For each channel, payments will be processed according to configurations assigned to it.
 
-Now Hyperswitch Saleor App is configured to receive payments
+Now Juspay Hyperswitch Saleor App is configured to receive payments
 
 ### 2. Accept payments through Juspay Saleor App
 
@@ -348,4 +348,4 @@ mutation JuspayTransactionProcess {
 
 The Juspay Saleor App also supports additional flows such as payment capture, cancellation, and refunds. These actions can be triggered directly through the Saleor dashboard.
 
-> Note: If you trigger refunds through the Hyperswitch/Hypercheckout dashboard instead of the Saleor dashboard, you will need to manually update the refund status in the Saleor dashboard.
+> Note: If you trigger refunds through the Juspay Hyperswitch/Hypercheckout dashboard instead of the Saleor dashboard, you will need to manually update the refund status in the Saleor dashboard.

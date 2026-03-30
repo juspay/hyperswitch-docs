@@ -80,7 +80,7 @@ Consider the below code for your reference.
 Set `displaySavedPaymentMethods` to false to disable saved cards.
 
 Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.\
-Set `disableBranding` to false to disable Hyperswitch branding.\
+Set `disableBranding` to false to disable Juspay Hyperswitch branding.\
 Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
@@ -96,7 +96,7 @@ configuration.placeholder.expiryDate = "YOUR_CUSTOM_EXPIRY_DATE_PLACEHOLDER"
 configuration.placeholder.cvv = "YOUR_CUSTOM_CVV_PLACEHOLDER"
 ```
 
-To disable Hyperswitch branding in the SDK, you may set the `disableBranding` property to true
+To disable Juspay Hyperswitch branding in the SDK, you may set the `disableBranding` property to true
 
 ```dart
 configuration.disableBranding = true
@@ -173,7 +173,7 @@ Now you can test the payments on your app and go-live!
 
 ## Languages
 
-Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
+Juspay Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
 ```dart
 Appearance appearance = Appearance(

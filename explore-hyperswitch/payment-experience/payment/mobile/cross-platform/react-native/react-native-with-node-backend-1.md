@@ -34,7 +34,7 @@ npm install @sentry/react-native
 
 ### 1.2 Wrap your app with `HyperProvider`
 
-To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
+To initialize Juspay Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
 ```js
 import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";
@@ -65,7 +65,7 @@ useEffect(() => {
 
 ### 1.4 Render your Payment widget
 
-Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
+Use the **Juspay Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
 ```js
 import { PaymentWidget } from '@juspay-tech/react-native-hyperswitch';

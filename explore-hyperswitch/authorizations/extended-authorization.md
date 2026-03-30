@@ -1,4 +1,7 @@
 ---
+description: >-
+  Extend authorization hold periods beyond standard windows for industries with
+  variable costs and delayed service completion times
 icon: square-tenge
 ---
 

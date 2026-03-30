@@ -1,5 +1,7 @@
 ---
-description: Accept crypto payments on your application
+description: >-
+  Accept cryptocurrency payments through blockchain technology with secure wallet
+  transactions and transparent processing
 icon: bitcoin-sign
 ---
 
@@ -17,7 +19,7 @@ Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethe
 
 ## **Configuring Crypto on Juspay Hyperswitch**
 
-You can configure Crypto on Hyperswitch by following the steps mentioned below -
+You can configure Crypto on Juspay Hyperswitch by following the steps mentioned below -
 
 1. Configure Crypto on the processor
 2. Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)

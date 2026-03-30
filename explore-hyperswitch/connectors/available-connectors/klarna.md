@@ -6,7 +6,7 @@ hidden: true
 # Klarna
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Klarna through Hyperswitch
+This section gives you an overview of how to make payments via Klarna through Juspay Hyperswitch
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/klarnaLogo.svg)
@@ -18,7 +18,7 @@ It allows businesses to provide direct payments, pay later options, and installm
 #### Prerequisites
 
 1. You need to be registered with Klarna in order to proceed. In case you aren't, you can quickly setup your Klarna account [here](https://www.klarna.com/us/business/)
-2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
+2. You should have a registered Juspay Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. The Klarna API key can be found in your Klarna dashboard under settings
 
-[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Klarna on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Klarna on Juspay Hyperswitch control center.

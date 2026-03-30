@@ -5,7 +5,7 @@ description: Accept payments through Adyen via Juspay Hyperswitch
 # Adyen
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Adyen through Hyperswitch
+This section gives you an overview of how to make payments via Adyen through Juspay Hyperswitch
 {% endhint %}
 
 \
@@ -18,13 +18,13 @@ Adyen is a global payments company allowing businesses to accept payments on a g
 #### I. Prerequisites
 
 1. You need to be registered with Adyen in order to proceed. In case you aren't, you can quickly setup your Adyen account [here](https://www.adyen.com/signup)
-2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/register).
-3. Request the Adyen support team to enable handling raw card data for your Adyen account via email (support@adyen.com). This will enable Hyperswitch to securely handle your customer's payment details.
+2. You should have a registered Juspay Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/register).
+3. Request the Adyen support team to enable handling raw card data for your Adyen account via email (support@adyen.com). This will enable Juspay Hyperswitch to securely handle your customer's payment details.
 4. The Adyen API key and Account ID are available in your Adyen dashboard under - Home page -> Developers -> API credentials.
 5. Select all the payment methods you wish to use Adyen for. Ensure that this is the same as the ones configured on your Adyen dashboard under Settings -> Payment methods
 6. To set webhooks, Navigate to the webhooks section of your Adyen dashboard (Developers -> Webhooks) and create a new standard webhook. Know more about webhook source verification key [here](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures/#enable-hmac-signatures).
 
-[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Adyen on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Adyen on Juspay Hyperswitch control center.
 
 #### II. Points to remember
 
@@ -51,7 +51,7 @@ Adyen is a global payments company allowing businesses to accept payments on a g
     |       Sofort       |                                                             `AT,BE,DE,ES,CH,NL`                                                             |                                           `CHF,EUR`                                           |
     |       Klarna       |                                     `AU,AT,BE,CA,CZ,DK,FI,FR,DE,GR,IE,IT,NO,PL,PT,RO,ES,SE,CH,NL,GB,US`                                     |                       `AUD,EUR,CAD,CZK,DKK,NOK,PLN,RON,SEK,CHF,GBP,USD`                       |
 
-* If your desired country-currency combination is not listed here, please reach out to Hyperswitch Support to get it enabled.
+* If your desired country-currency combination is not listed here, please reach out to Juspay Hyperswitch Support to get it enabled.
 
-5. (Special Note): For Klarna and Paypal, In Adyen Sandbox environment, Automatic Capture is not working as intended. All the payments are required to be explicitly captured, and then only refunds are processing. This might be an account configuration issue from Adyen, there is no detected bugs/issues from Hyperswitch's end. If the same behvaiour persists on production please reach out to your Adyen Support or reach out to Hyperswitch Support to stop Automatic Captures for the same.
-6. (Special Note): For Sofort, Adyen has discontinued support for Sofort as payment method, Hyperswitch provides the integration of sofort via adyen but it is subject to availabilty by adyen on your account. Some or all features might not work if adyen has not enable it for you. Please contact Adyen support to resolve the same.
+5. (Special Note): For Klarna and Paypal, In Adyen Sandbox environment, Automatic Capture is not working as intended. All the payments are required to be explicitly captured, and then only refunds are processing. This might be an account configuration issue from Adyen, there is no detected bugs/issues from Juspay Hyperswitch's end. If the same behvaiour persists on production please reach out to your Adyen Support or reach out to Juspay Hyperswitch Support to stop Automatic Captures for the same.
+6. (Special Note): For Sofort, Adyen has discontinued support for Sofort as payment method, Juspay Hyperswitch provides the integration of sofort via adyen but it is subject to availabilty by adyen on your account. Some or all features might not work if adyen has not enable it for you. Please contact Adyen support to resolve the same.

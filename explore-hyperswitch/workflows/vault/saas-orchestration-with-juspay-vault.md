@@ -1,13 +1,13 @@
 ---
 description: >-
-  Leverage the integrated vault that comes with Hyperswitch Orchestration
+  Leverage the integrated vault that comes with Juspay Hyperswitch Orchestration
   account to store cards
 icon: box-circle-check
 ---
 
 # SaaS Orchestration with Juspay Vault
 
-This is the fully managed Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.\
+This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.\
 Merchants can tokenize, vault, and process without any PCI exposure.
 
 Key Highlights:
@@ -24,11 +24,11 @@ The sequence diagram above outlines how a SaaS merchant performs payments and va
 
 **New user payments flow**
 
-1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
+1. For self-hosting the Juspay Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
 2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
-3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Hyperswitch
-4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.
-5. The card is stored in Hyperswitch vault and a `payment_method_id` is generated. A `payment_method_id` is a versatile token and connects a lot of entities together&#x20;
+3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Juspay Hyperswitch
+4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Juspay Hyperswitch then proceeds to store and tokenize the card.
+5. The card is stored in Juspay Hyperswitch vault and a `payment_method_id` is generated. A `payment_method_id` is a versatile token and connects a lot of entities together&#x20;
 
 Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
 
@@ -51,7 +51,7 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
 2. The end-user can select the desired payment option and add their `CVV`&#x20;
 3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`&#x20;
-4. The Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
+4. The Juspay Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
 5. It sends payload with appropriate credential to the payment provider or PSP downstream based on the merchant configurations
 
 **Merchant Initiated Transaction (MIT) flow**

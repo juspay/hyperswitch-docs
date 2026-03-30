@@ -1,16 +1,19 @@
 ---
+description: >-
+  Secure your payment infrastructure with multi-layered authentication, role-based
+  access control, and distributed key management for compliance
 icon: id-card-clip
 ---
 
 # Identity and Access Management
 
-Identity and Access Management (IAM) in Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
+Identity and Access Management (IAM) in Juspay Hyperswitch is designed to provide a secure, user-friendly, and well-regulated environment. By implementing best practices for authentication and access control, Juspay Hyperswitch ensures data confidentiality, operational efficiency, and compliance with global standards.
 
 ### Authentication Methodology for Juspay Hyperswitch APIs
 
 **1. Admin Services Authentication**
 
-Administrative services require robust, multi-layered authentication. Access is limited to specific personnel within the Hyperswitch team via an additional API key to maintain backend security.
+Administrative services require robust, multi-layered authentication. Access is limited to specific personnel within the Juspay Hyperswitch team via an additional API key to maintain backend security.
 
 **2. Merchant Authentication**
 
@@ -24,12 +27,12 @@ The Hyperswitch Vault employs a distributed key management approach. Key custodi
 
 **1. User Authentication**
 
-Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
+Juspay Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with network and device whitelisting to ensure secure user access.
 
 **2. Access Controls and Role-Based Access Control (RBAC)**
 
 * **Granular Permissions:** Administrative roles are clearly defined with specific permissions, ensuring users only access functionalities necessary for their roles.
-* **Distributed Access Model:** Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
+* **Distributed Access Model:** Juspay Hyperswitch employs a distributed model where no individual has complete control over administrative operations.
 * **Principle of Least Privilege:** Permissions are restricted to essential tasks to mitigate unauthorized access risks.
 
 ### Benefits of Juspay Hyperswitch IAM
@@ -37,4 +40,4 @@ Hyperswitch employs Multi-Factor Authentication (MFA) in conjunction with networ
 1. **Enhanced Security:** Multi-layered authentication, key management, and RBAC reduce vulnerabilities.
 2. **Operational Efficiency:** Clear role definitions and access models ensure streamlined workflows.
 3. **Compliance Assurance:** Meets global regulatory requirements, including PCI DSS and ISO 27001 standards​​.
-4. **User Trust:** By minimizing risks and safeguarding data, Hyperswitch fosters confidence among merchants and partners.
+4. **User Trust:** By minimizing risks and safeguarding data, Juspay Hyperswitch fosters confidence among merchants and partners.

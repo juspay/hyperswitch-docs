@@ -1,4 +1,7 @@
 ---
+description: >-
+  Enable overcapture functionality to settle amounts greater than originally
+  authorized for tips, shipping, and post-authorization adjustments
 hidden: true
 icon: plus
 ---
@@ -19,12 +22,12 @@ With Juspay Hyperswitch, you can easily enable Overcapture for supported Payment
 
 ### Supported PSPs
 
-Currently, Hyperswitch supports Overcapture for the following PSPs:
+Currently, Juspay Hyperswitch supports Overcapture for the following PSPs:
 
 * Stripe
 * Adyen
 
-👉 If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
+👉 If you need Overcapture support for other PSPs, please contact the Juspay Hyperswitch Support Team.
 
 ### How to Enable Overcapture
 
@@ -112,8 +115,8 @@ This flag can be set in the following API calls:
 * Use Dashboard settings for global enablement
 * Use API overrides for payment-specific enablement
 * Monitor capturable and received amounts to track final settlements
-* Contact Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
+* Contact Juspay Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
 
-✅ With Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
+✅ With Juspay Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
 
 \\

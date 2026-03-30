@@ -94,7 +94,7 @@ Select the files on which you need to run reconciliation. In case of automated R
 
 The Green status signifies that the reconciliation engine has run successfully
 
-In case you face any errors at this stage please contact the Hyperswitch support team.
+In case you face any errors at this stage please contact the Juspay Hyperswitch support team.
 
 ## Reconciliation Reports
 

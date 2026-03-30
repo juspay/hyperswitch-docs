@@ -11,7 +11,7 @@ Juspay Hyperswitch is designed as a multi-tenant platform with a clear hierarchy
 * **Profile**: A sub-unit under a merchant that can also act as an **independent configuration + operations boundary**\
   Profiles are used when you want **multiple isolated setups under the same merchant**, without creating additional merchants
 
-Recon uses the same hierarchy so existing Hyperswitch users can adopt Recon without changing how they already think about structuring accounts and access
+Recon uses the same hierarchy so existing Juspay Hyperswitch users can adopt Recon without changing how they already think about structuring accounts and access
 
 ```mermaid
 flowchart TB
@@ -55,7 +55,7 @@ The practical difference is mostly about:
 
 * **Where you want the primary workspace boundary**
 * **How you want to invite users and scope their access**
-* **How closely you want to mirror your existing Hyperswitch structure**
+* **How closely you want to mirror your existing Juspay Hyperswitch structure**
 * **Whether you want multiple “merchant workspaces” or one merchant umbrella with multiple isolated profiles**
 
 ### Two common setups, and how they map to Recon
@@ -128,7 +128,7 @@ This setup is preferred when you want:
 Again, this is not a weaker isolation model — profiles still isolate rules, workflows, ingestion configuration, and operational ownership\
 It’s simply isolation within a single merchant umbrella
 
-**Hyperswitch example**
+**Juspay Hyperswitch example**
 
 * **Org** = “Company”
 * **Merchant** = “Company (Payments)”

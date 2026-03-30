@@ -6,7 +6,7 @@ hidden: true
 # Paypal
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Paypal through Hyperswitch
+This section gives you an overview of how to make payments via Paypal through Juspay Hyperswitch
 {% endhint %}
 
 
@@ -19,8 +19,8 @@ Paypal provides a secure, open payment gateway. Merchants can choose that PayPal
 #### Prerequisites
 
 1. You need to be registered with Paypal in order to proceed. In case you aren't, you can quickly setup your Paypal account [here](https://developer.paypal.com/)
-2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/)
+2. You should have a registered Juspay Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/)
 3. The Paypal's **Client Secret** and **Client ID** can be found in your Paypal dashboard.
 4. Select all the payment methods you wish to use Paypal for. Ensure that this is the same as the ones configured on your Paypal dashboard
 
-&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Paypal on Hyperswitch control center.
+&#x20;[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Paypal on Juspay Hyperswitch control center.

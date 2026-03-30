@@ -7,9 +7,9 @@ icon: space-awesome
 
 ### Overview
 
-Adyen's Split Settlements functionality allows businesses to divide a single transaction into multiple payouts, ensuring funds are accurately distributed across various accounts. This feature is supported through their Platform solutions and implemented via Hyperswitch.
+Adyen's Split Settlements functionality allows businesses to divide a single transaction into multiple payouts, ensuring funds are accurately distributed across various accounts. This feature is supported through their Platform solutions and implemented via Juspay Hyperswitch.
 
-Hyperswitch facilitates splitting payments during both authorization and refund processing, ensuring smooth fund distribution at all transaction stages.
+Juspay Hyperswitch facilitates splitting payments during both authorization and refund processing, ensuring smooth fund distribution at all transaction stages.
 
 ## Split Adyen payments via Juspay Hyperswitch
 
@@ -63,7 +63,7 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 #### Validation Rules
 
-Hyperswitch enforces several validation rules:
+Juspay Hyperswitch enforces several validation rules:
 
 * Split amounts must sum to total payment amount
 * `BalanceAccount` and `TopUp` types require `account` field

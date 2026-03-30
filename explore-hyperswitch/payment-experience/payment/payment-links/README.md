@@ -5,7 +5,7 @@ icon: link
 
 # Payment Links
 
-Introducing Payment Links - Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
+Introducing Payment Links - Seamlessly integrate into Juspay Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
 ### Use cases for Payment links
 
@@ -20,7 +20,7 @@ Introducing Payment Links - Seamlessly integrate into Hyperswitch without writin
 * Streamlining over-the-phone transactions
 
 {% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
-API Level Overview of Payment Links with Hyperswitch
+API Level Overview of Payment Links with Juspay Hyperswitch
 {% endembed %}
 
 ### FAQ
@@ -63,7 +63,7 @@ The payment link is valid for 15-minutes by default. However you can increase th
 
 <summary>How can I send Payment links via Emails?</summary>
 
-Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
+Juspay Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
 
 </details>
 

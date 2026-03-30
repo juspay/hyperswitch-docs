@@ -1,11 +1,13 @@
 ---
-description: Configure advanced rules with various payment parameters
+description: >-
+  Configure surcharge rules based on payment parameters to pass processing costs
+  to customers and optimize transaction economics
 icon: clipboard-list-check
 ---
 
 # Surcharge
 
-Hyperswitch Surcharge feature allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to apply surcharges to payments.
+Juspay Hyperswitch Surcharge feature allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to apply surcharges to payments.
 
 ## What is Surcharge?
 
@@ -16,7 +18,7 @@ A surcharge, sometimes called a checkout fee or service fee, is an additional fe
 
 <figure><img src="../../../.gitbook/assets/Surcharge.drawio (1).svg" alt=""><figcaption></figcaption></figure>
 
-Hyperswitch supports surcharge for most payment processors and you can configure surcharge through two ways:
+Juspay Hyperswitch supports surcharge for most payment processors and you can configure surcharge through two ways:
 
 **i) Sending the Surcharge details during payments/create request**
 

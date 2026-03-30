@@ -1,3 +1,9 @@
+---
+description: >-
+  Optimize interchange costs by including Level 2 and Level 3 enhanced data in
+  commercial card payment requests
+---
+
 # Level 2 and Level 3 data
 
 ### Overview
@@ -16,7 +22,7 @@ Visa and Mastercard support Level 2 and 3 processing. American Express supports 
 
 ### Unified L2/L3 Fields
 
-Hyperswitch exposes a set of generic fields in the payment\_create API that can be directly used to pass Level 2 and Level 3 data. These fields cover the most common requirements across card networks and connectors, so merchants can send enhanced transaction data without worrying about connector-specific differences.
+Juspay Hyperswitch exposes a set of generic fields in the payment\_create API that can be directly used to pass Level 2 and Level 3 data. These fields cover the most common requirements across card networks and connectors, so merchants can send enhanced transaction data without worrying about connector-specific differences.
 
 The fields are organized into two groups:
 

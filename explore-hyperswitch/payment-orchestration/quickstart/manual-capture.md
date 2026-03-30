@@ -1,7 +1,7 @@
 ---
 description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+  Place holds on customer funds and capture them later with full or partial
+  amounts using manual capture workflows
 hidden: true
 icon: sack-dollar
 ---

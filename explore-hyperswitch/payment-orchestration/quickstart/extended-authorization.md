@@ -1,4 +1,7 @@
 ---
+description: >-
+  Extend authorization hold periods beyond standard windows for hospitality,
+  rentals, and pre-order scenarios requiring delayed capture
 hidden: true
 icon: clock
 ---
@@ -19,11 +22,11 @@ Example: A hotel may authorize a card for $500 during check-in but extend the au
 
 ### Current PSP Support
 
-Hyperswitch currently supports Extended Authorization for the following PSPs:
+Juspay Hyperswitch currently supports Extended Authorization for the following PSPs:
 
 * Stripe
 
-If you require Extended Authorization for other PSPs, please reach out to the Hyperswitch Support Team.
+If you require Extended Authorization for other PSPs, please reach out to the Juspay Hyperswitch Support Team.
 
 ### How to Enable Extended Authorization
 

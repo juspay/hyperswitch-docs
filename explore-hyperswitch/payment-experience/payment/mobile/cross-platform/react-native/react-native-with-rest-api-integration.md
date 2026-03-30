@@ -6,7 +6,7 @@ icon: puzzle-piece
 # React Native with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
+Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Juspay Hyperswitch credentials to test the setup.
 {% endhint %}
 
 ## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
@@ -59,7 +59,7 @@ pod install
 
 ### 2.4 Use `HyperProvider`
 
-To initialize Hyperswitch in your React Native app, wrap your payment screen with the **HyperProvider** component. The only required configuration is the **API publishable key**, which should be provided through the `publishableKey` prop.
+To initialize Juspay Hyperswitch in your React Native app, wrap your payment screen with the **HyperProvider** component. The only required configuration is the **API publishable key**, which should be provided through the `publishableKey` prop.
 
 ```js
 import { HyperProvider } from '@juspay-tech/react-native-hyperswitch';
@@ -76,7 +76,7 @@ function App() {
 
 ### 3.1 import useHyper to your checkout page
 
-In your checkout screen, import and use the **`useHyper()`** hook to access Hyperswitch payment methods and functionality.
+In your checkout screen, import and use the **`useHyper()`** hook to access Juspay Hyperswitch payment methods and functionality.
 
 ```js
 import { useHyper } from '@juspay-tech/react-native-hyperswitch';
@@ -178,7 +178,7 @@ return (
 ```
 
 {% hint style="danger" %}
-Retrieve the **payment status from the Hyperswitch backend** to determine the final (terminal) status of the transaction. Do not rely solely on the status returned by the SDK, as it may not always represent the definitive outcome of the payment.
+Retrieve the **payment status from the Juspay Hyperswitch backend** to determine the final (terminal) status of the transaction. Do not rely solely on the status returned by the SDK, as it may not always represent the definitive outcome of the payment.
 {% endhint %}
 
 Congratulations! Now that you have integrated the payment sheet

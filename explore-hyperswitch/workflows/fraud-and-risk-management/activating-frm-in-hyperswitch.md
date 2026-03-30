@@ -4,7 +4,7 @@ icon: shield-plus
 
 # Activating FRM in Juspay Hyperswitch
 
-You can enable the [FRM solution](https://juspay.io/integrations) of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Hyperswitch.
+You can enable the [FRM solution](https://juspay.io/integrations) of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Juspay Hyperswitch.
 
 #### Prerequisites
 
@@ -32,8 +32,8 @@ The Post-Auth flow occurs after payment authorization by the processor and is on
 * Goal: Act as a safety net for suspicious transactions.
 * Steps:
   1. Post-authorization details are sent to the FRM solution.
-  2. Transactions flagged as fraudulent are queued for manual review with a status "Requires Merchant Action" on Hyperswitch.
-  3. Merchants review on FRM dashboard and decide next steps on that transaction. Hyperswitch consumes the webhooks from the FRM to:
+  2. Transactions flagged as fraudulent are queued for manual review with a status "Requires Merchant Action" on Juspay Hyperswitch.
+  3. Merchants review on FRM dashboard and decide next steps on that transaction. Juspay Hyperswitch consumes the webhooks from the FRM to:
      * Continue on `Accept`: Continue with the transaction.
      * Halt on `Decline`: Mark the transaction as cancelled.
      * Approve/Decline on `Review`:
@@ -57,5 +57,5 @@ Fraud detection can be done via the below methods:
 
 1. Rules: Uses a static set of rules for deciding on the outcome.
 2. Scores: Uses a range of numbers for associating risk with the transaction.
-3. Decisions/Recommendations: Uses ML data models for predicting and recommending the outcome. This flow is supported by Hyperswitch
-4. Chargeback Guarantee: Uses ML data models for responding with a binary outcome (Accept vs Decline). This flow is supported by Hyperswitch
+3. Decisions/Recommendations: Uses ML data models for predicting and recommending the outcome. This flow is supported by Juspay Hyperswitch
+4. Chargeback Guarantee: Uses ML data models for responding with a binary outcome (Accept vs Decline). This flow is supported by Juspay Hyperswitch

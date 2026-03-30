@@ -15,7 +15,7 @@ icon: screwdriver-wrench
 * Enhanced Compliance: Meet regulatory requirements for Strong Customer Authentication (SCA) in regions like the EEA.
 * Improved Customer Experience: Apply 3DS only when necessary, minimizing friction during checkout for low-risk transactions.
 
-Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
+Juspay Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
 
 {% embed url="https://youtu.be/-VTnngditlU" %}
 

@@ -1,5 +1,7 @@
 ---
-description: Swift and streamlined payout automation
+description: >-
+  Automate bulk payouts and fund distribution to cards, banks, and wallets with
+  smart retries and unified tracking across processors
 icon: file-invoice-dollar
 ---
 
@@ -7,7 +9,7 @@ icon: file-invoice-dollar
 
 ### Overview
 
-The Hyperswitch Payouts infrastructure allows you to programmatically distribute funds to third parties, including affiliates, contractors, and merchants, across a variety of payment methods. By integrating with global processors, Hyperswitch helps you manage the entire payout lifecycle from a single point of control.
+The Juspay Hyperswitch Payouts infrastructure allows you to programmatically distribute funds to third parties, including affiliates, contractors, and merchants, across a variety of payment methods. By integrating with global processors, Juspay Hyperswitch helps you manage the entire payout lifecycle from a single point of control.
 
 * Automate at scale: Orchestrate high-volume bulk payouts or schedule recurring distributions.
 * Optimize reliability: Use [smart retries](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/smart-retries-in-payout) and routing to minimize failed transfers.
@@ -20,11 +22,11 @@ The Hyperswitch Payouts infrastructure allows you to programmatically distribute
 
 #### High-velocity distribution
 
-Move funds to bank accounts, cards, or digital wallets through your preferred connectors. Whether you are using funds collected through Hyperswitch or external sources, our API ensures a seamless transfer experience.
+Move funds to bank accounts, cards, or digital wallets through your preferred connectors. Whether you are using funds collected through Juspay Hyperswitch or external sources, our API ensures a seamless transfer experience.
 
 #### Intelligence and routing
 
-Maximize payout success with [Smart Retries](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/smart-retries-in-payout). If a payout fails due to a temporary connector error, Hyperswitch automatically retries the transaction through the most viable path, ensuring your partners get paid on time without manual intervention.
+Maximize payout success with [Smart Retries](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/smart-retries-in-payout). If a payout fails due to a temporary connector error, Juspay Hyperswitch automatically retries the transaction through the most viable path, ensuring your partners get paid on time without manual intervention.
 
 #### Flexible data handling
 
@@ -34,7 +36,7 @@ Maximize payout success with [Smart Retries](https://docs.hyperswitch.io/explore
 
 ### Supported Connectors and Methods
 
-Hyperswitch abstracts the complexity of regional payment rails. The table below outlines our currently supported payout combinations.
+Juspay Hyperswitch abstracts the complexity of regional payment rails. The table below outlines our currently supported payout combinations.
 
 | Connector       | Regions | Cards          | Bank Rails       | Wallets                      |
 | --------------- | ------- | -------------- | ---------------- | ---------------------------- |
@@ -53,8 +55,8 @@ Methods marked with `**` are in beta.
 
 ### FAQ
 
-Can I use Hyperswitch solely for payouts without payments? \
-Yes. Hyperswitch is modular. You can use our infrastructure to handle payouts independently of your payment collection. You can initiate payouts via direct payment info or by using an existing Token ID.
+Can I use Juspay Hyperswitch solely for payouts without payments? \
+Yes. Juspay Hyperswitch is modular. You can use our infrastructure to handle payouts independently of your payment collection. You can initiate payouts via direct payment info or by using an existing Token ID.
 
 What is the benefit of independent tokenization?\
 It prevents vendor lock-in. By tokenizing sensitive data independently of the underlying processor, you retain ownership of your data and can route payouts to any supported connector without asking your users to re-enter their information.

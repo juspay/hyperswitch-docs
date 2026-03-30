@@ -19,6 +19,6 @@ When working with an external vault provider, here’re the options available to
 \
 <br>
 
-* **Option 3 -** Merchant server uses proxy payments flow of external vaults to send vault tokens in the Hyperswitch payment request. These tokens are replaced with raw card data by the external vault before the request is forwarded to the Hyperswitch. This Hyperswitch request with raw card info is sent to the PSP by Hyperswitch.
+* **Option 3 -** Merchant server uses proxy payments flow of external vaults to send vault tokens in the Juspay Hyperswitch payment request. These tokens are replaced with raw card data by the external vault before the request is forwarded to the Juspay Hyperswitch. This Juspay Hyperswitch request with raw card info is sent to the PSP by Juspay Hyperswitch.
 
 <figure><img src="../../../../.gitbook/assets/unknown (2) (1) (1).png" alt=""><figcaption></figcaption></figure>

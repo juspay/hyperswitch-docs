@@ -1,4 +1,7 @@
 ---
+description: >-
+  Integrate Hyperwidget for low-code APM enablement with unified dashboard
+  management and analytics capabilities
 icon: plug-circle-bolt
 ---
 

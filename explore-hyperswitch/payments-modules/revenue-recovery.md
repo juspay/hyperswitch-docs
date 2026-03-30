@@ -1,7 +1,7 @@
 ---
 description: >-
-  Configure Juspay Hyperswitch Revenue Recovery to automatically retry failed
-  recurring payments and reduce subscription churn for your SaaS business
+  Automatically retry failed recurring payments to reduce subscription churn and
+  recover lost revenue for SaaS businesses
 icon: clock-rotate-left
 ---
 

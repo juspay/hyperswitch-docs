@@ -5,7 +5,7 @@ icon: plug
 
 # SaaS Orchestration with Third-Party Vault
 
-Merchants using Hyperswitch SaaS can still integrate an external PCI-compliant vault.\
+Merchants using Juspay Hyperswitch SaaS can still integrate an external PCI-compliant vault.\
 This setup is ideal for merchants who already have existing token infrastructure (e.g., VGS, Tokenex and more).
 
 Key Highlights:
@@ -16,23 +16,23 @@ Key Highlights:
 
 ### Third party vault integration options&#x20;
 
-<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Merchant managed client with external vault's card form</strong></td><td align="center">The merchant directly integrates with the external vault SDK and card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with External Vault's card form</strong></td><td align="center">The External Vault SDK is loaded onto the Hyperswitch Unified Checkout SDK. The card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Hyperswitch managed client with native card form</strong></td><td align="center">In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Merchant managed client with external vault's card form</strong></td><td align="center">The merchant directly integrates with the external vault SDK and card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Juspay Hyperswitch managed client with External Vault's card form</strong></td><td align="center">The External Vault SDK is loaded onto the Juspay Hyperswitch Unified Checkout SDK. The card data is captured and tokenized using the external vault SDK</td></tr><tr><td align="center"><strong>Juspay Hyperswitch managed client with native card form</strong></td><td align="center">In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault</td></tr></tbody></table>
 
-**Configuring External Vault on Hyperswitch**
+**Configuring External Vault on Juspay Hyperswitch**
 
-For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
+For External Vaults to work with Juspay Hyperswitch you need to configure the required API credentials on the Juspay Hyperswitch dashboard. You can do this by navigating to _Orchestrator > Connector > Vault Processor_ and entering the required details.
 
 #### **1. Juspay Hyperswitch managed client and card form**
 
-In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Hyperswitch backend orchestrates payments using tokens issued by the external vault.
+In this approach, the Hyperswitch SDK is used to capture card details, but card storage and tokenization are handled by an external vault. Juspay Hyperswitch backend orchestrates payments using tokens issued by the external vault.
 
 **New user payments flow**
 
-1. Load the Hyperswitch [Payments SDK ](../../payment-experience/payment/)via [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create). The end-user enters their payment credentials for the selected payment option
-2. The [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)  containing the payment method is sent to the PSP from Hyperswitch
-3. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.
+1. Load the Juspay Hyperswitch [Payments SDK ](../../payment-experience/payment/)via [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create). The end-user enters their payment credentials for the selected payment option
+2. The [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)  containing the payment method is sent to the PSP from Juspay Hyperswitch
+3. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Juspay Hyperswitch then proceeds to store and tokenize the card.
 4. The card is stored in external vault, which returns a `vault_token` &#x20;
-5. Upon receiving the `vault_token`, Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
+5. Upon receiving the `vault_token`, Juspay Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
 6. This `Payment_method_id` is returned to the merchant via web hooks
 
 **Repeat user payments flow**
@@ -40,8 +40,8 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
 2. The end-user can select the desired payment option and add their `CVV`&#x20;
 3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`
-4. The Hyperswitch backend resolves the `payment_method_id` to identify available `vault_token`
-   1. Hyperswitch can use the `detokenize` flow to obtain the raw card in exchange for the  `vault_token` . It will the send payload with the raw card credential to the payment provider or PSP downstream.
+4. The Juspay Hyperswitch backend resolves the `payment_method_id` to identify available `vault_token`
+   1. Juspay Hyperswitch can use the `detokenize` flow to obtain the raw card in exchange for the  `vault_token` . It will the send payload with the raw card credential to the payment provider or PSP downstream.
 
 **Merchant Initiated Transaction (MIT) flow**
 
@@ -51,11 +51,11 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 #### **2. Juspay Hyperswitch managed client with External Vault's card form**
 
-In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
+In this flow, the External Vault SDK is layered directly onto the Juspay Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
 
 **New user payments flow**
 
-1. Load the Hyperswitch [Payments SDK ](../../payment-experience/payment/)via [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create). The end-user enters their payment credentials for the selected payment option. The Hyperswitch SDK in-turn loads the external vault SDK that has been configured in the merchant account.
+1. Load the Juspay Hyperswitch [Payments SDK ](../../payment-experience/payment/)via [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create). The end-user enters their payment credentials for the selected payment option. The Hyperswitch SDK in-turn loads the external vault SDK that has been configured in the merchant account.
 2. The end-user enters their payment credentials for card payment method directly in the external vault SDK&#x20;
 3. The external vault SDK returns a `vault_token`  and associated card meta data to the Hyperswitch SDK
 4. The [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) containing the `vault_token`  and associated card metadata is sent to Hyperswitch server by the Hyperswitch SDK
@@ -63,7 +63,7 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 6. This PSP Payload containing the `vault_token` is sent to the Proxy endpoint of the external vault
 7. The external vault replaces the  `vault_token` with the raw card and sends the request the PSP
 8. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, the Proxy endpoint of the external vault sends the response back to Hyperswitch server
-9. Upon receiving the `vault_token`, Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
+9. Upon receiving the `vault_token`, Juspay Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
 10. This `Payment_method_id` and `vault_token` are returned to the merchant via web hooks
 
 **Repeat user payments flow**
@@ -71,8 +71,8 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request](https://api-reference.hyperswitch.io/v1/payments/payments--create).
 2. The end-user can select the desired payment option and add their `CVV`&#x20;
 3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) API request to the Hyperswitch server when the user hits `Pay`
-4. The Hyperswitch backend resolves the `payment_method_id` to identify available `vault_token`
-   1. Hyperswitch can use the `detokenize` flow to obtain the raw card in exchange for the  `vault_token` . It will the send payload with the raw card credential to the payment provider or PSP downstream.
+4. The Juspay Hyperswitch backend resolves the `payment_method_id` to identify available `vault_token`
+   1. Juspay Hyperswitch can use the `detokenize` flow to obtain the raw card in exchange for the  `vault_token` . It will the send payload with the raw card credential to the payment provider or PSP downstream.
 
 **Merchant Initiated Transaction (MIT) flow**
 
@@ -82,7 +82,7 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 
 #### **3. Merchant managed client with external vault's card form**
 
-The merchant integrated with external vault SDK which manages the card data and user experience entirely independent of the Hyperswitch. The card is tokenized directly with the chosen vault, after which merchant will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
+The merchant integrated with external vault SDK which manages the card data and user experience entirely independent of the Juspay Hyperswitch. The card is tokenized directly with the chosen vault, after which merchant will have to pass the token returned by external vault along with the card metadata to Juspay Hyperswitch to process the payment.
 
 **New user payments flow**
 
@@ -94,7 +94,7 @@ The merchant integrated with external vault SDK which manages the card data and 
 6. This PSP Payload containing the `vault_token` is sent to the Proxy endpoint of the external vault
 7. The external vault replaces the  `vault_token` with the raw card and sends the request the PSP
 8. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, the Proxy endpoint of the external vault sends the response back to Hyperswitch server
-9. Upon receiving the `vault_token`, Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
+9. Upon receiving the `vault_token`, Juspay Hyperswitch generates a `payment_method_id` . A `payment_method_id` is a versatile token and connects a lot of entities together like `customer_id`, `psp_token`, `vault_token`
 10. This `Payment_method_id` and `vault_token` are returned to the merchant via web hooks
 
 **Repeat user payments flow**

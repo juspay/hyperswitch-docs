@@ -1,5 +1,7 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: >-
+  Validate customer payment data and create mandates for charging customers later
+  without immediate billing
 icon: circle-0
 ---
 
@@ -9,7 +11,7 @@ icon: circle-0
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
+The zero amount authorization flow in Juspay Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Juspay Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
@@ -38,7 +40,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 
 ```
 
-2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Hyperswitch Unified Checkout]**
+2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Juspay Hyperswitch Unified Checkout]**
 
 <pre class="language-bash"><code class="lang-bash"><strong>curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
 </strong>--header 'Content-Type: application/json' \

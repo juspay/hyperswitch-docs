@@ -12,7 +12,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
 </strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{

@@ -1,5 +1,7 @@
 ---
-description: Get started with Split Payments via Juspay Hyperswitch
+description: >-
+  Process split payments combining gift cards with cards to complete transactions
+  when single payment methods have insufficient balance
 icon: split
 ---
 
@@ -17,7 +19,7 @@ Juspay Hyperswitch manages the orchestration, balance checks, and sequential pro
 
 ### Supported Configurations
 
-Currently, Hyperswitch supports:
+Currently, Juspay Hyperswitch supports:
 
 * Atmost one gift cards combined with **at most one credit/debit card** (Non-3DS card)
 * Gift Cards via Givex (through Adyen)
@@ -63,7 +65,7 @@ If the balance is insufficient, the customer is prompted to add another payment 
 
 #### 3. Payment Confirmation
 
-When the customer confirms the payment, the SDK submits all selected payment method details to Hyperswitch.
+When the customer confirms the payment, the SDK submits all selected payment method details to Juspay Hyperswitch.
 
 At this stage, the system:
 

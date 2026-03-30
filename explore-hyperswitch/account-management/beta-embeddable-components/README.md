@@ -1,4 +1,7 @@
 ---
+description: >-
+  Embed white-labeled payment components into your application using secure
+  JWT-based authentication and pre-built UI modules
 icon: laptop-code
 ---
 

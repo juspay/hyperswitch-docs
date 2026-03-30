@@ -1,4 +1,7 @@
 ---
+description: >-
+  Access client-side payment capabilities including secure card input, 3DS
+  authentication, and seamless checkout experiences across platforms
 icon: sparkles
 ---
 

@@ -1,20 +1,23 @@
 ---
+description: >-
+  Set up payout processors and configure accounts to begin processing fund
+  distributions to third parties
 icon: flag-checkered
 ---
 
 # Getting Started with Payouts
 
-To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
+To begin processing payouts with Juspay Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
 
 ## Overview
 
-The following diagram illustrates the interaction between your application, the Hyperswitch orchestration layer, and the underlying payout processors.
+The following diagram illustrates the interaction between your application, the Juspay Hyperswitch orchestration layer, and the underlying payout processors.
 
 <figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Configuration Resources
 
-Implementation requires the Hyperswitch Dashboard for configuration and the API for transaction processing.
+Implementation requires the Juspay Hyperswitch Dashboard for configuration and the API for transaction processing.
 
 * API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
 * Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
@@ -24,7 +27,7 @@ Implementation requires the Hyperswitch Dashboard for configuration and the API 
 
 Before configuring your first payout, ensure you have the following credentials from your Dashboard:
 
-1. A Hyperswitch account.
+1. A Juspay Hyperswitch account.
 2. An API Key (located in the Developers section).
 3. Your Merchant ID (available on the Home page).
 

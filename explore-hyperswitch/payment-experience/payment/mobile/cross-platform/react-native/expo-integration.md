@@ -1,4 +1,7 @@
 ---
+description: >-
+  Integrate Hyperswitch SDK with Expo for React Native apps using native Android
+  and iOS builds
 icon: react
 ---
 
