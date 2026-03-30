@@ -9,7 +9,7 @@ icon: money-bills-simple
 
 The Payment Method SDK and `/payment-methods` API work in tandem with the `/payments` API to achieve any business objective as listed below.
 
-##### Guest Checkout Flow (S2S)
+#### Guest Checkout Flow (S2S)
 
 1. Collect card details and tokenise with HS [Create PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1) to get a [PM ID](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1#response-id) (payment\_methd\_id)
 2. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation

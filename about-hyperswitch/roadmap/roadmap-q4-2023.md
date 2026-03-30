@@ -71,6 +71,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟩💪 Open sourcing Fraud and Risk Management Integrations
 * 🟩💪 Open sourcing Payouts module
 
-### **Want to contribute to the roadmap?**
+#### **Want to contribute to the roadmap?**
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

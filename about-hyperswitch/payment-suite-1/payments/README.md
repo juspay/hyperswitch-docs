@@ -8,9 +8,9 @@ icon: file-invoice-dollar
 Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
-### Integration Path
+#### Integration Path
 
-### Client-Side SDK Payments (Tokenise Post Payment)
+#### Client-Side SDK Payments (Tokenise Post Payment)
 
 Refer to Payments (Cards) section  if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 {% endhint %}
@@ -102,7 +102,7 @@ Read more - [link](https://docs.hyperswitch.io/~/revisions/9QlGypixZFcbkq8oGjaF/
 2. **List:** Get saved cards via `GET /customers/payment_methods`
 3. **Confirm:** Use selected `payment_token` in confirm call
 
-##### PCI Compliance and `payment_method_id`
+#### PCI Compliance and `payment_method_id`
 
 Storing `payment_method_id` (which is a token representing the actual payment instrument, which could be a payment token, network token, or payment processor token) significantly reduces your PCI DSS scope. Hyperswitch securely stores the sensitive card details and provides you with this token. While you still need to ensure your systems handle `payment_method_id` and related customer data securely, you avoid the complexities of storing raw card numbers. Always consult with a PCI QSA to understand your specific compliance obligations.
 

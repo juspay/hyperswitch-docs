@@ -100,7 +100,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
 
-###### **2.1 Define the Payment Methods Management Form**
+##### **2.1 Define the Payment Methods Management Form**
 
 Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
 
@@ -112,7 +112,7 @@ Add one empty placeholder `div` to your page for the Payment Methods Management 
 </form>
 ```
 
-###### **2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
+##### **2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
 
 Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
@@ -170,7 +170,7 @@ async function initialize() {
 initialize();
 ```
 
-###### **2.3 Complete tokenization and handle errors**
+##### **2.3 Complete tokenization and handle errors**
 
 Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
 

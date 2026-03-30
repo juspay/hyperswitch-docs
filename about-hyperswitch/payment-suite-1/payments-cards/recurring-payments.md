@@ -122,7 +122,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [
 
 Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
-MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
+MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on artifacts available in your system, one of the following approaches can be used:
 
 ##### [**Payment Method ID**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-recurring-details)
 

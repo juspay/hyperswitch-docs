@@ -104,7 +104,7 @@ Response:
         "name": "Enterprise Suite",
         "description": "High-end customer support suite with enterprise-grade solutions."
  	 "price_id": [
-         	{
+          	{
                 "id": "cbdemo_enterprise-suite-INR-Daily",
                 "name": "Enterprise Suite INR Daily",
                 "pricing_model": "flat_fee",
@@ -154,7 +154,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-### 1. The Setup with Charge Flow
+#### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -165,7 +165,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-### 2. The Zero Dollar Authorization Flow
+#### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
@@ -210,7 +210,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-### 1. The Setup with Charge Flow
+#### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -221,7 +221,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-### 2. The Zero Dollar Authorization Flow
+#### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
