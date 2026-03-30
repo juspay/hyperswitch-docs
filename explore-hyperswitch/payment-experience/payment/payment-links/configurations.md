@@ -177,7 +177,9 @@ A custom domain for hosting payment links.
 This is for configuring multiple styles. This is a key value pair where key represents the style ID and value is the UI configurations which were mentioned above.
 
 {% hint style="info" %}
+
 For comprehensive guidance on Style IDs, text consistency best practices, and multi-brand customization strategies, see the [Theme configurations Guide](theme-configurations-guide.md).
+
 {% endhint %}
 
 Example:
@@ -292,5 +294,8 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
 ### Next step:
 
 {% content-ref url="create-payment-links.md" %}
+
 [create-payment-links.md](create-payment-links.md)
+
 {% endcontent-ref %}
+

@@ -1,11 +1,11 @@
 ---
+description: Integrate embeddable connector configuration components into your React application
 hidden: true
 ---
 
 # Integration Guide
 
 <h2 align="center"><mark style="color:$danger;">This guide has now been replaced with</mark> <a data-mention href="integration-reference.md">integration-reference.md</a></h2>
-
 
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
@@ -63,6 +63,7 @@ Required Headers for Hyperswitch Call:
 * X-profile-id: The specific profile ID you want the embedded component to access.
 
 {% code title="server.js" %}
+
 ```javascript
 const express = require('express');
 const cors = require('cors');
@@ -109,6 +110,7 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 ```
+
 {% endcode %}
 
 ### Step 3: Frontend Integration (React)
@@ -140,6 +142,7 @@ Key Concept: The fetchToken function is "lazy." It is called:
 2. Automatically whenever the SDK detects the session has expired (auto-refresh).
 
 {% code title="app.js" %}
+
 ```javascript
 function App() {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -217,11 +220,12 @@ function App() {
 
 export default App;
 ```
+
 {% endcode %}
 
 ### API Reference
 
-#### loadHyperswitch(options)
+#### loadJuspay Hyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -230,7 +234,7 @@ Initializes the SDK logic.
   * Should return the JWT string on success.
   * Should return `undefined` on failure.
 
-#### \<HyperswitchProvider>
+#### \<Juspay HyperswitchProvider>
 
 Context provider that holds the authentication state.
 

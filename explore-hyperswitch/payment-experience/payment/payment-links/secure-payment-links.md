@@ -54,7 +54,7 @@ The response includes the following fields:
 
 ```
 {
-  ...
+...
 
   "payment_link": {
     "link": "http://localhost:8080/payment_link/merchant_1734676749/pay_Dw4CBoUWGGkvSXcfz1Mu?locale=en",
@@ -62,7 +62,7 @@ The response includes the following fields:
     "payment_link_id": "plink_lF9deXMRrdIEs1drMVhF"
   },
 
-  ...
+...
 }
 ```
 
@@ -103,5 +103,8 @@ To embed a secure payment link, include it in an iframe within your HTML:
 ### Next step:
 
 {% content-ref url="setup-custom-domain.md" %}
+
 [setup-custom-domain.md](setup-custom-domain.md)
+
 {% endcontent-ref %}
+

@@ -1,3 +1,7 @@
+---
+description: Resolve expected exceptions using voiding and manual verification approaches
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview
@@ -20,7 +24,7 @@ Action: `Ignore Transaction`
 
 This action is used when the source transaction (the "Expected" item) is invalid or should not be reconciled. Since the counterparty data has not arrived yet, "Ignoring" this record effectively cancels the expectation, preventing the system from waiting indefinitely
 
-* Logic: Marks the transaction status as `VOID` . It removes the item from the "Pending/Aging" queue
+* Logic: Marks the transaction status as `VOID`. It removes the item from the "Pending/Aging" queue
 * Common Use Cases:
   * Test Transactions: An order created in the production environment for testing purposes that will never settle at the bank
   * Cancelled Prior to Settlement: An authorization that was voided immediately at the gateway but was logged as "Pending" in the ledger
@@ -34,7 +38,6 @@ Action: `Fix Entries`
 If the source transaction is valid and represents real money, but the automated match hasn't happened, users can intervene using the three options below
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.34.16 PM.png" alt=""><figcaption></figcaption></figure>
-
 
 
 #### Option 1: Edit Entry

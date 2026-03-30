@@ -1,19 +1,17 @@
 ---
-description: Accept payments through Airwallex via Hyperswitch
+description: Accept payments through Airwallex via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Airwallex
 
 
-
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/airwallexLogo.svg)
-
 
 
 Airwallex is a financial technology company that provides businesses with global payment solutions, including cross-border payments, foreign exchange, and risk management, with easy integration.To know about more about payment methods supported by Airwallex via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Airwallex via Hyperswitch
+### Activating Airwallex via Juspay Hyperswitch
 
 #### Prerequisites
 

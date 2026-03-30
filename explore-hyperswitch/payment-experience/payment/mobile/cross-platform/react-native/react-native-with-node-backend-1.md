@@ -1,4 +1,5 @@
 ---
+description: Implement embedded payment widget in React Native applications
 icon: input-numeric
 ---
 
@@ -55,8 +56,8 @@ Send a network request to the backend endpoint created in the previous step to r
 ```js
 useEffect(() => {
     fetch('https://your-server.com/create-payment-intent', { method: 'POST' })
-      .then((res) => res.json())
-      .then(({ clientSecret, sdkAuthorization, }) => {
+.then((res) => res.json())
+.then(({ clientSecret, sdkAuthorization, }) => {
         setClientSecret(clientSecret));
         setAuthorization(sdkAuthorization);
       }

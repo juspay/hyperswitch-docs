@@ -5,15 +5,19 @@ description: Migrate from Stripe on your web app
 # Web
 
 {% hint style="info" %}
+
 Migrate from Stripe on your web app in less than 15 mins!
+
 {% endhint %}
 
 ## Migrate from Stripe
 
-If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Unified analytics and many more.
+If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 300+ connectors and features such as Smart Router, Unified analytics and many more.
 
 {% hint style="info" %}
+
 Stripe’s `paymentRequestButton` is available under Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
+
 {% endhint %}
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner for both React and HTML frontend. You can find the details for both below.
@@ -83,7 +87,7 @@ import {
 } from "@juspay-tech/react-hyper-js";
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 300+ connectors and acquirers.
 
 </details>
 
@@ -133,7 +137,7 @@ const stripe = Stripe("your_stripe_publishable_key");
 const hyper = Hyper("your_hyperswitch_publishable_key");
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 300+ connectors and acquirers.
 
 </details>
 

@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Export payments data to Amazon Redshift for analytics and business intelligence reporting
 icon: tachograph-digital
 ---
 
@@ -96,13 +96,13 @@ IGNOREHEADER 1
 timeformat 'YYYY-MM-DD HH:MI:SS'
 csv;
 
-MERGE INTO payments USING payments_stage ON payments.payment_id = payments_stage.payment_id
+MERGE INTO payments USING payments_stage ON payments.`payment_id = payments_stage`.payment_id
 WHEN MATCHED THEN UPDATE SET
-payment_id = payments_stage.payment_id,
+`payment_id = payments_stage`.payment_id,
 attempt_id = payments_stage.attempt_id,
-status = payments_stage.status,
-amount = payments_stage.amount,
-currency = payments_stage.currency,
+`status = payments_stage`.status,
+`amount = payments_stage`.amount,
+`currency = payments_stage`.currency,
 amount_to_capture = payments_stage.amount_to_capture,
 customer_id = payments_stage.customer_id,
 created_at = payments_stage.created_at,
@@ -110,8 +110,8 @@ order_details = payments_stage.order_details,
 connector = payments_stage.connector,
 error_message = payments_stage.error_message,
 connector_transaction_id = payments_stage.connector_transaction_id,
-capture_method = payments_stage.capture_method,
-authentication_type = payments_stage.authentication_type,
+`capture_method = payments_stage`.capture_method,
+`authentication_type = payments_stage`.authentication_type,
 mandate_id = payments_stage.mandate_id,
 payment_method = payments_stage.payment_method,
 payment_method_type = payments_stage.payment_method_type,

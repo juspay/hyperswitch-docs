@@ -1,12 +1,14 @@
 ---
-description: Accept payments through Coinbase via Hyperswitch
+description: Accept cryptocurrency payments through Coinbase via Juspay Hyperswitch
 hidden: true
 ---
 
 # Coinbase
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Coinbase through Hyperswitch
+
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/coinbaseLogo.svg)
@@ -15,7 +17,7 @@ This section gives you an overview of how to make payments via Coinbase through 
 
 Coinbase Commerce is the easiest way to start accepting crypto payments. It provides reduced operational costs, multi-asset support and access to Coinbase’s millions of retail users.  To know about more about payment methods supported by Coinbase via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Coinbase via Hyperswitch
+### Activating Coinbase via Juspay Hyperswitch
 
 #### Prerequisites
 

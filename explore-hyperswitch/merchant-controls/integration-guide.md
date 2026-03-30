@@ -1,5 +1,5 @@
 ---
-description: Get started integrating the Hyperswitch web client in your app
+description: Get started integrating the Juspay Hyperswitch web client in your app
 hidden: true
 icon: puzzle-piece
 ---

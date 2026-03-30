@@ -6,7 +6,9 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
+
 You can customize the React Native Unified Checkout to supports visual customization, which allows you to match the design of your app
+
 {% endhint %}
 
 ## Appearance

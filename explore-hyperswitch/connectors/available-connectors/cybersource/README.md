@@ -1,18 +1,20 @@
 ---
-description: Accept payments through Cybersource via Hyperswitch
+description: Accept payments through Cybersource via Juspay Hyperswitch configuration and setup
 ---
 
 # Cybersource
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Cybersource through Hyperswitch
+
 {% endhint %}
 
 ![Cybersource Logo](https://hyperswitch.io/icons/homePageIcons/logos/CybersourceLogo.svg)
 
 Cybersource offers global payment solutions to help businesses accept payments across channels and geographies using a digital-first approach. To know about more about payment methods supported by Cybersource via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Cybersource via Hyperswitch
+### Activating Cybersource via Juspay Hyperswitch
 
 #### Prerequisites
 

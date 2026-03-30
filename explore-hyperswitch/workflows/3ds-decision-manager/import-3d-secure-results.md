@@ -1,5 +1,5 @@
 ---
-description: Process payments when 3D Secure runs outside Hyperswitch
+description: Process payments when 3D Secure runs outside Juspay Hyperswitch
 icon: shield-slash
 ---
 

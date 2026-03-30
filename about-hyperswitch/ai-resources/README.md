@@ -1,4 +1,5 @@
 ---
+description: Interact with the Hyperswitch ecosystem through AI-powered documentation and MCP server for executing real API operations via natural language
 hidden: true
 noIndex: true
 icon: brain-circuit

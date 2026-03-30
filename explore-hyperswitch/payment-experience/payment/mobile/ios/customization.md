@@ -6,7 +6,9 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
+
 You can customize the iOS Unified Checkout to support your checkout context and brand guidelines by changing fonts, colours, shapes and layouts.
+
 {% endhint %}
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.

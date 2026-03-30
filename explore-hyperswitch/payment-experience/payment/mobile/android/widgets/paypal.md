@@ -1,4 +1,5 @@
 ---
+description: Integrate PayPal widget for Android payment acceptance
 icon: paypal
 ---
 

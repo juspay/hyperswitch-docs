@@ -1,12 +1,14 @@
 ---
-description: Accept payments through Checkout via Hyperswitch
+description: Accept payments through Checkout.com via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Checkout
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Checkout through Hyperswitch
+
 {% endhint %}
 
 ![Checkout Logo](https://hyperswitch.io/icons/homePageIcons/logos/checkoutLogo.svg)

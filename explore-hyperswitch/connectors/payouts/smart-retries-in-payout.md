@@ -1,4 +1,5 @@
 ---
+description: Automatically retry failed payouts to improve success rates
 icon: magnifying-glass-arrows-rotate
 ---
 

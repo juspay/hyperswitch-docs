@@ -1,11 +1,13 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Integrate GooglePay (AndroidPay) via Cybersource in Juspay Hyperswitch
 ---
 
 # Google Pay
 
 {% hint style="info" %}
+
 This page consists of steps for how **GooglePay** can be enabled in Hyperswitch via Cybersource
+
 {% endhint %}
 
 > This guide assumes that you have alreaedy configured Cybersource as a connector in your Hyperswitch Control Center. If not please follow the steps mentioned [here](./)
@@ -27,10 +29,12 @@ This page consists of steps for how **GooglePay** can be enabled in Hyperswitch 
 * Enter the below mentioned GooglePay details in the overlay form and click `Proceed`
   1. **Google Pay Merchant Key**: This is your Cybersource Merchant ID
   2. **Google Pay Merchant Name**: This is your display name that the customer will see on his GooglePay App while making the payment.
-  3. **Google Pay Merchant ID:** \[<mark style="color:red;">For Production Only</mark>] Enter your GooglePay Merchant ID provided by Google when you signup and get approvals for using GooglePay on production.
+  3. **Google Pay Merchant ID:** [<mark style="color:red;">For Production Only</mark>] Enter your GooglePay Merchant ID provided by Google when you signup and get approvals for using GooglePay on production.
 
 {% hint style="success" %}
-**\[SANDBOX ENV]:** For sandbox test environment, you can put any **dummy value** in **Google Pay Merchant ID** it won't affect the payments experience.
+
+**[SANDBOX ENV]:** For sandbox test environment, you can put any **dummy value** in **Google Pay Merchant ID** it won't affect the payments experience.
+
 {% endhint %}
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.46.32 PM.png" alt=""><figcaption></figcaption></figure>
@@ -51,9 +55,10 @@ This page consists of steps for how **GooglePay** can be enabled in Hyperswitch 
     * Country
 
 {% hint style="warning" %}
-We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
-{% endhint %}
 
+We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
+
+{% endhint %}
 
 
 [^1]: 

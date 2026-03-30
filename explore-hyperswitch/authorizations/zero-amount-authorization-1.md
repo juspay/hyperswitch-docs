@@ -1,12 +1,14 @@
 ---
-description: Best way to validate customer payment data and charge the customer later
+description: Validate customer payment methods and charge customers later using stored credentials
 icon: circle-0
 ---
 
 # Zero Amount Authorization
 
 {% hint style="info" %}
+
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
+
 {% endhint %}
 
 The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
@@ -38,7 +40,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 
 ```
 
-2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Hyperswitch Unified Checkout]**
+2. Confirm the payment after collecting payment information from the user **[You can skip this step if you are using the Hyperswitch Unified Checkout]**
 
 <pre class="language-bash"><code class="lang-bash"><strong>curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
 </strong>--header 'Content-Type: application/json' \

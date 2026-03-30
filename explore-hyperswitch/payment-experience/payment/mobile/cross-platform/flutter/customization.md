@@ -6,7 +6,9 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
+
 You can customize the Flutter Unified Checkout to supports visual customization, which allows you to match the design of your app
+
 {% endhint %}
 
 You can modify colors, fonts, and more by using the instance of `appearance` class.&#x20;
@@ -77,14 +79,15 @@ Consider the below code for your reference.
 ```
 
 {% hint style="info" %}
+
 Set `displaySavedPaymentMethods` to false to disable saved cards.
 
 Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.\
 Set `disableBranding` to false to disable Hyperswitch branding.\
 Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
-{% endhint %}
 
+{% endhint %}
 
 
 ## Custom Placeholders And Branding
@@ -106,7 +109,9 @@ configuration.disableBranding = true
 Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](flutter-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
 
 {% hint style="info" %}
+
 Note To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
+
 {% endhint %}
 
 ```dart
@@ -172,14 +177,13 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 Now you can test the payments on your app and go-live!
 
 
-
 ## Languages
 
 Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
 ```dart
 Appearance appearance = Appearance(
-     ...
+...
       locale: 'LOCALE_CODE'
     );
 ```
@@ -222,6 +226,8 @@ We support the following locales -
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
 

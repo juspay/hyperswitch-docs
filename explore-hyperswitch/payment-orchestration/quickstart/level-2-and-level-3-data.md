@@ -1,8 +1,12 @@
+---
+description: Include enhanced L2 and L3 data to optimize interchange costs
+---
+
 # Level 2 and Level 3 data
 
 ### Overview
 
-Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
+Juspay Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
 
 * Level 2: Adds tax, invoice, and reference-level data
 * Level 3: Adds full line-item details (e.g., item quantity, commodity code, shipping, duty)
@@ -48,13 +52,13 @@ Some data is structured to align with domain-specific groupings, making it easie
   * customer.email<br>
 * Order Details (Line Items)\
   Each item can include:
-  * order\_details\[].product\_name
-  * order\_details\[].commodity\_code
-  * order\_details\[].quantity
-  * order\_details\[].unit\_of\_measure
-  * order\_details\[].unit\_price
-  * order\_details\[].item\_tax\_amount
-  * order\_details\[].item\_discount\_amount
+  * order\_details[].product\_name
+  * order\_details[].commodity\_code
+  * order\_details[].quantity
+  * order\_details[].unit\_of\_measure
+  * order\_details[].unit\_price
+  * order\_details[].item\_tax\_amount
+  * order\_details[].item\_discount\_amount
 
 ### Supported Connectors
 

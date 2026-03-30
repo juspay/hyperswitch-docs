@@ -88,5 +88,8 @@ curl --location '{{BASE_URL}}/payments' \
 ### Next step:
 
 {% content-ref url="secure-payment-links.md" %}
+
 [secure-payment-links.md](secure-payment-links.md)
+
 {% endcontent-ref %}
+

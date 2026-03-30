@@ -1,21 +1,22 @@
 ---
-description: Accept payments through Paypal via Hyperswitch
+description: Accept payments through PayPal via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Paypal
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Paypal through Hyperswitch
-{% endhint %}
 
+This section gives you an overview of how to make payments via Paypal through Hyperswitch
+
+{% endhint %}
 
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/paypalLogo.svg)
 
 Paypal provides a secure, open payment gateway. Merchants can choose that PayPal host the checkout pages and manage security for sales and authorizations. Merchants who want total control over the checkout experience can host their own checkout pages other online payment businesses need. To know about more about payment methods supported by Paypal via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Paypal via Hyperswitch
+### Activating Paypal via Juspay Hyperswitch
 
 #### Prerequisites
 

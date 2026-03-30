@@ -1,4 +1,4 @@
-# Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
+# Web Transactions Processed Using Juspay Hyperswitch Decryption (Without Apple Merchant ID)
 
 In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
 
@@ -10,7 +10,7 @@ In this flow Hyperswitch decrypts the token internally using own certificates an
 
 ### **Configuration :**&#x20;
 
-#### **Steps to configure Apple Pay on Hyperswitch**
+#### **Steps to configure Apple Pay on Juspay Hyperswitch**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
@@ -25,7 +25,9 @@ In this flow Hyperswitch decrypts the token internally using own certificates an
 * Click on verify and enable to complete your setup
 
 {% hint style="warning" %}
-Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+
+Please note since the Apple Pay Web Domain flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+
 {% endhint %}
 
 <details>

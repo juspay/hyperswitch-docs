@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
@@ -31,7 +31,9 @@ function App() {
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
+
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
+
 {% endhint %}
 
 #### 3. Initialize your Payment Session
@@ -86,7 +88,7 @@ React.useEffect(()=>{
 },[])
 
 let confirmDefaultPaymentMethod = () => {
-const status = await confirmWithCustomerLastUsedPaymentMethod(paymentMethodSession);
+const `status = await` confirmWithCustomerLastUsedPaymentMethod(paymentMethodSession);
     // handle status of payment   
     if (status != null) {
         const message = status.message;
@@ -99,7 +101,6 @@ return (
     //on click of pay use confirmDefaultPaymentMethod()
 )
 ```
-
 
 
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`

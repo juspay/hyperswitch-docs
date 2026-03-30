@@ -26,7 +26,9 @@ Your Merchant Client (frontend) uses the `client_secret` to initialize the Hyper
 
 **3. Customer Selection & Data Entry**
 
-The SDK displays the payment interface to the customer. Once the customer selects a payment method (such as entering credit card details), the SDK captures this information. Note: This data is handled within the secure SDK environment, ensuring sensitive details do not pass through your servers.
+The SDK displays the payment interface to the customer. Once the customer selects a payment method (such as entering credit card details), the SDK captures this information.
+
+> **Note:** This data is handled within the secure SDK environment, ensuring sensitive details do not pass through your servers.
 
 **4. Payment Confirmation**
 
@@ -67,7 +69,6 @@ The Hyperswitch Server forwards the raw card data, along with your merchant cred
 **6. Transaction Finalization**
 
 The connector returns the transaction status (e.g., "Succeeded" or "Failed") to the Hyperswitch Server. This status is passed down to the SDK, which then handles the final redirect to your `return_url`.
-
 
 
 **Integration Documentation :**

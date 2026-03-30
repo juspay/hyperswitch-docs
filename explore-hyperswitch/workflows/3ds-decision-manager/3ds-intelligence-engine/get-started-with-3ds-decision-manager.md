@@ -6,7 +6,9 @@ icon: screwdriver-wrench
 # 3DS Decision Manager
 
 {% hint style="warning" %}
+
 [3DS intelligence engine](./) is the latest upgrade to our 3DS workflows. Please refer to that section for advanced controls.
+
 {% endhint %}
 
 ### Benefits of Using the 3DS Decision Manager:
@@ -21,7 +23,7 @@ Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules
 
 ### 3DS Decision Flow:
 
-Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
+Juspay Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
 
 <figure><img src="../../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 
@@ -32,6 +34,9 @@ For example: If you wish to enforce 3DS for transactions over $100, you can defi
 <figure><img src="../../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
+
 * Rules set in the **3DS Decision Manager** can be overridden if an explicit value is passed in the `/payments` request using the `authentication_type` parameter. ([API Reference](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type))
 * Some processors may mandate 3DS regardless of your configuration.
+
 {% endhint %}
+

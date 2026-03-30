@@ -1,9 +1,9 @@
 ---
-description: Configure your preferred connector on Hyperswitch
+description: Activate and configure payment connectors on the Hyperswitch Control Center
 icon: chart-network
 ---
 
-# Activate Connector on Hyperswitch
+# Activate Connector on Juspay Hyperswitch
 
 ### Steps to activate connector on the Hyperswitch Control Center
 
@@ -31,20 +31,24 @@ icon: chart-network
     * Choose the payment methods for the demo checkout.
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.39.45 AM.png" alt=""><figcaption></figcaption></figure>
-5.  **Configure webhooks \[Optional]**
+5.  **Configure webhooks [Optional]**
 
     * If the selected connector supports webhooks, copy the URL from control center and configure it in the connector dashboard.
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.24.15 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="test-a-payment-with-connector.md" %}
+
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)
+
 {% endcontent-ref %}
 
 ### Edit connector credentials on the Hyperswitch Control Center
 
 {% hint style="warning" %}
+
 To update connector credentials on Hyperswitch you will need to re-enter all the fields required for credentials.
+
 {% endhint %}
 
 To update the credentials on the Hyperswitch Control Centre, You can follow the following steps -
@@ -64,5 +68,8 @@ To update the credentials on the Hyperswitch Control Centre, You can follow the 
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 9.53.16 AM 1 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="test-a-payment-with-connector.md" %}
+
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)
+
 {% endcontent-ref %}
+

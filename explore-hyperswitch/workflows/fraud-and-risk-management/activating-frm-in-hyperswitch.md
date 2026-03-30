@@ -1,8 +1,9 @@
 ---
+description: Activate fraud risk management solutions in Juspay Hyperswitch
 icon: shield-plus
 ---
 
-# Activating FRM in Hyperswitch
+# Activating FRM in Juspay Hyperswitch
 
 You can enable the [FRM solution](https://juspay.io/integrations) of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Hyperswitch.
 
@@ -42,7 +43,9 @@ The Post-Auth flow occurs after payment authorization by the processor and is on
        * If `declined`: Void the payment.
 
 {% hint style="warning" %}
+
 If the connector doesn’t support manual capture, Post-Authorization manual review should be avoided during configuration setup for the respective connector.
+
 {% endhint %}
 
 #### FRM workflow

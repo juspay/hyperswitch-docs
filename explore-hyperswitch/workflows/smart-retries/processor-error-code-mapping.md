@@ -18,7 +18,6 @@ Upon receiving an error, the system classifies the transaction as either Non-Ret
 To illustrate the classification process, the following tables lists few sample Stripe error codes and how our AI model categorizes them into Retryable versus Non-Retryable workflows.
 
 
-
 #### **Error codes categorize as Retryable :** &#x20;
 
 | code                                          | message                                                                                                                                                                                                                                                                                                                                                                   |
@@ -41,7 +40,6 @@ To illustrate the classification process, the following tables lists few sample 
 | parameter\_invalid\_empty                     | One or more required values were not provided. Make sure requests include all required parameters.                                                                                                                                                                                                                                                                        |
 | call\_issuer                                  | The card was declined for an unknown reason.                                                                                                                                                                                                                                                                                                                              |
 | fraudulent                                    | The payment was declined because Stripe suspects that it's fraudulent.                                                                                                                                                                                                                                                                                                    |
-
 
 
 #### **Error codes categorize as Non-Retryable :**

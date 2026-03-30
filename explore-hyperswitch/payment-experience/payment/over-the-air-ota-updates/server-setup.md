@@ -1,9 +1,9 @@
 ---
+description: Set up server infrastructure for over-the-air SDK updates
 icon: server
 ---
 
 # Server setup
-
 
 
 ​Airborne requires a backend endpoint to serve the **`config.json`** and updated bundles to client apps. This server is responsible for:

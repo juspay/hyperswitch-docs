@@ -1,5 +1,5 @@
 ---
-description: Low-code solution to accept payouts
+description: Send money to beneficiaries using customizable low-code payout links
 icon: link
 ---
 
@@ -17,7 +17,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 * Online gaming - Distribute prize money to players.
 * NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+## How to configure Payout links through Juspay Hyperswitch API?
 
 ### Prerequisites
 
@@ -35,7 +35,7 @@ There are a couple of ways for using payout links.
 * Creating default links
 * Customizing UI of individual links
 * Serving links from a custom domain
-* **\[TEST MODE]** Opening non-iframed links
+* **[TEST MODE]** Opening non-iframed links
 
 #### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
 
