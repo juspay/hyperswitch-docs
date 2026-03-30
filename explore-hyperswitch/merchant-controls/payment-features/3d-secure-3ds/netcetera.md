@@ -39,7 +39,7 @@ configuration: Configuration(netceteraSDKApiKey: "<YOUR_NETCETERA_API_KEY>")
 In order to test external authentication on sandbox, a certificate needs to be added. Please follow the below steps.
 {% endhint %}
 
-Make the Hyperswitch [Payments - External 3DS Authentication](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication) request. Take the value of the field `acs_signed_content` , then decrypt it using [JWT.io](https://jwt.io/). Under the decrypted 'x5c' header you will get your root certificate.
+Make the Juspay Hyperswitch [Payments - External 3DS Authentication](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication) request. Take the value of the field `acs_signed_content` , then decrypt it using [JWT.io](https://jwt.io/). Under the decrypted 'x5c' header you will get your root certificate.
 
 {% hint style="info" %}
 This certificate is required is required to decrypt response from Netcetera's Prev (Sandbox) environment Demo ACS Server.

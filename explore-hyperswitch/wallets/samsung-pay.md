@@ -1,4 +1,5 @@
 ---
+description: Configure Samsung Pay for secure NFC and MST payments on supported Samsung devices with tokenization and biometric authentication
 icon: mobile-signal
 ---
 
@@ -33,15 +34,15 @@ To create a new service, follow the steps below:
 6. In the `SERVICE DOMAIN` field, enter your merchant\_domain and click the `ADD` button. If there are multiple merchant domains, add them one after the other.
 7. Verify the details you've entered, check the `LEGAL AGREEMENTS` box, and click `SAVE AND NEXT`.
 
-### **Configuring Samsung Pay on Hyperswitch**
+### **Configuring Samsung Pay on Juspay Hyperswitch**
 
-To configure Samsung Pay on Hyperswitch, follow the steps below -
+To configure Samsung Pay on Juspay Hyperswitch, follow the steps below -
 
 1. Log in to [Hyperswitch dashboard](https://app.hyperswitch.io/)
 2. In the Connectors tab, select your processor
 3. Under Payment Methods, click on Samsung Pay in the Wallet section.
 4. Login to your [Samsung Pay Developer account](https://pay.samsung.com/developer) go to My Projects > Service management, and click on the service you would like to configure.
-5. Copy the `SERVICE ID` and configure it as the `Samsung Pay Service Id` on Hyperswitch dashboard.
+5. Copy the `SERVICE ID` and configure it as the `Samsung Pay Service Id` on Juspay Hyperswitch dashboard.
 
 <figure><img src="https://github.com/juspay/hyperswitch-docs/raw/ab5d70faa1cd006a67bccc1512edd579b0ac586d/.gitbook/assets/samsung_pay_configuration.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -50,5 +51,5 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 8. Select the card brands you want to allow customer to use when making Samsung Pay payments.
 
 {% hint style="danger" %}
-Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process.
+Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Juspay Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process.
 {% endhint %}

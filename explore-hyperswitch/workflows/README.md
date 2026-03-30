@@ -1,8 +1,5 @@
 ---
-description: >-
-  Simplify implementation of orchestration and payment outcomes by taking
-  advantage of normalized request and response fields and values to avoid
-  changes by engineering teams
+description: Simplify payment orchestration workflows with normalized APIs for 3DS, fraud management, vaulting, retries, and intelligent routing without code changes
 icon: arrow-progress
 ---
 
@@ -12,7 +9,7 @@ Workflows allow merchants to control the flow of payments by invoking different 
 
 #### [**3DS workflows** ](3ds-decision-manager/)
 
-Allows the merchant to introduce authentication in the following forms - via PSP, external to Hyperswitch but the authentication parameters are passed in the /payments request, or add an independent 3DS solution (Juspay's or any other) and authenticate external via Hyperswitch.
+Allows the merchant to introduce authentication in the following forms - via PSP, external to Juspay Hyperswitch but the authentication parameters are passed in the /payments request, or add an independent 3DS solution (Juspay's or any other) and authenticate external via Juspay Hyperswitch.
 
 #### [**FRM workflows**](fraud-and-risk-management/)
 

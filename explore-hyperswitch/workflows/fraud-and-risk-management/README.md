@@ -1,11 +1,11 @@
 ---
-description: Effectively enhance fraud detection with your preferred FRM engine
+description: Enhance fraud protection with processor-agnostic FRM integration, pre and post-auth checks, and unified dashboard for transaction monitoring
 icon: shield-check
 ---
 
 # Fraud & Risk Management
 
-The Hyperswitch Fraud and Risk Management (FRM) workflow offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
+The Juspay Hyperswitch Fraud and Risk Management (FRM) workflow offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
 
 #### Key Benefits of FRM workflows
 

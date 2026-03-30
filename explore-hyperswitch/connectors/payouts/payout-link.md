@@ -17,11 +17,11 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 * Online gaming - Distribute prize money to players.
 * NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+## How to configure Payout links through Juspay Hyperswitch API?
 
 ### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
+* Create a Juspay Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
 * Add a payout processor to your account
 
 ### Using Payout links
@@ -245,6 +245,6 @@ The payout link is valid for 15 minutes by default. However you can increase the
 
 <summary>How can I send Payout links via Emails?</summary>
 
-Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
+Juspay Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
 
 </details>

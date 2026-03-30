@@ -1,7 +1,5 @@
 ---
-description: >-
-  A technical reference for the parameters and lifecycle flows supported across
-  card and wallet integrations.
+description: A technical reference for the parameters and lifecycle flows supported across card and wallet integrations.
 icon: money-bill-1-wave
 ---
 
@@ -9,11 +7,11 @@ icon: money-bill-1-wave
 
 ### Core Payment Flows
 
-Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
+Juspay Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
 
 Card Payment Flow Configurations
 
-Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
+Juspay Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt=""><figcaption></figcaption></figure>
 
@@ -42,7 +40,7 @@ The Payments API supports an extensive set of card parameters to ensure regional
 
 #### Digital Wallet Integration
 
-Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
+Juspay Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt=""><figcaption></figcaption></figure>
 
@@ -51,7 +49,7 @@ Hyperswitch provides comprehensive parameters that streamline transaction manage
 
 #### Post-Transaction: Refunds, Disputes, and Errors
 
-Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
+Juspay Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
 
 <figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
 

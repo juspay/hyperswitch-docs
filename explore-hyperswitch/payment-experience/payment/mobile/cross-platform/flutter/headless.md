@@ -1,8 +1,5 @@
 ---
-description: >-
-  Hyperswitch is designed to facilitate the integration and management of
-  payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your checkout UI.
+description: Juspay Hyperswitch is designed to facilitate the integration and management of payment-related functionalities in a decoupled or headless architecture with flexibility to customize your checkout UI.
 icon: table-cells-large
 ---
 
@@ -12,7 +9,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize  Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```dart
 // dependencies: flutter_hyperswitch: ^version_number
@@ -61,7 +58,7 @@ if (customer_last_used_saved_payment_method_data != null) {
 
 // use the confirmWithCustomerDefaultPaymentMethod function to confirm and handle the payment session response
 Future<void> _confirmPayment() async {
-  final confirmWithLastUsedPaymentMethodResponse = 
+  final confirmWithLastUsedPaymentMethodResponse =
     await _hyper.confirmWithLastUsedPaymentMethod(_savedSessionId!);
   if (confirmWithLastUsedPaymentMethodResponse != null) {
     final message = confirmWithLastUsedPaymentMethodResponse.message;
@@ -75,8 +72,6 @@ Future<void> _confirmPayment() async {
 ```
 
 
-
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+description: Network Tokenization in Juspay Hyperswitch: Increase Security and Authorization Rates with Minimal Changes
 icon: shield-check
 ---
 
@@ -26,7 +24,7 @@ A network token is scoped to a Merchant, Customer & Token Requestor ensuring a m
 5. **Simplified Compliance:** With tokenization, your business doesn’t need to store sensitive card data, reducing the scope and cost of compliance efforts.
 6. **Reduced Interchange costs:** Networks in certain geographies provide interchange cost savings to merchants up to 10bps in case of using network tokenization
 
-## **Supported Networks via Hyperswitch**
+## **Supported Networks via Juspay Hyperswitch**
 
 Currently supported: Visa, Mastercard, American Express
 
@@ -41,52 +39,52 @@ Juspay is certified as both a Token Requestor (TR) and Token Service Provider (T
 
 Juspay’s tokenization suite is capable of handling the complete token lifecycle management. We’ve issued more than 150 million network tokens globally.
 
-By leveraging Juspay’s infrastructure through Hyperswitch, you get seamless access to tokenization features without having to integrate with each network independently or worry about certifications.
+By leveraging Juspay’s infrastructure through Juspay Hyperswitch, you get seamless access to tokenization features without having to integrate with each network independently or worry about certifications.
 
 ### **Bring your own Token Requestor credentials**
 
 We also offer you the flexibility to bring your own Token Requestor credentials and configure them within our system so that all network tokenization requests are made using your own credentials. This could ensure better control, compliance alignment, and consistency across your systems.
 
-## Hyperswitch: Network Tokenization Support Modes
+## Juspay Hyperswitch: Network Tokenization Support Modes
 
-Hyperswitch supports three distinct Network Tokenization flows, depending on how you’re integrated:
+Juspay Hyperswitch supports three distinct Network Tokenization flows, depending on how you’re integrated:
 
-#### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+#### 1. Network Tokenization during Payments (via Juspay Hyperswitch Orchestration)
 
-When you process payments using Hyperswitch’s orchestration layer, you can perform tokenized payments directly - Hyperswitch handles provisioning and using the network token dynamically at payment time. We also take care of optimizing authorization rates and latency by switching between network tokens and clear PAN.
+When you process payments using Juspay Hyperswitch’s orchestration layer, you can perform tokenized payments directly - Juspay Hyperswitch handles provisioning and using the network token dynamically at payment time. We also take care of optimizing authorization rates and latency by switching between network tokens and clear PAN.
 
-#### 2. Network Tokenization during Vaulting (via Hyperswitch Vault service)
+#### 2. Network Tokenization during Vaulting (via Juspay Hyperswitch Vault service)
 
-You can network tokenize cards at the time of storage in Hyperswitch’s Vault service. These network tokens can later be used for recurring payments, subscriptions, or one-click checkouts in combination with NTID or cryptogram.
+You can network tokenize cards at the time of storage in Juspay Hyperswitch’s Vault service. These network tokens can later be used for recurring payments, subscriptions, or one-click checkouts in combination with NTID or cryptogram.
 
 #### 3. Standalone Network Tokenization API Service
 
-Use Juspay’s standalone Network Tokenization API service to provision, manage, or detokenize network tokens - without using Hyperswitch’s payment orchestration or vault services.
+Use Juspay’s standalone Network Tokenization API service to provision, manage, or detokenize network tokens - without using Juspay Hyperswitch’s payment orchestration or vault services.
 
 ***
 
-### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+### 1. Network Tokenization during Payments (via Juspay Hyperswitch Orchestration)
 
-_No changes required to your PSP integrations — Hyperswitch handles the token lifecycle, retries, and PAN fallback automatically._
+_No changes required to your PSP integrations — Juspay Hyperswitch handles the token lifecycle, retries, and PAN fallback automatically._
 
 In this flow:
 
-* Hyperswitch dynamically provisions a network token at the time of payment.
+* Juspay Hyperswitch dynamically provisions a network token at the time of payment.
 * The network token is used in real-time to complete the transaction.
-* If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
-* Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
+* If a payment fails when using Network token due to Network token specific errors, Juspay Hyperswitch silently retries the payment using Clear PAN + CVV/NTI to optimize for higher authorization rates
+* Juspay Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
 
 #### Flow Summary:
 
 <div data-full-width="false"><figure><img src="../../../../.gitbook/assets/image (163) (1).png" alt=""><figcaption></figcaption></figure></div>
 
-1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
+1. You enable Network tokenization on your Juspay Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay’s TRID to request network tokens
 2. The end user enters their card details on your checkout
-3. Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
-4. If tokenization succeeds, Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
-5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
-6. If the end user had agreed to store the card, the Network token is stored in Hyperswitch vault and optionally, the token can be returned to the merchant for future use
+3. Juspay Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
+4. If tokenization succeeds, Juspay Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
+5. If tokenization fails, Juspay Hyperswitch uses clear PAN + CVV to process payments through the PSPs
+6. If the end user had agreed to store the card, the Network token is stored in Juspay Hyperswitch vault and optionally, the token can be returned to the merchant for future use
 
 #### **How to Try:**
 
@@ -94,21 +92,21 @@ Contact our support team to enable Network Tokenization on your merchant account
 
 ***
 
-### 2. Network Tokenization during Vaulting (via Hyperswitch Vault)
+### 2. Network Tokenization during Vaulting (via Juspay Hyperswitch Vault)
 
 In this flow:
 
 * You integrate with [Hyperswitch’s standalone Vault service](../../../workflows/vault/).
 * Card details are securely captured and stored alongside PSP tokens and network tokens
-* These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
+* These tokens can be used across multiple gateways via your own payments setup or Juspay Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
 
 #### Flow Summary:
 
 <div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
 
 1. Merchant signs up for [Hyperswitch’s standalone vault service ](../../../workflows/vault/)and requests network tokenization in every payment method session create request
-2. Card details are captured from the end users via Hyperswitch’s PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
-3. Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
+2. Card details are captured from the end users via Juspay Hyperswitch’s PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
+3. Juspay Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Juspay Hyperswitch vault
 4. The network token along with PSP tokens and NTI (if returned by the PSP) is passed back to the merchant
 5. Token can be retrieved later by the merchant along with cryptogram using the Retrieve payment method endpoint
 6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system

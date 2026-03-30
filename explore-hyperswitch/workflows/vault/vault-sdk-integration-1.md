@@ -1,20 +1,18 @@
 ---
-description: >-
-  Learn how to tokenize cards at Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+description: Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment Methods Management SDK
 hidden: true
 icon: desktop
 ---
 
 # Vault SDK - JS with REST API Integration
 
-## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
+## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Payment Methods Management SDK
 
-The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Juspay Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 
-* **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
+* **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Juspay Hyperswitch's secure vault
 * **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
 * **Reduced Cart Abandonment**: Enable one-click payments for returning customers
 * **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
@@ -37,7 +35,7 @@ All Vault API (V2) requests require authentication using specific API keys gener
 
 To generate your Vault API keys, follow these steps:
 
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+1. **Access Dashboard:** Log into the Juspay Hyperswitch Dashboard.
 2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
 3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
@@ -58,7 +56,7 @@ const app = express()
 
 app.post("/create-payment-method-session", async (req, res) => {
   try {
-    // Create payment method session on Hyperswitch
+    // Create payment method session on Juspay Hyperswitch
     const response = await fetch(
       `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
       {
@@ -94,7 +92,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
+> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Juspay Hyperswitch dashboard.
 
 ### 2. Client-Side Integration
 
@@ -231,4 +229,4 @@ async function handleSubmit(e) {
 
 ```
 
-Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.
+Congratulations! Now that you have integrated the Juspay Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.

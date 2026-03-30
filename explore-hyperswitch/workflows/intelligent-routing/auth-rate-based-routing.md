@@ -28,7 +28,7 @@ Key Configurations
   * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
   * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
-### How to setup Auth Rate Based Routing for your Hyperswitch Merchant?
+### How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
 
 1. Enabling your profile with Auth Rate based routing
 
@@ -47,18 +47,18 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant
 3. To update the setting of the routing model use the below API:
 
 ```
-curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \  
---header 'Content-Type: application/json' \  
---header 'api-key: <api-key>' \  
---data '{  
-        "config": {  
-            "min_aggregates_size": 5,  
-            "max_aggregates_size": 8,  
-            "current_block_threshold": {  
-                "max_total_count": 5  
-            },  
-            "exploration_percent": 20.0  
-        }  
+curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>' \
+--data '{
+        "config": {
+            "min_aggregates_size": 5,
+            "max_aggregates_size": 8,
+            "current_block_threshold": {
+                "max_total_count": 5
+            },
+            "exploration_percent": 20.0
+        }
 }'
 ```
 

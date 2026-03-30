@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
-  control over your payment flow.
+description: Integrate Hyperswitch SDK using individual payment widgets for granular control over your payment flow.
 icon: cubes
 ---
 
@@ -46,7 +44,7 @@ Add the following plugin to the `plugins` block of your app-level `build.gradle`
 
 ```gradle
 plugins {
-    // Apply Hyperswitch Plugin
+    // Apply Juspay Hyperswitch Plugin
     id 'io.hyperswitch.plugin'
 }
 ```
@@ -83,7 +81,7 @@ Choose from list of available widgets to integrate:
 
 ### Final Step
 
-Congratulations! You have successfully integrated Hyperswitch widgets into your app. This approach gives you granular control over each payment method and allows for custom UI/UX design while leveraging Hyperswitch's payment processing capabilities.
+Congratulations! You have successfully integrated Juspay Hyperswitch widgets into your app. This approach gives you granular control over each payment method and allows for custom UI/UX design while leveraging Juspay Hyperswitch's payment processing capabilities.
 
 ## Next step:
 

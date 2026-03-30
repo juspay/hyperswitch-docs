@@ -1,14 +1,15 @@
 ---
+description: Optimize payment routing dynamically using auth rates, least cost, elimination, and contract-based strategies with ML-driven decisions
 icon: flux-capacitor
 ---
 
 # Intelligent Routing
 
-The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
+The Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
 
 ### Types of Intelligent Routing
 
-Hyperswitch supports four intelligent routing strategies:
+Juspay Hyperswitch supports four intelligent routing strategies:
 
 * **Auth Rate Based Routing:** Uses real-time success rates and ML-driven optimisation to route transactions to the best-performing gateway.&#x20;
   * The Auth Rates for the payments are tracked at a granular level of payment parameters like payment method, payment method type, amount, currency, authentication type, card network etc.&#x20;
@@ -25,4 +26,4 @@ Hyperswitch supports four intelligent routing strategies:
 
 <figure><img src="../../../.gitbook/assets/image (157) (1).png" alt=""><figcaption></figcaption></figure>
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Self Deploy the Routing Engine</td><td><a href="../../../.gitbook/assets/image (157).png">image (157).png</a></td><td><a href="self-deployment-guide.md">self-deployment-guide.md</a></td></tr><tr><td>Using Auth Rate based Routing for Hyperswitch</td><td><a href="../../../.gitbook/assets/tryHyperswitch.jpg">tryHyperswitch.jpg</a></td><td><a href="auth-rate-based-routing.md">auth-rate-based-routing.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Self Deploy the Routing Engine</td><td><a href="../../../.gitbook/assets/image (157).png">image (157).png</a></td><td><a href="self-deployment-guide.md">self-deployment-guide.md</a></td></tr><tr><td>Using Auth Rate based Routing for Juspay Hyperswitch</td><td><a href="../../../.gitbook/assets/tryHyperswitch.jpg">tryJuspay Hyperswitch.jpg</a></td><td><a href="auth-rate-based-routing.md">auth-rate-based-routing.md</a></td></tr></tbody></table>

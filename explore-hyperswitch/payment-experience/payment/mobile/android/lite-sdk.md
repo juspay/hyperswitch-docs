@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Integrate Juspay Hyperswitch Lite SDK to your Kotlin App
 icon: mobile-screen
 ---
 
@@ -35,7 +35,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ### 2.1 Add the Dependency
 
-Add the Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
+Add the Juspay Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
 
 ```gradle
 dependencies {
@@ -104,7 +104,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 ```
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
 **Present the Payment Page**
@@ -120,7 +120,7 @@ paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 
 #### Final Step
 
-Congratulations! You have successfully integrated the Hyperswitch Lite SDK into your app. The Lite SDK provides the same powerful payment processing capabilities with a smaller footprint, making it ideal for apps where bundle size is a concern.
+Congratulations! You have successfully integrated the Juspay Hyperswitch Lite SDK into your app. The Lite SDK provides the same powerful payment processing capabilities with a smaller footprint, making it ideal for apps where bundle size is a concern.
 
 ## Next step:
 

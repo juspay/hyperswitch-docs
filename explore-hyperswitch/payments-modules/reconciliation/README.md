@@ -1,8 +1,8 @@
 ---
+description: Automate financial reconciliation with 99% accuracy across PSPs and banks, reducing manual effort and ensuring transaction integrity
 hidden: true
 noIndex: true
 icon: handshake-simple
-description: Explore Juspay Hyperswitch Reconciliation V1 module to automate transaction matching across PSPs and banks with 99 percent accuracy and minimize manual effort
 ---
 
 # Juspay Hyperswitch Reconciliation V1

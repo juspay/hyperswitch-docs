@@ -4,7 +4,7 @@ description: Setup custom domains
 
 # Setup Custom Domain
 
-A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
+A custom domain name can be used for payment links. This is your own domain name which is configured at Juspay Hyperswitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
 ## How to setup custom domain within your cloud
 
@@ -40,7 +40,7 @@ Step 3: Create CNAME record
 
 Enter the following values and save the new DNS record.
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Juspay Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
 
 Step 4: Create your TXT record
 
@@ -90,7 +90,7 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 > Upon completing this step, your DNS records will be configured.
 
-* Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
+* Now that you've established and verified your DNS records, Juspay Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
 
 ## How to use Wallets like Apple Pay & Google Pay in Payment Links?
 

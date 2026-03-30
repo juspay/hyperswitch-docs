@@ -1,6 +1,6 @@
 ---
+description: Eliminate revenue leakage through automated three-way reconciliation across order management, PSP, and bank settlement systems
 icon: database
-description: Explore Juspay Hyperswitch Reconciliation module to eliminate revenue leakage through automated matching across order management, PSP, and bank systems
 ---
 
 # Juspay Hyperswitch Reconciliation

@@ -18,7 +18,6 @@ Upon receiving an error, the system classifies the transaction as either Non-Ret
 To illustrate the classification process, the following tables lists few sample Stripe error codes and how our AI model categorizes them into Retryable versus Non-Retryable workflows.
 
 
-
 #### **Error codes categorize as Retryable :** &#x20;
 
 | code                                          | message                                                                                                                                                                                                                                                                                                                                                                   |
@@ -43,7 +42,6 @@ To illustrate the classification process, the following tables lists few sample 
 | fraudulent                                    | The payment was declined because Stripe suspects that it's fraudulent.                                                                                                                                                                                                                                                                                                    |
 
 
-
 #### **Error codes categorize as Non-Retryable :**
 
 | **Error Code**                       | **Description / Message**                                                                                                                                                                                                                                |
@@ -60,4 +58,3 @@ To illustrate the classification process, the following tables lists few sample 
 | card\_not\_supported                 | The card doesn’t support this type of purchase.                                                                                                                                                                                                          |
 | pin\_try\_exceeded                   | The allowable number of PIN tries was exceeded.                                                                                                                                                                                                          |
 | pickup\_card                         | The customer can’t use this card to make this payment (it’s possible it was reported lost or stolen).                                                                                                                                                    |
-

@@ -1,15 +1,12 @@
 ---
-description: >-
-  Hyperswitch App Clip is a lightweight version of your iOS app that launches
-  instantly (via QR code, NFC, or link) to let users complete payments quickly
-  without installing the full app.
+description: Juspay Hyperswitch App Clip is a lightweight version of your iOS app that launches instantly (via QR code, NFC, or link) to let users complete payments quickly without installing the full app.
 icon: app-store
 ---
 
 # App Clips
 
 * A **lightweight, instant-launch** version of your iOS app.
-* Lets users complete **fast Hyperswitch payments** without installing the full app.
+* Lets users complete **fast Juspay Hyperswitch payments** without installing the full app.
 * Can be triggered via **QR code, NFC tag, Safari link, or Maps**.
 * Ideal for quick checkout use cases (parking, food ordering, event tickets, etc.)
 
@@ -63,9 +60,9 @@ icon: app-store
 
 1. **User triggers App Clip** (QR/NFC/web link).
 2. **App Clip requests payment intent** from your backend.
-3. **Backend creates payment session** with Hyperswitch.
+3. **Backend creates payment session** with Juspay Hyperswitch.
 4. **SDK presents PaymentSheetLite** for checkout.
-5. **User pays → Hyperswitch processes**.
+5. **User pays → Juspay Hyperswitch processes**.
 6. **Result shown instantly** (success/fail).
 
 ## Related Pages

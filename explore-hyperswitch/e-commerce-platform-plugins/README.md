@@ -1,15 +1,15 @@
 ---
-description: Hyperswitch plugins for the e-commerce platform you use
+description: Extend e-commerce platforms with Juspay Hyperswitch plugins for WooCommerce and Saleor with advanced payment features and checkout optimization
 hidden: true
 noIndex: true
 icon: plug-circle-bolt
 ---
 
-# E-commerce Platform Plugins by Hyperswitch
+# E-commerce Platform Plugins by Juspay Hyperswitch
 
-Hyperswitch plugins enable businesses to extend and enhance the functionality of leading E-commerce platforms, offering seamless integration and advanced capabilities for payment optimization, user experience, and analytics.
+Juspay Hyperswitch plugins enable businesses to extend and enhance the functionality of leading E-commerce platforms, offering seamless integration and advanced capabilities for payment optimization, user experience, and analytics.
 
-From enabling express checkout and multi-currency payments to ensuring compliance with tax regulations, Hyperswitch plugins are designed to scale with your business, delivering unmatched flexibility and control.
+From enabling express checkout and multi-currency payments to ensuring compliance with tax regulations, Juspay Hyperswitch plugins are designed to scale with your business, delivering unmatched flexibility and control.
 
 #### Explore Our Plugins
 

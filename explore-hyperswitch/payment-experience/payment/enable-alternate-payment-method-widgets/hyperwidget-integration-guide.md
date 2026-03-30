@@ -1,4 +1,5 @@
 ---
+description: Integrate Hyperwidget for low-code APM enablement with unified dashboard management and analytics capabilities
 icon: plug-circle-bolt
 ---
 
@@ -6,7 +7,7 @@ icon: plug-circle-bolt
 
 Once the merchant signs up onto the unified dashboard, they’ll get their API keys and can enable the APMs <> PSP combinations that they would like to provide on their checkout.
 
-Hyperswitch provides a code transformer that allows the merchant to leverage their existing integration (with PSP or middle layer) and make a call to Hyperswitch server with minimal changes. Hyperwidget acts as a Unified wrapper on top of all major APMs and simplifies up-scaling or down-scaling of these APMs across one or multiple PSPs.
+Juspay Hyperswitch provides a code transformer that allows the merchant to leverage their existing integration (with PSP or middle layer) and make a call to Hyperswitch server with minimal changes. Hyperwidget acts as a Unified wrapper on top of all major APMs and simplifies up-scaling or down-scaling of these APMs across one or multiple PSPs.
 
 The unified dashboard offers the merchants ability to enable or disable APMs via any PSP. The dashboard also offers capabilities like - Analytics, Operations, Refunds, Chargebacks, and Reconciliation.
 

@@ -1,16 +1,20 @@
-# Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)
+---
+description: Configure Apple Pay for in-app and web transactions with secure payment processing capabilities
+---
 
-In this flow Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
+# Web Transactions Processed Using Juspay Hyperswitch Decryption (Without Apple Merchant ID)
+
+In this flow Juspay Hyperswitch decrypts the token internally using own certificates and then transforms the raw data for any downstream connector.
 
 **Mechanism:**
 
-1. Frontend sends apple pay payment token to Hyperswitch.
-2. Hyperswitch unwraps the token using your private key stored in its secure vault.
-3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
+1. Frontend sends apple pay payment token to Juspay Hyperswitch.
+2. Juspay Hyperswitch unwraps the token using your private key stored in its secure vault.
+3. Juspay Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
 
 ### **Configuration :**&#x20;
 
-#### **Steps to configure Apple Pay on Hyperswitch**
+#### **Steps to configure Apple Pay on Juspay Hyperswitch**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
@@ -25,7 +29,7 @@ In this flow Hyperswitch decrypts the token internally using own certificates an
 * Click on verify and enable to complete your setup
 
 {% hint style="warning" %}
-Please note since the Apple Pay Web Domain flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since the Apple Pay Web Domain flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
@@ -35,6 +39,6 @@ Please note since the Apple Pay Web Domain flow involves decryption at Hyperswit
 * Attach our PCI DSS AoC certificate and copy our Support team (hyperswitch@juspay.in).
 * Stripe Account id: <`Enter your account id:` you can find it [here](https://dashboard.stripe.com/settings/user)>
 * A detailed business description: <`One sentence about your business`>. The business operates across `xx` countries and has customers across the world.
-* Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
+* Feature Request: We are using Juspay Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Juspay Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Juspay Hyperswitch’s PCI DSS AoC for reference.
 
 </details>

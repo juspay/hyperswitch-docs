@@ -1,11 +1,12 @@
 ---
+description: Integrate Juspay Hyperswitch with Saleor ecommerce platform for global payment acceptance and seamless checkout experiences
 hidden: true
 icon: plug-circle-bolt
 ---
 
 # Saleor App
 
-This app provides a seamless integration between Saleor (an open source ecommerce platform) and Juspay’s payment orchestration products: Hyperswitch (for global payment acceptance) and Hypercheckout (for payment acceptance in India, complying with Financial data residency requirements).
+This app provides a seamless integration between Saleor (an open source ecommerce platform) and Juspay’s payment orchestration products: Juspay Hyperswitch (for global payment acceptance) and Hypercheckout (for payment acceptance in India, complying with Financial data residency requirements).
 
 It enables merchants to utilize Juspay’s secure and efficient payment processing directly within their Saleor storefront, delivering a smooth and dependable checkout experience for customers both within India and globally.
 
@@ -15,7 +16,7 @@ HyperCheckout combines the power of native checkout experiences, robust payment 
 
 ### [Juspay's Hyperswitch](https://hyperswitch.io/) - for Global payment acceptance
 
-Access the entire payment ecosystem with a Single API. Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts.
+Access the entire payment ecosystem with a Single API. Juspay Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts.
 
 {% content-ref url="setup.md" %}
 [setup.md](setup.md)

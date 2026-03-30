@@ -62,7 +62,7 @@ To enable the grid arrangement in tabs layout, configure the layout object as sh
 var paymentElementOptions = {
   layout: {
     type: 'tabs',
-    paymentMethodsArrangementForTabs: 'grid' 
+    paymentMethodsArrangementForTabs: 'grid'
   }
 }
 
@@ -139,7 +139,7 @@ The wallet customization feature lets users configure payment options like Apple
       },
     },
   }
-  
+
 <strong>&#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </strong></code></pre>
 
@@ -329,7 +329,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ## 5. Languages
 
-Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
+Juspay Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
 
 We support the following locales -
 
@@ -351,7 +351,7 @@ We support the following locales -
 * Spanish (es)
 * Swedish (sv)
 
-If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
+If you need support for locales other than the ones mentioned above, please contact the Juspay Hyperswitch team. Now you can test the payments on your app and go-live!
 
 ## 6. Confirm Button
 
@@ -373,7 +373,7 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 
 ### Branding
 
-You can decide whether to display the Hyperswitch branding using the `branding` prop
+You can decide whether to display the Juspay Hyperswitch branding using the `branding` prop
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
 </strong> ...,
@@ -492,7 +492,7 @@ The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save p
 ```javascript
 var paymentElementOptions = {
   ...,
-  displaySavedPaymentMethodsCheckbox: false, 
+  displaySavedPaymentMethodsCheckbox: false,
 };
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;

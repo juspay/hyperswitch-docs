@@ -1,4 +1,5 @@
 ---
+description: Set up Google Pay wallet integration for web and Android apps across 70 countries with secure card tokenization
 description: Set up Google pay on your application
 icon: google
 ---
