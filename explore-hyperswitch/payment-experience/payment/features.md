@@ -1,4 +1,5 @@
 ---
+description: Implement card scanning with OCR technology for accurate real-time card data extraction and faster checkout
 icon: barcode-read
 ---
 
@@ -6,12 +7,12 @@ icon: barcode-read
 
 <figure><img src="../../../.gitbook/assets/Frame 48095844.png" alt=""><figcaption></figcaption></figure>
 
-#### Key Features of Hyperswitch's Card Scanning Technology
+#### Key Features of Juspay Hyperswitch's Card Scanning Technology
 
-1. **Accuracy**: Leveraging optical character recognition (OCR) technology, Hyperswitch's card scanning feature accurately extracts credit card details in real-time. This significantly reduces the likelihood of manual entry errors and speeds up the checkout process.
-2. **Seamless Integration**: Hyperswitch offers a developer-friendly SDK that makes it easy to integrate the card scanning feature into various platforms, including native mobile apps ([iOS](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/ios/features) and [Android](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/android/features)), cross-platform frameworks, and even in-browser applications.
+1. **Accuracy**: Leveraging optical character recognition (OCR) technology, Juspay Hyperswitch's card scanning feature accurately extracts credit card details in real-time. This significantly reduces the likelihood of manual entry errors and speeds up the checkout process.
+2. **Seamless Integration**: Juspay Hyperswitch offers a developer-friendly SDK that makes it easy to integrate the card scanning feature into various platforms, including native mobile apps ([iOS](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/ios/features) and [Android](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/android/features)), cross-platform frameworks, and even in-browser applications.
 
-#### Benefits of Hyperswitch's Card Scanning Feature
+#### Benefits of Juspay Hyperswitch's Card Scanning Feature
 
 1. **Improved User Experience**: By eliminating the need for manual card data entry, the card scanning feature significantly enhances the user experience, potentially leading to higher conversion rates for businesses.
 2. **Reduced Error Rates**: The scanning technology minimizes the risk of mistyped card information, reducing transaction errors and potential disputes.
@@ -27,7 +28,7 @@ Add this scan card dependency to your build.gradle file
 hyperswitch {
     // Enable scan card feature
     enableScanCard = true
-    
+
     // Optional: Specify custom version (uses recommended version if not specified)
     scanCardVersion = "0.0.6"
 }

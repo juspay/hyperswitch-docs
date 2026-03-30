@@ -6,7 +6,7 @@ icon: swift
 # Swift with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Juspay Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
 ## Requirements
@@ -21,7 +21,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
-### 2.1 Configure your repository with Hyperswitch dependency
+### 2.1 Configure your repository with Juspay Hyperswitch dependency
 
 CocoaPods Setup (only required if not already done)
 
@@ -62,7 +62,7 @@ pod install --repo-update
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
-<pre class="language-swift"><code class="lang-swift"><strong>import Hyperswitch
+<pre class="language-swift"><code class="lang-swift"><strong>import Juspay Hyperswitch
 </strong><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
 </strong></code></pre>
 
@@ -70,7 +70,7 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 Note: For Open Source Setup, initialise your custom Backend app & log URL as:
 
 ```swift
-paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
+paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
                                 customBackendUrl: <YOUR_SERVER_URL>,
                                 customLogUrl: <YOUR_LOG_URL>)
 ```
@@ -121,8 +121,8 @@ func openPaymentSheet(_ sender: Any) { //present payment sheet
 var configuration = PaymentSheet.Configuration()
 configuration.merchantDisplayName = "Example, Inc."
 
-    paymentSession?.presentPaymentSheet(viewController: self, 
-                                        configuration: configuration, 
+    paymentSession?.presentPaymentSheet(viewController: self,
+                                        configuration: configuration,
                                         completion: { result in
         switch result {
         case .completed:
@@ -137,7 +137,7 @@ configuration.merchantDisplayName = "Example, Inc."
 ```
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 {% endtab %}
 
@@ -145,7 +145,7 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 ```swift
 VStack {
   if let paymentSession = model.paymentSession {
-    PaymentSheet.PaymentButton(paymentSession: paymentSession, 
+    PaymentSheet.PaymentButton(paymentSession: paymentSession,
                                                configuration: configuration(),
                                                onCompletion: model.onPaymentCompletion)
     {
@@ -209,7 +209,7 @@ func pay() {
     let paymentIntentParams = PaymentIntentParams(clientSecret: paymentIntentClientSecret)
 let paymentHandler = PaymentHandler.shared()
 
-    paymentHandler.confirmPayment(paymentIntentParams, with: self) { 
+    paymentHandler.confirmPayment(paymentIntentParams, with: self) {
         (status, paymentIntent, error) in
             switch (status) {
                 case .failed:

@@ -16,7 +16,7 @@ Style IDs are design templates for your payment links, allowing you to create di
 * Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
 
 {% hint style="info" %}
-**Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
+**Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Juspay Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
 {% endhint %}
 
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.
@@ -99,7 +99,7 @@ Write in a way that works for any scenario your customers might encounter:
 **Universal example that works everywhere:**
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 
@@ -155,7 +155,7 @@ Payment links support three main transaction types. Here's the recommended messa
 Universal messaging that works for this flow:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 
@@ -164,7 +164,7 @@ charge your payment method or store your payment details as applicable."
 Authorization happens first, capture occurs later. Use messaging that acknowledges this two-step process:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 reserve and later capture payment from your payment method."
 ```
 
@@ -173,7 +173,7 @@ reserve and later capture payment from your payment method."
 Authorization and capture happen together. Use straightforward messaging about the immediate charge:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method."
 ```
 
@@ -182,7 +182,7 @@ charge your payment method."
 Cover both storing credentials and future charges with universal language:
 
 ```
-"By submitting your payment information, you authorize [Your Business Name] to 
+"By submitting your payment information, you authorize [Your Business Name] to
 charge your payment method or store your payment details as applicable."
 ```
 

@@ -8,7 +8,7 @@ icon: apple
 
 ## **Prerequisites**
 
-Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
+Before beginning to integrate Apple Pay with Juspay Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Juspay Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
 1. Apple Pay requires an Apple Developer Account. You can [Sign Up](https://developer.apple.com/programs/enroll/) for one here.
 2. You must have a valid SSL certificate on your domain _(meaning it begins with **https**)_
@@ -62,9 +62,9 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-## **Configuring Apple Pay on Hyperswitch**
+## **Configuring Apple Pay on Juspay Hyperswitch**
 
-You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
+You can configure Apple Pay on Juspay Hyperswitch by following the steps mentioned below -
 
 * Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)
 * In the Connectors tab, select your processor
@@ -112,7 +112,7 @@ This final step is specific to the processor being used and is not necessary in 
 {% endhint %}
 {% endtab %}
 
-{% tab title="Payment Processing Details At Hyperswitch" %}
+{% tab title="Payment Processing Details At Juspay Hyperswitch" %}
 \\
 
 <figure><img src="../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
@@ -147,7 +147,7 @@ base64 -i apple_pay.cer
 <figure><img src="../../../Users/shankar.singh/Documents/hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-Please note since this flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since this flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
@@ -157,7 +157,7 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 * Attach our PCI DSS AoC certificate and copy our Support team (hyperswitch@juspay.in).
 * Stripe Account id: <`Enter your account id:` you can find it [here](https://dashboard.stripe.com/settings/user)>
 * A detailed business description: <`One sentence about your business`>. The business operates across `xx` countries and has customers across the world.
-* Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
+* Feature Request: We are using Juspay Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Juspay Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Juspay Hyperswitch’s PCI DSS AoC for reference.
 
 </details>
 {% endtab %}
@@ -168,4 +168,3 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 
 <figure><img src="../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
-

@@ -1,8 +1,5 @@
 ---
-description: >-
-  Master the five-step reconciliation workflow on Juspay Hyperswitch to
-  efficiently process reports and resolve financial discrepancies through
-  automated matching
+description: Master the five-step reconciliation workflow on Juspay Hyperswitch to efficiently process reports and resolve financial discrepancies through automated matching
 ---
 
 # Getting Started with Recon

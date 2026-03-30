@@ -1,4 +1,5 @@
 ---
+description: Embed modular Hyperwidgets to augment existing checkout with alternate payment methods in a low-code manner
 icon: bolt-lightning
 ---
 

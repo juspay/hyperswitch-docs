@@ -1,8 +1,12 @@
+---
+description: Optimize interchange costs by including Level 2 and Level 3 enhanced data in commercial card payment requests
+---
+
 # Level 2 and Level 3 data
 
 ### Overview
 
-Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
+Juspay Hyperswitch allows merchants to include **Level 2 and Level 3** enhanced data in payment requests to optimize interchange costs on eligible commercial card transactions. This is done using a set of unified fields in the payment\_create API, which are internally routed and transformed per connector.
 
 * Level 2: Adds tax, invoice, and reference-level data
 * Level 3: Adds full line-item details (e.g., item quantity, commodity code, shipping, duty)
@@ -16,7 +20,7 @@ Visa and Mastercard support Level 2 and 3 processing. American Express supports 
 
 ### Unified L2/L3 Fields
 
-Hyperswitch exposes a set of generic fields in the payment\_create API that can be directly used to pass Level 2 and Level 3 data. These fields cover the most common requirements across card networks and connectors, so merchants can send enhanced transaction data without worrying about connector-specific differences.
+Juspay Hyperswitch exposes a set of generic fields in the payment\_create API that can be directly used to pass Level 2 and Level 3 data. These fields cover the most common requirements across card networks and connectors, so merchants can send enhanced transaction data without worrying about connector-specific differences.
 
 The fields are organized into two groups:
 

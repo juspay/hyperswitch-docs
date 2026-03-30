@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Integrate subscription billing providers with Juspay Hyperswitch to orchestrate payments and own your card vaulting, retry logic, and multi-processor routing
 hidden: true
 icon: arrows-rotate-reverse
 ---

@@ -1,8 +1,5 @@
 ---
-description: >-
-  Hyperswitch is designed to facilitate the integration and management of
-  payment-related functionalities in a decoupled or headless architecture with
-  flexibility to customize your checkout UI.
+description: Juspay Hyperswitch is designed to facilitate the integration and management of payment-related functionalities in a decoupled or headless architecture with flexibility to customize your checkout UI.
 icon: table-cells-large
 ---
 
@@ -12,7 +9,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
 </strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{
@@ -60,8 +57,8 @@ if (paymentMethodSession.error) {
         paymentMethodSession.getCustomerDefaultSavedPaymentMethodData();
 }
 
-// handle submit for pay button 
-function handleSubmit() { 
+// handle submit for pay button
+function handleSubmit() {
     if (paymentMethodSession.error) {
         // handle the case where no default customer payment method is not present
     } else {
@@ -115,8 +112,8 @@ if (paymentMethodSession.error) {
         paymentMethodSession.getCustomerLastUsedPaymentMethodData();
 }
 
-// handle submit for pay button 
-function handleSubmit() { 
+// handle submit for pay button
+function handleSubmit() {
     if (paymentMethodSession.error) {
         // handle the case where no default customer payment method is not present
     } else {
@@ -171,10 +168,10 @@ import {
 export default function Checkout() {
   const hyper = useHyper();
 
- // handle submit for pay button 
+ // handle submit for pay button
  function handleSubmit() {
    // You can follow the same as mentioned in 4. Craft a customized payments experience
- } 
+ }
 
   return (
     <div>

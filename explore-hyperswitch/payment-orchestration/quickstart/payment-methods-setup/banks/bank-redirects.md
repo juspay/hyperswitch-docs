@@ -14,9 +14,9 @@ Bank Redirects are one of the most preferred options for paying online across th
 
 When customers select one of the Bank Redirects method on the checkout page, they are redirected to their online banking portal where they login and approve the transaction for which money is debited from their bank account. Post approval, they are redirected back to the shopping page. The transaction approval step might include two factor authentication in some bank redirects.
 
-## **Integrating Bank Redirects on Hyperswitch**
+## **Integrating Bank Redirects on Juspay Hyperswitch**
 
-To enable Bank redirect on Unified Checkout, you need to enable the payment methods on the Hyperswitch Dashboard. Hyperswitch SDKs intelligently display the supported Bank redirect option(s) based on the currency and the country of the customer.
+To enable Bank redirect on Unified Checkout, you need to enable the payment methods on the Juspay Hyperswitch Dashboard. Hyperswitch SDKs intelligently display the supported Bank redirect option(s) based on the currency and the country of the customer.
 
 For Bank Redirects, it is **mandatory** for the merchants to send the Currency and Country parameters in the CreatePaymentsIntent call.
 
@@ -47,7 +47,7 @@ app.post("/create-payment", async (req, res) => {
 });
 ```
 
-Hyperswitch currently supports the following Bank Redirects:
+Juspay Hyperswitch currently supports the following Bank Redirects:
 
 | **Bank** **Redirects**               | **Supported Customer Countries**                                                                                                     | **Supported Currencies** |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |

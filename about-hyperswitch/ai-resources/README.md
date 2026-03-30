@@ -2,11 +2,12 @@
 hidden: true
 noIndex: true
 icon: brain-circuit
+description: Explore AI-powered tools to interact with Juspay Hyperswitch through conversational interfaces and execute API operations
 ---
 
 # AI Resources
 
-AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
+AI resources enable you to intelligently interact with the entire Juspay Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
 
 ## 1. DeepWikis - AI-Powered Documentation
 
@@ -67,5 +68,5 @@ Execute real [Hyperswitch API](https://api-reference.hyperswitch.io/introduction
 
 {% hint style="warning" %}
 Responses from AI tools can be incorrect, use with caution.\
-and reach out to us on [slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
+Reach out to us on [Slack](https://inviter.co/hyperswitch-slack) for any questions or further support.
 {% endhint %}

@@ -1,8 +1,5 @@
 ---
-description: >-
-  Airborne is an open-source project by Juspay designed to help developers
-  integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
-  Native applications effortlessly.
+description: Airborne is an open-source project by Juspay designed to help developers integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React Native applications effortlessly.
 icon: arrows-rotate-reverse
 ---
 
@@ -18,7 +15,7 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 * Roll out features gradually.
 * Control app behavior remotely via feature toggles.
 
-**Real-World Hyperswitch Scenarios**
+**Real-World Juspay Hyperswitch Scenarios**
 
 * **Critical Checkout Fix** – Push a new JS bundle to resolve a bug affecting payments.
 * **Feature Rollout** – Show “One-Click Pay” to 5% of users, expand once results are good.

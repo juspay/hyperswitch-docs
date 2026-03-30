@@ -1,7 +1,5 @@
 ---
-description: >-
-  Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+description: Route transaction through processors with advanced rules on the basis of various payment parameters
 icon: ruler
 ---
 
@@ -22,7 +20,6 @@ A rule-based routing configuration comprises of one or more rules with each rule
 3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, Paypal)
 
 ## Steps to configure Rule Based Configuration in Smart Router:
-
 
 
 _**Step 1:**_ Click on `Setup` for **Rule Based Configuration:**

@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'24)
+description: Review Juspay Hyperswitch Q2 2024 roadmap covering SDK releases, 3DS authentication, and connector integrations
 icon: road
 ---
 

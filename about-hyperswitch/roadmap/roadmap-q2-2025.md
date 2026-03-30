@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'25)
+description: Review Juspay Hyperswitch Q2 2025 roadmap for modular services including vault, routing, and cost observability
 icon: road
 ---
 
@@ -21,7 +21,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
+Earlier this year, Juspay Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
 
 1. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
 2. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
@@ -56,7 +56,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 #### Cost Observability <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 
-* Solve the data challenges across PSPs fee report formats. For example, achieve standardisation across PSP fee names and field names by building standard mapper that can scale for multiple PSPs
+* Solve the data challenges across PSPs fee report formats. For example, achieve standardization across PSP fee names and field names by building standard mapper that can scale for multiple PSPs
 * Capability to display aggregated fee data in reports, including chargebacks, refunds, and backdated adjustments.
 
 #### Core Orchestration <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>

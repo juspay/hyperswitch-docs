@@ -60,7 +60,7 @@ Initialise `Hyper` onto your app with your publishable key with the `Hyper` cons
 
 ```dart
 import 'package:flutter_hyperswitch/flutter_hyperswitch.dart';
-final _hyper = FlutterHyperswitch();
+final _hyper = FlutterJuspay Hyperswitch();
 _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY', customBackendUrl: 'YOUR_CUSTOM_BACKEND_URL'));
 ```
 
@@ -121,7 +121,7 @@ Future<void> _presentPaymentSheet() async {
 Congratulations! Now that you have integrated the Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
 ## Next step:

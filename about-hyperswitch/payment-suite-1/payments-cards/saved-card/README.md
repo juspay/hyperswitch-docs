@@ -1,10 +1,11 @@
 ---
+description: Implement saved card payment flows using the Juspay Hyperswitch SDK to securely vault cards and enable seamless one-click checkout experiences
 icon: hard-drive
 ---
 
 # Saved Card
 
-In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
+In this approach, the Juspay Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
@@ -34,7 +35,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 ```
 
 {% hint style="info" %}
-Note - In case the merchant does not pass the customer ID, then the transaction is treated as a Guest customer checkout &#x20;
+Note - In case the merchant does not pass the customer ID, then the transaction is treated as a Guest customer checkout. &#x20;
 {% endhint %}
 
 #### **2. Initialize SDK (Client-Side)**
@@ -118,7 +119,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 {% hint style="info" %}
 Note -The merchant needs to pass the same customer ID for the SDK to fetch the saved customer payment methods and display them \
 \
-In case the merhcnat is not using the SDK then they need to use the List Customer Saved Payment Methods API to fetch th stored payment methods against a customer&#x20;
+In case the merchant is not using the SDK then they need to use the List Customer Saved Payment Methods API to fetch the stored payment methods against a customer&#x20;
 {% endhint %}
 
 #### **2. Initialize SDK and Fetch Saved Cards**

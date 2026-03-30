@@ -1,5 +1,5 @@
 ---
-description: Export your payments data to Redshift from Hyperswitch
+description: Export payment data to Amazon Redshift for advanced analytics, reporting, and business intelligence with automated ingestion pipelines
 icon: tachograph-digital
 ---
 
@@ -14,11 +14,11 @@ Exporting your payments data to Amazon Redshift enhances analytics by leveraging
 ## Integration steps
 
 1. &#x20;Prerequisite: You need to have an AWS account with redshift enabled. More details can be found here [https://aws.amazon.com/redshift/](https://aws.amazon.com/redshift/)
-2.  You are required to create a new IAM role for Redshift use and provide Hyperswitch with the corresponding role ARN. This IAM role must be configured with S3 read permissions.\
+2.  You are required to create a new IAM role for Redshift use and provide Juspay Hyperswitch with the corresponding role ARN. This IAM role must be configured with S3 read permissions.\
 
 
     <figure><img src="https://lh7-us.googleusercontent.com/r4vnr22w42Pz2k5V7O7TsVBrlVhDrfjYveoH-CWMnJW9XNR95k0XmJBlC9Q7lb1mpJa7aFyf9fRDDf6SHBoSLs-BP-TriQfwG57j3XhsdeJEW417zi0UO2069oDcxPEdzifYm_alen5GJsCGWhYOL2g" alt=""><figcaption><p>Example image of an IAM role created</p></figcaption></figure>
-3. After sharing the ARN with Hyperswitch, We will share the S3 bucket & path that is to be synced for data along with providing access to the IAM role from where you will be able to get files from the S3
+3. After sharing the ARN with Juspay Hyperswitch, We will share the S3 bucket & path that is to be synced for data along with providing access to the IAM role from where you will be able to get files from the S3
 4.  Once the above step is done, you need to [create the table schema on Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
 
     Post which you can proceed with the below
@@ -90,7 +90,7 @@ CREATE TABLE payments (
 ```sql
 create temp table payments_stage (like payments);
 
-copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments' 
+copy payments_stage from 's3://<BUCKET_NAME>/<MERCHANT_ID>/<VERSION>/payments'
 credentials 'aws_iam_role=<ARN_ROLE>'
 IGNOREHEADER 1
 timeformat 'YYYY-MM-DD HH:MI:SS'
@@ -166,7 +166,7 @@ If you want to set up payment data export at your end using AWS infrastructure, 
 
 The self-setup approach involves three main components:
 
-1. **Lambda Function/Server**: Queries payment data for the past 7 days from your Hyperswitch database
+1. **Lambda Function/Server**: Queries payment data for the past 7 days from your Juspay Hyperswitch database
 2. **Scheduled Execution**: A cron job or EventBridge rule that invokes the Lambda with merchant-specific parameters
 3. **S3 Storage**: Stores the exported data with proper IAM role-based access control
 
@@ -207,7 +207,7 @@ aws iam create-policy --policy-name PaymentsExportS3Policy --policy-document '{
 Create a Lambda function that handles the data export logic:
 
 **Function Requirements:**
-- Query payment data from your Hyperswitch database for the past 7 days
+- Query payment data from your Juspay Hyperswitch database for the past 7 days
 - Filter data based on merchant_id parameter received from the event
 - Generate CSV files with the same schema as mentioned in the table creation section
 - Upload the CSV files to S3 with the path format: `s3://bucket/merchant_id/v1/payments/date.csv`
@@ -334,7 +334,7 @@ Where `merchant-targets.json` contains:
     "Input": "{\"merchant_id\":\"merchant_123\"}"
   },
   {
-    "Id": "2", 
+    "Id": "2",
     "Arn": "arn:aws:lambda:us-east-1:YOUR-ACCOUNT-ID:function:payment-export-lambda",
     "Input": "{\"merchant_id\":\"merchant_456\"}"
   }

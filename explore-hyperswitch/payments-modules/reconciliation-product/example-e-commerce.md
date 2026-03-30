@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify
-  payments flow from your order system through PSPs to your bank accurately
+description: Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify payments flow from your order system through PSPs to your bank accurately
 ---
 
 # Example: E Commerce

@@ -1,11 +1,11 @@
 ---
-description: Get started with Split Payments via Hyperswitch
+description: Process split payments combining gift cards with cards to complete transactions when single payment methods have insufficient balance
 icon: split
 ---
 
 # Split Payments
 
-Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
+Juspay Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
 
 This capability helps merchants:
 
@@ -13,11 +13,11 @@ This capability helps merchants:
 * Improve customer flexibility at checkout
 * Support common retail and digital wallet experiences
 
-Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
+Juspay Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
 
 ### Supported Configurations
 
-Currently, Hyperswitch supports:
+Currently, Juspay Hyperswitch supports:
 
 * Atmost one gift cards combined with **at most one credit/debit card** (Non-3DS card)
 * Gift Cards via Givex (through Adyen)
@@ -36,11 +36,9 @@ No custom orchestration logic is required on the merchant side beyond standard S
 <figure><img src="../../../.gitbook/assets/Screen Recording 2026-02-04 at 9 (1).gif" alt=""><figcaption></figcaption></figure>
 
 
-
-### Hyperswitch Split Payments Flow
+### Juspay Hyperswitch Split Payments Flow
 
 <figure><img src="../../../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
-
 
 
 #### 1. Payment Initialization
@@ -65,7 +63,7 @@ If the balance is insufficient, the customer is prompted to add another payment 
 
 #### 3. Payment Confirmation
 
-When the customer confirms the payment, the SDK submits all selected payment method details to Hyperswitch.
+When the customer confirms the payment, the SDK submits all selected payment method details to Juspay Hyperswitch.
 
 At this stage, the system:
 
@@ -98,9 +96,7 @@ If the gift card authorization fails after the card payment has already been pro
 Once all payment methods are processed, the final transaction status is returned to the SDK.
 
 
-
 #### API Details :&#x20;
-
 
 
 **Apply a gift card**
@@ -127,7 +123,6 @@ curl --request POST \
 '
 
 ```
-
 
 
 **Payment Confirm with Split PM details**
@@ -164,7 +159,7 @@ curl --request POST \
             "payment_method_type": "gift_card",
             "payment_method_subtype": "givex"
         }
-    ]  
+    ]
 }
 '
 

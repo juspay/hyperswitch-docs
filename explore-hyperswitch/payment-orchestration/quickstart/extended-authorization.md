@@ -1,4 +1,5 @@
 ---
+description: Extend authorization hold periods beyond standard windows for hospitality, rentals, and pre-order scenarios requiring delayed capture
 hidden: true
 icon: clock
 ---
@@ -19,11 +20,11 @@ Example: A hotel may authorize a card for $500 during check-in but extend the au
 
 ### Current PSP Support
 
-Hyperswitch currently supports Extended Authorization for the following PSPs:
+Juspay Hyperswitch currently supports Extended Authorization for the following PSPs:
 
 * Stripe
 
-If you require Extended Authorization for other PSPs, please reach out to the Hyperswitch Support Team.
+If you require Extended Authorization for other PSPs, please reach out to the Juspay Hyperswitch Support Team.
 
 ### How to Enable Extended Authorization
 
@@ -114,7 +115,6 @@ Be aware: With some connectors like Adyen, a failed extended authorization attem
 {% endhint %}
 
 
-
 > **⚠️ Note:**
 >
 > * To use this API, extended authorization must be enabled for the authorization you are attempting to extend.
@@ -166,4 +166,3 @@ If the connector doesn’t provide the capture deadline, the `capture_by` field 
 ### Monitoring
 
 After authorization, you can view the capture deadline under `capture_by` in the More Payment Details section of the dashboard. This helps you ensure capture occurs before the authorization hold expires. If `capture_by` is not available use the `extended_authorization_last_applied_at` parameter to compute the capture window&#x20;
-

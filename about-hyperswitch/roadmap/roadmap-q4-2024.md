@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'24)
+description: Review Juspay Hyperswitch Q4 2024 roadmap covering smart retries, split payments, and network tokenization
 icon: road
 ---
 

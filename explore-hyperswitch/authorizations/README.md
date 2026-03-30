@@ -1,4 +1,5 @@
 ---
+description: Implement advanced authorization flows including zero-amount verification, incremental holds, and extended capture windows for flexible payment control
 icon: building-magnifying-glass
 ---
 
@@ -6,7 +7,7 @@ icon: building-magnifying-glass
 
 ### **Advanced Authorization Types**
 
-This section outlines the specialized authorization flows supported by Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring the customer to re-enter their details.
+This section outlines the specialized authorization flows supported by Juspay Hyperswitch. These methods allow you to verify payment instruments or manage fluctuating transaction totals without requiring the customer to re-enter their details.
 
 **1. $0 Authorization (Account Verification)**
 

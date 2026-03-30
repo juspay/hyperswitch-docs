@@ -1,5 +1,5 @@
 ---
-description: A brief summary of measures taken at Hyperswitch to ensure GDPR compliance
+description: Ensure GDPR compliance with data protection principles, privacy controls, and data subject rights management for payment processing
 icon: compact-disc
 ---
 
@@ -9,7 +9,7 @@ The[ General Data Protection Regulation](https://eur-lex.europa.eu/legal-content
 
 <table><thead><tr><th width="151">Role</th><th>Definition</th></tr></thead><tbody><tr><td>Data Controller</td><td>A Data Controller is a natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data. Controllers make decisions about processing activities.</td></tr><tr><td>Data Processor</td><td>A Data Processor means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller and under the instructions of the controller</td></tr><tr><td>Data Subject</td><td>The term 'data subject' refers to any living individual whose personal data is collected, held or processed by an organization.</td></tr></tbody></table>
 
-Hyperswitch plays the role of a ‘Data Processor’ and takes all the below initiatives to ensure compliance.
+Juspay Hyperswitch plays the role of a ‘Data Processor’ and takes all the below initiatives to ensure compliance.
 
 ### Data Protection and Privacy Principles
 
@@ -17,7 +17,7 @@ Hyperswitch plays the role of a ‘Data Processor’ and takes all the below ini
 
 ### Security
 
-Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application also employs various strategies that encompasses various stage, which includes
+Juspay Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application also employs various strategies that encompasses various stage, which includes
 
 * Encryption of Data at rest and Data in Transit
 * Masking of PII information at source
@@ -25,7 +25,7 @@ Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data
 * Secure software development practices
 * SOC Type I and Type II certification
 
-[Read more](https://docs.hyperswitch.io/security-and-compliance/security) about Data security at Hyperswitch.
+[Read more](https://docs.hyperswitch.io/security-and-compliance/security) about Data security at Juspay Hyperswitch.
 
 ### Data Retention and Deletion
 
@@ -35,11 +35,11 @@ We support the right to erasure through a permanent deletion of personal data up
 
 ### Data Protection Team
 
-Juspay Technologies Private Limited (doing business as Hyperswitch) has a Privacy and Data Protection team and a designated Data Protection Officer to look after Data Protection, Privacy and Compliance Obligations
+Juspay Technologies Private Limited (doing business as Juspay Hyperswitch) has a Privacy and Data Protection team and a designated Data Protection Officer to look after Data Protection, Privacy and Compliance Obligations
 
 ### Data Protection Agreement
 
-Hyperswitch Master Services Agreement includes a Data Protection Agreement which clearly articulates our privacy commitment to merchants. We have evolved these terms and specifically updated these terms to reflect the GDPR from the perspective of payment processing, and, to facilitate merchants’ compliance assessment and GDPR readiness when using Hyperswitch.
+Juspay Hyperswitch Master Services Agreement includes a Data Protection Agreement which clearly articulates our privacy commitment to merchants. We have evolved these terms and specifically updated these terms to reflect the GDPR from the perspective of payment processing, and, to facilitate merchants’ compliance assessment and GDPR readiness when using Juspay Hyperswitch.
 
 ### Standards and Certifications
 
@@ -49,7 +49,7 @@ We hold ourselves to the highest standards of data security and reliability. We 
 
 ### Use of Sub processors
 
-Below is the list of sub-processors we use at Hyperswitch, as well as the purpose of their use.
+Below is the list of sub-processors we use at Juspay Hyperswitch, as well as the purpose of their use.
 
 |   Sub processor  |                      Purpose                     |                          Hosted region                         |
 | :--------------: | :----------------------------------------------: | :------------------------------------------------------------: |

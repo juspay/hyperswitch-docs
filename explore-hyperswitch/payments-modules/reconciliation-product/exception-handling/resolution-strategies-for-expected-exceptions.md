@@ -1,3 +1,7 @@
+---
+description: Understand reconciliation concepts, exception handling, and financial data mapping for accurate payment matching
+---
+
 # Resolution Strategies for 'Expected' Exceptions
 
 ### Overview
@@ -34,7 +38,6 @@ Action: `Fix Entries`
 If the source transaction is valid and represents real money, but the automated match hasn't happened, users can intervene using the three options below
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-12-17 at 4.34.16 PM.png" alt=""><figcaption></figcaption></figure>
-
 
 
 #### Option 1: Edit Entry

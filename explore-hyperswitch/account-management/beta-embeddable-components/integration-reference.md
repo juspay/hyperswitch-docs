@@ -1,6 +1,10 @@
+---
+description: Reference guide for integrating embeddable components and SDK authentication in your application
+---
+
 # Integration Reference
 
-This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
+This SDK allows you to embed the Juspay Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
 Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
 
@@ -12,7 +16,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 * Runtime: Node.js (v18+)
 * Framework: React (v18.x - 20.x)
-* Hyperswitch Credentials:
+* Juspay Hyperswitch Credentials:
   * `API-Key` (Can be generated via Control Center)
   * `Profile-ID` (The specific merchant profile you are configuring)
 * Support:
@@ -31,7 +35,7 @@ Security Warning: Never expose your Hyperswitch API-Key on the frontend. You mus
 
 Create a route (e.g., /embedded/hyperswitch) in your backend application.
 
-Required Headers for Hyperswitch Call:
+Required Headers for Juspay Hyperswitch Call:
 
 * api-key: Your secret API key.
 * X-profile-id: The specific profile ID you want the embedded component to access.
@@ -63,7 +67,7 @@ app.get('/embedded/hyperswitch', async (req, res) => {
       }
     );
 
-    console.log('Hyperswitch Token Generated:', response.data);
+    console.log('Juspay Hyperswitch Token Generated:', response.data);
 
     res.json({
       success: true,
@@ -108,7 +112,7 @@ npm install @juspay-tech/hyperswitch-control-center-embed-core
 Import (ES Module):
 
 ```javascript
-import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
+import { loadJuspay Hyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
 ```
 
 **OR**
@@ -116,13 +120,13 @@ import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-c
 Import (CommonJS):
 
 ```javascript
-const { loadHyperswitch } = require("@juspay-tech/hyperswitch-control-center-embed-core");
+const { loadJuspay Hyperswitch } = require("@juspay-tech/hyperswitch-control-center-embed-core");
 ```
 
 **2A.3 : Example app.js Implementation**
 
 ```javascript
-import { loadHyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
+import { loadJuspay Hyperswitch } from "@juspay-tech/hyperswitch-control-center-embed-core";
 
 document.addEventListener("DOMContentLoaded", async function () {
 
@@ -152,7 +156,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   };
 
-  const hyperswitch = loadHyperswitch({
+  const hyperswitch = loadJuspay Hyperswitch({
     fetchToken: fetchToken
   });
 
@@ -180,9 +184,9 @@ npm install @juspay-tech/hyperswitch-control-center-embed-react
 import React, { useState } from 'react';
 import './App.css';
 import 'tailwindcss/tailwind.css';
-import { loadHyperswitch } from '@juspay-tech/hyperswitch-control-center-embed-core';
+import { loadJuspay Hyperswitch } from '@juspay-tech/hyperswitch-control-center-embed-core';
 import {
-HyperswitchProvider,
+Juspay HyperswitchProvider,
 ConnectorConfiguration
 } from '@juspay-tech/hyperswitch-control-center-embed-react';
 ```
@@ -231,7 +235,7 @@ function App() {
       }
     };
 
-    return loadHyperswitch({
+    return loadJuspay Hyperswitch({
       fetchToken: fetchToken
     });
 
@@ -259,7 +263,7 @@ export default App;
 
 ### API Reference
 
-#### 1. loadHyperswitch(options)
+#### 1. loadJuspay Hyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -270,17 +274,16 @@ options.fetchToken () => Promise\<string | undefined>
 * Should return the JWT string on success.
 * Should return undefined on failure.
 
-#### 2. HyperswitchProvider
+#### 2. Juspay HyperswitchProvider
 
 Context provider that holds the authentication state.
 
-* **hyperswitchInstance**: The object returned by loadHyperswitch.
+* **hyperswitchInstance**: The object returned by loadJuspay Hyperswitch.
 
 #### 3. ConnectorConfiguration
 
 The UI Component that renders the settings form.
 
-* **url (string)**: The base URL for the Hyperswitch Dashboard API.
+* **url (string)**: The base URL for the Juspay Hyperswitch Dashboard API.
   * Sandbox:[ https://app.hyperswitch.io](https://app.hyperswitch.io/api)
   * Default:[ http://localhost:9000](http://localhost:9000)
-

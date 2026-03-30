@@ -1,4 +1,5 @@
 ---
+description: Test payment processor configurations using sample transactions in the Juspay Hyperswitch dashboard
 icon: vial-circle-check
 ---
 
@@ -16,8 +17,8 @@ icon: vial-circle-check
     <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message
-7. Validate transaction on Hyperswitch dashboard.\
-   \- Goto the left pane on the Hyperswitch dashboard\
+7. Validate transaction on Juspay Hyperswitch dashboard.\
+   \- Goto the left pane on the Juspay Hyperswitch dashboard\
    \- Click on Operations -> Payments\
    \- Your transactions should be visible under the order management tab
 

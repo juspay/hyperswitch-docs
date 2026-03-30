@@ -68,7 +68,7 @@ Consider the below code for your reference.
   Configuration configuration= Configuration(appearance: appearance)
   configuration.displaySavedPaymentMethods: true,
   configuration.displaySavedPaymentMethodsCheckbox: true,
- 
+
   PaymentSheetParams params = PaymentSheetParams(
       publishableKey: "YOUR_PUBLISHABLE_KEY",
       clientSecret: clientSecret,
@@ -80,11 +80,10 @@ Consider the below code for your reference.
 Set `displaySavedPaymentMethods` to false to disable saved cards.
 
 Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.\
-Set `disableBranding` to false to disable Hyperswitch branding.\
+Set `disableBranding` to false to disable Juspay Hyperswitch branding.\
 Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
-
 
 
 ## Custom Placeholders And Branding
@@ -97,7 +96,7 @@ configuration.placeholder.expiryDate = "YOUR_CUSTOM_EXPIRY_DATE_PLACEHOLDER"
 configuration.placeholder.cvv = "YOUR_CUSTOM_CVV_PLACEHOLDER"
 ```
 
-To disable Hyperswitch branding in the SDK, you may set the `disableBranding` property to true
+To disable Juspay Hyperswitch branding in the SDK, you may set the `disableBranding` property to true
 
 ```dart
 configuration.disableBranding = true
@@ -123,7 +122,7 @@ ColorsObject lightColorsObject = ColorsObject(
       icon: '#F92672',
       error: '#F92672'
     );
-    
+
  ColorsObject darkColorsObject = ColorsObject(
       primary: '#00ff0099',
       background: '#ff0000',
@@ -172,10 +171,9 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 Now you can test the payments on your app and go-live!
 
 
-
 ## Languages
 
-Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
+Juspay Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
 ```dart
 Appearance appearance = Appearance(
@@ -224,4 +222,3 @@ We support the following locales -
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
 {% endcontent-ref %}
-

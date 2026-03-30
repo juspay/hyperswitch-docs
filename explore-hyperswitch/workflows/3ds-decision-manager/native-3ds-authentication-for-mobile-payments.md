@@ -42,7 +42,7 @@ By providing a native 3DS experience, the users never leave the merchant app. It
 
 Since the authentication occurs natively, merchants have more control over the branding and design of the authentication experience. This keeps the look and feel consistent with the rest of the app or website, offering a smoother, more professional user experience.
 
-## Native 3D Secure on Hyperswitch
+## Native 3D Secure on Juspay Hyperswitch
 
 1. **In-line 3DS Challenge for web** - No redirections for the user.
 
@@ -60,7 +60,7 @@ Since the authentication occurs natively, merchants have more control over the b
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeirhBLd2IWmYB8EnJwHvfOYSBpRuyKUjo5Hu18arOY434FuLa6RYy5FX6sKxCdrR4SCoXKX40-FrjoTOjSseuWQnr1W9LJwyeImo_U1HPbaNQjyMB6ynOEMgQizJcTccbMKqLmUVwVffqa1Vcaq64RxNEd?key=GxSITk_I899THOh9NrBSgw" alt=""><figcaption></figcaption></figure>
 
-To enable the Native 3DS Authentication on your website or mobile app, you need to integrate an external 3DS authentication providers. **Hyperswitch allows you to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts, Visit the below page for detailed steps.**
+To enable the Native 3DS Authentication on your website or mobile app, you need to integrate an external 3DS authentication providers. **Juspay Hyperswitch allows you to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts, Visit the below page for detailed steps.**
 
 {% content-ref url="external-authentication-for-3ds.md" %}
 [external-authentication-for-3ds.md](external-authentication-for-3ds.md)

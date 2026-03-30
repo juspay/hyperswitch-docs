@@ -1,8 +1,5 @@
 ---
-description: >-
-  Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
-  architecture to automatically match transactions and resolve financial
-  discrepancies
+description: Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based architecture to automatically match transactions and resolve financial discrepancies
 ---
 
 # How Reconciliation Works

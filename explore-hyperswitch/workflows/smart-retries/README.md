@@ -1,11 +1,11 @@
 ---
-description: Automatically retry payments with an alternative processor
+description: Improve payment success rates by automatically retrying failed transactions with alternative processors and enhanced payloads
 icon: magnifying-glass-arrows-rotate
 ---
 
 # Smart Retries
 
-Smart retry is a Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
+Smart retry is a Juspay Hyperswitch feature to improve the payment success rates in a single or multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with the same or an alternative payment processor to increase the chances of making the payment successful.
 
 The Auto Retry engine handles varied Retry strategy based on the type of error encountered such as:
 
@@ -14,7 +14,7 @@ The Auto Retry engine handles varied Retry strategy based on the type of error e
 3. **Clear PAN Retry -** Re-attempting a tokenised authorization request with a Clear PAN in case of de-tokenisation failures
 4. **Global Network Retry -** Re-attempting an authorization request with a signature network in case of debit network failure
 
-Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 100+ processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
+Juspay Hyperswitch’s error handling engine is enriched with mappings for error codes and error messages across 90+ payment processors, acquirers, issuers. Processors have anywhere between 400 to 1,000 and at times more error codes. The database contains these combinations of error code and error messages for every processor and is constantly refreshed with newer codes that are encountered.
 
 <figure><img src="../../../.gitbook/assets/unknown (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -57,7 +57,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | --------------------------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                    | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (frictionless flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data        | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data        | Successful        |
 
 #### Use case 2
 
@@ -65,21 +65,21 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | ------------------------------------------ | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds)                 | Suspected fraud  |
 | 2                | PSP1         | Step up - Independent 3DS (challenge flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data     | Succesful        |
+| 3                | PSP2         | Original payload + Authentication data     | Successful        |
 
 ### Use case 3
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>              | <h4>Outcome</h4> |
 | ---------------- | ------------ | -------------------------- | ---------------- |
 | 1                | PSP1         | Original payload (non-3ds) | Generic decline  |
-| 2                | PSP2         | Original payload (non-3ds) | Succesful        |
+| 2                | PSP2         | Original payload (non-3ds) | Successful        |
 
 ### Use case 4
 
 | <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                                                                                             | <h4>Outcome</h4> |
 | ---------------- | ------------ | --------------------------------------------------------------------------------------------------------- | ---------------- |
 | 1                | PSP1         | <p>Original payload (non-3ds)<br><br>Limited data fields on customer info, device/IP, product details</p> | Generic decline  |
-| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Succesful        |
+| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Successful        |
 
 ### Use case 5
 
@@ -87,23 +87,21 @@ Each of the error codes are mapped individually as to whether they are eligible 
 | ---------------- | ------------ | ------------------------------------ | ---------------- |
 | 1                | PSP1         | Original payload (Network token PAN) | Do not honor     |
 | 2                | PSP1         | Original payload (Clear PAN)         | Generic decline  |
-| 3                | PSP2         | Original payload (Clear PAN)         | Succesful        |
+| 3                | PSP2         | Original payload (Clear PAN)         | Successful        |
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
 
-
 ## How to enable Smart Retries?
 
-**Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
+**Step 1:** Ensure that you have enabled the pecking order of payment processors on the Juspay Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
 
 **Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
 
-* Confirmation on the retry flows to be enaled&#x20;
+* Confirmation on the retry flows to be enabled&#x20;
 * Maximum number of payment retry attempts&#x20;
 
 ####
-
 
 
 ## FAQs
@@ -112,7 +110,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 <summary>What is a primary processor?</summary>
 
-Primary processor is the first choice of processor for the particular transaction to be processed. This is evaluated based on the smart routing rules configured in the Hyperswitch dashboard’s routing module.
+Primary processor is the first choice of processor for the particular transaction to be processed. This is evaluated based on the smart routing rules configured in the Juspay Hyperswitch dashboard’s routing module.
 
 </details>
 
@@ -128,13 +126,13 @@ Additionally, you can view aggregate data in the Analytics section under the Sma
 
 <details>
 
-<summary>Why can I not enable Automatic Retry from the Hyperswitch dashboard?</summary>
+<summary>Why can I not enable Automatic Retry from the Juspay Hyperswitch dashboard?</summary>
 
-For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (hyperswitch@juspay.in).
+For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Juspay Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (hyperswitch@juspay.in).
 
-Since Smart retry involves multiple payment attempts for a single payment\_id, Hyperswitch appends the attempt number to the payment\_id that the merchant sends to Hyperswitch before passing it on to the processors.
+Since Smart retry involves multiple payment attempts for a single payment\_id, Juspay Hyperswitch appends the attempt number to the payment\_id that the merchant sends to Juspay Hyperswitch before passing it on to the processors.
 
-For example, if the merchant had sent pay\_abcd145efg, then Hyperswitch will send the following payment\_id to the processors during each attempt:
+For example, if the merchant had sent pay\_abcd145efg, then Juspay Hyperswitch will send the following payment\_id to the processors during each attempt:
 
 * Payment attempt 1: pay\_abcd145efg\_1
 * Payment attempt 2: pay\_abcd145efg\_2

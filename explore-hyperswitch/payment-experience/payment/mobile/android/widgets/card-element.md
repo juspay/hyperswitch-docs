@@ -1,4 +1,5 @@
 ---
+description: Add customizable card input widget to Android layouts for secure payment card data collection
 icon: credit-card
 ---
 
@@ -82,4 +83,3 @@ if (::cardPaymentLauncher.isInitialized) {
     Toast.makeText(this, "SDK is not initialised", Toast.LENGTH_SHORT).show()
 }
 ```
-

@@ -4,7 +4,7 @@ hidden: true
 icon: arrows-repeat
 ---
 
-# Hyperswitch Vault: Pass Through Proxy Payments
+# Juspay Hyperswitch Vault: Pass Through Proxy Payments
 
 **📌 What is it?**
 
@@ -29,16 +29,16 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitc
 
 Include the following details:
 
-1. **Include the Hyperswitch Proxy payments related fields in the headers:**
+1. **Include the Juspay Hyperswitch Proxy payments related fields in the headers:**
    1. **URL:** Proxy endpoint **(**&#x68;ttps://sandbox.hyperswitch.io/prox&#x79;**)**
-   2. **API Key:** Your API key for the merchant\_id under which the vault service was created on Hyperswitch dashboard
-   3. **Profile\_id:** Your profile\_id for the merchant\_id under which the vault service was created on Hyperswitch dashboard
+   2. **API Key:** Your API key for the merchant\_id under which the vault service was created on Juspay Hyperswitch dashboard
+   3. **Profile\_id:** Your profile\_id for the merchant\_id under which the vault service was created on Juspay Hyperswitch dashboard
 2. **Include the following details in the body:**
    1. **`request_body`:** Include the request body of the PSP payment request
    2. **`destination_url`, `method`, `headers`:** Pass your PSP url as destination url, PSP endpoint method and headers under the respective fields
    3. **Vault tokens:**
       1. `token_type` : Choose payment\_method\_id or tokenization\_id
-      2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
+      2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Juspay Hyperswitch vault
    4. **Placeholders for token data:** In the `request_body`**,** Plug in the dynamic placeholders`{{$card_number}}`, `{{$card_exp_month}}`,`{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
 
 **Sample Proxy payment request (Checkout.com)**

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use Rules and SCA exemptions to reduce cardholder friction on eligible
-  transactions
+description: Use Rules and SCA exemptions to reduce cardholder friction on eligible transactions
 icon: chart-simple-horizontal
 ---
 

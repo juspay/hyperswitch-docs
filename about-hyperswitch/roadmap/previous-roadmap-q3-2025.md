@@ -1,5 +1,5 @@
 ---
-description: Jul '25 to Sep '25
+description: Review Juspay Hyperswitch Q3 2025 roadmap covering connectors, vault, authentication, and revenue recovery features
 icon: road
 ---
 

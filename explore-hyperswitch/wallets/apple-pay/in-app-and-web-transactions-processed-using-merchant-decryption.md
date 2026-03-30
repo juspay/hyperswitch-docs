@@ -43,10 +43,7 @@ The decryption sequence ensures the integrity and security of the payment data b
 * **Execute Payment:** Use the now-decrypted data to trigger a payment authorization. For specific field mapping, refer to your API's technical documentation.
 
 
-
 #### **API Mapping  -**&#x20;
 
 
-
 <table><thead><tr><th>Parameter Name</th><th width="111.12890625">Required</th><th>Description</th></tr></thead><tbody><tr><td>payment_method_data.wallet.apple_pay.payment_data</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.display_name</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.network</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.type</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_month</td><td></td><td>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_year</td><td></td><td><p></p><p>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</p><p></p></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.auth_code</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.transaction_identifier</td><td></td><td>Use the <strong>transactionId</strong> value, contained in the Apple Pay token.</td></tr></tbody></table>
-

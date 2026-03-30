@@ -1,11 +1,11 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Integrate GooglePay (AndroidPay) via Cybersource in Juspay Hyperswitch
 ---
 
 # Google Pay
 
 {% hint style="info" %}
-This page consists of steps for how **GooglePay** can be enabled in Hyperswitch via Cybersource
+This page consists of steps for how **GooglePay** can be enabled in Juspay Hyperswitch via Cybersource
 {% endhint %}
 
 > This guide assumes that you have alreaedy configured Cybersource as a connector in your Hyperswitch Control Center. If not please follow the steps mentioned [here](./)
@@ -51,9 +51,8 @@ This page consists of steps for how **GooglePay** can be enabled in Hyperswitch 
     * Country
 
 {% hint style="warning" %}
-We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
+We recommend to pass this fields while creating the Payment Intent with Juspay Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
 {% endhint %}
 
 
-
-[^1]: 
+[^1]:

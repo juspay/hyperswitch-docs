@@ -1,25 +1,25 @@
 ---
-description: Accept payments through Bluesnap via Hyperswitch
+description: Accept payments through Bluesnap via Juspay Hyperswitch
 hidden: true
 ---
 
 # Bluesnap
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Bluesnap through Hyperswitch
+This section gives you an overview of how to make payments via Bluesnap through Juspay Hyperswitch
 {% endhint %}
 
 ![BlueSnap Logos](https://cdn2.hubspot.net/hubfs/454819/blog-files/Logo_color.png)
 
 BlueSnap is a payment platform that allows businesses to easily accept online and mobile payments across the world. BlueSnap payment gateway integration can accept payments for e-commerce transactions, subscription billing models, and other online payment businesses need. To know about more about payment methods supported by Bluesanp via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Bluesnap via Hyperswitch
+### Activating Bluesnap via Juspay Hyperswitch
 
 #### Prerequisites
 
 1. You need to be registered with Bluesnap in order to proceed. In case you aren't, you can quickly setup your Bluesnap account [here](https://home.bluesnap.com/)
-2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
+2. You should have a registered Juspay Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).
 3. The Bluesnap API keys  **Username** and **Password** can be found in your Bluesnap dashboard under API settings.
 4. Select all the payment methods you wish to use Bluesnap for. Ensure that this is the same as the ones configured on your Bluesnap dashboard under Checkout Page -> Payment methods
 
-[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Bluesnap on Hyperswitch control center.
+[Steps](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to activate Bluesnap on Juspay Hyperswitch control center.

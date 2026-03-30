@@ -1,4 +1,5 @@
 ---
+description: Integrate Google Pay widget into Android layouts for streamlined wallet-based payments
 icon: google
 ---
 
@@ -25,7 +26,7 @@ private lateinit var googlePayLauncherInstance: UnifiedPaymentLauncher
 private fun setupGooglePayLauncher() {
     googlePayButton = findViewById(R.id.googlePayButton)
     googlePayButton.isEnabled = false
-    
+
     googlePayLauncherInstance = UnifiedPaymentLauncher.createGooglePayLauncher(
         activity = this,
         clientSecret = paymentIntentClientSecret,
@@ -82,4 +83,3 @@ private fun onGooglePayReady(isReady: Boolean) {
     googlePayButton.isEnabled = isReady
 }
 ```
-

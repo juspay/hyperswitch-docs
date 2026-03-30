@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Test payment integrations using sample credentials for cards, wallets, and connectors across different payment scenarios
 icon: key
 ---
 
@@ -11,9 +11,9 @@ This section gives you an overview of how to you can make test transactions for 
 
 ## Testing Cards across different Connectors
 
-You might have configured multiple connectors on the Hyperswitch Dashboard. If you wish to ensure sanity of connector configuration, you can target and test the particular connector.
+You might have configured multiple connectors on the Juspay Hyperswitch Dashboard. If you wish to ensure sanity of connector configuration, you can target and test the particular connector.
 
-**Step 1**: Log on to Hyperswitch Dashboard
+**Step 1**: Log on to Juspay Hyperswitch Dashboard
 
 **Step 2**: Goto Smart Router > Simple Configuration
 

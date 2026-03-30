@@ -10,7 +10,7 @@ icon: react
 
 <summary><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
-You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
+You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 
 </details>
 
@@ -103,13 +103,13 @@ const widgets = useWidgets();
 
 {% tabs %}
 {% tab title="ExpressCheckout" %}
-**Key Features of Hyperswitch's Express Checkout**
+**Key Features of Juspay Hyperswitch's Express Checkout**
 
 * Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
 * Multiple Payment Options: Supports ApplePay,Paypal Klarna, and GooglePay, giving customers a variety of payment choices on top of the speed in checkout.
 * Easy Integration: Our SDK can be easily integrated with web applications.
 
-**Benefits of Hyperswitch's Express Checkout Feature**
+**Benefits of Juspay Hyperswitch's Express Checkout Feature**
 
 * Better User Experience: One-click payment makes shopping easier, leading to more sales and fewer abandoned carts.
 * Time Savings: Speeds up the checkout process, saving time for both customers and merchants.
@@ -237,7 +237,7 @@ For customization, please follow the [`Customization docs`](https://docs.hypersw
 
 #### 3.2 Display payment status message
 
-When Hyperswitch redirects the customer to the `return_url`, the `payment_client_secret` query parameter is appended by hyper-js. Use this to retrieve the Payment to determine what to show to your customer.
+When Juspay Hyperswitch redirects the customer to the `return_url`, the `payment_client_secret` query parameter is appended by hyper-js. Use this to retrieve the Payment to determine what to show to your customer.
 
 ```js
 //Look for a parameter called `payment_intent_client_secret` in the url which gives a payment ID, which is then used to retrieve the status of the payment
@@ -269,7 +269,7 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
 ```
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
 ### 4. Elements Events
