@@ -49,7 +49,32 @@ Through Juspay Hyperswitch, Merchants can add [external vault providers](https:/
 
 In case of using External vaults, merchants also have the option to choose which SDK to use to collect payment method details from their customers.
 
-![](../../../.gitbook/assets/2.png)
+<!-- Original diagram: ../../../.gitbook/assets/2.png -->
+
+```mermaid
+flowchart TD
+    subgraph Client["Client Side"]
+        A[Customer] --> B{Hyperswitch SDK}
+    end
+    
+    subgraph Option1["Option 1: Hyperswitch Unified Checkout SDK"]
+        B --> C[Hyperswitch Server]
+        C --> D[External Vault<br/>Tokenize Card]
+        D --> E[Hyperswitch Server<br/>Retrieve Raw Card]
+        E --> F[PSP<br/>Process Payment]
+    end
+    
+    subgraph Option2["Option 2: External Vault SDK"]
+        B --> G[External Vault SDK<br/>Tokenize Card]
+        G --> H[External Vault<br/>De-tokenize]
+        H --> F
+    end
+    
+    style A fill:#f9f,stroke:#333
+    style F fill:#9f9,stroke:#333
+    style D fill:#ff9,stroke:#333
+    style G fill:#ff9,stroke:#333
+```
 
 <p align="center"><em>Flexible External Vaulting with Choice of Vault SDK or Hyperswitch SDKs for Card Collection</em><br></p>
 

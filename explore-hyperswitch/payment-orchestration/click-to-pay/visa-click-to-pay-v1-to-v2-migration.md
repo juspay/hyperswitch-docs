@@ -26,7 +26,34 @@ The migration to V2 is powered by Hyperswitch's specialized wrapper solution, en
 
 This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less than 30 minutes. Our wrapper maintains backward compatibility while giving you access to V2's enhanced features.
 
-![Architecture diagram of Visa Click to Pay integration, showing how the Wrapper mediates between Client browser/app and Visa's Click to Pay server while supporting both V1 and V2 SDKs.](../../../../.gitbook/assets/1.png)
+<!-- Original diagram: ../../../../.gitbook/assets/1.png -->
+
+```mermaid
+flowchart LR
+    subgraph Client["Client Side"]
+        A[Browser/App]
+    end
+    
+    subgraph Hyperswitch["Juspay Hyperswitch"]
+        B[Wrapper<br/>V1/V2 Detection]
+    end
+    
+    subgraph Visa["Visa Click to Pay"]
+        C[V1 SDK]
+        D[V2 SDK]
+    end
+    
+    A -->|V1 Requests| B
+    A -->|V2 Requests| B
+    B -->|V1 Flow| C
+    B -->|V2 Flow| D
+    C -->|Process| Visa
+    D -->|Process| Visa
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#ff9,stroke:#333
+    style Visa fill:#9f9,stroke:#333
+```
 
 ### Integration Methods
 
