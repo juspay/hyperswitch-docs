@@ -1,7 +1,5 @@
 ---
-description: >-
-  Build inclusive, consistent, and blended checkout experiences for web with
-  global payment methods and customization options
+description: Build inclusive, consistent, and blended checkout experiences for web with global payment methods and customization options
 icon: globe-wifi
 ---
 

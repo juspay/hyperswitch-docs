@@ -1,7 +1,5 @@
 ---
-description: >-
-  Test payment processor configurations using sample transactions in the
-  Juspay Hyperswitch dashboard
+description: Test payment processor configurations using sample transactions in the Juspay Hyperswitch dashboard
 icon: vial-circle-check
 ---
 

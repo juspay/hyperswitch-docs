@@ -1,7 +1,5 @@
 ---
-description: >-
-  Deploy flexible vault solutions for PCI-compliant card storage with options
-  for SaaS, self-hosted, and third-party vault integrations
+description: Deploy flexible vault solutions for PCI-compliant card storage with options for SaaS, self-hosted, and third-party vault integrations
 icon: vault
 ---
 

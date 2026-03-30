@@ -1,7 +1,5 @@
 ---
-description: >-
-  Set up platform organizations to programmatically onboard and manage multiple
-  merchant accounts with controlled API access and scoping
+description: Set up platform organizations to programmatically onboard and manage multiple merchant accounts with controlled API access and scoping
 icon: garage-car
 ---
 

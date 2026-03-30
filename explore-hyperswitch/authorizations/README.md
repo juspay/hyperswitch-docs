@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement advanced authorization flows including zero-amount verification,
-  incremental holds, and extended capture windows for flexible payment control
+description: Implement advanced authorization flows including zero-amount verification, incremental holds, and extended capture windows for flexible payment control
 icon: building-magnifying-glass
 ---
 

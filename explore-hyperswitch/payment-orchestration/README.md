@@ -1,7 +1,5 @@
 ---
-description: >-
-  Orchestrate payments across multiple processors with unified APIs for
-  acceptance, payouts, routing, and retry management
+description: Orchestrate payments across multiple processors with unified APIs for acceptance, payouts, routing, and retry management
 icon: arrow-progress
 ---
 

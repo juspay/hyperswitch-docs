@@ -1,7 +1,5 @@
 ---
-description: >-
-  Import payment data from existing processors through secure encrypted migration
-  with PCI-compliant handling
+description: Import payment data from existing processors through secure encrypted migration with PCI-compliant handling
 icon: right-from-bracket
 ---
 

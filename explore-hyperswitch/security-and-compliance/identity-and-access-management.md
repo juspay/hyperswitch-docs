@@ -1,7 +1,5 @@
 ---
-description: >-
-  Secure your payment infrastructure with multi-layered authentication, role-based
-  access control, and distributed key management for compliance
+description: Secure your payment infrastructure with multi-layered authentication, role-based access control, and distributed key management for compliance
 icon: id-card-clip
 ---
 

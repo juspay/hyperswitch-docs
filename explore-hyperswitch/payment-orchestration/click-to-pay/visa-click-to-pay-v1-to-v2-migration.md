@@ -1,8 +1,5 @@
 ---
-description: >-
-  Visa Click to Pay is evolving to provide a better checkout experience with
-  enhanced security features and improved performance. This guide will help you
-  migrate from V1 to V2 in less than 30 minutes.
+description: Visa Click to Pay is evolving to provide a better checkout experience with enhanced security features and improved performance. This guide will help you migrate from V1 to V2 in less than 30 minutes.
 icon: cc-visa
 ---
 

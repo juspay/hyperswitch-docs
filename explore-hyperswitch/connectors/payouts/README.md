@@ -1,7 +1,5 @@
 ---
-description: >-
-  Automate bulk payouts and fund distribution to cards, banks, and wallets with
-  smart retries and unified tracking across processors
+description: Automate bulk payouts and fund distribution to cards, banks, and wallets with smart retries and unified tracking across processors
 icon: file-invoice-dollar
 ---
 

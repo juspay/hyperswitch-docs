@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Vault SDK with JavaScript for secure PCI-compliant payment method
-  tokenization and storage with REST API
+description: Integrate Vault SDK with JavaScript for secure PCI-compliant payment method tokenization and storage with REST API
 icon: globe-pointer
 ---
 

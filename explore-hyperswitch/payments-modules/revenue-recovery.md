@@ -1,7 +1,5 @@
 ---
-description: >-
-  Automatically retry failed recurring payments to reduce subscription churn and
-  recover lost revenue for SaaS businesses
+description: Automatically retry failed recurring payments to reduce subscription churn and recover lost revenue for SaaS businesses
 icon: clock-rotate-left
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Track and manage disputes and chargebacks across multiple processors through a
-  unified interface with evidence upload capabilities
+description: Track and manage disputes and chargebacks across multiple processors through a unified interface with evidence upload capabilities
 icon: circle-exclamation
 ---
 

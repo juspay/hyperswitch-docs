@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+description: Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment Methods Management SDK
 hidden: true
 icon: desktop
 ---

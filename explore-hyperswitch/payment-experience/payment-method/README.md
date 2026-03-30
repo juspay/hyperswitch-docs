@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement flexible payment processing with server-to-server flows, saved payment
-  methods, and recurring billing patterns
+description: Implement flexible payment processing with server-to-server flows, saved payment methods, and recurring billing patterns
 icon: arrow-progress
 ---
 

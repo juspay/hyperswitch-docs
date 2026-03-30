@@ -1,7 +1,5 @@
 ---
-description: >-
-  Eliminate revenue leakage through automated three-way reconciliation across
-  order management, PSP, and bank settlement systems
+description: Eliminate revenue leakage through automated three-way reconciliation across order management, PSP, and bank settlement systems
 icon: database
 ---
 

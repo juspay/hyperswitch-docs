@@ -1,7 +1,5 @@
 ---
-description: >-
-  Test payment integrations using sample credentials for cards, wallets, and
-  connectors across different payment scenarios
+description: Test payment integrations using sample credentials for cards, wallets, and connectors across different payment scenarios
 icon: key
 ---
 

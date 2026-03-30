@@ -1,7 +1,5 @@
 ---
-description: >-
-  Setup Taxjar on Juspay Hyperswitch to automatically calculate tax in case of Express
-  checkout wallets
+description: Setup Taxjar on Juspay Hyperswitch to automatically calculate tax in case of Express checkout wallets
 icon: filter-circle-dollar
 ---
 

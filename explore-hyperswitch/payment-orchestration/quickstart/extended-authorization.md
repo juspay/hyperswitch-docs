@@ -1,7 +1,5 @@
 ---
-description: >-
-  Extend authorization hold periods beyond standard windows for hospitality,
-  rentals, and pre-order scenarios requiring delayed capture
+description: Extend authorization hold periods beyond standard windows for hospitality, rentals, and pre-order scenarios requiring delayed capture
 hidden: true
 icon: clock
 ---

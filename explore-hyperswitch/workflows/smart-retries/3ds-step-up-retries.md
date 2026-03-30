@@ -1,7 +1,5 @@
 ---
-description: >-
-  Automatically retry failed non-3DS payments by stepping them up to 3DS
-  authentication
+description: Automatically retry failed non-3DS payments by stepping them up to 3DS authentication
 hidden: true
 icon: angles-up
 ---

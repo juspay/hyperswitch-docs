@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Vault SDK with React for secure PCI-compliant payment method
-  tokenization and storage solutions
+description: Integrate Vault SDK with React for secure PCI-compliant payment method tokenization and storage solutions
 icon: rocket-vertical
 ---
 

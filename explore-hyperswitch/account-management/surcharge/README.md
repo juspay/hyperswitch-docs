@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure surcharge rules based on payment parameters to pass processing costs
-  to customers and optimize transaction economics
+description: Configure surcharge rules based on payment parameters to pass processing costs to customers and optimize transaction economics
 icon: clipboard-list-check
 ---
 

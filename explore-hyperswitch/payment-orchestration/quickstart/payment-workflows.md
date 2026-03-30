@@ -1,7 +1,5 @@
 ---
-description: >-
-  Explore composable payment workflows for direct payments, customer acquisition,
-  and end-to-end payment scenarios in vertical SaaS platforms
+description: Explore composable payment workflows for direct payments, customer acquisition, and end-to-end payment scenarios in vertical SaaS platforms
 icon: code-compare
 ---
 

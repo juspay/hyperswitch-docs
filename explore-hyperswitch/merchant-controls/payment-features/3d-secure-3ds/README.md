@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement native 3D Secure 2.0 authentication with frictionless and challenge
-  flows for fraud prevention and liability shift
+description: Implement native 3D Secure 2.0 authentication with frictionless and challenge flows for fraud prevention and liability shift
 hidden: true
 icon: shield-check
 ---

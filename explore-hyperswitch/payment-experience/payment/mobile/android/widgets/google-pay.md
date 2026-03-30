@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Google Pay widget into Android layouts for streamlined wallet-based
-  payments
+description: Integrate Google Pay widget into Android layouts for streamlined wallet-based payments
 icon: google
 ---
 

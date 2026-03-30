@@ -1,7 +1,5 @@
 ---
-description: >-
-  Increase authorized amounts after initial authorization for hotels, rentals,
-  and services with uncertain final costs
+description: Increase authorized amounts after initial authorization for hotels, rentals, and services with uncertain final costs
 icon: arrow-up-right-dots
 ---
 

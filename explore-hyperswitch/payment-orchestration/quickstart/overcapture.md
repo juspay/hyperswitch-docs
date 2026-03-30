@@ -1,7 +1,5 @@
 ---
-description: >-
-  Enable overcapture functionality to settle amounts greater than originally
-  authorized for tips, shipping, and post-authorization adjustments
+description: Enable overcapture functionality to settle amounts greater than originally authorized for tips, shipping, and post-authorization adjustments
 hidden: true
 icon: plus
 ---

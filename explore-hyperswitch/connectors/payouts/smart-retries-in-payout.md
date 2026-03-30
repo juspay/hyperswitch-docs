@@ -1,7 +1,5 @@
 ---
-description: >-
-  Automatically recover failed payout attempts by retrying based on error types
-  and connector availability
+description: Automatically recover failed payout attempts by retrying based on error types and connector availability
 icon: magnifying-glass-arrows-rotate
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Leverage the integrated vault that comes with Juspay Hyperswitch Orchestration
-  account to store cards
+description: Leverage the integrated vault that comes with Juspay Hyperswitch Orchestration account to store cards
 icon: box-circle-check
 ---
 

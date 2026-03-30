@@ -1,7 +1,5 @@
 ---
-description: >-
-  Enable PayPal, Google Pay, and Apple Pay wallets to offer customers fast
-  one-click checkout experiences and alternative payment options
+description: Enable PayPal, Google Pay, and Apple Pay wallets to offer customers fast one-click checkout experiences and alternative payment options
 description: Accept PayPal, GPay and Apple Pay through Juspay Hyperswitch
 icon: wallet
 ---

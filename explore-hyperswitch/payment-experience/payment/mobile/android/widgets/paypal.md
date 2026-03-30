@@ -1,7 +1,5 @@
 ---
-description: >-
-  Add PayPal widget to Android layouts for seamless digital wallet payment
-  processing
+description: Add PayPal widget to Android layouts for seamless digital wallet payment processing
 icon: paypal
 ---
 

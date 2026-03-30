@@ -1,7 +1,5 @@
 ---
-description: >-
-  Assign roles and permissions to team members with seven default roles for
-  organization, merchant, and profile level access control
+description: Assign roles and permissions to team members with seven default roles for organization, merchant, and profile level access control
 icon: screen-users
 ---
 

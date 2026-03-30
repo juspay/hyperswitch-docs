@@ -1,7 +1,5 @@
 ---
-description: >-
-  Process payouts using stored payment methods from the PCI-compliant vault
-  without re-collecting sensitive card data
+description: Process payouts using stored payment methods from the PCI-compliant vault without re-collecting sensitive card data
 icon: repeat
 ---
 

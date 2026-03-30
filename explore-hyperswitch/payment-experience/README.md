@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate optimized checkout experiences with customizable UIs, payment links,
-  and intelligent payment method display for higher conversions
+description: Integrate optimized checkout experiences with customizable UIs, payment links, and intelligent payment method display for higher conversions
 icon: sidebar-flip
 ---
 

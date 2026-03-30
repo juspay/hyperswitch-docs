@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure Samsung Pay for secure NFC and MST payments on supported Samsung
-  devices with tokenization and biometric authentication
+description: Configure Samsung Pay for secure NFC and MST payments on supported Samsung devices with tokenization and biometric authentication
 icon: mobile-signal
 ---
 

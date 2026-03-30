@@ -1,7 +1,5 @@
 ---
-description: >-
-  Monitor interchange fees, detect cost anomalies, and optimize payment
-  processing expenses across all processors with AI-powered insights
+description: Monitor interchange fees, detect cost anomalies, and optimize payment processing expenses across all processors with AI-powered insights
 icon: brain-circuit
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Offer buy now pay later options including Klarna, Affirm, and Afterpay with
-  redirection and in-app SDK flows
+description: Offer buy now pay later options including Klarna, Affirm, and Afterpay with redirection and in-app SDK flows
 icon: calendar-day
 ---
 

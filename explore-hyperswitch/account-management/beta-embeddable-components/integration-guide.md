@@ -1,7 +1,5 @@
 ---
-description: >-
-  Legacy guide for embedding connector configuration into React applications with
-  JWT-based authentication
+description: Legacy guide for embedding connector configuration into React applications with JWT-based authentication
 hidden: true
 ---
 

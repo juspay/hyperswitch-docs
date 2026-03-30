@@ -1,7 +1,5 @@
 ---
-description: >-
-  Migrate payment data securely between processors using encrypted transfers and
-  PCI-compliant handling procedures
+description: Migrate payment data securely between processors using encrypted transfers and PCI-compliant handling procedures
 icon: utility-pole-double
 ---
 

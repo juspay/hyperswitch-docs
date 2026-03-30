@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optimize processing fees on debit payments by routing traffic to the cheapest
-  available debit network
+description: Optimize processing fees on debit payments by routing traffic to the cheapest available debit network
 icon: hand-holding-dollar
 ---
 

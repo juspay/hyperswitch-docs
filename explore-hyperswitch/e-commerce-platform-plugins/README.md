@@ -1,7 +1,5 @@
 ---
-description: >-
-  Extend e-commerce platforms with Juspay Hyperswitch plugins for WooCommerce and Saleor
-  with advanced payment features and checkout optimization
+description: Extend e-commerce platforms with Juspay Hyperswitch plugins for WooCommerce and Saleor with advanced payment features and checkout optimization
 hidden: true
 noIndex: true
 icon: plug-circle-bolt

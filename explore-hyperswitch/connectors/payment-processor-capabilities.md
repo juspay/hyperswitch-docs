@@ -1,7 +1,5 @@
 ---
-description: >-
-  A technical reference for the parameters and lifecycle flows supported across
-  card and wallet integrations.
+description: A technical reference for the parameters and lifecycle flows supported across card and wallet integrations.
 icon: money-bill-1-wave
 ---
 

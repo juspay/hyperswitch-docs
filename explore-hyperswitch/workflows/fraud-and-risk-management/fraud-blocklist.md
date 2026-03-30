@@ -1,7 +1,5 @@
 ---
-description: >-
-  Block fraudulent transactions by creating blocklists for card fingerprints, card
-  bins, and extended bins based on observed suspicious activity
+description: Block fraudulent transactions by creating blocklists for card fingerprints, card bins, and extended bins based on observed suspicious activity
 icon: ban
 ---
 

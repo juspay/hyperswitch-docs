@@ -1,7 +1,5 @@
 ---
-description: >-
-  Accept credit and debit card payments with support for saved cards, recurring
-  mandates, and manual capture workflows
+description: Accept credit and debit card payments with support for saved cards, recurring mandates, and manual capture workflows
 icon: credit-card
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Enhance fraud protection with processor-agnostic FRM integration, pre and
-  post-auth checks, and unified dashboard for transaction monitoring
+description: Enhance fraud protection with processor-agnostic FRM integration, pre and post-auth checks, and unified dashboard for transaction monitoring
 icon: shield-check
 ---
 

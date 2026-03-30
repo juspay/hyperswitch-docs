@@ -1,7 +1,5 @@
 ---
-description: >-
-  Simplify payment orchestration workflows with normalized APIs for 3DS, fraud
-  management, vaulting, retries, and intelligent routing without code changes
+description: Simplify payment orchestration workflows with normalized APIs for 3DS, fraud management, vaulting, retries, and intelligent routing without code changes
 icon: arrow-progress
 ---
 

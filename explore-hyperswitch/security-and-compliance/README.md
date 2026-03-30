@@ -1,7 +1,5 @@
 ---
-description: >-
-  Explore comprehensive security measures ensuring PCI DSS 4.0 and GDPR
-  compliance with global data protection and infrastructure standards
+description: Explore comprehensive security measures ensuring PCI DSS 4.0 and GDPR compliance with global data protection and infrastructure standards
 icon: arrow-down-up-lock
 ---
 

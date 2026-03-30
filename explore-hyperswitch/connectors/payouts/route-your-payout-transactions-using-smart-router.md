@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure smart routing logic for payouts to distribute traffic across
-  processors for redundancy and cost optimization
+description: Configure smart routing logic for payouts to distribute traffic across processors for redundancy and cost optimization
 icon: swap
 ---
 

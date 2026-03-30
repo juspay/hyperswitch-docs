@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure Apple Pay for iOS apps and Safari web with Touch ID and Face ID
-  authentication across 75 supported countries
+description: Configure Apple Pay for iOS apps and Safari web with Touch ID and Face ID authentication across 75 supported countries
 description: Guide to using Apple Pay payment method on Juspay Hyperswitch
 icon: apple-pay
 ---

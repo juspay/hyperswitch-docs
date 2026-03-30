@@ -1,7 +1,5 @@
 ---
-description: >-
-  Best for teams with strict existing vault dependencies who want to leverage
-  Juspay Hyperswitch for payment routing.
+description: Best for teams with strict existing vault dependencies who want to leverage Juspay Hyperswitch for payment routing.
 hidden: true
 icon: up-right-from-square
 ---

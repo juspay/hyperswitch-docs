@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Juspay Hyperswitch with Saleor ecommerce platform for global payment
-  acceptance and seamless checkout experiences
+description: Integrate Juspay Hyperswitch with Saleor ecommerce platform for global payment acceptance and seamless checkout experiences
 hidden: true
 icon: plug-circle-bolt
 ---

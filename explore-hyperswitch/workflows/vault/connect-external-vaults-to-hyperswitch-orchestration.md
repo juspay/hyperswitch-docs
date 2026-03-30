@@ -1,7 +1,5 @@
 ---
-description: >-
-  Connect external vaults to store cards instead of the integrated vault that
-  comes within your Juspay Hyperswitch Orchestration account
+description: Connect external vaults to store cards instead of the integrated vault that comes within your Juspay Hyperswitch Orchestration account
 hidden: true
 icon: plug
 ---

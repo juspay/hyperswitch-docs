@@ -1,7 +1,5 @@
 ---
-description: >-
-  Design your organization structure with merchant accounts and profiles for
-  multi-business, marketplace, and sub-merchant payment management
+description: Design your organization structure with merchant accounts and profiles for multi-business, marketplace, and sub-merchant payment management
 icon: people-roof
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement 3D Secure authentication via PSPs, standalone providers, or import
-  external results for comprehensive fraud protection
+description: Implement 3D Secure authentication via PSPs, standalone providers, or import external results for comprehensive fraud protection
 icon: badge-check
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure Xendit split settlements to automatically distribute payments
-  between multiple parties and platforms
+description: Configure Xendit split settlements to automatically distribute payments between multiple parties and platforms
 icon: hexagon-xmark
 ---
 

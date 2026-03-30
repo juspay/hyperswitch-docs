@@ -1,7 +1,5 @@
 ---
-description: >-
-  Monitor payment analytics, conversion funnels, and operations through a unified
-  dashboard with actionable insights for optimization
+description: Monitor payment analytics, conversion funnels, and operations through a unified dashboard with actionable insights for optimization
 icon: chart-pie-simple-circle-dollar
 ---
 

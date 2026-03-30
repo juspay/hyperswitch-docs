@@ -1,7 +1,5 @@
 ---
-description: >-
-  Validate customer payment data and create mandates for charging customers later
-  without immediate billing
+description: Validate customer payment data and create mandates for charging customers later without immediate billing
 icon: circle-0
 ---
 

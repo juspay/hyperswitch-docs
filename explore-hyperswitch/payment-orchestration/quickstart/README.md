@@ -1,7 +1,5 @@
 ---
-description: >-
-  Start accepting payments quickly by integrating Hyperswitch SDK and configuring
-  payment processors with minimal development effort
+description: Start accepting payments quickly by integrating Hyperswitch SDK and configuring payment processors with minimal development effort
 icon: bolt
 ---
 

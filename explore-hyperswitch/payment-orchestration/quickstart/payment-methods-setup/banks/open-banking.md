@@ -1,7 +1,5 @@
 ---
-description: >-
-  Account Verification and Payment Initiation Services using open banking
-  providers
+description: Account Verification and Payment Initiation Services using open banking providers
 ---
 
 # Open Banking

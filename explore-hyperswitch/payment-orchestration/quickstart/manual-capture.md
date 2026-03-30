@@ -1,7 +1,5 @@
 ---
-description: >-
-  Place holds on customer funds and capture them later with full or partial
-  amounts using manual capture workflows
+description: Place holds on customer funds and capture them later with full or partial amounts using manual capture workflows
 hidden: true
 icon: sack-dollar
 ---

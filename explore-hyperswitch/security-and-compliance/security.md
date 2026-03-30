@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement multi-layered encryption, secure vaulting, and data protection measures
-  that meet PCI DSS and ISO 27001 standards for payment security
+description: Implement multi-layered encryption, secure vaulting, and data protection measures that meet PCI DSS and ISO 27001 standards for payment security
 icon: cloud-check
 ---
 

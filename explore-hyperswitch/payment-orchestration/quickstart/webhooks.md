@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure real-time webhook notifications for payment events with signature
-  verification, retry logic, and duplicate handling capabilities
+description: Configure real-time webhook notifications for payment events with signature verification, retry logic, and duplicate handling capabilities
 icon: anchor
 ---
 

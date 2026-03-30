@@ -1,7 +1,5 @@
 ---
-description: >-
-  Process split payments combining gift cards with cards to complete transactions
-  when single payment methods have insufficient balance
+description: Process split payments combining gift cards with cards to complete transactions when single payment methods have insufficient balance
 icon: split
 ---
 

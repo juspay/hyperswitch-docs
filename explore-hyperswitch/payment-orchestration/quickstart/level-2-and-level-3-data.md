@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optimize interchange costs by including Level 2 and Level 3 enhanced data in
-  commercial card payment requests
+description: Optimize interchange costs by including Level 2 and Level 3 enhanced data in commercial card payment requests
 ---
 
 # Level 2 and Level 3 data

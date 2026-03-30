@@ -1,7 +1,5 @@
 ---
-description: >-
-  Accept cryptocurrency payments through blockchain technology with secure wallet
-  transactions and transparent processing
+description: Accept cryptocurrency payments through blockchain technology with secure wallet transactions and transparent processing
 icon: bitcoin-sign
 ---
 

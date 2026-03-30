@@ -1,7 +1,5 @@
 ---
-description: >-
-  Export payment data to Amazon Redshift for advanced analytics, reporting, and
-  business intelligence with automated ingestion pipelines
+description: Export payment data to Amazon Redshift for advanced analytics, reporting, and business intelligence with automated ingestion pipelines
 icon: tachograph-digital
 ---
 

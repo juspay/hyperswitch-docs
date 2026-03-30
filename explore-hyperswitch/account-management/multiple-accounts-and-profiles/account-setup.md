@@ -1,7 +1,5 @@
 ---
-description: >-
-  Set up your Juspay Hyperswitch account through the control center with API keys,
-  payment processors, and business profiles for operations
+description: Set up your Juspay Hyperswitch account through the control center with API keys, payment processors, and business profiles for operations
 ---
 
 # ⚙️ Control Centre Account setup

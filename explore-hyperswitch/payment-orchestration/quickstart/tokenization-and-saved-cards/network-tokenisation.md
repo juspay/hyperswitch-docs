@@ -1,7 +1,5 @@
 ---
-description: >-
-  Network Tokenization in Juspay Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+description: Network Tokenization in Juspay Hyperswitch: Increase Security and Authorization Rates with Minimal Changes
 icon: shield-check
 ---
 

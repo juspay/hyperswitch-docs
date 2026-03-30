@@ -1,7 +1,5 @@
 ---
-description: >-
-  Ensure GDPR compliance with data protection principles, privacy controls, and
-  data subject rights management for payment processing
+description: Ensure GDPR compliance with data protection principles, privacy controls, and data subject rights management for payment processing
 icon: compact-disc
 ---
 

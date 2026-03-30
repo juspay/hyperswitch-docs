@@ -1,7 +1,5 @@
 ---
-description: >-
-  Leverage out-of-the-box PCI DSS Level 1 compliance with tokenization, annual
-  audits, and secure card handling for payment processing
+description: Leverage out-of-the-box PCI DSS Level 1 compliance with tokenization, annual audits, and secure card handling for payment processing
 icon: credit-card
 ---
 

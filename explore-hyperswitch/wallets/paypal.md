@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure PayPal wallet payments through native SDK or redirection flows with
-  support for 200 countries and 25 currencies
+description: Configure PayPal wallet payments through native SDK or redirection flows with support for 200 countries and 25 currencies
 description: Setup PayPal on your application
 icon: paypal
 ---

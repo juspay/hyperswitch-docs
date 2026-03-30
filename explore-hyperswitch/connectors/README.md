@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate 90 plus payment processors and 140 plus payment methods through
-  standardized APIs with minimal development effort
+description: Integrate 90 plus payment processors and 140 plus payment methods through standardized APIs with minimal development effort
 icon: plug
 ---
 

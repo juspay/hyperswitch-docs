@@ -1,7 +1,5 @@
 ---
-description: >-
-  Process one-time payments, saved methods, and recurring billing through
-  flexible SDK and server-to-server integration patterns
+description: Process one-time payments, saved methods, and recurring billing through flexible SDK and server-to-server integration patterns
 icon: file-invoice-dollar
 ---
 

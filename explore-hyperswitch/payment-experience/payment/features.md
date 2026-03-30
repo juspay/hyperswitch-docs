@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement card scanning with OCR technology for accurate real-time card data
-  extraction and faster checkout
+description: Implement card scanning with OCR technology for accurate real-time card data extraction and faster checkout
 icon: barcode-read
 ---
 

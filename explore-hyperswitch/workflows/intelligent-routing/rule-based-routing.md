@@ -1,7 +1,5 @@
 ---
-description: >-
-  Route transaction through processors with advanced rules on the basis of
-  various payment parameters
+description: Route transaction through processors with advanced rules on the basis of various payment parameters
 icon: ruler
 ---
 

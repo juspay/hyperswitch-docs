@@ -1,7 +1,5 @@
 ---
-description: >-
-  Unify your marketplace settlement logic across multiple processors through a
-  single configuration.
+description: Unify your marketplace settlement logic across multiple processors through a single configuration.
 icon: split
 ---
 

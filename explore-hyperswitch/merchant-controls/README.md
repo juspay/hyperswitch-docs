@@ -1,7 +1,5 @@
 ---
-description: >-
-  Deliver seamless checkout experiences with customizable UIs, native 3DS, and
-  Click to Pay integration for higher conversions
+description: Deliver seamless checkout experiences with customizable UIs, native 3DS, and Click to Pay integration for higher conversions
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket

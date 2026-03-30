@@ -1,7 +1,5 @@
 ---
-description: >-
-  Export payment data securely to a new PCI-compliant processor using encrypted
-  transfers and compliance verification
+description: Export payment data securely to a new PCI-compliant processor using encrypted transfers and compliance verification
 icon: left-from-bracket
 ---
 

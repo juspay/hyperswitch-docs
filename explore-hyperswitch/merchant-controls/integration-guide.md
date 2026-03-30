@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Juspay Hyperswitch web and mobile SDKs for customizable checkout experiences
-  with secure payment collection and PCI compliance
+description: Integrate Juspay Hyperswitch web and mobile SDKs for customizable checkout experiences with secure payment collection and PCI compliance
 hidden: true
 icon: puzzle-piece
 ---

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement secure one-click checkout with Click to Pay using passkey
-  authentication across Visa, Mastercard, Amex, and Discover networks
+description: Implement secure one-click checkout with Click to Pay using passkey authentication across Visa, Mastercard, Amex, and Discover networks
 icon: chevrons-right
 ---
 

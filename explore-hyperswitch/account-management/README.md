@@ -1,7 +1,5 @@
 ---
-description: >-
-  Manage payment operations, analytics, disputes, reconciliation, and team access
-  through a unified control center interface
+description: Manage payment operations, analytics, disputes, reconciliation, and team access through a unified control center interface
 icon: joystick
 ---
 

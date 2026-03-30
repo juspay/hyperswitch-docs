@@ -1,7 +1,5 @@
 ---
-description: >-
-  Set up cards, wallets, pay later, bank transfers, and crypto payment methods
-  to optimize checkout conversion and reduce fraud
+description: Set up cards, wallets, pay later, bank transfers, and crypto payment methods to optimize checkout conversion and reduce fraud
 icon: credit-card
 ---
 

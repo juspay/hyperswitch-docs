@@ -1,7 +1,5 @@
 ---
-description: >-
-  Deploy isolated tenant environments with customizable branding, extensions, and
-  permissions while sharing underlying infrastructure securely
+description: Deploy isolated tenant environments with customizable branding, extensions, and permissions while sharing underlying infrastructure securely
 icon: cubes-stacked
 ---
 

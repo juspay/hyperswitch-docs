@@ -1,7 +1,5 @@
 ---
-description: >-
-  Set up payout processors and configure accounts to begin processing fund
-  distributions to third parties
+description: Set up payout processors and configure accounts to begin processing fund distributions to third parties
 icon: flag-checkered
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Configure intelligent payment routing with volume, rule, and fallback-based
-  strategies to optimize costs and authorization rates across processors
+description: Configure intelligent payment routing with volume, rule, and fallback-based strategies to optimize costs and authorization rates across processors
 hidden: true
 icon: swap
 ---

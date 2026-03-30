@@ -1,7 +1,5 @@
 ---
-description: >-
-  Add customizable card input widget to Android layouts for secure payment card
-  data collection
+description: Add customizable card input widget to Android layouts for secure payment card data collection
 icon: credit-card
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Improve payment success rates by automatically retrying failed transactions
-  with alternative processors and enhanced payloads
+description: Improve payment success rates by automatically retrying failed transactions with alternative processors and enhanced payloads
 icon: magnifying-glass-arrows-rotate
 ---
 

@@ -1,7 +1,5 @@
 ---
-description: >-
-  Implement one-click express checkout widget for returning customers using
-  saved payment methods
+description: Implement one-click express checkout widget for returning customers using saved payment methods
 icon: cart-shopping-fast
 ---
 

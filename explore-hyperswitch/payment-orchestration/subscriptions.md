@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate subscription providers with flexible payment processor routing,
-  local payment methods, and optimized recurring payment flows
+description: Integrate subscription providers with flexible payment processor routing, local payment methods, and optimized recurring payment flows
 hidden: true
 icon: repeat
 ---

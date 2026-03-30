@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optimize payment routing dynamically using auth rates, least cost, elimination,
-  and contract-based strategies with ML-driven decisions
+description: Optimize payment routing dynamically using auth rates, least cost, elimination, and contract-based strategies with ML-driven decisions
 icon: flux-capacitor
 ---
 

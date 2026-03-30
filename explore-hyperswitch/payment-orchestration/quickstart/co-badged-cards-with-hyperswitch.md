@@ -1,7 +1,5 @@
 ---
-description: >-
-  Enable co-badged card support to let customers choose between local and global
-  payment networks at checkout for optimal routing
+description: Enable co-badged card support to let customers choose between local and global payment networks at checkout for optimal routing
 icon: credit-card
 ---
 
