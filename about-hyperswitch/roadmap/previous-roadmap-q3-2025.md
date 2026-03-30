@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-#### Core Values <a href="#core-values" id="core-values"></a>
+## Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -19,7 +19,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
 Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
 
@@ -57,7 +57,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 * Open-source revenue recovery: Merchants will be able to self-deploy Hyperswitch's integrations and intelligence services onto their own stack
 * Multi-card retries: The system will intelligently utilize payment methods already present with the customer to perform retries on a given invoice
 * Intelligent invoice retrying: Automatically retries invoices declined due to hard decline error codes, within the retry budget specified by the merchant
-* Custom subscription support: Enables integration with the merchant’s in-house subscription management platform to recover failed payments
+* Custom subscription support: Enables integration with the merchant's in-house subscription management platform to recover failed payments
 
 ### **Intelligent Routing**
 
@@ -66,7 +66,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 ### **Cost Observability**
 
-* Smarter Fee Attribution Engine: Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
+* Smarter Fee Attribution Engine: Enhancing our system's ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
 * Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly
 * Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers
 

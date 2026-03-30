@@ -1,10 +1,11 @@
 ---
+description: Configure over-capture to settle amounts exceeding the original authorization for handling additional charges and post-authorization adjustments
 icon: chart-diagram
 ---
 
 # Overcapture
 
-### Overview
+## Overview
 
 In card payments, Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
 
@@ -14,15 +15,15 @@ This is particularly useful in scenarios such as:
 * Price adjustments made after initial authorization.
 * Reducing the risk of under-capturing when final order values differ.
 
-### Enabling Over Capture
+## Enabling Over Capture
 
-#### 1. Profile-level Configuration (via Dashboard)
+### 1. Profile-level Configuration (via Dashboard)
 
 * Navigate to:\
   Developer → Payment Settings → Always Enable Over Capture
 * Toggle Enable/Disable as required.
 
-#### 2. Per-request Configuration (via API)
+### 2. Per-request Configuration (via API)
 
 Use the boolean field `enable_overcapture` in your payment request.
 
@@ -39,7 +40,7 @@ This can be passed in:
 
 ***
 
-### Example: API Request
+## Example: API Request
 
 ```json
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -56,7 +57,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ```
 
-### Example: API Response
+## Example: API Response
 
 ```json
 {
@@ -77,7 +78,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ```
 
-#### Field Semantics
+### Field Semantics
 
 `enable_overcapture` Indicates merchant intent.
 
@@ -97,12 +98,12 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ***
 
-### Monitoring & Settlement
+## Monitoring & Settlement
 
 * After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
 * Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
 
-### Merchant Action
+## Merchant Action
 
 * Use Dashboard settings for global enablement
 * Use API overrides for payment-specific enablement

@@ -28,13 +28,13 @@ Our core values have pretty much remained the same since the early days and here
 * 🟩 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting
 * 🟩 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
 * _(removed from the Q1 roadmap)_ Enabling card transactions using `payment gateway token` to ensure business continuity for merchants with card vaulted with payment gateways&#x20;
-*   🟩 New connector and payment method Integrations&#x20;
+*   🟩 New connector and payment method Integrations
 
     * 🟩 Place2Pay
     * 🟩 Billwerk
     * 🟩 Pix and Boleto via Adyen
 
-    _(the list of connectors will keep expanding as we receive more requests from the community!!! )_
+    _(the list of connectors will keep expanding as we receive more requests from the community!!!)_
 
 ### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 

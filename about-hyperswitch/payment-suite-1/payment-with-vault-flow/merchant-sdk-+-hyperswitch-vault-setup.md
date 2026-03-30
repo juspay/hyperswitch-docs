@@ -10,9 +10,9 @@ In this approach, the merchant uses their own frontend SDK to capture card detai
 
 Once tokenized, Hyperswitch backend handles orchestration, routing, retries, and connector execution using vault tokens. All orchestration configuration is managed through the Hyperswitch Dashboard.
 
-#### Understanding Payment and Vault Workflow&#x20;
+### Understanding Payment and Vault Workflow
 
-#### **Vaulting :**
+### **Vaulting :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (6).svg" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +40,7 @@ Hyperswitch forwards the payment request to the processor through the Hyperswitc
 
 **6. Vault Card Data**
 
-After successful authorization, Hyperswitch securely stores the card data in the Hyperswitch Vault. The vault tokenizes the card details and generates a  `payment_method_id` value which can be used further.
+After successful authorization, Hyperswitch securely stores the card data in the Hyperswitch Vault. The vault tokenizes the card details and generates a `payment_method_id` value which can be used further.
 
 **7. Return Payment Response**
 
@@ -48,11 +48,9 @@ Hyperswitch sends the final payment response, including transaction status and t
 
 
 
-#### **Payment Using Stored Card :**&#x20;
+### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (7).svg" alt=""><figcaption></figcaption></figure>
-
-&#x20;
 
 **1. Fetch Saved Payment Methods**
 
@@ -64,7 +62,7 @@ The Merchant SDK populates the checkout interface with the retrieved saved cards
 
 **3. Payment Creation with Auto-Confirmation**
 
-The Merchant Server calls [ `v2/payments/create`](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API along with the `payment_method_id` and setting the `confirm` parameter to `true` .
+The Merchant Server calls [`v2/payments/create`](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API along with the `payment_method_id` and setting the `confirm` parameter to `true`.
 
 **4. Vault Decryption and Token Retrieval**
 
@@ -80,13 +78,13 @@ The Hyperswitch Connector handles the synchronous handshake with the external pr
 
 **7. Final Status Propagation**
 
-The Hyperswitch Server sends the final transaction state (e.g., `succeeded`, `failed`) to  Merchant Server. This allows the backend to update the order status while the frontend notifies the user of the successful payment.
+The Hyperswitch Server sends the final transaction state (e.g., `succeeded`, `failed`) to Merchant Server. This allows the backend to update the order status while the frontend notifies the user of the successful payment.
 
 
 
 **API Reference :**
 
-1. [Payment Create API ](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
+1. [Payment Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create)&#x20;
 2. [Payment Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)&#x20;
 3. [List Payment Method](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-customer)
 4. [Payment Create and Confirm API](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent)
