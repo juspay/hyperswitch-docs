@@ -1,5 +1,6 @@
 ---
 icon: hand-holding-circle-dollar
+description: Implement secure card storage and payment flows to enable flexible server-to-server transaction processing with reusable payment tokens
 ---
 
 # Payment Method (Card)
@@ -20,11 +21,11 @@ The business can use the Payment Method SDK or `/payment-methods` API to first c
 
 The business can then use the `payment_method_id` in `/payments` API to perform all functionalities supported by the [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) flow.&#x20;
 
-### **Payment Method Lifecycle**
+## Payment Method Lifecycle
 
 The Payment Method flow leverages the full suite of Hyperswitch [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) capabilities while granting businesses granular control over the user journey. By utilizing Server-to-Server (S2S) APIs and unique identifiers `payment_method_id`, businesses can separate the collection of payment credentials from the actual transaction logic.
 
-#### **The Two-Step Integration Pattern**
+### The Two-Step Integration Pattern
 
 
 

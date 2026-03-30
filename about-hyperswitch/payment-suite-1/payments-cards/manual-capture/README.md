@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Place holds on customer funds to capture payment later via full, partial, or multiple capture options
 icon: transmission
 ---
 

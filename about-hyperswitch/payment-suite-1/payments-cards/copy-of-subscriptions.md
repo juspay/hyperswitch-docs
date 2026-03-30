@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Augment subscription payments with orchestration capabilities to enable multi-PSP routing, intelligent retries, and centralized tokenization for improved reliability and cost optimization
 hidden: true
 icon: arrows-rotate-reverse
 ---
