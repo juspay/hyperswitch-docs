@@ -1,18 +1,18 @@
 ---
 description: >-
   Best for merchants seeking a pre-built, optimized payment UI backed by the
-  full Hyperswitch stack for secure data storage and routing.
+  full Juspay Hyperswitch stack for secure data storage and routing.
 ---
 
 # Hyperswitch SDK + Hyperswitch Vault Setup
 
-In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
+In this approach, the Juspay Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Juspay Hyperswitch backend and stored in Juspay Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
 
-The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
+The merchant uses the Juspay Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Juspay Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
 ### **Understanding Payment and Vault flow**
 
-### **Vaulting :**
+#### **Vaulting :**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
 
@@ -35,7 +35,7 @@ The final payment and vaulting status is returned to the SDK, which redirects th
 
 
 
-### **Payment Using Stored Card :**
+#### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 

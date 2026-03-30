@@ -7,9 +7,9 @@ icon: money-bills-simple
 
 The Payment Method SDK and `/payment-methods` API work in tandem with the `/payments` API to achieve any business objective as listed below.
 
-## Guest Checkout Flow (S2S)
+### Guest Checkout Flow (S2S)
 
-1. Collect card details and tokenise with HS [Create PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1) to get a [PM ID](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1#response-id) (payment\_methd\_id)
+1. Collect card details and tokenise with HS [Create PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1) to get a [PM ID](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1#response-id) (payment_method_id)
 2. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation
 3. For extended sessions, where token expires before order completion, create a new PM ID with the same card details using the Create PM API
 
@@ -19,7 +19,7 @@ Note - The PM ID in case of guest checkout is volatile in nature and has a defau
 For guest checkout flow the PM ID is NOT unique to Customer + Payment method combination.
 {% endhint %}
 
-## Customer Checkout Flow - First Time Payment (S2S)
+### Customer Checkout Flow - First Time Payment (S2S)
 
 1. Create a customer with HS using the [Create Customer API](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1)
 2. Use the customer\_id to tokenise the collected card details using Create PM API
@@ -27,19 +27,19 @@ For guest checkout flow the PM ID is NOT unique to Customer + Payment method com
 4. For extended sessions, where token expires before order completion update the PM with CVV using the [Update PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--update-v1) and use this PM ID to complete the payment
 
 {% hint style="info" %}
-Note - The CVV storage is volatile in nature and can be stored for 1-hour be default which can be extended by Merchant at a session level. \
+Note - The CVV storage is volatile in nature and can be stored for 1-hour by default which can be extended by Merchant at a session level. \
 \
 For logged-in user checkout flow the PM ID is unique to Customer + Payment method combination.
 {% endhint %}
 
-## Customer Checkout Flow - Repeat Purchase (S2S)
+### Customer Checkout Flow - Repeat Purchase (S2S)
 
 1. Fetch the stored cards for the customer using [List Saved PMs API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--list-customer-saved-payment-methods-v1) which returns the masked card details with corresponding PM ID
 2. Update the PM ID of the user selected card along with CVV value collected from the user using the [Update PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--update-v1)
 3. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation
 4. For extended sessions, where token expires before order completion update the PM again with the collected CVV and use this PM ID to complete the payment
 
-## Payment Method SDK Checkout - Guest, New Customer and Repeat Customer Flows
+### Payment Method SDK Checkout - Guest, New Customer and Repeat Customer Flows
 
 1. Create a PM session using the [Session Create API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) to get a [client secret](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-client-secret)
 2. For guest user, pass "storage\_type" as "volatile" and skip sending the Customer ID
@@ -53,14 +53,16 @@ For logged-in user checkout flow the PM ID is unique to Customer + Payment metho
 Note -  When using the HS SDK, the response always contains a temp token and you'll need to exchange it to get the PM ID via a S2S call.
 {% endhint %}
 
-## HS SDK Checkout for repeat customer - no CVV flow
+### HS SDK Checkout for repeat customer - no CVV flow
 
 1. Create a PM session using the [Session Create API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) to get a [client secret](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-client-secret)
 2. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the client secret and session_id
 3. The SDK lists the previously saved cards for customers to select
 4. If the card has been vaulted previously with an MIT setup for it, CVV is not collected for it and the SDK returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the response
 
-Note - The PM ID in case of guest checkout is volatile in nature and has a default expiry of 1-hour which can be extended by Merchant at a session level
+{% hint style="info" %}
+Note - The PM ID in case of guest checkout is volatile in nature and has a default expiry of 1-hour which can be extended by Merchant at a session level.
+{% endhint %}
 
 {% hint style="info" %}
 When using the HS SDK, the response always contains a temp token and you'll need to exchange it to get the PM ID via a S2S call. Highlighted in detail in (4.)

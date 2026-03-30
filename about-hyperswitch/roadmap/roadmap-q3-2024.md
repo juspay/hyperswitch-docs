@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Juspay Hyperswitch roadmap (July to Sept'24)
 icon: road
 ---
 
@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-## Recap of Q2 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+### Recap of Q2 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
 * Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods&#x20;
 * Vaulting payment methods with Hyperswitch for on-session payments
@@ -23,7 +23,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 * One-click Express Checkout through Applepay, Klarna, GooglePay
 * Secure payout iframe to collect payout details and trigger payouts
 
-## Core Values <a href="#core-values" id="core-values"></a>
+### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -31,7 +31,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
 There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
@@ -53,9 +53,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 | 💪         | Stretch target      |
 | 🚛         | Backlog feature     |
 
-## Roadmap <a href="#roadmap" id="roadmap"></a>
+### Roadmap <a href="#roadmap" id="roadmap"></a>
 
-### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
+#### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 Payment Method Management experience to view, add and delete payment methods (for Web platform)
 * New connector and payment method Integrations (more will be added as we progress)
@@ -70,23 +70,23 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 
 
-### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
+#### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
 * 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
 
-### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
+#### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
 * Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
   * 🟩 Wells Fargo (US)
   * 🟩 Deutsche Bank (DE)
 * 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
 
-### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
+#### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
 * 🟩  User management and dashboard analytics views at entity level granularity (org to profile)
 
-### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
+#### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟩 Payment plugins for ~~Commerce Tools~~ Saleor - Headless commerce platform to facilitate faster integrations
 * 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
