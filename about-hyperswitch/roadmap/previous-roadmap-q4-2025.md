@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Recap of Q3 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+## Recap of Q3 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
 * **Connectors**
   * **New PSP integrations** - Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook, Trust Payments, Nordea, and Silverflow
@@ -27,7 +27,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 * **Cost observability** - New capabilities to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs, advanced fee auditing capabilities, estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates, conversational AI interface, and expanded acquirer coverage: adding support for five or more new acquirer report formats (AIBMS, Elavon, PayPal, Stripe, and Amex)
 * **Control Centre** - Support for platform org and merchant to allow programmatic API-driven merchant account creation, management, and configuration
 
-### Core Values <a href="#core-values" id="core-values"></a>
+## Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -35,9 +35,9 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Juspay Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
+Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
 
 1. **Core Orchestration:** The core module supporting workflows unifying various connector
 2. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
@@ -47,9 +47,9 @@ Earlier this year, Juspay Hyperswitch was made more modular to provide businesse
 6. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
 7. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### **Core Orchestration and Connectors**
+### **Core Orchestration and Connectors**
 
 * **Connectors**\
   We plan to expand connector coverage with new integrations including
@@ -72,7 +72,7 @@ Earlier this year, Juspay Hyperswitch was made more modular to provide businesse
 
 _<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
 
-#### **Vault**
+### **Vault**
 
 *   **Guest Checkout Tokenization in Hyperswitch Vault**
 
@@ -86,13 +86,13 @@ _<mark style="color:blue;">Learn more about the existing Core Orchestration and 
 
 _<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-#### **Authentication and Checkout Experience**
+### **Authentication and Checkout Experience**
 
 *   **Authorization Uplift**
 
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
 
-#### **Revenue Recovery**
+### **Revenue Recovery**
 
 * **Advanced retry logic for Hard declines**\
   The system intelligently identifies and retries transactions that were falsely marked as hard declines. This feature aims to recover transactions that were previously considered unrecoverable. Merchants will be able to manage these retries by setting a configurable budget that limits the number retry attempts.
@@ -101,7 +101,7 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 
 _<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/payments-modules/revenue-recovery.md)
 
-#### **Reconciliation**
+### **Reconciliation**
 
 * **Rule Types Expansion**\
   Support for 1:many and many:1 rule types to enable flexible matching across split, aggregated, and multi-attempt transaction flows

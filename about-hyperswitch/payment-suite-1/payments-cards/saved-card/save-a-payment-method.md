@@ -5,7 +5,7 @@ icon: repeat
 
 # Use cases for Saved card
 
-Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
@@ -38,7 +38,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Juspay Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -52,7 +52,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 ```
 
 {% hint style="info" %}
-If you are using the Juspay Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
+If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
 
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 {% endhint %}
@@ -87,7 +87,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Juspay Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -101,7 +101,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 ```
 
 {% hint style="info" %}
-If you are using the Juspay Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
+If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
 
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 {% endhint %}

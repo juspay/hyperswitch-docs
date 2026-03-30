@@ -5,17 +5,17 @@ icon: arrows-rotate-reverse
 
 # Recurring payments
 
-Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
+Recurring payments via Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
 
 ### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
 When setting up subscription there are two distinct implementation flows. The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-##### 1. The Setup with Charge Flow
+#### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges. For this call Payments API with the below configuration parameters.
 
-##### **Required API Configuration**
+**Required API Configuration**
 
 Include below parameter and values while calling the [payments](https://api-reference.hyperswitch.io/v1/payments/payments--create) API.
 
@@ -24,7 +24,7 @@ Include below parameter and values while calling the [payments](https://api-refe
 | `amount`             | >0 (Greater than zero) |
 | `setup_future_usage` | `off_session`          |
 
-##### **Run-Ready API Example (CIT with Charge)**
+**Run-Ready API Example (CIT with Charge)**
 
 ```json
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -48,7 +48,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
-##### **Required API Configuration**
+**Required API Configuration**
 
 Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
 
@@ -58,7 +58,7 @@ Pass below parameters while calling payments API for [Zero Dollar Auth ](https:/
 | `amount`             | `0`            |
 | `payment_type`       | `payment_type` |
 
-##### **Run-Ready API Example (Zero Auth Mandate)**
+**Run-Ready API Example (Zero Auth Mandate)**
 
 ```json
 curl --location 'http://sandbox.hyperswitch.io/payments' \
@@ -99,7 +99,7 @@ Internally the payment_method_id is mapped to a bunch of credentials - PSP token
 
 ### Customer Consent Capture (Mandate Compliance)
 
-If you are not using Juspay Hyperswitch SDK, then `customer_acceptance`  (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
+If you are not using Hyperswitch SDK, then `customer_acceptance`  (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
 
 ```bash
 "customer_acceptance": {
@@ -112,7 +112,7 @@ If you are not using Juspay Hyperswitch SDK, then `customer_acceptance`  (custom
     }
 ```
 
-If you are using the Juspay Hyperswitch SDK, the `customer_acceptance` is sent in the [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request on the basis of customer clicking the save card radio button
+If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request on the basis of customer clicking the save card radio button
 
 **Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
 

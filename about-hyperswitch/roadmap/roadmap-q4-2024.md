@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+## Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
 * Juspay Hyperswitch is now PCI Software Security Standard (S3) certified
 * Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reduce the interchange fee
@@ -35,7 +35,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 * Localisation support for Payouts across 17 languages
 * Control Centre - Enable SSO sign in with Okta
 
-### Core Values <a href="#core-values" id="core-values"></a>
+## Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -43,7 +43,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
 There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
@@ -65,9 +65,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 | 💪         | Stretch target      |
 | 🚛         | Backlog feature     |
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
+### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 More payment authorization workflows - split payments and incremental authorization
 * New integrations -&#x20;
@@ -76,24 +76,24 @@ There are a lot of problems to be solved in payments, but our majority of our cu
   * 🟩 PAZE for card payments in the US
 * 🟩 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
 
-#### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
+### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
 * 🟩 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
 * 🟩 Implement MPAN (merchant tokens) for Applepay recurring payments
 * 🟩  Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
 
-#### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
+### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
 * More direct bank acquirer integrations
   * 🟩 JP Morgan
 
-#### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
+### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟩  Data reporting at an organization, merchant and profile level for easier reconciliation
 * 🟩  Enhancements in analytics module for Refunds, Disputes and Smart Retries
 * 🟩 Migration of Network Tokens for business continuity
 
-#### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
+### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟩  Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
 

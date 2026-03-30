@@ -1,5 +1,5 @@
 ---
-description: Interact with the Juspay Hyperswitch ecosystem through AI-powered documentation and MCP server for executing real API operations via natural language
+description: Interact with the Hyperswitch ecosystem through AI-powered documentation and MCP server for executing real API operations via natural language
 hidden: true
 noIndex: true
 icon: brain-circuit
@@ -7,7 +7,7 @@ icon: brain-circuit
 
 # AI Resources
 
-AI resources enable you to intelligently interact with the entire Juspay Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
+AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
 
 ### 1. DeepWikis - AI-Powered Documentation
 

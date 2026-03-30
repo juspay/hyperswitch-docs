@@ -19,7 +19,7 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 
 
-#### Vaulting&#x20;
+### Vaulting&#x20;
 
 **1. Create Payment Method Session (Server-Side)** The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
@@ -31,7 +31,7 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 
 
-#### Payment
+### Payment
 
 **Execute Proxy Payment (Server-Side)** The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 

@@ -39,9 +39,9 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Juspay Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
-##### Initial Subscription create flow (with CIT Payment)
+#### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
@@ -191,7 +191,7 @@ Sync with the subscription status for disbursement of services and future billin
 
 
 
-#### 2. For PCI Compliant merchants handling the entire checkout experience
+### 2. For PCI Compliant merchants handling the entire checkout experience
 
 {% stepper %}
 {% step %}
@@ -199,11 +199,11 @@ Follow the same steps as above to create a billing connector, fetch plan details
 {% endstep %}
 
 {% step %}
-Once the user selects a particular Plan, create a customer on Juspay Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
+Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
 {% endstep %}
 
 {% step %}
-After the user enter card/PM details and confirms the payment, hit the Juspay Hyperswitch Subscriptions API
+After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API
 
 {% hint style="info" %}
 When setting up subscription there are two distinct implementation flows.
@@ -364,10 +364,10 @@ MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswit
 
 ### FAQs
 
-### 1. What are subscriptions providers that are currently supported?
+#### 1. What are subscriptions providers that are currently supported?
 
 Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
 
-### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
-We are planning to release a Juspay Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.
+We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.

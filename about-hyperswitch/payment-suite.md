@@ -1,5 +1,5 @@
 ---
-description: Explore the complete Juspay Hyperswitch payment suite including orchestration, checkout experience, and payment operations for unified payment management
+description: Explore the complete Hyperswitch payment suite including orchestration, checkout experience, and payment operations for unified payment management
 hidden: true
 noIndex: true
 icon: suitcase
@@ -7,7 +7,7 @@ icon: suitcase
 
 # Payment Suite
 
-Juspay Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
+Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
 
 * **Payment Orchestration** – Unified API and no-code integrations for 300+ connectors and 300+ payment methods. Enables improving authorization rates with built-in intelligent routing.
 * **Checkout Experience** – Seamless, fast, and intuitive checkout experience for end users, improving conversions.
@@ -15,7 +15,7 @@ Juspay Hyperswitch provides a open-source, lightweight and full-stack solution t
 
 <figure><img src="../.gitbook/assets/docs_hs (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-### Explore Juspay Hyperswitch
+### Explore Hyperswitch
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Payment Orchestration</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td><td><a href="../explore-hyperswitch/payment-orchestration/">payment-orchestration</a></td></tr><tr><td><mark style="color:blue;"><strong>Checkout Experience</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td><td><a href="../explore-hyperswitch/merchant-controls/">merchant-controls</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Operations</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment Ops (1).png">Payment Ops (1).png</a></td><td><a href="../explore-hyperswitch/account-management/">account-management</a></td></tr></tbody></table>
 
@@ -31,9 +31,9 @@ Join our [Slack Community](https://inviter.co/hyperswitch-slack) to ask question
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
-### What's Included in the Juspay Hyperswitch Payment Suite
+### What's Included in the Hyperswitch Payment Suite
 
-### Payments&#x20;
+#### Payments&#x20;
 
 <table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Intelligent Payment Orchestration</strong></mark></td><td>Hyperswitch's Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.</td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Connectors (Processor Integrations)</strong></mark></td><td>Integrate with 300+ connectors enabling 300+ payment methods with zero development effort.    </td><td><a href="../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Checkout</strong></mark></td><td>Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.</td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Payment Links</strong></mark></td><td>Seamlessly integrate into Hyperswitch without writing much code.</td><td><a href="../.gitbook/assets/Payment Links (1).png">Payment Links (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Control Centre</strong></mark></td><td>Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations &#26; analytics use cases. This provides more power to your team for managing payments seamlessly.</td><td><a href="../.gitbook/assets/customization.jpg">customization.jpg</a></td></tr></tbody></table>
 

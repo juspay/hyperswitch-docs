@@ -1,5 +1,5 @@
 ---
-description: Configure the Juspay Hyperswitch MCP server to execute sandbox API operations directly through your AI assistant using natural language commands
+description: Configure the Hyperswitch MCP server to execute sandbox API operations directly through your AI assistant using natural language commands
 icon: user-robot-xmarks
 ---
 
@@ -16,7 +16,7 @@ This MCP server is only meant for product exploration while using sandbox enviro
 
 ### Step 1: Configure the Hyperswitch-Mintlify MCP server
 
-Juspay Hyperswitch's Mintlify MCP server lets your AI client search Juspay Hyperswitch docs and safely explore Sandbox APIs as tools (e.g., create a payment and get a 3DS/redirect URL).
+Hyperswitch's Mintlify MCP server lets your AI client search Hyperswitch docs and safely explore Sandbox APIs as tools (e.g., create a payment and get a 3DS/redirect URL).
 
 #### Recommended: Claude Code
 
