@@ -14,7 +14,7 @@ This MCP server is only meant for product exploration while using sandbox enviro
 
 **MCP URL:** `https://api-reference.hyperswitch.io/mcp`
 
-### Step 1: Configure the Hyperswitch-Mintlify MCP server
+#### Step 1: Configure the Hyperswitch-Mintlify MCP server
 
 Hyperswitch's Mintlify MCP server lets your AI client search Hyperswitch docs and safely explore Sandbox APIs as tools (e.g., create a payment and get a 3DS/redirect URL).
 
@@ -37,7 +37,7 @@ Run `claude` and verify if MCP was configured properly using `/mcp`. You should 
 Follow Mintlify's [client-specific setup guide](https://www.mintlify.com/docs/ai/model-context-protocol?_gl=1*1m5cmfd*_gcl_au*MTY1NjU2NDE1LjE3NjY0NzY1MzE.#example:-connect-to-the-mintlify-mcp-server) using the same MCP: `https://api-reference.hyperswitch.io/mcp`
 
 
-### Step 2: Make your first payment
+#### Step 2: Make your first payment
 
 Paste below prompt in your AI client after replacing with your sandbox `API_KEY`:
 
