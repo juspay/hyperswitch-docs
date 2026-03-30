@@ -7,21 +7,21 @@ hidden: true
 
 In the Payment with Vault flow setup, Hyperswitch acts as the central intelligence layer. You interact with a single unified API, and Hyperswitch manages the entire payment lifecycle across multiple processors.
 
-### How it Works
+#### How it Works
 
 1. **Unified Request:** Your backend sends a generic payment request to the Hyperswitch API.
 2. **Smart Routing:** The Hyperswitch Orchestrator evaluates your configured business rules (e.g., routing by volume, cost, or region).
 3. **Execution:** Hyperswitch transforms the request into the specific format required by the target Connector (Stripe, Adyen, Braintree, etc.).
 4. **State Management:** Hyperswitch maintains the payment state machine, handling webhooks, retries, and status updates automatically.
 
-### Technical Advantages
+#### Technical Advantages
 
 * **Abstracted Complexity:** You do not need to write or maintain processor-specific code.
 * **Dynamic Routing:** Switch traffic between processors in real-time via the Hyperswitch dashboard or during payment initiation API calls.
 * **Unified Reporting:** Transaction data across all processors is normalized into a single schema.
 * Every transaction is processed via a PSP and based on the API calls you can have -  zero dollar validation, multi-stage manual capture, or sophisticated recurring logic payment flows.
 
-### Choose the Right Setup
+#### Choose the Right Setup
 
 Depending on your UI strategy and data sovereignty requirements, the Payment with Vault Flow offers multiple implementation patterns. Each option is designed to help you balance user experience, engineering complexity, and PCI compliance scope in a way that best fits your business.
 

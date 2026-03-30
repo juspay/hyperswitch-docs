@@ -8,7 +8,7 @@ icon: money-bills-simple
 
 The Payment Method SDK provides APIs to securely capture and tokenize payment credentials, with support for vaulting payment details during the initial checkout flow. Upon successful vaulting, a persistent payment method ID is generated, which merchants can store and use to programmatically initiate subsequent transactions without re-collecting sensitive payment data.
 
-### **Key Features**
+#### **Key Features**
 
 * **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
 * **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
@@ -21,7 +21,7 @@ The Payment Method SDK provides APIs to securely capture and tokenize payment cr
 
 <figure><img src="../../../.gitbook/assets/Payment Method SDK (1).svg" alt=""><figcaption></figcaption></figure>
 
-### **Vaulting :**
+#### **Vaulting :**
 
 **1. Create Customer (Server-Side)**
 
@@ -43,7 +43,7 @@ Hyperswitch receives the request, securely stores the raw card data in the Vault
 
 Hyperswitch returns the `payment_method_id` in the response. You can use this payment method ID for future payments for this customer without handling sensitive card data again.
 
-### **Payment :**&#x20;
+#### **Payment :**&#x20;
 
 To charge the customer you will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with `confirm` as `true`
 

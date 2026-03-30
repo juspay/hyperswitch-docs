@@ -11,15 +11,15 @@ In most online payments use-cases, a merchant would want to capture the funds fr
 
 But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the 'two-step' flow or 'Auth and Capture' flow in general payments parlance. Here at Juspay Hyperswitch, we call this the 'Manual Capture' flow.
 
-## Benefits of Manual Capture
+### Benefits of Manual Capture
 
 1. Improved Control: Funds are captured only after goods or services are delivered.
 2. Flexibility: You can capture the full amount or a partial amount as per the delivery.
 3. Customer Satisfaction: Builds trust by charging customers only after fulfilling the order.
 
-## How to do Manual Capture?
+### How to do Manual Capture?
 
-### Step 1 — Create [Payment](https://api-reference.hyperswitch.io/v1/payments/payments--create) with Deferred Capture
+#### Step 1 — Create [Payment](https://api-reference.hyperswitch.io/v1/payments/payments--create) with Deferred Capture
 
 The 'capture\_method' field determines the type of capture for a particular payment and it defaults to 'automatic' if not passed. So, to do manual capture, set `"capture_method" = "manual"` when creating a payment from your server
 
@@ -52,7 +52,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-### Step 2 — Confirm (Authorization Phase)
+#### Step 2 — Confirm (Authorization Phase)
 
 [Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) the payment after collecting the payment_method details from your customer and informing them that the funds in their account would be blocked and charged later once the goods and services are delivered. Unified checkout handles this automatically. On successful authorization, the payment would transition to `'requires_capture'` status.
 
@@ -80,7 +80,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/c
 }'
 ```
 
-### Step 3 — Capture Funds via [Capture API](https://api-reference.hyperswitch.io/v1/payments/payments--capture#payments-capture)
+#### Step 3 — Capture Funds via [Capture API](https://api-reference.hyperswitch.io/v1/payments/payments--capture#payments-capture)
 
 After delivering the goods and services, capture the payment by passing the `payment_id` from above step to `payments/capture` API endpoint. On successful capture, the payment would transition from `'requires_capture'` to `'succeeded'` status.
 
@@ -98,13 +98,13 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
 }'
 ```
 
-## Capture types available :
+### Capture types available :
 
-### **Full capture**
+#### **Full capture**
 
 Capture the full amount that was authorized - Here the payments status transitions to 'SUCCEEDED' as soon the  `payments/capture` API endpoint is executed for the `payment_id` .
 
-### **Partial Capture**&#x20;
+#### **Partial Capture**&#x20;
 
 Capture only a partial amount from the total amount that was authorized. Once the transaction is executed, the status goes to either `partially_captured` or `partially_captured_and_capturable` &#x20;
 
@@ -118,6 +118,6 @@ Possible states:
 | Single capture only        | `partially_captured`                |
 | Multiple capture supported | `partially_captured_and_capturable` |
 
-### Over Capture &#x20;
+#### Over Capture &#x20;
 
 Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. You can find detailed docs [here](https://docs.hyperswitch.io/~/revisions/KHifKaZGv4c5XEloMvlu/about-hyperswitch/payment-suite-1/payments-cards/manual-capture/overcapture)&#x20;

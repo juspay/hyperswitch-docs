@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -21,9 +21,9 @@ Our core values have pretty much remained the same since the early days and here
 
 <table data-header-hidden><thead><tr><th width="125"></th><th></th></tr></thead><tbody><tr><td><strong>Legend</strong></td><td><strong>Description</strong></td></tr><tr><td>🟩</td><td>Feature completed</td></tr><tr><td>🟧</td><td>Feature in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td>🚛</td><td>Backlog feature from Q4 2023</td></tr></tbody></table>
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+#### Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
+##### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 Card vault enhancements to support more use cases - enable vaulting before payment, card fingerprinting
 * 🟩 Enhance MIT payments (Merchant Initiated Transactions) to accept `raw card data` and `network_reference_id.` This will allow for payment gateway agnostic MIT payments
@@ -36,7 +36,7 @@ Our core values have pretty much remained the same since the early days and here
 
     _(the list of connectors will keep expanding as we receive more requests from the community!!!)_
 
-#### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
+##### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🚛 Code restructuring for enhancing readability and ease of contributions
 * 🟩 Helm charts enhancement to enable easy installation on Azure, Google Cloud and within existing Kubernetes clusters
@@ -46,17 +46,17 @@ Our core values have pretty much remained the same since the early days and here
 * 💪🚛 Open sourcing the Native Unified Checkout SDK (Android and iOS)
 * 🟩 Diagnostics tool to determine health of your on-cloud Hyperswitch stack setup
 
-#### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
+##### Reduce Payment Costs <a href="#reduce-payment-costs" id="reduce-payment-costs"></a>
 
 * 🟩 Enabling surcharge for specific payment methods to promote low cost payment methods
 * 🚛 🟩 Hyperswitch API supports for Plaid for ACH account verification
 
-#### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
+##### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
 * 🟩Decoupled 3DS authentication and authorization using EMVCo certified 3DS connectors, for improving payment authorization rates and customer experience.
 * 🚛 Paypal Vault flows for improving repeat user payment experience
 
-#### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
+##### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟩 Enhanced Audit trail visibility for Payments, Refunds, Disputes on Hyperswitch Control Centre
 * 🟩 Support for Hosted Checkout Page on Web&#x20;
@@ -66,6 +66,6 @@ Our core values have pretty much remained the same since the early days and here
 * 🟩 Hyperswitch Control Centre will allow to customize payment methods at country and currency&#x20;
 * 🟩 Create custom roles for Identity and Access Management
 
-### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
+#### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

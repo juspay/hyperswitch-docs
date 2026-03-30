@@ -7,11 +7,11 @@ icon: arrows-rotate-reverse
 
 Recurring payments via Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
 
-### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
+#### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
 When setting up subscription there are two distinct implementation flows. The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+##### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges. For this call Payments API with the below configuration parameters.
 
@@ -44,7 +44,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 
 
-#### 2. Zero Dollar Authorization (Mandate-Only Setup)
+##### 2. Zero Dollar Authorization (Mandate-Only Setup)
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
@@ -97,7 +97,7 @@ Internally the payment_method_id is mapped to a bunch of credentials - PSP token
 
 
 
-### Customer Consent Capture (Mandate Compliance)
+#### Customer Consent Capture (Mandate Compliance)
 
 If you are not using Hyperswitch SDK, then `customer_acceptance`  (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
 
@@ -118,21 +118,21 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [
 
 ***
 
-### Merchant-Initiated Transactions (MIT) – Decoupled Execution
+#### Merchant-Initiated Transactions (MIT) – Decoupled Execution
 
 Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
-MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
+MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on artifacts available in your system, one of the following approaches can be used:
 
-#### [**Payment Method ID**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-recurring-details)
+##### [**Payment Method ID**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-recurring-details)
 
 Submit the Hyperswitch generated payment_method_id to process the MIT transaction. Depending on the merchant configurations the MIT will be processed with the same PSP or with a different PSP.&#x20;
 
-#### [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3)&#x20;
+##### [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3)&#x20;
 
 &#x20;Submit a processor-issued token that represents the previously authorized payment instrument.
 
-#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)&#x20;
+##### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)&#x20;
 
 &#x20;Provide the original network transaction identifier along with the associated primary card data required for authorization.
 
@@ -150,17 +150,17 @@ Email the PSP Support requesting:
 * Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
 {% endhint %}
 
-#### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**&#x20;
+##### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**&#x20;
 
 Submit the network transaction identifier in combination with the corresponding network tokenized card credentials.
 
-#### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**&#x20;
+##### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**&#x20;
 
 Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
 ***
 
-### Connector-Agnostic MIT Routing
+#### Connector-Agnostic MIT Routing
 
 The CIT used to set up recurring payments via MIT uses the PG token. This introduces a connector stickiness since the recurring payments can only go through the connector which issued the token.
 
@@ -170,7 +170,7 @@ In the following MIT payments basis the enablement of the feature and the availa
 
 <figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
-#### Enabling Connector agnostic MITs
+##### Enabling Connector agnostic MITs
 
 To start routing MIT payments across all supported connectors in addition to the connector through which the recurring payment was set up, use the below API to enable it for a business profile
 
@@ -188,7 +188,7 @@ All the payment methods saved with `setup_future_usage : off_session` after enab
 
 ***
 
-### Routing example - CITs are routed through PSP-1 and all MITs through PSP-2
+#### Routing example - CITs are routed through PSP-1 and all MITs through PSP-2
 
 The [Hyperswitch dashboard](https://app.hyperswitch.io/dashboard/routing/rule) provides UI to configure routing rules for PG Agnostic Recurring Payments. You can choose the profile for which you wish to configure the rule in the Smart Routing Configuration.
 
@@ -200,7 +200,7 @@ This rule would be used in conjunction with the other active routing rules that 
 
 Once the rule is configured, you would need to send the following metadata as per the payment request:
 
-#### **Metadata to be sent in CITs**
+##### **Metadata to be sent in CITs**
 
 ```
 "metadata": {
@@ -208,7 +208,7 @@ Once the rule is configured, you would need to send the following metadata as pe
 }
 ```
 
-#### **Metadata to be sent in MITs**
+##### **Metadata to be sent in MITs**
 
 ```
 "metadata": {

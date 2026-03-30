@@ -8,7 +8,7 @@ icon: arrows-rotate-reverse
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
-### Benefits
+#### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
 2. Improved reliability with a multi-PSP setup
@@ -16,7 +16,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 4. Greater coverage of PMs, APMs and features offered by the PSPs
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
-### How does it work?
+#### How does it work?
 
 1. Integrate your subscription provider as a billing processor on Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
@@ -27,21 +27,21 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
 8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
-### Flow Diagram
+#### Flow Diagram
 
-#### Initial Subscription create flow (with CIT Payment)
+##### Initial Subscription create flow (with CIT Payment)
 
 <figure><img src="../../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
-#### MIT payment flow in subsequent billing cycle
+##### MIT payment flow in subsequent billing cycle
 
 <figure><img src="../../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
-### Integration Guide
+#### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+##### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
-#### Initial Subscription create flow (with CIT Payment)
+##### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
@@ -104,7 +104,7 @@ Response:
         "name": "Enterprise Suite",
         "description": "High-end customer support suite with enterprise-grade solutions."
  	 "price_id": [
-         	{
+          	{
                 "id": "cbdemo_enterprise-suite-INR-Daily",
                 "name": "Enterprise Suite INR Daily",
                 "pricing_model": "flat_fee",
@@ -154,7 +154,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-### 1. The Setup with Charge Flow
+#### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -165,7 +165,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-### 2. The Zero Dollar Authorization Flow
+#### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
@@ -191,7 +191,7 @@ Sync with the subscription status for disbursement of services and future billin
 
 
 
-### 2. For PCI Compliant merchants handling the entire checkout experience
+#### 2. For PCI Compliant merchants handling the entire checkout experience
 
 {% stepper %}
 {% step %}
@@ -210,7 +210,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-### 1. The Setup with Charge Flow
+#### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -221,7 +221,7 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-### 2. The Zero Dollar Authorization Flow
+#### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
@@ -348,7 +348,7 @@ Monitor incoming webhooks for renewal during subsequent cycles
 {% endstep %}
 {% endstepper %}
 
-### Decoupled CIT and MIT Flow&#x20;
+#### Decoupled CIT and MIT Flow&#x20;
 
 Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
@@ -362,12 +362,12 @@ MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswit
 
 [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:** Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
-### FAQs
+#### FAQs
 
-#### 1. What are subscriptions providers that are currently supported?
+##### 1. What are subscriptions providers that are currently supported?
 
 Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
 
-#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+##### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
 We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.
