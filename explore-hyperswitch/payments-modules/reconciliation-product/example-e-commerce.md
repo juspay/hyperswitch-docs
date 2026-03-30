@@ -82,8 +82,8 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
   * **When to Apply (Filter)**: Transaction type equals "customer\_order"
   * **How to Find Match (Identifier)**: Use `order_id` to find the PSP transaction with the same `original_reference`
   * **What to Verify (Match Rules)**:
-    * `Order amount = PSP gross amount`
-    * `Order currency = PSP currency`
+    * `Order `amount = PSP` gross amount`
+    * `Order `currency = PSP` currency`
     * `Order ID = PSP original reference`
 
 #### Rule 2: PSP-to-Bank Matching
@@ -95,8 +95,8 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
   * **When to Apply (Filter)**: Transaction type equals "psp\_settlement"
   * **How to Find Match (Identifier)**: Use `settlement_batch_id` to find the bank transaction with the same `batch_reference`
   * **What to Verify (Match Rules)**:
-    * `PSP net amount = Bank deposit amount`
-    * `PSP currency = Bank currency`
+    * `PSP net `amount = Bank` deposit amount`
+    * `PSP `currency = Bank` currency`
     * `Settlement date = Bank value date`
 
 ### Step 3: The Transaction Journey

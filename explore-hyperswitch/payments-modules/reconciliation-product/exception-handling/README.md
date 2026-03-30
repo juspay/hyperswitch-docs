@@ -1,3 +1,7 @@
+---
+description: Handle and resolve reconciliation exceptions and anomalies
+---
+
 # Exception Handling
 
 ## Module: Reconciliation Exception Handling
@@ -16,7 +20,7 @@ We categorize exceptions into two distinct types based on the presence of counte
 
 * Definition: Records exist on both sides, and the system has attempted reconciliation. However, the comparison logic failed because key attributes do not match.
 * Reconciliation Status: `MISMATCHED`
-* Business Context: This represents a data integrity error requiring investigation (e.g., amount discrepancies, status discrepancies , or metadata corruption)
+* Business Context: This represents a data integrity error requiring investigation (e.g., amount discrepancies, status discrepancies, or metadata corruption)
 
 #### Type B: "Expected" (Timing/Availability)
 

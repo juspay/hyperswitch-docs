@@ -1,11 +1,11 @@
-# In-App and Web Transactions Processed Using Hyperswitch Decryption
+# In-App and Web Transactions Processed Using Juspay Hyperswitch Decryption
 
 In this flow Hyperswitch decrypts the token internally using your uploaded certificates and then transforms the raw data for any downstream connector.
 
 #### **Mechanism:**
 
 1. Frontend sends **encrypted Apple Pay token** to Hyperswitch.
-2. Hyperswitch unwraps the token using your private key configured at Hyperswitch.
+2. Juspay Hyperswitch unwraps the token using your private key configured at Hyperswitch.
 3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
 
 ### **Configuration :**
@@ -38,7 +38,7 @@ You can validate the merchant domain by following the steps mentioned below -
 * Enter your _merchant\_domain_ as domain and click on Save
 * Click on Download and a **.txt** file will be downloaded
 * Host this file on _merchant\_domain_/.well-known/apple-developer-merchantid-domain-association.txt
-* Once you host the .txt file in the path mentioned above, click on Verify
+* Once you host the.txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
@@ -66,7 +66,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Configuring Apple Pay on Hyperswitch**
+#### **Configuring Apple Pay on Juspay Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
 
@@ -103,13 +103,13 @@ base64 -i certificate_sandbox.key
 You can create an Apple Payment Processing Certificate and Payment Processing Key by following the steps mentioned below
 
 * Note: It is recommended that you keep all the generated files in the same folder for the sake of simplicity
-* Open a terminal and create .**key** file using the following command
+* Open a terminal and create.**key** file using the following command
 
 ```
 openssl ecparam -name prime256v1 -genkey -noout -out ppc_private.key
 ```
 
-* You can create .**csr** file using the following command and enter your details asked in the prompt. You will get a .**csr** file.
+* You can create.**csr** file using the following command and enter your details asked in the prompt. You will get a.**csr** file.
 
 ```
 openssl req -out ppc_uploadMe.csr -new -key ppc_private.key
@@ -117,9 +117,9 @@ openssl req -out ppc_uploadMe.csr -new -key ppc_private.key
 
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to Identifiers and select the Merchant ID / Payment Platform Integrator ID you created previously
 * Under the Apple Pay Payment Processing Certificate, click on Create Certificate
-* Upload the .**csr** file you just created (it would be called uploadMe.csr if you copy-pasted the command) and click on Continue.
-* You will get a .**cer** file on clicking Download (it will probably be named **apple\_pay.cer**).
-* In Payment Processing Certificate, **base64 encode** the entire content of your .**cer** file and paste it.
+* Upload the.**csr** file you just created (it would be called uploadMe.csr if you copy-pasted the command) and click on Continue.
+* You will get a.**cer** file on clicking Download (it will probably be named **apple\_pay.cer**).
+* In Payment Processing Certificate, **base64 encode** the entire content of your.**cer** file and paste it.
 
 ```
 base64 -i apple_pay.cer
@@ -130,7 +130,9 @@ base64 -i apple_pay.cer
 <figure><img src="../../../Users/shankar.singh/Documents/hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-Please note since this flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+
+Please note since this flow involves decryption at Juspay Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+
 {% endhint %}
 
 <details>

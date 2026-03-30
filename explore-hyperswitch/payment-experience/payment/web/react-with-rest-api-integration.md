@@ -1,4 +1,5 @@
 ---
+description: Integrate Hyperswitch SDK with React and REST API for web checkout
 icon: react
 ---
 
@@ -62,8 +63,8 @@ useEffect(() => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
   })
-    .then((res) => res.json())
-    .then((data) => setClientSecret(data.clientSecret));
+.then((res) => res.json())
+.then((data) => setClientSecret(data.clientSecret));
 }, []);
 ```
 
@@ -102,7 +103,9 @@ const widgets = useWidgets();
 ### 3. Complete the checkout on the client
 
 {% tabs %}
+
 {% tab title="ExpressCheckout" %}
+
 **Key Features of Hyperswitch's Express Checkout**
 
 * Fast Performance: One-click payment at checkout enables a smooth and frictionless payment experience to customers.
@@ -138,9 +141,11 @@ var expressCheckoutOptions = {
 ```js
 <ExpressCheckoutElement id="express-checkout" options={expressCheckoutOptions} />
 ```
+
 {% endtab %}
 
 {% tab title="UnifiedCheckout" %}
+
 **3.1.A Add the UnifiedCheckout**
 
 <figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
@@ -213,7 +218,7 @@ For SDK to render the confirm button and handle the confirm payment, in paymentE
 
 ```javascript
 var unifiedCheckoutOptions = {
-  ...,
+...,
   sdkHandleConfirmPayment: {
      handleConfirm: true,
      buttonText: "SDK Pay Now",
@@ -232,7 +237,9 @@ var unifiedCheckoutOptions = {
 For customization, please follow the [`Customization docs`](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-5.-confirm-button).
 
 </details>
+
 {% endtab %}
+
 {% endtabs %}
 
 #### 3.2 Display payment status message
@@ -269,7 +276,9 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
 ```
 
 {% hint style="danger" %}
+
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+
 {% endhint %}
 
 ### 4. Elements Events
@@ -357,15 +366,21 @@ This document outlines the details and functionality of an optional callback and
 * **onPaymentComplete:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
+
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
+
 {% endhint %}
 
 {% hint style="info" %}
+
 **Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
+
 {% endhint %}
 
 {% hint style="danger" %}
+
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
+
 {% endhint %}
 
 **Example Usage for React Integration**
@@ -388,5 +403,8 @@ The task within `onPaymentButtonClick` must be completed within 1 second. If an 
 ## Next step:
 
 {% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

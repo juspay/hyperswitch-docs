@@ -127,7 +127,7 @@ If this payment fails, the response will include:
 
 #### 3️⃣ Retry the Payment (If Allowed)
 
-If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
+If `manual_retry_allowed : true`, you can retry on the same Payment Intent.\\
 
 * For redirect flows, this can be done by remounting the SDK as described earlier.
 * For SDK-managed (non-redirect) flows, Hyperswitch automatically handles this internally.

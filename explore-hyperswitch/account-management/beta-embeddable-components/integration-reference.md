@@ -1,3 +1,7 @@
+---
+description: Reference guide for embedding Juspay Hyperswitch connector configuration in React and HTML apps
+---
+
 # Integration Reference
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
@@ -37,6 +41,7 @@ Required Headers for Hyperswitch Call:
 * X-profile-id: The specific profile ID you want the embedded component to access.
 
 {% code title="server.js" %}
+
 ```javascript
 const express = require('express');
 const cors = require('cors');
@@ -86,6 +91,7 @@ app.listen(port, () => {
 });
 
 ```
+
 {% endcode %}
 
 ### Step 2: Choose Your Integration Method
@@ -259,7 +265,7 @@ export default App;
 
 ### API Reference
 
-#### 1. loadHyperswitch(options)
+#### 1. loadJuspay Hyperswitch(options)
 
 Initializes the SDK logic.
 
@@ -270,7 +276,7 @@ options.fetchToken () => Promise\<string | undefined>
 * Should return the JWT string on success.
 * Should return undefined on failure.
 
-#### 2. HyperswitchProvider
+#### 2. Juspay HyperswitchProvider
 
 Context provider that holds the authentication state.
 

@@ -1,12 +1,14 @@
 ---
-description: Accept payments through Zen via Hyperswitch
+description: Accept payments through Zen via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Zen
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Zen through Hyperswitch
+
 {% endhint %}
 
 ![logo\_zen](https://hyperswitch.io/img/site/zenLogo.svg)&#x20;

@@ -20,7 +20,7 @@ The evolution from Click to Pay V1 to V2 represents a fundamental shift in digit
 | **🌏 Global Market Adoption** | 🚧 Limited deployment and compatibility with some regions and merchants.                                                                                                                                                                                                                                       | ✅ Available in 35+  countries, supported by major card networks                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **🔁 Recurring Payments**     | 🚧 Limited support for saving credentials and managing recurring payments                                                                                                                                                                                                                                      | ✅ Built-in support for recurring payments and saved credentials                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-### **Seamless Migration with Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
+### **Seamless Migration with Juspay Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
 
 The migration to V2 is powered by Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
 
@@ -225,7 +225,6 @@ try {
     }
 }
 ```
-
 
 
 ### Authentication Methods
@@ -484,7 +483,6 @@ For additional support:
 * [API Reference](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-js-reference-v2/init) - JavaScript SDK reference for implementing Click to Pay
 * [Integration Overview](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview) - Comprehensive implementation guide and requirements
 * [Merchant & PSP Guide](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-merchants-psps) - Best practices and implementation paths for merchants and payment service providers
-
 
 
 Remember to test thoroughly in the sandbox environment before deploying to production, and enable new features gradually to ensure a smooth transition for your users.

@@ -1,5 +1,5 @@
 ---
-description: Integrate Hyperswitch Lite SDK to your Kotlin App
+description: Integrate Juspay Hyperswitch Lite SDK to your Kotlin App
 icon: mobile-screen
 ---
 
@@ -54,12 +54,15 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
 ```
 
 {% hint style="warning" %}
+
 **Note**:
 
 PaymentSession needs to be initialized in onCreate method of your `FragmentActivity`
+
 {% endhint %}
 
 {% hint style="warning" %}
+
 **Note**:
 
 For an open-source setup, use the following parameters:
@@ -67,6 +70,7 @@ For an open-source setup, use the following parameters:
 ```kotlin
 val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", "YOUR_CUSTOM_BACKEND_URL", "YOUR_CUSTOM_LOG_URL")
 ```
+
 {% endhint %}
 
 **Fetch a Payment**
@@ -104,7 +108,9 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 ```
 
 {% hint style="danger" %}
+
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+
 {% endhint %}
 
 **Present the Payment Page**
@@ -125,5 +131,8 @@ Congratulations! You have successfully integrated the Hyperswitch Lite SDK into 
 ## Next step:
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

@@ -35,7 +35,7 @@ You can validate the merchant domain by following the steps mentioned below -
 * Enter your _merchant\_domain_ as domain and click on Save
 * Click on Download and a **.txt** file will be downloaded
 * Host this file on _merchant\_domain_/.well-known/apple-developer-merchantid-domain-association.txt
-* Once you host the .txt file in the path mentioned above, click on Verify
+* Once you host the.txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
@@ -63,7 +63,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Configuring Apple Pay on Hyperswitch**
+#### **Configuring Apple Pay on Juspay Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
 
@@ -94,7 +94,6 @@ base64 -i certificate_sandbox.key
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
-
 #### **Creating Apple Pay Payment Processing Certificate**
 
 <figure><img src="../../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
@@ -104,10 +103,12 @@ base64 -i certificate_sandbox.key
 * Under the **Apple Pay Payment Processing Certificate** section, click on Create Certificate
 * After answering whether the Merchant ID will be processed exclusively in China mainland, click on Continue
 * Upload the **.csr** you received from your processor and click Continue
-* Click on the prompted Download button and you will get a .**cer** file, Upload this **.cer** file you received while creating Apple MerchantID Certificate on the processor's dashboard.
+* Click on the prompted Download button and you will get a.**cer** file, Upload this **.cer** file you received while creating Apple MerchantID Certificate on the processor's dashboard.
 
 {% hint style="warning" %}
+
 This final step is specific to the processor being used and is not necessary in Sandbox Test environment for some processors, such as Authorize.Net.
+
 {% endhint %}
 
 ### Integrate with Xcode

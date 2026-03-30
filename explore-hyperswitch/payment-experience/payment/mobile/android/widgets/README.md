@@ -57,7 +57,7 @@ Next, implement the `HyperInterface` in your Activity. This involves extending `
 
 ```kotlin
 class WidgetActivity : AppCompatActivity(), HyperInterface {
-    // ...
+    //...
 }
 ```
 
@@ -88,7 +88,9 @@ Congratulations! You have successfully integrated Hyperswitch widgets into your 
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

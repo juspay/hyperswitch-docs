@@ -1,4 +1,5 @@
 ---
+description: Configure payout processors and start processing payouts via API
 icon: flag-checkered
 ---
 
@@ -69,5 +70,8 @@ Execute Payout: Navigate to the Process Payouts section of the collection to sen
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.10.26 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="process-payouts-using-saved-payment-methods.md" %}
+
 [process-payouts-using-saved-payment-methods.md](process-payouts-using-saved-payment-methods.md)
+
 {% endcontent-ref %}
+

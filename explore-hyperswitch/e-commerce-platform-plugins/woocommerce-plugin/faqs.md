@@ -1,12 +1,14 @@
 ---
-description: Quick answers to commonly asked questions about Hyperswitch
+description: Find answers to common questions about Juspay Hyperswitch WooCommerce plugin
 ---
 
 # FAQs
 
 {% hint style="info" %}
+
 This section covers the frequently asked questions you might have around Hyperswitch product, features, payment process, PCI compliance, woocommerce, etc.\
 We regularly update the common questions here.
+
 {% endhint %}
 
 **Is my customer information shared with other plugin users?**

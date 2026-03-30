@@ -1,19 +1,21 @@
 ---
-description: Accept payments through Bank of America via Hyperswitch
+description: Accept payments through Bank of America via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Bank of America
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via BOA through Hyperswitch
+
 {% endhint %}
 
 ![logo\_bambora](../../../../../.gitbook/assets/Bank_of_America-Logo.wine.png)
 
 The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered at the Bank of America Corporate Center in Charlotte, North Carolina, with investment banking and auxiliary headquarters in Manhattan. To know  more about payment methods supported by BOA via Hyperswitch click [here](https://hyperswitch.io/pm-list).
 
-### Activating BOA via Hyperswitch
+### Activating BOA via Juspay Hyperswitch
 
 #### I. Prerequisites
 

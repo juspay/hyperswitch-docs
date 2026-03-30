@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
+description: Accept payments via Juspay Hyperswitch on your WooCommerce store
 hidden: true
 ---
 
@@ -37,7 +37,7 @@ With Hyperswitch private card vault, your business can exercise co control of yo
 
 In addition to the above, Hyperswitch also offers
 
-* Access to **40+ processors** and **80+** [**payment methods**](https://hyperswitch.io/docs/paymentMethods/testCredentials)
+* Access to **300+ connectors** and **300+** [**payment methods**](https://hyperswitch.io/docs/paymentMethods/testCredentials)
 * **PCI L1 certified** to store credit/debit card data
 * **GDPR ready** to store customer data
 * [**Smart routing engine**](https://hyperswitch.io/docs/features/smartRouter) to define business rules to optimize your payment processing costs and boost conversion rates

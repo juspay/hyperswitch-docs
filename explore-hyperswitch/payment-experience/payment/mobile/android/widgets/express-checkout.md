@@ -1,4 +1,5 @@
 ---
+description: Implement express checkout widget for one-click payments on Android
 icon: cart-shopping-fast
 ---
 

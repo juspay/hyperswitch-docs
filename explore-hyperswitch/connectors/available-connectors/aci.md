@@ -1,19 +1,21 @@
 ---
-description: Accept payments through Aci via Hyperswitch
+description: Accept payments through Aci via Juspay Hyperswitch
 hidden: true
 ---
 
 # ACI
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via ACI through Hyperswitch
+
 {% endhint %}
 
 ![](https://hyperswitch.io/icons/homePageIcons/logos/ACILogo.svg)
 
 ACI Worldwide enables corporations to process and manage digital payments, power omni-commerce payments, present and process bill payments, and manage fraud and risk. To know about more about payment methods supported by ACI via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating ACI via Hyperswitch
+### Activating ACI via Juspay Hyperswitch
 
 #### Prerequisites
 

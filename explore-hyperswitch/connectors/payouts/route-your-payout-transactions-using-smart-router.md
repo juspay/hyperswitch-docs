@@ -1,4 +1,5 @@
 ---
+description: Route payouts across multiple processors using volume and rule-based logic
 icon: swap
 ---
 

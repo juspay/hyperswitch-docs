@@ -1,4 +1,5 @@
 ---
+description: Embed white-labeled payment configuration components directly into your application
 icon: laptop-code
 ---
 

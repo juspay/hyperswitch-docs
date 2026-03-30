@@ -1,10 +1,11 @@
 ---
+description: Process payouts using saved payment methods via PCI-compliant vault
 icon: repeat
 ---
 
 # Payouts with Saved Payment Methods
 
-Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
+Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
 
 #### Tokenizing Payment Methods
 
@@ -66,5 +67,8 @@ Recurring/Subsequent Payouts: Follow the sequence to list existing customer paym
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.55 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="route-your-payout-transactions-using-smart-router.md" %}
+
 [route-your-payout-transactions-using-smart-router.md](route-your-payout-transactions-using-smart-router.md)
+
 {% endcontent-ref %}
+

@@ -7,7 +7,7 @@ icon: paypal
 
 Paypal is a digital wallet that lets customers load balance onto the wallet and as well as save their cards for quicker one-touch checkout. Paypal currently supports 200+ countries and 25 currencies.
 
-## **How to configure Paypal on Hyperswitch?**
+## **How to configure Paypal on Juspay Hyperswitch?**
 
 Since Paypal is both a payment method (wallet) as well as a payment processor, Hyperswitch gives you the flexibility to configure Paypal through multiple avenues.
 

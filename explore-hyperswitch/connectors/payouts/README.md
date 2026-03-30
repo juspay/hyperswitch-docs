@@ -1,5 +1,5 @@
 ---
-description: Swift and streamlined payout automation
+description: Automate payouts to vendors and partners across multiple processors
 icon: file-invoice-dollar
 ---
 
@@ -46,9 +46,11 @@ Hyperswitch abstracts the complexity of regional payment rails. The table below 
 | **Cybersource** | Global  | Major Networks | —                | —                            |
 
 {% hint style="info" %}
+
 Methods marked with `*` are supported but not enabled by default.
 
 Methods marked with `**` are in beta.
+
 {% endhint %}
 
 ### FAQ

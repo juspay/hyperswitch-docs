@@ -1,5 +1,5 @@
 ---
-description: A brief summary of measures taken at Hyperswitch to ensure GDPR compliance
+description: A brief summary of measures taken at Juspay Hyperswitch to ensure GDPR compliance
 icon: compact-disc
 ---
 
@@ -17,7 +17,7 @@ Hyperswitch plays the role of a ‘Data Processor’ and takes all the below ini
 
 ### Security
 
-Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application also employs various strategies that encompasses various stage, which includes
+Juspay Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application also employs various strategies that encompasses various stage, which includes
 
 * Encryption of Data at rest and Data in Transit
 * Masking of PII information at source
@@ -49,7 +49,7 @@ We hold ourselves to the highest standards of data security and reliability. We 
 
 ### Use of Sub processors
 
-Below is the list of sub-processors we use at Hyperswitch, as well as the purpose of their use.
+Below is the list of sub-processors we use at Juspay Hyperswitch, as well as the purpose of their use.
 
 |   Sub processor  |                      Purpose                     |                          Hosted region                         |
 | :--------------: | :----------------------------------------------: | :------------------------------------------------------------: |

@@ -1,4 +1,5 @@
 ---
+description: Integrate lightweight iOS SDK for payments with minimal bundle size
 icon: mobile-screen
 ---
 
@@ -72,11 +73,11 @@ paymentSession.presentPaymentSheetLite(
         result in
             DispatchQueue.main.async {
                 switch result {
-                case .completed:
+                case.completed:
                     self.statusLabel.text = "Payment complete"
-                case .failed(let error):
+                case.failed(let error):
                     self.statusLabel.text =  "Payment failed: \(error)"
-                case .canceled:
+                case.canceled:
                     self.statusLabel.text = "Payment canceled."
             }
     }

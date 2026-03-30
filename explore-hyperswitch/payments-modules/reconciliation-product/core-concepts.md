@@ -1,3 +1,7 @@
+---
+description: Learn double-entry bookkeeping accounts entries and transactions concepts
+---
+
 # Core Concepts
 
 ### How We Model Money

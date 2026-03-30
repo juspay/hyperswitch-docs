@@ -8,7 +8,9 @@ description: >-
 # Getting Started with Recon
 
 {% hint style="info" %}
+
 This section outlines the supported features of Juspay Hyperswitch Reconciliation module and provides guidance on how to use them.
+
 {% endhint %}
 
 ## Using the Reconciliation module is a 5-step process
@@ -32,7 +34,9 @@ The first phase of the process involves uploading your data files into the Recon
 * **Manual upload to the dashboard:** For ease of use, manually upload your files directly through the Reconciliation Dashboard.
 
 {% hint style="info" %}
+
 Files need to be uploaded in **PGName\_yyyymmdd/ MERCHANTNAME\_yyyymmdd/ BANK\_NAME\_yyyymmdd** format.
+
 {% endhint %}
 
 * **Automated upload to dashboard:** In order to feed your PSP and bank files to the Reconciliation module you can select one of the below options during configuration. In case of automated upload of files, case all subsequent steps are also executed in an automated fashion and the reconciliation output is generated.
@@ -125,7 +129,7 @@ The output table provides access to specific information categories such as Gate
 
 * **Select desired columns:** Choose which columns to view, tailoring the report to focus on specific attributes like transaction ID, amount, status, and reconciliation status.
 * **Column naming:** Assign specific names to columns, enhancing clarity and alignment with your business's terminology. This change needs to be done by the Juspay Hyperswitch team.
-* **Column positioning :** Assign a specific order to columns, enhancing clarity and alignment with your business' requirements . This change needs to be done by the Juspay Hyperswitch team.
+* **Column positioning :** Assign a specific order to columns, enhancing clarity and alignment with your business' requirements. This change needs to be done by the Juspay Hyperswitch team.
 
 -> Key columns and status definitions (these are the default names) :
 

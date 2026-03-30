@@ -5,7 +5,9 @@ description: Bank Debits payment method
 # Bank Debits
 
 {% hint style="info" %}
+
 Bank debits pull funds directly from the customer’s bank account. Customers provide their bank account information and agree to a mandate to debit their account at specified intervals and amount.
+
 {% endhint %}
 
 Bank Debits enables merchants to directly pull funds from the customers' bank accounts once the customers provide authorization for the same. It is primarily used for recurring transactions/mandates and for large ticket transactions like rent, fees, etc.

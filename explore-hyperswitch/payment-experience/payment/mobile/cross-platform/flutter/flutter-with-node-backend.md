@@ -6,7 +6,9 @@ icon: puzzle-piece
 # Flutter with REST API Integration
 
 {% hint style="info" %}
+
 Use this guide to integrate `hyperswitch` SDK to your Flutter app.
+
 {% endhint %}
 
 **Before following these steps, please configure your payment methods** [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
@@ -43,6 +45,7 @@ flutter pub get
 ```
 
 {% hint style="info" %}
+
 To apply plugins using Flutter, run the following command:
 
 ```sh
@@ -50,6 +53,7 @@ dart run flutter_hyperswitch:apply_plugins
 ```
 
 This command configures the necessary Flutter plugins for your project using the `flutter_hyperswitch` package. Ensure you have the package installed and configured correctly in your project. If you encounter any issues, check the package documentation for more details.
+
 {% endhint %}
 
 ## 3. Complete the checkout on the client
@@ -65,7 +69,9 @@ _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY', customBackendUrl
 ```
 
 {% hint style="info" %}
+
 When utilising a custom backend or logging system, you can add the customBackendUrl to HyperConfig
+
 {% endhint %}
 
 ### 3.2 Create a Payment Intent
@@ -99,6 +105,7 @@ To display the Payment Sheet, integrate a "**Pay Now**" button within the checko
 Consider the below function, it invokes `presentPaymentSheet` and handles payment results.
 
 {% code fullWidth="false" %}
+
 ```dart
 Future<void> _presentPaymentSheet() async {
   final presentPaymentSheetResponse = await _hyper.presentPaymentSheet(_sessionId!);
@@ -116,16 +123,22 @@ Future<void> _presentPaymentSheet() async {
   }
 }
 ```
+
 {% endcode %}
 
 Congratulations! Now that you have integrated the Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.
 
 {% hint style="danger" %}
+
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+
 {% endhint %}
 
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

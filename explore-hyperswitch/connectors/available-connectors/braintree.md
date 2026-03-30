@@ -1,19 +1,21 @@
 ---
-description: Accept payments through Braintree via Hyperswitch
+description: Accept payments through Braintree via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Braintree
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Bluesnap through Hyperswitch
+
 {% endhint %}
 
 ## About
 
 Braintree is a payment processor that allows online businesses to accept payments via app or website. It also provides merchant accounts and payment gateways. PayPal owns Braintree, and a PayPal Business account is required. To know about more about payment methods supported by Braintree via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-## Activating via Hyperswitch
+## Activating via Juspay Hyperswitch
 
 ### Prerequisites
 

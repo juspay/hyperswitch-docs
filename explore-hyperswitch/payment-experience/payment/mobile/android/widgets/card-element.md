@@ -1,4 +1,5 @@
 ---
+description: Implement card payment widget for Android applications
 icon: credit-card
 ---
 

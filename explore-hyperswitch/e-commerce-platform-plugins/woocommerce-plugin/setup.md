@@ -1,11 +1,13 @@
 ---
-description: WooCommerce Plugin Setup
+description: Set up Juspay Hyperswitch plugin on your WordPress WooCommerce website
 ---
 
 # Setup
 
 {% hint style="info" %}
+
 This section covers the steps to setup woocommerce plugin on your website and managing the orders from the dashboard.
+
 {% endhint %}
 
 ### Prerequisites
@@ -65,7 +67,7 @@ In cases where you need to issue a refund to a customer, the Hyperswitch plugin 
 
 <figure><img src="https://hyperswitch.io/img/site/wordpress_refund.png" alt=""><figcaption></figcaption></figure>
 
-Note: Ensure you click on "Refund via Hyperswitch" and not the "Refund manually". Hyperswitch will handle the refund and update the payment status accordingly, ensuring a seamless refund experience for both you and your customers.
+> **Note:** Ensure you click on "Refund via Hyperswitch" and not the "Refund manually". Hyperswitch will handle the refund and update the payment status accordingly, ensuring a seamless refund experience for both you and your customers.
 
 #### 2.3 Payment Sync:
 

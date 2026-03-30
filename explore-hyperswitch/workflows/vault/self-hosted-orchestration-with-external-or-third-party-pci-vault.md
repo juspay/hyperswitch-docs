@@ -68,7 +68,7 @@ The merchant client/checkout integrates the external vault SDK **directly** whic
 
 </details>
 
-#### Option 2: Hyperswitch Managed Merchant Client
+#### Option 2: Juspay Hyperswitch Managed Merchant Client
 
 This is an extension of the previous approach where instead of the merchant client directly mounting the external Vault SDK on their checkout client, merchant client mounts the Hyperswitch SDK which internally loads the external Vault SDK and handles token management.
 
@@ -139,7 +139,7 @@ This abstraction allows merchants to:
 
 ### Configuration Guide
 
-#### Configuring the External Vault in Hyperswitch
+#### Configuring the External Vault in Juspay Hyperswitch
 
 To enable an external vault with your self-hosted Hyperswitch instance:
 

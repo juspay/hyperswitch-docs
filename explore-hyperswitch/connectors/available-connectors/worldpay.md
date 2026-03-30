@@ -1,19 +1,21 @@
 ---
-description: Accept payments through Worldpay via Hyperswitch
+description: Accept payments through Worldpay via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Worldpay
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Worldpay through Hyperswitch
+
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/worldpayLogo.svg)
 
 FIS Worldpay is a payment processor that offers businesses a range of payment solutions, including online, in-store, and mobile payments, with fraud protection and easy integration. To know about more about payment methods supported by Worldpay via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Worldpay via Hyperswitch
+### Activating Worldpay via Juspay Hyperswitch
 
 #### Prerequisites
 

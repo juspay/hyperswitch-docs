@@ -1,4 +1,5 @@
 ---
+description: Explore composable payment workflows for Vertical SaaS platforms
 icon: code-compare
 ---
 
@@ -8,7 +9,7 @@ Hyperswitch’s three-level profile architecture enables support for composable 
 
 These workflows can be modularly organized to meet diverse business needs and provide flexibility based on client requirements. Here’s a breakdown of key workflows:
 
-### Possible Scenerios:
+### Possible Scenarios:
 
 **Direct Payments:** In the case of a client using a Vertical SaaS (VSaaS) platform, the client may prefer to authorize the customer’s card only after the service is fulfilled. Therefore, the Vertical SaaS solution will need to verify and vault the card with the PSP, returning the PSP card token to the client.
 
@@ -23,5 +24,8 @@ These workflows can be modularly organized to meet diverse business needs and pr
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-11-06 at 2.31.56 AM.png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="../../account-management/analytics-and-operations/exporting-payments-data.md" %}
+
 [exporting-payments-data.md](../../account-management/analytics-and-operations/exporting-payments-data.md)
+
 {% endcontent-ref %}
+

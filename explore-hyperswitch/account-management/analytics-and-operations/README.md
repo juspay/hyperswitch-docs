@@ -1,5 +1,5 @@
 ---
-description: Single dashboard for all your payment operations needs!
+description: Monitor payment analytics and manage payment operations through a unified dashboard interface
 icon: chart-pie-simple-circle-dollar
 ---
 
@@ -49,7 +49,7 @@ _Payment success rate does not include payments which are authorized by but not 
 
 #### **Processed amount**
 
-Sum of amount of all payments with status = succeeded.
+Sum of amount of all payments with `status = succeeded`.
 
 _Please note that there could be payments which could be authorized but not captured. Such payments are not included in the processed amount, because non-captured payments will be be settled to your merchant account by your payment processor._
 
@@ -123,7 +123,7 @@ Below are some of the day-to-day use cases of payments operations across teams w
 
 Inadequate attention to payment operations might negatively impact your Net Promoter Score and impact the growth of your business.
 
-## How could Hyperswitch simplify Payment Operations?
+## How could Juspay Hyperswitch simplify Payment Operations?
 
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all Payment Operations use cases. This provides more power to your team for managing payments seamlessly.
 

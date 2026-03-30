@@ -1,4 +1,5 @@
 ---
+description: Integrate Google Pay widget for Android payment acceptance
 icon: google
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: Extend authorization hold periods beyond standard windows for flexible capture timing
 icon: square-tenge
 ---
 
@@ -101,9 +102,10 @@ Currently, manual extended authorization is supported for:
 Calling this endpoint will initiate an extended authorization request. The actual behavior, including how much the capture or honor period is extended, depends on the specific connector and the issuing bank.&#x20;
 
 {% hint style="info" %}
-Be aware: With some connectors like Adyen, a failed extended authorization attempt may also cause the initial authorization to fail.
-{% endhint %}
 
+Be aware: With some connectors like Adyen, a failed extended authorization attempt may also cause the initial authorization to fail.
+
+{% endhint %}
 
 
 > **⚠️ Note:**

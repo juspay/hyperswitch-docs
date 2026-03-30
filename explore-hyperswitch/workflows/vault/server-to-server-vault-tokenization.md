@@ -38,6 +38,7 @@ To implement server-to-server tokenization, you need:
 ### API Requests for Server to Server Tokenization
 
 {% hint style="info" %}
+
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
 To generate your Vault API keys, follow these steps:
@@ -48,6 +49,7 @@ To generate your Vault API keys, follow these steps:
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+
 {% endhint %}
 
 #### 1. Create a Customer

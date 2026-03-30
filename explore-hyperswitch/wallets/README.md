@@ -1,5 +1,5 @@
 ---
-description: Accept PayPal, GPay and Apple Pay through Hyperswitch
+description: Accept PayPal, GPay and Apple Pay through Juspay Hyperswitch
 icon: wallet
 ---
 

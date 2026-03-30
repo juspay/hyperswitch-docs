@@ -1,19 +1,21 @@
 ---
-description: Accept payments through Bluesnap via Hyperswitch
+description: Accept payments through Bluesnap via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Bluesnap
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Bluesnap through Hyperswitch
+
 {% endhint %}
 
 ![BlueSnap Logos](https://cdn2.hubspot.net/hubfs/454819/blog-files/Logo_color.png)
 
 BlueSnap is a payment platform that allows businesses to easily accept online and mobile payments across the world. BlueSnap payment gateway integration can accept payments for e-commerce transactions, subscription billing models, and other online payment businesses need. To know about more about payment methods supported by Bluesanp via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Bluesnap via Hyperswitch
+### Activating Bluesnap via Juspay Hyperswitch
 
 #### Prerequisites
 

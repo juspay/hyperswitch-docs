@@ -1,4 +1,5 @@
 ---
+description: Authenticate payments using 3D Secure via payment service providers
 icon: rotate-exclamation
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: Configure over-the-air updates for Juspay Hyperswitch iOS SDK
 icon: apple
 ---
 
@@ -30,9 +31,11 @@ HyperOTAServices(payload: payload,
 ```
 
 {% hint style="info" %}
+
 Make sure `releaseConfigURL` points to the `config.json` for the correct SDK version and environment.
 
 `Example : $baseURL/mobile-ota/ios/${BuildConfig.VERSION_NAME}/config.json`
+
 {% endhint %}
 
 For more information, [Airborne](https://github.com/juspay/airborne)
