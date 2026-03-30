@@ -87,5 +87,8 @@ A merchant has to first configure the 3DS Exemptions Rules in the [Hyperswitch D
 After configuring and saving the rules, merchants can test out our 3DS Intelligence Engine in the [demo playground](https://demostore3ds.netlify.app/) by running mock transactions and seeing the 3DS authentication results as defined by them.
 
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FXQTcHTQiPDVDzf12tlVj%2F3DS%20Demo.mp4?alt=media&token=3614e6bd-6980-4c9b-82ab-fccbcc8ea532" %}
+
 A demo showcasing the Custom Defined Exemption rules
+
 {% endembed %}
+

@@ -16,7 +16,9 @@ Style IDs are design templates for your payment links, allowing you to create di
 * Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
 
 {% hint style="info" %}
+
 **Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
+
 {% endhint %}
 
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.

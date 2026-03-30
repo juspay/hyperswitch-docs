@@ -1,12 +1,14 @@
 ---
-description: Accept payments through Billwerk via Hyperswitch
+description: Accept payments through Billwerk via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Billwerk
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Billwerk through Hyperswitch
+
 {% endhint %}
 
 <div align="left"><figure><img src="../../../../../.gitbook/assets/ic_Billwerk+Pay3X.svg" alt=""><figcaption></figcaption></figure></div>
@@ -15,7 +17,7 @@ This section gives you an overview of how to make payments via Billwerk through 
 
 Billwerk+ Pay is an acquirer independent payment gateway that helps you get the best acquirer rates, select a wide variety of payment methods. To know about more about payment methods supported by Billwerk+ Pay via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Billwerk+ Pay via Hyperswitch
+### Activating Billwerk+ Pay via Juspay Hyperswitch
 
 #### Prerequisites
 

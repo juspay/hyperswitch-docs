@@ -1,12 +1,14 @@
 ---
-description: Key to configure and test different connectors in Hyperswitch
+description: Key to configure and test different connectors in Juspay Hyperswitch
 icon: key
 ---
 
 # Test Credentials
 
 {% hint style="info" %}
+
 This section gives you an overview of how to you can make test transactions for the payment methods you have enabled
+
 {% endhint %}
 
 ## Testing Cards across different Connectors

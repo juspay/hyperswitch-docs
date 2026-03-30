@@ -26,6 +26,7 @@ The reconciliation process follows a robust, end-to-end flow to ensure that ever
 8.
 
 {% code title="How Reconciliation Works" fullWidth="true" %}
+
 ```mermaid
 flowchart TB
     OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
@@ -58,6 +59,7 @@ flowchart TB
     style MM fill:#FFCDD2
     style EM fill:#C8E6C9
 ```
+
 {% endcode %}
 
 ## Rules Architecture

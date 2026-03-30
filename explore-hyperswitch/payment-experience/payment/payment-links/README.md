@@ -20,7 +20,9 @@ Introducing Payment Links - Seamlessly integrate into Hyperswitch without writin
 * Streamlining over-the-phone transactions
 
 {% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
+
 API Level Overview of Payment Links with Hyperswitch
+
 {% endembed %}
 
 ### FAQ
@@ -70,5 +72,8 @@ Hyperswitch supports generation of the payment link. We are not integrated with 
 ## Next step:
 
 {% content-ref url="configurations.md" %}
+
 [configurations.md](configurations.md)
+
 {% endcontent-ref %}
+

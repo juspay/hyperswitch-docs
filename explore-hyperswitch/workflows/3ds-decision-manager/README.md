@@ -1,4 +1,5 @@
 ---
+description: Implement 3D Secure and Strong Customer Authentication for payments
 icon: badge-check
 ---
 

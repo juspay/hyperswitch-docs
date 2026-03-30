@@ -117,7 +117,9 @@ var paymentElementOptions = {
 ```
 
 {% hint style="info" %}
-Note: Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being moved into the layout. Other one-click methods are hidden when this option is disabled.
+
+> **Note:** Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being moved into the layout. Other one-click methods are hidden when this option is disabled.
+
 {% endhint %}
 
 ## 2. Wallets
@@ -190,12 +192,12 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
-* .Tab, .Label, .Input, .InputLogo, .SaveWalletDetailsLabel, .OrPayUsingLabel, .TermsTextLabel, .InfoElement, .OrPayUsingLine
-* .Tab:focus
-* .Input--invalid, .Label--invalid, .InputLogo--invalid
-* .Input::placeholder
-* .billing-section, .billing-details-text
-* .Input--empty, .InputLogo--empty
+*.Tab,.Label,.Input,.InputLogo,.SaveWalletDetailsLabel,.OrPayUsingLabel,.TermsTextLabel,.InfoElement,.OrPayUsingLine
+*.Tab:focus
+*.Input--invalid,.Label--invalid,.InputLogo--invalid
+*.Input::placeholder
+*.billing-section,.billing-details-text
+*.Input--empty,.InputLogo--empty
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -205,14 +207,14 @@ Each class name used in a selector supports an allowlist of CSS properties that 
 
 | Class Name   | States     | Pseudo-Classes                     | Pseudo-Elements |
 | ------------ | ---------- | ---------------------------------- | --------------- |
-| .Tabs        | --selected | :hover, :focus, :active, :disabled |                 |
+|.Tabs        | --selected | :hover, :focus, :active, :disabled |                 |
 | fontSizeBase | --selected | :hover, :focus, :active, :disabled |                 |
 | spacingUnit  | --selected | :hover, :focus, :active, :disabled |                 |
 
-* .Tab, .Label, .Input
-* .Tab:focus
-* .Input--invalid, .Label--invalid
-* .Input::placeholder
+*.Tab,.Label,.Input
+*.Tab:focus
+*.Input--invalid,.Label--invalid
+*.Input::placeholder
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
@@ -221,7 +223,7 @@ const appearance = {
   variables: {
     buttonBackgroundColor: "#FFFFFF",
     buttonTextColor: "#000000",
-    // ... along with other variables
+    //... along with other variables
   },
   rules: {
     ".TabLabel": {
@@ -263,9 +265,9 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name | States             | Pseudo-Classes                       | Pseudo-Elements            |
 | ---------- | ------------------ | ------------------------------------ | -------------------------- |
-| .Label     | --empty, --invalid |                                      |                            |
-| .Input     | --empty, --invalid | :hover, :focus, :disabled, :autofill | ::placeholder, ::selection |
-| .Error     |                    |                                      |                            |
+|.Label     | --empty, --invalid |                                      |                            |
+|.Input     | --empty, --invalid | :hover, :focus, :disabled, :autofill | ::placeholder, ::selection |
+|.Error     |                    |                                      |                            |
 
 ### Checkbox
 
@@ -273,9 +275,9 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name     | States    | Pseudo-Classes | Pseudo-Elements |
 | -------------- | --------- | -------------- | --------------- |
-| .Checkbox      | --checked | :hover         |                 |
-| .CheckboxLabel | --checked | :hover         |                 |
-| .CheckboxInput | --checked | :hover         |                 |
+|.Checkbox      | --checked | :hover         |                 |
+|.CheckboxLabel | --checked | :hover         |                 |
+|.CheckboxInput | --checked | :hover         |                 |
 
 ### InputLogo
 
@@ -283,9 +285,9 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name | States    | Pseudo-Classes | Pseudo-Elements |
 | ---------- | --------- | -------------- | --------------- |
-| .InputLogo |           | :hover         |                 |
-| .InputLogo | --invalid | :hover,        |                 |
-| .InputLogo | --empty   | :hover         |                 |
+|.InputLogo |           | :hover         |                 |
+|.InputLogo | --invalid | :hover,        |                 |
+|.InputLogo | --empty   | :hover         |                 |
 
 ### SaveWalletDetailsLabel
 
@@ -293,7 +295,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name              | States | Pseudo-Classes | Pseudo-Elements |
 | ----------------------- | ------ | -------------- | --------------- |
-| .SaveWalletDetailsLabel |        | :hover         |                 |
+|.SaveWalletDetailsLabel |        | :hover         |                 |
 
 ### OrPayUsingLabel
 
@@ -301,7 +303,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name       | States | Pseudo-Classes | Pseudo-Elements |
 | ---------------- | ------ | -------------- | --------------- |
-| .OrPayUsingLabel |        | :hover         |                 |
+|.OrPayUsingLabel |        | :hover         |                 |
 
 ### OrPayUsingLine
 
@@ -309,7 +311,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name      | States | Pseudo-Classes | Pseudo-Elements |
 | --------------- | ------ | -------------- | --------------- |
-| .OrPayUsingLine |        | :hover         |                 |
+|.OrPayUsingLine |        | :hover         |                 |
 
 ### TermsTextLabel
 
@@ -317,7 +319,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name      | States | Pseudo-Classes | Pseudo-Elements |
 | --------------- | ------ | -------------- | --------------- |
-| .TermsTextLabel |        | :hover         |                 |
+|.TermsTextLabel |        | :hover         |                 |
 
 ### InfoElement
 
@@ -325,7 +327,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 | Class Name   | States | Pseudo-Classes | Pseudo-Elements |
 | ------------ | ------ | -------------- | --------------- |
-| .InfoElement |        | :hover         |                 |
+|.InfoElement |        | :hover         |                 |
 
 ## 5. Languages
 
@@ -376,7 +378,7 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 You can decide whether to display the Hyperswitch branding using the `branding` prop
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
-</strong> ...,
+</strong>...,
  branding: "never", // choose between "never" and "always"
 }
 
@@ -388,7 +390,7 @@ You can decide whether to display the Hyperswitch branding using the `branding` 
 Customize the header text for the section displaying available payment methods.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
-</strong> ...,
+</strong>...,
  paymentMethodsHeaderText: "Select Payment Method",
 }
 
@@ -400,7 +402,7 @@ Customize the header text for the section displaying available payment methods.
 Customize the header text for the section displaying saved payment methods.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
-</strong> ...,
+</strong>...,
  savedPaymentMethodsHeaderText: "Saved Payment Methods",
 }
 
@@ -418,7 +420,7 @@ We provide a default message for card terms i.e.
 If you would like to customize this message, you can do so by using the `customMessageForCardTerms` property in the `paymentElementOptions` object.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
-</strong> ...,
+</strong>...,
  customMessageForCardTerms: "Custom message for Card terms",
 }
 
@@ -431,7 +433,7 @@ The `hideCardNicknameField` property allows you to hide the card nickname field 
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   hideCardNicknameField: true,  // default - false
 };
 
@@ -444,7 +446,7 @@ The `hideExpiredPaymentMethods` property allows you to control whether expired s
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   hideExpiredPaymentMethods: false, // default - false
 };
 
@@ -457,7 +459,7 @@ The `terms` property allows you to configure the display of terms for various pa
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   terms: {
     auBecsDebit: "always",
     bancontact: "auto",
@@ -478,7 +480,7 @@ The `displaySavedPaymentMethods` property determines whether saved payment metho
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   displaySavedPaymentMethods: false,
 };
 
@@ -491,7 +493,7 @@ The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save p
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   displaySavedPaymentMethodsCheckbox: false, 
 };
 
@@ -504,7 +506,7 @@ The `savedPaymentMethodsCheckboxCheckedByDefault` property determines whether th
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   savedPaymentMethodsCheckboxCheckedByDefault: false, // default - false
 };
 
@@ -517,7 +519,7 @@ The `paymentMethodOrder` property allows you to specify the order in which payme
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   paymentMethodOrder: ["card", "ideal", "sepaDebit", "sofort"],
 };
 
@@ -530,7 +532,7 @@ The `business` property allows you to specify a business name to be attached to 
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   business: {
     name: "Example Business",
   },
@@ -545,7 +547,7 @@ The `readOnly` property puts the SDK into read-only mode, disabling all interact
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   readOnly: true,
 };
 
@@ -557,12 +559,14 @@ var paymentElementOptions = {
 The `showShortSurchargeMessage` property allows merchants to display a short message when a surcharge is applied, instead of the default message provided by the SDK.
 
 {% hint style="success" %}
+
 The short message format will be: **`Fee: {Currency} {Amount}`**
+
 {% endhint %}
 
 ```javascript
 var paymentElementOptions = {
-  ...,
+...,
   showShortSurchargeMessage: true, // default - false
 };
 
@@ -572,5 +576,8 @@ var paymentElementOptions = {
 ## Next step:
 
 {% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

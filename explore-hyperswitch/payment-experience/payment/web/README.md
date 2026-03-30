@@ -26,11 +26,14 @@ While the Unified Checkout is pre-optimized for maximum conversions, Hyperswitch
 
 You can further optimize Unified Checkout web SDK by preloading all the resources that are needed by the iframe. By the time iframe is to be mounted (checkout button), everything that is required can be fetched from their server and stored in the disk cache.
 
-* `<Elements/>` wrapper has to be used in the top-level of the merchants app , say web app has two pages eg: homepage and checkout page, the wrapper must be added in the homepage itself.
+* `<Elements/>` wrapper has to be used in the top-level of the merchants app, say web app has two pages eg: homepage and checkout page, the wrapper must be added in the homepage itself.
 * `<Elements/>` has the required props to load our Hyperloader (script) which will
   1. Preload the all the resources that are required by the SDK ie. files, svgs, icons, css, fonts etc.
   2. Prefetch the two main API calls and is ready with response
 
 {% hint style="success" %}
+
 **This will significantly decrease the SDK load time from \~10-15s (in slow 3G network) to just \~1-5ms.**
+
 {% endhint %}
+

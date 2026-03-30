@@ -1,5 +1,5 @@
 ---
-description: Payments authentication through Netcetera via Hyperswitch
+description: Authenticate payments using Netcetera 3DS via Juspay Hyperswitch
 ---
 
 # Netcetera
@@ -7,7 +7,9 @@ description: Payments authentication through Netcetera via Hyperswitch
 <div align="left"><figure><img src="../../../.gitbook/assets/Screenshot 2024-07-05 at 1.27.28 PM.png" alt="" width="201"><figcaption></figcaption></figure></div>
 
 {% hint style="info" %}
+
 This section gives you an overview of how to authenticate payments via Netcetera through Hyperswitch
+
 {% endhint %}
 
 Netcetera offers EMV® 3DS 2.X transactions processing. It provides an ecosystem, incorporated into the merchant app to process in-app payments based on EMV® 3DS 2.X Standard.

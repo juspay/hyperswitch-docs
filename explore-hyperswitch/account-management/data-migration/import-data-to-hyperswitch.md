@@ -1,8 +1,9 @@
 ---
+description: Import payment data from your current processor to Juspay Hyperswitch securely
 icon: right-from-bracket
 ---
 
-# Import data to Hyperswitch
+# Import data to Juspay Hyperswitch
 
 We help you with smooth migration from your current payment processor, ensuring uninterrupted business operations.
 
@@ -25,7 +26,7 @@ The CSV file for import should be formatted in accordance with the following req
 * Delimit rows by a single newline character `\n (not \r\n)`.
 * Delimit columns by `,`
 * Leave empty fields entirely empty (no character in between delimiters). You must not denote a missing field with NULL, N/A, or any other value.
-* Fields can’t contain comma, newline characters `(\r or \n or ,)` within a field.&#x20;
+* Fields can’t contain comma, newline characters `(\r or \n or,)` within a field.&#x20;
   * Example of what to avoid: `1st Ave\nApt 1`
 * All rows must have the same number of columns.
 * Field names and values are case-sensitive.
@@ -47,7 +48,7 @@ The CSV file for import should be formatted in accordance with the following req
 
 ### Optional fields:
 
-Note: Billing details are mandatorily required if AVS (Address verification Service) check is enabled.
+> **Note:** Billing details are mandatorily required if AVS (Address verification Service) check is enabled.
 
 | **Field**                     | **Description**                                               |
 | ----------------------------- | ------------------------------------------------------------- |
@@ -69,5 +70,8 @@ Note: Billing details are mandatorily required if AVS (Address verification Serv
 | billing\_address\_country     | Country of the billing address                                |
 
 {% hint style="info" %}
+
 To import other payment methods like SEPA, ACH, Paypal, Klarna, kindly reach out to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+
 {% endhint %}
+

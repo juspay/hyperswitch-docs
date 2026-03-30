@@ -15,7 +15,7 @@ Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethe
 4. The customer confirms the transaction in their wallet and sends the payment to the recipient's public address on the cryptocurrency network
 5. Once the payment is confirmed and processed by the cryptocurrency network, the merchant can access the payment in their cryptocurrency wallet
 
-## **Configuring Crypto on Hyperswitch**
+## **Configuring Crypto on Juspay Hyperswitch**
 
 You can configure Crypto on Hyperswitch by following the steps mentioned below -
 

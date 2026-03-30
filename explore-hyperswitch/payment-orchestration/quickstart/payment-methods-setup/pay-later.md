@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Hyperswitch
+description: Accept pay later options through Juspay Hyperswitch
 icon: calendar-day
 ---
 
@@ -11,7 +11,7 @@ icon: calendar-day
 * Affirm is a buy now pay later payment method available to US customers and supports USD.
 * Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
 
-## **How to configure pay later options (Redirection flow) on Hyperswitch?**
+## **How to configure pay later options (Redirection flow) on Juspay Hyperswitch?**
 
 1. Make sure that the pay later options are enabled on your connector's dashboard
 2. Enable paylater options on Hyperswitch dashboard under "payment methods" tab while configuring your connector

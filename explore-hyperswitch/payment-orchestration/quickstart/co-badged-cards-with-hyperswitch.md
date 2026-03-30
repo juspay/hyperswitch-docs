@@ -1,4 +1,5 @@
 ---
+description: Support co-badged cards with multiple payment network options
 icon: credit-card
 ---
 
@@ -17,7 +18,7 @@ Customers benefit from the global scope, security, and consumer protection of in
 * **Compliance with Global Standards**: Co-badged cards support local regulations, such as Article 8 of the [Interchange Fee Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R0751) (IFR) issued by the European Union, ensuring full compliance while maintaining flexibility for merchants outside the EEA.
 * **Cost Optimization**: The platform's debit routing engine automatically selects the most cost-effective network based on real-time data and merchant preferences.
 
-## How to enable support for Co-badged cards with Hyperswitch?
+## How to enable support for Co-badged cards with Juspay Hyperswitch?
 
 Co-badged card support is **automatically enabled** when you configure multiple card networks in your business profile. The system will:
 
@@ -43,5 +44,8 @@ In the IFR, Article 8 mandates that customers must be free to choose their netwo
 Merchants can choose not to support one of the networks, and in such cases, transactions will be routed through the supported network.
 
 {% content-ref url="../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+
 [save-a-payment-method.md](../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
+
 {% endcontent-ref %}
+

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hyperswitch is designed to facilitate the integration and management of
+  Juspay Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
@@ -26,7 +26,9 @@ Initialize Hyperswitch Headless SDK onto your app with your publishable key. To 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
+
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
+
 {% endhint %}
 
 #### 3. Initialize your Payment Session

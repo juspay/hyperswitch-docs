@@ -1,4 +1,5 @@
 ---
+description: Extend checkout with modular alternate payment method widgets
 icon: bolt-lightning
 ---
 
@@ -73,5 +74,8 @@ The engineering ensures support for emerging payment methods and new PSPs withou
 <table><thead><tr><th width="374">via PSP or middle layer</th><th>via Hyperwidgets</th></tr></thead><tbody><tr><td><p><mark style="color:blue;">Existing APMs</mark></p><ul><li>Apple Pay - <mark style="color:red;">2-3 weeks of engineering effort</mark></li><li>Klarna - <mark style="color:red;">2-3 weeks of engineering effort</mark></li></ul><p><mark style="color:blue;">New innovations</mark></p><ul><li>Paze - <mark style="color:red;">Not available via most players</mark></li><li>Click2Pay - <mark style="color:red;">Not available via most player</mark></li></ul></td><td><p>⠀</p><p>One time effort of <mark style="color:blue;">2-weeks</mark> to enable all existing APMs and new innovations via the same integration</p></td></tr></tbody></table>
 
 {% content-ref url="hyperwidget-integration-guide.md" %}
+
 [hyperwidget-integration-guide.md](hyperwidget-integration-guide.md)
+
 {% endcontent-ref %}
+

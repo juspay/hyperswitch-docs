@@ -1,5 +1,5 @@
 ---
-description: Juspay Saleor Payment App Setup
+description: Set up Juspay payment app for Saleor platform integration
 ---
 
 # Setup
@@ -7,7 +7,9 @@ description: Juspay Saleor Payment App Setup
 Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
 
 {% hint style="info" %}
+
 This section covers the steps to setup Juspay payment app through saleor
+
 {% endhint %}
 
 ### Prerequisites
@@ -194,17 +196,17 @@ mutation JuspayTransactionInitialize($data: JSON!) {
 
 You can pass additional fields while initiating the transaction through the $data JSON object. The additional fields you can pass include:
 
-1. `customerId`: \[Optional String] The identifier for the customer
+1. `customerId`: [Optional String] The identifier for the customer
 2. `authenticationType`: This is used for non Indian payments. Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no\_three\_ds' here and vice versa. Default value is 'no\_three\_ds' if not set Available options: `three_ds`, `no_three_ds`
-3. `billingEmail`: \[Optional String] customer's billing email
-4. `shippingEmail` : \[Optional String] customer's shipping email
-5. `statementDescriptorName`: \[Optional String] This is used for non Indian payments. For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
-6. `statementDescriptorSuffix`: \[Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
-7. `description`: \[Optional String] A description for the payment
-8. `returnUrl`: \[Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
-9. `manualRetryAllowed`: \[Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-10. `gatewayReferenceId`: \[Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
-11. `allowedPaymentMethods`: \[Optional JSON] This helps you to select which payment options you want to show on your payment page.
+3. `billingEmail`: [Optional String] customer's billing email
+4. `shippingEmail` : [Optional String] customer's shipping email
+5. `statementDescriptorName`: [Optional String] This is used for non Indian payments. For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
+6. `statementDescriptorSuffix`: [Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
+7. `description`: [Optional String] A description for the payment
+8. `returnUrl`: [Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
+9. `manualRetryAllowed`: [Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
+10. `gatewayReferenceId`: [Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
+11. `allowedPaymentMethods`: [Optional JSON] This helps you to select which payment options you want to show on your payment page.
     * **Indian Payments**: This expects a json object to enable and disable payment options. For more info refer [here](https://docs.juspay.in/hyper-checkout/android/resources/payment-locking).
     * **Non-Indian Payments**: This expects a json array of enums to enable and disable payment options. For more info refer `allowed_payment_method_types` in [payments-create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 

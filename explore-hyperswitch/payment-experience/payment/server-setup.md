@@ -1,4 +1,5 @@
 ---
+description: Set up server-side payment creation and SDK integration
 icon: server
 ---
 
@@ -39,12 +40,15 @@ async function createPaymentIntent(request) {
 
 ### Integrate Web SDK
 
-_To integrate Web SDK, follow React , HTML  and JS with REST API Integration._
+_To integrate Web SDK, follow React, HTML  and JS with REST API Integration._
 
 ### Integrate Mobile SDK
 
-_To integrate mobile SDK, follow Kotlin, Swift_ , _React Native , and Flutter with REST API Integration_
+_To integrate mobile SDK, follow Kotlin, Swift_, _React Native, and Flutter with REST API Integration_
 
 {% hint style="info" %}
+
 In case your integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
+
 {% endhint %}
+

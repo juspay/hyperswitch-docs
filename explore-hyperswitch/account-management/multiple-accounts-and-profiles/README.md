@@ -1,14 +1,14 @@
 ---
-description: >-
-  Create multiple merchant accounts, profiles and users for seamless integration
-  with your business.
+description: Create multiple merchant accounts and profiles for organizing your payment operations
 icon: file-user
 ---
 
 # Managing Accounts and Profiles
 
 {% hint style="warning" %}
+
 If there are more than one `business_profiles` for a merchant account, then passing `profile_id` when creating a payment is mandatory.
+
 {% endhint %}
 
 **Hyperswitch architecture supports:**
@@ -42,7 +42,9 @@ A merchant account is associated with an `api_key` and `publishable_key` which i
 #### Profile
 
 {% hint style="info" %}
+
 Every merchant account has at least one profile. For easier integration,`profile_id` is not mandatory if there is only one business profile.&#x20;
+
 {% endhint %}
 
 A profile can also be considered to be a business profile for practical purposes, it serves as a logical separation of businesses for seamless integration and onboarding. Every business profile is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
@@ -66,7 +68,6 @@ A processor  created under one business profile cannot be used in another busine
 ### Use cases
 
 *   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
-
 
 
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
@@ -118,5 +119,8 @@ When a payment is created under a business profile, it would use the routing alg
 ### For the Platform Org and Merchant architecture, refer to the page below.
 
 {% content-ref url="platform-org-and-merchant-setup.md" %}
+
 [platform-org-and-merchant-setup.md](platform-org-and-merchant-setup.md)
+
 {% endcontent-ref %}
+

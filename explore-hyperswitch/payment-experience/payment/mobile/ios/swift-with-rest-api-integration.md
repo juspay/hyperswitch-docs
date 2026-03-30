@@ -6,7 +6,9 @@ icon: swift
 # Swift with REST API Integration
 
 {% hint style="info" %}
+
 Use this guide to integrate Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
+
 {% endhint %}
 
 ## Requirements
@@ -21,7 +23,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 ## 2. Build checkout page on your app
 
-### 2.1 Configure your repository with Hyperswitch dependency
+### 2.1 Configure your repository with Juspay Hyperswitch dependency
 
 CocoaPods Setup (only required if not already done)
 
@@ -50,7 +52,7 @@ Run the following command:
 pod install
 ```
 
-**Remember that moving forward, you should open your project in Xcode using the .xcworkspace file rather than the .xcodeproj file.**
+**Remember that moving forward, you should open your project in Xcode using the.xcworkspace file rather than the.xcodeproj file.**
 
 To update to the latest version of the SDK, run:
 
@@ -67,13 +69,15 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 </strong></code></pre>
 
 {% hint style="warning" %}
-Note: For Open Source Setup, initialise your custom Backend app & log URL as:
+
+> **Note:** For Open Source Setup, initialise your custom Backend app & log URL as:
 
 ```swift
 paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
                                 customBackendUrl: <YOUR_SERVER_URL>,
                                 customLogUrl: <YOUR_LOG_URL>)
 ```
+
 {% endhint %}
 
 ### 2.3 Complete the payment on your app
@@ -83,15 +87,19 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
 Request your server to fetch a payment as soon as your view is loaded. Store the client\_secret returned by your server. The `PaymentSession` will use this secret to complete the payment process.
 
 {% tabs %}
+
 {% tab title="Swift" %}
+
 ```swift
 var paymentSession: PaymentSession?
 
 paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
+
 {% endtab %}
 
 {% tab title="SwiftUI" %}
+
 ```swift
 @ObservedObject var model = BackendModel()
 @Published var paymentSheet: PaymentSession?
@@ -105,7 +113,9 @@ func onPaymentCompletion(result: PaymentSheetResult) {
 }
 paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 #### **Handle Payment Result**
@@ -113,7 +123,9 @@ paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClien
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
 {% tabs %}
+
 {% tab title="Swift" %}
+
 ```swift
 @objc
 func openPaymentSheet(_ sender: Any) { //present payment sheet
@@ -125,11 +137,11 @@ configuration.merchantDisplayName = "Example, Inc."
                                         configuration: configuration, 
                                         completion: { result in
         switch result {
-        case .completed:
+        case.completed:
             print("Payment complete")
-        case .failed(let error):
+        case.failed(let error):
             print("Payment failed: \(error.localizedDescription)")
-        case .canceled:
+        case.canceled:
             print("Payment canceled.")
         }
     })
@@ -137,11 +149,15 @@ configuration.merchantDisplayName = "Example, Inc."
 ```
 
 {% hint style="danger" %}
+
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+
 {% endhint %}
+
 {% endtab %}
 
 {% tab title="SwiftUI" %}
+
 ```swift
 VStack {
   if let paymentSession = model.paymentSession {
@@ -150,19 +166,19 @@ VStack {
                                                onCompletion: model.onPaymentCompletion)
     {
      Text("Hyper Payment Sheet")
-        .padding()
-        .background(.blue)
-        .foregroundColor(.white)
-        .cornerRadius(10.0)
+.padding()
+.background(.blue)
+.foregroundColor(.white)
+.cornerRadius(10.0)
     }
 
     if let result = model.paymentResult {
         switch result {
-          case .completed:
+          case.completed:
             Text("Payment complete")
-          case .failed(let error):
+          case.failed(let error):
             Text("Payment failed: \(error.domain)")
-          case .canceled:
+          case.canceled:
             Text("Payment canceled.")
           }
       }
@@ -176,7 +192,9 @@ func configuration() -> PaymentSheet.Configuration {
         return configuration
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ### 3. Card Element (Beta)
@@ -184,7 +202,9 @@ func configuration() -> PaymentSheet.Configuration {
 Create a card element view and pay button and handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
 {% tabs %}
+
 {% tab title="Swift" %}
+
 <pre class="language-swift"><code class="lang-swift"><strong>//Create a card element view and pay button.
 </strong><strong>lazy var hyperCardTextField: PaymentCardTextField = {
 </strong>    let cardTextField = PaymentCardTextField()
@@ -192,11 +212,11 @@ Create a card element view and pay button and handle the payment result in the c
 }()
 
 lazy var payButton: UIButton = {
-    let button = UIButton(type: .custom)
+    let button = UIButton(type:.custom)
     button.layer.cornerRadius = 5
-    button.backgroundColor = .systemBlue
-    button.setTitle("Pay", for: .normal)
-    button.addTarget(self, action: #selector(pay), for: .touchUpInside)
+    button.backgroundColor =.systemBlue
+    button.setTitle("Pay", for:.normal)
+    button.addTarget(self, action: #selector(pay), for:.touchUpInside)
     return button
 }()
 
@@ -212,11 +232,11 @@ let paymentHandler = PaymentHandler.shared()
     paymentHandler.confirmPayment(paymentIntentParams, with: self) { 
         (status, paymentIntent, error) in
             switch (status) {
-                case .failed:
+                case.failed:
                     break
-                case .canceled:
+                case.canceled:
                     break
-                case .succeeded:
+                case.succeeded:
                     break
                 @unknown default:
                     fatalError()
@@ -225,16 +245,18 @@ let paymentHandler = PaymentHandler.shared()
     }
 }
 </code></pre>
+
 {% endtab %}
 
 {% tab title="SwiftUI" %}
+
 ```swift
 @ObservedObject var model = BackendModel()
 @State var paymentMethodParams: PaymentMethodParams?
 
 VStack {
   PaymentCardTextField.Representable(paymentMethodParams: $paymentMethodParams)
-    .padding()
+.padding()
   //Create a card element view and pay button.
   if let paymentIntent = model.paymentIntentParams {
     Button("Buy")
@@ -242,8 +264,8 @@ VStack {
       paymentIntent.paymentMethodParams = paymentMethodParams
       isConfirmingPayment = true
     }
-    .disabled(isConfirmingPayment || paymentMethodParams == nil)
-    .paymentConfirmationSheet(
+.disabled(isConfirmingPayment || paymentMethodParams == nil)
+.paymentConfirmationSheet(
         isConfirmingPayment: $isConfirmingPayment,
         paymentIntentParams: paymentIntent,
         onCompletion: model.onCompletion
@@ -258,7 +280,9 @@ VStack {
   }
 }.onAppear { model.preparePaymentIntent() }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.
@@ -266,5 +290,8 @@ Congratulations! Now that you have integrated the iOS SDK, you can customize the
 ## Next step:
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

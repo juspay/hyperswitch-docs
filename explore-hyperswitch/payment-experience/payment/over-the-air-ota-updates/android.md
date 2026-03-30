@@ -1,4 +1,5 @@
 ---
+description: Configure over-the-air updates for Juspay Hyperswitch Android SDK
 icon: android
 ---
 
@@ -27,9 +28,11 @@ HyperOTAReact(
 ```
 
 {% hint style="info" %}
+
 Replace `hyperOTAUrl` with your environment-specific endpoint.
 
 `Example : $baseURL/mobile-ota/android/${BuildConfig.VERSION_NAME}/config.json`
+
 {% endhint %}
 
 2. In your `MainApplication` class, ensure `getJSBundleFile()` uses the bundle path from HyperOTA and falls back to the default asset if necessary

@@ -1,5 +1,5 @@
 ---
-description: Learn about integration options for accepting payments online.
+description: Explore integration options for accepting online payments
 icon: sidebar-flip
 ---
 
@@ -8,7 +8,9 @@ icon: sidebar-flip
 Optimize your payments integration and unlock higher revenue with the Optimized Checkout Suite by Hyperswitch. It includes customizable payment UIs, dynamic payment method presentation, and one click checkout. Get started by choosing the integration that fits your business requirements
 
 {% hint style="info" %}
+
 [Explore the demo](https://hyperswitch-demo-store.netlify.app/)
+
 {% endhint %}
 
 ### Learn which payments integration fits your business

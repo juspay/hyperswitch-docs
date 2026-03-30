@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate with more than 200+ Connectors enabling 150+ payment methods with
-  zero development effort.
+description: Integrate with 200 plus connectors enabling 150 plus payment methods
 icon: plug
 ---
 

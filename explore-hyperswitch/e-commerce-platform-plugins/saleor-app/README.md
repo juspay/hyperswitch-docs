@@ -1,4 +1,5 @@
 ---
+description: Integrate Juspay Hyperswitch and Hypercheckout with Saleor ecommerce platform
 hidden: true
 icon: plug-circle-bolt
 ---
@@ -18,5 +19,8 @@ HyperCheckout combines the power of native checkout experiences, robust payment 
 Access the entire payment ecosystem with a Single API. Hyperswitch connects you to multiple payment processors to embrace diversity. It improves payment success rates and reduces payment costs, ops & dev efforts.
 
 {% content-ref url="setup.md" %}
+
 [setup.md](setup.md)
+
 {% endcontent-ref %}
+

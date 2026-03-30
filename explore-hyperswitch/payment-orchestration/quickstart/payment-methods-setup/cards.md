@@ -25,7 +25,9 @@ The Saved cards feature comes out of the box without any additional integration 
 Follow the below guide to learn how to make a saved card payment using Hyperswitch
 
 {% content-ref url="../tokenization-and-saved-cards/" %}
+
 [tokenization-and-saved-cards](../tokenization-and-saved-cards/)
+
 {% endcontent-ref %}
 
 ## Recurring Payments - Mandate through cards
@@ -35,7 +37,9 @@ Hyperswitch supports the creation of mandates for card transactions through vari
 Follow the below guide to learn how to make a recurring payment with Hyperswitch
 
 {% content-ref url="../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md" %}
+
 [save-a-payment-method.md](../../../../about-hyperswitch/payment-suite-1/payments-cards/saved-card/save-a-payment-method.md)
+
 {% endcontent-ref %}
 
 ## Auth and Capture

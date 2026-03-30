@@ -1,21 +1,22 @@
 ---
-description: Accept payments through OpenNode via Hyperswitch
+description: Accept Bitcoin payments through OpenNode via Juspay Hyperswitch
 hidden: true
 ---
 
 # OpenNode
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via OpenNode through Hyperswitch
+
 {% endhint %}
 
 <img src="https://hyperswitch.io/icons/homePageIcons/logos/opennodeLogo.svg" alt="logo_discord" data-size="original">
 
 
-
 OpenNode makes it easy to accept bitcoin payments or send bitcoin payouts while gaining access to a global user base. They provide every business with access to instant, secure, low-cost bitcoin payments. To know about more about payment methods supported by OpenNode via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating OpenNode via Hyperswitch
+### Activating OpenNode via Juspay Hyperswitch
 
 #### Prerequisites
 

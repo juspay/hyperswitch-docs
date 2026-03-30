@@ -1,4 +1,5 @@
 ---
+description: Increase authorized amounts after initial authorization for variable cost scenarios
 icon: arrow-up-right-dots
 ---
 
@@ -25,7 +26,7 @@ Incremental authorization can help businesses to fulfill the following use-cases
 1. Ensure that your business operates in a region without Strong Customer Authentication (SCA) requirements, as incremental authorizations are only possible in such environments.
 2. This feature is limited to card payments and specific networks, with rules that vary depending on the payment connector used.
 
-### How to use Incremental Authorization through Hyperswitch?
+### How to use Incremental Authorization through Juspay Hyperswitch?
 
 **Step 1:** To use Incremental authorization you can set the value of the [request\_incremental\_authorization](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) field to true in the payments/create API call.
 

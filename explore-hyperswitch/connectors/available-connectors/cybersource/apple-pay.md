@@ -1,11 +1,13 @@
 ---
-description: Integrate ApplePay via Cybersource in Hyperswitch
+description: Integrate ApplePay via Cybersource in Juspay Hyperswitch
 ---
 
 # Apple Pay
 
 {% hint style="info" %}
+
 This page consists of steps for how **ApplePay** can be enabled in Hyperswitch via Cybersource
+
 {% endhint %}
 
 > This guide assumes that you have alreaedy configured Cybersource as a connector in your Hyperswitch Control Center. If not please follow the steps mentioned [here](./)
@@ -40,7 +42,9 @@ This page consists of steps for how **ApplePay** can be enabled in Hyperswitch v
     * Country
 
 {% hint style="warning" %}
+
 We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
+
 {% endhint %}
 
 ### Steps to prepare ApplePay certificates for Cybersource Integration
@@ -66,5 +70,8 @@ We recommend to pass this fields while creating the Payment Intent with Hyperswi
 * Now you can configure the genreated certificates into Hyperswitch Control Center for Cybersource by following these [steps](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
 
 {% hint style="info" %}
+
 To enable ApplePay in your iOS Application, please refer to the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#integrate-with-xcode)
+
 {% endhint %}
+
