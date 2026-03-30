@@ -7,9 +7,9 @@ hidden: true
 
 # Vault and Forward
 
-In this approach, the Direct Payment Control Model functions by treating Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
+In this approach, the Direct Payment Control Model functions by treating Juspay Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Juspay Hyperswitch Vault SDK, where the data is directly tokenized within the Juspay Hyperswitch Vault.
 
-For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
+For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Juspay Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
 
 This architecture allows you to maintain your legacy backend logic while significantly reducing PCI scope. It is particularly well-suited for scenarios where you plan to keep existing processor integrations. but require the removal of sensitive card data from your internal systems.
 

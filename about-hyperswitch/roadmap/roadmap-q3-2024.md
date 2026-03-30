@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (July to Sept'24)
+description: Juspay Hyperswitch roadmap (July to Sept'24)
 icon: road
 ---
 

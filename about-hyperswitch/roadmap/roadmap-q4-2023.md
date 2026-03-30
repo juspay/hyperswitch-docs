@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'23)
+description: Juspay Hyperswitch roadmap (Oct to Dec'23)
 icon: road
 ---
 
@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-## Core Values
+### Core Values
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -19,7 +19,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-## Themes for Roadmap
+### Themes for Roadmap
 
 There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
@@ -71,6 +71,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 * 🟩💪 Open sourcing Fraud and Risk Management Integrations
 * 🟩💪 Open sourcing Payouts module
 
-## **Want to contribute to the roadmap?**
+### **Want to contribute to the roadmap?**
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

@@ -1,5 +1,5 @@
 ---
-description: Jan'25 - Mar'25
+description: Juspay Hyperswitch Roadmap Jan'25 - Mar'25
 icon: road
 ---
 
@@ -44,7 +44,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
+There are a lot of problems to be solved in payments, but the majority of our current focus falls under 5 themes below.
 
 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
