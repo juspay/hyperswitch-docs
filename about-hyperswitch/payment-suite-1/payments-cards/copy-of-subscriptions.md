@@ -31,11 +31,115 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ##### Initial Subscription create flow (with CIT Payment)
 
-<figure><img src="../../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+sequenceDiagram
+    participant MW as merchant website (MW)
+    participant MS as merchant server (MS)
+    participant HSDK as hyperswitch sdk (HSDK)
+    participant HS as hyperswitch server (HS)
+    participant SP as subscription provider (SP)
+    participant PSP as PSP
+
+    MS->>HS: Fetch plan details
+    HS->>SP: Get plan catalog
+    SP-->>HS: Plan list
+    HS-->>MS: Plan list
+    MS-->>MW: Render plans
+    MW->>MS: User selected plan (plan_id/price_id)
+    MS->>HS: Create customer
+    HS->>SP: Create customer
+    SP-->>HS: customer_ref
+    HS-->>MS: customer_id
+    MS->>HS: Create subscription (customer_id, plan_price_id)
+    HS->>SP: Create subscription
+    SP-->>HS: subscription_ref
+    HS-->>MS: client_secret, subscription_id
+    MS-->>MW: Provide client_secret to invoke HSDK
+    MW->>HSDK: Initialize(client_secret)
+    HSDK->>HS: Fetch subscription/payment intent
+    HS-->>HSDK: Return details
+    Note over MW: Customer selects payment method and enters details
+    MW->>HSDK: Confirm payment (user action)
+    HSDK->>HS: POST /subscriptions/:id/confirm
+    HS->>PSP: CIT authorization/capture (payment method from HSDK)
+    PSP-->>HS: Transaction result
+
+    alt success
+        HS->>SP: Mark invoice as paid
+        SP-->>HS: Acknowledged
+        HS-->>MS: Subscription status update (active/paid)
+        MS-->>MW: Display success
+    else failure
+        HS-->>MS: Subscription/payment failed
+        MS-->>MW: Display failure + retry options
+    end
+
+    classDef default fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A
+    classDef accent fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff
+    class MW,MS,HS,SP,HSDK,PSP default
+```
+
+*Caption: The initial Customer-Initiated Transaction (CIT) flow for subscription creation. The merchant fetches plan details from the subscription provider through Hyperswitch, creates a customer and subscription, initializes the SDK for payment collection, and processes the first payment with success/failure handling.*
 
 ##### MIT payment flow in subsequent billing cycle
 
-<figure><img src="../../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+sequenceDiagram
+    participant MW as merchant website (MW)
+    participant MS as merchant server (MS)
+    participant HSDK as hyperswitch sdk (HSDK)
+    participant HS as hyperswitch server (HS)
+    participant SP as subscription provider (SP)
+    participant PSP as PSP
+
+    SP->>HS: Invoice webhook (subscription_id, amount, due_date)
+    HS->>PSP: MIT payment using stored credential
+    PSP-->>HS: Transaction result
+
+    alt success
+        HS->>SP: Mark invoice as paid
+        SP-->>HS: Acknowledged
+        HS-->>MS: Subscription status update (renewed/paid)
+        MS-->>MW: Update UI/notify customer
+    else failure
+        HS-->>MS: Renewal payment failed (dunning start)
+        MS-->>MW: Notify failure / retry schedule
+    end
+
+    classDef default fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A
+    classDef accent fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff
+    class MW,MS,HS,SP,HSDK,PSP default
+```
+
+*Caption: The Merchant-Initiated Transaction (MIT) flow for subsequent billing cycles. The subscription provider sends an invoice webhook to Hyperswitch, which processes the payment using stored credentials without customer intervention, with separate success and failure handling paths.*
 
 #### Integration Guide
 
@@ -104,7 +208,7 @@ Response:
         "name": "Enterprise Suite",
         "description": "High-end customer support suite with enterprise-grade solutions."
  	 "price_id": [
-          	{
+           	{
                 "id": "cbdemo_enterprise-suite-INR-Daily",
                 "name": "Enterprise Suite INR Daily",
                 "pricing_model": "flat_fee",
