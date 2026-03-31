@@ -20,59 +20,7 @@ The Payment method SDK allows you to securely collect payment information and gi
 
 
 
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-sequenceDiagram
-    autonumber
-    participant Customer as C
-    participant Merchant as M
-    participant Hyperswitch as H
-    participant Vault as V
-    participant PSP as P
-
-    Note over M: Prerequisites: PCI DSS Compliance & API Key
-
-    C->>M: Enters Card Details
-
-    rect rgb(240, 245, 255)
-    Note right of M: Step 1: Create Customer
-    M->>H: POST /v2/customers
-    H-->>M: Return customer_id
-    end
-
-    rect rgb(235, 255, 235)
-    Note right of M: Step 2: Create Payment Method Token
-    M->>H: POST /v2/payment-methods (Card Data + customer_id)
-
-    H->>V: Store Raw Card Data
-    V-->>H: Generate Secure pm_id
-
-    opt If psp_tokenization or network_tokenization enabled
-        H->>P: Request PSP/Network Token
-        P-->>H: Return External Token
-        H->>V: Map External Token to pm_id
-    end
-
-    H-->>M: Return pm_id & Token Details
-    end
-
-    M-->>C: Token Saved Confirmation
-```
-
-*Caption: The server-to-server vault tokenization flow. The customer enters card details into the merchant's checkout, the merchant creates a customer and payment method via Hyperswitch APIs, and the card data is securely stored in Hyperswitch's Vault. If PSP or network tokenization is enabled, Hyperswitch also retrieves and maps external tokens for future payments.*
+<figure><img src="../../.gitbook/assets/Payment Method SDK (1).svg" alt=""><figcaption></figcaption></figure>
 
 #### **Vaulting :**
 
@@ -96,7 +44,7 @@ Hyperswitch receives the request, securely stores the raw card data in the Vault
 
 Hyperswitch returns the `payment_method_id` in the response. You can use this payment method ID for future payments for this customer without handling sensitive card data again.
 
-#### **Payment :** 
+#### **Payment :**&#x20;
 
 To charge the customer you will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with `confirm` as `true`
 

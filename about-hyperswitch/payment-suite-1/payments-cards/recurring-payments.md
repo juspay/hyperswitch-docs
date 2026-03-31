@@ -168,53 +168,7 @@ To mitigate this we would be storing the Network Transaction ID which will be a 
 
 In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
 
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-flowchart TD
-  start([pg_agnostic_mandate])
-  enabled{enabled}
-  checkId["Check if Network Reference ID is stored against that mandate"]
-  present["Present"]
-  notPresent["Not Present"]
-  decideConnector["Decide connector after Routing"]
-  retrieveCard["Retrieve Card from locker"]
-  mitRawCard["MIT using raw card details and n/w reference ID"]
-  mitOriginalConnector1["MIT using mandate_id via the original connector"]
-  disabled["disabled"]
-  mitOriginalConnector2["MIT using mandate_id via the original connector"]
-
-  start --> enabled
-  enabled --> checkId
-  checkId --> present
-  checkId --> notPresent
-  present --> decideConnector
-  decideConnector --> retrieveCard
-  retrieveCard --> mitRawCard
-  notPresent --> mitOriginalConnector1
-  enabled -.-> disabled
-  disabled --> mitOriginalConnector2
-
-  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
-  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
-  classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
-  class start,present,mitRawCard,notPresent,disabled,mitOriginalConnector1,mitOriginalConnector2 default
-  class enabled,checkId decision
-```
-
-*Caption: The connector-agnostic MIT routing decision flow. When pg_agnostic_mandate is enabled, the system checks for Network Reference ID presence. If present, it routes through the connector-agnostic flow with raw card details; if not present, it falls back to the original connector using mandate_id. When disabled, all MITs route through the original connector.*
+<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 ##### Enabling Connector agnostic MITs
 

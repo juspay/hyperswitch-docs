@@ -15,65 +15,7 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 #### **Understanding Payment and Vault Flow**&#x20;
 
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-sequenceDiagram
-    participant C as Consumer
-    participant MFE as Merchant FE
-    participant SDK as Hyperswitch PM SDK
-    participant MBE as Merchant BE
-    participant HS as Hyperswitch BE
-    participant V as Vault
-    participant PSP as PSP
-
-    MFE->>MBE: Create-payment-method-session with customer_id
-    MBE->>HS: "Create-payment-method-session" API<br/>using Merchant HS API Key & Profile ID
-    HS-->>MBE: Session id & client_secret
-    MBE-->>MFE: Session id & client_secret
-
-    Note over MFE: Create a script tag to load HyperLoader.js
-    Note over MFE: Initialize window.Hyper using<br/>the Publishable Key
-    Note over MFE: Create PMM elements group using<br/>SessionId & ClientSecret
-    Note over MFE: Create specific widget instance<br/>& mount SDK
-
-    C->>SDK: Add Payment method
-    SDK->>HS: "Payment Method Session -<br/>Confirm a payment method session" API<br/>with card details
-    HS->>V: Store card details
-    Note over V: CVV is stored temporarily<br/>for a specific TTL or until first txn
-    V-->>HS: Response
-    HS-->>SDK: Response (Session id & associated_token_id)
-
-    MBE->>HS: "Payment Method Session -<br/>List Payment Methods" API with Session id
-    HS-->>MBE: Response (PM_ID)
-    Note over MBE: Response contains all payment<br/>methods associated with customer
-    Note over MBE: Choose the PM_ID for the<br/>Session id of the session
-    Note over MBE: Making a proxy payment
-
-    MBE->>HS: Send PSP payment request to<br/>Vault proxy endpoint with PM_ID
-    HS->>PSP: Send PSP payment request to PSP<br/>(PM_ID replaced with actual card data)
-    PSP-->>HS: Payment response
-    HS-->>MBE: Payment response
-
-    classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
-    classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
-    classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
-    class C,MBE,PSP accent
-```
-
-*Caption: The complete Vault and Forward flow showing how merchants can tokenize card data using the Hyperswitch Vault SDK and later use the tokenized payment method ID for proxy payments. The flow includes session creation, SDK initialization, card vaulting, payment method retrieval, and the proxy payment execution where Hyperswitch replaces the token with actual card data before forwarding to the PSP.*
+<figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
