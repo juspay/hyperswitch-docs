@@ -15,7 +15,59 @@ Hyperswitch provides flexible payment processing with multiple flow patterns to 
 Refer to Payments (Cards) section  if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  start[Payment Request]
+  decision{Payment Type}
+  oneTime[One-time Payment Flows]
+  storage[Payment Method Storage]
+  recurring[Recurring Payment Flows]
+  instant[Instant Payment]
+  manual[Manual Capture]
+  decoupled[Decoupled Flow]
+  longTerm[Long-term storage]
+  shortTerm[Short-term storage]
+  listSaved[List Saved Methods]
+  setupWithCharge[Setup with charge CIT]
+  setupWithoutCharge[Setup without charge CIT]
+  executeMIT[Execute MIT]
+
+  start --> decision
+  decision -->|One-time| oneTime
+  decision -->|Store card| storage
+  decision -->|Recurring| recurring
+  oneTime --> instant
+  oneTime --> manual
+  oneTime --> decoupled
+  storage --> longTerm
+  storage --> shortTerm
+  storage --> listSaved
+  recurring --> setupWithCharge
+  recurring --> setupWithoutCharge
+  recurring --> executeMIT
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
+  class start,executeMIT accent
+  class decision decision
+```
+
+*Caption: Overview of payment request types in Hyperswitch. The system branches into one-time payments, payment method storage, and recurring payment flows, each with their own sub-flows and options.*
 
 #### One-Time Payment Patterns
 
@@ -25,7 +77,37 @@ Refer to Payments (Cards) section  if your flow requires the SDK to initiate pay
 
 **Endpoint:** `POST /payments`
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  client([Client])
+  hs[Hyperswitch]
+  processor[Processor]
+
+  client -->|"POST /payments\n{confirm: true,\ncapture_method: automatic}"| hs
+  hs -->|"Authorize + Capture"| processor
+  processor -->|"Payment Complete"| hs
+  hs -->|"Status: succeeded"| client
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class client accent
+```
+
+*Caption: The instant payment flow for automatic capture. The client sends a single confirm request to Hyperswitch, which authorizes and captures funds at the processor in one step, returning a succeeded status immediately.*
 
 **Required Fields:**
 
@@ -39,7 +121,42 @@ Refer to Payments (Cards) section  if your flow requires the SDK to initiate pay
 
 **Use Case:** Deferred capture (e.g., ship before charging)
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  client([Client])
+  hs[Hyperswitch]
+  processor[Processor]
+
+  client -->|"POST /payments\n{confirm: true,\ncapture_method: manual}"| hs
+  hs -->|"Authorize Only"| processor
+  processor -->|"Authorization Hold"| hs
+  hs -->|"Status: requires_capture"| client
+  client -->|"Ship goods, then capture"| client
+  client -->|"POST /payments/{id}/capture"| hs
+  hs -->|"Capture Funds"| processor
+  processor -->|"Capture Complete"| hs
+  hs -->|"Status: succeeded"| client
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class client accent
+```
+
+*Caption: The two-step manual capture flow. The client first authorizes the payment, receives a requires_capture status, ships goods, and then calls the capture endpoint to complete the transaction.*
 
 **Flow:**
 
@@ -54,7 +171,43 @@ Read more - [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/
 
 **Use Case:** Complex checkout journeys with multiple modification steps. Useful in headless checkout or B2B portals where data is filled progressively.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  client([Client])
+  hs[Hyperswitch]
+
+  client -->|"POST /payments\n(Create Intent)"| hs
+  hs -->|"payment_id + client_secret"| client
+  client -->|"POST /payments/{id}\n(Update: customer, amount, etc.)"| hs
+  hs -->|"Updated Intent"| client
+  client -->|"POST /payments/{id}/confirm\n(Final Confirmation)"| hs
+  hs -->|"Status: succeeded/requires_capture"| client
+
+  subgraph "[Manual Capture]"
+    client2[Client] -->|"POST /payments/{id}/capture"| hs2[Hyperswitch]
+    hs2 -->|"Status: succeeded"| client2
+  end
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class client,client2 accent
+```
+
+*Caption: The fully decoupled payment flow. The client creates a payment intent, optionally updates it multiple times with additional data, confirms it, and optionally captures it in a separate step for manual capture scenarios.*
 
 **Endpoints:**
 
@@ -67,7 +220,41 @@ Read more - [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/
 
 **Use Case:** Enhanced security with customer authentication
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  client([Client])
+  hs[Hyperswitch]
+  customer[Customer]
+  bank[Bank]
+
+  client -->|"POST /payments\n{authentication_type: three_ds}"| hs
+  hs -->|"Status: requires_customer_action\n+ redirect_url"| client
+  client -->|"Redirect to 3DS page"| customer
+  customer -->|"Complete 3DS Challenge"| bank
+  bank -->|"Authentication Result"| hs
+  hs -->|"Resume Payment Processing"| hs
+  hs -->|"Status: succeeded"| client
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class client accent
+```
+
+*Caption: The 3D Secure authentication flow. When 3DS is required, the client receives a redirect URL, the customer completes authentication with their bank, and Hyperswitch resumes processing before returning the final status.*
 
 **Additional Fields:**
 
@@ -94,7 +281,38 @@ Read more - [link](https://docs.hyperswitch.io/~/revisions/9QlGypixZFcbkq8oGjaF/
 
 ##### 2. Using Saved Payment Methods
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  client([Client])
+  hs[Hyperswitch]
+
+  client -->|"POST /payments/create\n{customer_id}"| hs
+  hs -->|"client_secret"| client
+  client -->|"GET /customers/payment_methods\n{client_secret, publishable_key}"| hs
+  hs -->|"List of payment_tokens"| client
+  client -->|"POST /payments/{id}/confirm\n{payment_token}"| hs
+  hs -->|"Payment Result"| client
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class client accent
+```
+
+*Caption: Using saved payment methods. The client creates a payment with a customer_id, retrieves the list of saved payment methods, and confirms the payment using the selected payment token.*
 
 **Steps:**
 
@@ -110,19 +328,123 @@ Storing `payment_method_id` (which is a token representing the actual payment in
 
 ##### 3. Customer-Initiated Transaction (CIT) Setup
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  start[CIT Setup]
+  decision{Setup Type}
+  withCharge[Amount > 0
+  setup_future_usage:
+  off_session]
+  zeroDollar[Amount: 0
+  payment_type:
+  setup_mandate]
+  result[payment_method_id]
+
+  start --> decision
+  decision -->|With Charge| withCharge
+  decision -->|Zero Dollar Auth| zeroDollar
+  withCharge --> result
+  zeroDollar --> result
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
+  class start,result accent
+  class decision decision
+```
+
+*Caption: Customer-Initiated Transaction (CIT) setup flow. The setup can be done either with a charge (amount > 0 with setup_future_usage: off_session) or as a zero-dollar authorization (amount: 0 with payment_type: setup_mandate). Both result in a payment_method_id for future use.*
 
 Read more - [link](https://docs.hyperswitch.io/~/revisions/j00Urtz9MpwPggJzRCsi/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments)
 
 ##### 4. Merchant-Initiated Transaction (MIT) Execution
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+flowchart TD
+  merchant([Merchant])
+  hs[Hyperswitch]
+  processor[Processor]
+
+  merchant -->|"Subscription billing trigger"| merchant
+  merchant -->|"POST /payments\n{off_session: true, recurring_details}"| hs
+  hs -->|"Process with saved payment_method_id"| processor
+  processor -->|"Payment Result"| hs
+  hs -->|"Status: succeeded"| merchant
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  class merchant accent
+```
+
+*Caption: Merchant-Initiated Transaction (MIT) execution flow. When a subscription billing trigger occurs, the merchant creates a payment with off_session: true and recurring details, and Hyperswitch processes it using the saved payment_method_id without customer involvement.*
 
 Read more - [link](https://docs.hyperswitch.io/~/revisions/j00Urtz9MpwPggJzRCsi/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments)
 
 #### Status Flow Summary
 
-<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+stateDiagram-v2
+  [*] --> RequiresConfirmation
+  RequiresConfirmation --> Processing : confirm=true
+  Processing --> RequiresCustomerAction : 3DS needed
+  RequiresCustomerAction --> Processing : 3DS complete
+  Processing --> RequiresCapture : manual capture
+  RequiresCapture --> Succeeded : capture API call
+  RequiresCapture --> PartiallyCaptured : partial capture
+  Processing --> Succeeded : automatic capture
+  Processing --> Failed : payment failed
+  PartiallyCaptured --> [*]
+  Succeeded --> [*]
+  Failed --> [*]
+
+  classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+  classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+  classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
+```
+
+*Caption: The complete payment status lifecycle in Hyperswitch. Payments start at RequiresConfirmation, move to Processing when confirmed, and can branch into 3DS authentication, manual capture, automatic capture, or failure states before reaching terminal states.*
 
 #### Notes
 

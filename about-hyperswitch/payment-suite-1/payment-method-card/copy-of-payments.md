@@ -19,7 +19,64 @@ The Payment Method SDK provides APIs to securely capture and tokenize payment cr
 
 
 
-<figure><img src="../../../.gitbook/assets/Payment Method SDK (1).svg" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'fontFamily': "'Inter', sans-serif",
+      'background': '#ffffff00',
+      'primaryColor': '#F7F7F7',
+      'primaryBorderColor': '#CCCCCC',
+      'primaryTextColor': '#1A1A1A',
+      'lineColor': '#999999',
+      'edgeLabelBackground': '#ffffff00'
+    }
+  }
+}%%
+sequenceDiagram
+    autonumber
+    participant Customer as C
+    participant Merchant as M
+    participant Hyperswitch as H
+    participant Vault as V
+    participant PSP as P
+
+    Note over M: Prerequisites: PCI DSS Compliance & API Key
+    
+    C->>M: Enters Card Details
+    
+    rect rgb(240, 245, 255)
+    Note right of M: Step 1: Create Customer
+    M->>H: POST /v2/customers
+    H-->>M: Return customer_id
+    end
+
+    rect rgb(235, 255, 235)
+    Note right of M: Step 2: Create Payment Method Token
+    M->>H: POST /v2/payment-methods (Card Data + customer_id)
+    
+    H->>V: Store Raw Card Data
+    V-->>H: Generate Secure pm_id
+    
+    opt If psp_tokenization or network_tokenization enabled
+        H->>P: Request PSP/Network Token
+        P-->>H: Return External Token
+        H->>V: Map External Token to pm_id
+    end
+
+    H-->>M: Return pm_id & Token Details
+    end
+
+    M-->>C: Token Created
+
+    classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
+    classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+    classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
+    class Customer,M accent
+```
+
+*Caption: The server-to-server vaulting flow. The customer enters card details on the merchant's interface, the merchant creates a customer via Hyperswitch, then submits the card data to tokenize. Hyperswitch stores the raw card data in its vault, optionally requests PSP or network tokens, and returns a persistent payment method ID for future transactions.*
 
 #### **Vaulting :**
 
@@ -43,7 +100,7 @@ Hyperswitch receives the request, securely stores the raw card data in the Vault
 
 Hyperswitch returns the `payment_method_id` in the response. You can use this payment method ID for future payments for this customer without handling sensitive card data again.
 
-#### **Payment :**&#x20;
+#### **Payment :** 
 
 To charge the customer you will have to call the [create and confirm](https://api-reference.hyperswitch.io/v2/payments/payments--create-and-confirm-intent) API and pass the `payment_method_id` along with `confirm` as `true`
 
