@@ -53,48 +53,6 @@ sequenceDiagram
   HSDK->>MC: return to return_url with status
 ```
 
-_Caption: The new user payment flow with card vaulting. The merchant creates a payment, the SDK collects card details, Hyperswitch authorizes the payment with the processor, and securely stores the card in the vault, returning a reusable payment method ID for future transactions._
-
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-sequenceDiagram
-  participant MS as Merchant Server
-  participant MC as Merchant Client
-  participant HSDK as Hyperswitch SDK
-  participant HS as Hyperswitch Server
-  participant PS as Processor Server
-  participant HV as Hyperswitch Vault
-
-  MS->>HS: payments/create call with amount, currency, etc and api_key
-  HS-->>MS: payments/create response with payment_id, client_secret, etc.
-  MS->>MC: pass client_secret, publishable_key
-  MC->>HSDK: initiate SDK with client_secret, publishable_key
-  HSDK->>HS: /payment_methods_list call with client_secret
-  HS-->>HSDK: /payment_methods_list response with eligible payment methods
-  Note over HSDK: Display the payment sheet with relevant payment methods
-  Note over HSDK: Customer selects their desired payment method (say card and enters their card details)
-  HSDK->>HS: payments/confirm call with client_secret and payment_method_data containing card details, etc
-  HS->>PS: payments/confirm call to processor with payment method details and merchant's processor credentials
-  PS-->>HS: payments/confirm response with status
-  HS->>HV: request to store the card
-  HV-->>HS: response along with payment method id
-  HS-->>HSDK: payments/confirm response with status
-  HSDK->>MC: return to return_url with status
-```
-
 **1. Create Payment (Server-Side)**
 
 The merchant server creates a payment by calling the Hyperswitch [`payments/create`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with transaction details such as amount and currency. Hyperswitch responds with a `payment_id`, `customer_id` and `client_secret`, which are required for client-side processing.
