@@ -1,27 +1,23 @@
 ---
-description: Manage customer payment methods securely with the Payment Methods Management SDK for creating, storing, retrieving, and deleting payment credentials
+description: Integrate the Payment Methods Management SDK to securely store and manage customer payment details without PCI compliance burden
 hidden: true
 ---
 
 # Payment Method Management SDK
 
-The Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Juspay Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
-#### Why Integrate the Management SDK?
+### Why Integrate the Management SDK?
 
-Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
+Juspay Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
 
 1. **Payment Method Creation**: Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
-2. **Storing Payment Methods**: Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
+2. **Storing Payment Methods**: Juspay Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
 3. **Retrieving Payment Methods**: Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
 4. **Deleting/Deactivating Payment Methods**: Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
 
-
-
 <figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+**Integration Documentation:**
 
-
-**Integration Documentation :**&#x20;
-
-* [PMM SDK integration Guide](https://docs.hyperswitch.io/~/revisions/0suhZ1q0uwhOXBI31wWf/explore-hyperswitch/payments-modules/vault/payment-methods-management-sdk)
+- [PMM SDK integration Guide](https://docs.hyperswitch.io/~/revisions/0suhZ1q0uwhOXBI31wWf/explore-hyperswitch/payments-modules/vault/payment-methods-management-sdk)

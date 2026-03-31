@@ -1,25 +1,21 @@
 ---
-description: >-
-  Best for merchants who do not want to handle card data and want to maintain
-  their current integration with the processors.
+description: Configure vault and forward flow to proxy payments through Hyperswitch while keeping sensitive card data off your servers
 hidden: true
 ---
 
 # Vault and Forward
 
-In this approach, the Direct Payment Control Model functions by treating Juspay Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Juspay Hyperswitch Vault SDK, where the data is directly tokenized within the Juspay Hyperswitch Vault.
+In this approach, the Direct Payment Control Model functions by treating Hyperswitch as a secure "pipe." This setup grants you full control over your orchestration logic and the specific API calls sent to processors. The process initiates when the customer enters payment details into the Hyperswitch Vault SDK, where the data is directly tokenized within the Hyperswitch Vault.
 
-For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Juspay Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
+For payments, your backend constructs a request intended for your specific processor, such as Stripe or Adyen, utilizing placeholders instead of raw card data. This request is then routed through the Hyperswitch Proxy. The proxy injects the actual card details immediately before forwarding the request to the processor, ensuring that raw card data never touches your servers.
 
-This architecture allows you to maintain your legacy backend logic while significantly reducing PCI scope. It is particularly well-suited for scenarios where you plan to keep existing processor integrations. but require the removal of sensitive card data from your internal systems.
+This architecture allows you to maintain your legacy backend logic while significantly reducing PCI scope. It is particularly well-suited for scenarios where you plan to keep existing processor integrations but require the removal of sensitive card data from your internal systems.
 
-#### **Understanding Payment and Vault Flow**&#x20;
+### Understanding Payment and Vault Flow
 
 <figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
-
-
-#### Vaulting&#x20;
+### Vaulting
 
 **1. Create Payment Method Session (Server-Side)** The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
@@ -31,13 +27,13 @@ This architecture allows you to maintain your legacy backend logic while signifi
 
 
 
-#### Payment
+### Payment
 
-**Execute Proxy Payment (Server-Side)** The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
+**Execute Proxy Payment (Server-Side)** The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id`. The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 
 
 
-**Integration Documentation :**&#x20;
+### Integration Documentation
 
 * [Vault SDK Integration](https://docs.hyperswitch.io/~/revisions/TGn71uwTlQJmyyiYgHpt/explore-hyperswitch/payments-modules/vault/vault-sdk-integration)
 * [Proxy Payment Integration Guide](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments)

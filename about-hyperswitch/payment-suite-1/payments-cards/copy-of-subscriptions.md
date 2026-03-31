@@ -1,5 +1,5 @@
 ---
-description: Augment subscription providers like Chargebee with payment orchestration for multi-PSP setup and intelligent routing capabilities
+description: Augment subscription providers with payment orchestration to gain greater control over payment processing and reliability
 hidden: true
 icon: arrows-rotate-reverse
 ---
@@ -8,7 +8,7 @@ icon: arrows-rotate-reverse
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
-#### Benefits
+### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
 2. Improved reliability with a multi-PSP setup
@@ -16,36 +16,36 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 4. Greater coverage of PMs, APMs and features offered by the PSPs
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
-#### How does it work?
+### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
-3. During the checkout process use Hyperswitch for Payments
-4. Hyperswitch completes the payment, securely tokenises and stores the card
-5. Subscription is created at Hyperswitch and at the subscription provider's end
+3. During the checkout process use Juspay Hyperswitch for Payments
+4. Juspay Hyperswitch completes the payment, securely tokenises and stores the card
+5. Subscription is created at Juspay Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
-7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+7. Subsequent billing cycles are handled independently by Juspay Hyperswitch through MIT payments
+8. Failed MIT payments can be smartly retried by Juspay Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
-#### Flow Diagram
+### Flow Diagram
 
-##### Initial Subscription create flow (with CIT Payment)
+#### Initial Subscription create flow (with CIT Payment)
 
 <figure><img src="../../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
-##### MIT payment flow in subsequent billing cycle
+#### MIT payment flow in subsequent billing cycle
 
 <figure><img src="../../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
-#### Integration Guide
+### Integration Guide
 
-##### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
-##### Initial Subscription create flow (with CIT Payment)
+#### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
-Configure your Subscription Provider with Hyperswitch and set it as billing connector for the desired profile
+Configure your Subscription Provider with Juspay Hyperswitch and set it as billing connector for the desired profile
 
 _Note: Dashboard support for this configuration will be available soon_
 
@@ -66,8 +66,8 @@ curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
     "business_country": "US",
     "business_label": "default",
     "connector_webhook_details": {
-        "merchant_secret": "hyperswitch",
-        "additional_secret": "hyperswitch"
+        "merchant_secret": "hyperswitch", 
+        "additional_secret": "hyperswitch" 
     },
     "metadata": {
         "site": "test"
@@ -86,7 +86,7 @@ curl --location 'http://<base_url>/account/<merchant_id>/business_profile/<profi
 {% endstep %}
 
 {% step %}
-Configure Hyperswitch Webhook endpoint for invoice events on the subscription provider's dashboard
+Configure Juspay Hyperswitch Webhook endpoint for invoice events on the subscription provider's dashboard
 {% endstep %}
 
 {% step %}
@@ -103,8 +103,8 @@ Response:
         "plan_id": "cbdemo_enterprise-suite",
         "name": "Enterprise Suite",
         "description": "High-end customer support suite with enterprise-grade solutions."
- 	 "price_id": [
-          	{
+    	 "price_id": [
+         	{
                 "id": "cbdemo_enterprise-suite-INR-Daily",
                 "name": "Enterprise Suite INR Daily",
                 "pricing_model": "flat_fee",
@@ -125,7 +125,7 @@ Display the retrieved Plan and Price Details to the user to make their selection
 {% endstep %}
 
 {% step %}
-Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
+Once the user selects a particular Plan, create a customer on Juspay Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
 
 ```
 curl --location '<baseurl>/subscriptions/create' \
@@ -147,7 +147,7 @@ curl --location '<baseurl>/subscriptions/create' \
 {% endstep %}
 
 {% step %}
-Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
+Initiate the Juspay Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
 
 {% hint style="info" %}
 When setting up subscription there are two distinct implementation flows.
@@ -158,25 +158,21 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters:**
 
-* `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
-
-
+- `setup_future_usage: "off_session"`
+- `amount > 0`
 
 #### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
+**Configuration Parameters:**
 
-
-**Configuration Parameters :**&#x20;
-
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
-* `setup_future_usage: "off_session"`
-* `amount: 0`
-* `payment_type: "setup_mandate"`
+- Pass below parameters while calling payments API for [Zero Dollar Auth](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)
+- `setup_future_usage: "off_session"`
+- `amount: 0`
+- `payment_type: "setup_mandate"`
 {% endhint %}
 {% endstep %}
 
@@ -199,11 +195,11 @@ Follow the same steps as above to create a billing connector, fetch plan details
 {% endstep %}
 
 {% step %}
-Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
+Once the user selects a particular Plan, create a customer on Juspay Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
 {% endstep %}
 
 {% step %}
-After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API
+After the user enters card or payment method details and confirms the payment, hit the Juspay Hyperswitch Subscriptions API
 
 {% hint style="info" %}
 When setting up subscription there are two distinct implementation flows.
@@ -214,25 +210,21 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters:**
 
-* `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
-
-
+- `setup_future_usage: "off_session"`
+- `amount > 0`
 
 #### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
+**Configuration Parameters:**
 
-
-**Configuration Parameters :**&#x20;
-
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
-* `setup_future_usage: "off_session"`
-* `amount: 0`
-* `payment_type: "setup_mandate"`
+- Pass below parameters while calling payments API for [Zero Dollar Auth](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)
+- `setup_future_usage: "off_session"`
+- `amount: 0`
+- `payment_type: "setup_mandate"`
 {% endhint %}
 
 ```
@@ -249,7 +241,7 @@ curl --location 'http://<baseurl>/subscriptions/' \
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "California",
             "zip": "94122",
             "country": "US",
@@ -269,7 +261,7 @@ curl --location 'http://<baseurl>/subscriptions/' \
                 "card_number": "4242424242424242",
                 "card_exp_month": "10",
                 "card_exp_year": "25",
-                "card_holder_name": "joseph Doe",
+                "card_holder_name": "Joseph Doe",
                 "card_cvc": "123"
             }
         },
@@ -322,7 +314,7 @@ Sync with the status of the Subscription API to disburse services to subscribed 
 
 {% code overflow="wrap" %}
 ```
-curl --location 'http://<baseurl>/subscriptions/<subscripion_id>' \
+curl --location 'http://<baseurl>/subscriptions/<subscription_id>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Profile-Id: <profile_id>' \
@@ -330,7 +322,7 @@ curl --location 'http://<baseurl>/subscriptions/<subscripion_id>' \
 
 RESPONSE:
 {
-    "id": "<subcription_id>",
+    "id": "<subscription_id>",
     "merchant_reference_id": "mer_ref_id",
     "status": "active",
     "plan_id": null,
@@ -348,26 +340,26 @@ Monitor incoming webhooks for renewal during subsequent cycles
 {% endstep %}
 {% endstepper %}
 
-#### Decoupled CIT and MIT Flow&#x20;
+### Decoupled CIT and MIT Flow
 
-Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
+Juspay Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Juspay Hyperswitch platform.
 
-MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on artifacts available in your system, one of the following approaches can be used:
+MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
 
 [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3) **:** Submit a processor-issued token that represents the previously authorized payment instrument.
 
-[**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4) : Provide the original network transaction identifier along with the associated primary card data required for authorization.
+[**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4): Provide the original network transaction identifier along with the associated primary card data required for authorization.
 
 [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:** Submit the network transaction identifier in combination with the corresponding network tokenized card credentials.
 
 [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:** Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
-#### FAQs
+### FAQs
 
-##### 1. What are subscriptions providers that are currently supported?
+#### 1. What subscription providers are currently supported?
 
-Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
+Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora.
 
-##### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
 We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.

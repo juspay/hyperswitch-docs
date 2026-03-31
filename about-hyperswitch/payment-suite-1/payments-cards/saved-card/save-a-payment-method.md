@@ -1,22 +1,24 @@
 ---
-description: Setting up and managing recurring payments
+description: Learn how to save customer payment methods for on-session and off-session transactions with proper consent capture and management
 icon: repeat
 ---
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
+### Saving a payment method
+
 #### Saving a payment method for future on-session payments (COF CIT)
 
-To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.
+To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This also minimizes the risk of the customer entering incorrect card details.
 
 Saving for future on-session payments implies that the customer will be available online during the checkout and can authenticate the payment by entering CVV or complete 3DS verification. These are known as Card-on-File Customer Initiated Transactions (COF-CIT).
 
-This is typically limited for card payment methods and not for wallets (viz. Apple Pay) and other APMs.
+This is typically limited for card payment methods and not for wallets (e.g., Apple Pay) and other APMs.
 
 For saving a customer's payment method used in a successful transaction:
 
@@ -31,10 +33,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"on_session",
+    "setup_future_usage":"on_session", 
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", //
+    "return_url": "https://example.com", // 
 }'
 ```
 
@@ -61,13 +63,13 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 ***
 
-#### Saving a payment method for future MIT payments
+### Saving a payment method for future off-session payments (MIT)
 
-Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
+Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorized recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
 
 Based on the payment processors support, this functionality is also available for other payment methods like Apple Pay and Google Pay Wallets.
 
-##### To save a customer's payment method used in a successful transaction for future MIT payments:
+#### To save a customer's payment method for future MIT payments:
 
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
@@ -80,10 +82,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "amount": 6540,
     "currency": "USD",
     "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session",
+    "setup_future_usage":"off_session", 
     "customer_id": "customer123",
     "description": "Its my first payment request",
-    "return_url": "https://example.com", //
+    "return_url": "https://example.com", // 
 }'
 ```
 
@@ -116,7 +118,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 
 ***
 
-#### Using a saved payment method to do a MIT payment
+### Using saved payment methods
+
+#### Using a saved payment method for MIT payments
 
 Once a customer's payment method is saved for MIT payments you can start charging the customer by sending the following details in the `/payments` request
 
@@ -129,7 +133,7 @@ Once a customer's payment method is saved for MIT payments you can start chargin
 
 You would be using the same `payment_method_id` that was returned in the `/payments/:id:/retrieve` response for the initial transaction where the customer authorized saving for future use.
 
-To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
+To get all the payment methods saved for a customer use the [List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
 
 ```bash
 curl --request GET \
@@ -150,7 +154,7 @@ If a merchant is PCI-compliant and has the customer payment method details store
             "card_number": "4242424242424242",
             "card_exp_month": "10",
             "card_exp_year": "25",
-            "card_holder_name": "joseph Doe",
+            "card_holder_name": "Joseph Doe",
             "network_transaction_id": "MCC5ZRGMI0925" //scheme transaction id
         }
 }

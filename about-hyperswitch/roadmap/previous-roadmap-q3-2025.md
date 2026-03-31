@@ -1,5 +1,5 @@
 ---
-description: Jul '25 to Sep '25
+description: Review Q3 2025 roadmap covering Core Orchestration, Vault, Authentication, Revenue Recovery, Routing, Observability, and Reconciliation features
 icon: road
 ---
 
@@ -9,9 +9,9 @@ icon: road
 
 Before the beginning of every quarter we come together to develop the next roadmap based on our core values, previous roadmap, findings over the previous quarter, what we heard from the community as feature requests.
 
-👂And as always, we listen to your feedback and adapt our plans if needed.
+👂 And as always, we listen to your feedback and adapt our plans if needed.
 
-### Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -19,16 +19,16 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+#### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
+Earlier this year, Juspay Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below:
 
-1. **Core Orchestration:** The core module supporting workflows unifying various connector
+1. **Core Orchestration:** The core module supporting workflows unifying various connectors
 2. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
 3. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
 4. **Authentication:** Data driven 3DS routing decision system and unified authentication SDK to encompass the diversity of authentication products.
-5. **Intelligent Routing:** Routing service to dynamically select the most optimal PSP/ network in real time exploring/exploiting/managing multiple objectives simultaneously.
-6. ​​**Alternate Payment Method Widgets:** Embracing the ever expanding diversity of payment methods and payment experiences through orchestration, and a simple add-on button to Checkout.
+5. **Intelligent Routing:** Routing service to dynamically select the most optimal PSP/network in real time exploring/exploiting/managing multiple objectives simultaneously.
+6. **Alternate Payment Method Widgets:** Embracing the ever-expanding diversity of payment methods and payment experiences through orchestration, and a simple add-on button to Checkout.
 7. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
 8. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 
@@ -70,13 +70,13 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 * Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly
 * Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers
 
-##### Reconciliation
+#### Reconciliation
 
-* N‑way ingestion & transformation: implement backend‑configured pipelines for any mix of OMS, PSP and bank asources to define normalization and transformation rules
-* Reconciliation summary views: display real‑time n‑way match rates, exception counts and trend charts in dashboard widgets, with click‑through to transaction‑ vs. entry‑level drill‑downs and one‑click resolution actions.
-* Transaction‑level audit logs: capture every transaction event in full detail with immutable records to ensure no information is lost
-* Custom export & reporting: enable merchants to generate and download tailored reconciliation reports
-* Adyen integration & auto‑fetch: provide a one‑click Adyen connector that securely pulls transactions on a schedule, auto‑maps fields and normalizes into your unified schema
+* N-way ingestion and transformation: implement backend-configured pipelines for any mix of OMS, PSP and bank sources to define normalization and transformation rules
+* Reconciliation summary views: display real-time n-way match rates, exception counts and trend charts in dashboard widgets, with click-through to transaction vs. entry-level drill-downs and one-click resolution actions.
+* Transaction-level audit logs: capture every transaction event in full detail with immutable records to ensure no information is lost
+* Custom export and reporting: enable merchants to generate and download tailored reconciliation reports
+* Adyen integration and auto-fetch: provide a one-click Adyen connector that securely pulls transactions on a schedule, auto-maps fields and normalizes into your unified schema
 
 **Want to contribute to the roadmap?**
 

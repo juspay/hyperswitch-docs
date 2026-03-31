@@ -1,5 +1,5 @@
 ---
-description: Juspay Hyperswitch roadmap (Oct to Dec'24)
+description: Explore Q4 2024 roadmap featuring Network Tokenization, Payment Method Management, and Plaid Open Banking
 icon: road
 ---
 
@@ -9,7 +9,7 @@ icon: road
 
 Before the beginning of every quarter we come together to develop the next roadmap based on our core values, previous roadmap, findings over the previous quarter, what we heard from the community as feature requests.
 
-👂And as always, we listen to your feedback and adapt our plans if needed.
+👂 And as always, we listen to your feedback and adapt our plans if needed.
 
 ### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
@@ -45,13 +45,13 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
+There are a lot of problems to be solved in payments, but the majority of our current focus falls under 5 themes below.
 
 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
 👨‍💻 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
 
-💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able reduce payment processing costs by embracing the diversity in payments.
+💰 **Reducing Payment Costs:** Payments should be like a free utility for digital businesses. Any business should be able to reduce payment processing costs by embracing the diversity in payments.
 
 📈 **Improving Authorization Rates:** Ensuring a best-in-class payment experience and access to latest innovations in the payments ecosystem for all businesses.
 
@@ -70,17 +70,17 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 More payment authorization workflows - split payments and incremental authorization
-* New integrations -&#x20;
+* New integrations -
   * 🟩 SamsungPay
   * 🟩 Nexi Xpay card payments
   * 🟩 PAZE for card payments in the US
-* 🟩 Dynamic Tax updater for express checkout wallets (Paypal, Applepay, Googlepay and Klarna) using Taxjar integration
+* 🟩 Dynamic Tax updater for express checkout wallets (PayPal, Apple Pay, Google Pay and Klarna) using Taxjar integration
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
 * 🟩 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
-* 🟩 Implement MPAN (merchant tokens) for Applepay recurring payments
-* 🟩  Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
+* 🟩 Implement MPAN (merchant tokens) for Apple Pay recurring payments
+* 🟩 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
@@ -89,14 +89,14 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩  Data reporting at an organization, merchant and profile level for easier reconciliation
-* 🟩  Enhancements in analytics module for Refunds, Disputes and Smart Retries
+* 🟩 Data reporting at an organization, merchant and profile level for easier reconciliation
+* 🟩 Enhancements in analytics module for Refunds, Disputes and Smart Retries
 * 🟩 Migration of Network Tokens for business continuity
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟩  Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
+* 🟩 Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
 
-#### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
+#### Want to contribute to the roadmap? <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

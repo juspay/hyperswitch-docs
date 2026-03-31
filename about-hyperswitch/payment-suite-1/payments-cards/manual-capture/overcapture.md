@@ -1,5 +1,5 @@
 ---
-description: Configure over-capture to settle amounts exceeding the original authorization for handling additional charges and post-authorization adjustments
+description: Enable overcapture to settle amounts greater than the originally authorized payment value for flexible payment processing
 icon: chart-diagram
 ---
 
@@ -17,13 +17,14 @@ This is particularly useful in scenarios such as:
 
 ### Enabling Over Capture
 
-#### 1. Profile-level Configuration (via Dashboard)
+1. Profile-level Configuration (via Dashboard)
 
 * Navigate to:\
   Developer → Payment Settings → Always Enable Over Capture
+
 * Toggle Enable/Disable as required.
 
-#### 2. Per-request Configuration (via API)
+2. Per-request Configuration (via API)
 
 Use the boolean field `enable_overcapture` in your payment request.
 

@@ -1,21 +1,21 @@
 ---
-description: Interact with the Hyperswitch ecosystem through AI-powered documentation and MCP server for executing real API operations via natural language
 hidden: true
 noIndex: true
 icon: brain-circuit
+description: Explore AI resources to interact with the Juspay Hyperswitch ecosystem through DeepWikis and Model Context Protocol for direct API operations
 ---
 
 # AI Resources
 
-AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
+AI resources enable you to intelligently interact with the entire Juspay Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
 
-#### 1. DeepWikis - AI-Powered Documentation
+### 1. DeepWikis - AI-Powered Documentation
 
-Transform how you explore and understand Hyperswitch with AI-enhanced documentation across the entire ecosystem.
+Transform how you explore and understand Juspay Hyperswitch with AI-enhanced documentation across the entire ecosystem.
 
 **What you can do:**
 
-* Ask questions about any Hyperswitch component
+* Ask questions about any Juspay Hyperswitch component
 * Get contextual guidance for implementation and integration
 * Understand relationships between different repositories
 * Access Rust-specific development assistance
@@ -49,7 +49,7 @@ Transform how you explore and understand Hyperswitch with AI-enhanced documentat
 
 </details>
 
-#### 2. MCP Server - Direct API Integration
+### 2. MCP Server - Direct API Integration
 
 Execute real [Hyperswitch API](https://api-reference.hyperswitch.io/introduction) operations directly through your AI assistant using the [Model Context Protocol](https://modelcontextprotocol.io/introduction).
 
