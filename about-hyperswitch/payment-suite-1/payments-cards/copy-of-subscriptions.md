@@ -8,7 +8,7 @@ icon: arrows-rotate-reverse
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
-#### Benefits
+### Benefits
 
 1. Greater control over payments with direct integrations and commercials with a range of Acquirers and Payment Processors
 2. Improved reliability with a multi-PSP setup
@@ -16,9 +16,9 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 4. Greater coverage of PMs, APMs and features offered by the PSPs
 5. Centralised tokenisation of payment methods for PSP agnostic payments
 
-#### How does it work?
+### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
@@ -27,21 +27,21 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
 8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
-#### Flow Diagram
+### Flow Diagram
 
-##### Initial Subscription create flow (with CIT Payment)
+#### Initial Subscription create flow (with CIT Payment)
 
 <figure><img src="../../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
-##### MIT payment flow in subsequent billing cycle
+#### MIT payment flow in subsequent billing cycle
 
 <figure><img src="../../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
-#### Integration Guide
+### Integration Guide
 
-##### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
-##### Initial Subscription create flow (with CIT Payment)
+#### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
@@ -52,34 +52,34 @@ _Note: Dashboard support for this configuration will be available soon_
 {% code overflow="wrap" fullWidth="false" %}
 ```
 curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: <api_key>' \
---data '{
-    "connector_type": "billing_processor",
-    "connector_name": "chargebee",
-    "connector_account_details": {
-        "auth_type": "HeaderKey",
-        "api_key": "<api_key>",
-        "site": ""
-    },
-    "business_country": "US",
-    "business_label": "default",
-    "connector_webhook_details": {
-        "merchant_secret": "hyperswitch",
-        "additional_secret": "hyperswitch"
-    },
-    "metadata": {
-        "site": "test"
-    }
+*-header 'Content-Type: application/json' \
+*-header 'Accept: application/json' \
+*-header 'api-key: <api_key>' \
+*-data '{
+  "connector_type": "billing_processor",
+  "connector_name": "chargebee",
+  "connector_account_details": {
+    "auth_type": "HeaderKey",
+    "api_key": "<api_key>",
+    "site": ""
+  },
+  "business_country": "US",
+  "business_label": "default",
+  "connector_webhook_details": {
+    "merchant_secret": "hyperswitch",
+    "additional_secret": "hyperswitch"
+  },
+  "metadata": {
+    "site": "test"
+  }
 }'
 
 SET AS BILLING CONNECTOR
 curl --location 'http://<base_url>/account/<merchant_id>/business_profile/<profile_id' \
---header 'Content-Type: application/json' \
---header 'api-key: <api_key>' \
---data '{
-  "billing_processor_id": "<mca_id>"
+*-header 'Content-Type: application/json' \
+*-header 'api-key: <api_key>' \
+*-data '{
+ "billing_processor_id": "<mca_id>"
 }'
 ```
 {% endcode %}
@@ -94,27 +94,27 @@ Fetch the plan details (to be setup prior on subscription provider)
 
 ```
 curl --location 'http://<base_url>/subscriptions/plans' \
---header 'Content-Type: application/json' \
---header 'api-key: <api_key>'
+*-header 'Content-Type: application/json' \
+*-header 'api-key: <api_key>'
 
 Response:
 [
-    {
-        "plan_id": "cbdemo_enterprise-suite",
-        "name": "Enterprise Suite",
-        "description": "High-end customer support suite with enterprise-grade solutions."
+  {
+    "plan_id": "cbdemo_enterprise-suite",
+    "name": "Enterprise Suite",
+    "description": "High-end customer support suite with enterprise-grade solutions."
  	 "price_id": [
-          	{
-                "id": "cbdemo_enterprise-suite-INR-Daily",
-                "name": "Enterprise Suite INR Daily",
-                "pricing_model": "flat_fee",
-                "price": 10000,
-                "period": 1,
-                "currency_code": "INR",
-                "period_unit": "day",
-                "free_quantity": 0,
-              }]
-       }
+     	{
+        "id": "cbdemo_enterprise-suite-INR-Daily",
+        "name": "Enterprise Suite INR Daily",
+        "pricing_model": "flat_fee",
+        "price": 10000,
+        "period": 1,
+        "currency_code": "INR",
+        "period_unit": "day",
+        "free_quantity": 0,
+       }]
+    }
 ]
 
 ```
@@ -129,19 +129,19 @@ Once the user selects a particular Plan, create a customer on Hyperswitch ([API 
 
 ```
 curl --location '<baseurl>/subscriptions/create' \
---header 'Content-Type: application/json' \
---header 'X-Profile-Id: <profile_id>' \
---header 'api-key: <api-key>' \
---data '{
-    "customer_id": "cus_uBtUJLSVSICr8ctmoL8i",
-    "amount": 14100,
-    "currency": "USD",
-    "payment_details": {
-        "authentication_type": "no_three_ds",
-        "setup_future_usage": "off_session",
-        "capture_method": "automatic",
-        "return_url": "https://google.com"
-    }
+*-header 'Content-Type: application/json' \
+*-header 'X-Profile-Id: <profile_id>' \
+*-header 'api-key: <api-key>' \
+*-data '{
+  "customer_id": "cus_uBtUJLSVSICr8ctmoL8i",
+  "amount": 14100,
+  "currency": "USD",
+  "payment_details": {
+    "authentication_type": "no_three_ds",
+    "setup_future_usage": "off_session",
+    "capture_method": "automatic",
+    "return_url": "https://google.com"
+  }
 }'
 ```
 {% endstep %}
@@ -154,7 +154,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -163,13 +163,9 @@ The correct flow depends on whether you intend to charge the customer immediatel
 * `setup_future_usage: "off_session"`
 * `amount > 0`&#x20;
 
-
-
-#### 2. The Zero Dollar Authorization Flow
+### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
-
-
 
 **Configuration Parameters :**&#x20;
 
@@ -189,9 +185,7 @@ Sync with the subscription status for disbursement of services and future billin
 {% endstep %}
 {% endstepper %}
 
-
-
-#### 2. For PCI Compliant merchants handling the entire checkout experience
+### 2. For PCI Compliant merchants handling the entire checkout experience
 
 {% stepper %}
 {% step %}
@@ -210,7 +204,7 @@ When setting up subscription there are two distinct implementation flows.
 
 The correct flow depends on whether you intend to charge the customer immediately or simply validate their details for later use.
 
-#### 1. The Setup with Charge Flow
+### 1. The Setup with Charge Flow
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
@@ -219,13 +213,9 @@ The correct flow depends on whether you intend to charge the customer immediatel
 * `setup_future_usage: "off_session"`
 * `amount > 0`&#x20;
 
-
-
-#### 2. The Zero Dollar Authorization Flow
+### 2. The Zero Dollar Authorization Flow
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
-
-
 
 **Configuration Parameters :**&#x20;
 
@@ -237,52 +227,52 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 ```
 curl --location 'http://<baseurl>/subscriptions/' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'X-Profile-Id: pro_2WzEeiNyj8fSCObXqo36' \
---header 'api-key: dev_Ske75Nx2J7qtHsP8cc7pFx5k4dccYBedM6UAExaLOdHCkji3uVWSqfmZ0Qz0Tnyj' \
---data '{
-    "item_price_id": "cbdemo_enterprise-suite-INR-Daily",
-    "customer_id": "cus_NdHhw4wwWyYXSldO9oYE",
-    "billing_address": {
-        "address": {
-            "line1": "1467",
-            "line2": "Harrison Street",
-            "line3": "Harrison Street",
-            "city": "San Fransico",
-            "state": "California",
-            "zip": "94122",
-            "country": "US",
-            "first_name": "joseph",
-            "last_name": "Doe"
-        },
-        "phone": {
-            "number": "8056594427",
-            "country_code": "+91"
-        }
+*-header 'Content-Type: application/json' \
+*-header 'Accept: application/json' \
+*-header 'X-Profile-Id: pro_2WzEeiNyj8fSCObXqo36' \
+*-header 'api-key: dev_Ske75Nx2J7qtHsP8cc7pFx5k4dccYBedM6UAExaLOdHCkji3uVWSqfmZ0Qz0Tnyj' \
+*-data '{
+  "item_price_id": "cbdemo_enterprise-suite-INR-Daily",
+  "customer_id": "cus_NdHhw4wwWyYXSldO9oYE",
+  "billing_address": {
+    "address": {
+      "line1": "1467",
+      "line2": "Harrison Street",
+      "line3": "Harrison Street",
+      "city": "San Fransico",
+      "state": "California",
+      "zip": "94122",
+      "country": "US",
+      "first_name": "joseph",
+      "last_name": "Doe"
     },
-    "payment_details": {
-        "payment_method": "card",
-        "payment_method_type": "credit",
-        "payment_method_data": {
-            "card": {
-                "card_number": "4242424242424242",
-                "card_exp_month": "10",
-                "card_exp_year": "25",
-                "card_holder_name": "joseph Doe",
-                "card_cvc": "123"
-            }
-        },
-        "setup_future_usage": "off_session",
-        "customer_acceptance": {
-            "acceptance_type": "online",
-            "accepted_at": "1963-05-03T04:07:52.723Z",
-            "online": {
-                "ip_address": "127.0.0.1",
-                "user_agent": "amet irure esse"
-            }
-        }
+    "phone": {
+      "number": "8056594427",
+      "country_code": "+91"
     }
+  },
+  "payment_details": {
+    "payment_method": "card",
+    "payment_method_type": "credit",
+    "payment_method_data": {
+      "card": {
+        "card_number": "4242424242424242",
+        "card_exp_month": "10",
+        "card_exp_year": "25",
+        "card_holder_name": "joseph Doe",
+        "card_cvc": "123"
+      }
+    },
+    "setup_future_usage": "off_session",
+    "customer_acceptance": {
+      "acceptance_type": "online",
+      "accepted_at": "1963-05-03T04:07:52.723Z",
+      "online": {
+        "ip_address": "127.0.0.1",
+        "user_agent": "amet irure esse"
+      }
+    }
+  }
 }'
 
 ```
@@ -291,28 +281,28 @@ Response:
 
 ```
 {
-  "id": "subscription_wBV1G9dhh6EBhTOTXRBA",
-  "merchant_reference_id": null,
-  "status": "active",
-  "plan_id": null,
-  "price_id": null,
-  "coupon": null,
+ "id": "subscription_wBV1G9dhh6EBhTOTXRBA",
+ "merchant_reference_id": null,
+ "status": "active",
+ "plan_id": null,
+ "price_id": null,
+ "coupon": null,
+ "profile_id": "profile_id",
+ "payment": null,
+ "customer_id": "customer_id",
+ "invoice": {
+  "id": "invoice_0XANlbhMp2V7wUvWRhhJ",
+  "subscription_id": "subscription_wBV1G9dhh6EBhTOTXRBA",
+  "merchant_id": "merchant_id",
   "profile_id": "profile_id",
-  "payment": null,
-  "customer_id": "customer_id",
-  "invoice": {
-    "id": "invoice_0XANlbhMp2V7wUvWRhhJ",
-    "subscription_id": "subscription_wBV1G9dhh6EBhTOTXRBA",
-    "merchant_id": "merchant_id",
-    "profile_id": "profile_id",
-    "merchant_connector_id": "mac_id",
-    "payment_intent_id": null,
-    "payment_method_id": null,
-    "customer_id": "cus_id",
-    "amount": 14100,
-    "currency": "INR",
-    "status": "InvoiceCreated"
-  }
+  "merchant_connector_id": "mac_id",
+  "payment_intent_id": null,
+  "payment_method_id": null,
+  "customer_id": "cus_id",
+  "amount": 14100,
+  "currency": "INR",
+  "status": "InvoiceCreated"
+ }
 }
 ```
 {% endstep %}
@@ -323,21 +313,21 @@ Sync with the status of the Subscription API to disburse services to subscribed 
 {% code overflow="wrap" %}
 ```
 curl --location 'http://<baseurl>/subscriptions/<subscripion_id>' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'X-Profile-Id: <profile_id>' \
---header 'api-key: <api_key>'
+*-header 'Content-Type: application/json' \
+*-header 'Accept: application/json' \
+*-header 'X-Profile-Id: <profile_id>' \
+*-header 'api-key: <api_key>'
 
 RESPONSE:
 {
-    "id": "<subcription_id>",
-    "merchant_reference_id": "mer_ref_id",
-    "status": "active",
-    "plan_id": null,
-    "profile_id": "<profile_id>",
-    "merchant_id": "<merchant_id>",
-    "coupon_code": null,
-    "customer_id": "<customer_id>"
+  "id": "<subcription_id>",
+  "merchant_reference_id": "mer_ref_id",
+  "status": "active",
+  "plan_id": null,
+  "profile_id": "<profile_id>",
+  "merchant_id": "<merchant_id>",
+  "coupon_code": null,
+  "customer_id": "<customer_id>"
 }
 ```
 {% endcode %}
@@ -348,7 +338,7 @@ Monitor incoming webhooks for renewal during subsequent cycles
 {% endstep %}
 {% endstepper %}
 
-#### Decoupled CIT and MIT Flow&#x20;
+### Decoupled CIT and MIT Flow&#x20;
 
 Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 
@@ -362,12 +352,12 @@ MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswit
 
 [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:** Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
-#### FAQs
+### FAQs
 
-##### 1. What are subscriptions providers that are currently supported?
+#### 1. What are subscriptions providers that are currently supported?
 
 Currently we support Chargebee integration. In the upcoming roadmap we are planning to extend support for Recurly, Stripe Billing and Zuora
 
-##### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
+#### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
 We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience.

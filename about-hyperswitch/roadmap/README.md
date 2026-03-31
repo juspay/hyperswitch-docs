@@ -27,7 +27,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 **Vault**
 
-* **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
+* **Guest checkout tokenization** – Token creation without customer creation in Juspay Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
 * **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
 
 **Revenue recovery**\
@@ -55,7 +55,7 @@ Last year, Hyperswitch was made more modular to provide businesses with focused 
 
 ### Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### Core Orchestration
+### Core Orchestration
 
 **Platform Managed Payments**
 
@@ -77,7 +77,7 @@ We plan to enable Hyperswitch to act as a relay to orchestrate incremental and p
 
 We plan to support installment-based payments across supported payment methods, enabling merchants to offer flexible payment options without changing their orchestration setup.
 
-#### Connectors
+### Connectors
 
 **New Integrations**
 
@@ -89,7 +89,7 @@ We also plan to enhance existing integrations to expand payment method coverage 
 
 [Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
-#### Vault
+### Vault
 
 **Multi Vault Support**
 
@@ -113,7 +113,7 @@ We plan to add analytics, audit trails, and observability capabilities for the V
 
 [Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-#### Authentication and Checkout Experience
+### Authentication and Checkout Experience
 
 **SDK Accessibility Enhancements**
 
@@ -145,7 +145,7 @@ We plan to support custom in SDK messaging so merchants can configure and displa
 
 [Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls)
 
-#### Revenue Recovery
+### Revenue Recovery
 
 **Advanced Retry Logic for Hard Declines**
 
@@ -161,7 +161,7 @@ We plan to support using self-hosted orchestration with Juspay-hosted revenue re
 
 [Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
-#### Reconciliation
+### Reconciliation
 
 **Tolerance & Aging**
 
@@ -171,7 +171,7 @@ Aging provides visibility into unmatched transactions and enables configurable t
 
 [Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 
-#### Control Centre
+### Control Centre
 
 **Developer Observability & Self-Service Diagnostics**
 
