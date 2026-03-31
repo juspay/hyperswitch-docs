@@ -1,4 +1,5 @@
 ---
+description: Integrate secure customizable mobile SDKs for iOS and Android
 icon: mobile
 ---
 

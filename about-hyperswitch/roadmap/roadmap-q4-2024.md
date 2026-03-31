@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Oct to Dec'24)
+description: Juspay Hyperswitch roadmap (Oct to Dec'24)
 icon: road
 ---
 
@@ -13,7 +13,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ### Recap of Q3 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Hyperswitch is now PCI Software Security Standard (S3) certified
+* Juspay Hyperswitch is now PCI Software Security Standard (S3) certified
 * Network Tokenization capability with Visa, Master and Amex card networks. This shall enable merchant to use network tokens to improve auth rates for one-time/ recurring payments and reduce the interchange fee
 * Payment Method Management experience to view, add and delete payment methods (for Web platform)
 * New connector and payment method integrations

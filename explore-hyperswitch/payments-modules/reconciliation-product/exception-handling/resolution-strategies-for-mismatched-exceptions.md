@@ -1,3 +1,7 @@
+---
+description: Fix mismatched exceptions through editing creating or replacing entries
+---
+
 # Resolution Strategies for Mismatched Exceptions
 
 ### Overview
@@ -14,7 +18,7 @@ Action: `Ignore Transaction`
 
 This action effectively "soft deletes" the exception. It is used when the transaction record itself is invalid and should not have been ingested into the reconciliation layer in the first place. Ignoring a transaction removes it from the active queue and excludes it from financial reports.
 
-* Logic: Marks the transaction status as `VOID` . It does not delete the audit trail but prevents further processing
+* Logic: Marks the transaction status as `VOID`. It does not delete the audit trail but prevents further processing
 * Common Use Cases:
   * Test Data: Developers generated $0.01 test transactions in the Production environment
   * Cancelled/Voided Orders: Transactions that were cancelled at the source but were erroneously synced to the reconciliation layer

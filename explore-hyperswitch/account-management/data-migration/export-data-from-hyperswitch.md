@@ -1,13 +1,16 @@
 ---
+description: Export your payment data securely to another PCI-compliant payment processor
 icon: left-from-bracket
 ---
 
-# Export data from Hyperswitch
+# Export data from Juspay Hyperswitch
 
 We believe customers fully own their data. If you decide to export data from Hyperswitch, we will work with your new payment service provider to safely export your data.
 
 {% hint style="info" %}
+
 To meet PCI compliance requirements, Hyperswitch can export data only to a PCI-DSS compliant payment processor. Kindly request your new payment processor’s PCI Attestation of Compliance (AoC) certificate, and share it to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) while requesting your data export.&#x20;
+
 {% endhint %}
 
 ### Performing the export process:

@@ -1,4 +1,5 @@
 ---
+description: Manage customer payment methods securely with the Payment Methods Management SDK for creating, storing, retrieving, and deleting payment credentials
 hidden: true
 ---
 

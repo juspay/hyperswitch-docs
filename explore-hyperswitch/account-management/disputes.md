@@ -1,7 +1,5 @@
 ---
-description: >-
-  Use Hyperswitch's unified Disputes module to track and manage disputes across
-  multiple processors
+description: Track and manage payment disputes and chargebacks across multiple processors
 icon: circle-exclamation
 ---
 
@@ -12,7 +10,9 @@ icon: circle-exclamation
 A dispute occurs when a customer contacts their payment method issuer (card issuer/bank/wallet) to question or challenge a particular transaction so that the payment can be reversed.
 
 {% hint style="info" %}
+
 When a card payment is reversed, and the processor debits the merchant's account, it's termed a 'chargeback.' Hyperswitch uses the term 'Disputes' interchangeably to refer to 'Chargebacks' in the context of card payments.
+
 {% endhint %}
 
 The merchants receive notifications from their payment processor when a dispute is raised by their customers against a payment made at their site.
@@ -23,7 +23,7 @@ Each processor has their own standards or processes around how they notify about
 
 Hyperswitch unifies all the dispute notifications from all your different processors and makes it easier for you to track, accept and as well as challenge them by uploading evidences across different processors from one place.
 
-## Disputes Lifecycle on Hyperswitch
+## Disputes Lifecycle on Juspay Hyperswitch
 
 Hyperswitch's unified disputes module uses the following stages and statuses to track your disputes:
 
@@ -43,15 +43,15 @@ In most cases, the processors directly debit your account while reversing the pa
 
 For transactions that go through 'Pre-Dispute' stage, they will end up moving to 'Dispute' stage if the merchant's evidence was deemed not satisfactory.
 
-<table><thead><tr><th width="155">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when a dispute is opened and your processor has debited your account</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads an evidence to support their case</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time interval before which an issuer expects a response after the dispute was opened</td></tr><tr><td>Cancelled</td><td>Occurs when a customer withdraws their challenge</td></tr><tr><td>Accepted</td><td>Occurs when a merchant accepts a dispute as valid</td></tr><tr><td>Won</td><td>Occurs when the merchant's challenge was accepted successfully. Known as 'chargeback reversal' in cases of card payments</td></tr><tr><td>Lost</td><td>Occurs when a merchant's challenge was deemed not satisfctory</td></tr></tbody></table>
+<table><thead><tr><th width="155">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when a dispute is opened and your processor has debited your account</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads an evidence to support their case</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time interval before which an issuer expects a response after the dispute was opened</td></tr><tr><td>Cancelled</td><td>Occurs when a customer withdraws their challenge</td></tr><tr><td>Accepted</td><td>Occurs when a merchant accepts a dispute as valid</td></tr><tr><td>Won</td><td>Occurs when the merchant's challenge was accepted successfully. Known as 'chargeback reversal' in cases of card payments</td></tr><tr><td>Lost</td><td>Occurs when a merchant's challenge was deemed not satisfactory</td></tr></tbody></table>
 
 ### Pre-Arbitration stage
 
 Even after a successful dispute challenge, a payment method issuer might deem the evidence 'not satisfactory' and raise another review appeal. Such payments transition to 'Pre-Arbitration' stage.
 
-<table><thead><tr><th width="167">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal prcoess</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
+<table><thead><tr><th width="167">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal process</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
 
-## Managing Disputes on Hyperswitch through Dashboard
+## Managing Disputes on Juspay Hyperswitch through Dashboard
 
 ### 1. Viewing Disputes on Hyperswitch dashboard
 

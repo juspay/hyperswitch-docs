@@ -1,11 +1,13 @@
 ---
-description: Accept payments through Adyen via Hyperswitch
+description: Accept payments through Adyen via Juspay Hyperswitch
 ---
 
 # Adyen
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Adyen through Hyperswitch
+
 {% endhint %}
 
 \
@@ -13,7 +15,7 @@ This section gives you an overview of how to make payments via Adyen through Hyp
 
 Adyen is a global payments company allowing businesses to accept payments on a global scale. It offers a variety of local and international payment methods. To know about more about payment methods supported by adyen via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Adyen via Hyperswitch
+### Activating Adyen via Juspay Hyperswitch
 
 #### I. Prerequisites
 

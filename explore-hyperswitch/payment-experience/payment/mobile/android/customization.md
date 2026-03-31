@@ -6,7 +6,9 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
+
 You can customize the Android Unified Checkout to support your checkout context and brand guidelines by changing fonts, colors, shapes and layouts.
+
 {% endhint %}
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
@@ -53,5 +55,8 @@ Now you can test the payments on your app and go-live!
 ## Next step:
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}
+

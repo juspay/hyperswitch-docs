@@ -5,7 +5,9 @@ description: Bank Transfer payment methods
 # Bank Transfers
 
 {% hint style="info" %}
+
 Bank transfers allow customers to push funds from their bank account to the merchant's.&#x20;
+
 {% endhint %}
 
 Bank Transfers are a popular way of transmitting money between different bank accounts and they are popular in US, EU and few Asian and LATAM countries. They are primarily used by businesses for accepting large payments from other businesses. Bank transfers are also used by consumers in certain countries as a preferred method for transferring money to others and while transacting online.

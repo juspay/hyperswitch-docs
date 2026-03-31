@@ -1,5 +1,5 @@
 ---
-description: Set up your Hyperswitch account on the control center
+description: Set up your Hyperswitch control center account with API keys and payment processors
 ---
 
 # ⚙️ Control Centre Account setup
@@ -22,7 +22,9 @@ On the left nav bar, click on your email on the bottom to access the profile sec
 ## Pre-Requisites <a href="#user-content-create-an-api-key" id="user-content-create-an-api-key"></a>
 
 {% hint style="info" %}
+
 Ensure you have easy access to essential information such as API keys and secrets necessary for connecting to your chosen processor. Additionally, have a well-defined plan in place for configuring routing settings, if applicable.
+
 {% endhint %}
 
 ## Create an API key <a href="#user-content-create-an-api-key" id="user-content-create-an-api-key"></a>
@@ -36,9 +38,11 @@ Click on create API key from the page. A pop-up appears where you have to enter 
 An API key will be created and you will get the option to download and copy the API key.
 
 {% hint style="info" %}
+
 Ensure that you download or copy the API key as it will be available only once through the dashboard for security reasons. In case you miss this, please create another API key.
 
 You can use the Hyperswitch Dashboard to reveal, revoke, and create secret API keys. If you’re setting up Hyperswitch through a third-party platform (3PP), reveal your API keys in live mode to begin processing payments
+
 {% endhint %}
 
 ## Add a payment processor
@@ -99,7 +103,9 @@ The following key fields can be customized to align the dashboard with the merch
 These UI customizations are scalable and can be extended upon merchant request.
 
 {% content-ref url="../../merchant-controls/integration-guide.md" %}
+
 [integration-guide.md](../../merchant-controls/integration-guide.md)
+
 {% endcontent-ref %}
 
 You can also refer to the [Smart Router](../../payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../../../hyperswitch-open-source/account-setup/test-a-payment.md).

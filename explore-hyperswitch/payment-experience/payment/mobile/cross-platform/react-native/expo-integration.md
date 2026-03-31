@@ -1,12 +1,15 @@
 ---
+description: Integrate Hyperswitch SDK with Expo React Native applications
 icon: react
 ---
 
 # Expo integration
 
 {% hint style="info" %}
+
 **Note:** **Expo Go is not supported.**\
 The Hyperswitch SDK uses native modules, so the app must be built with native Android and iOS code.
+
 {% endhint %}
 
 ## 1. Install Required Dependencies

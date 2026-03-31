@@ -20,13 +20,40 @@ The evolution from Click to Pay V1 to V2 represents a fundamental shift in digit
 | **🌏 Global Market Adoption** | 🚧 Limited deployment and compatibility with some regions and merchants.                                                                                                                                                                                                                                       | ✅ Available in 35+  countries, supported by major card networks                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **🔁 Recurring Payments**     | 🚧 Limited support for saving credentials and managing recurring payments                                                                                                                                                                                                                                      | ✅ Built-in support for recurring payments and saved credentials                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-### **Seamless Migration with Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
+### **Seamless Migration with Juspay Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
 
 The migration to V2 is powered by Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
 
 This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less than 30 minutes. Our wrapper maintains backward compatibility while giving you access to V2's enhanced features.
 
-![Architecture diagram of Visa Click to Pay integration, showing how the Wrapper mediates between Client browser/app and Visa's Click to Pay server while supporting both V1 and V2 SDKs.](../../../../.gitbook/assets/1.png)
+<!-- Original diagram: ../../../../.gitbook/assets/1.png -->
+
+```mermaid
+flowchart LR
+    subgraph Client["Client Side"]
+        A[Browser/App]
+    end
+    
+    subgraph Hyperswitch["Juspay Hyperswitch"]
+        B[Wrapper<br/>V1/V2 Detection]
+    end
+    
+    subgraph Visa["Visa Click to Pay"]
+        C[V1 SDK]
+        D[V2 SDK]
+    end
+    
+    A -->|V1 Requests| B
+    A -->|V2 Requests| B
+    B -->|V1 Flow| C
+    B -->|V2 Flow| D
+    C -->|Process| Visa
+    D -->|Process| Visa
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#ff9,stroke:#333
+    style Visa fill:#9f9,stroke:#333
+```
 
 ### Integration Methods
 
@@ -225,7 +252,6 @@ try {
     }
 }
 ```
-
 
 
 ### Authentication Methods
@@ -484,7 +510,6 @@ For additional support:
 * [API Reference](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-js-reference-v2/init) - JavaScript SDK reference for implementing Click to Pay
 * [Integration Overview](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview) - Comprehensive implementation guide and requirements
 * [Merchant & PSP Guide](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-merchants-psps) - Best practices and implementation paths for merchants and payment service providers
-
 
 
 Remember to test thoroughly in the sandbox environment before deploying to production, and enable new features gradually to ensure a smooth transition for your users.

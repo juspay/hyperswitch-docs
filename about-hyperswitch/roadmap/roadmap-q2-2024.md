@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'24)
+description: Juspay Hyperswitch roadmap (Apr to Jun'24)
 icon: road
 ---
 
@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-## Recap of Q1 2024 <a href="#recap-of-q4-2023" id="recap-of-q4-2023"></a>
+#### Recap of Q1 2024 <a href="#recap-of-q4-2023" id="recap-of-q4-2023"></a>
 
 Lets start with a short recap on what was released new in Q1 2024
 
@@ -35,7 +35,7 @@ Lets start with a short recap on what was released new in Q1 2024
 * Enhancement of Payouts module - Save payout details, Payouts routing, Payout retries (same provider & different provider).
 * Subscriptions - Payment processing support for all major subscription solution providers and plug-in support for Kill Bill subscription solution.
 
-## Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -43,7 +43,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-## Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+#### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
 There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
@@ -59,9 +59,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 <table data-header-hidden><thead><tr><th width="125"></th><th></th></tr></thead><tbody><tr><td><strong>Legend</strong></td><td><strong>Description</strong></td></tr><tr><td>🟩</td><td>Feature completed</td></tr><tr><td>🟧</td><td>Feature in progress</td></tr><tr><td>🟥</td><td>Work not started</td></tr><tr><td>💪</td><td>Stretch target</td></tr><tr><td>🚛</td><td>Backlog feature from Q1 2024</td></tr></tbody></table>
 
-## Roadmap <a href="#roadmap" id="roadmap"></a>
+#### Roadmap <a href="#roadmap" id="roadmap"></a>
 
-### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
+##### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 Vaulting payment methods in non-payment flows
 *   🟥 ~~Support business continuity for MIT payment through PSP tokens~~&#x20;
@@ -79,14 +79,14 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 _(list of connectors will keep expanding as we receive more requests from the community!!! )_
 
-### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
+##### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟧 🚛 Code restructuring for enhancing readability, reducing compile & build times
-* 🟧 PCI Software Security Standard (S3) certification. At the moment, Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we undertook the certification starting Feb 2024 to further augment our security standards. _Expected closure by June 2024_
+* 🟧 PCI Software Security Standard (S3) certification. At the moment, Juspay Hyperswitch application is battle tested for PCI L1 compliance. While PCI Software Security Standard (S3) is not mandatory for Hyperswitch related functionalities, we undertook the certification starting Feb 2024 to further augment our security standards. _Expected closure by June 2024_
 * 🟩 Upgraded to PCI DSS 4.0 certification
 * 🟩 Open sourcing the Native Unified Checkout SDK (Android and iOS)
 
-### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
+##### Improving Payment Authorization Rates <a href="#improving-payment-authorization-rates" id="improving-payment-authorization-rates"></a>
 
 * 🟩 🚛 Enable scanning of cards to reduce manual entry of card details by the customer
 * 🟩 Native 3DS on Android and iOS apps
@@ -94,12 +94,12 @@ _(list of connectors will keep expanding as we receive more requests from the co
 * 🟧 Customer initiated payment retries on Hyperswitch Unified Checkout
 * 🟧 💪 Account verification for bank payment methods like ACH and SEPA
 
-### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
+##### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
 * 🟥 ~~Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre~~
 * 🟧 Hyperswitch Headless SDK methods to support payment account management experience for users - this will allow customers to add, update, edit and delete payment methods
 * 🟧  Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
 
-### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
+#### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

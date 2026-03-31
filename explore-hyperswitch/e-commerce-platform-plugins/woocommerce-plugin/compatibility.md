@@ -1,11 +1,13 @@
 ---
-description: List of all compatible WooCommerce plugins
+description: Browse compatible plugins for Juspay Hyperswitch WooCommerce integration
 ---
 
 # Compatibility
 
 {% hint style="info" %}
+
 This section enlists all the plugins which are compatible with the Hyperswitch WooCommerce. Search for the supported plugin here.
+
 {% endhint %}
 
 Hyperswitch Woocommerce plugin is compatible with most of the other woocommerce plugins. You can find the exhaustive list here.

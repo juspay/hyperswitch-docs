@@ -1,4 +1,5 @@
 ---
+description: Choose from four implementation patterns for integrating payment flows with vault capabilities based on your UI and compliance requirements
 hidden: true
 ---
 
@@ -26,7 +27,7 @@ Depending on your UI strategy and data sovereignty requirements, the Payment wit
 
 The four primary patterns are:
 
-* [**Hyperswitch SDK + Hyperswitch Vault** ](https://docs.hyperswitch.io/~/revisions/gkH4cp2rB1DvMiW6aktj/about-hyperswitch/payment-suite-1/orchestrator-model/hyperswitch-sdk-+-hyperswitch-vault-setup)— _Unified Flow_:\
+* [**Hyperswitch SDK + Hyperswitch Vault** ](https://docs.hyperswitch.io/~/revisions/gkH4cp2rB1DvMiW6aktj/about-hyperswitch/payment-suite-1/orchestrator-model/hyperswitch-sdk-+-hyperswitch-vault-setup) — _Unified Flow_:\
   The quickest path to launch, offering a fully integrated experience with zero PCI scope.
 * [**Merchant SDK + Hyperswitch Vault**](https://docs.hyperswitch.io/~/revisions/Rp0vynFYJnlasuYRM3en/about-hyperswitch/payment-suite-1/orchestrator-model/merchant-sdk-+-hyperswitch-vault-setup) — _Headless Flow_:\
   Enables a fully custom UI while retaining secure vaulting, giving you greater control with added implementation effort.

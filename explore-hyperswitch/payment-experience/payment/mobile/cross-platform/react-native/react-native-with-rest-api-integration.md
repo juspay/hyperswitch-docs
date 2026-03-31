@@ -6,7 +6,9 @@ icon: puzzle-piece
 # React Native with REST API Integration
 
 {% hint style="info" %}
+
 Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
+
 {% endhint %}
 
 ## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
@@ -178,7 +180,9 @@ return (
 ```
 
 {% hint style="danger" %}
+
 Retrieve the **payment status from the Hyperswitch backend** to determine the final (terminal) status of the transaction. Do not rely solely on the status returned by the SDK, as it may not always represent the definitive outcome of the payment.
+
 {% endhint %}
 
 Congratulations! Now that you have integrated the payment sheet

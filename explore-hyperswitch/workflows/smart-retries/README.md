@@ -92,7 +92,6 @@ Each of the error codes are mapped individually as to whether they are eligible 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
 
-
 ## How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
@@ -103,7 +102,6 @@ Each of the error codes are mapped individually as to whether they are eligible 
 * Maximum number of payment retry attempts&#x20;
 
 ####
-
 
 
 ## FAQs

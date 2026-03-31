@@ -27,11 +27,11 @@ To create a new service, follow the steps below:
 2. Enter the new `SERVICE NAME`.
 3. Select your `SERVICE COUNTRY`.
 4. Choose your `PAYMENT GATEWAY` from the list of supported payment gateways.
-5. Upload the .csr file you received from your processor.
+5. Upload the.csr file you received from your processor.
 6. In the `SERVICE DOMAIN` field, enter your merchant_domain and click the `ADD` button. If there are multiple merchant domains, add them one after the other.
 7. Verify the details you've entered, check the `LEGAL AGREEMENTS` box, and click `SAVE AND NEXT`.
 
-## **Configuring Samsung Pay on Hyperswitch**
+## **Configuring Samsung Pay on Juspay Hyperswitch**
 
 To configure Samsung Pay on Hyperswitch, follow the steps below -
 
@@ -48,3 +48,4 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 8. Select the card brands you want to allow customer to use when making Samsung Pay payments.
 
 {% hint style="warning" %} Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process. {% endhint %}
+

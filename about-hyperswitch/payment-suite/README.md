@@ -1,5 +1,5 @@
 ---
-description: Open, Modular, Self-Hostable Payment Infrastructure
+description: Understand the four core components of the Payments Suite and choose the right integration model for your payment flow requirements
 icon: container-storage
 ---
 
@@ -82,7 +82,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 **Tokenisze Card :**&#x20;
 
-* Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
+* Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
 *   Hyperswitch securely stores the credential and returns a reusable identifier - `payment_method_id`.
 
 

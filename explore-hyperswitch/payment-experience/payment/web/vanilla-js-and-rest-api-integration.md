@@ -18,7 +18,9 @@ Follow the [Server Setup](../server-setup.md) section.
 ### 2.1 Define the payment form
 
 {% hint style="info" %}
+
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
+
 {% endhint %}
 
 Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
@@ -37,7 +39,9 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 ```
 
 {% tabs %}
+
 {% tab title="UnifiedCheckout" %}
+
 #### 2.2 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
@@ -97,15 +101,21 @@ This document outlines the details and functionality of an optional callback `co
 * **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
+
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
+
 {% endhint %}
 
 {% hint style="info" %}
+
 **Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
+
 {% endhint %}
 
 {% hint style="danger" %}
+
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
+
 {% endhint %}
 
 **Example Usage**
@@ -124,9 +134,11 @@ unifiedCheckout.on("completeDoThis",()=>{
   // Add any custom post-payment logic here, such as redirection or displaying a success message
 })
 ```
+
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
+
 #### 2.2 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
@@ -173,7 +185,9 @@ async function initialize() {
   document.body.appendChild(script);
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## 3. Complete payment on the client

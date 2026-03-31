@@ -1,4 +1,5 @@
 ---
+description: Test your connector configuration using the Hyperswitch dashboard
 icon: vial-circle-check
 ---
 

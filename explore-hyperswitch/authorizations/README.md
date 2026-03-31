@@ -1,4 +1,5 @@
 ---
+description: Explore advanced authorization types including zero amount estimate and incremental
 icon: building-magnifying-glass
 ---
 

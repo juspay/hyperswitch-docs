@@ -1,4 +1,5 @@
 ---
+description: Configure Xendit split settlements for marketplace transactions
 icon: hexagon-xmark
 ---
 
@@ -13,7 +14,7 @@ If your platform charges a fee or commission when facilitating payments for your
 * Platform to Partner
 * Accepting Payments for Sub-Accounts
 
-## Split Xendit payments via Hyperswitch
+## Split Xendit payments via Juspay Hyperswitch
 
 Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
 

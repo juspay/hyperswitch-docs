@@ -56,7 +56,7 @@ Regional Usage:
 2. They are prompted to save the payment method with hyperswitch and your configured PM auth (open banking AIS) processor.
 3. Customer is then asked to select their bank account in Processor SDK for saving it with the PM auth processor.
 4. Hyperswitch connects with the PM auth processor to get the necessary information about their bank accounts and saves it.
-5. The customer can now select their saved bank account at hyperswitch to make payment.
+5. The customer can now select their saved bank account at Juspay Hyperswitch to make payment.
 
 {% embed url="https://www.youtube.com/watch?v=T-UIaQWUQFY" %}
 

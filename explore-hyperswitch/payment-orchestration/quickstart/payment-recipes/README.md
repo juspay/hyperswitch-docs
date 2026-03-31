@@ -25,5 +25,8 @@ For growing businesses, sticking to one payment processor and offering only a ha
 ## Next step:
 
 {% content-ref url="use-paypal-with-stripe.md" %}
+
 [use-paypal-with-stripe.md](use-paypal-with-stripe.md)
+
 {% endcontent-ref %}
+

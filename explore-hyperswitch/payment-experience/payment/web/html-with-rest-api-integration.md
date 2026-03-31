@@ -1,5 +1,5 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+description: Integrate hyper SDK to your HTML Web App using Juspay Hyperswitch-node
 icon: html5
 ---
 
@@ -26,7 +26,9 @@ Use `HyperLoader` to ensure PCI compliant means of accepting payment details fro
 ### 2.2 Define the payment form
 
 {% hint style="info" %}
+
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
+
 {% endhint %}
 
 Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
@@ -56,7 +58,9 @@ const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
 ```
 
 {% tabs %}
+
 {% tab title="UnifiedCheckout" %}
+
 #### 2.4 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
@@ -96,9 +100,11 @@ async function initialize() {
   unifiedCheckout.mount("#unified-checkout");
 }
 ```
+
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
+
 #### 2.4 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
@@ -139,7 +145,9 @@ async function initialize() {
   expressCheckout.mount("#express-checkout");
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## 3. Complete payment on the client
@@ -199,7 +207,7 @@ For SDK to render the confirm button and handle the confirm payment, in paymentE
 
 ```html
 const unifiedCheckoutOptions = {
-  ...,
+...,
   sdkHandleConfirmPayment: {
      handleConfirm: true,
      buttonText: "SDK Pay Now",

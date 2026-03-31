@@ -1,5 +1,5 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Augment subscriptions with payment orchestration and multi-PSP routing
 icon: repeat
 ---
 
@@ -21,7 +21,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
-5. Subscription is created at Hyperswitch and at the subscription provider's end
+5. Subscription is created at Juspay Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
 8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
@@ -38,15 +38,18 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who wants to use Juspay Hyperswitch Payments SDK
 
 {% stepper %}
+
 {% step %}
+
 Configure your Subscription Provider with Hyperswitch and set it as billing connector for the desired profile
 
 _Note: Dashboard support for this configuration will be available soon_
 
 {% code overflow="wrap" fullWidth="false" %}
+
 ```
 curl --location 'http://<base_url>/account/<merchant_id>/connectors' \
 --header 'Content-Type: application/json' \
@@ -79,14 +82,19 @@ curl --location 'http://<base_url>/account/<merchant_id>/business_profile/<profi
   "billing_processor_id": "<mca_id>"
 }'
 ```
+
 {% endcode %}
+
 {% endstep %}
 
 {% step %}
+
 Configure Hyperswitch Webhook endpoint for invoice events on the subscription provider's dashboard
+
 {% endstep %}
 
 {% step %}
+
 Fetch the plan details (to be setup prior on subscription provider)
 
 ```
@@ -115,13 +123,17 @@ Response:
 ]
 
 ```
+
 {% endstep %}
 
 {% step %}
+
 Display the retrieved Plan and Price Details to the user to make their selection
+
 {% endstep %}
 
 {% step %}
+
 Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)) and create a subscription with the following API
 
 ```
@@ -141,33 +153,47 @@ curl --location '<baseurl>/subscriptions/create' \
     }
 }'
 ```
+
 {% endstep %}
 
 {% step %}
+
 Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned in the `/subscriptions/create` API response
+
 {% endstep %}
 
 {% step %}
+
 Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../payment-experience/payment/web/react-with-rest-api-integration.md)
+
 {% endstep %}
 
 {% step %}
+
 Sync with the subscription status for disbursement of services and future billing cycles
+
 {% endstep %}
+
 {% endstepper %}
 
 #### 2. For PCI Compliant merchants handling the entire checkout experience
 
 {% stepper %}
+
 {% step %}
+
 Follow the same steps as above to create a billing connector, fetch plan details and display the retrieved Plan and Price Details to the user to make their selection
+
 {% endstep %}
 
 {% step %}
+
 Once the user selects a particular Plan, create a customer on Hyperswitch ([API Reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)), initiate checkout and collect payment method details
+
 {% endstep %}
 
 {% step %}
+
 After the user enter card/PM details and confirms the payment, hit the Hyperswitch Subscriptions API
 
 ```
@@ -250,12 +276,15 @@ Response:
   }
 }
 ```
+
 {% endstep %}
 
 {% step %}
+
 Sync with the status of the Subscription API to disburse services to subscribed users
 
 {% code overflow="wrap" %}
+
 ```
 curl --location 'http://localhost:8080/subscriptions/<subscripion_id>' \
 --header 'Content-Type: application/json' \
@@ -275,12 +304,17 @@ RESPONSE:
     "customer_id": "<customer_id>"
 }
 ```
+
 {% endcode %}
+
 {% endstep %}
 
 {% step %}
+
 Monitor incoming webhooks for renewal during subsequent cycles
+
 {% endstep %}
+
 {% endstepper %}
 
 ### FAQs

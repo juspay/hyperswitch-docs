@@ -8,7 +8,7 @@ icon: repeat
 
 # Subscriptions
 
-Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
+Juspay Hyperswitch enables you to work with your preferred subscription provider while having the flexibility to connect with multiple payment processors and payment methods. The benefits you gain by using Hyperswitch integration as a supplement to your Subscription Solution Provider are as follows:
 
 * **Flexibility with Payment Processors**
   * Choose any payment processor based on better costs or authorization rates.
@@ -66,14 +66,14 @@ User selects a payment method and adds the payment method details which are save
   * Merchant will initiate a $0 mandate with Hyperswitch ([more details](https://docs.hyperswitch.io/features/payment-flows-and-management/zero-amount-authorization)) to validate and store the payment details and create a mandate with Hyperswitch (using the same customer ID).  &#x20;
 * **Retrieve plans and create subscription** - Merchants will retrieve the eligible plans and display them on their website. The customer will select one of the plans shown to them. Merchant will use the selected plan to create a subscription with the subscription provider.
 * **Make payment and return invoice** - Using the mandate ID created earlier the merchant will make a payment with Hyperswitch. The subscription is marked as active upon successful payment and the invoice with the customer.
-  * In case the subscription start date is in future and the customer need not be charged immediately then no payment is inittaed with Hyperswitch
+  * In case the subscription start date is in future and the customer need not be charged immediately then no payment is initiated with Hyperswitch
 * **Make MIT transactions** - The subscription provider will trigger a webhook to the merchant on the date of the scheduled payment for subscription. Upon receiving the webhook, the merchant should initiate a payment with Hyperswitch using the customer ID and mandate ID. The merchant will share the invoice with the customer upon successful payment
 
 <figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
 ### Subscription management portal
 
-The customer-facing subscription management interface allows the customers to modify their billing address, add new payment method details for subscripotion payments and cancel subscription. If a merchant offers a subscription management portal then here's how Hyperswitch can support:
+The customer-facing subscription management interface allows the customers to modify their billing address, add new payment method details for subscription payments and cancel subscription. If a merchant offers a subscription management portal then here's how Hyperswitch can support:
 
 * **User updates billing address**  - The merchant will update the new billing address with both Hyperswitch and the subscription provider using the customer ID.
 * **User updates payment method details** -  The merchant will load Hyperswitch SDK to allow the user to select the payment method and add the relevant payment method details. Merchant will validate and add this payment method with Hyperswitch using $0 mandate and create a new mandate.
@@ -95,7 +95,7 @@ The merchant can use the Hyperswitch Payment links when sending email reminders 
 * The send email notification is a functionality offered by most subscription providers. They also allow customising the message and payment links shared inside the email
 * &#x20;The merchant needs to host a standard page and share the link to that page on the email
 * When the customer click on that link requesting to pay, the merchant will call Hyperswitch with the customer ID to create and share the Payment link
-* The customer is redirected to the payment link hosted page (with a validity of 15-mins) which allows them to make the payment using any payment option
+* The customer is redirected to the payment link hosted page (with a validity of 15 minutes) which allows them to make the payment using any payment option
 * Once the payment is successful, the merchant should mark the invoice as paid with their subscription provider and return the invoice to the customer
 
 <figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>

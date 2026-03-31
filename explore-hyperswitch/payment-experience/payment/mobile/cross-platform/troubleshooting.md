@@ -1,3 +1,7 @@
+---
+description: Troubleshoot common issues with React Native and Flutter SDKs
+---
+
 # Troubleshooting
 
 ## Android

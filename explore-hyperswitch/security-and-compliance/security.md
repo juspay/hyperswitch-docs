@@ -1,11 +1,11 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Comprehensive measures safeguarding Data Integrity within Juspay Hyperswitch
 icon: cloud-check
 ---
 
 # Data Security
 
-At Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
+At Juspay Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
 
 ### **Benefits of Our Security Framework**
 
@@ -50,7 +50,7 @@ To provide insights and analytics without compromising sensitive information, on
 
 ## Data Encryption Overview
 
-At Hyperswitch, we place the utmost importance on safeguarding sensitive data, including `external API credentials, customer information, and card details`. Our application employs a multi-layered encryption approach to ensure security during data transmission and storage.
+At Juspay Hyperswitch, we place the utmost importance on safeguarding sensitive data, including `external API credentials, customer information, and card details`. Our application employs a multi-layered encryption approach to ensure security during data transmission and storage.
 
 * **Masked Transmission**: All sensitive data remains masked during transmission and is never permanently stored on local systems.
 * **Multi-Layered Encryption**: Data is encrypted at every critical juncture, ensuring robust protection against breaches.
@@ -90,14 +90,17 @@ The encryption process ensures:
 
 ### Concealing Sensitive Data in Logs
 
-At Hyperswitch, we take extra care to protect sensitive information, even in system logs. Our application framework uses a **wrapper type** to classify all sensitive data as `Secret`.
+At Juspay Hyperswitch, we take extra care to protect sensitive information, even in system logs. Our application framework uses a **wrapper type** to classify all sensitive data as `Secret`.
 
 * **Leveraging Rust's Advantages**: Hyperswitch uses Rust, a strongly typed programming language, to create a robust mechanism (`Secret<T>`) for handling sensitive data.
 * **Masked Logging**: Instead of exposing sensitive details such as passwords or Personally Identifiable Information (PII), we log only the data type (e.g., `*** alloc::string::String ***`).
 * **Source-Level Protection**: By masking sensitive data at its source, we ensure that sensitive information is never inadvertently exposed, even in debug outputs or logs.
 
 {% hint style="info" %}
+
 **Database at Rest Encryption**
 
-At Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
+At Juspay Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
+
 {% endhint %}
+

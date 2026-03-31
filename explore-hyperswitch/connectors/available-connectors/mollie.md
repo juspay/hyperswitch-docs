@@ -1,21 +1,22 @@
 ---
-description: Accept payments through Mollie via Hyperswitch
+description: Accept payments through Mollie via Juspay Hyperswitch configuration and setup
 hidden: true
 ---
 
 # Mollie
 
 {% hint style="info" %}
+
 This section gives you an overview of how to make payments via Mollie through Hyperswitch
+
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/mollieLogo.svg)
 
 
-
 Mollie is a payments platform that offers effortless payments, seamless checkout, multiple payment methods, powerful integrations, fast and flexible financing, robust security, an advanced dashboard and app. To know about more about payment methods supported by Mollie via hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-### Activating Mollie via Hyperswitch
+### Activating Mollie via Juspay Hyperswitch
 
 #### Prerequisites
 

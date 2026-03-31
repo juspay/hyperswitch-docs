@@ -1,7 +1,5 @@
 ---
-description: >-
-  Setup Taxjar on Hyperswitch to automatically calculate tax in case of Express
-  checkout wallets
+description: Configure Taxjar for automatic tax calculation on express checkout wallets
 icon: filter-circle-dollar
 ---
 
@@ -9,7 +7,7 @@ icon: filter-circle-dollar
 
 Hyperswitch supports configuring [Taxjar](https://www.taxjar.com/) in your dashboard as a tax connector so that tax amount can be calculated automatically whenever your customers change their shipping address on Express Checkout wallets like Apple pay and Paypal
 
-## How to configure Taxjar on Hyperswitch?
+## How to configure Taxjar on Juspay Hyperswitch?
 
 You can enable taxjar from the hyperswitch dashboard:
 

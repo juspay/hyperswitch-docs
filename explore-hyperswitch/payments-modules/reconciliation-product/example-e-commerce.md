@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn e-commerce three-way reconciliation on Juspay Hyperswitch to verify
+  payments flow from your order system through PSPs to your bank accurately
+---
+
 # Example: E Commerce
 
 ```mermaid
@@ -33,7 +39,7 @@ flowchart TB
     style EM fill:#C8E6C9
 ```
 
-#### E-commerce Three-Way Reconciliation
+## E-commerce Three-Way Reconciliation
 
 Three-way reconciliation is the process of verifying the flow of money across three independent systems to ensure financial accuracy. For a typical e-commerce business, this involves reconciling data from:
 
@@ -43,11 +49,11 @@ Three-way reconciliation is the process of verifying the flow of money across th
 
 We solve this complex problem by breaking it down into two interconnected reconciliation processes: **Order → PSP** and **PSP → Bank**. This approach ensures every step of the payment journey is tracked and validated.
 
-### The Reconciliation Flow: A Step-by-Step Guide
+## The Reconciliation Flow: A Step-by-Step Guide
 
 The reconciliation engine follows a structured process to automatically match and validate transactions across all three systems.
 
-#### **Step 1: Account Setup**
+### Step 1: Account Setup
 
 First, we establish the accounts that represent the source and destination of funds in your ledger. This ensures that every transaction is categorized correctly from the start.
 
@@ -63,11 +69,11 @@ First, we establish the accounts that represent the source and destination of fu
 * `PSP Settlement Account`: `account_type: Debit, currency: USD`
 * `Bank Account`: `account_type: Debit, currency: USD`
 
-#### **Step 2: Reconciliation Rules Configuration**
+### Step 2: Reconciliation Rules Configuration
 
 The core of our reconciliation engine is the rule-based architecture. Rules define exactly how transactions should be matched and what conditions must be met for a successful reconciliation.
 
-**Rule 1: Order-to-PSP Matching**
+#### Rule 1: Order-to-PSP Matching
 
 * **Purpose**: Match customer orders from your OMS with the corresponding payments recorded by your PSP.
 * **Rule Settings**:
@@ -76,11 +82,11 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
   * **When to Apply (Filter)**: Transaction type equals "customer\_order"
   * **How to Find Match (Identifier)**: Use `order_id` to find the PSP transaction with the same `original_reference`
   * **What to Verify (Match Rules)**:
-    * `Order amount = PSP gross amount`
-    * `Order currency = PSP currency`
+    * `Order `amount = PSP` gross amount`
+    * `Order `currency = PSP` currency`
     * `Order ID = PSP original reference`
 
-**Rule 2: PSP-to-Bank Matching**
+#### Rule 2: PSP-to-Bank Matching
 
 * **Purpose**: Match the net settlements from your PSP with the actual deposits that appear in your bank statement.
 * **Rule Settings**:
@@ -89,11 +95,11 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
   * **When to Apply (Filter)**: Transaction type equals "psp\_settlement"
   * **How to Find Match (Identifier)**: Use `settlement_batch_id` to find the bank transaction with the same `batch_reference`
   * **What to Verify (Match Rules)**:
-    * `PSP net amount = Bank deposit amount`
-    * `PSP currency = Bank currency`
+    * `PSP net `amount = Bank` deposit amount`
+    * `PSP `currency = Bank` currency`
     * `Settlement date = Bank value date`
 
-#### **Step 3: The Transaction Journey**
+### Step 3: The Transaction Journey
 
 This is a sample journey of a single customer order moving through the system, with each state transition being handled by the reconciliation engine
 

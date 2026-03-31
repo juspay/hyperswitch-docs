@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Configure Stripe split settlements for platform revenue sharing
 icon: stripe
 ---
 
@@ -48,7 +48,7 @@ JSON
 }
 ```
 
-### Split Refunds via Hyperswitch
+### Split Refunds via Juspay Hyperswitch
 
 For [Refunds](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create), include the appropriate split refund configuration based on the original `charge_type`.
 

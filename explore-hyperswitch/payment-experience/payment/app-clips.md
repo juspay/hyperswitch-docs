@@ -46,11 +46,11 @@ icon: app-store
         configuration: config
     ) { result in
         switch result {
-        case .completed:
+        case.completed:
             self.statusLabel.text = "Payment complete"
-        case .failed(let error):
+        case.failed(let error):
             self.statusLabel.text = "Payment failed: \(error)"
-        case .canceled:
+        case.canceled:
             self.statusLabel.text = "Payment canceled."
         }
     }
@@ -73,5 +73,8 @@ icon: app-store
 To use this feature add Lite SDK in your AppClips
 
 {% content-ref url="../../payment-experience/payment/mobile/ios/lite-sdk.md" %}
+
 [lite-sdk.md](../../payment-experience/payment/mobile/ios/lite-sdk.md)
+
 {% endcontent-ref %}
+

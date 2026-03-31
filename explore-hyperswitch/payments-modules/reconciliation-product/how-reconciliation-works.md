@@ -1,21 +1,32 @@
+---
+description: >-
+  Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
+  architecture to automatically match transactions and resolve financial
+  discrepancies
+---
+
 # How Reconciliation Works
 
-### Reconciliation Engine: Rule-Based Architecture
+## Reconciliation Engine: Rule-Based Architecture
 
 The Reconciliation Engine is the intelligent core that automatically matches and validates financial data. It does this by evaluating incoming **Staging Entries** against a set of configurable business rules. These rules dictate how transactions are processed and matched, providing the flexibility to handle complex reconciliation scenarios without code changes
 
-#### The Complete Flow
+### The Complete Flow
 
 The reconciliation process follows a robust, end-to-end flow to ensure that every transaction is accounted for
 
-1. **Staging Entry Processing**: After a file has been ingested and transformed, all standardized data becomes a **Staging Entry**. This is a temporary, validated but unreconciled record waiting for processing by the engine
-2. **Rule Evaluation**: The reconciliation engine continuously evaluates each new staging entry against your configured business rules to determine the appropriate action
-3. **Expectation Creation**: When a rule matches a staging entry, the system creates an **Expectation**. An expectation is a record that defines what a corresponding transaction should look like from a target system
-4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process
-5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules
-6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
+1. **Staging Entry Processing**: After a file has been ingested and transformed, all standardized data becomes a **Staging Entry**. This is a temporary, validated but unreconciled record waiting for processing by the engine.
+2. **Rule Evaluation**: The reconciliation engine continuously evaluates each new staging entry against your configured business rules to determine the appropriate action.
+3. **Expectation Creation**: When a rule matches a staging entry, the system creates an **Expectation**. An expectation is a record that defines what a corresponding transaction should look like from a target system.
+4. **Transaction Matching**: As new transactions are ingested, they are automatically matched against existing expectations to complete the reconciliation process.
+5. **Exception Highlighting**: The engine automatically flags and categorizes any unmatched staging entries. These exceptions can be due to amount discrepancies, status conflicts, or any metadata mismatch defined in your rules.
+6. **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly.
+7. \
+   **Exception Handling**: Operators can resolve exceptions via the UI. Every action is auditable and triggers an automatic re-evaluation to post the transaction correctly
+8.
 
 {% code title="How Reconciliation Works" fullWidth="true" %}
+
 ```mermaid
 flowchart TB
     OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
@@ -48,9 +59,10 @@ flowchart TB
     style MM fill:#FFCDD2
     style EM fill:#C8E6C9
 ```
+
 {% endcode %}
 
-### Rules Architecture
+## Rules Architecture
 
 Each rule consists of three core components that work together to define your matching logic:
 
@@ -60,7 +72,7 @@ Each rule consists of three core components that work together to define your ma
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-09-10 at 2.20.42 PM.png" alt="Image showing rules setup in the reconciliation product"><figcaption></figcaption></figure>
 
-#### **1.**&#x46;ilters: Defining the "When"
+### Filters: Defining the "When"
 
 **Purpose**: Determines which staging entries a rule should process. It's the first condition that must be met for a rule to be considered
 
@@ -72,7 +84,7 @@ Each rule consists of three core components that work together to define your ma
   * `"Apply this rule to all transactions over $1000"` (triggered on amount range)
   * `"Use this rule for a specific merchant ID"` (triggered on `merchant_id`)
 
-#### **2.** Identifiers: Defining the "How"
+### Identifiers: Defining the "How"
 
 **Purpose**: Defines which fields to use for finding a matching transaction in a target system. This is what allows the engine to link a staging entry (e.g., from an Order Management System) to a transaction expectation (e.g., from a Payment Service Provider)
 
@@ -81,7 +93,7 @@ Each rule consists of three core components that work together to define your ma
   * The engine uses the identifier to create a searchable **Search Expectation**. When a new staging entry arrives from a different source, the engine uses the same identifier to look up a potential match
 * **Fallbacks**: You can specify multiple identifiers in order of preference. The engine will try the first identifier, and if it fails to find a match, it will move to the next one
 
-#### **3.** Rules: Defining the "What"
+### Rules: Defining the "What"
 
 **Purpose**: Rules are the final validation step. Once a potential match has been identified, these rules compare specific fields to confirm that the transactions are a valid pair
 
@@ -91,15 +103,15 @@ Each rule consists of three core components that work together to define your ma
   * **Target Field**: Expected data in the target system (the right side of the reconciliation)
   * **Validation**: Both fields must exist and match exactly according to the rule's criteria
 
-#### Priority-Based Selection
+## Priority-Based Selection
 
 **How It Works**: When multiple rules' filters match a single staging entry, the engine selects the rule with the highest numeric priority and applies only that rule. This ensures that the most specific or important rules are always executed first.
 
-### Transaction Processing Modes
+## Transaction Processing Modes
 
 The reconciliation engine operates in two distinct modes, depending on the type of staging entry being processed
 
-#### **Transaction Mode**
+### Transaction Mode
 
 This mode is for initial entries that act as the **source of a flow**. The goal is to create a new, double-entry transaction and define what is expected from a counterparty
 
@@ -111,7 +123,7 @@ This mode is for initial entries that act as the **source of a flow**. The goal 
    * An **Expected Entry** for each target, which represents the money you are waiting to receive or pay out (e.g., a debit entry to the `PSP` account).
 5. **Search Expectation**: A searchable **Search Expectation** is generated, linking the source entry to the expected entry for future matching
 
-**Confirmation Mode**
+### Confirmation Mode
 
 This mode is for subsequent entries that confirm a previous transaction and allow the engine to complete the reconciliation flow
 

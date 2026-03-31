@@ -11,7 +11,7 @@ icon: shield-exclamation
 
 ## Get started with Default Fallback Routing
 
-In the Default Fallback , if the active routing rules are not applicable, the priority order of all configured payment processors is used to route payments. This priority order is configurable from the Dashboard.
+In the Default Fallback, if the active routing rules are not applicable, the priority order of all configured payment processors is used to route payments. This priority order is configurable from the Dashboard.
 
 ### Steps to configure Default fallback Configuration in Smart Router:
 

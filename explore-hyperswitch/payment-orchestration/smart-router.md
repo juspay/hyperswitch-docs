@@ -14,7 +14,7 @@ To get started with Smart Router, ensure to have one or more payment processors 
 
 ## What is smart payment routing?
 
-Selling globally or otherwise invariably brings in a requirement to adopt multiple payment processors to cater to a wide range of payment method needs of the customers and gives you the flexibility to switch between processors to manage down-time and , it could be vital to optimising your payment processing costs as your business can choose the most optimal payment processors for every payment based on the cost, region and customer.
+Selling globally or otherwise invariably brings in a requirement to adopt multiple payment processors to cater to a wide range of payment method needs of the customers and gives you the flexibility to switch between processors to manage down-time and, it could be vital to optimising your payment processing costs as your business can choose the most optimal payment processors for every payment based on the cost, region and customer.
 
 Hence, Hyperswitch’s smart router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
 
@@ -44,7 +44,9 @@ Hyperswitch Smart Router Engine evaluates every payment request against your pre
 To test the Smart Router, after activating one rule, we can make a Test Payment using the [Hyperswitch Dashboard](https://app.hyperswitch.io/sdk)
 
 {% content-ref url="../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
+
 [test-a-payment.md](../../hyperswitch-open-source/account-setup/test-a-payment.md)
+
 {% endcontent-ref %}
 
 <details>

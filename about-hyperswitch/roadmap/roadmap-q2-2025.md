@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch roadmap (Apr to Jun'25)
+description: Juspay Hyperswitch roadmap (Apr to Jun'25)
 icon: road
 ---
 
@@ -21,7 +21,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Earlier this year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
+Earlier this year, Juspay Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap, starting this quarter, will be published under each module. A summary of the 8 product modules is provided below :
 
 1. **Vault:** Simplifying PCI compliance and data privacy regulations through a standalone Card Vault
 2. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
@@ -43,7 +43,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 #### Authentication <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 
 * 3DS Intelligence engine to provide 3DS step-up/ step-down decisions, to optimize for (i) Authentication success rate, and (ii) Overall transaction success rate
-* Enhanced Authentication Analytics to deeply understand the cardholder’s authentication journey, 3DS failures, 3DS performance, etc. across issuers, markets, and 20+ other payment dimensions.
+* Enhanced Authentication Analytics to deeply understand the cardholder's authentication journey, 3DS failures, 3DS performance, etc. across issuers, markets, and 20+ other payment dimensions.
 
 #### Revenue Recovery <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 

@@ -1,10 +1,11 @@
 ---
+description: Integrate Vault SDK using JavaScript for secure payment method tokenization
 icon: globe-pointer
 ---
 
 # Vault SDK - JS with REST API Integration
 
-## Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
+## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Payment Methods Management SDK
 
 The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
@@ -29,6 +30,7 @@ First, you'll need to set up your server to create payment method sessions, whic
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 {% hint style="info" %}
+
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
 To generate your Vault API keys, follow these steps:
@@ -39,6 +41,7 @@ To generate your Vault API keys, follow these steps:
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+
 {% endhint %}
 
 #### Creating a Payment Methods Session Endpoint
