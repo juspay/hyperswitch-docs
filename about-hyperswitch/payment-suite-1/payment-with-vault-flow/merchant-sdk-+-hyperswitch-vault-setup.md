@@ -1,7 +1,7 @@
 ---
 description: >-
-  Best for PCI compliant merchants requiring full control over UI rendering
-  while leveraging Hyperswitch Vault for secure storage and payment routing.
+ Best for PCI compliant merchants requiring full control over UI rendering
+ while leveraging Juspay Hyperswitch Vault for secure storage and payment routing.
 ---
 
 # Merchant SDK + Hyperswitch Vault Setup
@@ -10,13 +10,11 @@ In this approach, the merchant uses their own frontend SDK to capture card detai
 
 Once tokenized, Hyperswitch backend handles orchestration, routing, retries, and connector execution using vault tokens. All orchestration configuration is managed through the Hyperswitch Dashboard.
 
-#### Understanding Payment and Vault Workflow
+### Understanding Payment and Vault Workflow
 
-#### **Vaulting :**
+### **Vaulting :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (6).svg" alt=""><figcaption></figcaption></figure>
-
-
 
 **1. Create Payment (Server-Side)**
 
@@ -46,9 +44,7 @@ After successful authorization, Hyperswitch securely stores the card data in the
 
 Hyperswitch sends the final payment response, including transaction status and the vaulted `payment_method_id`, back to the merchant server.
 
-
-
-#### **Payment Using Stored Card :**
+### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/Untitled (7).svg" alt=""><figcaption></figcaption></figure>
 
@@ -79,8 +75,6 @@ The Hyperswitch Connector handles the synchronous handshake with the external pr
 **7. Final Status Propagation**
 
 The Hyperswitch Server sends the final transaction state (e.g., `succeeded`, `failed`) to Merchant Server. This allows the backend to update the order status while the frontend notifies the user of the successful payment.
-
-
 
 **API Reference :**
 

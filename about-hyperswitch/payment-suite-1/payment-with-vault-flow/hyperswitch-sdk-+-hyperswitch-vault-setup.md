@@ -1,7 +1,7 @@
 ---
 description: >-
-  Best for merchants seeking a pre-built, optimized payment UI backed by the
-  full Hyperswitch stack for secure data storage and routing.
+ Best for merchants seeking a pre-built, optimized payment UI backed by the
+ full Juspay Hyperswitch stack for secure data storage and routing.
 ---
 
 # Hyperswitch SDK + Hyperswitch Vault Setup
@@ -10,13 +10,11 @@ In this approach, the Hyperswitch SDK is used on the frontend to capture card de
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
-#### **Understanding Payment and Vault flow**
+### **Understanding Payment and Vault flow**
 
-#### **Vaulting :**
+### **Vaulting :**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
-
-
 
 **1. Create Payment (Server-Side)**\
 The merchant server creates a payment by calling the Hyperswitch [`payments/create`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with transaction details such as amount and currency. Hyperswitch responds with a `payment_id` and `client_secret`, which are required for client-side processing.
@@ -33,9 +31,7 @@ The SDK submits a `payments/confirm` request to Hyperswitch. Hyperswitch authori
 **5. Return Status**\
 The final payment and vaulting status is returned to the SDK, which redirects the customer to the merchant's configured `return_url`.
 
-
-
-#### **Payment Using Stored Card :**
+### **Payment Using Stored Card :**
 
 <figure><img src="../../../.gitbook/assets/HS_SDK&#x26;Stored.svg" alt=""><figcaption></figcaption></figure>
 
@@ -54,12 +50,7 @@ The SDK sends a `payments/confirm` request with the selected `payment_method_id`
 **5. Return Status**\
 The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant's `return_url` with the payment outcome.
 
-
-
-
-
-
 * **Integration Documentation :**
-  * **Unified Checkout :** [Integration guide](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
-  * [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
-  * [Unified Checkout: Saving Payment Methods](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)
+ * **Unified Checkout :** [Integration guide](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide)
+ * [Create Payment API](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+ * [Unified Checkout: Saving Payment Methods](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/save-a-payment-method)

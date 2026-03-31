@@ -5,12 +5,12 @@ icon: repeat
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
-#### Saving a payment method for future on-session payments (COF CIT)
+### Saving a payment method for future on-session payments (COF CIT)
 
 To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.
 
@@ -24,17 +24,17 @@ For saving a customer's payment method used in a successful transaction:
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>' \
---data-raw '{
-    "amount": 6540,
-    "currency": "USD",
-    "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"on_session",
-    "customer_id": "customer123",
-    "description": "Its my first payment request",
-    "return_url": "https://example.com", //
+*-header 'Content-Type: application/json' \
+*-header 'Accept: application/json' \
+*-header 'api-key: <enter your Hyperswitch API key here>' \
+*-data-raw '{
+  "amount": 6540,
+  "currency": "USD",
+  "profile_id": <enter the relevant profile id>,
+  "setup_future_usage":"on_session",
+  "customer_id": "customer123",
+  "description": "Its my first payment request",
+  "return_url": "https://example.com", //
 }'
 ```
 
@@ -42,13 +42,13 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ```bash
 "customer_acceptance": {
-        "acceptance_type": "online",
-        "accepted_at": "1963-05-03T04:07:52.723Z",
-        "online": {
-            "ip_address": "in sit",
-            "user_agent": "amet irure esse"
-        }
+    "acceptance_type": "online",
+    "accepted_at": "1963-05-03T04:07:52.723Z",
+    "online": {
+      "ip_address": "in sit",
+      "user_agent": "amet irure esse"
     }
+  }
 ```
 
 {% hint style="info" %}
@@ -61,29 +61,29 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 ***
 
-#### Saving a payment method for future MIT payments
+### Saving a payment method for future MIT payments
 
 Let's say, you want to save a customer's payment method to charge them at a later point without the need for additional cardholder authentication. This is done by raising an MIT (Merchant Initiated Transaction) exemption to the card network by the payment processor with reference to an initial transaction where the customer has authorised recurring charges. These are typically used when you want to charge a customer periodically/sporadically with a flexibility on the amount to be charged and number of charges.
 
 Based on the payment processors support, this functionality is also available for other payment methods like Apple Pay and Google Pay Wallets.
 
-##### To save a customer's payment method used in a successful transaction for future MIT payments:
+#### To save a customer's payment method used in a successful transaction for future MIT payments:
 
 * Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>' \
---data-raw '{
-    "amount": 6540,
-    "currency": "USD",
-    "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session",
-    "customer_id": "customer123",
-    "description": "Its my first payment request",
-    "return_url": "https://example.com", //
+*-header 'Content-Type: application/json' \
+*-header 'Accept: application/json' \
+*-header 'api-key: <enter your Hyperswitch API key here>' \
+*-data-raw '{
+  "amount": 6540,
+  "currency": "USD",
+  "profile_id": <enter the relevant profile id>,
+  "setup_future_usage":"off_session",
+  "customer_id": "customer123",
+  "description": "Its my first payment request",
+  "return_url": "https://example.com", //
 }'
 ```
 
@@ -91,13 +91,13 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 ```bash
 "customer_acceptance": {
-        "acceptance_type": "online",
-        "accepted_at": "1963-05-03T04:07:52.723Z",
-        "online": {
-            "ip_address": "in sit",
-            "user_agent": "amet irure esse"
-        }
+    "acceptance_type": "online",
+    "accepted_at": "1963-05-03T04:07:52.723Z",
+    "online": {
+      "ip_address": "in sit",
+      "user_agent": "amet irure esse"
     }
+  }
 ```
 
 {% hint style="info" %}
@@ -110,20 +110,20 @@ Retrieve the `payment_method_id` that was created against the above payment by r
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
---header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>'
+*-header 'Accept: application/json' \
+*-header 'api-key: <enter your Hyperswitch API key here>'
 ```
 
 ***
 
-#### Using a saved payment method to do a MIT payment
+### Using a saved payment method to do a MIT payment
 
 Once a customer's payment method is saved for MIT payments you can start charging the customer by sending the following details in the `/payments` request
 
 <pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
 </strong>"recurring_details": {
-        "type": "payment_method_id",
-        "data": "pm_lmTnIO5EdCiiMgRPrV9x" //pass the payment method id here
+    "type": "payment_method_id",
+    "data": "pm_lmTnIO5EdCiiMgRPrV9x" //pass the payment method id here
 }
 </code></pre>
 
@@ -133,26 +133,26 @@ To get all the payment methods saved for a customer use the[ List Customer Payme
 
 ```bash
 curl --request GET \
-  --url https://sandbox.hyperswitch.io/customers/{customer_id}/payment_methods \
-  --header 'api-key: <api-key>'
+ *-url https://sandbox.hyperswitch.io/customers/{customer_id}/payment_methods \
+ *-header 'api-key: <api-key>'
 ```
 
 ***
 
-#### Processing MIT Payments Without a Saved Payment Method
+### Processing MIT Payments Without a Saved Payment Method
 
 If a merchant is PCI-compliant and has the customer payment method details stored, an MIT payment can be performed by passing the card details and the network transaction id directly in the confirm call.
 
 <pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
 </strong>"recurring_details": {
-        "type": "network_transaction_id_and_card_details",
-        "data": {
-            "card_number": "4242424242424242",
-            "card_exp_month": "10",
-            "card_exp_year": "25",
-            "card_holder_name": "joseph Doe",
-            "network_transaction_id": "MCC5ZRGMI0925" //scheme transaction id
-        }
+    "type": "network_transaction_id_and_card_details",
+    "data": {
+      "card_number": "4242424242424242",
+      "card_exp_month": "10",
+      "card_exp_year": "25",
+      "card_holder_name": "joseph Doe",
+      "network_transaction_id": "MCC5ZRGMI0925" //scheme transaction id
+    }
 }
 </code></pre>
 
