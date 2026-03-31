@@ -14,58 +14,7 @@ Once tokenized, Hyperswitch backend handles orchestration, routing, retries, and
 
 #### **Vaulting :**
 
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-sequenceDiagram
-    participant User
-    participant MerchantServer as Merchant Server
-    participant MerchantSDK as Merchant SDK
-    participant HSServer as Hyperswitch Server
-    participant HSConnector as Hyperswitch Connector
-    participant HSVault as Hyperswitch Vault
-
-    MerchantServer->>HSServer: POST /payments/create (customer_id, amount, currency, api_key)
-    HSServer-->>MerchantServer: Response with payment_id
-    MerchantServer-->>MerchantSDK: Forward payment data
-    Note over MerchantSDK: Displays Payment Methods
-    Note over MerchantSDK: Customer selects payment method
-    User->>MerchantSDK: Selects payment method
-    MerchantSDK->>MerchantServer: Send transaction request with card details
-    MerchantServer->>HSServer: POST /payments/confirm (payment_id)
-    activate HSServer
-    HSServer->>HSConnector: Send Request to Payment Processor
-    activate HSConnector
-    HSConnector-->>HSServer: Connector Response (Authorization)
-    deactivate HSConnector
-    HSServer->>HSVault: Send Request to store card data
-    activate HSVault
-    Note over HSVault: Vault stores Card Data,
- generates Token
-    HSVault-->>HSServer: Response with payment_method_id
-    deactivate HSVault
-    HSServer-->>MerchantServer: Final payment response (status, payment_method_id)
-    deactivate HSServer
-
-classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
-classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
-classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
-class User,MerchantServer accent
-```
-
-*Caption: The vaulting flow for storing card details securely. The merchant creates a payment, collects card details via their SDK, confirms the payment through Hyperswitch, and upon successful authorization, the card data is tokenized and stored in Hyperswitch Vault with a payment_method_id returned for future use.*
+<figure><img src="../../../.gitbook/assets/Untitled (6).svg" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -101,56 +50,7 @@ Hyperswitch sends the final payment response, including transaction status and t
 
 #### **Payment Using Stored Card :**
 
-```mermaid
-%%{
-  init: {
-    'theme': 'base',
-    'themeVariables': {
-      'fontFamily': "'Inter', sans-serif",
-      'background': '#ffffff00',
-      'primaryColor': '#F7F7F7',
-      'primaryBorderColor': '#CCCCCC',
-      'primaryTextColor': '#1A1A1A',
-      'lineColor': '#999999',
-      'edgeLabelBackground': '#ffffff00'
-    }
-  }
-}%%
-sequenceDiagram
-    participant User
-    participant MerchantServer as Merchant Server
-    participant MerchantSDK as Merchant SDK
-    participant HSServer as Hyperswitch Server
-    participant HSConnector as Hyperswitch Connector
-    participant HSVault as Hyperswitch Vault
-
-    MerchantServer->>HSServer: GET /customers/{id}/payment_methods
-    HSServer-->>MerchantServer: Response with payment_method_id(s)
-    MerchantServer-->>MerchantSDK: Forward saved payment methods
-    Note over MerchantSDK: Displays Payment Methods along with saved cards
-    Note over MerchantSDK: User selects a payment method
-    User->>MerchantSDK: Selects saved card
-    MerchantServer->>HSServer: POST /payments/create (confirm=true, payment_method_id)
-    activate HSServer
-    HSServer->>HSVault: Fetch tokens (payment_method_id)
-    activate HSVault
-    HSVault-->>HSServer: Return Raw Card Data
-    deactivate HSVault
-    HSServer->>HSConnector: Process Payment Using Raw Card Data
-    activate HSConnector
-    HSConnector-->>HSServer: Connector Response
-    deactivate HSConnector
-    HSServer-->>MerchantSDK: Payment status update
-    HSServer-->>MerchantServer: payment/create response with payment status
-    deactivate HSServer
-
-classDef default  fill:#F7F7F7,stroke:#CCCCCC,color:#1A1A1A,rx:6
-classDef accent   fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
-classDef decision fill:#FFF8E1,stroke:#CCCCCC,color:#1A1A1A
-class User,MerchantServer accent
-```
-
-*Caption: The payment flow using a stored card. The merchant retrieves saved payment methods for the customer, the user selects a vaulted card, and the merchant creates a payment with auto-confirmation. Hyperswitch fetches the raw card data from the vault and processes the payment through the connector, returning the final status to the merchant.*
+<figure><img src="../../../.gitbook/assets/Untitled (7).svg" alt=""><figcaption></figcaption></figure>
 
 **1. Fetch Saved Payment Methods**
 
