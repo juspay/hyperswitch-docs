@@ -356,7 +356,7 @@ After the rollout stabilizes:
 
 Typical retention window: **24–72 hours**.
 
-#### Rollback Strategy
+### Rollback Strategy
 
 #### Traffic rollback
 
