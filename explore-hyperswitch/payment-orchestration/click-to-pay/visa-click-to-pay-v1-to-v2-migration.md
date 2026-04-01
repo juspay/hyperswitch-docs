@@ -17,7 +17,7 @@ Juspay Hyperswitch's evolution from Click to Pay V1 to V2 represents a fundament
 | **Global Market Adoption**    | Limited deployment and compatibility with some regions and merchants.                                                                                                                                                                                                                                          | Available in multiple countries, supported by major card networks.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Recurring Payments**        | Limited support for saving credentials and managing recurring payments                                                                                                                                                                                                                                         | Built-in support for recurring payments and saved credentials.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-## Seamless Migration with Juspay Hyperswitch
+### Seamless Migration with Juspay Hyperswitch
 
 The migration to V2 is powered by Juspay Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
 
@@ -25,7 +25,7 @@ This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less tha
 
 ![Architecture diagram of Visa Click to Pay integration, showing how the Wrapper mediates between Client browser/app and Visa's Click to Pay server while supporting both V1 and V2 SDKs.](../../../../.gitbook/assets/1.png)
 
-## Integration Methods
+### Integration Methods
 
 Choose your integration path based on your business needs:
 
@@ -39,7 +39,7 @@ Decision factors: Dev resources, time to market, customization needs, compliance
 
 [View detailed comparison](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview)
 
-## Quick Start
+### Quick Start
 
 ### Step 1: Install the Wrapper
 
@@ -125,7 +125,7 @@ const checkoutResponse = await visaCheckout.checkout({
 });
 ```
 
-## New V2 Features
+### New V2 Features
 
 ### Device Authentication Support
 
@@ -215,7 +215,7 @@ try {
 }
 ```
 
-## Authentication Methods
+### Authentication Methods
 
 V2 supports multiple authentication methods:
 
@@ -247,7 +247,7 @@ visaCheckout.on('authentication_method_selected', (method) => {
 });
 ```
 
-## Migration Checklist
+### Migration Checklist
 
 * [ ] Install new wrapper package
 * [ ] Update import statements
@@ -262,7 +262,7 @@ visaCheckout.on('authentication_method_selected', (method) => {
 * [ ] Update documentation and support materials
 * [ ] Train customer support team on new features
 
-## Best Practices
+### Best Practices
 
 1. Use the wrapper for gradual migration
 2. Test both V1 and V2 flows in sandbox first
@@ -275,7 +275,7 @@ visaCheckout.on('authentication_method_selected', (method) => {
 9. Monitor performance metrics
 10. Keep error handling and logging comprehensive
 
-## Performance Considerations
+### Performance Considerations
 
 ### Lazy Loading
 
@@ -304,7 +304,7 @@ await visaCheckout.init({
 });
 ```
 
-## Common Issues and Solutions
+### Common Issues and Solutions
 
 ### Configuration Format Mismatch
 
@@ -345,7 +345,7 @@ visaCheckout.on('session_expired', async () => {
 });
 ```
 
-## Security Considerations
+### Security Considerations
 
 ### PCI Compliance
 
@@ -379,7 +379,7 @@ await visaCheckout.init({
 });
 ```
 
-## Testing Guide
+### Testing Guide
 
 ### Sandbox Testing
 
@@ -429,7 +429,7 @@ const recurringTest = async () => {
 };
 ```
 
-## Monitoring and Analytics
+### Monitoring and Analytics
 
 ### Enable Analytics
 
@@ -457,7 +457,7 @@ visaCheckout.trackEvent({
 });
 ```
 
-## Support and Resources
+### Support and Resources
 
 For additional support:
 

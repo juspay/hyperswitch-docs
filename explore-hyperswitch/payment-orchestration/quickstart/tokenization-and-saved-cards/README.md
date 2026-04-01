@@ -5,7 +5,7 @@ icon: lock-keyhole
 
 # Tokenization & Vaulting
 
-The Hyperswitch Card Vault enables you to securely store customer card details in a centralized, PCI DSS Level 1-compliant vault. It simplifies payment flows by offering tokenized card storage and retrieval. This ensures secure and seamless transactions, particularly for recurring payments, enhancing user experience and operational efficiency.
+The Juspay Hyperswitch Card Vault enables you to securely store customer card details in a centralized, PCI DSS Level 1-compliant vault. It simplifies payment flows by offering tokenized card storage and retrieval. This ensures secure and seamless transactions, particularly for recurring payments, enhancing user experience and operational efficiency.
 
 ### Benefits:
 

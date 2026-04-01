@@ -24,5 +24,3 @@ Built for businesses of all sizes and types—**e-commerce platforms, SaaS compa
 Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
-
-\\

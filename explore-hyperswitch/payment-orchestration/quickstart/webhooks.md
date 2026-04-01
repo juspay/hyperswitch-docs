@@ -5,7 +5,7 @@ icon: anchor
 
 # Webhooks
 
-Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
+Webhooks are HTTP-based real-time push notifications that Juspay Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 
 * Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
 * Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
@@ -27,9 +27,9 @@ In case a merchant wants to set custom headers for sending data to a specified w
 
 <figure><img src="../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
 
-#### Update Hyperswitch’s webhook endpoints on your connector Dashboard
+#### Update Hyperswitch's webhook endpoints on your connector Dashboard
 
-In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
+In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch's corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
 
 Hyperswitch's webhook endpoint format is as specified below, or you can obtain the endpoint from the control center under the Processors tab.
 
@@ -76,11 +76,11 @@ Creating a signature for the webhook involves these steps:
 
 #### Webhook Validation
 
-To validate the webhook’s authenticity:
+To validate the webhook's authenticity:
 
 * Retrieve the content of the webhook and encode it as a JSON string.
 * Generate a `Hmac-SHA512` signature using the payload and `payment_response_hash_key`.
-* Compare the obtained digest with the `x-webhook-signature-512` received in the webhook’s header. If the hashes match, the webhook data is untampered and authentic.
+* Compare the obtained digest with the `x-webhook-signature-512` received in the webhook's header. If the hashes match, the webhook data is untampered and authentic.
 
 #### Troubleshooting Signature Verification Failures
 

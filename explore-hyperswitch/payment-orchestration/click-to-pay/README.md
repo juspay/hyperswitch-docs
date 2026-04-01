@@ -13,11 +13,11 @@ Juspay Hyperswitch's Click to Pay is a secure and user-friendly digital payment 
 
 This solution is built on [EMVCo](https://www.emvco.com/) standards and is supported by major global card networks, enabling international interoperability and secure transaction acceptance. By streamlining the payment process, Click to Pay reduces cart abandonment, providing a smooth user experience while strengthening security through [tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards).
 
-## Payment Journey for Click to Pay Signed Up Users
+### Payment Journey for Click to Pay Signed Up Users
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-04 at 10.16.31 PM.png" alt=""><figcaption></figcaption></figure>
 
-## What Makes Juspay Hyperswitch's Implementation Unique?
+### What Makes Juspay Hyperswitch's Implementation Unique?
 
 ### Passkeys Support
 
@@ -38,7 +38,7 @@ This solution is built on [EMVCo](https://www.emvco.com/) standards and is suppo
 
 * Certified partnerships with Mastercard and Visa enable Juspay Hyperswitch to help merchants go live in days rather than months, minimizing merchant effort.
 
-## Benefits for Merchants
+### Benefits for Merchants
 
 ### Seamless Checkout
 

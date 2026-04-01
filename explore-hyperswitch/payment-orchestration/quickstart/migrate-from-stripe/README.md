@@ -3,10 +3,10 @@ description: Fast migration guide for Stripe users
 hidden: true
 ---
 
-# 📥 Migrate from Stripe
+# Migrate from Stripe
 
 {% hint style="info" %}
-This sections explains how you can migrate from Stripe to Hyperswitch in less than 15 minutes
+This sections explains how you can migrate from Stripe to Juspay Hyperswitch in less than 15 minutes
 {% endhint %}
 
 If you are already integrated with the leading payment processor Stripe, Hyperswitch makes your integration fast, fun and easy.
@@ -89,4 +89,3 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% content-ref url="react-native.md" %}
 [react-native.md](react-native.md)
 {% endcontent-ref %}
-

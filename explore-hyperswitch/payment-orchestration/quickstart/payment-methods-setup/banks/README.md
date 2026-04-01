@@ -5,7 +5,7 @@ icon: building-columns
 
 # Banks
 
-## Bank payment methods
+### Bank payment methods
 
 Apart from cards (47%) and digital wallets (28%), bank transfer (9%) is the third most used payment instrument in the US. Banks as a payment method has several payment flows across the world and Juspay Hyperswitch provides support for integrating the below three common flows:
 

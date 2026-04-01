@@ -6,7 +6,7 @@ description: Capture amounts exceeding original authorization with Juspay Hypers
 
 # Overcapture
 
-## Overview
+### Overview
 
 In card payments, Overcapture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. Juspay Hyperswitch enables this capability for supported Payment Service Providers (PSPs).
 
@@ -16,7 +16,7 @@ This is particularly useful in scenarios such as:
 * Price adjustments made after initial authorization
 * Reducing the risk of under-capturing when final order values differ
 
-### Supported PSPs
+#### Supported PSPs
 
 Currently, Hyperswitch supports Overcapture for the following PSPs:
 
@@ -25,16 +25,16 @@ Currently, Hyperswitch supports Overcapture for the following PSPs:
 
 If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
 
-## How to Enable Overcapture
+### How to Enable Overcapture
 
 Overcapture can be enabled in two ways:
 
-### 1. Profile-level Configuration (via Dashboard)
+#### 1. Profile-level Configuration (via Dashboard)
 
 1. Navigate to: Developer → Payment Settings → Always Enable Overcapture
 2. Toggle Enable/Disable as required.
 
-### 2. Per-request Configuration (via API)
+#### 2. Per-request Configuration (via API)
 
 Use the boolean field `enable_overcapture` in your payment request.
 
@@ -49,7 +49,7 @@ This flag can be set in the following API calls:
 > * The request-level `enable_overcapture` will override the profile-level setting.
 > * Overcapture is only applicable for manual capture payments (`capture_method = manual`).
 
-### Example: API Request
+#### Example: API Request
 
 ```json
 {
@@ -71,7 +71,7 @@ This flag can be set in the following API calls:
 }
 ```
 
-### Example: API Response
+#### Example: API Response
 
 ```json
 {
@@ -98,12 +98,12 @@ This flag can be set in the following API calls:
   * `true` → Connector enabled Overcapture for this payment.
   * `false` → Overcapture is not applicable for this PSP/payment.
 
-## Monitoring & Settlement
+### Monitoring & Settlement
 
 * After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
 * Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
 
-## Merchant Action
+### Merchant Action
 
 * Use Dashboard settings for global enablement
 * Use API overrides for payment-specific enablement
