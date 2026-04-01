@@ -7,7 +7,7 @@ description: Configure over-the-air updates for Hyperswitch SDK on Android using
 
 Juspay Hyperswitch provides over-the-air (OTA) updates for Android apps, enabling you to push updates without app store releases.
 
-## Configuration
+### Configuration
 
 1. When initializing `HyperOTAReact`, ensure the **release config URL** (ending in `config.json`) is set for the correct **environment** (Sandbox or Production) and **version**. This is where HyperOTA will check for updates during app startup.
 

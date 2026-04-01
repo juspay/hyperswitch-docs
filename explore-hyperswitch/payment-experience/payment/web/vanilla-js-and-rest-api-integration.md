@@ -7,15 +7,15 @@ icon: square-js
 
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate Juspay Hyperswitch SDK to your app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\
 
-## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+### [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
-## 1. Setup the server
+### 1. Setup the server
 
 Follow the [Server Setup](../server-setup.md) section.
 
-## 2. Build checkout page on the client
+### 2. Build checkout page on the client
 
-### 2.1 Define the payment form
+#### 2.1 Define the payment form
 
 {% hint style="info" %}
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
@@ -38,7 +38,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you'l
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-### 2.2 Fetch the Payment and create the Unified Checkout
+#### 2.2 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
@@ -127,7 +127,7 @@ unifiedCheckout.on("completeDoThis",()=>{
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-### 2.2 Fetch the Payment and create the Express Checkout
+#### 2.2 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -176,9 +176,9 @@ async function initialize() {
 {% endtab %}
 {% endtabs %}
 
-## 3. Complete payment on the client
+### 3. Complete payment on the client
 
-### 3.1 Handle the submit event and complete the payment
+#### 3.1 Handle the submit event and complete the payment
 
 > Note: This step is not required for ExpressCheckout
 
@@ -225,7 +225,7 @@ async function handleSubmit(e) {
 
 Also if there are any immediate errors (for example, your customer's card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 
-### 3.2 Display a payment status message
+#### 3.2 Display a payment status message
 
 When Hyper redirects the customer to the `return_url`, the `payment_intent_client_secret` query parameter is appended by `HyperLoader`. Use this to retrieve the `Payment` to determine what to show to your customer.
 

@@ -11,7 +11,7 @@ icon: android
 
 {% embed url="https://hyperswitch-demo.netlify.app/mobile" fullWidth="false" %}
 
-Revolutionize your app's payment capabilities with the Hyperswitch Android SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on Android is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
+Revolutionize your app's payment capabilities with the Juspay Hyperswitch Android SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on Android is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 | <img src="../../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

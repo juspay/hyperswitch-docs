@@ -7,14 +7,14 @@ icon: cubes
 
 <div align="center"><figure><img src="../../../../../../.gitbook/assets/Screenshot_20250814_200303.jpeg" alt="" width="375"><figcaption></figcaption></figure></div>
 
-## Requirements
+### Requirements
 
 * Android 6.0 (API level 23) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
 * [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-## 1. Setup the server
+### 1. Setup the server
 
 ```js
 $ npm install @juspay-tech/hyperswitch-node
@@ -22,9 +22,9 @@ $ npm install @juspay-tech/hyperswitch-node
 
 Follow the [Server Setup](../../../server-setup.md) section.
 
-## 2. Build checkout page on your app
+### 2. Build checkout page on your app
 
-### 2.1 Add the Buildscript Classpath
+#### 2.1 Add the Buildscript Classpath
 
 To start integrating the Juspay Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
 
@@ -38,7 +38,7 @@ To start integrating the Juspay Hyperswitch SDK, add the following classpath to 
 }
 </code></pre>
 
-### 2.2 Apply the Plugin
+#### 2.2 Apply the Plugin
 
 Add the following plugin to the `plugins` block of your app-level `build.gradle` file:
 
@@ -49,7 +49,7 @@ plugins {
 }
 ```
 
-### 2.3 Implement the HyperInterface
+#### 2.3 Implement the HyperInterface
 
 Next, implement the `HyperInterface` in your Activity. This involves extending `FragmentActivity` and implementing the `HyperInterface`:
 
@@ -59,7 +59,7 @@ class WidgetActivity : AppCompatActivity(), HyperInterface {
 }
 ```
 
-### 2.4 Initialize Payment Configuration
+#### 2.4 Initialize Payment Configuration
 
 Set up the SDK using your publishable key:
 
@@ -70,7 +70,7 @@ private fun initialiseSDK() {
 }
 ```
 
-## 3. Implementation
+### 3. Implementation
 
 Choose from list of available widgets to integrate:
 
@@ -79,11 +79,11 @@ Choose from list of available widgets to integrate:
 3. [PayPal](paypal.md)
 4. [Express Checkout](express-checkout.md)
 
-### Final Step
+#### Final Step
 
 Congratulations! You have successfully integrated Juspay Hyperswitch widgets into your app. This approach gives you granular control over each payment method and allows for custom UI/UX design while leveraging Juspay Hyperswitch's payment processing capabilities.
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)

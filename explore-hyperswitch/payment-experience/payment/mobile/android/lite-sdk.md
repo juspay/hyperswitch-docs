@@ -35,7 +35,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 #### 2.1 Add the Dependency
 
-Add the Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
+Add the Juspay Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
 
 ```gradle
 dependencies {

@@ -5,7 +5,7 @@ icon: apple
 
 # iOS
 
-## Configuration
+### Configuration
 
 1. Set the HyperOTA Endpoint for Juspay Hyperswitch
 

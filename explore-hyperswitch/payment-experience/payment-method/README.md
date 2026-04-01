@@ -29,11 +29,11 @@ The Payment Method flow leverages the full suite of Hyperswitch [Payment](https:
 
 1. **Credential Capture & Vaulting**
 
-The business initiates the flow by capturing payment details (such as cards, wallets, or bank accounts) using either the Payment Method SDK or the `/payment-methods` API. This process securely vaults the payment instrument and generates a unique `payment_method_id`.
+   The business initiates the flow by capturing payment details (such as cards, wallets, or bank accounts) using either the Payment Method SDK or the `/payment-methods` API. This process securely vaults the payment instrument and generates a unique `payment_method_id`.
 
 2. **Transaction Execution**
 
-Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
+   Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
 

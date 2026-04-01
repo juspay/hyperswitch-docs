@@ -11,7 +11,7 @@ Use this guide to integrate Juspay Hyperswitch SDK to your Flutter app.
 
 **Before following these steps, please configure your payment methods** [here](../../../../../payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
-## Requirements
+### Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
@@ -21,13 +21,13 @@ Use this guide to integrate Juspay Hyperswitch SDK to your Flutter app.
 * CocoaPods
 * npm
 
-## 1. Setup the server
+### 1. Setup the server
 
 Follow the [Server Setup](../../../server-setup.md) section.
 
-## 2. Build checkout page on the client
+### 2. Build checkout page on the client
 
-### 2.1 Install the `flutter_hyperswitch` library
+#### 2.1 Install the `flutter_hyperswitch` library
 
 Add `flutter_hyperswitch` to your `pubspec.yaml` file
 
@@ -52,9 +52,9 @@ dart run flutter_hyperswitch:apply_plugins
 This command configures the necessary Flutter plugins for your project using the `flutter_hyperswitch` package. Ensure you have the package installed and configured correctly in your project. If you encounter any issues, check the package documentation for more details.
 {% endhint %}
 
-## 3. Complete the checkout on the client
+### 3. Complete the checkout on the client
 
-### 3.1 Initialize the Hyperswitch SDK
+#### 3.1 Initialize the Hyperswitch SDK
 
 Initialize `Hyper` onto your app with your publishable key with the `Hyper` constructor. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -68,7 +68,7 @@ _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY', customBackendUrl
 When utilizing a custom backend or logging system, you can add the customBackendUrl to HyperConfig
 {% endhint %}
 
-### 3.2 Create a Payment Intent
+#### 3.2 Create a Payment Intent
 
 Make a network request to the backend endpoint you created in the [previous step](flutter-with-node-backend.md#id-1.2-create-a-payment). The clientSecret returned by your endpoint is used to complete the payment.
 
@@ -83,7 +83,7 @@ Future<String> fetchPaymentParams() async {
   }
 ```
 
-### 3.3 Initialize your Payment Session
+#### 3.3 Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
@@ -92,7 +92,7 @@ final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SEC
 Session? _sessionId = await _hyper.initPaymentSession(params);
 ```
 
-### 3.4 Present payment sheet and handle response
+#### 3.4 Present payment sheet and handle response
 
 To display the Payment Sheet, integrate a "**Pay Now**" button within the checkout page, which, when clicked, invokes the `presentPaymentSheet()` method and handles the payment response.
 
@@ -121,10 +121,10 @@ Future<void> _presentPaymentSheet() async {
 Congratulations! Now that you have integrated the Flutter SDK, you can [**customize**](customization.md) the payment sheet to blend with the rest of your app.
 
 {% hint style="danger" %}
-Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
+Please retrieve the payment status from the Juspay Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
-## Next step:
+### Next Step
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)

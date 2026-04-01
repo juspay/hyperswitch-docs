@@ -9,7 +9,7 @@ We support modular, embeddable alternate payment methods (APMs) known as **Hyper
 
 <figure><img src="../../../../../.gitbook/assets/image (3) (2).png" alt="" width="563"><figcaption></figcaption></figure>
 
-Let us understand with an example-
+Let us understand with an example:
 
 In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
 
@@ -56,7 +56,7 @@ Merchants can work with multiple PSPs or middle layers, such as subscription pro
 
 #### High customization
 
-The Hyperwidgets UI is highly customizable and can completely blend in with the merchant app. Using a customization object, merchants can very easily control the UI parameters like background color, corner radius of the buttons, font size, etc. to match their branding. Some of the examples to highlight the customization options of the checkout are -
+The Hyperwidgets UI is highly customizable and can completely blend in with the merchant app. Using a customization object, merchants can very easily control the UI parameters like background color, corner radius of the buttons, font size, etc. to match their branding. Some of the examples to highlight the customization options of the checkout are:
 
 #### Unified Analytics and order management
 

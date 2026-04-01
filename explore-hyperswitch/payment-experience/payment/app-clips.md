@@ -6,7 +6,7 @@ icon: app-store
 # App Clips
 
 * A **lightweight, instant-launch** version of your iOS app.
-* Lets users complete **fast Hyperswitch payments** without installing the full app.
+* Lets users complete **fast Juspay Hyperswitch payments** without installing the full app.
 * Can be triggered via **QR code, NFC tag, Safari link, or Maps**.
 * Ideal for quick checkout use cases (parking, food ordering, event tickets, etc.)
 

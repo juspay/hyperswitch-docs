@@ -10,9 +10,9 @@ icon: table-cells-large
 
 ### Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+#### 1. Initialize the Juspay Hyperswitch SDK
 
-Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```kotlin
 // dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+' val 

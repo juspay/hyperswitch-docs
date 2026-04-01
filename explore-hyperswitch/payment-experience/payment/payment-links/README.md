@@ -7,7 +7,7 @@ icon: link
 
 Introducing Payment Links - Seamlessly integrate into Juspay Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
-## Use cases for Payment links
+### Use cases for Payment links
 
 * Email/SMS marketing or selling online with a website.
 * Having multiple customer segments - to create tailored payment pages that are optimized for each bucket of customers.
@@ -23,7 +23,7 @@ Introducing Payment Links - Seamlessly integrate into Juspay Hyperswitch without
 API Level Overview of Payment Links with Hyperswitch
 {% endembed %}
 
-## FAQ
+### FAQ
 
 <details>
 
@@ -67,7 +67,7 @@ Hyperswitch supports generation of the payment link. We are not integrated with 
 
 </details>
 
-## Next step
+### Next step
 
 {% content-ref url="configurations.md" %}
 [configurations.md](configurations.md)

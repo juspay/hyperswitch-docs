@@ -7,11 +7,13 @@ icon: input-numeric
 
 The **PaymentWidget** component from Juspay Hyperswitch renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
-## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
+### Find the Demo App
 
-## 1. Basic Usage
+Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
 
-### 1.1 Install the react native sdk
+### 1. Basic Usage
+
+#### 1.1 Install the react native sdk
 
 ```shellscript
 npm install @juspay-tech/react-native-hyperswitch
@@ -33,7 +35,7 @@ npm install react-native-svg
 npm install @sentry/react-native
 ```
 
-### 1.2 Wrap your app with `HyperProvider`
+#### 1.2 Wrap your app with `HyperProvider`
 
 To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
@@ -49,7 +51,7 @@ function App() {
 }
 ```
 
-### 1.3 Fetch the PaymentIntent client Secret
+#### 1.3 Fetch the PaymentIntent client Secret
 
 Send a network request to the backend endpoint created in the previous step to retrieve the **clientSecret**. This **clientSecret** returned from the endpoint is required to complete the payment.
 
@@ -64,7 +66,7 @@ useEffect(() => {
 }, []);
 ```
 
-### 1.4 Render your Payment widget
+#### 1.4 Render your Payment widget
 
 Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
@@ -100,7 +102,7 @@ export default function PaymentUI() {
 
 Avoid placing the `PaymentWidget` inside a `ScrollView`. If necessary, ensure that the parent scroll is disabled while the user interacts with the widget to prevent scrolling conflicts.
 
-### 1.5 `onPaymentResult` Callback
+#### 1.5 `onPaymentResult` Callback
 
 The `onPaymentResult` callback is triggered when the payment flow finishes. It provides a result object containing the payment outcome.
 
