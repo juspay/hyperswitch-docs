@@ -1,12 +1,13 @@
 ---
+description: Configure iOS Over-the-Air (OTA) updates for the Hyperswitch SDK using HyperOTA endpoints and release configurations.
 icon: apple
 ---
 
 # iOS
 
-### Configuration
+## Configuration
 
-1.  Set the HyperOTA Endpoint
+1. Set the HyperOTA Endpoint for Juspay Hyperswitch
 
     Edit **`HyperOTA.plist`** to point to your environment-specific endpoint.
 
@@ -32,8 +33,7 @@ HyperOTAServices(payload: payload,
 {% hint style="info" %}
 Make sure `releaseConfigURL` points to the `config.json` for the correct SDK version and environment.
 
-`Example : $baseURL/mobile-ota/ios/${BuildConfig.VERSION_NAME}/config.json`
+`Example: $baseURL/mobile-ota/ios/${BuildConfig.VERSION_NAME}/config.json`
 {% endhint %}
 
 For more information, [Airborne](https://github.com/juspay/airborne)
-

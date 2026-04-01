@@ -46,7 +46,7 @@ curl --location '{{BASE_URL}}/payments' \
         "payment_link_config": {
             "theme": "#4E6ADD",
             "logo": "https://hyperswitch.io/favicon.ico",
-            "seller_name": "HyperSwitch Inc.",
+            "seller_name": "Juspay Hyperswitch Inc.",
             "sdk_layout": "accordion",
             "display_sdk_only": true,
             "enabled_saved_payment_method": true,

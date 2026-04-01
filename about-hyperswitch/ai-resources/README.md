@@ -2,6 +2,7 @@
 hidden: true
 noIndex: true
 icon: brain-circuit
+description: Explore AI resources to interact with Hyperswitch through DeepWikis and MCP Server for documentation and API operations
 ---
 
 # AI Resources

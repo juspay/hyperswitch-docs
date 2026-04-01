@@ -1,47 +1,44 @@
 ---
-description: Integrate GooglePay (AndroidPay) via Cybersource in Hyperswitch
+description: Enable Google Pay as a payment method via CyberSource in Hyperswitch
 ---
 
 # Google Pay
 
 {% hint style="info" %}
-This page consists of steps for how **GooglePay** can be enabled in Hyperswitch via Cybersource
+This page describes how **Google Pay** can be enabled in Hyperswitch via CyberSource.
 {% endhint %}
 
-> This guide assumes that you have alreaedy configured Cybersource as a connector in your Hyperswitch Control Center. If not please follow the steps mentioned [here](./)
+> This guide assumes that you have already configured CyberSource as a connector in your Hyperswitch Control Center. If not, follow the steps mentioned [here](./).
 
-### Steps to Configure GooglePay
+## Steps to Configure Google Pay
 
-* On your Hyperswitch Control Center, Click on [`Connectors > Payment Processors`](#user-content-fn-1)[^1]
-*   If you have already configured Cybersource successfully, then you will land on the page as shown in the image below\
-    \
-
+* On your Hyperswitch Control Center, click on [`Connectors > Payment Processors`](#user-content-fn-1)[^1]
+*   If you have already configured CyberSource successfully, you will land on the page shown in the image below.
 
     <figure><img src="../../../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.36.58 PM.png" alt=""><figcaption></figcaption></figure>
-*   Click on Cybersource and then Click on `Edit Icon` to **Update** the Configuration of Cybersource Connector.\
-
+*   Click on CyberSource and then click the `Edit` icon to **update** the configuration of the CyberSource connector.
 
     <figure><img src="../../../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.38.05 PM.png" alt=""><figcaption></figcaption></figure>
-* Click on proceed after making the necessary changes to your API Keys (if required any).
-* Select Google Pay under Wallet Section to enable it.
-* Enter the below mentioned GooglePay details in the overlay form and click `Proceed`
-  1. **Google Pay Merchant Key**: This is your Cybersource Merchant ID
-  2. **Google Pay Merchant Name**: This is your display name that the customer will see on his GooglePay App while making the payment.
-  3. **Google Pay Merchant ID:** \[<mark style="color:red;">For Production Only</mark>] Enter your GooglePay Merchant ID provided by Google when you signup and get approvals for using GooglePay on production.
+* Click **Proceed** after making any necessary changes to your API keys.
+* Select **Google Pay** under the **Wallet** section to enable it.
+* Enter the Google Pay details in the overlay form and click **Proceed**:
+  1. **Google Pay Merchant Key**: Your CyberSource Merchant ID.
+  2. **Google Pay Merchant Name**: The display name that customers will see in their Google Pay app when making a payment.
+  3. **Google Pay Merchant ID:** \[<mark style="color:red;">For Production Only</mark>] Your Google Pay Merchant ID provided by Google after you sign up and receive approval to use Google Pay in production.
 
 {% hint style="success" %}
-**\[SANDBOX ENV]:** For sandbox test environment, you can put any **dummy value** in **Google Pay Merchant ID** it won't affect the payments experience.
+**\[SANDBOX ENV]:** For the sandbox test environment, you can enter any **dummy value** for **Google Pay Merchant ID** — it will not affect the payment experience.
 {% endhint %}
 
 <figure><img src="../../../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.46.32 PM.png" alt=""><figcaption></figcaption></figure>
 
-* Click on Proceed, review your changes and click Done
+* Click **Proceed**, review your changes, and click **Done**.
 
-### Points to remember for GooglePay Payments via Cybersource
+## Points to Remember for Google Pay Payments via CyberSource
 
-* Required fields for GooglePay Payments Request via Cybersource
+* Required fields for a Google Pay payment request via CyberSource:
   * Email
-  * Billing Address Details
+  * Billing address details:
     * First Name
     * Last Name
     * Address Line 1
@@ -51,9 +48,7 @@ This page consists of steps for how **GooglePay** can be enabled in Hyperswitch 
     * Country
 
 {% hint style="warning" %}
-We recommend to pass this fields while creating the Payment Intent with Hyperswitch, Else Hyperswitch SDK will collect this information from the customer while making the payment which might not be the best experience for the customer.
+We recommend passing these fields when creating the Payment Intent with Hyperswitch. Otherwise, the Hyperswitch SDK will collect this information from the customer at checkout, which may not provide the best payment experience.
 {% endhint %}
-
-
 
 [^1]: 

@@ -6,9 +6,9 @@ hidden: true
 icon: up-right-from-square
 ---
 
-# Copy of Standalone 3D Secure (via Hyperswitch)
+# External Authentication for 3DS 1
 
-Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
+Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows with Juspay Hyperswitch.
 
 Enterprise teams often adopt Standalone 3DS to enhance payment performance by enabling:
 
@@ -16,11 +16,11 @@ Enterprise teams often adopt Standalone 3DS to enhance payment performance by en
 * Greater visibility into issuer authentication responses
 * Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
 
-When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps is effective [Smart Retry](../smart-retries/) workflows where the same authentication can be succesfully used with multiple authorization attempts across different payment providers (PSP)
+When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps in effective [Smart Retry](../smart-retries/) workflows where the same authentication can be successfully used with multiple authorization attempts across different payment providers (PSP)
 
 Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are - Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io
 
-### Setup External 3DS authentication via Hyperswitch
+## Setup External 3DS authentication via Juspay Hyperswitch
 
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
 2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
@@ -29,7 +29,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
-3. Under Connectors > setup the payment provders (PSP) that you wish to use for payment processing&#x20;
+3. Under Connectors > setup the payment providers (PSP) that you wish to use for payment processing&#x20;
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
 
@@ -39,7 +39,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 
 <figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
-### Perform external authentication
+## Perform external authentication
 
 Initiate a Payments Create API from your server with [external authentication](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-request-external-three-ds-authentication-one-of-0) as true&#x20;
 
@@ -50,7 +50,7 @@ Initiate a Payments Create API from your server with [external authentication](h
 
 This flows follows the same steps as highlighted in authenticate with 3D secure via PSP&#x20;
 
-Do a create payment call to initiate the transaction. The status of the response should be 'requres\_customer\_action" and should contain the "next\_action" object.
+Do a create payment call to initiate the transaction. The status of the response should be 'requires_customer_action" and should contain the "next_action" object.
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -137,9 +137,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-### 2. Do authentication
+## Do authentication
 
-Initiate the authentication with the client\_secret generated
+Initiate the authentication with the client_secret generated
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmNt/3ds/authentication' \

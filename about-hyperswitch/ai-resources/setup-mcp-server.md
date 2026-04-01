@@ -1,5 +1,6 @@
 ---
 icon: user-robot-xmarks
+description: Set up the HyperSwitch MCP server to enable AI clients to search docs and explore Sandbox APIs safely
 ---
 
 # Setup MCP Server
@@ -45,7 +46,7 @@ Make a 100 EUR payment via Hyperswitch V1 in sandbox.
 Sandbox API key: <YOUR_SANDBOX_API_KEY>
 ```
 
-#### **Output:**&#x20;
+#### **Output:** 
 
 You can head on to payment section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/payments) and verify the payment with the time stamp and status as `REQUIRES_CUSTOMER_ACTION` (depending on the flow you selected - 3DS vs No3DS).
 

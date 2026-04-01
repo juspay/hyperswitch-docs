@@ -1,5 +1,5 @@
 ---
-description: Customize your Web unified checkout
+description: Customize your Web unified checkout for Juspay Hyperswitch
 icon: bars-progress
 ---
 
@@ -15,19 +15,18 @@ The accordion layout displays payment methods vertically using an accordion. To 
 
 ```js
 var paymentElementOptions = {
- layout: {
-   type: 'accordion',
-   defaultCollapsed: false,
-   radios: true,
-   spacedAccordionItems: false
- },
+  layout: {
+    type: 'accordion',
+    defaultCollapsed: false,
+    radios: true,
+    spacedAccordionItems: false
+  },
 }
 
-—------or—---------
-
+--- or ---
 
 var paymentElementOptions = {
- layout: 'accordion'
+  layout: 'accordion'
 }
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />
@@ -39,16 +38,16 @@ The tabs layout displays payment methods horizontally using tabs. To use this la
 
 ```js
 var paymentElementOptions = {
- layout: 'tabs'
+  layout: 'tabs'
 }
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-### 1.2.1 Tabs layout - Grid arrangement
+#### 1.2.1 Tabs layout - Grid arrangement
 
-By default, the tabs layout shows excess payment methods inside a dropdown. If you want to display all payment methods at once in a grid view, you can customize the tabs layout using `paymentMethodsArrangementForTabs`.\
-\
+By default, the tabs layout shows excess payment methods inside a dropdown. If you want to display all payment methods at once in a grid view, you can customize the tabs layout using `paymentMethodsArrangementForTabs`.
+
 When `paymentMethodsArrangementForTabs` is set to `grid`, the tabs layout switches to a grid style
 
 `paymentMethodsArrangementForTabs` supports the following values:
@@ -71,12 +70,12 @@ var paymentElementOptions = {
 
 ### 1.3 Saved Methods Customization
 
-In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.\
-\
+In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.
+
 This layout optimizes for faster repeat payments while still supporting new payment method entry in a single, seamless flow.
 
-`hideCardExpiry` - When `hideCardExpiry` is set to true, the expiry date displayed on saved card items is hidden, and the CVC input is rendered inline next to the card details instead of below them. This creates a more compact saved card view.\
-\
+`hideCardExpiry` - When `hideCardExpiry` is set to true, the expiry date displayed on saved card items is hidden, and the CVC input is rendered inline next to the card details instead of below them. This creates a more compact saved card view.
+
 **One-click wallets** such as Google Pay, Apple Pay, and PayPal are always shown at the top of the checkout to enable faster, low-friction payments. This is available for both Accordion and Tabs layout.
 
 ```
@@ -117,7 +116,9 @@ var paymentElementOptions = {
 ```
 
 {% hint style="info" %}
+
 Note: Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being moved into the layout. Other one-click methods are hidden when this option is disabled.
+
 {% endhint %}
 
 ## 2. Wallets
@@ -146,7 +147,7 @@ The wallet customization feature lets users configure payment options like Apple
 | Variable                                                                                        | Description                                                                                                                                                                                                                                                                                                                    | Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | walletReturnUrl: string                                                                         | Defines the URL to redirect users to after completing a payment.                                                                                                                                                                                                                                                               | This will take a **URL string** as its value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| <p>applePay: showType<br>googlePay: showType<br>payPay: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, Paypal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
+| <p>applePay: showType<br>googlePay: showType<br>payPal: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, PayPal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
 | <p>style: {<br>theme: theme,<br>type: styleType,<br>height: int,<br>buttonRadius: int,<br>}</p> | <p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
 ## 3. Styling variables
@@ -183,7 +184,7 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 | colorSuccessText      | The color of text appearing on top of any a var(--colorSuccess) background                                                                                         |
 | colorDangerText       | The color of text appearing on top of any a var(--colorDanger) background                                                                                          |
 | colorWarningText      | The color of text appearing on top of any a var(--colorWarning) background                                                                                         |
-| colorTextSecondary    | The color used for text of secondary importance. For example, this color is used for the label of a tab that isn’t currently selected                              |
+| colorTextSecondary    | The color used for text of secondary importance. For example, this color is used for the label of a tab that isn't currently selected                              |
 | colorTextPlaceholder  | The color used for input placeholder text in the Widget                                                                                                            |
 
 ## 4. Rules
@@ -279,7 +280,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### InputLogo
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.03.21 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.03.21 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name | States    | Pseudo-Classes | Pseudo-Elements |
 | ---------- | --------- | -------------- | --------------- |
@@ -289,7 +290,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### SaveWalletDetailsLabel
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name              | States | Pseudo-Classes | Pseudo-Elements |
 | ----------------------- | ------ | -------------- | --------------- |
@@ -297,7 +298,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### OrPayUsingLabel
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name       | States | Pseudo-Classes | Pseudo-Elements |
 | ---------------- | ------ | -------------- | --------------- |
@@ -305,7 +306,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### OrPayUsingLine
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 3.02.49 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 3.02.49 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name      | States | Pseudo-Classes | Pseudo-Elements |
 | --------------- | ------ | -------------- | --------------- |
@@ -313,7 +314,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### TermsTextLabel
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.18.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.18.00 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name      | States | Pseudo-Classes | Pseudo-Elements |
 | --------------- | ------ | -------------- | --------------- |
@@ -321,7 +322,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ### InfoElement
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.21.32 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.21.32 PM.png" alt=""><figcaption></figcaption></figure>
 
 | Class Name   | States | Pseudo-Classes | Pseudo-Elements |
 | ------------ | ------ | -------------- | --------------- |
@@ -329,7 +330,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 ## 5. Languages
 
-Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer’s browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
+Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer's browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
 
 We support the following locales -
 
@@ -377,7 +378,7 @@ You can decide whether to display the Hyperswitch branding using the `branding` 
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
 </strong> ...,
- branding: "never", // choose between "never" and "always"
+  branding: "never", // choose between "never" and "always"
 }
 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
@@ -389,7 +390,7 @@ Customize the header text for the section displaying available payment methods.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
 </strong> ...,
- paymentMethodsHeaderText: "Select Payment Method",
+  paymentMethodsHeaderText: "Select Payment Method",
 }
 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
@@ -401,7 +402,7 @@ Customize the header text for the section displaying saved payment methods.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
 </strong> ...,
- savedPaymentMethodsHeaderText: "Saved Payment Methods",
+  savedPaymentMethodsHeaderText: "Saved Payment Methods",
 }
 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
@@ -419,7 +420,7 @@ If you would like to customize this message, you can do so by using the `customM
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>var paymentElementOptions = {
 </strong> ...,
- customMessageForCardTerms: "Custom message for Card terms",
+  customMessageForCardTerms: "Custom message for Card terms",
 }
 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
@@ -557,7 +558,9 @@ var paymentElementOptions = {
 The `showShortSurchargeMessage` property allows merchants to display a short message when a surcharge is applied, instead of the default message provided by the SDK.
 
 {% hint style="success" %}
+
 The short message format will be: **`Fee: {Currency} {Amount}`**
+
 {% endhint %}
 
 ```javascript
@@ -572,5 +575,7 @@ var paymentElementOptions = {
 ## Next step:
 
 {% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
+
 [payment-methods-setup](../../../payment-orchestration/quickstart/payment-methods-setup/)
+
 {% endcontent-ref %}

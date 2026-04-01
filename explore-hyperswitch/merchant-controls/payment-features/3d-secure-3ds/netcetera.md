@@ -1,18 +1,17 @@
 ---
+description: Configure Netcetera SDK for external 3DS authentication with Hyperswitch
 icon: link-simple
 ---
 
 # Netcetera
 
-Please specify the payment needs to externally authenticated via Netcetera by passing the below field
-
-in create payments call. You can read more about it [here](../../../workflows/3ds-decision-manager/external-authentication-for-3ds.md#id-1.-create-a-payment-from-your-server-with-request_external_three_ds_authentication-as-true).
+Please specify the payment needs to be externally authenticated via Netcetera by passing the below field in create payments call. You can read more about it [here](../../../workflows/3ds-decision-manager/external-authentication-for-3ds.md#id-1.-create-a-payment-from-your-server-with-request_external_three_ds_authentication-as-true).
 
 ```
 "request_external_three_ds_authentication": true
 ```
 
-Pass your Netcetera SDK API key to HyperSwitch SDK like below.
+Pass your Netcetera SDK API key to Hyperswitch SDK like below.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -39,19 +38,19 @@ configuration: Configuration(netceteraSDKApiKey: "<YOUR_NETCETERA_API_KEY>")
 In order to test external authentication on sandbox, a certificate needs to be added. Please follow the below steps.
 {% endhint %}
 
-Make the Hyperswitch [Payments - External 3DS Authentication](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication) request. Take the value of the field `acs_signed_content` , then decrypt it using [JWT.io](https://jwt.io/). Under the decrypted 'x5c' header you will get your root certificate.
+Make the Hyperswitch [Payments - External 3DS Authentication](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication) request. Take the value of the field `acs_signed_content`, then decrypt it using [JWT.io](https://jwt.io/). Under the decrypted 'x5c' header you will get your root certificate.
 
 {% hint style="info" %}
-This certificate is required is required to decrypt response from Netcetera's Prev (Sandbox) environment Demo ACS Server.
+This certificate is required to decrypt response from Netcetera's Prev (Sandbox) environment Demo ACS Server.
 {% endhint %}
 
 {% hint style="success" %}
 Please note the above step is not required for Production environment.
 {% endhint %}
 
-### Providing the root certificate to HyperSwitch SDK
+### Providing the root certificate to Hyperswitch SDK
 
-**Android**
+#### Android
 
 Put the obtained certificate in assets directory in your android project.
 

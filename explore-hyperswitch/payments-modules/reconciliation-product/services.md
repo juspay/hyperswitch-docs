@@ -1,5 +1,6 @@
 ---
 hidden: true
+description: Overview of Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
 ---
 
 # Services
@@ -8,13 +9,13 @@ hidden: true
 
 #### Data Ingestion Service
 
-Our ingestion service connects to merchant and processor data sources using secure, flexible channels so you get timely, reliable inputs without manual work
+Our ingestion service connects to merchant and processor data sources using secure, flexible channels so you get timely, reliable inputs without manual work.
 
 **Supported connection types**
 
 * **Direct processor integrations (API / webhooks)**
   * Real-time ingestion via processor APIs or webhook events.
-  * Eliminates polling and manual downloads for low-latency, continuous reconciliation
+  * Eliminates polling and manual downloads for low-latency, continuous reconciliation.
 * **SFTP / Scheduled file pulls**
   * Secure SFTP connectors that poll data on a configurable schedule
   * Supports directory monitoring and incremental retrieval to avoid duplicate processing
@@ -25,7 +26,9 @@ Our ingestion service connects to merchant and processor data sources using secu
 
 The transformation service is the intelligent data processing engine that bridges the gap between diverse payment processor formats and your reconciliation requirements. It automatically converts raw financial data from any source into a standardized, reconciliation-ready format.
 
-The transformation service handles virtually any data format your payment processors provide. Structured Data Formats:
+The transformation service handles virtually any data format your payment processors provide.
+
+**Structured Data Formats**
 
 * CSV Files: Delimiter-separated values with configurable column mappings
 * JSON: Nested data structures with complex field extraction

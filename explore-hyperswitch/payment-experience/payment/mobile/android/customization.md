@@ -11,7 +11,7 @@ You can customize the Android Unified Checkout to support your checkout context 
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
 
-## Fonts
+### Fonts
 
 Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
 
@@ -21,7 +21,7 @@ val appearance = PaymentSheet.Appearance(
 )
 ```
 
-## Colors
+### Colors
 
 Modify the color categories in `PaymentSheet.Colors` to customize the colors on the mobile payment sheet as follows:
 
@@ -39,7 +39,7 @@ Modify the color categories in `PaymentSheet.Colors` to customize the colors on 
 | subtitle         | Color of secondary text like prompts for input fields                          |
 | surface          | Color of the payment page                                                      |
 
-## Shapes
+### Shapes
 
 Modify the corner radius and border width used across the payment page using `appearance.shapes`.
 
@@ -50,7 +50,7 @@ Modify the corner radius and border width used across the payment page using `ap
 
 Now you can test the payments on your app and go-live!
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)

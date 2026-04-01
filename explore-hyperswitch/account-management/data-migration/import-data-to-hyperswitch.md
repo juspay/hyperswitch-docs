@@ -1,18 +1,19 @@
 ---
 icon: right-from-bracket
+description: Import customer records and payment data from your current processor to ensure uninterrupted business operations
 ---
 
-# Import data to Hyperswitch
+# Import data to Juspay Hyperswitch
 
 We help you with smooth migration from your current payment processor, ensuring uninterrupted business operations.
 
-#### Performing the import data process:
+### Performing the import data process:
 
 1. Merchant initiates a request to our team for Data import.
 2. We will share our PCI Attestation of Compliance (AoC) certificate to Merchant.
-3. Merchant requests a data export (for both customer records and associated payment data) from their current payment processor, by providing Hyperswitch’s PCI AoC certificate.
-4. We will provide our public PGP key for Merchant’s current payment processor to encrypt their export data.
-5. An encrypted CSV file containing all the export data needs to be sent through SFTP by Merchant’s current payment processor.
+3. Merchant requests a data export (for both customer records and associated payment data) from their current payment processor, by providing Juspay Hyperswitch's PCI AoC certificate.
+4. We will provide our public PGP key for Merchant's current payment processor to encrypt their export data.
+5. An encrypted CSV file containing all the export data needs to be sent through SFTP by Merchant's current payment processor.
 6. We will import the data.
 7. Post migration of data, we will send an updated customer-payment method reference IDs to Merchant.
 
@@ -25,17 +26,17 @@ The CSV file for import should be formatted in accordance with the following req
 * Delimit rows by a single newline character `\n (not \r\n)`.
 * Delimit columns by `,`
 * Leave empty fields entirely empty (no character in between delimiters). You must not denote a missing field with NULL, N/A, or any other value.
-* Fields can’t contain comma, newline characters `(\r or \n or ,)` within a field.&#x20;
+* Fields can't contain comma, newline characters `(\r or \n or ,)` within a field.&#x20;
   * Example of what to avoid: `1st Ave\nApt 1`
 * All rows must have the same number of columns.
 * Field names and values are case-sensitive.
 * Multi-line fields are not allowed.
 * Save the file in UTF-8 format (to support non-western characters).
-* Encrypt the file using the public PGP key provided by Hyperswitch.
+* Encrypt the file using the public PGP key provided by Juspay Hyperswitch.
 
-## To import card data:
+### To import card data:
 
-### Required fields:
+#### Required fields:
 
 | **Field**                          | **Description**                                                                                                                                                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -45,7 +46,7 @@ The CSV file for import should be formatted in accordance with the following req
 | payment\_instrument\_id            | <p>Unique reference ID of payment method saved (PSP token)</p><p><br></p><p>Note: This is required for mapping to Hyperswitch payment_method_id.</p>                                                                                             |
 | original\_network\_transaction\_id | <p>Original Transaction ID of the first transaction where the customer signed up for recurring payments. For eg. Visa - Visa Transaction ID, Mastercard - Mastercard Trace ID.<br><br>Note: This is only required for connector agnostic MIT</p> |
 
-### Optional fields:
+#### Optional fields:
 
 Note: Billing details are mandatorily required if AVS (Address verification Service) check is enabled.
 

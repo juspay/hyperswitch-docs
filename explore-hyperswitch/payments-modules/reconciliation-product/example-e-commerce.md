@@ -101,7 +101,7 @@ The core of our reconciliation engine is the rule-based architecture. Rules defi
 
 ### Step 3: The Transaction Journey
 
-This is a sample journey of a single customer order moving through the system, with each state transition being handled by the reconciliation engine
+This is a sample journey of a single customer order moving through the system, with each state transition being handled by the reconciliation engine.
 
 1. **Order Ingestion (OMS)**: A new order arrives (`order_id=12345, amount $100`)
    * The engine ingests this as a **Staging Entry** (Status: PENDING)

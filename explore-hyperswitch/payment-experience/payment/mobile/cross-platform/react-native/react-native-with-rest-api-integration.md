@@ -6,7 +6,7 @@ icon: puzzle-piece
 # React Native with REST API Integration
 
 {% hint style="info" %}
-Use this guide to integrate `hyperswitch` React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
+Use this guide to integrate the Juspay Hyperswitch React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
 {% endhint %}
 
 ## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
@@ -138,7 +138,7 @@ useEffect(() => {
 
 ### 3.4 Handle Payment Response
 
-To display the **Payment Sheet**, add a **“Pay Now”** button to your checkout page. When the button is pressed, call the **`presentPaymentSheet()`** function.
+To display the **Payment Sheet**, add a **"Pay Now"** button to your checkout page. When the button is pressed, call the **`presentPaymentSheet()`** function.
 
 This function returns an **asynchronous response** containing the payment result, including the payment status.
 

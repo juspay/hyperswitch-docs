@@ -9,19 +9,19 @@ icon: screwdriver-wrench
 [3DS intelligence engine](./) is the latest upgrade to our 3DS workflows. Please refer to that section for advanced controls.
 {% endhint %}
 
-### Benefits of Using the 3DS Decision Manager:
+## Benefits of Using the 3DS Decision Manager
 
 * Fraud Reduction: Enforce 3DS on high-risk transactions to mitigate fraudulent activities.
 * Enhanced Compliance: Meet regulatory requirements for Strong Customer Authentication (SCA) in regions like the EEA.
 * Improved Customer Experience: Apply 3DS only when necessary, minimizing friction during checkout for low-risk transactions.
 
-Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
+Juspay Hyperswitch 3DS Decision Manager allows the merchant to configure advanced rules using various payment parameters such as amount, currency etc., to enforce 3D Secure authentication for card payments to reduce fraudulent transactions.
 
 {% embed url="https://youtu.be/-VTnngditlU" %}
 
-### 3DS Decision Flow:
+## 3DS Decision Flow
 
-Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
+Juspay Hyperswitch integrates with multiple payment processors, enabling seamless 3D Secure authentication.
 
 <figure><img src="../../../../.gitbook/assets/final2.drawio.png" alt="" width="375"><figcaption><p>3DS Decision Flow</p></figcaption></figure>
 

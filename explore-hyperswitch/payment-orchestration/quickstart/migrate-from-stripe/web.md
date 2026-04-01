@@ -1,11 +1,11 @@
 ---
-description: Migrate from Stripe on your web app
+description: Migrate from Stripe on your web app in less than 15 minutes with Hyperswitch's UnifiedCheckout.
 ---
 
 # Web
 
 {% hint style="info" %}
-Migrate from Stripe on your web app in less than 15 mins!
+Migrate from Stripe on your web app in less than 15 minutes!
 {% endhint %}
 
 ## Migrate from Stripe
@@ -13,7 +13,7 @@ Migrate from Stripe on your web app in less than 15 mins!
 If you are already integrated to Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Unified analytics and many more.
 
 {% hint style="info" %}
-Stripe’s `paymentRequestButton` is available under Hyperswitch’s UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
+Stripe's `paymentRequestButton` is available under Hyperswitch's UnifiedCheckout, therefore importing UnifiedCheckout would be sufficient.
 {% endhint %}
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner for both React and HTML frontend. You can find the details for both below.
@@ -25,9 +25,9 @@ The code from your Stripe integration to be removed and replaced is explained be
 **Step 1:** Install Hyperswitch's SDK and server side dependencies from npm
 
 ```js
-  $ npm install @juspay-tech/react-hyper-js
-  $ npm install @juspay-tech/hyper-js
-  $ npm install @juspay-tech/hyperswitch-node
+$ npm install @juspay-tech/react-hyper-js
+$ npm install @juspay-tech/hyper-js
+$ npm install @juspay-tech/hyperswitch-node
 ```
 
 **Step 2:** Change the API key on the server side and modify the paymentIntent endpoint from your server side. You can get the API key from [Developers](https://app.hyperswitch.io/developers) page on the dashboard.
@@ -48,7 +48,7 @@ const paymentIntent = await stripe.paymentIntents.create({
 const paymentIntent = await hyper.paymentIntents.create({
 ```
 
-**Step 3:** Call loadHyper() with you Hyperswitch publishable key to configure the SDK library, from your website
+**Step 3:** Call `loadHyper()` with your Hyperswitch publishable key to configure the SDK library, from your website
 
 ```js
 // from
@@ -69,13 +69,13 @@ const hyperPromise = loadHyper("your_hyperswitch_publishable_key");
 **Step 4:** Configure your checkout form to import from Hyperswitch
 
 ```js
-//from
+// from
 import {
   PaymentElement,
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-//to
+// to
 import {
   UnifiedCheckout,
   useStripe,
@@ -83,7 +83,7 @@ import {
 } from "@juspay-tech/react-hyper-js";
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
 
 </details>
 
@@ -94,7 +94,7 @@ import {
 **Step 1:** Install Hyperswitch's node server dependency from npm
 
 ```js
-  $ npm install @juspay-tech/hyperswitch-node
+$ npm install @juspay-tech/hyperswitch-node
 ```
 
 **Step 2:** Change the API key on the server side and modify the paymentIntent endpoint from your server side
@@ -133,9 +133,8 @@ const stripe = Stripe("your_stripe_publishable_key");
 const hyper = Hyper("your_hyperswitch_publishable_key");
 ```
 
-**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations ! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
+**Step 5:** Run your application to make a test payment. And verify the status of the transaction on Hyperswitch Dashboard and Stripe Dashboard. Congratulations! You have successfully integrated Hyperswitch to your payments stack and you now have access to a suite of 40+ payment processors and acquirers.
 
 </details>
 
 Want an easy migration from Stripe for Apps? We got you covered. Follow the docs for Android, iOS and React Native apps.
-

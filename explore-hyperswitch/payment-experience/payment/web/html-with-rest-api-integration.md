@@ -1,11 +1,11 @@
 ---
-description: Integrate hyper SDK to your HTML Web App using Hyperswitch-node
+description: Integrate Hyperswitch SDK to your HTML Web App using REST API for a seamless payment experience
 icon: html5
 ---
 
 # HTML with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Hyperswitch credentials to test the setup.
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
@@ -17,7 +17,7 @@ Follow the [Server Setup](../server-setup.md) section.
 
 ### 2.1 Load HyperLoader
 
-Use `HyperLoader` to ensure PCI compliant means of accepting payment details from your customer and sending it directly to the hyperswitch server. Always load `hyperLoader` from `https://beta.hyperswitch.io/v1/HyperLoader.js` to ensure compliance. Please refrain from including the script in a bundle or hosting it yourself.
+Use `HyperLoader` to ensure PCI compliant means of accepting payment details from your customer and sending it directly to the Hyperswitch server. Always load `hyperLoader` from `https://beta.hyperswitch.io/v1/HyperLoader.js` to ensure compliance. Please refrain from including the script in a bundle or hosting it yourself.
 
 ```js
 <script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
@@ -29,7 +29,7 @@ Use `HyperLoader` to ensure PCI compliant means of accepting payment details fro
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
 {% endhint %}
 
-Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
+Add one empty placeholder `div` to your checkout form for each Widget that you'll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer's email address and payment information.
 
 ```js
 <form id="payment-form">
@@ -46,7 +46,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 
 ### 2.3 Initialize HyperLoader
 
-Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You'll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```js
 const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
@@ -148,9 +148,9 @@ async function initialize() {
 
 > Note: This step is not required for ExpressCheckout
 
-Listen to the form’s submit event to know when to confirm the payment through the hyper API.
+Listen to the form's submit event to know when to confirm the payment through the hyper API.
 
-Call `confirmPayment()`, passing along the `unifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the `return_url`.
+Call `confirmPayment()`, passing along the `unifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the `return_url`.
 
 ```js
 async function handleSubmit(e) {
@@ -189,7 +189,7 @@ async function handleSubmit(e) {
 }
 ```
 
-Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
+Also if there are any immediate errors (for example, your customer's card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 
 <details>
 
@@ -211,7 +211,7 @@ const unifiedCheckoutOptions = {
 ```
 
 1. **`handleConfirm (required)`** - A boolean value indicating whether the SDK should handle the confirmation of the payment.
-2. **`confirmParams (required)`** - It’s an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
+2. **`confirmParams (required)`** - It's an object which takes return\_url. return\_url parameter specifies the URL where the user should be redirected after payment confirmation.
 3. **`buttonText (optional)`** - The text to display on the payment button.\
    Default value: **Pay Now**
 

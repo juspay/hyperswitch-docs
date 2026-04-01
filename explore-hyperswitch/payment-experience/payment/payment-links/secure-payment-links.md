@@ -1,12 +1,12 @@
 ---
-description: Secure payment links
+description: Learn how to configure and use secure payment links embedded within iframes of trusted domains for safe payment method storage.
 ---
 
 # Secure Payment Links
 
-Secure payment links are those embedded within the iframe of a trusted domain. These links cannot be directly opened in a browser tab and are designed to provide a safe environment for users to view and save their payment methods.
+Juspay Hyperswitch secure payment links are those embedded within the iframe of a trusted domain. These links cannot be directly opened in a browser tab and are designed to provide a safe environment for users to view and save their payment methods.
 
-## Using secure Payment links
+## Using Secure Payment Links
 
 To use secure payment links, you need to configure a list of trusted domains in the business profile under the `allowed_domains` field. Once set up, any payment link you create will include two URLs:
 
@@ -100,7 +100,7 @@ To embed a secure payment link, include it in an iframe within your HTML:
 </html>
 ```
 
-### Next step:
+## Next Steps
 
 {% content-ref url="setup-custom-domain.md" %}
 [setup-custom-domain.md](setup-custom-domain.md)

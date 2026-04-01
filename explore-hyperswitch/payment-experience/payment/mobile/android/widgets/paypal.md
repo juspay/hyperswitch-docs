@@ -1,14 +1,15 @@
 ---
+description: Learn how to integrate the PayPal widget for accepting PayPal payments in your Android app using Juspay Hyperswitch SDK.
 icon: paypal
 ---
 
 # PayPal
 
-**Purpose:** PayPal payments
+**Purpose:** PayPal payments with Juspay Hyperswitch
 
 **Add PayPal Widget to Layout**
 
-```kotlin
+```xml
 <io.hyperswitch.view.BasePaymentWidget
     android:id="@+id/payPalButton"
     android:layout_width="match_parent"
@@ -63,6 +64,5 @@ private fun onPayPalResult(result: PayPalPaymentMethodLauncher.Result) {
             Toast.makeText(this, "PayPal payment failed: ${result.error.message}", Toast.LENGTH_LONG).show()
         }
     }
-}    
+}
 ```
-

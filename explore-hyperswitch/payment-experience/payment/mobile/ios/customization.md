@@ -11,9 +11,9 @@ You can customize the iOS Unified Checkout to support your checkout context and 
 
 Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
 
-## Fonts
+### Fonts
 
-Set `typography.fontResId` to your custom font’s resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
+Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
 
 ```swift
 var configuration = PaymentSheet.Configuration()
@@ -22,7 +22,7 @@ configuration.allowsDelayedPaymentMethods = true
 configuration.defaultBillingDetails =
     [
       "address":
-        [ "city": "San Fransico",
+        [ "city": "San Francisco",
           "country": "US",
           "line1": "1467",
           "line2": "Harrison Street",
@@ -35,7 +35,7 @@ configuration.defaultBillingDetails =
     ]
 ```
 
-## Colors
+### Colors
 
 Modify the colour categories in `PaymentSheet.Colors` to customize the colours on the mobile payment sheet as follows:
 
@@ -53,7 +53,7 @@ Modify the colour categories in `PaymentSheet.Colors` to customize the colours o
 | subtitle         | Color of secondary text like prompts for input fields                          |
 | surface          | Color of the payment page                                                      |
 
-## Shapes
+### Shapes
 
 Modify the corner radius and border width used across the payment page using `appearance.shapes`.
 

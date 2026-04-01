@@ -1,32 +1,33 @@
 ---
 description: >-
-  A technical reference for the parameters and lifecycle flows supported across
-  card and wallet integrations.
+  A technical reference for payment parameters and lifecycle flows supported
+  across card, wallet, and post-transaction operations in Hyperswitch connector
+  integrations.
 icon: money-bill-1-wave
 ---
 
 # Payment Processor Capabilities
 
-### Core Payment Flows
+## Core Payment Flows
 
 Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
 
-Card Payment Flow Configurations
+### Card Payment Flow Configurations
 
 Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt="Hyperswitch card payment flow configurations diagram"><figcaption></figcaption></figure>
 
 * Verification: Facilitates $0 verification, $0 verification for [subscriptions](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), and AVS & CVV integrity checks.
 * Authentication: Modular support for External authentication providers or native PSP authentication.
 * Capture Strategy: Configuration for [Automatic capture](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards#id-1.-instant-payment-automatic-capture) or Manual/Multiple manual capture logic.
 * Voiding: Explicit support for Voids initiated both before capture and before settlement.
 
-#### Card-Specific Parameters
+### Card-Specific Parameters
 
 The Payments API supports an extensive set of card parameters to ensure regional flexibility and compliance across retail and subscription billing.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt="Hyperswitch card-specific parameters diagram"><figcaption></figcaption></figure>
 
 **Transaction Initiation Types**
 
@@ -38,22 +39,22 @@ The Payments API supports an extensive set of card parameters to ensure regional
 
 * Pre-transaction: Integration of [3DS Authentication Data](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager) and Risk/Fraud check data.
 * Order Metadata: Deep support for L2/L3 data fields, full order information, and complex [Routing Data](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing).
-* Additional Flags: granular control for Moto, Estimated Auth, Incremental Auth, and Partial Authorizations.
+* Additional Flags: Granular control for Moto, Estimated Auth, Incremental Auth, and Partial Authorizations.
 
-#### Digital Wallet Integration
+### Digital Wallet Integration
 
 Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt="Hyperswitch digital wallet integration diagram"><figcaption></figcaption></figure>
 
 * Experience Models: Support for Native, Redirect, and 3rd-party SDK integration patterns to ensure a [seamless checkout experience](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls).
 * Payload Management: Robust handling of both Decrypted (with cryptogram and wallet data) and Encrypted payment data payloads.
 
-#### Post-Transaction: Refunds, Disputes, and Errors
+### Post-Transaction: Refunds, Disputes, and Errors
 
 Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt="Hyperswitch post-transaction refunds disputes and errors diagram"><figcaption></figcaption></figure>
 
 * Refund Management: Unified parameters for [Complete Refunds](https://api-reference.hyperswitch.io/v2/refunds/refunds--create) and multiple Partial Refund scenarios.
 * Chargebacks: Streamlined [Unification of reporting and submission](https://docs.hyperswitch.io/explore-hyperswitch/account-management/disputes) across different processors.

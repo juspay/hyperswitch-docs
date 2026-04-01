@@ -1,4 +1,5 @@
 ---
+description: Allow customers to retry failed payments under the same Payment Intent
 icon: person-walking-arrow-loop-left
 ---
 
@@ -6,7 +7,7 @@ icon: person-walking-arrow-loop-left
 
 ### Overview
 
-The Manual or User triggered Retries feature in Hyperswitch allows customers to retry a failed payment attempt under the same Payment Intent, without needing to restart the entire checkout flow.
+The Manual or User triggered Retries feature in Juspay Hyperswitch allows customers to retry a failed payment attempt under the same Payment Intent, without needing to restart the entire checkout flow.
 
 This capability helps merchants recover from transient payment failures — such as card declines or temporary PSP issues — and significantly improves authorization success rates and customer experience.
 
@@ -66,7 +67,7 @@ if (manualRetryAllowed && existingClientSecret) {
 
 * The SDK is re-initialized on the same Payment Intent.
 * The customer can retry payment by entering updated details.
-* The SDK then performs /payments/confirm again under the same payment\_id.\\
+* The SDK then performs /payments/confirm again under the same payment\_id.\
 
 ### API Workflow
 
@@ -127,7 +128,7 @@ If this payment fails, the response will include:
 
 #### 3️⃣ Retry the Payment (If Allowed)
 
-If `manual_retry_allowed : true` , you can retry on the same Payment Intent.\\
+If `manual_retry_allowed : true`, you can retry on the same Payment Intent.\
 
 * For redirect flows, this can be done by remounting the SDK as described earlier.
 * For SDK-managed (non-redirect) flows, Hyperswitch automatically handles this internally.

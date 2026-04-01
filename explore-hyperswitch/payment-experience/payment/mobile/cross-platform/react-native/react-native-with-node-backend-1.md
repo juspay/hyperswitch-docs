@@ -1,10 +1,11 @@
 ---
+description: Implement embedded payment widget in React Native applications
 icon: input-numeric
 ---
 
 # Payment Widget
 
-The **PaymentWidget** component renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
+The **PaymentWidget** component from Juspay Hyperswitch renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
 ## Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
 
@@ -37,7 +38,7 @@ npm install @sentry/react-native
 To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
 ```js
-import { HyperProvider } from "@juspay-tech/react-native-hyperswitch ";
+import { HyperProvider } from "@juspay-tech/react-native-hyperswitch";
 
 function App() {
   return (
@@ -57,7 +58,7 @@ useEffect(() => {
     fetch('https://your-server.com/create-payment-intent', { method: 'POST' })
       .then((res) => res.json())
       .then(({ clientSecret, sdkAuthorization, }) => {
-        setClientSecret(clientSecret));
+        setClientSecret(clientSecret);
         setAuthorization(sdkAuthorization);
       }
 }, []);
@@ -145,4 +146,3 @@ Callback triggered when the payment completes, fails, or is cancelled.
 **`style`** `StyleProp<ViewStyle>` · `width` & `height` required
 
 Defines the size and layout of the widget container.
-

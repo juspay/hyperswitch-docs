@@ -1,5 +1,5 @@
 ---
-description: Hyperswitch is designed to facilitate the management of saved payment methods
+description: Integrate Hyperswitch's Vault service to store customer payment methods securely and eliminate PCI DSS compliance burden
 icon: bars-progress
 ---
 
@@ -11,15 +11,15 @@ The Hyperswitch Payment Methods Management SDK provides a secure solution for me
 
 Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
 
-#### **Payment Method Creation**:&#x20;
+#### **Payment Method Creation**: 
 
 Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
 
-#### **Storing Payment Methods**:&#x20;
+#### **Storing Payment Methods**: 
 
 Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
 
-#### **Retrieving Payment Methods**:&#x20;
+#### **Retrieving Payment Methods**: 
 
 Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
 
@@ -27,7 +27,7 @@ Customers can quickly access their saved payment methods, streamlining their che
 
 Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-03 at 12.27.38 PM.png" alt="" width="563"><figcaption><p>image displaying the payment method management UI.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-03 at 12.27.38 PM.png" alt="" width="563"><figcaption><p>image displaying the payment method management UI.</p></figcaption></figure>
 
 ### Integration Guide :  <a href="#id-1.-server-side-setup" id="id-1.-server-side-setup"></a>
 
@@ -35,7 +35,7 @@ Keep payment options up to date by allowing customers to manage outdated or inac
 
 First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 
-**Obtaining Your API Keys :**&#x20;
+**Obtaining Your API Keys :** 
 
 * Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 

@@ -1,56 +1,53 @@
 ---
-description: >-
-  Visa Click to Pay is evolving to provide a better checkout experience with
-  enhanced security features and improved performance. This guide will help you
-  migrate from V1 to V2 in less than 30 minutes.
+description: Visa Click to Pay is evolving to provide a better checkout experience with enhanced security features and improved performance. This guide will help you migrate from V1 to V2 in less than 30 minutes.
 icon: cc-visa
 ---
 
 # Visa Click to Pay: V1 to V2 Migration
 
-The evolution from Click to Pay V1 to V2 represents a fundamental shift in digital payment capabilities, addressing key merchant and consumer pain points while setting new standards for security and user experience. V2 introduces significant architectural improvements and feature enhancements that align with the industry's movement toward passwordless authentication and seamless checkout experiences. This transformation comes at a crucial time when digital commerce demands both frictionless transactions and robust security measures.
+Juspay Hyperswitch's evolution from Click to Pay V1 to V2 represents a fundamental shift in digital payment capabilities, addressing key merchant and consumer pain points while setting new standards for security and user experience. V2 introduces significant architectural improvements and feature enhancements that align with the industry's movement toward passwordless authentication and seamless checkout experiences. This transformation comes at a crucial time when digital commerce demands both frictionless transactions and robust security measures.
 
 | **Feature Aspect**            | **V1**                                                                                                                                                                                                                                                                                                         | **V2**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🔐 **Security Features**      | ⛔️ card data handling, prone to fraud.                                                                                                                                                                                                                                                                         | ✅ tokenization and biometric authentication, meeting FIDO standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 🚀 **Speed of Payment**       | ⛔️ Requires multiple steps - OTPs are used for cardholder verification during online transactions, adding an extra layer of security but also introducing additional steps in the checkout process                                                                                                             | ✅ V2 integrates advanced authentication methods, such as biometrics and device recognition, reducing the reliance on OTPs. This shift enhances security while streamlining the user experience by minimizing interruptions during checkout.Biometric authentication reduces checkout time by 50%.                                                                                                                                                                                                                               |
-|  🛜 **Integration**           | ⛔️ Separate APIs and infrastructure for different card networks.                                                                                                                                                                                                                                               | ✅ Unified integration across multiple card network                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| 🙎🏻‍♂️ **User Experience**   | <p>⛔️ Authentication requires username/password login for:</p><ul><li>Initial service access</li><li>New device verification</li><li>Adding new cards</li><li>Accessing saved cards</li></ul><p>⛔️ Separate authentication needed across different devices</p><p><br>⛔️ No device recognition capabilities</p> | <p>✅  Hybrid authentication approach:</p><ul><li>Initial email/mobile verification still required</li><li>Optional biometric authentication for returning users</li><li>Payment passkey support being rolled out (not fully deployed)</li><li>Two-factor authentication for enhanced security<br></li></ul><p>✅  Device-specific recognition:</p><ul><li>"Remember me" option for trusted devices</li><li>Automatic recognition on returning to saved merchants</li><li>But requires initial setup per browser/device</li></ul> |
-| 💳  **Push Provisioning**     | ⛔️ Not supported. Users cannot add their cards directly to Click to Pay from the issuer's app.                                                                                                                                                                                                                 | ✅ Supported. Issuers can enrol cardholders into Click to Pay directly from their banking app, streamlining the enrolment process.                                                                                                                                                                                                                                                                                                                                                                                               |
-| **🌏 Global Market Adoption** | 🚧 Limited deployment and compatibility with some regions and merchants.                                                                                                                                                                                                                                       | ✅ Available in 35+  countries, supported by major card networks                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **🔁 Recurring Payments**     | 🚧 Limited support for saving credentials and managing recurring payments                                                                                                                                                                                                                                      | ✅ Built-in support for recurring payments and saved credentials                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Security Features**         | Card data handling, prone to fraud.                                                                                                                                                                                                                                                                            | Tokenization and biometric authentication, meeting FIDO standards.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Speed of Payment**          | Requires multiple steps - OTPs are used for cardholder verification during online transactions, adding an extra layer of security but also introducing additional steps in the checkout process                                                                                                                | V2 integrates advanced authentication methods, such as biometrics and device recognition, reducing the reliance on OTPs. This shift enhances security while streamlining the user experience by minimizing interruptions during checkout. Biometric authentication significantly reduces checkout time.                                                                                                                                                                                                                          |
+| **Integration**               | Separate APIs and infrastructure for different card networks.                                                                                                                                                                                                                                                  | Unified integration across multiple card networks.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **User Experience**           | <p>Authentication requires username/password login for:</p><ul><li>Initial service access</li><li>New device verification</li><li>Adding new cards</li><li>Accessing saved cards</li></ul><p>Separate authentication needed across different devices</p><p>No device recognition capabilities</p>                | <p>Hybrid authentication approach:</p><ul><li>Initial email/mobile verification still required</li><li>Optional biometric authentication for returning users</li><li>Payment passkey support being rolled out (not fully deployed)</li><li>Two-factor authentication for enhanced security</li></ul><p>Device-specific recognition:</p><ul><li>"Remember me" option for trusted devices</li><li>Automatic recognition on returning to saved merchants</li><li>But requires initial setup per browser/device</li></ul>       |
+| **Push Provisioning**         | Not supported. Users cannot add their cards directly to Click to Pay from the issuer's app.                                                                                                                                                                                                                    | Supported. Issuers can enrol cardholders into Click to Pay directly from their banking app, streamlining the enrolment process.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Global Market Adoption**    | Limited deployment and compatibility with some regions and merchants.                                                                                                                                                                                                                                          | Available in multiple countries, supported by major card networks.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Recurring Payments**        | Limited support for saving credentials and managing recurring payments                                                                                                                                                                                                                                         | Built-in support for recurring payments and saved credentials.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-### **Seamless Migration with Hyperswitch** <a href="#ad1rqph0cmzm" id="ad1rqph0cmzm"></a>
+## Seamless Migration with Juspay Hyperswitch
 
-The migration to V2 is powered by Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
+The migration to V2 is powered by Juspay Hyperswitch's specialized wrapper solution, ensuring a frictionless transition that protects your existing integration while unlocking next-generation features. Our wrapper automatically handles version detection, request/response mapping, and backward compatibility - eliminating the risk of business disruption during migration.
 
 This guide will help you migrate from Visa Click to Pay SDK V1 to V2 in less than 30 minutes. Our wrapper maintains backward compatibility while giving you access to V2's enhanced features.
 
 ![Architecture diagram of Visa Click to Pay integration, showing how the Wrapper mediates between Client browser/app and Visa's Click to Pay server while supporting both V1 and V2 SDKs.](../../../../.gitbook/assets/1.png)
 
-### Integration Methods
+## Integration Methods
 
 Choose your integration path based on your business needs:
 
 | Method                   | Best For                | Key Benefits                                                                    | Considerations        |
 | ------------------------ | ----------------------- | ------------------------------------------------------------------------------- | --------------------- |
-| **PSP Integration**      | Small-medium businesses | <p>• Fastest deployment<br>• Minimal dev effort<br>• PSP handles compliance</p> | Limited customization |
-| **Acquirer Integration** | Established merchants   | <p>• Moderate effort<br>• Custom checkout<br>• Existing bank relation</p>       | Shared compliance     |
-| **Direct Integration**   | Large enterprises       | <p>• Full control<br>• All features<br>• Direct Visa support</p>                | Requires PCI-DSS      |
+| **PSP Integration**      | Small-medium businesses | <p>Fastest deployment<br>Minimal dev effort<br>PSP handles compliance</p>      | Limited customization |
+| **Acquirer Integration** | Established merchants   | <p>Moderate effort<br>Custom checkout<br>Existing bank relation</p>            | Shared compliance     |
+| **Direct Integration**   | Large enterprises       | <p>Full control<br>All features<br>Direct Visa support</p>                     | Requires PCI-DSS      |
 
 Decision factors: Dev resources, time to market, customization needs, compliance capabilities
 
-[View detailed comparison →](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview)
+[View detailed comparison](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview)
 
-### Quick Start
+## Quick Start
 
-#### Step 1: Install the Wrapper
+### Step 1: Install the Wrapper
 
 ```bash
 npm install @visa/click-to-pay-wrapper
 ```
 
-#### Step 2: Update Imports
+### Step 2: Update Imports
 
 ```javascript
 // Old V1 Import
@@ -60,7 +57,7 @@ import { VisaSRCI } from '@visa/click-to-pay-v1';
 import { VisaClickToPayWrapper } from '@visa/click-to-pay-wrapper';
 ```
 
-#### Step 3: Initialize the SDK
+### Step 3: Initialize the SDK
 
 ```javascript
 // Old V1 Initialization
@@ -72,15 +69,15 @@ await visaCheckout.init({
 
 // New V2 Initialization
 const visaCheckout = new VisaClickToPayWrapper({
-    debug: true, // Optional: Enable debug logging
+    debug: true,
     apikey: 'your_api_key',
     srcInitiatorId: 'your_initiator_id',
-    environment: 'production' // or 'sandbox' for testing
+    environment: 'production'
 });
 await visaCheckout.init();
 ```
 
-#### Step 4: Update Configuration (if needed)
+### Step 4: Update Configuration (if needed)
 
 ```javascript
 // Optional: Configure additional features
@@ -91,11 +88,11 @@ await visaCheckout.init({
         biometrics: true,
         quickCheckout: true
     },
-    locale: 'en-US' // Optional: Set preferred locale
+    locale: 'en-US'
 });
 ```
 
-#### Step 5: Implement Event Handlers (Optional)
+### Step 5: Implement Event Handlers (Optional)
 
 ```javascript
 // New event handling system
@@ -117,7 +114,7 @@ visaCheckout.on('biometric_prompt', (data) => {
 });
 ```
 
-#### Step 6: Update Checkout Implementation
+### Step 6: Update Checkout Implementation
 
 ```javascript
 // Both V1 and V2 formats work with the wrapper
@@ -128,9 +125,9 @@ const checkoutResponse = await visaCheckout.checkout({
 });
 ```
 
-### New V2 Features
+## New V2 Features
 
-#### Device Authentication Support
+### Device Authentication Support
 
 Before enabling biometric authentication, verify device capabilities:
 
@@ -139,13 +136,8 @@ Before enabling biometric authentication, verify device capabilities:
 const checkBiometricSupport = async () => {
     const capabilities = await visaCheckout.checkDeviceCapabilities();
     if (capabilities.biometrics) {
-        // Enable biometric flow
         await visaCheckout.enableBiometrics();
     } else {
-        // Fallback authentication methods in order of preference:
-        // 1. Device binding (Remember this device)
-        // 2. OTP verification
-        // 3. Password authentication
         await visaCheckout.enableFallbackAuth({
             preferDeviceBinding: true,
             allowOTP: true
@@ -154,7 +146,7 @@ const checkBiometricSupport = async () => {
 };
 ```
 
-#### Enable Biometric Authentication
+### Enable Biometric Authentication
 
 ```javascript
 if (visaCheckout.version === 'v2') {
@@ -163,12 +155,11 @@ if (visaCheckout.version === 'v2') {
         console.log('Biometrics enabled successfully');
     } catch (error) {
         console.error('Biometrics setup failed:', error);
-        // Fallback to traditional authentication
     }
 }
 ```
 
-#### Quick Checkout
+### Quick Checkout
 
 ```javascript
 if (visaCheckout.version === 'v2') {
@@ -177,13 +168,12 @@ if (visaCheckout.version === 'v2') {
         console.log('Quick checkout completed:', quickCheckoutResponse);
     } catch (error) {
         console.error('Quick checkout failed:', error);
-        // Fallback to regular checkout
         const regularCheckoutResponse = await visaCheckout.checkout(options);
     }
 }
 ```
 
-#### Error Handling Guide
+### Error Handling Guide
 
 Common Error Scenarios:
 
@@ -213,7 +203,7 @@ try {
 } catch (error) {
     switch(error.code) {
         case 'NETWORK_ERROR':
-            await retryWithBackoff(3); // Retry up to 3 times
+            await retryWithBackoff(3);
             break;
         case 'AUTH_EXPIRED':
             await refreshAuthSession();
@@ -221,14 +211,11 @@ try {
         case 'BIOMETRIC_FAILED':
             await fallbackToOTP();
             break;
-        // Add more specific error handling
     }
 }
 ```
 
-
-
-### Authentication Methods
+## Authentication Methods
 
 V2 supports multiple authentication methods:
 
@@ -238,9 +225,9 @@ await visaCheckout.init({
     apiKey: 'your_api_key',
     environment: 'production',
     authentication: {
-        preferBiometric: true, // Prefer biometric when available
-        fallbackToPassword: true, // Allow password as fallback
-        allowRememberMe: true // Enable "Remember Me" feature
+        preferBiometric: true,
+        fallbackToPassword: true,
+        allowRememberMe: true
     }
 });
 
@@ -260,7 +247,7 @@ visaCheckout.on('authentication_method_selected', (method) => {
 });
 ```
 
-### Migration Checklist
+## Migration Checklist
 
 * [ ] Install new wrapper package
 * [ ] Update import statements
@@ -275,7 +262,7 @@ visaCheckout.on('authentication_method_selected', (method) => {
 * [ ] Update documentation and support materials
 * [ ] Train customer support team on new features
 
-### Best Practices
+## Best Practices
 
 1. Use the wrapper for gradual migration
 2. Test both V1 and V2 flows in sandbox first
@@ -288,9 +275,9 @@ visaCheckout.on('authentication_method_selected', (method) => {
 9. Monitor performance metrics
 10. Keep error handling and logging comprehensive
 
-### Performance Considerations
+## Performance Considerations
 
-#### Lazy Loading
+### Lazy Loading
 
 ```javascript
 // Lazy load the SDK when needed
@@ -302,7 +289,7 @@ const loadSDK = async () => {
 };
 ```
 
-#### Resource Optimization
+### Resource Optimization
 
 ```javascript
 // Configure optimal resource loading
@@ -310,37 +297,37 @@ await visaCheckout.init({
     apiKey: 'your_api_key',
     environment: 'production',
     loading: {
-        preload: ['essential'], // Preload essential components
-        lazy: ['biometrics', 'analytics'], // Lazy load optional features
-        timeout: 5000 // Set reasonable timeouts
+        preload: ['essential'],
+        lazy: ['biometrics', 'analytics'],
+        timeout: 5000
     }
 });
 ```
 
-### Common Issues and Solutions
+## Common Issues and Solutions
 
-#### Configuration Format Mismatch
+### Configuration Format Mismatch
 
 ```javascript
 // Solution: Use wrapper's normalizeConfig method
 const config = visaCheckout.normalizeConfig(yourConfig);
 ```
 
-#### Event Handling Differences
+### Event Handling Differences
 
 ```javascript
 // Solution: Use wrapper's unified event system
 visaCheckout.on('checkout_started', handleCheckoutStarted);
 ```
 
-#### Response Format Differences
+### Response Format Differences
 
 ```javascript
 // Solution: Wrapper automatically handles conversion
 const response = await visaCheckout.checkout(options);
 ```
 
-#### Version Detection Issues
+### Version Detection Issues
 
 ```javascript
 // Solution: Explicitly check version compatibility
@@ -349,19 +336,18 @@ if (!visaCheckout.isFeatureSupported('biometrics')) {
 }
 ```
 
-#### Session Management
+### Session Management
 
 ```javascript
 // Solution: Implement proper session handling
 visaCheckout.on('session_expired', async () => {
     await visaCheckout.refreshSession();
-    // Retry the last operation
 });
 ```
 
-### Security Considerations
+## Security Considerations
 
-#### PCI Compliance
+### PCI Compliance
 
 The wrapper maintains PCI compliance while handling sensitive data:
 
@@ -378,7 +364,7 @@ await visaCheckout.init({
 });
 ```
 
-#### Data Protection
+### Data Protection
 
 ```javascript
 // Enable additional security features
@@ -393,9 +379,9 @@ await visaCheckout.init({
 });
 ```
 
-### Testing Guide
+## Testing Guide
 
-#### Sandbox Testing
+### Sandbox Testing
 
 ```javascript
 // Initialize in sandbox mode
@@ -413,7 +399,7 @@ const testCards = {
 };
 ```
 
-#### Error Simulation
+### Error Simulation
 
 ```javascript
 // Test error scenarios
@@ -422,7 +408,7 @@ await visaCheckout.simulateError('AUTHENTICATION_FAILED');
 await visaCheckout.simulateError('CARD_DECLINED');
 ```
 
-#### Testing Recurring Payments
+### Testing Recurring Payments
 
 ```javascript
 // Test recurring payment setup
@@ -443,9 +429,9 @@ const recurringTest = async () => {
 };
 ```
 
-### Monitoring and Analytics
+## Monitoring and Analytics
 
-#### Enable Analytics
+### Enable Analytics
 
 ```javascript
 await visaCheckout.init({
@@ -459,7 +445,7 @@ await visaCheckout.init({
 });
 ```
 
-#### Custom Event Tracking
+### Custom Event Tracking
 
 ```javascript
 // Track custom events
@@ -471,7 +457,7 @@ visaCheckout.trackEvent({
 });
 ```
 
-### Support and Resources
+## Support and Resources
 
 For additional support:
 
@@ -479,12 +465,10 @@ For additional support:
 * Visit our developer portal at https://developer.visa.com
 * Join our developer community at https://community.visa.com
 
-#### Documentation
+### Documentation
 
 * [API Reference](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-js-reference-v2/init) - JavaScript SDK reference for implementing Click to Pay
 * [Integration Overview](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-integration-overview) - Comprehensive implementation guide and requirements
 * [Merchant & PSP Guide](https://developer.visa.com/capabilities/visa-secure-remote-commerce/docs-merchants-psps) - Best practices and implementation paths for merchants and payment service providers
-
-
 
 Remember to test thoroughly in the sandbox environment before deploying to production, and enable new features gradually to ensure a smooth transition for your users.

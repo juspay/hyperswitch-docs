@@ -7,7 +7,7 @@ description: Juspay Saleor Payment App Setup
 Connects Juspay's Hyperswitch and Hypercheckout with Saleor, enabling merchants to process payments securely and efficiently within their Saleor storefront for both Indian and international customers.
 
 {% hint style="info" %}
-This section covers the steps to setup Juspay payment app through saleor
+This section covers the steps to setup Juspay payment app through Saleor
 {% endhint %}
 
 ### Prerequisites
@@ -16,15 +16,15 @@ This section covers the steps to setup Juspay payment app through saleor
 
 **1.1 Non Indian payments dashboard sign up**
 
-[Sign up](https://app.hyperswitch.io/) to Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
+[Sign up](https://app.hyperswitch.io/) to Juspay Hyperswitch dashboard and navigate to connectors tab to configure connector(s) and enable various Payment Methods.
 
-> **Note:** While configuring connectors, please ensure that you also set up connector's webhook with hyperswitch.
+> **Note:** While configuring connectors, please ensure that you also set up connector's webhook with Hyperswitch.
 
 **1.2 Indian payments dashboard sign up**
 
 [Sign up](https://sandbox.portal.juspay.in/) to Hypercheckout dashboard and navigate to `Payments > PG Control Centre` to configure payment gateways and enable various Payment Methods.
 
-> **Note:** While configuring payment gateways, please ensure that you also set up it's webhook with hypercheckout dashboard [refer](https://docs.juspay.in/resources/docs/common-resources/webhooks#Configuring-Webhooks).
+> **Note:** While configuring payment gateways, please ensure that you also set up it's webhook with Hypercheckout dashboard [refer](https://docs.juspay.in/resources/docs/common-resources/webhooks#Configuring-Webhooks).
 
 Juspay Saleor app relies on these webhooks to update the payment status accurately and in real-time.
 
@@ -47,26 +47,26 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
 **1.2.1 Configure for non Indian payments**
 
-1. Open Hyperswitch App installed on your saleor dashboard.
+1. Open Hyperswitch App installed on your Saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select non Indian payments. This will open a form to collect credentials.
 
 * Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
 * Enter your Hyperswitch API key. For instructions on how to create an API Key with Hyperswitch, refer to [this guide](https://docs.hyperswitch.io/hyperswitch-cloud/account-setup#user-content-create-an-api-key-1).
-* Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
-* Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of hyperswitch dasboard.
+* Enter your Hyperswitch Publishable Key. You can find this key under the `Developers > API Keys` section of Hyperswitch dashboard.
+* Enter your Hyperswitch Payment Response Hash Key. You can find this key under the `Developers > API Keys` section of Hyperswitch dashboard.
 
 <figure><img src="../../../.gitbook/assets/hyperswitchPublishableKey.png" alt=""><figcaption></figcaption></figure>
 
 * Enter your Hyperswitch Profile ID. For more information on Profile ID, please refer to [this guide](https://docs.hyperswitch.io/features/account-management/multiple-accounts-and-profiles)
 
 3. Click on `Save Configuration`
-4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
+4. Once you save the configuration, You will be provided with a webhook URL, please update it in your [Hyperswitch dashboard](https://docs.hyperswitch.io/hyperswitch-cloud/webhooks)
 
-> **Note:** To customize, your payment page. Please contact [hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email)
+> **Note:** To customize, your payment page. Please contact [Hyperswitch support](https://hyperswitch-io.slack.com/join/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw#/shared-invite/email)
 
 **1.2.2 Configure for Indian payments**
 
-1. Open Hyperswitch App installed on your saleor dashboard.
+1. Open Hyperswitch App installed on your Saleor dashboard.
 2. Click on `Add new configuration`, which opens a popup to select Indian payments. This will open a form to collect credentials.
 
 * Enter a unique configuration name. This name will be used later to assign the configuration to Saleor channels.
@@ -75,7 +75,7 @@ Sign up to [Saleor](https://auth.saleor.io/realms/saleor-cloud/login-actions/reg
 
     <figure><img src="../../../.gitbook/assets/hyperCheckoutMid.png" alt=""><figcaption></figcaption></figure>
 * Enter your username to receive webhooks. To get username visit `Payments > Setting > Webhooks`.
-* Enter your password to receive webhooks. To get passowrd visit `Payments > Setting > Webhooks`.
+* Enter your password to receive webhooks. To get password visit `Payments > Setting > Webhooks`.
 *   Enter your Hypercheckout client id. To get client id you can visit studio from the sidebar `Payment Page > Studio`.
 
     <figure><img src="../../../.gitbook/assets/hyperCheckoutCid.png" alt=""><figcaption></figcaption></figure>
@@ -125,7 +125,7 @@ Response
 
 #### Initialize the payment gateway
 
-This call returns whether the payment is going through hyperswitch or hypercheckout.
+This call returns whether the payment is going through Hyperswitch or Hypercheckout.
 
 ```
 mutation JuspaypaymentGatewayInitialize {
@@ -165,7 +165,7 @@ Response
 
 #### Initialize the transaction
 
-To initialize the transaction with hyperswitch, one needs to create a transaction in Saleor by calling the transactionInitialize mutation.
+To initialize the transaction with Hyperswitch, one needs to create a transaction in Saleor by calling the transactionInitialize mutation.
 
 ```
 mutation JuspayTransactionInitialize($data: JSON!) {
@@ -198,12 +198,12 @@ You can pass additional fields while initiating the transaction through the $dat
 2. `authenticationType`: This is used for non Indian payments. Pass this parameter to force 3DS or non 3DS auth for this payment. Some connectors will still force 3DS auth even in case of passing 'no\_three\_ds' here and vice versa. Default value is 'no\_three\_ds' if not set Available options: `three_ds`, `no_three_ds`
 3. `billingEmail`: \[Optional String] customer's billing email
 4. `shippingEmail` : \[Optional String] customer's shipping email
-5. `statementDescriptorName`: \[Optional String] This is used for non Indian payments. For non-card charges, you can use this value as the complete description that appears on your customers’ statements. Must contain at least one letter, maximum 22 characters
-6. `statementDescriptorSuffix`: \[Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
+5. `statementDescriptorName`: \[Optional String] This is used for non Indian payments. For non-card charges, you can use this value as the complete description that appears on your customers' statements. Must contain at least one letter, maximum 22 characters
+6. `statementDescriptorSuffix`: \[Optional String] This is used for non Indian payments. Provides information about a card payment that customers see on their statements. Concatenated with the prefix (shortened descriptor) or statement descriptor that's set on the account to form the complete statement descriptor. Maximum 22 characters for the concatenated descriptor.
 7. `description`: \[Optional String] A description for the payment
 8. `returnUrl`: \[Optional String] The URL to which you want the user to be redirected after the completion of the payment operation (Mandatory Field for Payment Links),
 9. `manualRetryAllowed`: \[Optional Boolean] This is used for non Indian payments. If true the payment can be retried with same or different payment method which means the confirm call can be made again.
-10. `gatewayReferenceId`: \[Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
+10. `gatewayReferenceId`: \[Optional String] This is used for Indian payments. The id refers to the payment gateway reference id which you configured in Hypercheckout dashboard. It becomes mandatory when multiple instances of the same gateway are configured. Sending this id will route the transaction via selected gateway.Refer [here](https://docs.juspay.in/resources/docs/common-resources/gateway-reference-id) for details.
 11. `allowedPaymentMethods`: \[Optional JSON] This helps you to select which payment options you want to show on your payment page.
     * **Indian Payments**: This expects a json object to enable and disable payment options. For more info refer [here](https://docs.juspay.in/hyper-checkout/android/resources/payment-locking).
     * **Non-Indian Payments**: This expects a json array of enums to enable and disable payment options. For more info refer `allowed_payment_method_types` in [payments-create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
@@ -255,7 +255,7 @@ Handle Response for Initializing Non-Indian Payment Transactions
 
 * You can use `clientSecret` and `publishableKey` to invoke the [Hyperswitch SDK](https://docs.hyperswitch.io/learn-more/sdk-reference)\
   OR
-* You can use the `paymentLinks.web` to redirect the customer to hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
+* You can use the `paymentLinks.web` to redirect the customer to Hyperswitch payment page. Additionally, this URL can also be embedded within an iframe
 
 **Example Response for Initializing a Indian Transaction**
 
@@ -314,7 +314,7 @@ Handle Response for Initializing Non-Indian Payment Transactions
 }
 ```
 
-Hanlde Response for Initializing Indian Payment Transactions
+Handle Response for Initializing Indian Payment Transactions
 
 * You can use `sdkPayload` to invoke the [Hypercheckout SDK](https://docs.juspay.in/hyper-checkout/android/base-sdk-integration/initiating-sdk)\
   OR

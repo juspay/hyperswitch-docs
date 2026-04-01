@@ -1,8 +1,5 @@
 ---
-description: >-
-  Hyperswitch App Clip is a lightweight version of your iOS app that launches
-  instantly (via QR code, NFC, or link) to let users complete payments quickly
-  without installing the full app.
+description: Hyperswitch App Clip is a lightweight version of your iOS app that launches instantly (via QR code, NFC, or link) to let users complete payments quickly without installing the full app.
 icon: app-store
 ---
 
@@ -20,7 +17,7 @@ icon: app-store
 * Apple Developer Account
 * Hyperswitch SDK already integrated in main iOS app
 
-## Quick Steps
+### Quick Steps
 
 #### 1. Create App Clip Target
 
@@ -68,7 +65,7 @@ icon: app-store
 5. **User pays → Hyperswitch processes**.
 6. **Result shown instantly** (success/fail).
 
-## Related Pages
+### Related Pages
 
 To use this feature add Lite SDK in your AppClips
 

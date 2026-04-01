@@ -1,12 +1,12 @@
 ---
-description: Setup custom domains
+description: Learn how to configure custom domains for payment links with DNS records, CNAME, and TXT verification for secure payment processing.
 ---
 
 # Setup Custom Domain
 
-A custom domain name can be used for payment links. This is your own domain name which is configured at HyperSwitch side. For doing this, contact us and we will get it configured and give you a TLS certificate.
+A custom domain name can be used for payment links with Juspay Hyperswitch. This is your own domain name which is configured at our side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
-## How to setup custom domain within your cloud
+## How to Setup Custom Domain Within Your Cloud
 
 * Identify your DNS provider
 
@@ -20,15 +20,15 @@ A custom domain name can be used for payment links. This is your own domain name
 $ nslookup -querytype=NS hyperswitch.com
 ```
 
-> You’ll see a list of name servers for your domain in the output.
+> You'll see a list of name servers for your domain in the output.
 
 * Create required DNS records
 
-> In this segment, you'll generate the necessary DNS records to link your domain. Follow the following steps to enable the same
+> In this segment, you'll generate the necessary DNS records to link your domain. Follow the following steps to enable the same.
 
 Step 1: Sign into your DNS provider
 
-> DNS providers offer a control panel where you can log in to manage your DNS settings. Locate your provider’s control panel page and sign in.
+> DNS providers offer a control panel where you can log in to manage your DNS settings. Locate your provider's control panel page and sign in.
 
 Step 2: Locate the page to manage the DNS for your domain
 
@@ -40,7 +40,12 @@ Step 3: Create CNAME record
 
 Enter the following values and save the new DNS record.
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
+> | FIELD | INSTRUCTIONS | DESCRIPTION |
+> |----------|----------|----------|
+> | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. |
+> | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink` | For CNAME records, this field is the first part of your subdomain (the part leading up to the first period). |
+> | Value | Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch. Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
+> | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration. |
 
 Step 4: Create your TXT record
 
@@ -50,9 +55,14 @@ Step 4: Create your TXT record
 
 > Enter these values and save the new DNS record:
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `TXT` from the dropdown | What kind of DNS record this is. | | Name | If your custom domain is `paymentlink.xyz.com`, enter \_acme-challenge.paymentlink| For TXT records, this field is the subdomain portion of your domain. | | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration.|
+> | FIELD | INSTRUCTIONS | DESCRIPTION |
+> |----------|----------|----------|
+> | Type | Select `TXT` from the dropdown | What kind of DNS record this is. |
+> | Name | If your custom domain is `paymentlink.xyz.com`, enter `_acme-challenge.paymentlink` | For TXT records, this field is the subdomain portion of your domain. |
+> | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification |
+> | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration. |
 
-Step 5. Verify your CNAME record setup
+Step 5: Verify your CNAME record setup
 
 > After you save your DNS record, verify that it has the correct values.
 
@@ -62,7 +72,7 @@ Step 5. Verify your CNAME record setup
 $ nslookup -querytype=CNAME paymentlink.xyz.com
 ```
 
-your should get a output like this
+You should get an output like this:
 
 ```shell
 <your subdomain> 	canonical name = sandbox.hyperswitch.io.
@@ -70,7 +80,7 @@ your should get a output like this
 
 Once you observe the output, proceed to the next step.
 
-Step 6. Verify your TXT record
+Step 6: Verify your TXT record
 
 > After you save your DNS record, verify that it has the correct values.
 
@@ -80,7 +90,7 @@ Step 6. Verify your TXT record
 $ nslookup -querytype=TXT _acme-challenge.paymentlink
 ```
 
-your should get a output like this
+You should get an output like this:
 
 ```shell
 _acme-challenge.<your domain>   text = "<your unique TXT record value>"
@@ -92,8 +102,8 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 * Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
 
-## How to use Wallets like Apple Pay & Google Pay in Payment Links?
+## How to Use Wallets Like Apple Pay & Google Pay in Payment Links
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 
-After you have setup custom domain in your cloud, you need to get respective Google pay, Apple pay certificate for your new domain, and register the same in our dashboard.
+After you have setup custom domain in your cloud, you need to get respective Google Pay, Apple Pay certificate for your new domain, and register the same in our dashboard.

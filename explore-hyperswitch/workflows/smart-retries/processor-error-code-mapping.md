@@ -1,12 +1,13 @@
 ---
+description: Understand how error codes are classified for Smart Retry decisions
 icon: signs-post
 ---
 
 # Processor error code mapping
 
-Smart Retry is an intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors to determine the root cause of failure in real-time.
+Smart Retry is a Juspay Hyperswitch intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors to determine the root cause of failure in real-time.
 
-Upon receiving an error, the system classifies the transaction as either Non-Retryable or Retryable. If an error is deemed retryable, the AI dynamically selects the optimal recovery strategy from the following:&#x20;
+Upon receiving an error, the system classifies the transaction as either Non-Retryable or Retryable. If an error is deemed retryable, the AI dynamically selects the optimal recovery strategy from the following:
 
 | Category        | Example                                                                                                                                                  |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,9 +18,7 @@ Upon receiving an error, the system classifies the transaction as either Non-Ret
 
 To illustrate the classification process, the following tables lists few sample Stripe error codes and how our AI model categorizes them into Retryable versus Non-Retryable workflows.
 
-
-
-#### **Error codes categorize as Retryable :** &#x20;
+#### **Error codes categorized as Retryable:**
 
 | code                                          | message                                                                                                                                                                                                                                                                                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,22 +41,19 @@ To illustrate the classification process, the following tables lists few sample 
 | call\_issuer                                  | The card was declined for an unknown reason.                                                                                                                                                                                                                                                                                                                              |
 | fraudulent                                    | The payment was declined because Stripe suspects that it's fraudulent.                                                                                                                                                                                                                                                                                                    |
 
-
-
-#### **Error codes categorize as Non-Retryable :**
+#### **Error codes categorized as Non-Retryable:**
 
 | **Error Code**                       | **Description / Message**                                                                                                                                                                                                                                |
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| card\_decline\_rate\_limit\_exceeded | This card has been declined too many times. You can try to charge this card again after 24 hours. We suggest reaching out to your customer to make sure they’ve entered all of their information correctly and that there are no issues with their card. |
-| account\_closed                      | The customer’s bank account has been closed.                                                                                                                                                                                                             |
-| invalid\_cvc                         | The card’s security code is invalid. Check the card’s security code or use a different card.                                                                                                                                                             |
-| acss\_debit\_session\_incomplete     | The ACSS debit session isn’t ready to transition to complete status yet. Try the request again later.                                                                                                                                                    |
-| incorrect\_number                    | The card number is incorrect. Check the card’s number or use a different card.                                                                                                                                                                           |
+| card\_decline\_rate\_limit\_exceeded | This card has been declined too many times. You can try to charge this card again after 24 hours. We suggest reaching out to your customer to make sure they've entered all of their information correctly and that there are no issues with their card. |
+| account\_closed                      | The customer's bank account has been closed.                                                                                                                                                                                                             |
+| invalid\_cvc                         | The card's security code is invalid. Check the card's security code or use a different card.                                                                                                                                                             |
+| acss\_debit\_session\_incomplete     | The ACSS debit session isn't ready to transition to complete status yet. Try the request again later.                                                                                                                                                    |
+| incorrect\_number                    | The card number is incorrect. Check the card's number or use a different card.                                                                                                                                                                           |
 | invalid\_expiry\_month               | The card's expiration month is incorrect.                                                                                                                                                                                                                |
-| insufficient\_funds                  | The customer’s account has insufficient funds to cover this payment.                                                                                                                                                                                     |
+| insufficient\_funds                  | The customer's account has insufficient funds to cover this payment.                                                                                                                                                                                     |
 | card\_declined                       | Your card does not support this type of purchase.                                                                                                                                                                                                        |
-| invalid\_expiry\_year                | The card’s expiration year is incorrect. Check the expiration date or use a different card.                                                                                                                                                              |
-| card\_not\_supported                 | The card doesn’t support this type of purchase.                                                                                                                                                                                                          |
+| invalid\_expiry\_year                | The card's expiration year is incorrect. Check the expiration date or use a different card.                                                                                                                                                              |
+| card\_not\_supported                 | The card doesn't support this type of purchase.                                                                                                                                                                                                          |
 | pin\_try\_exceeded                   | The allowable number of PIN tries was exceeded.                                                                                                                                                                                                          |
-| pickup\_card                         | The customer can’t use this card to make this payment (it’s possible it was reported lost or stolen).                                                                                                                                                    |
-
+| pickup\_card                         | The customer can't use this card to make this payment (it's possible it was reported lost or stolen).                                                                                                                                                    |

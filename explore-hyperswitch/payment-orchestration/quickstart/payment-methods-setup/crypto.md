@@ -5,9 +5,9 @@ icon: bitcoin-sign
 
 # Crypto
 
-Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethereum, and Litecoin. It's fast, cheap, and private compared to traditional payment methods. Crypto payments use blockchain technology to record transactions securely and transparently without the need for intermediaries like banks.
+Juspay Hyperswitch enables crypto payments—a modern way to pay using digital currencies like Bitcoin, Ethereum, and Litecoin. It's fast, cost-effective, and private compared to traditional payment methods. Crypto payments use blockchain technology to record transactions securely and transparently without the need for intermediaries like banks.
 
-## **How does a crypto payment work?**
+## How does a crypto payment work?
 
 1. The customer selects the crypto payment option on the merchant's checkout page
 2. The customer is redirected to the cryptocurrency wallet to complete the payment
@@ -15,9 +15,9 @@ Crypto payments are a new way to pay using digital currencies like Bitcoin, Ethe
 4. The customer confirms the transaction in their wallet and sends the payment to the recipient's public address on the cryptocurrency network
 5. Once the payment is confirmed and processed by the cryptocurrency network, the merchant can access the payment in their cryptocurrency wallet
 
-## **Configuring Crypto on Hyperswitch**
+## Configuring Crypto on Juspay Hyperswitch
 
-You can configure Crypto on Hyperswitch by following the steps mentioned below -
+You can configure Crypto on Juspay Hyperswitch by following the steps mentioned below:
 
 1. Configure Crypto on the processor
 2. Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)

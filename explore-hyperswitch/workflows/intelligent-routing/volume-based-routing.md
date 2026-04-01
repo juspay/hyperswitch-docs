@@ -7,20 +7,22 @@ icon: chart-simple
 
 {% embed url="https://youtu.be/xpU3zmyD4b8" %}
 
-## Steps to configure Volume Based Configuration in Smart Router:
+## Steps to configure Volume Based Configuration in Smart Router
 
-_**Step 1:**_ Click on `Setup` for **Volume Based Configuration**
+Juspay Hyperswitch enables volume-based routing to distribute transactions across processors.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.42.48 PM.png" alt=""><figcaption></figcaption></figure>
+**Step 1:** Click on `Setup` for **Volume Based Configuration**
 
-_**Step 2:**_ `Save` the name, description, and configure your desired volume distribution among multiple payment processors using percentages:
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.42.48 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.45.37 PM.png" alt=""><figcaption></figcaption></figure>
+**Step 2:** `Save` the name, description, and configure your desired volume distribution among multiple payment processors using percentages:
 
-_**Step 3:**_ In the popup, select the appropriate action based on whether you want to simply `save the rule`, or `save and also activate` it for all payments henceforth:
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.45.37 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.48.04 PM.png" alt=""><figcaption></figcaption></figure>
+**Step 3:** In the popup, select the appropriate action based on whether you want to simply `save the rule`, or `save and also activate` it for all payments henceforth:
 
-_**Step 4:**_ You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.48.04 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.49.47 PM.png" alt=""><figcaption></figcaption></figure>
+**Step 4:** You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.49.47 PM.png" alt=""><figcaption></figcaption></figure>

@@ -1,11 +1,11 @@
 ---
-description: Augment your subscriptions with payments orchestration capabilities
+description: Learn how to augment subscription billing providers (Chargebee, Recurly, Stripe Billing) with Hyperswitch payments orchestration — decoupling payments for full control over card vaulting, routing, retries, and multi-PSP reliability.
 icon: repeat
 ---
 
 # Subscriptions with Modular Payments
 
-Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
+Businesses running on a subscription model — powered by providers such as Chargebee, Recurly, or Stripe Billing — can now augment their setup with payments orchestration. By decoupling payments from the subscription provider, you use the provider purely for subscription ledger and scheduling while owning 100% of the card vaulting, payment attempts, and retry logic. This logic can be managed in-house or via an ensemble of specialized, payment-focused orchestrators and third parties that are modularized to work together.
 
 ### Benefits
 
@@ -13,7 +13,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 2. Improved reliability with a multi-PSP setup
 3. Intelligent Routing capabilities to improve Authorization Rates and minimize Processing costs
 4. Greater coverage of PMs, APMs and features offered by the PSPs
-5. Centralised tokenisation of payment methods for PSP agnostic payments
+5. Centralized tokenization of payment methods for PSP-agnostic payments
 
 ### How does it work?
 
@@ -24,7 +24,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
@@ -291,4 +291,4 @@ Currently we support Chargebee integration. In the upcoming roadmap we are plann
 
 #### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
-We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience (Tentatively by Q4 2025)
+We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience. Check the [Hyperswitch roadmap](https://github.com/juspay/hyperswitch/discussions) for the latest timeline.

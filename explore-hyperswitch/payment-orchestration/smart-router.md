@@ -14,9 +14,9 @@ To get started with Smart Router, ensure to have one or more payment processors 
 
 ## What is smart payment routing?
 
-Selling globally or otherwise invariably brings in a requirement to adopt multiple payment processors to cater to a wide range of payment method needs of the customers and gives you the flexibility to switch between processors to manage down-time and , it could be vital to optimising your payment processing costs as your business can choose the most optimal payment processors for every payment based on the cost, region and customer.
+Selling globally or otherwise invariably brings in a requirement to adopt multiple payment processors to cater to a wide range of payment method needs of the customers and gives you the flexibility to switch between processors to manage down-time and it could be vital to optimising your payment processing costs as your business can choose the most optimal payment processors for every payment based on the cost, region and customer.
 
-Hence, Hyperswitch’s smart router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
+Hence, Juspay Hyperswitch's smart router is designed as a no-code tool to provide complete control and transparency in creating and modifying payment routing rules. Hyperswitch supports below formats of Smart Routing.
 
 **Volume Based Configuration:** Define volume distribution among multiple payment processors using percentages.
 
@@ -68,7 +68,7 @@ There can be multiple reasons why this happened but all of them can be boiled do
 * Now you select `ApplePay`, go through the required steps, confirm the payment, and it succeeds. You go to your payments dashboard and see that the payment went through `Adyen`.
   * This is where you run into the second question. "Why is the payment going through `Adyen` even though I have set my routing configuration to route 100% of my payments through `Stripe`?
   * The answer to this carries over from the previous point. Since we displayed `ApplePay` on the checkout screen even though it wasn't enabled for your preferred connector `Stripe`, we need to adhere to your connector payment method configuration and ensure the payment goes through the right connector, here, `Adyen` since `ApplePay` is only enabled for Adyen. To briefly explain how Hyperswitch reaches this conclusion :-
-    * Hyperswitch runs your configured routing algorithm. Since this is `100% Stripe`, Hyperswitch receives `Stripe` as the outuput.
+    * Hyperswitch runs your configured routing algorithm. Since this is `100% Stripe`, Hyperswitch receives `Stripe` as the output.
     * Hyperswitch then runs an Eligibility Analysis on the output (`Stripe`) to gauge its eligibility for the current payment. The Eligibility Analysis fails once Hyperswitch realizes that the payment is made through `ApplePay` which is not enabled for `Stripe`
     * The application then goes into fallback mode and loads your `default fallback`, which is `[Stripe, Adyen]` as seen earlier.
     * The application looks through the list in order. It ignores `Stripe` since it has already failed the Eligibility Analysis. It instead subjects `Adyen` (the next connector in the list) to the same Eligibility Analysis.

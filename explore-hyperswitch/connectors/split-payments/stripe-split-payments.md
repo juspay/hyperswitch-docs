@@ -1,5 +1,5 @@
 ---
-description: Get started with Stripe Split Settlements via Hyperswitch
+description: Configure Stripe Split Settlement in Hyperswitch to distribute payments between your platform and connected accounts using direct or destination charges.
 icon: stripe
 ---
 
@@ -33,9 +33,7 @@ In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/creat
 
 #### Payment Response
 
-The response includes charge details for [Split Settlements](https://www.google.com/search?q=https://docs.hyperswitch.io/features/split-settlements) to verify distribution:
-
-JSON
+The response includes charge details for [Split Settlements](https://docs.hyperswitch.io/features/split-settlements) to verify distribution:
 
 ```json
 "split_payments": {
@@ -54,8 +52,6 @@ For [Refunds](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#re
 
 **1. For "charge\_type": "direct"**
 
-JSON
-
 ```json
 "split_refunds": {
     "stripe_split_refund": {
@@ -65,8 +61,6 @@ JSON
 ```
 
 **2. For "charge\_type": "destination"**
-
-JSON
 
 ```json
 "split_refunds": {
@@ -79,16 +73,15 @@ JSON
 
 #### Refund Parameters
 
-* revert\_platform\_fee (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
-* revert\_transfer (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
+* `revert_platform_fee` (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
+
+* `revert_transfer` (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
 
 ### Recurring Payments (CIT/MIT)
 
 #### Customer-Initiated Transaction (CIT)
 
 In a CIT call, passing `customer_id` is mandatory along with the Stripe Split settlements object. The split settlement metadata is stored in the mandate for future MIT calls.
-
-JSON
 
 ```json
 {  

@@ -5,7 +5,7 @@ icon: mobile-screen
 
 # Lite SDK
 
-## Key Features of Lite SDK
+### Key Features of Lite SDK
 
 #### Lightweight Integration
 
@@ -13,27 +13,27 @@ icon: mobile-screen
 * **Faster initialization**: Streamlined setup process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK the same `PaymentSheet.Configuration` options as the main SDK, including:**
+* **Shared Configuration**: The Lite SDK uses the same `PaymentSheet.Configuration` options as the main SDK, including:
   * Appearance customization
   * Billing details
   * Shipping information
   * Payment method preferences
   * Branding options
 
-## Requirements
+### Requirements
 
 * Android 6.0 (API level 23) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
 * [Gradle](https://gradle.org/releases/) 8.8+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-## 1. Setup the server
+### 1. Setup the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
-## 2. Build checkout page on your app
+### 2. Build checkout page on your app
 
-### 2.1 Add the Dependency
+#### 2.1 Add the Dependency
 
 Add the Hyperswitch Lite SDK dependency to your app-level `build.gradle` file:
 
@@ -43,7 +43,7 @@ dependencies {
 }
 ```
 
-### 2.2 Setup the Lite SDK and fetch a Payment
+#### 2.2 Setup the Lite SDK and fetch a Payment
 
 Set up the Lite SDK using your publishable key. This is essential for initializing a `PaymentSession`:
 
@@ -73,7 +73,7 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", 
 
 Request your server to fetch a payment as soon as your view is loaded. Store the `client_secret` returned by your server. The `PaymentSession` (Lite) will use this secret to complete the payment process.
 
-## 3. Complete the payment on your app
+### 3. Complete the payment on your app
 
 **Initialize Payment Session**
 
@@ -122,7 +122,7 @@ paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 
 Congratulations! You have successfully integrated the Hyperswitch Lite SDK into your app. The Lite SDK provides the same powerful payment processing capabilities with a smaller footprint, making it ideal for apps where bundle size is a concern.
 
-## Next step:
+### Next Step:
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)

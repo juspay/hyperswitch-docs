@@ -1,5 +1,8 @@
 ---
-description: Low-code solution to accept payouts
+description: >-
+  A low-code solution for sending money to beneficiaries via shareable payout
+  links — supports custom branding, domain configuration, and test-mode access
+  for rapid integration.
 icon: link
 ---
 
@@ -26,9 +29,9 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 
 ### Using Payout links
 
-> Note: Domain name might vary based on the testing and production environment.
+> **Note:** Domain name might vary based on the testing and production environment.
 
-> Info: Payout links are secure by nature and should only be opened within an iframe of whitelisted domains in production. For ease of access, these links can be used in a test mode (for non production env) which removes the necessity of configuring whitelisted domains and loading these links within an iframe.
+> **Info:** Payout links are secure by nature and should only be opened within an iframe of whitelisted domains in production. For ease of access, these links can be used in a test mode (for non-production environments) which removes the necessity of configuring whitelisted domains and loading these links within an iframe.
 
 There are a couple of ways for using payout links.
 
@@ -62,11 +65,11 @@ There are a couple of ways for using payout links.
 }
 ```
 
-> Note: It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
+> **Note:** It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
 
 #### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
 
-> This creates a default payout link using the payout link config that was configured for the profile. In case payout config is not configured and not passed during create request, a default set of UI config is used.
+> **Info:** This creates a default payout link using the payout link config that was configured for the profile. If payout config is not configured and not passed during the create request, a default set of UI config is used.
 
 * Set `payout_link` to true
 
@@ -111,7 +114,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 #### 3. Customizing a payout link during creation
 
-> Each payout link can be configured inidividually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create), by including the `payout_link_config` object. UI config and access control (test\_mode) can be specified during creation. However, `domain_name` is always configured at a profile level.
+> **Note:** Each payout link can be configured individually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) by including the `payout_link_config` object. UI config and access control (`test_mode`) can be specified during creation. However, `domain_name` is always configured at the profile level.
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
@@ -155,9 +158,9 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 #### 4. Opening non-iframed links
 
-> Note: This feature is available only in non-production environment. This essentially bypasses the server side and client side validations which are in place for making sure links are only opened within an iframe of a whitelisted domain.
+> **Note:** This feature is available only in non-production environments. It bypasses the server-side and client-side validations that ensure links are only opened within an iframe of a whitelisted domain.
 
-> Note: This can be achieved by either setting this behaviour at the business profile level, or can be set in individual link create requests.
+> **Note:** This can be achieved by either setting this behaviour at the business profile level, or by setting it in individual link create requests.
 
 **Setting at business profile level**
 
@@ -221,7 +224,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 Yes. Your custom domain can be included in the default payout\_link\_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2awm23agh-p_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
+This involves adding CNAME records and TLS certificates, which is a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2awm23agh-p_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
 
 </details>
 
@@ -237,7 +240,7 @@ Payout links simplify the process of sending money, eliminating the operational 
 
 <summary>How long is the Payout link valid for?</summary>
 
-The payout link is valid for 15 minutes by default. However you can increase the validity to upto 3 months (7890000) by passing the time in seconds in `session_expiry` in the create payout link call.
+The payout link is valid for 15 minutes by default. However, you can increase the validity to up to 3 months (7,890,000 seconds) by passing the time in seconds in `session_expiry` in the create payout link call.
 
 </details>
 

@@ -12,7 +12,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```swift
 // pod 'hyperswitch-sdk-ios'
@@ -62,9 +62,8 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 }
 </code></pre>
 
-&#x20;
-
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-
+| options (Required)            | Description                                |
+| ----------------------------- | ------------------------------------------ |
+| `callback (function)` | Callback to get confirm response. |

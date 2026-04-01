@@ -1,11 +1,9 @@
 ---
-description: >-
-  Use any Standalone 3DS server to run 3D Secure (3DS) authentication and
-  authorize the payment with any payment provider (PSP).
+description: Use any Standalone 3DS server to run 3D Secure (3DS) authentication and authorize the payment with any payment provider (PSP).
 icon: up-right-from-square
 ---
 
-# Standalone 3D Secure (via Hyperswitch)
+# Standalone 3D Secure (via Juspay Hyperswitch)
 
 Standalone 3DS separates authentication from authorization, giving you the flexibility to work with multiple payment processors or support specialized payment workflows.
 
@@ -15,41 +13,41 @@ Enterprise teams often adopt Standalone 3DS to enhance payment performance by en
 * Greater visibility into issuer authentication responses
 * Transaction level customization based on business priorities such as fraud reduction, conversion optimization, or cost management
 
-When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This helps is effective [Smart Retry](../smart-retries/) workflows where the same authentication can be succesfully used with multiple authorization attempts across different payment providers (PSP)
+When a Standalone 3DS authentication completes successfully, it generates a 3DS cryptogram. This cryptogram can then be submitted as part of the payment authorization. This is effective in [Smart Retry](../smart-retries/) workflows where the same authentication can be successfully used with multiple authorization attempts across different payment providers (PSP).
 
-Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are - Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io
+Supported [external 3DS authenticators](https://juspay.io/integrations?categories=3DS+PROVIDER) are: Juspay 3DS server, Netcetera, Cardinal and 3dsecure.io.
 
-### Setup External 3DS authentication via Hyperswitch
+## Setup External 3DS authentication via Juspay Hyperswitch
 
-1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)&#x20;
-2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
+1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/).
+2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server.
 
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
-3. Under Connectors > setup the payment provders (PSP) that you wish to use for payment processing&#x20;
+3. Under Connectors > setup the payment providers (PSP) that you wish to use for payment processing.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
 
-4. Under Developers -> Payment Settings -> Add Authentication Connector and its relevant details
+4. Under Developers -> Payment Settings -> Add Authentication Connector and its relevant details.
 
 <figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
-### Perform external authentication
+## Perform external authentication
 
-Initiate a Payments Create API from your server with [external authentication](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-request-external-three-ds-authentication-one-of-0) as true&#x20;
+Initiate a Payments Create API from your server with [external authentication](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-request-external-three-ds-authentication-one-of-0) as true:
 
 ```javascript
 // Set external authentication type in the Payments call
  "request_external_three_ds_authentication": "true"
 ```
 
-This flows follows the same steps as highlighted in authenticate with 3D secure via PSP.&#x20;
+This flow follows the same steps as highlighted in authenticate with 3D secure via PSP.
 
-Do a create payment call to initiate the transaction. The status of the response should be 'requres\_customer\_action" and should contain the "next\_action" object.
+Do a create payment call to initiate the transaction. The status of the response should be `requires_customer_action` and should contain the `next_action` object.
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -136,9 +134,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-### 2. Do authentication
+## Do authentication
 
-Initiate the authentication with the client\_secret generated
+Initiate the authentication with the `client_secret` generated:
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmNt/3ds/authentication' \
@@ -152,4 +150,4 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 }'
 ```
 
-After the challenge is completed, the status should go to 'succeeded' status
+After the challenge is completed, the status should go to `succeeded` status.

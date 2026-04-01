@@ -2,13 +2,14 @@
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket
+description: Discover how Hyperswitch enables seamless, intuitive, and native checkout experiences with customizable integrations and advanced security features.
 ---
 
 # Checkout Experience
 
-Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
+Juspay Hyperswitch empowers you to deliver a **seamless, intuitive, and native checkout experience** without compromising transaction authenticity.
 
-#### **How we improve checkout experience for your customers:**
+### How we improve checkout experience for your customers
 
 * **Fewer Steps, Higher Conversions** – A streamlined checkout process reduces drop-offs and enhances customer satisfaction.
 * **Preferred Payment Options** – Presenting users with their preferred payment methods boosts convenience and conversion rates.
@@ -24,4 +25,3 @@ With Hyperswitch, you optimize the payment journey while maintaining **trust, se
 Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
-

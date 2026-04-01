@@ -1,21 +1,21 @@
 ---
-description: Accept payments through TrustPay via Hyperswitch
+description: Connect TrustPay with Hyperswitch to accept secure e-commerce payments across the EEA with support for multiple payment methods and cross-border reach.
 hidden: true
 ---
 
 # TrustPay
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Trustpay through Hyperswitch
+This section gives you an overview of how to make payments via TrustPay through Hyperswitch
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/trustpayLogo.svg)
 
-TrustPay belongs to the first financial institutions within the region to provide secure e-commerce payments across the EEA area. They provide innovative payment services for online businesses with cross-border reach offering a variety of payment solutions.To know about more about payment methods supported by TrustPay via hyperswitch visit [here](https://hyperswitch.io/pm-list).
+TrustPay belongs to the first financial institutions within the region to provide secure e-commerce payments across the EEA area. They provide innovative payment services for online businesses with cross-border reach offering a variety of payment solutions. To know more about payment methods supported by TrustPay via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
-### Activating TrustPay via Hyperswitch
+## Activating TrustPay via Hyperswitch
 
-#### Prerequisites
+### Prerequisites
 
 1. You need to be registered with TrustPay in order to proceed. In case you aren't, you can quickly setup your TrustPay account [here](https://www.trustpay.eu/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).
