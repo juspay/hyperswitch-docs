@@ -10,7 +10,7 @@ icon: badge-check
 This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 {% endhint %}
 
-## Setup using Docker
+### Setup using Docker
 
 You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
@@ -45,7 +45,7 @@ Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
-## Next step:
+### Next step:
 
 {% content-ref url="../account-setup/" %}
 [account-setup](../account-setup/)

@@ -1,10 +1,11 @@
 ---
+description: Test a payment end-to-end using Juspay Hyperswitch
 icon: money-bills
 ---
 
 # Test a payment
 
-## Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
+### Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
 Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.
 
@@ -28,17 +29,17 @@ On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Pr
 
 Go ahead and connect any dummy processor, we'll show an example with the fauxpay processor:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.24 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.24 PM.png" alt=""><figcaption></figcaption></figure>
 
 Just connect and proceed with the provided credentials:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.38 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.38 PM.png" alt=""><figcaption></figcaption></figure>
 
 From there, navigate back to the **Home** page and click on **Try it out**:
 
 <figure><img src="../../.gitbook/assets/1-try-it-out.png" alt=""><figcaption></figcaption></figure>
 
-Input the credentials and Click on **Pay 100**: :
+Input the credentials and Click on **Pay 100**:
 
 ```
 Card Number - 4242 4242 4242 4242
@@ -46,11 +47,11 @@ Card Expiry - Any future date
 CVC - Any 3 digits
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.38.25 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.38.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 You'll see a successful Payment:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.39.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.39.43 PM.png" alt=""><figcaption></figcaption></figure>
 
 Congrats! You have successfully tested an end-to-end payment with your own app server and the control center
 
@@ -79,13 +80,13 @@ In case you have integrated the web client on your app and want to test a paymen
 
 </details>
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../production-deployment/going-live/" %}
 [going-live](../../production-deployment/going-live/)
 {% endcontent-ref %}
 
-### Explore Further
+#### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 

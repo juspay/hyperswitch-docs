@@ -4,25 +4,21 @@ description: Instructions to set up Card Vault on AWS manually
 
 # Cloud setup guide
 
-{% hint style="info" %}
-This guide will help you to set up the card vault on AWS manually by setting up the various components
-{% endhint %}
+> ℹ️ **Info:** This guide will help you to set up the card vault on AWS manually by setting up the various components
 
 ### Creating EC2 instance
 
 Log into your AWS account and create a new EC2 instance preferably on a t3.medium machine with an AMI that supports docker like Amazon Linux 2.
 
-<figure><img src="../../../../.gitbook/assets/image (138).png" alt="" width="563"><figcaption><p>Creating an EC2</p></figcaption></figure>
+![Creating an EC2](../../../../.gitbook/assets/image%20\(138\).png)
 
-{% hint style="warning" %}
-Ensure to manage your instances' (EC2 and RDS) security group rules are selectively enabled for the application subnet and not exposed to the internet. (The locker application should not be accessible via internet)
-{% endhint %}
+> ⚠️ **Warning:** Ensure to manage your instances' (EC2 and RDS) security group rules are selectively enabled for the application subnet and not exposed to the internet. (The locker application should not be accessible via internet)
 
 ### Install Docker on the EC2 instance
 
 Connect to your EC2 instance using the SSH client via a terminal
 
-<figure><img src="../../../../.gitbook/assets/image (139).png" alt="" width="563"><figcaption><p>Connect to your EC2</p></figcaption></figure>
+![Connect to your EC2](../../../../.gitbook/assets/image%20\(139\).png)
 
 Once you SSH into the EC2 instance, run the following commands on the terminal to install docker
 
@@ -47,7 +43,7 @@ docker pull juspaydotin/hyperswitch-card-vault:latest
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
 
-<figure><img src="../../../../.gitbook/assets/image (140).png" alt="" width="563"><figcaption><p>Creating an RDS</p></figcaption></figure>
+![Creating an RDS](../../../../.gitbook/assets/image%20\(140\).png)
 
 * To run the migrations install `psql` in the EC2 instance
 
@@ -89,9 +85,9 @@ Before setting up KMS, create a new IAM role for your EC2 instance to allow conn
 
 Now, create a KMS key pair on AWS with the key type as `symmetric` and the key usage as Encrypt and Decrypt. Ensure to add the IAM role above in the key administrative permissions and key usage permissions.
 
-<figure><img src="../../../../.gitbook/assets/image (141).png" alt="" width="563"><figcaption><p>Configuring KMS</p></figcaption></figure>
+![Configuring KMS](../../../../.gitbook/assets/image%20\(141\).png)
 
-<figure><img src="../../../../.gitbook/assets/image (142).png" alt="" width="563"><figcaption><p>Creating IAM roles</p></figcaption></figure>
+![Creating IAM roles](../../../../.gitbook/assets/image%20\(142\).png)
 
 ### Generating the keys
 
@@ -115,9 +111,7 @@ openssl rsa -in locker-private-key.pem -pubout -out locker-public-key.pem
 openssl rsa -in tenant-private-key.pem -pubout -out tenant-public-key.pem
 ```
 
-{% hint style="info" %}
-We recommend generating the Master and JWE/JWS keys as mentioned below in the local setup guide outside of this EC2 machine for better security
-{% endhint %}
+> ℹ️ **Info:** We recommend generating the Master and JWE/JWS keys as mentioned below in the local setup guide outside of this EC2 machine for better security
 
 ### KMS encrypting the keys
 
@@ -184,16 +178,17 @@ Once the locker is up and running, use the 2 key custodian keys generated earlie
 
 The following cURLs are to be used to provide keys
 
-<pre class="language-bash"><code class="lang-bash"># temporary turn of saving to history to run the following commands
+```bash
+# temporary turn of saving to history to run the following commands
 unset HISTFILE 
 
 # key 1
-<strong> curl -X 'POST' \
-</strong>  'localhost:8080/custodian/key1' \
+curl -X 'POST' \
+  'localhost:8080/custodian/key1' \
   -H 'accept: text/plain' \
   -H 'Content-Type: application/json' \
   -d '{
-  "key": &#x3C;key 1>
+  "key": <key 1>
 }'
 
 # key 2
@@ -202,12 +197,12 @@ unset HISTFILE
   -H 'accept: text/plain' \
   -H 'Content-Type: application/json' \
   -d '{
-  "key": &#x3C;key 2>
+  "key": <key 2>
 }'
 
 # decrypt
-<strong> curl -X 'POST' 'localhost:8080/custodian/decrypt'
-</strong></code></pre>
+curl -X 'POST' 'localhost:8080/custodian/decrypt'
+```
 
 If the last cURL replies with `Decrypted Successfully`, we are ready to use the locker.
 

@@ -1,21 +1,19 @@
 ---
-description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+description: Diagnose and resolve common issues with your Hyperswitch deployment using health checks and logs
 icon: hammer-brush
 ---
 
 # Troubleshooting
 
-## System Health Check
+### System Health Check
 
-Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
+Juspay Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
 
 ```bash
 curl http://localhost:8080/health/ready
 ```
 
-The above command will check the Database connection, Redis connection, Hyperswitch Vault connection (if enabled), ability to send outgoing requests, and the health of analytical components. If the components are up and running with the correct configurations, you will get a success response as shown below
+The above command will check the Database connection, Redis connection, Juspay Hyperswitch Vault connection (if enabled), ability to send outgoing requests, and the health of analytical components. If the components are up and running with the correct configurations, you will get a success response as shown below
 
 ```json
 {

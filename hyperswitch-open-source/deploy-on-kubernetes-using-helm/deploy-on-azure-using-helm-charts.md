@@ -1,9 +1,13 @@
+---
+description: Deploy Juspay Hyperswitch on Azure Kubernetes Service (AKS) using Helm charts
+---
+
 # Deploy on Azure Using Helm Charts
 
 ### Prerequisites
 
 {% hint style="info" %}
-**Note:** This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the **Developer Support Plan ($29/month)** to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
+**Note:** This tutorial deploys the full Juspay Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the **Developer Support Plan ($29/month)** to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
 {% endhint %}
 
 Ensure the following tools are installed and configured:
@@ -12,7 +16,7 @@ Ensure the following tools are installed and configured:
 
 The Azure Command-Line Interface (CLI) is a cross-platform tool that allows you to manage Azure resources. To install please visit the[ official Microsoft ](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)documentation.
 
-Before setting up AKS, you'll need to [create an Azure account](https://signup.azure.com/signup?offer=ms-azr-0044p\&appId=102\&ref=\&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%3Fsrc%3Dacom_free\&l=en-us). Simply follow the on-screen instructions. Note that billing information will be required during the sign-up process.
+Before setting up AKS, you'll need to [create an Azure account](https://signup.azure.com/signup?offer=ms-azr-0044p&appId=102&ref=&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%3Fsrc%3Dacom_free&l=en-us). Simply follow the on-screen instructions. Note that billing information will be required during the sign-up process.
 
 **2. kubectl**
 
@@ -22,7 +26,7 @@ Before setting up AKS, you'll need to [create an Azure account](https://signup.a
 
 Helm is a package manager for Kubernetes applications. To install please refer to [helm documentation](https://helm.sh/docs/intro/install/#through-package-managers).
 
-### **Part 1: Setting Up AKS**
+### Part 1: Setting Up AKS
 
 1. **Log In to Azure**
 
@@ -159,7 +163,7 @@ Run the following to ensure you're connected and the node is active:
 kubectl get nodes
 ```
 
-You should see an output similar to the one below. Make sure to note the **Name** of your node. You’ll need it in Part 2
+You should see an output similar to the one below. Make sure to note the **Name** of your node. You'll need it in Part 2
 
 ```
 NAME                                STATUS   ROLES    AGE    VERSION
@@ -168,7 +172,7 @@ aks-nodepool1-40058682-vmss000000   Ready    <none>   3m6s   v1.31.8
 
 You should see your AKS node listed in the output. If so, you're now connected and ready to deploy to your cluster!
 
-### **Part 2: Deploy Hyperswitch Using Helm**
+### Part 2: Deploy Hyperswitch Using Helm
 
 1. **Add the Hyperswitch Helm Repository**
 
@@ -284,15 +288,15 @@ Access the services at:
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 A magic link will be sent to [Mailhog](http://localhost:8025/). Click on the link in white:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, you’ll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
+Afterwards, you'll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
 
-### Test a payment
+### Test a Payment
 
 Use can now use the Hyperswitch Control Center and [make a payment with dummy card](https://opensource.hyperswitch.io/hyperswitch-open-source/test-a-payment).
 
@@ -302,7 +306,7 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 
 Once you are done with the test payment, you can explore more about these:
 
-### **Uninstall Hyperswitch & Delete AKS Cluster**
+### Uninstall Hyperswitch & Delete AKS Cluster
 
 1. **Uninstall Hyperswitch:**
 
@@ -325,7 +329,7 @@ helm uninstall <release-name> -n <namespace>
 3. **Delete the AKS cluster completely**:
 
 ```sh
-az aks delete --name <cluster-name> --resource-group <resource-group> --yes --no-wai
+az aks delete --name <cluster-name> --resource-group <resource-group> --yes --no-wait
 ```
 
 **Example**:
@@ -334,23 +338,23 @@ az aks delete --name <cluster-name> --resource-group <resource-group> --yes --no
 az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
 ```
 
-### **Troubleshooting**
+### Troubleshooting
 
-*   **View Pod Logs**:
+* **View Pod Logs**:
 
     To view logs for a specific pod:
 
     ```bash
     kubectl logs <pod-name> -n <namespace>
     ```
-*   **View Events**:
+* **View Events**:
 
     To view events in the namespace:
 
     ```bash
     kubectl get events -n <namespace> --sort-by='.metadata.creationTimestamp'
     ```
-*   **Reinstall Chart**:
+* **Reinstall Chart**:
 
     If issues persist, uninstall and reinstall Hyperswitch:
 
@@ -359,7 +363,7 @@ az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
     helm install <release-name> hyperswitch/hyperswitch-stack -n <namespace>
     ```
 
-### **Customization & Configuration**
+### Customization & Configuration
 
 To customize Hyperswitch, clone the Helm chart repository and modify `values.yaml`:
 

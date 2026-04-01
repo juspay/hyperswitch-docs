@@ -4,7 +4,7 @@ icon: panel-ews
 
 # Configure and Run the Application
 
-## Configure the application
+### Configure the application
 
 The application configuration files are present under the [`config`](https://github.com/juspay/hyperswitch/blob/main/config) directory.
 

@@ -4,28 +4,24 @@ description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
 
 # Production ready deployment on AWS
 
-{% hint style="info" %}
-This section covers the steps for deploying the Juspay Hyperswitch card vault as an individual component
-{% endhint %}
+> ℹ️ **Info:** This section covers the steps for deploying the Juspay Hyperswitch card vault as an individual component
 
 If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the [full-stack deployment guide](../../deploy-on-aws-using-cloudformation.md) of Juspay Hyperswitch which includes the card locker as well.
 
 ### Standalone deployment of the Juspay Hyperswitch Card Vault
 
-{% hint style="warning" %}
-Pre-requisites
-
-* `git` installed on your local machine
-* node version 18
-* An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
-{% endhint %}
+> ⚠️ **Warning:** Pre-requisites
+>
+> * `git` installed on your local machine
+> * node version 18
+> * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
 #### Step 1 - [Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
+![Creating AWS user](../../../../.gitbook/assets/AWS%20user%20\(1\).gif)
 
 #### Step 2 - Configure your AWS credentials in your terminal
 
@@ -38,7 +34,7 @@ For this step you would need the following from your AWS account
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
+![AWS Access Keys](../../../../.gitbook/assets/Screenshot%202023-11-02%20at%205.48.06%20PM.png)
 
 Once you have the keys run the below command
 
@@ -65,9 +61,7 @@ Once the script is run you will have to provide the following as inputs
 2. Provide the Locker DB password of your choice when prompted
 3. If you want to deploy the card vault in an existing VPC of yours, provide the VPC ID when prompted.
 
-{% hint style="warning" %}
-Note: The VPC should have at least one private subnet with egress to deploy the card vault
-{% endhint %}
+> ⚠️ **Warning:** Note: The VPC should have at least one private subnet with egress to deploy the card vault
 
 4. If you don't have one or want to set up a new VPC leave the input blank and proceed
 
@@ -113,9 +107,7 @@ On successful deployment of the Card Vault you will receive the following
 | Locker Public Key     | The public key of the card vault that needs to be used to JWE encrypt the requests to the card vault            |
 | Tenant Private Key    | The private key of the tenant application that needs to be used to JWE decrypt the response from the card vault |
 
-{% hint style="warning" %}
-Make sure to save the keys and passwords you provide while running the script
-{% endhint %}
+> ⚠️ **Warning:** Make sure to save the keys and passwords you provide while running the script
 
 #### Integrating it with your Application
 
@@ -127,8 +119,6 @@ ROUTER__JWEKEY__VAULT_ENCRYPTION_KEY= # add the JWE public key of locker generat
 ROUTER__JWEKEY__VAULT_PUBLIC_KEY= # add the JWE private key of tenant generated above
 ```
 
-### Next step:
+### Next step
 
-{% content-ref url="../../../account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../account-setup/test-a-payment.md)
-{% endcontent-ref %}
+[Test a Payment](../../../account-setup/test-a-payment.md)

@@ -1,15 +1,13 @@
 ---
-description: >-
-  Create your Hyperswitch account and add a payment provider using Hyperswitch
-  APIs through postman
+description: Create your Juspay Hyperswitch account and add a payment provider using Hyperswitch APIs through postman
 icon: rocket-launch
 ---
 
 # Using postman
 
-## Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
+### Create a Hyperswitch account <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-​Hyperswitch operates on a multi-tenant architecture, enabling a single application server to support multiple merchants. To create a new merchant account, follow these steps:​
+Juspay Hyperswitch operates on a multi-tenant architecture, enabling a single application server to support multiple merchants. To create a new merchant account, follow these steps:​
 
 1. **Locate the Admin API Key**:
    * Find the `config/docker_compose.toml` file in your Hyperswitch setup.​
@@ -61,7 +59,7 @@ curl --location 'http://localhost:8080/accounts' \
 
 * Upon executing the command, you should receive a response containing the `merchant_id` and `publishable_key`.​
 
-## Create an API key <a href="#user-content-create-an-api-key" id="user-content-create-an-api-key"></a>
+### Create an API key <a href="#user-content-create-an-api-key" id="user-content-create-an-api-key"></a>
 
 To generate an API key for your merchant account in Hyperswitch, follow these steps:​
 
@@ -91,7 +89,7 @@ curl --location 'http://localhost:8080/api_keys/<your_merchant_id>' \
 
 * The response will include the plaintext API key. Store this key securely, as it is essential for authenticating API requests from your merchant server.​
 
-## Set up a payment processor <a href="#user-content-set-up-a-payment-processor-account" id="user-content-set-up-a-payment-processor-account"></a>
+### Set up a payment processor <a href="#user-content-set-up-a-payment-processor-account" id="user-content-set-up-a-payment-processor-account"></a>
 
 ​To integrate your preferred payment processor with Hyperswitch, follow these steps:​
 
@@ -171,7 +169,8 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
           "recurring_enabled": true,
           "installment_payment_enabled": true
         }
-  }
+    }
+  ]
 }'
 ```
 
@@ -185,11 +184,11 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 * In the `payment_methods_enabled` section, specify the payment methods and types you wish to enable. For example, to enable credit card payments via Visa and Mastercard, include them as shown in the cURL command above.
 
-## **Resources**
+### Resources
 
 * To explore more of our APIs, please check the remaining folders in the [Postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch-development/collection/25176162-630b5353-7002-44d1-8ba1-ead6c230f2e3)
 
-## Next step
+### Next step
 
 {% content-ref url="test-a-payment.md" %}
 [test-a-payment.md](test-a-payment.md)

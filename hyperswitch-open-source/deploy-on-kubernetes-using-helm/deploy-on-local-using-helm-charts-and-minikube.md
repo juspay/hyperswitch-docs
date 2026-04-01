@@ -6,9 +6,9 @@ description: >-
 
 # Deploy on Local using Helm Charts and Minikube
 
-## **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
+### **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
-### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
+#### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
 
 #### **Step 1: Install Required Tools** <a href="#id-5nsuvyw3aien" id="id-5nsuvyw3aien"></a>
 
@@ -27,7 +27,7 @@ Install Minikube following the official documentation:[ Install Minikube](https:
 Helm is a package manager for Kubernetes applications.\
 Install Helm using the instructions here:[ Install Helm](https://helm.sh/docs/intro/install/)
 
-#### **Step 2: Start Minikube** <a href="#v4ghhsu6urci" id="v4ghhsu6urci"></a>
+#### **Step 2: Start Minikube** <a href="#v4ghhsu6urci" id="id-4ghhsu6urci"></a>
 
 Start a Minikube cluster with sufficient resources:
 
@@ -43,7 +43,7 @@ Verify the cluster is running:
 kubectl get nodes
 ```
 
-### Option 2: Setting Up a Local Kubernetes Cluster using OrbStack (Only for macOS)
+#### Option 2: Setting Up a Local Kubernetes Cluster using OrbStack (Only for macOS)
 
 **Step 1: Install Required Tools**
 
@@ -61,7 +61,7 @@ brew install orbstack  # Download the OrbStack application
 2. Navigate to the Pods section.
 3. Enable Kubernetes from the settings.
 
-## **Part 2: Deploy Hyperswitch on Kubernetes Using Helm** <a href="#jqgk5qw5bkgo" id="jqgk5qw5bkgo"></a>
+### **Part 2: Deploy Hyperswitch on Kubernetes Using Helm** <a href="#jqgk5qw5bkgo" id="id-jqgk5qw5bkgo"></a>
 
 #### **Step 1: Add and Update the Hyperswitch Helm Repository** <a href="#id-75zpwj4wb8db" id="id-75zpwj4wb8db"></a>
 
@@ -119,7 +119,7 @@ helm uninstall hypers-v1 -n hyperswitch
 kubectl delete namespace hyperswitch
 ```
 
-### **Troubleshooting** <a href="#ywgi5rvuean2" id="ywgi5rvuean2"></a>
+### **Troubleshooting** <a href="#ywgi5rvuean2" id="id-ywgi5rvuean2"></a>
 
 #### **View Pod Logs** <a href="#id-7wtmzixwrfeq" id="id-7wtmzixwrfeq"></a>
 
@@ -127,7 +127,7 @@ kubectl delete namespace hyperswitch
 kubectl logs <pod-name> -n hyperswitch
 ```
 
-#### **View Events** <a href="#ptykemgnnwf0" id="ptykemgnnwf0"></a>
+#### **View Events** <a href="#ptykemgnnwf0" id="id-ptykemgnnwf0"></a>
 
 ```bash
 kubectl get events -n hyperswitch --sort-by='.metadata.creationTimestamp'
