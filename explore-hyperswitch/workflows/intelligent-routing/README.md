@@ -9,7 +9,7 @@ icon: flux-capacitor
 
 The Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
 
-## Types of Intelligent Routing
+### Types of Intelligent Routing
 
 Hyperswitch supports four intelligent routing strategies:
 
@@ -24,7 +24,7 @@ Hyperswitch supports four intelligent routing strategies:
 * **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied.
 * **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]&#x20;
 
-## Architecture Diagram
+### Architecture Diagram
 
 <figure><img src="../../../.gitbook/assets/image (157) (1).png" alt=""><figcaption></figcaption></figure>
 

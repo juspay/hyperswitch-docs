@@ -5,20 +5,20 @@ icon: screwdriver-wrench
 
 # Self-Deployment Guide
 
-## Self-deploy and integrate it with your existing orchestrator
+### Self-deploy and integrate it with your existing orchestrator
 
 Juspay Hyperswitch's intelligent routing engine can be self-deployed to fit into your existing payments setup:
 
 <figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
-### 1. Clone the Repository
+#### 1. Clone the Repository
 
 ```
 git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
 ```
 
-### 2. Install Docker
+#### 2. Install Docker
 
 ```
 Make sure Docker is installed on your system.
@@ -29,9 +29,9 @@ You can download and install Docker Desktop from the below links.
 - Linux - https://docs.docker.com/desktop/setup/install/linux/
 ```
 
-### 3. Run the Project
+#### 3. Run the Project
 
-#### a. First-Time Setup
+##### a. First-Time Setup
 
 If you're setting up the environment for the first time, run:
 
@@ -52,7 +52,7 @@ This will:
 * Set up redis and the server for running the application
 * Push the configs defined in the config.yaml & the static rules defined for routing in priority_logic.txt to the DB
 
-#### b. Start the Server (without resetting DB)
+##### b. Start the Server (without resetting DB)
 
 If the DB schema is already set up and you don't want to reset the DB, use:
 

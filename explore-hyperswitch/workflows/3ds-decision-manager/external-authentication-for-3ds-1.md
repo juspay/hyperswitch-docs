@@ -48,9 +48,9 @@ Initiate a Payments Create API from your server with [external authentication](h
  "request_external_three_ds_authentication": "true"
 ```
 
-This flows follows the same steps as highlighted in authenticate with 3D secure via PSP&#x20;
+This flow follows the same steps as highlighted in authenticate with 3D secure via PSP.&#x20;
 
-Do a create payment call to initiate the transaction. The status of the response should be 'requires_customer_action" and should contain the "next_action" object.
+Do a create payment call to initiate the transaction. The status of the response should be `requires_customer_action` and should contain the `next_action` object.
 
 ```
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -153,7 +153,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 }'
 ```
 
-After the challenge is completed, the status should go to 'succeeded' status
+After the challenge is completed, the status should go to `succeeded`.
 
 {% hint style="warning" %}
 **Visit** [**this**](../../payment-orchestration/3ds-decision-manager/broken-reference/) **page to complete few additional steps to enable this feature for Mobile SDK.**

@@ -7,7 +7,7 @@ icon: ruler
 
 {% embed url="https://youtu.be/Zs6H1vAKTJM" %}
 
-## Get started with Rule Based Routing
+### Get started with Rule Based Routing
 
 Juspay Hyperswitch provides rule-based routing configuration that comprises one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.
 
@@ -19,7 +19,7 @@ Juspay Hyperswitch provides rule-based routing configuration that comprises one 
 2. **Split payments across processors:** The payment volume could be distributed across more than one processor. Eg: (Stripe: 70%, Paypal: 30%)
 3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, Paypal)
 
-## Steps to configure Rule Based Configuration in Smart Router
+### Steps to configure Rule Based Configuration in Smart Router
 
 **Step 1:** Click on `Setup` for **Rule Based Configuration:**
 
@@ -37,6 +37,6 @@ Juspay Hyperswitch provides rule-based routing configuration that comprises one 
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-10-01 at 1.37.15 PM.png" alt=""><figcaption></figcaption></figure>
 
-## How Rule Based Routing Works
+### How Rule Based Routing Works
 
 {% embed url="https://hyperswitch.io/video/Rule_Based_video.mp4" %}

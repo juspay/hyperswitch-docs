@@ -8,7 +8,7 @@ icon: plug
 
 # Connect External Vaults to Hyperswitch Orchestration
 
-## Modular Vaulting in Hyperswitch
+### Modular Vaulting in Hyperswitch
 
 Juspay Hyperswitch addresses the challenges with traditional vaults through Modular Vaulting: a flexible, merchant-centric approach to payment data infrastructure that emphasizes control, interoperability, and security.
 
@@ -16,28 +16,28 @@ Modular Vaulting is a key component of Juspay's payment system, offering merchan
 
 <div align="center"><img src="../../../.gitbook/assets/0.png" alt=""></div>
 
-## Modular Vaulting Options
+### Modular Vaulting Options
 
 Hyperswitch supports both an integrated vault as well as external vaults for merchants using Hyperswitch as their payments orchestration solution in both self-hosted and Juspay-hosted deployment modes.
 
 <div align="center"><img src="../../../.gitbook/assets/1 (1).png" alt=""></div>
 
-## Integrated Vault
+### Integrated Vault
 
-Hyperswitch's Payments Orchestration comes bundled with an integrated vault in both Merchant Self-Hosted as well as Juspay Hosted versions. In both cases, merchants don't need to enable any additional configurations to use the Vault. It addresses PCI Compliance challenges, Integration Complexities and Data Migration Challenges
+Hyperswitch's Payments Orchestration comes bundled with an integrated vault in both Merchant Self-Hosted as well as Juspay Hosted versions. In both cases, merchants don't need to enable any additional configurations to use the Vault. It addresses PCI Compliance challenges, Integration Complexities and Data Migration Challenges.
 
-## External Vault
+### External Vault
 
 Juspay's Modular Payments architecture enables merchants to connect to [external vault](https://juspay.io/integrations). This external vault could either be:
 
 1. [Juspay Hosted Vault + SDK](../../../about-hyperswitch/payment-suite-1/payment-method-card/proxy.md) as a standalone solution
 2. Third party vaults such as VGS, TokenEx, Voltage, Hashicorp, etc. in case of both SaaS and Self-deployed orchestration
 
-### Juspay Hosted Vault
+#### Juspay Hosted Vault
 
 Merchants can outsource their PCI compliance to Juspay by opting to use [Juspay's Hosted Vault + SDK ](../../../about-hyperswitch/payment-suite-1/payment-method-card/proxy.md)as a standalone solution.
 
-### Third Party Vault
+#### Third Party Vault
 
 Through Hyperswitch, Merchants can add [external vault providers](https://juspay.io/integrations) such as VGS, HashiCorp, and Voltage, leveraging their SDKs to collect and tokenize cards. This ensures flexibility in vault selection while maintaining compliance, security, and seamless token management across multiple payment processors. Additionally, we also support other extended features via an external vault such as:
 

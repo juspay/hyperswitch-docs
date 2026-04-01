@@ -13,14 +13,14 @@ All card storage and tokenization are handled through the native Hyperswitch Vau
 
 This setup ensures full data ownership while leveraging Hyperswitch's built-in PCI-compliant vault stack.
 
-## Key Highlights
+### Key Highlights
 
 * Native Hyperswitch Vault runs within the merchant's infrastructure.
 * Merchant is fully responsible for PCI DSS certification and data handling.
 * Enables seamless use of Network Tokenization, Volatile Tokenization, and Guest Checkout Tokenization.
 * Ideal for highly regulated merchants (e.g., banks, payment institutions) that prefer on-prem control.
 
-### Self-hosted orchestration - Payments and vaulting flow
+#### Self-hosted orchestration - Payments and vaulting flow
 
 <figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 

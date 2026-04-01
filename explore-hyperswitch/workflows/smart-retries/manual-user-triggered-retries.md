@@ -67,11 +67,11 @@ if (manualRetryAllowed && existingClientSecret) {
 
 * The SDK is re-initialized on the same Payment Intent.
 * The customer can retry payment by entering updated details.
-* The SDK then performs /payments/confirm again under the same payment\_id.\
+* The SDK then performs /payments/confirm again under the same payment\_id.
 
 ### API Workflow
 
-#### 1️⃣ Create a Payment Intent
+#### Create a Payment Intent
 
 Create a Payment Intent before initiating checkout.
 
@@ -100,7 +100,7 @@ Create a Payment Intent before initiating checkout.
 
 ```
 
-#### 2️⃣ Confirm the Payment (Triggered by Checkout SDK)
+#### Confirm the Payment (Triggered by Checkout SDK)
 
 When the customer enters card details and clicks Pay Now, the Hyperswitch SDK automatically makes a /payments/confirm call.
 
@@ -126,9 +126,9 @@ If this payment fails, the response will include:
 
 `manual_retry_allowed : true`
 
-#### 3️⃣ Retry the Payment (If Allowed)
+#### Retry the Payment (If Allowed)
 
-If `manual_retry_allowed : true`, you can retry on the same Payment Intent.\
+If `manual_retry_allowed : true`, you can retry on the same Payment Intent.
 
 * For redirect flows, this can be done by remounting the SDK as described earlier.
 * For SDK-managed (non-redirect) flows, Hyperswitch automatically handles this internally.
@@ -155,7 +155,7 @@ If `manual_retry_allowed : true`, you can retry on the same Payment Intent.\
 
 ### Response Field Reference
 
-**Field:** `manual_retry_allowed`\
+**Field:** `manual_retry_allowed`
 **Type:** Boolean / null
 
 Specifies whether manual retry is supported for a failed payment.
