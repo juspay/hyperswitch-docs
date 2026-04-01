@@ -8,9 +8,9 @@ icon: link
 
 # Payout Links
 
-Introducing Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer / vendor / partner's experience by making instant payouts in their preferred mode of transaction with preferred processor.
+Juspay Hyperswitch introduces Payout Links - Make sending out money to beneficiaries, simple and easy. Improve customer / vendor / partner's experience by making instant payouts in their preferred mode of transaction with preferred processor.
 
-## Use cases for Payout links
+### Use cases for Payout links
 
 * Corporates - Pay marketing affiliates and reimburse employees.
 * BFSI (Banking, Financial Services, and Insurance) - Settling insurance claims and paying DSA (Direct Selling Agents) incentives.
@@ -20,7 +20,7 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 * Online gaming - Distribute prize money to players.
 * NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+### How to configure Payout links through Hyperswitch API?
 
 ### Prerequisites
 
@@ -216,7 +216,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 <figure><img src="../../../.gitbook/assets/payout-link-non-iframed.png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
 
-## FAQ
+### FAQ
 
 <details>
 

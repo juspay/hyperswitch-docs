@@ -1,12 +1,12 @@
 ---
-description: Accept open-banking payments through Volt via Hyperswitch
+description: Accept open-banking payments through Volt via Juspay Hyperswitch.
 hidden: true
 ---
 
 # Volt
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Volt through Hyperswitch
+This section gives you an overview of how to make payments via Volt through Hyperswitch.
 {% endhint %}
 
 <img src="../../../../../.gitbook/assets/Volt-Logo (1).png" alt="logo_volt" data-size="original">

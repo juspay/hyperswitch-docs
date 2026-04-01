@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via ACI through Hyper
 
 ![](https://hyperswitch.io/icons/homePageIcons/logos/ACILogo.svg)
 
-ACI Worldwide enables corporations to process and manage digital payments, power omni-commerce payments, present and process bill payments, and manage fraud and risk. To learn more about payment methods supported by ACI via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
+ACI Worldwide enables corporations to process and manage digital payments, power omni-commerce payments, present and process bill payments, and manage fraud and risk. To learn more about payment methods supported by ACI via Juspay Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
 ### Activating ACI via Hyperswitch
 

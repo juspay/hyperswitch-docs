@@ -1,15 +1,17 @@
 ---
-description: Accept payments through MultiSafepay — a Dutch fintech providing online payment processing, digital wallets, and fraud prevention — via Hyperswitch.
+description: Accept payments through MultiSafepay — a Dutch fintech providing online payment processing, digital wallets, and fraud prevention — via Juspay Hyperswitch.
 hidden: true
 ---
 
 # MultiSafepay
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via MultiSafepay through Hyperswitch.
+This section gives you an overview of how to make payments via MultiSafepay through Juspay Hyperswitch.
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/multisafepayLogo.svg)
+
+### About
 
 MultiSafepay is a Dutch fintech company that provides a range of payment solutions and services, including online payment processing, digital wallets, and fraud prevention tools, to businesses throughout Europe. To know more about payment methods supported by MultiSafepay via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 

@@ -1,14 +1,16 @@
 ---
-description: Learn how to activate Rapyd as a payment connector on Hyperswitch to accept and send global payments across multiple payment methods.
+description: Learn how to activate Rapyd as a payment connector on Juspay Hyperswitch to accept and send global payments across multiple payment methods.
 ---
 
 # Rapyd
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Rapyd through Hyperswitch.
+This section gives you an overview of how to make payments via Rapyd through Juspay Hyperswitch.
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/rapydLogo.svg)
+
+### About
 
 Rapyd allows businesses to accept and send payments to any business or consumer entity present anywhere in a faster, cheaper, and easier manner. To know more about payment methods supported by Rapyd via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 

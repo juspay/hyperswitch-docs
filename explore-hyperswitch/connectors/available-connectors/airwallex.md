@@ -7,7 +7,7 @@ hidden: true
 
 ![Airwallex logo](https://hyperswitch.io/icons/homePageIcons/logos/airwallexLogo.svg)
 
-Airwallex is a financial technology company that provides businesses with global payment solutions, including cross-border payments, foreign exchange, and risk management, with easy integration. To know more about payment methods supported by Airwallex via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
+Airwallex is a financial technology company that provides businesses with global payment solutions, including cross-border payments, foreign exchange, and risk management, with easy integration. To know more about payment methods supported by Airwallex via Juspay Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
 ### Activating Airwallex via Hyperswitch
 

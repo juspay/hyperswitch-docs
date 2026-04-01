@@ -3,7 +3,7 @@ description: Step-by-step guide to activate and configure your preferred payment
 icon: chart-network
 ---
 
-# Activate Connector on Hyperswitch
+# Activate Connector on Juspay Hyperswitch
 
 ### Steps to activate connector on the Hyperswitch Control Center
 

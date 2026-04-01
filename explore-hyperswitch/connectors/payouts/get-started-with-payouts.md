@@ -5,7 +5,7 @@ description: Learn how to configure payout processors and process payouts via th
 
 # Getting Started with Payouts
 
-To begin processing payouts with Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
+To begin processing payouts with Juspay Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
 
 The following diagram illustrates the interaction between your application, the Hyperswitch orchestration layer, and the underlying payout processors.
 

@@ -1,23 +1,23 @@
 ---
-description: Connect GlobalPayments with Hyperswitch to accept over 140 payment types across multiple channels with subscription and recurring payment support.
+description: Connect GlobalPayments with Juspay Hyperswitch to accept over 140 payment types across multiple channels with subscription and recurring payment support.
 hidden: true
 ---
 
 # GlobalPayments
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via GlobalPayments through Hyperswitch
+This section gives you an overview of how to make payments via GlobalPayments through Juspay Hyperswitch
 {% endhint %}
 
 ![logo\_globalPayment](https://hyperswitch.io/icons/homePageIcons/logos/GlobalPaymentsLogo.svg)
 
-## About
+### About
 
 Global Payments allows businesses to accept over 140 payment types across several channels with industry-specific solutions. Merchants can use it to set up subscriptions and recurring automatic payments, along with multiple customizable options for checkout. To know more about payment methods supported by GlobalPayments via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
-## Activating GlobalPayments via Hyperswitch
+### Activating GlobalPayments via Hyperswitch
 
-### Prerequisites
+#### Prerequisites
 
 1. You need to be registered with GlobalPayments in order to proceed. In case you aren't, you can quickly set up your GlobalPayments account [here](https://www.globalpayments.com/en-ap).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

@@ -5,7 +5,7 @@ icon: repeat
 
 # Subscriptions with Modular Payments
 
-Businesses running on a subscription model — powered by providers such as Chargebee, Recurly, or Stripe Billing — can now augment their setup with payments orchestration. By decoupling payments from the subscription provider, you use the provider purely for subscription ledger and scheduling while owning 100% of the card vaulting, payment attempts, and retry logic. This logic can be managed in-house or via an ensemble of specialized, payment-focused orchestrators and third parties that are modularized to work together.
+Businesses running on a subscription model — powered by providers such as Chargebee, Recurly, or Stripe Billing — can now augment their setup with Juspay Hyperswitch payments orchestration. By decoupling payments from the subscription provider, you use the provider purely for subscription ledger and scheduling while owning 100% of the card vaulting, payment attempts, and retry logic. This logic can be managed in-house or via an ensemble of specialized, payment-focused orchestrators and third parties that are modularized to work together.
 
 ### Benefits
 

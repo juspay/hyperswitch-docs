@@ -5,7 +5,7 @@ description: Learn how Hyperswitch Smart Retries automatically recover failed pa
 
 # Smart Retries in Payout
 
-Smart Retries enable the automatic recovery of failed payout attempts by re-initiating transactions based on specific error types and connector availability. This mechanism optimizes the success rate of disbursements by evaluating whether a retry is likely to resolve the initial failure.
+Juspay Hyperswitch Smart Retries enable the automatic recovery of failed payout attempts by re-initiating transactions based on specific error types and connector availability. This mechanism optimizes the success rate of disbursements by evaluating whether a retry is likely to resolve the initial failure.
 
 ### How Smart Retries Work
 

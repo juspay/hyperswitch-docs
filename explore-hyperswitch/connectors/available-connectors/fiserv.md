@@ -1,12 +1,12 @@
 ---
-description: Accept payments through Fiserv using Hyperswitch — configure API keys, prerequisites, and supported payment methods.
+description: Accept payments through Fiserv using Juspay Hyperswitch — configure API keys, prerequisites, and supported payment methods.
 hidden: true
 ---
 
 # Fiserv
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Fiserv through Hyperswitch
+This section gives you an overview of how to make payments via Fiserv through Juspay Hyperswitch
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/fiservLogo.svg)

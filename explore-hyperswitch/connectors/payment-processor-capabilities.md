@@ -8,9 +8,9 @@ icon: money-bill-1-wave
 
 # Payment Processor Capabilities
 
-## Core Payment Flows
+### Core Payment Flows
 
-Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
+Juspay Hyperswitch supports a wide range of parameters through the Payments Create API for the underlying payment connectors it integrates with. The diagram below illustrates the various parameters and flows supported as part of a typical payment connector integration.
 
 ### Card Payment Flow Configurations
 
