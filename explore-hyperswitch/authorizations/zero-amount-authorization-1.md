@@ -9,11 +9,11 @@ icon: circle-0
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero amount authorization flow in Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
+The zero amount authorization flow in Juspay Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment_method_id would be created and issued to the merchant. And in the future they can charge against this payment_method_id.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
-## How to use the zero amount authorization flow?
+### How to use the zero amount authorization flow?
 
 1. Creating a 0 amount payment along with `setup_future_usage= off_session` to set up a mandate to store and charge the customer's payment method later **( Called as 'CIT' : Customer initiated transaction)**
 
@@ -35,16 +35,16 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 "profile_id": <enter the relevant profile id>,
 "setup_future_usage": "off_session"
 }'
-
 ```
 
-2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Hyperswitch Unified Checkout]**
+2. Confirm the payment after collecting payment information from the user **[You can skip this step if you are using the Hyperswitch Unified Checkout]**
 
-<pre class="language-bash"><code class="lang-bash"><strong>curl --location 'http://http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
-</strong>--header 'Content-Type: application/json' \
+```bash
+curl --location 'http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
+--header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
-<strong>--header 'api-key: &#x3C;enter your Hyperswitch API key here>' \
-</strong>--data-raw '{
+--header 'api-key: <enter your Hyperswitch API key here>' \
+--data-raw '{
     "confirm": true,
     "payment_method": "card",
     "payment_method_type": "credit",
@@ -89,9 +89,9 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
         }
     }
 }'
-</code></pre>
+```
 
-3. Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response
+3. Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment_method_id in the response
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
@@ -99,7 +99,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-4. Charge the customer later by passing the payment\_method\_id **(Called as 'MIT': Merchant initiated Transaction)**
+4. Charge the customer later by passing the payment_method_id **(Called as 'MIT': Merchant initiated Transaction)**
 
 Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment. Make sure you are using the same `customer_id` and `profile_id` from the CIT.
 
@@ -113,11 +113,11 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
     "currency": "USD",
     "confirm": true,
     "customer_id": "zero_auth_test_customer",
-    "profile_id": <enter the relevant profile id>
+    "profile_id": <enter the relevant profile id>,
     "off_session": true,
     "recurring_details": {
         "type": "payment_method_id",
         "data": "pm_lmTnIO5EdCiiMgRPrV9x"
-    },
+    }
 }'
 ```
