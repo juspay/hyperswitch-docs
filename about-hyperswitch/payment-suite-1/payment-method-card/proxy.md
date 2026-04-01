@@ -1,24 +1,24 @@
 ---
-description: Vault your card and use proxy end point for payment processing
+description: Vault your card and use proxy endpoint for payment processing
 icon: almost-equal-to
 ---
 
 # Proxy
 
-The Proxy Payments Service allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
+The Proxy Payments Service allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (de-tokenization), and forwards them securely to the PSP.
 
 Key Highlights:
 
-* No PSP re-integration needed – Keep your existing PSP connections.
-* PCI DSS scope reduction – Raw card data stays within Vault.
-* Data security – Detokenization happens only during the request lifecycle.
-* Centralized token management – One vault, many PSPs.
+- No PSP re-integration needed – Keep your existing PSP connections.
+- PCI DSS scope reduction – Raw card data stays within Vault.
+- Data security – Detokenization happens only during the request lifecycle.
+- Centralized token management – One vault, many PSPs.
 
-### Vault and proxy - Vaulting and payments flow
+### Vault and Proxy - Vaulting and Payments Flow
 
 <figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
-#### **1. Create Payment Method Session (Server-Side)**&#x20;
+#### 1. Create Payment Method Session (Server-Side)
 
 The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
@@ -35,7 +35,7 @@ curl --request POST \
 '
 ```
 
-#### **2. Initialize SDK (Client-Side)**&#x20;
+#### 2. Initialize SDK (Client-Side)
 
 The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 
@@ -91,43 +91,43 @@ async function initialize() {
 initialize();
 ```
 
-#### **3. Collect and Vault Card (Client-Side)**&#x20;
+#### 3. Collect and Vault Card (Client-Side)
 
-The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the /`Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
+The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the `/Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
 
-#### **4. Retrieve Payment Method ID (Server-Side)**&#x20;
+#### 4. Retrieve Payment Method ID (Server-Side)
 
 The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 
-**Execute Proxy Payment (Server-Side)**&#x20;
+#### Execute Proxy Payment (Server-Side)
 
-The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id` . The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
+The merchant server initiates the payment by sending a request to the [Hyperswitch vault proxy](https://docs.hyperswitch.io/~/revisions/01bZ2maqjwpnmrttix7i/explore-hyperswitch/payments-modules/vault/hyperswitch-vault-pass-through-proxy-payments) endpoint using the `payment_method_id`. The proxy securely replaces the token with the actual card data from the Vault and forwards the request to the Payment Service Provider (PSP), returning the final payment response to the merchant.
 
-**New user payments flow**
+#### New User Payments Flow
 
-1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch&#x20;
-2. [Initialize SDK (Client-Side) ](../../../explore-hyperswitch/payment-experience/payment-method/)The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
-3. Collect and Vault Card (Client-Side) The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the /`Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
+1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch
+2. [Initialize SDK (Client-Side)](../../../explore-hyperswitch/payment-experience/payment-method/) The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
+3. Collect and Vault Card (Client-Side) The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the `/Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
 4. Retrieve Payment Method ID (Server-Side) The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
-5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the&#x20;
+5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the
 
-**Proxy Payment Request**
+#### Proxy Payment Request
 
 Include the following details:
 
 1. Include the Hyperswitch Proxy payments related fields in the headers:
    1. URL: Proxy endpoint (https://sandbox.hyperswitch.io/proxy)
-   2. API Key: Your API key for the merchant\_id under which the vault service was created on Hyperswitch dashboard
-   3. Profile\_id: Your profile\_id for the merchant\_id under which the vault service was created on Hyperswitch dashboard
+   2. API Key: Your API key for the merchant_id under which the vault service was created on Hyperswitch dashboard
+   3. Profile_id: Your profile_id for the merchant_id under which the vault service was created on Hyperswitch dashboard
 2. Include the following details in the body:
    1. `request_body`: Include the request body of the PSP payment request
    2. `destination_url`, `method`, `headers`: Pass your PSP url as destination url, PSP endpoint method and headers under the respective fields
    3. Vault tokens:
-      1. `token_type` : Choose payment\_method\_id or tokenization\_id
-      2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
-   4. Placeholders for token data: In the `request_body`, Plug in the dynamic placeholders`{{$card_number}}`, `{{$card_exp_month}}`,`{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
+      1. `token_type`: Choose payment_method_id or tokenization_id
+      2. `token`: Plug the payment_method_id or tokenization_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
+   4. Placeholders for token data: In the `request_body`, Plug in the dynamic placeholders `{{$card_number}}`, `{{$card_exp_month}}`, `{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
 
-**Sample Proxy payment request (Checkout.com)**
+#### Sample Proxy Payment Request (Checkout.com)
 
 <pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/proxy' \
 --header 'Content-Type: application/json' \

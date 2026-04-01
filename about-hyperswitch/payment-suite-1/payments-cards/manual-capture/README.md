@@ -1,7 +1,5 @@
 ---
-description: >-
-  Understand how to place a hold on your customers' funds and capture them later
-  either fully or partially and either in one-go or multiple times
+description: Understand how to place a hold on your customers' funds and capture them later either fully or partially and either in one-go or multiple times
 icon: transmission
 ---
 
@@ -9,7 +7,7 @@ icon: transmission
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}
 
-In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called 'one-step' payments flow and at Hyperswitch we term this the 'Automatic Capture' flow.
+In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called 'one-step' payments flow and at Juspay Hyperswitch we term this the 'Automatic Capture' flow.
 
 But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the 'two-step' flow or 'Auth and Capture' flow in general payments parlance. Here at Hyperswitch, we call this the 'Manual Capture' flow.
 
@@ -123,4 +121,3 @@ Possible states:
 #### Over Capture &#x20;
 
 Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. You can find detailed docs [here](https://docs.hyperswitch.io/~/revisions/KHifKaZGv4c5XEloMvlu/about-hyperswitch/payment-suite-1/payments-cards/manual-capture/overcapture)&#x20;
-
