@@ -17,7 +17,7 @@ description: Test a payment with your configured connector using the Hyperswitch
    <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message
-7. Validate the transaction on the Hyperswitch dashboard:
+7. Validate the transaction on the Juspay Hyperswitch dashboard:
    - Go to the left pane on the Hyperswitch dashboard.
    - Click on **Operations > Payments**.
    - Your transactions should be visible under the order management tab.

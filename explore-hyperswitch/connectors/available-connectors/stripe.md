@@ -1,5 +1,5 @@
 ---
-description: Connect Stripe to Hyperswitch to accept payments, manage webhooks, and enable multiple payment methods through a unified API integration.
+description: Connect Stripe to Juspay Hyperswitch to accept payments, manage webhooks, and enable multiple payment methods through a unified API integration.
 ---
 
 # Stripe
@@ -12,9 +12,9 @@ This section gives you an overview of how to make payments via Stripe through Hy
 
 Stripe is a suite of APIs powering online payment processing and commerce solutions for internet businesses of all sizes. It allows businesses to accept payments and scale faster. To learn more about payment methods supported by Stripe via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
-## Activating Stripe via Hyperswitch
+### Activating Stripe via Hyperswitch
 
-### Prerequisites
+#### Prerequisites
 
 1. You need to be registered with Stripe in order to proceed. In case you aren't, you can quickly set up your Stripe account [here](https://dashboard.stripe.com/register).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -24,7 +24,7 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 5. Select all the payment methods you wish to use Stripe for. Ensure that these match the ones configured on your Stripe dashboard under **Settings -> Payments -> Payment methods**.
 6. Navigate to the webhooks section of your Stripe dashboard (**Developers -> Webhooks**) and create a new webhook by clicking **Add an endpoint**.
 
-## Configuring Webhooks
+### Configuring Webhooks
 
 **Step 1:** Set up your webhook endpoint on the Hyperswitch dashboard under **Settings -> Payment settings -> Click on the profile**.
 

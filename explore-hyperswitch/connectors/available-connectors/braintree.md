@@ -11,7 +11,7 @@ This section gives you an overview of how to make payments via Braintree through
 
 ### About
 
-Braintree is a payment processor that allows online businesses to accept payments via app or website. It also provides merchant accounts and payment gateways. PayPal owns Braintree, and a PayPal Business account is required. To know more about payment methods supported by Braintree via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
+Braintree is a payment processor that allows online businesses to accept payments via app or website. It also provides merchant accounts and payment gateways. PayPal owns Braintree, and a PayPal Business account is required. To know more about payment methods supported by Braintree via Juspay Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
 ### Activating via Hyperswitch
 

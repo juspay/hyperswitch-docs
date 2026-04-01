@@ -6,12 +6,12 @@ hidden: true
 # Checkout
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Checkout through Hyperswitch
+This section gives you an overview of how to make payments via Checkout through Hyperswitch.
 {% endhint %}
 
 ![Checkout Logo](https://hyperswitch.io/icons/homePageIcons/logos/checkoutLogo.svg)
 
-Checkout.com is a global payment company that provides a gateway, an acquirer and processor as part of its end-to-end solution. They provide solutions to help businesses and their communities thrive in the digital economy. To know more about payment methods supported by Checkout via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
+Checkout.com is a global payment company that provides a gateway, an acquirer and processor as part of its end-to-end solution. They provide solutions to help businesses and their communities thrive in the digital economy. To know more about payment methods supported by Checkout via Juspay Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
 ### Prerequisites
 

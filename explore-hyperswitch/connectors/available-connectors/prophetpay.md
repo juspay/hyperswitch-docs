@@ -1,19 +1,19 @@
 ---
-description: Connect Prophetpay with Hyperswitch to accept and process payments through Prophetpay's integrated payment methods on your platform.
+description: Connect Prophetpay with Juspay Hyperswitch to accept and process payments through Prophetpay's integrated payment methods on your platform.
 hidden: true
 ---
 
 # Prophetpay
 
 {% hint style="info" %}
-This section gives you an overview of how to make payments via Prophetpay through Hyperswitch.
+This section gives you an overview of how to make payments via Prophetpay through Juspay Hyperswitch.
 {% endhint %}
 
 ![logo\_discord](../../../../../.gitbook/assets/logo_cps_new.jpg)
 
 ### About
 
-Prophetpay is a payment service provider that allows online businesses to accept and process payments through different integrated payment methods. To know more about payment methods supported by Prophetpay via Hyperswitch click [here](https://hyperswitch.io/pm-list).
+Prophetpay is a payment service provider that allows online businesses to accept and process payments through different integrated payment methods. To know more about payment methods supported by Prophetpay via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
 ### Activating Prophetpay via Hyperswitch
 

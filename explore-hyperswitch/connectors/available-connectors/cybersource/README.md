@@ -1,5 +1,5 @@
 ---
-description: Accept payments globally through CyberSource via Hyperswitch with support for multiple payment methods and geographies.
+description: Accept payments globally through CyberSource via Juspay Hyperswitch with support for multiple payment methods and geographies.
 ---
 
 # CyberSource
@@ -12,9 +12,9 @@ This section gives you an overview of how to make payments via CyberSource throu
 
 CyberSource offers global payment solutions to help businesses accept payments across channels and geographies using a digital-first approach. To know more about payment methods supported by CyberSource via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
-## Activating CyberSource via Hyperswitch
+### Activating CyberSource via Hyperswitch
 
-### Prerequisites
+#### Prerequisites
 
 1. You need to be registered with CyberSource in order to proceed. In case you aren't, you can quickly set up your CyberSource account [here](https://www.cybersource.com/en-gb.html).
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/register).

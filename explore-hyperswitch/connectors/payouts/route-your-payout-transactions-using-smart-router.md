@@ -5,17 +5,17 @@ description: Configure volume-based, rule-based, or fallback routing strategies 
 
 # Smart Router for Payouts
 
-The Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
+The Juspay Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
 
 > **Note:** Routing configurations for payout operations are isolated from payment operations. Modifying payout routing rules will not impact your payment routing logic and vice-versa.
 
 For a conceptual deep dive into the routing engine, refer to the [Smart Router Overview](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/route-your-payout-transactions-using-smart-router).
 
-## Configuration Options
+### Configuration Options
 
 You can manage your routing logic via the [Hyperswitch Dashboard](https://app.hyperswitch.io) or the [Routing APIs](https://api-reference.hyperswitch.io/v1/routing/routing--list). The dashboard provides a visual interface for constructing and activating these rules.
 
-## Prerequisites
+### Prerequisites
 
 To utilize Smart Routing, you must have at least two payout processors integrated and active on your account. Follow the [Getting Started with Payouts](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/get-started-with-payouts) guide to add connectors.
 
