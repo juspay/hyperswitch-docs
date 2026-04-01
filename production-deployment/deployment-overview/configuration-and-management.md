@@ -1,6 +1,6 @@
 # Configuration and Management
 
-### Configuration Files&#x20;
+### Configuration Files 
 
 In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://github.com/juspay/hyperswitch/tree/main/config/deployments).
 

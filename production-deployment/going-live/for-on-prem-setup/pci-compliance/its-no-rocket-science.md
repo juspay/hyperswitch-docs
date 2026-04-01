@@ -25,7 +25,7 @@ To locate -> Go to Settings -> Compliance&#x20;
 Companies that fall into PCI DSS Levels 2-4 are only required to complete a Self-Assessment Questionnaire (SAQ) and submit to the respective payment processor or acquirer. And that would be all !!
 {% endhint %}
 
-## Level of PCI compliance
+### Level of PCI compliance
 
 Depending on the number of transactions your business processes, you could be subject to different levels of PCI compliance.
 
@@ -33,13 +33,13 @@ Depending on the number of transactions your business processes, you could be su
 
 _Sources:_ [_Mastercard guidelines_](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html)_,_ [_Visa Guidelines_](https://www.visa.co.in/support/small-business/security-compliance.html)_,_ [_PCI SSC document library_](https://www.pcisecuritystandards.org/document_library/?category=pcidss\&hsCtaTracking=8aa4514c-37d0-40bc-b864-ed4c4aebb5de%7C8d5a5e5f-7860-4a8c-97cc-d91f17654660)_._&#x20;
 
-## About PCI Requirements and Controls
+### About PCI Requirements and Controls
 
 In general PCI compliance is consolidated into 12 Requirements and 224 controls.
 
 <table><thead><tr><th width="558">Requirements</th><th>Number of Controls</th></tr></thead><tbody><tr><td><strong>Requirement 1:</strong> Install and maintain a firewall configuration to protect cardholder data</td><td>20</td></tr><tr><td><strong>Requirement 2:</strong> Do not use vendor-supplied defaults for system passwords and other security parameters</td><td>12</td></tr><tr><td><strong>Requirement 3:</strong> Protect stored cardholder data</td><td>20</td></tr><tr><td><strong>Requirement 4:</strong> Encrypt transmission of cardholder data across open, public networks</td><td>4</td></tr><tr><td><strong>Requirement 5:</strong> Use and regularly update anti-virus software or programs</td><td>6</td></tr><tr><td><strong>Requirement 6:</strong> Develop and maintain secure systems and applications</td><td>28</td></tr><tr><td><strong>Requirement 7:</strong> Restrict access to cardholder data by business need to know</td><td>8</td></tr><tr><td><strong>Requirement 8:</strong> Assign a unique ID to each person with computer access</td><td>22</td></tr><tr><td><strong>Requirement 9:</strong> Restrict physical access to cardholder data</td><td>22</td></tr><tr><td><strong>Requirement 10:</strong> Track and monitor all access to network resources and cardholder data</td><td>28</td></tr><tr><td><strong>Requirement 11:</strong> Regularly test security systems and processes</td><td>16</td></tr><tr><td><strong>Requirement 12:</strong> Maintain a policy that addresses information security for all personnel</td><td>38</td></tr><tr><td><strong>Total</strong></td><td>224</td></tr></tbody></table>
 
-## Simplifying your PCI compliance
+### Simplifying your PCI compliance
 
 ### Self assess your business for PCI compliance
 
@@ -61,7 +61,7 @@ So eventually you are left with 10 PCI Requirements and 182 controls to comply w
 This is the reason behind our recommendation of installing a simple setup without the card vault, if your business processes less than 6 million card transactions
 {% endhint %}
 
-## Next step:
+### Next step:
 
 {% content-ref url="completing-the-saq.md" %}
 [completing-the-saq.md](completing-the-saq.md)

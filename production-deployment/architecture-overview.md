@@ -1,14 +1,15 @@
 ---
 icon: sitemap
+description: Overview of Juspay Hyperswitch architecture components including the app server, web SDK, card vault, and control center
 ---
 
 # Architecture Overview
 
 ### Core Components
 
-Hyperswitch uses the following components to deploy and manage a payment stack:
+Juspay Hyperswitch uses the following components to deploy and manage a payment stack:
 
-#### Hyperswitch App&#x20;
+#### Hyperswitch App
 
 The Hyperswitch App Server is the core engine for processing payments. It offers full support for various payment flows, including:
 
@@ -20,34 +21,34 @@ The Hyperswitch App Server is the core engine for processing payments. It offers
    3. Volume distribution
    4. Fallback strategies
    5. Intelligent retries using error-code-specific flows
-4. Extensibility: Connects with external fraud risk management (FRM) tools, 3DS authentication providers and queuing of refunds, webhooks and recurring payments.&#x20;
+4. Extensibility: Connects with external fraud risk management (FRM) tools, 3DS authentication providers and queuing of refunds, webhooks and recurring payments.
 
-The hyperswitch-app is dockerized with two sub-components -&#x20;
+The hyperswitch-app is dockerized with two sub-components:
 
-**i) hyperswitch-router -**&#x20;
+**i) hyperswitch-router -**
 
 Responsible for managing and coordinating different aspects of the payment processing system. When a payment request is received, it goes through the Router, which handles important processing and routing tasks.
 
-**(ii) hyperswitch-scheduler -**&#x20;
+**(ii) hyperswitch-scheduler -**
 
-Automates periodic deletion of card information and notifies merchants of API key expiry. Consists of two sub-components -&#x20;
+Automates periodic deletion of card information and notifies merchants of API key expiry. Consists of two sub-components:
 
-* Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
-* hyperswitch-consumer - Retrieves task batches from the queue and executes them
+- Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
+- hyperswitch-consumer - Retrieves task batches from the queue and executes them
 
 #### Hyperswitch Web
 
 1. A JavaScript based frontend SDK for inclusive, consistent and customizable payment experience, unifying checkout experience across platforms:
-2. Platform Support: Available for[ Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web),[ Android, and iOS](https://github.com/juspay/hyperswitch-client-core).
+2. Platform Support: Available for [Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web), [Android, and iOS](https://github.com/juspay/hyperswitch-client-core).
 3. Multi-Method Support: Handles cards, wallets, BNPL, bank transfers, and more.
-4. Flow Adaptability: Supports the nuances of different PSPs’ payment flows.
+4. Flow Adaptability: Supports the nuances of different PSPs' payment flows.
 5. Saved Payment Methods: When integrated with the locker, the SDK automatically displays stored cards or other saved instruments for returning users.
 
 #### Hyperswitch Card Vault
 
-1. A PCI-compliant Vault SDK to collect and store card data securely, ensuring sensitive information never touches your systems -&#x20;
+1. A PCI-compliant Vault SDK to collect and store card data securely, ensuring sensitive information never touches your systems:
 2. Tokenizes cards across multiple payment processors through a single unified API.
-3. Generates Network Tokens to optimize payment operations and reduce costs with automatic network token creation and updates, powered by Juspay’s certified Network Token Requestor capabilities.
+3. Generates Network Tokens to optimize payment operations and reduce costs with automatic network token creation and updates, powered by Juspay's certified Network Token Requestor capabilities.
 
 #### Hyperswitch Control Center
 
@@ -63,14 +64,14 @@ The Control Center is a no-code interface to manage and monitor your entire paym
 
 #### Hyperswitch Encryption Service
 
-A lightweight performant service to encrypt/ decrypt data, key management and manage key rotation.&#x20;
+A lightweight performant service to encrypt/decrypt data, key management and manage key rotation.
 
 ### Production Deployment Blueprint
 
-A typical production deployment blueprint of Hyperswitch looks like the following diagram.&#x20;
+A typical production deployment blueprint of Hyperswitch looks like the following diagram.
 
-It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service. <br>
+It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service.
 
 <figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
 
-The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Hyperswitch.&#x20;
+The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Hyperswitch.

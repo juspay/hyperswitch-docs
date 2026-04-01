@@ -7,7 +7,7 @@ There are two primary deployment topologies to enhance the reliability of enterp
 
 ### Multi-Region Active-Active Setup
 
-In an Active-Active setup, the merchant would deploy Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions.&#x20;
+In an Active-Active setup, the merchant would deploy Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions. 
 
 This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 

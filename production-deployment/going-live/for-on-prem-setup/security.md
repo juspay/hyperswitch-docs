@@ -13,7 +13,7 @@ Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data
 
 The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).&#x20;
 
-## Handling Sensitive Data
+### Handling Sensitive Data
 
 The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
@@ -44,7 +44,7 @@ To provide transaction information and analytics, only partially masked card det
 
 
 
-## Data Encryption Overview
+### Data Encryption Overview
 
 The application places a high priority on safeguarding sensitive information tied to `external API credentials`, `customers`, and `card details` and uses multi-layered encryption for the same.
 

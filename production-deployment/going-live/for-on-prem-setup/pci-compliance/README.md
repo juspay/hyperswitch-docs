@@ -11,7 +11,7 @@ The complexity around PCI compliance is often exaggerated, creating closed syste
 
 ***
 
-## PCI Compliance - Why and What?
+### PCI Compliance - Why and What?
 
 The current payment networks are built on a chain of trust between banks, card networks, payment processors and merchants. And the result is that _"everyone needs to take responsibility"_ for secure handling of card information.
 

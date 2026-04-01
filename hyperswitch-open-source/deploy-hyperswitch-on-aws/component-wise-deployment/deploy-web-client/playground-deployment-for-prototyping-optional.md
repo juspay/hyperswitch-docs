@@ -10,13 +10,13 @@ Explore the web client's full stack playground for rapid prototyping using a sin
 
 Please note that this deployment is just for the demo-playground. This is **optional** and does not replace the integration step. In order to go-live, please integrate the web client onto your app before the deployment of your app
 
-## Steps to Deploy Hyperswitch web client on AWS
+## Steps to Deploy Juspay Hyperswitch web client on AWS
 
-### **What do you need to get started**
+### What do you need to get started
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
-### **Let's begin!**
+### Let's begin!
 
 > #### Note
 >
@@ -91,7 +91,7 @@ For more information, [click here](https://docs.aws.amazon.com/cli/latest/usergu
 
 #### Step 2 - Configure the AWS CLI
 
-For this step you would need the following from you AWS account
+For this step you would need the following from your AWS account
 
 1. `Access key ID`
 2. `Secret Access Key`
@@ -125,7 +125,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 On running the above command, you will get an option to configure the following:
 
-**Mandatory:**&#x20;
+**Mandatory:**
 
 1. **`Publishable Key` -** This is a public key that resides on your client side for authentication
 2. **`Secret Key` -** This is the API key which should only be restricted to your app server
@@ -164,8 +164,6 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswitch_web_cleanup_setup.sh | bash
 ```
 
-##
-
 <details>
 
 <summary>Troubleshooting/ FAQs</summary>
@@ -173,7 +171,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 * **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
   Please check your AWS EC2 details and make sure that the EC2 is created and has all the permissions required to run the server and create security groups. Post this, re-run the script to do a re-deployment.
 
-- **AWS is throwing many errors while running the script**\
+* **AWS is throwing many errors while running the script**\
   Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
 
 </details>

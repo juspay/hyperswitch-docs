@@ -11,7 +11,7 @@ This chapter covers everything you need to know about handling maintenance and u
 
 ***
 
-## Hyperswitch version updates
+### Hyperswitch version updates
 
 Hyperswitch requires minimal maintenance effort, and updating to newer versions is quite simple
 
@@ -86,7 +86,7 @@ Hyperswitch Web client is periodically updated for new features and bug fixes.&#
 * Please follow the [Changelog](https://github.com/juspay/hyperswitch-web/blob/main/CHANGELOG.md) to get the latest updates. You can pull the latest changes to get new features or build new features and contribute to the `hyperswitch-web` repo for others to use.
 * For ensuring backward compatibility, please ensure that the major version of the web client is the same as that of the app server's major release version.
 
-## Request Features or Report Bugs
+### Request Features or Report Bugs
 
 You can reach out to us about new features or report bugs on GitHub:
 
