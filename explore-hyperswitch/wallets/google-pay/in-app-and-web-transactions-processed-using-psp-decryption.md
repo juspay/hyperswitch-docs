@@ -7,14 +7,14 @@ icon: google
 
 In this flow PSP decrypts the Google Pay token using your keys configured at PSP.
 
-## **Prerequisites**
+### **Prerequisites**
 
 There are few prerequisites that need to be fulfilled before integrating Google Pay on Juspay Hyperswitch -
 
 1. Configure Google Pay on your processor's dashboard
 2. In order to test Google Pay integration you will need to add test cards to your google account. You can go to [Google Pay API Test Cards Allowlist](https://groups.google.com/g/googlepay-test-mode-stub-data?pli=1) and click on Join Group to automatically add test cards in your Google Developer Account
 
-## **Configuring Google Pay on Hyperswitch**
+### **Configuring Google Pay on Hyperswitch**
 
 To configure Google Pay on Hyperswitch follow the steps given below -
 
@@ -28,7 +28,7 @@ To configure Google Pay on Hyperswitch follow the steps given below -
 5. Enter required fields and save the changes.
 6. In Google Pay Merchant Name, provide a user-visible merchant name
 
-## **Go-Live Checklist**
+### **Go-Live Checklist**
 
 Your app requires an approval from Google Pay before you go live. Please follow [Google's instructions](https://developers.google.com/pay/api/android/guides/test-and-deploy/request-prod-access) and request production access.
 
@@ -37,7 +37,7 @@ Your app requires an approval from Google Pay before you go live. Please follow 
 3. Set the Google Pay Environment to Production.
 4. Once the app is reviewed and approved, launch Google Pay from a signed, released build your app.
 
-## **Google Pay Compatibility**
+### **Google Pay Compatibility**
 
 Google Pay is available only in certain countries or regions and on certain devices. Take a look at the [exhaustive list of countries](https://support.google.com/googlepay/answer/12429287?visit_id=638320942600397737-977605919&rd=1#zippy=%2Cpay-online-or-in-apps) where Google Pay is available. For security reasons, Google Pay is not supported in some browsers. Please check the list below to know the supported browsers:
 

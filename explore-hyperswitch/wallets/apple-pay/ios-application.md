@@ -6,7 +6,7 @@ icon: apple
 
 # iOS Application
 
-## **Prerequisites**
+### **Prerequisites**
 
 Before beginning to integrate Apple Pay with Juspay Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
@@ -15,7 +15,7 @@ Before beginning to integrate Apple Pay with Juspay Hyperswitch, below prerequis
 
 Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to set up Apple Pay:
 
-## **Creating an Apple MerchantID**
+### **Creating an Apple MerchantID**
 
 You can create an Apple MerchantID referencing the video or following the steps mentioned below
 
@@ -25,7 +25,7 @@ You can create an Apple MerchantID referencing the video or following the steps 
 * Enter a unique descriptive identifier _(like merchant.com.testdomain.sandbox)_ and click Continue
 * Verify the description and identifier and click on Register
 
-## **Validating Merchant Domain**
+### **Validating Merchant Domain**
 
 You can validate the merchant domain by following the steps mentioned below:
 
@@ -39,7 +39,7 @@ You can validate the merchant domain by following the steps mentioned below:
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
 
-## **Creating Apple MerchantID Certificate and Private Key**
+### **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key by following the steps mentioned below:
 
@@ -62,7 +62,7 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-## **Configuring Apple Pay on Hyperswitch**
+### **Configuring Apple Pay on Hyperswitch**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below:
 
@@ -92,7 +92,7 @@ base64 -i certificate_sandbox.key
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-## **Creating Apple Pay Payment Processing Certificate**
+### **Creating Apple Pay Payment Processing Certificate**
 
 {% tabs %}
 {% tab title="Payment Processing Details At Connector" %}
@@ -163,7 +163,7 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 {% endtab %}
 {% endtabs %}
 
-## Integrate with Xcode
+### Integrate with Xcode
 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 

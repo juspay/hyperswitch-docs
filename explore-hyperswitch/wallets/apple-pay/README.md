@@ -7,11 +7,11 @@ icon: apple-pay
 
 Apple Pay allows customers to securely pay from their saved cards in their Apple Pay account in macOS (Safari) or iOS using Touch ID and Face ID and thereby eliminating the need for them to manually type in their card and shipping details. Apple Pay is currently supported by [participating banks and card issuers in 80+ countries](https://support.apple.com/en-us/HT207957).
 
-Follow the below guide for setting up Apple Pay on Hyperswitch based on your use-case:
+Follow the below guide for setting up Apple Pay on Juspay Hyperswitch based on your use-case:
 
-## **Web Domain**
+### **Web Domain**
 
-### **Steps to configure:**
+#### **Steps to configure:**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
@@ -42,7 +42,7 @@ Please note since the Apple Pay Web Domain flow involves decryption at Hyperswit
 
 
 
-### **Prerequisites**
+#### **Prerequisites**
 
 Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
@@ -51,7 +51,7 @@ Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites ne
 
 Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to set up Apple Pay:
 
-### **Creating an Apple MerchantID**
+#### **Creating an Apple MerchantID**
 
 You can create an Apple MerchantID referencing the video or following the steps mentioned below
 
@@ -61,7 +61,7 @@ You can create an Apple MerchantID referencing the video or following the steps 
 * Enter a unique descriptive identifier _(like merchant.com.testdomain.sandbox)_ and click Continue
 * Verify the description and identifier and click on Register
 
-### **Validating Merchant Domain**
+#### **Validating Merchant Domain**
 
 You can validate the merchant domain by following the steps mentioned below:
 
@@ -75,7 +75,7 @@ You can validate the merchant domain by following the steps mentioned below:
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
 
-### **Creating Apple MerchantID Certificate and Private Key**
+#### **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key by following the steps mentioned below:
 
@@ -102,9 +102,9 @@ openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 
 
 
-## **iOS Application**
+### **iOS Application**
 
-### **Steps to configure:**
+#### **Steps to configure:**
 
 You can configure Apple Pay on Hyperswitch by following the steps mentioned below:
 
@@ -134,7 +134,7 @@ base64 -i certificate_sandbox.key
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-### **Creating Apple Pay Payment Processing Certificate**
+#### **Creating Apple Pay Payment Processing Certificate**
 
 {% tabs %}
 {% tab title="Payment Processing Details At Connector" %}
@@ -203,7 +203,7 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 {% endtab %}
 {% endtabs %}
 
-### Integrate with Xcode
+#### Integrate with Xcode
 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 

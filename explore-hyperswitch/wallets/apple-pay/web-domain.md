@@ -6,7 +6,7 @@ icon: globe-wifi
 
 # Web Domain
 
-## **Steps to configure Apple Pay on Hyperswitch**
+### **Steps to configure Apple Pay on Hyperswitch**
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
