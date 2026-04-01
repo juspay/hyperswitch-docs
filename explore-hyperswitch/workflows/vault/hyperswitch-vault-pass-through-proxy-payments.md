@@ -6,18 +6,18 @@ icon: arrows-repeat
 
 # Juspay Hyperswitch Vault: Pass Through Proxy Payments
 
-**📌 What is it?**
+**What is it?**
 
-The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
+The **Proxy Payments Service** allows merchants to tokenize cards via Juspay Hyperswitch Vault and make API calls to PSPs using those tokens. The Vault intercepts these requests, replaces tokens with raw card data (detokenization), and forwards them securely to the PSP.
 
-#### ✅ Why use it?
+## Why use it?
 
 * **No PSP re-integration needed** – Keep your existing PSP connections.
 * **PCI DSS scope reduction** – Raw card data stays within Vault.
 * **Data security** – Detokenization happens only during the request lifecycle.
 * **Centralized token management** – One vault, many PSPs.
 
-#### ⚙️ How it works
+## How it works
 
 1. **Tokenize cards using Vault**: Tokenize your customers' cards using the [Vault service](./) and store the payment\_method\_id of each card
 2. **Send your proxy payment request**: Send your PSP payment request to the Vault proxy endpoint including the target PSP's url as the destination url and payment\_method\_id that was received in Step 1
@@ -25,12 +25,12 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Hyperswitc
 4. **Forward to PSP**: The request is sent to the PSP
 5. **Return Response**: Vault returns PSP response to the merchant
 
-#### 🧪 Proxy Payment Request
+## Proxy Payment Request
 
 Include the following details:
 
 1. **Include the Hyperswitch Proxy payments related fields in the headers:**
-   1. **URL:** Proxy endpoint **(**&#x68;ttps://sandbox.hyperswitch.io/prox&#x79;**)**
+   1. **URL:** Proxy endpoint **(https://sandbox.hyperswitch.io/proxy)**
    2. **API Key:** Your API key for the merchant\_id under which the vault service was created on Hyperswitch dashboard
    3. **Profile\_id:** Your profile\_id for the merchant\_id under which the vault service was created on Hyperswitch dashboard
 2. **Include the following details in the body:**
@@ -39,7 +39,7 @@ Include the following details:
    3. **Vault tokens:**
       1. `token_type` : Choose payment\_method\_id or tokenization\_id
       2. `token:` Plug the payment\_method\_id or tokenization\_id that you would have received when tokenizing card data or PII data at Hyperswitch vault
-   4. **Placeholders for token data:** In the `request_body`**,** Plug in the dynamic placeholders`{{$card_number}}`, `{{$card_exp_month}}`,`{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
+   4. **Placeholders for token data:** In the `request_body`, plug in the dynamic placeholders `{{$card_number}}`, `{{$card_exp_month}}`, `{{$card_exp_year}}` against the PSP request fields where you want the actual values of the tokens from the Vault to be substituted
 
 **Sample Proxy payment request (Checkout.com)**
 
@@ -86,7 +86,7 @@ Include the following details:
 }'
 </code></pre>
 
-#### 📥 Sample Response
+## Sample Response
 
 ```bash
 {

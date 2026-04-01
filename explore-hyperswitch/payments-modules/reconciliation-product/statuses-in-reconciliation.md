@@ -7,13 +7,13 @@ description: >-
 
 # Statuses in Reconciliation
 
-In reconciliation, **status** is the fastest way to understand what's happening to your data — from file upload to posted ledger transactions.\ This guide explains statuses at four layers of the workflow: **Ingestion**, **Transformation**, **Staging Entries**, and **Transactions (Ledger)**
+In reconciliation, **status** is the fastest way to understand what's happening to your data — from file upload to posted ledger transactions.\ This guide explains statuses at four layers of the workflow: **Ingestion**, **Transformation**, **Staging Entries**, and **Transactions (Ledger)**.
 
 ***
 
-## Ingestion Statuses (File Level)
+## Phase 1: Ingestion Statuses (File Level)
 
-Ingestion tracks the very first stage: getting your raw files (CSV etc.) into the system
+Ingestion tracks the very first stage: getting your raw files (CSV etc.) into the system.
 
 | Status     | What it means for you                                                                                                                                                                                                                           |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -25,7 +25,7 @@ Ingestion tracks the very first stage: getting your raw files (CSV etc.) into th
 
 ## Phase 2: Transformation (Cleaning & Mapping)
 
-Before data can be reconciled, it must be "cleaned." The Transformation layer maps your raw data to our system fields and strips out any "noise" (like extra spaces, invalid characters, or incorrect date formats)
+Before data can be reconciled, it must be "cleaned." The Transformation layer maps your raw data to our system fields and strips out any "noise" (like extra spaces, invalid characters, or incorrect date formats).
 
 * **Pending**: Data is queued for cleaning
 * **Processing**: The system is currently mapping fields and scrubbing the data
@@ -34,7 +34,7 @@ Before data can be reconciled, it must be "cleaned." The Transformation layer ma
 
 ## Phase 3: Staging Entries (The "Waiting Room")
 
-Once data is cleaned, it becomes a Staging Entry. This is the holding area where records live before the Reconciliation Engine processes them
+Once data is cleaned, it becomes a Staging Entry. This is the holding area where records live before the Reconciliation Engine processes them.
 
 | Status              | Action Required                                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Once data is cleaned, it becomes a Staging Entry. This is the holding area where
 
 ## Phase 4: Transaction Status (The Final Goal)
 
-A Transaction represents the end-to-end journey of money. Its status reflects whether the two sides of the ledger (e.g., Order vs. Bank) have been successfully balanced
+A Transaction represents the end-to-end journey of money. Its status reflects whether the two sides of the ledger (e.g., Order vs. Bank) have been successfully balanced.
 
 ### Reconciled States (The "Done" List)
 
@@ -59,7 +59,7 @@ A Transaction represents the end-to-end journey of money. Its status reflects wh
 
 * **Expected:** The transaction has been created based on a source entry (e.g., a Sale in your Order Management System) and is waiting for a matching entry from the counterparty (e.g., the Bank)\
   &#xNAN;_**Note on "Missing"**_: If a transaction remains in the Expected state longer than your configured SLA (e.g., T+3 days), the UI flags it as Missing. This is not a separate database status, but a time-based alert indicating that the counterparty data is overdue
-*   **Over Amount**: The confirmed amount (Right Side) is higher than the expected amount (Left Side)
+* **Over Amount**: The confirmed amount (Right Side) is higher than the expected amount (Left Side)
 
     This status can be **transient** or **final**, depending on whether more counterpart entries are still expected:
 

@@ -1,24 +1,28 @@
+---
+description: Learn how to process Apple Pay in-app and web transactions using PSP decryption, where the connector handles token decryption and authorization.
+---
+
 # In-App and Web Transactions Processed Using PSP Decryption
 
 In this model:
 
-* Hyperswitch forwards the **encrypted Apple Pay token** to the connector.
+* Juspay Hyperswitch forwards the **encrypted Apple Pay token** to the connector.
 * Connector decrypts and authorizes the payment.
 
-### **Configuration :**&#x20;
+## Configuration
 
-#### **Prerequisites**
+### Prerequisites
 
 Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
 
 1. Apple Pay requires an Apple Developer Account. You can [Sign Up](https://developer.apple.com/programs/enroll/) for one here.
 2. You must have a valid SSL certificate on your domain _(meaning it begins with **https**)_
 
-Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to setting up Apple Pay -
+Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to set up Apple Pay:
 
-#### **Creating an Apple MerchantID**
+### Creating an Apple MerchantID
 
-You can create an Apple MerchantID referencing the video or following the steps mentioned below
+You can create an Apple MerchantID referencing the video or following the steps mentioned below:
 
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list)
 * Go to the [add MerchantIDs section](https://developer.apple.com/account/resources/identifiers/add/merchant), select Merchant IDs and click Continue
@@ -26,27 +30,27 @@ You can create an Apple MerchantID referencing the video or following the steps 
 * Enter a unique descriptive identifier _(like merchant.com.testdomain.sandbox)_ and click Continue
 * Verify the description and identifier and click on Register
 
-#### **Validating Merchant Domain**
+### Validating Merchant Domain
 
-You can validate the merchant domain by following the steps mentioned below -
+You can validate the merchant domain by following the steps mentioned below:
 
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to Identifiers and select the Merchant ID you created previously
 * Under the Merchant Domains section, click on **Add Domain**
 * Enter your _merchant\_domain_ as domain and click on Save
 * Click on Download and a **.txt** file will be downloaded
 * Host this file on _merchant\_domain_/.well-known/apple-developer-merchantid-domain-association.txt
-* Once you host the.txt file in the path mentioned above, click on Verify
+* Once you host the .txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
 <figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
 
-#### **Creating Apple MerchantID Certificate and Private Key**
+### Creating Apple MerchantID Certificate and Private Key
 
-You can create an Apple MerchantID certificate and private key by following the steps mentioned below -
+You can create an Apple MerchantID certificate and private key by following the steps mentioned below:
 
 **Note:** It is recommended that you keep all the generated files in the same workspace for the sake of simplicity
 
-* Open a terminal and create **.csr** and **.key** file using the following command -
+* Open a terminal and create **.csr** and **.key** file using the following command:
 
 ```cmd
 openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_sandbox.key
@@ -57,15 +61,15 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 * Under the **Apple Pay Merchant Identity Certificate** section _(make sure you are not in the Apple Pay Payment Processing Certificate section)_, click on Create Certificate
 * Upload the **.csr** file you just created by running the command _(it would be called **uploadMe.csr** if you copy-pasted the command)_ and click on Continue
 * You will get a **.cer** file on clicking on Download _(it will probably be named **merchant\_id.cer**)_
-* You will need to convert this **.cer** file into a **.pem** file using the following command -
+* You will need to convert this **.cer** file into a **.pem** file using the following command:
 
 ```cmd
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-#### **Configuring Apple Pay on Juspay Hyperswitch**
+### Configuring Apple Pay on Hyperswitch
 
-You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
+You can configure Apple Pay on Hyperswitch by following the steps mentioned below:
 
 * Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)
 * In the Connectors tab, select your processor
@@ -87,14 +91,13 @@ base64 -i certificate_sandbox.pem
 base64 -i certificate_sandbox.key
 ```
 
-* Display Name should be your merchant name that you want to present to the customers when the make ApplePay payment on your platform.
+* Display Name should be your merchant name that you want to present to the customers when they make Apple Pay payment on your platform.
 * In Domain, enter `web` in the form field.
 * In Domain Name, add the verified domain name you configured in Merchant Domains in Apple Developer Account.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-
-#### **Creating Apple Pay Payment Processing Certificate**
+### Creating Apple Pay Payment Processing Certificate
 
 <figure><img src="../../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
 
@@ -103,12 +106,10 @@ base64 -i certificate_sandbox.key
 * Under the **Apple Pay Payment Processing Certificate** section, click on Create Certificate
 * After answering whether the Merchant ID will be processed exclusively in China mainland, click on Continue
 * Upload the **.csr** you received from your processor and click Continue
-* Click on the prompted Download button and you will get a.**cer** file, Upload this **.cer** file you received while creating Apple MerchantID Certificate on the processor's dashboard.
+* Click on the prompted Download button and you will get a **.cer** file. Upload this **.cer** file you received while creating Apple MerchantID Certificate on the processor's dashboard.
 
 {% hint style="warning" %}
-
 This final step is specific to the processor being used and is not necessary in Sandbox Test environment for some processors, such as Authorize.Net.
-
 {% endhint %}
 
 ### Integrate with Xcode

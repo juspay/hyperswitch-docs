@@ -34,7 +34,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 \
 Account Updater to automatically refresh stored card credentials for expired, replaced, or reissued cards, improving continuity for stored payment methods and recovering failures tied to outdated card data
 
-### Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -53,7 +53,7 @@ Last year, Hyperswitch was made more modular to provide businesses with focused 
 5. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 6. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
 #### Core Orchestration
 
@@ -89,7 +89,7 @@ We also plan to enhance existing integrations to expand payment method coverage 
 
 [Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
-#### Vault
+### Vault
 
 **Multi Vault Support**
 
@@ -113,7 +113,7 @@ We plan to add analytics, audit trails, and observability capabilities for the V
 
 [Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-#### Authentication and Checkout Experience
+### Authentication and Checkout Experience
 
 **SDK Accessibility Enhancements**
 
@@ -145,7 +145,7 @@ We plan to support custom in SDK messaging so merchants can configure and displa
 
 [Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls)
 
-#### Revenue Recovery
+### Revenue Recovery
 
 **Advanced Retry Logic for Hard Declines**
 
@@ -161,7 +161,7 @@ We plan to support using self-hosted orchestration with Juspay-hosted revenue re
 
 [Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
-#### Reconciliation
+### Reconciliation
 
 **Tolerance & Aging**
 
@@ -171,7 +171,7 @@ Aging provides visibility into unmatched transactions and enables configurable t
 
 [Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 
-#### Control Centre
+### Control Centre
 
 **Developer Observability & Self-Service Diagnostics**
 

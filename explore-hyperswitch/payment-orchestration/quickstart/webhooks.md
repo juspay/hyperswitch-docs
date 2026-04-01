@@ -1,5 +1,5 @@
 ---
-description: Configure outgoing webhooks from Juspay Hyperswitch
+description: Configure outgoing webhooks from Hyperswitch
 icon: anchor
 ---
 
@@ -27,7 +27,7 @@ In case a merchant wants to set custom headers for sending data to a specified w
 
 <figure><img src="../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
 
-#### Update Juspay Hyperswitch’s webhook endpoints on your connector Dashboard
+#### Update Hyperswitch’s webhook endpoints on your connector Dashboard
 
 In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
 
@@ -86,8 +86,8 @@ To validate the webhook’s authenticity:
 
 If you are sure that the payload is from Hyperswitch but the signature verification fails:
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine doesn't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
-* Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header, you should use the HMAC-SHA256 algorithm.
+* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
+* Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
 <details>
 

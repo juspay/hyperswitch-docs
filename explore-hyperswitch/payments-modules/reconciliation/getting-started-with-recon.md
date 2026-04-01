@@ -1,16 +1,14 @@
 ---
 description: >-
-  Master the five-step reconciliation workflow on Juspay Hyperswitch to
-  efficiently process reports and resolve financial discrepancies through
-  automated matching
+  Learn how to use the Juspay Hyperswitch Reconciliation module through a
+  five-step workflow: upload and prepare files, run reconciliation, view
+  reports, analyze analytics, and manage post-reconciliation actions
 ---
 
 # Getting Started with Recon
 
 {% hint style="info" %}
-
 This section outlines the supported features of Juspay Hyperswitch Reconciliation module and provides guidance on how to use them.
-
 {% endhint %}
 
 ## Using the Reconciliation module is a 5-step process
@@ -34,9 +32,7 @@ The first phase of the process involves uploading your data files into the Recon
 * **Manual upload to the dashboard:** For ease of use, manually upload your files directly through the Reconciliation Dashboard.
 
 {% hint style="info" %}
-
 Files need to be uploaded in **PGName\_yyyymmdd/ MERCHANTNAME\_yyyymmdd/ BANK\_NAME\_yyyymmdd** format.
-
 {% endhint %}
 
 * **Automated upload to dashboard:** In order to feed your PSP and bank files to the Reconciliation module you can select one of the below options during configuration. In case of automated upload of files, case all subsequent steps are also executed in an automated fashion and the reconciliation output is generated.
@@ -75,10 +71,10 @@ The final stage of the File Management process is the Transform phase. In this p
 
 This below specified table indicates the progress and outcome across each section.
 
-* Yellow status : The particular stage is being initiated for execution
-* Green status : The particular stage is successfully executed
-* Red status : The particular stage has some errors which need to be rectified
-* Partial Red status : Some of the records are invalid and have been excluded from the process
+* **Yellow status:** The particular stage is being initiated for execution
+* **Green status:** The particular stage is successfully executed
+* **Red status:** The particular stage has some errors which need to be rectified
+* **Partial Red status:** Some of the records are invalid and have been excluded from the process
 
 ## Run Reconciliation
 
@@ -125,13 +121,13 @@ Within the Reports module, users can access an array of essential reports that c
 
 The output table provides access to specific information categories such as Gateway, Status, and Sub-status. These intricate details enable users to dissect reconciliation outcomes based on diverse attributes, facilitating pinpoint analysis.
 
--> Customisable column views: Users have the ability to customise their column views within the output table:
+**Customisable column views:** Users have the ability to customise their column views within the output table:
 
 * **Select desired columns:** Choose which columns to view, tailoring the report to focus on specific attributes like transaction ID, amount, status, and reconciliation status.
 * **Column naming:** Assign specific names to columns, enhancing clarity and alignment with your business's terminology. This change needs to be done by the Juspay Hyperswitch team.
-* **Column positioning :** Assign a specific order to columns, enhancing clarity and alignment with your business' requirements. This change needs to be done by the Juspay Hyperswitch team.
+* **Column positioning:** Assign a specific order to columns, enhancing clarity and alignment with your business' requirements. This change needs to be done by the Juspay Hyperswitch team.
 
--> Key columns and status definitions (these are the default names) :
+**Key columns and status definitions (these are the default names):**
 
 * **Recon status -** This is the reconciliation status between the Merchant report and the PSP report. Possible values are
   * Matched : Transactions that are matched across systems.
@@ -148,9 +144,9 @@ The output table provides access to specific information categories such as Gate
 
 In case of 3-way recon, the columns Recon status and Recon sub-status are used to indicate the reconciliation outcome of Juspay Hyperswitch and PSP file whereas columns secondary status and Secondary sub-status are used to indicate the reconciliation outcome of PSP and bank file. In case of 2-way recon a single column from the above is displayed along with the respective status.
 
--> Confidence score-potential matched : Recon happens on transaction identifiers however at times payment entities (banks, PSPs) share different identifiers for refund, split transactions etc. For such cases, Reconciliation module would check for a nearby match and assign a confidence score to that reconciled row.
+**Confidence score - potential matched:** Recon happens on transaction identifiers however at times payment entities (banks, PSPs) share different identifiers for refund, split transactions etc. For such cases, Reconciliation module would check for a nearby match and assign a confidence score to that reconciled row.
 
--> Download Data : The reconciliation module allows merchants to download data in the form of excel.
+**Download Data:** The reconciliation module allows merchants to download data in the form of excel.
 
 ## Reconciliation Analytics
 

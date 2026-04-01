@@ -1,20 +1,20 @@
 ---
-description: Get started integrating the Juspay Hyperswitch web client in your app
+description: Get started integrating the Hyperswitch web client in your app
 hidden: true
 icon: puzzle-piece
 ---
 
 # Customizable and Native Integrations
 
-## How to get started?
+### How to get started?
 
 Pick the platform / framework of your choice to get started with integrating the client SDK on your application
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Hyperswitch Web</strong></mark></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-experience/payment/mobile/android/kotlin-with-rest-api-integration.md"><mark style="color:blue;"><strong>Hyperswitch Android</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-experience/payment/mobile/ios/swift-with-rest-api-integration.md"><mark style="color:blue;"><strong>Hyperswitch iOS</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-experience/payment/mobile/cross-platform/react-native/react-native-with-rest-api-integration.md"><mark style="color:blue;"><strong>Hyperswitch React Native</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-experience/payment/mobile/cross-platform/flutter/flutter-with-node-backend.md"><mark style="color:blue;"><strong>Hyperswitch Flutter</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="payment-features/"><mark style="color:blue;"><strong>Payment Features</strong></mark></a></td><td></td><td></td><td></td></tr><tr><td><a href="../payment-experience/payment/server-setup.md"><mark style="color:blue;"><strong>Server Setup</strong></mark></a></td><td></td><td></td><td></td></tr></tbody></table>
 
-## Modify and Experiment
+### Modify and Experiment
 
-Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
+Juspay Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
 | <img src="../../.gitbook/assets/image (127).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

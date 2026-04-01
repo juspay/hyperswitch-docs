@@ -1,11 +1,11 @@
 ---
-description: Implement card payment widget for Android applications
+description: Learn how to integrate the Card Element widget for accepting card payments in your Android app using Juspay Hyperswitch SDK.
 icon: credit-card
 ---
 
 # Card Element
 
-**Purpose:** Card payments
+**Purpose:** Card payments with Juspay Hyperswitch
 
 **Add Card Widget to Layout**
 
@@ -50,7 +50,7 @@ private fun processCardPayment() {
     if (::cardPaymentLauncher.isInitialized) {
         cardPaymentLauncher.confirmCardPayment(confirmParams)
     } else {
-        Toast.makeText(this, "SDK is not initialised", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "SDK is not initialized", Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -70,9 +70,9 @@ private fun onPaymentResult(paymentResult: PaymentResult) {
 }
 ```
 
-## 5. Best Practices
+## Best Practices
 
-### 5.1 Error Handling
+### Error Handling
 
 Always check if launchers are initialized before using them:
 
@@ -80,7 +80,6 @@ Always check if launchers are initialized before using them:
 if (::cardPaymentLauncher.isInitialized) {
     cardPaymentLauncher.confirmCardPayment(confirmParams)
 } else {
-    Toast.makeText(this, "SDK is not initialised", Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, "SDK is not initialized", Toast.LENGTH_SHORT).show()
 }
 ```
-

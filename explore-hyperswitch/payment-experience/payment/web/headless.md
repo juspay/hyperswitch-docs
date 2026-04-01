@@ -8,11 +8,11 @@ icon: table-cells-large
 
 # Headless SDK
 
-### Customize the payment experience using Headless functions
+## Customize the payment experience using Headless functions
 
-#### 1. Initialize the Hyperswitch SDK
+### 1. Initialize the Hyperswitch SDK
 
-Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
 </strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{
@@ -21,17 +21,15 @@ Initialize Hyperswitch Headless SDK onto your app with your publishable key. To 
 });
 </code></pre>
 
-#### 2. Create a Payment Intent
+### 2. Create a PaymentIntent
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
-
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
-
 {% endhint %}
 
-#### 3. Initialize your Payment Session
+### 3. Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
@@ -45,10 +43,10 @@ paymentSession = hyper.initPaymentSession({
 | ------------------------------------ | --------------------------------------------------------------- |
 | `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
-#### 4. Craft a customized payments experience
+### 4. Craft a customized payments experience
 
-Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` function, using which you can confirm and handle the payment session.\
-\
+Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` function, using which you can confirm and handle the payment session.
+
 **4a. Confirm using Customer Default Payment Method:**
 
 ```javascript
@@ -159,9 +157,9 @@ function handleSubmit() {
 
 <table><thead><tr><th width="281">confirmParams</th><th>Description</th></tr></thead><tbody><tr><td><code>return_url(string)</code></td><td>The url your customer will be directed to after they complete payment.</td></tr></tbody></table>
 
-#### 5. Add CVC Collection (Non PCI Approach)
+### 5. Add CVC Collection (Non PCI Approach)
 
-The `CardCVCElement` renders a secure iframe to collect the customer’s CVC without exposing sensitive data to your application. You can follow the [React Integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration).
+The `CardCVCElement` renders a secure iframe to collect the customer's CVC without exposing sensitive data to your application. You can follow the [React Integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration).
 
 ```javascript
 import React, { useState, useEffect } from "react";

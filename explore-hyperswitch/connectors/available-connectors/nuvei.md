@@ -1,24 +1,21 @@
 ---
-description: Accept payments through Nuvei via Juspay Hyperswitch configuration and setup
+description: Connect Nuvei to Hyperswitch to accept payments globally across e-commerce and high-growth industries using Nuvei's payment processing and acquiring services.
 hidden: true
 ---
 
 # Nuvei
 
 {% hint style="info" %}
-
 This section gives you an overview of how to make payments via Nuvei through Hyperswitch
-
 {% endhint %}
 
 ![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/nuveiLogo.svg)
 
+Nuvei is a payment technology company that provides payment processing and acquiring services to merchants worldwide, with a focus on e-commerce and high-growth industries. To know about more about payment methods supported by Nuvei via Hyperswitch visit [here](https://hyperswitch.io/pm-list).
 
-Nuvei is a payment technology company that provides payment processing and acquiring services to merchants worldwide, with a focus on e-commerce and high-growth industries. To know about more about payment methods supported by Nuvei via hyperswitch visit [here](https://hyperswitch.io/pm-list).
+## Activating Nuvei via Hyperswitch
 
-### Activating Nuvei via Juspay Hyperswitch
-
-#### I. Prerequisites
+### I. Prerequisites
 
 1. You need to be registered with Nuvei in order to proceed. In case you aren't, you can quickly setup your Nuvei account [here](https://nuvei.com/)
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch dashboard](https://app.hyperswitch.io/).

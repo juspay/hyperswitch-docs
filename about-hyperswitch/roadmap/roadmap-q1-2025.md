@@ -1,5 +1,5 @@
 ---
-description: Juspay Hyperswitch Roadmap Jan'25 - Mar'25
+description: Jan'25 - Mar'25
 icon: road
 ---
 
@@ -44,7 +44,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-There are a lot of problems to be solved in payments, but the majority of our current focus falls under 5 themes below.
+There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
 🌎 **Community Feature Requests:** Most of our community feature requests falls under one of the above themes, but we still keep this as a separate theme, because we intend to actively explore new problem statements and themes from the community before scheduling actual feature work.
 
@@ -68,7 +68,7 @@ There are a lot of problems to be solved in payments, but the majority of our cu
 
 #### Modular and Composable Payments <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 
-In Q1'25, Hyperswitch will be offering the following composable services as standalone modules on Hyperswitch SaaS version. This activity would be the major focus for the team and each of these modules address one or more of the above roadmap themes
+In Q1’25, Hyperswitch will be offering the following composable services as standalone modules on Hyperswitch SaaS version. This activity would be the major focus for the team and each of these modules address one or more of the above roadmap themes
 
 * 🟧 **Payment Methods Service (includes Vault):** Merchants will be able use the standalone Payment methods service to do various levels of tokenization \[PCI tokenization, Network tokenization, PSP tokenization - one-time/multi-use]. PCI compliant merchants will be able to leverage server-to-server flow for tokenization. _(Larger-scope initiative extending into Q2)_
 * 🟧 **Reconciliation Service:** Reconciliation module will have an upgraded user experience; and allow FinOps teams to use the module independently without having to use Hyperswitch as the transaction processing technology _(Larger-scope initiative extending into Q2)_

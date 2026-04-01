@@ -1,10 +1,11 @@
 ---
 icon: sparkles
+description: Explore Hyperswitch SDK features including secure card input, 3D Secure authentication, tokenization, and platform-specific payment capabilities for web and mobile.
 ---
 
 # Payment Features
 
-HyperSwitch SDKs provide client-side payment capabilities across web and mobile platforms. Our frontend SDKs handle secure payment collection, user authentication, and seamless checkout experiences while maintaining PCI compliance.
+Juspay Hyperswitch SDKs provide client-side payment capabilities across web and mobile platforms. Our frontend SDKs handle secure payment collection, user authentication, and seamless checkout experiences while maintaining PCI compliance.
 
 ### Core SDK Features
 

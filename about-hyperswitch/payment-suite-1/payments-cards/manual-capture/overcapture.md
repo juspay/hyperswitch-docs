@@ -1,5 +1,4 @@
 ---
-description: Configure over-capture to settle amounts exceeding the original authorization for handling additional charges and post-authorization adjustments
 icon: chart-diagram
 ---
 

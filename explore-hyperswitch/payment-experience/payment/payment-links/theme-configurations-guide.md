@@ -2,11 +2,9 @@
 description: Payment Links & Theme Customization Guide
 ---
 
-# Theme configurations Guide
+# Theme Configurations Guide
 
-## **1. Understanding Style IDs**
-
-Style IDs are design templates for your payment links, allowing you to create different themes for different purposes - separate looks for your premium brand, holiday sales, or regional markets.
+Juspay Hyperswitch payment links use Style IDs as design templates, allowing you to create different themes for different purposes - separate looks for your premium brand, holiday sales, or regional markets.
 
 **What you can customize in each theme:**
 
@@ -16,9 +14,7 @@ Style IDs are design templates for your payment links, allowing you to create di
 * Language preferences (we support 19+ languages including English, Hebrew, Arabic, Japanese, German, Spanish, Chinese, and more!)
 
 {% hint style="info" %}
-
 **Important:** Custom terms and conditions can only be configured when using a custom domain for your payment links. By default, payment links are hosted on the Hyperswitch domain. To use custom domains and unlock the ability to set custom terms and conditions, please refer to our [Setup Custom Domain](setup-custom-domain.md) guide.
-
 {% endhint %}
 
 **How it works:** When creating a payment link, simply specify which style ID you want to use (via the `payment_link_config_id` parameter), and your customers will see that themed experience.
@@ -31,7 +27,7 @@ Style IDs are design templates for your payment links, allowing you to create di
 
 ***
 
-## **2. Configuration Hierarchy & Cascading**
+## 2. Configuration Hierarchy & Cascading
 
 Payment link configurations work in a flexible, cascading manner that gives you control at multiple levels:
 
@@ -72,7 +68,7 @@ This cascading approach means you can maintain consistency while having flexibil
 
 ***
 
-## **3. Smart Text Handling**
+## 3. Smart Text Handling
 
 **The system works intelligently by default:**
 
@@ -109,7 +105,7 @@ This works whether your customer is paying now, setting up a subscription, or ju
 
 ***
 
-## **4. Choosing Your Approach**
+## 4. Choosing Your Approach
 
 You have two ways to set up your payment link themes:
 
@@ -138,7 +134,7 @@ You have two ways to set up your payment link themes:
 
 ***
 
-## **5. Real-World Use Cases**
+## 5. Real-World Use Cases
 
 **Running multiple brands?** Create a style ID for each brand (like `brand-a-default`, `brand-b-default`). When you create a payment link, just specify which brand's theme to use. Each brand keeps its own look and feel!
 
@@ -148,7 +144,7 @@ You have two ways to set up your payment link themes:
 
 ***
 
-## **6. Handling Different Transaction Types**
+## 6. Handling Different Transaction Types
 
 Payment links support three main transaction types. Here's the recommended messaging for each:
 

@@ -23,23 +23,23 @@ The latest version of 3DS - **3DS 2.0** supports two flows - **Frictionless and 
 
 ## What is Native 3D Secure 2.0?
 
-Native 3D Secure refers to the seamless integration of 3D Secure (3DS) authentication directly within a merchant's app or website, without redirecting the user to an external page for authentication. By eliminating redirections and embedding authentication directly into the checkout process, native 3DS enhances both customer satisfaction and conversion rates, making it a preferred choice for merchants looking to optimize their payment flow.
+Native 3D Secure refers to the seamless integration of 3D Secure (3DS) authentication directly within a merchant's app or website, without redirecting the user to an external page for authentication. By eliminating redirections and embedding authentication directly into the checkout process, native 3DS enhances both customer satisfaction and conversion rates, making it a preferred choice for merchants looking to optimize their payment flow with Juspay Hyperswitch.
 
 <figure><img src="../../../.gitbook/assets/DAF-firsttime.gif" alt="" width="300"><figcaption><p><strong>Sample of Native Authentication on mobile</strong></p></figcaption></figure>
 
 ## Why Native 3D Secure?
 
-### **1. Enhance Customer Experience**:
+### Enhance Customer Experience
 
-Even though 3DS 2.0 greatly optimizes the customer experience, it still has some scope for improvement. The multiple redirections for both challenge and frictionless flows lead to poor customer experience and increased dropouts. The customer authentication experience also varies according to the issuers, depending on the capabilities and upgrades of the issuers’ technology.
+Even though 3DS 2.0 greatly optimizes the customer experience, it still has some scope for improvement. The multiple redirections for both challenge and frictionless flows lead to poor customer experience and increased dropouts. The customer authentication experience also varies according to the issuers, depending on the capabilities and upgrades of the issuers' technology.
 
 With native 3DS, the challenge can happen in the merchant app without redirections. This in-line, in-app experience greatly reduces the customer checkout time, and provides a consistent checkout experience. Native 3DS is optimized for mobile platforms. Since 3DS 2.0 supports mobile-friendly features like biometric verification (fingerprint or facial recognition), merchants can provide a more secure and intuitive experience for customers using smartphones or tablets.
 
-### 2. Reduce customer dropout rate
+### Reduce customer dropout rate
 
 By providing a native 3DS experience, the users never leave the merchant app. It helps to reduce customer dropouts happening earlier because of confusing UX, time consuming loading screens and un-optimized flow.
 
-### 3. Get control over Branding
+### Get control over Branding
 
 Since the authentication occurs natively, merchants have more control over the branding and design of the authentication experience. This keeps the look and feel consistent with the rest of the app or website, offering a smoother, more professional user experience.
 
@@ -64,8 +64,5 @@ Since the authentication occurs natively, merchants have more control over the b
 To enable the Native 3DS Authentication on your website or mobile app, you need to integrate an external 3DS authentication providers. **Hyperswitch allows you to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts, Visit the below page for detailed steps.**
 
 {% content-ref url="external-authentication-for-3ds.md" %}
-
 [external-authentication-for-3ds.md](external-authentication-for-3ds.md)
-
 {% endcontent-ref %}
-

@@ -10,17 +10,17 @@ icon: sack-dollar
 
 {% embed url="https://youtu.be/XtOMZVhvLwQ" %}
 
-In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Juspay Hyperswitch we term this the '**Automatic Capture**' flow.
+In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.
 
-But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Juspay Hyperswitch, we call this the '**Manual Capture'** flow.
+But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Hyperswitch, we call this the '**Manual Capture'** flow.
 
-### Benefits of Manual Capture
+## Benefits of Manual Capture
 
 1. **Improved Control**: Funds are captured only after goods or services are delivered.
 2. **Flexibility**: You can capture the full amount or a partial amount as per the delivery.
 3. **Customer Satisfaction**: Builds trust by charging customers only after fulfilling the order.
 
-## **How to do Manual Capture?**
+## How to do Manual Capture?
 
 ### 1. Create a payment from your server with "`capture_method" = "manual"`
 
@@ -99,7 +99,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQ
 }'
 ```
 
-## **'Full' vs 'Partial' Capture:**
+## 'Full' vs 'Partial' Capture:
 
 Now, the merchant can either:
 

@@ -6,9 +6,7 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
-
-You can customize the React Native Unified Checkout to supports visual customization, which allows you to match the design of your app
-
+You can customize the Juspay Hyperswitch React Native Unified Checkout to support visual customization, which allows you to match the design of your app
 {% endhint %}
 
 ## Appearance
@@ -39,7 +37,7 @@ appearance: {
 }
 ```
 
-> Note : To support dark mode, pass maps for both `light` and `dark` colors maps to `colors`
+> Note: To support dark mode, pass maps for both `light` and `dark` colors maps to `colors`
 
 ```js
 colors: {

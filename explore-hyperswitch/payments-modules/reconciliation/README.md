@@ -56,7 +56,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
   * Schedules reconciliation workflows for real-time transaction matching.
   * Generates instant reports and alerts for better financial control.
 
-## Use cases
+## Use Cases
 
 1. **Three-way recon** - Juspay Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fees & Taxes, and more, as stipulated during configuration.
 2. **Two-way recon** - Juspay Hyperswitch Recon Engine also offers the flexibility to execute 2-way reconciliation between the Merchant and PSP.

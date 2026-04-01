@@ -1,21 +1,19 @@
 ---
-description: Accept payments through Zen via Juspay Hyperswitch configuration and setup
+description: Connect Zen to Hyperswitch to accept payments with low fees, boost conversions, and manage raw card data securely through the Hyperswitch control center.
 hidden: true
 ---
 
 # Zen
 
 {% hint style="info" %}
-
 This section gives you an overview of how to make payments via Zen through Hyperswitch
-
 {% endhint %}
 
-![logo\_zen](https://hyperswitch.io/img/site/zenLogo.svg)&#x20;
+![logo\_zen](https://hyperswitch.io/img/site/zenLogo.svg)
 
-Zen is a modern and responsive payments portal with low fees for conversion boost and increased revenue. To know about more about payment methods supported by ACI via hyperswitch visit [here](https://hyperswitch.io/pm-list).
+Zen is a modern and responsive payments portal with low fees for conversion boost and increased revenue. To know more about payment methods supported by Zen via Hyperswitch, visit [here](https://hyperswitch.io/pm-list).
 
-#### I. Prerequisites
+## I. Prerequisites
 
 1. You need to be registered with Zen and obtained the API Key from your Zen Account manager.
 2. You should have a registered Hyperswitch account. You can access your account from the [Hyperswitch control center](https://app.hyperswitch.io).

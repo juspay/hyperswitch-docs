@@ -1,5 +1,5 @@
 ---
-description: Track and manage payment disputes and chargebacks across multiple processors
+description: Track, accept, and challenge disputes across multiple processors from one unified interface using Juspay Hyperswitch's Disputes module
 icon: circle-exclamation
 ---
 
@@ -10,9 +10,7 @@ icon: circle-exclamation
 A dispute occurs when a customer contacts their payment method issuer (card issuer/bank/wallet) to question or challenge a particular transaction so that the payment can be reversed.
 
 {% hint style="info" %}
-
-When a card payment is reversed, and the processor debits the merchant's account, it's termed a 'chargeback.' Hyperswitch uses the term 'Disputes' interchangeably to refer to 'Chargebacks' in the context of card payments.
-
+When a card payment is reversed, and the processor debits the merchant's account, it's termed a 'chargeback.' Juspay Hyperswitch uses the term 'Disputes' interchangeably to refer to 'Chargebacks' in the context of card payments.
 {% endhint %}
 
 The merchants receive notifications from their payment processor when a dispute is raised by their customers against a payment made at their site.
@@ -23,13 +21,13 @@ Each processor has their own standards or processes around how they notify about
 
 Hyperswitch unifies all the dispute notifications from all your different processors and makes it easier for you to track, accept and as well as challenge them by uploading evidences across different processors from one place.
 
-## Disputes Lifecycle on Juspay Hyperswitch
+### Disputes Lifecycle on Hyperswitch
 
 Hyperswitch's unified disputes module uses the following stages and statuses to track your disputes:
 
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure></div>
 
-### Pre-Dispute stage
+#### Pre-Dispute stage
 
 Some payment method issuers start an investigation before creating a dispute on a transaction challenged by a customer. Such transactions are grouped under the 'Pre-Dispute' stage and these transactions could go through the following states:
 
@@ -37,7 +35,7 @@ Some payment method issuers start an investigation before creating a dispute on 
 
 Visa or Mastercard do not open an investigation before creating a dispute and so most of your transactions would skip the Pre-Dispute stage
 
-### Dispute stage
+#### Dispute stage
 
 In most cases, the processors directly debit your account while reversing the payment made by a customer after a transaction has been challenged.
 
@@ -45,30 +43,30 @@ For transactions that go through 'Pre-Dispute' stage, they will end up moving to
 
 <table><thead><tr><th width="155">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when a dispute is opened and your processor has debited your account</td></tr><tr><td>Challenged</td><td>Occurs when a merchant uploads an evidence to support their case</td></tr><tr><td>Expired</td><td>Occurs when a merchant doesn't respond in time interval before which an issuer expects a response after the dispute was opened</td></tr><tr><td>Cancelled</td><td>Occurs when a customer withdraws their challenge</td></tr><tr><td>Accepted</td><td>Occurs when a merchant accepts a dispute as valid</td></tr><tr><td>Won</td><td>Occurs when the merchant's challenge was accepted successfully. Known as 'chargeback reversal' in cases of card payments</td></tr><tr><td>Lost</td><td>Occurs when a merchant's challenge was deemed not satisfactory</td></tr></tbody></table>
 
-### Pre-Arbitration stage
+#### Pre-Arbitration stage
 
 Even after a successful dispute challenge, a payment method issuer might deem the evidence 'not satisfactory' and raise another review appeal. Such payments transition to 'Pre-Arbitration' stage.
 
 <table><thead><tr><th width="167">dispute_state</th><th>description</th></tr></thead><tbody><tr><td>Opened</td><td>Occurs when the issuer opens a review appeal after deeming the evidence unsatisfactory</td></tr><tr><td>Won</td><td>Occurs when the merchant is successful in the pre-arbitration appeal process</td></tr><tr><td>Lost</td><td>Occurs when the merchant loses during the pre-arbitration appeal. Also, known as 'second_chargeback'</td></tr></tbody></table>
 
-## Managing Disputes on Juspay Hyperswitch through Dashboard
+### Managing Disputes on Hyperswitch through Dashboard
 
-### 1. Viewing Disputes on Hyperswitch dashboard
+#### 1. Viewing Disputes on Hyperswitch dashboard
 
 You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard
 
 <figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
-### 2. Generating Dispute Reports:
+#### 2. Generating Dispute Reports
 
 'Generate Reports' button here will generate a report containing details of all your disputes
 
-### 3. Viewing a Dispute
+#### 3. Viewing a Dispute
 
-Clicking one of the dispute will take you to a page where you can see further information about the particular dispute
+Clicking one of the disputes will take you to a page where you can see further information about the particular dispute
 
 <figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
-### 4. Accepting/Challenging a Dispute
+#### 4. Accepting/Challenging a Dispute
 
 This feature is supported by Hyperswitch across different PSPs. Actions such as accept dispute, counter dispute, evidence upload for a dispute are supported across different PSPs.

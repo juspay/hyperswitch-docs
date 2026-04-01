@@ -1,11 +1,11 @@
 ---
-description: Integrate hyper SDK to any Web App using hyperswitch-node
+description: Integrate Juspay Hyperswitch SDK to any Web App using hyperswitch-node for seamless payment processing
 icon: square-js
 ---
 
 # JS with REST API Integration
 
-**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to you app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\\
+**Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate Juspay Hyperswitch SDK to your app with any framework. If you are using React framework please go through [React ](react-with-rest-api-integration.md)Integration to use a dedicated wrapper.\
 
 ## [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
@@ -18,12 +18,10 @@ Follow the [Server Setup](../server-setup.md) section.
 ### 2.1 Define the payment form
 
 {% hint style="info" %}
-
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
-
 {% endhint %}
 
-Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
+Add one empty placeholder `div` to your checkout form for each Widget that you'll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer's email address and payment information.
 
 ```js
 <form id="payment-form">
@@ -39,10 +37,8 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 ```
 
 {% tabs %}
-
 {% tab title="UnifiedCheckout" %}
-
-#### 2.2 Fetch the Payment and create the Unified Checkout
+### 2.2 Fetch the Payment and create the Unified Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
@@ -52,7 +48,7 @@ Immediately make a request to the endpoint on your server to create a new Paymen
 
 Following this, create a `unifiedCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe with a dynamic form that displays configured payment method types available from the `Payment`, allowing your customer to select a payment method. The form automatically collects the associated payment details for the selected payment method type.
 
-Incase, you want the SDK to be loaded on a particular event (like button click), you can call the initialize function on that event.
+In case you want the SDK to be loaded on a particular event (like button click), you can call the initialize function on that event.
 
 ```js
 // Fetches a payment intent and captures the client secret
@@ -93,7 +89,7 @@ async function initialize() {
 }
 ```
 
-#### 2.3 Additional Callback Handling for Wallets Payment Process
+### 2.3 Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
@@ -101,21 +97,15 @@ This document outlines the details and functionality of an optional callback `co
 * **completeDoThis:** This callback is triggered after the payment is completed, just before the SDK redirects to `walletReturnUrl` provided. It allows the merchant to handle actions post-payment. If not provided, the SDK's default flow will proceed.
 
 {% hint style="warning" %}
-
 **Redirection Handling:** The `onPaymentComplete` callback should handle redirection or any steps needed after payment, as the SDK no longer does this automatically. You must ensure to implement the necessary redirection logic.
-
 {% endhint %}
 
 {% hint style="info" %}
-
 **Fallback:** If no callbacks are provided by the merchant, the SDK will continue with its default behaviour, including automatic redirection after payment completion.
-
 {% endhint %}
 
 {% hint style="danger" %}
-
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
-
 {% endhint %}
 
 **Example Usage**
@@ -134,12 +124,10 @@ unifiedCheckout.on("completeDoThis",()=>{
   // Add any custom post-payment logic here, such as redirection or displaying a success message
 })
 ```
-
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-
-#### 2.2 Fetch the Payment and create the Express Checkout
+### 2.2 Fetch the Payment and create the Express Checkout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -185,9 +173,7 @@ async function initialize() {
   document.body.appendChild(script);
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## 3. Complete payment on the client
@@ -196,9 +182,9 @@ async function initialize() {
 
 > Note: This step is not required for ExpressCheckout
 
-Listen to the form’s submit event to know when to confirm the payment through the hyper API.
+Listen to the form's submit event to know when to confirm the payment through the hyper API.
 
-Call `confirmPayment()`, passing along the `unifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the `return_url`.
+Call `confirmPayment()`, passing along the `unifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the `return_url`.
 
 ```js
 async function handleSubmit(e) {
@@ -237,7 +223,7 @@ async function handleSubmit(e) {
 }
 ```
 
-Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
+Also if there are any immediate errors (for example, your customer's card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 
 ### 3.2 Display a payment status message
 

@@ -8,11 +8,11 @@ icon: arrows-rotate-reverse
 
 # Over-the-Air (OTA) Updates
 
-#### **Airborne SDK Overview** <a href="#airborne-sdk-overview-hyperota" id="airborne-sdk-overview-hyperota"></a>
+## Airborne SDK Overview
 
 **Purpose**
 
-Airborne enables Hyperswitch SDK to receive live updates without requiring an app store release. This allows you to:
+Airborne enables Juspay Hyperswitch SDK to receive live updates without requiring an app store release. This allows you to:
 
 * Push urgent bug fixes instantly.
 * Roll out features gradually.
@@ -21,8 +21,8 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
 **Real-World Hyperswitch Scenarios**
 
 * **Critical Checkout Fix** – Push a new JS bundle to resolve a bug affecting payments.
-* **Feature Rollout** – Show “One-Click Pay” to 5% of users, expand once results are good.
-* **Remote Toggles** – Enable/disable “Gift Card Support” instantly for specific merchants.
+* **Feature Rollout** – Show "One-Click Pay" to 5% of users, expand once results are good.
+* **Remote Toggles** – Enable/disable "Gift Card Support" instantly for specific merchants.
 
 ***
 
@@ -38,11 +38,11 @@ Airborne enables Hyperswitch SDK to receive live updates without requiring an ap
    * Once the critical files are downloaded, Airborne installs the bundle and hands over the latest reference to the app for use in the same launch session.
 5. **Fallback Handling**
    * If the update fails or times out, Airborne automatically falls back to:
-     * The **previously downloaded working bundle**, or
-     * The **default bundle shipped with the app**.
+      * The **previously downloaded working bundle**, or
+      * The **default bundle shipped with the app**.
 6. **Background Downloads**
    * Non-critical assets (lazy files) continue to download while the app runs, so the user is never blocked.
 
 ***
 
-For more information, [Airborne](https://github.com/juspay/airborne)​[<br>](../../../payment-experience/payment/server-setup.md)
+For more information, [Airborne](https://github.com/juspay/airborne)

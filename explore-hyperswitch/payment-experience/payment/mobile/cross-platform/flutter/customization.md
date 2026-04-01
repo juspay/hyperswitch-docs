@@ -6,16 +6,14 @@ icon: bars-progress
 # Customization
 
 {% hint style="info" %}
-
-You can customize the Flutter Unified Checkout to supports visual customization, which allows you to match the design of your app
-
+You can customize the Juspay Hyperswitch Flutter Unified Checkout to support visual customization, which allows you to match the design of your app.
 {% endhint %}
 
-You can modify colors, fonts, and more by using the instance of `appearance` class.&#x20;
+You can modify colors, fonts, and more by using the instance of `appearance` class.
 
 ## Colors
 
-Customize the colors in the mobile Payment Element by modifying the color categories. Each color category determines the color of one or more components in the UI. For example, primary defines the color of the Pay button
+Customize the colors in the mobile Payment Element by modifying the color categories. Each color category determines the color of one or more components in the UI. For example, primary defines the color of the Pay button.
 
 | Color Category      | Usage                                                                                                                                                   |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,7 +60,7 @@ ColorsObject colorsObject = ColorsObject(
 
 ## Configuration and Appearance
 
-Now, create an instance of `Configuration` class by invoking its constructor and passing the object of `Appearance` class created above. Then, you have to create an instance of `PaymentSheetParams` class by invoking its constructor and passing  the object of `Configuration` class created earlier.
+Now, create an instance of `Configuration` class by invoking its constructor and passing the object of `Appearance` class created above. Then, you have to create an instance of `PaymentSheetParams` class by invoking its constructor and passing the object of `Configuration` class created earlier.
 
 Consider the below code for your reference.
 
@@ -79,16 +77,13 @@ Consider the below code for your reference.
 ```
 
 {% hint style="info" %}
-
 Set `displaySavedPaymentMethods` to false to disable saved cards.
 
-Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.\
-Set `disableBranding` to false to disable Hyperswitch branding.\
-Set `primaryButtonLabel` to "Pay Button Text" to display custom text\
+Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods.
+Set `disableBranding` to false to disable Hyperswitch branding.
+Set `primaryButtonLabel` to "Pay Button Text" to display custom text
 Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
-
 {% endhint %}
-
 
 ## Custom Placeholders And Branding
 
@@ -106,12 +101,10 @@ To disable Hyperswitch branding in the SDK, you may set the `disableBranding` pr
 configuration.disableBranding = true
 ```
 
-Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](flutter-with-node-backend.md#id-3.3-collect-payment-details).&#x20;
+Finally, you can pass the object of PaymentSheetParams to `initPaymentSheet` as shown in the previous [section](flutter-with-node-backend.md#id-3.3-collect-payment-details).
 
 {% hint style="info" %}
-
-Note To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
-
+Note: To support dark mode, pass objects of `ColorsObject` class for both light and dark colors to constructor of `DynamicColors` class like below.
 {% endhint %}
 
 ```dart
@@ -176,14 +169,13 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 
 Now you can test the payments on your app and go-live!
 
-
 ## Languages
 
-Hyperswitch Flutter SDK supports localization in 6 languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
+Hyperswitch Flutter SDK supports localization in 30+ languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
 ```dart
 Appearance appearance = Appearance(
-...
+     ...
       locale: 'LOCALE_CODE'
     );
 ```
@@ -194,7 +186,7 @@ We support the following locales -
 * Hebrew (he)
 * German (de)
 * English (en)
-* English (en-GB )
+* English (en-GB)
 * Japanese (ja)
 * French (fr)
 * French (Belgium) (fr-BE)
@@ -203,7 +195,6 @@ We support the following locales -
 * Portuguese (pt)
 * Italian (it)
 * Polish (pl)
-* German (de)
 * Dutch (nl)
 * Dutch (Belgium) (nl-BE)
 * Swedish (sv)
@@ -215,7 +206,6 @@ We support the following locales -
 * Welsh (cy)
 * Greek (el)
 * Estonian (et)
-* Arabic (ar)
 * Finnish (fi)
 * Norwegian (nb)
 * Bosnian (bs)
@@ -226,8 +216,5 @@ We support the following locales -
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
-
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
-
 {% endcontent-ref %}
-

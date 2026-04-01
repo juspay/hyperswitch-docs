@@ -1,6 +1,6 @@
 ---
 description: >-
-  Juspay Hyperswitch is designed to facilitate the integration and management of
+  Hyperswitch is designed to facilitate the integration and management of
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
@@ -12,7 +12,7 @@ icon: table-cells-large
 
 #### 1. Initialize the Hyperswitch SDK
 
-Initialize  Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
 ```swift
 // pod 'hyperswitch-sdk-ios'
@@ -24,9 +24,7 @@ paymentSession = PaymentSession(publishableKey: publishableKey)
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
-
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
-
 {% endhint %}
 
 #### 3. Initialize your Payment Session
@@ -64,9 +62,8 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 }
 </code></pre>
 
-&#x20;
-
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
-
+| options (Required)            | Description                                |
+| ----------------------------- | ------------------------------------------ |
+| `callback (function)` | Callback to get confirm response. |
