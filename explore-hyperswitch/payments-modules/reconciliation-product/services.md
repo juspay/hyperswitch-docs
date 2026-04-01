@@ -1,6 +1,6 @@
 ---
 hidden: true
-description: Overview of Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
+description: Overview of Juspay Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
 ---
 
 # Services

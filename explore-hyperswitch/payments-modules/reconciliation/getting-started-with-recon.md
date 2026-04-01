@@ -11,7 +11,7 @@ description: >-
 This section outlines the supported features of Juspay Hyperswitch Reconciliation module and provides guidance on how to use them.
 {% endhint %}
 
-## Using the Reconciliation module is a 5-step process
+### Using the Reconciliation module is a 5-step process
 
 1. [Upload & prepare file](getting-started-with-recon.md#id-1.-upload-and-prepare-files)
 2. [Run Reconciliation](getting-started-with-recon.md#id-2.-run-reconciliation)
@@ -19,13 +19,13 @@ This section outlines the supported features of Juspay Hyperswitch Reconciliatio
 4. [Reconciliation Analytics](getting-started-with-recon.md#id-4.-reconciliation-analytics)
 5. [Post Reconciliation run](getting-started-with-recon.md#id-5.-post-reconciliation-run)
 
-## Upload & prepare files
+### Upload & prepare files
 
 Efficient file management is at the core of Juspay Hyperswitch Recon's data integration process. This entire stage usually takes < 30 secs post file upload. Following are the 3-steps involved in preparing files for reconciliation —
 
 Upload, Validate, and Transform
 
-### Upload
+#### Upload
 
 The first phase of the process involves uploading your data files into the Reconciliation system. Juspay Hyperswitch Reconciliation provides multiple methods for this purpose:
 
@@ -46,7 +46,7 @@ Possible errors at this stage are:
 * File naming convention error - The files need to be named as specified above to avoid any error in upload
 * Invalid file format - The following file formats are supported - csv, excel and XML
 
-### Validate
+#### Validate
 
 After the files are uploaded, they enter the Validate phase, where records undergo validation to ensure data integrity. This phase involves a series of checks to vet records based on various conditions, including:
 
@@ -62,7 +62,7 @@ Possible errors at this stage are:
 
 * Report content invalid - The format, structure and content of the files need to be in line with what was configured during the activation and configuration stage.
 
-### Transform
+#### Transform
 
 The final stage of the File Management process is the Transform phase. In this phase, various computations and transformations are applied to the validated records to prepare them for reconciliation within the engine.
 
@@ -76,39 +76,39 @@ This below specified table indicates the progress and outcome across each sectio
 * **Red status:** The particular stage has some errors which need to be rectified
 * **Partial Red status:** Some of the records are invalid and have been excluded from the process
 
-## Run Reconciliation
+### Run Reconciliation
 
 Once the files are uploaded and prepared, we need to run the reconciliation engine. In case of automated Reconciliation, the recon engine would move to the next step automatically. Automated reconciliation needs to be enabled during the activation and configuration stage. The Run Recon section is divided into 4 parts:
 
 Date selection, File selection, Recon status and Engine capabilities
 
-### Date selection
+#### Date selection
 
 Specify the dates for which you want to see the output of Reconciliation engine run. In case of both automated and manual Reconciliation, all the records would be picked for processing.
 
-### File selection
+#### File selection
 
 Select the files on which you need to run reconciliation. In case of automated Reconciliation this step is not needed
 
-### Recon status
+#### Recon status
 
 The Green status signifies that the reconciliation engine has run successfully
 
 In case you face any errors at this stage please contact the Juspay Hyperswitch support team.
 
-## Reconciliation Reports
+### Reconciliation Reports
 
 Once the uploaded files are processed by the Reconciliation engine, the output is shown on the Reports section. The Reports section is largely divided into 3 parts:
 
 Date selection, Reconciliation reports and Reconciliation output table
 
-### Date selection
+#### Date selection
 
 It allows you to see the reconciliation status for any time window of your choice. The Reconciliation modules stores all the data that is ingested in it to ensure you have a view of reconciliation that's driven by dates or length-of-time.
 
 The reconciliation engine performs backdated reconciliation by reviewing entries from previous dates. If matching entries are found, reconciliation is seamlessly executed, ensuring historical accuracy. By default, the engine considers backdated entries spanning the last 90-days, configurable based on merchant needs.
 
-### Reconciliation reports
+#### Reconciliation reports
 
 Within the Reports module, users can access an array of essential reports that cover various aspects of the reconciliation process:
 
@@ -117,7 +117,7 @@ Within the Reports module, users can access an array of essential reports that c
 * **PSP settlement report:** Analyse transaction reconciliation outcomes within the context of PSP settlements.
 * **Bank settlement report:** Gain insights into transaction alignment concerning bank settlements.
 
-### Reconciliation output table
+#### Reconciliation output table
 
 The output table provides access to specific information categories such as Gateway, Status, and Sub-status. These intricate details enable users to dissect reconciliation outcomes based on diverse attributes, facilitating pinpoint analysis.
 
@@ -148,15 +148,15 @@ In case of 3-way recon, the columns Recon status and Recon sub-status are used t
 
 **Download Data:** The reconciliation module allows merchants to download data in the form of excel.
 
-## Reconciliation Analytics
+### Reconciliation Analytics
 
 The Recon Dashboard is characterised by several components that facilitate analysis:
 
-### User controls
+#### User controls
 
 The merchant can specify the date, type of report (monthly, daily), PSP and settlement currency for which analytics should be displayed on dashboard.
 
-### Statistical analytics
+#### Statistical analytics
 
 This section contains of four components
 
@@ -165,11 +165,11 @@ This section contains of four components
 * Mismatched - Number of transactions and total amount that have mismatched data in at least one of the systems.
 * Not found - Number of transactions and total amount that have not been found in at least one system.
 
-### Graphical analytics
+#### Graphical analytics
 
 Bar graph representation of Number of transactions vs date range.
 
-### Summary table
+#### Summary table
 
 This table contains information about pending amount from last period, amount expected, amount received and balance receivable for all PSP's after last reconciliation run.
 
@@ -178,11 +178,11 @@ This table contains information about pending amount from last period, amount ex
 * Amount received : Amount that is received from PSP as per PSP report.
 * Balance receivable : Sum of balance last period and difference between amount expected and amount received.
 
-## Post reconciliation run
+### Post reconciliation run
 
 Once the reconciliation engine has been executed, there maybe a few records which fall under the mismatched or missing category.
 
-### Missing category
+#### Missing category
 
 Majority of records that fall in this category are essentially missed in one of the files due to different systems following different cut over times. To elaborate, PSP or bank or Juspay Hyperswitch will have their own cut over times for generating report, settling transactions etc. Therefore a few records may just be missed due to the difference in the cut over time.
 

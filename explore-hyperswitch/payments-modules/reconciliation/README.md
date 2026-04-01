@@ -18,7 +18,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
 * **Automate error resolution** – Minimize manual intervention by automatically resolving 80% of reconciliation exceptions.
 * **Improve processing efficiency** – Accelerate reconciliation workflows, leading to a 60% increase in efficiency and faster financial closing.
 
-## Benefits for Merchants
+### Benefits for Merchants
 
 * **Accurate Financial Reporting**
   * Ensures every transaction is properly recorded and reconciled.
@@ -38,7 +38,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
   * Supports multi-region transactions with different currencies and tax structures.
   * Handles high transaction volumes efficiently.
 
-## Key Features
+### Key Features
 
 * **Multi-Source Reconciliation**
   * Matches transactions across PSPs, banks, and internal ledgers.
@@ -56,12 +56,12 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
   * Schedules reconciliation workflows for real-time transaction matching.
   * Generates instant reports and alerts for better financial control.
 
-## Use Cases
+### Use Cases
 
 1. **Three-way recon** - Juspay Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fees & Taxes, and more, as stipulated during configuration.
 2. **Two-way recon** - Juspay Hyperswitch Recon Engine also offers the flexibility to execute 2-way reconciliation between the Merchant and PSP.
 
-## Activate & Configure the Reconciliation module
+### Activate & Configure the Reconciliation module
 
 1. Go to Reconciliation tab on the Juspay Hyperswitch control centre.
 2. Click on send an email. Juspay Hyperswitch team will reach out to you over email. We will need to configure the file formats of PSPs and bank reports that you plan to use via the Reconciliation module.
