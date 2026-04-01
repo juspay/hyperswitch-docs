@@ -11,7 +11,7 @@ In reconciliation, **status** is the fastest way to understand what's happening 
 
 ***
 
-## Phase 1: Ingestion Statuses (File Level)
+### Phase 1: Ingestion Statuses (File Level)
 
 Ingestion tracks the very first stage: getting your raw files (CSV etc.) into the system.
 
@@ -23,7 +23,7 @@ Ingestion tracks the very first stage: getting your raw files (CSV etc.) into th
 | Failed     | There was a technical error (e.g., a broken file format or missing columns)                                                                                                                                                                     |
 | Discarded  | Note: This represents an "Audit Version." To keep a perfect history, when a file moves from _Pending_ to _Processing_, the system "discards" the old _Pending_ record and creates a new one. This ensures we have a trail of every state change |
 
-## Phase 2: Transformation (Cleaning & Mapping)
+### Phase 2: Transformation (Cleaning & Mapping)
 
 Before data can be reconciled, it must be "cleaned." The Transformation layer maps your raw data to our system fields and strips out any "noise" (like extra spaces, invalid characters, or incorrect date formats).
 
@@ -32,7 +32,7 @@ Before data can be reconciled, it must be "cleaned." The Transformation layer ma
 * **Processed**: The data is now clean and structured
 * **Failed**: The mapping rules failed (e.g., a required column was empty)
 
-## Phase 3: Staging Entries (The "Waiting Room")
+### Phase 3: Staging Entries (The "Waiting Room")
 
 Once data is cleaned, it becomes a Staging Entry. This is the holding area where records live before the Reconciliation Engine processes them.
 
@@ -43,11 +43,11 @@ Once data is cleaned, it becomes a Staging Entry. This is the holding area where
 | Processed           | Success. The entry has been matched to a transaction                                                                            |
 | Void / Archived     | The record was cancelled or replaced during a manual correction                                                                 |
 
-## Phase 4: Transaction Status (The Final Goal)
+### Phase 4: Transaction Status (The Final Goal)
 
 A Transaction represents the end-to-end journey of money. Its status reflects whether the two sides of the ledger (e.g., Order vs. Bank) have been successfully balanced.
 
-### Reconciled States (The "Done" List)
+#### Reconciled States (The "Done" List)
 
 **Posted:** The transaction is fully reconciled. The sum of all debits equals the sum of all credits, and all metadata rules have passed. A transaction can reach this state in three ways:
 
@@ -55,7 +55,7 @@ A Transaction represents the end-to-end journey of money. Its status reflects wh
 * **Manual**: An operator manually linked entries to close the transaction
 * **Force**: An operator bypassed a minor data discrepancy (e.g., a mismatched Reference ID) to close the transaction
 
-### Mismatch States (The "To-Do" List)
+#### Mismatch States (The "To-Do" List)
 
 * **Expected:** The transaction has been created based on a source entry (e.g., a Sale in your Order Management System) and is waiting for a matching entry from the counterparty (e.g., the Bank)\
   &#xNAN;_**Note on "Missing"**_: If a transaction remains in the Expected state longer than your configured SLA (e.g., T+3 days), the UI flags it as Missing. This is not a separate database status, but a time-based alert indicating that the counterparty data is overdue
@@ -74,12 +74,12 @@ A Transaction represents the end-to-end journey of money. Its status reflects wh
 * **Currency Mismatch**: The counterparty entry arrived in a currency different from the source expectation (e.g., Expected `USD`, Received `EUR`)
 * **Split Mismatch**: For complex split payments (e.g., Marketplace payouts), the total amount is correct, but the distribution logic between sub-accounts does not match the rule definition
 
-### Operational States
+#### Operational States
 
 * **Partially Reconciled**: The transaction has been partially resolved (through exception handling), but it does not yet meet the conditions to be posted
   * _**Key Characteristic**:_ This status is never assigned by the automated engine. It only appears when an operator saves "work in progress" during exception handling without fully resolving the discrepancy
 
-### Historical States
+#### Historical States
 
 * **Archived:** The transaction is a historical record that has been superseded. This occurs when a transaction is updated, re-processed, or split, creating a new "Active" version while preserving this version for the audit trail
 * **Void:** The transaction was cancelled by an operator or system rule. Voiding effectively "soft deletes" the transaction from the active ledger while keeping the data visible for auditing

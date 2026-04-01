@@ -1,6 +1,6 @@
 ---
 hidden: true
-description: Understand why Hyperswitch evolved its Reconciliation Engine from V1 to V2, including improvements in matching flexibility, accounting, reporting, and auditability.
+description: Understand why Juspay Hyperswitch evolved its Reconciliation Engine from V1 to V2, including improvements in matching flexibility, accounting, reporting, and auditability.
 ---
 
 # Why We Evolved (V1 vs V2)
@@ -11,20 +11,20 @@ By focusing narrowly on the high-frequency scenarios, it could optimize its pars
 
 V1 was intentionally engineered to be the right tool for the right problems — replacing spreadsheets with an automated matching framework that solved the majority of everyday reconciliation pain for many customers.
 
-## Evolving from V1: Key Improvements in V2
+### Evolving from V1: Key Improvements in V2
 
-### Matching Flexibility
+#### Matching Flexibility
 
 * **Beyond 2-way matching:** V1 only supported fixed 2-way matches. V2 introduces N-way matching to handle complex flows with multiple accounts.
 * **One-to-many & many-to-one:** The new model supports a single payment mapping to multiple orders or vice versa, correctly handling splits, merges, and multi-leg settlements.
 
-### Enhanced Accounting & Reporting
+#### Enhanced Accounting & Reporting
 
 * **Profile-scoped ledgers:** V2 allows for isolated ledgers and rules for each business unit, ensuring accurate attribution and preventing reconciliation conflicts.
 * **Point-in-time balances:** With every posting stored, V2 can reconstruct ledger balances for any historical date, essential for audits and reporting.
 * **Explicit FX accounting:** V2 provides a dedicated way to account for FX gains and losses, ensuring all conversions are auditable and traceable without affecting reconciliation.
 
-### Auditable History
+#### Auditable History
 
 V2 provides a complete, immutable audit trail for every transaction, a feature V1 lacked. This means that every change to a transaction is recorded and traceable. We provide full visibility into the entire data lifecycle, from the moment a file is ingested to the final reconciled transaction.
 
