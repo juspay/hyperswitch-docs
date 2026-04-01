@@ -12,7 +12,7 @@ In this approach, the Juspay Hyperswitch SDK is used to capture card details, bu
 
 The merchant configures connectors and routing rules in the Hyperswitch Dashboard. Hyperswitch backend translates orchestration decisions into PSP specific requests using the provided external vault tokens.
 
-## Payment and Vault flow for 'New' customer
+### Payment and Vault flow for 'New' customer
 
 <figure><img src="../../../.gitbook/assets/external_vault_external_SDK_saving.svg" alt=""><figcaption></figcaption></figure>
 
@@ -40,7 +40,7 @@ After the processor confirms the payment is successful, Hyperswitch sends the ca
 
 The Hyperswitch Server sends the final transaction status (Success or Failure) back to the SDK. Finally, the SDK redirects the customer to your specified `return_url`, where you can display a confirmation message and proceed with order fulfillment.
 
-## Payment and Vault flow for 'Repeat' customer
+### Payment and Vault flow for 'Repeat' customer
 
 <figure><img src="../../../.gitbook/assets/Untitled (8).svg" alt=""><figcaption></figcaption></figure>
 

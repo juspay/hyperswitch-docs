@@ -7,11 +7,11 @@ icon: hand-holding-dollar
 
 # Least Cost Routing
 
-## Get started with Least Cost Routing
+### Get started with Least Cost Routing
 
 Least Cost Routing (LCR) enables merchants to minimize transaction costs by dynamically selecting the most cost-efficient debit network for each transaction. The Juspay Hyperswitch routing engine evaluates parameters like network fees, interchange rates, ticket size, issuer type, and more to automatically route transactions through the cheapest network in real time.
 
-## Pre-requisites for enabling Least Cost Routing
+### Pre-requisites for enabling Least Cost Routing
 
 To get started with LCR in Hyperswitch, ensure the following setup is complete:
 
@@ -21,7 +21,7 @@ _**Step 2:**_ Enable Debit Card Support
 
 _**Step 3:**_ Enable one or more local debit networks in both connector and Hyperswitch dashboards
 
-## Steps to configure Least Cost Routing in Smart Router:
+### Steps to configure Least Cost Routing in Smart Router:
 
 _**Step 1:**_ Configure Prerequisites
 Ensure that connectors supporting transactions through local networks are set up with local networks enabled
@@ -38,7 +38,7 @@ _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routi
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-05-26 at 5.42.34 PM.png" alt=""><figcaption></figcaption></figure>
 
-## Supported Configuration for Least Cost Routing
+### Supported Configuration for Least Cost Routing
 
 **Geographies**: US
 
@@ -51,7 +51,7 @@ _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routi
 
 **Payment Methods**: Cards
 
-## Real-time cost computation
+### Real-time cost computation
 
 We perform real-time computation to see if a Global network (Visa/Mastercard) vs Local network is preferable or which local network to choose
 

@@ -7,7 +7,7 @@ icon: badge-check
 
 # Auth Rate Based Routing
 
-## How does it work?
+### How does it work?
 
 **Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.&#x20;
 
@@ -24,14 +24,14 @@ By intelligently balancing experimentation with optimization, Auth Rate Based Ro
 
 <figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
 
-Key Configurations
+### Key Configurations
 
 * Bucket size : No. of payments included in a block limited by count or time period
 * Aggregate pipeline size :&#x20;
   * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
   * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
-## How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
+### How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
 
 1. Enabling your profile with Auth Rate based routing
 
@@ -73,13 +73,13 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-
 --header 'api-key: <api-key>'
 ```
 
-## How to test the routing behaviour?
+### How to test the routing behaviour?
 
 You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour.
 
 Access the tool using this URL - [https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
 
-1. Create a merchant on Hyperswitch Control Center
+1. Create a merchant on Juspay Hyperswitch Control Center
 2. Ensure to configure at least two payment processors for the merchant profile
 3. Enter the sandbox API key, merchant id and profile id in the modal that pops-up once you click the 'Start Simulation' button on the top-right corner
 4. Head to the 'routing' tab on the left nav bar and toggle the Success Based Routing button

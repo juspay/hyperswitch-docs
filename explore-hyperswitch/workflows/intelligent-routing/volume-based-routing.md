@@ -7,7 +7,7 @@ icon: chart-simple
 
 {% embed url="https://youtu.be/xpU3zmyD4b8" %}
 
-## Steps to configure Volume Based Configuration in Smart Router
+### Steps to configure Volume Based Configuration in Smart Router
 
 Juspay Hyperswitch enables volume-based routing to distribute transactions across processors.
 

@@ -12,20 +12,20 @@ In this approach, card data is captured and tokenized using an external vault SD
 
 The merchant configures connectors and orchestration logic in the Hyperswitch Dashboard. Hyperswitch does not participate in card capture or storage.
 
-## Configuring External Vault on Juspay Hyperswitch
+### Configuring External Vault on Juspay Hyperswitch
 
 For External Vaults to work with Hyperswitch you need to configure the required API credentials on the Hyperswitch dashboard. You can do this by navigating to _**Orchestrator > Connector > Vault Processor**_ and entering the required details.
 
-## External Vaults SDK Setup
+### External Vaults SDK Setup
 
 When utilizing External Vaults, merchants have the flexibility to define how payment method details are collected. Depending on your security and user experience requirements, you can choose between two primary integration paths:
 
 * **Layered Integration:** In this flow, the External Vault SDK is layered directly onto the Hyperswitch Unified Checkout SDK. The External Vault SDK captures card details and tokenizes them immediately at the vault. This ensures that sensitive card data never touches the Hyperswitch server.
 * **Independent Integration:** The External Vault SDK manages the card data and user experience entirely independently of the Hyperswitch SDK. The card is tokenized directly with your chosen vault, after which you will have to pass the token returned by external vault along with the card metadata to Hyperswitch to process the payment.
 
-### Understanding the flow
+#### Understanding the flow
 
-#### Layered Integration
+##### Layered Integration
 
 <figure><img src="../../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
 
@@ -59,7 +59,7 @@ Hyperswitch uses the proxy API of the external vault and passes the token. The e
 
 Once the processor provides a final status, the response is relayed back from the external vault to the SDK. The customer is then redirected to your `return_url` to finalize the order experience.
 
-#### Independent Integration
+##### Independent Integration
 
 <figure><img src="../../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
 

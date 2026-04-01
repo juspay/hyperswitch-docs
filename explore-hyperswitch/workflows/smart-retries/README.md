@@ -26,12 +26,12 @@ Hyperswitch's error handling engine is enriched with mappings for error codes an
 
 Each of the error codes are mapped individually as to whether they are eligible for the various retry capabilities.
 
-| <h4><strong>Category</strong></h4> | <h4><strong>Example codes from a PSP</strong></h4>                                                   |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Cascading retry                    | Refused, System malfunction, Processing temporarily unavailable                                      |
-| Step-up retry                      | 3D Secure required, Strong customer authentication required, Suspected Fraud                         |
-| Clear PAN retry                    | Invalid cryptogram, Network token not supported, Payment token expired                               |
-| Network retry                      | Transaction not permitted on this network, Invalid card for selected network, Function not supported |
+| Category         | Example codes from a PSP                                                                              |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| Cascading retry  | Refused, System malfunction, Processing temporarily unavailable                                       |
+| Step-up retry    | 3D Secure required, Strong customer authentication required, Suspected Fraud                          |
+| Clear PAN retry  | Invalid cryptogram, Network token not supported, Payment token expired                                |
+| Network retry    | Transaction not permitted on this network, Invalid card for selected network, Function not supported  |
 
 ### Merchant config enablement
 
@@ -53,46 +53,45 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 #### Use Case 1
 
-| <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                                 | <h4>Outcome</h4> |
-| ---------------- | ------------ | --------------------------------------------- | ---------------- |
-| 1                | PSP1         | Original payload (non-3ds)                    | Suspected fraud  |
-| 2                | PSP1         | Step up - Independent 3DS (frictionless flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data        | Successful       |
+| Attempt | PSP  | Flow                                          | Outcome        |
+| ------- | ---- | --------------------------------------------- | -------------- |
+| 1       | PSP1 | Original payload (non-3ds)                    | Suspected fraud|
+| 2       | PSP1 | Step up - Independent 3DS (frictionless flow) | Generic decline|
+| 3       | PSP2 | Original payload + Authentication data        | Successful     |
 
-#### Use case 2
+#### Use Case 2
 
-| <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                              | <h4>Outcome</h4> |
-| ---------------- | ------------ | ------------------------------------------ | ---------------- |
-| 1                | PSP1         | Original payload (non-3ds)                 | Suspected fraud  |
-| 2                | PSP1         | Step up - Independent 3DS (challenge flow) | Generic decline  |
-| 3                | PSP2         | Original payload + Authentication data     | Successful       |
+| Attempt | PSP  | Flow                                         | Outcome        |
+| ------- | ---- | -------------------------------------------- | -------------- |
+| 1       | PSP1 | Original payload (non-3ds)                   | Suspected fraud|
+| 2       | PSP1 | Step up - Independent 3DS (challenge flow)   | Generic decline|
+| 3       | PSP2 | Original payload + Authentication data       | Successful     |
 
-### Use case 3
+#### Use Case 3
 
-| <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>              | <h4>Outcome</h4> |
-| ---------------- | ------------ | -------------------------- | ---------------- |
-| 1                | PSP1         | Original payload (non-3ds) | Generic decline  |
-| 2                | PSP2         | Original payload (non-3ds) | Successful       |
+| Attempt | PSP  | Flow                       | Outcome        |
+| ------- | ---- | -------------------------- | -------------- |
+| 1       | PSP1 | Original payload (non-3ds) | Generic decline|
+| 2       | PSP2 | Original payload (non-3ds) | Successful     |
 
-### Use case 4
+#### Use Case 4
 
-| <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                                                                                             | <h4>Outcome</h4> |
-| ---------------- | ------------ | --------------------------------------------------------------------------------------------------------- | ---------------- |
-| 1                | PSP1         | <p>Original payload (non-3ds)<br><br>Limited data fields on customer info, device/IP, product details</p> | Generic decline  |
-| 2                | PSP2         | Additional payload (non-3ds)                                                                              | Successful       |
+| Attempt | PSP  | Flow                                                                                                  | Outcome        |
+| ------- | ---- | ----------------------------------------------------------------------------------------------------- | -------------- |
+| 1       | PSP1 | Original payload (non-3ds). Limited data fields on customer info, device/IP, product details          | Generic decline|
+| 2       | PSP2 | Additional payload (non-3ds)                                                                          | Successful     |
 
-### Use case 5
+#### Use Case 5
 
-| <h4>Attempt</h4> | <h4>PSP</h4> | <h4>Flow</h4>                        | <h4>Outcome</h4> |
-| ---------------- | ------------ | ------------------------------------ | ---------------- |
-| 1                | PSP1         | Original payload (Network token PAN) | Do not honor     |
-| 2                | PSP1         | Original payload (Clear PAN)         | Generic decline  |
-| 3                | PSP2         | Original payload (Clear PAN)         | Successful       |
+| Attempt | PSP  | Flow                        | Outcome        |
+| ------- | ---- | --------------------------- | -------------- |
+| 1       | PSP1 | Original payload (Network token PAN) | Do not honor   |
+| 2       | PSP1 | Original payload (Clear PAN)         | Generic decline|
+| 3       | PSP2 | Original payload (Clear PAN)         | Successful     |
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers). Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
-
-## How to enable Smart Retries?
+### How to enable Smart Retries?
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
 
@@ -101,10 +100,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 * Confirmation on the retry flows to be enabled
 * Maximum number of payment retry attempts
 
-####
-
-
-## FAQs
+### FAQs
 
 <details>
 

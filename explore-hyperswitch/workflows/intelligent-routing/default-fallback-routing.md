@@ -9,11 +9,11 @@ icon: shield-exclamation
 
 {% embed url="https://youtu.be/5ymPEkOf-BQ" %}
 
-## Get started with Default Fallback Routing
+### Get started with Default Fallback Routing
 
 In Juspay Hyperswitch's Default Fallback, if the active routing rules are not applicable, the priority order of all configured payment processors is used to route payments. This priority order is configurable from the Dashboard.
 
-## Steps to configure Default Fallback Configuration in Smart Router:
+### Steps to configure Default Fallback Configuration in Smart Router:
 
 _**Step 1:**_ Click on `Manage` for configuring **Default Fallback**
 

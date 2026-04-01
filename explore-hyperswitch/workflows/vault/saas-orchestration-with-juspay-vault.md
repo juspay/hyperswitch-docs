@@ -10,13 +10,13 @@ icon: box-circle-check
 This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.
 Merchants can tokenize, vault, and process without any PCI exposure.
 
-## Key Highlights
+### Key Highlights
 
 * No PCI compliance overhead.
 * Automatic network tokenization and lifecycle management.
 * Simplified setup — single integration for orchestration + vault.
 
-### SaaS orchestration - Payments and vaulting flow
+#### SaaS orchestration - Payments and vaulting flow
 
 <figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
