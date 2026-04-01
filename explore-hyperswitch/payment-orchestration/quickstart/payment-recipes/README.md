@@ -3,7 +3,7 @@ description: Explore payment recipes to diversify your payment options and add p
 hidden: true
 ---
 
-# 🥗 Payment Recipes
+# Payment Recipes
 
 For growing businesses, sticking to one payment processor and offering only a handful of payment options to their customers is not an option. With Juspay Hyperswitch, you can diversify your payment options, and add payment processors without additional integration effort. You can consider trying out different payment recipes for multiple benefits like:
 

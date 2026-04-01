@@ -6,7 +6,7 @@ description: Extend authorization hold periods beyond standard windows with Jusp
 
 # Extended Authorization
 
-## Overview
+### Overview
 
 Extended Authorization allows merchants to extend the authorization hold period beyond the standard window — giving more flexibility before a transaction is captured or settled. Juspay Hyperswitch makes this capability available for supported payment service providers.
 
@@ -18,7 +18,7 @@ This is particularly useful for industries where the final transaction amount or
 
 Example: A hotel may authorize a card for $500 during check-in but extend the authorization period if the guest extends their stay.
 
-## Current PSP Support
+### Current PSP Support
 
 Hyperswitch currently supports Extended Authorization for the following PSPs:
 
@@ -26,18 +26,18 @@ Hyperswitch currently supports Extended Authorization for the following PSPs:
 
 If you require Extended Authorization for other PSPs, please reach out to the Hyperswitch Support Team.
 
-## How to Enable Extended Authorization
+### How to Enable Extended Authorization
 
 You can enable Extended Authorization at two levels — Profile Level or Per Payment Request.
 
-### 1. Profile-level Configuration (via Dashboard)
+#### 1. Profile-level Configuration (via Dashboard)
 
 To enable globally across all transactions:
 
 1. Navigate to Developer → Payment Settings → Always Enable Extended Authorization
 2. Toggle Enable/Disable as required
 
-### 2. Per-request Configuration (via API)
+#### 2. Per-request Configuration (via API)
 
 To enable it for specific transactions, include the boolean field `request_extended_authorization` in your payment request.
 
@@ -52,7 +52,7 @@ This flag can be used in the following API calls:
 > * The value of `request_extended_authorization` in the request will override the profile-level setting.
 > * Extended Authorization is applicable only for manual capture payments (`capture_method = manual`)
 
-### Example Request
+#### Example Request
 
 ```json
 {
@@ -74,7 +74,7 @@ This flag can be used in the following API calls:
 }
 ```
 
-### Example Response
+#### Example Response
 
 ```json
 {
@@ -97,7 +97,7 @@ This flag can be used in the following API calls:
 }
 ```
 
-### 3. Post-Authorization: Extended Authorization via API
+#### 3. Post-Authorization: Extended Authorization via API
 
 Some connectors require extended authorization to be triggered manually. This API allows you to request an extended authorization when automatic handling is not supported.
 
@@ -117,7 +117,7 @@ Be aware: With some connectors like Adyen, a failed extended authorization attem
 > * To use this API, extended authorization must be enabled for the authorization you are attempting to extend.
 > * Adyen handles extended authorization asynchronously. In such cases, you'll need to perform a psync to retrieve the updated response.
 
-### Example Request
+#### Example Request
 
 ```
 curl --location --request POST '{{base_url}}/payments/{{payment_id}}/extend_authorization' \
@@ -126,7 +126,7 @@ curl --location --request POST '{{base_url}}/payments/{{payment_id}}/extend_auth
 --header 'api-key: ******************'
 ```
 
-### Example Response
+#### Example Response
 
 ```json
 {
@@ -149,7 +149,7 @@ curl --location --request POST '{{base_url}}/payments/{{payment_id}}/extend_auth
 }
 ```
 
-## Response Field Reference
+### Response Field Reference
 
 | Field | Description |
 | ----- | ----------- |
@@ -160,6 +160,6 @@ curl --location --request POST '{{base_url}}/payments/{{payment_id}}/extend_auth
 
 If the connector doesn't provide the capture deadline, the `capture_by` field will appear as null.
 
-## Monitoring
+### Monitoring
 
 After authorization, you can view the capture deadline under `capture_by` in the More Payment Details section of the dashboard. This helps you ensure capture occurs before the authorization hold expires. If `capture_by` is not available, use the `extended_authorization_last_applied_at` parameter to compute the capture window.

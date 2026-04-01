@@ -10,7 +10,7 @@ Bank transfers allow customers to push funds from their bank account to the merc
 
 Bank Transfers are a popular way of transmitting money between different bank accounts and they are popular in US, EU and few Asian and LATAM countries. They are primarily used by businesses for accepting large payments from other businesses. Bank transfers are also used by consumers in certain countries as a preferred method for transferring money to others and while transacting online.
 
-## **Payment Flow in Bank Transfers**
+### Payment Flow in Bank Transfers
 
 1. Customers select a Bank Transfer method on your checkout page
 2. You request Juspay Hyperswitch to initiate a Bank Transfer payment

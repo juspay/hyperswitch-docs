@@ -8,9 +8,9 @@ description: A step-by-step guide to migrate your iOS app from Stripe to Hypersw
 Migrate from Stripe on your iOS app in less than 15 mins!
 {% endhint %}
 
-If you are already integrated with Stripe as your payment processor, we have made migrating to Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Digital Payments Manager and many more.
+If you are already integrated with Stripe as your payment processor, we have made migrating to Juspay Hyperswitch much simpler for you. And we will be adding quick migration support for more leading payment processors in the near future. And once you migrate, get immediate access to 40+ payment processors and features such as Smart Router, Digital Payments Manager and many more.
 
-## iOS - Node Backend and Swift Frontend
+### iOS - Node Backend and Swift Frontend
 
 The code from your Stripe integration to be removed and replaced is explained below in a step by step manner.
 

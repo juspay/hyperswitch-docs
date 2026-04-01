@@ -12,11 +12,11 @@ The CIT used to set up recurring payments via MIT uses the PG token. This introd
 
 To mitigate this we would be storing the Network Transaction ID which will be a chaining identifier for the CIT in which the payment method was saved for off-session payments.
 
-In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
+In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Juspay Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2024-02-01 at 3.58.28 AM.png" alt=""><figcaption><p>MIT payment flow</p></figcaption></figure>
 
-## Supported Payment processors
+### Supported Payment processors
 
 Hyperswitch supports the following processors for PG Agnostic Recurring Payments.
 
@@ -42,7 +42,7 @@ curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_pro
 
 All the payment methods saved with `setup_future_usage : off_session` after enabling this feature would now be eligible to be routed across the list of supported connectors during the subsequent MIT payments
 
-## FAQs
+### FAQs
 
 #### 1. How are authentication rates affected in PG agnostic MITs?
 

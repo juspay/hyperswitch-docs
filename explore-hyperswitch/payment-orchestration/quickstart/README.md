@@ -1,21 +1,22 @@
 ---
 icon: bolt
+description: Learn how to accept one-time payments with Juspay Hyperswitch through seamless integration in just a few minutes.
 ---
 
 # Accept Payments
 
-We at Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.
+We at Juspay Hyperswitch simplify accepting one-time payments by offering a seamless integration process that empowers businesses to start accepting payments in just a few minutes.
 
-## Get Started
+### Get Started
 
-### **1. Get your Hyperswitch API key**
+#### **1. Get your Hyperswitch API key**
 
-* **Sign up on Hyperswitch Control Centre**: If you haven’t already, create an account on the [Hyperswitch Control Centre](https://app.hyperswitch.io/).
+* **Sign up on Hyperswitch Control Centre**: If you haven't already, create an account on the [Hyperswitch Control Centre](https://app.hyperswitch.io/).
 * **Locate API key**: Access your API key from the **Settings > Developers** section in the Control Center.
 
-### 2. Configure your payment processor
+#### 2. Configure your payment processor
 
-* **Set up payment processor:** Navigate to the Connectors tab in the Control Center to configure your preferred payment processor. You’ll need API credentials for the processor.
+* **Set up payment processor:** Navigate to the Connectors tab in the Control Center to configure your preferred payment processor. You'll need API credentials for the processor.
 
 {% hint style="success" %}
 **Use the dummy processors:** If credentials are unavailable, you can configure the dummy processors, pre-built into the Control Center.
@@ -23,7 +24,7 @@ We at Hyperswitch simplify accepting one-time payments by offering a seamless in
 These processors help simulate payment flows during integration and provide a risk-free testing environment.
 {% endhint %}
 
-### 3. Integrate Hyperswitch
+#### 3. Integrate Hyperswitch
 
 You will use both a server-side and a client-side component of Hyperswitch to complete the integration. The payment flow begins once your user adds products to a shopping cart and wishes to make a payment.
 
@@ -34,7 +35,7 @@ You will use both a server-side and a client-side component of Hyperswitch to co
 1. **Initiate Payment on Server**:\
    Your server creates a payment request with the Hyperswitch server to obtain a `client_secret`.
 2. **Render Payment Widget**:\
-   Your website or app initiates the Hyperswitch SDK, which renders a payment widget for the customer. The widget dynamically displays payment methods based on the customer’s currency and country.
+   Your website or app initiates the Hyperswitch SDK, which renders a payment widget for the customer. The widget dynamically displays payment methods based on the customer's currency and country.
 3. **Customer Makes Payment**:\
    The customer selects a payment method, provides additional details (e.g., card information), and clicks the **Pay** button.
 4. **Secure Payment Processing**:\
@@ -43,10 +44,10 @@ You will use both a server-side and a client-side component of Hyperswitch to co
    Upon successful payment, the customer is automatically redirected to your payment status confirmation page.
 
 {% hint style="info" %}
-Don’t want to write code? Check out the [Hyperswitch Postman Collection](https://api-reference.hyperswitch.io/introduction) for a no-code way to get started with Hyperswitch's API.
+Don't want to write code? Check out the [Hyperswitch Postman Collection](https://api-reference.hyperswitch.io/introduction) for a no-code way to get started with Hyperswitch's API.
 {% endhint %}
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Connectors</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors</a></td></tr><tr><td><mark style="color:blue;"><strong>Setup Payment Methods</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Links</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-links">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-links</a></td></tr><tr><td><mark style="color:blue;"><strong>Save a Payment Method</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments</a></td></tr><tr><td><mark style="color:blue;"><strong>Manual Capture</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/manual-capture">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/manual-capture</a></td></tr><tr><td><mark style="color:blue;"><strong>Incremental Authorization</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization</a></td></tr><tr><td><mark style="color:blue;"><strong>Tokenization &#x26; Card Vault</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/tokenization-and-saved-cards</a></td></tr><tr><td><mark style="color:blue;"><strong>Supported Payment Workflows</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-workflows">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-workflows</a></td></tr><tr><td><mark style="color:blue;"><strong>Co-badged Cards</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/co-badged-cards-with-hyperswitch">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/co-badged-cards-with-hyperswitch</a></td></tr><tr><td><mark style="color:blue;"><strong>Webhooks</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/webhooks">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/webhooks</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Connectors</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/connectors</a></td></tr><tr><td><mark style="color:blue;"><strong>Setup Payment Methods</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Links</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-links">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-links</a></td></tr><tr><td><mark style="color:blue;"><strong>Save a Payment Method</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/mandates-and-recurring-payments</a></td></tr><tr><td><mark style="color:blue;"><strong>Manual Capture</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/manual-capture">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/manual-capture</a></td></tr><tr><td><mark style="color:blue;"><strong>Incremental Authorization</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/incremental-authorization</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Flows</strong></mark></td><td></td><td></td><td><a href="https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-flows">https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-flows</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Have Questions?**\

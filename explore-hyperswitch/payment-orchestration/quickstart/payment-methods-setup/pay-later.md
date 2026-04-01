@@ -5,7 +5,7 @@ icon: calendar-day
 
 # Pay Later
 
-## Klarna, Affirm, Afterpay/Clearpay - Redirection flow
+### Klarna, Affirm, Afterpay/Clearpay - Redirection flow
 
 Juspay Hyperswitch supports multiple buy now pay later options:
 
@@ -13,7 +13,7 @@ Juspay Hyperswitch supports multiple buy now pay later options:
 * Affirm is a buy now pay later payment method available to US customers and supports USD.
 * Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
 
-## How to configure pay later options (Redirection flow) on Juspay Hyperswitch?
+### How to configure pay later options (Redirection flow) on Juspay Hyperswitch?
 
 1. Make sure that the pay later options are enabled on your connector's dashboard
 2. Enable pay later options on Hyperswitch dashboard under "payment methods" tab while configuring your connector
@@ -57,7 +57,7 @@ Juspay Hyperswitch supports multiple buy now pay later options:
   }
 ```
 
-## Klarna - In app flow
+### Klarna - In app flow
 
 ![Klarna Logo](https://hyperswitch.io/icons/homePageIcons/logos/klarnaLogo.svg)
 
