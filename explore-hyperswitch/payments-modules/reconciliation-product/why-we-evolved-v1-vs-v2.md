@@ -11,7 +11,7 @@ By focusing narrowly on the high-frequency scenarios, it could optimize its pars
 
 V1 was intentionally engineered to be the right tool for the right problems — replacing spreadsheets with an automated matching framework that solved the majority of everyday reconciliation pain for many customers.
 
-## Evolving from V1: Key Improvements in V2
+### Evolving from V1: Key Improvements in V2
 
 ### Matching Flexibility
 

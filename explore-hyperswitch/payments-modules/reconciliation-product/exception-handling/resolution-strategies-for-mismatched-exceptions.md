@@ -6,7 +6,7 @@ description: Learn how to resolve MISMATCHED reconciliation exceptions using Ign
 
 ### Overview
 
-When a transaction falls into the `MISMATCHED` state, it indicates that while records exist on both sides, their key attributes (Amount, Currency, Status) do not align, or the data quality is insufficient for an automated match.
+In Juspay Hyperswitch, when a transaction falls into the `MISMATCHED` state, it indicates that while records exist on both sides, their key attributes (Amount, Currency, Status) do not align, or the data quality is insufficient for an automated match.
 
 The system provides two primary pathways for resolution: Voiding (removing invalid data) or Fixing (correcting valid data).
 

@@ -1,18 +1,18 @@
 ---
-description: Learn the core concepts of Hyperswitch's reconciliation product, including double-entry bookkeeping, accounts, entries, and transactions that ensure financial integrity.
+description: Learn the core concepts of Juspay Hyperswitch's reconciliation product, including double-entry bookkeeping, accounts, entries, and transactions that ensure financial integrity.
 ---
 
 # Core Concepts
 
-## How We Model Money
+### How We Model Money
 
 At its core, our system treats money as **accounting data**. This approach, known as double-entry bookkeeping, provides powerful guarantees for financial integrity. It ensures that money is never created or lost, gives you a full audit trail, and provides clear, point-in-time balances for your finance and operations teams.
 
 Double-entry bookkeeping is the most reliable way to track money. It ensures every financial event is recorded accurately, with a clear source and destination for funds.
 
-## Core Concepts: Accounts, Entries, and Transactions
+### Core Concepts: Accounts, Entries, and Transactions
 
-### Accounts
+#### Accounts
 
 An account is a named ledger location that represents a segregated pool of value, like a digital wallet or a specific category of money. Think of them as the containers for your funds.
 
@@ -20,7 +20,7 @@ An account is a named ledger location that represents a segregated pool of value
 * **Currency**: Each account is for one currency only to prevent confusing conversions and ensure healthy balances.
 * **Type**: Accounts are of two types: DEBIT or CREDIT. This distinction is key to how entries affect an account's balance.
 
-### Debit Normal vs. Credit Normal Accounts
+#### Debit Normal vs. Credit Normal Accounts
 
 As we've mentioned, every account has a type. The two types we will focus on are debit normal and credit normal. This distinction is critical for how our system processes entries and ensures your ledger remains balanced.
 
@@ -37,7 +37,7 @@ As we've mentioned, every account has a type. The two types we will focus on are
   * Order Sales: The revenue from a customer order
   * Loans: Money you've received from a financing partner
 
-### Entries
+#### Entries
 
 An entry is the smallest recorded unit in our system. It's a single posting to an account, recording the `amount`, `direction` (DEBIT/CREDIT), `account`, and `currency`.
 
@@ -52,7 +52,7 @@ Here is the simplest way to think about them:
 * **Debit Entry**: This adds to the balance of a debit normal account (like your Bank or Processor Account) or subtracts from the balance of a credit normal account (like your Revenue or Loans Account).
 * **Credit Entry**: This adds to the balance of a credit normal account or subtracts from the balance of a debit normal account.
 
-### Transactions
+#### Transactions
 
 A transaction is a group of entries that represents a single, logical movement of funds. It's the atomic event that affects account balances.
 

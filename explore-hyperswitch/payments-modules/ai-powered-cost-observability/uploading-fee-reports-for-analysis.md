@@ -18,7 +18,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
 * **Automate error resolution** – Minimize manual intervention by automatically resolving 80% of reconciliation exceptions.
 * **Improve processing efficiency** – Accelerate reconciliation workflows, leading to a 60% increase in efficiency and faster financial closing.
 
-## Benefits for Merchants
+### Benefits for Merchants
 
 * **Accurate Financial Reporting**
   * Ensures every transaction is properly recorded and reconciled.
@@ -38,7 +38,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
   * Supports multi-region transactions with different currencies and tax structures.
   * Handles high transaction volumes efficiently.
 
-## Key Features
+### Key Features
 
 * **Multi-Source Reconciliation**
   * Matches transactions across PSPs, banks, and internal ledgers.
@@ -56,12 +56,12 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
   * Schedules reconciliation workflows for real-time transaction matching.
   * Generates instant reports and alerts for better financial control.
 
-## Use Cases
+### Use Cases
 
 1. **Three-way recon** - Juspay Hyperswitch Recon Engine can execute 3-way reconciliation between merchant, PSP, and bank. This intricate reconciliation paradigm ensures that financial transactions traverse seamlessly across these entities, validated based on crucial attributes such as Amount, Status, Fees & Taxes, and more, as stipulated during configuration.
 2. **Two-way recon** - Juspay Hyperswitch Recon Engine also offers the flexibility to execute 2-way reconciliation between the Merchant and PSP.
 
-## Activate & Configure the Reconciliation module
+### Activate & Configure the Reconciliation module
 
 1. Go to Reconciliation tab on the Juspay Hyperswitch control centre.
 2. Click on send an email. Juspay Hyperswitch team will reach out to you over email. We will need to configure the file formats of PSPs and bank reports that you plan to use via the Reconciliation module.
@@ -69,7 +69,7 @@ By integrating Juspay Hyperswitch's reconciliation module, businesses can:
    * It usually take 2-5 days for the team to configure the module as per your requirements depending on the file formats and other specifications.
    * Merchants can also choose whether they want to do Manual reconciliation or Automated reconciliation.
    * We also allow merchants to specify the details of computations based on transaction values, fees, and taxes.
-     * For instance, consider an order of $100 sent via Juspay Hyperswitch to the payment processor which will ultimately send this amount to the merchant's bank for settlement. However, in between, the payment procesor will deduct fees as well as taxes, let's say 5% each. Therefore, the settled amount will be $90, with a $5 fee and a $5 tax.
+     * For instance, consider an order of $100 sent via Juspay Hyperswitch to the payment processor which will ultimately send this amount to the merchant's bank for settlement. However, in between, the payment processor will deduct fees as well as taxes, let's say 5% each. Therefore, the settled amount will be $90, with a $5 fee and a $5 tax.
      * The payment processor report should contain these details. However, in case these details are not present in the report, the merchant can specify these values. Based on the merchant configured specifications, we will reconcile the bank's settled amount.
 3. Once reconciliation is active for your merchant account, you will be notified through an email. You can log into Juspay Hyperswitch dashboard and click on 'Go to recon tab'. You will be redirected to the Reconciliation dashboard.
 

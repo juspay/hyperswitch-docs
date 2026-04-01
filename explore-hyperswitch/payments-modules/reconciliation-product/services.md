@@ -1,6 +1,6 @@
 ---
 hidden: true
-description: Overview of Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
+description: Overview of Juspay Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
 ---
 
 # Services
@@ -17,10 +17,10 @@ Our ingestion service connects to merchant and processor data sources using secu
   * Real-time ingestion via processor APIs or webhook events.
   * Eliminates polling and manual downloads for low-latency, continuous reconciliation.
 * **SFTP / Scheduled file pulls**
-  * Secure SFTP connectors that poll data on a configurable schedule
-  * Supports directory monitoring and incremental retrieval to avoid duplicate processing
+  * Secure SFTP connectors that poll data on a configurable schedule.
+  * Supports directory monitoring and incremental retrieval to avoid duplicate processing.
 * **Manual file uploads / UI drag-and-drop**
-  * Upload files through the dashboard for ad-hoc imports or backfills
+  * Upload files through the dashboard for ad-hoc imports or backfills.
 
 #### Data Transformation Service
 

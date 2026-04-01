@@ -6,7 +6,7 @@ description: Understand how Hyperswitch captures, classifies, and manages reconc
 
 ### Overview
 
-The Exception Module is responsible for capturing, classifying, and managing anomalies detected during the reconciliation process. This module ensures that no transaction is lost and that financial data integrity is maintained between the internal data (Left Side) and the external partner/gateway (Right Side).
+The Juspay Hyperswitch Exception Module is responsible for capturing, classifying, and managing anomalies detected during the reconciliation process. This module ensures that no transaction is lost and that financial data integrity is maintained between the internal data (Left Side) and the external partner/gateway (Right Side).
 
 ### Exception Classifications
 

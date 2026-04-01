@@ -5,9 +5,9 @@ description: Learn how to resolve EXPECTED state exceptions in Hyperswitch recon
 
 # Resolution Strategies for 'Expected' Exceptions
 
-## Overview
+### Overview
 
-An exception in the `EXPECTED` state indicates a timing or availability issue. The system has a record on one side (typically the internal Source/Ledger) but is still waiting for the corresponding record from the counterparty (Target/Bank).
+In Juspay Hyperswitch, an exception in the `EXPECTED` state indicates a timing or availability issue. The system has a record on one side (typically the internal Source/Ledger) but is still waiting for the corresponding record from the counterparty (Target/Bank).
 
 The goal of resolution here is to either invalidate the source record (if it shouldn't exist) or manually confirm the missing side to close the loop.
 
@@ -19,7 +19,7 @@ Unlike "Mismatched" exceptions (which are actual data breaks), `EXPECTED` except
 
 ---
 
-## Pathway A: Voiding Invalid Data
+### Pathway A: Voiding Invalid Data
 
 Action: `Ignore Transaction`
 
@@ -32,7 +32,7 @@ This action is used when the source transaction (the "Expected" item) is invalid
 
 ---
 
-## Pathway B: Fixing Valid Data
+### Pathway B: Fixing Valid Data
 
 Action: `Fix Entries`
 
