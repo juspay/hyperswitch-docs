@@ -12,9 +12,9 @@ In this flow Juspay Hyperswitch decrypts the token internally using own certific
 2. Hyperswitch unwraps the token using your private key stored in its secure vault.
 3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP's API.
 
-## Configuration
+### Configuration
 
-### Steps to configure Apple Pay on Hyperswitch
+#### Steps to configure Apple Pay on Hyperswitch
 
 * Login to [Hyperswitch control center](https://app.hyperswitch.io/)
 * In the Processor tab, select desired connector
