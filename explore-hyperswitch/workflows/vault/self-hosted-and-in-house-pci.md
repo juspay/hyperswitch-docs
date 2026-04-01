@@ -20,19 +20,19 @@ This setup ensures full data ownership while leveraging Hyperswitch's built-in P
 * Enables seamless use of Network Tokenization, Volatile Tokenization, and Guest Checkout Tokenization.
 * Ideal for highly regulated merchants (e.g., banks, payment institutions) that prefer on-prem control.
 
-#### Self-hosted orchestration - Payments and vaulting flow
+### Self-hosted orchestration - Payments and vaulting flow
 
 <figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 The sequence diagram above outlines how a self-hosted merchant performs payments and vaulting.
 
-**New user payments flow**
+#### **New user payments flow**
 
 1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
 2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
 3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Hyperswitch (self-hosted endpoint)
 4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.
-5. The card is stored in Hyperswitch vault and a `payment_method_id` is generated. A `payment_method_id` is a versatile token and connects a lot of entities together&#x20;
+5. The card is stored in Hyperswitch vault and a `payment_method_id` is generated. A `payment_method_id` is a versatile token and connects a lot of entities together
 
 Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
 
@@ -50,14 +50,14 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 
 6. This `payment_method_id` is returned to the merchant via webhooks
 
-**Repeat user payments flow**
+#### **Repeat user payments flow**
 
-1. In a repeat-user payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
-2. The end-user can select the desired payment option and add their `CVV`&#x20;
-3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`&#x20;
+1. In a repeat-user payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).
+2. The end-user can select the desired payment option and add their `CVV`
+3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`
 4. The Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
 5. It sends payload with appropriate credentials to the payment provider or PSP downstream based on the merchant configurations
 
-**Merchant Initiated Transaction (MIT) flow**
+#### **Merchant Initiated Transaction (MIT) flow**
 
 1. The merchant can perform the [MIT or Recurring transactions](../../../about-hyperswitch/payment-suite-1/payments-cards/recurring-payments.md) using `payment_method_id`

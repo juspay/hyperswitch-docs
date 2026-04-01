@@ -17,11 +17,11 @@ In this deployment model, merchants **self-host** the Juspay Hyperswitch orchest
 
 This architecture gives merchants full control over orchestration logic, routing rules, and business configurations while eliminating the burden of achieving and maintaining PCI DSS Level 1 compliance in-house
 
-#### Why This Model?
+### Why This Model?
 
 <table><thead><tr><th width="204.40625">Concern</th><th>How It's Addressed</th></tr></thead><tbody><tr><td><strong>PCI Compliance</strong></td><td>Fully offloaded to the vault provider (VGS, Tokenex, etc.)</td></tr><tr><td><strong>Hosting Independence</strong></td><td>Merchant retains complete control of the Hyperswitch deployment</td></tr><tr><td><strong>Sensitive Data Exposure</strong></td><td>Raw card data never enters the merchant's environment</td></tr><tr><td><strong>Token Portability</strong></td><td><code>payment_method_id</code> unifies <code>vault_token</code> + <code>psp_token</code> + <code>customer_id</code> for cross-platform use</td></tr><tr><td><strong>Operational Simplicity</strong></td><td>No need to manage HSMs, key rotation, or cardholder data environments</td></tr></tbody></table>
 
-##### Supported providers include (but are not limited to):
+#### **Supported providers include (but are not limited to):**
 
 * **VGS (Very Good Security)** — Provides inbound/outbound proxy routes for card data. Hyperswitch sends PSP payloads through VGS's forward proxy, which replaces tokens with raw card data in transit.
 * **Tokenex** — Offers a transparent gateway proxy. Hyperswitch sends tokenized payloads to Tokenex's proxy, which detokenizes and forwards to the PSP.
@@ -116,7 +116,7 @@ This is an extension of the previous approach where instead of the merchant clie
 
 <summary><strong>Flow Diagram</strong></summary>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2026-02-25 at 3.00.15 PM.png" alt=""><figcaption></figcaption></figure>
+
 
 </details>
 
