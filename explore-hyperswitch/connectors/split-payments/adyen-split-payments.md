@@ -1,5 +1,7 @@
 ---
-description: Configure and use Adyen Split Settlements via Hyperswitch to distribute payments and refunds across multiple accounts.
+description: >-
+  Configure and use Adyen Split Settlements via Hyperswitch to distribute
+  payments and refunds across multiple accounts.
 icon: space-awesome
 ---
 
@@ -11,7 +13,7 @@ Juspay Hyperswitch supports Adyen's Split Settlements functionality, allowing bu
 
 Hyperswitch facilitates splitting payments during both authorization and refund processing, ensuring smooth fund distribution at all transaction stages.
 
-### Split Adyen Payments via Hyperswitch
+### Split Adyen Payments via Juspay Hyperswitch
 
 In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payments--create) request, include the Adyen split rule as provided below.
 
@@ -41,7 +43,7 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 }
 ```
 
-### Field Specifications
+#### Field Specifications
 
 **`store`** (Optional): Required only for Adyen Platform implementations, not needed for Adyen Marketplace.
 
@@ -51,11 +53,11 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 **`split_type`**: Defines the payment portion allocation. Supported values:
 
-- `BalanceAccount`: Direct allocation to specified account (requires `account` field)
-- `Commission`: Platform commission (requires `amount` field)
-- `Vat`: Value-added tax allocation
-- `TopUp`: Balance account funding (requires `account`, not available with Platform)
-- Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
+* `BalanceAccount`: Direct allocation to specified account (requires `account` field)
+* `Commission`: Platform commission (requires `amount` field)
+* `Vat`: Value-added tax allocation
+* `TopUp`: Balance account funding (requires `account`, not available with Platform)
+* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
 
 **`amount`**: Split amount in minor units. Required for `Commission`, `Vat`, and `TopUp` types; optional for fee types as they're calculated by Adyen.
 
@@ -65,16 +67,16 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 **`description`**: Optional description for reporting.
 
-### Validation Rules
+#### Validation Rules
 
 Hyperswitch enforces several validation rules:
 
-- Split amounts must sum to total payment amount
-- `BalanceAccount` and `TopUp` types require `account` field
-- `Commission`, `Vat`, and `TopUp` types require `amount` field
-- `TopUp` splits are incompatible with Platform store configuration
+* Split amounts must sum to total payment amount
+* `BalanceAccount` and `TopUp` types require `account` field
+* `Commission`, `Vat`, and `TopUp` types require `amount` field
+* `TopUp` splits are incompatible with Platform store configuration
 
-### Payments Response
+#### Payments Response
 
 ```json
 {
@@ -102,7 +104,7 @@ Hyperswitch enforces several validation rules:
 }
 ```
 
-### Split Adyen Refunds via Hyperswitch
+### Split Adyen Refunds via Juspay Hyperswitch
 
 In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create), include the following according to your split rule.
 
@@ -134,15 +136,15 @@ In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/r
 
 The request structure includes fields:
 
-- `store`: Optional store identifier for Adyen Platform
-- `split_items`: Array of split items with the same structure as payment splits
-- `split_type`: The type of split (BalanceAccount, Commission, etc.)
-- `amount`: Split amount in minor units
-- `account`: Target account identifier
-- `reference`: Unique identifier for tracking
-- `description`: Optional description
+* `store`: Optional store identifier for Adyen Platform
+* `split_items`: Array of split items with the same structure as payment splits
+* `split_type`: The type of split (BalanceAccount, Commission, etc.)
+* `amount`: Split amount in minor units
+* `account`: Target account identifier
+* `reference`: Unique identifier for tracking
+* `description`: Optional description
 
-### Refund Response
+#### Refund Response
 
 ```json
 {

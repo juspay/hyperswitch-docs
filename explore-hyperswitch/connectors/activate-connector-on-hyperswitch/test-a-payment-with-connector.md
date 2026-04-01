@@ -1,6 +1,9 @@
 ---
+description: >-
+  Test a payment with your configured connector using the Hyperswitch dashboard,
+  including test credentials for popular connectors and payment methods like
+  Klarna, Google Pay, and Apple Pay.
 icon: vial-circle-check
-description: Test a payment with your configured connector using the Hyperswitch dashboard, including test credentials for popular connectors and payment methods like Klarna, Google Pay, and Apple Pay.
 ---
 
 # Try a Payment
@@ -9,18 +12,14 @@ description: Test a payment with your configured connector using the Hyperswitch
 
 1. Upon configuration of the Connector, navigate to the dashboard [home page](https://app.hyperswitch.io/home)
 2. Proceed with the "Try a test payment" option on the home page of the dashboard.
-
-   <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.45.52 AM (1).png" alt=""><figcaption></figcaption></figure>
 3. Set up your demo checkout page by providing Business profile, Profile Id, Currency and Amount.
 4. Click on **Show Preview**. Your demo checkout page will be visible in the preview section.
-
-   <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.51.43 AM.png" alt=""><figcaption></figcaption></figure>
 5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
 6. Click on Pay and you will get a Success message
 7. Validate the transaction on the Juspay Hyperswitch dashboard:
-   - Go to the left pane on the Hyperswitch dashboard.
-   - Click on **Operations > Payments**.
-   - Your transactions should be visible under the order management tab.
+   * Go to the left pane on the Hyperswitch dashboard.
+   * Click on **Operations > Payments**.
+   * Your transactions should be visible under the order management tab.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM.png" alt=""><figcaption></figcaption></figure>
 
@@ -101,7 +100,7 @@ In order to test Apple Pay, you will need to follow these steps written in [Appl
 
 Apple Pay provides test cards from various card companies and supported regions as well. To pay you can use Touch ID on the MacBook or your iPhone. These devices should be configured in your Apple account.
 
-### Unable to Test Apple Pay Successfully?
+#### Unable to Test Apple Pay Successfully?
 
 1. Apple Pay sandbox testing is supported only if you are located in any of these [15 countries](https://developer.apple.com/apple-pay/sandbox-testing/).
 2. Your Safari browser automatically detects your location from your System Preferences.
