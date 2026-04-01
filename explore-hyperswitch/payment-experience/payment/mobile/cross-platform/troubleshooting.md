@@ -6,7 +6,7 @@ description: Troubleshoot common issues with React Native and Flutter SDKs
 
 This guide helps you resolve common issues encountered when integrating Juspay Hyperswitch React Native and Flutter SDKs.
 
-## Android
+### Android
 
 1. If you encounter issues related to the **Android browser dependency**, ensure that the required AndroidX Browser version is defined in your project.
 
@@ -19,7 +19,7 @@ ext {
 }
 ```
 
-## iOS
+### iOS
 
 If you are using the **old architecture (Fabric/TurboModules disabled)**, run the pod install with the following command:
 

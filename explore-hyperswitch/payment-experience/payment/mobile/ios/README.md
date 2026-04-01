@@ -11,7 +11,7 @@ icon: apple
 
 {% embed url="https://hyperswitch-demo.netlify.app/mobile" %}
 
-Revolutionize your app's payment capabilities with the Hyperswitch iOS SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on iOS is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
+Revolutionize your app's payment capabilities with the Juspay Hyperswitch iOS SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on iOS is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 | <img src="../../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | **Inclusive:** Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution. |
 | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

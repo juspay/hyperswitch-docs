@@ -6,9 +6,9 @@ description: Configure Payment Links UI
 
 > **Note:** Payment Links can currently only be configured via APIs. Configuration through the Juspay Hyperswitch dashboard is under development, and this section will be updated once it is available.
 
-## Available configurations
+### Available configurations
 
-### UI configurations
+#### UI configurations
 
 Payment link UI can be configured at a business profile level and the same configuration will be used when payment links are created for that profile. This UI can be configured during payment links creation as well, doing this overrides any configuration that was set in the business profile.
 
@@ -153,7 +153,7 @@ Customize the text displayed on the "Pay Now" button in the payment widget.
 
 <figure><img src="../../../../.gitbook/assets/payment-links-payment-button-text.png" alt=""><figcaption><p>Custom text for payment widget's button</p></figcaption></figure>
 
-### Other configurations
+#### Other configurations
 
 These configurations can only be made at business profile level and cannot be overridden during payment links creation.
 
@@ -215,7 +215,7 @@ A boolean value for toggling the visibility of Juspay Hyperswitch branding in th
 
 <figure><img src="../../../../.gitbook/assets/payment-links-hidden-branding.png" alt=""><figcaption><p>Hidden branding</p></figcaption></figure>
 
-## Configure Payment links in business profile
+### Configure Payment links in business profile
 
 Use the API to configure payment link settings at the business profile level. These settings are automatically applied to any payment link created for the associated profile.
 
@@ -270,7 +270,7 @@ curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE
     }'
 ```
 
-## List of defaults for the payment link UI config
+### List of defaults for the payment link UI config
 
 ```
 {

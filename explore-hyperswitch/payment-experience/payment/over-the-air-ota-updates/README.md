@@ -8,7 +8,7 @@ icon: arrows-rotate-reverse
 
 # Over-the-Air (OTA) Updates
 
-## Airborne SDK Overview
+### Airborne SDK Overview
 
 **Purpose**
 

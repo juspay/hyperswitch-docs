@@ -25,9 +25,7 @@ Juspay Hyperswitch payment links use Style IDs as design templates, allowing you
 * `brand-premium` - Elevated experience for premium customers
 * `holiday-2024` - Special theme for seasonal promotions
 
-***
-
-## 2. Configuration Hierarchy & Cascading
+### 2. Configuration Hierarchy & Cascading
 
 Payment link configurations work in a flexible, cascading manner that gives you control at multiple levels:
 
@@ -66,9 +64,7 @@ Final Payment Link Appearance
 
 This cascading approach means you can maintain consistency while having flexibility for special cases!
 
-***
-
-## 3. Smart Text Handling
+### 3. Smart Text Handling
 
 **The system works intelligently by default:**
 
@@ -103,9 +99,7 @@ charge your payment method or store your payment details as applicable."
 
 This works whether your customer is paying now, setting up a subscription, or just saving their card!
 
-***
-
-## 4. Choosing Your Approach
+### 4. Choosing Your Approach
 
 You have two ways to set up your payment link themes:
 
@@ -132,9 +126,7 @@ You have two ways to set up your payment link themes:
 * You're optimizing conversion rates and want to test different approaches
 * You have the resources to maintain multiple themes
 
-***
-
-## 5. Real-World Use Cases
+### 5. Real-World Use Cases
 
 **Running multiple brands?** Create a style ID for each brand (like `brand-a-default`, `brand-b-default`). When you create a payment link, just specify which brand's theme to use. Each brand keeps its own look and feel!
 
@@ -142,9 +134,7 @@ You have two ways to set up your payment link themes:
 
 **Planning a seasonal promotion?** Create a special campaign theme (`holiday-2024`, `summer-sale`) that you can easily turn on for promotional periods and turn off when the campaign ends.
 
-***
-
-## 6. Handling Different Transaction Types
+### 6. Handling Different Transaction Types
 
 Payment links support three main transaction types. Here's the recommended messaging for each:
 
@@ -183,5 +173,3 @@ Cover both storing credentials and future charges with universal language:
 "By submitting your payment information, you authorize [Your Business Name] to 
 charge your payment method or store your payment details as applicable."
 ```
-
-***

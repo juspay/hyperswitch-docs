@@ -6,7 +6,7 @@ description: Learn how to configure custom domains for payment links with DNS re
 
 A custom domain name can be used for payment links with Juspay Hyperswitch. This is your own domain name which is configured at our side. For doing this, contact us and we will get it configured and give you a TLS certificate.
 
-## How to Setup Custom Domain Within Your Cloud
+### How to Setup Custom Domain Within Your Cloud
 
 * Identify your DNS provider
 
@@ -102,7 +102,7 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 * Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
 
-## How to Use Wallets Like Apple Pay & Google Pay in Payment Links
+### How to Use Wallets Like Apple Pay & Google Pay in Payment Links
 
 To enable wallet flows such as Apple Pay or Google Pay for payment links, domain validation from Apple or Google is required respectively to obtain session tokens. This validation can be facilitated by utilizing the custom domain feature available for payment links, which can be configured at the business profile level.
 

@@ -117,7 +117,7 @@ const widgets = useWidgets();
 * Great for Mobile: Optimized for mobile shopping with ApplePay, PayPal and GooglePay integration for quick purchases on smartphones.
 * Collect billing and shipping details directly from ApplePay, Klarna, GooglePay, PayPal
 
-**3.1 Add the ExpressCheckout**
+#### 3.1 Add the ExpressCheckout
 
 <figure><img src="../../../../.gitbook/assets/image (153) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -142,7 +142,7 @@ var expressCheckoutOptions = {
 {% endtab %}
 
 {% tab title="UnifiedCheckout" %}
-**3.1.A Add the UnifiedCheckout**
+#### 3.1.A Add the UnifiedCheckout
 
 <figure><img src="../../../../.gitbook/assets/image (150) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -163,7 +163,7 @@ var unifiedCheckoutOptions = {
 <UnifiedCheckout id="unified-checkout" options={unifiedCheckoutOptions} />
 ```
 
-**3.1.B Complete the payment and handle errors**
+#### 3.1.B Complete the payment and handle errors
 
 Call `confirmPayment()`, passing along the `UnifiedCheckout` and a return\_url to indicate where `hyper` should redirect the user after they complete the payment. For payments that require additional authentication, `hyper` redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the return\_url.
 
@@ -273,7 +273,7 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
-### 4. Elements Events
+#### 4. Elements Events
 
 Some events are emitted by payment elements, listening to those events is the only way to communicate with these elements. All events have a payload object with the type of the Element that emitted the event as an elementType property. Following events are emitted by payment elements.
 
@@ -350,7 +350,7 @@ Callback for these event will be triggered with following event object.
 
 Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
 
-### 5. Additional Callback Handling for Wallets Payment Process
+#### 5. Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 

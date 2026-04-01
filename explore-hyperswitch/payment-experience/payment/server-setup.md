@@ -5,7 +5,7 @@ icon: server
 
 # Server Setup
 
-## Create a payment using S2S Call
+### Create a payment using S2S Call
 
 To create a payment intent, send a request to either our sandbox or production endpoint. For detailed information, refer to the [**API Reference**](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) documentation.
 
@@ -38,11 +38,11 @@ async function createPaymentIntent(request) {
 }
 ```
 
-## Integrate Web SDK
+### Integrate Web SDK
 
 _To integrate Web SDK, follow React, HTML and JS with REST API Integration._
 
-## Integrate Mobile SDK
+### Integrate Mobile SDK
 
 _To integrate mobile SDK, follow Kotlin, Swift, React Native, and Flutter with REST API Integration_
 

@@ -9,7 +9,7 @@ icon: k
 
 <summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
 
-You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
+You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 
 </details>
 
@@ -28,7 +28,7 @@ Follow the [Server Setup](../../server-setup.md) section.
 
 #### 2.1 Add the Buildscript Classpath
 
-To start integrating the Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
+To start integrating the Juspay Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
 
 <pre class="language-gradle"><code class="lang-gradle">buildscript {
     repositories {

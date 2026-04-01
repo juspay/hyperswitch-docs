@@ -5,11 +5,11 @@ icon: bars-progress
 
 # Customization
 
-## 1. Layouts
+### 1. Layouts
 
 Choose a layout that fits well with your UI pattern. There are two types of layout options as listed below. The layout defaults to accordion if not explicitly specified.
 
-### 1.1 Accordion layout
+#### 1.1 Accordion layout
 
 The accordion layout displays payment methods vertically using an accordion. To use this layout, set the value for layout to accordion. You also have the option to specify other properties, such as those shown in the following example.
 
@@ -32,7 +32,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-### 1.2 Tabs layout
+#### 1.2 Tabs layout
 
 The tabs layout displays payment methods horizontally using tabs. To use this layout, set the value for layout to tabs. You also have the option to specify other properties, such as tabs or collapsed.
 
@@ -68,7 +68,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-### 1.3 Saved Methods Customization
+#### 1.3 Saved Methods Customization
 
 In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.
 
@@ -91,7 +91,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-### 1.4 One Click Payment Methods Customization
+#### 1.4 One Click Payment Methods Customization
 
 By default, one-click payment methods such as Google Pay and Apple Pay are always displayed at the top of the checkout, regardless of the selected layout (Accordion or Tabs).
 
@@ -121,7 +121,7 @@ Note: Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being
 
 {% endhint %}
 
-## 2. Wallets
+### 2. Wallets
 
 The wallet customization feature lets users configure payment options like Apple Pay, Google Pay, PayPal, and Klarna. It includes a `walletReturnUrl` for post-payment redirects and a `style` property to customize the wallet's appearance, offering flexibility for seamless integration.
 
@@ -150,7 +150,7 @@ The wallet customization feature lets users configure payment options like Apple
 | <p>applePay: showType<br>googlePay: showType<br>payPal: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, PayPal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
 | <p>style: {<br>theme: theme,<br>type: styleType,<br>height: int,<br>buttonRadius: int,<br>}</p> | <p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
-## 3. Styling variables
+### 3. Styling variables
 
 The Styling APIs could be used to blend the Unified Checkout with the rest of your app or website.
 
@@ -187,7 +187,7 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 | colorTextSecondary    | The color used for text of secondary importance. For example, this color is used for the label of a tab that isn't currently selected                              |
 | colorTextPlaceholder  | The color used for input placeholder text in the Widget                                                                                                            |
 
-## 4. Rules
+### 4. Rules
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
@@ -200,7 +200,7 @@ The rules option is a map of CSS-like selectors to CSS properties, allowing gran
 
 Each class name used in a selector supports an allowlist of CSS properties that you specify using camel case (for example, boxShadow for the box-shadow property). The following is the complete list of supported class names and corresponding states, pseudo-classes, and pseudo-elements.
 
-### Tabs
+#### Tabs
 
 <figure><img src="https://hyperswitch.io/img/site/rulesTabs.png" alt=""><figcaption></figcaption></figure>
 
@@ -258,7 +258,7 @@ const appearance = {
 const elements = hyper.elements({ clientSecret, appearance });
 ```
 
-### Form Inputs
+#### Form Inputs
 
 <figure><img src="../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
@@ -268,7 +268,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | .Input     | --empty, --invalid | :hover, :focus, :disabled, :autofill | ::placeholder, ::selection |
 | .Error     |                    |                                      |                            |
 
-### Checkbox
+#### Checkbox
 
 <figure><img src="../../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
@@ -278,7 +278,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | .CheckboxLabel | --checked | :hover         |                 |
 | .CheckboxInput | --checked | :hover         |                 |
 
-### InputLogo
+#### InputLogo
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.03.21 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -288,7 +288,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | .InputLogo | --invalid | :hover,        |                 |
 | .InputLogo | --empty   | :hover         |                 |
 
-### SaveWalletDetailsLabel
+#### SaveWalletDetailsLabel
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -296,7 +296,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | ----------------------- | ------ | -------------- | --------------- |
 | .SaveWalletDetailsLabel |        | :hover         |                 |
 
-### OrPayUsingLabel
+#### OrPayUsingLabel
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.12.07 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -304,7 +304,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | ---------------- | ------ | -------------- | --------------- |
 | .OrPayUsingLabel |        | :hover         |                 |
 
-### OrPayUsingLine
+#### OrPayUsingLine
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 3.02.49 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -312,7 +312,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | --------------- | ------ | -------------- | --------------- |
 | .OrPayUsingLine |        | :hover         |                 |
 
-### TermsTextLabel
+#### TermsTextLabel
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.18.00 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -320,7 +320,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | --------------- | ------ | -------------- | --------------- |
 | .TermsTextLabel |        | :hover         |                 |
 
-### InfoElement
+#### InfoElement
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-06 at 2.21.32 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -328,9 +328,9 @@ const elements = hyper.elements({ clientSecret, appearance });
 | ------------ | ------ | -------------- | --------------- |
 | .InfoElement |        | :hover         |                 |
 
-## 5. Languages
+### 5. Languages
 
-Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer's browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
+Juspay Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer's browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in [hyper.elements (options)](../../../../learn-more/sdk-reference/node.md)
 
 We support the following locales -
 
@@ -354,7 +354,7 @@ We support the following locales -
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
-## 6. Confirm Button
+### 6. Confirm Button
 
 The Styling APIs could be used to blend the Confirm Payment Button (handled by SDK) with your app.
 
@@ -370,9 +370,9 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 | buttonBorderWidth     | Specify the border width of the button                             |
 
-## 7. More Configurations
+### 7. More Configurations
 
-### Branding
+#### Branding
 
 You can decide whether to display the Hyperswitch branding using the `branding` prop
 
@@ -384,7 +384,7 @@ You can decide whether to display the Hyperswitch branding using the `branding` 
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
 
-### Payment Methods Header Text
+#### Payment Methods Header Text
 
 Customize the header text for the section displaying available payment methods.
 
@@ -396,7 +396,7 @@ Customize the header text for the section displaying available payment methods.
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
 
-### Saved Payment Methods Header Text
+#### Saved Payment Methods Header Text
 
 Customize the header text for the section displaying saved payment methods.
 
@@ -408,7 +408,7 @@ Customize the header text for the section displaying saved payment methods.
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
 
-### Custom Message for Card Terms
+#### Custom Message for Card Terms
 
 We provide a default message for card terms i.e.
 
@@ -426,7 +426,7 @@ If you would like to customize this message, you can do so by using the `customM
 &#x3C;PaymentElement id="payment-element" options={paymentElementOptions} />
 </code></pre>
 
-### Hide Card Nickname Field
+#### Hide Card Nickname Field
 
 The `hideCardNicknameField` property allows you to hide the card nickname field when saving a card.
 
@@ -439,7 +439,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Hide Expired Saved Payment Methods
+#### Hide Expired Saved Payment Methods
 
 The `hideExpiredPaymentMethods` property allows you to control whether expired saved payment methods are hidden or not.
 
@@ -452,7 +452,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Terms
+#### Terms
 
 The `terms` property allows you to configure the display of terms for various payment methods.
 
@@ -473,7 +473,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Display Saved Payment Methods
+#### Display Saved Payment Methods
 
 The `displaySavedPaymentMethods` property determines whether saved payment methods are displayed.
 
@@ -486,7 +486,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Display Saved Payment Methods Checkbox
+#### Display Saved Payment Methods Checkbox
 
 The `displaySavedPaymentMethodsCheckbox` property determines whether the "Save payment methods" checkbox is displayed.
 
@@ -499,7 +499,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Saved Payment Methods Checkbox Checked By Default
+#### Saved Payment Methods Checkbox Checked By Default
 
 The `savedPaymentMethodsCheckboxCheckedByDefault` property determines whether the "Save payment methods" checkbox is checked by default when displayed.
 
@@ -512,7 +512,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Payment Method Order
+#### Payment Method Order
 
 The `paymentMethodOrder` property allows you to specify the order in which payment methods are displayed.
 
@@ -525,7 +525,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Business
+#### Business
 
 The `business` property allows you to specify a business name to be attached to the terms. By default merchant name will be taken as business name.
 
@@ -540,7 +540,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Read Only
+#### Read Only
 
 The `readOnly` property puts the SDK into read-only mode, disabling all interactions.
 
@@ -553,7 +553,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-### Show Short Surcharge Message
+#### Show Short Surcharge Message
 
 The `showShortSurchargeMessage` property allows merchants to display a short message when a surcharge is applied, instead of the default message provided by the SDK.
 
@@ -572,7 +572,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 

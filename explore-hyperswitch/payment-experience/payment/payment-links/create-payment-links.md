@@ -14,7 +14,7 @@ Each field in the request uses a fallback logic. Below is the order of preferenc
 
 Refer to [this](../../../payment-flows-and-management/quickstart/payment-links/configurations/#list-of-defaults-for-the-payment-link-ui-config) section for a default UI for payment links.
 
-## Create Payment link using business profile config
+### Create Payment link using business profile config
 
 Creating a payment link uses the UI config set for the given profile in the request.
 
@@ -30,7 +30,7 @@ curl --location '{{BASE_URL}}/payments' \
     }'
 ```
 
-## Configure UI during Payment link creation
+### Configure UI during Payment link creation
 
 You can set payment link's UI during payment link creation.
 
@@ -68,7 +68,7 @@ curl --location '{{BASE_URL}}/payments' \
     }'
 ```
 
-## For using a specific style ID
+### For using a specific style ID
 
 If you've set multiple payment link configs in the profile, the style ID can be sent in `payment_link_config_id` during payment link creation.
 
