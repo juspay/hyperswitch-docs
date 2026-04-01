@@ -1,15 +1,15 @@
 ---
-description: Set up server infrastructure for over-the-air SDK updates
+description: Set up server infrastructure for over-the-air SDK updates with config.json and bundle hosting.
 icon: server
 ---
 
-# Server setup
+# Server Setup
 
 Juspay Hyperswitch's Airborne requires a backend endpoint to serve the **`config.json`** and updated bundles to client apps. This server is responsible for:
 
-* Hosting `config.json` files for each app version and environment (Sandbox, Production).
-* Serving updated JS bundles and assets when requested by the app.
-* Managing rollout strategies (e.g., staged rollouts, feature flags).
-* Ensuring version compatibility between client and bundle.
+- Hosting `config.json` files for each app version and environment (Sandbox, Production).
+- Serving updated JS bundles and assets when requested by the app.
+- Managing rollout strategies (e.g., staged rollouts, feature flags).
+- Ensuring version compatibility between client and bundle.
 
-**For complete server setup instructions and example implementations, see the** [**Airborne**](https://github.com/juspay/airborne/)**.**
+For complete server setup instructions and example implementations, see the [Airborne](https://github.com/juspay/airborne/) repository.

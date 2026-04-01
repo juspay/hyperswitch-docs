@@ -7,7 +7,7 @@ icon: ban
 
 ### Card bin blocklist
 
-A blocklist in the context of payment processing refers to a security feature that allows merchants to restrict specific fingerprints associated with payment methods or block certain card bins. A fingerprint is a unique identifier linked to a particular payment method, and a card bin encompasses the first six digits of a credit card number, with an extended card bin covering the first eight digits.
+**Juspay Hyperswitch** provides a blocklist feature in the context of payment processing that allows merchants to restrict specific fingerprints associated with payment methods or block certain card bins. A fingerprint is a unique identifier linked to a particular payment method, and a card bin encompasses the first six digits of a credit card number, with an extended card bin covering the first eight digits.
 
 Merchants can utilize the blocklist functionality to enhance security and control over their payment processing systems. This capability enables them to thwart transactions from identified problematic sources or potentially fraudulent payment methods. Here's how the blocklist feature works:
 
@@ -17,7 +17,7 @@ Merchants can identify and block specific fingerprints associated with payment m
 
 #### Blocking Card Bins
 
-The blocklist also allows merchants to block entire card bins, focusing on the first six digits of credit card numbers. Additionally, they can extend this restriction to cover the first eight digits (extended\_card\_bin), providing a more comprehensive control mechanism.
+The blocklist also allows merchants to block entire card bins, focusing on the first six digits of credit card numbers. Additionally, they can extend this restriction to cover the first eight digits (extended_card_bin), providing a more comprehensive control mechanism.
 
 #### Listing Blocklists
 
