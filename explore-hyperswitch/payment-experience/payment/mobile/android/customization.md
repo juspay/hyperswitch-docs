@@ -1,5 +1,5 @@
 ---
-description: Customize your Android Unified checkout
+description: Customize your Android Unified checkout with fonts, colors, shapes and layouts to match your brand guidelines.
 icon: bars-progress
 ---
 
@@ -9,11 +9,11 @@ icon: bars-progress
 You can customize the Android Unified Checkout to support your checkout context and brand guidelines by changing fonts, colors, shapes and layouts.
 {% endhint %}
 
-Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
+Juspay Hyperswitch allows you to create a `PaymentSheet.Configuration` object with an `appearance` object to match the design of your app.
 
 ### Fonts
 
-Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
+Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size.
 
 ```kotlin
 val appearance = PaymentSheet.Appearance(
@@ -50,7 +50,7 @@ Modify the corner radius and border width used across the payment page using `ap
 
 Now you can test the payments on your app and go-live!
 
-### Next step:
+### Next Steps
 
 {% content-ref url="../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
 [payment-methods-setup](../../../../payment-orchestration/quickstart/payment-methods-setup/)

@@ -4,3 +4,5 @@ description: Web platform integration for Payment Method SDK with support for ca
 ---
 
 # Web
+
+Juspay Hyperswitch provides a comprehensive Web SDK for integrating payment methods directly into your web application.

@@ -23,13 +23,13 @@ For merchants, managing 3DS authentications is a delicate balancing act. Too man
 
 But one more complexity emerges after authentication. Even when a transaction is successfully authenticated, whether through exemption or challenge, it can still be declined at the authorization stage. This disconnect introduces a hidden cost: customers may face friction or gain a false sense of completion, only to have their payment fail. These post-authentication declines can quietly chip away at both revenue and customer trust. In this context, it's not just fraud rates or conversion rates that matter most—it's the **authorization rate** that determines whether a transaction leads to a successful sale. It becomes the true control variable that merchants must protect when designing their exemption and challenge strategies.
 
-## Merchant Benefits
+### Merchant Benefits
 
-### Balance user experience with fraud
+#### Balance user experience with fraud
 
 A merchant's 3DS exemption strategy should prioritize a holistic user experience, not just fraud prevention. The 3DS Intelligence engine analyzes various factors like customer behavior and device details to optimize authentication success while managing fraud and authorization failures.
 
-### Define custom rules to suit your business
+#### Define custom rules to suit your business
 
 Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
 
@@ -43,23 +43,23 @@ Merchants know their business best. Using their own insights, they can override 
 
 <figure><img src="../../../../.gitbook/assets/Intelligence_1.png" alt=""><figcaption></figcaption></figure>
 
-### Advanced Analytics for Continuous Optimization
+#### Advanced Analytics for Continuous Optimization
 
 As regulations, issuer behavior, and customer expectations evolve, merchants can analyze trends, refine rules, and boost approval rates. The Hyperswitch Control Center offers detailed insights into user journeys, exemption lifecycles, and top failure reasons, with the 3DS engine continuously learning and optimizing based on new data.
 
-### Factor in authorization, fraud and chargeback data
+#### Factor in authorization, fraud and chargeback data
 
 The engine allows merchants to integrate their authorization, fraud, and chargeback data, enabling more accurate, tailored decisions by combining global insights with merchant-specific context on customers, acquirers, and risk patterns.
 
-### 3DS Provider Agnostic Engine
+#### 3DS Provider Agnostic Engine
 
 The 3DS intelligence engine works with any 3DS provider. The merchant does not have to change their 3DS providers in order to benefit from the 3DS Intelligence engine.
 
-### Modularly usable
+#### Modularly usable
 
 The 3DS intelligence engine is a stand alone product that can be modularly used by the merchants. They can choose to plug in their 3DS provider to this engine to further optimize the authentication decision.
 
-## 3DS Intelligence Flow
+### 3DS Intelligence Flow
 
 The above flow diagram represents how the 3DS Intelligence Engine makes the exemption decision and how it is integrated in the transaction lifecycle.
 
@@ -76,9 +76,9 @@ The steps involved are:
 7. Merchant initiates and completes authorization with the preferred acquirer.
 8. Merchant sends the final payment result to the 3DS Intelligence Engine.
 
-## Configuration of Custom Rules on Dashboard
+### Configuration of Custom Rules on Dashboard
 
-### Configuring custom rules for exemptions
+#### Configuring custom rules for exemptions
 
 A merchant has to first configure the 3DS Exemptions Rules in the [Hyperswitch Dashboard](https://app.hyperswitch.io/dashboard/home) by navigating to Control Center (Dashboard) -> Workflow -> 3DS Exemption Rules. Custom rules can be defined as per the merchant's own business requirements. The rules can be defined across 22 different parameters like Issuer Country, Customer Device Platform, Card Network, Acquirer providing a wide range of flexibility.
 

@@ -1,5 +1,5 @@
 ---
-description: Handle errors appropriately!
+description: Reference table of client error codes returned by the SDK for graceful error handling in your web application.
 icon: ban
 ---
 

@@ -5,9 +5,9 @@ icon: paypal
 
 # PayPal
 
-**Purpose:** PayPal payments with Juspay Hyperswitch
+PayPal payments with Juspay Hyperswitch.
 
-**Add PayPal Widget to Layout**
+### Add PayPal Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -17,7 +17,7 @@ icon: paypal
     app:paymentMethod="paypal" />
 ```
 
-**Initialize PayPal Launcher**
+### Initialize PayPal Launcher
 
 ```kotlin
 private lateinit var payPalButton: BasePaymentWidget
@@ -44,7 +44,7 @@ private fun setupPayPalLauncher() {
 }
 ```
 
-**Handle PayPal Callbacks**
+### Handle PayPal Callbacks
 
 ```kotlin
 private fun onPayPalReady(isReady: Boolean) {

@@ -1,13 +1,11 @@
 ---
-description: >-
-  Learn about the different options available to handle saved card transactions
-  when working with an external vault provider.
+description: Learn about the different options available to handle saved card transactions when working with an external vault provider.
 icon: money-bill-wave
 ---
 
 # Processing Payments with External Vault
 
-When working with an external vault provider, here are the options available to handle a saved card transaction with Juspay Hyperswitch.
+When working with an external vault provider, here are the options available to handle a saved card transaction with **Juspay Hyperswitch**.
 
 **Option 1 -** Hyperswitch server uses the proxy payments flow of external vaults to send vault tokens in the PSP payment request. These tokens are replaced with raw card data by the external vault before the request is forwarded to the PSP.
 

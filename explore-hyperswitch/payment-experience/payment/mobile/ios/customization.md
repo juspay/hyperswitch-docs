@@ -1,5 +1,5 @@
 ---
-description: iOS Unified Checkout Customization
+description: Customize your iOS Unified Checkout with fonts, colors, shapes and layouts to match your brand guidelines.
 icon: bars-progress
 ---
 
@@ -9,11 +9,11 @@ icon: bars-progress
 You can customize the iOS Unified Checkout to support your checkout context and brand guidelines by changing fonts, colours, shapes and layouts.
 {% endhint %}
 
-Create a `PaymentSheet.Configuration` object with an `appearance` object in order to be able to match the design of your app.
+Juspay Hyperswitch allows you to create a `PaymentSheet.Configuration` object with an `appearance` object to match the design of your app.
 
 ### Fonts
 
-Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size
+Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size.
 
 ```swift
 var configuration = PaymentSheet.Configuration()
