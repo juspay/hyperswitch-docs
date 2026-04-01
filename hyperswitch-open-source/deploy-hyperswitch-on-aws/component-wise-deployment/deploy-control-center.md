@@ -1,19 +1,19 @@
 ---
 description: >-
-  Use the standalone deployment script to deploy Hyperswitch control center on
+  Use the standalone deployment script to deploy Juspay Hyperswitch control center on
   AWS quickly
 icon: building-columns
 ---
 
 # Deploy Control Center
 
-## Video
+### Video
 
 ***
 
 {% embed url="https://youtu.be/WuYjUBb6F6E" %}
 
-## Standalone deployment
+### Standalone deployment
 
 This setup includes:
 
@@ -21,9 +21,9 @@ This setup includes:
 | --------- | ------------- | --------------------- |
 | EC2       | t3.medium     | 1 instance            |
 
-## Steps to Deploy Hyperswitch on AWS
+### Steps to Deploy Juspay Hyperswitch on AWS
 
-### **What do you need to get started**
+#### What do you need to get started
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
@@ -31,7 +31,7 @@ This setup includes:
 >
 > You can directly start from [Step 3](deploy-control-center.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
-### Step 1 - Install or Update the AWS CLI
+#### Step 1 - Install or Update the AWS CLI
 
 {% tabs %}
 {% tab title="MacOS" %}
@@ -98,7 +98,7 @@ aws --version
 For more information, [click here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 {% endhint %}
 
-### Step 2 - Configure the AWS CLI
+#### Step 2 - Configure the AWS CLI
 
 For this step you would need the following from you AWS account
 
@@ -116,7 +116,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-### Step 3 - Setup Hyperswitch
+#### Step 3 - Setup Juspay Hyperswitch
 
 You can now deploy the hyperswitch application by running the below command in the same terminal session.
 
@@ -127,8 +127,6 @@ Takes around 10-15 min to execute successfully
 ```json
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_aws_setup.sh | bash
 ```
-
-
 
 Once the script is executed, you will receive a `Public IP` as the response (e.g. `http://34.207.75.225`). This IP is the base URL for accessing the application's APIs
 
@@ -144,7 +142,7 @@ You need JQ installed for this. For more information, [click here](https://jqlan
 curl https://raw.githubusercontent.com/juspay/hyperswitch-control-center/main/aws/hyperswitch_control_center_cleanup_setup.sh | bash
 ```
 
-## Next step:
+### Next step
 
 {% content-ref url="deploy-web-client/" %}
 [deploy-web-client](deploy-web-client/)

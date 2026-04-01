@@ -1,5 +1,5 @@
 ---
-description: Use our CDK script to deploy Hyperswitch into your AWS stack
+description: Use our CDK script to deploy Juspay Hyperswitch into your AWS stack using CloudFormation
 icon: aws
 ---
 
@@ -7,19 +7,19 @@ icon: aws
 
 {% embed url="https://www.youtube.com/watch?v=c2igjE3-EDc" %}
 
-## Steps to Deploy Hyperswitch on AWS
+### Steps to Deploy Juspay Hyperswitch on AWS
 
 {% hint style="info" %}
-**Note:** This tutorial deploys the full Hyperswitch stack, launching multiple services that may exceed compute limits on smaller clusters.
+**Note:** This tutorial deploys the full Juspay Hyperswitch stack, launching multiple services that may exceed compute limits on smaller clusters.
 {% endhint %}
 
-### **Prerequisites**
+#### **Prerequisites**
 
 * `git` installed on your local machine
 * node version 18+
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
-### Step 1 - \[Optional] - Create a new user with admin access
+#### Step 1 - \[Optional] - Create a new user with admin access
 
 <figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
@@ -71,17 +71,17 @@ If you do not have a user with admin access, follow these steps:
     <figure><img src="../../.gitbook/assets/aws-access-key (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-⚠️ You won’t be able to view the Secret Access Key again later — store it in a password manager or other secure location.
+⚠️ You won't be able to view the Secret Access Key again later — store it in a password manager or other secure location.
 {% endhint %}
 
-### Step 2 - Configure your AWS credentials in your terminal
+#### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
 
 * Preferred AWS region
 * Access key ID
 * Secret Access Key
-* Session Token (if you MFA set up)
+* Session Token (if you have MFA set up)
 
 Once you have the keys run the below command
 
@@ -92,7 +92,7 @@ export AWS_SECRET_ACCESS_KEY=<Your Secret_Access_Key> // e.g., export AWS_SECRET
 export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 ```
 
-### Step 3 - Deploy Hyperswitch application
+#### Step 3 - Deploy Juspay Hyperswitch application
 
 Run the below commands in the same terminal session
 
@@ -105,7 +105,7 @@ bash install.sh
 Once the script is run you will have to provide the following as inputs:
 
 1. Create a DB password of your choice (should be more than 8 chars).
-2. Provide an Admin API key of your choosing via [Hyperswitch Dashboard](https://app.hyperswitch.io/dashboard/developer-api-keys).
+2. Provide an Admin API key of your choosing via [Juspay Hyperswitch Dashboard](https://app.hyperswitch.io/dashboard/developer-api-keys).
 3. If you choose to opt-in for the card vault service, provide a master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
    * Provide the Locker DB password of your choice when prompted
 
@@ -115,7 +115,7 @@ After the deployment is completed, use the custodian keys to activate the locker
 Make sure to save the passwords you provide while running the script.
 {% endhint %}
 
-### Output
+#### Output
 
 On successful execution of the script, you will receive the following outputs
 
@@ -123,16 +123,16 @@ On successful execution of the script, you will receive the following outputs
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hostname of the app server | Access the application's APIs using the given base URL                                                                                                   |
 | Hostname of the log server | View real-time logs for all processes                                                                                                                    |
-| Control Center URL         | Access the Hyperswitch control center and explore multiple settings                                                                                      |
+| Control Center URL         | Access the Juspay Hyperswitch control center and explore multiple settings                                                                               |
 | Hyperloader.js URL         | Use the `hyperloader` to [integrate our web client](component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md) in your website |
 | Demo App URL               | Test payments quickly using our web checkout in the demo store                                                                                           |
-| Locker URL                 | Access the Hyperswitch card vault using this host URL                                                                                                    |
+| Locker URL                 | Access the Juspay Hyperswitch card vault using this host URL                                                                                             |
 
 {% hint style="success" %}
-That's it! Hyperswitch should be up and running on your AWS account. Open the Demo Store and make a test transaction using any test card :tada::tada:
+That's it! Juspay Hyperswitch should be up and running on your AWS account. Open the Demo Store and make a test transaction using any test card :tada::tada:
 {% endhint %}
 
-## **Estimated cost of running the above setup**
+### **Estimated cost of running the above setup**
 
 The table below offers an estimated cost for operating the setup generated by the CDK script within your AWS environment. This cost is computed under the following assumptions:
 
@@ -151,34 +151,34 @@ The table below offers an estimated cost for operating the setup generated by th
 
 <summary>FAQs</summary>
 
-1. **Why use AWS EKS for deploying Hyperswitch?** AWS Elastic Kubernetes Service (EKS) provides a managed Kubernetes cluster, ensuring high availability and scalability for Hyperswitch.
-2. **How do I deploy Hyperswitch on EKS using Helm charts?** You can deploy Hyperswitch on EKS by following our Helm chart documentation, which provides step-by-step instructions.
-3. **What versions of EKS are supported for deploying Hyperswitch?** Hyperswitch supports all versions of EKS that are officially provided by AWS.
-4. **Can I use my existing RDS instance for the database with Hyperswitch?** Yes, you can configure Hyperswitch to use your existing RDS instance as the database.
-5. **What database engines are supported for RDS when using Hyperswitch?** Hyperswitch supports various database engines, including PostgreSQL, MySQL, SQL Server, and Oracle, depending on your requirements.
-6. **How do I configure RDS with Hyperswitch using Helm charts?** Our Helm chart documentation provides detailed instructions for setting up RDS as the database for Hyperswitch.
-7. **Do I need to make any specific configurations in RDS for Hyperswitch to work optimally?** Yes, you may need to configure database parameters such as connection limits and database user credentials. Consult the documentation for details.
-8. **Can I use Amazon Elastic Cache (Redis) as a caching layer with Hyperswitch?** Yes, you can configure Hyperswitch to use Amazon Elastic Cache (Redis) for caching purposes, which can improve performance.
-9. **What Redis configurations are recommended for optimal performance with Hyperswitch?** The recommended Redis configurations can vary based on your workload, but you should typically configure Redis to use the appropriate instance type and set the eviction policies correctly.
-10. **How can I scale Hyperswitch on EKS to handle increased traffic?** You can scale Hyperswitch by adjusting the number of pods in the deployment or using Kubernetes' Horizontal Pod Autoscaling based on resource utilization.
-11. **How can I monitor the performance and health of Hyperswitch on EKS?** You can Use AWS CloudWatch, Prometheus, or other monitoring solutions to track performance metrics and set up alerts. Refer [our guide](../../production-deployment/going-live/for-on-prem-setup/monitoring.md) for more information
-12. **Is there a recommended backup and disaster recovery strategy for Hyperswitch and associated AWS resources?** Yes, it's essential to implement regular backups for RDS and have a disaster recovery plan in place. AWS provides tools and services for this purpose.
-13. **Are there any specific security considerations when deploying Hyperswitch on AWS EKS?** You should follow our [best practices](../../production-deployment/going-live/for-on-prem-setup/security.md) for securing your EKS cluster and your Hyperswitch application, including network policies, IAM roles, and encryption.
-14. **How do I upgrade Hyperswitch and its dependencies on EKS?** Please refer to the [Updates](../../production-deployment/going-live/for-on-prem-setup/updates.md) section for more details
+1. **Why use AWS EKS for deploying Juspay Hyperswitch?** AWS Elastic Kubernetes Service (EKS) provides a managed Kubernetes cluster, ensuring high availability and scalability for Juspay Hyperswitch.
+2. **How do I deploy Juspay Hyperswitch on EKS using Helm charts?** You can deploy Juspay Hyperswitch on EKS by following our Helm chart documentation, which provides step-by-step instructions.
+3. **What versions of EKS are supported for deploying Juspay Hyperswitch?** Juspay Hyperswitch supports all versions of EKS that are officially provided by AWS.
+4. **Can I use my existing RDS instance for the database with Juspay Hyperswitch?** Yes, you can configure Juspay Hyperswitch to use your existing RDS instance as the database.
+5. **What database engines are supported for RDS when using Juspay Hyperswitch?** Juspay Hyperswitch supports various database engines, including PostgreSQL, MySQL, SQL Server, and Oracle, depending on your requirements.
+6. **How do I configure RDS with Juspay Hyperswitch using Helm charts?** Our Helm chart documentation provides detailed instructions for setting up RDS as the database for Juspay Hyperswitch.
+7. **Do I need to make any specific configurations in RDS for Juspay Hyperswitch to work optimally?** Yes, you may need to configure database parameters such as connection limits and database user credentials. Consult the documentation for details.
+8. **Can I use Amazon Elastic Cache (Redis) as a caching layer with Juspay Hyperswitch?** Yes, you can configure Juspay Hyperswitch to use Amazon Elastic Cache (Redis) for caching purposes, which can improve performance.
+9. **What Redis configurations are recommended for optimal performance with Juspay Hyperswitch?** The recommended Redis configurations can vary based on your workload, but you should typically configure Redis to use the appropriate instance type and set the eviction policies correctly.
+10. **How can I scale Juspay Hyperswitch on EKS to handle increased traffic?** You can scale Juspay Hyperswitch by adjusting the number of pods in the deployment or using Kubernetes' Horizontal Pod Autoscaling based on resource utilization.
+11. **How can I monitor the performance and health of Juspay Hyperswitch on EKS?** You can Use AWS CloudWatch, Prometheus, or other monitoring solutions to track performance metrics and set up alerts. Refer [our guide](../../production-deployment/going-live/for-on-prem-setup/monitoring.md) for more information
+12. **Is there a recommended backup and disaster recovery strategy for Juspay Hyperswitch and associated AWS resources?** Yes, it's essential to implement regular backups for RDS and have a disaster recovery plan in place. AWS provides tools and services for this purpose.
+13. **Are there any specific security considerations when deploying Juspay Hyperswitch on AWS EKS?** You should follow our [best practices](../../production-deployment/going-live/for-on-prem-setup/security.md) for securing your EKS cluster and your Juspay Hyperswitch application, including network policies, IAM roles, and encryption.
+14. **How do I upgrade Juspay Hyperswitch and its dependencies on EKS?** Please refer to the [Updates](../../production-deployment/going-live/for-on-prem-setup/updates.md) section for more details
 15. **What do I do if I encounter issues during the deployment process?** If you encounter issues, consult the troubleshooting section of the documentation or [reach out to our support team](https://hyperswitch.io/contact) for assistance.
-16. **Where can I find further documentation on Hyperswitch?** You can find additional documentation, tutorials, and support resources on our website and in our api docs.
+16. **Where can I find further documentation on Juspay Hyperswitch?** You can find additional documentation, tutorials, and support resources on our website and in our api docs.
 
 </details>
 
-## Tear down the AWS Deployment
+### Tear down the AWS Deployment
 
-You'll need to destroy the Hyperswitch CDK Stack. To tear down all AWS resources provisioned by the Hyperswitch CDK stack, run the following command. This ensures the required `aws_arn` context is passed during the destroy process:
+You'll need to destroy the Juspay Hyperswitch CDK Stack. To tear down all AWS resources provisioned by the Juspay Hyperswitch CDK stack, run the following command. This ensures the required `aws_arn` context is passed during the destroy process:
 
 ```bash
 cdk destroy -c aws_arn=$(aws sts get-caller-identity --query Arn --output text)
 ```
 
-You’ll be prompted to confirm the deletion. Type `y` when prompted to proceed.
+You'll be prompted to confirm the deletion. Type `y` when prompted to proceed.
 
 > 💡 This command removes all infrastructure created by the CDK, including EKS clusters, VPCs, IAM roles, and other resources.
 
@@ -188,13 +188,13 @@ You can check to see if there is anything running:
 aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE
 ```
 
-If the CDK Toolkit exist, you can execute this command:
+If the CDK Toolkit exists, you can execute this command:
 
 ```
 aws cloudformation delete-stack --stack-name CDKToolkit
 ```
 
-## What you deployed in this tutorial
+### What you deployed in this tutorial
 
 The following components and services were provisioned as part of a new stack in your AWS account:
 
@@ -208,22 +208,22 @@ The following components and services were provisioned as part of a new stack in
 
 The following services are installed in the 2 Nodes across the EKS cluster
 
-| Service Name           | Number of Pods                              | Default Configuration                |
-| ---------------------- | ------------------------------------------- | ------------------------------------ |
-| Hyperswitch App Server | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
-| Producer (Scheduler)   | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Consumer (Scheduler)   | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Promtail               | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
-| Loki                   | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Grafana                | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Control Center         | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Service Name                   | Number of Pods                              | Default Configuration                |
+| ------------------------------ | ------------------------------------------- | ------------------------------------ |
+| Juspay Hyperswitch App Server  | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
+| Producer (Scheduler)           | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Consumer (Scheduler)           | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Promtail                       | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
+| Loki                           | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Grafana                        | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Control Center                 | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Juspay Hyperswitch Demo Store  | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 
-### Architecture Diagram
+#### Architecture Diagram
 
 <figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
 
-## Next step:
+### Next step:
 
 {% content-ref url="../account-setup/" %}
 [account-setup](../account-setup/)
@@ -233,10 +233,8 @@ The following services are installed in the 2 Nodes across the EKS cluster
 [test-a-payment-with-connector.md](../../explore-hyperswitch/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 {% endcontent-ref %}
 
-###
-
-### Explore Further
+#### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Juspay Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>

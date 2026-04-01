@@ -28,7 +28,7 @@ This combination, along with Grafana for visualization, seamlessly integrates lo
 
 ***
 
-## Logs with Grafana Loki and Promtail
+### Logs with Grafana Loki and Promtail
 
 ### 1. What is Grafana Loki and Promtail?
 
@@ -129,7 +129,7 @@ helm upgrade --install --values promtail-overrides.yaml promtail grafana/promtai
 
 By following these steps, you will configure Promtail to utilize the specified "loki.grafana-loki.svc.cluster.local" endpoint for log transmission to Loki, ensuring seamless integration into your monitoring environment.
 
-## Grafana for Visibility
+### Grafana for Visibility
 
 ### 1.  Installing Grafana
 
@@ -274,6 +274,6 @@ curl --location 'https://sandbox.juspay.io/godel/analytics' \
 
 </details>
 
-## Next Steps
+### Next Steps
 
 Once you've completed the aforementioned steps for logging and monitoring, you can initiate a payment via the SDK and trace it within the logging dashboard using identifiers such as the request ID or order ID.

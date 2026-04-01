@@ -1,16 +1,16 @@
 ---
-description: CDK script to deploy Hyperswitch Card Vault on AWS
+description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
 ---
 
 # Production ready deployment on AWS
 
 {% hint style="info" %}
-This section covers the steps for deploying the Hyperswitch card vault as an individual component
+This section covers the steps for deploying the Juspay Hyperswitch card vault as an individual component
 {% endhint %}
 
-If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the the [full-stack deployment guide ](../../deploy-on-aws-using-cloudformation.md)of Hyperswitch which includes the card locker as well.
+If you're looking for a production grade deployment of the card vault to be used along with the Hyperswitch application, refer to the [full-stack deployment guide](../../deploy-on-aws-using-cloudformation.md) of Juspay Hyperswitch which includes the card locker as well.
 
-## Standalone deployment of the Hyperswitch Card Vault
+### Standalone deployment of the Juspay Hyperswitch Card Vault
 
 {% hint style="warning" %}
 Pre-requisites
@@ -20,21 +20,21 @@ Pre-requisites
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 {% endhint %}
 
-### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
+#### Step 1 - [Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
 <figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
 
-### Step 2 - Configure your AWS credentials in your terminal
+#### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
 
 1. Preferred AWS region
 2. Access key ID
 3. Secret Access Key
-4. Session Token (if you MFA set up)
+4. Session Token (if you have MFA set up)
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
@@ -49,7 +49,7 @@ export AWS_SECRET_ACCESS_KEY=<Your Secret_Access_Key> // e.g., export AWS_SECRET
 export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 ```
 
-### Step 3 - Deploy Card Vault
+#### Step 3 - Deploy Card Vault
 
 Run the below commands in the same terminal session
 
@@ -69,11 +69,11 @@ Once the script is run you will have to provide the following as inputs
 Note: The VPC should have at least one private subnet with egress to deploy the card vault
 {% endhint %}
 
-1. If you don't have one or want to set up a new VPC leave the input blank and proceed
+4. If you don't have one or want to set up a new VPC leave the input blank and proceed
 
-### **Unlocking the Card Vault**
+#### Unlocking the Card Vault
 
-At this point your locker setup on the AWS account is complete. Please following the setups below to unlock the locker to make it read for use.
+At this point your locker setup on the AWS account is complete. Please follow the steps below to unlock the locker to make it ready for use.
 
 * Run the following command to generate the key for the jump-server
 
@@ -94,21 +94,21 @@ ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
 * Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
-* The locker\_public key and the tenant\_private key to use the locker with your application (Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
+* The locker_public key and the tenant_private key to use the locker with your application (Juspay Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash
 aws ssm get-parameter --name /locker/public_key:1 --query 'Parameter.Value' --output text
 aws ssm get-parameter --name /tenant/private_key:1 --query 'Parameter.Value' --output text
 ```
 
-### Output
+#### Output
 
 On successful deployment of the Card Vault you will receive the following
 
 | Output                | What it is used for                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Jump Locker SSH Key   | This is used to Jump Locker SSH key to access the jump server                                                   |
-| Jump Locker Public IP | The IP Address of the the Jump Server where you can activate the Card Vault                                     |
+| Jump Locker Public IP | The IP Address of the Jump Server where you can activate the Card Vault                                         |
 | Locker IP             | The URL of the Card Vault service                                                                               |
 | Locker Public Key     | The public key of the card vault that needs to be used to JWE encrypt the requests to the card vault            |
 | Tenant Private Key    | The private key of the tenant application that needs to be used to JWE decrypt the response from the card vault |
@@ -117,9 +117,9 @@ On successful deployment of the Card Vault you will receive the following
 Make sure to save the keys and passwords you provide while running the script
 {% endhint %}
 
-### Integrating it with your Application
+#### Integrating it with your Application
 
-To start using it with Hyperswitch update the following environment variables while deploying. You can use it with any other tenant application using the respective card vault URL and JWE keys.
+To start using it with Juspay Hyperswitch update the following environment variables while deploying. You can use it with any other tenant application using the respective card vault URL and JWE keys.
 
 ```bash
 ROUTER__LOCKER__HOST= # add the ip address of the ec2 instance created
@@ -127,7 +127,7 @@ ROUTER__JWEKEY__VAULT_ENCRYPTION_KEY= # add the JWE public key of locker generat
 ROUTER__JWEKEY__VAULT_PUBLIC_KEY= # add the JWE private key of tenant generated above
 ```
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../account-setup/test-a-payment.md" %}
 [test-a-payment.md](../../../account-setup/test-a-payment.md)

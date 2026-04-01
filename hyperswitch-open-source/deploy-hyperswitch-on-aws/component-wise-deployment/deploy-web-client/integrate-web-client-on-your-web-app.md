@@ -1,5 +1,5 @@
 ---
-description: Integrate web client for a seamless, blended and an unified payment experience
+description: Integrate web client for a seamless, blended and a unified payment experience
 ---
 
 # Integrate web client on your web app
@@ -26,7 +26,7 @@ Use `HyperLoader` to accept payment details from your customer and send them to 
 
 #### 1.2 Define the payment form <a href="#id-22-define-the-payment-form" id="id-22-define-the-payment-form"></a>
 
-Add one empty placeholder `div` to your checkout form for each Widget that you’ll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer’s email address and payment information.
+Add one empty placeholder `div` to your checkout form for each Widget that you'll mount. `HyperLoader` inserts an iframe into each `div` to securely collect the customer's email address and payment information.
 
 ```html
 <form id="payment-form">
@@ -43,7 +43,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you�
 
 #### 1.3 Initialize HyperLoader <a href="#id-23-initialize-hyperloader" id="id-23-initialize-hyperloader"></a>
 
-Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You’ll use `HyperLoader` to create the Unified Checkout and complete the payment on the client.
+Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You'll use `HyperLoader` to create the Unified Checkout and complete the payment on the client.
 
 ```javascript
 const hyper = Hyper("YOUR_PUBLISHABLE_KEY");
@@ -87,9 +87,9 @@ async function initialize() {
 
 #### 2.1 Handle the submit event and complete the payment <a href="#id-31-handle-the-submit-event-and-complete-the-payment" id="id-31-handle-the-submit-event-and-complete-the-payment"></a>
 
-Listen to the form’s submit event to know when to confirm the payment through the hyper API.
+Listen to the form's submit event to know when to confirm the payment through the hyper API.
 
-Call `confirmPayment()`, passing along the `UnifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they’re redirected to the `return_url`.
+Call `confirmPayment()`, passing along the `UnifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the `return_url`.
 
 ```javascript
 async function handleSubmit(e) {
@@ -129,7 +129,7 @@ async function handleSubmit(e) {
 ```
 
 {% hint style="info" %}
-Also if there are any immediate errors (for example, your customer’s card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
+Also if there are any immediate errors (for example, your customer's card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 {% endhint %}
 
 #### 2.2 Display a payment status message <a href="#id-32-display-a-payment-status-message" id="id-32-display-a-payment-status-message"></a>
@@ -177,15 +177,15 @@ The web client allows you to customize the appearance according to your web app 
 <summary>Troubleshooting/ FAQs</summary>
 
 * **I am getting an error while loading the HyperLoader.js script**\
-  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\\
+  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\
 * **I am unable to see the SDK running, or it is in a perpetual loading state**\
-  Please make sure that the correct publishable key is used to instantiate the SDK.\\
+  Please make sure that the correct publishable key is used to instantiate the SDK.\
 * **After completing the payment, I am redirected to a non existent web page**\
   Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
 
 </details>
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../account-setup/" %}
 [account-setup](../../../account-setup/)
