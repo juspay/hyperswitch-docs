@@ -1,15 +1,15 @@
 ---
-description: Interact with the Hyperswitch ecosystem through AI-powered documentation and MCP server for executing real API operations via natural language
 hidden: true
 noIndex: true
 icon: brain-circuit
+description: Explore AI resources to interact with Hyperswitch through DeepWikis and MCP Server for documentation and API operations
 ---
 
 # AI Resources
 
 AI resources enable you to intelligently interact with the entire Hyperswitch ecosystem through conversational AI. Whether you're a developer, product manager, or business stakeholder, you can ask both technical and non-technical questions, execute real API operations, and verify results - all through natural language conversations.
 
-#### 1. DeepWikis - AI-Powered Documentation
+## 1. DeepWikis - AI-Powered Documentation
 
 Transform how you explore and understand Hyperswitch with AI-enhanced documentation across the entire ecosystem.
 
@@ -49,7 +49,7 @@ Transform how you explore and understand Hyperswitch with AI-enhanced documentat
 
 </details>
 
-#### 2. MCP Server - Direct API Integration
+## 2. MCP Server - Direct API Integration
 
 Execute real [Hyperswitch API](https://api-reference.hyperswitch.io/introduction) operations directly through your AI assistant using the [Model Context Protocol](https://modelcontextprotocol.io/introduction).
 

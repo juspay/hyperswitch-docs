@@ -1,13 +1,13 @@
 ---
-description: Process payouts using saved payment methods via PCI-compliant vault
 icon: repeat
+description: Store and reuse customer payment methods for payout processing using Hyperswitch's secure, PCI-compliant vault and token-based API flows.
 ---
 
 # Payouts with Saved Payment Methods
 
-Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer’s saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
+Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer's saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
 
-#### Tokenizing Payment Methods
+## Tokenizing Payment Methods
 
 Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault) through two primary entry points:
 
@@ -16,15 +16,15 @@ Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitc
   * For payments: Set `"setup_future_usage": "off_session"`.
   * For payouts: Set `"recurring": true`.
 
-#### Retrieving Saved Methods
+## Retrieving Saved Methods
 
-To process a payout, fetch the identifiers for a customer’s saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token` required for transaction processing.
+To process a payout, fetch the identifiers for a customer's saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token` required for transaction processing.
 
-#### Executing the Payout
+## Executing the Payout
 
 The `payment_token` is passed in the [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) request to trigger the fund transfer using the customer's vaulted credentials.
 
-### Setup and Integration
+## Setup and Integration
 
 Utilize the Hyperswitch Dashboard and the specialized Postman collection to test vaulted payout flows.
 
@@ -32,7 +32,7 @@ Utilize the Hyperswitch Dashboard and the specialized Postman collection to test
 * Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
 * Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
 
-Prerequisites
+### Prerequisites
 
 Before implementing saved payment method workflows, ensure the following:
 
@@ -40,15 +40,15 @@ Before implementing saved payment method workflows, ensure the following:
 * An API Key is generated in the [Developers section](https://www.google.com/search?q=/docs/dashboard/developers) of the dashboard.
 * The Merchant ID is retrieved from your [Dashboard home page](https://app.hyperswitch.io).
 
-#### Step-by-Step Implementation
+### Step-by-Step Implementation
 
-Import Testing Collection
+#### Import Testing Collection
 
 Download and import the [Saved Payment Methods Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
-Configure Environment
+#### Configure Environment
 
 In the Variables tab of the collection, define the following global parameters:
 
@@ -58,17 +58,18 @@ In the Variables tab of the collection, define the following global parameters:
 
 <figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
 
-Direct Vaulting: Follow the sequence to create a payment method and immediately utilize the resulting token for a payout.
+#### Direct Vaulting
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.40 PM.png" alt=""><figcaption></figcaption></figure>
+Follow the sequence to create a payment method and immediately utilize the resulting token for a payout.
 
-Recurring/Subsequent Payouts: Follow the sequence to list existing customer payment methods and process a payout using a previously stored token.
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.40 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.55 PM.png" alt=""><figcaption></figcaption></figure>
+#### Recurring/Subsequent Payouts
+
+Follow the sequence to list existing customer payment methods and process a payout using a previously stored token.
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-18 at 12.14.55 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="route-your-payout-transactions-using-smart-router.md" %}
-
 [route-your-payout-transactions-using-smart-router.md](route-your-payout-transactions-using-smart-router.md)
-
 {% endcontent-ref %}
-

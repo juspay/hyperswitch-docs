@@ -1,5 +1,4 @@
 ---
-description: Explore the complete Hyperswitch payment suite including orchestration, checkout experience, and payment operations for unified payment management
 hidden: true
 noIndex: true
 icon: suitcase
@@ -9,19 +8,19 @@ icon: suitcase
 
 Hyperswitch provides a open-source, lightweight and full-stack solution to effortlessly and effectively manage payments. It provides you with:
 
-* **Payment Orchestration** – Unified API and no-code integrations for 300+ connectors and 300+ payment methods. Enables improving authorization rates with built-in intelligent routing.
+* **Payment Orchestration** – Unified API and no-code integrations for all 60+ payment processors and numerous payment methods. Enables improving authorization rates with built-in intelligent routing.
 * **Checkout Experience** – Seamless, fast, and intuitive checkout experience for end users, improving conversions.
 * **Payment Operations** – Simplifies management of all payment workflows and operations from a centralized dashboard.
 
 <figure><img src="../.gitbook/assets/docs_hs (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### Explore Hyperswitch
+### Explore Hyperswitch
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Payment Orchestration</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td><td><a href="../explore-hyperswitch/payment-orchestration/">payment-orchestration</a></td></tr><tr><td><mark style="color:blue;"><strong>Checkout Experience</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td><td><a href="../explore-hyperswitch/merchant-controls/">merchant-controls</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Operations</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment Ops (1).png">Payment Ops (1).png</a></td><td><a href="../explore-hyperswitch/account-management/">account-management</a></td></tr></tbody></table>
 
 ***
 
-##### **Developer Resources**
+#### **Developer Resources**
 
 <table data-column-title-hidden data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Signup and try a payment</mark></td><td><a href="https://app.hyperswitch.io/">https://app.hyperswitch.io/</a></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;">Integrate with your app</mark></td><td><a href="https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide">https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide</a></td><td></td><td></td><td></td></tr><tr><td><mark style="color:blue;">API Reference</mark></td><td><a href="https://api-reference.hyperswitch.io/introduction">https://api-reference.hyperswitch.io/introduction</a></td><td></td><td></td><td></td></tr></tbody></table>
 
@@ -31,11 +30,11 @@ Join our [Slack Community](https://inviter.co/hyperswitch-slack) to ask question
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
-#### What's Included in the Hyperswitch Payment Suite
+### What’s Included in the Hyperswitch Payment Suite
 
-##### Payments&#x20;
+#### Payments&#x20;
 
-<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Intelligent Payment Orchestration</strong></mark></td><td>Hyperswitch's Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.</td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Connectors (Processor Integrations)</strong></mark></td><td>Integrate with 300+ connectors enabling 300+ payment methods with zero development effort.    </td><td><a href="../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Checkout</strong></mark></td><td>Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.</td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Payment Links</strong></mark></td><td>Seamlessly integrate into Hyperswitch without writing much code.</td><td><a href="../.gitbook/assets/Payment Links (1).png">Payment Links (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Control Centre</strong></mark></td><td>Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations &#26; analytics use cases. This provides more power to your team for managing payments seamlessly.</td><td><a href="../.gitbook/assets/customization.jpg">customization.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Intelligent Payment Orchestration</strong></mark></td><td>Hyperswitch’s Payment Orchestration platform is designed to simplify the complexities of managing multiple PSPs and various payment methods, ensuring optimal performance at every stage of the payment lifecycle.</td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Connectors (Processor Integrations)</strong></mark></td><td>Integrate with more than 200+ Connectors enabling 150+ payment methods with zero development effort.    </td><td><a href="../.gitbook/assets/addConnector.jpg">addConnector.jpg</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Checkout</strong></mark></td><td>Hyperswitch empowers you to deliver a seamless, intuitive, and native checkout experience without compromising transaction authenticity.</td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Payment Links</strong></mark></td><td>Seamlessly integrate into Hyperswitch without writing much code.</td><td><a href="../.gitbook/assets/Payment Links (1).png">Payment Links (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Control Centre</strong></mark></td><td>Hyperswitch Control Center is a single interface that all your teams will be required to use for all payment operations &#x26; analytics use cases. This provides more power to your team for managing payments seamlessly.</td><td><a href="../.gitbook/assets/customization.jpg">customization.jpg</a></td></tr></tbody></table>
 
 
 
@@ -55,4 +54,4 @@ Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) p
 
 #### Enterprise and Marketplace
 
-<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Multi-Tenancy</strong></mark></td><td>Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.</td><td><a href="../.gitbook/assets/Enterprise (1).png">Enterprise (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Multi hierarchy Setup</strong></mark></td><td>Hyperswitch allows you to choose different account structures based on your business needs.  Allows you to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own.</td><td><a href="../.gitbook/assets/Multiple account &#26; profile management.png">Multiple account &#26; profile management.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td align="center"><mark style="color:$primary;"><strong>Multi-Tenancy</strong></mark></td><td>Multi-tenancy in Hyperswitch enables each of it's tenants to have customised offering of the Hyperswitch stack without the overhead of software and infrastructure maintenance.</td><td><a href="../.gitbook/assets/Enterprise (1).png">Enterprise (1).png</a></td></tr><tr><td align="center"><mark style="color:$primary;"><strong>Multi hierarchy Setup</strong></mark></td><td>Hyperswitch allows you to choose different account structures based on your business needs.  Allows you to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own.</td><td><a href="../.gitbook/assets/Multiple account &#x26; profile management.png">Multiple account &#x26; profile management.png</a></td></tr></tbody></table>

@@ -1,11 +1,11 @@
 ---
-description: Integrate Google Pay widget for Android payment acceptance
+description: Learn how to integrate the Google Pay widget for accepting Google Pay payments in your Android app using Juspay Hyperswitch SDK.
 icon: google
 ---
 
 # Google Pay
 
-**Purpose:** Google Pay payments
+**Purpose:** Google Pay payments with Juspay Hyperswitch
 
 **Add Google Pay Widget to Layout**
 
@@ -72,9 +72,9 @@ private fun onGooglePayResult(result: GooglePayPaymentMethodLauncher.Result) {
 }
 ```
 
-## 5. Best Practices
+## Best Practices
 
-### 5.1 UI State Management
+### UI State Management
 
 Disable payment buttons until launchers are ready:
 
@@ -83,4 +83,3 @@ private fun onGooglePayReady(isReady: Boolean) {
     googlePayButton.isEnabled = isReady
 }
 ```
-

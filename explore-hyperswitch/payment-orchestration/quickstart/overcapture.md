@@ -1,22 +1,20 @@
 ---
-description: Capture amounts greater than the originally authorized amount
 hidden: true
 icon: plus
+description: Capture amounts exceeding original authorization with Juspay Hyperswitch's Overcapture feature, supporting post-authorization adjustments for Stripe and Adyen.
 ---
 
 # Overcapture
 
 ## Overview
 
-In card payments, Overcapture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
+In card payments, Overcapture occurs when a merchant captures (settles) an amount greater than the originally authorized amount. Juspay Hyperswitch enables this capability for supported Payment Service Providers (PSPs).
 
 This is particularly useful in scenarios such as:
 
-* Additional charges (e.g., shipping, handling, gratuities).
-* Price adjustments made after initial authorization.
-* Reducing the risk of under-capturing when final order values differ.
-
-With Juspay Hyperswitch, you can easily enable Overcapture for supported Payment Service Providers (PSPs).
+* Additional charges (e.g., shipping, handling, gratuities)
+* Price adjustments made after initial authorization
+* Reducing the risk of under-capturing when final order values differ
 
 ### Supported PSPs
 
@@ -25,36 +23,35 @@ Currently, Hyperswitch supports Overcapture for the following PSPs:
 * Stripe
 * Adyen
 
-👉 If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
+If you need Overcapture support for other PSPs, please contact the Hyperswitch Support Team.
 
-### How to Enable Overcapture
+## How to Enable Overcapture
 
 Overcapture can be enabled in two ways:
 
-#### 1. Profile-level Configuration (via Dashboard)
+### 1. Profile-level Configuration (via Dashboard)
 
-1. Navigate to:\
-   Developer → Payment Settings → Always Enable Overcapture
+1. Navigate to: Developer → Payment Settings → Always Enable Overcapture
 2. Toggle Enable/Disable as required.
 
-#### 2. Per-request Configuration (via API)
+### 2. Per-request Configuration (via API)
 
-Use the boolean field enable\_overcapture in your payment request.
+Use the boolean field `enable_overcapture` in your payment request.
 
 This flag can be set in the following API calls:
 
-* /payments/create with `confirm = false`
-  * /payments/update
-* /payments/create call with `confirm = true`
+* `/payments/create` with `confirm = false`
+* `/payments/update`
+* `/payments/create` call with `confirm = true`
 
-⚠️ Note:
-
-* The request-level enable\_overcapture will override the profile-level setting.
-* Overcapture is only applicable for manual capture payments (capture\_method = manual).
+> **Note:**
+>
+> * The request-level `enable_overcapture` will override the profile-level setting.
+> * Overcapture is only applicable for manual capture payments (`capture_method = manual`).
 
 ### Example: API Request
 
-```
+```json
 {
   "amount": 100,
   "currency": "USD",
@@ -72,7 +69,6 @@ This flag can be set in the following API calls:
     }
   }
 }
-
 ```
 
 ### Example: API Response
@@ -93,7 +89,6 @@ This flag can be set in the following API calls:
   "created": "2025-09-24T11:29:55.629Z",
   "expires_on": "2025-09-24T11:44:55.629Z"
 }
-
 ```
 
 * `enable_overcapture`
@@ -103,18 +98,16 @@ This flag can be set in the following API calls:
   * `true` → Connector enabled Overcapture for this payment.
   * `false` → Overcapture is not applicable for this PSP/payment.
 
-### Monitoring & Settlement
+## Monitoring & Settlement
 
 * After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
 * Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
 
-### Merchant Action
+## Merchant Action
 
 * Use Dashboard settings for global enablement
 * Use API overrides for payment-specific enablement
 * Monitor capturable and received amounts to track final settlements
 * Contact Hyperswitch Support for enabling Overcapture with PSPs other than Stripe and Adyen
 
-✅ With Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.
-
-\\
+With Juspay Hyperswitch, merchants gain flexibility in handling post-authorization adjustments—ensuring smooth settlements without losing revenue.

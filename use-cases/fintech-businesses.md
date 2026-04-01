@@ -1,7 +1,7 @@
 ---
 description: >-
-  Common payment augmentation patterns for FinTech enterprises, from adding
-  processors to improving routing, vaulting, and operational visibility.
+  Implement payment augmentation patterns for FinTech enterprises to expand
+  geographies, boost auth rates, and maintain data sovereignty
 icon: watch-calculator
 ---
 
@@ -17,7 +17,7 @@ Juspay Hyperswitch is an open-source payment orchestration platform designed for
 
 Fintech enterprises rarely build payment stacks from scratch. Most established players already operate mature internal ledgers, risk engines, and reconciliation systems. The challenge isn't replacing these systems; it's augmenting them to support new markets, APMs, and compliance requirements without accruing technical debt.
 
-Hyperswitch is designed as a modular middleware layer that injects specific capabilities into your existing stack. The sections below outline the architectural patterns for augmenting a Fintech payment stack.
+Juspay Hyperswitch is designed as a modular middleware layer that injects specific capabilities into your existing stack. The sections below outline the architectural patterns for augmenting a Fintech payment stack.
 
 ***
 
@@ -25,7 +25,7 @@ Hyperswitch is designed as a modular middleware layer that injects specific capa
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
-Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs across 50+ global processors without writing a single line of integration code.
+Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs across 50+ global processors without writing a single line of integration code.
 
 | Capability        | Description                                                                                     | Reference                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -37,9 +37,9 @@ Hyperswitch acts as a stateless integration layer. You can utilise our [Connecto
 
 ### How can fintechs maintain data sovereignty with self-hosted deployment?
 
-Fintechs dealing with high-value transactions or strict regulatory requirements (e.g., CCPA, GDPR) often need full control over their payment infrastructure. While Hyperswitch's SaaS offering is PCI-DSS compliant, self-hosting gives you complete ownership of your data and infrastructure.
+Fintechs dealing with high-value transactions or strict regulatory requirements (e.g., CCPA, GDPR) often need full control over their payment infrastructure. While Juspay Hyperswitch's SaaS offering is PCI-DSS compliant, self-hosting gives you complete ownership of your data and infrastructure.
 
-Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC—without the operational overhead of managing a payment platform from scratch.
+Juspay Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire stack (Router, Vault, Analytics) as a set of microservices within your own Kubernetes cluster or VPC—without the operational overhead of managing a payment platform from scratch.
 
 | Capability         | Description                                                                                                                            | Reference                                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the entire s
 
 Internal routing engines often struggle to scale. Hardcoding rules like _"If transaction > $500, route to Adyen"_ creates a fragile codebase. Implementing Smart Retries (e.g., retrying a soft decline on a secondary processor) requires complex state management.
 
-Insert Hyperswitch downstream of your Risk Engine to act as a dynamic Smart Router.
+Insert Juspay Hyperswitch downstream of your Risk Engine to act as a dynamic Smart Router.
 
 | Capability        | Description                                                                                                                               | Reference                                                                                            |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ Insert Hyperswitch downstream of your Risk Engine to act as a dynamic Smart Rout
 
 Relying on PSP-specific tokens (like Stripe `cus_` objects) creates vendor lock-in. Migrating millions of saved cards to a new processor is a high-risk operation that often causes churn.
 
-Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards) that detaches the stored credential from the processor.
+Juspay Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards) that detaches the stored credential from the processor.
 
 **Centralize card storage across all processors with a single vault.**
 
@@ -75,13 +75,13 @@ Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/ex
 
 1. **PSP-agnostic storage**: Cards are tokenized independently of any specific processor, enabling true portability
 2. **Standalone offering**: Use the Vault Service as a standalone component without adopting the full orchestration platform
-3. **External vault support**: Already have a vault? Configure Hyperswitch to pass-through tokens or integrate with external providers like VGS or Forter
+3. **External vault support**: Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external providers like VGS or Forter
 
 | Capability        | Description                                                                                                                                             | Reference                                                                                                                                                           |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Network Tokens    | Integrate directly with schemes (Visa/Mastercard) to provision Network Tokens, which offer higher authorisation rates and auto-update for expired cards | [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)          |
 | Token Portability | A card saved during a transaction on Processor A can be seamlessly charged via Processor B                                                              | [Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)                                      |
-| External Vaults   | Already have a vault? Configure Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                         | [External Vault Setup](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault) |
+| External Vaults   | Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                         | [External Vault Setup](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault) |
 
 ***
 
@@ -89,7 +89,7 @@ Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitch.io/ex
 
 Some Fintechs only need to control specific parts of the lifecycle—like issuing refunds or capturing authorized funds—without routing the initial checkout through Hyperswitch.
 
-Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to interact with underlying processors directly. This "passthrough" mode lets you leverage Hyperswitch's unified API for post-payment operations while keeping your existing checkout flow intact.
+Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-create) to interact with underlying processors directly. This "passthrough" mode lets you leverage Juspay Hyperswitch's unified API for post-payment operations while keeping your existing checkout flow intact.
 
 | Capability           | Description                                                                                                               | Reference                                                                                                   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -102,7 +102,7 @@ Use our [Relay APIs](https://api-reference.hyperswitch.io/v1/relay/relay#relay-c
 
 Handling error codes from 10+ different processors is a maintenance nightmare. A "Do Not Honor" from one bank might be a "suspected\_fraud" from another, making it impossible to build consistent retry logic or user feedback.
 
-Hyperswitch normalises the chaos of the global payment ecosystem into a strict schema.
+Juspay Hyperswitch normalises the chaos of the global payment ecosystem into a strict schema.
 
 **Error Code Unification Example:**
 
@@ -110,7 +110,7 @@ Hyperswitch normalises the chaos of the global payment ecosystem into a strict s
 | --------------- | ---------- | --------------------------- |
 | PSP 1           | `101`      | "Invalid card number"       |
 | PSP 2           | `1314`     | "Invalid card"              |
-| **Hyperswitch** | `US_1000`  | "Issue with payment method" |
+| **Juspay Hyperswitch** | `US_1000`  | "Issue with payment method" |
 
 This shows how disparate PSP error codes are mapped to a unified, intelligible standard—enabling consistent retry logic and clearer user feedback.
 
@@ -124,7 +124,7 @@ This shows how disparate PSP error codes are mapped to a unified, intelligible s
 
 Blind spots in processor performance can lead to lost revenue. If a specific BIN range is failing on a processor, you need to know promptly—not when the monthly report comes out.
 
-Hyperswitch provides observability capabilities to help monitor payment operations.
+Juspay Hyperswitch provides observability capabilities to help monitor payment operations.
 
 | Capability           | Description                                                                                                              | Reference                                                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
@@ -142,4 +142,4 @@ Ready to augment your payment stack? Here are the next steps:
 * [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
 * [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
 * [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
-* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Hyperswitch in your own infrastructure
+* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Juspay Hyperswitch in your own infrastructure

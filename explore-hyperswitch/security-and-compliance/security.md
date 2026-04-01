@@ -1,5 +1,5 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Juspay Hyperswitch
+description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
 icon: cloud-check
 ---
 
@@ -7,7 +7,7 @@ icon: cloud-check
 
 At Juspay Hyperswitch, we prioritize data security and adhere to PCI DSS standards to protect sensitive information. Our platform is engineered with a robust multi-layered encryption framework to secure sensitive data, including API credentials, RSA certificates, database passwords, and Personally Identifiable Information (PII), throughout its lifecycle.
 
-### **Benefits of Our Security Framework**
+## Benefits of Our Security Framework
 
 * **Compliance and Trust**: We comply with PCI DSS 4.0 and ISO 27001:2022 standards, ensuring international best practices for data protection.
 * **Enhanced Data Security**: Hyperswitch employs advanced encryption layers to secure data during transmission and storage.
@@ -20,11 +20,11 @@ The Hyperswitch application employs multiple layers of encryption to safeguard s
 
 <figure><img src="../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
-#### **1. Accepting Card Data**
+### 1. Accepting Card Data
 
 Card information is initially received from the Hyperswitch SDK. This data is encrypted using SSL/TLS protocols, ensuring end-to-end encryption during transmission between the SDK and the Hyperswitch backend. This guarantees that sensitive card data is secure from the point of collection.
 
-#### **2. Storing Card Data (Vaulting)**
+### 2. Storing Card Data (Vaulting)
 
 When a payment is made using a saved card, the card details are securely stored in the Hyperswitch Card Vault. This process involves multiple steps to ensure the confidentiality and integrity of the data:
 
@@ -44,13 +44,13 @@ When a payment is made using a saved card, the card details are securely stored 
 
 For more technical details about how the Hyperswitch Card Vault manages encryption and decryption, you can visit the [Hyperswitch Card Vault GitHub repository](https://github.com/juspay/hyperswitch-card-vault).
 
-**3. Using Card Data for Analytics and Payment Operations**
+### 3. Using Card Data for Analytics and Payment Operations
 
 To provide insights and analytics without compromising sensitive information, only partially masked card details (e.g., the first 4 and last 4 digits) are sent to the Hyperswitch Control Centre. This approach offers merchants a high-level view of transactions while preserving customer confidentiality.
 
 ## Data Encryption Overview
 
-At Juspay Hyperswitch, we place the utmost importance on safeguarding sensitive data, including `external API credentials, customer information, and card details`. Our application employs a multi-layered encryption approach to ensure security during data transmission and storage.
+At Hyperswitch, we place the utmost importance on safeguarding sensitive data, including `external API credentials, customer information, and card details`. Our application employs a multi-layered encryption approach to ensure security during data transmission and storage.
 
 * **Masked Transmission**: All sensitive data remains masked during transmission and is never permanently stored on local systems.
 * **Multi-Layered Encryption**: Data is encrypted at every critical juncture, ensuring robust protection against breaches.
@@ -61,9 +61,9 @@ From the image above, the Key Manager Service is optional. If it is not implemen
 
 ## Key Management System (KMS) Encryption
 
-Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive keys required for the application’s operation.
+Hyperswitch employs AWS Key Management System (KMS) to securely manage sensitive keys required for the application's operation.
 
-1. **Startup Encryption**: Sensitive keys, such as database passwords and RSA certificates, are encrypted at the startup.
+1. **Startup Encryption**: Sensitive keys, such as database passwords and RSA certificates, are encrypted at startup.
 2. **Secure Storage**: These encrypted keys are securely stored in environment variables or configuration files, ensuring their confidentiality and protection against unauthorized access.
 
 ## Key Manager Service Encryption (Optional)
@@ -88,19 +88,16 @@ The encryption process ensures:
 
 * **Data Segmentation and Authorized Access Only**: Each merchant's data is encrypted with their specific DEK, ensuring that each set of data remains protected and is accessible only to authorized parties associated with that merchant. Data can only be decrypted by entities possessing the appropriate credentials tied to that merchant's DEK.
 
-### Concealing Sensitive Data in Logs
+## Concealing Sensitive Data in Logs
 
-At Juspay Hyperswitch, we take extra care to protect sensitive information, even in system logs. Our application framework uses a **wrapper type** to classify all sensitive data as `Secret`.
+At Hyperswitch, we take extra care to protect sensitive information, even in system logs. Our application framework uses a **wrapper type** to classify all sensitive data as `Secret`.
 
 * **Leveraging Rust's Advantages**: Hyperswitch uses Rust, a strongly typed programming language, to create a robust mechanism (`Secret<T>`) for handling sensitive data.
 * **Masked Logging**: Instead of exposing sensitive details such as passwords or Personally Identifiable Information (PII), we log only the data type (e.g., `*** alloc::string::String ***`).
 * **Source-Level Protection**: By masking sensitive data at its source, we ensure that sensitive information is never inadvertently exposed, even in debug outputs or logs.
 
 {% hint style="info" %}
-
 **Database at Rest Encryption**
 
-At Juspay Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
-
+At Hyperswitch, we encrypt database instances in our cloud-hosted environments to protect sensitive information, including card details and merchant data. For self-hosted setups, we recommend adopting similar encryption practices to ensure robust security.
 {% endhint %}
-

@@ -1,13 +1,15 @@
 ---
-description: Route payments dynamically using ML-based intelligent routing
+description: >-
+  Dynamically switch between processors in real-time to maximize first attempt
+  auth rates and minimize processing cost
 icon: flux-capacitor
 ---
 
 # Intelligent Routing
 
-The Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
+The Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
 
-### Types of Intelligent Routing
+## Types of Intelligent Routing
 
 Hyperswitch supports four intelligent routing strategies:
 
@@ -18,11 +20,11 @@ Hyperswitch supports four intelligent routing strategies:
     * **Exploitation:** We continuously route most traffic to the best-performing Gateway to maximise the overall success rate.
   * The sensitivity of the system can be tweaked by the merchants by configuring settings such as Bucket Sizes, Parameters to be considered and Hedging Percentage
   * The hedging percentage decides the exploration factor of the model&#x20;
-* **Least Cost Routing:** Picks the least cost network for every transaction basis the availability of back-of-the-card network and processor compatibility
+* **Least Cost Routing:** Picks the least cost network for every transaction based on the availability of back-of-the-card network and processor compatibility
 * **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied.
-* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. [BETA FEATURE]&#x20;
+* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]&#x20;
 
-### Architecture Diagram
+## Architecture Diagram
 
 <figure><img src="../../../.gitbook/assets/image (157) (1).png" alt=""><figcaption></figcaption></figure>
 

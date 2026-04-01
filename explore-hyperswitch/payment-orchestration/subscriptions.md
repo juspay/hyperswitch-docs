@@ -21,7 +21,7 @@ Juspay Hyperswitch enables you to work with your preferred subscription provider
     * **One-time payments** (e-commerce use cases)
     * **Recurring payments** (subscription-based use cases)
 
-### What subscription providers do we support?
+## What subscription providers do we support?
 
 All major Subscription Solution Providers offer integration points to manage payments with external payment processors. And the integration solution proposed below should work universal across any subscription provider.
 
@@ -29,11 +29,11 @@ We also support [Kill Bill](https://killbill.io/) (an open source subscription s
 
 ## Use cases supported
 
-#### **User flow 1 -** Plan First, Payment Later
+### User flow 1 - Plan First, Payment Later
 
 User selects a plan followed by selecting the payment method and adding the payment method details to make the payment and start subscription.&#x20;
 
-#### User flow 2 - **Payment First, Plan Later**
+### User flow 2 - Payment First, Plan Later
 
 User selects a payment method and adds the payment method details which are saved. User finally selects the plan to start the subscription
 
@@ -43,7 +43,7 @@ User selects a payment method and adds the payment method details which are save
 2. Subscription payment retries
 3. Subscription reminder emails
 
-### User flow-1&#x20;
+## User flow-1
 
 User selects a plan followed by selecting the payment method and adding the payment method details to start subscription. This flow can be broken into 5 parts
 
@@ -56,7 +56,7 @@ User selects a plan followed by selecting the payment method and adding the paym
 
 <figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
-### User flow-2
+## User flow-2
 
 User selects a payment method and adds the payment method details which are saved. User finally selects the plan to start the subscription. This flow can be broken into 5 parts
 
@@ -71,7 +71,7 @@ User selects a payment method and adds the payment method details which are save
 
 <figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
-### Subscription management portal
+## Subscription management portal
 
 The customer-facing subscription management interface allows the customers to modify their billing address, add new payment method details for subscription payments and cancel subscription. If a merchant offers a subscription management portal then here's how Hyperswitch can support:
 
@@ -81,21 +81,21 @@ The customer-facing subscription management interface allows the customers to mo
 
 <figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
-### Subscription payment retries&#x20;
+## Subscription payment retries
 
 The payment made for subscriptions can fail&#x20;
 
 * **When customer is present in the flow** - The user will retry the payment using same or different payment method
 * **When customer is not present in the flow** - Once the merchant receives payment failed notification from Hyperswitch, they need to update the same with their subscription provider. All subscription providers have their own retry logics (default or configured by the merchant). Their retry logic will then send retry payment webhooks to the merchant. The merchant needs to consume the webhook and retrigger the payment with Hyperswitch ([more details](subscriptions.md#what-subscription-use-cases-do-we-support))&#x20;
 
-### Subscription reminder emails
+## Subscription reminder emails
 
 The merchant can use the Hyperswitch Payment links when sending email reminders to customers who failed to make their subscription payments. Here's how it'll work:
 
 * The send email notification is a functionality offered by most subscription providers. They also allow customising the message and payment links shared inside the email
 * &#x20;The merchant needs to host a standard page and share the link to that page on the email
 * When the customer click on that link requesting to pay, the merchant will call Hyperswitch with the customer ID to create and share the Payment link
-* The customer is redirected to the payment link hosted page (with a validity of 15 minutes) which allows them to make the payment using any payment option
+* The customer is redirected to the payment link hosted page (with a validity of 15-mins) which allows them to make the payment using any payment option
 * Once the payment is successful, the merchant should mark the invoice as paid with their subscription provider and return the invoice to the customer
 
 <figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>

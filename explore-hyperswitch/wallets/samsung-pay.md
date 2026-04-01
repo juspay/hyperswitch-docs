@@ -1,4 +1,5 @@
 ---
+description: Configure Samsung Pay wallet payment method on Juspay Hyperswitch for secure mobile payments
 icon: mobile-signal
 ---
 
@@ -10,17 +11,17 @@ Available in countries like the US, Canada, China (Transit only), Spain, UK, Sin
 
 Samsung Pay works only on supported Samsung devices. You can find the list of supported devices [here](https://www.samsung.com/my/samsung-pay/supported-devices/?srsltid=AfmBOoos-CYJiqjZ6eAFWxdZqQt81Np6hITzwZzYvbm0npr3ZmBbFSvZ)
 
-### **Prerequisites**
+## **Prerequisites**
 
-Samsung Pay requires an Samsung Developer Account. You can [Sign Up](https://developer.samsung.com/pay/native/partner-onbarding.html#Sign-up%2FSign-in) following this.
+Samsung Pay requires a Samsung Developer Account. You can [Sign Up](https://developer.samsung.com/pay/native/partner-onbarding.html#Sign-up%2FSign-in) following this.
 
 {% hint style="info" %}
 
-_Please feel free to reach out to_ [_Hyperswitch support_](https://inviter.co/hyperswitch-slack) _if you are stuck at any stage when integrating and testing Samsung Pay._
+_Please feel free to reach out to_ [_Juspay Hyperswitch support_](https://inviter.co/hyperswitch-slack) _if you are stuck at any stage when integrating and testing Samsung Pay._
 
 {% endhint %}
 
-### **Create Samsung pay Web Online Payment Service**
+## **Create Samsung Pay Web Online Payment Service**
 
 To create a new service, follow the steps below:
 
@@ -31,11 +32,11 @@ To create a new service, follow the steps below:
 2. Enter the new `SERVICE NAME`.
 3. Select your `SERVICE COUNTRY`.
 4. Choose your `PAYMENT GATEWAY` from the list of supported payment gateways.
-5. Upload the.csr file you received from your processor.
+5. Upload the .csr file you received from your processor.
 6. In the `SERVICE DOMAIN` field, enter your merchant\_domain and click the `ADD` button. If there are multiple merchant domains, add them one after the other.
 7. Verify the details you've entered, check the `LEGAL AGREEMENTS` box, and click `SAVE AND NEXT`.
 
-### **Configuring Samsung Pay on Juspay Hyperswitch**
+## **Configuring Samsung Pay on Juspay Hyperswitch**
 
 To configure Samsung Pay on Hyperswitch, follow the steps below -
 
@@ -56,4 +57,3 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process.
 
 {% endhint %}
-

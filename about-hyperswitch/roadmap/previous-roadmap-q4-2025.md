@@ -27,7 +27,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 * **Cost observability** - New capabilities to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs, advanced fee auditing capabilities, estimate expected interchange and scheme fees per transaction and reconcile them against actual applied rates, conversational AI interface, and expanded acquirer coverage: adding support for five or more new acquirer report formats (AIBMS, Elavon, PayPal, Stripe, and Amex)
 * **Control Centre** - Support for platform org and merchant to allow programmatic API-driven merchant account creation, management, and configuration
 
-### Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -47,9 +47,9 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 6. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
 7. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-##### **Core Orchestration and Connectors**
+#### **Core Orchestration and Connectors**
 
 * **Connectors**\
   We plan to expand connector coverage with new integrations including
@@ -72,7 +72,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 _<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
 
-##### **Vault**
+#### **Vault**
 
 *   **Guest Checkout Tokenization in Hyperswitch Vault**
 
@@ -86,27 +86,27 @@ _<mark style="color:blue;">Learn more about the existing Core Orchestration and 
 
 _<mark style="color:blue;">Learn more about the existing Vault Services and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-##### **Authentication and Checkout Experience**
+#### **Authentication and Checkout Experience**
 
 *   **Authorization Uplift**
 
     We are introducing a set of enhancements aimed at improving authorization success rates and overall checkout reliability. These features are designed to create a more adaptive, resilient, and insight-driven payment experience:
 
-##### **Revenue Recovery**
+#### **Revenue Recovery**
 
 * **Advanced retry logic for Hard declines**\
   The system intelligently identifies and retries transactions that were falsely marked as hard declines. This feature aims to recover transactions that were previously considered unrecoverable. Merchants will be able to manage these retries by setting a configurable budget that limits the number retry attempts.
 * **Account Updater:**\
-  The system will automatically refresh stored card credentials when a customer's card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
+  The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
 _<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/payments-modules/revenue-recovery.md)
 
-##### **Reconciliation**
+#### **Reconciliation**
 
 * **Rule Types Expansion**\
   Support for 1:many and many:1 rule types to enable flexible matching across split, aggregated, and multi-attempt transaction flows
 * **Support for Lumpsum Reconciliation**\
-  Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction levels
+  Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction level
 
 
 

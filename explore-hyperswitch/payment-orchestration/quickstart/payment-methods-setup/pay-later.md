@@ -7,14 +7,16 @@ icon: calendar-day
 
 ## Klarna, Affirm, Afterpay/Clearpay - Redirection flow
 
-* Klarna is a global buy now pay later payment method that is available in more than 19 countries and supports 10 currencies.
+Juspay Hyperswitch supports multiple buy now pay later options:
+
+* Klarna is a global buy now pay later payment method available in 23+ countries and supports 15+ currencies.
 * Affirm is a buy now pay later payment method available to US customers and supports USD.
 * Afterpay/Clearpay is a buy now pay later payment method available as Afterpay to customers in US, Canada, Australia, New Zealand while available as Clearpay to customers in the United Kingdom, Spain, France and Italy. It currently supports USD, CAD, AUD, NZD, EUR and GBP.
 
-## **How to configure pay later options (Redirection flow) on Juspay Hyperswitch?**
+## How to configure pay later options (Redirection flow) on Juspay Hyperswitch?
 
 1. Make sure that the pay later options are enabled on your connector's dashboard
-2. Enable paylater options on Hyperswitch dashboard under "payment methods" tab while configuring your connector
+2. Enable pay later options on Hyperswitch dashboard under "payment methods" tab while configuring your connector
 3. Ensure that you add the additional mandatory parameters when you create a payment (using node SDK or /payments API) from your server-side.
 
 ```js
@@ -24,7 +26,7 @@ icon: calendar-day
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "California",
             "zip": "94122",
             "country": "US",
@@ -41,7 +43,7 @@ icon: calendar-day
           "line1": "1467",
           "line2": "Harrison Street",
           "line3": "Harrison Street",
-          "city": "San Fransico",
+          "city": "San Francisco",
           "state": "California",
           "zip": "94122",
           "country": "US",
@@ -59,14 +61,14 @@ icon: calendar-day
 
 ![Klarna Logo](https://hyperswitch.io/icons/homePageIcons/logos/klarnaLogo.svg)
 
-Klarna In app flow in Hyperswitch is available if you configure Klarna as a payment processor. It provides a superior checkout flow for the customers compared to redirection flow.
+Klarna In app flow in Juspay Hyperswitch is available if you configure Klarna as a payment processor. It provides a superior checkout flow for the customers compared to redirection flow.
 
-To configure Klarna SDK flow, follow these steps. As a prerequisite, you would need to have a merchant account with Klarna. For Klarna SDK, need to add mandatory metaData object while creating a payment (/payments) from your server-side. The metaData object will look something like below.
+To configure Klarna SDK flow, follow these steps. As a prerequisite, you would need to have a merchant account with Klarna. For Klarna SDK, you need to add a mandatory metaData object while creating a payment (/payments) from your server-side. The metaData object will look something like below.
 
 ```js
 "metadata": {
       "order_details": {
-        "product_name": "Apple iphone 15",
+        "product_name": "Apple iPhone 15",
         "quantity": 1
       }
     }

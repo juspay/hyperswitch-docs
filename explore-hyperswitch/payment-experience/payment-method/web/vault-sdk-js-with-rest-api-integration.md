@@ -1,15 +1,15 @@
 ---
-description: Integrate Vault SDK using JavaScript for secure payment method tokenization
+description: Secure tokenization using Hyperswitch's PCI compliant Payment Methods Management SDK for JavaScript applications with REST API integration.
 icon: globe-pointer
 ---
 
 # Vault SDK - JS with REST API Integration
 
-## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Payment Methods Management SDK
+### Secure Tokenization using Hyperswitch's PCI Compliant Payment Methods Management SDK
 
 The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
-## Key Benefits
+### Key Benefits
 
 * **Simplified PCI Compliance**: Reduce your PCI scope by outsourcing the storage of sensitive payment data to Hyperswitch's secure vault
 * **Enhanced Customer Experience**: Allow customers to save and reuse payment methods for faster checkout experiences
@@ -17,20 +17,19 @@ The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution 
 * **Secure Token System**: Access saved payment methods via secure tokens without handling raw card data
 * **Customizable UI**: Integrate a pre-built, customizable payment method management interface into your application
 
-## Vault SDK Integration Walkthrough
+### Vault SDK Integration Walkthrough
 
 This document provides step-by-step instructions for integrating the Hyperswitch Vault/Payment Methods Management SDK into your application.
 
-### 1. Server-Side Setup
+#### 1. Server-Side Setup
 
 First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 
-#### Obtaining Your API Keys
+##### Obtaining Your API Keys
 
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 {% hint style="info" %}
-
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
 To generate your Vault API keys, follow these steps:
@@ -41,14 +40,13 @@ To generate your Vault API keys, follow these steps:
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
-
 {% endhint %}
 
-#### Creating a Payment Methods Session Endpoint
+##### Creating a Payment Methods Session Endpoint
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.\
+> Note: Please ensure that the **customer_id** is included in the request body when creating a payment method session.
 > For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 ```javascript
@@ -95,11 +93,11 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 > **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
 
-### 2. Client-Side Integration
+#### 2. Client-Side Integration
 
 Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
 
-#### 2.1 Define the Payment Methods Management Form
+##### 2.1 Define the Payment Methods Management Form
 
 Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
 
@@ -111,10 +109,10 @@ Add one empty placeholder `div` to your page for the Payment Methods Management 
 </form>
 ```
 
-#### 2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element
+##### 2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element
 
-Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods.\
-\
+Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods.
+
 Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
 > Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
@@ -171,7 +169,7 @@ async function initialize() {
 initialize();
 ```
 
-#### 2.3 Complete tokenization and handle errors
+##### 2.3 Complete tokenization and handle errors
 
 Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
 
@@ -227,7 +225,6 @@ async function handleSubmit(e) {
     setIsLoading(false);
   }
 }
-
 ```
 
 Congratulations! Now that you have integrated the Hyperswitch Payment Methods Management on your app, you can customize it to blend with the rest of your website.

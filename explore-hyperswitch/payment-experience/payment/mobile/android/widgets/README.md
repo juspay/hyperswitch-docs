@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Hyperswitch SDK using individual payment widgets for granular
-  control over your payment flow.
+description: Integrate Juspay Hyperswitch SDK using individual payment widgets for granular control over your payment flow.
 icon: cubes
 ---
 
@@ -28,7 +26,7 @@ Follow the [Server Setup](../../../server-setup.md) section.
 
 ### 2.1 Add the Buildscript Classpath
 
-To start integrating the Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
+To start integrating the Juspay Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
 
 <pre class="language-gradle"><code class="lang-gradle">buildscript {
     repositories {
@@ -40,7 +38,7 @@ To start integrating the Hyperswitch SDK, add the following classpath to the `bu
 }
 </code></pre>
 
-### 2.1 Add the Buildscript Classpath
+### 2.2 Apply the Plugin
 
 Add the following plugin to the `plugins` block of your app-level `build.gradle` file:
 
@@ -57,11 +55,11 @@ Next, implement the `HyperInterface` in your Activity. This involves extending `
 
 ```kotlin
 class WidgetActivity : AppCompatActivity(), HyperInterface {
-    //...
+    // ...
 }
 ```
 
-### 2.5 Initialize Payment Configuration
+### 2.4 Initialize Payment Configuration
 
 Set up the SDK using your publishable key:
 
@@ -83,14 +81,12 @@ Choose from list of available widgets to integrate:
 
 ### Final Step
 
-Congratulations! You have successfully integrated Hyperswitch widgets into your app. This approach gives you granular control over each payment method and allows for custom UI/UX design while leveraging Hyperswitch's payment processing capabilities.
+Congratulations! You have successfully integrated Juspay Hyperswitch widgets into your app. This approach gives you granular control over each payment method and allows for custom UI/UX design while leveraging Juspay Hyperswitch's payment processing capabilities.
 
 ## Next step:
 
 {% content-ref url="../../../../../payment-orchestration/quickstart/payment-methods-setup/" %}
-
 [payment-methods-setup](../../../../../payment-orchestration/quickstart/payment-methods-setup/)
-
 {% endcontent-ref %}
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

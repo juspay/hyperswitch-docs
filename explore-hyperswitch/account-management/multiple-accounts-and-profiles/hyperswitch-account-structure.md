@@ -1,5 +1,4 @@
 ---
-description: Configure organization merchant and profile hierarchy for your payment infrastructure
 icon: people-roof
 ---
 
@@ -44,8 +43,5 @@ Once a user signs up on the Hyperswitch Control Centre, they need to create an o
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdQ2NY5E8lHbH2_QvXzepO-6TissIdWWhV9pZRNPZeMKh2GgynWaNKWtbJnJNRYppn_buAMYqqfMkz9VvupvfkFVee_cbS5oY6Z0Mbx0Vvgri6Jw7T-shuBQouJ4BKY2o_nPvKG159LdfPhAOEfb2My0ekN?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="./" %}
-
 [.](./)
-
 {% endcontent-ref %}
-

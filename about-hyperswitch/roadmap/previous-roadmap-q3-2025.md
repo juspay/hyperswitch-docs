@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Core Values <a href="#core-values" id="core-values"></a>
+#### Core Values <a href="#core-values" id="core-values"></a>
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -32,9 +32,9 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 7. **Revenue Recovery:** A payment recovery sub-system with a customizable retry engine that reduces passive churn to recover failed subscription payments.
 8. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 
-### Roadmap <a href="#roadmap" id="roadmap"></a>
+## Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### **Core Orchestration**
+### **Core Orchestration**
 
 * Expand Hyperswitch with new payment connector integrations including Worldpay Vantiv, Payload, Dwolla, Bluecode, Checkbook.io, Trust Payments, Nordea, and Silverflow
 * Extend support for additional payment methods across existing integrations such as Multisafe, Airwallex, Braintree, and Fiserv
@@ -43,34 +43,34 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 * Asynchronous chargeback handling for connectors without webhook support
 * L2 and L3 card data enablement across key acquirers
 
-#### **Vault**
+### **Vault**
 
 * Standalone Network Tokenization service for SaaS merchants
 
-#### **Authentication**
+### **Authentication**
 
 * Improve authentication rates and user experience with EMVCo certified Juspay 3DS Server and Juspay 3DS SDK
 * Authentication Observability to provide analytics and insights to merchants with tightly coupled Acquirer 3DS for better authentication and authorization results.
 
-#### **Revenue Recovery**
+### **Revenue Recovery**
 
 * Open-source revenue recovery: Merchants will be able to self-deploy Hyperswitch's integrations and intelligence services onto their own stack
 * Multi-card retries: The system will intelligently utilize payment methods already present with the customer to perform retries on a given invoice
 * Intelligent invoice retrying: Automatically retries invoices declined due to hard decline error codes, within the retry budget specified by the merchant
-* Custom subscription support: Enables integration with the merchant's in-house subscription management platform to recover failed payments
+* Custom subscription support: Enables integration with the merchant’s in-house subscription management platform to recover failed payments
 
-#### **Intelligent Routing**
+### **Intelligent Routing**
 
 * Audit Trail and observability dashboard: Allows monitoring of performance across various routing modules
 * Extension of Least Cost Routing to wallet payments: Includes Apple Pay and Google Pay
 
-#### **Cost Observability**
+### **Cost Observability**
 
-* Smarter Fee Attribution Engine: Enhancing our system's ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
+* Smarter Fee Attribution Engine: Enhancing our system’s ability to accurately derive fee names from fragmented or ambiguous reports, fee rates and attribute costs across key dimensions such as card variants, acquirers, and funding sources
 * Conversational AI Interface: Introducing an intuitive, AI-powered chat experience that allows users to explore their payment processing fees through a rich, context-aware interface, making cost observability more interactive, insightful, and user-friendly
 * Expanded Acquirer Coverage: Adding support for five or more new acquirer report formats, enabling broader compatibility and faster onboarding for merchants working with a variety of providers
 
-##### Reconciliation
+### Reconciliation
 
 * N‑way ingestion & transformation: implement backend‑configured pipelines for any mix of OMS, PSP and bank asources to define normalization and transformation rules
 * Reconciliation summary views: display real‑time n‑way match rates, exception counts and trend charts in dashboard widgets, with click‑through to transaction‑ vs. entry‑level drill‑downs and one‑click resolution actions.

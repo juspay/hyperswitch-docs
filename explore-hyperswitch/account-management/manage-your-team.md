@@ -1,5 +1,5 @@
 ---
-description: Invite users and assign roles with specific permissions for your payment operations team
+description: Assign roles and permission to users
 icon: screen-users
 ---
 

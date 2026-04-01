@@ -7,10 +7,10 @@ icon: box-circle-check
 
 # SaaS Orchestration with Juspay Vault
 
-This is the fully managed Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.\
+This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities.
 Merchants can tokenize, vault, and process without any PCI exposure.
 
-Key Highlights:
+## Key Highlights
 
 * No PCI compliance overhead.
 * Automatic network tokenization and lifecycle management.
@@ -20,7 +20,7 @@ Key Highlights:
 
 <figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
-The sequence diagram above outlines how a SaaS merchant performs payments and vaulting
+The sequence diagram above outlines how a SaaS merchant performs payments and vaulting.
 
 **New user payments flow**
 
@@ -44,15 +44,15 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 | 456             | Visa ending in 4242               | `PM3`                 |
 | 123             | PayPal Account (`user@email.com`) | `PM4`                 |
 
-6. This `Payment_method_id` is returned to the merchant via webhooks
+6. This `payment_method_id` is returned to the merchant via webhooks
 
 **Repeat user payments flow**
 
-1. In a repeat-user the payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
+1. In a repeat-user payment, the Hyperswitch SDK will load the stored payment methods of the customer based the `customer_id` sent as part of the [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create).&#x20;
 2. The end-user can select the desired payment option and add their `CVV`&#x20;
 3. The SDK sends the [Payment Confirm API request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) when the user hits `Pay`&#x20;
 4. The Hyperswitch backend resolves the `payment_method_id` to identify available payment credentials - card, PSP token, network token and more
-5. It sends payload with appropriate credential to the payment provider or PSP downstream based on the merchant configurations
+5. It sends payload with appropriate credentials to the payment provider or PSP downstream based on the merchant configurations
 
 **Merchant Initiated Transaction (MIT) flow**
 

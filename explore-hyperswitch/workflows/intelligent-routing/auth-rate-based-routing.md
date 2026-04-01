@@ -1,11 +1,13 @@
 ---
-description: Optimize routing using real-time authorization rate data
+description: >-
+  Optimize transaction success across multiple gateways using ML-driven
+  Multi-Armed Bandit with Delayed Feedback approach
 icon: badge-check
 ---
 
 # Auth Rate Based Routing
 
-### How does it work?
+## How does it work?
 
 **Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.&#x20;
 
@@ -29,7 +31,7 @@ Key Configurations
   * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
   * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
-### How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
+## How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
 
 1. Enabling your profile with Auth Rate based routing
 
@@ -71,7 +73,7 @@ curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-
 --header 'api-key: <api-key>'
 ```
 
-### How to test the routing behaviour?
+## How to test the routing behaviour?
 
 You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour.
 

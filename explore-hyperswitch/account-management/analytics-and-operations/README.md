@@ -1,5 +1,5 @@
 ---
-description: Monitor payment analytics and manage payment operations through a unified dashboard interface
+description: Explore analytics dashboards and operational tools to monitor payment conversion, manage refunds, and streamline workflows
 icon: chart-pie-simple-circle-dollar
 ---
 
@@ -7,15 +7,15 @@ icon: chart-pie-simple-circle-dollar
 
 {% embed url="https://youtu.be/z_NzW3_9A_w" %}
 
-## Payment Analytics
+### Payment Analytics
 
-Typical payment conversion funnel of a user through Hyperswitch involves five stages as shown below.
+Typical payment conversion funnel of a user through Juspay Hyperswitch involves five stages as shown below.
 
 <figure><img src="../../../.gitbook/assets/analytics.png" alt=""><figcaption></figcaption></figure>
 
-### Understanding the payment conversion funnel <a href="#understanding-the-payment-conversion-funnel" id="understanding-the-payment-conversion-funnel"></a>
+#### Understanding the payment conversion funnel <a href="#understanding-the-payment-conversion-funnel" id="understanding-the-payment-conversion-funnel"></a>
 
-Lets take a scenario where you website had initiated 100,000 payments with Hyperswitch.
+Lets take a scenario where your website had initiated 100,000 payments with Hyperswitch.
 
 | **Payments created**                                                                                                                                                                                                                                                                      | **100,000**                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -28,10 +28,10 @@ Lets take a scenario where you website had initiated 100,000 payments with Hyper
 | Payment declined due to fraud                                                                                                                                                                                                                                                             | (1,000)                       |
 | Payment authorized, but pending to be captured by merchant                                                                                                                                                                                                                                | (4,000)                       |
 | Successful payments                                                                                                                                                                                                                                                                       | 70,000                        |
-| <p><strong>Payment success rate</strong></p><p>Total successful payments processed out of all user confirmed payments</p><p><em>*includes user dropouts at 3DS verification page, bank transfer login page, pages powered by digital wallets (Paypal, Googlepay, Applepay etc.,)</em></p> | **87.5% = (70,000 / 80,000)** |
+| <p><strong>Payment success rate</strong></p><p>Total successful payments processed out of all user confirmed payments</p><p><em>*includes user dropouts at 3DS verification page, bank transfer login page, pages powered by digital wallets (PayPal, Google Pay, Apple Pay etc.,)</em></p> | **87.5% = (70,000 / 80,000)** |
 | <p><strong>Overall conversion rate</strong></p><p>Total successful payments processed out of total payments created.</p><p><em>*includes user dropouts at shopping cart and checkout page.</em></p>                                                                                       | **70% = (70,000 / 100,000)**  |
 
-### Terminology <a href="#terminology" id="terminology"></a>
+#### Terminology <a href="#terminology" id="terminology"></a>
 
 #### **Overall conversion rate**
 
@@ -43,15 +43,15 @@ _This includes user dropouts at shopping cart and checkout page._
 
 Total successful payments processed out of all user confirmed payments.
 
-_This includes user dropouts at 3DS verification page, bank transfer login page, pages powered by digital wallets (Paypal, Googlepay, Applepay etc.,)._
+_This includes user dropouts at 3DS verification page, bank transfer login page, pages powered by digital wallets (PayPal, Google Pay, Apple Pay etc.,)._
 
-_Payment success rate does not include payments which are authorized by but not captured, because non-captured payments will be be settled to your merchant account by your payment processor._
+_Payment success rate does not include payments which are authorized by but not captured, because non-captured payments will be settled to your merchant account by your payment processor._
 
 #### **Processed amount**
 
-Sum of amount of all payments with `status = succeeded`.
+Sum of amount of all payments with status = succeeded.
 
-_Please note that there could be payments which could be authorized but not captured. Such payments are not included in the processed amount, because non-captured payments will be be settled to your merchant account by your payment processor._
+_Please note that there could be payments which could be authorized but not captured. Such payments are not included in the processed amount, because non-captured payments will be settled to your merchant account by your payment processor._
 
 #### **Average ticket size**&#x20;
 
@@ -61,9 +61,9 @@ The total amount for which payments were created divided by the total number of 
 
 Total number of payments with status as succeeded.
 
-### FAQs <a href="#faqs" id="faqs"></a>
+#### FAQs <a href="#faqs" id="faqs"></a>
 
-#### **Why is the conversion rate on my Payment processor dashboard higher that what I observe on Hyperswitch dashboard?**
+#### **Why is the conversion rate on my Payment processor dashboard higher than what I observe on Juspay Hyperswitch dashboard?**
 
 There are two aspects which you need to be aware of:
 
@@ -85,12 +85,12 @@ The analytics section on the Hyperswitch dashboard offers you the tools to deriv
 | **Most frequent problems faced by merchants**                              | **Actionables**                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Majority of my users are dropping off at the checkout page                 | <ul><li>Offer a wide range of payment methods preferred by your target audience</li><li>Eliminate any inconsistency in the total amount displayed to user across the product catalog page, shopping cart, checkout page</li><li>Ensure that the proceed to pay button is clearly visible to the user within minimal clutter on the UX.</li></ul> |
-| I am facing lower conversion rates through my primary payment processor    | <ul><li>Enable an alternative payment processor via Hyperswitch and use Smart Routing to optimize conversion rate</li><li>Reachout to Hyperswitch support to enable Smart Retries</li></ul>                                                                                                                                                      |
+| I am facing lower conversion rates through my primary payment processor    | <ul><li>Enable an alternative payment processor via Hyperswitch and use Smart Routing to optimize conversion rate</li><li>Reach out to Hyperswitch support to enable Smart Retries</li></ul>                                                                                                                                                      |
 | I am facing low conversion rates for USD payments compared to EUR payments | <ul><li>Try enabling an alternative payment processor via Hyperswitch and use Smart Routing to route EUR payments (typically local payment processor offer higher conversion rates which you could benefit from)</li></ul>                                                                                                                       |
 | I am facing zero conversion rate for a particular payment method/ currency | <ul><li>Check with your payment processor whether the payment method/ currency has been enabled for your merchant account</li></ul>                                                                                                                                                                                                              |
 | I need help and suggestions to improve conversion rate                     | <ul><li>Please drop a note to biz@hyperswitch.io with your query.</li></ul>                                                                                                                                                                                                                                                                      |
 
-## Payment Operations
+### Payment Operations
 
 "Payment Operations" refers to the operational time and effort spent by businesses beyond the payment processing step to manage the entire lifecycle of payments. It is cross-functional responsibility and shared across various teams of your business which is responsible for Customer Experience, Finance and Business Growth.
 
@@ -98,14 +98,14 @@ And, as you begin to process payments through multiple payment processors, the c
 
 Below are some of the day-to-day use cases of payments operations across teams which could potentially extract significant bandwidth from focusing on your core business growth.
 
-### **Customer Experience Team**
+#### **Customer Experience Team**
 
 * Issuing refunds to customers
 * Proactive monitoring of failed refunds and delayed refunds
 * Customer queries on double debits
 * Customer queries on incomplete/ delayed payments
 
-### **Finance Team**
+#### **Finance Team**
 
 * Reconciliation of Payment Processed versus Amount Settled to Bank
 * Timely submission of evidence for chargeback claims from customers
@@ -114,7 +114,7 @@ Below are some of the day-to-day use cases of payments operations across teams w
 * Reporting across multiple business units / product lines
 * Triggering bulk refunds
 
-### **Business Operations and Growth**
+#### **Business Operations and Growth**
 
 * Tracking, analyzing, and enhancing payment authorization rate
 * Expanding to new markets and accepting new payment methods
@@ -123,7 +123,7 @@ Below are some of the day-to-day use cases of payments operations across teams w
 
 Inadequate attention to payment operations might negatively impact your Net Promoter Score and impact the growth of your business.
 
-## How could Juspay Hyperswitch simplify Payment Operations?
+### How could Juspay Hyperswitch simplify Payment Operations?
 
 Hyperswitch Control Center is a single interface that all your teams will be required to use for all Payment Operations use cases. This provides more power to your team for managing payments seamlessly.
 
@@ -134,5 +134,3 @@ In addition to the above, it also includes rich features to make operations more
 * Automated Reports
 * Alerts automation
 * Managing user roles and access
-
-##

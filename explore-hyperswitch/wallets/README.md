@@ -5,7 +5,7 @@ icon: wallet
 
 # Wallets
 
-Hyperswitch supports leading international wallets which include:
+Juspay Hyperswitch supports leading international wallets which include:
 
 * Digital wallets such as PayPal which enable customers to pay through wallet balance that they could load
 * Card container wallets such as Google Pay and Apple Pay which enable customers to save their cards for quick one-click payments in supported websites

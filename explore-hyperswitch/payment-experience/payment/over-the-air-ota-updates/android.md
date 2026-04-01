@@ -1,11 +1,13 @@
 ---
-description: Configure over-the-air updates for Juspay Hyperswitch Android SDK
 icon: android
+description: Configure over-the-air updates for Hyperswitch SDK on Android using HyperOTAReact for seamless app updates without store releases.
 ---
 
 # Android
 
-### Configuration
+Juspay Hyperswitch provides over-the-air (OTA) updates for Android apps, enabling you to push updates without app store releases.
+
+## Configuration
 
 1. When initializing `HyperOTAReact`, ensure the **release config URL** (ending in `config.json`) is set for the correct **environment** (Sandbox or Production) and **version**. This is where HyperOTA will check for updates during app startup.
 
@@ -28,11 +30,9 @@ HyperOTAReact(
 ```
 
 {% hint style="info" %}
-
 Replace `hyperOTAUrl` with your environment-specific endpoint.
 
-`Example : $baseURL/mobile-ota/android/${BuildConfig.VERSION_NAME}/config.json`
-
+`Example: $baseURL/mobile-ota/android/${BuildConfig.VERSION_NAME}/config.json`
 {% endhint %}
 
 2. In your `MainApplication` class, ensure `getJSBundleFile()` uses the bundle path from HyperOTA and falls back to the default asset if necessary
@@ -47,5 +47,4 @@ override fun getJSBundleFile(): String {
 }
 ```
 
-For more information, [Airborne](https://github.com/juspay/airborne)
-
+For more information, see [Airborne](https://github.com/juspay/airborne).

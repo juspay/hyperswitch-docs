@@ -10,7 +10,7 @@ icon: desktop
 
 ## Secure Tokenization using Juspay Hyperswitch's PCI Compliant Vault SDK
 
-The Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
+The Juspay Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
 ## Key Benefits
 
@@ -36,11 +36,10 @@ Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/dev
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.\
+> Note: Please ensure that the **customer_id** is included in the request body when creating a payment method session.\
 > For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 {% hint style="info" %}
-
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
 To generate your Vault API keys, follow these steps:
@@ -51,7 +50,6 @@ To generate your Vault API keys, follow these steps:
 4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
-
 {% endhint %}
 
 ```javascript
@@ -104,7 +102,7 @@ $ npm install @juspay-tech/hyper-js
 $ npm install @juspay-tech/react-hyper-js
 ```
 
-#### 2.2 Add Juspay Hyperswitch to Your React App
+#### 2.2 Add Hyperswitch to Your React App
 
 Import the necessary components and hooks:
 
@@ -114,7 +112,7 @@ import { loadHyper } from "@juspay-tech/hyper-js";
 import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
 ```
 
-#### 2.3 Initialize the Juspay Hyperswitch Library
+#### 2.3 Initialize the Hyperswitch Library
 
 Configure the library with your publishable API key and profile ID:
 
@@ -145,8 +143,8 @@ useEffect(() => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({customer_id: "customer_id"}),
   })
-.then((res) => res.json())
-.then((data) => {
+  .then((res) => res.json())
+  .then((data) => {
     setPmClientSecret(data.pmClientSecret);
     setPmSessionId(data.pmSessionId);
   });

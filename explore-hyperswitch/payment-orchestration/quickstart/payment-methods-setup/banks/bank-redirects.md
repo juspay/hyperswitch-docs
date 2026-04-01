@@ -5,9 +5,7 @@ description: Bank Redirects payment methods
 # Bank Redirects
 
 {% hint style="info" %}
-
 Bank redirects will redirect the user to the respective bank's payment page to complete a debit payment.
-
 {% endhint %}
 
 Bank Redirects are one of the most preferred options for paying online across the world. Due to their highly secure nature, bank redirects are used extensively in countries like Germany, Netherlands, Asia, LATAM, etc.

@@ -1,5 +1,5 @@
 ---
-description: Integrate unified checkout with your web app
+description: Integrate Juspay Hyperswitch unified checkout with your web app for a seamless payment experience
 icon: globe-wifi
 ---
 
@@ -7,12 +7,12 @@ icon: globe-wifi
 
 ## Global Checkout Experience
 
-Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
+Juspay Hyperswitch Unified Checkout is an inclusive, consistent and blended payment experience optimized for the best conversion rates.
 
-| <img src="../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong><br>A variety of global payment methods including cards, buy now pay later and digital wallets are supported by the Unified Checkout, with adaptation to local preferences and ability to local language customization.</p>                            |
-| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong><br>A variety of global payment methods including cards, buy now pay later and digital wallets are supported by the Unified Checkout, with adaptation to local preferences and ability to local language customization.</p> |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Consistent</strong><br>With a diverse set of payment methods supported, the Unified Checkout provides a singular consistent payment experience across platforms (web, android and ios) powered by smart payment forms, minimal redirections and intelligent retries.</p> |
-| <img src="../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | <p><strong>Blended</strong><br>The Unified Checkout includes 40+ styling APIs, which could be tweaked to make the payment experience blend with your product. Your users will get a fully native and embedded payment experience within your app or website</p>                     |
+| <img src="../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | <p><strong>Blended</strong><br>The Unified Checkout includes 40+ styling APIs, which could be tweaked to make the payment experience blend with your product. Your users will get a fully native and embedded payment experience within your app or website</p> |
 
 ## Modify and Experiment
 
@@ -28,12 +28,9 @@ You can further optimize Unified Checkout web SDK by preloading all the resource
 
 * `<Elements/>` wrapper has to be used in the top-level of the merchants app, say web app has two pages eg: homepage and checkout page, the wrapper must be added in the homepage itself.
 * `<Elements/>` has the required props to load our Hyperloader (script) which will
-  1. Preload the all the resources that are required by the SDK ie. files, svgs, icons, css, fonts etc.
+  1. Preload all the resources that are required by the SDK ie. files, svgs, icons, css, fonts etc.
   2. Prefetch the two main API calls and is ready with response
 
 {% hint style="success" %}
-
-**This will significantly decrease the SDK load time from \~10-15s (in slow 3G network) to just \~1-5ms.**
-
+**This will significantly decrease the SDK load time from ~10-15s (in slow 3G network) to just ~1-5ms.**
 {% endhint %}
-

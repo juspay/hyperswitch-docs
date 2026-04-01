@@ -1,11 +1,11 @@
 ---
-description: Integrate lightweight iOS SDK for payments with minimal bundle size
+description: Integrate Hyperswitch Lite SDK to your iOS app
 icon: mobile-screen
 ---
 
 # Lite SDK
 
-## Key Features of Lite SDK
+### Key Features of Lite SDK
 
 #### Lightweight Integration
 
@@ -13,19 +13,19 @@ icon: mobile-screen
 * **Faster initialization**: Streamlined setup process
 * **Web-based UI**: Uses web components for payment forms
 * **Reduced dependencies**: Minimal impact on app size
-* **Shared Configuration: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:**
+* **Shared Configuration**: The Lite SDK uses the same `PaymentSession` options as the main SDK, including:
   * Appearance customization
   * Billing details
   * Shipping information
   * Payment method preferences
   * Branding options
 
-## Requirements
+### Requirements
 
-* IOS 15.1+
-* Cocoapods​
+* iOS 15.1+
+* CocoaPods
 
-## 1. Setup the server
+### 1. Setup the server
 
 Follow the [Server Setup](../../server-setup.md) section.
 
@@ -47,7 +47,7 @@ pod 'hyperswitch-sdk-ios-lite'
 pod 'hyperswitch-sdk-ios-lite/scancard'
 ```
 
-> **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.\
+> **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times.
 > Replace `Latest_version` with the actual version number.
 
 #### 2.2 Setup the Lite SDK and Fetch a Payment
@@ -73,18 +73,18 @@ paymentSession.presentPaymentSheetLite(
         result in
             DispatchQueue.main.async {
                 switch result {
-                case.completed:
+                case .completed:
                     self.statusLabel.text = "Payment complete"
-                case.failed(let error):
+                case .failed(let error):
                     self.statusLabel.text =  "Payment failed: \(error)"
-                case.canceled:
+                case .canceled:
                     self.statusLabel.text = "Payment canceled."
             }
     }
 })
 ```
 
-**Final Step**
+#### Final Step
 
-You have successfully integrated the **Hyperswitch Lite SDK** into your iOS app.\
+You have successfully integrated the **Hyperswitch Lite SDK** into your iOS app.
 The Lite SDK delivers **full payment processing** capabilities with a **smaller footprint**, perfect for apps where bundle size matters.

@@ -1,5 +1,4 @@
 ---
-description: Explore six independent payment modules including cost observability, revenue recovery, vault, and intelligent routing to optimize your payment stack
 icon: diamonds-4
 ---
 
