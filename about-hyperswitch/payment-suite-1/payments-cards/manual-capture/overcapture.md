@@ -1,4 +1,5 @@
 ---
+description: Capture amounts greater than the originally authorized amount in manual capture payments
 icon: chart-diagram
 ---
 
@@ -32,10 +33,12 @@ This can be passed in:
 
 [POST /payments/:id/update](https://api-reference.hyperswitch.io/v1/payments/payments--update)
 
-⚠️ Note:
+{% hint style="warning" %}
+**Note:**
 
 * The request-level `enable_overcapture` will override the profile-level setting.
 * Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
+{% endhint %}
 
 ***
 

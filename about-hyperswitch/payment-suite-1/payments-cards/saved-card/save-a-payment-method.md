@@ -5,14 +5,14 @@ icon: repeat
 
 # Use cases for Saved card
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Juspay Hyperswitch supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
 
 ### Saving a payment method for future on-session payments (COF CIT)
 
-To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This is also minimises the risk of the customer entering incorrect card details.
+To improve conversion rates and eliminate friction for the customer during checkout, you can save the customer's card so that they wouldn't have to enter the card details every time. This also minimises the risk of the customer entering incorrect card details.
 
 Saving for future on-session payments implies that the customer will be available online during the checkout and can authenticate the payment by entering CVV or complete 3DS verification. These are known as Card-on-File Customer Initiated Transactions (COF-CIT).
 
@@ -38,7 +38,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -87,7 +87,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswith's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {

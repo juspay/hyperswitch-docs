@@ -18,14 +18,14 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 ### How does it work?
 
-1. Integrate your subscription provider as a billing processor on Hyperswitch
+1. Integrate your subscription provider as a billing processor on Juspay Hyperswitch
 2. Create and maintain plans on the subscription provider's dashboard
 3. During the checkout process use Hyperswitch for Payments
 4. Hyperswitch completes the payment, securely tokenises and stores the card
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retries by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../explore-hyperswitch/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
@@ -41,7 +41,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 
 #### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
 
-#### Initial Subscription create flow (with CIT Payment)
+##### Initial Subscription create flow (with CIT Payment)
 
 {% stepper %}
 {% step %}
@@ -102,9 +102,9 @@ Response:
     {
         "plan_id": "cbdemo_enterprise-suite",
         "name": "Enterprise Suite",
-        "description": "High-end customer support suite with enterprise-grade solutions."
-   	 "price_id": [
-        	{
+        "description": "High-end customer support suite with enterprise-grade solutions.",
+        "price_id": [
+            {
                 "id": "cbdemo_enterprise-suite-INR-Daily",
                 "name": "Enterprise Suite INR Daily",
                 "pricing_model": "flat_fee",
@@ -113,7 +113,7 @@ Response:
                 "currency_code": "INR",
                 "period_unit": "day",
                 "free_quantity": 0,
-              }]
+            }]
        }
 ]
 
@@ -158,10 +158,10 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters :** 
 
 * `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
+* `amount > 0` 
 
 
 
@@ -171,9 +171,9 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters :** 
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1) 
 * `setup_future_usage: "off_session"`
 * `amount: 0`
 * `payment_type: "setup_mandate"`
@@ -214,10 +214,10 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 **Use Case:** Use this when you need to collect a payment immediately (e.g., the first month of a subscription or a setup fee) while simultaneously saving the card details for future automatic charges.
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters :** 
 
 * `setup_future_usage: "off_session"`
-* `amount > 0`&#x20;
+* `amount > 0` 
 
 
 
@@ -227,9 +227,9 @@ The correct flow depends on whether you intend to charge the customer immediatel
 
 
 
-**Configuration Parameters :**&#x20;
+**Configuration Parameters :** 
 
-* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+* Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1) 
 * `setup_future_usage: "off_session"`
 * `amount: 0`
 * `payment_type: "setup_mandate"`
@@ -348,7 +348,7 @@ Monitor incoming webhooks for renewal during subsequent cycles
 {% endstep %}
 {% endstepper %}
 
-### Decoupled CIT and MIT Flow&#x20;
+### Decoupled CIT and MIT Flow 
 
 Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
 

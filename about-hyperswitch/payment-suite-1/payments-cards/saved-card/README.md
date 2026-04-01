@@ -1,18 +1,17 @@
 ---
+description: Secure card vaulting with Hyperswitch SDK for PCI-DSS compliant payment processing
 icon: hard-drive
 ---
 
 # Saved Card
 
-In this approach, the Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
+In this approach, the Juspay Hyperswitch SDK is used on the frontend to capture card details. Card data is securely sent to the Hyperswitch backend and stored in Hyperswitch Vault. Payment orchestration, routing, and connector logic are handled entirely by the Hyperswitch backend.
 
 The merchant uses the Hyperswitch Dashboard to configure connectors, routing rules, and orchestration logic. All payment requests are initiated using vault tokens, and raw card data never reaches merchant systems. Since card details are handled entirely by Hyperswitch, merchants are not required to be PCI DSS compliant for card data handling.&#x20;
 
 ### **New User (Payments SDK)**
 
 <figure><img src="../../../../.gitbook/assets/HS_SDK&#x26;Vaulting.svg" alt=""><figcaption></figcaption></figure>
-
-
 
 #### **1. Create Payment (Server-Side)**
 
@@ -90,7 +89,7 @@ The SDK submits a [`payments/confirm`](https://api-reference.hyperswitch.io/v1/p
 
 #### **5. Return Status**
 
-The final payment and vaulting status is returned to the SDK, which redirects the customer to the merchant’s configured `return_url`.
+The final payment and vaulting status is returned to the SDK, which redirects the customer to the merchant's configured `return_url`.
 
 ### **Returning or Repeat User (Payments SDK)**
 
@@ -118,7 +117,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 {% hint style="info" %}
 Note -The merchant needs to pass the same customer ID for the SDK to fetch the saved customer payment methods and display them \
 \
-In case the merhcnat is not using the SDK then they need to use the List Customer Saved Payment Methods API to fetch th stored payment methods against a customer&#x20;
+In case the merchant is not using the SDK then they need to use the List Customer Saved Payment Methods API to fetch the stored payment methods against a customer&#x20;
 {% endhint %}
 
 #### **2. Initialize SDK and Fetch Saved Cards**
@@ -174,7 +173,7 @@ The SDK sends a [`payments/confirm`](https://api-reference.hyperswitch.io/v1/pay
 
 #### **5. Return Status**
 
-The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant’s `return_url` with the payment outcome.
+The processor returns the authorization result to Hyperswitch, which forwards the final status to the SDK. The customer is redirected to the merchant's `return_url` with the payment outcome.
 
 
 
