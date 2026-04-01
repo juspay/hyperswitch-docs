@@ -1,10 +1,11 @@
 ---
 icon: rocket-launch
+description: Checklist for going live with Juspay Hyperswitch including SaaS and on-premises deployment options
 ---
 
 # Going live
 
-Before going live with Hyperswitch, ensure that your integration is production-ready by following our comprehensive setup checklists. These checklists help you verify that your payment processing is optimized, secure, and fully functional for a seamless merchant experience.
+Before going live with Juspay Hyperswitch, ensure that your integration is production-ready by following our comprehensive setup checklists. These checklists help you verify that your payment processing is optimized, secure, and fully functional for a seamless merchant experience.
 
 #### Choose Your Deployment Model:
 

@@ -1,10 +1,15 @@
+---
+icon: gears
+description: Configuration and management guide for Juspay Hyperswitch deployments including ArgoCD setup for GitOps
+---
+
 # Configuration and Management
 
-### Configuration Files 
+### Configuration Files
 
 In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://github.com/juspay/hyperswitch/tree/main/config/deployments).
 
-It contains the configs for deployments of Hyperswitch in the 3 different hosted environments:
+It contains the configs for deployments of Juspay Hyperswitch in the 3 different hosted environments:
 
 * Integration Test
 * Sandbox

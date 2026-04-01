@@ -1,13 +1,18 @@
+---
+icon: sitemap
+description: Overview of Juspay Hyperswitch deployment topologies including multi-region active-active and active-passive setups
+---
+
 # Deployment Topologies
 
-There are two primary deployment topologies to enhance the reliability of enterprise setups:
+There are two primary deployment topologies to enhance the reliability of Juspay Hyperswitch enterprise setups:
 
 1. Multi Region Active - Active Setup
 2. Multi Region Active - Passive Setup
 
 ### Multi-Region Active-Active Setup
 
-In an Active-Active setup, the merchant would deploy Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions. 
+In an Active-Active setup, the merchant would deploy Juspay Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions.
 
 This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 
@@ -32,7 +37,7 @@ This setup offers the highest level of availability and can also improve perform
 
 ### Multi Region Active - Passive Setup
 
-In an Active - Passive setup, the merchant would deploy two identical Hyperswitch stacks in geographically separate regions. Active region handles all live traffic, while Passive remains on standby. The passive instance is kept in sync with the active instance, typically through database replication and configuration management. In the event of a failure in the active region, traffic is switched over to the passive region with a DB flip.
+In an Active - Passive setup, the merchant would deploy two identical Juspay Hyperswitch stacks in geographically separate regions. Active region handles all live traffic, while Passive remains on standby. The passive instance is kept in sync with the active instance, typically through database replication and configuration management. In the event of a failure in the active region, traffic is switched over to the passive region with a DB flip.
 
 <figure><img src="../../.gitbook/assets/ChatGPT Image Mar 6, 2026 at 01_23_20 PM.png" alt="Architecture diagram of the Active-Passive setup"><figcaption></figcaption></figure>
 

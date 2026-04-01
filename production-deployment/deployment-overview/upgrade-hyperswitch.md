@@ -1,8 +1,13 @@
+---
+icon: arrows-spin
+description: Guide for upgrading Juspay Hyperswitch using GitOps and ArgoCD with blue/green deployment strategy
+---
+
 # Upgrade Hyperswitch
 
 ### GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)
 
-Using a GitOps orchestration platform such as **Argo CD** allows Hyperswitch deployments to be managed declaratively via Git.
+Using a GitOps orchestration platform such as **Argo CD** allows Juspay Hyperswitch deployments to be managed declaratively via Git.
 
 Benefits include:
 
@@ -26,7 +31,7 @@ This guide uses ArgoCD, but similar GitOps tools can be used.
 
 A **blue/green cluster upgrade model** is recommended.
 
-This strategy involves provisioning a **parallel environment (green)** where the upgraded version of Hyperswitch is deployed and validated before production traffic is switched over.&#x20;
+This strategy involves provisioning a **parallel environment (green)** where the upgraded version of Hyperswitch is deployed and validated before production traffic is switched over.
 
 The **existing environment (blue)** continues serving live traffic during this process, allowing controlled cutover and providing a straightforward rollback mechanism if any issues arise after the upgrade.
 
@@ -44,11 +49,11 @@ Stateful infrastructure such as databases should **not be recreated during clust
 
 #### ArgoCD App-of-Apps Pattern
 
-The diagram illustrates how Hyperswitch deployments are managed using the **App-of-Apps pattern in Argo CD**.
+The diagram illustrates how Juspay Hyperswitch deployments are managed using the **App-of-Apps pattern in Argo CD**.
 
 <figure><img src="../../.gitbook/assets/image (8).png" alt="" width="161"><figcaption></figcaption></figure>
 
-In this model, **a single “Root Application” manages multiple child applications**, allowing complex systems to be deployed and maintained in a structured and scalable way.
+In this model, **a single "Root Application" manages multiple child applications**, allowing complex systems to be deployed and maintained in a structured and scalable way.
 
 1. **Git Repository** All deployment configurations are stored in a Git repository. This includes the ArgoCD application definitions and Helm chart references that describe the desired state of the system.
 2. **ArgoCD** ArgoCD continuously monitors the Git repository and ensures that the Kubernetes cluster matches the configuration defined in Git. Any changes committed to the repository are automatically synchronized to the cluster.

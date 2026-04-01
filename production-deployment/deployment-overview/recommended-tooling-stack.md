@@ -1,6 +1,11 @@
+---
+icon: toolbox
+description: Recommended tooling stack for Juspay Hyperswitch production deployments including Terraform, Kubernetes, Helm, and ArgoCD
+---
+
 # Recommended Tooling Stack
 
-The recommended tooling stack for production deployments is:
+The recommended tooling stack for Juspay Hyperswitch production deployments is:
 
 * **Terraform** — Infrastructure provisioning and management (Infrastructure as Code)
 * **Kubernetes** — Container orchestration platform
@@ -18,9 +23,9 @@ Together, these tools form a layered deployment architecture:
 
 This architecture enables reproducible deployments, automated rollouts, and reliable production operations.
 
-## Terraform
+### Terraform
 
-Terraform is recommended as the **Infrastructure-as-Code (IaC)** tool used to provision and manage cloud infrastructure in a consistent, version-controlled, and repeatable manner.
+Terraform is recommended as the **Infrastructure-as-Code (IaC)** tool used to provision and manage cloud infrastructure for Juspay Hyperswitch in a consistent, version-controlled, and repeatable manner.
 
 Infrastructure is defined using declarative configuration files that describe the desired infrastructure state. Terraform then compares this configuration with the current infrastructure and performs the necessary actions to reconcile the two.
 
@@ -58,9 +63,9 @@ This workflow allows infrastructure changes to be reviewed and approved before d
 **Note:** Terraform state should be stored remotely (for example, S3 with DynamoDB locking or equivalent mechanisms) to support team-based workflows and prevent state corruption.
 {% endhint %}
 
-## Kubernetes
+### Kubernetes
 
-Kubernetes is recommended as the **container orchestration platform** used to run and scale containerized workloads in production environments.
+Kubernetes is recommended as the **container orchestration platform** used to run and scale containerized Juspay Hyperswitch workloads in production environments.
 
 Applications such as Hyperswitch are packaged as **containers** (Docker images). Kubernetes manages how these containers are deployed, scaled, restarted, and networked across multiple machines (nodes).
 
@@ -92,7 +97,7 @@ Organizations with strong internal platform engineering capabilities may choose 
 **Note:** Managed Kubernetes services are strongly recommended for production deployments.
 {% endhint %}
 
-## Helm
+### Helm
 
 Helm is the **package manager for Kubernetes**, similar to how package managers are used in traditional software environments.
 
@@ -147,9 +152,9 @@ However, some supporting infrastructure components may still require manual inst
 
 Detailed instructions for these components are provided in the subsequent sections.
 
-## ArgoCD
+### ArgoCD
 
-ArgoCD is recommended as the **GitOps-based continuous delivery system** used to manage Kubernetes deployments declaratively.
+ArgoCD is recommended as the **GitOps-based continuous delivery system** used to manage Juspay Hyperswitch Kubernetes deployments declaratively.
 
 In a GitOps model, the desired state of the system is stored in a Git repository. ArgoCD continuously monitors the repository and automatically applies changes to the Kubernetes cluster to match the defined configuration.
 
@@ -175,9 +180,9 @@ The typical GitOps workflow is:
 
 This GitOps model improves operational reliability and enables safer production deployments.
 
-## Summary
+### Summary
 
-Collectively, this tooling stack enables a robust, scalable, and production-grade infrastructure foundation for deploying and operating Hyperswitch in enterprise environments.
+Collectively, this tooling stack enables a robust, scalable, and production-grade infrastructure foundation for deploying and operating Juspay Hyperswitch in enterprise environments.
 
 The responsibilities of each layer are clearly separated:
 

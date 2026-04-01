@@ -1,16 +1,21 @@
+---
+icon: server
+description: Hardware and software requirements for Juspay Hyperswitch production deployments
+---
+
 # System Requirements
 
 ### **Hardware**
 
-The capacity is defined in terms of RPS or Requests per second.&#x20;
+The capacity is defined in terms of RPS or Requests per second.
 
-A single transaction may require 4 requests on average, and hence 40 RPS will approximately equal to a capacity of 10 transactions per second (TPS) and 25 million transactions per month.
+A single transaction may require 4 requests on average, and hence 40 RPS will approximately equal to a capacity of 10 transactions per second (TPS) and 25 million transactions per month for Juspay Hyperswitch.
 
 However, the RPS to TPS ratio might vary based on various factors such as type of integration between merchant app and hyperswitch and variability in transaction patterns. It is recommended to provision for the peak TPS capacity expected from the users.
 
 The production configuration recommended for 40 RPS capacity is as follows (excluding monitoring services).
 
-#### **Baseline Requirements for 40 RPS -**&#x20;
+#### **Baseline Requirements for 40 RPS -**
 
 | **HARDWARE REQUIREMENTS (40 RPS)** |                                                                                                                                                                                                                                          |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -28,12 +33,12 @@ The production configuration recommended for 40 RPS capacity is as follows (excl
 
 For planning purposes, a 40% buffer for the application layer and 50% buffer for stateful components (Database and Redis) is recommended.
 
-Detailed guidance for scaling Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/production-deployment/scale-and-reliability) section.&#x20;
+Detailed guidance for scaling Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/production-deployment/scale-and-reliability) section.
 {% endhint %}
 
 ### **Software**
 
-Due to necessary time and cost considerations, only the Hyperswitch build compatible with specific operating systems, relational SQL and no-SQL databases has gone through the stringent PCI Software Security Standards (SSS) validation process.
+Due to necessary time and cost considerations, only the Juspay Hyperswitch build compatible with specific operating systems, relational SQL and no-SQL databases has gone through the stringent PCI Software Security Standards (SSS) validation process.
 
 It is strongly recommended to use the following software to ensure easy external validation such as PCI DSS certification and achieve the required performance from the installation.
 
@@ -43,7 +48,7 @@ Linux version Ubuntu is 24.04 LTS is recommended.
 
 #### Database
 
-PostgreSQL version 14.x is recommended for persistent storage.&#x20;
+PostgreSQL version 14.x is recommended for persistent storage.
 
 Redis version 7.x is recommended for caching
 
@@ -60,7 +65,7 @@ The stable releases are announced on a monthly basis on the [Releases page](http
 * Database migrations
 * Breaking changes (if any)
 
-A Continuous deployment engine automatically updates the nightly releases on a daily/ weekly basis. The nightly releases are developer builds which are not officially tested, nor deployed for production use (alpha).&#x20;
+A Continuous deployment engine automatically updates the nightly releases on a daily/ weekly basis. The nightly releases are developer builds which are not officially tested, nor deployed for production use (alpha).
 
 {% hint style="info" %}
 **Note:** It is strongly recommended to not use the nightly releases in the production environment.
@@ -68,7 +73,7 @@ A Continuous deployment engine automatically updates the nightly releases on a d
 
 #### Devops software
 
-Installing and managing Hyperswitch requires a good operational expertise on Kubernetes, Helm and Kubectl.
+Installing and managing Juspay Hyperswitch requires a good operational expertise on Kubernetes, Helm and Kubectl.
 
 The minimum recommended versions for the devops software as follows:
 
