@@ -75,6 +75,8 @@ function handleSubmit() {
                 },
                 // if you wish to redirect always, otherwise it is defaulted to "if_required"
                 redirect: "always",
+                // Pass the CardCVCElement id
+                id: "card-cvc-element"
             });
 
         // use error, status to complete the payment journey
@@ -96,7 +98,7 @@ function handleSubmit() {
 
 **Payload for** `confirmWithCustomerDefaultPaymentMethod(payload)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
+<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithCustomerDefaultPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr><tr><td><code>id (string)</code><strong><code>(optional)</code></strong></td><td>The id used when creating the CardCVCElement.</td></tr></tbody></table>
 
 **ConfirmParams object**
 
@@ -130,6 +132,8 @@ function handleSubmit() {
                 },
                 // if you wish to redirect always, otherwise it is defaulted to "if_required"
                 redirect: "always",
+                // Pass the CardCVCElement id
+                id: "card-cvc-element"
             });
 
         // use error, status to complete the payment journey
@@ -151,7 +155,7 @@ function handleSubmit() {
 
 **Payload for** `confirmWithLastUsedPaymentMethod(payload)`
 
-<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithLastUsedPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr></tbody></table>
+<table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>confirmParams (object)</code></td><td>Parameters that will be passed on to the Hyper API.</td></tr><tr><td><code>redirect (string)</code></td><td><p><strong>Can be either 'always' or 'if_required'</strong></p><p>By default, <code>confirmWithLastUsedPaymentMethod()</code> will always redirect to your <code>return_url</code> after a successful confirmation. If you set redirect: "if_required", then this method will only redirect if your user chooses a redirection-based payment method.</p></td></tr><tr><td><code>id (string)</code><strong><code>(optional)</code></strong></td><td>The id used when creating the CardCVCElement.</td></tr></tbody></table>
 
 **ConfirmParams object**
 
