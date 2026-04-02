@@ -1,5 +1,6 @@
 ---
 icon: gift
+description: Step-by-step checklist for going live with Juspay Hyperswitch SaaS deployment including connector configuration, webhooks, and security
 ---
 
 # For SaaS Setup

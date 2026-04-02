@@ -1,5 +1,6 @@
 ---
 icon: clipboard-question
+description: Guide to completing the PCI DSS Self-Assessment Questionnaire (SAQ D) for merchant compliance certification
 ---
 
 # Completing the SAQ
