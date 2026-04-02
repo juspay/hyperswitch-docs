@@ -1,5 +1,6 @@
 ---
 icon: badge-check
+description: Run Hyperswitch locally using Docker with one command for rapid development and testing
 ---
 
 # Run Hyperswitch Locally Using Docker
@@ -10,7 +11,7 @@ icon: badge-check
 This setup automatically runs all three components of Hyperswitch (Backend, Control Center, and SDK) on your machine at once using Docker.
 {% endhint %}
 
-## Setup using Docker
+### Setup using Docker
 
 You can run Hyperswitch on your system using [Docker compose](https://docs.docker.com/get-docker/). We recommend using Docker Desktop for Windows and Mac OS. On Linux, you can install Docker Engine directly.
 
@@ -37,7 +38,7 @@ The above command will:
 * Start the selected services
 * Provide link to access various components
 
-If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).&#x20;
+If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose). 
 
 {% hint style="info" %}
 **Have Questions?**\
@@ -45,7 +46,7 @@ Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite
 Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
 {% endhint %}
 
-## Next step:
+### Next step:
 
 {% content-ref url="../account-setup/" %}
 [account-setup](../account-setup/)

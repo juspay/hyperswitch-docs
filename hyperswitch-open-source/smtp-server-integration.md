@@ -1,5 +1,6 @@
 ---
 icon: at
+description: Configure SMTP server integration to enable flexible email notifications for signup and login flows
 ---
 
 # SMTP Server Integration

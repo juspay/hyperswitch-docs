@@ -1,5 +1,6 @@
 ---
 icon: laptop
+description: Set up the Hyperswitch Control Center locally to manage payments and configure routing rules
 ---
 
 # Control Center
@@ -8,11 +9,11 @@ icon: laptop
 This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
-### Prerequisites
+#### Prerequisites
 
 1. Node.js and npm installed on your machine.
 
-### Installation Steps
+#### Installation Steps
 
 Follow these simple steps to set up Hyperswitch on your local machine.
 
@@ -54,7 +55,6 @@ Follow these simple steps to set up Hyperswitch on your local machine.
     <pre><code><strong>npm run start
     </strong></code></pre>
 
-### Accessing the Application
+#### Accessing the Application
 
 Once the containers are up and running, you can access the application by navigating to [http://localhost:9000](http://localhost:9000/) in your web browser.
-

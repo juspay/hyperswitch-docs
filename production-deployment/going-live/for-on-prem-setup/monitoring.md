@@ -6,7 +6,7 @@ icon: eyes
 # Monitoring
 
 {% hint style="info" %}
-In this chapter, you will learn to setup logs and monitoring on your application. Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
+In this chapter, you will learn to setup logs and monitoring on your application. Juspay Hyperswitch relies on Promtail, Loki, OpenTelemetry and Grafana for its logs and metrics. In this guide, we will delve into these tools and assist you in setting them up efficiently.
 {% endhint %}
 
 ***
@@ -15,7 +15,7 @@ In the world of application monitoring, two critical elements play pivotal roles
 
 <table><thead><tr><th width="108">Element</th><th>What is it</th><th>Why is it required</th></tr></thead><tbody><tr><td>Logs</td><td>Logs are a running diary of all the activities that happen inside the application</td><td>Useful for tracking, debugging, and auditing</td></tr><tr><td>Metrics</td><td>Metrics are like measuring sticks (like a counter) highlighting the performance of the different parts of the application</td><td>Used to assess, analyze, and track various aspects of a system/application providing data-driven insights </td></tr></tbody></table>
 
-To effectively utilize both aspects, Hyperswitch relies on the following
+To effectively utilize both aspects, Juspay Hyperswitch relies on the following
 
 * Promtail (for scraping logs)
 * Grafana's Loki (for storing and viewing logs)

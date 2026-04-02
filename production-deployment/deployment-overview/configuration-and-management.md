@@ -4,7 +4,7 @@
 
 In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://github.com/juspay/hyperswitch/tree/main/config/deployments).
 
-It contains the configs for deployments of Hyperswitch in the 3 different hosted environments:
+It contains the configs for deployments of Juspay Hyperswitch in the 3 different hosted environments:
 
 * Integration Test
 * Sandbox
@@ -46,7 +46,7 @@ Production deployments should **not**:
 * rely on the default admin credentials
 * grant unrestricted `cluster-admin` privileges to users
 
-ArgoCD is a **platform-level component**, not application-specific. It will typically manage deployments for multiple services, including Hyperswitch.
+ArgoCD is a **platform-level component**, not application-specific. It will typically manage deployments for multiple services, including Juspay Hyperswitch.
 
 #### 2. Installing ArgoCD (HA Setup)
 
@@ -159,7 +159,7 @@ redis:
 
 Important clarification:
 
-This Redis instance is **only used internally by ArgoCD** and is **not related to Redis used by application workloads such as Hyperswitch**.
+This Redis instance is **only used internally by ArgoCD** and is **not related to Redis used by application workloads such as Juspay Hyperswitch**.
 
 #### 2.6 Install ArgoCD
 
@@ -384,18 +384,18 @@ ingress controller
 monitoring stack
 logging stack
 application workloads
-Hyperswitch deployment
+Juspay Hyperswitch deployment
 ```
 
 The exact platform services deployed depend on the organization.
 
-#### 9. Deploying Hyperswitch via ArgoCD
+#### 9. Deploying Juspay Hyperswitch via ArgoCD
 
-Hyperswitch is typically deployed using the official Helm chart.
+Juspay Hyperswitch is typically deployed using the official Helm chart.
 
 ArgoCD can manage Helm releases directly.
 
-Example Hyperswitch application:
+Example Juspay Hyperswitch application:
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
@@ -423,9 +423,9 @@ spec:
 Separate applications should exist for:
 
 ```
-Hyperswitch production
-Hyperswitch sandbox
-Hyperswitch integration
+Juspay Hyperswitch production
+Juspay Hyperswitch sandbox
+Juspay Hyperswitch integration
 ```
 
 Each environment should use its own namespace and configuration values.
@@ -456,7 +456,7 @@ Production payment systems often isolate production clusters for security reason
 
 #### 11. Secret Management
 
-Application deployments such as Hyperswitch require sensitive configuration.
+Application deployments such as Juspay Hyperswitch require sensitive configuration.
 
 Examples:
 

@@ -18,7 +18,7 @@ Together, these tools form a layered deployment architecture:
 
 This architecture enables reproducible deployments, automated rollouts, and reliable production operations.
 
-## Terraform
+### Terraform
 
 Terraform is recommended as the **Infrastructure-as-Code (IaC)** tool used to provision and manage cloud infrastructure in a consistent, version-controlled, and repeatable manner.
 
@@ -58,11 +58,11 @@ This workflow allows infrastructure changes to be reviewed and approved before d
 **Note:** Terraform state should be stored remotely (for example, S3 with DynamoDB locking or equivalent mechanisms) to support team-based workflows and prevent state corruption.
 {% endhint %}
 
-## Kubernetes
+### Kubernetes
 
 Kubernetes is recommended as the **container orchestration platform** used to run and scale containerized workloads in production environments.
 
-Applications such as Hyperswitch are packaged as **containers** (Docker images). Kubernetes manages how these containers are deployed, scaled, restarted, and networked across multiple machines (nodes).
+Applications such as Juspay Hyperswitch are packaged as **containers** (Docker images). Kubernetes manages how these containers are deployed, scaled, restarted, and networked across multiple machines (nodes).
 
 Kubernetes provides several built-in capabilities that are critical for production systems:
 
@@ -92,7 +92,7 @@ Organizations with strong internal platform engineering capabilities may choose 
 **Note:** Managed Kubernetes services are strongly recommended for production deployments.
 {% endhint %}
 
-## Helm
+### Helm
 
 Helm is the **package manager for Kubernetes**, similar to how package managers are used in traditional software environments.
 
@@ -118,12 +118,12 @@ A Helm deployment typically consists of:
 
 Using Helm, applications can be deployed, upgraded, or rolled back with a single command.
 
-This makes Helm a powerful mechanism for managing complex Kubernetes applications like Hyperswitch.
+This makes Helm a powerful mechanism for managing complex Kubernetes applications like Juspay Hyperswitch.
 
 {% hint style="info" %}
 #### Note on Alternative Installation Methods
 
-Hyperswitch developer documentation also provides alternative installation methods:
+Juspay Hyperswitch developer documentation also provides alternative installation methods:
 
 * Docker Compose installation
 * AWS Cloud Development Kit (CDK) installation
@@ -132,7 +132,7 @@ Hyperswitch developer documentation also provides alternative installation metho
 These methods are intended primarily for **developer environments or sandbox deployments**, and are not recommended for production installations.
 {% endhint %}
 
-Using Helm charts significantly simplifies installation and lifecycle management of Hyperswitch in production environments.
+Using Helm charts significantly simplifies installation and lifecycle management of Juspay Hyperswitch in production environments.
 
 However, some supporting infrastructure components may still require manual installation or separate management. These may include:
 
@@ -147,7 +147,7 @@ However, some supporting infrastructure components may still require manual inst
 
 Detailed instructions for these components are provided in the subsequent sections.
 
-## ArgoCD
+### ArgoCD
 
 ArgoCD is recommended as the **GitOps-based continuous delivery system** used to manage Kubernetes deployments declaratively.
 
@@ -175,9 +175,9 @@ The typical GitOps workflow is:
 
 This GitOps model improves operational reliability and enables safer production deployments.
 
-## Summary
+### Summary
 
-Collectively, this tooling stack enables a robust, scalable, and production-grade infrastructure foundation for deploying and operating Hyperswitch in enterprise environments.
+Collectively, this tooling stack enables a robust, scalable, and production-grade infrastructure foundation for deploying and operating Juspay Hyperswitch in enterprise environments.
 
 The responsibilities of each layer are clearly separated:
 

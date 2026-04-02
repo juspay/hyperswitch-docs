@@ -1,6 +1,10 @@
+---
+description: Deploy Hyperswitch on Microsoft Azure using Helm charts for enterprise-grade payment infrastructure
+---
+
 # Deploy on Azure Using Helm Charts
 
-### Prerequisites
+#### Prerequisites
 
 {% hint style="info" %}
 **Note:** This tutorial deploys the full Hyperswitch stack, which includes several services and can exceed compute limits on small clusters. On Azure, we recommend upgrading to the **Developer Support Plan ($29/month)** to unlock higher vCPU quotas and ensure smoother provisioning. Without this, you may encounter quota-related deployment failures.
@@ -159,7 +163,7 @@ Run the following to ensure you're connected and the node is active:
 kubectl get nodes
 ```
 
-You should see an output similar to the one below. Make sure to note the **Name** of your node. You’ll need it in Part 2
+You should see an output similar to the one below. Make sure to note the **Name** of your node. You'll need it in Part 2
 
 ```
 NAME                                STATUS   ROLES    AGE    VERSION
@@ -284,13 +288,13 @@ Access the services at:
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 A magic link will be sent to [Mailhog](http://localhost:8025/). Click on the link in white:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, you’ll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
+Afterwards, you'll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
 
 ### Test a payment
 
@@ -298,7 +302,7 @@ Use can now use the Hyperswitch Control Center and [make a payment with dummy ca
 
 Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
 
-### Explore Further
+#### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 

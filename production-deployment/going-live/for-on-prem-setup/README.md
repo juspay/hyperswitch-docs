@@ -6,11 +6,11 @@ icon: clipboard-question
 
 ### Prerequisites
 
-In order to use Hyperswitch for accepting digital payments through a consumer facing website or mobile application there are three main prerequisites
+In order to use Juspay Hyperswitch for accepting digital payments through a consumer facing website or mobile application there are three main prerequisites
 
 <table data-header-hidden><thead><tr><th width="187"></th><th></th></tr></thead><tbody><tr><td>Resources</td><td><ul><li>Account with cloud service provider (AWS/ GCP/Own Cloud) to host Hyperswitch application</li><li>Contractual relationship and active processing account with payment processor or acquirer (this will be in the form of API keys or merchant identifier)</li></ul></td></tr><tr><td>Technical Know How</td><td><ul><li>For deploying and managing application using Kubernetes</li><li>Handling a Web application written in Rust using Postgres (primary datastore), Redis (distributed key-value store for cached lookups), Prometheus/Grafana (monitoring), S3/CDN (serving static files)</li></ul></td></tr><tr><td>Ensuring Compliance </td><td><p><a href="pci-compliance/its-no-rocket-science.md">Refer here</a> to find out which level of PCI compliance applies to your business.</p><ul><li><strong>Report on Compliance (ROC):</strong> Engage an independent third-party Qualified Security Assessor (QSA) certified by the PCI-SSC to perform the PCI audit and share the findings. The ROC will be prepared by the QSA at the end of the PCI compliance activity. <em>This is required only if your online business processes greater than 1 million card transactions per annum.</em></li></ul><ul><li><strong>Quarterly Network scans:</strong> Engage an <a href="https://listings.pcisecuritystandards.org/assessors_and_solutions/approved_scanning_vendors">Approved Scanning Vendor</a> for conducting quarterly network scans and submitting the scan reports to the payment processor/ acquirer</li></ul><ul><li><strong>Self Assessment Questionnaire (SAQ):</strong> This is an assessment which can be self-completed by a business without engaging an Independent PCI Auditor, <em>if your business processes less than 1 million card transactions per annum</em>. A person responsible for the payment infrastructure within your organization fills out the SAQ. This could be the stakeholder who is the closest to your payment infrastructure - your Dev Ops Manager, or Information Security Officer, or CTO.</li></ul></td></tr></tbody></table>
 
-Here's a quick summary of everything you would need for going live with Hyperswitch:
+Here's a quick summary of everything you would need for going live with Juspay Hyperswitch:
 
 ### Security
 
@@ -36,7 +36,7 @@ The above installation guides include vault as well, but you will need to activa
 
 ### Outgoing Proxy
 
-* Set up an outgoing proxy outside the Kubernetes cluster for all external communication originating from the Hyperswitch application.
+* Set up an outgoing proxy outside the Kubernetes cluster for all external communication originating from the Juspay Hyperswitch application.
 * Direct all outbound traffic through this proxy for monitoring and control purposes.
 
 ### Incoming Traffic Management
@@ -45,7 +45,7 @@ The above installation guides include vault as well, but you will need to activa
 * This proxy should handle traffic filtering(WAF), rate limiting, request validation, and integration with DDoS protection services before traffic reaches the Kubernetes cluster.
 
 {% hint style="warning" %}
-Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
+Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
 {% endhint %}
 
 ### Monitoring
@@ -61,12 +61,12 @@ Hyperswitch does not share card BIN data automatically. BIN (Bank Identification
 
 ### Connector Configurations <a href="#connector-configurations" id="connector-configurations"></a>
 
-* [ ] &#x20;Configure all the required connectors using production credentials on the Hyperswitch production dashboard and enable the required payment methods.
+* [ ] Configure all the required connectors using production credentials on the Juspay Hyperswitch production dashboard and enable the required payment methods.
 * [ ] &#x20;Ensure that the payment methods are enabled on the connector (payment processor) dashboard.
 * [ ] &#x20;Enable raw card processing for each connector. Some connectors offer this as a dashboard toggle feature. Some processors might need you to share a PCI Attestation of Compliance over email to enable this.&#x20;
 
 {% hint style="info" %}
-To access the PCI Attestation of Compliance (AOC) document on Hyperswitch, simply navigate to the Compliance section under settings in the Hyperswitch Dashboard. If you need further assistance, you can also email at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
 {% endhint %}
 
 ### Integrate with your app
@@ -109,5 +109,5 @@ For more details, kindly refer to the [state machine diagrams](https://docs.hype
 * [ ] &#x20;Ensure a blended look and feel of the payment experience using the [styling APIs](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/customization) of Unified Checkout.
 
 {% hint style="success" %}
-You are good to go to run Hyperswitch in production and provide your customers with a safe, reliable, and smooth payment experience.
+You are good to go to run Juspay Hyperswitch in production and provide your customers with a safe, reliable, and smooth payment experience.
 {% endhint %}

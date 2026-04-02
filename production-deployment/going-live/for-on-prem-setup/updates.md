@@ -11,13 +11,13 @@ This chapter covers everything you need to know about handling maintenance and u
 
 ***
 
-### Hyperswitch version updates
+### Juspay Hyperswitch version updates
 
-Hyperswitch requires minimal maintenance effort, and updating to newer versions is quite simple
+Juspay Hyperswitch requires minimal maintenance effort, and updating to newer versions is quite simple
 
-* Hyperswitch adheres to a **monthly release schedule**, with versions undergoing thorough internal testing before being deemed stable
+* Juspay Hyperswitch adheres to a **monthly release schedule**, with versions undergoing thorough internal testing before being deemed stable
 * Stay informed about updates by checking our [GitHub releases](https://github.com/juspay/hyperswitch/releases) page
-* Hyperswitch follows semantic versioning for all releases
+* Juspay Hyperswitch follows semantic versioning for all releases
 
 {% hint style="success" %}
 **Our releases ensure backward compatibility** between the three components - the App Server, Web Client and Control Center
@@ -27,7 +27,7 @@ In case of any release which defers backward compatibility, prior announcement w
 
 ### Updating the application
 
-Often, when you are upgrading to a latest version of Hyperswitch, you would also need to take care of two aspects
+Often, when you are upgrading to a latest version of Juspay Hyperswitch, you would also need to take care of two aspects
 
 <details>
 
@@ -71,7 +71,7 @@ $ git diff --name-only <CURRENT_VERSION>..<NEW_VERSION> migrations/**/up.sql | s
 
 **How to update the environment variables?**
 
-* Hyperswitch allows specifying application configuration variables from two sources a TOML file and environment variables, with environment variables having higher priority
+* Juspay Hyperswitch allows specifying application configuration variables from two sources a TOML file and environment variables, with environment variables having higher priority
 * Except for some values such as database connection information that must be provided, if a configuration variable has not been specified in either source, the application uses default values specified in code
 * To ease the management of application configuration variables, the suggested approach would be to specify values that would depend on the deployment environment such as database and Redis URLs and some secrets values (such as admin API key, master encryption key, etc.) via environment variables, and specifying domain related configuration variables (such as payment methods enabled for a specific connector, base URLs used for accessing connectors, etc.) via the TOML file
 * This way, you can just copy over the [`development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml) file from the repository for ensuring that the application configuration variables are up-to-date
@@ -80,7 +80,7 @@ $ git diff --name-only <CURRENT_VERSION>..<NEW_VERSION> migrations/**/up.sql | s
 
 ### Web Client Updates
 
-Hyperswitch Web client is periodically updated for new features and bug fixes.&#x20;
+Juspay Hyperswitch Web client is periodically updated for new features and bug fixes. &#x20;
 
 * Please note that the web client adheres strictly to semantic versioning for consistent releases.
 * Please follow the [Changelog](https://github.com/juspay/hyperswitch-web/blob/main/CHANGELOG.md) to get the latest updates. You can pull the latest changes to get new features or build new features and contribute to the `hyperswitch-web` repo for others to use.

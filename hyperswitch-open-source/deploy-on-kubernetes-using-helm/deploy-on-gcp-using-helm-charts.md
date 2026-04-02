@@ -1,3 +1,7 @@
+---
+description: Deploy Hyperswitch on Google Cloud Platform using Helm charts for scalable payment infrastructure
+---
+
 # Deploy on GCP Using Helm Charts
 
 {% hint style="info" %}
@@ -24,7 +28,7 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 
 * Provide a project name, and click **Create:**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.16.21 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.16.21 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you are using an existing project, note the project ID for later use.
@@ -34,11 +38,11 @@ If you are using an existing project, note the project ID for later use.
 
 * Navigate to **APIs & Services > Library** or search for it:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.18.32 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.18.32 PM.png" alt=""><figcaption></figcaption></figure>
 
 * Search for **Kubernetes Engine API** and click **Enable:**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.19.25 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.19.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You'll need to provide billing information in order to proceed further. Follow the necessary steps and ensure the Kubernetes Engine API is enabled.
@@ -108,7 +112,7 @@ Choose a **--zone** that's near you
     kubectl get nodes
     ```
 
-## Part 2: Deploy Hyperswitch on Kubernetes Using Helm
+### Part 2: Deploy Hyperswitch on Kubernetes Using Helm
 
 #### Step 1: Add and Update the Hyperswitch Helm Repository
 
@@ -192,13 +196,13 @@ Access the services at:
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 A magic link will be sent to [Mailhog](http://localhost:8025/). Click on the link in white:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, you’ll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
+Afterwards, you'll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
 
 ### Test a payment
 
@@ -206,7 +210,7 @@ Use can now use the Hyperswitch Control Center and [make a payment with dummy ca
 
 Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyperswitch/folder/25176183-0103918c-6611-459b-9faf-354dee8e4437) to try out REST APIs.
 
-### **Troubleshooting**
+#### **Troubleshooting**
 
 * **View Pod Logs:** To check logs for a specific pod in Google Kubernetes Engine (GKE):
 
@@ -224,7 +228,7 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 </strong>helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 </code></pre>
 
-### **Customization & Configuration**
+#### **Customization & Configuration**
 
 To customize Hyperswitch, clone the Helm chart repository and modify `values.yaml`:
 
@@ -238,7 +242,7 @@ Update the `values.yaml` file inside `hyperswitch-stack/` and apply changes with
 helm upgrade --install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch
 ```
 
-### **Uninstall Hyperswitch & Delete GKE Cluster**
+#### **Uninstall Hyperswitch & Delete GKE Cluster**
 
 * To uninstall Hyperswitch:
 
@@ -252,7 +256,7 @@ helm uninstall hypers-v1 -n hyperswitch
 gcloud container clusters delete <cluster-name> --region <region> --project <project-id> --quiet
 ```
 
-### Explore Further
+#### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 

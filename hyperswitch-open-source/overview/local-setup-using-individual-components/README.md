@@ -1,5 +1,6 @@
 ---
 icon: diamonds-4
+description: Set up a local development environment for Hyperswitch backend, SDK, and Control Center components
 ---
 
 # Development Environment Setup
@@ -16,7 +17,7 @@ These setup guides are meant for development. If you want a quick trial of Hyper
 
 Hyperswitch is built as a modular system, comprising three key components. Each component is designed for specific roles in the payment stack and has detailed development environment setup guides, linked above and also available in their individual repositories.
 
-### [**Hyperswitch App Server**](https://github.com/juspay/hyperswitch):&#x20;
+### [**Hyperswitch App Server**](https://github.com/juspay/hyperswitch): 
 
 The Hyperswitch App Server is the core engine for processing payments. It offers full support for various payment flows, including:
 
@@ -30,16 +31,16 @@ The Hyperswitch App Server is the core engine for processing payments. It offers
   * Intelligent retries using error-code-specific flows
 * **Extensibility**: Connects with external fraud risk management (FRM) tools and authentication providers as part of the payment journey.
 
-### [**SDK (Frontend)**](https://github.com/juspay/hyperswitch-web)**:**&#x20;
+### [**SDK (Frontend)**](https://github.com/juspay/hyperswitch-web)**:** 
 
 The Hyperswitch SDK delivers a seamless and unified checkout experience across platforms:
 
 * **Platform Support**: Available for [Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web), [Android, and iOS](https://github.com/juspay/hyperswitch-client-core),.
 * **Multi-Method Support**: Handles cards, wallets, BNPL, bank transfers, and more.
-* **Flow Adaptability**: Supports the nuances of different PSPs’ payment flows.
+* **Flow Adaptability**: Supports the nuances of different PSPs' payment flows.
 * **Saved Payment Methods**: When integrated with the locker, the SDK automatically displays stored cards or other saved instruments for returning users.
 
-### [**Control Center**](https://github.com/juspay/hyperswitch-control-center):&#x20;
+### [**Control Center**](https://github.com/juspay/hyperswitch-control-center): 
 
 The Control Center is a no-code interface to manage and monitor your entire payment stack:
 
@@ -48,4 +49,3 @@ The Control Center is a no-code interface to manage and monitor your entire paym
   * Trigger and track refunds and chargebacks
   * View PSP-agnostic transaction logs for quick debugging
 * **Insights and Analytics**: Access detailed reports and metrics on success rates, payment drop-offs, retry performance, and more.
-

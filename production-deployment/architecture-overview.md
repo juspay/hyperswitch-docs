@@ -9,9 +9,9 @@ description: Overview of Juspay Hyperswitch architecture components including th
 
 Juspay Hyperswitch uses the following components to deploy and manage a payment stack:
 
-#### Hyperswitch App
+#### Juspay Hyperswitch App
 
-The Hyperswitch App Server is the core engine for processing payments. It offers full support for various payment flows, including:
+The Juspay Hyperswitch App Server is the core engine for processing payments. It offers full support for various payment flows, including:
 
 1. Core Operations: Authorization, authentication, voids, captures, refunds, and chargeback handling.
 2. Post-Payment Management: Robust handling of disputes and reconciliations.
@@ -36,7 +36,7 @@ Automates periodic deletion of card information and notifies merchants of API ke
 - Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
 - hyperswitch-consumer - Retrieves task batches from the queue and executes them
 
-#### Hyperswitch Web
+#### Juspay Hyperswitch Web
 
 1. A JavaScript based frontend SDK for inclusive, consistent and customizable payment experience, unifying checkout experience across platforms:
 2. Platform Support: Available for [Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web), [Android, and iOS](https://github.com/juspay/hyperswitch-client-core).
@@ -44,13 +44,13 @@ Automates periodic deletion of card information and notifies merchants of API ke
 4. Flow Adaptability: Supports the nuances of different PSPs' payment flows.
 5. Saved Payment Methods: When integrated with the locker, the SDK automatically displays stored cards or other saved instruments for returning users.
 
-#### Hyperswitch Card Vault
+#### Juspay Hyperswitch Card Vault
 
 1. A PCI-compliant Vault SDK to collect and store card data securely, ensuring sensitive information never touches your systems:
 2. Tokenizes cards across multiple payment processors through a single unified API.
 3. Generates Network Tokens to optimize payment operations and reduce costs with automatic network token creation and updates, powered by Juspay's certified Network Token Requestor capabilities.
 
-#### Hyperswitch Control Center
+#### Juspay Hyperswitch Control Center
 
 The Control Center is a no-code interface to manage and monitor your entire payment stack:
 
@@ -62,16 +62,16 @@ The Control Center is a no-code interface to manage and monitor your entire paym
 
 #### **Optional (For PCI-SSS):**
 
-#### Hyperswitch Encryption Service
+#### Juspay Hyperswitch Encryption Service
 
 A lightweight performant service to encrypt/decrypt data, key management and manage key rotation.
 
 ### Production Deployment Blueprint
 
-A typical production deployment blueprint of Hyperswitch looks like the following diagram.
+A typical production deployment blueprint of Juspay Hyperswitch looks like the following diagram.
 
 It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service.
 
 <figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
 
-The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Hyperswitch.
+The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Juspay Hyperswitch.
