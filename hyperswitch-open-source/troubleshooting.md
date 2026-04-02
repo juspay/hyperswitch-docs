@@ -7,7 +7,7 @@ icon: hammer-brush
 
 # Troubleshooting
 
-## System Health Check
+### System Health Check
 
 Hyperswitch provides a deep health check endpoint to check if the various components involved are up and running. To check the readiness of the application, you can run the following command.
 
