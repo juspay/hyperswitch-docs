@@ -1,5 +1,6 @@
 ---
 icon: server
+description: Set up the Hyperswitch backend locally using Docker or Rust for payment processing and routing
 ---
 
 # Backend
@@ -8,11 +9,11 @@ icon: server
 This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
 {% endhint %}
 
-## Supported Methods:
+### Supported Methods:
 
 <table data-card-size="large" data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Setup</strong></mark> <mark style="color:blue;"><strong>using docker compose</strong></mark></td></tr><tr><td><mark style="color:blue;"><strong>Rust environment setup along with other dependencies</strong></mark></td></tr></tbody></table>
 
-## Set up a development environment using Docker Compose
+### Set up a development environment using Docker Compose
 
 1. Install [Docker Compose](https://docs.docker.com/compose/install/).
 2.  Clone the repository and switch to the project directory:
@@ -38,7 +39,7 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
 
     If the command returned a `200 OK` status code, proceed with [trying out our APIs](set-up-hyperswitch-backend.md#try-out-our-apis).
 
-## Set up a Rust environment and other dependencies
+### Set up a Rust environment and other dependencies
 
 If you are using `nix`, please skip the setup dependencies step and jump to [Set up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
@@ -242,7 +243,7 @@ We'll be using [Homebrew](https://brew.sh/) in this section of the guide. You ca
 
 Once you're done with setting up the dependencies, proceed with [setting up the database](set-up-hyperswitch-backend.md#set-up-the-database).
 
-### Set up the database
+#### Set up the database
 
 1.  Create the database and database users, modifying the database user credentials and database name as required.
 

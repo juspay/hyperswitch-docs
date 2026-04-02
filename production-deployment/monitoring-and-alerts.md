@@ -7,7 +7,7 @@ description: Comprehensive guide to monitoring, logging, and alerting for Juspay
 
 Reliable operation of a production Juspay Hyperswitch deployment requires comprehensive observability across **infrastructure, application behavior, and transaction performance**.
 
-Observability in a Hyperswitch installation is based on two primary data sources:
+Observability in a Juspay Hyperswitch installation is based on two primary data sources:
 
 | Element | Description | Purpose |
 | ----------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -18,7 +18,7 @@ Both logs and metrics together provide the necessary visibility to maintain **op
 
 ### Observability Stack
 
-Hyperswitch integrates with a standard observability stack that combines logging, metrics collection, and visualization.
+Juspay Hyperswitch integrates with a standard observability stack that combines logging, metrics collection, and visualization.
 
 | Component | Function |
 | ----------------------------------------------------- | ----------------------------------------------------------- |
@@ -30,11 +30,11 @@ Hyperswitch integrates with a standard observability stack that combines logging
 
 This stack enables unified dashboards where operators can correlate:
 
-- application metrics
-- system resource utilization
-- transaction behavior
-- error patterns
-- application logs
+- Application metrics
+- System resource utilization
+- Transaction behavior
+- Error patterns
+- Application logs
 
 This correlation significantly reduces the time required to diagnose issues in production systems.
 
@@ -73,12 +73,12 @@ J --> L[Hyperswitch Support Team]
 
 #### Application Metrics
 
-Hyperswitch services emit **application metrics** such as:
+Juspay Hyperswitch services emit **application metrics** such as:
 
-- request rates
-- latency
-- authorization success rates
-- error rates
+- Request rates
+- Latency
+- Authorization success rates
+- Error rates
 
 These metrics are collected through the **OpenTelemetry Collector**, which forwards them to a **metrics backend such as Prometheus**.
 
@@ -86,10 +86,10 @@ These metrics are collected through the **OpenTelemetry Collector**, which forwa
 
 Infrastructure metrics such as:
 
-- node CPU usage
-- memory consumption
-- disk utilization
-- network usage
+- Node CPU usage
+- Memory consumption
+- Disk utilization
+- Network usage
 
 are typically collected from the **cloud provider monitoring system** (for example CloudWatch or equivalent).
 
@@ -97,31 +97,31 @@ are typically collected from the **cloud provider monitoring system** (for examp
 
 Application and system logs are collected by **Promtail**, which:
 
-- scrapes logs from containers and nodes
-- sends them to **Loki** for centralized log storage.
+- Scrapes logs from containers and nodes
+- Sends them to **Loki** for centralized log storage.
 
 #### Visualization Layer
 
 **Grafana** serves as the unified observability interface and provides:
 
-- infrastructure dashboards
-- application performance dashboards
-- transaction success rate monitoring
-- latency analysis
-- error analysis
+- Infrastructure dashboards
+- Application performance dashboards
+- Transaction success rate monitoring
+- Latency analysis
+- Error analysis
 
 Grafana can visualize both:
 
-- metrics (Prometheus / cloud metrics)
-- logs (Loki)
+- Metrics (Prometheus / cloud metrics)
+- Logs (Loki)
 
 #### Optional Enterprise Remote Monitoring
 
-For **Enterprise Edition merchants**, a subset of metrics may be exported using **Prometheus Remote Write** to a **Hyperswitch-managed monitoring environment** to enable:
+For **Enterprise Edition merchants**, a subset of metrics may be exported using **Prometheus Remote Write** to a **Juspay Hyperswitch-managed monitoring environment** to enable:
 
-- proactive operational support
-- performance analysis
-- infrastructure optimization recommendations.
+- Proactive operational support
+- Performance analysis
+- Infrastructure optimization recommendations.
 
 ### Monitoring Dashboards
 
@@ -144,9 +144,9 @@ Tracked metrics include:
 
 These metrics help detect:
 
-- resource exhaustion
-- pod instability
-- infrastructure bottlenecks
+- Resource exhaustion
+- Pod instability
+- Infrastructure bottlenecks
 
 before they affect transaction processing.
 
@@ -164,13 +164,13 @@ Tracked metrics include:
 
 These metrics allow operators to quickly identify:
 
-- degraded API performance
-- abnormal error patterns
-- traffic spikes
+- Degraded API performance
+- Abnormal error patterns
+- Traffic spikes
 
 #### Payment and Transaction Monitoring
 
-Hyperswitch dashboards also provide deep insight into payment processing performance.
+Juspay Hyperswitch dashboards also provide deep insight into payment processing performance.
 
 Tracked metrics include:
 
@@ -186,14 +186,14 @@ Tracked metrics include:
 
 These dashboards allow operators to detect:
 
-- processor outages
-- authorization rate degradation
-- routing inefficiencies
-- payment method performance issues
+- Processor outages
+- Authorization rate degradation
+- Routing inefficiencies
+- Payment method performance issues
 
 ### Monitoring Configuration
 
-Grafana dashboards are deployed as part of the Hyperswitch Helm installation.
+Grafana dashboards are deployed as part of the Juspay Hyperswitch Helm installation.
 
 The deployment process involves the following steps:
 
@@ -209,22 +209,22 @@ Once configured, data typically begins appearing within a few minutes, provided 
 
 ### Remote Monitoring (Enterprise Edition)
 
-For merchants using the Enterprise Edition of Hyperswitch, optional **remote monitoring support** is available.
+For merchants using the Enterprise Edition of Juspay Hyperswitch, optional **remote monitoring support** is available.
 
-In this configuration, selected operational metrics are exported from the merchant's environment to a monitoring system maintained by the Hyperswitch team.
+In this configuration, selected operational metrics are exported from the merchant's environment to a monitoring system maintained by the Juspay Hyperswitch team.
 
-This allows the Hyperswitch team to:
+This allows the Juspay Hyperswitch team to:
 
-- monitor transaction patterns and infrastructure utilization
-- assist in troubleshooting production issues
-- identify performance optimization opportunities
-- provide proactive recommendations to improve authorization rates
+- Monitor transaction patterns and infrastructure utilization
+- Assist in troubleshooting production issues
+- Identify performance optimization opportunities
+- Provide proactive recommendations to improve authorization rates
 
 ### Remote Monitoring Configuration
 
 Remote monitoring is implemented using the **Prometheus Remote Write API**.
 
-The merchant's Prometheus server (or compatible monitoring system such as VictoriaMetrics) pushes selected metrics to a Prometheus instance maintained by the Hyperswitch team.
+The merchant's Prometheus server (or compatible monitoring system such as VictoriaMetrics) pushes selected metrics to a Prometheus instance maintained by the Juspay Hyperswitch team.
 
 This configuration allows merchants to retain full control over which metrics are shared externally.
 
@@ -233,22 +233,22 @@ This configuration allows merchants to retain full control over which metrics ar
 Before configuring remote monitoring, ensure that:
 
 - Prometheus is running correctly in the Kubernetes cluster
-- application metrics are visible in Grafana dashboards
+- Application metrics are visible in Grafana dashboards
 
 The configuration process typically involves:
 
-1. Obtaining the Prometheus remote-write configuration snippet from the Hyperswitch team.
+1. Obtaining the Prometheus remote-write configuration snippet from the Juspay Hyperswitch team.
 2. Updating the Prometheus configuration to export selected metrics.
 3. Reloading the Prometheus configuration.
 
 Configuration reload can be triggered by sending a **SIGHUP signal** to the Prometheus process.
 
-Infrastructure rules may also need to be updated to allow outbound connections to the Hyperswitch monitoring endpoint.
+Infrastructure rules may also need to be updated to allow outbound connections to the Juspay Hyperswitch monitoring endpoint.
 
 After configuration, verify that:
 
-- remote write metrics are being exported successfully
-- the Hyperswitch team confirms receipt of the metrics
+- Remote write metrics are being exported successfully
+- The Juspay Hyperswitch team confirms receipt of the metrics
 
 Note: Remote monitoring is available only for merchants subscribing to the Enterprise Edition.
 
@@ -271,10 +271,10 @@ Infrastructure alerts monitor system health and resource utilization.
 
 Infrastructure alerts should apply to:
 
-- application pods
-- database instances
+- Application pods
+- Database instances
 - Redis instances
-- cluster nodes
+- Cluster nodes
 
 #### Application Alerts
 
@@ -287,9 +287,9 @@ Application alerts monitor API behavior.
 
 These alerts help identify:
 
-- application crashes
-- integration failures
-- misconfigurations
+- Application crashes
+- Integration failures
+- Misconfigurations
 
 #### Business Alerts
 
@@ -303,18 +303,18 @@ Business alerts monitor the performance of payment processing.
 
 These alerts should be configured for:
 
-- overall authorization success rate
-- payment method level success rate
-- processor/acquirer level success rate
+- Overall authorization success rate
+- Payment method level success rate
+- Processor/acquirer level success rate
 
 ### Logging and Log Archival
 
 Logging is essential for production environments for the following purposes:
 
-- troubleshooting and debugging
-- security monitoring
-- compliance and auditing
-- operational analysis
+- Troubleshooting and debugging
+- Security monitoring
+- Compliance and auditing
+- Operational analysis
 
 It is recommended to centralize logs using platforms such as:
 
@@ -338,18 +338,18 @@ Automated log rotation must be configured to prevent excessive disk usage and en
 
 Logs should be protected through:
 
-- encryption at rest
-- encryption in transit
-- restricted access for authorized personnel only
+- Encryption at rest
+- Encryption in transit
+- Restricted access for authorized personnel only
 
-Although Hyperswitch does not log sensitive payment data, logs must still be handled securely to maintain compliance and prevent information leakage.
+Although Juspay Hyperswitch does not log sensitive payment data, logs must still be handled securely to maintain compliance and prevent information leakage.
 
 #### Log Review
 
 Access logs and operational logs should be periodically reviewed to detect:
 
-- unauthorized access
-- suspicious system activity
-- operational anomalies
+- Unauthorized access
+- Suspicious system activity
+- Operational anomalies
 
 This process is commonly required during security audits and PCI compliance reviews.

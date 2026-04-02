@@ -1,3 +1,7 @@
+---
+description: Update Helm charts to the latest Hyperswitch nightly release for access to newest features
+---
+
 # Update Helm Charts to Hyperswitch's Latest Nightly Release
 
 Update charts/incubator/hyperswitch-stack/values.yaml to point to the most recent nightly release for the router, consumer, producer and drainer.
@@ -19,7 +23,7 @@ services:
       version: nightly
 ```
 
-Manually update configs based on the output of git diff command. Add configs that are labelled as “+” and remove the ones that are labelled as “-” in the respective files 1,2 mentioned below.
+Manually update configs based on the output of git diff command. Add configs that are labelled as "+" and remove the ones that are labelled as "-" in the respective files 1,2 mentioned below.
 
 1\. charts/incubator/hyperswitch-app/configs/router-sandbox.toml\
 \

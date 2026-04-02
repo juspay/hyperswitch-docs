@@ -1,5 +1,6 @@
 ---
 icon: arrows-to-circle
+description: Run additional services like scheduler, monitoring, and data analytics with Docker profiles
 ---
 
 # Run Additional Services

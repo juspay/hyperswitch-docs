@@ -1,31 +1,31 @@
 ---
-description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
+description: Comprehensive measures safeguarding Data Integrity within Juspay Hyperswitch
 icon: lock-keyhole
 ---
 
 # Data Security
 
 {% hint style="info" %}
-In this chapter, you will learn about the security principles employed in the design on the Hyperswitch application
+In this chapter, you will learn about the security principles employed in the design on the Juspay Hyperswitch application
 {% endhint %}
 
-Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling.&#x20;
+Juspay Hyperswitch is engineered with a meticulous focus on safeguarding sensitive data aligning with PCI standards. The application employs a multi-layered encryption strategy that encompasses various stages of data handling. &#x20;
 
-The below sections highlight how Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII).&#x20;
+The below sections highlight how Juspay Hyperswitch handles sensitive data such as master key, database passwords, RSA certificates, external API credentials and customer Personally Identifiable Information (PII). &#x20;
 
 ### Handling Sensitive Data
 
-The Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
+The Juspay Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
 <figure><img src="../../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
 
 ### 1. Accepting Card Data
 
-Card information initially comes from the Hyperswitch SDK, where it's encrypted using the SSL/TLS protocol. This establishes end-to-end encryption between the SDK and the Hyperswitch backend.
+Card information initially comes from the Juspay Hyperswitch SDK, where it's encrypted using the SSL/TLS protocol. This establishes end-to-end encryption between the SDK and the Juspay Hyperswitch backend.
 
 ### 2. Storing Card Data (vaulting)
 
-When a payment is made using a saved card, the card details get stored in a secure storage system called the Hyperswitch Card Vault. The Hyperswitch App Server utilizes JWS and JWE to secure card data during its transmission to our Card Vault service, which is then decrypted and verified by Card Vault. The transfer and validation of this data involve a few steps:
+When a payment is made using a saved card, the card details get stored in a secure storage system called the Juspay Hyperswitch Card Vault. The Juspay Hyperswitch App Server utilizes JWS and JWE to secure card data during its transmission to our Card Vault service, which is then decrypted and verified by Card Vault. The transfer and validation of this data involve a few steps:
 
 **Card Data Preparation:** The card details undergo two important security measures:
 
@@ -40,7 +40,7 @@ When a payment is made using a saved card, the card details get stored in a secu
 
 ### 3. Using Card Data for Analytics and Payment Operations
 
-To provide transaction information and analytics, only partially masked card details (first 4 and last 4 digits) are sent to the Control Center from the Hyperswitch app server. This allows a high-level view of payments without revealing full customer information.
+To provide transaction information and analytics, only partially masked card details (first 4 and last 4 digits) are sent to the Control Center from the Juspay Hyperswitch app server. This allows a high-level view of payments without revealing full customer information.
 
 
 
@@ -55,7 +55,7 @@ During transmission, data remains masked and never gets permanently stored on th
 ### Key Management System (KMS) Encryption
 
 {% hint style="info" %}
-The current Hyperswitch setup only uses AWS KMS for storing and managing sensitive data and configurations. Support will be added for other 3rd party vault solutions (e.g., Hashicorp Vault) in the future.
+The current Juspay Hyperswitch setup only uses AWS KMS for storing and managing sensitive data and configurations. Support will be added for other 3rd party vault solutions (e.g., Hashicorp Vault) in the future.
 {% endhint %}
 
 * Sensitive keys crucial for the application's operation undergo encryption at startup.
@@ -83,5 +83,5 @@ The current Hyperswitch setup only uses AWS KMS for storing and managing sensiti
 {% hint style="info" %}
 **Database at rest Encryption**
 
-In the cloud-hosted version of Hyperswitch, we've encrypted the DB instances to offer an added layer of security, safeguarding the data from unauthorized access. For merchants self-hosting Hyperswitch, we highly recommend adopting similar practices to ensure robust protection for their data.
+In the cloud-hosted version of Juspay Hyperswitch, we've encrypted the DB instances to offer an added layer of security, safeguarding the data from unauthorized access. For merchants self-hosting Juspay Hyperswitch, we highly recommend adopting similar practices to ensure robust protection for their data.
 {% endhint %}

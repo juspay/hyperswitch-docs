@@ -41,14 +41,14 @@ This ensures confidentiality and integrity of data transmitted between services 
 
 ### Card Vault Isolation
 
-The **Hyperswitch Card Vault** must be deployed in a **separate compute environment and storage layer** to isolate sensitive cardholder data and encryption keys from the main application infrastructure.
+The **Juspay Hyperswitch Card Vault** must be deployed in a **separate compute environment and storage layer** to isolate sensitive cardholder data and encryption keys from the main application infrastructure.
 
 Recommended controls include:
 
 - Separate infrastructure instances
 - Dedicated storage volumes
 - Independent encryption key management
-- restricted operational access
+- Restricted operational access
 
 #### Key Custodian Model
 
@@ -102,16 +102,16 @@ FIM solutions track changes to important system files and configuration artifact
 
 Recommended monitoring targets include:
 
-- system binaries
-- application configuration files
-- security policies
-- authentication and authorization configurations
+- System binaries
+- Application configuration files
+- Security policies
+- Authentication and authorization configurations
 
 Unexpected file changes should trigger alerts for security review.
 
 ### Access Control & User Management
 
-It is recommended to ensure the following in the merchant's Hyperswitch production setup.
+It is recommended to ensure the following in the merchant's Juspay Hyperswitch production setup.
 
 - Role Based Access Control or Least privilege access is enforced for all system users.
 - MFA is enabled for all administrative access.

@@ -17,8 +17,8 @@ Businesses subject to PCI-DSS must annually demonstrate compliance with the regu
 2. **Report on Compliance (ROC):** An independent third-party QSA or ISA certified by the PCI-SSC will have to perform the audit and share the findings.
 
 {% hint style="success" %}
-Hyperswitch's PCI Attestation of Compliance can be found in the Hyperswitch Dashboard. \
-To locate -> Go to Settings -> Compliance&#x20;
+Juspay Hyperswitch's PCI Attestation of Compliance can be found in the Juspay Hyperswitch Dashboard. \
+To locate -> Go to Settings -> Compliance 
 {% endhint %}
 
 {% hint style="success" %}

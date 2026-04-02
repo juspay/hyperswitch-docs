@@ -103,6 +103,6 @@ Self-serve dashboards and tooling for:
 
 ---
 
-This Production Deployment guide is to help merchants looking to self-deploy Hyperswitch in an enterprise-grade environment.
+This Production Deployment guide is to help merchants looking to self-deploy Juspay Hyperswitch in an enterprise-grade environment.
 
-It is designed to provide you detailed guidance on deploying and scaling Hyperswitch in a secure and compliant manner.
+It is designed to provide you detailed guidance on deploying and scaling Juspay Hyperswitch in a secure and compliant manner.

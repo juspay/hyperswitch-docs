@@ -21,7 +21,7 @@ CPU generally scales approximately linearly with throughput, while memory scales
 
 #### Terminology
 
-- **RPS (Requests Per Second)** Number of API requests handled by the Hyperswitch Router.
+- **RPS (Requests Per Second)** Number of API requests handled by the Juspay Hyperswitch Router.
 - **TPS (Transactions Per Second)** Number of payment transactions processed by the system.
 
 A single transaction may involve multiple internal API calls. As a result, **RPS is typically higher than TPS**.
@@ -36,7 +36,7 @@ Actual ratios may vary depending on payment flow configuration and enabled servi
 
 #### 1. Application Layer (Kubernetes)
 
-##### Architectural Assumptions
+#### Architectural Assumptions
 
 The reference scaling model assumes the following application characteristics:
 
@@ -51,7 +51,7 @@ The reference scaling model assumes the following application characteristics:
 
 These assumptions provide predictable scaling behavior while maintaining operational stability.
 
-##### Throughput-Based Scaling Formula
+#### Throughput-Based Scaling Formula
 
 Let:
 
@@ -77,16 +77,16 @@ Determined by memory, CPU, and pod density constraints
 
 These calculations provide a baseline estimate for cluster sizing.
 
-##### Pod Density Guidelines
+#### Pod Density Guidelines
 
 Kubernetes allows up to **110 pods per node by default**, however operating close to this limit is not recommended for production systems.
 
 Maintaining lower pod density improves:
 
-- node stability
-- resource isolation
-- failure blast radius containment
-- scheduling reliability during autoscaling events
+- Node stability
+- Resource isolation
+- Failure blast radius containment
+- Scheduling reliability during autoscaling events
 
 **Recommended Pod Density Ranges:**
 
@@ -104,7 +104,7 @@ Best practices:
 
 Even if technically possible through configuration adjustments, placing **150–200 pods on a single node is strongly discouraged**.
 
-##### Autoscaling Recommendations
+#### Autoscaling Recommendations
 
 The **Horizontal Pod Autoscaler (HPA)** should be configured to scale application pods based on CPU utilization and request throughput.
 
@@ -118,7 +118,7 @@ Recommended baseline thresholds:
 
 Autoscaling should be configured with sufficient headroom to absorb sudden traffic bursts without triggering aggressive scaling oscillations.
 
-##### Availability Zone Distribution
+#### Availability Zone Distribution
 
 All production deployments should span **at least two availability zones**, with **three zones recommended** for high availability.
 
@@ -130,7 +130,7 @@ Application pods should be distributed using:
 
 This design reduces the impact of node failures or zone-level outages.
 
-##### Reference Sizing Table (Application Layer)
+#### Reference Sizing Table (Application Layer)
 
 Assumptions:
 
@@ -170,7 +170,7 @@ Baseline reference deployment:
 - **16 KB per transaction**
 - **5× storage safety factor**
 
-##### Reference Sizing Table
+#### Reference Sizing Table
 
 | Peak TPS | Writer vCPU (Aggregate) | Reader vCPU (Aggregate) | Recommended RAM | Required IOPS (TPS × 50) |
 | -------- | ----------------------- | ----------------------- | ------------------- | ------------------------ |
@@ -194,27 +194,27 @@ At **1000 TPS**, instead of a single 100-vCPU writer:
 Use **multiple 16–32 vCPU nodes** through partitioning or sharding strategies.
 {% endhint %}
 
-##### RAM Scaling Considerations
+#### RAM Scaling Considerations
 
 RAM requirements do not scale strictly linearly.
 
 Memory usage depends on:
 
-- working set size
-- index size
-- active connections
-- cache hit ratio
-- replication overhead
+- Working set size
+- Index size
+- Active connections
+- Cache hit ratio
+- Replication overhead
 
 Beyond **256–512 GB per node**, vertical scaling becomes inefficient.
 
 At this stage, horizontal strategies are recommended:
 
-- read replicas
-- logical sharding
-- partitioned datasets
+- Read replicas
+- Logical sharding
+- Partitioned datasets
 
-##### Storage and IOPS
+#### Storage and IOPS
 
 IOPS requirements are derived as:
 
@@ -227,15 +227,15 @@ Recommendations:
 - Provisioned IOPS storage is recommended beyond **10,000 sustained IOPS**
 - Burst-credit storage classes should **not be used for production payment workloads**
 
-##### Connection Pooling
+#### Connection Pooling
 
 High throughput deployments should use **connection pooling** to prevent excessive database connections from application pods.
 
 Recommended approaches include:
 
 - PgBouncer
-- built-in connection pooling solutions
-- managed pooling layers provided by database platforms
+- Built-in connection pooling solutions
+- Managed pooling layers provided by database platforms
 
 #### 4. Redis Scaling Model
 
@@ -249,7 +249,7 @@ Baseline deployment for **40 TPS / ~280 RPS**:
 - **2 vCPU per node**
 - **~8 GB RAM per node**
 
-##### Reference Scaling Table
+#### Reference Scaling Table
 
 | Peak RPS | Equivalent TPS | Primary Shards | Replicas per Shard | Total Nodes | vCPU per Node | Memory per Node | Total Primary Memory |
 | -------- | -------------- | -------------- | ------------------ | ----------- | ------------- | --------------- | -------------------- |
@@ -270,7 +270,7 @@ Two critical testing methodologies should be performed before production deploym
 
 Load testing validates system throughput capacity and resource utilization under sustained traffic.
 
-##### Implementation Steps
+#### Implementation Steps
 
 **1. Download Load Test Script**
 
@@ -304,7 +304,7 @@ PostgreSQL client ≥ 13
 psql --version
 ```
 
-Ensure the Hyperswitch server is running.
+Ensure the Juspay Hyperswitch server is running.
 
 **3. Navigate to Load Test Directory**
 
@@ -324,7 +324,7 @@ This installs required Python dependencies.
 
 You will be prompted to enter:
 
-- Hyperswitch server URL
+- Juspay Hyperswitch server URL
 - Admin API key
 
 **6. Enable Grafana Monitoring**
@@ -349,11 +349,11 @@ Password: admin
 
 Provide PostgreSQL credentials:
 
-- username
-- password
-- database name
-- host
-- port
+- Username
+- Password
+- Database name
+- Host
+- Port
 
 If skipped, the script will generate a SQL query which can be executed manually.
 
@@ -369,11 +369,11 @@ output/report.pdf
 
 Chaos testing validates the system's resilience under partial service outages.
 
-##### Objective
+#### Objective
 
-Ensure the **Hyperswitch Router** continues processing payment requests even when dependent services become unavailable.
+Ensure the **Juspay Hyperswitch Router** continues processing payment requests even when dependent services become unavailable.
 
-##### Services That May Be Disrupted
+#### Services That May Be Disrupted
 
 Core services:
 
@@ -390,7 +390,7 @@ Analytics stack:
 - OpenSearch
 - Prometheus / Vector
 
-##### Implementation Guidelines
+#### Implementation Guidelines
 
 **Graceful Degradation**
 
@@ -404,7 +404,7 @@ Services should report failures without blocking request processing.
 
 All failures should be logged for operational visibility.
 
-##### Success Criteria
+#### Success Criteria
 
 The system is considered resilient if:
 

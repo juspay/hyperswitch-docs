@@ -10,7 +10,7 @@ Explore the web client's full stack playground for rapid prototyping using a sin
 
 Please note that this deployment is just for the demo-playground. This is **optional** and does not replace the integration step. In order to go-live, please integrate the web client onto your app before the deployment of your app
 
-## Steps to Deploy Juspay Hyperswitch web client on AWS
+### Steps to Deploy Juspay Hyperswitch web client on AWS
 
 ### What do you need to get started
 
@@ -176,7 +176,7 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 </details>
 
-## Next step:
+### Next step:
 
 {% content-ref url="../../../account-setup/" %}
 [account-setup](../../../account-setup/)

@@ -8,7 +8,7 @@ description: Deploy Juspay Hyperswitch web client on AWS for production-ready pa
 In this section, you will be deploying the web client on your AWS account
 {% endhint %}
 
-## What do you need to get started
+### What do you need to get started
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
 
@@ -155,7 +155,7 @@ Now that the web client is hosted, you can integrate it with your app and go liv
 
 </details>
 
-## Next step
+### Next step
 
 {% content-ref url="integrate-web-client-on-your-web-app.md" %}
 [integrate-web-client-on-your-web-app.md](integrate-web-client-on-your-web-app.md)

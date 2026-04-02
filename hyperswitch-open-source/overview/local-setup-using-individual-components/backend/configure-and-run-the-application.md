@@ -1,10 +1,11 @@
 ---
 icon: panel-ews
+description: Configure and run the Hyperswitch application with environment-specific settings for development
 ---
 
 # Configure and Run the Application
 
-## Configure the application
+### Configure the application
 
 The application configuration files are present under the [`config`](https://github.com/juspay/hyperswitch/blob/main/config) directory.
 
@@ -20,7 +21,7 @@ Ensure to update the [`development.toml`](https://github.com/juspay/hyperswitch/
 
 Once you're done with configuring the application, proceed with [running the application](configure-and-run-the-application.md#run-the-application).
 
-### Run the application
+#### Run the application
 
 1.  Compile and run the application using `cargo`:
 

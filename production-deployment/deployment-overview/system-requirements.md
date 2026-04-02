@@ -6,7 +6,7 @@ The capacity is defined in terms of RPS or Requests per second.&#x20;
 
 A single transaction may require 4 requests on average, and hence 40 RPS will approximately equal to a capacity of 10 transactions per second (TPS) and 25 million transactions per month.
 
-However, the RPS to TPS ratio might vary based on various factors such as type of integration between merchant app and hyperswitch and variability in transaction patterns. It is recommended to provision for the peak TPS capacity expected from the users.
+However, the RPS to TPS ratio might vary based on various factors such as type of integration between merchant app and Juspay Hyperswitch and variability in transaction patterns. It is recommended to provision for the peak TPS capacity expected from the users.
 
 The production configuration recommended for 40 RPS capacity is as follows (excluding monitoring services).
 
@@ -28,12 +28,12 @@ The production configuration recommended for 40 RPS capacity is as follows (excl
 
 For planning purposes, a 40% buffer for the application layer and 50% buffer for stateful components (Database and Redis) is recommended.
 
-Detailed guidance for scaling Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/production-deployment/scale-and-reliability) section.&#x20;
+Detailed guidance for scaling Juspay Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/production-deployment/scale-and-reliability) section. &#x20;
 {% endhint %}
 
 ### **Software**
 
-Due to necessary time and cost considerations, only the Hyperswitch build compatible with specific operating systems, relational SQL and no-SQL databases has gone through the stringent PCI Software Security Standards (SSS) validation process.
+Due to necessary time and cost considerations, only the Juspay Hyperswitch build compatible with specific operating systems, relational SQL and no-SQL databases has gone through the stringent PCI Software Security Standards (SSS) validation process.
 
 It is strongly recommended to use the following software to ensure easy external validation such as PCI DSS certification and achieve the required performance from the installation.
 
@@ -51,7 +51,7 @@ Redis version 7.x is recommended for caching
 
 The [hyperswitch-suite](https://github.com/juspay/hyperswitch-suite) is a singular reference repository to be followed for application updates. This is to ensure compatibility across application components. Semantic versioning is followed across all application components.
 
-The approved and listed software version appears as "Hyperswitch, Version: 1.x" on the [PCI SSC List of Validated Payment Software](https://listings.pcisecuritystandards.org/assessors_and_solutions/payment_software?agree=true), with the major version clearly indicated. Major version components only change when there are significant feature changes, or the changes impact any part of a security standard.
+The approved and listed software version appears as "Juspay Hyperswitch, Version: 1.x" on the [PCI SSC List of Validated Payment Software](https://listings.pcisecuritystandards.org/assessors_and_solutions/payment_software?agree=true), with the major version clearly indicated. Major version components only change when there are significant feature changes, or the changes impact any part of a security standard.
 
 The stable releases are announced on a monthly basis on the [Releases page](https://github.com/juspay/hyperswitch-suite/releases). This will include notes on each application component which includes
 
@@ -68,7 +68,7 @@ A Continuous deployment engine automatically updates the nightly releases on a d
 
 #### Devops software
 
-Installing and managing Hyperswitch requires a good operational expertise on Kubernetes, Helm and Kubectl.
+Installing and managing Juspay Hyperswitch requires a good operational expertise on Kubernetes, Helm and Kubectl.
 
 The minimum recommended versions for the devops software as follows:
 

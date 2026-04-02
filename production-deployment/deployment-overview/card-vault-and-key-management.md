@@ -5,11 +5,11 @@ description: Enterprise key management configuration for Juspay Hyperswitch Card
 
 # Card Vault & Key Management
 
-### Enterprise Key Management for Hyperswitch Card Vault and Application
+### Enterprise Key Management for Juspay Hyperswitch Card Vault and Application
 
 This document describes how to configure **secure key management** for **Juspay Hyperswitch** deployments in enterprise environments.
 
-Hyperswitch processes **highly sensitive data**, including:
+Juspay Hyperswitch processes **highly sensitive data**, including:
 
 - Payment card information
 - Bank account details
@@ -24,11 +24,11 @@ To ensure compliance with industry standards such as **Payment Card Industry Sec
 3. Key storage and access
 4. Application-level encryption
 
-Hyperswitch implements these protections through a **Card Vault**, **Key Manager**, and optional **external Key Management Systems**.
+Juspay Hyperswitch implements these protections through a **Card Vault**, **Key Manager**, and optional **external Key Management Systems**.
 
 ### 1. Encryption Architecture Overview
 
-A secure enterprise deployment of Hyperswitch should implement the following architecture:
+A secure enterprise deployment of Juspay Hyperswitch should implement the following architecture:
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -46,7 +46,7 @@ This architecture ensures **no single component has access to raw card data and 
 
 ### 2. Card Vault Security Features
 
-The Hyperswitch Card Vault includes the following built-in protections.
+The Juspay Hyperswitch Card Vault includes the following built-in protections.
 
 #### 2.1 Key Custodian Protection
 
@@ -69,7 +69,7 @@ Production deployments should enforce **at least two custodians**.
 
 #### 2.2 Vault API Encryption
 
-All communication between the **Hyperswitch Router** and the **Card Vault** is encrypted and signed using:
+All communication between the **Juspay Hyperswitch Router** and the **Card Vault** is encrypted and signed using:
 
 - **JSON Web Encryption**
 - **JSON Web Signature**
@@ -86,7 +86,7 @@ This protection is applied **in addition to TLS**.
 
 For enterprise deployments, encryption keys should **not be stored locally on the vault or application servers**.
 
-Instead, integrate Hyperswitch with an external Key Management System such as:
+Instead, integrate Juspay Hyperswitch with an external Key Management System such as:
 
 - **HashiCorp Vault**
 - **AWS Key Management Service**
@@ -100,7 +100,7 @@ These systems provide:
 - Access auditing
 - Role-based access control
 
-Hyperswitch retrieves encryption keys dynamically during runtime.
+Juspay Hyperswitch retrieves encryption keys dynamically during runtime.
 
 ### 3. Master Key Generation
 
@@ -116,7 +116,7 @@ Recommended approaches:
 | Hybrid infrastructure | HashiCorp Vault |
 | Highly regulated environment | HSM-backed KMS |
 
-If external key managers are unavailable, Hyperswitch provides utilities to generate master keys locally. However, this approach should only be used in controlled environments and keys must be securely transferred into a secret management system.
+If external key managers are unavailable, Juspay Hyperswitch provides utilities to generate master keys locally. However, this approach should only be used in controlled environments and keys must be securely transferred into a secret management system.
 
 Example utility command:
 
@@ -134,7 +134,7 @@ Immediately store these keys in a **secure secret management system**.
 
 ### 4. Service-to-Service Encryption Keys
 
-Hyperswitch uses **RSA keys** for secure communication between services.
+Juspay Hyperswitch uses **RSA keys** for secure communication between services.
 
 Two key pairs are required:
 
@@ -161,9 +161,9 @@ In production deployments:
 
 Keys must **never be stored in public repositories or container images**.
 
-### 5. Deploying the Hyperswitch Key Manager
+### 5. Deploying the Juspay Hyperswitch Key Manager
 
-The Hyperswitch Key Manager acts as an intermediary between the application and external key stores.
+The Juspay Hyperswitch Key Manager acts as an intermediary between the application and external key stores.
 
 It provides:
 
@@ -309,7 +309,7 @@ Security alerts should be configured for suspicious activity.
 
 ### 11. Security Best Practices
 
-Enterprises deploying Hyperswitch should enforce the following controls:
+Enterprises deploying Juspay Hyperswitch should enforce the following controls:
 
 **Access control**
 
@@ -374,7 +374,7 @@ Benefits:
 - key compromise blast radius is minimized
 - cryptographic operations can be audited
 
-### Integrating HSM with Hyperswitch
+### Integrating HSM with Juspay Hyperswitch
 
 The Key Manager should:
 

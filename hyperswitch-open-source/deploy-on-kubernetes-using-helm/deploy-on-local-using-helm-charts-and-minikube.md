@@ -6,7 +6,7 @@ description: >-
 
 # Deploy on Local using Helm Charts and Minikube
 
-## **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
+### **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
 ### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
 
@@ -61,7 +61,7 @@ brew install orbstack  # Download the OrbStack application
 2. Navigate to the Pods section.
 3. Enable Kubernetes from the settings.
 
-## **Part 2: Deploy Hyperswitch on Kubernetes Using Helm** <a href="#jqgk5qw5bkgo" id="jqgk5qw5bkgo"></a>
+### **Part 2: Deploy Hyperswitch on Kubernetes Using Helm** <a href="#jqgk5qw5bkgo" id="jqgk5qw5bkgo"></a>
 
 #### **Step 1: Add and Update the Hyperswitch Helm Repository** <a href="#id-75zpwj4wb8db" id="id-75zpwj4wb8db"></a>
 
