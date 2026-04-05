@@ -10,7 +10,7 @@ noIndex: true
 Start here if you are an enterprise looking to accept one time or recurring online payments for your website
 {% endhint %}
 
-Hyperswitch, a payment infrastructure which is built groud-up in Rust. We've built Hyperswitch on systems software principles which makes us super performant, low latency and ultra-reliable. We offer a truly global, secure & compliant payment stack.
+**Juspay Hyperswitch**, a payment infrastructure which is built groud-up in Rust. We've built Hyperswitch on systems software principles which makes us super performant, low latency and ultra-reliable. We offer a truly global, secure & compliant payment stack.
 
 Our 24\*7 dedicated support and custom pricing caters to enterprises from all sectors. On top of that we offer unified operations, analytics, chargebacks as well as reconciliation to make payments management easier.
 
