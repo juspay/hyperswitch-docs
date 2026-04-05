@@ -6,7 +6,7 @@ coverY: 0
 
 # Exploration Guide
 
-Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
+**Juspay Hyperswitch** gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
 
 This guide helps you:
 

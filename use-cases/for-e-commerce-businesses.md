@@ -7,7 +7,7 @@ icon: buildings
 
 # For E-Commerce Businesses
 
-Hyperswitch provides e-commerce businesses with a reliable and flexible payment system, whether you are a small store or a large business.
+**Juspay Hyperswitch** provides e-commerce businesses with a reliable and flexible payment system, whether you are a small store or a large business.
 
 Hyperswitch enables you to improve conversions, accept payments globally, optimize payment costs, access unified analytics across all business units, protect against fraud, and manage compliance effortlessly.
 

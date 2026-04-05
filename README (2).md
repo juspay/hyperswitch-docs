@@ -7,7 +7,7 @@ coverY: 0
 
 # Overview
 
-[Hyperswitch](https://hyperswitch.io/) is an open-source payments platform from [Juspay](https://juspay.io/us), designed to simplify global payments for digital businesses. Juspay has been a global leader offering payment infrastructure solution for banks and merchants for 12+ years, processing over [300 Mn+ daily transactions](https://juspay.io/newsroom/juspay-secures-usd50-million-investment-from-westbridge-capital) and an annualized total payment value of $1 Tn+
+[Juspay Hyperswitch](https://hyperswitch.io/) is an open-source payments platform from [Juspay](https://juspay.io/us), designed to simplify global payments for digital businesses. Juspay has been a global leader offering payment infrastructure solution for banks and merchants for 12+ years, processing over [300 Mn+ daily transactions](https://juspay.io/newsroom/juspay-secures-usd50-million-investment-from-westbridge-capital) and an annualized total payment value of $1 Tn+
 
 ### We offer two distinct solutions
 

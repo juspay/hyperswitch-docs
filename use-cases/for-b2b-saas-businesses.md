@@ -7,7 +7,7 @@ icon: block-brick
 
 # For B2B SaaS Businesses
 
-Hyperswitch empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
+**Juspay Hyperswitch** empowers B2B SaaS providers with a modular, flexible, and robust payment infrastructure designed for both their clients and end users.
 
 For B2B SaaS businesses, it is particularly valuable for onboarding large enterprises as clients who prefer to retain greater control over their customers' checkout experience.
 
