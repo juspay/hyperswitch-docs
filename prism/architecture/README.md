@@ -1,3 +1,7 @@
+---
+description: Understand the Prism architecture with interface, binding, and core layers for unified payment processing
+---
+
 ## Architecture Overview
 
 If you've integrated multiple payment providers, you know the pain:

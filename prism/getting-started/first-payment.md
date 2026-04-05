@@ -1,3 +1,7 @@
+---
+description: Process your first payment using the Prism library with authorization, capture, and refund flows
+---
+
 # First Payment
 
 In the next few steps you will authorize the payment, handle errors, capture funds, and process refunds. And then you will be ready to send payment to any payment processor, without writing specialized code for each.

@@ -1,3 +1,7 @@
+---
+description: Integrate PayPal payments with authorize, capture, refund, and wallet payment flows
+---
+
 # Paypal
 
 <!--
