@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for SMEs
+description: Discover payment integration use cases for small and medium enterprises to accept online payments and optimize transaction management workflows
 hidden: true
 noIndex: true
 ---
