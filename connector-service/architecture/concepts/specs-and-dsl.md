@@ -1,3 +1,7 @@
+---
+description: Use Protocol Buffers DSL for type-safe payment operations and compile-time error detection
+---
+
 # Specs and DSL
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers that catches integration errors at compile time. Instead of discovering you forgot a required field in production, you get a compiler error immediately.

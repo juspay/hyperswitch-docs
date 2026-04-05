@@ -1,6 +1,10 @@
+---
+description: Implement advanced payment flows including recurring payments, incremental authorization, and refunds
+---
+
 # Extending to More Flows
 
-YOu have implemmented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
+You have implemented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
 
 Beyond the basic authorization and capture, the library handles complex payment scenarios in a processor agnostic manner. This includes recurring payments, incremental authorization, void, reverse, refund and more.
 
@@ -16,7 +20,7 @@ Below are some sample use cases to try out quickly, followed by some real world 
 | **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) |
 | **Partial Capture** | Multi-shipment orders | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount |
 | **Refunds** | Customer returns | [`refund`](../../api-reference/services/payment-service/refund.md) |
-| **Reucrring Payments** | SaaS billing and rer | [`setupMandate`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
+| **Recurring Payments** | SaaS billing and more | [`setupMandate`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
 
 
 ## Incremental Authorization

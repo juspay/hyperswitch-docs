@@ -1,9 +1,13 @@
+---
+description: Learn why Juspay built a unified payment integration library to solve connector fragmentation
+---
+
 # Why we built a Unified Payment Integration Library?
 
 If you have ever integrated a payment processor, you know the drill. You read through a PDF that was last updated in 2019, figure out what combination of API keys goes in which header, discover that "decline code 51" means something subtly different on this processor than the last one you dealt with, and then do it all over again when your business decides to add a second processor.
 
-We have been living in this world for years building Hyperswitch, an open-source payment orchestrator. At some point we had integrations for 50+ connectors. The integrations worked well — but they were locked inside our orchestrator, not usable by anyone who just needed to talk to Stripe or Adyen without adopting an entire platform.
-We always felt the Payment APIs are not more complicated than database drivers. It it just that the industry has not arrived at a standard (and it never will!!) for payments. Hence, we decided to build an open interface for Developer and AI agents to use, rather than recreate it every time.
+We have been living in this world for years building Juspay Hyperswitch, an open-source payment orchestrator. At some point we had integrations for 50+ connectors. The integrations worked well — but they were locked inside our orchestrator, not usable by anyone who just needed to talk to Stripe or Adyen without adopting an entire platform.
+We always felt the Payment APIs are not more complicated than database drivers. It's just that the industry has not arrived at a standard (and it never will!!) for payments. Hence, we decided to build an open interface for Developer and AI agents to use, rather than recreate it every time.
 
 This post is about how we did that: unbundling those integrations into a standalone library called the **Prism**, and the engineering decisions we made along the way. Some of them are genuinely interesting.
 
@@ -11,7 +15,7 @@ This post is about how we did that: unbundling those integrations into a standal
 
 ## Why unbundle at all?
 
-The connector integrations inside Hyperswitch were not designed to be embedded in an orchestrator forever. They were always a self-contained layer: translate a unified request into a connector-specific HTTP call, make the call, translate the response back. The orchestrator was just the first thing to use them.
+The connector integrations inside Juspay Hyperswitch were not designed to be embedded in an orchestrator forever. They were always a self-contained layer: translate a unified request into a connector-specific HTTP call, make the call, translate the response back. The orchestrator was just the first thing to use them.
 
 The more we looked at it, the more it seemed wrong to keep that capability locked behind a full platform deployment. If you just need to accept payments through Stripe, you should not have to adopt an orchestrator to get a well-tested, maintained integration. And if you want to switch to Adyen later, that should be a config change, not a rewrite.
 
@@ -47,7 +51,7 @@ Everything is strongly typed. `PaymentService.Authorize` takes a `PaymentService
 
 > **Q: Why Rust? Wouldn't Go or Java be simpler?**
 >
-> A few reasons. First, we already had 50+ connector implementations in Rust from Hyperswitch, so starting there was practical. But more importantly: the library needs to be embeddable in Python, JavaScript, and Java applications without a separate process or a runtime dependency like the JVM or a Python interpreter. The only realistic way to distribute a native library that loads cleanly into all of those runtimes is as a compiled shared library — `.so` on Linux, `.dylib` on macOS. Rust produces exactly that, with no garbage collector pauses, no runtime to ship, and memory safety that does not require a GC.
+> A few reasons. First, we already had 50+ connector implementations in Rust from Juspay Hyperswitch, so starting there was practical. But more importantly: the library needs to be embeddable in Python, JavaScript, and Java applications without a separate process or a runtime dependency like the JVM or a Python interpreter. The only realistic way to distribute a native library that loads cleanly into all of those runtimes is as a compiled shared library — `.so` on Linux, `.dylib` on macOS. Rust produces exactly that, with no garbage collector pauses, no runtime to ship, and memory safety that does not require a GC.
 
 The Rust codebase is organized into a handful of internal crates:
 

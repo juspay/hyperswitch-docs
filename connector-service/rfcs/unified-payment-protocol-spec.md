@@ -1,3 +1,7 @@
+---
+description: Define standardized connector-agnostic interface for processing payments across 110+ processors
+---
+
 # RFC: Unified Payment Protocol (UPP)
 
 | Field       | Value                                    |

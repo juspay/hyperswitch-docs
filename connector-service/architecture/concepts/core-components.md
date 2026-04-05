@@ -1,3 +1,7 @@
+---
+description: Understand the four core components: SDK layer, transport layer, service layer, and connector adapters
+---
+
 # Core Components
 
 Prism breaks down into four components that each solve a specific integration pain point. Understanding them helps you decide how to deploy and extend the system.

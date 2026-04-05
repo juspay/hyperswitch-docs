@@ -1,3 +1,7 @@
+---
+description: Generate regression tests automatically from proto definitions for all connectors
+---
+
 # Test Generation
 
 You get regression tests for every connector without writing them by hand. Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.

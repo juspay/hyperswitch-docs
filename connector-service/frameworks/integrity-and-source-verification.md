@@ -1,3 +1,7 @@
+---
+description: Verify webhook integrity and authenticate payment processor source with cryptographic signatures
+---
+
 # Integrity and Source Verification
 
 Every payload from a payment processor carries two risks: tampering (someone modified the data in transit) and impersonation (someone forged the sender's identity). The Prism provides the tools to eliminate both risks:
@@ -7,7 +11,7 @@ Every payload from a payment processor carries two risks: tampering (someone mod
 | **Integrity** | Amount, currency, and transaction ID match your records | Data tampering |
 | **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks |
 
-Before trusting any webhook or redirect response, the Prism helps you verifying both.
+Before trusting any webhook or redirect response, the Prism helps you verify both.
 
 ## Webhook Signature Verification
 
