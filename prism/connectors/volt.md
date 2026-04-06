@@ -1,3 +1,7 @@
+---
+description: Connect Volt payments with Prism for open banking and instant transfers
+---
+
 # Volt
 
 <!--

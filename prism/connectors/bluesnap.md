@@ -1,3 +1,7 @@
+---
+description: Connect BlueSnap payments through Prism for global payment acceptance and fraud prevention
+---
+
 # Bluesnap
 
 <!--

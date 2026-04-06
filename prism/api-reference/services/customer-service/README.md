@@ -1,3 +1,7 @@
+---
+description: Create and manage customer profiles for streamlined payments and improved authorization rates
+---
+
 # Customer Service
 
 <!--
@@ -13,7 +17,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Customer Service enables you to create and manage customer profiles at payment processors. Storing customer details with connectors streamlines future transactions, reduces checkout friction, and improves authorization rates by maintaining a consistent identity across multiple payments.
 
@@ -25,15 +29,15 @@ The Customer Service enables you to create and manage customer profiles at payme
 
 The service creates customer records at the underlying payment processor (Stripe, Adyen, etc.), allowing you to reference the same customer across multiple transactions without resending personal information.
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
 | [`Create`](./create.md) | Create customer record in the payment processor system. Stores customer details for future payment operations without re-sending personal information. | First-time customer checkout, account registration, subscription signup |
 
-## Common Patterns
+### Common Patterns
 
-### New Customer Checkout Flow
+#### New Customer Checkout Flow
 
 Create a customer profile during first-time checkout, then use the customer ID for future payments and payment method storage.
 
@@ -76,7 +80,7 @@ sequenceDiagram
 
 ---
 
-### SaaS Subscription Onboarding
+#### SaaS Subscription Onboarding
 
 Create customer during signup, then use the stored customer ID for initial subscription charge and recurring payments.
 
@@ -122,7 +126,7 @@ sequenceDiagram
 
 ---
 
-## Next Steps
+### Next Steps
 
 - [Payment Service](../payment-service/README.md) - Process payments linked to customers
 - [Payment Method Service](../payment-method-service/README.md) - Store and manage customer payment methods

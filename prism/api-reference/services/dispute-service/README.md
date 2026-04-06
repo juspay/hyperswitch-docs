@@ -1,3 +1,7 @@
+---
+description: Manage chargeback disputes, submit evidence, and defend against fraudulent transaction claims
+---
+
 # Dispute Service
 
 <!--
@@ -13,7 +17,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Dispute Service helps you manage chargeback disputes across payment processors. When customers dispute transactions with their banks, this service enables you to track dispute status, submit evidence to defend against fraudulent claims, and make informed decisions about accepting or challenging disputes.
 
@@ -26,7 +30,7 @@ The Dispute Service helps you manage chargeback disputes across payment processo
 
 The service supports the full dispute lifecycle from initial notification through resolution, with structured evidence submission and status tracking.
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
@@ -35,9 +39,9 @@ The service supports the full dispute lifecycle from initial notification throug
 | [`Defend`](./defend.md) | Submit defense with reason code for dispute. Presents formal argument against customer's chargeback claim with supporting documentation. | Contesting the dispute with formal defense |
 | [`Accept`](./accept.md) | Concede dispute and accepts chargeback loss. Acknowledges liability and stops dispute defense process when evidence is insufficient. | Evidence is insufficient, cost of defense exceeds dispute amount |
 
-## Common Patterns
+### Common Patterns
 
-### E-commerce Chargeback Defense
+#### E-commerce Chargeback Defense
 
 Defend against fraudulent chargebacks by submitting delivery and purchase evidence.
 
@@ -81,7 +85,7 @@ sequenceDiagram
 
 ---
 
-### Accepting Disputes with Insufficient Evidence
+#### Accepting Disputes with Insufficient Evidence
 
 When evidence is lacking, accept the dispute to avoid additional fees and focus on other priorities.
 
@@ -118,7 +122,7 @@ sequenceDiagram
 
 ---
 
-## Next Steps
+### Next Steps
 
 - [Payment Service](../payment-service/README.md) - Review original payment details
 - [Refund Service](../refund-service/README.md) - Process voluntary refunds to avoid disputes

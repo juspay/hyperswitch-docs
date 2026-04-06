@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Suite Architecture
-description: System design and core components of the Connector Service test framework
+description: Understand the test framework architecture to extend and customize connector validation components
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/src/harness/
 auto_generated: false

@@ -1,18 +1,13 @@
-# createSessionToken Method
-
-<!--
 ---
 title: createSessionToken (Java SDK)
-description: Create session token using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Create session tokens for payment processing to maintain state across multi-step payment flows
+tags:
+  - java
+  - session
+  - tokens
 ---
--->
+
+# createSessionToken Method
 
 ## Overview
 

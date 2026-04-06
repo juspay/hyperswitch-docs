@@ -1,3 +1,7 @@
+---
+description: Connect Loonio payments through Prism for alternative payment methods
+---
+
 # Loonio
 
 <!--

@@ -16,7 +16,7 @@ sdk_language: php
 
 ## Overview
 
-The Payment Service provides comprehensive payment lifecycle management for digital businesses using the PHP SDK. It enables you to process payments across 100+ connectors through a unified SDK.
+The Payment Service provides comprehensive payment lifecycle management for digital businesses using the PHP SDK. It enables you to process payments across 300+ connectors through a unified SDK.
 
 **Business Use Cases:**
 - **E-commerce checkout** - Authorize funds at purchase, capture when items ship

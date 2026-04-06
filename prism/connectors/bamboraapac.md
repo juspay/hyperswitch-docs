@@ -1,3 +1,7 @@
+---
+description: Integrate Bambora APAC payments with Prism for Asia-Pacific region card processing
+---
+
 # Bamboraapac
 
 <!--

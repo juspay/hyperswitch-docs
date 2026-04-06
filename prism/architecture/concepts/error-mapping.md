@@ -1,10 +1,14 @@
+---
+description: Understand how Hyperswitch Prism unifies disparate processor errors into consistent actionable codes
+---
+
 # Error Mapping
 
-Payment processors speak different error languages. 
+Payment processors speak different error languages.
 
-Stripe says "card_declined." Adyen says "Refused." PayPal says "INSTRUMENT_DECLINED." 
+Stripe says "card_declined." Adyen says "Refused." PayPal says "INSTRUMENT_DECLINED."
 
-Prism translates all of them into a single set of error codes your application handles once.
+Hyperswitch Prism translates all of them into a single set of error codes your application handles once.
 
 ## What happens if errors are not mapped?
 
@@ -28,7 +32,7 @@ if (connector === 'stripe') {
 // Repeat for 60+ connectors...
 ```
 
-With Prism, you write the handling logic once across all connectors.
+With Hyperswitch Prism, you write the handling logic once across all connectors.
 
 ```javascript
 // With Prism—unified error codes
@@ -44,16 +48,16 @@ Each connector adapter includes an error mapper that translates connector-specif
 
 ```
 Stripe Error ──────┐
-                   ├──► Error Mapper ──► Unified Error
+                    ├──► Error Mapper ──► Unified Error
 Adyen Error ───────┤
-                   │
+                    │
 PayPal Error ──────┘
 ```
-The mapper analyzes HTTP status codes, Error codes in the response body to map it to the appropriate Unified Code.
-A sample mapping of error codes across Stripe and Adyen as below.
+The mapper analyzes HTTP status codes and error codes in the response body to map them to the appropriate unified code.
+A sample mapping of error codes across Stripe and Adyen is shown below.
 
 | Unified Code | Description | Stripe Equivalent | Adyen Equivalent |
-|--------------|-------------|--------------------|------------------|
+|--------------|-------------|-------------------|------------------|
 | `PAYMENT_DECLINED` | Generic decline | `card_declined` | `Refused` (refusalReasonCode: 2) |
 | `INSUFFICIENT_FUNDS` | Not enough money | `card_declined` + `decline_code: insufficient_funds` | `Not enough balance` (refusalReasonCode: 12) |
 | `EXPIRED_CARD` | Card expired | `expired_card` | `Expired Card` (refusalReasonCode: 6) |

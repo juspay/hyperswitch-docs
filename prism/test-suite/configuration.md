@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Configuration
-description: Test data, credentials, and environment setup
+description: Set up credentials, environment variables, and test data to authenticate and run connector validations
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/src/harness/credentials.rs
 auto_generated: false

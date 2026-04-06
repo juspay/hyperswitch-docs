@@ -1,3 +1,7 @@
+---
+description: Configure Zift payments via Prism for platform and ISV payment solutions
+---
+
 # Zift
 
 <!--

@@ -1,18 +1,13 @@
-# Customer Service
+---
+title: Customer Service (Node.js SDK)
+description: Create and manage customer profiles to streamline transactions and improve authorization rates
+tags:
+  - node
+  - customers
+  - profiles
+---
 
-<!--
----
-title: Customer Service (Node SDK)
-description: Create and manage customer profiles using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Customer Service
 
 ## Overview
 

@@ -1,3 +1,7 @@
+---
+description: Create payment orders with Stripe or Adyen to initialize checkout sessions for your customers
+---
+
 # Quick Start
 
 Now that the library is installed and configured, let's create your first payment order (different payment processor's use different terminology - order, intent, transaction and so on). Conceptually, it represents the user's intent to start a payment session. 
@@ -8,9 +12,9 @@ Once you implement this basic plumbing, you will be able to switch the request t
 
 - **If you are managing PCI compliance on your own:** You should be able to collect card data from the user and directly pass it to the payment processor. Ignore this section and directly jump to [First Payment](./first-payment.md).
 
-## How to Create a Payment Order with Stripe?
+### How to Create a Payment Order with Stripe?
 
-### Prerequisites
+#### Prerequisites
 
 - Library installed and configured (see [Installation and Configuration](./installation.md))
 
@@ -114,9 +118,9 @@ echo "Client Secret: " . ($order->getSessionToken()?->getClientSecret() ?? 'N/A'
 
 
 
-## How to Create a Payment Order with Adyen?
+### How to Create a Payment Order with Adyen?
 
-### Prerequisites
+#### Prerequisites
 
 - Library installed and configured (see [Installation and Configuration](./installation.md))
 
@@ -223,7 +227,7 @@ echo "Session Token: " . $order->getSessionToken() . "\n";
 {% endtabs %}
 
 
-## What Just Happened?
+### What Just Happened?
 
 The library helped you create a Payment Order with the specified payment processor. You will receive a `connectorOrderId` and optionally a `sessionToken` in the response (Stripe returns a client secret, Adyen returns different session data).
 
@@ -240,13 +244,13 @@ The order is in `STARTED` state, ready for the next step - Authorize.
 }
 ```
 
-## How to use the secret to trigger the payment processor's checkout?
+### How to use the secret to trigger the payment processor's checkout?
 
 Now, pass the `sessionToken` data to your frontend and use it to initiate Stripe Elements or Adyen Card Component for PCI compliant card element. The users will be able to key in the card details on the Stripe Element/ Adyen Card Component and you will get a tokenized `payment_method_id`.
 
 You can proceed to the making the [first payment](./first-payment.md)
 
-## Next Steps
+### Next Steps
 
 - Learn about [authorizing payments](./first-payment.md) after CreateOrder
 - Explore [error handling](./first-payment.md#error-handling)

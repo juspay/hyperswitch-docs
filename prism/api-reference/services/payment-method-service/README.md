@@ -1,3 +1,7 @@
+---
+description: Tokenize and securely store payment methods for one-click payments and recurring billing
+---
+
 # Payment Method Service
 
 <!--
@@ -13,7 +17,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Payment Method Service enables you to securely store and manage customer payment methods at payment processors. By tokenizing payment details, you can offer one-click checkout experiences and recurring billing without handling sensitive card data or maintaining PCI compliance overhead.
 
@@ -25,15 +29,15 @@ The Payment Method Service enables you to securely store and manage customer pay
 
 The service creates secure tokens at the underlying payment processor (Stripe, Adyen, etc.), allowing you to reference payment methods in future transactions without storing sensitive data in your systems.
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
 | [`Tokenize`](./tokenize.md) | Store payment method securely at the processor. Replaces raw card details with token for one-click payments and recurring billing. | First-time checkout, saving card for later, subscription setup |
 
-## Common Patterns
+### Common Patterns
 
-### One-Click Checkout for Returning Customers
+#### One-Click Checkout for Returning Customers
 
 Save payment methods during first purchase to enable faster checkout for returning customers.
 
@@ -76,7 +80,7 @@ sequenceDiagram
 
 ---
 
-### Subscription Setup with Stored Payment Method
+#### Subscription Setup with Stored Payment Method
 
 Combine Customer Service and Payment Method Service for seamless subscription onboarding.
 
@@ -130,7 +134,7 @@ sequenceDiagram
 
 ---
 
-## Next Steps
+### Next Steps
 
 - [Customer Service](../customer-service/README.md) - Create customer profiles for payment method association
 - [Payment Service](../payment-service/README.md) - Process payments with tokenized methods

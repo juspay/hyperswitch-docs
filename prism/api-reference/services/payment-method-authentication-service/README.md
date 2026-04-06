@@ -1,3 +1,7 @@
+---
+description: Execute 3D Secure authentication flows for fraud prevention and SCA compliance
+---
+
 # Payment Method Authentication Service
 
 <!--
@@ -13,7 +17,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Payment Method Authentication Service manages 3D Secure (3DS) authentication flows for card payments. It verifies cardholder identity through frictionless or challenge-based authentication to reduce fraud liability while maintaining a smooth checkout experience.
 
@@ -25,7 +29,7 @@ The Payment Method Authentication Service manages 3D Secure (3DS) authentication
 
 The service supports the complete 3DS flow: pre-authentication (device data collection), authentication (challenge or frictionless), and post-authentication (result validation).
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
@@ -33,9 +37,9 @@ The service supports the complete 3DS flow: pre-authentication (device data coll
 | [`Authenticate`](./authenticate.md) | Execute 3DS challenge or frictionless verification. Authenticates customer via bank challenge or behind-the-scenes verification for fraud prevention. | Customer needs to complete 3DS challenge |
 | [`PostAuthenticate`](./post-authenticate.md) | Validate authentication results with the issuing bank. Processes bank's authentication decision to determine if payment can proceed. | Verifying 3DS completion before payment |
 
-## Common Patterns
+### Common Patterns
 
-### Frictionless 3DS Flow
+#### Frictionless 3DS Flow
 
 Low-risk transactions pass authentication without customer interaction.
 
@@ -70,7 +74,7 @@ sequenceDiagram
 
 ---
 
-### Challenge-Based 3DS Flow
+#### Challenge-Based 3DS Flow
 
 High-risk transactions require customer verification through bank challenge.
 
@@ -117,7 +121,7 @@ sequenceDiagram
 
 ---
 
-## 3DS Decision Factors
+### 3DS Decision Factors
 
 Banks consider these factors for frictionless vs challenge:
 
@@ -130,7 +134,7 @@ Banks consider these factors for frictionless vs challenge:
 | **Location** | Home country | Foreign country |
 | **Time** | Normal hours | Unusual hours |
 
-## Next Steps
+### Next Steps
 
 - [Payment Service](../payment-service/README.md) - Process payments after 3DS
 - [Merchant Authentication Service](../merchant-authentication-service/README.md) - Create authentication sessions

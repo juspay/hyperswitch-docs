@@ -1,3 +1,7 @@
+---
+description: Integrate Razorpay v2 payments via Prism for enhanced API capabilities
+---
+
 # Razorpay V2
 
 <!--

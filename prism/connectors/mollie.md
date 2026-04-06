@@ -1,3 +1,7 @@
+---
+description: Configure Mollie payments via Prism for European payment methods and subscriptions
+---
+
 # Mollie
 
 <!--

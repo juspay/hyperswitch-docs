@@ -1,15 +1,21 @@
+---
+description: Use Hyperswitch Prism's standardized money format to eliminate amount conversion errors and currency confusion
+---
+
 # The Money Struct
 
 Payment integrations are often confusing due to different formats in which payment amount is accepted and processed. A small error can cause large ramifications in terms of business impact.
+
 The money framework eliminates the confusion and streamlines the acceptance format for the most important parameter in the payment workflow.
 
 For example:
-- Stripe wants cents: `amount: 1000` means $10.00.
-- Adyen wants minor units but uses different field names.
-- Some payment processors use floats (to be honest, it is quite dangerous!!).
-- And a lot of them simply use strings.
 
-You send `{"minor_amount": 1000, "currency": "USD"}`. Prism handles the rest. No more wondering if Stripe wants cents or dollars. No more Adyen amount-in-minus conversion bugs. One format. Every processor.
+- Stripe wants cents: `amount: 1000` means $10.00
+- Adyen wants minor units but uses different field names
+- Some payment processors use floats (to be honest, it is quite dangerous!)
+- And a lot of them simply use strings
+
+You send `{"minor_amount": 1000, "currency": "USD"}`. Hyperswitch Prism handles the rest. No more wondering if Stripe wants cents or dollars. No more Adyen amount-in-minus conversion bugs. One format. Every processor.
 
 ## What Are the Typical Problems While Handling Amount?
 
@@ -23,7 +29,7 @@ Diversity in the payment processor spec causes three types of bugs:
 
 ## How Money Struct Solves for It?
 
-The Prism standardizes on one representation for amount — in minor units, with ISO standard currency, and very importantly — in integer.
+Hyperswitch Prism standardizes on one representation for amount—in minor units, with ISO standard currency, and very importantly—in integer.
 
 ```json
 {
@@ -37,10 +43,10 @@ The Prism standardizes on one representation for amount — in minor units, with
 | `minor_amount` | `int64` | Amount in smallest currency unit. USD: cents. JPY: yen (no decimals). BHD: 1/1000th dinar. |
 | `currency` | `Currency` | ISO 4217 three-letter code: `USD`, `EUR`, `GBP`, `JPY`, `INR`, etc. |
 
-The payment request is then transformed into each processor's native format, and tested for final verification. The amount reflecting on the payment processor dashboard should read exactly the same as the amount intended to be processed. Just verifying the API response from the processor may not be enough!!
+The payment request is then transformed into each processor's native format and tested for final verification. The amount reflecting on the payment processor dashboard should read exactly the same as the amount intended to be processed. Just verifying the API response from the processor may not be enough!
 
 ```javascript
-// You send this to Prism
+// You send this to Hyperswitch Prism
 const payment = {
   amount: {
     minor_amount: 2500,
@@ -48,13 +54,13 @@ const payment = {
   }
 };
 
-// Prism sends to Stripe
+// Hyperswitch Prism sends to Stripe
 {
   "amount": 2500,  // Stripe expects cents
   "currency": "usd"
 }
 
-// Prism sends to Adyen
+// Hyperswitch Prism sends to Adyen
 {
   "amount": {
     "value": 2500,
@@ -65,9 +71,9 @@ const payment = {
 
 ## More Information
 
-### Zero decimal currencies
+### Zero Decimal Currencies
 
-Some currencies have no decimal places. The Prism handles this automatically.
+Some currencies have no decimal places. Hyperswitch Prism handles this automatically.
 
 | Currency | Unit | Example |
 |----------|------|---------|
@@ -75,11 +81,11 @@ Some currencies have no decimal places. The Prism handles this automatically.
 | KRW | 1 won | `{"minor_amount": 10000, "currency": "KRW"}` = ₩10,000 |
 | VND | 1 đồng | `{"minor_amount": 50000, "currency": "VND"}` = ₫50,000 |
 
-However, you still send amounts in minor units. Prism adjusts for processors that expect whole units for these currencies.
+However, you still send amounts in minor units. Hyperswitch Prism adjusts for processors that expect whole units for these currencies.
 
 ### Supported Currencies
 
-The Prism supports 160+ currencies via the ISO 4217 standard:
+Hyperswitch Prism supports 160+ currencies via the ISO 4217 standard:
 
 **Major Currencies:**
 `USD`, `EUR`, `GBP`, `JPY`, `AUD`, `CAD`, `CHF`, `CNY`, `INR` and more
@@ -93,4 +99,4 @@ The Prism supports 160+ currencies via the ISO 4217 standard:
 2. **Store amounts in minor units** — In your database, store `5999` not `59.99`. Floats cause rounding errors.
 3. **Validate before sending** — Check `minor_amount > 0` and currency code length is 3.
 4. **Display formatting is a UX concern** — Convert `5999` to `$59.99` in your frontend to improve readability for the user. Do not do the conversion in your API calls.
-5. **Handling currency conversions** — Prism does **not** convert between currencies. If you authorize in `USD`, you capture in `USD`. If you need forex, handle it before triggering the Prism. For multi-currency applications, track the original currency and amount. Do not convert for storage — you'll lose precision.
+5. **Handling currency conversions** — Hyperswitch Prism does **not** convert between currencies. If you authorize in `USD`, you capture in `USD`. If you need forex, handle it before triggering Hyperswitch Prism. For multi-currency applications, track the original currency and amount. Do not convert for storage — you'll lose precision.

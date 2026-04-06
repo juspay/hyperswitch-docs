@@ -1,3 +1,7 @@
+---
+description: Securely store payment method details at the processor and receive a token for future payments
+---
+
 # Tokenize RPC
 
 <!--

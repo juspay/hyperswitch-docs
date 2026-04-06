@@ -1,18 +1,13 @@
-# Get Method
+---
+title: get (Node.js SDK)
+description: Retrieve payment status from processors to synchronize payment states and enable accurate order tracking
+tags:
+  - node
+  - payments
+  - status
+---
 
-<!--
----
-title: Get (Node SDK)
-description: Retrieve payment status using the Node.js SDK - synchronize payment state between systems
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Get Method
 
 ## Overview
 

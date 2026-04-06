@@ -1,18 +1,13 @@
-# get Method
-
-<!--
 ---
 title: get (Java SDK)
-description: Retrieve payment status using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Retrieve payment status from processors to synchronize payment states and enable accurate order tracking
+tags:
+  - java
+  - payments
+  - status
 ---
--->
+
+# get Method
 
 ## Overview
 

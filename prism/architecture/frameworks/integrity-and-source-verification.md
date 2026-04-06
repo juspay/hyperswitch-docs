@@ -1,35 +1,42 @@
+---
+description: Implement cryptographic verification to prevent data tampering and webhook impersonation attacks
+---
+
 # Integrity and Source Verification
 
-Every payload that you receive from a payment processor carries two inherent risks: 
-(i) Data tampering risk
-(ii) Impersonation risk
+Every payload that you receive from a payment processor carries two inherent risks:
 
-Prism provides strong **run-time checks** to eliminate both risks. This section also includes some recommended best practices to developers using the library.
+1. Data tampering risk
+2. Impersonation risk
+
+Hyperswitch Prism provides strong **run-time checks** to eliminate both risks. This section also includes some recommended best practices to developers using the library.
 
 | Verification Type | What It Checks | Attack Prevented |
 |-------------------|----------------|------------------|
 | **Integrity** | Amount, currency, and transaction ID match your records | Data tampering |
 | **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks |
 
-### Data Tampering (Integrity Risk)
+## Data Tampering (Integrity Risk)
 
-An attacker intercepting a webhook can modify the payload before it reaches your server. The attacker will be able to exploit by:
+An attacker intercepting a webhook can modify the payload before it reaches your server. The attacker will be able to exploit it by:
+
 - Changing a failed payment status to "succeeded", which might deceive you to ship unpaid orders
-- Modifying the amount from $100 to $1, effectively making the customer pays less than expected.
+- Modifying the amount from $100 to $1, effectively making the customer pay less than expected
 
-### Impersonation (Source Risk)
+## Impersonation (Source Risk)
 
-It is possible for attackers can forge webhooks that appear to come from payment processors. This can be exploited by:
+Attackers can forge webhooks that appear to come from payment processors. This can be exploited by:
+
 - Sending fake "payment succeeded" webhooks, which might deceive you to ship unpaid orders
-- Mimicking refund notifications, to manipulate your accounting systems
+- Mimicking refund notifications to manipulate your accounting systems
 
-Prism provides built-in verification for both risks, and it is strongly recommended to enable them and test them before using on production.
+Hyperswitch Prism provides built-in verification for both risks, and it is strongly recommended to enable them and test them before using on production.
 
-## How Prism helps with Integrity and Source Verification?
+## How Hyperswitch Prism helps with Integrity and Source Verification?
 
 ### Request and Response Comparison
 
-Prism uses a `FlowIntegrity` trait to compare request and response data in a strongly typed fashion. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
+Hyperswitch Prism uses a `FlowIntegrity` trait to compare request and response data in a strongly typed fashion. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
 ```rust
 /// Trait for integrity objects that can perform field-by-field comparison
@@ -57,7 +64,7 @@ pub trait GetIntegrityObject<T: FlowIntegrity> {
 
 ### Amount and Currency Verification
 
-During the payment authorization step, Prism extracts amount and currency from the request and compares with the response during run-time. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
+During the payment authorization step, Hyperswitch Prism extracts amount and currency from the request and compares with the response during run-time. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
 ```rust
 // From backend/interfaces/src/integrity.rs
@@ -77,7 +84,7 @@ impl<T: PaymentMethodDataTypes> GetIntegrityObject<AuthoriseIntegrityObject>
 }
 ```
 
-Webhooks payloads also include amounts (might vary across payment processors). Prism verifies these match your records.
+Webhooks payloads also include amounts (might vary across payment processors). Hyperswitch Prism verifies these match your records.
 
 ```json
 {
@@ -93,7 +100,7 @@ Webhooks payloads also include amounts (might vary across payment processors). P
 }
 ```
 
-If amounts mismatch, Prism flags the discrepancy clearly. In such cases you should reject the webhook and use direct server-to-server APIs to cross validate the information.
+If amounts mismatch, Hyperswitch Prism flags the discrepancy clearly. In such cases you should reject the webhook and use direct server-to-server APIs to cross validate the information.
 
 ```json
 {
@@ -109,9 +116,9 @@ If amounts mismatch, Prism flags the discrepancy clearly. In such cases you shou
 
 ## Signature Verification
 
-Typically Payment processors sign webhooks with a shared secret, to verify the payload against pre-configured secrets. An Authorize.net might use a SHA512, whereas a PPRO might use a SHA256. 
+Typically, payment processors sign webhooks with a shared secret to verify the payload against pre-configured secrets. Authorize.net might use SHA512, whereas PPRO might use SHA256. 
 
-Prism handles the signature verification across multiple processors.
+Hyperswitch Prism handles the signature verification across multiple processors.
 
 And below are real examples from one of the connectors on how it is implemented [`backend/connector-integration/src/connectors/authorizedotnet.rs`](../../backend/connector-integration/src/connectors/authorizedotnet.rs):
 
@@ -155,7 +162,7 @@ fn verify_webhook_source(
 }
 ```
 
-If verification fails, Prism flags the discrepancy very clearly.
+If verification fails, Hyperswitch Prism flags the discrepancy very clearly.
 
 ```json
 {
@@ -183,7 +190,7 @@ It is strongly recommended to track transaction IDs across the lifecycle. When a
 
 ### Always Configure the secrets while enabling a processor
 
-Some payment processors may have the secrets as optional configuration/ implementation. Always, generate new secret in processor dashboard and update the Prism configuration accordingly. 
+Some payment processors may have the secrets as optional configuration or implementation. Always generate a new secret in the processor dashboard and update the Hyperswitch Prism configuration accordingly. 
 
 An example configuration for Stripe as below.
 

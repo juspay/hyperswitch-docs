@@ -1,3 +1,7 @@
+---
+description: Connect PhonePe payments with Prism for Indian UPI and digital payments
+---
+
 # PhonePe
 
 <!--

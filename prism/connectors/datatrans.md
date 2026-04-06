@@ -1,3 +1,7 @@
+---
+description: Connect Datatrans payments via Prism for Swiss and European payment processing
+---
+
 # Datatrans
 
 <!--

@@ -1,10 +1,14 @@
+---
+description: Implement robust error handling patterns to manage payment failures and edge cases effectively
+---
+
 # Error Handling
 
-Payment failures happen. Cards get declined. Networks timeout. Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
+Payment failures happen. Cards get declined. Networks timeout. Hyperswitch Prism gives you structured error information that tells you exactly what went wrong and how to fix it, regardless of which payment processor generated the error.
 
 ## Error Types
 
-Prism SDK exposes three types of errors based on where they occur in the request lifecycle.
+Hyperswitch Prism SDK exposes four types of errors based on where they occur in the request lifecycle.
 
 ### 1. Integration Errors (Request Phase)
 
@@ -62,15 +66,16 @@ Network errors occur during HTTP communication with the payment connector. These
 - `INVALID_PROXY_CONFIGURATION` - Proxy setup error (fix configuration)
 - `INVALID_CA_CERT` - Invalid certificate (fix configuration)
 
-**⚠️ CRITICAL - Retry Safety:**
+**⚠️ CRITICAL — Retry Safety:**
 **DO NOT blindly retry network errors in payment systems.** Most network errors occur after the request was sent to the connector, and retrying can cause **double payments**. For payment operations:
+
 - Log the error and alert for investigation
 - Only retry if you have idempotency keys or can verify the payment was never processed
 - Consider using payment status check APIs if available
 
 ### 3. Response Transformation Errors (Response Phase)
 
-Response transformation errors occur **after** the HTTP response is received from the connector, when Prism cannot parse or process it.
+Response transformation errors occur **after** the HTTP response is received from the connector, when Hyperswitch Prism cannot parse or process it.
 
 **Common causes:**
 - Unexpected or malformed response format (invalid JSON/XML)
@@ -82,7 +87,7 @@ Response transformation errors occur **after** the HTTP response is received fro
 - `errorMessage`: Human-readable description of what failed
 - `httpStatusCode`: HTTP status returned by connector before parsing failed (optional)
 
-**⚠️ CRITICAL:** The payment may have **succeeded at the connector** even when this error is thrown. Do not retry without first verifying payment status.
+**⚠️ CRITICAL:** The payment may have **succeeded at the connector** even when this error is thrown. Do not retry without first verifying the payment status.
 
 **Error codes:**
 - `RESPONSE_DESERIALIZATION_FAILED` - Cannot parse connector response (invalid JSON/XML)
@@ -100,7 +105,7 @@ Business errors occur when the request reaches the processor, but the operation 
 - **What is the error message and code?** — in the language of the initiator
 - **What is the unified representation?** — a standardized code across all processors
 
-The unified representation cures the complexity of errors and enables you to make the right decision—whether to retry or not retry the payment.
+The unified representation addresses the complexity of errors and enables you to make the right decision—whether to retry or not retry the payment.
 
 **Example (All Fields):**
 
@@ -133,10 +138,10 @@ The unified representation cures the complexity of errors and enables you to mak
 
 ## SDK Error Handling
 
-When using Prism SDK, errors are exposed in two fundamentally different ways:
+When using Hyperswitch Prism SDK, errors are exposed in two fundamentally different ways:
 
-- **SDK errors** (`IntegrationError`, `NetworkError`, `ConnectorResponseTransformationError`) — thrown as **exceptions**. The call never returns a response.
-- **Business errors** — returned inside the **response object** as `response.error`. The call succeeds (no exception), but the payment was declined or failed at the connector.
+- **SDK errors** (`IntegrationError`, `NetworkError`, `ConnectorResponseTransformationError`) — thrown as **exceptions**. The call never returns a response
+- **Business errors** — returned inside the **response object** as `response.error`. The call succeeds (no exception), but the payment was declined or failed at the connector
 
 You must handle both.
 
@@ -297,7 +302,7 @@ except NetworkError as error:
 
 ### Handling Response Transformation Errors
 
-Response transformation errors occur **after** calling the connector when Prism cannot parse the response (e.g., connector API changes, unexpected response formats, invalid JSON/XML). Handle these carefully because the payment may have succeeded at the connector even if Prism cannot parse the response.
+Response transformation errors occur **after** calling the connector when Hyperswitch Prism cannot parse the response (e.g., connector API changes, unexpected response formats, invalid JSON/XML). Handle these carefully because the payment may have succeeded at the connector even if Hyperswitch Prism cannot parse the response.
 
 <!-- tabs:start -->
 
@@ -587,12 +592,12 @@ else:
 ## Best Practices
 
 1. **Always distinguish between error types before retrying**
-   - `IntegrationError` = request never sent — safe to fix and retry
-   - `NetworkError` = request may have been sent — do not retry without idempotency verification
-   - `ConnectorResponseTransformationError` = payment may have succeeded at connector — do not retry without checking payment status
+   - `IntegrationError` = request never sent—safe to fix and retry
+   - `NetworkError` = request may have been sent—do not retry without idempotency verification
+   - `ConnectorResponseTransformationError` = payment may have succeeded at connector—do not retry without checking payment status
 
 2. **Never retry response transformation errors blindly**
-   - The connector may have processed the payment successfully even if Prism failed to parse the response
+   - The connector may have processed the payment successfully even if Hyperswitch Prism failed to parse the response
    - Always verify payment status via webhook or status-check API before retrying
 
 3. **Log comprehensive error details**
@@ -622,4 +627,4 @@ else:
 ## See Also
 
 - [Error Code Reference](./error-codes.md) - Complete list of all error types
-- [Error Mapping](./error-mapping.md) - How Prism maps connector errors to unified codes
+- [Error Mapping](./error-mapping.md) - How Hyperswitch Prism maps connector errors to unified codes

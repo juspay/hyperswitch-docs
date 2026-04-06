@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Suite Overview
-description: Comprehensive test framework for validating connector functionality across all payment processors with scenario-driven testing and automated reporting
+description: Explore the Hyperswitch Connector Service test framework to validate payment processor functionality with scenario-driven testing
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/
 auto_generated: false
@@ -15,7 +15,7 @@ approved: true
 
 ## Overview
 
-The Connector Service Test Suite is a developer utility designed to validate connector functionality across all 110+ payment connectors. It uses a scenario-driven approach where test behavior is defined in JSON files, making it easy to add new test cases without modifying code.
+The Hyperswitch Connector Service Test Suite is a developer utility designed to validate connector functionality across all 110+ payment connectors. It uses a scenario-driven approach where test behavior is defined in JSON files, making it easy to add new test cases without modifying code.
 
 **Key Benefits:**
 - **Scenario-Driven**: Define tests in JSON, not code

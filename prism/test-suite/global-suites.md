@@ -1,7 +1,7 @@
 <!--
 ---
 title: Global Test Suites
-description: Reusable test scenarios and dependency management
+description: Explore reusable test suites and dependency management to validate payment operations across all connectors
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/src/global_suites/
 auto_generated: false
@@ -111,7 +111,7 @@ When running dependent suites, the test harness automatically:
     authorize request       capture request
 ```
 
-### Context Injection
+## Context Injection
 
 Fields from dependency responses are automatically injected into dependent requests:
 
@@ -193,7 +193,7 @@ Define which suites each connector supports:
 }
 ```
 
-### Purpose
+## Purpose
 
 - Skip unsupported suites during `--all` runs
 - Document connector capabilities
@@ -201,7 +201,7 @@ Define which suites each connector supports:
 
 ### Available Connector Specs
 
-The framework includes specs for 25+ connectors:
+The framework includes specs for 300+ connectors:
 - Stripe, Adyen, PayPal, Braintree
 - Authorize.Net, Checkout.com, Cybersource
 - And more...
@@ -236,9 +236,9 @@ The framework includes specs for 25+ connectors:
    - Don't over-assert on connector-specific fields
 
 4. **Use realistic test data**:
-   - Standard test card numbers
-   - Realistic amounts (e.g., 6000 for $60.00)
-   - Valid country codes
+    - Standard test card numbers
+    - Realistic amounts (e.g., 6000 for $60.00)
+    - Valid country codes
 
 ### Scenario Naming Conventions
 

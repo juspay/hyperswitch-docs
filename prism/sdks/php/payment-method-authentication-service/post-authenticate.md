@@ -1,18 +1,13 @@
-# postAuthenticate Method
-
-<!--
 ---
 title: postAuthenticate (PHP SDK)
-description: Validate authentication results using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Validate 3DS authentication results with the issuing bank to confirm successful verification
+tags:
+  - php
+  - 3ds
+  - authentication
 ---
--->
+
+# postAuthenticate Method
 
 ## Overview
 

@@ -1,3 +1,7 @@
+---
+description: Set up ACI payment processing with Prism to enable card payments, BNPL options, and recurring mandates through unified API integration
+---
+
 # ACI
 
 <!--

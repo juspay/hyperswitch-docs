@@ -1,3 +1,7 @@
+---
+description: Retrieve current payment status from the processor to synchronize your system state
+---
+
 # Get RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `Get` RPC retrieves the current payment status from the payment processor. This enables synchronization between your system and payment processors for accurate state tracking, especially important for handling asynchronous webhook delays or recovering from system outages.
 
 **Business Use Case:** When a customer refreshes their order page, or your system needs to verify a payment's current state before proceeding with fulfillment. Payment statuses can change asynchronously through webhooks, and `Get` ensures you have the most up-to-date information directly from the source.
 
-## Purpose
+### Purpose
 
 **Why use Get instead of relying solely on webhooks?**
 
@@ -37,7 +41,7 @@ The `Get` RPC retrieves the current payment status from the payment processor. T
 - Confirmation before critical business actions (shipping, digital delivery)
 - Audit trail verification for support inquiries
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -55,7 +59,7 @@ The `Get` RPC retrieves the current payment status from the payment processor. T
 | `test_mode` | bool | No | Process as test transaction |
 | `payment_experience` | PaymentExperience | No | Desired payment experience. Values: REDIRECT, EMBEDDED |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -87,9 +91,9 @@ The `Get` RPC retrieves the current payment status from the payment processor. T
 | `redirection_data` | RedirectForm | Redirect URL/form for 3DS or bank authentication |
 | `incremental_authorization_allowed` | bool | Whether amount can be increased later |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -102,7 +106,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/Get
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -118,7 +122,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](./authorize.md) - Authorize a new payment
 - [Capture](./capture.md) - Finalize the payment and transfer funds

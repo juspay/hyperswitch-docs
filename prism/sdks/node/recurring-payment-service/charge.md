@@ -1,18 +1,13 @@
-# charge Method
-
-<!--
 ---
 title: charge (Node.js SDK)
-description: Process a recurring payment using an existing mandate using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Process recurring payments using existing mandates to charge stored payment methods for subscriptions
+tags:
+  - node
+  - recurring
+  - subscriptions
 ---
--->
+
+# charge Method
 
 ## Overview
 

@@ -1,12 +1,16 @@
+---
+description: Learn how Hyperswitch Prism's DSL and Protocol Buffers enable type-safe connector development
+---
+
 # Specs and DSL
 
-Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust Types that catches integration errors at compile time. It enforces the right thing so that AI agents and Developers can code at ease when adding new integrations or enhancements to the Prism codebase.
+Hyperswitch Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust Types that catches integration errors at compile time. It enforces the right thing so that AI agents and developers can code at ease when adding new integrations or enhancements to the Hyperswitch Prism codebase.
 
-## The Prism DSL
+## The Hyperswitch Prism DSL
 
 ### DSL for Connector Development
 
-The `ConnectorIntegration` trait defines the contract that every connector must implement. This trait ensures consistent behavior across all payment processor integrations. Mistakes are caught early at compile time, rather than late.
+The `ConnectorIntegration` trait defines the contract that every connector must implement. This trait ensures consistent behavior across all payment processor integrations. Mistakes are caught early at compile time rather than late.
 
 **Core trait methods:**
 
@@ -84,7 +88,7 @@ impl ConnectorIntegration<Authorize, AuthorizeRequest, AuthorizeResponse> for St
 ```
 
 
-Additionally a macro system enforces that adapters implement all the required methods.
+Additionally, a macro system enforces that adapters implement all the required methods.
 
 ```rust
 // This macro generates compile-time checks
@@ -101,7 +105,7 @@ If you forget to implement `build_error_response`, the macro invocation fails at
 
 ### Protocol Buffers
 
-Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification.
+Hyperswitch Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification.
 It provides compile-time guarantees irrespective of the programming languages you use the SDK with.
 
 **Proto definition:**

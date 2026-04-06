@@ -1,18 +1,13 @@
-# authenticate Method
-
-<!--
 ---
 title: authenticate (PHP SDK)
-description: Execute 3DS challenge or frictionless using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Execute 3DS challenge or frictionless verification to complete customer authentication with their bank
+tags:
+  - php
+  - 3ds
+  - authentication
 ---
--->
+
+# authenticate Method
 
 ## Overview
 

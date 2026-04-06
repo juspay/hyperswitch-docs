@@ -1,3 +1,7 @@
+---
+description: Increase the authorized amount on an existing authorization for hospitality and services
+---
+
 # IncrementalAuthorization RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `IncrementalAuthorization` RPC increases the authorized amount on an existing authorization that is still in `AUTHORIZED` status. This allows you to add charges to an existing hold without creating a new authorization, essential for hospitality, transportation, and service industries where the final amount may exceed the initial estimate.
 
 **Business Use Case:** When a hotel guest adds room service charges to their folio, a ride-share passenger adds a tip after the ride, or a customer adds items to an order that hasn't shipped yet. Incremental authorization adjusts the hold amount upward, ensuring sufficient funds are available for the final capture.
 
-## Purpose
+### Purpose
 
 **Why use IncrementalAuthorization?**
 
@@ -38,7 +42,7 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 - Reduces declined captures due to insufficient authorization
 - Single transaction record for customer statement
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -49,7 +53,7 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 | `connector_feature_data` | SecretString | No | Connector-specific metadata for the transaction |
 | `state` | ConnectorState | No | State from previous multi-step flow |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -60,9 +64,9 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 | `response_headers` | map<string, string> | Connector-specific response headers |
 | `state` | ConnectorState | State to pass to next request in multi-step flow |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -80,7 +84,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/IncrementalAuthorization
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -90,7 +94,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](./authorize.md) - Create initial authorization (must set `request_incremental_authorization: true`)
 - [Capture](./capture.md) - Finalize the payment with the increased amount

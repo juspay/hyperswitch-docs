@@ -1,18 +1,13 @@
-# create Method
-
-<!--
 ---
 title: create (Node.js SDK)
-description: Create a customer record using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Create customer records in payment processors to streamline future transactions and improve authorization rates
+tags:
+  - node
+  - customers
+  - profiles
 ---
--->
+
+# create Method
 
 ## Overview
 

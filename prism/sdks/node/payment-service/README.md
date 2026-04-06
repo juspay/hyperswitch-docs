@@ -1,22 +1,17 @@
-# Payment Service
+---
+title: Payment Service (Node.js SDK)
+description: Manage complete payment lifecycles including authorization, capture, refunds, and voids for digital businesses
+tags:
+  - node
+  - payments
+  - lifecycle
+---
 
-<!--
----
-title: Payment Service (Node SDK)
-description: Complete payment lifecycle management - authorize, capture, refund, and void payments using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Payment Service
 
 ## Overview
 
-The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 100+ connectors through a unified SDK, handling everything from initial authorization to refunds and recurring payments.
+The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 300+ connectors through a unified SDK, handling everything from initial authorization to refunds and recurring payments.
 
 **Business Use Cases:**
 - **E-commerce checkout** - Authorize funds at purchase, capture when items ship

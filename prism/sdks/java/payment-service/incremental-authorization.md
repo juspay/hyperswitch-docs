@@ -1,18 +1,13 @@
-# incrementalAuthorization Method
-
-<!--
 ---
 title: incrementalAuthorization (Java SDK)
-description: Increase authorized amount using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Increase authorized amounts to add charges for hotel incidentals, tips, or add-on services
+tags:
+  - java
+  - payments
+  - authorization
 ---
--->
+
+# incrementalAuthorization Method
 
 ## Overview
 

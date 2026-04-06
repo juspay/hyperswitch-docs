@@ -1,3 +1,7 @@
+---
+description: Set up MultiSafepay payments through Prism for Dutch and European processing
+---
+
 # Multisafepay
 
 <!--

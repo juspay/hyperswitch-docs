@@ -1,3 +1,7 @@
+---
+description: Connect Worldpay XML payments via Prism for legacy API integration
+---
+
 # Worldpayxml
 
 <!--

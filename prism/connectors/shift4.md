@@ -1,3 +1,7 @@
+---
+description: Integrate Shift4 payments via Prism for end-to-end payment processing
+---
+
 # Shift4
 
 <!--

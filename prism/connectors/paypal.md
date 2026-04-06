@@ -1,3 +1,7 @@
+---
+description: Connect PayPal payments via Prism with support for PayPal wallet, card processing, recurring billing, and access token management
+---
+
 # Paypal
 
 <!--

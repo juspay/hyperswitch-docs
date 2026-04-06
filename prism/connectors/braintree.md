@@ -1,3 +1,7 @@
+---
+description: Integrate Braintree payments with Prism for PayPal-backed card and wallet processing
+---
+
 # Braintree
 
 <!--

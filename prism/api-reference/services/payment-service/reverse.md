@@ -1,3 +1,7 @@
+---
+description: Reverse a captured payment before settlement to recover funds without a full refund
+---
+
 # Reverse RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `Reverse` RPC cancels a captured payment before the funds have been settled to the merchant's account. Unlike voids (which apply to authorized but not captured payments), reverses apply to captured payments that haven't completed bank settlement yet.
 
 **Business Use Case:** When an error is discovered immediately after capture, such as incorrect amount charged, duplicate transaction, or same-day order cancellation. Reverse allows you to recover funds before they enter the settlement cycle, avoiding the longer timeline and additional fees of a refund.
 
-## Purpose
+### Purpose
 
 **Why use Reverse instead of Refund?**
 
@@ -38,7 +42,7 @@ The `Reverse` RPC cancels a captured payment before the funds have been settled 
 - Transaction status moves to REVERSED or VOIDED
 - No charge appears on customer's final statement
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -50,7 +54,7 @@ The `Reverse` RPC cancels a captured payment before the funds have been settled 
 | `metadata` | SecretString | No | Additional metadata for the connector |
 | `connector_feature_data` | SecretString | No | Connector-specific metadata for the transaction |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -61,9 +65,9 @@ The `Reverse` RPC cancels a captured payment before the funds have been settled 
 | `response_headers` | map<string, string> | Connector-specific response headers |
 | `merchant_reverse_id` | string | Your reverse reference (echoed back) |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -78,7 +82,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/Reverse
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -89,7 +93,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Capture](./capture.md) - Capture a payment after authorization
 - [Void](./void.md) - Cancel an authorized payment before capture

@@ -1,18 +1,13 @@
-# createOrder Method
-
-<!--
 ---
 title: createOrder (Node.js SDK)
-description: Initialize an order in the payment processor using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Initialize payment orders to set up context before collecting payment details for improved authorization rates
+tags:
+  - node
+  - payments
+  - orders
 ---
--->
+
+# createOrder Method
 
 ## Overview
 
