@@ -1,9 +1,9 @@
-# Volt
+# Fiservcommercehub
 
 <!--
 This file is auto-generated. Do not edit by hand.
-Source: data/field_probe/volt.json
-Regenerate: python3 scripts/generators/docs/generate.py volt
+Source: data/field_probe/fiservcommercehub.json
+Regenerate: python3 scripts/generators/docs/generate.py fiservcommercehub
 -->
 
 ## SDK Configuration
@@ -25,7 +25,7 @@ config = sdk_config_pb2.ConnectorConfig(
 )
 # Set credentials before running (field names depend on connector auth type):
 # config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
-#     volt=payment_pb2.VoltConfig(api_key=...),
+#     fiservcommercehub=payment_pb2.FiservcommercehubConfig(api_key=...),
 # ))
 
 ```
@@ -42,7 +42,7 @@ const { ConnectorClient } = require('connector-service-node-ffi');
 
 // Reuse this client for all flows
 const client = new ConnectorClient({
-    connector: 'Volt',
+    connector: 'Fiservcommercehub',
     environment: 'sandbox',
     connector_auth_type: {
         header_key: { api_key: 'YOUR_API_KEY' },
@@ -59,7 +59,7 @@ const client = new ConnectorClient({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setConnector("Volt")
+    .setConnector("Fiservcommercehub")
     .setEnvironment(Environment.SANDBOX)
     .setAuth(
         ConnectorAuthType.newBuilder()
@@ -79,7 +79,7 @@ val config = ConnectorConfig.newBuilder()
 use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector: "Volt".to_string(),
+    connector: "Fiservcommercehub".to_string(),
     environment: Environment::Sandbox,
     auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
     ..Default::default()
@@ -96,119 +96,13 @@ let config = ConnectorConfig {
 
 | Flow (Service.RPC) | Category | gRPC Request Message |
 |--------------------|----------|----------------------|
-| [PaymentService.Authorize](#paymentserviceauthorize) | Payments | `PaymentServiceAuthorizeRequest` |
 | [MerchantAuthenticationService.CreateServerAuthenticationToken](#merchantauthenticationservicecreateserverauthenticationtoken) | Authentication | `MerchantAuthenticationServiceCreateServerAuthenticationTokenRequest` |
 | [PaymentService.Get](#paymentserviceget) | Payments | `PaymentServiceGetRequest` |
 | [PaymentService.Refund](#paymentservicerefund) | Payments | `PaymentServiceRefundRequest` |
+| [RefundService.Get](#refundserviceget) | Refunds | `RefundServiceGetRequest` |
+| [PaymentService.Void](#paymentservicevoid) | Payments | `PaymentServiceVoidRequest` |
 
 ### Payments
-
-#### PaymentService.Authorize
-
-Authorize a payment amount on a payment method. This reserves funds without capturing them, essential for verifying availability before finalizing.
-
-| | Message |
-|---|---------|
-| **Request** | `PaymentServiceAuthorizeRequest` |
-| **Response** | `PaymentServiceAuthorizeResponse` |
-
-**Supported payment method types:**
-
-| Payment Method | Supported |
-|----------------|:---------:|
-| Card | ⚠ |
-| Bancontact | ⚠ |
-| Apple Pay | ⚠ |
-| Apple Pay Dec | ⚠ |
-| Apple Pay SDK | ⚠ |
-| Google Pay | ⚠ |
-| Google Pay Dec | ⚠ |
-| Google Pay SDK | ⚠ |
-| PayPal SDK | ⚠ |
-| Amazon Pay | ⚠ |
-| Cash App | ⚠ |
-| PayPal | ⚠ |
-| WeChat Pay | ⚠ |
-| Alipay | ⚠ |
-| Revolut Pay | ⚠ |
-| MiFinity | ⚠ |
-| Bluecode | ⚠ |
-| Paze | x |
-| Samsung Pay | ⚠ |
-| MB Way | ⚠ |
-| Satispay | ⚠ |
-| Wero | ⚠ |
-| Affirm | ⚠ |
-| Afterpay | ⚠ |
-| Klarna | ⚠ |
-| UPI Collect | ⚠ |
-| UPI Intent | ⚠ |
-| UPI QR | ⚠ |
-| Thailand | ⚠ |
-| Czech | ⚠ |
-| Finland | ⚠ |
-| FPX | ⚠ |
-| Poland | ⚠ |
-| Slovakia | ⚠ |
-| UK | ✓ |
-| PIS | x |
-| Generic | ✓ |
-| Local | ⚠ |
-| iDEAL | ⚠ |
-| Sofort | ⚠ |
-| Trustly | ⚠ |
-| Giropay | ⚠ |
-| EPS | ⚠ |
-| Przelewy24 | ⚠ |
-| PSE | ⚠ |
-| BLIK | ⚠ |
-| Interac | ⚠ |
-| Bizum | ⚠ |
-| EFT | ⚠ |
-| DuitNow | x |
-| ACH | ⚠ |
-| SEPA | ⚠ |
-| BACS | ⚠ |
-| Multibanco | ⚠ |
-| Instant | ⚠ |
-| Instant FI | ⚠ |
-| Instant PL | ⚠ |
-| Pix | ⚠ |
-| Permata | ⚠ |
-| BCA | ⚠ |
-| BNI VA | ⚠ |
-| BRI VA | ⚠ |
-| CIMB VA | ⚠ |
-| Danamon VA | ⚠ |
-| Mandiri VA | ⚠ |
-| Local | ⚠ |
-| Indonesian | ⚠ |
-| ACH | ⚠ |
-| SEPA | ⚠ |
-| BACS | ⚠ |
-| BECS | ⚠ |
-| SEPA Guaranteed | ⚠ |
-| Crypto | x |
-| Reward | ⚠ |
-| Givex | x |
-| PaySafeCard | x |
-| E-Voucher | ⚠ |
-| Boleto | ⚠ |
-| Efecty | ⚠ |
-| Pago Efectivo | ⚠ |
-| Red Compra | ⚠ |
-| Red Pagos | ⚠ |
-| Alfamart | ⚠ |
-| Indomaret | ⚠ |
-| Oxxo | ⚠ |
-| 7-Eleven | ⚠ |
-| Lawson | ⚠ |
-| Mini Stop | ⚠ |
-| Family Mart | ⚠ |
-| Seicomart | ⚠ |
-| Pay Easy | ⚠ |
-
-**Examples:** [Python](../../examples/volt/volt.py) · [TypeScript](../../examples/volt/volt.ts) · [Kotlin](../../examples/volt/volt.kt) · [Rust](../../examples/volt/volt.rs)
 
 #### PaymentService.Get
 
@@ -219,7 +113,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/volt/volt.py#L83) · [TypeScript](../../examples/volt/volt.ts#L77) · [Kotlin](../../examples/volt/volt.kt#L76) · [Rust](../../examples/volt/volt.rs#L78)
+**Examples:** [Python](../../examples/fiservcommercehub/fiservcommercehub.py#L117) · [TypeScript](../../examples/fiservcommercehub/fiservcommercehub.ts#L106) · [Kotlin](../../examples/fiservcommercehub/fiservcommercehub.kt#L93) · [Rust](../../examples/fiservcommercehub/fiservcommercehub.rs#L107)
 
 #### PaymentService.Refund
 
@@ -230,7 +124,31 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/volt/volt.py#L92) · [TypeScript](../../examples/volt/volt.ts#L86) · [Kotlin](../../examples/volt/volt.kt#L84) · [Rust](../../examples/volt/volt.rs#L85)
+**Examples:** [Python](../../examples/fiservcommercehub/fiservcommercehub.py#L126) · [TypeScript](../../examples/fiservcommercehub/fiservcommercehub.ts#L115) · [Kotlin](../../examples/fiservcommercehub/fiservcommercehub.kt#L101) · [Rust](../../examples/fiservcommercehub/fiservcommercehub.rs#L114)
+
+#### PaymentService.Void
+
+Cancel an authorized payment that has not been captured. Releases held funds back to the customer's payment method when a transaction cannot be completed.
+
+| | Message |
+|---|---------|
+| **Request** | `PaymentServiceVoidRequest` |
+| **Response** | `PaymentServiceVoidResponse` |
+
+**Examples:** [Python](../../examples/fiservcommercehub/fiservcommercehub.py#L144) · [TypeScript](../../examples/fiservcommercehub/fiservcommercehub.ts) · [Kotlin](../../examples/fiservcommercehub/fiservcommercehub.kt#L130) · [Rust](../../examples/fiservcommercehub/fiservcommercehub.rs#L128)
+
+### Refunds
+
+#### RefundService.Get
+
+Retrieve refund status from the payment processor. Tracks refund progress through processor settlement for accurate customer communication.
+
+| | Message |
+|---|---------|
+| **Request** | `RefundServiceGetRequest` |
+| **Response** | `RefundResponse` |
+
+**Examples:** [Python](../../examples/fiservcommercehub/fiservcommercehub.py#L135) · [TypeScript](../../examples/fiservcommercehub/fiservcommercehub.ts#L124) · [Kotlin](../../examples/fiservcommercehub/fiservcommercehub.kt#L111) · [Rust](../../examples/fiservcommercehub/fiservcommercehub.rs#L121)
 
 ### Authentication
 
@@ -243,4 +161,4 @@ Generate short-lived connector authentication token. Provides secure credentials
 | **Request** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenRequest` |
 | **Response** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenResponse` |
 
-**Examples:** [Python](../../examples/volt/volt.py#L74) · [TypeScript](../../examples/volt/volt.ts#L68) · [Kotlin](../../examples/volt/volt.kt#L66) · [Rust](../../examples/volt/volt.rs#L71)
+**Examples:** [Python](../../examples/fiservcommercehub/fiservcommercehub.py#L108) · [TypeScript](../../examples/fiservcommercehub/fiservcommercehub.ts#L97) · [Kotlin](../../examples/fiservcommercehub/fiservcommercehub.kt#L83) · [Rust](../../examples/fiservcommercehub/fiservcommercehub.rs#L100)

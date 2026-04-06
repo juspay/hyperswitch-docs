@@ -1,9 +1,9 @@
-# CashtoCode
+# Itaubank
 
 <!--
 This file is auto-generated. Do not edit by hand.
-Source: data/field_probe/cashtocode.json
-Regenerate: python3 scripts/generators/docs/generate.py cashtocode
+Source: data/field_probe/itaubank.json
+Regenerate: python3 scripts/generators/docs/generate.py itaubank
 -->
 
 ## SDK Configuration
@@ -25,7 +25,7 @@ config = sdk_config_pb2.ConnectorConfig(
 )
 # Set credentials before running (field names depend on connector auth type):
 # config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
-#     cashtocode=payment_pb2.CashtocodeConfig(api_key=...),
+#     itaubank=payment_pb2.ItaubankConfig(api_key=...),
 # ))
 
 ```
@@ -42,7 +42,7 @@ const { ConnectorClient } = require('connector-service-node-ffi');
 
 // Reuse this client for all flows
 const client = new ConnectorClient({
-    connector: 'Cashtocode',
+    connector: 'Itaubank',
     environment: 'sandbox',
     connector_auth_type: {
         header_key: { api_key: 'YOUR_API_KEY' },
@@ -59,7 +59,7 @@ const client = new ConnectorClient({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setConnector("Cashtocode")
+    .setConnector("Itaubank")
     .setEnvironment(Environment.SANDBOX)
     .setAuth(
         ConnectorAuthType.newBuilder()
@@ -79,7 +79,7 @@ val config = ConnectorConfig.newBuilder()
 use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector: "Cashtocode".to_string(),
+    connector: "Itaubank".to_string(),
     environment: Environment::Sandbox,
     auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
     ..Default::default()
@@ -96,4 +96,17 @@ let config = ConnectorConfig {
 
 | Flow (Service.RPC) | Category | gRPC Request Message |
 |--------------------|----------|----------------------|
-| [EventService.HandleEvent](#eventservicehandleevent) | Events | `EventServiceHandleRequest` |
+| [MerchantAuthenticationService.CreateServerAuthenticationToken](#merchantauthenticationservicecreateserverauthenticationtoken) | Authentication | `MerchantAuthenticationServiceCreateServerAuthenticationTokenRequest` |
+
+### Authentication
+
+#### MerchantAuthenticationService.CreateServerAuthenticationToken
+
+Generate short-lived connector authentication token. Provides secure credentials for connector API access without storing secrets client-side.
+
+| | Message |
+|---|---------|
+| **Request** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenRequest` |
+| **Response** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenResponse` |
+
+**Examples:** [Python](../../examples/itaubank/itaubank.py#L31) · [TypeScript](../../examples/itaubank/itaubank.ts#L30) · [Kotlin](../../examples/itaubank/itaubank.kt#L23) · [Rust](../../examples/itaubank/itaubank.rs#L33)

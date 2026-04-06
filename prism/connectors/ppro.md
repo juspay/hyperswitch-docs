@@ -1,9 +1,9 @@
-# Mollie
+# Ppro
 
 <!--
 This file is auto-generated. Do not edit by hand.
-Source: data/field_probe/mollie.json
-Regenerate: python3 scripts/generators/docs/generate.py mollie
+Source: data/field_probe/ppro.json
+Regenerate: python3 scripts/generators/docs/generate.py ppro
 -->
 
 ## SDK Configuration
@@ -25,7 +25,7 @@ config = sdk_config_pb2.ConnectorConfig(
 )
 # Set credentials before running (field names depend on connector auth type):
 # config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
-#     mollie=payment_pb2.MollieConfig(api_key=...),
+#     ppro=payment_pb2.PproConfig(api_key=...),
 # ))
 
 ```
@@ -42,7 +42,7 @@ const { ConnectorClient } = require('connector-service-node-ffi');
 
 // Reuse this client for all flows
 const client = new ConnectorClient({
-    connector: 'Mollie',
+    connector: 'Ppro',
     environment: 'sandbox',
     connector_auth_type: {
         header_key: { api_key: 'YOUR_API_KEY' },
@@ -59,7 +59,7 @@ const client = new ConnectorClient({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setConnector("Mollie")
+    .setConnector("Ppro")
     .setEnvironment(Environment.SANDBOX)
     .setAuth(
         ConnectorAuthType.newBuilder()
@@ -79,7 +79,7 @@ val config = ConnectorConfig.newBuilder()
 use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector: "Mollie".to_string(),
+    connector: "Ppro".to_string(),
     environment: Environment::Sandbox,
     auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
     ..Default::default()
@@ -92,49 +92,15 @@ let config = ConnectorConfig {
 </tr>
 </table>
 
-## Integration Scenarios
-
-Complete, runnable examples for common integration patterns. Each example shows the full flow with status handling. Copy-paste into your app and replace placeholder values.
-
-### One-step Payment (Authorize + Capture)
-
-Simple payment that authorizes and captures in one call. Use for immediate charges.
-
-**Response status handling:**
-
-| Status | Recommended action |
-|--------|-------------------|
-| `AUTHORIZED` | Payment authorized and captured — funds will be settled automatically |
-| `PENDING` | Payment processing — await webhook for final status before fulfilling |
-| `FAILED` | Payment declined — surface error to customer, do not retry without new details |
-
-**Examples:** [Python](../../examples/mollie/mollie.py#L128) · [JavaScript](../../examples/mollie/mollie.js) · [Kotlin](../../examples/mollie/mollie.kt#L92) · [Rust](../../examples/mollie/mollie.rs#L122)
-
-### Refund
-
-Return funds to the customer for a completed payment.
-
-**Examples:** [Python](../../examples/mollie/mollie.py#L147) · [JavaScript](../../examples/mollie/mollie.js) · [Kotlin](../../examples/mollie/mollie.kt#L108) · [Rust](../../examples/mollie/mollie.rs#L138)
-
-### Void Payment
-
-Cancel an authorized but not-yet-captured payment.
-
-**Examples:** [Python](../../examples/mollie/mollie.py#L172) · [JavaScript](../../examples/mollie/mollie.js) · [Kotlin](../../examples/mollie/mollie.kt#L130) · [Rust](../../examples/mollie/mollie.rs#L161)
-
-### Get Payment Status
-
-Retrieve current payment status from the connector.
-
-**Examples:** [Python](../../examples/mollie/mollie.py#L194) · [JavaScript](../../examples/mollie/mollie.js) · [Kotlin](../../examples/mollie/mollie.kt#L149) · [Rust](../../examples/mollie/mollie.rs#L180)
-
 ## API Reference
 
 | Flow (Service.RPC) | Category | gRPC Request Message |
 |--------------------|----------|----------------------|
 | [PaymentService.Authorize](#paymentserviceauthorize) | Payments | `PaymentServiceAuthorizeRequest` |
+| [PaymentService.Capture](#paymentservicecapture) | Payments | `PaymentServiceCaptureRequest` |
 | [PaymentService.Get](#paymentserviceget) | Payments | `PaymentServiceGetRequest` |
-| [PaymentService.ProxyAuthorize](#paymentserviceproxyauthorize) | Payments | `PaymentServiceProxyAuthorizeRequest` |
+| [EventService.HandleEvent](#eventservicehandleevent) | Events | `EventServiceHandleRequest` |
+| [RecurringPaymentService.Charge](#recurringpaymentservicecharge) | Mandates | `RecurringPaymentServiceChargeRequest` |
 | [PaymentService.Refund](#paymentservicerefund) | Payments | `PaymentServiceRefundRequest` |
 | [RefundService.Get](#refundserviceget) | Refunds | `RefundServiceGetRequest` |
 | [PaymentService.Void](#paymentservicevoid) | Payments | `PaymentServiceVoidRequest` |
@@ -154,8 +120,8 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 | Payment Method | Supported |
 |----------------|:---------:|
-| Card | ✓ |
-| Bancontact | x |
+| Card | x |
+| Bancontact | ✓ |
 | Apple Pay | x |
 | Apple Pay Dec | x |
 | Apple Pay SDK | x |
@@ -166,22 +132,22 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | Amazon Pay | x |
 | Cash App | x |
 | PayPal | x |
-| WeChat Pay | x |
-| Alipay | x |
+| WeChat Pay | ✓ |
+| Alipay | ✓ |
 | Revolut Pay | x |
 | MiFinity | x |
 | Bluecode | x |
 | Paze | x |
 | Samsung Pay | x |
-| MB Way | x |
-| Satispay | x |
-| Wero | x |
+| MB Way | ✓ |
+| Satispay | ✓ |
+| Wero | ✓ |
 | Affirm | x |
 | Afterpay | x |
 | Klarna | x |
 | UPI Collect | x |
-| UPI Intent | x |
-| UPI QR | x |
+| UPI Intent | ✓ |
+| UPI QR | ✓ |
 | Thailand | x |
 | Czech | x |
 | Finland | x |
@@ -192,14 +158,14 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | PIS | x |
 | Generic | x |
 | Local | x |
-| iDEAL | x |
+| iDEAL | ✓ |
 | Sofort | x |
-| Trustly | x |
+| Trustly | ✓ |
 | Giropay | x |
 | EPS | x |
 | Przelewy24 | x |
 | PSE | x |
-| BLIK | x |
+| BLIK | ✓ |
 | Interac | x |
 | Bizum | x |
 | EFT | x |
@@ -248,21 +214,37 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 **Payment method objects** — use these in the `payment_method` field of the Authorize request.
 
-##### Card (Raw PAN)
+##### iDEAL
 
 ```python
 "payment_method": {
-    "card": {  # Generic card payment.
-        "card_number": {"value": "4111111111111111"},  # Card Identification.
-        "card_exp_month": {"value": "03"},
-        "card_exp_year": {"value": "2030"},
-        "card_cvc": {"value": "737"},
-        "card_holder_name": {"value": "John Doe"}  # Cardholder Information.
+    "ideal": {
     }
 }
 ```
 
-**Examples:** [Python](../../examples/mollie/mollie.py#L216) · [TypeScript](../../examples/mollie/mollie.ts#L205) · [Kotlin](../../examples/mollie/mollie.kt#L167) · [Rust](../../examples/mollie/mollie.rs#L198)
+##### BLIK
+
+```python
+"payment_method": {
+    "blik": {
+        "blik_code": "777124"
+    }
+}
+```
+
+**Examples:** [Python](../../examples/ppro/ppro.py#L146) · [TypeScript](../../examples/ppro/ppro.ts#L128) · [Kotlin](../../examples/ppro/ppro.kt#L105) · [Rust](../../examples/ppro/ppro.rs#L138)
+
+#### PaymentService.Capture
+
+Finalize an authorized payment by transferring funds. Captures the authorized amount to complete the transaction and move funds to your merchant account.
+
+| | Message |
+|---|---------|
+| **Request** | `PaymentServiceCaptureRequest` |
+| **Response** | `PaymentServiceCaptureResponse` |
+
+**Examples:** [Python](../../examples/ppro/ppro.py#L155) · [TypeScript](../../examples/ppro/ppro.ts#L137) · [Kotlin](../../examples/ppro/ppro.kt#L117) · [Rust](../../examples/ppro/ppro.rs#L150)
 
 #### PaymentService.Get
 
@@ -273,18 +255,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/mollie/mollie.py#L225) · [TypeScript](../../examples/mollie/mollie.ts#L214) · [Kotlin](../../examples/mollie/mollie.kt#L179) · [Rust](../../examples/mollie/mollie.rs#L210)
-
-#### PaymentService.ProxyAuthorize
-
-Authorize using vault-aliased card data. Proxy substitutes before connector.
-
-| | Message |
-|---|---------|
-| **Request** | `PaymentServiceProxyAuthorizeRequest` |
-| **Response** | `PaymentServiceAuthorizeResponse` |
-
-**Examples:** [Python](../../examples/mollie/mollie.py#L234) · [TypeScript](../../examples/mollie/mollie.ts#L223) · [Kotlin](../../examples/mollie/mollie.kt#L187) · [Rust](../../examples/mollie/mollie.rs#L217)
+**Examples:** [Python](../../examples/ppro/ppro.py#L164) · [TypeScript](../../examples/ppro/ppro.ts#L146) · [Kotlin](../../examples/ppro/ppro.kt#L127) · [Rust](../../examples/ppro/ppro.rs#L157)
 
 #### PaymentService.Refund
 
@@ -295,7 +266,7 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/mollie/mollie.py#L243) · [TypeScript](../../examples/mollie/mollie.ts#L232) · [Kotlin](../../examples/mollie/mollie.kt#L216) · [Rust](../../examples/mollie/mollie.rs#L224)
+**Examples:** [Python](../../examples/ppro/ppro.py#L191) · [TypeScript](../../examples/ppro/ppro.ts#L173) · [Kotlin](../../examples/ppro/ppro.kt#L176) · [Rust](../../examples/ppro/ppro.rs#L178)
 
 #### PaymentService.Void
 
@@ -306,7 +277,7 @@ Cancel an authorized payment that has not been captured. Releases held funds bac
 | **Request** | `PaymentServiceVoidRequest` |
 | **Response** | `PaymentServiceVoidResponse` |
 
-**Examples:** [Python](../../examples/mollie/mollie.py#L261) · [TypeScript](../../examples/mollie/mollie.ts) · [Kotlin](../../examples/mollie/mollie.kt#L238) · [Rust](../../examples/mollie/mollie.rs#L238)
+**Examples:** [Python](../../examples/ppro/ppro.py#L209) · [TypeScript](../../examples/ppro/ppro.ts) · [Kotlin](../../examples/ppro/ppro.kt#L198) · [Rust](../../examples/ppro/ppro.rs#L192)
 
 ### Refunds
 
@@ -319,4 +290,17 @@ Retrieve refund status from the payment processor. Tracks refund progress throug
 | **Request** | `RefundServiceGetRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/mollie/mollie.py#L252) · [TypeScript](../../examples/mollie/mollie.ts#L241) · [Kotlin](../../examples/mollie/mollie.kt#L226) · [Rust](../../examples/mollie/mollie.rs#L231)
+**Examples:** [Python](../../examples/ppro/ppro.py#L200) · [TypeScript](../../examples/ppro/ppro.ts#L182) · [Kotlin](../../examples/ppro/ppro.kt#L186) · [Rust](../../examples/ppro/ppro.rs#L185)
+
+### Mandates
+
+#### RecurringPaymentService.Charge
+
+Charge using an existing stored recurring payment instruction. Processes repeat payments for subscriptions or recurring billing without collecting payment details.
+
+| | Message |
+|---|---------|
+| **Request** | `RecurringPaymentServiceChargeRequest` |
+| **Response** | `RecurringPaymentServiceChargeResponse` |
+
+**Examples:** [Python](../../examples/ppro/ppro.py#L182) · [TypeScript](../../examples/ppro/ppro.ts#L164) · [Kotlin](../../examples/ppro/ppro.kt#L145) · [Rust](../../examples/ppro/ppro.rs#L171)
