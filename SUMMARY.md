@@ -36,7 +36,7 @@
       * [Overcapture](integration-guide/payment-suite/payments/manual-capture/overcapture.md)
     * [Copy of Subscriptions](integration-guide/payment-suite/payments/copy-of-subscriptions.md)
     * [Saving Payment Method](integration-guide/payment-suite/payments/save-a-payment-method/README.md)
-      * [Saved Card](integration-guide/payment-suite/payments/save-a-payment-method/saved-card.md)
+      * [Stored Card Flow](integration-guide/payment-suite/payments/save-a-payment-method/saved-card.md)
     * [Recurring payments](integration-guide/payment-suite/payments/recurring-payments.md)
     * [Authorizations](integration-guide/payment-suite/payments/authorizations/README.md)
       * [Incremental Authorization](integration-guide/payment-suite/payments/authorizations/incremental-authorization.md)
