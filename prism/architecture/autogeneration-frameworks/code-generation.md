@@ -89,7 +89,7 @@ Your LLM generates code that follows Hyperswitch Prism conventions without train
 
 ```rust
 impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
-    type Error = ConnectorError;
+    type Error = IntegrationError;
     
     fn try_from(req: AuthorizeRequest) -> Result<Self, Self::Error> {
         Ok(AdyenPaymentRequest {
@@ -107,7 +107,7 @@ impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
 
 ```rust
 impl TryFrom<AdyenPaymentResponse> for AuthorizeResponse {
-    type Error = ConnectorError;
+    type Error = ConnectorResponseTransformationError;
     
     fn try_from(resp: AdyenPaymentResponse) -> Result<Self, Self::Error> {
         Ok(AuthorizeResponse {
