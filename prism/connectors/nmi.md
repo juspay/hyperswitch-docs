@@ -1,7 +1,3 @@
----
-description: Configure NMI payments with Prism for independent sales organization solutions
----
-
 # Nmi
 
 <!--

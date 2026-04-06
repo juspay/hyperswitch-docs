@@ -1,7 +1,3 @@
----
-description: Set up Cashfree payments through Prism for Indian market UPI and card processing
----
-
 # Cashfree
 
 <!--

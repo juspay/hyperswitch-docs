@@ -1,7 +1,3 @@
----
-description: Process webhook notifications from connectors and parse them into standardized events
----
-
 # Handle RPC
 
 <!--

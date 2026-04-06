@@ -1,7 +1,3 @@
----
-description: Configure Paybox payments via Prism for French market mobile payments
----
-
 # Paybox
 
 <!--

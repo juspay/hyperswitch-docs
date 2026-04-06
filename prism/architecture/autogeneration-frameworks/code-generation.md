@@ -1,10 +1,6 @@
----
-description: Generate connector adapter code automatically to reduce integration time from weeks to days
----
-
 # Code Generation
 
-You get a working connector adapter in hours instead of weeks. Hyperswitch Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.
+You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.
 
 ## The Problem with Manual Integration
 
@@ -28,8 +24,8 @@ Grace has two interfaces: a CLI tool and a skill/prompt system for LLMs.
 └─────────────────┘     └──────────────────┘     └─────────────────┘
          │                       │                        │
          ▼                       ▼                        ▼
-    Provider docs           LLM Skill              Connector-specific
-    and examples           augmentation             business logic
+   Provider docs           LLM Skill              Connector-specific
+   and examples           augmentation             business logic
 ```
 
 ## CLI Usage
@@ -76,12 +72,12 @@ grace skill generate-connector \
 ```
 
 The skill prompt includes:
-- Hyperswitch Prism's unified type system
+- Prism's unified type system
 - Common transformation patterns
 - Error mapping conventions
 - Rust code templates
 
-Your LLM generates code that follows Hyperswitch Prism conventions without training on proprietary code.
+Your LLM generates code that follows Prism conventions without training on proprietary code.
 
 ## What Gets Generated
 
@@ -152,7 +148,7 @@ You fill in the blanks. The boilerplate structure is done.
 ## Validation
 
 Grace validates generated code:
-- Type checks against Hyperswitch Prism interfaces
+- Type checks against Prism interfaces
 - Serialization roundtrips (unified → connector → unified)
 - Required field coverage
 - Error case handling

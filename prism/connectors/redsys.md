@@ -1,7 +1,3 @@
----
-description: Configure Redsys payments with Prism for Spanish and European card processing
----
-
 # Redsys
 
 <!--

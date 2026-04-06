@@ -1,13 +1,18 @@
+# revoke Method
+
+<!--
 ---
 title: revoke (Node.js SDK)
-description: Cancel recurring payment mandates to stop future automatic charges when customers end subscriptions
-tags:
-  - node
-  - recurring
-  - subscriptions
+description: Cancel an existing recurring payment mandate using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# revoke Method
+-->
 
 ## Overview
 

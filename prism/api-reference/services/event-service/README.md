@@ -1,7 +1,3 @@
----
-description: Process webhook events from payment processors for real-time payment state updates
----
-
 # Event Service
 
 <!--
@@ -17,7 +13,7 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The Event Service processes webhook notifications from payment processors. Instead of polling APIs for status updates, this service receives real-time events when payment states change, enabling immediate response to successful payments, failed transactions, refunds, and disputes.
 
@@ -30,15 +26,15 @@ The Event Service processes webhook notifications from payment processors. Inste
 
 The service handles events from all supported connectors, normalizing them into a consistent format regardless of the source.
 
-### Operations
+## Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
 | [`Handle`](./handle.md) | Process webhook notifications from connectors. Translates connector events into standardized responses for asynchronous payment state updates. | Receiving webhook callbacks from any payment processor |
 
-### Common Patterns
+## Common Patterns
 
-#### Webhook Processing Flow
+### Webhook Processing Flow
 
 Receive and process webhook events to keep your system synchronized with payment processor state.
 
@@ -83,7 +79,7 @@ sequenceDiagram
 
 ---
 
-#### Reliable Webhook Processing
+### Reliable Webhook Processing
 
 Handle webhook delivery failures and ensure events are processed even during outages.
 
@@ -131,7 +127,7 @@ sequenceDiagram
 
 ---
 
-### Security Considerations
+## Security Considerations
 
 **Webhook Verification:**
 The Event Service automatically verifies webhook signatures using the connector's webhook secrets. This ensures events are genuinely from the payment processor and haven't been tampered with.
@@ -142,7 +138,7 @@ Payment processors may send the same event multiple times (retries). Use the `me
 **Timeout Handling:**
 Process webhooks quickly and return 200 OK. If processing takes longer than 10-30 seconds, some processors will retry. Use a queue for heavy processing.
 
-### Next Steps
+## Next Steps
 
 - [Payment Service](../payment-service/README.md) - Handle payment success/failure events
 - [Refund Service](../refund-service/README.md) - Process refund completion events

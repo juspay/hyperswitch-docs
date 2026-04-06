@@ -1,7 +1,7 @@
 <!--
 ---
 title: CI/CD Integration
-description: Integrate automated connector testing into CI/CD pipelines with snapshot validation and report generation
+description: Continuous integration and automated testing
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/
 auto_generated: false

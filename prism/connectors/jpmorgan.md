@@ -1,7 +1,3 @@
----
-description: Set up JP Morgan payments via Prism for enterprise treasury and merchant services
----
-
 # Jpmorgan
 
 <!--

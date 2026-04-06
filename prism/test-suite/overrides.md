@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Overrides
-description: Configure connector-specific test scenario overrides to customize validation for individual payment processors
+description: Customizing test scenarios per connector
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/docs/scenario-json-core-readme.md
 auto_generated: false

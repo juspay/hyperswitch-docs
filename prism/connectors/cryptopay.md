@@ -1,7 +1,3 @@
----
-description: Configure Cryptopay crypto payments through Prism for digital currency transactions
----
-
 # CryptoPay
 
 <!--

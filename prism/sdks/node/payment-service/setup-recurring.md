@@ -1,13 +1,18 @@
+# setupRecurring Method
+
+<!--
 ---
 title: setupRecurring (Node.js SDK)
-description: Set up recurring payment mandates to enable subscription billing and automated future charges
-tags:
-  - node
-  - recurring
-  - subscriptions
+description: Setup a recurring payment mandate using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# setupRecurring Method
+-->
 
 ## Overview
 

@@ -1,17 +1,13 @@
----
-description: Install and configure the Hyperswitch Prism library for Node, Python, Java, and PHP payment processing
----
-
 # Installation and Configuration
 
 
-### How to install the Hyperswitch Prism library?
+## How to install the prism library?
 
 Start by installing the library from your terminal, using the programming language of your choice. This should be followed by configuring the environment and payment processor API keys to proceed with the next steps.
 
 The below examples are templates for configuring Stripe and Adyen.
 
-#### Prerequisites
+### Prerequisites
 
 - Stripe test API key (get one at [stripe.com](https://stripe.com))
 - Adyen test API key (get one at [adyen.com/signup](https://www.adyen.com/signup))
@@ -181,7 +177,7 @@ $adyenClient = new PaymentClient($adyenConfig);
 
 That would be all. The SDK handles native library loading automatically. Start building in the [Quick Start](./quick-start.md).
 
-### Minimum version supported
+## Minimum version supported
 
 The prerequisites are:
 - **Node.js**: 16+ (FFI bindings require native compilation)

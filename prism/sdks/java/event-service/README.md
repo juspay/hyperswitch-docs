@@ -1,13 +1,18 @@
+# Event Service
+
+<!--
 ---
 title: Event Service (Java SDK)
-description: Process asynchronous webhook events from payment processors to receive real-time payment status updates
-tags:
-  - java
-  - webhooks
-  - events
+description: Process asynchronous webhook events from payment processors using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# Event Service
+-->
 
 ## Overview
 

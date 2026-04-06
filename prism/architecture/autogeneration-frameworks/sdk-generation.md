@@ -1,16 +1,12 @@
----
-description: Generate idiomatic multi-language SDKs from protobuf definitions to maintain API consistency
----
-
 # SDK Generation
 
-You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Hyperswitch Prism generates language-specific bindings from the same protobuf definitions, ensuring every SDK stays synchronized with the core API.
+You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Prism generates language-specific bindings from the same protobuf definitions, ensuring every SDK stays synchronized with the core API.
 
 ## The Multi-Language Problem
 
 Payment SDKs usually force you into one language or provide thin wrappers with inconsistent patterns. A Python developer sees async/await while a Java developer sees futures. Error handling differs. Type definitions drift.
 
-Hyperswitch Prism solves this by generating each SDK from the protobuf source with language-specific templates. The core logic lives in one place (Rust). Each language gets bindings that feel native.
+Prism solves this by generating each SDK from the protobuf source with language-specific templates. The core logic lives in one place (Rust). Each language gets bindings that feel native.
 
 ## Generation Pipeline
 

@@ -1,7 +1,3 @@
----
-description: Retrieve refund status from the payment processor for customer updates and reconciliation
----
-
 # Get RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The `Get` RPC retrieves the current status of a refund from the payment processor. Use this to check refund progress, provide customer updates, and synchronize refund states with your internal systems.
 
 **Business Use Case:** When a customer asks about their refund status or when your system needs to verify the current state of a refund for reconciliation purposes. Refunds can take time to process (minutes to days depending on the processor), so checking status helps you provide accurate information to customers.
 
-### Purpose
+## Purpose
 
 **Why use Get for refunds?**
 
@@ -41,7 +37,7 @@ The `Get` RPC retrieves the current status of a refund from the payment processo
 - Timestamps for refund lifecycle tracking
 - Error details if refund failed
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -56,7 +52,7 @@ The `Get` RPC retrieves the current status of a refund from the payment processo
 | `payment_method_type` | PaymentMethodType | No | Payment method type for context |
 | `connector_feature_data` | SecretString | No | Connector-specific metadata |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -73,9 +69,9 @@ The `Get` RPC retrieves the current status of a refund from the payment processo
 | `updated_at` | int64 | Unix timestamp when the refund was last updated |
 | `processed_at` | int64 | Unix timestamp when the refund was processed |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -90,7 +86,7 @@ grpcurl -H "x-connector: stripe" \
   types.RefundService/Get
 ```
 
-#### Response
+### Response
 
 ```json
 {
@@ -110,7 +106,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Status Values
+## Status Values
 
 | Status | Description | Typical Duration |
 |--------|-------------|------------------|
@@ -118,7 +114,7 @@ grpcurl -H "x-connector: stripe" \
 | `SUCCEEDED` | Refund has completed successfully | Funds returned to customer |
 | `FAILED` | Refund could not be processed | Check error details for reason |
 
-### Next Steps
+## Next Steps
 
 - [Refund](../payment-service/refund.md) - Initiate a new refund via Payment Service
 - [Get Payment](../payment-service/get.md) - Check the original payment status

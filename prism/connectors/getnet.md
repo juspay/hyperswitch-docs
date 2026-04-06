@@ -1,7 +1,3 @@
----
-description: Connect Getnet payments with Prism for Latin American card processing
----
-
 # Getnet
 
 <!--

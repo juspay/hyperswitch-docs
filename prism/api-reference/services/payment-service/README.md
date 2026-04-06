@@ -1,7 +1,3 @@
----
-description: Manage the complete payment lifecycle from authorization to capture, refund, and void operations
----
-
 # Payment Service
 
 <!--
@@ -17,9 +13,9 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
-The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 300+ connectors through a unified gRPC API, handling everything from initial authorization to refunds and recurring payments.
+The Payment Service provides comprehensive payment lifecycle management for digital businesses. It enables you to process payments across 100+ connectors through a unified gRPC API, handling everything from initial authorization to refunds and recurring payments.
 
 **Business Use Cases:**
 - **E-commerce checkout** - Authorize funds at purchase, capture when items ship
@@ -30,7 +26,7 @@ The Payment Service provides comprehensive payment lifecycle management for digi
 
 The service supports both synchronous responses and asynchronous flows (3DS authentication, redirect-based payments), with state management for multi-step operations.
 
-### Operations
+## Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
@@ -45,9 +41,9 @@ The service supports both synchronous responses and asynchronous flows (3DS auth
 | [`VerifyRedirectResponse`](./verify-redirect-response.md) | Validate redirect-based payment responses. Confirms authenticity of redirect-based payment completions to prevent fraud and tampering. | 3DS completion, bank redirect verification |
 | [`SetupRecurring`](./setup-recurring.md) | Setup a recurring payment instruction for future payments/debits. This could be for SaaS subscriptions, monthly bill payments, insurance payments and similar use cases. | Subscription setup, recurring billing |
 
-### Common Patterns
+## Common Patterns
 
-#### E-commerce Checkout Flow
+### E-commerce Checkout Flow
 
 Standard two-step payment flow for physical goods. Authorize at checkout, capture when shipped.
 
@@ -85,7 +81,7 @@ If the customer cancels before shipping, call the `Void` RPC instead of `Capture
 
 ---
 
-#### SaaS Subscription Setup
+### SaaS Subscription Setup
 
 Set up recurring payments for subscription businesses. Authorize initial payment, set up mandate for future charges.
 
@@ -126,7 +122,7 @@ sequenceDiagram
 
 ---
 
-#### Hotel/Travel Booking with Incremental Charges
+### Hotel/Travel Booking with Incremental Charges
 
 Pre-authorize for room plus incidentals, add charges during stay, capture final amount.
 
@@ -175,7 +171,7 @@ sequenceDiagram
 
 ---
 
-### Next Steps
+## Next Steps
 
 - [Refund Service](../refund-service/README.md) - Process refunds and returns
 - [Dispute Service](../dispute-service/README.md) - Handle chargebacks and disputes

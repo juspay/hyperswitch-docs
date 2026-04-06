@@ -1,7 +1,3 @@
----
-description: Configure Powertranz payments with Prism for Caribbean region processing
----
-
 # Powertranz
 
 <!--

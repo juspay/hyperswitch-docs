@@ -1,14 +1,10 @@
----
-description: Configure separate environments to isolate test transactions from live payment processing
----
-
 # Environment Settings
 
-Your code behaves differently in development, staging, and production. Hyperswitch Prism lets you configure environments explicitly so test transactions don't hit live payment processors and production keys don't leak into debug logs.
+Your code behaves differently in development, staging, and production. Prism lets you configure environments explicitly so test transactions don't hit live payment processors and production keys don't leak into debug logs.
 
-## Why Environment Control Matters
+## Why Environment Control Matters?
 
-Payment integrations have three distinct modes. Typically, most processors support Sandbox and Production.
+Payment integrations have three distinct modes. And typically most processors support Sandbox and Production.
 The Development environment will matter when there is a need to mock the payment processor request or response, especially if their sandboxes are flaky for your testing pipeline.
 
 | Environment | Use Case |
@@ -19,7 +15,7 @@ The Development environment will matter when there is a need to mock the payment
 
 ## How to Configure Environment?
 
-You may configure environments at the connector level as shown below.
+You may Configure environments at the connector level as show below.
 
 ```javascript
 const client = new ConnectorServiceClient({
@@ -38,3 +34,4 @@ const client = new ConnectorServiceClient({
     }
 });
 ```
+

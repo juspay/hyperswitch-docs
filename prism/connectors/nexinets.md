@@ -1,7 +1,3 @@
----
-description: Connect Nexi Nets payments with Prism for Nordic region payment processing
----
-
 # Nexinets
 
 <!--

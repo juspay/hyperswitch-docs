@@ -1,13 +1,18 @@
+# createAccessToken Method
+
+<!--
 ---
 title: createAccessToken (Java SDK)
-description: Generate short-lived API access tokens for secure temporary access to payment processor APIs
-tags:
-  - java
-  - tokens
-  - authentication
+description: Generate API access token using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# createAccessToken Method
+-->
 
 ## Overview
 

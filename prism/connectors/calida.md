@@ -1,7 +1,3 @@
----
-description: Configure Calida payment processing via Prism for Mexican market card transactions
----
-
 # Calida
 
 <!--

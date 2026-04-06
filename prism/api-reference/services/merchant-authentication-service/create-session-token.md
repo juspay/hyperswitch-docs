@@ -1,7 +1,3 @@
----
-description: Create session tokens to maintain state across multi-step payment flows
----
-
 # CreateSessionToken RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The `CreateSessionToken` RPC creates a session token for payment processing. This token maintains state across multiple payment operations, enabling secure tracking and improved security for multi-step payment flows.
 
 **Business Use Case:** When processing payments that require multiple steps (3DS authentication, redirect flows, wallet payments), you need to maintain session state between requests. This RPC creates a session token that carries context through the entire payment journey.
 
-### Purpose
+## Purpose
 
 **Why use session tokens?**
 
@@ -40,7 +36,7 @@ The `CreateSessionToken` RPC creates a session token for payment processing. Thi
 - Cross-request continuity
 - Enhanced fraud protection
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -52,7 +48,7 @@ The `CreateSessionToken` RPC creates a session token for payment processing. Thi
 | `browser_info` | BrowserInformation | No | Browser details for fraud detection |
 | `test_mode` | bool | No | Use test/sandbox environment |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -60,9 +56,9 @@ The `CreateSessionToken` RPC creates a session token for payment processing. Thi
 | `status_code` | uint32 | HTTP-style status code |
 | `session_token` | string | Session token for subsequent operations |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -83,7 +79,7 @@ grpcurl -H "x-connector: stripe" \
   types.MerchantAuthenticationService/CreateSessionToken
 ```
 
-#### Response
+### Response
 
 ```json
 {
@@ -92,7 +88,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Next Steps
+## Next Steps
 
 - [CreateAccessToken](./create-access-token.md) - Generate API access tokens
 - [CreateSdkSessionToken](./create-sdk-session-token.md) - Initialize wallet sessions

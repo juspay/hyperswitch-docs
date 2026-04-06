@@ -1,7 +1,3 @@
----
-description: Integrate Nexi Pay payments via Prism for Italian market card processing
----
-
 # Nexixpay
 
 <!--

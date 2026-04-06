@@ -1,7 +1,3 @@
----
-description: Configure Paytm payments with Prism for Indian market digital payments
----
-
 # Paytm
 
 <!--

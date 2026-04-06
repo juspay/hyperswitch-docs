@@ -1,7 +1,3 @@
----
-description: Set up PayU payments through Prism for emerging markets local payment methods
----
-
 # PayU
 
 <!--

@@ -1,7 +1,3 @@
----
-description: Connect Razorpay payments with Prism for Indian business payment solutions
----
-
 # Razorpay
 
 <!--

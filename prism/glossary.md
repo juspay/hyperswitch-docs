@@ -1,7 +1,3 @@
----
-description: Reference essential terminology and definitions for payment processing concepts, connector service components, and unified API terms in this comprehensive glossary
----
-
 <!--
 @doc-guidance
 ────────────────────────────────────────────────────
@@ -41,7 +37,7 @@ WRITING RULES:
 8. ERRORS ARE FEATURES — When documenting a flow, show what goes wrong too.
    Include at least one error scenario with the actual error message.
 
-9. NAME THE PRODUCT "Hyperswitch Connector Service" — Not "UCS", not "the service", not "our platform".
+9. NAME THE PRODUCT "Connector Service" — Not "UCS", not "the service", not "our platform".
 
 10. TABLES FOR COMPARISON, PROSE FOR NARRATIVE — Don't put a story in a table.
     Don't write paragraphs when a 3-row table would be clearer.
@@ -62,7 +58,7 @@ ANTI-PATTERNS TO REJECT:
 
 # Glossary
 
-A-Z reference for Hyperswitch Connector Service terminology.
+A-Z reference for Connector Service terminology.
 
 ## A
 
@@ -82,11 +78,11 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Capture Method** — `AUTOMATIC` (immediate) or `MANUAL` (merchant-initiated). Determines when funds transfer.
 
-**Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Hyperswitch Connector Service supports 300+ connectors.
+**Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Connector Service supports 50+ connectors.
 
 **Connector Adapter** — Rust module that translates unified requests to connector-specific formats. See [Connectors](../../connectors/).
 
-**Hyperswitch Connector Service** — The unified payment abstraction library this documentation describes.
+**Connector Service** — The unified payment abstraction library this documentation describes.
 
 **Customer** — Entity representing a payer. Can have stored payment methods and transaction history.
 
@@ -96,7 +92,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Dispute** — Chargeback initiated by a customer through their bank. Requires merchant response (accept or defend).
 
-**DSL** — Domain-Specific Language. The Protocol Buffer schema that defines Hyperswitch Connector Service's typed API.
+**DSL** — Domain-Specific Language. The Protocol Buffer schema that defines Connector Service's typed API.
 
 ## E
 
@@ -120,7 +116,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Handle Event** — Process any incoming webhook from a payment processor. See [handle](../../api-reference/services/event-service/handle.md).
 
-**Juspay Hyperswitch** — Open-source Composable Payments Platform built by Juspay with 41k+ GitHub stars and used by global enterprise companies. The Hyperswitch Connector Service is a component of Juspay Hyperswitch.
+**Hyperswitch** — Open-source Composable Payments Platform built by Juspay with 40K+ Github stars and used by global enterprise companies. The Connector Service is a component of Juspay Hyperswitch.
 
 ## I
 
@@ -132,7 +128,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Manual Capture** — Merchant-initiated capture (two-step payment flow).
 
-**Merchant** — Business entity processing payments through Hyperswitch Connector Service.
+**Merchant** — Business entity processing payments through Connector Service.
 
 **Metadata** — Key-value pairs attached to payments for reconciliation and reporting.
 
@@ -144,7 +140,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Partial Capture** — Capture less than authorized amount. Used for multi-shipment orders.
 
-**Payment Intent** — Stripe's term for a payment authorization. Hyperswitch Connector Service unifies this concept across all connectors.
+**Payment Intent** — Stripe's term for a payment authorization. Connector Service unifies this concept across all connectors.
 
 **Payment Method** — How customer pays: card, wallet, bank transfer, BNPL.
 
@@ -152,7 +148,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Payment Status** — Lifecycle state: `STARTED`, `AUTHORIZED`, `CAPTURED`, `FAILED`, `VOIDED`.
 
-**Protocol Buffers** — Binary serialization format. Defines Hyperswitch Connector Service's typed schema.
+**Protocol Buffers** — Binary serialization format. Defines Connector Service's typed schema.
 
 **PSP** — Payment Service Provider. Synonym for payment processor/connector.
 
@@ -168,7 +164,7 @@ A-Z reference for Hyperswitch Connector Service terminology.
 
 **Return URL** — Where customer returns after 3D Secure or redirect-based payments.
 
-**Reverse** — Refund using connector transaction ID instead of Hyperswitch Connector Service payment ID.
+**Reverse** — Refund using connector transaction ID instead of Connector Service payment ID.
 
 ## S
 

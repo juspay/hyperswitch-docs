@@ -1,14 +1,10 @@
----
-description: Explore advanced payment flows including incremental authorization, subscriptions, and partial captures
----
-
 # Extending to More Flows
 
 You have implemented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
 
 Beyond the basic authorization and capture, the library handles complex payment scenarios in a processor agnostic manner. This includes recurring payments, incremental authorization, void, reverse, refund and more.
 
-### Payment Flows Overview
+## Payment Flows Overview
 
 Below are some sample real world scenarios to try out quickly.
 
@@ -23,7 +19,7 @@ Below are some sample real world scenarios to try out quickly.
 | **Recurring Payments** | SaaS billing and more | [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
 
 
-### Incremental Authorization
+## Incremental Authorization
 
 Let's take hotels and car rentals. Such businesses will need to make an initial charge (like a security deposit) and then need to increase authorization amounts after the initial charge. When you use hyperswitch-prism the flow will work like this.
 
@@ -49,7 +45,7 @@ await client.payments.capture({
 
 See: [`incrementalAuthorization` API Reference](../../api-reference/services/payment-service/incremental-authorization.md)
 
-### Subscription / Recurring Payments
+## Subscription / Recurring Payments
 
 Let's take subscription businesses like an email subscription or an AI subscription. Such businesses would want to store a payment method of a customer against a particular subscription plan, and charge it later:
 
@@ -70,7 +66,7 @@ const charge = await client.recurringPayments.charge({
 See: [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md), [`revoke`](../../api-reference/services/recurring-payment-service/revoke.md)
 
 
-### Partial Capture
+## Partial Capture
 
 Let's take e-commerce businesses with multi-shipment orders. Such businesses may need to capture partial amounts as each shipment is fulfilled, rather than capturing the full authorized amount at once. When you use hyperswitch-prism the flow will work like this.
 
@@ -96,7 +92,7 @@ await client.payments.capture({
 
 See: [`capture`](../../api-reference/services/payment-service/capture.md)
 
-### Void (Cancel Authorization)
+## Void (Cancel Authorization)
 
 Let's take scenarios where a customer cancels an order before it ships, or inventory issues prevent fulfillment. Such businesses need to release the held funds without charging the customer. When you use hyperswitch-prism the flow will work like this.
 
@@ -111,7 +107,7 @@ await client.payments.void({
 
 See: [`void`](../../api-reference/services/payment-service/void.md)
 
-### Reverse (Refund Without Reference)
+## Reverse (Refund Without Reference)
 
 Let's take scenarios where you need to refund a payment but don't have the original payment reference stored in your system. Such businesses may only have the connector transaction ID from a webhook or external system. When you use hyperswitch-prism the flow will work like this.
 
@@ -124,7 +120,7 @@ await client.payments.reverse({
 
 See: [`reverse`](../../api-reference/services/payment-service/reverse.md)
 
-### Webhook Handling
+## Webhook Handling
 
 Let's take businesses that need to process asynchronous payment events from multiple processors. Such businesses need a unified way to handle webhooks for payment status updates, refunds, disputes and more. When you use hyperswitch-prism the flow will work like this.
 
@@ -155,7 +151,7 @@ app.post('/webhooks', async (req, res) => {
 
 See: [`handle`](../../api-reference/services/event-service/handle.md)
 
-### Dispute Handling
+## Dispute Handling
 
 Let's take scenarios where a customer disputes a charge with their bank or credit card company. Such businesses need to either accept the dispute and issue a refund, or defend it by providing evidence. When you use hyperswitch-prism the flow will work like this.
 
@@ -183,7 +179,7 @@ await client.disputes.submitEvidence({
 See: [`accept`](../../api-reference/services/dispute-service/accept.md), [`defend`](../../api-reference/services/dispute-service/defend.md), [`submitEvidence`](../../api-reference/services/dispute-service/submit-evidence.md)
 
 
-### Next Steps
+## Next Steps
 
 - Browse the full [API Reference](../../api-reference/)
 - Jump to [SDK-specific guides](../../sdks/)

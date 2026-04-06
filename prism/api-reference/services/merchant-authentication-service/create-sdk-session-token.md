@@ -1,7 +1,3 @@
----
-description: Initialize wallet payment sessions for Apple Pay, Google Pay, and SDK-based payments
----
-
 # CreateSdkSessionToken RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pay, Google Pay, and other SDK-based payment methods. It sets up the secure context needed for tokenized wallet payments with device verification.
 
 **Business Use Case:** When offering Apple Pay or Google Pay checkout options, you need to initialize a session with the payment processor that includes your merchant configuration, payment details, and supported payment methods. This RPC handles that initialization and returns the session data needed to present the native payment sheet.
 
-### Purpose
+## Purpose
 
 **Why use SDK session tokens?**
 
@@ -39,7 +35,7 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 - Supported payment methods list
 - Ready for native SDK presentation
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -53,7 +49,7 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 | `metadata` | SecretString | No | Additional metadata |
 | `connector_feature_data` | SecretString | No | Connector-specific metadata |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -63,9 +59,9 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 | `raw_connector_response` | SecretString | Raw response for debugging |
 | `raw_connector_request` | SecretString | Raw request for debugging |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -87,7 +83,7 @@ grpcurl -H "x-connector: stripe" \
   types.MerchantAuthenticationService/CreateSdkSessionToken
 ```
 
-#### Response
+### Response
 
 ```json
 {
@@ -101,7 +97,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Next Steps
+## Next Steps
 
 - [CreateAccessToken](./create-access-token.md) - Generate API access tokens
 - [CreateSessionToken](./create-session-token.md) - Create standard session tokens

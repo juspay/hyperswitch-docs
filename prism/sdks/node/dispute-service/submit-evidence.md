@@ -1,13 +1,18 @@
+# submitEvidence Method
+
+<!--
 ---
 title: submitEvidence (Node.js SDK)
-description: Upload evidence to dispute chargebacks and provide documentation to contest fraudulent transaction claims
-tags:
-  - node
-  - disputes
-  - evidence
+description: Upload evidence to dispute a chargeback using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# submitEvidence Method
+-->
 
 ## Overview
 

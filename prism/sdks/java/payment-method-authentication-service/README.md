@@ -1,13 +1,18 @@
+# Payment Method Authentication Service
+
+<!--
 ---
 title: Payment Method Authentication Service (Java SDK)
-description: Execute 3D Secure authentication flows to reduce fraud and comply with Strong Customer Authentication requirements
-tags:
-  - java
-  - 3ds
-  - authentication
+description: Execute 3D Secure authentication flows using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# Payment Method Authentication Service
+-->
 
 ## Overview
 

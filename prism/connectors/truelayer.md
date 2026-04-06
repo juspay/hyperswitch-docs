@@ -1,7 +1,3 @@
----
-description: Connect TrueLayer payments with Prism for open banking and account-to-account
----
-
 # Truelayer
 
 <!--

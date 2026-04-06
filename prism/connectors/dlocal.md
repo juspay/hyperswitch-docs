@@ -1,7 +1,3 @@
----
-description: Integrate dLocal payments through Prism for emerging market local payment methods
----
-
 # dLocal
 
 <!--

@@ -1,7 +1,3 @@
----
-description: Configure Authipay payment processing with Prism for UK and European merchant accounts
----
-
 # Authipay
 
 <!--

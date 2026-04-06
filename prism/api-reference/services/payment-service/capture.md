@@ -1,7 +1,3 @@
----
-description: Capture an authorized payment to transfer reserved funds and complete the transaction
----
-
 # Capture RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: false
 ---
 -->
 
-### Overview
+## Overview
 
 The `Capture` RPC finalizes an authorized payment by transferring the reserved funds from the customer's payment method to the merchant's account. This completes the two-step payment flow (authorize + capture), committing the transaction and triggering settlement.
 
 **Business Use Case:** When an e-commerce order ships, a hotel guest checks out, or a marketplace seller fulfills an order, you need to actually charge the customer. Capture converts the held funds into actual revenue. Without capture, authorized funds are automatically released after a hold period (typically 7-10 days), resulting in lost sales and fulfillment costs.
 
-### Purpose
+## Purpose
 
 **Why use capture instead of immediate charge?**
 
@@ -41,7 +37,7 @@ The `Capture` RPC finalizes an authorized payment by transferring the reserved f
 - Transaction moves to CAPTURED status for settlement
 - Ability to capture partial amounts for split shipments
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -57,7 +53,7 @@ The `Capture` RPC finalizes an authorized payment by transferring the reserved f
 | `test_mode` | bool | No | Process as test transaction |
 | `merchant_order_id` | string | No | Your internal order ID for reference |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -74,9 +70,9 @@ The `Capture` RPC finalizes an authorized payment by transferring the reserved f
 | `incremental_authorization_allowed` | bool | Whether amount can be increased later |
 | `connector_feature_data` | SecretString | Connector-specific metadata for the transaction |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -96,7 +92,7 @@ grpcurl -H "x-connector: stripe" \
 
 ```
 
-#### Response
+### Response
 
 ```json
 {
@@ -108,7 +104,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Next Steps
+## Next Steps
 
 - [Authorize](./authorize.md) - Authorize a new payment (if additional charges needed)
 - [Void](./void.md) - Cancel an authorization instead of capturing

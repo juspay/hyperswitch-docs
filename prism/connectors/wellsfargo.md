@@ -1,7 +1,3 @@
----
-description: Integrate Wells Fargo payments via Prism for enterprise merchant services
----
-
 # Wellsfargo
 
 <!--

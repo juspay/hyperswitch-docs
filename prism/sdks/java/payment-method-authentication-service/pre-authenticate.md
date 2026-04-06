@@ -1,13 +1,18 @@
+# preAuthenticate Method
+
+<!--
 ---
 title: preAuthenticate (Java SDK)
-description: Initiate 3D Secure authentication flows to reduce fraud liability and comply with SCA requirements
-tags:
-  - java
-  - 3ds
-  - authentication
+description: Initiate 3DS flow using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# preAuthenticate Method
+-->
 
 ## Overview
 

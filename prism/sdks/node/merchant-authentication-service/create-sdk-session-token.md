@@ -1,13 +1,18 @@
+# createSdkSessionToken Method
+
+<!--
 ---
 title: createSdkSessionToken (Node.js SDK)
-description: Initialize wallet payment sessions for Apple Pay and Google Pay to enable secure tokenized payments
-tags:
-  - node
-  - wallet
-  - session
+description: Initialize wallet payment sessions using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# createSdkSessionToken Method
+-->
 
 ## Overview
 

@@ -1,7 +1,3 @@
----
-description: Configure Global Payments through Prism for worldwide merchant acquiring
----
-
 # Globalpay
 
 <!--

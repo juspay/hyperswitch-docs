@@ -1,7 +1,3 @@
----
-description: Accept a chargeback dispute when evidence is insufficient or defense cost exceeds value
----
-
 # Accept RPC
 
 <!--

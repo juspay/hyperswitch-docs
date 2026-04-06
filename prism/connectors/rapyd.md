@@ -1,7 +1,3 @@
----
-description: Set up Rapyd payments through Prism for global fintech-as-a-service
----
-
 # Rapyd
 
 <!--

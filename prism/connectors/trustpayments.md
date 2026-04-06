@@ -1,7 +1,3 @@
----
-description: Configure Trust Payments with Prism for UK merchant acquiring
----
-
 # Trustpayments
 
 <!--

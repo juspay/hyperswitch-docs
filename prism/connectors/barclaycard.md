@@ -1,7 +1,3 @@
----
-description: Configure Barclaycard payments with Prism for UK merchant acquiring services
----
-
 # Barclaycard
 
 <!--

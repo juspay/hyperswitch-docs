@@ -1,7 +1,3 @@
----
-description: Connect Bambora payments via Prism to enable North American card processing and tokenization
----
-
 # Bambora
 
 <!--

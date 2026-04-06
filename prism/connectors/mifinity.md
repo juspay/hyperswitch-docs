@@ -1,7 +1,3 @@
----
-description: Integrate MiFinity payments with Prism for digital wallet and e-money transfers
----
-
 # MiFinity
 
 <!--

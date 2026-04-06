@@ -1,13 +1,18 @@
+# post_authenticate Method
+
+<!--
 ---
 title: post_authenticate (Python SDK)
-description: Validate 3DS authentication results with the issuing bank to confirm successful verification
-tags:
-  - python
-  - 3ds
-  - authentication
+description: Validate authentication results using the Python SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: python
 ---
-
-# post_authenticate Method
+-->
 
 ## Overview
 

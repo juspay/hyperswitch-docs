@@ -1,7 +1,3 @@
----
-description: Integrate Airwallex global payments with Prism for multi-currency transactions and cross-border commerce
----
-
 # Airwallex
 
 <!--

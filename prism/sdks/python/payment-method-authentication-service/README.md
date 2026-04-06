@@ -1,13 +1,18 @@
+# Payment Method Authentication Service
+
+<!--
 ---
 title: Payment Method Authentication Service (Python SDK)
-description: Execute 3D Secure authentication flows to reduce fraud and comply with Strong Customer Authentication requirements
-tags:
-  - python
-  - 3ds
-  - authentication
+description: Execute 3D Secure authentication flows using the Python SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: python
 ---
-
-# Payment Method Authentication Service
+-->
 
 ## Overview
 

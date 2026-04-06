@@ -1,7 +1,3 @@
----
-description: Integrate HyperPG payments through Prism for Indian market payment gateway
----
-
 # Hyperpg
 
 <!--

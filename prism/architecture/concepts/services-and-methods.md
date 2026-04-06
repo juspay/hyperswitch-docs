@@ -1,10 +1,6 @@
----
-description: Explore how Hyperswitch Prism organizes payment operations into logical services and actionable methods
----
-
 # Services and Methods
 
-Hyperswitch Prism organizes payment operations into services that reflect how payments actually work in the real world. Some operations are independent. Others are follow-on actions that only make sense after a payment exists.
+Prism organizes payment operations into services that reflect how payments actually work in the real world. Some operations are independent. Others are follow-on actions that only make sense after a payment exists.
 
 ## What is a Service?
 

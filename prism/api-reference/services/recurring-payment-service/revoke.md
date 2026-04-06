@@ -1,7 +1,3 @@
----
-description: Cancel a recurring payment mandate to stop future automatic subscription charges
----
-
 # Revoke RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The `Revoke` RPC cancels an existing recurring payment mandate, stopping all future automatic charges associated with that mandate. Use this when customers cancel their subscriptions, end their service agreements, or request to stop recurring billing.
 
 **Business Use Case:** When a customer decides to cancel their subscription or service, you need to stop all future recurring charges. The Revoke RPC cancels the mandate at the payment processor, ensuring no further charges can be made using that stored consent. This is a critical compliance requirement for subscription businesses.
 
-### Purpose
+## Purpose
 
 **Why use Revoke?**
 
@@ -41,7 +37,7 @@ The `Revoke` RPC cancels an existing recurring payment mandate, stopping all fut
 - Compliance with card network requirements for subscription cancellations
 - Clear audit trail of when consent was revoked
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -49,7 +45,7 @@ The `Revoke` RPC cancels an existing recurring payment mandate, stopping all fut
 | `mandate_id` | string | Yes | The mandate ID to revoke (your internal reference) |
 | `connector_mandate_id` | string | No | The connector's mandate ID (if different from mandate_id) |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -62,9 +58,9 @@ The `Revoke` RPC cancels an existing recurring payment mandate, stopping all fut
 | `raw_connector_response` | SecretString | Raw API response from connector (debugging) |
 | `raw_connector_request` | SecretString | Raw API request sent to connector (debugging) |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -78,7 +74,7 @@ grpcurl -H "x-connector: stripe" \
   types.RecurringPaymentService/Revoke
 ```
 
-#### Response (Success)
+### Response (Success)
 
 ```json
 {
@@ -89,7 +85,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-#### Response (Mandate Not Found)
+### Response (Mandate Not Found)
 
 ```json
 {
@@ -103,7 +99,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Status Values
+## Status Values
 
 | Status | Description |
 |--------|-------------|
@@ -111,7 +107,7 @@ grpcurl -H "x-connector: stripe" \
 | `PENDING` | Revocation is being processed (rare, most are immediate) |
 | `FAILED` | Revocation could not be completed |
 
-### Compliance Considerations
+## Compliance Considerations
 
 **When to Revoke:**
 
@@ -131,14 +127,14 @@ grpcurl -H "x-connector: stripe" \
 4. **Audit logging** - Log all revocation events for compliance audits
 5. **Grace periods** - Consider allowing customers to "undo" cancellation within a short window
 
-### Important Notes
+## Important Notes
 
 - **Revoke is immediate** - Once revoked, the mandate cannot be reactivated; customer must go through SetupRecurring again
 - **Existing charges unaffected** - Revocation stops future charges only; past charges remain valid
 - **Partial refunds** - Consider refunding unused subscription time after revocation
 - **Data retention** - Keep records of revoked mandates for compliance and auditing purposes
 
-### Next Steps
+## Next Steps
 
 - [Charge](./charge.md) - Process recurring payments before revoking
 - [SetupRecurring](../payment-service/setup-recurring.md) - Create new mandates if customer resubscribes

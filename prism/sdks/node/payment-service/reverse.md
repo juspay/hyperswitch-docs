@@ -1,13 +1,18 @@
+# reverse Method
+
+<!--
 ---
 title: reverse (Node.js SDK)
-description: Reverse captured payments before settlement to recover funds from same-day cancellations or processing errors
-tags:
-  - node
-  - payments
-  - reverse
+description: Reverse a captured payment before settlement using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# reverse Method
+-->
 
 ## Overview
 

@@ -1,7 +1,3 @@
----
-description: Generate short-lived access tokens for secure client-side API access
----
-
 # CreateAccessToken RPC
 
 <!--
@@ -17,13 +13,13 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 The `CreateAccessToken` RPC generates a short-lived authentication token for connector API access. These tokens expire quickly (typically 1 hour) and can be safely used in client applications without exposing your main API credentials.
 
 **Business Use Case:** When building client-side payment flows (browser checkout, mobile apps), you need to give clients limited access to the payment processor without exposing your full API keys. This RPC generates temporary tokens that clients can use for operations like card tokenization.
 
-### Purpose
+## Purpose
 
 **Why use short-lived access tokens?**
 
@@ -39,7 +35,7 @@ The `CreateAccessToken` RPC generates a short-lived authentication token for con
 - Safe for client-side use
 - Automatic expiration
 
-### Request Fields
+## Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -49,7 +45,7 @@ The `CreateAccessToken` RPC generates a short-lived authentication token for con
 | `connector_feature_data` | SecretString | No | Connector-specific metadata |
 | `test_mode` | bool | No | Generate test/sandbox token |
 
-### Response Fields
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -61,9 +57,9 @@ The `CreateAccessToken` RPC generates a short-lived authentication token for con
 | `status_code` | uint32 | HTTP-style status code |
 | `merchant_access_token_id` | string | Your token reference (echoed back) |
 
-### Example
+## Example
 
-#### Request (grpcurl)
+### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -77,7 +73,7 @@ grpcurl -H "x-connector: stripe" \
   types.MerchantAuthenticationService/CreateAccessToken
 ```
 
-#### Response
+### Response
 
 ```json
 {
@@ -89,7 +85,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Next Steps
+## Next Steps
 
 - [CreateSessionToken](./create-session-token.md) - Create session tokens for payment flows
 - [CreateSdkSessionToken](./create-sdk-session-token.md) - Initialize wallet payment sessions

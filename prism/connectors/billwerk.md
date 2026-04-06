@@ -1,7 +1,3 @@
----
-description: Set up Billwerk subscription billing via Prism for European recurring payment management
----
-
 # Billwerk
 
 <!--

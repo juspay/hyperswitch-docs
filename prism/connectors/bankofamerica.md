@@ -1,7 +1,3 @@
----
-description: Deploy Bank of America payment processing through Prism for enterprise merchant solutions
----
-
 # Bankofamerica
 
 <!--

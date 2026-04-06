@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Structure
-description: Understand test scenarios, suites, and assertions to define payment connector validation logic in JSON format
+description: Scenarios, suites, assertions, and test data format
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/src/global_suites/
 auto_generated: false

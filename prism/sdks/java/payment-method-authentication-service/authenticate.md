@@ -1,13 +1,18 @@
+# authenticate Method
+
+<!--
 ---
 title: authenticate (Java SDK)
-description: Execute 3DS challenge or frictionless verification to complete customer authentication with their bank
-tags:
-  - java
-  - 3ds
-  - authentication
+description: Execute 3DS authentication using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# authenticate Method
+-->
 
 ## Overview
 

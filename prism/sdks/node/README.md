@@ -1,13 +1,13 @@
+# Node.js SDK
+
+<!--
 ---
 title: Node.js SDK
-description: Node.js SDK for the Hyperswitch Prism payment orchestration platform with unified payment processor integration
-tags:
-  - node
-  - sdk
-  - prism
+description: Node.js SDK for the Hyperswitch Prism payment orchestration platform
+last_updated: 2026-03-21
+sdk_language: node
 ---
-
-# Node.js SDK
+-->
 
 ## 🎯 What is Prism?
 

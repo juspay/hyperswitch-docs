@@ -1,17 +1,22 @@
+# Payment Service
+
+<!--
 ---
 title: Payment Service (Java SDK)
-description: Manage complete payment lifecycles including authorization, capture, refunds, and voids for digital businesses
-tags:
-  - java
-  - payments
-  - lifecycle
+description: Complete payment lifecycle management using the Java SDK - authorize, capture, refund, and void payments
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# Payment Service
+-->
 
 ## Overview
 
-The Payment Service provides comprehensive payment lifecycle management for digital businesses using the Java SDK. It enables you to process payments across 300+ connectors through a unified SDK.
+The Payment Service provides comprehensive payment lifecycle management for digital businesses using the Java SDK. It enables you to process payments across 100+ connectors through a unified SDK.
 
 **Business Use Cases:**
 - **E-commerce checkout** - Authorize funds at purchase, capture when items ship

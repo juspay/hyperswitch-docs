@@ -1,7 +1,3 @@
----
-description: Deploy CashToCode voucher payments via Prism for alternative cash-based transactions
----
-
 # CashtoCode
 
 <!--

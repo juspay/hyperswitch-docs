@@ -1,7 +1,3 @@
----
-description: Connect Celero payments with Prism for Canadian merchant processing solutions
----
-
 # Celero
 
 <!--

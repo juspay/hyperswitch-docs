@@ -1,7 +1,3 @@
----
-description: Configure Fiuu payments via Prism for Southeast Asian local payment methods
----
-
 # Fiuu
 
 <!--

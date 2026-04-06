@@ -1,7 +1,3 @@
----
-description: Connect HiPay payments via Prism for European omnichannel payment solutions
----
-
 # Hipay
 
 <!--

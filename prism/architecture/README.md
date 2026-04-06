@@ -1,8 +1,4 @@
----
-description: Understand Hyperswitch Prism's layered architecture to build scalable payment integrations across multiple processors
----
-
-# Architecture Overview
+## Architecture Overview
 
 If you've integrated multiple payment providers, you know the pain:
 - Stripe uses PaymentIntents
@@ -11,7 +7,7 @@ If you've integrated multiple payment providers, you know the pain:
 
 All of them do the same job, but each has different field names, different status enums, different error formats.
 
-This problem exists in other domains too, but is solved with well-maintained developer-centric libraries that are open source and free from vendor lock-in.
+This problem exists in other domains too, but solved with well maintained developer centric libraries, open source and free from vendor lock-in.
 
 | Domain | Unified Interface | What It Solves |
 |--------|-------------------|----------------|
@@ -21,11 +17,11 @@ This problem exists in other domains too, but is solved with well-maintained dev
 
 **But for payments, no such equivalent exists for developers.**
 
-Hyperswitch Prism is the unified abstraction layer for payment processors—giving you one API, one set of types, and one mental model for 300+ payment connectors.
+Prism is the unified abstraction layer for payment processors—giving you one API, one set of types, and one mental model for 100+ payment connectors.
 
 ## Architecture Components
 
-Hyperswitch Prism supports a three-layered architecture, each solving a purpose. The architecture prioritizes:
+The Prism supports a three layered architecture, each solving a purpose. The architecture prioritizes:
 
 1. **Consistency**: Same types, patterns, and errors across all connectors
 2. **Extensibility**: Add connectors without SDK changes
@@ -54,7 +50,7 @@ Hyperswitch Prism supports a three-layered architecture, each solving a purpose.
 │                                                                            │
 │  ┌────────────────────────────────────┐    ┌────────────────────────────┐  │
 │  │           gRPC Server              │    │    Connector Adapters      │  │
-│  │                                    │    │    (300+ connectors)       │  │
+│  │                                    │    │    (100+ connectors)       │  │
 │  │  ┌─────────┐ ┌─────────┐           │    │                            │  │
 │  │  │ Payment │ │ Refund  │           │───▶│  ┌─────────┐  ┌─────────┐  │  │
 │  │  │ Service │ │ Service │           │    │  │ Stripe  │  │  Adyen  │  │  │
@@ -69,14 +65,14 @@ Hyperswitch Prism supports a three-layered architecture, each solving a purpose.
 │  │  • Request routing                 │    └──────────────┼─────────────┘  │
 │  │  • Error normalization             │                   │                │
 │  └────────────────────────────────────┘                   ▼                │
-│                                               ┌─────────┐ ┌─────────┐     │
-│                                               │ Stripe  │ │  Adyen  │     │
-│                                               │   API   │ │   API   │     │
-│                                               └─────────┘ └─────────┘     │
-│                                               ┌─────────┐ ┌─────────┐     │
-│                                               │ Stripe  │ │    +    │     │
-│                                               │   API   │ │   more  │     │
-│                                               └─────────┘ └─────────┘     │
+│                                                ┌─────────┐ ┌─────────┐     │
+│                                                │ Stripe  │ │  Adyen  │     │
+│                                                │   API   │ │   API   │     │
+│                                                └─────────┘ └─────────┘     │
+│                                                ┌─────────┐ ┌─────────┐     │
+│                                                │ Stripe  │ │    +    │     │
+│                                                │   API   │ │   more  │     │
+│                                                └─────────┘ └─────────┘     │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -86,7 +82,7 @@ Hyperswitch Prism supports a three-layered architecture, each solving a purpose.
 |-----------|-------------------|--------------|
 | **Interface Layer** | Developers can think in their language's patterns while using the unified payments grammar. You use `client.payments.authorize()` with idiomatic types in your codebase | Node.js, Python, Java, .NET, Go, Haskell |
 | **Binding Layer** | Each language needs native-performance gRPC with seamless transport without language bridges; handles serialization | tonic, grpcio, grpc-dotnet, go-grpc |
-| **Core Layer** | Single source of truth for payment logic with freedom to use Hyperswitch Prism as a separate microservice. One implementation serves all languages; also include connector adapters maintaining the request response mapping to 300+ processors from the Proto | Rust, tonic, protocol buffers |
+| **Core Layer** | Single source of truth for payment logic with freedom to use Prism as a separate microservice. One implementation serves all languages; also include connector adapters maintaining the request response mapping to 100+ processors from the Proto | Rust, tonic, protocol buffers |
 
 ### Data Flow
 
@@ -117,7 +113,7 @@ sequenceDiagram
 
 ### Connector Transformation
 
-The core value of Hyperswitch Prism is transformation from a single unified interface into multiple processor patterns. For easier understanding, a simple example of how a Stripe Authorize Request and an Adyen Authorize Request is mapped against the Unified interface.
+The core value of the Prism is transformation from a single unified interface into multiple processor patterns. For easier understanding, a simple example of how a Stripe Authorize Request and an Adyen Authorize Request is mapped against the Unified interface.
 
 **Authorization Mapping:**
 
@@ -132,7 +128,7 @@ This transformation happens server-side, so SDKs remain unchanged when adding ne
 
 ### Connector Adapter Pattern
 
-Adding new connectors into Hyperswitch Prism should also be easy and declarative. It is simplified with a standard interface for the ConnectorAdapter trait.
+Adding new connectors into PRism should also be easy and declarative. It is simplified with a standard interface for the ConnectorAdapter trait.
 
 ```rust
 trait ConnectorAdapter {

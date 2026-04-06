@@ -1,13 +1,18 @@
+# accept Method
+
+<!--
 ---
 title: accept (PHP SDK)
-description: Concede chargeback disputes to accept liability when evidence is insufficient or defense costs exceed dispute amount
-tags:
-  - php
-  - disputes
-  - chargebacks
+description: Concede a chargeback dispute using the PHP SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: php
 ---
-
-# accept Method
+-->
 
 ## Overview
 

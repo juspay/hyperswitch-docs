@@ -1,7 +1,3 @@
----
-description: Set up Noon payments through Prism for Middle East digital commerce
----
-
 # Noon
 
 <!--

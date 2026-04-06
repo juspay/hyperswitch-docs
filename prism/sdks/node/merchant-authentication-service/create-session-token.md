@@ -1,13 +1,18 @@
+# createSessionToken Method
+
+<!--
 ---
 title: createSessionToken (Node.js SDK)
-description: Create session tokens for payment processing to maintain state across multi-step payment flows
-tags:
-  - node
-  - session
-  - tokens
+description: Create session token for payment processing using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
 ---
-
-# createSessionToken Method
+-->
 
 ## Overview
 

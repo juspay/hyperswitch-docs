@@ -1,7 +1,3 @@
----
-description: Authorize your first payment, handle errors, capture funds, and process refunds with Prism
----
-
 # First Payment
 
 In the next few steps you will authorize the payment, handle errors, capture funds, and process refunds. And then you will be ready to send payment to any payment processor, without writing specialized code for each.
@@ -10,7 +6,7 @@ You will have a `payment_method_id` if you depend on your processor for PCI comp
 
 Alternatively if your Payment processor API keys are enabled to accept PCI compliant raw card data, that will suffice to make the first payment. Jump to [Authorize with Raw Card Details](#authorize-with-raw-card-details-pci-compliant).
 
-### Authorize with Payment Method ID
+## Authorize with Payment Method ID
 
 Use the `payment_method_id` from [Quick Start](./quick-start.md) to authorize the payment:
 
@@ -184,7 +180,7 @@ function authorizePayment($paymentMethodId) use ($client) {
 
 {% endtabs %}
 
-### Authorize with Raw Card Details (PCI Compliant)
+## Authorize with Raw Card Details (PCI Compliant)
 
 If you're PCI compliant and collect card details directly:
 
@@ -268,7 +264,7 @@ $auth = $client->payments()->authorize([
 
 {% endtabs %}
 
-### Complete Payment Flow
+## Complete Payment Flow
 
 After authorization, capture funds and handle refunds:
 
@@ -386,9 +382,9 @@ echo "Refund ID: " . $refund->getRefundId() . "\n";
 
 {% endtabs %}
 
-### Error Scenarios
+## Error Scenarios
 
-#### Declined Card
+### Declined Card
 
 ```javascript
 // Using test card: 4000000000000002 (declined)
@@ -398,7 +394,7 @@ const auth = await client.payments.authorize({
 // Throws: PaymentDeclinedError with code 'PAYMENT_DECLINED'
 ```
 
-#### Network Timeout
+### Network Timeout
 
 ```javascript
 try {
@@ -411,9 +407,9 @@ try {
 }
 ```
 
-### Business Use Cases
+## Business Use Cases
 
-#### E-commerce: Two-Step Flow
+### E-commerce: Two-Step Flow
 
 Authorize at checkout. Capture when you ship.
 
@@ -431,7 +427,7 @@ await client.payments.capture({
 });
 ```
 
-#### SaaS: Immediate Capture
+### SaaS: Immediate Capture
 
 For digital goods, capture immediately.
 
@@ -443,7 +439,7 @@ const payment = await client.payments.authorize({
 // Status: CAPTURED
 ```
 
-#### Marketplace: Partial Refund
+### Marketplace: Partial Refund
 
 Customer returns one item from a multi-item order.
 
@@ -455,7 +451,7 @@ await client.payments.refund({
 });
 ```
 
-### Key Takeaways
+## Key Takeaways
 
 - **One error handler** works for all connectors
 - **Unified error codes** tell you exactly what happened

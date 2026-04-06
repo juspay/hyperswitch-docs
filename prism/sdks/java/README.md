@@ -1,13 +1,13 @@
+# Java SDK
+
+<!--
 ---
 title: Java SDK
-description: Java SDK for the Hyperswitch Prism payment orchestration platform with unified payment processor integration
-tags:
-  - java
-  - sdk
-  - prism
+description: Java SDK for the Hyperswitch Prism payment orchestration platform
+last_updated: 2026-03-21
+sdk_language: java
 ---
-
-# Java SDK
+-->
 
 ## 🎯 What is Prism?
 

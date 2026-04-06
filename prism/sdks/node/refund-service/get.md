@@ -1,13 +1,18 @@
----
-title: Get Refund (Node.js SDK)
-description: Retrieve refund status from payment processors to track refund progress and provide accurate customer communication
-tags:
-  - node
-  - refunds
-  - get-refund
----
-
 # Get Method
+
+<!--
+---
+title: Get Refund
+description: Retrieve refund status from the payment processor - track refund progress through processor settlement for accurate customer communication
+last_updated: 2026-03-11
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
+---
+-->
 
 ## Overview
 

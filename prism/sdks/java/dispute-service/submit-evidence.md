@@ -1,13 +1,18 @@
+# submitEvidence Method
+
+<!--
 ---
 title: submitEvidence (Java SDK)
-description: Upload evidence to dispute chargebacks and provide documentation to contest fraudulent transaction claims
-tags:
-  - java
-  - disputes
-  - evidence
+description: Upload dispute evidence using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# submitEvidence Method
+-->
 
 ## Overview
 

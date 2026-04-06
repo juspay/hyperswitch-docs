@@ -1,13 +1,18 @@
+# createSdkSessionToken Method
+
+<!--
 ---
 title: createSdkSessionToken (Java SDK)
-description: Initialize wallet payment sessions for Apple Pay and Google Pay to enable secure tokenized payments
-tags:
-  - java
-  - wallet
-  - session
+description: Initialize wallet sessions using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# createSdkSessionToken Method
+-->
 
 ## Overview
 

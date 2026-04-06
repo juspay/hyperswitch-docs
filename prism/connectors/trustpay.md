@@ -1,7 +1,3 @@
----
-description: Integrate Trustpay payments via Prism for Central European bank transfers
----
-
 # TrustPay
 
 <!--

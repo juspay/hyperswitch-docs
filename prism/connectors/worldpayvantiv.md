@@ -1,7 +1,3 @@
----
-description: Set up Worldpay Vantiv payments through Prism for US merchant processing
----
-
 # Worldpayvantiv
 
 <!--

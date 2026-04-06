@@ -1,7 +1,3 @@
----
-description: Integrate Gigadat payments via Prism for Canadian alternative payment solutions
----
-
 # Gigadat
 
 <!--

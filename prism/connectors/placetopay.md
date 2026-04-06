@@ -1,7 +1,3 @@
----
-description: Integrate Placetopay payments via Prism for Latin American e-commerce
----
-
 # PlacetoPay
 
 <!--

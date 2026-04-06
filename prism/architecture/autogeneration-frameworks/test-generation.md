@@ -1,14 +1,10 @@
----
-description: Generate regression tests automatically to verify connector functionality across sandbox environments
----
-
 # Test Generation
 
-You get regression tests for every connector without writing them by hand. Hyperswitch Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.
+You get regression tests for every connector without writing them by hand. Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.
 
 ## Why Generate Tests
 
-Manual test maintenance doesn't scale. With 300+ connectors, each supporting 10-20 operations, you'd need thousands of test cases. When Stripe changes their API response format or Adyen deprecates a field, manually updating every affected test takes weeks.
+Manual test maintenance doesn't scale. With 50+ connectors, each supporting 10-20 operations, you'd need thousands of test cases. When Stripe changes their API response format or Adyen deprecates a field, manually updating every affected test takes weeks.
 
 Generated tests solve this by deriving test cases from the source of truth: the protobuf definitions and a connector-specific test specification.
 

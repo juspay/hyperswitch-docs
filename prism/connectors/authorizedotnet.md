@@ -1,7 +1,3 @@
----
-description: Set up Authorize.net payments through Prism for secure card processing and recurring billing
----
-
 # Authorize.net
 
 <!--

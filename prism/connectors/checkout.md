@@ -1,7 +1,3 @@
----
-description: Integrate Checkout.com payments via Prism for global acquiring and local payment methods
----
-
 # Checkout.com
 
 <!--

@@ -1,13 +1,18 @@
----
-title: Recurring Payment Service (Node.js SDK)
-description: Process subscription billing and manage recurring payment mandates for automated billing cycles
-tags:
-  - node
-  - recurring
-  - subscriptions
----
-
 # Recurring Payment Service
+
+<!--
+---
+title: Recurring Payment Service (Node SDK)
+description: Process subscription billing and manage recurring payment mandates using the Node.js SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: node
+---
+-->
 
 ## Overview
 

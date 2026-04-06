@@ -1,13 +1,18 @@
+# refund Method
+
+<!--
 ---
 title: refund (Java SDK)
-description: Issue refunds to customer payment methods for returns, cancellations, or service adjustments
-tags:
-  - java
-  - payments
-  - refunds
+description: Issue a refund using the Java SDK
+last_updated: 2026-03-21
+generated_from: backend/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+sdk_language: java
 ---
-
-# refund Method
+-->
 
 ## Overview
 

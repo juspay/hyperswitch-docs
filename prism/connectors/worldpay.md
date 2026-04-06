@@ -1,7 +1,3 @@
----
-description: Configure Worldpay payments with Prism for global acquiring and processing
----
-
 # Worldpay
 
 <!--

@@ -1,7 +1,3 @@
----
-description: Submit a formal defense with reason code against a customer chargeback claim
----
-
 # Defend RPC
 
 <!--

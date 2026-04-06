@@ -1,7 +1,3 @@
----
-description: Set up Revolut payments through Prism for neobank merchant services
----
-
 # Revolut
 
 <!--

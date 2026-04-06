@@ -1,7 +1,3 @@
----
-description: Navigate the complete Hyperswitch Prism documentation including getting started guides, API references, connector integrations, and SDK documentation
----
-
 # Summary
 
 ## Getting Started

@@ -1,7 +1,3 @@
----
-description: Reference all domain types, enums, and data structures used across Prism API services
----
-
 # Domain Schema
 
 <!--
@@ -17,11 +13,11 @@ approved: true
 ---
 -->
 
-### Overview
+## Overview
 
 Domain types are the foundational data structures and enumerations defined in the Protocol Buffer (protobuf) files that form the core data model of the Universal Connector Service (Connector Service) API. These types represent the building blocks used across all services to model payments, refunds, disputes, payment methods, and related entities.
 
-#### Relationship to Services
+### Relationship to Services
 
 The domain schema are used by the gRPC services defined in [services.proto](../services/) as:
 
@@ -29,18 +25,18 @@ The domain schema are used by the gRPC services defined in [services.proto](../s
 - **Enums**: Status codes, payment methods, and categorical values ensure type safety (e.g., `PaymentStatus`, `Currency`)
 - **Nested Types**: Complex types like `Money`, `Address`, and `Customer` are reused across multiple service operations
 
-#### What's Included
+### What's Included
 
 This Domain Schema includes:
 - **Core data structures**: `Money`, `Customer`, `Address`, `PaymentMethod` - reusable types that appear as fields across multiple services
 - **Enumerations**: `PaymentStatus`, `Currency`, `Connector`, `CardNetwork` - categorical values for type safety
 - **Connector responses**: `ConnectorResponseData`, `CardConnectorResponse` - additional data returned by connectors
 
-#### What's Not Included
+### What's Not Included
 
 Service request and response types (e.g., `PaymentServiceAuthorizeRequest`, `RefundResponse`) are documented in the [API Reference](../services/) section for each service. These types are specific to individual RPC operations and are covered alongside their corresponding operation documentation.
 
-#### Key Design Principles
+### Key Design Principles
 
 The design principles translate directly to reliable, extensible and compliant integrations for developers.
 
@@ -52,9 +48,9 @@ The design principles translate directly to reliable, extensible and compliant i
 
 ---
 
-### Index of Domain Types
+## Index of Domain Types
 
-#### Core Data Types
+### Core Data Types
 
 Basic building blocks used across all Connector Service services. These fundamental types handle monetary amounts, error information, customer data, identifiers, and metadata that form the foundation of payment processing.
 
@@ -66,7 +62,7 @@ Basic building blocks used across all Connector Service services. These fundamen
 | `Metadata` | Key-value metadata for connectors. Stores additional context about transactions. | `{"order_id": "ORD-123", "source": "mobile_app", "campaign": "spring_sale"}` | `SecretString` |
 | `SecretString` | Sensitive data masked in logs and traces for PCI compliance. | `"***MASKED***"` | `Metadata`, `CardDetails` |
 
-#### Address and Contact Types
+### Address and Contact Types
 
 Location and contact information for billing, shipping, and customer records. These types standardize address formats across different regions and payment connectors.
 
@@ -76,7 +72,7 @@ Location and contact information for billing, shipping, and customer records. Th
 | `PaymentAddress` | Container for billing and shipping addresses in a single payment context. | `{"billing": {"line1": "123 Main St", ...}, "shipping": {"line1": "456 Oak Ave", ...}}` | `Address`, `ShippingDetails` |
 | `CustomerInfo` | Simplified customer information for specific payment scenarios. | `{"name": "John Smith", "email": "john@example.com"}` | `PaymentMethod`, `Upi` |
 
-#### Payment Method Types
+### Payment Method Types
 
 Payment instruments supported by Connector Service including cards, wallets, bank transfers, and local payment methods. The `PaymentMethod` type is polymorphic, supporting various payment instruments through a `oneof` field.
 
@@ -93,7 +89,7 @@ Payment instruments supported by Connector Service including cards, wallets, ban
 | `Upi` | UPI (Unified Payments Interface) payment for India using VPA. | `{"vpa": "john@upi", "customer_info": {"name": "John", "email": "john@example.com"}}` | `PaymentMethod`, `CustomerInfo` |
 | `Wallet` | Generic wallet container for wallet-type payments (PayPal, Venmo, etc.). | `{"wallet_type": "PAYPAL", "wallet_details": {...}}` | `PaymentMethod`, `Paypal` |
 
-#### Card Network Enums
+### Card Network Enums
 
 Card networks supported for card payments. This enum identifies the card scheme when processing card transactions and handling network-specific logic.
 
@@ -101,7 +97,7 @@ Card networks supported for card payments. This enum identifies the card scheme 
 |-------------|--------|-------------|
 | `CardNetwork` | `VISA`, `MASTERCARD`, `AMEX`, `DISCOVER`, `JCB`, `DINERS`, `UNIONPAY`, `MAESTRO`, `CARTES_BANCAIRES`, `RUPAY`, `INTERAC_CARD` | Card networks supported for card payments. Used to identify the card scheme and apply network-specific logic. |
 
-#### Authentication Types
+### Authentication Types
 
 3D Secure and Strong Customer Authentication data structures. These types support frictionless authentication, challenge flows, and SCA exemption handling for regulatory compliance.
 
@@ -111,7 +107,7 @@ Card networks supported for card payments. This enum identifies the card scheme 
 | `BrowserInformation` | Browser details required for 3DS authentication and SCA compliance. | `{"accept_header": "text/html", "user_agent": "Mozilla/5.0", "ip_address": "192.168.1.1", "language": "en-US"}` | `ThreeDsCompletionIndicator`, `ExemptionIndicator` |
 | `CustomerAcceptance` | Mandate acceptance details for recurring payment authorization. | `{"acceptance_type": "ONLINE", "accepted_at": "2024-01-15T10:30:00Z", "online": {"ip_address": "192.168.1.1", "user_agent": "Mozilla/5.0"}}` | `MandateReference`, `SetupMandateDetails` |
 
-#### Authentication Enums
+### Authentication Enums
 
 Enumerations for authentication flows and 3DS status tracking. These define the authentication methods, transaction outcomes, and exemption categories for SCA compliance.
 
@@ -123,7 +119,7 @@ Enumerations for authentication flows and 3DS status tracking. These define the 
 | `CavvAlgorithm` | `CAVV_ALGORITHM_ZERO` through `CAVV_ALGORITHM_A` | Algorithm used to generate CAVV cryptogram. Indicates authentication method strength. |
 | `ThreeDsCompletionIndicator` | `SUCCESS`, `FAILURE`, `NOT_AVAILABLE` | Whether 3DS challenge was completed. Used in subsequent authorization requests. |
 
-#### Mandate Types
+### Mandate Types
 
 Recurring payment mandate data structures. These types manage stored payment credentials for subscription billing, allowing merchants to charge customers on a recurring basis with prior consent.
 
@@ -133,7 +129,7 @@ Recurring payment mandate data structures. These types manage stored payment cre
 | `SetupMandateDetails` | Mandate setup details including type (single/multi-use) and amount constraints. | `{"mandate_type": {"multi_use": {"amount": 5000, "currency": "USD"}}, "customer_acceptance": {...}}` | `CustomerAcceptance`, `MandateType` |
 | `MandateAmountData` | Mandate amount constraints with currency, frequency, and validity period. | `{"amount": 1000, "currency": "USD", "start_date": "2024-01-01", "end_date": "2025-01-01", "frequency": "MONTHLY"}` | `SetupMandateDetails`, `Money` |
 
-#### Mandate Enums
+### Mandate Enums
 
 Status and type enumerations for recurring payment mandates. These track mandate lifecycle states and define whether a mandate can be used once or multiple times.
 
@@ -142,7 +138,7 @@ Status and type enumerations for recurring payment mandates. These track mandate
 | `MandateType` | `single_use`, `multi_use` | Whether mandate can be used once (`single_use`) or multiple times (`multi_use`) for recurring charges. |
 | `MandateStatus` | `PENDING`, `ACTIVE`, `INACTIVE`, `REVOKED` | Lifecycle state of mandate. `ACTIVE` means ready for recurring charges, `REVOKED` means cancelled by customer. |
 
-#### Payment Status Enums
+### Payment Status Enums
 
 State machines for payment lifecycle tracking. These enums represent the complete payment journey from initiation through completion, failure, or refund.
 
@@ -154,7 +150,7 @@ State machines for payment lifecycle tracking. These enums represent the complet
 | `RefundStatus` | `PENDING`, `SUCCESS`, `FAILURE`, `MANUAL_REVIEW` | State of refund processing. `MANUAL_REVIEW` requires merchant intervention for compliance or risk reasons. |
 | `DisputeStatus` | `OPENED`, `EXPIRED`, `ACCEPTED`, `CHALLENGED`, `WON`, `LOST` | Chargeback lifecycle. `CHALLENGED` = merchant submitted evidence, `WON`/`LOST` = final resolution. |
 
-#### Payment Configuration Types
+### Payment Configuration Types
 
 Configuration enums for payment processing. These define how payments should be captured, when payment methods can be reused, and the customer experience preferences.
 
@@ -167,7 +163,7 @@ Configuration enums for payment processing. These define how payments should be 
 | `MitCategory` | `INSTALLMENT_MIT`, `UNSCHEDULED_MIT`, `RECURRING_MIT` | Merchant-initiated transaction type for exemption requests. Required for off-session recurring charges. |
 | `Tokenization` | `TOKENIZE_AT_PSP`, `TOKENIZE_SKIP_PSP` | Whether to tokenize card at payment service provider. `SKIP` when using existing network tokens. |
 
-#### Currency and Connector Enums
+### Currency and Connector Enums
 
 Currency codes and supported payment processor connectors. These enums standardize currency representation across 170+ currencies and identify which connector is handling a transaction.
 
@@ -177,7 +173,7 @@ Currency codes and supported payment processor connectors. These enums standardi
 | `Connector` | `ADYEN`, `STRIPE`, `PAYPAL`, `BRAINTREE`, `CHECKOUT` | Payment processor handling the transaction. Determines API endpoint and authentication method. |
 | `CountryAlpha2` | `US`, `GB`, `DE`, `IN`, `JP` (ISO 3166-1) | Two-letter country codes for billing/shipping addresses. Required for fraud detection and regulatory compliance. |
 
-#### Order and Billing Types
+### Order and Billing Types
 
 Order details and billing descriptor configurations. These types support itemized order information and statement descriptors that appear on customer card statements.
 
@@ -187,7 +183,7 @@ Order details and billing descriptor configurations. These types support itemize
 | `BillingDescriptor` | Statement descriptor shown on customer's card statement. Helps reduce chargebacks. | `{"name": "ACME INC*", "city": "SAN FRANCISCO", "state": "CA", "phone": "1-800-555-0123"}` | `Address` |
 | `ShippingDetails` | Shipping address, carrier, and tracking information for physical goods. | `{"address": {"line1": "123 Main St", ...}, "carrier": "FedEx", "tracking_number": "1234567890", "method": "EXPRESS"}` | `PaymentAddress`, `OrderDetailsWithAmount` |
 
-#### State and Access Types
+### State and Access Types
 
 Token and state management types. These handle authentication tokens for API access and connector-specific state for multi-step payment flows.
 
@@ -196,7 +192,7 @@ Token and state management types. These handle authentication tokens for API acc
 | `ConnectorState` | Connector state for multi-step flows. Pass between API calls to maintain context. | `{"access_token": "tok_123", "connector_customer_id": "cus_456", "connector_metadata": {...}, "redirect_response": {...}}` | `AccessToken`, `Connector` |
 | `AccessToken` | API access token with expiration for connector authentication. | `{"token": "tok_123456", "expires_at": 1704067200, "token_type": "BEARER", "scope": "payments"}` | `ConnectorState` |
 
-#### Redirection Types
+### Redirection Types
 
 Handling redirect flows for 3DS and bank authentication. These types manage the various redirection mechanisms required for authentication flows, including HTML forms, deep links, and SDK redirects.
 
@@ -206,7 +202,7 @@ Handling redirect flows for 3DS and bank authentication. These types manage the 
 | `FormData` | HTML form details for POST-based redirection in 3DS flows. | `{"form_method": "POST", "form_url": "https://bank.com/3ds", "form_fields": {"PaReq": "abc123", "TermUrl": "https://merchant.com/callback"}}` | `RedirectForm`, `PaymentExperience` |
 | `RedirectionResponse` | Data returned after customer completes redirect (3DS or bank auth). | `{"params": {"PaRes": "xyz789", "MD": "merchant_data"}, "payload": "base64_encoded_data", "redirect_url": "https://..."}` | `RedirectForm`, `BrowserInformation` |
 
-#### Webhook and Event Types
+### Webhook and Event Types
 
 Handling asynchronous events from connectors. These types define webhook event categories and structures for processing connector callbacks when payment states change.
 
@@ -216,7 +212,7 @@ Handling asynchronous events from connectors. These types define webhook event c
 | `WebhookSecrets` | Secrets for verifying webhook authenticity from payment connectors. | `{"secret": "whsec_1234567890abcdef", "additional_secret": "whsec_second"}` | `RequestDetails` |
 | `RequestDetails` | HTTP request details from webhook including headers, body, and method for verification. | `{"method": "POST", "url": "https://merchant.com/webhook", "headers": {"Stripe-Signature": "t=123,v1=abc"}, "body": "{...}"}` | `WebhookSecrets` |
 
-#### SDK and Session Types
+### SDK and Session Types
 
 Wallet SDK integration types for Apple Pay, Google Pay, and PayPal. These support client-side tokenization and native payment experiences in mobile and web applications.
 
@@ -227,7 +223,7 @@ Wallet SDK integration types for Apple Pay, Google Pay, and PayPal. These suppor
 | `ApplepaySessionTokenResponse` | Apple Pay session data including session object and display message. | `{"session_data": {"epochTimestamp": 1234567890, "merchantIdentifier": "merchant.com.example"}, "display_message": "Pay Example Store"}` | `SessionToken`, `AppleWallet` |
 | `SdkNextAction` | Instructions for client-side SDK action (invoke Apple Pay, Google Pay, etc.). | `{"next_action": "INVOKE_SDK_CLIENT", "wallet_name": "APPLE_PAY", "sdk_data": {...}}` | `SessionToken`, `PaymentExperience` |
 
-#### Connector Response Types
+### Connector Response Types
 
 Additional data returned by connectors. These types provide connector-specific response details for different payment methods and extended authorization information.
 
@@ -236,7 +232,7 @@ Additional data returned by connectors. These types provide connector-specific r
 | [`ConnectorResponseData`](./connector-response-data.md) | Connector response container. | `{"card": {...}, "extended_authorization": {...}}` | [`CardConnectorResponse`](./card-connector-response.md) |
 | [`CardConnectorResponse`](./card-connector-response.md) | Card-specific response. | `{"authentication_data": {...}, "card_network": "VISA"}` | [`ConnectorResponseData`](./connector-response-data.md), [`AuthenticationData`](./authentication-data.md), [`CardNetwork`](./card-network.md) |
 
-### Next Steps
+## Next Steps
 
 - [Payment Service](../services/payment-service/README.md) - Core payment operations
 - [Refund Service](../services/refund-service/README.md) - Refund processing
