@@ -30,7 +30,7 @@
 ## Integration Guide
 
 * [Payments Flows](integration-guide/payment-suite/README.md)
-  * [One-Step Payments](integration-guide/payment-suite/payments/README.md)
+  * [Pay-Then-Vault](integration-guide/payment-suite/payments/README.md)
     * [Instant Payment (Auto Capture)](integration-guide/payment-suite/payments/instant-payment-auto-capture.md)
     * [Manual Capture](integration-guide/payment-suite/payments/manual-capture/README.md)
       * [Overcapture](integration-guide/payment-suite/payments/manual-capture/overcapture.md)
@@ -43,7 +43,7 @@
       * [Incremental Authorization](integration-guide/payment-suite/payments/authorizations/incremental-authorization.md)
       * [$0 Authorization](integration-guide/payment-suite/payments/authorizations/zero-amount-authorization-1.md)
       * [Extended Authorization](integration-guide/payment-suite/payments/authorizations/extended-authorization.md)
-  * [Multi-Step Payments / Vault-First Payments](integration-guide/payment-suite/payment-method-card/README.md)
+  * [Vault-Then-Pay](integration-guide/payment-suite/payment-method-card/README.md)
     * [Token Led Payment](integration-guide/payment-suite/payment-method-card/payments.md)
     * [Proxy Payment](integration-guide/payment-suite/payment-method-card/proxy.md)
     * [Payment Methods Management](integration-guide/payment-suite/payment-method-card/payment-methods-management.md)
