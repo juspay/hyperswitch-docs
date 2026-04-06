@@ -2,6 +2,7 @@
 description: >-
   Test payments through CLI version of Postman, Newman which resides in a Rust
   wrapper called as Rustman
+hidden: true
 icon: stethoscope
 ---
 
@@ -68,5 +69,5 @@ You can omit `--package test_utils` at the time of running the above command sin
 {% endhint %}
 
 {% hint style="warning" %}
-The command `cargo run --package test_utils --bin test_utils -- --connector-name=<connector_name> --base-url=<base_url> --admin-api-key=<admin_api_key>`  will generate newman commands on the go and execute the collection.
+The command `cargo run --package test_utils --bin test_utils -- --connector-name=<connector_name> --base-url=<base_url> --admin-api-key=<admin_api_key>` will generate newman commands on the go and execute the collection.
 {% endhint %}
