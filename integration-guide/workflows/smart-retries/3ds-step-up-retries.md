@@ -1,5 +1,7 @@
 ---
-description: Automatically retry failed non-3DS payments by stepping them up to 3DS authentication
+description: >-
+  Automatically retry failed non-3DS payments by stepping them up to 3DS
+  authentication
 hidden: true
 icon: angles-up
 ---
@@ -22,6 +24,10 @@ Hyperswitch supports the following processors for 3DS Step-up retries.
 
 * Bluesnap
 * Stripe
+* Paypal
+* Nuvei
+* &#x20;Zift&#x20;
+* Worldpay (WPG)
 
 In case you wish more processors to be covered for 3DS Step-up retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 
