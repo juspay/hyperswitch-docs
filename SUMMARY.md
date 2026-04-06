@@ -177,7 +177,6 @@
 
 ## Other Features
 
-* [Network Tokenisation](other-features/network-tokenisation.md)
 * [Payments Modules](other-features/payments-modules/README.md)
   * [Cost Observability](other-features/payments-modules/ai-powered-cost-observability/README.md)
     * [Uploading Fee Reports for Analysis](other-features/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis.md)
@@ -196,10 +195,12 @@
     * [Roadmap](other-features/payments-modules/reconciliation-product/roadmap.md)
   * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
+* [Network Tokenisation](other-features/network-tokenisation.md)
+* [Co-badged Cards](other-features/co-badged-cards-with-hyperswitch.md)
+* [Split Payments](other-features/hyperswitch-split-payments.md)
+* [Level 2 and Level 3 data](other-features/level-2-and-level-3-data.md)
 * [Click To Pay](other-features/click-to-pay/README.md)
   * [Visa Click to Pay: V1 to V2 Migration](other-features/click-to-pay/visa-click-to-pay-v1-to-v2-migration.md)
-* [Level 2 and Level 3 data](other-features/level-2-and-level-3-data.md)
-* [Split Payments](other-features/hyperswitch-split-payments.md)
 * [Payment Orchestration](other-features/payment-orchestration/README.md)
   * [Accept Payments](other-features/payment-orchestration/quickstart/README.md)
     * [📥 Migrate from Stripe](other-features/payment-orchestration/quickstart/migrate-from-stripe/README.md)
@@ -225,7 +226,6 @@
     * [Overcapture](other-features/payment-orchestration/quickstart/overcapture.md)
     * [Extended Authorization](other-features/payment-orchestration/quickstart/extended-authorization.md)
     * [Supported Payment Workflows](other-features/payment-orchestration/quickstart/payment-workflows.md)
-    * [Co-badged Cards](other-features/payment-orchestration/quickstart/co-badged-cards-with-hyperswitch.md)
   * [Smart Routing](other-features/payment-orchestration/smart-router.md)
   * [Subscriptions](other-features/payment-orchestration/subscriptions.md)
 * [Security and Compliance](other-features/security-and-compliance/README.md)
