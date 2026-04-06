@@ -1,3 +1,7 @@
+---
+description: Validate 3DS authentication results with the issuing bank before payment authorization
+---
+
 # PostAuthenticate RPC
 
 <!--

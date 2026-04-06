@@ -1,3 +1,7 @@
+---
+description: Initialize a payment order in the processor system to set up checkout context
+---
+
 # CreateOrder RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `CreateOrder` RPC initializes a payment order at the payment processor before collecting payment details from the customer. This pre-establishes the payment context, enabling features like improved fraud detection, session tokens for wallet payments (Apple Pay, Google Pay), and better authorization rates by associating the eventual payment with a previously created order.
 
 **Business Use Case:** When you want to set up the payment infrastructure before the customer reaches the checkout page, or when integrating wallet payments that require a session token. Creating an order first allows the processor to perform risk assessments and prepare the payment session, resulting in smoother checkout experiences and higher conversion rates.
 
-## Purpose
+### Purpose
 
 **Why use CreateOrder?**
 
@@ -38,7 +42,7 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 - Better fraud detection through early context
 - Order ID for cross-system tracking
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -51,7 +55,7 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 | `test_mode` | bool | No | Process as test transaction |
 | `payment_method_type` | PaymentMethodType | No | The type of payment method (e.g., apple_pay, google_pay) |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -65,9 +69,9 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 | `raw_connector_response` | SecretString | Raw API response from connector (debugging) |
 | `session_token` | SessionToken | JSON serialized session token for wallet payments |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -85,7 +89,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/CreateOrder
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -99,7 +103,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](./authorize.md) - Create payment authorization (pass `order_context` from CreateOrder response)
 - [SetupRecurring](./setup-recurring.md) - Set up recurring payments using the order context

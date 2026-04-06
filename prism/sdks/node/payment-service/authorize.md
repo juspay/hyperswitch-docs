@@ -1,18 +1,13 @@
-# Authorize Method
+---
+title: authorize (Node.js SDK)
+description: Authorize payments to reserve funds on customer payment methods without capturing for two-step payment flows
+tags:
+  - node
+  - payments
+  - authorization
+---
 
-<!--
----
-title: Authorize (Node SDK)
-description: Authorize a payment using the Node.js SDK - reserve funds without capturing
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Authorize Method
 
 ## Overview
 

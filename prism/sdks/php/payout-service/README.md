@@ -1,18 +1,13 @@
-# Payout Service
-
-<!--
 ---
 title: Payout Service (PHP SDK)
-description: Process payouts and fund transfers using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Process payouts and fund transfers to send money to recipients for marketplace and supplier payments
+tags:
+  - php
+  - payouts
+  - fund-transfers
 ---
--->
+
+# Payout Service
 
 ## Overview
 

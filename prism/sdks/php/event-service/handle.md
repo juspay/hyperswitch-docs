@@ -1,18 +1,13 @@
-# handle Method
-
-<!--
 ---
 title: handle (PHP SDK)
-description: Process webhook notifications using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Process webhook notifications from payment processors to verify signatures and receive normalized event data
+tags:
+  - php
+  - webhooks
+  - events
 ---
--->
+
+# handle Method
 
 ## Overview
 

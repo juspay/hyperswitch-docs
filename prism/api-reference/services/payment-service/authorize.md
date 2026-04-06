@@ -1,3 +1,7 @@
+---
+description: Authorize a payment to reserve funds on a customer payment method without capturing
+---
+
 # Authorize RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `Authorize` RPC reserves funds on a customer's payment method without transferring them. This is the first step in a two-step payment flow (authorize + capture), commonly used in e-commerce, marketplaces, and subscription businesses.
 
 **Business Use Case:** When a customer places an order, you want to verify their payment method has sufficient funds and lock those funds for fulfillment. The actual charge (capture) happens later when the order ships or service is delivered. This reduces chargebacks and improves cash flow management.
 
-## Purpose
+### Purpose
 
 **Why use authorization instead of immediate charge?**
 
@@ -36,7 +40,7 @@ The `Authorize` RPC reserves funds on a customer's payment method without transf
 - Better customer experience (no double charges for partial shipments)
 - Compliance with card network rules for delayed delivery
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -83,7 +87,7 @@ The `Authorize` RPC reserves funds on a customer's payment method without transf
 | `continue_redirection_url` | string | No | URL to continue after redirect |
 | `payment_method_token` | SecretString | No | Token for previously saved payment method |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -101,9 +105,9 @@ The `Authorize` RPC reserves funds on a customer's payment method without transf
 | `raw_connector_request` | SecretString | Raw API request sent to connector (debugging) |
 | `captured_amount` | int64 | Amount already captured (0 for fresh auth) |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -131,7 +135,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/Authorize
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -143,7 +147,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Capture](./capture.md) - Finalize the payment and transfer funds
 - [Void](./void.md) - Release held funds if order cancelled

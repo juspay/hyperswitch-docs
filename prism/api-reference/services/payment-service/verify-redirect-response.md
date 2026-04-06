@@ -1,3 +1,7 @@
+---
+description: Validate redirect-based payment responses to confirm authenticity and prevent fraud
+---
+
 # VerifyRedirectResponse RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `VerifyRedirectResponse` RPC validates the authenticity of payment responses received from redirect-based authentication flows. This includes 3D Secure (3DS) redirects, bank authentication pages, and wallet payment callbacks. It ensures the response genuinely came from the payment provider and hasn't been tampered with during transit.
 
 **Business Use Case:** When a customer completes a 3DS challenge or bank redirect and is redirected back to your application, you need to verify that the response is legitimate. This prevents fraudsters from spoofing successful payment notifications and ensures you only fulfill orders for genuine successful payments.
 
-## Purpose
+### Purpose
 
 **Why use VerifyRedirectResponse?**
 
@@ -38,7 +42,7 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 - Determines final payment status
 - Enables safe order fulfillment
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -46,7 +50,7 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 | `request_details` | RequestDetails | Yes | Details of the redirect request including headers, body, and query parameters |
 | `redirect_response_secrets` | RedirectResponseSecrets | No | Secrets for validating the redirect response |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -58,9 +62,9 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 | `error` | ErrorInfo | Error details if verification failed |
 | `raw_connector_response` | SecretString | Raw API response from connector for debugging |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -82,7 +86,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/VerifyRedirectResponse
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -97,7 +101,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](./authorize.md) - Initiate a payment that may require redirect authentication
 - [Capture](./capture.md) - Finalize the payment after successful verification

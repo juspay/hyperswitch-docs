@@ -1,18 +1,13 @@
-# Payout Service
-
-<!--
 ---
 title: Payout Service (Java SDK)
-description: Process payouts and fund transfers using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Process payouts and fund transfers to send money to recipients for marketplace and supplier payments
+tags:
+  - java
+  - payouts
+  - fund-transfers
 ---
--->
+
+# Payout Service
 
 ## Overview
 

@@ -1,8 +1,12 @@
+---
+description: Understand Hyperswitch Prism's semantic versioning strategy to manage dependency updates and control feature rollouts safely
+---
+
 # Versioning
 
-Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.
+Hyperswitch Prism follows [Semantic Versioning 2.0.0](https://semver.org/). A minor version upgrade or a patch will never break your existing integration.
 
-It is recommended to **Pin to `MAJOR.MINOR.*`. Get fixes automatically. Control features manually. Sleep soundly.**
+It is recommended to **pin to `MAJOR.MINOR.*`**. Get fixes automatically, control features manually, and sleep soundly.
 
 ```
 MAJOR.MINOR.PATCH
@@ -19,7 +23,7 @@ MAJOR.MINOR.PATCH
 
 ## Pinning for Automatic Bug Fixes
 
-It is strongly recommended pull security patches and critical fixes without manual updates. Pin your dependency to accept patch increments automatically.
+It is strongly recommended to pull security patches and critical fixes without manual updates. Pin your dependency to accept patch increments automatically.
 
 <!-- tabs:start -->
 
@@ -127,7 +131,7 @@ This accepts any version, including `2.0.0` with breaking changes. Your CI passe
 
 ## Recommended Strategy
 
-It is strongly recommended to pin to minor version for active development:
+It is strongly recommended to pin to a minor version for active development:
 
 ```
 1.2.*
@@ -138,12 +142,12 @@ This gives you the ability to:
 - Automatic bug fixes
 - Control over when new features arrive
 
-You may update minor versions intentionally when you need new connectors or features. 
-Read the changelog. Run your integration tests. Bump the pin.
+You may update minor versions intentionally when you need new connectors or features.
+Read the changelog, run your integration tests, and bump the pin.
 
 ## Version Compatibility Matrix
 
-Prism maintains compatibility across SDK languages for the same minor version:
+Hyperswitch Prism maintains compatibility across SDK languages for the same minor version:
 
 | Prism Version | Node.js SDK | Python SDK | Java SDK | PHP SDK |
 |---------------------------|-------------|------------|----------|---------|
@@ -170,7 +174,7 @@ composer show juspay/hyperswitch-prism
 
 ## Deprecation Policy
 
-Prism maintains deprecated APIs for one full major version. When `2.0.0` releases:
+Hyperswitch Prism maintains deprecated APIs for one full major version. When `2.0.0` releases:
 - APIs deprecated in `1.x` are removed
 - Migration guides are published
 - Automated codemods are provided where possible

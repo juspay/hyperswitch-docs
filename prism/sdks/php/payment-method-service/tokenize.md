@@ -1,18 +1,13 @@
-# tokenize Method
-
-<!--
 ---
 title: tokenize (PHP SDK)
-description: Store a payment method securely using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Store payment methods securely to replace sensitive card data with tokens for safe storage
+tags:
+  - php
+  - tokenization
+  - payment-methods
 ---
--->
+
+# tokenize Method
 
 ## Overview
 

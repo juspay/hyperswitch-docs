@@ -1,3 +1,7 @@
+---
+description: Set up Stax payments through Prism for US small business billing
+---
+
 # Stax
 
 <!--

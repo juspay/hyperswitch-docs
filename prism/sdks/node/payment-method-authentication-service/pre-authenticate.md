@@ -1,18 +1,13 @@
-# preAuthenticate Method
-
-<!--
 ---
 title: preAuthenticate (Node.js SDK)
-description: Initiate 3D Secure flow before payment authorization using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Initiate 3D Secure flows before payment authorization to reduce fraud liability and comply with SCA requirements
+tags:
+  - node
+  - 3ds
+  - authentication
 ---
--->
+
+# preAuthenticate Method
 
 ## Overview
 

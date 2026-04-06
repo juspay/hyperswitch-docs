@@ -1,18 +1,13 @@
-# Merchant Authentication Service
-
-<!--
 ---
 title: Merchant Authentication Service (Node.js SDK)
-description: Generate access tokens and session credentials using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Generate secure access tokens and session credentials for payment processor API authentication
+tags:
+  - node
+  - authentication
+  - tokens
 ---
--->
+
+# Merchant Authentication Service
 
 ## Overview
 

@@ -1,3 +1,7 @@
+---
+description: Configure Silverflow payments with Prism for cloud-native card processing
+---
+
 # Silverflow
 
 <!--

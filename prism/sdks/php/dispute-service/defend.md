@@ -1,18 +1,13 @@
-# defend Method
-
-<!--
 ---
 title: defend (PHP SDK)
-description: Submit formal defense against a chargeback using the PHP SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: php
+description: Submit formal defense against chargebacks to contest fraudulent transaction claims and recover revenue
+tags:
+  - php
+  - disputes
+  - chargebacks
 ---
--->
+
+# defend Method
 
 ## Overview
 

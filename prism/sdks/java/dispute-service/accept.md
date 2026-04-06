@@ -1,18 +1,13 @@
-# accept Method
-
-<!--
 ---
 title: accept (Java SDK)
-description: Concede a dispute using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Concede chargeback disputes to accept liability when evidence is insufficient or defense costs exceed dispute amount
+tags:
+  - java
+  - disputes
+  - chargebacks
 ---
--->
+
+# accept Method
 
 ## Overview
 

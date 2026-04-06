@@ -1,3 +1,7 @@
+---
+description: Configure IataPay payments with Prism for travel industry payment processing
+---
+
 # Iatapay
 
 <!--

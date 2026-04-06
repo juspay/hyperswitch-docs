@@ -1,17 +1,21 @@
+---
+description: Understand the engineering decisions behind building Prism, a unified payment integration library that unbundles connector logic into a reusable, multi-language SDK
+---
+
 # Why we built a Unified Payment Integration Library?
 
 If you have ever integrated a payment processor, you know the drill. You read through a PDF that was last updated in 2019, figure out what combination of API keys goes in which header, discover that "decline code 51" means something subtly different on this processor than the last one you dealt with, and then do it all over again when your business decides to add a second processor.
 
-We have been living in this world for years building Hyperswitch, an open-source payment orchestrator. At some point we had integrations for 50+ connectors. The integrations worked well — but they were locked inside our orchestrator, not usable by anyone who just needed to talk to Stripe or Adyen without adopting an entire platform.
+We have been living in this world for years building Juspay Hyperswitch, an open-source payment orchestrator. At some point we had integrations for 300+ connectors. The integrations worked well — but they were locked inside our orchestrator, not usable by anyone who just needed to talk to Stripe or Adyen without adopting an entire platform.
 We always felt the Payment APIs are not more complicated than database drivers. It it just that the industry has not arrived at a standard (and it never will!!) for payments. Hence, we decided to build an open interface for Developer and AI agents to use, rather than recreate it every time.
 
-This post is about how we did that: unbundling those integrations into a standalone library called the **Prism**, and the engineering decisions we made along the way. Some of them are genuinely interesting.
+This post is about how we did that: unbundling those integrations into a standalone library called **Hyperswitch Prism**, and the engineering decisions we made along the way. Some of them are genuinely interesting.
 
 ---
 
 ## Why unbundle at all?
 
-The connector integrations inside Hyperswitch were not designed to be embedded in an orchestrator forever. They were always a self-contained layer: translate a unified request into a connector-specific HTTP call, make the call, translate the response back. The orchestrator was just the first thing to use them.
+The connector integrations inside Juspay Hyperswitch were not designed to be embedded in an orchestrator forever. They were always a self-contained layer: translate a unified request into a connector-specific HTTP call, make the call, translate the response back. The orchestrator was just the first thing to use them.
 
 The more we looked at it, the more it seemed wrong to keep that capability locked behind a full platform deployment. If you just need to accept payments through Stripe, you should not have to adopt an orchestrator to get a well-tested, maintained integration. And if you want to switch to Adyen later, that should be a config change, not a rewrite.
 
@@ -47,7 +51,7 @@ Everything is strongly typed. `PaymentService.Authorize` takes a `PaymentService
 
 > **Q: Why Rust? Wouldn't Go or Java be simpler?**
 >
-> A few reasons. First, we already had 50+ connector implementations in Rust from Hyperswitch, so starting there was practical. But more importantly: the library needs to be embeddable in Python, JavaScript, and Java applications without a separate process or a runtime dependency like the JVM or a Python interpreter. The only realistic way to distribute a native library that loads cleanly into all of those runtimes is as a compiled shared library — `.so` on Linux, `.dylib` on macOS. Rust produces exactly that, with no garbage collector pauses, no runtime to ship, and memory safety that does not require a GC.
+> A few reasons. First, we already had 50+ connector implementations in Rust from Juspay Hyperswitch, so starting there was practical. But more importantly: the library needs to be embeddable in Python, JavaScript, and Java applications without a separate process or a runtime dependency like the JVM or a Python interpreter. The only realistic way to distribute a native library that loads cleanly into all of those runtimes is as a compiled shared library — `.so` on Linux, `.dylib` on macOS. Rust produces exactly that, with no garbage collector pauses, no runtime to ship, and memory safety that does not require a GC.
 
 The Rust codebase is organized into a handful of internal crates:
 
@@ -193,7 +197,7 @@ sdk/javascript/
 
 ## Code generation: the glue that holds it together
 
-Here is a problem we needed to solve: the Prism supports many payment flows (authorize, capture, void, refund, recurring charge, 3DS pre-auth, webhook handling, ...) and many SDK languages. Hand-maintaining typed client methods for each flow in each language is exactly the kind of work that introduces drift and bugs. So we do not do it.
+Here is a problem we needed to solve: Hyperswitch Prism supports many payment flows (authorize, capture, void, refund, recurring charge, 3DS pre-auth, webhook handling, ...) and many SDK languages. Hand-maintaining typed client methods for each flow in each language is exactly the kind of work that introduces drift and bugs. So we do not do it.
 
 The code generator at `sdk/codegen/generate.py` reads two sources of truth and emits all the SDK client boilerplate automatically.
 
@@ -322,7 +326,7 @@ In gRPC mode, steps ③b through ③f happen inside the `grpc-server` process. T
 
 We want to be upfront about what this is and what it is not.
 
-What it is: a working implementation with 50+ connectors, a protobuf specification that covers the full payment lifecycle, and SDKs in four languages. It is ready to use today.
+What it is: a working implementation with 300+ connectors, a protobuf specification that covers the full payment lifecycle, and SDKs in four languages. It is ready to use today.
 
 What it is not: a finished standard. The spec reflects our understanding of what payment integrations need to look like. That understanding is incomplete, and we know it. Payment APIs have a very long tail of edge cases — 3DS flows that differ between processors, webhook schemas that change without notice, authorization responses that technically succeeded but should be treated as soft declines. There is no team small enough to have seen all of it.
 
@@ -337,4 +341,3 @@ That is why community ownership matters here, not as a marketing posture, but as
 **If you disagree with a spec decision:** open a discussion. The whole point of making this community-owned is that no single team's assumptions should be baked in permanently. If you have seen payment edge cases that the current schema cannot express, that is exactly the kind of feedback that shapes a standard.
 
 The longer arc here is for `services.proto` to evolve into something the payments community — developers, processors, orchestrators, and everyone else in the stack — maintains collectively. The same way OpenTelemetry's semantic conventions emerged from broad input, not from one company's opinions. The same way JDBC worked because it was simple enough to implement and strict enough to actually abstract.
-

@@ -1,3 +1,7 @@
+---
+description: Integrate Stripe payments with Prism using authorize, capture, refund, and recurring payment flows with support for cards, wallets, and bank transfers
+---
+
 # Stripe
 
 <!--

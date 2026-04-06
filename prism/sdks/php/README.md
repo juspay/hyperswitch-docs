@@ -1,13 +1,14 @@
-# PHP SDK
-
-<!--
 ---
 title: PHP SDK
-description: PHP SDK for the Hyperswitch Prism payment orchestration platform
-last_updated: 2026-03-21
-sdk_language: php
+description: PHP SDK for the Hyperswitch Prism payment orchestration platform with unified payment processor integration
+tags:
+  - php
+  - sdk
+  - prism
 ---
--->
+
+# PHP SDK
+
 ## 🎯 What is Prism?
 
 Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort. 

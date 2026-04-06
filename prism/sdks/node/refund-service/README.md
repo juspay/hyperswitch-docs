@@ -1,18 +1,13 @@
-# Refund Service
+---
+title: Refund Service (Node.js SDK)
+description: Retrieve refund statuses from payment processors to synchronize payment states and provide accurate customer updates
+tags:
+  - node
+  - refunds
+  - payment-tracking
+---
 
-<!--
----
-title: Refund Service
-description: Retrieve and synchronize refund statuses across payment processors for accurate customer communication
-last_updated: 2026-03-05
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Refund Service
 
 ## Overview
 

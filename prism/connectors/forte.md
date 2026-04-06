@@ -1,3 +1,7 @@
+---
+description: Set up Forte payments through Prism for US ACH and check processing
+---
+
 # Forte
 
 <!--

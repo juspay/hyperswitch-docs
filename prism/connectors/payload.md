@@ -1,3 +1,7 @@
+---
+description: Set up Payload payments through Prism for platform and embedded finance
+---
+
 # Payload
 
 <!--

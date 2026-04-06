@@ -1,3 +1,7 @@
+---
+description: Retrieve dispute status and evidence submission details from the payment processor
+---
+
 # Get RPC
 
 <!--

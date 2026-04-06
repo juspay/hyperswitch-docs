@@ -1,3 +1,7 @@
+---
+description: Set up Finix payment processing via Prism for platform and marketplace payments
+---
+
 # Finix
 
 <!--

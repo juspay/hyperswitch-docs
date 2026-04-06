@@ -1,3 +1,7 @@
+---
+description: Set up Helcim payments with Prism for Canadian and US small business processing
+---
+
 # Helcim
 
 <!--

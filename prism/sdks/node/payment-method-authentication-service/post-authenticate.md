@@ -1,18 +1,13 @@
-# postAuthenticate Method
-
-<!--
 ---
 title: postAuthenticate (Node.js SDK)
-description: Validate authentication results with the issuing bank using the Node.js SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
+description: Validate 3DS authentication results with the issuing bank to confirm successful verification
+tags:
+  - node
+  - 3ds
+  - authentication
 ---
--->
+
+# postAuthenticate Method
 
 ## Overview
 

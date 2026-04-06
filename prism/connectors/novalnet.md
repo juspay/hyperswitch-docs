@@ -1,3 +1,7 @@
+---
+description: Connect Novalnet payments via Prism for German market payment processing
+---
+
 # Novalnet
 
 <!--

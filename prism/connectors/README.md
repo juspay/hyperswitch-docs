@@ -1,3 +1,7 @@
+---
+description: Explore all supported payment connectors with their integration status, authentication methods, and supported payment flows across 100+ processors
+---
+
 # Connectors Overview
 
 This document provides a comprehensive overview of all supported payment connectors and their integration status across various operations.

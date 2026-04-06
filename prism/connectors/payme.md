@@ -1,3 +1,7 @@
+---
+description: Connect Payme payments with Prism for Israeli market payment processing
+---
+
 # Payme
 
 <!--

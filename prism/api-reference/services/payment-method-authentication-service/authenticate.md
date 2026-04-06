@@ -1,3 +1,7 @@
+---
+description: Execute 3DS challenge or frictionless verification to authenticate the cardholder
+---
+
 # Authenticate RPC
 
 <!--
@@ -13,13 +17,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `Authenticate` RPC executes the 3D Secure authentication step. For frictionless flows, it completes the authentication silently. For challenge flows, it presents the bank's authentication page to the customer for verification.
 
 **Business Use Case:** After initiating 3DS with PreAuthenticate, this RPC handles the actual authentication. If a challenge is required, it manages the customer interaction with the bank's authentication page.
 
-## Purpose
+### Purpose
 
 **Why authenticate?**
 
@@ -33,7 +37,7 @@ The `Authenticate` RPC executes the 3D Secure authentication step. For frictionl
 - Authentication data returned
 - Ready for payment authorization
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -48,7 +52,7 @@ The `Authenticate` RPC executes the 3D Secure authentication step. For frictionl
 | `return_url` | string | No | URL to redirect after authentication |
 | `continue_redirection_url` | string | No | URL to continue after redirect |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -64,7 +68,7 @@ The `Authenticate` RPC executes the 3D Secure authentication step. For frictionl
 | `state` | ConnectorState | State to pass to next step |
 | `raw_connector_response` | SecretString | Raw response for debugging |
 
-## Example
+### Example
 
 ### Request (grpcurl)
 

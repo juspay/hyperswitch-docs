@@ -1,3 +1,7 @@
+---
+description: Integrate Paysafe payments via Prism for digital wallet and card processing
+---
+
 # Paysafe
 
 <!--

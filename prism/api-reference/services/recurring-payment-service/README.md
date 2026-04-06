@@ -1,3 +1,7 @@
+---
+description: Process subscription billing and manage recurring payment mandates for SaaS businesses
+---
+
 # Recurring Payment Service
 
 <!--
@@ -13,7 +17,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Recurring Payment Service enables you to process subscription billing and manage recurring payment mandates. Once a customer has set up a mandate (through the Payment Service's `SetupRecurring`), this service handles subsequent charges without requiring customer interaction, making it ideal for SaaS subscriptions, membership fees, and automated billing scenarios.
 
@@ -26,16 +30,16 @@ The Recurring Payment Service enables you to process subscription billing and ma
 
 The service manages the complete recurring payment lifecycle including charging existing mandates and revoking mandates when customers cancel their subscriptions.
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
 | [`Charge`](./charge.md) | Process a recurring payment using an existing mandate. Charges customer's stored payment method for subscription renewal without requiring their presence. | Subscription renewal, recurring billing cycle, automated payment collection |
 | [`Revoke`](./revoke.md) | Cancel an existing recurring payment mandate. Stops future automatic charges when customers end their subscription or cancel service. | Subscription cancellation, customer churn, mandate revocation |
 
-## Common Patterns
+### Common Patterns
 
-### SaaS Subscription Billing Cycle
+#### SaaS Subscription Billing Cycle
 
 Process monthly subscription renewals using stored mandates and payment methods.
 
@@ -80,7 +84,7 @@ sequenceDiagram
 
 ---
 
-### Failed Recurring Payment Recovery
+#### Failed Recurring Payment Recovery
 
 Handle failed recurring payments with retry logic and customer notification.
 
@@ -125,7 +129,7 @@ sequenceDiagram
 
 ---
 
-### Subscription Upgrade/Downgrade with Prorated Charges
+#### Subscription Upgrade/Downgrade with Prorated Charges
 
 Handle plan changes with prorated billing using incremental charges.
 
@@ -161,7 +165,7 @@ sequenceDiagram
 
 ---
 
-## Next Steps
+### Next Steps
 
 - [Payment Service](../payment-service/README.md) - Set up initial mandates and process first payments
 - [Payment Method Service](../payment-method-service/README.md) - Store payment methods for recurring use

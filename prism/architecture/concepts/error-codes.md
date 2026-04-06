@@ -1,3 +1,7 @@
+---
+description: Reference complete error code listings to diagnose and resolve integration failures quickly
+---
+
 # Error Code Reference
 
 This document lists all possible error types you may encounter when using Prism SDK.
@@ -55,13 +59,13 @@ These errors occur **before** the HTTP request is sent to the connector. They in
 > **Note on `_I_D` suffix:** Error codes for variants ending in `ID` (e.g., `MissingConnectorTransactionID`) serialize as `..._I_D` due to how the code generator handles uppercase boundaries. Use the exact strings shown above in comparisons.
 | `MAX_FIELD_LENGTH_VIOLATED` | Field exceeds maximum length for connector |
 | `SOURCE_VERIFICATION_FAILED` | Failed to verify request source (signature, webhook, etc.) |
-| `CONFIGURATION_ERROR` | General configuration validation error (code varies — use the `error_code` field directly) |
+| `CONFIGURATION_ERROR` | General configuration validation error (code varies—use the `error_code` field directly) |
 
 ## Network Errors
 
 These errors occur during HTTP communication with the payment connector (transport layer).
 
-**⚠️ CRITICAL - Payment System Warning:**
+**⚠️ CRITICAL — Payment System Warning:**
 Most network errors are **NOT safe to retry** because the request may have been sent to the connector. Retrying can cause **double payments**. Only retry if you have proper idempotency mechanisms or can verify the payment was never processed.
 
 | `errorCode` | Description | Retryable? |
@@ -80,7 +84,7 @@ Most network errors are **NOT safe to retry** because the request may have been 
 
 These errors occur **after** receiving the HTTP response from the payment connector. They indicate issues with response parsing or handling.
 
-**⚠️ CRITICAL:** Payment may have **succeeded at the connector** even if response parsing fails. Do not retry without verifying payment status.
+**⚠️ CRITICAL:** The payment may have **succeeded at the connector** even if response parsing fails. Do not retry without verifying payment status.
 
 | `error_code` | Description |
 |------------|-------------|

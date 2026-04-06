@@ -1,18 +1,13 @@
-# Void Method
+---
+title: void (Node.js SDK)
+description: Cancel authorized payments before capture to release held funds back to customer payment methods
+tags:
+  - node
+  - payments
+  - void
+---
 
-<!--
----
-title: Void (Node SDK)
-description: Cancel an authorized payment using the Node.js SDK - release held funds back to customer
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: node
----
--->
+# Void Method
 
 ## Overview
 

@@ -1,3 +1,7 @@
+---
+description: Integrate Xendit payments with Prism for Southeast Asian payment infrastructure
+---
+
 # Xendit
 
 <!--

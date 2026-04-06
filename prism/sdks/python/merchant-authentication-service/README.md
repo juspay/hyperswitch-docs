@@ -1,18 +1,13 @@
-# Merchant Authentication Service
-
-<!--
 ---
 title: Merchant Authentication Service (Python SDK)
-description: Generate access tokens and session credentials using the Python SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: python
+description: Generate secure access tokens and session credentials for payment processor API authentication
+tags:
+  - python
+  - authentication
+  - tokens
 ---
--->
+
+# Merchant Authentication Service
 
 ## Overview
 

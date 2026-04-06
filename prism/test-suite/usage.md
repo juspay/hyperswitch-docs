@@ -1,7 +1,7 @@
 <!--
 ---
 title: Test Suite Usage
-description: Running tests and command reference
+description: Learn command-line options and workflows to run connector tests with flexible configuration parameters
 last_updated: 2026-03-12
 generated_from: backend/ucs-connector-tests/src/bin/
 auto_generated: false

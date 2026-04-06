@@ -1,3 +1,7 @@
+---
+description: Configure Adyen payments through Prism with support for global payment methods, 3DS authentication, dispute management, and recurring billing
+---
+
 # Adyen
 
 <!--

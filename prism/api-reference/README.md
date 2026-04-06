@@ -1,12 +1,16 @@
+---
+description: Explore the complete Hyperswitch Prism API services, request types, and error handling for payment processing
+---
+
 # API Reference
 
-Complete reference for all Prism API services, request/response types, and error handling.
+Complete reference for all Hyperswitch Prism API services, request/response types, and error handling.
 
-## Overview
+### Overview
 
-Prism provides a unified gRPC API for payment processing across 100+ payment processors. The API is organized into services that handle different aspects of the payment lifecycle.
+Hyperswitch Prism provides a unified gRPC API for payment processing across 100+ payment processors. The API is organized into services that handle different aspects of the payment lifecycle.
 
-## Services
+### Services
 
 | Service | Description | Key Operations |
 |---------|-------------|----------------|
@@ -20,11 +24,11 @@ Prism provides a unified gRPC API for payment processing across 100+ payment pro
 | [Payment Method Authentication Service](./services/payment-method-authentication-service/) | 3DS authentication | Pre-authenticate, Authenticate, Post-authenticate |
 | [Merchant Authentication Service](./services/merchant-authentication-service/) | Session management | CreateAccessToken, CreateSessionToken, CreateSdkSessionToken |
 
-## Error Object
+### Error Object
 
 All API errors return a structured `ErrorInfo` object with detailed information about what went wrong.
 
-### ErrorInfo Fields
+#### ErrorInfo Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -32,7 +36,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 | `issuer_details` | `IssuerErrorDetails` | Card issuer-specific error information (scheme, network details) |
 | `connector_details` | `ConnectorErrorDetails` | Connector-specific error code and message from the PSP |
 
-### UnifiedErrorDetails Fields
+#### UnifiedErrorDetails Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -41,7 +45,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 | `description` | `string` | Detailed explanation of the error |
 | `user_guidance_message` | `string` | User-facing message with guidance on next steps |
 
-### IssuerErrorDetails Fields
+#### IssuerErrorDetails Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -49,7 +53,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 | `message` | `string` | Human-readable message from the issuer |
 | `network_details` | `NetworkErrorDetails` | Network-specific error details (advice code, decline code) |
 
-### NetworkErrorDetails Fields
+#### NetworkErrorDetails Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -57,7 +61,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 | `decline_code` | `string` | Card scheme decline code |
 | `error_message` | `string` | Network-specific error details |
 
-### ConnectorErrorDetails Fields
+#### ConnectorErrorDetails Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -65,7 +69,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 | `message` | `string` | Human-readable message from the connector |
 | `reason` | `string` | Detailed explanation of why the error occurred |
 
-### Error Response Example
+#### Error Response Example
 
 ```json
 {
@@ -94,11 +98,11 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 }
 ```
 
-## Domain Schema
+### Domain Schema
 
 See [Domain Schema](./domain-schema/README.md) for complete documentation of all data types, enums, and structures used across the API.
 
-## Proto Files
+### Proto Files
 
 The API is defined in Protocol Buffer files located at:
 - `backend/grpc-api-types/proto/payment.proto` - Core payment types and errors

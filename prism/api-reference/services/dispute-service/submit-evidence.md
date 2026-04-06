@@ -1,3 +1,7 @@
+---
+description: Upload evidence documents to contest a chargeback dispute with supporting proof
+---
+
 # SubmitEvidence RPC
 
 <!--

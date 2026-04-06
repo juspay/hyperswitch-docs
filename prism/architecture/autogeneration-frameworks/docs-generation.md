@@ -1,10 +1,14 @@
+---
+description: Generate API documentation automatically from protobuf definitions to ensure accuracy and completeness
+---
+
 # Documentation Generation
 
-You get API reference docs that stay current without anyone manually updating markdown files every time a field changes. Prism generates all `/docs-generated` content from the source proto definitions and a rules file that enforces consistency.
+You get API reference docs that stay current without anyone manually updating markdown files every time a field changes. Hyperswitch Prism generates all `/docs-generated` content from the source proto definitions and a rules file that enforces consistency.
 
 ## The Rules Engine
 
-Documentation at this scale drifts. A developer adds a field to the proto, forgets to update the docs, and now the examples don't compile. Prism prevents this by treating documentation as code.
+Documentation at this scale drifts. A developer adds a field to the proto, forgets to update the docs, and now the examples don't compile. Hyperswitch Prism prevents this by treating documentation as code.
 
 The `docs/rules/rules.md` file contains 700+ lines of specifications that define:
 
@@ -75,7 +79,7 @@ grpcurl -H "x-connector: stripe" \
   localhost:8080 types.PaymentService/Authorize
 ```
 
-Test credentials stay consistent across all 50+ connector examples. Developers copy-paste and it works.
+Test credentials stay consistent across all 300+ connector examples. Developers copy-paste and it works.
 
 ## Keeping Docs in Sync
 

@@ -1,18 +1,13 @@
-# capture Method
-
-<!--
 ---
 title: capture (Java SDK)
-description: Finalize an authorized payment using the Java SDK
-last_updated: 2026-03-21
-generated_from: backend/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
-sdk_language: java
+description: Finalize authorized payments to transfer reserved funds and complete the payment lifecycle
+tags:
+  - java
+  - payments
+  - capture
 ---
--->
+
+# capture Method
 
 ## Overview
 
