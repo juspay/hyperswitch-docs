@@ -448,6 +448,7 @@
 
 
 
+
 ## PRISM
 
 - [Product Overview](prism/README.md)
@@ -470,6 +471,10 @@
   - [Integrity and Source Verification](prism/architecture/frameworks/integrity-and-source-verification.md)
   - [Money Struct](prism/architecture/frameworks/money-struct.md)
   - [Versioning](prism/architecture/versioning.md)
+
+
+
+  
 
 - [API Reference Overview](prism/api-reference/README.md)
   - [Payment Service Overview](prism/api-reference/services/payment-service/README.md)
