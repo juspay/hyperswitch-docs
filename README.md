@@ -138,37 +138,37 @@ Power only what you need with Hyperswitch’s modular architecture. Integrate ju
 
 <summary><strong>Build Smarter Payment Flows</strong></summary>
 
-[Payment Orchestration →](explore-hyperswitch/payment-orchestration/)
+[Payment Orchestration →](other-features/payment-orchestration/)
 
 Automate and optimize how payments are routed, authorized, and split across providers with Hyperswitch’s flexible payment orchestration engine.
 
-[Tokenization and Card Vault →](explore-hyperswitch/workflows/vault/)
+[Tokenization and Card Vault →](integration-guide/workflows/vault/)
 
 Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.
 
 [Get Started with Hyperswitch's Vault](https://deepwiki.com/search/how-do-i-setup-the-vault_f3aed139-6118-40aa-a066-55b9b90d6775).
 
-[Routing →](explore-hyperswitch/payment-orchestration/smart-router.md)
+[Routing →](other-features/payment-orchestration/smart-router.md)
 
 Control how transactions flow across payment providers with configurable routing logic and fallback options
 
-[Intelligent Routing →](explore-hyperswitch/workflows/intelligent-routing/)
+[Intelligent Routing →](integration-guide/workflows/intelligent-routing/)
 
 Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.
 
-[Smart Retries →](explore-hyperswitch/payments-modules/revenue-recovery.md)
+[Smart Retries →](other-features/payments-modules/revenue-recovery.md)
 
 Recover failed payments using ML-driven retry strategies optimized for timing, issuer behavior, and card type.
 
-[Payouts →](explore-hyperswitch/connectors/payouts/)
+[Payouts →](other-features/connectors/payouts/)
 
 Easily manage and automate disbursements to sellers, vendors, or partners with flexible payout logic.
 
-[Subscriptions →](explore-hyperswitch/payment-orchestration/subscriptions.md)
+[Subscriptions →](other-features/payment-orchestration/subscriptions.md)
 
 Handle recurring payments seamlessly with built-in support for subscription billing and invoicing.
 
-[Split Payments →](explore-hyperswitch/connectors/split-payments/)
+[Split Payments →](other-features/connectors/split-payments/)
 
 Divide transactions between multiple parties or accounts with precision and control.
 

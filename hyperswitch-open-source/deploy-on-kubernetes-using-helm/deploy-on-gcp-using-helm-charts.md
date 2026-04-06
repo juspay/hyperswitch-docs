@@ -1,5 +1,7 @@
 ---
-description: Deploy Hyperswitch on Google Cloud Platform using Helm charts for scalable payment infrastructure
+description: >-
+  Deploy Hyperswitch on Google Cloud Platform using Helm charts for scalable
+  payment infrastructure
 ---
 
 # Deploy on GCP Using Helm Charts
@@ -28,8 +30,6 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 
 * Provide a project name, and click **Create:**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.16.21 PM.png" alt=""><figcaption></figcaption></figure>
-
 {% hint style="info" %}
 If you are using an existing project, note the project ID for later use.
 {% endhint %}
@@ -37,12 +37,7 @@ If you are using an existing project, note the project ID for later use.
 3. **Enable Kubernetes Engine API**:
 
 * Navigate to **APIs & Services > Library** or search for it:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.18.32 PM.png" alt=""><figcaption></figcaption></figure>
-
 * Search for **Kubernetes Engine API** and click **Enable:**
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-22 at 3.19.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You'll need to provide billing information in order to proceed further. Follow the necessary steps and ensure the Kubernetes Engine API is enabled.
@@ -196,11 +191,7 @@ Access the services at:
 
 The quickest way to explore Hyperswitch is via the [Control Center](http://localhost:9000/). You can create an account or sign in with your email:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.02.02 PM.png" alt=""><figcaption></figcaption></figure>
-
 A magic link will be sent to [Mailhog](http://localhost:8025/). Click on the link in white:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.13.10 PM.png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, you'll be taken straight to the Control Center. If you're just taking things for a spin, feel free to skip authentication and start exploring right away.
 
@@ -260,4 +251,4 @@ gcloud container clusters delete <cluster-name> --region <region> --project <pro
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>

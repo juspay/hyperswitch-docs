@@ -170,16 +170,16 @@ async function checkStatus() {
 That's it! You have successfully integrated your hosted web client on your web app. Now you can collect payments from your customers in a secure way.
 {% endhint %}
 
-The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../explore-hyperswitch/payment-experience/payment/web/customization.md) for more details.
+The web client allows you to customize the appearance according to your web app for a better blended UI. Please check the [customization options](../../../../integration-guide/payment-experience/payment/web/customization.md) for more details.
 
 <details>
 
 <summary>Troubleshooting/ FAQs</summary>
 
 * **I am getting an error while loading the HyperLoader.js script**\
-  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\
+  Please ensure that the path URL is correct and HyperLoader.js is present on that path. You can check it by opening the URL in a browser.\\
 * **I am unable to see the SDK running, or it is in a perpetual loading state**\
-  Please make sure that the correct publishable key is used to instantiate the SDK.\
+  Please make sure that the correct publishable key is used to instantiate the SDK.\\
 * **After completing the payment, I am redirected to a non existent web page**\
   Please make sure that the correct return URL is sent in confirm parameters and the payment statuses are correctly handled post redirection.
 

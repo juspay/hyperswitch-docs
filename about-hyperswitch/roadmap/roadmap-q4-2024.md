@@ -25,7 +25,7 @@ Before the beginning of every quarter we come together to develop the next roadm
   * Itau Bank for instant payments
   * Payouts via PayOne, and Wells Fargo
   * Razorpay UPI payments
-* Pay by Bank Experience through [Plaid Open banking](../../explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/banks/open-banking.md). This is to allow merchants to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience
+* Pay by Bank Experience through [Plaid Open banking](../../other-features/payment-orchestration/quickstart/payment-methods-setup/banks/open-banking.md). This is to allow merchants to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience
 * Account verification via Plaid for pull payments (ACH, SEPA) in the EU and US
 * React Native SDK was Open Sourced
 * Native 3DS Authentication Experience via Netcetera for mobile
@@ -70,7 +70,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 More payment authorization workflows - split payments and incremental authorization
-* New integrations -&#x20;
+* New integrations -
   * 🟩 SamsungPay
   * 🟩 Nexi Xpay card payments
   * 🟩 PAZE for card payments in the US
@@ -80,7 +80,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 * 🟩 Extending smart retries to 7 more PSPs: Adyen, Worldpay, Braintree, Deutsche Bank, Novalnet, Fiuu and Nexi Xpay
 * 🟩 Implement MPAN (merchant tokens) for Applepay recurring payments
-* 🟩  Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)&#x20;
+* 🟩 Enabling guest checkout flow with [Click to Pay](https://developer.mastercard.com/mastercard-checkout-solutions/documentation/use-cases/click-to-pay/)
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
@@ -89,13 +89,13 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩  Data reporting at an organization, merchant and profile level for easier reconciliation
-* 🟩  Enhancements in analytics module for Refunds, Disputes and Smart Retries
+* 🟩 Data reporting at an organization, merchant and profile level for easier reconciliation
+* 🟩 Enhancements in analytics module for Refunds, Disputes and Smart Retries
 * 🟩 Migration of Network Tokens for business continuity
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
-* 🟩  Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
+* 🟩 Hyperswitch widgets to support Alternate payment methods, express checkout payment methods and Authentication solutions
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 

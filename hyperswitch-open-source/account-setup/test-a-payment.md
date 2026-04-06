@@ -1,6 +1,8 @@
 ---
+description: >-
+  Test end-to-end payment flows using dummy processors and the Hyperswitch
+  checkout experience
 icon: money-bills
-description: Test end-to-end payment flows using dummy processors and the Hyperswitch checkout experience
 ---
 
 # Test a payment
@@ -29,11 +31,7 @@ On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Pr
 
 Go ahead and connect any dummy processor, we'll show an example with the fauxpay processor:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.24 PM.png" alt=""><figcaption></figcaption></figure>
-
 Just connect and proceed with the provided credentials:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.34.38 PM.png" alt=""><figcaption></figcaption></figure>
 
 From there, navigate back to the **Home** page and click on **Try it out**:
 
@@ -47,11 +45,7 @@ Card Expiry - Any future date
 CVC - Any 3 digits
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.38.25 PM.png" alt=""><figcaption></figcaption></figure>
-
 You'll see a successful Payment:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-20 at 5.39.43 PM.png" alt=""><figcaption></figcaption></figure>
 
 Congrats! You have successfully tested an end-to-end payment with your own app server and the control center
 
@@ -90,4 +84,4 @@ In case you have integrated the web client on your app and want to test a paymen
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>

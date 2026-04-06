@@ -70,7 +70,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
     * **Risk-Based Eligibility Checkpoints**: Adding merchant-level risk evaluation before payment confirmation. This will allow merchants to assess potential transaction risks in real time, reducing fraud exposure and improving overall authorization performance.
 
-_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/connectors/)
+_<mark style="color:blue;">Learn more about the existing Core Orchestration and Connectors features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../other-features/connectors/)
 
 #### **Vault**
 
@@ -99,7 +99,7 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 * **Account Updater:**\
   The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
-_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../explore-hyperswitch/payments-modules/revenue-recovery.md)
+_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../other-features/payments-modules/revenue-recovery.md)
 
 #### **Reconciliation**
 
@@ -107,8 +107,6 @@ _<mark style="color:blue;">Learn more about the existing Revenue Recovery featur
   Support for 1:many and many:1 rule types to enable flexible matching across split, aggregated, and multi-attempt transaction flows
 * **Support for Lumpsum Reconciliation**\
   Enables matching aggregated payouts or bulk settlement files against multiple underlying transactions. This helps reconcile scenarios where processors or banks provide only a consolidated amount, allowing the system to auto-distribute, validate, and highlight variances at both the lump and individual transaction level
-
-
 
 **Want to contribute to the roadmap?**
 

@@ -1,5 +1,7 @@
 ---
-description: Use our CDK script to deploy Juspay Hyperswitch into your AWS stack using CloudFormation
+description: >-
+  Use our CDK script to deploy Juspay Hyperswitch into your AWS stack using
+  CloudFormation
 icon: aws
 ---
 
@@ -208,16 +210,16 @@ The following components and services were provisioned as part of a new stack in
 
 The following services are installed in the 2 Nodes across the EKS cluster
 
-| Service Name                   | Number of Pods                              | Default Configuration                |
-| ------------------------------ | ------------------------------------------- | ------------------------------------ |
-| Juspay Hyperswitch App Server  | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
-| Producer (Scheduler)           | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Consumer (Scheduler)           | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Promtail                       | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
-| Loki                           | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Grafana                        | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
-| Control Center                 | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
-| Juspay Hyperswitch Demo Store  | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Service Name                  | Number of Pods                              | Default Configuration                |
+| ----------------------------- | ------------------------------------------- | ------------------------------------ |
+| Juspay Hyperswitch App Server | 3 pods                                      | <p>CPU : 400m<br>Memory : 500 Mi</p> |
+| Producer (Scheduler)          | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Consumer (Scheduler)          | 1 pods                                      | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Promtail                      | Daemon Set (will be deployed in every node) | <p>CPU : 200m<br>Memory : 128 Mi</p> |
+| Loki                          | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Grafana                       | 1 pod                                       | <p>CPU : 100m<br>Memory : 128 Mi</p> |
+| Control Center                | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
+| Juspay Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 
 #### Architecture Diagram
 
@@ -229,12 +231,12 @@ The following services are installed in the 2 Nodes across the EKS cluster
 [account-setup](../account-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="../../explore-hyperswitch/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}
-[test-a-payment-with-connector.md](../../explore-hyperswitch/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
+{% content-ref url="../../other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}
+[test-a-payment-with-connector.md](../../other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 {% endcontent-ref %}
 
 #### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../explore-hyperswitch/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Juspay Hyperswitch with your app</strong></mark></td><td><a href="../../explore-hyperswitch/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../explore-hyperswitch/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Juspay Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
