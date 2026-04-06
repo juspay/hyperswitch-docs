@@ -35,7 +35,6 @@
     * [Manual Capture](integration-guide/payment-suite/payments/manual-capture/README.md)
       * [Overcapture](integration-guide/payment-suite/payments/manual-capture/overcapture.md)
     * [Copy of Subscriptions](integration-guide/payment-suite/payments/copy-of-subscriptions.md)
-    * [3D Secure Authentication](integration-guide/payment-suite/payments/3d-secure-authentication.md)
     * [Saving Payment Method](integration-guide/payment-suite/payments/save-a-payment-method/README.md)
       * [Saved Card](integration-guide/payment-suite/payments/save-a-payment-method/saved-card.md)
     * [Recurring payments](integration-guide/payment-suite/payments/recurring-payments.md)
