@@ -175,8 +175,6 @@
 * [🪜 For small & medium enterprises](use-cases/for-sme.md)
 * [🏢 For enterprises](use-cases/for-enterprises.md)
 * [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
-* [SaaS Platforms](use-cases/saas-platforms.md)
-* [Fintech Businesses](use-cases/fintech-businesses.md)
 
 ## Other Features
 
@@ -436,13 +434,16 @@
 ## Learn more
 
 * [Frequently Asked Questions](learn-more/frequently-asked-questions.md)
-* [Connectors Supported](https://integrations.hyperswitch.io/)
-* [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
-* [Blog](https://hyperswitch.io/blog)
-* [Release Notes](https://hyperswitch-release-notes.vercel.app/)
-* [Release Notes](learn-more/release-notes.md)
+* [Use-Cases](learn-more/use-cases/README.md)
+  * [Fintech Businesses](learn-more/use-cases/fintech-businesses.md)
+  * [SaaS Platforms](learn-more/use-cases/saas-platforms/README.md)
+    * [Testing Payments](learn-more/use-cases/saas-platforms/test-payments-through-newman-wrapped-in-rust.md)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
+* [Blog](https://hyperswitch.io/blog)
+* [Release Notes](https://hyperswitch-release-notes.vercel.app/)
+* [Connectors Supported](https://integrations.hyperswitch.io/)
+* [Release Notes](learn-more/release-notes.md)
 
 ## PRISM
 
