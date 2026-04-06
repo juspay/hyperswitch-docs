@@ -3,7 +3,7 @@ description: Open, Modular, Self-Hostable Payment Infrastructure
 icon: container-storage
 ---
 
-# Payments Suite
+# Payments Flows
 
 Juspay Hyperswitch is built for teams that want engineering-grade control over payments.
 
@@ -37,7 +37,7 @@ With the components defined, the next step is to select your integration archite
 
 Choose the integration method that best aligns with your payment flow requirements:
 
-#### Integration Model 1: Client-Side SDK Payments
+#### Integration Model 1: Pay-Then-Vault
 
 (Tokenize Post-Payment | SDK-Initiated Execution)
 
@@ -62,7 +62,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 ***
 
-#### Integration Model 2: Server-to-Server (S2S) Payments
+#### Integration Model 2: Vault-Then-Pay
 
 (Tokenize Pre-Payment | Backend-Controlled Execution)
 
@@ -89,7 +89,6 @@ Choose the integration method that best aligns with your payment flow requiremen
     * Manage [retries](https://docs.hyperswitch.io/~/revisions/iPtyU5MKxmgIsGywgRhI/explore-hyperswitch/workflows/smart-retries) and failover
     * Handle authorization and capture lifecycle
   * This is the recommended model for merchants adopting Hyperswitch orchestration.
-
 * Option B: Process via Proxy API by calling [/proxy](https://docs.hyperswitch.io/~/revisions/wbGQKlHTQ8NT2yPUGcD2/about-hyperswitch/payment-suite-1/payment-method-card/proxy) API.
   * Use this option if:
     * You do not want to change your existing PSP integration immediately
