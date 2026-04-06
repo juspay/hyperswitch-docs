@@ -1,5 +1,7 @@
 ---
-description: Secure tokenization using Hyperswitch's PCI compliant Payment Methods Management SDK for JavaScript applications with REST API integration.
+description: >-
+  Secure tokenization using Hyperswitch's PCI compliant Payment Methods
+  Management SDK for JavaScript applications with REST API integration.
 icon: globe-pointer
 ---
 
@@ -46,8 +48,9 @@ To generate your Vault API keys, follow these steps:
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer_id** is included in the request body when creating a payment method session.
-> For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
+{% hint style="info" %}
+Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
+{% endhint %}
 
 ```javascript
 // Create-Payment-Methods-Session
@@ -57,7 +60,7 @@ app.post("/create-payment-method-session", async (req, res) => {
   try {
     // Create payment method session on Hyperswitch
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
       {
         method: "POST",
         headers: {
@@ -91,7 +94,9 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
+{% hint style="info" %}
+Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
+{% endhint %}
 
 #### 2. Client-Side Integration
 
@@ -115,7 +120,9 @@ Make a request to the endpoint on your server to create a new payment method ses
 
 Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
-> Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
+{% hint style="warning" %}
+Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
+{% endhint %}
 
 ```javascript
 // Fetches a payment method session and mounts the payment methods management element
