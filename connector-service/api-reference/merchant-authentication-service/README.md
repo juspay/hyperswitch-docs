@@ -1,2 +1,0 @@
-# Merchant Authentication Service
-

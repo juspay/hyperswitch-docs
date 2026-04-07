@@ -1,2 +1,0 @@
-# Incremental Authorization
-
