@@ -5,7 +5,7 @@ description: >-
 icon: file-invoice-dollar
 ---
 
-# One-Step Payments
+# Pay-Then-Vault
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
@@ -17,7 +17,52 @@ Juspay Hyperswitch provides flexible payment processing with multiple flow patte
 Refer to Payments (Cards) section if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#999999",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+
+flowchart TD
+    A[Payment Request] --> B{Payment Type}
+
+    %% One-time branch
+    B -->|One-time| C[One-time Payment Flows]
+    C --> C1[Instant Payment]
+    C --> C2[Manual Capture]
+    C --> C3[Decoupled Flow]
+
+    %% Store card branch
+    B -->|Store card| D[Payment Method Storage]
+    D --> D1[Long-term storage]
+    D --> D2[Short-term storage]
+    D --> D3[List Saved Methods]
+
+    %% Recurring branch
+    B -->|Recurring| E[Recurring Payment Flows]
+    E --> E1["Setup with charge (CIT)"]
+    E --> E2["Setup without charge (CIT)"]
+    E --> E3["Execute (MIT)"]
+```
 
 ### One-Time Payment Patterns
 
@@ -27,7 +72,39 @@ Refer to Payments (Cards) section if your flow requires the SDK to initiate paym
 
 **Endpoint:** `POST /payments`
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<pre class="language-mermaid"><code class="lang-mermaid"><strong>%%{init: {
+</strong>  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#999999",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+sequenceDiagram
+    participant Client
+    participant Hyperswitch
+    participant Processor
+
+    Client->>Hyperswitch: POST /payments &#x3C;br> {confirm: true, capture_method: "automatic"}
+    Hyperswitch->>Processor: Authorize + Capture
+    Processor-->>Hyperswitch: Payment Complete
+    Hyperswitch-->>Client: Status: succeeded
+</code></pre>
 
 **Required Fields:**
 
@@ -41,7 +118,47 @@ Refer to Payments (Cards) section if your flow requires the SDK to initiate paym
 
 **Use Case:** Deferred capture (e.g., ship before charging)
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+sequenceDiagram
+    participant Client
+    participant Hyperswitch
+    participant Processor
+
+    Client->>Hyperswitch: POST /payments\n{confirm: true, capture_method: "manual"}
+    Hyperswitch->>Processor: Authorize Only
+    Processor-->>Hyperswitch: Authorization Hold
+    Hyperswitch-->>Client: Status: requires_capture
+
+    Note over Client: Ship goods, then capture
+
+    Client->>Hyperswitch: POST /payments/{id}/capture
+    Hyperswitch->>Processor: Capture Funds
+    Processor-->>Hyperswitch: Capture Complete
+    Hyperswitch-->>Client: Status: succeeded
+```
 
 **Flow:**
 
@@ -56,7 +173,48 @@ Read more: [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/a
 
 **Use Case:** Complex checkout journeys with multiple modification steps. Useful in headless checkout or B2B portals where data is filled progressively.
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+sequenceDiagram
+    participant Client
+    participant Hyperswitch
+
+    Client->>Hyperswitch: POST /payments\n(Create Intent)
+    Hyperswitch-->>Client: payment_id + client_secret
+
+    Client->>Hyperswitch: POST /payments/{id}\n(Update: customer, amount, etc.)
+    Hyperswitch-->>Client: Updated Intent
+
+    Client->>Hyperswitch: POST /payments/{id}/confirm\n(Final Confirmation)
+    Hyperswitch-->>Client: Status: succeeded / requires_capture
+
+    opt Manual Capture
+        Client->>Hyperswitch: POST /payments/{id}/capture
+        Hyperswitch-->>Client: Status: succeeded
+    end
+```
 
 **Endpoints:**
 
@@ -69,7 +227,48 @@ Read more: [here](https://docs.hyperswitch.io/~/revisions/2M8ySHqN3pH3rctBK2zj/a
 
 **Use Case:** Enhanced security with customer authentication
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+sequenceDiagram
+    participant Client
+    participant Hyperswitch
+    participant Customer
+    participant Bank
+
+    Client->>Hyperswitch: POST /payments<br>{authentication_type: "three_ds"}
+    Hyperswitch-->>Client: Status: requires_customer_action <br> + redirect_url
+
+    Client->>Customer: Redirect to 3DS page
+    Customer->>Bank: Complete 3DS Challenge
+    Bank-->>Hyperswitch: Authentication Result
+
+    Note over Hyperswitch: Resume Payment Processing
+
+    Hyperswitch-->>Client: Status: succeeded
+ 
+```
 
 **Additional Fields:**
 
