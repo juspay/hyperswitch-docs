@@ -450,11 +450,11 @@
 
 
 
+
 ## PRISM
 
 - [Product Overview](prism/README.md)
   - [Installation & Configuration](prism/getting-started/installation.md)
-  - [Create Payment Order](prism/getting-started/create-order.md)
   - [First Payment](prism/getting-started/first-payment.md)
   - [Extend to More Flows](prism/getting-started/extend-to-more-flows.md)
 
@@ -478,8 +478,7 @@
   
 
 - [API Reference Overview](prism/api-reference/README.md)
-  - [Payment Service Overview](prism/api-reference/services/payment-service/README.md)
-    - [Create Order](prism/api-reference/services/payment-service/create-order.md)
+    - [Payment Service Overview](prism/api-reference/services/payment-service/README.md)
     - [Authorize](prism/api-reference/services/payment-service/authorize.md)
     - [Capture](prism/api-reference/services/payment-service/capture.md)
     - [Void](prism/api-reference/services/payment-service/void.md)
