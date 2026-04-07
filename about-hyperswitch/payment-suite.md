@@ -5,6 +5,10 @@ description: >-
 hidden: true
 noIndex: true
 icon: suitcase
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/payment-suite
 ---
 
 # Payment Suite

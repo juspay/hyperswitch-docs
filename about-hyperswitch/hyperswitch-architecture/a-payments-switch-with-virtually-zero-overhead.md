@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead
+---
+
 # A Payments Switch with virtually zero overhead
 
 When it comes to payments, every millisecond counts. The difference between a seamless customer experience and a frustrating one often boils down to the speed and efficiency of payment processing.

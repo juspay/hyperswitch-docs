@@ -1,6 +1,10 @@
 ---
 description: Hyperswitch roadmap (Apr to Jun'25)
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q2-2025
 ---
 
 # Previous Roadmap - Q2 2025
@@ -47,7 +51,7 @@ Earlier this year, Hyperswitch was made more modular to provide businesses with 
 
 #### Revenue Recovery <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 
-* Support rule-based as well as intelligent retries&#x20;
+* Support rule-based as well as intelligent retries
 
 #### Intelligent Routing <a href="#modular-and-composable-payments" id="modular-and-composable-payments"></a>
 

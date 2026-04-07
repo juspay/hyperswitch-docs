@@ -1,6 +1,12 @@
 ---
+description: >-
+  Set up the Hyperswitch MCP server to enable AI clients to search docs and
+  explore Sandbox APIs safely
 icon: user-robot-xmarks
-description: Set up the Hyperswitch MCP server to enable AI clients to search docs and explore Sandbox APIs safely
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/ai-resources/setup-mcp-server
 ---
 
 # Setup MCP Server
@@ -21,9 +27,11 @@ Hyperswitch's Mintlify MCP server lets your AI client search Hyperswitch docs an
 ### Recommended: Claude Code
 
 Add it via CLI:
+
 ```bash
 claude mcp add --transport http mint-hyperswitch https://api-reference.hyperswitch.io/mcp
 ```
+
 On successfully adding this, you should see this output in CLI:
 
 ![Adding MCP server](../../.gitbook/assets/mcp-add.png)
@@ -36,7 +44,6 @@ Run `claude` and verify if MCP was configured properly using `/mcp`. You should 
 
 Follow Mintlify's [client-specific setup guide](https://www.mintlify.com/docs/ai/model-context-protocol?_gl=1*1m5cmfd*_gcl_au*MTY1NjU2NDE1LjE3NjY0NzY1MzE.#example:-connect-to-the-mintlify-mcp-server) using the same MCP: `https://api-reference.hyperswitch.io/mcp`
 
-
 ### Step 2: Make your first payment
 
 Paste below prompt in your AI client after replacing with your sandbox `API_KEY`:
@@ -46,7 +53,7 @@ Make a 100 EUR payment via Hyperswitch V1 in sandbox.
 Sandbox API key: <YOUR_SANDBOX_API_KEY>
 ```
 
-### **Output:** 
+### **Output:**
 
 You can head on to payment section in [Hyperswitch Control Center](https://app.hyperswitch.io/dashboard/payments) and verify the payment with the time stamp and status as `REQUIRES_CUSTOMER_ACTION` (depending on the flow you selected - 3DS vs No3DS).
 

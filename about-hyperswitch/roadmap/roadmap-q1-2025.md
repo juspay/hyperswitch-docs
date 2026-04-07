@@ -1,6 +1,10 @@
 ---
 description: Jan'25 - Mar'25
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q1-2025
 ---
 
 # Previous Roadmap - Q1 2025
@@ -78,7 +82,7 @@ In Q1’25, Hyperswitch will be offering the following composable services as st
 #### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * New integrations
-  * 🟩  Deutsche Bank for card payments
+  * 🟩 Deutsche Bank for card payments
   * 🟩 Redsys
   * 🟩 Inespay
   * 🟩 Xendit
@@ -87,7 +91,7 @@ In Q1’25, Hyperswitch will be offering the following composable services as st
 
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟧 **Intelligent Routing:** Intelligent Routing module tracks the auth rates of various processor in realtime at a granular level to select the most optimal processor to boost conversions&#x20;
+* 🟧 **Intelligent Routing:** Intelligent Routing module tracks the auth rates of various processor in realtime at a granular level to select the most optimal processor to boost conversions
   * 🟥 **Outages and acute failures:** Provides a failsafe system that proactively identifies incidents and holds off traffic to processors that are facing temporary downtimes or failures _(Larger-scope initiative extending into Q2)_
   * 🟥 **Volume Commitments:** Helps select the appropriate PSP for getting volume tier benefits from the processor by routing sufficient payments volume to necessary processors in accordance with their SLA or contracts _(Larger-scope initiative extending into Q2)_
 * **🟧 Churn Recovery Service:** For all merchants with recurring payment use cases and working with an external subscription engine, Churn recovery service will get notified about all recurring txns and retry only those transactions that have failed _(Larger-scope initiative extending into Q2)_

@@ -1,5 +1,9 @@
 ---
 icon: wave
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/sdk-payment-flows
 ---
 
 # SDK Payment flows

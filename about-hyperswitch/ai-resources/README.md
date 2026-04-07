@@ -1,8 +1,14 @@
 ---
+description: >-
+  Explore AI resources to interact with Juspay Hyperswitch through DeepWikis and
+  MCP Server for documentation and API operations
 hidden: true
 noIndex: true
 icon: brain-circuit
-description: Explore AI resources to interact with Juspay Hyperswitch through DeepWikis and MCP Server for documentation and API operations
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/ai-resources
 ---
 
 # AI Resources

@@ -1,6 +1,10 @@
 ---
 description: Hyperswitch roadmap (Apr to Jun'24)
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q2-2024
 ---
 
 # Previous Roadmap - Q2 2024
@@ -64,17 +68,17 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Community Feature Requests <a href="#community-feature-requests" id="community-feature-requests"></a>
 
 * 🟩 Vaulting payment methods in non-payment flows
-*   🟥 ~~Support business continuity for MIT payment through PSP tokens~~&#x20;
+*   🟥 ~~Support business continuity for MIT payment through PSP tokens~~
 
     (Will be supported with custom migration APIs)
 * 🟩 Card vaulting enhancements - support nickname updation
-* 🟩 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay&#x20;
+* 🟩 Hyperswitch Widgets for Quick Checkout experience - Paypal, Applepay and Googlepay
 * New connector and payment method Integrations
-  * 🟧 Datatrans ([Planet.com](http://planet.com)) for card payments&#x20;
-  * 🟩 Netcetera for 3DS service&#x20;
-  * 🟩 3DSecure.io for 3DS service&#x20;
+  * 🟧 Datatrans ([Planet.com](http://planet.com)) for card payments
+  * 🟩 Netcetera for 3DS service
+  * 🟩 3DSecure.io for 3DS service
   * 🟩 ZSL for bank transfer payments
-  * 🟩 Mifinity for wallet payments&#x20;
+  * 🟩 Mifinity for wallet payments
   * 🟩 Payone for payouts
 
 _(list of connectors will keep expanding as we receive more requests from the community!!! )_
@@ -90,7 +94,7 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 * 🟩 🚛 Enable scanning of cards to reduce manual entry of card details by the customer
 * 🟩 Native 3DS on Android and iOS apps
-* 🚛 🟧 Paypal Vault flows for improving repeat user payment experience&#x20;
+* 🚛 🟧 Paypal Vault flows for improving repeat user payment experience
 * 🟧 Customer initiated payment retries on Hyperswitch Unified Checkout
 * 🟧 💪 Account verification for bank payment methods like ACH and SEPA
 
@@ -98,7 +102,7 @@ _(list of connectors will keep expanding as we receive more requests from the co
 
 * 🟥 ~~Payment audit trail will carry more information for Hyperswitch Cloud users - Consolidated API logs, Webhook and State change events on the Control Centre~~
 * 🟧 Hyperswitch Headless SDK methods to support payment account management experience for users - this will allow customers to add, update, edit and delete payment methods
-* 🟧  Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
+* 🟧 Enhance the functionality of the analytics module in the control center by adding additional features such as expanded filter options, currency conversion capabilities, granular timeline views and a broader range of analytical views
 
 ### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 

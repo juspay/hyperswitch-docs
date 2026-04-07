@@ -1,6 +1,10 @@
 ---
 description: Hyperswitch roadmap (July to Sept'24)
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q3-2024
 ---
 
 # Previous Roadmap - Q3 2024
@@ -13,7 +17,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 ### Recap of Q2 2024 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
-* Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods&#x20;
+* Payouts support with Adyen Platform, Cybersource, Ebanx, Payone and Paypal and instant payout methods
 * Vaulting payment methods with Hyperswitch for on-session payments
 * Natively authenticating payments using Third party 3DS service providers - Netcetra, 3dsecure.io
 * Integrations for alternate payment methods via Mifinity and ZSL
@@ -59,8 +63,8 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 * 🟩 Payment Method Management experience to view, add and delete payment methods (for Web platform)
 * New connector and payment method Integrations (more will be added as we progress)
-  * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments&#x20;
-  * 🟩 Razorpay for UPI payments&#x20;
+  * 🟩 🚛 Datatrans ([Planet.com](http://planet.com/)) for card payments
+  * 🟩 Razorpay for UPI payments
   * 🟧 PAZE checkout _(extending to Q4)_
   * 🟧 TaxJar for dynamic tax calculations _(extending to Q4)_
   * 🟩 Novalnet for card payments
@@ -68,28 +72,26 @@ There are a lot of problems to be solved in payments, but our majority of our cu
   * 🟩 Itau Bank for instant payments
   * 🟩 Payouts via PayOne, and Wells Fargo
 
-
-
 #### Improving Authorization Rates <a href="#improving-authorization-rates" id="improving-authorization-rates"></a>
 
-* 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee&#x20;
+* 🟩 Network Tokenization with account updater to (a) improve auth rates for one-time/ recurring payments and (b) reducing scheme fee
 
 #### Reducing Payments Cost <a href="#reducing-payments-cost" id="reducing-payments-cost"></a>
 
 * Direct integrations with banks acquirers to reduce cost (will be extended for EU banks)
   * 🟩 Wells Fargo (US)
   * 🟩 Deutsche Bank (DE)
-* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience&#x20;
+* 🟩 Pay by Bank Experience through Plaid Open banking to enable instant bank transfer (push payments) in the UK and EU via with support for app2app redirection experience
 
 #### Reducing Payment Operations <a href="#reducing-payment-operations" id="reducing-payment-operations"></a>
 
-* 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid&#x20;
-* 🟩  User management and dashboard analytics views at entity level granularity (org to profile)
+* 🟩 🚛 Account verification for pull payments like Direct Debits in the EU and US (ACH, SEPA) via Plaid
+* 🟩 User management and dashboard analytics views at entity level granularity (org to profile)
 
 #### Developer Experience <a href="#developer-experience" id="developer-experience"></a>
 
 * 🟩 Payment plugins for ~~Commerce Tools~~ Saleor - Headless commerce platform to facilitate faster integrations
-* 🟩 🚛 PCI Software Security Standard (S3) certification&#x20;
+* 🟩 🚛 PCI Software Security Standard (S3) certification
 
 #### **Want to contribute to the roadmap?** <a href="#want-to-contribute-to-the-roadmap" id="want-to-contribute-to-the-roadmap"></a>
 
