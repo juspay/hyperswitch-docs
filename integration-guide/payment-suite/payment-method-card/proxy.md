@@ -19,7 +19,44 @@ Key Highlights:
 
 ### Vault and Proxy - Vaulting and Payments Flow
 
-<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+sequenceDiagram
+  participant C as Consumer
+  participant MFE as Merchant FE
+  participant PSDK as Hyperswitch PM SDK
+  participant MBE as Merchant BE
+  participant HBE as Hyperswitch BE
+  participant V as Vault
+  participant PSP as PSP
+
+  MFE ->> MBE: Create-payment-method-session with customer_id
+  MBE ->> HBE: "Create-payment-method-session" API using Merchant HS API Key & Profile ID
+  HBE -->> MBE: Session id & client_secret
+  MBE -->> MFE: Session id & client_secret
+
+  Note over MFE: Create a script tag to load HyperLoader.js
+  Note over MFE: Initialize window.Hyper using the Publishable Key
+  Note over MFE: Create PMM elements group using SessionId & ClientSecret
+  Note over MFE: Create specific widget instance & mount SDK
+
+  C ->> PSDK: Add Payment method
+  PSDK ->> HBE: "Payment Method Session - Confirm a payment method session" API with card details
+  HBE ->> V: Store card details
+  Note over MBE: CVV is stored temporarily for a specific TTL or until first txn
+  V -->> HBE: Response
+  HBE -->> PSDK: Response (Session id & associated_token_id)
+
+  MBE ->> HBE: "Payment Method Session - List Payment Methods" API with Session id
+  HBE -->> MBE: Response (PM_ID)
+  Note over MBE: Response contains all payment methods associated with customer
+  Note over MBE: Choose the PM_ID for the Session id of the session
+
+  Note over MBE: Making a proxy payment
+  MBE ->> HBE: Send PSP payment request to Vault proxy endpoint with PM_ID
+  HBE ->> PSP: Send PSP payment request<br>to PSP (PM_ID replaced with actual card data)
+  PSP -->> HBE: Payment response
+  HBE -->> MBE: Payment response
+```
 
 #### 1. Create Payment Method Session (Server-Side)
 
