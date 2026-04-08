@@ -105,4 +105,4 @@ These UI customizations are scalable and can be extended upon merchant request.
 [integration-guide.md](../../../other-features/merchant-controls/integration-guide.md)
 {% endcontent-ref %}
 
-You can also refer to the [Smart Router](../../../other-features/payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](../../../hyperswitch-open-source/account-setup/test-a-payment.md).
+You can also refer to the [Smart Router](../../../other-features/payment-orchestration/smart-router.md) section to learn more about how you can route your payments and then later you can [Test a Payment](/broken/pages/l28HCGRBvHUVXZcSIrCF).

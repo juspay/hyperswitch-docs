@@ -26,7 +26,7 @@ The sequence diagram above outlines how a SaaS merchant performs payments and va
 
 **New user payments flow**
 
-1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/)
+1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](/broken/pages/MfcX0idtB0lW4e2LNv0p)
 2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
 3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Hyperswitch
 4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.
