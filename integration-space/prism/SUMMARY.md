@@ -3,7 +3,6 @@
 ## Getting Started
 - [Overview](README.md)
 - [Installation & Configuration](getting-started/installation.md)
-- [Create Payment Order](getting-started/create-order.md)
 - [First Payment](getting-started/first-payment.md)
 - [Extend to More Flows](getting-started/extend-to-more-flows.md)
 
