@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-service/create-order
----
+# CreateOrder RPC
 
-# Create Order
+<!--
+---
+title: CreateOrder
+description: Initialize an order in the payment processor system - sets up payment context before customer enters card details for improved authorization rates
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+---
+-->
 
 ## Overview
 
@@ -17,48 +23,47 @@ The `CreateOrder` RPC initializes a payment order at the payment processor befor
 
 **Why use CreateOrder?**
 
-| Scenario               | Developer Implementation                                                                            |
-| ---------------------- | --------------------------------------------------------------------------------------------------- |
-| **Wallet payments**    | Apple Pay or Google Pay integration - call `CreateOrder` to generate session token for wallet SDK   |
-| **Pre-checkout setup** | Customer adds items to cart - call `CreateOrder` early to prepare payment context                   |
-| **Risk assessment**    | High-value transactions - call `CreateOrder` to allow processor fraud checks before payment details |
-| **Order tracking**     | Complex order flows - call `CreateOrder` to establish order ID for tracking across systems          |
-| **Session continuity** | Multi-page checkout - call `CreateOrder` to maintain payment context across pages                   |
+| Scenario | Developer Implementation |
+|----------|-------------------------|
+| **Wallet payments** | Apple Pay or Google Pay integration - call `CreateOrder` to generate session token for wallet SDK |
+| **Pre-checkout setup** | Customer adds items to cart - call `CreateOrder` early to prepare payment context |
+| **Risk assessment** | High-value transactions - call `CreateOrder` to allow processor fraud checks before payment details |
+| **Order tracking** | Complex order flows - call `CreateOrder` to establish order ID for tracking across systems |
+| **Session continuity** | Multi-page checkout - call `CreateOrder` to maintain payment context across pages |
 
 **Key outcomes:**
-
-* Order context established at processor
-* Session token for wallet payment SDKs
-* Improved authorization rates
-* Better fraud detection through early context
-* Order ID for cross-system tracking
+- Order context established at processor
+- Session token for wallet payment SDKs
+- Improved authorization rates
+- Better fraud detection through early context
+- Order ID for cross-system tracking
 
 ## Request Fields
 
-| Field                    | Type              | Required | Description                                                |
-| ------------------------ | ----------------- | -------- | ---------------------------------------------------------- |
-| `merchant_order_id`      | string            | Yes      | Your unique identifier for this order                      |
-| `amount`                 | Money             | Yes      | The expected payment amount                                |
-| `webhook_url`            | string            | No       | URL for webhook notifications                              |
-| `metadata`               | SecretString      | No       | Additional metadata for the connector                      |
-| `connector_feature_data` | SecretString      | No       | Connector-specific metadata for the transaction            |
-| `state`                  | ConnectorState    | No       | State from previous multi-step flow                        |
-| `test_mode`              | bool              | No       | Process as test transaction                                |
-| `payment_method_type`    | PaymentMethodType | No       | The type of payment method (e.g., apple\_pay, google\_pay) |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_order_id` | string | Yes | Your unique identifier for this order |
+| `amount` | Money | Yes | The expected payment amount |
+| `webhook_url` | string | No | URL for webhook notifications |
+| `metadata` | SecretString | No | Additional metadata for the connector |
+| `connector_feature_data` | SecretString | No | Connector-specific metadata for the transaction |
+| `state` | ConnectorState | No | State from previous multi-step flow |
+| `test_mode` | bool | No | Process as test transaction |
+| `payment_method_type` | PaymentMethodType | No | The type of payment method (e.g., apple_pay, google_pay) |
 
 ## Response Fields
 
-| Field                    | Type                 | Description                                       |
-| ------------------------ | -------------------- | ------------------------------------------------- |
-| `connector_order_id`     | string               | Identifier for the created order at the connector |
-| `status`                 | PaymentStatus        | Status of the order creation attempt              |
-| `error`                  | ErrorInfo            | Error details if order creation failed            |
-| `status_code`            | uint32               | HTTP-style status code (200, 402, etc.)           |
-| `response_headers`       | map\<string, string> | Connector-specific response headers               |
-| `merchant_order_id`      | string               | Your order reference (echoed back)                |
-| `raw_connector_request`  | SecretString         | Raw API request sent to connector (debugging)     |
-| `raw_connector_response` | SecretString         | Raw API response from connector (debugging)       |
-| `session_token`          | SessionToken         | JSON serialized session token for wallet payments |
+| Field | Type | Description |
+|-------|------|-------------|
+| `connector_order_id` | string | Identifier for the created order at the connector |
+| `status` | PaymentStatus | Status of the order creation attempt |
+| `error` | ErrorInfo | Error details if order creation failed |
+| `status_code` | uint32 | HTTP-style status code (200, 402, etc.) |
+| `response_headers` | map<string, string> | Connector-specific response headers |
+| `merchant_order_id` | string | Your order reference (echoed back) |
+| `raw_connector_request` | SecretString | Raw API request sent to connector (debugging) |
+| `raw_connector_response` | SecretString | Raw API response from connector (debugging) |
+| `session_token` | SessionToken | JSON serialized session token for wallet payments |
 
 ## Example
 
@@ -96,7 +101,7 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Authorize](authorize.md) - Create payment authorization (pass `order_context` from CreateOrder response)
-* [SetupRecurring](setup-recurring.md) - Set up recurring payments using the order context
-* [Get](get.md) - Check order status
-* [MerchantAuthenticationService](../merchant-authentication-service/) - Create session tokens for SDK integration
+- [Authorize](./authorize.md) - Create payment authorization (pass `order_context` from CreateOrder response)
+- [SetupRecurring](./setup-recurring.md) - Set up recurring payments using the order context
+- [Get](./get.md) - Check order status
+- [MerchantAuthenticationService](../merchant-authentication-service/README.md) - Create session tokens for SDK integration

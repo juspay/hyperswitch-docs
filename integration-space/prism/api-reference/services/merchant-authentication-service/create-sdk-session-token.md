@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/merchant-authentication-service/create-sdk-session-token
----
+# CreateSdkSessionToken RPC
 
-# Create SDK Session Token
+<!--
+---
+title: CreateSdkSessionToken
+description: Initialize wallet payment sessions for Apple Pay, Google Pay, and other SDK-based payments
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: false
+reviewed_by: engineering
+reviewed_at: 2026-03-05
+approved: true
+---
+-->
 
 ## Overview
 
@@ -17,42 +23,41 @@ The `CreateSdkSessionToken` RPC initializes wallet payment sessions for Apple Pa
 
 **Why use SDK session tokens?**
 
-| Wallet         | Purpose                                              |
-| -------------- | ---------------------------------------------------- |
-| **Apple Pay**  | Initialize PKPaymentSession with merchant validation |
-| **Google Pay** | Configure PaymentDataRequest with merchant info      |
-| **PayPal SDK** | Set up checkout context                              |
+| Wallet | Purpose |
+|--------|---------|
+| **Apple Pay** | Initialize PKPaymentSession with merchant validation |
+| **Google Pay** | Configure PaymentDataRequest with merchant info |
+| **PayPal SDK** | Set up checkout context |
 
 **Key outcomes:**
-
-* Wallet-specific session configuration
-* Merchant validation data
-* Supported payment methods list
-* Ready for native SDK presentation
+- Wallet-specific session configuration
+- Merchant validation data
+- Supported payment methods list
+- Ready for native SDK presentation
 
 ## Request Fields
 
-| Field                     | Type              | Required | Description                                  |
-| ------------------------- | ----------------- | -------- | -------------------------------------------- |
-| `merchant_sdk_session_id` | string            | Yes      | Your unique SDK session reference            |
-| `amount`                  | Money             | Yes      | Payment amount                               |
-| `order_tax_amount`        | int64             | No       | Tax amount in minor units                    |
-| `shipping_cost`           | int64             | No       | Shipping cost in minor units                 |
-| `payment_method_type`     | PaymentMethodType | No       | Target wallet type (APPLE\_PAY, GOOGLE\_PAY) |
-| `country_alpha2_code`     | CountryAlpha2     | No       | ISO country code for localization            |
-| `customer`                | Customer          | No       | Customer information                         |
-| `metadata`                | SecretString      | No       | Additional metadata                          |
-| `connector_feature_data`  | SecretString      | No       | Connector-specific metadata                  |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_sdk_session_id` | string | Yes | Your unique SDK session reference |
+| `amount` | Money | Yes | Payment amount |
+| `order_tax_amount` | int64 | No | Tax amount in minor units |
+| `shipping_cost` | int64 | No | Shipping cost in minor units |
+| `payment_method_type` | PaymentMethodType | No | Target wallet type (APPLE_PAY, GOOGLE_PAY) |
+| `country_alpha2_code` | CountryAlpha2 | No | ISO country code for localization |
+| `customer` | Customer | No | Customer information |
+| `metadata` | SecretString | No | Additional metadata |
+| `connector_feature_data` | SecretString | No | Connector-specific metadata |
 
 ## Response Fields
 
-| Field                    | Type         | Description                      |
-| ------------------------ | ------------ | -------------------------------- |
-| `session_token`          | SessionToken | Wallet-specific session data     |
-| `error`                  | ErrorInfo    | Error details if creation failed |
-| `status_code`            | uint32       | HTTP-style status code           |
-| `raw_connector_response` | SecretString | Raw response for debugging       |
-| `raw_connector_request`  | SecretString | Raw request for debugging        |
+| Field | Type | Description |
+|-------|------|-------------|
+| `session_token` | SessionToken | Wallet-specific session data |
+| `error` | ErrorInfo | Error details if creation failed |
+| `status_code` | uint32 | HTTP-style status code |
+| `raw_connector_response` | SecretString | Raw response for debugging |
+| `raw_connector_request` | SecretString | Raw request for debugging |
 
 ## Example
 
@@ -94,6 +99,6 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [CreateAccessToken](create-access-token.md) - Generate API access tokens
-* [CreateSessionToken](create-session-token.md) - Create standard session tokens
-* [Payment Service](../payment-service/) - Process wallet payments
+- [CreateAccessToken](./create-access-token.md) - Generate API access tokens
+- [CreateSessionToken](./create-session-token.md) - Create standard session tokens
+- [Payment Service](../payment-service/README.md) - Process wallet payments

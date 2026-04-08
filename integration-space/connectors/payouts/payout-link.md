@@ -114,7 +114,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 ```
 
-<figure><img src="../../.gitbook/assets/payout-link-default.png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-default.png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
 
 #### 3. Customizing a payout link during creation
 
@@ -158,7 +158,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
 
 #### 4. Opening non-iframed links
 
@@ -218,7 +218,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../.gitbook/assets/payout-link-non-iframed.png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-non-iframed.png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
 
 ### FAQ
 

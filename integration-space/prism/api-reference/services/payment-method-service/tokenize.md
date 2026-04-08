@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-method-service/tokenize
----
+# Tokenize RPC
 
-# Tokenize
+<!--
+---
+title: Tokenize
+description: Store payment method securely at the processor - replace raw card details with token for one-click payments and recurring billing
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: false
+reviewed_by: engineering
+reviewed_at: 2026-03-05
+approved: true
+---
+-->
 
 ## Overview
 
@@ -17,46 +23,45 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 
 **Why use Tokenize?**
 
-| Scenario                         | Developer Implementation                                                                               |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **One-click checkout**           | Store token after first purchase, use it for future payments without customer re-entering card details |
-| **Subscription billing**         | Tokenize payment method during signup, use token for recurring charges                                 |
-| **Mobile wallet storage**        | Convert Apple Pay/Google Pay tokens to processor tokens for repeated use                               |
-| **Reduced PCI scope**            | Tokenization shifts PCI compliance burden to the payment processor                                     |
-| **Improved authorization rates** | Tokenized payments often have higher approval rates due to stored credential protocols                 |
+| Scenario | Developer Implementation |
+|----------|-------------------------|
+| **One-click checkout** | Store token after first purchase, use it for future payments without customer re-entering card details |
+| **Subscription billing** | Tokenize payment method during signup, use token for recurring charges |
+| **Mobile wallet storage** | Convert Apple Pay/Google Pay tokens to processor tokens for repeated use |
+| **Reduced PCI scope** | Tokenization shifts PCI compliance burden to the payment processor |
+| **Improved authorization rates** | Tokenized payments often have higher approval rates due to stored credential protocols |
 
 **Key outcomes:**
-
-* Secure storage of payment credentials at the processor
-* Token reference that can be used for future payments
-* Reduced PCI compliance requirements for your systems
-* Support for stored credential protocols (MIT/CIT transactions)
-* Consistent customer experience across payment sessions
+- Secure storage of payment credentials at the processor
+- Token reference that can be used for future payments
+- Reduced PCI compliance requirements for your systems
+- Support for stored credential protocols (MIT/CIT transactions)
+- Consistent customer experience across payment sessions
 
 ## Request Fields
 
-| Field                        | Type           | Required | Description                                                  |
-| ---------------------------- | -------------- | -------- | ------------------------------------------------------------ |
-| `merchant_payment_method_id` | string         | Yes      | Your unique identifier for this payment method               |
-| `amount`                     | Money          | Yes      | Amount for initial validation (some processors require this) |
-| `payment_method`             | PaymentMethod  | Yes      | Payment method details to tokenize (card, wallet, etc.)      |
-| `customer`                   | Customer       | No       | Customer information to associate with payment method        |
-| `address`                    | PaymentAddress | No       | Billing address for the payment method                       |
-| `metadata`                   | SecretString   | No       | Additional metadata for the connector (max 20 keys)          |
-| `connector_feature_data`     | SecretString   | No       | Connector-specific feature data for the tokenization         |
-| `return_url`                 | string         | No       | URL to redirect customer after any required authentication   |
-| `test_mode`                  | bool           | No       | Process as test transaction                                  |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_payment_method_id` | string | Yes | Your unique identifier for this payment method |
+| `amount` | Money | Yes | Amount for initial validation (some processors require this) |
+| `payment_method` | PaymentMethod | Yes | Payment method details to tokenize (card, wallet, etc.) |
+| `customer` | Customer | No | Customer information to associate with payment method |
+| `address` | PaymentAddress | No | Billing address for the payment method |
+| `metadata` | SecretString | No | Additional metadata for the connector (max 20 keys) |
+| `connector_feature_data` | SecretString | No | Connector-specific feature data for the tokenization |
+| `return_url` | string | No | URL to redirect customer after any required authentication |
+| `test_mode` | bool | No | Process as test transaction |
 
 ## Response Fields
 
-| Field                        | Type                | Description                                             |
-| ---------------------------- | ------------------- | ------------------------------------------------------- |
-| `payment_method_token`       | string              | Token to use for future payments (e.g., Stripe pm\_xxx) |
-| `error`                      | ErrorInfo           | Error details if tokenization failed                    |
-| `status_code`                | uint32              | HTTP-style status code (200, 402, etc.)                 |
-| `response_headers`           | map\<string,string> | Connector-specific response headers                     |
-| `merchant_payment_method_id` | string              | Your payment method reference (echoed back)             |
-| `state`                      | ConnectorState      | State to pass to next request in multi-step flow        |
+| Field | Type | Description |
+|-------|------|-------------|
+| `payment_method_token` | string | Token to use for future payments (e.g., Stripe pm_xxx) |
+| `error` | ErrorInfo | Error details if tokenization failed |
+| `status_code` | uint32 | HTTP-style status code (200, 402, etc.) |
+| `response_headers` | map<string,string> | Connector-specific response headers |
+| `merchant_payment_method_id` | string | Your payment method reference (echoed back) |
+| `state` | ConnectorState | State to pass to next request in multi-step flow |
 
 ## Example
 
@@ -103,6 +108,6 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Authorize](../payment-service/authorize.md) - Use the tokenized payment method to authorize a payment
-* [SetupRecurring](../payment-service/setup-recurring.md) - Set up recurring billing with the stored payment method
-* [Customer Service](../customer-service/) - Associate payment methods with customer profiles
+- [Authorize](../payment-service/authorize.md) - Use the tokenized payment method to authorize a payment
+- [SetupRecurring](../payment-service/setup-recurring.md) - Set up recurring billing with the stored payment method
+- [Customer Service](../customer-service/README.md) - Associate payment methods with customer profiles
