@@ -108,6 +108,6 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
 * [Google Pay](wallets/google-pay/README.md)
   * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
   * [In-App and Web Transactions Processed Using PSP Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
-* [PayPal](explore-hyperswitch/wallets/paypal.md)
+* [PayPal](wallets/paypal.md)
 * [Samsung Pay](wallets/samsung-pay.md)
 
