@@ -20,6 +20,29 @@ Key Highlights:
 ### Vault and Proxy - Vaulting and Payments Flow
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
 sequenceDiagram
   participant C as Consumer
   participant MFE as Merchant FE
