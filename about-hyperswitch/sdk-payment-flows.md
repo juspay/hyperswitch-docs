@@ -50,13 +50,14 @@ While `PaymentIntent` and `PaymentAttempt` have their own state machines, the va
 
 The following is an abridged version of the `PaymentIntent` state machine flow that covers majority of the above payment use-cases.
 
-\{% @mermaid/diagram content="%%{ init: { 'theme': 'forest', 'themeVariables': { 'fontSize': '14px', 'background': '#17202A' } } }%%
-
+```mermaid
 flowchart TD
-
-A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod RequiresPaymentMethod -->|payment\_method| RequiresConfirmation RequiresConfirmation --> |confirm| Processing Processing --> AuthType{auth type\nselection} AuthType --> |3ds| RequiresCustomerAction AuthType --> |no-3ds| CaptureMethod{capture method\nselection}
-
-```
+A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod 
+RequiresPaymentMethod -->|payment_method| RequiresConfirmation 
+RequiresConfirmation --> |confirm| Processing 
+Processing --> AuthType{auth type\nselection} 
+AuthType --> |3ds| RequiresCustomerAction 
+AuthType --> |no-3ds| CaptureMethod{capture method\nselection}
 CaptureMethod --> |manual| RequiresCapture
 CaptureMethod --> |automatic| Succeeded
 RequiresCustomerAction --> CustomerAction{customer_action\nresult}
@@ -66,17 +67,15 @@ CustomerAction -->|failure| Failed
 RequiresCapture --> |capture|Succeeded
 ```
 
-" %\}
+
 
 **PaymentAttempt state machine:**
 
 The following is an abridged version of the `PaymentAttempt` state machine flow that covers majority of the above payment use-cases.
 
-\{% @mermaid/diagram content="%%{ init: { 'theme': 'forest', 'themeVariables': { 'fontSize': '16px', 'background': '#17202A' } } }%%
-
+```mermaid
 flowchart TD
 
-```
 AuthenticationFailed
 AuthenticationPending
 AuthenticationSuccessful
@@ -119,5 +118,54 @@ DeviceDataCollectionPending -->|void| Voided
 AuthenticationPending -->|void| Voided
 
 %% Voiding a payment after it is Authorized will void at connector
-Authorized -->|void|Voided" %}
+
+```
+
+
+
+```mermaid
+flowchart TD
+AuthenticationFailed
+AuthenticationPending
+AuthenticationSuccessful
+Authorized
+AuthorizationFailed
+Charged
+Voided
+CaptureInitiated
+CaptureFailed
+Pending
+PaymentMethodAwaited
+ConfirmationAwaited
+DeviceDataCollectionPending
+
+A{PaymentsAPI} --> |amount,currency|PaymentMethodAwaited
+PaymentMethodAwaited -->|payment_method| ConfirmationAwaited
+ConfirmationAwaited --> |confirm| Pending
+
+%% Before calling the connector change status to Pending
+Pending --> CallConnector{CallConnector}
+CallConnector -->|Success| AuthType{auth_type}
+CallConnector -->|Fail| AuthorizationFailed
+AuthType --> |no-3ds| CaptureMethod{capture_method} 
+AuthType --> |3ds| DeviceDataCollectionPending
+DeviceDataCollectionPending --> |CollectDeviceData|AuthenticationPending --> Authenticate{Authenticate}
+Authenticate --> |Success| AuthenticationSuccessful --> CaptureMethod{capture method}
+Authenticate --> |Failure| AuthenticationFailed
+
+%% Capture
+CaptureMethod --> |automatic| Charged
+CaptureMethod --> |manual| Authorized
+
+Authorized --> |capture| CaptureInitiated --> Capture{Capture at connector}
+Capture -->|Success| Charged
+Capture -->|Failed| CaptureFailed
+
+%% Payment can be voided after calling the connector but not charged
+%% This will not void the payment at connector
+DeviceDataCollectionPending -->|void| Voided
+AuthenticationPending -->|void| Voided
+
+%% Voiding a payment after it is Authorized will void at connector
+Authorized -->|void|Voided
 ```
