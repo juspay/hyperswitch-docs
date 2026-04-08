@@ -1,8 +1,55 @@
 # Table of contents
 
+## Connectors Integrations
+
+* [Connectors Integration](README.md)
+* [Payment Processor Capabilities](connectors-integrations/payment-processor-capabilities.md)
+* [Processors with Split Settlement](connectors-integrations/split-payments/README.md)
+  * [Stripe Split Settlement](connectors-integrations/split-payments/stripe-split-payments.md)
+  * [Adyen Split Settlement](connectors-integrations/split-payments/adyen-split-payments.md)
+  * [Xendit Split Settlement](connectors-integrations/split-payments/xendit-split-payments.md)
+* [Payouts Processors](connectors-integrations/payouts/README.md)
+  * [Getting Started with Payouts](connectors-integrations/payouts/get-started-with-payouts.md)
+  * [Payouts with Saved Payment Methods](connectors-integrations/payouts/process-payouts-using-saved-payment-methods.md)
+  * [Smart Router for Payouts](connectors-integrations/payouts/route-your-payout-transactions-using-smart-router.md)
+  * [Smart Retries in Payout](connectors-integrations/payouts/smart-retries-in-payout.md)
+  * [Payout Links](connectors-integrations/payouts/payout-link.md)
+* [Subscriptions Providers](connectors-integrations/subscriptions-with-modular-payments.md)
+* [Activate Connector on Hyperswitch](connectors-integrations/activate-connector-on-hyperswitch/README.md)
+  * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
+* [Setup Payment Methods](connectors-integrations/payment-methods-setup/README.md)
+  * [Cards](connectors-integrations/payment-methods-setup/cards.md)
+  * [Pay Later](connectors-integrations/payment-methods-setup/pay-later.md)
+  * [Banks](connectors-integrations/payment-methods-setup/banks/README.md)
+    * [Bank Debits](connectors-integrations/payment-methods-setup/banks/bank-debits.md)
+    * [Bank Redirects](connectors-integrations/payment-methods-setup/banks/bank-redirects.md)
+    * [Bank Transfers](connectors-integrations/payment-methods-setup/banks/bank-transfers.md)
+    * [Open Banking](connectors-integrations/payment-methods-setup/banks/open-banking.md)
+  * [Crypto](connectors-integrations/payment-methods-setup/crypto.md)
+  * [Test Credentials](connectors-integrations/payment-methods-setup/test-credentials.md)
+
+## Wallets
+
+* [Apple Pay](wallets/apple-pay/README.md)
+  * [Web Domain](wallets/apple-pay/web-domain.md)
+  * [iOS Application](wallets/apple-pay/ios-application.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+  * [In-App and Web Transactions Processed Using Merchant Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption.md)
+  * [Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)](wallets/apple-pay/web-transactions-processed-using-hyperswitch-decryption-without-apple-merchant-id.md)
+* [Google Pay](wallets/google-pay/README.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+* [PayPal](wallets/paypal.md)
+* [Samsung Pay](wallets/samsung-pay.md)
+
+## Supported Connectors
+
+* [Supported Connectors](https://juspay.io/integrations)
+
 ## PRISM
 
-* [Product Overview](README.md)
+* [Product Overview](<README (1).md>)
   * [Installation & Configuration](prism/readme/installation.md)
   * [First Payment](prism/readme/first-payment.md)
   * [Extend to More Flows](prism/readme/extend-to-more-flows.md)
@@ -57,50 +104,3 @@
   * [Create Session Token](prism/api-reference/create-session-token.md)
   * [Create SDK Session Token](prism/api-reference/create-sdk-session-token.md)
   * [Domain Schema](prism/api-reference/domain-schema.md)
-
-## Connectors Integrations
-
-* [Connectors Integration](connectors-integrations/connectors.md)
-* [Payment Processor Capabilities](connectors-integrations/payment-processor-capabilities.md)
-* [Processors with Split Settlement](connectors-integrations/split-payments/README.md)
-  * [Stripe Split Settlement](connectors-integrations/split-payments/stripe-split-payments.md)
-  * [Adyen Split Settlement](connectors-integrations/split-payments/adyen-split-payments.md)
-  * [Xendit Split Settlement](connectors-integrations/split-payments/xendit-split-payments.md)
-* [Payouts Processors](connectors-integrations/payouts/README.md)
-  * [Getting Started with Payouts](connectors-integrations/payouts/get-started-with-payouts.md)
-  * [Payouts with Saved Payment Methods](connectors-integrations/payouts/process-payouts-using-saved-payment-methods.md)
-  * [Smart Router for Payouts](connectors-integrations/payouts/route-your-payout-transactions-using-smart-router.md)
-  * [Smart Retries in Payout](connectors-integrations/payouts/smart-retries-in-payout.md)
-  * [Payout Links](connectors-integrations/payouts/payout-link.md)
-* [Subscriptions Providers](connectors-integrations/subscriptions-with-modular-payments.md)
-* [Activate Connector on Hyperswitch](connectors-integrations/activate-connector-on-hyperswitch/README.md)
-  * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
-* [Setup Payment Methods](connectors-integrations/payment-methods-setup/README.md)
-  * [Cards](connectors-integrations/payment-methods-setup/cards.md)
-  * [Pay Later](connectors-integrations/payment-methods-setup/pay-later.md)
-  * [Banks](connectors-integrations/payment-methods-setup/banks/README.md)
-    * [Bank Debits](connectors-integrations/payment-methods-setup/banks/bank-debits.md)
-    * [Bank Redirects](connectors-integrations/payment-methods-setup/banks/bank-redirects.md)
-    * [Bank Transfers](connectors-integrations/payment-methods-setup/banks/bank-transfers.md)
-    * [Open Banking](connectors-integrations/payment-methods-setup/banks/open-banking.md)
-  * [Crypto](connectors-integrations/payment-methods-setup/crypto.md)
-  * [Test Credentials](connectors-integrations/payment-methods-setup/test-credentials.md)
-
-## Wallets
-
-* [Apple Pay](wallets/apple-pay/README.md)
-  * [Web Domain](wallets/apple-pay/web-domain.md)
-  * [iOS Application](wallets/apple-pay/ios-application.md)
-  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
-  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
-  * [In-App and Web Transactions Processed Using Merchant Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption.md)
-  * [Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)](wallets/apple-pay/web-transactions-processed-using-hyperswitch-decryption-without-apple-merchant-id.md)
-* [Google Pay](wallets/google-pay/README.md)
-  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
-  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
-* [PayPal](wallets/paypal.md)
-* [Samsung Pay](wallets/samsung-pay.md)
-
-## Supported Connectors
-
-* [Supported Connectors](https://juspay.io/integrations)

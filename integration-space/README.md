@@ -1,251 +1,76 @@
 ---
+description: >-
+  Integrate with 200+ connectors enabling 150+ payment methods with zero
+  development effort.
+icon: plug
 metaLinks:
   alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/0F41H1VvRqMkGQQjXSTN
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors
 ---
 
-# Product Overview
+# Connectors Integration
 
-## Hyperswitch Prism
+### Overview
 
-**One integration. Any payment processor. Zero lock-in.**
+Connectors are integrations that allow Juspay Hyperswitch to talk to external payment services such as PSPs, Acquirers, [APMs](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/enable-alternate-payment-method-widgets), [Card vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault), [3DS authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager), [Fraud management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management), [Subscription](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), Payouts and more. They act as bridges between your Hyperswitch setup and the third-party services that move or manage money for your business.
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+Every provider has its own APIs, authentication methods, and feature sets. Hyperswitch standardizes these differences through connectors, exposing a single unified Payments API. This means you can add, switch, or remove processors without rewriting your code—just plug in credentials and start transacting.
 
-_A high-performance payment abstraction library, and part of_ [_Juspay Hyperswitch_](https://hyperswitch.io/) _— the open-source, composable payments platform with 40,000+ GitHub stars, trusted by leading brands worldwide._
+Connectors form the foundation of Hyperswitch's payment orchestration layer, enabling you to manage payments, routing, 3DS authentication, fraud checks, and payouts through a single interface.
 
-[GitHub](https://github.com/juspay/hyperswitch) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
+### Why Multiple Processors?
 
-***
+As your business grows faster, there would be a need to expand payment offerings with more payment processors. This need might arise due to multiple reasons:
 
-### 🎯 What is Prism?
+* Vendor Independence: Reducing dependency on a single processor and reducing vendor lock-in.
+* Performance Optimization: Introducing a challenger processor for better cost and auth rates.
+* Global Reach: Launching a business in new geography with a local payment processor.
+* Localized Experience: Offering local or new payment methods for your customers.
+* Reliability: Reducing technical downtimes and improving success rates with a fallback.
 
-Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort.
+Integrating and maintaining multiple payment processors and their different versions is a time and resource intensive process. Hyperswitch can add a new PSP in [2 weeks](https://hyperswitch.io/blog/part-1-5-payment-challenges-for-vertical-saas-businesses), allowing you to focus on your core business activities.
 
-Because every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and above all - different behaviour in the actual environment when compared to documented specs. All this rests as tribal or undocumented knowledge making it harder AI agents which are very good at implementing clearly documented specification.
+### Adding a Connector
 
-**Prism is a stateless, unified connector library for AI agents and Developers to connect with any payment processor**
+Most connector integrations follow a simple click-and-connect flow on Hyperswitch using your connector credentials. However, some connectors may require additional setup details as required on the control center.
 
-**Prism offers hardened transformation through testing on payment processor environment & iterative bug fixing**
+#### Standard Setup Steps
 
-**Prism can be embedded in your server application with its wide range of multi-language SDKs, or run as a gRPC microservice**
+1. PSP Registration: You need to be registered with the PSP in order to proceed. In case you aren't, you can quickly setup your account by signing up on their dashboard.
+2. Platform Access: You should have registered on [Hyperswitch Control center](https://app.hyperswitch.io/).
+3. Credential Mapping: Add the PSP authentication credentials from their dashboard into the Hyperswitch Control center.
+4. Method Configuration: Choose the payment methods you want to utilize with the connector (e.g. Authorize.net) by navigating to the next screen on Hyperswitch.
+5. Activation: Enable the PSP once you're done.
 
-| ❌ Without Prism                                        | ✅ With Prism                        |
-| ------------------------------------------------------ | ----------------------------------- |
-| 🗂️ 100+ different API schemas                         | 📋 Single unified schema            |
-| ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven  |
-| 🔗 Brittle, provider-specific code                     | 🔓 Portable, provider-agnostic code |
-| 🚫 Hard to switch providers                            | 🔄 Change providers in 1 line       |
+#### Authentication Examples
 
-***
+Authentication credentials vary across different PSPs. Common combinations include:
 
-### ✨ Features
+| Provider          | Required Credentials                             |
+| ----------------- | ------------------------------------------------ |
+| **Authorize.net** | API Login ID and Transaction Key                 |
+| **Adyen**         | API key and Account ID                           |
+| **Braintree**     | Merchant ID, Public key and Private key          |
+| **Airwallex**     | API key and Client ID                            |
+| **Fiserv**        | API Key, API Secret, Merchant ID and Terminal ID |
+| **Paypal**        | Client Secret and Client ID                      |
 
-* **🔌 100+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
-* **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
-* **🚀 Zero Overhead** — Rust core with native bindings, no overhead
-* **🔒 PCI-Compliant by Design** — Stateless, no data storage
+### Connector Types
 
-***
+Hyperswitch supports a wide variety of connectors to manage your entire financial stack:
 
-### 🏗️ Architecture
+* Core Payments: Payment Processors, Acquirers & APMs.
+* Platforms: Payment platforms and Payouts Processors.
+* Recurring Billing: [Subscription Providers](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions).
+* Security & Risk:
+  * [Card Vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault)
+  * [3DS Authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)
+  * [Fraud Management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management)
 
-The Prism library is compliant for payment processing by design. It is:
+### Quick Links
 
-* **Stateless** — Hence, no PII or PCI data stored
-* **Credential free** — The API keys are never logged nor exposed
-* **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data.
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Your Application                         │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                         Prism Library                           │
-│     (Type-safe, idiomatic interface, Multi-language SDK)        │
-└────────────────────────────────┬────────────────────────────────┘
-                                 │
-                                 ▼
-         ┌───────────────────────┼───────────────────────┬───────────────────────┐
-         ▼                       ▼                       ▼                       ▼
-   ┌──────────┐           ┌──────────┐           ┌──────────┐           ┌──────────┐
-   │  Stripe  │           │  Adyen   │           │ Braintree│           │ 50+ more │
-   └──────────┘           └──────────┘           └──────────┘           └──────────┘
-```
-
-***
-
-### 🚀 Quick Start
-
-#### Install the Prism Library
-
-Start by installing the library in the language of your choice.
-
-**Node.js**
-
-```bash
-npm install hyperswitch-prism
-```
-
-**Python**
-
-```bash
-pip install hyperswitch-prism
-```
-
-**Java**
-
-Add to your `pom.xml`:
-
-```xml
-<dependency>
-    <groupId>com.juspay.hyperswitch</groupId>
-    <artifactId>hyperswitch-prism</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
-**PHP**
-
-```bash
-composer require juspay/hyperswitch-prism
-```
-
-For detailed installation instructions, see [Installation Guide](prism/readme/installation.md).
-
-***
-
-#### Authorize a Payment
-
-**Node.js**
-
-```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const types = require('hyperswitch-prism').types;
-
-async function main() {
-  // Configure Stripe client (Primary payment processor)
-  const stripeConfig = {
-    connectorConfig: {
-      stripe: { apiKey: { value: process.env.STRIPE_API_KEY } }
-    }
-  };
-  const stripeClient = new PaymentClient(stripeConfig);
-
-  // Configure Adyen client (Secondary payment processor)
-  const adyenConfig = {
-    connectorConfig: {
-      adyen: {
-        apiKey: { value: process.env.ADYEN_API_KEY },
-        merchantAccount: process.env.ADYEN_MERCHANT_ACCOUNT
-      }
-    }
-  };
-  const adyenClient = new PaymentClient(adyenConfig);
-
-  // Authorize a payment
-  const auth = await stripeClient.authorize({
-    merchantTransactionId: 'order-123',
-    amount: {
-      minorAmount: 1000,
-      currency: types.Currency.USD
-    },
-    paymentMethod: {
-      card: {
-        cardNumber: { value: '4242424242424242' },
-        cardExpMonth: { value: '12' },
-        cardExpYear: { value: '2027' },
-        cardCvc: { value: '123' },
-        cardHolderName: { value: 'Jane Doe' }
-      }
-    },
-    captureMethod: types.CaptureMethod.AUTOMATIC,
-    address: { billingAddress: {} },
-    authType: types.AuthenticationType.NO_THREE_DS,
-    returnUrl: "https://example.com/return"
-  });
-  console.log('Transaction ID:', auth.connectorTransactionId);
-  console.log('Status:', auth.status);
-}
-
-main().catch(console.error);
-```
-
-***
-
-### 🔄 Routing between Payment Providers
-
-Once the basic plumbing is implemented you can leverage Prism's core benefit - **switch payment providers by changing one line**.
-
-```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const types = require('hyperswitch-prism').types;
-
-// Routing rule: EUR -> Adyen, USD -> Stripe
-const currency = types.Currency.USD;
-const client = currency === types.Currency.EUR ? adyenClient : stripeClient;
-
-const auth = await client.authorize({
-  merchantTransactionId: 'order-123',
-  amount: {
-    minorAmount: 1000,
-    currency: currency
-  },
-  paymentMethod: {
-    card: {
-      cardNumber: { value: '4242424242424242' },
-      cardExpMonth: { value: '12' },
-      cardExpYear: { value: '2027' },
-      cardCvc: { value: '123' },
-      cardHolderName: { value: 'Jane Doe' }
-    }
-  },
-  captureMethod: types.CaptureMethod.AUTOMATIC,
-  address: { billingAddress: {} },
-  authType: types.AuthenticationType.NO_THREE_DS,
-  returnUrl: "https://example.com/return"
-});
-
-console.log(`Payment authorized with ${currency === types.Currency.EUR ? 'Adyen' : 'Stripe'}`);
-```
-
-**One integration pattern. Any service category.**
-
-No rewriting. No re-architecting. Just swap the client with rules. Each flow uses the same unified schema regardless of the underlying processor's API differences. No custom code per provider.
-
-You can learn more about [intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) and [smart retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries) to add more intelligence. It can help configure and manage diverse payment acceptance setup, as well as improve conversion rates.
-
-***
-
-### 🛠️ Development
-
-#### Prerequisites
-
-* Rust 1.70+
-* Protocol Buffers (protoc)
-
-#### Building from Source
-
-```bash
-# Clone the repository
-git clone https://github.com/manojradhakrishnan/connector-service.git
-cd connector-service
-
-# Build
-cargo build --release
-
-# Run tests
-cargo test
-```
-
-***
-
-#### Reporting Vulnerabilities
-
-Please report security issues to [security@juspay.in](mailto:security@juspay.in).
-
-***
-
-Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
+| Resource                                                                                                               | Description                                                           |
+| ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [**Activate Connector**](https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch) | A detailed guide on how to configure a connector and payment methods. |
+| [**Integrations Directory**](https://juspay.io/integrations)                                                           | Learn more about all the available connectors and payments methods.   |
+| [**Request Integration**](https://hyperswitch-io.slack.com/ssb/redirect)                                               | Don't see your processor? Raise an integration request on Slack.      |
