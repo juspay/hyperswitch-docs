@@ -1,2 +1,0 @@
-# Recurring Payment Service Overview
-
