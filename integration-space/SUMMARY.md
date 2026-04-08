@@ -70,7 +70,7 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
 ## Connectors Integrations
 
 * [Connectors Integration](connectors/README.md)
-* [Payment Processor Capabilities](onnectors/payment-processor-capabilities.md)
+* [Payment Processor Capabilities](connectors/payment-processor-capabilities.md)
 * [Processors with Split Settlement](connectors/split-payments/README.md)
   * [Stripe Split Settlement](onnectors/split-payments/stripe-split-payments.md)
   * [Adyen Split Settlement](connectors/split-payments/adyen-split-payments.md)
