@@ -67,6 +67,8 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
   - [Domain Schema](prism/api-reference/domain-schema/README.md)
 
 
+## Connectors Integrations
+
 * [Connectors Integration](connectors/README.md)
 * [Payment Processor Capabilities](onnectors/payment-processor-capabilities.md)
 * [Processors with Split Settlement](connectors/split-payments/README.md)
@@ -93,18 +95,19 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
     * [Crypto](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/crypto.md)
     * [Test Credentials](explore-hyperswitch/payment-orchestration/quickstart/payment-methods-setup/test-credentials.md)
 
+
 ## Wallets
 
-* [Apple Pay](explore-hyperswitch/wallets/apple-pay/README.md)
-  * [Web Domain](explore-hyperswitch/wallets/apple-pay/web-domain.md)
-  * [iOS Application](explore-hyperswitch/wallets/apple-pay/ios-application.md)
-  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](explore-hyperswitch/wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
-  * [In-App and Web Transactions Processed Using PSP Decryption](explore-hyperswitch/wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
-  * [In-App and Web Transactions Processed Using Merchant Decryption](explore-hyperswitch/wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption.md)
-  * [Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)](explore-hyperswitch/wallets/apple-pay/web-transactions-processed-using-hyperswitch-decryption-without-apple-merchant-id.md)
-* [Google Pay](explore-hyperswitch/wallets/google-pay/README.md)
-  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](explore-hyperswitch/wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
-  * [In-App and Web Transactions Processed Using PSP Decryption](explore-hyperswitch/wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+* [Apple Pay](wallets/apple-pay/README.md)
+  * [Web Domain](wallets/apple-pay/web-domain.md)
+  * [iOS Application](wallets/apple-pay/ios-application.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+  * [In-App and Web Transactions Processed Using Merchant Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption.md)
+  * [Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)](wallets/apple-pay/web-transactions-processed-using-hyperswitch-decryption-without-apple-merchant-id.md)
+* [Google Pay](wallets/google-pay/README.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
 * [PayPal](explore-hyperswitch/wallets/paypal.md)
-* [Samsung Pay](explore-hyperswitch/wallets/samsung-pay.md)
+* [Samsung Pay](wallets/samsung-pay.md)
 
