@@ -1,474 +1,106 @@
-# PRISM
-
-- [Product Overview](README.md)
-  - [Installation & Configuration](getting-started/installation.md)
-  - [First Payment](getting-started/first-payment.md)
-  - [Extend to More Flows](getting-started/extend-to-more-flows.md)
-
-- [Architecture Overview](architecture/README.md)
-  - [PCI Compliance](architecture/compliance/compliance.md)
-  - [Connector Settings and Overrides](architecture/concepts/connector-settings-and-overrides.md)
-  - [Services and Methods](architecture/concepts/services-and-methods.md)
-  - [Environment Settings](architecture/concepts/environment-settings.md)
-  - [Error Handling](architecture/concepts/error-handling.md)
-  - [Error Mapping](architecture/concepts/error-mapping.md)
-  - [ID and Object Modelling](architecture/concepts/id-and-object-modelling.md)
-  - [Modes of Usage](architecture/concepts/modes-of-usage.md)
-  - [Domain specific language](architecture/concepts/specs-and-dsl.md)
-  - [Integrity and Source Verification](architecture/frameworks/integrity-and-source-verification.md)
-  - [Money Struct](architecture/frameworks/money-struct.md)
-  - [Versioning](architecture/versioning.md)
-
-- [API Reference Overview](api-reference/README.md)
-    - [Payment Service Overview](api-reference/services/payment-service/README.md)
-    - [Authorize](api-reference/services/payment-service/authorize.md)
-    - [Capture](api-reference/services/payment-service/capture.md)
-    - [Void](api-reference/services/payment-service/void.md)
-    - [Refund](api-reference/services/payment-service/refund.md)
-    - [Get](api-reference/services/payment-service/get.md)
-    - [Reverse](api-reference/services/payment-service/reverse.md)
-    - [Setup Recurring](api-reference/services/payment-service/setup-recurring.md)
-    - [Incremental Authorization](api-reference/services/payment-service/incremental-authorization.md)
-    - [Verify Redirect Response](api-reference/services/payment-service/verify-redirect-response.md)
-  - [Recurring Payment Service Overview](api-reference/services/recurring-payment-service/README.md)
-    - [Charge](api-reference/services/recurring-payment-service/charge.md)
-    - [Revoke](api-reference/services/recurring-payment-service/revoke.md)
-  - [Refund Service Overview](api-reference/services/refund-service/README.md)
-    - [Get](api-reference/services/refund-service/get.md)
-  - [Dispute Service Overview](api-reference/services/dispute-service/README.md)
-    - [Accept](api-reference/services/dispute-service/accept.md)
-    - [Defend](api-reference/services/dispute-service/defend.md)
-    - [Get](api-reference/services/dispute-service/get.md)
-    - [Submit Evidence](api-reference/services/dispute-service/submit-evidence.md)
-  - [Event Service Overview](api-reference/services/event-service/README.md)
-    - [Handle](api-reference/services/event-service/handle.md)
-  - [Payment Method Service Overview](api-reference/services/payment-method-service/README.md)
-    - [Tokenize](api-reference/services/payment-method-service/tokenize.md)
-  - [Customer Service Overview](api-reference/services/customer-service/README.md)
-    - [Create](api-reference/services/customer-service/create.md)
-  - [Payment Method Authentication Service Overview](api-reference/services/payment-method-authentication-service/README.md)
-    - [Pre-authenticate](api-reference/services/payment-method-authentication-service/pre-authenticate.md)
-    - [Authenticate](api-reference/services/payment-method-authentication-service/authenticate.md)
-    - [Post-authenticate](api-reference/services/payment-method-authentication-service/post-authenticate.md)
-  - [Merchant Authentication Service Overview](api-reference/services/merchant-authentication-service/README.md)
-    - [Create Access Token](api-reference/services/merchant-authentication-service/create-access-token.md)
-    - [Create Session Token](api-reference/services/merchant-authentication-service/create-session-token.md)
-    - [Create SDK Session Token](api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
-  - [Domain Schema](api-reference/domain-schema/README.md)
-
-## SDKs
-
-### Java SDK
-- [Java SDK Overview](sdks/java/README.md)
-
-#### Payment Service
-- [Payment Service Overview](sdks/java/payment-service/README.md)
-- [Create Order](sdks/java/payment-service/create-order.md)
-- [Authorize](sdks/java/payment-service/authorize.md)
-- [Capture](sdks/java/payment-service/capture.md)
-- [Void](sdks/java/payment-service/void.md)
-- [Refund](sdks/java/payment-service/refund.md)
-- [Get](sdks/java/payment-service/get.md)
-- [Reverse](sdks/java/payment-service/reverse.md)
-- [Setup Recurring](sdks/java/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/java/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/java/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/java/recurring-payment-service/README.md)
-- [Charge](sdks/java/recurring-payment-service/charge.md)
-- [Revoke](sdks/java/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/java/refund-service/README.md)
-- [Get](sdks/java/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/java/dispute-service/README.md)
-- [Accept](sdks/java/dispute-service/accept.md)
-- [Defend](sdks/java/dispute-service/defend.md)
-- [Get](sdks/java/dispute-service/get.md)
-- [Submit Evidence](sdks/java/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/java/event-service/README.md)
-- [Handle](sdks/java/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/java/payment-method-service/README.md)
-- [Tokenize](sdks/java/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/java/customer-service/README.md)
-- [Create](sdks/java/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/java/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/java/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/java/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/java/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/java/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/java/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/java/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/java/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/java/payout-service/README.md)
-
-### Node.js SDK
-- [Node.js SDK Overview](sdks/node/README.md)
-
-#### Payment Service
-- [Payment Service Overview](sdks/node/payment-service/README.md)
-- [Authorize](sdks/node/payment-service/authorize.md)
-- [Capture](sdks/node/payment-service/capture.md)
-- [Void](sdks/node/payment-service/void.md)
-- [Refund](sdks/node/payment-service/refund.md)
-- [Get](sdks/node/payment-service/get.md)
-- [Reverse](sdks/node/payment-service/reverse.md)
-- [Setup Recurring](sdks/node/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/node/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/node/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/node/recurring-payment-service/README.md)
-- [Charge](sdks/node/recurring-payment-service/charge.md)
-- [Revoke](sdks/node/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/node/refund-service/README.md)
-- [Get](sdks/node/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/node/dispute-service/README.md)
-- [Accept](sdks/node/dispute-service/accept.md)
-- [Defend](sdks/node/dispute-service/defend.md)
-- [Get](sdks/node/dispute-service/get.md)
-- [Submit Evidence](sdks/node/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/node/event-service/README.md)
-- [Handle](sdks/node/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/node/payment-method-service/README.md)
-- [Tokenize](sdks/node/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/node/customer-service/README.md)
-- [Create](sdks/node/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/node/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/node/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/node/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/node/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/node/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/node/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/node/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/node/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/node/payout-service/README.md)
-
-### Python SDK
-- [Python SDK Overview](sdks/python/README.md)
-
-#### Payment Service
-- [Payment Service Overview](sdks/python/payment-service/README.md)
-- [Create Order](sdks/python/payment-service/create-order.md)
-- [Authorize](sdks/python/payment-service/authorize.md)
-- [Capture](sdks/python/payment-service/capture.md)
-- [Void](sdks/python/payment-service/void.md)
-- [Refund](sdks/python/payment-service/refund.md)
-- [Get](sdks/python/payment-service/get.md)
-- [Reverse](sdks/python/payment-service/reverse.md)
-- [Setup Recurring](sdks/python/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/python/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/python/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/python/recurring-payment-service/README.md)
-- [Charge](sdks/python/recurring-payment-service/charge.md)
-- [Revoke](sdks/python/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/python/refund-service/README.md)
-- [Get](sdks/python/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/python/dispute-service/README.md)
-- [Accept](sdks/python/dispute-service/accept.md)
-- [Defend](sdks/python/dispute-service/defend.md)
-- [Get](sdks/python/dispute-service/get.md)
-- [Submit Evidence](sdks/python/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/python/event-service/README.md)
-- [Handle](sdks/python/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/python/payment-method-service/README.md)
-- [Tokenize](sdks/python/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/python/customer-service/README.md)
-- [Create](sdks/python/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/python/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/python/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/python/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/python/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/python/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/python/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/python/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/python/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/python/payout-service/README.md)
-
-
+# Table of contents
 
 ## PRISM
 
+* [Product Overview](README.md)
+  * [Installation & Configuration](prism/readme/installation.md)
+  * [First Payment](prism/readme/first-payment.md)
+  * [Extend to More Flows](prism/readme/extend-to-more-flows.md)
+* [Architecture Overview](prism/architecture/README.md)
+  * [Core Components](prism/architecture/core-components.md)
+  * [PCI Compliance](prism/architecture/compliance.md)
+  * [Connector Settings and Overrides](prism/architecture/connector-settings-and-overrides.md)
+  * [Connectors, Services and Methods](prism/architecture/connectors-services-and-methods.md)
+  * [Environment Settings](prism/architecture/environment-settings.md)
+  * [Error Handling](prism/architecture/error-handling.md)
+  * [Error Mapping](prism/architecture/error-mapping.md)
+  * [ID and Object Modelling](prism/architecture/id-and-object-modelling.md)
+  * [Modes of Usage](prism/architecture/modes-of-usage.md)
+  * [Domain specific language](prism/architecture/specs-and-dsl.md)
+  * [Integrity and Source Verification](prism/architecture/integrity-and-source-verification.md)
+  * [Money Struct](prism/architecture/money-struct.md)
+  * [Versioning](prism/architecture/versioning.md)
+* [API Reference Overview](prism/api-reference/README.md)
+  * [Payment Service Overview](prism/api-reference/payment-service/README.md)
+    * [Create Order](prism/api-reference/payment-service/create-order.md)
+    * [Authorize](prism/api-reference/payment-service/authorize.md)
+    * [Capture](prism/api-reference/payment-service/capture.md)
+    * [Void](prism/api-reference/payment-service/void.md)
+    * [Refund](prism/api-reference/payment-service/refund.md)
+    * [Get](prism/api-reference/payment-service/get.md)
+    * [Reverse](prism/api-reference/payment-service/reverse.md)
+    * [Setup Recurring](prism/api-reference/payment-service/setup-recurring.md)
+    * [Incremental Authorization](prism/api-reference/payment-service/incremental-authorization.md)
+    * [Verify Redirect Response](prism/api-reference/payment-service/verify-redirect-response.md)
+  * [Recurring Payment Service Overview](prism/api-reference/recurring-payment-service/README.md)
+    * [Charge](prism/api-reference/recurring-payment-service/charge.md)
+    * [Revoke](prism/api-reference/recurring-payment-service/revoke.md)
+  * [Refund Service Overview](prism/api-reference/refund-service/README.md)
+    * [Get](prism/api-reference/refund-service/get.md)
+  * [Dispute Service Overview](prism/api-reference/dispute-service/README.md)
+    * [Accept](prism/api-reference/dispute-service/accept.md)
+    * [Defend](prism/api-reference/dispute-service/defend.md)
+    * [Get](prism/api-reference/dispute-service/get.md)
+    * [Submit Evidence](prism/api-reference/dispute-service/submit-evidence.md)
+  * [Event Service Overview](prism/api-reference/event-service/README.md)
+    * [Handle](prism/api-reference/event-service/handle.md)
+  * [Payment Method Service Overview](prism/api-reference/payment-method-service.md)
+  * [Tokenize](prism/api-reference/tokenize.md)
+  * [Customer Service Overview](prism/api-reference/customer-service/README.md)
+    * [Create](prism/api-reference/customer-service/create.md)
+  * [Payment Method Authentication Service Overview](prism/api-reference/payment-method-authentication-service/README.md)
+    * [Pre-authenticate](prism/api-reference/payment-method-authentication-service/pre-authenticate.md)
+    * [Authenticate](prism/api-reference/payment-method-authentication-service/authenticate.md)
+    * [Post-authenticate](prism/api-reference/payment-method-authentication-service/post-authenticate.md)
+  * [Merchant Authentication Service Overview](prism/api-reference/merchant-authentication-service.md)
+  * [Create Access Token](prism/api-reference/create-access-token.md)
+  * [Create Session Token](prism/api-reference/create-session-token.md)
+  * [Create SDK Session Token](prism/api-reference/create-sdk-session-token.md)
+  * [Domain Schema](prism/api-reference/domain-schema.md)
 
-- [Product Overview](README.md)
-  - [Installation & Configuration](getting-started/installation.md)
-  - [First Payment](getting-started/first-payment.md)
-  - [Extend to More Flows](getting-started/extend-to-more-flows.md)
+## Connectors Integrations
 
-- [Architecture Overview](architecture/README.md)
-  - [PCI Compliance](architecture/compliance/compliance.md)
-  - [Connector Settings and Overrides](architecture/concepts/connector-settings-and-overrides.md)
-  - [Services and Methods](architecture/concepts/services-and-methods.md)
-  - [Environment Settings](architecture/concepts/environment-settings.md)
-  - [Error Handling](architecture/concepts/error-handling.md)
-  - [Error Mapping](architecture/concepts/error-mapping.md)
-  - [ID and Object Modelling](architecture/concepts/id-and-object-modelling.md)
-  - [Modes of Usage](architecture/concepts/modes-of-usage.md)
-  - [Domain specific language](architecture/concepts/specs-and-dsl.md)
-  - [Integrity and Source Verification](architecture/frameworks/integrity-and-source-verification.md)
-  - [Money Struct](architecture/frameworks/money-struct.md)
-  - [Versioning](architecture/versioning.md)
+* [Connectors Integration](connectors-integrations/connectors.md)
+* [Payment Processor Capabilities](connectors-integrations/payment-processor-capabilities.md)
+* [Processors with Split Settlement](connectors-integrations/split-payments/README.md)
+  * [Stripe Split Settlement](connectors-integrations/split-payments/stripe-split-payments.md)
+  * [Adyen Split Settlement](connectors-integrations/split-payments/adyen-split-payments.md)
+  * [Xendit Split Settlement](connectors-integrations/split-payments/xendit-split-payments.md)
+* [Payouts Processors](connectors-integrations/payouts/README.md)
+  * [Getting Started with Payouts](connectors-integrations/payouts/get-started-with-payouts.md)
+  * [Payouts with Saved Payment Methods](connectors-integrations/payouts/process-payouts-using-saved-payment-methods.md)
+  * [Smart Router for Payouts](connectors-integrations/payouts/route-your-payout-transactions-using-smart-router.md)
+  * [Smart Retries in Payout](connectors-integrations/payouts/smart-retries-in-payout.md)
+  * [Payout Links](connectors-integrations/payouts/payout-link.md)
+* [Subscriptions Providers](connectors-integrations/subscriptions-with-modular-payments.md)
+* [Activate Connector on Hyperswitch](connectors-integrations/activate-connector-on-hyperswitch/README.md)
+  * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
+* [Setup Payment Methods](connectors-integrations/payment-methods-setup/README.md)
+  * [Cards](connectors-integrations/payment-methods-setup/cards.md)
+  * [Pay Later](connectors-integrations/payment-methods-setup/pay-later.md)
+  * [Banks](connectors-integrations/payment-methods-setup/banks/README.md)
+    * [Bank Debits](connectors-integrations/payment-methods-setup/banks/bank-debits.md)
+    * [Bank Redirects](connectors-integrations/payment-methods-setup/banks/bank-redirects.md)
+    * [Bank Transfers](connectors-integrations/payment-methods-setup/banks/bank-transfers.md)
+    * [Open Banking](connectors-integrations/payment-methods-setup/banks/open-banking.md)
+  * [Crypto](connectors-integrations/payment-methods-setup/crypto.md)
+  * [Test Credentials](connectors-integrations/payment-methods-setup/test-credentials.md)
 
-- [API Reference Overview](api-reference/README.md)
-    - [Payment Service Overview](api-reference/services/payment-service/README.md)
-    - [Authorize](api-reference/services/payment-service/authorize.md)
-    - [Capture](api-reference/services/payment-service/capture.md)
-    - [Void](api-reference/services/payment-service/void.md)
-    - [Refund](api-reference/services/payment-service/refund.md)
-    - [Get](api-reference/services/payment-service/get.md)
-    - [Reverse](api-reference/services/payment-service/reverse.md)
-    - [Setup Recurring](api-reference/services/payment-service/setup-recurring.md)
-    - [Incremental Authorization](api-reference/services/payment-service/incremental-authorization.md)
-    - [Verify Redirect Response](api-reference/services/payment-service/verify-redirect-response.md)
-  - [Recurring Payment Service Overview](api-reference/services/recurring-payment-service/README.md)
-    - [Charge](api-reference/services/recurring-payment-service/charge.md)
-    - [Revoke](api-reference/services/recurring-payment-service/revoke.md)
-  - [Refund Service Overview](api-reference/services/refund-service/README.md)
-    - [Get](api-reference/services/refund-service/get.md)
-  - [Dispute Service Overview](api-reference/services/dispute-service/README.md)
-    - [Accept](api-reference/services/dispute-service/accept.md)
-    - [Defend](api-reference/services/dispute-service/defend.md)
-    - [Get](api-reference/services/dispute-service/get.md)
-    - [Submit Evidence](api-reference/services/dispute-service/submit-evidence.md)
-  - [Event Service Overview](api-reference/services/event-service/README.md)
-    - [Handle](api-reference/services/event-service/handle.md)
-  - [Payment Method Service Overview](api-reference/services/payment-method-service/README.md)
-    - [Tokenize](api-reference/services/payment-method-service/tokenize.md)
-  - [Customer Service Overview](api-reference/services/customer-service/README.md)
-    - [Create](api-reference/services/customer-service/create.md)
-  - [Payment Method Authentication Service Overview](api-reference/services/payment-method-authentication-service/README.md)
-    - [Pre-authenticate](api-reference/services/payment-method-authentication-service/pre-authenticate.md)
-    - [Authenticate](api-reference/services/payment-method-authentication-service/authenticate.md)
-    - [Post-authenticate](api-reference/services/payment-method-authentication-service/post-authenticate.md)
-  - [Merchant Authentication Service Overview](api-reference/services/merchant-authentication-service/README.md)
-    - [Create Access Token](api-reference/services/merchant-authentication-service/create-access-token.md)
-    - [Create Session Token](api-reference/services/merchant-authentication-service/create-session-token.md)
-    - [Create SDK Session Token](api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
-  - [Domain Schema](api-reference/domain-schema/README.md)
+## Wallets
 
-## SDKs
+* [Apple Pay](wallets/apple-pay/README.md)
+  * [Web Domain](wallets/apple-pay/web-domain.md)
+  * [iOS Application](wallets/apple-pay/ios-application.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+  * [In-App and Web Transactions Processed Using Merchant Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption.md)
+  * [Web Transactions Processed Using Hyperswitch Decryption (Without Apple Merchant ID)](wallets/apple-pay/web-transactions-processed-using-hyperswitch-decryption-without-apple-merchant-id.md)
+* [Google Pay](wallets/google-pay/README.md)
+  * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
+  * [In-App and Web Transactions Processed Using PSP Decryption](wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md)
+* [PayPal](wallets/paypal.md)
+* [Samsung Pay](wallets/samsung-pay.md)
 
-### Java SDK
-- [Java SDK Overview](sdks/java/README.md)
+## Supported Connectors
 
-#### Payment Service
-- [Payment Service Overview](sdks/java/payment-service/README.md)
-- [Create Order](sdks/java/payment-service/create-order.md)
-- [Authorize](sdks/java/payment-service/authorize.md)
-- [Capture](sdks/java/payment-service/capture.md)
-- [Void](sdks/java/payment-service/void.md)
-- [Refund](sdks/java/payment-service/refund.md)
-- [Get](sdks/java/payment-service/get.md)
-- [Reverse](sdks/java/payment-service/reverse.md)
-- [Setup Recurring](sdks/java/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/java/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/java/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/java/recurring-payment-service/README.md)
-- [Charge](sdks/java/recurring-payment-service/charge.md)
-- [Revoke](sdks/java/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/java/refund-service/README.md)
-- [Get](sdks/java/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/java/dispute-service/README.md)
-- [Accept](sdks/java/dispute-service/accept.md)
-- [Defend](sdks/java/dispute-service/defend.md)
-- [Get](sdks/java/dispute-service/get.md)
-- [Submit Evidence](sdks/java/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/java/event-service/README.md)
-- [Handle](sdks/java/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/java/payment-method-service/README.md)
-- [Tokenize](sdks/java/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/java/customer-service/README.md)
-- [Create](sdks/java/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/java/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/java/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/java/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/java/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/java/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/java/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/java/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/java/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/java/payout-service/README.md)
-
-### Node.js SDK
-- [Node.js SDK Overview](sdks/node/README.md)
-
-#### Payment Service
-- [Payment Service Overview](sdks/node/payment-service/README.md)
-- [Authorize](sdks/node/payment-service/authorize.md)
-- [Capture](sdks/node/payment-service/capture.md)
-- [Void](sdks/node/payment-service/void.md)
-- [Refund](sdks/node/payment-service/refund.md)
-- [Get](sdks/node/payment-service/get.md)
-- [Reverse](sdks/node/payment-service/reverse.md)
-- [Setup Recurring](sdks/node/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/node/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/node/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/node/recurring-payment-service/README.md)
-- [Charge](sdks/node/recurring-payment-service/charge.md)
-- [Revoke](sdks/node/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/node/refund-service/README.md)
-- [Get](sdks/node/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/node/dispute-service/README.md)
-- [Accept](sdks/node/dispute-service/accept.md)
-- [Defend](sdks/node/dispute-service/defend.md)
-- [Get](sdks/node/dispute-service/get.md)
-- [Submit Evidence](sdks/node/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/node/event-service/README.md)
-- [Handle](sdks/node/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/node/payment-method-service/README.md)
-- [Tokenize](sdks/node/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/node/customer-service/README.md)
-- [Create](sdks/node/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/node/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/node/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/node/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/node/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/node/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/node/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/node/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/node/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/node/payout-service/README.md)
-
-### Python SDK
-- [Python SDK Overview](sdks/python/README.md)
-
-#### Payment Service
-- [Payment Service Overview](sdks/python/payment-service/README.md)
-- [Create Order](sdks/python/payment-service/create-order.md)
-- [Authorize](sdks/python/payment-service/authorize.md)
-- [Capture](sdks/python/payment-service/capture.md)
-- [Void](sdks/python/payment-service/void.md)
-- [Refund](sdks/python/payment-service/refund.md)
-- [Get](sdks/python/payment-service/get.md)
-- [Reverse](sdks/python/payment-service/reverse.md)
-- [Setup Recurring](sdks/python/payment-service/setup-recurring.md)
-- [Incremental Authorization](sdks/python/payment-service/incremental-authorization.md)
-- [Verify Redirect Response](sdks/python/payment-service/verify-redirect-response.md)
-
-#### Recurring Payment Service
-- [Recurring Payment Service Overview](sdks/python/recurring-payment-service/README.md)
-- [Charge](sdks/python/recurring-payment-service/charge.md)
-- [Revoke](sdks/python/recurring-payment-service/revoke.md)
-
-#### Refund Service
-- [Refund Service Overview](sdks/python/refund-service/README.md)
-- [Get](sdks/python/refund-service/get.md)
-
-#### Dispute Service
-- [Dispute Service Overview](sdks/python/dispute-service/README.md)
-- [Accept](sdks/python/dispute-service/accept.md)
-- [Defend](sdks/python/dispute-service/defend.md)
-- [Get](sdks/python/dispute-service/get.md)
-- [Submit Evidence](sdks/python/dispute-service/submit-evidence.md)
-
-#### Event Service
-- [Event Service Overview](sdks/python/event-service/README.md)
-- [Handle](sdks/python/event-service/handle.md)
-
-#### Payment Method Service
-- [Payment Method Service Overview](sdks/python/payment-method-service/README.md)
-- [Tokenize](sdks/python/payment-method-service/tokenize.md)
-
-#### Customer Service
-- [Customer Service Overview](sdks/python/customer-service/README.md)
-- [Create](sdks/python/customer-service/create.md)
-
-#### Payment Method Authentication Service
-- [Payment Method Authentication Service Overview](sdks/python/payment-method-authentication-service/README.md)
-- [Pre-authenticate](sdks/python/payment-method-authentication-service/pre-authenticate.md)
-- [Authenticate](sdks/python/payment-method-authentication-service/authenticate.md)
-- [Post-authenticate](sdks/python/payment-method-authentication-service/post-authenticate.md)
-
-#### Merchant Authentication Service
-- [Merchant Authentication Service Overview](sdks/python/merchant-authentication-service/README.md)
-- [Create Access Token](sdks/python/merchant-authentication-service/create-access-token.md)
-- [Create Session Token](sdks/python/merchant-authentication-service/create-session-token.md)
-- [Create SDK Session Token](sdks/python/merchant-authentication-service/create-sdk-session-token.md)
-
-#### Payout Service
-- [Payout Service Overview](sdks/python/payout-service/README.md)
+* [Supported Connectors](https://juspay.io/integrations)
