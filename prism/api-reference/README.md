@@ -1,9 +1,3 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference
----
-
 # API Reference Overview
 
 Complete reference for all Prism API services, request/response types, and error handling.
@@ -14,17 +8,17 @@ Prism provides a unified gRPC API for payment processing across 100+ payment pro
 
 ## Services
 
-| Service                                                                         | Description            | Key Operations                                               |
-| ------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------ |
-| [Payment Service](payment-service.md)                                           | Core payment lifecycle | Authorize, Capture, Void, Refund, CreateOrder                |
-| [Refund Service](refund-service/)                                               | Refund operations      | Get refund status                                            |
-| [Recurring Payment Service](recurring-payment-service/)                         | Stored payment methods | Charge, Revoke mandate                                       |
-| [Dispute Service](dispute-service/)                                             | Chargeback handling    | Accept, Defend, SubmitEvidence                               |
-| [Event Service](event-service/)                                                 | Webhook processing     | Handle connector events                                      |
-| [Customer Service](customer-service/)                                           | Customer management    | Create customer                                              |
-| [Payment Method Service](payment-method-service.md)                             | Payment method storage | Tokenize                                                     |
-| [Payment Method Authentication Service](payment-method-authentication-service/) | 3DS authentication     | Pre-authenticate, Authenticate, Post-authenticate            |
-| [Merchant Authentication Service](merchant-authentication-service.md)           | Session management     | CreateAccessToken, CreateSessionToken, CreateSdkSessionToken |
+| Service                                                                                  | Description            | Key Operations                                               |
+| ---------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------ |
+| [Payment Service](services/payment-service/)                                             | Core payment lifecycle | Authorize, Capture, Void, Refund, CreateOrder                |
+| [Refund Service](services/refund-service/)                                               | Refund operations      | Get refund status                                            |
+| [Recurring Payment Service](services/recurring-payment-service/)                         | Stored payment methods | Charge, Revoke mandate                                       |
+| [Dispute Service](services/dispute-service/)                                             | Chargeback handling    | Accept, Defend, SubmitEvidence                               |
+| [Event Service](services/event-service/)                                                 | Webhook processing     | Handle connector events                                      |
+| [Customer Service](services/customer-service/)                                           | Customer management    | Create customer                                              |
+| [Payment Method Service](payment-method-service/)                                        | Payment method storage | Tokenize                                                     |
+| [Payment Method Authentication Service](services/payment-method-authentication-service/) | 3DS authentication     | Pre-authenticate, Authenticate, Post-authenticate            |
+| [Merchant Authentication Service](merchant-authentication-service/)                      | Session management     | CreateAccessToken, CreateSessionToken, CreateSdkSessionToken |
 
 ## Error Object
 
@@ -102,7 +96,7 @@ All API errors return a structured `ErrorInfo` object with detailed information 
 
 ## Domain Schema
 
-See [Domain Schema](domain-schema.md) for complete documentation of all data types, enums, and structures used across the API.
+See [Domain Schema](domain-schema/) for complete documentation of all data types, enums, and structures used across the API.
 
 ## Proto Files
 

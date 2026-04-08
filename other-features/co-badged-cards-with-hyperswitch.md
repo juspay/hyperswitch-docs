@@ -46,6 +46,6 @@ In the IFR, Article 8 mandates that customers must be free to choose their netwo
 
 Merchants can choose not to support one of the networks, and in such cases, transactions will be routed through the supported network.
 
-{% content-ref url="../../../integration-guide/payment-suite/payments/save-a-payment-method/" %}
-[save-a-payment-method](../../../integration-guide/payment-suite/payments/save-a-payment-method/)
+{% content-ref url="../payment-suite/payments/save-a-payment-method/" %}
+[save-a-payment-method](../payment-suite/payments/save-a-payment-method/)
 {% endcontent-ref %}

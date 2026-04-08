@@ -3,10 +3,6 @@ description: >-
   Set up the Hyperswitch MCP server to enable AI clients to search docs and
   explore Sandbox APIs safely
 icon: user-robot-xmarks
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/ai-resources/setup-mcp-server
 ---
 
 # Setup MCP Server

@@ -17,6 +17,6 @@ These workflows can be modularly organized to meet diverse business needs and pr
 
 **End-to-End Payments:** In cases where a client uses a Vertical SaaS platform to design new subscriptions and distribute them to customers, payments need to be more tightly integrated with the platform. As a result, the client may expect the platform to handle both customer acquisition and renewal payments through the PSP of choice on the client's behalf.
 
-{% content-ref url="../../../integration-guide/account-management/analytics-and-operations/exporting-payments-data.md" %}
-[exporting-payments-data.md](../../../integration-guide/account-management/analytics-and-operations/exporting-payments-data.md)
+{% content-ref url="../../../account-management/analytics-and-operations/exporting-payments-data.md" %}
+[exporting-payments-data.md](../../../account-management/analytics-and-operations/exporting-payments-data.md)
 {% endcontent-ref %}

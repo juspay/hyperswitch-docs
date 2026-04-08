@@ -66,6 +66,6 @@ Since the authentication occurs natively, merchants have more control over the b
 
 To enable the Native 3DS Authentication on your website or mobile app, you need to integrate an external 3DS authentication providers. **Juspay Hyperswitch allows you to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts, Visit the below page for detailed steps.**
 
-{% content-ref url="../../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md" %}
-[external-authentication-for-3ds.md](../../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md)
+{% content-ref url="../../../../workflows/3ds-decision-manager/external-authentication-for-3ds.md" %}
+[external-authentication-for-3ds.md](../../../../workflows/3ds-decision-manager/external-authentication-for-3ds.md)
 {% endcontent-ref %}

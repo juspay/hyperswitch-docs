@@ -4,7 +4,7 @@ In the next few steps you will authorize the payment, handle errors, capture fun
 
 If you are **not PCI compliant**, first create a Stripe client authentication token on your backend, use the returned `client_secret` to initialize Stripe.js / Stripe Elements on the frontend, tokenize the payment method in the browser, and then use the resulting `payment_method_id` to authorize the payment.
 
-If your payment processor API keys are enabled to accept PCI compliant raw card data directly, jump to [Authorize with Raw Card Details](#authorize-with-raw-card-details-pci-compliant).
+If your payment processor API keys are enabled to accept PCI compliant raw card data directly, jump to [Authorize with Raw Card Details](first-payment.md#authorize-with-raw-card-details-pci-compliant).
 
 ## Non-PCI Stripe flow: get the `payment_method_id` first
 
@@ -13,14 +13,12 @@ If your payment processor API keys are enabled to accept PCI compliant raw card 
 Use Prism's client authentication token flow to fetch the Stripe `client_secret` required by Stripe.js.
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const {
   MerchantAuthenticationClient,
   IntegrationError,
-  ConnectorError,
+  ConnectorResponseTransformationError,
   NetworkError,
   types,
 } = require("hyperswitch-prism");
@@ -50,17 +48,17 @@ async function createClientAuthenticationToken() {
     if (error instanceof IntegrationError) {
       console.error(
         "Integration error:",
-        error.errorCode,
-        error.message,
-      );
-    } else if (error instanceof ConnectorError) {
-      console.error(
-        "Connector error:",
-        error.errorCode,
+        error.proto?.errorCode,
         error.message,
       );
     } else if (error instanceof NetworkError) {
       console.error("Network error:", error.errorCode, error.message);
+    } else if (error instanceof ConnectorResponseTransformationError) {
+      console.error(
+        "Transformation error:",
+        error.proto?.errorCode,
+        error.message,
+      );
     } else {
       console.error(
         "Client auth token creation failed:",
@@ -71,16 +69,14 @@ async function createClientAuthenticationToken() {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import (
     MerchantAuthenticationClient,
     IntegrationError,
-    ConnectorError,
+    ConnectorResponseTransformationError,
     NetworkError,
 )
 
@@ -106,20 +102,18 @@ def create_client_authentication_token():
     except IntegrationError as error:
         print(f"Integration error: {error.error_code} - {error.error_message}")
         raise
-    except ConnectorError as error:
-        print(f"Connector error: {error.error_code} - {error.error_message}")
-        raise
     except NetworkError as error:
         print(f"Network error: {error.error_code} - {error}")
         raise
+    except ConnectorResponseTransformationError as error:
+        print(f"Transformation error: {error.error_code} - {error.error_message}")
+        raise
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
-import payments.ConnectorError;
+import payments.ConnectorResponseTransformationError;
 import payments.IntegrationError;
 import payments.MerchantAuthenticationClient;
 import payments.MerchantAuthenticationServiceCreateClientAuthenticationTokenRequest;
@@ -152,22 +146,20 @@ public String createClientAuthenticationToken() {
         System.out.println("Client secret: " + clientSecret);
         return clientSecret;
     } catch (IntegrationError error) {
-        System.err.println("Integration error: " + error.getErrorCode() + " - " + error.getMessage());
-        throw error;
-    } catch (ConnectorError error) {
-        System.err.println("Connector error: " + error.getErrorCode() + " - " + error.getMessage());
+        System.err.println("Integration error: " + error.getProto().getErrorCode() + " - " + error.getMessage());
         throw error;
     } catch (NetworkError error) {
         System.err.println("Network error: " + error.getErrorCode() + " - " + error.getMessage());
         throw error;
+    } catch (ConnectorResponseTransformationError error) {
+        System.err.println("Transformation error: " + error.getProto().getErrorCode() + " - " + error.getMessage());
+        throw error;
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 use HyperswitchPrism\MerchantAuthenticationClient;
@@ -202,9 +194,7 @@ function createClientAuthenticationToken($authClient) {
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### 2. Use the `client_secret` in Stripe.js / Stripe Elements
@@ -244,13 +234,11 @@ Initialize Stripe Elements on the frontend, collect the card details there, and 
 Use the `payment_method_id` returned by Stripe.js / Stripe Elements to authorize the payment:
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const {
   IntegrationError,
-  ConnectorError,
+  ConnectorResponseTransformationError,
   NetworkError,
 } = require("hyperswitch-prism");
 
@@ -280,17 +268,17 @@ async function authorizePayment(paymentMethodId) {
     if (error instanceof IntegrationError) {
       console.error(
         "Integration error:",
-        error.errorCode,
-        error.message,
-      );
-    } else if (error instanceof ConnectorError) {
-      console.error(
-        "Connector error:",
-        error.errorCode,
+        error.proto?.errorCode,
         error.message,
       );
     } else if (error instanceof NetworkError) {
       console.error("Network error:", error.errorCode, error.message);
+    } else if (error instanceof ConnectorResponseTransformationError) {
+      console.error(
+        "Transformation error:",
+        error.proto?.errorCode,
+        error.message,
+      );
     } else {
       console.error("Authorization failed:", error.message || error);
     }
@@ -298,15 +286,13 @@ async function authorizePayment(paymentMethodId) {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import (
     IntegrationError,
-    ConnectorError,
+    ConnectorResponseTransformationError,
     NetworkError,
 )
 
@@ -335,22 +321,20 @@ def authorize_payment(payment_method_id):
     except IntegrationError as error:
         print(f"Integration error: {error.error_code} - {error.error_message}")
         raise
-    except ConnectorError as error:
-        print(f"Connector error: {error.error_code} - {error.error_message}")
-        raise
     except NetworkError as error:
         print(f"Network error: {error.error_code} - {error}")
         raise
+    except ConnectorResponseTransformationError as error:
+        print(f"Transformation error: {error.error_code} - {error.error_message}")
+        raise
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.Address;
 import payments.CaptureMethod;
-import payments.ConnectorError;
+import payments.ConnectorResponseTransformationError;
 import payments.Currency;
 import payments.IntegrationError;
 import payments.NetworkError;
@@ -379,22 +363,20 @@ public void authorizePayment(String paymentMethodId) {
         var auth = stripeClient.token_authorize(request);
         System.out.println("Authorized: " + auth.getConnectorTransactionId() + ", " + auth.getStatus());
     } catch (IntegrationError error) {
-        System.err.println("Integration error: " + error.getErrorCode() + " - " + error.getMessage());
-        throw error;
-    } catch (ConnectorError error) {
-        System.err.println("Connector error: " + error.getErrorCode() + " - " + error.getMessage());
+        System.err.println("Integration error: " + error.getProto().getErrorCode() + " - " + error.getMessage());
         throw error;
     } catch (NetworkError error) {
         System.err.println("Network error: " + error.getErrorCode() + " - " + error.getMessage());
         throw error;
+    } catch (ConnectorResponseTransformationError error) {
+        System.err.println("Transformation error: " + error.getProto().getErrorCode() + " - " + error.getMessage());
+        throw error;
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 function authorizePayment($paymentMethodId, $stripeClient) {
@@ -425,9 +407,7 @@ function authorizePayment($paymentMethodId, $stripeClient) {
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Authorize with Raw Card Details (PCI Compliant)
@@ -435,9 +415,7 @@ function authorizePayment($paymentMethodId, $stripeClient) {
 If you're PCI compliant and collect card details directly:
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 // Reuse stripeClient from installation.md
 const auth = await stripeClient.authorize({
@@ -462,11 +440,9 @@ const auth = await stripeClient.authorize({
   testMode: true,
 });
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # Reuse stripe_client from installation.md
 auth = stripe_client.authorize({
@@ -491,11 +467,9 @@ auth = stripe_client.authorize({
     "test_mode": True
 })
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.AuthenticationType;
 import payments.CaptureMethod;
@@ -519,11 +493,9 @@ requestBuilder.setTestMode(true);
 
 var auth = stripeClient.authorize(requestBuilder.build());
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 <?php
 // Reuse $stripeClient from installation.md
@@ -549,9 +521,7 @@ $auth = $stripeClient->authorize([
     'testMode' => true
 ]);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Complete Payment Flow
@@ -559,9 +529,7 @@ $auth = $stripeClient->authorize([
 After authorization, capture funds and handle refunds:
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 // 1. Check payment status
 const status = await stripeClient.get({
@@ -588,11 +556,9 @@ const refund = await stripeClient.refund({
 });
 console.log("Refund ID:", refund.connectorRefundId);
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # 1. Check payment status
 status = stripe_client.get({
@@ -618,11 +584,9 @@ refund = stripe_client.refund({
 })
 print(f"Refund ID: {refund.connector_refund_id}")
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.PaymentServiceCaptureRequest;
 import payments.PaymentServiceGetRequest;
@@ -656,11 +620,9 @@ PaymentServiceRefundRequest refundRequest = PaymentServiceRefundRequest.newBuild
 var refund = stripeClient.refund(refundRequest);
 System.out.println("Refund ID: " + refund.getConnectorRefundId());
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 // 1. Check payment status
 $status = $stripeClient->get([
@@ -686,9 +648,7 @@ $refund = $stripeClient->refund([
 ]);
 echo "Refund ID: " . $refund->getConnectorRefundId() . "\n";
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Error Scenarios
@@ -724,7 +684,7 @@ const { NetworkError } = require('hyperswitch-prism');
 try {
   const auth = await stripeClient.authorize(request);
 } catch (error) {
-  if (error.errorCode === "CONNECT_TIMEOUT_EXCEEDED") {
+  if (error.code === "NETWORK_TIMEOUT") {
     // Retry with exponential backoff
     await retryWithBackoff(() => stripeClient.authorize(request));
   }
@@ -788,9 +748,9 @@ await stripeClient.refund({
 
 ## Key Takeaways
 
-- **One error handler** works for all connectors
-- **Unified error codes** tell you exactly what happened
-- **connectorTransactionId** is the key identifier for all operations
-- **Same code** works for Stripe, Adyen, PayPal, and 50+ more
+* **One error handler** works for all connectors
+* **Unified error codes** tell you exactly what happened
+* **connectorTransactionId** is the key identifier for all operations
+* **Same code** works for Stripe, Adyen, PayPal, and 50+ more
 
-See [extending payment flows](./extend-to-more-flows.md) for subscriptions, 3D Secure, and more.
+See [extending payment flows](extend-to-more-flows.md) for subscriptions, 3D Secure, and more.

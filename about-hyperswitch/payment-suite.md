@@ -5,10 +5,6 @@ description: >-
 hidden: true
 noIndex: true
 icon: suitcase
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/payment-suite
 ---
 
 # Payment Suite
@@ -23,7 +19,7 @@ Juspay Hyperswitch provides an open-source, lightweight and full-stack solution 
 
 ### Explore Hyperswitch
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Payment Orchestration</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td><td><a href="../other-features/payment-orchestration/">payment-orchestration</a></td></tr><tr><td><mark style="color:blue;"><strong>Checkout Experience</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td><td><a href="../other-features/merchant-controls/">merchant-controls</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Operations</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment Ops (1).png">Payment Ops (1).png</a></td><td><a href="../integration-guide/account-management/">account-management</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Payment Orchestration</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment orchestration (1).png">Payment orchestration (1).png</a></td><td><a href="../other-features/payment-orchestration/">payment-orchestration</a></td></tr><tr><td><mark style="color:blue;"><strong>Checkout Experience</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Checkouts (1).png">Checkouts (1).png</a></td><td><a href="../other-features/merchant-controls/">merchant-controls</a></td></tr><tr><td><mark style="color:blue;"><strong>Payment Operations</strong></mark></td><td></td><td></td><td><a href="../.gitbook/assets/Payment Ops (1).png">Payment Ops (1).png</a></td><td><a href="../account-management/">account-management</a></td></tr></tbody></table>
 
 ***
 

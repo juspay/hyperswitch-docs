@@ -1,9 +1,6 @@
 ---
 description: Jan '26 to March '26
 icon: road
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap
 ---
 
 # Roadmap - Q1 2026

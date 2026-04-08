@@ -5,10 +5,6 @@ description: >-
 hidden: true
 noIndex: true
 icon: brain-circuit
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/ai-resources
 ---
 
 # AI Resources

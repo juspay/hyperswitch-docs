@@ -151,7 +151,7 @@ Initiate the Hyperswitch unified checkout SDK using the `client_secret` returned
 {% endstep %}
 
 {% step %}
-Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../integration-guide/payment-experience/payment/web/react-with-rest-api-integration.md)
+Once the customer selects a payment method and enters the details and confirms the subscription, hit the `/subscriptions/:id/confirm` using a similar [implementation as this](../../payment-experience/payment/web/react-with-rest-api-integration.md)
 {% endstep %}
 
 {% step %}
