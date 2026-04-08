@@ -48,6 +48,7 @@
 * [Supported Connectors](https://juspay.io/integrations)
 
 
+
 ## PRISM
 
 
@@ -179,3 +180,39 @@
     - [Create Access Token](prism/sdks/node/merchant-authentication-service/create-access-token.md)
     - [Create Session Token](prism/sdks/node/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/sdks/node/merchant-authentication-service/create-sdk-session-token.md)
+
+- [Python SDK Overview](prism/sdks/python/README.md)
+  - [Payment Service Overview](prism/sdks/python/payment-service/README.md)
+    - [Authorize](prism/sdks/python/payment-service/authorize.md)
+    - [Capture](prism/sdks/python/payment-service/capture.md)
+    - [Void](prism/sdks/python/payment-service/void.md)
+    - [Refund](prism/sdks/python/payment-service/refund.md)
+    - [Get](prism/sdks/python/payment-service/get.md)
+    - [Reverse](prism/sdks/python/payment-service/reverse.md)
+    - [Setup Recurring](prism/sdks/python/payment-service/setup-recurring.md)
+    - [Incremental Authorization](prism/sdks/python/payment-service/incremental-authorization.md)
+    - [Verify Redirect Response](prism/sdks/python/payment-service/verify-redirect-response.md)
+  - [Recurring Payment Service Overview](prism/sdks/python/recurring-payment-service/README.md)
+    - [Charge](prism/sdks/python/recurring-payment-service/charge.md)
+    - [Revoke](prism/sdks/python/recurring-payment-service/revoke.md)
+  - [Refund Service Overview](prism/sdks/python/refund-service/README.md)
+    - [Get](prism/sdks/python/refund-service/get.md)
+  - [Dispute Service Overview](prism/sdks/python/dispute-service/README.md)
+    - [Accept](prism/sdks/python/dispute-service/accept.md)
+    - [Defend](prism/sdks/python/dispute-service/defend.md)
+    - [Get](prism/sdks/python/dispute-service/get.md)
+    - [Submit Evidence](prism/sdks/python/dispute-service/submit-evidence.md)
+  - [Event Service Overview](prism/sdks/python/event-service/README.md)
+    - [Handle](prism/sdks/python/event-service/handle.md)
+  - [Payment Method Service Overview](prism/sdks/python/payment-method-service/README.md)
+    - [Tokenize](prism/sdks/python/payment-method-service/tokenize.md)
+  - [Customer Service Overview](prism/sdks/python/customer-service/README.md)
+    - [Create](prism/sdks/python/customer-service/create.md)
+  - [Payment Method Authentication Service Overview](prism/sdks/python/payment-method-authentication-service/README.md)
+    - [Pre-authenticate](prism/sdks/python/payment-method-authentication-service/pre-authenticate.md)
+    - [Authenticate](prism/sdks/python/payment-method-authentication-service/authenticate.md)
+    - [Post-authenticate](prism/sdks/python/payment-method-authentication-service/post-authenticate.md)
+  - [Merchant Authentication Service Overview](prism/sdks/python/merchant-authentication-service/README.md)
+    - [Create Access Token](prism/sdks/python/merchant-authentication-service/create-access-token.md)
+    - [Create Session Token](prism/sdks/python/merchant-authentication-service/create-session-token.md)
+    - [Create SDK Session Token](prism/sdks/python/merchant-authentication-service/create-sdk-session-token.md)
