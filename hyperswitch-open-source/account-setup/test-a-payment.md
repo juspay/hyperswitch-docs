@@ -3,6 +3,10 @@ description: >-
   Test end-to-end payment flows using dummy processors and the Hyperswitch
   checkout experience
 icon: money-bills
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup/test-a-payment
 ---
 
 # Test a payment

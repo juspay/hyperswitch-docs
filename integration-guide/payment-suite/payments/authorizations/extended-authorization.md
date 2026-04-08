@@ -1,6 +1,12 @@
 ---
+description: >-
+  Extend authorization hold periods beyond standard windows for flexible
+  transaction capture
 icon: square-tenge
-description: Extend authorization hold periods beyond standard windows for flexible transaction capture
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations/extended-authorization
 ---
 
 # Extended Authorization
@@ -11,9 +17,9 @@ Extended Authorization allows merchants to extend the authorization hold period 
 
 This is particularly useful for industries where the final transaction amount or service completion time isn't known upfront — such as:
 
-- Hospitality (room service or stay extensions)
-- Car rentals (extra mileage, damages)
-- Fuel & utilities (variable usage-based billing)
+* Hospitality (room service or stay extensions)
+* Car rentals (extra mileage, damages)
+* Fuel & utilities (variable usage-based billing)
 
 Example: A hotel may authorize a card for $500 during check-in but extend the authorization period if the guest extends their stay.
 
@@ -30,18 +36,18 @@ To enable globally across all transactions:
 
 #### 2. Per-request configuration (via API)
 
-To enable it for specific transactions, include the boolean field request_extended_authorization in your payment request.
+To enable it for specific transactions, include the boolean field request\_extended\_authorization in your payment request.
 
 This flag can be used in the following API calls:
 
-- /payments/create with `confirm = false`
-- /payments/update
-- /payments/create call with `confirm = true`
+* /payments/create with `confirm = false`
+* /payments/update
+* /payments/create call with `confirm = true`
 
 > **⚠️ Note:**
 >
-> - The value of request_extended_authorization in the request will override the profile-level setting.
-> - Extended Authorization is applicable only for manual capture payments (`capture_method = manual`)
+> * The value of request\_extended\_authorization in the request will override the profile-level setting.
+> * Extended Authorization is applicable only for manual capture payments (`capture_method = manual`)
 
 ### Example Request
 
@@ -94,8 +100,8 @@ Some connectors require extended authorization to be triggered manually. This AP
 
 Currently, manual extended authorization is supported for:
 
-- Adyen
-- PayPal
+* Adyen
+* PayPal
 
 Calling this endpoint will initiate an extended authorization request. The actual behavior, including how much the capture or honor period is extended, depends on the specific connector and the issuing bank.
 
@@ -105,8 +111,8 @@ Be aware: With some connectors like Adyen, a failed extended authorization attem
 
 > **⚠️ Note:**
 >
-> - To use this API, extended authorization must be enabled for the authorization you are attempting to extend.
-> - Adyen handles extended authorization asynchronously. In such cases, you'll need to perform a psync to retrieve the updated response.
+> * To use this API, extended authorization must be enabled for the authorization you are attempting to extend.
+> * Adyen handles extended authorization asynchronously. In such cases, you'll need to perform a psync to retrieve the updated response.
 
 ### Example Request
 
@@ -142,11 +148,11 @@ curl --location --request POST '{{basue_url}}/payments/{{payment_id}}/extend_aut
 
 ### Response Field Reference
 
-| Field | Description |
-| --- | --- |
-| `request_extended_authorization` | Indicates if extended authorization was requested for this payment |
-| `extended_authorization_applied` | Shows whether extended authorization has been applied |
-| `capture_by` | The deadline for capturing the payment (if available from the connector) |
+| Field                                    | Description                                                                      |
+| ---------------------------------------- | -------------------------------------------------------------------------------- |
+| `request_extended_authorization`         | Indicates if extended authorization was requested for this payment               |
+| `extended_authorization_applied`         | Shows whether extended authorization has been applied                            |
+| `capture_by`                             | The deadline for capturing the payment (if available from the connector)         |
 | `extended_authorization_last_applied_at` | The date when the connector last successfully applied an extended authorization. |
 
 If the connector doesn't provide the capture deadline, the `capture_by` field will appear as null.

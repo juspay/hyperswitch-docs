@@ -1,6 +1,12 @@
 ---
+description: >-
+  Integrate secure, customizable payments into iOS and Android apps with Juspay
+  Hyperswitch mobile SDKs for native and cross-platform frameworks.
 icon: mobile
-description: Integrate secure, customizable payments into iOS and Android apps with Juspay Hyperswitch mobile SDKs for native and cross-platform frameworks.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile
 ---
 
 # Mobile

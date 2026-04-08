@@ -1,6 +1,10 @@
 ---
 description: Stay up to date with minimal maintenance effort!
 icon: recycle
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/updates
 ---
 
 # Updates
@@ -80,7 +84,7 @@ $ git diff --name-only <CURRENT_VERSION>..<NEW_VERSION> migrations/**/up.sql | s
 
 ### Web Client Updates
 
-Juspay Hyperswitch Web client is periodically updated for new features and bug fixes. &#x20;
+Juspay Hyperswitch Web client is periodically updated for new features and bug fixes.
 
 * Please note that the web client adheres strictly to semantic versioning for consistent releases.
 * Please follow the [Changelog](https://github.com/juspay/hyperswitch-web/blob/main/CHANGELOG.md) to get the latest updates. You can pull the latest changes to get new features or build new features and contribute to the `hyperswitch-web` repo for others to use.

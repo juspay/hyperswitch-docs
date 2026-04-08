@@ -1,5 +1,9 @@
 ---
 description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws
 ---
 
 # Production ready deployment on AWS
@@ -20,7 +24,7 @@ Pre-requisites
 * An AWS user account with admin access (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 {% endhint %}
 
-#### Step 1 - [Optional] - Create a new user with Admin access (if you do not have a non-root user)
+#### Step 1 - \[Optional] - Create a new user with Admin access (if you do not have a non-root user)
 
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
@@ -94,7 +98,7 @@ ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
 * Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
-* The locker_public key and the tenant_private key to use the locker with your application (Juspay Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
+* The locker\_public key and the tenant\_private key to use the locker with your application (Juspay Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash
 aws ssm get-parameter --name /locker/public_key:1 --query 'Parameter.Value' --output text

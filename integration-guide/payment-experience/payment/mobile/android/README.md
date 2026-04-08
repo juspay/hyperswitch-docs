@@ -1,6 +1,10 @@
 ---
 description: Integrate unified checkout on your Android app
 icon: android
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android
 ---
 
 # Android
@@ -14,9 +18,9 @@ icon: android
 Revolutionize your app's payment capabilities with the Juspay Hyperswitch Android SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on Android is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 | <img src="../../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | <p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p> |
-| ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="../../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | <p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p>    |
-| <img src="../../../../../.gitbook/assets/image (129).png" alt="" data-size="original">     | <p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p>                                                        |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | <p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p>      |
+| <img src="../../../../../.gitbook/assets/image (24).png" alt="" data-size="original">      | <p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p>                                                          |
 
 **Modify and Experiment:** While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch Android SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you:
 

@@ -1,7 +1,11 @@
 ---
 description: Answers to the most frequently asked questions about Juspay Hyperswitch
-
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/frequently-asked-questions
 ---
+
 # Frequently Asked Questions
 
 ## Getting Started

@@ -1,6 +1,10 @@
 ---
 description: Blocking card bins selectively based on observed fraudulent activity
 icon: ban
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/fraud-and-risk-management/fraud-blocklist
 ---
 
 # Fraud Blocklist
@@ -17,7 +21,7 @@ Merchants can identify and block specific fingerprints associated with payment m
 
 #### Blocking Card Bins
 
-The blocklist also allows merchants to block entire card bins, focusing on the first six digits of credit card numbers. Additionally, they can extend this restriction to cover the first eight digits (extended_card_bin), providing a more comprehensive control mechanism.
+The blocklist also allows merchants to block entire card bins, focusing on the first six digits of credit card numbers. Additionally, they can extend this restriction to cover the first eight digits (extended\_card\_bin), providing a more comprehensive control mechanism.
 
 #### Listing Blocklists
 

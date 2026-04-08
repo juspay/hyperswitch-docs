@@ -3,6 +3,10 @@ description: >-
   Learn how to resolve MISMATCHED reconciliation exceptions in Juspay
   Hyperswitch using Ignore, Edit, Create, and Replace strategies to correct or
   void invalid transaction data.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling/resolution-strategies-for-mismatched-exceptions
 ---
 
 # Resolution Strategies for Mismatched Exceptions

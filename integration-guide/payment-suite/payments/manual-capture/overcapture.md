@@ -1,6 +1,12 @@
 ---
-description: Capture amounts greater than the originally authorized amount in manual capture payments
+description: >-
+  Capture amounts greater than the originally authorized amount in manual
+  capture payments
 icon: chart-diagram
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/manual-capture/overcapture
 ---
 
 # Overcapture
@@ -29,7 +35,7 @@ Use the boolean field `enable_overcapture` in your payment request.
 
 This can be passed in:
 
-[POST /payments ](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+[POST /payments](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 
 [POST /payments/:id/update](https://api-reference.hyperswitch.io/v1/payments/payments--update)
 

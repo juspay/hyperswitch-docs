@@ -1,5 +1,9 @@
 ---
 description: Surcharge Manager Setup
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/surcharge/surcharge-setup-guide
 ---
 
 # Surcharge Setup guide
@@ -12,23 +16,23 @@ This section covers the steps to setup surcharge manager using the Hyperswitch C
 
 **Step 1:** Go to Workflow -> Surcharge tab on the Hyperswitch Control Center
 
-**Step 2:** Click on create new button&#x20;
+**Step 2:** Click on create new button
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-04 at 6.49.56 PM.png" alt=""><figcaption></figcaption></figure>
 
-**Step 3:** Enter the rule name, description and configure your desired rule by selecting the operators and values for the various fields&#x20;
+**Step 3:** Enter the rule name, description and configure your desired rule by selecting the operators and values for the various fields
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-04 at 5.42.22 PM (1).png" alt=""><figcaption></figcaption></figure>
 
-**Step 5:** Add more rules using the plus icon on the top right of the current rule panel&#x20;
+**Step 5:** Add more rules using the plus icon on the top right of the current rule panel
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-04 at 6.38.04 PM.png" alt=""><figcaption></figcaption></figure>
 
-**Step 6:** Click save to configure and activate the rule&#x20;
+**Step 6:** Click save to configure and activate the rule
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-04-15 at 1.38.07 PM.png" alt=""><figcaption></figcaption></figure>
 
-**Step 7:** Your rule is now successfully configured and Surcharge would be applied to all payments conforming to this rule.&#x20;
+**Step 7:** Your rule is now successfully configured and Surcharge would be applied to all payments conforming to this rule.
 
 To create a test payment, Go to Home and click on Try a test payment.
 
@@ -50,5 +54,5 @@ To create a test payment, Go to Home and click on Try a test payment.
 
 2. How do I update the current configuration?\
    Click on Create New and configure a new rule that would replace the existing configuration
-3. What happens if I pass `surcharge_details`  field in `/payments` request?\
+3. What happens if I pass `surcharge_details` field in `/payments` request?\
    surcharge\_details if sent in payments create request, surcharge decision manager will be overridden and surcharge sent in the request will be applied.

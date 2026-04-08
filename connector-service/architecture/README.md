@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/architecture
+---
+
 # Architecture
 
 ### The Problem
@@ -90,8 +97,7 @@ The Prism supports a three layered architecture, each solving a purpose
 
 ### Data Flow
 
-```mermaid
-sequenceDiagram
+{% @mermaid/diagram content="sequenceDiagram
     participant SDK as SDK Interface
     participant FFI as FFI / Binding Layer
     participant Server as gRPC Server
@@ -116,8 +122,7 @@ sequenceDiagram
     Adapter-->>Server: Return unified response
     Server-->>Server: Normalize errors
     Server-->>FFI: gRPC response
-    FFI-->>SDK: Deserialize from protobuf
-```
+    FFI-->>SDK: Deserialize from protobuf" %}
 
 ### Connector Transformation
 

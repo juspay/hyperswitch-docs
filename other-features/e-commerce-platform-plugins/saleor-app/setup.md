@@ -1,5 +1,9 @@
 ---
 description: Juspay Saleor Payment App Setup
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins/saleor-app/setup
 ---
 
 # Setup

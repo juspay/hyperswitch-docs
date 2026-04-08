@@ -3,6 +3,10 @@ description: All the payment use-cases for B2B SaaS Businesses
 hidden: true
 noIndex: true
 icon: block-brick
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-b2b-saas-businesses
 ---
 
 # For B2B SaaS Businesses

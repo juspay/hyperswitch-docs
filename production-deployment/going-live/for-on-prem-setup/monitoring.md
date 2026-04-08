@@ -1,6 +1,10 @@
 ---
 description: Visibility and control over your application
 icon: eyes
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/monitoring
 ---
 
 # Monitoring
@@ -11,9 +15,9 @@ In this chapter, you will learn to setup logs and monitoring on your application
 
 ***
 
-In the world of application monitoring, two critical elements play pivotal roles&#x20;
+In the world of application monitoring, two critical elements play pivotal roles
 
-<table><thead><tr><th width="108">Element</th><th>What is it</th><th>Why is it required</th></tr></thead><tbody><tr><td>Logs</td><td>Logs are a running diary of all the activities that happen inside the application</td><td>Useful for tracking, debugging, and auditing</td></tr><tr><td>Metrics</td><td>Metrics are like measuring sticks (like a counter) highlighting the performance of the different parts of the application</td><td>Used to assess, analyze, and track various aspects of a system/application providing data-driven insights </td></tr></tbody></table>
+<table><thead><tr><th width="108">Element</th><th>What is it</th><th>Why is it required</th></tr></thead><tbody><tr><td>Logs</td><td>Logs are a running diary of all the activities that happen inside the application</td><td>Useful for tracking, debugging, and auditing</td></tr><tr><td>Metrics</td><td>Metrics are like measuring sticks (like a counter) highlighting the performance of the different parts of the application</td><td>Used to assess, analyze, and track various aspects of a system/application providing data-driven insights</td></tr></tbody></table>
 
 To effectively utilize both aspects, Juspay Hyperswitch relies on the following
 
@@ -22,7 +26,7 @@ To effectively utilize both aspects, Juspay Hyperswitch relies on the following
 * OpenTelemetry collector (for application metrics)
 * Cloudwatch (for system metrics)
 
-This combination, along with Grafana for visualization, seamlessly integrates logs and metrics into intuitive, interactive dashboards.&#x20;
+This combination, along with Grafana for visualization, seamlessly integrates logs and metrics into intuitive, interactive dashboards.
 
 <figure><img src="../../../.gitbook/assets/Monitoring architecture (3).jpg" alt=""><figcaption></figcaption></figure>
 
@@ -51,8 +55,6 @@ brew install helm
 {% endtab %}
 
 {% tab title="Debian/Ubuntu Linux" %}
-
-
 To install Helm on Debian/Ubuntu Linux, follow these steps:
 
 a. Download and add Helm's GPG key to your keyring:
@@ -131,7 +133,7 @@ By following these steps, you will configure Promtail to utilize the specified "
 
 ### Grafana for Visibility
 
-### 1.  Installing Grafana
+### 1. Installing Grafana
 
 You can proceed with the installation of the Helm chart for Grafana using the following commands:
 
@@ -148,7 +150,7 @@ helm install grafana grafana/grafana --namespace your_namespace --create-namespa
 
 It's worth noting that in a standard installation, the Grafana service is of type ClusterIP. However, if you are using MetalLB as a network load balancer in your cluster and have configured the service type as LoadBalancer, you can disregard this information. We will address port-forwarding for the service at a later stage.
 
-### 2.  Configuring Data Source in Grafana
+### 2. Configuring Data Source in Grafana
 
 To configure Grafana's data sources and dashboard, follow these steps:
 
@@ -187,7 +189,7 @@ To configure Grafana's data sources and dashboard, follow these steps:
 
 Now you have successfully configured Grafana's data source with Grafana Loki, and you can proceed to create dashboards and visualize your data. Similarly, you can configure Prometheus for metrics.
 
-### 3.  Web client logs
+### 3. Web client logs
 
 Logging from the payment checkout web client is crucial for tracking and monitoring the flow of payments. It provides a transparent record of events, errors, and user interactions, aiding developers and support teams in identifying issues, debugging, and ensuring the security and reliability of payment processes. Well-implemented logging enhances traceability and facilitates a more efficient resolution of potential problems in the payment checkout experience.
 

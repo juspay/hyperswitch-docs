@@ -1,6 +1,12 @@
 ---
+description: >-
+  Learn how to handle Apple Pay decryption internally on your merchant server
+  with PCI DSS compliance requirements and step-by-step decryption workflow.
 hidden: true
-description: Learn how to handle Apple Pay decryption internally on your merchant server with PCI DSS compliance requirements and step-by-step decryption workflow.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay/in-app-and-web-transactions-processed-using-merchant-decryption
 ---
 
 # In-App and Web Transactions Processed Using Merchant Decryption
@@ -45,4 +51,4 @@ The decryption sequence ensures the integrity and security of the payment data b
 
 #### API Mapping
 
-<table><thead><tr><th>Parameter Name</th><th width="111.12890625">Required</th><th>Description</th></tr></thead><tbody><tr><td>payment_method_data.wallet.apple_pay.payment_data</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.display_name</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.network</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.type</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_month</td><td></td><td>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_year</td><td></td><td><p></p><p>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</p><p></p></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.auth_code</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.transaction_identifier</td><td></td><td>Use the <strong>transactionId</strong> value, contained in the Apple Pay token.</td></tr></tbody></table>
+<table><thead><tr><th>Parameter Name</th><th width="111.12890625">Required</th><th>Description</th></tr></thead><tbody><tr><td>payment_method_data.wallet.apple_pay.payment_data</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.display_name</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.network</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.type</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_month</td><td></td><td>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.card_exp_year</td><td></td><td>Use the <strong>applicationExpirationDate</strong> value, contained in the Apple Pay token.</td></tr><tr><td>payment_method_data.wallet.apple_pay.payment_method.auth_code</td><td></td><td></td></tr><tr><td>payment_method_data.wallet.apple_pay.transaction_identifier</td><td></td><td>Use the <strong>transactionId</strong> value, contained in the Apple Pay token.</td></tr></tbody></table>

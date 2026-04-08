@@ -1,9 +1,15 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference/custom-events
+---
+
 # Custom Events
 
 ## Listen to Expiry Date event
 
-This event is triggered when the expiry date changes. Merchants can listen to this event and implement checks and validations based on the received value.\
-
+This event is triggered when the expiry date changes. Merchants can listen to this event and implement checks and validations based on the received value.\\
 
 ```javascript
 // CheckoutForm.js

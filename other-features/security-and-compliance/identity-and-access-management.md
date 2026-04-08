@@ -1,6 +1,10 @@
 ---
 description: Overview of Identity and Access Management (IAM) practices in Hyperswitch
 icon: id-card-clip
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/identity-and-access-management
 ---
 
 # Identity and Access Management

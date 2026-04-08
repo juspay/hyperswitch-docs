@@ -1,5 +1,9 @@
 ---
 description: Quickly deploy your web client playground and see it in action
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional
 ---
 
 # Playground deployment for prototyping (optional)
@@ -18,7 +22,7 @@ Please note that this deployment is just for the demo-playground. This is **opti
 
 ### Let's begin!
 
-> #### Note
+> **Note**
 >
 > You can directly start from [Step 3](playground-deployment-for-prototyping-optional.md#step-3-setup-hyperswitch-web-client-playground) if you have installed and configured AWS CLI
 
@@ -170,7 +174,6 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 * **I cannot see anything on `myPublicIP` or I get `404 Page not Found` on this URL**\
   Please check your AWS EC2 details and make sure that the EC2 is created and has all the permissions required to run the server and create security groups. Post this, re-run the script to do a re-deployment.
-
 * **AWS is throwing many errors while running the script**\
   Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/ restrictions set to prevent cloud hosting.
 

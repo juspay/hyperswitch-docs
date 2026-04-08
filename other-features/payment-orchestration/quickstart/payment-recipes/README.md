@@ -3,6 +3,10 @@ description: >-
   Explore payment recipes to diversify your payment options and add processors
   without additional integration effort
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-recipes
 ---
 
 # 🥗 Payment Recipes

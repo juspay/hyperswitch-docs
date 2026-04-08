@@ -3,6 +3,10 @@ description: >-
   Secure card vaulting with Hyperswitch SDK for PCI-DSS compliant payment
   processing
 icon: floppy-disk-circle-arrow-right
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/save-a-payment-method/saved-card
 ---
 
 # Saved Card

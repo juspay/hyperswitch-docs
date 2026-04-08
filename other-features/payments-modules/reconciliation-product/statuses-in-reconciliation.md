@@ -3,6 +3,10 @@ description: >-
   Master all reconciliation statuses on Juspay Hyperswitch to track transaction
   progress from ingestion through final posting and resolve exceptions
   efficiently
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/statuses-in-reconciliation
 ---
 
 # Statuses in Reconciliation
@@ -58,8 +62,8 @@ A Transaction represents the end-to-end journey of money. Its status reflects wh
 #### Mismatch States (The "To-Do" List)
 
 * **Expected:** The transaction has been created based on a source entry (e.g., a Sale in your Order Management System) and is waiting for a matching entry from the counterparty (e.g., the Bank)\
-  &#xNAN;_**Note on "Missing"**_: If a transaction remains in the Expected state longer than your configured SLA (e.g., T+3 days), the UI flags it as Missing. This is not a separate database status, but a time-based alert indicating that the counterparty data is overdue
-* **Over Amount**: The confirmed amount (Right Side) is higher than the expected amount (Left Side)
+  \&#xNAN;_**Note on "Missing"**_: If a transaction remains in the Expected state longer than your configured SLA (e.g., T+3 days), the UI flags it as Missing. This is not a separate database status, but a time-based alert indicating that the counterparty data is overdue
+*   **Over Amount**: The confirmed amount (Right Side) is higher than the expected amount (Left Side)
 
     This status can be **transient** or **final**, depending on whether more counterpart entries are still expected:
 

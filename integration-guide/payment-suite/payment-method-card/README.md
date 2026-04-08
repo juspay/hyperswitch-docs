@@ -3,6 +3,10 @@ description: >-
   Learn about Payment Method (Card) flows for flexible payment processing with
   tokenization and server-to-server API control
 icon: hand-holding-circle-dollar
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payment-method-card
 ---
 
 # Multi-Step Payments / Vault-First Payments

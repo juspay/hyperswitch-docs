@@ -1,5 +1,12 @@
 ---
-description: "Learn how to integrate Hyperswitch embeddable components into your React application using the SDK provider pattern for secure connector configuration management."
+description: >-
+  Learn how to integrate Hyperswitch embeddable components into your React
+  application using the SDK provider pattern for secure connector configuration
+  management.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/beta-embeddable-components/integration-reference
 ---
 
 # Integration Reference

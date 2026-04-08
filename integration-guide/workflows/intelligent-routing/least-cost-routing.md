@@ -3,6 +3,10 @@ description: >-
   Optimize processing fees on debit payments by routing traffic to the cheapest
   available debit network
 icon: hand-holding-dollar
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/least-cost-routing
 ---
 
 # Least Cost Routing
@@ -27,11 +31,11 @@ _**Step 1:**_ Configure Prerequisites Ensure that connectors supporting transact
 
 _**Step 2:**_ Navigate to `Workflow` -> `Routing` -> `Least Cost Routing`
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 _**Step 3:**_ A popup will guide you to confirm the three prerequisites - 1.) Connector setup, 2.) Debit card enablement, and 3.) Local networks configuration. Click on `Enable` to activate LCR
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routing algorithm along with all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
 
@@ -54,7 +58,7 @@ We perform real-time computation to see if a Global network (Visa/Mastercard) vs
 
 * We calculate transaction cost estimate using the MCC code supplied by merchant
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 * We look into amount (value) of transaction and Card Issuer bank to compute a cost of transaction and determine the right network to process.
 * The system has default values baked-in to compute cost of transaction and make decisions. The LCR system is being designed to accept cost inputs from merchants. Specifically, if they have any PSP–Network level contracts that should be considered during network selection.

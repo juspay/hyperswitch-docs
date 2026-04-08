@@ -1,5 +1,9 @@
 ---
 icon: people-roof
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure
 ---
 
 # Organization, Merchant and Profile Setup
@@ -25,20 +29,20 @@ Once a user signs up on the Hyperswitch Control Centre, they need to create an o
 *   **Multiple Profiles under each Merchant:** A merchant account can set up multiple profiles for each individual business unit. Profiles are the most granular levels in Hyperswitch, and every payment via Hyperswitch is mandatorily and exclusively tagged with a profile.
 
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf-aR3KdLup56nCK71gZeOJMZ4o4AqE1lcN4iZ0C1MyqmstN2Hns4C_nudITry6ic4hA36P8qquQmCdK98z8Mxd7PQysxYhtfFFcRBkY3w_Pq0e2lttOMq4iLNGK-veOfvxccjGeupzEoV_H5rDb4CkismV?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
-* **Easy Checkout for Return Customers:** Hyperswitch allows an organization to store customer cards while enabling sub-merchants to access them, and for payments handled by a merchant, only the cards relevant to that merchant are visible.&#x20;
+* **Easy Checkout for Return Customers:** Hyperswitch allows an organization to store customer cards while enabling sub-merchants to access them, and for payments handled by a merchant, only the cards relevant to that merchant are visible.
   * Additionally, payments can be tokenized (both network and PSP) at the sub-merchant level, ensuring that sub-merchants or platforms don't need to worry about PCI compliance.
   * Hyperswitch also enables organizations to accept payments on behalf of their sub-merchant using one of profiles of sub-merchant, without allowing the organization to access the connector credentials used with the profile.
-*   **Routing & Connectors Configuration:** If a business has connector credentials for each of its business units, they can configure them to  their respective profiles and set up routing rules for each profile.&#x20;
+*   **Routing & Connectors Configuration:** If a business has connector credentials for each of its business units, they can configure them to their respective profiles and set up routing rules for each profile.
 
     * If the merchant wants to accept payments at the merchant level with its own set of connector credentials, it can create another profile and configure its connectors with that profile.
 
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcivUqB263o28dMqZCfxKiWkNnJUJOnbIi9Ri4L3qhOXwf6BF3wXnVwNCIISlqXM4Kwx363sB09zrDKJEYMJ8T6CsV-d2kvvc7WAxLulChyGxYtduwgra4H7MttVWjHV6iI8YhhB8E0hf69HiRGV9lZ2wTw?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
 
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeNBK4CDEvBeUV-Bo6lRKHzVCDKFSHnPWW-NaXjifjXFww3ADzbILjX-YoCGpErEL8UpgJA0Rq4ID0hAgf1WT3asLnlXG8Cse9paisbmUa63vnT8QxPq-wVD-qs8e5vVi1OW1WqYKPKalJ5HeJ6RPQh4bg?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
-*   **Exhaustive Data Visibility:** Payment lists, analytics, and teams are segregated at the profile, merchant, and organization levels. Hyperswitch allows top-down access to data; each level can access the payments data of the levels below it by switching into their levels, not vice versa.&#x20;
+*   **Exhaustive Data Visibility:** Payment lists, analytics, and teams are segregated at the profile, merchant, and organization levels. Hyperswitch allows top-down access to data; each level can access the payments data of the levels below it by switching into their levels, not vice versa.
 
     * Each level can get an aggregated view of the payment transactions of all the sub-levels beneath it. Also, Using the global search within
-    * Hyperswitch Control Centre, you can search for any data across any merchant account or profile of which the user is a part.&#x20;
+    * Hyperswitch Control Centre, you can search for any data across any merchant account or profile of which the user is a part.
 
     <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdQ2NY5E8lHbH2_QvXzepO-6TissIdWWhV9pZRNPZeMKh2GgynWaNKWtbJnJNRYppn_buAMYqqfMkz9VvupvfkFVee_cbS5oY6Z0Mbx0Vvgri6Jw7T-shuBQouJ4BKY2o_nPvKG159LdfPhAOEfb2My0ekN?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
 

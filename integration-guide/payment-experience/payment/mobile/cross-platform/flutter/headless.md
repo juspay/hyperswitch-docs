@@ -4,6 +4,10 @@ description: >-
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/flutter/headless
 ---
 
 # Headless SDK
@@ -38,9 +42,9 @@ final params = PaymentMethodParams(clientSecret: 'YOUR_PAYMENT_INTENT_CLIENT_SEC
 Session _sessionId = await hyper.initPaymentSession(params);
 ```
 
-| options (Required)                   | Description                                                      |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
+| options (Required)                   | Description                                                     |
+| ------------------------------------ | --------------------------------------------------------------- |
+| `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
 #### 4. Craft a customized payments experience
 

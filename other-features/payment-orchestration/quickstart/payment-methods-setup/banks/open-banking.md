@@ -1,5 +1,11 @@
 ---
-description: Account Verification and Payment Initiation Services using open banking providers
+description: >-
+  Account Verification and Payment Initiation Services using open banking
+  providers
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/banks/open-banking
 ---
 
 # Open Banking
@@ -32,19 +38,19 @@ Regional Usage:
 1. On the Juspay Hyperswitch dashboard, head to Connectors Tab
 2. Head on to the PM Authentication Tab and select your Open Banking AIS connector
 3. Add your credentials and you should be good to go.
-4. Head on to Payment Processor and configure a Payment Processor, on select payment methods like Bank debits, you'll be asked to select a PM authentication connector to link with the payment Processor 
+4. Head on to Payment Processor and configure a Payment Processor, on select payment methods like Bank debits, you'll be asked to select a PM authentication connector to link with the payment Processor
 5. Select a existing PM auth connector (that you have already configured) and proceed with the rest of the steps.
 
 ### Steps to configure Payment Initiation (via Plaid)
 
 1. On the Hyperswitch dashboard, head to Connectors Tab
 2. Head on to the Payment Processor Tab and select Plaid.
-3. Enter your client_id and secret and select relevant payment methods.
-4. Merchant's Bank account data needs to be provided in order to initiate transfer of funds to the merchant account. \
+3. Enter your client\_id and secret and select relevant payment methods.
+4. Merchant's Bank account data needs to be provided in order to initiate transfer of funds to the merchant account.\
    Under the dropdown Open Banking Recipient Data,\
-   One of the underlying options should be selected - \
-   - bank scheme, in which merchant's recipient account details needs to be provided (either sepa or bacs)\
-   - Connector Recipient Id, in case the merchant already has a recipient id created with the connector
+   One of the underlying options should be selected - \\
+   * bank scheme, in which merchant's recipient account details needs to be provided (either sepa or bacs)\\
+   * Connector Recipient Id, in case the merchant already has a recipient id created with the connector
 5. For Payment Initiation services, the payment method selected should be Open banking with payment method type as Open Banking PIS
 6. Configure the rest and you should be good to go.
 
@@ -68,10 +74,10 @@ Regional Usage:
 
 ### FAQ
 
-1. Are there any other Open banking processors apart from Plaid? \
-   - Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However, Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a Github Issue.
-2. Any extra configuration required for Android or IOS platform?\
-   - If using Plaid, the android package name (for android) and redirect uri (Universal Link for your application) (for IOS) needs to be passed from the merchant SDK while invoking the Hyperswitch SDK. 
+1. Are there any other Open banking processors apart from Plaid? \\
+   * Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However, Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a Github Issue.
+2. Any extra configuration required for Android or IOS platform?\\
+   * If using Plaid, the android package name (for android) and redirect uri (Universal Link for your application) (for IOS) needs to be passed from the merchant SDK while invoking the Hyperswitch SDK.
 3. In which all geographies can I use open banking?
    1. Account Verification is currently available to verify bank accounts for direct debits via ACH, SEPA and BACS
    2. Payment Initiation is currently available for the UK and EU markets

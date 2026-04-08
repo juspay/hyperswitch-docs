@@ -1,6 +1,10 @@
 ---
 description: Allow customers to retry failed payments under the same Payment Intent
 icon: person-walking-arrow-loop-left
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries/manual-user-triggered-retries
 ---
 
 # Manual/User triggered Retries
@@ -155,8 +159,7 @@ If `manual_retry_allowed : true`, you can retry on the same Payment Intent.
 
 ### Response Field Reference
 
-**Field:** `manual_retry_allowed`
-**Type:** Boolean / null
+**Field:** `manual_retry_allowed` **Type:** Boolean / null
 
 Specifies whether manual retry is supported for a failed payment.
 

@@ -1,6 +1,10 @@
 ---
 description: Implement embedded payment widget in React Native applications
 icon: input-numeric
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-node-backend-1
 ---
 
 # Payment Widget
@@ -131,7 +135,7 @@ A unique identifier for the widget instance.
 
 **`options`** `PresentPaymentSheetParams` · Required
 
-Configuration and appearance options.&#x20;
+Configuration and appearance options.
 
 When using `PaymentWidget`, pass the `clientSecret` & `sdkAuthorization` here.
 

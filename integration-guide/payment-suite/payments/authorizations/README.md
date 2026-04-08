@@ -1,6 +1,12 @@
 ---
+description: >-
+  Overview of specialized authorization flows including zero-auth, estimate,
+  incremental, extended, and partial authorizations
 icon: building-magnifying-glass
-description: Overview of specialized authorization flows including zero-auth, estimate, incremental, extended, and partial authorizations
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations
 ---
 
 # Authorizations
@@ -11,7 +17,7 @@ This section outlines the specialized authorization flows supported by Juspay Hy
 
 **1. $0 Authorization (Account Verification)**
 
-Commonly used for card-on-file or subscription setups, this flow verifies that a payment method is valid and active without actually blocking any funds. It is an essential step for "Save Card" features to ensure the payment_method_id is linked to a legitimate account before future use.
+Commonly used for card-on-file or subscription setups, this flow verifies that a payment method is valid and active without actually blocking any funds. It is an essential step for "Save Card" features to ensure the payment\_method\_id is linked to a legitimate account before future use.
 
 **2. Estimate Authorization**
 

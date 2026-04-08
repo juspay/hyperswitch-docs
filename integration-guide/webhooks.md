@@ -1,6 +1,9 @@
 ---
 description: Configure outgoing webhooks from Hyperswitch
 icon: anchor
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/webhooks
 ---
 
 # Webhooks
@@ -25,7 +28,7 @@ Configure the above endpoint on your Hyperswitch dashboard under Developer -> Pa
 
 In case a merchant wants to set custom headers for sending data to a specified webhook endpoint, these custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Update your webhook custom HTTP headers as shown below (you must provide a webhook URL to set custom HTTP headers).
 
-<figure><img src="../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
 
 #### Update Hyperswitch's webhook endpoints on your connector Dashboard
 

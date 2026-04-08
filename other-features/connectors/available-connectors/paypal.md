@@ -1,9 +1,15 @@
 ---
-description: Accept payments through PayPal via Juspay Hyperswitch — configure credentials, supported payment methods, and activation steps.
+description: >-
+  Accept payments through PayPal via Juspay Hyperswitch — configure credentials,
+  supported payment methods, and activation steps.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/paypal
 ---
 
-# PayPal
+# Paypal
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via PayPal through Juspay Hyperswitch

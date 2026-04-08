@@ -1,6 +1,13 @@
 ---
-description: Integrate Klarna with Juspay Hyperswitch to offer buy-now-pay-later, installment plans, and direct payment options in a seamless one-click checkout experience.
+description: >-
+  Integrate Klarna with Juspay Hyperswitch to offer buy-now-pay-later,
+  installment plans, and direct payment options in a seamless one-click checkout
+  experience.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/klarna
 ---
 
 # Klarna

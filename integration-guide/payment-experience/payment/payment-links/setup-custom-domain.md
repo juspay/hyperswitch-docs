@@ -1,5 +1,11 @@
 ---
-description: Learn how to configure custom domains for payment links with DNS records, CNAME, and TXT verification for secure payment processing.
+description: >-
+  Learn how to configure custom domains for payment links with DNS records,
+  CNAME, and TXT verification for secure payment processing.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/setup-custom-domain
 ---
 
 # Setup Custom Domain
@@ -40,12 +46,12 @@ Step 3: Create CNAME record
 
 Enter the following values and save the new DNS record.
 
-> | FIELD | INSTRUCTIONS | DESCRIPTION |
-> |----------|----------|----------|
-> | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. |
-> | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink` | For CNAME records, this field is the first part of your subdomain (the part leading up to the first period). |
-> | Value | Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch. Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
-> | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration. |
+| FIELD      | INSTRUCTIONS                                                        | DESCRIPTION                                                                                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type       | Select `CNAME` from the dropdown                                    | What kind of DNS record this is.                                                                                                                                                                                                      |
+| Name       | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink` | For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).                                                                                                                          |
+| Value      | Enter `sandbox.hyperswitch.io`                                      | This is what the new subdomain record points to–in this case, Hyperswitch. Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. |
+| TTL/Expiry | Enter `300`                                                         | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration.                   |
 
 Step 4: Create your TXT record
 
@@ -55,12 +61,12 @@ Step 4: Create your TXT record
 
 > Enter these values and save the new DNS record:
 
-> | FIELD | INSTRUCTIONS | DESCRIPTION |
-> |----------|----------|----------|
-> | Type | Select `TXT` from the dropdown | What kind of DNS record this is. |
-> | Name | If your custom domain is `paymentlink.xyz.com`, enter `_acme-challenge.paymentlink` | For TXT records, this field is the subdomain portion of your domain. |
-> | Value | Copy the TXT value that is given by us and paste | This is a long, unique string used for domain verification |
-> | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration. |
+| FIELD      | INSTRUCTIONS                                                                        | DESCRIPTION                                                                                                                                                                                                         |
+| ---------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type       | Select `TXT` from the dropdown                                                      | What kind of DNS record this is.                                                                                                                                                                                    |
+| Name       | If your custom domain is `paymentlink.xyz.com`, enter `_acme-challenge.paymentlink` | For TXT records, this field is the subdomain portion of your domain.                                                                                                                                                |
+| Value      | Copy the TXT value that is given by us and paste                                    | This is a long, unique string used for domain verification                                                                                                                                                          |
+| TTL/Expiry | Enter `300`                                                                         | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can't change it, it's safe to ignore this part of the configuration. |
 
 Step 5: Verify your CNAME record setup
 

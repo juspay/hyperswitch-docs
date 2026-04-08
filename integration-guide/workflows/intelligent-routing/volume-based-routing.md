@@ -1,6 +1,10 @@
 ---
 description: Route transactions through processors based on volume distribution
 icon: chart-simple
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/volume-based-routing
 ---
 
 # Volume Based Routing

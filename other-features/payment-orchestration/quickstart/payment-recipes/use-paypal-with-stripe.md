@@ -1,5 +1,11 @@
 ---
-description: 'Learn how to add PayPal to your Stripe integration using Hyperswitch payment orchestration'
+description: >-
+  Learn how to add PayPal to your Stripe integration using Hyperswitch payment
+  orchestration
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-recipes/use-paypal-with-stripe
 ---
 
 # Use PayPal With Stripe
@@ -8,7 +14,7 @@ description: 'Learn how to add PayPal to your Stripe integration using Hyperswit
 This section will highlight the benefits of complementing your Stripe integration with PayPal
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
 
 ### Use PayPal with Stripe
 

@@ -3,6 +3,10 @@ description: >-
   Use our CDK script to deploy Juspay Hyperswitch into your AWS stack using
   CloudFormation
 icon: aws
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation
 ---
 
 # Deploy on AWS using CloudFormation

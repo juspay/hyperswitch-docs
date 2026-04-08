@@ -1,5 +1,9 @@
 ---
 description: Create Payment Links
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/create-payment-links
 ---
 
 # Create Payment Links

@@ -4,6 +4,10 @@ description: >-
   comes within your Hyperswitch Orchestration account
 hidden: true
 icon: plug
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/connect-external-vaults-to-hyperswitch-orchestration
 ---
 
 # Connect External Vaults to Hyperswitch Orchestration

@@ -1,10 +1,14 @@
 ---
 description: >-
-  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our
+  Payment Methods Management SDK
 hidden: true
 icon: gear
 coverY: 0
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/payment-methods-management-sdk
 ---
 
 # Payment Methods Management SDK
@@ -29,11 +33,11 @@ This document provides step-by-step instructions for integrating the Juspay Hype
 
 First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 
-##### Obtaining Your API Keys
+**Obtaining Your API Keys**
 
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
-##### Creating a Payment Methods Session Endpoint
+**Creating a Payment Methods Session Endpoint**
 
 {% hint style="info" %}
 All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
@@ -50,8 +54,7 @@ To generate your Vault API keys, follow these steps:
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.
-> For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create) reference documentation.
+> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create) reference documentation.
 
 ```javascript
 // Create-Payment-Methods-Session
@@ -94,7 +97,7 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
 
 Once your server endpoint is set up, you'll need to integrate the Payment Methods Management SDK into your client application. The following steps outline the process for a React application.
 
-##### 2.1 Install Required Libraries
+**2.1 Install Required Libraries**
 
 Install the Juspay Hyperswitch JavaScript and React libraries:
 
@@ -103,7 +106,7 @@ $ npm install @juspay-tech/hyper-js
 $ npm install @juspay-tech/react-hyper-js
 ```
 
-##### 2.2 Add Juspay Hyperswitch to Your React App
+**2.2 Add Juspay Hyperswitch to Your React App**
 
 Import the necessary components and hooks:
 
@@ -113,7 +116,7 @@ import { loadHyper } from "@juspay-tech/hyper-js";
 import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
 ```
 
-##### 2.3 Initialize the Juspay Hyperswitch Library
+**2.3 Initialize the Juspay Hyperswitch Library**
 
 Configure the library with your publishable API key and profile ID:
 
@@ -126,7 +129,7 @@ const hyperPromise = loadHyper({
 
 > **Security Note**: Your publishable key is safe to expose in client-side code, but never include your secret API key in the frontend.
 
-##### 2.4 Fetch Session Details
+**2.4 Fetch Session Details**
 
 Make a request to your server endpoint to create a new payment methods session:
 
@@ -150,7 +153,7 @@ useEffect(() => {
 
 > **Important**: Replace `"customer_id"` with your actual customer identifier to associate saved payment methods with specific customers.
 
-##### 2.5 Initialize the HyperManagementElements Component
+**2.5 Initialize the HyperManagementElements Component**
 
 Pass the promise from `loadHyper` to the `HyperManagementElements` component along with the session details:
 
@@ -171,7 +174,7 @@ return (
 );
 ```
 
-##### 2.6 Add the Payment Methods Management Elements
+**2.6 Add the Payment Methods Management Elements**
 
 Create a `PaymentMethodsManagementElementForm` component that includes the `PaymentMethodsManagementElement`:
 

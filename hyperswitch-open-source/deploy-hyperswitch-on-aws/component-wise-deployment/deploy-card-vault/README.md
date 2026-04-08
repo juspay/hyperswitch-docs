@@ -1,6 +1,10 @@
 ---
 description: Deploy the Juspay Hyperswitch Card Vault on the cloud
 icon: vault
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault
 ---
 
 # Deploy Card Vault
@@ -13,7 +17,7 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 ### How does it work?
 
-<figure><img src="../../../../.gitbook/assets/image (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption></figcaption></figure>
 
 * The Juspay Hyperswitch application communicates with Tartarus via a middleware.
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.
@@ -27,7 +31,7 @@ Master Key - AES generated key to that is encrypted/decrypted by the custodian k
 
 Custodian Keys - AES generated key that is used to encrypt and decrypt the master key. It is broken into two keys (`key 1` and `key 2`) and available with two custodians to enhance security.
 
-<figure><img src="../../../../.gitbook/assets/image.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (5).jpg" alt=""><figcaption></figcaption></figure>
 
 ### Setting up your Card Vault
 

@@ -2,6 +2,10 @@
 description: Implement native 3DS authentication for seamless mobile checkout
 hidden: true
 icon: star-shooting
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments
 ---
 
 # Native 3DS Authentication

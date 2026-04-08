@@ -1,6 +1,10 @@
 ---
 description: Self-deploy the intelligent routing engine with Docker
 icon: screwdriver-wrench
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/self-deployment-guide
 ---
 
 # Self-Deployment Guide
@@ -9,7 +13,7 @@ icon: screwdriver-wrench
 
 Juspay Hyperswitch's intelligent routing engine can be self-deployed to fit into your existing payments setup:
 
-<figure><img src="../../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Clone the Repository
 
@@ -31,7 +35,7 @@ You can download and install Docker Desktop from the below links.
 
 #### 3. Run the Project
 
-##### a. First-Time Setup
+**a. First-Time Setup**
 
 If you're setting up the environment for the first time, run:
 
@@ -50,9 +54,9 @@ This will:
 * Set up the environment
 * Set up the database with the required schema
 * Set up redis and the server for running the application
-* Push the configs defined in the config.yaml & the static rules defined for routing in priority_logic.txt to the DB
+* Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
 
-##### b. Start the Server (without resetting DB)
+**b. Start the Server (without resetting DB)**
 
 If the DB schema is already set up and you don't want to reset the DB, use:
 

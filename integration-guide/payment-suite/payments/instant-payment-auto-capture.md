@@ -2,8 +2,11 @@
 description: >-
   Authorize and capture a card payment in a single step — the simplest and most
   common one-time payment pattern.
-hidden: true
 icon: hands-holding-dollar
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/instant-payment-auto-capture
 ---
 
 # Instant Payment (Auto Capture)

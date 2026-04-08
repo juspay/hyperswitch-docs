@@ -1,6 +1,10 @@
 ---
 description: Low-code solution to accept payments
 icon: link
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links
 ---
 
 # Payment Links
@@ -29,7 +33,7 @@ API Level Overview of Payment Links with Hyperswitch
 
 <summary>Can I create a payment link pointing to my custom domain?</summary>
 
-Yes. Your custom domain can be included in the default payment_link_config object as part of the business profile update.
+Yes. Your custom domain can be included in the default payment\_link\_config object as part of the business profile update.
 
 This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
 

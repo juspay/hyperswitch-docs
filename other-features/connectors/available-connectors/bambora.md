@@ -1,5 +1,12 @@
 ---
-description: Connect Bambora (a Worldline solution) with Hyperswitch to accept digital payments. Learn how to activate Bambora, configure your Merchant ID and Passcode, and select supported payment methods.
+description: >-
+  Connect Bambora (a Worldline solution) with Hyperswitch to accept digital
+  payments. Learn how to activate Bambora, configure your Merchant ID and
+  Passcode, and select supported payment methods.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/bambora
 ---
 
 # Bambora
@@ -8,7 +15,7 @@ description: Connect Bambora (a Worldline solution) with Hyperswitch to accept d
 This section gives you an overview of how to make payments via Bambora through Hyperswitch.
 {% endhint %}
 
-![logo_bambora](https://hyperswitch.io/icons/homePageIcons/logos/bamboraLogo.svg)
+![logo\_bambora](https://hyperswitch.io/icons/homePageIcons/logos/bamboraLogo.svg)
 
 Bambora, a Worldline solution, designs and operates leading digital payment and transactional solutions that enable sustainable economic growth and reinforce trust and security. To know more about payment methods supported by Bambora via Juspay Hyperswitch, click [here](https://hyperswitch.io/pm-list).
 

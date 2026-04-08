@@ -1,6 +1,10 @@
 ---
 description: Demystifying PCI compliance and it's requirements
 icon: cake-slice
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science
 ---
 
 # Get started
@@ -13,12 +17,12 @@ In this chapter, we will look at the levels of PCI compliance, key requirements 
 
 Businesses subject to PCI-DSS must annually demonstrate compliance with the regulation. And PCI-DSS lays out two ways of doing so:
 
-1. **Self-Assessment Questionnaire (SAQ):** This is an audit or assessment which can be completed by a business without a independent third-party Qualified Security Assessor (QSA) or an Internal Security Assessor (ISA). The person responsible for the payment infrastructure fills out the SAQ. This could be the stakeholder who is the closest to your payment infrastructure - your Dev Ops Manager, or Information Security Officer, or CTO.&#x20;
+1. **Self-Assessment Questionnaire (SAQ):** This is an audit or assessment which can be completed by a business without a independent third-party Qualified Security Assessor (QSA) or an Internal Security Assessor (ISA). The person responsible for the payment infrastructure fills out the SAQ. This could be the stakeholder who is the closest to your payment infrastructure - your Dev Ops Manager, or Information Security Officer, or CTO.
 2. **Report on Compliance (ROC):** An independent third-party QSA or ISA certified by the PCI-SSC will have to perform the audit and share the findings.
 
 {% hint style="success" %}
-Juspay Hyperswitch's PCI Attestation of Compliance can be found in the Juspay Hyperswitch Dashboard. \
-To locate -> Go to Settings -> Compliance 
+Juspay Hyperswitch's PCI Attestation of Compliance can be found in the Juspay Hyperswitch Dashboard.\
+To locate -> Go to Settings -> Compliance
 {% endhint %}
 
 {% hint style="success" %}
@@ -31,7 +35,7 @@ Depending on the number of transactions your business processes, you could be su
 
 <table><thead><tr><th width="186">Parameter</th><th width="144">PCI Level 1</th><th width="142">PCI Level 2</th><th width="138">PCI Level 3</th><th>PCI Level 4</th></tr></thead><tbody><tr><td>Number of card transactions</td><td>Over 6 million</td><td>6 million to 1 million</td><td>1 million to 20,000</td><td>Less than 20,000</td></tr><tr><td>Compliance Report</td><td>Report on Compliance (ROC)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td><td>Self Assessment Questionnaire (SAQ)</td></tr><tr><td>Assessment type</td><td>Independent QSA or ISA</td><td>Self assessment</td><td>Self assessment</td><td>Self assessment</td></tr><tr><td>Quarterly network scan by approve QSA</td><td>Applicable</td><td>Applicable</td><td>Applicable</td><td>Applicable</td></tr></tbody></table>
 
-_Sources:_ [_Mastercard guidelines_](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html)_,_ [_Visa Guidelines_](https://www.visa.co.in/support/small-business/security-compliance.html)_,_ [_PCI SSC document library_](https://www.pcisecuritystandards.org/document_library/?category=pcidss\&hsCtaTracking=8aa4514c-37d0-40bc-b864-ed4c4aebb5de%7C8d5a5e5f-7860-4a8c-97cc-d91f17654660)_._&#x20;
+_Sources:_ [_Mastercard guidelines_](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html)_,_ [_Visa Guidelines_](https://www.visa.co.in/support/small-business/security-compliance.html)_,_ [_PCI SSC document library_](https://www.pcisecuritystandards.org/document_library/?category=pcidss\&hsCtaTracking=8aa4514c-37d0-40bc-b864-ed4c4aebb5de%7C8d5a5e5f-7860-4a8c-97cc-d91f17654660)_._
 
 ### About PCI Requirements and Controls
 
@@ -55,7 +59,7 @@ That is one PCI Requirement less for your business and 22 controls automatically
 
 If you choose not to store card holder data on your servers, you will be exmepted from Requirement 3.
 
-So eventually you are left with 10 PCI Requirements and 182 controls to comply with.&#x20;
+So eventually you are left with 10 PCI Requirements and 182 controls to comply with.
 
 {% hint style="info" %}
 This is the reason behind our recommendation of installing a simple setup without the card vault, if your business processes less than 6 million card transactions

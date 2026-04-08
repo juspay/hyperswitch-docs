@@ -1,6 +1,13 @@
 ---
-description: Accept bitcoin payments and send bitcoin payouts through OpenNode via Juspay Hyperswitch — instant, secure, and low-cost crypto payment processing for global businesses.
+description: >-
+  Accept bitcoin payments and send bitcoin payouts through OpenNode via Juspay
+  Hyperswitch — instant, secure, and low-cost crypto payment processing for
+  global businesses.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/opennode
 ---
 
 # OpenNode

@@ -3,6 +3,10 @@ description: >-
   Customize your Android Unified checkout with fonts, colors, shapes and layouts
   to match your brand guidelines.
 icon: bars-progress
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/customization
 ---
 
 # Customization

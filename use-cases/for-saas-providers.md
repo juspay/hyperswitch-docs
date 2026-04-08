@@ -3,6 +3,10 @@ description: All the payment use-cases for SaaS providers
 hidden: true
 noIndex: true
 icon: desktop
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-saas-providers
 ---
 
 # For SaaS Businesses

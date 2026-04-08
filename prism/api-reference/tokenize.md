@@ -1,3 +1,13 @@
+---
+description: >-
+  Securely store payment method details at the processor and receive a token for
+  future payments
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference/tokenize
+---
+
 # Tokenize
 
 ## Overview
@@ -96,6 +106,6 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Authorize](services/payment-service/authorize.md) - Use the tokenized payment method to authorize a payment
-* [SetupRecurring](services/payment-service/setup-recurring.md) - Set up recurring billing with the stored payment method
-* [Customer Service](services/customer-service/) - Associate payment methods with customer profiles
+* [Authorize](payment-service/authorize.md) - Use the tokenized payment method to authorize a payment
+* [SetupRecurring](payment-service/setup-recurring.md) - Set up recurring billing with the stored payment method
+* [Customer Service](customer-service/) - Associate payment methods with customer profiles

@@ -1,6 +1,10 @@
 ---
 description: Configure advanced rules with various payment parameters
 icon: clipboard-list-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/surcharge
 ---
 
 # Surcharge

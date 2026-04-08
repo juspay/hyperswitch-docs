@@ -4,6 +4,10 @@ description: >-
   credit card details in real-time, reducing manual entry errors and speeding up
   checkout.
 icon: barcode-read
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/features
 ---
 
 # Card Scanning

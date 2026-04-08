@@ -4,6 +4,10 @@ description: >-
   on Hyperswitch, including credentials setup, webhook configuration, and
   editing existing connector credentials.
 icon: chart-network
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/activate-connector-on-hyperswitch
 ---
 
 # Activate Connector on Hyperswitch

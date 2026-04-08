@@ -1,6 +1,12 @@
 ---
-description: A brief summary of Hyperswitch infrastructure ensuring compliance and data privacy
+description: >-
+  A brief summary of Hyperswitch infrastructure ensuring compliance and data
+  privacy
 icon: arrow-down-up-lock
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance
 ---
 
 # Security and Compliance
@@ -26,4 +32,4 @@ Hyperswitch is designed for speed, keeping application latency under 30 millisec
 * **Advanced Fraud Prevention:** Protect transactions with 3DS authentication and risk management tools.
 * **No-Code Integrations:** Quickly enable 70+ payment connectors and 150+ payment methods with minimal effort.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>PCI Compliance</strong></mark></td><td></td><td></td><td><a href="pci-compliance.md">pci-compliance.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Data Security</strong></mark></td><td></td><td></td><td><a href="security.md">security.md</a></td></tr><tr><td><mark style="color:blue;"><strong>GDPR compliance</strong></mark></td><td></td><td></td><td><a href="gdpr-compliance.md">gdpr-compliance.md</a></td></tr><tr><td><p><mark style="color:blue;"><strong>Identity and Access Management</strong></mark></p><p></p></td><td></td><td></td><td><a href="identity-and-access-management.md">identity-and-access-management.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>PCI Compliance</strong></mark></td><td></td><td></td><td><a href="pci-compliance.md">pci-compliance.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Data Security</strong></mark></td><td></td><td></td><td><a href="security.md">security.md</a></td></tr><tr><td><mark style="color:blue;"><strong>GDPR compliance</strong></mark></td><td></td><td></td><td><a href="gdpr-compliance.md">gdpr-compliance.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Identity and Access Management</strong></mark></td><td></td><td></td><td><a href="identity-and-access-management.md">identity-and-access-management.md</a></td></tr></tbody></table>

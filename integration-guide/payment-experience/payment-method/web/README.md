@@ -1,6 +1,12 @@
 ---
+description: >-
+  Web platform integration for Payment Method SDK with support for card
+  payments, wallets, and browser-based payment flows.
 icon: globe-pointer
-description: Web platform integration for Payment Method SDK with support for card payments, wallets, and browser-based payment flows.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment-method/web
 ---
 
 # Web

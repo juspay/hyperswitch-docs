@@ -1,6 +1,13 @@
 ---
+description: >-
+  Explore Hyperswitch SDK features including secure card input, 3D Secure
+  authentication, tokenization, and platform-specific payment capabilities for
+  web and mobile.
 icon: sparkles
-description: Explore Hyperswitch SDK features including secure card input, 3D Secure authentication, tokenization, and platform-specific payment capabilities for web and mobile.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/merchant-controls/payment-features
 ---
 
 # Payment Features

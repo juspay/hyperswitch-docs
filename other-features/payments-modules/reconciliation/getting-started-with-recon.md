@@ -3,6 +3,10 @@ description: >-
   Learn how to use the Juspay Hyperswitch Reconciliation module through a
   five-step workflow: upload and prepare files, run reconciliation, view
   reports, analyze analytics, and manage post-reconciliatio
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation/getting-started-with-recon
 ---
 
 # Getting Started with Recon

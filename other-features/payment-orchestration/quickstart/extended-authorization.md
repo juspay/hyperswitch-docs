@@ -1,7 +1,14 @@
 ---
+description: >-
+  Extend authorization hold periods beyond standard windows with Juspay
+  Hyperswitch, ideal for hospitality, car rentals, and variable billing
+  scenarios.
 hidden: true
 icon: clock
-description: Extend authorization hold periods beyond standard windows with Juspay Hyperswitch, ideal for hospitality, car rentals, and variable billing scenarios.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/extended-authorization
 ---
 
 # Extended Authorization
@@ -151,11 +158,11 @@ curl --location --request POST '{{base_url}}/payments/{{payment_id}}/extend_auth
 
 ### Response Field Reference
 
-| Field | Description |
-| ----- | ----------- |
-| `request_extended_authorization` | Indicates if extended authorization was requested for this payment |
-| `extended_authorization_applied` | Shows whether extended authorization has been applied |
-| `capture_by` | The deadline for capturing the payment (if available from the connector) |
+| Field                                    | Description                                                                     |
+| ---------------------------------------- | ------------------------------------------------------------------------------- |
+| `request_extended_authorization`         | Indicates if extended authorization was requested for this payment              |
+| `extended_authorization_applied`         | Shows whether extended authorization has been applied                           |
+| `capture_by`                             | The deadline for capturing the payment (if available from the connector)        |
 | `extended_authorization_last_applied_at` | The date when the connector last successfully applied an extended authorization |
 
 If the connector doesn't provide the capture deadline, the `capture_by` field will appear as null.

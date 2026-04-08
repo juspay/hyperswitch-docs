@@ -1,9 +1,15 @@
 ---
+description: >-
+  Learn how to safely export your payment data from Hyperswitch to a PCI-DSS
+  compliant payment processor.
 icon: left-from-bracket
-description: Learn how to safely export your payment data from Hyperswitch to a PCI-DSS compliant payment processor.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/data-migration/export-data-from-hyperswitch
 ---
 
-# Export Data from Hyperswitch
+# Data Migration From Hyperswitch
 
 We believe customers fully own their data. If you decide to export data from Hyperswitch, we will work with your new payment service provider to safely export your data.
 

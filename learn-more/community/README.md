@@ -1,5 +1,8 @@
 ---
 description: Join the Hyperswitch Community
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/community
 ---
 
 # Community

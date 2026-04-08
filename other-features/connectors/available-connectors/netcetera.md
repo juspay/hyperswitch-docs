@@ -2,6 +2,10 @@
 description: >-
   Authenticate payments through Netcetera's EMV® 3DS 2.X processing ecosystem
   integrated via Juspay Hyperswitch.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/netcetera
 ---
 
 # Netcetera

@@ -1,6 +1,10 @@
 ---
 description: Set up Google Pay integration on your application through Juspay Hyperswitch
 icon: google
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/google-pay
 ---
 
 # Google Pay

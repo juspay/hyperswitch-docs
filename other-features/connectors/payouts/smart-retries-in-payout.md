@@ -1,6 +1,13 @@
 ---
+description: >-
+  Learn how Hyperswitch Smart Retries automatically recover failed payout
+  attempts by re-routing transactions across connectors to maximize disbursement
+  success rates.
 icon: magnifying-glass-arrows-rotate
-description: Learn how Hyperswitch Smart Retries automatically recover failed payout attempts by re-routing transactions across connectors to maximize disbursement success rates.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/smart-retries-in-payout
 ---
 
 # Smart Retries in Payout
@@ -15,29 +22,29 @@ Smart Retries are triggered based on connector-specific error configurations. A 
 
 Hyperswitch employs two primary strategies for payout recovery:
 
-- **Single Connector Retry:** If only one connector is configured for a specific payout method, eligible errors are retried through that same connector.
-- **Multi-Connector Retry:** If multiple connectors are available for a payout method, Hyperswitch attempts the retry using the next available connector in your priority list.
+* **Single Connector Retry:** If only one connector is configured for a specific payout method, eligible errors are retried through that same connector.
+* **Multi-Connector Retry:** If multiple connectors are available for a payout method, Hyperswitch attempts the retry using the next available connector in your priority list.
 
 #### Supported Payout Methods by Connector
 
 Smart Retries are available for the following connector and method combinations:
 
-| Connector   | Payout Methods        |
-| ----------- | --------------------- |
+| Connector   | Payout Methods           |
+| ----------- | ------------------------ |
 | Adyen       | Cards, Banks and Wallets |
-| CyberSource | Cards                 |
-| EBANX       | Banks                 |
-| PayPal      | Wallets               |
-| Stripe      | Cards and Banks       |
-| Wise        | Banks                 |
+| CyberSource | Cards                    |
+| EBANX       | Banks                    |
+| PayPal      | Wallets                  |
+| Stripe      | Cards and Banks          |
+| Wise        | Banks                    |
 
 ### Conditions and Constraints
 
 The execution of a Smart Retry is governed by the following logic:
 
-- **Method Consistency:** The payout method remains unchanged during a retry. For example, a failed bank transfer will not be retried as a card payout.
-- **Error Configuration:** Retries are only initiated for error codes that have been loaded into the Hyperswitch engine. Merchants can submit custom error configurations to the Hyperswitch team.
-- **Retry Limits:**
-  - The system continues retrying until the payout is successful, the retry count is exhausted, or all eligible connectors are exhausted.
-  - The default retry count is 5 per connector, which can be customized based on merchant requirements.
-- **Multi-Connector Eligibility:** Multi-connector retries require at least two active [payout connectors](/docs/payouts/connectors) to be configured for the same payout method.
+* **Method Consistency:** The payout method remains unchanged during a retry. For example, a failed bank transfer will not be retried as a card payout.
+* **Error Configuration:** Retries are only initiated for error codes that have been loaded into the Hyperswitch engine. Merchants can submit custom error configurations to the Hyperswitch team.
+* **Retry Limits:**
+  * The system continues retrying until the payout is successful, the retry count is exhausted, or all eligible connectors are exhausted.
+  * The default retry count is 5 per connector, which can be customized based on merchant requirements.
+* **Multi-Connector Eligibility:** Multi-connector retries require at least two active [payout connectors](../../../docs/payouts/connectors/) to be configured for the same payout method.

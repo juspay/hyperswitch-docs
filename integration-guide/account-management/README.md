@@ -4,6 +4,10 @@ description: >-
   reconciliation, surcharge, and multi-tenancy to streamline your business
   workflows
 icon: joystick
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management
 ---
 
 # Payment Operations

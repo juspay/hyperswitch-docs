@@ -1,6 +1,16 @@
+---
+description: >-
+  Tokenize and securely store payment methods for one-click payments and
+  recurring billing
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference/payment-method-service
+---
+
 # Payment Method Service Overview
 
-## Overview
+### Overview
 
 The Payment Method Service enables you to securely store and manage customer payment methods at payment processors. By tokenizing payment details, you can offer one-click checkout experiences and recurring billing without handling sensitive card data or maintaining PCI compliance overhead.
 
@@ -13,20 +23,19 @@ The Payment Method Service enables you to securely store and manage customer pay
 
 The service creates secure tokens at the underlying payment processor (Stripe, Adyen, etc.), allowing you to reference payment methods in future transactions without storing sensitive data in your systems.
 
-## Operations
+### Operations
 
 | Operation                 | Description                                                                                                                        | Use When                                                       |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | [`Tokenize`](tokenize.md) | Store payment method securely at the processor. Replaces raw card details with token for one-click payments and recurring billing. | First-time checkout, saving card for later, subscription setup |
 
-## Common Patterns
+### Common Patterns
 
-### One-Click Checkout for Returning Customers
+#### One-Click Checkout for Returning Customers
 
 Save payment methods during first purchase to enable faster checkout for returning customers.
 
-```mermaid
-sequenceDiagram
+{% @mermaid/diagram content="sequenceDiagram
     participant App as Your App
     participant CS as Connector Service
     participant PP as Payment Provider
@@ -45,8 +54,7 @@ sequenceDiagram
     App->>CS: 3. Authorize (with stored token)
     CS->>PP: Charge saved payment method
     PP-->>CS: Return authorization
-    CS-->>App: Return connector_transaction_id (AUTHORIZED)
-```
+    CS-->>App: Return connector_transaction_id (AUTHORIZED)" %}
 
 **Flow Explanation:**
 
@@ -63,12 +71,11 @@ sequenceDiagram
 
 ***
 
-### Subscription Setup with Stored Payment Method
+#### Subscription Setup with Stored Payment Method
 
 Combine Customer Service and Payment Method Service for seamless subscription onboarding.
 
-```mermaid
-sequenceDiagram
+{% @mermaid/diagram content="sequenceDiagram
     participant App as Your App
     participant CS as Connector Service
     participant PP as Payment Provider
@@ -94,8 +101,7 @@ sequenceDiagram
     App->>CS: 5. Capture
     CS->>PP: Finalize charge
     PP-->>CS: Return capture confirmation
-    CS-->>App: Return status: CAPTURED
-```
+    CS-->>App: Return status: CAPTURED" %}
 
 **Flow Explanation:**
 
@@ -114,8 +120,8 @@ sequenceDiagram
 
 ***
 
-## Next Steps
+### Next Steps
 
-* [Customer Service](services/customer-service/) - Create customer profiles for payment method association
-* [Payment Service](services/payment-service/) - Process payments with tokenized methods
-* [Recurring Payment Service](services/recurring-payment-service/) - Set up recurring billing with stored payment methods
+* [Customer Service](customer-service/) - Create customer profiles for payment method association
+* [Payment Service](payment-service/) - Process payments with tokenized methods
+* [Recurring Payment Service](recurring-payment-service/) - Set up recurring billing with stored payment methods

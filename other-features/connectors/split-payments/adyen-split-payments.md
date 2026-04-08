@@ -3,6 +3,10 @@ description: >-
   Configure and use Adyen Split Settlements via Hyperswitch to distribute
   payments and refunds across multiple accounts.
 icon: space-awesome
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments/adyen-split-payments
 ---
 
 # Adyen Split Settlement

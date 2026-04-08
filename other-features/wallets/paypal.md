@@ -1,6 +1,10 @@
 ---
 description: Setup PayPal on your application
 icon: paypal
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/paypal
 ---
 
 # PayPal

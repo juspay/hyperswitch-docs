@@ -1,6 +1,10 @@
 ---
 description: Accept payments through Shift4 via Juspay Hyperswitch
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/shift4
 ---
 
 # Shift4

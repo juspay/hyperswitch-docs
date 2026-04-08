@@ -1,6 +1,10 @@
 ---
 description: Connect external vaults to store cards
 icon: plug
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/saas-orchestration-with-third-party-vault
 ---
 
 # SaaS Orchestration with Third-Party Vault
@@ -46,7 +50,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Juspay Hyperswitch managed client with External Vault's card form
 
@@ -77,7 +81,7 @@ In this flow, the External Vault SDK is layered directly onto the Hyperswitch Un
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 #### 3. Merchant managed client with external vault's card form
 

@@ -4,6 +4,10 @@ description: >-
   links — supports custom branding, domain configuration, and test-mode access
   for rapid integration.
 icon: link
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/payout-link
 ---
 
 # Payout Links

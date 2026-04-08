@@ -1,6 +1,12 @@
 ---
+description: >-
+  Guide to completing the PCI DSS Self-Assessment Questionnaire (SAQ D) for
+  merchant compliance certification
 icon: clipboard-question
-description: Guide to completing the PCI DSS Self-Assessment Questionnaire (SAQ D) for merchant compliance certification
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/pci-compliance/completing-the-saq
 ---
 
 # Completing the SAQ
@@ -8,7 +14,7 @@ description: Guide to completing the PCI DSS Self-Assessment Questionnaire (SAQ 
 {% hint style="warning" %}
 There are multiple [variants of SAQs](https://listings.pcisecuritystandards.org/documents/Understanding_SAQs_PCI_DSS_v3.pdf) applicable for Merchants willing to be PCI compliant. This document explains compliance to SAQ D only.
 
-Examples of merchant environments that would use SAQ D includes but not limited to:&#x20;
+Examples of merchant environments that would use SAQ D includes but not limited to:
 
 * **E-commerce merchants** who **accept cardholder data** on their website.
 * Merchants with **electronic storage of cardholder data.**
@@ -29,10 +35,9 @@ For further assistance, please contact us at hyperswitch@juspay.in
 2. **Complete SAQ D**: Fill out the SAQ D and retain a copy for your records.
 
 {% hint style="success" %}
-You are PCI compliant now!!&#x20;
+You are PCI compliant now!!
 {% endhint %}
 
-It's essential to submit your network scan report and Self-Assessment Questionnaire (SAQ) to your payment processor or acquirer.&#x20;
+It's essential to submit your network scan report and Self-Assessment Questionnaire (SAQ) to your payment processor or acquirer.
 
 **Submission methods vary;** some processors provide a dashboard for uploads, while others prefer email communication. Ensure you adhere to your processor's specific requirements and submission schedule, typically on a quarterly basis.
-

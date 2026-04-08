@@ -3,6 +3,10 @@ description: >-
   Store and reuse customer payment methods for payout processing using
   Hyperswitch's secure, PCI-compliant vault and token-based API flows.
 icon: repeat
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/process-payouts-using-saved-payment-methods
 ---
 
 # Payouts with Saved Payment Methods
@@ -48,7 +52,7 @@ Before implementing saved payment method workflows, ensure the following:
 
 Download and import the [Saved Payment Methods Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
 #### Configure Environment
 
@@ -58,7 +62,7 @@ In the Variables tab of the collection, define the following global parameters:
 * `merchant_id`: Your unique identifier.
 * `api_key`: Your secret API key.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
 
 #### Direct Vaulting
 

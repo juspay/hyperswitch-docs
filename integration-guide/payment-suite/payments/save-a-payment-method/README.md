@@ -1,6 +1,10 @@
 ---
 description: Setting up and managing recurring payments
 icon: repeat
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/save-a-payment-method
 ---
 
 # Saving Payment Method
@@ -20,9 +24,13 @@ This is typically limited for card payment methods and not for wallets (viz. App
 
 ### To save a customer's payment method used in a successful transaction for future CIT payments:
 
-For saving a customer's payment method used in a successful transaction:
+<details>
 
-* Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+<summary>Follow Steps for SDK integration </summary>
+
+
+
+Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -40,7 +48,45 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+{% hint style="info" %}
+**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
+{% endhint %}
+
+If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
+
+
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Follow Steps For API Integration</summary>
+
+#### **Step 1 --**&#x20;
+
+Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
+--data-raw '{
+    "amount": 6540,
+    "currency": "USD",
+    "profile_id": <enter the relevant profile id>,
+    "setup_future_usage":"on_session", 
+    "customer_id": "customer123",
+    "description": "Its my first payment request",
+    "return_url": "https://example.com", // 
+}'
+```
+
+#### Step 2 --
+
+During the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -53,13 +99,11 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     }
 ```
 
-{% hint style="info" %}
-If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
 
-**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
-{% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
+
+
+</details>
 
 ***
 
@@ -71,9 +115,11 @@ Based on the payment processors support, this functionality is also available fo
 
 #### To save a customer's payment method used in a successful transaction for future MIT payments:
 
+<details>
 
+<summary>Follow Steps for SDK integration </summary>
 
-* Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -91,7 +137,47 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-* If you are not using Hyperswitch's SDK then during the payment confirm call pass the customer's consent to store the card in the request
+If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
+
+{% hint style="info" %}
+**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
+{% endhint %}
+
+Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
+--header 'Accept: application/json' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
+```
+
+
+
+</details>
+
+<details>
+
+<summary>Follow Steps for API integration </summary>
+
+Pass the following field in the `/payments` create request to indicate your intention to save the payment method
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
+--data-raw '{
+    "amount": 6540,
+    "currency": "USD",
+    "profile_id": <enter the relevant profile id>,
+    "setup_future_usage":"off_session", 
+    "customer_id": "customer123",
+    "description": "Its my first payment request",
+    "return_url": "https://example.com", // 
+}'
+```
+
+During the payment confirm call pass the customer's consent to store the card in the request
 
 ```bash
 "customer_acceptance": {
@@ -104,11 +190,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     }
 ```
 
-{% hint style="info" %}
-If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
 
-**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
-{% endhint %}
 
 Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
 
@@ -117,6 +199,10 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'Accept: application/json' \
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
+
+
+
+</details>
 
 ***
 

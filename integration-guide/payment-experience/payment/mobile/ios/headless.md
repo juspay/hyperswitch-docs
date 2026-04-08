@@ -4,6 +4,10 @@ description: >-
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/ios/headless
 ---
 
 # Headless SDK
@@ -35,9 +39,9 @@ Initialize a Payment Session by passing the clientSecret to the `initPaymentSess
 paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 
-| options (Required)      | Description                                                      |
-| ----------------------- | ---------------------------------------------------------------- |
-| `clientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
+| options (Required)      | Description                                                     |
+| ----------------------- | --------------------------------------------------------------- |
+| `clientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
 #### 4. Craft a customized payments experience
 
@@ -64,6 +68,6 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 
 **Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
 
-| options (Required)            | Description                                |
-| ----------------------------- | ------------------------------------------ |
+| options (Required)    | Description                       |
+| --------------------- | --------------------------------- |
 | `callback (function)` | Callback to get confirm response. |

@@ -3,6 +3,10 @@ description: >-
   Route transactions through processors with advanced rules on the basis of
   various payment parameters
 icon: ruler
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/rule-based-routing
 ---
 
 # Rule Based Routing

@@ -1,6 +1,10 @@
 ---
 description: Set up server-side payment creation and SDK integration for Juspay Hyperswitch
 icon: server
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/server-setup
 ---
 
 # Server Setup
@@ -47,7 +51,5 @@ _To integrate Web SDK, follow React, HTML and JS with REST API Integration._
 _To integrate mobile SDK, follow Kotlin, Swift, React Native, and Flutter with REST API Integration_
 
 {% hint style="info" %}
-
 In case you're integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
-
 {% endhint %}

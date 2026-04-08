@@ -4,6 +4,10 @@ description: >-
   avoid data migration
 hidden: true
 icon: square-up-right
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/hyperswitch-sdk-+-external-vault
 ---
 
 # Hyperswitch SDK + External Vault

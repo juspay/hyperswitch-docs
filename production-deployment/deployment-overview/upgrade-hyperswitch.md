@@ -1,8 +1,14 @@
 ---
-description: Learn how to upgrade Juspay Hyperswitch using GitOps-based deployment with ArgoCD, including blue/green cluster upgrade strategy and rollback procedures.
+description: >-
+  Learn how to upgrade Juspay Hyperswitch using GitOps-based deployment with
+  ArgoCD, including blue/green cluster upgrade strategy and rollback procedures.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/upgrade-hyperswitch
 ---
 
-# Upgrade Juspay Hyperswitch
+# Upgrade Hyperswitch
 
 ## GitOps-Based Deployment using ArgoCD (App-of-Apps Pattern)
 
@@ -30,7 +36,7 @@ This guide uses ArgoCD, but similar GitOps tools can be used.
 
 A **blue/green cluster upgrade model** is recommended.
 
-This strategy involves provisioning a **parallel environment (green)** where the upgraded version of Juspay Hyperswitch is deployed and validated before production traffic is switched over. 
+This strategy involves provisioning a **parallel environment (green)** where the upgraded version of Juspay Hyperswitch is deployed and validated before production traffic is switched over.
 
 The **existing environment (blue)** continues serving live traffic during this process, allowing controlled cutover and providing a straightforward rollback mechanism if any issues arise after the upgrade.
 
@@ -50,7 +56,7 @@ Stateful infrastructure such as databases should **not be recreated during clust
 
 The diagram illustrates how Juspay Hyperswitch deployments are managed using the **App-of-Apps pattern in Argo CD**.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="161"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (159).png" alt="" width="161"><figcaption></figcaption></figure>
 
 In this model, **a single "Root Application" manages multiple child applications**, allowing complex systems to be deployed and maintained in a structured and scalable way.
 

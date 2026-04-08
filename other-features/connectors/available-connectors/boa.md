@@ -1,6 +1,12 @@
 ---
-description: Connect Bank of America (BOA) as a payment connector on Hyperswitch — prerequisites, credentials, and activation steps.
+description: >-
+  Connect Bank of America (BOA) as a payment connector on Hyperswitch —
+  prerequisites, credentials, and activation steps.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/boa
 ---
 
 # Bank of America
@@ -9,7 +15,7 @@ hidden: true
 This section gives you an overview of how to make payments via Bank of America through Hyperswitch.
 {% endhint %}
 
-![logo_bambora](../../../../../.gitbook/assets/Bank_of_America-Logo.wine.png)
+![logo\_bambora](../../../.gitbook/assets/Bank_of_America-Logo.wine.png)
 
 The Bank of America Corporation is an American multinational investment bank and financial services holding company headquartered at the Bank of America Corporate Center in Charlotte, North Carolina, with investment banking and auxiliary headquarters in Manhattan. To know more about payment methods supported by Bank of America via Juspay Hyperswitch, click [here](https://hyperswitch.io/pm-list).
 

@@ -1,9 +1,15 @@
 ---
-description: Export your payments data to Amazon Redshift for advanced analytics and business intelligence reporting
+description: >-
+  Export your payments data to Amazon Redshift for advanced analytics and
+  business intelligence reporting
 icon: tachograph-digital
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/analytics-and-operations/exporting-payments-data
 ---
 
-# Exporting payments data
+# Export Payments Data To Redshift for Analytics
 
 Exporting your payments data to Amazon Redshift enhances analytics by leveraging Redshift's high-performance query capabilities. This allows for efficient data analysis, reporting, and business intelligence, thereby deriving valuable insights.
 
@@ -14,19 +20,19 @@ Exporting your payments data to Amazon Redshift enhances analytics by leveraging
 ### Integration steps
 
 1. Prerequisite: You need to have an AWS account with Redshift enabled. More details can be found here [https://aws.amazon.com/redshift/](https://aws.amazon.com/redshift/)
-2. You are required to create a new IAM role for Redshift use and provide Juspay Hyperswitch with the corresponding role ARN. This IAM role must be configured with S3 read permissions.
+2.  You are required to create a new IAM role for Redshift use and provide Juspay Hyperswitch with the corresponding role ARN. This IAM role must be configured with S3 read permissions.
 
-   <figure><img src="https://lh7-us.googleusercontent.com/r4vnr22w42Pz2k5V7O7TsVBrlVhDrfjYveoH-CWMnJW9XNR95k0XmJBlC9Q7lb1mpJa7aFyf9fRDDf6SHBoSLs-BP-TriQfwG57j3XhsdeJEW417zi0UO2069oDcxPEdzifYm_alen5GJsCGWhYOL2g" alt=""><figcaption><p>Example image of an IAM role created</p></figcaption></figure>
+    <figure><img src="https://lh7-us.googleusercontent.com/r4vnr22w42Pz2k5V7O7TsVBrlVhDrfjYveoH-CWMnJW9XNR95k0XmJBlC9Q7lb1mpJa7aFyf9fRDDf6SHBoSLs-BP-TriQfwG57j3XhsdeJEW417zi0UO2069oDcxPEdzifYm_alen5GJsCGWhYOL2g" alt=""><figcaption><p>Example image of an IAM role created</p></figcaption></figure>
 3. After sharing the ARN with Juspay Hyperswitch, we will share the S3 bucket & path that is to be synced for data along with providing access to the IAM role from where you will be able to get files from the S3.
-4. Once the above step is done, you need to [create the table schema on Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
+4.  Once the above step is done, you need to [create the table schema on Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
 
-   Post which you can proceed with the below:
+    Post which you can proceed with the below:
 
-   1. [Handle the ingestion & post processing of data](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema) using scripts
+    1. [Handle the ingestion & post processing of data](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema) using scripts
 
-   (OR)
+    (OR)
 
-   2. [Auto-ingestion using Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
+    2. [Auto-ingestion using Redshift](https://opensource.hyperswitch.io/features/account-management/exporting-payments-data#table-creation-schema)
 
 ### File format and paths specifications
 
@@ -206,16 +212,18 @@ aws iam create-policy --policy-name PaymentsExportS3Policy --policy-document '{
 Create a Lambda function that handles the data export logic:
 
 **Function Requirements:**
-- Query payment data from your Juspay Hyperswitch database for the past 7 days
-- Filter data based on merchant_id parameter received from the event
-- Generate CSV files with the same schema as mentioned in the table creation section
-- Upload the CSV files to S3 with the path format: `s3://bucket/merchant_id/v1/payments/date.csv`
-- Handle database connections, error handling, and logging
+
+* Query payment data from your Juspay Hyperswitch database for the past 7 days
+* Filter data based on merchant\_id parameter received from the event
+* Generate CSV files with the same schema as mentioned in the table creation section
+* Upload the CSV files to S3 with the path format: `s3://bucket/merchant_id/v1/payments/date.csv`
+* Handle database connections, error handling, and logging
 
 **Environment Variables Needed:**
-- Database connection details (host, name, user, password)
-- S3 bucket name
-- Any API endpoints if using Juspay Hyperswitch APIs instead of direct DB access
+
+* Database connection details (host, name, user, password)
+* S3 bucket name
+* Any API endpoints if using Juspay Hyperswitch APIs instead of direct DB access
 
 **Deployment:**
 
@@ -395,9 +403,9 @@ aws cloudwatch put-metric-alarm \
 
 #### Cost Considerations
 
-- **Lambda**: Charges based on requests and execution time
-- **S3**: Storage and request costs
-- **EventBridge**: Minimal costs for rule executions
-- **Data Transfer**: Consider costs if accessing from different regions
+* **Lambda**: Charges based on requests and execution time
+* **S3**: Storage and request costs
+* **EventBridge**: Minimal costs for rule executions
+* **Data Transfer**: Consider costs if accessing from different regions
 
 This self-setup approach provides flexibility and control over your payment data export process while maintaining security and scalability.

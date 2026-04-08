@@ -2,6 +2,10 @@
 description: >-
   Deploy Hyperswitch on Google Cloud Platform using Helm charts for scalable
   payment infrastructure
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts
 ---
 
 # Deploy on GCP Using Helm Charts

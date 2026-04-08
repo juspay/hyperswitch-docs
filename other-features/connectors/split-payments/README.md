@@ -1,6 +1,12 @@
 ---
-description: Unify your marketplace settlement logic across multiple processors through a single configuration.
+description: >-
+  Unify your marketplace settlement logic across multiple processors through a
+  single configuration.
 icon: split
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments
 ---
 
 # Processors with Split Settlement

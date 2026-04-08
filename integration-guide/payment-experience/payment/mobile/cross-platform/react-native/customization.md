@@ -1,6 +1,10 @@
 ---
 description: 'Visual customization: Colors, shapes, specific UI components'
 icon: bars-progress
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/react-native/customization
 ---
 
 # Customization

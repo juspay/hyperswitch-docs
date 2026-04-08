@@ -3,6 +3,10 @@ description: >-
   Self-host Hyperswitch orchestration while outsourcing PCI compliance to an
   external vault provider like VGS or Tokenex
 icon: up-right-from-square
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/self-hosted-orchestration-with-external-or-third-party-pci-vault
 ---
 
 # Self-Hosted Orchestration with external or third party PCI Vault

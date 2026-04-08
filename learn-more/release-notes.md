@@ -4,6 +4,9 @@ description: >-
   recent product updates.
 hidden: true
 noIndex: true
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/release-notes
 ---
 
 # Release Notes

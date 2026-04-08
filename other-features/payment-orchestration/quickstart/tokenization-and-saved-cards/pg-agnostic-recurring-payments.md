@@ -2,6 +2,10 @@
 description: Make recurring payments across processors
 hidden: true
 icon: arrows-repeat
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/tokenization-and-saved-cards/pg-agnostic-recurring-payments
 ---
 
 # PG Agnostic Card Forwarding

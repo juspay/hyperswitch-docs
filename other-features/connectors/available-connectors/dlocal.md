@@ -1,6 +1,10 @@
 ---
 description: Accept payments through dLocal via Hyperswitch
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/dlocal
 ---
 
 # dLocal
@@ -9,7 +13,7 @@ hidden: true
 This section gives you an overview of how to make payments via dLocal through Hyperswitch.
 {% endhint %}
 
-![logo_dlocal](https://hyperswitch.io/icons/homePageIcons/logos/dlocalLogo.svg)
+![logo\_dlocal](https://hyperswitch.io/icons/homePageIcons/logos/dlocalLogo.svg)
 
 ### About
 

@@ -3,6 +3,10 @@ description: >-
   This guide explains how to troubleshoot the Hyperswitch setup and verify if
   all the components are up and running as expected
 icon: hammer-brush
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/troubleshooting
 ---
 
 # Troubleshooting

@@ -4,6 +4,10 @@ description: >-
   across card, wallet, and post-transaction operations in Hyperswitch connector
   integrations.
 icon: money-bill-1-wave
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payment-processor-capabilities
 ---
 
 # Payment Processor Capabilities

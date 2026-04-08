@@ -1,3 +1,12 @@
+---
+hidden: true
+noIndex: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/deployment-topologies
+---
+
 # Deployment Topologies
 
 There are two primary deployment topologies to enhance the reliability of enterprise setups:
@@ -7,7 +16,7 @@ There are two primary deployment topologies to enhance the reliability of enterp
 
 ### Multi-Region Active-Active Setup
 
-In an Active-Active setup, the merchant would deploy Juspay Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions. 
+In an Active-Active setup, the merchant would deploy Juspay Hyperswitch instances in multiple geographically separate regions, with both regions actively processing traffic simultaneously. A CDN distributes incoming requests across both regions.
 
 This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 

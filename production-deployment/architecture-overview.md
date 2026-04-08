@@ -1,6 +1,12 @@
 ---
+description: >-
+  Overview of Juspay Hyperswitch architecture components including the app
+  server, web SDK, card vault, and control center
 icon: sitemap
-description: Overview of Juspay Hyperswitch architecture components including the app server, web SDK, card vault, and control center
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/architecture-overview
 ---
 
 # Architecture Overview
@@ -33,8 +39,8 @@ Responsible for managing and coordinating different aspects of the payment proce
 
 Automates periodic deletion of card information and notifies merchants of API key expiry. Consists of two sub-components:
 
-- Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
-- hyperswitch-consumer - Retrieves task batches from the queue and executes them
+* Hyperswitch-producer - Retrieves tasks scheduled by the router and batches them together in a job queue
+* hyperswitch-consumer - Retrieves task batches from the queue and executes them
 
 #### Juspay Hyperswitch Web
 
@@ -72,6 +78,6 @@ A typical production deployment blueprint of Juspay Hyperswitch looks like the f
 
 It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service.
 
-<figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/unknown (6).png" alt=""><figcaption></figcaption></figure>
 
 The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Juspay Hyperswitch.

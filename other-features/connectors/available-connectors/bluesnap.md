@@ -1,9 +1,15 @@
 ---
-description: Accept payments globally through BlueSnap via Hyperswitch, supporting e-commerce, subscription billing, and mobile payments.
+description: >-
+  Accept payments globally through BlueSnap via Hyperswitch, supporting
+  e-commerce, subscription billing, and mobile payments.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/bluesnap
 ---
 
-# BlueSnap
+# Bluesnap
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via BlueSnap through Hyperswitch.

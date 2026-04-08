@@ -1,6 +1,12 @@
 ---
-description: Use Rules and SCA exemptions to reduce cardholder friction on eligible transactions
+description: >-
+  Use Rules and SCA exemptions to reduce cardholder friction on eligible
+  transactions
 icon: chart-simple-horizontal
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine
 ---
 
 # 3DS Intelligence Engine
@@ -34,11 +40,11 @@ A merchant's 3DS exemption strategy should prioritize a holistic user experience
 Merchants know their business best. Using their own insights, they can override 3DS Intelligence decisions by setting custom rules. The control center supports granular configuration across 22 parameters spanning payments, customer, acquirer, issuer, and more.
 
 * Some of the examples of these rules are:
-  * If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_ \
+  * If Issuer _Country = "France"_ and _Issuer = "HSBC"_ and _Amount > €200_\
     then ThreeDS Preference = "No Preference"
-  * If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_ \
+  * If _Customer Device Screen Size = 150px\*200px_ or _Customer Device Platform = "Android"_ and _Card Network = "Visa"_\
     then ThreeDS Preference = "ThreeDS Exemption Requested" and ThreeDS Exemption Type Preference = "TRA"
-  * If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_ \
+  * If _BIN range in between 400000 and 420000_ and _Customer Device = "Gaming Console"_\
     then ThreeDS Preference = "Challenge Requested"
 
 <figure><img src="../../../../.gitbook/assets/Intelligence_1.png" alt=""><figcaption></figcaption></figure>

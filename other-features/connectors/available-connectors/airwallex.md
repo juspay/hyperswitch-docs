@@ -1,6 +1,12 @@
 ---
-description: Accept payments globally through Airwallex via Hyperswitch, with support for cross-border payments, foreign exchange, and multiple payment methods.
+description: >-
+  Accept payments globally through Airwallex via Hyperswitch, with support for
+  cross-border payments, foreign exchange, and multiple payment methods.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/airwallex
 ---
 
 # Airwallex

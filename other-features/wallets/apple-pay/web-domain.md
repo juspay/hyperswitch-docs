@@ -2,6 +2,10 @@
 description: Enable Apple Pay on your web domains with Juspay Hyperswitch
 hidden: true
 icon: globe-wifi
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay/web-domain
 ---
 
 # Web Domain

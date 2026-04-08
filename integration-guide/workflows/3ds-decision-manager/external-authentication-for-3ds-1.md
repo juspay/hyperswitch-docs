@@ -4,6 +4,10 @@ description: >-
   authorize the payment with any payment provider (PSP).
 hidden: true
 icon: up-right-from-square
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds-1
 ---
 
 # Copy of Standalone 3D Secure (via Hyperswitch)
@@ -25,7 +29,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 1. Log into the [Hyperswitch dashboard](https://app.hyperswitch.io/)
 2. Under Connectors > setup 3DS Authenticator. You can select Juspay 3DS server or any other external 3DS server
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
 
@@ -37,7 +41,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 
 4. Under Developers -> Payment Settings -> Add Authentication Connector and its relevant details
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
 
 ## Perform external authentication
 

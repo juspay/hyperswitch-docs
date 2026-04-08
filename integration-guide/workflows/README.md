@@ -1,6 +1,11 @@
 ---
-description: Configure and manage payment workflows including 3DS authentication, fraud detection, vault integration, smart retries, and intelligent routing.
+description: >-
+  Configure and manage payment workflows including 3DS authentication, fraud
+  detection, vault integration, smart retries, and intelligent routing.
 icon: arrow-progress
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows
 ---
 
 # Workflows

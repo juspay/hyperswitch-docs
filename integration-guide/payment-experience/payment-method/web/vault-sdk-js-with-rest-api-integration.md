@@ -3,6 +3,10 @@ description: >-
   Secure tokenization using Hyperswitch's PCI compliant Payment Methods
   Management SDK for JavaScript applications with REST API integration.
 icon: globe-pointer
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment-method/web/vault-sdk-js-with-rest-api-integration
 ---
 
 # Vault SDK - JS with REST API Integration
@@ -31,13 +35,24 @@ First, you'll need to set up your server to create payment method sessions, whic
 
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
+{% hint style="info" %}
+All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
+
+To generate your Vault API keys, follow these steps:
+
+1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
+3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
+4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
+
+**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+{% endhint %}
+
 #### Creating a Payment Methods Session Endpoint
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-{% hint style="info" %}
-Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
-{% endhint %}
+> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 ```javascript
 // Create-Payment-Methods-Session
@@ -47,7 +62,7 @@ app.post("/create-payment-method-session", async (req, res) => {
   try {
     // Create payment method session on Hyperswitch
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
       {
         method: "POST",
         headers: {
@@ -81,9 +96,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-{% hint style="info" %}
-Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
-{% endhint %}
+> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
 
 #### 2. Client-Side Integration
 
@@ -107,9 +120,7 @@ Make a request to the endpoint on your server to create a new payment method ses
 
 Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
-{% hint style="warning" %}
-Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
-{% endhint %}
+> Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
 
 ```javascript
 // Fetches a payment method session and mounts the payment methods management element

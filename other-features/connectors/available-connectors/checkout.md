@@ -1,6 +1,12 @@
 ---
-description: Connect Checkout.com as a payment connector on Hyperswitch to accept global payments via its end-to-end gateway, acquirer, and processor solution.
+description: >-
+  Connect Checkout.com as a payment connector on Hyperswitch to accept global
+  payments via its end-to-end gateway, acquirer, and processor solution.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/checkout
 ---
 
 # Checkout

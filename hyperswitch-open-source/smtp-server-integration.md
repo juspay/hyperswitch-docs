@@ -1,6 +1,12 @@
 ---
+description: >-
+  Configure SMTP server integration to enable flexible email notifications for
+  signup and login flows
 icon: at
-description: Configure SMTP server integration to enable flexible email notifications for signup and login flows
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/smtp-server-integration
 ---
 
 # SMTP Server Integration
@@ -31,13 +37,13 @@ connection = "plaintext"  # Supported values: "plaintext", "starttls"
 #### Details
 
 * **host**: SMTP server hostname used to send emails.\
-  &#xNAN;_&#x45;xample_: `"smtp.gmail.com"` or `"mailhog"` for local testing
+  \&#xNAN;_Example_: `"smtp.gmail.com"` or `"mailhog"` for local testing
 * **port**: Port on which the SMTP server is listening.\
-  &#xNAN;_&#x45;xample_: `587` (for STARTTLS), `25`, or `1025` (for MailHog)
+  \&#xNAN;_Example_: `587` (for STARTTLS), `25`, or `1025` (for MailHog)
 * **timeout**: Maximum time (in seconds) to wait while connecting to the SMTP server.\
-  &#xNAN;_&#x45;xample_: `10`
+  \&#xNAN;_Example_: `10`
 * **connection**: Type of SMTP connection.\
-  &#xNAN;_&#x45;xample_: `"starttls"` (recommended) or `"plaintext"` (insecure; for development only)
+  \&#xNAN;_Example_: `"starttls"` (recommended) or `"plaintext"` (insecure; for development only)
 
 ### How does it work?
 

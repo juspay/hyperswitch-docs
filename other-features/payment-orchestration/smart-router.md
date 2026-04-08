@@ -2,6 +2,10 @@
 description: Infinite control over managing your payments
 hidden: true
 icon: swap
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/smart-router
 ---
 
 # Smart Routing

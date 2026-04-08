@@ -1,6 +1,10 @@
 ---
 description: Fast migration guide for Stripe users
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe
 ---
 
 # 📥 Migrate from Stripe

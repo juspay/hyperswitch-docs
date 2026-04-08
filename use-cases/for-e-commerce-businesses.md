@@ -3,6 +3,10 @@ description: All the payment use-cases for e-commerce businesses
 hidden: true
 noIndex: true
 icon: buildings
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-e-commerce-businesses
 ---
 
 # For E-Commerce Businesses

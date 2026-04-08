@@ -1,6 +1,13 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/configuration-and-management
+---
+
 # Configuration and Management
 
-### Configuration Files 
+### Configuration Files
 
 In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://github.com/juspay/hyperswitch/tree/main/config/deployments).
 
@@ -482,7 +489,7 @@ Infrastructure provisioning should be handled separately using tools such as **T
 
 Typical workflow:
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure></div>
 
 ArgoCD then deploys applications onto the resulting infrastructure.
 

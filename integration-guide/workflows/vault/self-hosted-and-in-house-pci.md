@@ -3,6 +3,10 @@ description: >-
   Self-host Hyperswitch with your own PCI DSS compliance using the native
   Hyperswitch Vault deployed within your infrastructure
 icon: box-ballot
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/self-hosted-and-in-house-pci
 ---
 
 # Self-hosted & in-house PCI
@@ -22,7 +26,7 @@ This setup ensures full data ownership while leveraging Hyperswitch's built-in P
 
 ### Self-hosted orchestration - Payments and vaulting flow
 
-<figure><img src="../../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 The sequence diagram above outlines how a self-hosted merchant performs payments and vaulting.
 

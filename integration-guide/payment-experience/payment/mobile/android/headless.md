@@ -4,6 +4,10 @@ description: >-
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: table-cells-large
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/headless
 ---
 
 # Headless SDK
@@ -35,9 +39,9 @@ Initialize a Payment Session by passing the clientSecret to the `initPaymentSess
 paymentSession.initPaymentSession(paymentIntentClientSecret)
 ```
 
-| options (Required)                   | Description                                                      |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.**  Required to use as the identifier of the payment. |
+| options (Required)                   | Description                                                     |
+| ------------------------------------ | --------------------------------------------------------------- |
+| `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
 #### 4. Craft a customized payments experience
 

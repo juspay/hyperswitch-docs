@@ -3,6 +3,10 @@ description: >-
   Learn how to include Level 2 and Level 3 enhanced data in payment requests to
   optimize interchange costs on commercial card transactions
 icon: code-branch
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/level-2-and-level-3-data
 ---
 
 # Level 2 and Level 3 data

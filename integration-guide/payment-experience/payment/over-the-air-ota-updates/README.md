@@ -4,6 +4,10 @@ description: >-
   integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
   Native applications effortlessly.
 icon: arrows-rotate-reverse
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/over-the-air-ota-updates
 ---
 
 # Over-the-Air (OTA) Updates
@@ -38,8 +42,8 @@ Airborne enables Juspay Hyperswitch SDK to receive live updates without requirin
    * Once the critical files are downloaded, Airborne installs the bundle and hands over the latest reference to the app for use in the same launch session.
 5. **Fallback Handling**
    * If the update fails or times out, Airborne automatically falls back to:
-      * The **previously downloaded working bundle**, or
-      * The **default bundle shipped with the app**.
+     * The **previously downloaded working bundle**, or
+     * The **default bundle shipped with the app**.
 6. **Background Downloads**
    * Non-critical assets (lazy files) continue to download while the app runs, so the user is never blocked.
 

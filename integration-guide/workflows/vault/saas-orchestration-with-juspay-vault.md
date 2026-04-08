@@ -3,6 +3,10 @@ description: >-
   Leverage the integrated vault that comes with Hyperswitch Orchestration
   account to store cards
 icon: box-circle-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/saas-orchestration-with-juspay-vault
 ---
 
 # SaaS Orchestration with Juspay Vault
@@ -17,7 +21,7 @@ This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles bo
 
 #### SaaS orchestration - Payments and vaulting flow
 
-<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
 The sequence diagram above outlines how a SaaS merchant performs payments and vaulting.
 

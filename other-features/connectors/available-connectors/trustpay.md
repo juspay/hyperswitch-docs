@@ -1,6 +1,13 @@
 ---
-description: Connect TrustPay with Juspay Hyperswitch to accept secure e-commerce payments across the EEA with support for multiple payment methods and cross-border reach.
+description: >-
+  Connect TrustPay with Juspay Hyperswitch to accept secure e-commerce payments
+  across the EEA with support for multiple payment methods and cross-border
+  reach.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/trustpay
 ---
 
 # TrustPay

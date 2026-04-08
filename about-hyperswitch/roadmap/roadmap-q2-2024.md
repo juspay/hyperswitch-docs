@@ -1,6 +1,10 @@
 ---
 description: Hyperswitch roadmap (Apr to Jun'24)
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q2-2024
 ---
 
 # Previous Roadmap - Q2 2024

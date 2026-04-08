@@ -1,11 +1,15 @@
 ---
 description: Integrate unified checkout with your iOS app
 icon: apple
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/ios
 ---
 
 # iOS
 
-<figure><img src="../../../../../.gitbook/assets/image (113).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (57).png" alt="" width="563"><figcaption></figcaption></figure>
 
 #### Checkout the working demo of unified checkout by clicking on the link below
 
@@ -14,9 +18,9 @@ icon: apple
 Revolutionize your app's payment capabilities with the Juspay Hyperswitch iOS SDK, delivering a seamless and tailored Global Checkout Experience. The Hyperswitch Unified Checkout on iOS is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
 | <img src="../../../../../.gitbook/assets/image (127) (1).png" alt="" data-size="original"> | **Inclusive:** Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution. |
-| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="../../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | **Consistent:** Enjoy a singular and consistent payment experience across platforms, whether on the web, Android, or iOS. Driven by smart payment forms, minimal redirections, and intelligent retries, the Unified Checkout ensures a reliable and uniform payment process.                               |
-| <img src="../../../../../.gitbook/assets/image (129).png" alt="" data-size="original">     | **Blended:** Tailor the payment experience to seamlessly integrate with your product using 40+ styling APIs. Achieve a fully native and embedded payment experience within your iOS app or website, creating a cohesive and branded checkout environment.                                                  |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="../../../../../.gitbook/assets/image (128) (1).png" alt="" data-size="original"> | **Consistent:** Enjoy a singular and consistent payment experience across platforms, whether on the web, Android, or iOS. Driven by smart payment forms, minimal redirections, and intelligent retries, the Unified Checkout ensures a reliable and uniform payment process.                                 |
+| <img src="../../../../../.gitbook/assets/image (24).png" alt="" data-size="original">      | **Blended:** Tailor the payment experience to seamlessly integrate with your product using 40+ styling APIs. Achieve a fully native and embedded payment experience within your iOS app or website, creating a cohesive and branded checkout environment.                                                    |
 
 **Modify and Experiment:** While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch iOS SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you to:
 

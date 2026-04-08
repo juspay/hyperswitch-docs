@@ -1,6 +1,10 @@
 ---
 description: Accept open-banking payments through Volt via Juspay Hyperswitch.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/volt
 ---
 
 # Volt
@@ -9,7 +13,7 @@ hidden: true
 This section gives you an overview of how to make payments via Volt through Hyperswitch.
 {% endhint %}
 
-<img src="../../../../../.gitbook/assets/Volt-Logo (1).png" alt="logo_volt" data-size="original">
+<img src="../../../.gitbook/assets/Volt-Logo (1).png" alt="logo_volt" data-size="original">
 
 Volt is a payment platform that builds a global infrastructure and creates a single gateway for global open-banking payments and transactions. This is an attempt to transform the market and remove payment barriers in e-commerce. To know more about payment methods supported by Volt via Hyperswitch, click [here](https://www.volt.io/demo/).
 

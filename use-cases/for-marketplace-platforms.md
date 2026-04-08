@@ -3,6 +3,10 @@ description: All the payment use-cases for marketplace/platforms
 hidden: true
 noIndex: true
 icon: shop
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-marketplace-platforms
 ---
 
 # For Marketplace/Platforms

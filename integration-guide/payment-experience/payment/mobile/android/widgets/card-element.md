@@ -1,6 +1,12 @@
 ---
-description: Learn how to integrate the Card Element widget for accepting card payments in your Android app using Juspay Hyperswitch SDK.
+description: >-
+  Learn how to integrate the Card Element widget for accepting card payments in
+  your Android app using Juspay Hyperswitch SDK.
 icon: credit-card
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/widgets/card-element
 ---
 
 # Card Element

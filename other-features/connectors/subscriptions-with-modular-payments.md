@@ -4,6 +4,10 @@ description: >-
   Stripe Billing) with Hyperswitch payments orchestration — decoupling payments
   for full control over card vaulting, routing, ret
 icon: repeat
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/subscriptions-with-modular-payments
 ---
 
 # Subscriptions Providers

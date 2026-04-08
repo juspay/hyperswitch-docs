@@ -1,11 +1,15 @@
 ---
 description: Hyperswitch Checkout for WooCommerce by hyperswitch.io
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins/woocommerce-plugin
 ---
 
 # 🔌 WooCommerce Plugin
 
-<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 Give your shoppers a lightweight and embedded payment experience for Stripe + PayPal, with Juspay Hyperswitch - an open source financial switch. And future proof your business continuity with the redundancy of multiple payment processors provided.
 

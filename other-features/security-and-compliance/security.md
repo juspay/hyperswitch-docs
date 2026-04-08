@@ -1,6 +1,10 @@
 ---
 description: Comprehensive measures safeguarding Data Integrity within Hyperswitch
 icon: cloud-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/security
 ---
 
 # Data Security

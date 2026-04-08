@@ -3,6 +3,10 @@ description: >-
   Setup Taxjar on Hyperswitch to automatically calculate tax in case of Express
   checkout wallets
 icon: filter-circle-dollar
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets
 ---
 
 # Automatic Tax calculation for Express Checkout wallets
@@ -30,7 +34,7 @@ You can now see Taxjar enabled on your account
 To enable collecting shipping details from Express checkout wallets, you need to enable '_<mark style="color:red;">Collect shipping details from wallets</mark>_' toggle.
 
 * Click on Developers then Payment Settings.
-* For the particular profile id enable the  '_<mark style="color:red;">Collect shipping details from wallets</mark>_'&#x20;
+* For the particular profile id enable the '_<mark style="color:red;">Collect shipping details from wallets</mark>_'
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfcuPydxmKYpa-4hHwg9X6-SgJNg_2kz-MIiqHjvt8G-qKL-rk7nr1wLE8qP0vmO10xRXaDf3oNvzSR1g9tXXatXHraPB094wUDONI62yAn5sumturz9f6XWduNqScDndCa-ofR-BYtVJpQSjU2O-5Jvh0h?key=60G18knFKBKAyEyzRsD8JA" alt=""><figcaption></figcaption></figure>
 
@@ -40,4 +44,4 @@ To enable collecting shipping details from Express checkout wallets, you need to
 
 This field is optional for payments create calls and the default value is set to “false”, which means tax will be calculated dynamically. If you explicitly do not want to calculate taxes for a particular order, pass this boolean with value as “true”
 
-\
+\\

@@ -1,6 +1,12 @@
 ---
-description: Track, accept, and challenge disputes across multiple processors from one unified interface using Juspay Hyperswitch's Disputes module
+description: >-
+  Track, accept, and challenge disputes across multiple processors from one
+  unified interface using Juspay Hyperswitch's Disputes module
 icon: circle-exclamation
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/disputes
 ---
 
 # Disputes / Chargebacks
@@ -25,7 +31,7 @@ Hyperswitch unifies all the dispute notifications from all your different proces
 
 Hyperswitch's unified disputes module uses the following stages and statuses to track your disputes:
 
-<div data-full-width="true"><figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure></div>
 
 #### Pre-Dispute stage
 
@@ -55,7 +61,7 @@ Even after a successful dispute challenge, a payment method issuer might deem th
 
 You can view all your disputes by going to Operations -> Disputes section on your Hyperswitch dashboard
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Generating Dispute Reports
 
@@ -65,7 +71,7 @@ You can view all your disputes by going to Operations -> Disputes section on you
 
 Clicking one of the disputes will take you to a page where you can see further information about the particular dispute
 
-<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Accepting/Challenging a Dispute
 

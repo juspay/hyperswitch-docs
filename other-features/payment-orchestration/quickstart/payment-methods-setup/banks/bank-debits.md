@@ -1,5 +1,9 @@
 ---
 description: Bank Debits payment method
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/banks/bank-debits
 ---
 
 # Bank Debits

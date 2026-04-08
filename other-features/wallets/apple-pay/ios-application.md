@@ -2,6 +2,10 @@
 description: Enable Apple Pay on your iOS application with Juspay Hyperswitch
 hidden: true
 icon: apple
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay/ios-application
 ---
 
 # iOS Application

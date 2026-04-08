@@ -2,6 +2,10 @@
 description: >-
   Learn how to process Apple Pay in-app and web transactions using Hyperswitch
   decryption, including certificate setup and configuration steps.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption

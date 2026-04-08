@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/recommended-tooling-stack
+---
+
 # Recommended Tooling Stack
 
 The recommended tooling stack for production deployments is:
@@ -121,7 +128,7 @@ Using Helm, applications can be deployed, upgraded, or rolled back with a single
 This makes Helm a powerful mechanism for managing complex Kubernetes applications like Juspay Hyperswitch.
 
 {% hint style="info" %}
-#### Note on Alternative Installation Methods
+**Note on Alternative Installation Methods**
 
 Juspay Hyperswitch developer documentation also provides alternative installation methods:
 

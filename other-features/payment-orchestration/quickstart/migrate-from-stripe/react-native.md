@@ -1,5 +1,9 @@
 ---
 description: Migrate from Stripe on your react native app
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe/react-native
 ---
 
 # React Native

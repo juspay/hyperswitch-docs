@@ -2,6 +2,10 @@
 description: >-
   Learn how to process Apple Pay in-app and web transactions using PSP
   decryption, where the connector handles token decryption and authorization.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay/in-app-and-web-transactions-processed-using-psp-decryption
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption

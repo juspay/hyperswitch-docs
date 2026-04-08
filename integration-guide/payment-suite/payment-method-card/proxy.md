@@ -1,6 +1,10 @@
 ---
 description: Vault your card and use proxy endpoint for payment processing
 icon: almost-equal-to
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payment-method-card/proxy
 ---
 
 # Proxy Payment
@@ -16,7 +20,7 @@ Key Highlights:
 
 ### Vault and Proxy - Vaulting and Payments Flow
 
-<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Create Payment Method Session (Server-Side)
 

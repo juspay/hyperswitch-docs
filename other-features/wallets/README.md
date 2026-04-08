@@ -2,8 +2,10 @@
 description: >-
   Accept PayPal, Google Pay, and Apple Pay payments through Juspay Hyperswitch
   wallet integrations
-hidden: true
 icon: wallet
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets
 ---
 
 # Wallets

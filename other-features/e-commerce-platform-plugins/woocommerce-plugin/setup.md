@@ -1,5 +1,9 @@
 ---
 description: WooCommerce Plugin Setup
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins/woocommerce-plugin/setup
 ---
 
 # Setup

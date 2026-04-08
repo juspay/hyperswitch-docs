@@ -1,6 +1,12 @@
 ---
+description: >-
+  Configure over-the-air updates for Hyperswitch SDK on Android using
+  HyperOTAReact for seamless app updates without store releases.
 icon: android
-description: Configure over-the-air updates for Hyperswitch SDK on Android using HyperOTAReact for seamless app updates without store releases.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/over-the-air-ota-updates/android
 ---
 
 # Android

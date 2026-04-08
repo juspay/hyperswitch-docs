@@ -1,11 +1,15 @@
 ---
 description: Bank Transfer payment methods
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/banks/bank-transfers
 ---
 
 # Bank Transfers
 
 {% hint style="info" %}
-Bank transfers allow customers to push funds from their bank account to the merchant's. 
+Bank transfers allow customers to push funds from their bank account to the merchant's.
 {% endhint %}
 
 Bank Transfers are a popular way of transmitting money between different bank accounts and they are popular in US, EU and few Asian and LATAM countries. They are primarily used by businesses for accepting large payments from other businesses. Bank transfers are also used by consumers in certain countries as a preferred method for transferring money to others and while transacting online.

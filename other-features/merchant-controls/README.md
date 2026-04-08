@@ -5,6 +5,10 @@ description: >-
 hidden: true
 noIndex: true
 icon: money-simple-from-bracket
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/merchant-controls
 ---
 
 # Checkout Experience

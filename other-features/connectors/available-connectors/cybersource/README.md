@@ -1,8 +1,14 @@
 ---
-description: Accept payments globally through CyberSource via Juspay Hyperswitch with support for multiple payment methods and geographies.
+description: >-
+  Accept payments globally through CyberSource via Juspay Hyperswitch with
+  support for multiple payment methods and geographies.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/cybersource
 ---
 
-# CyberSource
+# Cybersource
 
 {% hint style="info" %}
 This section gives you an overview of how to make payments via CyberSource through Hyperswitch.

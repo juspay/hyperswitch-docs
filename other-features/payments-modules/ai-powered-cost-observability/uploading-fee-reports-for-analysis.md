@@ -5,6 +5,10 @@ description: >-
   payment processors
 hidden: true
 noIndex: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis
 ---
 
 # Uploading Fee Reports for Analysis

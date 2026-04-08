@@ -1,9 +1,12 @@
 ---
-title: Resolution Strategies for Expected Exceptions
 description: >-
   Learn how to resolve EXPECTED state exceptions in Juspay Hyperswitch
   reconciliation using Void, Edit Entry, Mark as Received, and Replace Entry
   actions.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling/resolution-strategies-for-expected-exceptions
 ---
 
 # Resolution Strategies for 'Expected' Exceptions

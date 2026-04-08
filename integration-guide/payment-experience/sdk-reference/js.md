@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference/js
+---
+
 # JS
 
 Hyperswitch's JS SDK come with many methods which you can use to customize your payments experience. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.
@@ -88,17 +95,17 @@ Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a Payment
 
 `clientSecret` is a required string.\
 \
-5\.  `hyper.initiateUpdateIntent()`
+5\. `hyper.initiateUpdateIntent()`
 
 Use `hyper.initiateUpdateIntent()` just before you start updating the payment intent on your end. It doesn't require any input. When invoked, it signals the system to prepare for the update process and returns a confirmation message indicating that the update has been initiated.
 
-#### 6.  `hyper.completeUpdateIntent(clientSecret)`
+#### 6. `hyper.completeUpdateIntent(clientSecret)`
 
 Use `hyper.completeUpdateIntent(clientSecret)` after you’ve completed the payment intent update process on your side. It takes the updated `clientSecret` as input and signals the system to complete the update flow. It returns a response with a confirmation message indicating the update has been processed.
 
 ### elements()
 
-After calling the hyper.elements with your options, you will get access to the Elements API. This will have methods which are not specific to a particular payment element (UnifiedCheckout, HyperWidgets, etc. ) but are needed for the overall operation of them.&#x20;
+After calling the hyper.elements with your options, you will get access to the Elements API. This will have methods which are not specific to a particular payment element (UnifiedCheckout, HyperWidgets, etc. ) but are needed for the overall operation of them.
 
 ```js
 let elements = hyper.elements(options);
@@ -131,8 +138,6 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `terms (object)`                  | Control how mandates or other legal agreements are displayed in the Payment Element. Use never to never display legal agreements. The default setting is auto, which causes legal agreements to only be shown when necessary.                                                                                                                                                                                                                                                                                                                                                                         |
 | `wallets (object)`                | <p>By default, the Payment Element will display all the payment methods that the underlying Payment Intent was created with.</p><p>However, wallets like Apple Pay and Google Pay are not payment methods per the Payment Intent API. They will show when the Payment Intent has the card payment method and the customer is using a supported platform and have an active card in their account. This is the auto behavior, and it is the default for choice for all wallets.</p><p>If you do not want to show a given wallet as a payment option, you can set its property in wallets to never.</p> |
 
-
-
 **Layout object**
 
 | layout                                | Description                                                                                                                                                                                                                                                                                                |
@@ -142,8 +147,6 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `radios (boolean)`                    | <p>Renders each Payment Method with a radio input next to its logo. The radios visually indicate the current selection of the Payment Element.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                |
 | `spacedAccordionItems (boolean)`      | <p>When true, the Payment Methods render as standalone buttons with space in between them.</p><p><em>This property is only applicable to the accordion layout.</em></p>                                                                                                                                    |
 | `visibleAccordionItemsCount (number)` | <p>Sets the max number of Payment Methods visible before using the "More" button to hide additional Payment Methods. Set this value to 0 to disable the "More" button and render all available Payment Methods. Default is 5.</p><p><em>This property is only applicable to the accordion layout.</em></p> |
-
-
 
 **defaultValues object**
 
@@ -187,14 +190,12 @@ The type can be ‘payment’ for UnifiedCheckout.
 
 **wallets object**
 
-| wallets                    | Description                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------- |
-| `applePay (auto / never)`  |                                                                                                |
-| `googlePay (auto / never)` |                                                                                                |
-| `walletReturnUrl (string)` | This is the URL which you will get redirected to post a successful confirmation of a payment.  |
-| `style (object)`           | This gives the style to the wallet buttons in the Payment Element.                             |
-
-
+| wallets                    | Description                                                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| `applePay (auto / never)`  |                                                                                               |
+| `googlePay (auto / never)` |                                                                                               |
+| `walletReturnUrl (string)` | This is the URL which you will get redirected to post a successful confirmation of a payment. |
+| `style (object)`           | This gives the style to the wallet buttons in the Payment Element.                            |
 
 **`3. elements.update(options)`**
 
@@ -220,33 +221,30 @@ let paymentElement = elements.create("payment",options);
 
 #### 1. `paymentElement.mount(domElement)`
 
-This method attaches your Payment Element to the DOM. This only accepts a CSS seletor (eg, #unified-checkout) . You need to have created a DOM element in your HTML file where you think you can mount the Payment Element.&#x20;
+This method attaches your Payment Element to the DOM. This only accepts a CSS seletor (eg, #unified-checkout) . You need to have created a DOM element in your HTML file where you think you can mount the Payment Element.
 
 #### 2. `paymentElement.blur()`
 
-Blurs the Payment Element.&#x20;
+Blurs the Payment Element.
 
 #### 3. `paymentElement.clear()`
 
-Clears the values of the Payment Element.&#x20;
+Clears the values of the Payment Element.
 
 #### 4. `paymentElement.destroy()`
 
-Removes the Payment Element from the DOM and destroys it. A destroyed Element cannot be re-mounted to the DOM.&#x20;
+Removes the Payment Element from the DOM and destroys it. A destroyed Element cannot be re-mounted to the DOM.
 
 #### 5. `paymentElement.focus()`
 
-Focuses the Payment Element fields.&#x20;
+Focuses the Payment Element fields.
 
 #### 6. `paymentElement.unmount()`
 
-Unmounts the Payment Element from the DOM. Call paymentElement.mount  to re-attach it to the DOM.&#x20;
+Unmounts the Payment Element from the DOM. Call paymentElement.mount to re-attach it to the DOM.
 
 #### 7. `paymentElement.update(options)`
 
-Updates the options the Payment Element was initialized with. Updates are merged into the existing configuration. This uses the same API as elements.create().&#x20;
+Updates the options the Payment Element was initialized with. Updates are merged into the existing configuration. This uses the same API as elements.create().
 
 #### 8. `paymentElement.on(type, handler)`
-
-
-

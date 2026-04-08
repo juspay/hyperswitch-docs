@@ -1,5 +1,12 @@
 ---
-description: Understand how Juspay Hyperswitch Org, Merchant, and Profile hierarchy maps to Recon, and how to choose the right segmentation level for reconciliation configuration and user access.
+description: >-
+  Understand how Juspay Hyperswitch Org, Merchant, and Profile hierarchy maps to
+  Recon, and how to choose the right segmentation level for reconciliation
+  configuration and user access.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/merchant-and-profile-mapping-in-recon
 ---
 
 # Merchant & Profile Mapping in Recon
@@ -8,14 +15,13 @@ description: Understand how Juspay Hyperswitch Org, Merchant, and Profile hierar
 
 Juspay Hyperswitch is designed as a multi-tenant platform with a clear hierarchy:
 
-- **Organisation (Org)**: Top-level container for your company/platform. This is the parent boundary for all merchants, products, and users.
-- **Merchant**: A configurable account inside an organisation. Merchants are used to represent **how you want to group configuration + operations + access**, for example by business unit, brand, geography, channel, team ownership.
-- **Profile**: A sub-unit under a merchant that can also act as an **independent configuration + operations boundary**. Profiles are used when you want **multiple isolated setups under the same merchant**, without creating additional merchants.
+* **Organisation (Org)**: Top-level container for your company/platform. This is the parent boundary for all merchants, products, and users.
+* **Merchant**: A configurable account inside an organisation. Merchants are used to represent **how you want to group configuration + operations + access**, for example by business unit, brand, geography, channel, team ownership.
+* **Profile**: A sub-unit under a merchant that can also act as an **independent configuration + operations boundary**. Profiles are used when you want **multiple isolated setups under the same merchant**, without creating additional merchants.
 
 Recon uses the same hierarchy so existing Juspay Hyperswitch users can adopt Recon without changing how they already think about structuring accounts and access.
 
-```mermaid
-flowchart TB
+{% @mermaid/diagram content="flowchart TB
   Org[Organisation] --> M1[Merchant A]
   Org --> M2[Merchant B]
 
@@ -23,8 +29,7 @@ flowchart TB
   M1 --> P12[Profile A2]
 
   M2 --> P21[Profile B1]
-  M2 --> P22[Profile B2]
-```
+  M2 --> P22[Profile B2]" %}
 
 #### Core principle: **"Recon can be segmented at both Merchant and Profile levels — choose the level based on how you want to group configuration and user access."**
 
@@ -32,31 +37,31 @@ In Recon:
 
 1. **A Merchant account is the level at which the Recon product is enabled/mapped** (Recon is available under a Merchant within an Org).
 2. **Isolation of reconciliation logic, rules, and setup can be achieved at either:**
-   - **Merchant level** (by enabling Recon for multiple merchants / using multiple Recon merchants under the Org), or
-   - **Profile level** (by creating multiple Recon profiles under the same Recon merchant).
+   * **Merchant level** (by enabling Recon for multiple merchants / using multiple Recon merchants under the Org), or
+   * **Profile level** (by creating multiple Recon profiles under the same Recon merchant).
 
 So it's not "merchant = boundary, profile = isolation". It's: **both can isolate** — the choice depends on what boundary you want for:
 
-- **Configuration ownership** (who owns and manages setup)
-- **User invites / access scope** (who you invite where, and what they can see/manage)
+* **Configuration ownership** (who owns and manages setup)
+* **User invites / access scope** (who you invite where, and what they can see/manage)
 
 ### What can be isolated (Merchant and Profile)
 
 Whether you isolate via **separate merchants** or via **profiles**, Recon can isolate:
 
-- Reconciliation rules & matching logic
-- Tolerances (fees, rounding, FX differences)
-- Ingestion configuration (connectors, file formats, mappings)
-- Operational configuration (who sees/resolves what, exception ownership)
+* Reconciliation rules & matching logic
+* Tolerances (fees, rounding, FX differences)
+* Ingestion configuration (connectors, file formats, mappings)
+* Operational configuration (who sees/resolves what, exception ownership)
 
 #### What differs when choosing Merchant vs Profile
 
 The practical difference is mostly about:
 
-- **Where you want the primary workspace boundary**
-- **How you want to invite users and scope their access**
-- **How closely you want to mirror your existing Juspay Hyperswitch structure**
-- **Whether you want multiple "merchant workspaces" or one merchant umbrella with multiple isolated profiles**
+* **Where you want the primary workspace boundary**
+* **How you want to invite users and scope their access**
+* **How closely you want to mirror your existing Juspay Hyperswitch structure**
+* **Whether you want multiple "merchant workspaces" or one merchant umbrella with multiple isolated profiles**
 
 ### Two common setups, and how they map to Recon
 
@@ -64,28 +69,27 @@ The practical difference is mostly about:
 
 This setup is preferred when you want **separate merchant workspaces per Business Unit/segment**, primarily to control:
 
-- **How users are invited** (Business Unit-level teams invited to their own merchant workspace)
-- **How operational views are separated** (exceptions/reports owned and viewed per Business Unit)
-- **How configs evolve independently** (each Business Unit can change rules/mappings/workflows without impacting others)
+* **How users are invited** (Business Unit-level teams invited to their own merchant workspace)
+* **How operational views are separated** (exceptions/reports owned and viewed per Business Unit)
+* **How configs evolve independently** (each Business Unit can change rules/mappings/workflows without impacting others)
 
 **Important:** This is not necessarily about legal entities. It's about **workspace separation and access boundaries**.
 
 #### Juspay Hyperswitch example
 
-- Org = "Company"
-- Merchant A = "BU: Consumer"
-- Merchant B = "BU: Enterprise"
-- Merchant C = "BU: International"
+* Org = "Company"
+* Merchant A = "BU: Consumer"
+* Merchant B = "BU: Enterprise"
+* Merchant C = "BU: International"
 
 #### Recon mapping
 
 Use the same structure:
 
-- Each Business Unit gets its own **Payments merchant** and its own **Recon merchant**, both under the same Org (adjacent).
-- Each Recon merchant can still have multiple profiles for deeper segmentation if needed.
+* Each Business Unit gets its own **Payments merchant** and its own **Recon merchant**, both under the same Org (adjacent).
+* Each Recon merchant can still have multiple profiles for deeper segmentation if needed.
 
-```mermaid
-flowchart TB
+{% @mermaid/diagram content="flowchart TB
   Org["Organisation - Company"]
 
   %% Business Unit 1
@@ -104,44 +108,42 @@ flowchart TB
   BU1Recon --> BU1ReconP2["Recon Profile - Consumer - SEA"]
 
   BU2Recon --> BU2ReconP1["Recon Profile - Enterprise - Direct"]
-  BU2Recon --> BU2ReconP2["Recon Profile - Enterprise - Partners"]
-```
+  BU2Recon --> BU2ReconP2["Recon Profile - Enterprise - Partners"]" %}
 
 #### When Setup A is the best fit
 
 Choose "merchant-per-Business-Unit" if you want:
 
-- Invite and manage users at a **merchant workspace** boundary
-- Separate Business Unit teams owning reconciliation independently
-- Lower risk of cross-team interference (each Business Unit isolated at merchant scope)
+* Invite and manage users at a **merchant workspace** boundary
+* Separate Business Unit teams owning reconciliation independently
+* Lower risk of cross-team interference (each Business Unit isolated at merchant scope)
 
 ### Setup B: One Org, one Payments merchant, business units as Profiles + Recon merchant adjacent
 
 This setup is preferred when you want:
 
-- A shared Payments merchant workspace (simpler merchant management)
-- Isolated reconciliation setups per **business unit** / segment using profiles
-- Finer segmentation without creating many merchants
+* A shared Payments merchant workspace (simpler merchant management)
+* Isolated reconciliation setups per **business unit** / segment using profiles
+* Finer segmentation without creating many merchants
 
 Again, this is not a weaker isolation model — profiles still isolate rules, workflows, ingestion configuration, and operational ownership. It's simply isolation within a single merchant umbrella.
 
 **Juspay Hyperswitch example**
 
-- **Org** = "Company"
-- **Merchant** = "Company (Payments)"
-- **Profiles**:
-  - "Business unit: Consumer"
-  - "Business unit: Enterprise"
-  - "Business unit: International"
+* **Org** = "Company"
+* **Merchant** = "Company (Payments)"
+* **Profiles**:
+  * "Business unit: Consumer"
+  * "Business unit: Enterprise"
+  * "Business unit: International"
 
 **Recon mapping**
 
-- Keep one Payments merchant with multiple profiles.
-- Create one Recon merchant adjacent under the Org.
-- Create multiple Recon profiles under the Recon merchant for **business unit**-level isolation.
+* Keep one Payments merchant with multiple profiles.
+* Create one Recon merchant adjacent under the Org.
+* Create multiple Recon profiles under the Recon merchant for **business unit**-level isolation.
 
-```mermaid
-flowchart TB
+{% @mermaid/diagram content="flowchart TB
   Org["Organisation: Company"]
 
   %% Normal Payments Merchant
@@ -154,17 +156,16 @@ flowchart TB
   Org --> ReconM["Merchant: Company (Recon)"]
   ReconM --> ReconP1["Recon Profile: BU Consumer"]
   ReconM --> ReconP2["Recon Profile: BU Enterprise"]
-  ReconM --> ReconP3["Recon Profile: BU International"]
-```
+  ReconM --> ReconP3["Recon Profile: BU International"]" %}
 
 #### When Setup B is the best fit
 
 Choose "single merchant + multiple profiles" if you want:
 
-- One shared umbrella for merchant management
-- Isolation of recon setup inside that umbrella using profiles
-- Simpler merchant sprawl management (fewer merchants)
-- Separation where it matters (rules, logic, workflows, ops ownership) at profile level
+* One shared umbrella for merchant management
+* Isolation of recon setup inside that umbrella using profiles
+* Simpler merchant sprawl management (fewer merchants)
+* Separation where it matters (rules, logic, workflows, ops ownership) at profile level
 
 #### Scenario C: Payments under one merchant, reconciliation separated (Recon profiles) + Recon merchant under Org
 
@@ -172,11 +173,10 @@ This keeps the "payments unified" setup intact, while enabling **business unit**
 
 A common real-world driver here is:
 
-- Payments operations want one consolidated merchant for processing.
-- Finance/ops teams want reconciliation separated by **business unit** / team / channel.
+* Payments operations want one consolidated merchant for processing.
+* Finance/ops teams want reconciliation separated by **business unit** / team / channel.
 
-```mermaid
-flowchart TB
+{% @mermaid/diagram content="flowchart TB
   Org["Organisation"] --> PayM["Merchant: Payments Unified (Payments)"]
   Org --> ReconM["Merchant: Payments Unified (Recon)"]
 
@@ -196,28 +196,25 @@ flowchart TB
 
   BU1 --> W1["Workflow: Consumer ops queue"]
   BU2 --> W2["Workflow: Enterprise ops queue"]
-  BU3 --> W3["Workflow: Intl ops queue"]
-```
+  BU3 --> W3["Workflow: Intl ops queue"]" %}
 
 ### Practical guidance: how to decide Merchant vs Profile in Recon
 
 #### Create separate Recon Merchants under the Org when you want:
 
-- **Merchant-level workspace boundaries** for teams
-- To invite users and scope access per merchant workspace
-- Independent configuration lifecycle per segment (fewer coupling points)
+* **Merchant-level workspace boundaries** for teams
+* To invite users and scope access per merchant workspace
+* Independent configuration lifecycle per segment (fewer coupling points)
 
 #### Create multiple Recon Profiles under the same Recon Merchant when you want:
 
-- One shared merchant umbrella, but multiple isolated recon setups
-- Profile-level separation for rules, workflows, ingestion, and ops ownership
-- To avoid creating too many merchants while still getting isolation
+* One shared merchant umbrella, but multiple isolated recon setups
+* Profile-level separation for rules, workflows, ingestion, and ops ownership
+* To avoid creating too many merchants while still getting isolation
 
 ### Decision diagram
 
-```mermaid
-flowchart TD
+{% @mermaid/diagram content="flowchart TD
   A[Need separate reconciliation setup?] -->|Yes| B{Where should the primary boundary be?}
   B -->|Separate merchant workspaces + invite users per workspace| M[Create separate Recon Merchants under Org]
-  B -->|Single merchant umbrella, isolate setups inside it| P[Create multiple Recon Profiles under the same Recon Merchant]
-```
+  B -->|Single merchant umbrella, isolate setups inside it| P[Create multiple Recon Profiles under the same Recon Merchant]" %}

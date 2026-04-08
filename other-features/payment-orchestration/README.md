@@ -2,8 +2,11 @@
 description: >-
   Unified payment orchestration platform for managing multiple PSPs, payment
   methods, and optimizing payment lifecycle performance
-hidden: true
 icon: arrow-progress
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration
 ---
 
 # Payment Orchestration

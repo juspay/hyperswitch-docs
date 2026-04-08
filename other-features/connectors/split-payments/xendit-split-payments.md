@@ -1,6 +1,12 @@
 ---
+description: >-
+  Split and route payments across multiple accounts or sub-merchants using
+  Xendit's split settlement feature via Hyperswitch.
 icon: hexagon-xmark
-description: Split and route payments across multiple accounts or sub-merchants using Xendit's split settlement feature via Hyperswitch.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments/xendit-split-payments
 ---
 
 # Xendit Split Settlement
@@ -9,10 +15,10 @@ description: Split and route payments across multiple accounts or sub-merchants 
 
 If your platform charges a fee or commission when facilitating payments for your partners, or if you need to split settlement between multiple parties, Juspay Hyperswitch enables you to do so automatically. Xendit via Hyperswitch offers multiple routing methods to support diverse use cases:
 
-- Partner to Platform
-- Partner to Partner
-- Platform to Partner
-- Accepting Payments for Sub-Accounts
+* Partner to Platform
+* Partner to Partner
+* Platform to Partner
+* Accepting Payments for Sub-Accounts
 
 ### Split Xendit payments via Hyperswitch
 
@@ -86,9 +92,9 @@ Split settlements between multiple sub-merchants, partners, or platforms by incl
 
 Constraints:
 
-- Each route must specify either `flat_amount` OR `percent_amount`, never both
-- For zero-amount payments, all split amounts must be zero
-- Sum of split amounts cannot exceed total payment amount
+* Each route must specify either `flat_amount` OR `percent_amount`, never both
+* For zero-amount payments, all split amounts must be zero
+* Sum of split amounts cannot exceed total payment amount
 
 The validation ensures that:
 
@@ -108,24 +114,24 @@ For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
 
 **`name`** (string, **required**)
 
-- Name to identify the split rule
-- Not required to be unique
-- Typically based on transaction and/or sub-merchant types
+* Name to identify the split rule
+* Not required to be unique
+* Typically based on transaction and/or sub-merchant types
 
 **`description`** (string, **required**)
 
-- Description to identify the fee rule
-- Used for internal tracking and identification
+* Description to identify the fee rule
+* Used for internal tracking and identification
 
 **`for_user_id`** (string, optional)
 
-- The sub-account user-id that you want to make this transaction for
-- Used when making payments on behalf of a sub-merchant
+* The sub-account user-id that you want to make this transaction for
+* Used when making payments on behalf of a sub-merchant
 
 **`routes`** (array, **required**)
 
-- Array of `XenditSplitRoute` objects that define how the platform wants to route the fees and to which accounts
-- Each route object represents a single payment split from the end user to a destination account
+* Array of `XenditSplitRoute` objects that define how the platform wants to route the fees and to which accounts
+* Each route object represents a single payment split from the end user to a destination account
 
 #### XenditSplitRoute Parameters
 
@@ -133,31 +139,31 @@ Each route in the `routes` array has these parameters payments.rs:331-343 :
 
 **`flat_amount`** (MinorUnit, optional)
 
-- Amount of payments to be split using a flat rate
-- Specified in minor units (e.g., 3000 for $30.00 or 30.00 IDR)
-- **Validation**: Must specify either `flat_amount` OR `percent_amount`, never both `helpers.rs:466-473`
+* Amount of payments to be split using a flat rate
+* Specified in minor units (e.g., 3000 for $30.00 or 30.00 IDR)
+* **Validation**: Must specify either `flat_amount` OR `percent_amount`, never both `helpers.rs:466-473`
 
 **`percent_amount`** (i64, optional)
 
-- Amount of payments to be split using a percentage rate
-- Integer percentage value (e.g., 5 = 5%)
-- Percent amounts are calculated and rounded to the nearest monetary unit `helpers.rs:478`
+* Amount of payments to be split using a percentage rate
+* Integer percentage value (e.g., 5 = 5%)
+* Percent amounts are calculated and rounded to the nearest monetary unit `helpers.rs:478`
 
 **`currency`** (Currency enum, **required**)
 
-- Currency code for the split amount
-- Must match supported currency values
+* Currency code for the split amount
+* Must match supported currency values
 
 **`destination_account_id`** (string, **required**)
 
-- ID of the destination account where the amount will be routed
-- Can be the ID of your platform account or sub-merchant account
+* ID of the destination account where the amount will be routed
+* Can be the ID of your platform account or sub-merchant account
 
 **`reference_id`** (string, **required**)
 
-- Reference ID that acts as an identifier for the route itself
-- Used to distinguish routes when one split rule has multiple routes to the same destination
-- Must be unique and case-sensitive for every route object under the same split rule
+* Reference ID that acts as an identifier for the route itself
+* Used to distinguish routes when one split rule has multiple routes to the same destination
+* Must be unique and case-sensitive for every route object under the same split rule
 
 #### SingleSplit Parameters
 
@@ -165,8 +171,8 @@ For single split settlements, the structure is simpler domain.rs:55-58 :
 
 **`for_user_id`** (string, **required**)
 
-- The sub-account user-id that you want to make this transaction for
-- Required field for single split scenarios
+* The sub-account user-id that you want to make this transaction for
+* Required field for single split scenarios
 
 #### Split Settlement Response Types
 
@@ -192,9 +198,9 @@ For multiple splits, the `charges` field contains detailed split rule informatio
 
 Key fields to document:
 
-- `split_rule_id`: Generated during preprocessing step `transformers.rs:549-555`
-- `for_user_id`: Optional sub-merchant identifier
-- `routes`: Array of split route details with amounts and destinations
+* `split_rule_id`: Generated during preprocessing step `transformers.rs:549-555`
+* `for_user_id`: Optional sub-merchant identifier
+* `routes`: Array of split route details with amounts and destinations
 
 **Single Split Response**
 

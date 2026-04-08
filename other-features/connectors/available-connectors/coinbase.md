@@ -1,6 +1,12 @@
 ---
-description: Accept crypto payments through Coinbase Commerce via Hyperswitch, with multi-asset support and access to millions of retail users.
+description: >-
+  Accept crypto payments through Coinbase Commerce via Hyperswitch, with
+  multi-asset support and access to millions of retail users.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/coinbase
 ---
 
 # Coinbase
@@ -9,7 +15,7 @@ hidden: true
 This section gives you an overview of how to make payments via Coinbase through Hyperswitch.
 {% endhint %}
 
-![logo_discord](https://hyperswitch.io/icons/homePageIcons/logos/coinbaseLogo.svg)
+![logo\_discord](https://hyperswitch.io/icons/homePageIcons/logos/coinbaseLogo.svg)
 
 ### About
 

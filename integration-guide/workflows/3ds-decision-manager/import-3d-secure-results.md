@@ -1,6 +1,10 @@
 ---
 description: Process payments when 3D Secure runs outside Juspay Hyperswitch
 icon: shield-slash
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/import-3d-secure-results
 ---
 
 # Import 3D Secure results

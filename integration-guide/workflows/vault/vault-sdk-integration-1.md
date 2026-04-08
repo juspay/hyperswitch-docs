@@ -1,9 +1,13 @@
 ---
 description: >-
-  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our Payment
-  Methods Management SDK
+  Learn how to tokenize cards at Juspay Hyperswitch Vault Service using our
+  Payment Methods Management SDK
 hidden: true
 icon: desktop
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/vault-sdk-integration-1
 ---
 
 # Vault SDK - JS with REST API Integration
@@ -28,7 +32,7 @@ This document provides step-by-step instructions for integrating the Hyperswitch
 
 First, you'll need to set up your server to create payment method sessions, which establish secure connections between your frontend and the Hyperswitch Vault.
 
-##### Obtaining Your API Keys
+**Obtaining Your API Keys**
 
 Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
@@ -45,11 +49,11 @@ To generate your Vault API keys, follow these steps:
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 {% endhint %}
 
-##### Creating a Payment Methods Session Endpoint
+**Creating a Payment Methods Session Endpoint**
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer_id** is included in the request body when creating a payment method session.\
+> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session.\
 > For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 ```javascript
@@ -100,7 +104,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 Once your server endpoint is set up, you'll need to integrate the Vault/Payment Methods Management SDK into your client application.
 
-##### 2.1 Define the Payment Methods Management Form
+**2.1 Define the Payment Methods Management Form**
 
 Add one empty placeholder `div` to your page for the Payment Methods Management widget that you'll mount.
 
@@ -112,7 +116,7 @@ Add one empty placeholder `div` to your page for the Payment Methods Management 
 </form>
 ```
 
-##### 2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element
+**2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
 
 Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods.\
 \
@@ -172,7 +176,7 @@ async function initialize() {
 initialize();
 ```
 
-##### 2.3 Complete tokenization and handle errors
+**2.3 Complete tokenization and handle errors**
 
 Call `confirmTokenization()`, passing the mounted Payment Methods Management widgets and a `return_url` to indicate where Hyper should redirect the user after any required authentication. Depending on the payment method, Hyper may redirect the customer to an authentication page. After authentication is completed, the customer is redirected back to the `return_url`.
 

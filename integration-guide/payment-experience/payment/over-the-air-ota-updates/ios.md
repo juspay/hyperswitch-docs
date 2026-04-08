@@ -1,13 +1,19 @@
 ---
-description: Configure iOS Over-the-Air (OTA) updates for the Hyperswitch SDK using HyperOTA endpoints and release configurations.
+description: >-
+  Configure iOS Over-the-Air (OTA) updates for the Hyperswitch SDK using
+  HyperOTA endpoints and release configurations.
 icon: apple
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/over-the-air-ota-updates/ios
 ---
 
 # iOS
 
 ### Configuration
 
-1. Set the HyperOTA Endpoint for Juspay Hyperswitch
+1.  Set the HyperOTA Endpoint for Juspay Hyperswitch
 
     Edit **`HyperOTA.plist`** to point to your environment-specific endpoint.
 

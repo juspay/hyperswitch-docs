@@ -1,6 +1,13 @@
 ---
-description: Learn how to integrate and activate PayU as a payment connector via Juspay Hyperswitch to accept and process online payments across multiple payment methods.
+description: >-
+  Learn how to integrate and activate PayU as a payment connector via Juspay
+  Hyperswitch to accept and process online payments across multiple payment
+  methods.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/payu-1
 ---
 
 # PayU

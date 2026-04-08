@@ -4,6 +4,10 @@ description: >-
   recurring payments, reduce involuntary churn, and maximize revenue for
   subscription-based SaaS businesses
 icon: clock-rotate-left
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/revenue-recovery
 ---
 
 # Revenue Recovery
@@ -34,7 +38,7 @@ Merchants can configure Revenue Recovery entirely through the dashboard without 
 
 Once the setup is complete, Revenue Recovery automatically begins monitoring transactions via webhook. When a failed transaction is detected, the system evaluates over 20 parameters to intelligently schedule a retry, aiming to recover the payment. These transactions are then recorded back into the subscription platform to avoid subscription cancellations.
 
-<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
 ### Key Features
 

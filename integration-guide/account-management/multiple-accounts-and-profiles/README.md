@@ -3,6 +3,10 @@ description: >-
   Create multiple merchant accounts, profiles and users for seamless integration
   with your business.
 icon: file-user
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles
 ---
 
 # Managing Accounts and Profiles
@@ -27,7 +31,7 @@ Additionally, with the new [Platform Org and Merchant model](platform-org-and-me
 
 Here's how the architecture would look like.
 
-<figure><img src="../../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.jpg" alt=""><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
 
 ### Let's understand the hierarchy
 
@@ -37,21 +41,21 @@ Organization refers to the main business. When a new user registers, an organiza
 
 #### Merchant Account
 
-A merchant account is associated with an `api_key` and `publishable_key` which is used for authentication. There can be many merchant accounts that can be created under an organization by an organization admin.&#x20;
+A merchant account is associated with an `api_key` and `publishable_key` which is used for authentication. There can be many merchant accounts that can be created under an organization by an organization admin.
 
 #### Profile
 
 {% hint style="info" %}
-Every merchant account has at least one profile. For easier integration,`profile_id` is not mandatory if there is only one business profile.&#x20;
+Every merchant account has at least one profile. For easier integration,`profile_id` is not mandatory if there is only one business profile.
 {% endhint %}
 
 A profile can also be considered to be a business profile for practical purposes, it serves as a logical separation of businesses for seamless integration and onboarding. Every business profile is uniquely identified by a `profile_id`. All the payment settings can be configured at the profile level and will apply to all the payments make via the business profile. If there is more then one business profile, then `profile_id` has to be passed when creating the payments. Business profile allows to configure
 
-> Roles and permissions for users can be assigned at the organization level, and merchant level.&#x20;
+> Roles and permissions for users can be assigned at the organization level, and merchant level.
 
 * Routing Algorithm.
 
-Only gateways that are available under the business profile can be used to configure the routing algorithm.&#x20;
+Only gateways that are available under the business profile can be used to configure the routing algorithm.
 
 If a routing algorithm is not available, a default fallback, which consists of all the processors configured under the business profile based on priority order would be used. The priority of processors in the default fallback can be configured
 
@@ -61,17 +65,15 @@ If a routing algorithm is not available, a default fallback, which consists of a
 
 There can be multiple processors configured under a business profile. Each processor is associated with a globally unique identifier `merchant_connector_id` and unique identifier under a business profile called `label`
 
-A processor  created under one business profile cannot be used in another business profile to route payments.
+A processor created under one business profile cannot be used in another business profile to route payments.
 
 ### Use cases
 
-*   #### Multiple merchant accounts - for **merchants who need different API keys for each of their businesses**
-
-
+*   **Multiple merchant accounts - for merchants who need different API keys for each of their businesses**
 
     Consider a merchant A who has three different businesses - A\_Shoes, A\_Clothing, A\_Bags. They can create three merchant accounts (Shoes, Clothing, Bags) on Hyperswitch and get separate set of API keys for each of them.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).jpg" alt=""><figcaption><p>A merchant with multiple merchant accounts and a single business profile in each merchant account</p></figcaption></figure>
 
 In case of Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account (with an API key) for themself and as many separate merchant accounts as they need for the sub-merchants under them with separate API keys for each of them
 
@@ -81,7 +83,7 @@ In case of Marketplace merchants with multiple sub-merchants, the parent merchan
 
 For a merchant A with three different businesses (A\_Clothing, A\_Shoes, A\_Bags) they can create just one merchant account on Hyperswitch with three business profiles (Clothing, Shoes, Bags) under it. This way, the merchant can use only one Hyperswitch API key to manage transactions for all three businesses.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).jpg" alt=""><figcaption><p>A merchant with single merchant account and multiple business profile under the merchant account</p></figcaption></figure>
 
 For Marketplace merchants with multiple sub-merchants, the parent merchant can create one Hyperswitch merchant account with an API key access and multiple business profiles under it to represent the different sub-merchants. This way the parent merchant will be able to manage their multiple sub-merchants tightly under one Hyperswitch merchant account and API key.
 
@@ -89,7 +91,7 @@ For Marketplace merchants with multiple sub-merchants, the parent merchant can c
 
 ### How to configure multiple merchant accounts
 
-When you sign up on Hyperswitch, a merchant account and a profile is created under your organisation account by default.&#x20;
+When you sign up on Hyperswitch, a merchant account and a profile is created under your organisation account by default.
 
 To create more merchant accounts, click the merchant account dropdown from the left top corner in your Hyperswitch dashboard, and click on the create new merchant option.
 
@@ -97,7 +99,7 @@ To create more merchant accounts, click the merchant account dropdown from the l
 
 ### How to configure multiple business profiles
 
-To create more profiles, click the profile dropdown from the right top corner in your Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.&#x20;
+To create more profiles, click the profile dropdown from the right top corner in your Hyperswitch dashboard, and click on the create new profile option. Here you will also see a list of already configured business profiles for your merchant account.
 
 * As mentioned already, a ‘default’ profile is already created during your merchant account creation. 'profile\_id’ of various business profiles can be found under Settings → Business Profiles.
 

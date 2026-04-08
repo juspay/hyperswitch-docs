@@ -1,6 +1,13 @@
 ---
+description: >-
+  Configure volume-based, rule-based, or fallback routing strategies to
+  distribute payout traffic across multiple processors using the Hyperswitch
+  Smart Router.
 icon: swap
-description: Configure volume-based, rule-based, or fallback routing strategies to distribute payout traffic across multiple processors using the Hyperswitch Smart Router.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/route-your-payout-transactions-using-smart-router
 ---
 
 # Smart Router for Payouts
@@ -25,7 +32,7 @@ To utilize Smart Routing, you must have at least two payout processors integrate
 
 Navigate to Workflow -> Payout Routing in your [Dashboard](https://app.hyperswitch.io).
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption><p>Head to Payout Routing</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption><p>Head to Payout Routing</p></figcaption></figure>
 
 #### Select a Routing Strategy
 
@@ -35,9 +42,9 @@ Hyperswitch supports three distinct formats for payout orchestration:
 * [Rule-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing): Create conditional logic (if/then) to route payouts based on specific attributes like currency, region, or method.
 * [Default Fallback Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/default-fallback-routing): Establish a static priority list. If a primary processor is unavailable, the system attempts the payout with the next processor in the sequence.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>Volume Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (12).png">image (12).png</a></td></tr><tr><td></td><td>Rule Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (13).png">image (13).png</a></td></tr><tr><td></td><td>Default fallback Routing</td><td></td><td><a href="../../../.gitbook/assets/image (14).png">image (14).png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>Volume Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (71).png">image (71).png</a></td></tr><tr><td></td><td>Rule Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (72).png">image (72).png</a></td></tr><tr><td></td><td>Default fallback Routing</td><td></td><td><a href="../../../.gitbook/assets/image (73).png">image (73).png</a></td></tr></tbody></table>
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption><p>View configured rules</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption><p>View configured rules</p></figcaption></figure>
 
 #### Manage and Activate Configurations
 
@@ -46,8 +53,8 @@ Once your rules are defined, you can manage them from the Payout Routing summary
 * Activation: Only one routing configuration (Volume, Rule, or Fallback) can be active at any given time.
 * Switching Rules: To change the active logic, select a saved configuration and click `Activate Configuration`.
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Activate routing rule</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption><p>Activate routing rule</p></figcaption></figure>
 
 Fallback Behavior: If no custom routing rule is activated, Hyperswitch will automatically process transactions based on the order defined in your Default Fallback Priority list.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>

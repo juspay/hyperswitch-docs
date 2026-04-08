@@ -1,6 +1,10 @@
 ---
 description: Effectively enhance fraud detection with your preferred FRM engine
 icon: shield-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/fraud-and-risk-management
 ---
 
 # Fraud & Risk Management
@@ -22,6 +26,6 @@ The Juspay Hyperswitch Fraud and Risk Management (FRM) workflow offers a compreh
 
 ### Supported FRM workflows
 
-| Pre-authorization flow                                                                                                                                 | Post-authorization flow                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pre-authorization flow                                                                                                                                 | Post-authorization flow                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The Pre-Auth flow is executed before payment authorization. This flow is supported for any payment method. Actions supported are: Continue on `Accept` | The Post-Auth flow occurs after payment authorization by the processor. This flow is supported for only cards payment method. Actions supported are: Continue to `Accept`, Halt on `Decline`, Approve/Decline on `Review` |

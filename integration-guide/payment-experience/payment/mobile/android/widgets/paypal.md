@@ -1,6 +1,12 @@
 ---
-description: Learn how to integrate the PayPal widget for accepting PayPal payments in your Android app using Juspay Hyperswitch SDK.
+description: >-
+  Learn how to integrate the PayPal widget for accepting PayPal payments in your
+  Android app using Juspay Hyperswitch SDK.
 icon: paypal
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/widgets/paypal
 ---
 
 # PayPal

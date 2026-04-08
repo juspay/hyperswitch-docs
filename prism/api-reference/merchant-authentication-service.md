@@ -1,6 +1,16 @@
+---
+description: >-
+  Generate access tokens and session credentials for secure payment processing
+  and SDK initiation
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference/merchant-authentication-service
+---
+
 # Merchant Authentication Service Overview
 
-## Overview
+### Overview
 
 The Merchant Authentication Service provides secure authentication mechanisms for payment processing. It generates short-lived access tokens for API access, session tokens for maintaining payment state, and SDK session tokens for wallet payments like Apple Pay and Google Pay.
 
@@ -13,7 +23,7 @@ The Merchant Authentication Service provides secure authentication mechanisms fo
 
 The service enables secure payment flows by providing temporary credentials that expire after a short duration, reducing the risk of credential compromise.
 
-## Operations
+### Operations
 
 | Operation                                              | Description                                                                                                                                       | Use When                                             |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
@@ -21,14 +31,13 @@ The service enables secure payment flows by providing temporary credentials that
 | [`CreateSessionToken`](create-session-token.md)        | Create session token for payment processing. Maintains session state across multiple payment operations for improved security and tracking.       | Multi-step payment flows requiring state persistence |
 | [`CreateSdkSessionToken`](create-sdk-session-token.md) | Initialize wallet payment sessions for Apple Pay, Google Pay, etc. Sets up secure context for tokenized wallet payments with device verification. | Enabling Apple Pay, Google Pay checkout options      |
 
-## Common Patterns
+### Common Patterns
 
-### Secure Client-Side Payment Flow
+#### Secure Client-Side Payment Flow
 
 Generate temporary tokens for client applications to process payments without exposing long-lived API credentials.
 
-```mermaid
-sequenceDiagram
+{% @mermaid/diagram content="sequenceDiagram
     participant App as Your App
     participant CS as Connector Service
     participant PP as Payment Provider
@@ -48,8 +57,7 @@ sequenceDiagram
     App->>CS: 2. Authorize (with payment_method_token)
     CS->>PP: Process payment
     PP-->>CS: Return authorization
-    CS-->>App: Return connector_transaction_id
-```
+    CS-->>App: Return connector_transaction_id" %}
 
 **Flow Explanation:**
 
@@ -59,12 +67,11 @@ sequenceDiagram
 
 ***
 
-### Apple Pay Integration
+#### Apple Pay Integration
 
 Initialize Apple Pay sessions for seamless mobile checkout.
 
-```mermaid
-sequenceDiagram
+{% @mermaid/diagram content="sequenceDiagram
     participant Customer as Customer
     participant iOS as iOS App
     participant App as Your Backend
@@ -86,8 +93,7 @@ sequenceDiagram
     App->>CS: 2. Authorize (with Apple Pay token)
     CS->>PP: Process payment
     PP-->>CS: Return authorization
-    CS-->>App: Return connector_transaction_id
-```
+    CS-->>App: Return connector_transaction_id" %}
 
 **Flow Explanation:**
 
@@ -97,7 +103,7 @@ sequenceDiagram
 
 ***
 
-## Security Best Practices
+### Security Best Practices
 
 **Token Expiration:**
 
@@ -117,7 +123,7 @@ sequenceDiagram
 * Never authorize payments from client
 * Use tokens only for tokenization/UI
 
-## Next Steps
+### Next Steps
 
-* [Payment Service](services/payment-service/) - Process payments after authentication
+* [Payment Service](payment-service/) - Process payments after authentication
 * [Payment Method Service](payment-method-service.md) - Tokenize payment methods

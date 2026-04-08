@@ -1,5 +1,9 @@
 ---
 description: Troubleshoot common issues with React Native and Flutter SDKs
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/troubleshooting
 ---
 
 # Troubleshooting
@@ -10,7 +14,7 @@ This guide helps you resolve common issues encountered when integrating Juspay H
 
 1. If you encounter issues related to the **Android browser dependency**, ensure that the required AndroidX Browser version is defined in your project.
 
-&#x20;Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
+Add the following versions in your **root `build.gradle`** (or version catalog equivalent):
 
 ```
 ext {

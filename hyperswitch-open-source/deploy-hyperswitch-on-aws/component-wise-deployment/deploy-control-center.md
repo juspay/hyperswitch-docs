@@ -1,8 +1,12 @@
 ---
 description: >-
-  Use the standalone deployment script to deploy Juspay Hyperswitch control center on
-  AWS quickly
+  Use the standalone deployment script to deploy Juspay Hyperswitch control
+  center on AWS quickly
 icon: building-columns
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center
 ---
 
 # Deploy Control Center
@@ -27,7 +31,7 @@ This setup includes:
 
 * An AWS account (you can create an account [here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?refid=em_127222) if you do not have one)
 
-> #### Note
+> **Note**
 >
 > You can directly start from [Step 3](deploy-control-center.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 

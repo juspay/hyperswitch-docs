@@ -1,19 +1,25 @@
 ---
-description: Modular, embeddable alternate payment methods (APMs) known as Hyperwidgets that merchants can use to augment their existing checkout with minimal code.
+description: >-
+  Modular, embeddable alternate payment methods (APMs) known as Hyperwidgets
+  that merchants can use to augment their existing checkout with minimal code.
 icon: bolt-lightning
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets
 ---
 
 # Alternate Payment Method Widgets
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (2).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (4).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Let us understand with an example:
 
 In the below checkout screen the merchant only has Cards and Paypal offered by their current PSP.
 
-<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.27.13.png" alt=""><figcaption></figcaption></figure>
 
 But, if the merchant decides to enable more alternate payment methods (APMs), the problems can be multifold:
 
@@ -26,13 +32,13 @@ But, if the merchant decides to enable more alternate payment methods (APMs), th
 
 In the image below you can find a checkout page with more alternate payment methods via Hyperwidgets.
 
-<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-03-10 at 13.32.06.png" alt=""><figcaption><p>Checkout page with more alternate payment methods</p></figcaption></figure>
 
 **Additional example:**
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2F5V5WWx1Q4KQglFRvGp13%2FGroup%201000003880.png?alt=media&token=e34dcdf3-c715-484c-ab81-0a78c5865632" alt="" width="563"><figcaption><p>Example: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2F5V5WWx1Q4KQglFRvGp13%2FGroup%201000003880.png?alt=media&#x26;token=e34dcdf3-c715-484c-ab81-0a78c5865632" alt="" width="563"><figcaption><p>Example: Checkout page only has Cards and Google Pay offered by their current PSP</p></figcaption></figure>
 
-<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FzFhf33ZBiGwXvInNN3Ma%2FFrame%201321316973.png?alt=media&token=cd12e266-9e04-4688-8a35-84d8b6813a64" alt="" width="563"><figcaption><p>Example: Checkout page with more alternate payment methods</p></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fkf7BGdsPkCw9nalhAIlE%2Fuploads%2FzFhf33ZBiGwXvInNN3Ma%2FFrame%201321316973.png?alt=media&#x26;token=cd12e266-9e04-4688-8a35-84d8b6813a64" alt="" width="563"><figcaption><p>Example: Checkout page with more alternate payment methods</p></figcaption></figure>
 
 ### How is Hyperwidget engineered
 

@@ -1,6 +1,13 @@
 ---
-description: Accept payments through MultiSafepay — a Dutch fintech providing online payment processing, digital wallets, and fraud prevention — via Juspay Hyperswitch.
+description: >-
+  Accept payments through MultiSafepay — a Dutch fintech providing online
+  payment processing, digital wallets, and fraud prevention — via Juspay
+  Hyperswitch.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/multisafepay
 ---
 
 # MultiSafepay

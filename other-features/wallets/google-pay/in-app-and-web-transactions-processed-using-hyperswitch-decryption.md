@@ -2,6 +2,10 @@
 description: >-
   Process Google Pay in-app and web transactions through Hyperswitch decryption
   for flexible routing to any downstream processor
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption

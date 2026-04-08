@@ -1,6 +1,10 @@
 ---
 description: Build cross-platform payments with React Native and Flutter SDKs
 icon: layer-plus
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform
 ---
 
 # Cross Platform

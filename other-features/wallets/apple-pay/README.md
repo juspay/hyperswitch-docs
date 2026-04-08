@@ -3,6 +3,10 @@ description: >-
   Complete guide to integrating Apple Pay wallet payment method with Juspay
   Hyperswitch for web and iOS platforms
 icon: apple-pay
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/apple-pay
 ---
 
 # Apple Pay

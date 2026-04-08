@@ -4,6 +4,10 @@ description: >-
   including test credentials for popular connectors and payment methods like
   Klarna, Google Pay, and Apple Pay.
 icon: vial-circle-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector
 ---
 
 # Try a Payment

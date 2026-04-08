@@ -3,13 +3,17 @@ description: >-
   Optimize transaction success across multiple gateways using ML-driven
   Multi-Armed Bandit with Delayed Feedback approach
 icon: badge-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/auth-rate-based-routing
 ---
 
 # Auth Rate Based Routing
 
 ### How does it work?
 
-**Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.&#x20;
+**Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.
 
 At its core, the system treats each Gateway as a dynamic option in a decision-making model known as a **Non-stationary Multi-Armed Bandit (MAB)** with **Delayed Feedback**. This allows the routing logic to account for both fluctuating success rates and variable response times.
 
@@ -22,13 +26,13 @@ To keep decisions current and responsive, the system uses a **sliding window** t
 
 By intelligently balancing experimentation with optimization, Auth Rate Based Routing helps ensure higher authorization success, improved customer experience, and better utilization of Gateway infrastructure.
 
-<figure><img src="../../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 ### Key Configurations
 
 * Bucket size : No. of payments included in a block limited by count or time period
-* Aggregate pipeline size :&#x20;
-  * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time&#x20;
+* Aggregate pipeline size :
+  * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time
   * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
 
 ### How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?

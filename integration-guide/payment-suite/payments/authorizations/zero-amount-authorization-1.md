@@ -1,15 +1,19 @@
 ---
 description: Best way to validate customer payment data and charge the customer later
 icon: circle-0
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations/zero-amount-authorization-1
 ---
 
-# Zero Amount Authorization
+# $0 Authorization
 
 {% hint style="info" %}
 In this section, we will understand zero-auth flow, it's usage, and webhook consumption
 {% endhint %}
 
-The zero amount authorization flow in Juspay Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment_method_id would be created and issued to the merchant. And in the future they can charge against this payment_method_id.
+The zero amount authorization flow in Juspay Hyperswitch allows the merchant to validate customer payment data and charge the customer later. On customer registration, the merchant can initiate a zero-auth flow transaction with Hyperswitch to authenticate the customer payment method (card, bank account etc.) and receive authorization from the customer to use the payment method to charge them at a later point. A payment\_method\_id would be created and issued to the merchant. And in the future they can charge against this payment\_method\_id.
 
 The following API cURLs demonstrate the usage of the zero-auth flow. The example below uses the credit card payment method. But this can be extended to bank debits and other payment methods as well.
 
@@ -37,7 +41,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-2. Confirm the payment after collecting payment information from the user **[You can skip this step if you are using the Hyperswitch Unified Checkout]**
+2. Confirm the payment after collecting payment information from the user **\[You can skip this step if you are using the Hyperswitch Unified Checkout]**
 
 ```bash
 curl --location 'http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' \
@@ -91,7 +95,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments/{{payment_id}}/confirm' 
 }'
 ```
 
-3. Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment_method_id in the response
+3. Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
@@ -99,7 +103,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-4. Charge the customer later by passing the payment_method_id **(Called as 'MIT': Merchant initiated Transaction)**
+4. Charge the customer later by passing the payment\_method\_id **(Called as 'MIT': Merchant initiated Transaction)**
 
 Pass the above `payment_method_id` under the `recurring_details` object along with `off_session=true` in the payments request and confirm the payment. Make sure you are using the same `customer_id` and `profile_id` from the CIT.
 

@@ -1,6 +1,10 @@
 ---
 description: Integrate hyper SDK to your Swift App using hyperswitch-node
 icon: swift
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/ios/swift-with-rest-api-integration
 ---
 
 # Swift with REST API Integration

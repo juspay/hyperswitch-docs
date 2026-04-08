@@ -1,11 +1,18 @@
 ---
+description: >-
+  Learn how to integrate Hyperswitch embeddable components into your React
+  application using the SDK with JWT-based authentication for secure connector
+  configuration.
 hidden: true
-description: Learn how to integrate Hyperswitch embeddable components into your React application using the SDK with JWT-based authentication for secure connector configuration.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/beta-embeddable-components/integration-guide
 ---
 
 # Integration Guide
 
-> **This guide has now been replaced with [integration-reference.md](integration-reference.md)**
+> **This guide has now been replaced with** [**integration-reference.md**](integration-reference.md)
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
@@ -33,13 +40,13 @@ Before you begin, ensure your environment meets the following requirements:
 Since the package is currently hosted on GitHub (not yet on the public npm registry), you must install it by pointing your package.json to the specific repository.
 
 1. Open your package.json file.
-2. Add the following line to your dependencies object:
+2.  Add the following line to your dependencies object:
 
-   ```json
-   "dependencies": {
-     "hyperswitch-control-center-embedded": "github:juspay/hyperswitch-control-center-embedded"
-   }
-   ```
+    ```json
+    "dependencies": {
+      "hyperswitch-control-center-embedded": "github:juspay/hyperswitch-control-center-embedded"
+    }
+    ```
 3. Run the installation command in your terminal:
 
 ```bash

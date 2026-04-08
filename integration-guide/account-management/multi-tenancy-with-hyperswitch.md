@@ -3,6 +3,10 @@ description: >-
   Understand multi-tenancy architecture to manage multiple tenants with
   customized and logically isolated Hyperswitch stack environments
 icon: cubes-stacked
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multi-tenancy-with-hyperswitch
 ---
 
 # Multi-Tenancy

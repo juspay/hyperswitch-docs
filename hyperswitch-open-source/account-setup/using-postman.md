@@ -3,6 +3,10 @@ description: >-
   Create your Hyperswitch account and add a payment provider using Hyperswitch
   APIs through postman
 icon: rocket-launch
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup/using-postman
 ---
 
 # Using postman

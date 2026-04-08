@@ -1,5 +1,9 @@
 ---
 description: Integrate web client for a seamless, blended and a unified payment experience
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app
 ---
 
 # Integrate web client on your web app

@@ -1,6 +1,10 @@
 ---
 description: Assign roles and permission to users
 icon: screen-users
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/manage-your-team
 ---
 
 # Manage Your Team

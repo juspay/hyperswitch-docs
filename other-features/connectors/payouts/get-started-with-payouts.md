@@ -3,6 +3,10 @@ description: >-
   Learn how to configure payout processors and process payouts via the
   Hyperswitch Dashboard and API.
 icon: flag-checkered
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/get-started-with-payouts
 ---
 
 # Getting Started with Payouts
@@ -11,7 +15,7 @@ To begin processing payouts with Juspay Hyperswitch, you must first establish ac
 
 The following diagram illustrates the interaction between your application, the Hyperswitch orchestration layer, and the underlying payout processors.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 ### Configuration Resources
 
@@ -35,16 +39,16 @@ Log in to the [Hyperswitch Dashboard](https://app.hyperswitch.io) and follow the
 
 1.  **Navigate to Payout Processors:** Select the **Payout Processors** tab from the sidebar, then choose a processor from the supported list to open the configuration modal.
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption><p>Payout Processors list</p></figcaption></figure>
 2.  **Provide Credentials:** Enter the authentication keys required by the specific processor to enable communication.
 
-    <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption><p>Configuring auth keys for communicating with the processor</p></figcaption></figure>
 3.  **Enable Payment Methods:** Select the specific payout methods (e.g., Bank Transfer, Cards) you intend to use for this processor.
 
-    <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption><p>Keep preferred payment methods enabled</p></figcaption></figure>
 4.  **Confirm Configuration:** Once saved, the processor will appear as "Active" in your list.
 
-    <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption><p>Successfully configured!</p></figcaption></figure>
 
 #### Processing Payouts via API
 
@@ -52,14 +56,14 @@ For testing and initial integration, you can use the [Hyperswitch Postman Collec
 
 1.  **Import Collection:** Download and import the collection into your Postman workspace.
 
-    <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 2.  **Configure Environment Variables:** In the **Variables** tab, set the following parameters:
 
     * `baseUrl`: `https://sandbox.hyperswitch.io`
     * `merchant_id`: Your unique merchant identifier.
     * `api_key`: Your Hyperswitch API secret key.
 
-    <figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in postman collection</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption><p>Updating env variables in postman collection</p></figcaption></figure>
 3. **Execute Payout:** Navigate to the **Process Payouts** section of the collection to send a `POST` request to the `/payouts/create` endpoint.
 
 {% content-ref url="process-payouts-using-saved-payment-methods.md" %}

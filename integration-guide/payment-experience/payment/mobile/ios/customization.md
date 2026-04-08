@@ -1,6 +1,12 @@
 ---
-description: Customize your iOS Unified Checkout with fonts, colors, shapes and layouts to match your brand guidelines.
+description: >-
+  Customize your iOS Unified Checkout with fonts, colors, shapes and layouts to
+  match your brand guidelines.
 icon: bars-progress
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/ios/customization
 ---
 
 # Customization

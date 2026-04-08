@@ -1,11 +1,15 @@
 ---
 description: Set up and manage recurring payments with Card-on-File and MIT support
 icon: arrows-rotate-reverse
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/recurring-payments
 ---
 
 # Recurring payments
 
-Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.&#x20;
+Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.
 
 ### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
@@ -42,15 +46,13 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-
-
 #### 2. Zero Dollar Authorization (Mandate-Only Setup)
 
 **Use Case:** Use this for free trials, pay-later models, or delayed billing. This flow validates the payment method details without charging the customer's card.
 
 **Required API Configuration**
 
-Pass below parameters while calling payments API for [Zero Dollar Auth ](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)&#x20;
+Pass below parameters while calling payments API for [Zero Dollar Auth](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)
 
 | Parameter            | Value          |
 | -------------------- | -------------- |
@@ -80,11 +82,11 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id`  can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id`  (NTID) in its response to allow PICI compliant merchants to direct pass card + NTID for processing MIT recurring payments&#x20;
+Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PICI compliant merchants to direct pass card + NTID for processing MIT recurring payments
 
-The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).  A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.  This uniqueness applies across all payment types, including cards, wallets, and bank details.
+The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account). A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`. This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
-For example, you can refer the below table -&#x20;
+For example, you can refer the below table -
 
 | **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
 | --------------- | --------------------------------- | --------------------- |
@@ -93,13 +95,11 @@ For example, you can refer the below table -&#x20;
 | 456             | Visa ending in 4242               | `PM3`                 |
 | 123             | PayPal Account (`user@email.com`) | `PM4`                 |
 
-Internally the payment\_method\_id is mapped to a bunch of credentials -  PSP token, Raw card + NTID, Network token + NTID depending on functionalities enabled for the merchant.
-
-
+Internally the payment\_method\_id is mapped to a bunch of credentials - PSP token, Raw card + NTID, Network token + NTID depending on functionalities enabled for the merchant.
 
 ### Customer Consent Capture (Mandate Compliance)
 
-If you are not using Hyperswitch SDK, then `customer_acceptance`  (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
+If you are not using Hyperswitch SDK, then `customer_acceptance` (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
 
 ```bash
 "customer_acceptance": {
@@ -126,15 +126,15 @@ MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswit
 
 #### [**Payment Method ID**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-recurring-details)
 
-Submit the Hyperswitch generated payment\_method\_id to process the MIT transaction. Depending on the merchant configurations the MIT will be processed with the same PSP or with a different PSP.&#x20;
+Submit the Hyperswitch generated payment\_method\_id to process the MIT transaction. Depending on the merchant configurations the MIT will be processed with the same PSP or with a different PSP.
 
-#### [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3)&#x20;
+#### [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3)
 
-&#x20;Submit a processor-issued token that represents the previously authorized payment instrument.
+Submit a processor-issued token that represents the previously authorized payment instrument.
 
-#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)&#x20;
+#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)
 
-&#x20;Provide the original network transaction identifier along with the associated primary card data required for authorization.
+Provide the original network transaction identifier along with the associated primary card data required for authorization.
 
 {% hint style="info" %}
 ⚠️ **PSP Configuration Required**
@@ -150,11 +150,11 @@ Email the PSP Support requesting:
 * Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
 {% endhint %}
 
-#### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**&#x20;
+#### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**
 
 Submit the network transaction identifier in combination with the corresponding network tokenized card credentials.
 
-#### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**&#x20;
+#### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**
 
 Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
@@ -168,7 +168,7 @@ To mitigate this we would be storing the Network Transaction ID which will be a 
 
 In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
 
-<figure><img src="../../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 #### Enabling Connector agnostic MITs
 

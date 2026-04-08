@@ -1,6 +1,12 @@
 ---
+description: >-
+  Overview of Juspay Hyperswitch reconciliation services including data
+  ingestion, transformation, and error management capabilities.
 hidden: true
-description: Overview of Juspay Hyperswitch reconciliation services including data ingestion, transformation, and error management capabilities.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/services
 ---
 
 # Services
@@ -46,4 +52,4 @@ The transformation service handles virtually any data format your payment proces
 * Detailed error categorization and resolution guidance
 * Automatic alerts for systematic data issues
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>

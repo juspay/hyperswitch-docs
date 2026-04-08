@@ -1,6 +1,12 @@
 ---
+description: >-
+  Production readiness checklists for going live with Juspay Hyperswitch,
+  covering both SaaS and on-premise deployment models
 icon: rocket-launch
-description: Production readiness checklists for going live with Juspay Hyperswitch, covering both SaaS and on-premise deployment models
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live
 ---
 
 # Going live

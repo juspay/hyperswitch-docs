@@ -3,6 +3,10 @@ description: >-
   Guide to integrating Hyperwidgets for enabling alternate payment methods
   (APMs) across multiple PSPs with minimal code changes.
 icon: plug-circle-bolt
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets/hyperwidget-integration-guide
 ---
 
 # Hyperwidget Integration Guide
@@ -13,7 +17,7 @@ Juspay Hyperswitch provides a code transformer that allows the merchant to lever
 
 The unified dashboard offers the merchants ability to enable or disable APMs via any PSP. The dashboard also offers capabilities like - Analytics, Operations, Refunds, Chargebacks, and Reconciliation.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported APM features
 

@@ -2,6 +2,10 @@
 description: >-
   Code of conduct and Slack participation guide for the Hyperswitch open-source
   community
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/community/community-guidelines
 ---
 
 # Community Guidelines
@@ -71,5 +75,4 @@ They may take action at their discretion to uphold these guidelines.
 
 * [🔗 Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
 * [🌐 Hyperswitch Website](https://hyperswitch.io)
-* [🧑‍💻 GitHub Repository\
-  ](https://github.com/juspay/hyperswitch)\
+* [🧑‍💻 GitHub Repository<br>](https://github.com/juspay/hyperswitch)\\

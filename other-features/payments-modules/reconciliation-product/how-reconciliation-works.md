@@ -3,6 +3,10 @@ description: >-
   Understand how Juspay Hyperswitch Reconciliation Engine uses rule-based
   architecture to automatically match transactions and resolve financial
   discrepancies
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/how-reconciliation-works
 ---
 
 # How Reconciliation Works

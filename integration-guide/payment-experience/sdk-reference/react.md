@@ -1,14 +1,20 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference/react
+---
+
 # React
 
-Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount.  You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.\
+Hyperswitch's React SDK comes with a lot of features that give you complete control of your entire payment journey, from preloading to rendering and unmount. You can use the props to change the appearance, reorder payment methods and much more to suit your business needs.\
 \
-The React SDK offers 2 integral elements for you to use:&#x20;
+The React SDK offers 2 integral elements for you to use:
 
 1. Hooks
 2. Components
 
-The API for both the Hooks and Components are listed down below. \
-
+The API for both the Hooks and Components are listed down below. \\
 
 ### 1. Hooks
 
@@ -100,11 +106,11 @@ Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a Payment
 
 `clientSecret` is a required string.
 
-#### 5.  `hyper.initiateUpdateIntent()`
+#### 5. `hyper.initiateUpdateIntent()`
 
 Use `hyper.initiateUpdateIntent()` just before you start updating the payment intent on your end. It doesn't require any input. When invoked, it signals the system to prepare for the update process and returns a confirmation message indicating that the update has been initiated.
 
-#### 6.  `hyper.completeUpdateIntent(clientSecret)`
+#### 6. `hyper.completeUpdateIntent(clientSecret)`
 
 Use `hyper.completeUpdateIntent(clientSecret)` after you’ve completed the payment intent update process on your side. It takes the updated `clientSecret` as input and signals the system to complete the update flow. It returns a response with a confirmation message indicating the update has been processed.
 
@@ -123,8 +129,7 @@ This method retrieves a previously created Payment Element. Here the `type` is `
 elements.getElement('payment') returns one of the following:
 
 * An instance of a Unified Checkout.
-* `null`, when no Unified Checkout has been created.\
-
+* `null`, when no Unified Checkout has been created.\\
 
 **2. `elements.create(type, options?)`**
 
@@ -143,8 +148,6 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `hideIcon`         | Hides the icon in the Element. Default is false.                                                                                               |
 | `disabled`         | Applies a disabled state to the Element such that user input is not accepted. Default is false.                                                |
 
-
-
 **Classes object**
 
 | classes    | Description                                                                              |
@@ -153,8 +156,6 @@ The type can be ‘payment’ for UnifiedCheckout.
 | `complete` | The class name to apply when the Element is complete. Defaults to HyperElement—complete. |
 | `focus`    | The class name to apply when the Element is focused. Defaults to HyperElement--focus.    |
 | `invalid`  | The class name to apply when the Element is invalid. Defaults to HyperElement--invalid.  |
-
-
 
 **`3. element.update(options)`**
 
@@ -170,34 +171,30 @@ The styles of an Element can be dynamically changed using element.update. This m
 | `appearance (object)`   | Supported for the Unified CheckoutMatch the design of your site with the appearance option. The layout of each Element stays consistent, but you can modify colors, fonts, borders, padding, and more.                                                                      |
 | `clientSecret (string)` | Required to use with the Unified Checkout and the Hyper WidgetsThe client secret for a PaymentIntent                                                                                                                                                                        |
 
-
-
 ### 2. Components
 
 ### `<HyperElements hyper options />`
 
 This component wraps around the entire app and it consumes 2 parameters -
 
-<table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td><code>hyper (promise)</code></td><td>This is the response that you get after calling the  loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td><code>options (object)</code></td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
-
-
+<table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td><code>hyper (promise)</code></td><td>This is the response that you get after calling the loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td><code>options (object)</code></td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
 
 ### `<UnifiedCheckout options onChange? onReady? onFocus? onBlur? onClick? />`
 
-This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.&#x20;
+This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.
 
-| parameters                        | Description                                                                                          |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `options (object)`                | This has the same API as elements.create()                                                           |
-| `onChange (function:event=>unit)` | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout  |
-| `onReady (function:event=>unit)`  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                 |
-| `onFocus (function:event=>unit)`  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout.  |
-| `onBlur (function:event=>unit)`   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.  |
-| `onClick (function:event=>unit)`  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.    |
+| parameters                        | Description                                                                                         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `options (object)`                | This has the same API as elements.create()                                                          |
+| `onChange (function:event=>unit)` | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout |
+| `onReady (function:event=>unit)`  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                |
+| `onFocus (function:event=>unit)`  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout. |
+| `onBlur (function:event=>unit)`   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout. |
+| `onClick (function:event=>unit)`  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.   |
 
 ### `<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
-This component is the CardWidget, which is a 1 line payment method consisting of only card. This is a compact widget which fits anywhere in a webpage. \
+This component is the CardWidget, which is a 1 line payment method consisting of only card. This is a compact widget which fits anywhere in a webpage.\
 \
 It follows the same API as Unified Checkout
 
@@ -205,30 +202,30 @@ It follows the same API as Unified Checkout
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
-It follows the same API as Unified Checkout&#x20;
+It follows the same API as Unified Checkout
 
 {% hint style="info" %}
-You need to use it along with CardCVCWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
+You need to use it along with CardCVCWidget and CardExpiryWidget components, it cannot function as a standalone component.
 {% endhint %}
 
 ### `<CardCVCWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
-It follows the same API as Unified Checkout&#x20;
+It follows the same API as Unified Checkout
 
 {% hint style="info" %}
-You need to use it along with CardNumberWidget and CardExpiryWidget components, it cannot function as a standalone component.&#x20;
+You need to use it along with CardNumberWidget and CardExpiryWidget components, it cannot function as a standalone component.
 {% endhint %}
 
 ### `<CardExpiryWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
 This component loads up a small individual input field iframe which communicates with other iframes to collect card information and make API calls.\
 \
-It follows the same API as Unified Checkout&#x20;
+It follows the same API as Unified Checkout
 
 {% hint style="info" %}
-You need to use it along with CardCVCWidget and CardNumberWidget components, it cannot function as a standalone component.&#x20;
+You need to use it along with CardCVCWidget and CardNumberWidget components, it cannot function as a standalone component.
 {% endhint %}
 
 ### Unified Checkout

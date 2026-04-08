@@ -3,6 +3,10 @@ description: >-
   Understand how Juspay Hyperswitch captures, classifies, and manages
   reconciliation exceptions—including Mismatched and Expected transaction
   anomalies—to maintain financial data integrity.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling
 ---
 
 # Exception Handling

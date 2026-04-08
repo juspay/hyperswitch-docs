@@ -4,6 +4,10 @@ description: >-
   authentication
 hidden: true
 icon: angles-up
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries/3ds-step-up-retries
 ---
 
 # 3DS Step-up Retries
@@ -24,10 +28,6 @@ Hyperswitch supports the following processors for 3DS Step-up retries.
 
 * Bluesnap
 * Stripe
-* Paypal
-* Nuvei
-* &#x20;Zift&#x20;
-* Worldpay (WPG)
 
 In case you wish more processors to be covered for 3DS Step-up retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
 

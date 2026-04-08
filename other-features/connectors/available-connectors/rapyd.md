@@ -1,5 +1,11 @@
 ---
-description: Learn how to activate Rapyd as a payment connector on Juspay Hyperswitch to accept and send global payments across multiple payment methods.
+description: >-
+  Learn how to activate Rapyd as a payment connector on Juspay Hyperswitch to
+  accept and send global payments across multiple payment methods.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/rapyd
 ---
 
 # Rapyd

@@ -1,6 +1,12 @@
 ---
-description: Accept payments through Fiserv using Juspay Hyperswitch — configure API keys, prerequisites, and supported payment methods.
+description: >-
+  Accept payments through Fiserv using Juspay Hyperswitch — configure API keys,
+  prerequisites, and supported payment methods.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/fiserv
 ---
 
 # Fiserv

@@ -1,7 +1,11 @@
 ---
+description: How to reduce payment processing fees and costs?
 hidden: true
 noIndex: true
-description: How to reduce payment processing fees and costs?
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/faqs/cost-and-margin-optimization-faqs
 ---
 
 # Cost and Margin Optimization FAQs

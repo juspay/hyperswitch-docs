@@ -1,6 +1,13 @@
 ---
-description: Accept payments globally through Worldline via Juspay Hyperswitch — enabling in-store, online, and omnichannel payment solutions with increased conversion and approval rates.
+description: >-
+  Accept payments globally through Worldline via Juspay Hyperswitch — enabling
+  in-store, online, and omnichannel payment solutions with increased conversion
+  and approval rates.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/worldline
 ---
 
 # Worldline

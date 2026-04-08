@@ -4,6 +4,10 @@ description: >-
   Juspay Hyperswitch for payment routing.
 hidden: true
 icon: up-right-from-square
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/external-vault-sdk-+-storage
 ---
 
 # External Vault SDK + Storage
@@ -25,7 +29,7 @@ When utilizing External Vaults, merchants have the flexibility to define how pay
 
 #### Understanding the flow
 
-##### Layered Integration
+**Layered Integration**
 
 <figure><img src="../../../../.gitbook/assets/Untitled (19).svg" alt=""><figcaption></figcaption></figure>
 
@@ -59,7 +63,7 @@ Hyperswitch uses the proxy API of the external vault and passes the token. The e
 
 Once the processor provides a final status, the response is relayed back from the external vault to the SDK. The customer is then redirected to your `return_url` to finalize the order experience.
 
-##### Independent Integration
+**Independent Integration**
 
 <figure><img src="../../../../.gitbook/assets/Untitled (20).svg" alt=""><figcaption></figcaption></figure>
 

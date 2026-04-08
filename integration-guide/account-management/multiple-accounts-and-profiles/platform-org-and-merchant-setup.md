@@ -1,6 +1,10 @@
 ---
 description: Platform Organization Setup & Workflow
 icon: garage-car
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup
 ---
 
 # Platform Org and Merchant Setup
@@ -21,7 +25,7 @@ A Platform Organization is a special type of organization in Hyperswitch designe
 The Platform API Key is a privileged credential owned by the Platform Merchant that serves the following controlled purposes within a Platform Organization.
 
 * It is used for management operations, such as creating merchant accounts (Standard or Connected), generating API keys, and managing platform-level configurations.
-* In a Connected merchant setup, it can be used to initiate and execute operations on behalf of Connected merchants, including processing payments, configuring connectors, creating profiles, and performing other merchant-scoped operations.&#x20;
+* In a Connected merchant setup, it can be used to initiate and execute operations on behalf of Connected merchants, including processing payments, configuring connectors, creating profiles, and performing other merchant-scoped operations.
 
 The Platform API Key cannot be used to perform payment or connector operations for Standard merchants, ensuring correct isolation and ownership boundaries.
 
@@ -33,9 +37,9 @@ This model is particularly useful for:
 
 ### Platform Org and Merchant Structure
 
-<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
 ### Merchant Classification in a Platform Organization
 

@@ -1,6 +1,10 @@
 ---
 description: Customize your Web unified checkout for Juspay Hyperswitch
 icon: bars-progress
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/customization
 ---
 
 # Customization
@@ -258,7 +262,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 #### Form Inputs
 
-<figure><img src="../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name | States             | Pseudo-Classes                       | Pseudo-Elements            |
 | ---------- | ------------------ | ------------------------------------ | -------------------------- |
@@ -268,7 +272,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 
 #### Checkbox
 
-<figure><img src="../../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 | Class Name     | States    | Pseudo-Classes | Pseudo-Elements |
 | -------------- | --------- | -------------- | --------------- |

@@ -1,6 +1,12 @@
 ---
-description: Reference table of client error codes returned by the SDK for graceful error handling in your web application.
+description: >-
+  Reference table of client error codes returned by the SDK for graceful error
+  handling in your web application.
 icon: ban
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/error-codes
 ---
 
 # Error Codes

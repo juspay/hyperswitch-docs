@@ -1,6 +1,10 @@
 ---
 description: Integrate Hyperswitch Lite SDK to your Kotlin App
 icon: mobile-screen
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/lite-sdk
 ---
 
 # Lite SDK

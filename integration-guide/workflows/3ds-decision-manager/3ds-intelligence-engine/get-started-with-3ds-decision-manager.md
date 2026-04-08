@@ -1,6 +1,10 @@
 ---
 description: Use Rules to reduce cardholder friction on transactions
 icon: screwdriver-wrench
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine/get-started-with-3ds-decision-manager
 ---
 
 # 3DS Decision Manager

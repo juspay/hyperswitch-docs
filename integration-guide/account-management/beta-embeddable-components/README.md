@@ -3,6 +3,10 @@ description: >-
   Embed pre-built white-labeled UI components into your application to integrate
   Hyperswitch payment orchestration seamlessly without redirecting users
 icon: laptop-code
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/beta-embeddable-components
 ---
 
 # Embeddable Components

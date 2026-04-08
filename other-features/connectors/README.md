@@ -2,8 +2,10 @@
 description: >-
   Integrate with 200+ connectors enabling 150+ payment methods with zero
   development effort.
-hidden: true
 icon: plug
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors
 ---
 
 # Connectors Integration

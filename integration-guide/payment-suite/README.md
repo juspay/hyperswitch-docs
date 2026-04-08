@@ -1,6 +1,10 @@
 ---
 description: Open, Modular, Self-Hostable Payment Infrastructure
 icon: container-storage
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite
 ---
 
 # Payments Flows
@@ -37,7 +41,7 @@ With the components defined, the next step is to select your integration archite
 
 Choose the integration method that best aligns with your payment flow requirements:
 
-#### Integration Model 1: Pay-Then-Vault
+#### Integration Model 1: Client-Side SDK Payments
 
 (Tokenize Post-Payment | SDK-Initiated Execution)
 
@@ -62,7 +66,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 ***
 
-#### Integration Model 2: Vault-Then-Pay
+#### Integration Model 2: Server-to-Server (S2S) Payments
 
 (Tokenize Pre-Payment | Backend-Controlled Execution)
 

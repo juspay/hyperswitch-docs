@@ -1,6 +1,10 @@
 ---
 description: Get started with Split Payments via Juspay Hyperswitch
 icon: split
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/hyperswitch-split-payments
 ---
 
 # Split Payments
@@ -33,11 +37,11 @@ To activate split Transactions:
 
 No custom orchestration logic is required on the merchant side beyond standard SDK integration.
 
-<figure><img src="../../../.gitbook/assets/Screen Recording 2026-02-04 at 9 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Recording 2026-02-04 at 9 (1).gif" alt=""><figcaption></figcaption></figure>
 
 ### Juspay Hyperswitch Split Payments Flow
 
-<figure><img src="../../../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled (12).svg" alt=""><figcaption></figcaption></figure>
 
 #### 1. Payment Initialization
 

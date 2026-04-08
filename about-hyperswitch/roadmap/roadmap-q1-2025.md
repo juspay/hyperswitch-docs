@@ -1,6 +1,10 @@
 ---
 description: Jan'25 - Mar'25
 icon: road
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/roadmap-q1-2025
 ---
 
 # Previous Roadmap - Q1 2025

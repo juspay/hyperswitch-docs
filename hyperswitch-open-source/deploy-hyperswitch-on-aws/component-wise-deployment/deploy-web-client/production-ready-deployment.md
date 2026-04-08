@@ -1,5 +1,11 @@
 ---
-description: Deploy Juspay Hyperswitch web client on AWS for production-ready payment integration
+description: >-
+  Deploy Juspay Hyperswitch web client on AWS for production-ready payment
+  integration
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment
 ---
 
 # Production ready deployment
@@ -10,11 +16,11 @@ In this section, you will be deploying the web client on your AWS account
 
 ### What do you need to get started
 
-* An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
+* An AWS account (you can create an account [here](https://portal.aws.amazon.com/billing/signup?refid=em_127222\&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email) if you do not have one)
 
 ### Let's begin!
 
-> #### Note
+> **Note**
 >
 > You can directly start from [Step 3](production-ready-deployment.md#step-3-setup-hyperswitch) if you have installed and configured AWS CLI
 
@@ -94,7 +100,7 @@ For this step you would need the following from your AWS account
 
 You can create or manage your access keys from the Security Credentials tab inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
-<figure><img src="../../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 
@@ -144,14 +150,9 @@ Now that the web client is hosted, you can integrate it with your app and go liv
 
 <summary>Troubleshooting/ FAQs</summary>
 
-* **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL**
-  Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.
-
-* **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists**
-  Please re-run the script and enter a unique name for the S3 bucket.
-
-* **AWS is throwing many errors while running the script**
-  Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/restrictions set to prevent cloud hosting.
+* **I cannot see anything on `http://my-bucket.s3.us-east-2.amazonaws.com/HyperLoader.js` or I get `404 Page not Found` on this URL** Please check your AWS S3 bucket details and make sure that the S3 bucket is created and has all the JS files. Post this, re-run the script to do a re-deployment.
+* **While running the script for creating a new S3 bucket, I get an error from AWS - bucket name already exists** Please re-run the script and enter a unique name for the S3 bucket.
+* **AWS is throwing many errors while running the script** Please ensure you have the relevant permissions to create and push on your AWS cloud. Also, ensure that there are no limits/restrictions set to prevent cloud hosting.
 
 </details>
 

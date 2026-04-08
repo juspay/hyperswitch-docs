@@ -1,6 +1,13 @@
 ---
-description: Configure Stripe Split Settlement in Hyperswitch to distribute payments between your platform and connected accounts using direct or destination charges.
+description: >-
+  Configure Stripe Split Settlement in Hyperswitch to distribute payments
+  between your platform and connected accounts using direct or destination
+  charges.
 icon: stripe
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments/stripe-split-payments
 ---
 
 # Stripe Split Settlement
@@ -74,7 +81,6 @@ For [Refunds](https://api-reference.hyperswitch.io/v1/refunds/refunds--create#re
 #### Refund Parameters
 
 * `revert_platform_fee` (`boolean`): Indicates whether the application fee should be refunded. If a full charge refund is given, the full fee is refunded; otherwise, it is proportional. Only the application that created the charge can refund it.
-
 * `revert_transfer` (`boolean`): Indicates whether the transfer should be reversed. Reversal is proportional to the amount being refunded (either the entire or partial amount). Only the application that created the charge can reverse the transfer.
 
 ### Recurring Payments (CIT/MIT)

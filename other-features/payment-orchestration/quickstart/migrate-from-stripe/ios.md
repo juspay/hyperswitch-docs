@@ -1,5 +1,11 @@
 ---
-description: A step-by-step guide to migrate your iOS app from Stripe to Hyperswitch payment processing in under 15 minutes.
+description: >-
+  A step-by-step guide to migrate your iOS app from Stripe to Hyperswitch
+  payment processing in under 15 minutes.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe/ios
 ---
 
 # iOS

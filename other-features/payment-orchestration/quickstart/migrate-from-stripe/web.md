@@ -1,5 +1,11 @@
 ---
-description: Migrate from Stripe on your web app in less than 15 minutes with Hyperswitch's UnifiedCheckout.
+description: >-
+  Migrate from Stripe on your web app in less than 15 minutes with Hyperswitch's
+  UnifiedCheckout.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe/web
 ---
 
 # Web

@@ -1,5 +1,11 @@
 ---
-description: Update Helm charts to the latest Hyperswitch nightly release for access to newest features
+description: >-
+  Update Helm charts to the latest Hyperswitch nightly release for access to
+  newest features
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/update-helm-charts-to-hyperswitchs-latest-nightly-release
 ---
 
 # Update Helm Charts to Hyperswitch's Latest Nightly Release
@@ -58,4 +64,4 @@ Run the below command to generate the differences and update misc.toml file
 git diff --unified=10 --ignore-space-change --ignore-space-at-eol <<current version in helm charts>> nightly config/deployments/env_specific.toml
 ```
 
-\
+\\

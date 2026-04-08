@@ -1,5 +1,11 @@
 ---
-description: Learn how to configure and use secure payment links embedded within iframes of trusted domains for safe payment method storage.
+description: >-
+  Learn how to configure and use secure payment links embedded within iframes of
+  trusted domains for safe payment method storage.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/secure-payment-links
 ---
 
 # Secure Payment Links

@@ -1,6 +1,12 @@
 ---
-description: Learn how to integrate the Express Checkout widget for one-click payments using saved payment methods with Juspay Hyperswitch SDK.
+description: >-
+  Learn how to integrate the Express Checkout widget for one-click payments
+  using saved payment methods with Juspay Hyperswitch SDK.
 icon: cart-shopping-fast
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/widgets/express-checkout
 ---
 
 # Express Checkout

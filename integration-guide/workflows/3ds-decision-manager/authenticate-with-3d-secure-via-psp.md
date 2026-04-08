@@ -1,6 +1,10 @@
 ---
 description: Authenticate payments using 3D Secure via payment service providers
 icon: rotate-exclamation
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/authenticate-with-3d-secure-via-psp
 ---
 
 # Authenticate with 3D Secure via PSP

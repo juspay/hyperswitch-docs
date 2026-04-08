@@ -1,6 +1,12 @@
 ---
-description: Configure Samsung Pay wallet payment method on Juspay Hyperswitch for secure mobile payments
+description: >-
+  Configure Samsung Pay wallet payment method on Juspay Hyperswitch for secure
+  mobile payments
 icon: mobile-signal
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/wallets/samsung-pay
 ---
 
 # Samsung Pay
@@ -16,9 +22,7 @@ Samsung Pay works only on supported Samsung devices. You can find the list of su
 Samsung Pay requires a Samsung Developer Account. You can [Sign Up](https://developer.samsung.com/pay/native/partner-onbarding.html#Sign-up%2FSign-in) following this.
 
 {% hint style="info" %}
-
 _Please feel free to reach out to_ [_Juspay Hyperswitch support_](https://inviter.co/hyperswitch-slack) _if you are stuck at any stage when integrating and testing Samsung Pay._
-
 {% endhint %}
 
 ### **Create Samsung Pay Web Online Payment Service**
@@ -53,7 +57,5 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 8. Select the card brands you want to allow customer to use when making Samsung Pay payments.
 
 {% hint style="danger" %}
-
 Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process.
-
 {% endhint %}

@@ -1,6 +1,12 @@
 ---
+description: >-
+  Learn how to accept one-time payments with Juspay Hyperswitch through seamless
+  integration in just a few minutes.
 icon: bolt
-description: Learn how to accept one-time payments with Juspay Hyperswitch through seamless integration in just a few minutes.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart
 ---
 
 # Accept Payments

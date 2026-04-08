@@ -1,7 +1,12 @@
 ---
-title: Worldpay
-description: Accept online, in-store, and mobile payments through Worldpay via Juspay Hyperswitch with built-in fraud protection.
+description: >-
+  Accept online, in-store, and mobile payments through Worldpay via Juspay
+  Hyperswitch with built-in fraud protection.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/worldpay
 ---
 
 # Worldpay

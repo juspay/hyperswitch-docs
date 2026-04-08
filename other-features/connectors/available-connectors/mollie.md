@@ -1,6 +1,12 @@
 ---
-description: Integrate Mollie as a payment connector on Juspay Hyperswitch to accept multiple payment methods with seamless checkout and robust security.
+description: >-
+  Integrate Mollie as a payment connector on Juspay Hyperswitch to accept
+  multiple payment methods with seamless checkout and robust security.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/mollie
 ---
 
 # Mollie

@@ -1,6 +1,10 @@
 ---
 description: Node to access the Hyperswitch API
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference/node
 ---
 
 # Node
@@ -9,7 +13,7 @@ hidden: true
 In this section, we will cover the steps to do an easy integration of your Node Backend server
 {% endhint %}
 
-## Using Node SDK for app server is OPTIONAL. You can use our REST APIs for the&#x20;
+## Using Node SDK for app server is OPTIONAL. You can use our REST APIs for the
 
 ## Requirements
 
@@ -163,11 +167,11 @@ console.log(customer.id);
 
 There is a sample server code that uses the node sdk. Below are the available functions that work with the current latest node sdk version.
 
-| Payments        | <p></p><ul><li>Create a payment</li></ul><ul><li>Retrieve a payment</li></ul><ul><li>Confirm a payment</li></ul><ul><li>Capture a payment</li></ul><ul><li>Cancel a payment</li></ul> |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Refunds         | <p></p><ul><li>Create a refund</li></ul><ul><li>Retrieve a refund</li></ul>                                                                                                           |
-| Customers       | <p></p><ul><li>Create a customer</li></ul><ul><li>Retrieve a customer</li></ul><ul><li>Delete a customer</li></ul>                                                                    |
-| Payment Methods | <p></p><ul><li>Create a payment method</li></ul><ul><li>List customer's payment methods</li></ul><ul><li>List merchant's payment methods</li></ul>                                    |
+| Payments        | <ul><li>Create a payment</li><li>Retrieve a payment</li><li>Confirm a payment</li><li>Capture a payment</li><li>Cancel a payment</li></ul> |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Refunds         | <ul><li>Create a refund</li><li>Retrieve a refund</li></ul>                                                                                |
+| Customers       | <ul><li>Create a customer</li><li>Retrieve a customer</li><li>Delete a customer</li></ul>                                                  |
+| Payment Methods | <ul><li>Create a payment method</li><li>List customer's payment methods</li><li>List merchant's payment methods</li></ul>                  |
 
 The request body(req.body) for all API's below can be referred from [API reference](https://app.swaggerhub.com/apis-docs/bernard-eugine/HyperswitchAPI/0.0.1)
 

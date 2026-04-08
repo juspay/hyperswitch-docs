@@ -1,6 +1,10 @@
 ---
 description: Deploy the Juspay Hyperswitch server on the cloud
 icon: server
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server
 ---
 
 # Deploy app server

@@ -1,9 +1,16 @@
 ---
+description: >-
+  Understand why Juspay Hyperswitch evolved its Reconciliation Engine from V1 to
+  V2, including improvements in matching flexibility, accounting, reporting, and
+  auditability.
 hidden: true
-description: Understand why Juspay Hyperswitch evolved its Reconciliation Engine from V1 to V2, including improvements in matching flexibility, accounting, reporting, and auditability.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/why-we-evolved-v1-vs-v2
 ---
 
-# Why We Evolved (V1 vs V2)
+# Why we evolved(V1 vs V2)
 
 Our V1 Reconciliation Engine has supported merchants for over 5 years. It was purpose-built to solve high-volume transaction-matching problems like 2-way (processor ↔ internal) matches.
 

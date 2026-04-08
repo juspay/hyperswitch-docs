@@ -1,6 +1,12 @@
 ---
-description: Accept payments via Billwerk+ Pay through Hyperswitch, an acquirer-independent payment gateway with broad payment method support.
+description: >-
+  Accept payments via Billwerk+ Pay through Hyperswitch, an acquirer-independent
+  payment gateway with broad payment method support.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/billwerk
 ---
 
 # Billwerk
@@ -9,7 +15,7 @@ hidden: true
 This section gives you an overview of how to make payments via Billwerk+ Pay through Hyperswitch.
 {% endhint %}
 
-<div align="left"><figure><img src="../../../../../.gitbook/assets/ic_Billwerk+Pay3X.svg" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/ic_Billwerk+Pay3X.svg" alt=""><figcaption></figcaption></figure></div>
 
 ### About
 

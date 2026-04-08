@@ -1,6 +1,13 @@
 ---
-description: Connect Nuvei to Juspay Hyperswitch to accept payments globally across e-commerce and high-growth industries using Nuvei's payment processing and acquiring services.
+description: >-
+  Connect Nuvei to Juspay Hyperswitch to accept payments globally across
+  e-commerce and high-growth industries using Nuvei's payment processing and
+  acquiring services.
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/nuvei
 ---
 
 # Nuvei

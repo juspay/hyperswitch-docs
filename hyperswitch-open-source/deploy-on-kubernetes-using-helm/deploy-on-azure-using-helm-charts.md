@@ -2,6 +2,10 @@
 description: >-
   Deploy Hyperswitch on Microsoft Azure using Helm charts for enterprise-grade
   payment infrastructure
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts
 ---
 
 # Deploy on Azure Using Helm Charts

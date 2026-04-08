@@ -3,6 +3,10 @@ description: >-
   Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
   with Minimal Changes
 icon: shield-check
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/network-tokenisation
 ---
 
 # Network Tokenisation
@@ -78,7 +82,7 @@ In this flow:
 
 #### Flow Summary:
 
-<div data-full-width="false"><figure><img src="../.gitbook/assets/image (163) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure></div>
 
 1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay's TRID to request network tokens

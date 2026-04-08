@@ -1,7 +1,14 @@
 ---
+description: >-
+  Capture amounts exceeding original authorization with Juspay Hyperswitch's
+  Overcapture feature, supporting post-authorization adjustments for Stripe and
+  Adyen.
 hidden: true
 icon: plus
-description: Capture amounts exceeding original authorization with Juspay Hyperswitch's Overcapture feature, supporting post-authorization adjustments for Stripe and Adyen.
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/overcapture
 ---
 
 # Overcapture
