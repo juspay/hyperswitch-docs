@@ -90,5 +90,5 @@ grpcurl -H "x-connector: stripe" \
 ## Next Steps
 
 * [Authorize](../payment-service/authorize.md) - Create a payment linked to this customer
-* [PaymentMethodService.Tokenize](../../payment-method-service/tokenize.md) - Store payment methods for this customer
+* [PaymentMethodService.Tokenize](../../tokenize.md) - Store payment methods for this customer
 * [SetupRecurring](../payment-service/setup-recurring.md) - Set up recurring billing with customer reference

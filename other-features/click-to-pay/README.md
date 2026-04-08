@@ -60,6 +60,6 @@ By combining the tokenization of payment credentials with seamless biometric aut
 
 On the customers' side, many are hesitant to enter their card details on a merchant website due to lack of trust and security concerns. With Click to Pay, these customers need not enter their card details manually, but fetch those from a secured, known EMVCo SRC system. This reduces the cart abandonment rate and increases sales for the merchants who offer Click to Pay.
 
-{% content-ref url="../../account-management/" %}
-[account-management](../../account-management/)
+{% content-ref url="../../integration-guide/account-management/" %}
+[account-management](../../integration-guide/account-management/)
 {% endcontent-ref %}

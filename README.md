@@ -37,7 +37,7 @@ Launch a ready-to-use Control Center test environment. No setup required, just l
 
 <summary><strong>Local Deployment (Docker)</strong></summary>
 
-[Set up Docker Locally →](hyperswitch-open-source/readme-1/unified-local-setup-using-docker/)\
+[Set up Docker Locally →](hyperswitch-open-source/overview/unified-local-setup-using-docker.md)\
 Perfect for developers who want local control and flexibility. You'll launch a ready-to-use Control Center environment.
 
 </details>
@@ -46,7 +46,7 @@ Perfect for developers who want local control and flexibility. You'll launch a r
 
 <summary><strong>API-first Integration</strong></summary>
 
-[API Reference →](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/try-out-apis.md)\
+[API Reference →](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/try-out-apis.md)\
 [Use Postman Collection →](hyperswitch-open-source/account-setup/using-postman.md)\
 Build a custom backend integration from scratch.
 
@@ -88,7 +88,7 @@ See Hyperswitch in action by sending your first test transaction via the cloud s
 
 [API ](hyperswitch-open-source/account-setup/using-postman.md)| Accessible through the Postman Collection
 
-[Learn how the SDK, control center and backend work together](hyperswitch-open-source/readme-1/local-setup-using-individual-components/)
+[Learn how the SDK, control center and backend work together](hyperswitch-open-source/overview/local-setup-using-individual-components/)
 
 </details>
 
@@ -142,7 +142,7 @@ Power only what you need with Hyperswitch’s modular architecture. Integrate ju
 
 Automate and optimize how payments are routed, authorized, and split across providers with Hyperswitch’s flexible payment orchestration engine.
 
-[Tokenization and Card Vault →](workflows/vault/)
+[Tokenization and Card Vault →](integration-guide/workflows/vault/)
 
 Securely store and reuse customer payment credentials across processors to reduce friction and improve retention.
 
@@ -152,7 +152,7 @@ Securely store and reuse customer payment credentials across processors to reduc
 
 Control how transactions flow across payment providers with configurable routing logic and fallback options
 
-[Intelligent Routing →](workflows/intelligent-routing/)
+[Intelligent Routing →](integration-guide/workflows/intelligent-routing/)
 
 Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.
 

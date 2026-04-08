@@ -108,5 +108,5 @@ sequenceDiagram
 ## Next Steps
 
 * [Payment Service](../payment-service/) - Process payments linked to customers
-* [Payment Method Service](../../payment-method-service/) - Store and manage customer payment methods
+* [Payment Method Service](../../payment-method-service.md) - Store and manage customer payment methods
 * [Recurring Payment Service](../recurring-payment-service/) - Set up recurring billing for customers

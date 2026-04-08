@@ -149,5 +149,5 @@ sequenceDiagram
 ## Next Steps
 
 * [Payment Service](../payment-service/) - Set up initial mandates and process first payments
-* [Payment Method Service](../../payment-method-service/) - Store payment methods for recurring use
+* [Payment Method Service](../../payment-method-service.md) - Store payment methods for recurring use
 * [Customer Service](../customer-service/) - Manage customer profiles for subscriptions

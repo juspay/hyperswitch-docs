@@ -117,4 +117,4 @@ Banks consider these factors for frictionless vs challenge:
 ## Next Steps
 
 * [Payment Service](../payment-service/) - Process payments after 3DS
-* [Merchant Authentication Service](../../merchant-authentication-service/) - Create authentication sessions
+* [Merchant Authentication Service](../../merchant-authentication-service.md) - Create authentication sessions

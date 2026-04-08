@@ -5,7 +5,7 @@ icon: link-simple
 
 # Netcetera
 
-Please specify the payment needs to be externally authenticated via Netcetera by passing the below field in create payments call. You can read more about it [here](../../../../workflows/3ds-decision-manager/external-authentication-for-3ds.md#id-1.-create-a-payment-from-your-server-with-request_external_three_ds_authentication-as-true).
+Please specify the payment needs to be externally authenticated via Netcetera by passing the below field in create payments call. You can read more about it [here](../../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md#id-1.-create-a-payment-from-your-server-with-request_external_three_ds_authentication-as-true).
 
 ```
 "request_external_three_ds_authentication": true

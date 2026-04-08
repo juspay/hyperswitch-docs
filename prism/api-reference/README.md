@@ -16,9 +16,9 @@ Prism provides a unified gRPC API for payment processing across 100+ payment pro
 | [Dispute Service](services/dispute-service/)                                             | Chargeback handling    | Accept, Defend, SubmitEvidence                               |
 | [Event Service](services/event-service/)                                                 | Webhook processing     | Handle connector events                                      |
 | [Customer Service](services/customer-service/)                                           | Customer management    | Create customer                                              |
-| [Payment Method Service](payment-method-service/)                                        | Payment method storage | Tokenize                                                     |
+| [Payment Method Service](payment-method-service.md)                                      | Payment method storage | Tokenize                                                     |
 | [Payment Method Authentication Service](services/payment-method-authentication-service/) | 3DS authentication     | Pre-authenticate, Authenticate, Post-authenticate            |
-| [Merchant Authentication Service](merchant-authentication-service/)                      | Session management     | CreateAccessToken, CreateSessionToken, CreateSdkSessionToken |
+| [Merchant Authentication Service](merchant-authentication-service.md)                    | Session management     | CreateAccessToken, CreateSessionToken, CreateSdkSessionToken |
 
 ## Error Object
 
