@@ -436,13 +436,13 @@
 ## Learn more
 
 * [Frequently Asked Questions](learn-more/frequently-asked-questions.md)
+* [Connectors Supported](https://integrations.hyperswitch.io/)
 * [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
 * [Blog](https://hyperswitch.io/blog)
 * [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
-* [Connectors Supported](https://integrations.hyperswitch.io/)
 
 ## PRISM
 
