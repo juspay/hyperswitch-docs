@@ -1,5 +1,5 @@
 ---
-description: All the payment use-cases for SaaS providers
+description: Scale multi-tenant payment infrastructure with unified orchestration to streamline SaaS platform operations
 icon: desktop
 metaLinks:
   alternates:
@@ -8,13 +8,13 @@ metaLinks:
 
 # SaaS Platforms
 
-### TL;DR
+## TL;DR
 
 Juspay Hyperswitch is an open-source payment orchestration platform that helps SaaS platforms scale multi-tenant payment infrastructure. It provides connector abstraction, hierarchical tenant isolation, and unified operations. You can onboard accounts programmatically, support BYOP (Bring Your Own Processor), and maintain unified observability across all connected payment providers.
 
 ***
 
-### Why do SaaS platforms struggle with multi-tenant payments?
+## Why do SaaS platforms struggle with multi-tenant payments?
 
 SaaS platforms face a unique challenge: they must act as the central nervous system for thousands of distinct accounts. A recurring friction exists between scalability (standardising payments) and flexibility (allowing accounts to bring their own processors). Juspay Hyperswitch resolves this by providing a composable payment mesh that standardises these differences without requiring custom engineering for each account.
 
@@ -22,7 +22,7 @@ The sections below outline the architectural patterns required to scale a multi-
 
 ***
 
-### How can SaaS platforms support high-value accounts that demand their own processors?
+## How can SaaS platforms support high-value accounts that demand their own processors?
 
 High-value accounts often refuse to migrate their payment processing to the SaaS platform because they have pre-negotiated rates or historical data with specific providers. Supporting these "brownfield" accounts usually requires building and maintaining dozens of custom integrations.
 
@@ -37,7 +37,7 @@ Juspay Hyperswitch acts as a Connector Abstraction Layer. You integrate our chec
 
 ***
 
-### How can SaaS platforms ensure data isolation between accounts?
+## How can SaaS platforms ensure data isolation between accounts?
 
 SaaS platforms must ensure that one account's routing rules, API keys, and customer data never leak to another. Building this "tenancy logic" from scratch is risky and delays time-to-market.
 
@@ -57,7 +57,7 @@ Additional capabilities:
 
 ***
 
-### How can I onboard accounts programmatically?
+## How can I onboard accounts programmatically?
 
 Manual onboarding via a control center is an operational bottleneck. To scale, platforms need to provision sub-accounts, inject credentials, and configure webhooks programmatically at the moment of signup.
 
@@ -68,7 +68,7 @@ Treat account onboarding as an API call, not a support ticket. Juspay Hyperswitc
 | Instant Onboarding | Create a new account entity and inject their processor API keys                              | [Connector Configuration API](https://api-reference.hyperswitch.io/v1/merchant-connector-account/merchant-connector--create#merchant-connector-create) |
 | Flexible Liability | Support MoR models (platform holds funds) and Connected Account models (account holds funds) | [Account Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles)                                |
 
-#### Example: Create an account
+### Example: Create an account
 
 ```bash
 # Note: Use sandbox endpoint for testing
@@ -93,7 +93,7 @@ curl --request POST \
 
 ***
 
-### How can SaaS platforms standardise complex payment flows across processors?
+## How can SaaS platforms standardise complex payment flows across processors?
 
 Different verticals require different flows (e.g., $0 Auth for hotels, 3DS for EU retail, Recurring for subscriptions). Fragmentation across PSP capabilities (e.g., some processors support 3DS, others don't) often forces platforms to write "spaghetti code."
 
@@ -106,7 +106,7 @@ Juspay Hyperswitch normalises complex flows into a standard state machine. Your 
 
 ***
 
-### How can I help accounts avoid vendor lock-in with their saved cards?
+## How can I help accounts avoid vendor lock-in with their saved cards?
 
 If an account stores card data in a PSP-specific vault (e.g., a processor-specific Customer ID), they are vendor-locked. Switching providers means losing all saved customer cards, which destroys recurring revenue.
 
@@ -122,7 +122,7 @@ Use the [Payment Vault](https://docs.hyperswitch.io/explore-hyperswitch/payment-
 
 ***
 
-### How can SaaS platforms simplify support workflows across multiple providers?
+## How can SaaS platforms simplify support workflows across multiple providers?
 
 Support teams struggle when every PSP returns different error codes (e.g., "Do Not Honour" vs. "Refusal" vs. "Error 402"). Debugging requires deep knowledge of 10+ different vendor systems.
 
@@ -135,7 +135,7 @@ Juspay Hyperswitch translates the chaos of vendor responses into a clean, standa
 
 ***
 
-### How can SaaS platforms build unified operational interfaces for refunds, disputes, and webhooks?
+## How can SaaS platforms build unified operational interfaces for refunds, disputes, and webhooks?
 
 The payment lifecycle doesn't end at "Checkout." SaaS platforms must also build portals for their accounts to handle Refunds, Disputes, and Webhooks. Building these operational interfaces is painful because every processor has a different API schema for refunds and a different JSON payload for webhooks.
 
@@ -149,7 +149,7 @@ Juspay Hyperswitch standardises the chaotic "Day 2" operations into a clean, uni
 
 ***
 
-### How can SaaS platforms maintain payment uptime during processor outages?
+## How can SaaS platforms maintain payment uptime during processor outages?
 
 Global SaaS platforms cannot afford downtime. When a processor in a specific region experiences latency or outages, your accounts blame _you_, not the processor. Without granular visibility into processor performance, your engineering team is flying blind, unable to reroute traffic or uphold SLAs for Enterprise accounts.
 
@@ -163,13 +163,13 @@ Juspay Hyperswitch treats payments as "Critical Infrastructure" and provides dee
 
 ***
 
-### What's next?
+## What's next?
 
 Ready to get started? Here are the next steps:
 
-* [Set up multiple accounts and profiles](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles) — Configure your platform hierarchy
-* [Configure intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules for your accounts
-* [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
-* [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
+- [Set up multiple accounts and profiles](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles) — Configure your platform hierarchy
+- [Configure intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules for your accounts
+- [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
+- [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
+- [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
+- [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
