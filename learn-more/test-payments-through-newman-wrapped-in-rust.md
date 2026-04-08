@@ -5,8 +5,7 @@ description: >-
 icon: stethoscope
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/use-cases/saas-platforms/test-payments-through-newman-wrapped-in-rust
+    - test-payments-through-newman-wrapped-in-rust.md
 ---
 
 # Testing Payments

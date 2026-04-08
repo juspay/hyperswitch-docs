@@ -5,8 +5,7 @@ description: >-
   reports, analyze analytics, and manage post-reconciliatio
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation/getting-started-with-recon
+    - getting-started-with-recon.md
 ---
 
 # Getting Started with Recon

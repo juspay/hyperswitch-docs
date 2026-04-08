@@ -3,8 +3,7 @@ description: Comprehensive measures safeguarding Data Integrity within Juspay Hy
 icon: lock-keyhole
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/security
+    - security.md
 ---
 
 # Data Security

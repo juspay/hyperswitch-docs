@@ -5,8 +5,7 @@ description: >-
 icon: building-magnifying-glass
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations
+    - ./
 ---
 
 # Authorizations

@@ -6,8 +6,7 @@ description: >-
 icon: app-store
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/app-clips
+    - app-clips.md
 ---
 
 # App Clips

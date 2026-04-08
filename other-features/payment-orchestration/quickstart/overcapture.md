@@ -7,8 +7,7 @@ hidden: true
 icon: plus
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/overcapture
+    - overcapture.md
 ---
 
 # Overcapture

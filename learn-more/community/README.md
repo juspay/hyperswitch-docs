@@ -2,7 +2,7 @@
 description: Join the Hyperswitch Community
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/community
+    - ./
 ---
 
 # Community
@@ -15,7 +15,7 @@ Hyperswitch is more than an open-source payments orchestration engine. It’s a 
 
 #### 🗓️ Office Hours (Every Thursday, 11 AM ET / 8:30 PM IST)
 
-Drop into our weekly [Office Hours](https://meet.google.com/grq-pxuh-zvr) to connect directly with maintainers and contributors.&#x20;
+Drop into our weekly [Office Hours](https://meet.google.com/grq-pxuh-zvr) to connect directly with maintainers and contributors.
 
 * Live demos & product walkthroughs
 * Open Q\&A on anything Hyperswitch

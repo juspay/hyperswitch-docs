@@ -5,8 +5,7 @@ description: >-
 icon: shield-exclamation
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/default-fallback-routing
+    - default-fallback-routing.md
 ---
 
 # Default Fallback Routing

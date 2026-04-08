@@ -5,8 +5,7 @@ description: >-
 icon: square-js
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/vanilla-js-and-rest-api-integration
+    - vanilla-js-and-rest-api-integration.md
 ---
 
 # JS with REST API Integration
@@ -95,7 +94,7 @@ async function initialize() {
 }
 ```
 
-#### 2.3 Additional Callback Handling for Wallets Payment Process
+**2.3 Additional Callback Handling for Wallets Payment Process**
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 

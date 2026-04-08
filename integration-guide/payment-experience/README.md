@@ -3,8 +3,7 @@ description: Learn about integration options for accepting payments online.
 icon: sidebar-flip
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience
+    - ./
 ---
 
 # Payment Experience

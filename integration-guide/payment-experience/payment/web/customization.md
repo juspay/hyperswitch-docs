@@ -3,8 +3,7 @@ description: Customize your Web unified checkout for Juspay Hyperswitch
 icon: bars-progress
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/customization
+    - customization.md
 ---
 
 # Customization

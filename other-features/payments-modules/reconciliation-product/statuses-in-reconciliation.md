@@ -5,8 +5,7 @@ description: >-
   efficiently
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/statuses-in-reconciliation
+    - statuses-in-reconciliation.md
 ---
 
 # Statuses in Reconciliation

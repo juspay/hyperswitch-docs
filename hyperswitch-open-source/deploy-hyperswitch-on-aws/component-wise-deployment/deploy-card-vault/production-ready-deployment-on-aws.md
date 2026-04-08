@@ -2,8 +2,7 @@
 description: CDK script to deploy Juspay Hyperswitch Card Vault on AWS
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws
+    - production-ready-deployment-on-aws.md
 ---
 
 # Production ready deployment on AWS

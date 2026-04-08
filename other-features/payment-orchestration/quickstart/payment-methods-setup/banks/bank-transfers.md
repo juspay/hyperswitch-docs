@@ -2,8 +2,7 @@
 description: Bank Transfer payment methods
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/banks/bank-transfers
+    - bank-transfers.md
 ---
 
 # Bank Transfers

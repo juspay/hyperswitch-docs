@@ -3,8 +3,7 @@ description: Activate fraud risk management solutions in Juspay Hyperswitch
 icon: shield-plus
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/fraud-and-risk-management/activating-frm-in-hyperswitch
+    - activating-frm-in-hyperswitch.md
 ---
 
 # Activating FRM in Hyperswitch

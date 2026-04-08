@@ -5,8 +5,7 @@ description: >-
 icon: google
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/widgets/google-pay
+    - google-pay.md
 ---
 
 # Google Pay

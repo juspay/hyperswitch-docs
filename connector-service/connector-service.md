@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/connector-service
+    - connector-service.md
 ---
 
 # Overview
@@ -72,42 +71,13 @@ Because every payment processor has diverse APIs, error codes, authentication me
 
 #### Payment & Capture Flow Sequence
 
-{% @mermaid/diagram content="%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#B3D9F2', 'primaryTextColor': '#333333', 'primaryBorderColor': '#5B9BD5', 'lineColor': '#666666', 'secondaryColor': '#C5E8C0', 'tertiaryColor': '#F9B872'}}}%%
-sequenceDiagram
-   autonumber
-   participant App as Your App
-   participant SDK as Prism
-   participant PSP as Payment Service Provider (PSP)
-   
-   Note over App,PSP: Payment Authorization
-   App->>SDK: paymentservice.authorize(amount, currency, payment_method)
-   activate SDK
-   SDK->>PSP: Provider-specific Authorize API call
-   activate PSP
-   PSP-->>SDK: Provider-specific response
-   deactivate PSP
-   SDK-->>App: Unified authorize response
-   deactivate SDK
+\{% @mermaid/diagram content="%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#B3D9F2', 'primaryTextColor': '#333333', 'primaryBorderColor': '#5B9BD5', 'lineColor': '#666666', 'secondaryColor': '#C5E8C0', 'tertiaryColor': '#F9B872'\}}}%% sequenceDiagram autonumber participant App as Your App participant SDK as Prism participant PSP as Payment Service Provider (PSP)
 
-   Note over App,PSP: Payment Capture
-   App->>SDK: paymentservice.capture(payment_id, amount)
-   activate SDK
-   SDK->>PSP: Provider-specific Capture API call
-   activate PSP
-   PSP-->>SDK: Provider-specific Capture response
-   deactivate PSP
-   SDK-->>App: Unified capture response
-   deactivate SDK
+Note over App,PSP: Payment Authorization App->>SDK: paymentservice.authorize(amount, currency, payment\_method) activate SDK SDK->>PSP: Provider-specific Authorize API call activate PSP PSP-->>SDK: Provider-specific response deactivate PSP SDK-->>App: Unified authorize response deactivate SDK
 
-   Note over App,PSP: Event Service (Webhooks)
-   PSP->>App: webhook(event_payload)
-   activate App
-   App->>SDK: eventservice.handle(unified_event)
-   activate SDK
-   SDK->>App: Unified event payload
-   deactivate SDK
-   deactivate App
-" %}
+Note over App,PSP: Payment Capture App->>SDK: paymentservice.capture(payment\_id, amount) activate SDK SDK->>PSP: Provider-specific Capture API call activate PSP PSP-->>SDK: Provider-specific Capture response deactivate PSP SDK-->>App: Unified capture response deactivate SDK
+
+Note over App,PSP: Event Service (Webhooks) PSP->>App: webhook(event\_payload) activate App App->>SDK: eventservice.handle(unified\_event) activate SDK SDK->>App: Unified event payload deactivate SDK deactivate App " %\}
 
 ***
 

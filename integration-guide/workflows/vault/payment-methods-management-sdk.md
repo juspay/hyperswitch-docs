@@ -7,8 +7,7 @@ icon: gear
 coverY: 0
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/payment-methods-management-sdk
+    - payment-methods-management-sdk.md
 ---
 
 # Payment Methods Management SDK

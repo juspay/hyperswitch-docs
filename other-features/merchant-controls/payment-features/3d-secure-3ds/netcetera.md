@@ -3,8 +3,7 @@ description: Configure Netcetera SDK for external 3DS authentication with Hypers
 icon: link-simple
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/merchant-controls/payment-features/3d-secure-3ds/netcetera
+    - netcetera.md
 ---
 
 # Netcetera

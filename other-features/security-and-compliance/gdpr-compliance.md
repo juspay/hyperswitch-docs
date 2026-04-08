@@ -3,8 +3,7 @@ description: A brief summary of measures taken at Hyperswitch to ensure GDPR com
 icon: compact-disc
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/gdpr-compliance
+    - gdpr-compliance.md
 ---
 
 # GDPR compliance

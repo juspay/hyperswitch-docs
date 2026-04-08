@@ -6,8 +6,7 @@ hidden: true
 icon: angles-up
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries/3ds-step-up-retries
+    - 3ds-step-up-retries.md
 ---
 
 # 3DS Step-up Retries

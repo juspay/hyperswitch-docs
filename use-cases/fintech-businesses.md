@@ -5,8 +5,7 @@ description: >-
 icon: watch-calculator
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/use-cases/fintech-businesses
+    - fintech-businesses.md
 ---
 
 # Fintech Businesses

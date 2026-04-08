@@ -5,8 +5,7 @@ description: >-
 icon: building-columns
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center
+    - deploy-control-center.md
 ---
 
 # Deploy Control Center

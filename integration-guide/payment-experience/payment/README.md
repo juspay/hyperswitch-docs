@@ -3,8 +3,7 @@ description: Process one-time and recurring payments with multiple flow patterns
 icon: file-invoice-dollar
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment
+    - ./
 ---
 
 # One Step Payments
@@ -12,7 +11,7 @@ metaLinks:
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
-#### Integration Path
+**Integration Path**
 
 **Client-Side SDK Payments**
 

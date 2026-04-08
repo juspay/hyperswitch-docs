@@ -5,8 +5,7 @@ noIndex: true
 icon: buildings
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-e-commerce-businesses
+    - for-e-commerce-businesses.md
 ---
 
 # For E-Commerce Businesses

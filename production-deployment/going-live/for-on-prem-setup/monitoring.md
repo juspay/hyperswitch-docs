@@ -3,8 +3,7 @@ description: Visibility and control over your application
 icon: eyes
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/monitoring
+    - monitoring.md
 ---
 
 # Monitoring

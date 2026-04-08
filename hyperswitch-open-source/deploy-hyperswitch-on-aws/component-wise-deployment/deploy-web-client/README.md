@@ -3,8 +3,7 @@ description: Deploy the Hyperswitch web client on the cloud for production use
 icon: globe-wifi
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client
+    - ./
 ---
 
 # Deploy web client

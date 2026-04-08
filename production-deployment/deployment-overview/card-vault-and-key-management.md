@@ -5,8 +5,7 @@ description: >-
 icon: key
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/card-vault-and-key-management
+    - card-vault-and-key-management.md
 ---
 
 # Card Vault & Key Management

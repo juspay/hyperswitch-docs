@@ -5,8 +5,7 @@ description: >-
 icon: arrow-up-triangle-square
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/try-out-apis
+    - try-out-apis.md
 ---
 
 # Try out APIs

@@ -5,8 +5,7 @@ description: >-
 icon: at
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/smtp-server-integration
+    - smtp-server-integration.md
 ---
 
 # SMTP Server Integration

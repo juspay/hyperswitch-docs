@@ -4,8 +4,7 @@ description: >-
   building a connector.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/hyperswitch-architecture/connector-payment-flows
+    - connector-payment-flows.md
 ---
 
 # Connector Payment Flows

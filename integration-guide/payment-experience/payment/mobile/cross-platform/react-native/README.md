@@ -3,8 +3,7 @@ description: Integrate unified checkout with your react native app
 icon: react
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/react-native
+    - ./
 ---
 
 # React Native

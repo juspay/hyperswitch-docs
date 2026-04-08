@@ -5,8 +5,7 @@ description: >-
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-recipes
+    - ./
 ---
 
 # 🥗 Payment Recipes

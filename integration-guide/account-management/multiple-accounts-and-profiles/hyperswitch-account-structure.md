@@ -2,8 +2,7 @@
 icon: people-roof
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure
+    - hyperswitch-account-structure.md
 ---
 
 # Organization, Merchant and Profile Setup

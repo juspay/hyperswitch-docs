@@ -4,8 +4,7 @@ description: >-
   orchestration
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-recipes/use-paypal-with-stripe
+    - use-paypal-with-stripe.md
 ---
 
 # Use PayPal With Stripe

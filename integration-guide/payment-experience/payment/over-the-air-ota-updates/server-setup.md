@@ -5,8 +5,7 @@ description: >-
 icon: server
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/over-the-air-ota-updates/server-setup
+    - server-setup.md
 ---
 
 # Server setup

@@ -5,8 +5,7 @@ description: >-
 icon: monitor-waveform
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/monitoring-and-alerts
+    - monitoring-and-alerts.md
 ---
 
 # Monitoring and Alerts
@@ -46,34 +45,21 @@ This correlation significantly reduces the time required to diagnose issues in p
 
 ### Monitoring Architecture
 
-{% @mermaid/diagram content="%%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#ffffff',
-  'primaryBorderColor': '#333333',
-  'lineColor': '#333333',
-  'secondaryColor': '#f5f5f5',
-  'tertiaryColor': '#ffffff',
-  'textColor': '#000000'
-}}}%%
+\{% @mermaid/diagram content="%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryBorderColor': '#333333', 'lineColor': '#333333', 'secondaryColor': '#f5f5f5', 'tertiaryColor': '#ffffff', 'textColor': '#000000' \}}}%%
 
 flowchart TD
 
-A[Hyperswitch Application Pods] --> B[OpenTelemetry Collector]
-A --> C[Promtail]
+A\[Hyperswitch Application Pods] --> B\[OpenTelemetry Collector] A --> C\[Promtail]
 
-B --> D[Prometheus / VictoriaMetrics]
-C --> E[Loki]
+B --> D\[Prometheus / VictoriaMetrics] C --> E\[Loki]
 
-F[Node & Infrastructure Metrics] --> G[CloudWatch / Node Exporter]
+F\[Node & Infrastructure Metrics] --> G\[CloudWatch / Node Exporter]
 
-D --> H[Grafana Dashboards]
-E --> H
-G --> H
+D --> H\[Grafana Dashboards] E --> H G --> H
 
-D --> I[Remote Write]
-I --> J[Hyperswitch Monitoring Environment]
+D --> I\[Remote Write] I --> J\[Hyperswitch Monitoring Environment]
 
-H --> K[Operations & Engineering Teams]
-J --> L[Hyperswitch Support Team]" %}
+H --> K\[Operations & Engineering Teams] J --> L\[Hyperswitch Support Team]" %\}
 
 #### Application Metrics
 

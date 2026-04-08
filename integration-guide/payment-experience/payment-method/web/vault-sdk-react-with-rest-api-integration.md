@@ -5,8 +5,7 @@ description: >-
 icon: rocket-vertical
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment-method/web/vault-sdk-react-with-rest-api-integration
+    - vault-sdk-react-with-rest-api-integration.md
 ---
 
 # Vault SDK - React with REST API Integration

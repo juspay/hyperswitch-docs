@@ -3,8 +3,7 @@ description: All the payment use-cases for SaaS providers
 icon: desktop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/use-cases/saas-platforms
+    - saas-platforms.md
 ---
 
 # SaaS Platforms

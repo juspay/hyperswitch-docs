@@ -3,8 +3,7 @@ description: It's no rocket science
 icon: user-police-tie
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/pci-compliance
+    - ./
 ---
 
 # PCI compliance

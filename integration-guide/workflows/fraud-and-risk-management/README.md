@@ -3,8 +3,7 @@ description: Effectively enhance fraud detection with your preferred FRM engine
 icon: shield-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/fraud-and-risk-management
+    - ./
 ---
 
 # Fraud & Risk Management

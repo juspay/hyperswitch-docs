@@ -3,8 +3,7 @@ description: SDK method details
 icon: chart-candlestick
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference
+    - ./
 ---
 
 # SDK Reference

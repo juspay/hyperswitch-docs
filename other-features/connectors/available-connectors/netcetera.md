@@ -4,8 +4,7 @@ description: >-
   integrated via Juspay Hyperswitch.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/netcetera
+    - netcetera.md
 ---
 
 # Netcetera

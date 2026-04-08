@@ -4,8 +4,7 @@ hidden: true
 icon: arrows-repeat
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/hyperswitch-vault-pass-through-proxy-payments
+    - hyperswitch-vault-pass-through-proxy-payments.md
 ---
 
 # Hyperswitch Vault: Pass Through Proxy Payments

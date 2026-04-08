@@ -2,8 +2,7 @@
 description: Set up your Hyperswitch account on the control center
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles/account-setup
+    - account-setup.md
 ---
 
 # ⚙️ Control Centre Account setup

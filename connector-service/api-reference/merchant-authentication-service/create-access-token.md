@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/merchant-authentication-service/create-access-token
+    - create-access-token.md
 ---
 
 # Create Access Token

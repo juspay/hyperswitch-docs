@@ -5,8 +5,7 @@ description: >-
 icon: repeat
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/process-payouts-using-saved-payment-methods
+    - process-payouts-using-saved-payment-methods.md
 ---
 
 # Payouts with Saved Payment Methods

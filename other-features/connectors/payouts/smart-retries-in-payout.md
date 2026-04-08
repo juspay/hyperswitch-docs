@@ -6,8 +6,7 @@ description: >-
 icon: magnifying-glass-arrows-rotate
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/smart-retries-in-payout
+    - smart-retries-in-payout.md
 ---
 
 # Smart Retries in Payout

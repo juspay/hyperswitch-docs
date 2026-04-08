@@ -2,8 +2,7 @@
 description: Instructions to set up Card Vault on AWS manually
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide
+    - cloud-setup-guide.md
 ---
 
 # Cloud setup guide

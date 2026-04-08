@@ -2,8 +2,7 @@
 description: Enable Google Pay as a payment method via CyberSource in Juspay Hyperswitch.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/cybersource/google-pay
+    - google-pay.md
 ---
 
 # Google Pay

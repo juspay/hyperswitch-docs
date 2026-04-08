@@ -3,8 +3,7 @@ description: Integrate Juspay Hyperswitch SDK to your Flutter App using hyperswi
 icon: puzzle-piece
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/flutter/flutter-with-node-backend
+    - flutter-with-node-backend.md
 ---
 
 # Flutter with REST API Integration

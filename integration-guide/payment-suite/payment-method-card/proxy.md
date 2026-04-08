@@ -3,8 +3,7 @@ description: Vault your card and use proxy endpoint for payment processing
 icon: almost-equal-to
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payment-method-card/proxy
+    - proxy.md
 ---
 
 # Proxy Payment

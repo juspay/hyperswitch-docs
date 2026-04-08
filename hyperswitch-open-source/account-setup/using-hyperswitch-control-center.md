@@ -5,8 +5,7 @@ description: >-
 icon: building-columns
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup/using-hyperswitch-control-center
+    - using-hyperswitch-control-center.md
 ---
 
 # Using Hyperswitch Control Center

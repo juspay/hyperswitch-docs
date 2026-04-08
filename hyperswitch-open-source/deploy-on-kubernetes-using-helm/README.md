@@ -3,8 +3,7 @@ description: Install Hyperswitch on your K8s setup using our Helm charts
 icon: dharmachakra
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm
+    - ./
 ---
 
 # Deploy on Kubernetes

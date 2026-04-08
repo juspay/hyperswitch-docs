@@ -4,8 +4,7 @@ description: >-
   newest features
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/update-helm-charts-to-hyperswitchs-latest-nightly-release
+    - update-helm-charts-to-hyperswitchs-latest-nightly-release.md
 ---
 
 # Update Helm Charts to Hyperswitch's Latest Nightly Release

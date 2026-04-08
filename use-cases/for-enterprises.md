@@ -4,7 +4,7 @@ hidden: true
 noIndex: true
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-enterprises
+    - for-enterprises.md
 ---
 
 # 🏢 For enterprises

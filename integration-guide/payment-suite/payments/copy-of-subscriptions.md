@@ -4,8 +4,7 @@ hidden: true
 icon: arrows-rotate-reverse
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/copy-of-subscriptions
+    - copy-of-subscriptions.md
 ---
 
 # Copy of Subscriptions

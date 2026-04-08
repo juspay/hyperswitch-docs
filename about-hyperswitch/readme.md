@@ -4,7 +4,7 @@ cover: ../.gitbook/assets/Hero visual V6 (2).png
 coverY: 0
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/readme
+    - ../
 ---
 
 # Exploration Guide

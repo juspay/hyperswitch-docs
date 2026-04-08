@@ -3,8 +3,7 @@ description: Blocking card bins selectively based on observed fraudulent activit
 icon: ban
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/fraud-and-risk-management/fraud-blocklist
+    - fraud-blocklist.md
 ---
 
 # Fraud Blocklist

@@ -5,8 +5,7 @@ description: >-
 icon: right-from-bracket
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/data-migration/import-data-to-hyperswitch
+    - import-data-to-hyperswitch.md
 ---
 
 # Data Migration from PSP to Hyperswitch

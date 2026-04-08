@@ -3,8 +3,7 @@ description: Accept open-banking payments through Volt via Juspay Hyperswitch.
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/volt
+    - volt.md
 ---
 
 # Volt

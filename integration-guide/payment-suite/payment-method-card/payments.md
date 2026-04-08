@@ -5,8 +5,7 @@ description: >-
 icon: money-bills-simple
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payment-method-card/payments
+    - payments.md
 ---
 
 # Token Led Payment

@@ -3,8 +3,7 @@ description: Setting up and managing recurring payments
 icon: repeat
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/save-a-payment-method
+    - ./
 ---
 
 # Saving Payment Method
@@ -26,9 +25,7 @@ This is typically limited for card payment methods and not for wallets (viz. App
 
 <details>
 
-<summary>Follow Steps for SDK integration </summary>
-
-
+<summary>Follow Steps for SDK integration</summary>
 
 Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
@@ -54,8 +51,6 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
 
-
-
 <figure><img src="../../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
 
 </details>
@@ -64,7 +59,7 @@ If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `
 
 <summary>Follow Steps For API Integration</summary>
 
-#### **Step 1 --**&#x20;
+**Step 1 --**
 
 Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
@@ -84,7 +79,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-#### Step 2 --
+**Step 2 --**
 
 During the payment confirm call pass the customer's consent to store the card in the request
 
@@ -98,10 +93,6 @@ During the payment confirm call pass the customer's consent to store the card in
         }
     }
 ```
-
-
-
-
 
 </details>
 
@@ -117,7 +108,7 @@ Based on the payment processors support, this functionality is also available fo
 
 <details>
 
-<summary>Follow Steps for SDK integration </summary>
+<summary>Follow Steps for SDK integration</summary>
 
 Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
@@ -151,13 +142,11 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
 
-
-
 </details>
 
 <details>
 
-<summary>Follow Steps for API integration </summary>
+<summary>Follow Steps for API integration</summary>
 
 Pass the following field in the `/payments` create request to indicate your intention to save the payment method
 
@@ -190,8 +179,6 @@ During the payment confirm call pass the customer's consent to store the card in
     }
 ```
 
-
-
 Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
 
 ```bash
@@ -199,8 +186,6 @@ curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' 
 --header 'Accept: application/json' \
 --header 'api-key: <enter your Hyperswitch API key here>' \
 ```
-
-
 
 </details>
 

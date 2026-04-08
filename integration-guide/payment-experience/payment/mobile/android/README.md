@@ -3,8 +3,7 @@ description: Integrate unified checkout on your Android app
 icon: android
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android
+    - ./
 ---
 
 # Android

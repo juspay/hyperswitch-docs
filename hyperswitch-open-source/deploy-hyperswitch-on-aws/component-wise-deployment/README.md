@@ -3,8 +3,7 @@ description: Deploy each Hyperswitch component individually
 icon: list-ol
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment
+    - ./
 ---
 
 # Component-wise Deployment

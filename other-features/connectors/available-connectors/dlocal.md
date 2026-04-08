@@ -3,8 +3,7 @@ description: Accept payments through dLocal via Hyperswitch
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/dlocal
+    - dlocal.md
 ---
 
 # dLocal

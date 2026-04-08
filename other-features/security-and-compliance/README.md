@@ -5,8 +5,7 @@ description: >-
 icon: arrow-down-up-lock
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance
+    - ./
 ---
 
 # Security and Compliance

@@ -3,8 +3,7 @@ description: Node to access the Hyperswitch API
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/sdk-reference/node
+    - node.md
 ---
 
 # Node

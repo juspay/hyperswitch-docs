@@ -5,8 +5,7 @@ description: >-
 icon: puzzle-piece
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/react-native/react-native-with-rest-api-integration
+    - react-native-with-rest-api-integration.md
 ---
 
 # React Native with REST API Integration

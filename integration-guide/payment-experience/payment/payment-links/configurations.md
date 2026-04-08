@@ -2,8 +2,7 @@
 description: Configure Payment Links UI
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/configurations
+    - configurations.md
 ---
 
 # Configurations

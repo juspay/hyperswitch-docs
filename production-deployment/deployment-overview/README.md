@@ -5,8 +5,7 @@ description: >-
 icon: sign-posts-wrench
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview
+    - ./
 ---
 
 # Deployment Overview

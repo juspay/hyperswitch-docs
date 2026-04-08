@@ -3,8 +3,7 @@ description: Implement 3D Secure and Strong Customer Authentication for payments
 icon: badge-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager
+    - ./
 ---
 
 # 3DS / Strong Customer Authentication

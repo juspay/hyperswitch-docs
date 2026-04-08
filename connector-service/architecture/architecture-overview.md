@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/architecture/architecture-overview
+    - architecture-overview.md
 ---
 
 # Architecture Overview

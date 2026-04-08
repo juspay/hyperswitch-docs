@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/architecture
+    - ./
 ---
 
 # Architecture
@@ -97,32 +96,28 @@ The Prism supports a three layered architecture, each solving a purpose
 
 ### Data Flow
 
-{% @mermaid/diagram content="sequenceDiagram
-    participant SDK as SDK Interface
-    participant FFI as FFI / Binding Layer
-    participant Server as gRPC Server
-    participant Adapter as Connector Adapters
-    participant Stripe as Stripe API
-    participant Adyen as Adyen API
+\{% @mermaid/diagram content="sequenceDiagram participant SDK as SDK Interface participant FFI as FFI / Binding Layer participant Server as gRPC Server participant Adapter as Connector Adapters participant Stripe as Stripe API participant Adyen as Adyen API
 
-    SDK->>FFI: Serialize to protobuf
-    FFI->>Server: gRPC call (HTTP/2)
-    Server->>Server: Route to connector adapter
-    Server->>Adapter: Transform request
+```
+SDK->>FFI: Serialize to protobuf
+FFI->>Server: gRPC call (HTTP/2)
+Server->>Server: Route to connector adapter
+Server->>Adapter: Transform request
 
-    alt Stripe Connector
-        Adapter->>Stripe: POST /v1/payment_intents
-        Stripe-->>Adapter: PaymentIntent response
-    else Adyen Connector
-        Adapter->>Adyen: POST /payments
-        Adyen-->>Adapter: Payment response
-    end
+alt Stripe Connector
+    Adapter->>Stripe: POST /v1/payment_intents
+    Stripe-->>Adapter: PaymentIntent response
+else Adyen Connector
+    Adapter->>Adyen: POST /payments
+    Adyen-->>Adapter: Payment response
+end
 
-    Adapter->>Adapter: Transform to unified format
-    Adapter-->>Server: Return unified response
-    Server-->>Server: Normalize errors
-    Server-->>FFI: gRPC response
-    FFI-->>SDK: Deserialize from protobuf" %}
+Adapter->>Adapter: Transform to unified format
+Adapter-->>Server: Return unified response
+Server-->>Server: Normalize errors
+Server-->>FFI: gRPC response
+FFI-->>SDK: Deserialize from protobuf" %}
+```
 
 ### Connector Transformation
 

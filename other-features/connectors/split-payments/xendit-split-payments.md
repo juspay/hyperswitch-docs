@@ -5,8 +5,7 @@ description: >-
 icon: hexagon-xmark
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments/xendit-split-payments
+    - xendit-split-payments.md
 ---
 
 # Xendit Split Settlement

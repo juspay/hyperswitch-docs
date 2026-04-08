@@ -3,8 +3,7 @@ description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
 icon: k
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/kotlin-with-rest-api-integration
+    - kotlin-with-rest-api-integration.md
 ---
 
 # Kotlin with REST API Integration

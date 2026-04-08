@@ -5,8 +5,7 @@ description: >-
 icon: sitemap
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/architecture-overview
+    - architecture-overview.md
 ---
 
 # Architecture Overview

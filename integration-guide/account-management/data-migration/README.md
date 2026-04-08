@@ -5,8 +5,7 @@ description: >-
 icon: utility-pole-double
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/data-migration
+    - ./
 ---
 
 # Data migration

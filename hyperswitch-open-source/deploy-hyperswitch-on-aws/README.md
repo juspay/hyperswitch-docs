@@ -5,8 +5,7 @@ description: >-
 icon: cloud
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws
+    - ./
 ---
 
 # Deploy on AWS

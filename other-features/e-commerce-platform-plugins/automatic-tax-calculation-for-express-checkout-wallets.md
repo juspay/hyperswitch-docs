@@ -5,8 +5,7 @@ description: >-
 icon: filter-circle-dollar
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets
+    - automatic-tax-calculation-for-express-checkout-wallets.md
 ---
 
 # Automatic Tax calculation for Express Checkout wallets

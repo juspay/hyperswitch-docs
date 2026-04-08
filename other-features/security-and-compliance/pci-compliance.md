@@ -3,8 +3,7 @@ description: A brief summary of PCI compliance for Hyperswitch Cloud users
 icon: credit-card
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/pci-compliance
+    - pci-compliance.md
 ---
 
 # PCI Compliance

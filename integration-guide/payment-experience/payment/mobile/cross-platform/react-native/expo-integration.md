@@ -3,8 +3,7 @@ description: Integrate Juspay Hyperswitch SDK with Expo for React Native apps
 icon: react
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/cross-platform/react-native/expo-integration
+    - expo-integration.md
 ---
 
 # Expo integration

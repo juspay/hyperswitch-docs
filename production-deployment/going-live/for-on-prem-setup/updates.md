@@ -3,8 +3,7 @@ description: Stay up to date with minimal maintenance effort!
 icon: recycle
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/updates
+    - updates.md
 ---
 
 # Updates

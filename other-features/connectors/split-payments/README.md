@@ -5,8 +5,7 @@ description: >-
 icon: split
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments
+    - ./
 ---
 
 # Processors with Split Settlement

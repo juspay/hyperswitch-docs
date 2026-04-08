@@ -2,8 +2,7 @@
 description: Quickly deploy your web client playground and see it in action
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional
+    - playground-deployment-for-prototyping-optional.md
 ---
 
 # Playground deployment for prototyping (optional)

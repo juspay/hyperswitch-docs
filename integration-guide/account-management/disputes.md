@@ -5,8 +5,7 @@ description: >-
 icon: circle-exclamation
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/disputes
+    - disputes.md
 ---
 
 # Disputes / Chargebacks

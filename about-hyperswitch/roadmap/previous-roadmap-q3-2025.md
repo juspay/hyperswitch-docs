@@ -3,8 +3,7 @@ description: Jul '25 to Sep '25
 icon: road
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/roadmap/previous-roadmap-q3-2025
+    - previous-roadmap-q3-2025.md
 ---
 
 # Previous Roadmap - Q3 2025

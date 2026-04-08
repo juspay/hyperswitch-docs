@@ -5,8 +5,7 @@ description: >-
 icon: left-from-bracket
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/data-migration/export-data-from-hyperswitch
+    - export-data-from-hyperswitch.md
 ---
 
 # Data Migration From Hyperswitch

@@ -4,8 +4,7 @@ hidden: true
 icon: puzzle-piece
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/merchant-controls/integration-guide
+    - integration-guide.md
 ---
 
 # Customizable and Native Integrations

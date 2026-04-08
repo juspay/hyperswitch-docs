@@ -6,8 +6,7 @@ description: >-
 icon: credit-card
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/co-badged-cards-with-hyperswitch
+    - co-badged-cards-with-hyperswitch.md
 ---
 
 # Co-badged Cards

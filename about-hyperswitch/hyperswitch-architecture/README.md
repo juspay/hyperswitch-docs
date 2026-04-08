@@ -3,8 +3,7 @@ description: A 30,000 feet view of Hyperswitch's architecture
 icon: folder-tree
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/hyperswitch-architecture
+    - ./
 ---
 
 # Hyperswitch architecture

@@ -3,8 +3,7 @@ description: Overview of Identity and Access Management (IAM) practices in Hyper
 icon: id-card-clip
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/identity-and-access-management
+    - identity-and-access-management.md
 ---
 
 # Identity and Access Management

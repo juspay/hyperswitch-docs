@@ -3,8 +3,7 @@ description: Accept payments through Authorize.net via Hyperswitch
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/authorizedotnet
+    - authorizedotnet.md
 ---
 
 # Authorizedotnet

@@ -3,8 +3,7 @@ description: Open, Modular, Self-Hostable Payment Infrastructure
 icon: container-storage
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite
+    - ./
 ---
 
 # Payments Flows

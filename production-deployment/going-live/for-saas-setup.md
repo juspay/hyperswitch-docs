@@ -5,8 +5,7 @@ description: >-
 icon: gift
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-saas-setup
+    - for-saas-setup.md
 ---
 
 # For SaaS Setup

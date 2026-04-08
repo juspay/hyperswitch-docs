@@ -5,8 +5,7 @@ description: >-
 icon: badge-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/auth-rate-based-routing
+    - auth-rate-based-routing.md
 ---
 
 # Auth Rate Based Routing

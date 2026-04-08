@@ -5,8 +5,7 @@ noIndex: true
 icon: plug-circle-bolt
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/e-commerce-platform-plugins
+    - ./
 ---
 
 # E-commerce Platform Plugins by Hyperswitch

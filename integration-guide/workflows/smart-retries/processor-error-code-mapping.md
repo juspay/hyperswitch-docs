@@ -3,8 +3,7 @@ description: Understand how error codes are classified for Smart Retry decisions
 icon: signs-post
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries/processor-error-code-mapping
+    - processor-error-code-mapping.md
 ---
 
 # Processor error code mapping

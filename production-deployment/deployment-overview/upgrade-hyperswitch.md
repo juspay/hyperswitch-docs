@@ -4,8 +4,7 @@ description: >-
   ArgoCD, including blue/green cluster upgrade strategy and rollback procedures.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/upgrade-hyperswitch
+    - upgrade-hyperswitch.md
 ---
 
 # Upgrade Hyperswitch

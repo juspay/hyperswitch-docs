@@ -5,8 +5,7 @@ description: >-
 icon: panel-ews
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/configure-and-run-the-application
+    - configure-and-run-the-application.md
 ---
 
 # Configure and Run the Application

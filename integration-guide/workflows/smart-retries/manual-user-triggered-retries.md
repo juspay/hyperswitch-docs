@@ -3,8 +3,7 @@ description: Allow customers to retry failed payments under the same Payment Int
 icon: person-walking-arrow-loop-left
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries/manual-user-triggered-retries
+    - manual-user-triggered-retries.md
 ---
 
 # Manual/User triggered Retries

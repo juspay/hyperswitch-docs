@@ -3,8 +3,7 @@ description: Automatically retry payments with an alternative processor
 icon: magnifying-glass-arrows-rotate
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/smart-retries
+    - ./
 ---
 
 # Smart Retries

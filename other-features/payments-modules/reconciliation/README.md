@@ -7,8 +7,7 @@ hidden: true
 noIndex: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation
+    - ./
 ---
 
 # Reconciliation V1

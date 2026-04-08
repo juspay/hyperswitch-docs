@@ -4,8 +4,7 @@ description: >-
   community
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/learn-more/community/community-guidelines
+    - community-guidelines.md
 ---
 
 # Community Guidelines

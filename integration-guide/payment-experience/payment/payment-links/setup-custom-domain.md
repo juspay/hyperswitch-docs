@@ -4,8 +4,7 @@ description: >-
   CNAME, and TXT verification for secure payment processing.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/setup-custom-domain
+    - setup-custom-domain.md
 ---
 
 # Setup Custom Domain

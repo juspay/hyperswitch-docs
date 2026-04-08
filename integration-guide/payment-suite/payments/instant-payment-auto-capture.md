@@ -5,8 +5,7 @@ description: >-
 icon: hands-holding-dollar
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/instant-payment-auto-capture
+    - instant-payment-auto-capture.md
 ---
 
 # Instant Payment (Auto Capture)
@@ -45,7 +44,7 @@ sequenceDiagram
 
 <summary>SDK Integration Steps</summary>
 
-#### Step 1 — Create the Payment (Backend)
+**Step 1 — Create the Payment (Backend)**
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -62,7 +61,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-#### Step 2 — **Initialize SDK (Client-Side)**
+**Step 2 — Initialize SDK (Client-Side)**
 
 The merchant client initializes the Hyperswitch SDK using the `client_secret` and `publishable_key`. The SDK fetches eligible payment methods from Hyperswitch and renders a secure payment UI.
 
@@ -105,27 +104,27 @@ async function initialize() {
 }
 ```
 
-#### Step 3 — **Collect Card Details**
+**Step 3 — Collect Card Details**
 
 The customer selects a card payment method and enters their card details directly within the Hyperswitch SDK-managed interface, ensuring sensitive data never passes through merchant systems.
 
-#### Step 4 —**Authorize and Store Card**
+**Step 4 —Authorize and Store Card**
 
 The SDK submits a [`payments/confirm`](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to Hyperswitch. Hyperswitch authorizes the payment with the processor.
 
-#### Step 5 — **Return Status**
+**Step 5 — Return Status**
 
 The final payment and vaulting status is returned to the SDK, which redirects the customer to the merchant's configured `return_url`.
 
 </details>
 
-### API Integration&#x20;
+### API Integration
 
 <details>
 
 <summary>API Integration Steps</summary>
 
-#### Step 1 — Create the Payment (Backend)
+**Step 1 — Create the Payment (Backend)**
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -142,7 +141,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-#### Step 2 — **Confirm Payment**&#x20;
+**Step 2 — Confirm Payment**
 
 The merchant client initializes the Hyperswitch SDK using the `client_secret` and `publishable_key`. The SDK fetches eligible payment methods from Hyperswitch and renders a secure payment UI.
 
@@ -185,17 +184,16 @@ async function initialize() {
 }
 ```
 
-#### Step 3 — **Collect Card Details**
+**Step 3 — Collect Card Details**
 
 The customer selects a card payment method and enters their card details directly within the SDK-managed interface, ensuring sensitive data never passes through merchant systems.
 
-#### Step 4 —**Authorize and Store Card**
+**Step 4 —Authorize and Store Card**
 
 The SDK submits a [`payments/confirm`](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to Hyperswitch. Hyperswitch authorizes the payment with the processor and securely stores the card in the Hyperswitch Vault, generating a reusable `payment_method_id`.
 
-#### Step 5 — **Return Status**
+**Step 5 — Return Status**
 
 The final payment status is returned to the SDK, which redirects the customer to the merchant's configured `return_url`.
 
 </details>
-

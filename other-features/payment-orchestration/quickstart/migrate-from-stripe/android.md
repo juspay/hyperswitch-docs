@@ -4,8 +4,7 @@ description: >-
   Hyperswitch's drop-in compatible SDK
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe/android
+    - android.md
 ---
 
 # Android
