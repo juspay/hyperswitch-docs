@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-service/verify-redirect-response
----
+# VerifyRedirectResponse RPC
 
-# Verify Redirect Response
+<!--
+---
+title: VerifyRedirectResponse
+description: Validate redirect-based payment responses - confirms authenticity of redirect-based payment completions to prevent fraud and tampering
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: true
+reviewed_by: ''
+reviewed_at: ''
+approved: false
+---
+-->
 
 ## Overview
 
@@ -17,41 +23,40 @@ The `VerifyRedirectResponse` RPC validates the authenticity of payment responses
 
 **Why use VerifyRedirectResponse?**
 
-| Scenario                | Developer Implementation                                                                                    |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **3DS completion**      | Customer returns from 3DS challenge - call `VerifyRedirectResponse` to validate the authentication result   |
-| **Bank redirect**       | Customer returns from bank authentication page - call `VerifyRedirectResponse` to confirm payment success   |
-| **Wallet payment**      | Customer completes Apple Pay or Google Pay - call `VerifyRedirectResponse` to verify the token              |
-| **Fraud prevention**    | Suspicious redirect parameters detected - call `VerifyRedirectResponse` to validate before fulfilling order |
-| **Tampering detection** | URL parameters appear modified - call `VerifyRedirectResponse` to verify integrity                          |
+| Scenario | Developer Implementation |
+|----------|-------------------------|
+| **3DS completion** | Customer returns from 3DS challenge - call `VerifyRedirectResponse` to validate the authentication result |
+| **Bank redirect** | Customer returns from bank authentication page - call `VerifyRedirectResponse` to confirm payment success |
+| **Wallet payment** | Customer completes Apple Pay or Google Pay - call `VerifyRedirectResponse` to verify the token |
+| **Fraud prevention** | Suspicious redirect parameters detected - call `VerifyRedirectResponse` to validate before fulfilling order |
+| **Tampering detection** | URL parameters appear modified - call `VerifyRedirectResponse` to verify integrity |
 
 **Key outcomes:**
-
-* Confirms redirect response authenticity
-* Prevents fraudulent payment notifications
-* Extracts verified transaction details
-* Determines final payment status
-* Enables safe order fulfillment
+- Confirms redirect response authenticity
+- Prevents fraudulent payment notifications
+- Extracts verified transaction details
+- Determines final payment status
+- Enables safe order fulfillment
 
 ## Request Fields
 
-| Field                       | Type                    | Required | Description                                                                   |
-| --------------------------- | ----------------------- | -------- | ----------------------------------------------------------------------------- |
-| `merchant_order_id`         | string                  | Yes      | Your unique order identifier for this verification                            |
-| `request_details`           | RequestDetails          | Yes      | Details of the redirect request including headers, body, and query parameters |
-| `redirect_response_secrets` | RedirectResponseSecrets | No       | Secrets for validating the redirect response                                  |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_order_id` | string | Yes | Your unique order identifier for this verification |
+| `request_details` | RequestDetails | Yes | Details of the redirect request including headers, body, and query parameters |
+| `redirect_response_secrets` | RedirectResponseSecrets | No | Secrets for validating the redirect response |
 
 ## Response Fields
 
-| Field                      | Type          | Description                                           |
-| -------------------------- | ------------- | ----------------------------------------------------- |
-| `source_verified`          | bool          | Whether the redirect source is verified as authentic  |
-| `connector_transaction_id` | string        | Connector's transaction ID if verification successful |
-| `response_amount`          | Money         | Amount from the verified response                     |
-| `merchant_order_id`        | string        | Your order reference (echoed back)                    |
-| `status`                   | PaymentStatus | Current status of the payment after verification      |
-| `error`                    | ErrorInfo     | Error details if verification failed                  |
-| `raw_connector_response`   | SecretString  | Raw API response from connector for debugging         |
+| Field | Type | Description |
+|-------|------|-------------|
+| `source_verified` | bool | Whether the redirect source is verified as authentic |
+| `connector_transaction_id` | string | Connector's transaction ID if verification successful |
+| `response_amount` | Money | Amount from the verified response |
+| `merchant_order_id` | string | Your order reference (echoed back) |
+| `status` | PaymentStatus | Current status of the payment after verification |
+| `error` | ErrorInfo | Error details if verification failed |
+| `raw_connector_response` | SecretString | Raw API response from connector for debugging |
 
 ## Example
 
@@ -94,7 +99,7 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Authorize](authorize.md) - Initiate a payment that may require redirect authentication
-* [Capture](capture.md) - Finalize the payment after successful verification
-* [Get](get.md) - Check payment status after verification
-* [PaymentMethodAuthenticationService](../payment-method-authentication-service/) - Pre-authenticate before authorization
+- [Authorize](./authorize.md) - Initiate a payment that may require redirect authentication
+- [Capture](./capture.md) - Finalize the payment after successful verification
+- [Get](./get.md) - Check payment status after verification
+- [PaymentMethodAuthenticationService](../payment-method-authentication-service/README.md) - Pre-authenticate before authorization

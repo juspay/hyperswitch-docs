@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/event-service/handle
----
+# Handle RPC
 
-# Handle
+<!--
+---
+title: Handle
+description: Process webhook notifications from connectors and translate into standardized responses
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: false
+reviewed_by: engineering
+reviewed_at: 2026-03-05
+approved: true
+---
+-->
 
 ## Overview
 
@@ -17,63 +23,62 @@ The `Handle` RPC processes raw webhook payloads from payment processors. It veri
 
 **Why use the Event Service for webhooks?**
 
-| Challenge                      | How Handle RPC Helps                                                 |
-| ------------------------------ | -------------------------------------------------------------------- |
-| **Signature verification**     | Automatically verifies webhook authenticity using connector secrets  |
-| **Multiple connector formats** | Normalizes Stripe, Adyen, PayPal events into consistent format       |
-| **Event parsing**              | Extracts payment/refund/dispute IDs and status from complex payloads |
-| **Security**                   | Validates webhook secrets before processing                          |
+| Challenge | How Handle RPC Helps |
+|-----------|---------------------|
+| **Signature verification** | Automatically verifies webhook authenticity using connector secrets |
+| **Multiple connector formats** | Normalizes Stripe, Adyen, PayPal events into consistent format |
+| **Event parsing** | Extracts payment/refund/dispute IDs and status from complex payloads |
+| **Security** | Validates webhook secrets before processing |
 
 **Key outcomes:**
-
-* Verified webhook authenticity
-* Normalized event structure
-* Extracted entity details (payment, refund, dispute)
-* Ready-to-process event data
+- Verified webhook authenticity
+- Normalized event structure
+- Extracted entity details (payment, refund, dispute)
+- Ready-to-process event data
 
 ## Request Fields
 
-| Field               | Type           | Required | Description                                       |
-| ------------------- | -------------- | -------- | ------------------------------------------------- |
-| `merchant_event_id` | string         | Yes      | Your unique event reference for idempotency       |
-| `request_details`   | RequestDetails | Yes      | HTTP request details including headers, body, URL |
-| `webhook_secrets`   | WebhookSecrets | No       | Secrets for verifying webhook signatures          |
-| `state`             | ConnectorState | No       | State from previous webhook processing            |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_event_id` | string | Yes | Your unique event reference for idempotency |
+| `request_details` | RequestDetails | Yes | HTTP request details including headers, body, URL |
+| `webhook_secrets` | WebhookSecrets | No | Secrets for verifying webhook signatures |
+| `state` | ConnectorState | No | State from previous webhook processing |
 
 ### RequestDetails Fields
 
-| Field     | Type                | Required | Description                              |
-| --------- | ------------------- | -------- | ---------------------------------------- |
-| `method`  | string              | Yes      | HTTP method (e.g., "POST")               |
-| `url`     | string              | Yes      | Full webhook URL                         |
-| `headers` | map\<string,string> | Yes      | HTTP headers including signature headers |
-| `body`    | bytes               | Yes      | Raw webhook payload                      |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `method` | string | Yes | HTTP method (e.g., "POST") |
+| `url` | string | Yes | Full webhook URL |
+| `headers` | map<string,string> | Yes | HTTP headers including signature headers |
+| `body` | bytes | Yes | Raw webhook payload |
 
 ### WebhookSecrets Fields
 
-| Field    | Type         | Required | Description                                     |
-| -------- | ------------ | -------- | ----------------------------------------------- |
-| `secret` | SecretString | No       | Webhook signing secret from connector dashboard |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `secret` | SecretString | No | Webhook signing secret from connector dashboard |
 
 ## Response Fields
 
-| Field               | Type               | Description                                                                       |
-| ------------------- | ------------------ | --------------------------------------------------------------------------------- |
-| `event_type`        | WebhookEventType   | Type of event: PAYMENT\_INTENT\_SUCCESS, CHARGE\_REFUNDED, DISPUTE\_CREATED, etc. |
-| `event_response`    | EventResponse      | Event content with payment/refund/dispute details                                 |
-| `source_verified`   | bool               | Whether webhook signature was verified                                            |
-| `merchant_event_id` | string             | Your event reference (echoed back)                                                |
-| `event_status`      | WebhookEventStatus | Processing status: COMPLETE, INCOMPLETE                                           |
+| Field | Type | Description |
+|-------|------|-------------|
+| `event_type` | WebhookEventType | Type of event: PAYMENT_INTENT_SUCCESS, CHARGE_REFUNDED, DISPUTE_CREATED, etc. |
+| `event_response` | EventResponse | Event content with payment/refund/dispute details |
+| `source_verified` | bool | Whether webhook signature was verified |
+| `merchant_event_id` | string | Your event reference (echoed back) |
+| `event_status` | WebhookEventStatus | Processing status: COMPLETE, INCOMPLETE |
 
 ### EventResponse Content
 
 The `event_response` contains one of the following based on `event_type`:
 
-| Field               | Type                      | Present When           |
-| ------------------- | ------------------------- | ---------------------- |
+| Field | Type | Present When |
+|-------|------|--------------|
 | `payments_response` | PaymentServiceGetResponse | Payment-related events |
-| `refunds_response`  | RefundResponse            | Refund-related events  |
-| `disputes_response` | DisputeResponse           | Dispute-related events |
+| `refunds_response` | RefundResponse | Refund-related events |
+| `disputes_response` | DisputeResponse | Dispute-related events |
 
 ## Example
 
@@ -120,6 +125,6 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Payment Service](../payment-service/) - Process payment events
-* [Refund Service](../refund-service/) - Process refund events
-* [Dispute Service](../dispute-service/) - Process dispute events
+- [Payment Service](../payment-service/README.md) - Process payment events
+- [Refund Service](../refund-service/README.md) - Process refund events
+- [Dispute Service](../dispute-service/README.md) - Process dispute events
