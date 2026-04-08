@@ -21,7 +21,7 @@ The Juspay Hyperswitch Payouts infrastructure allows you to programmatically dis
 * **Maintain compliance:** Reduce your PCI burden with secure, [processor-agnostic tokenization](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation).
 * **Unified visibility:** Track every payout across different regions and connectors in one dashboard.
 
-<figure><img src="../../../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payouts (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Key Features
 

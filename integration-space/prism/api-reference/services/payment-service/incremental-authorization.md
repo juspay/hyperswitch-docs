@@ -1,17 +1,11 @@
-# IncrementalAuthorization RPC
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-service/incremental-authorization
+---
 
-<!--
----
-title: IncrementalAuthorization
-description: Increase authorized amount if still in authorized state - allows adding charges for hospitality, tips, or incremental services
-last_updated: 2026-03-11
-generated_from: crates/types-traits/grpc-api-types/proto/services.proto
-auto_generated: true
-reviewed_by: ''
-reviewed_at: ''
-approved: false
----
--->
+# Incremental Authorization
 
 ## Overview
 
@@ -23,42 +17,43 @@ The `IncrementalAuthorization` RPC increases the authorized amount on an existin
 
 **Why use IncrementalAuthorization?**
 
-| Scenario | Developer Implementation |
-|----------|-------------------------|
-| **Hotel incidentals** | Guest adds room service or mini-bar charges - call `IncrementalAuthorization` to increase hold on their card |
-| **Restaurant tips** | Post-dining tip adjustment - call `IncrementalAuthorization` to add tip amount to original authorization |
-| **Add-on services** | Customer adds expedited shipping or warranty - call `IncrementalAuthorization` to cover additional costs |
-| **Metered services** | Usage exceeds initial estimate - call `IncrementalAuthorization` to extend hold for actual consumption |
-| **Subscription upgrades** | Customer upgrades plan mid-cycle - call `IncrementalAuthorization` to cover prorated difference |
+| Scenario                  | Developer Implementation                                                                                     |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Hotel incidentals**     | Guest adds room service or mini-bar charges - call `IncrementalAuthorization` to increase hold on their card |
+| **Restaurant tips**       | Post-dining tip adjustment - call `IncrementalAuthorization` to add tip amount to original authorization     |
+| **Add-on services**       | Customer adds expedited shipping or warranty - call `IncrementalAuthorization` to cover additional costs     |
+| **Metered services**      | Usage exceeds initial estimate - call `IncrementalAuthorization` to extend hold for actual consumption       |
+| **Subscription upgrades** | Customer upgrades plan mid-cycle - call `IncrementalAuthorization` to cover prorated difference              |
 
 **Key outcomes:**
-- Increased hold amount without new authorization
-- No additional card verification required
-- Combined final capture covers all charges
-- Reduces declined captures due to insufficient authorization
-- Single transaction record for customer statement
+
+* Increased hold amount without new authorization
+* No additional card verification required
+* Combined final capture covers all charges
+* Reduces declined captures due to insufficient authorization
+* Single transaction record for customer statement
 
 ## Request Fields
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `merchant_authorization_id` | string | Yes | Your unique identifier for this incremental authorization |
-| `connector_transaction_id` | string | Yes | The connector's transaction ID from the original authorization |
-| `amount` | Money | Yes | New total amount to be authorized (in minor currency units) |
-| `reason` | string | No | Reason for increasing the authorized amount |
-| `connector_feature_data` | SecretString | No | Connector-specific metadata for the transaction |
-| `state` | ConnectorState | No | State from previous multi-step flow |
+| Field                       | Type           | Required | Description                                                    |
+| --------------------------- | -------------- | -------- | -------------------------------------------------------------- |
+| `merchant_authorization_id` | string         | Yes      | Your unique identifier for this incremental authorization      |
+| `connector_transaction_id`  | string         | Yes      | The connector's transaction ID from the original authorization |
+| `amount`                    | Money          | Yes      | New total amount to be authorized (in minor currency units)    |
+| `reason`                    | string         | No       | Reason for increasing the authorized amount                    |
+| `connector_feature_data`    | SecretString   | No       | Connector-specific metadata for the transaction                |
+| `state`                     | ConnectorState | No       | State from previous multi-step flow                            |
 
 ## Response Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `connector_authorization_id` | string | Connector's authorization ID |
-| `status` | AuthorizationStatus | Current status of the authorization |
-| `error` | ErrorInfo | Error details if incremental authorization failed |
-| `status_code` | uint32 | HTTP-style status code (200, 402, etc.) |
-| `response_headers` | map<string, string> | Connector-specific response headers |
-| `state` | ConnectorState | State to pass to next request in multi-step flow |
+| Field                        | Type                 | Description                                       |
+| ---------------------------- | -------------------- | ------------------------------------------------- |
+| `connector_authorization_id` | string               | Connector's authorization ID                      |
+| `status`                     | AuthorizationStatus  | Current status of the authorization               |
+| `error`                      | ErrorInfo            | Error details if incremental authorization failed |
+| `status_code`                | uint32               | HTTP-style status code (200, 402, etc.)           |
+| `response_headers`           | map\<string, string> | Connector-specific response headers               |
+| `state`                      | ConnectorState       | State to pass to next request in multi-step flow  |
 
 ## Example
 
@@ -92,7 +87,7 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-- [Authorize](./authorize.md) - Create initial authorization (must set `request_incremental_authorization: true`)
-- [Capture](./capture.md) - Finalize the payment with the increased amount
-- [Get](./get.md) - Check current authorization status before incremental request
-- [Void](./void.md) - Cancel the authorization if no longer needed
+* [Authorize](authorize.md) - Create initial authorization (must set `request_incremental_authorization: true`)
+* [Capture](capture.md) - Finalize the payment with the increased amount
+* [Get](get.md) - Check current authorization status before incremental request
+* [Void](void.md) - Cancel the authorization if no longer needed
