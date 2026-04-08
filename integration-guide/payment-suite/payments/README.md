@@ -20,8 +20,6 @@ Juspay Hyperswitch provides flexible payment processing with multiple flow patte
 Refer to Payments (Cards) section if your flow requires the SDK to initiate payments directly. In this model, the SDK handles the payment trigger and communicates downstream to the Hyperswitch server and your chosen Payment Service Providers (PSPs). This path is ideal for supporting dynamic, frontend-driven payment experiences.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
-
 ```mermaid
 flowchart TD
     A[Payment Request] --> B{Payment Type}
