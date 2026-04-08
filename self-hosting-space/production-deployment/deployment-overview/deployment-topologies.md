@@ -3,8 +3,7 @@ hidden: true
 noIndex: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/deployment-topologies
+    - deployment-topologies.md
 ---
 
 # Deployment Topologies

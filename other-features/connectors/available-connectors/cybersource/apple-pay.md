@@ -4,8 +4,7 @@ description: >-
   Hyperswitch.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/cybersource/apple-pay
+    - apple-pay.md
 ---
 
 # Apple Pay

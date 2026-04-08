@@ -6,8 +6,7 @@ description: >-
 icon: stripe
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/split-payments/stripe-split-payments
+    - stripe-split-payments.md
 ---
 
 # Stripe Split Settlement

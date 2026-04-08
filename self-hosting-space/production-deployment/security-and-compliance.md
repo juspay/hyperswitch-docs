@@ -5,8 +5,7 @@ description: >-
 icon: shield-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/security-and-compliance
+    - security-and-compliance.md
 ---
 
 # Security and Compliance

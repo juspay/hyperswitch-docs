@@ -5,8 +5,7 @@ description: >-
 icon: rocket-launch
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live
+    - ./
 ---
 
 # Going live

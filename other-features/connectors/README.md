@@ -5,7 +5,7 @@ description: >-
 icon: plug
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors
+    - ./
 ---
 
 # Connectors Integration

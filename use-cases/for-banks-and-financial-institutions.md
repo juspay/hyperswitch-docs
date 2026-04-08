@@ -4,8 +4,7 @@ noIndex: true
 icon: building-columns
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-banks-and-financial-institutions
+    - for-banks-and-financial-institutions.md
 ---
 
 # For Banks & Financial Institutions

@@ -6,8 +6,7 @@ hidden: true
 icon: square-up-right
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/hyperswitch-sdk-+-external-vault
+    - hyperswitch-sdk-+-external-vault.md
 ---
 
 # Hyperswitch SDK + External Vault

@@ -2,8 +2,7 @@
 description: Surcharge Manager Setup
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/surcharge/surcharge-setup-guide
+    - surcharge-setup-guide.md
 ---
 
 # Surcharge Setup guide

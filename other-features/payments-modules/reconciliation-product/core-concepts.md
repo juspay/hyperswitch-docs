@@ -5,8 +5,7 @@ description: >-
   ensure financial integrity.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/core-concepts
+    - core-concepts.md
 ---
 
 # Core Concepts

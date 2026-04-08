@@ -5,8 +5,7 @@ description: >-
 icon: laptop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-control-center
+    - set-up-hyperswitch-control-center.md
 ---
 
 # Control Center

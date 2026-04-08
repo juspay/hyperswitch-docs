@@ -6,8 +6,7 @@ description: >-
 icon: repeat
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/subscriptions-with-modular-payments
+    - subscriptions-with-modular-payments.md
 ---
 
 # Subscriptions Providers

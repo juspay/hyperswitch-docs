@@ -5,8 +5,7 @@ description: >-
   void invalid transaction data.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling/resolution-strategies-for-mismatched-exceptions
+    - resolution-strategies-for-mismatched-exceptions.md
 ---
 
 # Resolution Strategies for Mismatched Exceptions

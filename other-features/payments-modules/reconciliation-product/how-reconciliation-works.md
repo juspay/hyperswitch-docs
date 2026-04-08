@@ -5,8 +5,7 @@ description: >-
   discrepancies
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/how-reconciliation-works
+    - how-reconciliation-works.md
 ---
 
 # How Reconciliation Works

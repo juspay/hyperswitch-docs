@@ -6,8 +6,7 @@ hidden: true
 icon: desktop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/vault-sdk-integration-1
+    - vault-sdk-integration-1.md
 ---
 
 # Vault SDK - JS with REST API Integration

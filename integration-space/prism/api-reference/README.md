@@ -4,7 +4,8 @@ description: >-
   handling for payment processing
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference-overview
 ---
 
 # API Reference Overview

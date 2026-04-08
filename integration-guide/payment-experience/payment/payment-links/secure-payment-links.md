@@ -4,8 +4,7 @@ description: >-
   trusted domains for safe payment method storage.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/secure-payment-links
+    - secure-payment-links.md
 ---
 
 # Secure Payment Links

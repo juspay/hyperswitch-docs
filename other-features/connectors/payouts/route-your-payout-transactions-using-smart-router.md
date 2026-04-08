@@ -6,8 +6,7 @@ description: >-
 icon: swap
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/route-your-payout-transactions-using-smart-router
+    - route-your-payout-transactions-using-smart-router.md
 ---
 
 # Smart Router for Payouts

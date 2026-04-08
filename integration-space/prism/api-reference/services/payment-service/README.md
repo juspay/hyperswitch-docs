@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference-overview/payment-service-overview
+---
+
 # Payment Service Overview
 
 ## Overview

@@ -3,8 +3,7 @@ description: Platform Organization Setup & Workflow
 icon: garage-car
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup
+    - platform-org-and-merchant-setup.md
 ---
 
 # Platform Org and Merchant Setup

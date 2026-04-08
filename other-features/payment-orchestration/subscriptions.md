@@ -6,8 +6,7 @@ hidden: true
 icon: repeat
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/subscriptions
+    - subscriptions.md
 ---
 
 # Subscriptions

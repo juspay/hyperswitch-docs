@@ -4,8 +4,7 @@ description: >-
   integration
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment
+    - production-ready-deployment.md
 ---
 
 # Production ready deployment

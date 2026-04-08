@@ -5,8 +5,7 @@ noIndex: true
 icon: shop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-marketplace-platforms
+    - for-marketplace-platforms.md
 ---
 
 # For Marketplace/Platforms

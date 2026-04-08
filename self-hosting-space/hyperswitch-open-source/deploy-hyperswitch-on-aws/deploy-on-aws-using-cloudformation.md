@@ -5,8 +5,7 @@ description: >-
 icon: aws
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation
+    - deploy-on-aws-using-cloudformation.md
 ---
 
 # Deploy on AWS using CloudFormation

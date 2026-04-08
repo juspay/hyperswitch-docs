@@ -5,8 +5,7 @@ description: >-
 icon: clipboard-question
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/pci-compliance/completing-the-saq
+    - completing-the-saq.md
 ---
 
 # Completing the SAQ

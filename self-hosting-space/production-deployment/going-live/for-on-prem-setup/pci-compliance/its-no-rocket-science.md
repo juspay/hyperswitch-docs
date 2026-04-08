@@ -3,8 +3,7 @@ description: Demystifying PCI compliance and it's requirements
 icon: cake-slice
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science
+    - its-no-rocket-science.md
 ---
 
 # Get started

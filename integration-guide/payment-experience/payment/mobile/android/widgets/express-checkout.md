@@ -5,8 +5,7 @@ description: >-
 icon: cart-shopping-fast
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/mobile/android/widgets/express-checkout
+    - express-checkout.md
 ---
 
 # Express Checkout

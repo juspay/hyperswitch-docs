@@ -5,8 +5,7 @@ description: >-
 icon: bars-progress
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payment-method-card/payment-methods-management
+    - payment-methods-management.md
 ---
 
 # Payment Methods Management

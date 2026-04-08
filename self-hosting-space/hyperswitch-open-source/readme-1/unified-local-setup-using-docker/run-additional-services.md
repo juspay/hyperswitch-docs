@@ -5,8 +5,7 @@ description: >-
 icon: arrows-to-circle
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/readme-1/unified-local-setup-using-docker/run-additional-services
+    - run-additional-services.md
 ---
 
 # Run Additional Services

@@ -3,8 +3,7 @@ description: Connect external vaults to store cards
 icon: plug
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/saas-orchestration-with-third-party-vault
+    - saas-orchestration-with-third-party-vault.md
 ---
 
 # SaaS Orchestration with Third-Party Vault

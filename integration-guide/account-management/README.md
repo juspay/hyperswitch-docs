@@ -6,8 +6,7 @@ description: >-
 icon: joystick
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management
+    - ./
 ---
 
 # Payment Operations

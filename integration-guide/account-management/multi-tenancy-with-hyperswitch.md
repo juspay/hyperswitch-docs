@@ -5,8 +5,7 @@ description: >-
 icon: cubes-stacked
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/multi-tenancy-with-hyperswitch
+    - multi-tenancy-with-hyperswitch.md
 ---
 
 # Multi-Tenancy

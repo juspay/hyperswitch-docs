@@ -5,8 +5,7 @@ description: >-
 icon: box-circle-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/saas-orchestration-with-juspay-vault
+    - saas-orchestration-with-juspay-vault.md
 ---
 
 # SaaS Orchestration with Juspay Vault

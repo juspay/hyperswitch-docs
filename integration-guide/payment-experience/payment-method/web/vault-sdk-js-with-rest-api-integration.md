@@ -5,8 +5,7 @@ description: >-
 icon: globe-pointer
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment-method/web/vault-sdk-js-with-rest-api-integration
+    - vault-sdk-js-with-rest-api-integration.md
 ---
 
 # Vault SDK - JS with REST API Integration

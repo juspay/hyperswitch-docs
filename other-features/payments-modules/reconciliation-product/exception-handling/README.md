@@ -5,8 +5,7 @@ description: >-
   anomalies—to maintain financial data integrity.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling
+    - ./
 ---
 
 # Exception Handling

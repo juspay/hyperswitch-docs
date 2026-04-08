@@ -5,8 +5,7 @@ description: >-
 icon: flag-checkered
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/get-started-with-payouts
+    - get-started-with-payouts.md
 ---
 
 # Getting Started with Payouts

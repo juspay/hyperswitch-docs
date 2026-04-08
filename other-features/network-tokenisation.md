@@ -5,8 +5,7 @@ description: >-
 icon: shield-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/network-tokenisation
+    - network-tokenisation.md
 ---
 
 # Network Tokenisation

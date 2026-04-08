@@ -6,8 +6,7 @@ description: >-
 icon: link
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/payout-link
+    - payout-link.md
 ---
 
 # Payout Links

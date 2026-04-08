@@ -5,8 +5,7 @@ description: >-
 icon: plug-circle-bolt
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets/hyperwidget-integration-guide
+    - hyperwidget-integration-guide.md
 ---
 
 # Hyperwidget Integration Guide

@@ -3,8 +3,7 @@ description: Key to configure and test different connectors in Juspay Hyperswitc
 icon: key
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/test-credentials
+    - test-credentials.md
 ---
 
 # Test Credentials

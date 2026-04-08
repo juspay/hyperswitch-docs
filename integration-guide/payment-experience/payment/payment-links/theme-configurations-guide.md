@@ -2,8 +2,7 @@
 description: Payment Links & Theme Customization Guide
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/payment-links/theme-configurations-guide
+    - theme-configurations-guide.md
 ---
 
 # Theme configurations Guide

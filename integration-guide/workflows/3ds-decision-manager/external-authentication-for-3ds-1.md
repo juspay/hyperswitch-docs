@@ -6,8 +6,7 @@ hidden: true
 icon: up-right-from-square
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds-1
+    - external-authentication-for-3ds-1.md
 ---
 
 # Copy of Standalone 3D Secure (via Hyperswitch)

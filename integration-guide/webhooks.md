@@ -3,7 +3,7 @@ description: Configure outgoing webhooks from Hyperswitch
 icon: anchor
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/webhooks
+    - webhooks.md
 ---
 
 # Webhooks

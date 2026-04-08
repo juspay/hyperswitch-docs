@@ -5,8 +5,7 @@ description: >-
 icon: arrow-progress
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment-method
+    - ./
 ---
 
 # Multi-step Payments
@@ -14,7 +13,7 @@ metaLinks:
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
 {% hint style="info" %}
-#### Integration Path
+**Integration Path**
 
 **Server-to-Server (S2S) Payments**
 

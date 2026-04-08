@@ -3,8 +3,7 @@ description: Set up and manage recurring payments with Card-on-File and MIT supp
 icon: arrows-rotate-reverse
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/recurring-payments
+    - recurring-payments.md
 ---
 
 # Recurring payments

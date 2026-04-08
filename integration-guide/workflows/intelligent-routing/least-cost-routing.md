@@ -5,8 +5,7 @@ description: >-
 icon: hand-holding-dollar
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/least-cost-routing
+    - least-cost-routing.md
 ---
 
 # Least Cost Routing

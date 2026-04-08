@@ -5,8 +5,7 @@ description: >-
 icon: money-bill-wave
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/external-vault-sdk-+-storage/processing-payments-with-external-vault
+    - processing-payments-with-external-vault.md
 ---
 
 # Processing payments with external vault

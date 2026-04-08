@@ -3,8 +3,7 @@ description: Explore composable payment workflows for Vertical SaaS platforms
 icon: code-compare
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-workflows
+    - payment-workflows.md
 ---
 
 # Supported Payment Workflows

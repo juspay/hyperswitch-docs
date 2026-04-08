@@ -5,8 +5,7 @@ description: >-
 icon: money-bills
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup/test-a-payment
+    - test-a-payment.md
 ---
 
 # Test a payment

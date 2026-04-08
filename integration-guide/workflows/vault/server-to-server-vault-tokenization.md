@@ -6,8 +6,7 @@ hidden: true
 icon: server
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/server-to-server-vault-tokenization
+    - server-to-server-vault-tokenization.md
 ---
 
 # Server to Server Vault tokenization

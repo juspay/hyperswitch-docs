@@ -5,8 +5,7 @@ description: >-
   management.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/beta-embeddable-components/integration-reference
+    - integration-reference.md
 ---
 
 # Integration Reference

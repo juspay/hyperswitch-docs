@@ -4,8 +4,7 @@ description: >-
   accept and send global payments across multiple payment methods.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/rapyd
+    - rapyd.md
 ---
 
 # Rapyd

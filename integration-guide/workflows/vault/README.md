@@ -3,8 +3,7 @@ description: Modular vaulting in Juspay Hyperswitch
 icon: vault
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault
+    - ./
 ---
 
 # Vault

@@ -6,8 +6,7 @@ description: >-
 hidden: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/why-we-evolved-v1-vs-v2
+    - why-we-evolved-v1-vs-v2.md
 ---
 
 # Why we evolved(V1 vs V2)

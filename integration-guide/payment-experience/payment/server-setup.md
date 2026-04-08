@@ -3,8 +3,7 @@ description: Set up server-side payment creation and SDK integration for Juspay 
 icon: server
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/server-setup
+    - server-setup.md
 ---
 
 # Server Setup

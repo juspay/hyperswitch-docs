@@ -5,8 +5,7 @@ description: >-
 icon: rocket-launch
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup/using-postman
+    - using-postman.md
 ---
 
 # Using postman

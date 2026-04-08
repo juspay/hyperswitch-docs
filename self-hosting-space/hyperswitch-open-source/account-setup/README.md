@@ -3,8 +3,7 @@ description: Create your Hyperswitch account and add a payment provider
 icon: wrench
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/account-setup
+    - ./
 ---
 
 # Account setup

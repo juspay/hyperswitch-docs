@@ -4,8 +4,7 @@ hidden: true
 icon: star-shooting
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments
+    - native-3ds-authentication-for-mobile-payments.md
 ---
 
 # Native 3DS Authentication

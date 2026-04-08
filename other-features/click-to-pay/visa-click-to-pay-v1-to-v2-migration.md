@@ -6,8 +6,7 @@ description: >-
 icon: cc-visa
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/click-to-pay/visa-click-to-pay-v1-to-v2-migration
+    - visa-click-to-pay-v1-to-v2-migration.md
 ---
 
 # Visa Click to Pay: V1 to V2 Migration

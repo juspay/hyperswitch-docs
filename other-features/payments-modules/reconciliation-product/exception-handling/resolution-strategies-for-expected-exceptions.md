@@ -5,8 +5,7 @@ description: >-
   actions.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payments-modules/reconciliation-product/exception-handling/resolution-strategies-for-expected-exceptions
+    - resolution-strategies-for-expected-exceptions.md
 ---
 
 # Resolution Strategies for 'Expected' Exceptions

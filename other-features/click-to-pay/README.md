@@ -3,7 +3,7 @@ description: Implement Click to Pay for seamless secure checkout with passkeys
 icon: chevrons-right
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/click-to-pay
+    - ./
 ---
 
 # Click To Pay

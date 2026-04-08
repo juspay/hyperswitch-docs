@@ -3,8 +3,7 @@ description: Get started with Split Payments via Juspay Hyperswitch
 icon: split
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/hyperswitch-split-payments
+    - hyperswitch-split-payments.md
 ---
 
 # Split Payments

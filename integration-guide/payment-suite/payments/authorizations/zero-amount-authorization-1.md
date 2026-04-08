@@ -3,8 +3,7 @@ description: Best way to validate customer payment data and charge the customer 
 icon: circle-0
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations/zero-amount-authorization-1
+    - zero-amount-authorization-1.md
 ---
 
 # $0 Authorization

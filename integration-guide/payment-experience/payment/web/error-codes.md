@@ -5,8 +5,7 @@ description: >-
 icon: ban
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/error-codes
+    - error-codes.md
 ---
 
 # Error Codes

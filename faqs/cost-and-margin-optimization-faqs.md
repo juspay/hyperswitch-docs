@@ -4,8 +4,7 @@ hidden: true
 noIndex: true
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/faqs/cost-and-margin-optimization-faqs
+    - cost-and-margin-optimization-faqs.md
 ---
 
 # Cost and Margin Optimization FAQs

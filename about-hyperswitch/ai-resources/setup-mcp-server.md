@@ -5,8 +5,7 @@ description: >-
 icon: user-robot-xmarks
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/ai-resources/setup-mcp-server
+    - setup-mcp-server.md
 ---
 
 # Setup MCP Server

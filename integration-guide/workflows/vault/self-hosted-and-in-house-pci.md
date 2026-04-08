@@ -5,8 +5,7 @@ description: >-
 icon: box-ballot
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/vault/self-hosted-and-in-house-pci
+    - self-hosted-and-in-house-pci.md
 ---
 
 # Self-hosted & in-house PCI

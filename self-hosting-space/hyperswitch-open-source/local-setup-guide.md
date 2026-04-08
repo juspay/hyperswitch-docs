@@ -7,8 +7,7 @@ noIndex: true
 icon: desktop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/local-setup-guide
+    - local-setup-guide.md
 ---
 
 # Local Setup Guide

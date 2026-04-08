@@ -6,8 +6,7 @@ hidden: true
 icon: flux-capacitor
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-models
+    - deployment-models.md
 ---
 
 # Deployment Models

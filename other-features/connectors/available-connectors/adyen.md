@@ -4,8 +4,7 @@ description: >-
   wallets, and local payment methods.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/adyen
+    - adyen.md
 ---
 
 # Adyen

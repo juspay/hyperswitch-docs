@@ -5,8 +5,7 @@ description: >-
 icon: badge-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/readme-1/unified-local-setup-using-docker
+    - ./
 ---
 
 # Run Hyperswitch Locally Using Docker

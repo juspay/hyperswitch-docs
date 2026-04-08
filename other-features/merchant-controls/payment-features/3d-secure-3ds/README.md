@@ -7,8 +7,7 @@ hidden: true
 icon: shield-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/merchant-controls/payment-features/3d-secure-3ds
+    - ./
 ---
 
 # 3D Secure (3DS)

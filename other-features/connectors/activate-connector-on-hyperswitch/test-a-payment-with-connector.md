@@ -6,8 +6,7 @@ description: >-
 icon: vial-circle-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector
+    - test-a-payment-with-connector.md
 ---
 
 # Try a Payment

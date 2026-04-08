@@ -5,7 +5,7 @@ description: >-
 metaLinks:
   alternates:
     - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/architecture/versioning
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/architecture-overview/versioning
 ---
 
 # Versioning

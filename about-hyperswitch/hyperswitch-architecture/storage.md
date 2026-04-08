@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/about-hyperswitch/hyperswitch-architecture/storage
+    - storage.md
 ---
 
 # Storage

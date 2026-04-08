@@ -3,8 +3,7 @@ description: Integrate Hyperswitch SDK with React and REST API for web checkout
 icon: react
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/web/react-with-rest-api-integration
+    - react-with-rest-api-integration.md
 ---
 
 # React with REST API Integration

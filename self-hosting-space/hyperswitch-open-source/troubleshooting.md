@@ -5,8 +5,7 @@ description: >-
 icon: hammer-brush
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/troubleshooting
+    - troubleshooting.md
 ---
 
 # Troubleshooting

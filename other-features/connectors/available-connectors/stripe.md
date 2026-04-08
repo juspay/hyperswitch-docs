@@ -4,8 +4,7 @@ description: >-
   enable multiple payment methods through a unified API integration.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/stripe
+    - stripe.md
 ---
 
 # Stripe

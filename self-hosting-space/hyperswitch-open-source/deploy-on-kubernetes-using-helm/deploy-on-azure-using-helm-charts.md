@@ -4,8 +4,7 @@ description: >-
   payment infrastructure
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts
+    - deploy-on-azure-using-helm-charts.md
 ---
 
 # Deploy on Azure Using Helm Charts

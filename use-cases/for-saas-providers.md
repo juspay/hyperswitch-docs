@@ -5,8 +5,7 @@ noIndex: true
 icon: desktop
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-saas-providers
+    - for-saas-providers.md
 ---
 
 # For SaaS Businesses

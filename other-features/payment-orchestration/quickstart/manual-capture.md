@@ -6,8 +6,7 @@ hidden: true
 icon: sack-dollar
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/manual-capture
+    - manual-capture.md
 ---
 
 # Manual Capture

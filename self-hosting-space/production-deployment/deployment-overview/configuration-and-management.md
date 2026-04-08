@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/production-deployment/deployment-overview/configuration-and-management
+    - configuration-and-management.md
 ---
 
 # Configuration and Management

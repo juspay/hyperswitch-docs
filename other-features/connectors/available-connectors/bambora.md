@@ -5,8 +5,7 @@ description: >-
   Passcode, and select supported payment methods.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/available-connectors/bambora
+    - bambora.md
 ---
 
 # Bambora

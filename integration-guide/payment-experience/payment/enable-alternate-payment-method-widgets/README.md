@@ -5,8 +5,7 @@ description: >-
 icon: bolt-lightning
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets
+    - ./
 ---
 
 # Alternate Payment Method Widgets

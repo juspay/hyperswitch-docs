@@ -5,8 +5,7 @@ noIndex: true
 icon: block-brick
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/use-cases/for-b2b-saas-businesses
+    - for-b2b-saas-businesses.md
 ---
 
 # For B2B SaaS Businesses

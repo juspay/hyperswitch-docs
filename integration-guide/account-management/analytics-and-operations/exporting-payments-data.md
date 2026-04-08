@@ -5,8 +5,7 @@ description: >-
 icon: tachograph-digital
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/account-management/analytics-and-operations/exporting-payments-data
+    - exporting-payments-data.md
 ---
 
 # Export Payments Data To Redshift for Analytics

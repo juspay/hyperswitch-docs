@@ -5,8 +5,7 @@ description: >-
 icon: ruler
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/rule-based-routing
+    - rule-based-routing.md
 ---
 
 # Rule Based Routing

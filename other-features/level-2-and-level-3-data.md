@@ -5,8 +5,7 @@ description: >-
 icon: code-branch
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/level-2-and-level-3-data
+    - level-2-and-level-3-data.md
 ---
 
 # Level 2 and Level 3 data

@@ -3,8 +3,7 @@ description: Self-deploy the intelligent routing engine with Docker
 icon: screwdriver-wrench
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/intelligent-routing/self-deployment-guide
+    - self-deployment-guide.md
 ---
 
 # Self-Deployment Guide

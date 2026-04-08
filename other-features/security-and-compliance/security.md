@@ -3,8 +3,7 @@ description: Comprehensive measures safeguarding Data Integrity within Hyperswit
 icon: cloud-check
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/security-and-compliance/security
+    - security.md
 ---
 
 # Data Security

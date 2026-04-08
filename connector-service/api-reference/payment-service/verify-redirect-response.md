@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-service/verify-redirect-response
+    - verify-redirect-response.md
 ---
 
 # Verify Redirect Response

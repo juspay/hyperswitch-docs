@@ -3,8 +3,7 @@ description: Store your customers cards securely in a centralized and PCI compli
 icon: lock-keyhole
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/tokenization-and-saved-cards
+    - ./
 ---
 
 # Tokenization & Vaulting

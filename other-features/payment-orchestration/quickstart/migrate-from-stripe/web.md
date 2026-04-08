@@ -4,8 +4,7 @@ description: >-
   UnifiedCheckout.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/migrate-from-stripe/web
+    - web.md
 ---
 
 # Web

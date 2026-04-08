@@ -3,8 +3,7 @@ description: Accept debit and credit card payments on your application
 icon: credit-card
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/payment-orchestration/quickstart/payment-methods-setup/cards
+    - cards.md
 ---
 
 # Cards

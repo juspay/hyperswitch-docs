@@ -5,8 +5,7 @@ description: >-
 icon: arrow-up-right-dots
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/authorizations/incremental-authorization
+    - incremental-authorization.md
 ---
 
 # Incremental Authorization

@@ -4,8 +4,7 @@ description: >-
   with setup, access, cleanup, and troubleshooting instructions.
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube
+    - deploy-on-local-using-helm-charts-and-minikube.md
 ---
 
 # Deploy on Local using Helm Charts and Minikube

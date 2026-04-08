@@ -5,8 +5,7 @@ description: >-
 icon: chart-simple-horizontal
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine
+    - ./
 ---
 
 # 3DS Intelligence Engine

@@ -5,8 +5,7 @@ description: >-
 icon: chart-diagram
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/integration-guide/payment-suite/payments/manual-capture/overcapture
+    - overcapture.md
 ---
 
 # Overcapture
