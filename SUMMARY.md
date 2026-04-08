@@ -373,7 +373,6 @@
 
 * [Product Overview](prism/product-overview/README.md)
   * [Installation & Configuration](prism/product-overview/installation-and-configuration.md)
-  * [Create Payment Order](prism/product-overview/create-payment-order.md)
   * [First Payment](prism/product-overview/first-payment.md)
   * [Extend to More Flows](prism/product-overview/extend-to-more-flows.md)
 * [Architecture Overview](prism/architecture-overview/README.md)
