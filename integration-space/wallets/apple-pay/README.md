@@ -24,7 +24,7 @@ Follow the below guide for setting up Apple Pay on Juspay Hyperswitch based on y
 * While selecting Payment Methods, click on Apple Pay in the Wallet section
 * Select the Web Domain option
 
-<div data-full-width="false"><figure><img src="../../../.gitbook/assets/Screenshot 2023-12-07 at 7.41.02 PM.png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/Screenshot 2023-12-07 at 7.41.02 PM.png" alt=""><figcaption></figcaption></figure></div>
 
 * Download the domain verification file using the button available
 * Host this file on your server at _`merchant_domain`_`/.well-known/apple-developer-merchantid-domain-association`
@@ -77,7 +77,7 @@ You can validate the merchant domain by following the steps mentioned below:
 * Once you host the .txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
-<figure><img src="../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
 
 #### **Creating Apple MerchantID Certificate and Private Key**
 
@@ -113,7 +113,7 @@ You can configure Apple Pay on Hyperswitch by following the steps mentioned belo
 * While selecting Payment Methods, click on Apple Pay in the Wallet section
 * Select the iOS Certificate option
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-12-07 at 7.40.48 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-12-07 at 7.40.48 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * In Apple Merchant Identifier, add your identifier which you added while creating Apple MerchantID
 * In Merchant Certificate, **base64 encode** the entire content of your **.pem** file _(it will be **certificate\_sandbox.pem**, if you used the exact command mentioned above)_, and enter the encoded data in the form field. Use the below command to base64 encode it.
@@ -136,7 +136,7 @@ base64 -i certificate_sandbox.key
 
 {% tabs %}
 {% tab title="Payment Processing Details At Connector" %}
-<figure><img src="../../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
 
 * You will need to get a **.csr** file from your processor's dashboard, _(like Adyen, Cybersource)_
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to Identifiers and select the Merchant ID you created previously
@@ -153,7 +153,7 @@ This final step is specific to the processor being used and is not necessary in 
 {% tab title="Payment Processing Details At Hyperswitch" %}
 \\
 
-<figure><img src="../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
 
 You can create an Apple Payment Processing Certificate and Payment Processing Key by following the steps mentioned below
 
@@ -203,4 +203,4 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
 
-<figure><img src="../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>

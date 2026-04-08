@@ -20,7 +20,7 @@ Juspay Hyperswitch supports a wide range of parameters through the Payments Crea
 
 Hyperswitch enables multiple card payment configurations designed to support a wide range of industry-specific use cases through the unified [Payment Confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#payments-confirm) request.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt="Hyperswitch card payment flow configurations diagram"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (6).png" alt="Hyperswitch card payment flow configurations diagram"><figcaption></figcaption></figure>
 
 * Verification: Facilitates $0 verification, $0 verification for [subscriptions](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions), and AVS & CVV integrity checks.
 * Authentication: Modular support for External authentication providers or native PSP authentication.
@@ -31,7 +31,7 @@ Hyperswitch enables multiple card payment configurations designed to support a w
 
 The Payments API supports an extensive set of card parameters to ensure regional flexibility and compliance across retail and subscription billing.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt="Hyperswitch card-specific parameters diagram"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (5).png" alt="Hyperswitch card-specific parameters diagram"><figcaption></figcaption></figure>
 
 **Transaction Initiation Types**
 
@@ -49,7 +49,7 @@ The Payments API supports an extensive set of card parameters to ensure regional
 
 Hyperswitch provides comprehensive parameters that streamline transaction management across leading digital wallets like Google Pay and Apple Pay.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt="Hyperswitch digital wallet integration diagram"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (4).png" alt="Hyperswitch digital wallet integration diagram"><figcaption></figcaption></figure>
 
 * Experience Models: Support for Native, Redirect, and 3rd-party SDK integration patterns to ensure a [seamless checkout experience](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls).
 * Payload Management: Robust handling of both Decrypted (with cryptogram and wallet data) and Encrypted payment data payloads.
@@ -58,7 +58,7 @@ Hyperswitch provides comprehensive parameters that streamline transaction manage
 
 Hyperswitch offers a unified interface to track, respond to, and reconcile outcomes across multiple PSPs from a single orchestration layer.
 
-<figure><img src="../../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt="Hyperswitch post-transaction refunds disputes and errors diagram"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Juspay hyperswitch - Architecture deepdive (8).png" alt="Hyperswitch post-transaction refunds disputes and errors diagram"><figcaption></figcaption></figure>
 
 * Refund Management: Unified parameters for [Complete Refunds](https://api-reference.hyperswitch.io/v2/refunds/refunds--create) and multiple Partial Refund scenarios.
 * Chargebacks: Streamlined [Unification of reporting and submission](https://docs.hyperswitch.io/explore-hyperswitch/account-management/disputes) across different processors.

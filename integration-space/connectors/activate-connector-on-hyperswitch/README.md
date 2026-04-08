@@ -19,7 +19,7 @@ metaLinks:
 * Navigate to the [Connectors](https://app.hyperswitch.io/connectors) section on the Control Center.
 * Select the desired connector using the '+ Connect' button.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 3.18.34 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 3.18.34 AM.png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Profile details
 
@@ -32,19 +32,19 @@ metaLinks:
 * If applicable, provide the Source Verification Key for webhook authenticity.
 * Choose the payment methods for the demo checkout.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.19.29 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.19.29 AM.png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Enable payment methods
 
 * Choose the payment methods for the demo checkout.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.39.45 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.39.45 AM.png" alt=""><figcaption></figcaption></figure>
 
 #### 5. Configure webhooks \[Optional]
 
 * If the selected connector supports webhooks, copy the URL from the Control Center and configure it in the connector dashboard.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 11.24.15 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.24.15 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="test-a-payment-with-connector.md" %}
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)
@@ -71,7 +71,7 @@ To update the credentials on the Hyperswitch Control Center, follow these steps:
 
 * Click on the edit icon (📝) alongside the API keys, this will take you to a pop-up to enter the credentials for the connectors.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 9.53.16 AM 1 (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 9.53.16 AM 1 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="test-a-payment-with-connector.md" %}
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)

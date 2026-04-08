@@ -37,11 +37,11 @@ Businesses running on a subscription model — powered by providers such as Char
 
 #### Initial Subscription create flow (with CIT Payment)
 
-<figure><img src="../../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/cit flow 13102205.png" alt=""><figcaption></figcaption></figure>
 
 #### MIT payment flow in subsequent billing cycle
 
-<figure><img src="../../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/mit flow 13102025.png" alt=""><figcaption></figcaption></figure>
 
 ### Integration Guide
 

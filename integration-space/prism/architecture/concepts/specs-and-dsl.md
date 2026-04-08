@@ -1,4 +1,11 @@
-# Specs and DSL
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/architecture-overview/domain-specific-language
+---
+
+# Domain specific language
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust Types that catches integration errors at compile time. It enforces the right thing so that AI agents and Developers can code at ease when adding new integrations or enhancements to the Prism codebase.
 
@@ -10,15 +17,15 @@ The `ConnectorIntegration` trait defines the contract that every connector must 
 
 **Core trait methods:**
 
-| Method | Purpose | When Called |
-|--------|---------|-------------|
-| `get_headers` | Build HTTP headers for the request | Before every API call |
-| `get_url` | Construct the endpoint URL | Before every API call |
-| `get_request_body` | Serialize the request payload | Before every API call |
-| `build_request` | Assemble the complete HTTP request | Before every API call |
-| `handle_response` | Parse successful responses | After 2xx response |
-| `build_error_response` | Parse error responses | After 4xx/5xx response |
-| `get_connector_transaction_id` | Extract transaction ID | After successful response |
+| Method                         | Purpose                            | When Called               |
+| ------------------------------ | ---------------------------------- | ------------------------- |
+| `get_headers`                  | Build HTTP headers for the request | Before every API call     |
+| `get_url`                      | Construct the endpoint URL         | Before every API call     |
+| `get_request_body`             | Serialize the request payload      | Before every API call     |
+| `build_request`                | Assemble the complete HTTP request | Before every API call     |
+| `handle_response`              | Parse successful responses         | After 2xx response        |
+| `build_error_response`         | Parse error responses              | After 4xx/5xx response    |
+| `get_connector_transaction_id` | Extract transaction ID             | After successful response |
 
 **Example implementation:**
 
@@ -83,7 +90,6 @@ impl ConnectorIntegration<Authorize, AuthorizeRequest, AuthorizeResponse> for St
 }
 ```
 
-
 Additionally a macro system enforces that adapters implement all the required methods.
 
 ```rust
@@ -96,15 +102,14 @@ macros::macro_connector_implementation!(
 );
 ```
 
-If you forget to implement `build_error_response`, the macro invocation fails at compile time with a clear error message: "Connector Stripe is missing required method build_error_response for flow Authorize".
-
+If you forget to implement `build_error_response`, the macro invocation fails at compile time with a clear error message: "Connector Stripe is missing required method build\_error\_response for flow Authorize".
 
 ### Protocol Buffers
 
-Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification.
-It provides compile-time guarantees irrespective of the programming languages you use the SDK with.
+Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification. It provides compile-time guarantees irrespective of the programming languages you use the SDK with.
 
 **Proto definition:**
+
 ```protobuf
 message AuthorizeRequest {
     Money amount = 1;                    // Required

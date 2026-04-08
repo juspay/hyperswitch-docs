@@ -4,7 +4,7 @@ description: >-
   integrations across multiple processors
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/architecture
+    - https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/architecture-overview
 ---
 
 # Architecture Overview
@@ -96,28 +96,25 @@ Hyperswitch Prism supports a three-layered architecture, each solving a purpose.
 
 ### Data Flow
 
-{% @mermaid/diagram content="sequenceDiagram
-    participant Interface as Interface Layer
-    participant Binding as Binding Layer
-    participant Core as Core Layer
-    participant Stripe as Stripe API
-    participant Adyen as Adyen API
+\{% @mermaid/diagram content="sequenceDiagram participant Interface as Interface Layer participant Binding as Binding Layer participant Core as Core Layer participant Stripe as Stripe API participant Adyen as Adyen API
 
-    Interface->>Binding: Serialize to protobuf
-    Binding->>Core: gRPC call (HTTP/2)
-    Core->>Core: Route to connector & transform request
+```
+Interface->>Binding: Serialize to protobuf
+Binding->>Core: gRPC call (HTTP/2)
+Core->>Core: Route to connector & transform request
 
-    alt Stripe Connector
-        Core->>Stripe: POST /v1/payment_intents
-        Stripe-->>Core: PaymentIntent response
-    else Adyen Connector
-        Core->>Adyen: POST /payments
-        Adyen-->>Core: Payment response
-    end
+alt Stripe Connector
+    Core->>Stripe: POST /v1/payment_intents
+    Stripe-->>Core: PaymentIntent response
+else Adyen Connector
+    Core->>Adyen: POST /payments
+    Adyen-->>Core: Payment response
+end
 
-    Core->>Core: Transform to unified format & normalize errors
-    Core-->>Binding: gRPC response
-    Binding-->>Interface: Deserialize from protobuf" %}
+Core->>Core: Transform to unified format & normalize errors
+Core-->>Binding: gRPC response
+Binding-->>Interface: Deserialize from protobuf" %}
+```
 
 ### Connector Transformation
 

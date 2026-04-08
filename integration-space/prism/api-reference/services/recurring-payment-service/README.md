@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/prism/api-reference-overview/recurring-payment-service-overview
+---
+
 # Recurring Payment Service Overview
 
 ## Overview
