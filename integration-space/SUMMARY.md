@@ -4,7 +4,6 @@
 
 * [Product Overview](README.md)
   * [Installation & Configuration](prism/getting-started/installation.md)
-  * [Create Payment Order](prism/prism/create-payment-order.md)
   * [First Payment](prism/getting-started/first-payment.md)
   * [Extend to More Flows](prism/getting-started/extend-to-more-flows.md)
 * [Architecture Overview](prism/architecture/README.md)
