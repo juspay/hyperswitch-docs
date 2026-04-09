@@ -92,15 +92,125 @@ Use `hyper.paymentRequest` to create a PaymentRequest object. Creating a Payment
 | `shippingOptions (array)`     | An array of ShippingOption objects. The first shipping option listed appears in the browser payment interface as the default option.                                                                                                                |
 | `disableWallets (array)`      | An array of wallet strings. Can be one or more of applePay, googlePay, and browserCard. Use this option to disable Apple Pay, Google Pay, and/or browser-saved cards.                                                                               |
 
-`clientSecret` is a required string.\
-\
-5\. `hyper.initiateUpdateIntent()`
+`clientSecret` is a required string.
+
+#### 5. `hyper.initiateUpdateIntent()` <mark style="color:$warning;">(Deprecated)</mark>
 
 Use `hyper.initiateUpdateIntent()` just before you start updating the payment intent on your end. It doesn't require any input. When invoked, it signals the system to prepare for the update process and returns a confirmation message indicating that the update has been initiated.
 
-#### 6. `hyper.completeUpdateIntent(clientSecret)`
+#### 6. `hyper.completeUpdateIntent(clientSecret)` <mark style="color:$warning;">(Deprecated)</mark>
 
 Use `hyper.completeUpdateIntent(clientSecret)` after you’ve completed the payment intent update process on your side. It takes the updated `clientSecret` as input and signals the system to complete the update flow. It returns a response with a confirmation message indicating the update has been processed.
+
+#### 7. Update Intent
+
+When payment parameters change after the SDK has been initialized (e.g., the customer updates their cart, applies a coupon, or changes shipping), use `updateIntent` to refresh the payment session with updated credentials. This re-fetches all payment data from the server and updates the payment UI without requiring a full page reload.\
+\
+`updateIntent` is available on both the Elements (visual) and Payment Session (headless) paths.
+
+#### How it works
+
+1. Your backend updates the payment intent (amount, currency, metadata, etc.) and returns a new `sdkAuthorization`
+2. You call updateIntent, passing an async callback that performs the backend call and returns the new `sdkAuthorization` string
+3. The SDK re-fetches all payment data using the new credentials
+4. On the Elements path, a loading overlay is shown on the payment element during the update
+5. The SDK returns a result indicating success or failure
+
+> **Important**: While `updateIntent` is in progress, any calls to `confirmPayment`, `confirmWithCustomerDefaultPaymentMethod`, or `confirmWithLastUsedPaymentMethod` will be blocked and return an error. Wait for updateIntent to complete before confirming.
+
+#### 7a. Update Intent via Widgets
+
+Use this when you have a PaymentElement rendered on the page. During the update, a blur overlay with a loading spinner is displayed on the payment element.
+
+```js
+// Get the widgets object
+const widgets = hyper.widgets({ sdkAuthorization });
+// ... mount your PaymentElement ...
+// When the payment intent needs to be updated (e.g., cart changed):
+async function handleUpdateAmount() {
+  const result = await widgets.updateIntent(async () => {
+    // Call your backend to update the payment intent
+    const response = await fetch("/update-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        payment_id: paymentId,
+        amount: newAmount,
+      }),
+    });
+    const data = await response.json();
+    // Return the new sdkAuthorization string
+    return data.sdkAuthorization;
+  });
+  // Handle the result
+  if (result.error) {
+    console.error("Update failed:", result.error.message);
+  } else {
+    console.log("Payment element updated successfully");
+  }
+}
+```
+
+#### 7b. Update Intent via Payment Session
+
+Use this when you are using the headless payment session flow. There is no visual overlay in this path.
+
+```js
+// Using hyper.initPaymentSession
+// Initialize the payment session
+const paymentSession = hyper.initPaymentSession({
+  sdkAuthorization: sdkAuth,
+});
+// Fetch saved payment methods
+const paymentMethodSession =
+  await paymentSession.getCustomerSavedPaymentMethods();
+// When the payment intent needs to be updated:
+async function handleUpdateAmount() {
+  const result = await paymentSession.updateIntent(async () => {
+    const response = await fetch("/update-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        payment_id: paymentId,
+        amount: newAmount,
+      }),
+    });
+    const data = await response.json();
+    // Return the new sdkAuthorization string
+    return data.sdkAuthorization;
+  });
+  if (result.error) {
+    console.error("Update failed:", result.error.message);
+  } else {
+    console.log("Payment session updated successfully");
+    // Subsequent confirm calls will automatically use the new credentials
+  }
+}
+```
+
+#### API Reference - updateIntent(callback)
+
+<table><thead><tr><th width="117.45703125">Parameter</th><th width="135.53125">Type</th><th>Description</th></tr></thead><tbody><tr><td>callback</td><td>() => Promise</td><td>Required. An async function that calls your backend to update the payment intent and returns the new <code>sdkAuthorization</code> string.</td></tr></tbody></table>
+
+Returns a Promise that resolves to `{ status: "succeeded" }` on success, or `{ error: { type, message } }` on failure.
+
+```javascript
+const result = await widgets.updateIntent(async () => {
+  // call your backend, return new sdkAuthorization
+  return newSdkAuthorization;
+});
+if (result.error) {
+  console.error(result.error.message);
+}
+```
+
+#### Key behaviors
+
+* Atomic: If any internal API call fails, nothing is updated. The SDK keeps using the previous credentials and data, and the error is returned to you.
+* Single call at a time: Concurrent updateIntent calls return an error immediately. Wait for the first call to complete.
+* Blocks confirm: `confirmPayment`, `confirmWithCustomerDefaultPaymentMethod`, and `confirmWithLastUsedPaymentMethod` are blocked during `updateIntent` and return an `error`. Wait for `updateIntent` to resolve before confirming.
+* Auto-refreshes credentials: After success, all subsequent SDK calls automatically use the new `sdkAuthorization` . No re-initialization needed.
+* Overlay (Elements only): `widgets.updateIntent` shows a loading overlay on the payment element during the update. It is hidden automatically on completion\`
 
 ### elements()
 
