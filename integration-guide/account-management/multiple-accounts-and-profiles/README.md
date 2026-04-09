@@ -30,7 +30,7 @@ Additionally, with the new [Platform Org and Merchant model](platform-org-and-me
 
 Here's how the architecture would look like.
 
-<figure><img src="../../../.gitbook/assets/image.jpg" alt=""><figcaption><p>Architecture of Hyperswitch with one organization, two merchant accounts, two business profiles in each merchant account and five connectors in each business profile</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Untitled Diagram.drawio (1).svg" alt=""><figcaption></figcaption></figure>
 
 ### Let's understand the hierarchy
 
