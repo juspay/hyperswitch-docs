@@ -40,7 +40,7 @@ Launch a ready-to-use Control Center test environment. No setup required, just l
 
 <summary><strong>Local Deployment (Docker)</strong></summary>
 
-[Set up Docker Locally →](./setup-hyperswitch-locally/run-hyperswitch.md)\
+[Set up Docker Locally →](setup-hyperswitch-locally/run-hyperswitch.md)\
 Perfect for developers who want local control and flexibility. You'll launch a ready-to-use Control Center environment.
 
 </details>
@@ -50,7 +50,7 @@ Perfect for developers who want local control and flexibility. You'll launch a r
 <summary><strong>API-first Integration</strong></summary>
 
 [API Reference →](https://api-reference.hyperswitch.io/)\
-[Use Postman Collection →](./learn-more/test-payments-through-newman-wrapped-in-rust.md)\
+[Use Postman Collection →](https://www.postman.com/hyperswitch/hyperswitch-development/overview)\
 Build a custom backend integration from scratch.
 
 > ⚠️ To authenticate API requests, you’ll need a username and password from either:\
@@ -63,7 +63,7 @@ Build a custom backend integration from scratch.
 
 <summary><strong>Launch a Scalable Hyperswitch Instance on AWS</strong></summary>
 
-[AWS Deployment →](./deploy-hyperswitch-on-aws/deploy-hyperswitch/README.md)
+[AWS Deployment →](deploy-hyperswitch-on-aws/deploy-hyperswitch/)
 
 Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployment guide. Ideal for teams looking for flexibility, control, and production-ready scalability.
 
@@ -73,7 +73,7 @@ Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployme
 
 <summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for GCP &#x26; Azure</strong></summary>
 
-[Deploy on GCP or Azure →](./self-hosting-space/hyperswitch-open-source/)
+[Deploy on GCP or Azure →](self-hosting-space/hyperswitch-open-source/)
 
 Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernetes. This method gives you full control over your environment and is ideal for teams deploying on GCP, Azure, or any Kubernetes-compatible platform.
 
@@ -87,11 +87,11 @@ See Hyperswitch in action by sending your first test transaction via the cloud s
 
 <summary><strong>Test a payment | Your First Hello World with Hyperswitch</strong></summary>
 
-[Control Center](./self-hosting-space/hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md) | Accessible through cloud sandbox or Docker
+[Control Center](self-hosting-space/hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md) | Accessible through cloud sandbox or Docker
 
-[API ](./learn-more/test-payments-through-newman-wrapped-in-rust.md)| Accessible through the Postman Collection
+[API ](learn-more/test-payments-through-newman-wrapped-in-rust.md)| Accessible through the Postman Collection
 
-[Learn how the SDK, control center and backend work together](./about-hyperswitch/sdk-payment-flows.md)
+[Learn how the SDK, control center and backend work together](about-hyperswitch/sdk-payment-flows.md)
 
 </details>
 

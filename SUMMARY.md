@@ -174,8 +174,6 @@
 * [🪜 For small & medium enterprises](use-cases/for-sme.md)
 * [🏢 For enterprises](use-cases/for-enterprises.md)
 * [For Banks & Financial Institutions](use-cases/for-banks-and-financial-institutions.md)
-* [SaaS Platforms](use-cases/saas-platforms.md)
-* [Fintech Businesses](use-cases/fintech-businesses.md)
 
 ## Other Features
 
@@ -363,6 +361,9 @@
 * [Frequently Asked Questions](learn-more/frequently-asked-questions.md)
 * [Connectors Supported](https://integrations.hyperswitch.io/)
 * [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
+* [Use-Cases](learn-more/use-cases/README.md)
+  * [SaaS Platforms](learn-more/use-cases/saas-platforms.md)
+  * [Fintech Businesses](learn-more/use-cases/fintech-businesses.md)
 * [Blog](https://hyperswitch.io/blog)
 * [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)

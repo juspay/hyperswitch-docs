@@ -3,6 +3,9 @@ description: >-
   Implement payment augmentation patterns for FinTech enterprises to expand
   geographies, boost auth rates, and maintain data sovereignty
 icon: watch-calculator
+metaLinks:
+  alternates:
+    - fintech-businesses.md
 ---
 
 # Fintech Businesses
@@ -81,7 +84,7 @@ Juspay Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitc
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Network Tokens    | Integrate directly with schemes (Visa/Mastercard) to provision Network Tokens, which offer higher authorisation rates and auto-update for expired cards | [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)          |
 | Token Portability | A card saved during a transaction on Processor A can be seamlessly charged via Processor B                                                              | [Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)                                      |
-| External Vaults   | Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                         | [External Vault Setup](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault) |
+| External Vaults   | Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                  | [External Vault Setup](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault) |
 
 ***
 
@@ -106,10 +109,10 @@ Juspay Hyperswitch normalises the chaos of the global payment ecosystem into a s
 
 **Error Code Unification Example:**
 
-| Source          | Error Code | Error Message               |
-| --------------- | ---------- | --------------------------- |
-| PSP 1           | `101`      | "Invalid card number"       |
-| PSP 2           | `1314`     | "Invalid card"              |
+| Source                 | Error Code | Error Message               |
+| ---------------------- | ---------- | --------------------------- |
+| PSP 1                  | `101`      | "Invalid card number"       |
+| PSP 2                  | `1314`     | "Invalid card"              |
 | **Juspay Hyperswitch** | `US_1000`  | "Issue with payment method" |
 
 This shows how disparate PSP error codes are mapped to a unified, intelligible standard—enabling consistent retry logic and clearer user feedback.
