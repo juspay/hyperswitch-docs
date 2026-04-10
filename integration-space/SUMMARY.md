@@ -66,6 +66,7 @@
 
 
 
+
 ## PRISM
 
 
@@ -73,6 +74,16 @@
   - [Installation & Configuration](prism/getting-started/installation.md)
   - [First Payment](prism/getting-started/first-payment.md)
   - [Extend to More Flows](prism/getting-started/extend-to-more-flows.md)
+  - [Payment Methods](prism/getting-started/payment-methods/README.md)
+    - [Connector Token](prism/getting-started/payment-methods/connector-token.md)
+    - [Card](prism/getting-started/payment-methods/card.md)
+    - [Apple Pay](prism/getting-started/payment-methods/apple-pay.md)
+    - [Google Pay](prism/getting-started/payment-methods/google-pay.md)
+    - [PayPal](prism/getting-started/payment-methods/paypal.md)
+    - [iDEAL](prism/getting-started/payment-methods/ideal.md)
+    - [SEPA Direct Debit](prism/getting-started/payment-methods/sepa.md)
+    - [ACH Direct Debit](prism/getting-started/payment-methods/ach.md)
+    - [Klarna](prism/getting-started/payment-methods/klarna.md)
 
 - [Architecture Overview](prism/architecture/README.md)
   - [PCI Compliance](prism/architecture/compliance/compliance.md)
