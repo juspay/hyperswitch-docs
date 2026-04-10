@@ -13,14 +13,14 @@ approved: true
 
 # Usage
 
-## Overview
+#### Overview
 
 The test suite provides two binaries for running tests:
 
 - **`run_test`** - Run single tests with fine-grained control
 - **`suite_run_test`** - Run complete test suites
 
-## Quick Reference
+### Quick Reference
 
 ```bash
 # Test specific connector

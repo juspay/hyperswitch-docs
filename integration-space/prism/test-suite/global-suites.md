@@ -13,7 +13,7 @@ approved: true
 
 # Global Test Suites
 
-## Overview
+#### Overview
 
 **Global suites** are reusable test scenarios stored in `src/global_suites/` that can be executed against any connector. They define the "happy path" and common edge cases for each payment operation.
 
@@ -107,8 +107,8 @@ When running dependent suites, the test harness automatically:
          │                       │
          │ access_token          │ connector_transaction_id
          ▼                       ▼
-    Injected into           Injected into
-    authorize request       capture request
+     Injected into           Injected into
+     authorize request       capture request
 ```
 
 ### Context Injection

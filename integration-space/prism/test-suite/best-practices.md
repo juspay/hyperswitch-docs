@@ -13,7 +13,7 @@ approved: true
 
 # Best Practices
 
-## Overview
+#### Overview
 
 Following these best practices ensures your tests are maintainable, reliable, and effective at catching issues.
 

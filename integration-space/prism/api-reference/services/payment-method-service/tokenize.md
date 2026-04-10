@@ -13,13 +13,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `Tokenize` RPC securely stores payment method details at the payment processor and returns a token that can be used for future payments. This enables one-click checkout experiences and recurring billing without your systems handling sensitive card data.
 
 **Business Use Case:** When a customer wants to save their payment details for faster future purchases or subscription billing. Instead of storing card numbers in your database (which requires PCI compliance), you send the details to the payment processor who returns a secure token. You store only the token, and the processor handles the sensitive data.
 
-## Purpose
+### Purpose
 
 **Why use Tokenize?**
 
@@ -38,7 +38,7 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 - Support for stored credential protocols (MIT/CIT transactions)
 - Consistent customer experience across payment sessions
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -52,7 +52,7 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 | `return_url` | string | No | URL to redirect customer after any required authentication |
 | `test_mode` | bool | No | Process as test transaction |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -63,9 +63,9 @@ The `Tokenize` RPC securely stores payment method details at the payment process
 | `merchant_payment_method_id` | string | Your payment method reference (echoed back) |
 | `state` | ConnectorState | State to pass to next request in multi-step flow |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -96,7 +96,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentMethodService/Tokenize
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -106,7 +106,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](../payment-service/authorize.md) - Use the tokenized payment method to authorize a payment
 - [SetupRecurring](../payment-service/setup-recurring.md) - Set up recurring billing with the stored payment method

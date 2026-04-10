@@ -13,7 +13,7 @@ approved: true
 
 # Architecture
 
-## Overview
+#### Overview
 
 The Connector Service Test Suite uses a **scenario-driven architecture** where test behavior is defined in JSON files rather than code. This enables rapid test development, easy maintenance, and consistent testing across all 110+ payment connectors.
 

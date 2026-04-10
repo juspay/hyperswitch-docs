@@ -13,20 +13,20 @@ approved: true
 
 # CI/CD Integration
 
-## Overview
+#### Overview
 
 The Connector Service Test Suite is designed for continuous integration with a **snapshot testing strategy**. This approach ensures test stability while enabling comprehensive validation.
 
-## Snapshot Testing Strategy
+### Snapshot Testing Strategy
 
-### How It Works
+#### How It Works
 
 1. **Main Branch**: Maintains a certified snapshot of test results
 2. **Pull Requests**: Validate against the snapshot (no live transactions during PR)
 3. **Post-Merge**: Live transaction tests run to generate new snapshot
 4. **Results**: Committed to repository (excluding credentials) in the docs section
 
-### Benefits
+#### Benefits
 
 - **Fast PR Validation**: No waiting for live transaction tests
 - **Stable CI**: No flaky tests due to network/connector issues

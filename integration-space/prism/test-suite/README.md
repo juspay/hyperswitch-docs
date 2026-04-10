@@ -13,7 +13,7 @@ approved: true
 
 # Test Suite Overview
 
-## Overview
+#### Overview
 
 The Connector Service Test Suite is a developer utility designed to validate connector functionality across all 110+ payment connectors. It uses a scenario-driven approach where test behavior is defined in JSON files, making it easy to add new test cases without modifying code.
 
