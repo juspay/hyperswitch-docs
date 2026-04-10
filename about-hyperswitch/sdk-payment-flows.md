@@ -29,7 +29,52 @@ There are multiple stages in a Payment flow depending on the payment methods tha
 
 Here's a more detailed version of the payment flow:
 
-<figure><img src="../.gitbook/assets/payment_flow.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB",
+    "loopTextColor": "#000080"
+  }
+}}%%
+sequenceDiagram
+    participant MS as Merchant Server
+    participant MC as Merchant Client
+    participant SDK as Hyperswitch SDK
+    participant HS as Hyperswitch Server
+    participant PS as Processor Server
+
+    MS->>HS: payments/create (amount, currency, api_key)
+    HS-->>MS: payments/create response (payment_id, client_secret)
+    MS->>MC: pass client_secret, publishable_key
+    MC->>SDK: initiate SDK (client_secret, publishable_key)
+    SDK->>HS: /payment_methods_list (client_secret)
+    HS-->>SDK: /payment_methods_list response (eligible payment methods)
+    Note over SDK: Display payment sheet with eligible methods
+    Note over SDK: Customer selects desired payment method <br>(Say Card and Enters their Card Details)
+    SDK->>HS: payments/confirm (client_secret, payment_method_data)
+    HS->>PS: payments/confirm to processor (with merchant credentials)
+    PS-->>HS: payments/confirm response (status)
+    HS-->>SDK: payments/confirm response (status)
+    SDK-->>MC: return to return_url with status
+```
 
 ## **How does Payment flow vary across Payment methods?**
 
