@@ -9,11 +9,11 @@ This inconsistency breaks code completion, confuses LLMs, and forces you to main
 Prism is stateless service, so it does not create any new IDs
 But the important aspect is that, Prism solves the ID problem with a well solidified grammar in the interface that uses strongly-typed, self-describing identifiers regardless of the underlying processor, network, issuer or any other
 
-## Modelling IDs with clear pattern
+### Modelling IDs with clear pattern
 
 The interface of Prism always uses typed IDs with a consistent format: `entity_domain_id`. So developers using the interface shall have clarity, and all the processor complexity is handled behind the scenes.
 
-### What is Entity?
+#### What is Entity?
 The stakeholder/system that owns the generation of the ID. Let see how a transaction ID is spread across multiple entity in a transaction lifecycle.
 
 | Entity | Prism Field | Who Generates | Purpose |
@@ -24,7 +24,7 @@ The stakeholder/system that owns the generation of the ID. Let see how a transac
 | **Network** | `network_transaction_id` | Card network (Visa, Mastercard) | Network-level trace for disputes and chargebacks |
 | **Issuer** | `issuer_transaction_id` | Cardholder's bank | Issuing bank's reference for the cardholder statement |
 
-### What is Domain?
+#### What is Domain?
 The domain in which the ID should be interpreted. Below are the reference ID fields from the perspective of a single entity (merchant) and but across domains.
 
 | Domain | Prism Field | Use Case |

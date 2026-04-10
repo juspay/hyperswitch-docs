@@ -1,7 +1,5 @@
 ---
-description: >-
-  Unify your marketplace settlement logic across multiple processors through a
-  single configuration.
+description: Configure split settlement across Stripe Adyen and Xendit to automate marketplace revenue sharing and vendor payouts
 icon: split
 metaLinks:
   alternates:

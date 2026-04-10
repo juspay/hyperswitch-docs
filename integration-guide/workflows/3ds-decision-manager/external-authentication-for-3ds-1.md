@@ -159,7 +159,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 After the challenge is completed, the status should go to `succeeded`.
 
 {% hint style="warning" %}
-**Visit** [**this**](../../../explore-hyperswitch/payment-orchestration/3ds-decision-manager/broken-reference/) **page to complete few additional steps to enable this feature for Mobile SDK.**
+**Visit** [Mobile SDK 3DS Guide](../../payment-experience/payment/mobile/) **page to complete few additional steps to enable this feature for Mobile SDK.**
 {% endhint %}
 
 {% hint style="success" %}

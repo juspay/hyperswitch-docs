@@ -6,9 +6,9 @@ If you are **not PCI compliant**, first create a Stripe client authentication to
 
 If your payment processor API keys are enabled to accept PCI compliant raw card data directly, jump to [Authorize with Raw Card Details](#authorize-with-raw-card-details-pci-compliant).
 
-## Non-PCI Stripe flow: get the `payment_method_id` first
+### Non-PCI Stripe flow: get the `payment_method_id` first
 
-### 1. Create a client authentication token on your backend
+#### 1. Create a client authentication token on your backend
 
 Use Prism's client authentication token flow to fetch the Stripe `client_secret` required by Stripe.js.
 
@@ -207,7 +207,7 @@ function createClientAuthenticationToken($authClient) {
 
 {% endtabs %}
 
-### 2. Use the `client_secret` in Stripe.js / Stripe Elements
+#### 2. Use the `client_secret` in Stripe.js / Stripe Elements
 
 Initialize Stripe Elements on the frontend, collect the card details there, and let Stripe return a tokenized `payment_method_id`.
 
@@ -239,7 +239,7 @@ Initialize Stripe Elements on the frontend, collect the card details there, and 
 </script>
 ```
 
-## Authorize with Payment Method ID
+### Authorize with Payment Method ID
 
 Use the `payment_method_id` returned by Stripe.js / Stripe Elements to authorize the payment:
 
@@ -430,7 +430,7 @@ function authorizePayment($paymentMethodId, $stripeClient) {
 
 {% endtabs %}
 
-## Authorize with Raw Card Details (PCI Compliant)
+### Authorize with Raw Card Details (PCI Compliant)
 
 If you're PCI compliant and collect card details directly:
 
@@ -554,7 +554,7 @@ $auth = $stripeClient->authorize([
 
 {% endtabs %}
 
-## Complete Payment Flow
+### Complete Payment Flow
 
 After authorization, capture funds and handle refunds:
 
@@ -691,9 +691,9 @@ echo "Refund ID: " . $refund->getConnectorRefundId() . "\n";
 
 {% endtabs %}
 
-## Error Scenarios
+### Error Scenarios
 
-### Declined Card
+#### Declined Card
 
 ```javascript
 // Using test card: 4000000000000002 (declined)
@@ -716,7 +716,7 @@ const auth = await stripeClient.authorize({
 });
 ```
 
-### Network Timeout
+#### Network Timeout
 
 ```javascript
 const { NetworkError } = require('hyperswitch-prism');
@@ -731,9 +731,9 @@ try {
 }
 ```
 
-## Business Use Cases
+### Business Use Cases
 
-### E-commerce: Two-Step Flow
+#### E-commerce: Two-Step Flow
 
 Authorize at checkout. Capture when you ship.
 
@@ -756,7 +756,7 @@ await stripeClient.capture({
 });
 ```
 
-### SaaS: Immediate Capture
+#### SaaS: Immediate Capture
 
 For digital goods, capture immediately.
 
@@ -773,7 +773,7 @@ const payment = await stripeClient.tokenAuthorize({
 // Status: CAPTURED or AUTHORIZED based on connector behavior
 ```
 
-### Marketplace: Partial Refund
+#### Marketplace: Partial Refund
 
 Customer returns one item from a multi-item order.
 
@@ -786,7 +786,7 @@ await stripeClient.refund({
 });
 ```
 
-## Key Takeaways
+### Key Takeaways
 
 - **One error handler** works for all connectors
 - **Unified error codes** tell you exactly what happened

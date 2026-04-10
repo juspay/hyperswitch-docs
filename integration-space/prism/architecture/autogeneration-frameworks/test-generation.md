@@ -2,13 +2,13 @@
 
 You get regression tests for every connector without writing them by hand. Prism generates test suites from the proto definitions and a declarative test spec, then runs them against live sandboxes to catch breaking changes before they hit production.
 
-## Why Generate Tests
+### Why Generate Tests
 
 Manual test maintenance doesn't scale. With 50+ connectors, each supporting 10-20 operations, you'd need thousands of test cases. When Stripe changes their API response format or Adyen deprecates a field, manually updating every affected test takes weeks.
 
 Generated tests solve this by deriving test cases from the source of truth: the protobuf definitions and a connector-specific test specification.
 
-## Test Generation Framework
+### Test Generation Framework
 
 The framework has three layers:
 
@@ -18,7 +18,7 @@ The framework has three layers:
 | **Generator** | Create test code | Test model + language templates | Rust/JavaScript/Python test files |
 | **Runner** | Execute and validate | Generated tests + sandbox credentials | Pass/fail results with diffs |
 
-## Test Specification Format
+### Test Specification Format
 
 Tests are declared, not written. A test spec for Stripe authorization looks like:
 
@@ -45,9 +45,9 @@ expect:
 
 The generator turns this into a compiled test that executes the gRPC call and validates the response structure.
 
-## What Gets Generated
+### What Gets Generated
 
-### gRPC Integration Tests
+#### gRPC Integration Tests
 
 Tests the full stack: SDK → gRPC → Connector Adapter → Payment Provider → Response transformation
 
@@ -66,7 +66,7 @@ async fn stripe_authorize_success() {
 }
 ```
 
-### SDK Language Tests
+#### SDK Language Tests
 
 Each SDK gets language-specific tests verifying:
 - Type serialization matches proto
@@ -83,14 +83,14 @@ test('Node.js SDK - authorize with card', async () => {
 });
 ```
 
-### Regression Test Suites
+#### Regression Test Suites
 
 When you add a new connector, the generator creates:
 - A baseline test for each supported operation
 - Error case tests (invalid credentials, expired cards)
 - Webhook payload validation tests
 
-## Running Generated Tests
+### Running Generated Tests
 
 ```bash
 # Generate tests from specs
@@ -105,7 +105,7 @@ make test-sdks
 
 Tests run against live sandbox environments, not mocks. This catches real integration issues: authentication changes, rate limiting behaviors, response format drift.
 
-## Test Coverage
+### Test Coverage
 
 Generated tests cover:
 
@@ -117,7 +117,7 @@ Generated tests cover:
 | Response mapping | Connector-specific responses transform correctly |
 | Webhooks | Event parsing and signature verification |
 
-## Updating Tests When APIs Change
+### Updating Tests When APIs Change
 
 When Adyen changes their response format:
 
@@ -128,7 +128,7 @@ When Adyen changes their response format:
 
 The test specs stay the same. Only the generated test code and adapter logic change.
 
-## CI Integration
+### CI Integration
 
 Generated tests run on every PR:
 
@@ -142,7 +142,7 @@ Generated tests run on every PR:
 
 A connector test failure blocks merge. This prevents shipping broken integrations.
 
-## Benefits
+### Benefits
 
 - **Coverage**: Every operation tested for every connector
 - **Maintenance**: Update specs once, regenerate everywhere

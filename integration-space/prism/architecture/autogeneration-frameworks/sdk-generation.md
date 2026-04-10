@@ -2,13 +2,13 @@
 
 You get idiomatic SDKs in Node.js, Python, Java, Rust, and Go without maintaining five separate codebases. Prism generates language-specific bindings from the same protobuf definitions, ensuring every SDK stays synchronized with the core API.
 
-## The Multi-Language Problem
+### The Multi-Language Problem
 
 Payment SDKs usually force you into one language or provide thin wrappers with inconsistent patterns. A Python developer sees async/await while a Java developer sees futures. Error handling differs. Type definitions drift.
 
 Prism solves this by generating each SDK from the protobuf source with language-specific templates. The core logic lives in one place (Rust). Each language gets bindings that feel native.
 
-## Generation Pipeline
+### Generation Pipeline
 
 ```
 protobuf definitions → parse messages/services → language templates → SDK code
@@ -23,11 +23,11 @@ The generator produces:
 | **Errors** | Error classes | Exceptions | Exceptions | Result<T,E> | error returns |
 | **Builders** | Object literals | dataclass instantiation | Builder pattern | struct init | struct literals |
 
-## FFI vs gRPC Bindings
+### FFI vs gRPC Bindings
 
 SDKs connect to the core through two paths:
 
-### FFI Bindings (In-Process)
+#### FFI Bindings (In-Process)
 
 The Rust core compiles to a shared library. SDKs load it via FFI:
 
@@ -47,7 +47,7 @@ Language bindings wrap this:
 
 Zero network overhead. Single process. Fastest for high-throughput applications.
 
-### gRPC Bindings (Out-of-Process)
+#### gRPC Bindings (Out-of-Process)
 
 The core runs as a microservice. SDKs connect via gRPC:
 
@@ -65,7 +65,7 @@ Language bindings use native gRPC clients:
 
 Better for service isolation, containerized deployments, or when you need the core as a shared service.
 
-## Generated Code Example
+### Generated Code Example
 
 Here's how the same `Authorize` call looks across languages:
 
@@ -101,7 +101,7 @@ var response = client.payments()
 
 Same functionality. Idiomatic patterns for each language.
 
-## Type Safety
+### Type Safety
 
 Generated types catch errors at compile time:
 
@@ -119,7 +119,7 @@ response = client.payments.authorize(
 )
 ```
 
-## Regeneration on API Changes
+### Regeneration on API Changes
 
 When the protobuf definitions change:
 
@@ -130,7 +130,7 @@ When the protobuf definitions change:
 
 No manual edits across five languages.
 
-## Regression Testing
+### Regression Testing
 
 Each generated SDK has regression tests generated from the same test specs:
 
@@ -149,7 +149,7 @@ The generator creates:
 
 Same test logic. Language-specific implementation.
 
-## Versioning
+### Versioning
 
 SDK versions follow the core:
 
@@ -161,7 +161,7 @@ SDK versions follow the core:
 
 Patch updates auto-generate. Minor and major versions sync with core releases.
 
-## Adding a New Language
+### Adding a New Language
 
 To add support for a new language:
 
@@ -172,7 +172,7 @@ To add support for a new language:
 
 The framework already handles protobuf parsing. You just define the language conventions.
 
-## Benefits
+### Benefits
 
 - **Consistency**: Same API surface across all languages
 - **Currency**: All SDKs update when protos change

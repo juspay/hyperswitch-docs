@@ -1,8 +1,5 @@
 ---
-description: >-
-  Test a payment with your configured connector using the Hyperswitch dashboard,
-  including test credentials for popular connectors and payment methods like
-  Klarna, Google Pay, and Apple Pay.
+description: Test configured connectors using the Hyperswitch dashboard with test credentials for cards wallets and pay later options
 icon: vial-circle-check
 metaLinks:
   alternates:
@@ -25,9 +22,9 @@ metaLinks:
    * Click on **Operations > Payments**.
    * Your transactions should be visible under the order management tab.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.19 AM (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.03 AM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-10 at 11.55.03 AM (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Test Credentials
 
@@ -92,9 +89,9 @@ For testing more scenarios, please refer [Klarna - Sample customer data](https:/
 
 #### Google Pay - Test credentials <a href="#googlepay---test-credentials" id="googlepay---test-credentials"></a>
 
-In order to test Google Pay, you will have to use your Gmail account and join [Google’s test user group](https://groups.google.com/g/googlepay-test-mode-stub-data).
+In order to test Google Pay, you will have to use your Gmail account and join [Google's test user group](https://groups.google.com/g/googlepay-test-mode-stub-data).
 
-You will land on Google’s page which says “Congratulations! You now have access to our test suite! No further action is required.”
+You will land on Google's page which says "Congratulations! You now have access to our test suite! No further action is required."
 
 Ensure that you are logged in to your Gmail account, hit the Google Pay option. You will automatically get all test cards on your user journey.
 

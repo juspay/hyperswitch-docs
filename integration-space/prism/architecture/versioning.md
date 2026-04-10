@@ -9,7 +9,7 @@ MAJOR.MINOR.PATCH
   1    .2    .3
 ```
 
-## Version Number Meanings
+### Version Number Meanings
 
 | Position | When It Changes | What It Means for You |
 |----------|-----------------|----------------------|
@@ -17,7 +17,7 @@ MAJOR.MINOR.PATCH
 | **MINOR** (1.2.x → 1.3.x) | New features, new connectors | Add capabilities without touching existing code. |
 | **MAJOR** (1.x.x → 2.x.x) | Breaking API changes | You must update your code. Migration guide provided. |
 
-## Pinning for Automatic Bug Fixes
+### Pinning for Automatic Bug Fixes
 
 It is strongly recommended pull security patches and critical fixes without manual updates. Pin your dependency to accept patch increments automatically.
 
@@ -75,7 +75,7 @@ This accepts any `1.2.x` version but not `1.3.0` or `2.0.0`.
 
 <!-- tabs:end -->
 
-## What You Get Automatically
+### What You Get Automatically
 
 When you pin to `1.2.*`, your build system pulls these automatically:
 
@@ -96,7 +96,7 @@ When you pin to `1.2.*`, your build system pulls these automatically:
 - Removal of deprecated methods
 - Fundamental architecture changes
 
-## The Risk of Pinning Too Tightly
+### The Risk of Pinning Too Tightly
 
 ```json
 {
@@ -113,7 +113,7 @@ This pins exactly to `1.2.3`. You miss:
 
 Your code works today. It breaks tomorrow when Stripe rotates certificates and you lack the fix.
 
-## The Risk of Pinning Too Loosely
+### The Risk of Pinning Too Loosely
 
 ```json
 {
@@ -125,7 +125,7 @@ Your code works today. It breaks tomorrow when Stripe rotates certificates and y
 
 This accepts any version, including `2.0.0` with breaking changes. Your CI passes today. Production fails tomorrow when a new major version introduces API changes.
 
-## Recommended Strategy
+### Recommended Strategy
 
 It is strongly recommended to pin to minor version for active development:
 
@@ -141,7 +141,7 @@ This gives you the ability to:
 You may update minor versions intentionally when you need new connectors or features. 
 Read the changelog. Run your integration tests. Bump the pin.
 
-## Version Compatibility Matrix
+### Version Compatibility Matrix
 
 Prism maintains compatibility across SDK languages for the same minor version:
 
@@ -152,7 +152,7 @@ Prism maintains compatibility across SDK languages for the same minor version:
 
 All SDKs for version `1.2.x` speak the same protocol, support the same connectors, and handle the same error codes. Mixing SDK versions (Node.js at `1.2.5`, Python at `1.3.0`) works but may produce different behaviors for newer features.
 
-## Checking Your Current Version
+### Checking Your Current Version
 
 ```bash
 # Node.js
@@ -168,7 +168,7 @@ mvn dependency:tree | grep hyperswitch-prism
 composer show juspay/hyperswitch-prism
 ```
 
-## Deprecation Policy
+### Deprecation Policy
 
 Prism maintains deprecated APIs for one full major version. When `2.0.0` releases:
 - APIs deprecated in `1.x` are removed

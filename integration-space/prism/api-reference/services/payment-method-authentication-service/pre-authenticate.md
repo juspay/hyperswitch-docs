@@ -13,13 +13,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collects device data and prepares the authentication context, determining whether the transaction qualifies for frictionless authentication or requires a customer challenge.
 
 **Business Use Case:** Before processing a card payment, you need to check if 3DS authentication is required. This RPC communicates with the issuing bank to initiate the authentication session and determine the authentication path (frictionless or challenge).
 
-## Purpose
+### Purpose
 
 **Why pre-authenticate?**
 
@@ -36,7 +36,7 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 - Challenge URL (if required)
 - Authentication data for payment
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -52,7 +52,7 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 | `continue_redirection_url` | string | No | URL to continue after redirect |
 | `browser_info` | BrowserInformation | No | Browser details for fraud detection |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -68,9 +68,9 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 | `raw_connector_response` | SecretString | Raw response for debugging |
 | `authentication_data` | AuthenticationData | 3DS authentication results |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -109,7 +109,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentMethodAuthenticationService/PreAuthenticate
 ```
 
-### Response (Frictionless)
+#### Response (Frictionless)
 
 ```json
 {
@@ -123,7 +123,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Response (Challenge Required)
+#### Response (Challenge Required)
 
 ```json
 {
@@ -145,7 +145,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authenticate](./authenticate.md) - Execute challenge if required
 - [PostAuthenticate](./post-authenticate.md) - Validate authentication results

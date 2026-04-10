@@ -1,5 +1,5 @@
 ---
-description: Accept bank payment methods on your application
+description: Explore bank payment methods including debits redirects transfers and open banking for your application
 icon: building-columns
 metaLinks:
   alternates:

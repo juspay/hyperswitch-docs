@@ -1,5 +1,5 @@
 ---
-description: Accept debit and credit card payments on your application
+description: Accept debit and credit card payments with support for saved cards recurring payments and manual capture
 icon: credit-card
 metaLinks:
   alternates:
@@ -9,7 +9,7 @@ metaLinks:
 
 # Cards
 
-![logo\_discord](https://hyperswitch.io/logos/logo_diners.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_visa.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_mastercard.svg) ![logo\_discord](https://hyperswitch.io/logos/logo_amex.svg)
+![logo_discord](https://hyperswitch.io/logos/logo_diners.svg) ![logo_discord](https://hyperswitch.io/logos/logo_visa.svg) ![logo_discord](https://hyperswitch.io/logos/logo_mastercard.svg) ![logo_discord](https://hyperswitch.io/logos/logo_amex.svg)
 
 Juspay Hyperswitch supports credit and debit card payments through all our payment processor connectors. We accept cards from all major global and local card networks, such as Visa, Mastercard, American Express, Diners, Discover, JCB, Union Pay, etc. While Hyperswitch supports card payments in 135+ currencies and 150+ countries, each of these connectors and networks has limitations in terms of the number of countries and currencies they support.
 

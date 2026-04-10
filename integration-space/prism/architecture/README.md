@@ -1,4 +1,4 @@
-## Architecture Overview
+# Architecture Overview
 
 If you've integrated multiple payment providers, you know the pain:
 - Stripe uses PaymentIntents
@@ -19,7 +19,7 @@ This problem exists in other domains too, but solved with well maintained develo
 
 Prism is the unified abstraction layer for payment processors—giving you one API, one set of types, and one mental model for 100+ payment connectors.
 
-## Architecture Components
+### Architecture Components
 
 The Prism supports a three layered architecture, each solving a purpose. The architecture prioritizes:
 
@@ -76,7 +76,7 @@ The Prism supports a three layered architecture, each solving a purpose. The arc
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Component Descriptions
+#### Component Descriptions
 
 | Component | Problem It Solves | Technologies |
 |-----------|-------------------|--------------|
@@ -84,7 +84,7 @@ The Prism supports a three layered architecture, each solving a purpose. The arc
 | **Binding Layer** | Each language needs native-performance gRPC with seamless transport without language bridges; handles serialization | tonic, grpcio, grpc-dotnet, go-grpc |
 | **Core Layer** | Single source of truth for payment logic with freedom to use Prism as a separate microservice. One implementation serves all languages; also include connector adapters maintaining the request response mapping to 100+ processors from the Proto | Rust, tonic, protocol buffers |
 
-### Data Flow
+#### Data Flow
 
 ```mermaid
 sequenceDiagram
@@ -111,7 +111,7 @@ sequenceDiagram
     Binding-->>Interface: Deserialize from protobuf
 ```
 
-### Connector Transformation
+#### Connector Transformation
 
 The core value of the Prism is transformation from a single unified interface into multiple processor patterns. For easier understanding, a simple example of how a Stripe Authorize Request and an Adyen Authorize Request is mapped against the Unified interface.
 
@@ -126,7 +126,7 @@ The core value of the Prism is transformation from a single unified interface in
 
 This transformation happens server-side, so SDKs remain unchanged when adding new connectors.
 
-### Connector Adapter Pattern
+#### Connector Adapter Pattern
 
 Adding new connectors into PRism should also be easy and declarative. It is simplified with a standard interface for the ConnectorAdapter trait.
 

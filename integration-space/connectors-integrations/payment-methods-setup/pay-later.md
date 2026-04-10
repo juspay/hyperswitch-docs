@@ -1,5 +1,5 @@
 ---
-description: Accept pay later options through Juspay Hyperswitch
+description: Configure buy now pay later options including Klarna Affirm and Afterpay for customer flexibility
 icon: calendar-day
 metaLinks:
   alternates:

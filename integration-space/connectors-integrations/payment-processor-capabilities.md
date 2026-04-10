@@ -1,8 +1,5 @@
 ---
-description: >-
-  A technical reference for payment parameters and lifecycle flows supported
-  across card, wallet, and post-transaction operations in Hyperswitch connector
-  integrations.
+description: Explore payment processor capabilities for cards wallets and post-transaction operations to optimize your payment integration architecture
 icon: money-bill-1-wave
 metaLinks:
   alternates:

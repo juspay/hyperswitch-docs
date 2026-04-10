@@ -1,5 +1,5 @@
 ---
-description: Setup the payment methods that you will be accepting
+description: Configure payment methods for your application to improve conversion rates and manage processing costs
 icon: credit-card
 metaLinks:
   alternates:

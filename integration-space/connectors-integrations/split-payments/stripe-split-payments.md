@@ -1,8 +1,5 @@
 ---
-description: >-
-  Configure Stripe Split Settlement in Hyperswitch to distribute payments
-  between your platform and connected accounts using direct or destination
-  charges.
+description: Configure Stripe split settlements to distribute payments between your platform and connected accounts using direct or destination charge models
 icon: stripe
 metaLinks:
   alternates:
@@ -159,7 +156,7 @@ In a CIT call, passing `customer_id` is mandatory along with the Stripe Split se
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "California",
             "zip": "94122",
             "country": "US",

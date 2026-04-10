@@ -1,4 +1,8 @@
 ---
+description: Enable Samsung Pay wallet payments for secure mobile transactions
+---
+
+---
 description: >-
   Configure Samsung Pay wallet payment method on Juspay Hyperswitch for secure
   mobile payments
@@ -9,4 +13,3 @@ metaLinks:
 ---
 
 # Samsung Pay
-

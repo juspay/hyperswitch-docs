@@ -13,13 +13,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `Refund` RPC returns funds to a customer's payment method after the original payment has been captured and settled. This is the standard way to handle returns, cancellations after fulfillment, or service adjustments in e-commerce and retail businesses.
 
 **Business Use Case:** When a customer returns a product, cancels a service after delivery, or disputes a charge that you choose to honor. Refunds reverse the money flow, returning captured funds to the customer's payment method. This is different from voids or reverses which prevent or undo charges before settlement.
 
-## Purpose
+### Purpose
 
 **Why use Refund?**
 
@@ -38,7 +38,7 @@ The `Refund` RPC returns funds to a customer's payment method after the original
 - Refund status tracked separately from original payment
 - Can be partial (less than original amount) or full
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -59,7 +59,7 @@ The `Refund` RPC returns funds to a customer's payment method after the original
 | `payment_method_type` | PaymentMethodType | No | Indicates the sub type of payment method |
 | `customer_id` | string | No | Merchant's customer ID |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -76,9 +76,9 @@ The `Refund` RPC returns funds to a customer's payment method after the original
 | `updated_at` | int64 | Unix timestamp when the refund was last updated |
 | `processed_at` | int64 | Unix timestamp when the refund was processed |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -98,7 +98,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/Refund
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -117,7 +117,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Capture](./capture.md) - Finalize a payment before refunding
 - [Get](./get.md) - Check original payment status before refunding

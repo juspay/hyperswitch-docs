@@ -2,7 +2,7 @@
 
 Prism organizes payment operations into services that reflect how payments actually work in the real world. Some operations are independent. Others are follow-on actions that only make sense after a payment exists.
 
-## What is a Service?
+### What is a Service?
 
 A **service** is a logical grouping of related payment operations. Services model distinct phases or aspects of the payment lifecycle:
 
@@ -13,7 +13,7 @@ A **service** is a logical grouping of related payment operations. Services mode
 
 Think of a service as a namespace that keeps related operations together. Services can depend on other services—a refund requires a payment to exist first.
 
-## What is a Method?
+### What is a Method?
 
 A **method** is a single operation within a service. Methods are actions you invoke:
 
@@ -28,34 +28,34 @@ Each method has:
 
 Methods follow verb-noun naming (authorize, capture, void) to clearly indicate the action performed.
 
-## Flow
+### Flow
 
 A sample flow of the most frequently used methods will look like below.
 
 ```
-                         ┌─────────────────────────────────────────────────────┐
-                         │                  ONE-TIME PAYMENT                   │
-                         │                                                     │
-                         │   authorize() ──────► capture() ──────► refund()    │
-                         │        │                   │                 │      │
-                         │        ▼                   ▼                 ▼      │
-                         │     void()                get()            get()    │
-                         └─────────────────────────────────────────────────────┘
-                                                  │
-                                                  │ triggers (optional)
-                                                  ▼
-                         ┌─────────────────────────────────────────────────────┐
-                         │                     DISPUTE                         │
-                         │                                                     │
-                         │          accept()  /  defend() ──► submit_evidence()│
-                         └─────────────────────────────────────────────────────┘
+                          ┌─────────────────────────────────────────────────────┐
+                          │                  ONE-TIME PAYMENT                   │
+                          │                                                     │
+                          │   authorize() ──────► capture() ──────► refund()    │
+                          │        │                   │                 │      │
+                          │        ▼                   ▼                 ▼      │
+                          │     void()                get()            get()    │
+                          └─────────────────────────────────────────────────────┘
+                                                   │
+                                                   │ triggers (optional)
+                                                   ▼
+                          ┌─────────────────────────────────────────────────────┐
+                          │                     DISPUTE                         │
+                          │                                                     │
+                          │          accept()  /  defend() ──► submit_evidence()│
+                          └─────────────────────────────────────────────────────┘
 
-                         ┌─────────────────────────────────────────────────────┐
-                         │                RECURRING PAYMENT                    │
-                         │                                                     │
-                         │   setup_recurring() ──► charge() ──► revoke()       │
-                         │           │               │                         │
-                         │           ▼               ▼                         │
-                         │          get()          get()                       │
-                         └─────────────────────────────────────────────────────┘
+                          ┌─────────────────────────────────────────────────────┐
+                          │                RECURRING PAYMENT                    │
+                          │                                                     │
+                          │   setup_recurring() ──► charge() ──► revoke()       │
+                          │           │               │                         │
+                          │           ▼               ▼                         │
+                          │          get()          get()                       │
+                          └─────────────────────────────────────────────────────┘
 ```

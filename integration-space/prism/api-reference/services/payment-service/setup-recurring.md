@@ -13,13 +13,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `SetupRecurring` RPC establishes a payment mandate (recurring payment instruction) at the payment processor. This enables future charges without requiring the customer to re-enter payment details or be present for each transaction. It's the foundation of subscription billing, recurring donations, and automated bill payment systems.
 
 **Business Use Case:** When setting up a SaaS subscription, monthly utility bill, insurance premium, or any service that bills customers on a recurring basis. The mandate represents the customer's consent for future charges and is stored securely at the processor, reducing PCI compliance scope and improving authorization rates.
 
-## Purpose
+### Purpose
 
 **Why use SetupRecurring?**
 
@@ -38,7 +38,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 - Higher authorization rates for repeat charges
 - Compliance with SEPA and other mandate regulations
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -76,7 +76,7 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 | `locale` | string | No | Locale/language preference for the shopper (e.g., "en-US") |
 | `connector_testing_data` | SecretString | No | Connector-specific testing data (JSON stringified) |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -96,9 +96,9 @@ The `SetupRecurring` RPC establishes a payment mandate (recurring payment instru
 | `raw_connector_request` | SecretString | Raw request to the connector for debugging |
 | `connector_feature_data` | SecretString | Connector-specific metadata for the transaction |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -136,7 +136,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/SetupRecurring
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -152,7 +152,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [RecurringPaymentService.Charge](../recurring-payment-service/README.md) - Use the mandate for future recurring charges
 - [Authorize](./authorize.md) - Create initial charge with mandate

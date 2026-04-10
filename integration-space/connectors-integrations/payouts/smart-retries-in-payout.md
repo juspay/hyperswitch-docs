@@ -1,8 +1,5 @@
 ---
-description: >-
-  Learn how Hyperswitch Smart Retries automatically recover failed payout
-  attempts by re-routing transactions across connectors to maximize disbursement
-  success rates.
+description: Configure smart retries to automatically recover failed payout attempts by re-routing transactions across backup connectors to maximize success rates
 icon: magnifying-glass-arrows-rotate
 metaLinks:
   alternates:

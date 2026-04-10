@@ -13,13 +13,13 @@ approved: false
 ---
 -->
 
-## Overview
+### Overview
 
 The `Void` RPC cancels an authorized payment before it has been captured. This releases the held funds back to the customer's payment method, effectively canceling the transaction without charging the customer.
 
 **Business Use Case:** When a customer cancels their order before it ships, or an item is out of stock after authorization. Void is the appropriate action when no funds have been transferred yet. Unlike refunds (which return captured funds), voids prevent the charge from ever occurring.
 
-## Purpose
+### Purpose
 
 **Why use Void instead of Refund?**
 
@@ -37,7 +37,7 @@ The `Void` RPC cancels an authorized payment before it has been captured. This r
 - Transaction moves to VOIDED status
 - No settlement fees (vs. refund processing fees)
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -53,7 +53,7 @@ The `Void` RPC cancels an authorized payment before it has been captured. This r
 | `test_mode` | bool | No | Process as test transaction |
 | `merchant_order_id` | string | No | Your internal order ID for reference |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -69,9 +69,9 @@ The `Void` RPC cancels an authorized payment before it has been captured. This r
 | `incremental_authorization_allowed` | bool | Whether amount can be increased later |
 | `connector_feature_data` | SecretString | Connector-specific metadata for the transaction |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -87,7 +87,7 @@ grpcurl -H "x-connector: stripe" \
   types.PaymentService/Void
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -97,7 +97,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Next Steps
+### Next Steps
 
 - [Authorize](./authorize.md) - Authorize a new payment
 - [Capture](./capture.md) - Finalize the payment and transfer funds

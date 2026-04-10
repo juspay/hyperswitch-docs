@@ -1,4 +1,8 @@
 ---
+description: Enable Apple Pay wallet payments on your iOS application through Hyperswitch
+---
+
+---
 description: Enable Apple Pay on your iOS application with Juspay Hyperswitch
 hidden: true
 icon: apple
@@ -8,4 +12,3 @@ metaLinks:
 ---
 
 # iOS Application
-

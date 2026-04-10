@@ -1,7 +1,11 @@
+---
+description: Reference the complete A-Z terminology guide for Connector Service to understand payment concepts and communicate accurately with your team
+---
+
 <!--
 @doc-guidance
 ────────────────────────────────────────────────────
-PAGE INTENT: All a aplhabetcail long list of all the temrinalogy and the descrioption for all the hard to understand temrinalogy used in this repository and docs,
+PAGE INTENT: All an alphabetical list of all the terminology and the description for all the hard to understand terminology used in this repository and docs,
 
 AUDIENCE: Payment developers and architects
 TONE: Direct, conversational, opinionated. Write like explaining to a colleague over coffee.
@@ -60,7 +64,7 @@ ANTI-PATTERNS TO REJECT:
 
 A-Z reference for Connector Service terminology.
 
-## A
+### A
 
 **Authorize** — Hold funds on a customer's payment method without charging. Creates an authorization that can be captured later or voided. See [Authorize API](../../api-reference/services/payment-service/authorize.md).
 
@@ -68,25 +72,24 @@ A-Z reference for Connector Service terminology.
 
 **Automatic Capture** — Capture funds immediately upon authorization. Used for digital goods and same-day fulfillment.
 
-## B
+### B
 
 **BNPL** — Buy Now Pay Later. Payment method type allowing customers to split purchases into installments (Klarna, Afterpay, Affirm).
 
-## C
+### C
 
 **Capture** — Complete a payment by transferring funds from the customer's account. Can be full or partial amount. See [Capture API](../../api-reference/services/payment-service/capture.md).
 
 **Capture Method** — `AUTOMATIC` (immediate) or `MANUAL` (merchant-initiated). Determines when funds transfer.
 
 **Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Connector Service supports 50+ connectors.
-
 **Connector Adapter** — Rust module that translates unified requests to connector-specific formats. See [Connectors](../../connectors/).
 
 **Connector Service** — The unified payment abstraction library this documentation describes.
 
 **Customer** — Entity representing a payer. Can have stored payment methods and transaction history.
 
-## D
+### D
 
 **Decline** — Rejection of a payment by the issuer or processor. Reasons: insufficient funds, expired card, incorrect CVV, etc.
 
@@ -94,7 +97,7 @@ A-Z reference for Connector Service terminology.
 
 **DSL** — Domain-Specific Language. The Protocol Buffer schema that defines Connector Service's typed API.
 
-## E
+### E
 
 **Environment** — Deployment mode: `development` (mock), `sandbox` (test credentials), `production` (live transactions).
 
@@ -102,29 +105,29 @@ A-Z reference for Connector Service terminology.
 
 **Event Service** — Handles service specific webhooks (payment/refund/dispute) from payment processors. See [Event Service](../../api-reference/services/event-service/).
 
-## F
+### F
 
 **FFI** — Foreign Function Interface. Mechanism allowing SDKs to call Rust core code from Node.js, Python, Java, etc.
 
 **Flow** — Payment operation type (Authorize, Capture, Refund, etc.).
 
-## G
+### G
 
 **gRPC** — High-performance RPC framework using Protocol Buffers. Used for microservice mode.
 
-## H
+### H
 
 **Handle Event** — Process any incoming webhook from a payment processor. See [handle](../../api-reference/services/event-service/handle.md).
 
-**Hyperswitch** — Open-source Composable Payments Platform built by Juspay with 40K+ Github stars and used by global enterprise companies. The Connector Service is a component of Juspay Hyperswitch.
+**Hyperswitch** — Open-source Composable Payments Platform built by Juspay with 40K+ GitHub stars and used by global enterprise companies. The Connector Service is a component of Juspay Hyperswitch.
 
-## I
+### I
 
 **Idempotency Key** — Unique identifier preventing duplicate operations. Retry the same request safely.
 
 **Incremental Authorization** — Increase authorized amount after initial authorization. Used by hotels and car rentals.
 
-## M
+### M
 
 **Manual Capture** — Merchant-initiated capture (two-step payment flow).
 
@@ -132,11 +135,11 @@ A-Z reference for Connector Service terminology.
 
 **Metadata** — Key-value pairs attached to payments for reconciliation and reporting.
 
-## O
+### O
 
 **Override** — Request-level configuration that supersedes connector defaults.
 
-## P
+### P
 
 **Partial Capture** — Capture less than authorized amount. Used for multi-shipment orders.
 
@@ -152,7 +155,7 @@ A-Z reference for Connector Service terminology.
 
 **PSP** — Payment Service Provider. Synonym for payment processor/connector.
 
-## R
+### R
 
 **Recurring Payment** — Subscription billing using stored payment methods.
 
@@ -166,7 +169,7 @@ A-Z reference for Connector Service terminology.
 
 **Reverse** — Refund using connector transaction ID instead of Connector Service payment ID.
 
-## S
+### S
 
 **SDK** — Software Development Kit. Language-specific client libraries (Node.js, Python, Java, Rust, Go).
 
@@ -178,25 +181,25 @@ A-Z reference for Connector Service terminology.
 
 **Sync** — Retrieve latest status from payment processor.
 
-## T
+### T
 
 **Token** — Secure reference to stored payment method (PCI-safe alternative to raw card data).
 
 **Transformer** — Function converting unified types to connector-specific formats.
 
-## U
+### U
 
 **Unified Error** — Consistent error format regardless of underlying connector.
 
 **Unified Type** — Common data structure used across all connectors (Money, PaymentMethod, Address).
 
-## V
+### V
 
 **Validation** — Schema-level checks ensuring request correctness before sending to processors.
 
 **Void** — Cancel an authorization without charging. Releases held funds.
 
-## W
+### W
 
 **Wallet** — Digital payment method (Apple Pay, Google Pay, PayPal).
 

@@ -13,13 +13,13 @@ approved: true
 
 # Test Structure
 
-## Overview
+#### Overview
 
 Tests in the Connector Service Test Suite are organized into **suites**, each containing multiple **scenarios**. A scenario defines a single test case with a request payload and assertion rules.
 
-## Scenario Definition
+#### Scenario Definition
 
-### File Location
+##### File Location
 
 Each suite has a `scenario.json` file containing test cases:
 
@@ -27,7 +27,7 @@ Each suite has a `scenario.json` file containing test cases:
 src/global_suites/{suite_name}_suite/scenario.json
 ```
 
-### Scenario Format
+##### Scenario Format
 
 ```json
 {
@@ -43,7 +43,7 @@ src/global_suites/{suite_name}_suite/scenario.json
 }
 ```
 
-### Example Scenario
+##### Example Scenario
 
 ```json
 {

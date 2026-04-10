@@ -11,7 +11,7 @@ For example:
 
 You send `{"minor_amount": 1000, "currency": "USD"}`. Prism handles the rest. No more wondering if Stripe wants cents or dollars. No more Adyen amount-in-minus conversion bugs. One format. Every processor.
 
-## What Are the Typical Problems While Handling Amount?
+### What Are the Typical Problems While Handling Amount?
 
 Diversity in the payment processor spec causes three types of bugs:
 
@@ -21,7 +21,7 @@ Diversity in the payment processor spec causes three types of bugs:
 
 3. **Currency Confusion**: Passing `"amount": 1000` without specifying currency. Is this $10.00 USD or ¥1,000 JPY?
 
-## How Money Struct Solves for It?
+### How Money Struct Solves for It?
 
 The Prism standardizes on one representation for amount — in minor units, with ISO standard currency, and very importantly — in integer.
 
@@ -63,9 +63,9 @@ const payment = {
 }
 ```
 
-## More Information
+### More Information
 
-### Zero decimal currencies
+#### Zero decimal currencies
 
 Some currencies have no decimal places. The Prism handles this automatically.
 
@@ -77,7 +77,7 @@ Some currencies have no decimal places. The Prism handles this automatically.
 
 However, you still send amounts in minor units. Prism adjusts for processors that expect whole units for these currencies.
 
-### Supported Currencies
+#### Supported Currencies
 
 The Prism supports 160+ currencies via the ISO 4217 standard:
 
@@ -87,7 +87,7 @@ The Prism supports 160+ currencies via the ISO 4217 standard:
 **Regional:**
 `AED`, `BRL`, `DKK`, `HKD`, `MXN`, `NOK`, `NZD`, `PLN`, `SEK`, `SGD`, `ZAR` and more
 
-### Recommended Best Practices
+#### Recommended Best Practices
 
 1. **Always specify currency explicitly** — Never rely on defaults.
 2. **Store amounts in minor units** — In your database, store `5999` not `59.99`. Floats cause rounding errors.

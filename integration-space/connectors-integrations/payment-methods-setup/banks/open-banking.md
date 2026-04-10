@@ -1,7 +1,5 @@
 ---
-description: >-
-  Account Verification and Payment Initiation Services using open banking
-  providers
+description: Configure open banking providers for account verification and payment initiation to enable secure direct bank transfers through Hyperswitch
 metaLinks:
   alternates:
     - >-
@@ -74,10 +72,10 @@ Regional Usage:
 
 ### FAQ
 
-1. Are there any other Open banking processors apart from Plaid? \\
-   * Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However, Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a Github Issue.
-2. Any extra configuration required for Android or IOS platform?\\
-   * If using Plaid, the android package name (for android) and redirect uri (Universal Link for your application) (for IOS) needs to be passed from the merchant SDK while invoking the Hyperswitch SDK.
+1. Are there any other Open banking processors apart from Plaid? \
+   * Yes, Processors like TrueLayer and Tink provide the same services as Plaid. However, Hyperswitch currently only supports an integration with Plaid. If there are other providers that you want to use please raise a GitHub Issue.
+2. Any extra configuration required for Android or iOS platform?\\
+   * If using Plaid, the android package name (for android) and redirect uri (Universal Link for your application) (for iOS) needs to be passed from the merchant SDK while invoking the Hyperswitch SDK.
 3. In which all geographies can I use open banking?
    1. Account Verification is currently available to verify bank accounts for direct debits via ACH, SEPA and BACS
    2. Payment Initiation is currently available for the UK and EU markets

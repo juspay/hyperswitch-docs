@@ -1,6 +1,6 @@
 # PCI Compliance
 
-## How Prism handles compliance?
+### How Prism handles compliance?
 Hyperswitch Prism offers multiple flavors to manage PCI DSS (Payment Card Industry Data Security Standard) compliance. Prism provides flexible PCI compliance options for merchants. Depending on your compliance requirements and infrastructure, you can operate in one of three modes, with each mode is supported by a specific payment client.
 
 - Outsource the PCI data handling to payment processors (example: Stripe, Adyen, Braintree, etc.), so that you don't have to manage compliance
@@ -31,7 +31,7 @@ Whether you choose a **PSP-native vault** (Stripe Vault, Adyen Vault), an **inde
 
 ---
 
-## Tokenized Payment Client
+### Tokenized Payment Client
 
 In this mode, you will leverage the payment processor's hosted card element to collect and tokenize card data. The processor vault handles card data, significantly reducing your PCI scope.
 - Card data is tokenized via processor-hosted elements
@@ -40,12 +40,12 @@ In this mode, you will leverage the payment processor's hosted card element to c
 - No additional vault subscription needed
 - Works with Stripe, Adyen, and other processors that provide hosted card elements
 
-### When to use the Tokenized Payment Client?
+#### When to use the Tokenized Payment Client?
 - You want zero PCI compliance burden
 - You prefer using processor-hosted fields for card collection
 - You're starting off with a single payment processor, with future plans to enable more processors
 
-### Flow Diagram
+#### Flow Diagram
 
 ```mermaid
 sequenceDiagram
@@ -86,11 +86,11 @@ sequenceDiagram
 
 ---
 
-## Proxied Payment Client
+### Proxied Payment Client
 
 In this mode, a third-party vault handles card data. Your application only handles tokens, significantly reducing PCI scope.
 
-### When to Use the Proxied Payment Client?
+#### When to Use the Proxied Payment Client?
 - You want to minimize PCI compliance burden
 - You prefer not to handle raw card data
 
@@ -103,7 +103,7 @@ In general there are two types of Proxy pattern and Prism supports both:
 | **[Network Proxy](./network-proxy.md)** | Token | Routing to proxy URL; proxy detokenizes transparently | **VGS**: URL-based routing (`tntxxx.sandbox.verygoodproxy.com`)<br>**Evervault**: HTTP CONNECT relay with client-side encryption |
 | **[Application Proxy](./application-proxy.md)** | Token | Transforming token into vault-specific format (headers, expressions, or wrapped requests) | **Hyperswitch Vault**, **TokenEx**, **Basis Theory** |
 
-### Flow Diagram
+#### Flow Diagram
 
 ```mermaid
 sequenceDiagram
@@ -133,7 +133,7 @@ sequenceDiagram
     BE-->>FE: Payment result
 ```
 
-### Key Characteristics
+#### Key Characteristics
 - Card data never touches your servers
 - Reduced PCI scope (SAQ A or A-EP)
 - Vault provider manages security
@@ -141,19 +141,19 @@ sequenceDiagram
 
 ---
 
-## Direct Payment Client
+### Direct Payment Client
 
 In this mode, your application receives and processes raw card data. You will have to self-manage the PCI DSS compliance.
 - Raw card data flows through your infrastructure
 - Direct control over payment flow
 - No additional vault subscription needed
 
-### When to use the Standard Payment Client?
+#### When to use the Standard Payment Client?
 - You have existing PCI DSS certification
 - You need direct control over card data
 - You want to minimize third-party dependencies
 
-### Flow Diagram
+#### Flow Diagram
 
 ```mermaid
 sequenceDiagram
@@ -177,7 +177,7 @@ sequenceDiagram
 
 ---
 
-## Which PCI mode to choose for which use case?
+### Which PCI mode to choose for which use case?
 
 | Use Case | Recommended Mode | Rationale |
 |----------|------------------|-----------|

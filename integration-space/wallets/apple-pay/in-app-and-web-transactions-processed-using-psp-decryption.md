@@ -1,4 +1,8 @@
 ---
+description: Process Apple Pay transactions using PSP decryption for connector-managed security
+---
+
+---
 description: >-
   Learn how to process Apple Pay in-app and web transactions using PSP
   decryption, where the connector handles token decryption and authorization.
@@ -8,4 +12,3 @@ metaLinks:
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption
-

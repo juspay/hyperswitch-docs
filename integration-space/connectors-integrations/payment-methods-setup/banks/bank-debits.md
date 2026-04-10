@@ -1,5 +1,5 @@
 ---
-description: Bank Debits payment method
+description: Accept bank debit payments including ACH SEPA BACS and BECS where funds are pulled from customer accounts via mandate authorization
 metaLinks:
   alternates:
     - >-

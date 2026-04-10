@@ -2,7 +2,7 @@
 
 You get a working connector adapter in hours instead of weeks. Prism uses Grace, a code generation tool that reads payment provider API specs and produces Rust connector integration code with proper request/response transformations.
 
-## The Problem with Manual Integration
+### The Problem with Manual Integration
 
 Writing a connector adapter requires understanding:
 - The payment provider's authentication scheme
@@ -13,7 +13,7 @@ Writing a connector adapter requires understanding:
 
 For a typical connector like Stripe or Adyen, this is 2,000-5,000 lines of Rust code. Done manually, it takes weeks and introduces bugs. Grace automates the repetitive 80% so developers focus on the interesting 20%.
 
-## Grace Architecture
+### Grace Architecture
 
 Grace has two interfaces: a CLI tool and a skill/prompt system for LLMs.
 
@@ -28,7 +28,7 @@ Grace has two interfaces: a CLI tool and a skill/prompt system for LLMs.
    and examples           augmentation             business logic
 ```
 
-## CLI Usage
+### CLI Usage
 
 Generate a connector scaffold from an OpenAPI spec:
 
@@ -54,7 +54,7 @@ The CLI produces:
 - `types.rs` — Connector-specific type definitions
 - `test.rs` — Generated test scaffolding
 
-## LLM Skill Integration
+### LLM Skill Integration
 
 Grace includes a skill definition that any LLM can use. Connect your own model:
 
@@ -79,9 +79,9 @@ The skill prompt includes:
 
 Your LLM generates code that follows Prism conventions without training on proprietary code.
 
-## What Gets Generated
+### What Gets Generated
 
-### Request Transformers
+#### Request Transformers
 
 ```rust
 impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
@@ -99,7 +99,7 @@ impl TryFrom<AuthorizeRequest> for AdyenPaymentRequest {
 }
 ```
 
-### Response Transformers
+#### Response Transformers
 
 ```rust
 impl TryFrom<AdyenPaymentResponse> for AuthorizeResponse {
@@ -116,7 +116,7 @@ impl TryFrom<AdyenPaymentResponse> for AuthorizeResponse {
 }
 ```
 
-### Error Mapping
+#### Error Mapping
 
 ```rust
 impl From<AdyenErrorCode> for UnifiedError {
@@ -131,7 +131,7 @@ impl From<AdyenErrorCode> for UnifiedError {
 }
 ```
 
-## Customization Points
+### Customization Points
 
 Generated code includes `TODO` markers for connector-specific logic:
 
@@ -145,7 +145,7 @@ fn authenticate(&self, creds: &ConnectorCredentials) -> Result<AuthHeader, Error
 
 You fill in the blanks. The boilerplate structure is done.
 
-## Validation
+### Validation
 
 Grace validates generated code:
 - Type checks against Prism interfaces
@@ -159,7 +159,7 @@ grace validate \
   --connector ./crates/integrations/connector-integration/src/connectors/adyen/
 ```
 
-## Adding a New Connector
+### Adding a New Connector
 
 ```bash
 # 1. Obtain API spec from provider
@@ -176,7 +176,7 @@ make test-connector CONNECTOR=new-provider
 
 A basic connector adapter takes 1-2 days instead of 2-3 weeks.
 
-## Benefits
+### Benefits
 
 - **Speed**: Days instead of weeks for new connectors
 - **Consistency**: All adapters follow the same patterns

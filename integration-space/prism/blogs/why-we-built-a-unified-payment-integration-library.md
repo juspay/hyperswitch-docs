@@ -9,7 +9,7 @@ This post is about how we did that: unbundling those integrations into a standal
 
 ---
 
-## Why unbundle at all?
+### Why unbundle at all?
 
 The connector integrations inside Hyperswitch were not designed to be embedded in an orchestrator forever. They were always a self-contained layer: translate a unified request into a connector-specific HTTP call, make the call, translate the response back. The orchestrator was just the first thing to use them.
 
@@ -19,7 +19,7 @@ So we separated the integration layer out. The result is a library with a well-d
 
 ---
 
-## Why protobuf for the specification?
+### Why protobuf for the specification?
 
 > **Q: JSON schemas exist. OpenAPI exists. Why protobuf?**
 >
@@ -43,7 +43,7 @@ Everything is strongly typed. `PaymentService.Authorize` takes a `PaymentService
 
 ---
 
-## The implementation: Rust at the core
+### The implementation: Rust at the core
 
 > **Q: Why Rust? Wouldn't Go or Java be simpler?**
 >
@@ -56,7 +56,7 @@ The Rust codebase is organized into a handful of internal crates:
 - `grpc-api-types` — Rust types generated from the protobuf spec via `prost`
 - `interfaces` — The trait definitions that connector implementations must satisfy
 
-### The two-phase transformer pattern
+#### The two-phase transformer pattern
 
 The single most important design decision in the Rust core is that **the library never makes HTTP calls itself**. Every payment operation is split into two pure functions:
 
@@ -111,7 +111,7 @@ The macros generate the boilerplate: connector lookup, trait object dispatch, `R
 
 ---
 
-## Two ways to use it
+### Two ways to use it
 
 This is where things get interesting. We wanted the library to work both as an **embedded SDK** (loaded directly into your application process) and as a **standalone gRPC service** (deployed separately, called over the network). Same Rust core, same proto types, same API — two completely different deployment topologies.
 
@@ -119,23 +119,23 @@ This is where things get interesting. We wanted the library to work both as an *
 ┌──────────────────────────────────────────────────────────┐
 │                    Your Application                      │
 └─────────────────────┬────────────────────────────────────┘
-                      │
-         ┌────────────┴────────────┐
-         ▼                         ▼
- ┌──────────────┐         ┌─────────────────┐
- │   SDK Mode   │         │   gRPC Mode     │
- │  (FFI/UniFFI)│         │ (Client/Server) │
- └──────┬───────┘         └────────┬────────┘
-        │                          │
-        │  in-process call         │  network call
-        ▼                          ▼
- ┌──────────────────────────────────────────────┐
- │          Rust Core (Prism)       │
- │  req_transformer → [HTTP] → res_transformer  │
- └──────────────────────────────────────────────┘
+                       │
+          ┌────────────┴────────────┐
+          ▼                         ▼
+  ┌──────────────┐         ┌─────────────────┐
+  │   SDK Mode   │         │   gRPC Mode     │
+  │  (FFI/UniFFI)│         │ (Client/Server) │
+  └──────┬───────┘         └────────┬────────┘
+         │                          │
+         │  in-process call         │  network call
+         ▼                          ▼
+  ┌──────────────────────────────────────────────┐
+  │          Rust Core (Prism)       │
+  │  req_transformer → [HTTP] → res_transformer  │
+  └──────────────────────────────────────────────┘
 ```
 
-### Mode 1: The embedded SDK
+#### Mode 1: The embedded SDK
 
 In SDK mode, the Rust core compiles into a native shared library (`.so` / `.dylib`) and is exposed to host languages via **UniFFI** — Mozilla's framework for generating language bindings from Rust automatically. When your Python code calls `authorize_req_transformer(request_bytes, options_bytes)`, that call crosses the FFI boundary directly into the Rust binary running in the same process.
 
@@ -151,7 +151,7 @@ Data crosses the language boundary as serialized protobuf bytes. This is intenti
 >
 > For development, yes — you run `make pack`, which builds the Rust library, runs `uniffi-bindgen` to generate the Python bindings, and packages everything into a wheel. For production use, we ship pre-built binaries for Linux x86\_64, Linux aarch64, macOS x86\_64, and macOS aarch64 inside the wheel. The loader picks the right one at runtime. You install the wheel and never think about Rust again.
 
-### Mode 2: The gRPC server
+#### Mode 2: The gRPC server
 
 In gRPC mode, `crates/grpc-server/grpc-server` runs as a standalone async service built on **Tonic** (Rust's async gRPC framework). It implements all nine proto services, accepts gRPC connections from any language's generated stubs, makes the connector HTTP calls internally, and returns unified proto responses over the wire.
 
@@ -191,7 +191,7 @@ sdk/javascript/
 
 ---
 
-## Code generation: the glue that holds it together
+### Code generation: the glue that holds it together
 
 Here is a problem we needed to solve: the Prism supports many payment flows (authorize, capture, void, refund, recurring charge, 3DS pre-auth, webhook handling, ...) and many SDK languages. Hand-maintaining typed client methods for each flow in each language is exactly the kind of work that introduces drift and bugs. So we do not do it.
 
@@ -270,7 +270,7 @@ The practical result: add a new flow to `services.proto`, implement the transfor
 
 ---
 
-## Walking through a real authorize call
+### Walking through a real authorize call
 
 Let's trace what actually happens when a Python application calls `client.authorize(...)` in SDK mode. This makes the layering concrete.
 
@@ -318,7 +318,7 @@ In gRPC mode, steps ③b through ③f happen inside the `grpc-server` process. T
 
 ---
 
-## Where we go from here — together
+### Where we go from here — together
 
 We want to be upfront about what this is and what it is not.
 
@@ -332,9 +332,8 @@ That is why community ownership matters here, not as a marketing posture, but as
 
 **If you want to contribute a connector:** implement a Rust trait in `connector-integration/`. The FFI layer, gRPC server, and all language SDKs pick it up automatically. You do not need to write Python or JavaScript or maintain anything outside that one crate.
 
-**If you want to contribute a flow:** start with a discussion on the `services.proto` shape — that is the community contract, so it deserves a conversation before code gets written. Once there is agreement, implement the transformer pair in Rust, run `make generate`, and every SDK gets the new method in every language.
+**If you want to contribute a flow:** start with a discussion on the `services.proto` shape — that is the community contract, so it deserves a conversation before code gets written. Once there is agreement, implement the transformer pair in Rust, run `make generate` — and every SDK gets the new method in every language.
 
 **If you disagree with a spec decision:** open a discussion. The whole point of making this community-owned is that no single team's assumptions should be baked in permanently. If you have seen payment edge cases that the current schema cannot express, that is exactly the kind of feedback that shapes a standard.
 
 The longer arc here is for `services.proto` to evolve into something the payments community — developers, processors, orchestrators, and everyone else in the stack — maintains collectively. The same way OpenTelemetry's semantic conventions emerged from broad input, not from one company's opinions. The same way JDBC worked because it was simple enough to implement and strict enough to actually abstract.
-

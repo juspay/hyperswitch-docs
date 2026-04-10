@@ -2,7 +2,7 @@
 
 Prism can be used in two modes: **Library (SDK)** or **Microservice (gRPC)**.
 
-## Library Mode (Recommended)
+### Library Mode (Recommended)
 
 In this scenario, Prism SDK is directly embedded into your application. This is the recommended mode for most use cases, because it is,
 
@@ -10,7 +10,7 @@ In this scenario, Prism SDK is directly embedded into your application. This is 
 - No additional network hops
 - Full type safety at compile time
 
-## Microservice Mode
+### Microservice Mode
 
 You may deploy Prism as a standalone service only if you need service isolation due to 
 

@@ -13,7 +13,7 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The Refund Service helps you track and synchronize refund statuses across payment processors. While the Payment Service handles initiating refunds, this service provides dedicated operations for retrieving refund information and handling asynchronous refund events, ensuring accurate customer communication and financial reconciliation.
 
@@ -25,15 +25,15 @@ The Refund Service helps you track and synchronize refund statuses across paymen
 
 The service complements the Payment Service's refund operations by providing status retrieval and event handling capabilities specifically focused on refund lifecycle management.
 
-## Operations
+### Operations
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
 | [`Get`](./get.md) | Retrieve refund status from the payment processor. Tracks refund progress through processor settlement for accurate customer communication. | Checking refund status, reconciling refund states, customer inquiries |
 
-## Common Patterns
+### Common Patterns
 
-### Refund Status Tracking Flow
+#### Refund Status Tracking Flow
 
 Monitor refund progress from initiation through completion to keep customers informed.
 
@@ -76,7 +76,7 @@ sequenceDiagram
 
 ---
 
-### Webhook-Based Refund Updates
+#### Webhook-Based Refund Updates
 
 Process asynchronous refund notifications from payment processors to maintain accurate refund states.
 
@@ -113,7 +113,7 @@ sequenceDiagram
 
 ---
 
-### Multi-Processor Refund Reconciliation
+#### Multi-Processor Refund Reconciliation
 
 Synchronize refund statuses across multiple payment processors for unified reporting.
 
@@ -152,7 +152,7 @@ sequenceDiagram
 
 ---
 
-## Next Steps
+### Next Steps
 
 - [Payment Service](../payment-service/README.md) - Initiate refunds and process payments
 - [Dispute Service](../dispute-service/README.md) - Handle chargebacks that may result in refunds

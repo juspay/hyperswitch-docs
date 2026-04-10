@@ -1,4 +1,8 @@
 ---
+description: Process Google Pay transactions using Hyperswitch decryption for flexible routing
+---
+
+---
 description: >-
   Process Google Pay in-app and web transactions through Hyperswitch decryption
   for flexible routing to any downstream processor
@@ -8,4 +12,3 @@ metaLinks:
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
-

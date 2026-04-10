@@ -1,5 +1,5 @@
 ---
-description: Bank Transfer payment methods
+description: Accept bank transfer payments where customers push funds directly to your merchant account through ACH SEPA BACS or Multibanco
 metaLinks:
   alternates:
     - >-

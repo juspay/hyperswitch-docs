@@ -2,7 +2,7 @@
 
 You get API reference docs that stay current without anyone manually updating markdown files every time a field changes. Prism generates all `/docs-generated` content from the source proto definitions and a rules file that enforces consistency.
 
-## The Rules Engine
+### The Rules Engine
 
 Documentation at this scale drifts. A developer adds a field to the proto, forgets to update the docs, and now the examples don't compile. Prism prevents this by treating documentation as code.
 
@@ -16,7 +16,7 @@ The `docs/rules/rules.md` file contains 700+ lines of specifications that define
 
 When the proto definitions change, the documentation regenerates automatically. No human has to remember which pages need updates.
 
-## Generation Pipeline
+### Generation Pipeline
 
 ```
 proto definitions → parse messages/fields → apply rules.md templates → markdown output
@@ -32,7 +32,7 @@ For example, the `PaymentService/Authorize` RPC becomes:
 4. **Response Fields table** — Every field from `AuthorizeResponse`
 5. **Example section** — A working grpcurl command using Stripe test credentials
 
-## What Gets Generated
+### What Gets Generated
 
 | Documentation Type | Source | Location |
 |-------------------|--------|----------|
@@ -43,7 +43,7 @@ For example, the `PaymentService/Authorize` RPC becomes:
 
 The generation preserves hand-written content in `/docs` while keeping API reference in `/docs-generated` strictly derived from source.
 
-## Field Documentation Rules
+### Field Documentation Rules
 
 The rules enforce completeness. Every field from the proto appears in the generated tables:
 
@@ -55,7 +55,7 @@ The rules enforce completeness. Every field from the proto appears in the genera
 
 Missing fields in documentation are impossible because the generator pulls directly from the proto definition.
 
-## Example Consistency
+### Example Consistency
 
 All examples follow the same pattern:
 
@@ -77,7 +77,7 @@ grpcurl -H "x-connector: stripe" \
 
 Test credentials stay consistent across all 50+ connector examples. Developers copy-paste and it works.
 
-## Keeping Docs in Sync
+### Keeping Docs in Sync
 
 When you add a new RPC to the PaymentService proto:
 
@@ -88,7 +88,7 @@ When you add a new RPC to the PaymentService proto:
 
 No manual editing of individual markdown files. The rules.md specification drives everything.
 
-## Validation
+### Validation
 
 The documentation build includes a validation pass that checks:
 
@@ -100,7 +100,7 @@ The documentation build includes a validation pass that checks:
 
 Build fails if documentation doesn't match the rules. This prevents drift.
 
-## Benefits
+### Benefits
 
 - **Completeness**: Every field documented, every time
 - **Consistency**: Same format across 500+ pages

@@ -31,7 +31,7 @@ The sequence diagram above outlines how a self-hosted merchant performs payments
 
 #### **New user payments flow**
 
-1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](/broken/pages/MfcX0idtB0lW4e2LNv0p)
+1. For self-hosting the Hyperswitch orchestration stack including vault follow the [self-hosting guide](../../../self-hosting-space/hyperswitch-open-source/)
 2. Load the Hyperswitch SDK. The end-user enters their payment credentials for the selected payment option
 3. The [Payments Create API request ](https://api-reference.hyperswitch.io/v1/payments/payments--create)containing the payment method is sent to the PSP from Hyperswitch (self-hosted endpoint)
 4. Once the PSP responds with the outcome `approved` or `declined` along with the PSP token, Hyperswitch then proceeds to store and tokenize the card.

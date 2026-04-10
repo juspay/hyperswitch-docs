@@ -1,7 +1,5 @@
 ---
-description: >-
-  Store and reuse customer payment methods for payout processing using
-  Hyperswitch's secure, PCI-compliant vault and token-based API flows.
+description: Store and reuse customer payment methods for payouts using Hyperswitch vault and tokenized API flows to streamline disbursement operations
 icon: repeat
 metaLinks:
   alternates:

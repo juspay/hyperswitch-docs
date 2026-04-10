@@ -2,9 +2,9 @@
 
 Prism uses a domain-specific language (DSL) built on Protocol Buffers and Rust Types that catches integration errors at compile time. It enforces the right thing so that AI agents and Developers can code at ease when adding new integrations or enhancements to the Prism codebase.
 
-## The Prism DSL
+### The Prism DSL
 
-### DSL for Connector Development
+#### DSL for Connector Development
 
 The `ConnectorIntegration` trait defines the contract that every connector must implement. This trait ensures consistent behavior across all payment processor integrations. Mistakes are caught early at compile time, rather than late.
 
@@ -99,7 +99,7 @@ macros::macro_connector_implementation!(
 If you forget to implement `build_error_response`, the macro invocation fails at compile time with a clear error message: "Connector Stripe is missing required method build_error_response for flow Authorize".
 
 
-### Protocol Buffers
+#### Protocol Buffers
 
 Prism defines payment operations as Protocol Buffer schemas. These generate type-safe bindings in every supported language, which is the core of the unification.
 It provides compile-time guarantees irrespective of the programming languages you use the SDK with.

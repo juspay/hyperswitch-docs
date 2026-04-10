@@ -11,13 +11,13 @@ Prism provides strong **run-time checks** to eliminate both risks. This section 
 | **Integrity** | Amount, currency, and transaction ID match your records | Data tampering |
 | **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks |
 
-### Data Tampering (Integrity Risk)
+#### Data Tampering (Integrity Risk)
 
 An attacker intercepting a webhook can modify the payload before it reaches your server. The attacker will be able to exploit by:
 - Changing a failed payment status to "succeeded", which might deceive you to ship unpaid orders
 - Modifying the amount from $100 to $1, effectively making the customer pays less than expected.
 
-### Impersonation (Source Risk)
+#### Impersonation (Source Risk)
 
 It is possible for attackers can forge webhooks that appear to come from payment processors. This can be exploited by:
 - Sending fake "payment succeeded" webhooks, which might deceive you to ship unpaid orders
@@ -25,9 +25,9 @@ It is possible for attackers can forge webhooks that appear to come from payment
 
 Prism provides built-in verification for both risks, and it is strongly recommended to enable them and test them before using on production.
 
-## How Prism helps with Integrity and Source Verification?
+### How Prism helps with Integrity and Source Verification?
 
-### Request and Response Comparison
+#### Request and Response Comparison
 
 Prism uses a `FlowIntegrity` trait to compare request and response data in a strongly typed fashion. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
@@ -55,7 +55,7 @@ pub trait GetIntegrityObject<T: FlowIntegrity> {
 }
 ```
 
-### Amount and Currency Verification
+#### Amount and Currency Verification
 
 During the payment authorization step, Prism extracts amount and currency from the request and compares with the response during run-time. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
@@ -107,7 +107,7 @@ If amounts mismatch, Prism flags the discrepancy clearly. In such cases you shou
 }
 ```
 
-## Signature Verification
+### Signature Verification
 
 Typically Payment processors sign webhooks with a shared secret, to verify the payload against pre-configured secrets. An Authorize.net might use a SHA512, whereas a PPRO might use a SHA256. 
 
@@ -168,9 +168,9 @@ If verification fails, Prism flags the discrepancy very clearly.
 }
 ```
 
-## Recommendations for Developers
+### Recommendations for Developers
 
-### Verify the Transaction ID and Amount in your system
+#### Verify the Transaction ID and Amount in your system
 
 It is strongly recommended to track transaction IDs across the lifecycle. When a webhook or API response arrives, check the following parameters in your application database, before updating them.
 
@@ -181,7 +181,7 @@ It is strongly recommended to track transaction IDs across the lifecycle. When a
 | Amount match | Reject payload to prevent amount tampering |
 | Currency match | Reject payload to prevent currency tampering |
 
-### Always Configure the secrets while enabling a processor
+#### Always Configure the secrets while enabling a processor
 
 Some payment processors may have the secrets as optional configuration/ implementation. Always, generate new secret in processor dashboard and update the Prism configuration accordingly. 
 
@@ -203,6 +203,6 @@ const config = {
 const paymentClient = new PaymentClient(config);
 ```
 
-## Next Steps
+### Next Steps
 
 - [Error Handling](../architecture/error-handling.md) — Handle verification failures in your application

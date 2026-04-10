@@ -1,5 +1,5 @@
 ---
-description: Key to configure and test different connectors in Juspay Hyperswitch
+description: Access test card numbers and credentials for popular connectors to validate your integration setup
 icon: key
 metaLinks:
   alternates:

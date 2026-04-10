@@ -1,8 +1,5 @@
 ---
-description: >-
-  A low-code solution for sending money to beneficiaries via shareable payout
-  links — supports custom branding, domain configuration, and test-mode access
-  for rapid integration.
+description: Create and customize payout links to send money to beneficiaries via shareable URLs with custom branding and domain configuration options
 icon: link
 metaLinks:
   alternates:
@@ -57,7 +54,7 @@ There are a couple of ways for using payout links.
   "logo": "https://hyperswitch.io/favicon.ico",
 
   // (optional) Name of your company.
-  "merchant_name": "HyperSwitch",
+  "merchant_name": "Hyperswitch",
 
   // (required in production) A list of domain glob patterns.
   // This is used as validation when payout link render request is received, and also helps block XSS on client.
@@ -96,7 +93,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "CA",
             "zip": "94122",
             "country": "US",
@@ -137,7 +134,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "CA",
             "zip": "94122",
             "country": "US",
@@ -192,14 +189,14 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "confirm": false,
     "customer_id": "cus_123",
     "return_url": "https://hyperswitch.io",
-    "description": "Rewards from HyperSwitch",
+    "description": "Rewards from Hyperswitch",
     "payout_link": true,
     "billing": {
         "address": {
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "CA",
             "zip": "94122",
             "country": "US",

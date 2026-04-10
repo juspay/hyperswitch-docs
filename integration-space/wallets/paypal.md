@@ -1,5 +1,9 @@
 ---
-description: Setup PayPal on your application
+description: Configure PayPal wallet integration for seamless customer checkout
+---
+
+---
+description: Set up PayPal on your application
 icon: paypal
 metaLinks:
   alternates:
@@ -7,4 +11,3 @@ metaLinks:
 ---
 
 # PayPal
-

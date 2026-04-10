@@ -1,18 +1,16 @@
 ---
-metaLinks:
-  alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/0F41H1VvRqMkGQQjXSTN
+description: Explore Hyperswitch Prism to integrate 100+ payment processors with one unified API and zero vendor lock-in
 ---
 
 # Product Overview
 
-## Hyperswitch Prism
+### Hyperswitch Prism
 
 **One integration. Any payment processor. Zero lock-in.**
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-_A high-performance payment abstraction library, and part of_ [_Juspay Hyperswitch_](https://hyperswitch.io/) _— the open-source, composable payments platform with 40,000+ GitHub stars, trusted by leading brands worldwide._
+_A high-performance payment abstraction library, and part of_ [_Juspay Hyperswitch_](https://hyperswitch.io/) _— the open-source, composable payments platform with 41,000+ GitHub stars, trusted by leading brands worldwide._
 
 [GitHub](https://github.com/juspay/hyperswitch) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
 
@@ -20,20 +18,20 @@ _A high-performance payment abstraction library, and part of_ [_Juspay Hyperswit
 
 ### 🎯 What is Prism?
 
-Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort.
+Today, integrating multiple payment processors either makes developers run in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort.
 
-Because every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and above all - different behaviour in the actual environment when compared to documented specs. All this rests as tribal or undocumented knowledge making it harder AI agents which are very good at implementing clearly documented specification.
+Because every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and above all — different behaviour in the actual environment when compared to documented specs. All this rests as tribal or undocumented knowledge making it harder for AI agents which are very good at implementing clearly documented specifications.
 
-**Prism is a stateless, unified connector library for AI agents and Developers to connect with any payment processor**
+**Prism is a stateless, unified connector library for AI agents and developers to connect with any payment processor**
 
-**Prism offers hardened transformation through testing on payment processor environment & iterative bug fixing**
+**Prism offers hardened transformation through testing in payment processor environments & iterative bug fixing**
 
 **Prism can be embedded in your server application with its wide range of multi-language SDKs, or run as a gRPC microservice**
 
 | ❌ Without Prism                                        | ✅ With Prism                        |
 | ------------------------------------------------------ | ----------------------------------- |
 | 🗂️ 100+ different API schemas                         | 📋 Single unified schema            |
-| ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven  |
+| ⏳ Never-ending agent loops/ months of integration work | ⚡ Hours to integrate, agent-driven  |
 | 🔗 Brittle, provider-specific code                     | 🔓 Portable, provider-agnostic code |
 | 🚫 Hard to switch providers                            | 🔄 Change providers in 1 line       |
 
@@ -54,7 +52,7 @@ The Prism library is compliant for payment processing by design. It is:
 
 * **Stateless** — Hence, no PII or PCI data stored
 * **Credential free** — The API keys are never logged nor exposed
-* **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data.
+* **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third-party vaults, or payment processors without having to handle credit card data.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -68,11 +66,11 @@ The Prism library is compliant for payment processing by design. It is:
 └────────────────────────────────┬────────────────────────────────┘
                                  │
                                  ▼
-         ┌───────────────────────┼───────────────────────┬───────────────────────┐
-         ▼                       ▼                       ▼                       ▼
-   ┌──────────┐           ┌──────────┐           ┌──────────┐           ┌──────────┐
-   │  Stripe  │           │  Adyen   │           │ Braintree│           │ 50+ more │
-   └──────────┘           └──────────┘           └──────────┘           └──────────┘
+          ┌───────────────────────┼───────────────────────┬───────────────────────┐
+          ▼                       ▼                       ▼                       ▼
+    ┌──────────┐           ┌──────────┐           ┌──────────┐           ┌──────────┐
+    │  Stripe  │           │  Adyen   │           │ Braintree│           │ 100+ more│
+    └──────────┘           └──────────┘           └──────────┘           └──────────┘
 ```
 
 ***
@@ -177,7 +175,7 @@ main().catch(console.error);
 
 ### 🔄 Routing between Payment Providers
 
-Once the basic plumbing is implemented you can leverage Prism's core benefit - **switch payment providers by changing one line**.
+Once the basic plumbing is implemented, you can leverage Prism's core benefit - **switch payment providers by changing one line**.
 
 ```javascript
 const { PaymentClient } = require('hyperswitch-prism');
@@ -248,4 +246,4 @@ Please report security issues to [security@juspay.in](mailto:security@juspay.in)
 
 ***
 
-Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
+Built and maintained by [Juspay Hyperswitch](https://hyperswitch.io)

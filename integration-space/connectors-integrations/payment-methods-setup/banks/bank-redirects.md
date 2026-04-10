@@ -1,5 +1,5 @@
 ---
-description: Bank Redirects payment methods
+description: Accept bank redirect payments including Sofort Giropay iDEAL and EPS where customers authenticate via their bank portal through Hyperswitch
 metaLinks:
   alternates:
     - >-

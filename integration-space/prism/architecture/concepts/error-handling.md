@@ -2,7 +2,7 @@
 
 Payment failures happen. Cards get declined. Networks time out. Prism gives you structured error information so you know exactly what went wrong — and what to do about it — regardless of which payment processor you are using.
 
-## How errors surface
+### How errors surface
 
 Prism separates errors into two distinct categories based on how they reach you:
 
@@ -11,9 +11,9 @@ Prism separates errors into two distinct categories based on how they reach you:
 
 You need to handle both.
 
-## SDK Exceptions
+### SDK Exceptions
 
-### Integration Errors
+#### Integration Errors
 
 These occur **before** Prism sends any request to the connector — during request validation, configuration checks, or request building. Because no request was sent, it is always safe to fix the issue and retry.
 
@@ -109,7 +109,7 @@ try {
 
 ---
 
-### Connector Errors
+#### Connector Errors
 
 These occur when the connector returns a 4xx or 5xx response, or when the response cannot be parsed — for example, if the connector changed its contract. Either way, the connector had a problem processing the request.
 
@@ -214,7 +214,7 @@ try {
 
 ---
 
-### Network Errors
+#### Network Errors
 
 These occur during HTTP communication with the connector — after the request may have been sent. This is where retry logic gets dangerous in payment systems.
 
@@ -319,7 +319,7 @@ try {
 
 ---
 
-## Payment Errors
+### Payment Errors
 
 Payment errors occur when the connector returns HTTP 200 but the payment did not go through — a card decline, insufficient funds, an expired card. These are **not exceptions**. The call returns normally and the error is inside `response.error`.
 
@@ -512,7 +512,7 @@ if ($response->getError()) {
 
 ---
 
-## Complete example
+### Complete example
 
 Here is a complete authorize call with all error types handled:
 
@@ -693,7 +693,7 @@ function authorizePayment(PaymentClient $client, $request) {
 
 ---
 
-## Best Practices
+### Best Practices
 
 **Retry safety — the most important thing to get right:**
 
@@ -716,7 +716,7 @@ function authorizePayment(PaymentClient $client, $request) {
 
 ---
 
-## Error Code Reference
+### Error Code Reference
 
 Error codes are always `SCREAMING_SNAKE_CASE` strings. Use them directly in comparisons:
 
@@ -729,7 +729,7 @@ if (error.errorCode === 'MISSING_REQUIRED_FIELD') { ... }
 if error.error_code == 'MISSING_REQUIRED_FIELD': ...
 ```
 
-### Integration Error Codes
+#### Integration Error Codes
 
 These codes appear in `IntegrationError`. The request was never sent to the connector.
 
@@ -770,7 +770,7 @@ These codes appear in `IntegrationError`. The request was never sent to the conn
 
 > **Note on `_I_D` suffix:** Error codes for variants ending in `ID` (e.g. `MissingConnectorTransactionID`) serialize as `..._I_D` due to how the code generator handles uppercase boundaries. Use the exact strings shown above in comparisons.
 
-### Connector Error Codes
+#### Connector Error Codes
 
 These codes appear in `ConnectorError`. The connector returned a 4xx/5xx response or a response that could not be parsed. The payment may have been processed.
 
@@ -781,7 +781,7 @@ These codes appear in `ConnectorError`. The connector returned a 4xx/5xx respons
 | `UNEXPECTED_RESPONSE_ERROR` | Response structure does not match the expected schema |
 | `INTEGRITY_CHECK_FAILED` | Integrity check failed (e.g. amount or currency mismatch between request and response) |
 
-### Network Error Codes
+#### Network Error Codes
 
 These codes appear in `NetworkError`. The request may or may not have been sent.
 
@@ -797,7 +797,7 @@ These codes appear in `NetworkError`. The request may or may not have been sent.
 | `INVALID_PROXY_CONFIGURATION` | Proxy URL or configuration is invalid | No — fix configuration |
 | `INVALID_CA_CERT` | CA certificate (PEM/DER) is invalid or could not be loaded | No — fix configuration |
 
-### Payment Error Codes
+#### Payment Error Codes
 
 These codes appear in `response.error.unified_details.code`. They represent the standardized view of a connector-reported failure, mapped from connector-specific codes.
 

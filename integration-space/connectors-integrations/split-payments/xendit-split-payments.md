@@ -1,7 +1,5 @@
 ---
-description: >-
-  Split and route payments across multiple accounts or sub-merchants using
-  Xendit's split settlement feature via Hyperswitch.
+description: Configure Xendit split settlements to route payments across multiple accounts using flat amounts or percentage-based distribution rules
 icon: hexagon-xmark
 metaLinks:
   alternates:

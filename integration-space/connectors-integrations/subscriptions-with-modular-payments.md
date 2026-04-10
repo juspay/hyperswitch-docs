@@ -2,7 +2,7 @@
 description: >-
   Learn how to augment subscription billing providers (Chargebee, Recurly,
   Stripe Billing) with Hyperswitch payments orchestration — decoupling payments
-  for full control over card vaulting, routing, ret
+  for full control over card vaulting, routing, retry logic, and more.
 icon: repeat
 metaLinks:
   alternates:
@@ -45,7 +45,7 @@ Businesses running on a subscription model — powered by providers such as Char
 
 ### Integration Guide
 
-#### 1. For non-PCI compliant merchants who wants to use Hyperswitch Payments SDK
+#### 1. For non-PCI compliant merchants who want to use Hyperswitch Payments SDK
 
 {% stepper %}
 {% step %}
@@ -191,7 +191,7 @@ curl --location 'http://localhost:8080/subscriptions/' \
             "line1": "1467",
             "line2": "Harrison Street",
             "line3": "Harrison Street",
-            "city": "San Fransico",
+            "city": "San Francisco",
             "state": "California",
             "zip": "94122",
             "country": "US",
@@ -264,7 +264,7 @@ Sync with the status of the Subscription API to disburse services to subscribed 
 
 {% code overflow="wrap" %}
 ```
-curl --location 'http://localhost:8080/subscriptions/<subscripion_id>' \
+curl --location 'http://localhost:8080/subscriptions/<subscription_id>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Profile-Id: <profile_id>' \
@@ -272,7 +272,7 @@ curl --location 'http://localhost:8080/subscriptions/<subscripion_id>' \
 
 RESPONSE:
 {
-    "id": "<subcription_id>",
+    "id": "<subscription_id>",
     "merchant_reference_id": "mer_ref_id",
     "status": "active",
     "plan_id": null,

@@ -1,4 +1,8 @@
 ---
+description: Process Apple Pay transactions using Hyperswitch decryption for secure token handling
+---
+
+---
 description: >-
   Learn how to process Apple Pay in-app and web transactions using Hyperswitch
   decryption, including certificate setup and configuration steps.
@@ -8,4 +12,3 @@ metaLinks:
 ---
 
 # In-App and Web Transactions Processed Using Hyperswitch Decryption
-

@@ -13,13 +13,13 @@ approved: true
 ---
 -->
 
-## Overview
+### Overview
 
 The `Charge` RPC processes a recurring payment using a previously established mandate. This enables subscription billing and automated payment collection without requiring customer interaction or re-entering payment details.
 
 **Business Use Case:** When a subscription billing cycle triggers (e.g., monthly SaaS renewal), you need to charge the customer's stored payment method. The Charge RPC uses the mandate reference from the initial `SetupRecurring` to process the payment without customer presence, following stored credential protocols for secure recurring billing.
 
-## Purpose
+### Purpose
 
 **Why use Charge for recurring payments?**
 
@@ -37,7 +37,7 @@ The `Charge` RPC processes a recurring payment using a previously established ma
 - New transaction ID for each charge (distinct from original mandate)
 - Support for MIT (Merchant Initiated Transaction) protocols
 
-## Request Fields
+### Request Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -71,7 +71,7 @@ The `Charge` RPC processes a recurring payment using a previously established ma
 | `locale` | string | No | Locale for responses (e.g., "en-US") |
 | `connector_testing_data` | SecretString | No | Testing data for connectors |
 
-## Response Fields
+### Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -91,9 +91,9 @@ The `Charge` RPC processes a recurring payment using a previously established ma
 | `connector_response` | ConnectorResponseData | Structured connector response data |
 | `incremental_authorization_allowed` | bool | Whether amount can be increased later |
 
-## Example
+### Example
 
-### Request (grpcurl)
+#### Request (grpcurl)
 
 ```bash
 grpcurl -H "x-connector: stripe" \
@@ -117,7 +117,7 @@ grpcurl -H "x-connector: stripe" \
   types.RecurringPaymentService/Charge
 ```
 
-### Response (Success)
+#### Response (Success)
 
 ```json
 {
@@ -134,7 +134,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-### Response (Failure - Insufficient Funds)
+#### Response (Failure - Insufficient Funds)
 
 ```json
 {
@@ -150,7 +150,7 @@ grpcurl -H "x-connector: stripe" \
 }
 ```
 
-## Status Values
+### Status Values
 
 | Status | Description | Next Action |
 |--------|-------------|-------------|
@@ -160,7 +160,7 @@ grpcurl -H "x-connector: stripe" \
 | `FAILED` | Charge could not be completed | Retry with backoff or notify customer |
 | `REQUIRES_ACTION` | Additional authentication needed | Handle 3DS or redirect flow |
 
-## MIT Categories
+### MIT Categories
 
 | Category | Use When |
 |----------|----------|
@@ -172,7 +172,7 @@ grpcurl -H "x-connector: stripe" \
 | `NO_SHOW` | Charge for no-show fees |
 | `REAUTHORIZATION` | Re-authorizing a previously authorized amount |
 
-## Best Practices
+### Best Practices
 
 1. **Set `off_session: true`** - Always indicate that the customer is not present for recurring charges
 2. **Include `mit_category`** - Properly categorize the charge type for compliance
@@ -180,7 +180,7 @@ grpcurl -H "x-connector: stripe" \
 4. **Handle failures gracefully** - Implement retry logic with customer notification
 5. **Use webhooks** - Set up webhooks for asynchronous status updates
 
-## Next Steps
+### Next Steps
 
 - [Revoke](./revoke.md) - Cancel the mandate when customer unsubscribes
 - [SetupRecurring](../payment-service/setup-recurring.md) - Create initial mandate for new subscriptions

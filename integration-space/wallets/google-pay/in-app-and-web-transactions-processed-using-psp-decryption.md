@@ -1,4 +1,8 @@
 ---
+description: Configure Google Pay transactions with PSP decryption for secure processing
+---
+
+---
 description: >-
   Configure Google Pay in-app and web transactions with PSP decryption for
   secure payment processing
@@ -9,4 +13,3 @@ metaLinks:
 ---
 
 # In-App and Web Transactions Processed Using PSP Decryption
-

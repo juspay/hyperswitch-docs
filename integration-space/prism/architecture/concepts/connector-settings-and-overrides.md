@@ -10,7 +10,7 @@ It offers the flexibility to enable the setting could be enabled at a connector 
 | **Timeout** | Request timeout from API call in milliseconds. You may tweak this for processor which are slower to respond. | 30000ms |
 | **Retry** | Number of API retry attempts on failure, incase of network failures | 0 |
 
-## Configuration at Connector Level
+### Configuration at Connector Level
 
 The below example is a connector level configuration of the API keys. Timeout and proxy settings are configured per-request using RequestConfig.
 
@@ -31,7 +31,7 @@ const config = {
 const paymentClient = new PaymentClient(config);
 ```
 
-## Override at a Request Level
+### Override at a Request Level
 
 This is an example of overriding the settings for a single request for timeout and proxy using RequestConfig.
 
@@ -66,7 +66,7 @@ const response = await paymentClient.authorize({
 ```
 
 
-## Proxy for PCI Vault
+### Proxy for PCI Vault
 
 If you wish your payment request to be routed through a PCI compliant endpoint, you may configure it at request level like below.
 

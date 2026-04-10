@@ -1,5 +1,5 @@
 ---
-description: Accept crypto payments on your application
+description: Accept cryptocurrency payments through Bitcoin Ethereum and Litecoin using blockchain technology
 icon: bitcoin-sign
 metaLinks:
   alternates:
