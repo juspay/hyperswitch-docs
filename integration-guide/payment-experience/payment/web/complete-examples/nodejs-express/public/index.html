@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperswitch Payment Example</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            color: #1a1a1a;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .product-info {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .product-row:last-child {
+            margin-bottom: 0;
+            padding-top: 12px;
+            border-top: 2px solid #e9ecef;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .card-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .payment-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 8px;
+        }
+
+        .payment-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .payment-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .test-cards {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .test-cards h4 {
+            margin-bottom: 8px;
+            color: #856404;
+        }
+
+        .test-cards ul {
+            margin-left: 16px;
+            color: #856404;
+        }
+
+        .test-cards li {
+            margin-bottom: 4px;
+        }
+
+        .powered-by {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .powered-by a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        /* Hyperswitch SDK Styles */
+        #payment-form {
+            margin-top: 24px;
+        }
+
+        .sdk-container {
+            min-height: 300px;
+            border: 2px dashed #e1e5e9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+        }
+
+        .sdk-loading {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Payment</h1>
+            <p>Secure payment processing with Hyperswitch</p>
+        </div>
+
+        <div class="product-info">
+            <div class="product-row">
+                <span>Premium Widget</span>
+                <span>$99.00</span>
+            </div>
+            <div class="product-row">
+                <span>Tax</span>
+                <span>$0.00</span>
+            </div>
+            <div class="product-row">
+                <span>Total</span>
+                <span>$99.00</span>
+            </div>
+        </div>
+
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="customer@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19" required>
+            </div>
+
+            <div class="form-group card-row">
+                <div>
+                    <label for="expiry">Expiry (MM/YY)</label>
+                    <input type="text" id="expiry" placeholder="12/25" maxlength="5" required>
+                </div>
+                <div>
+                    <label for="cvc">CVC</label>
+                    <input type="text" id="cvc" placeholder="123" maxlength="4" required>
+                </div>
+                <div>
+                    <label for="zip">ZIP</label>
+                    <input type="text" id="zip" placeholder="12345" maxlength="10" required>
+                </div>
+            </div>
+
+            <button type="submit" class="payment-button" id="pay-button">
+                Pay $99.00
+            </button>
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <div class="test-cards">
+            <h4>🧪 Test Cards (Use any future date, any CVC)</h4>
+            <ul>
+                <li><strong>Success:</strong> 4242 4242 4242 4242</li>
+                <li><strong>Decline:</strong> 4000 0000 0000 0002</li>
+                <li><strong>3D Secure:</strong> 4000 0000 0000 3220</li>
+            </ul>
+        </div>
+
+        <div class="powered-by">
+            Powered by <a href="https://hyperswitch.io" target="_blank">Hyperswitch</a>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const form = document.getElementById('payment-form');
+        const payButton = document.getElementById('pay-button');
+        const messageDiv = document.getElementById('message');
+
+        // Card number formatting
+        document.getElementById('card-number').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || '';
+            e.target.value = formattedValue;
+        });
+
+        // Expiry date formatting
+        document.getElementById('expiry').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // Show message helper
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type} show`;
+        }
+
+        // Hide message
+        function hideMessage() {
+            messageDiv.className = 'message';
+        }
+
+        // Set loading state
+        function setLoading(isLoading) {
+            if (isLoading) {
+                payButton.disabled = true;
+                payButton.innerHTML = '<span class="spinner"></span>Processing...';
+            } else {
+                payButton.disabled = false;
+                payButton.innerHTML = 'Pay $99.00';
+            }
+        }
+
+        // Handle form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideMessage();
+            setLoading(true);
+
+            try {
+                // Step 1: Create payment intent on server
+                console.log('Creating payment intent...');
+                const createResponse = await fetch('/api/create-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: 9900, // $99.00 in cents
+                        currency: 'USD',
+                        description: 'Premium Widget Purchase'
+                    })
+                });
+
+                const createData = await createResponse.json();
+
+                if (!createData.success) {
+                    throw new Error(createData.message || 'Failed to create payment');
+                }
+
+                console.log('Payment intent created:', createData.payment_id);
+
+                // Step 2: Get card details
+                const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+                const expiry = document.getElementById('expiry').value;
+                const [expMonth, expYear] = expiry.split('/');
+                const cvc = document.getElementById('cvc').value;
+
+                // Step 3: Confirm payment with card details
+                // In production, use Hyperswitch SDK to tokenize the card
+                // For this example, we're simulating the confirmation
+                console.log('Confirming payment...');
+                
+                const confirmResponse = await fetch('/api/confirm-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        payment_id: createData.payment_id,
+                        client_secret: createData.client_secret,
+                        // In production, this would be a payment_method_id from the SDK
+                        payment_method_data: {
+                            card: {
+                                number: cardNumber,
+                                exp_month: expMonth,
+                                exp_year: '20' + expYear,
+                                cvc: cvc
+                            }
+                        }
+                    })
+                });
+
+                const confirmData = await confirmResponse.json();
+
+                if (confirmData.status === 'succeeded') {
+                    showMessage('✅ Payment successful! Thank you for your purchase.', 'success');
+                    form.reset();
+                } else if (confirmData.status === 'requires_action') {
+                    showMessage('⏳ Additional authentication required (3D Secure). This would redirect in production.', 'error');
+                } else {
+                    throw new Error('Payment failed: ' + (confirmData.error || 'Unknown error'));
+                }
+
+            } catch (error) {
+                console.error('Payment error:', error);
+                showMessage('❌ ' + error.message, 'error');
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        // Check server health on load
+        fetch('/health')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Server status:', data.status);
+            })
+            .catch(error => {
+                console.error('Server not reachable:', error);
+                showMessage('⚠️ Cannot connect to server. Please ensure the server is running.', 'error');
+            });
+    </script>
+</body>
+</html>
