@@ -27,7 +27,7 @@ This page consists of steps for how **Apple Pay** can be enabled in Hyperswitch 
 * Click on **Proceed** after making the necessary changes to your API Keys (if required).
 * Select **Apple Pay** under the Wallet section to enable it.
 * Prepare Apple Pay certificates for CyberSource by following the steps mentioned [here](apple-pay.md#steps-to-prepare-apple-pay-certificates-for-cybersource-integration).
-* To configure these steps in the Hyperswitch dashboard, please follow the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
+* To configure these steps in the Hyperswitch dashboard, please follow the steps mentioned [here](https://docs.hyperswitch.io/integrations/~/revisions/ZvEM9fIqChWsb1sRGPnD/wallets/apple-pay).
 * Click on **Enable** and then **Proceed**, review your configuration and changes, and click **Done**.
 
 #### Points to Remember for Apple Pay Payments via CyberSource
@@ -49,9 +49,9 @@ We recommend passing these fields when creating the Payment Intent with Hyperswi
 
 ### Steps to Prepare Apple Pay Certificates for CyberSource Integration
 
-* Create an Apple Merchant ID by following the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#creating-an-apple-merchantid).
-* Validate your merchant domain by following the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#validating-merchant-domain).
-* Create Apple Merchant ID certificates by following the steps mentioned [here](../../../wallets/apple-pay/ios-application.md#creating-apple-merchantid-certificate-and-private-key).
+* Create an Apple Merchant ID by following the steps mentioned [here](https://docs.hyperswitch.io/integrations/wallets/apple-pay#creating-an-apple-merchantid).
+* Validate your merchant domain by following the steps mentioned [here](https://docs.hyperswitch.io/integrations/wallets/apple-pay#validating-merchant-domain).
+* Create Apple Merchant ID certificates by following the steps mentioned [here](https://docs.hyperswitch.io/integrations/wallets/apple-pay#creating-apple-merchantid-certificate-and-private-key).
 * Log into your CyberSource Console and navigate to `Payment Configuration > Digital Payment Solutions`.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 3.26.23 PM.png" alt=""><figcaption></figcaption></figure>
@@ -66,8 +66,8 @@ We recommend passing these fields when creating the Payment Intent with Hyperswi
 * Upload the **.csr** file you received from your processor and click **Continue**.
 * Click on **Download** — you will receive a **.cer** file.
 * On the CyberSource Console, if prompted, upload the same **.cer** file (`apple_pay.cer`).
-* Now configure the generated certificates into the Hyperswitch Control Center for CyberSource by following these [steps](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#configuring-apple-pay-on-hyperswitch).
+* Now configure the generated certificates into the Hyperswitch Control Center for CyberSource by following these [steps](https://docs.hyperswitch.io/integrations/wallets/apple-pay#steps-to-configure-1).
 
 {% hint style="info" %}
-To enable Apple Pay in your iOS application, please refer to the steps mentioned [here](https://docs.hyperswitch.io/hyperswitch-cloud/payment-methods-setup/wallets/apple-pay/ios-application#integrate-with-xcode).
+To enable Apple Pay in your iOS application, please refer to the steps mentioned [here](https://docs.hyperswitch.io/integrations/wallets/apple-pay#integrate-with-xcode).
 {% endhint %}

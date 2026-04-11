@@ -17,7 +17,7 @@ In this flow Hyperswitch decrypts the token internally using own certificates an
 2. Hyperswitch unwraps the token using your private key stored in its secure vault.
 3. Hyperswitch maps the DPAN and Cryptogram to the destination PSP’s API.
 
-### **Configuration :**&#x20;
+### **Configuration :**
 
 #### **Steps to configure Apple Pay on Hyperswitch**
 
@@ -26,7 +26,7 @@ In this flow Hyperswitch decrypts the token internally using own certificates an
 * While selecting Payment Methods, click on Apple Pay in the Wallet section
 * Select the Web Domain option
 
-<div data-full-width="false"><figure><img src="../../../.gitbook/assets/Screenshot 2023-12-07 at 7.41.02 PM.png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/Screenshot 2023-12-07 at 7.41.02 PM (1).png" alt=""><figcaption></figcaption></figure></div>
 
 * Download the domain verification file using the button available
 * Host this file on your server at _`merchant_domain`_`/.well-known/apple-developer-merchantid-domain-association`
@@ -47,4 +47,3 @@ Please note since the Apple Pay Web Domain flow involves decryption at Hyperswit
 * Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
 
 </details>
-
