@@ -66,7 +66,7 @@
 
 ## Wallets
 
-* [Apple Pay](wallets/google-pay/README.md)
+* [Apple Pay](wallets/apple-pay/README.md)
   * [Web Domain](wallets/apple-pay/web-domain.md)
   * [iOS Application](wallets/apple-pay/ios-application.md)
   * [In-App and Web Transactions Processed Using Hyperswitch Decryption](wallets/apple-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md)
