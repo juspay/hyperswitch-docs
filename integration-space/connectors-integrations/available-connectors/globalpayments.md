@@ -3,7 +3,6 @@ description: >-
   Connect GlobalPayments with Juspay Hyperswitch to accept over 140 payment
   types across multiple channels with subscription and recurring payment
   support.
-hidden: true
 metaLinks:
   alternates:
     - globalpayments.md

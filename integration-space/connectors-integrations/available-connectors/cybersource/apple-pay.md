@@ -20,10 +20,10 @@ This page consists of steps for how **Apple Pay** can be enabled in Hyperswitch 
 * On your Hyperswitch Control Center, click on `Connectors > Payment Processors`.
 *   If you have already configured CyberSource successfully, you will land on the page as shown in the image below.
 
-    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.36.58 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 1.36.58 PM.png" alt=""><figcaption></figcaption></figure>
 *   Click on CyberSource and then click on `Edit Icon` to **Update** the configuration of the CyberSource connector.
 
-    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.38.05 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 1.38.05 PM.png" alt=""><figcaption></figcaption></figure>
 * Click on **Proceed** after making the necessary changes to your API Keys (if required).
 * Select **Apple Pay** under the Wallet section to enable it.
 * Prepare Apple Pay certificates for CyberSource by following the steps mentioned [here](apple-pay.md#steps-to-prepare-apple-pay-certificates-for-cybersource-integration).
@@ -54,11 +54,11 @@ We recommend passing these fields when creating the Payment Intent with Hyperswi
 * Create Apple Merchant ID certificates by following the steps mentioned [here](../../../wallets/apple-pay/ios-application.md#creating-apple-merchantid-certificate-and-private-key).
 * Log into your CyberSource Console and navigate to `Payment Configuration > Digital Payment Solutions`.
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 3.26.23 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 3.26.23 PM.png" alt=""><figcaption></figcaption></figure>
 
 *   Click on **Configure** and add your Apple Merchant ID that you created in the steps above.
 
-    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 4.54.31 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 4.54.31 PM.png" alt=""><figcaption></figcaption></figure>
 * Click on `Generate New Certificate Signing Request` and download the provided **.csr** file.
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to **Identifiers**, and select the Merchant ID you created previously.
 * Under the **Apple Pay Payment Processing Certificate** section, click on **Create Certificate**.

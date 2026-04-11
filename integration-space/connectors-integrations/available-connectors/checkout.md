@@ -2,7 +2,6 @@
 description: >-
   Connect Checkout.com as a payment connector on Hyperswitch to accept global
   payments via its end-to-end gateway, acquirer, and processor solution.
-hidden: true
 metaLinks:
   alternates:
     - checkout.md

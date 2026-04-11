@@ -9,7 +9,7 @@ metaLinks:
 
 # Netcetera
 
-<div align="left"><figure><img src="../../../.gitbook/assets/Screenshot 2024-07-05 at 1.27.28 PM.png" alt="" width="201"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/Screenshot 2024-07-05 at 1.27.28 PM.png" alt="" width="201"><figcaption></figcaption></figure></div>
 
 {% hint style="info" %}
 This section gives you an overview of how to authenticate payments via Netcetera through Juspay Hyperswitch

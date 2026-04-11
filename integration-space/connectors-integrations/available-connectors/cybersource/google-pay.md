@@ -18,10 +18,10 @@ This page describes how **Google Pay** can be enabled in Hyperswitch via CyberSo
 * On your Hyperswitch Control Center, click on `Connectors > Payment Processors`.
 *   If you have already configured CyberSource successfully, you will land on the page shown in the image below.
 
-    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.36.58 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 1.36.58 PM.png" alt=""><figcaption></figcaption></figure>
 *   Click on CyberSource and then click the `Edit` icon to **update** the configuration of the CyberSource connector.
 
-    <figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.38.05 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 1.38.05 PM.png" alt=""><figcaption></figcaption></figure>
 * Click **Proceed** after making any necessary changes to your API keys.
 * Select **Google Pay** under the **Wallet** section to enable it.
 * Enter the Google Pay details in the overlay form and click **Proceed**:
@@ -33,7 +33,7 @@ This page describes how **Google Pay** can be enabled in Hyperswitch via CyberSo
 **\[SANDBOX ENV]:** For the sandbox test environment, you can enter any **dummy value** for **Google Pay Merchant ID** — it will not affect the payment experience.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-03-14 at 1.46.32 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-03-14 at 1.46.32 PM.png" alt=""><figcaption></figcaption></figure>
 
 * Click **Proceed**, review your changes, and click **Done**.
 

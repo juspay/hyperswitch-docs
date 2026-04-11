@@ -2,7 +2,6 @@
 description: >-
   Accept crypto payments through Coinbase Commerce via Hyperswitch, with
   multi-asset support and access to millions of retail users.
-hidden: true
 metaLinks:
   alternates:
     - coinbase.md

@@ -2,7 +2,6 @@
 description: >-
   Integrate Mollie as a payment connector on Juspay Hyperswitch to accept
   multiple payment methods with seamless checkout and robust security.
-hidden: true
 metaLinks:
   alternates:
     - mollie.md

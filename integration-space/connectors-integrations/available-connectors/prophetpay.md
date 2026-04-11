@@ -2,7 +2,6 @@
 description: >-
   Connect Prophetpay with Juspay Hyperswitch to accept and process payments
   through Prophetpay's integrated payment methods on your platform.
-hidden: true
 metaLinks:
   alternates:
     - prophetpay.md
@@ -14,7 +13,7 @@ metaLinks:
 This section gives you an overview of how to make payments via Prophetpay through Juspay Hyperswitch.
 {% endhint %}
 
-![logo\_discord](../../../.gitbook/assets/logo_cps_new.jpg)
+![logo\_discord](../../.gitbook/assets/logo_cps_new.jpg)
 
 ### About
 

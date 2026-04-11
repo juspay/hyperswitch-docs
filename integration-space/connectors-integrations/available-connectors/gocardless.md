@@ -2,7 +2,6 @@
 description: >-
   Accept bank payments, Direct Debit, and Open Banking via GoCardless through
   Juspay Hyperswitch
-hidden: true
 metaLinks:
   alternates:
     - gocardless.md
@@ -14,7 +13,7 @@ metaLinks:
 This section gives you an overview of how to make payments via GoCardless through Juspay Hyperswitch
 {% endhint %}
 
-![logo\_globalPayment](../../../.gitbook/assets/gocardless-logo.png)
+![logo\_globalPayment](../../.gitbook/assets/gocardless-logo.png)
 
 ### About
 

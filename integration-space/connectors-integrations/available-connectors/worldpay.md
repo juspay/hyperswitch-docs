@@ -2,7 +2,6 @@
 description: >-
   Accept online, in-store, and mobile payments through Worldpay via Juspay
   Hyperswitch with built-in fraud protection.
-hidden: true
 metaLinks:
   alternates:
     - worldpay.md

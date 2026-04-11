@@ -2,7 +2,6 @@
 description: >-
   Accept payments globally through Airwallex via Hyperswitch, with support for
   cross-border payments, foreign exchange, and multiple payment methods.
-hidden: true
 metaLinks:
   alternates:
     - airwallex.md

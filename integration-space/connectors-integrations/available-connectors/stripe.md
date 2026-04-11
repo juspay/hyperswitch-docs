@@ -33,11 +33,11 @@ Stripe is a suite of APIs powering online payment processing and commerce soluti
 
 **Step 1:** Set up your webhook endpoint on the Hyperswitch dashboard under **Settings -> Payment settings -> Click on the profile**.
 
-<figure><img src="../../../.gitbook/assets/webhook1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook1.png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** Configure Hyperswitch's webhook endpoint on your Stripe dashboard. You can find Hyperswitch's endpoint for your Stripe account by clicking **Processors -> Stripe**.
 
-<figure><img src="../../../.gitbook/assets/webhook2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook2.png" alt=""><figcaption></figcaption></figure>
 
 This will ensure that if your Stripe transaction was sent through Hyperswitch:
 

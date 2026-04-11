@@ -2,7 +2,6 @@
 description: >-
   Accept payments through PayPal via Juspay Hyperswitch — configure credentials,
   supported payment methods, and activation steps.
-hidden: true
 metaLinks:
   alternates:
     - paypal.md

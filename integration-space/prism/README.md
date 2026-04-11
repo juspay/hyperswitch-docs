@@ -1,4 +1,12 @@
-## 🎯 What is Prism?
+---
+metaLinks:
+  alternates:
+    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/0F41H1VvRqMkGQQjXSTN
+---
+
+# Product Overview
+
+### 🎯 What is Prism?
 
 **One integration. Any payment processor. Zero lock-in.**
 
@@ -12,37 +20,31 @@ Because every payment processor has diverse APIs, error codes, authentication me
 
 **Prism can be embedded in your server application with its wide range of multi-language SDKs, or run as a gRPC microservice**
 
+| ❌ Without Prism                                        | ✅ With Prism                        |
+| ------------------------------------------------------ | ----------------------------------- |
+| 🗂️ 60+ different API schemas                          | 📋 Single unified schema            |
+| ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven  |
+| 🔗 Brittle, provider-specific code                     | 🔓 Portable, provider-agnostic code |
+| 🚫 Hard to switch providers                            | 🔄 Change providers in 1 line       |
 
-| ❌ Without Prism | ✅ With Prism |
-|------------------------------|----------------------------|
-| 🗂️ 60+ different API schemas | 📋 Single unified schema |
-| ⏳ Never ending agent loops/ months of integration work | ⚡ Hours to integrate, Agent driven |
-| 🔗 Brittle, provider-specific code | 🔓 Portable, provider-agnostic code |
-| 🚫 Hard to switch providers | 🔄 Change providers in 1 line |
+***
 
+### ✨ Features
 
----
+* **🔌 60+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
+* **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
+* **🚀 Zero Overhead** — Rust core with native bindings, no overhead
+* **🔒 PCI-Compliant by Design** — Stateless, no data storage
 
+***
 
-## ✨ Features
-
-
-- **🔌 60+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
-- **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
-- **🚀 Zero Overhead** — Rust core with native bindings, no overhead
-- **🔒 PCI-Compliant by Design** — Stateless, no data storage
-
-
----
-
-
-## 🏗️ Architecture
+### 🏗️ Architecture
 
 The Prism library is compliant for payment processing by design. It is:
-- **Stateless** — Hence, no PII or PCI data stored
-- **Credential free** — The API keys are never logged nor exposed
-- **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data. 
 
+* **Stateless** — Hence, no PII or PCI data stored
+* **Credential free** — The API keys are never logged nor exposed
+* **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -63,29 +65,27 @@ The Prism library is compliant for payment processing by design. It is:
    └──────────┘           └──────────┘           └──────────┘           └──────────┘
 ```
 
----
+***
 
+### 🚀 Quick Start
 
-## 🚀 Quick Start
-
-### Install the Prism Library
+#### Install the Prism Library
 
 Start by installing the library in the language of your choice.
-<!-- tabs:start -->
 
-#### **Node.js**
+**Node.js**
 
 ```bash
 npm install hyperswitch-prism
 ```
 
-#### **Python**
+**Python**
 
 ```bash
 pip install hyperswitch-prism
 ```
 
-#### **Java**
+**Java**
 
 Add to your `pom.xml`:
 
@@ -97,21 +97,19 @@ Add to your `pom.xml`:
 </dependency>
 ```
 
-#### **PHP**
+**PHP**
 
 ```bash
 composer require juspay/hyperswitch-prism
 ```
 
-For detailed installation instructions, see [Installation Guide](./getting-started/installation.md).
+For detailed installation instructions, see [Installation Guide](getting-started/installation.md).
 
----
+***
 
-### Authorize a Payment
+#### Authorize a Payment
 
-<!-- tabs:start -->
-
-#### **Node.js**
+**Node.js**
 
 ```javascript
 const { PaymentClient } = require('hyperswitch-prism');
@@ -165,12 +163,11 @@ async function main() {
 main().catch(console.error);
 ```
 
----
+***
 
-## 🔄 Routing between Payment Providers
+### 🔄 Routing between Payment Providers
 
 Once the basic plumbing is implemented you can leverage Prism's core benefit - **switch payment providers by changing one line**.
-
 
 ```javascript
 const { PaymentClient } = require('hyperswitch-prism');
@@ -206,21 +203,20 @@ console.log(`Payment authorized with ${currency === types.Currency.EUR ? 'Adyen'
 
 **One integration pattern. Any service category.**
 
-No rewriting. No re-architecting. Just swap the client with rules.
-Each flow uses the same unified schema regardless of the underlying processor's API differences. No custom code per provider.
+No rewriting. No re-architecting. Just swap the client with rules. Each flow uses the same unified schema regardless of the underlying processor's API differences. No custom code per provider.
 
 You can learn more about [intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) and [smart retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries) to add more intelligence. It can help configure and manage diverse payment acceptance setup, as well as improve conversion rates.
 
----
+***
 
-## 🛠️ Development
+### 🛠️ Development
 
-### Prerequisites
+#### Prerequisites
 
-- Rust 1.70+
-- Protocol Buffers (protoc)
+* Rust 1.70+
+* Protocol Buffers (protoc)
 
-### Building from Source
+#### Building from Source
 
 ```bash
 # Clone the repository
@@ -234,15 +230,12 @@ cargo build --release
 cargo test
 ```
 
----
+***
 
-### Reporting Vulnerabilities
+#### Reporting Vulnerabilities
+
 Please report security issues to [security@juspay.in](mailto:security@juspay.in).
 
----
-
-<div align="center">
+***
 
 Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
-
-</div>

@@ -1,6 +1,5 @@
 ---
 description: Accept payments through Shift4 via Juspay Hyperswitch
-hidden: true
 metaLinks:
   alternates:
     - shift4.md

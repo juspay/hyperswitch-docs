@@ -1,6 +1,5 @@
 ---
 description: Accept payments through dLocal via Hyperswitch
-hidden: true
 metaLinks:
   alternates:
     - dlocal.md

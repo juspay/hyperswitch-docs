@@ -3,7 +3,6 @@ description: >-
   Connect Nuvei to Juspay Hyperswitch to accept payments globally across
   e-commerce and high-growth industries using Nuvei's payment processing and
   acquiring services.
-hidden: true
 metaLinks:
   alternates:
     - nuvei.md

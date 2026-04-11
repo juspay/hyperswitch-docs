@@ -3,7 +3,6 @@ description: >-
   Integrate Klarna with Juspay Hyperswitch to offer buy-now-pay-later,
   installment plans, and direct payment options in a seamless one-click checkout
   experience.
-hidden: true
 metaLinks:
   alternates:
     - klarna.md

@@ -2,7 +2,6 @@
 description: >-
   Accept payments through Braintree via Hyperswitch — covers prerequisites, API
   credentials, and webhook configuration.
-hidden: true
 metaLinks:
   alternates:
     - braintree.md

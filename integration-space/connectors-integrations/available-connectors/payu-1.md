@@ -3,7 +3,6 @@ description: >-
   Learn how to integrate and activate PayU as a payment connector via Juspay
   Hyperswitch to accept and process online payments across multiple payment
   methods.
-hidden: true
 metaLinks:
   alternates:
     - payu-1.md

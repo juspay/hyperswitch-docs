@@ -3,7 +3,6 @@ description: >-
   Connect Zen to Juspay Hyperswitch to accept payments with low fees, boost
   conversions, and manage raw card data securely through the Hyperswitch control
   center.
-hidden: true
 metaLinks:
   alternates:
     - zen.md

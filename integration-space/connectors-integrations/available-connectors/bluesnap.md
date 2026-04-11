@@ -2,7 +2,6 @@
 description: >-
   Accept payments globally through BlueSnap via Hyperswitch, supporting
   e-commerce, subscription billing, and mobile payments.
-hidden: true
 metaLinks:
   alternates:
     - bluesnap.md

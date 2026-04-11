@@ -1,6 +1,5 @@
 ---
 description: Accept payments through Authorize.net via Hyperswitch
-hidden: true
 metaLinks:
   alternates:
     - authorizedotnet.md

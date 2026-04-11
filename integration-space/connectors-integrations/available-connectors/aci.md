@@ -2,7 +2,6 @@
 description: >-
   Accept and manage digital payments through ACI Worldwide via Hyperswitch —
   supports omni-commerce, bill payments, and fraud management.
-hidden: true
 metaLinks:
   alternates:
     - aci.md
