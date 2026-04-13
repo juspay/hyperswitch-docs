@@ -1,10 +1,5 @@
----
-metaLinks:
-  alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/nwnGEryCzxU4mYDHkoSj
----
+# Installation and Configuration
 
-# Installation & Configuration
 
 ## How to install the prism library?
 
@@ -14,11 +9,13 @@ The below examples are templates for configuring Stripe and Adyen.
 
 ### Prerequisites
 
-* Stripe test API key (get one at [stripe.com](https://stripe.com))
-* Adyen test API key (get one at [adyen.com/signup](https://www.adyen.com/signup))
+- Stripe test API key (get one at [stripe.com](https://stripe.com))
+- Adyen test API key (get one at [adyen.com/signup](https://www.adyen.com/signup))
 
 {% tabs %}
+
 {% tab title="Node" %}
+
 {% code title="Terminal" overflow="wrap" %}
 ```bash
 npm install hyperswitch-prism
@@ -49,9 +46,11 @@ const adyenConfig = {
 const adyenClient = new PaymentClient(adyenConfig);
 ```
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="Terminal" overflow="wrap" %}
 ```bash
 pip install hyperswitch-prism
@@ -84,9 +83,11 @@ adyen_config = {
 adyen_client = PaymentClient(adyen_config)
 ```
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Java" %}
+
 {% code title="pom.xml" overflow="wrap" %}
 ```xml
 <dependency>
@@ -117,9 +118,11 @@ adyenConfig.put("connectorConfig", Map.of("adyen", adyenConnectorConfig));
 PaymentClient adyenClient = new PaymentClient(adyenConfig);
 ```
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="PHP" %}
+
 {% code title="Terminal" overflow="wrap" %}
 ```bash
 composer require hyperswitch-prism
@@ -155,16 +158,17 @@ $adyenConfig = [
 $adyenClient = new PaymentClient($adyenConfig);
 ```
 {% endcode %}
+
 {% endtab %}
+
 {% endtabs %}
 
-That would be all. The SDK handles native library loading automatically. Start building in the [First Payment](first-payment.md).
+That would be all. The SDK handles native library loading automatically. Start building in the [First Payment](./first-payment.md).
 
 ## Minimum version supported
 
 The prerequisites are:
-
-* **Node.js**: 16+ (FFI bindings require native compilation)
-* **Python**: 3.9+ (uses `ctypes` for FFI)
-* **Java**: 11+ (uses JNI bindings)
-* **PHP**: 8.0+ (uses FFI extension)
+- **Node.js**: 16+ (FFI bindings require native compilation)
+- **Python**: 3.9+ (uses `ctypes` for FFI)
+- **Java**: 11+ (uses JNI bindings)
+- **PHP**: 8.0+ (uses FFI extension)

@@ -1,33 +1,27 @@
----
-metaLinks:
-  alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/WOJQx1Wsdrb4KJkdkhvB
----
-
 # Integrity and Source Verification
 
-Every payload that you receive from a payment processor carries two inherent risks: (i) Data tampering risk (ii) Impersonation risk
+Every payload that you receive from a payment processor carries two inherent risks: 
+(i) Data tampering risk
+(ii) Impersonation risk
 
 Prism provides strong **run-time checks** to eliminate both risks. This section also includes some recommended best practices to developers using the library.
 
-| Verification Type | What It Checks                                          | Attack Prevented               |
-| ----------------- | ------------------------------------------------------- | ------------------------------ |
-| **Integrity**     | Amount, currency, and transaction ID match your records | Data tampering                 |
-| **Source**        | Cryptographic signature using shared secrets            | Impersonation, forged webhooks |
+| Verification Type | What It Checks | Attack Prevented |
+|-------------------|----------------|------------------|
+| **Integrity** | Amount, currency, and transaction ID match your records | Data tampering |
+| **Source** | Cryptographic signature using shared secrets | Impersonation, forged webhooks |
 
 ### Data Tampering (Integrity Risk)
 
 An attacker intercepting a webhook can modify the payload before it reaches your server. The attacker will be able to exploit by:
-
-* Changing a failed payment status to "succeeded", which might deceive you to ship unpaid orders
-* Modifying the amount from $100 to $1, effectively making the customer pays less than expected.
+- Changing a failed payment status to "succeeded", which might deceive you to ship unpaid orders
+- Modifying the amount from $100 to $1, effectively making the customer pays less than expected.
 
 ### Impersonation (Source Risk)
 
 It is possible for attackers can forge webhooks that appear to come from payment processors. This can be exploited by:
-
-* Sending fake "payment succeeded" webhooks, which might deceive you to ship unpaid orders
-* Mimicking refund notifications, to manipulate your accounting systems
+- Sending fake "payment succeeded" webhooks, which might deceive you to ship unpaid orders
+- Mimicking refund notifications, to manipulate your accounting systems
 
 Prism provides built-in verification for both risks, and it is strongly recommended to enable them and test them before using on production.
 
@@ -115,7 +109,7 @@ If amounts mismatch, Prism flags the discrepancy clearly. In such cases you shou
 
 ## Signature Verification
 
-Typically Payment processors sign webhooks with a shared secret, to verify the payload against pre-configured secrets. An Authorize.net might use a SHA512, whereas a PPRO might use a SHA256.
+Typically Payment processors sign webhooks with a shared secret, to verify the payload against pre-configured secrets. An Authorize.net might use a SHA512, whereas a PPRO might use a SHA256. 
 
 Prism handles the signature verification across multiple processors.
 
@@ -180,16 +174,16 @@ If verification fails, Prism flags the discrepancy very clearly.
 
 It is strongly recommended to track transaction IDs across the lifecycle. When a webhook or API response arrives, check the following parameters in your application database, before updating them.
 
-| Check                   | If check fails?                                          |
-| ----------------------- | -------------------------------------------------------- |
-| ID exists in system     | Reject unknown transaction IDs                           |
+| Check | If check fails? |
+|-------|--------------|
+| ID exists in system | Reject unknown transaction IDs |
 | Status transition valid | Reject invalid state changes (e.g., SUCCEEDED → PENDING) |
-| Amount match            | Reject payload to prevent amount tampering               |
-| Currency match          | Reject payload to prevent currency tampering             |
+| Amount match | Reject payload to prevent amount tampering |
+| Currency match | Reject payload to prevent currency tampering |
 
 ### Always Configure the secrets while enabling a processor
 
-Some payment processors may have the secrets as optional configuration/ implementation. Always, generate new secret in processor dashboard and update the Prism configuration accordingly.
+Some payment processors may have the secrets as optional configuration/ implementation. Always, generate new secret in processor dashboard and update the Prism configuration accordingly. 
 
 An example configuration for Stripe as below.
 
@@ -211,4 +205,4 @@ const paymentClient = new PaymentClient(config);
 
 ## Next Steps
 
-* [Error Handling](../architecture/error-handling.md) — Handle verification failures in your application
+- [Error Handling](../architecture/error-handling.md) — Handle verification failures in your application
