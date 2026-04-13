@@ -19,8 +19,8 @@ The Juspay Hyperswitch Card Vault enables you to securely store customer card de
 
 #### Learn how to save a payment method in Hyperswitch during payments:
 
-{% content-ref url="../../../../integration-guide/payment-suite/payments/save-a-payment-method/" %}
-[save-a-payment-method](../../../../integration-guide/payment-suite/payments/save-a-payment-method/)
+{% content-ref url="../../integration-guide/payment-suite/payments/save-a-payment-method/" %}
+[save-a-payment-method](../../integration-guide/payment-suite/payments/save-a-payment-method/)
 {% endcontent-ref %}
 
 #### Learn about PG Agnostic Recurring payments/Card Forwarding through Hyperswitch:
@@ -31,12 +31,12 @@ The Juspay Hyperswitch Card Vault enables you to securely store customer card de
 
 #### Learn how to use Network Tokenisation in Hyperswitch:
 
-{% content-ref url="../../../network-tokenisation.md" %}
-[network-tokenisation.md](../../../network-tokenisation.md)
+{% content-ref url="../network-tokenisation.md" %}
+[network-tokenisation.md](../network-tokenisation.md)
 {% endcontent-ref %}
 
 #### Learn about our Standalone Vault service - No payment orchestration required:
 
-{% content-ref url="../../../../integration-guide/workflows/vault/" %}
-[vault](../../../../integration-guide/workflows/vault/)
+{% content-ref url="../../integration-guide/workflows/vault/" %}
+[vault](../../integration-guide/workflows/vault/)
 {% endcontent-ref %}
