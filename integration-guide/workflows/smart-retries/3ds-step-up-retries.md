@@ -32,7 +32,7 @@ In case you wish more processors to be covered for 3DS Step-up retry, please sub
 
 ### How to enable 3DS Step-up retries?
 
-Drop a request to hyperswitch@juspay.in with confirmation to enable 3DS Step-up retry
+Drop a request to support.global@juspay.io with confirmation to enable 3DS Step-up retry
 
 ### FAQs
 

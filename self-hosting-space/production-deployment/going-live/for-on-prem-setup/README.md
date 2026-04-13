@@ -51,7 +51,7 @@ The above installation guides include vault as well, but you will need to activa
 * This proxy should handle traffic filtering(WAF), rate limiting, request validation, and integration with DDoS protection services before traffic reaches the Kubernetes cluster.
 
 {% hint style="warning" %}
-Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
+Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [support.global@juspay.io](mailto:support.global@juspay.io) to access.
 {% endhint %}
 
 ### Monitoring
@@ -72,7 +72,7 @@ Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identif
 * [ ] Enable raw card processing for each connector. Some connectors offer this as a dashboard toggle feature. Some processors might need you to share a PCI Attestation of Compliance over email to enable this.
 
 {% hint style="info" %}
-To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [support.global@juspay.io](mailto:support.global@juspay.io)
 {% endhint %}
 
 ### Integrate with your app

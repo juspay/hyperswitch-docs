@@ -9,7 +9,7 @@ metaLinks:
 # Click To Pay
 
 {% hint style="info" %}
-This feature is currently in Beta. For access, please contact us at **hyperswitch@juspay.in**
+This feature is currently in Beta. For access, please contact us at **support.global@juspay.io**
 {% endhint %}
 
 Juspay Hyperswitch's Click to Pay is a secure and user-friendly digital payment solution designed to simplify the online checkout process. With Click to Pay, consumers can use their saved payment cards without manually entering card details or recalling a password for each purchase. All payment information is securely stored within a single, centralized profile tied to the user via an email/phone, making it easy to manage various payment methods.
