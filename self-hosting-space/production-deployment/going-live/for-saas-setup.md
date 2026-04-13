@@ -18,7 +18,7 @@ The connector configurations set up in the sandbox need to be replicated on the 
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#signing-of-hyperswitch-services-agreement)Signing of Juspay Hyperswitch services agreement <a href="#signing-of-hyperswitch-services-agreement" id="signing-of-hyperswitch-services-agreement"></a>
 
-* [ ] Ensure that the Juspay Hyperswitch services agreement is signed and shared with the Juspay Hyperswitch team. In case you need any help, please drop an email to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+* [ ] Ensure that the Juspay Hyperswitch services agreement is signed and shared with the Juspay Hyperswitch team. In case you need any help, please drop an email to [support.global@juspay.io](mailto:support.global@juspay.io)
 
 {% hint style="warning" %}
 The Juspay Hyperswitch team will share your production Juspay Hyperswitch credentials once the above process is completed.
@@ -35,7 +35,7 @@ If you are using our SDK, pci compliance is automatically taken care of.
 * [ ] Enable raw card processing for each connector. Some connectors offer this as a dashboard toggle feature. Some processors might need you to share a PCI Attestation of Compliance over email to enable this.
 
 {% hint style="info" %}
-To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [support.global@juspay.io](mailto:support.global@juspay.io)
 {% endhint %}
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#secure-your-api-keys)Secure your api-keys <a href="#secure-your-api-keys" id="secure-your-api-keys"></a>
