@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find . -name \"*.md\" -type f -exec sed -i '' 's/hyperswitch@juspay\\\\.in/support.global@juspay.io/g' {} \\\\;)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(gh --version)"
+    ]
+  }
+}
