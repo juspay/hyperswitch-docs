@@ -70,10 +70,10 @@ npm install
 Once the installation is successful, you can run the app with the following command -&#x20;
 
 ```bash
-npm run start:dev
+npm run re:start
 ```
 
-This will trigger a build of the project. On a successful build, you should see a message `Compiled successfully` in your terminal.&#x20;
+This will trigger a build of the project. On a successful build, you should see a message `Finish compiling` in your terminal.&#x20;
 
 Now you can proceed with launching the playground. The playground is a demo app where you can test your payments. In a separate terminal, run the following command to start the app on your local machine.
 
