@@ -20,11 +20,19 @@ Juspay Hyperswitch is designed as a multi-tenant platform with a clear hierarchy
 
 Recon uses the same hierarchy so existing Juspay Hyperswitch users can adopt Recon without changing how they already think about structuring accounts and access.
 
-\{% @mermaid/diagram content="flowchart TB Org\[Organisation] --> M1\[Merchant A] Org --> M2\[Merchant B]
+```mermaid
+flowchart TB
+    Org[Organisation]
 
-M1 --> P11\[Profile A1] M1 --> P12\[Profile A2]
+    Org --> M1[Merchant A]
+    Org --> M2[Merchant B]
 
-M2 --> P21\[Profile B1] M2 --> P22\[Profile B2]" %\}
+    M1 --> P11[Profile A1]
+    M1 --> P12[Profile A2]
+
+    M2 --> P21[Profile B1]
+    M2 --> P22[Profile B2]
+```
 
 #### Core principle: **"Recon can be segmented at both Merchant and Profile levels — choose the level based on how you want to group configuration and user access."**
 
@@ -84,17 +92,29 @@ Use the same structure:
 * Each Business Unit gets its own **Payments merchant** and its own **Recon merchant**, both under the same Org (adjacent).
 * Each Recon merchant can still have multiple profiles for deeper segmentation if needed.
 
-\{% @mermaid/diagram content="flowchart TB Org\["Organisation - Company"]
+```mermaid
+flowchart TB
 
-%% Business Unit 1 Org --> BU1Pay\["Merchant - BU Consumer (Payments)"] Org --> BU1Recon\["Merchant - BU Consumer (Recon)"]
+    Org[Organisation - Company]
 
-%% Business Unit 2 Org --> BU2Pay\["Merchant - BU Enterprise (Payments)"] Org --> BU2Recon\["Merchant - BU Enterprise (Recon)"]
+    %% Business Unit 1
+    Org --> BU1Pay[Merchant - BU Consumer - Payments]
+    Org --> BU1Recon[Merchant - BU Consumer - Recon]
 
-%% Optional: profiles under each merchant BU1Pay --> BU1PayP1\["Profile - Consumer - India"] BU1Pay --> BU1PayP2\["Profile - Consumer - SEA"]
+    %% Business Unit 2
+    Org --> BU2Pay[Merchant - BU Enterprise - Payments]
+    Org --> BU2Recon[Merchant - BU Enterprise - Recon]
 
-BU1Recon --> BU1ReconP1\["Recon Profile - Consumer - India"] BU1Recon --> BU1ReconP2\["Recon Profile - Consumer - SEA"]
+    %% Profiles under each merchant
+    BU1Pay --> BU1PayP1[Profile - Consumer - India]
+    BU1Pay --> BU1PayP2[Profile - Consumer - SEA]
 
-BU2Recon --> BU2ReconP1\["Recon Profile - Enterprise - Direct"] BU2Recon --> BU2ReconP2\["Recon Profile - Enterprise - Partners"]" %\}
+    BU1Recon --> BU1ReconP1[Recon Profile - Consumer - India]
+    BU1Recon --> BU1ReconP2[Recon Profile - Consumer - SEA]
+
+    BU2Recon --> BU2ReconP1[Recon Profile - Enterprise - Direct]
+    BU2Recon --> BU2ReconP2[Recon Profile - Enterprise - Partners]
+```
 
 #### When Setup A is the best fit
 
@@ -129,11 +149,23 @@ Again, this is not a weaker isolation model — profiles still isolate rules, wo
 * Create one Recon merchant adjacent under the Org.
 * Create multiple Recon profiles under the Recon merchant for **business unit**-level isolation.
 
-\{% @mermaid/diagram content="flowchart TB Org\["Organisation: Company"]
+```mermaid
+flowchart TB
 
-%% Normal Payments Merchant Org --> PayM\["Merchant: Company (Payments)"] PayM --> PayP1\["Profile: BU Consumer"] PayM --> PayP2\["Profile: BU Enterprise"] PayM --> PayP3\["Profile: BU International"]
+    Org["Organisation: Company"]
 
-%% Recon Merchant (adjacent under Org) Org --> ReconM\["Merchant: Company (Recon)"] ReconM --> ReconP1\["Recon Profile: BU Consumer"] ReconM --> ReconP2\["Recon Profile: BU Enterprise"] ReconM --> ReconP3\["Recon Profile: BU International"]" %\}
+    %% Normal Payments Merchant
+    Org --> PayM["Merchant: Company (Payments)"]
+    PayM --> PayP1["Profile: BU Consumer"]
+    PayM --> PayP2["Profile: BU Enterprise"]
+    PayM --> PayP3["Profile: BU International"]
+
+    %% Recon Merchant (adjacent under Org)
+    Org --> ReconM["Merchant: Company (Recon)"]
+    ReconM --> ReconP1["Recon Profile: BU Consumer"]
+    ReconM --> ReconP2["Recon Profile: BU Enterprise"]
+    ReconM --> ReconP3["Recon Profile: BU International"]
+```
 
 #### When Setup B is the best fit
 
@@ -153,15 +185,32 @@ A common real-world driver here is:
 * Payments operations want one consolidated merchant for processing.
 * Finance/ops teams want reconciliation separated by **business unit** / team / channel.
 
-\{% @mermaid/diagram content="flowchart TB Org\["Organisation"] --> PayM\["Merchant: Payments Unified (Payments)"] Org --> ReconM\["Merchant: Payments Unified (Recon)"]
+```mermaid
+flowchart TB
 
-%% Payments profiles (optional) PayM --> PayP1\["Profile: Cards"] PayM --> PayP2\["Profile: UPI"] PayM --> PayP3\["Profile: BNPL"]
+    Org["Organisation"]
 
-%% Recon profiles for separation ReconM --> BU1\["Recon Profile: BU Consumer"] ReconM --> BU2\["Recon Profile: BU Enterprise"] ReconM --> BU3\["Recon Profile: BU International"]
+    Org --> PayM["Merchant: Payments Unified (Payments)"]
+    Org --> ReconM["Merchant: Payments Unified (Recon)"]
 
-BU1 --> R1\["Rules: Consumer tolerances/fees"] BU2 --> R2\["Rules: Enterprise invoice-based"] BU3 --> R3\["Rules: Intl FX/settlement logic"]
+    %% Payments profiles (optional)
+    PayM --> PayP1["Profile: Cards"]
+    PayM --> PayP2["Profile: UPI"]
+    PayM --> PayP3["Profile: BNPL"]
 
-BU1 --> W1\["Workflow: Consumer ops queue"] BU2 --> W2\["Workflow: Enterprise ops queue"] BU3 --> W3\["Workflow: Intl ops queue"]" %\}
+    %% Recon profiles for separation
+    ReconM --> BU1["Recon Profile: BU Consumer"]
+    ReconM --> BU2["Recon Profile: BU Enterprise"]
+    ReconM --> BU3["Recon Profile: BU International"]
+
+    BU1 --> R1["Rules: Consumer tolerances/fees"]
+    BU2 --> R2["Rules: Enterprise invoice-based"]
+    BU3 --> R3["Rules: Intl FX/settlement logic"]
+
+    BU1 --> W1["Workflow: Consumer ops queue"]
+    BU2 --> W2["Workflow: Enterprise ops queue"]
+    BU3 --> W3["Workflow: Intl ops queue"]
+```
 
 ### Practical guidance: how to decide Merchant vs Profile in Recon
 
@@ -179,4 +228,14 @@ BU1 --> W1\["Workflow: Consumer ops queue"] BU2 --> W2\["Workflow: Enterprise op
 
 ### Decision diagram
 
-\{% @mermaid/diagram content="flowchart TD A\[Need separate reconciliation setup?] -->|Yes| B{Where should the primary boundary be?} B -->|Separate merchant workspaces + invite users per workspace| M\[Create separate Recon Merchants under Org] B -->|Single merchant umbrella, isolate setups inside it| P\[Create multiple Recon Profiles under the same Recon Merchant]" %\}
+```mermaid
+flowchart TD
+
+    A[Need separate reconciliation setup?]
+
+    A -->|Yes| B{Where should the primary boundary be?}
+
+    B -->|Separate merchant workspaces + invite users per workspace| M[Create separate Recon Merchants under Org]
+
+    B -->|Single merchant umbrella, isolate setups inside it| P[Create multiple Recon Profiles under the same Recon Merchant]
+```
