@@ -129,6 +129,6 @@ The process of assigning roles and permissions is straightforward:
 1. **Accessing User Management**: Administrators can access the User Management section from the dashboard. Under Settings -> Team
 2. **Creating / Inviting New Users**: Add new team members by entering their details and assigning them a role corresponding to their position in the organization. In case an email service is enabled, then an email is triggered to the invited users from where it can be accepted. If there is no email service, then the user is created for that merchant\_id with a random password that can be shared.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 1.20.54 PM 2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-09-11 at 1.20.54 PM 2.png" alt=""><figcaption></figcaption></figure>
 
 3. **Modifying Roles**: Existing users’ roles can be adjusted as needed, accommodating changes in responsibilities or positions. This is an upcoming feature.

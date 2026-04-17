@@ -70,7 +70,7 @@ To update the credentials on the Hyperswitch Control Center, follow these steps:
 
 * Click on the edit icon (📝) alongside the API keys, this will take you to a pop-up to enter the credentials for the connectors.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 9.53.16 AM 1 (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-12-10 at 9.53.16 AM 1 (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="test-a-payment-with-connector.md" %}
 [test-a-payment-with-connector.md](test-a-payment-with-connector.md)

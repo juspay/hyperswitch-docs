@@ -64,7 +64,7 @@ const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
 {% tab title="UnifiedCheckout" %}
 **2.4 Fetch the Payment and create the Unified Checkout**
 
-<figure><img src="../../../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -106,7 +106,7 @@ async function initialize() {
 {% tab title="ExpressCheckout" %}
 **2.4 Fetch the Payment and create the Express Checkout**
 
-<figure><img src="../../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 

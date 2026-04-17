@@ -34,7 +34,7 @@ _**Step 2:**_ Navigate to `Workflow` -> `Routing` -> `Least Cost Routing`
 
 _**Step 3:**_ A popup will guide you to confirm the three prerequisites - 1.) Connector setup, 2.) Debit card enablement, and 3.) Local networks configuration. Click on `Enable` to activate LCR
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 _**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routing algorithm along with all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
 

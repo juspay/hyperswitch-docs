@@ -32,7 +32,7 @@ Ensure you have easy access to essential information such as API keys and secret
 
 From the left nav bar, navigate to Developers --> Keys.
 
-<figure><img src="../../../.gitbook/assets/API Key (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/API Key.gif" alt=""><figcaption></figcaption></figure>
 
 Click on create API key from the page. A pop-up appears where you have to enter details like the description and validity of the key. Enter the details and click Next.
 

@@ -6,7 +6,7 @@ metaLinks:
     - ./
 ---
 
-# One Step Payments
+# Pay-Then-Vault
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
 
@@ -28,7 +28,7 @@ Refer to Payments (Cards) section if your flow requires the SDK to initiate paym
 
 **Endpoint:** `POST /payments`
 
-<figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
 **Required Fields:**
 

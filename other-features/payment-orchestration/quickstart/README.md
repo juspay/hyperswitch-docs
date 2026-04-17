@@ -35,7 +35,7 @@ You will use both a server-side and a client-side component of Hyperswitch to co
 
 #### **Steps to Integrate Hyperswitch**
 
-<figure><img src="../../../.gitbook/assets/image (96) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
 
 1. **Initiate Payment on Server**:\
    Your server creates a payment request with the Hyperswitch server to obtain a `client_secret`.

@@ -55,7 +55,7 @@ For testing and initial integration, you can use the [Hyperswitch Postman Collec
 
 1.  **Import Collection:** Download and import the collection into your Postman workspace.
 
-    <figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 2.  **Configure Environment Variables:** In the **Variables** tab, set the following parameters:
 
     * `baseUrl`: `https://sandbox.hyperswitch.io`

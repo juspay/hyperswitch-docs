@@ -12,7 +12,7 @@ metaLinks:
 
 We support modular, embeddable alternate payment methods (APMs) known as **Hyperwidgets**, which a merchant can use to augment their existing checkout in a low code manner.
 
-<figure><img src="../../../../.gitbook/assets/image (3) (4).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Let us understand with an example:
 

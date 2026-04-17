@@ -49,7 +49,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Juspay Hyperswitch managed client with External Vault's card form
 
