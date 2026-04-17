@@ -359,7 +359,7 @@
 ## Learn more
 
 * [Frequently Asked Questions](learn-more/frequently-asked-questions.md)
-* [Connectors Supported](https://integrations.hyperswitch.io/)
+* [Connectors Supported](https://juspay.io/integrations)
 * [Testing Payments](learn-more/test-payments-through-newman-wrapped-in-rust.md)
 * [Use-Cases](learn-more/use-cases/README.md)
   * [SaaS Platforms](learn-more/use-cases/saas-platforms.md)
