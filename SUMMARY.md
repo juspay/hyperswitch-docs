@@ -364,6 +364,7 @@
 * [Use-Cases](learn-more/use-cases/README.md)
   * [SaaS Platforms](learn-more/use-cases/saas-platforms.md)
   * [Fintech Businesses](learn-more/use-cases/fintech-businesses.md)
+* [Hyperswitch Status](https://status.hyperswitch.io/)
 * [Blog](https://hyperswitch.io/blog)
 * [Release Notes](https://hyperswitch-release-notes.vercel.app/)
 * [Release Notes](learn-more/release-notes.md)
