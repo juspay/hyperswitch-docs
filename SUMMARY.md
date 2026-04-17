@@ -15,7 +15,7 @@
   * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap/roadmap-q2-2024.md)
   * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap-q1-2024.md)
   * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-q4-2023.md)
-* [Playground](https://hs-demo.netlify.app/?flow=automatic)
+* [Playground](https://app.hyperswitch.io/hsdemo/)
 * [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
 * [API reference](https://api-reference.hyperswitch.io/introduction)
 * [Hyperswitch architecture](about-hyperswitch/hyperswitch-architecture/README.md)
