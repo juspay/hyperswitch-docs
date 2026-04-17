@@ -366,7 +366,7 @@
   * [Fintech Businesses](learn-more/use-cases/fintech-businesses.md)
 * [Hyperswitch Status](https://status.hyperswitch.io/)
 * [Blog](https://hyperswitch.io/blog)
-* [Release Notes](https://hyperswitch-release-notes.vercel.app/)
+* [Release Notes](https://hyperswitch.io/release-notes)
 * [Release Notes](learn-more/release-notes.md)
 * [Community](learn-more/community/README.md)
   * [Community Guidelines](learn-more/community/community-guidelines.md)
