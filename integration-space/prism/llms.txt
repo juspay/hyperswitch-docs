@@ -550,9 +550,9 @@ payment_methods: Card
 flows: authorize, capture, proxy_authorize, proxy_setup_recurring, refund, refund_get, setup_recurring, void
 examples_python: examples/revolv3/revolv3.py
 
-## Sanlammultidata
-connector_id: sanlammultidata
-doc: docs/connectors/sanlammultidata.md
+## Sanlam
+connector_id: sanlam
+doc: docs/connectors/sanlam.md
 scenarios: none
 payment_methods: none
 flows: 
