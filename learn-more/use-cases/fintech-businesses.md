@@ -28,7 +28,7 @@ Juspay Hyperswitch is designed as a modular middleware layer that injects specif
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
-Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs across 50+ global processors without writing a single line of integration code.
+Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs without writing a single line of integration code.
 
 | Capability        | Description                                                                                     | Reference                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
