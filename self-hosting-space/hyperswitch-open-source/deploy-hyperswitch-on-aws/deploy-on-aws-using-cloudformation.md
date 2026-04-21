@@ -26,8 +26,6 @@ metaLinks:
 
 #### Step 1 - \[Optional] - Create a new user with admin access
 
-<figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
-
 If you do not have a user with admin access, follow these steps:
 
 #### 1. Sign into the AWS Management Console
@@ -40,16 +38,12 @@ If you do not have a user with admin access, follow these steps:
 
 * **User name:** `hyperswitch`
 
-<figure><img src="../../.gitbook/assets/1-specify-user.png" alt=""><figcaption></figcaption></figure>
-
 #### 3. Attach Permissions
 
 * Choose **Attach policies directly**.
 * In the search bar, type `AdministratorAccess`
 * Check the box for:\
   🔐 **AdministratorAccess** – _AWS managed, job function_
-
-<figure><img src="../../.gitbook/assets/2-policies.png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Review and Create
 
@@ -58,22 +52,17 @@ If you do not have a user with admin access, follow these steps:
 * Permissions: `AdministratorAccess`
 * Click on **Create user**
 
-<figure><img src="../../.gitbook/assets/3-create-user.png" alt=""><figcaption></figcaption></figure>
-
 #### 5. Save Access Credentials
 
 * Click on the newly created user `hyperswitch` to view its details.
 * Navigate to the **Security credentials** tab.
-*   Under the **Access keys** section:
-
-    * Click **Create access key**
-    * Choose **Command Line Interface (CLI)**)
-    * Click **Next**, then **Create access key**
-    * **Download the `.csv` file** or **securely copy** the:
-      * **Access Key ID**
-      * **Secret Access Key**
-
-    <figure><img src="../../.gitbook/assets/aws-access-key (1).png" alt=""><figcaption></figcaption></figure>
+* Under the **Access keys** section:
+  * Click **Create access key**
+  * Choose **Command Line Interface (CLI)**)
+  * Click **Next**, then **Create access key**
+  * **Download the `.csv` file** or **securely copy** the:
+    * **Access Key ID**
+    * **Secret Access Key**
 
 {% hint style="warning" %}
 ⚠️ You won't be able to view the Secret Access Key again later — store it in a password manager or other secure location.
@@ -225,8 +214,6 @@ The following services are installed in the 2 Nodes across the EKS cluster
 | Juspay Hyperswitch Demo Store | 1 pod                                       | <p>CPU : 100m<br>Memory : 100 Mi</p> |
 
 #### Architecture Diagram
-
-<figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
 
 ### Next step:
 

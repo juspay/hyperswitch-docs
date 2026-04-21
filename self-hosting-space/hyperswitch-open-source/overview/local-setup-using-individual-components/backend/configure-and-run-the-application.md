@@ -1,6 +1,11 @@
 ---
+description: >-
+  Configure and run the Hyperswitch application with environment-specific
+  settings for development
 icon: panel-ews
-description: Configure and run the Hyperswitch application with environment-specific settings for development
+metaLinks:
+  alternates:
+    - configure-and-run-the-application.md
 ---
 
 # Configure and Run the Application

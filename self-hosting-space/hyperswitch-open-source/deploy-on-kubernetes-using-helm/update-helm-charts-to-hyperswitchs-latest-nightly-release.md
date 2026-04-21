@@ -2,6 +2,7 @@
 description: >-
   Update Helm charts to the latest Hyperswitch nightly release for access to
   newest features
+hidden: true
 metaLinks:
   alternates:
     - update-helm-charts-to-hyperswitchs-latest-nightly-release.md

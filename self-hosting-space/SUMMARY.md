@@ -1,12 +1,8 @@
----
-description: Navigate the complete Hyperswitch documentation structure to quickly locate installation guides, API references, and integration resources
----
-
 # Table of contents
 
 ## Hyperswitch open source
 
-* [Get Started](<README (1).md>)
+* [Get Started](README.md)
   * [Run Hyperswitch Locally Using Docker](hyperswitch-open-source/overview/unified-local-setup-using-docker.md)
     * [Run Additional Services](hyperswitch-open-source/overview/unified-local-setup-using-docker/run-additional-services.md)
   * [Advanced Development Env Setup](hyperswitch-open-source/overview/local-setup-using-individual-components/README.md)

@@ -1,6 +1,11 @@
 ---
+description: >-
+  Explore Hyperswitch APIs using Postman to create payments, refunds, and manage
+  merchant accounts
 icon: arrow-up-triangle-square
-description: Explore Hyperswitch APIs using Postman to create payments, refunds, and manage merchant accounts
+metaLinks:
+  alternates:
+    - try-out-apis.md
 ---
 
 # Try out APIs

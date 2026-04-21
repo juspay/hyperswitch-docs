@@ -193,8 +193,6 @@ The deployment process involves the following steps:
 
 Each dashboard requires selecting the appropriate data source at the top of the dashboard configuration.
 
-<figure><img src="../.gitbook/assets/unknown (9).png" alt=""><figcaption></figcaption></figure>
-
 Once configured, data typically begins appearing within a few minutes, provided that the monitoring agents are running correctly and metrics are being collected.
 
 ### Remote Monitoring (Enterprise Edition)

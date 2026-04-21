@@ -16,8 +16,6 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 ### How does it work?
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).jpg" alt=""><figcaption></figcaption></figure>
-
 * The Juspay Hyperswitch application communicates with Tartarus via a middleware.
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.
 * The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
@@ -30,8 +28,6 @@ Master Key - AES generated key to that is encrypted/decrypted by the custodian k
 
 Custodian Keys - AES generated key that is used to encrypt and decrypt the master key. It is broken into two keys (`key 1` and `key 2`) and available with two custodians to enhance security.
 
-<figure><img src="../../../../.gitbook/assets/image (5).jpg" alt=""><figcaption></figcaption></figure>
-
 ### Setting up your Card Vault
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td><a href="../../../../.gitbook/assets/aws.jpg">aws.jpg</a></td><td><a href="cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Automated deployment of Card Vault as a standalone component</strong></td><td></td><td></td><td></td><td><a href="production-ready-deployment-on-aws.md">production-ready-deployment-on-aws.md</a></td></tr><tr><td><strong>Manual setup of the card vault on AWS</strong></td><td></td><td></td><td></td><td><a href="cloud-setup-guide.md">cloud-setup-guide.md</a></td></tr></tbody></table>

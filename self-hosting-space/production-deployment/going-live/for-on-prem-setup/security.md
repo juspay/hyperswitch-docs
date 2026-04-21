@@ -20,8 +20,6 @@ The below sections highlight how Juspay Hyperswitch handles sensitive data such 
 
 The Juspay Hyperswitch application employs multiple layers of encryption to safeguard sensitive card information during transmission between components as explained below. Our security framework is designed to meet PCI standards, ensuring maximum protection and confidentiality for all card-related data.
 
-<figure><img src="../../../.gitbook/assets/system1.jpg" alt=""><figcaption></figcaption></figure>
-
 ### 1. Accepting Card Data
 
 Card information initially comes from the Juspay Hyperswitch SDK, where it's encrypted using the SSL/TLS protocol. This establishes end-to-end encryption between the SDK and the Juspay Hyperswitch backend.
@@ -50,8 +48,6 @@ To provide transaction information and analytics, only partially masked card det
 The application places a high priority on safeguarding sensitive information tied to `external API credentials`, `customers`, and `card details` and uses multi-layered encryption for the same.
 
 During transmission, data remains masked and never gets permanently stored on the local system, ensuring added security.
-
-<figure><img src="../../../.gitbook/assets/system-Page-2 (2).jpg" alt=""><figcaption></figcaption></figure>
 
 ### Key Management System (KMS) Encryption
 

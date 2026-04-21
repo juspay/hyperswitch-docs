@@ -24,13 +24,7 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 2. **Create a Project**:
 
 * Open your project picker:
-
-<figure><img src="../../.gitbook/assets/2-my-first-project.png" alt="" width="563"><figcaption></figcaption></figure>
-
 * Click **New Project:**
-
-<figure><img src="../../.gitbook/assets/3-create-new-project.png" alt=""><figcaption></figcaption></figure>
-
 * Provide a project name, and click **Create:**
 
 {% hint style="info" %}

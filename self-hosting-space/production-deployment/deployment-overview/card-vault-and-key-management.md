@@ -35,8 +35,6 @@ Juspay Hyperswitch implements these protections through a **Card Vault**, **Key 
 
 A secure enterprise deployment of Juspay Hyperswitch should implement the following architecture:
 
-<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
-
 Security layers:
 
 | Layer                         | Protection                   |
@@ -363,8 +361,6 @@ Common enterprise HSM-backed systems include:
 
 Enterprise systems typically implement a **hierarchical key structure**.
 
-<figure><img src="../../.gitbook/assets/image (154).png" alt="" width="181"><figcaption></figcaption></figure>
-
 Explanation:
 
 | Key                       | Purpose             |
@@ -453,8 +449,6 @@ Backups should be stored in:
 For highly available deployments, replicate key access across regions.
 
 Example architecture:
-
-<figure><img src="../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
 
 This ensures the vault can operate even during regional outages.
 
