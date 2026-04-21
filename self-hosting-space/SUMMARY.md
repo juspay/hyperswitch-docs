@@ -25,6 +25,7 @@
       * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
 * [Deploy on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm/README.md)
+  * [Deploy on AWS using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-aws-using-helm-charts.md)
   * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
   * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
   * [Deploy on Local using Helm Charts and Minikube](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md)
