@@ -58,3 +58,86 @@ Since BACS Direct Debit is a delayed notification payment method, it can take up
 BECS is a bank debit that is used for recurring payments for customers with Australian bank accounts who authorize a mandate for debit through the Bulk Electronic Clearing System (BECS).
 
 Since BECS Direct Debit is a delayed notification payment method, it can take up to 3 business days for the payment status to be updated after initiating a debit from the customer's account.
+
+---
+
+### Connector Capability Matrix
+
+Sourced from each connector's `SupportedPaymentMethods` implementation in `crates/hyperswitch_connectors`.
+
+| Debit Rail | Connectors | Mandates | Refunds | Settlement Timeline |
+| --- | --- | --- | --- | --- |
+| **ACH** | Stripe, Adyen, GoCardless | ✓ (all) | ✓ | Up to 4 business days |
+| **SEPA** | Stripe, Adyen, GoCardless, Mollie | Stripe ✓ · Adyen ✓ · GoCardless ✓ · Mollie ✗ | ✓ | Up to 14 business days |
+| **BACS** | Stripe, Adyen | ✓ (both) | ✓ | Up to 6 business days |
+| **BECS** | Stripe, GoCardless | ✓ (both) | ✓ | Up to 3 business days |
+
+{% hint style="info" %}
+Settlement is delayed because bank debit rails (ACH, SEPA, BACS, BECS) operate on batch clearing cycles — they are not real-time rails. The payment status in Hyperswitch reflects the current state on the rail and updates via webhooks as the processor receives confirmation from the clearing house.
+{% endhint %}
+
+---
+
+### Mandate Lifecycle
+
+Bank debits in Hyperswitch are mandate-first: every bank debit — including a one-time debit — requires a mandate to be established before funds can be pulled.
+
+**Step 1 — Create mandate (CIT)**
+
+Send `setup_future_usage: off_session` on the initial payment. The customer completes bank account authorization (form + consent checkbox, or Open Banking AIS account linking). A `mandate_id` is returned on success.
+
+```json
+{
+  "payment_method": "bank_debit",
+  "payment_method_data": {
+    "bank_debit": {
+      "ach_bank_debit": {
+        "account_number": "000123456789",
+        "routing_number": "110000000",
+        "bank_name": "Bank of Test",
+        "bank_country_code": "US",
+        "bank_city": "New York"
+      }
+    }
+  },
+  "setup_future_usage": "off_session",
+  "customer_id": "cus_xyz"
+}
+```
+
+**Step 2 — Subsequent debits (MIT)**
+
+Use the returned `mandate_id` for all future charges. The customer is not involved.
+
+```json
+{
+  "mandate_id": "man_xyz",
+  "off_session": true,
+  "customer_id": "cus_xyz",
+  "amount": 5000,
+  "currency": "USD"
+}
+```
+
+**Webhook events to expect**
+
+| Event | Meaning |
+| --- | --- |
+| `payment.processing` | Debit submitted to the clearing house — not yet confirmed |
+| `payment.succeeded` | Funds confirmed received |
+| `payment.failed` | Debit returned (insufficient funds, account closed, etc.) |
+| `mandate.active` | Mandate successfully established |
+| `mandate.revoked` | Customer cancelled the mandate at their bank |
+
+---
+
+### Common Failure Modes
+
+**Debit returned (R-code / SEPA return)**
+Symptom: Payment shows `payment.processing` then transitions to `payment.failed` after 1–4 days. Fix: The customer's bank returned the debit — check the return reason code (`insufficient_funds`, `account_closed`, `no_mandate`). For recurring mandates, do not retry automatically on `account_closed` or `no_mandate`; contact the customer to re-establish the mandate.
+
+**Mandate not established before MIT charge**
+Symptom: MIT charge fails with `mandate_not_found` or `invalid_mandate`. Fix: A mandate must be created via a CIT with `setup_future_usage: off_session` before any MIT charge. Verify `mandate_id` is from the original consent capture and belongs to the same customer.
+
+**Payment remains in `processing` beyond expected window**
+Symptom: Payment does not update after the settlement timeline passes. Fix: Bank debits are cleared in batches — status updates arrive via webhooks, not synchronous API polling. Ensure your webhook endpoint is configured and reachable. Contact your connector if the window has passed without a webhook event.
