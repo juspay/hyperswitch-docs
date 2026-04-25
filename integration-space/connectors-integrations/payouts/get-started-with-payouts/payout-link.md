@@ -28,7 +28,7 @@ Juspay Hyperswitch introduces Payout Links - Make sending out money to beneficia
 
 ### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
+* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
 * Add a payout processor to your account
 
 ### Using Payout links
@@ -114,7 +114,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 ```
 
-<figure><img src="../../.gitbook/assets/payout-link-default (1).png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-default.png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
 
 #### 3. Customizing a payout link during creation
 
@@ -158,7 +158,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../.gitbook/assets/payout-link-custom (1).png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
 
 #### 4. Opening non-iframed links
 
@@ -218,7 +218,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../.gitbook/assets/payout-link-non-iframed (1).png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/payout-link-non-iframed.png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
 
 ### FAQ
 

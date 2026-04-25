@@ -9,20 +9,20 @@ metaLinks:
 
 # Airwallex
 
-![Airwallex logo](https://hyperswitch.io/icons/homePageIcons/logos/airwallexLogo.svg)
+<div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/airwallexLogo.svg" alt=""></div>
 
 Airwallex connects to Hyperswitch as a `PaymentGateway` connector using a two-step authentication model: the API Key and Client ID are exchanged for a short-lived Bearer access token via Airwallex's `/authentication/login` endpoint, and this token is then used on all subsequent payment requests. All requests use `application/json`. Airwallex is primarily used for cross-border payment scenarios where multi-currency support and FX handling are requirements.
 
 ### Connector-Specific Notes
 
-- **OAuth-style token exchange:** Unlike connectors with static Bearer tokens, Airwallex requires fetching an access token before each session using the API Key and Client ID. Hyperswitch handles this token exchange internally — the credentials configured in the control center are the API Key and Client ID, not the access token.
-- **Credentials location:** API Key and Client ID are found in your Airwallex dashboard under **Developer → API Keys**.
-- **Cross-border and FX:** Airwallex's primary differentiator is multi-currency settlement and FX conversion. Payment methods and currencies available depend on your Airwallex account's approved corridors.
-- **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-- **SetupMandate:** Supported for applicable payment methods.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+* **OAuth-style token exchange:** Unlike connectors with static Bearer tokens, Airwallex requires fetching an access token before each session using the API Key and Client ID. Hyperswitch handles this token exchange internally — the credentials configured in the control center are the API Key and Client ID, not the access token.
+* **Credentials location:** API Key and Client ID are found in your Airwallex dashboard under **Developer → API Keys**.
+* **Cross-border and FX:** Airwallex's primary differentiator is multi-currency settlement and FX conversion. Payment methods and currencies available depend on your Airwallex account's approved corridors.
+* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
+* **SetupMandate:** Supported for applicable payment methods.
+* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
----
+***
 
 ### Activating Airwallex via Hyperswitch
 
@@ -35,7 +35,7 @@ Airwallex connects to Hyperswitch as a `PaymentGateway` connector using a two-st
 
 [Steps to activate Airwallex on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
----
+***
 
 ### Responsibility Boundaries
 
@@ -43,19 +43,16 @@ Airwallex connects to Hyperswitch as a `PaymentGateway` connector using a two-st
 
 **Hyperswitch owns:** initiating the token exchange before payment requests. **Airwallex owns:** issuing and expiring access tokens. If Airwallex's token endpoint is unavailable, payment requests cannot be initiated.
 
----
+***
 
 ### Common Failure Modes
 
-**Token exchange failure**
-Symptom: Payment requests fail before reaching Airwallex's payment API. Fix: Verify the API Key and Client ID in Hyperswitch are correct and that your Airwallex account is active. An inactive account will cause token exchange to fail.
+**Token exchange failure** Symptom: Payment requests fail before reaching Airwallex's payment API. Fix: Verify the API Key and Client ID in Hyperswitch are correct and that your Airwallex account is active. An inactive account will cause token exchange to fail.
 
-**Payment method not available for corridor**
-Symptom: A payment method works in test but fails in production for a specific country or currency. Fix: Confirm with Airwallex that the specific country-currency corridor is approved for your account.
+**Payment method not available for corridor** Symptom: A payment method works in test but fails in production for a specific country or currency. Fix: Confirm with Airwallex that the specific country-currency corridor is approved for your account.
 
-**FX rate unavailable**
-Symptom: Cross-currency payments fail with a rate or corridor error. Fix: Airwallex's FX rates are real-time — if a rate is temporarily unavailable, retry or use a fallback currency.
+**FX rate unavailable** Symptom: Cross-currency payments fail with a rate or corridor error. Fix: Airwallex's FX rates are real-time — if a rate is temporarily unavailable, retry or use a fallback currency.
 
----
+***
 
 Connector implementation: `crates/hyperswitch_connectors/src/connectors/airwallex.rs`.

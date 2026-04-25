@@ -47,4 +47,4 @@ The execution of a Smart Retry is governed by the following logic:
 * **Retry Limits:**
   * The system continues retrying until the payout is successful, the retry count is exhausted, or all eligible connectors are exhausted.
   * The default retry count is 5 per connector, which can be customized based on merchant requirements.
-* **Multi-Connector Eligibility:** Multi-connector retries require at least two active [payout connectors](../../../docs/payouts/connectors/) to be configured for the same payout method.
+* **Multi-Connector Eligibility:** Multi-connector retries require at least two active [payout connectors](../../../../docs/payouts/connectors/) to be configured for the same payout method.
