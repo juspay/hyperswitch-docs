@@ -77,3 +77,63 @@ To configure Klarna SDK flow, follow these steps. As a prerequisite, you would n
       }
     }
 ```
+
+---
+
+### Connector Capability Matrix
+
+Sourced from each connector's `SupportedPaymentMethods` implementation in `crates/hyperswitch_connectors`.
+
+| BNPL Method | Supported Connectors | Mandates | Refunds | Integration Mode |
+| --- | --- | --- | --- | --- |
+| **Klarna** | Adyen, Stripe, Mollie, Klarna (direct) | Adyen: ✓ · Others: ✗ | ✓ | Redirect or in-app SDK (Klarna direct only) |
+| **Affirm** | Adyen, Stripe | ✗ | ✓ | Redirect |
+| **Afterpay / Clearpay** | Adyen, Stripe | ✗ | ✓ | Redirect |
+| **PayBright** | Adyen | ✗ | ✓ | Redirect (Canada) |
+| **Walley** | Adyen | ✗ | ✓ | Redirect (Nordics) |
+| **Alma** | Adyen | ✗ | ✓ | Redirect (France) |
+| **Atome** | Adyen | ✗ | ✓ | Redirect (Southeast Asia) |
+
+{% hint style="info" %}
+**Mandates via Klarna on Adyen:** Adyen's Klarna integration supports mandate creation, allowing subsequent charges without customer interaction. All other connectors treat Klarna as a one-time payment — no mandate setup.
+{% endhint %}
+
+---
+
+### Integration Modes
+
+**Redirection flow (all BNPL methods)**
+The customer is redirected to the BNPL provider's hosted page to complete identity verification and approval. After approval, they return to your site. Hyperswitch handles the redirect lifecycle automatically.
+
+Required fields on payment create:
+- `email` (mandatory for all BNPL providers)
+- `billing.address` with `first_name`, `last_name`, `line1`, `city`, `state`, `zip`, `country`
+- `shipping.address` (same fields as billing)
+- `shipping.phone.number` and `country_code`
+
+**Klarna in-app SDK flow (Klarna connector only)**
+Klarna renders its own UI within your app — no redirect. Requires the Klarna connector (not Stripe or Adyen) and an additional `metadata.order_details` object on payment create:
+
+```json
+{
+  "metadata": {
+    "order_details": {
+      "product_name": "Product Name",
+      "quantity": 1
+    }
+  }
+}
+```
+
+---
+
+### Common Failure Modes
+
+**Missing required fields**
+Symptom: BNPL payment rejected before reaching the provider. Fix: All BNPL providers require `email`, full billing address, and full shipping address on the payment request. A missing `country` or `zip` field is the most common cause of pre-authorization rejection.
+
+**BNPL method not available for customer's country**
+Symptom: Payment method not shown at checkout or rejected at provider. Fix: Each BNPL method is country-scoped (e.g., Affirm is US-only, Walley is Nordics-only, Alma is France-focused). Ensure the customer's billing country matches the method's supported region and that the method is enabled in your connector dashboard for that market.
+
+**Klarna in-app flow not rendering**
+Symptom: Klarna SDK UI does not appear. Fix: Verify you are using the Klarna connector (not Stripe or Adyen) and that `metadata.order_details` with `product_name` and `quantity` is present on the payment create call.
