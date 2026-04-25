@@ -61,6 +61,7 @@
   * [Volt](connectors-integrations/available-connectors/volt.md)
   * [Worldline](connectors-integrations/available-connectors/worldline.md)
   * [Worldpay](connectors-integrations/available-connectors/worldpay.md)
+  * [Worldpay Vantiv](connectors-integrations/available-connectors/worldpayvantiv.md)
   * [Zen](connectors-integrations/available-connectors/zen.md)
   * [Netcetera](connectors-integrations/available-connectors/netcetera.md)
 
