@@ -59,13 +59,16 @@ Authentication credentials vary across different PSPs. Common combinations inclu
 
 Hyperswitch supports a wide variety of connectors to manage your entire financial stack:
 
-* Core Payments: Payment Processors, Acquirers & APMs.
-* Platforms: Payment platforms and Payouts Processors.
-* Recurring Billing: [Subscription Providers](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/subscriptions).
-* Security & Risk:
-  * [Card Vaults](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault)
-  * [3DS Authentications](https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager)
-  * [Fraud Management](https://docs.hyperswitch.io/explore-hyperswitch/workflows/fraud-and-risk-management)
+| Type | What it does |
+| --- | --- |
+| **Payment Processors** | PSPs and acquirers that authorize and settle payments |
+| **Payout Processors** | Connectors that disburse funds to bank accounts, cards, and wallets |
+| **Fraud Providers** | Risk and fraud evaluation before or after authorization |
+| **3DS Providers** | External EMV 3DS authentication independent of the PSP |
+| **Vault Providers** | Secure storage and retrieval of card credentials |
+| **Tax Providers** | Real-time sales tax calculation on transactions |
+| **Subscriptions Providers** | Recurring billing and subscription lifecycle management |
+| **Split Settlement** | Marketplace and platform fund splitting at the processor level |
 
 ### Quick Links
 
