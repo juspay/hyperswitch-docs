@@ -85,3 +85,68 @@ EPS (Electronic Payment Standard) is a bank redirect payment method used in Aust
 During checkout, the customers select one of their Austrian banks that supports EPS and they are taken to their bank's respective page where they login and confirm the payment to be deducted from their bank account. For some banks, customers also undergo two factor authentication to approve the transaction.
 
 EPS payments are instantly confirmed as success or failure post which the customers are redirected to the merchant's page.
+
+---
+
+### Connector Capability Matrix
+
+Sourced from each connector's `SupportedPaymentMethods` implementation in `crates/hyperswitch_connectors`.
+
+| Redirect Method | Connectors | Mandates | Refunds | Region |
+| --- | --- | --- | --- | --- |
+| **Sofort** | Stripe, Mollie | Stripe ✓ · Mollie ✗ | ✓ | Europe (13 countries) |
+| **Giropay** | Stripe, Mollie | ✗ (both) | Stripe ✗ · Mollie ✓ | Germany |
+| **iDEAL** | Stripe, Adyen, Mollie | Stripe ✓ · Adyen ✓ · Mollie ✗ | ✓ | Netherlands |
+| **EPS** | Stripe, Adyen, Mollie | ✗ (all) | ✓ | Austria |
+| **Przelewy24** | Stripe, Mollie | ✗ (both) | ✓ | Poland |
+| **Bancontact** | Stripe, Adyen, Mollie | Stripe ✓ · Adyen ✓ · Mollie ✗ | ✓ | Belgium |
+| **Blik** | Stripe, Adyen | ✗ (both) | ✓ | Poland |
+| **Bizum** | Adyen | ✗ | ✓ | Spain |
+| **Trustly** | Adyen | ✓ | ✓ | Nordics + Europe |
+| **Open Banking UK** | Adyen | ✓ | ✓ | United Kingdom |
+| **Online Banking FPX** | Stripe, Adyen | ✗ (both) | ✓ | Malaysia |
+| **Online Banking (CZ/FI/PL/SK)** | Adyen | ✗ | ✓ | Central/Eastern Europe, Finland |
+| **Online Banking Thailand** | Adyen | ✗ | ✓ | Thailand |
+
+{% hint style="info" %}
+**Mandate support on redirects:** Bank redirect mandates allow subsequent off-session charges using the same payment method without re-redirecting the customer. Only iDEAL (Stripe, Adyen), Bancontact (Stripe, Adyen), Sofort (Stripe), Trustly (Adyen), and Open Banking UK (Adyen) support mandate creation.
+{% endhint %}
+
+---
+
+### Required API Fields
+
+Bank redirect payments require `currency` and `billing.address.country` on every payment create call. Without these, Hyperswitch cannot determine which redirect methods are eligible to display.
+
+```json
+{
+  "payment_method": "bank_redirect",
+  "payment_method_data": {
+    "bank_redirect": {
+      "ideal": {
+        "bank_name": "ing",
+        "country": "NL"
+      }
+    }
+  },
+  "currency": "EUR",
+  "billing": {
+    "address": {
+      "country": "NL"
+    }
+  }
+}
+```
+
+---
+
+### Common Failure Modes
+
+**Method not shown at checkout**
+Symptom: The bank redirect option is missing from the payment sheet. Fix: Confirm that `currency` and `billing.address.country` are present on the payment create call. Hyperswitch uses these to filter eligible redirect methods — a missing country means no redirect methods can be displayed.
+
+**Redirect returns with error after bank approval**
+Symptom: Customer approves at the bank portal but is returned to a failed state. Fix: Verify the `return_url` in the payment create matches a publicly reachable URL. Also check that the connector is enabled for the specific redirect type (e.g., Giropay must be enabled on your connector dashboard, not just the bank redirect category).
+
+**Mandate setup fails on redirect method**
+Symptom: `setup_future_usage: off_session` returns without a `mandate_id`. Fix: Not all connectors support mandates for all redirect types. Check the capability matrix — for example, Giropay and EPS do not support mandate creation on any connector. Use iDEAL or Bancontact on Stripe or Adyen if recurring off-session charges are needed.
