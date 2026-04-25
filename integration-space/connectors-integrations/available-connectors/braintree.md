@@ -9,11 +9,11 @@ metaLinks:
 
 # Braintree
 
-Braintree connects to Hyperswitch as a `PaymentGateway` connector using `MultiAuthKey` authentication — three credentials (Merchant ID, Public Key, Private Key) are required. Unlike most connectors that use a single API key, Braintree authenticates requests using HTTP Basic auth where the username is the Public Key and the password is the Private Key, base64-encoded. All payment operations use Braintree's GraphQL API (not REST), which Hyperswitch handles transparently via its connector implementation.
+Braintree connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — three credentials (Merchant ID, Public Key, Private Key) are required. Unlike most connectors that use a Bearer token, Braintree authenticates requests using HTTP Basic auth where the Public Key is the username and the Private Key is the password, Base64-encoded as `Authorization: Basic base64(public_key:private_key)`. All payment operations use Braintree's GraphQL API (not REST), which Hyperswitch handles transparently via its connector implementation.
 
 ### Connector-Specific Notes
 
-- **Authentication model:** Three-credential `MultiAuthKey` — Merchant ID, Public Key, and Private Key. The Public Key and Private Key together form HTTP Basic auth credentials (`Authorization: Basic base64(public_key:private_key)`). The Merchant ID is used to scope all requests to your Braintree merchant account.
+- **Authentication model:** Three-credential `SignatureKey` — Merchant ID (key1), Public Key (api_key), and Private Key (api_secret). The Public Key and Private Key together form HTTP Basic auth credentials (`Authorization: Basic base64(public_key:private_key)`). The Merchant ID is used to scope all requests to your Braintree merchant account.
 - **GraphQL-based API:** Braintree uses GraphQL mutations for payment operations, not REST endpoints. Hyperswitch constructs the appropriate GraphQL queries internally — this is invisible to the caller but means error responses from Braintree are structured differently from REST connectors.
 - **Webhook verification:** Braintree uses HMAC-SHA1 for webhook signature verification. Configure the webhook endpoint in Braintree and store the webhook notification signing key in Hyperswitch.
 - **PayPal parent account requirement:** Braintree is owned by PayPal, and a PayPal Business account is required to activate Braintree. Ensure your PayPal Business account is in good standing before setting up Braintree credentials.
