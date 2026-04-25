@@ -66,14 +66,14 @@ Call `POST /payments` with `payment_method: bank_transfer` and the relevant subt
 The API response contains the virtual account details (account number, sort code, bank name, or reference). Display these on your confirmation page or email them to the customer. For Indonesian VAs, the customer has a time window (typically 24 hours) to complete the transfer.
 
 **Step 3 — Wait for settlement webhook**
-The customer initiates the transfer from their bank. Once the processor receives confirmation from the banking network, Hyperswitch fires a `payment.succeeded` webhook. Settlement can take up to 5 business days depending on the rail.
+The customer initiates the transfer from their bank. Once the processor receives confirmation from the banking network, Hyperswitch fires a `payment_succeeded` webhook. Settlement can take up to 5 business days depending on the rail.
 
 ---
 
 ### Common Failure Modes
 
 **Payment expires before customer transfers**
-Symptom: Payment status transitions to `payment.failed` with a timeout reason. Fix: Virtual account numbers are time-limited on most processors (especially Indonesian VAs). Display the expiry time prominently and resend reminder instructions if needed. Do not reuse the same virtual account after expiry — create a new payment.
+Symptom: Payment status transitions to `payment_failed` with a timeout reason. Fix: Virtual account numbers are time-limited on most processors (especially Indonesian VAs). Display the expiry time prominently and resend reminder instructions if needed. Do not reuse the same virtual account after expiry — create a new payment.
 
 **Payment succeeded webhook not received**
 Symptom: Customer completes the transfer but payment status never updates. Fix: Confirm the Hyperswitch webhook endpoint is configured and publicly reachable on the processor dashboard. Bank transfers update exclusively via webhooks — polling the payment status synchronously will not reflect settlement. Check the webhook delivery log in the Hyperswitch control center.

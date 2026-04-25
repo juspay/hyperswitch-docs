@@ -50,7 +50,7 @@ Crypto payments are non-reversible at the network level — once a transaction i
 ### Common Failure Modes
 
 **Payment not confirmed after customer sends funds**
-Symptom: Payment remains in `processing` state even after the customer's wallet shows a completed transaction. Fix: On-chain Bitcoin and Ethereum transactions require network confirmations before a processor marks the payment settled. OpenNode and Coinbase wait for a minimum confirmation count (typically 1–3 blocks). This can take minutes to over an hour during network congestion. Ensure your webhook endpoint is configured to receive the `payment.succeeded` event.
+Symptom: Payment remains in `processing` state even after the customer's wallet shows a completed transaction. Fix: On-chain Bitcoin and Ethereum transactions require network confirmations before a processor marks the payment settled. OpenNode and Coinbase wait for a minimum confirmation count (typically 1–3 blocks). This can take minutes to over an hour during network congestion. Ensure your webhook endpoint is configured to receive the `payment_succeeded` event.
 
 **Wrong amount or currency received**
 Symptom: Payment marked failed due to amount mismatch. Fix: Crypto payment amounts are denominated in the fiat currency you specified; the processor converts at the time of invoice creation. If the customer delays the transfer, exchange rate drift can cause an underpayment. Some processors (e.g., Coinbase) accept payments within a tolerance window — check the connector's documentation for underpayment handling.

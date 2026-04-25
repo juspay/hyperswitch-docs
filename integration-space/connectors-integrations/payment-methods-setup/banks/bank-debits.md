@@ -94,9 +94,11 @@ Send `setup_future_usage: off_session` on the initial payment. The customer comp
       "ach_bank_debit": {
         "account_number": "000123456789",
         "routing_number": "110000000",
-        "bank_name": "Bank of Test",
-        "bank_country_code": "US",
-        "bank_city": "New York"
+        "card_holder_name": "John Doe",
+        "bank_account_holder_name": "John Doe",
+        "bank_name": "ACH",
+        "bank_type": "Checking",
+        "bank_holder_type": "Personal"
       }
     }
   },
@@ -123,18 +125,18 @@ Use the returned `mandate_id` for all future charges. The customer is not involv
 
 | Event | Meaning |
 | --- | --- |
-| `payment.processing` | Debit submitted to the clearing house — not yet confirmed |
-| `payment.succeeded` | Funds confirmed received |
-| `payment.failed` | Debit returned (insufficient funds, account closed, etc.) |
-| `mandate.active` | Mandate successfully established |
-| `mandate.revoked` | Customer cancelled the mandate at their bank |
+| `payment_processing` | Debit submitted to the clearing house — not yet confirmed |
+| `payment_succeeded` | Funds confirmed received |
+| `payment_failed` | Debit returned (insufficient funds, account closed, etc.) |
+| `mandate_active` | Mandate successfully established |
+| `mandate_revoked` | Customer cancelled the mandate at their bank |
 
 ---
 
 ### Common Failure Modes
 
 **Debit returned (R-code / SEPA return)**
-Symptom: Payment shows `payment.processing` then transitions to `payment.failed` after 1–4 days. Fix: The customer's bank returned the debit — check the return reason code (`insufficient_funds`, `account_closed`, `no_mandate`). For recurring mandates, do not retry automatically on `account_closed` or `no_mandate`; contact the customer to re-establish the mandate.
+Symptom: Payment shows `payment_processing` then transitions to `payment_failed` after 1–4 days. Fix: The customer's bank returned the debit — check the return reason code (`insufficient_funds`, `account_closed`, `no_mandate`). For recurring mandates, do not retry automatically on `account_closed` or `no_mandate`; contact the customer to re-establish the mandate.
 
 **Mandate not established before MIT charge**
 Symptom: MIT charge fails with `mandate_not_found` or `invalid_mandate`. Fix: A mandate must be created via a CIT with `setup_future_usage: off_session` before any MIT charge. Verify `mandate_id` is from the original consent capture and belongs to the same customer.

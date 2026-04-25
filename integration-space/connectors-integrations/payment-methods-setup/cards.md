@@ -61,28 +61,6 @@ By default, all payments are auto-captured during authorization in Hyperswitch, 
 
 ---
 
-### Connector Capability Matrix
-
-Sourced from each connector's `SupportedPaymentMethods` implementation in `crates/hyperswitch_connectors`.
-
-| Connector | Mandates | Refunds | Manual Capture | 3DS | Card Networks |
-| --- | --- | --- | --- | --- | --- |
-| **Stripe** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Adyen** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Checkout.com** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Braintree** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **CyberSource** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Authorize.net** | ✓ | ✓ | ✓ | ✗ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Mollie** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Nuvei** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-| **Worldpay** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
-
-{% hint style="info" %}
-**Authorize.net** does not support 3DS natively — use an external 3DS provider (e.g. Netcetera) if 3DS is required on this connector.
-{% endhint %}
-
----
-
 ### Required API Fields per Flow
 
 **One-time card payment**
@@ -93,7 +71,7 @@ Sourced from each connector's `SupportedPaymentMethods` implementation in `crate
     "card": {
       "card_number": "4242424242424242",
       "card_exp_month": "12",
-      "card_exp_year": "2025",
+      "card_exp_year": "2030",
       "card_holder_name": "John Doe",
       "card_cvc": "100"
     }
