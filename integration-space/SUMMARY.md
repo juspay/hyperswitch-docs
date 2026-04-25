@@ -63,10 +63,17 @@
   * [Adyen Split Settlement](connectors-integrations/split-payments/adyen-split-payments.md)
   * [Xendit Split Settlement](connectors-integrations/split-payments/xendit-split-payments.md)
 * [Fraud Providers](connectors-integrations/fraud-providers/README.md)
+  * [Signifyd](connectors-integrations/fraud-providers/signifyd.md)
+  * [Riskified](connectors-integrations/fraud-providers/riskified.md)
 * [3DS Providers](connectors-integrations/3ds-providers/README.md)
-  * [Netcetera](connectors-integrations/available-connectors/netcetera.md)
+  * [Netcetera](connectors-integrations/3ds-providers/netcetera.md)
+  * [GPayments](connectors-integrations/3ds-providers/gpayments.md)
+  * [3dsecure.io](connectors-integrations/3ds-providers/threedsecureio.md)
+  * [Juspay 3DS Server](connectors-integrations/3ds-providers/juspaythreedsserver.md)
 * [Vault Providers](connectors-integrations/vault-providers/README.md)
+  * [VGS](connectors-integrations/vault-providers/vgs.md)
 * [Tax Providers](connectors-integrations/tax-providers/README.md)
+  * [TaxJar](connectors-integrations/tax-providers/taxjar.md)
 * [Subscriptions Providers](connectors-integrations/subscriptions-with-modular-payments.md)
 
 ## Wallets
