@@ -13,7 +13,7 @@ dLocal connects to Hyperswitch as a `PaymentGateway` connector using `SignatureK
 
 ### Connector-Specific Notes
 
-- **HMAC-SHA256 request signing:** Every request carries a computed signature in the `Authorization` header, formatted as `V2-HMAC-SHA256, Signature: {login}:{timestamp}:{signature}`. The Secret Key is used to sign the request body. Login, Secret Key, and Trans Key are all required — missing any one of them causes authentication to fail.
+- **HMAC-SHA256 request signing:** Every request carries a computed signature in the `Authorization` header, formatted as `V2-HMAC-SHA256, Signature: {hex_encoded_hmac_sha256}`. The HMAC input is `{x_login}{date}` for empty-body requests, or `{x_login}{date}{request_body}` when a body is present, signed with the Secret Key using HMAC-SHA256 and hex-encoded. The Login and Trans Key are sent as separate `X-Login` and `X-Trans-Key` headers respectively — they are not embedded in the `Authorization` value. All three credentials (Login, Secret Key, Trans Key) are required.
 - **Credentials location:** Login, Secret Key, and Trans Key are found in your dLocal dashboard.
 - **Emerging market focus:** dLocal's value is enabling local payment methods (Boleto, PIX, OXXO, local card schemes) across LatAm, Africa, and Asia through a single integration. The specific methods available depend on your dLocal account's approved countries.
 - **Capture methods supported:** Automatic, Manual, SequentialAutomatic (and Automatic for some methods).
