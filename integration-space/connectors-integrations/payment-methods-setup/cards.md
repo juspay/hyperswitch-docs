@@ -44,3 +44,101 @@ Follow the below guide to learn how to make a recurring payment with Hyperswitch
 ### Auth and Capture
 
 By default, all payments are auto-captured during authorization in Hyperswitch, but you can choose to separate capture from authorization by manually capturing an authorized payment later. Setting the `capture` field in payments/confirm API to `manual` will block the stated amount on the customer's card without charging them. To charge the customer an amount equal to or lesser than the blocked amount, use the payments/capture endpoint with the relevant details.
+
+---
+
+### Supported Payment Flows
+
+| Flow | Description | Key API fields |
+| --- | --- | --- |
+| **One-time (CIT)** | Customer-initiated single charge | `payment_method: card`, `payment_method_data.card.*` |
+| **3DS authentication** | Cardholder challenged via issuer — reduces fraud liability | `authentication_type: three_ds` |
+| **No-3DS** | Skip authentication — higher approval rate, merchant bears fraud liability | `authentication_type: no_three_ds` |
+| **Saved card (on-session)** | Charge a previously vaulted card with customer present | `payment_token` or `recurring_details.type: payment_method_id` |
+| **MIT / off-session mandate** | Merchant-initiated charge against a stored mandate | `mandate_id`, `off_session: true` |
+| **Auth + manual capture** | Block funds now, capture later (up to connector's hold window) | `capture_method: manual`, then `POST /payments/:id/capture` |
+| **$0 verification** | Verify card validity without charging | `amount: 0`, `confirm: true` |
+
+---
+
+### Connector Capability Matrix
+
+Sourced from each connector's `SupportedPaymentMethods` implementation in `crates/hyperswitch_connectors`.
+
+| Connector | Mandates | Refunds | Manual Capture | 3DS | Card Networks |
+| --- | --- | --- | --- | --- | --- |
+| **Stripe** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Adyen** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Checkout.com** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Braintree** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **CyberSource** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Authorize.net** | ✓ | ✓ | ✓ | ✗ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Mollie** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Nuvei** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+| **Worldpay** | ✓ | ✓ | ✓ | ✓ | Visa, Mastercard, Amex, Diners, Discover, JCB, UnionPay |
+
+{% hint style="info" %}
+**Authorize.net** does not support 3DS natively — use an external 3DS provider (e.g. Netcetera) if 3DS is required on this connector.
+{% endhint %}
+
+---
+
+### Required API Fields per Flow
+
+**One-time card payment**
+```json
+{
+  "payment_method": "card",
+  "payment_method_data": {
+    "card": {
+      "card_number": "4242424242424242",
+      "card_exp_month": "12",
+      "card_exp_year": "2025",
+      "card_holder_name": "John Doe",
+      "card_cvc": "100"
+    }
+  }
+}
+```
+
+**Creating a mandate (CIT — first charge)**
+```json
+{
+  "setup_future_usage": "off_session",
+  "customer_id": "cus_xyz"
+}
+```
+
+**Charging against a mandate (MIT — subsequent charge)**
+```json
+{
+  "mandate_id": "man_xyz",
+  "off_session": true,
+  "customer_id": "cus_xyz"
+}
+```
+
+**Manual auth then capture**
+```json
+// POST /payments  (authorize only)
+{ "capture_method": "manual" }
+
+// POST /payments/:id/capture
+{ "amount_to_capture": 1000 }
+```
+
+---
+
+### Common Failure Modes
+
+**Card declined**
+Symptom: Payment returns `payment_failed` with a decline code. Fix: Check the issuer decline code in `error_code` — common values are `insufficient_funds`, `do_not_honor`, `card_velocity_exceeded`. Retry with a different card or ask the customer to contact their bank. Do not retry declined cards automatically without changing something (e.g., reduced amount, different card).
+
+**3DS not triggered when expected**
+Symptom: Payment skips authentication and fails at authorization. Fix: Ensure `authentication_type: three_ds` is set on the payment. Also verify the connector has 3DS enabled on its dashboard and the card BIN is enrolled in 3DS. Authorize.net does not support native 3DS — route 3DS-required payments to a different connector.
+
+**Mandate charge fails after setup**
+Symptom: MIT charge returns `mandate_invalid` or `customer_not_found`. Fix: Verify `mandate_id` and `customer_id` are from the original CIT that set up the mandate. MIT charges must use `off_session: true` and the same customer ID as the mandate creation.
+
+**Card network not accepted**
+Symptom: Payment fails with `card_network_not_supported`. Fix: Verify the card network (e.g., UnionPay, Discover) is enabled on your connector dashboard. Some connectors require explicit network enablement per region.
