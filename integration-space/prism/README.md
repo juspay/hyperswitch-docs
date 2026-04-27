@@ -1,12 +1,4 @@
----
-metaLinks:
-  alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/0F41H1VvRqMkGQQjXSTN
----
-
-# Product Overview
-
-### 🎯 What is Prism?
+## 🎯 What is Prism?
 
 Today, integrating multiple payment processors either makes developers running in circles with AI agents to recreate integrations from specs, or developers spending months of engineering effort.
 
@@ -18,43 +10,52 @@ Because every payment processor has diverse APIs, error codes, authentication me
 
 **Prism can be embedded in your server application with its wide range of multi-language SDKs, or run as a gRPC microservice**
 
-| ❌ Without Prism                                             | ✅ With Prism                                    |
-| ----------------------------------------------------------- | ----------------------------------------------- |
-| 🗂️ 100+ different API schemas                              | 📋 Single unified schema                        |
+
+| ❌ Without Prism | ✅ With Prism |
+|------------------------------|----------------------------|
+| 🗂️ 100+ different API schemas | 📋 Single unified schema |
 | ⏳ In-deterministic agent loops / months of integration work | ⚡ Deterministic agent loops, hours to integrate |
-| 🔗 Brittle, provider-specific code                          | 🔓 Portable, provider-agnostic code             |
-| 🚫 Hard to switch providers                                 | 🔄 Change providers in 1 line                   |
+| 🔗 Brittle, provider-specific code | 🔓 Portable, provider-agnostic code |
+| 🚫 Hard to switch providers | 🔄 Change providers in 1 line |
 
-***
 
-### 🤖 For AI Assistants
+---
+
+
+
+
+## 🤖 For AI Assistants
 
 > **Use `curl` to fetch the complete SDK reference:**
->
 > ```bash
 > curl -fsSL https://raw.githubusercontent.com/juspay/hyperswitch-prism/main/llm/llm.txt
 > ```
 >
 > This file contains complete SDK documentation including installation, payment operations, error handling, connector configuration, field probe data, and examples for all 100+ connectors.
 
-***
 
-### ✨ Features
+---
 
-* **🔌 100+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
-* **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
-* **🚀 Zero Overhead** — Rust core with native bindings, no overhead
-* **🔒 PCI-Compliant by Design** — Stateless, no data storage
 
-***
+## ✨ Features
 
-### 🏗️ Architecture
+
+- **🔌 100+ Connectors** — Stripe, Adyen, Braintree, PayPal, Worldpay, and more
+- **🌍 Global Coverage** — Cards, wallets, bank transfers, BNPL, and regional methods
+- **🚀 Zero Overhead** — Rust core with native bindings, no overhead
+- **🔒 PCI-Compliant by Design** — Stateless, no data storage
+
+
+---
+
+
+## 🏗️ Architecture
 
 The Prism library is compliant for payment processing by design. It is:
+- **Stateless** — Hence, no PII or PCI data stored
+- **Credential free** — The API keys are never logged nor exposed
+- **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data. 
 
-* **Stateless** — Hence, no PII or PCI data stored
-* **Credential free** — The API keys are never logged nor exposed
-* **Payment compliance outsourcing supported** — You can continue to outsource your PCI compliance to third party vaults, or payment processor without having to handle credit card data.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -75,37 +76,39 @@ The Prism library is compliant for payment processing by design. It is:
    └──────────┘           └──────────┘           └──────────┘           └──────────┘
 ```
 
-***
+---
+
 
 > **Before integrating**, read the SDK guide for your language — it covers connector authentication configs, required fields per connector, sandbox test cards, status codes, and common runtime pitfalls.
+>
+> | Language | SDK Integration Guide |
+> |----------|-----------------------|
+> | **Python** | [sdk/python/README.md](../sdk/python/README.md) |
+> | **Node.js** | [sdk/javascript/README.md](../sdk/javascript/README.md) |
+> | **Rust** | [sdk/rust](../sdk/rust) |
 
-| Language    | SDK Integration Guide                          |
-| ----------- | ---------------------------------------------- |
-| **Python**  | [sdk/python/README.md](../sdk/python/)         |
-| **Node.js** | [sdk/javascript/README.md](../sdk/javascript/) |
-| **Rust**    | [sdk/rust](../sdk/rust/)                       |
+---
 
-***
+## 🚀 Quick Start
 
-### 🚀 Quick Start
-
-#### Install the Prism Library
+### Install the Prism Library
 
 Start by installing the library in the language of your choice.
+<!-- tabs:start -->
 
-**Node.js**
+#### **Node.js**
 
 ```bash
 npm install hyperswitch-prism
 ```
 
-**Python**
+#### **Python**
 
 ```bash
 pip install hyperswitch-prism
 ```
 
-**Java/Kotlin**
+#### **Java/Kotlin**
 
 Add to your `pom.xml`:
 
@@ -119,11 +122,13 @@ Add to your `pom.xml`:
 
 For detailed installation instructions, see [Installation Guide](../getting-started/installation.md).
 
-***
+---
 
-#### Create a Payment Order
+### Create a Payment Order
 
-**Node.js**
+<!-- tabs:start -->
+
+#### **Node.js**
 
 ```typescript
 import { PaymentClient, types, IntegrationError, ConnectorError } from 'hyperswitch-prism';
@@ -181,11 +186,12 @@ const main = async () => {
 main()
 ```
 
-***
+---
 
-### 🔄 Routing between Payment Providers
+## 🔄 Routing between Payment Providers
 
 Once the basic plumbing is implemented you can leverage Prism's core benefit - **switch payment providers by changing one line**.
+
 
 ```typescript
   // Routing rule: EUR -> Adyen, USD -> Stripe
@@ -238,20 +244,21 @@ Once the basic plumbing is implemented you can leverage Prism's core benefit - *
 
 **One integration pattern. Any service category.**
 
-No rewriting. No re-architecting. Just swap the client with rules. Each flow uses the same unified schema regardless of the underlying processor's API differences. No custom code per provider.
+No rewriting. No re-architecting. Just swap the client with rules.
+Each flow uses the same unified schema regardless of the underlying processor's API differences. No custom code per provider.
 
 You can learn more about [intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) and [smart retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries) to add more intelligence. It can help configure and gitage diverse payment acceptance setup, as well as improve conversion rates.
 
-***
+---
 
-### 🛠️ Development
+## 🛠️ Development
 
-#### Prerequisites
+### Prerequisites
 
-* Rust 1.70+
-* Protocol Buffers (protoc)
+- Rust 1.70+
+- Protocol Buffers (protoc)
 
-#### Building from Source
+### Building from Source
 
 ```bash
 # Clone the repository
@@ -265,12 +272,16 @@ cargo build --release
 cargo test
 ```
 
-***
+---
 
-#### Reporting Vulnerabilities
-
+### Reporting Vulnerabilities
 Please report security issues to [security@juspay.in](mailto:security@juspay.in).
 
-***
+---
+
+<div align="center">
 
 Built and maintained by [Juspay hyperswitch](https://hyperswitch.io)
+
+
+</div>

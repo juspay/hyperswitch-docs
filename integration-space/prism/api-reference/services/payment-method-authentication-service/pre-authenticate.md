@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/payment-method-authentication-service/pre-authenticate
----
+# PreAuthenticate RPC
 
-# Pre-authenticate
+<!--
+---
+title: PreAuthenticate
+description: Initiate 3DS flow before payment authorization to collect device data and prepare authentication context
+last_updated: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: false
+reviewed_by: engineering
+reviewed_at: 2026-03-05
+approved: true
+---
+-->
 
 ## Overview
 
@@ -17,51 +23,50 @@ The `PreAuthenticate` RPC initiates the 3D Secure authentication flow. It collec
 
 **Why pre-authenticate?**
 
-| Scenario                  | Outcome                                             |
-| ------------------------- | --------------------------------------------------- |
-| **Low risk transaction**  | Bank approves frictionlessly (no customer action)   |
-| **High risk transaction** | Bank requires challenge (OTP, password)             |
-| **SCA compliance**        | Meet EU Strong Customer Authentication requirements |
-| **Liability shift**       | Enable fraud liability protection                   |
+| Scenario | Outcome |
+|----------|---------|
+| **Low risk transaction** | Bank approves frictionlessly (no customer action) |
+| **High risk transaction** | Bank requires challenge (OTP, password) |
+| **SCA compliance** | Meet EU Strong Customer Authentication requirements |
+| **Liability shift** | Enable fraud liability protection |
 
 **Key outcomes:**
-
-* Authentication session initialized
-* Risk assessment performed
-* Challenge URL (if required)
-* Authentication data for payment
+- Authentication session initialized
+- Risk assessment performed
+- Challenge URL (if required)
+- Authentication data for payment
 
 ## Request Fields
 
-| Field                      | Type               | Required | Description                          |
-| -------------------------- | ------------------ | -------- | ------------------------------------ |
-| `merchant_order_id`        | string             | Yes      | Your unique order reference          |
-| `amount`                   | Money              | Yes      | Transaction amount                   |
-| `payment_method`           | PaymentMethod      | Yes      | Card details for authentication      |
-| `customer`                 | Customer           | No       | Customer information                 |
-| `address`                  | PaymentAddress     | Yes      | Billing address                      |
-| `enrolled_for_3ds`         | bool               | Yes      | Whether 3DS enrollment check passed  |
-| `metadata`                 | SecretString       | No       | Additional metadata                  |
-| `connector_feature_data`   | SecretString       | No       | Connector-specific metadata          |
-| `return_url`               | string             | No       | URL to redirect after authentication |
-| `continue_redirection_url` | string             | No       | URL to continue after redirect       |
-| `browser_info`             | BrowserInformation | No       | Browser details for fraud detection  |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_order_id` | string | Yes | Your unique order reference |
+| `amount` | Money | Yes | Transaction amount |
+| `payment_method` | PaymentMethod | Yes | Card details for authentication |
+| `customer` | Customer | No | Customer information |
+| `address` | PaymentAddress | Yes | Billing address |
+| `enrolled_for_3ds` | bool | Yes | Whether 3DS enrollment check passed |
+| `metadata` | SecretString | No | Additional metadata |
+| `connector_feature_data` | SecretString | No | Connector-specific metadata |
+| `return_url` | string | No | URL to redirect after authentication |
+| `continue_redirection_url` | string | No | URL to continue after redirect |
+| `browser_info` | BrowserInformation | No | Browser details for fraud detection |
 
 ## Response Fields
 
-| Field                      | Type                | Description                                    |
-| -------------------------- | ------------------- | ---------------------------------------------- |
-| `connector_transaction_id` | string              | Connector's authentication transaction ID      |
-| `status`                   | PaymentStatus       | Current status: PENDING, AUTHENTICATED, FAILED |
-| `error`                    | ErrorInfo           | Error details if authentication failed         |
-| `status_code`              | uint32              | HTTP-style status code                         |
-| `response_headers`         | map\<string,string> | Connector-specific response headers            |
-| `redirection_data`         | RedirectForm        | Challenge URL/form (if challenge required)     |
-| `network_transaction_id`   | string              | Card network transaction reference             |
-| `merchant_order_id`        | string              | Your order reference (echoed back)             |
-| `state`                    | ConnectorState      | State to pass to next authentication step      |
-| `raw_connector_response`   | SecretString        | Raw response for debugging                     |
-| `authentication_data`      | AuthenticationData  | 3DS authentication results                     |
+| Field | Type | Description |
+|-------|------|-------------|
+| `connector_transaction_id` | string | Connector's authentication transaction ID |
+| `status` | PaymentStatus | Current status: PENDING, AUTHENTICATED, FAILED |
+| `error` | ErrorInfo | Error details if authentication failed |
+| `status_code` | uint32 | HTTP-style status code |
+| `response_headers` | map<string,string> | Connector-specific response headers |
+| `redirection_data` | RedirectForm | Challenge URL/form (if challenge required) |
+| `network_transaction_id` | string | Card network transaction reference |
+| `merchant_order_id` | string | Your order reference (echoed back) |
+| `state` | ConnectorState | State to pass to next authentication step |
+| `raw_connector_response` | SecretString | Raw response for debugging |
+| `authentication_data` | AuthenticationData | 3DS authentication results |
 
 ## Example
 
@@ -142,5 +147,5 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Authenticate](authenticate.md) - Execute challenge if required
-* [PostAuthenticate](post-authenticate.md) - Validate authentication results
+- [Authenticate](./authenticate.md) - Execute challenge if required
+- [PostAuthenticate](./post-authenticate.md) - Validate authentication results
