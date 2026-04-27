@@ -104,6 +104,7 @@
 
 
 
+
 ## PRISM
 
 
@@ -171,6 +172,8 @@
     - [Create Session Token](prism/api-reference/services/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
   - [Domain Schema](prism/api-reference/domain-schema/README.md)
+
+- [FAQs](prism/FAQs.md)
 
 - [Java SDK Overview](prism/sdks/java/README.md)
   - [Payment Service Overview](prism/sdks/java/payment-service/README.md)
