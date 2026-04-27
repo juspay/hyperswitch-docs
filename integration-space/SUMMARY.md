@@ -102,6 +102,7 @@
 * [Supported Connectors](https://juspay.io/integrations)
 
 
+
 ## PRISM
 
 
