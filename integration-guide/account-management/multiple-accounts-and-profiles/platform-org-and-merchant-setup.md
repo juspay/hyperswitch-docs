@@ -114,7 +114,7 @@ Key characteristics
   * Sandbox url for API Key page: [https://app.hyperswitch.io/dashboard/developer-api-keys](https://app.hyperswitch.io/dashboard/developer-api-keys)
 * This key is special:
   * It authorizes access to create and manage new merchant accounts
-  * It does not perform payment operations for Standard merchants—think of it as the “key” for managing merchant accounts
+  * It does not perform payment operations for Standard merchants - think of it as the “key” for managing merchant accounts
   * It can perform payment operations on behalf of Connected merchants.
 
 #### 3. Create New Merchants (Sibling-Merchants)
@@ -205,13 +205,13 @@ All operational flows continue to use the respective Merchant API Keys. Resource
 
 The Platform-Connected setup supports the following features end-to-end for Connected merchants:
 
-* **Payments** — Including 3DS payments, both platform-on-behalf and connected-self flows.
-* **Refunds** — Platform can initiate refunds on behalf of Connected merchants.
-* **Disputes** — Platform can view, accept, or contest disputes on behalf of Connected merchants.
-* **Webhooks** — Dual-dispatch to both Platform and Connected Merchant webhook endpoints.
-* **Shared Customers and Payment Methods** — Shared across Connected merchants via a platform-scoped pool.
-* **Analytics and Reporting** — Scoped per Connected Merchant, queryable by Platform.
-* **SDK Integration** — Supported via `sdk_authorization` token for platform-connected flows.
-* **Audit Trail** — Full traceability of which merchant processed a transaction and who initiated it.
+* **Payments** - Including 3DS payments, both platform-on-behalf and connected-self flows.
+* **Refunds** - Platform can initiate refunds on behalf of Connected merchants.
+* **Disputes** - Platform can view, accept, or contest disputes on behalf of Connected merchants.
+* **Webhooks** - Dual-dispatch to both Platform and Connected Merchant webhook endpoints.
+* **Shared Customers and Payment Methods** - Shared across Connected merchants via a platform-scoped pool.
+* **Analytics and Reporting** - Scoped per Connected Merchant, queryable by Platform.
+* **SDK Integration** - Supported via `sdk_authorization` token for platform-connected flows.
+* **Audit Trail** - Full traceability of which merchant processed a transaction and who initiated it.
 
 For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a Standard (non-platform) Organization are already supported.
