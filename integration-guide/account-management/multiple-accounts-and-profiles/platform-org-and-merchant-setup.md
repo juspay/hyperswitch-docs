@@ -201,8 +201,17 @@ All operational flows continue to use the respective Merchant API Keys. Resource
 | Payment Processing      | Merchant uses its own API key.                                         | Merchants can process payments using their API key, and the platform can process payments on behalf of **Connected** merchants using the **Platform API key**.                   |
 | Merchant Type Changes   | Not applicable.                                                        | Merchant classification is set at creation, for any changes, contact your **Admins**.                                                                                            |
 
-**Roadmap (Platform-Connected Setup)**
+**Supported Features (Platform-Connected Setup)**
 
-* The current Platform-Connected setup supports Payments flows end-to-end including 3DS payments
-* Support for additional operational flows - such as Refunds and Disputes - is planned and will be added in upcoming releases to expand the set of on-behalf capabilities for Connected merchants.
-* For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a standard (non-platform) Organization are already supported.
+The Platform-Connected setup supports the following features end-to-end for Connected merchants:
+
+* **Payments** — Including 3DS payments, both platform-on-behalf and connected-self flows.
+* **Refunds** — Platform can initiate refunds on behalf of Connected merchants.
+* **Disputes** — Platform can view, accept, or contest disputes on behalf of Connected merchants.
+* **Webhooks** — Dual-dispatch to both Platform and Connected Merchant webhook endpoints.
+* **Shared Customers and Payment Methods** — Shared across Connected merchants via a platform-scoped pool.
+* **Analytics and Reporting** — Scoped per Connected Merchant, queryable by Platform.
+* **SDK Integration** — Supported via `sdk_authorization` token for platform-connected flows.
+* **Audit Trail** — Full traceability of which merchant processed a transaction and who initiated it.
+
+For Standard merchants in a Platform Organization, all capabilities available to a Standard merchant in a Standard (non-platform) Organization are already supported.
