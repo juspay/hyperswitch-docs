@@ -33,7 +33,7 @@ To make the behaviour concrete, we'll use a single example hierarchy throughout:
   * **Connected Merchant 1** and **Connected Merchant 2**: share customers and payment methods
   * **Standard Merchant 1** and **Standard Merchant 2**: operate in isolation
 
-[ASSET: `platform-hierarchy-diagram.png` : diagram of the Platform Organization showing the Platform Merchant, two Connected Merchants, and two Standard Merchants]
+<figure><img src="../../../.gitbook/assets/platform-hierarchy-diagram.png" alt="Organization Chart showing Platform Organization with Platform Merchant, Connected Merchant 1, Connected Merchant 2, Standard Merchant 1, and Standard Merchant 2"><figcaption><p>Organization Chart showing the full platform hierarchy with all merchant types</p></figcaption></figure>
 
 | Merchant                | Customer Scope                         | Payment Method Scope                   | Platform can act on behalf? |
 | ----------------------- | -------------------------------------- | -------------------------------------- | --------------------------- |
@@ -62,19 +62,15 @@ Either path lands the connector under the correct Connected Merchant context.
 
 From the sidebar merchant dropdown, select **Connected Merchant 1** under the **CONNECTED MERCHANTS** section. The dashboard updates to that merchant's context.
 
-[ASSET: `platform-switch-to-connected1.png` : sidebar with Connected Merchant 1 selected]
-
 #### 2. Add a Connector
 
 Navigate to **Connectors** from the sidebar and add the processor of your choice. Fill in the connector credentials and save.
 
-[ASSET: `platform-connected1-connector-config.png` : Connectors page after adding a processor for Connected Merchant 1]
+<figure><img src="../../../.gitbook/assets/platform-connected1-connector-config.gif" alt="Adding a connector for Connected Merchant 1"><figcaption><p>Configuring a payment processor for Connected Merchant 1</p></figcaption></figure>
 
 #### 3. Repeat for Connected Merchant 2
 
 Switch to **Connected Merchant 2** in the sidebar and add a connector following the same steps.
-
-[ASSET: `platform-connected2-connector-config.png` : Connectors page for Connected Merchant 2]
 
 ***
 
@@ -84,7 +80,7 @@ Within a Platform Organization, customers created on any Connected Merchant (or 
 
 Standard Merchants do **not** participate in the shared pool. Each Standard Merchant maintains its own isolated set of customers.
 
-[ASSET: `platform-customer-pool-state.png` : diagram showing the shared customer pool visible to the Platform Merchant, Connected Merchant 1, and Connected Merchant 2, with Standard Merchant 1 and Standard Merchant 2 each holding their own isolated customers]
+<figure><img src="../../../.gitbook/assets/platform-customer-pool-state.gif" alt="Shared customer pool visible to Platform Merchant, Connected Merchant 1, and Connected Merchant 2, with Standard Merchants isolated"><figcaption><p>Shared customer pool across Connected Merchants, with Standard Merchants maintaining isolated customers</p></figcaption></figure>
 
 The same model applies to payment methods. A card or wallet saved against a customer in the shared pool becomes available to every Connected Merchant for that customer.
 
@@ -118,13 +114,13 @@ Use the sidebar merchant dropdown to switch context to **Connected Merchant 1**.
 
 Navigate to **Payments** and click **Create a Payment**. Choose an existing customer from the shared pool, or create a new one (it will land in the shared pool automatically).
 
-[ASSET: `platform-connected1-payment-create.png` : Create Payment screen with a customer from the shared pool selected]
+<figure><img src="../../../.gitbook/assets/platform-connected1-payment-create.png" alt="Setup Checkout on Connected Merchant 1 with customer ID from shared pool, Save card checked, and card details entered"><figcaption><p>Setup Checkout on Connected Merchant 1 with a shared pool customer and "Save card" enabled</p></figcaption></figure>
 
 #### 3. Pay and Save the Card
 
 During checkout, enter the card details and select the **Save card for future payments** option. Complete the payment.
 
-[ASSET: `platform-connected1-save-card.png` : checkout with "Save card for future payments" checked]
+<figure><img src="../../../.gitbook/assets/platform-connected1-save-card.png" alt="Payment Successful screen on Connected Merchant 1 after saving card"><figcaption><p>Payment completed successfully on Connected Merchant 1 with card saved</p></figcaption></figure>
 
 ***
 
@@ -140,19 +136,15 @@ From the sidebar merchant dropdown, select **Connected Merchant 2**.
 
 Navigate to **Payments** and click **Create a Payment**. Pass the **same customer ID** used in the previous section so the payment is associated with that customer in the shared pool.
 
-[ASSET: `platform-connected2-payment-create.png` : Create Payment screen on Connected Merchant 2 with the same customer selected]
-
 #### 3. Choose the Saved Card
 
 In the payment method selection, the card saved earlier in Connected Merchant 1 appears in the customer's saved methods. Select it to use for this payment.
 
-[ASSET: `platform-connected2-saved-card-visible.png` : payment method selection showing the saved card from Connected Merchant 1 available on Connected Merchant 2]
+<figure><img src="../../../.gitbook/assets/platform-connected2-saved-card-visible.png" alt="Setup Checkout on Connected Merchant 2 showing the saved card from Connected Merchant 1 available for reuse"><figcaption><p>Connected Merchant 2 checkout showing the saved card from Connected Merchant 1 via the shared pool</p></figcaption></figure>
 
 #### 4. Complete the Payment
 
 Complete the payment with the saved card. The transaction processes through Connected Merchant 2's connector credentials while reusing the payment method from the shared pool.
-
-[ASSET: `platform-connected2-payment-success.png` : payment success screen on Connected Merchant 2 using the shared saved card]
 
 {% hint style="info" %}
 The customer record and saved card live in the shared pool, but each payment is still attributed to the merchant that initiated it. Connected Merchant 1 and Connected Merchant 2 each see their own payments in their own dashboards. Sharing applies to the customer and payment method only.
@@ -178,13 +170,9 @@ Use the Platform API Key (generated from the Platform Merchant context) to authe
 
 When making the API call, identify which Connected Merchant the operation is for. The request is authorised by the platform but executed against the Connected Merchant's context, using its connector credentials for payment-side operations and scoping configuration changes to that Connected Merchant.
 
-[ASSET: `platform-onbehalf-request.png` : example request payload showing the Platform API Key and the connected merchant identifier]
-
 #### 3. Inspect the Response
 
 The response includes both the Platform Merchant and the Connected Merchant the operation was performed for, along with the initiator of the call. For every operation you can tell who initiated it and which merchant it was executed against.
-
-[ASSET: `platform-onbehalf-response.png` : example response showing platform merchant id, connected merchant id, and initiator]
 
 For request and response schemas across the supported operations, see the [Hyperswitch API Reference](https://api-reference.hyperswitch.io/).
 
