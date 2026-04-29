@@ -147,7 +147,9 @@ export default function CheckoutForm({ paymentId }) {
         body: JSON.stringify({ payment_id: paymentId, amount: 5000 }),
       });
       const data = await response.json();
-      return data.sdkAuthorization;
+      return { 
+        sdkAuthorization: data.sdkAuthorization 
+      };
     });
     if (result.error) {
       setMessage(result.error.message);
@@ -186,7 +188,9 @@ const result = await paymentSession.updateIntent(async () => {
     body: JSON.stringify({ payment_id: paymentId, amount: 5000 }),
   });
   const data = await response.json();
-  return data.sdkAuthorization;
+  return { 
+    sdkAuthorization: data.sdkAuthorization
+  };
 });
 if (result.error) {
   console.error("Update failed:", result.error.message);
@@ -215,7 +219,9 @@ function CheckoutForm({ paymentId }) {
         body: JSON.stringify({ payment_id: paymentId, amount: 5000 }),
       });
       const data = await response.json();
-      return data.sdkAuthorization;
+      return {
+        sdkAuthorization: data.sdkAuthorization
+      }
     });
     if (result.error) {
       setMessage(result.error.message);
@@ -247,7 +253,9 @@ Returns a Promise that resolves to `{ status: "succeeded" }` on success, or `{ e
 ```javascript
 const result = await widgets.updateIntent(async () => {
   // call your backend, return new sdkAuthorization
-  return newSdkAuthorization;
+  return {
+    sdkAuthorization: newSdkAuthorization
+  }
 });
 if (result.error) {
   console.error(result.error.message);

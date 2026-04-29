@@ -140,7 +140,9 @@ async function handleUpdateAmount() {
     });
     const data = await response.json();
     // Return the new sdkAuthorization string
-    return data.sdkAuthorization;
+    return {
+      sdkAuthorization: data.sdkAuthorization
+    }
   });
   // Handle the result
   if (result.error) {
@@ -177,7 +179,9 @@ async function handleUpdateAmount() {
     });
     const data = await response.json();
     // Return the new sdkAuthorization string
-    return data.sdkAuthorization;
+    return {
+      sdkAuthorization: data.sdkAuthorization
+    }
   });
   if (result.error) {
     console.error("Update failed:", result.error.message);
@@ -197,7 +201,9 @@ Returns a Promise that resolves to `{ status: "succeeded" }` on success, or `{ e
 ```javascript
 const result = await widgets.updateIntent(async () => {
   // call your backend, return new sdkAuthorization
-  return newSdkAuthorization;
+  return {
+    sdkAuthorization: newSdkAuthorization
+  }
 });
 if (result.error) {
   console.error(result.error.message);
