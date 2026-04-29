@@ -55,6 +55,25 @@ Stateful infrastructure such as databases should **not be recreated during clust
 
 The diagram illustrates how Juspay Hyperswitch deployments are managed using the **App-of-Apps pattern in Argo CD**.
 
+```
+Git Repository
+      │
+      ▼
+   ArgoCD
+      │
+      ▼
+Root Application
+      │
+      ▼
+Environment Applications
+      │
+      ▼
+Helm Applications
+      │
+      ▼
+Hyperswitch + Platform Components
+```
+
 In this model, **a single "Root Application" manages multiple child applications**, allowing complex systems to be deployed and maintained in a structured and scalable way.
 
 1. **Git Repository** All deployment configurations are stored in a Git repository. This includes the ArgoCD application definitions and Helm chart references that describe the desired state of the system.
