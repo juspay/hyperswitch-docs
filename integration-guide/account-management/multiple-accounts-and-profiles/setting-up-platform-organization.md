@@ -82,12 +82,12 @@ After creating both merchants, the sidebar displays all merchant types under the
 
 Once your Platform Organization is set up, you can proceed with:
 
-* [Generating a Platform API Key](platform-org-and-merchant-setup.md#2.-generate-a-platform-api-key)
-* [Creating Merchant Accounts under your platform](platform-org-and-merchant-setup.md#3.-create-new-merchants-sibling-merchants)
-* [Setting up connectors and processing payments](platform-org-and-merchant-setup.md#5.-perform-payment-operations-using-merchant-keys)
+* [Generating a Platform API Key](platform-organization-concepts.md#2.-generate-a-platform-api-key)
+* [Creating Merchant Accounts under your platform](platform-organization-concepts.md#3.-create-new-merchants-sibling-merchants)
+* [Setting up connectors and processing payments](platform-organization-concepts.md#5.-perform-payment-operations-using-merchant-keys)
 
 For the full Platform Organization workflow and API details, refer to:
 
-{% content-ref url="platform-org-and-merchant-setup.md" %}
-[platform-org-and-merchant-setup.md](platform-org-and-merchant-setup.md)
+{% content-ref url="platform-organization-concepts.md" %}
+[platform-organization-concepts.md](platform-organization-concepts.md)
 {% endcontent-ref %}
