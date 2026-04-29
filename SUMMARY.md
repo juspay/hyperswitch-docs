@@ -151,6 +151,7 @@
     * [Organization, Merchant and Profile Setup](integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
     * [Platform Org and Merchant Setup](integration-guide/account-management/multiple-accounts-and-profiles/platform-org-and-merchant-setup.md)
       * [Setting Up Platform Organization](integration-guide/account-management/multiple-accounts-and-profiles/setting-up-platform-organization.md)
+      * [Customers, Payment Methods, and Payments for Platform](integration-guide/account-management/multiple-accounts-and-profiles/customer-payment-methods-and-payments-for-platform.md)
     * [⚙️ Control Centre Account setup](integration-guide/account-management/multiple-accounts-and-profiles/account-setup.md)
   * [Manage Your Team](integration-guide/account-management/manage-your-team.md)
   * [Analytics & operations](integration-guide/account-management/analytics-and-operations/README.md)
