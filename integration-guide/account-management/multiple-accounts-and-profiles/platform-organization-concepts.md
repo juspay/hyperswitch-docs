@@ -81,7 +81,7 @@ Standard Merchants are fully isolated merchant accounts within the same Platform
 Within a Platform Organization:
 
 * Customers are shared across Connected merchants.
-* Payment Methods are shared across Connected merchants.
+* Payment methods that are **connector-agnostic** can be shared across Connected merchants, so the same saved method can be reused even when those merchants use different connectors.
 * Standard merchants maintain isolated Customers and Payment Methods.
 
 All operational flows continue to use the respective Merchant API Keys. Resource sharing affects visibility and ownership within the Connected group but does not change transaction scoping.
@@ -209,4 +209,5 @@ For Standard merchants in a Platform Organization, all capabilities available to
 ### Next Steps
 
 * [Setting Up a Platform Organization](setting-up-platform-organization.md): create your Platform Org and add Connected Merchants from the dashboard.
-* [Customers, Payment Methods, and Payments](customer-payment-methods-and-payments-for-platform.md): walkthrough of shared customer pool, saved card reuse, and operating on behalf of a Connected Merchant.
+* [Sharing Customers and Payment Methods](sharing-customers-and-payment-methods.md): walkthrough of the shared customer pool and saved card reuse across Connected Merchants.
+* [On-Behalf-of Operations](on-behalf-of-operations.md): how the Platform Merchant initiates operations on behalf of a Connected Merchant using the Platform API Key.

@@ -27,6 +27,7 @@ This chapter covers how to set up your Hyperswitch account end to end: signing u
 * [Standard Organization](standard-organization.md)
 * [Platform Organization](platform-organization-concepts.md)
   * [Setting Up a Platform Organization](setting-up-platform-organization.md)
-  * [Customers, Payment Methods, and Payments](customer-payment-methods-and-payments-for-platform.md)
+  * [Sharing Customers and Payment Methods](sharing-customers-and-payment-methods.md)
+  * [On-Behalf-of Operations](on-behalf-of-operations.md)
 
 If you're not sure where to start, jump to [Pick the Right Setup for Your Business](pick-the-right-setup.md).
