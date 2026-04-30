@@ -28,7 +28,7 @@ A Standard Organization is the default when you sign up. It fits these scenarios
 
 In a Standard Organization, customers and saved payment methods are scoped at the **merchant** level. All profiles under the same merchant account share the same customer and payment-method data; different merchant accounts in the same org are isolated from each other.
 
-[ASSET: `setup-standard-org-diagram.png` : diagram showing a Standard Organization with multiple merchant accounts and profiles, where each merchant has its own isolated customer and payment-method pool shared across its profiles]
+<figure><img src="../../../.gitbook/assets/setup-standard-org-diagram.png" alt="Standard Organization with multiple merchant accounts and profiles, each operating independently"><figcaption><p>Standard Organization - each merchant is fully isolated with its own customers and saved payment methods</p></figcaption></figure>
 
 For setup details, see [Standard Organization](standard-organization.md).
 
@@ -52,8 +52,6 @@ Use **Standard Merchants** under a Platform Org when you want central account ma
 
 * You're a **VSaaS or franchise operator** where each sub-merchant must keep its customers and saved cards isolated for compliance, contractual, or data-boundary reasons.
 * You want the platform to **provision accounts and generate API keys** for sub-merchants programmatically, but day-to-day payment operations stay with the sub-merchant.
-
-[ASSET: `setup-platform-org-diagram.png` : diagram showing a Platform Organization with one Platform Merchant, two Connected Merchants sharing a customer pool, and two isolated Standard Merchants]
 
 For concepts and setup, see [Platform Organization](platform-organization-concepts.md) followed by [Setting Up a Platform Organization](setting-up-platform-organization.md).
 

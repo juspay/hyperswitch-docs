@@ -18,7 +18,7 @@ Signing up creates:
 * One **Profile** under that merchant account.
 * Your user, with the **Organization Admin** role.
 
-[ASSET: `standard-org-default-state.png` : Control Centre after sign-up, showing the auto-created Organization, Merchant Account, and Profile in the sidebar]
+<figure><img src="../../../.gitbook/assets/standard-org-default-state.png" alt="Control Centre after sign-up showing the auto-created Organization, Merchant Account, and Profile"><figcaption><p>Control Centre after sign-up with the default Organization, Merchant Account, and Profile</p></figcaption></figure>
 
 ***
 
