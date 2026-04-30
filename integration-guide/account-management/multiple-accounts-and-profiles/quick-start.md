@@ -8,23 +8,13 @@ metaLinks:
 
 # Quick Start: Create Your Hyperswitch Account
 
-Hyperswitch's Control Centre is the dashboard you and your team use to set up payments, view analytics, manage operations, and configure your account. This page walks you through the first-time setup: signing up, creating your first API key, and connecting a payment processor.
-
-### What We'll Cover
-
-In order:
-
-1. **Sign up** to the Hyperswitch Control Centre.
-2. **Tour the dashboard** to understand the layout.
-3. **Create your first API key** so you can start making API calls.
-4. **Connect a payment processor** to start accepting payments.
-5. **Set up routing** to choose how payments flow.
+Hyperswitch's Control Centre is the dashboard you and your team use to manage payments end to end: connecting payment processors, configuring routing, viewing analytics, handling refunds and disputes, managing your team and access roles, and exposing programmatic access through API keys. This page walks you through the first-time setup.
 
 ***
 
 ### 1. Sign Up to the Control Centre
 
-Navigate to the Control Centre landing page and click **Sign Up**. Enter your email and set a strong password, then submit.
+Navigate to [app.hyperswitch.io](https://app.hyperswitch.io) and click **Sign Up**. Enter your email and set a strong password, then submit.
 
 Sign-up creates a user with the email you provided. By default, an Organization is created for you with one Merchant Account and one Profile already in place. Your user is assigned the **Organization Admin** role, so you can invite teammates and grant them roles as needed.
 
@@ -52,7 +42,7 @@ After sign-up, you land on the dashboard home. Familiarise yourself with these a
 ### 3. Create Your First API Key
 
 {% hint style="info" %}
-Before creating an API key, ensure you have access to the credentials of the payment processor you plan to connect (API key, secret, webhook configuration). Have a routing plan in mind too, so you can configure it once your processor is connected.
+Before creating an API key, ensure you have access to the credentials of the payment processor you plan to connect (API key, secret, webhook configuration).
 {% endhint %}
 
 From the left navigation bar, go to **Developers** then **Keys**, and click **Create API Key**.
@@ -91,20 +81,17 @@ To connect a processor:
 
 ***
 
-### 5. Set Up Routing
+### 5. Make a Payment
 
-The Control Centre lets you decide how and where each payment is routed. Open **Workflow** then **Routing** in the left navigation.
+With your API key in hand and a processor connected, run your first payment using the Payments Create API.
+
+* API: [Payments Create](https://api-reference.hyperswitch.io/v1/payments/payments--create) (`POST /v1/payments`)
+
+Pass your merchant API key in the request and Hyperswitch will route the payment based on the routing configuration of the matching profile. By default, priority-based routing is enabled, ordered by the time each processor was connected, and acts as your fallback if no other rule matches. You can configure volume-based or rule-based routing later from **Workflow** then **Routing**.
 
 <figure><img src="../../../.gitbook/assets/Routing.gif" alt=""><figcaption></figcaption></figure>
 
-By default, priority-based routing is enabled, ordered by the connect time of each processor (the first connected has the highest priority). This is also your fallback: if no other rule matches, payments follow the priority order.
-
-Two routing types are configurable today:
-
-1. **Volume-based routing**: assign percentage volumes across processors. Hyperswitch routes traffic to maintain that distribution.
-2. **Rule-based routing**: write rules using payment parameters (amount, payment method, card type, etc.) for finer control. Rule-based routing supports a default processor as a fallback when no rule matches.
-
-For the deeper guide, see the [Smart Router](../../../other-features/payment-orchestration/smart-router.md) docs.
+For deeper routing options, see the [Smart Router](../../../other-features/payment-orchestration/smart-router.md) docs.
 
 ***
 
@@ -112,4 +99,4 @@ For the deeper guide, see the [Smart Router](../../../other-features/payment-orc
 
 * Decide on the right account structure for your business: [Pick the Right Setup for Your Business](pick-the-right-setup.md).
 * Understand the three-level hierarchy: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
-* If you're operating a marketplace, multi-tenant SaaS, or onboarding sub-merchants: [Platform Organization](platform-organization-concepts.md).
+* If you're operating a marketplace, VSaaS, or onboarding sub-merchants: [Platform Organization](platform-organization-concepts.md).

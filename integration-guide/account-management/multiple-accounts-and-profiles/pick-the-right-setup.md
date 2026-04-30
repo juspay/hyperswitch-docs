@@ -5,7 +5,7 @@ icon: signs-post
 
 # Pick the Right Setup for Your Business
 
-Hyperswitch supports two account setups: a **Standard Organization** and a **Platform Organization**. The right choice depends on whether you're running payments for a single business (with one or more brands) or operating as a parent that onboards other merchants.
+Hyperswitch supports two account setups: a **Standard Organization** and a **Platform Organization**. The right choice depends on whether you're running payments for a single business (with one or more brands or sub-merchants) or operating as a parent that wants to onboard and manage other merchants programmatically.
 
 This page lays out both paths and helps you pick.
 
@@ -13,8 +13,8 @@ This page lays out both paths and helps you pick.
 
 | Setup | Use this when |
 | --- | --- |
-| **Standard Organization** | You run payments for your own business, possibly across multiple brands or business units, but you don't onboard external merchants. |
-| **Platform Organization** | You manage payments for multiple sub-merchants programmatically (a marketplace, a multi-tenant SaaS, a vertical SaaS handling its tenants' payments). |
+| **Standard Organization** | You run payments for your own business, or onboard a small set of sub-merchants whose accounts you administer from the dashboard. |
+| **Platform Organization** | You manage payments for multiple sub-merchants and want to onboard them programmatically, with optional shared customers and saved payment methods across the connected group. |
 
 ***
 
@@ -23,10 +23,12 @@ This page lays out both paths and helps you pick.
 A Standard Organization is the default when you sign up. It fits these scenarios:
 
 * **Single merchant.** One business, one brand, one set of API keys.
-* **Multiple brands or business units.** A single business operating multiple storefronts (e.g., a retailer with separate clothing, shoes, and accessories lines). Use multiple **merchant accounts** under the same Standard Org, each with its own API keys, or multiple **profiles** under one merchant account if you want to share an API key across business units.
-* **Vertical SaaS with isolated tenants.** Each tenant runs payments on its own account, with no shared customers or saved cards across tenants. Each tenant maps to a merchant account under your Standard Org.
+* **Multiple brands or business units.** A single business operating multiple storefronts (e.g. a retailer with separate clothing, shoes, and accessories lines). Use multiple **merchant accounts** under the same Standard Org, each with its own API keys, or multiple **profiles** under one merchant account if you want to share an API key across business units.
+* **Sub-merchants administered from the dashboard.** A Standard Organization can also support sub-merchants where the parent administers each sub-merchant manually from the dashboard. Day-to-day governance is handled by user roles and permissions. See [Manage Your Team](../manage-your-team.md) for how to grant role-based access at the org, merchant, or profile level.
 
-[ASSET: `setup-standard-org-diagram.png` : diagram showing a Standard Organization with multiple merchant accounts and profiles, each operating independently]
+In a Standard Organization, customers and saved payment methods are scoped at the **merchant** level. All profiles under the same merchant account share the same customer and payment-method data; different merchant accounts in the same org are isolated from each other.
+
+[ASSET: `setup-standard-org-diagram.png` : diagram showing a Standard Organization with multiple merchant accounts and profiles, where each merchant has its own isolated customer and payment-method pool shared across its profiles]
 
 For setup details, see [Standard Organization](standard-organization.md).
 
@@ -34,19 +36,19 @@ For setup details, see [Standard Organization](standard-organization.md).
 
 ### When to Choose a Platform Organization
 
-A Platform Organization is for businesses that **onboard sub-merchants programmatically** and want to manage them from a central control plane. Two flavours of sub-merchants are supported, and you can mix them in the same Platform Org:
+A Platform Organization is for businesses that want **programmatic management of sub-merchants** through the Platform API Key, in addition to the dashboard-driven management a Standard Organization already supports. It also unlocks two resource-sharing models you can mix in the same Platform Org: shared customers and payment methods across a connected group, or full isolation per sub-merchant.
 
 #### Connected Merchants (shared resources)
 
-Use **Connected Merchants** when you want sub-merchants to share customers and saved payment methods. Choose this if:
+Use **Connected Merchants** when you want sub-merchants to share customers and saved payment methods across the connected group. Choose this if:
 
-* You operate a **marketplace** where the same end-customer might pay multiple sellers (e.g., booking platforms, multi-vendor commerce).
-* You're a **multi-tenant SaaS** that wants a unified customer experience: a customer who saves their card on Tenant A can reuse it on Tenant B.
+* You operate a **marketplace** where the same end-customer might pay multiple sellers (e.g. booking platforms, multi-vendor commerce).
+* You want a **unified customer experience** across your sub-merchants. A customer who saves their card with Sub-Merchant A can reuse it with Sub-Merchant B.
 * You want the **platform to initiate operations on behalf of** a sub-merchant: payments, refunds, captures, disputes, connector configuration. The Platform API Key acts as a privileged credential across the connected group.
 
 #### Standard Merchants under a Platform Org (isolated)
 
-Use **Standard Merchants** under a Platform Org when you want central account management but **no resource sharing** between sub-merchants. Choose this if:
+Use **Standard Merchants** under a Platform Org when you want central account management plus programmatic onboarding, but **no resource sharing** between sub-merchants. Choose this if:
 
 * You're a **VSaaS or franchise operator** where each sub-merchant must keep its customers and saved cards isolated for compliance, contractual, or data-boundary reasons.
 * You want the platform to **provision accounts and generate API keys** for sub-merchants programmatically, but day-to-day payment operations stay with the sub-merchant.
@@ -59,28 +61,30 @@ For concepts and setup, see [Platform Organization](platform-organization-concep
 
 ### Quick Comparison
 
-| Capability                                              | Standard Organization | Platform Organization              |
-| ------------------------------------------------------- | --------------------- | ---------------------------------- |
-| Onboard sub-merchants programmatically                  | No                    | Yes                                |
-| Generate sub-merchant API keys via API                  | No                    | Yes (Platform API Key)             |
-| Shared customer pool across sub-merchants               | No                    | Yes (Connected Merchants only)     |
-| Shared saved payment methods across sub-merchants       | No                    | Yes (Connected Merchants only)     |
-| Platform initiates payments on behalf of sub-merchants  | No                    | Yes (Connected Merchants only)     |
-| Multiple merchant accounts under one organization       | Yes                   | Yes                                |
-| Multiple profiles per merchant account                  | Yes                   | Yes                                |
+| Capability                                                       | Standard Organization        | Platform Organization                                                |
+| ---------------------------------------------------------------- | ---------------------------- | -------------------------------------------------------------------- |
+| Manage merchants and profiles via the Dashboard                  | Yes (governed by user roles) | Yes (governed by user roles)                                         |
+| Onboard sub-merchants programmatically via API                   | No                           | Yes (Platform API Key)                                               |
+| Generate sub-merchant API keys via API                           | No                           | Yes (Platform API Key)                                               |
+| Customers and payment methods shared across the merchant group   | No (scoped per merchant)     | Yes for **Connected Merchants**; isolated for **Standard Merchants** |
+| Platform initiates operations on behalf of a sub-merchant        | No                           | Yes (Connected Merchants only)                                       |
+| Multiple merchant accounts under one organization                | Yes                          | Yes                                                                  |
+| Multiple profiles per merchant account                           | Yes                          | Yes                                                                  |
+
+Both setups support full dashboard-based management of merchants, profiles, connectors, and team access. The Platform Organization adds programmatic management on top: a Platform API Key that can onboard sub-merchants and operate on their behalf where allowed.
 
 ***
 
 ### Examples by Business Type
 
-| Business type                                                  | Recommended setup                                   |
-| -------------------------------------------------------------- | --------------------------------------------------- |
-| Single-business e-commerce store                               | Standard Organization                               |
-| Retailer with multiple brand storefronts                       | Standard Organization, multiple merchants/profiles  |
-| VSaaS with fully isolated tenants (e.g., per-clinic billing)   | Standard Organization or Platform Org with Standard Merchants |
-| Marketplace with shared customer view (e.g., multi-vendor commerce) | Platform Organization with Connected Merchants |
-| Multi-tenant SaaS with unified saved-card experience           | Platform Organization with Connected Merchants      |
-| Franchise operator centralising onboarding but keeping data isolated | Platform Organization with Standard Merchants  |
+| Business type                                                                | Recommended setup                                                       |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Single-business e-commerce store                                             | Standard Organization                                                   |
+| Retailer with multiple brand storefronts                                     | Standard Organization, multiple merchants or profiles                   |
+| VSaaS where each sub-merchant must stay fully isolated                       | Standard Organization, or Platform Organization with Standard Merchants |
+| Marketplace with a shared customer view (e.g. multi-vendor commerce)         | Platform Organization with Connected Merchants                          |
+| VSaaS that wants a unified saved-card experience across its sub-merchants    | Platform Organization with Connected Merchants                          |
+| Franchise operator centralising onboarding while keeping sub-merchant data isolated | Platform Organization with Standard Merchants                           |
 
 ***
 
