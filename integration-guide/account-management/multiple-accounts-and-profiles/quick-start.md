@@ -77,8 +77,6 @@ To connect a processor:
 3. Choose which payment methods (cards, wallets, BNPL, etc.) to enable for this processor.
 4. Review the configuration and confirm.
 
-[ASSET: `quick-start-connector-config.png` : connector configuration screen with credential fields and payment method toggles]
-
 ***
 
 ### 5. Make a Payment
