@@ -5,21 +5,11 @@ icon: building
 
 # Standard Organization
 
-A Standard Organization is the default account setup created when you sign up for Hyperswitch. It supports a single business or a business with multiple brands and business units, all without onboarding external sub-merchants. If you need to onboard sub-merchants programmatically with a shared customer pool or platform-initiated operations, see [Platform Organization](platform-organization-concepts.md) instead.
-
-### What We'll Cover
-
-In order:
-
-1. **What a Standard Organization gives you** by default.
-2. **Adding multiple merchant accounts** for separate brands or business lines.
-3. **Adding multiple profiles** under a merchant account.
-4. **Generating API keys** for programmatic access.
-5. **Configuring connectors** under each profile.
+A Standard Organization is the default account setup created when you sign up. It supports a single business or a business with multiple brands and business units, governed entirely from the Control Centre dashboard. If you need to onboard sub-merchants programmatically with a shared customer pool or platform-initiated operations, see [Platform Organization](platform-organization-concepts.md) instead.
 
 ***
 
-### What You Get by Default
+### What You Get By Default
 
 Signing up creates:
 
@@ -28,104 +18,50 @@ Signing up creates:
 * One **Profile** under that merchant account.
 * Your user, with the **Organization Admin** role.
 
-That single merchant account already has its own API keys, and the default profile is ready to accept payments once you connect a processor. For the first-time walkthrough, see [Quick Start](quick-start.md).
-
 [ASSET: `standard-org-default-state.png` : Control Centre after sign-up, showing the auto-created Organization, Merchant Account, and Profile in the sidebar]
 
 ***
 
-### Adding Multiple Merchant Accounts
+### Structure of a Standard Organization
 
-Use multiple merchant accounts when different business lines need their own API keys. For example, a retailer running Clothing, Shoes, and Bags as separate brands can create one merchant account per brand.
+A Standard Organization follows the standard three-level hierarchy:
 
-#### 1. Open the Merchant Dropdown
+* **Organization** at the top, containing one or more merchant accounts.
+* **Merchant Account** under the organization, each with its own API keys.
+* **Profile** under each merchant, where routing, connectors, webhooks, and return URLs are configured.
 
-From the sidebar at the top-left of the dashboard, click the merchant account dropdown.
-
-#### 2. Click "Create New Merchant"
-
-Select **+ Create new** in the dropdown.
-
-[ASSET: `standard-org-create-merchant.png` : merchant dropdown with the Create New option highlighted]
-
-#### 3. Name and Confirm
-
-Enter the merchant name (for example, "Shoes") and click **Add Merchant**. The new merchant appears in the sidebar dropdown and you can switch into its context immediately.
-
-[ASSET: `standard-org-merchant-list.png` : sidebar dropdown listing multiple merchant accounts under the Standard Organization]
-
-Each merchant account has its own API keys, profiles, and connectors. Customers and saved payment methods are isolated per merchant — they don't cross over between Standard merchants in the same Organization.
+For the full hierarchy reference, including how to add merchants and profiles via the dashboard, see [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
 
 ***
 
-### Adding Multiple Profiles Under a Merchant
+### Resource Scoping
 
-Profiles are the most granular level. Use multiple profiles under one merchant account when you want to share an API key across business units but apply different routing rules, connectors, or webhooks per unit.
+Customers and saved payment methods in a Standard Organization are scoped at the **merchant** level:
 
-#### 1. Open the Profile Dropdown
+* All profiles under the same merchant account share customer and payment-method data.
+* Different merchant accounts in the same Organization are isolated. A customer or saved card on Merchant A is not visible from Merchant B.
+* API keys are issued per merchant account.
+* Connectors and routing are configured per profile.
 
-From the top-right of the dashboard, click the profile dropdown to see all profiles configured for the current merchant account.
-
-#### 2. Click "Create New Profile"
-
-Select **+ Create new** in the profile dropdown.
-
-[ASSET: `standard-org-create-profile.png` : profile dropdown with the Create New option highlighted]
-
-#### 3. Name and Confirm
-
-Enter a profile name and click **Add**. A new profile is created with an automatically generated `profile_id`. Profile IDs are also listed under **Settings** then **Business Profiles**.
+If you later need cross-merchant sharing of customers and saved payment methods (for a marketplace or platform model), you'll need to convert to a Platform Organization. See [Pick the Right Setup for Your Business](pick-the-right-setup.md).
 
 ***
 
-### Generating API Keys
+### Managing the Organization
 
-API keys live at the merchant level. Each merchant account in your Standard Organization needs at least one API key to make API calls.
+Everything in a Standard Organization is administered from the Control Centre dashboard, governed by user roles:
 
-1. Switch to the merchant context for which you want to create the key.
-2. Open **Developers** then **Keys** from the sidebar.
-3. Click **Create API Key**, fill in the description and validity, and confirm.
+* Create additional merchant accounts and profiles.
+* Connect payment processors per profile.
+* Generate and manage API keys for each merchant.
+* Invite team members and grant roles at the org, merchant, or profile level.
 
-[ASSET: `standard-org-api-key.png` : API Keys page with the Create API Key flow open]
-
-{% hint style="warning" %}
-The API key is shown only once. Download or copy it before closing the dialog. If you lose it, create a new one.
-{% endhint %}
-
-For the full API key flow, see [Quick Start: Create Your First API Key](quick-start.md#3.-create-your-first-api-key).
-
-***
-
-### Configuring Connectors
-
-Connectors are configured **per profile** under each merchant account. From the merchant context:
-
-1. Open **Connectors** in the sidebar.
-2. Click the processor you want to connect.
-3. Provide the credentials (API key, secret, etc.) and select which payment methods to enable.
-4. Save.
-
-[ASSET: `standard-org-connector-config.png` : Connectors page after adding a processor under a profile]
-
-Each profile maintains its own connector configurations. A connector added under one profile cannot be used by another profile.
-
-***
-
-### Resource Behaviour
-
-Within a Standard Organization:
-
-* **Customers** are scoped per merchant account. A customer created on Merchant A is not visible on Merchant B.
-* **Saved payment methods** follow the same rule: scoped per merchant account.
-* **API keys** are per merchant account.
-* **Routing, connectors, webhooks** are per profile.
-
-If you later need to share customers and saved payment methods across merchants (for a marketplace or multi-tenant SaaS), you'll need to convert to a Platform Organization. See [Pick the Right Setup for Your Business](pick-the-right-setup.md) to confirm which path fits.
+For role-based access details, see [Manage Your Team](../manage-your-team.md).
 
 ***
 
 ### Next Steps
 
-* Set up your first connector and run a test payment: [Quick Start](quick-start.md).
-* Understand how Org, Merchant, and Profile relate: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
-* Considering a Platform setup instead: [Platform Organization](platform-organization-concepts.md).
+* Run your first payment: [Quick Start: Make a Payment](quick-start.md#5.-make-a-payment).
+* Understand the Org / Merchant / Profile hierarchy in depth: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
+* Considering a Platform setup instead: [Pick the Right Setup for Your Business](pick-the-right-setup.md).

@@ -34,10 +34,6 @@ A Merchant Account sits under an Organization and holds its own `api_key` and `p
 
 #### Profile
 
-{% hint style="info" %}
-Every merchant account has at least one profile. If there's only one profile, `profile_id` is optional when creating a payment. If there's more than one, `profile_id` becomes required.
-{% endhint %}
-
 A Profile (sometimes called a business profile) is a logical separation within a merchant account. Each profile is identified by a unique `profile_id` and is the level where the actual payment configuration lives:
 
 * Routing algorithm
@@ -95,16 +91,6 @@ A default profile is created when your merchant account is created. To add more:
 [ASSET: `account-create-profile.png` : profile dropdown with the "Create new profile" option highlighted]
 
 You'll see all configured profiles for your merchant account in the same dropdown. Profile IDs are also visible under **Settings** then **Business Profiles**.
-
-***
-
-### Routing a Payment to a Specific Merchant and Profile
-
-To route a payment to a specific merchant account, call the [Payments Create API](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) using that merchant's API key. To route the payment to a specific profile, pass the `profile_id` of that profile in the request body.
-
-[ASSET: `account-payment-create-headers.png` : example request showing the API key header and profile_id in the body]
-
-When a payment is created under a profile, the routing algorithm configured for that profile determines the gateway. Refunds and mandates created against a payment stay under the same profile as the payment.
 
 ***
 

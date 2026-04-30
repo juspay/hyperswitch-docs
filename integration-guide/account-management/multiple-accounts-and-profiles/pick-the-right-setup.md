@@ -36,7 +36,7 @@ For setup details, see [Standard Organization](standard-organization.md).
 
 ### When to Choose a Platform Organization
 
-A Platform Organization is for businesses that want **programmatic management of sub-merchants** through the Platform API Key, in addition to the dashboard-driven management a Standard Organization already supports. It also unlocks two resource-sharing models you can mix in the same Platform Org: shared customers and payment methods across a connected group, or full isolation per sub-merchant.
+A Platform Organization is for businesses that want **programmatic management of sub-merchants** through the Platform API Key. It also unlocks two resource-sharing models you can mix in the same Platform Org: shared customers and payment methods across a connected group, or full isolation per sub-merchant.
 
 #### Connected Merchants (shared resources)
 

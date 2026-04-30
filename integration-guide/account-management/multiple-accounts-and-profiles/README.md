@@ -12,16 +12,12 @@ metaLinks:
 
 This chapter covers how to set up your Hyperswitch account end to end: signing up, choosing the right account setup for your business, and structuring your organization, merchants, and profiles.
 
-{% hint style="warning" %}
-If a merchant account has more than one business profile, passing `profile_id` is mandatory when creating a payment.
-{% endhint %}
-
 ### What Hyperswitch Supports
 
-* Creating multiple merchant accounts under an organization (Organization → Merchant → Profile model).
+* Creating multiple merchant accounts under an organization (Organization → Merchant → Profile).
 * Creating multiple business profiles under each merchant account.
 * Connecting multiple payment processors under each business profile.
-* Programmatically onboarding sub-merchant accounts via API under a Platform Organization for your VSaaS Setup, with automatic API key management and centralised visibility across all sub-merchants.
+* Programmatically onboarding sub-merchant accounts via API under a Platform Organization for your VSaaS Setup.
 
 ### What's in This Chapter
 
