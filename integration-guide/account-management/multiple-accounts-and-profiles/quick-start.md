@@ -18,7 +18,7 @@ Navigate to [app.hyperswitch.io](https://app.hyperswitch.io) and click **Sign Up
 
 Sign-up creates a user with the email you provided. By default, an Organization is created for you with one Merchant Account and one Profile already in place. Your user is assigned the **Organization Admin** role, so you can invite teammates and grant them roles as needed.
 
-[ASSET: `quick-start-signup.png` : Hyperswitch Control Centre sign-up screen with the email and password fields visible]
+<figure><img src="../../../.gitbook/assets/quick-start-signup.png" alt="Hyperswitch Control Centre sign-up screen with email and password fields"><figcaption><p>Hyperswitch sign-up screen</p></figcaption></figure>
 
 To open your profile details later, click your email at the bottom of the left navigation bar.
 
@@ -35,7 +35,7 @@ After sign-up, you land on the dashboard home. Familiarise yourself with these a
 * **Settings**: organization, merchant, and profile configuration.
 * **Analytics**: real-time dashboards for payments, refunds, and smart retries.
 
-[ASSET: `quick-start-dashboard-tour.png` : annotated dashboard home screen highlighting the main left-navigation sections]
+<figure><img src="../../../.gitbook/assets/quick-start-dashboard-tour.png" alt="Dashboard home screen with left-navigation sections highlighted"><figcaption><p>Dashboard home screen with the main navigation sections highlighted in the sidebar</p></figcaption></figure>
 
 ***
 
@@ -47,7 +47,7 @@ Before creating an API key, ensure you have access to the credentials of the pay
 
 From the left navigation bar, go to **Developers** then **Keys**, and click **Create API Key**.
 
-<figure><img src="../../../.gitbook/assets/API Key.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/quick-start-api-key-creation.gif" alt="Creating an API key from the Developers section"><figcaption><p>Creating an API key from the Developers section</p></figcaption></figure>
 
 Fill in:
 
@@ -68,7 +68,7 @@ You can use the dashboard later to reveal the publishable key, revoke keys, or c
 
 From the left navigation, go to **Connectors**. You'll see all processors integrated with Hyperswitch. Click the one you want to connect.
 
-<figure><img src="../../../.gitbook/assets/Processor.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/quick-start-connector-config.gif" alt="Connecting a payment processor from the Connectors section"><figcaption><p>Connecting a payment processor from the Connectors section</p></figcaption></figure>
 
 To connect a processor:
 
@@ -76,8 +76,6 @@ To connect a processor:
 2. In the processor's own dashboard, configure the Hyperswitch endpoint to receive webhooks.
 3. Choose which payment methods (cards, wallets, BNPL, etc.) to enable for this processor.
 4. Review the configuration and confirm.
-
-[ASSET: `quick-start-connector-config.png` : connector configuration screen with credential fields and payment method toggles]
 
 ***
 
@@ -88,8 +86,6 @@ With your API key in hand and a processor connected, run your first payment usin
 * API: [Payments Create](https://api-reference.hyperswitch.io/v1/payments/payments--create) (`POST /v1/payments`)
 
 Pass your merchant API key in the request and Hyperswitch will route the payment based on the routing configuration of the matching profile. By default, priority-based routing is enabled, ordered by the time each processor was connected, and acts as your fallback if no other rule matches. You can configure volume-based or rule-based routing later from **Workflow** then **Routing**.
-
-<figure><img src="../../../.gitbook/assets/Routing.gif" alt=""><figcaption></figcaption></figure>
 
 For deeper routing options, see the [Smart Router](../../../other-features/payment-orchestration/smart-router.md) docs.
 

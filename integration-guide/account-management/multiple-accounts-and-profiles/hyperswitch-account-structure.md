@@ -55,7 +55,7 @@ Use multiple merchant accounts when each business line or sub-merchant needs its
 * A retailer with three brands (Shoes, Clothing, Bags) wants each brand to integrate with a separate API key.
 * A marketplace where each sub-merchant integrates the API key directly into their own systems.
 
-[ASSET: `account-multiple-merchants-diagram.png` : diagram of one Organization with multiple Merchant Accounts, each having a single Profile]
+<figure><img src="../../../.gitbook/assets/account-multiple-merchants-diagram.png" alt="Organization with multiple Merchant Accounts (Clothing, Shoes, Bags), each with its own API key, Profile, and Connectors"><figcaption><p>One Organization with multiple Merchant Accounts, each having its own Profile and Connectors</p></figcaption></figure>
 
 #### Multiple Profiles (one API key, segmented configuration)
 
@@ -64,7 +64,7 @@ Use multiple profiles under a single merchant account when you want centralised 
 * A retailer that wants one API key across Clothing, Shoes, and Bags but different routing rules for each.
 * A marketplace where the parent merchant wants to manage all sub-merchants tightly under one API key.
 
-[ASSET: `account-multiple-profiles-diagram.png` : diagram of one Organization, one Merchant Account, and multiple Profiles under it]
+<figure><img src="../../../.gitbook/assets/account-multiple-profiles-diagram.png" alt="One Organization with one Merchant Account (Merchant A) and multiple Profiles (Clothing, Shoes, Bags), each with its own Connectors"><figcaption><p>One Merchant Account with multiple Profiles, each having its own set of Connectors</p></figcaption></figure>
 
 ***
 
@@ -76,7 +76,7 @@ By default, sign-up creates one merchant account under your Organization. To add
 2. Click **Create new merchant**.
 3. Enter the merchant name and confirm.
 
-[ASSET: `account-create-merchant.png` : sidebar dropdown with the "Create new merchant" option highlighted]
+<figure><img src="../../../.gitbook/assets/account-create-merchant.png" alt="Sidebar dropdown with the Create new merchant option highlighted"><figcaption><p>Sidebar merchant dropdown with the "+ Create new" option to add a new merchant</p></figcaption></figure>
 
 ***
 
@@ -88,7 +88,7 @@ A default profile is created when your merchant account is created. To add more:
 2. Click **Create new profile**.
 3. Enter the profile name and confirm.
 
-[ASSET: `account-create-profile.png` : profile dropdown with the "Create new profile" option highlighted]
+<figure><img src="../../../.gitbook/assets/account-create-profile.png" alt="Profile dropdown with the Create new profile option highlighted"><figcaption><p>Profile dropdown with the "+ Create new" option to add a new profile</p></figcaption></figure>
 
 You'll see all configured profiles for your merchant account in the same dropdown. Profile IDs are also visible under **Settings** then **Business Profiles**.
 

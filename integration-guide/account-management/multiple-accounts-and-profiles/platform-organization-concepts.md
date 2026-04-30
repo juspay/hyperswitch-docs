@@ -22,7 +22,7 @@ This model is useful for:
 
 If you're not sure whether to use a Platform Organization or a Standard Organization, see [Pick the Right Setup for Your Business](pick-the-right-setup.md).
 
-[ASSET: `platform-org-structure-overview.png` : diagram showing a Platform Organization with one Platform Merchant at the top, multiple Connected Merchants sharing a customer pool below, and isolated Standard Merchants alongside]
+<figure><img src="../../../.gitbook/assets/setup-platform-org-diagram.png" alt="Platform Organization with Platform Merchant and Connected Merchants in shared scope, and Standard Merchants in isolated scope"><figcaption><p>Platform Organization - shared scope for Platform and Connected merchants, isolated scope for Standard merchants</p></figcaption></figure>
 
 ***
 
@@ -75,8 +75,6 @@ Standard Merchants are fully isolated merchant accounts within the same Platform
 | ------------- | ----------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
 | **Connected** | Shared across Connected group | Shared across Connected group | **Yes**                                                                |
 | **Standard**  | Isolated per merchant         | Isolated per merchant         | No (but it can create the merchant and generate / manage its API keys) |
-
-[ASSET: `platform-org-resource-sharing.png` : diagram showing customers and saved payment methods being shared across Connected merchants, while Standard merchants hold their own isolated resources]
 
 Within a Platform Organization:
 
