@@ -113,12 +113,12 @@ async function initialize() {
       customer_id: "CUSTOMER_ID",
     }),
   });
-  const { id, clientSecret } = await response.json();
+  const { sdkAuthorization } = await response.json();
 
   // Step 2: Initialize HyperLoader.js
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
 
   let hyper;
   script.onload = () => {
@@ -137,8 +137,7 @@ async function initialize() {
     const paymentMethodsManagementElements =
       hyper.paymentMethodsManagementElements({
         appearance,
-        pmSessionId: id,
-        pmClientSecret: clientSecret,
+        sdkAuthorization: sdkAuthorization,
       });
 
     // Step 6: Create and mount the paymentMethodsManagement element
