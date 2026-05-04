@@ -1,50 +1,101 @@
 ---
+description: Understand Hyperswitch's three-level hierarchy of Organization, Merchant Account, and Profile.
 icon: people-roof
 metaLinks:
   alternates:
     - hyperswitch-account-structure.md
 ---
 
-# Organization, Merchant and Profile Setup
+# Organization, Merchant, and Profile
 
-Adapting the right account structure while setting up Hyperswitch for your business is one of the most crucial steps. Hyperswitch allows you to choose different account structures based on your business needs-
+Picking the right account structure is the first architectural decision when setting up Hyperswitch. The platform supports a three-level hierarchy that scales from a single business to a marketplace with many sub-merchants:
 
-* Whether you are a business with multiple product lines and business units within each line, or a marketplace with multiple sub-merchants, each having multiple business units.
-* Whether you want to accept payments at the business level, business unit level, or allow your sub-merchants to accept payments on their own.
+* **Organization**: the top-level entity for your business.
+* **Merchant Account**: a unit under an organization with its own API keys.
+* **Profile**: the most granular layer, where payment configuration (routing, webhooks, return URLs) actually lives.
 
-You can manage it all via Hyperswitch.
+Every payment in Hyperswitch is tagged with a profile, which determines which routing rules and connector credentials are used.
 
-This is enabled by Hyperswitch’s three-level user hierarchy: **Organization, Merchant Account, and Profile**, enabling businesses to configure and optimize payment flows while maintaining visibility across all merchants, sub-merchants, and business units.
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-21 at 5.59.19 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-21 at 5.59.19 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+When you sign up on the Control Centre, an Organization is created for you with one Merchant Account and one Profile already in place. You're assigned the **Organization Admin** role, which lets you invite teammates and grant them roles at any level.
 
-Once a user signs up on the Hyperswitch Control Centre, they need to create an organization. By default, one merchant account and one profile are created for the organization, and the user is assigned the role of organization Admin. They can further invite team members on the basis of the applicable roles.
+***
 
-## Features Useful for Your Business:
+### The Hierarchy
 
-*   **Multiple Merchant Accounts:** Organization admins can create and manage multiple merchant accounts under one organization for different business lines or sub-merchants, with each merchant account having its own API keys.
+#### Organization
 
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfkpJiCObIbDBPVtIEGznJLWwbGChBFpdKt3HR3MhNEArehioKVZi5AXTAsPyxqba-Xo3FNQ2ySdc3XoU7sk6khd51MGJILUqwmpT1anTTnfxrem9zfj1XZ4j0A3IVEbbX6pQWsjNDcTwSx8A3YlAztohQ?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
-*   **Multiple Profiles under each Merchant:** A merchant account can set up multiple profiles for each individual business unit. Profiles are the most granular levels in Hyperswitch, and every payment via Hyperswitch is mandatorily and exclusively tagged with a profile.
+The Organization represents your overall business. It's the top-level container for everything below. Roles and permissions can be assigned at the Organization level so admins can govern the whole structure.
 
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf-aR3KdLup56nCK71gZeOJMZ4o4AqE1lcN4iZ0C1MyqmstN2Hns4C_nudITry6ic4hA36P8qquQmCdK98z8Mxd7PQysxYhtfFFcRBkY3w_Pq0e2lttOMq4iLNGK-veOfvxccjGeupzEoV_H5rDb4CkismV?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
-* **Easy Checkout for Return Customers:** Hyperswitch allows an organization to store customer cards while enabling sub-merchants to access them, and for payments handled by a merchant, only the cards relevant to that merchant are visible.
-  * Additionally, payments can be tokenized (both network and PSP) at the sub-merchant level, ensuring that sub-merchants or platforms don't need to worry about PCI compliance.
-  * Hyperswitch also enables organizations to accept payments on behalf of their sub-merchant using one of profiles of sub-merchant, without allowing the organization to access the connector credentials used with the profile.
-*   **Routing & Connectors Configuration:** If a business has connector credentials for each of its business units, they can configure them to their respective profiles and set up routing rules for each profile.
+#### Merchant Account
 
-    * If the merchant wants to accept payments at the merchant level with its own set of connector credentials, it can create another profile and configure its connectors with that profile.
+A Merchant Account sits under an Organization and holds its own `api_key` and `publishable_key` for authentication. You can create as many merchant accounts as you need under one Organization, typically one per business line, brand, or sub-merchant.
 
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcivUqB263o28dMqZCfxKiWkNnJUJOnbIi9Ri4L3qhOXwf6BF3wXnVwNCIISlqXM4Kwx363sB09zrDKJEYMJ8T6CsV-d2kvvc7WAxLulChyGxYtduwgra4H7MttVWjHV6iI8YhhB8E0hf69HiRGV9lZ2wTw?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
+#### Profile
 
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeNBK4CDEvBeUV-Bo6lRKHzVCDKFSHnPWW-NaXjifjXFww3ADzbILjX-YoCGpErEL8UpgJA0Rq4ID0hAgf1WT3asLnlXG8Cse9paisbmUa63vnT8QxPq-wVD-qs8e5vVi1OW1WqYKPKalJ5HeJ6RPQh4bg?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption><p>Kindly note the Profile name and Routing name to identify the difference</p></figcaption></figure>
-*   **Exhaustive Data Visibility:** Payment lists, analytics, and teams are segregated at the profile, merchant, and organization levels. Hyperswitch allows top-down access to data; each level can access the payments data of the levels below it by switching into their levels, not vice versa.
+A Profile (sometimes called a business profile) is a logical separation within a merchant account. Each profile is identified by a unique `profile_id` and is the level where the actual payment configuration lives:
 
-    * Each level can get an aggregated view of the payment transactions of all the sub-levels beneath it. Also, Using the global search within
-    * Hyperswitch Control Centre, you can search for any data across any merchant account or profile of which the user is a part.
+* Routing algorithm
+* Webhook URL and return URL
+* Connector configurations (each connector under a profile is identified by a globally unique `merchant_connector_id` and a per-profile `label`)
 
-    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdQ2NY5E8lHbH2_QvXzepO-6TissIdWWhV9pZRNPZeMKh2GgynWaNKWtbJnJNRYppn_buAMYqqfMkz9VvupvfkFVee_cbS5oY6Z0Mbx0Vvgri6Jw7T-shuBQouJ4BKY2o_nPvKG159LdfPhAOEfb2My0ekN?key=KjIGF7_A-nGwRp3B4LA6NQ" alt=""><figcaption></figcaption></figure>
+A connector configured under one profile cannot route payments under a different profile. This is intentional: profiles are the boundary for payment-side configuration.
 
-{% content-ref url="./" %}
-[.](./)
-{% endcontent-ref %}
+***
+
+### Choosing Between Multiple Merchant Accounts and Multiple Profiles
+
+The hierarchy gives you two ways to organise multiple business lines or sub-merchants. The right choice depends on whether you need separate API keys per unit.
+
+#### Multiple Merchant Accounts (separate API keys per unit)
+
+Use multiple merchant accounts when each business line or sub-merchant needs its own API key. Common scenarios:
+
+* A retailer with three brands (Shoes, Clothing, Bags) wants each brand to integrate with a separate API key.
+* A marketplace where each sub-merchant integrates the API key directly into their own systems.
+
+<figure><img src="../../../.gitbook/assets/account-multiple-merchants-diagram.png" alt="Organization with multiple Merchant Accounts (Clothing, Shoes, Bags), each with its own API key, Profile, and Connectors"><figcaption><p>One Organization with multiple Merchant Accounts, each having its own Profile and Connectors</p></figcaption></figure>
+
+#### Multiple Profiles (one API key, segmented configuration)
+
+Use multiple profiles under a single merchant account when you want centralised control with one API key, but separate routing or connector configuration per business line.
+
+* A retailer that wants one API key across Clothing, Shoes, and Bags but different routing rules for each.
+* A marketplace where the parent merchant wants to manage all sub-merchants tightly under one API key.
+
+<figure><img src="../../../.gitbook/assets/account-multiple-profiles-diagram.png" alt="One Organization with one Merchant Account (Merchant A) and multiple Profiles (Clothing, Shoes, Bags), each with its own Connectors"><figcaption><p>One Merchant Account with multiple Profiles, each having its own set of Connectors</p></figcaption></figure>
+
+***
+
+### Configuring Multiple Merchant Accounts
+
+By default, sign-up creates one merchant account under your Organization. To add more:
+
+1. Click the merchant account dropdown at the top-left of the dashboard.
+2. Click **Create new merchant**.
+3. Enter the merchant name and confirm.
+
+<figure><img src="../../../.gitbook/assets/account-create-merchant.png" alt="Sidebar dropdown with the Create new merchant option highlighted"><figcaption><p>Sidebar merchant dropdown with the "+ Create new" option to add a new merchant</p></figcaption></figure>
+
+***
+
+### Configuring Multiple Profiles
+
+A default profile is created when your merchant account is created. To add more:
+
+1. Click the profile dropdown at the top-right of the dashboard.
+2. Click **Create new profile**.
+3. Enter the profile name and confirm.
+
+<figure><img src="../../../.gitbook/assets/account-create-profile.png" alt="Profile dropdown with the Create new profile option highlighted"><figcaption><p>Profile dropdown with the "+ Create new" option to add a new profile</p></figcaption></figure>
+
+You'll see all configured profiles for your merchant account in the same dropdown. Profile IDs are also visible under **Settings** then **Business Profiles**.
+
+***
+
+### Beyond the Standard Hierarchy
+
+For businesses that need to **onboard sub-merchants programmatically**, generate sub-merchant API keys via API, or share customers and saved payment methods across a connected group, see the [Platform Organization](platform-organization-concepts.md) model.
+
+If you're not sure which model fits your business, start with [Pick the Right Setup for Your Business](pick-the-right-setup.md).
