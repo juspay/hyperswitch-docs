@@ -15,7 +15,7 @@ The Payment Method SDK and `/payment-methods` API work in tandem with the `/paym
 ### Guest Checkout Flow (S2S)
 
 1. Collect card details and tokenise with HS [Create PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1) to get a [PM ID](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1#response-id) (payment\_method\_id)
-2. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation
+2. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-payment-token-one-of-0) during order confirmation
 3. For extended sessions, where token expires before order completion, create a new PM ID with the same card details using the Create PM API
 
 {% hint style="info" %}
@@ -27,8 +27,8 @@ For guest checkout flow the PM ID is NOT unique to Customer + Payment method com
 ### Customer Checkout Flow - First Time Payment (S2S)
 
 1. Create a customer with HS using the [Create Customer API](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1)
-2. Use the customer\_id to tokenise the collected card details using Create PM API
-3. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation
+2. Use the customer\_id to tokenize the collected card details using Create PM API
+3. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-payment-token-one-of-0) during order confirmation
 4. For extended sessions, where token expires before order completion update the PM with CVV using the [Update PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--update-v1) and use this PM ID to complete the payment
 
 {% hint style="info" %}
@@ -41,21 +41,21 @@ For logged-in user checkout flow the PM ID is unique to Customer + Payment metho
 
 1. Fetch the stored cards for the customer using [List Saved PMs API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--list-customer-saved-payment-methods-v1) which returns the masked card details with corresponding PM ID
 2. Update the PM ID of the user selected card along with CVV value collected from the user using the [Update PM API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--update-v1)
-3. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) during order confirmation
+3. Use the PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-payment-token-one-of-0) during order confirmation
 4. For extended sessions, where token expires before order completion update the PM again with the collected CVV and use this PM ID to complete the payment
 
 ### Payment Method SDK Checkout - Guest, New Customer and Repeat Customer Flows
 
 1. Create a PM session using the [Session Create API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) to get a [client secret](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-client-secret)
 2. For guest user, pass "storage\_type" as "volatile" and skip sending the Customer ID
-3. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the client secret and session\_id
+3. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the `sdkAuthorization`
 4. The SDK now takes care of the following flows based on user action:
-5. Post which the SDK submits the card details via the [PM Confirm API](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) and returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the response
-6. Pass this PM token to Merchant Server and exchange for a PM ID from the server using the [PM token exchange API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--payment-method-token-to-payment-method-id-v1)
-7. Use this PM ID to authorize the [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)
+5. Post which the SDK submits the card details via the [PM Confirm API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--confirm-a-payment-method-session-v1) and returns back a [PM Token](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--confirm-a-payment-method-session-v1#response-id) (short-lived) in the response
+6. Pass the PM Token to the Merchant Server. You may either use it directly for payment or exchange it for a PM ID using [PM token exchange API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--payment-method-token-to-payment-method-id-v1)
+7. Use either the **PM Token (short-lived)** or **PM ID (long-lived)** to authorize [payment request](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-payment-token-one-of-0)
 
 {% hint style="info" %}
-Note - When using the HS SDK, the response always contains a temp token and you'll need to exchange it to get the PM ID via a S2S call.
+Note - The HS SDK returns a short-lived PM Token. This can be used directly for immediate payments or exchanged via S2S to obtain a reusable PM ID for future transactions.
 {% endhint %}
 
 ### HS SDK Checkout for Repeat Customer - No CVV Flow

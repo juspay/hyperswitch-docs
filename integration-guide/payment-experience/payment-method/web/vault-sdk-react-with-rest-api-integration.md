@@ -32,26 +32,13 @@ First, you'll need to set up your server to create payment method sessions, whic
 
 #### Obtaining Your API Keys
 
-Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
+Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/dashboard/home) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 #### Creating a Payment Methods Session Endpoint
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
 > Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1) reference documentation for customer creation.
-
-{% hint style="info" %}
-All Vault API requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
-
-To generate your Vault API keys, follow these steps:
-
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
-2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
-3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API calls.
-
-**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
-{% endhint %}
 
 ```javascript
 // Create-Payment-Methods-Session

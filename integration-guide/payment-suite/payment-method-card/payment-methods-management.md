@@ -42,15 +42,6 @@ First, you'll need to set up your server to create payment method sessions, whic
 
 * Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
-To generate your Vault API keys, follow these steps:
-
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
-2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
-3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
-
-**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
-
 **Creating a Payment Methods Session Endpoint**
 
 Add an endpoint on your server that creates [payment methods sessions](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1). This endpoint will return the necessary session information to your client application.
@@ -116,7 +107,7 @@ Add one empty placeholder `div` to your page for the Payment Methods Management 
 
 **2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
 
-Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
+Make a request to the endpoint on your server to create a new payment method session. The `sdk_authorization` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
 > Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
 
