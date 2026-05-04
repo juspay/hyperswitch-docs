@@ -46,7 +46,7 @@ Include the following details:
 
 **Sample Proxy payment request (Checkout.com)**
 
-<pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/proxy' \
+<pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/v1/proxy' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Profile-Id: pro_p3ifmp0HzuC0Bp1KhMnK' \

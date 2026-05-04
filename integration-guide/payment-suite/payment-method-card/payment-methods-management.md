@@ -63,7 +63,7 @@ app.post("/create-payment-method-session", async (req, res) => {
   try {
     // Create payment method session on Hyperswitch
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
       {
         method: "POST",
         headers: {
