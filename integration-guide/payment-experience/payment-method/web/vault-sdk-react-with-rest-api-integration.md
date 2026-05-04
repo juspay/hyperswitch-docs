@@ -145,7 +145,7 @@ const options = {
 
 return (
   <div className="App">
-    {pmSessionId && pmClientSecret && hyperPromise && (
+    {sdkAuthorization && hyperPromise && (
       <HyperManagementElements options={options} hyper={hyperPromise}>
         <PaymentMethodsManagementElementForm />
       </HyperManagementElements>

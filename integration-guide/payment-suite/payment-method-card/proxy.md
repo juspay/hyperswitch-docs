@@ -54,12 +54,12 @@ sequenceDiagram
 
   MFE ->> MBE: Create-payment-method-session with customer_id
   MBE ->> HBE: "Create-payment-method-session" API using Merchant HS API Key & Profile ID
-  HBE -->> MBE: Session id & client_secret
-  MBE -->> MFE: Session id & client_secret
+  HBE -->> MBE: sdk_authorization
+  MBE -->> MFE: sdk_authorization
 
   Note over MFE: Create a script tag to load HyperLoader.js
   Note over MFE: Initialize window.Hyper using the Publishable Key
-  Note over MFE: Create PMM elements group using SessionId & ClientSecret
+  Note over MFE: Create PMM elements group using sdkAuthorization
   Note over MFE: Create specific widget instance & mount SDK
 
   C ->> PSDK: Add Payment method

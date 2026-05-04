@@ -67,7 +67,7 @@ app.post("/create-payment-method-session", async (req, res) => {
         error: data.error || "Failed to create payment method session",
       });
     }
-    // Return Payment method session ID and client secret to the frontend
+    // Return sdk authorization to the frontend
     res.json({
       sdkAuthorization: data.sdk_authorization,
     });
