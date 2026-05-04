@@ -399,6 +399,10 @@ Customize the header text for the section displaying saved payment methods.
 
 #### Custom Message for Card Terms
 
+{% hint style="warning" %}
+This property will be deprecated, please use the newly added **Payment Methods Configuration (**&#x70;aymentMethodsConfi&#x67;**)** property to pass custom messages
+{% endhint %}
+
 We provide a default message for card terms i.e.
 
 ```rescript
@@ -558,6 +562,53 @@ var paymentElementOptions = {
 
 <PaymentElement id="payment-element" options={paymentElementOptions} />;
 ```
+
+#### Payment Methods Configuration
+
+The `paymentMethodsConfig` prop allows you to provide payment-method-specific configurations within the Hyperswitch SDK. Currently, it supports displaying custom messages (or hiding default messages) for individual payment method types.
+
+{% hint style="success" %}
+This configuration does **not** apply to one-click wallets. It applies to all other payment method types such as cards, bank debits, bank redirects, etc.
+{% endhint %}
+
+```javascript
+var paymentElementOptions = {
+  ...,
+  paymentMethodsConfig: [{
+    paymentMethod: string,              // e.g. "card", "bank_debit", "bank_redirect"
+    paymentMethodTypes: [{
+        paymentMethodType: string,      // e.g. "credit", "debit", "sepa", "ach"
+        message: {
+          value?: string,               // Custom message text
+          displayMode: string           // "default_sdk_message" | "custom_message" | "hidden"
+        }
+      }]
+  }]
+};
+
+<PaymentElement id="payment-element" options={paymentElementOptions} />;
+```
+
+#### `displayMode` values
+
+| Value                   | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| `"default_sdk_message"` | Show the SDK's default message for this payment method type (default behavior) |
+| `"custom_message"`      | Show a custom message provided in `message.value`                              |
+| `"hidden"`              | Hide the message entirely                                                      |
+
+If `displayMode` is `"custom_message"` but `value` is empty or not provided, the message is hidden.
+
+#### How it works
+
+The `message` configuration controls the text displayed below each payment method type in the checkout. This is used in two places:
+
+1. **Terms/disclaimer text** — The informational text shown below a payment method (e.g., "By providing your card details, you agree to our terms"). Setting `displayMode` to `"custom_message"` with a `value` replaces this text; setting it to `"hidden"` removes it entirely.
+2. **Save card checkbox label** — For card payment methods, if a custom message is provided, it also replaces the default label on the "Save card details" checkbox when on the card form screen.
+
+#### Default behavior
+
+If a payment method type is **not** listed in `paymentMethodsConfig`, or if `displayMode` is set to `"default_sdk_message"`, the SDK shows its default terms message as usual.
 
 ### Next step:
 
