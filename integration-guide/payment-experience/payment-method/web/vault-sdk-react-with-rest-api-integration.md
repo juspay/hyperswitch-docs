@@ -60,7 +60,7 @@ const app = express();
 app.post(`/create-payment-methods-session`, async (req, res) => {
   try {
     const response = await fetch(
-      `https://sandbox.hyperswitch.io/v2/payment-methods-session`,
+      `https://sandbox.hyperswitch.io/v1/payment-methods-session`,
       {
         method: "POST",
         headers: {
@@ -75,8 +75,7 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
     const data = await response.json();
     
     res.send({
-      pmSessionId: data.id,
-      pmClientSecret: data.client_secret,
+      sdkAuthorization: data.sdk_authorization,
     });
   } catch (err) {
     return res.status(400).send({
@@ -121,10 +120,6 @@ Configure the library with your publishable API key and profile ID:
 const hyperPromise = loadHyper({
   publishableKey: "YOUR_PUBLISHABLE_KEY",
   profileId: "YOUR_PROFILE_ID",
-},{
-  customBackendUrl: "BE_URL",
-  env: "ENVIRONMENT"
-  version: "VERSION",
 });
 ```
 
@@ -135,8 +130,7 @@ const hyperPromise = loadHyper({
 Make a request to your server endpoint to create a new payment methods session:
 
 ```javascript
-const [pmClientSecret, setPmClientSecret] = useState(null);
-const [pmSessionId, setPmSessionId] = useState(null);
+const [sdkAuthorization, setSdkAuthorization] = useState(null);
 
 useEffect(() => {
   fetch("/create-payment-methods-session", {
@@ -146,8 +140,7 @@ useEffect(() => {
   })
   .then((res) => res.json())
   .then((data) => {
-    setPmClientSecret(data.pmClientSecret);
-    setPmSessionId(data.pmSessionId);
+    setSdkAuthorization(data.sdkAuthorization);
   });
 }, []);
 ```
@@ -160,8 +153,7 @@ Pass the promise from `loadHyper` to the `HyperManagementElements` component alo
 
 ```javascript
 const options = {
-  pmSessionId: pmSessionId,
-  pmClientSecret: pmClientSecret,
+  sdkAuthorization: sdkAuthorization,
 };
 
 return (

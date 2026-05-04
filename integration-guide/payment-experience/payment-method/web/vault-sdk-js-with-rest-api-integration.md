@@ -61,7 +61,7 @@ app.post("/create-payment-method-session", async (req, res) => {
   try {
     // Create payment method session on Hyperswitch
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
       {
         method: "POST",
         headers: {
@@ -82,8 +82,7 @@ app.post("/create-payment-method-session", async (req, res) => {
     }
     // Return Payment method session ID and client secret to the frontend
     res.json({
-      id: data.id,
-      clientSecret: data.client_secret,
+      sdkAuthorization: data.sdk_authorization,
     });
   } catch (error) {
     console.error("Server Error:", error);
@@ -132,12 +131,12 @@ async function initialize() {
       customer_id: "CUSTOMER_ID",
     }),
   });
-  const { id, clientSecret } = await response.json();
+  const { sdkAuthorization } = await response.json();
 
   // Step 2: Initialize HyperLoader.js
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
 
   let hyper;
   script.onload = () => {
@@ -156,8 +155,7 @@ async function initialize() {
     const paymentMethodsManagementElements =
       hyper.paymentMethodsManagementElements({
         appearance,
-        pmSessionId: id,
-        pmClientSecret: clientSecret,
+        sdkAuthorization: sdkAuthorization,
       });
 
     // Step 6: Create and mount the paymentMethodsManagement element
