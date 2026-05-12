@@ -1,10 +1,9 @@
 ---
-icon: screwdriver-wrench
-cover: .gitbook/assets/Hero visual V6 (2).png
-coverY: 0
+description: Install Hyperswitch on your K8s setup using our Helm charts
+icon: dharmachakra
 metaLinks:
   alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/y5FTAXoyeo0NjGdJyjTF
+    - ./
 ---
 
 # Get Started
@@ -13,26 +12,24 @@ At Juspay, we believe payment infrastructure should be transparent, adaptable, a
 
 This modular, composable platform allows you to deploy on-premise for full access or select only the components you need.
 
-To run Hyperswitch locally, follow our Docker setup guide. Alternatively, explore our cloud deployment guides for additional options. ​
+To run Hyperswitch locally, follow our setup guide.
 
-## Local Setup
+### Deploy using Helm charts
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Unified Local Setup using Docker (Recommended)</strong></mark></td><td>Simplified local setup of all components, using a single command with the help of docker.</td><td></td><td><a href="hyperswitch-open-source/overview/unified-local-setup-using-docker.md">unified-local-setup-using-docker.md</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Development Environment Setup</strong></mark></td><td>Local setup of development environment to build with Hyperswitch</td><td></td><td><a href="hyperswitch-open-source/overview/local-setup-using-individual-components/">local-setup-using-individual-components</a></td><td></td></tr></tbody></table>
+Hyperswitch can be deployed on Kubernetes **using Helm Charts**, a package manager for Kubernetes, to provide a robust, scalable, and containerized payment infrastructure. Kubernetes deployment ensures high availability, effortless scaling, and efficient orchestration of Hyperswitch services.
 
-## Cloud Setup
+This setup is ideal for businesses seeking a resilient payment solution capable of handling enterprise-scale demands across various cloud environments. The deployment process is optimized for seamless management on cloud platforms such as **Google Cloud Platform (GCP)** and **Microsoft Azure.**
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components.</td><td></td><td><a href="hyperswitch-open-source/deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on GCP or Azure using our Helm charts.</td><td></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td><td></td></tr></tbody></table>
+### Capabilities
 
-{% hint style="success" %}
-Want to try without deploying? Use our dashboard on [sandbox](https://app.hyperswitch.io/).
-{% endhint %}
+* **Scalability**: Easily scale up or down based on transaction volume.
+* **High Availability**: Achieve fault tolerance with multi-node setups.
+* **Flexibility**: Deploy across multiple cloud environments or on-premises.
+* **Automation**: Leverage Kubernetes orchestration for updates and workload management.
+* **Security**: Kubernetes integrates seamlessly with security solutions, ensuring compliance and data safety.
 
-### Learning Resources
+### Deployment Guides
 
-In case you are completely new to payments - You can comeback to setup after reading the [Payment 101 Blog](https://github.com/juspay/hyperswitch/wiki/Payments-101-for-a-Developer), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
+To assist you in deploying Hyperswitch on Kubernetes, we have created detailed guides for specific platforms:
 
-{% hint style="info" %}
-**Have Questions?**\
-Join our [Slack Community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-2jqxmpsbm-WXUENx022HjNEy~Ark7Orw) to ask questions, share feedback, and collaborate.\
-Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) page to reach out.
-{% endhint %}
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Local Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md">deploy-on-local-using-helm-charts-and-minikube.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-aws-using-helm-charts.md">deploy-on-aws-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on GCP Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md">deploy-on-gcp-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Azure Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md">deploy-on-azure-using-helm-charts.md</a></td></tr></tbody></table>
