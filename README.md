@@ -1,4 +1,7 @@
 ---
+description: >-
+  Try Hyperswitch and explore its modular architecture for a secure, streamlined
+  payments
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
@@ -10,16 +13,6 @@ metaLinks:
 # Exploration Guide
 
 Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
-
-This guide helps you:
-
-* Quickly install Hyperswitch with minimal setup
-* Try your first hello world by making a payment
-* Learn about Hyperswitch’s modular architecture
-* Improve and streamline your checkout experience
-* See how Hyperswitch embeds security, reliability, and scalability into its core architecture
-
-***
 
 ### Try Hyperswitch Product Quickly
 
