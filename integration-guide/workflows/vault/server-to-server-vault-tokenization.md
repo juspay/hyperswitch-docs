@@ -17,7 +17,7 @@ Tokenize payment cards directly from your servers to Juspay Hyperswitch's Vault 
 #### Key Features
 
 * **Full Token Management** – Create, retrieve, update, and delete payment tokens directly from your server.
-* **PSP and Network Tokenization** – Generate both PSP tokens and network tokens through a single API.
+* **Network Tokenization** – Generate network tokens through a single API.
 * **Secure Storage** – Store tokens safely in Hyperswitch's Vault.
 * **Reduced Frontend Complexity** – Shift tokenization processes to the backend, minimizing frontend dependencies.
 
@@ -34,7 +34,7 @@ To implement server-to-server tokenization, you need:
 1. **Collect Card Details** – Your server collects card details (requires PCI compliance).
 2. **Send a Tokenization Request** – Make a POST request to /payment\_methods with the card details.
 3. **Token Creation & Validation** – Hyperswitch validates the request and generates a secure token in the vault.
-4. **PSP & Network Tokenization (Optional)** – If configured through your Hyperswitch dashboard, we also generate PSP and/or network tokens when you pass relevant parameters as mentioned below
+4. **Network Tokenization (Optional)** – If configured through your Hyperswitch dashboard, we also generate network tokens when you pass relevant parameters as mentioned below
 5. **Receive Payment Method ID** – You get a pm\_id, which can be used for future payments.
 
 ### API Requests for Server to Server Tokenization
@@ -90,7 +90,7 @@ curl --location 'https://app.hyperswitch.io/api/v1/payment-methods' \
 }'
 ```
 
-For detailed request parameters and examples, including how to create payment method tokens with PSP tokens or network tokens, refer to the [Create Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1).
+For detailed request parameters and examples, including how to create payment method tokens with network tokens, refer to the [Create Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1).
 
 #### 3. Retrieve a Payment Method Id
 
