@@ -21,7 +21,7 @@ Our core values have pretty much remained the same since the early days and here
 
 ### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
-Last year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap includes updates for each module. A summary of these product modules is provided below:
+There are a lot of problems to be solved in payments, but our majority of our current focus falls under 5 themes below.
 
 🧱 **Composability:** Enabling users to independently augment Juspay Hyperswitch platform modules of choice to create a tailored, high-performance payment stack. Such modules could be payment processors (or) PCI vaults (or) intelligent routing (or) reconciliation, cost observability, revenue recovery, or card network certified services (like 3DS, network tokenization)
 

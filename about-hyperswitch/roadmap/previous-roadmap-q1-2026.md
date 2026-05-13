@@ -3,7 +3,7 @@ description: Jan '26 to March '26
 icon: road
 ---
 
-# Roadmap - Q1 2026
+# Previous Roadmap - Q1 2026
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
