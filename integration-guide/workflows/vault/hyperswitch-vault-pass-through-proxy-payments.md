@@ -22,7 +22,7 @@ The **Proxy Payments Service** allows merchants to tokenize cards via Juspay Hyp
 
 ### How it works
 
-1. **Tokenize cards using Vault**: Tokenize your customers' cards using the [Vault service](./) and store the payment\_method\_id of each card
+1. **Tokenize cards using Vault**: Tokenize your customers' cards using the [Vault SDK Integration](sdk-integration.md) and store the payment\_method\_id of each card
 2. **Send your proxy payment request**: Send your PSP payment request to the Vault proxy endpoint including the target PSP's url as the destination url and payment\_method\_id that was received in Step 1
 3. **Detokenize**: Vault parses request and replaces token placeholders with actual card data
 4. **Forward to PSP**: The request is sent to the PSP
@@ -169,3 +169,25 @@ Include the following details:
     }
 }
 ```
+---
+
+### Configuration Setup
+
+To integrate with the Hyperswitch Vault, you'll need to configure your API credentials and profile settings.
+
+#### **Step 1: Generate API Key**
+
+1. **Access Dashboard** — Log into the Hyperswitch Control Centre.
+2. **Navigate to API Keys** — In the left-hand navigation menu, select **Developers > API Keys**.
+3. **Create Key** — Click **Create New API Key**.
+4. **Secure Storage** — Copy the generated key immediately and store it securely (it will not be shown again). Use this key in the `Authorization: api-key=<YOUR_VAULT_API_KEY>` header for all Vault API calls.
+
+<figure><img src="../../../.gitbook/assets/vault-api-keys.png" alt="API Keys Dashboard"><figcaption><p>Navigate to Developers > API Keys to create and manage your API credentials</p></figcaption></figure>
+
+#### **Step 2: Access Profile ID**
+
+1. **Navigate to Payment Settings** — In the left-hand navigation menu, select **Developers > Payment Settings**.
+2. **Copy Profile ID** — Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
+
+<figure><img src="../../../.gitbook/assets/vault-profile-id.png" alt="Payment Settings - Profile ID"><figcaption><p>Navigate to Developers > Payment Settings to access your Profile ID</p></figcaption></figure>
+

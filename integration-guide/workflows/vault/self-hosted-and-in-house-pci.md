@@ -8,7 +8,7 @@ metaLinks:
     - self-hosted-and-in-house-pci.md
 ---
 
-# Self-hosted & in-house PCI
+# Self-hosted & In-house PCI
 
 In this deployment, merchants self-host Juspay Hyperswitch and also manage their own PCI DSS compliance.
 
@@ -25,7 +25,7 @@ This setup ensures full data ownership while leveraging Hyperswitch's built-in P
 
 ### Self-hosted orchestration - Payments and vaulting flow
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/vault-self-host-and-in-house-pci.png" alt=""><figcaption></figcaption></figure>
 
 The sequence diagram above outlines how a self-hosted merchant performs payments and vaulting.
 
@@ -64,3 +64,25 @@ The `payment_method_id` serves as a unique identifier mapped to a specific combi
 #### **Merchant Initiated Transaction (MIT) flow**
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
+
+---
+
+### Configuration Setup
+
+To integrate with the Hyperswitch Vault, you'll need to configure your API credentials and profile settings.
+
+#### **Step 1: Generate API Key**
+
+1. **Access Dashboard** — Log into the Hyperswitch Control Centre.
+2. **Navigate to API Keys** — In the left-hand navigation menu, select **Developers > API Keys**.
+3. **Create Key** — Click **Create New API Key**.
+4. **Secure Storage** — Copy the generated key immediately and store it securely (it will not be shown again). Use this key in the `Authorization: api-key=<YOUR_VAULT_API_KEY>` header for all Vault API calls.
+
+<figure><img src="../../../.gitbook/assets/vault-api-keys.png" alt="API Keys Dashboard"><figcaption><p>Navigate to Developers > API Keys to create and manage your API credentials</p></figcaption></figure>
+
+#### **Step 2: Access Profile ID**
+
+1. **Navigate to Payment Settings** — In the left-hand navigation menu, select **Developers > Payment Settings**.
+2. **Copy Profile ID** — Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
+
+<figure><img src="../../../.gitbook/assets/vault-profile-id.png" alt="Payment Settings - Profile ID"><figcaption><p>Navigate to Developers > Payment Settings to access your Profile ID</p></figcaption></figure>

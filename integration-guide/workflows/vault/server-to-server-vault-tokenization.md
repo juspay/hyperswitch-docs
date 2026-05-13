@@ -2,7 +2,6 @@
 description: >-
   Server to Server tokenization with Hyperswitch Vault Service for PCI compliant
   merchants
-hidden: true
 icon: server
 metaLinks:
   alternates:
@@ -41,16 +40,7 @@ To implement server-to-server tokenization, you need:
 ### API Requests for Server to Server Tokenization
 
 {% hint style="info" %}
-All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
-
-To generate your Vault API keys, follow these steps:
-
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
-2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
-3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
-
-**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
+All Vault API (V2) requests require a **Vault API Key** and your **Profile ID**. See [Vault Configuration](configuration.md) for step-by-step instructions on generating these credentials from the Hyperswitch Control Centre.
 {% endhint %}
 
 #### 1. Create a Customer
@@ -58,245 +48,32 @@ To generate your Vault API keys, follow these steps:
 * Endpoint: `POST /customers`
 * Purpose: Create a customer to enable storing their payment methods
 
-```bash
-curl --location 'http://sandbox.hyperswitch.io/v2/customers' \
---header 'Content-Type: application/json' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api_key>' \
---data-raw '{   
-    "merchant_reference_id": "customer_1742551597",
-    "name": "John Doe",
-    "email": "guest@example.com",
-    "phone": "999999999",
-    "phone_country_code": "+65",
-    "description": "First customer",
-    "default_billing_address": {
-        "line1": "1467",
-        "line2": "Harrison Street",
-        "line3": "Harrison Street",
-        "city": "San Fransico",
-        "state": "California",
-        "zip": "94122",
-        "country": "US",
-        "first_name": "joseph",
-        "last_name": "Doe"
-    },
-    "default_shipping_address": {
-        "line1": "1467",
-        "line2": "Harrison Street",
-        "line3": "Harrison Street",
-        "city": "San Fransico",
-        "state": "California",
-        "zip": "94122",
-        "country": "US",
-        "first_name": "joseph",
-        "last_name": "Doe"
-    },
-    "metadata": {
-        "udf1": "value1",
-        "new_customer": "true",
-        "login_date": "2019-09-10T10:11:12Z"
-    }
-}'
-```
+For detailed request parameters and examples, refer to the [Create Customer API Reference](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1).
 
-#### 2. Create a Payment Method Token
+#### 2. Create a Payment Method Id
 
 * Endpoint: `POST /payment_methods`
-* Purpose: Generate a token for a card
+* Purpose: Generate a Id for a card
 
-```bash
-curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
---header 'Content-Type: application/json' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>' \
---data '{
-  "payment_method_type": "card",
-  "payment_method_subtype": "credit",
-  "metadata": {},
-  "customer_id": "12345_cus_01926c58bc6e77c09e809964e72af8c8",
-  "payment_method_data": {
-"card": {
-   "card_number": "4111111145551142",
-   "card_exp_month": "10",
-   "card_exp_year": "25",
-   "card_holder_name": "John Doe",
-   "nick_name": "John Doe",
-   "card_issuing_country": "AF",
-   "card_network": "Visa",
-   "card_issuer": "<string>",
-   "card_type": "credit",
-   "card_cvc": "242"
-}
-  },
-  "billing": {
-"address": {
-   "city": "New York",
-   "country": "AF",
-   "line1": "123, King Street",
-   "line2": "Powelson Avenue",
-   "line3": "Bridgewater",
-   "zip": "08807",
-   "state": "New York",
-   "first_name": "John",
-   "last_name": "Doe"
-},
-"phone": {
-   "number": "9123456789",
-   "country_code": "+1"
-},
-"email": "abc@gmail.com"
-  }
-}'
-```
+For detailed request parameters and examples, including how to create payment method tokens with PSP tokens or network tokens, refer to the [Create Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1).
 
-**a. Creating a Payment Method Token along with PSP Tokens**
+#### 3. Retrieve a Payment Method Id
 
-Use the same endpoint to generate PSP tokens for a card by passing the following parameters:
+* Endpoint: `POST /payment_methods/:pm_id`
+* Purpose: Retrieve a Payment Method for a Id
 
-```bash
-curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
---header 'Content-Type: application/json' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>' \
---data '{
-  "payment_method_type": "card",
-  "payment_method_subtype": "ach",
-  "metadata": {},
-  "customer_id": "12345_cus_01926c58bc6e77c09e809964e72af8c8",
-  "payment_method_data": {
-	"card": {
-  	"card_number": "4111111145551142",
-  	"card_exp_month": "10",
-  	"card_exp_year": "25",
-  	"card_holder_name": "John Doe",
-  	"nick_name": "John Doe",
-  	"card_issuing_country": "AF",
-  	"card_network": "Visa",
-  	"card_issuer": "<string>",
-  	"card_type": "credit",
-  	"card_cvc": "242"
-	}
-  },
-  "billing": {
-	"address": {
-  	"city": "New York",
-  	"country": "AF",
-  	"line1": "123, King Street",
-  	"line2": "Powelson Avenue",
-  	"line3": "Bridgewater",
-  	"zip": "08807",
-  	"state": "New York",
-  	"first_name": "John",
-  	"last_name": "Doe"
-	},
-	"phone": {
-  	"number": "9123456789",
-  	"country_code": "+1"
-	},
-	"email": "abc@gmail.com"
-  },
-  "psp_tokenization": {
-	"tokenization_type": "single_use",
-	"connector_id": "<string>"
-  }
-}'
-```
+For detailed request parameters and examples, including how to retrieve payment method id with network tokens, refer to the [Retrieve Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--retrieve-v1).
 
-**b. Creating a Payment Method Token along with Network Tokens**
-
-Use the same endpoint to generate network tokens for a card by passing the following parameters:
-
-```bash
-curl --location 'https://sandbox.hyperswitch.io/v2/payment-methods' \
---header 'Content-Type: application/json' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>' \
---data '{
-  "payment_method_type": "card",
-  "payment_method_subtype": "ach",
-  "metadata": {},
-  "customer_id": "12345_cus_01926c58bc6e77c09e809964e72af8c8",
-  "payment_method_data": {
-	"card": {
-  	"card_number": "4111111145551142",
-  	"card_exp_month": "10",
-  	"card_exp_year": "25",
-  	"card_holder_name": "John Doe",
-  	"nick_name": "John Doe",
-  	"card_issuing_country": "AF",
-  	"card_network": "Visa",
-  	"card_issuer": "<string>",
-  	"card_type": "credit",
-  	"card_cvc": "242"
-	}
-  },
-  "billing": {
-	"address": {
-  	"city": "New York",
-  	"country": "AF",
-  	"line1": "123, King Street",
-  	"line2": "Powelson Avenue",
-  	"line3": "Bridgewater",
-  	"zip": "08807",
-  	"state": "New York",
-  	"first_name": "John",
-  	"last_name": "Doe"
-	},
-	"phone": {
-  	"number": "9123456789",
-  	"country_code": "+1"
-	},
-	"email": "<string>"
-  },
-  "network_tokenization": {
-	"enable": "Enable"
-  }
-}'
-```
-
-#### 3. Retrieve a Payment Method Token
-
-* Endpoint: `GET /payment_methods/:pm_id`
-* Purpose: Fetch details of an existing token.
-
-```bash
-curl --location --globoff 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>'
-```
-
-#### 4. Update a Payment Method Token
+#### 4. Update a Payment Method Id
 
 * Endpoint: `PATCH /payment_methods/:pm_id/update_saved_payment_method`
-* Purpose: Modify token details.
+* Purpose: Modify Payment Method details.
 
-```bash
-curl --location --globoff --request PATCH 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}/update-saved-payment-method' \
---header 'Content-Type: application/json' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>' \
---data '{
-  "payment_method_data": {
-	"card": {
-  	"card_holder_name": "John Doe",
-  	"nick_name": "John Doe"
-	}
-  },
-  "connector_token_details": {
-	"token": "pm_9UhMqBMEOooRIvJFFdeW",
-	"connector_token_request_reference_id": "<string>"
-  }
-}'
-```
+For detailed request parameters and examples, refer to the [Update Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--update-v1).
 
-#### 5. Delete a Payment Method Token
+#### 5. Delete a Payment Method Id
 
 * Endpoint: `DELETE /payment_methods/:pm_id`
-* Purpose: Remove a token from the vault.
+* Purpose: Remove a Id from the vault.
 
-```bash
-curl --location --globoff --request DELETE 'https://sandbox.hyperswitch.io/v2/payment-methods/{id}' \
---header 'x-profile-id: <profile-id>' \
---header 'api-key: <api-key>'
-```
+For detailed request parameters and examples, refer to the [Delete Payment Method API Reference](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--delete-v1).
