@@ -12,16 +12,66 @@ metaLinks:
 
 Juspay Hyperswitch supports multiple vault deployment models to match your PCI profile and infrastructure preferences. The table below summarizes each option; click a row to read the full integration guide.
 
-| Deployment Model | Vault Options | PCI Ownership / Scope | Example Use Case |
-|---|---|---|---|
-| | [SaaS Hyperswitch Vault](self-hosted-and-in-house-pci.md) | Merchant PCI Environment | Financial institutions requiring full data sovereignty and PCI control with raw payment method responses |
-| **Vault Standalone** | [SaaS Hyperswitch Vault](hyperswitch-vault-pass-through-proxy-payments.md) | Non PCI Scope | Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API |
-| | [Third-Party Vault](connect-external-vaults-to-hyperswitch-orchestration.md) | Merchant PCI Environment | Merchants already using third-party vault providers like VGS, TokenEx, or similar services |
-| | [Self-Hosted Hyperswitch Vault](self-hosted-and-in-house-pci.md) | PCI Environment | Large enterprises requiring full control over both orchestration and payment data |
-| **Self-Hosted Pay Orchestrator** | [SaaS Hyperswitch Vault](self-hosted-orchestration-with-external-or-third-party-pci-vault.md) | Non-PCI | Mid-size merchants needing orchestration flexibility without PCI burden |
-| | [Third-Party Vault](self-hosted-orchestration-with-external-or-third-party-pci-vault.md) | Non-PCI | Businesses with existing vault investments (VGS, TokenEx) adding orchestration |
-| **SaaS Pay Orchestrator** | [SaaS Hyperswitch Vault](saas-orchestration-with-juspay-vault.md) | Managed by Hyperswitch | Growing businesses seeking fully managed payment infrastructure |
-| | [Third-Party Vault](saas-orchestration-with-third-party-vault.md) | Shared / External PCI Responsibility | SaaS companies with compliance requirements for specific vault providers |
+<table>
+<thead>
+<tr>
+<th width="250">Deployment Model</th>
+<th width="200">Vault Options</th>
+<th width="200">PCI Ownership / Scope</th>
+<th>Example Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 3px solid #444;">
+<td></td>
+<td><a href="self-hosted-and-in-house-pci.md">SaaS Hyperswitch Vault</a></td>
+<td>Merchant PCI Environment</td>
+<td>Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
+</tr>
+<tr>
+<td><strong>Vault Standalone</strong></td>
+<td><a href="hyperswitch-vault-pass-through-proxy-payments.md">SaaS Hyperswitch Vault</a></td>
+<td>Non PCI Scope</td>
+<td>Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td>
+</tr>
+<tr style="border-bottom: 3px solid #444;">
+<td></td>
+<td><a href="connect-external-vaults-to-hyperswitch-orchestration.md">Third-Party Vault</a></td>
+<td>Merchant PCI Environment</td>
+<td>Merchants already using third-party vault providers like VGS, TokenEx, or similar services</td>
+</tr>
+<tr style="border-top: 3px solid #444;">
+<td></td>
+<td><a href="self-hosted-and-in-house-pci.md">Self-Hosted Hyperswitch Vault</a></td>
+<td>PCI Environment</td>
+<td>Large enterprises requiring full control over both orchestration and payment data</td>
+</tr>
+<tr>
+<td><strong>Self-Hosted Pay Orchestrator</strong></td>
+<td><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">SaaS Hyperswitch Vault</a></td>
+<td>Non-PCI</td>
+<td>Mid-size merchants needing orchestration flexibility without PCI burden</td>
+</tr>
+<tr style="border-bottom: 3px solid #444;">
+<td></td>
+<td><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">Third-Party Vault</a></td>
+<td>Non-PCI</td>
+<td>Businesses with existing vault investments (VGS, TokenEx) adding orchestration</td>
+</tr>
+<tr style="border-top: 3px solid #444;">
+<td><strong>SaaS Pay Orchestrator</strong></td>
+<td><a href="saas-orchestration-with-juspay-vault.md">SaaS Hyperswitch Vault</a></td>
+<td>Managed by Hyperswitch</td>
+<td>Growing businesses seeking fully managed payment infrastructure</td>
+</tr>
+<tr style="border-bottom: 3px solid #444;">
+<td></td>
+<td><a href="saas-orchestration-with-third-party-vault.md">Third-Party Vault</a></td>
+<td>Shared / External PCI Responsibility</td>
+<td>SaaS companies with compliance requirements for specific vault providers</td>
+</tr>
+</tbody>
+</table>
 
 <div align="center"><img src="../../../.gitbook/assets/vault-external-vaults.png" alt=""></div>
 
