@@ -17,7 +17,7 @@ Juspay Hyperswitch Vault is a PCI-compliant service for securely storing custome
 * **PCI DSS Compliant Storage** — Card data is stored in Juspay's certified vault; your servers never handle raw card numbers.
 * **Reusable Tokens** — Every stored payment method gets a unique `payment_method_id` that works across new payments, recurring charges, and MITs.
 * **Network Tokenization** — When a card is saved, Hyperswitch automatically provisions a Visa or Mastercard network token and manages its lifecycle (renewal, updates).
-* **Flexible Deployment** — Use Juspay's hosted vault, bring your own PCI infrastructure, or connect a third-party vault (VGS, TokenEx, etc.).
+* **Flexible Deployment** — Deploy as a standalone vault service, integrate with Juspay's hosted infrastructure, self-host with your own PCI-compliant environment, or connect third-party vault providers (VGS, TokenEx, etc.).
 * **Proxy Payments** — Send PSP API calls through the Vault Proxy so raw card data never touches your servers or the PSP directly.
 * **Customer Payment Method Management** — Customers can view, add, and delete saved cards via an embeddable SDK widget.
 
