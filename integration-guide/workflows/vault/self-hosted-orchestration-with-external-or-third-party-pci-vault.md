@@ -12,7 +12,7 @@ metaLinks:
 
 > **Deployment Model:** Merchant self-hosts Hyperswitch Orchestration Layer
 >
-> **PCI Scope:** Outsourced to an external vault provider like VGS
+> **PCI Scope:** Outsourced to an external vault provider like SaaS Hyperswitch Vault, VGS
 
 ### Overview
 
@@ -26,6 +26,7 @@ This architecture gives merchants full control over orchestration logic, routing
 
 #### **Supported providers include (but are not limited to):**
 
+* **SaaS Hyperswitch Vault** — Hyperswitch's managed PCI-compliant vault service. Merchants can self-host the orchestration layer while leveraging Hyperswitch's SaaS vault for tokenization and storage. See [Configuration Guide](configuration.md) for API key and Profile ID setup.
 * **VGS (Very Good Security)** — Provides inbound/outbound proxy routes for card data. Hyperswitch sends PSP payloads through VGS's forward proxy, which replaces tokens with raw card data in transit.
 * **Tokenex** — Offers a transparent gateway proxy. Hyperswitch sends tokenized payloads to Tokenex's proxy, which detokenizes and forwards to the PSP.
 * **Any vault with a proxy/detokenize API** — Hyperswitch's modular vault architecture supports any vault that exposes a tokenize + proxy (or detokenize) HTTP API.
@@ -147,38 +148,43 @@ This abstraction allows merchants to:
 
 #### Configuring the External Vault in Juspay Hyperswitch
 
-To enable an external vault with your self-hosted Hyperswitch instance:
+To enable an external vault with your self-hosted Hyperswitch instance, follow these configuration steps:
 
-1. **Navigate to the Hyperswitch Dashboard:** `Orchestrator → Connector → Vault Processor`
-2. **Select your vault provider** (VGS, Tokenex, or Custom)
-3.  **Enter the required API credentials:**
+#### **Step 1: Generate API Key**
 
-    | Provider    | Required Credentials               |
-    | ----------- | ---------------------------------- |
-    | **VGS**     | Vault ID, Client Secret, Client ID |
-    | **Tokenex** | Token Scheme, API Key, Tokenex ID  |
-4. **Test the integration** — Use the Hyperswitch Payments API with the external vault token to verify the payment flows with the various PSP integrations
+1. **Access Dashboard** — Log into the Hyperswitch Control Centre.
+2. **Navigate to API Keys** — In the left-hand navigation menu, select **Developers > API Keys**.
+3. **Create Key** — Click **Create New API Key**.
+4. **Secure Storage** — Copy the generated key immediately and store it securely (it will not be shown again). Use this key in the `api-key` header for all Vault API calls.
 
-#### Environment Variables (Self-Hosted)
+<figure><img src="../../../.gitbook/assets/vault-api-keys.png" alt="API Keys Dashboard"><figcaption><p>Navigate to Developers > API Keys to create and manage your API credentials</p></figcaption></figure>
 
-When self-hosting, ensure the following environment configuration in your `config/development.toml` (or equivalent):
+#### **Step 2: Access Profile ID**
 
-```toml
-[vault]
-# Enable external vault integration
-enabled = true
+1. **Navigate to Payment Settings** — In the left-hand navigation menu, select **Developers > Payment Settings**.
+2. **Copy Profile ID** — Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
 
-# Vault provider: "juspay", "vgs", "tokenex", or "custom"
-provider = "juspay"
+<figure><img src="../../../.gitbook/assets/vault-profile-id.png" alt="Payment Settings - Profile ID"><figcaption><p>Navigate to Developers > Payment Settings to access your Profile ID</p></figcaption></figure>
 
-# Base URL for the vault API
-base_url = "https://vault.juspay.in"
+#### **Step 3: Enable Vault Connector**
 
-# Base URL for the vault proxy endpoint
-proxy_url = "https://proxy.vault.juspay.in"
-```
+1. **Navigate to Vault Processor** — In the left-hand navigation menu, select **Connectors > Vault Processor**.
+2. **Configure Vault Provider** — Add your vault provider credentials and configuration:
 
-> **Important:** Vault credentials should be stored securely (e.g., via environment variables or a secrets manager) and never committed to version control.
+<figure><img src="../../../.gitbook/assets/vault-enable-ext-vault.png" alt="Vault Processor Setup"><figcaption><p>Navigate to Connectors > Vault Processor to configure your vault provider</p></figcaption></figure>
+
+   **Required Credentials by Provider:**
+
+   | Provider                   | Required Credentials               |
+   | -------------------------- | ---------------------------------- |
+   | **SaaS Hyperswitch Vault** | API Key, Profile ID                |
+   | **VGS**                    | Vault ID, Client Secret, Client ID |
+   | **Tokenex**                | Token Scheme, API Key, Tokenex ID  |
+
+3. **Enable in Payment Settings** — Navigate to **Developers > Payment Settings**, under **Vault** tab, enable the vault and choose the vault processor from the dropdown, then click **Update**.
+
+<figure><img src="../../../.gitbook/assets/vault-enable-ext-vault-2.png" alt="Enable Vault in Payment Settings"><figcaption><p>Navigate to Developers > Payment Settings to enable your vault</p></figcaption></figure>
+
 
 ***
 
