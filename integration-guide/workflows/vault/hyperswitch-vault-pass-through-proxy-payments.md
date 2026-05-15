@@ -1,6 +1,5 @@
 ---
 description: Send payments to PSPs using Vault tokens without handling raw card data
-hidden: true
 icon: arrows-repeat
 metaLinks:
   alternates:

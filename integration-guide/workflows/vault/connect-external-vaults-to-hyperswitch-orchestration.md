@@ -1,7 +1,6 @@
 ---
 description: >-
   Connect third-party vaults to store cards with Hyperswitch SaaS orchestration
-hidden: true
 icon: plug
 metaLinks:
   alternates:
