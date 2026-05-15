@@ -24,7 +24,7 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 <tbody>
 <tr>
 <td rowspan="3" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>Vault Standalone</strong></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="self-hosted-and-in-house-pci.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="vault-standalone-saas-vault-pci.md">SaaS Hyperswitch Vault</a></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
 </tr>
