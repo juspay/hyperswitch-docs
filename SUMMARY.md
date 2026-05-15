@@ -16,8 +16,6 @@
   * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap/roadmap-q1-2024.md)
   * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap/roadmap-q4-2023.md)
 * [Playground](https://hs-demo.netlify.app/)
-* [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
-* [API reference](https://api-reference.hyperswitch.io/introduction)
 * [Hyperswitch architecture](about-hyperswitch/hyperswitch-architecture/README.md)
   * [Router](about-hyperswitch/hyperswitch-architecture/router.md)
   * [Storage](about-hyperswitch/hyperswitch-architecture/storage.md)
@@ -357,6 +355,8 @@
 
 ## Learn more
 
+* [API reference](https://api-reference.hyperswitch.io/introduction)
+* [Postman Collection](https://www.postman.com/hyperswitch/hyperswitch-development/overview)
 * [Connectors Supported](https://juspay.io/integrations)
 * [Hyperswitch Status](https://status.hyperswitch.io/)
 * [Release Notes](https://hyperswitch.io/release-notes)
