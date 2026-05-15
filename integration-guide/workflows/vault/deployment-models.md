@@ -22,50 +22,50 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 </tr>
 </thead>
 <tbody>
-<tr style="background-color: rgba(100, 100, 100, 0.1);">
-<td rowspan="3" style="vertical-align: middle;"><strong>Vault Standalone</strong></td>
-<td><a href="self-hosted-and-in-house-pci.md">SaaS Hyperswitch Vault</a></td>
-<td>Merchant PCI Environment</td>
-<td>Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
+<tr>
+<td rowspan="3" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>Vault Standalone</strong></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="self-hosted-and-in-house-pci.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
 </tr>
-<tr style="background-color: rgba(100, 100, 100, 0.1);">
-<td><a href="hyperswitch-vault-pass-through-proxy-payments.md">SaaS Hyperswitch Vault</a></td>
-<td>Non PCI Scope</td>
-<td>Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td>
+<tr>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="hyperswitch-vault-pass-through-proxy-payments.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Non PCI Scope</td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td>
 </tr>
-<tr style="background-color: rgba(100, 100, 100, 0.1);">
-<td><a href="connect-external-vaults-to-hyperswitch-orchestration.md">Third-Party Vault</a></td>
-<td>Merchant PCI Environment</td>
-<td>Merchants already using third-party vault providers like VGS, TokenEx, or similar services</td>
-</tr>
-<tr style="height: 10px;"><td colspan="4"></td></tr>
-<tr style="background-color: rgba(120, 120, 120, 0.1);">
-<td rowspan="3" style="vertical-align: middle;"><strong>Self-Hosted Pay Orchestrator</strong></td>
-<td><a href="self-hosted-and-in-house-pci.md">Self-Hosted Hyperswitch Vault</a></td>
-<td>PCI Environment</td>
-<td>Large enterprises requiring full control over both orchestration and payment data</td>
-</tr>
-<tr style="background-color: rgba(120, 120, 120, 0.1);">
-<td><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">SaaS Hyperswitch Vault</a></td>
-<td>Non-PCI</td>
-<td>Mid-size merchants needing orchestration flexibility without PCI burden</td>
-</tr>
-<tr style="background-color: rgba(120, 120, 120, 0.1);">
-<td><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">Third-Party Vault</a></td>
-<td>Non-PCI</td>
-<td>Businesses with existing vault investments (VGS, TokenEx) adding orchestration</td>
+<tr>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="connect-external-vaults-to-hyperswitch-orchestration.md">Third-Party Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Merchants already using third-party vault providers like VGS, TokenEx, or similar services</td>
 </tr>
 <tr style="height: 10px;"><td colspan="4"></td></tr>
-<tr style="background-color: rgba(100, 100, 100, 0.1);">
-<td rowspan="2" style="vertical-align: middle;"><strong>SaaS Pay Orchestrator</strong></td>
-<td><a href="saas-orchestration-with-juspay-vault.md">SaaS Hyperswitch Vault</a></td>
-<td>Managed by Hyperswitch</td>
-<td>Growing businesses seeking fully managed payment infrastructure</td>
+<tr>
+<td rowspan="3" style="vertical-align: middle; background-color: rgba(120, 120, 120, 0.1);"><strong>Self-Hosted Pay Orchestrator</strong></td>
+<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-and-in-house-pci.md">Self-Hosted Hyperswitch Vault</a></td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">PCI Environment</td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">Large enterprises requiring full control over both orchestration and payment data</td>
 </tr>
-<tr style="background-color: rgba(100, 100, 100, 0.1);">
-<td><a href="saas-orchestration-with-third-party-vault.md">Third-Party Vault</a></td>
-<td>Shared / External PCI Responsibility</td>
-<td>SaaS companies with compliance requirements for specific vault providers</td>
+<tr>
+<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">Non-PCI</td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">Mid-size merchants needing orchestration flexibility without PCI burden</td>
+</tr>
+<tr>
+<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">Third-Party Vault</a></td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">Non-PCI</td>
+<td style="background-color: rgba(120, 120, 120, 0.1);">Businesses with existing vault investments (VGS, TokenEx) adding orchestration</td>
+</tr>
+<tr style="height: 10px;"><td colspan="4"></td></tr>
+<tr>
+<td rowspan="2" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>SaaS Pay Orchestrator</strong></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="saas-orchestration-with-juspay-vault.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Managed by Hyperswitch</td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Growing businesses seeking fully managed payment infrastructure</td>
+</tr>
+<tr>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="saas-orchestration-with-third-party-vault.md">Third-Party Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">Shared / External PCI Responsibility</td>
+<td style="background-color: rgba(100, 100, 100, 0.1);">SaaS companies with compliance requirements for specific vault providers</td>
 </tr>
 </tbody>
 </table>
