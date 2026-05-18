@@ -11,7 +11,7 @@ Before the beginning of every quarter we come together to develop the next roadm
 
 👂And as always, we listen to your feedback and adapt our plans if needed.
 
-### Recap of Q4 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
+#### Recap of Q4 2025 <a href="#recap-of-q2-2024" id="recap-of-q2-2024"></a>
 
 **Connectors**
 
@@ -30,11 +30,9 @@ Before the beginning of every quarter we come together to develop the next roadm
 * **Guest checkout tokenization** – Token creation without customer creation in Hyperswitch, enabling secure and PCI compliant handling of guest one time and repeat transactions, with flexibility to map tokens to merchant owned identifiers
 * **Volatile tokenization** – Support for time bound temporary tokens for PAN and network token flows, enabling secure session based authorizations and one time payment experiences without long term vault storage
 
-**Revenue recovery**\
-\
-Account Updater to automatically refresh stored card credentials for expired, replaced, or reissued cards, improving continuity for stored payment methods and recovering failures tied to outdated card data
+**Revenue recovery** Account Updater to automatically refresh stored card credentials for expired, replaced, or reissued cards, improving continuity for stored payment methods and recovering failures tied to outdated card data
 
-#### Core Values <a href="#core-values" id="core-values"></a>
+**Core Values**
 
 Our core values have pretty much remained the same since the early days and here they are:
 
@@ -42,7 +40,7 @@ Our core values have pretty much remained the same since the early days and here
 * Staying `simple` and `super-lightweight`, and at the same time `reliable` and `scalable` payment switch
 * Being `community-first` in ideation, planning and execution of features
 
-### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
+#### Themes for Roadmap <a href="#themes-for-roadmap" id="themes-for-roadmap"></a>
 
 Last year, Hyperswitch was made more modular to provide businesses with focused solutions to specific payment-related problems. Hence, our roadmap includes updates for each module. A summary of these product modules is provided below :
 
@@ -53,9 +51,9 @@ Last year, Hyperswitch was made more modular to provide businesses with focused 
 5. **Reconciliation:** Improving Finops efficiency in multi-acquirer settlement reconciliation.
 6. **Cost Observability:** Tracking and reducing payment processing costs via PSP reports.
 
-## Roadmap <a href="#roadmap" id="roadmap"></a>
+### Roadmap <a href="#roadmap" id="roadmap"></a>
 
-#### Core Orchestration
+**Core Orchestration**
 
 **Platform Managed Payments**
 
@@ -77,7 +75,7 @@ We plan to enable Hyperswitch to act as a relay to orchestrate incremental and p
 
 We plan to support installment-based payments across supported payment methods, enabling merchants to offer flexible payment options without changing their orchestration setup.
 
-#### Connectors
+**Connectors**
 
 **New Integrations**
 
@@ -89,7 +87,7 @@ We also plan to enhance existing integrations to expand payment method coverage 
 
 [Learn more about the existing Connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
-### Vault
+#### Vault <a href="#vault" id="vault"></a>
 
 **Multi Vault Support**
 
@@ -113,7 +111,7 @@ We plan to add analytics, audit trails, and observability capabilities for the V
 
 [Learn more about the existing Vault Services and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/vault)
 
-### Authentication and Checkout Experience
+#### Authentication and Checkout Experience <a href="#authentication-and-checkout-experience" id="authentication-and-checkout-experience"></a>
 
 **SDK Accessibility Enhancements**
 
@@ -145,7 +143,7 @@ We plan to support custom in SDK messaging so merchants can configure and displa
 
 [Learn more about the existing Authentication and Checkout Experience capabilities here.](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls)
 
-### Revenue Recovery
+#### Revenue Recovery <a href="#revenue-recovery" id="revenue-recovery"></a>
 
 **Advanced Retry Logic for Hard Declines**
 
@@ -161,7 +159,7 @@ We plan to support using self-hosted orchestration with Juspay-hosted revenue re
 
 [Learn more about the existing Revenue Recovery features and workflows here.](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
-### Reconciliation
+#### Reconciliation <a href="#reconciliation" id="reconciliation"></a>
 
 **Tolerance & Aging**
 
@@ -171,7 +169,7 @@ Aging provides visibility into unmatched transactions and enables configurable t
 
 [Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 
-### Control Centre
+#### Control Centre <a href="#control-centre" id="control-centre"></a>
 
 **Developer Observability & Self-Service Diagnostics**
 
@@ -189,8 +187,21 @@ We plan to introduce widgets for payment configuration and operations that can b
 
 We are building a self-serve Theme Management UI that allows merchants to configure and manage dashboard and email branding across **Organization, Merchant, and Profile** levels. Merchants can customize brand colors, sidebar styles, buttons, logos, favicons, and email branding, with a **live preview** to instantly visualize changes before applying them.
 
-Themes follow a clear precedence model (**Profile → Merchant → Organization**), enabling flexible overrides without duplication. Organizations can define a base theme, merchants can override it for distinct brands, and profiles can further customize when needed—ensuring consistent yet scalable branding across complex setup<br>
+Themes follow a clear precedence model (**Profile → Merchant → Organization**), enabling flexible overrides without duplication. Organizations can define a base theme, merchants can override it for distinct brands, and profiles can further customize when needed—ensuring consistent yet scalable branding across complex setup
 
 **Want to contribute to the roadmap?**
 
 [Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+
+Last updated 1 month ago
+
+**Compliance**
+
+* [Vulnerability Disclosure](https://hyperswitch.io/vulnerability-disclosure-policy)
+* [PCI DSS 4.0](https://hyperswitch.io/pci.pdf)
+* [ISO 27001:2022](https://hyperswitch.io/uaf.pdf)
+
+**Community**
+
+* [Slack](https://inviter.co/hyperswitch-slack)
+* [GitHub Discussion](https://github.com/juspay/hyperswitch/discussions)
