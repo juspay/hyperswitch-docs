@@ -8,9 +8,13 @@ metaLinks:
     - saas-orchestration-with-juspay-vault.md
 ---
 
-# SaaS Orchestration with Juspay Vault
+# SaaS Payments Orchestrator with Modular SaaS HS Vault
 
 This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles both orchestration and PCI responsibilities. Merchants can tokenize, vault, and process without any PCI exposure.
+
+{% hint style="info" %}
+**This flavour uses Pay-Then-Vault** — the payment happens first; the card is stored after a successful transaction. For Vault-first flows (store card, then pay via S2S), see [Vault-Then-Pay](../../payment-suite/payment-method-card/README.md).
+{% endhint %}
 
 ### Key Highlights
 
@@ -20,7 +24,7 @@ This is the fully managed Juspay Hyperswitch SaaS model, where Juspay handles bo
 
 #### SaaS orchestration - Payments and vaulting flow
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/vault-PCI-pay-with-vault.png" alt="Sequence diagram: SaaS orchestration payments and vaulting flow"><figcaption><p>SaaS orchestration — payments and vaulting flow (Init → Confirm → Tokenize)</p></figcaption></figure>
 
 The sequence diagram above outlines how a SaaS merchant performs payments and vaulting.
 

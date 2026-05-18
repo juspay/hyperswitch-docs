@@ -8,9 +8,16 @@ metaLinks:
     - ./
 ---
 
-# Multi-step Payments
+# Vault-Then-Pay
 
-Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+{% hint style="info" %}
+This section has been consolidated. The complete Vault-Then-Pay documentation — including the two-step integration pattern, SDK setup (React & JS), and S2S API reference — is now in:
+
+- **[Vault-Then-Pay overview](../../payment-suite/payment-method-card/README.md)** — concept, flow options
+- **[Vault SDK Integration](../../workflows/vault/sdk-integration.md)** — React and Vanilla JS step-by-step
+- **[Server-to-Server Vault Tokenization](../../workflows/vault/server-to-server-vault-tokenization.md)** — direct API tokenization
+- **[Vault Configuration](../../workflows/vault/configuration.md)** — API key setup
+{% endhint %}
 
 {% hint style="info" %}
 **Integration Path**

@@ -1,52 +1,49 @@
 ---
 description: >-
-  Learn about Payment Method (Card) flows for flexible payment processing with
-  tokenization and server-to-server API control
+  Vault a payment method first, then use the token to execute payments via
+  Server-to-Server API — giving you granular control over the payment lifecycle
 icon: hand-holding-circle-dollar
 metaLinks:
   alternates:
     - ./
 ---
 
-# Multi-Step Payments / Vault-First Payments
-
-Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
+# Vault-Then-Pay
 
 {% hint style="info" %}
-**Integration Path**
+**Choose this path when** you want to use the SDK exclusively for vaulting/storing card details. The actual payment is then executed via S2S API calls from your backend using the resulting `payment_method_id` token.
 
-**Server-to-Server (S2S) Payments (Tokenize followed by Payment)**
-
-Refer to this section if you intend to use the SDK exclusively for vaulting/storing card details. In this scenario, the actual payment execution is handled via S2S API calls from your backend to Hyperswitch, offering you more granular control over the transaction lifecycle.
+If you want payment and vaulting to happen together in a single SDK flow, see [Pay-Then-Vault](../payments/README.md).
 {% endhint %}
 
-Payment method flows leverage all the capabilities available in [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards). The primary goal here is to allow the business to control the payment journey via S2S APIs and a token or `payment_method_id`.
+### The Two-Step Pattern
 
-The business can use the Payment Method SDK or `/payment-methods` API to first capture the card details and create a `payment_method_id`.
-
-The business can then use the `payment_method_id` in `/payments` API to perform all functionalities supported by the [Payments](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) flow.
+1. **Vault** — Capture card details using the [Vault SDK](../../../workflows/vault/sdk-integration.md) or the [Server-to-Server API](../../../workflows/vault/server-to-server-vault-tokenization.md). This generates a `payment_method_id`.
+2. **Pay** — Pass the `payment_method_id` into the `/payments` API (or the Proxy endpoint) from your backend to execute the transaction.
 
 ### Payment Method Lifecycle
 
-The Payment Method flow leverages the full suite of Hyperswitch [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) capabilities while granting businesses granular control over the user journey. By utilizing Server-to-Server (S2S) APIs and unique identifiers `payment_method_id`, businesses can separate the collection of payment credentials from the actual transaction logic.
+The `payment_method_id` is a unique, reusable token that maps a `customer_id` to a specific payment instrument (card, wallet, bank account). The same instrument from the same customer always resolves to the same ID.
 
-#### The Two-Step Integration Pattern
+| Customer ID | Payment Instrument | Payment Method ID |
+|-------------|-------------------|-------------------|
+| 123 | Visa ending in 4242 | `PM1` |
+| 123 | Mastercard ending in 1111 | `PM2` |
+| 456 | Visa ending in 4242 | `PM3` |
+| 123 | PayPal (`user@email.com`) | `PM4` |
 
-1.  **Credential Capture & Vaulting**
+### Integration Options in This Section
 
-    The business initiates the flow by capturing payment details (such as cards, wallets, or bank accounts) using either the Payment Method SDK or the `/payment-methods` API. This process securely vaults the payment instrument and generates a unique `payment_method_id`.
-2.  **Transaction Execution**
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td><strong>Token Led Payment</strong></td><td>Execute a payment using a <code>payment_method_id</code> via S2S API</td><td><a href="payments.md">payments.md</a></td></tr>
+<tr><td><strong>Proxy Payment</strong></td><td>Send PSP payment requests through the Vault Proxy — raw card data never leaves the Vault</td><td><a href="proxy.md">proxy.md</a></td></tr>
+<tr><td><strong>Payment Methods Management</strong></td><td>Embed the Vault SDK widget to let customers view, add and delete saved cards</td><td><a href="payment-methods-management.md">payment-methods-management.md</a></td></tr>
+</tbody></table>
 
-    Once the `payment_method_id` is generated, it serves as a reusable token. The business can pass this ID into the /payments API to execute any supported [Payment](https://docs.hyperswitch.io/~/revisions/Moc8cqgBbfb8T8KrBi8V/about-hyperswitch/payment-suite-1/payments-cards) functionality without re-collecting sensitive data.
+### Vault Integration Reference
 
-The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account).
+For the full SDK and API setup guides used in this flow, see:
 
-* Logic: A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`.
-* Scope: This uniqueness applies across all payment types, including cards, wallets, and bank details.
-
-| **Customer ID** | **Payment Instrument**            | **Payment Method ID** |
-| --------------- | --------------------------------- | --------------------- |
-| 123             | Visa ending in 4242               | `PM1`                 |
-| 123             | Mastercard ending in 1111         | `PM2`                 |
-| 456             | Visa ending in 4242               | `PM3`                 |
-| 123             | PayPal Account (`user@email.com`) | `PM4`                 |
+- [Vault SDK Integration](../../../workflows/vault/sdk-integration.md) — React and Vanilla JS step-by-step
+- [Server-to-Server Vault Tokenization](../../../workflows/vault/server-to-server-vault-tokenization.md) — direct API tokenization for PCI-certified backends
+- [Vault Configuration](../../../workflows/vault/configuration.md) — API key generation and dashboard setup

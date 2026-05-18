@@ -10,9 +10,11 @@ metaLinks:
     - payment-methods-management-sdk.md
 ---
 
-# Payment Methods Management SDK
+# Payment Methods Management SDK (Legacy)
 
-### Secure Tokenization using Juspay Hyperswitch's PCI Compliant Payment Methods Management SDK
+{% hint style="warning" %}
+This page has been superseded. Please refer to the consolidated [Vault SDK Integration](sdk-integration.md) guide which covers both React and Vanilla JS in one place.
+{% endhint %}
 
 The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 

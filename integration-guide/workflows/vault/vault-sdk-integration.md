@@ -11,7 +11,9 @@ metaLinks:
 
 # Vault SDK Integration
 
-### Secure Tokenization using Juspay Hyperswitch's PCI Compliant Vault SDK
+{% hint style="warning" %}
+This page has been superseded. Please refer to the consolidated [Vault SDK Integration](sdk-integration.md) guide which covers both React and Vanilla JS in one place.
+{% endhint %}
 
 The Juspay Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
@@ -43,14 +45,14 @@ Add an endpoint on your server that creates payment methods sessions. This endpo
 > For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
 
 {% hint style="info" %}
-All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
+All Vault API requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
 
 To generate your Vault API keys, follow these steps:
 
 1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
 2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
 3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
+4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API calls.
 
 **Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 {% endhint %}
@@ -62,7 +64,7 @@ const app = express();
 app.post(`/create-payment-methods-session`, async (req, res) => {
   try {
     const response = await fetch(
-      `https://sandbox.hyperswitch.io/v2/payment-methods-session`,
+      `https://sandbox.hyperswitch.io/v1/payment-methods-session`,
       {
         method: "POST",
         headers: {

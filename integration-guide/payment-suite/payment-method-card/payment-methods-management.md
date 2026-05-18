@@ -12,25 +12,22 @@ metaLinks:
 
 The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
-### Key Features of Payment Method Management in Hyperswitch
+{% hint style="info" %}
+**Full SDK reference:** This page provides a quick-start guide. For the complete React + JS integration walkthrough (including `confirmTokenization`, error handling, and appearance customization), see [Vault SDK Integration](../../../workflows/vault/sdk-integration.md).
+{% endhint %}
 
-Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
+### Key Features
 
-#### Payment Method Creation
+| Feature | Description |
+|---------|-------------|
+| **Payment Method Creation** | Allow customers to save new payment methods during checkout |
+| **Storing Payment Methods** | Securely store card details — customers never re-enter information |
+| **Retrieving Payment Methods** | Load a customer's saved methods by `customer_id` |
+| **Deleting / Deactivating** | Let customers remove outdated payment methods |
 
-Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
+### Prerequisites
 
-#### Storing Payment Methods
-
-Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
-
-#### Retrieving Payment Methods
-
-Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
-
-#### Deleting/Deactivating Payment Methods
-
-Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
+Before integrating, generate your **Vault API Key** and note your **Profile ID**. See [Vault Configuration](../../../workflows/vault/configuration.md).
 
 ### Integration Guide
 
@@ -87,7 +84,9 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
+> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials. See [Vault Configuration](../../../workflows/vault/configuration.md).
+
+API reference: [Payment Method Session — Create](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)
 
 #### 2. Client-Side Integration
 
