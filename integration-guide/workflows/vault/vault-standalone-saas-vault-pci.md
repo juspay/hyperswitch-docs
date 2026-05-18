@@ -4,7 +4,7 @@ description: >-
 icon: shield-check
 ---
 
-# Vault Standalone with SaaS Hyperswitch General Purpose Vault (PCI Environment)
+# Standalone Vaulting Service with SaaS Hyperswitch General Purpose Vault (PCI Environment)
 
 This deployment model enables PCI-compliant merchants to leverage Hyperswitch's SaaS Vault to securely store raw payment method data and retrieve it when needed. Merchants can use this raw data with their own payment processing engine, maintaining full control over how and when payment data is used while benefiting from Hyperswitch's robust vault infrastructure.
 

@@ -25,7 +25,7 @@ This setup ensures full data ownership while leveraging Hyperswitch's built-in P
 
 ### Self-hosted orchestration - Payments and vaulting flow
 
-<figure><img src="../../../.gitbook/assets/vault-self-host-and-in-house-pci.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/vault-self-hosted-pci-hs.png" alt=""><figcaption></figcaption></figure>
 
 The sequence diagram above outlines how a self-hosted merchant performs payments and vaulting.
 

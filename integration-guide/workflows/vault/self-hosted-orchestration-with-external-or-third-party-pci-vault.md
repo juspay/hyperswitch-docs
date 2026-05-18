@@ -8,11 +8,11 @@ metaLinks:
     - self-hosted-orchestration-with-external-or-third-party-pci-vault.md
 ---
 
-# Self-Hosted Orchestration with external or third party PCI Vault
+# Self-Hosted Orchestration with Third Party PCI Vault
 
 > **Deployment Model:** Merchant self-hosts Hyperswitch Orchestration Layer
 >
-> **PCI Scope:** Outsourced to an external vault provider like SaaS Hyperswitch Vault, VGS
+> **PCI Scope:** Outsourced to an external vault provider like VGS, TokenEx
 
 ### Overview
 
@@ -26,58 +26,17 @@ This architecture gives merchants full control over orchestration logic, routing
 
 #### **Supported providers include (but are not limited to):**
 
-* **SaaS Hyperswitch Vault** — Hyperswitch's managed PCI-compliant vault service. Merchants can self-host the orchestration layer while leveraging Hyperswitch's SaaS vault for tokenization and storage. See [Configuration Guide](configuration.md) for API key and Profile ID setup.
 * **VGS (Very Good Security)** — Provides inbound/outbound proxy routes for card data. Hyperswitch sends PSP payloads through VGS's forward proxy, which replaces tokens with raw card data in transit.
 * **Tokenex** — Offers a transparent gateway proxy. Hyperswitch sends tokenized payloads to Tokenex's proxy, which detokenizes and forwards to the PSP.
-* **Any vault with a proxy/detokenize API** — Hyperswitch's modular vault architecture supports any vault that exposes a tokenize + proxy (or detokenize) HTTP API.
+* **Any vault that supports SDK to accept PCI raw info and have proxy API for detokenizing and making call to PSP** — Hyperswitch's modular vault architecture supports any vault that provides an SDK for secure card collection and a proxy/detokenize API.
 
 Hyperswitch's modular vault architecture supports configuring multiple vault connectors simultaneously. You can route different merchants or payment methods to different vaults based on your business logic.
 
 ### Integration Steps
 
-#### Option 1: Merchant Managed Client
+#### Self-Hosted Hyperswitch Managed Merchant Client
 
-The merchant client/checkout integrates the external vault SDK **directly** which takes away the PCI scope for the merchant, collect the card details and tokenizes it. The merchant server then passes the resulting token and metadata to Hyperswitch Backend for payment processing.
-
-<details>
-
-<summary><strong>New User Payment Flow</strong></summary>
-
-* The merchant loads the external vault SDK in their checkout page.
-* The end user enters their card details directly in the external vault SDK.
-* The external vault SDK tokenizes the card and returns a `vault_token` and associated card metadata.
-* The merchant calls the [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create) to send the `vault_token` and card metadata to the self-hosted Hyperswitch backend.
-* Hyperswitch constructs the PSP payload using the `vault_token`.
-* The PSP payload (containing the `vault_token`) is sent to the **Proxy endpoint** of the external vault.
-* The external vault replaces the `vault_token` with the raw card and forwards the request to the PSP.
-* The PSP responds with `approved` or `declined` along with a `psp_token`. The vault proxy relays this response back to Hyperswitch.
-* Hyperswitch generates a `payment_method_id` linking `customer_id`, `vault_token`, and `psp_token`.
-* The `payment_method_id` and `vault_token` are returned to the merchant via webhooks.
-
-</details>
-
-<details>
-
-<summary><strong>Repeat User Payment Flow</strong></summary>
-
-* The merchant retrieves the customer's stored payment methods using the [Payment Method — List Customer Saved Payment Methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--list-customer-saved-payment-methods-v1) API with the `customer_id`
-* The merchant calls the [Payments Create API](https://api-reference.hyperswitch.io/v1/payments/payments--create) with the corresponding `payment_method_id`
-* Hyperswitch resolves the `payment_method_id` to identify the associated `psp_token` and processes the payment by sending the transaction to the corresponding PSP as a MIT
-
-</details>
-
-<details>
-
-<summary><strong>Merchant-Initiated Transaction (MIT) Flow</strong></summary>
-
-* The merchant triggers an [MIT or Recurring transaction](https://docs.hyperswitch.io/about-hyperswitch/payment-suite-1/payments-cards/recurring-payments) using the `payment_method_id.`
-* Hyperswitch resolves the `payment_method_id` to identify the associated `psp_token` and processes the payment by sending the transaction to the corresponding PSP as a MIT
-
-</details>
-
-#### Option 2: Juspay Hyperswitch Managed Merchant Client
-
-This is an extension of the previous approach where instead of the merchant client directly mounting the external Vault SDK on their checkout client, merchant client mounts the Hyperswitch SDK which internally loads the external Vault SDK and handles token management.
+The merchant loads the **Hyperswitch Unified Checkout SDK**, which embeds the **Third Party Vault SDK** to collect card information for tokenization via Third Party vault.
 
 <details>
 
@@ -116,13 +75,7 @@ This is an extension of the previous approach where instead of the merchant clie
 
 </details>
 
-<details>
-
-<summary><strong>Flow Diagram</strong></summary>
-
-
-
-</details>
+<figure><img src="../../../.gitbook/assets/vault-self-hosted-hs-pay-with-thirdparty-vault-2.png" alt="Self-Hosted Orchestration with Third Party Vault Flow"><figcaption><p>Payment flow showing self-hosted orchestration layer with Third Party Vault</p></figcaption></figure>
 
 ### Key Concepts
 
@@ -177,7 +130,6 @@ To enable an external vault with your self-hosted Hyperswitch instance, follow t
 
    | Provider                   | Required Credentials               |
    | -------------------------- | ---------------------------------- |
-   | **SaaS Hyperswitch Vault** | API Key, Profile ID                |
    | **VGS**                    | Vault ID, Client Secret, Client ID |
    | **Tokenex**                | Token Scheme, API Key, Tokenex ID  |
 

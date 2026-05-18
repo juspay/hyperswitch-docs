@@ -49,7 +49,7 @@ In this approach, the Hyperswitch SDK is used to capture card details, but card 
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/vault-saas-pay-third-party-vault.png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Juspay Hyperswitch managed client with Third-Party Vault's card form
 
@@ -80,7 +80,7 @@ In this flow, the Third-Party Vault SDK is layered directly onto the Hyperswitch
 
 1. The merchant can perform the [MIT or Recurring transactions](../../payment-suite/payments/recurring-payments.md) using `payment_method_id`
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/vault-saas-pay-third-party-vault-2.png" alt=""><figcaption></figcaption></figure>
 
 #### 3. Merchant managed client with third-party vault's card form
 

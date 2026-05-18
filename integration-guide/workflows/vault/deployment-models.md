@@ -23,13 +23,13 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 </thead>
 <tbody>
 <tr>
-<td rowspan="3" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>Vault Standalone</strong></td>
+<td rowspan="3" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>Standalone Vaulting Service</strong></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);"><a href="vault-standalone-saas-vault-pci.md">SaaS Hyperswitch Vault</a></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
 </tr>
 <tr>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="hyperswitch-vault-pass-through-proxy-payments.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="vault-standalone-saas-vault-non-pci.md">SaaS Hyperswitch Vault</a></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Non PCI Scope</td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td>
 </tr>
@@ -40,13 +40,13 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 </tr>
 <tr style="height: 10px;"><td colspan="4"></td></tr>
 <tr>
-<td rowspan="3" style="vertical-align: middle; background-color: rgba(120, 120, 120, 0.1);"><strong>Self-Hosted Pay Orchestrator</strong></td>
+<td rowspan="3" style="vertical-align: middle; background-color: rgba(120, 120, 120, 0.1);"><strong>Self-Hosted Payments Orchestrator with Vaulting Service</strong></td>
 <td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-and-in-house-pci.md">Self-Hosted Hyperswitch Vault</a></td>
 <td style="background-color: rgba(120, 120, 120, 0.1);">PCI Environment</td>
 <td style="background-color: rgba(120, 120, 120, 0.1);">Large enterprises requiring full control over both orchestration and payment data</td>
 </tr>
 <tr>
-<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">SaaS Hyperswitch Vault</a></td>
+<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-saas-vault.md">SaaS Hyperswitch Vault</a></td>
 <td style="background-color: rgba(120, 120, 120, 0.1);">Non-PCI</td>
 <td style="background-color: rgba(120, 120, 120, 0.1);">Mid-size merchants needing orchestration flexibility without PCI burden</td>
 </tr>
@@ -57,7 +57,7 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 </tr>
 <tr style="height: 10px;"><td colspan="4"></td></tr>
 <tr>
-<td rowspan="2" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>SaaS Pay Orchestrator</strong></td>
+<td rowspan="2" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>SaaS Payments Orchestrator with Vaulting Service</strong></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);"><a href="saas-orchestration-with-juspay-vault.md">SaaS Hyperswitch Vault</a></td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Managed by Hyperswitch</td>
 <td style="background-color: rgba(100, 100, 100, 0.1);">Growing businesses seeking fully managed payment infrastructure</td>
