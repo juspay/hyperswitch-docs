@@ -9,6 +9,16 @@ metaLinks:
 
 # Deploy on Local using Helm Charts and Minikube
 
+### **One-click setup**
+
+Copy and paste the below in your terminal. The script will check for missing prerequisites (kubectl, helm, curl, jq) and install any that are missing, spin up a local Kubernetes cluster, deploy Hyperswitch, configure a merchant account and business profile, add 4 dummy connectors (stripe\_test, paypal\_test, fauxpay, pretendpay), set up routing rules, and seed 50 test transactions across all connectors
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/juspay/hyperswitch/refs/heads/main/scripts/hyperswitch-explore.sh)
+```
+
+Or review the deployment guide given below.&#x20;
+
 ### **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
 ### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
