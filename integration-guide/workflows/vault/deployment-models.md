@@ -12,64 +12,25 @@ metaLinks:
 
 Juspay Hyperswitch supports multiple vault deployment models to match your PCI profile and infrastructure preferences. The table below summarizes each option; click a row to read the full integration guide.
 
-<table>
-<thead>
-<tr>
-<th width="250">Deployment Model</th>
-<th width="200">Vault Options</th>
-<th width="200">PCI Ownership / Scope</th>
-<th>Example Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="3" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>Standalone Vaulting Service</strong></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="vault-standalone-saas-vault-pci.md">SaaS Hyperswitch Vault</a></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td>
-</tr>
-<tr>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="vault-standalone-saas-vault-non-pci.md">SaaS Hyperswitch Vault</a></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Non PCI Scope</td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td>
-</tr>
-<tr>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="connect-external-vaults-to-hyperswitch-orchestration.md">Third-Party Vault</a></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Merchant PCI Environment</td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Merchants already using third-party vault providers like VGS, TokenEx, or similar services</td>
-</tr>
-<tr style="height: 10px;"><td colspan="4"></td></tr>
-<tr>
-<td rowspan="3" style="vertical-align: middle; background-color: rgba(120, 120, 120, 0.1);"><strong>Self-Hosted Payments Orchestrator with Vaulting Service</strong></td>
-<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-and-in-house-pci.md">Self-Hosted Hyperswitch Vault</a></td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">PCI Environment</td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">Large enterprises requiring full control over both orchestration and payment data</td>
-</tr>
-<tr>
-<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-saas-vault.md">SaaS Hyperswitch Vault</a></td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">Non-PCI</td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">Mid-size merchants needing orchestration flexibility without PCI burden</td>
-</tr>
-<tr>
-<td style="background-color: rgba(120, 120, 120, 0.1);"><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">Third-Party Vault</a></td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">Non-PCI</td>
-<td style="background-color: rgba(120, 120, 120, 0.1);">Businesses with existing vault investments (VGS, TokenEx) adding orchestration</td>
-</tr>
-<tr style="height: 10px;"><td colspan="4"></td></tr>
-<tr>
-<td rowspan="2" style="vertical-align: middle; background-color: rgba(100, 100, 100, 0.1);"><strong>SaaS Payments Orchestrator with Vaulting Service</strong></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="saas-orchestration-with-juspay-vault.md">SaaS Hyperswitch Vault</a></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Managed by Hyperswitch</td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Growing businesses seeking fully managed payment infrastructure</td>
-</tr>
-<tr>
-<td style="background-color: rgba(100, 100, 100, 0.1);"><a href="saas-orchestration-with-third-party-vault.md">Third-Party Vault</a></td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">Shared / External PCI Responsibility</td>
-<td style="background-color: rgba(100, 100, 100, 0.1);">SaaS companies with compliance requirements for specific vault providers</td>
-</tr>
-</tbody>
-</table>
+**Deployment Model: Standalone Vaulting Service**
+
+<table><thead><tr><th width="200">Vault Options</th><th width="200">PCI Ownership / Scope</th><th>Example Use Case</th></tr></thead><tbody><tr><td><a href="vault-standalone-saas-vault-pci.md">SaaS Hyperswitch Vault</a></td><td>Merchant PCI Environment</td><td>Financial institutions requiring full data sovereignty and PCI control with raw payment method responses</td></tr><tr><td><a href="vault-standalone-saas-vault-non-pci.md">SaaS Hyperswitch Vault</a></td><td>Non PCI Scope</td><td>Merchants wanting to avoid PCI scope while maintaining existing PSP relationships via Proxy API</td></tr><tr><td><a href="connect-external-vaults-to-hyperswitch-orchestration.md">Third-Party Vault</a></td><td>Merchant PCI Environment</td><td>Merchants already using third-party vault providers like VGS, TokenEx, or similar services</td></tr></tbody></table>
+
+**Deployment Model: Self-Hosted Payments Orchestrator with Vaulting Service**
+
+|                                                                                          |                 |                                                                                   |
+| ---------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------- |
+| [Self-Hosted Hyperswitch Vault](self-hosted-and-in-house-pci.md)                         | PCI Environment | Large enterprises requiring full control over both orchestration and payment data |
+| [SaaS Hyperswitch Vault](self-hosted-orchestration-with-saas-vault.md)                   | Non-PCI         | Mid-size merchants needing orchestration flexibility without PCI burden           |
+| [Third-Party Vault](self-hosted-orchestration-with-external-or-third-party-pci-vault.md) | Non-PCI         | Businesses with existing vault investments (VGS, TokenEx) adding orchestration    |
+
+**Deployment Model: SaaS Payments Orchestrator with Vaulting Service**
+
+|                                                                   |                                      |                                                                          |
+| ----------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------ |
+| [SaaS Hyperswitch Vault](saas-orchestration-with-juspay-vault.md) | Managed by Hyperswitch               | Growing businesses seeking fully managed payment infrastructure          |
+| [Third-Party Vault](saas-orchestration-with-third-party-vault.md) | Shared / External PCI Responsibility | SaaS companies with compliance requirements for specific vault providers |
 
 <div align="center"><img src="../../../.gitbook/assets/vault-external-vaults.png" alt=""></div>
 
-All deployment models share the same `payment_method_id` token standard and are compatible with the [Vault-Then-Pay](../../payment-suite/payment-method-card/README.md) payment flow.
+All deployment models share the same `payment_method_id` token standard and are compatible with the [Vault-Then-Pay](../../payment-suite/payment-method-card/) payment flow.
