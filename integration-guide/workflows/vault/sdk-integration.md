@@ -1,23 +1,23 @@
 ---
 description: >-
   Tokenize cards and manage saved payment methods using Juspay Hyperswitch's
-  PCI-compliant Vault SDK — available for React and Vanilla JS
+  PCI-compliant Vault SDK - available for React and Vanilla JS
 icon: desktop
 metaLinks:
   alternates:
     - sdk-integration.md
 ---
 
-# Vault SDK Integration
+# SDK
 
-The Juspay Hyperswitch Vault SDK provides a secure, PCI-compliant iframe for merchants to collect, store, and manage customer payment methods — without raw card data ever touching your servers.
+The Juspay Hyperswitch Vault SDK provides a secure, PCI-compliant iframe for merchants to collect, store, and manage customer payment methods - without raw card data ever touching your servers.
 
 ### Key Benefits
 
-* **Minimal PCI scope** — Card data is captured inside a Hyperswitch-hosted iframe; your servers only ever see tokens.
-* **Pre-built Payment Methods Management UI** — Customers can view, add, and delete saved cards through the embedded widget.
-* **One-click repeat purchases** — Reuse a `payment_method_id` for future payments without re-collecting card details.
-* **Customizable appearance** — Theme the widget to match your brand.
+* **Minimal PCI scope** - Card data is captured inside a Hyperswitch-hosted iframe; your servers only ever see tokens.
+* **Pre-built Payment Methods Management UI** - Customers can view, add, and delete saved cards through the embedded widget.
+* **One-click repeat purchases** - Reuse a `payment_method_id` for future payments without re-collecting card details.
+* **Customizable appearance** - Theme the widget to match your brand.
 
 ### Before You Start
 
@@ -25,36 +25,36 @@ To integrate with the Hyperswitch Vault, you'll need to configure your API crede
 
 #### **Step 1: Generate API Key**
 
-1. **Access Dashboard** — Log into the Hyperswitch Control Centre.
-2. **Navigate to API Keys** — In the left-hand navigation menu, select **Developers > API Keys**.
-3. **Create Key** — Click **Create New API Key**.
-4. **Secure Storage** — Copy the generated key immediately and store it securely (it will not be shown again). Use this key in the `Authorization: api-key=<YOUR_VAULT_API_KEY>` header for all Vault API calls.
+1. **Access Dashboard** - Log into the Hyperswitch Control Centre.
+2. **Navigate to API Keys** - In the left-hand navigation menu, select **Developers > API Keys**.
+3. **Create Key** - Click **Create New API Key**.
+4. **Secure Storage** - Copy the generated key immediately and store it securely (it will not be shown again). Use this key in the `Authorization: api-key=<YOUR_VAULT_API_KEY>` header for all Vault API calls.
 
 <figure><img src="../../../.gitbook/assets/vault-api-keys.png" alt="API Keys Dashboard"><figcaption><p>Navigate to Developers > API Keys to create and manage your API credentials</p></figcaption></figure>
 
 #### **Step 2: Access Profile ID**
 
-1. **Navigate to Payment Settings** — In the left-hand navigation menu, select **Developers > Payment Settings**.
-2. **Copy Profile ID** — Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
+1. **Navigate to Payment Settings** - In the left-hand navigation menu, select **Developers > Payment Settings**.
+2. **Copy Profile ID** - Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
 
 <figure><img src="../../../.gitbook/assets/vault-profile-id.png" alt="Payment Settings - Profile ID"><figcaption><p>Navigate to Developers > Payment Settings to access your Profile ID</p></figcaption></figure>
 
----
+***
 
-## Step 1 — Server-Side Setup: Create a Payment Method Session Endpoint
+## Step 1 - Server-Side Setup: Create a Payment Method Session Endpoint
 
-Your backend creates a payment method session and returns the `id` and `clientSecret` to your frontend. The client uses these to initialize the SDK.
+Your backend creates a payment method session and returns the `sdkAuthorization` to your frontend. The client uses this to initialize the SDK.
 
 > Never share your Vault API Key with your client application.
 
 ```javascript
-// Node.js / Express example
+// Example usage
 const app = express();
 
 app.post("/create-payment-method-session", async (req, res) => {
   try {
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
       {
         method: "POST",
         headers: {
@@ -62,7 +62,7 @@ app.post("/create-payment-method-session", async (req, res) => {
           "x-profile-id": YOUR_PROFILE_ID,
           Authorization: `api-key=${YOUR_VAULT_API_KEY}`,
         },
-        body: JSON.stringify(req.body), // must include customer_id
+        body: JSON.stringify(req.body),
       }
     );
     const data = await response.json();
@@ -75,8 +75,7 @@ app.post("/create-payment-method-session", async (req, res) => {
     }
 
     res.json({
-      id: data.id,
-      clientSecret: data.client_secret,
+      sdkAuthorization: data.sdk_authorization,
     });
   } catch (error) {
     console.error("Server Error:", error);
@@ -87,27 +86,28 @@ app.post("/create-payment-method-session", async (req, res) => {
 
 > Replace `YOUR_PROFILE_ID` and `YOUR_VAULT_API_KEY` with your credentials. See [Vault Configuration](configuration.md).
 
+> **Note:** Please ensure that the `customer_id` is included in the request body when creating a payment method session. For more details, kindly refer to the [API reference documentation for customer creation](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1).
+
 API reference: [Payment Method Session — Create](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)
 
----
+***
 
-## Step 2 — Client-Side Integration
+## Step 2 - Client-Side Integration
 
 Choose your frontend framework:
 
 {% tabs %}
 {% tab title="React" %}
+#### React Integration
 
-### React Integration
-
-#### 2.1 Install Libraries
+**2.1 Install Libraries**
 
 ```bash
 npm install @juspay-tech/hyper-js
 npm install @juspay-tech/react-hyper-js
 ```
 
-#### 2.2 Initialize HyperLoader
+**2.2 Initialize HyperLoader**
 
 Configure with your **publishable key** and **profile ID** (safe for frontend):
 
@@ -119,20 +119,14 @@ const hyperPromise = loadHyper(
   {
     publishableKey: "YOUR_PUBLISHABLE_KEY",
     profileId: "YOUR_PROFILE_ID",
-  },
-  {
-    customBackendUrl: "BE_URL", // optional: your backend proxy URL
-    env: "ENVIRONMENT",        // "sandbox" or "production"
-    version: "VERSION",
   }
 );
 ```
 
-#### 2.3 Fetch Session Details
+**2.3 Fetch Session Details**
 
 ```javascript
-const [pmClientSecret, setPmClientSecret] = useState(null);
-const [pmSessionId, setPmSessionId] = useState(null);
+const [sdkAuthorization, setSdkAuthorization] = useState(null);
 
 useEffect(() => {
   fetch("/create-payment-method-session", {
@@ -142,23 +136,21 @@ useEffect(() => {
   })
     .then((res) => res.json())
     .then((data) => {
-      setPmClientSecret(data.clientSecret);
-      setPmSessionId(data.id);
+      setSdkAuthorization(data.sdkAuthorization);
     });
 }, []);
 ```
 
-#### 2.4 Mount the HyperManagementElements Component
+**2.4 Mount the HyperManagementElements Component**
 
 ```javascript
 const options = {
-  pmSessionId: pmSessionId,
-  pmClientSecret: pmClientSecret,
+  sdkAuthorization: sdkAuthorization,
 };
 
 return (
   <div className="App">
-    {pmSessionId && pmClientSecret && hyperPromise && (
+    {sdkAuthorization && hyperPromise && (
       <HyperManagementElements options={options} hyper={hyperPromise}>
         <PaymentMethodsManagementElementForm />
       </HyperManagementElements>
@@ -167,7 +159,7 @@ return (
 );
 ```
 
-#### 2.5 Access Hyper Hooks in the Child Component
+**2.5 Access Hyper Hooks in the Child Component**
 
 ```javascript
 import { useHyper, useWidgets } from "@juspay-tech/react-hyper-js";
@@ -176,7 +168,7 @@ const hyper = useHyper();
 const widgets = useWidgets();
 ```
 
-#### 2.6 Render the Payment Methods Management Element
+**2.6 Render the Payment Methods Management Element**
 
 ```javascript
 import { PaymentMethodsManagementElement } from "@juspay-tech/react-hyper-js";
@@ -189,12 +181,11 @@ const PaymentMethodsManagementElementForm = () => (
 );
 ```
 
-#### 2.7 Confirm Tokenization
+**2.7 Confirm Tokenization**
 
 Call `confirmTokenization()` when the user submits. Hyper handles any required 3DS redirect and returns the user to `return_url`.
 
-```javascript
-const handleSubmit = async (e) => {
+<pre class="language-javascript"><code class="lang-javascript">const handleSubmit = async (e) => {
   e.preventDefault();
   if (!hyper || !elements || isProcessing) return;
 
@@ -211,15 +202,10 @@ const handleSubmit = async (e) => {
     });
 
     if (response?.id) {
-      handleTokenRetrieval(response); // tokenization succeeded
-    } else {
+<strong>      handleTokenRetrieval(response); // tokenization succeeded
+</strong>    } else {
       const error = response?.error;
-      setMessage(
-        error?.message ||
-        (error?.type === "card_error" || error?.type === "validation_error"
-          ? error.message
-          : "An unexpected error occurred.")
-      );
+      setMessage(error?.message || "An unexpected error occurred.");
     }
   } catch (err) {
     setMessage(err.message || "An unexpected error occurred.");
@@ -227,15 +213,13 @@ const handleSubmit = async (e) => {
     setIsProcessing(false);
   }
 };
-```
-
+</code></pre>
 {% endtab %}
 
 {% tab title="JavaScript (Vanilla)" %}
+#### Vanilla JS Integration
 
-### Vanilla JS Integration
-
-#### 2.1 Define the HTML Placeholder
+**2.1 Define the HTML Placeholder**
 
 ```html
 <form id="payment-methods-management-form">
@@ -247,7 +231,7 @@ const handleSubmit = async (e) => {
 </form>
 ```
 
-#### 2.2 Load HyperLoader.js, Fetch Session, and Mount the Widget
+**2.2 Load HyperLoader.js, Fetch Session, and Mount the Widget**
 
 ```javascript
 async function initialize() {
@@ -257,12 +241,12 @@ async function initialize() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ customer_id: "YOUR_CUSTOMER_ID" }),
   });
-  const { id, clientSecret } = await response.json();
+  const { sdkAuthorization } = await response.json();
 
   // Step 2: Load HyperLoader.js
   const script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
 
   let hyper;
   let paymentMethodsManagementElements;
@@ -280,8 +264,7 @@ async function initialize() {
     // Step 5: Create the elements group
     paymentMethodsManagementElements = hyper.paymentMethodsManagementElements({
       appearance,
-      pmSessionId: id,
-      pmClientSecret: clientSecret,
+      sdkAuthorization: sdkAuthorization,
     });
 
     // Step 6: Mount the widget
@@ -320,18 +303,17 @@ async function initialize() {
 
 initialize();
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## What the Widget Does
 
 The `PaymentMethodsManagementElement` / `paymentMethodsManagement` widget embeds a secure iframe that lets customers:
 
-- **View** all saved payment methods
-- **Add** a new card (captured and tokenized without touching your servers)
-- **Delete** an existing saved payment method
+* **View** all saved payment methods
+* **Add** a new card (captured and tokenized without touching your servers)
+* **Delete** an existing saved payment method
 
-After a successful `confirmTokenization()`, you receive a `payment_method_id` that can be used in future [Vault-Then-Pay](../../payment-suite/payment-method-card/README.md) flows.
+After a successful `confirmTokenization()`, you receive a `payment_method_id` that can be used in future [Vault-Then-Pay](../../payment-suite/payment-method-card/) flows.
