@@ -8,22 +8,36 @@ metaLinks:
     - sdk-integration.md
 ---
 
-# SDK
+# Vault SDK - Payment methods management
 
 The Juspay Hyperswitch Vault SDK provides a secure, PCI-compliant iframe for merchants to collect, store, and manage customer payment methods - without raw card data ever touching your servers.
 
-### Key Benefits
+## What the Widget Does
+
+The `PaymentMethodsManagementElement` / `paymentMethodsManagement` widget embeds a secure iframe that lets customers:
+
+* **View** all saved payment methods
+* **Add** a new card (captured and tokenized without touching your servers)
+* **Delete** an existing saved payment method
+
+After a successful `confirmTokenization()`, you receive a `payment_method_id` that can be reused in future [Vault-Then-Pay](../../payment-suite/payment-method-card/) flows - no need to re-collect card details.
+
+***
+
+## Key Benefits
 
 * **Minimal PCI scope** - Card data is captured inside a Hyperswitch-hosted iframe; your servers only ever see tokens.
 * **Pre-built Payment Methods Management UI** - Customers can view, add, and delete saved cards through the embedded widget.
 * **One-click repeat purchases** - Reuse a `payment_method_id` for future payments without re-collecting card details.
 * **Customizable appearance** - Theme the widget to match your brand.
 
-### Before You Start
+***
 
-To integrate with the Hyperswitch Vault, you'll need to configure your API credentials and profile settings.
+## Before You Start
 
-#### **Step 1: Generate API Key**
+To integrate with the Hyperswitch Vault, configure your API credentials and profile settings first.
+
+### Step 1: Generate API Key
 
 1. **Access Dashboard** - Log into the Hyperswitch Control Centre.
 2. **Navigate to API Keys** - In the left-hand navigation menu, select **Developers > API Keys**.
@@ -32,10 +46,10 @@ To integrate with the Hyperswitch Vault, you'll need to configure your API crede
 
 <figure><img src="../../../.gitbook/assets/vault-api-keys.png" alt="API Keys Dashboard"><figcaption><p>Navigate to Developers > API Keys to create and manage your API credentials</p></figcaption></figure>
 
-#### **Step 2: Access Profile ID**
+### Step 2: Access Profile ID
 
 1. **Navigate to Payment Settings** - In the left-hand navigation menu, select **Developers > Payment Settings**.
-2. **Copy Profile ID** - Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that need to specify which merchant profile to use.
+2. **Copy Profile ID** - Locate and copy your **Profile ID** from the Payment Settings page. This ID is required for API calls that specify which merchant profile to use.
 
 <figure><img src="../../../.gitbook/assets/vault-profile-id.png" alt="Payment Settings - Profile ID"><figcaption><p>Navigate to Developers > Payment Settings to access your Profile ID</p></figcaption></figure>
 
@@ -43,12 +57,13 @@ To integrate with the Hyperswitch Vault, you'll need to configure your API crede
 
 ## Step 1 - Server-Side Setup: Create a Payment Method Session Endpoint
 
-Your backend creates a payment method session and returns the `sdkAuthorization` to your frontend. The client uses this to initialize the SDK.
+Your backend creates a payment method session and returns the `sdkAuthorization` to your frontend. The client uses this token to initialize the SDK.
 
-> Never share your Vault API Key with your client application.
+{% hint style="warning" %}
+Never expose your Vault API Key to your client application.
+{% endhint %}
 
 ```javascript
-// Example usage
 const app = express();
 
 app.post("/create-payment-method-session", async (req, res) => {
@@ -84,11 +99,13 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-> Replace `YOUR_PROFILE_ID` and `YOUR_VAULT_API_KEY` with your credentials. See [Vault Configuration](configuration.md).
+{% hint style="info" %}
+Replace `YOUR_PROFILE_ID` and `YOUR_VAULT_API_KEY` with your credentials. See [Vault Configuration](configuration.md).
 
-> **Note:** Please ensure that the `customer_id` is included in the request body when creating a payment method session. For more details, kindly refer to the [API reference documentation for customer creation](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1).
+Ensure that `customer_id` is included in the request body. Refer to the [API reference for customer creation](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1) for details.
+{% endhint %}
 
-API reference: [Payment Method Session — Create](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)
+**API reference:** [Payment Method Session — Create](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)
 
 ***
 
@@ -109,18 +126,16 @@ npm install @juspay-tech/react-hyper-js
 
 **2.2 Initialize HyperLoader**
 
-Configure with your **publishable key** and **profile ID** (safe for frontend):
+Configure with your **publishable key** and **profile ID** (safe for frontend use):
 
 ```javascript
 import { loadHyper } from "@juspay-tech/hyper-js";
 import { HyperManagementElements } from "@juspay-tech/react-hyper-js";
 
-const hyperPromise = loadHyper(
-  {
-    publishableKey: "YOUR_PUBLISHABLE_KEY",
-    profileId: "YOUR_PROFILE_ID",
-  }
-);
+const hyperPromise = loadHyper({
+  publishableKey: "YOUR_PUBLISHABLE_KEY",
+  profileId: "YOUR_PROFILE_ID",
+});
 ```
 
 **2.3 Fetch Session Details**
@@ -216,8 +231,8 @@ Call `confirmTokenization()` when the user submits. Hyper handles any required 3
 </code></pre>
 {% endtab %}
 
-{% tab title="JavaScript (Vanilla)" %}
-#### Vanilla JS Integration
+{% tab title="JavaScript" %}
+#### JavaScript Integration
 
 **2.1 Define the HTML Placeholder**
 
@@ -308,12 +323,34 @@ initialize();
 
 ***
 
-## What the Widget Does
+## See It in Action
 
-The `PaymentMethodsManagementElement` / `paymentMethodsManagement` widget embeds a secure iframe that lets customers:
+### First-Time User: Saving a New Card
 
-* **View** all saved payment methods
-* **Add** a new card (captured and tokenized without touching your servers)
-* **Delete** an existing saved payment method
+A new customer enters their card details inside the secure iframe. The card is tokenized and vaulted - your servers never see the raw number.
 
-After a successful `confirmTokenization()`, you receive a `payment_method_id` that can be used in future [Vault-Then-Pay](../../payment-suite/payment-method-card/) flows.
+<figure><img src="../../../.gitbook/assets/vault-flow-add-card.gif" alt="First-time user saving a card"><figcaption><p>New customer adding and vaulting a card through the Vault SDK widget</p></figcaption></figure>
+
+***
+
+### Returning User: Viewing Saved Cards
+
+A returning customer opens the widget and instantly sees all their previously vaulted cards - no need to re-enter any details.
+
+<figure><img src="../../../.gitbook/assets/vault-flow-repeat-user.gif" alt="Returning user viewing saved cards"><figcaption><p>Returning customer viewing their vaulted cards in the widget</p></figcaption></figure>
+
+***
+
+### Managing Saved Cards: Delete and Update
+
+Customers can view all their saved cards, remove ones they no longer need, and update existing card details - all from within the widget.
+
+<figure><img src="../../../.gitbook/assets/vault-flow-manage-cards.gif" alt="Managing saved cards - delete and update"><figcaption><p>Deleting and updating saved cards through the Vault SDK widget</p></figcaption></figure>
+
+***
+
+### Customizing the SDK Appearance
+
+The widget supports theming to match your brand - colors, fonts, and layout can all be configured via the customization options.
+
+<figure><img src="../../../.gitbook/assets/vault-flow-customization.gif" alt="SDK appearance customization"><figcaption><p>Theming the Vault SDK widget to match your brand</p></figcaption></figure>
