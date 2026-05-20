@@ -10,13 +10,13 @@ Below are some sample real world scenarios to try out quickly.
 
 | Flow | Use Case | Key Operations |
 |------|----------|----------------|
-| **Authorize + Capture** | Standard e-commerce | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`capture`](../../api-reference/services/payment-service/capture.md) |
-| **Authorize + Void** | Cancel pending order | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`void`](../../api-reference/services/payment-service/void.md) |
-| **Automatic Capture** | Digital goods, immediate charge | [`authorize`](../../api-reference/services/payment-service/authorize.md) with `AUTOMATIC` |
-| **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) |
-| **Partial Capture** | Multi-shipment orders | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount |
-| **Refunds** | Customer returns | [`refund`](../../api-reference/services/payment-service/refund.md) |
-| **Recurring Payments** | SaaS billing and more | [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
+| **Authorize + Capture** | Standard e-commerce | [`authorize`](../api-reference/services/payment-service/authorize.md), [`capture`](../api-reference/services/payment-service/capture.md) |
+| **Authorize + Void** | Cancel pending order | [`authorize`](../api-reference/services/payment-service/authorize.md), [`void`](../api-reference/services/payment-service/void.md) |
+| **Automatic Capture** | Digital goods, immediate charge | [`authorize`](../api-reference/services/payment-service/authorize.md) with `AUTOMATIC` |
+| **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../api-reference/services/payment-service/incremental-authorization.md) |
+| **Partial Capture** | Multi-shipment orders | [`capture`](../api-reference/services/payment-service/capture.md) with partial amount |
+| **Refunds** | Customer returns | [`refund`](../api-reference/services/payment-service/refund.md) |
+| **Recurring Payments** | SaaS billing and more | [`setupRecurring`](../api-reference/services/payment-service/setup-recurring.md), [`charge`](../api-reference/services/recurring-payment-service/charge.md) |
 
 
 ## Incremental Authorization
@@ -59,7 +59,7 @@ await paymentClient.capture({
 });
 ```
 
-See: [`incrementalAuthorization` API Reference](../../api-reference/services/payment-service/incremental-authorization.md)
+See: [`incrementalAuthorization` API Reference](../api-reference/services/payment-service/incremental-authorization.md)
 
 ## Subscription / Recurring Payments
 
@@ -111,7 +111,7 @@ const charge = await recurringPaymentClient.charge({
 });
 ```
 
-See: [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md), [`revoke`](../../api-reference/services/recurring-payment-service/revoke.md)
+See: [`setupRecurring`](../api-reference/services/payment-service/setup-recurring.md), [`charge`](../api-reference/services/recurring-payment-service/charge.md), [`revoke`](../api-reference/services/recurring-payment-service/revoke.md)
 
 
 ## Partial Capture
@@ -155,7 +155,7 @@ await paymentClient.capture({
 });
 ```
 
-See: [`capture`](../../api-reference/services/payment-service/capture.md)
+See: [`capture`](../api-reference/services/payment-service/capture.md)
 
 ## Void (Cancel Authorization)
 
@@ -180,7 +180,7 @@ await paymentClient.void({
 // Funds released immediately
 ```
 
-See: [`void`](../../api-reference/services/payment-service/void.md)
+See: [`void`](../api-reference/services/payment-service/void.md)
 
 ## Reverse (Refund Without Reference)
 
@@ -193,7 +193,7 @@ await paymentClient.reverse({
 });
 ```
 
-See: [`reverse`](../../api-reference/services/payment-service/reverse.md)
+See: [`reverse`](../api-reference/services/payment-service/reverse.md)
 
 ## Webhook Handling
 
@@ -247,7 +247,7 @@ app.post('/webhooks', async (req, res) => {
 });
 ```
 
-See: [`handleEvent`](../../api-reference/services/event-service/handle.md)
+See: [`handleEvent`](../api-reference/services/event-service/handle.md)
 
 ## Dispute Handling
 
@@ -283,10 +283,10 @@ await disputeClient.submitEvidence({
 });
 ```
 
-See: [`accept`](../../api-reference/services/dispute-service/accept.md), [`defend`](../../api-reference/services/dispute-service/defend.md), [`submitEvidence`](../../api-reference/services/dispute-service/submit-evidence.md)
+See: [`accept`](../api-reference/services/dispute-service/accept.md), [`defend`](../api-reference/services/dispute-service/defend.md), [`submitEvidence`](../api-reference/services/dispute-service/submit-evidence.md)
 
 
 ## Next Steps
 
-- Browse the full [API Reference](../../api-reference/)
-- Jump to [SDK-specific guides](../../sdks/)
+- Browse the full [API Reference](../api-reference/README.md)
+- Jump to [SDK-specific guides](../README.md)

@@ -62,9 +62,9 @@ A-Z reference for Connector Service terminology.
 
 ## A
 
-**Authorize** — Hold funds on a customer's payment method without charging. Creates an authorization that can be captured later or voided. See [Authorize API](../../api-reference/services/payment-service/authorize.md).
+**Authorize** — Hold funds on a customer's payment method without charging. Creates an authorization that can be captured later or voided. See [Authorize API](./api-reference/services/payment-service/authorize.md).
 
-**Authentication (3DS)** — 3D Secure verification process where the customer verifies ownership of their card through their bank (password, SMS, or biometric). See [Authentication Service](../../api-reference/services/payment-method-authentication-service/).
+**Authentication (3DS)** — 3D Secure verification process where the customer verifies ownership of their card through their bank (password, SMS, or biometric). See [Authentication Service](./api-reference/services/payment-method-authentication-service/).
 
 **Automatic Capture** — Capture funds immediately upon authorization. Used for digital goods and same-day fulfillment.
 
@@ -74,13 +74,13 @@ A-Z reference for Connector Service terminology.
 
 ## C
 
-**Capture** — Complete a payment by transferring funds from the customer's account. Can be full or partial amount. See [Capture API](../../api-reference/services/payment-service/capture.md).
+**Capture** — Complete a payment by transferring funds from the customer's account. Can be full or partial amount. See [Capture API](./api-reference/services/payment-service/capture.md).
 
 **Capture Method** — `AUTOMATIC` (immediate) or `MANUAL` (merchant-initiated). Determines when funds transfer.
 
 **Connector** — Payment processor integration (Stripe, Adyen, PayPal, etc.). Connector Service supports 50+ connectors.
 
-**Connector Adapter** — Rust module that translates unified requests to connector-specific formats. See [Connectors](../../connectors/).
+**Connector Adapter** — Rust module that translates unified requests to connector-specific formats. See [Connectors](./connectors/).
 
 **Connector Service** — The unified payment abstraction library this documentation describes.
 
@@ -100,7 +100,7 @@ A-Z reference for Connector Service terminology.
 
 **Error Code** — Unified error identifier (e.g., `PAYMENT_DECLINED`, `NETWORK_TIMEOUT`). Same code across all connectors.
 
-**Event Service** — Handles service specific webhooks (payment/refund/dispute) from payment processors. See [Event Service](../../api-reference/services/event-service/).
+**Event Service** — Handles service specific webhooks (payment/refund/dispute) from payment processors. See [Event Service](./api-reference/services/event-service/).
 
 ## F
 
@@ -114,7 +114,7 @@ A-Z reference for Connector Service terminology.
 
 ## H
 
-**Handle Event** — Process any incoming webhook from a payment processor. See [handle](../../api-reference/services/event-service/handle.md).
+**Handle Event** — Process any incoming webhook from a payment processor. See [handle](./api-reference/services/event-service/handle.md).
 
 **Hyperswitch** — Open-source Composable Payments Platform built by Juspay with 40K+ Github stars and used by global enterprise companies. The Connector Service is a component of Juspay Hyperswitch.
 
@@ -144,7 +144,7 @@ A-Z reference for Connector Service terminology.
 
 **Payment Method** — How customer pays: card, wallet, bank transfer, BNPL.
 
-**Payment Service** — Core service handling authorizations, captures, voids. See [Payment Service](../../api-reference/services/payment-service/).
+**Payment Service** — Core service handling authorizations, captures, voids. See [Payment Service](./api-reference/services/payment-service/).
 
 **Payment Status** — Lifecycle state: `STARTED`, `AUTHORIZED`, `CAPTURED`, `FAILED`, `VOIDED`.
 
@@ -158,7 +158,7 @@ A-Z reference for Connector Service terminology.
 
 **Refund** — Return captured funds to customer. Can be partial or full amount.
 
-**Refund Service** — Handles refunds and refund status checks. See [Refund Service](../../api-reference/services/refund-service/).
+**Refund Service** — Handles refunds and refund status checks. See [Refund Service](./api-reference/services/refund-service/).
 
 **Retry** — Re-attempt failed requests for retryable errors (network timeouts, rate limits).
 
