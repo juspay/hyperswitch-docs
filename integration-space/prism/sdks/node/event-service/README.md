@@ -28,7 +28,7 @@ The Event Service processes inbound webhook notifications from payment processor
 
 | Operation | Description | Use When |
 |-----------|-------------|----------|
-| [`handleEvent`](./handle-event.md) | Process webhook from payment processor. Verifies and parses incoming connector notifications. | Receiving webhook POST from Stripe, Adyen, etc. |
+| [`handleEvent`](./handle.md) | Process webhook from payment processor. Verifies and parses incoming connector notifications. | Receiving webhook POST from Stripe, Adyen, etc. |
 
 ## SDK Setup
 
