@@ -35,7 +35,7 @@ Prism supports **multiple connectors** with varying levels of payment method and
 | ⚠ | Implementation in progress or partial |
 | ? | Implementation needs validation against live environment |
 
-**[View Complete Connector Coverage →](./all_connector.md)**
+**[View Complete Connector Coverage →](./docs-generated/all_connector.md)**
 
 ## What Prism does not do (yet)?
 - **Built-in vault or tokenization service.** This is a design choice. You may bring your own vault, or use the payment processor's vault.
@@ -72,12 +72,12 @@ A very high level overview of the Prism architecture and components. To understa
 >
 > | Language | SDK Integration Guide |
 > |----------|-----------------------|
-> | **Python** | [sdks/python/README.md](./sdks/python/README.md) |
-> | **Node.js** | [sdks/node/README.md](./sdks/node/README.md) |
-> | **Java** | [sdks/java/README.md](./sdks/java/README.md) |
-> | **Rust** | [sdk/rust](https://github.com/juspay/hyperswitch-prism/tree/main/sdk/rust) |
+> | **Python** | [sdk/python/README.md](./sdk/python/README.md) |
+> | **Node.js** | [sdk/javascript/README.md](./sdk/javascript/README.md) |
+> | **Java** | [sdk/java/README.md](./sdk/java/README.md) |
+> | **Rust** | [sdk/rust](./sdk/rust) |
 >
-**Demo Application**: Checkout the [E-Commerce Demo](https://github.com/juspay/hyperswitch-prism/tree/main/demo/e-commerce) for a complete working example with Stripe and Adyen integration.
+**Demo Application**: Checkout the [E-Commerce Demo](./demo/e-commerce) for a complete working example with Stripe and Adyen integration.
 
 ### Install the Prism Library
 

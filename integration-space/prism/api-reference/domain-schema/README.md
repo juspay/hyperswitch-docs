@@ -19,9 +19,9 @@ Domain types are the foundational data structures and enumerations defined in th
 
 ### Relationship to Services
 
-The domain schema are used by the gRPC services defined in [`services.proto`](https://github.com/juspay/hyperswitch-prism/blob/main/crates/types-traits/grpc-api-types/proto/services.proto) as:
+The domain schema are used by the gRPC services defined in [services.proto](../services/) as:
 
-- **Request/Response Messages**: Service methods accept and return structured messages documented in the [API Reference](../README.md) section for each service
+- **Request/Response Messages**: Service methods accept and return structured messages documented in the [API Reference](../services/) section for each service
 - **Enums**: Status codes, payment methods, and categorical values ensure type safety (e.g., `PaymentStatus`, `Currency`)
 - **Nested Types**: Complex types like `Money`, `Address`, and `Customer` are reused across multiple service operations
 
@@ -34,7 +34,7 @@ This Domain Schema includes:
 
 ### What's Not Included
 
-Service request and response types (e.g., `PaymentServiceAuthorizeRequest`, `RefundResponse`) are documented in the [API Reference](../README.md) section for each service. These types are specific to individual RPC operations and are covered alongside their corresponding operation documentation.
+Service request and response types (e.g., `PaymentServiceAuthorizeRequest`, `RefundResponse`) are documented in the [API Reference](../services/) section for each service. These types are specific to individual RPC operations and are covered alongside their corresponding operation documentation.
 
 ### Key Design Principles
 
@@ -229,8 +229,8 @@ Additional data returned by connectors. These types provide connector-specific r
 
 | Domain Type | Description | Example | Related Types |
 |-------------|-------------|---------|---------------|
-| `ConnectorResponseData` | Connector response container. | `{"card": {...}, "extended_authorization": {...}}` | `CardConnectorResponse` |
-| `CardConnectorResponse` | Card-specific response. | `{"authentication_data": {...}, "card_network": "VISA"}` | `ConnectorResponseData`, `AuthenticationData`, `CardNetwork` |
+| [`ConnectorResponseData`](./connector-response-data.md) | Connector response container. | `{"card": {...}, "extended_authorization": {...}}` | [`CardConnectorResponse`](./card-connector-response.md) |
+| [`CardConnectorResponse`](./card-connector-response.md) | Card-specific response. | `{"authentication_data": {...}, "card_network": "VISA"}` | [`ConnectorResponseData`](./connector-response-data.md), [`AuthenticationData`](./authentication-data.md), [`CardNetwork`](./card-network.md) |
 
 ## Next Steps
 

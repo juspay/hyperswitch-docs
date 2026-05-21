@@ -29,7 +29,7 @@ Prism provides built-in verification for both risks, and it is strongly recommen
 
 ### Request and Response Comparison
 
-Prism uses a `FlowIntegrity` trait to compare request and response data in a strongly typed fashion. The core implementation is available in [`crates/types-traits/interfaces/src/integrity.rs`](https://github.com/juspay/hyperswitch-prism/blob/main/crates/types-traits/interfaces/src/integrity.rs):
+Prism uses a `FlowIntegrity` trait to compare request and response data in a strongly typed fashion. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
 ```rust
 /// Trait for integrity objects that can perform field-by-field comparison
@@ -57,10 +57,10 @@ pub trait GetIntegrityObject<T: FlowIntegrity> {
 
 ### Amount and Currency Verification
 
-During the payment authorization step, Prism extracts amount and currency from the request and compares with the response during run-time. The core implementation is available in [`crates/types-traits/interfaces/src/integrity.rs`](https://github.com/juspay/hyperswitch-prism/blob/main/crates/types-traits/interfaces/src/integrity.rs):
+During the payment authorization step, Prism extracts amount and currency from the request and compares with the response during run-time. The core implementation is available in [`backend/interfaces/src/integrity.rs`](../../backend/interfaces/src/integrity.rs):
 
 ```rust
-// From crates/types-traits/interfaces/src/integrity.rs
+// From backend/interfaces/src/integrity.rs
 impl<T: PaymentMethodDataTypes> GetIntegrityObject<AuthoriseIntegrityObject>
     for PaymentsAuthorizeData<T>
 {
@@ -113,7 +113,7 @@ Typically Payment processors sign webhooks with a shared secret, to verify the p
 
 Prism handles the signature verification across multiple processors.
 
-And below are real examples from one of the connectors on how it is implemented [`crates/integrations/connector-integration/src/connectors/authorizedotnet.rs`](https://github.com/juspay/hyperswitch-prism/blob/main/crates/integrations/connector-integration/src/connectors/authorizedotnet.rs):
+And below are real examples from one of the connectors on how it is implemented [`backend/connector-integration/src/connectors/authorizedotnet.rs`](../../backend/connector-integration/src/connectors/authorizedotnet.rs):
 
 ```rust
 fn verify_webhook_source(
@@ -205,4 +205,4 @@ const paymentClient = new PaymentClient(config);
 
 ## Next Steps
 
-- [Error Handling](../concepts/error-handling.md) — Handle verification failures in your application
+- [Error Handling](../architecture/error-handling.md) — Handle verification failures in your application
