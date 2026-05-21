@@ -166,16 +166,7 @@ That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
-
-```bash
-kubectl port-forward service/hyperswitch-server 8080:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-control-center 9000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-web 9050:9050 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-grafana 3000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-vector 3103:3103 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
-```
+Use the commands from the **Step 3.2 (from above)** for port-forwarding to access the services.&#x20;
 
 Access the services at:
 
