@@ -18,15 +18,15 @@ Juspay Hyperswitch supports multiple vault deployment models to match your PCI p
 
 **Deployment Model: Self-Hosted Payments Orchestrator with Vaulting Service**
 
-|                                                                                          |                 |                                                                                   |
-| ---------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------- |
-| [Self-Hosted Hyperswitch Vault](self-hosted-and-in-house-pci.md)                         | PCI Environment | Large enterprises requiring full control over both orchestration and payment data |
-| [SaaS Hyperswitch Vault](self-hosted-orchestration-with-saas-vault.md)                   | Non-PCI         | Mid-size merchants needing orchestration flexibility without PCI burden           |
-| [Third-Party Vault](self-hosted-orchestration-with-external-or-third-party-pci-vault.md) | Non-PCI         | Businesses with existing vault investments (VGS, TokenEx) adding orchestration    |
+| Vault Options                                                                            | PCI Ownership / Scope | Example Use Case                                                                  |
+| ---------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------- |
+| [Self-Hosted Hyperswitch Vault](self-hosted-and-in-house-pci.md)                         | PCI Environment       | Large enterprises requiring full control over both orchestration and payment data |
+| [SaaS Hyperswitch Vault](self-hosted-orchestration-with-saas-vault.md)                   | Non-PCI               | Mid-size merchants needing orchestration flexibility without PCI burden           |
+| [Third-Party Vault](self-hosted-orchestration-with-external-or-third-party-pci-vault.md) | Non-PCI               | Businesses with existing vault investments (VGS, TokenEx) adding orchestration    |
 
 **Deployment Model: SaaS Payments Orchestrator with Vaulting Service**
 
-|                                                                   |                                      |                                                                          |
+| Vault Options                                                     | PCI Ownership / Scope                | Example Use Case                                                         |
 | ----------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------ |
 | [SaaS Hyperswitch Vault](saas-orchestration-with-juspay-vault.md) | Managed by Hyperswitch               | Growing businesses seeking fully managed payment infrastructure          |
 | [Third-Party Vault](saas-orchestration-with-third-party-vault.md) | Shared / External PCI Responsibility | SaaS companies with compliance requirements for specific vault providers |
