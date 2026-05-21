@@ -166,7 +166,7 @@ That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the commands from the **Step 3.2 (from above)** for port-forwarding to access the services.&#x20;
+Use the commands from the **Step 3.1 (from above)** for port-forwarding to access the services.&#x20;
 
 Access the services at:
 

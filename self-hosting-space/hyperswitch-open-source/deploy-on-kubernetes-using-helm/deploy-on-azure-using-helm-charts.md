@@ -271,7 +271,7 @@ That's it! Hyperswitch should be up and running on your Azure account 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the commands from the **Step 4 (from above)** for port-forwarding to access the services.&#x20;
+Use the commands from the **Step 3 (from above)** for port-forwarding to access the services.&#x20;
 
 Access the services at:
 
