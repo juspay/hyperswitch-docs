@@ -31,9 +31,9 @@ Launch a ready-to-use Control Center test environment. No setup required, just l
 
 <summary><strong>Hosted playground environment (pre-configured)</strong></summary>
 
-[Explore playground →](https://hs-demo.netlify.app/)
+[Explore playground →](https://app.hyperswitch.io/hsdemo/)
 
-Try all our product features in a pre-configured playground environment&#x20;
+Try all our product features in a pre-configured playground environment
 
 </details>
 
@@ -46,7 +46,7 @@ Try all our product features in a pre-configured playground environment&#x20;
 <summary><strong>Local Deployment (Docker)</strong></summary>
 
 [Set up Docker Locally →](setup-hyperswitch-locally/run-hyperswitch.md)\
-Perfect for developers who want local control and flexibility.&#x20;
+Perfect for developers who want local control and flexibility.
 
 </details>
 
