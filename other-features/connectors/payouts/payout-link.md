@@ -27,7 +27,7 @@ Juspay Hyperswitch introduces Payout Links - Make sending out money to beneficia
 
 ### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
+* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../../integration-guide/account-management/multiple-accounts-and-profiles/README.md))
 * Add a payout processor to your account
 
 ### Using Payout links
