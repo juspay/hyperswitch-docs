@@ -384,7 +384,7 @@ const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
 Update Podfile sources.
 
 ```
-source 'https://github.com/juspay/hyperswitch-pods.git'
+source 'https://github.com/juspay/hyperswitch-pods'
 source 'https://cdn.cocoapods.org/'
 ```
 
@@ -547,7 +547,7 @@ const stripe = require("@juspay-tech/hyper-node")("your\_hyperswitch\_api\_key")
 
 Update Podfile sources.
 
-source '[https://github.com/juspay/hyperswitch-pods.git](https://github.com/juspay/hyperswitch-pods.git)'\
+source '[https://github.com/juspay/hyperswitch-pods](https://github.com/juspay/hyperswitch-pods)'\
 source '[https://cdn.cocoapods.org/](https://cdn.cocoapods.org/)'
 
 Replace Stripe dependency.
