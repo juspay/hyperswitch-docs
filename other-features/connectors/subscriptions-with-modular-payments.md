@@ -297,4 +297,4 @@ Currently we support Chargebee integration. In the upcoming roadmap we are plann
 
 #### 2. Can the entire experience from plan display, price estimation to payments be handled by Hyperswitch SDK?
 
-We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience. Check the [Hyperswitch roadmap](https://github.com/juspay/hyperswitch/discussions) for the latest timeline.
+We are planning to release a Hyperswitch Subscriptions SDK that will take care of the end-to-end experience. Check the [Hyperswitch roadmap](https://docs.hyperswitch.io/discussions) for the latest timeline.

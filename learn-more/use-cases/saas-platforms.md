@@ -158,7 +158,7 @@ Juspay Hyperswitch treats payments as "Critical Infrastructure" and provides dee
 | Feature          | Description                                                                                                              | Reference                                                                                     |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | Connector Health | Continuously monitors success rates and latency of every connected processor; automatic failover to healthy alternatives | [Smart Router](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) |
-| Open Telemetry   | Emits standard OTel Traces for every request; pipe into Datadog, Prometheus, or Grafana                                  | [Monitoring](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring) |
+| Open Telemetry   | Emits standard OTel Traces for every request; pipe into Datadog, Prometheus, or Grafana                                  | [Monitoring](https://docs.hyperswitch.io/about-hyperswitch/hyperswitch-architecture#monitoring) |
 | System Status    | Access the System Health API to build internal status pages for your support team                                        | [System Health API](https://live.hyperswitch.io/api/health)                                   |
 
 ***

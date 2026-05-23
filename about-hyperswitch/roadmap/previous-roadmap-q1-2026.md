@@ -191,7 +191,7 @@ Themes follow a clear precedence model (**Profile → Merchant → Organization*
 
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://docs.hyperswitch.io/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
 
 Last updated 1 month ago
 
@@ -204,4 +204,4 @@ Last updated 1 month ago
 **Community**
 
 * [Slack](https://inviter.co/hyperswitch-slack)
-* [GitHub Discussion](https://github.com/juspay/hyperswitch/discussions)
+* [GitHub Discussion](https://docs.hyperswitch.io/discussions)

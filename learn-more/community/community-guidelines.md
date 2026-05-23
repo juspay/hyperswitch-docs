@@ -72,6 +72,6 @@ They may take action at their discretion to uphold these guidelines.
 
 ### 📌 Quick Links
 
-* [🔗 Contributing Guidelines](https://github.com/juspay/hyperswitch/blob/main/docs/CONTRIBUTING.md)
+* [🔗 Contributing Guidelines](https://docs.hyperswitch.io/learn-more/community/community-guidelines)
 * [🌐 Hyperswitch Website](https://hyperswitch.io)
-* [🧑‍💻 GitHub Repository<br>](https://github.com/juspay/hyperswitch)\\
+* [🧑‍💻 GitHub Repository<br>](https://docs.hyperswitch.io)\\

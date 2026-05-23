@@ -8,7 +8,7 @@
 
 _A high-performance payment abstraction library, and part of_ [_Juspay Hyperswitch_](https://hyperswitch.io/) _— the open-source, composable payments platform with 40,000+ GitHub stars, trusted by leading brands worldwide._
 
-[GitHub](https://github.com/juspay/hyperswitch) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
+[GitHub](https://docs.hyperswitch.io) · [Website](https://hyperswitch.io/) · [Documentation](https://docs.hyperswitch.io/)
 
 ***
 

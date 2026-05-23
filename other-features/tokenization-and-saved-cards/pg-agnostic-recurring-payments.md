@@ -27,7 +27,7 @@ Hyperswitch supports the following processors for PG Agnostic Recurring Payments
 * Adyen
 * Cybersource
 
-In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
+In case you wish more processors to be covered for PG Agnostic Recurring Payments, please submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests).
 
 ### How to enable PG agnostic MITs?
 

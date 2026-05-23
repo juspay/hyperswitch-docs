@@ -251,4 +251,4 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 * [API Reference →](https://api-reference.hyperswitch.io/introduction)
 * [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
 * [Postman Collection →](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/README#use-postman)
-* [GitHub Repository →](https://github.com/juspay/hyperswitch)
+* [GitHub Repository →](https://docs.hyperswitch.io)

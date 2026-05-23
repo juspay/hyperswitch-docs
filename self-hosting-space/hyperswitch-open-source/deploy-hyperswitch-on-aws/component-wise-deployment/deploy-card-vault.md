@@ -8,7 +8,7 @@ description: Deploy the Juspay Hyperswitch Card Vault on the cloud
 This section aims at installing the Card vault and using it with the Hyperswitch application to make successful saved card payments
 {% endhint %}
 
-The Juspay Hyperswitch Card Vault [(Repo Link)](https://github.com/juspay/tartarus), is a highly performant and secure locker to save sensitive data such as payment card details, bank account details etc.
+The Juspay Hyperswitch Card Vault [(Repo Link)](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault), is a highly performant and secure locker to save sensitive data such as payment card details, bank account details etc.
 
 It is designed in a polymorphic manner to handle and store any type of sensitive information making it highly scalable with extensive coverage of payment methods and processors.
 

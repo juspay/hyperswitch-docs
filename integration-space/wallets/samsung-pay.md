@@ -30,7 +30,7 @@ To create a new service, follow the steps below:
 
 1. Go to My Projects > Service Management, then click `CREATE NEW SERVICE`.
 
-<figure><img src="https://github.com/juspay/hyperswitch-docs/raw/ab5d70faa1cd006a67bccc1512edd579b0ac586d/.gitbook/assets/samsung-pay-web-service.jpg" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="https://docs.hyperswitch.io-docs/raw/ab5d70faa1cd006a67bccc1512edd579b0ac586d/.gitbook/assets/samsung-pay-web-service.jpg" alt="" width="563"><figcaption></figcaption></figure>
 
 2. Enter the new `SERVICE NAME`.
 3. Select your `SERVICE COUNTRY`.
@@ -49,7 +49,7 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 4. Login to your [Samsung Pay Developer account](https://pay.samsung.com/developer) go to My Projects > Service management, and click on the service you would like to configure.
 5. Copy the `SERVICE ID` and configure it as the `Samsung Pay Service Id` on Hyperswitch dashboard.
 
-<figure><img src="https://github.com/juspay/hyperswitch-docs/raw/ab5d70faa1cd006a67bccc1512edd579b0ac586d/.gitbook/assets/samsung_pay_configuration.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="https://docs.hyperswitch.io-docs/raw/ab5d70faa1cd006a67bccc1512edd579b0ac586d/.gitbook/assets/samsung_pay_configuration.png" alt="" width="563"><figcaption></figcaption></figure>
 
 6. The `Display Name` should be your merchant name, which you want to present to customers when they make a Samsung Pay payment on your platform.
 7. Select your business country

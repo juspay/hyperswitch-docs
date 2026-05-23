@@ -282,7 +282,7 @@ Load testing validates system throughput capacity and resource utilization under
 Clone the repository:
 
 ```
-https://github.com/juspay/hyperswitch-suite/tree/main/load-test
+https://docs.hyperswitch.io-suite/tree/main/load-test
 ```
 
 Extract the contents to a local directory.

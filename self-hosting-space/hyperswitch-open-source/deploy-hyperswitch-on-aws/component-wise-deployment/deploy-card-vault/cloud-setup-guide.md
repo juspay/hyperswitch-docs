@@ -83,8 +83,8 @@ sudo psql -h <database-url> -U $DB_USER -W locker
 
 and paste the contents from the below mentioned migration files
 
-* [FILE - 1](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
-* [FILE - 2](https://github.com/juspay/hyperswitch-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
+* [FILE - 1](https://docs.hyperswitch.io-card-vault/blob/main/migrations/2023-10-21-104200_create-tables/up.sql): Creating initial tables
+* [FILE - 2](https://docs.hyperswitch.io-card-vault/blob/main/migrations/2023-10-26-072935_duplication-table/up.sql): Creating duplication tables
 
 ### Setup KMS
 
@@ -101,7 +101,7 @@ Now, create a KMS key pair on AWS with the key type as `symmetric` and the key u
 To generate the `master key` and the `custodian keys` use the following command after cloning the repository.
 
 ```bash
-git clone https://github.com/juspay/hyperswitch-card-vault.git
+git clone https://docs.hyperswitch.io-card-vault.git
 cd hyperswitch-card-vault
 cargo run --bin utils -- master-key
 ```

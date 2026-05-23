@@ -97,4 +97,4 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://docs.hyperswitch.io/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

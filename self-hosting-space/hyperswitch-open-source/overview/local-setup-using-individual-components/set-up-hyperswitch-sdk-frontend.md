@@ -43,7 +43,7 @@ If your machine does not have node installed in it, you can install it from [her
 Clone the repository from Bitbucket and save in your folder.
 
 ```
-git clone https://github.com/juspay/hyperswitch-web.git
+git clone https://docs.hyperswitch.io-web.git
 cd hyperswitch-web
 ```
 
@@ -69,7 +69,7 @@ cd hyperswitch-web
         ```
 
     Upon success, you should see a message _Compiled successfully_ message on both of your terminals.
-3. Make sure you have configured the [.env](https://github.com/juspay/hyperswitch-web/blob/main/Hyperswitch-React-Demo-App/.env) file correctly.
+3. Make sure you have configured the [.env](https://docs.hyperswitch.io-web/blob/main/Hyperswitch-React-Demo-App/.env) file correctly.
    * Publishable Key `HYPERSWITCH_PUBLISHABLE_KEY` and API Key `HYPERSWITCH_SECRET_KEY` belong to the server `HYPERSWITCH_SERVER_URL`. If you use our Sandbox URL, use publishable key and API key from the hyperswitch website. If you are using your self-hosted backend, use your locally created publishable key and API Key.
    * The URL's must not have a slash at the end
 4.  Now that the build is generated successfully, on a third terminal, launch the playground.
@@ -81,4 +81,4 @@ cd hyperswitch-web
     ```
 
     Now you can launch the demo app on [http://localhost:5252/](http://localhost:5252/) where you can test your payments.\
-    If you encounter any problems, please refer to the troubleshooting section of the [Hyperswitch-React-Demo-App Readme](https://github.com/juspay/hyperswitch-web/blob/main/Hyperswitch-React-Demo-App/README.md#troubleshooting).
+    If you encounter any problems, please refer to the troubleshooting section of the [Hyperswitch-React-Demo-App Readme](https://docs.hyperswitch.io-web/blob/main/Hyperswitch-React-Demo-App/README.md#troubleshooting).

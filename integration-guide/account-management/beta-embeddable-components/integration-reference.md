@@ -12,7 +12,7 @@ metaLinks:
 
 This SDK allows you to embed the Hyperswitch connector configuration directly into your React application. It uses a provider pattern to manage authentication sessions via JWTs, ensuring your API keys never leak to the client.
 
-Repository URL: [https://github.com/juspay/hyperswitch-control-center-embedded](https://github.com/juspay/hyperswitch-control-center-embedded)
+Repository URL: [https://docs.hyperswitch.io-control-center-embedded](https://docs.hyperswitch.io-control-center-embedded)
 
 Demo URL: [https://embedded-ssr.netlify.app/](https://embedded-ssr.netlify.app/)
 

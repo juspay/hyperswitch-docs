@@ -13,7 +13,7 @@ The default behaviour for docker compose only runs the following services:
 4. postgres
 5. redis (standalone)
 
-You can run the **scheduler, data and monitoring services** by specifying suitable profile names to the above Docker Compose command. To understand more about the hyperswitch architecture and the components involved, check out the [architecture document](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md).
+You can run the **scheduler, data and monitoring services** by specifying suitable profile names to the above Docker Compose command. To understand more about the hyperswitch architecture and the components involved, check out the [architecture document](https://docs.hyperswitch.io/about-hyperswitch/hyperswitch-architecture).
 
 *   To run the scheduler components (consumer and producer), you can specify `--profile scheduler`:
 
@@ -33,7 +33,7 @@ You can run the **scheduler, data and monitoring services** by specifying suitab
     docker compose --profile olap up -d
     ```
 
-    You can read more about using the data services [here](https://github.com/juspay/hyperswitch/blob/main/crates/analytics/docs/README.md)
+    You can read more about using the data services [here](https://docs.hyperswitch.io/blob/main/crates/analytics/docs/README.md)
 *   You can also specify multiple profile names by specifying the `--profile` flag multiple times. To run both the scheduler components and monitoring services, the Docker Compose command would be:
 
     ```bash

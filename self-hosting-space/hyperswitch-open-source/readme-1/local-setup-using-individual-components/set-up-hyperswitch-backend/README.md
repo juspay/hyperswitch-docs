@@ -24,10 +24,10 @@ This setup is meant for development. If you want a quick trial of Hyperswitch (w
 2.  Clone the repository and switch to the project directory:
 
     ```bash
-    git clone https://github.com/juspay/hyperswitch
+    git clone https://docs.hyperswitch.io
     cd hyperswitch
     ```
-3. (Optional) Configure the application using the [`config/docker_compose.toml`](https://github.com/juspay/hyperswitch/blob/main/config/docker_compose.toml) file. The provided configuration should work as is. If you do update the `docker_compose.toml` file, ensure to also update the corresponding values in the [`docker-compose.yml`](https://github.com/juspay/hyperswitch/blob/main/docker-compose.yml) file.
+3. (Optional) Configure the application using the [`config/docker_compose.toml`](https://docs.hyperswitch.io/blob/main/config/docker_compose.toml) file. The provided configuration should work as is. If you do update the `docker_compose.toml` file, ensure to also update the corresponding values in the [`docker-compose.yml`](https://docs.hyperswitch.io/blob/main/docker-compose.yml) file.
 4.  Start all the services using Docker Compose:
 
     ```bash
@@ -278,7 +278,7 @@ Once you're done with setting up the dependencies, proceed with [setting up the 
 2.  Clone the repository and switch to the project directory:
 
     ```bash
-    git clone https://github.com/juspay/hyperswitch
+    git clone https://docs.hyperswitch.io
     cd hyperswitch
     ```
 3.  Run database migrations:

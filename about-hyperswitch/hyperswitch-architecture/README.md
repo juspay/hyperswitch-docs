@@ -10,7 +10,7 @@ metaLinks:
 
 Hyperswitch comprises two distinct app services: **Router** and **Scheduler** which in turn consists of **Producer** and **Consumer**, where each service has its specific responsibilities to process payment-related tasks efficiently.
 
-<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
+<figure><img src="https://docs.hyperswitch.io/raw/main/docs/imgs/hyperswitch-architecture.png" alt=""><figcaption><p>Typical Deployment</p></figcaption></figure>
 
 ### Router
 
@@ -40,11 +40,11 @@ In addition to the database, Hyperswitch incorporates Redis for two main purpose
 
 ### Locker
 
-The application utilizes a Rust locker built with a GDPR compliant PII (personal identifiable information) storage. It also uses secure encryption algorithms to be fully compliant with **PCI DSS** (Payment Card Industry Data Security Standard) requirements, this ensures that all payment-related data is handled and stored securely. You can find the source code of locker [here](https://github.com/juspay/hyperswitch-card-vault).
+The application utilizes a Rust locker built with a GDPR compliant PII (personal identifiable information) storage. It also uses secure encryption algorithms to be fully compliant with **PCI DSS** (Payment Card Industry Data Security Standard) requirements, this ensures that all payment-related data is handled and stored securely. You can find the source code of locker [here](https://docs.hyperswitch.io-card-vault).
 
 ### Monitoring
 
-<figure><img src="https://github.com/juspay/hyperswitch/raw/main/docs/imgs/hyperswitch-monitoring-architecture.png" alt=""><figcaption><p>HyperSwitch Monitoring Architecture</p></figcaption></figure>
+<figure><img src="https://docs.hyperswitch.io/raw/main/docs/imgs/hyperswitch-monitoring-architecture.png" alt=""><figcaption><p>HyperSwitch Monitoring Architecture</p></figcaption></figure>
 
 The monitoring services in Hyperswitch ensure the effective collection and analysis of metrics to monitor the system's performance.
 

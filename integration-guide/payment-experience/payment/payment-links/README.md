@@ -50,7 +50,7 @@ Currently, the Control centre's capability to create payment links is under deve
 
 <summary>Can I create a static payment link which can be used across users?</summary>
 
-No, at the moment we do not support creation of static payment links ([request for feature](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests))
+No, at the moment we do not support creation of static payment links ([request for feature](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests))
 
 </details>
 

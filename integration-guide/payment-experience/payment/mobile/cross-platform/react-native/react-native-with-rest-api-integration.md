@@ -16,7 +16,7 @@ Use this guide to integrate the Juspay Hyperswitch React Native SDK to your Reac
 
 ### Find the Demo App
 
-Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
+Find the demo app [here](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/mobile/cross-platform/react-native)
 
 Before proceeding with these steps, please ensure that your payment methods are configured [here](../../../../../../other-features/payment-orchestration/quickstart/payment-methods-setup/cards.md).
 

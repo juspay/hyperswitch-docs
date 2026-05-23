@@ -52,4 +52,4 @@ override fun getJSBundleFile(): String {
 }
 ```
 
-For more information, see [Airborne](https://github.com/juspay/airborne).
+For more information, see [Airborne](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/over-the-air-ota-updates).

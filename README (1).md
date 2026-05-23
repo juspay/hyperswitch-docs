@@ -26,7 +26,7 @@ Want to try without deploying? Use our dashboard on [sandbox](https://app.hypers
 
 ### Learning Resources
 
-In case you are completely new to payments - You can comeback to setup after reading the [Payment 101 Blog](https://github.com/juspay/hyperswitch/wiki/Payments-101-for-a-Developer), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
+In case you are completely new to payments - You can comeback to setup after reading the [Payment 101 Blog](https://docs.hyperswitch.io/learn-more), For more learning resources visit [Hyperswitch Blogs.](https://hyperswitch.io/blogs)
 
 {% hint style="info" %}
 **Have Questions?**\

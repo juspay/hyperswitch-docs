@@ -12,7 +12,7 @@ metaLinks:
 
 ### TL;DR
 
-Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the [connector service](https://github.com/juspay/connector-service) as a stateless integration layer, or self-host within your own infrastructure for complete data sovereignty.
+Juspay Hyperswitch is an open-source payment orchestration platform designed for Fintech enterprises that need to augment existing payment stacks. It provides modular capabilities—Smart Routing, Network Tokenization, and unified observability—without requiring a full platform migration. Deploy the [connector service](https://docs.hyperswitch.io/connector-service) as a stateless integration layer, or self-host within your own infrastructure for complete data sovereignty.
 
 ***
 
@@ -28,13 +28,13 @@ Juspay Hyperswitch is designed as a modular middleware layer that injects specif
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
-Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs without writing a single line of integration code.
+Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://docs.hyperswitch.io/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs without writing a single line of integration code.
 
 | Capability        | Description                                                                                     | Reference                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Unified Schema    | Maps disparate upstream APIs (Stripe, Adyen, Checkout.com) into a single Request/Response Model | [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create) |
 | Rapid Expansion   | Enable local payment methods (LPMs) like Klarna, WeChat Pay, or Afterpay via configuration      | [Supported Connectors](https://juspay.io/integrations)                                                   |
-| Open Contribution | Fork the repo, add a connector, and run it locally or contribute back                           | [Open Source](https://github.com/juspay/hyperswitch)                                                     |
+| Open Contribution | Fork the repo, add a connector, and run it locally or contribute back                           | [Open Source](https://docs.hyperswitch.io)                                                     |
 
 ***
 
@@ -47,8 +47,8 @@ Juspay Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the e
 | Capability         | Description                                                                                                                            | Reference                                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | Zero Data Egress   | Sensitive card data (PAN) never leaves your infrastructure; you maintain full ownership of logs and database                           | [Self-Managed Guide](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) |
-| Compliance Control | Define TLS Termination (the point where encrypted traffic is decrypted) and key management strategies using AWS KMS or HashiCorp Vault | [Security Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#security)           |
-| No Vendor Lock-in  | You host the code, so you are not dependent on an external vendor's uptime or roadmap                                                  | [Open Source](https://github.com/juspay/hyperswitch)                                                             |
+| Compliance Control | Define TLS Termination (the point where encrypted traffic is decrypted) and key management strategies using AWS KMS or HashiCorp Vault | [Security Architecture](https://docs.hyperswitch.io/about-hyperswitch/hyperswitch-architecture#security)           |
+| No Vendor Lock-in  | You host the code, so you are not dependent on an external vendor's uptime or roadmap                                                  | [Open Source](https://docs.hyperswitch.io)                                                             |
 
 ***
 
@@ -131,7 +131,7 @@ Juspay Hyperswitch provides observability capabilities to help monitor payment o
 
 | Capability           | Description                                                                                                              | Reference                                                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| OpenTelemetry (OTel) | The Router can emit OTel Traces for API calls; integrate with observability tools like Datadog, Prometheus, or Honeycomb | [Monitoring Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#monitoring)              |
+| OpenTelemetry (OTel) | The Router can emit OTel Traces for API calls; integrate with observability tools like Datadog, Prometheus, or Honeycomb | [Monitoring Architecture](https://docs.hyperswitch.io/about-hyperswitch/hyperswitch-architecture#monitoring)              |
 | Granular Metrics     | Monitor latency and success rates per Connector, Account, or Region; set alerts for anomalies                            | [Analytics and Operations](https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and-operations) |
 
 ***

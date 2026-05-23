@@ -41,4 +41,4 @@ Make sure `releaseConfigURL` points to the `config.json` for the correct SDK ver
 `Example: $baseURL/mobile-ota/ios/${BuildConfig.VERSION_NAME}/config.json`
 {% endhint %}
 
-For more information, [Airborne](https://github.com/juspay/airborne)
+For more information, [Airborne](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/over-the-air-ota-updates)

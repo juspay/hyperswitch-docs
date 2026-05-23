@@ -12,7 +12,7 @@ The **PaymentWidget** component from Juspay Hyperswitch renders an **embedded, i
 
 ### Find the Demo App
 
-Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
+Find the demo app [here](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/mobile/cross-platform/react-native/tree/main/example)
 
 ### 1. Basic Usage
 

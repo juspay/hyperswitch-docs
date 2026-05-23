@@ -84,7 +84,7 @@ export AWS_SESSION_TOKEN="<Your AWS_SESSION_TOKEN>" //optional
 Run the below commands in the same terminal session
 
 ```bash
-git clone https://github.com/juspay/hyperswitch-cdk.git
+git clone https://docs.hyperswitch.io-cdk.git
 cd hyperswitch-cdk
 sh install.sh
 ```

@@ -44,7 +44,7 @@ Automates periodic deletion of card information and notifies merchants of API ke
 #### Juspay Hyperswitch Web
 
 1. A JavaScript based frontend SDK for inclusive, consistent and customizable payment experience, unifying checkout experience across platforms:
-2. Platform Support: Available for [Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web), [Android, and iOS](https://github.com/juspay/hyperswitch-client-core).
+2. Platform Support: Available for [Web](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web), [Android, and iOS](https://docs.hyperswitch.io-client-core).
 3. Multi-Method Support: Handles cards, wallets, BNPL, bank transfers, and more.
 4. Flow Adaptability: Supports the nuances of different PSPs' payment flows.
 5. Saved Payment Methods: When integrated with the locker, the SDK automatically displays stored cards or other saved instruments for returning users.
