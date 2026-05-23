@@ -21,7 +21,7 @@ If your platform charges a fee or commission when facilitating payments for your
 
 ### Split Xendit payments via Hyperswitch
 
-Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create).
+Split settlements between multiple sub-merchants, partners, or platforms by including the Xendit split rules in the [payment creation API request](https://api-reference.hyperswitch.io/v1/payments/payments--create).
 
 #### Example: Flat amount Split
 

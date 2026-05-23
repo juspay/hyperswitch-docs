@@ -7,7 +7,7 @@ metaLinks:
 
 # Create Payment Links
 
-Payment links are created using [Payments Create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) API. `payment_link` field should be sent as true in the request. Payment links cannot be confirmed during creation, hence `confirm` cannot be true.
+Payment links are created using [Payments Create](https://api-reference.hyperswitch.io/v1/payments/payments--create) API. `payment_link` field should be sent as true in the request. Payment links cannot be confirmed during creation, hence `confirm` cannot be true.
 
 Each field in the request uses a fallback logic. Below is the order of preference -
 

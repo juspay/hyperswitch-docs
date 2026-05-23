@@ -33,7 +33,7 @@ Incremental authorization can help businesses to fulfill the following use-cases
 
 ### How to use Incremental Authorization through Hyperswitch?
 
-**Step 1:** To use Incremental authorization you can set the value of the [request\_incremental\_authorization](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) field to true in the payments/create API call.
+**Step 1:** To use Incremental authorization you can set the value of the [request\_incremental\_authorization](https://api-reference.hyperswitch.io/v1/payments/payments--create) field to true in the payments/create API call.
 
 ```
 curl --request POST \
@@ -48,7 +48,7 @@ curl --request POST \
 }'
 ```
 
-**Step 2:** In the response, you can find whether the connector allows the Incremental authorization for that particular payment intent or not, refer to [incremental\_authorization\_allowed](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) field in API response.
+**Step 2:** In the response, you can find whether the connector allows the Incremental authorization for that particular payment intent or not, refer to [incremental\_authorization\_allowed](https://api-reference.hyperswitch.io/v1/payments/payments--create) field in API response.
 
 **Step 3:** Use the below curl to make the Incremental authorization requests.
 

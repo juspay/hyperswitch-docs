@@ -96,7 +96,7 @@ chmod 400 locker-jump.pem
 ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
-* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
+* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/locker-api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
 * The locker\_public key and the tenant\_private key to use the locker with your application (Juspay Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash

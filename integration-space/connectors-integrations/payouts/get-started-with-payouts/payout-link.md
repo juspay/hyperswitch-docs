@@ -44,7 +44,7 @@ There are a couple of ways for using payout links.
 * Serving links from a custom domain
 * **\[TEST MODE]** Opening non-iframed links
 
-#### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
+#### 1. Update [business profile](https://api-reference.hyperswitch.io/v1/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
 
 ```jsonc
 "payout_link_config": {
@@ -71,7 +71,7 @@ There are a couple of ways for using payout links.
 
 > **Note:** It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
 
-#### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
+#### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/v1/payouts/payouts--create) endpoint
 
 > **Info:** This creates a default payout link using the payout link config that was configured for the profile. If payout config is not configured and not passed during the create request, a default set of UI config is used.
 
@@ -118,7 +118,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 #### 3. Customizing a payout link during creation
 
-> **Note:** Each payout link can be configured individually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) by including the `payout_link_config` object. UI config and access control (`test_mode`) can be specified during creation. However, `domain_name` is always configured at the profile level.
+> **Note:** Each payout link can be configured individually during [payout creation](https://api-reference.hyperswitch.io/v1/payouts/payouts--create) by including the `payout_link_config` object. UI config and access control (`test_mode`) can be specified during creation. However, `domain_name` is always configured at the profile level.
 
 <pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 --header 'Content-Type: application/json' \
@@ -168,7 +168,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 **Setting at business profile level**
 
-* Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
+* Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/v1/business-profile/business-profile--update) to set `payout_test_mode`
 
 ```jsonc
 "payout_link_config": {
