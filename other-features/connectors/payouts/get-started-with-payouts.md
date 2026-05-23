@@ -22,7 +22,7 @@ Implementation requires the Hyperswitch Dashboard for configuration and the API 
 
 * API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
 * Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
-* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
+* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/v1/payouts/payouts--create)
 
 #### Prerequisites
 

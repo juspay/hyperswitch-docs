@@ -35,7 +35,7 @@ Utilize the Hyperswitch Dashboard and the specialized Postman collection to test
 
 * Sandbox Endpoint: `https://sandbox.hyperswitch.io`
 * Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
-* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
+* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/v1/payouts/payouts--create)
 
 ### Prerequisites
 
