@@ -162,7 +162,7 @@ Deliver seamless, flexible, and localized payment flows that drive higher conver
 [Customizable Checkout SDK (Web) →](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)\
 Embed a native, responsive checkout experience into your website with full control over styling and flow.
 
-[Click to Pay →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets)\
+[Click to Pay →](https://docs.hyperswitch.io/integration-guide/payment-suite/payment-method-card/payment-methods-management)\
 Enable frictionless, one-click payments for returning users using wallets and saved cards.
 
 [Payment Methods Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
@@ -232,7 +232,7 @@ Here's how [Hyperswitch handles idempotency and message ordering](https://deepwi
 
 <summary>Take Hyperswitch into production</summary>
 
-[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
+[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/self-hosting/production-deployment/going-live)\
 Follow our go-live checklist to launch with confidence — covering setup, credentials, security, and monitoring.
 
 </details>
@@ -250,5 +250,5 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 * [API Reference →](https://api-reference.hyperswitch.io/introduction)
 * [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
-* [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
+* [Postman Collection →](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/README#use-postman)
 * [GitHub Repository →](https://github.com/juspay/hyperswitch)
