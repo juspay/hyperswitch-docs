@@ -46,7 +46,7 @@ Juspay Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the e
 
 | Capability         | Description                                                                                                                            | Reference                                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Zero Data Egress   | Sensitive card data (PAN) never leaves your infrastructure; you maintain full ownership of logs and database                           | [Self-Managed Guide](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) |
+| Zero Data Egress   | Sensitive card data (PAN) never leaves your infrastructure; you maintain full ownership of logs and database                           | [Self-Managed Guide](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) |
 | Compliance Control | Define TLS Termination (the point where encrypted traffic is decrypted) and key management strategies using AWS KMS or HashiCorp Vault | [Security Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#security)           |
 | No Vendor Lock-in  | You host the code, so you are not dependent on an external vendor's uptime or roadmap                                                  | [Open Source](https://github.com/juspay/hyperswitch)                                                             |
 
@@ -144,5 +144,5 @@ Ready to augment your payment stack? Here are the next steps:
 * [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
 * [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
 * [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
-* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Juspay Hyperswitch in your own infrastructure
+* [Try it in sandbox](https://docs.hyperswitch.io/integration-guide/account-management/sandbox-environment) — Test your integration without touching production
+* [Deploy self-managed](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) — Run Juspay Hyperswitch in your own infrastructure

@@ -34,7 +34,7 @@ The production configuration recommended for 40 RPS capacity is as follows (excl
 
 For planning purposes, a 40% buffer for the application layer and 50% buffer for stateful components (Database and Redis) is recommended.
 
-Detailed guidance for scaling Juspay Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/production-deployment/scale-and-reliability) section.
+Detailed guidance for scaling Juspay Hyperswitch for enterprise payment systems can be found in the [**Scale & Reliability**](https://docs.hyperswitch.io/self-hosting/production-deployment/deployment-overview/README) section.
 {% endhint %}
 
 ### **Software**

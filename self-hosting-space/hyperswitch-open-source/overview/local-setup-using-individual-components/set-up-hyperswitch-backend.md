@@ -6,7 +6,7 @@ description: Set up the Hyperswitch backend locally using Docker or Rust for pay
 # Backend
 
 {% hint style="warning" %}
-This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/local-setup-guide).
 {% endhint %}
 
 ### Supported Methods:
@@ -78,7 +78,7 @@ This section of the guide provides instructions to install dependencies on Ubunt
     systemctl start redis.service
     ```
 
-    If you're running a distribution other than Ubuntu, you can follow the installation instructions on the [Redis website](https://redis.io/docs/getting-started/installation/) to set up Redis on your system.
+    If you're running a distribution other than Ubuntu, you can follow the installation instructions on the [Redis website](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) to set up Redis on your system.
 4.  Install `diesel_cli` using `cargo`:
 
     ```bash
@@ -136,7 +136,7 @@ This section of the guide provides instructions to install dependencies on Ubunt
     sudo service redis-server start
     ```
 
-    For more information, refer to the docs for [installing Redis on WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-redis). If you're running a distribution other than Ubuntu, you can follow the installation instructions on the [Redis website](https://redis.io/docs/getting-started/installation/) to set up Redis on your system.
+    For more information, refer to the docs for [installing Redis on WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-redis). If you're running a distribution other than Ubuntu, you can follow the installation instructions on the [Redis website](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) to set up Redis on your system.
 5.  Make sure your system has the packages necessary for compiling Rust code:
 
     ```bash
@@ -160,7 +160,7 @@ Once you're done with setting up the dependencies, proceed with [setting up the 
 We'll be using [`winget`](https://github.com/microsoft/winget-cli) in this section of the guide, where possible. You can opt to use your favorite package manager instead.
 
 1. Install PostgreSQL database, following the [official installation docs](https://www.postgresql.org/download/windows/).
-2. Install Redis, following the [official installation docs](https://redis.io/docs/getting-started/installation/install-redis-on-windows).
+2. Install Redis, following the [official installation docs](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows).
 3.  Install rust with `winget`:
 
     ```bash
