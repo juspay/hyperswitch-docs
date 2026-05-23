@@ -39,7 +39,7 @@ In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/creat
 
 #### Payment Response
 
-The response includes charge details for [Split Settlements](https://docs.hyperswitch.io/features/split-settlements) to verify distribution:
+The response includes charge details for [Split Settlements](https://docs.hyperswitch.io/integrations/connectors-integrations/split-payments) to verify distribution:
 
 ```json
 "split_payments": {

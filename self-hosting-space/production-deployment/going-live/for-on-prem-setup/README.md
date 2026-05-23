@@ -30,7 +30,7 @@ Here's a quick summary of everything you would need for going live with Juspay H
 ### Apple Pay Certificate
 
 * [ ] To enable Apple Pay payments, request the required certificate: `Hyperswitch-app.server.secrets.apple_pay_merchant_cert`.\
-  Follow the official setup guide: [Apple Pay Setup](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets/apple-pay/ios-application).
+  Follow the official setup guide: [Apple Pay Setup](https://docs.hyperswitch.io/integration-guide/payment-suite/payment-method-card/payment-methods-management/apple-pay/ios-application).
 
 ### Deploying the Application
 

@@ -32,7 +32,7 @@ Juspay Hyperswitch acts as a Connector Abstraction Layer. You integrate our chec
 | --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | Unified API           | Normalises 300+ processor APIs into a single Payment Intent Flow     | [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create)         |
 | Zero-Code Integration | New processors added via configuration, not code                     | [Supported Connectors](https://juspay.io/integrations)                                                           |
-| Deployment Model      | Self-hosted (run in your infrastructure) or SaaS (managed by Juspay) | [Deployment Options](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) |
+| Deployment Model      | Self-hosted (run in your infrastructure) or SaaS (managed by Juspay) | [Deployment Options](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) |
 | Integration Model     | SDK (embedded checkout UI) or API (backend-only integration)         | [Platform Capabilities](https://docs.hyperswitch.io/explore-hyperswitch)                                         |
 
 ***
@@ -89,7 +89,7 @@ curl --request POST \
   }'
 ```
 
-> **Try it in sandbox:** Use `https://sandbox.hyperswitch.io` for testing. See our [Sandbox Guide](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) for details.
+> **Try it in sandbox:** Use `https://sandbox.hyperswitch.io` for testing. See our [Sandbox Guide](https://docs.hyperswitch.io/integration-guide/account-management/sandbox-environment) for details.
 
 ***
 
@@ -172,4 +172,4 @@ Ready to get started? Here are the next steps:
 * [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
 * [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
 * [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
+* [Try it in sandbox](https://docs.hyperswitch.io/integration-guide/account-management/sandbox-environment) — Test your integration without touching production
