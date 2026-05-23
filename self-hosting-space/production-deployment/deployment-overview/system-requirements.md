@@ -55,11 +55,11 @@ Redis version 7.x is recommended for caching
 
 #### Versioning
 
-The [hyperswitch-suite](https://docs.hyperswitch.io-suite) is a singular reference repository to be followed for application updates. This is to ensure compatibility across application components. Semantic versioning is followed across all application components.
+The [hyperswitch-suite](https://github.com/juspay/hyperswitch-suite) is a singular reference repository to be followed for application updates. This is to ensure compatibility across application components. Semantic versioning is followed across all application components.
 
 The approved and listed software version appears as "Juspay Hyperswitch, Version: 1.x" on the [PCI SSC List of Validated Payment Software](https://listings.pcisecuritystandards.org/assessors_and_solutions/payment_software?agree=true), with the major version clearly indicated. Major version components only change when there are significant feature changes, or the changes impact any part of a security standard.
 
-The stable releases are announced on a monthly basis on the [Releases page](https://docs.hyperswitch.io-suite/releases). This will include notes on each application component which includes
+The stable releases are announced on a monthly basis on the [Releases page](https://github.com/juspay/hyperswitch-suite/releases). This will include notes on each application component which includes
 
 * New features
 * Bug fixes

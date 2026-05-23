@@ -126,7 +126,7 @@ If external key managers are unavailable, Juspay Hyperswitch provides utilities 
 Example utility command:
 
 ```
-cargo install --git https://docs.hyperswitch.io-card-vault --bin utils --root . \
+cargo install --git https://github.com/juspay/hyperswitch-card-vault --bin utils --root . \
 && ./bin/utils master-key
 ```
 

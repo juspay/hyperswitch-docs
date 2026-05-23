@@ -12,17 +12,17 @@ metaLinks:
 
 ### Configure the application
 
-The application configuration files are present under the [`config`](https://docs.hyperswitch.io/blob/main/config) directory.
+The application configuration files are present under the [`config`](https://github.com/juspay/hyperswitch/blob/main/config) directory.
 
 The configuration file read varies with the environment:
 
-* Development: [`config/development.toml`](https://docs.hyperswitch.io/blob/main/config/development.toml)
+* Development: [`config/development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml)
 * Sandbox: `config/sandbox.toml`
 * Production: `config/production.toml`
 
-Refer to [`config.example.toml`](https://docs.hyperswitch.io/blob/main/config/config.example.toml) for all the available configuration options. Refer to [`development.toml`](https://docs.hyperswitch.io/blob/main/config/development.toml) for the recommended defaults for local development.
+Refer to [`config.example.toml`](https://github.com/juspay/hyperswitch/blob/main/config/config.example.toml) for all the available configuration options. Refer to [`development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml) for the recommended defaults for local development.
 
-Ensure to update the [`development.toml`](https://docs.hyperswitch.io/blob/main/config/development.toml) file if you opted to use different database credentials as compared to the sample ones included in this guide.
+Ensure to update the [`development.toml`](https://github.com/juspay/hyperswitch/blob/main/config/development.toml) file if you opted to use different database credentials as compared to the sample ones included in this guide.
 
 Once you're done with configuring the application, proceed with [running the application](configure-and-run-the-application.md#run-the-application).
 

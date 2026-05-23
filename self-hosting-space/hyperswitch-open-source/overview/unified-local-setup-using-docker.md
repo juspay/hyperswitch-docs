@@ -22,7 +22,7 @@ You can alternatively use [Podman](https://podman.io/) or [Orbstack](https://orb
 Once Docker is installed, launch the Docker desktop app, then use the following command at the command line.
 
 ```
-git clone --depth 1 --branch latest https://docs.hyperswitch.io
+git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
 cd hyperswitch
 scripts/setup.sh
 ```
@@ -38,7 +38,7 @@ The above command will:
 * Start the selected services
 * Provide link to access various components
 
-If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://docs.hyperswitch.io/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose). 
+If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose). 
 
 {% hint style="info" %}
 **Have Questions?**\

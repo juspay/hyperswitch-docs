@@ -209,7 +209,7 @@ Publishable keys for sandbox environments start with `pk_snd_`
 **Option B: Local setup using Docker**
 
 ```
-git clone --depth 1 --branch latest https://docs.hyperswitch.io
+git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
 cd hyperswitch
 scripts/setup.sh
 ```
@@ -384,7 +384,7 @@ const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
 Update Podfile sources.
 
 ```
-source 'https://docs.hyperswitch.io-pods.git'
+source 'https://github.com/juspay/hyperswitch-pods.git'
 source 'https://cdn.cocoapods.org/'
 ```
 
@@ -547,7 +547,7 @@ const stripe = require("@juspay-tech/hyper-node")("your\_hyperswitch\_api\_key")
 
 Update Podfile sources.
 
-source '[https://docs.hyperswitch.io-pods.git](https://docs.hyperswitch.io-pods.git)'\
+source '[https://github.com/juspay/hyperswitch-pods.git](https://github.com/juspay/hyperswitch-pods.git)'\
 source '[https://cdn.cocoapods.org/](https://cdn.cocoapods.org/)'
 
 Replace Stripe dependency.

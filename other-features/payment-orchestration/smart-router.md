@@ -27,7 +27,7 @@ Hence, Juspay Hyperswitch's smart router is designed as a no-code tool to provid
 
 **Default Fallback Routing :** If the active routing rules are not applicable, the priority order of all configured payment processors is used to route payments. This priority order is configurable from the Dashboard.
 
-**Cost Based Configuration** (submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests))**:** Automatically routes transaction to the payment processor charging the least MDR (merchant discount rate) for the opted payment method.
+**Cost Based Configuration** (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests))**:** Automatically routes transaction to the payment processor charging the least MDR (merchant discount rate) for the opted payment method.
 
 ### How does the Smart Router work?
 

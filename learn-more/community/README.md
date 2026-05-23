@@ -40,7 +40,7 @@ This is our town hall, so it's open, collaborative, and a chance to see Hyperswi
 
 #### 🐙 GitHub
 
-Our [GitHub repo](https://docs.hyperswitch.io?utm_source=chatgpt.com) is where the magic happens.
+Our [GitHub repo](https://github.com/juspay/hyperswitch?utm_source=chatgpt.com) is where the magic happens.
 
 * ⭐ Star the project to follow along
 * Explore **good first issues** to start contributing
@@ -73,7 +73,7 @@ Slack is our most active space! Please drop in and say hi!
 
 👉 **Start your journey today:**
 
-* ⭐ [Star us on GitHub](https://docs.hyperswitch.io?utm_source=chatgpt.com)
+* ⭐ [Star us on GitHub](https://github.com/juspay/hyperswitch?utm_source=chatgpt.com)
 * 💬 [Join the Slack community](https://join.slack.com/t/hyperswitch-io/shared_invite/zt-39d4w0043-CgAyb75Kn0YldNyZpd8hWA)
 * 🗓️ [Register for the next Community Sync](https://www.linkedin.com/company/90383802/admin/notifications/all/?viewEvents=true)
 * 📺 [Join Office Hours](https://meet.google.com/grq-pxuh-zvr)

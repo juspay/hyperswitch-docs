@@ -11,7 +11,7 @@ sdk_language: java
 
 ## What is Prism?
 
-Prism is a stateless, unified connector library to connect with any payment processor. It is extracted out of the hardened integrations through continuous testing & iterative bug fixing over years of usage within [Juspay Hyperswitch](https://docs.hyperswitch.io).
+Prism is a stateless, unified connector library to connect with any payment processor. It is extracted out of the hardened integrations through continuous testing & iterative bug fixing over years of usage within [Juspay Hyperswitch](https://github.com/juspay/hyperswitch).
 
 
 ### Why are payment processor integrations such a big deal?
@@ -22,7 +22,7 @@ A small mistake or oversight can create a huge financial impact for businesses a
 
 Hence, **Prism** - to open up payment diversity to the entire world as a simple, lightweight, zero lock-in, developer friendly payments library.
 
-**Prism is extracted, built and maintained by the team behind [Juspay Hyperswitch](https://docs.hyperswitch.io) - the open-source payments platform with 40K+ Github stars and used by leading enterprise merchants around the world.**
+**Prism is extracted, built and maintained by the team behind [Juspay Hyperswitch](https://github.com/juspay/hyperswitch) - the open-source payments platform with 40K+ Github stars and used by leading enterprise merchants around the world.**
 
 **Note:** In all honesty, payments are not more complicated than database drivers. It is simply just that the industry has not arrived at a standard (and it never will!!).
 
@@ -50,7 +50,7 @@ Prism supports **multiple connectors** with varying levels of payment method and
 
 ## What Prism does not do (yet)?
 - **Built-in vault or tokenization service.** This is a design choice. You may bring your own vault, or use the payment processor's vault.
-- **Retry or routing logic.** It lives in [Juspay Hyperswitch](https://docs.hyperswitch.io). Prism is only the transformation layer.
+- **Retry or routing logic.** It lives in [Juspay Hyperswitch](https://github.com/juspay/hyperswitch). Prism is only the transformation layer.
 - **Beyond payments.** The diversity exists beyond payments - in subscriptions, fraud, tax, payouts. And it is our aspiration, to evolve Prism into a stateless commerce library.
 
 ## Installation

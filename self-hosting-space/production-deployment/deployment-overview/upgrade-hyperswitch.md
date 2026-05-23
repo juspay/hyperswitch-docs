@@ -265,7 +265,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://docs.hyperswitch.io
+    repoURL: https://github.com/juspay/hyperswitch
     chart: hyperswitch-stack
     targetRevision: <chart-version>
 

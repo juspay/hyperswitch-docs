@@ -113,4 +113,4 @@ _<mark style="color:blue;">Learn more about the existing Revenue Recovery featur
 
 **Want to contribute to the roadmap?**
 
-[Submit an idea or feature request here](https://docs.hyperswitch.io/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.
+[Submit an idea or feature request here](https://github.com/juspay/hyperswitch/discussions/categories/ideas-feature-requests) with a simple explanation on `What?` and `Why?` included.

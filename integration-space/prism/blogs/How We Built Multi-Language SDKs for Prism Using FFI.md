@@ -92,4 +92,4 @@ if (response.status === types.PaymentStatus.CHARGED) {
 
 That's it. The binary, the encoding, the Rust calls — all hidden behind `authorize()`.
 
-The full implementation lives at [juspay/hyperswitch-prism](https://docs.hyperswitch.io-prism) — the FFI crate, the SDK clients, and the proto definitions are all in there.
+The full implementation lives at [juspay/hyperswitch-prism](https://github.com/juspay/hyperswitch-prism) — the FFI crate, the SDK clients, and the proto definitions are all in there.

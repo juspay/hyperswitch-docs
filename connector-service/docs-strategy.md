@@ -222,7 +222,7 @@ jobs:
 
      - name: Sync to hyperswitch-docs
        run: |
-         git clone https://docs.hyperswitch.io-docs.git
+         git clone https://github.com/juspay/hyperswitch-docs.git
 
 
          # Clear existing UCS docs

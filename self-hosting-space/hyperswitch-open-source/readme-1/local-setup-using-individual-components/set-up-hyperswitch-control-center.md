@@ -25,7 +25,7 @@ Follow these simple steps to set up Hyperswitch on your local machine.
 1.  Clone the repository:
 
     ```
-    git clone https://docs.hyperswitch.io-control-center.git
+    git clone https://github.com/juspay/hyperswitch-control-center.git
     ```
 2.  Navigate to the project directory:
 
@@ -45,7 +45,7 @@ Follow these simple steps to set up Hyperswitch on your local machine.
 5.  In another terminal window, start the backend server, and SDK:
 
     ```
-    git clone --depth 1 --branch latest https://docs.hyperswitch.io
+    git clone --depth 1 --branch latest https://github.com/juspay/hyperswitch
     cd hyperswitch
     docker compose up -d --scale hyperswitch-control-center=0
     ```

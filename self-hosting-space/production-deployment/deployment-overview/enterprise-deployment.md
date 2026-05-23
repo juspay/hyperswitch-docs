@@ -12,7 +12,7 @@ In case you are setting up your payments infrastructure on **Amazon Web Services
 
 **Using Terraform -**
 
-Navigate to the Juspay Hyperswitch [Terraform Documentation](https://docs.hyperswitch.io-suite/tree/main/terraform/aws) and refer to the **aws/live** folder for the type of environment you want to set up.
+Navigate to the Juspay Hyperswitch [Terraform Documentation](https://github.com/juspay/hyperswitch-suite/tree/main/terraform/aws) and refer to the **aws/live** folder for the type of environment you want to set up.
 
 The documentation outlines the following:
 
@@ -95,7 +95,7 @@ This creates a namespace called hyperswitch-dev where you can deploy and manage 
 
 #### 4. Customize the Helm Chart
 
-Please refer to the link for a standard **values.yaml** file in the hyperswitch-helm chart that needs to be modified for a production ready setup - [Link](https://docs.hyperswitch.io-helm/blob/main/charts/incubator/hyperswitch-stack/values.yaml)
+Please refer to the link for a standard **values.yaml** file in the hyperswitch-helm chart that needs to be modified for a production ready setup - [Link](https://github.com/juspay/hyperswitch-helm/blob/main/charts/incubator/hyperswitch-stack/values.yaml)
 
 {% hint style="info" %}
 **Note:** You can further customize each component of the stack by modifying the values.yaml file under each component folder. The component specific values file contains several more parameters compared to the standard values file and can give you more control over your deployment.

@@ -66,7 +66,7 @@ It was extracted from Juspay Hyperswitch and is an actively used component in pr
 
 ### How many payment processors and methods does Prism support?
 
-Prism supports supports multiple connectors and numerous payment methods (beyond cards). An elaborate list is available in the [Supported Connectors List](https://docs.hyperswitch.io-prism/blob/main/docs-generated/all_connector.md).
+Prism supports supports multiple connectors and numerous payment methods (beyond cards). An elaborate list is available in the [Supported Connectors List](https://github.com/juspay/hyperswitch-prism/blob/main/docs-generated/all_connector.md).
 
 A quick summary of the payment methods as below.
 - **Cards**: Visa, Mastercard, Amex, etc.

@@ -80,9 +80,9 @@ Hyperswitch offers various customization options but you can try out our demo st
 
 Here are a few demo integrations for various tech stacks:
 
-* [Hyperswitch React-Node](https://docs.hyperswitch.io-react-node)
-* [Hyperswitch HTML-Node](https://docs.hyperswitch.io-html-node)
-* [Hyperswitch React-Java](https://docs.hyperswitch.io-react-java)
-* [Hyperswitch Next-Node](https://docs.hyperswitch.io-next-node)
+* [Hyperswitch React-Node](https://github.com/juspay/hyperswitch-react-node)
+* [Hyperswitch HTML-Node](https://github.com/juspay/hyperswitch-html-node)
+* [Hyperswitch React-Java](https://github.com/juspay/hyperswitch-react-java)
+* [Hyperswitch Next-Node](https://github.com/juspay/hyperswitch-next-node)
 
 </details>

@@ -20,8 +20,8 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 {% tab title="Stripe Products" %}
 | Stripe UI elements   | <mark style="color:green;">Supported for Payment sheet, Card element and wallet element</mark>                         |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Stripe Payment links | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
-| Stripe Checkout      | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
+| Stripe Payment links | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Stripe Checkout      | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 
 {% tab title="Functionalities" %}
@@ -46,9 +46,9 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 |        |                                                                                                                        |
 | ------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Node   | <mark style="color:green;">Supported</mark>                                                                            |
-| Python | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
-| PHP    | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
-| Ruby   | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
+| Python | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| PHP    | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Ruby   | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 
 {% tab title="Frontend platforms" %}
@@ -60,8 +60,8 @@ Below are the products and features of Stripe support for Hyperswitch quick migr
 | Swift        | <mark style="color:green;">Supported</mark>                                                                            |
 | React Native | <mark style="color:green;">Supported</mark>                                                                            |
 | Woocommerce  | <mark style="color:green;">Supported</mark>                                                                            |
-| Bigcommerce  | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
-| Shopify      | Submit a feature request [here](https://docs.hyperswitch.io/discussions/new?category=ideas-feature-requests) |
+| Bigcommerce  | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
+| Shopify      | Submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests) |
 {% endtab %}
 {% endtabs %}
 

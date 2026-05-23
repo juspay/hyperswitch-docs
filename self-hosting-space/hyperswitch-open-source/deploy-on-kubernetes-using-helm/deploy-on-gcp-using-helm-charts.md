@@ -227,7 +227,7 @@ Refer our [postman collection](https://www.postman.com/hyperswitch/workspace/hyp
 To customize Hyperswitch, clone the Helm chart repository and modify `values.yaml`:
 
 ```sh
-git clone https://docs.hyperswitch.io-helm.git
+git clone https://github.com/juspay/hyperswitch-helm.git
 ```
 
 Update the `values.yaml` file inside `hyperswitch-stack/` and apply changes with:

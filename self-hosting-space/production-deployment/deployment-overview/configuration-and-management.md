@@ -8,7 +8,7 @@ metaLinks:
 
 ### Configuration Files
 
-In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://docs.hyperswitch.io/tree/main/config/deployments).
+In case you would like to use the configuration TOML files directly instead of using Helm Charts please refer to this [directory](https://github.com/juspay/hyperswitch/tree/main/config/deployments).
 
 It contains the configs for deployments of Juspay Hyperswitch in the 3 different hosted environments:
 
@@ -414,7 +414,7 @@ spec:
     namespace: hyperswitch-prod
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://docs.hyperswitch.io-helm
+    repoURL: https://github.com/juspay/hyperswitch-helm
     chart: hyperswitch-stack
     targetRevision: <chart-version>
     helm:

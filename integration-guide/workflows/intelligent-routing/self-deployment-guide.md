@@ -17,7 +17,7 @@ Juspay Hyperswitch's intelligent routing engine can be self-deployed to fit into
 #### 1. Clone the Repository
 
 ```
-git clone https://docs.hyperswitch.io/integration-guide/workflows/intelligent-routing.git
+git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
 ```
 
@@ -67,4 +67,4 @@ make run
 
 After successful setup, the server will start running.
 
-Once the server is set up, you can refer to the [API reference](https://docs.hyperswitch.io/integration-guide/workflows/intelligent-routing/blob/main/docs/api-reference1.md) for usage.
+Once the server is set up, you can refer to the [API reference](https://github.com/juspay/decision-engine/blob/main/docs/api-reference1.md) for usage.

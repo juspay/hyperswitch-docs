@@ -43,7 +43,7 @@ const stripe = require("@juspay-tech/hyper-node")("your_hyperswitch_api_key");
 **Step 3:** Add these sources at the beginning of your Podfile
 
 ```ruby
-source 'https://docs.hyperswitch.io-pods.git'
+source 'https://github.com/juspay/hyperswitch-pods.git'
 source 'https://cdn.cocoapods.org/'
 ```
 

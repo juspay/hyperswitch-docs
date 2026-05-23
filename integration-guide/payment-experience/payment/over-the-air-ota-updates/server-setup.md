@@ -17,4 +17,4 @@ Juspay Hyperswitch's Airborne requires a backend endpoint to serve the **`config
 * Managing rollout strategies (e.g., staged rollouts, feature flags).
 * Ensuring version compatibility between client and bundle.
 
-For complete server setup instructions and example implementations, see the [Airborne](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/over-the-air-ota-updates/) repository.
+For complete server setup instructions and example implementations, see the [Airborne](https://github.com/juspay/airborne/) repository.

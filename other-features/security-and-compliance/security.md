@@ -45,7 +45,7 @@ When a payment is made using a saved card, the card details are securely stored 
    * This securely encrypted data is then stored in the database.
    * The database itself is encrypted at rest, providing an additional layer of security for the stored information.
 
-For more technical details about how the Hyperswitch Card Vault manages encryption and decryption, you can visit the [Hyperswitch Card Vault GitHub repository](https://docs.hyperswitch.io-card-vault).
+For more technical details about how the Hyperswitch Card Vault manages encryption and decryption, you can visit the [Hyperswitch Card Vault GitHub repository](https://github.com/juspay/hyperswitch-card-vault).
 
 #### 3. Using Card Data for Analytics and Payment Operations
 

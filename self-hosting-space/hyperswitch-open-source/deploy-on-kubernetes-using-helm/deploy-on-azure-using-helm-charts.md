@@ -369,7 +369,7 @@ az aks delete --resource-group myAKSResourceGroup --name myAKSCluster --yes
 To customize Hyperswitch, clone the Helm chart repository and modify `values.yaml`:
 
 ```sh
-git clone https://docs.hyperswitch.io-helm.git
+git clone https://github.com/juspay/hyperswitch-helm.git
 ```
 
 Update the `values.yaml` file inside `hyperswitch-stack/` and apply changes with:

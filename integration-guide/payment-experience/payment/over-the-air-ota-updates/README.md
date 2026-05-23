@@ -34,7 +34,7 @@ Airborne enables Juspay Hyperswitch SDK to receive live updates without requirin
 1. App Launch
    * User opens the Hyperswitch-powered app.
 2. **Release Config Fetch**
-   * Airborne makes an API call to your server to fetch the latest release [configuration](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/over-the-air-ota-updates/) for the app.
+   * Airborne makes an API call to your server to fetch the latest release [configuration](https://github.com/juspay/airborne/) for the app.
 3. **Update Check**
    * If the config shows an update is available, Airborne immediately starts downloading the new JavaScript bundle.
 4. **Instant Install**
@@ -48,4 +48,4 @@ Airborne enables Juspay Hyperswitch SDK to receive live updates without requirin
 
 ***
 
-For more information, [Airborne](https://docs.hyperswitch.io/integration-guide/payment-experience/payment/over-the-air-ota-updates)
+For more information, [Airborne](https://github.com/juspay/airborne)
