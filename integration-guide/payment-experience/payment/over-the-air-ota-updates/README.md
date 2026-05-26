@@ -3,6 +3,7 @@ description: >-
   Airborne is an open-source project by Juspay designed to help developers
   integrate Over-The-Air (OTA) update capabilities into Android, iOS, and React
   Native applications effortlessly.
+hidden: true
 icon: arrows-rotate-reverse
 metaLinks:
   alternates:

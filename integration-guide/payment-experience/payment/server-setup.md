@@ -1,5 +1,6 @@
 ---
 description: Set up server-side payment creation and SDK integration for Juspay Hyperswitch
+hidden: true
 icon: server
 metaLinks:
   alternates:

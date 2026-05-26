@@ -3,6 +3,7 @@ description: >-
   Hyperswitch's card scanning feature uses OCR technology to accurately extract
   credit card details in real-time, reducing manual entry errors and speeding up
   checkout.
+hidden: true
 icon: barcode-read
 metaLinks:
   alternates:

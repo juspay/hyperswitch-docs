@@ -2,6 +2,7 @@
 description: >-
   Modular, embeddable alternate payment methods (APMs) known as Hyperwidgets
   that merchants can use to augment their existing checkout with minimal code.
+hidden: true
 icon: bolt-lightning
 metaLinks:
   alternates:

@@ -2,6 +2,7 @@
 description: >-
   Integrate Juspay Hyperswitch unified checkout with your web app for a seamless
   payment experience
+hidden: true
 icon: globe-wifi
 metaLinks:
   alternates:

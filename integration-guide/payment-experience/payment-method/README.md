@@ -2,6 +2,7 @@
 description: >-
   Learn about Hyperswitch Payment Method flows for flexible payment processing,
   including S2S integration, tokenization, and the two-step payment pattern.
+hidden: true
 icon: arrow-progress
 metaLinks:
   alternates:
@@ -13,10 +14,10 @@ metaLinks:
 {% hint style="info" %}
 This section has been consolidated. The complete Vault-Then-Pay documentation — including the two-step integration pattern, SDK setup (React & JS), and S2S API reference — is now in:
 
-- **[Vault-Then-Pay overview](../../payment-suite/payment-method-card/README.md)** — concept, flow options
-- **[Vault SDK Integration](../../workflows/vault/sdk-integration.md)** — React and Vanilla JS step-by-step
-- **[Server-to-Server Vault Tokenization](../../workflows/vault/server-to-server-vault-tokenization.md)** — direct API tokenization
-- **[Vault Configuration](../../workflows/vault/configuration.md)** — API key setup
+* [**Vault-Then-Pay overview**](../../payment-suite/payment-method-card/) — concept, flow options
+* [**Vault SDK Integration**](../../workflows/vault/sdk-integration.md) — React and Vanilla JS step-by-step
+* [**Server-to-Server Vault Tokenization**](../../workflows/vault/server-to-server-vault-tokenization.md) — direct API tokenization
+* [**Vault Configuration**](../../workflows/vault/configuration.md) — API key setup
 {% endhint %}
 
 {% hint style="info" %}

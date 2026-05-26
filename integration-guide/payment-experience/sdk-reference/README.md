@@ -1,5 +1,6 @@
 ---
 description: SDK method details
+hidden: true
 icon: chart-candlestick
 metaLinks:
   alternates:

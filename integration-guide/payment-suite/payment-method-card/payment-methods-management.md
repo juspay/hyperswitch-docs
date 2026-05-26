@@ -2,6 +2,7 @@
 description: >-
   Integrate Hyperswitch's Vault service to store customer payment methods
   securely and eliminate PCI DSS compliance burden
+hidden: true
 icon: bars-progress
 metaLinks:
   alternates:
@@ -18,12 +19,12 @@ The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution
 
 ### Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **Payment Method Creation** | Allow customers to save new payment methods during checkout |
-| **Storing Payment Methods** | Securely store card details — customers never re-enter information |
-| **Retrieving Payment Methods** | Load a customer's saved methods by `customer_id` |
-| **Deleting / Deactivating** | Let customers remove outdated payment methods |
+| Feature                        | Description                                                        |
+| ------------------------------ | ------------------------------------------------------------------ |
+| **Payment Method Creation**    | Allow customers to save new payment methods during checkout        |
+| **Storing Payment Methods**    | Securely store card details — customers never re-enter information |
+| **Retrieving Payment Methods** | Load a customer's saved methods by `customer_id`                   |
+| **Deleting / Deactivating**    | Let customers remove outdated payment methods                      |
 
 ### Prerequisites
 
