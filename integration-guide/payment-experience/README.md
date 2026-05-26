@@ -44,19 +44,3 @@ Use our Vault SDK to tokenize the card first and then proceed with payment using
 Our SDK intelligently displays payment methods based on device, geo, and merchant configuration:
 
 <table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Device-aware</strong></td><td align="center">Apple Pay and Google Pay are shown only on supported devices. The SDK auto-detects features like Touch ID / Face ID, no merchant logic needed.</td></tr><tr><td align="center"><strong>Geo-specific filtering</strong></td><td align="center">Methods like EPS, Giropay, or SEPA and features such as co-brand cards are shown only in supported regions, using device location or merchant provided locale and context.</td></tr><tr><td align="center"><strong>Config-based enable or disable</strong></td><td align="center">Payment methods, card scanning, and third-party SDKs (e.g., Klarna, Netcetera) are enabled via static or connector-based configuration.</td></tr><tr><td align="center"><strong>Dynamic ordering</strong></td><td align="center">Methods can be prioritized based on rules. Presenting users with their preferred payment methods boosts convenience and conversion rates.</td></tr><tr><td align="center"><strong>Dynamic Fields</strong></td><td align="center">Fields like cardholder name, billing/shipping address, email, and phone are dynamically rendered based on connector requirements.</td></tr><tr><td align="center"><strong>Cross-platform &#x26; multi-tenant</strong></td><td align="center">Unified SDK across iOS, Android, Flutter, and React Native. Works across SaaS and self-hosted setups.</td></tr><tr><td align="center"><strong>Full Control Over Design &#x26; Functionality</strong></td><td align="center">Customize both the appearance and behavior of the checkout experience.</td></tr><tr><td align="center"><strong>Advanced Security, No Redirection</strong></td><td align="center">Seamlessly integrate native 3DS and Click to Pay for secure, frictionless transactions.</td></tr><tr><td align="center"><strong>Session level overrides</strong></td><td align="center">All configurations with respect to payment method display, look-and-feel, and behavior can be overridden at session level.</td></tr></tbody></table>
-
-***
-
-## Agent Instructions: Querying This Documentation
-
-If you need additional information that is not directly available in this page, you can query the documentation dynamically by asking a question.
-
-Perform an HTTP GET request on the current page URL with the `ask` query parameter:
-
-```
-GET https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience.md?ask=<question>
-```
-
-The question should be specific, self-contained, and written in natural language. The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
-
-Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.
