@@ -1,5 +1,7 @@
 ---
-description: Understand Hyperswitch's three-level hierarchy of Organization, Merchant Account, and Profile.
+description: >-
+  Understand Hyperswitch's three-level hierarchy of Organization, Merchant
+  Account, and Profile.
 icon: people-roof
 metaLinks:
   alternates:
@@ -15,8 +17,6 @@ Picking the right account structure is the first architectural decision when set
 * **Profile**: the most granular layer, where payment configuration (routing, webhooks, return URLs) actually lives.
 
 Every payment in Hyperswitch is tagged with a profile, which determines which routing rules and connector credentials are used.
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-10-21 at 5.59.19 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 When you sign up on the Control Centre, an Organization is created for you with one Merchant Account and one Profile already in place. You're assigned the **Organization Admin** role, which lets you invite teammates and grant them roles at any level.
 

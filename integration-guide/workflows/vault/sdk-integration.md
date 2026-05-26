@@ -8,7 +8,7 @@ metaLinks:
     - sdk-integration.md
 ---
 
-# Vault SDK - Payment methods management
+# SDK
 
 The Juspay Hyperswitch Vault SDK provides a secure, PCI-compliant iframe for merchants to collect, store, and manage customer payment methods - without raw card data ever touching your servers.
 
@@ -115,7 +115,7 @@ Choose your frontend framework:
 
 {% tabs %}
 {% tab title="React" %}
-#### React Integration
+**React Integration**
 
 **2.1 Install Libraries**
 
@@ -232,7 +232,7 @@ Call `confirmTokenization()` when the user submits. Hyper handles any required 3
 {% endtab %}
 
 {% tab title="JavaScript" %}
-#### JavaScript Integration
+**JavaScript Integration**
 
 **2.1 Define the HTML Placeholder**
 
