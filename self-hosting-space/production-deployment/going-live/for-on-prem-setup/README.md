@@ -1,6 +1,6 @@
 ---
 description: >-
-  Comprehensive checklist for going live with Juspay Hyperswitch on-premise
+  Comprehensive checklist for going live with Juspay Hyperswitch self-hosted
   deployment including prerequisites, security, monitoring, and PCI compliance
 icon: clipboard-question
 metaLinks:
@@ -8,7 +8,7 @@ metaLinks:
     - ./
 ---
 
-# For On-Prem Setup
+# For Self-Host Setup
 
 ### Prerequisites
 

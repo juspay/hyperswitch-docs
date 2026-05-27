@@ -54,7 +54,7 @@
 * [Monitoring and Alerts](production-deployment/monitoring-and-alerts.md)
 * [Going live](production-deployment/going-live/README.md)
   * [For SaaS Setup](production-deployment/going-live/for-saas-setup.md)
-  * [For On-Prem Setup](production-deployment/going-live/for-on-prem-setup/README.md)
+  * [For Self-Host Setup](production-deployment/going-live/for-on-prem-setup/README.md)
     * [Monitoring](production-deployment/going-live/for-on-prem-setup/monitoring.md)
     * [PCI compliance](production-deployment/going-live/for-on-prem-setup/pci-compliance/README.md)
       * [Get started](production-deployment/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science.md)
