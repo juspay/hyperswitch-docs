@@ -143,6 +143,7 @@
 
 
 
+
 ## PRISM
 
 
@@ -209,6 +210,15 @@
     - [Create Access Token](prism/api-reference/services/merchant-authentication-service/create-access-token.md)
     - [Create Session Token](prism/api-reference/services/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/api-reference/services/merchant-authentication-service/create-sdk-session-token.md)
+  - [Payout Service Overview](prism/api-reference/services/payout-service/README.md)
+    - [Create](prism/api-reference/services/payout-service/create.md)
+    - [Transfer](prism/api-reference/services/payout-service/transfer.md)
+    - [Get](prism/api-reference/services/payout-service/get.md)
+    - [Void](prism/api-reference/services/payout-service/void.md)
+    - [Stage](prism/api-reference/services/payout-service/stage.md)
+    - [Create Link](prism/api-reference/services/payout-service/create-link.md)
+    - [Create Recipient](prism/api-reference/services/payout-service/create-recipient.md)
+    - [Enroll Disburse Account](prism/api-reference/services/payout-service/enroll-disburse-account.md)
   - [Domain Schema](prism/api-reference/domain-schema/README.md)
 
 - [FAQs](prism/FAQs.md)
@@ -249,6 +259,15 @@
     - [Create Access Token](prism/sdks/java/merchant-authentication-service/create-access-token.md)
     - [Create Session Token](prism/sdks/java/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/sdks/java/merchant-authentication-service/create-sdk-session-token.md)
+  - [Payout Service Overview](prism/sdks/java/payout-service/README.md)
+    - [Create](prism/sdks/java/payout-service/create.md)
+    - [Transfer](prism/sdks/java/payout-service/transfer.md)
+    - [Get](prism/sdks/java/payout-service/get.md)
+    - [Void](prism/sdks/java/payout-service/void.md)
+    - [Stage](prism/sdks/java/payout-service/stage.md)
+    - [Create Link](prism/sdks/java/payout-service/create-link.md)
+    - [Create Recipient](prism/sdks/java/payout-service/create-recipient.md)
+    - [Enroll Disburse Account](prism/sdks/java/payout-service/enroll-disburse-account.md)
 
 - [Node.js SDK Overview](prism/sdks/node/README.md)
   - [Payment Service Overview](prism/sdks/node/payment-service/README.md)
@@ -285,6 +304,15 @@
     - [Create Access Token](prism/sdks/node/merchant-authentication-service/create-access-token.md)
     - [Create Session Token](prism/sdks/node/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/sdks/node/merchant-authentication-service/create-sdk-session-token.md)
+  - [Payout Service Overview](prism/sdks/node/payout-service/README.md)
+    - [Create](prism/sdks/node/payout-service/create.md)
+    - [Transfer](prism/sdks/node/payout-service/transfer.md)
+    - [Get](prism/sdks/node/payout-service/get.md)
+    - [Void](prism/sdks/node/payout-service/void.md)
+    - [Stage](prism/sdks/node/payout-service/stage.md)
+    - [Create Link](prism/sdks/node/payout-service/create-link.md)
+    - [Create Recipient](prism/sdks/node/payout-service/create-recipient.md)
+    - [Enroll Disburse Account](prism/sdks/node/payout-service/enroll-disburse-account.md)
 
 - [Python SDK Overview](prism/sdks/python/README.md)
   - [Payment Service Overview](prism/sdks/python/payment-service/README.md)
@@ -321,3 +349,12 @@
     - [Create Access Token](prism/sdks/python/merchant-authentication-service/create-access-token.md)
     - [Create Session Token](prism/sdks/python/merchant-authentication-service/create-session-token.md)
     - [Create SDK Session Token](prism/sdks/python/merchant-authentication-service/create-sdk-session-token.md)
+  - [Payout Service Overview](prism/sdks/python/payout-service/README.md)
+    - [Create](prism/sdks/python/payout-service/create.md)
+    - [Transfer](prism/sdks/python/payout-service/transfer.md)
+    - [Get](prism/sdks/python/payout-service/get.md)
+    - [Void](prism/sdks/python/payout-service/void.md)
+    - [Stage](prism/sdks/python/payout-service/stage.md)
+    - [Create Link](prism/sdks/python/payout-service/create-link.md)
+    - [Create Recipient](prism/sdks/python/payout-service/create-recipient.md)
+    - [Enroll Disburse Account](prism/sdks/python/payout-service/enroll-disburse-account.md)
