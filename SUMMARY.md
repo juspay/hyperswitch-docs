@@ -175,6 +175,7 @@
   * [Fraud & Risk Management](integration-guide/workflows/fraud-and-risk-management/README.md)
     * [Activating FRM in Hyperswitch](integration-guide/workflows/fraud-and-risk-management/activating-frm-in-hyperswitch.md)
     * [Fraud Blocklist](integration-guide/workflows/fraud-and-risk-management/fraud-blocklist.md)
+    * [Detection and Prevention Rules](integration-guide/workflows/fraud-and-risk-management/detection-and-prevention-rules.md)
   * [Vault](integration-guide/workflows/vault/README.md)
     * [Integration](integration-guide/workflows/vault/integration.md)
       * [Server to Server](integration-guide/workflows/vault/server-to-server-vault-tokenization.md)
