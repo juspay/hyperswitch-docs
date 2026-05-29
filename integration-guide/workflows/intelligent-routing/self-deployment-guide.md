@@ -67,4 +67,4 @@ make run
 
 After successful setup, the server will start running.
 
-Once the server is set up, you can refer to the [API reference](https://github.com/juspay/decision-engine) for usage.
+Once the server is set up, you can refer to the [API reference](https://api-reference.hyperswitch.io/) for usage.
