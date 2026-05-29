@@ -162,7 +162,7 @@ Deliver seamless, flexible, and localized payment flows that drive higher conver
 [Customizable Checkout SDK (Web) →](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)\
 Embed a native, responsive checkout experience into your website with full control over styling and flow.
 
-[Click to Pay →](https://docs.hyperswitch.io/integration-guide/payment-suite/payment-method-card/payment-methods-management)\
+[Click to Pay →](https://docs.hyperswitch.io/other-features/click-to-pay)\
 Enable frictionless, one-click payments for returning users using wallets and saved cards.
 
 [Payment Methods Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
