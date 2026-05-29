@@ -131,7 +131,7 @@ Submit the Hyperswitch generated payment\_method\_id to process the MIT transact
 
 Submit a processor-issued token that represents the previously authorized payment instrument.
 
-#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)
+#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-network-transaction-id-one-of-0)
 
 Provide the original network transaction identifier along with the associated primary card data required for authorization.
 
