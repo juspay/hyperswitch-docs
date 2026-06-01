@@ -11,7 +11,7 @@ metaLinks:
 # SDK (Frontend)
 
 {% hint style="warning" %}
-This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+This setup is meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://app.hyperswitch.io).
 {% endhint %}
 
 You will need to understand and configure a few configurations before starting the local setup. -
