@@ -99,7 +99,7 @@
 
 ## Supported Connectors
 
-* [Supported Connectors](https://juspay.io/integrations)
+* [Supported Connectors](https://hyperswitch.io/integrations)
 
 ## PRISM
 

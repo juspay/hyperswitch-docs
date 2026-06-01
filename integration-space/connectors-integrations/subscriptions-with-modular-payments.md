@@ -31,7 +31,7 @@ Businesses running on a subscription model — powered by providers such as Char
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](https://docs.hyperswitch.io/other-features/payments-modules/revenue-recovery)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
