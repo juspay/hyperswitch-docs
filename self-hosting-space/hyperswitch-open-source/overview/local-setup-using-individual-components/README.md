@@ -11,7 +11,7 @@ metaLinks:
 # Advanced Development Env Setup
 
 {% hint style="warning" %}
-These setup guides are meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker).
+These setup guides are meant for development. If you want a quick trial of Hyperswitch (without contributing), use [this guide](https://app.hyperswitch.io).
 {% endhint %}
 
 ### Setup Guides
