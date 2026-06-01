@@ -271,16 +271,7 @@ That's it! Hyperswitch should be up and running on your Azure account 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
-
-```bash
-kubectl port-forward service/hyperswitch-server 8080:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-control-center 9000:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-web 9050:9050 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/<release-name>-grafana 3000:80 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/<release-name>-vector 3103:3103 -n <namespace> > /dev/null 2>&1 & \
-kubectl port-forward service/mailhog 8025:8025 -n <namespace> > /dev/null 2>&1 &
-```
+Use the commands from the **Step 3 (from above)** for port-forwarding to access the services.&#x20;
 
 Access the services at:
 

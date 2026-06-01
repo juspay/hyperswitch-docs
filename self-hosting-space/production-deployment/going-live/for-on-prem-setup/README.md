@@ -1,6 +1,6 @@
 ---
 description: >-
-  Comprehensive checklist for going live with Juspay Hyperswitch on-premise
+  Comprehensive checklist for going live with Juspay Hyperswitch self-hosted
   deployment including prerequisites, security, monitoring, and PCI compliance
 icon: clipboard-question
 metaLinks:
@@ -8,7 +8,7 @@ metaLinks:
     - ./
 ---
 
-# For On-Prem Setup
+# For Self-Host Setup
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ Here's a quick summary of everything you would need for going live with Juspay H
 
 ### Deploying the Application
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>On Kubernetes</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td></tr><tr><td><mark style="color:blue;"><strong>On AWS</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>On Kubernetes</strong></mark></td><td><a href="../../../">..</a></td></tr><tr><td><mark style="color:blue;"><strong>On AWS</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 The above installation guides include vault as well, but you will need to activate the vault by following the steps mentioned in [this guide](https://github.com/juspay/hyperswitch-helm/tree/main/charts/incubator/hyperswitch-stack#-step-1---deploy-card-vault).

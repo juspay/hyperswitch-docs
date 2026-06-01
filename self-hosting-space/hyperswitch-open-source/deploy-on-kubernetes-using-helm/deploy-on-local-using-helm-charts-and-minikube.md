@@ -9,6 +9,16 @@ metaLinks:
 
 # Deploy on Local using Helm Charts and Minikube
 
+### **One-click setup**
+
+Copy and paste the below in your terminal. The script will check for missing prerequisites (kubectl, helm, curl, jq) and install any that are missing, spin up a local Kubernetes cluster, deploy Hyperswitch, configure a merchant account and business profile, add 4 dummy connectors (stripe\_test, paypal\_test, fauxpay, pretendpay), set up routing rules, and seed 50 test transactions across all connectors
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/juspay/hyperswitch/refs/heads/main/scripts/hyperswitch-explore.sh)
+```
+
+Or review the deployment guide given below.&#x20;
+
 ### **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
 ### Option 1: Setting Up a Local Kubernetes Cluster with Minikube
@@ -93,16 +103,7 @@ That's it! Hyperswitch should be up and running on your Minikube ClusterðŸŽ‰ ðŸŽ
 
 #### **Step 3: Accessing Services** <a href="#id-6pkposi9l5fl" id="id-6pkposi9l5fl"></a>
 
-Expose services locally using port forwarding:
-
-```bash
-kubectl port-forward service/hyperswitch-server 8080:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-control-center 9000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-web 9050:9050 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-grafana 3000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-vector 3103:3103 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
-```
+Use the commands from the **Step 2 (from above)** for port-forwarding to access the services.&#x20;
 
 Access services at:
 

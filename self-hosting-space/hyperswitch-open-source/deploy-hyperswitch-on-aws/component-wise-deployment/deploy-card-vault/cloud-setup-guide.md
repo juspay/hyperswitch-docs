@@ -15,8 +15,6 @@ This guide will help you to set up the card vault on AWS manually by setting up 
 
 Log into your AWS account and create a new EC2 instance preferably on a t3.medium machine with an AMI that supports docker like Amazon Linux 2.
 
-<figure><img src="../../../../.gitbook/assets/image (48).png" alt="" width="563"><figcaption><p>Creating an EC2</p></figcaption></figure>
-
 {% hint style="warning" %}
 Ensure to manage your instances' (EC2 and RDS) security group rules are selectively enabled for the application subnet and not exposed to the internet. (The locker application should not be accessible via internet)
 {% endhint %}
@@ -24,8 +22,6 @@ Ensure to manage your instances' (EC2 and RDS) security group rules are selectiv
 ### Install Docker on the EC2 instance
 
 Connect to your EC2 instance using the SSH client via a terminal
-
-<figure><img src="../../../../.gitbook/assets/image (49).png" alt="" width="563"><figcaption><p>Connect to your EC2</p></figcaption></figure>
 
 Once you SSH into the EC2 instance, run the following commands on the terminal to install docker
 
@@ -49,9 +45,6 @@ docker pull juspaydotin/hyperswitch-card-vault:latest
 
 * Create an RDS with the latest `postgres` preferably with `Aurora` and select a storage of `t4g medium`. (Record the master username and password securely for further use in setup)
 * Ensure to add the EC2 instance to database's inbound/outbound rules and vice-versa (In the default set up the rules are set to allow all traffic)
-
-<figure><img src="../../../../.gitbook/assets/image (50).png" alt="" width="563"><figcaption><p>Creating an RDS</p></figcaption></figure>
-
 * To run the migrations install `psql` in the EC2 instance
 
 ```bash
@@ -91,10 +84,6 @@ and paste the contents from the below mentioned migration files
 Before setting up KMS, create a new IAM role for your EC2 instance to allow connection to KMS. Use `AWS service` as the trusted entity type and add permissions for `AWSKeyManagementServicePowerUser` and create an inline policy allowing `All KMS actions`.
 
 Now, create a KMS key pair on AWS with the key type as `symmetric` and the key usage as Encrypt and Decrypt. Ensure to add the IAM role above in the key administrative permissions and key usage permissions.
-
-<figure><img src="../../../../.gitbook/assets/image (51).png" alt="" width="563"><figcaption><p>Configuring KMS</p></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/image (52).png" alt="" width="563"><figcaption><p>Creating IAM roles</p></figcaption></figure>
 
 ### Generating the keys
 

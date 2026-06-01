@@ -28,8 +28,6 @@ Pre-requisites
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
-
 #### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
@@ -40,8 +38,6 @@ For this step you would need the following from your AWS account
 4. Session Token (if you have MFA set up)
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
-
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 

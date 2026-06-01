@@ -1,6 +1,11 @@
 ---
+description: >-
+  Set up the Hyperswitch backend locally using Docker or Rust for payment
+  processing and routing
 icon: server
-description: Set up the Hyperswitch backend locally using Docker or Rust for payment processing and routing
+metaLinks:
+  alternates:
+    - set-up-hyperswitch-backend.md
 ---
 
 # Backend

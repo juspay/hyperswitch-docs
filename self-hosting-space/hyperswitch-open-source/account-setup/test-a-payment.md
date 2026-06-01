@@ -30,15 +30,11 @@ There are three conditions in which you might want to make a test payment:
 
 On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Processor**:
 
-<figure><img src="../../.gitbook/assets/2-connect-dummy-processor (1).png" alt=""><figcaption></figcaption></figure>
-
 Go ahead and connect any dummy processor, we'll show an example with the fauxpay processor:
 
 Just connect and proceed with the provided credentials:
 
 From there, navigate back to the **Home** page and click on **Try it out**:
-
-<figure><img src="../../.gitbook/assets/1-try-it-out.png" alt=""><figcaption></figcaption></figure>
 
 Input the credentials and Click on **Pay 100**: :
 

@@ -1,6 +1,11 @@
 ---
+description: >-
+  Set up the Hyperswitch Control Center locally to manage payments and configure
+  routing rules
 icon: laptop
-description: Set up the Hyperswitch Control Center locally to manage payments and configure routing rules
+metaLinks:
+  alternates:
+    - set-up-hyperswitch-control-center.md
 ---
 
 # Control Center

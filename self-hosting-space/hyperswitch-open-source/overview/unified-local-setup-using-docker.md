@@ -1,6 +1,11 @@
 ---
+description: >-
+  Run Hyperswitch locally using Docker with one command for rapid development
+  and testing
 icon: badge-check
-description: Run Hyperswitch locally using Docker with one command for rapid development and testing
+metaLinks:
+  alternates:
+    - unified-local-setup-using-docker.md
 ---
 
 # Run Hyperswitch Locally Using Docker
@@ -38,7 +43,7 @@ The above command will:
 * Start the selected services
 * Provide link to access various components
 
-If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose). 
+If you're **looking to Contribute to Hyperswitch**, try [setting up a **development environment** using Docker Compose](https://github.com/juspay/hyperswitch/blob/main/docs/try_local_system.md#set-up-a-development-environment-using-docker-compose).
 
 {% hint style="info" %}
 **Have Questions?**\

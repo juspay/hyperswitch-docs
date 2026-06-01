@@ -1,20 +1,13 @@
----
-description: Navigate the complete Hyperswitch documentation structure to quickly locate installation guides, API references, and integration resources
----
-
 # Table of contents
 
 ## Hyperswitch open source
 
 * [Get Started](README.md)
-  * [Run Hyperswitch Locally Using Docker](hyperswitch-open-source/readme-1/unified-local-setup-using-docker/README.md)
-    * [Run Additional Services](hyperswitch-open-source/readme-1/unified-local-setup-using-docker/run-additional-services.md)
-  * [Advanced Development Env Setup](hyperswitch-open-source/readme-1/local-setup-using-individual-components/README.md)
-    * [Backend](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/README.md)
-      * [Configure and Run the Application](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/configure-and-run-the-application.md)
-      * [Try out APIs](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/try-out-apis.md)
-    * [SDK (Frontend)](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
-    * [Control Center](hyperswitch-open-source/readme-1/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
+  * [Update Helm Charts to Hyperswitch's Latest Nightly Release](hyperswitch-open-source/deploy-on-kubernetes-using-helm/update-helm-charts-to-hyperswitchs-latest-nightly-release.md)
+  * [Deploy on Local using Helm Charts and Minikube](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md)
+  * [Deploy on AWS using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-aws-using-helm-charts.md)
+  * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
+  * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
 * [Local Setup Guide](hyperswitch-open-source/local-setup-guide.md)
 * [Deploy on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
   * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
@@ -28,17 +21,21 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
     * [Deploy Card Vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
       * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
-* [Deploy on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm/README.md)
-  * [Deploy on GCP Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md)
-  * [Deploy on Azure Using Helm Charts](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md)
-  * [Deploy on Local using Helm Charts and Minikube](hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md)
-  * [Update Helm Charts to Hyperswitch's Latest Nightly Release](hyperswitch-open-source/deploy-on-kubernetes-using-helm/update-helm-charts-to-hyperswitchs-latest-nightly-release.md)
 * [Account setup](hyperswitch-open-source/account-setup/README.md)
   * [Using Hyperswitch Control Center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
   * [Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
   * [Using postman](hyperswitch-open-source/account-setup/using-postman.md)
 * [SMTP Server Integration](hyperswitch-open-source/smtp-server-integration.md)
 * [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
+* [Development on Hyperswitch](<README (1).md>)
+  * [Run Hyperswitch Locally Using Docker](hyperswitch-open-source/overview/unified-local-setup-using-docker.md)
+    * [Run Additional Services](hyperswitch-open-source/overview/unified-local-setup-using-docker/run-additional-services.md)
+  * [Advanced Development Env Setup](hyperswitch-open-source/overview/local-setup-using-individual-components/README.md)
+    * [Backend](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-backend.md)
+      * [Configure and Run the Application](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/configure-and-run-the-application.md)
+      * [Try out APIs](hyperswitch-open-source/overview/local-setup-using-individual-components/backend/try-out-apis.md)
+    * [SDK (Frontend)](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
+    * [Control Center](hyperswitch-open-source/overview/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
 
 ## PRODUCTION DEPLOYMENT
 
@@ -57,7 +54,7 @@ description: Navigate the complete Hyperswitch documentation structure to quickl
 * [Monitoring and Alerts](production-deployment/monitoring-and-alerts.md)
 * [Going live](production-deployment/going-live/README.md)
   * [For SaaS Setup](production-deployment/going-live/for-saas-setup.md)
-  * [For On-Prem Setup](production-deployment/going-live/for-on-prem-setup/README.md)
+  * [For Self-Host Setup](production-deployment/going-live/for-on-prem-setup/README.md)
     * [Monitoring](production-deployment/going-live/for-on-prem-setup/monitoring.md)
     * [PCI compliance](production-deployment/going-live/for-on-prem-setup/pci-compliance/README.md)
       * [Get started](production-deployment/going-live/for-on-prem-setup/pci-compliance/its-no-rocket-science.md)

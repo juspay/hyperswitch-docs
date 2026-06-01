@@ -1,6 +1,11 @@
 ---
+description: >-
+  Run additional services like scheduler, monitoring, and data analytics with
+  Docker profiles
 icon: arrows-to-circle
-description: Run additional services like scheduler, monitoring, and data analytics with Docker profiles
+metaLinks:
+  alternates:
+    - run-additional-services.md
 ---
 
 # Run Additional Services
