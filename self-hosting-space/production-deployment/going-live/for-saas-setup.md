@@ -45,8 +45,8 @@ To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#set-up-webhooks)Set up Webhooks <a href="#set-up-webhooks" id="set-up-webhooks"></a>
 
-* [ ] [Configure your webhook endpoint](https://juspay-78.mintlify.app/essentials/webhooks#configuring-webhooks) on our dashboard to receive notifications for different events.
-* [ ] Update Hyperswitch’s webhook endpoints on your connector’s Dashboard. [Refer here](https://juspay-78.mintlify.app/essentials/webhooks#configuring-webhooks) for detailed instructions.
+* [ ] [Configure your webhook endpoint](https://docs.hyperswitch.io/integration-guide/webhooks#configuring-webhooks) on our dashboard to receive notifications for different events.
+* [ ] Update Hyperswitch’s webhook endpoints on your connector’s Dashboard. [Refer here](https://docs.hyperswitch.io/integration-guide/webhooks#configuring-webhooks) for detailed instructions.
 * [ ] Update the connector secret key in our dashboard for us to authenticate webhooks sent by your connector.
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#secure-your-payments)Secure your Payments <a href="#secure-your-payments" id="secure-your-payments"></a>
@@ -56,7 +56,7 @@ To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#error-handling)Error Handling <a href="#error-handling" id="error-handling"></a>
 
-* [ ] Make sure your API integration is set up to handle all the possible error scenarios (refer this [link](https://juspay-78.mintlify.app/essentials/error_codes)).
+* [ ] Make sure your API integration is set up to handle all the possible error scenarios.
 * [ ] Ensure your Unified Checkout (SDK) integration is set up to handle all the possible error scenarios (refer this [link](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/errorCodes)).
 * [ ] Ensure that your integration can handle the entire payments lifecycle and test various scenarios using actual payment details.
 
@@ -72,3 +72,4 @@ For more details, kindly refer to the [state machine diagrams](https://docs.hype
 {% hint style="success" %}
 You are good to go to run Juspay Hyperswitch in production and provide your customers with a safe, reliable, and smooth payment experience.
 {% endhint %}
+
