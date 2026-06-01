@@ -14,11 +14,11 @@ metaLinks:
 
 ### Overview
 
-Juspay Hyperswitch supports Stripe's Split Settlements functionality, allowing you to create charges and distribute payments between your platform and connected accounts (sellers or service providers). This feature is implemented in Hyperswitch through the `SplitPaymentsRequest` and supports both payment authorization and [refund processing](https://docs.hyperswitch.io/api-reference/refunds).
+Juspay Hyperswitch supports Stripe's Split Settlements functionality, allowing you to create charges and distribute payments between your platform and connected accounts (sellers or service providers). This feature is implemented in Hyperswitch through the `SplitPaymentsRequest` and supports both payment authorization and [refund processing](https://api-reference.hyperswitch.io/v1/refunds/refunds--create).
 
 ### Payment Authorization
 
-In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/create) request, include the Stripe split rule as provided below to dictate fund distribution at the time of transaction.
+In the [Payment Create](https://api-reference.hyperswitch.io/v1/payments/payments--create) request, include the Stripe split rule as provided below to dictate fund distribution at the time of transaction.
 
 ```json
 "split_payments": {
