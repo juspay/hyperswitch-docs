@@ -27,7 +27,7 @@ Each module is **independent and purpose-built** to optimize different aspects o
 5. **Reconciliation**\
    Simplify payment operations with a unified reconciliation framework for 2-way or 3-way reconciliation, with automated data fetching from multiple processors and banks. This module reduces manual effort, minimizes errors, and provides clear visibility into payment data with features like—back-date and staggered recon, output customization and more. [Read more](https://docs.hyperswitch.io/other-features/payments-modules/reconciliation-product)
 6. **Alternate payment methods**\
-   Embeddable payment buttons for seamless one-click checkout with alternate payment methods like PayPal, Apple Pay, Google Pay, Samsung Pay, Pay by Bank or BNPL providers like Klarna. The widget routes the transaction independently and dynamically to one or more connected PSPs, maximizing conversions. [Read more](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/enable-alternate-payment-method-widgets)
+   Embeddable payment buttons for seamless one-click checkout with alternate payment methods like PayPal, Apple Pay, Google Pay, Samsung Pay, Pay by Bank or BNPL providers like Klarna. The widget routes the transaction independently and dynamically to one or more connected PSPs, maximizing conversions. [Read more](https://docs.hyperswitch.io/integration-guide/payment-experience/pay-then-vault/alternate-payment-method-widgets)
 
 And more coming soon...
 
