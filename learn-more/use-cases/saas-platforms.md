@@ -28,12 +28,12 @@ High-value accounts often refuse to migrate their payment processing to the SaaS
 
 Juspay Hyperswitch acts as a Connector Abstraction Layer. You integrate our checkout once, and we dynamically route the transaction to the account's preferred processor based on their configuration.
 
-| Feature               | Description                                                          | Reference                                                                                                        |
-| --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Unified API           | Normalises 300+ processor APIs into a single Payment Intent Flow     | [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create)         |
-| Zero-Code Integration | New processors added via configuration, not code                     | [Supported Connectors](https://juspay.io/integrations)                                                           |
-| Deployment Model      | Self-hosted (run in your infrastructure) or SaaS (managed by Juspay) | [Deployment Options](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) |
-| Integration Model     | SDK (embedded checkout UI) or API (backend-only integration)         | [Platform Capabilities](https://docs.hyperswitch.io/explore-hyperswitch)                                         |
+| Feature               | Description                                                          | Reference                                                                                                |
+| --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Unified API           | Normalises 300+ processor APIs into a single Payment Intent Flow     | [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create) |
+| Zero-Code Integration | New processors added via configuration, not code                     | [Supported Connectors](https://hyperswitch.io/integrations)                                              |
+| Deployment Model      | Self-hosted (run in your infrastructure) or SaaS (managed by Juspay) | [Deployment Options](https://docs.hyperswitch.io/self-hosting)                                           |
+| Integration Model     | SDK (embedded checkout UI) or API (backend-only integration)         | [Platform Capabilities](https://docs.hyperswitch.io/integration-guide/payment-experience)                |
 
 ***
 
@@ -51,7 +51,7 @@ Juspay Hyperswitch provides a built-in [Organisation → Account → Profile](ht
 
 Additional capabilities:
 
-* **Platform Setup**: Configure hierarchical organizations with programmatic merchant onboarding. See [Platform Organization](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/platform-organization-concepts).
+* **Platform Setup**: Configure hierarchical organizations with programmatic merchant onboarding. See Platform Organization.
 * **Granular Control**: Isolate API keys and routing rules at the Account ID level.
 * **Team Access**: Map your control center users to specific levels of the hierarchy using our [User Management](https://docs.hyperswitch.io/explore-hyperswitch/account-management/manage-your-team) controls.
 
@@ -171,5 +171,5 @@ Ready to get started? Here are the next steps:
 * [Configure intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules for your accounts
 * [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
 * [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Listen for payment events across all processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
+* [View supported connectors](https://hyperswitch.io/integrations) — See the full list of integrated payment providers
 * [Try it in sandbox](https://docs.hyperswitch.io/integration-guide/account-management/sandbox-environment) — Test your integration without touching production
