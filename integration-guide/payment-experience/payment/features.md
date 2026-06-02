@@ -3,7 +3,7 @@ description: >-
   Hyperswitch's card scanning feature uses OCR technology to accurately extract
   credit card details in real-time, reducing manual entry errors and speeding up
   checkout.
-hidden: true
+noIndex: true
 icon: barcode-read
 metaLinks:
   alternates:
@@ -12,7 +12,7 @@ metaLinks:
 
 # Card Scanning
 
-<figure><img src="../../../.gitbook/assets/Frame 48095844.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Key Features of Juspay Hyperswitch's Card Scanning Technology
 

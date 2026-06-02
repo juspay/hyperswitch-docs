@@ -2,7 +2,7 @@
 description: >-
   Learn about Hyperswitch Payment Method flows for flexible payment processing,
   including S2S integration, tokenization, and the two-step payment pattern.
-hidden: true
+noIndex: true
 icon: arrow-progress
 metaLinks:
   alternates:
