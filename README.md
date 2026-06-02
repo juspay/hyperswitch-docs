@@ -63,7 +63,7 @@ Perfect for architects and infrastructure teams who want view all available comp
 
 <summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for AWS, GCP &#x26; Azure</strong></summary>
 
-[Deploy on GCP or Azure →](self-hosting-space/hyperswitch-open-source/)
+[Deploy on GCP or Azure →](https://docs.hyperswitch.io/self-hosting)
 
 Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernetes. This method gives you full control over your environment and is ideal for teams deploying on GCP, Azure, or any Kubernetes-compatible platform.
 

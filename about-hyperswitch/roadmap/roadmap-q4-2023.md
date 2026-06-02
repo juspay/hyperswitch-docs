@@ -36,7 +36,7 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Developer Experience
 
-* 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
+* 🟩 Installation scripts for cloud deployment using EKS (on AWS). [Try the installation from here](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-aws-using-helm-charts)
 * 🟩 Publish developer docs for self-hosting Hyperswitch. [Checkout the documentation here](https://opensource.hyperswitch.io/)
 * 🟩 Hyperswitch Woocommerce plugin for Wordpress users. [Install the Woocommerce plugin](https://hyperswitch.io/docs/sdkIntegrations/wooCommercePlugin/wooCommercePluginOverview)
 * 🟩 AWS menu-driven Hyperswitch installation support

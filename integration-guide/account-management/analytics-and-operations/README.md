@@ -79,7 +79,7 @@ Hyperswitch measures conversion rate including user dropouts, so that you get fu
 
 Please refer here for detailed understanding how popular payment processors track payment lifecycle and measure conversion rates.
 
-* [Stripe - Conversion analysis](https://stripe.com/docs/dashboard/conversion-analysis)
+* [Stripe - Conversion analysis](https://docs.stripe.com/dashboard/basics)
 * [Adyen - Reporting and payment lifecycle](https://docs.adyen.com/reporting/reports-and-the-payments-lifecycle/)
 * [Paypal - Reports](https://developer.paypal.com/docs/reports/)
 
