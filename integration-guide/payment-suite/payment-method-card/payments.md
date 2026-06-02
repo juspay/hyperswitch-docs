@@ -48,7 +48,7 @@ For logged-in user checkout flow the PM ID is unique to Customer + Payment metho
 
 1. Create a PM session using the [Session Create API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) to get a [sdk authorization](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-sdk-authorization-one-of-0)
 2. For guest user, pass "storage\_type" as "volatile" and skip sending the Customer ID
-3. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the `sdkAuthorization`
+3. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/integration-guide/payment-experience/vault-then-pay) using the `sdkAuthorization`
 4. The SDK now takes care of the following flows based on user action:
 5. Post which the SDK submits the card details via the [PM Confirm API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--confirm-a-payment-method-session-v1) and returns back a [PM Token](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--confirm-a-payment-method-session-v1#response-id) (short-lived) in the response
 6. Pass the PM Token to the Merchant Server. You may either use it directly for payment or exchange it for a PM ID using [PM token exchange API](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--payment-method-token-to-payment-method-id-v1)
@@ -61,7 +61,7 @@ Note - The HS SDK returns a short-lived PM Token. This can be used directly for 
 ### HS SDK Checkout for Repeat Customer - No CVV Flow
 
 1. Create a PM session using the [Session Create API](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) to get a [sdk authorization](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1#response-sdk-authorization-one-of-0)
-2. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/vault/vault-sdk-integration-1#id-2.2-fetch-the-payment-method-session-and-mount-the-payment-methods-management-element) using the sdk authorization
+2. Initialize and mount the [Vault SDK](https://docs.hyperswitch.io/integration-guide/payment-experience/vault-then-pay) using the sdk authorization
 3. The SDK lists the previously saved cards for customers to select
 4. If the card has been vaulted previously with an MIT setup for it, CVV is not collected for it and the SDK returns back a [PM Token](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-payment-token-one-of-0) (short-lived) in the response. Note - The PM ID in case of guest checkout is volatile in nature and has a default expiry of 1-hour which can be extended by Merchant at a session level.
 
