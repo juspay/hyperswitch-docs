@@ -67,9 +67,9 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 ### Community Feature Requests
 
-* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://opensource.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-app-server)
-* 🟩 Open sourcing Card Vault application code for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-card-vault)
-* 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://opensource.hyperswitch.io/hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-control-center/standalone-control-center-deployment-for-prototyping)
+* 🟩 Open sourcing Hyperswitch Unified Web Checkout for self-hosting. [Try it out here](https://docs.hyperswitch.io/self-hosting)
+* 🟩 Open sourcing Card Vault application code for self-hosting
+* 🟩 Open sourcing Control Centre (Hyperswitch dashboard) for self-hosting [Try it out here](https://docs.hyperswitch.io/self-hosting)
 * 🟩 Direct bank integration - Bank of America
 * 🟩💪 Open sourcing Fraud and Risk Management Integrations
 * 🟩💪 Open sourcing Payouts module
