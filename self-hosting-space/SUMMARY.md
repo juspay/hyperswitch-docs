@@ -50,6 +50,7 @@
   * [Card Vault & Key Management](production-deployment/deployment-overview/card-vault-and-key-management.md)
   * [Upgrade Hyperswitch](production-deployment/deployment-overview/upgrade-hyperswitch.md)
 * [Scale and Reliability](production-deployment/scale-and-reliability.md)
+* [Config Management](production-deployment/config-management.md)
 * [Security and Compliance](production-deployment/security-and-compliance.md)
 * [Monitoring and Alerts](production-deployment/monitoring-and-alerts.md)
 * [Going live](production-deployment/going-live/README.md)
