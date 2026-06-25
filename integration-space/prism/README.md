@@ -1,48 +1,56 @@
-## What is Prism?
+---
+metaLinks:
+  alternates:
+    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/0F41H1VvRqMkGQQjXSTN
+---
+
+# Product Overview
+
+### What is Prism?
 
 Prism is a stateless, unified connector library to connect with any payment processor. It is extracted out of the hardened integrations through continuous testing & iterative bug fixing over years of usage within [Juspay Hyperswitch](https://github.com/juspay/hyperswitch).
 
+#### Why are payment processor integrations such a big deal?
 
-### Why are payment processor integrations such a big deal?
+Every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and behavioural differences between the actual environment and documented specs.
 
-Every payment processor has diverse APIs, error codes, authentication methods, pdf documents to read, and behavioural differences between the actual environment and documented specs. 
-
-A small mistake or oversight can create a huge financial impact for businesses accepting payments. Thousands of enterprises around the world have gone through this learning curve and iterated and fixed payment systems over many years. All such fixes/improvements/iterations are locked-in as tribal knowledge into Enterprise Payment Platforms and SaaS Payment Orchestration solutions. 
+A small mistake or oversight can create a huge financial impact for businesses accepting payments. Thousands of enterprises around the world have gone through this learning curve and iterated and fixed payment systems over many years. All such fixes/improvements/iterations are locked-in as tribal knowledge into Enterprise Payment Platforms and SaaS Payment Orchestration solutions.
 
 Hence, **Prism** - to open up payment diversity to the entire world as a simple, lightweight, zero lock-in, developer friendly payments library.
 
-**Prism is extracted, built and maintained by the team behind [Juspay Hyperswitch](https://github.com/juspay/hyperswitch) - the open-source payments platform with 40K+ Github stars and used by leading enterprise merchants around the world.**
+**Prism is extracted, built and maintained by the team behind** [**Juspay Hyperswitch**](https://github.com/juspay/hyperswitch) **- the open-source payments platform with 40K+ Github stars and used by leading enterprise merchants around the world.**
 
 **Note:** In all honesty, payments are not more complicated than database drivers. It is simply just that the industry has not arrived at a standard (and it never will!!).
 
+### What does Prism do well?
 
-## What does Prism do well?
-- **One request schema** for every payment. The same authorize call works against Stripe, Adyen and many more without additional lines of code.
-- **Stateless. No database, no stored PII.** Credentials are not stored/ logged by the library. It lives only up to the lifetime of your HTTP client.
-- **PCI scope reduction.** The card data flowing/ not flowing into the library is your choice. You can choose to leverage any payment processor vault or your own PCI certified vault. Nothing is logged or stored by the library.
+* **One request schema** for every payment. The same authorize call works against Stripe, Adyen and many more without additional lines of code.
+* **Stateless. No database, no stored PII.** Credentials are not stored/ logged by the library. It lives only up to the lifetime of your HTTP client.
+* **PCI scope reduction.** The card data flowing/ not flowing into the library is your choice. You can choose to leverage any payment processor vault or your own PCI certified vault. Nothing is logged or stored by the library.
 
-
-## Integrations - Status
+### Integrations - Status
 
 Prism supports **multiple connectors** with varying levels of payment method and flow coverage. Each connector is continuously tested against real sandbox/ production environments.
 
 **Legend:** ✓ Supported | x Not Supported | ⚠ In Progress | ? Needs Validation
 
-| Status | Description |
-|--------|-------------|
-| ✓ | Fully implemented and tested |
-| x | Not applicable or unsupported by processor |
-| ⚠ | Implementation in progress or partial |
-| ? | Implementation needs validation against live environment |
+| Status | Description                                              |
+| ------ | -------------------------------------------------------- |
+| ✓      | Fully implemented and tested                             |
+| x      | Not applicable or unsupported by processor               |
+| ⚠      | Implementation in progress or partial                    |
+| ?      | Implementation needs validation against live environment |
 
-**[View Complete Connector Coverage →](./docs-generated/all_connector.md)**
+[**View Complete Connector Coverage →**](docs-generated/all_connector.md)
 
-## What Prism does not do (yet)?
-- **Built-in vault or tokenization service.** This is a design choice. You may bring your own vault, or use the payment processor's vault.
-- **Retry or routing logic.** It lives in [Juspay Hyperswitch](https://github.com/juspay/hyperswitch). Prism is only the transformation layer.
-- **Beyond payments.** The diversity exists beyond payments - in subscriptions, fraud, tax, payouts. And it is our aspiration, to evolve Prism into a stateless commerce library.
+### What Prism does not do (yet)?
 
-## Architecture
+* **Built-in vault or tokenization service.** This is a design choice. You may bring your own vault, or use the payment processor's vault.
+* **Retry or routing logic.** It lives in [Juspay Hyperswitch](https://github.com/juspay/hyperswitch). Prism is only the transformation layer.
+* **Beyond payments.** The diversity exists beyond payments - in subscriptions, fraud, tax, payouts. And it is our aspiration, to evolve Prism into a stateless commerce library.
+
+### Architecture
+
 A very high level overview of the Prism architecture and components. To understand more [refer docs](https://docs.hyperswitch.io/integrations/prism/architecture)
 
 ```
@@ -64,39 +72,40 @@ A very high level overview of the Prism architecture and components. To understa
    └──────────┘           └──────────┘           └──────────┘           └──────────┘
 ```
 
----
+***
 
-## 🚀 Quick Start
+### 🚀 Quick Start
 
 **Before integrating**, read the SDK guide for your language — it covers connector authentication configs, required fields per connector, sandbox test cards, status codes, and common runtime pitfalls.
->
-> | Language | SDK Integration Guide |
-> |----------|-----------------------|
-> | **Python** | [sdk/python/README.md](./sdk/python/README.md) |
-> | **Node.js** | [sdk/javascript/README.md](./sdk/javascript/README.md) |
-> | **Java** | [sdk/java/README.md](./sdk/java/README.md) |
-> | **Rust** | [sdk/rust](./sdk/rust) |
->
-**Demo Application**: Checkout the [E-Commerce Demo](./demo/e-commerce) for a complete working example with Stripe and Adyen integration.
 
-### Install the Prism Library
+>
+
+| Language    | SDK Integration Guide                       |
+| ----------- | ------------------------------------------- |
+| **Python**  | [sdk/python/README.md](sdk/python/)         |
+| **Node.js** | [sdk/javascript/README.md](sdk/javascript/) |
+| **Java**    | [sdk/java/README.md](sdk/java/)             |
+| **Rust**    | [sdk/rust](sdk/rust/)                       |
+
+**Demo Application**: Checkout the [E-Commerce Demo](demo/e-commerce/) for a complete working example with Stripe and Adyen integration.
+
+#### Install the Prism Library
 
 Start by installing the library in the language of your choice.
-<!-- tabs:start -->
 
-#### **Node.js**
+**Node.js**
 
 ```bash
 npm install hyperswitch-prism
 ```
 
-#### **Python**
+**Python**
 
 ```bash
 pip install hyperswitch-prism
 ```
 
-#### **Java/Kotlin**
+**Java/Kotlin**
 
 Add to your `pom.xml`:
 
@@ -108,15 +117,13 @@ Add to your `pom.xml`:
 </dependency>
 ```
 
-For detailed installation instructions, see [Installation Guide](./getting-started/installation.md).
+For detailed installation instructions, see [Installation Guide](getting-started/installation.md).
 
----
+***
 
-### Make a Payment
+#### Make a Payment
 
-<!-- tabs:start -->
-
-#### **Node.js**
+**Node.js**
 
 ```typescript
 import { PaymentClient, types, IntegrationError, ConnectorError } from 'hyperswitch-prism';
@@ -168,8 +175,7 @@ const main = async () => {
 main()
 ```
 
-
-## 🤖 Building with AI Assistants
+### 🤖 Building with AI Assistants
 
 If you are building with AI assistants, point at the `curl` to fetch the complete SDK reference:
 
@@ -179,7 +185,7 @@ If you are building with AI assistants, point at the `curl` to fetch the complet
 
 This file contains complete SDK documentation including installation, payment operations, error handling, connector configuration, field probe data, and examples for all payment processors.
 
-## 🔄 Routing between Payment Providers
+### 🔄 Routing between Payment Providers
 
 Once the basic plumbing is implemented you can leverage Prism's core benefit - **switch payment providers by changing one line**.
 
@@ -214,16 +220,16 @@ You may just swap the client with any business rules and smart retry logic for p
 
 If you wish to learn more about routing logic and smart retries, you can checkout [intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) and [smart retries](https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries). It can help configure and manage diverse payment acceptance setup, as well as improve conversion rates.
 
----
+***
 
-## 🛠️ Development
+### 🛠️ Development
 
-### Prerequisites
+#### Prerequisites
 
-- Rust 1.70+
-- Protocol Buffers (protoc)
+* Rust 1.70+
+* Protocol Buffers (protoc)
 
-### Building from Source
+#### Building from Source
 
 ```bash
 # Clone the repository
@@ -237,16 +243,17 @@ cargo build --release
 cargo test
 ```
 
----
+***
 
-## 💻 Platform Support
+### 💻 Platform Support
 
 The `hyperswitch-prism` SDK contains platform-specific native libraries compiled for following platforms and architectures.
 
-| Platform | Architecture |
-|----------|--------------|
-| macOS (Apple Silicon) | arm64 |
-| Linux | x86_64 |
+| Platform              | Architecture |
+| --------------------- | ------------ |
+| macOS (Apple Silicon) | arm64        |
+| Linux                 | x86\_64      |
 
-### Reporting Vulnerabilities
+#### Reporting Vulnerabilities
+
 Please report security issues to [security@juspay.in](mailto:security@juspay.in).

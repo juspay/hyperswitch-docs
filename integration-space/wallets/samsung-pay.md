@@ -29,9 +29,6 @@ _Please feel free to reach out to_ [_Hyperswitch support_](https://inviter.co/hy
 To create a new service, follow the steps below:
 
 1. Go to My Projects > Service Management, then click `CREATE NEW SERVICE`.
-
-<figure><img src="../../.gitbook/assets/samsung-pay-web-service.jpg" alt=""><figcaption></figcaption></figure>
-
 2. Enter the new `SERVICE NAME`.
 3. Select your `SERVICE COUNTRY`.
 4. Choose your `PAYMENT GATEWAY` from the list of supported payment gateways.
@@ -48,9 +45,6 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 3. Under Payment Methods, click on Samsung Pay in the Wallet section.
 4. Login to your [Samsung Pay Developer account](https://pay.samsung.com/developer) go to My Projects > Service management, and click on the service you would like to configure.
 5. Copy the `SERVICE ID` and configure it as the `Samsung Pay Service Id` on Hyperswitch dashboard.
-
-<figure><img src="../../.gitbook/assets/samsung_pay_configuration.png" alt=""><figcaption></figcaption></figure>
-
 6. The `Display Name` should be your merchant name, which you want to present to customers when they make a Samsung Pay payment on your platform.
 7. Select your business country
 8. Select the card brands you want to allow customer to use when making Samsung Pay payments.
@@ -58,4 +52,3 @@ To configure Samsung Pay on Hyperswitch, follow the steps below -
 {% hint style="danger" %}
 Make sure that the Samsung Pay service is in the `Approved` state before configuring it on the Hyperswitch dashboard. If it is not, the Samsung Pay button will not be displayed during the payment process.
 {% endhint %}
-

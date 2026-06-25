@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/lbBG1H2wOtZEQj69Dr8T
+---
+
 # Error Handling
 
 Payment failures happen. Cards get declined. Networks time out. Prism gives you structured error information so you know exactly what went wrong — and what to do about it — regardless of which payment processor you are using.
@@ -6,8 +12,8 @@ Payment failures happen. Cards get declined. Networks time out. Prism gives you 
 
 Prism separates errors into two distinct categories based on how they reach you:
 
-- **SDK exceptions** (`IntegrationError`, `ConnectorError`, `NetworkError`) — thrown as exceptions. The call never returns a response object.
-- **Payment errors** — returned inside the response object as `response.error`. The call completes without throwing, but the connector returned HTTP 200 with a failure — a decline, insufficient funds, and so on.
+* **SDK exceptions** (`IntegrationError`, `ConnectorError`, `NetworkError`) — thrown as exceptions. The call never returns a response object.
+* **Payment errors** — returned inside the response object as `response.error`. The call completes without throwing, but the connector returned HTTP 200 with a failure — a decline, insufficient funds, and so on.
 
 You need to handle both.
 
@@ -19,17 +25,15 @@ These occur **before** Prism sends any request to the connector — during reque
 
 **Fields:**
 
-| Field | Description |
-|-------|-------------|
-| `errorCode` | `SCREAMING_SNAKE_CASE` string identifying the error |
-| `message` | Human-readable description |
-| `suggestedAction` | How to fix it (optional) |
-| `docUrl` | Link to relevant documentation (optional) |
+| Field             | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `errorCode`       | `SCREAMING_SNAKE_CASE` string identifying the error |
+| `message`         | Human-readable description                          |
+| `suggestedAction` | How to fix it (optional)                            |
+| `docUrl`          | Link to relevant documentation (optional)           |
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const { PaymentClient, IntegrationError } = require('hyperswitch-prism');
 
@@ -46,11 +50,9 @@ try {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import PaymentClient, IntegrationError
 
@@ -63,11 +65,9 @@ except IntegrationError as error:
         print(error.suggested_action)
     # Fix the request or configuration — do not retry as-is
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.IntegrationError;
 
@@ -82,11 +82,9 @@ try {
     // Fix the request or configuration — do not retry as-is
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use HyperswitchPrism\PaymentClient;
 use HyperswitchPrism\Errors\IntegrationError;
@@ -102,12 +100,10 @@ try {
     // Fix the request or configuration — do not retry as-is
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ### Connector Errors
 
@@ -115,23 +111,21 @@ These occur when the connector returns a 4xx or 5xx response, or when the respon
 
 **Fields:**
 
-| Field | Description |
-|-------|-------------|
-| `errorCode` | String error code, e.g. `"RESPONSE_DESERIALIZATION_FAILED"` |
-| `message` | Human-readable description |
-| `httpStatusCode` | HTTP status returned by the connector (optional) |
+| Field            | Description                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| `errorCode`      | String error code, e.g. `"RESPONSE_DESERIALIZATION_FAILED"` |
+| `message`        | Human-readable description                                  |
+| `httpStatusCode` | HTTP status returned by the connector (optional)            |
 
 **Field access by language:**
 
-- **JS:** `error.errorCode`, `error.message`, `error.httpStatusCode`
-- **Python:** `error.error_code`, `error.error_message`, `error.http_status_code`
+* **JS:** `error.errorCode`, `error.message`, `error.httpStatusCode`
+* **Python:** `error.error_code`, `error.error_message`, `error.http_status_code`
 
 > **Important:** The payment may have been processed at the connector even when this error is thrown. Do not retry without first verifying payment status.
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const { PaymentClient, ConnectorError } = require('hyperswitch-prism');
 
@@ -149,11 +143,9 @@ try {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import PaymentClient, ConnectorError
 
@@ -167,11 +159,9 @@ except ConnectorError as error:
     # Payment may have been processed — investigate before retrying
     raise
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.ConnectorError;
 
@@ -187,11 +177,9 @@ try {
     throw e;
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use HyperswitchPrism\Errors\ConnectorError;
 
@@ -207,12 +195,10 @@ try {
     throw $e;
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ### Network Errors
 
@@ -220,23 +206,21 @@ These occur during HTTP communication with the connector — after the request m
 
 **Fields:**
 
-| Field | Description |
-|-------|-------------|
-| `errorCode` | String error code, e.g. `"CONNECT_TIMEOUT_EXCEEDED"` — use for logging and comparisons |
-| `message` | Human-readable description |
-| `statusCode` | HTTP status code if available (optional) |
+| Field        | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `errorCode`  | String error code, e.g. `"CONNECT_TIMEOUT_EXCEEDED"` — use for logging and comparisons |
+| `message`    | Human-readable description                                                             |
+| `statusCode` | HTTP status code if available (optional)                                               |
 
 **Field access by language:**
 
-- **JS:** `error.errorCode`, `error.message`, `error.statusCode`
-- **Python:** `error.error_code`, `str(error)`, `error.status_code`
+* **JS:** `error.errorCode`, `error.message`, `error.statusCode`
+* **Python:** `error.error_code`, `str(error)`, `error.status_code`
 
 > **Retry safety:** Most network errors happen after the request was already sent to the connector. Retrying without idempotency keys can cause double charges. Only retry `CONNECT_TIMEOUT_EXCEEDED` (connection never established) with confidence. For all others, verify payment status before retrying.
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const { PaymentClient, NetworkError } = require('hyperswitch-prism');
 
@@ -254,11 +238,9 @@ try {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import PaymentClient, NetworkError
 
@@ -272,11 +254,9 @@ except NetworkError as error:
     # Do not retry blindly — verify payment status first
     raise
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.NetworkError;
 
@@ -292,11 +272,9 @@ try {
     throw e;
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use HyperswitchPrism\Errors\NetworkError;
 
@@ -312,12 +290,10 @@ try {
     throw $e;
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ## Payment Errors
 
@@ -325,9 +301,9 @@ Payment errors occur when the connector returns HTTP 200 but the payment did not
 
 The error object has three layers:
 
-- `unified_details` — a standardized code and message that works the same across all connectors
-- `connector_details` — the raw code and message from the connector (e.g. Stripe, Adyen)
-- `issuer_details` — decline information from the card network or issuing bank, when available
+* `unified_details` — a standardized code and message that works the same across all connectors
+* `connector_details` — the raw code and message from the connector (e.g. Stripe, Adyen)
+* `issuer_details` — decline information from the card network or issuing bank, when available
 
 ```json
 {
@@ -359,9 +335,7 @@ The error object has three layers:
 Use `unified_details.code` for your application logic. Use `unified_details.user_guidance_message` for messaging shown to end users — it is written for that purpose. The connector and issuer fields are useful for debugging and support.
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const { PaymentClient } = require('hyperswitch-prism');
 
@@ -395,11 +369,9 @@ if (response.error) {
     console.log('Authorized:', response.connectorTransactionId);
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import PaymentClient
 
@@ -428,11 +400,9 @@ if response.error:
 else:
     print(f'Authorized: {response.connector_transaction_id}')
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.PaymentServiceAuthorizeResponse;
 
@@ -468,11 +438,9 @@ if (response.hasError()) {
     System.out.println("Authorized: " + response.getConnectorTransactionId());
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use HyperswitchPrism\PaymentClient;
 
@@ -505,21 +473,17 @@ if ($response->getError()) {
     echo "Authorized: " . $response->getConnectorTransactionId() . "\n";
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ## Complete example
 
 Here is a complete authorize call with all error types handled:
 
 {% tabs %}
-
 {% tab title="Node.js" %}
-
 ```javascript
 const {
     PaymentClient,
@@ -565,11 +529,9 @@ async function authorizePayment(client, request) {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from hyperswitch_prism import (
     PaymentClient,
@@ -603,11 +565,9 @@ async def authorize_payment(client, request):
         print(f'Network error: {error.error_code} {str(error)}')
         raise
 ```
-
 {% endtab %}
 
 {% tab title="Java" %}
-
 ```java
 import payments.ConnectorError;
 import payments.IntegrationError;
@@ -648,11 +608,9 @@ public PaymentServiceAuthorizeResponse authorizePayment(PaymentClient client, Pa
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use HyperswitchPrism\PaymentClient;
 use HyperswitchPrism\Errors\{IntegrationError, ConnectorError, NetworkError};
@@ -686,35 +644,33 @@ function authorizePayment(PaymentClient $client, $request) {
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
+***
 
 ## Best Practices
 
 **Retry safety — the most important thing to get right:**
 
-| Error type | Request sent? | Safe to retry? |
-|------------|--------------|----------------|
-| `IntegrationError` | No | Yes, after fixing the issue |
-| `NetworkError` — `CONNECT_TIMEOUT_EXCEEDED` | No | Yes, with idempotency key |
-| `NetworkError` — all others | Likely yes | Only after verifying payment status |
-| `ConnectorError` | Yes | Only after verifying payment status |
-| Payment error (`response.error`) | Yes | Depends on the decline code |
+| Error type                                  | Request sent? | Safe to retry?                      |
+| ------------------------------------------- | ------------- | ----------------------------------- |
+| `IntegrationError`                          | No            | Yes, after fixing the issue         |
+| `NetworkError` — `CONNECT_TIMEOUT_EXCEEDED` | No            | Yes, with idempotency key           |
+| `NetworkError` — all others                 | Likely yes    | Only after verifying payment status |
+| `ConnectorError`                            | Yes           | Only after verifying payment status |
+| Payment error (`response.error`)            | Yes           | Depends on the decline code         |
 
 **Other practices:**
 
-- Always check `response.error` after every call that returns successfully. A payment can fail at the processor without throwing an exception.
-- Use `unified_details.code` for your own logic — routing decisions, retry policies, alerting.
-- Use `unified_details.user_guidance_message` for messaging shown to end users. Do not expose `connector_details` or `issuer_details` to users.
-- Log `errorCode`, `errorMessage`, and HTTP status code on every error. These are the fields support will ask for first.
-- Track `IntegrationError` rates in production — a spike usually means a configuration or deployment issue.
-- Track `ConnectorError` rates — a spike usually means the connector is having problems or changed its API.
+* Always check `response.error` after every call that returns successfully. A payment can fail at the processor without throwing an exception.
+* Use `unified_details.code` for your own logic — routing decisions, retry policies, alerting.
+* Use `unified_details.user_guidance_message` for messaging shown to end users. Do not expose `connector_details` or `issuer_details` to users.
+* Log `errorCode`, `errorMessage`, and HTTP status code on every error. These are the fields support will ask for first.
+* Track `IntegrationError` rates in production — a spike usually means a configuration or deployment issue.
+* Track `ConnectorError` rates — a spike usually means the connector is having problems or changed its API.
 
----
+***
 
 ## Error Code Reference
 
@@ -724,6 +680,7 @@ Error codes are always `SCREAMING_SNAKE_CASE` strings. Use them directly in comp
 // JavaScript
 if (error.errorCode === 'MISSING_REQUIRED_FIELD') { ... }
 ```
+
 ```python
 # Python
 if error.error_code == 'MISSING_REQUIRED_FIELD': ...
@@ -733,40 +690,40 @@ if error.error_code == 'MISSING_REQUIRED_FIELD': ...
 
 These codes appear in `IntegrationError`. The request was never sent to the connector.
 
-| Code | Description |
-|------|-------------|
-| `FAILED_TO_OBTAIN_INTEGRATION_URL` | Cannot determine the connector endpoint URL |
-| `REQUEST_ENCODING_FAILED` | Failed to encode the connector request |
-| `HEADER_MAP_CONSTRUCTION_FAILED` | Cannot construct HTTP headers |
-| `BODY_SERIALIZATION_FAILED` | Cannot serialize the request body |
-| `URL_PARSING_FAILED` | Cannot parse the request URL |
-| `URL_ENCODING_FAILED` | URL encoding of the request payload failed |
-| `MISSING_REQUIRED_FIELD` | A required field is missing in the request |
-| `MISSING_REQUIRED_FIELDS` | Multiple required fields are missing |
-| `FAILED_TO_OBTAIN_AUTH_TYPE` | Cannot determine the authentication type |
-| `INVALID_CONNECTOR_CONFIG` | Invalid connector configuration |
-| `NO_CONNECTOR_META_DATA` | Connector metadata not found |
-| `INVALID_DATA_FORMAT` | Data format validation failed |
-| `INVALID_WALLET` | Invalid wallet specified |
-| `INVALID_WALLET_TOKEN` | Failed to parse wallet token (Apple Pay / Google Pay) |
-| `MISSING_PAYMENT_METHOD_TYPE` | Payment method type not specified |
-| `MISMATCHED_PAYMENT_DATA` | Payment method data does not match the payment method type |
-| `MANDATE_PAYMENT_DATA_MISMATCH` | Fields do not match those used during mandate creation |
-| `MISSING_APPLE_PAY_TOKEN_DATA` | Missing Apple Pay tokenization data |
-| `NOT_IMPLEMENTED` | Feature not yet implemented |
-| `NOT_SUPPORTED` | Feature not supported by this connector |
-| `FLOW_NOT_SUPPORTED` | Payment flow not supported by this connector |
-| `CAPTURE_METHOD_NOT_SUPPORTED` | Capture method not supported |
-| `CURRENCY_NOT_SUPPORTED` | Currency not configured for this connector |
-| `AMOUNT_CONVERSION_FAILED` | Failed to convert amount to the required format |
-| `MISSING_CONNECTOR_TRANSACTION_I_D` | Connector transaction ID not found |
-| `MISSING_CONNECTOR_REFUND_I_D` | Connector refund ID not found |
-| `MISSING_CONNECTOR_MANDATE_I_D` | Connector mandate ID not found |
-| `MISSING_CONNECTOR_MANDATE_METADATA` | Connector mandate metadata not found |
-| `MISSING_CONNECTOR_RELATED_TRANSACTION_I_D` | Required related transaction ID not found |
-| `MAX_FIELD_LENGTH_VIOLATED` | Field exceeds maximum length for this connector |
-| `SOURCE_VERIFICATION_FAILED` | Failed to verify request source (signature, webhook, etc.) |
-| `CONFIGURATION_ERROR` | General configuration validation error |
+| Code                                        | Description                                                |
+| ------------------------------------------- | ---------------------------------------------------------- |
+| `FAILED_TO_OBTAIN_INTEGRATION_URL`          | Cannot determine the connector endpoint URL                |
+| `REQUEST_ENCODING_FAILED`                   | Failed to encode the connector request                     |
+| `HEADER_MAP_CONSTRUCTION_FAILED`            | Cannot construct HTTP headers                              |
+| `BODY_SERIALIZATION_FAILED`                 | Cannot serialize the request body                          |
+| `URL_PARSING_FAILED`                        | Cannot parse the request URL                               |
+| `URL_ENCODING_FAILED`                       | URL encoding of the request payload failed                 |
+| `MISSING_REQUIRED_FIELD`                    | A required field is missing in the request                 |
+| `MISSING_REQUIRED_FIELDS`                   | Multiple required fields are missing                       |
+| `FAILED_TO_OBTAIN_AUTH_TYPE`                | Cannot determine the authentication type                   |
+| `INVALID_CONNECTOR_CONFIG`                  | Invalid connector configuration                            |
+| `NO_CONNECTOR_META_DATA`                    | Connector metadata not found                               |
+| `INVALID_DATA_FORMAT`                       | Data format validation failed                              |
+| `INVALID_WALLET`                            | Invalid wallet specified                                   |
+| `INVALID_WALLET_TOKEN`                      | Failed to parse wallet token (Apple Pay / Google Pay)      |
+| `MISSING_PAYMENT_METHOD_TYPE`               | Payment method type not specified                          |
+| `MISMATCHED_PAYMENT_DATA`                   | Payment method data does not match the payment method type |
+| `MANDATE_PAYMENT_DATA_MISMATCH`             | Fields do not match those used during mandate creation     |
+| `MISSING_APPLE_PAY_TOKEN_DATA`              | Missing Apple Pay tokenization data                        |
+| `NOT_IMPLEMENTED`                           | Feature not yet implemented                                |
+| `NOT_SUPPORTED`                             | Feature not supported by this connector                    |
+| `FLOW_NOT_SUPPORTED`                        | Payment flow not supported by this connector               |
+| `CAPTURE_METHOD_NOT_SUPPORTED`              | Capture method not supported                               |
+| `CURRENCY_NOT_SUPPORTED`                    | Currency not configured for this connector                 |
+| `AMOUNT_CONVERSION_FAILED`                  | Failed to convert amount to the required format            |
+| `MISSING_CONNECTOR_TRANSACTION_I_D`         | Connector transaction ID not found                         |
+| `MISSING_CONNECTOR_REFUND_I_D`              | Connector refund ID not found                              |
+| `MISSING_CONNECTOR_MANDATE_I_D`             | Connector mandate ID not found                             |
+| `MISSING_CONNECTOR_MANDATE_METADATA`        | Connector mandate metadata not found                       |
+| `MISSING_CONNECTOR_RELATED_TRANSACTION_I_D` | Required related transaction ID not found                  |
+| `MAX_FIELD_LENGTH_VIOLATED`                 | Field exceeds maximum length for this connector            |
+| `SOURCE_VERIFICATION_FAILED`                | Failed to verify request source (signature, webhook, etc.) |
+| `CONFIGURATION_ERROR`                       | General configuration validation error                     |
 
 > **Note on `_I_D` suffix:** Error codes for variants ending in `ID` (e.g. `MissingConnectorTransactionID`) serialize as `..._I_D` due to how the code generator handles uppercase boundaries. Use the exact strings shown above in comparisons.
 
@@ -774,28 +731,28 @@ These codes appear in `IntegrationError`. The request was never sent to the conn
 
 These codes appear in `ConnectorError`. The connector returned a 4xx/5xx response or a response that could not be parsed. The payment may have been processed.
 
-| Code | Description |
-|------|-------------|
-| `RESPONSE_DESERIALIZATION_FAILED` | Cannot parse the connector response (invalid JSON/XML, unexpected format) |
-| `RESPONSE_HANDLING_FAILED` | Error occurred while processing the connector response |
-| `UNEXPECTED_RESPONSE_ERROR` | Response structure does not match the expected schema |
-| `INTEGRITY_CHECK_FAILED` | Integrity check failed (e.g. amount or currency mismatch between request and response) |
+| Code                              | Description                                                                            |
+| --------------------------------- | -------------------------------------------------------------------------------------- |
+| `RESPONSE_DESERIALIZATION_FAILED` | Cannot parse the connector response (invalid JSON/XML, unexpected format)              |
+| `RESPONSE_HANDLING_FAILED`        | Error occurred while processing the connector response                                 |
+| `UNEXPECTED_RESPONSE_ERROR`       | Response structure does not match the expected schema                                  |
+| `INTEGRITY_CHECK_FAILED`          | Integrity check failed (e.g. amount or currency mismatch between request and response) |
 
 ### Network Error Codes
 
 These codes appear in `NetworkError`. The request may or may not have been sent.
 
-| Code | Description | Retryable? |
-|------|-------------|------------|
-| `CONNECT_TIMEOUT_EXCEEDED` | Connection timed out before being established | Yes — request was never sent |
-| `RESPONSE_TIMEOUT_EXCEEDED` | Connector accepted the connection but did not respond in time | No — request was likely sent |
-| `TOTAL_TIMEOUT_EXCEEDED` | Entire request lifecycle exceeded the total timeout | No — request may have been sent |
-| `NETWORK_FAILURE` | Generic failure (DNS, connection refused, TLS handshake) | Check whether failure occurred before or after sending |
-| `RESPONSE_DECODING_FAILED` | Failed to read response body (dropped connection, corrupted data) | No — response was received, payment processed |
-| `CLIENT_INITIALIZATION_FAILURE` | HTTP client failed to initialize | No — fix configuration |
-| `URL_PARSING_FAILED` | Request URL is malformed or uses an unsupported scheme | No — fix code |
-| `INVALID_PROXY_CONFIGURATION` | Proxy URL or configuration is invalid | No — fix configuration |
-| `INVALID_CA_CERT` | CA certificate (PEM/DER) is invalid or could not be loaded | No — fix configuration |
+| Code                            | Description                                                       | Retryable?                                             |
+| ------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------ |
+| `CONNECT_TIMEOUT_EXCEEDED`      | Connection timed out before being established                     | Yes — request was never sent                           |
+| `RESPONSE_TIMEOUT_EXCEEDED`     | Connector accepted the connection but did not respond in time     | No — request was likely sent                           |
+| `TOTAL_TIMEOUT_EXCEEDED`        | Entire request lifecycle exceeded the total timeout               | No — request may have been sent                        |
+| `NETWORK_FAILURE`               | Generic failure (DNS, connection refused, TLS handshake)          | Check whether failure occurred before or after sending |
+| `RESPONSE_DECODING_FAILED`      | Failed to read response body (dropped connection, corrupted data) | No — response was received, payment processed          |
+| `CLIENT_INITIALIZATION_FAILURE` | HTTP client failed to initialize                                  | No — fix configuration                                 |
+| `URL_PARSING_FAILED`            | Request URL is malformed or uses an unsupported scheme            | No — fix code                                          |
+| `INVALID_PROXY_CONFIGURATION`   | Proxy URL or configuration is invalid                             | No — fix configuration                                 |
+| `INVALID_CA_CERT`               | CA certificate (PEM/DER) is invalid or could not be loaded        | No — fix configuration                                 |
 
 ### Payment Error Codes
 
@@ -826,14 +783,14 @@ if (response.error.unifiedDetails.code === 'PAYMENT_DECLINED') {
 
 **Sample mapping across connectors:**
 
-| Unified Code | Description | Stripe | Adyen |
-|--------------|-------------|--------|-------|
-| `PAYMENT_DECLINED` | Generic decline | `card_declined` | `Refused` (refusalReasonCode: 2) |
-| `INSUFFICIENT_FUNDS` | Card has insufficient balance | `card_declined` + `decline_code: insufficient_funds` | `Not enough balance` (refusalReasonCode: 12) |
-| `EXPIRED_CARD` | Card is expired | `expired_card` | `Expired Card` (refusalReasonCode: 6) |
-| `INCORRECT_CVV` | Wrong security code | `incorrect_cvc` | `CVC Declined` (refusalReasonCode: 24) |
-| `INVALID_CARD_NUMBER` | Card number is invalid | `incorrect_number` | `Invalid Card Number` (refusalReasonCode: 8) |
-| `PROCESSING_ERROR` | Generic processor error | `processing_error` | `Acquirer Error` (refusalReasonCode: 4) |
-| `RATE_LIMITED` | Too many requests | HTTP 429 | Refusal code 46 |
-| `INVALID_API_KEY` | Authentication failed | `api_key_expired` / HTTP 401 | HTTP 401 |
-| `VALIDATION_ERROR` | Bad request format | HTTP 400 | HTTP 422 |
+| Unified Code          | Description                   | Stripe                                               | Adyen                                        |
+| --------------------- | ----------------------------- | ---------------------------------------------------- | -------------------------------------------- |
+| `PAYMENT_DECLINED`    | Generic decline               | `card_declined`                                      | `Refused` (refusalReasonCode: 2)             |
+| `INSUFFICIENT_FUNDS`  | Card has insufficient balance | `card_declined` + `decline_code: insufficient_funds` | `Not enough balance` (refusalReasonCode: 12) |
+| `EXPIRED_CARD`        | Card is expired               | `expired_card`                                       | `Expired Card` (refusalReasonCode: 6)        |
+| `INCORRECT_CVV`       | Wrong security code           | `incorrect_cvc`                                      | `CVC Declined` (refusalReasonCode: 24)       |
+| `INVALID_CARD_NUMBER` | Card number is invalid        | `incorrect_number`                                   | `Invalid Card Number` (refusalReasonCode: 8) |
+| `PROCESSING_ERROR`    | Generic processor error       | `processing_error`                                   | `Acquirer Error` (refusalReasonCode: 4)      |
+| `RATE_LIMITED`        | Too many requests             | HTTP 429                                             | Refusal code 46                              |
+| `INVALID_API_KEY`     | Authentication failed         | `api_key_expired` / HTTP 401                         | HTTP 401                                     |
+| `VALIDATION_ERROR`    | Bad request format            | HTTP 400                                             | HTTP 422                                     |
