@@ -1,11 +1,17 @@
----
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/connector-service/api-reference/dispute-service/submit-evidence
----
+# SubmitEvidence RPC
 
-# Submit Evidence
+<!--
+---
+title: SubmitEvidence
+description: Upload evidence to dispute customer chargeback with supporting documentation
+created: 2026-03-11
+generated_from: crates/types-traits/grpc-api-types/proto/services.proto
+auto_generated: false
+reviewed_by: engineering
+reviewed_at: 2026-03-05
+approved: true
+---
+-->
 
 ## Overview
 
@@ -17,54 +23,53 @@ The `SubmitEvidence` RPC uploads supporting documentation to contest a chargebac
 
 **Why submit evidence for disputes?**
 
-| Scenario                       | Evidence Type                                                    | Expected Outcome                                |
-| ------------------------------ | ---------------------------------------------------------------- | ----------------------------------------------- |
-| **Product not received**       | Shipping confirmation, tracking records, delivery signature      | Prove delivery occurred                         |
-| **Product not as described**   | Product specifications, photos, customer communication           | Show product matched description                |
-| **Transaction not authorized** | IP logs, device fingerprints, 3DS authentication data            | Prove customer authorized purchase              |
-| **Subscription cancellation**  | Recurring transaction agreement, cancellation policy, usage logs | Show service was provided or properly disclosed |
-| **Duplicate charge**           | Order details, refund records, transaction timestamps            | Clarify distinct transactions                   |
+| Scenario | Evidence Type | Expected Outcome |
+|----------|---------------|------------------|
+| **Product not received** | Shipping confirmation, tracking records, delivery signature | Prove delivery occurred |
+| **Product not as described** | Product specifications, photos, customer communication | Show product matched description |
+| **Transaction not authorized** | IP logs, device fingerprints, 3DS authentication data | Prove customer authorized purchase |
+| **Subscription cancellation** | Recurring transaction agreement, cancellation policy, usage logs | Show service was provided or properly disclosed |
+| **Duplicate charge** | Order details, refund records, transaction timestamps | Clarify distinct transactions |
 
 **Key outcomes:**
-
-* Evidence attached to dispute record
-* Evidence IDs returned for tracking
-* Status updated to reflect submission
-* Bank reviews evidence during adjudication
+- Evidence attached to dispute record
+- Evidence IDs returned for tracking
+- Status updated to reflect submission
+- Bank reviews evidence during adjudication
 
 ## Request Fields
 
-| Field                      | Type                | Required | Description                              |
-| -------------------------- | ------------------- | -------- | ---------------------------------------- |
-| `merchant_dispute_id`      | string              | Yes      | Your unique dispute reference            |
-| `connector_transaction_id` | string              | No       | Original transaction ID                  |
-| `dispute_id`               | string              | Yes      | Connector's dispute identifier           |
-| `service_date`             | int64               | No       | Unix timestamp when service was provided |
-| `shipping_date`            | int64               | No       | Unix timestamp when product was shipped  |
-| `evidence_documents`       | EvidenceDocument\[] | No       | Array of evidence documents              |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `merchant_dispute_id` | string | Yes | Your unique dispute reference |
+| `connector_transaction_id` | string | No | Original transaction ID |
+| `dispute_id` | string | Yes | Connector's dispute identifier |
+| `service_date` | int64 | No | Unix timestamp when service was provided |
+| `shipping_date` | int64 | No | Unix timestamp when product was shipped |
+| `evidence_documents` | EvidenceDocument[] | No | Array of evidence documents |
 
 ### EvidenceDocument Fields
 
-| Field              | Type         | Required | Description                                                                                                                                                                                                                                                                                                               |
-| ------------------ | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `evidence_type`    | EvidenceType | Yes      | Type of evidence. Values: GOODS\_SERVICES\_RECEIVED, GOODS\_SERVICES\_NOT\_RECEIVED, GOODS\_SERVICES\_NOT\_AS\_DESCRIBED, PROOF\_OF\_DELIVERY, RECEIPT, REFUND\_POLICY, SERVICE\_DOCUMENTATION, SHIPPING\_DOCUMENTATION, INVOICE\_SHOWING\_DISTINCT\_TRANSACTIONS, RECURRING\_TRANSACTION\_AGREEMENT, UNCATEGORIZED\_FILE |
-| `file_content`     | bytes        | No       | Binary content of the evidence file                                                                                                                                                                                                                                                                                       |
-| `file_mime_type`   | string       | No       | MIME type (e.g., "application/pdf", "image/png")                                                                                                                                                                                                                                                                          |
-| `provider_file_id` | string       | No       | External file storage identifier                                                                                                                                                                                                                                                                                          |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `evidence_type` | EvidenceType | Yes | Type of evidence. Values: GOODS_SERVICES_RECEIVED, GOODS_SERVICES_NOT_RECEIVED, GOODS_SERVICES_NOT_AS_DESCRIBED, PROOF_OF_DELIVERY, RECEIPT, REFUND_POLICY, SERVICE_DOCUMENTATION, SHIPPING_DOCUMENTATION, INVOICE_SHOWING_DISTINCT_TRANSACTIONS, RECURRING_TRANSACTION_AGREEMENT, UNCATEGORIZED_FILE |
+| `file_content` | bytes | No | Binary content of the evidence file |
+| `file_mime_type` | string | No | MIME type (e.g., "application/pdf", "image/png") |
+| `provider_file_id` | string | No | External file storage identifier |
 
 ## Response Fields
 
-| Field                    | Type                | Description                                                      |
-| ------------------------ | ------------------- | ---------------------------------------------------------------- |
-| `dispute_id`             | string              | Connector's dispute identifier                                   |
-| `submitted_evidence_ids` | string\[]           | IDs of successfully submitted evidence items                     |
-| `dispute_status`         | DisputeStatus       | Current status: OPENED, EXPIRED, ACCEPTED, CHALLENGED, WON, LOST |
-| `connector_status_code`  | string              | Connector-specific status code                                   |
-| `error`                  | ErrorInfo           | Error details if submission failed                               |
-| `status_code`            | uint32              | HTTP-style status code                                           |
-| `response_headers`       | map\<string,string> | Connector-specific response headers                              |
-| `merchant_dispute_id`    | string              | Your dispute reference (echoed back)                             |
-| `raw_connector_request`  | SecretString        | Raw API request sent to connector (debugging)                    |
+| Field | Type | Description |
+|-------|------|-------------|
+| `dispute_id` | string | Connector's dispute identifier |
+| `submitted_evidence_ids` | string[] | IDs of successfully submitted evidence items |
+| `dispute_status` | DisputeStatus | Current status: OPENED, EXPIRED, ACCEPTED, CHALLENGED, WON, LOST |
+| `connector_status_code` | string | Connector-specific status code |
+| `error` | ErrorInfo | Error details if submission failed |
+| `status_code` | uint32 | HTTP-style status code |
+| `response_headers` | map<string,string> | Connector-specific response headers |
+| `merchant_dispute_id` | string | Your dispute reference (echoed back) |
+| `raw_connector_request` | SecretString | Raw API request sent to connector (debugging) |
 
 ## Example
 
@@ -109,6 +114,6 @@ grpcurl -H "x-connector: stripe" \
 
 ## Next Steps
 
-* [Defend](defend.md) - Submit formal defense with reason code
-* [Get](get.md) - Check dispute status after evidence submission
-* [Accept](accept.md) - Concede dispute if evidence is insufficient
+- [Defend](./defend.md) - Submit formal defense with reason code
+- [Get](./get.md) - Check dispute status after evidence submission
+- [Accept](./accept.md) - Concede dispute if evidence is insufficient

@@ -1,10 +1,4 @@
----
-metaLinks:
-  alternates:
-    - /broken/spaces/kf7BGdsPkCw9nalhAIlE/pages/I0Lei2iiCukdgohLTRt4
----
-
-# Extend to More Flows
+# Extending to More Flows
 
 You have implemented the basic plumbing for routing payment processor agnostic APIs. All methods work the same way with the single interface regardless of which payment processor you use. That's the power you get with the library.
 
@@ -14,15 +8,16 @@ Beyond the basic authorization and capture, the library handles complex payment 
 
 Below are some sample real world scenarios to try out quickly.
 
-| Flow                          | Use Case                        | Key Operations                                                                                                                                                                    |
-| ----------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Authorize + Capture**       | Standard e-commerce             | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`capture`](../../api-reference/services/payment-service/capture.md)                                    |
-| **Authorize + Void**          | Cancel pending order            | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`void`](../../api-reference/services/payment-service/void.md)                                          |
-| **Automatic Capture**         | Digital goods, immediate charge | [`authorize`](../../api-reference/services/payment-service/authorize.md) with `AUTOMATIC`                                                                                         |
-| **Incremental Authorization** | Hotel check-in, car rental      | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) |
-| **Partial Capture**           | Multi-shipment orders           | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount                                                                                          |
-| **Refunds**                   | Customer returns                | [`refund`](../../api-reference/services/payment-service/refund.md)                                                                                                                |
-| **Recurring Payments**        | SaaS billing and more           | [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md)                 |
+| Flow | Use Case | Key Operations |
+|------|----------|----------------|
+| **Authorize + Capture** | Standard e-commerce | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`capture`](../../api-reference/services/payment-service/capture.md) |
+| **Authorize + Void** | Cancel pending order | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`void`](../../api-reference/services/payment-service/void.md) |
+| **Automatic Capture** | Digital goods, immediate charge | [`authorize`](../../api-reference/services/payment-service/authorize.md) with `AUTOMATIC` |
+| **Incremental Authorization** | Hotel check-in, car rental | [`authorize`](../../api-reference/services/payment-service/authorize.md), [`incrementalAuthorization`](../../api-reference/services/payment-service/incremental-authorization.md) |
+| **Partial Capture** | Multi-shipment orders | [`capture`](../../api-reference/services/payment-service/capture.md) with partial amount |
+| **Refunds** | Customer returns | [`refund`](../../api-reference/services/payment-service/refund.md) |
+| **Recurring Payments** | SaaS billing and more | [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md) |
+
 
 ## Incremental Authorization
 
@@ -117,6 +112,7 @@ const charge = await recurringPaymentClient.charge({
 ```
 
 See: [`setupRecurring`](../../api-reference/services/payment-service/setup-recurring.md), [`charge`](../../api-reference/services/recurring-payment-service/charge.md), [`revoke`](../../api-reference/services/recurring-payment-service/revoke.md)
+
 
 ## Partial Capture
 
@@ -289,7 +285,8 @@ await disputeClient.submitEvidence({
 
 See: [`accept`](../../api-reference/services/dispute-service/accept.md), [`defend`](../../api-reference/services/dispute-service/defend.md), [`submitEvidence`](../../api-reference/services/dispute-service/submit-evidence.md)
 
+
 ## Next Steps
 
-* Browse the full [API Reference](../../api-reference/)
-* Jump to [SDK-specific guides](../../sdks/)
+- Browse the full [API Reference](../../api-reference/)
+- Jump to [SDK-specific guides](../../sdks/)
