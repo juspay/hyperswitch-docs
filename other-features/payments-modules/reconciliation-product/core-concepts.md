@@ -10,65 +10,246 @@ metaLinks:
 
 # Core Concepts
 
-### How We Model Money
+## Core Concepts
 
-At its core, our system treats money as **accounting data**. This approach, known as double-entry bookkeeping, provides powerful guarantees for financial integrity. It ensures that money is never created or lost, gives you a full audit trail, and provides clear, point-in-time balances for your finance and operations teams.
+The Hyperswitch Reconciliation Product enables businesses to reconcile financial records across multiple systems, such as merchant ledgers, payment gateways, settlement reports, banks, and ERP systems.
 
-Double-entry bookkeeping is the most reliable way to track money. It ensures every financial event is recorded accurately, with a clear source and destination for funds.
+Rather than comparing files directly, the reconciliation engine transforms data from different sources into a common model, generates reconciliation expectations, and automatically identifies matching records and discrepancies.
 
-### Core Concepts: Accounts, Entries, and Transactions
+Every reconciliation workflow is built on the same set of core concepts.
 
-#### Accounts
+***
 
-An account is a named ledger location that represents a segregated pool of value, like a digital wallet or a specific category of money. Think of them as the containers for your funds.
+### Reconciliation at a glance
 
-* **Purpose**: Each account has a clear purpose, such as holding Bank Money, tracking Revenue, or categorizing Processing Fees.
-* **Currency**: Each account is for one currency only to prevent confusing conversions and ensure healthy balances.
-* **Type**: Accounts are of two types: DEBIT or CREDIT. This distinction is key to how entries affect an account's balance.
+A typical reconciliation workflow looks like this:
 
-#### Debit Normal vs. Credit Normal Accounts
+```mermaid
+flowchart LR
 
-As we've mentioned, every account has a type. The two types we will focus on are debit normal and credit normal. This distinction is critical for how our system processes entries and ensures your ledger remains balanced.
+A[Merchant Ledger]
+C[Settlement Report]
+D[Bank Statement]
 
-**Debit Normal Accounts** represent the uses of money. They are where your funds are allocated or reside. Think of them as your assets and expenses. A debit entry increases their balance, while a credit entry decreases it.
+A --> T[Transformation]
 
-* Examples of `uses` of funds:
-  * Processor Account: The funds you are owed by a payment processor
-  * Bank Account: The funds you hold in your bank
-  * Operating Expenses: Fees paid to a third-party service
 
-**Credit Normal Accounts** represent the sources of money. They are where your funds originate from. Think of them as your liabilities and revenue. A credit entry increases their balance, while a debit entry decreases it.
+C --> T
+D --> T
 
-* Examples of `sources` of funds:
-  * Order Sales: The revenue from a customer order
-  * Loans: Money you've received from a financing partner
+T --> E[Entries]
 
-#### Entries
+E --> X[Expectations]
 
-An entry is the smallest recorded unit in our system. It's a single posting to an account, recording the `amount`, `direction` (DEBIT/CREDIT), `account`, and `currency`.
+X --> M[Matching Engine]
 
-Entries never exist alone; they are always part of a larger transaction. You can think of an entry as a single action, like "$50 moved into Bank:USD-1234." Because entries also record a status (PENDING, EXPECTED, POSTED), you get transparent visibility into your cash flow, knowing what money is on its way versus what has been fully settled.
+M --> O[Matched]
 
-**What are Debits and Credits for Entries?**
+M --> P[Exceptions]
+```
 
-While the terms debit and credit can be confusing, it's essential to understand them when building financial systems. In our system, they act as flags that determine how an entry affects an account's balance based on its type. They are not simply "plus" or "minus" signs.
+The reconciliation engine processes every data source through the same pipeline, regardless of the payment provider or financial institution.
 
-Here is the simplest way to think about them:
+***
 
-* **Debit Entry**: This adds to the balance of a debit normal account (like your Bank or Processor Account) or subtracts from the balance of a credit normal account (like your Revenue or Loans Account).
-* **Credit Entry**: This adds to the balance of a credit normal account or subtracts from the balance of a debit normal account.
+### Why reconciliation?
 
-#### Transactions
+A single payment is recorded by multiple systems throughout its lifecycle.
 
-A transaction is a group of entries that represents a single, logical movement of funds. It's the atomic event that affects account balances.
+For example:
 
-Transactions are the foundation of our system's integrity. They enforce the double-entry bookkeeping rule: **the sum of all debits must equal the sum of all credits**. This mathematical guarantee ensures that money cannot be created or destroyed.
+> **Payment Flow**
+>
+> Customer → Merchant → Payment Gateway → Settlement → Bank
 
-Consider moving money between two wallets: a single transaction removes money from the first wallet and adds it to the second. If one part of this action fails, the entire transaction is canceled, preventing a "half-transfer" where money is removed but never properly placed.
+Each system maintains its own copy of the transaction, often with different identifiers, timestamps, or metadata.
 
-This design provides:
+The goal of reconciliation is to verify that every system represents the same financial outcome.
 
-* Mathematical Safety: If total debits don't equal total credits, something is wrong. This immediate invariant helps detect bugs or data corruption.
-* Clear Provenance: You can always answer, "Why did this balance change?" because every sale, refund, or fee is an explicit entry within a transaction.
-* Auditable History: Transactions are the only mechanism that creates or changes entries, simplifying reasoning, auditing, and reconciliation.
-* Atomic Consistency: Either all entries in a transaction are written, or none are. This prevents inconsistent states and is crucial for handling system failures gracefully.
+***
+
+## Core Concepts
+
+The reconciliation engine is built around six fundamental concepts.
+
+| Concept         | Description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| **Account**     | A financial system that owns transaction data.                      |
+| **Entry**       | A normalized financial record imported into an account.             |
+| **Transaction** | A business event composed of one or more related entries.           |
+| **Rule**        | Defines how reconciliation should be performed.                     |
+| **Expectation** | Represents a financial record that should exist.                    |
+| **Exception**   | Indicates that reconciliation could not be completed automatically. |
+
+The following sections describe each concept in detail.
+
+***
+
+### Account
+
+An **Account** represents a logical financial system.
+
+Accounts are the sources and destinations used during reconciliation.
+
+Examples include:
+
+* Merchant Ledger
+* Stripe
+* Bank Statement
+* ERP
+
+Each imported record belongs to exactly one account.
+
+> **Note**
+>
+> An Account represents a source of financial records, not a bank account.
+
+***
+
+### Entry
+
+An **Entry** is the smallest unit processed by the reconciliation engine.
+
+Every imported record is transformed into one or more entries.
+
+Typical entry types include:
+
+* Payment
+* Refund
+* Settlement
+* Chargeback
+* Fee
+* Adjustment
+
+An entry contains normalized information such as:
+
+* Amount
+* Currency
+* Timestamp
+* Event Type
+* Identifiers
+* Metadata
+
+Entries are immutable and form the foundation of reconciliation.
+
+***
+
+### Transaction
+
+A **Transaction** groups together multiple related entries that belong to the same business event.
+
+For example, a customer payment may generate entries in several systems.
+
+> **Payment Lifecycle**
+>
+> Merchant Order → Gateway Payment → Settlement → Bank Credit
+
+Although these records originate from different systems, they all represent the same payment transaction.
+
+Grouping entries into transactions enables end-to-end reconciliation across the payment lifecycle.
+
+***
+
+### Rule
+
+A **Rule** defines how reconciliation should be performed.
+
+Each rule specifies:
+
+* The accounts to reconcile
+* The records to compare
+* The identifiers used for matching
+* The conditions that determine a successful reconciliation
+
+For example:
+
+> Every successful payment in the Merchant Ledger should have a corresponding successful payment in Stripe.
+
+Rules make reconciliation configurable without requiring application code changes.
+
+***
+
+### Expectation
+
+An **Expectation** represents a financial record that is expected to exist in another account.
+
+These expectations drive the reconciliation process.
+
+If the expected record is found, reconciliation proceeds.
+
+If not, an exception is created.
+
+***
+
+### Matching
+
+The Matching Engine compares expected records with actual records available in the target account.
+
+Matching is performed using configurable identifiers such as:
+
+* Payment ID
+* Order ID
+* Gateway Transaction ID
+* Settlement ID
+* Reference Number
+
+Depending on the reconciliation workflow, matching supports:
+
+* One-to-One
+* One-to-Many
+* Many-to-One
+* Many-to-Many
+
+***
+
+### Exception
+
+An **Exception** is created when reconciliation cannot be completed automatically.
+
+Common examples include:
+
+* Missing settlements
+* Missing payments
+* Amount mismatches
+* Currency mismatches
+* Duplicate records
+
+Exceptions are tracked separately so they can be investigated and resolved without interrupting the reconciliation workflow.
+
+Learn more in the **Exception Handling** section.
+
+***
+
+## Summary
+
+The following diagram summarizes the reconciliation lifecycle.
+
+```mermaid
+flowchart LR
+
+Import
+
+-->
+
+Transform
+
+-->
+
+Entries
+
+-->
+
+Expectations
+
+-->
+
+Matching
+
+Matching --> Matched
+
+Matching --> Exceptions
+```
+
+Every feature of the reconciliation engine builds upon these concepts.
+
+Continue to **How Reconciliation Works** to learn how the engine processes financial data from ingestion to reconciliation.
