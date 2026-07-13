@@ -61,15 +61,13 @@ Introducing a native Offers Engine within Hyperswitch that enables merchants to 
 
 #### Decoupling Connector Integrations
 
-The connector integration layer is being decoupled into [**hyperswitch-prism**](https://github.com/juspay/hyperswitch-prism)**,** a stateless, embeddable payment integration library with multi-language SDK support.
+The connector integration layer is being decoupled into [**hyperswitch-prism**](https://github.com/juspay/hyperswitch-prism)**:** a stateless, embeddable payment integration library with multi-language SDK support.
 
 Today, hyperswitch-prism powers **97 payment connectors** and **5 payout connectors**. During the coming quarter, we will continue expanding payment and payout coverage while adding support for additional connector categories, including:
 
-• Vault connectors
-
-• Fraud & Risk Management (FRM) connectors
-
-• Surcharge connectors
+* Vault connectors
+* &#x20;Fraud & Risk Management (FRM) connectors
+* Surcharge connectors
 
 #### Intelligent Routing Enhancements
 
@@ -79,13 +77,10 @@ Enhancing the intelligent routing engine with **multi-objective routing** to opt
 
 Expanding the Hyperswitch Vault / Payment Method Service with:
 
-• Support for custom tokens
-
-• Enhanced analytics and observability
-
-• Network Tokenization support for External vaults
-
-• Supporting additional request types for Proxy flows
+* Support for custom tokens
+* Enhanced analytics and observability
+* Network Tokenization support for External vaults
+* Supporting additional request types for Proxy flows
 
 #### Headless Vault SDK
 
@@ -97,29 +92,20 @@ Decoupling the Vault UI from the SDK, enabling teams to build fully customized p
 
 #### New Integrations
 
-• TSYS Transit (Cards)
-
-• Givepayments (Cards)
+* TSYS Transit (Cards)
+* Givepayments (Cards)
 
 #### Enhancements to Existing Integrations
 
-• Deutsche Bank — Payouts
-
-• TrueLayer — Returning customer flow
-
-• Checkout.com — TLID handling
-
-• dLocal — GCash recurring payments
-
-• Paysafe — Google Pay
-
-• Payload — Payouts
-
-• Payload — Split Payments
-
-• Barclaycard — 3DS Payments
-
-• PayPal — Returning customer flow
+* Deutsche Bank - Payouts
+* TrueLayer - Returning customer flow
+* Checkout.com - TLID handling
+* dLocal - GCash recurring payments
+* Paysafe - Google Pay
+* Payload - Payouts
+* Payload - Split Payments
+* Barclaycard - 3DS Payments
+* PayPal - Returning customer flow
 
 [Learn more about the existing connectors supported by Hyperswitch](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
