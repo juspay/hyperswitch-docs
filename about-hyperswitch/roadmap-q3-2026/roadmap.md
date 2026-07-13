@@ -3,10 +3,10 @@ description: April '26 to June '26
 icon: road
 metaLinks:
   alternates:
-    - ./
+    - roadmap.md
 ---
 
-# Roadmap - Q2 2026
+# Previous Roadmap - Q2 2026
 
 🗺️ Our Roadmap typically pans out over a 3-month period and we establish topics we work on upfront.
 
@@ -36,7 +36,6 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 
 🚀 **Developer Experience:** Providing a great self-service and self-installation experience for developers who wish to use or contribute back to Hyperswitch.
 
-
 ## Roadmap <a href="#roadmap" id="roadmap"></a>
 
 ### Composability
@@ -54,32 +53,34 @@ There are a lot of problems to be solved in payments, but our majority of our cu
 ### Connectedness
 
 **New Integrations**
-- EFT Debit Order: Support for bank debit payment method popular in South Africa for recurring collections.
-- iMerchant Solutions:	Payment processor with full payment + webhook flow. Supports retrieving webhook reference IDs for async payment tracking.
-- Santander: Pix Automatico (Brazil's recurring Pix payments) with push notifications, QR code generation, CIT, MIT, and webhook flows.
-- Interpayments for surcharging
+
+* EFT Debit Order: Support for bank debit payment method popular in South Africa for recurring collections.
+* iMerchant Solutions: Payment processor with full payment + webhook flow. Supports retrieving webhook reference IDs for async payment tracking.
+* Santander: Pix Automatico (Brazil's recurring Pix payments) with push notifications, QR code generation, CIT, MIT, and webhook flows.
+* Interpayments for surcharging
 
 **Enhancements to Existing Connectors**
-- ACI: Apple Pay and Google Pay wallet support
-- Worldpay XML: Apple Pay pre-decrypted flow
-- Stripe: Google Pay pre-decrypted flow
-- Finix: Support for external 3DS
-- Peach Payments: COF Data for CardWithLimitedDetails CIT and No-3DS Cards CIT
-- Checkout: Network token payment support for CIT and MIT NTID support
-- Stripe: on_behalf_of support for Stripe Connect split payments
-- Loonio: Manual capture support
-- Gigadat: Manual capture support
+
+* ACI: Apple Pay and Google Pay wallet support
+* Worldpay XML: Apple Pay pre-decrypted flow
+* Stripe: Google Pay pre-decrypted flow
+* Finix: Support for external 3DS
+* Peach Payments: COF Data for CardWithLimitedDetails CIT and No-3DS Cards CIT
+* Checkout: Network token payment support for CIT and MIT NTID support
+* Stripe: on\_behalf\_of support for Stripe Connect split payments
+* Loonio: Manual capture support
+* Gigadat: Manual capture support
 
 [Learn more about the existing connectors supported in Hyperswitch here.](https://docs.hyperswitch.io/explore-hyperswitch/connectors)
 
-
 ### Reducing payment operations
 
-**Reconciliation Enhancements**: 
-- **Tolerance Rules** support to reduce manual effort and improve operational visibility. Merchants can define variance thresholds for automatic reconciliation, with any residual differences routed to a dedicated tolerance account for tracking and auditability. 
-- **Aging** provides visibility into unmatched transactions and enables configurable time-based thresholds to proactively identify stale items.
-- **Manual corrections** will enable merchants to fix recon mismatches with an audit trail.
-- **SFTP support** for fetching settlement files for Adyen, Amex
+**Reconciliation Enhancements**:
+
+* **Tolerance Rules** support to reduce manual effort and improve operational visibility. Merchants can define variance thresholds for automatic reconciliation, with any residual differences routed to a dedicated tolerance account for tracking and auditability.
+* **Aging** provides visibility into unmatched transactions and enables configurable time-based thresholds to proactively identify stale items.
+* **Manual corrections** will enable merchants to fix recon mismatches with an audit trail.
+* **SFTP support** for fetching settlement files for Adyen, Amex
 
 [Learn more about the existing Reconciliation features and workflows here](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation).
 

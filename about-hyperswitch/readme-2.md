@@ -35,7 +35,7 @@ Hyperswitch's technical architecture combines open source innovation with enterp
 #### 1. Open-Source Transparency & Extensibility
 
 * Complete Transparency & Confidence: Full visibility into payment orchestration with no black boxes, enabling informed decision-making and customization. Hyperswitch is maintained publicly on [GitHub](https://github.com/juspay/hyperswitch)
-* [Open Roadmap & Innovation](roadmap/): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
+* [Open Roadmap & Innovation](roadmap-q3-2026/roadmap.md): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
 * Speed to Market: Accelerate implementation and changes by building consensus faster through transparent architecture
 
 #### 2. Enterprise-Grade Reliability & Security Model

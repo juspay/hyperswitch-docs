@@ -5,7 +5,7 @@ icon: flutter
 
 # Flutter
 
-<figure><img src="../../../../../../.gitbook/assets/image (153).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../../../../.gitbook/assets/image (136).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Revolutionize your app's payment capabilities with the Juspay Hyperswitch Flutter SDK, delivering a seamless and tailored Global Checkout Experience. The Juspay Hyperswitch Unified Checkout on Flutter is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
