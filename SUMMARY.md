@@ -218,6 +218,7 @@
   * [Manage Your Team](integration-guide/account-management/manage-your-team.md)
   * [Analytics & operations](integration-guide/account-management/analytics-and-operations/README.md)
     * [Export Payments Data To Redshift for Analytics](integration-guide/account-management/analytics-and-operations/exporting-payments-data.md)
+    * [Programmatic Report Delivery via Webhook](integration-guide/account-management/analytics-and-operations/programmatic-report-delivery-via-webhook.md)
   * [Disputes / Chargebacks](integration-guide/account-management/disputes.md)
   * [Multi-Tenancy](integration-guide/account-management/multi-tenancy-with-hyperswitch.md)
   * [Data migration](integration-guide/account-management/data-migration/README.md)
