@@ -212,6 +212,44 @@ The report is available at `data.download_url`. The webhook does not contain the
 
 <table data-search="false"><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>event_type</code></td><td>Event type. This is always <code>report_generation.completed</code>.</td></tr><tr><td><code>status</code></td><td>Report generation status. <code>success</code> means the report was generated and uploaded successfully.</td></tr><tr><td><code>org_id</code></td><td>Organization ID associated with the report.</td></tr><tr><td><code>merchant_id</code></td><td>Merchant ID associated with the report.</td></tr><tr><td><code>data.report_type</code></td><td>Report type. Possible values are <code>payment_report</code>, <code>refund_report</code>, <code>dispute_report</code>, <code>payout_report</code>, and <code>authentication_report</code>.</td></tr><tr><td><code>data.start_date_utc</code></td><td>Start date of the reporting period in <code>YYYY-MM-DD</code> UTC format.</td></tr><tr><td><code>data.end_date_utc</code></td><td>End date of the reporting period in <code>YYYY-MM-DD</code> UTC format.</td></tr><tr><td><code>data.download_url</code></td><td>Pre-signed AWS S3 URL for downloading the generated CSV report. The webhook payload does not contain the report itself.</td></tr><tr><td><code>data.expires_in_hours</code></td><td>Number of hours before the download URL expires, typically <code>48</code>. Generate a new report if the URL has expired.</td></tr></tbody></table>
 
+### Failure event
+
+If report generation fails, Hyperswitch sends a `report_generation.failed` event to your `returnUrl`.
+
+The failure payload does not contain a report download URL.
+
+#### Failure event JSON body
+
+```json
+{
+  "org_id": "org_MZMfl5gFJ7LksZC3rua2",
+  "merchant_id": "merchant_1773034629",
+  "data": {
+    "code": "internal_server_error",
+    "message": "We could not generate the report due to a internal server error. Please request the report again."
+  },
+  "event": "report_generation.failed"
+}
+```
+
+#### Field reference
+
+| Field          | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| `event`        | Event type. This is always `report_generation.failed` for report generation failures. |
+| `org_id`       | Organization ID associated with the report request.                                   |
+| `merchant_id`  | Merchant ID associated with the report request.                                       |
+| `data.code`    | Machine-readable error code that identifies the failure.                              |
+| `data.message` | Description of the failure and the recommended action.                                |
+
+#### Handling a failure event
+
+When you receive a failure event:
+
+1. Record the error code and message for monitoring.
+2. Submit a new report request.
+3. Contact the Hyperswitch team if the failure continues.
+
 ### Step 4: Verify the Webhook Signature(Optional)
 
 Hyperswitch signs the exact request body using HMAC-SHA512 and the `payment_response_hash_key` associated with the Merchant or Profile.
