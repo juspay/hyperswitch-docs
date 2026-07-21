@@ -5,7 +5,7 @@ icon: flask
 
 # A/B Testing
 
-A/B Testing lets you compare two routing strategies on a controlled percentage of traffic before making a full rollout decision.
+A/B Testing lets you compare two routing strategies, or two configurations of the same strategy, on a controlled percentage of traffic before making a full rollout decision.
 
 ## Common Tests
 
@@ -18,31 +18,54 @@ A/B Testing lets you compare two routing strategies on a controlled percentage o
 
 ## How It Works
 
-1. Choose the control routing strategy.
-2. Choose the variant routing strategy.
-3. Set the percentage of traffic sent to the variant.
-4. Define minimum sample size and guardrails.
-5. Activate the experiment.
-6. Review results before promoting the variant.
+An A/B test is created and activated like a routing configuration. It has a control arm and a variant arm.
 
-Traffic assignment is stable per payment, so retries for the same payment stay in the same experiment arm.
+1. Choose the control strategy.
+2. Choose the variant strategy.
+3. Set the percentage of traffic sent to the variant. Keep the variant below half of traffic during validation.
+4. Define the minimum sample size required per arm.
+5. Set an authorization-rate guardrail, such as the maximum percentage-point drop allowed for the variant.
+6. Activate the experiment.
+7. Review results before promoting the variant.
 
-{% hint style="info" %}
-Screenshot placeholder: A/B test setup screen showing control strategy, variant strategy, split percentage, minimum sample size, and guardrail.
-{% endhint %}
+Traffic assignment is deterministic per payment, so retries for the same payment stay in the same experiment arm.
+
+<figure><img src="../../../.gitbook/assets/routing-ab-test-setup.png" alt="A/B test setup screen"><figcaption></figcaption></figure>
+
+## Strategy Overrides
+
+When an A/B test uses Auth-Rate Routing, each arm can override selected auth-rate settings for that experiment. Common overrides include:
+
+* Hedging percentage.
+* Elimination threshold.
+* Cost-Aware Routing on or off.
+* Margin used for cost-aware ranking.
+* Autopilot on or off.
+
+Use these overrides when you want to compare two settings without changing the merchant's live default configuration.
+
+## Results And Verdicts
+
+A/B test results compare control and variant performance after the configured sample size is reached. If the variant breaches the authorization-rate guardrail, the result should be treated as failed even before statistical significance is checked.
+
+| Verdict | Meaning |
+| --- | --- |
+| Collecting data | One or both arms have not reached the required sample size. |
+| Not significant | Enough traffic has been collected, but the result is not statistically conclusive. |
+| Variant wins | The variant outperforms control on the selected metric. |
+| Variant loses | The variant underperforms control. |
+| Guardrail breached | Variant auth rate dropped beyond the configured threshold. |
 
 ## What To Monitor
 
 * Control auth rate.
 * Variant auth rate.
-* Cost saved, if one arm uses Cost-Aware Routing.
+* First-attempt auth rate.
+* Cost saved, average chosen cost, and expected value if one arm uses Cost-Aware Routing.
 * Sample size per arm.
+* Latency.
 * Guardrail status.
-* Final verdict.
-
-{% hint style="info" %}
-Screenshot placeholder: A/B test results screen showing control vs variant metrics and verdict.
-{% endhint %}
+* Per-payment transaction logs for unexpected arm assignment or processor choice.
 
 ## Rollout Guidance
 

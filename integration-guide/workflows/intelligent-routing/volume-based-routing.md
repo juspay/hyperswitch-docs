@@ -8,7 +8,9 @@ metaLinks:
 
 # Volume-Based Routing
 
-Volume-Based Routing lets you split traffic across processors using fixed percentages. Use it when you want predictable distribution without writing conditional rules.
+{% embed url="https://youtu.be/xpU3zmyD4b8" %}
+
+Volume-Based Routing distributes payments across processors using fixed percentages. It is useful when you want predictable traffic allocation without writing conditional rules.
 
 ## When To Use It
 
@@ -22,14 +24,11 @@ Use Volume-Based Routing to:
 ## Setup
 
 1. Go to `Workflow` > `Routing`.
-2. Choose `Volume-Based Routing`.
-3. Select the processors.
-4. Set the percentage split for each processor.
-5. Save and activate the routing configuration.
-
-{% hint style="info" %}
-Screenshot placeholder: Volume split configuration showing processors and percentage allocation.
-{% endhint %}
+2. Click `Setup` for Volume-Based Routing.
+3. Add a name and description for the routing configuration.
+4. Select the processors and configure the required percentage split.
+5. Choose whether to only save the configuration or save and activate it for payments.
+6. Review the active and previously configured routing algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing).
 
 ## Notes
 

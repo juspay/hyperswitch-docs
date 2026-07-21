@@ -202,6 +202,7 @@
       * [Volume-Based Routing](integration-guide/workflows/intelligent-routing/volume-based-routing.md)
       * [Auth-Rate Routing](integration-guide/workflows/intelligent-routing/auth-rate-based-routing.md)
       * [Cost-Aware Routing](integration-guide/workflows/intelligent-routing/cost-aware-routing.md)
+      * [Least Cost Routing](integration-guide/workflows/intelligent-routing/least-cost-routing.md)
       * [Default Fallback Routing](integration-guide/workflows/intelligent-routing/default-fallback-routing.md)
     * [A/B Testing](integration-guide/workflows/intelligent-routing/ab-testing.md)
     * [Autopilot](integration-guide/workflows/intelligent-routing/autopilot.md)

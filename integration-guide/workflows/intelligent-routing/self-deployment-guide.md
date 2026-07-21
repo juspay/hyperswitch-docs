@@ -1,5 +1,5 @@
 ---
-description: Self-deploy Decision Engine and connect it to Hyperswitch or an existing payment orchestrator
+description: Self-deploy the routing service used by Hyperswitch Intelligent Routing
 icon: screwdriver-wrench
 metaLinks:
   alternates:
@@ -8,20 +8,30 @@ metaLinks:
 
 # Self-Deployment Guide
 
-Self-deploy Decision Engine when you want to run intelligent routing in your own infrastructure, either with self-hosted Hyperswitch or with an existing payment orchestrator.
+Self-hosted Hyperswitch deployments can run the routing service in their own infrastructure. Hyperswitch remains the payment orchestrator; the routing service is used by Hyperswitch to evaluate dynamic routing decisions.
 
 {% hint style="info" %}
-Hosted Hyperswitch merchants usually do not need to self-deploy Decision Engine. Use this guide for self-hosted or custom-orchestrator setups.
+Hosted Hyperswitch merchants usually do not need this setup. Use this guide only when you are running Hyperswitch yourself.
 {% endhint %}
 
-## Run Decision Engine
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-Clone the repository:
+## Run The Routing Service
+
+Clone the routing service repository:
 
 ```bash
 git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
 ```
+
+## Install Docker
+
+Make sure Docker is installed on your system.
+
+* Mac: [Docker Desktop for Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
+* Windows: [Docker Desktop for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+* Linux: [Docker Engine for Linux](https://docs.docker.com/desktop/setup/install/linux/)
 
 Start the API with Docker Compose:
 
@@ -29,29 +39,41 @@ Start the API with Docker Compose:
 docker compose --profile postgres-ghcr up -d
 ```
 
+For the API, dashboard, and local docs together:
+
+```bash
+docker compose --profile dashboard-postgres-ghcr up -d
+```
+
+## Repository Make Targets
+
+You can also use the repository Make targets:
+
+```bash
+make init-pg-ghcr
+make run-pg-ghcr
+```
+
+Legacy aliases are also available:
+
+```bash
+make init
+make run
+```
+
+The init targets start the backing services, apply database setup, and load routing configuration from the repository config files. The run targets start only the routing API container for an already initialized setup.
+
 Verify the service:
 
 ```bash
 curl http://localhost:8080/health
 ```
 
-For the API, dashboard, and docs together:
-
-```bash
-docker compose --profile dashboard-postgres-ghcr up -d
-```
-
-Default local URLs:
-
-| Service | URL |
-| --- | --- |
-| Decision Engine API | `http://localhost:8080` |
-| Decision Engine dashboard | `http://localhost:8081/dashboard/` |
-| Decision Engine docs | `http://localhost:8081/introduction` |
+Plan for approximately 2 GB of disk space. After the service starts, refer to the [Hyperswitch API reference](https://api-reference.hyperswitch.io/) for the payment APIs that use routing.
 
 ## Connect With Hyperswitch
 
-For self-hosted Hyperswitch, configure the Decision Engine URL in Hyperswitch:
+Configure the routing service URL in Hyperswitch:
 
 ```toml
 [open_router]
@@ -60,27 +82,11 @@ static_routing_enabled = true
 url = "http://localhost:8080"
 ```
 
-When you are ready to use Decision Engine results for routing, set the routing result source to `decision_engine`. Keep it as `hyperswitch_routing` while validating or migrating.
+When you are ready for Hyperswitch to use the external routing service, set the routing result source to `decision_engine`. Keep it as `hyperswitch_routing` while validating or migrating.
 
-{% hint style="info" %}
-Screenshot placeholder: Self-hosted architecture diagram showing Hyperswitch, Decision Engine, Redis, database, and processors.
-{% endhint %}
+## How Hyperswitch Uses It
 
-## Connect With An Existing Orchestrator
-
-If you are not using Hyperswitch as the payment orchestrator:
-
-1. Call Decision Engine before making the processor authorization call.
-2. Pass the eligible processor list and payment attributes.
-3. Use the returned processor for the payment attempt.
-4. Send the final authorization outcome back to Decision Engine so future scoring remains accurate.
-
-The core API loop is:
-
-| Step | Endpoint |
-| --- | --- |
-| Get routing decision | `POST /decide-gateway` |
-| Send payment outcome | `POST /update-gateway-score` |
+Hyperswitch calls the routing service during the payment flow, receives the selected processor, performs eligibility and fallback checks, and then continues the payment with the chosen connector. After the payment outcome is known, Hyperswitch sends feedback so auth-rate routing and analytics stay accurate.
 
 ## Production Checklist
 
@@ -88,6 +94,6 @@ Before sending live traffic, confirm:
 
 * Redis and database persistence are configured.
 * Health and readiness checks are monitored.
-* Your fallback route is defined in the orchestrator.
-* Score feedback is sent for successful and failed attempts.
-* Routing decisions are visible in logs or analytics.
+* Default Fallback Routing is configured in Hyperswitch.
+* Payment outcomes are being reported for successful and failed attempts.
+* Routing decisions are visible in Hyperswitch analytics or logs.

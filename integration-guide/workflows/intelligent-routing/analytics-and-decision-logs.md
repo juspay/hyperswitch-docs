@@ -5,22 +5,24 @@ icon: chart-line
 
 # Analytics And Decision Logs
 
-Analytics and decision logs help merchants verify that routing is working as expected. Use them to understand processor performance, investigate individual payments, and measure the impact of routing changes.
+Analytics and decision logs help merchants verify that routing is working as expected. Use them to understand processor performance, investigate individual payments, and measure the impact of routing changes before expanding rollout.
 
 ## Key Views
 
 | View | Use it for |
 | --- | --- |
-| Gateway scores | See recent processor authorization performance. |
-| Decisions | Track which processors were selected and which routing approach was used. |
+| Overview | Track request count, top processor, and processor share for the selected time window. |
+| Gateway scores | See recent processor authorization scores and score trends. |
+| Decisions | Track selected processors and routing approaches. |
+| Routing stats | Review connector share, rule hits, and routing filters. |
+| Log summaries | Investigate recent failures and error patterns. |
+| Payment audit | Inspect the routing trail for a specific payment. |
+| Preview trace | Review simulated rule or volume decisions from routing evaluation. |
 | Cost savings | Measure savings from Cost-Aware Routing. |
-| A/B test results | Compare control and variant performance. |
-| Payment audit | Inspect the routing decision for a specific payment. |
-| Routing events | Review changes such as leader changes, downtime behavior, or Autopilot calibration. |
+| Routing events | Review leader changes, processors entering or leaving the cost-aware auth band, and Autopilot calibration. |
+| A/B test results | Compare control and variant performance and inspect per-payment experiment logs. |
 
-{% hint style="info" %}
-Screenshot placeholder: Routing analytics dashboard with gateway scores, processor share, auth rate, and cost savings.
-{% endhint %}
+<figure><img src="../../../.gitbook/assets/routing-analytics-dashboard.png" alt="Routing analytics dashboard"><figcaption></figcaption></figure>
 
 ## Investigate A Payment
 
@@ -33,11 +35,11 @@ Check:
 * The routing approach used.
 * Whether the selected processor failed eligibility.
 * Whether fallback was applied.
-* The final payment outcome sent back for scoring.
+* Whether cost-aware ranking promoted a different processor.
+* Whether the payment was part of an A/B test.
+* The final payment outcome used for scoring.
 
-{% hint style="info" %}
-Screenshot placeholder: Payment audit timeline showing routing decision, selected processor, fallback, and score update.
-{% endhint %}
+<figure><img src="../../../.gitbook/assets/routing-payment-audit-timeline.png" alt="Payment audit timeline"><figcaption></figcaption></figure>
 
 ## Metrics To Review Before Rollout
 
@@ -48,5 +50,7 @@ Before increasing traffic for a routing strategy, review:
 * Processor share.
 * Fallback rate.
 * Cost saved.
+* Cost coverage for cost-aware routing.
 * Failed or missing score updates.
 * A/B test guardrails and verdicts.
+* Autopilot calibration events, if Autopilot is enabled.

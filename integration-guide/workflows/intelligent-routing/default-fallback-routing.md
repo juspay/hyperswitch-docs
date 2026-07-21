@@ -8,7 +8,9 @@ metaLinks:
 
 # Default Fallback Routing
 
-Default Fallback Routing is the ordered backup list of processors for a merchant profile. Hyperswitch uses it when there is no active routing strategy, no rule matches, or the selected processor is not eligible for the current payment.
+{% embed url="https://youtu.be/5ymPEkOf-BQ" %}
+
+Default Fallback Routing is the priority order of configured processors for a merchant profile. Hyperswitch can use this order on its own, or as the backup path when another routing strategy does not return a usable processor.
 
 ## When It Applies
 
@@ -22,13 +24,10 @@ Default fallback can be used when:
 ## Setup
 
 1. Go to `Workflow` > `Routing`.
-2. Open `Default Fallback`.
-3. Reorder the configured processors by priority.
-4. Save the fallback order.
-
-{% hint style="info" %}
-Screenshot placeholder: Default fallback processor ordering screen.
-{% endhint %}
+2. Click `Manage` for Default Fallback.
+3. Review the list of configured processors.
+4. Reorder processors based on the priority you want Hyperswitch to use when no routing algorithm is active or the selected processor is not eligible.
+5. Save the fallback order.
 
 ## Good Practices
 
