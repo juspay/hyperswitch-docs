@@ -1,5 +1,5 @@
 ---
-description: Self-deploy the intelligent routing engine with Docker
+description: Self-deploy Decision Engine and connect it to Hyperswitch or an existing payment orchestrator
 icon: screwdriver-wrench
 metaLinks:
   alternates:
@@ -8,63 +8,86 @@ metaLinks:
 
 # Self-Deployment Guide
 
-### Self-deploy and integrate it with your existing orchestrator
+Self-deploy Decision Engine when you want to run intelligent routing in your own infrastructure, either with self-hosted Hyperswitch or with an existing payment orchestrator.
 
-Juspay Hyperswitch's intelligent routing engine can be self-deployed to fit into your existing payments setup:
+{% hint style="info" %}
+Hosted Hyperswitch merchants usually do not need to self-deploy Decision Engine. Use this guide for self-hosted or custom-orchestrator setups.
+{% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+## Run Decision Engine
 
-#### 1. Clone the Repository
+Clone the repository:
 
-```
+```bash
 git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
 ```
 
-#### 2. Install Docker
+Start the API with Docker Compose:
 
-```
-Make sure Docker is installed on your system.
-You can download and install Docker Desktop from the below links.
-
-- Mac - https://docs.docker.com/desktop/setup/install/mac-install/
-- Windows - https://docs.docker.com/desktop/setup/install/windows-install/
-- Linux - https://docs.docker.com/desktop/setup/install/linux/
+```bash
+docker compose --profile postgres-ghcr up -d
 ```
 
-#### 3. Run the Project
+Verify the service:
 
-**a. First-Time Setup**
-
-If you're setting up the environment for the first time, run:
-
-```
-make init
+```bash
+curl http://localhost:8080/health
 ```
 
-This command performs the following under the hood:
+For the API, dashboard, and docs together:
 
-```
-docker-compose run --rm db-migrator && docker-compose up open-router
-```
-
-This will:
-
-* Set up the environment
-* Set up the database with the required schema
-* Set up redis and the server for running the application
-* Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
-
-**b. Start the Server (without resetting DB)**
-
-If the DB schema is already set up and you don't want to reset the DB, use:
-
-```
-make run
+```bash
+docker compose --profile dashboard-postgres-ghcr up -d
 ```
 
-**System Requirements:** Approximately 2GB of disk space
+Default local URLs:
 
-After successful setup, the server will start running.
+| Service | URL |
+| --- | --- |
+| Decision Engine API | `http://localhost:8080` |
+| Decision Engine dashboard | `http://localhost:8081/dashboard/` |
+| Decision Engine docs | `http://localhost:8081/introduction` |
 
-Once the server is set up, you can refer to the [API reference](https://api-reference.hyperswitch.io/) for usage.
+## Connect With Hyperswitch
+
+For self-hosted Hyperswitch, configure the Decision Engine URL in Hyperswitch:
+
+```toml
+[open_router]
+dynamic_routing_enabled = true
+static_routing_enabled = true
+url = "http://localhost:8080"
+```
+
+When you are ready to use Decision Engine results for routing, set the routing result source to `decision_engine`. Keep it as `hyperswitch_routing` while validating or migrating.
+
+{% hint style="info" %}
+Screenshot placeholder: Self-hosted architecture diagram showing Hyperswitch, Decision Engine, Redis, database, and processors.
+{% endhint %}
+
+## Connect With An Existing Orchestrator
+
+If you are not using Hyperswitch as the payment orchestrator:
+
+1. Call Decision Engine before making the processor authorization call.
+2. Pass the eligible processor list and payment attributes.
+3. Use the returned processor for the payment attempt.
+4. Send the final authorization outcome back to Decision Engine so future scoring remains accurate.
+
+The core API loop is:
+
+| Step | Endpoint |
+| --- | --- |
+| Get routing decision | `POST /decide-gateway` |
+| Send payment outcome | `POST /update-gateway-score` |
+
+## Production Checklist
+
+Before sending live traffic, confirm:
+
+* Redis and database persistence are configured.
+* Health and readiness checks are monitored.
+* Your fallback route is defined in the orchestrator.
+* Score feedback is sent for successful and failed attempts.
+* Routing decisions are visible in logs or analytics.

@@ -1,41 +1,45 @@
 ---
-description: >-
-  Route transactions through processors with advanced rules on the basis of
-  various payment parameters
+description: Route payments using merchant-defined conditions such as amount, currency, country, payment method, and customer context
 icon: ruler
 metaLinks:
   alternates:
     - rule-based-routing.md
 ---
 
-# Rule Based Routing
+# Rule-Based Routing
 
-{% embed url="https://youtu.be/Zs6H1vAKTJM" %}
+Rule-Based Routing lets you define explicit business logic for processor selection. Use it when a payment should go to a specific processor because of region, currency, payment method, transaction amount, card type, or a commercial agreement.
 
-### Get started with Rule Based Routing
+## When To Use It
 
-Juspay Hyperswitch provides rule-based routing configuration that comprises one or more rules with each rule having a payment processor preference and a set of conditions associated with it. The implication being that if one of the conditions matches, the associated processor preference is considered for the ongoing payment. The order in which rules and conditions are evaluated is sequential from top to bottom as presented in the UI, with preference given to the first condition (and the associated preference) that's fulfilled by the current payment.
+Use Rule-Based Routing when you need deterministic control, for example:
 
-**Condition:** A condition is constructed with dimensions and logical operators. Routing rules can be pivoted upon numerous dimensions which include payment method, amount of payment, currency, etc. Also, there are six logical operators - equal to, greater than, lesser than, is, is not, contains, not contains, which are used to evaluate the condition.
+* Send high-value payments to a processor with better risk handling.
+* Route a country or currency to a local acquirer.
+* Use a specific processor for a payment method.
+* Keep a fallback list for a rule, so a failed or ineligible processor does not block the payment.
 
-**Processor Preference:** Every rule has an associated Processor Preference which dictates the processor(s) to route the ongoing payment through if the rule is fulfilled. A Processor Preference can be one of the following types:
+## How It Works
 
-1. **Single choice of processor:** Only a single processor should be targeted for a specific condition Eg: (Stripe)
-2. **Split payments across processors:** The payment volume could be distributed across more than one processor. Eg: (Stripe: 70%, Paypal: 30%)
-3. **Single choice of processor with fallback:** A single processor should be targeted for a specific condition with an option of one or more fallback processors to automatically retry the transaction through if the initial processor fails to process the payment. Eg: (Stripe, Paypal)
+A routing rule has two parts:
 
-### Steps to configure Rule Based Configuration in Smart Router
+* **Condition:** The payment attributes that must match, such as payment method, amount, currency, billing country, or card network.
+* **Processor preference:** The processor or ordered processor list to use when the condition matches.
 
-**Step 1:** Click on `Setup` for **Rule Based Configuration:**
+Rules are evaluated from top to bottom. The first matching rule is applied. If none match, Hyperswitch uses your [Default Fallback Routing](default-fallback-routing.md).
 
-<figure><img src="../../../.gitbook/assets/routing-1.png" alt=""><figcaption></figcaption></figure>
+## Setup
 
-**Step 2:** Save the rule name and description & use the no-code UI to configure your desired rules as per your business logic (an instance for configuring rule is displayed). After, select your default preferred processors and click on `Configure Rule` :
+1. Go to `Workflow` > `Routing`.
+2. Choose `Rule-Based Routing`.
+3. Create a rule with the required conditions.
+4. Select the processor preference for that rule.
+5. Save and activate the routing configuration.
 
-**Step 3:** In the popup, select the appropriate action based on whether you want to simply `save the rule`, or `save and also activate` it for all payments henceforth:
+{% hint style="info" %}
+Screenshot placeholder: Rule builder screen with one condition and a processor preference.
+{% endhint %}
 
-**Step 4:** You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
+## Good Practices
 
-### How Rule Based Routing Works
-
-{% embed url="https://hyperswitch.io/video/Rule_Based_video.mp4" %}
+Keep the most specific rules at the top and broad rules lower in the list. Always configure Default Fallback Routing so payments have a backup path when a rule output is not eligible for the payment.

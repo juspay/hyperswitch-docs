@@ -1,23 +1,36 @@
 ---
-description: Route transactions through processors based on volume distribution
+description: Distribute payment traffic across multiple processors by percentage
 icon: chart-simple
 metaLinks:
   alternates:
     - volume-based-routing.md
 ---
 
-# Volume Based Routing
+# Volume-Based Routing
 
-{% embed url="https://youtu.be/xpU3zmyD4b8" %}
+Volume-Based Routing lets you split traffic across processors using fixed percentages. Use it when you want predictable distribution without writing conditional rules.
 
-### Steps to configure Volume Based Configuration in Smart Router
+## When To Use It
 
-Juspay Hyperswitch enables volume-based routing to distribute transactions across processors.
+Use Volume-Based Routing to:
 
-**Step 1:** Click on `Setup` for **Volume Based Configuration**
+* Gradually move traffic to a new processor.
+* Keep multiple processors active.
+* Meet a planned traffic allocation.
+* Run a simple production rollout before switching to a dynamic strategy.
 
-**Step 2:** `Save` the name, description, and configure your desired volume distribution among multiple payment processors using percentages:
+## Setup
 
-**Step 3:** In the popup, select the appropriate action based on whether you want to simply `save the rule`, or `save and also activate` it for all payments henceforth:
+1. Go to `Workflow` > `Routing`.
+2. Choose `Volume-Based Routing`.
+3. Select the processors.
+4. Set the percentage split for each processor.
+5. Save and activate the routing configuration.
 
-**Step 4:** You can view your active routing algorithm as well as all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing):
+{% hint style="info" %}
+Screenshot placeholder: Volume split configuration showing processors and percentage allocation.
+{% endhint %}
+
+## Notes
+
+The configured percentages apply only to processors that are eligible for the payment. If the selected processor is not eligible, Hyperswitch uses [Default Fallback Routing](default-fallback-routing.md).
