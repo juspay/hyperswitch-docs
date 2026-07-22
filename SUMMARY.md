@@ -203,6 +203,7 @@
     * [Rule Based Routing](integration-guide/workflows/intelligent-routing/rule-based-routing.md)
     * [Volume Based Routing](integration-guide/workflows/intelligent-routing/volume-based-routing.md)
     * [Default Fallback Routing](integration-guide/workflows/intelligent-routing/default-fallback-routing.md)
+    * [Multi-objective Routing](integration-guide/workflows/intelligent-routing/multi-objective-routing.md)
   * [Surcharge](integration-guide/workflows/surcharge/README.md)
     * [Surcharge Setup guide](integration-guide/workflows/surcharge/surcharge-setup-guide.md)
 * [Account & Operations](integration-guide/account-management/README.md)
