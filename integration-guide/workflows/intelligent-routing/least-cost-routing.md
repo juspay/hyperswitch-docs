@@ -8,7 +8,7 @@ metaLinks:
 
 # Least Cost Routing
 
-Least Cost Routing helps merchants reduce debit payment cost by selecting the most cost-efficient eligible debit network for a transaction. It is focused on debit network choice, while [Cost-Aware Routing](cost-aware-routing.md) focuses on processor-level cost and auth-rate tradeoffs.
+Least Cost Routing helps merchants reduce debit payment cost by selecting the most cost-efficient eligible debit network for a transaction. It is focused on debit network choice, while [Multi-Objective Routing](multi-objective-routing.md) focuses on processor-level cost and auth-rate tradeoffs.
 
 ## Prerequisites
 

@@ -18,8 +18,8 @@ Analytics and decision logs help merchants verify that routing is working as exp
 | Log summaries | Investigate recent failures and error patterns. |
 | Payment audit | Inspect the routing trail for a specific payment. |
 | Preview trace | Review simulated rule or volume decisions from routing evaluation. |
-| Cost savings | Measure savings from Cost-Aware Routing. |
-| Routing events | Review leader changes, processors entering or leaving the cost-aware auth band, and Autopilot calibration. |
+| Cost savings | Measure savings from Multi-Objective Routing. |
+| Routing events | Review leader changes, processors entering or leaving the multi-objective auth band, and Autopilot calibration. |
 | A/B test results | Compare control and variant performance and inspect per-payment experiment logs. |
 
 <figure><img src="../../../.gitbook/assets/routing-analytics-dashboard.png" alt="Routing analytics dashboard"><figcaption></figcaption></figure>
@@ -35,7 +35,7 @@ Check:
 * The routing approach used.
 * Whether the selected processor failed eligibility.
 * Whether fallback was applied.
-* Whether cost-aware ranking promoted a different processor.
+* Whether multi-objective ranking promoted a different processor.
 * Whether the payment was part of an A/B test.
 * The final payment outcome used for scoring.
 
@@ -50,7 +50,7 @@ Before increasing traffic for a routing strategy, review:
 * Processor share.
 * Fallback rate.
 * Cost saved.
-* Cost coverage for cost-aware routing.
+* Cost coverage for multi-objective routing.
 * Failed or missing score updates.
 * A/B test guardrails and verdicts.
 * Autopilot calibration events, if Autopilot is enabled.

@@ -11,7 +11,7 @@ A/B Testing lets you compare two routing strategies, or two configurations of th
 
 | Test | Why run it |
 | --- | --- |
-| Auth-Rate Routing vs Cost-Aware Routing | Check whether cost savings are worth any auth-rate movement. |
+| Auth-Rate Routing vs Multi-Objective Routing | Check whether cost savings are worth any auth-rate movement. |
 | Manual auth-rate settings vs Autopilot | Validate automatic tuning before full rollout. |
 | Existing rule setup vs new rule setup | Measure impact before replacing a production rule. |
 | Current processor mix vs new processor mix | Ramp a new connector with lower risk. |
@@ -38,8 +38,7 @@ When an A/B test uses Auth-Rate Routing, each arm can override selected auth-rat
 
 * Hedging percentage.
 * Elimination threshold.
-* Cost-Aware Routing on or off.
-* Margin used for cost-aware ranking.
+* Multi-Objective Routing on or off.
 * Autopilot on or off.
 
 Use these overrides when you want to compare two settings without changing the merchant's live default configuration.
@@ -61,9 +60,8 @@ A/B test results compare control and variant performance after the configured sa
 * Control auth rate.
 * Variant auth rate.
 * First-attempt auth rate.
-* Cost saved, average chosen cost, and expected value if one arm uses Cost-Aware Routing.
+* Cost saved, average chosen cost, and expected value if one arm uses Multi-Objective Routing.
 * Sample size per arm.
-* Latency.
 * Guardrail status.
 * Per-payment transaction logs for unexpected arm assignment or processor choice.
 
