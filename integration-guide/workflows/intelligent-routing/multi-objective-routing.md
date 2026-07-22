@@ -25,6 +25,8 @@ The high-level goal a merchant sets is deliberately small: a single business pre
 
 <figure><img src="../../../.gitbook/assets/routing-autopilot-settings.png" alt="Autopilot settings screen"><figcaption></figcaption></figure>
 
+See [Autopilot](autopilot.md) for setup details and tuning controls.
+
 ### Cost Data Inputs
 
 There are two ways in which you can provide the cost data:
@@ -33,8 +35,7 @@ There are two ways in which you can provide the cost data:
 
 <figure><img src="../../../.gitbook/assets/routing-cost-ingestion.png" alt="Cost ingestion page"><figcaption></figcaption></figure>
 
-2. **Manual:** Upload the fee report as a .csv file as per the expected template (which can be downloaded from the dashboard). In case of data field mismatch resolve by manually mapping the columns in the data with the expected fields.
-   1. In sandbox there are also sample files available to try it out.&#x20;
+2. **Manual:** Upload the fee report as a .csv file as per the expected template (which can be downloaded from the dashboard). In case of data field mismatch resolve by manually mapping the columns in the data with the expected fields. In sandbox there are also sample files available to try it out.&#x20;
 
 <figure><img src="../../../.gitbook/assets/routing-cost-manual-upload.png" alt="Manual settlement report upload screen"><figcaption></figcaption></figure>
 
