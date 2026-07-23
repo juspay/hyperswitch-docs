@@ -9,13 +9,11 @@ icon: react
 **Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 {% endhint %}
 
-<details>
-
-<summary><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+{% hint style="success" icon="rocket" %}
+[**Demo App**](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
 
 You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
-
-</details>
+{% endhint %}
 
 ## 1. Setup the server
 

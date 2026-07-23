@@ -11,7 +11,9 @@ icon: html5
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate `hyperswitch` SDK to your HTML app. You can also use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
 {% endhint %}
 
-### [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+{% hint style="success" icon="rocket" %}
+[<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+{% endhint %}
 
 ## 1. Setup the server
 

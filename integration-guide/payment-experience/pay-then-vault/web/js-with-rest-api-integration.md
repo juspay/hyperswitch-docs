@@ -11,7 +11,9 @@ icon: js
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate Juspay Hyperswitch SDK to your app with any framework. If you are using React framework please go through React Integration to use a dedicated wrapper.\\
 {% endhint %}
 
-### [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+{% hint style="success" icon="rocket" %}
+[<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+{% endhint %}
 
 ## 1. Setup the server
 
