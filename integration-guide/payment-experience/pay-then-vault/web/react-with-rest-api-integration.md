@@ -1,15 +1,12 @@
 ---
 description: Integrate Hyperswitch SDK with React and REST API for web checkout
-icon: react
 ---
 
 # React with REST API Integration
 
 {% hint style="info" %}
 **Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
-{% endhint %}
 
-{% hint style="success" icon="rocket" %}
 [**Demo App**](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
 
 You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
@@ -86,7 +83,9 @@ Pass the promise from `loadHyper` to the `HyperElements` component. This allows 
 </div>
 ```
 
-#### 2.6 Setup the state (optional)
+<details>
+
+<summary><strong>2.6 Setup the state (optional)</strong></summary>
 
 Initialize a state to keep track of payment, display errors and control the user interface.
 
@@ -94,6 +93,8 @@ Initialize a state to keep track of payment, display errors and control the user
 const [message, setMessage] = useState(null);
 const [isLoading, setIsLoading] = useState(false);
 ```
+
+</details>
 
 #### 2.7 Store a reference to `Hyper`
 
@@ -275,9 +276,15 @@ hyper.retrievePaymentIntent(paymentID).then(({ paymentIntent }) => {
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 {% endstep %}
+{% endstepper %}
 
-{% step %}
-### Elements Events
+{% hint style="success" %}
+Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
+{% endhint %}
+
+<details>
+
+<summary><strong>Elements Events</strong></summary>
 
 Some events are emitted by payment elements, listening to those events is the only way to communicate with these elements. All events have a payload object with the type of the Element that emitted the event as an elementType property. Following events are emitted by payment elements.
 
@@ -352,13 +359,11 @@ Callback for these event will be triggered with following event object.
 }
 ```
 
-{% hint style="success" %}
-Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
-{% endhint %}
-{% endstep %}
+</details>
 
-{% step %}
-### Additional Callback Handling for Wallets Payment Process
+<details>
+
+<summary><strong>Additional Callback Handling for Wallets Payment Process</strong></summary>
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
@@ -393,7 +398,7 @@ The task within `onPaymentButtonClick` must be completed within 1 second. If an 
   }}
 />
 ```
-{% endstep %}
-{% endstepper %}
 
-## Next step:
+</details>
+
+### Next step:

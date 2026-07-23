@@ -1,6 +1,5 @@
 ---
 description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
-icon: k
 layout:
   width: default
   outline:
@@ -9,22 +8,26 @@ layout:
 
 # Kotlin with REST API Integration
 
-
-
-<details>
-
-<summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
-
-You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
-
-</details>
-
+{% columns %}
+{% column width="60%" %}
 ### Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
 * [Gradle](https://gradle.org/releases/) 8.13+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
+{% endcolumn %}
+
+{% column width="40%" %}
+<details open>
+
+<summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
+
+You can use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
+
+</details>
+{% endcolumn %}
+{% endcolumns %}
 
 {% stepper %}
 {% step %}
@@ -75,7 +78,7 @@ hyperswitch {
 }
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Note:
 
 * If you don't specify `sdkVersion`, the plugin will automatically use the latest available version
@@ -93,7 +96,7 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 }
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **Note**:
 
 `PaymentSession` is designed to work with AndroidX activities. Ensure that your `CheckoutActivity` extends `FragmentActivity` or its subclass from the AndroidX library
@@ -107,21 +110,21 @@ Set up the SDK using your publishable key. This is essential for initializing a 
 val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY");
 ```
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **Note**:
 
 PaymentSession needs to be initialized in onCreate method of your `FragmentActivity`
 {% endhint %}
 
-{% hint style="warning" %}
-**Note**:
+<details>
 
-For an open-source setup, use the following parameters:
+<summary><strong>Note:</strong> For an open-source setup, use the following parameters:</summary>
 
 ```kotlin
 val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", "YOUR_CUSTOM_BACKEND_URL", "YOUR_CUSTOM_LOG_URL")
 ```
-{% endhint %}
+
+</details>
 
 #### Fetch a Payment
 
