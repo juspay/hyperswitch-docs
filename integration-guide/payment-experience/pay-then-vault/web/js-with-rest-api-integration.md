@@ -7,17 +7,19 @@ icon: js
 
 # JS with REST API Integration
 
+{% hint style="info" %}
 **Before following these steps, please configure your payment methods** [here](https://hyperswitch.io/docs/paymentMethods/cards). Use this guide to integrate Juspay Hyperswitch SDK to your app with any framework. If you are using React framework please go through React Integration to use a dedicated wrapper.\\
+{% endhint %}
 
-#### [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
+### [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 
-#### 1. Setup the server
+## 1. Setup the server
 
 Follow the Server Setup section.
 
-#### 2. Build checkout page on the client
+## 2. Build checkout page on the client
 
-**2.1 Define the payment form**
+### 2.1 Define the payment form
 
 {% hint style="info" %}
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
@@ -40,7 +42,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you'l
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-**2.2 Fetch the Payment and create the Unified Checkout**
+### 2.2 Fetch the Payment and create the Unified Checkout
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -89,7 +91,7 @@ async function initialize() {
 }
 ```
 
-**2.3 Additional Callback Handling for Wallets Payment Process**
+### 2.3 Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
@@ -108,7 +110,7 @@ This document outlines the details and functionality of an optional callback `co
 The task within `onPaymentButtonClick` must be completed within 1 second. If an asynchronous callback is used, it must resolve within this time to avoid Apple Pay payment failures.
 {% endhint %}
 
-**Example Usage**
+### Example Usage
 
 ```javascript
 const unifiedCheckout = widgets.create("payment", unifiedCheckoutOptions);
@@ -127,7 +129,7 @@ unifiedCheckout.on("completeDoThis",()=>{
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-**2.2 Fetch the Payment and create the Express Checkout**
+### 2.2 Fetch the Payment and create the Express Checkout
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
@@ -174,9 +176,9 @@ async function initialize() {
 {% endtab %}
 {% endtabs %}
 
-#### 3. Complete payment on the client
+## 3. Complete payment on the client
 
-**3.1 Handle the submit event and complete the payment**
+### 3.1 Handle the submit event and complete the payment
 
 > Note: This step is not required for ExpressCheckout
 
@@ -223,7 +225,7 @@ async function handleSubmit(e) {
 
 Also if there are any immediate errors (for example, your customer's card is declined), `HyperLoader` returns an error. Show that error message to your customer so they can try again.
 
-**3.2 Display a payment status message**
+### 3.2 Display a payment status message
 
 When Hyper redirects the customer to the `return_url`, the `payment_intent_client_secret` query parameter is appended by `HyperLoader`. Use this to retrieve the `Payment` to determine what to show to your customer.
 
@@ -257,4 +259,6 @@ async function checkStatus() {
 }
 ```
 
+{% hint style="success" %}
 Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
+{% endhint %}

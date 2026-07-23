@@ -1,15 +1,17 @@
 ---
 description: Customize your Web unified checkout for Juspay Hyperswitch
 icon: server
+layout:
+  width: wide
 ---
 
 # Customization
 
-#### 1. Layouts
+## 1. Layouts
 
 Choose a layout that fits well with your UI pattern. There are two types of layout options as listed below. The layout defaults to accordion if not explicitly specified.
 
-**1.1 Accordion layout**
+### 1.1 Accordion layout
 
 The accordion layout displays payment methods vertically using an accordion. To use this layout, set the value for layout to accordion. You also have the option to specify other properties, such as those shown in the following example.
 
@@ -32,7 +34,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-**1.2 Tabs layout**
+### 1.2 Tabs layout
 
 The tabs layout displays payment methods horizontally using tabs. To use this layout, set the value for layout to tabs. You also have the option to specify other properties, such as tabs or collapsed.
 
@@ -44,7 +46,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-**1.2.1 Tabs layout - Grid arrangement**
+### 1.2.1 Tabs layout - Grid arrangement
 
 By default, the tabs layout shows excess payment methods inside a dropdown. If you want to display all payment methods at once in a grid view, you can customize the tabs layout using `paymentMethodsArrangementForTabs`.
 
@@ -68,7 +70,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-**1.3 Saved Methods Customization**
+### 1.3 Saved Methods Customization
 
 In this layout, by default saved payment methods are shown for a quick checkout. Customers can select an existing method or add a new one using New payment methods, which reveals the payment form inline.
 
@@ -91,7 +93,7 @@ var paymentElementOptions = {
 <PaymentElement id="payment-element" options={paymentElementOptions} />
 ```
 
-**1.4 One Click Payment Methods Customization**
+### 1.4 One Click Payment Methods Customization
 
 By default, one-click payment methods such as Google Pay and Apple Pay are always displayed at the top of the checkout, regardless of the selected layout (Accordion or Tabs).
 
@@ -119,7 +121,7 @@ var paymentElementOptions = {
 Note: Currently, only Google Pay, Apple Pay, and PayPal (Redirect) support being moved into the layout. Other one-click methods are hidden when this option is disabled.
 {% endhint %}
 
-#### 2. Wallets
+## 2. Wallets
 
 The wallet customization feature lets users configure payment options like Apple Pay, Google Pay, PayPal, and Klarna. It includes a `walletReturnUrl` for post-payment redirects and a `style` property to customize the wallet's appearance, offering flexibility for seamless integration.
 
@@ -148,7 +150,7 @@ The wallet customization feature lets users configure payment options like Apple
 | <p>applePay: showType<br>googlePay: showType<br>payPal: showType<br>klarna: showType</p>        | Determines the visibility of Apple Pay, Google Pay, PayPal and Klarna.                                                                                                                                                                                                                                                         | <p><code>showType</code> can take two values:</p><ul><li><code>"auto"</code>: Display when supported.</li><li><code>"never"</code>: Always hidden</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                    |
 | <p>style: {<br>theme: theme,<br>type: styleType,<br>height: int,<br>buttonRadius: int,<br>}</p> | <p>Configures the wallet's appearance with the following options:</p><ul><li><code>theme</code>: Sets the theme.</li><li><code>type</code>: Defines the style type (e.g. buy).</li><li><code>height</code>: Specifies the height of the wallet.</li><li><code>buttonRadius</code>: Adjusts the button corner radius.</li></ul> | <p><code>theme</code>: It can take values as <code>dark</code>, <code>light</code>, or <code>outline</code>.<br><br><code>type</code>: Specifies the wallet button style with options including <code>checkout</code>, <code>pay</code>, <code>buy</code>, <code>installment</code>, <code>default</code>, <code>book</code>, <code>donate</code>, <code>order</code>, <code>addmoney</code>, <code>topup</code>, <code>rent</code>, <code>subscribe</code>, <code>reload</code>, <code>support</code>, <code>tip</code>, and <code>contribute</code>.<br></p> |
 
-#### 3. Styling variables
+## 3. Styling variables
 
 The Styling APIs could be used to blend the Unified Checkout with the rest of your app or website.
 
@@ -185,7 +187,7 @@ The Styling APIs could be used to blend the Unified Checkout with the rest of yo
 | colorTextSecondary    | The color used for text of secondary importance. For example, this color is used for the label of a tab that isn't currently selected                              |
 | colorTextPlaceholder  | The color used for input placeholder text in the Widget                                                                                                            |
 
-#### 4. Rules
+## 4. Rules
 
 The rules option is a map of CSS-like selectors to CSS properties, allowing granular customization of individual components. After defining your theme and variables, use rules to seamlessly integrate Elements to match the design of your site. The selector for a rule can target any of the public class names in the Element, as well as the supported states, pseudo-classes, and pseudo-elements for each class. For example, the following are valid selectors:
 
@@ -310,7 +312,7 @@ const elements = hyper.elements({ clientSecret, appearance });
 | ------------ | ------ | -------------- | --------------- |
 | .InfoElement |        | :hover         |                 |
 
-#### 5. Languages
+## 5. Languages
 
 Juspay Hyperswitch Unified Checkout supports localization in 6 languages. By default, the Unified Checkout SDK will detect the locale of the customer's browser and display the localized version of the payment sheet if that locale is supported. In case it is not supported, we default to English. To override, you can send locale in hyper.elements (options)
 
@@ -336,7 +338,7 @@ We support the following locales -
 
 If you need support for locales other than the ones mentioned above, please contact the Hyperswitch team. Now you can test the payments on your app and go-live!
 
-#### 6. Confirm Button
+## 6. Confirm Button
 
 The Styling APIs could be used to blend the Confirm Payment Button (handled by SDK) with your app.
 
@@ -352,7 +354,7 @@ The Styling APIs could be used to blend the Confirm Payment Button (handled by S
 | buttonTextFontWeight  | Specify the font weight of the text on the payment button          |
 | buttonBorderWidth     | Specify the border width of the button                             |
 
-#### 7. More Configurations
+## 7. More Configurations
 
 **Branding**
 
@@ -603,4 +605,4 @@ The `message` configuration controls the text displayed below each payment metho
 
 If a payment method type is **not** listed in `paymentMethodsConfig`, or if `displayMode` is set to `"default_sdk_message"`, the SDK shows its default terms message as usual.
 
-#### Next step:
+## Next step:
