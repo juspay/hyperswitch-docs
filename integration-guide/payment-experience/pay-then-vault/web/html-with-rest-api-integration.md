@@ -15,13 +15,17 @@ icon: html5
 [<mark style="color:blue;">Demo App</mark>](https://github.com/PritishBudhiraja/hyperswitch-demo-app/archive/refs/heads/master.zip)
 {% endhint %}
 
-## 1. Setup the server
+{% stepper %}
+{% step %}
+### 1. Setup the server
 
 Follow the Server Setup section.
+{% endstep %}
 
-## 2. Build checkout page on the client
+{% step %}
+### 2. Build checkout page on the client
 
-### 2.1 Load HyperLoader
+#### 2.1 Load HyperLoader
 
 Use `HyperLoader` to ensure PCI compliant means of accepting payment details from your customer and sending it directly to the Hyperswitch server. Always load `hyperLoader` from `https://beta.hyperswitch.io/v1/HyperLoader.js` to ensure compliance. Please refrain from including the script in a bundle or hosting it yourself.
 
@@ -29,7 +33,7 @@ Use `HyperLoader` to ensure PCI compliant means of accepting payment details fro
 <script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
 ```
 
-### 2.2 Define the payment form
+#### 2.2 Define the payment form
 
 {% hint style="info" %}
 This step is recommended for the Unified Checkout for an enhanced user experience. In case you are integrating Express Checkout (mentioned later below), this step is not required.
@@ -50,7 +54,7 @@ Add one empty placeholder `div` to your checkout form for each Widget that you'l
 </form>
 ```
 
-### 2.3 Initialize HyperLoader
+#### 2.3 Initialize HyperLoader
 
 Initialize `HyperLoader` onto your app with your publishable key with the `Hyper` constructor. You'll use `HyperLoader` to create the Unified Checkout and complete the payment on the client. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -63,7 +67,7 @@ const hyper = Hyper("YOUR_PUBLISHABLE_KEY",{
 
 {% tabs %}
 {% tab title="UnifiedCheckout" %}
-### 2.4 Fetch the Payment and create the Unified Checkout
+#### 2.4 Fetch the Payment and create the Unified Checkout
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The `clientSecret` returned by your endpoint is used to complete the payment.
 
@@ -103,7 +107,7 @@ async function initialize() {
 {% endtab %}
 
 {% tab title="ExpressCheckout" %}
-### 2.4 Fetch the Payment and create the Express Checkout
+#### 2.4 Fetch the Payment and create the Express Checkout
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 
@@ -143,10 +147,12 @@ async function initialize() {
 ```
 {% endtab %}
 {% endtabs %}
+{% endstep %}
 
-## 3. Complete payment on the client
+{% step %}
+### 3. Complete payment on the client
 
-### 3.1 Handle the submit event and complete the payment
+#### 3.1 Handle the submit event and complete the payment
 
 > Note: This step is not required for ExpressCheckout
 
@@ -221,7 +227,7 @@ For customization, please follow the [`Customization docs`](https://docs.hypersw
 
 </details>
 
-### 3.2 Display a payment status message
+#### 3.2 Display a payment status message
 
 When Hyper redirects the customer to the `return_url`, the `payment_intent_client_secret` query parameter is appended by `HyperLoader`. Use this to retrieve the `Payment` to determine what to show to your customer.
 
@@ -258,3 +264,5 @@ async function checkStatus() {
 {% hint style="success" %}
 Congratulations! Now that you have integrated the Hyperswitch SDK on your app, you can customize the payment elements to blend with the rest of your app.
 {% endhint %}
+{% endstep %}
+{% endstepper %}
