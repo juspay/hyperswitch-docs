@@ -13,14 +13,4 @@ layout:
 The following table lists client error codes that the Juspay Hyperswitch SDK returns to your website for graceful handling.
 {% endhint %}
 
-| Error Type               | Error Message                                   |
-| ------------------------ | ----------------------------------------------- |
-| `invalid_request_error`  | Invalid api key                                 |
-| `invalid_request_error`  | Invalid value for < parameter\_name >           |
-| `invalid_request_error`  | Missing required parameter: < parameter\_name > |
-| `invalid_request_error`  | Invalid client secret                           |
-| `invalid_request_error`  | Invalid promise                                 |
-| `processing_error`       | Payment failed with the payment processor       |
-| `internal_server_error`  | Server is unavailable                           |
-| `object_not_found`       | Payment does not exist                          |
-| `confirm_payment_failed` | An unknown error occurred                       |
+<table><thead><tr><th width="55%">Error Type</th><th>Error Message</th></tr></thead><tbody><tr><td><code>invalid_request_error</code></td><td>Invalid api key</td></tr><tr><td><code>invalid_request_error</code></td><td>Invalid value for &#x3C; parameter_name ></td></tr><tr><td><code>invalid_request_error</code></td><td>Missing required parameter: &#x3C; parameter_name ></td></tr><tr><td><code>invalid_request_error</code></td><td>Invalid client secret</td></tr><tr><td><code>invalid_request_error</code></td><td>Invalid promise</td></tr><tr><td><code>processing_error</code></td><td>Payment failed with the payment processor</td></tr><tr><td><code>internal_server_error</code></td><td>Server is unavailable</td></tr><tr><td><code>object_not_found</code></td><td>Payment does not exist</td></tr><tr><td><code>confirm_payment_failed</code></td><td>An unknown error occurred</td></tr></tbody></table>
