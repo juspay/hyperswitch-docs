@@ -5,6 +5,8 @@ description: >-
 icon: globe-pointer
 layout:
   width: wide
+  outline:
+    visible: false
 ---
 
 # Web
