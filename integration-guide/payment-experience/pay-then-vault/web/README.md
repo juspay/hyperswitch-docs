@@ -4,9 +4,9 @@ description: >-
   payment experience
 icon: globe-pointer
 layout:
-  width: wide
+  width: default
   outline:
-    visible: false
+    visible: true
 ---
 
 # Web
