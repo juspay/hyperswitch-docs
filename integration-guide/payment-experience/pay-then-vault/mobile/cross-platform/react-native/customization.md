@@ -1,6 +1,10 @@
 ---
 description: 'Visual customization: Colors, shapes, specific UI components'
 icon: square-sliders-vertical
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Customization
@@ -9,11 +13,11 @@ icon: square-sliders-vertical
 You can customize the Juspay Hyperswitch React Native Unified Checkout to support visual customization, which allows you to match the design of your app
 {% endhint %}
 
-#### Appearance
+### Appearance
 
 Use the `appearance` parameter to customize colors, fonts, and more when calling `initPaymentSheet()` or via the `options` prop when using `PaymentWidget`.
 
-#### Colors
+### Colors
 
 Customize the colors in the mobile Payment Element by modifying the color categories. Each color category determines the color of one or more components in the UI. For example, primary defines the color of the Pay button
 
@@ -70,7 +74,7 @@ colors: {
  },
 ```
 
-#### Shapes
+### Shapes
 
 Customize the border radius, border width, and shadow used across the payment UI.
 
@@ -86,13 +90,13 @@ shapes: {
   },
 ```
 
-#### Specific UI components
+### Specific UI components
 
 The sections above describe customization options that affect the mobile Payment Element broadly, across multiple UI components. We also provide customization options specifically for the primary button (for example, the Pay button).
 
 Customization options for specific UI components take precedence over other values. For example, `primaryButton.shapes.borderRadius` overrides the value of `shapes.borderRadius`.
 
-**Primary Button**
+#### Primary Button
 
 Overrides global `colors` and `shapes` for the primary button (e.g. the Pay button). Takes precedence over global values.
 
@@ -111,7 +115,7 @@ primaryButton: {
 
 ```
 
-**Google Pay Button**
+#### Google Pay Button
 
 ```
 googlePay: {
@@ -135,4 +139,6 @@ applePay: {
 }
 ```
 
+{% hint style="success" %}
 Now you can test the payments on your app and go-live!
+{% endhint %}

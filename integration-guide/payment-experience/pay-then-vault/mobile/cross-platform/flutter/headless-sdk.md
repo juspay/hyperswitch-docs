@@ -4,13 +4,19 @@ description: >-
   payment-related functionalities in a decoupled or headless architecture with
   flexibility to customize your checkout UI.
 icon: grip
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Headless SDK
 
-#### Customize the payment experience using Headless functions
+### Customize the payment experience using Headless functions
 
-**1. Initialize the Hyperswitch SDK**
+{% stepper %}
+{% step %}
+### Initialize the Hyperswitch SDK
 
 Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -20,16 +26,20 @@ Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable k
 import 'package:flutter_hyperswitch/flutter_hyperswitch.dart';
 _hyper.init(HyperConfig(publishableKey: 'YOUR_PUBLISHABLE_KEY'));
 ```
+{% endstep %}
 
-**2. Create a Payment Intent**
+{% step %}
+### Create a Payment Intent
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
 {% endhint %}
+{% endstep %}
 
-**3. Initialize your Payment Session**
+{% step %}
+### Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
@@ -41,8 +51,10 @@ Session _sessionId = await hyper.initPaymentSession(params);
 | options (Required)                   | Description                                                     |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
+{% endstep %}
 
-**4. Craft a customized payments experience**
+{% step %}
+### Craft a customized payments experience
 
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
 
@@ -79,3 +91,5 @@ Future<void> _confirmPayment() async {
 <table><thead><tr><th width="296">options (Required)</th><th>Description</th></tr></thead><tbody><tr><td><code>callback (function)</code></td><td>Callback to get confirm response.</td></tr></tbody></table>
 
 ***
+{% endstep %}
+{% endstepper %}

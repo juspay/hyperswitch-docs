@@ -1,6 +1,10 @@
 ---
 description: Integrate hyper SDK to your Swift App using hyperswitch-node
 icon: swift
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Swift with REST API Integration
@@ -11,19 +15,23 @@ icon: swift
 Use this guide to integrate Juspay Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
-#### Requirements
+### Requirements
 
 * iOS 15.1 and above
 * CocoaPods
 * npm
 
-#### 1. Setup the server
+{% stepper %}
+{% step %}
+### Setup the server
 
 Follow the Server Setup section.
+{% endstep %}
 
-#### 2. Build checkout page on your app
+{% step %}
+### Build checkout page on your app
 
-**2.1 Configure your repository with Hyperswitch dependency**
+#### 2.1 Configure your repository with Hyperswitch dependency
 
 CocoaPods Setup (only required if not already done)
 
@@ -52,7 +60,9 @@ Run the following command:
 pod install
 ```
 
+{% hint style="warning" %}
 **Remember that moving forward, you should open your project in Xcode using the .xcworkspace file rather than the .xcodeproj file.**
+{% endhint %}
 
 To update to the latest version of the SDK, run:
 
@@ -60,7 +70,7 @@ To update to the latest version of the SDK, run:
 pod install --repo-update
 ```
 
-**2.2 Setup the SDK and fetch a Payment**
+#### 2.2 Setup the SDK and fetch a Payment
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
 
@@ -78,9 +88,9 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
 ```
 {% endhint %}
 
-**2.3 Complete the payment on your app**
+#### 2.3 Complete the payment on your app
 
-**Fetch a Payment**
+#### Fetch a Payment
 
 Request your server to fetch a payment as soon as your view is loaded. Store the client\_secret returned by your server. The `PaymentSession` will use this secret to complete the payment process.
 
@@ -110,7 +120,7 @@ paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClien
 {% endtab %}
 {% endtabs %}
 
-**Handle Payment Result**
+#### Handle Payment Result
 
 Handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
@@ -180,8 +190,10 @@ func configuration() -> PaymentSheet.Configuration {
 ```
 {% endtab %}
 {% endtabs %}
+{% endstep %}
 
-#### 3. Card Element (Beta)
+{% step %}
+### Card Element (Beta)
 
 Create a card element view and pay button and handle the payment result in the completion block and display appropriate messages to your customer based on whether the payment fails with an error or succeeds.
 
@@ -262,7 +274,11 @@ VStack {
 ```
 {% endtab %}
 {% endtabs %}
+{% endstep %}
+{% endstepper %}
 
+{% hint style="success" %}
 Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.
+{% endhint %}
 
-#### Next Step:
+### Next Step:

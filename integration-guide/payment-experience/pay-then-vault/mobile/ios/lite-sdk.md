@@ -1,11 +1,15 @@
 ---
 description: Integrate Hyperswitch Lite SDK to your iOS app
 icon: mobile
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Lite SDK
 
-#### Key Features of Lite SDK
+### Key Features of Lite SDK
 
 **Lightweight Integration**
 
@@ -20,18 +24,22 @@ icon: mobile
   * Payment method preferences
   * Branding options
 
-#### Requirements
+### Requirements
 
 * iOS 15.1+
 * CocoaPods
 
-#### 1. Setup the server
+{% stepper %}
+{% step %}
+### Setup the server
 
 Follow the Server Setup section.
+{% endstep %}
 
-#### 2. Build Checkout in Your App
+{% step %}
+### Build Checkout in Your App
 
-**2.1 Add the Dependency**
+#### 2.1 Add the Dependency
 
 In your **`Podfile`**:
 
@@ -49,9 +57,9 @@ pod 'hyperswitch-sdk-ios-lite/scancard'
 
 > **Note:** The Lite SDK and the regular SDK share a codebase. Their versions **must** match at all times. Replace `Latest_version` with the actual version number.
 
-**2.2 Setup the Lite SDK and Fetch a Payment**
+#### 2.2 Setup the Lite SDK and Fetch a Payment
 
-**Initialize PaymentSession:**
+#### Initialize PaymentSession:
 
 ```swift
 import HyperswitchLite
@@ -61,7 +69,7 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>)
 paymentSession.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
 ```
 
-**Complete Payment**
+#### Complete Payment
 
 ```swift
 // Present the PaymentSheet Lite
@@ -83,6 +91,10 @@ paymentSession.presentPaymentSheetLite(
 })
 ```
 
-**Final Step**
+#### Final Step
 
+{% hint style="success" %}
 You have successfully integrated the **Juspay Hyperswitch Lite SDK** into your iOS app. The Lite SDK delivers **full payment processing** capabilities with a **smaller footprint**, perfect for apps where bundle size matters.
+{% endhint %}
+{% endstep %}
+{% endstepper %}

@@ -1,19 +1,25 @@
 ---
 description: Implement embedded payment widget in React Native applications
 icon: grip
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Payment Widget
 
 The **PaymentWidget** component from Juspay Hyperswitch renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
-#### Find the Demo App
+### Find the Demo App
 
 Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
 
-#### 1. Basic Usage
+### Basic Usage
 
-**1.1 Install the react native sdk**
+{% stepper %}
+{% step %}
+### Install the react native sdk
 
 ```shellscript
 npm install @juspay-tech/react-native-hyperswitch
@@ -21,7 +27,7 @@ npm install @juspay-tech/react-native-hyperswitch
 yarn add @juspay-tech/react-native-hyperswitch
 ```
 
-**1.1.1 Install Peer Dependencies**
+#### Install Peer Dependencies
 
 The SDK requires the following peer dependencies to be installed in your project:
 
@@ -34,8 +40,10 @@ npm install react-native-inappbrowser-reborn
 npm install react-native-svg
 npm install @sentry/react-native
 ```
+{% endstep %}
 
-**1.2 Wrap your app with `HyperProvider`**
+{% step %}
+### Wrap your app with `HyperProvider`
 
 To initialize Hyperswitch in a React Native application, wrap your payment screen with the **HyperProvider** component. The **publishable key** is required and must be provided to the `HyperProvider` during initialization.
 
@@ -50,8 +58,10 @@ function App() {
   );
 }
 ```
+{% endstep %}
 
-**1.3 Fetch the PaymentIntent client Secret**
+{% step %}
+### Fetch the PaymentIntent client Secret
 
 Send a network request to the backend endpoint created in the previous step to retrieve the **clientSecret**. This **clientSecret** returned from the endpoint is required to complete the payment.
 
@@ -65,8 +75,10 @@ useEffect(() => {
       }
 }, []);
 ```
+{% endstep %}
 
-**1.4 Render your Payment widget**
+{% step %}
+### Render your Payment widget
 
 Use the **Hyperswitch `PaymentWidget`** component to render an embedded payment form
 
@@ -101,8 +113,10 @@ export default function PaymentUI() {
 ```
 
 Avoid placing the `PaymentWidget` inside a `ScrollView`. If necessary, ensure that the parent scroll is disabled while the user interacts with the widget to prevent scrolling conflicts.
+{% endstep %}
 
-**1.5 `onPaymentResult` Callback**
+{% step %}
+### `onPaymentResult` Callback
 
 The `onPaymentResult` callback is triggered when the payment flow finishes. It provides a result object containing the payment outcome.
 
@@ -119,17 +133,21 @@ onPaymentResult={(result) => {
 }
 ```
 
+{% hint style="success" %}
 **Congratulations! You have successfully integrated the Payment Widget into your application.**
+{% endhint %}
+{% endstep %}
+{% endstepper %}
 
-#### Props
+### Props
 
-**`widgetId`** `string` · Required
+### `widgetId` `string` · Required
 
 A unique identifier for the widget instance.
 
 ***
 
-**`options`** `PresentPaymentSheetParams` · Required
+### `options` `PresentPaymentSheetParams` · Required
 
 Configuration and appearance options.
 
@@ -139,12 +157,12 @@ For more customizations follow this
 
 ***
 
-**`onPaymentResult`** `(result: PaymentWidgetResult) => void` · Optional
+### `onPaymentResult` `(result: PaymentWidgetResult) => void` · Optional
 
 Callback triggered when the payment completes, fails, or is cancelled.
 
 ***
 
-**`style`** `StyleProp<ViewStyle>` · `width` & `height` required
+### `style` `StyleProp<ViewStyle>` · `width` & `height` required
 
 Defines the size and layout of the widget container.
