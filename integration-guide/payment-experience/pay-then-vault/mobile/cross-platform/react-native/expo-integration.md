@@ -1,6 +1,10 @@
 ---
 description: Integrate Juspay Hyperswitch SDK with Expo for React Native apps
 icon: reacteurope
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Expo integration
@@ -12,7 +16,9 @@ icon: reacteurope
 The Juspay Hyperswitch SDK uses native modules, so the app must be built with native Android and iOS code.
 {% endhint %}
 
-#### 1. Install Required Dependencies
+{% stepper %}
+{% step %}
+### Install Required Dependencies
 
 The Juspay Hyperswitch SDK has peer dependencies that must be installed before installing the SDK.
 
@@ -23,8 +29,10 @@ yarn add @sentry/react-native react-native-inappbrowser-reborn react-native-svg
 # Install Hyperswitch SDK
 yarn add @juspay-tech/react-native-hyperswitch
 ```
+{% endstep %}
 
-#### 2. Prebuild the App
+{% step %}
+### Prebuild the App
 
 Generate the native **Android** and **iOS** folders:
 
@@ -38,8 +46,10 @@ This command will:
 * Run **CocoaPods** for iOS dependencies
 * Configure **TurboModule code generation**
 * **Auto-link native modules**
+{% endstep %}
 
-#### 3. Implement the Payment Flow
+{% step %}
+### Implement the Payment Flow
 
 After completing the Expo setup, **follow the same steps as the React Native integration** to implement the payment flow:
 
@@ -49,3 +59,5 @@ After completing the Expo setup, **follow the same steps as the React Native int
 4. Present the payment sheet using **presentPaymentSheet**
 
 Refer to the **React Native integration steps** for the complete payment flow implementation.
+{% endstep %}
+{% endstepper %}

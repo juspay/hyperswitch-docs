@@ -3,6 +3,10 @@ description: >-
   Customize your iOS Unified Checkout with fonts, colors, shapes and layouts to
   match your brand guidelines.
 icon: square-sliders-vertical
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Customization
@@ -13,7 +17,7 @@ You can customize the iOS Unified Checkout to support your checkout context and 
 
 Juspay Hyperswitch allows you to create a `PaymentSheet.Configuration` object with an `appearance` object to match the design of your app.
 
-#### Fonts
+## Fonts
 
 Set `typography.fontResId` to your custom font's resource ID to customize your font. Set a `typography.sizeScaleFactor` multiplier to increase or decrease the font size.
 
@@ -37,7 +41,7 @@ configuration.defaultBillingDetails =
     ]
 ```
 
-#### Colors
+## Colors
 
 Modify the colour categories in `PaymentSheet.Colors` to customize the colours on the mobile payment sheet as follows:
 
@@ -55,7 +59,7 @@ Modify the colour categories in `PaymentSheet.Colors` to customize the colours o
 | subtitle         | Color of secondary text like prompts for input fields                          |
 | surface          | Color of the payment page                                                      |
 
-#### Shapes
+## Shapes
 
 Modify the corner radius and border width used across the payment page using `appearance.shapes`.
 
@@ -64,4 +68,6 @@ Modify the corner radius and border width used across the payment page using `ap
 | borderStrokeWidthDp | Width of the border used to across input fields, tabs and other components of the payment page |
 | cornerRadiusDp      | Corner radius of the input fields, tabs and other components                                   |
 
+{% hint style="success" %}
 Now you can test the payments on your app and go-live!
+{% endhint %}

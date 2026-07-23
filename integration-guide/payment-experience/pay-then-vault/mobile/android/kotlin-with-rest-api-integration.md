@@ -1,6 +1,10 @@
 ---
 description: Integrate hyper SDK to your Kotlin App using hyperswitch-node
 icon: k
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Kotlin with REST API Integration
@@ -15,20 +19,24 @@ You can use this demo app as a reference with your Juspay Hyperswitch credential
 
 </details>
 
-#### Requirements
+## Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
 * [Gradle](https://gradle.org/releases/) 8.13+
 * [AndroidX](https://developer.android.com/jetpack/androidx/)
 
-#### 1. Setup the server
+{% stepper %}
+{% step %}
+### Setup the server
 
 Follow the Server Setup section.
+{% endstep %}
 
-#### 2. Build checkout page on your app
+{% step %}
+### Build checkout page on your app
 
-**2.1 Add the Buildscript Classpath**
+#### 2.1 Add the Buildscript Classpath
 
 To start integrating the Juspay Hyperswitch SDK, add the following classpath to the `buildscript` block of your project-level `build.gradle` file:
 
@@ -42,7 +50,7 @@ To start integrating the Juspay Hyperswitch SDK, add the following classpath to 
 }
 </code></pre>
 
-**2.2 Add the Plugin**
+#### 2.2 Add the Plugin
 
 Add the following plugin to the `plugins` block of your app-level `build.gradle` file:
 
@@ -53,7 +61,7 @@ plugins {
 }
 ```
 
-**2.3 Configure the SDK**
+#### 2.3 Configure the SDK
 
 Configure the Hyperswitch SDK in your app-level `build.gradle` file. You can specify the main SDK version and enable optional features:
 
@@ -75,7 +83,7 @@ Note:
 * Individual feature versions are optional - the plugin will use recommended compatible versions
 {% endhint %}
 
-**2.4 Implement the HyperInterface**
+#### 2.4 Implement the HyperInterface
 
 Next, implement the `HyperInterface` in your `CheckoutActivity`. This involves extending `FragmentActivity` and implementing the `HyperInterface`:
 
@@ -91,7 +99,7 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 `PaymentSession` is designed to work with AndroidX activities. Ensure that your `CheckoutActivity` extends `FragmentActivity` or its subclass from the AndroidX library
 {% endhint %}
 
-**2.5 Setup the SDK and fetch a Payment**
+#### 2.5 Setup the SDK and fetch a Payment
 
 Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`:
 
@@ -115,13 +123,15 @@ val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", 
 ```
 {% endhint %}
 
-**Fetch a Payment**
+#### Fetch a Payment
 
 Request your server to fetch a payment as soon as your view is loaded. Store the `client_secret` returned by your server. The `PaymentSession` will use this secret to complete the payment process.
+{% endstep %}
 
-#### 3. Complete the payment on your app
+{% step %}
+### Complete the payment on your app
 
-**Initialize Payment Session**
+#### Initialize Payment Session
 
 Initialize the payment session with the `client_secret`:
 
@@ -129,7 +139,7 @@ Initialize the payment session with the `client_secret`:
 paymentSession.initPaymentSession(paymentIntentClientSecret)
 ```
 
-**Handle Payment Result**
+#### Handle Payment Result
 
 Handle the payment result in the completion block. Display appropriate messages to your customer based on the outcome of the payment:
 
@@ -153,7 +163,7 @@ private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
 Please retrieve the payment status from the Hyperswitch backend to get the terminal status of the payment. Do not rely solely on the status returned by the SDK, as it may not always reflect the final state of the transaction.
 {% endhint %}
 
-**Present the Payment Page**
+#### Present the Payment Page
 
 Create a configuration object to customize the payment sheet and present the payment page:
 
@@ -164,10 +174,14 @@ val configuration = PaymentSheet.Configuration("Your_app, Inc.")
 paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
 ```
 
-**Final Step**
+#### Final Step
 
+{% hint style="success" %}
 Congratulations! You have successfully integrated the Hyperswitch Android SDK into your app. You can now customize the payment sheet to match the look and feel of your app.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
 
-#### Next Step:
+## Next Step:
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

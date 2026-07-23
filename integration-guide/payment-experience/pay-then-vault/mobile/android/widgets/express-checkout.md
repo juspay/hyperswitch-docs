@@ -3,13 +3,21 @@ description: >-
   Learn how to integrate the Express Checkout widget for one-click payments
   using saved payment methods with Juspay Hyperswitch SDK.
 icon: cart-circle-check
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Express Checkout
 
+{% hint style="info" %}
 One-click solution for last used saved payment method with Juspay Hyperswitch.
+{% endhint %}
 
-#### Add Express Checkout Widget to Layout
+{% stepper %}
+{% step %}
+### Add Express Checkout Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -24,8 +32,10 @@ One-click solution for last used saved payment method with Juspay Hyperswitch.
     android:layout_height="wrap_content"
     android:text="Confirm EC" />
 ```
+{% endstep %}
 
-#### Initialize Express Checkout Launcher
+{% step %}
+### Initialize Express Checkout Launcher
 
 ```kotlin
 private lateinit var ecLauncherInstance: UnifiedPaymentLauncher
@@ -47,8 +57,10 @@ private fun setupECLauncher() {
     }
 }
 ```
+{% endstep %}
 
-#### Handle Express Checkout Callbacks
+{% step %}
+### Handle Express Checkout Callbacks
 
 ```kotlin
 private fun onExpressCheckoutReady(isReady: Boolean) {
@@ -69,3 +81,5 @@ private fun onExpressCheckoutResult(result: ExpressCheckoutPaymentMethodLauncher
     }
 }
 ```
+{% endstep %}
+{% endstepper %}

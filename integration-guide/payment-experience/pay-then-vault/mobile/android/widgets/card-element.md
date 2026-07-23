@@ -3,13 +3,21 @@ description: >-
   Learn how to integrate the Card Element widget for accepting card payments in
   your Android app using Juspay Hyperswitch SDK.
 icon: cc-visa
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Card Element
 
+{% hint style="info" %}
 **Purpose:** Card payments with Juspay Hyperswitch
+{% endhint %}
 
-**Add Card Widget to Layout**
+{% stepper %}
+{% step %}
+### Add Card Widget to Layout
 
 ```xml
 <io.hyperswitch.view.BasePaymentWidget
@@ -24,8 +32,10 @@ icon: cc-visa
     android:layout_height="wrap_content"
     android:text="Pay with Card" />
 ```
+{% endstep %}
 
-**Initialize Card Launcher**
+{% step %}
+### Initialize Card Launcher
 
 ```kotlin
 private lateinit var cardPaymentLauncher: UnifiedPaymentLauncher
@@ -37,8 +47,10 @@ private fun setupCardPayment() {
     )
 }
 ```
+{% endstep %}
 
-**Handle Card Payment**
+{% step %}
+### Handle Card Payment
 
 ```kotlin
 private fun processCardPayment() {
@@ -71,10 +83,12 @@ private fun onPaymentResult(paymentResult: PaymentResult) {
     }
 }
 ```
+{% endstep %}
+{% endstepper %}
 
-#### Best Practices
+## Best Practices
 
-**Error Handling**
+### Error Handling
 
 Always check if launchers are initialized before using them:
 

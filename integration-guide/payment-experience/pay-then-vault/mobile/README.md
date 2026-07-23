@@ -1,14 +1,20 @@
 ---
 icon: mobile
+layout:
+  width: default
+  outline:
+    visible: true
 ---
 
 # Mobile
 
 
 
+{% hint style="info" %}
 Juspay Hyperswitch SDK offers **powerful and flexible mobile SDKs** to integrate secure, customizable, and high-performance payments into your iOS and Android apps — whether you're building with native frameworks or cross-platform tools like React Native and Flutter.
+{% endhint %}
 
-#### Key Features
+## Key Features
 
 * **Native & Cross-Platform Support** – iOS, Android, React Native, and Flutter.
 * **Lite SDK Mode** – Minimal bundle size with full payment capabilities via web components.
