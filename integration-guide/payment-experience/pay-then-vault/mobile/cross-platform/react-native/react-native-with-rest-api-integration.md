@@ -15,13 +15,13 @@ layout:
 Use this guide to integrate the Juspay Hyperswitch React Native SDK to your React Native app. You can use the following Demo App as a reference with your Hyperswitch credentials to test the setup.
 {% endhint %}
 
-## Find the Demo App
+### Find the Demo App
 
 Find the demo app [here](https://github.com/juspay/react-native-hyperswitch)
 
 Before proceeding with these steps, please ensure that your payment methods are configured here.
 
-## Requirements
+### Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.3.1

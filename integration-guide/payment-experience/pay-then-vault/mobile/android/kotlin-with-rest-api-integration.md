@@ -19,7 +19,7 @@ You can use this demo app as a reference with your Juspay Hyperswitch credential
 
 </details>
 
-## Requirements
+### Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.13+
@@ -182,6 +182,6 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 {% endstep %}
 {% endstepper %}
 
-## Next Step:
+### Next Step:
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

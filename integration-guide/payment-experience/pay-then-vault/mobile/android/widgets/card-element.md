@@ -86,9 +86,9 @@ private fun onPaymentResult(paymentResult: PaymentResult) {
 {% endstep %}
 {% endstepper %}
 
-## Best Practices
+### Best Practices
 
-### Error Handling
+#### Error Handling
 
 Always check if launchers are initialized before using them:
 

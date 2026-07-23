@@ -13,7 +13,7 @@ layout:
 Juspay Hyperswitch provides **seamless cross-platform payment integrations** for both **React Native** and **Flutter**, enabling you to deliver a consistent payment experience across iOS, Android, and Web.
 {% endhint %}
 
-## Key Benefits
+### Key Benefits
 
 * **Unified API Design** – Minimal changes when switching between platforms.
 * **Feature Parity** – Same payment capabilities on React Native, Flutter, and native SDKs.

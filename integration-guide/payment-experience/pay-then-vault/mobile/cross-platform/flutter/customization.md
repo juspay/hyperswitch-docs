@@ -15,7 +15,7 @@ You can customize the Juspay Hyperswitch Flutter Unified Checkout to support vis
 
 You can modify colors, fonts, and more by using the instance of `appearance` class.
 
-## Colors
+### Colors
 
 Customize the colors in the mobile Payment Element by modifying the color categories. Each color category determines the color of one or more components in the UI. For example, primary defines the color of the Pay button.
 
@@ -62,7 +62,7 @@ ColorsObject colorsObject = ColorsObject(
     );
 ```
 
-## Configuration and Appearance
+### Configuration and Appearance
 
 Now, create an instance of `Configuration` class by invoking its constructor and passing the object of `Appearance` class created above. Then, you have to create an instance of `PaymentSheetParams` class by invoking its constructor and passing the object of `Configuration` class created earlier.
 
@@ -86,7 +86,7 @@ Set `displaySavedPaymentMethods` to false to disable saved cards.
 Set `displaySavedPaymentMethodsCheckbox` to false to stop your users from saving their payment methods. Set `disableBranding` to false to disable Juspay Hyperswitch branding. Set `primaryButtonLabel` to "Pay Button Text" to display custom text Set `paymentSheetHeaderLabel` to "Heading Text" to display custom heading
 {% endhint %}
 
-## Custom Placeholders And Branding
+### Custom Placeholders And Branding
 
 To set custom placeholder text for card number, expiry date or cvv input fields, you may set the `placeholder` property for these as shown below.
 
@@ -141,7 +141,7 @@ DynamicColors colors = DynamicColors(light: lightColorsObject,dark: darkColorsOb
 
 ```
 
-## Shadow
+### Shadow
 
 You can customize the border radius, border width, and shadow used throughout the mobile Payment Element. Using an Object of inbuilt class `Shapes`.
 
@@ -154,7 +154,7 @@ You can customize the border radius, border width, and shadow used throughout th
 Shadow shadow = Shadow(color:10.0, intensity: 10.0);
 ```
 
-## Shapes
+### Shapes
 
 You can customize the border radius, border width, and shadow used throughout the mobile Payment Element. Using an Object of inbuilt class `Shapes`.
 
@@ -172,7 +172,7 @@ Shapes shapes = Shapes(borderRadius:10.0, borderWidth: 10.0, shadow: shadow);
 Now you can test the payments on your app and go-live!
 {% endhint %}
 
-## Languages
+### Languages
 
 Juspay Hyperswitch Flutter SDK supports localization in 30+ languages. The default locale is English (en). To override, you can send locale in the appearance object. You may refer the below code for your reference.
 
@@ -216,4 +216,4 @@ We support the following locales -
 * Malay (ms)
 * Turkish (tr-CY)
 
-## Next Step
+### Next Step

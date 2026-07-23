@@ -13,7 +13,7 @@ layout:
 
 <figure><img src="../../../../../../.gitbook/assets/image (148).png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Requirements
+### Requirements
 
 * Android 6.0 (API level 23) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
@@ -99,6 +99,6 @@ Congratulations! You have successfully integrated Juspay Hyperswitch widgets int
 {% endstep %}
 {% endstepper %}
 
-## Next step:
+### Next step:
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)

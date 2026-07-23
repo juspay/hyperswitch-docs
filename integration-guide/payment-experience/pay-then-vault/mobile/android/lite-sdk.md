@@ -9,7 +9,7 @@ layout:
 
 # Lite SDK
 
-## Key Features of Lite SDK
+### Key Features of Lite SDK
 
 **Lightweight Integration**
 
@@ -24,7 +24,7 @@ layout:
   * Payment method preferences
   * Branding options
 
-## Requirements
+### Requirements
 
 * Android 6.0 (API level 23) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
@@ -136,4 +136,4 @@ Congratulations! You have successfully integrated the Hyperswitch Lite SDK into 
 {% endstep %}
 {% endstepper %}
 
-## Next Step:
+### Next Step:

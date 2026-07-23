@@ -13,19 +13,19 @@ layout:
 
 Revolutionize your app's payment capabilities with the Juspay Hyperswitch React Native SDK, delivering a seamless and tailored Global Checkout Experience. The Juspay Hyperswitch Unified Checkout on React native is meticulously designed to provide an all-encompassing, unified, and optimized payment journey, ensuring exceptional conversion rates.
 
-### Inclusive
+#### Inclusive
 
 Supporting a diverse array of global payment methods, including cards, buy now pay later, and digital wallets, the Unified Checkout adapts to local preferences. Customize the experience further with the ability to integrate local languages, creating a truly inclusive payment solution.
 
-### Consistent
+#### Consistent
 
 Enjoy a singular and consistent payment experience across platforms, whether on the web, Android, or iOS. Driven by smart payment forms, minimal redirections, and intelligent retries, the Unified Checkout ensures a reliable and uniform payment process.
 
-### Blended
+#### Blended
 
 Tailor the payment experience to seamlessly integrate with your product using 40+ styling APIs. Achieve a fully native and embedded payment experience within your Android app or website, creating a cohesive and branded checkout environment.
 
-## Modify and Experiment
+### Modify and Experiment
 
 While the Unified Checkout is pre-optimized for maximum conversions, the Juspay Hyperswitch React Native SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you to:
 

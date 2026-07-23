@@ -11,11 +11,11 @@ layout:
 
 The **PaymentWidget** component from Juspay Hyperswitch renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
 
-## Find the Demo App
+### Find the Demo App
 
 Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
 
-## Basic Usage
+### Basic Usage
 
 {% stepper %}
 {% step %}
@@ -139,7 +139,7 @@ onPaymentResult={(result) => {
 {% endstep %}
 {% endstepper %}
 
-## Props
+### Props
 
 ### `widgetId` `string` · Required
 

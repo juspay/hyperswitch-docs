@@ -19,7 +19,7 @@ Revolutionize your app's payment capabilities with the Juspay Hyperswitch Androi
 
 <table data-header-hidden><thead><tr><th data-type="image"></th><th></th></tr></thead><tbody><tr><td><a href="../../../../../.gitbook/assets/Payment flow (5) (1).png">Payment flow (5) (1).png</a></td><td><p><strong>Inclusive</strong></p><p>Global payments, diverse methods - cards, buy now pay later, and digital wallets. Unified Checkout adapts to local preferences, integrates languages for an inclusive solution.</p></td></tr><tr><td><a href="../../../../../.gitbook/assets/image.avif">image.avif</a></td><td><p><strong>Consistent</strong></p><p>Consistent payment experience on Web, Android, and iOS with smart forms, minimal redirects, and intelligent retries. Unified Checkout ensures reliability and uniformity.</p></td></tr><tr><td><a href="../../../../../.gitbook/assets/Payment Links.png">Payment Links.png</a></td><td><p><strong>Blended</strong></p><p>Tailor payment seamlessly with 40+ styling APIs for a native, cohesive, branded checkout in your Android app or website.</p></td></tr></tbody></table>
 
-## Modify and Experiment
+### Modify and Experiment
 
 While the Unified Checkout is pre-optimized for maximum conversions, the Hyperswitch Android SDK empowers you to go beyond the standard. Take control with our SDK APIs, allowing you:
 

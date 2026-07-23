@@ -15,7 +15,7 @@ layout:
 Use this guide to integrate Juspay Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
 
-## Requirements
+### Requirements
 
 * iOS 15.1 and above
 * CocoaPods
@@ -281,4 +281,4 @@ VStack {
 Congratulations! Now that you have integrated the iOS SDK, you can customize the payment sheet to blend with the rest of your app.
 {% endhint %}
 
-## Next Step:
+### Next Step:

@@ -15,7 +15,7 @@ Use this guide to integrate Juspay Hyperswitch SDK to your Flutter app.
 
 **Before following these steps, please configure your payment methods** here.
 
-## Requirements
+### Requirements
 
 * Android 7.0 (API level 24) and above
 * [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 8.5+
@@ -138,4 +138,4 @@ Please retrieve the payment status from the Juspay Hyperswitch backend to get th
 {% endstep %}
 {% endstepper %}
 
-## Next Step
+### Next Step

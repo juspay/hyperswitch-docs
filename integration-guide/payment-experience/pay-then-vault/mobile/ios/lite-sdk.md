@@ -9,7 +9,7 @@ layout:
 
 # Lite SDK
 
-## Key Features of Lite SDK
+### Key Features of Lite SDK
 
 **Lightweight Integration**
 
@@ -24,7 +24,7 @@ layout:
   * Payment method preferences
   * Branding options
 
-## Requirements
+### Requirements
 
 * iOS 15.1+
 * CocoaPods

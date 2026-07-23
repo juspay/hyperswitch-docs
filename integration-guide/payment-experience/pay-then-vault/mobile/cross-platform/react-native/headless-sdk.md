@@ -12,7 +12,7 @@ layout:
 
 # Headless SDK
 
-## Customize the payment experience using Headless functions
+### Customize the payment experience using Headless functions
 
 {% stepper %}
 {% step %}

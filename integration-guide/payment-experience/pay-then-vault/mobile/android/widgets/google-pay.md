@@ -88,9 +88,9 @@ private fun onGooglePayResult(result: GooglePayPaymentMethodLauncher.Result) {
 {% endstep %}
 {% endstepper %}
 
-## Best Practices
+### Best Practices
 
-### UI State Management
+#### UI State Management
 
 Disable payment buttons until launchers are ready:
 
