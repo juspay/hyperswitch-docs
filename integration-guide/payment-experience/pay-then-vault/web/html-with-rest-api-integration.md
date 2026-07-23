@@ -17,13 +17,13 @@ icon: html5
 
 {% stepper %}
 {% step %}
-### 1. Setup the server
+### Setup the server
 
 Follow the Server Setup section.
 {% endstep %}
 
 {% step %}
-### 2. Build checkout page on the client
+### Build checkout page on the client
 
 #### 2.1 Load HyperLoader
 
@@ -150,7 +150,7 @@ async function initialize() {
 {% endstep %}
 
 {% step %}
-### 3. Complete payment on the client
+### Complete payment on the client
 
 #### 3.1 Handle the submit event and complete the payment
 

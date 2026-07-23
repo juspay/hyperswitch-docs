@@ -16,7 +16,7 @@ Customize the payment experience using Headless functions
 
 {% stepper %}
 {% step %}
-### 1. Initialize the Hyperswitch SDK
+### Initialize the Hyperswitch SDK
 
 Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
@@ -29,7 +29,7 @@ Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable k
 {% endstep %}
 
 {% step %}
-### 2. Create a PaymentIntent
+### Create a PaymentIntent
 
 Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
 
@@ -39,7 +39,7 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 {% endstep %}
 
 {% step %}
-### 3. Initialize your Payment Session
+### Initialize your Payment Session
 
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
@@ -55,7 +55,7 @@ paymentSession = hyper.initPaymentSession({
 {% endstep %}
 
 {% step %}
-### 4. Craft a customized payments experience
+### Craft a customized payments experience
 
 Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` function, using which you can confirm and handle the payment session.
 
@@ -175,7 +175,7 @@ function handleSubmit() {
 {% endstep %}
 
 {% step %}
-### 5. Add CVC Collection (Non PCI Approach)
+### Add CVC Collection (Non PCI Approach)
 
 The `CardCVCElement` renders a secure iframe to collect the customer's CVC without exposing sensitive data to your application. You can follow the [React Integration](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment/web/react-with-rest-api-integration).
 

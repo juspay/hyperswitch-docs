@@ -17,13 +17,13 @@ You can use this demo app as a reference with your Hyperswitch credentials to te
 
 {% stepper %}
 {% step %}
-### 1. Setup the server
+### Setup the server
 
 Follow the Server Setup section.
 {% endstep %}
 
 {% step %}
-### 2. Build checkout page on the client
+### Build checkout page on the client
 
 #### 2.1 Install the [`hyper-js`](https://www.npmjs.com/package/@juspay-tech/hyper-js) and [`react-hyper-js`](https://www.npmjs.com/package/@juspay-tech/react-hyper-js) libraries
 
@@ -106,7 +106,7 @@ const widgets = useWidgets();
 {% endstep %}
 
 {% step %}
-### 3. Complete the checkout on the client
+### Complete the checkout on the client
 
 {% tabs %}
 {% tab title="ExpressCheckout" %}
@@ -277,7 +277,7 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 {% endstep %}
 
 {% step %}
-### 4. Elements Events
+### Elements Events
 
 Some events are emitted by payment elements, listening to those events is the only way to communicate with these elements. All events have a payload object with the type of the Element that emitted the event as an elementType property. Following events are emitted by payment elements.
 
@@ -358,7 +358,7 @@ Congratulations! Now that you have integrated the Hyperswitch SDK on your app, y
 {% endstep %}
 
 {% step %}
-### 5. Additional Callback Handling for Wallets Payment Process
+### Additional Callback Handling for Wallets Payment Process
 
 This document outlines the details and functionality of an optional callback and `onPaymentComplete` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
 
