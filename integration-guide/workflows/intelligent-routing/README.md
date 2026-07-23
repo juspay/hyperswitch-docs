@@ -22,7 +22,6 @@ Hyperswitch Intelligent Routing helps merchants decide where each payment should
 | Define the backup processor order | [Default Fallback Routing](default-fallback-routing.md) |
 | Compare two routing setups before rollout | [A/B Testing](ab-testing.md) |
 | Let Hyperswitch tune auth-rate routing automatically | [Autopilot](autopilot.md) |
-| See why a processor was selected | [Analytics And Decision Logs](analytics-and-decision-logs.md) |
 
 ## Strategy Types
 
