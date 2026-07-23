@@ -4,19 +4,17 @@ description: Integrate Hyperswitch SDK with React and REST API for web checkout
 
 # React with REST API Integration
 
-{% hint style="info" %}
-**Before following these steps, please configure your payment methods** [here](https://app.hyperswitch.io/dashboard/connectors). Use this guide to integrate `hyperswitch` SDK to your React app. You can also use this demo app as a reference with your Juspay Hyperswitch credentials to test the setup.
+## Before you begin
 
-[**Demo App**](https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip)
+Complete these one-time setup tasks before integrating the SDK.
 
-You can use this demo app as a reference with your Hyperswitch credentials to test the setup.
-{% endhint %}
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Configure payment methods</strong></td><td>Enable the payment methods you want to offer at checkout.</td><td><a href="https://app.hyperswitch.io/dashboard/connectors">Hyperswitch Dashboard</a></td></tr><tr><td><strong>Set up the server</strong></td><td>Create the server-side endpoints required by the client.</td><td><a href="../server-setup.md">server-setup.md</a></td></tr><tr><td><strong>Download the demo app</strong></td><td>Test the flow using your Juspay Hyperswitch credentials.</td><td><a href="https://github.com/PritishBudhiraja/hyperswitch-react-demo-app/archive/refs/heads/main.zip">React demo app</a></td></tr></tbody></table>
 
 {% stepper %}
 {% step %}
 ### Setup the server
 
-Follow the Server Setup section.
+[Complete the Server Setup guide](../server-setup.md) before building the checkout page.
 {% endstep %}
 
 {% step %}
@@ -401,4 +399,6 @@ The task within `onPaymentButtonClick` must be completed within 1 second. If an 
 
 </details>
 
-### Next step:
+## Next steps
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Customize checkout</strong></td><td>Adapt the payment elements to your product and brand.</td><td><a href="customization.md">customization.md</a></td></tr><tr><td><strong>Review error codes</strong></td><td>Handle integration and payment errors confidently.</td><td><a href="error-codes.md">error-codes.md</a></td></tr><tr><td><strong>Return to Web</strong></td><td>Compare the available web integration paths.</td><td><a href="./">web</a></td></tr></tbody></table>
