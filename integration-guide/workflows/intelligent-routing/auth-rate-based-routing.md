@@ -1,92 +1,111 @@
 ---
-description: >-
-  Optimize transaction success across multiple gateways using ML-driven
-  Multi-Armed Bandit with Delayed Feedback approach
+description: Improve successful payments by routing traffic to processors with stronger recent authorization performance
 icon: badge-check
 metaLinks:
   alternates:
     - auth-rate-based-routing.md
 ---
 
-# Auth Rate Based Routing
+# Auth-Rate Routing
 
-### How does it work?
+Auth-Rate Routing uses recent payment outcomes to choose the processor most likely to authorize the next payment. It is useful when you have multiple processors for the same payment method and want routing to adapt as processor performance changes.
 
-**Auth Rate Based Routing** is a smart, adaptive approach to optimize transaction success across multiple gateways.
+## How It Works
 
-At its core, the system treats each Gateway as a dynamic option in a decision-making model known as a **Non-stationary Multi-Armed Bandit (MAB)** with **Delayed Feedback**. This allows the routing logic to account for both fluctuating success rates and variable response times.
+Hyperswitch tracks processor performance across payment attributes such as payment method, payment method type, transaction amount, currency, country, card network, and authentication type. The routing engine then ranks eligible processors by recent success rate.
 
-The routing strategy follows a two-part approach:
+The model treats each processor as a changing option in a non-stationary multi-armed bandit with delayed feedback. That means it accounts for both fluctuating success rates and the delay between sending a payment and receiving its final outcome.
 
-* **Exploration**: A small share of traffic is continuously routed to all Gateways to gather current performance data.
-* **Exploitation**: The majority of traffic is directed to the top-performing Gateway to maximize success rates.
+The strategy balances two behaviors:
 
-To keep decisions current and responsive, the system uses a **sliding window** to track recent performance, enabling fast adaptation to changing conditions—without requiring any manual intervention or downtime.
+* **Exploitation:** Send most traffic to the processor with the best recent performance.
+* **Exploration:** Send a smaller share of traffic to other eligible processors so the model keeps fresh performance data.
 
-By intelligently balancing experimentation with optimization, Auth Rate Based Routing helps ensure higher authorization success, improved customer experience, and better utilization of Gateway infrastructure.
+Hyperswitch uses a sliding window of recent attempts so routing can react to processor behavior without waiting for a manual configuration change. Downtime or repeated technical failures can deprioritize a processor before the final decision is made.
 
 <figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
-### Key Configurations
+## Merchant Controls
 
-* Bucket size : No. of payments included in a block limited by count or time period
-* Aggregate pipeline size :
-  * Max: No. of buckets used to calculate scores (FIFO manner). It determines the reaction time
-  * Min: No. of buckets after which the scores will be used. It is equivalent to the zero error/offset for error tolerance
+| Control | Why it matters |
+| --- | --- |
+| Traffic split | Roll out auth-rate routing gradually before using it for all payments. |
+| Bucket size | Controls how much recent traffic is used to calculate processor performance. |
+| Hedging percentage | Controls the exploration share sent to alternate eligible processors. |
+| Elimination threshold | Controls when a poorly performing processor is temporarily deprioritized. |
 
-### How to setup Auth Rate Based Routing for your Juspay Hyperswitch Merchant?
+## Key Configurations
 
-1. Enabling your profile with Auth Rate based routing
+* Bucket size: Number of payments included in a block, limited by count or time period.
+* Aggregate pipeline size:
+  * Max: Number of buckets used to calculate scores in FIFO order. This determines reaction time.
+  * Min: Number of buckets after which scores are used. This acts as the offset for error tolerance.
+* Exploration percentage: Share of traffic sent to alternate eligible processors to keep scoring data fresh.
 
-```
+## Dashboard Setup
+
+1. Configure at least two processors that support the same payment method.
+2. Go to `Workflow` > `Routing`.
+3. Choose `Auth-Rate Routing`.
+4. Configure rollout percentage and scoring settings.
+5. Save and activate the configuration.
+6. Monitor processor share, auth rate, and decision logs.
+
+## API Setup
+
+Enable Auth-Rate Routing for your business profile:
+
+```bash
 curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant_id>/business_profile/<profile-id>/dynamic_routing/success_based/toggle?enable=dynamic_connector_selection' \
 --header 'api-key: <api-key>'
 ```
 
-2. Roll it out to the required split of payment traffic (Merchants can stagger a certain percentage to experiment)
+Roll it out to the required split of payment traffic:
 
-```
+```bash
 curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/set_volume_split?split=100' \
 --header 'api-key: <api-key>'
 ```
 
-3. To update the setting of the routing model use the below API:
+Update the routing model settings:
 
-```
-curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \  
---header 'Content-Type: application/json' \  
---header 'api-key: <api-key>' \  
---data '{  
-        "config": {  
-            "min_aggregates_size": 5,  
-            "max_aggregates_size": 8,  
-            "current_block_threshold": {  
-                "max_total_count": 5  
-            },  
-            "exploration_percent": 20.0  
-        }  
+```bash
+curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>' \
+--data '{
+  "config": {
+    "min_aggregates_size": 5,
+    "max_aggregates_size": 8,
+    "current_block_threshold": {
+      "max_total_count": 5
+    },
+    "exploration_percent": 20.0
+  }
 }'
 ```
 
-4. Activating the updating configuration
+Activate the updated configuration:
 
-```
+```bash
 curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-id>/activate' \
 --header 'Content-Type: application/json' \
 --header 'api-key: <api-key>'
 ```
 
-### How to test the routing behaviour?
+## Test Routing Behavior
 
-You can use the routing playground tool to simulate different payment scenarios to test the routing behaviour.
+Use the routing playground to simulate payment scenarios and review routing choices:
 
-Access the tool using this URL - [https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
+[https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
 
-1. Create a merchant on Juspay Hyperswitch Control Center
-2. Ensure to configure at least two payment processors for the merchant profile
-3. Enter the sandbox API key, merchant id and profile id in the modal that pops-up once you click the 'Start Simulation' button on the top-right corner
-4. Head to the 'routing' tab on the left nav bar and toggle the Success Based Routing button
-5. Select the desired routing configuration settings
-6. Head to the 'general' tab on the left nav bar and enter the no. of payments you want to trigger in batches
-7. Hit Start Simulation to see the results
-8. You can use the Test Payment Data tab on the left nav bar to modify the processor auth rates to see how it will impact the routing choices
+1. Create a merchant on Juspay Hyperswitch Control Center.
+2. Configure at least two payment processors for the merchant profile.
+3. Enter the sandbox API key, merchant ID, and profile ID when the simulator prompts for them.
+4. Go to the `Routing` tab and toggle Success Based Routing.
+5. Select the routing configuration settings.
+6. Go to the `General` tab and enter the number of payments to trigger in batches.
+7. Click `Start Simulation` to see the results.
+8. Use `Test Payment Data` to modify processor auth rates and observe how routing choices change.
+
+For automatic tuning of bucket size and exploration settings, see [Autopilot](autopilot.md).

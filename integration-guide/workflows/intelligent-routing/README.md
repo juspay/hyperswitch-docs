@@ -1,8 +1,6 @@
 ---
-description: >-
-  Dynamically switch between processors in real-time to maximize first attempt
-  auth rates and minimize processing cost
-icon: flux-capacitor
+description: Route every payment to the best processor based on business rules, live performance, cost, and fallback preferences
+icon: route
 metaLinks:
   alternates:
     - ./
@@ -10,25 +8,48 @@ metaLinks:
 
 # Intelligent Routing
 
-The Juspay Hyperswitch Intelligent Routing module augments your payment processing by dynamically switching between processors in real-time for every transaction to optimally maximise first attempt auth rates and minimise processing cost.
+Hyperswitch Intelligent Routing helps merchants decide where each payment should be processed. You can use it to improve authorization rates, reduce processing cost, shift traffic across processors, and keep payments moving when a processor is unavailable.
 
-### Types of Intelligent Routing
+## What You Can Do
 
-Hyperswitch supports four intelligent routing strategies:
+| Goal | Use this |
+| --- | --- |
+| Route specific traffic to specific processors | [Rule-Based Routing](rule-based-routing.md) |
+| Split traffic by percentage | [Volume-Based Routing](volume-based-routing.md) |
+| Send more traffic to better-performing processors | [Auth-Rate Routing](auth-rate-based-routing.md) |
+| Balance authorization rate with processing cost | [Multi-Objective Routing](multi-objective-routing.md) |
+| Route supported debit payments through lower-cost networks | [Least Cost Routing](least-cost-routing.md) |
+| Define the backup processor order | [Default Fallback Routing](default-fallback-routing.md) |
+| Compare two routing setups before rollout | [A/B Testing](ab-testing.md) |
+| Let Hyperswitch tune auth-rate routing automatically | [Autopilot](autopilot.md) |
 
-* **Auth Rate Based Routing:** Uses real-time success rates and ML-driven optimisation to route transactions to the best-performing gateway.
-  * The Auth Rates for the payments are tracked at a granular level of payment parameters like payment method, payment method type, amount, currency, authentication type, card network etc.
-  * **The model** uses a Multi-Armed Bandit (MAB) problem with Delayed Feedback, where each Gateway is an "arm" with fluctuating success rates and varying latency for success and failure. The approach used to solve this problem is driven by **explore-exploit** strategy.
-    * **Exploration:** We continuously evaluate all gateways by sending a small percentage of traffic to ensure up-to-date performance data.
-    * **Exploitation:** We continuously route most traffic to the best-performing Gateway to maximise the overall success rate.
-  * The sensitivity of the system can be tweaked by the merchants by configuring settings such as Bucket Sizes, Parameters to be considered and Hedging Percentage
-  * The hedging percentage decides the exploration factor of the model
-* **Least Cost Routing:** Picks the least cost network for every transaction based on the availability of back-of-the-card network and processor compatibility
-* **Elimination Routing:** Tracks acute incidents such as downtimes and technical errors to de-prioritise gateways. This will be used as a final check after other routing logics are applied.
-* **Contracts-Based Routing:** Distributes payments across processors to meet contractual volume commitments. \[BETA FEATURE]
+## Strategy Types
 
-### Architecture Diagram
+Hyperswitch supports both merchant-defined routing and performance-based routing:
+
+* **Rule-Based Routing:** Route payments using explicit business conditions such as payment method, amount, currency, country, card type, or customer context.
+* **Volume-Based Routing:** Split traffic across processors by percentage for planned distribution or gradual rollout.
+* **Auth-Rate Routing:** Use recent authorization performance to route most traffic to the best-performing processor while keeping a small exploration share.
+* **Multi-Objective Routing:** Re-rank auth-rate results using processor cost, so a lower-cost processor can win only when expected value is better.
+* **Least Cost Routing:** Route supported debit payments through the lowest-cost eligible debit network.
+* **Default Fallback Routing:** Define the backup processor order when no routing rule applies or the selected processor is not eligible.
+
+## How A Payment Is Routed
+
+1. Hyperswitch checks which processors are eligible for the payment method, currency, country, and connector configuration.
+2. The active routing strategy ranks or filters those processors.
+3. Optional optimization layers, such as downtime elimination, multi-objective ranking, or debit network routing, refine the choice.
+4. If the selected processor is not eligible or available, Hyperswitch uses Default Fallback Routing.
+5. The decision is logged so your team can review the selected processor, routing approach, and outcome.
+
+## Architecture Diagram
 
 <figure><img src="../../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+
+## Recommended Rollout
+
+Start with Default Fallback Routing, then add Rule-Based or Volume-Based Routing for business controls. Use Auth-Rate Routing once multiple processors handle meaningful traffic for the same payment segment. Add Multi-Objective Routing only after cost coverage is available, and use A/B Testing before moving a new strategy to all traffic.
+
+For self-hosted Hyperswitch deployments, see the [Self-Deployment Guide](self-deployment-guide.md).
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Self Deploy the Routing Engine</td><td><a href="../../../.gitbook/assets/image (35).png">image (35).png</a></td><td><a href="self-deployment-guide.md">self-deployment-guide.md</a></td></tr><tr><td>Using Auth Rate based Routing for Hyperswitch</td><td><a href="../../../.gitbook/assets/tryHyperswitch.jpg">tryHyperswitch.jpg</a></td><td><a href="auth-rate-based-routing.md">auth-rate-based-routing.md</a></td></tr></tbody></table>
