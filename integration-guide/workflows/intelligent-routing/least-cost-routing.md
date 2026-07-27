@@ -1,7 +1,5 @@
 ---
-description: >-
-  Optimize processing fees on debit payments by routing traffic to the cheapest
-  available debit network
+description: Optimize debit payment cost by routing through the lowest-cost eligible network
 icon: hand-holding-dollar
 metaLinks:
   alternates:
@@ -10,55 +8,56 @@ metaLinks:
 
 # Least Cost Routing
 
-### Get started with Least Cost Routing
+Least Cost Routing helps merchants reduce debit payment cost by selecting the most cost-efficient eligible debit network for a transaction. It is focused on debit network choice, while [Multi-Objective Routing](multi-objective-routing.md) focuses on processor-level cost and auth-rate tradeoffs.
 
-Least Cost Routing (LCR) enables merchants to minimize transaction costs by dynamically selecting the most cost-efficient debit network for each transaction. The Juspay Hyperswitch routing engine evaluates parameters like network fees, interchange rates, ticket size, issuer type, and more to automatically route transactions through the cheapest network in real time.
+## Prerequisites
 
-### Pre-requisites for enabling Least Cost Routing
+To use Least Cost Routing in Hyperswitch, confirm:
 
-To get started with LCR in Hyperswitch, ensure the following setup is complete:
+* Connectors that support local debit network routing are configured.
+* Debit card support is enabled.
+* One or more local debit networks are enabled in both connector and Hyperswitch dashboards.
+* The payment has the debit card and network data required to identify eligible local networks.
 
-_**Step 1:**_ Configure connectors supporting transactions through local networks
+## Setup
 
-_**Step 2:**_ Enable Debit Card Support
-
-_**Step 3:**_ Enable one or more local debit networks in both connector and Hyperswitch dashboards
-
-### Steps to configure Least Cost Routing in Smart Router:
-
-_**Step 1:**_ Configure Prerequisites Ensure that connectors supporting transactions through local networks are set up with local networks enabled
-
-_**Step 2:**_ Navigate to `Workflow` -> `Routing` -> `Least Cost Routing`
+1. Go to `Workflow` > `Routing` > `Least Cost Routing`.
+2. Confirm the connector setup, debit card enablement, and local network configuration prerequisites.
+3. Click `Enable` to activate Least Cost Routing.
+4. Review the active routing configuration in the Hyperswitch Dashboard.
 
 <figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
-_**Step 3:**_ A popup will guide you to confirm the three prerequisites - 1.) Connector setup, 2.) Debit card enablement, and 3.) Local networks configuration. Click on `Enable` to activate LCR
-
 <figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
-_**Step 4:**_ Once enabled, you can view Least Cost Routing as your active routing algorithm along with all previously configured algorithms on the [Hyperswitch Dashboard](https://app.hyperswitch.io/routing)
+## Supported Configuration
 
-### Supported Configuration for Least Cost Routing
+| Item | Supported values |
+| --- | --- |
+| Geography | US |
+| Payment method | Cards |
+| Networks | Star, Pulse, NYCE, Accel |
 
-**Geographies**: US
+## How It Works
 
-**Networks**
+For supported debit card payments, Hyperswitch checks the available card networks and eligible connector capabilities. It compares eligible global and local debit networks and selects the network with the lowest estimated cost.
 
-* Star
-* Pulse
-* NYCE
-* Accel
+Least Cost Routing can run as a standalone debit network routing strategy or alongside auth-rate routing in a hybrid setup, where Hyperswitch keeps processor performance in view while also selecting the debit network.
 
-**Payment Methods**: Cards
+## Cost Computation
 
-### Real-time cost computation
-
-We perform real-time computation to see if a Global network (Visa/Mastercard) vs Local network is preferable or which local network to choose
-
-* We calculate transaction cost estimate using the MCC code supplied by merchant
+Hyperswitch estimates transaction cost using payment attributes such as amount, issuer, network, acquirer country, and merchant category.
 
 <figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
-* We look into amount (value) of transaction and Card Issuer bank to compute a cost of transaction and determine the right network to process.
-* The system has default values baked-in to compute cost of transaction and make decisions. The LCR system is being designed to accept cost inputs from merchants. Specifically, if they have any PSP–Network level contracts that should be considered during network selection.
-* We perform debit routing by specifying the network to be used in the API request to the PSP.
+The cost computation considers:
+
+* MCC supplied by the merchant.
+* Transaction amount.
+* Card issuer bank.
+* Co-badged card network data, when available.
+* Global network and local network eligibility.
+* Default cost values available in Hyperswitch when merchant-specific cost data is not available.
+* Merchant-provided PSP-network contracts where those inputs are available.
+
+When supported by the processor, Hyperswitch passes the selected debit network in the payment request.

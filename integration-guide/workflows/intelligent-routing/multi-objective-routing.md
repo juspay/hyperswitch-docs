@@ -23,20 +23,23 @@ Hedging percentage balances learning against exploitation. It has to be large en
 
 The high-level goal a merchant sets is deliberately small: a single business preference on whether the system should optimize for cost at all. Everything underneath - bucket size, hedging, and the economic-value comparison itself - is derived automatically from the merchant's own historical data and updates as success-rate estimates and settlement costs change.
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/routing-autopilot-settings.png" alt="Autopilot settings screen"><figcaption></figcaption></figure>
+
+See [Autopilot](autopilot.md) for setup details and tuning controls.
 
 ### Cost Data Inputs
+
+Hyperswitch learns your true per-transaction fee from your own settlement reports and prices every routing decision on it. How that data gets in is covered in [Cost Ingestion](cost-ingestion.md), and what Hyperswitch does with it - the cost model, trust grades, and coverage - is covered in [Cost Estimation](cost-estimation.md).
 
 There are two ways in which you can provide the cost data:
 
 1. **Automatic:** Connect to your PSP account by entering the credentials and Hyperswitch will receive the Cost Fee Reports at the set cadence
 
-<figure><img src="../../../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/routing-cost-ingestion.png" alt="Cost ingestion page"><figcaption></figcaption></figure>
 
-2. **Manual:** Upload the fee report as a .csv file as per the expected template (which can be downloaded from the dashboard). In case of data field mismatch resolve by manually mapping the columns in the data with the expected fields.
-   1. In sandbox there are also sample files available to try it out.&#x20;
+2. **Manual:** Upload the fee report as a .csv file as per the expected template (which can be downloaded from the dashboard). In case of data field mismatch resolve by manually mapping the columns in the data with the expected fields. In sandbox there are also sample files available to try it out.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/routing-cost-manual-upload.png" alt="Manual settlement report upload screen"><figcaption></figcaption></figure>
 
 Follow this video guide to learn more:
 
@@ -66,7 +69,7 @@ Fraud-dilution constraints track a merchant's standing in the Visa Acquirer Moni
 
 #### Will multi-objective routing reduce my authorization rate or lose revenue?
 
-Net Auth Rate is designed to hold, and First Attempt Auth Rate typically eases only \~20 bps on cost-optimized clusters. Cost is an additional constraint, not the engine's objective — the primary goal is still improving the First Attempt Auth Rate — and smart retry provides a fallback on retry-eligible failures whether a transaction was routed to the highest-auth PSP or a cheaper one.
+Net Auth Rate is designed to hold, and First Attempt Auth Rate typically eases only \~20 bps on cost-optimized clusters. Cost is an additional constraint, not the engine's objective - the primary goal is still improving the First Attempt Auth Rate - and smart retry provides a fallback on retry-eligible failures whether a transaction was routed to the highest-auth PSP or a cheaper one.
 
 #### How much configuration does multi-objective routing need?
 
@@ -74,10 +77,10 @@ Configuration is fully self-managed in autopilot mode. Bucket size and hedging p
 
 #### What cost data does Hyperswitch need to run economic-value routing?
 
-A single report with the cost breakdown at the transaction level — the Payment Accounting Report for Adyen, or the equivalent for other PSPs. Setup is one-time with zero ongoing effort; cost data refreshes automatically each time new settlement reports are ingested. Hyperswitch's cost observability layer derives the true per-transaction processing fee from these reports rather than estimating it.
+A single report with the cost breakdown at the transaction level - the Payment Accounting Report for Adyen, or the equivalent for other PSPs. Setup is one-time with zero ongoing effort; cost data refreshes automatically each time new settlement reports are ingested. Hyperswitch's cost observability layer derives the true per-transaction processing fee from these reports rather than estimating it.
 
 #### How does the system decide whether a cost saving is worth the auth-rate impact?
 
-Through the economic-value comparison itself. Because a PSP's score is auth rate × (amount − cost), a lower-cost PSP only wins when its cost advantage outweighs its authorization disadvantage. On a $60 sale, for example, a $0.40 fee gap is offset at an auth-rate lead of about 0.61 percentage points — below that lead the cheaper PSP wins, above it the higher-auth PSP does.&#x20;
+Through the economic-value comparison itself. Because a PSP's score is auth rate × (amount − cost), a lower-cost PSP only wins when its cost advantage outweighs its authorization disadvantage. On a $60 sale, for example, a $0.40 fee gap is offset at an auth-rate lead of about 0.61 percentage points - below that lead the cheaper PSP wins, above it the higher-auth PSP does.&#x20;
 
 <br>
