@@ -34,7 +34,7 @@
     * [Instant Payment (Auto Capture)](integration-guide/payment-suite/payments/instant-payment-auto-capture.md)
     * [Manual Capture](integration-guide/payment-suite/payments/manual-capture/README.md)
       * [Overcapture](integration-guide/payment-suite/payments/manual-capture/overcapture.md)
-    * [Copy of Subscriptions](integration-guide/payment-suite/payments/copy-of-subscriptions.md)
+    * [Subscriptions Management](integration-guide/payment-suite/payments/copy-of-subscriptions.md)
     * [Saving Payment Method](integration-guide/payment-suite/payments/save-a-payment-method/README.md)
       * [Saved Card](integration-guide/payment-suite/payments/save-a-payment-method/saved-card.md)
     * [Recurring payments](integration-guide/payment-suite/payments/recurring-payments.md)
