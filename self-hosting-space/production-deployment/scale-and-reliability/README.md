@@ -5,7 +5,7 @@ description: >-
 icon: arrows-maximize
 metaLinks:
   alternates:
-    - scale-and-reliability.md
+    - ./
 ---
 
 # Scale and Reliability
