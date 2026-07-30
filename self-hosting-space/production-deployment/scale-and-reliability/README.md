@@ -370,54 +370,6 @@ The generated report can be found at:
 output/report.pdf
 ```
 
-#### Chaos Testing and Fault Tolerance Validation
-
-Chaos testing validates the system's resilience under partial service outages.
-
-#### Objective
-
-Ensure the **Juspay Hyperswitch Router** continues processing payment requests even when dependent services become unavailable.
-
-#### Services That May Be Disrupted
-
-Core services:
-
-* Token service
-* Consumer
-* Producer
-
-Analytics stack:
-
-* Grafana
-* Loki
-* ClickHouse
-* Kafka
-* OpenSearch
-* Prometheus / Vector
-
-#### Implementation Guidelines
-
-**Graceful Degradation**
-
-Dependent services may fail without affecting core routing functionality.
-
-**Health Checks**
-
-Services should report failures without blocking request processing.
-
-**Observability**
-
-All failures should be logged for operational visibility.
-
-#### Success Criteria
-
-The system is considered resilient if:
-
-* Router continues processing payment requests normally
-* No customer-facing impact occurs
-* Core routing logic remains operational
-* Router latency and error rates remain within acceptable operational thresholds
-
 ### Infrastructure Segmentation & Isolation
 
 Production deployments should isolate core application workloads from supporting services to improve both reliability and security.
