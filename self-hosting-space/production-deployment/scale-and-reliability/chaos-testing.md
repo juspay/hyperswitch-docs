@@ -162,3 +162,17 @@ Anyone standing up this program for the first time can follow this phased rollou
 5. **Phase 4 – Production, single-instance blast radius:** repeat the highest-value experiments from phases 1–3 in production, scoped to a single pod/node/replica, during a low-traffic window.
 6. **Phase 5 – Production GameDay:** run a combined scenario (e.g., Redis failover + concurrent pod CPU stress) with cross-functional stakeholders (engineering, SRE, support) observing live, to rehearse the incident-response process itself.
 7. **Phase 6 – Recurring cadence:** re-run the full catalog on a fixed cadence (e.g., quarterly) and after any major architecture change (new connector, DB version upgrade, cluster resize).
+
+## Hyperswitch Component & Stack Level RTO/RPO
+
+Below are the RTO and RPO of the database, Redis and overall stack based on chaos and failover tests conducted by the Hyperswitch team on our stack.&#x20;
+
+The RPO in all cases depends on the replication lag between the primary and secondary instances and the values mentioned below are in the ideal case of very low replication lag. It is important to monitor this metric to ensure RPO stays as low as possible.&#x20;
+
+|                                                     |              |              |
+| --------------------------------------------------- | ------------ | ------------ |
+| <h4>Component</h4>                                  | <h4>RTO</h4> | <h4>RPO</h4> |
+| Database (RDS)                                      | 2-4 mins     | \~0          |
+| Redis (Elasticache)                                 | <1 min       | \~0          |
+| Hyperswitch Stack (Failover from Active to Passive) | 2-5 mins     | \~0          |
+
