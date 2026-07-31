@@ -1,3 +1,7 @@
+---
+icon: poo-storm
+---
+
 # Chaos Testing
 
 This section defines the chaos testing strategy for the critical path of a self-hosted Hyperswitch deployment.&#x20;
@@ -81,11 +85,11 @@ Two complementary chaos engineering tools are used, matched to where each layer 
 1. AWS Fault Ingestion Service (FIS)
 2. Chaos Mesh
 
-| Layer       | Component(s)                                            | Tool       | Why this tool                                                                                                                                                                                                                           |
-| ----------- | ------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Compute     | EC2 (EKS worker nodes / self-managed DB or Redis hosts) | AWS FIS    | Native AWS control-plane actions for instance stop/terminate/reboot and SSM-agent-based stressors; integrates with CloudWatch alarms as automatic stop conditions.                                                                      |
-| Storage     | Database (RDS/Aurora), Redis (ElastiCache)              | AWS FIS    | Purpose-built managed-service actions (e.g., failover-db-cluster, failover ElastiCache) that safely trigger the same failover path AWS itself would use, without needing to fake it at the OS level.                                    |
-| Application | Hyperswitch pods on EKS                                 | Chaos Mesh | Kubernetes-native CRDs (PodChaos, StressChaos, NetworkChaos, IOChaos) that operate at the pod/container level – the right granularity for testing how the application itself degrades and recovers, independent of the underlying node. |
+| <h4>Layer</h4> | <h4>Component(s)</h4>                                   | <h4>Tool</h4> | <h4>Why this tool</h4>                                                                                                                                                                                                                  |
+| -------------- | ------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Compute        | EC2 (EKS worker nodes / self-managed DB or Redis hosts) | AWS FIS       | Native AWS control-plane actions for instance stop/terminate/reboot and SSM-agent-based stressors; integrates with CloudWatch alarms as automatic stop conditions.                                                                      |
+| Storage        | Database (RDS/Aurora), Redis (ElastiCache)              | AWS FIS       | Purpose-built managed-service actions (e.g., failover-db-cluster, failover ElastiCache) that safely trigger the same failover path AWS itself would use, without needing to fake it at the OS level.                                    |
+| Application    | Hyperswitch pods on EKS                                 | Chaos Mesh    | Kubernetes-native CRDs (PodChaos, StressChaos, NetworkChaos, IOChaos) that operate at the pod/container level – the right granularity for testing how the application itself degrades and recovers, independent of the underlying node. |
 
 In practice, AWS FIS also has EKS-targeted actions (pod-delete, pod CPU/memory/IO stress, network faults) that overlap with Chaos Mesh. Where a merchant's platform team is already AWS-native, FIS's EKS actions can substitute for Chaos Mesh; this playbook uses Chaos Mesh for the application layer because it requires no extra IAM footprint beyond the cluster, runs identically on non-AWS Kubernetes, and gives finer-grained control over stress workers for reproducible load profiles.
 
@@ -97,7 +101,7 @@ The tables below list the specific fault types run against each layer, in priori
 
 ### Storage Layer – Database
 
-| Fault                         | Tool / Action                         | What it validates                                                                                                                      |
+| <h4>Fault</h4>                | <h4>Tool / Action</h4>                | <h4>What it validates</h4>                                                                                                             |
 | ----------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Forced failover               | AWS FIS – aws:rds:failover-db-cluster | Application reconnects cleanly to the new writer; in-flight transactions are not lost or duplicated; RTO meets target.                 |
 | CPU stress on the DB instance | AWS FIS – RDS CPU stress action       | Query latency degradation is bounded; connection pool and timeouts on the application side behave as configured rather than cascading. |
@@ -106,7 +110,7 @@ The tables below list the specific fault types run against each layer, in priori
 
 ### Storage Layer – Redis
 
-| Fault                                  | Tool / Action                                   | What it validates                                                                                                                                                                                |
+| <h4>Fault</h4>                         | <h4>Tool / Action</h4>                          | <h4>What it validates</h4>                                                                                                                                                                       |
 | -------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Forced failover (primary → replica)    | AWS FIS – ElastiCache failover action           | Idempotency-key locking and cached routing/session data survive failover without duplicate charges or stuck locks.                                                                               |
 | CPU / memory stress on Redis node      | AWS FIS – EC2/ElastiCache stress actions        | Latency-sensitive operations (locking, idempotency checks) degrade predictably; the application falls back safely (e.g., fails closed on a lock it can't acquire) rather than double-processing. |
@@ -114,26 +118,11 @@ The tables below list the specific fault types run against each layer, in priori
 
 ### Application Layer – Hyperswitch on EKS
 
-| Fault                                                | Chaos Mesh CRD / Action               | What it validates                                                                                                                                 |
-| ---------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Pod kill                                             | PodChaos – pod-kill                   | Kubernetes reschedules pods promptly; in-flight requests are not lost; readiness/liveness probes and load balancing route traffic away correctly. |
-| Pod failure (unready, not deleted)                   | PodChaos – pod-failure                | Load balancer / Envoy correctly stops routing to an unready pod without dropping requests.                                                        |
-| Container kill                                       | PodChaos – container-kill             | Sidecar/init container failure doesn't take down the whole pod unexpectedly.                                                                      |
-| CPU stress                                           | StressChaos – CPU stressors           | Autoscaling (HPA) reacts appropriately; request latency degrades gracefully rather than cliff-dropping under load.                                |
-| Memory stress                                        | StressChaos – memory stressors        | No OOM-kill cascades; memory limits/requests are sized correctly for peak load.                                                                   |
-| Network partition / latency to Redis, DB, connectors | NetworkChaos – delay, loss, partition | Timeouts, circuit breakers, and retry/backoff logic around each dependency behave as designed; no request pile-ups.                               |
-| I/O delay / error                                    | IOChaos                               | Local disk-dependent operations (logging, temp state) don't block the request path.                                                               |
+<table data-header-hidden data-search="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h4>Fault</h4></td><td><h4>Chaos Mesh Action</h4></td><td><h4>What it validates</h4></td></tr><tr><td>Pod kill</td><td>PodChaos – pod-kill</td><td>Kubernetes reschedules pods promptly; in-flight requests are not lost; readiness/liveness probes and load balancing route traffic away correctly.</td></tr><tr><td>Pod failure (unready, not deleted)</td><td>PodChaos – pod-failure</td><td>Load balancer / Envoy correctly stops routing to an unready pod without dropping requests.</td></tr><tr><td>Container kill</td><td>PodChaos – container-kill</td><td>Sidecar/init container failure doesn't take down the whole pod unexpectedly.</td></tr><tr><td>CPU stress</td><td>StressChaos – CPU stressors</td><td>Autoscaling (HPA) reacts appropriately; request latency degrades gracefully rather than cliff-dropping under load.</td></tr><tr><td>Memory stress</td><td>StressChaos – memory stressors</td><td>No OOM-kill cascades; memory limits/requests are sized correctly for peak load.</td></tr><tr><td>Network partition / latency to Redis, DB, connectors</td><td>NetworkChaos – delay, loss, partition</td><td>Timeouts, circuit breakers, and retry/backoff logic around each dependency behave as designed; no request pile-ups.</td></tr><tr><td>I/O delay / error</td><td>IOChaos</td><td>Local disk-dependent operations (logging, temp state) don't block the request path.</td></tr></tbody></table>
 
 ### Compute Layer – EC2
 
-| Fault                       | Tool / Action                             | What it validates                                                                                                               |
-| --------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Instance termination        | AWS FIS – EC2 terminate-instances         | Auto Scaling Group / EKS node group replaces capacity within the target time; workloads reschedule without manual intervention. |
-| Instance stop/start         | AWS FIS – EC2 stop/start-instances        | Behavior of any workload with local/temporary state on restart is as expected.                                                  |
-| CPU stress                  | AWS FIS – EC2 CPU stress (SSM)            | Node-level resource pressure doesn't starve co-located critical pods; validates node-level resource requests/limits and taints. |
-| Memory stress               | AWS FIS – EC2 memory stress (SSM)         | Same as above for memory; validates kubelet eviction thresholds are tuned correctly.                                            |
-| Disk I/O stress             | AWS FIS – EC2 IO stress (SSM)             | Disk-bound operations degrade gracefully; no node-level cascading failure.                                                      |
-| AZ-level power/network loss | AWS FIS – AZ Availability outage scenario | Multi-AZ failover for EC2/EKS, RDS, and ElastiCache all function together, not just in isolation.                               |
+<table data-header-hidden data-search="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h4>Fault</h4></td><td><h4>Tool / Action</h4></td><td><h4>What it validates</h4></td></tr><tr><td>Instance termination</td><td>AWS FIS – EC2 terminate-instances</td><td>Auto Scaling Group / EKS node group replaces capacity within the target time; workloads reschedule without manual intervention.</td></tr><tr><td>Instance stop/start</td><td>AWS FIS – EC2 stop/start-instances</td><td>Behavior of any workload with local/temporary state on restart is as expected.</td></tr><tr><td>CPU stress</td><td>AWS FIS – EC2 CPU stress (SSM)</td><td>Node-level resource pressure doesn't starve co-located critical pods; validates node-level resource requests/limits and taints.</td></tr><tr><td>Memory stress</td><td>AWS FIS – EC2 memory stress (SSM)</td><td>Same as above for memory; validates kubelet eviction thresholds are tuned correctly.</td></tr><tr><td>Disk I/O stress</td><td>AWS FIS – EC2 IO stress (SSM)</td><td>Disk-bound operations degrade gracefully; no node-level cascading failure.</td></tr><tr><td>AZ-level power/network loss</td><td>AWS FIS – AZ Availability outage scenario</td><td>Multi-AZ failover for EC2/EKS, RDS, and ElastiCache all function together, not just in isolation.</td></tr></tbody></table>
 
 ## Test Methodology
 
@@ -141,16 +130,7 @@ The tables below list the specific fault types run against each layer, in priori
 
 Before any experiment, capture a baseline for the metrics below over a normal traffic window. Every experiment is judged against this baseline, not against an absolute target.
 
-| Metric                                                 | Layer it primarily reflects | Why it matters                                                                                                   |
-| ------------------------------------------------------ | --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Payment success rate (authorized / attempted)          | End-to-end                  | The single most important business signal – must hold steady through every experiment.                           |
-| p50 / p95 / p99 authorization latency                  | Application, Storage        | Tail latency exposes lock contention, connection-pool exhaustion, and failover pauses before they become errors. |
-| Error rate by type (5xx, timeout, connector error)     | Application                 | Distinguishes application-level failures from upstream connector issues.                                         |
-| Redis command latency / connection errors              | Storage – cache             | Detects lock/idempotency-key contention during failover or stress.                                               |
-| DB replication lag / failover time / connection errors | Storage – persistent        | Confirms the database recovers within the target RTO and doesn't serve stale reads.                              |
-| Pod restart count / readiness-probe failures           | Application                 | Confirms Kubernetes correctly detects and routes around unhealthy pods.                                          |
-| Node/instance recovery time                            | Compute                     | Confirms ASG/EKS node replacement meets the target time-to-recovery.                                             |
-| Duplicate or orphaned transaction count                | End-to-end                  | Payments-specific correctness check – must remain zero through every experiment.                                 |
+<table data-header-hidden data-search="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><h4>Metric</h4></td><td><h4>Layer it  reflects</h4></td><td><h4>Why it matters</h4></td></tr><tr><td>Payment success rate (authorized / attempted)</td><td>End-to-end</td><td>The single most important business signal – must hold steady through every experiment.</td></tr><tr><td>p50 / p95 / p99 authorization latency</td><td>Application, Storage</td><td>Tail latency exposes lock contention, connection-pool exhaustion, and failover pauses before they become errors.</td></tr><tr><td>Error rate by type (5xx, timeout, connector error)</td><td>Application</td><td>Distinguishes application-level failures from upstream connector issues.</td></tr><tr><td>Redis command latency / connection errors</td><td>Storage – cache</td><td>Detects lock/idempotency-key contention during failover or stress.</td></tr><tr><td>DB replication lag / failover time / connection errors</td><td>Storage – persistent</td><td>Confirms the database recovers within the target RTO and doesn't serve stale reads.</td></tr><tr><td>Pod restart count / readiness-probe failures</td><td>Application</td><td>Confirms Kubernetes correctly detects and routes around unhealthy pods.</td></tr><tr><td>Node/instance recovery time</td><td>Compute</td><td>Confirms ASG/EKS node replacement meets the target time-to-recovery.</td></tr><tr><td>Duplicate or orphaned transaction count</td><td>End-to-end</td><td>Payments-specific correctness check – must remain zero through every experiment.</td></tr></tbody></table>
 
 ### Experiment Lifecycle
 

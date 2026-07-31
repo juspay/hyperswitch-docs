@@ -1,3 +1,7 @@
+---
+icon: chart-line-up
+---
+
 # Load Testing
 
 ## Load Testing Hyperswitch
