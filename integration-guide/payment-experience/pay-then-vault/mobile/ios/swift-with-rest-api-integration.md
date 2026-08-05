@@ -5,8 +5,6 @@ icon: swift
 
 # Swift with REST API Integration
 
-
-
 {% hint style="info" %}
 Use this guide to integrate Juspay Hyperswitch SDK to your iOS app. You can use the following [app](https://github.com/aashu331998/Hyperswitch-iOS-Demo-App/archive/refs/heads/main.zip) as a reference with your Hyperswitch credentials to test the setup. You can also checkout the [app on Apple Testflight](https://testflight.apple.com/join/WhPLmrT6) to test the payment flow.
 {% endhint %}
@@ -43,7 +41,6 @@ Add these lines to your Podfile:
 #target 'YourAPP' do
   pod 'hyperswitch-sdk-ios'
 #end
-
 ```
 
 Run the following command:
@@ -62,19 +59,44 @@ pod install --repo-update
 
 **2.2 Setup the SDK and fetch a Payment**
 
-Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`.
+Set up the SDK using your publishable key and profile id using `HyperswitchConfiguration`.  Use this to create a `Hyperswitch` instance.
+
+To get a `publishableKey` and `profileId`, refer to your Hyperswitch dashboard [here](https://app.hyperswitch.io/developers).
 
 <pre class="language-swift"><code class="lang-swift"><strong>import Hyperswitch
-</strong><strong>paymentSession = PaymentSession(publishableKey: &#x3C;YOUR_PUBLISHABLE_KEY>)
-</strong></code></pre>
+</strong>
+let hyperswitchConfiguration = HyperswitchConfiguration(
+    publishableKey: publishableKey,
+    profileId: profileId
+)
+let hyperswitch = Hyperswitch(configuration: hyperswitchConfiguration)
+</code></pre>
 
 {% hint style="warning" %}
-Note: For Open Source Setup, initialise your custom Backend app & log URL as:
+Note: For Open Source Setup, initialize your custom Backend app & log URL as:
 
 ```swift
-paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>, 
-                                customBackendUrl: <YOUR_SERVER_URL>,
-                                customLogUrl: <YOUR_LOG_URL>)
+hyperswitchConfiguration = HyperswitchConfiguration(
+                                publishableKey: <YOUR_PUBLISHABLE_KEY>, 
+                                profileId: <YOUR_PROFILE_ID>,
+                                customEndpoints: .commonEndpoint(<YOUR_SERVER_URL>),
+)
+
+// For more granualar, per-service URLs
+hyperswitchConfiguration = HyperswitchConfiguration(
+                                publishableKey: <YOUR_PUBLISHABLE_KEY>,
+                                profileId: <YOUR_PROFILE_ID>,
+                                customEndpoints: .overrideEndpoints(
+                                    OverrideEndpointConfiguration(
+                                        customBackendEndpoint: <YOUR_BACKEND_URL>,
+                                        customAssetEndpoint: <YOUR_ASSET_URL>,
+                                        customSDKConfigEndpoint: <YOUR_SDK_CONFIG_URL>,
+                                        customConfirmEndpoint: <YOUR_CONFIRM_URL>,
+                                        customAirborneEndpoint: <YOUR_AIRBORNE_URL>,
+                                        customLoggingEndpoint: <YOUR_LOGGING_URL>
+                                    )
+                                )
+)
 ```
 {% endhint %}
 
@@ -82,30 +104,22 @@ paymentSession = PaymentSession(publishableKey: <YOUR_PUBLISHABLE_KEY>,
 
 **Fetch a Payment**
 
-Request your server to fetch a payment as soon as your view is loaded. Store the client\_secret returned by your server. The `PaymentSession` will use this secret to complete the payment process.
+Request your server to fetch a payment as soon as your view is loaded. Store the `sdkAuthorization` returned by your server. The `PaymentSession` will use this secret to complete the payment process.
+
+{% hint style="danger" %}
+**Important**: Make sure to never share your API key with your client application as this could potentially compromise your security.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Swift" %}
 ```swift
-var paymentSession: PaymentSession?
+let paymentSessionConfiguration = PaymentSessionConfiguration(
+    sdkAuthorization: sdkAuthorization
+)
 
-paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
-```
-{% endtab %}
-
-{% tab title="SwiftUI" %}
-```swift
-@ObservedObject var model = BackendModel()
-@Published var paymentSheet: PaymentSession?
-@Published var paymentResult: PaymentSheetResult?
-
-// handle result
-func onPaymentCompletion(result: PaymentSheetResult) {
-        DispatchQueue.main.async {
-            self.paymentResult = result
-        }
-}
-paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
+let paymentSession = hyperswitch.initPaymentSession(
+    configuration: paymentSessionConfiguration
+)
 ```
 {% endtab %}
 {% endtabs %}
@@ -118,23 +132,41 @@ Handle the payment result in the completion block and display appropriate messag
 {% tab title="Swift" %}
 ```swift
 @objc
-func openPaymentSheet(_ sender: Any) { //present payment sheet
-
-var configuration = PaymentSheet.Configuration()
-configuration.merchantDisplayName = "Example, Inc."
-
-    paymentSession?.presentPaymentSheet(viewController: self, 
-                                        configuration: configuration, 
-                                        completion: { result in
-        switch result {
-        case .completed:
-            print("Payment complete")
-        case .failed(let error):
-            print("Payment failed: \(error.localizedDescription)")
-        case .canceled:
-            print("Payment canceled.")
+func openPaymentSheet(_ sender: Any) { //present payment shee
+    var configuration = PaymentSheet.Configuration()
+    configuration.merchantDisplayName = "Example, Inc."
+    
+    // Optional theming
+    var appearance = PaymentSheet.Appearance()
+    appearance.font.base = UIFont(name: "montserrat", size: UIFont.systemFontSize)
+    appearance.shapes.shadow = .disabled
+    appearance.colors.primary = UIColor(red: 0.55, green: 0.74, blue: 0.00, alpha: 1.00)
+    appearance.primaryButton.shapes.borderRadius = 32
+    configuration.appearance = appearance
+    
+    // Optional: enable native 3DS challenges inside the sheet
+    configuration.netceteraSDKApiKey = netceteraApiKey
+    
+    paymentSession.presentPaymentSheet(
+        viewController: self,
+        configuration: configuration,
+        subscribe: { builder in  // optional event subscription
+            builder.on(.paymentMethodInfoCard) { event in
+                if case .cardInfo(let info) = event.data {
+                    print(info)
+                }
+            }
+        },
+        completion: { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .completed: print("Payment complete")
+                case .failed(let error): print("Payment failed: \(error)")
+                case .canceled: print("Payment canceled")
+                }
+            }
         }
-    })
+    )
 }
 ```
 
@@ -170,6 +202,13 @@ VStack {
       }
   }
 }.onAppear { model.preparePaymentSheet() }
+
+// handle result
+func onPaymentCompletion(result: PaymentSheetResult) {
+        DispatchQueue.main.async {
+            self.paymentResult = result
+        }
+}
 
 // setup configuration for payment sheet
 func configuration() -> PaymentSheet.Configuration {

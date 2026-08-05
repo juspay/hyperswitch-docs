@@ -12,19 +12,27 @@ icon: block-brick
 
 **1. Initialize the Juspay Hyperswitch SDK**
 
-Initialize Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Hyperswitch Headless SDK onto your app with your publishable key.&#x20;
+
+To get a `publishableKey` and `profileId`, refer to your Hyperswitch dashboard [here](https://app.hyperswitch.io/developers).
 
 ```swift
 // pod 'hyperswitch-sdk-ios'
-paymentSession = PaymentSession(publishableKey: publishableKey)
+import Hyperswitch
+
+let hyperswitchConfiguration = HyperswitchConfiguration(
+    publishableKey: publishableKey,
+    profileId: profileId
+)
+let hyperswitch = Hyperswitch(configuration: hyperswitchConfiguration)
 ```
 
 **2. Create a Payment Intent**
 
-Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
+Make a request to the endpoint on your server to create a new Payment. The `sdkAuthorization` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
-**Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
+**Important**: Make sure to never share your API key with your client application as this could potentially compromise your security.
 {% endhint %}
 
 **3. Initialize your Payment Session**
@@ -32,12 +40,18 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
 
 ```swift
-paymentSession?.initPaymentSession(paymentIntentClientSecret: paymentIntentClientSecret)
+let paymentSessionConfiguration = PaymentSessionConfiguration(
+    sdkAuthorization: sdkAuthorization
+)
+
+let paymentSession = hyperswitch.initPaymentSession(
+    configuration: paymentSessionConfiguration
+)
 ```
 
-| options (Required)      | Description                                                     |
-| ----------------------- | --------------------------------------------------------------- |
-| `clientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
+| options (Required)          | Description                                                     |
+| --------------------------- | --------------------------------------------------------------- |
+| `sdkAuthorization (string)` | **Required.** Required to use as the identifier of the payment. |
 
 **4. Craft a customized payments experience**
 
@@ -62,7 +76,7 @@ func initSavedPaymentMethodSessionCallback(handler: PaymentSessionHandler)-> Voi
 }
 </code></pre>
 
-**Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)`
+**Payload for** `confirmWithCustomerLastUsedPaymentMethod(callback)` &#x20;
 
 | options (Required)    | Description                       |
 | --------------------- | --------------------------------- |
