@@ -22,8 +22,8 @@ New here? Start with [Getting Started](getting-started.md) — it explains the a
 
 ### Quick starts by role
 
-* Just exploring? → [Getting Started](http://01-getting-started.md) → make a [first test payment](http://01-getting-started.md/#step-4--make-your-first-test-payment).
-* Setting up payments? → [Connectors](http://03-connectors.md) → [Configure PMTs](http://03-connectors.md/#configure-payment-methods-pmts) → [Routing](http://04-workflow.md/#routing).
-* Running operations? → [Payments](http://02-operations.md/#payments), [Refunds](http://02-operations.md/#refunds), [Disputes](http://02-operations.md/#disputes).
-* Integrating in code? → [API Keys](http://07-developers.md/#api-keys) → [Webhooks](http://07-developers.md/#webhooks).
-* Administering the account? → [Team & Roles](http://08-settings.md/#roles--permissions-rbac).
+* Just exploring? → [Getting Started](http://01-getting-started.md) → make a first test payment.
+* Setting up payments? → Connectors → Configure PMTs → Routing.
+* Running operations? → Payments, Refunds, Disputes.
+* Integrating in code? → API Keys → Webhooks.
+* Administering the account? → Team & Roles.
