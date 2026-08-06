@@ -234,6 +234,15 @@
     * [Integration Guide](integration-guide/account-management/beta-embeddable-components/integration-guide.md)
     * [Integration Reference](integration-guide/account-management/beta-embeddable-components/integration-reference.md)
 * [Webhooks](integration-guide/webhooks.md)
+* [Control Center](integration-guide/control-center/README.md)
+  * [Getting Started](integration-guide/control-center/getting-started.md)
+  * [Operations](integration-guide/control-center/operations.md)
+  * [Connectors](integration-guide/control-center/connectors.md)
+  * [Workflow](integration-guide/control-center/workflow.md)
+  * [Analytics](integration-guide/control-center/analytics.md)
+  * [Developers](integration-guide/control-center/developers.md)
+  * [Settings & Administration](integration-guide/control-center/settings-and-administration.md)
+  * [Users](integration-guide/control-center/users.md)
 
 ## Use-Cases
 
