@@ -18,18 +18,15 @@ Use this config for all flows in this connector. Replace `YOUR_API_KEY` with you
 <details><summary>Python</summary>
 
 ```python
-from payments.generated import sdk_config_pb2, payment_pb2, payment_methods_pb2
+from payments.generated import sdk_config_pb2, payment_pb2
 
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
-    connector_config=payment_pb2.ConnectorSpecificConfig(
-        ppro=payment_pb2.PproConfig(
-            api_key=payment_methods_pb2.SecretString(value="YOUR_API_KEY"),
-            merchant_id=payment_methods_pb2.SecretString(value="YOUR_MERCHANT_ID"),
-            base_url="YOUR_BASE_URL",
-        ),
-    ),
 )
+# Set credentials before running (field names depend on connector auth type):
+# config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
+#     ppro=payment_pb2.PproConfig(api_key=...),
+# ))
 
 ```
 
@@ -41,18 +38,14 @@ config = sdk_config_pb2.ConnectorConfig(
 <details><summary>JavaScript</summary>
 
 ```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
+const { ConnectorClient } = require('connector-service-node-ffi');
 
-const config = ConnectorConfig.create({
-    connector: Connector.PPRO,
-    environment: Environment.SANDBOX,
-    auth: {
-        ppro: {
-            apiKey: { value: 'YOUR_API_KEY' },
-            merchantId: { value: 'YOUR_MERCHANT_ID' },
-            baseUrl: 'YOUR_BASE_URL',
-        }
+// Reuse this client for all flows
+const client = new ConnectorClient({
+    connector: 'Ppro',
+    environment: 'sandbox',
+    connector_auth_type: {
+        header_key: { api_key: 'YOUR_API_KEY' },
     },
 });
 ```
@@ -66,15 +59,11 @@ const config = ConnectorConfig.create({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
-    .setConnectorConfig(
-        ConnectorSpecificConfig.newBuilder()
-            .setPpro(PproConfig.newBuilder()
-                .setApiKey(SecretString.newBuilder().setValue("YOUR_API_KEY").build())
-                .setMerchantId(SecretString.newBuilder().setValue("YOUR_MERCHANT_ID").build())
-                .setBaseUrl("YOUR_BASE_URL")
-                .build())
-            .build()
+    .setConnector("Ppro")
+    .setEnvironment(Environment.SANDBOX)
+    .setAuth(
+        ConnectorAuthType.newBuilder()
+            .setHeaderKey(HeaderKey.newBuilder().setApiKey("YOUR_API_KEY"))
     )
     .build()
 ```
@@ -87,21 +76,13 @@ val config = ConnectorConfig.newBuilder()
 <details><summary>Rust</summary>
 
 ```rust
-use grpc_api_types::payments::*;
-use grpc_api_types::payments::connector_specific_config;
+use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Ppro(PproConfig {
-                api_key: Some(hyperswitch_masking::Secret::new("YOUR_API_KEY".to_string())),  // Authentication credential
-                merchant_id: Some(hyperswitch_masking::Secret::new("YOUR_MERCHANT_ID".to_string())),  // Authentication credential
-                base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                ..Default::default()
-            })),
-        }),
-    options: Some(SdkOptions {
-        environment: Environment::Sandbox.into(),
-    }),
+    connector: "Ppro".to_string(),
+    environment: Environment::Sandbox,
+    auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
+    ..Default::default()
 };
 ```
 
@@ -119,11 +100,9 @@ let config = ConnectorConfig {
 | [PaymentService.Capture](#paymentservicecapture) | Payments | `PaymentServiceCaptureRequest` |
 | [PaymentService.Get](#paymentserviceget) | Payments | `PaymentServiceGetRequest` |
 | [EventService.HandleEvent](#eventservicehandleevent) | Events | `EventServiceHandleRequest` |
-| [EventService.ParseEvent](#eventserviceparseevent) | Events | `EventServiceParseRequest` |
 | [RecurringPaymentService.Charge](#recurringpaymentservicecharge) | Mandates | `RecurringPaymentServiceChargeRequest` |
 | [PaymentService.Refund](#paymentservicerefund) | Payments | `PaymentServiceRefundRequest` |
 | [RefundService.Get](#refundserviceget) | Refunds | `RefundServiceGetRequest` |
-| [PaymentService.VerifyRedirectResponse](#paymentserviceverifyredirectresponse) | Payments | `PaymentServiceVerifyRedirectResponseRequest` |
 | [PaymentService.Void](#paymentservicevoid) | Payments | `PaymentServiceVoidRequest` |
 
 ### Payments
@@ -163,17 +142,8 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | MB Way | ✓ |
 | Satispay | ✓ |
 | Wero | ✓ |
-| GoPay | x |
-| GCash | x |
-| Momo | x |
-| Dana | x |
-| Kakao Pay | x |
-| Touch 'n Go | x |
-| Twint | x |
-| Vipps | x |
-| Swish | x |
 | Affirm | x |
-| Afterpay | ✓ |
+| Afterpay | x |
 | Klarna | x |
 | UPI Collect | x |
 | UPI Intent | ✓ |
@@ -248,7 +218,8 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 ```python
 "payment_method": {
-  "ideal": {}
+    "ideal": {
+    }
 }
 ```
 
@@ -256,21 +227,13 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 ```python
 "payment_method": {
-  "blik": {
-    "blik_code": "777124"
-  }
+    "blik": {
+        "blik_code": "777124"
+    }
 }
 ```
 
-##### Afterpay / Clearpay
-
-```python
-"payment_method": {
-  "afterpay_clearpay": {}
-}
-```
-
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L155) · [Kotlin](../../examples/ppro/ppro.kt#L114) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L146) · [TypeScript](../../examples/ppro/ppro.ts#L128) · [Kotlin](../../examples/ppro/ppro.kt#L105) · [Rust](../../examples/ppro/ppro.rs#L138)
 
 #### PaymentService.Capture
 
@@ -281,7 +244,7 @@ Finalize an authorized payment by transferring funds. Captures the authorized am
 | **Request** | `PaymentServiceCaptureRequest` |
 | **Response** | `PaymentServiceCaptureResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L164) · [Kotlin](../../examples/ppro/ppro.kt#L126) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L155) · [TypeScript](../../examples/ppro/ppro.ts#L137) · [Kotlin](../../examples/ppro/ppro.kt#L117) · [Rust](../../examples/ppro/ppro.rs#L150)
 
 #### PaymentService.Get
 
@@ -292,7 +255,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L173) · [Kotlin](../../examples/ppro/ppro.kt#L136) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L164) · [TypeScript](../../examples/ppro/ppro.ts#L146) · [Kotlin](../../examples/ppro/ppro.kt#L127) · [Rust](../../examples/ppro/ppro.rs#L157)
 
 #### PaymentService.Refund
 
@@ -303,18 +266,7 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L209) · [Kotlin](../../examples/ppro/ppro.kt#L206) · [Rust](../../examples/ppro/ppro.rs)
-
-#### PaymentService.VerifyRedirectResponse
-
-Verify and process redirect responses from 3D Secure or other external flows. Validates authentication results and updates payment state accordingly.
-
-| | Message |
-|---|---------|
-| **Request** | `PaymentServiceVerifyRedirectResponseRequest` |
-| **Response** | `PaymentServiceVerifyRedirectResponseResponse` |
-
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L227) · [Kotlin](../../examples/ppro/ppro.kt#L228) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L191) · [TypeScript](../../examples/ppro/ppro.ts#L173) · [Kotlin](../../examples/ppro/ppro.kt#L176) · [Rust](../../examples/ppro/ppro.rs#L178)
 
 #### PaymentService.Void
 
@@ -325,7 +277,7 @@ Cancel an authorized payment that has not been captured. Releases held funds bac
 | **Request** | `PaymentServiceVoidRequest` |
 | **Response** | `PaymentServiceVoidResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts) · [Kotlin](../../examples/ppro/ppro.kt#L238) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L209) · [TypeScript](../../examples/ppro/ppro.ts) · [Kotlin](../../examples/ppro/ppro.kt#L198) · [Rust](../../examples/ppro/ppro.rs#L192)
 
 ### Refunds
 
@@ -338,7 +290,7 @@ Retrieve refund status from the payment processor. Tracks refund progress throug
 | **Request** | `RefundServiceGetRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L218) · [Kotlin](../../examples/ppro/ppro.kt#L216) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L200) · [TypeScript](../../examples/ppro/ppro.ts#L182) · [Kotlin](../../examples/ppro/ppro.kt#L186) · [Rust](../../examples/ppro/ppro.rs#L185)
 
 ### Mandates
 
@@ -351,4 +303,4 @@ Charge using an existing stored recurring payment instruction. Processes repeat 
 | **Request** | `RecurringPaymentServiceChargeRequest` |
 | **Response** | `RecurringPaymentServiceChargeResponse` |
 
-**Examples:** [Python](../../examples/ppro/ppro.py) · [TypeScript](../../examples/ppro/ppro.ts#L200) · [Kotlin](../../examples/ppro/ppro.kt#L175) · [Rust](../../examples/ppro/ppro.rs)
+**Examples:** [Python](../../examples/ppro/ppro.py#L182) · [TypeScript](../../examples/ppro/ppro.ts#L164) · [Kotlin](../../examples/ppro/ppro.kt#L145) · [Rust](../../examples/ppro/ppro.rs#L171)

@@ -18,21 +18,15 @@ Use this config for all flows in this connector. Replace `YOUR_API_KEY` with you
 <details><summary>Python</summary>
 
 ```python
-from payments.generated import sdk_config_pb2, payment_pb2, payment_methods_pb2
+from payments.generated import sdk_config_pb2, payment_pb2
 
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
-    connector_config=payment_pb2.ConnectorSpecificConfig(
-        itaubank=payment_pb2.ItaubankConfig(
-            client_secret=payment_methods_pb2.SecretString(value="YOUR_CLIENT_SECRET"),
-            client_id=payment_methods_pb2.SecretString(value="YOUR_CLIENT_ID"),
-            certificates=payment_methods_pb2.SecretString(value="YOUR_CERTIFICATES"),
-            private_key=payment_methods_pb2.SecretString(value="YOUR_PRIVATE_KEY"),
-            base_url="YOUR_BASE_URL",
-            secondary_base_url="YOUR_SECONDARY_BASE_URL",
-        ),
-    ),
 )
+# Set credentials before running (field names depend on connector auth type):
+# config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
+#     itaubank=payment_pb2.ItaubankConfig(api_key=...),
+# ))
 
 ```
 
@@ -44,21 +38,14 @@ config = sdk_config_pb2.ConnectorConfig(
 <details><summary>JavaScript</summary>
 
 ```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
+const { ConnectorClient } = require('connector-service-node-ffi');
 
-const config = ConnectorConfig.create({
-    connector: Connector.ITAUBANK,
-    environment: Environment.SANDBOX,
-    auth: {
-        itaubank: {
-            clientSecret: { value: 'YOUR_CLIENT_SECRET' },
-            clientId: { value: 'YOUR_CLIENT_ID' },
-            certificates: { value: 'YOUR_CERTIFICATES' },
-            privateKey: { value: 'YOUR_PRIVATE_KEY' },
-            baseUrl: 'YOUR_BASE_URL',
-            secondaryBaseUrl: 'YOUR_SECONDARY_BASE_URL',
-        }
+// Reuse this client for all flows
+const client = new ConnectorClient({
+    connector: 'Itaubank',
+    environment: 'sandbox',
+    connector_auth_type: {
+        header_key: { api_key: 'YOUR_API_KEY' },
     },
 });
 ```
@@ -72,18 +59,11 @@ const config = ConnectorConfig.create({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
-    .setConnectorConfig(
-        ConnectorSpecificConfig.newBuilder()
-            .setItaubank(ItaubankConfig.newBuilder()
-                .setClientSecret(SecretString.newBuilder().setValue("YOUR_CLIENT_SECRET").build())
-                .setClientId(SecretString.newBuilder().setValue("YOUR_CLIENT_ID").build())
-                .setCertificates(SecretString.newBuilder().setValue("YOUR_CERTIFICATES").build())
-                .setPrivateKey(SecretString.newBuilder().setValue("YOUR_PRIVATE_KEY").build())
-                .setBaseUrl("YOUR_BASE_URL")
-                .setSecondaryBaseUrl("YOUR_SECONDARY_BASE_URL")
-                .build())
-            .build()
+    .setConnector("Itaubank")
+    .setEnvironment(Environment.SANDBOX)
+    .setAuth(
+        ConnectorAuthType.newBuilder()
+            .setHeaderKey(HeaderKey.newBuilder().setApiKey("YOUR_API_KEY"))
     )
     .build()
 ```
@@ -96,24 +76,13 @@ val config = ConnectorConfig.newBuilder()
 <details><summary>Rust</summary>
 
 ```rust
-use grpc_api_types::payments::*;
-use grpc_api_types::payments::connector_specific_config;
+use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Itaubank(ItaubankConfig {
-                client_secret: Some(hyperswitch_masking::Secret::new("YOUR_CLIENT_SECRET".to_string())),  // Authentication credential
-                client_id: Some(hyperswitch_masking::Secret::new("YOUR_CLIENT_ID".to_string())),  // Authentication credential
-                certificates: Some(hyperswitch_masking::Secret::new("YOUR_CERTIFICATES".to_string())),  // Authentication credential
-                private_key: Some(hyperswitch_masking::Secret::new("YOUR_PRIVATE_KEY".to_string())),  // Authentication credential
-                base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                secondary_base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                ..Default::default()
-            })),
-        }),
-    options: Some(SdkOptions {
-        environment: Environment::Sandbox.into(),
-    }),
+    connector: "Itaubank".to_string(),
+    environment: Environment::Sandbox,
+    auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
+    ..Default::default()
 };
 ```
 
@@ -140,4 +109,4 @@ Generate short-lived connector authentication token. Provides secure credentials
 | **Request** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenRequest` |
 | **Response** | `MerchantAuthenticationServiceCreateServerAuthenticationTokenResponse` |
 
-**Examples:** [Python](../../examples/itaubank/itaubank.py) · [TypeScript](../../examples/itaubank/itaubank.ts#L37) · [Kotlin](../../examples/itaubank/itaubank.kt#L40) · [Rust](../../examples/itaubank/itaubank.rs)
+**Examples:** [Python](../../examples/itaubank/itaubank.py#L31) · [TypeScript](../../examples/itaubank/itaubank.ts#L30) · [Kotlin](../../examples/itaubank/itaubank.kt#L23) · [Rust](../../examples/itaubank/itaubank.rs#L33)

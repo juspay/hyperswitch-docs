@@ -2,7 +2,6 @@
 description: >-
   Unified payment orchestration platform for managing multiple PSPs, payment
   methods, and optimizing payment lifecycle performance
-hidden: true
 icon: arrow-progress
 metaLinks:
   alternates:

@@ -18,20 +18,15 @@ Use this config for all flows in this connector. Replace `YOUR_API_KEY` with you
 <details><summary>Python</summary>
 
 ```python
-from payments.generated import sdk_config_pb2, payment_pb2, payment_methods_pb2
+from payments.generated import sdk_config_pb2, payment_pb2
 
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
-    connector_config=payment_pb2.ConnectorSpecificConfig(
-        gigadat=payment_pb2.GigadatConfig(
-            campaign_id=payment_methods_pb2.SecretString(value="YOUR_CAMPAIGN_ID"),
-            access_token=payment_methods_pb2.SecretString(value="YOUR_ACCESS_TOKEN"),
-            security_token=payment_methods_pb2.SecretString(value="YOUR_SECURITY_TOKEN"),
-            base_url="YOUR_BASE_URL",
-            site="YOUR_SITE",
-        ),
-    ),
 )
+# Set credentials before running (field names depend on connector auth type):
+# config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
+#     gigadat=payment_pb2.GigadatConfig(api_key=...),
+# ))
 
 ```
 
@@ -43,20 +38,14 @@ config = sdk_config_pb2.ConnectorConfig(
 <details><summary>JavaScript</summary>
 
 ```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
+const { ConnectorClient } = require('connector-service-node-ffi');
 
-const config = ConnectorConfig.create({
-    connector: Connector.GIGADAT,
-    environment: Environment.SANDBOX,
-    auth: {
-        gigadat: {
-            campaignId: { value: 'YOUR_CAMPAIGN_ID' },
-            accessToken: { value: 'YOUR_ACCESS_TOKEN' },
-            securityToken: { value: 'YOUR_SECURITY_TOKEN' },
-            baseUrl: 'YOUR_BASE_URL',
-            site: 'YOUR_SITE',
-        }
+// Reuse this client for all flows
+const client = new ConnectorClient({
+    connector: 'Gigadat',
+    environment: 'sandbox',
+    connector_auth_type: {
+        header_key: { api_key: 'YOUR_API_KEY' },
     },
 });
 ```
@@ -70,17 +59,11 @@ const config = ConnectorConfig.create({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
-    .setConnectorConfig(
-        ConnectorSpecificConfig.newBuilder()
-            .setGigadat(GigadatConfig.newBuilder()
-                .setCampaignId(SecretString.newBuilder().setValue("YOUR_CAMPAIGN_ID").build())
-                .setAccessToken(SecretString.newBuilder().setValue("YOUR_ACCESS_TOKEN").build())
-                .setSecurityToken(SecretString.newBuilder().setValue("YOUR_SECURITY_TOKEN").build())
-                .setBaseUrl("YOUR_BASE_URL")
-                .setSite("YOUR_SITE")
-                .build())
-            .build()
+    .setConnector("Gigadat")
+    .setEnvironment(Environment.SANDBOX)
+    .setAuth(
+        ConnectorAuthType.newBuilder()
+            .setHeaderKey(HeaderKey.newBuilder().setApiKey("YOUR_API_KEY"))
     )
     .build()
 ```
@@ -93,23 +76,13 @@ val config = ConnectorConfig.newBuilder()
 <details><summary>Rust</summary>
 
 ```rust
-use grpc_api_types::payments::*;
-use grpc_api_types::payments::connector_specific_config;
+use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Gigadat(GigadatConfig {
-                campaign_id: Some(hyperswitch_masking::Secret::new("YOUR_CAMPAIGN_ID".to_string())),  // Authentication credential
-                access_token: Some(hyperswitch_masking::Secret::new("YOUR_ACCESS_TOKEN".to_string())),  // Authentication credential
-                security_token: Some(hyperswitch_masking::Secret::new("YOUR_SECURITY_TOKEN".to_string())),  // Authentication credential
-                base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                site: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                ..Default::default()
-            })),
-        }),
-    options: Some(SdkOptions {
-        environment: Environment::Sandbox.into(),
-    }),
+    connector: "Gigadat".to_string(),
+    environment: Environment::Sandbox,
+    auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
+    ..Default::default()
 };
 ```
 
@@ -142,106 +115,97 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 | Payment Method | Supported |
 |----------------|:---------:|
-| Card | x |
-| Bancontact | x |
-| Apple Pay | x |
-| Apple Pay Dec | x |
-| Apple Pay SDK | x |
-| Google Pay | x |
-| Google Pay Dec | x |
-| Google Pay SDK | x |
-| PayPal SDK | x |
-| Amazon Pay | x |
-| Cash App | x |
-| PayPal | x |
-| WeChat Pay | x |
-| Alipay | x |
-| Revolut Pay | x |
-| MiFinity | x |
-| Bluecode | x |
+| Card | ⚠ |
+| Bancontact | ⚠ |
+| Apple Pay | ⚠ |
+| Apple Pay Dec | ⚠ |
+| Apple Pay SDK | ⚠ |
+| Google Pay | ⚠ |
+| Google Pay Dec | ⚠ |
+| Google Pay SDK | ⚠ |
+| PayPal SDK | ⚠ |
+| Amazon Pay | ⚠ |
+| Cash App | ⚠ |
+| PayPal | ⚠ |
+| WeChat Pay | ⚠ |
+| Alipay | ⚠ |
+| Revolut Pay | ⚠ |
+| MiFinity | ⚠ |
+| Bluecode | ⚠ |
 | Paze | x |
-| Samsung Pay | x |
-| MB Way | x |
-| Satispay | x |
-| Wero | x |
-| GoPay | x |
-| GCash | x |
-| Momo | x |
-| Dana | x |
-| Kakao Pay | x |
-| Touch 'n Go | x |
-| Twint | x |
-| Vipps | x |
-| Swish | x |
-| Affirm | x |
-| Afterpay | x |
-| Klarna | x |
-| UPI Collect | x |
-| UPI Intent | x |
-| UPI QR | x |
-| Thailand | x |
-| Czech | x |
-| Finland | x |
-| FPX | x |
-| Poland | x |
-| Slovakia | x |
-| UK | x |
+| Samsung Pay | ⚠ |
+| MB Way | ⚠ |
+| Satispay | ⚠ |
+| Wero | ⚠ |
+| Affirm | ⚠ |
+| Afterpay | ⚠ |
+| Klarna | ⚠ |
+| UPI Collect | ⚠ |
+| UPI Intent | ⚠ |
+| UPI QR | ⚠ |
+| Thailand | ⚠ |
+| Czech | ⚠ |
+| Finland | ⚠ |
+| FPX | ⚠ |
+| Poland | ⚠ |
+| Slovakia | ⚠ |
+| UK | ⚠ |
 | PIS | x |
-| Generic | x |
-| Local | x |
-| iDEAL | x |
-| Sofort | x |
-| Trustly | x |
-| Giropay | x |
-| EPS | x |
-| Przelewy24 | x |
-| PSE | x |
-| BLIK | x |
+| Generic | ⚠ |
+| Local | ⚠ |
+| iDEAL | ⚠ |
+| Sofort | ⚠ |
+| Trustly | ⚠ |
+| Giropay | ⚠ |
+| EPS | ⚠ |
+| Przelewy24 | ⚠ |
+| PSE | ⚠ |
+| BLIK | ⚠ |
 | Interac | ✓ |
-| Bizum | x |
-| EFT | x |
+| Bizum | ⚠ |
+| EFT | ⚠ |
 | DuitNow | x |
-| ACH | x |
-| SEPA | x |
-| BACS | x |
-| Multibanco | x |
-| Instant | x |
-| Instant FI | x |
-| Instant PL | x |
-| Pix | x |
-| Permata | x |
-| BCA | x |
-| BNI VA | x |
-| BRI VA | x |
-| CIMB VA | x |
-| Danamon VA | x |
-| Mandiri VA | x |
-| Local | x |
-| Indonesian | x |
-| ACH | x |
-| SEPA | x |
-| BACS | x |
-| BECS | x |
-| SEPA Guaranteed | x |
+| ACH | ⚠ |
+| SEPA | ⚠ |
+| BACS | ⚠ |
+| Multibanco | ⚠ |
+| Instant | ⚠ |
+| Instant FI | ⚠ |
+| Instant PL | ⚠ |
+| Pix | ⚠ |
+| Permata | ⚠ |
+| BCA | ⚠ |
+| BNI VA | ⚠ |
+| BRI VA | ⚠ |
+| CIMB VA | ⚠ |
+| Danamon VA | ⚠ |
+| Mandiri VA | ⚠ |
+| Local | ⚠ |
+| Indonesian | ⚠ |
+| ACH | ⚠ |
+| SEPA | ⚠ |
+| BACS | ⚠ |
+| BECS | ⚠ |
+| SEPA Guaranteed | ⚠ |
 | Crypto | x |
-| Reward | x |
+| Reward | ⚠ |
 | Givex | x |
 | PaySafeCard | x |
-| E-Voucher | x |
-| Boleto | x |
-| Efecty | x |
-| Pago Efectivo | x |
-| Red Compra | x |
-| Red Pagos | x |
-| Alfamart | x |
-| Indomaret | x |
-| Oxxo | x |
-| 7-Eleven | x |
-| Lawson | x |
-| Mini Stop | x |
-| Family Mart | x |
-| Seicomart | x |
-| Pay Easy | x |
+| E-Voucher | ⚠ |
+| Boleto | ⚠ |
+| Efecty | ⚠ |
+| Pago Efectivo | ⚠ |
+| Red Compra | ⚠ |
+| Red Pagos | ⚠ |
+| Alfamart | ⚠ |
+| Indomaret | ⚠ |
+| Oxxo | ⚠ |
+| 7-Eleven | ⚠ |
+| Lawson | ⚠ |
+| Mini Stop | ⚠ |
+| Family Mart | ⚠ |
+| Seicomart | ⚠ |
+| Pay Easy | ⚠ |
 
 **Examples:** [Python](../../examples/gigadat/gigadat.py) · [TypeScript](../../examples/gigadat/gigadat.ts) · [Kotlin](../../examples/gigadat/gigadat.kt) · [Rust](../../examples/gigadat/gigadat.rs)
 
@@ -254,7 +218,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/gigadat/gigadat.py) · [TypeScript](../../examples/gigadat/gigadat.ts#L55) · [Kotlin](../../examples/gigadat/gigadat.kt#L65) · [Rust](../../examples/gigadat/gigadat.rs)
+**Examples:** [Python](../../examples/gigadat/gigadat.py#L52) · [TypeScript](../../examples/gigadat/gigadat.ts#L49) · [Kotlin](../../examples/gigadat/gigadat.kt#L50) · [Rust](../../examples/gigadat/gigadat.rs#L51)
 
 #### PaymentService.Refund
 
@@ -265,4 +229,4 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/gigadat/gigadat.py) · [TypeScript](../../examples/gigadat/gigadat.ts#L64) · [Kotlin](../../examples/gigadat/gigadat.kt#L73) · [Rust](../../examples/gigadat/gigadat.rs)
+**Examples:** [Python](../../examples/gigadat/gigadat.py#L61) · [TypeScript](../../examples/gigadat/gigadat.ts#L58) · [Kotlin](../../examples/gigadat/gigadat.kt#L58) · [Rust](../../examples/gigadat/gigadat.rs#L58)

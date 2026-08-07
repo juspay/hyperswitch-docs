@@ -18,18 +18,15 @@ Use this config for all flows in this connector. Replace `YOUR_API_KEY` with you
 <details><summary>Python</summary>
 
 ```python
-from payments.generated import sdk_config_pb2, payment_pb2, payment_methods_pb2
+from payments.generated import sdk_config_pb2, payment_pb2
 
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
-    connector_config=payment_pb2.ConnectorSpecificConfig(
-        nmi=payment_pb2.NmiConfig(
-            api_key=payment_methods_pb2.SecretString(value="YOUR_API_KEY"),
-            public_key=payment_methods_pb2.SecretString(value="YOUR_PUBLIC_KEY"),
-            base_url="YOUR_BASE_URL",
-        ),
-    ),
 )
+# Set credentials before running (field names depend on connector auth type):
+# config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
+#     nmi=payment_pb2.NmiConfig(api_key=...),
+# ))
 
 ```
 
@@ -41,18 +38,14 @@ config = sdk_config_pb2.ConnectorConfig(
 <details><summary>JavaScript</summary>
 
 ```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
+const { ConnectorClient } = require('connector-service-node-ffi');
 
-const config = ConnectorConfig.create({
-    connector: Connector.NMI,
-    environment: Environment.SANDBOX,
-    auth: {
-        nmi: {
-            apiKey: { value: 'YOUR_API_KEY' },
-            publicKey: { value: 'YOUR_PUBLIC_KEY' },
-            baseUrl: 'YOUR_BASE_URL',
-        }
+// Reuse this client for all flows
+const client = new ConnectorClient({
+    connector: 'Nmi',
+    environment: 'sandbox',
+    connector_auth_type: {
+        header_key: { api_key: 'YOUR_API_KEY' },
     },
 });
 ```
@@ -66,15 +59,11 @@ const config = ConnectorConfig.create({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
-    .setConnectorConfig(
-        ConnectorSpecificConfig.newBuilder()
-            .setNmi(NmiConfig.newBuilder()
-                .setApiKey(SecretString.newBuilder().setValue("YOUR_API_KEY").build())
-                .setPublicKey(SecretString.newBuilder().setValue("YOUR_PUBLIC_KEY").build())
-                .setBaseUrl("YOUR_BASE_URL")
-                .build())
-            .build()
+    .setConnector("Nmi")
+    .setEnvironment(Environment.SANDBOX)
+    .setAuth(
+        ConnectorAuthType.newBuilder()
+            .setHeaderKey(HeaderKey.newBuilder().setApiKey("YOUR_API_KEY"))
     )
     .build()
 ```
@@ -87,21 +76,13 @@ val config = ConnectorConfig.newBuilder()
 <details><summary>Rust</summary>
 
 ```rust
-use grpc_api_types::payments::*;
-use grpc_api_types::payments::connector_specific_config;
+use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Nmi(NmiConfig {
-                api_key: Some(hyperswitch_masking::Secret::new("YOUR_API_KEY".to_string())),  // Authentication credential
-                public_key: Some(hyperswitch_masking::Secret::new("YOUR_PUBLIC_KEY".to_string())),  // Authentication credential
-                base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                ..Default::default()
-            })),
-        }),
-    options: Some(SdkOptions {
-        environment: Environment::Sandbox.into(),
-    }),
+    connector: "Nmi".to_string(),
+    environment: Environment::Sandbox,
+    auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
+    ..Default::default()
 };
 ```
 
@@ -127,7 +108,7 @@ Simple payment that authorizes and captures in one call. Use for immediate charg
 | `PENDING` | Payment processing — await webhook for final status before fulfilling |
 | `FAILED` | Payment declined — surface error to customer, do not retry without new details |
 
-**Examples:** [Python](../../examples/nmi/nmi.py#L236) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L119) · [Rust](../../examples/nmi/nmi.rs#L309)
+**Examples:** [Python](../../examples/nmi/nmi.py#L167) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L105) · [Rust](../../examples/nmi/nmi.rs#L158)
 
 ### Card Payment (Authorize + Capture)
 
@@ -141,25 +122,25 @@ Two-step card payment. First authorize, then capture. Use when you need to verif
 | `PENDING` | Awaiting async confirmation — wait for webhook before capturing |
 | `FAILED` | Payment declined — surface error to customer, do not retry without new details |
 
-**Examples:** [Python](../../examples/nmi/nmi.py#L255) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L135) · [Rust](../../examples/nmi/nmi.rs#L325)
+**Examples:** [Python](../../examples/nmi/nmi.py#L186) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L121) · [Rust](../../examples/nmi/nmi.rs#L174)
 
 ### Refund
 
 Return funds to the customer for a completed payment.
 
-**Examples:** [Python](../../examples/nmi/nmi.py#L280) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L157) · [Rust](../../examples/nmi/nmi.rs#L348)
+**Examples:** [Python](../../examples/nmi/nmi.py#L211) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L143) · [Rust](../../examples/nmi/nmi.rs#L197)
 
 ### Void Payment
 
 Cancel an authorized but not-yet-captured payment.
 
-**Examples:** [Python](../../examples/nmi/nmi.py#L305) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L179) · [Rust](../../examples/nmi/nmi.rs#L371)
+**Examples:** [Python](../../examples/nmi/nmi.py#L236) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L165) · [Rust](../../examples/nmi/nmi.rs#L220)
 
 ### Get Payment Status
 
 Retrieve current payment status from the connector.
 
-**Examples:** [Python](../../examples/nmi/nmi.py#L327) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L198) · [Rust](../../examples/nmi/nmi.rs#L390)
+**Examples:** [Python](../../examples/nmi/nmi.py#L258) · [JavaScript](../../examples/nmi/nmi.js) · [Kotlin](../../examples/nmi/nmi.kt#L184) · [Rust](../../examples/nmi/nmi.rs#L239)
 
 ## API Reference
 
@@ -168,15 +149,10 @@ Retrieve current payment status from the connector.
 | [PaymentService.Authorize](#paymentserviceauthorize) | Payments | `PaymentServiceAuthorizeRequest` |
 | [PaymentService.Capture](#paymentservicecapture) | Payments | `PaymentServiceCaptureRequest` |
 | [PaymentService.Get](#paymentserviceget) | Payments | `PaymentServiceGetRequest` |
-| [EventService.HandleEvent](#eventservicehandleevent) | Events | `EventServiceHandleRequest` |
-| [EventService.ParseEvent](#eventserviceparseevent) | Events | `EventServiceParseRequest` |
 | [PaymentMethodAuthenticationService.PreAuthenticate](#paymentmethodauthenticationservicepreauthenticate) | Authentication | `PaymentMethodAuthenticationServicePreAuthenticateRequest` |
 | [PaymentService.ProxyAuthorize](#paymentserviceproxyauthorize) | Payments | `PaymentServiceProxyAuthorizeRequest` |
-| [PaymentService.ProxySetupRecurring](#paymentserviceproxysetuprecurring) | Payments | `PaymentServiceProxySetupRecurringRequest` |
-| [RecurringPaymentService.Charge](#recurringpaymentservicecharge) | Mandates | `RecurringPaymentServiceChargeRequest` |
 | [PaymentService.Refund](#paymentservicerefund) | Payments | `PaymentServiceRefundRequest` |
 | [RefundService.Get](#refundserviceget) | Refunds | `RefundServiceGetRequest` |
-| [PaymentService.SetupRecurring](#paymentservicesetuprecurring) | Payments | `PaymentServiceSetupRecurringRequest` |
 | [PaymentService.Void](#paymentservicevoid) | Payments | `PaymentServiceVoidRequest` |
 
 ### Payments
@@ -216,15 +192,6 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | MB Way | ⚠ |
 | Satispay | ⚠ |
 | Wero | ⚠ |
-| GoPay | ⚠ |
-| GCash | ⚠ |
-| Momo | ⚠ |
-| Dana | ⚠ |
-| Kakao Pay | ⚠ |
-| Touch 'n Go | ⚠ |
-| Twint | ⚠ |
-| Vipps | ⚠ |
-| Swish | ⚠ |
 | Affirm | ⚠ |
 | Afterpay | ⚠ |
 | Klarna | ⚠ |
@@ -271,14 +238,14 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | Local | ⚠ |
 | Indonesian | ⚠ |
 | ACH | ✓ |
-| SEPA | x |
-| BACS | x |
-| BECS | x |
-| SEPA Guaranteed | x |
+| SEPA | ⚠ |
+| BACS | ⚠ |
+| BECS | ⚠ |
+| SEPA Guaranteed | ⚠ |
 | Crypto | x |
 | Reward | ⚠ |
 | Givex | x |
-| PaySafeCard | ⚠ |
+| PaySafeCard | x |
 | E-Voucher | ⚠ |
 | Boleto | ⚠ |
 | Efecty | ⚠ |
@@ -301,13 +268,13 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 ```python
 "payment_method": {
-  "card": {
-    "card_number": "4111111111111111",
-    "card_exp_month": "03",
-    "card_exp_year": "2030",
-    "card_cvc": "737",
-    "card_holder_name": "John Doe"
-  }
+    "card": {  # Generic card payment.
+        "card_number": {"value": "4111111111111111"},  # Card Identification.
+        "card_exp_month": {"value": "03"},
+        "card_exp_year": {"value": "2030"},
+        "card_cvc": {"value": "737"},
+        "card_holder_name": {"value": "John Doe"}  # Cardholder Information.
+    }
 }
 ```
 
@@ -315,20 +282,20 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 ```python
 "payment_method": {
-  "google_pay_sdk": {
-    "type": "CARD",
-    "description": "Visa 1111",
-    "info": {
-      "card_network": "VISA",
-      "card_details": "1111"
-    },
-    "tokenization_data": {
-      "encrypted_data": {
-        "token_type": "PAYMENT_GATEWAY",
-        "token": "{\"id\":\"tok_probe_gpay\",\"object\":\"token\",\"type\":\"card\"}"
-      }
+    "google_pay": {  # Google Pay.
+        "type": "CARD",  # Type of payment method.
+        "description": "Visa 1111",  # User-facing description of the payment method.
+        "info": {
+            "card_network": "VISA",  # Card network name.
+            "card_details": "1111"  # Card details (usually last 4 digits).
+        },
+        "tokenization_data": {
+            "encrypted_data": {  # Encrypted Google Pay payment data.
+                "token_type": "PAYMENT_GATEWAY",  # The type of the token.
+                "token": "{\"id\":\"tok_probe_gpay\",\"object\":\"token\",\"type\":\"card\"}"  # Token generated for the wallet.
+            }
+        }
     }
-  }
 }
 ```
 
@@ -336,15 +303,15 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 
 ```python
 "payment_method": {
-  "ach": {
-    "account_number": "000123456789",
-    "routing_number": "110000000",
-    "bank_account_holder_name": "John Doe"
-  }
+    "ach": {  # Ach - Automated Clearing House.
+        "account_number": {"value": "000123456789"},  # Account number for ach bank debit payment.
+        "routing_number": {"value": "110000000"},  # Routing number for ach bank debit payment.
+        "bank_account_holder_name": {"value": "John Doe"}  # Bank account holder name.
+    }
 }
 ```
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L375) · [Kotlin](../../examples/nmi/nmi.kt#L216) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L280) · [TypeScript](../../examples/nmi/nmi.ts#L265) · [Kotlin](../../examples/nmi/nmi.kt#L202) · [Rust](../../examples/nmi/nmi.rs#L257)
 
 #### PaymentService.Capture
 
@@ -355,7 +322,7 @@ Finalize an authorized payment by transferring funds. Captures the authorized am
 | **Request** | `PaymentServiceCaptureRequest` |
 | **Response** | `PaymentServiceCaptureResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L384) · [Kotlin](../../examples/nmi/nmi.kt#L228) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L289) · [TypeScript](../../examples/nmi/nmi.ts#L274) · [Kotlin](../../examples/nmi/nmi.kt#L214) · [Rust](../../examples/nmi/nmi.rs#L269)
 
 #### PaymentService.Get
 
@@ -366,7 +333,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L393) · [Kotlin](../../examples/nmi/nmi.kt#L238) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L298) · [TypeScript](../../examples/nmi/nmi.ts#L283) · [Kotlin](../../examples/nmi/nmi.kt#L224) · [Rust](../../examples/nmi/nmi.rs#L276)
 
 #### PaymentService.ProxyAuthorize
 
@@ -377,18 +344,7 @@ Authorize using vault-aliased card data. Proxy substitutes before connector.
 | **Request** | `PaymentServiceProxyAuthorizeRequest` |
 | **Response** | `PaymentServiceAuthorizeResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L429) · [Kotlin](../../examples/nmi/nmi.kt#L306) · [Rust](../../examples/nmi/nmi.rs)
-
-#### PaymentService.ProxySetupRecurring
-
-Setup recurring mandate using vault-aliased card data.
-
-| | Message |
-|---|---------|
-| **Request** | `PaymentServiceProxySetupRecurringRequest` |
-| **Response** | `PaymentServiceSetupRecurringResponse` |
-
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L438) · [Kotlin](../../examples/nmi/nmi.kt#L335) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L316) · [TypeScript](../../examples/nmi/nmi.ts#L301) · [Kotlin](../../examples/nmi/nmi.kt#L261) · [Rust](../../examples/nmi/nmi.rs#L290)
 
 #### PaymentService.Refund
 
@@ -399,18 +355,7 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L456) · [Kotlin](../../examples/nmi/nmi.kt#L398) · [Rust](../../examples/nmi/nmi.rs)
-
-#### PaymentService.SetupRecurring
-
-Configure a payment method for recurring billing. Sets up the mandate and payment details needed for future automated charges.
-
-| | Message |
-|---|---------|
-| **Request** | `PaymentServiceSetupRecurringRequest` |
-| **Response** | `PaymentServiceSetupRecurringResponse` |
-
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L474) · [Kotlin](../../examples/nmi/nmi.kt#L420) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L325) · [TypeScript](../../examples/nmi/nmi.ts#L310) · [Kotlin](../../examples/nmi/nmi.kt#L289) · [Rust](../../examples/nmi/nmi.rs#L297)
 
 #### PaymentService.Void
 
@@ -421,7 +366,7 @@ Cancel an authorized payment that has not been captured. Releases held funds bac
 | **Request** | `PaymentServiceVoidRequest` |
 | **Response** | `PaymentServiceVoidResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts) · [Kotlin](../../examples/nmi/nmi.kt#L459) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L343) · [TypeScript](../../examples/nmi/nmi.ts) · [Kotlin](../../examples/nmi/nmi.kt#L311) · [Rust](../../examples/nmi/nmi.rs#L311)
 
 ### Refunds
 
@@ -434,20 +379,7 @@ Retrieve refund status from the payment processor. Tracks refund progress throug
 | **Request** | `RefundServiceGetRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L465) · [Kotlin](../../examples/nmi/nmi.kt#L408) · [Rust](../../examples/nmi/nmi.rs)
-
-### Mandates
-
-#### RecurringPaymentService.Charge
-
-Charge using an existing stored recurring payment instruction. Processes repeat payments for subscriptions or recurring billing without collecting payment details.
-
-| | Message |
-|---|---------|
-| **Request** | `RecurringPaymentServiceChargeRequest` |
-| **Response** | `RecurringPaymentServiceChargeResponse` |
-
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L447) · [Kotlin](../../examples/nmi/nmi.kt#L367) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L334) · [TypeScript](../../examples/nmi/nmi.ts#L319) · [Kotlin](../../examples/nmi/nmi.kt#L299) · [Rust](../../examples/nmi/nmi.rs#L304)
 
 ### Authentication
 
@@ -460,4 +392,4 @@ Initiate 3DS flow before payment authorization. Collects device data and prepare
 | **Request** | `PaymentMethodAuthenticationServicePreAuthenticateRequest` |
 | **Response** | `PaymentMethodAuthenticationServicePreAuthenticateResponse` |
 
-**Examples:** [Python](../../examples/nmi/nmi.py) · [TypeScript](../../examples/nmi/nmi.ts#L420) · [Kotlin](../../examples/nmi/nmi.kt#L277) · [Rust](../../examples/nmi/nmi.rs)
+**Examples:** [Python](../../examples/nmi/nmi.py#L307) · [TypeScript](../../examples/nmi/nmi.ts#L292) · [Kotlin](../../examples/nmi/nmi.kt#L232) · [Rust](../../examples/nmi/nmi.rs#L283)

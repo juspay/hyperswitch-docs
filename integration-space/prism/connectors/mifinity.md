@@ -18,19 +18,15 @@ Use this config for all flows in this connector. Replace `YOUR_API_KEY` with you
 <details><summary>Python</summary>
 
 ```python
-from payments.generated import sdk_config_pb2, payment_pb2, payment_methods_pb2
+from payments.generated import sdk_config_pb2, payment_pb2
 
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
-    connector_config=payment_pb2.ConnectorSpecificConfig(
-        mifinity=payment_pb2.MifinityConfig(
-            key=payment_methods_pb2.SecretString(value="YOUR_KEY"),
-            base_url="YOUR_BASE_URL",
-            brand_id=payment_methods_pb2.SecretString(value="YOUR_BRAND_ID"),
-            destination_account_number=payment_methods_pb2.SecretString(value="YOUR_DESTINATION_ACCOUNT_NUMBER"),
-        ),
-    ),
 )
+# Set credentials before running (field names depend on connector auth type):
+# config.connector_config.CopyFrom(payment_pb2.ConnectorSpecificConfig(
+#     mifinity=payment_pb2.MifinityConfig(api_key=...),
+# ))
 
 ```
 
@@ -42,19 +38,14 @@ config = sdk_config_pb2.ConnectorConfig(
 <details><summary>JavaScript</summary>
 
 ```javascript
-const { PaymentClient } = require('hyperswitch-prism');
-const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
+const { ConnectorClient } = require('connector-service-node-ffi');
 
-const config = ConnectorConfig.create({
-    connector: Connector.MIFINITY,
-    environment: Environment.SANDBOX,
-    auth: {
-        mifinity: {
-            key: { value: 'YOUR_KEY' },
-            baseUrl: 'YOUR_BASE_URL',
-            brandId: { value: 'YOUR_BRAND_ID' },
-            destinationAccountNumber: { value: 'YOUR_DESTINATION_ACCOUNT_NUMBER' },
-        }
+// Reuse this client for all flows
+const client = new ConnectorClient({
+    connector: 'Mifinity',
+    environment: 'sandbox',
+    connector_auth_type: {
+        header_key: { api_key: 'YOUR_API_KEY' },
     },
 });
 ```
@@ -68,16 +59,11 @@ const config = ConnectorConfig.create({
 
 ```kotlin
 val config = ConnectorConfig.newBuilder()
-    .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
-    .setConnectorConfig(
-        ConnectorSpecificConfig.newBuilder()
-            .setMifinity(MifinityConfig.newBuilder()
-                .setKey(SecretString.newBuilder().setValue("YOUR_KEY").build())
-                .setBaseUrl("YOUR_BASE_URL")
-                .setBrandId(SecretString.newBuilder().setValue("YOUR_BRAND_ID").build())
-                .setDestinationAccountNumber(SecretString.newBuilder().setValue("YOUR_DESTINATION_ACCOUNT_NUMBER").build())
-                .build())
-            .build()
+    .setConnector("Mifinity")
+    .setEnvironment(Environment.SANDBOX)
+    .setAuth(
+        ConnectorAuthType.newBuilder()
+            .setHeaderKey(HeaderKey.newBuilder().setApiKey("YOUR_API_KEY"))
     )
     .build()
 ```
@@ -90,22 +76,13 @@ val config = ConnectorConfig.newBuilder()
 <details><summary>Rust</summary>
 
 ```rust
-use grpc_api_types::payments::*;
-use grpc_api_types::payments::connector_specific_config;
+use connector_service_sdk::{ConnectorClient, ConnectorConfig};
 
 let config = ConnectorConfig {
-    connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Mifinity(MifinityConfig {
-                key: Some(hyperswitch_masking::Secret::new("YOUR_KEY".to_string())),  // Authentication credential
-                base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
-                brand_id: Some(hyperswitch_masking::Secret::new("YOUR_BRAND_ID".to_string())),  // Authentication credential
-                destination_account_number: Some(hyperswitch_masking::Secret::new("YOUR_DESTINATION_ACCOUNT_NUMBER".to_string())),  // Authentication credential
-                ..Default::default()
-            })),
-        }),
-    options: Some(SdkOptions {
-        environment: Environment::Sandbox.into(),
-    }),
+    connector: "Mifinity".to_string(),
+    environment: Environment::Sandbox,
+    auth: ConnectorAuth::HeaderKey { api_key: "YOUR_API_KEY".into() },
+    ..Default::default()
 };
 ```
 
@@ -159,15 +136,6 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | MB Way | ⚠ |
 | Satispay | ⚠ |
 | Wero | ⚠ |
-| GoPay | ⚠ |
-| GCash | ⚠ |
-| Momo | ⚠ |
-| Dana | ⚠ |
-| Kakao Pay | ⚠ |
-| Touch 'n Go | ⚠ |
-| Twint | ⚠ |
-| Vipps | ⚠ |
-| Swish | ⚠ |
 | Affirm | ⚠ |
 | Afterpay | ⚠ |
 | Klarna | ⚠ |
@@ -221,7 +189,7 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | Crypto | x |
 | Reward | ⚠ |
 | Givex | x |
-| PaySafeCard | ⚠ |
+| PaySafeCard | x |
 | E-Voucher | ⚠ |
 | Boleto | ⚠ |
 | Efecty | ⚠ |
@@ -249,4 +217,4 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/mifinity/mifinity.py) · [TypeScript](../../examples/mifinity/mifinity.ts#L41) · [Kotlin](../../examples/mifinity/mifinity.kt#L51) · [Rust](../../examples/mifinity/mifinity.rs)
+**Examples:** [Python](../../examples/mifinity/mifinity.py#L37) · [TypeScript](../../examples/mifinity/mifinity.ts#L36) · [Kotlin](../../examples/mifinity/mifinity.kt#L36) · [Rust](../../examples/mifinity/mifinity.rs#L38)

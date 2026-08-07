@@ -1,6 +1,5 @@
 ---
 description: Set up server-side payment creation and SDK integration for Juspay Hyperswitch
-hidden: true
 icon: server
 metaLinks:
   alternates:
@@ -11,7 +10,7 @@ metaLinks:
 
 ### Create a payment using S2S Call
 
-To create a payment intent, send a request to either our sandbox or production endpoint. For detailed information, refer to the [**API Reference**](https://api-reference.hyperswitch.io/v1/payments/payments--create) documentation.
+To create a payment intent, send a request to either our sandbox or production endpoint. For detailed information, refer to the [**API Reference**](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) documentation.
 
 Upon successful creation, you will receive a `client_secret`, which must be provided to the SDK to render it properly.
 
@@ -51,5 +50,5 @@ _To integrate Web SDK, follow React, HTML and JS with REST API Integration._
 _To integrate mobile SDK, follow Kotlin, Swift, React Native, and Flutter with REST API Integration_
 
 {% hint style="info" %}
-In case you're integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/v1/payments/payments--update) for better analytics.
+In case you're integrating the ExpressCheckout (mentioned later below), instead of creating multiple paymentIntents for the same customer session, you can also use [paymentsUpdate API](https://api-reference.hyperswitch.io/api-reference/payments/payments--update) for better analytics.
 {% endhint %}

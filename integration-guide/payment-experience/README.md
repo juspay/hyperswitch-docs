@@ -1,6 +1,9 @@
 ---
 description: Learn about integration options for accepting payments online.
-icon: tv
+icon: sidebar-flip
+metaLinks:
+  alternates:
+    - ./
 ---
 
 # Payment Experience
@@ -11,35 +14,35 @@ Optimize your payments integration and unlock higher revenue with the Optimized 
 [Explore the demo](https://hyperswitch-demo-store.netlify.app/)
 {% endhint %}
 
-#### Learn which payments integration fits your business <a href="#learn-which-payments-integration-fits-your-business" id="learn-which-payments-integration-fits-your-business"></a>
+### Learn which payments integration fits your business
 
 Use Hyperswitch to accept payments for your business globally. The below variations allow you to learn about the different integration options available
 
-[**Accept payments without code**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/payment-links)
+#### [Accept payments without code](payment/payment-links/)
 
 Use payment links to accept payments without building any integration onto a website or an app.
 
-[**Build a checkout**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/web)
+#### [Build a checkout](payment/web/)
 
-Integrate the checkout in your website and [customize](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/web/customization) it as per your requirements.
+Integrate the checkout in your website and [customize](payment/web/customization.md) it as per your requirements.
 
-[**Build advanced integration**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/web/headless)
+#### [Build advanced integration](payment/web/headless.md)
 
 Use our headless SDK to have full control over your checkout while using the payment-related functionalities in a decoupled architecture.
 
-[**Build an in-app integration**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/mobile)
+#### [Build an in-app integration](payment/mobile/)
 
-Use our mobile SDK to accept payments in [Android](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/mobile/android) or [iOS](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/mobile/ios) apps.
+Use our mobile SDK to accept payments in [Android](payment/mobile/android/) or [iOS](payment/mobile/ios/) apps.
 
-[**Build an APM-only integration**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets)
+#### [Build an APM-only integration](payment/enable-alternate-payment-method-widgets/)
 
 Use our Alternate Payment Method widget (APM widget) to power the global APMs in the unified format. This augments your existing checkout in a low code manner.
 
-[**Build a Vault SDK integration**](https://sites.gitbook.com/preview/site_gbSsq/~/revisions/Bk4ZQ060dHFoocGBrSEZ/integration-guide/payment-experience/payment-method)
+#### [Build a Vault SDK integration](payment-method/)
 
 Use our Vault SDK to tokenize the card first and then proceed with payment using a vault token. The Vault SDK is flexible to work with [Hyperswitch unified payments API](https://api-reference.hyperswitch.io/v1/payments/payments--create) as well as the [Proxy or forwarding](https://api-reference.hyperswitch.io/v2/proxy/proxy-v1) API of Hyperswitch
 
-#### Intelligent Payment Method Display & Experience
+### Intelligent Payment Method Display & Experience
 
 Our SDK intelligently displays payment methods based on device, geo, and merchant configuration:
 

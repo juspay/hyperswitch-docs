@@ -2,7 +2,6 @@
 description: >-
   Integrate Hyperswitch's Vault service to store customer payment methods
   securely and eliminate PCI DSS compliance burden
-hidden: true
 icon: bars-progress
 metaLinks:
   alternates:
@@ -13,22 +12,25 @@ metaLinks:
 
 The Juspay Hyperswitch Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
-{% hint style="info" %}
-**Full SDK reference:** This page provides a quick-start guide. For the complete React + JS integration walkthrough (including `confirmTokenization`, error handling, and appearance customization), see [Vault SDK Integration](../../../workflows/vault/sdk-integration.md).
-{% endhint %}
+### Key Features of Payment Method Management in Hyperswitch
 
-### Key Features
+Hyperswitch simplifies the complexities of payment method management, so you can offer a seamless, secure experience to your customers with minimal effort.
 
-| Feature                        | Description                                                        |
-| ------------------------------ | ------------------------------------------------------------------ |
-| **Payment Method Creation**    | Allow customers to save new payment methods during checkout        |
-| **Storing Payment Methods**    | Securely store card details — customers never re-enter information |
-| **Retrieving Payment Methods** | Load a customer's saved methods by `customer_id`                   |
-| **Deleting / Deactivating**    | Let customers remove outdated payment methods                      |
+#### Payment Method Creation
 
-### Prerequisites
+Easily allow your customers to save new payment methods during checkout, providing a convenient option for future transactions.
 
-Before integrating, generate your **Vault API Key** and note your **Profile ID**. See [Vault Configuration](../../../workflows/vault/configuration.md).
+#### Storing Payment Methods
+
+Hyperswitch securely stores customer payment details, enabling repeat purchases without requiring them to re-enter their information each time.
+
+#### Retrieving Payment Methods
+
+Customers can quickly access their saved payment methods, streamlining their checkout process and enhancing their overall experience.
+
+#### Deleting/Deactivating Payment Methods
+
+Keep payment options up to date by allowing customers to manage outdated or inactive methods, ensuring a clean and efficient payment experience.
 
 ### Integration Guide
 
@@ -39,6 +41,15 @@ First, you'll need to set up your server to create payment method sessions, whic
 **Obtaining Your API Keys**
 
 * Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
+
+To generate your Vault API keys, follow these steps:
+
+1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
+2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
+3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
+4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
+
+**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
 
 **Creating a Payment Methods Session Endpoint**
 
@@ -52,7 +63,7 @@ app.post("/create-payment-method-session", async (req, res) => {
   try {
     // Create payment method session on Hyperswitch
     const response = await fetch(
-      `${HYPERSWITCH_SERVER_URL}/v1/payment-method-sessions`,
+      `${HYPERSWITCH_SERVER_URL}/v2/payment-method-sessions`,
       {
         method: "POST",
         headers: {
@@ -71,9 +82,10 @@ app.post("/create-payment-method-session", async (req, res) => {
         error: data.error || "Failed to create payment method session",
       });
     }
-    // Return sdk authorization to the frontend
+    // Return Payment method session ID and client secret to the frontend
     res.json({
-      sdkAuthorization: data.sdk_authorization,
+      id: data.id,
+      clientSecret: data.client_secret,
     });
   } catch (error) {
     console.error("Server Error:", error);
@@ -85,9 +97,7 @@ app.post("/create-payment-method-session", async (req, res) => {
 });
 ```
 
-> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials. See [Vault Configuration](../../../workflows/vault/configuration.md).
-
-API reference: [Payment Method Session — Create](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1)
+> **Note**: Replace `YOUR_PROFILE_ID` and `YOUR_API_KEY` with your actual credentials from the Hyperswitch dashboard.
 
 #### 2. Client-Side Integration
 
@@ -107,7 +117,7 @@ Add one empty placeholder `div` to your page for the Payment Methods Management 
 
 **2.2 Fetch the Payment Method Session and Mount the Payment Methods Management Element**
 
-Make a request to the endpoint on your server to create a new payment method session. The `sdk_authorization` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
+Make a request to the endpoint on your server to create a new payment method session. The `id` and `clientSecret` returned by your endpoint are used to initialize and display the customer's saved payment methods. Following this, create a `paymentMethodsManagementElements` element and mount it to the placeholder `div` in your form. This embeds an iframe with a dynamic interface that displays saved payment methods, allowing your customer to view, manage, and delete their payment methods.
 
 > Note: Make sure to never share your API key with your client application as this could potentially compromise your payment flow.
 
@@ -122,12 +132,12 @@ async function initialize() {
       customer_id: "CUSTOMER_ID",
     }),
   });
-  const { sdkAuthorization } = await response.json();
+  const { id, clientSecret } = await response.json();
 
   // Step 2: Initialize HyperLoader.js
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
 
   let hyper;
   script.onload = () => {
@@ -146,7 +156,8 @@ async function initialize() {
     const paymentMethodsManagementElements =
       hyper.paymentMethodsManagementElements({
         appearance,
-        sdkAuthorization: sdkAuthorization,
+        pmSessionId: id,
+        pmClientSecret: clientSecret,
       });
 
     // Step 6: Create and mount the paymentMethodsManagement element

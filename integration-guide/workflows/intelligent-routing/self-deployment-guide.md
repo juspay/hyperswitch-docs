@@ -1,5 +1,5 @@
 ---
-description: Self-deploy the routing service used by Hyperswitch Intelligent Routing
+description: Self-deploy the intelligent routing engine with Docker
 icon: screwdriver-wrench
 metaLinks:
   alternates:
@@ -8,92 +8,63 @@ metaLinks:
 
 # Self-Deployment Guide
 
-Self-hosted Hyperswitch deployments can run the routing service in their own infrastructure. Hyperswitch remains the payment orchestrator; the routing service is used by Hyperswitch to evaluate dynamic routing decisions.
+### Self-deploy and integrate it with your existing orchestrator
 
-{% hint style="info" %}
-Hosted Hyperswitch merchants usually do not need this setup. Use this guide only when you are running Hyperswitch yourself.
-{% endhint %}
+Juspay Hyperswitch's intelligent routing engine can be self-deployed to fit into your existing payments setup:
 
 <figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-## Run The Routing Service
+#### 1. Clone the Repository
 
-Clone the routing service repository:
-
-```bash
+```
 git clone https://github.com/juspay/decision-engine.git
 cd decision-engine
 ```
 
-## Install Docker
+#### 2. Install Docker
 
+```
 Make sure Docker is installed on your system.
+You can download and install Docker Desktop from the below links.
 
-* Mac: [Docker Desktop for Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
-* Windows: [Docker Desktop for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
-* Linux: [Docker Engine for Linux](https://docs.docker.com/desktop/setup/install/linux/)
-
-Start the API with Docker Compose:
-
-```bash
-docker compose --profile postgres-ghcr up -d
+- Mac - https://docs.docker.com/desktop/setup/install/mac-install/
+- Windows - https://docs.docker.com/desktop/setup/install/windows-install/
+- Linux - https://docs.docker.com/desktop/setup/install/linux/
 ```
 
-For the API, dashboard, and local docs together:
+#### 3. Run the Project
 
-```bash
-docker compose --profile dashboard-postgres-ghcr up -d
+**a. First-Time Setup**
+
+If you're setting up the environment for the first time, run:
+
 ```
-
-## Repository Make Targets
-
-You can also use the repository Make targets:
-
-```bash
-make init-pg-ghcr
-make run-pg-ghcr
-```
-
-Legacy aliases are also available:
-
-```bash
 make init
+```
+
+This command performs the following under the hood:
+
+```
+docker-compose run --rm db-migrator && docker-compose up open-router
+```
+
+This will:
+
+* Set up the environment
+* Set up the database with the required schema
+* Set up redis and the server for running the application
+* Push the configs defined in the config.yaml & the static rules defined for routing in priority\_logic.txt to the DB
+
+**b. Start the Server (without resetting DB)**
+
+If the DB schema is already set up and you don't want to reset the DB, use:
+
+```
 make run
 ```
 
-The init targets start the backing services, apply database setup, and load routing configuration from the repository config files. The run targets start only the routing API container for an already initialized setup.
+**System Requirements:** Approximately 2GB of disk space
 
-Verify the service:
+After successful setup, the server will start running.
 
-```bash
-curl http://localhost:8080/health
-```
-
-Plan for approximately 2 GB of disk space. After the service starts, refer to the [Hyperswitch API reference](https://api-reference.hyperswitch.io/) for the payment APIs that use routing.
-
-## Connect With Hyperswitch
-
-Configure the routing service URL in Hyperswitch:
-
-```toml
-[open_router]
-dynamic_routing_enabled = true
-static_routing_enabled = true
-url = "http://localhost:8080"
-```
-
-When you are ready for Hyperswitch to use the external routing service, set the routing result source to `decision_engine`. Keep it as `hyperswitch_routing` while validating or migrating.
-
-## How Hyperswitch Uses It
-
-Hyperswitch calls the routing service during the payment flow, receives the selected processor, performs eligibility and fallback checks, and then continues the payment with the chosen connector. After the payment outcome is known, Hyperswitch sends feedback so auth-rate routing and analytics stay accurate.
-
-## Production Checklist
-
-Before sending live traffic, confirm:
-
-* Redis and database persistence are configured.
-* Health and readiness checks are monitored.
-* Default Fallback Routing is configured in Hyperswitch.
-* Payment outcomes are being reported for successful and failed attempts.
-* Routing decisions are visible in Hyperswitch analytics or logs.
+Once the server is set up, you can refer to the [API reference](https://github.com/juspay/decision-engine/blob/main/docs/api-reference1.md) for usage.

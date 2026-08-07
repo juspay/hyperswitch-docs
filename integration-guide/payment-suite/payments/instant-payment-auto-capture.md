@@ -2,7 +2,6 @@
 description: >-
   Authorize and capture a card payment in a single step — the simplest and most
   common one-time payment pattern.
-hidden: true
 icon: hands-holding-dollar
 metaLinks:
   alternates:

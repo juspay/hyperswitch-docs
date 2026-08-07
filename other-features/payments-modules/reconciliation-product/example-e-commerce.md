@@ -9,33 +9,9 @@ metaLinks:
 
 # Example: E Commerce
 
-```mermaid
-flowchart TB
+\{% @mermaid/diagram content="flowchart TB OD\["Order Data"] -- Ingested via automated connection --> DI\["Data Ingestion"] PD\["Payment Data"] -- Ingested via automated connection --> DI DI -- Transformed via defined configurations --> DT\["Data Transformation"] DT -- Order Data Stored --> ODB\[("Order Data")] DT -- Payment Data Stored --> PDB\[("Payment Data")] ODB -- Evaluated against Reconciliation Rules for Expectation Creation --> RE\["Rule Engine"] RE -- Expected Payment created based on specified rule --> ECS\["Expectation Creation Success"] RE --> ECF\["Expectation Creation Failure"] PDB --> TC\["Transaction Created"] ECS --> MA\["Matching Attempted by Recon Engine"] TC --> MA MA --> M\["Matched"] & MM\["Mismatched"] MM -- Manual Adjustment --> EM\["Exception Management"] EM -- Transaction sent for matching after correction --> MA
 
-OD["Order Data"] -- Ingested via automated connection --> DI["Data Ingestion"]
-PD["Payment Data"] -- Ingested via automated connection --> DI
-
-DI -- Transformed via defined configurations --> DT["Data Transformation"]
-
-DT -- Order Data Stored --> ODB[("Order Data")]
-DT -- Payment Data Stored --> PDB[("Payment Data")]
-
-ODB -- Evaluated against Reconciliation Rules for Expectation Creation --> RE["Rule Engine"]
-
-RE -- Expected Payment created based on specified rule --> ECS["Expectation Creation Success"]
-RE --> ECF["Expectation Creation Failure"]
-
-PDB --> TC["Transaction Created"]
-
-ECS --> MA["Matching Attempted by Recon Engine"]
-TC --> MA
-
-MA --> M["Matched"]
-MA --> MM["Mismatched"]
-
-MM -- Manual Adjustment --> EM["Exception Management"]
-EM -- Transaction sent for matching after correction --> MA
-
+```
 style OD fill:#FFF9C4
 style DI fill:#C8E6C9
 style PD fill:#FFF9C4
@@ -49,7 +25,7 @@ style TC fill:#BBDEFB
 style MA fill:#C8E6C9
 style M fill:#BBDEFB
 style MM fill:#FFCDD2
-style EM fill:#C8E6C9
+style EM fill:#C8E6C9" %}
 ```
 
 ### E-commerce Three-Way Reconciliation

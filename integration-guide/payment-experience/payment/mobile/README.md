@@ -2,7 +2,6 @@
 description: >-
   Integrate secure, customizable payments into iOS and Android apps with Juspay
   Hyperswitch mobile SDKs for native and cross-platform frameworks.
-hidden: true
 icon: mobile
 metaLinks:
   alternates:

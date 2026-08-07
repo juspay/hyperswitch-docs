@@ -19,71 +19,11 @@ Key Highlights:
 
 ### Vault and Proxy - Vaulting and Payments Flow
 
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#ffffff",
-    "primaryBorderColor": "#2563EB",
-    "lineColor": "#2563EB",
-    "secondaryColor": "#EFF6FF",
-    "tertiaryColor": "#DBEAFE",
-    "fontFamily": "Inter, system-ui, sans-serif",
-    "fontSize": "14px",
-    "textColor": "#000000",
-
-    "actorBkg": "#346DDB",
-    "actorBorder": "#999999",
-    "actorTextColor": "#ffffff",
-
-    "signalColor": "#000000",
-    "signalTextColor": "#696969",
-
-    "labelBoxBkgColor": "#346DDB",
-    "labelBoxBorderColor": "#2563EB"
-  }
-}}%%
-sequenceDiagram
-  participant C as Consumer
-  participant MFE as Merchant FE
-  participant PSDK as Hyperswitch PM SDK
-  participant MBE as Merchant BE
-  participant HBE as Hyperswitch BE
-  participant V as Vault
-  participant PSP as PSP
-
-  MFE ->> MBE: Create-payment-method-session with customer_id
-  MBE ->> HBE: "Create-payment-method-session" API using Merchant HS API Key & Profile ID
-  HBE -->> MBE: sdk_authorization
-  MBE -->> MFE: sdk_authorization
-
-  Note over MFE: Create a script tag to load HyperLoader.js
-  Note over MFE: Initialize window.Hyper using the Publishable Key
-  Note over MFE: Create PMM elements group using sdkAuthorization
-  Note over MFE: Create specific widget instance & mount SDK
-
-  C ->> PSDK: Add Payment method
-  PSDK ->> HBE: "Payment Method Session - Confirm a payment method session" API with card details
-  HBE ->> V: Store card details
-  Note over MBE: CVV is stored temporarily for a specific TTL or until first txn
-  V -->> HBE: Response
-  HBE -->> PSDK: Response (Session id & associated_token_id)
-
-  MBE ->> HBE: "Payment Method Session - List Payment Methods" API with Session id
-  HBE -->> MBE: Response (PM_ID)
-  Note over MBE: Response contains all payment methods associated with customer
-  Note over MBE: Choose the PM_ID for the Session id of the session
-
-  Note over MBE: Making a proxy payment
-  MBE ->> HBE: Send PSP payment request to Vault proxy endpoint with PM_ID
-  HBE ->> PSP: Send PSP payment request<br>to PSP (PM_ID replaced with actual card data)
-  PSP -->> HBE: Payment response
-  HBE -->> MBE: Payment response
-```
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Create Payment Method Session (Server-Side)
 
-The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create-v1) API with the `customer_id`. Hyperswitch responds with a `sdk_authorization`, which are required to authenticate the client-side session.
+The merchant server initiates the flow by calling the Hyperswitch [`Create-payment-method-session`](https://api-reference.hyperswitch.io/v2/payment-method-session/payment-method-session--create#payment-method-session-create) API with the `customer_id`. Hyperswitch responds with a `session_id` and `client_secret`, which are required to authenticate the client-side session.
 
 ```bash
 curl --request POST \
@@ -100,7 +40,7 @@ curl --request POST \
 
 #### 2. Initialize SDK (Client-Side)
 
-The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `sdk_authorization`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
+The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 
 ```js
 // Fetches a payment method session and mounts the payment methods management element
@@ -113,12 +53,12 @@ async function initialize() {
       customer_id: "CUSTOMER_ID",
     }),
   });
-  const { sdkAuthorization } = await response.json();
+  const { id, clientSecret } = await response.json();
 
   // Step 2: Initialize HyperLoader.js
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+  script.src = "https://beta.hyperswitch.io/v2/HyperLoader.js";
 
   let hyper;
   script.onload = () => {
@@ -137,7 +77,8 @@ async function initialize() {
     const paymentMethodsManagementElements =
       hyper.paymentMethodsManagementElements({
         appearance,
-        sdkAuthorization: sdkAuthorization,
+        pmSessionId: id,
+        pmClientSecret: clientSecret,
       });
 
     // Step 6: Create and mount the paymentMethodsManagement element
@@ -168,7 +109,7 @@ The merchant server initiates the payment by sending a request to the [Hyperswit
 #### New User Payments Flow
 
 1. Create Payment Method Session (Server-Side) The merchant server initiates the flow by calling the Hyperswitch
-2. [Initialize SDK (Client-Side)](../../payment-experience/payment-method/) The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `sdk_authorization`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
+2. [Initialize SDK (Client-Side)](../../payment-experience/payment-method/) The merchant client loads the `HyperLoader.js` script and initializes `window.Hyper` using the Publishable Key. Using the `session_id` and `client_secret`, the SDK creates a Payment Method Management (PMM) group and mounts the specific widget instance to the UI.
 3. Collect and Vault Card (Client-Side) The customer enters their card details directly into the SDK-managed widget. Upon confirmation, the SDK calls the `/Confirm a payment method session` API. Hyperswitch securely receives the data, stores it in the Vault (retaining the CVV temporarily for the transaction TTL), and returns a success response with the `session_id` to the client.
 4. Retrieve Payment Method ID (Server-Side) The merchant server calls the "List Payment Methods" API using the `session_id`. Hyperswitch returns a list of payment methods associated with the customer, from which the merchant server selects the appropriate `PM_ID` (Payment Method ID) to use for the transaction.
 5. Execute Proxy Payment (Server-Side) The merchant server initiates the payment by sending a request to the

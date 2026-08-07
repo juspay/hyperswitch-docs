@@ -22,7 +22,7 @@ metaLinks:
 
 At Juspay, we believe that payments infrastructure should be transparent, adaptable, and built for merchant control—not vendor lock-in. That’s why we made the bold decision to take our Payment Orchestrator open source.
 
-Enterprise merchants operate in a world where payment agility is a competitive advantage. Traditional closed-loop platforms dictate their own rules, pricing, and pace of innovation. Based on our 12-years of experience building and scaling global payment systems, we decided to take a different approach, giving merchants the power to customize, optimize, and scale payments to fit their unique business needs.
+Enterprise merchants operate in a world where payment agility is a competitive advantage. Traditional closed-loop platforms dictate their own rules, pricing, and pace of innovation. Based on our 12-years of experience building and scaling global payment systems, we decided to take a different approach—giving merchants the power to customize, optimize, and scale payments to fit their unique business needs.
 
 Guided by the learnings from our enterprise go-lives, we have been working on unbundling a range of stand-alone solutions from our broader technology stack to make them more accessible to merchants looking to expand their in-house system engineering capability. These stand-alone solutions range from services for [intelligent / dynamic payment routing](https://github.com/juspay/decision-engine), [payment methods vaulting](https://github.com/juspay/hyperswitch-card-vault), [cost observability](https://hyperswitch.io/cost-observability), [PSP-agnostic authentication](../integration-guide/workflows/3ds-decision-manager/), and an [APMs widget ](../integration-guide/payment-experience/payment/enable-alternate-payment-method-widgets/)that can be embedded anywhere.
 
@@ -35,7 +35,7 @@ Hyperswitch's technical architecture combines open source innovation with enterp
 #### 1. Open-Source Transparency & Extensibility
 
 * Complete Transparency & Confidence: Full visibility into payment orchestration with no black boxes, enabling informed decision-making and customization. Hyperswitch is maintained publicly on [GitHub](https://github.com/juspay/hyperswitch)
-* [Open Roadmap & Innovation](roadmap-q3-2026/roadmap.md): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
+* [Open Roadmap & Innovation](roadmap/): Collaborative development approach that allows merchants to influence and contribute to the platform's evolution
 * Speed to Market: Accelerate implementation and changes by building consensus faster through transparent architecture
 
 #### 2. Enterprise-Grade Reliability & Security Model

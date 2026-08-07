@@ -1,6 +1,5 @@
 ---
 description: Low-code solution to accept payments
-hidden: true
 icon: link
 metaLinks:
   alternates:

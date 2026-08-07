@@ -1,71 +1,97 @@
 ---
-description: >-
-  Try Hyperswitch and explore its modular architecture for a secure, streamlined
-  payments
 icon: compass
 cover: .gitbook/assets/Hero visual V6 (2).png
 coverY: 0
 metaLinks:
   alternates:
-    - ./
+    - /broken/pages/XoPzGnl6gFOvbu2eVGxQ
 ---
 
 # Exploration Guide
 
 Hyperswitch gives you full control over your payments infrastructure without the complexity of building from scratch. Whether you're validating a prototype or scaling globally, you can get started in minutes.
 
-### Try Hyperswitch Product Quickly
+This guide helps you:
 
-#### Use our hosted sandbox or Playground to explore the product quickly :
+* Quickly install Hyperswitch with minimal setup
+* Try your first hello world by making a payment
+* Learn about Hyperswitch’s modular architecture
+* Improve and streamline your checkout experience
+* See how Hyperswitch embeds security, reliability, and scalability into its core architecture
+
+***
+
+### Try Hyperswitch Quickly
+
+#### Get a Sandbox Ready in under 10 Minutes
+
+Spin up a working integration with minimal effort. Choose the path that fits your needs:
 
 <details>
 
 <summary><strong>Cloud Sandbox (Hyperswitch Hosted Test Environment)</strong></summary>
 
-[Try Hyperswitch →](https://app.hyperswitch.io)\
+[Try Hyperswitch →](/broken/pages/7ZGzFcNnCa2qvaHaWZF2)\
 Launch a ready-to-use Control Center test environment. No setup required, just log in and run your first transaction.
 
 </details>
 
 <details>
 
-<summary><strong>Hosted playground environment (pre-configured)</strong></summary>
-
-[Explore playground →](https://app.hyperswitch.io/hsdemo/)
-
-Try all our product features in a pre-configured playground environment
-
-</details>
-
-### Try Hyperswitch Deployment Quickly
-
-#### Deploy using Docker or Helm charts in local or a cloud environment:
-
-<details>
-
 <summary><strong>Local Deployment (Docker)</strong></summary>
 
-[Set up Docker Locally →](setup-hyperswitch-locally/run-hyperswitch.md)\
-Perfect for developers who want local control and flexibility.
+[Set up Docker Locally →](/broken/pages/jgjmuwMSXAegPUshFW5j)\
+Perfect for developers who want local control and flexibility. You'll launch a ready-to-use Control Center environment.
 
 </details>
 
 <details>
 
-<summary><strong>Local Deployment (Helm charts)</strong></summary>
+<summary><strong>API-first Integration</strong></summary>
 
-[Set up Docker Locally →](setup-hyperswitch-locally/run-hyperswitch.md)\
-Perfect for architects and infrastructure teams who want view all available components.
+[API Reference →](/broken/pages/LKuAfum9EKsnM93AWZOE)\
+[Use Postman Collection →](/broken/pages/6oAUAUulNGlVVKqcr0If)\
+Build a custom backend integration from scratch.
+
+> ⚠️ To authenticate API requests, you’ll need a username and password from either:\
+> • the [Cloud Sandbox](https://app.hyperswitch.io)\
+> • or your [Docker setup](https://docs.hyperswitch.io/hyperswitch-open-source/readme-1/unified-local-setup-using-docker)
 
 </details>
 
 <details>
 
-<summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for AWS, GCP &#x26; Azure</strong></summary>
+<summary><strong>Launch a Scalable Hyperswitch Instance on AWS</strong></summary>
 
-[Deploy on GCP or Azure →](https://docs.hyperswitch.io/self-hosting)
+[AWS Deployment →](/broken/pages/GYO8EiqQEVLNkJmilwfM)
+
+Launch Hyperswitch on your own AWS infrastructure with our step-by-step deployment guide. Ideal for teams looking for flexibility, control, and production-ready scalability.
+
+</details>
+
+<details>
+
+<summary><strong>Scalable, Self-Hosted Deployment | Helm Charts for GCP &#x26; Azure</strong></summary>
+
+[Deploy on GCP or Azure →](/broken/pages/eazTcZAFUC7fKMUoqC76)
 
 Install Hyperswitch on your cloud infrastructure using Helm charts for Kubernetes. This method gives you full control over your environment and is ideal for teams deploying on GCP, Azure, or any Kubernetes-compatible platform.
+
+</details>
+
+### Your first payment
+
+See Hyperswitch in action by sending your first test transaction via the cloud sandbox, local Docker setup or directly via API.
+
+<details>
+
+<summary><strong>Test a payment | Your First Hello World with Hyperswitch</strong></summary>
+
+[Control Center](/broken/pages/l28HCGRBvHUVXZcSIrCF) | Accessible through cloud sandbox or Docker
+
+[API ](/broken/pages/6oAUAUulNGlVVKqcr0If)| Accessible through the Postman Collection
+
+[Learn how the SDK, control center and backend work together](/broken/pages/yxQ8DSoPoTLZSxyImSgc)
 
 </details>
 
@@ -162,7 +188,7 @@ Deliver seamless, flexible, and localized payment flows that drive higher conver
 [Customizable Checkout SDK (Web) →](https://docs.hyperswitch.io/explore-hyperswitch/merchant-controls/integration-guide/web)\
 Embed a native, responsive checkout experience into your website with full control over styling and flow.
 
-[Click to Pay →](https://docs.hyperswitch.io/other-features/click-to-pay)\
+[Click to Pay →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets)\
 Enable frictionless, one-click payments for returning users using wallets and saved cards.
 
 [Payment Methods Management →](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup)\
@@ -232,7 +258,7 @@ Here's how [Hyperswitch handles idempotency and message ordering](https://deepwi
 
 <summary>Take Hyperswitch into production</summary>
 
-[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/self-hosting/production-deployment/going-live)\
+[How to Go Live with Hyperswitch →](https://docs.hyperswitch.io/check-list-for-production/going-live)\
 Follow our go-live checklist to launch with confidence — covering setup, credentials, security, and monitoring.
 
 </details>
@@ -250,5 +276,5 @@ Follow our go-live checklist to launch with confidence — covering setup, crede
 
 * [API Reference →](https://api-reference.hyperswitch.io/introduction)
 * [SDK Documentation →](https://docs.hyperswitch.io/learn-more/sdk-payment-flows)
-* [Postman Collection →](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/README#use-postman)
+* [Postman Collection →](https://docs.hyperswitch.io/hyperswitch-open-source/exploration-guide#use-postman)
 * [GitHub Repository →](https://github.com/juspay/hyperswitch)
