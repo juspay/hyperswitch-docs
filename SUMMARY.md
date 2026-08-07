@@ -274,6 +274,7 @@
     * [Statuses in Reconciliation](other-features/payments-modules/reconciliation-product/statuses-in-reconciliation.md)
     * [Merchant & Profile Mapping in Recon](other-features/payments-modules/reconciliation-product/merchant-and-profile-mapping-in-recon.md)
     * [Roadmap](other-features/payments-modules/reconciliation-product/roadmap.md)
+    * [FAQ](other-features/payments-modules/reconciliation-product/faq.md)
   * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
 * [Click To Pay](other-features/click-to-pay/README.md)
