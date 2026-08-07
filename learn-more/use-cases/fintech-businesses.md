@@ -3,6 +3,9 @@ description: >-
   Implement payment augmentation patterns for FinTech enterprises to expand
   geographies, boost auth rates, and maintain data sovereignty
 icon: watch-calculator
+metaLinks:
+  alternates:
+    - fintech-businesses.md
 ---
 
 # Fintech Businesses
@@ -25,12 +28,12 @@ Juspay Hyperswitch is designed as a modular middleware layer that injects specif
 
 Expanding into new geographies (e.g., adding Pix in Brazil or UPI in India) typically requires months of engineering time to build and maintain new PSP integrations. This slows down market entry and diverts resources from core product work.
 
-Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs across 50+ global processors without writing a single line of integration code.
+Juspay Hyperswitch acts as a stateless integration layer. You can utilise our [Connector Crate](https://github.com/juspay/hyperswitch/tree/main/crates/router/src/connector) to instantly access 300+ processor APIs without writing a single line of integration code.
 
 | Capability        | Description                                                                                     | Reference                                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Unified Schema    | Maps disparate upstream APIs (Stripe, Adyen, Checkout.com) into a single Request/Response Model | [Payment Intent Flow](https://api-reference.hyperswitch.io/v1/payments/payments--create#payments-create) |
-| Rapid Expansion   | Enable local payment methods (LPMs) like Klarna, WeChat Pay, or Afterpay via configuration      | [Supported Connectors](https://juspay.io/integrations)                                                   |
+| Rapid Expansion   | Enable local payment methods (LPMs) like Klarna, WeChat Pay, or Afterpay via configuration      | [Supported Connectors](https://hyperswitch.io/integrations)                                              |
 | Open Contribution | Fork the repo, add a connector, and run it locally or contribute back                           | [Open Source](https://github.com/juspay/hyperswitch)                                                     |
 
 ***
@@ -43,7 +46,7 @@ Juspay Hyperswitch supports a "Bring Your Own Cloud" model. You can deploy the e
 
 | Capability         | Description                                                                                                                            | Reference                                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Zero Data Egress   | Sensitive card data (PAN) never leaves your infrastructure; you maintain full ownership of logs and database                           | [Self-Managed Guide](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) |
+| Zero Data Egress   | Sensitive card data (PAN) never leaves your infrastructure; you maintain full ownership of logs and database                           | [Self-Managed Guide](https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/deploy-hyperswitch-on-aws) |
 | Compliance Control | Define TLS Termination (the point where encrypted traffic is decrypted) and key management strategies using AWS KMS or HashiCorp Vault | [Security Architecture](https://github.com/juspay/hyperswitch/blob/main/docs/architecture.md#security)           |
 | No Vendor Lock-in  | You host the code, so you are not dependent on an external vendor's uptime or roadmap                                                  | [Open Source](https://github.com/juspay/hyperswitch)                                                             |
 
@@ -77,11 +80,11 @@ Juspay Hyperswitch provides a [standalone Vault Service](https://docs.hyperswitc
 2. **Standalone offering**: Use the Vault Service as a standalone component without adopting the full orchestration platform
 3. **External vault support**: Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external providers like VGS or Forter
 
-| Capability        | Description                                                                                                                                             | Reference                                                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Network Tokens    | Integrate directly with schemes (Visa/Mastercard) to provision Network Tokens, which offer higher authorisation rates and auto-update for expired cards | [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation)          |
-| Token Portability | A card saved during a transaction on Processor A can be seamlessly charged via Processor B                                                              | [Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)                                      |
-| External Vaults   | Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                         | [External Vault Setup](https://docs.hyperswitch.io/explore-hyperswitch/workflows/vault/external-sdk-+-external-vault-setup/processing-payments-with-external-vault) |
+| Capability        | Description                                                                                                                                             | Reference                                                                                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Tokens    | Integrate directly with schemes (Visa/Mastercard) to provision Network Tokens, which offer higher authorisation rates and auto-update for expired cards | [Network Tokenisation](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/network-tokenisation) |
+| Token Portability | A card saved during a transaction on Processor A can be seamlessly charged via Processor B                                                              | [Vault Service](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards)                             |
+| External Vaults   | Already have a vault? Configure Juspay Hyperswitch to pass-through tokens or integrate with external VGS/Forter setups                                  | External Vault Setup                                                                                                                                       |
 
 ***
 
@@ -106,10 +109,10 @@ Juspay Hyperswitch normalises the chaos of the global payment ecosystem into a s
 
 **Error Code Unification Example:**
 
-| Source          | Error Code | Error Message               |
-| --------------- | ---------- | --------------------------- |
-| PSP 1           | `101`      | "Invalid card number"       |
-| PSP 2           | `1314`     | "Invalid card"              |
+| Source                 | Error Code | Error Message               |
+| ---------------------- | ---------- | --------------------------- |
+| PSP 1                  | `101`      | "Invalid card number"       |
+| PSP 2                  | `1314`     | "Invalid card"              |
 | **Juspay Hyperswitch** | `US_1000`  | "Issue with payment method" |
 
 This shows how disparate PSP error codes are mapped to a unified, intelligible standard—enabling consistent retry logic and clearer user feedback.
@@ -140,6 +143,6 @@ Ready to augment your payment stack? Here are the next steps:
 * [Explore intelligent routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing) — Set up smart routing rules
 * [Configure smart retries](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/smart-retries) — Improve authorisation rates automatically
 * [Implement webhooks](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks) — Standardise event handling across processors
-* [View supported connectors](https://juspay.io/integrations) — See the full list of integrated payment providers
-* [Try it in sandbox](https://docs.hyperswitch.io/explore-hyperswitch/account-management/sandbox-environment) — Test your integration without touching production
-* [Deploy self-managed](https://docs.hyperswitch.io/explore-hyperswitch/account-management/self-managed-deployment) — Run Juspay Hyperswitch in your own infrastructure
+* [View supported connectors](https://hyperswitch.io/integrations) — See the full list of integrated payment providers
+* [Try it in sandbox](https://docs.hyperswitch.io/integration-guide/account-management/sandbox-environment) — Test your integration without touching production
+* [Deploy self-managed](https://docs.hyperswitch.io/self-hosting) — Run Juspay Hyperswitch in your own infrastructure

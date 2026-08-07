@@ -131,7 +131,7 @@ Submit the Hyperswitch generated payment\_method\_id to process the MIT transact
 
 Submit a processor-issued token that represents the previously authorized payment instrument.
 
-#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-4)
+#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-network-transaction-id-one-of-0)
 
 Provide the original network transaction identifier along with the associated primary card data required for authorization.
 
@@ -165,9 +165,31 @@ The CIT used to set up recurring payments via MIT uses the PG token. This introd
 
 To mitigate this we would be storing the Network Transaction ID which will be a chaining identifier for the CIT in which the payment method was saved for off-session payments.
 
-In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries)
+In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries).
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+```mermaid
+flowchart TD
+  start([pg_agnostic_mandate])
+  enabled[enabled]
+  disabled[disabled]
+  check{Check if Network Reference ID is stored against that mandate}
+  route[Decide connector after Routing]
+  retrieve[Retrieve Card from locker]
+  mit1[MIT using raw card details and n/w reference ID]
+  mit2[MIT using mandate_id via the original connector]
+  mit3[MIT using mandate_id via the original connector]
+
+  start --> enabled
+  start --> disabled
+  enabled --> check
+  disabled --> mit3
+  check -->|Present| route
+  check -->|Not Present| mit2
+  route --> retrieve
+  retrieve --> mit1
+
+  classDef default fill:#3F8CFF,stroke:#3F8CFF,color:#ffffff,rx:6
+```
 
 #### Enabling Connector agnostic MITs
 

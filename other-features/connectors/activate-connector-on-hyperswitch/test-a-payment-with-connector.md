@@ -109,4 +109,4 @@ Apple Pay provides test cards from various card companies and supported regions 
 2. Your Safari browser automatically detects your location from your System Preferences.
 3. If you are not located in the supported countries, but still wish to test Apple Pay, please change your Region using **Mac System Preferences > Language & Region** and choose any of the 15 supported countries.
 
-<figure><img src="../../../.gitbook/assets/languageRegion (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/languageRegion.png" alt=""><figcaption></figcaption></figure>

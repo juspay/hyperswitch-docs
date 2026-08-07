@@ -134,7 +134,7 @@ unifiedCheckout.on("completeDoThis",()=>{
 {% tab title="ExpressCheckout" %}
 **2.2 Fetch the Payment and create the Express Checkout**
 
-<figure><img src="../../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 > The Express Checkout Element gives you a single integration for accepting payments through one-click payment buttons. Supported payment methods include ApplePay, GooglePay and PayPal.
 

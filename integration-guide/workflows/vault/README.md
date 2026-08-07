@@ -1,5 +1,7 @@
 ---
-description: Modular vaulting in Juspay Hyperswitch
+description: >-
+  Juspay Hyperswitch Vault — secure, modular payment method storage with
+  flexible PCI compliance options
 icon: vault
 metaLinks:
   alternates:
@@ -8,16 +10,43 @@ metaLinks:
 
 # Vault
 
-Juspay Hyperswitch offers flexible vault deployment options to suit different merchant PCI profiles and hosting preferences. Whether you're self-hosting Hyperswitch with your own PCI setup or leveraging the fully managed SaaS orchestration layer, Hyperswitch's modular vault architecture adapts seamlessly to your compliance boundary.
+Juspay Hyperswitch Vault is a PCI-compliant service for securely storing customer payment methods (cards, wallets, bank accounts) and generating reusable tokens (`payment_method_id`). It can be used **standalone** (vault-only, no orchestration) or **alongside** the Hyperswitch Payments Orchestrator.
 
-This section outlines the various Vault Flavors supported by Hyperswitch - covering self-hosted and SaaS environments, in-house and outsourced PCI models, and integrations with Juspay-hosted or third-party vaults such as VGS and TokenEx. Each model includes sequence diagrams, supported feature sets, and references to relevant configuration guides.
+### Key Features
 
-### Vault Architecture & Deployment Models
+* **PCI DSS Compliant Storage** — Card data is stored in Juspay's certified vault; your servers never handle raw card numbers.
+* **Reusable Tokens** — Every stored payment method gets a unique `payment_method_id` that works across new payments, recurring charges, and MITs.
+* **Network Tokenization** — When a card is saved, Hyperswitch automatically provisions a Visa or Mastercard network token and manages its lifecycle (renewal, updates).
+* **Flexible Deployment** — Deploy as a standalone vault service, integrate with Juspay's hosted infrastructure, self-host with your own PCI-compliant environment, or connect third-party vault providers (VGS, TokenEx, etc.).
+* **Proxy Payments** — Send PSP API calls through the Vault Proxy so raw card data never touches your servers or the PSP directly.
+* **Customer Payment Method Management** — Customers can view, add, and delete saved cards via an embeddable SDK widget.
 
-<table data-header-hidden><thead><tr><th width="152.29901123046875">Merchant Profile</th><th>Hosting Type</th><th>Vault Option</th><th>PCI Responsibility</th><th>Example Use Case</th></tr></thead><tbody><tr><td><strong>Merchant Profile</strong></td><td><strong>Hosting Type</strong></td><td><strong>Vault Option</strong></td><td><strong>PCI Responsibility</strong></td><td><strong>Example Use Case</strong></td></tr><tr><td><a href="saas-orchestration-with-juspay-vault.md">SaaS orchestration + Juspay vault</a></td><td>Juspay hosts Hyperswitch orchestration</td><td>Juspay hosted vault</td><td>PCI handled by Juspay</td><td>Enterprise or mid-scale merchants using Hyperswitch SaaS</td></tr><tr><td><a href="saas-orchestration-with-third-party-vault.md">SaaS orchestration + third-party vault</a></td><td>Juspay hosts Hyperswitch orchestration</td><td>Third-party vault or vault + SDK</td><td>PCI shared with external vault provider</td><td>Merchants already invested in external token vaults</td></tr><tr><td><a href="self-hosted-and-in-house-pci.md">Self-hosted &#x26; in-house PCI</a></td><td>Merchant hosts Hyperswitch orchestration</td><td>Native vault within self deployed Hyperswitch</td><td>Merchant manages PCI DSS compliance</td><td>Large enterprise merchants with full PCI scope</td></tr><tr><td><a href="self-hosted-orchestration-with-external-or-third-party-pci-vault.md">Self-hosted &#x26; outsourced PCI </a><em>(similar to SaaS with 3rd party vault)</em></td><td>Merchant hosts Hyperswitch orchestration</td><td>Juspay hosted vault + SDK or third-party vault + SDK (VGS, TokenEx)</td><td>PCI outsourced to third-party provider</td><td>Merchants who want control over orchestration but offload PCI</td></tr><tr><td><a href="../../payment-suite/payment-method-card/proxy.md">Vaulting &#x26; outsourced PCI</a></td><td>-</td><td>Juspay hosted vault + SDK</td><td>PCI handled by Juspay</td><td>Merchants looking for unified token vault with Proxy API</td></tr></tbody></table>
+---
 
-### Modular vaulting in Hyperswitch
+### Getting Started with Vault
 
-Modular Vaulting is a key component of Juspay's payment system, offering merchants the flexibility to either use Hyperswitch's built-in PCI-compliant vault with advanced tokenization and security features or connect to any third party vault provider. This flexibility enables businesses to start simple and scale confidently without re-architecting their entire system.
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td><strong>Integration</strong></td><td>How to connect to the Vault — Server-to-Server API or the Vault SDK (React / JS)</td><td><a href="integration.md">integration.md</a></td></tr>
+<tr><td><strong>Vault Deployment Models</strong></td><td>Choose the right deployment model for your PCI profile and hosting preference</td><td><a href="deployment-models.md">deployment-models.md</a></td></tr>
+</tbody></table>
 
-<div align="center"><img src="../../../.gitbook/assets/0.png" alt=""></div>
+---
+
+### Modular Vaulting Architecture
+
+Modular Vaulting is the foundation of Hyperswitch's payment infrastructure — it gives merchants the flexibility to use Hyperswitch's built-in PCI-compliant vault or connect any third-party vault provider, without re-architecting their payment stack.
+
+<div align="center"><img src="../../../.gitbook/assets/vault-architecture.png" alt="Modular Vaulting Architecture in Hyperswitch"></div>
+
+Merchants can start with the simplest model and migrate to a more sophisticated one as their compliance posture or infrastructure evolves. All models share the same `payment_method_id` token standard.
+
+---
+
+### When to Use Vault Standalone vs. with the Payments Orchestrator
+
+| | Vault Standalone | Vault with Orchestrator |
+|---|---|---|
+| **Purpose** | Store cards and generate tokens; payments are made separately via your own or a third-party PSP | Store cards **and** process payments through Hyperswitch routing, retries, and analytics |
+| **Typical flow** | Vault-Then-Pay using your own payment infrastructure or Proxy API | Pay-Then-Vault (card saved after payment) or Vault-Then-Pay via Hyperswitch Orchestration |
+| **PCI scope** | Managed entirely by Juspay Vault | Managed by Juspay (SaaS) or shared (self-hosted) |
+| **Where to start** | [Vault Integration](integration.md) | [Vault with Payments Orchestrator](../../payment-suite/payment-method-card/README.md) |

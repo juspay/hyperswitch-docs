@@ -81,7 +81,65 @@ In this flow:
 
 #### Flow Summary:
 
-<div data-full-width="false"><figure><img src="../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure></div>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB",
+    "loopTextColor": "#000080"
+  }
+}}%%
+sequenceDiagram
+    participant MS as Merchant Server
+    participant UI as Hyperswitch UI/Checkout
+    participant HS as Hyperswitch Server
+    participant HV as Hyperswitch Vault
+    participant CN as Card Network
+    participant PSP as PSP
+
+    rect rgb(240, 240, 240)
+        Note over MS,PSP: Setup
+        Note over MS,HS: Enable NT on orchestration account
+        Note over MS,HS: Choose Juspay TR ID or bring your own
+    end
+
+    rect rgb(240, 240, 240)
+        Note over MS,PSP: During Checkout
+        Note over UI: End user enters card details
+        UI->>HS: Submit card details
+        HS->>CN: Request network token
+        CN-->>HS: Return token + cryptogram (if eligible)
+
+        alt Tokenization successful
+            HS->>PSP: Send network token + cryptogram
+            PSP-->>HS: success_response
+        else Tokenization failed / Payments using Tokenization failed
+            HS->>PSP: Send clear PAN + CVV
+        end
+
+        alt Card to be stored
+            HS->>HV: Store network token (and optionally PAN)
+            HS-->>UI: Return token (optional)
+        end
+    end
+```
 
 1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay's TRID to request network tokens
@@ -107,7 +165,63 @@ In this flow:
 
 #### Flow Summary:
 
-<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeq8-6ydB04z4YzTZKf7dYTmwcB1TT4eSCS_-MPXUQR-1CZ-wSFT_XeCiQrTWaXBRhJq0f81Tyk80zgaUCv63WPSBrlOgrCleJbmnZ2ydjexjsKY7hQzQ2Cd7dm50ddNxb7akEG?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB",
+    "loopTextColor": "#000080"
+  }
+}}%%
+
+sequenceDiagram
+    participant MS as Merchant Server
+    participant UI as Hyperswitch UI SDK
+    participant HV as Hyperswitch Vault Server
+    participant CN as Card Network
+    participant PSP as PSP
+
+    Note over MS,HV: Sign up for Standalone Vault
+    Note over MS,HV: Initiate payment method session with Network Tokenization request
+
+    alt Using UI SDK
+        Note over UI: End user enters card details
+        UI->>HV: Send card details securely
+    else Using Server API
+        MS->>HV: Send card details (S2S)
+    end
+
+    HV->>CN: Provision network token
+    CN-->>HV: Token + cryptogram
+    HV->>PSP: Tokenize with PSP
+    PSP-->>HV: Return PSP token + NTI (if any)
+    Note over HV: Store PAN + network tokens + PSP tokens
+    HV-->>MS: Return NT + cryptogram + PSP tokens + NTI
+
+    rect rgb(240, 240, 240)
+        Note over MS,PSP: Later usage
+        MS->>HV: /retrieve_payment_method
+        HV-->>MS: Return NT + cryptogram
+        MS->>PSP: Use NT + cryptogram or NTI to process payments
+    end
+```
 
 1. Merchant signs up for [Hyperswitch's standalone vault service ](../integration-guide/workflows/vault/)and requests network tokenization in every payment method session create request
 2. Card details are captured from the end users via Hyperswitch's PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
@@ -131,7 +245,56 @@ This is a lightweight, standalone integration when you:
 
 #### Flow Summary:
 
-<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_HAbjBj9cDcO_pV9LWsyBICza6Ag9zR1lpAnfDOrYKaJd07ELel2Lchuf785tKNYE3n_8OK5MmtZsLdv-Orp-e-kqHa91rxe1vGy5l6soFd2A9O47VeCZWrXZCuFowLeRHRPC-Q?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
+
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB"
+  }
+}}%%
+sequenceDiagram
+    participant MS as Merchant Server
+    participant JS as Juspay Server
+    participant CN as Card Network
+    participant PSP as PSP
+
+    Note over MS,JS: Sign up for Network Tokenization
+    Note over MS,JS: Choose to use Juspay TR ID or own TR ID
+
+    rect rgb(240, 240, 240)
+        Note over MS,PSP: Token Lifecycle APIs
+        MS->>JS: /generate_token (PAN, expiry, etc.)
+        JS->>CN: Provision network token
+        CN-->>JS: Return network token + cryptogram
+        JS-->>MS: Return token + cryptogram
+        MS->>JS: /update_token or /delete_token
+        CN-->>JS: Webhooks to update token details
+    end
+
+    rect rgb(240, 240, 240)
+        Note over MS,PSP: Token Retrieval and Usage
+        MS->>JS: /retrieve_token (token_ref)
+        JS-->>MS: Return token + cryptogram
+        MS->>PSP: Use token + cryptogram to make payment
+    end
+```
 
 * You sign up for Juspay's Network Tokenization service by reaching out to our support team
 * You can either use Juspay's TR ID or setup your own TR ID

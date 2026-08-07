@@ -32,7 +32,7 @@ The 3DS Decision Manager in the Hyperswitch Control Center provides merchants wi
 
 For example: If you wish to enforce 3DS for transactions over $100, you can define a rule that automatically sets `authentication_type` as `three_ds` for such transactions. Payments meeting this rule will trigger 3DS authentication.
 
-<figure><img src="../../../../.gitbook/assets/3ds-rule_example (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/3ds-rule_example.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 * Rules set in the **3DS Decision Manager** can be overridden if an explicit value is passed in the `/payments` request using the `authentication_type` parameter. ([API Reference](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-authentication-type))

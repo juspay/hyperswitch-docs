@@ -8,7 +8,7 @@ metaLinks:
 
 # Activating FRM in Hyperswitch
 
-You can enable the [FRM solution](https://juspay.io/integrations) of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Juspay Hyperswitch.
+You can enable the [FRM solution](https://hyperswitch.io/integrations) of your choice with few clicks and very minimal code changes. Below are the two scenarios for activating FRM within Juspay Hyperswitch.
 
 ### Prerequisites
 

@@ -1,2 +1,0 @@
-# Modes of Usage
-

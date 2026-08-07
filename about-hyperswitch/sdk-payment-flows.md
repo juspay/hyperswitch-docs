@@ -7,11 +7,11 @@ metaLinks:
 
 # SDK Payment flows
 
-## [Payments 101](https://hyperswitch.io/blogs/payments-101-for-a-developer)
-
+{% hint style="info" %}
 If you're complete beginner to Digital Payments, take a look at this [Payments 101 ](https://hyperswitch.io/blogs/payments-101-for-a-developer)blog to get familiar with terminologies.
+{% endhint %}
 
-## **Payments flow**
+### **Payments flow**
 
 There are multiple stages in a Payment flow depending on the payment methods that are involved. Considering an one-time payment method where there was no redirection involved, the following stages form the Payment flow:
 
@@ -29,34 +29,79 @@ There are multiple stages in a Payment flow depending on the payment methods tha
 
 Here's a more detailed version of the payment flow:
 
-<figure><img src="../.gitbook/assets/payment_flow.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#2563EB",
+    "lineColor": "#2563EB",
+    "secondaryColor": "#EFF6FF",
+    "tertiaryColor": "#DBEAFE",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": "14px",
+    "textColor": "#000000",
 
-## **How does Payment flow vary across Payment methods?**
+    "actorBkg": "#346DDB",
+    "actorBorder": "#999999",
+    "actorTextColor": "#ffffff",
+
+    "signalColor": "#000000",
+    "signalTextColor": "#696969",
+
+    "labelBoxBkgColor": "#346DDB",
+    "labelBoxBorderColor": "#2563EB",
+    "loopTextColor": "#000080"
+  }
+}}%%
+sequenceDiagram
+    participant MS as Merchant Server
+    participant MC as Merchant Client
+    participant SDK as Hyperswitch SDK
+    participant HS as Hyperswitch Server
+    participant PS as Processor Server
+
+    MS->>HS: payments/create (amount, currency, api_key)
+    HS-->>MS: payments/create response (payment_id, client_secret)
+    MS->>MC: pass client_secret, publishable_key
+    MC->>SDK: initiate SDK (client_secret, publishable_key)
+    SDK->>HS: /payment_methods_list (client_secret)
+    HS-->>SDK: /payment_methods_list response (eligible payment methods)
+    Note over SDK: Display payment sheet with eligible methods
+    Note over SDK: Customer selects desired payment method <br>(Say Card and Enters their Card Details)
+    SDK->>HS: payments/confirm (client_secret, payment_method_data)
+    HS->>PS: payments/confirm to processor (with merchant credentials)
+    PS-->>HS: payments/confirm response (status)
+    HS-->>SDK: payments/confirm response (status)
+    SDK-->>MC: return to return_url with status
+```
+
+### **How does Payment flow vary across Payment methods?**
 
 <table data-full-width="false"><thead><tr><th>Customer Action</th><th>Direct/Redirect flows</th><th>Payment- finalized immediately</th><th>Payment- finalized later</th></tr></thead><tbody><tr><td><strong>Customer action required before payments/ confirm</strong></td><td><strong>Within Hyperswitch SDK</strong></td><td><ul><li>Non 3DS Cards</li></ul></td><td><ul><li>Bank Debits like ACH Debit, BACS Debit, SEPA Debit</li></ul></td></tr><tr><td><strong>Customer action required before payments/ confirm</strong></td><td><strong>3rd party Redirect/SDK</strong></td><td><ul><li>Wallets like Apple Pay, Google pay, Paypal, AliPay</li><li>BNPL like Klarna, Afterpay, Affirm</li></ul></td><td><br></td></tr><tr><td><strong>Customer action required after payments/ confirm</strong></td><td><strong>3rd party Redirect</strong></td><td><ul><li>3DS cards</li><li>Bank Redirects like iDeal, Giropay, eps</li></ul></td><td><ul><li>Bank Transfers like ACH Transfer, SEPA Transfer, BACS Transfer, Multibanco</li><li>Crypto wallets like Cryptopay</li></ul></td></tr></tbody></table>
 
-## **Functionalities provided by Hyperswitch**
+### **Functionalities provided by Hyperswitch**
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Accept online payments</strong></td><td>Get started with accepting one time payments globally on your online store</td><td></td><td><a href="../.gitbook/assets/onlinePayments.jpg">onlinePayments.jpg</a></td><td><a href="../other-features/payment-orchestration/quickstart/">quickstart</a></td></tr><tr><td><strong>Setup mandates &#x26; recurring payments</strong></td><td>Setup payments for a future date or charge your customers on a recurring basis</td><td></td><td><a href="../.gitbook/assets/recurringPayments.jpg">recurringPayments.jpg</a></td><td><a href="../integration-guide/payment-suite/payments/save-a-payment-method/">save-a-payment-method</a></td></tr><tr><td><strong>Manage payouts</strong></td><td>Facilitate payouts for global network of partners and service providers</td><td></td><td><a href="../.gitbook/assets/Payment flow (1) (2).jpg">Payment flow (1) (2).jpg</a></td><td><a href="../other-features/connectors/payouts/">payouts</a></td></tr><tr><td><strong>Save a card during payment</strong></td><td>Learn how you can save your customers' cards in a secure PCI compliant manner</td><td></td><td><a href="../.gitbook/assets/saveCard.jpg">saveCard.jpg</a></td><td><a href="../other-features/payment-orchestration/quickstart/tokenization-and-saved-cards/">tokenization-and-saved-cards</a></td></tr><tr><td><strong>Manage payments on your platform / marketplace</strong></td><td>Accept payments from your customers and process payouts to the sellers on your marketplace</td><td></td><td><a href="../.gitbook/assets/marketplace.jpg">marketplace.jpg</a></td><td><a href="../integration-guide/account-management/multiple-accounts-and-profiles/">multiple-accounts-and-profiles</a></td></tr><tr><td><strong>Accept payments on your e-commerce platform</strong></td><td>Give your Wordpress store a lightweight and embedded payment experience with the Hyperswitch WooCommerce plugin</td><td></td><td><a href="../.gitbook/assets/WooComerce.jpg">WooComerce.jpg</a></td><td><a href="../other-features/e-commerce-platform-plugins/woocommerce-plugin/">woocommerce-plugin</a></td></tr><tr><td><strong>Create payment links</strong></td><td>Accept payments for your products through reusable links without writing any code</td><td></td><td><a href="../.gitbook/assets/paymentLinks.jpg">paymentLinks.jpg</a></td><td><a href="../integration-guide/payment-experience/payment/payment-links/">payment-links</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Accept online payments</strong></td><td>Get started with accepting one time payments globally on your online store</td><td></td><td><a href="../.gitbook/assets/onlinePayments.jpg">onlinePayments.jpg</a></td><td><a href="../other-features/payment-orchestration/quickstart/">quickstart</a></td></tr><tr><td><strong>Setup mandates &#x26; recurring payments</strong></td><td>Setup payments for a future date or charge your customers on a recurring basis</td><td></td><td><a href="../.gitbook/assets/recurringPayments.jpg">recurringPayments.jpg</a></td><td><a href="../integration-guide/payment-suite/payments/save-a-payment-method/">save-a-payment-method</a></td></tr><tr><td><strong>Manage payouts</strong></td><td>Facilitate payouts for global network of partners and service providers</td><td></td><td><a href="../.gitbook/assets/Payment flow (1) (1).jpg">Payment flow (1) (1).jpg</a></td><td><a href="../other-features/connectors/payouts/">payouts</a></td></tr><tr><td><strong>Save a card during payment</strong></td><td>Learn how you can save your customers' cards in a secure PCI compliant manner</td><td></td><td><a href="../.gitbook/assets/saveCard.jpg">saveCard.jpg</a></td><td><a href="../other-features/tokenization-and-saved-cards/">tokenization-and-saved-cards</a></td></tr><tr><td><strong>Manage payments on your platform / marketplace</strong></td><td>Accept payments from your customers and process payouts to the sellers on your marketplace</td><td></td><td><a href="../.gitbook/assets/marketplace.jpg">marketplace.jpg</a></td><td><a href="../integration-guide/account-management/multiple-accounts-and-profiles/">multiple-accounts-and-profiles</a></td></tr><tr><td><strong>Accept payments on your e-commerce platform</strong></td><td>Give your Wordpress store a lightweight and embedded payment experience with the Hyperswitch WooCommerce plugin</td><td></td><td><a href="../.gitbook/assets/WooComerce.jpg">WooComerce.jpg</a></td><td><a href="../other-features/e-commerce-platform-plugins/woocommerce-plugin/">woocommerce-plugin</a></td></tr><tr><td><strong>Create payment links</strong></td><td>Accept payments for your products through reusable links without writing any code</td><td></td><td><a href="../.gitbook/assets/paymentLinks.jpg">paymentLinks.jpg</a></td><td><a href="../integration-guide/payment-experience/payment/payment-links/">payment-links</a></td></tr></tbody></table>
 
-## **What are `PaymentIntent` and `PaymentAttempt` objects and how do they work in Hyperswitch?**
+### **What are `PaymentIntent` and `PaymentAttempt` objects and how do they work in Hyperswitch?**
 
 Hyperswitch uses the `PaymentIntent` object to track the status of a payment initiated by you. Since, Hyperswitch enables retrying a single payment multiple times across different processors until a successful transaction, we track each of these payment attempts through separate `PaymentAttempt` objects.
 
 While `PaymentIntent` and `PaymentAttempt` have their own state machines, the various states in `PaymentAttempt` are also constrained by their respective mapping to the `PaymentIntent` statuses.
 
-\
-**PaymentIntent state machine:**
+#### **PaymentIntent state machine:**
 
 The following is an abridged version of the `PaymentIntent` state machine flow that covers majority of the above payment use-cases.
 
-\{% @mermaid/diagram content="%%{ init: { 'theme': 'forest', 'themeVariables': { 'fontSize': '14px', 'background': '#17202A' } } }%%
-
+```mermaid
 flowchart TD
-
-A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod RequiresPaymentMethod -->|payment\_method| RequiresConfirmation RequiresConfirmation --> |confirm| Processing Processing --> AuthType{auth type\nselection} AuthType --> |3ds| RequiresCustomerAction AuthType --> |no-3ds| CaptureMethod{capture method\nselection}
-
-```
+A{PaymentsAPI} --> |amount,currency|RequiresPaymentMethod 
+RequiresPaymentMethod -->|payment_method| RequiresConfirmation 
+RequiresConfirmation --> |confirm| Processing 
+Processing --> AuthType{auth type\nselection} 
+AuthType --> |3ds| RequiresCustomerAction 
+AuthType --> |no-3ds| CaptureMethod{capture method\nselection}
 CaptureMethod --> |manual| RequiresCapture
 CaptureMethod --> |automatic| Succeeded
 RequiresCustomerAction --> CustomerAction{customer_action\nresult}
@@ -66,17 +111,13 @@ CustomerAction -->|failure| Failed
 RequiresCapture --> |capture|Succeeded
 ```
 
-" %\}
-
-**PaymentAttempt state machine:**
+#### **PaymentAttempt state machine:**
 
 The following is an abridged version of the `PaymentAttempt` state machine flow that covers majority of the above payment use-cases.
 
-\{% @mermaid/diagram content="%%{ init: { 'theme': 'forest', 'themeVariables': { 'fontSize': '16px', 'background': '#17202A' } } }%%
-
+```mermaid
 flowchart TD
 
-```
 AuthenticationFailed
 AuthenticationPending
 AuthenticationSuccessful
@@ -119,5 +160,5 @@ DeviceDataCollectionPending -->|void| Voided
 AuthenticationPending -->|void| Voided
 
 %% Voiding a payment after it is Authorized will void at connector
-Authorized -->|void|Voided" %}
+
 ```

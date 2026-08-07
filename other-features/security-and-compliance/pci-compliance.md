@@ -39,7 +39,7 @@ Many payment processors disable raw card acceptance by default. To enable it:
 ### Accessing the PCI AOC Document:
 
 * A redacted version of Hyperswitch's PCI DSS Attestation of Compliance (AOC) is available to Cloud users under NDA. It can be downloaded from the Compliance section in the Dashboard.
-* Alternatively, email **hyperswitch@juspay.in** for assistance.
+* Alternatively, email **support.global@juspay.io** for assistance.
 
 ## Why Choose Hyperswitch for PCI Compliance?
 

@@ -10,7 +10,9 @@ metaLinks:
 
 # Vault SDK - React with REST API Integration
 
-### Secure Tokenization using Hyperswitch's PCI Compliant Vault SDK
+{% hint style="info" %}
+This page has been consolidated into the unified [Vault SDK Integration](https://docs.hyperswitch.io/integration-guide/payment-experience/vault-then-pay) guide, which covers both React and Vanilla JS in a single reference. Please use that page going forward.
+{% endhint %}
 
 The Juspay Hyperswitch Vault/Payment Methods Management SDK provides a secure solution for merchants to handle and store payment information without the burden of PCI DSS compliance requirements. By leveraging Hyperswitch's Vault service, merchants can securely store customer payment methods (credit cards, digital wallets, etc.) while minimizing their exposure to sensitive payment data.
 
@@ -32,26 +34,13 @@ First, you'll need to set up your server to create payment method sessions, whic
 
 #### Obtaining Your API Keys
 
-Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/developers?tabIndex=1) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
+Get your API key from the [Hyperswitch dashboard](https://app.hyperswitch.io/dashboard/home) under Developers -> API Keys section. You'll need both your API key and profile ID for server and client integration.
 
 #### Creating a Payment Methods Session Endpoint
 
 Add an endpoint on your server that creates payment methods sessions. This endpoint will return the necessary session information to your client application:
 
-> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/introduction) reference documentation.
-
-{% hint style="info" %}
-All Vault API (V2) requests require authentication using specific API keys generated from your Vault Merchant account. These keys are distinct from your standard payment processing keys.
-
-To generate your Vault API keys, follow these steps:
-
-1. **Access Dashboard:** Log into the Hyperswitch Dashboard.
-2. **Navigate to Vault:** In the left-hand navigation menu, select Vault.
-3. **Generate Key:** Navigate to the API Keys section and click the Create New API Key button.
-4. **Secure Storage:** Copy the generated key and store it securely. You must use this key to authenticate all Vault API (V2) calls.
-
-**Note:** We are currently working on unifying authentication across our platforms. Soon, you will be able to use a single API key for both Payments and Vault APIs.
-{% endhint %}
+> Note: Please ensure that the **customer\_id** is included in the request body when creating a payment method session. For more details, kindly refer to the [API](https://api-reference.hyperswitch.io/v2/customers/customers--create-v1) reference documentation for customer creation.
 
 ```javascript
 // Create-Payment-Methods-Session
@@ -60,7 +49,7 @@ const app = express();
 app.post(`/create-payment-methods-session`, async (req, res) => {
   try {
     const response = await fetch(
-      `https://sandbox.hyperswitch.io/v2/payment-methods-session`,
+      `https://sandbox.hyperswitch.io/v1/payment-methods-session`,
       {
         method: "POST",
         headers: {
@@ -75,8 +64,7 @@ app.post(`/create-payment-methods-session`, async (req, res) => {
     const data = await response.json();
     
     res.send({
-      pmSessionId: data.id,
-      pmClientSecret: data.client_secret,
+      sdkAuthorization: data.sdk_authorization,
     });
   } catch (err) {
     return res.status(400).send({
@@ -121,10 +109,6 @@ Configure the library with your publishable API key and profile ID:
 const hyperPromise = loadHyper({
   publishableKey: "YOUR_PUBLISHABLE_KEY",
   profileId: "YOUR_PROFILE_ID",
-},{
-  customBackendUrl: "BE_URL",
-  env: "ENVIRONMENT"
-  version: "VERSION",
 });
 ```
 
@@ -135,8 +119,7 @@ const hyperPromise = loadHyper({
 Make a request to your server endpoint to create a new payment methods session:
 
 ```javascript
-const [pmClientSecret, setPmClientSecret] = useState(null);
-const [pmSessionId, setPmSessionId] = useState(null);
+const [sdkAuthorization, setSdkAuthorization] = useState(null);
 
 useEffect(() => {
   fetch("/create-payment-methods-session", {
@@ -146,8 +129,7 @@ useEffect(() => {
   })
   .then((res) => res.json())
   .then((data) => {
-    setPmClientSecret(data.pmClientSecret);
-    setPmSessionId(data.pmSessionId);
+    setSdkAuthorization(data.sdkAuthorization);
   });
 }, []);
 ```
@@ -160,13 +142,12 @@ Pass the promise from `loadHyper` to the `HyperManagementElements` component alo
 
 ```javascript
 const options = {
-  pmSessionId: pmSessionId,
-  pmClientSecret: pmClientSecret,
+  sdkAuthorization: sdkAuthorization,
 };
 
 return (
   <div className="App">
-    {pmSessionId && pmClientSecret && hyperPromise && (
+    {sdkAuthorization && hyperPromise && (
       <HyperManagementElements options={options} hyper={hyperPromise}>
         <PaymentMethodsManagementElementForm />
       </HyperManagementElements>

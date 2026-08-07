@@ -53,7 +53,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 **High-level Flow:**
 
-1. Merchant will call the [/payments](https://api-reference.hyperswitch.io/v1/payments/payments--create) API and load the [Payment SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment).
+1. Merchant will call the [/payments](https://api-reference.hyperswitch.io/v1/payments/payments--create) API and load the [Payment SDK](https://docs.hyperswitch.io/about-hyperswitch/sdk-payment-flows).
 2. SDK securely collects payment details.
 3. SDK triggers payment confirmation.
 4. SDK communicates with Hyperswitch backend.
@@ -80,7 +80,7 @@ Choose the integration method that best aligns with your payment flow requiremen
 
 **Tokenize Card:**
 
-* Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/explore-hyperswitch/payment-experience/payment-method/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
+* Tokenize payment credentials using - [Vault SDK](https://docs.hyperswitch.io/integration-guide/payment-experience/vault-then-pay/web) or backend call to [/payment-methods](https://api-reference.hyperswitch.io/v2/payment-methods/payment-method--create-v1)
 * Hyperswitch securely stores the credential and returns a reusable identifier - `payment_method_id`.
 
 **Trigger Payment Execution:**

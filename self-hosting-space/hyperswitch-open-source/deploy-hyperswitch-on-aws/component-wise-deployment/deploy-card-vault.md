@@ -20,7 +20,7 @@ Tartarus is built with a GDPR compliant personal identifiable information (PII) 
 
 * The Juspay Hyperswitch application communicates with Tartarus via a middleware.
 * All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.
-* The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/api-reference/cards/add-data-in-locker)
+* The locker supports CRD APIs on the /data and /cards endpoints - [API Reference](https://api-reference.hyperswitch.io/locker-api-reference/cards/add-data-in-locker)
 * Cards are stored against the combination of merchant and customer identifiers.
 * Internal hashing checks are in place to avoid data duplication.
 

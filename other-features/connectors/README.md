@@ -2,6 +2,7 @@
 description: >-
   Integrate with 200+ connectors enabling 150+ payment methods with zero
   development effort.
+hidden: true
 icon: plug
 metaLinks:
   alternates:

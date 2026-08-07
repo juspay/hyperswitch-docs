@@ -1,7 +1,5 @@
 ---
-description: >-
-  Fallback is a priority order of all the configured processors which is used to
-  route traffic standalone or when other routing rules are not applicable.
+description: Configure the backup processor order used when no routing rule applies or the selected processor is not eligible
 icon: shield-exclamation
 metaLinks:
   alternates:
@@ -12,15 +10,25 @@ metaLinks:
 
 {% embed url="https://youtu.be/5ymPEkOf-BQ" %}
 
-### Get started with Default Fallback Routing
+Default Fallback Routing is the priority order of configured processors for a merchant profile. Hyperswitch can use this order on its own, or as the backup path when another routing strategy does not return a usable processor.
 
-In Juspay Hyperswitch's Default Fallback, if the active routing rules are not applicable, the priority order of all configured payment processors is used to route payments. This priority order is configurable from the Dashboard.
+## When It Applies
 
-### Steps to configure Default Fallback Configuration in Smart Router:
+Default fallback can be used when:
 
-_**Step 1:**_ Click on `Manage` for configuring **Default Fallback**
+* No routing configuration is active.
+* A rule or volume split points to a processor that does not support the payment method.
+* A processor is temporarily unavailable.
+* A dynamic routing result cannot be used safely.
 
-**Step 2:** You will see a list of all of your configured processors. This list can be reordered based on what you want your default processor priority to be when either:
+## Setup
 
-* You have no routing algorithm active
-* The payment method for the current payment is not enabled for the processor(s) returned by the active routing algorithm
+1. Go to `Workflow` > `Routing`.
+2. Click `Manage` for Default Fallback.
+3. Review the list of configured processors.
+4. Reorder processors based on the priority you want Hyperswitch to use when no routing algorithm is active or the selected processor is not eligible.
+5. Save the fallback order.
+
+## Good Practices
+
+Put your most reliable general-purpose processor first, followed by processors that support the broadest set of payment methods and currencies. Review this list whenever you add or remove a connector.

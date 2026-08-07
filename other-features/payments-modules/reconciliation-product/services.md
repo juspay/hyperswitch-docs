@@ -51,4 +51,4 @@ The transformation service handles virtually any data format your payment proces
 * Detailed error categorization and resolution guidance
 * Automatic alerts for systematic data issues
 
-<figure><img src="../../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>

@@ -187,7 +187,7 @@ Deployment methods:
 | Operational overhead      | Low                      | High                        |
 
 Documentation:\
-https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker\
+https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/local-setup-guide\
 https://docs.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-hyperswitch
 
 </details>
@@ -227,7 +227,7 @@ Typical configuration steps include:
 * Configure routing rules through **Workflow → Routing**
 
 Documentation:\
-https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker\
+https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/local-setup-guide\
 https://docs.hyperswitch.io/hyperswitch-open-source/account-setup
 
 </details>
@@ -256,7 +256,7 @@ Before switching to production:
 * Implement error handling and validation for payment responses
 
 Documentation:\
-https://docs.hyperswitch.io/check-list-for-production/going-live
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live
 
 </details>
 
@@ -611,8 +611,8 @@ Hyperswitch supports multiple wallet payment methods on mobile.
 The Android SDK also provides widgets for Google Pay, PayPal, and Express Checkout.
 
 Documentation:\
-[https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay](https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay)\
-[https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay](https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay)
+[https://docs.hyperswitch.io/integrations/wallets/apple-pay](https://docs.hyperswitch.io/integrations/wallets/apple-pay)\
+[https://docs.hyperswitch.io/integrations/wallets/google-pay](https://docs.hyperswitch.io/integrations/wallets/google-pay)
 
 </details>
 
@@ -805,8 +805,8 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 The Android SDK also provides widgets for Google Pay, PayPal, and Express Checkout.
 
 Documentation:\
-https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay\
-https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay
+https://docs.hyperswitch.io/integrations/wallets/apple-pay\
+https://docs.hyperswitch.io/integrations/wallets/google-pay
 
 </details>
 
@@ -992,9 +992,9 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/ru
 
 <summary>How do I integrate Apple Pay, Google Pay, and other wallets?</summary>
 
-Apple Pay — https://docs.hyperswitch.io/explore-hyperswitch/wallets/apple-pay
+Apple Pay — https://docs.hyperswitch.io/integrations/wallets/apple-pay
 
-Google Pay — https://docs.hyperswitch.io/explore-hyperswitch/wallets/google-pay
+Google Pay — https://docs.hyperswitch.io/integrations/wallets/google-pay
 
 PayPal — https://docs.hyperswitch.io/explore-hyperswitch/wallets/paypal
 
@@ -1110,7 +1110,7 @@ readinessProbe:
 * Webhook delivery success rates
 
 Documentation:\
-https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live/for-on-prem-setup/monitoring\
 https://docs.hyperswitch.io/learn-more/hyperswitch-architecture
 
 </details>
@@ -1312,7 +1312,7 @@ Surfaces processor billing discrepancies, invoice mismatches, and unexpected fee
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/reconciliation-product\
-https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live/for-on-prem-setup/monitoring\
 https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks\
 https://docs.hyperswitch.io/explore-hyperswitch/payments-modules/ai-powered-cost-observability
 
@@ -1720,7 +1720,7 @@ curl http://localhost:8080/health/ready
 * Fallback routing — defaults to a secondary connector if a primary is unavailable
 
 Documentation:\
-https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live/for-on-prem-setup/monitoring\
 https://docs.hyperswitch.io/learn-more/hyperswitch-architecture
 
 </details>
@@ -1766,7 +1766,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/security-and-compliance/security\
-https://docs.hyperswitch.io/check-list-for-production/going-live
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live
 
 </details>
 
@@ -2375,7 +2375,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing
 | Upgrades             | Managed automatically by Juspay                  |
 
 Documentation:\
-https://docs.hyperswitch.io/hyperswitch-open-source/overview/unified-local-setup-using-docker\
+https://docs.hyperswitch.io/self-hosting/hyperswitch-open-source/local-setup-guide\
 https://docs.hyperswitch.io/deploy-hyperswitch-on-aws/deploy-hyperswitch
 
 </details>
@@ -2591,7 +2591,7 @@ Juspay (Parent company of Hyperswitch) processes over **300 million daily transa
 For self-hosted deployments, Kubernetes-based deployments support horizontal pod autoscaling, stateless application instances behind a load balancer, and Redis for distributed caching.
 
 Documentation:\
-https://docs.hyperswitch.io/check-list-for-production/going-live/for-on-prem-setup/monitoring\
+https://docs.hyperswitch.io/self-hosting/production-deployment/going-live/for-on-prem-setup/monitoring\
 https://docs.hyperswitch.io/learn-more/hyperswitch-architecture
 
 </details>

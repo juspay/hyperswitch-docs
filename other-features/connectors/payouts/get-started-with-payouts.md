@@ -22,7 +22,7 @@ Implementation requires the Hyperswitch Dashboard for configuration and the API 
 
 * API Endpoint (Sandbox): `https://sandbox.hyperswitch.io`
 * Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
-* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
+* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/v1/payouts/payouts--create)
 
 #### Prerequisites
 
@@ -55,7 +55,7 @@ For testing and initial integration, you can use the [Hyperswitch Postman Collec
 
 1.  **Import Collection:** Download and import the collection into your Postman workspace.
 
-    <figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption><p>Import postman collection</p></figcaption></figure>
 2.  **Configure Environment Variables:** In the **Variables** tab, set the following parameters:
 
     * `baseUrl`: `https://sandbox.hyperswitch.io`

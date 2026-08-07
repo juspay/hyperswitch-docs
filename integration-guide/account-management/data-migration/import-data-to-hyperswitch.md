@@ -75,5 +75,5 @@ Note: Billing details are mandatorily required if AVS (Address verification Serv
 | billing\_address\_country     | Country of the billing address                                |
 
 {% hint style="info" %}
-To import other payment methods like SEPA, ACH, Paypal, Klarna, kindly reach out to [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
+To import other payment methods like SEPA, ACH, Paypal, Klarna, kindly reach out to [support.global@juspay.io](mailto:support.global@juspay.io)
 {% endhint %}

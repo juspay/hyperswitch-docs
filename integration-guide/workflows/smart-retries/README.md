@@ -98,7 +98,7 @@ Each of the error codes are mapped individually as to whether they are eligible 
 
 **Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
 
-**Step 2:** Drop a request to hyperswitch@juspay.in with the below information.
+**Step 2:** Drop a request to support.global@juspay.io with the below information.
 
 * Confirmation on the retry flows to be enabled
 * Maximum number of payment retry attempts
@@ -127,7 +127,7 @@ Additionally, you can view aggregate data in the Analytics section under the Sma
 
 <summary>Why can I not enable Automatic Retry from the Hyperswitch dashboard?</summary>
 
-For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (hyperswitch@juspay.in).
+For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (support.global@juspay.io).
 
 Since Smart retry involves multiple payment attempts for a single payment\_id, Hyperswitch appends the attempt number to the payment\_id that the merchant sends to Hyperswitch before passing it on to the processors.
 

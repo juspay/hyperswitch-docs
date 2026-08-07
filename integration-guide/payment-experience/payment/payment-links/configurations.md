@@ -104,7 +104,7 @@ Example:
 
 The url specifies the image source, while position and size define its placement and scaling.
 
-For available options, refer to the API reference [**here**](https://api-reference.hyperswitch.io/api-reference/payments/payments--create#body-payment-link-config-background-image).
+For available options, refer to the API reference [**here**](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-payment-link-config-background-image).
 
 <figure><img src="../../../../.gitbook/assets/payment-links-background-image.png" alt=""><figcaption><p>Background image</p></figcaption></figure>
 
@@ -222,7 +222,7 @@ A boolean value for toggling the visibility of Juspay Hyperswitch branding in th
 
 Use the API to configure payment link settings at the business profile level. These settings are automatically applied to any payment link created for the associated profile.
 
-Refer to API reference for updating business profile [here](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update#response-payment-link-config).
+Refer to API reference for updating business profile [here](https://api-reference.hyperswitch.io/v1/business-profile/business-profile--update#response-payment-link-config).
 
 ```
 curl --location '{{BASE_URL}}/account/{{MERCHANT_ID}}/business_profile/{{PROFILE_ID}}' \

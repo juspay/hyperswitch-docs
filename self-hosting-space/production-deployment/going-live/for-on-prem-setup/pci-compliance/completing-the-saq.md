@@ -25,7 +25,7 @@ The [Official SAQ D](https://listings.pcisecuritystandards.org/documents/SAQ_D_v
 <table><thead><tr><th>Type of Activity</th><th width="348.3333333333333">Description</th></tr></thead><tbody><tr><td>Organizational and People activities</td><td>Establish organizational policies and conduct staff training.</td></tr><tr><td>Infrastructure activities</td><td>Implement security measures in your cloud environment handling card data.</td></tr><tr><td>Access controls</td><td>Restrict infrastructure access to essential personnel.</td></tr></tbody></table>
 
 {% hint style="info" %}
-For further assistance, please contact us at hyperswitch@juspay.in
+For further assistance, please contact us at support.global@juspay.io
 {% endhint %}
 
 **Final Steps**

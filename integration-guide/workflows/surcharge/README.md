@@ -22,7 +22,7 @@ Hyperswitch supports surcharge for most payment processors and you can configure
 
 **i) Sending the Surcharge details during payments/create request**
 
-Surcharge can be applied to a payment using `surcharge_details` field in [payments/create API request](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)
+Surcharge can be applied to a payment using `surcharge_details` field in [payments/create API request](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 
 **ii) Configuring Surcharge rules using Hyperswitch Control Center**
 

@@ -43,7 +43,7 @@ Adyen is a global payments company allowing businesses to accept payments on a g
    * `billing.line2`
    * `billing.zip`
    * `order_details`
-2. For Klarna, `customer_id` is also a required field for which you have to create a customer using [Hyperswitch - Create Customer](https://api-reference.hyperswitch.io/api-reference/customers/customers--create).
+2. For Klarna, `customer_id` is also a required field for which you have to create a customer using [Hyperswitch - Create Customer](https://api-reference.hyperswitch.io/v1/customers/customers--create).
 3.  Supported Country-Currency matrix:
 
     |   Payment Method   | Country                                                                                                                                     | Currency                                                                                      |

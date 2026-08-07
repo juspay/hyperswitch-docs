@@ -40,7 +40,7 @@ Supported [external 3DS authenticators](https://juspay.io/integrations?categorie
 
 4. Under Developers -> Payment Settings -> Add Authentication Connector and its relevant details
 
-<figure><img src="../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 ## Perform external authentication
 
@@ -159,7 +159,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmN
 After the challenge is completed, the status should go to `succeeded`.
 
 {% hint style="warning" %}
-**Visit** [**this**](../../../explore-hyperswitch/payment-orchestration/3ds-decision-manager/broken-reference/) **page to complete few additional steps to enable this feature for Mobile SDK.**
+**Visit** [**this**](../../3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md) **page to complete few additional steps to enable this feature for Mobile SDK.**
 {% endhint %}
 
 {% hint style="success" %}

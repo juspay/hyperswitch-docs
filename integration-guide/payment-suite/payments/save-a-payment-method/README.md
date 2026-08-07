@@ -204,7 +204,7 @@ Once a customer's payment method is saved for MIT payments you can start chargin
 
 You would be using the same `payment_method_id` that was returned in the `/payments/:id:/retrieve` response for the initial transaction where the customer authorized saving for future use.
 
-To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
+To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-customer) API.
 
 ```bash
 curl --request GET \

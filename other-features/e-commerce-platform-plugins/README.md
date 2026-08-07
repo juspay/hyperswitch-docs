@@ -21,5 +21,5 @@ From enabling express checkout and multi-currency payments to ensuring complianc
 Seamlessly integrate these plugins to elevate your platform's performance and optimize your payment operations.
 
 {% hint style="info" %}
-Need a plugin for another platform? Reach out to us at **hyperswitch@juspay.in**
+Need a plugin for another platform? Reach out to us at **support.global@juspay.io**
 {% endhint %}

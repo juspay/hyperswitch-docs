@@ -35,7 +35,7 @@ Utilize the Hyperswitch Dashboard and the specialized Postman collection to test
 
 * Sandbox Endpoint: `https://sandbox.hyperswitch.io`
 * Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
-* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create)
+* Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/v1/payouts/payouts--create)
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ Before implementing saved payment method workflows, ensure the following:
 
 Download and import the [Saved Payment Methods Postman Collection](https://www.postman.com/hs-payouts/hyperswitch/collection/us5vnwo/payout-using-saved-payment-methods).
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption><p>Import Postman collection</p></figcaption></figure>
 
 #### Configure Environment
 
@@ -61,7 +61,7 @@ In the Variables tab of the collection, define the following global parameters:
 * `merchant_id`: Your unique identifier.
 * `api_key`: Your secret API key.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption><p>Updating env variables in Postman collection</p></figcaption></figure>
 
 #### Direct Vaulting
 
