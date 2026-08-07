@@ -97,15 +97,14 @@ You can jump into any of these straight from the dashboard.
 
 ### Step 4 — Make your first test payment
 
+{% embed url="https://scribehow.com/o/qzpN4gAaRXWhBwFWaO3hnQ/viewer/Make_your_first_test_payment__yq92BXFUSbaDhiIOTSgd6w" %}
+
 The fastest way to see the dashboard come alive:
 
-1. Make sure you're in **Test mode**.
-2. Go to **Connectors → Payment Processors** and connect a test processor (a dummy/test connector works).
-3. Open **Developers → API Keys** and copy your test key — or use the built-in **test payment** helper if available in your build.
-4. Create a test payment (via the helper or a quick API call) using a **test card number**.
-5. Go to **Operations → Payments** and watch your payment appear. Click it to explore the payment details, timeline, and available actions (capture, refund).
-
-Once you can see a payment flow end-to-end in Test mode, you understand the core loop of the Control Center. Everything else builds on it.
+1. Go to **Connectors → Payment Processors** and connect a test processor (a dummy/test connector works).
+2. Go to **Overview -> Try It Out** to open the checkout SDK
+3. Use the **test card details** for making a payment
+4. Go to **Operations → Payments** and watch your payment appear. Click it to explore the payment details, timeline, and available actions (capture, refund).
 
 ***
 
