@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Connectors
 
 ## Connectors
@@ -22,14 +18,15 @@ This section covers:
 
 The **Connectors → Payment Processors** screen lists everything you've connected and lets you add more.
 
+{% embed url="https://scribehow.com/o/qzpN4gAaRXWhBwFWaO3hnQ/viewer/How_to_Connect_Adyen_Payment_Processor_in_Hyperswitch__FH8Z-axoT4S44XvmHppEKg" %}
+
 #### Adding a processor
 
 1. Go to **Connectors → Payment Processors → + Connect**.
 2. **Pick your processor** from the list of supported connectors.
-3. Choose the **environment** — Test (sandbox credentials) or Live (production credentials). This should match your current mode.
-4. **Enter credentials** — API keys, secrets, and any processor-specific fields.
-5. **Select the payment methods** you want to enable through this processor (cards, wallets, bank transfers, BNPL, etc.).
-6. **Save**. The connector becomes active and is now eligible to process payments for this profile.
+3. **Enter credentials** — API keys, secrets, and any processor-specific fields.
+4. **Select the payment methods** you want to enable through this processor (cards, wallets, bank transfers, etc.).
+5. **Save**. The connector becomes active and is now eligible to process payments for this profile.
 
 #### Tips
 
@@ -38,20 +35,6 @@ The **Connectors → Payment Processors** screen lists everything you've connect
 * **Credentials live per profile.** The same processor connected under two profiles is two separate connector records.
 
 > 🔐 Credentials are stored securely. Anyone with access to the profile can _use_ a connector, but editing keys should be restricted via **Roles** — see the Settings section.
-
-***
-
-### Configure payment methods (PMTs)
-
-Connecting a processor makes it _available_; **Configure PMTs** decides _which payment methods are actually offered_ to your customers and how.
-
-On the payment-method configuration screen you can:
-
-* **Enable / disable** methods per connector — cards, wallets (Apple Pay, Google Pay, etc.), bank debits/transfers, BNPL, and more.
-* Set **acceptance rules** such as which card networks or currencies a method applies to.
-* Control how methods surface in the checkout / SDK.
-
-> A payment method only works if **(a)** the connector supports it **and (b)** you've enabled it here. If a method isn't showing up at checkout, this screen is the first place to check.
 
 ***
 
@@ -71,12 +54,10 @@ Beyond payment processors, the Connectors section supports specialized processor
 | **Surcharge Processor**  | Applies surcharges to transactions                             |
 | **Vault Processor**      | Securely stores and tokenizes payment credentials              |
 
-Each is connected the same way as a payment processor: pick it, choose environment, enter credentials, save. Several of these pair with a **Workflow** feature — for example, the 3DS processor is driven by the **3DS Decision Manager**, and the Surcharge processor by **Surcharge** rules.
+Each is connected the same way as a payment processor: pick it, enter credentials, save. Several of these pair with a **Workflow** feature — for example, the 3DS processor is driven by the **3DS Decision Manager**, and the Surcharge processor by **Surcharge** rules.
 
 ***
 
 ### Where to go next
 
-* **Configure PMTs** above — turn on the methods your customers will use.
 * **Workflow** → route across your connected processors and add 3DS, surcharge, and fraud rules.
-* **Operations → Payments** → watch transactions flow through the connectors you just set up.
