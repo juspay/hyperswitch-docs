@@ -62,6 +62,8 @@ Here you can see:
 
 The **Refunds** screen lists all refunds and their status. You can also start a refund directly from a payment.
 
+{% embed url="https://scribehow.com/o/qzpN4gAaRXWhBwFWaO3hnQ/viewer/Operations_On_Hyperswitch_Refunding_the_test_payment__3mmCY4kiRT2z48-G_nc07w" %}
+
 #### Issuing a refund
 
 1. Open the payment (Operations → Payments → click the row), or go to **Refunds → Create**.
