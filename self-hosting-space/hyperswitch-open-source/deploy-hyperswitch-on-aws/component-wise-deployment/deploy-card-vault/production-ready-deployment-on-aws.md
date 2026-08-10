@@ -28,8 +28,6 @@ Pre-requisites
 * Create a new user in your AWS account from [`IAM -> Users`](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/users) (as shown below)
 * While setting permissions, **provide admin access** to the user
 
-<figure><img src="../../../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
-
 #### Step 2 - Configure your AWS credentials in your terminal
 
 For this step you would need the following from your AWS account
@@ -40,8 +38,6 @@ For this step you would need the following from your AWS account
 4. Session Token (if you have MFA set up)
 
 You can create or manage your access keys from `IAM > Users` inside your AWS Console. For more information, [click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
-
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-11-02 at 5.48.06 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once you have the keys run the below command
 
@@ -96,7 +92,7 @@ chmod 400 locker-jump.pem
 ssh -i locker-jump.pem ec2-user@$JUMP_SERVER_ID
 ```
 
-* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/locker-api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
+* Use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)) These cURLs are also displayed at the end of the script.
 * The locker\_public key and the tenant\_private key to use the locker with your application (Juspay Hyperswitch or otherwise) would be generated and available in the Parameter Store. **Use the commands provided to fetch them.**
 
 ```bash

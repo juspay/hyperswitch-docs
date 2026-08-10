@@ -77,6 +77,4 @@ A typical production deployment blueprint of Juspay Hyperswitch looks like the f
 
 It includes the 5 critical application components mentioned above along with non-functional services such as monitoring services, event and log management service, storage service and encryption service.
 
-<figure><img src="../.gitbook/assets/unknown (6).png" alt=""><figcaption></figcaption></figure>
-
 The next sections talk about the setup and deployment of the requisite infrastructure and platform to deploy Juspay Hyperswitch.

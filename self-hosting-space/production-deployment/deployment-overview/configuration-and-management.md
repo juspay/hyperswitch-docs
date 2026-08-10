@@ -488,8 +488,6 @@ Infrastructure provisioning should be handled separately using tools such as **T
 
 Typical workflow:
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure></div>
-
 ArgoCD then deploys applications onto the resulting infrastructure.
 
 #### 13. Enforcing No-Drift Policy

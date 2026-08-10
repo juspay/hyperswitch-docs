@@ -30,15 +30,11 @@ There are three conditions in which you might want to make a test payment:
 
 On Local, click on **Connectors -> Payment Processors** and **Connect a Dummy Processor**:
 
-<figure><img src="../../.gitbook/assets/2-connect-dummy-processor (1).png" alt=""><figcaption></figcaption></figure>
-
 Go ahead and connect any dummy processor, we'll show an example with the fauxpay processor:
 
 Just connect and proceed with the provided credentials:
 
 From there, navigate back to the **Home** page and click on **Try it out**:
-
-<figure><img src="../../.gitbook/assets/1-try-it-out.png" alt=""><figcaption></figcaption></figure>
 
 Input the credentials and Click on **Pay 100**: :
 
@@ -87,4 +83,4 @@ In case you have integrated the web client on your app and want to test a paymen
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md</a></td></tr></tbody></table>
