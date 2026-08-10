@@ -19,8 +19,6 @@ In an Active-Active setup, the merchant would deploy Juspay Hyperswitch instance
 
 This setup offers the highest level of availability and can also improve performance by routing users to the nearest available instance.
 
-<figure><img src="../../.gitbook/assets/ChatGPT Image Mar 9, 2026 at 11_49_29 AM.png" alt="Architecture diagram of the Active-Active setup"><figcaption></figcaption></figure>
-
 #### Implementation
 
 1. **Infrastructure Duplication:** Identical infrastructure in multiple regions.
@@ -41,8 +39,6 @@ This setup offers the highest level of availability and can also improve perform
 ### Multi Region Active - Passive Setup
 
 In an Active - Passive setup, the merchant would deploy two identical Juspay Hyperswitch stacks in geographically separate regions. Active region handles all live traffic, while Passive remains on standby. The passive instance is kept in sync with the active instance, typically through database replication and configuration management. In the event of a failure in the active region, traffic is switched over to the passive region with a DB flip.
-
-<figure><img src="../../.gitbook/assets/ChatGPT Image Mar 6, 2026 at 01_23_20 PM.png" alt="Architecture diagram of the Active-Passive setup"><figcaption></figcaption></figure>
 
 #### Implementation
 

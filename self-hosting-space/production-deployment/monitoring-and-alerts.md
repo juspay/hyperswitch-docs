@@ -45,21 +45,7 @@ This correlation significantly reduces the time required to diagnose issues in p
 
 ### Monitoring Architecture
 
-\{% @mermaid/diagram content="%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryBorderColor': '#333333', 'lineColor': '#333333', 'secondaryColor': '#f5f5f5', 'tertiaryColor': '#ffffff', 'textColor': '#000000' \}}}%%
-
-flowchart TD
-
-A\[Hyperswitch Application Pods] --> B\[OpenTelemetry Collector] A --> C\[Promtail]
-
-B --> D\[Prometheus / VictoriaMetrics] C --> E\[Loki]
-
-F\[Node & Infrastructure Metrics] --> G\[CloudWatch / Node Exporter]
-
-D --> H\[Grafana Dashboards] E --> H G --> H
-
-D --> I\[Remote Write] I --> J\[Hyperswitch Monitoring Environment]
-
-H --> K\[Operations & Engineering Teams] J --> L\[Hyperswitch Support Team]" %\}
+<figure><img src="../.gitbook/assets/Screenshot 2026-06-08 at 2.13.53 PM.png" alt=""><figcaption></figcaption></figure>
 
 #### Application Metrics
 
@@ -192,8 +178,6 @@ The deployment process involves the following steps:
 3. Configure the appropriate data sources for each dashboard.
 
 Each dashboard requires selecting the appropriate data source at the top of the dashboard configuration.
-
-<figure><img src="../.gitbook/assets/unknown (9).png" alt=""><figcaption></figcaption></figure>
 
 Once configured, data typically begins appearing within a few minutes, provided that the monitoring agents are running correctly and metrics are being collected.
 

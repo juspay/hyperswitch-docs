@@ -24,13 +24,7 @@ Part 1: Setting Up a Kubernetes Cluster on GCP
 2. **Create a Project**:
 
 * Open your project picker:
-
-<figure><img src="../../.gitbook/assets/2-my-first-project.png" alt="" width="563"><figcaption></figcaption></figure>
-
 * Click **New Project:**
-
-<figure><img src="../../.gitbook/assets/3-create-new-project.png" alt=""><figcaption></figcaption></figure>
-
 * Provide a project name, and click **Create:**
 
 {% hint style="info" %}
@@ -172,16 +166,7 @@ That's it! Hyperswitch should be up and running on your GCP account 🎉 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the following command for port-forwarding to access the services. Replace `<namespace>` with your namespace:
-
-```bash
-kubectl port-forward service/hyperswitch-server 8080:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-control-center 9000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hyperswitch-web 9050:9050 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-grafana 3000:80 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/hypers-v1-vector 3103:3103 -n hyperswitch > /dev/null 2>&1 & \
-kubectl port-forward service/mailhog 8025:8025 -n hyperswitch > /dev/null 2>&1 &
-```
+Use the commands from the **Step 3.1 (from above)** for port-forwarding to access the services.&#x20;
 
 Access the services at:
 
@@ -254,4 +239,4 @@ gcloud container clusters delete <cluster-name> --region <region> --project <pro
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Hyperswitch with your app</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md</a></td></tr></tbody></table>

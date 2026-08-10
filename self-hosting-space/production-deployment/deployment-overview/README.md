@@ -14,8 +14,6 @@ For an Enterprise-grade production installation of Juspay Hyperswitch the recomm
 
 The following is the high-level flow for a Hyperswitch deployment:
 
-<figure><img src="../../.gitbook/assets/Deploy Hyperswitch-6.jpg" alt=""><figcaption></figcaption></figure>
-
 The critical considerations to be made for the deployment are as follows:
 
 * Choosing the deployment topology (Single-region, Multi-region, Active-Passive)

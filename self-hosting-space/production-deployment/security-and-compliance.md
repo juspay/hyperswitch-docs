@@ -147,8 +147,6 @@ Businesses subject to PCI-DSS must annually demonstrate compliance with the regu
 
 Depending on the number of card transactions your business processes, you could be subject to different levels of PCI compliance.
 
-<figure><img src="../.gitbook/assets/unknown (7).png" alt=""><figcaption></figcaption></figure>
-
 Source: [Mastercard guidelines](https://www.mastercard.us/en-us/business/overview/safety-and-security/security-recommendations/site-data-protection-PCI/merchants-need-to-know.html), [Visa Guidelines](https://www.visa.co.in/support/small-business/security-compliance.html), [PCI SSC document library](https://www.pcisecuritystandards.org/document_library/?category=pcidss\&hsCtaTracking=8aa4514c-37d0-40bc-b864-ed4c4aebb5de%7C8d5a5e5f-7860-4a8c-97cc-d91f17654660).
 
 For PCI DSS Level 1 compliance the merchant shall engage with a [Third party QSA approved by the PCI council](https://www.pcisecuritystandards.org/assessors_and_solutions/qualified_security_assessors/). The PCI compliance certification shall be done annually, and to produce the SAQ and ROC artefacts.

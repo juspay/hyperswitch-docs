@@ -182,7 +182,7 @@ curl --location 'http://localhost:8080/account/<your merchant id>/connectors' \
 
 **3. Customize Connector Account Details:**
 
-* The `connector_account_details` field requires specific authentication details for your chosen payment processor. For payment processors, the required fields may vary. You can find payment provider-specific details to be included in this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQWHLza9m5iO4Ol-tEBx22_Nnq8Mb3ISCWI53nrinIGLK8eHYmHGnvXFXUXEut8AFyGyI9DipsYaBLG/pubhtml?gid=748960791\&single=true).
+* The `connector_account_details` field requires specific authentication details for your chosen payment processor. For payment processors, the required fields may vary.&#x20;
 
 **4. Enable Payment Methods:**
 

@@ -26,8 +26,6 @@ metaLinks:
 
 #### Step 1 - \[Optional] - Create a new user with admin access
 
-<figure><img src="../../.gitbook/assets/AWS user (1).gif" alt=""><figcaption></figcaption></figure>
-
 If you do not have a user with admin access, follow these steps:
 
 #### 1. Sign into the AWS Management Console
@@ -40,16 +38,12 @@ If you do not have a user with admin access, follow these steps:
 
 * **User name:** `hyperswitch`
 
-<figure><img src="../../.gitbook/assets/1-specify-user.png" alt=""><figcaption></figcaption></figure>
-
 #### 3. Attach Permissions
 
 * Choose **Attach policies directly**.
 * In the search bar, type `AdministratorAccess`
 * Check the box for:\
   🔐 **AdministratorAccess** – _AWS managed, job function_
-
-<figure><img src="../../.gitbook/assets/2-policies.png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Review and Create
 
@@ -58,22 +52,17 @@ If you do not have a user with admin access, follow these steps:
 * Permissions: `AdministratorAccess`
 * Click on **Create user**
 
-<figure><img src="../../.gitbook/assets/3-create-user.png" alt=""><figcaption></figcaption></figure>
-
 #### 5. Save Access Credentials
 
 * Click on the newly created user `hyperswitch` to view its details.
 * Navigate to the **Security credentials** tab.
-*   Under the **Access keys** section:
-
-    * Click **Create access key**
-    * Choose **Command Line Interface (CLI)**)
-    * Click **Next**, then **Create access key**
-    * **Download the `.csv` file** or **securely copy** the:
-      * **Access Key ID**
-      * **Secret Access Key**
-
-    <figure><img src="../../.gitbook/assets/aws-access-key (1).png" alt=""><figcaption></figcaption></figure>
+* Under the **Access keys** section:
+  * Click **Create access key**
+  * Choose **Command Line Interface (CLI)**)
+  * Click **Next**, then **Create access key**
+  * **Download the `.csv` file** or **securely copy** the:
+    * **Access Key ID**
+    * **Secret Access Key**
 
 {% hint style="warning" %}
 ⚠️ You won't be able to view the Secret Access Key again later — store it in a password manager or other secure location.
@@ -114,7 +103,7 @@ Once the script is run you will have to provide the following as inputs:
 3. If you choose to opt-in for the card vault service, provide a master-key when prompted (command to generate the master-key will be displayed on the terminal; also note down the two custodian keys to start the locker)
    * Provide the Locker DB password of your choice when prompted
 
-After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/locker-api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal.
+After the deployment is completed, use the custodian keys to activate the locker (You can find the cURLs [here](https://api-reference.hyperswitch.io/api-reference/key-custodian/unlock-the-locker)). The host URL of the locker to run these cURLs will be displayed on terminal.
 
 {% hint style="warning" %}
 Make sure to save the passwords you provide while running the script.
@@ -226,20 +215,18 @@ The following services are installed in the 2 Nodes across the EKS cluster
 
 #### Architecture Diagram
 
-<figure><img src="../../.gitbook/assets/K8S Helm Charts (13).png" alt=""><figcaption></figcaption></figure>
-
 ### Next step:
 
 {% content-ref url="../account-setup/" %}
 [account-setup](../account-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="../../other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}
-[test-a-payment-with-connector.md](../../other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
+{% content-ref url="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}
+[https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md](https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 {% endcontent-ref %}
 
 #### Explore Further
 
 Once you are done with the test payment, you can explore more about these:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="../../other-features/payment-orchestration/smart-router.md">smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Juspay Hyperswitch with your app</strong></mark></td><td><a href="../../other-features/merchant-controls/integration-guide.md">integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="../../other-features/payments-modules/ai-powered-cost-observability/">ai-powered-cost-observability</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>How to set up routing rules</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payment-orchestration/smart-router.md</a></td></tr><tr><td><mark style="color:blue;"><strong>How to integrate Juspay Hyperswitch with your app</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/merchant-controls/integration-guide.md</a></td></tr><tr><td><mark style="color:blue;"><strong>List of supported payment processors and payment methods</strong></mark></td><td><a href="https://hyperswitch.io/pm-list">https://hyperswitch.io/pm-list</a></td></tr><tr><td><mark style="color:blue;"><strong>AI Powered observability to reduce cost</strong></mark></td><td><a href="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md">https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/payments-modules/ai-powered-cost-observability/README.md</a></td></tr></tbody></table>

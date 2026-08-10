@@ -1,6 +1,6 @@
 ---
 description: >-
-  Comprehensive checklist for going live with Juspay Hyperswitch on-premise
+  Comprehensive checklist for going live with Juspay Hyperswitch self-hosted
   deployment including prerequisites, security, monitoring, and PCI compliance
 icon: clipboard-question
 metaLinks:
@@ -8,7 +8,7 @@ metaLinks:
     - ./
 ---
 
-# For On-Prem Setup
+# For Self-Host Setup
 
 ### Prerequisites
 
@@ -30,11 +30,11 @@ Here's a quick summary of everything you would need for going live with Juspay H
 ### Apple Pay Certificate
 
 * [ ] To enable Apple Pay payments, request the required certificate: `Hyperswitch-app.server.secrets.apple_pay_merchant_cert`.\
-  Follow the official setup guide: [Apple Pay Setup](https://docs.hyperswitch.io/integration-guide/payment-suite/payment-method-card/payment-methods-management/apple-pay/ios-application).
+  Follow the official setup guide: [Apple Pay Setup](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/quickstart/payment-methods-setup/wallets/apple-pay/ios-application).
 
 ### Deploying the Application
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>On Kubernetes</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-on-kubernetes-using-helm/">deploy-on-kubernetes-using-helm</a></td></tr><tr><td><mark style="color:blue;"><strong>On AWS</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>On Kubernetes</strong></mark></td><td><a href="../../../">..</a></td></tr><tr><td><mark style="color:blue;"><strong>On AWS</strong></mark></td><td><a href="../../../hyperswitch-open-source/deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 The above installation guides include vault as well, but you will need to activate the vault by following the steps mentioned in [this guide](https://github.com/juspay/hyperswitch-helm/tree/main/charts/incubator/hyperswitch-stack#-step-1---deploy-card-vault).
@@ -51,7 +51,7 @@ The above installation guides include vault as well, but you will need to activa
 * This proxy should handle traffic filtering(WAF), rate limiting, request validation, and integration with DDoS protection services before traffic reaches the Kubernetes cluster.
 
 {% hint style="warning" %}
-Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [support.global@juspay.io](mailto:support.global@juspay.io) to access.
+Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identification Number) data helps identify the card issuer, card type, and country of issuance. This is available as an add-on service. Reach out to us at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in) to access.
 {% endhint %}
 
 ### Monitoring
@@ -72,7 +72,7 @@ Juspay Hyperswitch does not share card BIN data automatically. BIN (Bank Identif
 * [ ] Enable raw card processing for each connector. Some connectors offer this as a dashboard toggle feature. Some processors might need you to share a PCI Attestation of Compliance over email to enable this.
 
 {% hint style="info" %}
-To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [support.global@juspay.io](mailto:support.global@juspay.io)
+To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch, simply navigate to the Compliance section under settings in the Juspay Hyperswitch Dashboard. If you need further assistance, you can also email at [hyperswitch@juspay.in](mailto:hyperswitch@juspay.in)
 {% endhint %}
 
 ### Integrate with your app
@@ -85,13 +85,13 @@ To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#secure-your-api-keys)Secure your api-keys <a href="#secure-your-api-keys" id="secure-your-api-keys"></a>
 
-* [ ] Make sure your [secret key](https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/account-setup#user-content-create-an-api-key-1) (api-key) is not exposed on the front-end (website/mobile app).
+* [ ] Make sure your secret key (api-key) is not exposed on the front-end (website/mobile app).
 * [ ] Ensure that your workflow avoids the duplication or storage of your API keys in multiple locations.
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#set-up-webhooks)Set up Webhooks <a href="#set-up-webhooks" id="set-up-webhooks"></a>
 
-* [ ] [Configure your webhook endpoint](https://juspay-78.mintlify.app/essentials/webhooks#configuring-webhooks) on our dashboard to receive notifications for different events.
-* [ ] Update Hyperswitch’s webhook endpoints on your connector’s Dashboard. [Refer here](https://juspay-78.mintlify.app/essentials/webhooks#configuring-webhooks) for detailed instructions.
+* [ ] [Configure your webhook endpoint](https://docs.hyperswitch.io/integration-guide/webhooks#configuring-webhooks) on our dashboard to receive notifications for different events.
+* [ ] Update Hyperswitch’s webhook endpoints on your connector’s Dashboard. [Refer here](https://docs.hyperswitch.io/integration-guide/webhooks#configuring-webhooks) for detailed instructions.
 * [ ] Update the connector secret key in our dashboard for us to authenticate webhooks sent by your connector.
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#secure-your-payments)Secure your Payments <a href="#secure-your-payments" id="secure-your-payments"></a>
@@ -101,7 +101,7 @@ To access the PCI Attestation of Compliance (AOC) document on Juspay Hyperswitch
 
 ### [​](https://api-reference.hyperswitch.io/essentials/go-live#error-handling)Error Handling <a href="#error-handling" id="error-handling"></a>
 
-* [ ] Make sure your API integration is set up to handle all the possible error scenarios (refer this [link](https://juspay-78.mintlify.app/essentials/error_codes)).
+* [ ] Make sure your API integration is set up to handle all the possible error scenarios.
 * [ ] Ensure your Unified Checkout (SDK) integration is set up to handle all the possible error scenarios (refer this [link](https://hyperswitch.io/docs/sdkIntegrations/unifiedCheckoutWeb/errorCodes)).
 * [ ] Ensure that your integration can handle the entire payments lifecycle and test various scenarios using actual payment details.
 

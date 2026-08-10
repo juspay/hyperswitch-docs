@@ -27,8 +27,6 @@ To effectively utilize both aspects, Juspay Hyperswitch relies on the following
 
 This combination, along with Grafana for visualization, seamlessly integrates logs and metrics into intuitive, interactive dashboards.
 
-<figure><img src="../../../.gitbook/assets/Monitoring architecture (3).jpg" alt=""><figcaption></figcaption></figure>
-
 ***
 
 ### Logs with Grafana Loki and Promtail
@@ -210,8 +208,6 @@ let enableLogging = true;
 // Choose from DEBUG, INFO, WARNING, ERROR, SILENT
 let loggingLevel = "DEBUG";
 ```
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-11-24 at 5.00.03 PM.png" alt=""><figcaption><p>Understanding Logging Levels</p></figcaption></figure>
 
 <details>
 
