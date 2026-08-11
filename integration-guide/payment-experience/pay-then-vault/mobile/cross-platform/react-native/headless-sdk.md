@@ -12,54 +12,56 @@ icon: block-brick
 
 **1. Initialize the Hyperswitch SDK**
 
-Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
+Initialize Hyperswitch once using your publishable key and profile ID. Reuse the same initialized instance throughout your application.
 
 ```javascript
-import { HyperProvider } from "@juspay-tech/hyperswitch-react-native";
+import { Hyperswitch } from "@juspay-tech/react-native-hyperswitch";
 
-function App() {
-  return (
-    <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY">
-      // Your app code here
-    </HyperProvider>
-  );
-}
+const hyper = await Hyperswitch.init({
+  publishableKey: "pk_snd_...",
+  profileId: "pro_...",
+});
 ```
 
-**2. Create a Payment Intent**
+Keep the Hyperswitch secret API key on your backend only. The React Native application must never handle or store it.
 
-Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
+**2. Get `sdk_authorization` from your Backend**
 
-{% hint style="danger" %}
-**Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
-{% endhint %}
+Call the payment-creation endpoint on your backend. Its JSON response must contain `sdk_authorization`.
+
+```javascript
+const response = await fetch(`${API_URL}/create-payment`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    amount: 100,
+    currency: "USD",
+  }),
+});
+
+const { sdk_authorization } = await response.json();
+```
+
+\
+**Important:** Never include your Hyperswitch secret API key in the React Native application. The payment must be created from your backend.
 
 **3. Initialize your Payment Session**
 
-Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
+Create a payment session by passing the latest `sdk_authorization` returned by your backend to `initPaymentSession`.
 
 ```javascript
-import { useHyper } from "@juspay-tech/react-native-hyperswitch";
-
-const { initPaymentSession } = useHyper();
-const [paymentSession,setPaymentSession] = React.useState(null);
-
-const initializeHeadless = async() => {
-  const { clientSecret } = await fetchPaymentParams();
-  const params = {clientSecret:clientSecret}
-  const paymentSession = await initPaymentSession(params);
-  setPaymentSession(_ => paymentSession)
-};
-
-useEffect(() => {
-  initializeHeadless();
-}, []);
-
+const paymentSession = await hyper.initPaymentSession({
+  sdkAuthorization: sdk_authorization,
+});
 ```
 
-| options (Required)                   | Description                                                     |
-| ------------------------------------ | --------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
+Create a new payment session for every payment using the latest `sdk_authorization` returned by your backend.
+
+| Options                     | Description                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------ |
+| `sdkAuthorization (string)` | **Required.** The latest SDK authorization returned by your backend for the payment. |
 
 **4. Craft a customized payments experience**
 
