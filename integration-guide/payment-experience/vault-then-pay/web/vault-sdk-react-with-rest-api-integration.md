@@ -188,24 +188,25 @@ After rendering the `PaymentMethodsManagementElement`, you must explicitly confi
 If there are any immediate errors (for example, invalid request parameters), `hyper-js` returns an error object. You should display this error to the customer so they can retry.
 
 ```javascript
+import { PaymentMethodsManagementElementHandle } from '@juspay-tech/react-hyper-js';
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
   // Prevent submission if Hyper.js is not ready or a request is already in progress
   if (!hyper || !elements || isProcessing) return;
 
+  const ref = useRef<PaymentMethodsManagementElementHandle>(null);
   setIsProcessing(true);
   setMessage(null);
 
   try {
-    const response = await hyper.confirmTokenization({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your completion page
-        return_url: window.location.origin,
-      },
-      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
-    });
+    const response = await ref.current?.confirmTokenization({
+                       confirmParams: { 
+                            // Make sure to change this to your completion page
+                            returnUrl: window.location.href },
+                      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
+                     });
 
     // Handle successful tokenization
     if (response?.id) {

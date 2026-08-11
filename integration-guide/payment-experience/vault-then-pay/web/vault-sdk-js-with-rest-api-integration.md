@@ -143,6 +143,7 @@ async function initialize() {
       });
 
     // Step 6: Create and mount the paymentMethodsManagement element
+    // Store the paymentMethodsManagement instance, as it is required later to call confirmTokenization().
     const paymentMethodsManagement = paymentMethodsManagementElements.create(
       "paymentMethodsManagement"
     );
@@ -166,22 +167,21 @@ async function handleSubmit(e) {
   setMessage("");
   e.preventDefault();
 
-  // Ensure Hyper is initialized
-  if (!hyper || !paymentMethodsManagementElements) {
-    return;
+  // Ensure the Payment Methods Management component is initialized
+  if (!paymentMethodsManagement) {
+     return;
   }
 
   setIsLoading(true);
 
   try {
-    const response = await hyper.confirmTokenization({
-      paymentMethodsManagementElements,
-      confirmParams: {
-        // URL to redirect the user after authentication (if required)
-        return_url: "https://example.com/complete",
-      },
-      redirect: "always", // if you wish to redirect always, otherwise it is defaulted to "if_required"
-    });
+    const response = await paymentMethodsManagement.confirmTokenization({
+       confirmParams: {
+       // URL to redirect the user after authentication (if required)
+       return_url: "https://example.com/complete",
+       },
+       redirect: "always", // Defaults to "if_required"
+     });
 
     // Tokenization succeeded
     if (response?.id) {

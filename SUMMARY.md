@@ -152,6 +152,7 @@
       * [Android](integration-guide/payment-experience/pay-then-vault/over-the-air-ota-updates/android.md)
       * [iOS](integration-guide/payment-experience/pay-then-vault/over-the-air-ota-updates/ios.md)
       * [Server setup](integration-guide/payment-experience/pay-then-vault/over-the-air-ota-updates/server-setup.md)
+    * [Tokenized Card Collection](integration-guide/payment-experience/pay-then-vault/tokenized-card-collection.md)
     * [Card Scanning](integration-guide/payment-experience/pay-then-vault/card-scanning.md)
     * [App Clips](integration-guide/payment-experience/pay-then-vault/app-clips.md)
     * [Alternate Payment Method Widgets](integration-guide/payment-experience/pay-then-vault/alternate-payment-method-widgets/README.md)
