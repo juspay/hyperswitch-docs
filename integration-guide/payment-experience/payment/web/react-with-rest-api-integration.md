@@ -47,10 +47,32 @@ import { hyperElements } from "@juspay-tech/react-hyper-js";
 
 Call `loadHyper` with your publishable API keys to configure the library. To get a publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
+**Basic Configuration**
+
 ```js
 const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY",{
     customBackendUrl: "YOUR_BACKEND_URL",
     //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
+});
+```
+
+**Advanced & Custom Configuration&#x20;**_**(Beta / Upcoming)**_
+
+`loadHyper` also supports an extended configuration object for multi-tenant platform setups or custom endpoint overrides (e.g., dedicated backend, custom logging, or asset endpoints):
+
+```js
+const hyperPromise = loadHyper({
+  publishableKey: "YOUR_PUBLISHABLE_KEY",
+  profileId: "YOUR_PROFILE_ID",
+  platformPublishableKey: "pk_platform_xxxx", // Required for platform/connected account setups
+  customConfig: {
+    customEndpoint: "https://dev.hyperswitch.io/api",                      // Primary Hyperswitch API base URL
+    overrideCustomBackendEndpoint: "https://sandbox.hyperswitch.io",       // Custom backend API endpoint
+    overrideCustomConfirmEndpoint: "https://sandbox.hyperswitch.io",       // Custom payment confirm calls endpoint
+    overrideCustomSDKConfigEndpoint: "https://config.example.com/api",     // Custom SDK config fetch endpoint
+    overrideCustomLoggingEndpoint:   "https://logs.example.com/logs",      // Custom beacon logging endpoint
+    overrideCustomAssetsEndpoint:    "https://assets.example.com",         // Custom static assets endpoint
+  },
 });
 ```
 
@@ -170,7 +192,11 @@ var unifiedCheckoutOptions = {
 
 Call `confirmPayment()`, passing along the `UnifiedCheckout` and a return\_url to indicate where `hyper` should redirect the user after they complete the payment. For payments that require additional authentication, `hyper` redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the return\_url.
 
-If there are any immediate errors (for example, your customer's card is declined), `hyper-js` returns an error. Show that error message to your customer so they can try again.
+If there are any immediate errors (for example, your customer's card is declined), `hyper-js` returns an error. Show that error message to your customer so they can try again.\
+\
+**Standard Implementation**
+
+Use `hyper.confirmPayment()` by retrieving instances from the `useHyper()` and `useWidgets()` hooks:
 
 ```js
 const handleSubmit = async (e) => {
@@ -207,6 +233,62 @@ const handleSubmit = async (e) => {
   }
   setIsLoading(false);
 };
+```
+
+\
+**Direct Ref Trigger&#x20;**_**(Beta / Upcoming)**_
+
+Alternatively, you can trigger confirmation directly via a React `ref` attached to the `<PaymentElement/>` component, eliminating the need to pass `elements` manually into `confirmPayment()`:
+
+```js
+import React, { useRef, useState } from "react";
+import { PaymentElement } from "@juspay-tech/react-hyper-js";
+
+function CheckoutForm() {
+  const paymentElementRef = useRef(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [message, setMessage] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!paymentElementRef.current || isProcessing) return;
+
+    setIsProcessing(true);
+    setMessage(null);
+
+    try {
+      // Trigger payment confirmation directly using the PaymentElement ref
+      const { error, status } = await paymentElementRef.current.confirmPayment({
+        confirmParams: {
+          return_url: window.location.origin,
+        },
+      });
+
+      if (error) {
+        setMessage(error.message || "An unknown error occurred.");
+      }
+
+      if (status) {
+        handlePaymentStatus(status, setMessage, setIsSuccess);
+      }
+    } catch (err) {
+      setMessage(`Error confirming payment: ${err.message}`);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  return (
+    <form id="payment-form" onSubmit={handleSubmit}>
+      <PaymentElement ref={paymentElementRef} options={options} />
+      <button disabled={isProcessing} id="submit">
+        {isProcessing ? "Processing..." : "Pay now"}
+      </button>
+      {message && <div id="payment-message">{message}</div>}
+    </form>
+  );
+}
 ```
 
 <details>

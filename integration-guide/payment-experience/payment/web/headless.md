@@ -17,12 +17,34 @@ metaLinks:
 
 Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable key. To get a Publishable Key please find it [here](https://app.hyperswitch.io/developers).
 
+**Standard Implementation**
+
 <pre class="language-javascript"><code class="lang-javascript"><strong>// Source Hyperloader on your HTML file using the &#x3C;script /> tag
 </strong>hyper = Hyper.init("YOUR_PUBLISHABLE_KEY",{
     customBackendUrl: "YOUR_BACKEND_URL",
     //You can configure this as an endpoint for all the api calls such as session, payments, confirm call.
 });
 </code></pre>
+
+**Advanced / Extended Configuration&#x20;**_**(Beta / Upcoming)**_
+
+In platform setups or custom deployment environments (e.g., dedicated backend, custom telemetry, or asset routing), you can pass an extended configuration object to `Hyper`:
+
+```
+const hyper = Hyper.init({
+  publishableKey: "YOUR_PUBLISHABLE_KEY",
+  profileId: "YOUR_PROFILE_ID",
+  platformPublishableKey: "pk_platform_xxxx", // Required for platform or connected account setups
+  customConfig: {
+    customEndpoint: "https://dev.hyperswitch.io/api",                  // Primary Hyperswitch API base URL
+    overrideCustomBackendEndpoint: "https://sandbox.hyperswitch.io",   // Custom backend API endpoint
+    overrideCustomConfirmEndpoint: "https://sandbox.hyperswitch.io",   // Custom payment confirm calls endpoint
+    overrideCustomSDKConfigEndpoint: "https://config.example.com/api", // Custom SDK config fetch endpoint
+    overrideCustomLoggingEndpoint:   "https://logs.example.com/logs",  // Custom beacon/telemetry logging endpoint
+    overrideCustomAssetsEndpoint:    "https://assets.example.com",     // Custom static assets endpoint
+  },
+});
+```
 
 #### 2. Create a PaymentIntent
 

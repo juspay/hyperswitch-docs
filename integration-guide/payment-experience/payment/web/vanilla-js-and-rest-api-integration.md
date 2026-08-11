@@ -55,6 +55,8 @@ Following this, create a `unifiedCheckout` and mount it to the placeholder `div`
 
 In case you want the SDK to be loaded on a particular event (like button click), you can call the initialize function on that event.
 
+**Standard Implementation**
+
 ```js
 // Fetches a payment intent and captures the client secret
 async function initialize() {
@@ -92,6 +94,45 @@ async function initialize() {
   };
   document.body.appendChild(script);
 }
+```
+
+**Integrated Configuration Object&#x20;**_**(Beta / Upcoming)**_\
+Alternatively, you can create the widget by passing a single configuration object into `widgets.create()`, providing a cleaner structure when passing options:
+
+```js
+script.onload = () => {
+    const hyper = window.Hyper({
+      publishableKey: "YOUR_PUBLISHABLE_KEY",
+      profileId: "YOUR_PROFILE_ID",
+      platformPublishableKey: "pk_platform_xxxx", // Required for platform or connected account setups
+      customConfig: {
+        customEndpoint: "https://dev.hyperswitch.io/api",                  // Primary Hyperswitch API base URL
+        overrideCustomBackendEndpoint: "https://sandbox.hyperswitch.io",   // Custom backend API endpoint
+        // overrideCustomConfirmEndpoint: "https://sandbox.hyperswitch.io",   // Custom payment confirm calls endpoint
+        // overrideCustomSDKConfigEndpoint: "https://config.example.com/api", // Custom SDK config fetch endpoint
+        // overrideCustomLoggingEndpoint:   "https://logs.example.com/logs",  // Custom beacon/telemetry logging endpoint
+        // overrideCustomAssetsEndpoint:    "https://assets.example.com",     // Custom static assets endpoint
+      },
+    });
+
+    const appearance = { theme: "midnight" };
+    const widgets = hyper.widgets({ appearance, clientSecret });
+
+    const unifiedCheckoutOptions = {
+      layout: "tabs",
+      wallets: {
+        walletReturnUrl: "https://example.com/complete",
+      },
+    };
+
+    // Beta / Upcoming syntax: passing type and options inside a single object
+    const unifiedCheckout = widgets.create({
+      type: "payment",
+      options: unifiedCheckoutOptions,
+    });
+
+    unifiedCheckout.mount("#unified-checkout");
+  };
 ```
 
 **2.3 Additional Callback Handling for Wallets Payment Process**
@@ -142,7 +183,9 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 
 > Important: Make sure to never share your API key with your client application as this could potentially compromise your payment flow
 
-Create an `expressCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe that displays configured payment method types supported by the browser available for the payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.
+Create an `expressCheckout` and mount it to the placeholder `div` in your payment form. This embeds an iframe that displays configured payment method types supported by the browser available for the payment, allowing your customer to select a payment method. The payment methods automatically collects the associated payment details for the selected payment method type.\
+\
+**Standard Implementation**
 
 ```js
 // Fetches a payment intent and captures the client secret
@@ -178,6 +221,46 @@ async function initialize() {
   document.body.appendChild(script);
 }
 ```
+
+**Integrated Configuration Object&#x20;**_**(Beta / Upcoming)**_\
+Alternatively, you can pass a single configuration object into `widgets.create()` to initialize the Express Checkout element:
+
+```js
+script.onload = () => {
+    const hyper = window.Hyper({
+      publishableKey: "YOUR_PUBLISHABLE_KEY",
+      profileId: "YOUR_PROFILE_ID",
+      platformPublishableKey: "pk_platform_xxxx", // Required for platform or connected account setups
+      customConfig: {
+        customEndpoint: "https://dev.hyperswitch.io/api",                  // Primary Hyperswitch API base URL
+        overrideCustomBackendEndpoint: "https://sandbox.hyperswitch.io",   // Custom backend API endpoint
+        // overrideCustomConfirmEndpoint: "https://sandbox.hyperswitch.io",   // Custom payment confirm calls endpoint
+        // overrideCustomSDKConfigEndpoint: "https://config.example.com/api", // Custom SDK config fetch endpoint
+        // overrideCustomLoggingEndpoint:   "https://logs.example.com/logs",  // Custom beacon/telemetry logging endpoint
+        // overrideCustomAssetsEndpoint:    "https://assets.example.com",     // Custom static assets endpoint
+      },
+    });
+
+    const appearance = {
+      theme: "midnight",
+    };
+    const widgets = hyper.widgets({ appearance, clientSecret });
+
+    const expressCheckoutOptions = {
+      wallets: {
+        walletReturnUrl: "https://example.com/complete",
+      },
+    };
+
+    // Beta / Upcoming syntax: passing type and options inside a single object
+    const expressCheckout = widgets.create({
+      type: "expressCheckout",
+      options: expressCheckoutOptions,
+    });
+
+    expressCheckout.mount("#express-checkout");
+  };
+```
 {% endtab %}
 {% endtabs %}
 
@@ -190,6 +273,8 @@ async function initialize() {
 Listen to the form's submit event to know when to confirm the payment through the hyper API.
 
 Call `confirmPayment()`, passing along the `unifiedCheckout` and a `return_url` to indicate where Hyper should redirect the user after they complete the payment. Hyper redirects the customer to an authentication page depending on the payment method. After the customer completes the authentication process, they're redirected to the `return_url`.
+
+**Standard Implementation**
 
 ```js
 async function handleSubmit(e) {
@@ -223,6 +308,41 @@ async function handleSubmit(e) {
   }
   if (status) {
     handlePaymentStatus(status); //handle payment status
+  }
+  setIsLoading(false);
+}
+```
+
+**Direct Element Confirmation&#x20;**_**(Beta / Upcoming)**_
+
+```js
+async function handleSubmit(e) {
+  setMessage("");
+  e.preventDefault();
+
+  if (!unifiedCheckout) {
+    return;
+  }
+  setIsLoading(true);
+
+  // Call confirmPayment directly on the unifiedCheckout instance
+  const { error, status } = await unifiedCheckout.confirmPayment({
+    confirmParams: {
+      return_url: "https://example.com/complete",
+    },
+    redirect: "always",
+  });
+
+  if (error) {
+    if (error.type === "card_error" || error.type === "validation_error") {
+      setMessage(error.message);
+    } else {
+      setMessage(error.message || "An unexpected error occurred.");
+    }
+  }
+
+  if (status) {
+    handlePaymentStatus(status);
   }
   setIsLoading(false);
 }
