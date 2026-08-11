@@ -5,8 +5,6 @@ icon: k
 
 # Kotlin with REST API Integration
 
-
-
 <details>
 
 <summary><a href="https://github.com/aashu331998/Hyperswitch-Android-Demo-App/archive/refs/heads/main.zip"><strong>Demo App</strong></a></summary>
@@ -24,7 +22,7 @@ You can use this demo app as a reference with your Juspay Hyperswitch credential
 
 #### 1. Setup the server
 
-Follow the Server Setup section.
+Follow the [Server Setup](../../server-setup.md) section.&#x20;
 
 #### 2. Build checkout page on your app
 
@@ -57,15 +55,14 @@ plugins {
 
 Configure the Hyperswitch SDK in your app-level `build.gradle` file. You can specify the main SDK version and enable optional features:
 
-```gradle
-hyperswitch {
+<pre class="language-gradle"><code class="lang-gradle">hyperswitch {
     // Optional: Specify main SDK version (defaults to latest if not specified)
-    sdkVersion = "1.1.5"
+    sdkVersion = "<a data-footnote-ref href="#user-content-fn-2">latest_version</a>"
     
     // Optional features - only add what you need
     features = [HyperFeature.SCANCARD, HyperFeature.NETCETERA]
 }
-```
+</code></pre>
 
 {% hint style="warning" %}
 Note:
@@ -77,7 +74,7 @@ Note:
 
 **2.4 Implement the HyperInterface**
 
-Next, implement the `HyperInterface` in your `CheckoutActivity`. This involves extending `FragmentActivity` and implementing the `HyperInterface`:
+Next, implement the `HyperInterface` in your `CheckoutActivity`. This involves extending `FragmentActivity` or a subclass such as `AppCompatActivity`, and implementing the `HyperInterface`:
 
 ```kotlin
 class CheckoutActivity : AppCompatActivity(), HyperInterface {
@@ -93,17 +90,17 @@ class CheckoutActivity : AppCompatActivity(), HyperInterface {
 
 **2.5 Setup the SDK and fetch a Payment**
 
-Set up the SDK using your publishable key. This is essential for initializing a `PaymentSession`:
+Create a HyperswitchInstance using the publishable key and optional profile ID returned by your server:
 
-```java
-val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY");
+```kotlin
+hyperswitchInstance = Hyperswitch.init(
+          activity = this,
+          config = HyperswitchConfiguration(
+              publishableKey = response.publishableKey,
+              profileId = response.profileId,
+          ),
+      )
 ```
-
-{% hint style="warning" %}
-**Note**:
-
-PaymentSession needs to be initialized in onCreate method of your `FragmentActivity`
-{% endhint %}
 
 {% hint style="warning" %}
 **Note**:
@@ -111,22 +108,66 @@ PaymentSession needs to be initialized in onCreate method of your `FragmentActiv
 For an open-source setup, use the following parameters:
 
 ```kotlin
-val paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY", "YOUR_CUSTOM_BACKEND_URL", "YOUR_CUSTOM_LOG_URL")
+val config = HyperswitchConfiguration(
+      publishableKey = response.publishableKey,
+      profileId = response.profileId,
+      customConfig = CustomEndpointConfiguration(
+          commonEndpoint = "https://your-hyperswitch-host.example.com",
+      ),
+  )
+```
+
+
+
+The SDK derives the backend, logging, and asset paths from commonEndpoint. Provide the base URL without a trailing slash.
+
+Individual endpoints can be overridden when required:
+
+```kotlin
+val config = HyperswitchConfiguration(
+      publishableKey = response.publishableKey,
+      profileId = response.profileId,
+      customConfig = CustomEndpointConfiguration(
+          overrideEndpoints = OverrideEndpoints(
+              customBackendEndpoint =
+                  "https://your-hyperswitch-host.example.com/api",
+              customLoggingEndpoint =
+                  "https://your-hyperswitch-host.example.com/api/logs/sdk",
+              customAssetEndpoint =
+                  "https://your-hyperswitch-host.example.com/assets/v2",
+          ),
+      ),
+  )
 ```
 {% endhint %}
 
+
+
 **Fetch a Payment**
 
-Request your server to fetch a payment as soon as your view is loaded. Store the `client_secret` returned by your server. The `PaymentSession` will use this secret to complete the payment process.
+Request your server to fetch a payment as soon as your view is loaded. Store the `sdk_authorization` returned by your server. The `PaymentSession` will use this to complete the payment process.
 
 #### 3. Complete the payment on your app
 
 **Initialize Payment Session**
 
-Initialize the payment session with the `client_secret`:
+Initialize the payment session with the `sdk_authorization`:
 
 ```kotlin
-paymentSession.initPaymentSession(paymentIntentClientSecret)
+ private fun initializePaymentSession(sdkAuthorization: String) {
+      val instance = hyperswitchInstance ?: return
+
+      lifecycleScope.launch {
+          paymentSession = instance.initPaymentSession(
+              PaymentSessionConfiguration(
+                  sdkAuthorization = sdkAuthorization,
+              ),
+          )
+
+          // The payment sheet can now be presented.
+          enablePayButton()
+      }
+  }
 ```
 
 **Handle Payment Result**
@@ -134,19 +175,21 @@ paymentSession.initPaymentSession(paymentIntentClientSecret)
 Handle the payment result in the completion block. Display appropriate messages to your customer based on the outcome of the payment:
 
 ```kotlin
-private fun onPaymentSheetResult(paymentResult: PaymentSheetResult) {
-    when (paymentResult) {
-        is PaymentSheetResult.Completed -> {
-            showToast("Payment complete!")
-        }
-        is PaymentSheetResult.Canceled -> {
-            Log.i(TAG, "Payment canceled!")
-        }
-        is PaymentSheetResult.Failed -> {
-            showAlert("Payment failed", paymentResult.error.localizedMessage)
-        }
-    }
-}
+private fun handlePaymentResult(result: PaymentResult) {
+      when (result) {
+          is PaymentResult.Completed -> {
+              showMessage("Payment completed")
+          }
+          is PaymentResult.Canceled -> {
+              showMessage("Payment cancelled")
+          }
+          is PaymentResult.Failed -> {
+              showMessage(
+                  result.throwable.message ?: "Payment failed",
+              )
+          }
+      }
+  }
 ```
 
 {% hint style="danger" %}
@@ -158,10 +201,27 @@ Please retrieve the payment status from the Hyperswitch backend to get the termi
 Create a configuration object to customize the payment sheet and present the payment page:
 
 ```kotlin
-val configuration = PaymentSheet.Configuration("Your_app, Inc.")
+private fun buildPaymentSheetConfiguration(): PaymentSheet.Configuration =
+      PaymentSheet.Configuration.Builder(
+          merchantDisplayName = "Example, Inc.",
+      )
+          .primaryButtonLabel("Pay Now")
+          .allowsDelayedPaymentMethods(false)
+          .allowsPaymentMethodsRequiringShippingAddress(false)
+          .build()
 
 // Present Payment Page
-paymentSession.presentPaymentSheet(configuration, ::onPaymentSheetResult)
+private fun presentPaymentSheet() {
+      val session = paymentSession ?: return
+
+      lifecycleScope.launch {
+          val result = session.presentPaymentSheet(
+              buildPaymentSheetConfiguration(),
+          )
+
+          handlePaymentResult(result)
+      }
+  }
 ```
 
 **Final Step**
@@ -171,3 +231,5 @@ Congratulations! You have successfully integrated the Hyperswitch Android SDK in
 #### Next Step:
 
 [^1]: [Get Latest Version](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-gradle-plugin/versions)
+
+[^2]: [https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-sdk-android/versions](https://central.sonatype.com/artifact/io.hyperswitch/hyperswitch-sdk-android/versions)

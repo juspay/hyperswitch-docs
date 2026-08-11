@@ -16,12 +16,18 @@ Initialize Juspay Hyperswitch Headless SDK onto your app with your publishable k
 
 ```kotlin
 // dependencies: implementation 'io.hyperswitch:hyperswitch-sdk-android:+' val 
-paymentSession = PaymentSession(applicationContext, "YOUR_PUBLISHABLE_KEY")
+hyperswitchInstance = Hyperswitch.init(
+          activity = this,
+          config = HyperswitchConfiguration(
+              publishableKey = publishableKey,
+              profileId = profileId,
+          ),
+      )
 ```
 
 **2. Create a Payment Intent**
 
-Make a request to the endpoint on your server to create a new Payment. The `clientSecret` returned by your endpoint is used to initialize the payment session.
+Make a request to the endpoint on your server to create a new Payment. The `sdk_authorization` returned by your endpoint is used to initialize the payment session.
 
 {% hint style="danger" %}
 **Important**: Make sure to never share your API key with your client application as this could potentially compromise your security
@@ -29,15 +35,17 @@ Make a request to the endpoint on your server to create a new Payment. The `clie
 
 **3. Initialize your Payment Session**
 
-Initialize a Payment Session by passing the clientSecret to the `initPaymentSession`
+Initialize a Payment Session by passing the sdk\_authorization to the `initPaymentSession`
 
 ```kotlin
-paymentSession.initPaymentSession(paymentIntentClientSecret)
+lifecycleScope.launch {
+          paymentSession = instance.initPaymentSession(
+              PaymentSessionConfiguration(
+                  sdkAuthorization = sdkAuthorization,
+              ),
+          )
+      }
 ```
-
-| options (Required)                   | Description                                                     |
-| ------------------------------------ | --------------------------------------------------------------- |
-| `paymentIntentClientSecret (string)` | **Required.** Required to use as the identifier of the payment. |
 
 **4. Craft a customized payments experience**
 
