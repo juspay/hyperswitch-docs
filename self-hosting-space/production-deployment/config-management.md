@@ -89,7 +89,7 @@ Configuration Details:
 
 **3.2 Maintenance Work (Subsequent Stable Releases)**
 
-1. **Update Superposition and run DB migrations**: For every new release, update Superposition to the corresponding version and execute necessary database migrations before upgrading the superposition application.
+1. **Run DB migrations and update Superposition**: For every new release, run DB migrations in Superposition DB and then update Superposition to the corresponding version.
 2. **Run migration scripts for new configs**: Execute the provided Python migration scripts to move new configuration values from the database into Superposition overrides as required by the release.
 3. **Upgrade Hyperswitch**: Once the configuration layer and migrations are finalized, proceed with upgrading the Hyperswitch application to the latest stable version as usual.
 
