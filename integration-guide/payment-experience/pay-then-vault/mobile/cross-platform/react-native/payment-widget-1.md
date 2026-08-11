@@ -1,15 +1,25 @@
 ---
-description: Implement embedded payment widget in React Native applications
-icon: sidebar
+description: The embedded CVC Element that collects the cvc number.
+icon: input-password
 ---
 
-# Payment Element
+# CVC Element
 
-The **PaymentElement** component from Juspay Hyperswitch renders an **embedded, inline payment form directly inside your screen**, instead of opening a modal payment sheet. This approach is useful for **custom checkout pages** where you want full control over layout and UI.
+The standalone **CVC** field is used **only** for **saved card** payments. Do **not** use it when collecting details for a new card, as the `PaymentElement` already includes CVC collection.
 
 #### Find the Demo App
 
 Find the demo app [here](https://github.com/juspay/react-native-hyperswitch/tree/main/example)
+
+**When to use it**
+
+Use `CardCVCElement` when **all** of these are true:
+
+1. You are building a custom saved-payment-methods screen (your own UI, not the drop-in sheet).
+2. The customer has a **saved card** (check `lastUsed.payment_method === 'card'`).
+3. The saved card **requires CVV** to confirm (check `lastUsed.requires_cvv === true`).
+
+If none of these apply, skip this widget entirely.
 
 #### 1. Basic Usage
 
@@ -77,53 +87,71 @@ import { HyperElements } from '@juspay-tech/react-native-hyperswitch';
 </HyperElements>
 ```
 
-**1.4 Render your Payment Element**
+**1.4 Fetch saved payment methods** (inside `HyperElements`):
 
-Use the **Hyperswitch `PaymentElement`** component to render an embedded payment form
+```tsx
+const paymentSession = usePaymentSession();
 
-```js
-import { useRef } from 'react';
-import {
-  PaymentElement,
-  type PaymentElementHandle,
-  type PaymentResult,
-} from '@juspay-tech/react-native-hyperswitch';
+const methodsSession = await paymentSession.getCustomerSavedPaymentMethods({
+  hiddenPaymentMethods: ['paypal', 'google_pay', 'apple_pay'],
+});
+const lastUsed = await methodsSession.getCustomerLastUsedPaymentMethodData();
 
-export default function PaymentUI() {
-  const paymentRef = useRef<PaymentElementHandle>(null);
-  // rest of your logic
-  return (
-    <PaymentElement
-      widgetId="checkout-widget"
-      ref={paymentRef}
-      options={{
-        merchantDisplayName: 'My Store',
-        appearance: { theme: 'Light' },
-        subscribedEvents: ['PAYMENT_METHOD_STATUS', 'FORM_STATUS'],
-      }}
-      onPaymentResult={(result) => handleResult(result)}
-      onChange={(event) => {
-        if (event.eventName === 'PAYMENT_METHOD_STATUS') setReady(true);
-      }}
-      style={{ width: '100%', height: 600 }}
-    />
-  );
-}
+// optional
+const defaultUsed = await methodsSession.getCustomerDefaultSavedPaymentMethodData(); 
 ```
 
-**1.5 Confirm from your own button:**
+**1.5 Decide whether CVC is needed:**
+
+```tsx
+const requiresCvc = lastUsed?.payment_method === 'card'; // && lastUsed.requires_cvv
+```
+
+**1.6 Render the widget only when required.**&#x20;
+
+Give it a stable `id` — you'll need the same id in step 1.8
+
+```js
+import { CardCVCElement } from '@juspay-tech/react-native-hyperswitch';
+
+const [cvcReady, setCvcReady] = useState(false);
+
+{requiresCvc && (
+  <CardCVCElement
+    id="card-cvc-element"                 // remember this id
+    options={{
+      placeholder: '123',
+      cvcIcon: 'hidden',
+      appearance: { theme: 'Light' },
+      subscribedEvents: ['CVC_STATUS'],
+    }}
+    onReady={() => setCvcReady(true)}
+    onChange={(event) => handleEvent(event)}
+    onFocus={() => {}}
+    onBlur={() => {}}
+    style={{ minHeight: 50 }}
+  />
+)}
+```
+
+**1.6 Wait for readiness, then enable your Pay button:**
+
+```tsx
+<Button title="Pay" disabled={requiresCvc && !cvcReady} onPress={onPay} />
+```
+
+Also reset `cvcReady` to `false` whenever the underlying payment session or the selected saved method changes, so the user can't submit against a stale widget.
+
+**1.7 Confirm headlessly with the same `id`:**
 
 ```typescript
-// Option A — via context (works anywhere inside HyperElements)
-const result = await widgets.confirmPayment(paymentRef, { confirmParams: {} });
-
-// Option B — via the ref directly
-const result = await paymentRef.current?.confirmPayment();
-
+const result = await methodsSession.confirmWithCustomerLastUsedPaymentMethod({
+  id: 'card-cvc-element',   // must match the mounted CardCVCElement's id
+});
 handleResult(result);
 ```
 
-**1.6 Handle the result:**
+**1.8 Handle the result:**
 
 ```typescript
 async function handleResult(result: PaymentResult) {
@@ -137,4 +165,4 @@ async function handleResult(result: PaymentResult) {
 }
 ```
 
-**Congratulations! You have successfully integrated the Payment Element into your application.**
+**Congratulations! You have successfully integrated the CVC Element into your application.**

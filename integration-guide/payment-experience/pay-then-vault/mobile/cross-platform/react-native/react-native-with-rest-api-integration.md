@@ -69,9 +69,10 @@ Initialize Hyperswitch once using your publishable key and profile ID. Reuse the
 import { Hyperswitch } from "@juspay-tech/react-native-hyperswitch";
 
 const hyper = await Hyperswitch.init({
-  publishableKey: "pk_snd_...",
-  profileId: "pro_...",
-});
+      publishableKey: 'pk_snd_xxxxxxxx',   // from Hyperswitch dashboard
+      profileId: 'pro_xxxxxxxx',           // your profile id
+      // environment: 'SANDBOX',           // 'PROD' (default) | 'SANDBOX' | 'INTEG'
+    });
 ```
 
 Keep the Hyperswitch secret API key on your backend only. The app should never handle it.
@@ -83,15 +84,10 @@ Keep the Hyperswitch secret API key on your backend only. The app should never h
 Call your payment-creation endpoint. Its JSON response must contain `sdk_authorization`.
 
 ```js
-const response = await fetch(`${API_URL}/create-payment`, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    amount: 100,
-    currency: "USD",
-  }),
+const response = await fetch('https://your-server.com/create-payment-intent', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ amount: 6500, currency: 'USD', customer_id: 'cust_123' }),
 });
 
 const { sdk_authorization } = await response.json();
@@ -112,8 +108,11 @@ const session = await hyper.initPaymentSession({
 Call `presentPaymentSheet()` on the payment session and handle the returned result.
 
 ```js
-const openPaymentSheet = async () => {
-  const result = await session.presentPaymentSheet();
+const checkout = async () => {
+  const result = await session.presentPaymentSheet({
+    merchantDisplayName: 'My Store',            // required
+    appearance: { theme: 'Glass' },
+  });
 
   if (result.status === "completed") {
     // The Payment Sheet completed the payment flow.

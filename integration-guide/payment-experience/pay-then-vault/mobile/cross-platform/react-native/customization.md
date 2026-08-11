@@ -5,13 +5,17 @@ icon: square-sliders-vertical
 
 # Customization
 
+How to theme and tailor each piece of the SDK: **presentPaymentSheet**, **PaymentElement**, **CardCVCElement**, **ApplePayButton** and **GooglePayButton**.
+
+Everything below goes inside the `options` / `configuration` object you pass to the sheet or a widget. For full type shapes see [here](react-native-reference.md)
+
 {% hint style="info" %}
 You can customize the Juspay Hyperswitch React Native Unified Checkout to support visual customization, which allows you to match the design of your app
 {% endhint %}
 
 #### Appearance
 
-Use the `appearance` parameter to customize colors, fonts, and more when calling `initPaymentSheet()` or via the `options` prop when using `PaymentWidget`.
+Use the `appearance` parameter to customize colors, fonts, and more when calling `presentPaymentSheet()` or via the `options` prop when using `PaymentElement` , `CardCVClement` and wallets
 
 #### Colors
 
@@ -86,6 +90,35 @@ shapes: {
   },
 ```
 
+#### Layout customization&#x20;
+
+```ts
+paymentMethodLayout: {
+  type: 'tabs',                        // 'tabs' | 'accordion' | 'spacedAccordion'
+  showOneClickWalletsOnTop: true,      // wallets pinned above the list
+  paymentMethodsArrangementForTabs: 'grid',  // 'default' | 'grid'
+  defaultCollapsed: true,              // accordion items start collapsed
+  radios: false,                       // radio-style selection in accordions
+  spacedAccordionItems: true,
+  maxAccordionItems: 2,                // visible items before "more"
+  cvcIcon: 'hidden',                   // 'shown' | 'hidden'
+  cardBrandIcon: 'hideGeneric',        // 'hidden' | 'animated' | 'standard' | 'hideGeneric'
+  showCheckedIconForSelection: true,
+  savedMethodCustomization: {
+    defaultCollapsed: false,
+    hideCardExpiry: true,
+    hideCVCError: true,
+    cvcIcon: 'hidden',
+    groupingBehavior: {
+      displayInSeparateScreen: false,
+      displayInSeparateSection: false,
+      groupByPaymentMethods: false,
+    },
+    hiddenPaymentMethods: ['paypal', 'google_pay', 'apple_pay'],
+  },
+},
+```
+
 #### Specific UI components
 
 The sections above describe customization options that affect the mobile Payment Element broadly, across multiple UI components. We also provide customization options specifically for the primary button (for example, the Pay button).
@@ -113,26 +146,24 @@ primaryButton: {
 
 **Google Pay Button**
 
-```
+```tsx
+walletButtonsConfiguration: {
 googlePay: {
-  buttonType: 'BUY',   // BUY | BOOK | CHECKOUT | DONATE | ORDER | PAY | SUBSCRIBE | PLAIN
-  buttonStyle: {
-    light: 'dark',
-    dark: 'light',
-  }
+        buttonType: 'PAY', // 'BUY' | 'BOOK' | 'CHECKOUT' | 'DONATE' | 'ORDER' | 'PAY' | 'SUBSCRIBE' | 'PLAIN'
+        buttonStyle: { light: 'dark', dark: 'dark' },    // 'light' | 'dark'
+ },
 }
 ```
 
 #### Apple Pay Button
 
-```
+```tsx
+walletButtonsConfiguration: {
 applePay: {
-  buttonType: 'buy',   // buy | setUp | inStore | donate | checkout | book | subscribe | plain
-  buttonStyle: {
-    light: 'black',    // white | whiteOutline | black
-    dark: 'white',
-  }
-}
+  buttonType: 'buy', // 'buy' | 'setUp' | 'inStore' | 'donate' | 'checkout' | 'book' | 'subscribe' | 'plain'
+  buttonStyle: { light: 'black', dark: 'white' },  // 'white' | 'whiteOutline' | 'black'
+  },
+},
 ```
 
 Now you can test the payments on your app and go-live!
