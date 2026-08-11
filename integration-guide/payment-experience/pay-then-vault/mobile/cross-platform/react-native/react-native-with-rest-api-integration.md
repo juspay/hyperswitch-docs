@@ -61,128 +61,101 @@ Run `pod install` in iOS folder
 pod install
 ```
 
-**2.4 Use `HyperProvider`**
+**2.4 Initialize Hyperswitch**
 
-To initialize Juspay Hyperswitch in your React Native app, wrap your payment screen with the **HyperProvider** component. The only required configuration is the **API publishable key**, which should be provided through the `publishableKey` prop.
+Initialize Hyperswitch once using your publishable key and profile ID. Reuse the same initialized instance throughout your application.
 
 ```js
-import { HyperProvider } from '@juspay-tech/react-native-hyperswitch';
-function App() {
-  return (
-    <HyperProvider publishableKey="YOUR_PUBLISHABLE_KEY" profileId="YOUR_PROFILE_ID">
-      // Your app code here
-    </HyperProvider>
-  );
-}
+import { Hyperswitch } from "@juspay-tech/react-native-hyperswitch";
+
+const hyper = await Hyperswitch.init({
+  publishableKey: "pk_snd_...",
+  profileId: "pro_...",
+});
 ```
+
+Keep the Hyperswitch secret API key on your backend only. The app should never handle it.
 
 #### 3. Complete the checkout on the client
 
-**3.1 import useHyper to your checkout page**
+**3.1 Get `sdk_authorization` from your Backend**
 
-In your checkout screen, import and use the **`useHyper()`** hook to access Juspay Hyperswitch payment methods and functionality.
+Call your payment-creation endpoint. Its JSON response must contain `sdk_authorization`.
 
 ```js
-import { useHyper } from '@juspay-tech/react-native-hyperswitch';
+const response = await fetch(`${API_URL}/create-payment`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    amount: 100,
+    currency: "USD",
+  }),
+});
+
+const { sdk_authorization } = await response.json();
 ```
 
-**3.2 Fetch the PaymentIntent client Secret**
+**3.2 Create a Payment Session**
 
-Send a network request to the backend endpoint created in the previous step to retrieve the **clientSecret**. The **clientSecret** returned by this endpoint is required to complete the payment.
+Pass the `sdk_authorization` returned by your backend to `initPaymentSession`.
 
 ```js
-const fetchPaymentParams = async () => {
-  const response = await fetch(`${API_URL}/create-payment`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ items: [{ id: "xl-tshirt" }], country: "US" }),
-  });
-  const val = await response.json();
-  return val;
-};
+const session = await hyper.initPaymentSession({
+  sdkAuthorization: sdk_authorization,
+});
 ```
 
-**3.3 Collect Payment details**
+**3.3 Present the Payment Sheet**
 
-Call **`initPaymentSession`** from the **`useHyper`** hook to initialize the Payment Sheet and configure options such as **appearance, billing details, or shipping address** before presenting the payment flow.
+Call `presentPaymentSheet()` on the payment session and handle the returned result.
 
 ```js
-const { initPaymentSession, presentPaymentSheet } = useHyper();
-const [ paymentSession, setPaymentSession ]=React.useState(null);
-const initializePaymentSheet = async () => {
-  const { clientSecret, sdkAuthorization } = await fetchPaymentParams();
+const openPaymentSheet = async () => {
+  const result = await session.presentPaymentSheet();
 
-  const customAppearance = {
-    colors: {
-      light: {
-        primary: "#00FF00",
-      },
-    },
-  };
-  const params={
-      merchantDisplayName: "Example, Inc.",
-      clientSecret: clientSecret,
-      sdkAuthorization: sdkAuthorization,
-      appearance: customAppearance
-  }
-  const result = await initPaymentSession(params);
-  if (result.error) {
-        console.error('Payment session initialization failed:', result.error);
+  if (result.status === "completed") {
+    // The Payment Sheet completed the payment flow.
+  } else if (result.status === "canceled") {
+    // The customer canceled or closed the Payment Sheet.
   } else {
-      setPaymentSession(_ => paymentSession)
+    // The payment flow failed. See result.message.
+    console.log(result.message);
   }
 };
-
-useEffect(() => {
-  initializePaymentSheet();
-}, []);
-```
-
-**3.4 Handle Payment Response**
-
-To display the **Payment Sheet**, add a **"Pay Now"** button to your checkout page. When the button is pressed, call the **`presentPaymentSheet()`** function.
-
-This function returns an **asynchronous response** containing the payment result, including the payment status.
-
-```js
-  const openPaymentSheet = async () => {
-    const result = await presentPaymentSheet(paymentSession);
-
-    if (result.error) {
-      console.log(`Error code: ${error.code}`, error.message);
-    } else if (result.status) {
-      switch (result.status) {
-        case 'succeeded':
-          console.log('succeeded', `Your order is succeeded`);
-          break;
-        case 'requires_capture':
-          console.log('requires_capture', `Your order is requires_capture`);
-          break;
-        case 'cancelled':
-          console.log('cancelled', `Payment is cancelled`);
-        case 'failed':
-          console.log('failed', `Payment is failed');
-        default:
-          console.log('status not captured', 'Please check the integration');
-          break;
-      }
-    } else {
-      console.log('Something went wrong', 'Please check the integration');
-    }
-  };
-
 
 return (
   <Screen>
-    <Button variant="primary" title="Checkout" onPress={openPaymentSheet} />
+    <Button
+      variant="primary"
+      title="Checkout"
+      onPress={openPaymentSheet}
+    />
   </Screen>
 );
 ```
 
+**3.4 Handle the Result**
+
+| `result.status` | Meaning                                            | Recommended app behavior                                                           |
+| --------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `completed`     | The Payment Sheet completed the payment flow.      | Show a success state and ask the backend to verify the payment before fulfillment. |
+| `canceled`      | The customer closed or canceled the Payment Sheet. | Return to checkout and allow the customer to try again.                            |
+| `failed`        | The payment flow failed.                           | Display `result.message` when appropriate and allow a retry.                       |
+
 {% hint style="danger" %}
 Retrieve the **payment status from the Juspay Hyperswitch backend** to determine the final (terminal) status of the transaction. Do not rely solely on the status returned by the SDK, as it may not always represent the definitive outcome of the payment.
 {% endhint %}
+
+{% hint style="warning" %}
+**Collect Billing Address From Wallet** should be enabled in the Hyperswitch Dashboard for wallet payment methods to work.
+{% endhint %}
+
+**Important Notes**
+
+* Initialize Hyperswitch once and reuse the same instance throughout the application.
+* Create a new payment session using the latest `sdk_authorization` returned by the backend.
+* Do not place the Hyperswitch secret API key in the React Native application.
 
 Congratulations! Now that you have integrated the payment sheet
