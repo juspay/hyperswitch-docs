@@ -25,6 +25,15 @@ We help you with smooth migration from your current payment processor, ensuring 
 ### Public PGP Key:&#x20;
 
 ```
+Created: 30 July 2026 at 19:03 IST
+Expires: Does not expire
+Key ID: C2BF6CD3
+Length: 255
+Algorithm: Ed25519
+Fingerprint: C92D CC09 533D AA54 E6FA E97A AD01 848A C2BF 6CD3
+```
+
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEamtSxBYJKwYBBAHaRw8BAQdANDBtqn7GGvGZRoON7AAts31PAyVIBeXqp0f2
