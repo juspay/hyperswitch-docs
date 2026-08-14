@@ -250,6 +250,7 @@
   * [Developers](integration-guide/control-center/developers.md)
   * [Settings & Administration](integration-guide/control-center/settings-and-administration.md)
   * [Users](integration-guide/control-center/users.md)
+  * [Configure SSO for the Hyperswitch Control Center](integration-guide/control-center/configure-sso-for-the-hyperswitch-control-center.md)
 
 ## Use-Cases
 
