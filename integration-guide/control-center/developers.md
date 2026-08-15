@@ -1,14 +1,10 @@
----
-hidden: true
----
-
 # Developers
 
 ## Developers
 
 The **Developers** section is the bridge between the dashboard and your code. It's where you get the **API keys** that authenticate your integration, set up **webhooks** so your systems hear about payment events, and tune **payment settings** that govern how payments behave.
 
-Everything here is scoped to a **Business Profile** and to your current **mode (Test/Live)** — test keys and webhooks are separate from live ones.
+Everything here is scoped to a **Business Profile** and to your current **mode (Test/Live)**
 
 This section covers:
 
@@ -29,6 +25,8 @@ API keys authenticate requests from your servers to Hyperswitch. Your integratio
 3. **Copy it immediately** — the secret is shown only once at creation.
 4. Use **Test keys** while developing; generate **Live keys** only when you go to production.
 
+{% embed url="https://scribehow.com/o/qzpN4gAaRXWhBwFWaO3hnQ/viewer/How_To_Create_A_New_API_Key_In_Hyperswitch__yCo1jmdPS_yVVcMUh1eTYQ" %}
+
 #### Good practices
 
 * **Never commit keys** to source control or expose them in client-side code.
@@ -45,19 +43,12 @@ API keys authenticate requests from your servers to Hyperswitch. Your integratio
 
 #### Setting up a webhook
 
-1. Go to **Developers → Webhooks**.
+1. Go to **Developers → Payment Settings -> Payment Behaviour**.
 2. Add your **endpoint URL** (an HTTPS endpoint on your server that receives events).
-3. Configure the **shared secret** so you can verify that incoming calls genuinely come from Hyperswitch.
-4. Select which **events** you want to receive (or receive all).
-5. Save and send a **test event** to confirm your endpoint responds.
+3. For live mode, your webhook URL needs to be whitelisted by the Hyperswitch team
+4. Save and send a **test event(eg. test payment)** to confirm your endpoint responds.
 
-#### Monitoring deliveries
-
-* Review a log of **sent events** and their **delivery status**.
-* **Retry** or inspect failed deliveries to debug endpoint issues.
-* Match a webhook event back to the payment it belongs to in **Operations**.
-
-> 🪝 Always **verify the webhook signature** on your side before acting on an event. Treat unverified calls as untrusted.
+{% embed url="https://scribehow.com/o/qzpN4gAaRXWhBwFWaO3hnQ/viewer/Configuring_and_Testing_Webhooks_in_Hyperswitch__px5kHeD6TVelR0EZVXihXw" %}
 
 ***
 
@@ -73,12 +64,3 @@ Typical settings include:
 * **Profile-level defaults** applied to payments created under this profile.
 
 > These defaults affect every payment on the profile, so change them deliberately and validate in **Test mode** first.
-
-***
-
-### Where to go next
-
-* **Connectors** → the processors your API calls will route to.
-* **Vault** → tokenization behavior configured here shows up as saved tokens.
-* **Operations → Payments** → watch the events your webhooks are firing on.
-* **Settings → Roles** → restrict who can create or revoke API keys.
