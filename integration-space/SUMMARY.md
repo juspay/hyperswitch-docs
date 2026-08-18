@@ -135,6 +135,7 @@
 
 
 
+
 ## PRISM
 
 
@@ -210,6 +211,7 @@
     - [Create Link](prism/api-reference/services/payout-service/create-link.md)
     - [Create Recipient](prism/api-reference/services/payout-service/create-recipient.md)
     - [Enroll Disburse Account](prism/api-reference/services/payout-service/enroll-disburse-account.md)
+    - [Check Eligibility](prism/api-reference/services/payout-service/eligibility.md)
   - [Domain Schema](prism/api-reference/domain-schema/README.md)
 
 - [FAQs](prism/FAQs.md)
@@ -259,6 +261,7 @@
     - [Create Link](prism/sdks/java/payout-service/create-link.md)
     - [Create Recipient](prism/sdks/java/payout-service/create-recipient.md)
     - [Enroll Disburse Account](prism/sdks/java/payout-service/enroll-disburse-account.md)
+    - [Check Eligibility](prism/sdks/java/payout-service/eligibility.md)
 
 - [Node.js SDK Overview](prism/sdks/node/README.md)
   - [Payment Service Overview](prism/sdks/node/payment-service/README.md)
@@ -304,6 +307,7 @@
     - [Create Link](prism/sdks/node/payout-service/create-link.md)
     - [Create Recipient](prism/sdks/node/payout-service/create-recipient.md)
     - [Enroll Disburse Account](prism/sdks/node/payout-service/enroll-disburse-account.md)
+    - [Check Eligibility](prism/sdks/node/payout-service/eligibility.md)
 
 - [Python SDK Overview](prism/sdks/python/README.md)
   - [Payment Service Overview](prism/sdks/python/payment-service/README.md)
@@ -349,3 +353,4 @@
     - [Create Link](prism/sdks/python/payout-service/create-link.md)
     - [Create Recipient](prism/sdks/python/payout-service/create-recipient.md)
     - [Enroll Disburse Account](prism/sdks/python/payout-service/enroll-disburse-account.md)
+    - [Check Eligibility](prism/sdks/python/payout-service/eligibility.md)
