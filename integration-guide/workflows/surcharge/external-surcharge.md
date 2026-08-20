@@ -18,12 +18,12 @@ This page covers **external surcharge** — letting a third-party surcharge proc
 
 Card surcharging is heavily regulated. The amount you are allowed to add — and whether you are allowed to add anything at all — depends on the card brand, the card type, the issuing country, and the cardholder's state or region. Those rules change often, and getting them wrong carries real compliance risk.
 
-**External surcharge** lets you hand that decision to a specialist. Instead of you maintaining surcharge rules in Hyperswitch, Hyperswitch calls an external surcharge processor during checkout, passes it the card details the shopper has entered, and applies the surcharge that comes back.
+**External surcharge** lets you hand that decision to a specialist. Instead of you maintaining surcharge rules in Hyperswitch, Hyperswitch calls an external surcharge processor during checkout, passes it the card the shopper has entered, and applies the surcharge that comes back.
 
 This gives you two things:
 
-* **Compliance is maintained for you.** The surcharge processor keeps up with card-network and jurisdictional rules. Debit cards, for example, generally cannot be surcharged in the US — the processor returns a zero surcharge for them automatically, without you writing a rule.
-* **The shopper sees the fee before they commit.** The surcharge is fetched as soon as the card number identifies the card, so the updated total is shown on the payment form rather than appearing as a surprise on the statement.
+* **Compliance is maintained for you.** The surcharge processor keeps up with card-network and jurisdictional rules. Debit cards, for example, generally cannot be surcharged in the US — the processor returns a zero surcharge for them, without you writing a rule.
+* **The shopper sees the fee before they commit.** The surcharge is quoted once the card number identifies the card, so the updated total can be shown on the payment form rather than appearing as a surprise on the statement.
 
 **InterPayments** is the surcharge processor currently supported by Hyperswitch.
 
@@ -35,6 +35,7 @@ This gives you two things:
 | Compliance responsibility | Yours | Handled by the surcharge processor |
 | Inputs | Payment parameters you choose (amount, currency, payment method, card network, …) | The card the shopper actually entered |
 | Setup | Configure rules per profile | Connect the surcharge processor once |
+| When it is decided | While listing payment methods | On a dedicated eligibility call, once the card is known |
 
 You can also use the surcharge returned by the external processor as an input to routing — see [Routing to payment processors based on surcharge value](#routing-to-payment-processors-based-on-surcharge-value) below.
 
@@ -42,25 +43,43 @@ You can also use the surcharge returned by the external processor as an input to
 
 This guide assumes you already have a Hyperswitch merchant account and a business profile. If you do not, start with [Quick Start: Create Your Hyperswitch Account](../../account-management/multiple-accounts-and-profiles/quick-start.md).
 
+There are three things to set up, and all three are required:
+
+1. Connect InterPayments as a surcharge processor.
+2. Select it as the surcharge connector **on the profile**.
+3. Have at least one payment processor connected to authorize the payment.
+
 ### Step 1: Connect InterPayments as a surcharge processor
 
-You will need an **InterPayments API key** for the profile you are configuring. Request one from InterPayments if you do not already have it.
+You will need an **InterPayments API key**. Request one from InterPayments if you do not already have it.
 
 In the Control Center, go to **Connectors → Surcharge Processor**. InterPayments appears under *Connect a new processor*. Click **Connect**.
 
 <figure><img src="../../../.gitbook/assets/external-surcharge-processor-list.png" alt=""><figcaption><p>Connectors → Surcharge Processor</p></figcaption></figure>
 
-Select the **Profile** this surcharge processor should apply to, paste your InterPayments **API Key**, and give the connection a **Connector label** — the label defaults to `interpayments_default` and is how this connection is identified elsewhere in the Control Center.
+The **Profile** field is fixed to the profile currently selected in the Control Center's profile switcher — switch profiles first if you want to configure a different one. Paste your InterPayments API key into **API Key** (shown below as `<your-interpayments-api-key>`), and give the connection a **Connector label**. The label defaults to `interpayments_default` and is how this connection is identified elsewhere in the Control Center.
 
 <figure><img src="../../../.gitbook/assets/external-surcharge-interpayments-config.png" alt=""><figcaption><p>Configuring the InterPayments surcharge processor</p></figcaption></figure>
 
-Click **Connect and Proceed**. Surcharge is now fetched from InterPayments for payments on this profile.
+Click **Connect and Proceed**. The processor now shows as *Active* and *Enabled* in the connected list.
+
+<figure><img src="../../../.gitbook/assets/external-surcharge-processor-connected.png" alt=""><figcaption><p>InterPayments connected as a surcharge processor</p></figcaption></figure>
 
 {% hint style="warning" %}
 Surcharge processors are configured **per profile**. If you operate several profiles and want external surcharge on each of them, repeat this step for every profile.
 {% endhint %}
 
-### Step 2: Connect a payment processor
+### Step 2: Select the surcharge connector on the profile
+
+Connecting the processor is not enough on its own — the profile has to point at it. Go to **Developers → Payment Settings**, open the **Surcharge** tab, pick your connection under **Surcharge Connectors**, and click **Update**.
+
+<figure><img src="../../../.gitbook/assets/external-surcharge-profile-surcharge-setting.png" alt=""><figcaption><p>Developers → Payment Settings → Surcharge</p></figcaption></figure>
+
+{% hint style="danger" %}
+If you skip this step, nothing breaks and nothing happens: payments continue to go through with no surcharge, silently. If surcharge is not being applied, this setting is the first thing to check.
+{% endhint %}
+
+### Step 3: Connect a payment processor
 
 External surcharge only changes the *amount* that gets authorized — you still need a payment processor to authorize it. If you already have one connected, skip this step.
 
@@ -74,27 +93,41 @@ Once connected, the processor shows as *Active* and *Enabled* in the list.
 
 <figure><img src="../../../.gitbook/assets/external-surcharge-connected-processors.png" alt=""><figcaption><p>Connected payment processors</p></figcaption></figure>
 
-### Step 3: Make a test payment
+### Step 4: Make a test payment
 
 Go to **Try a test payment** in the Control Center to open the hosted checkout playground. Pick a currency and an amount, then click **Show Preview** to render the payment form.
 
 <figure><img src="../../../.gitbook/assets/external-surcharge-sdk-checkout.png" alt=""><figcaption><p>Setting up a test checkout</p></figcaption></figure>
 
-### Step 4: Watch the surcharge appear as the card is entered
+### Step 5: How the surcharge is fetched during checkout
 
-The payment form initially shows the base amount on the pay button. As soon as you type a card number long enough to identify the card, the SDK requests a surcharge quote, and the form updates to show the surcharge and the new total.
+Unlike rule-based surcharge — which is returned alongside the payment method list, before any card is known — an external surcharge depends on the actual card. It is therefore fetched by a dedicated call, made once the shopper has entered enough of the card number to identify it:
 
-> **TODO — screenshot pending.** Capturing this requires a live InterPayments API key, which was not available when this page was drafted. Add a screenshot of the payment form showing a credit card entered, the surcharge line item, and the pay button reflecting the surcharged total.
+```http
+POST /payments/{payment_id}/eligibility
+```
 
-The shopper therefore always sees the surcharge, and the total they are agreeing to, before they submit the payment.
+* **Auth:** your publishable key (`pk_…`) plus the payment's `client_secret` in the body, so it can be called from the checkout front end. A server-side call with your secret API key also works — in that case omit `client_secret`.
+* **Body:** the payment method (`"payment_method_type": "card"`), optionally its subtype (`"payment_method_subtype": "credit"`), and the card under `payment_method_data`. Only `card_number` is strictly required.
+* **Response:** `surcharge_details` — with `display_surcharge_amount` and `display_total_surcharge_amount` for rendering — plus `sdk_next_action`, telling the checkout what to do next.
 
-### Step 5: Confirm that a debit card is not surcharged
+Hyperswitch caches the quote against the payment for **15 minutes**, and applies it when the payment is confirmed. The confirmed payment reports the surcharge in `surcharge_details` and the surcharged total in `net_amount`.
 
-Surcharging debit cards is prohibited in most jurisdictions, and this is exactly the kind of rule the external processor handles for you. Repeat the test payment with a **debit** test card: the surcharge quote comes back as zero, no surcharge line is shown, and the pay button stays at the base amount.
+{% hint style="info" %}
+The surcharge call is **best-effort**. If the surcharge processor cannot be reached, or is not configured, the eligibility call still returns `200` with `surcharge_details: null` and the payment goes through unsurcharged. It never fails a payment — but it also means a missing surcharge is easy to miss.
+{% endhint %}
 
-> **TODO — screenshot pending.** Requires a live InterPayments API key. Add a screenshot of the payment form with a debit card entered showing no surcharge applied.
+If you use the Hyperswitch checkout SDK, this call is made for you and the payment form updates to show the surcharge and the new total. If you have built your own checkout, make the call yourself after the card number is entered, and re-render your total from the response.
+
+> **TODO — screenshot pending.** A screenshot of the payment form showing a card entered, the surcharge line item, and the pay button reflecting the surcharged total has not yet been captured. See the note at the end of this page.
+
+### Step 6: Debit cards are not surcharged
+
+Surcharging debit cards is prohibited in most jurisdictions, and this is exactly the kind of rule the external processor handles for you. Repeat the test payment with a **debit** card: the surcharge quote comes back as zero, no surcharge line is shown, and the pay button stays at the base amount.
 
 No configuration on your side is needed to get this behaviour — it is the surcharge processor applying the rules for the card in question.
+
+> **TODO — screenshot pending.** A screenshot of the payment form with a debit card entered showing no surcharge applied has not yet been captured. See the note at the end of this page.
 
 ## Routing to payment processors based on surcharge value
 
@@ -102,9 +135,9 @@ The surcharge returned by the external processor is available as a routing dimen
 
 The example below routes payments with **no surcharge to Fauxpay**, and **surcharged payments to Pretendpay**.
 
-### Step 1: Connect InterPayments
+### Step 1: Connect and enable InterPayments
 
-Same as [Step 1](#step-1-connect-interpayments-as-a-surcharge-processor) above. Routing on surcharge needs a surcharge value to route on, so the surcharge processor must be connected first.
+Same as [Step 1](#step-1-connect-interpayments-as-a-surcharge-processor) and [Step 2](#step-2-select-the-surcharge-connector-on-the-profile) above. Routing on surcharge needs a surcharge value to route on, so the surcharge processor must be connected *and* selected on the profile first.
 
 ### Step 2: Connect two payment processors
 
@@ -127,11 +160,17 @@ Build two rules:
 
 <figure><img src="../../../.gitbook/assets/external-surcharge-routing-rules.png" alt=""><figcaption><p>Routing rules based on surcharge amount</p></figcaption></figure>
 
+Amounts are entered in the **smallest currency unit** — `100` means $1.00 for USD.
+
 {% hint style="info" %}
-Rules are evaluated top to bottom and the first match wins, so order them from most specific to least specific. If no rule matches, the payment falls through to your [Default Fallback](../intelligent-routing/default-fallback-routing.md) processor list — it is worth checking that the fallback order is what you want, since a payment that reaches it will still be processed.
+Rules are evaluated top to bottom and the first match wins. Here the two conditions are mutually exclusive and between them cover every possible value, so the order does not matter and no payment should reach your [Default Fallback](../intelligent-routing/default-fallback-routing.md) list. If payments *are* landing on your fallback processor, the rules are not matching — check the profile's surcharge connector setting.
 {% endhint %}
 
-Amounts are entered in the **smallest currency unit** — `100` means $1.00 for USD.
+{% hint style="warning" %}
+**`surcharge_amount` is `0`, not null, when no surcharge was calculated.** The routing engine substitutes `0` whenever the payment has no external surcharge attached — whether the processor genuinely returned zero, or the surcharge was never fetched at all (no eligibility call, a failed call, or the profile's surcharge connector not set).
+
+So `EQUAL TO 0` reliably matches the no-surcharge case — but it matches the *never-calculated* case identically. Treat the `EQUAL TO 0` branch as "no surcharge is being applied", not as proof that the processor made a zero-surcharge decision.
+{% endhint %}
 
 ### Step 4: Activate the configuration
 
@@ -154,11 +193,21 @@ Make two test payments from **Try a test payment**:
 
 Then open **Operations → Payments** and check the **Connector** column for each payment to confirm which processor handled it.
 
-> **TODO — verification pending.** These two payments could not be run while drafting this page, because distinguishing the two branches requires a live InterPayments API key to produce a non-zero surcharge. Add screenshots of the Payments list showing the two payments routed to different connectors.
-
 {% hint style="warning" %}
-When you verify routing, make sure the processor a rule points to is **not** also the first entry in your Default Fallback list. If it is, a payment landing on that processor does not tell you whether your rule fired or whether the payment simply fell through to the fallback. Point the rule at a different processor from the fallback head while testing.
+**Set up the test so a rule hit and a rule miss look different.** If a rule points at a processor that is also the first entry in your Default Fallback list, a payment landing on that processor tells you nothing — it could have matched the rule, or it could have fallen through.
+
+Before testing, connect a third processor you are not routing to and move it to the top of your Default Fallback list. Then any payment landing on that third processor is unambiguously a rule miss, and anything landing on Fauxpay or Pretendpay is unambiguously a rule hit. Restore your fallback order afterwards.
 {% endhint %}
+
+> **TODO — verification pending.** Screenshots of the Payments list showing the two payments routed to different connectors have not yet been captured. See the note below.
+
+## Known gap in this draft
+
+The two payment-form screenshots and the end-to-end split of the two routing branches could not be captured for this revision, because the environment used to write it could not complete a live surcharge calculation against InterPayments. What *was* verified there:
+
+* `surcharge_amount` is presented to the routing engine as `0` — not null — when no external surcharge is attached, so an `EQUAL TO 0` rule matches. This was confirmed by running identical payments against three routing configurations and observing that `EQUAL TO 0` selected its target processor, a mirrored rule selected the opposite processor, and a configuration containing only `GREATER THAN 0` fell through to the fallback list.
+
+The no-surcharge branch and the shopper-facing display still need to be captured against a working surcharge calculation before this page is published.
 
 ## FAQs
 
@@ -166,13 +215,16 @@ When you verify routing, make sure the processor a rule points to is **not** als
 InterPayments is the supported external surcharge processor.
 
 **Can I use external surcharge and the Surcharge Manager together?**\
-They answer the same question — how much surcharge to apply — so configure one or the other for a given profile. Use the external surcharge processor when you want compliance handled for you, and the [Surcharge Manager](surcharge-setup-guide.md) when you want to define the rules yourself.
+They answer the same question — how much surcharge to apply — so configure one or the other for a given profile. If a payment has a rule-based surcharge attached, that takes precedence and no external surcharge is fetched for it. Use the external surcharge processor when you want compliance handled for you, and the [Surcharge Manager](surcharge-setup-guide.md) when you want to define the rules yourself.
 
 **What happens if I send `surcharge_details` in the payments/create request?**\
-An explicit `surcharge_details` in the [payments/create request](https://api-reference.hyperswitch.io/v1/payments/payments--create) takes precedence, and no surcharge decision is made on your behalf for that payment.
+On a profile with external surcharge enabled, do not rely on it. Once an external surcharge has been calculated for the payment, it replaces the `surcharge_amount` you supplied in the [payments/create request](https://api-reference.hyperswitch.io/v1/payments/payments--create). If you want to set the surcharge yourself, do not enable an external surcharge processor on that profile.
 
 **In what unit is `surcharge_amount` expressed?**\
 The smallest unit of the payment currency — cents for USD, yen for JPY. This is the same convention used everywhere in the routing rule builder.
 
 **Is the surcharge shown to the shopper before they pay?**\
 Yes. The quote is fetched while the card is being entered, and the payment form shows the surcharge and the updated total before the payment is submitted.
+
+**What happens if the surcharge processor is unreachable?**\
+The payment still goes through, unsurcharged. The eligibility call returns `surcharge_details: null` rather than an error, so a surcharge outage degrades your revenue rather than your conversion — but it will not be obvious from the payment itself.
