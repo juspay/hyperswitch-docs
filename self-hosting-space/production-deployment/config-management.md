@@ -3,7 +3,7 @@ description: Configuration Management in Hyperswitch
 icon: gear-code
 ---
 
-# Config Management
+# Configuration Management
 
 Payment configurations in Hyperswitch
 
@@ -49,35 +49,20 @@ Configurations registered at a higher level cascade to every entity beneath, unl
 
 **3.1 First Time Self-Hosters**
 
-1. **Deploy Superposition**: Ensure the specific version of Superposition mentioned in the Hyperswitch stable release notes is deployed to your environment. Deployment helm charts will be provided in [hyperswitch-helm](https://github.com/juspay/hyperswitch-helm) along with the stable release.
-2. **Execute migration tools**: With every stable release, we provide a migration utility (SQL query and Python script) to transition configurations from hyperswitch\_db into Superposition. To use it, first run the provided SQL queries and migration utilities as provided in the release docs. An example config is as following:
+1. **Deploy Superposition along with Hyperswitch**: Ensure the specific version of Superposition mentioned in the Hyperswitch stable release notes is deployed to your environment. Deployment helm charts will be provided in [hyperswitch-helm](https://github.com/juspay/hyperswitch-helm) along with the stable release.
+2. For first time hosters, use the [superposition\_seed.toml](https://github.com/juspay/hyperswitch/blob/main/config/superposition_seed.toml) to initialise the configs in your deployed Superposition instance with which Hyperswitch talks
+3.  **Point Hyperswitch to Superposition**: Configure the new environment variables (SUPERPOSITION\_HOST, workspace identifiers, and polling intervals). Hyperswitch is designed to fail fast on startup if the connection is unreachable. Use the following configuration block:
 
-```
-SELECT * FROM configs WHERE key LIKE '%poll_config_external_three_ds%';
-```
+    ```
+    [superposition]
+    endpoint = "https://superposition.your-company.net/"  // example only
+    org_id = "hyperswitch"
+    workspace_id = "hyperswitch"
+    polling_interval = 50
+    backup_file_path = "./config/superposition_seed.toml"
+    ```
 
-Then, process this file using the provided Python script to automatically create overrides for any non-default configs:
-
-```
-python migrate_config.py --input configs.csv --env prod
-```
-
-The script processes one Superposition environment at a time, selected using the `--env flag (local, integ, sandbox, or prod)`. You must define connection details - including the host URL, organisation ID, workspace ID, and auth token - in the script's ENVS dictionary before execution. This utility performs two primary functions: it can seed the necessary dimensions into a new workspace using `--seed-dimensions`, and it executes the migration by registering default configuration values and creating dimensional context overrides based on your database dump.
-
-
-
-3. **Point Hyperswitch to Superposition**: Configure the new environment variables (SUPERPOSITION\_HOST, workspace identifiers, and polling intervals). Hyperswitch is designed to fail fast on startup if the connection is unreachable. Use the following configuration block:
-
-```
-[superposition]
-endpoint = "http://localhost:8081"
-org_id = "localorg"
-workspace_id = "dev"
-polling_interval = 300
-backup_file_path = "./config/superposition_seed.toml"
-```
-
-Configuration Details:
+**Configuration Details:**
 
 * **endpoint**: The base URL of the running Superposition service.
 * **org\_id**: The identifier for your organization within Superposition.
@@ -85,13 +70,39 @@ Configuration Details:
 * **polling\_interval**: The interval, in seconds, at which the client checks for configuration updates.
 * **backup\_file\_path**: The path to a local configuration file used as a fallback if the Superposition service is unreachable, ensuring the application can still function during service disruptions.
 
-
-
 **3.2 Maintenance Work (Subsequent Stable Releases)**
 
-1. **Run DB migrations and update Superposition**: For every new release, run DB migrations in Superposition DB and then update Superposition to the corresponding version.
-2. **Run migration scripts for new configs**: Execute the provided Python migration scripts to move new configuration values from the database into Superposition overrides as required by the release.
-3. **Upgrade Hyperswitch**: Once the configuration layer and migrations are finalized, proceed with upgrading the Hyperswitch application to the latest stable version as usual.
+1. **If upgrading Superposition in Hyperswitch:**
+   1. **Run Superposition DB migrations and update Superposition**: For every new release of Hyperswitch, its compatible Supersposition is also mernioned in the release docs.&#x20;
+      1. Using that Superposition needs to be upgraded and the correcponding DB migrations will be present in the [Superposition repository](https://github.com/juspay/superposition).&#x20;
+      2. Run the migrations for Superposition DB and then update Superposition to the corresponding version.
+   2. **Run migration scripts for new configs**: Execute the provided Python migration scripts to move new configuration values from the database into Superposition overrides as required by the release. Refer **Configuration Migration Management** below.
+   3. **Upgrade Hyperswitch**: Once the configuration layer and migrations are finalized, proceed with upgrading the Hyperswitch application to the latest stable version as usual.
+2. **For Configuration Migration Management**
+   1. If you are moving from a stable version to another stable release version, the configs which are migrated from DB to Superposition during upgrade will be mentioned in the release docs along with their utility scripts. Following provides an example of this:
+   2. **Execute migration tools**: With every stable release, we provide a migration utility (superposition\_migration.zip) (SQL query, Python script and README) to transition configurations from hyperswitch\_db into Superposition. To use it, first run the provided SQL queries and migration utilities as provided in the release docs. An example config is as following:
+
+```
+SELECT * FROM configs WHERE key LIKE '%poll_config_external_three_ds%';
+```
+
+Then, feed the result of above query to the provided Python script as a CSV file (.csv) to automatically create default configs, dimensions and overrides for any non-default configs
+
+```
+./run_migration.sh --input configs.csv --env prod --dry-run
+```
+
+The above command produces a summary of the configs that will be migrated to Superposition according to the provided CSV
+
+```
+./run_migration.sh --input configs.csv --env prod
+```
+
+The above command does the same but does the actual migration in your production environment.
+
+The script processes one Superposition environment at a time, selected using the `--env flag (local, integ, sandbox, or prod)`. You must define connection details - including the host URL, organisation ID, workspace ID, and auth token - in the script's ENVS dictionary before execution. This utility performs two primary functions: it can seed the necessary dimensions into a new workspace using `--seed-dimensions`, and it executes the migration by registering default configuration values and creating dimensional context overrides based on your database dump.&#x20;
+
+
 
 ### Learn more about Superposition
 

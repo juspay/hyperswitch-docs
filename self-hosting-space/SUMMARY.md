@@ -52,7 +52,7 @@
 * [Scale and Reliability](production-deployment/scale-and-reliability/README.md)
   * [Chaos Testing](production-deployment/scale-and-reliability/chaos-testing.md)
   * [Load Testing](production-deployment/scale-and-reliability/load-testing.md)
-* [Config Management](production-deployment/config-management.md)
+* [Configuration Management](production-deployment/config-management.md)
 * [Security and Compliance](production-deployment/security-and-compliance.md)
 * [Monitoring and Alerts](production-deployment/monitoring-and-alerts.md)
 * [Going live](production-deployment/going-live/README.md)
