@@ -215,6 +215,7 @@
     * [Self-Deployment Guide](integration-guide/workflows/intelligent-routing/self-deployment-guide.md)
   * [Surcharge](integration-guide/workflows/surcharge/README.md)
     * [Surcharge Setup guide](integration-guide/workflows/surcharge/surcharge-setup-guide.md)
+    * [External Surcharge](integration-guide/workflows/surcharge/external-surcharge.md)
 * [Account & Operations](integration-guide/account-management/README.md)
   * [Account Setup and Structure](integration-guide/account-management/multiple-accounts-and-profiles/README.md)
     * [Quick Start: Create Your Hyperswitch Account](integration-guide/account-management/multiple-accounts-and-profiles/quick-start.md)
