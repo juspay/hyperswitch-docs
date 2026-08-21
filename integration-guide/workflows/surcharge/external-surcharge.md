@@ -111,23 +111,42 @@ POST /payments/{payment_id}/eligibility
 * **Body:** the payment method (`"payment_method_type": "card"`), optionally its subtype (`"payment_method_subtype": "credit"`), and the card under `payment_method_data`. Only `card_number` is strictly required.
 * **Response:** `surcharge_details` — with `display_surcharge_amount` and `display_total_surcharge_amount` for rendering — plus `sdk_next_action`, telling the checkout what to do next.
 
-Hyperswitch caches the quote against the payment for **15 minutes**, and applies it when the payment is confirmed. The confirmed payment reports the surcharge in `surcharge_details` and the surcharged total in `net_amount`.
+Hyperswitch caches the quote against the payment for **15 minutes**.
 
 {% hint style="info" %}
 The surcharge call is **best-effort**. If the surcharge processor cannot be reached, or is not configured, the eligibility call still returns `200` with `surcharge_details: null` and the payment goes through unsurcharged. It never fails a payment — but it also means a missing surcharge is easy to miss.
 {% endhint %}
 
-If you use the Hyperswitch checkout SDK, this call is made for you and the payment form updates to show the surcharge and the new total. If you have built your own checkout, make the call yourself after the card number is entered, and re-render your total from the response.
+If you have built your own checkout, make this call yourself once the card number is entered, and re-render your total from the response.
 
-> **TODO — screenshot pending.** A screenshot of the payment form showing a card entered, the surcharge line item, and the pay button reflecting the surcharged total has not yet been captured. See the note at the end of this page.
+If you use the Hyperswitch checkout SDK, the SDK can make the call for you — but only when the payment tells it to. See [When the SDK makes the call for you](#when-the-sdk-makes-the-call-for-you) below.
 
-### Step 6: Debit cards are not surcharged
+Once a quote has been fetched, it is applied when the payment is confirmed. The confirmed payment reports the surcharge in `surcharge_details` and the surcharged total in `net_amount`:
 
-Surcharging debit cards is prohibited in most jurisdictions, and this is exactly the kind of rule the external processor handles for you. Repeat the test payment with a **debit** card: the surcharge quote comes back as zero, no surcharge line is shown, and the pay button stays at the base amount.
+<figure><img src="../../../.gitbook/assets/external-surcharge-payment-surcharged.png" alt=""><figcaption><p>A $100 payment on a credit card, surcharged $3 by InterPayments — <code>Net Amount</code> is $103</p></figcaption></figure>
 
-No configuration on your side is needed to get this behaviour — it is the surcharge processor applying the rules for the card in question.
+{% hint style="warning" %}
+**If the eligibility call is never made, the payment is simply not surcharged.** Confirming the same card without first calling `/eligibility` produces `surcharge_details: null` and a `net_amount` equal to the original amount. Nothing fails and nothing warns you — the surcharge is just silently absent.
+{% endhint %}
 
-> **TODO — screenshot pending.** A screenshot of the payment form with a debit card entered showing no surcharge applied has not yet been captured. See the note at the end of this page.
+### Step 6: When the SDK makes the call for you
+
+The Hyperswitch checkout SDK only issues the eligibility call when the payment intent asks it to. The payment's `sdk_next_action.next_action` field drives this:
+
+* `"eligibility_check"` — the SDK calls `/payments/{payment_id}/eligibility` as the card number is entered, then renders the surcharge and the updated total on the payment form.
+* `"confirm"` — the SDK goes straight to confirmation and **never fetches a surcharge**, even with a surcharge processor connected and selected on the profile.
+
+Eligibility checks are enabled per **merchant account** by Hyperswitch, and are not currently a self-serve setting in the Control Center. If the eligibility endpoint returns a surcharge when you call it directly but your payment form never shows one, check `sdk_next_action` on the payment — if it reads `confirm`, contact Hyperswitch to have eligibility checks enabled for your merchant account, or make the call yourself from your own checkout.
+
+### Step 7: Debit cards are not surcharged
+
+Surcharging debit cards is prohibited in most jurisdictions, and this is exactly the kind of rule the external processor handles for you. Repeat the eligibility call with a **debit** card and the quote comes back as zero — no configuration on your side, just the surcharge processor applying the rules for the card in question.
+
+The decision is made from the **card itself**, not from what you declare. Sending `"payment_method_subtype": "debit"` alongside a credit-card BIN still returns the credit-card surcharge; it is the card number that determines the answer.
+
+A payment with a zero surcharge is confirmed at its original amount, with `Surcharge Amount` reported as `0`:
+
+<figure><img src="../../../.gitbook/assets/external-surcharge-payment-no-surcharge.png" alt=""><figcaption><p>A card the surcharge processor returns no surcharge for — <code>Net Amount</code> is unchanged</p></figcaption></figure>
 
 ## Routing to payment processors based on surcharge value
 
@@ -186,12 +205,16 @@ Only one routing configuration is active per profile at a time. Previous configu
 
 ### Step 5: Verify the routing with test payments
 
-Make two test payments from **Try a test payment**:
+Make two test payments, each with a surcharge quote actually fetched for it — either through the SDK, if eligibility checks are enabled on your merchant account, or by calling `/payments/{payment_id}/eligibility` yourself before confirming:
 
-1. A **debit** card, which the surcharge processor returns no surcharge for — this should match Rule 1 and be processed by Fauxpay.
-2. A **credit** card that does attract a surcharge — this should match Rule 2 and be processed by Pretendpay.
+1. A card the surcharge processor returns **no surcharge** for — this should match Rule 1 and be processed by Fauxpay.
+2. A card that **does attract a surcharge** — this should match Rule 2 and be processed by Pretendpay.
 
 Then open **Operations → Payments** and check the **Connector** column for each payment to confirm which processor handled it.
+
+{% hint style="info" %}
+Routing reads the surcharge that is attached to the payment, so the quote has to have been fetched before you confirm. A payment confirmed without an eligibility call carries no surcharge and routes down the `EQUAL TO 0` branch — see the warning below.
+{% endhint %}
 
 {% hint style="warning" %}
 **Set up the test so a rule hit and a rule miss look different.** If a rule points at a processor that is also the first entry in your Default Fallback list, a payment landing on that processor tells you nothing — it could have matched the rule, or it could have fallen through.
@@ -199,15 +222,22 @@ Then open **Operations → Payments** and check the **Connector** column for eac
 Before testing, connect a third processor you are not routing to and move it to the top of your Default Fallback list. Then any payment landing on that third processor is unambiguously a rule miss, and anything landing on Fauxpay or Pretendpay is unambiguously a rule hit. Restore your fallback order afterwards.
 {% endhint %}
 
-> **TODO — verification pending.** Screenshots of the Payments list showing the two payments routed to different connectors have not yet been captured. See the note below.
+The two payments land on different processors, confirming both branches of the rule:
+
+<figure><img src="../../../.gitbook/assets/external-surcharge-routing-verification.png" alt=""><figcaption><p>A surcharged payment on Pretendpay and unsurcharged payments on Fauxpay</p></figcaption></figure>
+
+The middle row above is a second no-surcharge payment that Fauxpay rejected at authorization because the card was not one of its accepted test numbers. Routing still selected Fauxpay for it, which is the part being verified here — the routing decision is made before the processor ever sees the card.
 
 ## Known gap in this draft
 
-The two payment-form screenshots and the end-to-end split of the two routing branches could not be captured for this revision, because the environment used to write it could not complete a live surcharge calculation against InterPayments. What *was* verified there:
+The shopper-facing payment form could not be captured for this revision. The surcharge itself works end to end — the eligibility call returns a live InterPayments quote, and confirming the payment applies it — but the checkout SDK never renders it, because the merchant account used had `sdk_next_action` returning `confirm` rather than `eligibility_check` (see [Step 6](#step-6-when-the-sdk-makes-the-call-for-you)). Capturing the payment form with a surcharge line and an updated pay button needs a merchant account with eligibility checks enabled.
 
-* `surcharge_amount` is presented to the routing engine as `0` — not null — when no external surcharge is attached, so an `EQUAL TO 0` rule matches. This was confirmed by running identical payments against three routing configurations and observing that `EQUAL TO 0` selected its target processor, a mirrored rule selected the opposite processor, and a configuration containing only `GREATER THAN 0` fell through to the fallback list.
+Everything else on this page was verified against a live sandbox with InterPayments connected:
 
-The no-surcharge branch and the shopper-facing display still need to be captured against a working surcharge calculation before this page is published.
+* A credit-card BIN returned a `300` surcharge on a `10000` payment; confirming it produced `net_amount: 10300`.
+* A Visa debit BIN returned a `0` surcharge for the same payment.
+* Confirming without calling `/eligibility` produced `surcharge_details: null` and left `net_amount` at the original amount.
+* `surcharge_amount` is presented to the routing engine as `0` — not null — when no external surcharge is attached, so an `EQUAL TO 0` rule matches. A payment confirmed with no eligibility call routed to the `EQUAL TO 0` branch.
 
 ## FAQs
 
@@ -224,7 +254,10 @@ On a profile with external surcharge enabled, do not rely on it. Once an externa
 The smallest unit of the payment currency — cents for USD, yen for JPY. This is the same convention used everywhere in the routing rule builder.
 
 **Is the surcharge shown to the shopper before they pay?**\
-Yes. The quote is fetched while the card is being entered, and the payment form shows the surcharge and the updated total before the payment is submitted.
+It can be. The quote is fetched while the card is being entered, so the payment form can show the surcharge and the updated total before the payment is submitted. With the Hyperswitch SDK this requires eligibility checks to be enabled on your merchant account — see [Step 6](#step-6-when-the-sdk-makes-the-call-for-you). On your own checkout, call `/eligibility` yourself and render the response.
+
+**Can I run external surcharge on a self-hosted Hyperswitch?**\
+Only with the Universal Connector Service (UCS) deployed. The surcharge is computed through UCS rather than in the router process, so a self-hosted stack without a UCS `connector-service` that includes the surcharge service cannot complete a surcharge calculation at all — the eligibility call returns `surcharge_details: null` and payments go through unsurcharged. You also need a checkout SDK build recent enough to contain the external-surcharge UI; older pinned SDK bundles have no such component.
 
 **What happens if the surcharge processor is unreachable?**\
 The payment still goes through, unsurcharged. The eligibility call returns `surcharge_details: null` rather than an error, so a surcharge outage degrades your revenue rather than your conversion — but it will not be obvious from the payment itself.
