@@ -131,12 +131,30 @@ Once a quote has been fetched, it is applied when the payment is confirmed. The 
 
 ### Step 6: When the SDK makes the call for you
 
-The Hyperswitch checkout SDK only issues the eligibility call when the payment intent asks it to. The payment's `sdk_next_action.next_action` field drives this:
+The Hyperswitch checkout SDK only issues the eligibility call when the payment intent asks it to. The payment's `sdk_next_action` field — returned by `GET /payments/{payment_id}/client` — drives this:
 
-* `"eligibility_check"` — the SDK calls `/payments/{payment_id}/eligibility` as the card number is entered, then renders the surcharge and the updated total on the payment form.
+```json
+"sdk_next_action": { "next_action": "eligibility_check", "should_block_confirm": true }
+```
+
+* `"eligibility_check"` — the SDK calls `/payments/{payment_id}/eligibility` once the card is known, then renders the surcharge on the payment form.
 * `"confirm"` — the SDK goes straight to confirmation and **never fetches a surcharge**, even with a surcharge processor connected and selected on the profile.
 
+`should_block_confirm` tells the SDK to hold the pay button until an eligibility result has come back, so the shopper cannot submit the payment before the surcharge has been quoted.
+
 Eligibility checks are enabled per **merchant account** by Hyperswitch, and are not currently a self-serve setting in the Control Center. If the eligibility endpoint returns a surcharge when you call it directly but your payment form never shows one, check `sdk_next_action` on the payment — if it reads `confirm`, contact Hyperswitch to have eligibility checks enabled for your merchant account, or make the call yourself from your own checkout.
+
+With eligibility checks enabled, selecting a saved card fetches a quote and the SDK renders it under the card, before the shopper submits:
+
+<figure><img src="../../../.gitbook/assets/external-surcharge-sdk-surcharge-subtext.png" alt=""><figcaption><p>The surcharge quoted by InterPayments, shown on the payment form</p></figcaption></figure>
+
+The figure shown is `display_total_surcharge_amount` from the eligibility response — `3.0` for the $100 payment above, matching the `300` minor units in `surcharge.value`.
+
+{% hint style="warning" %}
+**A newly entered card number was not quoted by the SDK build tested here (`2026.07.27.00` on the sandbox).** With `sdk_next_action` set to `eligibility_check`, selecting a *saved* card fetched and displayed the surcharge as shown above — but typing a *new* card number into the payment form issued no eligibility call and displayed no surcharge. Because `should_block_confirm` is `true`, the pay button then stayed on **Please wait…** indefinitely and the payment was never submitted.
+
+If your checkout accepts new card entry, verify this on your own SDK build before enabling external surcharge on a live profile, or call `/eligibility` yourself from your own checkout and render the response.
+{% endhint %}
 
 ### Step 7: Debit cards are not surcharged
 
@@ -228,16 +246,18 @@ The two payments land on different processors, confirming both branches of the r
 
 The middle row above is a second no-surcharge payment that Fauxpay rejected at authorization because the card was not one of its accepted test numbers. Routing still selected Fauxpay for it, which is the part being verified here — the routing decision is made before the processor ever sees the card.
 
-## Known gap in this draft
+## What this page was verified against
 
-The shopper-facing payment form could not be captured for this revision. The surcharge itself works end to end — the eligibility call returns a live InterPayments quote, and confirming the payment applies it — but the checkout SDK never renders it, because the merchant account used had `sdk_next_action` returning `confirm` rather than `eligibility_check` (see [Step 6](#step-6-when-the-sdk-makes-the-call-for-you)). Capturing the payment form with a surcharge line and an updated pay button needs a merchant account with eligibility checks enabled.
+Everything on this page was verified against a live sandbox with InterPayments connected and selected on the profile, and with eligibility checks enabled on the merchant account:
 
-Everything else on this page was verified against a live sandbox with InterPayments connected:
-
-* A credit-card BIN returned a `300` surcharge on a `10000` payment; confirming it produced `net_amount: 10300`.
+* `GET /payments/{payment_id}/client` returned `"sdk_next_action": {"next_action": "eligibility_check", "should_block_confirm": true}` on freshly created payments.
+* A credit-card BIN returned a `300` surcharge on a `10000` payment (`display_total_surcharge_amount: 3.0`); confirming it produced `net_amount: 10300`.
 * A Visa debit BIN returned a `0` surcharge for the same payment.
+* On the checkout SDK, selecting a saved card fired `POST /payments/{payment_id}/eligibility` and rendered the quoted surcharge on the payment form — the screenshot in [Step 6](#step-6-when-the-sdk-makes-the-call-for-you) is that response.
 * Confirming without calling `/eligibility` produced `surcharge_details: null` and left `net_amount` at the original amount.
 * `surcharge_amount` is presented to the routing engine as `0` — not null — when no external surcharge is attached, so an `EQUAL TO 0` rule matches. A payment confirmed with no eligibility call routed to the `EQUAL TO 0` branch.
+
+**Not verified:** the payment form has not been captured for a **newly entered** card number, because the SDK build tested fetched no surcharge in that flow — see the warning in [Step 6](#step-6-when-the-sdk-makes-the-call-for-you).
 
 ## FAQs
 
@@ -254,7 +274,7 @@ On a profile with external surcharge enabled, do not rely on it. Once an externa
 The smallest unit of the payment currency — cents for USD, yen for JPY. This is the same convention used everywhere in the routing rule builder.
 
 **Is the surcharge shown to the shopper before they pay?**\
-It can be. The quote is fetched while the card is being entered, so the payment form can show the surcharge and the updated total before the payment is submitted. With the Hyperswitch SDK this requires eligibility checks to be enabled on your merchant account — see [Step 6](#step-6-when-the-sdk-makes-the-call-for-you). On your own checkout, call `/eligibility` yourself and render the response.
+It can be. The quote is fetched once the card is known, so the payment form can show the surcharge before the payment is submitted. With the Hyperswitch SDK this requires eligibility checks to be enabled on your merchant account, and on the build tested it rendered for saved cards but not for newly entered card numbers — see [Step 6](#step-6-when-the-sdk-makes-the-call-for-you) and the warning there. On your own checkout, call `/eligibility` yourself and render the response.
 
 **Can I run external surcharge on a self-hosted Hyperswitch?**\
 Only with the Universal Connector Service (UCS) deployed. The surcharge is computed through UCS rather than in the router process, so a self-hosted stack without a UCS `connector-service` that includes the surcharge service cannot complete a surcharge calculation at all — the eligibility call returns `surcharge_details: null` and payments go through unsurcharged. You also need a checkout SDK build recent enough to contain the external-surcharge UI; older pinned SDK bundles have no such component.
