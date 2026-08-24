@@ -1,62 +1,51 @@
 ---
-description: Understand how error codes are classified for Smart Retry decisions
 icon: signs-post
-metaLinks:
-  alternates:
-    - processor-error-code-mapping.md
 ---
 
-# Processor error code mapping
+# Understanding Decline Codes
 
-Smart Retry is a Juspay Hyperswitch intelligent optimization engine designed to maximize transaction success rates. Leveraging an advanced AI model, the system analyzes error codes returned from payment processors to determine the root cause of failure in real-time.
+Every failed payment comes back with an error, but not every error means the same thing. Some declines are worth retrying immediately, some only after authentication, and some will never succeed no matter how many times you try.
 
-Upon receiving an error, the system classifies the transaction as either Non-Retryable or Retryable. If an error is deemed retryable, the AI dynamically selects the optimal recovery strategy from the following:
+The difficulty is that each processor describes failures in its own language. Stripe returns **card\_declined**, Adyen returns **Refused** - and both may be relaying the exact same issuer decision underneath.
 
-| Category        | Example                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| Cascading retry | Refused, System malfunction, Processing temporarily unavailable                                      |
-| Step-up retry   | Step-up retry                                                                                        |
-| Clear PAN retry | Invalid cryptogram, Network token not supported, Payment token expired                               |
-| Network retry   | Transaction not permitted on this network, Invalid card for selected network, Function not supported |
+Hyperswitch normalises this through the Gateway Status Map (GSM): a rule table that turns any processor's error into a retry decision and a single, consistent error for your systems and your customers.
 
-To illustrate the classification process, the following tables lists few sample Stripe error codes and how our AI model categorizes them into Retryable versus Non-Retryable workflows.
 
-### Error codes categorized as Retryable:
 
-| code                                          | message                                                                                                                                                                                                                                                                                                                                                                   |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fraudulent                                    | The payment was declined because Stripe suspects that it's a fraudulent.                                                                                                                                                                                                                                                                                                  |
-| payment\_method\_unexpected\_state            | The provided payment method's state was incompatible with the operation you were trying to perform. Confirm that the payment method is in an allowed state for the given operation before attempting to perform it.                                                                                                                                                       |
-| payment\_method\_invalid\_parameter\_testmode | The parameter provided for payment method isn't allowed to be used in testmode. See the API reference or the returned error message for more context.                                                                                                                                                                                                                     |
-| parameter\_unknown                            | parameter\_unknown                                                                                                                                                                                                                                                                                                                                                        |
-| lock\_timeout                                 | This object can't be accessed right now because another API request or Stripe process is currently accessing it. If you see this error intermittently, retry the request. If you see this error frequently and are making multiple concurrent requests to a single object, make your requests serially or at a lower rate. See the Object lock timeouts for more details. |
-| 500                                           | internal\_server\_error                                                                                                                                                                                                                                                                                                                                                   |
-| payment\_intent\_invalid\_parameter           | One or more provided parameters was not allowed for the given operation on the PaymentIntent. See the API reference or the returned error message to see which values weren't correct for that PaymentIntent.                                                                                                                                                             |
-| forwarding\_api\_upstream\_connection\_error  | Stripe didn't receive a response from the destination endpoint. This typically indicates a problem with the destination endpoint, rather than with Stripe.                                                                                                                                                                                                                |
-| payment\_method\_unactivated                  | The operation can't be performed because the payment method used hasn't been activated. Activate the payment method in the Dashboard, then try again.                                                                                                                                                                                                                     |
-| parameter\_invalid\_empty                     | One or more required values weren't provided. Make sure requests include all required parameters.                                                                                                                                                                                                                                                                         |
-| bitcoin\_upgrade\_required                    | This method for creating Bitcoin payments isn't supported anymore. Upgrade your integration to use Sources instead.                                                                                                                                                                                                                                                       |
-| authentication\_required                      | The payment requires authentication to proceed. If your customer is off session, notify your customer to return to your application and complete the payment. If you provided the error\_on\_requires\_action parameter, then your customer should try another card that doesn't require authentication.                                                                  |
-| partner\_generic\_decline                     | The payment provider has declined the payment                                                                                                                                                                                                                                                                                                                             |
-| payment\_method\_unactivated                  | The operation cannot be performed as the payment method used has not been activated. Activate the payment method in the Dashboard, then try again.                                                                                                                                                                                                                        |
-| partner\_high\_risk\_customer                 | The payment provider labeled this customer as high risk                                                                                                                                                                                                                                                                                                                   |
-| parameter\_invalid\_empty                     | One or more required values were not provided. Make sure requests include all required parameters.                                                                                                                                                                                                                                                                        |
-| call\_issuer                                  | The card was declined for an unknown reason.                                                                                                                                                                                                                                                                                                                              |
-| fraudulent                                    | The payment was declined because Stripe suspects that it's fraudulent.                                                                                                                                                                                                                                                                                                    |
+### The codes on a failed payment
 
-### Error codes categorized as Non-Retryable:
+| Code                 | What it tells you                                                                                                                                              |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Processor error code | How the PSP described the failure. Specific to that processor                                                                                                  |
+| Issuer decline code  | The card network decline code from the issuer, e.g. `05` (Do not honor), `51` (Insufficient funds). Same meaning across every processor that passes it through |
+| Network advice code  | The scheme's guidance on whether a merchant-initiated transaction may be re-attempted. Configured separately, outside GSM                                      |
 
-| Error Code                           | Description / Message                                                                                                                                                                                                                                    |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| card\_decline\_rate\_limit\_exceeded | This card has been declined too many times. You can try to charge this card again after 24 hours. We suggest reaching out to your customer to make sure they've entered all of their information correctly and that there are no issues with their card. |
-| account\_closed                      | The customer's bank account has been closed.                                                                                                                                                                                                             |
-| invalid\_cvc                         | The card's security code is invalid. Check the card's security code or use a different card.                                                                                                                                                             |
-| acss\_debit\_session\_incomplete     | The ACSS debit session isn't ready to transition to complete status yet. Try the request again later.                                                                                                                                                    |
-| incorrect\_number                    | The card number is incorrect. Check the card's number or use a different card.                                                                                                                                                                           |
-| invalid\_expiry\_month               | The card's expiration month is incorrect.                                                                                                                                                                                                                |
-| insufficient\_funds                  | The customer's account has insufficient funds to cover this payment.                                                                                                                                                                                     |
-| card\_declined                       | Your card does not support this type of purchase.                                                                                                                                                                                                        |
-| invalid\_expiry\_year                | The card's expiration year is incorrect. Check the expiration date or use a different card.                                                                                                                                                              |
-| card\_not\_supported                 | The card doesn't support this type of purchase.                                                                                                                                                                                                          |
-| pin\_try\_exceeded                   | The allowable number of PIN tries was exceeded.                                                                                                                                                                                                          |
-| pickup\_card                         | The customer can't use this card to make this payment (it's possible it was reported lost or stolen).                                                                                                                                                    |
+The issuer code is the more useful of the two GSM uses, because it describes the _issuer's_ behaviour rather than the processor's wording and does so without any process syntactic sugar. Hyperswitch therefore checks it first.
+
+### How a rule is matched
+
+1. **Issuer code** - used when both the decline code and the card network are known for the attempt.
+2. **Processor code** - the fallback, matched on the PSP's own code and message.
+3. **Neither matches** - no auto-retry, and the unified error `UE_9000 - Something went wrong` is returned.
+
+Rules are scoped to a processor, flow and sub-flow, e.g. `(adyen, Payment, Authorize)` . For complete list of flows and sub-flows check out the [Hyperswitch repository](https://github.com/juspay/hyperswitch) and the [API reference](https://api-reference.hyperswitch.io/introduction)
+
+
+
+### What a GSM rule decides
+
+| Outcome         | When it applies                                                |
+| --------------- | -------------------------------------------------------------- |
+| Cascading retry | Re-attempt on the next eligible processor                      |
+| Step-up retry   | Re-attempt once on the same processor with 3DS enforced        |
+| Clear PAN retry | Re-attempt with the raw card number instead of a network token |
+| Network retry   | Re-attempt over an alternate card network                      |
+| No retry        | Hard declines, where further attempts only add cost            |
+
+Each rule also sets the **unified error code, message, stadardised message, user-friendly message (to show on the Checkout page) , description** returned in the payments API response
+
+
+
+
+
+**Note: Not every processor sends an issuer code.** In case not present Hyperswitch  fall back to the processor code silently.
