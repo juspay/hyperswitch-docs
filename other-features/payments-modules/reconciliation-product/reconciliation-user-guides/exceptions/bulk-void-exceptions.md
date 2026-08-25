@@ -1,6 +1,6 @@
 # Bulk void exceptions
 
-## Bulk Voiding Transactions
+
 
 _Time needed: \~5 minutes · Works on the Exceptions screen_
 
