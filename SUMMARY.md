@@ -292,6 +292,7 @@
         * [Bulk void exceptions](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/bulk-void-exceptions.md)
         * [Resolving Amount Mismatch Exceptions](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-amount-mismatch-exceptions.md)
         * [Transformation Error Reports & Run Details](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/transformation-error-reports-and-run-details.md)
+        * [Resolving Split Payments by Linking an Entry (When 1:1 Becomes Many-to-1)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-split-payments-by-linking-an-entry-when-1-1-becomes-many-to-1.md)
     * [FAQ](other-features/payments-modules/reconciliation-product/faq.md)
   * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
