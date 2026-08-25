@@ -287,6 +287,7 @@
       * [Know your setup](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/know-your-setup.md)
       * [Uploading Your Files (Pipelines)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/uploading-your-files-pipelines.md)
       * [Verifying Your Data (Transformed Entries)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/verifying-your-data-transformed-entries.md)
+      * [Following a Payment (Transactions)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/following-a-payment-transactions.md)
     * [FAQ](other-features/payments-modules/reconciliation-product/faq.md)
   * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
