@@ -1,8 +1,0 @@
----
-metaLinks:
-  alternates:
-    - ./
----
-
-# Dispute Service
-
