@@ -10,6 +10,10 @@ metaLinks:
 
 You can manage your team - invite / add new users, assign roles and update roles (upcoming) - through the Hyperswitch control center. Currently, Hyperswitch provides 7 default roles for you to configure.
 
+
+
+<figure><img src="../../.gitbook/assets/stack-architecture.svg" alt=""><figcaption></figcaption></figure>
+
 <figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Default Roles

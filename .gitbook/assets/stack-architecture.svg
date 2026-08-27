@@ -1,0 +1,441 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 1440" width="2480" height="1440" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+  <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.10"/>
+</filter>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+  <path d="M 0 1 L 8 5 L 0 9" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<g id="ic-users" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round">
+  <circle cx="5" cy="4.6" r="2.4"/><path d="M1.2 12.5 a3.8 3.8 0 0 1 7.6 0"/>
+  <circle cx="10.4" cy="5" r="1.9"/><path d="M10.8 9.4 a3.2 3.2 0 0 1 2.4 3.1"/>
+</g>
+<g id="ic-gear" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="7" cy="7" r="2.1"/>
+  <path d="M7 1.6v1.9M7 10.5v1.9M1.6 7h1.9M10.5 7h1.9M3.2 3.2l1.3 1.3M9.5 9.5l1.3 1.3M10.8 3.2 9.5 4.5M4.5 9.5 3.2 10.8"/>
+</g>
+<g id="ic-person" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round">
+  <circle cx="7" cy="4.4" r="2.5"/><path d="M2.4 12.6 a4.6 4.6 0 0 1 9.2 0"/>
+</g>
+<g id="ic-card" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linejoin="round">
+  <rect x="1.4" y="3" width="11.2" height="8" rx="1.6"/><path d="M1.4 5.8h11.2" stroke-width="1.8"/><path d="M3.4 9h3" stroke-linecap="round"/>
+</g>
+<g id="ic-tx" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1.6 4.4h9.6l-2.4-2.4M12.4 9.6H2.8l2.4 2.4"/>
+</g>
+<g id="ic-route" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 2.5v6a2 2 0 0 0 2 2h8"/><path d="M2 2.5h6M9.8 8.3 12 10.5 9.8 12.7"/>
+</g>
+</defs>
+<g filter="url(#soft)"><rect x="40" y="40" width="1180" height="640" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/></g>
+<rect x="60" y="60" width="92" height="30" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="106.0" y="80" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">US stack</text>
+<g filter="url(#soft)"><rect x="551.0" y="78" width="158" height="65" rx="10" fill="#dcfce7" stroke="#4ade80" stroke-width="1.4"/></g>
+<text x="630.0" y="98" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#14532d">Organization</text>
+<line x1="563.0" y1="106" x2="697.0" y2="106" stroke="#4ade80" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="565.0" y="117.5" width="14" height="14"/>
+<text x="585.0" y="128.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<g filter="url(#soft)"><rect x="209.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="305.0" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 1</text>
+<line x1="221.0" y1="228" x2="389.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="223.0" y="239.5" width="14" height="14"/>
+<text x="243.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="223.0" y="266.5" width="14" height="14"/>
+<text x="243.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="223.0" y="293.5" width="14" height="14"/>
+<text x="243.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="223.0" y="320.5" width="14" height="14"/>
+<text x="243.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 630.0 143 L 630.0 165.5 Q 630.0 171.5 624.0 171.5 L 311.0 171.5 Q 305.0 171.5 305.0 177.5 L 305.0 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="534.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="630" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 2</text>
+<line x1="546.0" y1="228" x2="714.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="548.0" y="239.5" width="14" height="14"/>
+<text x="568.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="548.0" y="266.5" width="14" height="14"/>
+<text x="568.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="548.0" y="293.5" width="14" height="14"/>
+<text x="568.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="548.0" y="320.5" width="14" height="14"/>
+<text x="568.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 630.0 143 L 630 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="859.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="955.0" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 3</text>
+<line x1="871.0" y1="228" x2="1039.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="873.0" y="239.5" width="14" height="14"/>
+<text x="893.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="873.0" y="266.5" width="14" height="14"/>
+<text x="893.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="873.0" y="293.5" width="14" height="14"/>
+<text x="893.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="873.0" y="320.5" width="14" height="14"/>
+<text x="893.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 630.0 143 L 630.0 165.5 Q 630.0 171.5 636.0 171.5 L 949.0 171.5 Q 955.0 171.5 955.0 177.5 L 955.0 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="108.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="200" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1A</text>
+<line x1="120.0" y1="428" x2="280.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="122.0" y="439.5" width="14" height="14"/>
+<text x="142.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="122.0" y="466.5" width="14" height="14"/>
+<text x="142.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="122.0" y="493.5" width="14" height="14"/>
+<text x="142.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 305.0 346 L 305.0 367.0 Q 305.0 373.0 299.0 373.0 L 206 373.0 Q 200 373.0 200 379.0 L 200 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="318.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="410" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1B</text>
+<line x1="330.0" y1="428" x2="490.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="332.0" y="439.5" width="14" height="14"/>
+<text x="352.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="332.0" y="466.5" width="14" height="14"/>
+<text x="352.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="332.0" y="493.5" width="14" height="14"/>
+<text x="352.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 305.0 346 L 305.0 367.0 Q 305.0 373.0 311.0 373.0 L 404 373.0 Q 410 373.0 410 379.0 L 410 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="538.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="630" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 2A</text>
+<line x1="550.0" y1="428" x2="710.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="552.0" y="439.5" width="14" height="14"/>
+<text x="572.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="552.0" y="466.5" width="14" height="14"/>
+<text x="572.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="552.0" y="493.5" width="14" height="14"/>
+<text x="572.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 630 346 L 630 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="758.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="850" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3A</text>
+<line x1="770.0" y1="428" x2="930.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="772.0" y="439.5" width="14" height="14"/>
+<text x="792.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="772.0" y="466.5" width="14" height="14"/>
+<text x="792.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="772.0" y="493.5" width="14" height="14"/>
+<text x="792.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 955.0 346 L 955.0 367.0 Q 955.0 373.0 949.0 373.0 L 856 373.0 Q 850 373.0 850 379.0 L 850 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="968.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1060" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3B</text>
+<line x1="980.0" y1="428" x2="1140.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="982.0" y="439.5" width="14" height="14"/>
+<text x="1002.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="982.0" y="466.5" width="14" height="14"/>
+<text x="1002.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="982.0" y="493.5" width="14" height="14"/>
+<text x="1002.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 955.0 346 L 955.0 367.0 Q 955.0 373.0 961.0 373.0 L 1054 373.0 Q 1060 373.0 1060 379.0 L 1060 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M 118.0 519 L 118.0 539.5 Q 118.0 545.5 124.0 545.5 L 134.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="134.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="202.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 118.0 519 L 118.0 573.5 Q 118.0 579.5 124.0 579.5 L 134.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="134.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="202.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 118.0 519 L 118.0 607.5 Q 118.0 613.5 124.0 613.5 L 134.0 613.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="134.0" y="601.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="202.0" y="617.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 3</text>
+<path d="M 328.0 519 L 328.0 539.5 Q 328.0 545.5 334.0 545.5 L 344.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="344.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="412.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 328.0 519 L 328.0 573.5 Q 328.0 579.5 334.0 579.5 L 344.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="344.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="412.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 548.0 519 L 548.0 539.5 Q 548.0 545.5 554.0 545.5 L 564.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="564.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="632.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 768.0 519 L 768.0 539.5 Q 768.0 545.5 774.0 545.5 L 784.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="784.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="852.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 768.0 519 L 768.0 573.5 Q 768.0 579.5 774.0 579.5 L 784.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="784.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="852.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 978.0 519 L 978.0 539.5 Q 978.0 545.5 984.0 545.5 L 994.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="994.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1062.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 978.0 519 L 978.0 573.5 Q 978.0 579.5 984.0 579.5 L 994.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="994.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1062.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 978.0 519 L 978.0 607.5 Q 978.0 613.5 984.0 613.5 L 994.0 613.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="994.0" y="601.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1062.0" y="617.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 3</text>
+<g filter="url(#soft)"><rect x="1260" y="40" width="1180" height="640" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/></g>
+<rect x="2328" y="60" width="92" height="30" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2374.0" y="80" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">EU stack</text>
+<g filter="url(#soft)"><rect x="1771.0" y="78" width="158" height="65" rx="10" fill="#dcfce7" stroke="#4ade80" stroke-width="1.4"/></g>
+<text x="1850.0" y="98" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#14532d">Organization</text>
+<line x1="1783.0" y1="106" x2="1917.0" y2="106" stroke="#4ade80" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1785.0" y="117.5" width="14" height="14"/>
+<text x="1805.0" y="128.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<g filter="url(#soft)"><rect x="1429.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="1525.0" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 1</text>
+<line x1="1441.0" y1="228" x2="1609.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1443.0" y="239.5" width="14" height="14"/>
+<text x="1463.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="1443.0" y="266.5" width="14" height="14"/>
+<text x="1463.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="1443.0" y="293.5" width="14" height="14"/>
+<text x="1463.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="1443.0" y="320.5" width="14" height="14"/>
+<text x="1463.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 1850.0 143 L 1850.0 165.5 Q 1850.0 171.5 1844.0 171.5 L 1531.0 171.5 Q 1525.0 171.5 1525.0 177.5 L 1525.0 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1754.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="1850" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 2</text>
+<line x1="1766.0" y1="228" x2="1934.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1768.0" y="239.5" width="14" height="14"/>
+<text x="1788.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="1768.0" y="266.5" width="14" height="14"/>
+<text x="1788.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="1768.0" y="293.5" width="14" height="14"/>
+<text x="1788.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="1768.0" y="320.5" width="14" height="14"/>
+<text x="1788.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 1850.0 143 L 1850 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="2079.0" y="200" width="192" height="146" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="2175.0" y="220" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 3</text>
+<line x1="2091.0" y1="228" x2="2259.0" y2="228" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="2093.0" y="239.5" width="14" height="14"/>
+<text x="2113.0" y="250.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-gear" x="2093.0" y="266.5" width="14" height="14"/>
+<text x="2113.0" y="277.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">API key</text>
+<use href="#ic-person" x="2093.0" y="293.5" width="14" height="14"/>
+<text x="2113.0" y="304.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Customers</text>
+<use href="#ic-card" x="2093.0" y="320.5" width="14" height="14"/>
+<text x="2113.0" y="331.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Cardvault</text>
+<path d="M 1850.0 143 L 1850.0 165.5 Q 1850.0 171.5 1856.0 171.5 L 2169.0 171.5 Q 2175.0 171.5 2175.0 177.5 L 2175.0 200" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1328.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1420" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1A</text>
+<line x1="1340.0" y1="428" x2="1500.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1342.0" y="439.5" width="14" height="14"/>
+<text x="1362.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="1342.0" y="466.5" width="14" height="14"/>
+<text x="1362.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="1342.0" y="493.5" width="14" height="14"/>
+<text x="1362.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 1525.0 346 L 1525.0 367.0 Q 1525.0 373.0 1519.0 373.0 L 1426 373.0 Q 1420 373.0 1420 379.0 L 1420 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1538.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1630" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1B</text>
+<line x1="1550.0" y1="428" x2="1710.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1552.0" y="439.5" width="14" height="14"/>
+<text x="1572.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="1552.0" y="466.5" width="14" height="14"/>
+<text x="1572.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="1552.0" y="493.5" width="14" height="14"/>
+<text x="1572.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 1525.0 346 L 1525.0 367.0 Q 1525.0 373.0 1531.0 373.0 L 1624 373.0 Q 1630 373.0 1630 379.0 L 1630 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1758.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1850" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 2A</text>
+<line x1="1770.0" y1="428" x2="1930.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1772.0" y="439.5" width="14" height="14"/>
+<text x="1792.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="1772.0" y="466.5" width="14" height="14"/>
+<text x="1792.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="1772.0" y="493.5" width="14" height="14"/>
+<text x="1792.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 1850 346 L 1850 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1978.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="2070" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3A</text>
+<line x1="1990.0" y1="428" x2="2150.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1992.0" y="439.5" width="14" height="14"/>
+<text x="2012.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="1992.0" y="466.5" width="14" height="14"/>
+<text x="2012.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="1992.0" y="493.5" width="14" height="14"/>
+<text x="2012.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 2175.0 346 L 2175.0 367.0 Q 2175.0 373.0 2169.0 373.0 L 2076 373.0 Q 2070 373.0 2070 379.0 L 2070 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="2188.0" y="400" width="184" height="119" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="2280" y="420" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3B</text>
+<line x1="2200.0" y1="428" x2="2360.0" y2="428" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="2202.0" y="439.5" width="14" height="14"/>
+<text x="2222.0" y="450.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Users</text>
+<use href="#ic-tx" x="2202.0" y="466.5" width="14" height="14"/>
+<text x="2222.0" y="477.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Transactions</text>
+<use href="#ic-route" x="2202.0" y="493.5" width="14" height="14"/>
+<text x="2222.0" y="504.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Routing Rules</text>
+<path d="M 2175.0 346 L 2175.0 367.0 Q 2175.0 373.0 2181.0 373.0 L 2274 373.0 Q 2280 373.0 2280 379.0 L 2280 400" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M 1338.0 519 L 1338.0 539.5 Q 1338.0 545.5 1344.0 545.5 L 1354.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1354.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1422.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 1338.0 519 L 1338.0 573.5 Q 1338.0 579.5 1344.0 579.5 L 1354.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1354.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1422.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 1338.0 519 L 1338.0 607.5 Q 1338.0 613.5 1344.0 613.5 L 1354.0 613.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1354.0" y="601.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1422.0" y="617.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 3</text>
+<path d="M 1548.0 519 L 1548.0 539.5 Q 1548.0 545.5 1554.0 545.5 L 1564.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1564.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1632.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 1548.0 519 L 1548.0 573.5 Q 1548.0 579.5 1554.0 579.5 L 1564.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1564.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1632.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 1768.0 519 L 1768.0 539.5 Q 1768.0 545.5 1774.0 545.5 L 1784.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="1784.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1852.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 1988.0 519 L 1988.0 539.5 Q 1988.0 545.5 1994.0 545.5 L 2004.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="2004.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2072.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 1988.0 519 L 1988.0 573.5 Q 1988.0 579.5 1994.0 579.5 L 2004.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="2004.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2072.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 2198.0 519 L 2198.0 539.5 Q 2198.0 545.5 2204.0 545.5 L 2214.0 545.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="2214.0" y="533.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2282.0" y="549.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 1</text>
+<path d="M 2198.0 519 L 2198.0 573.5 Q 2198.0 579.5 2204.0 579.5 L 2214.0 579.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="2214.0" y="567.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2282.0" y="583.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 2</text>
+<path d="M 2198.0 519 L 2198.0 607.5 Q 2198.0 613.5 2204.0 613.5 L 2214.0 613.5" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="2214.0" y="601.0" width="136" height="25" rx="12.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="2282.0" y="617.5" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#475569">Connector 3</text>
+<g filter="url(#soft)"><rect x="360" y="716" width="1760" height="684" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/></g>
+<g filter="url(#soft)"><rect x="1070.0" y="748" width="340" height="48" rx="10" fill="#ffedd5" stroke="#fb923c" stroke-width="1.6"/></g>
+<text x="1240.0" y="778.0" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#9a3412">Users</text>
+<g filter="url(#soft)"><rect x="1156.0" y="822" width="168" height="65" rx="10" fill="#dcfce7" stroke="#4ade80" stroke-width="1.4"/></g>
+<text x="1240.0" y="842" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#14532d">Organization</text>
+<line x1="1168.0" y1="850" x2="1312.0" y2="850" stroke="#4ade80" stroke-width="1" opacity="0.55"/>
+<use href="#ic-users" x="1170.0" y="861.5" width="14" height="14"/>
+<text x="1190.0" y="872.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#334155">Org admin</text>
+<path d="M 1240.0 796 L 1240.0 822" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<g filter="url(#soft)"><rect x="832.0" y="936" width="186" height="213" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="925.0" y="956" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 1</text>
+<line x1="844.0" y1="964" x2="1006.0" y2="964" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="846.0" y="974.5" width="14" height="14"/>
+<text x="866.0" y="985.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="846.0" y="999.5" width="14" height="14"/>
+<text x="866.0" y="1010.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="846.0" y="1024.5" width="14" height="14"/>
+<text x="866.0" y="1035.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="846.0" y="1049.5" width="14" height="14"/>
+<text x="866.0" y="1060.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="846.0" y="1074.5" width="14" height="14"/>
+<text x="866.0" y="1085.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="846.0" y="1099.5" width="14" height="14"/>
+<text x="866.0" y="1110.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="846.0" y="1124.5" width="14" height="14"/>
+<text x="866.0" y="1135.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1240.0 887 L 1240.0 905.5 Q 1240.0 911.5 1234.0 911.5 L 931.0 911.5 Q 925.0 911.5 925.0 917.5 L 925.0 936" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1147.0" y="936" width="186" height="213" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="1240" y="956" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 2</text>
+<line x1="1159.0" y1="964" x2="1321.0" y2="964" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="1161.0" y="974.5" width="14" height="14"/>
+<text x="1181.0" y="985.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="1161.0" y="999.5" width="14" height="14"/>
+<text x="1181.0" y="1010.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="1161.0" y="1024.5" width="14" height="14"/>
+<text x="1181.0" y="1035.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="1161.0" y="1049.5" width="14" height="14"/>
+<text x="1181.0" y="1060.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="1161.0" y="1074.5" width="14" height="14"/>
+<text x="1181.0" y="1085.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="1161.0" y="1099.5" width="14" height="14"/>
+<text x="1181.0" y="1110.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="1161.0" y="1124.5" width="14" height="14"/>
+<text x="1181.0" y="1135.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1240.0 887 L 1240 936" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1462.0" y="936" width="186" height="213" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.4"/></g>
+<text x="1555.0" y="956" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1e3a8a">Merchant 3</text>
+<line x1="1474.0" y1="964" x2="1636.0" y2="964" stroke="#60a5fa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="1476.0" y="974.5" width="14" height="14"/>
+<text x="1496.0" y="985.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="1476.0" y="999.5" width="14" height="14"/>
+<text x="1496.0" y="1010.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="1476.0" y="1024.5" width="14" height="14"/>
+<text x="1496.0" y="1035.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="1476.0" y="1049.5" width="14" height="14"/>
+<text x="1496.0" y="1060.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="1476.0" y="1074.5" width="14" height="14"/>
+<text x="1496.0" y="1085.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="1476.0" y="1099.5" width="14" height="14"/>
+<text x="1496.0" y="1110.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="1476.0" y="1124.5" width="14" height="14"/>
+<text x="1496.0" y="1135.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1240.0 887 L 1240.0 905.5 Q 1240.0 911.5 1246.0 911.5 L 1549.0 911.5 Q 1555.0 911.5 1555.0 917.5 L 1555.0 936" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="732.0" y="1191" width="176" height="213" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="820" y="1211" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1A</text>
+<line x1="744.0" y1="1219" x2="896.0" y2="1219" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="746.0" y="1229.5" width="14" height="14"/>
+<text x="766.0" y="1240.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="746.0" y="1254.5" width="14" height="14"/>
+<text x="766.0" y="1265.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="746.0" y="1279.5" width="14" height="14"/>
+<text x="766.0" y="1290.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="746.0" y="1304.5" width="14" height="14"/>
+<text x="766.0" y="1315.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="746.0" y="1329.5" width="14" height="14"/>
+<text x="766.0" y="1340.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="746.0" y="1354.5" width="14" height="14"/>
+<text x="766.0" y="1365.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="746.0" y="1379.5" width="14" height="14"/>
+<text x="766.0" y="1390.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 925.0 1149 L 925.0 1164.0 Q 925.0 1170.0 919.0 1170.0 L 826 1170.0 Q 820 1170.0 820 1176.0 L 820 1191" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="942.0" y="1191" width="176" height="213" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1030" y="1211" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 1B</text>
+<line x1="954.0" y1="1219" x2="1106.0" y2="1219" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="956.0" y="1229.5" width="14" height="14"/>
+<text x="976.0" y="1240.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="956.0" y="1254.5" width="14" height="14"/>
+<text x="976.0" y="1265.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="956.0" y="1279.5" width="14" height="14"/>
+<text x="976.0" y="1290.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="956.0" y="1304.5" width="14" height="14"/>
+<text x="976.0" y="1315.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="956.0" y="1329.5" width="14" height="14"/>
+<text x="976.0" y="1340.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="956.0" y="1354.5" width="14" height="14"/>
+<text x="976.0" y="1365.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="956.0" y="1379.5" width="14" height="14"/>
+<text x="976.0" y="1390.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 925.0 1149 L 925.0 1164.0 Q 925.0 1170.0 931.0 1170.0 L 1024 1170.0 Q 1030 1170.0 1030 1176.0 L 1030 1191" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1152.0" y="1191" width="176" height="213" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1240" y="1211" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 2A</text>
+<line x1="1164.0" y1="1219" x2="1316.0" y2="1219" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="1166.0" y="1229.5" width="14" height="14"/>
+<text x="1186.0" y="1240.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="1166.0" y="1254.5" width="14" height="14"/>
+<text x="1186.0" y="1265.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="1166.0" y="1279.5" width="14" height="14"/>
+<text x="1186.0" y="1290.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="1166.0" y="1304.5" width="14" height="14"/>
+<text x="1186.0" y="1315.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="1166.0" y="1329.5" width="14" height="14"/>
+<text x="1186.0" y="1340.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="1166.0" y="1354.5" width="14" height="14"/>
+<text x="1186.0" y="1365.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="1166.0" y="1379.5" width="14" height="14"/>
+<text x="1186.0" y="1390.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1240 1149 L 1240 1191" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1362.0" y="1191" width="176" height="213" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1450" y="1211" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3A</text>
+<line x1="1374.0" y1="1219" x2="1526.0" y2="1219" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="1376.0" y="1229.5" width="14" height="14"/>
+<text x="1396.0" y="1240.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="1376.0" y="1254.5" width="14" height="14"/>
+<text x="1396.0" y="1265.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="1376.0" y="1279.5" width="14" height="14"/>
+<text x="1396.0" y="1290.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="1376.0" y="1304.5" width="14" height="14"/>
+<text x="1396.0" y="1315.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="1376.0" y="1329.5" width="14" height="14"/>
+<text x="1396.0" y="1340.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="1376.0" y="1354.5" width="14" height="14"/>
+<text x="1396.0" y="1365.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="1376.0" y="1379.5" width="14" height="14"/>
+<text x="1396.0" y="1390.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1555.0 1149 L 1555.0 1164.0 Q 1555.0 1170.0 1549.0 1170.0 L 1456 1170.0 Q 1450 1170.0 1450 1176.0 L 1450 1191" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<g filter="url(#soft)"><rect x="1572.0" y="1191" width="176" height="213" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.4"/></g>
+<text x="1660" y="1211" text-anchor="middle" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#4c1d95">Profile 3B</text>
+<line x1="1584.0" y1="1219" x2="1736.0" y2="1219" stroke="#a78bfa" stroke-width="1" opacity="0.55"/>
+<use href="#ic-person" x="1586.0" y="1229.5" width="14" height="14"/>
+<text x="1606.0" y="1240.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Admin</text>
+<use href="#ic-person" x="1586.0" y="1254.5" width="14" height="14"/>
+<text x="1606.0" y="1265.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Operator</text>
+<use href="#ic-person" x="1586.0" y="1279.5" width="14" height="14"/>
+<text x="1606.0" y="1290.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Developer</text>
+<use href="#ic-person" x="1586.0" y="1304.5" width="14" height="14"/>
+<text x="1606.0" y="1315.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">IAM</text>
+<use href="#ic-person" x="1586.0" y="1329.5" width="14" height="14"/>
+<text x="1606.0" y="1340.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Support</text>
+<use href="#ic-person" x="1586.0" y="1354.5" width="14" height="14"/>
+<text x="1606.0" y="1365.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">View-only</text>
+<use href="#ic-person" x="1586.0" y="1379.5" width="14" height="14"/>
+<text x="1606.0" y="1390.5" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#334155">Custom</text>
+<path d="M 1555.0 1149 L 1555.0 1164.0 Q 1555.0 1170.0 1561.0 1170.0 L 1654 1170.0 Q 1660 1170.0 1660 1176.0 L 1660 1191" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="410" y="1000" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#64748b">Joe associated with US</text>
+<text x="410" y="1026" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#64748b">stack with Role A</text>
+<text x="2070" y="1000" text-anchor="end" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#64748b">Joe associated with EU</text>
+<text x="2070" y="1026" text-anchor="end" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#64748b">stack with Role B</text>
+</svg>
