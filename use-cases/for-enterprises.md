@@ -1,5 +1,5 @@
 ---
-description: All the payment use cases for enterprise merchants
+description: Explore enterprise payment use cases to accept one-time and recurring payments with a secure, global, and compliant payment infrastructure
 hidden: true
 noIndex: true
 metaLinks:
