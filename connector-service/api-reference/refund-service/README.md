@@ -1,8 +1,0 @@
----
-metaLinks:
-  alternates:
-    - ./
----
-
-# Refund Service
-
