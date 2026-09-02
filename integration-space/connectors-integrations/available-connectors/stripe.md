@@ -15,13 +15,13 @@ Stripe connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey`
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 7e51536d; host http://localhost:8080; fetched 2026-08-28; matrix sha256 82f4c27681b9d6ac; 138 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch fb4c2c8b5fa993fc104102dde8c2387202e0d19f; host http://localhost:8080; fetched 2026-09-02; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
 **Integration status:** live  
 **Category:** payment gateway  
-**Webhook flows:** payments, refunds, disputes
+**Webhook flows:** disputes, payments, refunds
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
@@ -37,12 +37,12 @@ Stripe connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey`
 | bank redirect | Online Banking FPX | not supported | supported | automatic, sequential automatic | not applicable | - | MYS | MYR |
 | bank redirect | Przelewy24 | not supported | supported | automatic, sequential automatic | not applicable | - | POL | EUR, PLN |
 | bank redirect | Sofort | supported | supported | automatic, sequential automatic | not applicable | - | 30 (see pm-list) | EUR |
-| bank transfer | ACH Direct Debit | not supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
-| bank transfer | BACS Direct Debit | not supported | supported | automatic, sequential automatic | not applicable | - | GBR | GBP |
+| bank transfer | ACH Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
+| bank transfer | BACS Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | GBR | GBP |
 | bank transfer | Multibanco | not supported | supported | automatic, sequential automatic | not applicable | - | 32 (see pm-list) | EUR |
 | bank transfer | SEPA Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | AmericanExpress, DinersClub, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | AmericanExpress, DinersClub, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
 | pay later | Affirm | not supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
 | pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 7 (see pm-list) | AUD, CAD, GBP, NZD, USD |
 | pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 (see pm-list) | 12 (see pm-list) |
