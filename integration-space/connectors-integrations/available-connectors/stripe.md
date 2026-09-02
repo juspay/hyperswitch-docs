@@ -13,16 +13,54 @@ metaLinks:
 
 Stripe connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey` authentication — a single secret key passed as `Authorization: Bearer {secret_key}` on every request. Notably, all requests to Stripe are sent as `application/x-www-form-urlencoded` (not JSON), and Hyperswitch pins a specific Stripe API version in the `Stripe-Version` header to ensure consistent behaviour. Hyperswitch translates its unified payment intent model into Stripe's PaymentIntent and Charge objects, mapping status transitions bidirectionally on every sync and webhook event.
 
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch fb4c2c8b5fa993fc104102dde8c2387202e0d19f; host http://localhost:8080; fetched 2026-09-02; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** live  
+**Category:** payment gateway  
+**Webhook flows:** disputes, payments, refunds
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank debit | ACH Direct Debit | supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
+| bank debit | BACS Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | GBR | GBP |
+| bank debit | BECS Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | AUS | AUD |
+| bank debit | SEPA Direct Debit | supported | supported | automatic, sequential automatic | not applicable | - | 33 (see pm-list) | EUR |
+| bank redirect | Bancontact Card | supported | supported | automatic, sequential automatic | not applicable | - | BEL | EUR |
+| bank redirect | BLIK | not supported | supported | automatic, sequential automatic | not applicable | - | POL | PLN |
+| bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | AUT | EUR |
+| bank redirect | Giropay | not supported | not supported | automatic, sequential automatic | not applicable | - | DEU | EUR |
+| bank redirect | iDEAL | supported | supported | automatic, sequential automatic | not applicable | - | NLD | EUR |
+| bank redirect | Online Banking FPX | not supported | supported | automatic, sequential automatic | not applicable | - | MYS | MYR |
+| bank redirect | Przelewy24 | not supported | supported | automatic, sequential automatic | not applicable | - | POL | EUR, PLN |
+| bank redirect | Sofort | supported | supported | automatic, sequential automatic | not applicable | - | 30 (see pm-list) | EUR |
+| bank transfer | ACH Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
+| bank transfer | BACS Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | GBR | GBP |
+| bank transfer | Multibanco | not supported | supported | automatic, sequential automatic | not applicable | - | 32 (see pm-list) | EUR |
+| bank transfer | SEPA Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 (see pm-list) | 160 (see pm-list) |
+| pay later | Affirm | not supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
+| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 7 (see pm-list) | AUD, CAD, GBP, NZD, USD |
+| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 (see pm-list) | 12 (see pm-list) |
+| wallet | Alipay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | CHN | 11 (see pm-list) |
+| wallet | Amazon Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 249 (see pm-list) | 12 (see pm-list) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 43 (see pm-list) | - |
+| wallet | Cash App | supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 53 (see pm-list) | - |
+| wallet | RevolutPay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR, GBP |
+| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | CHN | 13 (see pm-list) |
+
 ### Connector-Specific Notes
 
 * **Stripe is the only connector in Hyperswitch** that supports incremental authorization alongside a full dispute evidence upload flow (file upload via Stripe's Files API, then evidence submission via the dispute ID) — both are part of the same connector implementation.
 * **Mandates and recurring payments:** When Hyperswitch sets up a mandate via Stripe, Stripe returns a `payment_method` ID linked to a Customer object. Hyperswitch stores this ID and passes it on subsequent merchant-initiated transactions (MIT). The cardholder is never involved in subsequent charges.
 * **Webhook verification:** Stripe sends a `Stripe-Signature` header with each event, formatted as `t={timestamp},v1={signature}`. Hyperswitch verifies this using HMAC-SHA256 where the message is `{timestamp}.{raw_request_body}`. The signing secret is found in Stripe under **Developers → Webhooks → your endpoint → Signing secret** — this is different from the API key and must be stored separately in Hyperswitch.
-* **Webhook events processed:** `payment_intent.payment_failed`, `payment_intent.succeeded`, `payment_intent.canceled`, `payment_intent.amount_capturable_updated`, `charge.succeeded`, `charge.refund.updated`, `source.chargeable`, `dispute.created`, `dispute.closed`.
-* **Capture methods:** Automatic, Manual, and SequentialAutomatic are supported. ManualMultiple and Scheduled are not.
-* **Supported card networks:** Visa, Mastercard, American Express, Discover, JCB, Diners Club, UnionPay.
-* **BNPL payment methods** (Klarna, Affirm, Afterpay/Clearpay) do not support mandates via Stripe; they support refunds only.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+* **Webhook events processed (14):** `payment_intent.payment_failed`, `payment_intent.succeeded`, `payment_intent.canceled`, `payment_intent.amount_capturable_updated`, `charge.succeeded`, `charge.refund.updated`, `source.chargeable`, `charge.dispute.created`, `charge.dispute.updated`, `charge.dispute.closed`, `charge.dispute.funds_withdrawn`, `charge.dispute.funds_reinstated`, `payment_intent.partially_funded`, `payment_intent.requires_action`. All other Stripe event types are explicitly not processed. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/fb4c2c8b5fa993fc104102dde8c2387202e0d19f/crates/hyperswitch_connectors/src/connectors/stripe.rs#L2938-L3004) and the [serialized event names](https://github.com/juspay/hyperswitch/blob/fb4c2c8b5fa993fc104102dde8c2387202e0d19f/crates/hyperswitch_connectors/src/connectors/stripe/transformers.rs#L5080-L5126).
+* For a full list of supported payment methods, countries and currencies, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ***
 
