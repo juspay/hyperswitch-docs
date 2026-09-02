@@ -13,8 +13,28 @@ metaLinks:
 
 CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — API Key, Merchant ID, and Secret Key. Unlike connectors that use a simple Bearer token, CyberSource authenticates requests using an HTTP Signature scheme: Hyperswitch computes an HMAC-SHA256 digest of the request headers and body, then sends it as a standalone `Signature: keyid="{api_key}",algorithm="HmacSHA256",headers="{headers}",signature="{signature_value}"` header (not an `Authorization` header). The Merchant ID is sent separately in the `v-c-merchant-id` header. All requests use `application/json;charset=utf-8`. CyberSource also supports incremental authorization and payouts — two capabilities not universally available across connectors.
 
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch fb4c2c8b5fa993fc104102dde8c2387202e0d19f; host http://localhost:8080; fetched 2026-09-02; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** live  
+**Category:** payment gateway  
+**Webhook flows:** None declared in code
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 (see pm-list) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 (see pm-list) |
+| wallet | Paze | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | SEK, USD |
+| wallet | Samsung Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR, GBP, SEK, USD |
+
 ### Connector-Specific Notes
 
+* **Incoming webhooks (connector → Hyperswitch):** Incoming webhooks are not implemented for this connector. [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/5de557072504f4c0f82b13f339e53834cbfe0a4e/crates/hyperswitch_connectors/src/connectors/cybersource.rs#L2351-L2357) returns `EventNotSupported` for every event, and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/5de557072504f4c0f82b13f339e53834cbfe0a4e/crates/hyperswitch_connectors/src/connectors/cybersource.rs#L2359-L2364) returns `WebhooksNotImplemented`. Payment, refund, and dispute status updates therefore rely on sync/polling rather than inbound connector webhooks.
 * **HTTP Signature authentication:** CyberSource does not use Bearer tokens. Every request carries a computed HMAC-SHA256 signature over canonical request headers and body. Hyperswitch sends this as the `Signature` header (not `Authorization`), formatted as `keyid="{api_key}",algorithm="HmacSHA256",headers="{headers}",signature="{signature_value}"` — note `keyid` is lowercase and the value is the API Key, not the Merchant ID. The Merchant ID is transmitted as a separate `v-c-merchant-id` header. The Secret Key is used only to sign requests and is never sent directly. Missing or incorrect credentials produce authentication errors with a CyberSource-specific error response structure.
 * **Incremental authorization:** CyberSource supports incrementally increasing an authorized amount before capture. This is available via Hyperswitch's `IncrementalAuthorization` flow, and requires `capture_method: manual` on the original payment.
 * **Payouts:** CyberSource supports payout fulfillment through Hyperswitch's unified payouts interface.
@@ -22,7 +42,6 @@ CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `Signa
   * [Apple Pay via CyberSource](apple-pay.md)
   * [Google Pay via CyberSource](google-pay.md)
 * **Required fields for Apple Pay and Google Pay:** Both wallets require `email` and full billing address (First Name, Last Name, Address Line 1, Zip/Postal Code, City, State, Country) to be present on the payment request. Pass these when creating the Payment Intent — if not provided, the Hyperswitch SDK will collect them from the customer at checkout.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
 * For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ***
