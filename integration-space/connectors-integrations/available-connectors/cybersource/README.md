@@ -15,7 +15,7 @@ CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `Signa
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 658cd927912493bdac3457ff3bdefe1d32e19d21; host http://localhost:8080; fetched 2026-08-31; matrix canonical-json-v1 sha256 df91177d7ba06530; 138 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch fb4c2c8b5fa993fc104102dde8c2387202e0d19f; host http://localhost:8080; fetched 2026-09-02; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
@@ -25,8 +25,8 @@ CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `Signa
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | AmericanExpress, CartesBancaires, DinersClub, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | AmericanExpress, CartesBancaires, DinersClub, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 (see pm-list) |
 | wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 (see pm-list) |
 | wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 (see pm-list) |
 | wallet | Paze | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | SEK, USD |
@@ -75,12 +75,6 @@ CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `Signa
 **Incremental authorization rejected** Symptom: Incremental authorization call fails. Fix: Incremental authorization requires `capture_method: manual` on the original payment. CyberSource does not support incremental authorization on automatically-captured payments.
 
 **Payout failure due to missing recipient details** Symptom: Payout fulfillment fails with a recipient validation error. Fix: CyberSource payouts require complete recipient information. Ensure all required recipient fields are populated before initiating the payout.
-
-***
-
-### Integrate in code
-
-Request and response shapes, supported flows and SDK configuration for Cybersource are in the [Cybersource integration reference](https://docs.hyperswitch.io/integrations/prism/connectors/cybersource), generated from the connector's probe data.
 
 ***
 
