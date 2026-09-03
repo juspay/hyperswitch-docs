@@ -14,16 +14,33 @@ metaLinks:
 
 Global Payments connects to Hyperswitch as a `PaymentGateway` connector using a `BodyKey`-based OAuth token exchange. The App ID and App Key are used to obtain a short-lived Bearer access token: Hyperswitch generates a random 12-character nonce, computes a SHA-512 digest of `{nonce}{app_key}` (hex-encoded), and submits `{app_id, nonce, secret, grant_type: "client_credentials"}` to the token endpoint. The resulting Bearer token is then used on all payment requests as `Authorization: Bearer {token}` alongside an `X-GP-Version: 2021-03-22` header. All requests use `application/json`.
 
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch 42bbdc2c61a2fe968791a4bb9ea2d586064aeaea; host http://127.0.0.1:8080; fetched 2026-09-03; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** sandbox  
+**Category:** payment gateway  
+**Webhook flows:** payments
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | EPS | supported | supported | automatic, manual, sequential automatic | not applicable | - | AUT | EUR |
+| bank redirect | Giropay | supported | supported | automatic, manual, sequential automatic | not applicable | - | DEU | EUR |
+| bank redirect | iDEAL | supported | supported | automatic, manual, sequential automatic | not applicable | - | NLD | EUR |
+| bank redirect | Sofort | supported | supported | automatic, manual, sequential automatic | not applicable | - | AUT, BEL, DEU, ESP, ITA, NLD | EUR |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 151 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 151 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+| wallet | PayPal | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+
 ### Connector-Specific Notes
 
 * **OAuth token exchange with SHA-512 nonce:** Global Payments does not accept a static API key on payment requests. Instead, Hyperswitch exchanges App ID and App Key for a short-lived Bearer token using a nonce-based SHA-512 challenge: `secret = hex(SHA-512({nonce}{app_key}))`. The token is then used on all subsequent payment API calls. If the token endpoint is unavailable, no payment requests can proceed.
 * **API version header:** Every request sends `X-GP-Version: 2021-03-22`. This pins the Global Payments API version for consistent behaviour.
 * **Credentials location:** App Key, App ID, and Account Name are found in your Global Payments dashboard under **My Account → My Apps & Keys**.
 * **Webhook support:** Webhook delivery from Global Payments is supported. Configure the Hyperswitch webhook endpoint in your Global Payments dashboard.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* Global Payments accepts over 140 payment types across multiple channels with industry-specific solutions and subscription support.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ***
 
