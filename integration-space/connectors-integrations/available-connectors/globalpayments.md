@@ -1,8 +1,7 @@
 ---
 description: >-
-  Connect Global Payments with Juspay Hyperswitch to accept over 140 payment
-  types across multiple channels with subscription and recurring payment
-  support.
+  Covers Global Payments connector setup, capabilities, and webhook handling on
+  Hyperswitch.
 metaLinks:
   alternates:
     - globalpayments.md
@@ -41,7 +40,7 @@ Global Payments connects to Hyperswitch as a `PaymentGateway` connector using a 
 * **API version header:** Every request sends `X-GP-Version: 2021-03-22`. This pins the Global Payments API version for consistent behaviour.
 * **Credentials location:** App Key, App ID, and Account Name are found in your Global Payments dashboard under **My Account → My Apps & Keys**.
 * **Webhook support:** Webhook delivery from Global Payments is supported. Configure the Hyperswitch webhook endpoint in your Global Payments dashboard.
-* **Webhook events:** Global Payments declares a payments webhook flow in the generated block. At the block SHA, `get_webhook_event_type()` parses `GlobalpayWebhookObjectEventType.status` and handles 2 exact-string verified webhook statuses: `DECLINED` maps to `PaymentIntentFailure`, and `CAPTURED` maps to `PaymentIntentSuccess`; any other status deserializes to `Unknown` and maps to `EventNotSupported`. See the status parser and mapping (https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L1043-L1060) and the `SCREAMING_SNAKE_CASE` status enum (https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay/response.rs#L88-L100). Webhook source verification is implemented with SHA-512: Hyperswitch reads the `x-gp-signature` header, serializes the webhook body, appends the configured webhook signing value, and verifies that message rather than accepting the webhook without verification (https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L998-L1028).
+* **Webhook events:** Global Payments declares a payments webhook flow in the generated block. At the block SHA, [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L1043-L1060) parses `GlobalpayWebhookObjectEventType.status` and handles 2 exact-string verified webhook statuses: `DECLINED` maps to `PaymentIntentFailure`, and `CAPTURED` maps to `PaymentIntentSuccess`; any other status deserializes to `Unknown` and maps to `EventNotSupported`. See the [`GlobalpayWebhookStatus` serde status enum](https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay/response.rs#L88-L100). Webhook source verification is implemented with SHA-512 in [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L998-L1028), [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L998-L1028), and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/42bbdc2c61a2fe968791a4bb9ea2d586064aeaea/crates/hyperswitch_connectors/src/connectors/globalpay.rs#L998-L1028): Hyperswitch reads the `x-gp-signature` header, serializes the webhook body, appends the configured webhook signing value, and verifies that message rather than accepting the webhook without verification.
 
 ***
 
