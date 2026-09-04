@@ -398,6 +398,7 @@
   * [Saleor App](other-features/e-commerce-platform-plugins/saleor-app/README.md)
     * [Setup](other-features/e-commerce-platform-plugins/saleor-app/setup.md)
   * [Automatic Tax calculation for Express Checkout wallets](other-features/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets.md)
+* [Offer Engine](other-features/offer-engine.md)
 
 ## FAQs
 
