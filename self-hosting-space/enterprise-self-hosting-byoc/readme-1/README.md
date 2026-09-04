@@ -21,7 +21,7 @@ To run Hyperswitch locally, follow our Docker setup guide. Alternatively, explor
 
 ## Cloud Setup
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components.</td><td></td><td><a href="../deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on GCP or Azure using our Helm charts.</td><td></td><td><a href="../../">..</a></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS</strong></mark></td><td>Deploy Hyperswitch on AWS either as an independent stack or as individual components.</td><td></td><td><a href="../deploy-hyperswitch-on-aws/">deploy-hyperswitch-on-aws</a></td><td></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Kubernetes</strong></mark></td><td>Install Hyperswitch on GCP or Azure using our Helm charts.</td><td></td><td><a href="../readme/">readme</a></td><td></td></tr></tbody></table>
 
 {% hint style="success" %}
 Want to try without deploying? Use our dashboard on [sandbox](https://app.hyperswitch.io/).
