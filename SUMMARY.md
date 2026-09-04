@@ -403,6 +403,7 @@
   * [How the SDK works](other-features/offer-engine/how-the-sdk-works.md)
   * [Offer Payment Lifecycle](other-features/offer-engine/offer-payment-lifecycle.md)
   * [Offers API Reference](other-features/offer-engine/offers-api-reference.md)
+  * [Configuring an Offer](other-features/offer-engine/configuring-an-offer.md)
 
 ## FAQs
 
