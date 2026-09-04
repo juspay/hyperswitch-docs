@@ -399,11 +399,12 @@
     * [Setup](other-features/e-commerce-platform-plugins/saleor-app/setup.md)
   * [Automatic Tax calculation for Express Checkout wallets](other-features/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets.md)
 * [Offer Engine](other-features/offer-engine/README.md)
-  * [Setup  Guide](other-features/offer-engine/setup-guide.md)
+  * [Setup Guide](other-features/offer-engine/setup-guide.md)
   * [How the SDK works](other-features/offer-engine/how-the-sdk-works.md)
   * [Offer Payment Lifecycle](other-features/offer-engine/offer-payment-lifecycle.md)
   * [Offers API Reference](other-features/offer-engine/offers-api-reference.md)
   * [Configuring an Offer](other-features/offer-engine/configuring-an-offer.md)
+  * [Roadmap](other-features/offer-engine/roadmap.md)
 
 ## FAQs
 
