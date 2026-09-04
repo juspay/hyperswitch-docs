@@ -19,6 +19,7 @@
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
+    * [RAZORPAY](connectors-integrations/available-connectors/razorpay.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
