@@ -19,7 +19,6 @@
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
-    * [NMI](connectors-integrations/available-connectors/nmi.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
@@ -29,6 +28,7 @@
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
     * [MultiSafepay](connectors-integrations/available-connectors/multisafepay.md)
+    * [NMI](connectors-integrations/available-connectors/nmi.md)
     * [Nuvei](connectors-integrations/available-connectors/nuvei.md)
     * [OpenNode](connectors-integrations/available-connectors/opennode.md)
     * [Paypal](connectors-integrations/available-connectors/paypal.md)
@@ -114,7 +114,6 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
-
 
 
 
