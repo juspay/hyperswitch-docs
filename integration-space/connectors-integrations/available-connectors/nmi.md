@@ -1,11 +1,11 @@
 ---
 description: >-
-  Connect NMI to Hyperswitch as a live payment gateway.
+  Accept card and wallet payments through NMI on Hyperswitch, with mandates, refunds, and manual capture.
 ---
 
 # NMI
 
-NMI supports card payments and digital wallets as a live payment gateway, with optional 3DS for cards and webhook flows for payments and refunds. The generated table below is the source for payment methods, card networks, countries, currencies, capture methods, refunds and mandates.
+NMI handles card payments and Apple Pay and Google Pay wallets through Hyperswitch, with mandates, refunds, and manual capture across the board, and optional 3DS on cards. The integration is live.
 
 ### Status and capabilities
 
@@ -26,13 +26,26 @@ NMI supports card payments and digital wallets as a live payment gateway, with o
 
 ### Webhooks
 
-Use NMI webhooks to keep payment and refund statuses updated in Hyperswitch after NMI sends transaction updates. Keep webhooks enabled for the Hyperswitch endpoint used by your account. The exact dashboard location for that setup is not verified from this sandbox.
+Use NMI webhooks to keep payment and refund statuses updated in Hyperswitch after NMI sends transaction updates. Keep webhooks enabled for the Hyperswitch endpoint used by your account. See your NMI account settings for where to configure the endpoint.
 
-NMI handles 10 event names that follow `transaction.<type>.<result>`, where `<type>` is `sale`, `auth`, `capture`, `void`, or `refund`, and `<result>` is `success` or `failure`. Event names are defined in [`NmiWebhookEventType`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi/transformers.rs#L1791-L1825), and mapped by [`get_nmi_webhook_event`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi/transformers.rs#L1827-L1851).
+NMI handles 10 event names that follow `transaction.<type>.<result>`, where `<type>` is `sale`, `auth`, `capture`, `void`, or `refund`, and `<result>` is `success` or `failure`.
 
-NMI webhook source verification uses HMAC-SHA256. Hyperswitch reads the `webhook-signature` header, extracts `t` and `s`, hex-decodes `s`, and verifies the message as `t.body` in [`IncomingWebhook for Nmi`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi.rs#L943-L1001).
+| NMI event | Effect in Hyperswitch |
+|---|---|
+| `transaction.auth.failure` | Payment authorization fails |
+| `transaction.auth.success` | Payment authorization succeeds |
+| `transaction.capture.failure` | Payment capture fails |
+| `transaction.capture.success` | Payment capture succeeds |
+| `transaction.refund.failure` | Refund fails |
+| `transaction.refund.success` | Refund succeeds |
+| `transaction.sale.failure` | Payment fails |
+| `transaction.sale.success` | Payment succeeds |
+| `transaction.void.failure` | Payment cancellation fails |
+| `transaction.void.success` | Payment is cancelled |
 
-Events ending in `unknown`, and events outside the known set, are acknowledged without updating the payment or refund status.
+Any other event, including the `unknown` variants, is acknowledged without changing a status. Event names are defined in [`NmiWebhookEventType`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi/transformers.rs#L1791-L1825), and mapped by [`get_nmi_webhook_event`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi/transformers.rs#L1827-L1851).
+
+Hyperswitch verifies the `webhook-signature` header before processing NMI webhooks in [`IncomingWebhook for Nmi`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/nmi.rs#L943-L1001).
 
 ### Source reference
 
