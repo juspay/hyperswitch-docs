@@ -1,11 +1,11 @@
 ---
 description: >-
-  Connect RAZORPAY to Hyperswitch as a sandbox payment gateway.
+  Accept UPI Collect payments in India through Razorpay on Hyperswitch.
 ---
 
-# RAZORPAY
+# Razorpay
 
-RAZORPAY connects to Hyperswitch as a sandbox payment gateway. Payment methods, card networks, countries, currencies, capture methods, refunds, mandates, 3DS support and webhook flow classes are listed below.
+Razorpay brings UPI Collect payments to Hyperswitch for merchants in India, with INR settlement and refund support. The integration is in sandbox; mandates are not supported.
 
 ### Status and capabilities
 
@@ -23,7 +23,9 @@ RAZORPAY connects to Hyperswitch as a sandbox payment gateway. Payment methods, 
 
 ### Webhooks
 
-Razorpay declares payments and refunds webhook flows, but the active webhook handler does not process event names at this SHA. `get_webhook_event_type()` returns `EventNotSupported`, and the object and resource methods return `WebhooksNotImplemented` in [`IncomingWebhook for Razorpay`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/razorpay.rs#L772-L795).
+Razorpay webhooks are not currently supported; Hyperswitch does not process incoming Razorpay webhook notifications, so payment and refund status updates rely on syncing with the API; configuring a Razorpay webhook endpoint has no effect.
+
+The capability block lists payments and refunds webhook flows for this connector, but the webhook handler is not implemented, keeping this page aligned with the code in [`IncomingWebhook for Razorpay`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/razorpay.rs#L772-L795).
 
 ### Source reference
 
