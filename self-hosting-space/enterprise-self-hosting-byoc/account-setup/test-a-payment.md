@@ -75,8 +75,8 @@ In case you have integrated the web client on your app and want to test a paymen
 
 ### Next step:
 
-{% content-ref url="../../production-deployment/going-live/" %}
-[going-live](../../production-deployment/going-live/)
+{% content-ref url="../../path-to-production/going-live/" %}
+[going-live](../../path-to-production/going-live/)
 {% endcontent-ref %}
 
 ### Explore Further
