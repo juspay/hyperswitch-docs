@@ -68,17 +68,25 @@ sequenceDiagram
     HS-->>SDK: status: succeeded, applied_offer, net_amount
 ```
 
-Key behaviors:
+Key behaviours:
 
 | Behavior                                        | Detail                                                                                                                                   |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Payment methods                                 | Cards only (new cards, saved cards)                                                                                                      |
-| Offers per payment                              | One                                                                                                                                      |
 | Amounts in the payment response                 | `amount` stays the full order amount; `net_amount` and `amount_received` reflect the discount; `applied_offer` carries the offer details |
 | Offer Engine unavailable at eligibility         | Checkout continues with no offer — payments are **never blocked** by the offers system                                                   |
 | Offer selected but cannot be applied at confirm | The confirm fails (error `IR_16`) — a customer is never silently charged full price after seeing a discount                              |
 | Payment fails or is refunded                    | The redemption is revoked automatically in the background; budgets and per-card counters roll back                                       |
 | Once-per-card limits                            | Enforced via a PAN-free card fingerprint — the same card cannot reuse an offer even across different customer accounts                   |
+
+### What's supported today
+
+* **Card payments only** — new cards, saved cards, and Click to Pay; wallets/bank methods are skipped by the offer flow
+* **One offer per payment** — the best eligible offer is auto-applied, read-only
+* **Web SDK works out of the box**; custom/headless and mobile checkouts integrate via the REST APIs
+* **Automatic capture** — partial capture is not supported with offers
+* **Refunds are handled** — a successful refund automatically revokes the offer redemption and restores budgets and per-card counters
+* **Disputes are not handled today** — a chargeback does not revoke the redemption
+* **Offer configuration** — creation, updates, pause/resume, and deletion are done together with the Hyperswitch team today (what's configurable); a self-serve configuration UI is on the roadmap
 
 ### Getting started
 
@@ -95,8 +103,6 @@ Then follow the setup guide for your deployment model:
 
 * **Hyperswitch Cloud** — the Hyperswitch team enables the feature for your merchant account; you only verify and go live.
 * **Self-hosted** — you add the Offer Engine configuration to your own Hyperswitch stack (config, migrations, feature flags, scheduler).
-
-### Dive deeper
 
 ### FAQs
 
