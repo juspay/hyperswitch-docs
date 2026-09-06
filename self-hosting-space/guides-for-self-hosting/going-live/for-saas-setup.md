@@ -2,6 +2,7 @@
 description: >-
   Step-by-step checklist for going live with Juspay Hyperswitch SaaS deployment
   including connector configuration, webhooks, and security
+hidden: true
 icon: gift
 metaLinks:
   alternates:
@@ -72,4 +73,3 @@ For more details, kindly refer to the [state machine diagrams](https://docs.hype
 {% hint style="success" %}
 You are good to go to run Juspay Hyperswitch in production and provide your customers with a safe, reliable, and smooth payment experience.
 {% endhint %}
-
