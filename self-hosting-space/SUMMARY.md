@@ -22,6 +22,7 @@
   * [Using Hyperswitch Control Center](want-to-explore/account-setup/using-hyperswitch-control-center.md)
   * [Test a payment](want-to-explore/account-setup/test-a-payment.md)
   * [Using postman](want-to-explore/account-setup/using-postman.md)
+* [Troubleshooting local setup](want-to-explore/troubleshooting.md)
 
 ## Enterprise Self-Hosting (BYOC)
 
@@ -45,7 +46,6 @@
     * [Deploy Card Vault](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
       * [Production ready deployment on AWS](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
-* [Troubleshooting](enterprise-self-hosting-byoc/troubleshooting.md)
 
 ## GUIDES FOR SELF-HOSTING
 

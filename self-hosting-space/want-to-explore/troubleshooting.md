@@ -1,14 +1,14 @@
 ---
 description: >-
-  This guide explains how to troubleshoot the Hyperswitch setup and verify if
-  all the components are up and running as expected
+  This guide explains how to troubleshoot the Hyperswitch setup on your local
+  system and verify if all the components are up and running as expected
 icon: hammer-brush
 metaLinks:
   alternates:
     - troubleshooting.md
 ---
 
-# Troubleshooting
+# Troubleshooting local setup
 
 ### System Health Check
 
