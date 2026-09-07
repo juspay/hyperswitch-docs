@@ -79,9 +79,31 @@ is a working estimates including a buffer for misconfiguration and debugging.&#x
 The stated time does not include additional time for your own infra change approval cycles.
 {% endhint %}
 
-#### Phase 1: Prepare
+### Phase 1: Prepare
 
 <table><thead><tr><th width="44.56640625">#</th><th width="175.25">Step</th><th width="80.953125">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>1</td><td><strong>Arrange the prerequisites</strong></td><td>—</td><td><ul><li>Cloud account and organization permissions, domain and TLS certificate, at least one payment processor credential is arranged</li><li>On brownfield installation your network and subnet identifiers are arranged. See prerequisites below for complete list.</li></ul></td></tr><tr><td>2</td><td><strong>Install and verify local tooling</strong></td><td>0.5 h</td><td><ul><li>Helm, kubectl, Terraform, Terragrunt and your cloud provider CLI on the operator's work device. All verified before proceeding</li></ul></td></tr></tbody></table>
+
+####
+
+### Phase 2: Provision the infrastructure
+
+<table><thead><tr><th width="47.91796875">#</th><th width="177.27734375">Step</th><th width="82.48046875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>3</td><td><strong>Bring up the cloud infrastructure with Terragrunt</strong></td><td>4.0 h</td><td><ul><li>This cover bulk of the infra automation. </li><li>Network, Kubernetes cluster, databases, cache, card vault infrastructure, workload identity, keys and load balancers, object storage resources - all applied in dependency order. </li></ul></td></tr><tr><td>4</td><td><strong>Verify the infrastructure components</strong></td><td>0.5 h</td><td><ul><li>Confirm the cluster is reachable and nodes are spread across zones, the databases and cache are reachable from the cluster and only from the cluster, and state is remote, encrypted and lock-protected.</li></ul></td></tr><tr><td>5</td><td><strong>Install the application management layer — ArgoCD</strong></td><td>0.5 h</td><td><ul><li>Installs the GitOps controller and the platform components it depends on: the cloud ingress controller, External Secrets Operator, and the ArgoCD app-of-apps that will manage everything else.</li></ul></td></tr><tr><td>6</td><td><strong>Set up External Secrets Operator</strong></td><td>0.5 h</td><td><ul><li>Points the cluster at your managed secret store and declares which secrets to sync. Credentials never enter Helm values or Git; ESO pulls them at runtime and materializes them as ordinary Kubernetes secrets</li></ul></td></tr></tbody></table>
+
+### Phase 3: Deploy and verify the applications
+
+<table><thead><tr><th width="47.26953125">#</th><th width="180.5078125">Step</th><th width="86.32421875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>7</td><td><strong>Apply customizations for your infra landing zone</strong></td><td>2.0 h</td><td><ul><li><strong>Brownfield only.</strong> Wire externally created resources into the application values: ingress and egress paths, database and cache URLs, payment connector URLs, domain mapping and SMTP.</li><li>This could be the step requiring more iterations in the sequence, since it is manual, and it touches every component. <strong>Greenfield deployments typically skip it</strong>.</li></ul></td></tr><tr><td>8</td><td><strong>Deploy all Hyperswitch components using ArgoCD</strong></td><td>2.0 h</td><td><ul><li>ArgoCD applications pointing at the public Helm charts bring up the router, payment methods, connector service, card vault, Control Center, Superposition, encryption service and monitoring.</li></ul></td></tr><tr><td>9</td><td><strong>Verify with deep health checks</strong></td><td>0.5 h</td><td><ul><li>Confirm Helm releases and pod status across every component. This checks that the installation is healthy, not that the product works.</li></ul></td></tr><tr><td>10</td><td><strong>Test the backend application with APIs</strong></td><td>0.1 h</td><td><ul><li>Generate an API key and call the payment-create API. </li><li>First proof that the stack processes a request end to end.</li></ul></td></tr></tbody></table>
+
+### Phase 4: Configure and test the production stack
+
+<table><thead><tr><th width="45.44921875">#</th><th width="178.36328125">Step</th><th width="89.23046875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>11</td><td><strong>Update Control Center and SDK environment configuration</strong></td><td>0.1 h</td><td>Applied through ArgoCD so the change is declared in Git rather than made by hand.</td></tr><tr><td>12</td><td><strong>Configure the payment stack and test end to end</strong></td><td>0.5 h</td><td>Configure connectors, routing and payment methods through the Control Center, then test both the APIs and the SDK checkout flow.</td></tr></tbody></table>
+
+After step 12 you have a working deployment and Milestone III, is completed.
+
+{% hint style="warning" %}
+Completion of Milestone III, does not result in a production-grade setup. Complete Milestone IV to be completed for hardening — proving recovery, proving capacity, closing PCI items.
+{% endhint %}
+
+***
 
 #### Prerequisites
 
@@ -92,7 +114,7 @@ The stated time does not include additional time for your own infra change appro
 
 **Tooling**
 
-<table><thead><tr><th width="206.9375">Tool</th><th>Version</th></tr></thead><tbody><tr><td>Terraform</td><td>1.16.1</td></tr><tr><td>Terragrunt</td><td>1.1.4</td></tr><tr><td>kubectl</td><td>v1.28+</td></tr><tr><td>Helm</td><td>v3+</td></tr><tr><td>Kubernetes</td><td>v1.22+</td></tr><tr><td>Cloud provider CLI</td><td><p>AWS CLI: v2.35.x </p><p>Google Cloud CLI: 583.0.0 </p><p>Oracle OCI CLI: v3.91.0</p></td></tr></tbody></table>
+<table><thead><tr><th width="206.9375">Tool</th><th>Version</th></tr></thead><tbody><tr><td>Terraform</td><td>1.12.1</td></tr><tr><td>Terragrunt</td><td>1.1.1</td></tr><tr><td>kubectl</td><td>1.33+</td></tr><tr><td>Helm</td><td>3.0+</td></tr><tr><td>Kubernetes</td><td>1.34+</td></tr><tr><td>Cloud provider CLI</td><td><p>AWS CLI: v2.35.x </p><p>Google Cloud CLI: 583.0.0 </p><p>Oracle OCI CLI: v3.91.0</p></td></tr></tbody></table>
 
 **Access & credentials**
 
@@ -105,27 +127,12 @@ The stated time does not include additional time for your own infra change appro
   * existing key identifiers,&#x20;
   * logging destinations, and&#x20;
   * Egress or proxy restrictions.
-* **People** — this could take the longest lead time, and critical as much as any tool:
+* **Payment processor credentials** — at least one processor account with production credentials, will be needed at Step 12.
+
+**People**
+
+* This could take the longest lead time, and critical as much as any tool:
   * **Key custodians** — named individuals to generate and hold custodian keys, and to unlock the vault
   * **A change approver**, if production applies require sign-off
   * **A security reviewer**, if account access needs approval
   * **A single technical SPOC**, to work with Juspay team and co-ordinate across the above owners
-* **Payment processor credentials** — at least one processor account with production credentials, will be needed at Step 12.
-
-#### Phase 2: Provision the infrastructure
-
-<table><thead><tr><th width="47.91796875">#</th><th width="177.27734375">Step</th><th width="82.48046875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>3</td><td><strong>Bring up the cloud infrastructure with Terragrunt</strong></td><td>4.0 h</td><td><ul><li>This cover bulk of the infra automation. </li><li>Network, Kubernetes cluster, databases, cache, card vault infrastructure, workload identity, keys and load balancers, object storage resources - all applied in dependency order. </li></ul></td></tr><tr><td>4</td><td><strong>Verify the infrastructure components</strong></td><td>0.5 h</td><td><ul><li>Confirm the cluster is reachable and nodes are spread across zones, the databases and cache are reachable from the cluster and only from the cluster, and state is remote, encrypted and lock-protected.</li></ul></td></tr><tr><td>5</td><td><strong>Install the application management layer — ArgoCD</strong></td><td>0.5 h</td><td><ul><li>Installs the GitOps controller and the platform components it depends on: the cloud ingress controller, External Secrets Operator, and the ArgoCD app-of-apps that will manage everything else.</li></ul></td></tr><tr><td>6</td><td><strong>Set up External Secrets Operator</strong></td><td>0.5 h</td><td><ul><li>Points the cluster at your managed secret store and declares which secrets to sync. Credentials never enter Helm values or Git; ESO pulls them at runtime and materializes them as ordinary Kubernetes secrets</li></ul></td></tr></tbody></table>
-
-#### Phase 3: Deploy and verify the applications
-
-<table><thead><tr><th width="47.26953125">#</th><th width="180.5078125">Step</th><th width="86.32421875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>7</td><td><strong>Apply customizations for your infra landing zone</strong></td><td>2.0 h</td><td><ul><li><strong>Brownfield only.</strong> Wire externally created resources into the application values: ingress and egress paths, database and cache URLs, payment connector URLs, domain mapping and SMTP.</li><li>This could be the step requiring more iterations in the sequence, since it is manual, and it touches every component. <strong>Greenfield deployments typically skip it</strong>.</li></ul></td></tr><tr><td>8</td><td><strong>Deploy all Hyperswitch components using ArgoCD</strong></td><td>2.0 h</td><td><ul><li>ArgoCD applications pointing at the public Helm charts bring up the router, payment methods, connector service, card vault, Control Center, Superposition, encryption service and monitoring.</li></ul></td></tr><tr><td>9</td><td><strong>Verify with deep health checks</strong></td><td>0.5 h</td><td><ul><li>Confirm Helm releases and pod status across every component. This checks that the installation is healthy, not that the product works.</li></ul></td></tr><tr><td>10</td><td><strong>Test the backend application with APIs</strong></td><td>0.1 h</td><td><ul><li>Generate an API key and call the payment-create API. </li><li>First proof that the stack processes a request end to end.</li></ul></td></tr></tbody></table>
-
-#### Phase 4: Configure and test the production stack
-
-<table><thead><tr><th width="45.44921875">#</th><th width="178.36328125">Step</th><th width="89.23046875">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>11</td><td><strong>Update Control Center and SDK environment configuration</strong></td><td>0.1 h</td><td>Applied through ArgoCD so the change is declared in Git rather than made by hand.</td></tr><tr><td>12</td><td><strong>Configure the payment stack and test end to end</strong></td><td>0.5 h</td><td>Configure connectors, routing and payment methods through the Control Center, then test both the APIs and the SDK checkout flow.</td></tr></tbody></table>
-
-After step 12 you have a working deployment and Milestone III, is completed.
-
-{% hint style="warning" %}
-Completion of Milestone III, does not result in a production-grade setup. Complete Milestone IV to be completed for hardening — proving recovery, proving capacity, closing PCI items.
-{% endhint %}
