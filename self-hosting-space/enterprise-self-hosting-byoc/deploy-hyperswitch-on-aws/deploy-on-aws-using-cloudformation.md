@@ -217,8 +217,8 @@ The following services are installed in the 2 Nodes across the EKS cluster
 
 ### Next step:
 
-{% content-ref url="../account-setup/" %}
-[account-setup](../account-setup/)
+{% content-ref url="../../want-to-explore/account-setup/" %}
+[account-setup](../../want-to-explore/account-setup/)
 {% endcontent-ref %}
 
 {% content-ref url="https://github.com/juspay/hyperswitch-docs/blob/atulp-hyperswitch-patch-1/self-hosting-space/other-features/connectors/activate-connector-on-hyperswitch/test-a-payment-with-connector.md" %}

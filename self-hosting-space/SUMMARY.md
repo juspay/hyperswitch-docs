@@ -17,10 +17,16 @@
       * [Try out APIs](want-to-explore/readme-1/local-setup-using-individual-components/set-up-hyperswitch-backend/try-out-apis.md)
     * [SDK (Frontend)](want-to-explore/readme-1/local-setup-using-individual-components/set-up-hyperswitch-sdk-frontend.md)
     * [Control Center](want-to-explore/readme-1/local-setup-using-individual-components/set-up-hyperswitch-control-center.md)
+* [SMTP Server Integration](want-to-explore/smtp-server-integration.md)
+* [Account setup](want-to-explore/account-setup/README.md)
+  * [Using Hyperswitch Control Center](want-to-explore/account-setup/using-hyperswitch-control-center.md)
+  * [Test a payment](want-to-explore/account-setup/test-a-payment.md)
+  * [Using postman](want-to-explore/account-setup/using-postman.md)
 
 ## Enterprise Self-Hosting (BYOC)
 
 * [Running Hyperswitch on your own cloud](<README (1).md>)
+* [Finalizing Stack Blueprint](enterprise-self-hosting-byoc/finalizing-stack-blueprint.md)
 * [Deploy using Terraform (Infra as code)](enterprise-self-hosting-byoc/deploy-using-terraform-infra-as-code/README.md)
   * [On AWS using Terraform](enterprise-self-hosting-byoc/deploy-using-terraform-infra-as-code/on-aws-using-terraform.md)
   * [On GCP using Terraform](enterprise-self-hosting-byoc/deploy-using-terraform-infra-as-code/on-gcp-using-terraform.md)
@@ -39,11 +45,6 @@
     * [Deploy Card Vault](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
       * [Production ready deployment on AWS](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
       * [Cloud setup guide](enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
-* [Account setup](enterprise-self-hosting-byoc/account-setup/README.md)
-  * [Using Hyperswitch Control Center](enterprise-self-hosting-byoc/account-setup/using-hyperswitch-control-center.md)
-  * [Test a payment](enterprise-self-hosting-byoc/account-setup/test-a-payment.md)
-  * [Using postman](enterprise-self-hosting-byoc/account-setup/using-postman.md)
-* [SMTP Server Integration](enterprise-self-hosting-byoc/smtp-server-integration.md)
 * [Troubleshooting](enterprise-self-hosting-byoc/troubleshooting.md)
 
 ## GUIDES FOR SELF-HOSTING

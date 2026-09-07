@@ -12,7 +12,7 @@ metaLinks:
 
 ### Test on Web Client <a href="#user-content-create-a-payment" id="user-content-create-a-payment"></a>
 
-Once you have successfully run the [control centre](../local-setup-guide.md), you should be able to test the payments.
+Once you have successfully run the [control centre](../../enterprise-self-hosting-byoc/local-setup-guide.md), you should be able to test the payments.
 
 {% hint style="warning" %}
 [Account setup ](./)is a pre-requisite before you can test the payments.
@@ -24,7 +24,7 @@ There are three conditions in which you might want to make a test payment:
 
 **Self Hosted Web App:** In case you have hosted the SDK and integrated it on your app, you can do a usual release of your app. Post successful deployment, you can test the payments on your app url.
 
-**Playground deployment:** In case you have [deployed the demo app playground](../deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md), you will see the playground up and running on the public IP that you received after deployment.
+**Playground deployment:** In case you have [deployed the demo app playground](../../enterprise-self-hosting-byoc/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md), you will see the playground up and running on the public IP that you received after deployment.
 
 ***
 

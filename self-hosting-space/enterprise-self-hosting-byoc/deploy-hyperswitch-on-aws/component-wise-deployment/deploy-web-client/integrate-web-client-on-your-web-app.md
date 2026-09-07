@@ -190,6 +190,6 @@ The web client allows you to customize the appearance according to your web app 
 
 ### Next step:
 
-{% content-ref url="../../../account-setup/" %}
-[account-setup](../../../account-setup/)
+{% content-ref url="../../../../want-to-explore/account-setup/" %}
+[account-setup](../../../../want-to-explore/account-setup/)
 {% endcontent-ref %}

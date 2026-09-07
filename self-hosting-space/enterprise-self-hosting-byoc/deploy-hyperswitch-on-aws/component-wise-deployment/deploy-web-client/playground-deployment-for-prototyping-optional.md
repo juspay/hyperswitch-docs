@@ -178,6 +178,6 @@ curl https://raw.githubusercontent.com/juspay/hyperswitch-web/main/aws/hyperswit
 
 ### Next step:
 
-{% content-ref url="../../../account-setup/" %}
-[account-setup](../../../account-setup/)
+{% content-ref url="../../../../want-to-explore/account-setup/" %}
+[account-setup](../../../../want-to-explore/account-setup/)
 {% endcontent-ref %}

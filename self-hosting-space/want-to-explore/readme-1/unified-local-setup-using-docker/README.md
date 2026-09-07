@@ -53,6 +53,6 @@ Prefer direct support? Use our [Contact Us](https://hyperswitch.io/contact-us) p
 
 ### Next step:
 
-{% content-ref url="../../../enterprise-self-hosting-byoc/account-setup/" %}
-[account-setup](../../../enterprise-self-hosting-byoc/account-setup/)
+{% content-ref url="../../account-setup/" %}
+[account-setup](../../account-setup/)
 {% endcontent-ref %}
