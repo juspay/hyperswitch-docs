@@ -16,14 +16,14 @@ Hyperswitch can be deployed inside any Kubernetes compatible cloud provider or o
 
 Infra-as-code recipes (IaC) using Terraform are readily available for AWS, GCP, Azure and Oracle. The framework is extensible to alternative cloud providers like Digital Ocean, OVH cloud, Stack IT, Tencent and more.
 
-This section helps you make three decisions before you begin production certification process for you self-hosted hyperswitch stack. Each takes a few minutes and determines which guide you will follow next.
+This section helps you make three decisions before you begin production certification process for your self-hosted hyperswitch stack. Each takes a few minutes and determines which guide you will follow next.
 
 {% hint style="info" %}
 **Just exploring?**&#x20;
 
 You can try [Run Hyperswitch locally with Docker Compose](want-to-explore/readme-1/unified-local-setup-using-docker/) or [Quickstart on your cloud using Helm charts](./). This is is the quickest path to a proof of concept.&#x20;
 
-Both are options are for evaluation only, and neither will be a production path.
+Both options are for evaluation only, and neither will be a production path.
 {% endhint %}
 
 ***
@@ -43,11 +43,11 @@ Juspay provides three flexible tiers of Enterprise support models to enable ente
 
 The distinction that matters most in the above models will be uptime ownership, issue detection and change ownership.&#x20;
 
-In Tiers 1 and 2 Juspay owns the observability plane and watches your platform around the clock, whether or not we deploy the fix. In Tier 3 detection is yours, and we assist on request during business hours.&#x20;
+In Tiers 1 and 2 Juspay owns the observability plane and watches your platform around the clock, whether or not we deploy any change/fix. In Tier 3 detection is yours, and we assist on request during business hours.&#x20;
 
 * **Tier 1 is the best model**, if you do not have an in-house payments team but wish to self host, by fully outsourcing the ownership to Juspay team
 * **Tier 2 is the best model**, if you prefer your in-house payments team to fully manage the stack, with Juspay team's expert support to complement your inhouse payments team. The juspay support will be in terms of installation, ongoing monitoring, feature developments and solution consultation.
-* **Tier 3 is the best model**, if you are fully confident on fully managing the stack, but need Juspay team' support for installion, ongoing agile feature addition and solution consultation.
+* **Tier 3 is the best model**, if you are fully confident on fully managing the stack, but need Juspay team' support for installation, ongoing agile feature addition and solution consultation.
 {% endhint %}
 
 ***
@@ -76,13 +76,13 @@ The terraform modules represents the exact reference architecture, production bl
 
 Path A comes in two shapes.
 
-<table><thead><tr><th width="222.1796875">Shape</th><th width="309.05078125">What our terraform modules create?</th><th>What you will provide?</th></tr></thead><tbody><tr><td><p><strong>Greenfield installation</strong></p><p><strong>(Path A1)</strong><br><br><em>If you are starting clean slate with you cloud account</em></p></td><td>Basically everything for a production grade stack: Network, cluster, database, cache, edge, key management</td><td>A cloud account and a domain</td></tr><tr><td><p><strong>Brownfield installation</strong></p><p><strong>(Path A2)</strong><br><br><em>To install hyperswitch within your existing infra landing zone</em></p></td><td>For Hyperswitch to be installed within your infrastructure landing zone. Only the Hyperswitch specific layers: Cluster workloads, database, cache, card vault, key management, edge</td><td>Your existing accounts, VPC, subnets, transit routing, IAM boundary, logging destinations, CMKs</td></tr></tbody></table>
+<table><thead><tr><th width="222.1796875">Shape</th><th width="309.05078125">What our terraform modules create?</th><th>What you will provide?</th></tr></thead><tbody><tr><td><p><strong>Greenfield installation</strong></p><p><strong>(Path A1)</strong><br><br><em>If you are starting clean slate with you cloud account</em></p></td><td>Basically everything for a production grade stack: Network, cluster, database, cache, edge, key management</td><td>A cloud account and a domain </td></tr><tr><td><p><strong>Brownfield installation</strong></p><p><strong>(Path A2)</strong><br><br><em>To install hyperswitch within your existing infra landing zone</em></p></td><td>For Hyperswitch to be installed within your infrastructure landing zone. Only the Hyperswitch specific layers: Cluster workloads, database, cache, card vault, key management, edge</td><td>Your existing accounts, VPC, subnets, transit routing, logging destinations, CMKs</td></tr></tbody></table>
 
 Every module accepts externally-created resources as inputs. And adoption will be module by module.
 
-You can pass in your own VPC and subnet IDs, your own KMS key ARNs, your own IAM roles, your own log destinations, and our modules will build on them rather than replacing them.&#x20;
+You can pass in your own VPC and subnet IDs, your own log destinations, and our modules will build on them rather than replacing them.&#x20;
 
-In Path A,
+If path A is chosen,&#x20;
 
 * **The PCI boundary is fully inherited:** The cardholder-data environment, vault isolation, key custodianship and network segmentation are module boundaries and variables, not prose your team has to interpret and then evidence from scratch. This is the single largest time saving at certification and at every annual reassessment.
 * **Reliability defaults are fully inherited:** Multi-AZ, point-in-time recovery, failover, backup retention and node spread ship as defaults tied to your required workload, RTO and RPO targets.
@@ -115,11 +115,11 @@ Compared to Path A, if you choose to go with Path B, you may have to to self-man
 
 Once the three decisions are taken, the production certification process shall be commenced.&#x20;
 
-The Juspay Enterprise support team will work with your payments team across four stages (as shown below) with clear outcomes signed off at each stage.
+The Juspay Enterprise support team will work with your payments team across five stages (as shown below) with clear outcomes signed off at each stage.
 
 <table><thead><tr><th width="43.75390625">#</th><th width="265.05859375">Milestone</th><th>What you get?</th></tr></thead><tbody><tr><td><strong>I</strong></td><td><strong>Architecture finalization</strong></td><td><ul><li>Stack blueprint from ingress to egress, with applicable hyperswitch components finalized. </li><li>Any custom requirements on the infrastructure side shall also be addressed.</li></ul></td></tr><tr><td><strong>II</strong></td><td><strong>Sizing &#x26; deployment</strong></td><td><ul><li>Infrastructure sized to your TPS, RTO and RPO requirements. </li><li>Terraform scripts and helm are finalized.<br>Any customization requirements such as theme, domain mapping, email configuration</li><li>Feature modules and service configurations are also addressed.</li></ul></td></tr><tr><td><strong>III</strong></td><td><strong>Deploy and health check</strong></td><td><ul><li>Validated deployment with health tests passed</li><li>Monitoring &#x26; Observability plane wiring metrics and alerts to Juspay team and your Payments team.</li><li>Setup hyperswitch control center, checkout and test working payment flow on production</li></ul></td></tr><tr><td><strong>IV</strong></td><td><strong>Reliability, Security and Change management</strong></td><td><ul><li>Chaos testing and Load testing signed off, with remediations (if any)</li><li>Security controls, PCI scope and actionables will be documented for PCI audits (if applicable)</li><li>Dry run of the change management process, with remediations (if any)</li><li>On-call ownership and technical SPOCs for production stack maintainance are designated</li></ul></td></tr><tr><td><strong>V</strong></td><td><strong>Integrate and rollout on production</strong></td><td><ul><li>Integrate hyperswitch with your application</li><li>Rollout for Closed User Group</li><li>Staggered rollout for production users; validating performance metrics for futher scaleup</li></ul></td></tr></tbody></table>
 
-Completing all the above four stages results in a production certified Hyperswitch stack customized to your requirements and organization compliance policies.
+Completing all the above five stages results in a production certified Hyperswitch stack customized to your requirements and organization compliance policies.
 
 ***
 
@@ -127,13 +127,12 @@ Completing all the above four stages results in a production certified Hyperswit
 
 Under Decision III, whichever path you choose, you will need:
 
-* A cloud account, or a subscription within your existing organization, with permissions to create networking, Kubernetes and managed database resources
+* A cloud account, or a subscription within your existing organization, with permissions to create networking, Kubernetes, managed database resources and etc.,
 * A team member who can make infrastructure decisions, because some steps require choices only your organization can make
-* A domain and TLS certificate for your Hyperswitch endpoints
+* A domain and TLS certificate for your selfhosted Hyperswitch endpoints
 * At least one payment processor credential to connect for payment processing
 * In case of Brownfield setup (Path A2), also have ready:&#x20;
   * your VPC and subnet IDs
-  * your IAM permissions boundary
   * your CMK ARNs if you manage your own keys, and&#x20;
   * your logging and monitoring destinations.
 
