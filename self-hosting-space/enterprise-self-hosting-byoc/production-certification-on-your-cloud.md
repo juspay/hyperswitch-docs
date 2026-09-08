@@ -6,7 +6,7 @@ description: >-
 icon: globe
 ---
 
-# Running Hyperswitch on your own cloud
+# Production certification on your cloud
 
 ***
 
@@ -21,7 +21,7 @@ This section helps you make three decisions before you begin production certific
 {% hint style="info" %}
 **Just exploring?**&#x20;
 
-You can try [Run Hyperswitch locally with Docker Compose](want-to-explore/readme-1/unified-local-setup-using-docker/) or [Quickstart on your cloud using Helm charts](./). This is is the quickest path to a proof of concept.&#x20;
+You can try [Run Hyperswitch locally with Docker Compose](../want-to-explore/readme-1/unified-local-setup-using-docker/) or [Quickstart on your cloud using Helm charts](../). This is is the quickest path to a proof of concept.&#x20;
 
 Both options are for evaluation only, and neither will be a production path.
 {% endhint %}
