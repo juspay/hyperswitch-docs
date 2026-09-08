@@ -97,7 +97,7 @@ Configure an API key and merchant account for Adyen. Hyperswitch also accepts an
 ### Connector-Specific Notes
 
 - **Webhook verification:** Adyen uses HMAC-SHA256 signature verification. The HMAC key is found in your Adyen dashboard under **Developers → Webhooks → your webhook → HMAC key**. This key is stored in Hyperswitch and used to verify the `HmacSignature` field in every incoming Adyen notification. See [Adyen HMAC documentation](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures/#enable-hmac-signatures) for setup steps.
-- **Raw card data:** Adyen requires explicit enablement of raw card data handling. Contact Adyen support to enable this for your account before using Hyperswitch to process card payments directly.
+- **Raw card data:** Adyen requires explicit enablement of raw card data handling. Contact Adyen support at support@adyen.com to enable this for your account before using Hyperswitch to process card payments directly.
 - **Klarna via Adyen — mandatory fields:** For Klarna payments routed through Adyen, the following fields must be present on the payment request: `email`, `billing.first_name`, `billing.last_name`, `billing.city`, `billing.country`, `billing.line1`, `billing.line2`, `billing.zip`, and `order_details`. Additionally, `customer_id` is required — create a customer first via the [Hyperswitch Create Customer API](https://api-reference.hyperswitch.io/v1/customers/customers--create).
 - **Sandbox capture behaviour for Klarna and PayPal:** In Adyen's sandbox environment, Automatic Capture does not work as intended for Klarna and PayPal — payments must be explicitly captured before refunds can be processed. This is an Adyen sandbox account configuration issue, not a Hyperswitch bug. If this persists in production, contact Adyen support to disable automatic captures for these methods.
 - **Sofort deprecation:** Adyen has discontinued support for Sofort as a payment method. The Hyperswitch–Adyen integration retains the Sofort implementation but its availability depends on your Adyen account configuration. Contact Adyen support if Sofort is not functioning as expected.
@@ -154,7 +154,7 @@ Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over t
 
 1. You need to be registered with Adyen. Sign up at [adyen.com/signup](https://www.adyen.com/signup).
 2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/register).
-3. Request the Adyen support team to enable raw card data handling via email.
+3. Request the Adyen support team to enable raw card data handling via email (support@adyen.com).
 4. The Adyen API key and Account ID are available in your Adyen dashboard under **Home → Developers → API credentials**.
 5. Select all payment methods you wish to use Adyen for. Ensure these match the ones configured in your Adyen dashboard under **Settings → Payment methods**.
 6. Navigate to **Developers → Webhooks** in your Adyen dashboard and create a new standard webhook.
@@ -174,7 +174,7 @@ Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over t
 ### Common Failure Modes
 
 **Raw card data not enabled**
-Symptom: Card payments fail at the Adyen API before authorization. Fix: Contact Adyen support to enable raw card data handling for your account.
+Symptom: Card payments fail at the Adyen API before authorization. Fix: Contact Adyen support (support@adyen.com) to enable raw card data handling for your account.
 
 **HMAC key mismatch**
 Symptom: Adyen webhooks arrive at Hyperswitch but are rejected — payment statuses do not update. Fix: The HMAC key in Hyperswitch must match the one shown in **Developers → Webhooks → your webhook → HMAC key** in the Adyen dashboard.
