@@ -35,6 +35,7 @@
     * [PayU](connectors-integrations/available-connectors/payu-1.md)
     * [Prophetpay](connectors-integrations/available-connectors/prophetpay.md)
     * [Rapyd](connectors-integrations/available-connectors/rapyd.md)
+    * [Razorpay](connectors-integrations/available-connectors/razorpay.md)
     * [Shift4](connectors-integrations/available-connectors/shift4.md)
     * [Stripe](connectors-integrations/available-connectors/stripe.md)
     * [TrustPay](connectors-integrations/available-connectors/trustpay.md)
