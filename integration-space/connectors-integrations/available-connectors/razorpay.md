@@ -5,7 +5,7 @@ description: >-
 
 # Razorpay
 
-Razorpay brings UPI Collect payments to Hyperswitch for merchants in India, with INR settlement and refund support. The integration is in sandbox; mandates are not supported.
+Razorpay brings UPI Collect payments to Hyperswitch for merchants in India, with INR settlement and refund support. The integration is in sandbox; mandates are not supported. This page describes the Hyperswitch-native Razorpay connector.
 
 ### Status and capabilities
 
@@ -26,7 +26,6 @@ Razorpay brings UPI Collect payments to Hyperswitch for merchants in India, with
 Razorpay webhooks are not currently supported; Hyperswitch does not process incoming Razorpay webhook notifications, so payment and refund status updates rely on syncing with the API; configuring a Razorpay webhook endpoint has no effect.
 
 The capability block lists payments and refunds webhook flows for this connector, but the webhook handler is not implemented, keeping this page aligned with the code in [`IncomingWebhook for Razorpay`](https://github.com/juspay/hyperswitch/blob/d3c487e91c4f492e8839838966cce47ff12dc648/crates/hyperswitch_connectors/src/connectors/razorpay.rs#L772-L795).
-
 
 ### Source reference
 
