@@ -35,17 +35,18 @@ Components are colored marked based ownership and customization possibility.
 
 ### Entry points
 
-The hyperswitch stack will server three distinct traffic patterns:
+The hyperswitch stack will serve four distinct traffic patterns:
 
 * Users hit the content delivery layer. This is the shoppers loading the checkout experience in a browser or app.
 * Merchants hit the API path directly. This is the server-to-server API traffic — payment creation, refunds, status queries; or through the control center which the merchant team will use to configure and operate the payment stack.
 * Payment processors sending webhook notification to the hyperswitch endpoint directly. This is for various functionality like updating payment status, disputes etc.,
+* Scheduler which takes care of refunds and other Async process.
 
 ### Content delivery and Object Storage
 
 This is the layer most often already provided at organization level. If you have a CDN as global services within your organization, use them as-is.
 
-<table><thead><tr><th width="167.21484375">Component</th><th width="124.32421875">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Content Delivery Network</strong></td><td>Mandatory</td><td>Serves checkout assets from an edge location near the shopper. Without it, your own cluster sits on the checkout critical path.</td></tr></tbody></table>
+<table><thead><tr><th width="167.21484375">Component</th><th width="124.32421875">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Content Delivery Network</strong></td><td>Mandatory</td><td><p></p><p>Serves checkout assets from edge locations near the shopper. Caches static assets, results in cheap and faster content delivery.</p></td></tr></tbody></table>
 
 ### Object storage
 
@@ -81,19 +82,19 @@ These are cloud provider or third-party services the Hyperswitch stack depends o
 
 The is component defines how the stack gets provisioned, deployed and configured. These run alongside Hyperswitch rather than serving any payment traffic.
 
-<table><thead><tr><th width="157.34765625">Component</th><th width="124.18359375">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Terraform (Devops tool)</strong></td><td>Required</td><td>Provisions cloud infrastructure with the required provisioning, PCI controls, reliability defaults.</td></tr><tr><td><strong>Helm</strong> <br><strong>(Devops tool)</strong></td><td>Required</td><td>Packages the application components for deployment.</td></tr><tr><td><strong>ArgoCD (Devops tool)</strong></td><td>Required</td><td>Reconciles the cluster against Git continuously, so what runs is always what is declared.</td></tr><tr><td><strong>Superposition</strong></td><td>Required</td><td>Context-based configuration management — roll out routing rules, retry ladders and feature flags across environments or tenants without redeploying.</td></tr></tbody></table>
+<table><thead><tr><th width="157.34765625">Component</th><th width="124.18359375">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Terraform/Terragrunt (Devops tool)</strong></td><td>Required</td><td>Provisions cloud infrastructure with the required provisioning, PCI controls, reliability defaults.</td></tr><tr><td><strong>Helm charts</strong><br><strong>(Devops tool)</strong></td><td>Required</td><td>Packages the application components for deployment.</td></tr><tr><td><strong>ArgoCD (Devops tool)</strong></td><td>Required</td><td>Reconciles the cluster against Git continuously, so what runs is always what is declared.</td></tr><tr><td><strong>Superposition</strong></td><td>Required</td><td>Context-based configuration management — roll out routing rules, retry ladders and feature flags across environments or tenants without redeploying.</td></tr></tbody></table>
 
 ### Monitoring
 
 The monitoring and observability plane covering every component in the stack. It is how your team — or Juspay, on Tier 1 and Tier 2 — find out the platform is unhealthy before your customers do. It also provides you with the developer telemetry to deepdive and resolve issues.
 
-<table><thead><tr><th width="149.87109375">Component</th><th width="128.7578125">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>OpenTelemetry</strong></td><td>Required</td><td>Collects metrics, logs and traces from every component in one standard.</td></tr><tr><td><strong>Victoria Metrics</strong></td><td>Required</td><td>Stores metrics.</td></tr><tr><td><strong>Loki</strong></td><td>Required</td><td>Stores logs.</td></tr><tr><td><strong>Vector</strong></td><td>Required</td><td>Ships pod and node logs into Loki.</td></tr><tr><td><strong>Grafana</strong></td><td>Required</td><td>Dashboards over all of the above for monitoring the Infrastructure and Application performance. The Juspay team will also have read access to select metrics to be able to support your team.</td></tr><tr><td><strong>Alerts Manager</strong></td><td>Conditional</td><td>Routes alerts to your on-call system. Skip it only if you already have one. Required if you are on the Tier 1 or Tier 2 plan.</td></tr></tbody></table>
+<table><thead><tr><th width="149.87109375">Component</th><th width="128.7578125">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>OpenTelemetry</strong></td><td>Required</td><td>Collects metrics, logs and traces from every component in one standard.</td></tr><tr><td><strong>Victoria Metrics</strong></td><td>Required</td><td>Handles metrics.</td></tr><tr><td><strong>Loki</strong></td><td>Required</td><td>Handles logs.</td></tr><tr><td><strong>Vector</strong></td><td>Required</td><td>Ships pod and node logs into Loki.</td></tr><tr><td><strong>Grafana</strong></td><td>Required</td><td>Dashboards over all of the above for monitoring the Infrastructure and Application performance. The Juspay team will also have read access to select metrics to be able to support your team.</td></tr><tr><td><strong>Alerts Manager</strong></td><td>Conditional</td><td>Routes alerts to your on-call system. Skip it only if you already have one. Required if you are on the Tier 1 or Tier 2 plan.</td></tr></tbody></table>
 
 ### Data processing
 
 The analytics pipeline behind dashboard reporting, insights and ID based search. All events stream out of the transaction path so analytical load never touches live payments.
 
-<table><thead><tr><th width="154.66796875">Component</th><th width="124.66796875">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Kafka</strong></td><td>Required</td><td>Streams events out of the transaction path into analytics without adding latency to payments.</td></tr><tr><td><strong>ClickHouse</strong></td><td>Required</td><td>Columnar store powering dashboard analytics and reporting at volume.</td></tr><tr><td><strong>Vector</strong></td><td>Required</td><td>Ships events into the data processing pipeline.</td></tr><tr><td><strong>Cassandra</strong></td><td>Conditional</td><td>Backing datastore for the sessioniser.</td></tr><tr><td><strong>OpenSearch</strong></td><td>Optional</td><td>Lookup by identifier in the dashboard.</td></tr><tr><td><strong>Sessionizer</strong></td><td>Optional</td><td>Processes data for A/B testing and advanced analytics insights on the dashboard.</td></tr></tbody></table>
+<table><thead><tr><th width="154.66796875">Component</th><th width="124.66796875">Required?</th><th>Why it exists</th></tr></thead><tbody><tr><td><strong>Kafka</strong></td><td>Required</td><td>Streams events out of the transaction path into analytics without adding latency to payments.</td></tr><tr><td><strong>ClickHouse</strong></td><td>Required</td><td>Columnar store powering dashboard analytics and reporting at volume.</td></tr><tr><td><strong>Vector</strong></td><td>Required</td><td>Ships events into the data processing pipeline.</td></tr><tr><td><strong>OpenSearch</strong></td><td>Optional</td><td>Lookup by identifier in the dashboard.</td></tr><tr><td><strong>Sessionizer</strong></td><td>Optional</td><td>Processes data for A/B testing and advanced analytics insights on the dashboard.</td></tr><tr><td><strong>Cassandra</strong></td><td>Conditional</td><td>Backing datastore for the sessioniser.</td></tr></tbody></table>
 
 {% hint style="info" %}
 **The data processing layer is not covered by the Terraform modules on any cloud today.** ClickHouse, Kafka, OpenSearch and the sessionizer will have to be manually provisioned to enable the hyperswitch control center with dashboard analytics, reporting, ID based search features.
