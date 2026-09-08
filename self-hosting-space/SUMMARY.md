@@ -6,8 +6,8 @@
   * [Update Helm Charts to Hyperswitch's Latest Nightly Release](want-to-explore/readme/update-helm-charts-to-hyperswitchs-latest-nightly-release.md)
   * [Deploy on Local using Helm Charts and Minikube](want-to-explore/readme/deploy-on-local-using-helm-charts-and-minikube.md)
   * [Deploy on AWS using Helm Charts](want-to-explore/readme/deploy-on-aws-using-helm-charts.md)
-  * [Deploy on Azure Using Helm Charts](want-to-explore/readme/deploy-on-azure-using-helm-charts.md)
-  * [Deploy on GCP Using Helm Charts](want-to-explore/readme/deploy-on-gcp-using-helm-charts.md)
+  * [Deploy on Azure using Helm Charts](want-to-explore/readme/deploy-on-azure-using-helm-charts.md)
+  * [Deploy on GCP using Helm Charts](want-to-explore/readme/deploy-on-gcp-using-helm-charts.md)
 * [Development on Hyperswitch](want-to-explore/readme-1/README.md)
   * [Run Hyperswitch Locally Using Docker](want-to-explore/readme-1/unified-local-setup-using-docker/README.md)
     * [Run Additional Services](want-to-explore/readme-1/unified-local-setup-using-docker/run-additional-services.md)
@@ -26,9 +26,9 @@
 
 ## Enterprise Self-Hosting (BYOC)
 
-* [Running Hyperswitch on your own cloud](<README (1).md>)
-* [Finalizing Stack Blueprint](enterprise-self-hosting-byoc/finalizing-stack-blueprint.md)
-* [Provision Infrastructure using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/README.md)
+* [Production certification on your cloud](enterprise-self-hosting-byoc/production-certification-on-your-cloud.md)
+* [Finalize stack blueprint](enterprise-self-hosting-byoc/finalize-stack-blueprint.md)
+* [Provision infrastructure using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/README.md)
   * [On AWS using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/on-aws-using-terraform.md)
   * [On GCP using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/on-gcp-using-terraform.md)
   * [On Oracle using Terraform \[BETA\]](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/on-oracle-using-terraform-beta.md)
