@@ -1,13 +1,13 @@
 ---
-description: Describes the infrastructure provisioning using Terraform on AWS cloud
+description: >-
+  Describes the infrastructure provisioning using Terraform on AWS cloud for
+  Hyperswitch.
 icon: aws
 ---
 
 # On AWS using Terraform
 
-## Self-Hosting Hyperswitch on AWS with Terraform + Terragrunt
-
-This guide provisions a production-shaped Hyperswitch stack entirely on AWS, using Terraform modules from [`hyperswitch-suite`](https://github.com/juspay/hyperswitch-suite) composed with a [Terragrunt Stack](https://terragrunt.gruntwork.io/docs/features/stacks/).
+This guide provisions a production-validateed Hyperswitch stack entirely on AWS, using Terraform modules from [`hyperswitch-suite`](https://github.com/juspay/hyperswitch-suite) composed with a [Terragrunt Stack](https://terragrunt.gruntwork.io/docs/features/stacks/).
 
 ***
 

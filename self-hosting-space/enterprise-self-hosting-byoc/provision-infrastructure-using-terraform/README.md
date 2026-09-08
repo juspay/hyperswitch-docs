@@ -6,7 +6,7 @@ description: >-
 icon: code
 ---
 
-# Deploy using Terraform (Infra as code)
+# Provision Infrastructure using Terraform
 
 ***
 
@@ -82,8 +82,6 @@ The stated time does not include additional time for your own infra change appro
 ### Phase 1: Prepare
 
 <table><thead><tr><th width="44.56640625">#</th><th width="175.25">Step</th><th width="80.953125">Time</th><th>What it does?</th></tr></thead><tbody><tr><td>1</td><td><strong>Arrange the prerequisites</strong></td><td>—</td><td><ul><li>Cloud account and organization permissions, domain and TLS certificate, at least one payment processor credential is arranged</li><li>On brownfield installation your network and subnet identifiers are arranged. See prerequisites below for complete list.</li></ul></td></tr><tr><td>2</td><td><strong>Install and verify local tooling</strong></td><td>0.5 h</td><td><ul><li>Helm, kubectl, Terraform, Terragrunt and your cloud provider CLI on the operator's work device. All verified before proceeding</li></ul></td></tr></tbody></table>
-
-####
 
 ### Phase 2: Provision the infrastructure
 
