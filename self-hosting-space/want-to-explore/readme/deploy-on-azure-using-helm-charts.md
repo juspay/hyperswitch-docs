@@ -2,6 +2,7 @@
 description: >-
   Deploy Hyperswitch on Microsoft Azure using Helm charts for enterprise-grade
   payment infrastructure
+icon: microsoft
 metaLinks:
   alternates:
     - deploy-on-azure-using-helm-charts.md
@@ -271,7 +272,7 @@ That's it! Hyperswitch should be up and running on your Azure account 🎉
 
 ### Expose Hyperswitch Services Locally
 
-Use the commands from the **Step 3 (from above)** for port-forwarding to access the services.&#x20;
+Use the commands from the **Step 3 (from above)** for port-forwarding to access the services.
 
 Access the services at:
 

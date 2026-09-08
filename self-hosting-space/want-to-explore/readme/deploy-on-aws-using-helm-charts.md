@@ -1,3 +1,7 @@
+---
+icon: aws
+---
+
 # Deploy on AWS using Helm Charts
 
 ### Step 0: IAM Role Setup
@@ -189,7 +193,7 @@ helm install hypers-v1 hyperswitch/hyperswitch-stack -n hyperswitch --create-nam
 
 ### Step 5: Access Hyperswitch Services
 
-Use the commands from the **Step 4.2 (from above)** for port-forwarding to access the services.&#x20;
+Use the commands from the **Step 4.2 (from above)** for port-forwarding to access the services.
 
 ### Step 6: Cleanup and Uninstallation
 

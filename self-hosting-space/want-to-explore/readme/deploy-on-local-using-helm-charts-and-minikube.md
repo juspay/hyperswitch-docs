@@ -2,6 +2,7 @@
 description: >-
   A step-by-step guide to deploying Hyperswitch locally using Helm and Minikube,
   with setup, access, cleanup, and troubleshooting instructions.
+icon: kubernetes
 metaLinks:
   alternates:
     - deploy-on-local-using-helm-charts-and-minikube.md
@@ -17,7 +18,7 @@ Copy and paste the below in your terminal. The script will check for missing pre
 bash <(curl -fsSL https://raw.githubusercontent.com/juspay/hyperswitch/refs/heads/main/scripts/hyperswitch-explore.sh)
 ```
 
-Or review the deployment guide given below.&#x20;
+Or review the deployment guide given below.
 
 ### **Part 1: Setting Up a Local Kubernetes Cluster with Minikube/OrbStack**
 
@@ -103,7 +104,7 @@ That's it! Hyperswitch should be up and running on your Minikube ClusterðŸŽ‰ ðŸŽ
 
 #### **Step 3: Accessing Services** <a href="#id-6pkposi9l5fl" id="id-6pkposi9l5fl"></a>
 
-Use the commands from the **Step 2 (from above)** for port-forwarding to access the services.&#x20;
+Use the commands from the **Step 2 (from above)** for port-forwarding to access the services.
 
 Access services at:
 
