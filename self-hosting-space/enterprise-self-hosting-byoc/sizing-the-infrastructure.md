@@ -2,6 +2,7 @@
 description: >-
   A worked out reference for 25 million transactions per month, with the sizing
   rationale for each layer using AWS instances as a reference.
+hidden: true
 icon: ruler-combined
 ---
 
