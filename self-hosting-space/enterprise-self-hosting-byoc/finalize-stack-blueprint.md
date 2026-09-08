@@ -2,10 +2,10 @@
 description: >-
   Every component in a self-hosted Hyperswitch stack, what it does, and why it
   exists? So you can decide what to deploy and what to leave out.
-icon: ruler-combined
+icon: pen-ruler
 ---
 
-# Finalizing Stack Blueprint
+# Finalize stack blueprint
 
 ***
 

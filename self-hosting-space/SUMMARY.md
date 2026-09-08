@@ -28,6 +28,7 @@
 
 * [Production certification on your cloud](enterprise-self-hosting-byoc/production-certification-on-your-cloud.md)
 * [Finalize stack blueprint](enterprise-self-hosting-byoc/finalize-stack-blueprint.md)
+* [Sizing the infrastructure](enterprise-self-hosting-byoc/sizing-the-infrastructure.md)
 * [Provision infrastructure using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/README.md)
   * [On AWS using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/on-aws-using-terraform.md)
   * [On GCP using Terraform](enterprise-self-hosting-byoc/provision-infrastructure-using-terraform/on-gcp-using-terraform.md)
