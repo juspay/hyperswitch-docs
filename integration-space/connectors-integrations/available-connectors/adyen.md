@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments globally through Adyen via Hyperswitch, supporting cards,
-  wallets, and local payment methods.
+  Process payments through Adyen via Hyperswitch.
 metaLinks:
   alternates:
     - adyen.md
@@ -96,12 +95,7 @@ Configure an API key and merchant account for Adyen. Hyperswitch also accepts an
 
 ### Connector-Specific Notes
 
-- **Webhook verification:** Adyen uses HMAC-SHA256 signature verification. The HMAC key is found in your Adyen dashboard under **Developers → Webhooks → your webhook → HMAC key**. This key is stored in Hyperswitch and used to verify the `HmacSignature` field in every incoming Adyen notification. See [Adyen HMAC documentation](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures/#enable-hmac-signatures) for setup steps.
-- **Raw card data:** Adyen requires explicit enablement of raw card data handling. Contact Adyen support at support@adyen.com to enable this for your account before using Hyperswitch to process card payments directly.
-- **Klarna via Adyen — mandatory fields:** For Klarna payments routed through Adyen, the following fields must be present on the payment request: `email`, `billing.first_name`, `billing.last_name`, `billing.city`, `billing.country`, `billing.line1`, `billing.line2`, `billing.zip`, and `order_details`. Additionally, `customer_id` is required — create a customer first via the [Hyperswitch Create Customer API](https://api-reference.hyperswitch.io/v1/customers/customers--create).
 - **Sandbox capture behaviour for Klarna and PayPal:** In Adyen's sandbox environment, Automatic Capture does not work as intended for Klarna and PayPal — payments must be explicitly captured before refunds can be processed. This is an Adyen sandbox account configuration issue, not a Hyperswitch bug. If this persists in production, contact Adyen support to disable automatic captures for these methods.
-- **Sofort deprecation:** Adyen has discontinued support for Sofort as a payment method. The Hyperswitch–Adyen integration retains the Sofort implementation but its availability depends on your Adyen account configuration. Contact Adyen support if Sofort is not functioning as expected.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ### Webhooks
 
@@ -144,7 +138,7 @@ Adyen recognizes 34 named webhook event codes. Four are active only when payout 
 | `PAYOUT_EXPIRE` | `PayoutExpire` | Payout expires when payout support is enabled. |
 | `PAYOUT_REVERSED` | `PayoutReversed` | Payout is reversed when payout support is enabled. |
 
-Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over the notification fields and comparing it with the supplied HMAC signature. Configure the HMAC key from the Adyen dashboard in your connector webhook settings. See [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen.rs#L2061-L2097).
+Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over the notification fields and comparing it with the supplied HMAC signature from `additional_data.hmac_signature`. In the Adyen dashboard, copy the key from **Developers → Webhooks → your webhook → HMAC key**, then configure it in your connector webhook settings. See [Adyen HMAC documentation](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures/#enable-hmac-signatures) for setup steps and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen.rs#L2061-L2097) for the implementation.
 
 ---
 
@@ -174,19 +168,19 @@ Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over t
 ### Common Failure Modes
 
 **Raw card data not enabled**
-Symptom: Card payments fail at the Adyen API before authorization. Fix: Contact Adyen support (support@adyen.com) to enable raw card data handling for your account.
+Symptom: Card payments fail at the Adyen API before authorization. Fix: Complete the raw card data enablement step under [Prerequisites](#prerequisites).
 
 **HMAC key mismatch**
-Symptom: Adyen webhooks arrive at Hyperswitch but are rejected — payment statuses do not update. Fix: The HMAC key in Hyperswitch must match the one shown in **Developers → Webhooks → your webhook → HMAC key** in the Adyen dashboard.
+Symptom: Adyen webhooks arrive at Hyperswitch but are rejected; payment statuses do not update. Fix: Replace the configured key with the HMAC key described in [Webhooks](#webhooks).
 
 **Klarna payment failure due to missing fields**
-Symptom: Klarna payments via Adyen fail with a validation error. Fix: Ensure all mandatory Klarna fields are present (`email`, billing address fields, `order_details`, `customer_id`).
+Symptom: Klarna payments via Adyen fail with a validation error. Fix: Include `email`, `billing.first_name`, `billing.last_name`, `billing.city`, `billing.country`, `billing.line1`, `billing.line2`, `billing.zip`, and `order_details`. Create the customer first with the [Hyperswitch Create Customer API](https://api-reference.hyperswitch.io/v1/customers/customers--create), then provide its `customer_id`.
 
 **Payment method not available in Adyen account**
-Symptom: A payment method selected in Hyperswitch fails at Adyen with a method availability error. Fix: Verify the method is enabled in your Adyen dashboard under **Settings → Payment methods** and that your Adyen account is approved for that method in the target country.
+Symptom: A payment method selected in Hyperswitch fails at Adyen with a method availability error. Fix: Complete the payment method setup under [Prerequisites](#prerequisites), then confirm that your Adyen account is approved for the method in the target country.
 
 **Sofort payments not processing**
-Symptom: Sofort payments fail or are unavailable. Fix: Adyen has deprecated Sofort — contact Adyen support to confirm whether Sofort remains available on your specific account.
+Symptom: Sofort payments fail or are unavailable. Fix: Adyen has discontinued Sofort. The integration retains its implementation, but availability depends on your Adyen account configuration. Contact Adyen support to confirm whether it remains available for your account.
 
 ---
 
