@@ -10,7 +10,7 @@ metaLinks:
 
 <img src="https://hyperswitch.io/icons/homePageIcons/logos/adyenLogo.svg" alt="" data-size="original">
 
-Configure an API key and merchant account for Adyen. Hyperswitch also accepts an optional review key in the connector credentials. Requests are sent as `application/json`. See [`AdyenAuthType`](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs#L1511-L1516) and its [`ConnectorAuthType` mapping](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs#L1762-L1782).
+Configure an API key and merchant account for Adyen. If your connector configuration includes one, add the optional review key. These credential names come from [`AdyenAuthType`](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs#L1511-L1516). Requests are sent as `application/json`.
 
 ### Status and capabilities
 
@@ -149,9 +149,11 @@ Hyperswitch verifies each webhook by calculating an HMAC-SHA256 signature over t
 1. You need to be registered with Adyen. Sign up at [adyen.com/signup](https://www.adyen.com/signup).
 2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/register).
 3. Request the Adyen support team to enable raw card data handling via email (support@adyen.com).
-4. The Adyen API key and Account ID are available in your Adyen dashboard under **Home → Developers → API credentials**.
-5. Select all payment methods you wish to use Adyen for. Ensure these match the ones configured in your Adyen dashboard under **Settings → Payment methods**.
-6. Navigate to **Developers → Webhooks** in your Adyen dashboard and create a new standard webhook.
+4. Copy your API key from **Developers → API credentials** in the Adyen dashboard.
+5. Enter the merchant account name shown in your Adyen dashboard.
+6. If your connector configuration includes one, enter the optional review key. Hyperswitch uses the `api_key`, `merchant_account`, and optional `review_key` fields defined by [`AdyenAuthType`](https://github.com/juspay/hyperswitch/blob/f35edab780c97dd12efdd366246ff3f7fbc0e940/crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs#L1511-L1516).
+7. Select all payment methods you wish to use Adyen for. Ensure these match the ones configured in your Adyen dashboard under **Settings → Payment methods**.
+8. Navigate to **Developers → Webhooks** in your Adyen dashboard and create a new standard webhook.
 
 [Steps to activate Adyen on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
