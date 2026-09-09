@@ -100,7 +100,7 @@ cd prod/eu-central-1
 terragrunt list --tree --dag --dependencies
 
 # BootStrap
-terragrunt backend bootstrap
+cd vpc-network && terragrunt backend bootstrap && cd ..
 ```
 
 Check the directory, you should be seeing all the modules required for the hyperswitch-stack in that folder.

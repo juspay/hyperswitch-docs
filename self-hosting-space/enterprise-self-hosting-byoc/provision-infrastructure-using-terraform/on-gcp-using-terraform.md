@@ -158,7 +158,7 @@ cd prod/europe-west3
 terragrunt list --tree --dag --dependencies
 
 # BootStrap (provisions the GCS state bucket from your remote_state block)
-terragrunt backend bootstrap
+cd vpc-network && terragrunt backend bootstrap && cd ..
 ```
 
 Check the directory — you should see all the modules required for the hyperswitch stack in that folder.
