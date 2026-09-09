@@ -1,7 +1,5 @@
 ---
-description: >-
-  Connect Checkout.com as a payment connector on Hyperswitch to accept global
-  payments via its end-to-end gateway, acquirer, and processor solution.
+description: Accept card, wallet, and network token payments through Checkout.com on Hyperswitch.
 metaLinks:
   alternates:
     - checkout.md
@@ -11,16 +9,57 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/checkoutLogo.svg" alt=""></div>
 
-Checkout.com connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — three credentials are required: API Key, Processing Channel ID, and Secret Key. The API Key is passed as `Authorization: Bearer {api_key}` on payment requests; the Processing Channel ID identifies which Checkout.com channel the payment is routed to. All requests use `application/json`. Checkout.com is one of two connectors in Hyperswitch (alongside Adyen) that supports `ManualMultiple` capture — authorizing once and capturing in multiple partial steps.
+Checkout.com supports cards, network tokens, Apple Pay, and Google Pay through Hyperswitch, including manual multiple capture and refunds across every listed method.
+
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; host http://localhost:8080; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** live
+
+**Category:** payment gateway
+
+**Webhook flows:** disputes, payments, refunds
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| network token | Network Token | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | - | - |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 85 ([full list](https://hyperswitch.io/pm-list)) | 55 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 72 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-Specific Notes
 
-* **Three-credential auth:** API Key (Bearer token for requests), Processing Channel ID (identifies the processing channel), and Secret Key (used for webhook signature verification). All three are found in your Checkout.com dashboard under [Developers](https://dashboard.sandbox.checkout.com/developers/get-started).
-* **ManualMultiple capture:** Checkout.com supports capturing a single authorization in multiple partial steps, controlled via `capture_method: manual_multiple` in Hyperswitch. Capture methods supported: Automatic, Manual, SequentialAutomatic, ManualMultiple.
-* **Raw card data:** Checkout.com requires explicit enablement of raw card data handling. Contact Checkout.com support at support@checkout.com to enable this before processing card payments through Hyperswitch.
-* **Dispute evidence upload:** Checkout.com supports the full dispute evidence flow — file upload followed by evidence submission against the dispute ID. Both steps are handled through Hyperswitch's unified disputes interface.
-* **Webhook verification:** Checkout.com signs webhook events using the Secret Key. Hyperswitch verifies incoming webhooks using this key — store it separately from the API Key in the Hyperswitch connector configuration.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+* **Authentication:** Payment, refund, and dispute requests send the mapped `api_secret` as a bearer token in the `Authorization` header ([`get_auth_header`](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L123-L132)). Tokenization requests send the mapped `api_key` as the bearer ([`get_headers`](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L277-L281)).
+* **Raw card data:** Checkout.com requires enablement of raw card data handling. Contact Checkout.com support at support@checkout.com before processing raw card data.
+* **Dispute evidence:** The connector implements accept, defend, file upload, retrieval, and evidence submission flows ([connector flow implementations](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L259-L263), [file upload](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L1032-L1044), [evidence submission](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L1142-L1160)).
+* For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+
+### Webhooks
+
+The source enum contains 25 named event variants plus an `Unknown` fallback. Hyperswitch maps 21 variants to an effect and 4 to `EventNotSupported` ([event enum](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs#L2399-L2428), [effect mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs#L2502-L2535)).
+
+* `PaymentIntentAuthorizationFailure`: `AuthenticationExpired`, `AuthenticationFailed`, `PaymentAuthenticationFailed`
+* `PaymentIntentSuccess`: `PaymentCaptured`
+* `PaymentIntentFailure`: `PaymentDeclined`
+* `RefundSuccess`: `PaymentRefunded`
+* `RefundFailure`: `PaymentRefundDeclined`
+* `PaymentIntentCancelFailure`: `PaymentCanceled`
+* `PaymentIntentCaptureFailure`: `PaymentCaptureDeclined`
+* `PaymentIntentCancelled`: `PaymentVoided`
+* `DisputeOpened`: `DisputeReceived`, `DisputeEvidenceRequired`
+* `DisputeExpired`: `DisputeExpired`
+* `DisputeAccepted`: `DisputeAccepted`
+* `DisputeCancelled`: `DisputeCanceled`
+* `DisputeChallenged`: `DisputeEvidenceSubmitted`, `DisputeEvidenceAcknowledgedByScheme`
+* `DisputeWon`: `DisputeWon`, `DisputeArbitrationWon`
+* `DisputeLost`: `DisputeLost`, `DisputeArbitrationLost`
+* `EventNotSupported`: `AuthenticationStarted`, `AuthenticationApproved`, `AuthenticationAttempted`, `PaymentApproved`
+
+Store the webhook signing key in Hyperswitch’s connector webhook `secret` field; this field feeds HMAC-SHA256 verification. Hyperswitch hex-decodes the signature from `cko-signature` and verifies the request body ([`get_webhook_source_verification_algorithm`](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L1291-L1312), [`verify_signature`](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_interfaces/src/webhooks.rs#L287-L301)).
 
 ***
 
@@ -52,7 +91,7 @@ Checkout.com connects to Hyperswitch as a `PaymentGateway` connector using `Sign
 
 **Wrong Processing Channel ID** Symptom: Payments fail with a channel or merchant configuration error. Fix: Verify the Processing Channel ID in Hyperswitch matches the channel in your Checkout.com dashboard. Each business unit has a distinct channel ID.
 
-**Secret Key mismatch for webhooks** Symptom: Checkout.com webhooks are received but rejected — payment statuses do not update. Fix: Ensure the Secret Key stored in Hyperswitch matches the webhook signing key in your Checkout.com dashboard.
+**Webhook signing key mismatch** Symptom: Checkout.com webhooks are received but rejected, and payment statuses do not update. Fix: Ensure the webhook signing key configured in your Checkout.com dashboard matches the value stored in Hyperswitch’s connector webhook `secret` field; see [Webhooks](#webhooks).
 
 **ManualMultiple capture exceeds authorized amount** Symptom: A partial capture call fails with an amount error. Fix: The sum of all partial captures cannot exceed the originally authorized amount — Checkout.com enforces this at the API level.
 
