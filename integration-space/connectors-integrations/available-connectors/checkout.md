@@ -1,7 +1,5 @@
 ---
-description: >-
-  Connect Checkout.com as a payment connector on Hyperswitch to accept global
-  payments via its end-to-end gateway, acquirer, and processor solution.
+description: Accept card, wallet, and bank payments through Checkout.com on Hyperswitch.
 metaLinks:
   alternates:
     - checkout.md
@@ -11,28 +9,31 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/checkoutLogo.svg" alt=""></div>
 
-Checkout.com connects to Hyperswitch as a payment gateway. Its `SignatureKey` mapping reads three connector-account fields, and payment requests use the mapped secret as a Bearer credential ([auth mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs#L637-L654), [request header](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L123-L132)).
+Checkout.com supports cards, network tokens, Apple Pay, and Google Pay through Hyperswitch, including manual multiple capture and refunds across every listed method.
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e679350d9c54a0d3b22f4489be8b12c0f0cec1; host http://localhost:8080; fetched 2026-09-09T01:54:47Z; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+<!-- generated from GET /feature_matrix; host http://localhost:8080; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
 **Integration status:** live
+
 **Category:** payment gateway
+
 **Webhook flows:** disputes, payments, refunds
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 44 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 44 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
 | network token | Network Token | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | - | - |
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 85 ([full list](https://hyperswitch.io/pm-list)) | 55 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 72 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-specific notes
 
+* **Authentication:** The `SignatureKey` mapping reads the API key, secret key, and processing channel ID. Payment requests send the mapped secret as a bearer token in the `Authorization` header ([`SignatureKey` mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs#L637-L654), [`get_auth_header`](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L123-L132)).
 * **Raw card data:** Checkout.com requires enablement of raw card data handling. Contact Checkout.com support at support@checkout.com before processing raw card data.
 * **Dispute evidence:** The connector implements accept, defend, file upload, retrieval, and evidence submission flows ([connector flow implementations](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L259-L263), [file upload](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L1032-L1044), [evidence submission](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/checkout.rs#L1142-L1160)).
 * For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
