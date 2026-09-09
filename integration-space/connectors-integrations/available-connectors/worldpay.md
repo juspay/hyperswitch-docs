@@ -1,7 +1,5 @@
 ---
-description: >-
-  Accept online, in-store, and mobile payments through Worldpay via Juspay
-  Hyperswitch with built-in fraud protection.
+description: Accept card and wallet payments through Worldpay on Hyperswitch.
 metaLinks:
   alternates:
     - worldpay.md
@@ -11,16 +9,18 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/worldpayLogo.svg" alt=""></div>
 
-Worldpay connects to Hyperswitch as a payment gateway. Its current `SignatureKey` mapping combines the username and API key for HTTP Basic authentication and reads the entity ID from the third connector-account field ([auth mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay/transformers.rs#L720-L745), [request header](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L149-L159)).
+Worldpay runs card payments through Hyperswitch with optional 3DS, mandate-based repeat charges, and manual capture, alongside Apple Pay and Google Pay wallets. The integration is live.
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e679350d9c54a0d3b22f4489be8b12c0f0cec1; host http://localhost:8080; fetched 2026-09-09T01:54:47Z; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch d8f9262a968f392d6ad75747c38ed7aece123fe9; host http://localhost:8080; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
 **Integration status:** live
+
 **Category:** payment gateway
+
 **Webhook flows:** payments
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
@@ -30,16 +30,16 @@ Worldpay connects to Hyperswitch as a payment gateway. Its current `SignatureKey
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 57 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Connector-specific notes
+### Connector-Specific Notes
 
-* **Connector account fields:** Configure the API key, username, and entity ID used by the `SignatureKey` mapping.
-* **Mandate setup:** The connector implements `MandateSetup` ([flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L212-L221)).
-* **Payout fulfillment:** When Hyperswitch is built with the `payouts` feature, the connector implements payout fulfillment ([feature-gated flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1143-L1160)).
+* **Authentication:** Configure the API key, username, and entity ID. Hyperswitch joins the username and API key, Base64-encodes the pair, and sends it as an HTTP Basic credential in the `Authorization` header on every request; the entity ID is read from the third connector-account field ([auth mapping](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/transformers.rs#L715-L748), [request header](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L149-L160)).
+* **Mandate setup:** The connector implements `MandateSetup` ([flow implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L215-L224)).
+* **Payout fulfillment:** When Hyperswitch is built with the `payouts` feature, the connector implements payout fulfillment ([feature-gated flow implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1146-L1151)).
 * For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ### Webhooks
 
-The source enum contains 12 named event variants plus an `Unknown` fallback. Hyperswitch maps 7 variants to an effect and 5 to `EventNotSupported` ([event enum](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay/response.rs#L233-L253), [effect mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1350-L1374)).
+The source enum contains 12 named event variants plus an `Unknown` fallback. Hyperswitch maps 7 variants to an effect and 5 to `EventNotSupported` ([event enum](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/response.rs#L235-L253), [effect mapping](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1350-L1374)).
 
 * `PaymentIntentAuthorizationSuccess`: `Authorized`
 * `PaymentIntentSuccess`: `Settled`
@@ -47,7 +47,7 @@ The source enum contains 12 named event variants plus an `Unknown` fallback. Hyp
 * `PaymentIntentFailure`: `Error`, `Expired`, `SettlementFailed`
 * `EventNotSupported`: `Cancelled`, `Refused`, `Refunded`, `SentForRefund`, `RefundFailed`
 
-Webhook source verification is implemented. Hyperswitch reads the final signature value from `Event-Signature`, verifies the request body with HMAC-SHA256, and compares the computed and received hex values ([verification implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1264-L1335)).
+Webhook source verification is implemented. Hyperswitch reads the final signature value from `Event-Signature`, verifies the raw request body with HMAC-SHA256 using the hex-decoded merchant secret, and compares the computed and received hex values ([verification implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1266-L1335)).
 
 ***
 
