@@ -158,6 +158,7 @@ cd prod/europe-west3
 terragrunt list --tree --dag --dependencies
 
 # BootStrap (provisions the GCS state bucket from your remote_state block)
+# Run from any upstream directory containing the relevant terragrunt.hcl (e.g. vpc-network)
 cd vpc-network && terragrunt backend bootstrap && cd ..
 ```
 

@@ -100,6 +100,7 @@ cd prod/eu-central-1
 terragrunt list --tree --dag --dependencies
 
 # BootStrap
+# Run from any upstream directory containing the relevant terragrunt.hcl (e.g. vpc-network)
 cd vpc-network && terragrunt backend bootstrap && cd ..
 ```
 
