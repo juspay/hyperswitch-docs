@@ -1,235 +1,358 @@
 ---
 description: >-
-  Describes the infrastructure provisioning using Terraform on AWS cloud for
-  Hyperswitch.
+  Describes production grade infrastructure provisioning using Terraform on AWS
+  cloud
 icon: aws
 ---
 
 # On AWS using Terraform
 
-This guide provisions a production-validateed Hyperswitch stack entirely on AWS, using Terraform modules from [`hyperswitch-suite`](https://github.com/juspay/hyperswitch-suite) composed with a [Terragrunt Stack](https://terragrunt.gruntwork.io/docs/features/stacks/).
+This guide provisions a production-shaped Hyperswitch stack entirely on AWS, using Terraform modules from [`hyperswitch-suite`](https://github.com/juspay/hyperswitch-suite) composed with a [Terragrunt Stack](https://terragrunt.gruntwork.io/docs/features/stacks/).
 
 ***
 
 ### Architecture at a glance
 
-| Layer            | AWS component                               | Terraform unit                                 |
-| ---------------- | ------------------------------------------- | ---------------------------------------------- |
-| Network          | VPC, subnets, NAT                           | `vpc-network` (prerequisite, not covered here) |
-| DNS              | Route 53 public zone                        | `dns` (prerequisite, not covered here)         |
-| Database         | RDS for PostgreSQL                          | `rds`                                          |
-| Compute          | EKS cluster                                 | `eks`                                          |
-| Cache            | ElastiCache (Valkey/Redis)                  | `valkey`                                       |
-| IAM / KMS        | Workload identity, encryption keys          | `application-resources`                        |
-| Cluster plumbing | RBAC, storage classes, autoscaler           | `eks-resources`                                |
-| Edge / CDN       | CloudFront for the SDK + Control Center     | `cloudfront`                                   |
-| GitOps           | Argo CD, ingress, External Secrets Operator | management-stack bootstrap (Step 7)            |
-| Secrets          | AWS Secrets Manager → synced into cluster   | ESO (Step 8)                                   |
+<table><thead><tr><th width="229.1875">Layer</th><th>AWS component</th></tr></thead><tbody><tr><td>Networking</td><td>VPC, Subnets, Route53, Cloudfront, Proxies, NAT etc.</td></tr><tr><td>Storage</td><td>RDS, Elasticache, s3</td></tr><tr><td>Compute</td><td>EC2, EKS cluster </td></tr><tr><td>Managed resources</td><td>KMS, Cloudwatch, WAF, IAM, etc.</td></tr></tbody></table>
 
-The Terraform units in the table (excluding VPC/DNS) provision the _infrastructure_. Argo CD then deploys the _application workloads_ (router, control center, web SDK, card vault, key manager) on top of that infrastructure — see Step 9.
+The Terraform stack provision the AWS infrastructure. Argo CD then deploys the required applications on top of that infrastructure
 
-***
-
-### Step 0 — Prerequisites
+### Prerequisites
 
 Install and authenticate, from official sources:
 
-* `kubectl`
-* `terraform`
-* `terragrunt` (stacks require a recent version — check the [Terragrunt release notes](https://github.com/gruntwork-io/terragrunt/releases) against what `hyperswitch-suite` targets)
-* `yq`
-* `git`
-* `openssl`
-* AWS CLI, authenticated with credentials that can create VPC, RDS, EKS, ElastiCache, IAM, KMS, and CloudFront resources
-
-**Pin a module tag now.** Everything below references `?ref=<module-tag>` — pick a released tag (not `main`) from the [hyperswitch-suite releases](https://github.com/juspay/hyperswitch-suite/releases) or [CHANGELOG](https://github.com/juspay/hyperswitch-suite/blob/main/CHANGELOG.md), and use that same tag everywhere in this guide. Module directory names and inputs can change between releases, so confirm the paths in Step 2 against the `terraform/aws/modules` tree at that tag before you generate anything.
-
-**VPC and DNS.** This guide assumes an existing VPC and a public Route 53 hosted zone. If you don't have these yet, add the `vpc-network` and `dns` units from the suite _before_ the units in Step 2 — everything else is unchanged. Skipping this step is the most common reason `terragrunt plan` fails with subnet/zone lookup errors in Step 4.
+* [`terraform`](https://developer.hashicorp.com/terraform/install)
+* [`terragrunt`](https://docs.terragrunt.com/getting-started/install/)&#x20;
+* [`aws-cli`](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)&#x20;
 
 ***
 
-### Step 1 — Define the stack
+### Step 1 — Define the Infra stack using Terragrunt/Terraform
 
-Refer from [https://github.com/juspay/hyperswitch-suite/blob/main/terraform/aws/catalog/stacks/dev/terragrunt.stack.hcl](https://github.com/juspay/hyperswitch-suite/blob/main/terraform/aws/catalog/stacks/dev/terragrunt.stack.hcl)&#x20;
+[`hyperswitch-suite`](https://github.com/juspay/hyperswitch-suite/blob/main/terraform/aws/live/terragrunt.stack.hcl) repo ships a reference stack at [`terraform/aws/catalog/stacks/dev/terragrunt.stack.hcl`](https://github.com/juspay/hyperswitch-suite/blob/main/terraform/aws/live/terragrunt.stack.hcl). Reading that file is recommended.
 
-```hcl
-stack "dev" {
-  source = "../catalog/stacks/dev"
-  path   = "dev/eu-central-1"
+_Save the file in the following path of your repository `terraform/aws/live`:_
+
+```
+mkdir -p terraform/aws/live
+curl -o terraform/aws/live/terragrunt.stack.hcl \
+  https://raw.githubusercontent.com/juspay/hyperswitch-suite/main/terraform/aws/live/terragrunt.stack.hcl
+```
+
+Your file should look like below and please update the values in that file as per the requirement, which would have been done in finalizing stack blueprint,&#x20;
+
+<pre class="language-hcl"><code class="lang-hcl">stack "prod" {
+  source = "git::https://github.com/juspay/hyperswitch-suite.git//terraform/aws/catalog/stacks/dev?ref=stack/aws/catalog-v0.1.0"
+  path   = "prod/eu-central-1"
 
   no_dot_terragrunt_stack = true
 
   values = {
-    env          = "dev"
+    env          = "prod"
     region       = "eu-central-1"
-    region_code  = "euc1"
+    region_code  = "<a data-footnote-ref href="#user-content-fn-1">euc1</a>"
     project_name = "hyperswitch"
-    account_id   = "000000000000" # REPLACE_ME
-    state_bucket = "hyperswitch-tfstate-dev"
+    account_id   = "000000000000" 
+    state_bucket = "hyperswitch-tfstate-prod"
 
-    # Networking
-    vpc_cidr_prefix = "10.10"
+    vpc_cidr_prefix = "10.30"
+    base_domain     = "example.com" # REPLACE_ME
 
-    # DNS / TLS
-    base_domain = "dev.example.com" # REPLACE_ME
-
-    # Access
-    admin_role_arn     = "arn:aws:iam::000000000000:role/REPLACE_ME" # REPLACE_ME
+    admin_role_arn     = "arn:aws:iam::000000000000:role/REPLACE_ME"
     admin_access_cidrs = []
 
-    # Proxies / bastion — shared AMI placeholder; use a real per-role AMI id.
-    ami_id = "ami-REPLACE_ME"
+    ami_id = "ami-000000000"
 
-    # Envoy ingress domains: map of virtual-host-group => [domains]
     virtual_hosts_domains = {
-      api = [""]
+      api = ["api.example.com"]  REPLACE_ME
     }
 
-    # Istio host domains (map keys are arbitrary; module reads the values)
     istio_host_domains = {
-      dev = "" # REPLACE_ME
+      prod = "istio.internal.prod.euc1.example.com"
     }
 
-    # Sizing
-    db_instance_class            = ""
-    db_engine_version            = ""
-    cache_node_type              = ""
+    db_instance_class            = "db.r6g.xlarge"
+    db_engine_version            = "17.9"
+    cache_node_type              = "cache.m6g.xlarge"
     eks_version                  = "1.35"
-    eks_instance_types           = [""]
+    eks_instance_types           = ["m6i.xlarge"]
     eks_ami_id                   = null
-    system_nodes_desired_size    = 1
-    generic_compute_desired_size = 2
-    generic_compute_min_size     = 1
+    system_nodes_desired_size    = 2
+    generic_compute_desired_size = 3
+    generic_compute_min_size     = 3
   }
 }
-```
-
-Fill in `<module-tag>` (from Step 0) everywhere. What each unit does:
-
-* **rds** — PostgreSQL instance backing the router, OLAP, Superposition (config), and locker (card vault) schemas.
-* **eks** — the Kubernetes cluster the app workloads run on.
-* **valkey** — Redis-compatible cache used for locking, idempotency, and session state.
-* **application-resources** — IAM roles/policies (IRSA or Pod Identity) and KMS keys the application pods assume at runtime.
-* **eks-resources** — in-cluster plumbing: RBAC bindings, `StorageClass`es, and the cluster autoscaler.
-* **cloudfront** — CDN in front of the web SDK and Control Center static assets.
-
-***
-
-### Step 2 — Generate and plan
-
-```bash
-cd terraform/aws/live/aws/live
-terragrunt stack generate
-terragrunt plan
-```
-
-**Read the plan.** This is the only review gate before real AWS resources exist. Check specifically for:
-
-* No unintended destroys or replacements (`-/+`) if this is a re-run.
-* Instance sizes and multi-AZ settings match your environment (don't provision `prod` sizing defaults into a `staging` account, or vice versa).
-* The RDS and ElastiCache resources land in private subnets, not public ones.
-
-***
-
-### Step 4 — Apply
-
-```bash
-terragrunt apply
-```
-
-Reply `yes` only when the plan shows creates and nothing else (`N added, 0 changed, 0 destroyed`). Terragrunt applies units in dependency order, parallelizing where the stack graph allows it.
-
-***
-
-### Step 5 — Create the database users and run table queries
-
-Connect to the new RDS instance and create one login per service, each scoped to its own schema — don't share a superuser credential across services.
-
-```sql
-CREATE DATABASE hyperswitch OWNER router;
-CREATE DATABASE superposition OWNER superposition;
-CREATE DATABASE locker OWNER locker;
-
-CREATE USER router WITH PASSWORD '<generated-password>';
-CREATE USER superposition WITH PASSWORD '<generated-password>';
-CREATE USER locker WITH PASSWORD '<generated-password>';
-
-GRANT CONNECT ON DATABASE hyperswitch TO router, superposition TO superposition, locker TO locker;
-
--- Then, per service, create and scope its own schema, e.g. for router:
-CREATE SCHEMA router AUTHORIZATION router;
-GRANT USAGE, CREATE ON SCHEMA router TO router;
-ALTER DEFAULT PRIVILEGES IN SCHEMA router GRANT ALL ON TABLES TO router;
-```
-
-Run the following migrations on the hyperswitch database:
-
-```bash
-git clone https://github.com/juspay/hyperswitch.git && cd hyperswitch
-diesel migration run \
-  --database-url "postgres://postgres:<master-password>@<rds-endpoint>:5432/hyperswitch?sslmode=require"
-```
-
-Generate passwords with `openssl rand -base64 32` (or your org's secret generator) — don't hand-type them.
-
-***
-
-### Step 6 — Bootstrap the management stack
-
-This installs the cluster-wide plumbing Argo CD needs before it can deploy anything: an ingress controller, the External Secrets Operator (ESO), and Argo CD itself.
-
-**Status:** the install script referenced for this step is not yet published in `juspay/hyperswitch-suite` — it currently lives in an internal repo, and needs to move before this step can be a one-liner. Until it lands, bootstrap manually:
-
-<pre><code>curl -fSL https://raw.githubusercontent.com/juspay/hyperswitch-suite/refs/heads/main/scripts/install-argocd.sh | bash
-<strong>kubectl create namespace argocd
-</strong>kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 </code></pre>
 
-Then apply the ingress controller and ESO of your choice (e.g. `ingress-nginx` and `external-secrets` via their official Helm charts), and apply the app definitions at `management-<env>/apps/*.yaml` from your environment path once those exist.
-
-_(Docs team: once `install.sh` moves to `hyperswitch-suite` and the script URL is confirmed, replace this block with the one-liner and a screenshot of the interactive component-selection prompt.)_
-
 ***
 
-### Step 7 — Populate secrets
+### Step 2 — Generate & Bootstrap
 
-Everything the application needs at runtime is read from AWS Secrets Manager by ESO — nothing sensitive is committed to Git.
-
-**1. Database credentials.** Store each password from Step 5 at the path your `ExternalSecret` resources reference, e.g.:
-
-```
-hyperswitch/<env>/db/router
-hyperswitch/<env>/db/superposition
-hyperswitch/<env>/db/locker
-```
-
-**2. Card Vault keys.** The locker needs a master key and a JWE keypair:
+The following step generates terragrunt section required for the stack setup
 
 ```bash
-openssl rand -hex 32 > vault-master-key.txt
-openssl genrsa -out jwe-private.pem 2048
-openssl rsa -in jwe-private.pem -pubout -out jwe-public.pem
+# generate terragrunt modules
+cd terraform/aws/live
+terragrunt stack generate
+
+#To check the dependencies
+cd prod/eu-central-1
+terragrunt list --tree --dag --dependencies
+
+# BootStrap
+# Run from any upstream directory containing the relevant terragrunt.hcl (e.g. vpc-network)
+cd vpc-network && terragrunt backend bootstrap && cd ..
 ```
 
-Store all three at `hyperswitch/<env>/vault/*`, then delete the local files.
+Check the directory, you should be seeing all the modules required for the hyperswitch-stack in that folder.
 
-**3. Key-manager mTLS certs.** Generate via the suite's `gen_certs.sh` (confirm its path at your pinned tag) and store the resulting cert/key pair at `hyperswitch/<env>/key-manager/*`.
+***
 
-**4. Reference from Helm values** using `valueFrom.secretKeyRef` (populated by ESO), e.g.:
+### Step 3 — Plan & Apply
 
-```yaml
-env:
-  - name: DATABASE_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: router-db-credentials
-        key: password
+Since modules are dependent on other modules, we need to run terragrunt in phases, below are the phases in the order one has to apply. Please skip items based on the requirement.
+
+Reply `yes` only when the plan shows creates and nothing else.
+
+```bash
+# Phase 1
+terragrunt run --all --queue-include-dir=vpc-network plan
+terragrunt run --all --queue-include-dir=vpc-network apply
+
+# Phase 2
+terragrunt run --all \
+  --queue-include-dir=application-stack/eks-01 \
+  --queue-include-dir=database \
+  --queue-include-dir=efs \
+  --queue-include-dir=elasticache \
+  --queue-include-dir=jump-host \
+  --queue-include-dir=locker \
+  --queue-include-dir=route53 \
+  --queue-include-dir=squid-proxy \
+  plan
+# ...same flags, apply
+
+# Phase 3
+terragrunt run --all \
+  --queue-include-dir=application-stack/apps/alb-controller \
+  --queue-include-dir=application-stack/apps/external-secrets \
+  --queue-include-dir=application-stack/apps/grafana \
+  --queue-include-dir=application-stack/apps/hyperswitch \
+  --queue-include-dir=application-stack/apps/istio \
+  --queue-include-dir=application-stack/apps/loki \
+  --queue-include-dir=application-stack/apps/otel \
+  --queue-include-dir=application-stack/apps/ratelimiter \
+  --queue-include-dir=application-stack/apps/vector-dr \
+  --queue-include-dir=application-stack/eks-resources \
+  --queue-include-dir=application-stack/utils-load-balancer \
+  --queue-include-dir=acm \
+  plan
+# ...same flags, apply
+
+# Phase 4
+terragrunt run --all \
+  --queue-include-dir=application-stack/apps/decision-engine \
+  --queue-include-dir=application-stack/apps/superposition \
+  --queue-include-dir=envoy-proxy \
+  plan
+# ...same flags, apply
+
+# Phase 5
+terragrunt run --all --queue-include-dir=security-rules plan
+terragrunt run --all --queue-include-dir=security-rules apply
 ```
 
 ***
 
-### Step 9 — Verify the install
+### Step 4 — Create the logical databases and its users
 
-* `kubectl get pods -A` — all pods `Running`/`Ready`, no `CrashLoopBackOff`.
-* Hit the Control Center URL behind CloudFront and confirm login works.
-* Send a test payment through the router API to confirm the full path (router → DB → cache → locker) is wired correctly.
+We have 4 applications, which needs database of its own. Generate every password with `openssl rand -base64 32`&#x20;
+
+1. hyperswitch-app (the OLTP Router)
+2. superposition&#x20;
+3. decision-engine
+4. locker (the card vault)
+
+Lets go one by one.&#x20;
+
+#### Hyperswitch App&#x20;
+
+Fetch host from `terragrunt output --working-dir database`  and login into the database and create user.
+
+```
+ psql -h host -d postgres -U postgres # get the password from the AWS secrets. AWS would have created and stored it in AWS Secret store
+```
+
+```sql
+-- Create database
+CREATE DATABASE hyperswitch;
+
+-- Create user
+CREATE USER hyperswitch_app WITH PASSWORD 'password'; # generate a password and replace here. 
+
+-- Grant connect + basic access
+GRANT CONNECT ON DATABASE hyperswitch TO hyperswitch_app;
+
+\c hyperswitch
+
+GRANT USAGE, CREATE ON SCHEMA public TO hyperswitch_app;
+
+-- Auto-apply privileges to FUTURE tables/sequences/types created by the DB owner (or whoever runs the ALTER)
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO hyperswitch_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO hyperswitch_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON TYPES TO hyperswitch_app;
+```
+
+**Database Schema Creation**
+
+```bash
+git clone --depth 1 --branch v1.126.0 https://github.com/juspay/hyperswitch.git
+cd hyperswitch
+cargo install diesel_cli --no-default-features --features postgres
+diesel migration run \
+  --database-url "postgresql://<username>:<password>@<host>:<port>/<database>?sslmode=require"
+```
+
+#### Superposition&#x20;
+
+Fetch host from `terragrunt output --working-dir application-stack/apps/superposition`  and login into the database and create user.
+
+```
+  psql -h host -d postgres -U postgres # get the password from the AWS secrets. AWS would have created and stored it in AWS Secret store
+```
+
+```sql
+-- Create database
+CREATE DATABASE superposition;
+
+-- Create user
+CREATE USER superposition_app WITH PASSWORD 'password'; # generate a password and replace here. 
+
+-- Grant connect + basic access
+GRANT CONNECT ON DATABASE superposition TO superposition_app;
+
+\c superposition
+
+GRANT USAGE, CREATE ON SCHEMA public TO superposition_app;
+
+-- Auto-apply privileges to FUTURE tables/sequences/types created by the DB owner (or whoever runs the ALTER)
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO superposition_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO superposition_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON TYPES TO superposition_app;
+```
+
+**Database Schema Creation**
+
+```bash
+git clone --depth 1 --branch v1.126.0 https://github.com/juspay/hyperswitch.git # Skip this, if already done
+cd hyperswitch # Skip this, if already done
+
+DATABASE_URL="<host>:<port>" \
+  scripts/seed_superposition.sh
+```
+
+#### Decision Engine&#x20;
+
+Fetch host from `terragrunt output --working-dir application-stack/apps/decision-engine`  and login into the database and create user.
+
+```
+psql -h host -d postgres -U postgres # get the password from the AWS secrets. AWS would have created and stored it in AWS Secret store
+```
+
+```sql
+-- Create database
+CREATE DATABASE decision_engine;
+
+-- Create user
+CREATE USER decision_engine_app WITH PASSWORD 'password'; # generate a password and replace here. 
+
+-- Grant connect + basic access
+GRANT CONNECT ON DATABASE decision_engine TO decision_engine_app;
+
+\c decision_engine
+
+GRANT USAGE, CREATE ON SCHEMA public TO decision_engine_app;
+
+-- Auto-apply privileges to FUTURE tables/sequences/types created by the DB owner (or whoever runs the ALTER)
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO decision_engine_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO decision_engine_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON TYPES TO decision_engine_app;
+```
+
+**Database Schema Creation**
+
+```bash
+git clone --depth 1 --branch v1.126.0 https://github.com/juspay/decision-engine.git # Skip this, if already done
+cd decision-engine
+
+cargo install diesel_cli --no-default-features --features postgres
+diesel migration run \
+  --database-url "postgresql://<username>:<password>@<host>:<port>/<database>?sslmode=require"
+```
+
+#### Locker
+
+Fetch host from `terragrunt output --working-dir application-stack/locker`  and login into the database and create user.
+
+```
+psql -h host -d postgres -U postgres # get the password from the AWS secrets. AWS would have created and stored it in AWS Secret store
+```
+
+```sql
+-- Create database
+CREATE DATABASE locker;
+
+-- Create user
+CREATE USER locker_app WITH PASSWORD 'password'; # generate a password and replace here. 
+
+-- Grant connect + basic access
+GRANT CONNECT ON DATABASE locker TO locker_app;
+
+\c locker
+
+GRANT USAGE, CREATE ON SCHEMA public TO locker_app;
+
+-- Auto-apply privileges to FUTURE tables/sequences/types created by the DB owner (or whoever runs the ALTER)
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO locker_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO locker_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON TYPES TO locker_app;
+```
+
+**Database Schema Creation**
+
+```bash
+git clone --depth 1 https://github.com/juspay/hyperswitch-card-vault.git
+cd hyperswitch-card-vault
+diesel migration run \
+  --database-url "postgres://locker:<generated-password>@<locker-endpoint>:5432/locker?sslmode=require"
+```
+
+***
+
+### Step 5 — Create secrets
+
+Create following secrets in AWS secret manager and update the KMS encrypted [sensitive data](https://github.com/juspay/hyperswitch-helm/blob/feature/secrets-reference-and-chart-readmes/SECRETS.md) of respective application over there
+
+| App              | Secret Path/ARN          |
+| ---------------- | ------------------------ |
+| hyperswitch-app  | `prod/hyperswitch`       |
+| recon            | `prod/hyperswitch-recon` |
+| revenue-recovery | `prod/revenue-recovery`  |
+
+***
+
+### Step 6 - Validation
+
+```
+terragrunt run --all plan -- -detailed-exitcode
+```
+
+Output decides the validation. Exit code `0` = no changes, `1` = error, `2` = changes
+
+{% hint style="info" %}
+Post validation of successful infrastructure provision, continue with the [Application installation](../deploy-kubernetes-applications-using-argo-cd.md).
+{% endhint %}
+
+
+
+[^1]: 
