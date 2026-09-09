@@ -11,7 +11,7 @@ This guide provisions a production-shaped Hyperswitch stack entirely on GCP, usi
 
 ### Architecture at a glance
 
-<table><thead><tr><th width="191.609375">Layer</th><th>AWS component</th></tr></thead><tbody><tr><td>Networking</td><td>VPC, Subnets, Route53, Cloud CDN, Proxies, NAT etc.,</td></tr><tr><td>Storage</td><td>AlloyDB, Memory Store, GCS</td></tr><tr><td>Compute</td><td>VM, GKE</td></tr><tr><td>Managed Resources</td><td>Cloud Monitoring, Armor, Cloud IAM, etc.,</td></tr></tbody></table>
+<table><thead><tr><th width="191.609375">Layer</th><th>AWS component</th></tr></thead><tbody><tr><td>Networking</td><td>VPC, Subnets, Cloud DNS, Cloud CDN, Proxies, NAT etc.,</td></tr><tr><td>Storage</td><td>AlloyDB, Memory Store, GCS</td></tr><tr><td>Compute</td><td>VM, GKE</td></tr><tr><td>Managed Resources</td><td>Cloud Monitoring, Armor, Cloud IAM, etc.,</td></tr></tbody></table>
 
 The Terraform stack provision the GCP _infrastructure_. Argo CD then deploys the required _applications_ on top of that infrastructure
 
@@ -341,9 +341,9 @@ Create the following secrets in **Secret Manager** and update the KMS-encrypted 
 
 | App              | Secret Path/ARN          |
 | ---------------- | ------------------------ |
-| hyperswitch-app  | `prod/hyperswitch`       |
-| recon            | `prod/hyperswitch-recon` |
-| revenue-recovery | `prod/revenue-recovery`  |
+| hyperswitch-app  | `prod_hyperswitch`       |
+| recon            | `prod_hyperswitch-recon` |
+| revenue-recovery | `prod_revenue-recovery`  |
 
 ***
 
