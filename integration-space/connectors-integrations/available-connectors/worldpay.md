@@ -11,20 +11,43 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/worldpayLogo.svg" alt=""></div>
 
-Worldpay (FIS Worldpay) connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — Username and API Key are combined as `{username}:{api_key}`, Base64-encoded, and sent as an `Authorization: Basic {encoded}` header. All requests use `application/json`. Worldpay supports mandate flows via a CIT→MIT model (SetupMandate → RepeatPayment), multiple captures via a dedicated `/partialSettlements` endpoint, and full 3DS authentication.
+Worldpay connects to Hyperswitch as a payment gateway. Its current `SignatureKey` mapping combines the username and API key for HTTP Basic authentication and reads the entity ID from the third connector-account field ([auth mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay/transformers.rs#L720-L745), [request header](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L149-L159)).
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **HTTP Basic auth with combined credentials:** Worldpay's `SignatureKey` auth concatenates the Username (key1) and API Key as `{username}:{api_key}`, Base64-encodes the result, and sends it as `Authorization: Basic {encoded}`. Both credentials are required — neither alone is sufficient.
-* **Credentials location:** Worldpay **Username** and **Password (API Key)** are found in your Worldpay dashboard.
-* **Multiple capture support:** Worldpay supports partial captures via the `/partialSettlements` endpoint. When multiple captures are requested, Hyperswitch routes to `/partialSettlements` instead of `/settlements`. Each partial capture reduces the authorized amount.
-* **Mandate flow — CIT to MIT:** SetupMandate (CIT) stores the payment instrument reference. RepeatPayment (MIT) uses the stored reference to initiate subsequent payments without requiring customer interaction.
-* **3DS authentication:** Worldpay supports full 3DS via Hyperswitch's Pre-Authenticate and Post-Authenticate flows. Session tokens are also supported for the checkout session flow.
-* **Capture methods supported:** Automatic, Manual, and ManualMultiple.
-* **SetupMandate:** Supported for applicable payment methods.
-* **Dispute support:** Accept dispute, submit evidence, and dispute defence are all supported.
-* Worldpay offers online, in-store, and mobile payment solutions with built-in fraud protection, widely used in Europe and North America.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e679350d9c54a0d3b22f4489be8b12c0f0cec1; host http://localhost:8080; fetched 2026-09-09T01:54:47Z; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** live
+**Category:** payment gateway
+**Webhook flows:** payments
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 57 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Connector-specific notes
+
+* **Connector account fields:** Configure the API key, username, and entity ID used by the `SignatureKey` mapping.
+* **Mandate setup:** The connector implements `MandateSetup` ([flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L212-L221)).
+* **Payout fulfillment:** The connector implements payout fulfillment ([flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1145-L1160)).
+* For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+
+### Webhooks
+
+The source enum contains 12 named event variants plus an `Unknown` fallback. Hyperswitch maps 7 variants to an effect and 5 to `EventNotSupported` ([event enum](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay/response.rs#L233-L253), [effect mapping](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1350-L1374)).
+
+* `PaymentIntentAuthorizationSuccess`: `Authorized`
+* `PaymentIntentSuccess`: `Settled`
+* `PaymentIntentProcessing`: `SentForSettlement`, `SentForAuthorization`
+* `PaymentIntentFailure`: `Error`, `Expired`, `SettlementFailed`
+* `EventNotSupported`: `Cancelled`, `Refused`, `Refunded`, `SentForRefund`, `RefundFailed`
+
+Webhook source verification is implemented. Hyperswitch reads the final signature value from `Event-Signature`, verifies the request body with HMAC-SHA256, and compares the computed and received hex values ([verification implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1264-L1335)).
 
 ***
 
