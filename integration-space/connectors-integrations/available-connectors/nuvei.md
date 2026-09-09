@@ -1,8 +1,7 @@
 ---
 description: >-
-  Connect Nuvei to Juspay Hyperswitch to accept payments globally across
-  e-commerce and high-growth industries using Nuvei's payment processing and
-  acquiring services.
+  Connect Nuvei to Hyperswitch and review the capabilities declared by the
+  connector implementation.
 metaLinks:
   alternates:
     - nuvei.md
@@ -10,51 +9,104 @@ metaLinks:
 
 # Nuvei
 
-<div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/nuveiLogo.svg" alt=""></div>
+Nuvei is a payment gateway integration in Hyperswitch.
 
-Nuvei connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — API key, site ID, and secret key are combined with a SHA-256 request signature. Unlike Bearer token connectors, Nuvei validates each request using a signature computed from the request parameters and the secret key, included in the request body. All requests use `application/json`. Nuvei also supports payouts through Hyperswitch's unified payouts interface.
+## Status and capabilities
 
-### Connector-Specific Notes
+<!-- generated from GET /feature_matrix; hyperswitch 4c41905c7d01ddc7ce2b14fc88361d805824a235; host https://sandbox.hyperswitch.io; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-* **Request-level signature:** Nuvei does not use a static Bearer token for auth. Each request includes a SHA-256 signature computed from the concatenation of specific request fields and the secret key. The API key and site ID are also required. All three credentials are needed to construct valid requests.
-* **Credentials location:** The Nuvei API key is found in your Nuvei dashboard under **Settings → My Account → Account Details**.
-* **Payouts:** Nuvei supports payout fulfillment through Hyperswitch's unified payouts interface.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* Payment methods must be enabled in both Hyperswitch and your Nuvei dashboard — a mismatch is the most common source of payment failures.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+**Integration status:** live
 
-***
+**Category:** payment gateway
 
-### Activating Nuvei via Hyperswitch
+**Webhook flows:** disputes, payments
 
-#### Prerequisites
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | EPS | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| bank redirect | Giropay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR |
+| bank redirect | iDEAL | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR |
+| bank redirect | Sofort | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| network token | Network Token | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 237 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
 
-1. You need to be registered with Nuvei. Sign up at [nuvei.com](https://nuvei.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. The Nuvei API key is found in your Nuvei dashboard under **Settings → My Account → Account Details**.
-4. Select all payment methods you wish to use Nuvei for. Ensure these match the ones configured in your Nuvei dashboard.
+## Configure Nuvei
 
-[Steps to activate Nuvei on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+Supply the merchant ID in the API key field, the merchant site ID in the `key1` field, and the merchant secret in the API secret field. Nuvei requests do not use an Authorization header. The connector includes the authentication values and request checksum in the request body.
 
-***
+Follow the [connector activation guide](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to add these credentials in Hyperswitch.
 
-### Responsibility Boundaries
+## Webhooks
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, request signature computation, and unified error mapping. **Nuvei owns:** payment execution, fraud scoring, payout disbursement, and the signature validation logic that authenticates each request.
+For payment direct merchant notifications, Hyperswitch verifies the advanced response checksum with SHA-256.
 
-**Hyperswitch owns:** computing the correct SHA-256 signature for every request. **Nuvei owns:** validating it. If the secret key changes in Nuvei and is not updated in Hyperswitch, all requests will fail Nuvei's signature validation.
+### Payment and refund events
 
-***
+The payment mapper contains 11 branches covering the following status and transaction-type combinations. `DmnStatus` applies an `UPPERCASE` serde rename rule to incoming status values:
 
-### Common Failure Modes
+| Nuvei status | Transaction type | Hyperswitch effect |
+| --- | --- | --- |
+| `Success` or `Approved` | `Auth` | `PaymentIntentAuthorizationSuccess` |
+| `Success` or `Approved` | `Sale` | `PaymentIntentSuccess` |
+| `Success` or `Approved` | `Settle` | `PaymentIntentCaptureSuccess` |
+| `Success` or `Approved` | `Void` | `PaymentIntentCancelled` |
+| `Success` or `Approved` | `Credit` | `RefundSuccess` |
+| `Error` or `Declined` | `Auth` | `PaymentIntentAuthorizationFailure` |
+| `Error` or `Declined` | `Sale` | `PaymentIntentFailure` |
+| `Error` or `Declined` | `Settle` | `PaymentIntentCaptureFailure` |
+| `Error` or `Declined` | `Void` | `PaymentIntentCancelFailure` |
+| `Error` or `Declined` | `Credit` | `RefundFailure` |
+| `Pending` | `Auth`, `Sale`, or `Settle` | `PaymentIntentProcessing` |
 
-**Signature validation failure** Symptom: All requests return a Nuvei authentication or signature error. Fix: Verify that all three credentials (API key, site ID, secret key) in Hyperswitch exactly match those in your Nuvei account. Any mismatch causes the computed signature to fail validation.
+Other payment combinations return `WebhookEventTypeNotFound`.
 
-**Payment method not enabled** Symptom: A payment method selected in Hyperswitch fails with a method availability error from Nuvei. Fix: Verify the method is enabled in your Nuvei account configuration and matches the selection in Hyperswitch.
+### Payout events
 
-**Payout failure** Symptom: Payout fulfillment fails at Nuvei. Fix: Ensure all required recipient and payout details are populated before initiating the payout through Hyperswitch.
+When the payouts feature is enabled and the client request identifier has the payout prefix, the implementation uses 3 mapping branches:
 
-***
+| Nuvei status | Transaction type | Hyperswitch effect |
+| --- | --- | --- |
+| `Success` or `Approved` | `Credit` | `PayoutSuccess` |
+| `Pending` | Any declared transaction type | `PayoutProcessing` |
+| `Declined` or `Error` | Any declared transaction type | `PayoutFailure` |
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/nuvei.rs`.
+Other payout combinations return `WebhookEventTypeNotFound`.
+
+### Dispute events
+
+The dispute enum defines 51 exact event codes. The table accounts for all 51:
+
+| Hyperswitch effect | Nuvei event codes |
+| --- | --- |
+| `DisputeOpened` | `FC`, `CC`, `MCC`, `FC-CLSD-RCL`, `INQ` |
+| `DisputeAccepted` | `CC-A-ACPT`, `FC-A-ACPT`, `FC-A-ACPT-MCOLL`, `FC-M-ACPT`, `FC-SPCSE`, `RDR`, `MCC-M-ACPT`, `MCC-A-ACPT`, `INQ-M-RFND`, `IPA-M-ACPT`, `IPA-M-PART`, `IPA-A-ACPT`, `IPAR-M-ACPT`, `IPAR-A-ACPT` |
+| `DisputeLost` | `FC-A-EPRD`, `FC-M-PART`, `FC-CLSD-CHF`, `PA-CLSD-CHF`, `MCC-CLSD-CHF` |
+| `DisputeChallenged` | `FC-M-RJCT`, `FC-A-RJCT`, `IPA`, `MPA-I-RJCT`, `INQ-M-RSP`, `IPA-M-RJCT` |
+| `DisputeExpired` | `FC-A-RJCT-EXP`, `FC-M-PART-EXP`, `FC-M-RJCT-EXP`, `MCC-EXPR`, `INQ-EXPR`, `IPA-M-PART-EXP`, `IPA-M-RJCT-EXP` |
+| `DisputeWon` | `MPA-I-ACPT`, `MPA-I-PART`, `FC-CLSD-MF`, `MCC-CLSD-MF`, `PA-CLSD-MF` |
+| `DisputeCancelled` | `FC-I-RCL`, `INQ-A-CNLD`, `PA-CLSD-RC`, `CC-I-RCLL` |
+| No direct event; category fallback may apply | `MCC-A-RJCT`, `MCC-M-RJCT`, `INQ-A-RJCT`, `INQ-M-P-RFND`, `INQ-UPD` |
+
+The category fallback defines 5 exact category values:
+
+| Chargeback category | Hyperswitch effect |
+| --- | --- |
+| `cancelled` | `DisputeCancelled` |
+| `Duplicate` | `DisputeCancelled` |
+| `RDR-Refund` | `DisputeAccepted` |
+| `Regular` | No fallback event |
+| `Soft_CB` | No fallback event |
+
+## Page gaps
+
+- The capability declaration lists payment and dispute webhook flows, while the event mapper also contains refund and feature-gated payout outcomes. Confirm the intended declaration before relying on the generated webhook-flow list.
+- Chargeback source verification reads a checksum header, but the source marks its verification-message format as a placeholder. Confirm that format before enabling chargeback notifications.
+- Connector source does not declare the vendor dashboard paths for finding credentials or registering webhook endpoints. Use the current vendor dashboard guidance when completing those steps.
