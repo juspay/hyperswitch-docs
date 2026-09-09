@@ -9,7 +9,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/worldpayLogo.svg" alt=""></div>
 
-Worldpay runs card payments through Hyperswitch with optional 3DS, mandate-based repeat charges, and manual capture, alongside Apple Pay and Google Pay wallets. The integration is live.
+Worldpay connects merchants to payment processing through Hyperswitch.
 
 ### Status and capabilities
 
@@ -32,22 +32,32 @@ Worldpay runs card payments through Hyperswitch with optional 3DS, mandate-based
 
 ### Connector-Specific Notes
 
-* **Authentication:** Configure the API key, username, and entity ID. Hyperswitch joins the username and API key, Base64-encodes the pair, and sends it as an HTTP Basic credential in the `Authorization` header on every request; the entity ID is read from the third connector-account field ([auth mapping](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/transformers.rs#L715-L748), [request header](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L149-L160)).
+* **Authentication:** Configure the API key, username, and entity ID. In the `SignatureKey` mapping, `key1` carries the username, `api_key` carries the API key, and `api_secret` carries the entity ID. Hyperswitch joins `key1` and `api_key`, Base64-encodes the pair, and sends it as an HTTP Basic credential in the `Authorization` header on every request. The backward-compatible `BodyKey` path uses `key1` and `api_key` for the same credential and sets the entity ID to `default` ([auth mapping](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/transformers.rs#L715-L748), [request header](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L149-L160)).
 * **Mandate setup:** The connector implements `MandateSetup` ([flow implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L215-L224)).
 * **Payout fulfillment:** When Hyperswitch is built with the `payouts` feature, the connector implements payout fulfillment ([feature-gated flow implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1146-L1151)).
 * For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ### Webhooks
 
-The source enum contains 12 named event variants plus an `Unknown` fallback. Hyperswitch maps 7 variants to an effect and 5 to `EventNotSupported` ([event enum](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/response.rs#L235-L253), [effect mapping](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1350-L1374)).
+Worldpay can send the 12 named events below. Seven update payment state; five are unsupported. Unrecognized event names use the `Unknown` fallback and are unsupported ([event names](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay/response.rs#L235-L253), [event effects](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1350-L1374)).
 
-* `PaymentIntentAuthorizationSuccess`: `Authorized`
-* `PaymentIntentSuccess`: `Settled`
-* `PaymentIntentProcessing`: `SentForSettlement`, `SentForAuthorization`
-* `PaymentIntentFailure`: `Error`, `Expired`, `SettlementFailed`
-* `EventNotSupported`: `Cancelled`, `Refused`, `Refunded`, `SentForRefund`, `RefundFailed`
+| Worldpay event | Effect in Hyperswitch |
+|---|---|
+| `Authorized` | Payment authorization succeeds |
+| `Settled` | Payment succeeds |
+| `SentForSettlement` | Payment is processing |
+| `SentForAuthorization` | Payment is processing |
+| `Error` | Payment fails |
+| `Expired` | Payment fails |
+| `SettlementFailed` | Payment fails |
+| `Cancelled` | Event is not supported |
+| `Refused` | Event is not supported |
+| `Refunded` | Event is not supported |
+| `SentForRefund` | Event is not supported |
+| `RefundFailed` | Event is not supported |
+| `Unknown` | Event is not supported |
 
-Webhook source verification is implemented. Hyperswitch reads the final signature value from `Event-Signature`, verifies the raw request body with HMAC-SHA256 using the hex-decoded merchant secret, and compares the computed and received hex values ([verification implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1266-L1335)).
+Webhook source verification is implemented. Hyperswitch reads the final signature value from `Event-Signature`, verifies the raw request body with HMAC-SHA256 using the hex-decoded webhook `secret`, and compares the computed and received hex values ([verification implementation](https://github.com/juspay/hyperswitch/blob/d8f9262a968f392d6ad75747c38ed7aece123fe9/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1266-L1335)).
 
 ***
 
@@ -57,7 +67,7 @@ Webhook source verification is implemented. Hyperswitch reads the final signatur
 
 1. You need to be registered with Worldpay. Sign up at [worldpay.com](https://online.worldpay.com/).
 2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Worldpay **Username** and **Password** are found in your Worldpay dashboard.
+3. Have the connector credentials listed in [Connector-Specific Notes](#connector-specific-notes) ready.
 4. Select all payment methods you wish to use Worldpay for. Ensure these match the ones configured in your Worldpay dashboard.
 
 [Steps to activate Worldpay on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
@@ -66,7 +76,7 @@ Webhook source verification is implemented. Hyperswitch reads the final signatur
 
 ### Responsibility Boundaries
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate reference storage (ConnectorMandateId from SetupMandate used in RepeatPayment), constructing the Base64-encoded Authorization header on every request, routing captures to `/settlements` or `/partialSettlements` based on capture type, and unified error mapping. **Worldpay owns:** payment execution, fraud scoring, settlement routing, and token issuance for mandate flows.
+**Hyperswitch owns:** routing decisions, retry scheduling, mandate reference storage (ConnectorMandateId from SetupMandate used in RepeatPayment), routing captures to `/settlements` or `/partialSettlements` based on capture type, and unified error mapping. **Worldpay owns:** payment execution, fraud scoring, settlement routing, and token issuance for mandate flows.
 
 **Hyperswitch owns:** sending the correct payment instrument reference in RepeatPayment requests. **Worldpay owns:** validating that the reference is active and matches the original SetupMandate. If a mandate reference expires or is revoked in Worldpay and is not updated in Hyperswitch, RepeatPayment requests will fail.
 
@@ -74,11 +84,11 @@ Webhook source verification is implemented. Hyperswitch reads the final signatur
 
 ### Common Failure Modes
 
-**Authentication failure** Symptom: All requests fail with a Worldpay 401 or authentication error. Fix: Verify both the Username and Password (API Key) in Hyperswitch exactly match those in your Worldpay dashboard. Hyperswitch Base64-encodes them automatically — do not manually encode before entering in the control center.
+**Authentication failure** Symptom: All requests fail with a Worldpay 401 or authentication error. Fix: Verify the username, API key, and entity ID in Hyperswitch match your Worldpay configuration. Enter the values exactly as provided.
 
 **Partial capture fails** Symptom: A multiple capture request fails after the first capture. Fix: Ensure the original payment was authorized with `capture_method: manual` and that the sum of partial captures does not exceed the authorized amount.
 
-**RepeatPayment fails — invalid mandate reference** Symptom: MIT payment fails with a Worldpay token or reference error. Fix: Verify the mandate reference from the original SetupMandate is stored correctly in Hyperswitch and has not been revoked in Worldpay.
+**RepeatPayment fails: invalid mandate reference** Symptom: MIT payment fails with a Worldpay token or reference error. Fix: Verify the mandate reference from the original SetupMandate is stored correctly in Hyperswitch and has not been revoked in Worldpay.
 
 **Payment method not configured** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Worldpay merchant account and matches the selection in the Hyperswitch connector configuration.
 
