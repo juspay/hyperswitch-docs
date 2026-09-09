@@ -91,7 +91,7 @@ Store the webhook signing key in Hyperswitch’s connector webhook `secret` fiel
 
 **Wrong Processing Channel ID** Symptom: Payments fail with a channel or merchant configuration error. Fix: Verify the Processing Channel ID in Hyperswitch matches the channel in your Checkout.com dashboard. Each business unit has a distinct channel ID.
 
-**Webhook signing key mismatch** Symptom: Checkout.com webhooks are received but rejected, and payment statuses do not update. Fix: Recheck the signing-key configuration described in [Webhooks](#webhooks).
+**Webhook signing key mismatch** Symptom: Checkout.com webhooks are received but rejected, and payment statuses do not update. Fix: Ensure the webhook signing key configured in your Checkout.com dashboard matches the value stored in Hyperswitch’s connector webhook `secret` field; see [Webhooks](#webhooks).
 
 **ManualMultiple capture exceeds authorized amount** Symptom: A partial capture call fails with an amount error. Fix: The sum of all partial captures cannot exceed the originally authorized amount — Checkout.com enforces this at the API level.
 
