@@ -34,7 +34,7 @@ Worldpay connects to Hyperswitch as a payment gateway. Its current `SignatureKey
 
 * **Connector account fields:** Configure the API key, username, and entity ID used by the `SignatureKey` mapping.
 * **Mandate setup:** The connector implements `MandateSetup` ([flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L212-L221)).
-* **Payout fulfillment:** The connector implements payout fulfillment ([flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1145-L1160)).
+* **Payout fulfillment:** When Hyperswitch is built with the `payouts` feature, the connector implements payout fulfillment ([feature-gated flow implementation](https://github.com/juspay/hyperswitch/blob/d4e679350d9c54a0d3b22f4489be8b12c0f0cec1/crates/hyperswitch_connectors/src/connectors/worldpay.rs#L1143-L1160)).
 * For the full payment-method list behind the generated table, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
 
 ### Webhooks
