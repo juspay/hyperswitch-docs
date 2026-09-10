@@ -53,17 +53,9 @@ Supply an API Key and Entity ID in the connector configuration. Hyperswitch plac
 
 ### Webhooks
 
-ACI's declared capabilities do not include webhook flows, so the status block above reports none. The connector still processes one webhook event:
+ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so this connector page treats webhooks as unavailable and the status block above remains the supported contract.
 
-| Event | Effect in Hyperswitch |
-|---|---|
-| `PAYMENT` | Updates a payment as successful, processing, or failed, or a refund as successful or failed. Pending refunds and unknown result codes do not update status. |
-
-The event name and outcomes are defined by [`AciWebhookEventType`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci/transformers.rs#L1869-L1873) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L928-L968).
-
-Webhook requests require `X-Authentication-Tag`, `X-Initialization-Vector`, and the configured webhook secret. Hyperswitch verifies the source with HMAC-SHA256 and decrypts the payload before processing. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L825-L889) and [`decrypt_aci_webhook_payload()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L751-L820).
-
-Until the declaration is reconciled, this page follows the code for both facts: the status block reports no declared webhook flows, while this section documents the implemented `PAYMENT` handling.
+The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
 
 ### Activate ACI with Hyperswitch
 
@@ -79,8 +71,8 @@ To connect ACI to your Hyperswitch account, follow [Activate a connector on Hype
 
 ### Troubleshooting
 
-**Webhook decryption failure**
-Symptom: A webhook reaches Hyperswitch but is not processed. Fix: confirm that the webhook configuration matches the requirements in [Webhooks](#webhooks).
+**Webhook expectations**
+Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: use the declared capabilities in the status block above as the supported behavior for this connector.
 
 ***
 
