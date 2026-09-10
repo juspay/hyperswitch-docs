@@ -5,7 +5,7 @@ metaLinks:
     - bluesnap.md
 ---
 
-# Bluesnap
+# BlueSnap
 
 BlueSnap is a payment gateway for card and digital wallet payments. Card payments support optional 3DS and several card networks, while Apple Pay and Google Pay provide wallet options. Refunds and automatic, manual, or sequential automatic capture apply to every declared method. Webhooks cover payment, refund, and dispute updates.
 
