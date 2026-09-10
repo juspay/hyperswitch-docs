@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments through Fiserv via Juspay Hyperswitch — configure API keys,
-  prerequisites, and supported payment methods.
+  Accept card and wallet payments.
 metaLinks:
   alternates:
     - fiserv.md
@@ -11,51 +10,48 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/fiservLogo.svg" alt=""></div>
 
-Fiserv connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication with a per-request HMAC-SHA256 signature. Unlike Bearer token connectors, Fiserv requires Hyperswitch to compute a fresh HMAC-SHA256 signature for every request using the API Secret, and transmit it alongside a millisecond-precision timestamp header. All three credentials — API Key, API Secret, and Merchant ID — are required. All requests use `application/json`.
+Fiserv operates as a payment provider. Its declared card and wallet methods support refunds but not mandates or 3DS. Payments can use automatic, manual, or sequential automatic capture, while webhook flows are not declared.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **Per-request HMAC-SHA256 signature:** Fiserv does not use a static API key in the Authorization header. For every request, Hyperswitch computes an HMAC-SHA256 signature from the request payload and the API Secret, then sends it in the `Authorization` header along with a `Client-Request-Id` and a millisecond-precision `Timestamp` header. The API Key alone is insufficient — the signature and timestamp are always required.
-* **Credentials location:** API Key, API Secret, Merchant ID, and Terminal ID are found in your Fiserv dashboard under **Credentials**.
-* **Capture methods supported:** Automatic and Manual.
-* **SetupMandate:** Supported for applicable payment methods.
-* **3DS support:** Fiserv supports 3DS authentication via Hyperswitch's Pre-Authenticate and Post-Authenticate flows.
-* Fiserv is a global fintech and payments company with solutions for banking, merchant acquiring, billing and payments, and point-of-sale.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch 2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-***
+**Integration status:** sandbox
 
-### Activating Fiserv via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** None declared in code
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 ([full list](https://hyperswitch.io/pm-list)) | 156 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 ([full list](https://hyperswitch.io/pm-list)) | 156 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 85 ([full list](https://hyperswitch.io/pm-list)) | 22 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 11 ([full list](https://hyperswitch.io/pm-list)) | 10 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 20 ([full list](https://hyperswitch.io/pm-list)) | 15 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Authentication
+
+Supply an API Key, API Secret, and Merchant ID in the connector configuration. Hyperswitch uses the API Secret to compute a fresh HMAC-SHA256 authorization signature for each request, and sends the signature with the API key, client request ID, timestamp, and HMAC token type. See [`FiservAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv/transformers.rs#L733-L749) and [`generate_authorization_signature()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L67-L127).
+
+### Webhooks
+
+Fiserv webhooks are not currently processed by this connector. Do not configure Fiserv webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L910-L934).
+
+### Activate Fiserv with Hyperswitch
+
+#### Before you start
 
 1. You need to be registered with Fiserv. Sign up at [fiserv.com](https://www.fiserv.com/).
 2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Fiserv **API Key**, **API Secret**, **Merchant ID**, and **Terminal ID** are found in your Fiserv dashboard under **Credentials**.
-4. Select all payment methods you wish to use Fiserv for. Ensure these match the ones configured in your Fiserv dashboard.
+3. Have the credentials listed in [Authentication](#authentication) ready.
 
-[Steps to activate Fiserv on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
-
-***
-
-### Responsibility Boundaries
-
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, computing the HMAC-SHA256 Authorization signature and Timestamp header on every request, and unified error mapping. **Fiserv owns:** payment execution, fraud decisioning, and validating the HMAC-SHA256 signature and timestamp on each request. Fiserv enforces timestamp recency — requests with stale timestamps are rejected.
-
-**Hyperswitch owns:** generating a valid signature for each request. **Fiserv owns:** validating it. If the API Secret changes in Fiserv and is not updated in Hyperswitch, all requests will fail signature validation immediately. Timestamp drift between Hyperswitch's clock and Fiserv's server time can also cause authentication failures.
+To connect Fiserv to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Fiserv supports.
 
 ***
 
-### Common Failure Modes
+### Source reference
 
-**HMAC signature validation failure** Symptom: All requests fail with a Fiserv authentication or signature error. Fix: Verify all three credentials (API Key, API Secret, Merchant ID) in Hyperswitch exactly match those in your Fiserv dashboard. Any mismatch in the API Secret causes the computed signature to fail validation.
-
-**Timestamp rejected** Symptom: Requests fail with a timestamp or replay-protection error from Fiserv. Fix: Fiserv validates that the `Timestamp` header is within an acceptable recency window. Ensure the Hyperswitch server clock is synchronized (NTP). A large clock skew will cause every request to be rejected.
-
-**Terminal ID mismatch** Symptom: Payments fail with a terminal or merchant configuration error. Fix: Verify the Terminal ID in Hyperswitch matches the one configured for your Fiserv merchant account.
-
-**Payment method not available** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Fiserv merchant account and matches the selection in the Hyperswitch connector configuration.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/fiserv.rs`.
+[Fiserv connector implementation](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs)
