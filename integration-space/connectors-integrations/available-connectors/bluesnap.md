@@ -1,7 +1,5 @@
 ---
-description: >-
-  Accept payments globally through BlueSnap via Juspay Hyperswitch, supporting
-  e-commerce, subscription billing, and mobile payments.
+description: Accept card and wallet payments through BlueSnap.
 metaLinks:
   alternates:
     - bluesnap.md
@@ -9,49 +7,57 @@ metaLinks:
 
 # Bluesnap
 
-BlueSnap connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication — the API Username and Password are combined as `{username}:{password}`, Base64-encoded, and sent as `Authorization: Basic {encoded}` on every request. All requests use `application/json`. BlueSnap is a global payment platform supporting e-commerce, subscription billing, and mobile payments.
+BlueSnap is a payment gateway for card and digital wallet payments. Card payments support optional 3DS and several card networks, while Apple Pay and Google Pay provide wallet options. Refunds and automatic, manual, or sequential automatic capture apply to every declared method. Webhooks cover payment, refund, and dispute updates.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **HTTP Basic auth with username and password:** BlueSnap's `BodyKey` auth concatenates the API Username (key1) and API Password (api\_key) in Basic auth format: `Authorization: Basic base64(username:password)`. Both credentials are required — the username alone or password alone will cause authentication failure.
-* **Credentials location:** API Username and API Password are found in your BlueSnap dashboard under **API Settings**.
-* **Webhook support:** BlueSnap delivers webhook events to Hyperswitch. Configure the Hyperswitch webhook endpoint in your BlueSnap dashboard.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* BlueSnap provides end-to-end payment processing with built-in conversion optimization, fraud prevention, and global payment method coverage.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-***
+**Integration status:** live
 
-### Activating BlueSnap via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** disputes, payments, refunds
 
-1. You need to be registered with BlueSnap. Sign up at [home.bluesnap.com](https://home.bluesnap.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. BlueSnap **API Username** and **API Password** are found in your BlueSnap dashboard under **API Settings**.
-4. Select all payment methods you wish to use BlueSnap for. Ensure these match the ones configured in your BlueSnap dashboard under **Checkout Page → Payment Methods**.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, RuPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 94 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 88 ([full list](https://hyperswitch.io/pm-list)) | 52 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 74 ([full list](https://hyperswitch.io/pm-list)) | 54 ([full list](https://hyperswitch.io/pm-list)) |
 
-[Steps to activate BlueSnap on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Authentication
 
-***
+Supply an API Username and API Password in the connector configuration. Hyperswitch combines them for HTTP Basic authentication and sends `Authorization: Basic <base64 API username and API password>` on connector requests. See [`BluesnapAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap/transformers.rs#L768-L786) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap.rs#L130-L143).
 
-### Responsibility Boundaries
+### Webhooks
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate reference storage, constructing the Base64-encoded Basic authorization header on every request, and unified error mapping. **BlueSnap owns:** payment execution, fraud decisioning, and webhook delivery to Hyperswitch's endpoint.
+Configure a webhook merchant secret in Hyperswitch; the shared webhook verifier uses that value as the signature key. See [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_interfaces/src/webhooks.rs#L266-L301). BlueSnap webhooks use HMAC-SHA256 verification: Hyperswitch reads the hex signature from `bls-signature` and verifies the `bls-ipn-timestamp` value followed by the request body. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap.rs#L1105-L1129).
 
-**Hyperswitch owns:** embedding credentials correctly in every request header. **BlueSnap owns:** validating the username and password combination. If either credential changes in BlueSnap and is not updated in Hyperswitch, all requests will fail authentication immediately.
+The connector recognizes six webhook event values:
 
-***
+| Event | Effect in Hyperswitch |
+|---|---|
+| `DECLINE` | Payment is marked failed |
+| `CC_CHARGE_FAILED` | Payment is marked failed |
+| `CHARGE` | Payment is marked successful |
+| `REFUND` | Refund is marked successful |
+| `CHARGEBACK` | Dispute state follows `cbStatus` |
+| `CHARGEBACK_STATUS_CHANGED` | Dispute state follows `cbStatus` |
 
-### Common Failure Modes
+For chargeback events, `NEW` and `WORKING` open the dispute, `CLOSED` expires it, `COMPLETED_LOST` marks it lost, `COMPLETED_PENDING` marks it challenged, and `COMPLETED_WON` marks it won. The wire names and mappings are defined by [`BluesnapWebhookEvents`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap/transformers.rs#L992-L1053).
 
-**Authentication failure** Symptom: All requests fail with a BlueSnap 401 or authentication error. Fix: Verify both the API Username and API Password in Hyperswitch match exactly what is configured in your BlueSnap dashboard under **API Settings**. Do not manually Base64-encode them before entering in the control center.
+### Activate BlueSnap with Hyperswitch
 
-**Webhook events not processed** Symptom: BlueSnap events arrive at Hyperswitch but payment statuses do not update. Fix: Verify the Hyperswitch webhook endpoint is correctly configured in your BlueSnap dashboard.
+#### Before you start
 
-**Payment method not available** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your BlueSnap merchant account and matches the selection in the Hyperswitch connector configuration under **Checkout Page → Payment Methods**.
+1. Register with BlueSnap.
+2. Create a Hyperswitch account.
+3. Have the credentials listed in [Authentication](#authentication) ready.
 
-***
+To connect BlueSnap to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what BlueSnap supports.
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/bluesnap.rs`.
+### Source reference
+
+[BlueSnap connector implementation](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap.rs) and [BlueSnap data mappings](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap/transformers.rs)
