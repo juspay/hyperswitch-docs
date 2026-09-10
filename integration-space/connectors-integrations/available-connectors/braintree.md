@@ -1,6 +1,6 @@
 ---
 description: >-
-  Connect Braintree to Hyperswitch and review the connector setup.
+  Accept card and wallet payments through Braintree with Hyperswitch.
 metaLinks:
   alternates:
     - braintree.md
@@ -8,7 +8,7 @@ metaLinks:
 
 # Braintree
 
-Use this guide to configure credentials and webhook behavior.
+Braintree is a PayPal service for accepting payments in apps and websites. Merchants can accept cards with mandates, refunds, manual capture, and optional 3DS. Apple Pay, Google Pay, and PayPal are also available, with mandates supported for Apple Pay. Webhooks cover payment and refund updates.
 
 ### Status and capabilities
 
@@ -53,8 +53,3 @@ The implementation recognizes 7 dispute event names ([source](https://github.com
 | `dispute_disputed` | Dispute challenged |
 
 Other event names are not supported.
-
-### Page gaps
-
-- The capability declaration lists payment and refund webhook flows, while the implemented event mapper recognizes dispute events. Confirm the intended declaration before relying on the generated webhook-flow list.
-- The connector source does not declare the dashboard paths for finding credentials or registering the webhook endpoint. Use Braintree's current dashboard guidance when completing those steps.
