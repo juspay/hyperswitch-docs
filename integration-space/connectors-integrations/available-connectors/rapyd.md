@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to activate Rapyd as a payment connector on Juspay Hyperswitch to
-  accept and send global payments across multiple payment methods.
+description: Configure Rapyd card and wallet payments with Hyperswitch.
 metaLinks:
   alternates:
     - rapyd.md
@@ -11,49 +9,65 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/rapydLogo.svg" alt=""></div>
 
-Rapyd connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication — an Access Key and Secret Key are used to generate a per-request HMAC-SHA256 signature. The signature is computed as `HMAC-SHA256(secret_key, "{method}{url_path}{salt}{timestamp}{access_key}{secret_key}{body}")`, hex-encoded, then URL-safe Base64-encoded. Per-request `access_key`, `salt`, `timestamp`, and `signature` values are sent as individual HTTP headers on every request (no static Authorization header). All requests use `application/json`. Rapyd is a global payment network enabling businesses to accept and send payments across 100+ countries and 900+ payment methods.
+Rapyd is a payment gateway for card and wallet payments through Hyperswitch. Its connector covers Apple Pay and Google Pay alongside credit and debit cards. Refunds and delayed capture use the same integration, while mandates are not declared for these methods.
+
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** sandbox
+
+**Category:** payment gateway
+
+**Webhook flows:** disputes, payments, refunds
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 40 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 50 ([full list](https://hyperswitch.io/pm-list)) | 36 ([full list](https://hyperswitch.io/pm-list)) |
+
+To connect Rapyd to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Rapyd supports.
 
 ### Connector-Specific Notes
 
-* **Per-request HMAC signature:** Rapyd does not use a static Authorization header. Each request requires a freshly computed signature. Hyperswitch generates the `salt` (random 12-character alphanumeric), captures the `timestamp` (Unix epoch), computes the HMAC-SHA256 signature, and sends all four values — `access_key`, `salt`, `timestamp`, `signature` — as individual headers on every request.
-* **Signature construction:** `to_sign = "{http_method}{url_path}{salt}{timestamp}{access_key}{secret_key}{body}"`. The HMAC is keyed with `secret_key` using SHA-256, hex-encoded, then URL-safe Base64-encoded before sending.
-* **Credentials location:** Access Key and Secret Key are found in your Rapyd dashboard under **Developers > Access & Secret Keys**.
-* **Webhook verification:** Rapyd delivers webhook events to Hyperswitch using HMAC-SHA256 verification. Configure the Hyperswitch webhook endpoint in your Rapyd dashboard.
-* **Capture methods supported:** Automatic, Manual, and SequentialAutomatic.
-* Rapyd allows businesses to accept and send payments to any business or consumer entity anywhere in a faster, cheaper, and easier manner.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+Every API request carries a fresh signature. Hyperswitch concatenates the HTTP method, URL path, salt, timestamp, access key, secret key, and request body in that order with no delimiter. It signs that value with HMAC-SHA256 using the secret key, hex-encodes the result, then URL-safe Base64-encodes it. See [`generate_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L76-L100).
 
-***
+### Authentication
 
-### Activating Rapyd via Hyperswitch
+Provide an `<access key>` and `<secret key>`. The `BodyKey` mapping assigns `api_key` to the access key and `key1` to the secret key. Rapyd does not use an `Authorization` header; each request sends `access_key`, `salt`, `timestamp`, and `signature` headers. See [`RapydAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd/transformers.rs#L199-L217), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L120-L126), and the [authorization request headers](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L223-L255).
 
-#### Prerequisites
+### Webhooks
 
-1. You need to be registered with Rapyd. Sign up at [rapyd.net](https://www.rapyd.net/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Rapyd **Access Key** and **Secret Key** are found in your Rapyd dashboard under **Developers > Access & Secret Keys**.
-4. Select all payment methods you wish to use Rapyd for. Ensure these match the ones configured in your Rapyd dashboard.
+Rapyd webhook signatures use HMAC-SHA256. Hyperswitch reads the URL-safe Base64 value from the `signature` header and constructs the signed message by concatenating the webhook URL, salt, timestamp, access key, secret key, and body in that order with no delimiter. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L746-L763) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L765-L836).
 
-[Steps to activate Rapyd on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+The connector maps 8 webhook event values:
 
-***
+| Wire event value | Effect |
+|---|---|
+| `PAYMENT_COMPLETED` | Payment succeeds |
+| `PAYMENT_CAPTURED` | Payment succeeds |
+| `PAYMENT_FAILED` | Payment fails |
+| `REFUND_COMPLETED` | Refund succeeds |
+| `PAYMENT_REFUND_REJECTED` | Refund fails |
+| `PAYMENT_REFUND_FAILED` | Refund fails |
+| `PAYMENT_DISPUTE_CREATED` | Dispute opens |
+| `PAYMENT_DISPUTE_UPDATED` | Dispute follows the status mapping below |
 
-### Responsibility Boundaries
+For dispute updates, 4 status values change the dispute state:
 
-**Hyperswitch owns:** routing decisions, per-request salt and timestamp generation, HMAC-SHA256 signature computation on every request, retry scheduling, and unified error mapping. **Rapyd owns:** payment execution, payment method routing, and cross-border settlement.
+| Wire status value | Effect |
+|---|---|
+| `ACT` | Dispute opens |
+| `RVW` | Dispute is challenged |
+| `LOS` | Dispute is lost |
+| `WIN` | Dispute is won |
 
-**Hyperswitch owns:** sending correctly signed requests using the Access Key and Secret Key. **Rapyd owns:** validating the signature on every request. If either credential changes in Rapyd and is not updated in Hyperswitch, all requests will fail signature validation immediately.
+The wire values come from [`RapydWebhookObjectEventType`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd/transformers.rs#L542-L566) and [`RapydWebhookDisputeStatus`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd/transformers.rs#L568-L590). Their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L869-L900).
 
-***
+### Source reference
 
-### Common Failure Modes
-
-**Signature validation failure** Symptom: All requests fail with a Rapyd authentication or signature error. Fix: Verify the Access Key and Secret Key in Hyperswitch match exactly what is shown in your Rapyd dashboard under **Developers > Access & Secret Keys**. The signature is recomputed fresh on every request — any credential mismatch causes immediate failure.
-
-**Webhook verification failure** Symptom: Rapyd events arrive at Hyperswitch but payment statuses do not update. Fix: Verify the Hyperswitch webhook endpoint URL is configured correctly in your Rapyd dashboard and that the webhook secret matches.
-
-**Payment method not available** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Rapyd account and matches the selection in the Hyperswitch connector configuration.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/rapyd.rs`.
+The connector implementation is [`rapyd.rs`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs).
