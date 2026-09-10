@@ -1,8 +1,7 @@
 ---
 description: >-
-  Connect TrustPay with Juspay Hyperswitch to accept secure e-commerce payments
-  across the EEA with support for multiple payment methods and cross-border
-  reach.
+  Accept card, network token, bank redirect, bank transfer, and wallet payments
+  through TrustPay.
 metaLinks:
   alternates:
     - trustpay.md
@@ -12,49 +11,68 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/trustpayLogo.svg" alt=""></div>
 
-TrustPay connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication with three credentials: API Key, Project ID, and Secret Key. Authentication is dual-mode depending on payment method. Card payments use `X-API-Key: {api_key}` with `application/x-www-form-urlencoded` content. Bank redirect and bank transfer payments use an OAuth Bearer access token (`Authorization: Bearer {token}`) with `application/json` content. TrustPay is a European payment institution offering secure e-commerce payments and cross-border payment solutions across the EEA.
+TrustPay is a payment gateway for cards, network tokens, bank redirects, bank transfers, and digital wallets. Every declared method supports refunds and does not support mandates. Cards run without 3DS, while network tokens support optional 3DS. Webhooks cover payment, refund, and dispute updates.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **Dual authentication mode:** The auth header sent depends on the payment method. For card payments, Hyperswitch sends `X-API-Key: {api_key}` and form-encoded content. For bank redirect and bank transfer payments, Hyperswitch exchanges credentials for a Bearer access token and sends `Authorization: Bearer {token}` with JSON content.
-* **Project ID and Secret Key:** These are used in bank redirect flows for a HMAC-based signature on the payment body (Project ID and Secret Key are combined to produce the `notification_signature`). They are not sent directly in headers.
-* **Credentials location:** API Key, Project ID, and Secret Key are found in your TrustPay dashboard.
-* **Webhook verification:** TrustPay delivers webhook events to Hyperswitch using HMAC-SHA256 verification. Configure the Hyperswitch webhook endpoint in your TrustPay dashboard.
-* **Capture methods supported:** Automatic and SequentialAutomatic. Manual capture is not supported.
-* TrustPay belongs to the first financial institutions in the EEA region to provide secure e-commerce payments. They offer innovative payment services with cross-border reach and a variety of payment methods.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-***
+**Integration status:** live
 
-### Activating TrustPay via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** disputes, payments, refunds
 
-1. You need to be registered with TrustPay. Sign up at [trustpay.eu](https://www.trustpay.eu/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. TrustPay **API Key**, **Project ID**, and **Secret Key** are found in your TrustPay dashboard.
-4. Select all payment methods you wish to use TrustPay for. Ensure these match the ones configured in your TrustPay dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | BLIK | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| bank redirect | Giropay | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| bank redirect | iDEAL | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| bank transfer | Instant Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | AUT, CZE, DEU, GBR, ITA, SVK | CZK, EUR, GBP |
+| bank transfer | Instant Bank Transfer Finland | not supported | supported | automatic, sequential automatic | not applicable | - | FIN | EUR |
+| bank transfer | Instant Bank Transfer Poland | not supported | supported | automatic, sequential automatic | not applicable | - | POL | PLN |
+| bank transfer | SEPA Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| card | Credit Card | not supported | supported | automatic, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
+| card | Debit Card | not supported | supported | automatic, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
+| network token | Network Token | not supported | supported | automatic, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
+| wallet | Apple Pay | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
+| wallet | Google Pay | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
 
-[Steps to activate TrustPay on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Authentication
 
-***
+Supply an API Key, Project ID, and Secret Key in the connector configuration. Card and wallet requests send `X-API-Key: <API key>`. Bank redirect and bank transfer flows first send `Authorization: Basic <base64 project ID and secret key>` to obtain an access token, then send `Authorization: Bearer <access token>` on payment requests. See [`TrustpayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay/transformers.rs#L64-L87), [`build_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L84-L121), and [`RefreshTokenType::get_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L276-L302).
 
-### Responsibility Boundaries
+### Webhooks
 
-**Hyperswitch owns:** routing decisions, selecting the correct auth mode per payment method (X-API-Key for cards, Bearer token for bank redirects/transfers), retry scheduling, webhook HMAC verification, and unified error mapping. **TrustPay owns:** token issuance, payment execution, fraud decisioning, and settlement.
+Configure a webhook merchant secret in Hyperswitch; the shared webhook verifier uses that value as the signature key. See [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_interfaces/src/webhooks.rs#L266-L301). TrustPay webhooks use HMAC-SHA256 verification: Hyperswitch decodes the hex `signature` in the webhook body, removes that field, sorts the remaining values, and joins them with `/` before verification. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L1181-L1218).
 
-**Hyperswitch owns:** presenting the correct credentials for each payment type. **TrustPay owns:** validating the API Key on card flows and the Bearer token on bank redirect/transfer flows. If any credential changes in TrustPay and is not updated in Hyperswitch, the corresponding payment methods will fail authentication.
+The connector handles six status and credit/debit-indicator combinations. An empty body is treated as endpoint verification.
 
-***
+| `creditDebitIndicator` | `status` | Effect in Hyperswitch |
+|---|---|---|
+| `CRDT` | `Paid` | Payment is marked successful |
+| `CRDT` | `Rejected` | Payment is marked failed |
+| `DBIT` | `Paid` | Refund is marked successful |
+| `DBIT` | `Refunded` | Refund is marked successful |
+| `DBIT` | `Rejected` | Refund is marked failed |
+| `DBIT` | `Chargebacked` | Dispute is marked lost |
 
-### Common Failure Modes
+The wire values and mappings are defined by [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L1111-L1167) and [`CreditDebitIndicator`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay/transformers.rs#L2074-L2091).
 
-**Card authentication failure** Symptom: Card payment requests fail with a TrustPay authentication error. Fix: Verify the API Key in Hyperswitch matches the one in your TrustPay dashboard. Card payments use `X-API-Key` header — ensure the key is entered in the API Key field (not Project ID or Secret Key).
+### Activate TrustPay with Hyperswitch
 
-**Bank redirect/transfer token failure** Symptom: Bank redirect or bank transfer payments fail before reaching the payment API. Fix: Verify the Project ID and Secret Key in Hyperswitch match what is configured in your TrustPay dashboard. An incorrect credential causes the token exchange or signature to fail.
+#### Before you start
 
-**Webhook verification failure** Symptom: TrustPay events arrive at Hyperswitch but payment statuses do not update. Fix: Verify the Hyperswitch webhook endpoint URL is configured correctly in your TrustPay dashboard and that the webhook HMAC secret matches.
+1. Register with TrustPay.
+2. Create a Hyperswitch account.
+3. Have the credentials listed in [Authentication](#authentication) ready.
 
-***
+To connect TrustPay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what TrustPay supports.
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/trustpay.rs`.
+### Source reference
+
+[TrustPay connector implementation](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs) and [TrustPay data mappings](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay/transformers.rs)
