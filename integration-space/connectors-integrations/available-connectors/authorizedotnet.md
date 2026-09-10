@@ -1,5 +1,6 @@
 ---
-description: Accept payments through Authorize.net via Hyperswitch
+description: >-
+  Accept card and wallet payments.
 metaLinks:
   alternates:
     - authorizedotnet.md
@@ -7,52 +8,61 @@ metaLinks:
 
 # Authorize.net
 
-Authorize.net connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication — the API Login ID and Transaction Key are embedded inside the JSON request body under `merchantAuthentication`, not in HTTP headers. All requests use `application/json`. This body-embedded credential pattern is specific to Authorize.net and means the credentials are part of the payload structure, not transport-layer auth.
+Authorize.net is an online payment provider. Its card and selected wallet methods can be used for recurring charges, while PayPal mandates are not declared. Payments can be captured automatically, manually, or through sequential automatic capture, with payment and refund webhook flows available.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **Body-embedded credentials:** Authorize.net's `BodyKey` auth places credentials inside every request payload as `{"merchantAuthentication": {"name": "{api_login_id}", "transactionKey": "{transaction_key}"}}`. There is no `Authorization` header on payment requests — auth is validated by Authorize.net when it parses the request body.
-- **Credentials location:** API Login ID and Transaction Key are found in your Authorize.net dashboard under **Account → Security Settings**.
-- **Payment method configuration:** Configure accepted payment methods in your Authorize.net dashboard under **Account → Digital Payment Solutions**.
-- **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-- **SetupMandate:** Supported for applicable payment methods.
-- Authorize.net is a Visa solution focused on the US market — it is a widely-used payment gateway for US merchants accepting credit cards and ACH payments.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch 2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
----
+**Integration status:** live
 
-### Activating Authorize.net via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** payments, refunds
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Discover, JCB, Mastercard, Visa | - | CAD, USD |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Discover, JCB, Mastercard, Visa | - | CAD, USD |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 44 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 11 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 24 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Authentication
+
+Supply the API Login ID and Transaction Key in the connector configuration. Hyperswitch maps them to the connector's body-based authentication fields. See [`AuthorizedotnetAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet/transformers.rs#L96-L108).
+
+### Webhooks
+
+Authorize.net webhooks are verified with HMAC-SHA512. Hyperswitch reads the signature from `X-ANET-Signature` and verifies the raw request body. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet.rs#L1024-L1059).
+
+The connector recognizes six webhook event names:
+
+| Event | Effect in Hyperswitch |
+|---|---|
+| `net.authorize.payment.authorization.created` | Payment is marked successful |
+| `net.authorize.payment.priorAuthCapture.created` | Payment is marked successful |
+| `net.authorize.payment.authcapture.created` | Payment is marked successful |
+| `net.authorize.payment.capture.created` | Payment is marked successful |
+| `net.authorize.payment.void.created` | Payment is marked successful |
+| `net.authorize.payment.refund.created` | Refund is marked successful |
+
+The event names and mappings are defined by [`AuthorizedotnetIncomingWebhookEventType`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet/transformers.rs#L2340-L2368).
+
+### Activate Authorize.net with Hyperswitch
+
+#### Before you start
 
 1. You need to be registered with Authorize.net. Sign up at [authorize.net](https://www.authorize.net/).
 2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://hyperswitch.io/contact-sales).
-3. The **API Login ID** and **Transaction Key** are found in your Authorize.net dashboard under **Account → Security Settings**.
-4. Configure accepted payment methods in your Authorize.net dashboard under **Account → Digital Payment Solutions**.
+3. Have the credentials listed in [Authentication](#authentication) ready.
 
-[Steps to activate Authorize.net on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
-
----
-
-### Responsibility Boundaries
-
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, and unified error code mapping. **Authorize.net owns:** payment execution, fraud filtering (Advanced Fraud Detection Suite), and ACH processing. Authorize.net's fraud filters run before authorization — a payment rejected by fraud rules is a pre-authorization rejection, not an authorization failure.
-
-**Hyperswitch owns:** embedding credentials correctly in each request body. **Authorize.net owns:** validating those credentials on receipt. Auth errors from Authorize.net are returned inside the response body with code `E00007` (not as HTTP 401) — Hyperswitch maps these to its unified error format.
+To connect Authorize.net to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Authorize.net supports.
 
 ---
 
-### Common Failure Modes
+### Source reference
 
-**Authentication error inside response body**
-Symptom: Requests return HTTP 200 but contain error code `E00007` (User Authentication Failed). Fix: Verify the API Login ID and Transaction Key in Hyperswitch match your Authorize.net dashboard exactly. Auth errors are returned in the body, not as HTTP error codes.
-
-**Payment method not enabled**
-Symptom: Specific payment methods (e.g. ACH, PayPal) fail with a feature not enabled error. Fix: Enable the required methods in your Authorize.net dashboard under **Account → Digital Payment Solutions**.
-
-**Fraud filter rejection**
-Symptom: Payments are declined before authorization with a fraud-related reason code. Fix: Review and adjust your Authorize.net Advanced Fraud Detection Suite settings — these are configured entirely in Authorize.net, not in Hyperswitch.
-
----
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/authorizedotnet.rs`.
+[Authorize.net connector implementation](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet.rs)
