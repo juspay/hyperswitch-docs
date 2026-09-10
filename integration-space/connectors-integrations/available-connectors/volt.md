@@ -58,7 +58,7 @@ The wire values and mappings are defined by [`VoltWebhookPaymentStatus`](https:/
 
 #### Before you start
 
-1. Register with Volt.
+1. You need to be registered with Volt. Sign up at [volt.io](https://www.volt.io/).
 2. Create a Hyperswitch account.
 3. Have the credentials listed in [Authentication](#authentication) ready.
 
