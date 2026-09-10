@@ -1,6 +1,6 @@
 ---
 description: >-
-  Accept card, bank redirect, wallet, and pay-later payments.
+  Accept card, bank redirect, wallet, and pay later payments.
 metaLinks:
   alternates:
     - aci.md
