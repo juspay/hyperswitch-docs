@@ -1,6 +1,6 @@
 ---
 description: >-
-  Connect Nuvei to Hyperswitch and review the connector setup.
+  Accept card, network token, pay later, wallet, and bank redirect payments through Nuvei with Hyperswitch.
 metaLinks:
   alternates:
     - nuvei.md
@@ -8,7 +8,7 @@ metaLinks:
 
 # Nuvei
 
-Use this guide to configure credentials and webhook behavior.
+Based in Canada, Nuvei is a fintech company. Merchants can accept cards, network tokens, Apple Pay, Google Pay, PayPal, Afterpay Clearpay, Klarna, and European bank redirects. Cards, network tokens, Apple Pay, and Google Pay support mandates, and every listed method supports refunds and manual capture. Card payments can use optional 3DS, while webhooks cover payment and dispute updates.
 
 ### Status and capabilities
 

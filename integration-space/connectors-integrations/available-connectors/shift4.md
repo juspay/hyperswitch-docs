@@ -1,6 +1,6 @@
 ---
 description: >-
-  Connect Shift4 to Hyperswitch and review the connector setup.
+  Accept card and bank redirect payments through Shift4 with Hyperswitch.
 metaLinks:
   alternates:
     - shift4.md
@@ -8,7 +8,7 @@ metaLinks:
 
 # Shift4
 
-Use this guide to configure credentials and webhook behavior.
+Based in the United States, Shift4 is a payment processing company. Merchants can accept Mastercard and Visa cards alongside EPS, Giropay, iDEAL, and Sofort bank redirects. Every listed method supports refunds and manual capture, while mandates are not supported. Card payments can use optional 3DS, and webhooks cover payment and refund updates.
 
 ### Status and capabilities
 
