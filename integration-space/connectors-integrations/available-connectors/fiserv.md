@@ -10,7 +10,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/fiservLogo.svg" alt=""></div>
 
-Fiserv operates as a payment gateway. Its declared card and wallet methods support refunds but not mandates; 3DS is not supported for card payments and does not apply to wallets. Payments can use automatic, manual, or sequential automatic capture, while webhooks are not implemented in this connector.
+Fiserv operates as a payment gateway. Its declared card and wallet methods support refunds but not mandates; 3DS is not supported for card payments and does not apply to wallets. Payments can use automatic, manual, or sequential automatic capture, while incoming webhooks are not implemented in this connector.
 
 ### Status and capabilities
 
