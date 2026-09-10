@@ -1,7 +1,6 @@
 ---
 description: >-
-  Connect Braintree to Hyperswitch and review the capabilities declared by the
-  connector implementation.
+  Connect Braintree to Hyperswitch and review the connector setup.
 metaLinks:
   alternates:
     - braintree.md
@@ -9,11 +8,11 @@ metaLinks:
 
 # Braintree
 
-Braintree is a payment gateway integration in Hyperswitch.
+Use this guide to configure credentials and webhook behavior.
 
-## Status and capabilities
+### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 4c41905c7d01ddc7ce2b14fc88361d805824a235; host https://sandbox.hyperswitch.io; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch 93becbaee4ee3686e1a4d5750d2e547c56c27047; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
@@ -31,31 +30,31 @@ Braintree is a payment gateway integration in Hyperswitch.
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 
-## Configure Braintree
+### Configure Braintree
 
-Supply the Braintree public key in the API key field and the private key in the API secret field. Hyperswitch combines those values as HTTP Basic credentials for connector requests. The third `SignatureKey` field is accepted by the shared credential shape but is not used by Braintree's authentication conversion.
+Enter the Braintree public key in the API key field and the private key in the API secret field. Hyperswitch encodes them as HTTP Basic credentials. The shared third credential field is not used for Braintree authentication ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L215-L237), [request header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree.rs#L136-L149)).
 
-The connector sends payment operations through GraphQL. Follow the [connector activation guide](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to add these credentials in Hyperswitch.
+Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add these credentials in Hyperswitch. Use Braintree's current dashboard guidance to find the credentials and register the webhook endpoint.
 
-## Webhooks
+### Webhooks
 
-Hyperswitch verifies Braintree webhook payloads with HMAC-SHA1. The handler reads the signature and encoded payload from the incoming form body.
+Hyperswitch verifies Braintree webhook payloads with HMAC-SHA1. The handler reads the signature and encoded payload from the incoming form body ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree.rs#L983-L1069)).
 
-The implementation recognizes 7 event names:
+The implementation recognizes 7 dispute event names ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L2793-L2802)):
 
 | Braintree event | Hyperswitch effect |
 | --- | --- |
-| `dispute_opened` | `DisputeOpened` |
-| `dispute_lost` | `DisputeLost` |
-| `dispute_won` | `DisputeWon` |
-| `dispute_accepted` | `DisputeAccepted` |
-| `dispute_auto_accepted` | `DisputeAccepted` |
-| `dispute_expired` | `DisputeExpired` |
-| `dispute_disputed` | `DisputeChallenged` |
+| `dispute_opened` | Dispute opened |
+| `dispute_lost` | Dispute lost |
+| `dispute_won` | Dispute won |
+| `dispute_accepted` | Dispute accepted |
+| `dispute_auto_accepted` | Dispute accepted |
+| `dispute_expired` | Dispute expired |
+| `dispute_disputed` | Dispute challenged |
 
-Other event names map to `EventNotSupported`.
+Other event names are not supported.
 
-## Page gaps
+### Page gaps
 
 - The capability declaration lists payment and refund webhook flows, while the implemented event mapper recognizes dispute events. Confirm the intended declaration before relying on the generated webhook-flow list.
-- Connector source does not declare the vendor dashboard paths for finding credentials or registering the webhook endpoint. Use the current vendor dashboard guidance when completing those steps.
+- The connector source does not declare the dashboard paths for finding credentials or registering the webhook endpoint. Use Braintree's current dashboard guidance when completing those steps.
