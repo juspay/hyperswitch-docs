@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments through Braintree via Hyperswitch — covers prerequisites, API
-  credentials, and webhook configuration.
+  Connect Braintree to Hyperswitch and review the connector setup.
 metaLinks:
   alternates:
     - braintree.md
@@ -9,55 +8,53 @@ metaLinks:
 
 # Braintree
 
-Braintree connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication — three credentials (Merchant ID, Public Key, Private Key) are required. Unlike most connectors that use a Bearer token, Braintree authenticates requests using HTTP Basic auth where the Public Key is the username and the Private Key is the password, Base64-encoded as `Authorization: Basic base64(public_key:private_key)`. All payment operations use Braintree's GraphQL API (not REST), which Hyperswitch handles transparently via its connector implementation.
+Use this guide to configure credentials and webhook behavior.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **Authentication model:** Three-credential `SignatureKey` — Merchant ID (key1), Public Key (api_key), and Private Key (api_secret). The Public Key and Private Key together form HTTP Basic auth credentials (`Authorization: Basic base64(public_key:private_key)`). The Merchant ID is used to scope all requests to your Braintree merchant account.
-- **GraphQL-based API:** Braintree uses GraphQL mutations for payment operations, not REST endpoints. Hyperswitch constructs the appropriate GraphQL queries internally — this is invisible to the caller but means error responses from Braintree are structured differently from REST connectors.
-- **Webhook verification:** Braintree uses HMAC-SHA1 for webhook signature verification. Configure the webhook endpoint in Braintree and store the webhook notification signing key in Hyperswitch.
-- **PayPal parent account requirement:** Braintree is owned by PayPal, and a PayPal Business account is required to activate Braintree. Ensure your PayPal Business account is in good standing before setting up Braintree credentials.
-- **Google Pay and Apple Pay via Braintree:** Both wallets are supported via Braintree's SDK-based integration. Google Pay uses Braintree's Google Pay SDK flow; Apple Pay uses the Braintree Apple Pay SDK flow. These differ from PSP-decryption and Hyperswitch-decryption wallet flows.
-- **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch 93becbaee4ee3686e1a4d5750d2e547c56c27047; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
----
+**Integration status:** live
 
-### Activating Braintree via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** payments, refunds
 
-1. You need to be registered with Braintree. Sign up at [braintreepayments.com/sandbox](https://www.braintreepayments.com/sandbox).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/register).
-3. The Braintree Merchant ID, Public Key, and Private Key are available in your Braintree dashboard under **Home → Settings → API**.
-4. To set webhooks, navigate to **Home → Settings → API → Webhooks** and create a new webhook.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 
-[Steps to activate Braintree on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Configure Braintree
 
----
+Enter the Braintree public key in the API key field and the private key in the API secret field. Hyperswitch uses the public key as the HTTP Basic username and the private key as the HTTP Basic password. The shared third credential field is not used for Braintree authentication ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L215-L237), [request header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree.rs#L136-L149)).
 
-### Responsibility Boundaries
+Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add these credentials in Hyperswitch. Use Braintree's current dashboard guidance to find the credentials and register the webhook endpoint.
 
-**Hyperswitch owns:** routing decisions, mandate record storage, retry scheduling, and unified error mapping. **Braintree owns:** payment execution via its GraphQL API, fraud evaluation (Kount integration), and vault storage for payment methods. Braintree's vault is separate from Hyperswitch's vault — payment methods stored in Braintree are referenced by Braintree's nonce/token system, not Hyperswitch's token IDs.
+### Webhooks
 
-**Hyperswitch owns:** translating its unified payment model into Braintree's GraphQL mutation structure. **Braintree owns:** execution and response. If a GraphQL mutation is rejected (e.g. missing required field for a payment method), the error surfaces as a Braintree-level validation error in Hyperswitch's error response — not a network or authentication error.
+Hyperswitch verifies Braintree webhook payloads with HMAC-SHA1. The handler reads the signature and encoded payload from the incoming form body ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree.rs#L983-L1069)).
 
----
+The implementation recognizes 7 dispute event names ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L2793-L2802)):
 
-### Common Failure Modes
+| Braintree event | Hyperswitch effect |
+| --- | --- |
+| `dispute_opened` | Dispute opened |
+| `dispute_lost` | Dispute lost |
+| `dispute_won` | Dispute won |
+| `dispute_accepted` | Dispute accepted |
+| `dispute_auto_accepted` | Dispute accepted |
+| `dispute_expired` | Dispute expired |
+| `dispute_disputed` | Dispute challenged |
 
-**Wrong credential type used**
-Symptom: All API calls return authentication errors. Fix: Confirm you are using the Public Key (not the API key or Private Key alone) as the HTTP Basic username, and the Private Key as the password. The Merchant ID is a separate field, not part of the Basic auth credentials.
+Other event names are not supported.
 
-**PayPal Business account not active**
-Symptom: Braintree account activation fails or payments cannot be processed. Fix: Ensure the PayPal Business account linked to your Braintree account is verified and in good standing.
+### Page gaps
 
-**Webhook signature verification failure**
-Symptom: Braintree webhook events are received but rejected by Hyperswitch — payment statuses do not update. Fix: Verify the webhook signing key configured in Hyperswitch matches the one in your Braintree dashboard under **Settings → API → Webhooks**.
-
-**Google Pay or Apple Pay SDK flow not initialising**
-Symptom: Wallet payment buttons do not appear or fail at initialisation. Fix: Both wallets require Braintree's SDK-based integration. Ensure the correct SDK session token is being generated via Hyperswitch before rendering the wallet button.
-
----
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/braintree.rs`.
+- The capability declaration lists payment and refund webhook flows, while the implemented event mapper recognizes dispute events. Confirm the intended declaration before relying on the generated webhook-flow list.
+- The connector source does not declare the dashboard paths for finding credentials or registering the webhook endpoint. Use Braintree's current dashboard guidance when completing those steps.
