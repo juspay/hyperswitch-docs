@@ -29,7 +29,7 @@ BlueSnap is a payment gateway for card and digital wallet payments. Card payment
 
 ### Authentication
 
-Supply an API Username and API Password in the connector configuration. Hyperswitch combines them for HTTP Basic authentication and sends `Authorization: Basic <base64 API username and API password>` on connector requests. See [`BluesnapAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap/transformers.rs#L768-L786) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap.rs#L130-L143).
+Supply an API Username and API Password in the connector configuration. Hyperswitch joins them as `api_username:api_password`, Base64-encodes the pair, and sends `Authorization: Basic <encoded value>` on connector requests. See [`BluesnapAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap/transformers.rs#L768-L786) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/bluesnap.rs#L130-L143).
 
 ### Webhooks
 
