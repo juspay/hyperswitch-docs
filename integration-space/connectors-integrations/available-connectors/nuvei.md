@@ -1,7 +1,6 @@
 ---
 description: >-
-  Connect Nuvei to Hyperswitch and review the capabilities declared by the
-  connector implementation.
+  Connect Nuvei to Hyperswitch and review the connector setup.
 metaLinks:
   alternates:
     - nuvei.md
@@ -9,11 +8,11 @@ metaLinks:
 
 # Nuvei
 
-Nuvei is a payment gateway integration in Hyperswitch.
+Use this guide to configure credentials and webhook behavior.
 
-## Status and capabilities
+### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 4c41905c7d01ddc7ce2b14fc88361d805824a235; host https://sandbox.hyperswitch.io; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch 93becbaee4ee3686e1a4d5750d2e547c56c27047; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
      Do not edit by hand. This block regenerates from the connector's
      SupportedPaymentMethods declaration in code; edit that instead. -->
 
@@ -38,75 +37,69 @@ Nuvei is a payment gateway integration in Hyperswitch.
 | wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 237 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
 
-## Configure Nuvei
+### Configure Nuvei
 
-Supply the merchant ID in the API key field, the merchant site ID in the `key1` field, and the merchant secret in the API secret field. Nuvei requests do not use an Authorization header. The connector includes the authentication values and request checksum in the request body.
+Enter the merchant ID in the API key field, the merchant site ID in the `key1` field, and the merchant secret in the API secret field. Nuvei requests do not use an Authorization header. The connector places the authentication values and request checksum in the request body ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L1734-L1757), [empty auth header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei.rs#L127-L133)).
 
-Follow the [connector activation guide](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch) to add these credentials in Hyperswitch.
+Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add these credentials in Hyperswitch. Use Nuvei's current dashboard guidance to find the credentials and register webhook endpoints.
 
-## Webhooks
+### Webhooks
 
-For payment direct merchant notifications, Hyperswitch verifies the advanced response checksum with SHA-256.
+For payment direct merchant notifications, Hyperswitch verifies the advanced response checksum with SHA-256 ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei.rs#L1311-L1369)). Chargeback notifications use a checksum header, but the source marks the verification-message format as a placeholder. Confirm that format before enabling chargeback notifications ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei.rs#L1371-L1378)).
 
-### Payment and refund events
+#### Payment and refund events
 
-The payment mapper contains 11 branches covering the following status and transaction-type combinations. `DmnStatus` applies an `UPPERCASE` serde rename rule to incoming status values:
-
-| Nuvei status | Transaction type | Hyperswitch effect |
-| --- | --- | --- |
-| `Success` or `Approved` | `Auth` | `PaymentIntentAuthorizationSuccess` |
-| `Success` or `Approved` | `Sale` | `PaymentIntentSuccess` |
-| `Success` or `Approved` | `Settle` | `PaymentIntentCaptureSuccess` |
-| `Success` or `Approved` | `Void` | `PaymentIntentCancelled` |
-| `Success` or `Approved` | `Credit` | `RefundSuccess` |
-| `Error` or `Declined` | `Auth` | `PaymentIntentAuthorizationFailure` |
-| `Error` or `Declined` | `Sale` | `PaymentIntentFailure` |
-| `Error` or `Declined` | `Settle` | `PaymentIntentCaptureFailure` |
-| `Error` or `Declined` | `Void` | `PaymentIntentCancelFailure` |
-| `Error` or `Declined` | `Credit` | `RefundFailure` |
-| `Pending` | `Auth`, `Sale`, or `Settle` | `PaymentIntentProcessing` |
-
-Other payment combinations return `WebhookEventTypeNotFound`.
-
-### Payout events
-
-When the payouts feature is enabled and the client request identifier has the payout prefix, the implementation uses 3 mapping branches:
+The payment mapper contains 11 branches for the combinations below. Incoming `DmnStatus` values are uppercase because the enum applies `#[serde(rename_all = "UPPERCASE")]` ([status enum](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3434-L3443), [mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3634-L3675)):
 
 | Nuvei status | Transaction type | Hyperswitch effect |
 | --- | --- | --- |
-| `Success` or `Approved` | `Credit` | `PayoutSuccess` |
-| `Pending` | Any declared transaction type | `PayoutProcessing` |
-| `Declined` or `Error` | Any declared transaction type | `PayoutFailure` |
+| `SUCCESS` or `APPROVED` | `Auth` | Authorization succeeded |
+| `SUCCESS` or `APPROVED` | `Sale` | Payment succeeded |
+| `SUCCESS` or `APPROVED` | `Settle` | Capture succeeded |
+| `SUCCESS` or `APPROVED` | `Void` | Payment canceled |
+| `SUCCESS` or `APPROVED` | `Credit` | Refund succeeded |
+| `ERROR` or `DECLINED` | `Auth` | Authorization failed |
+| `ERROR` or `DECLINED` | `Sale` | Payment failed |
+| `ERROR` or `DECLINED` | `Settle` | Capture failed |
+| `ERROR` or `DECLINED` | `Void` | Cancellation failed |
+| `ERROR` or `DECLINED` | `Credit` | Refund failed |
+| `PENDING` | `Auth`, `Sale`, or `Settle` | Payment processing |
 
-Other payout combinations return `WebhookEventTypeNotFound`.
+Other payment combinations are not supported.
 
-### Dispute events
+#### Payout events
 
-The dispute enum defines 51 exact event codes. The table accounts for all 51:
+When payouts are enabled and the client request identifier has the payout prefix, the implementation uses 3 mapping branches ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3678-L3693)):
+
+| Nuvei status | Transaction type | Hyperswitch effect |
+| --- | --- | --- |
+| `SUCCESS` or `APPROVED` | `Credit` | Payout succeeded |
+| `PENDING` | Any declared transaction type | Payout processing |
+| `DECLINED` or `ERROR` | Any declared transaction type | Payout failed |
+
+Other payout combinations are not supported.
+
+#### Dispute events
+
+The dispute enum defines 51 exact event codes. The table accounts for all 51 ([event codes](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3247-L3400), [mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3710-L3816)):
 
 | Hyperswitch effect | Nuvei event codes |
 | --- | --- |
-| `DisputeOpened` | `FC`, `CC`, `MCC`, `FC-CLSD-RCL`, `INQ` |
-| `DisputeAccepted` | `CC-A-ACPT`, `FC-A-ACPT`, `FC-A-ACPT-MCOLL`, `FC-M-ACPT`, `FC-SPCSE`, `RDR`, `MCC-M-ACPT`, `MCC-A-ACPT`, `INQ-M-RFND`, `IPA-M-ACPT`, `IPA-M-PART`, `IPA-A-ACPT`, `IPAR-M-ACPT`, `IPAR-A-ACPT` |
-| `DisputeLost` | `FC-A-EPRD`, `FC-M-PART`, `FC-CLSD-CHF`, `PA-CLSD-CHF`, `MCC-CLSD-CHF` |
-| `DisputeChallenged` | `FC-M-RJCT`, `FC-A-RJCT`, `IPA`, `MPA-I-RJCT`, `INQ-M-RSP`, `IPA-M-RJCT` |
-| `DisputeExpired` | `FC-A-RJCT-EXP`, `FC-M-PART-EXP`, `FC-M-RJCT-EXP`, `MCC-EXPR`, `INQ-EXPR`, `IPA-M-PART-EXP`, `IPA-M-RJCT-EXP` |
-| `DisputeWon` | `MPA-I-ACPT`, `MPA-I-PART`, `FC-CLSD-MF`, `MCC-CLSD-MF`, `PA-CLSD-MF` |
-| `DisputeCancelled` | `FC-I-RCL`, `INQ-A-CNLD`, `PA-CLSD-RC`, `CC-I-RCLL` |
+| Dispute opened | `FC`, `CC`, `MCC`, `FC-CLSD-RCL`, `INQ` |
+| Dispute accepted | `CC-A-ACPT`, `FC-A-ACPT`, `FC-A-ACPT-MCOLL`, `FC-M-ACPT`, `FC-SPCSE`, `RDR`, `MCC-M-ACPT`, `MCC-A-ACPT`, `INQ-M-RFND`, `IPA-M-ACPT`, `IPA-M-PART`, `IPA-A-ACPT`, `IPAR-M-ACPT`, `IPAR-A-ACPT` |
+| Dispute lost | `FC-A-EPRD`, `FC-M-PART`, `FC-CLSD-CHF`, `PA-CLSD-CHF`, `MCC-CLSD-CHF` |
+| Dispute challenged | `FC-M-RJCT`, `FC-A-RJCT`, `IPA`, `MPA-I-RJCT`, `INQ-M-RSP`, `IPA-M-RJCT` |
+| Dispute expired | `FC-A-RJCT-EXP`, `FC-M-PART-EXP`, `FC-M-RJCT-EXP`, `MCC-EXPR`, `INQ-EXPR`, `IPA-M-PART-EXP`, `IPA-M-RJCT-EXP` |
+| Dispute won | `MPA-I-ACPT`, `MPA-I-PART`, `FC-CLSD-MF`, `MCC-CLSD-MF`, `PA-CLSD-MF` |
+| Dispute canceled | `FC-I-RCL`, `INQ-A-CNLD`, `PA-CLSD-RC`, `CC-I-RCLL` |
 | No direct event; category fallback may apply | `MCC-A-RJCT`, `MCC-M-RJCT`, `INQ-A-RJCT`, `INQ-M-P-RFND`, `INQ-UPD` |
 
-The category fallback defines 5 exact category values:
+The category fallback defines 5 exact values ([source](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L3420-L3431)):
 
 | Chargeback category | Hyperswitch effect |
 | --- | --- |
-| `cancelled` | `DisputeCancelled` |
-| `Duplicate` | `DisputeCancelled` |
-| `RDR-Refund` | `DisputeAccepted` |
+| `cancelled` | Dispute canceled |
+| `Duplicate` | Dispute canceled |
+| `RDR-Refund` | Dispute accepted |
 | `Regular` | No fallback event |
 | `Soft_CB` | No fallback event |
-
-## Page gaps
-
-- The capability declaration lists payment and dispute webhook flows, while the event mapper also contains refund and feature-gated payout outcomes. Confirm the intended declaration before relying on the generated webhook-flow list.
-- Chargeback source verification reads a checksum header, but the source marks its verification-message format as a placeholder. Confirm that format before enabling chargeback notifications.
-- Connector source does not declare the vendor dashboard paths for finding credentials or registering webhook endpoints. Use the current vendor dashboard guidance when completing those steps.
