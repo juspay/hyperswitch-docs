@@ -29,7 +29,7 @@ Klarna provides pay later payments through a payment gateway integration. The de
 
 ### Authentication
 
-Supply an API Username and API Password in the connector configuration. Hyperswitch combines them for HTTP Basic authentication and sends `Authorization: Basic <base64 API username and API password>` on connector requests. See [`KlarnaAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna/transformers.rs#L454-L470) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna.rs#L93-L106).
+Supply an API Username and API Password in the connector configuration. Hyperswitch combines them as `<API username>:<API password>`, Base64-encodes the result, and sends it as `Authorization: Basic <base64(username:password)>` on connector requests. See [`KlarnaAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna/transformers.rs#L454-L470) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna.rs#L93-L106).
 
 ### Webhooks
 
