@@ -8,7 +8,7 @@ metaLinks:
 
 # Braintree
 
-Braintree is a PayPal service for accepting payments in apps and websites. Merchants can accept cards with mandates, refunds, manual capture, and optional 3DS. Apple Pay, Google Pay, and PayPal are also available, with mandates supported for Apple Pay. Webhooks cover payment and refund updates.
+Braintree is a PayPal service for accepting payments in apps and websites. Merchants can accept cards with mandates, refunds, manual capture, and optional 3DS. Apple Pay, Google Pay, and PayPal are also available, with mandates supported for Apple Pay. Webhooks cover payment and refund updates, and the webhook mapper also recognizes several dispute events (see below).
 
 ### Status and capabilities
 
