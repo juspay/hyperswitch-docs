@@ -43,7 +43,7 @@ ACI provides services for commerce. Its card methods support recurring charges a
 | wallet | MB WAY | not supported | supported | automatic, manual | not applicable | - | ESP, EST, PRT | EUR |
 | wallet | Samsung Pay | not supported | supported | automatic, manual | not applicable | - | 31 ([full list](https://hyperswitch.io/pm-list)) | 9 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Connector-specific notes
+### Connector-Specific Notes
 
 * **Form-encoded requests:** ACI payment requests use `application/x-www-form-urlencoded`, not JSON. See [`common_get_content_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L73-L86).
 
