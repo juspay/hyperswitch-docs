@@ -35,13 +35,14 @@ Across Rapyd's payment gateway routes, card payments sit alongside Apple Pay and
 1. Register with Rapyd.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
 3. In the Rapyd dashboard, go to **Developers > Access & Secret Keys** and copy your Access Key and Secret Key.
-4. Enable the same payment methods in Rapyd and in your Hyperswitch connector configuration.
+4. In the connector webhook settings in the Hyperswitch control center, put `{"access_key":"<access key>","secret_key":"<secret key>"}` in the webhook-secret setting. Use your Rapyd Access Key and Secret Key values. Hyperswitch parses this value as the Rapyd authentication object instead of reading the payment connector account credentials. See the [`RapydAuthType` fields](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd/transformers.rs#L199-L203) and the [`RapydAuthType` webhook parse](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L778-L783).
+5. Enable the same payment methods in Rapyd and in your Hyperswitch connector configuration.
 
 To connect Rapyd to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Rapyd supports.
 
 ### Connector-Specific Notes
 
-Every API request carries a fresh signature. Hyperswitch concatenates the HTTP method, URL path, salt, timestamp, access key, secret key, and request body in that order with no delimiter. It signs that value with HMAC-SHA256 using the secret key, hex-encodes the result, then URL-safe Base64-encodes it. See [`generate_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L76-L100).
+Every API request carries a fresh signature. The method component is lowercase: `post`, `get`, or `delete`, as shown by the [`post` authorization call](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L231-L235), [`delete` void call](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L344-L348), [`get` sync call](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L441-L445), [`post` capture call](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L540-L543), and [`post` refund call](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L670-L673). Hyperswitch concatenates that method, the URL path, salt, timestamp, access key, secret key, and request body in that order with no delimiter. It signs the value with HMAC-SHA256 using the secret key, hex-encodes the result, then URL-safe Base64-encodes it. See [`generate_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L76-L100).
 
 ### Authentication
 
@@ -49,7 +50,7 @@ Provide an `<access key>` and `<secret key>`. The `BodyKey` mapping assigns `api
 
 ### Webhooks
 
-Rapyd webhook signatures use HMAC-SHA256. Hyperswitch reads the URL-safe Base64 value from the `signature` header and constructs the signed message by concatenating the webhook URL, salt, timestamp, access key, secret key, and body in that order with no delimiter. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L746-L763) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L765-L836).
+The Rapyd `signature` header carries URL-safe Base64 of the hex-encoded HMAC-SHA256 output. Hyperswitch URL-safe Base64-decodes the header before the shared HMAC-SHA256 verifier compares it with the signed message. The signed message concatenates the webhook URL, salt, timestamp, access key, secret key, and body in that order with no delimiter. See the [`signature` header decode](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L752-L762), the shared [`HmacSha256` comparison](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/common_utils/src/crypto.rs#L251-L261), and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/rapyd.rs#L765-L836).
 
 The connector maps 8 webhook event values:
 
