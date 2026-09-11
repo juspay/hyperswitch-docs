@@ -38,7 +38,9 @@ European bank redirects, SEPA Direct Debit, Klarna, PayPal, Apple Pay, and cards
 | wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
 | wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
 
-### Before you start
+### Activate Mollie with Hyperswitch
+
+#### Before you start
 
 1. Register with Mollie.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
