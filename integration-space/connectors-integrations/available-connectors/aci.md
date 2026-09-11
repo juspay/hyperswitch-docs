@@ -57,24 +57,20 @@ ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so th
 
 The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
 
-### Activate ACI with Hyperswitch
+### Before you start
 
-#### Before you start
-
-1. You need to be registered with ACI. Sign up at [aciworldwide.com](https://www.aciworldwide.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Have the credentials listed in [Authentication](#authentication) ready.
+1. Register with ACI.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Find the API Key and Entity ID in your ACI dashboard.
+4. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect ACI to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what ACI supports.
-
-***
 
 ### Troubleshooting
 
 **Webhook expectations**
 Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: use the declared capabilities in the status block above as the supported behavior for this connector.
 
-***
 
 ### Source reference
 

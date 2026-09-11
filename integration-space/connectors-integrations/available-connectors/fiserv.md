@@ -40,17 +40,15 @@ Supply an API Key, API Secret, and Merchant ID in the connector configuration. H
 
 Fiserv webhooks are not currently processed by this connector. Do not configure Fiserv webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L910-L934).
 
-### Activate Fiserv with Hyperswitch
+### Before you start
 
-#### Before you start
-
-1. You need to be registered with Fiserv. Sign up at [fiserv.com](https://www.fiserv.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Have the credentials listed in [Authentication](#authentication) ready.
+1. Register with Fiserv.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Fiserv dashboard, open **Credentials** to find the API Key, API Secret, Merchant ID, and Terminal ID.
+4. Enable the same payment methods in Fiserv that you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect Fiserv to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Fiserv supports.
-
-***
 
 ### Source reference
 

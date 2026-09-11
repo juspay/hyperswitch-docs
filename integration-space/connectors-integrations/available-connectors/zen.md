@@ -57,13 +57,13 @@ The connector handles four transaction-type and status combinations:
 
 The wire values and mappings are defined by [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/zen.rs#L654-L676), [`ZenPaymentStatus`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/zen/transformers.rs#L837-L847), and [`ZenWebhookTxnType`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/zen/transformers.rs#L1186-L1202).
 
-### Activate Zen with Hyperswitch
+### Before you start
 
-#### Before you start
-
-1. Register with Zen.
-2. Create a Hyperswitch account.
-3. Have the credential listed in [Authentication](#authentication) ready.
+1. Register with Zen and obtain the API Key from your Zen account manager.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Ask Zen support to enable raw card data handling for your account.
+4. Enable the same payment methods in Zen that you plan to select in Hyperswitch.
+5. Have the credential listed in [Authentication](#authentication) ready.
 
 To connect Zen to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Zen supports.
 

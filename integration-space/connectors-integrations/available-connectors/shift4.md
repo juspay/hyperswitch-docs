@@ -31,11 +31,19 @@ Based in the United States, Shift4 is a payment processing company. Merchants ca
 | card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Configure Shift4
+### Authentication
 
-Enter the raw Shift4 API key in the API key field. Hyperswitch appends a colon, Base64-encodes the result, and sends it as an HTTP Basic credential ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/shift4/transformers.rs#L835-L850), [request header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/shift4.rs#L112-L126)).
+Supply the raw Shift4 API key in the connector configuration. Hyperswitch appends a colon, Base64-encodes `api_key:`, and sends the result with the HTTP Basic scheme. See [`Shift4AuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/shift4/transformers.rs#L837-L850) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/shift4.rs#L112-L126).
 
-Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add the credential in Hyperswitch. Use Shift4's current dashboard guidance to find the API key and register the webhook endpoint.
+### Before you start
+
+1. Register with Shift4.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Find the API key on the Home page of your Shift4 dashboard.
+4. Enable the same payment methods in Shift4 that you plan to select in Hyperswitch.
+5. Have the credential listed in [Authentication](#authentication) ready.
+
+To connect Shift4 to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Shift4 supports.
 
 ### Webhooks
 

@@ -51,17 +51,15 @@ The connector recognizes six webhook event names:
 
 The event names and mappings are defined by [`AuthorizedotnetIncomingWebhookEventType`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet/transformers.rs#L2340-L2368).
 
-### Activate Authorize.net with Hyperswitch
+### Before you start
 
-#### Before you start
-
-1. You need to be registered with Authorize.net. Sign up at [authorize.net](https://www.authorize.net/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://hyperswitch.io/contact-sales).
-3. Have the credentials listed in [Authentication](#authentication) ready.
+1. Register with Authorize.net.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Authorize.net dashboard, go to **Account → Security Settings** to find the API Login ID and Transaction Key.
+4. Under **Account → Digital Payment Solutions**, enable the payment methods you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect Authorize.net to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Authorize.net supports.
-
----
 
 ### Source reference
 

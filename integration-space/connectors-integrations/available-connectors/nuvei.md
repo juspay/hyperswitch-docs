@@ -37,11 +37,19 @@ Based in Canada, Nuvei is a fintech company. Merchants can accept cards, network
 | wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 237 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Configure Nuvei
+### Authentication
 
-Enter the merchant ID in the API key field, the merchant site ID in the `key1` field, and the merchant secret in the API secret field. Nuvei requests do not use an Authorization header. The connector places the authentication values and request checksum in the request body ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L1734-L1757), [empty auth header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/nuvei.rs#L127-L133)).
+Supply the Merchant ID in the API key field, the Merchant Site ID in the `key1` field, and the Merchant Secret in the API secret field. Nuvei requests do not use an Authorization header; the connector places these authentication values and the request checksum in the request body. See [`NuveiAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L1734-L1757) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/nuvei.rs#L127-L133).
 
-Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add these credentials in Hyperswitch. Use Nuvei's current dashboard guidance to find the credentials and register webhook endpoints.
+### Before you start
+
+1. Register with Nuvei.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Nuvei dashboard, go to **Settings → My Account → Account Details** to find the API key.
+4. Enable the same payment methods in Nuvei that you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect Nuvei to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Nuvei supports.
 
 ### Webhooks
 
