@@ -30,7 +30,6 @@ PayU is a payment gateway for card and wallet payments through Hyperswitch. Its 
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
-To connect PayU to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what PayU supports.
 
 ### Connector-Specific Notes
 
