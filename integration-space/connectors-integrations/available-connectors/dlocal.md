@@ -9,7 +9,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/dlocalLogo.svg" alt=""></div>
 
-dLocal is a payment gateway for card and voucher payments through Hyperswitch. Its connector covers credit and debit cards alongside OXXO vouchers. Card payments support delayed capture, while the voucher path uses automatic capture. Refunds are declared for each method, and mandates are not declared.
+OXXO vouchers give dLocal's payment gateway route a cash-based option beside credit and debit cards. Cards accept automatic, manual, and sequential automatic capture, while OXXO uses automatic capture. Refunds are supported for each route, and mandates are not supported.
 
 ### Status and capabilities
 
@@ -28,6 +28,13 @@ dLocal is a payment gateway for card and voucher payments through Hyperswitch. I
 | card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
 | voucher | OXXO | not supported | supported | automatic | not applicable | - | - | MXN |
+
+### Before you start
+
+1. Register with dLocal.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
+3. Copy your Login, Secret Key, and Trans Key from the dLocal dashboard.
+4. Enable the same payment methods in dLocal and in your Hyperswitch connector configuration.
 
 To connect dLocal to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what dLocal supports.
 
