@@ -48,42 +48,42 @@ Provide an `<access token>`. The `HeaderKey` mapping assigns `api_key` to the ac
 
 Configure a `<webhook signing secret>` for source verification. Hyperswitch reads a hex-encoded signature from `Webhook-Signature` and verifies HMAC-SHA256 over the raw request body using the configured `merchant_secret`. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless.rs#L719-L753) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_interfaces/src/webhooks.rs#L265-L301).
 
-The connector maps 30 webhook action values:
+The connector processes 11 payment action values:
+
+| Wire action value | Effect |
+|---|---|
+| `created` | Payment is processing |
+| `customer_approval_granted` | Payment is processing |
+| `customer_approval_denied` | Payment fails |
+| `submitted` | Payment is processing |
+| `confirmed` | Payment succeeds |
+| `paid_out` | Payment succeeds |
+| `late_failure_settled` | Payment fails |
+| `surcharge_fee_debited` | No status update |
+| `failed` | Payment fails |
+| `cancelled` | Payment fails |
+| `resubmission_required` | No status update |
+
+Because [`WebhookAction`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless/transformers.rs#L855-L860) is untagged and tries payment actions first, refund webhooks with actions `created` or `failed`, and mandate webhooks with actions `cancelled`, `created`, `customer_approval_granted`, `failed`, or `submitted`, are processed as payment events regardless of `resource_type`.
+
+The remaining 3 refund actions and 9 mandate actions reach their resource-specific effects:
 
 | Resource | Wire action value | Effect |
 |---|---|---|
-| Payments | `created` | Payment is processing |
-| Payments | `customer_approval_granted` | Payment is processing |
-| Payments | `customer_approval_denied` | Payment fails |
-| Payments | `submitted` | Payment is processing |
-| Payments | `confirmed` | Payment succeeds |
-| Payments | `paid_out` | Payment succeeds |
-| Payments | `late_failure_settled` | Payment fails |
-| Payments | `surcharge_fee_debited` | No status update |
-| Payments | `failed` | Payment fails |
-| Payments | `cancelled` | Payment fails |
-| Payments | `resubmission_required` | No status update |
-| Refunds | `created` | No status update |
-| Refunds | `failed` | Refund fails |
 | Refunds | `paid` | Refund succeeds |
 | Refunds | `refund_settled` | No status update |
 | Refunds | `funds_returned` | No status update |
-| Mandates | `created` | No status update |
-| Mandates | `customer_approval_granted` | No status update |
 | Mandates | `customer_approval_skipped` | No status update |
 | Mandates | `active` | Mandate becomes active |
-| Mandates | `cancelled` | Mandate is revoked |
-| Mandates | `failed` | Mandate is revoked |
 | Mandates | `transferred` | No status update |
 | Mandates | `expired` | Mandate is revoked |
-| Mandates | `submitted` | No status update |
 | Mandates | `resubmission_requested` | No status update |
 | Mandates | `reinstated` | Mandate becomes active |
 | Mandates | `replaced` | No status update |
 | Mandates | `consumed` | Mandate is revoked |
 | Mandates | `blocked` | No status update |
 
-The wire values use `snake_case` in [`PaymentsAction`, `RefundsAction`, and `MandatesAction`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless/transformers.rs#L839-L905). Their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless.rs#L790-L849).
+The wire values use `snake_case` in [`PaymentsAction`, `RefundsAction`, and `MandatesAction`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless/transformers.rs#L855-L905). Their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/gocardless.rs#L790-L849).
 
 ### Source reference
 
