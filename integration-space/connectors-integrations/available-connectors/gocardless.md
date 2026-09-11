@@ -7,7 +7,7 @@ metaLinks:
 
 # GoCardless
 
-GoCardless is a payment gateway for bank debit payments through Hyperswitch. Its connector covers ACH, SEPA, and BECS Direct Debit. Each declared method supports mandates and refunds. Automatic and sequential automatic capture are available across the declared methods.
+ACH, BECS, and SEPA Direct Debit define the GoCardless payment gateway route. Mandates and refunds apply to every bank debit method. Capture stays automatic or sequential automatic throughout.
 
 ### Status and capabilities
 
@@ -26,6 +26,13 @@ GoCardless is a payment gateway for bank debit payments through Hyperswitch. Its
 | bank debit | ACH Direct Debit | supported | supported | automatic, sequential automatic | USA | USD |
 | bank debit | BECS Direct Debit | supported | supported | automatic, sequential automatic | AUS | AUD |
 | bank debit | SEPA Direct Debit | supported | supported | automatic, sequential automatic | 30 ([full list](https://hyperswitch.io/pm-list)) | 7 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Before you start
+
+1. Create a GoCardless sandbox account.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
+3. In the GoCardless dashboard, go to **Developers > Create > Access Token** and create or copy your Access Token.
+4. Enable the same payment methods in GoCardless and in your Hyperswitch connector configuration.
 
 To connect GoCardless to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what GoCardless supports.
 
