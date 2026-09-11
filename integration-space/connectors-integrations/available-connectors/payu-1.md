@@ -9,7 +9,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/payuLogo.svg" alt=""></div>
 
-PayU is a payment gateway for card and wallet payments through Hyperswitch. Its connector covers Apple Pay and Google Pay alongside credit and debit cards. Refunds and delayed capture use the same integration, while mandates are not declared for these methods.
+PayU places Apple Pay and Google Pay beside credit and debit cards in its payment gateway integration. Each route uses automatic, manual, or sequential automatic capture, and refunds are supported. Mandates are not supported.
 
 ### Status and capabilities
 
@@ -30,19 +30,18 @@ PayU is a payment gateway for card and wallet payments through Hyperswitch. Its 
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
+### Before you start
+
+1. Register with PayU.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
+3. In the PayU dashboard, open **My Shops** and copy your API Key and Merchant POS ID.
+4. Enable the same payment methods in PayU and in your Hyperswitch connector configuration.
+
+To connect PayU to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what PayU supports.
 
 ### Connector-Specific Notes
 
 PayU obtains an access token with a form-encoded client credentials request before it sends transaction requests. Hyperswitch manages this exchange, so configure the connector credentials rather than supplying an access token directly. See [`PayuAuthUpdateRequest`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu/transformers.rs#L323-L336).
-
-### Before you start
-
-1. You need to be registered with PayU. Sign up at [corporate.payu.com](https://corporate.payu.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Your PayU API Key and Merchant POS ID are in your PayU dashboard under My Shops.
-4. Select all payment methods you wish to use PayU for, and make sure they match the ones configured in your PayU dashboard.
-
-To connect PayU to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what PayU supports.
 
 ### Authentication
 
