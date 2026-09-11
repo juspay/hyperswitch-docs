@@ -29,7 +29,9 @@ OXXO vouchers give dLocal's payment gateway route a cash-based option beside cre
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
 | voucher | OXXO | not supported | supported | automatic | not applicable | - | - | MXN |
 
-### Before you start
+### Activate dLocal with Hyperswitch
+
+#### Before you start
 
 1. Register with dLocal.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
