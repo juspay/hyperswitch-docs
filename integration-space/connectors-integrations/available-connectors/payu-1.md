@@ -1,7 +1,5 @@
 ---
-description: >-
-  Accept payments through PayU via Juspay Hyperswitch — OAuth-based token
-  exchange with Merchant POS ID across multiple payment methods.
+description: Configure PayU card and wallet payments with Hyperswitch.
 metaLinks:
   alternates:
     - payu-1.md
@@ -11,49 +9,51 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/payuLogo.svg" alt=""></div>
 
-PayU connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey`-based OAuth token exchange. The API Key (client\_secret) and Merchant POS ID are used to obtain a Bearer access token from PayU's token endpoint. The resulting token is used on all payment requests as `Authorization: Bearer {token}`. All requests use `application/json`. PayU is a payment service provider with broad payment method coverage across Central and Eastern Europe, LATAM, and APAC.
+PayU places Apple Pay and Google Pay beside credit and debit cards in its payment gateway integration. Each route uses automatic, manual, or sequential automatic capture, and refunds are supported. Mandates are not supported.
+
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** sandbox
+
+**Category:** payment gateway
+
+**Webhook flows:** None declared in code
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Activate PayU with Hyperswitch
+
+#### Before you start
+1. You need to be registered with PayU. Sign up at [corporate.payu.com](https://corporate.payu.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
+3. In the PayU dashboard, open **My Shops** and copy your API Key and Merchant POS ID.
+4. Enable the same payment methods in PayU and in your Hyperswitch connector configuration.
+
+To connect PayU to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what PayU supports.
 
 ### Connector-Specific Notes
 
-* **OAuth token exchange:** PayU does not accept a static API key on payment requests. The API Key (client\_secret) and Merchant POS ID are exchanged for a short-lived Bearer access token. Hyperswitch manages token acquisition internally — configure the API Key and Merchant POS ID in the control center, not the token itself.
-* **Credentials location:** API Key and Merchant POS ID are found in your PayU dashboard under **My Shops**.
-* **Webhook support:** Webhooks are not implemented for PayU in Hyperswitch — payment status relies on sync polling.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* PayU is a payment service provider offering a broad range of payment methods across Central and Eastern Europe, LATAM, and APAC markets.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+PayU obtains an access token with a form-encoded client credentials request before it sends transaction requests. Hyperswitch manages this exchange, so configure the connector credentials rather than supplying an access token directly. See [`PayuAuthUpdateRequest`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu/transformers.rs#L323-L336).
 
-***
+### Authentication
 
-### Activating PayU via Hyperswitch
+Provide an **API key** and **merchant POS ID**. The `BodyKey` auth mapping assigns `api_key` to the API key and `key1` to the merchant POS ID; the token request sends the merchant POS ID as `client_id` and the API key as `client_secret`. See [`PayuAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu/transformers.rs#L188-L203) and [`PayuAuthUpdateRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu/transformers.rs#L323-L336).
 
-#### Prerequisites
+Transaction requests use `Authorization: Bearer <access token>`. The connector's common auth path can also return `Authorization: <API key>`, while the transaction header builder requires the exchanged token. See [`build_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu.rs#L70-L96) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu.rs#L112-L123).
 
-1. You need to be registered with PayU. Sign up at [corporate.payu.com](https://corporate.payu.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. PayU **API Key** and **Merchant POS ID** are found in your PayU dashboard under **My Shops**.
-4. Select all payment methods you wish to use PayU for. Ensure these match the ones configured in your PayU dashboard.
+### Webhooks
 
-[Steps to activate PayU on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+Webhooks are not currently supported. Payment status updates rely on syncing with the API. The webhook implementation returns `EventNotSupported` and does not provide a resource object. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu.rs#L785-L808).
 
-***
+### Source reference
 
-### Responsibility Boundaries
-
-**Hyperswitch owns:** routing decisions, token lifecycle management (OAuth exchange using API Key and Merchant POS ID), retry scheduling, mandate reference storage, and unified error mapping. **PayU owns:** token issuance, payment execution, and payment method routing across markets.
-
-**Hyperswitch owns:** performing the token exchange before each payment session. **PayU owns:** validating the API Key and Merchant POS ID, and issuing a valid token. If either credential changes in PayU and is not updated in Hyperswitch, the token exchange will fail and no payments can proceed.
-
-***
-
-### Common Failure Modes
-
-**Token exchange failure** Symptom: Payment requests fail before reaching the payment API. Fix: Verify the API Key and Merchant POS ID in Hyperswitch match exactly what is configured in your PayU dashboard under **My Shops**. An incorrect API Key causes the token exchange to fail.
-
-**Payment status not updating** Symptom: Payments remain pending in Hyperswitch. Fix: Since PayU webhooks are not implemented, status is updated via sync polling. Ensure Hyperswitch's sync polling is running and the PayU endpoint is reachable.
-
-**Payment method not available** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your PayU merchant account and matches the selection in the Hyperswitch connector configuration.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/payu.rs`.
+The connector implementation is [`payu.rs`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/payu.rs).
