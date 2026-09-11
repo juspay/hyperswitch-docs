@@ -27,7 +27,9 @@ ACH, BECS, and SEPA Direct Debit define the GoCardless payment gateway route. Ma
 | bank debit | BECS Direct Debit | supported | supported | automatic, sequential automatic | AUS | AUD |
 | bank debit | SEPA Direct Debit | supported | supported | automatic, sequential automatic | 30 ([full list](https://hyperswitch.io/pm-list)) | 7 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Before you start
+### Activate GoCardless with Hyperswitch
+
+#### Before you start
 
 1. Create a GoCardless sandbox account.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
