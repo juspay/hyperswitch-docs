@@ -30,8 +30,9 @@ PayU places Apple Pay and Google Pay beside credit and debit cards in its paymen
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Before you start
+### Activate PayU with Hyperswitch
 
+#### Before you start
 1. Register with PayU.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
 3. In the PayU dashboard, open **My Shops** and copy your API Key and Merchant POS ID.
