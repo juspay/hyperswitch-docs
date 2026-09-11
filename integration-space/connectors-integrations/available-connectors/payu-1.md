@@ -33,7 +33,7 @@ PayU places Apple Pay and Google Pay beside credit and debit cards in its paymen
 ### Activate PayU with Hyperswitch
 
 #### Before you start
-1. Register with PayU.
+1. You need to be registered with PayU. Sign up at [corporate.payu.com](https://corporate.payu.com/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
 3. In the PayU dashboard, open **My Shops** and copy your API Key and Merchant POS ID.
 4. Enable the same payment methods in PayU and in your Hyperswitch connector configuration.
