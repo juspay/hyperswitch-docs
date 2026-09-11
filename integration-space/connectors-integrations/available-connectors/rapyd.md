@@ -30,8 +30,8 @@ Across Rapyd's payment gateway routes, card payments sit alongside Apple Pay and
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 40 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 50 ([full list](https://hyperswitch.io/pm-list)) | 36 ([full list](https://hyperswitch.io/pm-list)) |
 
-### Before you start
-
+### Activate Rapyd with Hyperswitch
+#### Before you start
 1. Register with Rapyd.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
 3. In the Rapyd dashboard, go to **Developers > Access & Secret Keys** and copy your Access Key and Secret Key.
