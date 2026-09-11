@@ -44,7 +44,7 @@ Fiserv webhooks are not currently processed by this connector. Do not configure 
 
 1. Register with Fiserv.
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. In the Fiserv dashboard, open **Credentials** to find the API Key, API Secret, Merchant ID, and Terminal ID.
+3. In the Fiserv dashboard, open **Credentials** to find the API Key, API Secret, and Merchant ID.
 4. Enable the same payment methods in Fiserv that you plan to select in Hyperswitch.
 5. Have the credentials listed in [Authentication](#authentication) ready.
 
