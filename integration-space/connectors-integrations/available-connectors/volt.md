@@ -54,13 +54,14 @@ The connector recognizes seven webhook status values. An empty body is treated a
 
 The wire values and mappings are defined by [`VoltWebhookPaymentStatus`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt/transformers.rs#L730-L780).
 
-### Activate Volt with Hyperswitch
+### Before you start
 
-#### Before you start
-
-1. You need to be registered with Volt. Sign up at [volt.io](https://www.volt.io/).
-2. Create a Hyperswitch account.
-3. Have the credentials listed in [Authentication](#authentication) ready.
+1. Register with Volt.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Volt dashboard, go to **Configuration → Customers** and open the merchant's **Credentials** section to find the Username and Password.
+4. Go to **Configuration → Application** and open **Credentials** to find the Client ID and Client Secret. Create an application first if none exists.
+5. Enable the same payment methods in Volt that you plan to select in Hyperswitch.
+6. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect Volt to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Volt supports.
 

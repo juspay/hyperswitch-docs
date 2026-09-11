@@ -30,11 +30,19 @@ Braintree is a PayPal service for accepting payments in apps and websites. Merch
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 
-### Configure Braintree
+### Authentication
 
-Enter the Braintree public key in the API key field and the private key in the API secret field. Hyperswitch uses the public key as the HTTP Basic username and the private key as the HTTP Basic password. The shared third credential field is not used for Braintree authentication ([credential mapping](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L215-L237), [request header](https://github.com/juspay/hyperswitch/blob/93becbaee4ee3686e1a4d5750d2e547c56c27047/crates/hyperswitch_connectors/src/connectors/braintree.rs#L136-L149)).
+Supply the Public Key and Private Key in the connector configuration. Hyperswitch uses the Public Key as the HTTP Basic username and the Private Key as the password, then Base64-encodes `public_key:private_key`. The shared third credential field is not used for Braintree authentication. See [`BraintreeAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/braintree/transformers.rs#L215-L237) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/740e642eabb5b54094f589d4ebc08aa9e796fab1/crates/hyperswitch_connectors/src/connectors/braintree.rs#L136-L149).
 
-Follow the [connector activation guide](../activate-connector-on-hyperswitch/README.md) to add these credentials in Hyperswitch. Use Braintree's current dashboard guidance to find the credentials and register the webhook endpoint.
+### Before you start
+
+1. Register with Braintree.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Braintree dashboard, go to **Home → Settings → API** to find the Public Key and Private Key.
+4. Under **Home → Settings → API → Webhooks**, register the Hyperswitch webhook endpoint.
+5. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect Braintree to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Braintree supports.
 
 ### Webhooks
 

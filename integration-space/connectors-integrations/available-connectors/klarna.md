@@ -35,13 +35,13 @@ Supply an API Username and API Password in the connector configuration. Hyperswi
 
 Klarna webhooks are not currently processed by this connector. Do not configure Klarna webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna.rs#L1450-L1474).
 
-### Activate Klarna with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Register with Klarna.
-2. Create a Hyperswitch account.
-3. Have the credentials listed in [Authentication](#authentication) ready.
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Klarna merchant portal, go to **Settings → API credentials** to find the API Username and API Password.
+4. Enable the same payment methods in Klarna that you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect Klarna to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Klarna supports.
 
