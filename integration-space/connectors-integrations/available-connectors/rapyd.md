@@ -9,7 +9,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/rapydLogo.svg" alt=""></div>
 
-Rapyd is a payment gateway for card and wallet payments through Hyperswitch. Its connector covers Apple Pay and Google Pay alongside credit and debit cards. Refunds and delayed capture use the same integration, while mandates are not declared for these methods.
+Across Rapyd's payment gateway routes, card payments sit alongside Apple Pay and Google Pay. Credit and debit cards can use automatic, manual, or sequential automatic capture, while wallets use the same capture options without a 3DS step. Mandates are not supported, and refunds cover every listed method.
 
 ### Status and capabilities
 
@@ -29,6 +29,13 @@ Rapyd is a payment gateway for card and wallet payments through Hyperswitch. Its
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 40 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 50 ([full list](https://hyperswitch.io/pm-list)) | 36 ([full list](https://hyperswitch.io/pm-list)) |
+
+### Before you start
+
+1. Register with Rapyd.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
+3. In the Rapyd dashboard, go to **Developers > Access & Secret Keys** and copy your Access Key and Secret Key.
+4. Enable the same payment methods in Rapyd and in your Hyperswitch connector configuration.
 
 To connect Rapyd to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Rapyd supports.
 
