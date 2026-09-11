@@ -1,7 +1,5 @@
 ---
-description: >-
-  Integrate Mollie as a payment connector on Juspay Hyperswitch to accept
-  multiple payment methods with seamless checkout and robust security.
+description: Configure Mollie card, wallet, bank debit, bank redirect, and pay later payments with Hyperswitch.
 metaLinks:
   alternates:
     - mollie.md
@@ -11,48 +9,66 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/mollieLogo.svg" alt=""></div>
 
-Mollie connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey` authentication — the API key is passed as `Authorization: Bearer {api_key}` on every request. All requests use `application/json`. Mollie is a European payment service provider with strong coverage of local European payment methods including iDEAL, Bancontact, SOFORT, and Klarna — making it a natural choice for European-first merchants.
+European bank redirects, SEPA Direct Debit, Klarna, PayPal, Apple Pay, and cards come together in Mollie's payment gateway route. Automatic, sequential automatic, and manual capture apply throughout, while mandates are supported for cards. Mandates are not supported for the bank debit, bank redirect, pay later, or wallet methods.
+
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
+
+**Integration status:** sandbox
+
+**Category:** payment gateway
+
+**Webhook flows:** None declared in code
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank debit | SEPA Direct Debit | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+| bank redirect | Bancontact Card | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+| bank redirect | EPS | not supported | supported | automatic, sequential automatic, manual | not applicable | - | AUT | EUR |
+| bank redirect | Giropay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+| bank redirect | iDEAL | not supported | supported | automatic, sequential automatic, manual | not applicable | - | NLD | EUR |
+| bank redirect | Przelewy24 | not supported | supported | automatic, sequential automatic, manual | not applicable | - | POL | EUR, PLN |
+| bank redirect | Sofort | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+| card | Credit Card | supported | supported | automatic, sequential automatic, manual | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
+| card | Debit Card | supported | supported | automatic, sequential automatic, manual | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | - | - |
+| pay later | Klarna | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 19 ([full list](https://hyperswitch.io/pm-list)) | 8 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+
+### Activate Mollie with Hyperswitch
+
+#### Before you start
+
+1. Register with Mollie. Sign up at [mollie.com](https://www.mollie.com/).
+2. Sign into the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
+3. Copy your API key and profile token from the Mollie dashboard.
+4. Enable the same payment methods in Mollie and in your Hyperswitch connector configuration.
+
+To connect Mollie to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Mollie supports.
 
 ### Connector-Specific Notes
 
-* **Bearer token auth:** Single API key passed as a Bearer token. The API key and Password are found in your Mollie dashboard.
-* **European payment method coverage:** Mollie natively supports iDEAL (Netherlands), Bancontact (Belgium), SOFORT (DACH), Klarna, and a range of local European methods. The specific methods available depend on your Mollie account's configuration.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* Payment methods must be enabled both in Hyperswitch and in your Mollie dashboard — a mismatch between the two is the most common source of payment failures.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+Card tokenization requires the profile token in addition to the API key. Hyperswitch places the profile token in the tokenization request body. See [`MollieCardTokenRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie/transformers.rs#L623-L665).
 
-***
+### Authentication
 
-### Activating Mollie via Hyperswitch
+Mollie accepts two credential paths. Provide an `<API key>` for the `HeaderKey` path. For card tokenization, provide an `<API key>` and `<profile token>` through the `BodyKey` path, where `key1` maps to the profile token. Both paths send `Authorization: Bearer <API key>`; the profile token is carried in the tokenization body rather than the authorization header. See [`MollieAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie/transformers.rs#L828-L848), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie.rs#L108-L119), and [`MollieCardTokenRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie/transformers.rs#L623-L665).
 
-#### Prerequisites
+### Webhooks
 
-1. You need to be registered with Mollie. Sign up at [mollie.com](https://www.mollie.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/register).
-3. Mollie **API Key** and **Password** are found in your Mollie dashboard.
-4. Select all payment methods you wish to use Mollie for. Ensure these match the ones configured in your Mollie dashboard.
+The feature matrix declares no webhook flows, but the connector processes a payment resource callback. The callback body has an `id` field and no event-name field, so there is no separate wire event value to configure. Source verification currently returns `false`, so the callback is not accepted as verified by this implementation. See [`MollieWebhookBody`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie/transformers.rs#L1073-L1076) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie.rs#L837-L849).
 
-[Steps to activate Mollie on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+The connector maps 1 callback shape:
 
-***
+| Wire field | Effect |
+|---|---|
+| `id` | Payment is marked processing |
 
-### Responsibility Boundaries
+The mapping is defined by [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie.rs#L850-L867).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, and unified error code mapping. **Mollie owns:** payment execution, local payment method availability per country, and webhook delivery to Hyperswitch's endpoint. Mollie determines which local methods are available based on your account's approved methods and the customer's country — Hyperswitch routes to Mollie but cannot override Mollie's method availability rules.
+### Source reference
 
-**Hyperswitch owns:** forwarding Mollie webhook events to your configured endpoint. **Mollie owns:** delivering webhook events to Hyperswitch's registered endpoint. Payment status will not update automatically if Mollie's webhook delivery fails.
-
-***
-
-### Common Failure Modes
-
-**Payment method not enabled in Mollie dashboard** Symptom: A payment method selected in Hyperswitch fails with a method availability error from Mollie. Fix: Enable the method in your Mollie dashboard and ensure it matches what is selected in the Hyperswitch connector configuration.
-
-**API key invalid or expired** Symptom: All requests return an authentication error from Mollie. Fix: Verify the API key in Hyperswitch matches your Mollie dashboard. Mollie uses separate keys for test and live environments — ensure you are using the correct environment key.
-
-**Webhook delivery failure** Symptom: Payments complete at Mollie but Hyperswitch status is not updated. Fix: Verify the Hyperswitch webhook endpoint is correctly registered in your Mollie dashboard.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/mollie.rs`.
+The connector implementation is [`mollie.rs`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/mollie.rs).
