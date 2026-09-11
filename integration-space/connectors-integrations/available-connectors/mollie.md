@@ -9,7 +9,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/mollieLogo.svg" alt=""></div>
 
-Mollie is a payment gateway for card, wallet, bank debit, bank redirect, and pay later payments through Hyperswitch. Its connector covers Apple Pay and PayPal alongside several European bank payment methods. Card payments can use mandates, while the other declared methods do not. Refunds and delayed capture are available across the declared methods.
+European bank redirects, SEPA Direct Debit, Klarna, PayPal, Apple Pay, and cards come together in Mollie's payment gateway route. Automatic, sequential automatic, and manual capture apply throughout, while mandates are supported for cards. Mandates are not supported for the bank debit, bank redirect, pay later, or wallet methods.
 
 ### Status and capabilities
 
@@ -37,6 +37,13 @@ Mollie is a payment gateway for card, wallet, bank debit, bank redirect, and pay
 | pay later | Klarna | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 19 ([full list](https://hyperswitch.io/pm-list)) | 8 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
 | wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | - | - |
+
+### Before you start
+
+1. Register with Mollie.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
+3. Copy your API key and profile token from the Mollie dashboard.
+4. Enable the same payment methods in Mollie and in your Hyperswitch connector configuration.
 
 To connect Mollie to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Mollie supports.
 
