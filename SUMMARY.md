@@ -267,6 +267,7 @@
 ## Other Features
 
 * [Network Tokenisation](other-features/network-tokenisation.md)
+* [Account Updater](other-features/account-updater.md)
 * [Payments Modules](other-features/payments-modules/README.md)
   * [Cost Observability](other-features/payments-modules/ai-powered-cost-observability/README.md)
     * [Uploading Fee Reports for Analysis](other-features/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis.md)
