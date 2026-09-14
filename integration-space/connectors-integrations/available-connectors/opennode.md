@@ -25,7 +25,7 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 
 **Category:** payment gateway
 
-**Webhook flows:** payments
+**Webhook flows:** payments (declared in code; webhooks currently do not work, see the Webhooks section below)
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
