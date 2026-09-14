@@ -1,7 +1,6 @@
 ---
 description: >-
-  Connect Prophetpay with Juspay Hyperswitch to accept and process payments
-  through Prophetpay's integrated payment methods on your platform.
+  Accept card-redirect payments through Prophetpay using profile-scoped credentials.
 metaLinks:
   alternates:
     - prophetpay.md
@@ -9,48 +8,44 @@ metaLinks:
 
 # Prophetpay
 
-Prophetpay connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication with three credentials. The Username and Password are combined as `{username}:{password}`, Base64-encoded, and sent as `Authorization: Basic {encoded}` on every request. The Profile ID (api_secret) is used in request bodies to scope payments to the correct merchant profile. All requests use `application/json`.
+Prophetpay uses a hosted card-entry path for one-time payments. Refunds are supported for that path, while mandate reuse is not declared. The connector supports immediate and follow-up automatic capture behavior.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **HTTP Basic auth with Profile ID:** Prophetpay uses `SignatureKey` auth with three credentials. The Username (api_key) and Password (key1) form the HTTP Basic auth credentials: `Authorization: Basic base64(username:password)`. The Profile ID (api_secret) is embedded in payment request bodies to identify the merchant profile — it is not sent in the Authorization header.
-- **Credentials location:** Username and Password are obtained from the Prophetpay team during onboarding (register at [clubprophet.com](https://www.clubprophet.com/products---prophetpay)). Profile ID is obtained from the Prophetpay dashboard after registration.
-- **Capture methods supported:** Automatic and SequentialAutomatic. Manual capture is not supported.
-- **Webhook support:** Webhooks are not implemented for Prophetpay in Hyperswitch.
-- Prophetpay is a payment service provider focused on the golf and hospitality industry, with integrated payment methods for club and venue management platforms.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
----
+**Integration status:** alpha
 
-### Activating Prophetpay via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** None declared in code
 
-1. You need to be registered with Prophetpay. Register at [clubprophet.com/products---prophetpay](https://www.clubprophet.com/products---prophetpay).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Prophetpay **Username** and **Password** are provided by the Prophetpay team during onboarding. **Profile ID** is obtained from your Prophetpay dashboard.
-4. Select all payment methods you wish to use Prophetpay for. Ensure these match the ones configured in your Prophetpay dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
+|---|---|---|---|---|---|---|
+| card redirect | Card Redirect | not supported | supported | automatic, sequential automatic | USA | USD |
 
-[Steps to activate Prophetpay on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
----
+### Authentication
 
-### Responsibility Boundaries
+Prophetpay requires **Username**, **Password**, and **Profile ID**. Hyperswitch constructs `<Username>:<Password>`, Base64-encodes it, and sends `Authorization: Basic <encoded value>` for each implemented request path. Profile ID is placed in request bodies to select the merchant profile. See [`ProphetpayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay/transformers.rs#L52-L68), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay.rs#L112-L127), and [`ProphetpayPaymentsRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay/transformers.rs#L132-L150).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, constructing the HTTP Basic authorization header on every request, embedding the Profile ID in payment request bodies, and unified error mapping. **Prophetpay owns:** payment execution, merchant profile validation, and payment method routing.
+### Webhooks
 
-**Hyperswitch owns:** sending the correct credentials on every request. **Prophetpay owns:** validating the Username, Password, and Profile ID combination. If any credential changes and is not updated in Hyperswitch, requests will fail authentication or profile validation.
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Prophetpay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay.rs#L708-L731).
 
----
+### Activate Prophetpay with Hyperswitch
 
-### Common Failure Modes
+#### Before you start
 
-**Authentication failure**
-Symptom: All requests fail with a Prophetpay authentication error. Fix: Verify the Username and Password in Hyperswitch match exactly what was provided during Prophetpay onboarding. Do not manually Base64-encode them before entering in the control center.
+1. Register for Prophetpay at [clubprophet.com](https://www.clubprophet.com/products---prophetpay).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain **Username** and **Password** during onboarding and obtain **Profile ID** from the Prophetpay dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
-**Profile ID mismatch**
-Symptom: Payments fail with a merchant profile or configuration error. Fix: Verify the Profile ID in Hyperswitch matches the one shown in your Prophetpay dashboard. The Profile ID is embedded in every payment request body.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Prophetpay-specific behavior.
 
----
+### Source reference
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/prophetpay.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Prophetpay connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay.rs) and [Prophetpay transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/prophetpay/transformers.rs).
