@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments through Bank of America via Juspay Hyperswitch — CyberSource-
-  family HTTP Signature authentication with three credentials.
+  Accept card and wallet payments through Bank of America with signed API requests.
 metaLinks:
   alternates:
     - boa.md
@@ -9,53 +8,48 @@ metaLinks:
 
 # Bank of America
 
-Bank of America connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication with the same HTTP Signature scheme as CyberSource. Hyperswitch computes an HMAC-SHA256 signature over canonical request headers and body, sends it as a standalone `Signature: keyid="{api_key}",algorithm="HmacSHA256",headers="{headers}",signature="{value}"` header, and sends the Merchant ID separately in a `v-c-merchant-id` header. All three credentials — API Key, Merchant ID, and Shared Secret — are required. All requests use `application/json;charset=utf-8`.
+Bank of America covers card payments and several wallet paths. Most declared methods can be reused with mandates, while one wallet remains limited to one-time use. Refunds and delayed capture options are available across the declared checkout paths.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **HTTP Signature authentication (CyberSource-family):** Bank of America uses the same `GCS`-style HTTP Signature scheme as CyberSource. The API Key appears in the `Signature` header as the `keyid` value (lowercase). The Shared Secret (api_secret) is Base64-decoded and used as the HMAC-SHA256 signing key. The Merchant ID is sent as the `v-c-merchant-id` header, not in the Authorization or Signature header.
-- **Credentials location:** API Key and Shared Secret are generated under **Payment Configuration → Key Management** in the Bank of America developer dashboard. Merchant ID appears at the top of the dashboard once logged in.
-- **SetupMandate:** Supported for applicable payment methods.
-- **Webhook support:** Webhooks are not implemented for Bank of America. Payment status is not pushed via webhook — rely on sync polling.
-- **Capture methods supported:** Automatic and Manual.
-- Bank of America's payment gateway is based on the CyberSource platform. Credentials are managed through the developer.cybersource.com portal.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
----
+**Integration status:** live
 
-### Activating Bank of America via Hyperswitch
+**Category:** bank acquirer
 
-#### Prerequisites
+**Webhook flows:** None declared in code
 
-1. You need to be registered with Bank of America. Access the developer portal at [developer.cybersource.com](https://developer.cybersource.com/hello-world/sandbox.html).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. **Merchant ID** — found at the top of the dashboard once logged in.
-4. **API Key** and **Shared Secret** — generated under **Payment Configuration → Key Management**.
-5. Select all payment methods you wish to use Bank of America for. Ensure these match the ones configured in your Bank of America dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 72 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 66 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Samsung Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 31 ([full list](https://hyperswitch.io/pm-list)) | USD |
 
-[Steps to activate Bank of America on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
----
+### Authentication
 
-### Responsibility Boundaries
+Bank of America requires **API Key**, **Merchant ID**, and **Shared Secret**. Hyperswitch builds a newline-delimited signing string from the host, date, request target, an optional body digest, and Merchant ID; it signs that string with HMAC-SHA256 using the Base64-decoded Shared Secret. The API Key becomes `keyid` in the `Signature` header, while Merchant ID is also sent in `v-c-merchant-id`. See [`BankOfAmericaAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica/transformers.rs#L47-L65) and [`generate_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L97-L137).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate reference storage, computing the HMAC-SHA256 Signature header on every request, and unified error mapping. **Bank of America owns:** payment execution, fraud decisioning, and signature validation. If any credential changes in the Bank of America dashboard and is not updated in Hyperswitch, all requests will fail signature validation immediately.
+### Webhooks
 
-**Hyperswitch owns:** polling for payment status (no webhook delivery). **Bank of America owns:** making payment status available via the sync endpoint. All status updates rely on Hyperswitch's sync polling.
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bankofamerica`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L1054-L1077).
 
----
+### Activate Bank of America with Hyperswitch
 
-### Common Failure Modes
+#### Before you start
 
-**HTTP Signature validation failure**
-Symptom: All requests return a Bank of America authentication error. Fix: Verify all three credentials (API Key, Merchant ID, Shared Secret) in Hyperswitch match exactly what is configured in the developer dashboard. Any mismatch causes the computed signature to fail validation.
+1. Register through the [Bank of America developer portal](https://developer.cybersource.com/hello-world/sandbox.html).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **Merchant ID** from the dashboard and generate the **API Key** and **Shared Secret** under **Payment Configuration → Key Management**.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
-**Merchant ID mismatch**
-Symptom: Requests fail with a merchant configuration error. Fix: The Merchant ID is sent as the `v-c-merchant-id` header on every request. Verify it matches the Merchant ID shown at the top of your Bank of America developer dashboard.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Bank of America-specific behavior.
 
-**Payment method not available**
-Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Bank of America merchant account and matches the selection in the Hyperswitch connector configuration.
+### Source reference
 
----
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/bankofamerica.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Bank of America connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs) and [Bank of America transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica/transformers.rs).
