@@ -31,7 +31,7 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges c
 
 ### Authentication
 
-Coinbase requires an **API Key**. Hyperswitch sends it unchanged in the `X-CC-API-KEY` header for each implemented request path. Every request also pins the Coinbase Commerce API version with an `X-CC-Version: 2018-03-22` header. See [`CoinbaseAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase/transformers.rs#L75-L86), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L120-L131), and [`get_content_type()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L90-L102) (version header).
+Coinbase requires an **API Key**. Hyperswitch sends it unchanged in the `X-CC-API-KEY` header for each implemented request path. Every request also pins the Coinbase Commerce API version with an `X-CC-Version: 2018-03-22` header. See [`CoinbaseAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase/transformers.rs#L75-L86), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L120-L131), and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L85-L103) (version header).
 
 ### Before you start
 
