@@ -1,6 +1,6 @@
 ---
 description: >-
-  Accept card and wallet payments through Worldpay Vantiv using merchant-scoped Basic authentication.
+  Accept card and wallet payments through Worldpay Vantiv using merchant-scoped XML credentials.
 metaLinks:
   alternates:
     - worldpayvantiv.md
@@ -12,9 +12,12 @@ Worldpay Vantiv is implemented separately from the Worldpay connector and uses i
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -29,18 +32,13 @@ Worldpay Vantiv is implemented separately from the Worldpay connector and uses i
 | wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
 
-
 ### Authentication
 
-Worldpay Vantiv requires **Username**, **Password**, and **Merchant ID**. Hyperswitch constructs `<Username>:<Password>`, Base64-encodes it, and sends `Authorization: Basic <encoded value>` across payment, refund, dispute, and file request paths. Merchant ID is placed in the XML request data. See [`WorldpayvantivAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs#L83-L99) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L141-L154). The connector ID and configuration paths are independent from Worldpay; see [`ConnectorCommon for Worldpayvantiv`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L124-L139).
+Worldpay Vantiv requires **Username**, **Password**, and **Merchant ID**. Its shared [`build_headers()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L106-L121) override sends `Content-Type` only, so core payment and refund requests do not use the connector's Basic authorization helper. Instead, the XML request contains Username and Password in `authentication` and Merchant ID in the `merchantId` attribute; see [`CnpOnlineRequest and Authentication`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs#L140-L168) and [`TryFrom<&WorldpayvantivRouterData<&PaymentsAuthorizeRouterData>> for CnpOnlineRequest`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs#L779-L836).
 
-### Webhooks
+Dispute and file paths use flow-specific headers. Those paths call [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L141-L154), which constructs `<Username>:<Password>`, Base64-encodes it, and sends `Authorization: Basic <encoded value>`; see the [`dispute get_headers()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1067-L1090) and [`file-upload get_headers()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1354-L1367) overrides. [`WorldpayvantivAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs#L83-L99) maps all three credentials. The connector remains independent from Worldpay through [`ConnectorCommon for Worldpayvantiv`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L124-L139).
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Worldpayvantiv`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1542-L1565).
-
-### Activate Worldpay Vantiv with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Register with Worldpay Vantiv at [worldpayvantiv.com](https://www.worldpayvantiv.com/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -49,6 +47,10 @@ Handled event wire values: **0**. Webhooks are not currently supported, so statu
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Worldpay Vantiv-specific behavior.
 
+### Webhooks
+
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1544-L1549), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1551-L1557), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1559-L1565) each return `WebhooksNotImplemented`.
+
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Worldpay Vantiv connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs) and [Worldpay Vantiv transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0`. See [Worldpay Vantiv connector source](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs) and [Worldpay Vantiv transformers](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv/transformers.rs).
