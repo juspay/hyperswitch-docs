@@ -37,7 +37,7 @@ Klarna webhooks are not currently processed by this connector. Do not configure 
 
 ### Before you start
 
-1. Register with Klarna.
+1. Register with Klarna at [klarna.com/international/business](https://www.klarna.com/international/business/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. In the Klarna merchant portal, go to **Settings → API credentials** to find the API Username and API Password.
 4. Enable the same payment methods in Klarna that you plan to select in Hyperswitch.

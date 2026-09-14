@@ -37,7 +37,7 @@ Supply the raw Shift4 API key in the connector configuration. Hyperswitch append
 
 ### Before you start
 
-1. Register with Shift4.
+1. Register with Shift4 at [shift4.com](https://www.shift4.com/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Find the API key on the Home page of your Shift4 dashboard.
 4. Enable the same payment methods in Shift4 that you plan to select in Hyperswitch.

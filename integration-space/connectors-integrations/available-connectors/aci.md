@@ -59,7 +59,7 @@ The connector source includes incoming-webhook handling code, but until webhook 
 
 ### Before you start
 
-1. Register with ACI.
+1. Register with ACI at [aciworldwide.com](https://www.aciworldwide.com/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Find the API Key and Entity ID in your ACI dashboard.
 4. Have the credentials listed in [Authentication](#authentication) ready.

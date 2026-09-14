@@ -36,7 +36,7 @@ Supply the Public Key and Private Key in the connector configuration. Hyperswitc
 
 ### Before you start
 
-1. Register with Braintree.
+1. Register with Braintree at [braintreepayments.com/sandbox](https://www.braintreepayments.com/sandbox).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. In the Braintree dashboard, go to **Home → Settings → API** to find the Public Key and Private Key.
 4. After completing the activation flow below, copy the webhook endpoint URL from the Hyperswitch Control Center and register it in Braintree under **Home → Settings → API → Webhooks**.

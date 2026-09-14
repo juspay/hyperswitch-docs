@@ -43,7 +43,7 @@ Supply the Merchant ID in the API key field, the Merchant Site ID in the `key1` 
 
 ### Before you start
 
-1. Register with Nuvei.
+1. Register with Nuvei at [nuvei.com](https://nuvei.com/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. In the Nuvei dashboard, go to **Settings → My Account → Account Details** to find the Merchant ID, Merchant Site ID, and Merchant Secret.
 4. Enable the same payment methods in Nuvei that you plan to select in Hyperswitch.

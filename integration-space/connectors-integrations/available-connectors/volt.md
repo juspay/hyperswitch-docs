@@ -56,7 +56,7 @@ The wire values and mappings are defined by [`VoltWebhookPaymentStatus`](https:/
 
 ### Before you start
 
-1. Register with Volt.
+1. Register with Volt at [volt.io](https://www.volt.io/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. In the Volt dashboard, go to **Configuration → Customers** and open the merchant's **Credentials** section to find the Username and Password.
 4. Go to **Configuration → Application** and open **Credentials** to find the Client ID and Client Secret. Create an application first if none exists.

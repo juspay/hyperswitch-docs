@@ -59,7 +59,7 @@ The wire values and mappings are defined by [`get_webhook_event_type()`](https:/
 
 ### Before you start
 
-1. Register with Zen and obtain the API Key from your Zen account manager.
+1. Register with Zen and obtain the API Key from your Zen account manager. Contact Zen at [zen.com](https://www.zen.com/) for onboarding.
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Ask Zen support to enable raw card data handling for your account.
 4. Enable the same payment methods in Zen that you plan to select in Hyperswitch.

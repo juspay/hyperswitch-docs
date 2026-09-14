@@ -65,7 +65,7 @@ The wire values and mappings are defined by [`get_webhook_event_type()`](https:/
 
 ### Before you start
 
-1. Register with TrustPay.
+1. Register with TrustPay at [trustpay.eu](https://www.trustpay.eu/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Find the API Key, Project ID, and Secret Key in your TrustPay dashboard.
 4. Enable the same payment methods in TrustPay that you plan to select in Hyperswitch.

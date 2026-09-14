@@ -53,7 +53,7 @@ The event names and mappings are defined by [`AuthorizedotnetIncomingWebhookEven
 
 ### Before you start
 
-1. Register with Authorize.net.
+1. Register with Authorize.net at [authorize.net](https://www.authorize.net/).
 2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. In the Authorize.net dashboard, go to **Account → Security Settings** to find the API Login ID and Transaction Key.
 4. Under **Account → Digital Payment Solutions**, enable the payment methods you plan to select in Hyperswitch.
