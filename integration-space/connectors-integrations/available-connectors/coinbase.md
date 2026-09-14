@@ -45,7 +45,7 @@ Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitc
 
 ### Webhooks
 
-Hyperswitch verifies the hexadecimal `X-CC-Webhook-Signature` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L392-L401) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L403-L412).
+Hyperswitch verifies the hexadecimal `X-CC-Webhook-Signature` value with HMAC-SHA256 over the raw request body. Configure the Coinbase webhook signing secret in Hyperswitch's connector `merchant_secret` (the **Source Verification Key**); the shared verifier uses it as the HMAC key. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L392-L401) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L403-L412).
 
 Handled event wire values: **5**.
 
