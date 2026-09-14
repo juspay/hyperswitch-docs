@@ -1,6 +1,6 @@
 ---
 description: >-
-  Accept cryptocurrency payments through OpenNode with signed payment status callbacks.
+  Accept cryptocurrency payments through OpenNode with asynchronous payment status callbacks.
 metaLinks:
   alternates:
     - opennode.md
@@ -61,7 +61,7 @@ Handled status wire values: **6**.
 | `unpaid` | No payment update is applied |
 | `refunded` | No payment update is applied |
 
-The lowercase wire values and unknown-value fallback come from [`OpennodePaymentStatus`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L78-L90).
+The lowercase wire values and unknown-value fallback come from [`OpennodePaymentStatus`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L78-L90). OpenNode also documents a `failed` status (a dropped mempool transaction); the enum has no variant for it, so it deserializes to the unknown fallback and no payment update is applied.
 
 ### Source reference
 
