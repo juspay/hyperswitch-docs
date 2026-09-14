@@ -46,7 +46,7 @@ Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitc
 
 ### Webhooks
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bankofamerica`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L1054-L1077).
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation is not implemented: object reference and resource object lookups return `WebhooksNotImplemented`, and event typing returns `EventNotSupported`; see [`IncomingWebhook for Bankofamerica`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L1054-L1077).
 
 ### Source reference
 
