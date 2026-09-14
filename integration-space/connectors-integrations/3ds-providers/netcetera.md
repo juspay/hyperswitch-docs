@@ -6,50 +6,43 @@ metaLinks:
   alternates:
     - netcetera.md
 ---
-
 # Netcetera
 
-Netcetera connects to Hyperswitch as an external 3DS authentication provider using `CertificateAuth` — a TLS client certificate and private key are required to establish authenticated connections with Netcetera's 3DS server. Unlike API key or Bearer token connectors, Netcetera authenticates at the TLS transport layer using a client certificate. Netcetera is not a payment gateway; it performs EMV 3DS 2.X authentication only — payment execution is handled by the acquirer/gateway after authentication.
+Netcetera handles external 3DS authentication rather than payment execution. It does not declare payment methods because its role ends when authentication data is returned for the payment connector. Merchants use it to add a dedicated authentication step to supported payment flows.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **TLS client certificate authentication:** Netcetera uses `CertificateAuth` — a certificate (PEM format) and corresponding private key are required. These are used to establish mutual TLS with Netcetera's 3DS server. There is no API key or Bearer token header; authentication happens at the connection layer.
-- **External 3DS server, not a payment gateway:** Netcetera handles only the 3DS authentication phase (Pre-Authenticate and Post-Authenticate flows). The resulting authentication values (CAVV, ECI, DS Transaction ID) are then passed to the acquirer for authorization. Netcetera does not process payments, captures, or refunds.
-- **Credentials location:** Certificate and Private Key are provisioned by Netcetera and provided during onboarding.
-- Netcetera offers EMV® 3DS 2.X transaction processing and is incorporated into the merchant environment to process in-app and web payments based on the 3DS 2.X standard.
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
----
+**Integration status:** sandbox
 
-### Activating Netcetera via Hyperswitch
+**Category:** authentication provider
 
-#### Prerequisites
+**Webhook flows:** None declared in code
 
-1. You need to be registered with Netcetera for 3DS server access. Contact [netcetera.com](https://www.netcetera.com/) for onboarding.
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Netcetera **Certificate** and **Private Key** are provided during the Netcetera onboarding process.
+_This connector declares no payment methods. It is an authentication provider rather than a payment processor._
 
-[Steps to activate Netcetera on the Hyperswitch control center](../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md)
 
-[Steps to integrate Netcetera in Hyperswitch Payments SDK](../../merchant-controls/payment-features/3d-secure-3ds/netcetera.md)
+### Authentication
 
----
+Netcetera requires a PEM **Certificate** and matching **Private Key**. Hyperswitch maps them through `CertificateAuth` for mutual TLS and sends no HTTP authorization header. See [`NetceteraAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera/transformers.rs#L232-L246) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L120-L125).
 
-### Responsibility Boundaries
+### Before you start
 
-**Hyperswitch owns:** initiating the 3DS authentication flow (Pre-Authenticate), completing it (Post-Authenticate), and passing the resulting authentication values to the payment connector for authorization. **Netcetera owns:** 3DS server processing, ACS communication, and authentication result delivery.
+1. Contact [netcetera.com](https://www.netcetera.com/) to register for 3DS server access.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the PEM **Certificate** and matching **Private Key** during Netcetera onboarding.
 
-**Hyperswitch owns:** presenting the correct client certificate on every TLS connection to Netcetera. **Netcetera owns:** validating the certificate and rejecting unauthorized connections. If the certificate expires or is revoked and not renewed in Hyperswitch, all 3DS authentication requests will fail.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Netcetera-specific behavior.
 
----
+If your activation uses the external authentication flow, follow [External authentication for 3DS](../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
 
-### Common Failure Modes
+### Webhooks
 
-**TLS certificate rejected**
-Symptom: All 3DS authentication requests fail at the connection level. Fix: Verify the Certificate and Private Key stored in Hyperswitch match the ones provisioned by Netcetera. If the certificate has expired, renew it through Netcetera and update Hyperswitch.
+Handled event wire values: **0**. Netcetera does not dispatch on individual event wire values. The incoming webhook implementation parses result callbacks for their external authentication reference (the 3DS server transaction ID) and resource object, and maps every callback to a single fixed event, `ExternalAuthenticationARes`. See [`IncomingWebhook for Netcetera`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L179-L211).
 
-**Authentication result not available**
-Symptom: Post-Authenticate flow fails or returns missing authentication values. Fix: Confirm the Pre-Authenticate step completed successfully and that Netcetera's ACS communication was uninterrupted. Check Netcetera's logs for the 3DS server transaction ID.
+### Source reference
 
----
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/netcetera.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Netcetera connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs) and [Netcetera transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera/transformers.rs).
