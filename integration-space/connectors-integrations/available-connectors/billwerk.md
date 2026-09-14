@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments through Billwerk+ via Juspay Hyperswitch — configure API
-  credentials for the subscription and payment platform.
+  Accept card payments through Billwerk using private and public API credentials.
 metaLinks:
   alternates:
     - billwerk.md
@@ -9,49 +8,43 @@ metaLinks:
 
 # Billwerk
 
-Billwerk connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication. The Private API Key is sent as `Authorization: Basic {base64(api_key:)}` — HTTP Basic auth format with the API key as the username and an intentionally empty password field (trailing colon). All requests use `application/json`. Billwerk+ Pay is an acquirer-independent payment gateway.
+Billwerk connects subscription commerce to card payment processing. Both credit and debit card paths support refunds. Merchants can choose between immediate and delayed capture patterns for those transactions.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-- **HTTP Basic auth with empty password:** Billwerk uses HTTP Basic auth where only the Private API Key is provided as the username, with no password: `Authorization: Basic base64(api_key:)`. The trailing colon is intentional. The Public API Key (key1) is stored as a second credential but is not sent in the Authorization header — it is used separately for client-side tokenization flows.
-- **Credentials location:** Private API Key and Public API Key are found in your Billwerk+ Pay dashboard under **Developers → API Credentials**.
-- **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-- **SetupMandate:** Not supported.
-- **Webhook support:** Webhooks are not implemented for Billwerk.
-- Billwerk+ Pay is an acquirer-independent payment gateway with broad payment method support and European market focus.
-- For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from ConnectorSpecifications
+     and pm_filters in code; edit those sources instead. -->
 
----
+**Integration status:** sandbox
 
-### Activating Billwerk via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** None declared in code
 
-1. You need to be registered with Billwerk+ Pay. Sign up at [signup.billwerk.plus](https://signup.billwerk.plus/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Billwerk+ Pay **Private API Key** and **Public API Key** are found in your Billwerk+ Pay dashboard under **Developers → API Credentials**.
-4. Select all payment methods you wish to use Billwerk for. Ensure these match the ones configured in your Billwerk+ Pay dashboard under the **Configurations** tab.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | DEU, DNK, FRA, SWE | DKK, NOK |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | DEU, DNK, FRA, SWE | DKK, NOK |
 
-[Steps to activate Billwerk on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
----
+### Authentication
 
-### Responsibility Boundaries
+Billwerk requires **Private API Key** and **Public API Key**. For authenticated API requests, Hyperswitch constructs `<Private API Key>:` with an empty value after the colon, Base64-encodes it, and sends `Authorization: Basic <encoded value>`. The Public API Key is placed in the tokenization request as `pkey`. See [`BillwerkAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk/transformers.rs#L50-L61), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs#L124-L136), and [`BillwerkTokenRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk/transformers.rs#L90-L104).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, constructing the HTTP Basic authorization header with an empty password field on every request, and unified error mapping. **Billwerk owns:** payment execution, acquirer routing, and credential validation.
+### Before you start
 
-**Hyperswitch owns:** embedding the Private API Key in every request header. **Billwerk owns:** validating it. If the Private API Key changes in Billwerk and is not updated in Hyperswitch, all requests will fail authentication immediately.
+1. Register with Billwerk+ Pay at [signup.billwerk.plus](https://signup.billwerk.plus/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **Private API Key** and **Public API Key** under **Developers → API Credentials** in the Billwerk+ Pay dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
----
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Billwerk-specific behavior.
 
-### Common Failure Modes
+### Webhooks
 
-**Authentication failure**
-Symptom: All requests fail with a Billwerk authentication error. Fix: Verify the Private API Key in Hyperswitch matches your Billwerk+ Pay dashboard. The key is sent as the HTTP Basic username with an empty password — do not manually Base64-encode it before entering in the control center.
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Billwerk`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs#L799-L822).
 
-**Payment method not configured**
-Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Billwerk+ Pay account and matches the selection in the Hyperswitch connector configuration. Confirm the method appears under **Configurations** in the Billwerk+ Pay dashboard.
+### Source reference
 
----
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/billwerk.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Billwerk connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs) and [Billwerk transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk/transformers.rs).
