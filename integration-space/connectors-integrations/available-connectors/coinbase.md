@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept crypto payments through Coinbase Commerce via Juspay Hyperswitch, with
-  multi-asset support and access to millions of retail users.
+  Accept cryptocurrency payments through Coinbase Commerce with signed payment webhooks.
 metaLinks:
   alternates:
     - coinbase.md
@@ -11,49 +10,55 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/coinbaseLogo.svg" alt=""></div>
 
-Coinbase Commerce connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey` authentication — the API Key is sent in a custom `X-CC-API-Key` header (not `Authorization: Bearer`). All requests also include an `X-CC-Version: 2018-03-22` header that pins the Coinbase Commerce API version. All requests use `application/json`. Coinbase Commerce enables crypto payment acceptance (Bitcoin, Ethereum, and other assets) with access to Coinbase's retail user base.
+Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges can move through pending and resolved states before Hyperswitch applies the resulting payment update. Source signatures protect those webhook transitions.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **Custom X-CC-API-Key header:** Unlike connectors that use `Authorization: Bearer`, Coinbase Commerce expects the API Key in the `X-CC-API-Key` header specifically. Do not set an Authorization header — it will not authenticate the request.
-* **API version pinning:** Every request sends `X-CC-Version: 2018-03-22`. This version is hardcoded in the Hyperswitch implementation to ensure stable API behaviour.
-* **Credentials location:** The API Key is found in your Coinbase Commerce dashboard.
-* **Webhook support:** Coinbase Commerce delivers webhook events to Hyperswitch. Configure the Hyperswitch webhook endpoint in your Coinbase Commerce settings.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Not supported for crypto payments.
-* Coinbase Commerce provides reduced operational costs, multi-asset support, and access to Coinbase's millions of retail users.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-***
+**Integration status:** beta
 
-### Activating Coinbase via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** payments, refunds
 
-1. You need to be registered with Coinbase Commerce. Sign up at [coinbase.com/commerce](https://www.coinbase.com/commerce).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. The Coinbase Commerce **API Key** is found in your Coinbase Commerce dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
+|---|---|---|---|---|---|---|
+| crypto | Crypto | not supported | not supported | automatic, manual, sequential automatic | 15 ([full list](https://hyperswitch.io/pm-list)) | - |
 
-[Steps to activate Coinbase on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
-***
+### Authentication
 
-### Responsibility Boundaries
+Coinbase requires an **API Key**. Hyperswitch sends it unchanged in the `X-CC-API-KEY` header for each implemented request path. See [`CoinbaseAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase/transformers.rs#L75-L86) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L120-L131).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, sending the API Key in the `X-CC-API-Key` header and pinning the API version on every request, and unified error mapping. **Coinbase Commerce owns:** crypto charge creation, blockchain settlement confirmation, and webhook delivery.
+### Webhooks
 
-**Hyperswitch owns:** presenting the correct API Key in the custom header. **Coinbase Commerce owns:** validating it. If the API Key is regenerated in Coinbase Commerce and not updated in Hyperswitch, all requests will fail authentication immediately.
+Hyperswitch verifies the hexadecimal `X-CC-Webhook-Signature` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L392-L401) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L403-L412).
 
-***
+Handled event wire values: **5**.
 
-### Common Failure Modes
+| Wire value | Effect |
+|---|---|
+| `charge:confirmed` | Payment succeeds |
+| `charge:resolved` | Payment succeeds |
+| `charge:failed` | Payment requires action |
+| `charge:pending` | Payment is processing |
+| `charge:created` | No payment update is applied |
 
-**Authentication failure** Symptom: All requests fail with a Coinbase Commerce authentication error. Fix: Verify the API Key in Hyperswitch matches the one in your Coinbase Commerce dashboard. Ensure the key is entered in the `X-CC-API-Key` credential field — not formatted as a Bearer token.
+The wire names come from [`WebhookEventType`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase/transformers.rs#L340-L354); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L427-L450).
 
-**Webhook events not processed** Symptom: Coinbase Commerce events arrive at Hyperswitch but payment statuses do not update. Fix: Verify the Hyperswitch webhook endpoint URL is correctly configured in your Coinbase Commerce settings.
+### Activate Coinbase with Hyperswitch
 
-**Payment method not available** Symptom: A specific crypto asset fails with an availability error. Fix: Verify the asset is enabled for your Coinbase Commerce account and matches the selection in the Hyperswitch connector configuration.
+#### Before you start
 
-***
+1. Register with Coinbase Commerce at [coinbase.com/commerce](https://www.coinbase.com/commerce).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **API Key** from the Coinbase Commerce dashboard.
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/coinbase.rs`.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Coinbase-specific behavior.
+
+### Source reference
+
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Coinbase connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs) and [Coinbase transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase/transformers.rs).
