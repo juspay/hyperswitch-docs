@@ -32,13 +32,7 @@ Billwerk connects subscription commerce to card payment processing. Both credit 
 
 Billwerk requires **Private API Key** and **Public API Key**. For authenticated API requests, Hyperswitch constructs `<Private API Key>:` with an empty value after the colon, Base64-encodes it, and sends `Authorization: Basic <encoded value>`. The Public API Key is placed in the tokenization request as `pkey`. See [`BillwerkAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk/transformers.rs#L50-L61), [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs#L124-L136), and [`BillwerkTokenRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk/transformers.rs#L90-L104).
 
-### Webhooks
-
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Billwerk`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs#L799-L822).
-
-### Activate Billwerk with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Register with Billwerk+ Pay at [signup.billwerk.plus](https://signup.billwerk.plus/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -46,6 +40,10 @@ Handled event wire values: **0**. Webhooks are not currently supported, so statu
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Billwerk-specific behavior.
+
+### Webhooks
+
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Billwerk`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/billwerk.rs#L799-L822).
 
 ### Source reference
 
