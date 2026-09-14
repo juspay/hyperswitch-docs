@@ -24,9 +24,9 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges c
 
 **Webhook flows:** payments
 
-The connector declaration lists `Refunds` in `COINBASE_SUPPORTED_WEBHOOK_FLOWS`, but no refund event exists in the handled wire values — `WebhookEventType` recognizes only `charge:*` events, so refund webhooks cannot be processed. The effective flow is payments only.
+The connector declaration lists `Refunds` in `COINBASE_SUPPORTED_WEBHOOK_FLOWS`, but no refund event exists in the handled wire values because `WebhookEventType` recognizes only `charge:*` events, so refund webhooks cannot be processed. The effective flow is payments only.
 
-The connector declaration also lists `automatic`, `manual`, and `sequential automatic` capture methods in `COINBASE_SUPPORTED_PAYMENT_METHODS`, but the `Capture` flow is not implemented — the integration returns `FlowNotSupported` and builds no capture request — so manual and sequential automatic capture cannot execute. The effective capture method is automatic only.
+The connector declaration also lists `automatic`, `manual`, and `sequential automatic` capture methods in `COINBASE_SUPPORTED_PAYMENT_METHODS`, but the `Capture` flow is not implemented: the integration returns `FlowNotSupported` and builds no capture request, so manual and sequential automatic capture cannot execute. The effective capture method is automatic only.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
