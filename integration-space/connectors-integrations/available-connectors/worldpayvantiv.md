@@ -40,7 +40,7 @@ Dispute and file paths use flow-specific headers. Those paths call [`get_auth_he
 
 ### Before you start
 
-1. Register with Worldpay Vantiv at [worldpayvantiv.com](https://www.worldpayvantiv.com/).
+1. Register with Worldpay Vantiv at [worldpay.com](https://www.worldpay.com/en).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Obtain **Username**, **Password**, and **Merchant ID** from the Worldpay Vantiv dashboard.
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
