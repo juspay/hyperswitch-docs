@@ -33,13 +33,7 @@ Bambora is a Worldline payment solution for merchants accepting card payments. I
 
 Bambora requires **Merchant ID** and **Passcode**. Hyperswitch constructs `<Merchant ID>:<Passcode>`, Base64-encodes that value, and sends `Authorization: Passcode <encoded value>` on every implemented request path. See [`BamboraAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora/transformers.rs#L257-L272) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs#L125-L136).
 
-### Webhooks
-
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bambora`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs#L821-L844).
-
-### Activate Bambora with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Register with Bambora at [bambora.com](https://www.bambora.com/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -47,6 +41,10 @@ Handled event wire values: **0**. Webhooks are not currently supported, so statu
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Bambora-specific behavior.
+
+### Webhooks
+
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bambora`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs#L821-L844).
 
 ### Source reference
 
