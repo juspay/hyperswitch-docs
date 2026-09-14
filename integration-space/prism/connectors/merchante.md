@@ -1,9 +1,9 @@
-# Paydotcom
+# Merchante
 
 <!--
 This file is auto-generated. Do not edit by hand.
-Source: data/field_probe/paydotcom.json
-Regenerate: python3 scripts/generators/docs/generate.py paydotcom
+Source: data/field_probe/merchante.json
+Regenerate: python3 scripts/generators/docs/generate.py merchante
 -->
 
 ## SDK Configuration
@@ -23,8 +23,9 @@ from payments.generated import sdk_config_pb2, payment_pb2, events_pb2, payment_
 config = sdk_config_pb2.ConnectorConfig(
     options=sdk_config_pb2.SdkOptions(environment=sdk_config_pb2.Environment.SANDBOX),
     connector_config=payment_pb2.ConnectorSpecificConfig(
-        paydotcom=payment_pb2.PaydotcomConfig(
-            api_key=payment_methods_pb2.SecretString(value="YOUR_API_KEY"),
+        merchante=payment_pb2.MerchanteConfig(
+            profile_id=payment_methods_pb2.SecretString(value="YOUR_PROFILE_ID"),
+            profile_key=payment_methods_pb2.SecretString(value="YOUR_PROFILE_KEY"),
             base_url="YOUR_BASE_URL",
         ),
     ),
@@ -44,11 +45,12 @@ const { PaymentClient } = require('hyperswitch-prism');
 const { ConnectorConfig, Environment, Connector } = require('hyperswitch-prism').types;
 
 const config = ConnectorConfig.create({
-    connector: Connector.PAYDOTCOM,
+    connector: Connector.MERCHANTE,
     environment: Environment.SANDBOX,
     auth: {
-        paydotcom: {
-            apiKey: { value: 'YOUR_API_KEY' },
+        merchante: {
+            profileId: { value: 'YOUR_PROFILE_ID' },
+            profileKey: { value: 'YOUR_PROFILE_KEY' },
             baseUrl: 'YOUR_BASE_URL',
         }
     },
@@ -67,8 +69,9 @@ val config = ConnectorConfig.newBuilder()
     .setOptions(SdkOptions.newBuilder().setEnvironment(Environment.SANDBOX).build())
     .setConnectorConfig(
         ConnectorSpecificConfig.newBuilder()
-            .setPaydotcom(PaydotcomConfig.newBuilder()
-                .setApiKey(SecretString.newBuilder().setValue("YOUR_API_KEY").build())
+            .setMerchante(MerchanteConfig.newBuilder()
+                .setProfileId(SecretString.newBuilder().setValue("YOUR_PROFILE_ID").build())
+                .setProfileKey(SecretString.newBuilder().setValue("YOUR_PROFILE_KEY").build())
                 .setBaseUrl("YOUR_BASE_URL")
                 .build())
             .build()
@@ -89,8 +92,9 @@ use grpc_api_types::payments::connector_specific_config;
 
 let config = ConnectorConfig {
     connector_config: Some(ConnectorSpecificConfig {
-            config: Some(connector_specific_config::Config::Paydotcom(PaydotcomConfig {
-                api_key: Some(hyperswitch_masking::Secret::new("YOUR_API_KEY".to_string())),  // Authentication credential
+            config: Some(connector_specific_config::Config::Merchante(MerchanteConfig {
+                profile_id: Some(hyperswitch_masking::Secret::new("YOUR_PROFILE_ID".to_string())),  // Authentication credential
+                profile_key: Some(hyperswitch_masking::Secret::new("YOUR_PROFILE_KEY".to_string())),  // Authentication credential
                 base_url: Some("https://sandbox.example.com".to_string()),  // Base URL for API calls
                 ..Default::default()
             })),
@@ -123,7 +127,7 @@ Simple payment that authorizes and captures in one call. Use for immediate charg
 | `PENDING` | Payment processing — await webhook for final status before fulfilling |
 | `FAILED` | Payment declined — surface error to customer, do not retry without new details |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py#L212) · [JavaScript](../../examples/paydotcom/paydotcom.js) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L115) · [Rust](../../examples/paydotcom/paydotcom.rs#L270)
+**Examples:** [Python](../../examples/merchante/merchante.py#L200) · [JavaScript](../../examples/merchante/merchante.js) · [Kotlin](../../examples/merchante/merchante.kt#L117) · [Rust](../../examples/merchante/merchante.rs#L253)
 
 ### Card Payment (Authorize + Capture)
 
@@ -137,25 +141,25 @@ Two-step card payment. First authorize, then capture. Use when you need to verif
 | `PENDING` | Awaiting async confirmation — wait for webhook before capturing |
 | `FAILED` | Payment declined — surface error to customer, do not retry without new details |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py#L231) · [JavaScript](../../examples/paydotcom/paydotcom.js) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L131) · [Rust](../../examples/paydotcom/paydotcom.rs#L286)
+**Examples:** [Python](../../examples/merchante/merchante.py#L219) · [JavaScript](../../examples/merchante/merchante.js) · [Kotlin](../../examples/merchante/merchante.kt#L133) · [Rust](../../examples/merchante/merchante.rs#L269)
 
 ### Refund
 
 Return funds to the customer for a completed payment.
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py#L256) · [JavaScript](../../examples/paydotcom/paydotcom.js) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L153) · [Rust](../../examples/paydotcom/paydotcom.rs#L309)
+**Examples:** [Python](../../examples/merchante/merchante.py#L244) · [JavaScript](../../examples/merchante/merchante.js) · [Kotlin](../../examples/merchante/merchante.kt#L155) · [Rust](../../examples/merchante/merchante.rs#L292)
 
 ### Void Payment
 
 Cancel an authorized but not-yet-captured payment.
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py#L281) · [JavaScript](../../examples/paydotcom/paydotcom.js) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L175) · [Rust](../../examples/paydotcom/paydotcom.rs#L332)
+**Examples:** [Python](../../examples/merchante/merchante.py#L269) · [JavaScript](../../examples/merchante/merchante.js) · [Kotlin](../../examples/merchante/merchante.kt#L177) · [Rust](../../examples/merchante/merchante.rs#L315)
 
 ### Get Payment Status
 
 Retrieve current payment status from the connector.
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py#L303) · [JavaScript](../../examples/paydotcom/paydotcom.js) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L194) · [Rust](../../examples/paydotcom/paydotcom.rs#L351)
+**Examples:** [Python](../../examples/merchante/merchante.py#L291) · [JavaScript](../../examples/merchante/merchante.js) · [Kotlin](../../examples/merchante/merchante.kt#L196) · [Rust](../../examples/merchante/merchante.rs#L334)
 
 ## API Reference
 
@@ -164,9 +168,9 @@ Retrieve current payment status from the connector.
 | [PaymentService.Authorize](#paymentserviceauthorize) | Payments | `PaymentServiceAuthorizeRequest` |
 | [PaymentService.Capture](#paymentservicecapture) | Payments | `PaymentServiceCaptureRequest` |
 | [PaymentService.Get](#paymentserviceget) | Payments | `PaymentServiceGetRequest` |
-| [PaymentMethodAuthenticationService.PreAuthenticate](#paymentmethodauthenticationservicepreauthenticate) | Authentication | `PaymentMethodAuthenticationServicePreAuthenticateRequest` |
 | [PaymentService.ProxyAuthorize](#paymentserviceproxyauthorize) | Payments | `PaymentServiceProxyAuthorizeRequest` |
 | [PaymentService.ProxySetupRecurring](#paymentserviceproxysetuprecurring) | Payments | `PaymentServiceProxySetupRecurringRequest` |
+| [RecurringPaymentService.Charge](#recurringpaymentservicecharge) | Mandates | `RecurringPaymentServiceChargeRequest` |
 | [PaymentService.Refund](#paymentservicerefund) | Payments | `PaymentServiceRefundRequest` |
 | [RefundService.Get](#refundserviceget) | Refunds | `RefundServiceGetRequest` |
 | [PaymentService.SetupRecurring](#paymentservicesetuprecurring) | Payments | `PaymentServiceSetupRecurringRequest` |
@@ -190,10 +194,10 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 | Card | ✓ |
 | Bancontact | ⚠ |
 | Apple Pay | ⚠ |
-| Apple Pay Dec | ✓ |
+| Apple Pay Dec | ⚠ |
 | Apple Pay SDK | ⚠ |
 | Google Pay | ⚠ |
-| Google Pay Dec | ✓ |
+| Google Pay Dec | ⚠ |
 | Google Pay SDK | ⚠ |
 | PayPal SDK | ⚠ |
 | Amazon Pay | ⚠ |
@@ -305,7 +309,7 @@ Authorize a payment amount on a payment method. This reserves funds without capt
 }
 ```
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L341) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L212) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L325) · [Kotlin](../../examples/merchante/merchante.kt#L214) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.Capture
 
@@ -316,7 +320,7 @@ Finalize an authorized payment by transferring funds. Captures the authorized am
 | **Request** | `PaymentServiceCaptureRequest` |
 | **Response** | `PaymentServiceCaptureResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L350) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L224) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L334) · [Kotlin](../../examples/merchante/merchante.kt#L226) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.Get
 
@@ -327,7 +331,7 @@ Retrieve current payment status from the payment processor. Enables synchronizat
 | **Request** | `PaymentServiceGetRequest` |
 | **Response** | `PaymentServiceGetResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L359) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L234) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L343) · [Kotlin](../../examples/merchante/merchante.kt#L236) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.ProxyAuthorize
 
@@ -338,7 +342,7 @@ Authorize using vault-aliased card data. Proxy substitutes before connector.
 | **Request** | `PaymentServiceProxyAuthorizeRequest` |
 | **Response** | `PaymentServiceAuthorizeResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L377) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L283) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L352) · [Kotlin](../../examples/merchante/merchante.kt#L244) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.ProxySetupRecurring
 
@@ -349,7 +353,7 @@ Setup recurring mandate using vault-aliased card data.
 | **Request** | `PaymentServiceProxySetupRecurringRequest` |
 | **Response** | `PaymentServiceSetupRecurringResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L386) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L312) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L361) · [Kotlin](../../examples/merchante/merchante.kt#L273) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.Refund
 
@@ -360,7 +364,7 @@ Process a partial or full refund for a captured payment. Returns funds to the cu
 | **Request** | `PaymentServiceRefundRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L395) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L344) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L379) · [Kotlin](../../examples/merchante/merchante.kt#L336) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.SetupRecurring
 
@@ -371,7 +375,7 @@ Configure a payment method for recurring billing. Sets up the mandate and paymen
 | **Request** | `PaymentServiceSetupRecurringRequest` |
 | **Response** | `PaymentServiceSetupRecurringResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L413) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L366) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L397) · [Kotlin](../../examples/merchante/merchante.kt#L358) · [Rust](../../examples/merchante/merchante.rs)
 
 #### PaymentService.Void
 
@@ -382,7 +386,7 @@ Cancel an authorized payment that has not been captured. Releases held funds bac
 | **Request** | `PaymentServiceVoidRequest` |
 | **Response** | `PaymentServiceVoidResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L405) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts) · [Kotlin](../../examples/merchante/merchante.kt#L397) · [Rust](../../examples/merchante/merchante.rs)
 
 ### Refunds
 
@@ -395,17 +399,17 @@ Retrieve refund status from the payment processor. Tracks refund progress throug
 | **Request** | `RefundServiceGetRequest` |
 | **Response** | `RefundResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L404) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L354) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L388) · [Kotlin](../../examples/merchante/merchante.kt#L346) · [Rust](../../examples/merchante/merchante.rs)
 
-### Authentication
+### Mandates
 
-#### PaymentMethodAuthenticationService.PreAuthenticate
+#### RecurringPaymentService.Charge
 
-Initiate 3DS flow before payment authorization. Collects device data and prepares authentication context for frictionless or challenge-based verification.
+Charge using an existing stored recurring payment instruction. Processes repeat payments for subscriptions or recurring billing without collecting payment details.
 
 | | Message |
 |---|---------|
-| **Request** | `PaymentMethodAuthenticationServicePreAuthenticateRequest` |
-| **Response** | `PaymentMethodAuthenticationServicePreAuthenticateResponse` |
+| **Request** | `RecurringPaymentServiceChargeRequest` |
+| **Response** | `RecurringPaymentServiceChargeResponse` |
 
-**Examples:** [Python](../../examples/paydotcom/paydotcom.py) · [TypeScript](../../examples/paydotcom/paydotcom.ts#L368) · [Kotlin](../../examples/paydotcom/paydotcom.kt#L242) · [Rust](../../examples/paydotcom/paydotcom.rs)
+**Examples:** [Python](../../examples/merchante/merchante.py) · [TypeScript](../../examples/merchante/merchante.ts#L370) · [Kotlin](../../examples/merchante/merchante.kt#L305) · [Rust](../../examples/merchante/merchante.rs)
