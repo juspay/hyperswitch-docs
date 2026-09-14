@@ -41,7 +41,7 @@ MultiSafepay brings several checkout families into one connector, including card
 
 ### Authentication
 
-MultiSafepay requires an **API Key**. Hyperswitch passes it as an `api_key` query parameter on every request URL instead of a header — the connector overrides `build_headers()` to send no headers, so every implemented flow (authorize, payment sync, refund execute, refund sync) embeds the key in the URL. See [`MultisafepayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay/transformers.rs#L821-L832), [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L68-L77), and the URL construction in [`payments_sync()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L196).
+MultiSafepay requires an **API Key**. Hyperswitch sends it as an `api_key` query parameter in every request URL rather than as a header. See [`MultisafepayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay/transformers.rs#L821-L832), [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L68-L77), and the URL construction in [`payments_sync()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L196).
 
 ### Before you start
 
@@ -54,7 +54,7 @@ Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitc
 
 ### Webhooks
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation is not implemented: object reference and resource object lookups return `WebhooksNotImplemented`, and event typing returns `EventNotSupported`; see [`IncomingWebhook for Multisafepay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L525-L548).
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. Object-reference and resource-object lookups return `WebhooksNotImplemented`, while event typing returns `EventNotSupported`; see [`IncomingWebhook for Multisafepay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L525-L548).
 
 ### Source reference
 
