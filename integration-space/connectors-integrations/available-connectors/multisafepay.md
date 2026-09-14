@@ -48,7 +48,7 @@ MultiSafepay requires an **API Key**. Hyperswitch passes it as an `api_key` quer
 1. Register with MultiSafepay at [multisafepay.com](https://www.multisafepay.com/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Obtain the **API Key** under **Integrations → Site** in the MultiSafepay dashboard.
-4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
+4. Enable the same payment methods in MultiSafepay and in your Hyperswitch connector configuration.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for MultiSafepay-specific behavior.
 
