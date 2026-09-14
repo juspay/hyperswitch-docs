@@ -10,7 +10,7 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/coinbaseLogo.svg" alt=""></div>
 
-Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges can move through pending and resolved states before Hyperswitch applies the resulting payment update. Source signatures protect those webhook transitions.
+Coinbase Commerce gives this connector a cryptocurrency checkout path. Coinbase sends webhooks when a charge changes status, and Hyperswitch checks each webhook's signature before applying the update.
 
 ### Status and capabilities
 
@@ -24,9 +24,9 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges c
 
 **Webhook flows:** payments
 
-The connector declaration lists `Refunds` in `COINBASE_SUPPORTED_WEBHOOK_FLOWS`, but no refund event exists in the handled wire values because `WebhookEventType` recognizes only `charge:*` events, so refund webhooks cannot be processed. The effective flow is payments only.
+The connector declares refund webhooks in code, but they cannot be processed: only `charge:*` events are recognized, and there is no refund event. Webhooks work for payments only.
 
-The connector declaration also lists `automatic`, `manual`, and `sequential automatic` capture methods in `COINBASE_SUPPORTED_PAYMENT_METHODS`, but the `Capture` flow is not implemented: the integration returns `FlowNotSupported` and builds no capture request, so manual and sequential automatic capture cannot execute. The effective capture method is automatic only.
+The connector also declares manual and sequential automatic capture, but capture is not implemented: capture requests return `FlowNotSupported`. Only automatic capture works.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
@@ -47,7 +47,7 @@ Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitc
 
 ### Webhooks
 
-Hyperswitch verifies the hexadecimal `X-CC-Webhook-Signature` value with HMAC-SHA256 over the raw request body. Configure the Coinbase webhook signing secret in Hyperswitch's connector `merchant_secret` (the **Source Verification Key**); the shared verifier uses it as the HMAC key. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L392-L401) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L403-L412).
+Hyperswitch verifies the hexadecimal `X-CC-Webhook-Signature` value with HMAC-SHA256 over the raw request body. Configure the Coinbase webhook signing secret in Hyperswitch's connector `merchant_secret` (the **Source Verification Key**); Hyperswitch uses it as the HMAC key when checking the signature. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L392-L401) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/coinbase.rs#L403-L412).
 
 Handled event wire values: **5**.
 
