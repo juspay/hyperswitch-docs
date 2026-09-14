@@ -1,8 +1,6 @@
 ---
 description: >-
-  Accept payments globally through Worldline via Juspay Hyperswitch — enabling
-  in-store, online, and omnichannel payment solutions with increased conversion
-  and approval rates.
+  Accept card and bank-redirect payments through Worldline with HMAC-signed requests.
 metaLinks:
   alternates:
     - worldline.md
@@ -10,51 +8,57 @@ metaLinks:
 
 # Worldline
 
-<div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/worldlineLogo.svg" alt=""></div>
+Worldline combines card checkout with bank-redirect payment paths. Refunds and delayed capture options apply across the declared methods. Payment callbacks distinguish successful and rejected outcomes.
 
-Worldline connects to Hyperswitch as a `PaymentGateway` connector using `SignatureKey` authentication with a custom HMAC-SHA256 scheme. The `Authorization` header uses the format `GCS v1HMAC:{api_key_id}:{signed_data}` where `signed_data` is an HMAC-SHA256 signature of the canonical request. All three credentials — API Key ID, Secret API Key, and Merchant ID — are required. Worldline also verifies inbound webhooks using HMAC-SHA256.
+### Status and capabilities
 
-### Connector-Specific Notes
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-* **Custom HMAC signature scheme:** Worldline uses a `GCS v1HMAC` authorization scheme, not a standard Bearer token. Hyperswitch computes the canonical request string (HTTP method + content-type + date + request path) and signs it with HMAC-SHA256 using the Secret API Key. The API Key ID is included in the header to identify which key was used for signing.
-* **Credentials location:** API Key ID, Secret API Key, and Merchant ID are found in your Worldline dashboard under **API Keys**.
-* **Webhook verification:** Worldline uses HMAC-SHA256 to sign webhook events. Hyperswitch verifies inbound Worldline webhooks using the Secret API Key.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Supported for applicable payment methods.
-* Worldline supports online, in-store, and omnichannel payment scenarios with a strong presence in Europe.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+**Integration status:** sandbox
 
-***
+**Category:** payment gateway
 
-### Activating Worldline via Hyperswitch
+**Webhook flows:** payments
 
-#### Prerequisites
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | Giropay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | DEU | EUR |
+| bank redirect | iDEAL | not supported | supported | automatic, manual, sequential automatic | not applicable | - | NLD | EUR |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
 
-1. You need to be registered with Worldline. Sign up at [worldline.com](https://worldline.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Worldline **API Key ID**, **Secret API Key**, and **Merchant ID** are found in your Worldline dashboard under **API Keys**.
-4. Select all payment methods you wish to use Worldline for. Ensure these match the ones configured in your Worldline dashboard.
 
-[Steps to activate Worldline on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Authentication
 
-***
+Worldline requires **API Key ID**, **Secret API Key**, and **Merchant ID**. Hyperswitch joins the HTTP method, content type, date, and endpoint with newline delimiters, signs that string with HMAC-SHA256 using Secret API Key, then sends `Authorization: GCS v1HMAC:<API Key ID>:<signature>`. Merchant ID is placed in each request URL. See [`WorldlineAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline/transformers.rs#L501-L519), [`generate_authorization_token()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L64-L88), and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L100-L127).
 
-### Responsibility Boundaries
+### Webhooks
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, HMAC signature construction on every request, and unified error mapping. **Worldline owns:** payment execution, fraud decisioning, and webhook delivery to Hyperswitch's endpoint. Worldline's fraud layer runs before authorization — a fraud-declined payment is not an authorization failure and cannot be retried automatically.
+Hyperswitch verifies the Base64-decoded `X-GCS-Signature` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L721-L731) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L733-L740).
 
-**Hyperswitch owns:** computing the `GCS v1HMAC` signature on every request. **Worldline owns:** validating it. If the Secret API Key changes in Worldline and is not updated in Hyperswitch, all requests will fail signature validation immediately.
+Handled event wire values: **3**.
 
-***
+| Wire value | Effect |
+|---|---|
+| `payment.paid` | Payment succeeds |
+| `payment.rejected` | Payment fails |
+| `payment.rejected_capture` | Payment fails |
 
-### Common Failure Modes
+The wire names come from [`WebhookEvent`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline/transformers.rs#L772-L782); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L763-L788). Endpoint verification requests are echoed through the response path described by [`get_webhook_api_response()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs#L806-L831).
 
-**HMAC signature validation failure** Symptom: All requests fail with a Worldline authentication error. Fix: Verify all three credentials (API Key ID, Secret API Key, Merchant ID) in Hyperswitch match exactly what is configured in your Worldline dashboard. Any mismatch causes the computed signature to fail validation.
+### Activate Worldline with Hyperswitch
 
-**Webhook verification failure** Symptom: Worldline webhooks arrive at Hyperswitch but are rejected — payment statuses do not update. Fix: Ensure the Secret API Key stored in Hyperswitch is the same key Worldline uses to sign webhook events.
+#### Before you start
 
-**Payment method not available** Symptom: A payment method fails with an availability error from Worldline. Fix: Verify the method is enabled for your Worldline merchant account and matches the selection in the Hyperswitch connector configuration.
+1. Register with Worldline at [worldline.com](https://worldline.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **API Key ID**, **Secret API Key**, and **Merchant ID** under **API Keys** in the Worldline dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
-***
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Worldline-specific behavior.
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/worldline.rs`.
+### Source reference
+
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Worldline connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline.rs) and [Worldline transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/worldline/transformers.rs).
