@@ -22,7 +22,9 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Charges c
 
 **Category:** payment gateway
 
-**Webhook flows:** payments, refunds
+**Webhook flows:** payments
+
+The connector declaration lists `Refunds` in `COINBASE_SUPPORTED_WEBHOOK_FLOWS`, but no refund event exists in the handled wire values — `WebhookEventType` recognizes only `charge:*` events, so refund webhooks cannot be processed. The effective flow is payments only.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
