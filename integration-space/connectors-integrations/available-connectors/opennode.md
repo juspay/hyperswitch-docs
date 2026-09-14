@@ -14,9 +14,12 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** beta
 
@@ -28,14 +31,24 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 |---|---|---|---|---|---|---|
 | crypto | Crypto | not supported | not supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
 
-
 ### Authentication
 
-OpenNode requires an **API Key**. Hyperswitch sends it unchanged in the `Authorization` header for each implemented request path. See [`OpennodeAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L65-L75) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L124-L134).
+OpenNode requires an **API Key**. The connector's [`build_headers()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L82-L105) override sets `Content-Type` and `Accept`, then appends the result of [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L124-L134). That method sends the value mapped by [`OpennodeAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L65-L75) unchanged in the `Authorization` header.
+
+### Before you start
+
+1. Register with OpenNode at [opennode.com](https://www.opennode.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **API Key** from the OpenNode dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
+
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for OpenNode-specific behavior.
 
 ### Webhooks
 
-Hyperswitch verifies the hexadecimal `hashed_order` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L396-L406) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L408-L417).
+Hyperswitch verifies the hexadecimal `hashed_order` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L396-L406) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L408-L417).
+
+Object lookup uses the callback `id` as the connector transaction ID; see [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L419-L428). Resource extraction returns the parsed payment status; see [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L453-L462). Event dispatch reads the status and produces the outcomes below; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L430-L451).
 
 Handled status wire values: **6**.
 
@@ -48,19 +61,8 @@ Handled status wire values: **6**.
 | `unpaid` | No payment update is applied |
 | `refunded` | No payment update is applied |
 
-The lowercase wire values come from [`OpennodePaymentStatus`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L78-L90); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L430-L451).
-
-### Activate OpenNode with Hyperswitch
-
-#### Before you start
-
-1. Register with OpenNode at [opennode.com](https://www.opennode.com/).
-2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Obtain the **API Key** from the OpenNode dashboard.
-4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
-
-Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for OpenNode-specific behavior.
+The lowercase wire values and unknown-value fallback come from [`OpennodePaymentStatus`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L78-L90).
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [OpenNode connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs) and [OpenNode transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0`. See [OpenNode connector source](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs) and [OpenNode transformers](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs).
