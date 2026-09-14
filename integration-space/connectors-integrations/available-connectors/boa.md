@@ -35,13 +35,7 @@ Bank of America covers card payments and several wallet paths. Most declared met
 
 Bank of America requires **API Key**, **Merchant ID**, and **Shared Secret**. Hyperswitch builds a newline-delimited signing string from the host, date, request target, an optional body digest, and Merchant ID; it signs that string with HMAC-SHA256 using the Base64-decoded Shared Secret. The API Key becomes `keyid` in the `Signature` header, while Merchant ID is also sent in `v-c-merchant-id`. See [`BankOfAmericaAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica/transformers.rs#L47-L65) and [`generate_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L97-L137).
 
-### Webhooks
-
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bankofamerica`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L1054-L1077).
-
-### Activate Bank of America with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Register through the [Bank of America developer portal](https://developer.cybersource.com/hello-world/sandbox.html).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -49,6 +43,10 @@ Handled event wire values: **0**. Webhooks are not currently supported, so statu
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Bank of America-specific behavior.
+
+### Webhooks
+
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Bankofamerica`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bankofamerica.rs#L1054-L1077).
 
 ### Source reference
 
