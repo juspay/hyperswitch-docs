@@ -37,7 +37,7 @@ Netcetera requires a PEM **Certificate** and matching **Private Key**. Hyperswit
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Netcetera-specific behavior.
 
-If your activation uses the external authentication flow, follow [External authentication for 3DS](../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
+If your activation uses the external authentication flow, follow [External authentication for 3DS](../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
 
 ### Webhooks
 
