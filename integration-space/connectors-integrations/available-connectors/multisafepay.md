@@ -54,7 +54,7 @@ Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitc
 
 ### Webhooks
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. All webhook methods return `WebhooksNotImplemented`; see [`IncomingWebhook for Multisafepay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L525-L548).
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. Object-reference and resource-object lookups return `WebhooksNotImplemented`, while event typing returns `EventNotSupported`; see [`IncomingWebhook for Multisafepay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L525-L548).
 
 ### Source reference
 
