@@ -34,6 +34,16 @@ Authorize.net is an online payment provider. Its card and selected wallet method
 
 Supply the API Login ID and Transaction Key in the connector configuration. Hyperswitch maps them to the connector's body-based authentication fields. See [`AuthorizedotnetAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet/transformers.rs#L96-L108).
 
+### Before you start
+
+1. Register with Authorize.net at [authorize.net](https://www.authorize.net/).
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Authorize.net dashboard, go to **Account → Security Settings** to find the API Login ID and Transaction Key.
+4. Under **Account → Digital Payment Solutions**, enable the payment methods you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect Authorize.net to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Authorize.net supports.
+
 ### Webhooks
 
 Authorize.net webhooks are verified with HMAC-SHA512. Hyperswitch reads the signature from `X-ANET-Signature` and verifies the raw request body. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet.rs#L1024-L1059).
@@ -50,16 +60,6 @@ The connector recognizes six webhook event names:
 | `net.authorize.payment.refund.created` | Refund is marked successful |
 
 The event names and mappings are defined by [`AuthorizedotnetIncomingWebhookEventType`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/authorizedotnet/transformers.rs#L2340-L2368).
-
-### Before you start
-
-1. Register with Authorize.net at [authorize.net](https://www.authorize.net/).
-2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. In the Authorize.net dashboard, go to **Account → Security Settings** to find the API Login ID and Transaction Key.
-4. Under **Account → Digital Payment Solutions**, enable the payment methods you plan to select in Hyperswitch.
-5. Have the credentials listed in [Authentication](#authentication) ready.
-
-To connect Authorize.net to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Authorize.net supports.
 
 ### Source reference
 

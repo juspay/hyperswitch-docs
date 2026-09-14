@@ -51,12 +51,6 @@ ACI provides services for commerce. Its card methods support recurring charges a
 
 Supply an API Key and Entity ID in the connector configuration. Hyperswitch places the API Key in the `Authorization` header with the Bearer scheme and maps the second credential to `entity_id` in connector requests. See [`AciAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci/transformers.rs#L99-L109) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L88-L99).
 
-### Webhooks
-
-ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so this connector page treats webhooks as unavailable and the status block above remains the supported contract.
-
-The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
-
 ### Before you start
 
 1. Register with ACI at [aciworldwide.com](https://www.aciworldwide.com/).
@@ -65,6 +59,12 @@ The connector source includes incoming-webhook handling code, but until webhook 
 4. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect ACI to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what ACI supports.
+
+### Webhooks
+
+ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so this connector page treats webhooks as unavailable and the status block above remains the supported contract.
+
+The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
 
 ### Troubleshooting
 

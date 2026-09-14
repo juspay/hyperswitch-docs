@@ -36,10 +36,6 @@ Fiserv operates as a payment gateway. Its declared card and wallet methods suppo
 
 Supply an API Key, API Secret, and Merchant ID in the connector configuration. Hyperswitch uses the API Secret to compute a fresh HMAC-SHA256 authorization signature for each request, and sends the signature with the API key, client request ID, timestamp, and HMAC token type. See [`FiservAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv/transformers.rs#L733-L749) and [`generate_authorization_signature()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L67-L127).
 
-### Webhooks
-
-Fiserv webhooks are not currently processed by this connector. Do not configure Fiserv webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L910-L934).
-
 ### Before you start
 
 1. Register with Fiserv at [fiserv.com](https://www.fiserv.com/).
@@ -49,6 +45,10 @@ Fiserv webhooks are not currently processed by this connector. Do not configure 
 5. Have the credentials listed in [Authentication](#authentication) ready.
 
 To connect Fiserv to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Fiserv supports.
+
+### Webhooks
+
+Fiserv webhooks are not currently processed by this connector. Do not configure Fiserv webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/fiserv.rs#L910-L934).
 
 ### Source reference
 

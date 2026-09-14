@@ -46,6 +46,16 @@ TrustPay is a payment gateway for cards, network tokens, bank redirects, bank tr
 
 Supply an API Key, Project ID, and Secret Key in the connector configuration. Card and wallet requests send `X-API-Key: <API key>`. Bank redirect and bank transfer flows first send `Authorization: Basic <base64 project ID and secret key>` to obtain an access token, then send `Authorization: Bearer <access token>` on payment requests. See [`TrustpayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay/transformers.rs#L64-L87), [`build_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L84-L121), and [`RefreshTokenType::get_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L276-L302).
 
+### Before you start
+
+1. Register with TrustPay at [trustpay.eu](https://www.trustpay.eu/).
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Find the API Key, Project ID, and Secret Key in your TrustPay dashboard.
+4. Enable the same payment methods in TrustPay that you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect TrustPay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what TrustPay supports.
+
 ### Webhooks
 
 Configure a webhook merchant secret in Hyperswitch; the shared webhook verifier uses that value as the signature key. See [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_interfaces/src/webhooks.rs#L266-L301). TrustPay webhooks use HMAC-SHA256 verification: Hyperswitch decodes the hex `signature` in the webhook body, removes that field, sorts the remaining values, and joins them with `/` before verification. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L1181-L1218).
@@ -62,16 +72,6 @@ The connector handles six status and credit/debit-indicator combinations. An emp
 | `DBIT` | `Chargebacked` | Dispute is marked lost |
 
 The wire values and mappings are defined by [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay.rs#L1111-L1167) and [`CreditDebitIndicator`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/trustpay/transformers.rs#L2074-L2091).
-
-### Before you start
-
-1. Register with TrustPay at [trustpay.eu](https://www.trustpay.eu/).
-2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Find the API Key, Project ID, and Secret Key in your TrustPay dashboard.
-4. Enable the same payment methods in TrustPay that you plan to select in Hyperswitch.
-5. Have the credentials listed in [Authentication](#authentication) ready.
-
-To connect TrustPay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what TrustPay supports.
 
 ### Source reference
 

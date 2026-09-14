@@ -36,6 +36,17 @@ Volt is a payment gateway for open banking payments through bank redirects. The 
 
 Supply a Username, Password, Client ID, and Client Secret in the connector configuration. Hyperswitch exchanges all four credentials for an access token, then sends `Authorization: Bearer <access token>` on payment requests. See [`VoltAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt/transformers.rs#L293-L317), [`VoltAuthUpdateRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt/transformers.rs#L242-L270), and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt.rs#L95-L130).
 
+### Before you start
+
+1. Register with Volt at [volt.io](https://www.volt.io/).
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Volt dashboard, go to **Configuration → Customers** and open the merchant's **Credentials** section to find the Username and Password.
+4. Go to **Configuration → Application** and open **Credentials** to find the Client ID and Client Secret. Create an application first if none exists.
+5. Enable the same payment methods in Volt that you plan to select in Hyperswitch.
+6. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect Volt to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Volt supports.
+
 ### Webhooks
 
 Configure a webhook merchant secret in Hyperswitch; the shared webhook verifier uses that value as the signature key. See [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_interfaces/src/webhooks.rs#L266-L301). Volt webhooks use HMAC-SHA256 verification: Hyperswitch reads the hex signature from `X-Volt-Signed` and verifies the request body, `X-Volt-Timed`, and the version from the user-agent value. See [`webhook_headers`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt/transformers.rs#L39-L44) and [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt.rs#L668-L708).
@@ -53,17 +64,6 @@ The connector recognizes seven webhook status values. An empty body is treated a
 | Refund | `REFUND_FAILED` | Refund is marked failed |
 
 The wire values and mappings are defined by [`VoltWebhookPaymentStatus`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/volt/transformers.rs#L730-L780).
-
-### Before you start
-
-1. Register with Volt at [volt.io](https://www.volt.io/).
-2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. In the Volt dashboard, go to **Configuration → Customers** and open the merchant's **Credentials** section to find the Username and Password.
-4. Go to **Configuration → Application** and open **Credentials** to find the Client ID and Client Secret. Create an application first if none exists.
-5. Enable the same payment methods in Volt that you plan to select in Hyperswitch.
-6. Have the credentials listed in [Authentication](#authentication) ready.
-
-To connect Volt to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Volt supports.
 
 ### Source reference
 
