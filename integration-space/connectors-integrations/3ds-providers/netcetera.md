@@ -41,7 +41,7 @@ If your activation uses the external authentication flow, follow [External authe
 
 ### Webhooks
 
-Handled event wire values: **0** — Netcetera does not dispatch on individual event wire values. The incoming webhook implementation parses result callbacks for their external authentication reference (the 3DS server transaction ID) and resource object, and maps every callback to a single fixed event, `ExternalAuthenticationARes`. See [`IncomingWebhook for Netcetera`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L179-L211).
+Handled event wire values: **0**. Netcetera does not dispatch on individual event wire values. The incoming webhook implementation parses result callbacks for their external authentication reference (the 3DS server transaction ID) and resource object, and maps every callback to a single fixed event, `ExternalAuthenticationARes`. See [`IncomingWebhook for Netcetera`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L179-L211).
 
 ### Source reference
 

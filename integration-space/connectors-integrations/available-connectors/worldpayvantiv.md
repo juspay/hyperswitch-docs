@@ -43,14 +43,14 @@ Sync, dispute, and file paths use flow-specific headers. Those paths call [`get_
 1. Register with Worldpay Vantiv at [worldpay.com](https://www.worldpay.com/en).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Obtain **Username**, **Password**, and **Merchant ID** from the Worldpay Vantiv dashboard.
-4. The connector configuration also requires the **Report Group** and **Merchant Config Currency** metadata fields — authorization validates the configured currency, so these must be set correctly on the connector account.
+4. The connector configuration also requires the **Report Group** and **Merchant Config Currency** metadata fields; authorization validates the configured currency, so these must be set correctly on the connector account.
 5. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Worldpay Vantiv-specific behavior.
 
 ### Webhooks
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. Sync requests go to a separate reporting endpoint — `{secondary_base_url}/reports/dtrPaymentStatus/{transaction_id}` — distinct from the primary XML transaction URL; see the [`payment-sync get_url()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L398-L409) construction. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1544-L1549), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1551-L1557), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1559-L1565) each return `WebhooksNotImplemented`.
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. Sync requests go to a separate reporting endpoint, `{secondary_base_url}/reports/dtrPaymentStatus/{transaction_id}`, distinct from the primary XML transaction URL; see the [`payment-sync get_url()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L398-L409) construction. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1544-L1549), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1551-L1557), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/worldpayvantiv.rs#L1559-L1565) each return `WebhooksNotImplemented`.
 
 ### Source reference
 
