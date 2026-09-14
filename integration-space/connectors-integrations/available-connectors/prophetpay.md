@@ -35,7 +35,7 @@ Prophetpay requires **Username**, **Password**, and **Profile ID**. The connecto
 
 ### Before you start
 
-1. Register for Prophetpay at [clubprophet.com](https://www.clubprophet.com/products---prophetpay).
+1. Register for Prophetpay at [clubprophet.com](https://www.clubprophet.com/products/prophetpay).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Obtain **Username** and **Password** during onboarding and obtain **Profile ID** from the Prophetpay dashboard.
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
