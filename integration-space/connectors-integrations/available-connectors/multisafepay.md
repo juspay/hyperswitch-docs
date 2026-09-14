@@ -1,8 +1,6 @@
 ---
 description: >-
-  Accept payments through MultiSafepay — a Dutch fintech providing online
-  payment processing, digital wallets, and fraud prevention — via Juspay
-  Hyperswitch.
+  Accept card, bank redirect, pay-later, and wallet payments through MultiSafepay.
 metaLinks:
   alternates:
     - multisafepay.md
@@ -10,51 +8,56 @@ metaLinks:
 
 # MultiSafepay
 
-<div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/multisafepayLogo.svg" alt=""></div>
+MultiSafepay brings several checkout families into one connector, including cards, bank redirects, wallets, and pay-later payments. Some paths can be reused with mandates, while others remain one-time checkout options. Refund handling is available across the declared methods.
 
-MultiSafepay connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey` authentication — the API Key is embedded directly in the request URL as a query parameter (`?api_key={api_key}`), not in an HTTP header. All requests use `application/json`. MultiSafepay is a Dutch payment service provider with strong European payment method coverage.
+### Status and capabilities
 
-### Connector-Specific Notes
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-* **API key in URL query parameter:** MultiSafepay does not use an `Authorization` header. The API Key is appended to the request URL as `?api_key={api_key}` on every request (orders, sync, captures, refunds). Do not place the key in a header field — only the URL parameter is validated.
-* **Credentials location:** API Key is found in your MultiSafepay dashboard under **Integrations → Site**.
-* **Capture methods supported:** Automatic and SequentialAutomatic. Manual capture is not supported.
-* **SetupMandate:** Not supported.
-* **Webhook support:** Webhooks are not implemented for MultiSafepay in Hyperswitch — payment status relies on sync polling.
-* MultiSafepay is a Dutch fintech company providing online payment processing, digital wallets, and fraud prevention for European merchants.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+**Integration status:** sandbox
 
-***
+**Category:** payment gateway
 
-### Activating MultiSafepay via Hyperswitch
+**Webhook flows:** None declared in code
 
-#### Prerequisites
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | AUT | EUR |
+| bank redirect | Giropay | not supported | supported | automatic, sequential automatic | not applicable | - | DEU | EUR |
+| bank redirect | iDEAL | not supported | supported | automatic, sequential automatic | not applicable | - | NLD | EUR |
+| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | 9 ([full list](https://hyperswitch.io/pm-list)) | EUR |
+| bank redirect | Trustly | not supported | supported | automatic, sequential automatic | not applicable | - | 15 ([full list](https://hyperswitch.io/pm-list)) | EUR, GBP, SEK |
+| card | Credit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
+| pay later | Klarna | not supported | supported | automatic, sequential automatic | not applicable | - | 13 ([full list](https://hyperswitch.io/pm-list)) | DKK, EUR, GBP, NOK, SEK |
+| wallet | Alipay | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR, USD |
+| wallet | Google Pay | supported | supported | automatic, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | MB WAY | not supported | supported | automatic, sequential automatic | not applicable | - | PRT | EUR |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic | not applicable | - | 249 ([full list](https://hyperswitch.io/pm-list)) | 25 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR |
 
-1. You need to be registered with MultiSafepay. Sign up at [multisafepay.com](https://www.multisafepay.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. MultiSafepay **API Key** is found in your MultiSafepay dashboard under **Integrations → Site**.
-4. Select all payment methods you wish to use MultiSafepay for. Ensure these match the ones configured in your MultiSafepay dashboard.
 
-[Steps to activate MultiSafepay on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Authentication
 
-***
+MultiSafepay requires an **API Key**. Hyperswitch sends it unchanged in the `Authorization` header for each implemented request path. See [`MultisafepayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay/transformers.rs#L821-L832) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L95-L106).
 
-### Responsibility Boundaries
+### Webhooks
 
-**Hyperswitch owns:** routing decisions, retry scheduling, appending the API Key to every request URL, and unified error mapping. **MultiSafepay owns:** payment execution, fraud decisioning, and payment method routing. Since the API Key is in the URL, it must be kept confidential — HTTPS is required for all requests.
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation returns `WebhooksNotImplemented`; see [`IncomingWebhook for Multisafepay`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs#L525-L548).
 
-**Hyperswitch owns:** polling for payment status (no webhook delivery). **MultiSafepay owns:** making payment status available via the sync endpoint. All status updates rely on Hyperswitch's sync polling.
+### Activate MultiSafepay with Hyperswitch
 
-***
+#### Before you start
 
-### Common Failure Modes
+1. Register with MultiSafepay at [multisafepay.com](https://www.multisafepay.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **API Key** under **Integrations → Site** in the MultiSafepay dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
-**Authentication failure** Symptom: All requests fail with a MultiSafepay authentication error. Fix: Verify the API Key in Hyperswitch matches the one found in your MultiSafepay dashboard under **Integrations → Site**. The key is appended to the URL as `?api_key={value}`.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for MultiSafepay-specific behavior.
 
-**Payment status not updating** Symptom: Payments remain pending in Hyperswitch. Fix: Since MultiSafepay does not push webhooks in this integration, status is updated via sync polling. Ensure Hyperswitch's sync polling is running and the MultiSafepay endpoint is reachable.
+### Source reference
 
-**Payment method not configured** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your MultiSafepay merchant account and matches the selection in the Hyperswitch connector configuration.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/multisafepay.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [MultiSafepay connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay.rs) and [MultiSafepay transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/multisafepay/transformers.rs).
