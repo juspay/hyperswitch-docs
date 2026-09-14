@@ -22,20 +22,14 @@ Netcetera handles external 3DS authentication rather than payment execution. It 
 
 **Webhook flows:** None declared in code
 
-_This connector declares no payment methods. It is a authentication provider rather than a payment processor._
+_This connector declares no payment methods. It is an authentication provider rather than a payment processor._
 
 
 ### Authentication
 
 Netcetera requires a PEM **Certificate** and matching **Private Key**. Hyperswitch maps them through `CertificateAuth` for mutual TLS and sends no HTTP authorization header. See [`NetceteraAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera/transformers.rs#L232-L246) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L120-L125).
 
-### Webhooks
-
-Handled event wire values: **0**. The connector parses Netcetera result callbacks for their external authentication reference and resource object, but it does not define an event-type mapping in its incoming webhook implementation. See [`IncomingWebhook for Netcetera`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L179-L211).
-
-### Activate Netcetera with Hyperswitch
-
-#### Before you start
+### Before you start
 
 1. Contact [netcetera.com](https://www.netcetera.com/) to register for 3DS server access.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
@@ -44,6 +38,10 @@ Handled event wire values: **0**. The connector parses Netcetera result callback
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Netcetera-specific behavior.
 
 If your activation uses the external authentication flow, follow [External authentication for 3DS](../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
+
+### Webhooks
+
+Handled event wire values: **0** — Netcetera does not dispatch on individual event wire values. The incoming webhook implementation parses result callbacks for their external authentication reference (the 3DS server transaction ID) and resource object, and maps every callback to a single fixed event, `ExternalAuthenticationARes`. See [`IncomingWebhook for Netcetera`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/netcetera.rs#L179-L211).
 
 ### Source reference
 
