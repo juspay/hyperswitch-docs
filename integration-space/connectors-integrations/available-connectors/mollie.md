@@ -44,7 +44,7 @@ European bank redirects, SEPA Direct Debit, Klarna, PayPal, Apple Pay, and cards
 
 1. Register with Mollie. Sign up at [mollie.com](https://www.mollie.com/).
 2. Sign into the [Hyperswitch control center](https://app.hyperswitch.io/register) or create your Hyperswitch account.
-3. Copy your API key and profile token from the Mollie dashboard.
+3. Copy your API key from the Mollie dashboard; if you use card tokenization, also copy the profile token.
 4. Enable the same payment methods in Mollie and in your Hyperswitch connector configuration.
 
 To connect Mollie to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Mollie supports.
