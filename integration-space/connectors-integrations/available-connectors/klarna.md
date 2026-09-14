@@ -31,19 +31,19 @@ Klarna provides pay later payments through a payment gateway integration. The de
 
 Supply an API Username and API Password in the connector configuration. Hyperswitch combines them as `<API username>:<API password>`, Base64-encodes the result, and sends it as `Authorization: Basic <base64(username:password)>` on connector requests. See [`KlarnaAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna/transformers.rs#L454-L470) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna.rs#L93-L106).
 
+### Before you start
+
+1. Register with Klarna at [klarna.com/international/business](https://www.klarna.com/international/business/).
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. In the Klarna merchant portal, go to **Settings → API credentials** to find the API Username and API Password.
+4. Enable the same payment methods in Klarna that you plan to select in Hyperswitch.
+5. Have the credentials listed in [Authentication](#authentication) ready.
+
+To connect Klarna to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Klarna supports.
+
 ### Webhooks
 
 Klarna webhooks are not currently processed by this connector. Do not configure Klarna webhooks as the source of status updates in Hyperswitch. The incoming webhook implementation returns `EventNotSupported` and `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/a17a23c4c4c907d2314043a32a9f505f7f2bd4f9/crates/hyperswitch_connectors/src/connectors/klarna.rs#L1450-L1474).
-
-### Activate Klarna with Hyperswitch
-
-#### Before you start
-
-1. Register with Klarna.
-2. Create a Hyperswitch account.
-3. Have the credentials listed in [Authentication](#authentication) ready.
-
-To connect Klarna to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Klarna supports.
 
 ### Source reference
 
