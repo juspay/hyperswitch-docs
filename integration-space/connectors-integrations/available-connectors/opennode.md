@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept bitcoin payments and send bitcoin payouts through OpenNode via Juspay
-  Hyperswitch — instant, secure, and low-cost crypto payment processing.
+  Accept cryptocurrency payments through OpenNode with signed payment status callbacks.
 metaLinks:
   alternates:
     - opennode.md
@@ -11,46 +10,57 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/opennodeLogo.svg" alt=""></div>
 
-OpenNode connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey` authentication — the API Key is sent as a raw `Authorization: {api_key}` header (without a "Bearer " prefix). All requests use `application/json`. OpenNode provides Bitcoin payment acceptance and payout capabilities for global businesses.
+OpenNode provides a bitcoin checkout path with asynchronous payment states. Underpaid and expired orders require merchant attention, while paid orders complete the payment. The declared checkout path does not include refunds or mandate reuse.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **Raw Authorization header (no Bearer prefix):** OpenNode does not use the `Authorization: Bearer {key}` format. The API Key is sent as `Authorization: {api_key}` directly. Entering the key in the control center is sufficient — Hyperswitch handles the header format automatically.
-* **Credentials location:** API Key is found in your OpenNode dashboard.
-* **Webhook verification:** OpenNode delivers webhook events to Hyperswitch using HMAC-SHA256 verification. Configure the Hyperswitch webhook endpoint in your OpenNode dashboard.
-* **Capture methods supported:** Automatic only. Manual capture is not supported for Bitcoin payments.
-* OpenNode makes it easy to accept Bitcoin payments and send Bitcoin payouts. They provide every business with access to instant, secure, and low-cost Bitcoin payments.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
+     Do not edit by hand. This block regenerates from the connector's
+     SupportedPaymentMethods declaration in code; edit that instead. -->
 
-***
+**Integration status:** beta
 
-### Activating OpenNode via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** payments
 
-1. You need to be registered with OpenNode. Sign up at [opennode.com](https://www.opennode.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. The OpenNode **API Key** is found in your OpenNode dashboard.
-4. Select all payment methods you wish to use OpenNode for. Ensure these match the ones configured in your OpenNode dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
+|---|---|---|---|---|---|---|
+| crypto | Crypto | not supported | not supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
 
-[Steps to activate OpenNode on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
 
-***
+### Authentication
 
-### Responsibility Boundaries
+OpenNode requires an **API Key**. Hyperswitch sends it unchanged in the `Authorization` header for each implemented request path. See [`OpennodeAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L65-L75) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L124-L134).
 
-**Hyperswitch owns:** routing decisions, retry scheduling, sending the API Key in the Authorization header on every request, and unified error mapping. **OpenNode owns:** Bitcoin charge creation, Lightning Network routing, blockchain settlement confirmation, and webhook delivery.
+### Webhooks
 
-**Hyperswitch owns:** presenting the correct API Key. **OpenNode owns:** validating it. If the API Key is regenerated in OpenNode and not updated in Hyperswitch, all requests will fail authentication immediately.
+Hyperswitch verifies the hexadecimal `hashed_order` value with HMAC-SHA256 over the raw request body. See [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L396-L406) and [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L408-L417).
 
-***
+Handled status wire values: **6**.
 
-### Common Failure Modes
+| Wire value | Effect |
+|---|---|
+| `paid` | Payment succeeds |
+| `underpaid` | Payment requires action |
+| `expired` | Payment requires action |
+| `processing` | Payment is processing |
+| `unpaid` | No payment update is applied |
+| `refunded` | No payment update is applied |
 
-**Authentication failure** Symptom: All requests fail with an OpenNode authentication error. Fix: Verify the API Key in Hyperswitch matches the one in your OpenNode dashboard. Note that OpenNode uses a raw Authorization header (no "Bearer " prefix) — the Hyperswitch implementation handles this format automatically.
+The lowercase wire values come from [`OpennodePaymentStatus`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L78-L90); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs#L430-L451).
 
-**Webhook verification failure** Symptom: OpenNode events arrive at Hyperswitch but payment statuses do not update. Fix: Verify the Hyperswitch webhook endpoint URL is configured correctly in your OpenNode dashboard and that the webhook secret matches.
+### Activate OpenNode with Hyperswitch
 
-***
+#### Before you start
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/opennode.rs`.
+1. Register with OpenNode at [opennode.com](https://www.opennode.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **API Key** from the OpenNode dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
+
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for OpenNode-specific behavior.
+
+### Source reference
+
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [OpenNode connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode.rs) and [OpenNode transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs).
