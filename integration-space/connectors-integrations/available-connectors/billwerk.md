@@ -13,8 +13,8 @@ Billwerk connects subscription commerce to card payment processing. Both credit 
 ### Status and capabilities
 
 <!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+     Do not edit by hand. This block regenerates from ConnectorSpecifications
+     and pm_filters in code; edit those sources instead. -->
 
 **Integration status:** sandbox
 
