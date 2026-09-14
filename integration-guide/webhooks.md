@@ -88,9 +88,9 @@ The v1 API schema defines 33 event wire values:
 32. `surcharge_payment_succeeded`
 33. `surcharge_refund_succeeded`
 
-The outgoing webhook object has 6 fields. `merchant_id`, `event_id`, `event_type`, and `content` are required. `timestamp` and `processor_merchant_id` are also defined by the schema.
+The outgoing webhook object has six fields. `merchant_id`, `event_id`, `event_type`, `content`, and `timestamp` are required; `processor_merchant_id` is optional.
 
-The `content` object has 6 wire shapes. Its `type` is one of `payment_details`, `refund_details`, `dispute_details`, `mandate_details`, `payout_details`, or `subscription_details`. The matching resource is in `content.object`.
+The `content` object has six wire shapes. Its `type` is one of `payment_details`, `refund_details`, `dispute_details`, `mandate_details`, `payout_details`, or `subscription_details`. The matching resource is in `content.object`.
 
 See the [outgoing webhook schema](https://api-reference.hyperswitch.io/v1/schemas/outgoing--webhook) for each resource shape.
 
