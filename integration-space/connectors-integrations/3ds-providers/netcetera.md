@@ -1,11 +1,11 @@
 ---
 description: >-
-  Authenticate payments through Netcetera using client-certificate authentication.
+  Authenticate payments through Netcetera's EMV 3DS 2.X processing ecosystem
+  integrated via Juspay Hyperswitch as an external 3DS authentication provider.
 metaLinks:
   alternates:
     - netcetera.md
 ---
-
 # Netcetera
 
 Netcetera handles external 3DS authentication rather than payment execution. It does not declare payment methods because its role ends when authentication data is returned for the payment connector. Merchants use it to add a dedicated authentication step to supported payment flows.
@@ -37,7 +37,7 @@ Netcetera requires a PEM **Certificate** and matching **Private Key**. Hyperswit
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Netcetera-specific behavior.
 
-If your activation uses the external authentication flow, follow [External authentication for 3DS](../../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
+If your activation uses the external authentication flow, follow [External authentication for 3DS](../../integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md) after the connector is enabled.
 
 ### Webhooks
 
