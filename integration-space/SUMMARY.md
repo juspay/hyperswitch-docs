@@ -7,6 +7,7 @@
   * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 * [Payment Processors](connectors-integrations/payment-processor-capabilities.md)
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
+    * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
