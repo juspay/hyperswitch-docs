@@ -10,6 +10,7 @@
     * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
+    * [Affirm](connectors-integrations/available-connectors/affirm.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
     * [Archipel](connectors-integrations/available-connectors/archipel.md)
     * [Authipay](connectors-integrations/available-connectors/authipay.md)
