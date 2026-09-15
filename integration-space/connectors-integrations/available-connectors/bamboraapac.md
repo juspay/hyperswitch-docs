@@ -1,5 +1,5 @@
 ---
-description: Accept card payments through Bambora Asia-Pacific.
+description: Bambora Asia-Pacific has been decommissioned. The connector no longer processes payments.
 metaLinks:
   alternates:
     - bamboraapac.md
@@ -7,47 +7,20 @@ metaLinks:
 
 # Bambora Asia-Pacific
 
-Accept credit and debit cards through Bambora Asia-Pacific. Cards support mandates and refunds, with automatic or manual capture. 3DS is not supported.
+{% hint style="danger" %}
+**Decommissioned.** Bambora decommissioned its Asia-Pacific platform in September 2025. The Hyperswitch Bambora Asia-Pacific connector can no longer process payments, and you should not configure it for new or existing traffic.
+{% endhint %}
 
-### Status and capabilities
+### Status
 
-<!-- generated from GET /feature_matrix; hyperswitch d8b6ebe773690aa37cf249b2992c2358dbd7f438; host http://localhost:8080; fetched 2026-09-15; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
-     Do not edit by hand. Payment method rows regenerate from the
-     connector's SupportedPaymentMethods declaration; countries and
-     currencies come from pm_filters in config/development.toml.
-     Webhook flows and capture methods are reconciled against
-     implemented flows. Edit those sources instead. -->
+Bambora announced that the Bambora Asia-Pacific platform would be decommissioned as of September 2025; see the notice on the [Bambora Asia-Pacific developer site](https://dev-apac.bambora.com/support/guides/getting-help/contact-us) and the [Bambora decommissioning FAQs](https://support-apac.bambora.com/hc/en-au/sections/6008611698831-Bambora-decommissioning-FAQs). For questions about the decommissioning, Bambora directs merchants to BamboraAUFAQ@worldline.com.
 
-**Integration status:** sandbox
+The connector is still present in Hyperswitch, but the API hosts it is configured to call no longer exist: requests to the [production endpoint](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/config/deployments/production.toml#L48) (`www.bambora.co.nz`) and the [sandbox endpoint](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/config/deployments/sandbox.toml#L48) (`demo.ippayments.com.au`) fail because neither hostname resolves. Payments, captures, refunds, syncs, and mandate setup routed to this connector will fail.
 
-**Category:** payment gateway
+Removing the connector from Hyperswitch is being discussed. This page will be removed when the connector is.
 
-**Webhook flows:** None declared in code
+### What to do
 
-| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
-|---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
-
-Use automatic or manual capture. The connector declares sequential automatic capture, but the payment request builder accepts only automatic and manual, so a payment with sequential automatic capture fails with `CaptureMethodNotSupported` before any request is sent. See [`get_transaction_type()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs#L173-L179) and the [declared capture methods](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L736-L740).
-
-Voiding a payment is not implemented: the connector has no request for the void flow, so a cancel request never reaches Bambora Asia-Pacific. If you use manual capture, do not rely on Hyperswitch to cancel an uncaptured authorization. See [`ConnectorIntegration<Void>`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L527).
-
-### Authentication
-
-Supply a **Username**, **Password**, and **Account Number**. Hyperswitch maps the connector API Key to Username, API Secret to Password, and the second key to Account Number. These values are written to the XML request as `<UserName>`, `<Password>`, and `<AccountNumber>`; the transport adds no authorization header. See [`BamboraapacAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs#L181-L203), [`get_transaction_body()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs#L73-L102), and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L86-L101).
-
-### Before you start
-
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Have the **Username**, **Password**, and **Account Number** ready.
-
-To connect Bambora Asia-Pacific to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Bambora Asia-Pacific supports.
-
-### Webhooks
-
-Bambora Asia-Pacific webhooks are not supported. Use payment sync and refund sync for status updates. The connector's webhook handlers all return `WebhooksNotImplemented`; see [`IncomingWebhook for Bamboraapac`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L704-L728).
-
-### Source reference
-
-Capture, void, authentication, and webhook behavior on this page is tied to Hyperswitch `d8b6ebe773690aa37cf249b2992c2358dbd7f438`. See [Bambora Asia-Pacific connector source](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs) and [Bambora Asia-Pacific transformers](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs).
+- If you have a Bambora Asia-Pacific connector configured, route its traffic to another connector and disable it.
+- Do not create new Bambora Asia-Pacific connector accounts.
+- The [Bambora](bambora.md) connector is a separate integration that calls a different API ([`api.na.bambora.com`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/config/deployments/production.toml#L47)) and is not covered by this notice.
