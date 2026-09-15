@@ -11,6 +11,7 @@
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
+    * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
