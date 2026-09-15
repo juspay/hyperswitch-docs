@@ -1599,7 +1599,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries/processo
 
 <summary>What happens when a refund fails?</summary>
 
-When a refund fails, Hyperswitch sends a **`refund_failed`** webhook event. The refund status is updated to failed, the failure details are available via the Refunds Retrieve API, and the failed refund appears in the **Payment Operations dashboard**.
+When a refund fails, the API reports `failed`, the failure details are available through `GET /refunds/{refund_id}`, and the failed refund appears in the **Payment Operations dashboard**. See [Refunds](../integration-guide/payment-suite/refunds.md) for the API status mapping and [Webhooks](../integration-guide/webhooks.md) for refund events.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks\
@@ -1611,7 +1611,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/account-management/analytics-and
 
 <summary>How long do refunds take to appear on customer statements?</summary>
 
-Refund timing depends on the payment processor and card issuer. In most cases, refunds appear within **5 to 14 business days**.
+The Hyperswitch API does not define how long a refund takes to appear on a customer statement. That timing is owned by the payment processor and issuer. See [Refund windows](../integration-guide/payment-suite/refunds.md#refund-windows) for the separate server-side eligibility check.
 
 </details>
 
@@ -1627,8 +1627,7 @@ GET /refunds/{refund_id}
 
 **Webhooks**
 
-* `refund_succeeded`
-* `refund_failed`
+See the refund events in [Webhooks](../integration-guide/webhooks.md).
 
 **Control Centre**
 
@@ -1643,7 +1642,7 @@ https://api-reference.hyperswitch.io/v1/refunds/refunds--retrieve#refunds-retrie
 
 <summary>Can I issue multiple partial refunds for a single payment?</summary>
 
-Yes. Specify an amount less than the original payment. The total refunded amount must not exceed the original payment value. Each partial refund is processed as a separate operation linked to the original payment.
+Yes. Each partial refund is a separate operation. The sum of previous non-failed refund amounts and the new amount must not exceed `amount_captured`. See [Full and partial refund amounts](../integration-guide/payment-suite/refunds.md#full-and-partial-refund-amounts).
 
 Documentation:\
 https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create
@@ -1654,12 +1653,7 @@ https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create
 
 <summary>What refund reason codes are available?</summary>
 
-* `duplicate` — The payment was processed more than once
-* `fraudulent` — The transaction was identified as fraudulent
-* `customer_request` — The customer requested the refund
-* `other` — Any other refund reason
-
-The `reason` field is optional.
+The `reason` field is an optional string in the v1 request. A processor can restrict the accepted values. For example, Stripe accepts `duplicate`, `fraudulent`, or `requested_by_customer`. See the request-field guidance in [Refunds](../integration-guide/payment-suite/refunds.md#create-a-refund).
 
 Documentation:\
 https://api-reference.hyperswitch.io/v1/refunds/refunds--create
@@ -1670,24 +1664,7 @@ https://api-reference.hyperswitch.io/v1/refunds/refunds--create
 
 <summary>How do I issue full vs partial refunds?</summary>
 
-**Full refund**
-
-```json
-POST /refunds
-{
-  "payment_id": "pay_xxxxx"
-}
-```
-
-**Partial refund**
-
-```json
-POST /refunds
-{
-  "payment_id": "pay_xxxxx",
-  "amount": 500
-}
-```
+For a full refund before any earlier non-failed refund, omit `amount`. For a partial refund, send `amount` in the currency's lowest denomination. The total is limited by `amount_captured`, not the original requested payment amount. See [Full and partial refund amounts](../integration-guide/payment-suite/refunds.md#full-and-partial-refund-amounts).
 
 Documentation:\
 https://api-reference.hyperswitch.io/v1/refunds/refunds--create
@@ -2131,7 +2108,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 
 **Payment**: `payment_succeeded` · `payment_failed` · `payment_processing` · `payment_cancelled` · `payment_authorized` · `payment_captured`
 
-**Refund**: `refund_succeeded` · `refund_failed`
+**Refund**: see the current refund event list in [Webhooks](../integration-guide/webhooks.md).
 
 **Dispute**: `dispute_opened` · `dispute_expired` · `dispute_accepted` · `dispute_cancelled` · `dispute_challenged` · `dispute_won` · `dispute_lost`
 
