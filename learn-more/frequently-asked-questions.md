@@ -1653,7 +1653,7 @@ https://api-reference.hyperswitch.io/v1/refunds/refunds--create#refunds-create
 
 <summary>What refund reason codes are available?</summary>
 
-The `reason` field is an optional string in the v1 request. A processor can restrict the accepted values. For example, Stripe accepts `duplicate`, `fraudulent`, or `requested_by_customer`. See the request-field guidance in [Refunds](../integration-guide/payment-suite/refunds.md#create-a-refund).
+Hyperswitch does not define a fixed set of reason codes. The `reason` field is an optional free-text string in the v1 request, and Hyperswitch stores it on the refund. Whether it is passed to the processor depends on the connector; for example, the Stripe connector does not send it to Stripe. See the request-field guidance in [Refunds](../integration-guide/payment-suite/refunds.md#create-a-refund).
 
 Documentation:\
 https://api-reference.hyperswitch.io/v1/refunds/refunds--create
