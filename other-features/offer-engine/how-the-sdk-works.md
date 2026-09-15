@@ -1,7 +1,5 @@
 # How the SDK works
 
-
-
 {% hint style="info" %}
 If you use the Hyperswitch Web SDK (unified checkout or the card element), offers work **without any frontend changes**. This page explains what the SDK does under the hood, and the one optional hook you can use to mirror the discount in your own UI.
 {% endhint %}
@@ -81,11 +79,12 @@ unifiedCheckout.mount("#unified-checkout");
 
 **2. Listen for the event:**
 
+{% tabs %}
+{% tab title="JavaScript" %}
 ```js
-window.addEventListener("message", (ev) => {
-  const data = typeof ev.data === "string" ? JSON.parse(ev.data) : ev.data;
-  if (data?.eventName === "appliedOffersInfo") {
-    const offer = data.payload.offers[0]; // the single applied offer
+unifiedCheckout.on("change", (event) => {
+    if (event?.eventName === "appliedOffersInfo") {
+    const offer = event.payload.offers[0]; // the single applied offer
     // offer.offerAmount  → discount in minor units (e.g. 2000 = $20.00)
     // offer.code         → "WELCOME10"
     // offer.title        → "10% off on your first card payment"
@@ -94,6 +93,28 @@ window.addEventListener("message", (ev) => {
   }
 });
 ```
+{% endtab %}
+
+{% tab title="React" %}
+```jsx
+<PaymentElement
+  options={{
+    subscriptionEvents: ["appliedOffersInfo"],
+    // ...your other options
+  }}
+  onChange={(event) => {
+    if (event?.eventName === "appliedOffersInfo") {
+    const offer = event.payload.offers[0]; // the single applied offer
+    // offer.offerAmount  → discount in minor units (e.g. 2000 = $20.00)
+    // offer.code         → "WELCOME10"
+    // offer.title        → "10% off on your first card payment"
+    // offer.currency     → "USD"
+    updateOrderSummary(offer);
+}
+/>
+```
+{% endtab %}
+{% endtabs %}
 
 The event fires whenever the applied offer changes — including when it clears (customer switches to an ineligible card). The payload always contains at most one offer.
 
