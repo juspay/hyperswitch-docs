@@ -81,7 +81,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PICI compliant merchants to direct pass card + NTID for processing MIT recurring payments
+Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PCI compliant merchants to direct pass card + NTID for processing MIT recurring payments
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account). A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`. This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
