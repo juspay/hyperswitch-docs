@@ -7,11 +7,14 @@
   * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 * [Payment Processors](connectors-integrations/payment-processor-capabilities.md)
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
+    * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
+    * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
+    * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
@@ -115,7 +118,6 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
-
 
 
 
