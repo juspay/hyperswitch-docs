@@ -8,7 +8,7 @@ metaLinks:
 
 # AbsaSanlam
 
-AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions use automatic capture, while mandates and refunds are unavailable. The connector declaration does not expose webhook flow classes.
+AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions use automatic capture, while mandates and refunds are unavailable. Webhooks work for payments and disputes, though the feature matrix lists no webhook flows.
 
 ### Status and capabilities
 
