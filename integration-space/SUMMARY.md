@@ -14,6 +14,7 @@
     * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
+    * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
