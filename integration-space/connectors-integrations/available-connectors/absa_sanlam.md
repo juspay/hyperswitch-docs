@@ -1,6 +1,6 @@
 ---
 description: >-
-  Process EFT debit order payments through AbsaSanlam with HMAC-signed webhooks.
+  AbsaSanlam connector status: payment flows are not yet implemented, so payments cannot be processed.
 metaLinks:
   alternates:
     - absa_sanlam.md
@@ -8,7 +8,7 @@ metaLinks:
 
 # AbsaSanlam
 
-AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions use automatic capture, while mandates and refunds are unavailable. Webhooks work for payments and disputes, though the feature matrix lists no webhook flows.
+AbsaSanlam is an EFT debit order connector, but Hyperswitch cannot currently process payments with it: every payment and refund flow in the connector is unimplemented, so no payment request ever reaches AbsaSanlam. The capability block below reflects what the connector's code declares, not what currently works. We are working on it; see [the tracking issue](https://github.com/juspay/hyperswitch/issues/14234).
 
 ### Status and capabilities
 
@@ -19,19 +19,23 @@ AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions us
      Webhook flows and capture methods are reconciled against
      implemented flows. Edit those sources instead. -->
 
-**Integration status:** live
+**Integration status:** live (declared in code; the payment flows are not implemented, see below)
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code. AbsaSanlam does send webhooks for payments and disputes, and Hyperswitch handles them (see the Webhooks section below).
+**Webhook flows:** None declared in code
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
 | bank debit | EFT Debit Order | not supported | not supported | automatic | - | - |
 
+This table is the connector's declared capability set. Every flow behind it (`Authorize`, `PSync`, `Capture`, `Void`, refund `Execute`, refund `RSync`, and the rest) returns `FlowNotSupported`, so none of these capabilities can currently be used. See [`ConnectorIntegration<Authorize>`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L198-L210) and the [full set of stubbed flows](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L138-L301).
+
 ### Authentication
 
 Supply an **API Key** and **Merchant ID**. Hyperswitch sends the API Key unchanged in the `Authorization` header and the Merchant ID in the `Merchant-Id` header. See [`AbsaSanlamAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam/transformers.rs#L22-L38), [`build_headers()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L69-L86), and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L106-L123).
+
+The authentication code is implemented, but it only runs as part of the payment flows, which are not implemented. There is currently nothing to authenticate against.
 
 ### Before you start
 
@@ -41,19 +45,23 @@ Supply an **API Key** and **Merchant ID**. Hyperswitch sends the API Key unchang
 
 To connect AbsaSanlam to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what AbsaSanlam supports.
 
+You can create the connector account, but payments against it will fail until the payment flows are implemented.
+
 ### Webhooks
 
-AbsaSanlam sends webhooks for payment and dispute events even though the feature matrix lists no webhook flows for the connector. Configure the connector `merchant_secret`, shown as the **Source Verification Key**, in Hyperswitch; Hyperswitch uses it as the HMAC key when checking the signature. AbsaSanlam signs each callback's raw request body with HMAC-SHA256 and sends the hex-encoded digest in the `X-Signature` header. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L303-L329) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_interfaces/src/webhooks.rs#L265-L301).
+The connector's webhook code is implemented (HMAC-SHA256 over the raw body via the `X-Signature` header, verified with the connector `merchant_secret`), but it has no payments to report on: webhooks update payment attempts, and no payment attempt can be created through this connector. Do not rely on AbsaSanlam webhooks until the payment flows are implemented.
 
-Handled event with 3 wire values:
+Two further gaps for when payments do work: `dispute.opened` is mapped in the event type code, but the dispute details extraction (`get_dispute_details`) is not implemented, so dispute events cannot be processed. And the wire values below come from the connector's own type definitions and tests, not from captured AbsaSanlam callbacks; treat them as the expected shape rather than a verified external contract. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L303-L329) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L353-L378).
+
+Expected event wire values:
 
 | Wire value | Effect |
 |---|---|
 | `payment.succeeded` | Payment succeeds |
 | `payment.failed` | Payment fails |
-| `dispute.opened` | A dispute opens |
+| `dispute.opened` | Not processable: dispute details extraction is not implemented |
 
-The three wire values come from [`AbsaSanlamWebhookEventType`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam/transformers.rs#L60-L68); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L353-L378).
+The wire values come from [`AbsaSanlamWebhookEventType`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam/transformers.rs#L60-L68); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L353-L378).
 
 ### Source reference
 
