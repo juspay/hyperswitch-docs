@@ -24,6 +24,20 @@ metaLinks:
 
 Webhooks let Hyperswitch send event updates to your server without polling. Each delivery is an HTTP `POST` with a JSON body.
 
+Webhooks in Hyperswitch run in two directions, and this guide covers both:
+
+* **Incoming webhooks** (also called callbacks): the connector (the payment processor) calls Hyperswitch when something happens, such as a payment succeeding. Hyperswitch verifies the callback, updates the payment, and sends you the outgoing webhook.
+* **Outgoing webhooks**: Hyperswitch calls your server with the event. Everything under [Handling webhooks](#handling-webhooks) describes this direction.
+
+### Webhook flows and webhook support
+
+Connector pages state two separate facts, and they do not always agree:
+
+* **Webhooks implemented**: whether Hyperswitch can process the connector's callbacks. This is about the code: whether the connector verifies signatures, identifies which payment the callback is about, and maps the event. If webhooks are not implemented, callbacks do nothing and you must poll (use payment sync) to learn the payment status.
+* **Webhook flows**: a category list (payments, refunds, disputes, and so on) that the connector's code declares. It says which kinds of events the connector's webhooks are expected to cover. Hyperswitch does not use this list to accept or reject callbacks; it exists for reporting, and each connector page shows it.
+
+A connector can have webhooks working but no declared flows. Its connector page then says something like "Webhook flows: None declared in code" while the Webhooks section on the same page describes working webhooks. The flows list is a declaration that the connector's author fills in, and it can lag behind the code. Treat the Webhooks section of the connector page, not the flows line, as the statement of what actually works.
+
 ### Configuring webhooks
 
 #### Create an endpoint on your server
