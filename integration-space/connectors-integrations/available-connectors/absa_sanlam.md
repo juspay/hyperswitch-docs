@@ -23,7 +23,7 @@ AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions us
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code. AbsaSanlam still sends webhooks for payments and disputes, and Hyperswitch processes them; see the Webhooks section below.
+**Webhook flows:** None declared in code. AbsaSanlam does send webhooks for payments and disputes, and Hyperswitch handles them (see the Webhooks section below).
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
