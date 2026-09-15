@@ -13,7 +13,7 @@ metaLinks:
 
 ### Status
 
-Bambora announced that the Bambora Asia-Pacific platform would be decommissioned as of September 2025; see the notice on the [Bambora Asia-Pacific developer site](https://dev-apac.bambora.com/support/guides/getting-help/contact-us) and the [Bambora decommissioning FAQs](https://support-apac.bambora.com/hc/en-au/sections/6008611698831-Bambora-decommissioning-FAQs). For questions about the decommissioning, Bambora directs merchants to BamboraAUFAQ@worldline.com.
+Bambora announced that the Bambora Asia-Pacific platform would be decommissioned as of September 2025; see the notice banner on the [Bambora Asia-Pacific developer site](https://dev-apac.bambora.com/support/guides/getting-help/contact-us). For questions about the decommissioning, Bambora directs merchants to BamboraAUFAQ@worldline.com.
 
 The connector is still present in Hyperswitch, but the API hosts it is configured to call no longer exist: requests to the [production endpoint](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/config/deployments/production.toml#L48) (`www.bambora.co.nz`) and the [sandbox endpoint](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/config/deployments/sandbox.toml#L48) (`demo.ippayments.com.au`) fail because neither hostname resolves. Payments, captures, refunds, syncs, and mandate setup routed to this connector will fail.
 
