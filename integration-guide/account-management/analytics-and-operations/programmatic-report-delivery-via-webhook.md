@@ -14,6 +14,7 @@ icon: database
      symbols: HMAC-SHA512, X-Webhook-Signature-512 = crates/router/src/core/webhooks/types.rs:44-75; crates/router/src/lib.rs:153
      symbols: organization report signing key is None = crates/router/src/analytics.rs:3164-3172
      external: report_generation.completed, status, org_id, merchant_id, data.report_type, data.start_date_utc, data.end_date_utc, data.download_url, data.expires_in_hours = report component contract; checked against in-repo boundary ReportRequest.return_url at crates/api_models/src/analytics.rs:150-158 and signing-key fetch at crates/router/src/analytics.rs:3062-3081,3262-3281
+     external: report_generation.failed, event, data.code, data.message = report component contract; same in-repo boundary as the completion payload
      checked: 2026-09-14 -->
 
 # Programmatic report delivery via webhook
@@ -146,6 +147,28 @@ The completion shape below comes from the external report component, not from th
 The 9 documented completion symbols are `event_type`, `status`, `org_id`, `merchant_id`, `data.report_type`, `data.start_date_utc`, `data.end_date_utc`, `data.download_url`, and `data.expires_in_hours`. Their payload contract is external to the router repository.
 
 `data.report_type` has 5 external contract values: `payment_report`, `refund_report`, `dispute_report`, `payout_report`, and `authentication_report`.
+
+### Receive the failure webhook
+
+When report generation fails, the report component sends a `report_generation.failed` event to `returnUrl`. Like the completion payload, this shape is owned by the external report component, not the router repository.
+
+```json
+{
+  "org_id": "<organization-id>",
+  "merchant_id": "<merchant-id>",
+  "data": {
+    "code": "<error-code>",
+    "message": "<error-message>"
+  },
+  "event": "report_generation.failed"
+}
+```
+
+The failure payload has no download URL. When you receive it:
+
+1. Record `data.code` and `data.message` for monitoring.
+2. Submit a new report request.
+3. Contact the Hyperswitch team if the failure repeats.
 
 ### Verify the webhook signature
 

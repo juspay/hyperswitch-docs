@@ -2066,7 +2066,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/3ds-decision-manager/3
 
 <summary>How do I verify webhook signatures for security?</summary>
 
-Generate an HMAC-SHA512 signature using your `payment_response_hash_key` and compare against the `x-webhook-signature-512` header. An alternative `x-webhook-signature-256` header is available for systems that do not support SHA512.
+Generate an HMAC-SHA512 signature using your `payment_response_hash_key` and compare against the `x-webhook-signature-512` header.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/webhooks

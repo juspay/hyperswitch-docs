@@ -119,14 +119,15 @@ Hyperswitch generates the signature from the exact serialized JSON body and `pay
 
 ### Webhook delivery behavior
 
-A delivery succeeds when your endpoint returns a `2xx` response. The retry scheduler starts after 1 minute. Its configured frequency groups then make 15 retries: `2 + 5 + 5 + 3 = 15`.
+A delivery succeeds when your endpoint returns a `2xx` response. The first retry fires 1 minute after the original attempt. The configured frequency groups then apply as delays between retries, for 15 retries in total: `2 + 5 + 5 + 3 = 15`.
 
-| Retry attempt | Delay from the preceding attempt |
+| Retry attempt | Delay |
 | --- | --- |
-| 1st and 2nd | 5 minutes |
-| 3rd through 7th | 10 minutes |
-| 8th through 12th | 1 hour |
-| 13th through 15th | 6 hours |
+| 1st | 1 minute after the original attempt |
+| 2nd and 3rd | 5 minutes |
+| 4th through 8th | 10 minutes |
+| 9th through 13th | 1 hour |
+| 14th and 15th | 6 hours |
 
 #### Handling duplicates
 
