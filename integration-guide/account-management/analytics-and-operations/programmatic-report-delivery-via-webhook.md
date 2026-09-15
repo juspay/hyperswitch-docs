@@ -2,131 +2,114 @@
 icon: database
 ---
 
-# Programmatic Report Delivery via Webhook
+<!-- truth manifest; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0
+     symbols: POST /analytics/v1/merchant/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:236-321
+     symbols: POST /analytics/v1/org/report/{dispute,refunds,payments,payouts,authentications} = crates/router/src/analytics.rs:323-395
+     symbols: POST /analytics/v1/profile/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:397-506
+     symbols: ReportRequest, timeRange, emails, returnUrl, columns, reportType (v2 only) = crates/api_models/src/analytics.rs:148-159
+     symbols: TimeRange, startTime, endTime = crates/common_utils/src/types.rs:774-787
+     symbols: HTTPS returnUrl validation = crates/router/src/analytics_validator.rs:26-32
+     symbols: payment_response_hash_key fetch and handoff for merchant reports = crates/router/src/analytics.rs:3062-3081
+     symbols: payment_response_hash_key fetch and handoff for profile reports = crates/router/src/analytics.rs:3262-3281
+     symbols: HMAC-SHA512, X-Webhook-Signature-512 = crates/router/src/core/webhooks/types.rs:44-75; crates/router/src/lib.rs:153
+     symbols: organization report signing key is None = crates/router/src/analytics.rs:3164-3172
+     external: report_generation.completed, status, org_id, merchant_id, data.report_type, data.start_date_utc, data.end_date_utc, data.download_url, data.expires_in_hours = report component contract; checked against in-repo boundary ReportRequest.return_url at crates/api_models/src/analytics.rs:150-158 and signing-key fetch at crates/router/src/analytics.rs:3062-3081,3262-3281
+     external: report_generation.failed, event, data.code, data.message = report component contract; same in-repo boundary as the completion payload
+     checked: 2026-09-14 -->
+
+# Programmatic report delivery via webhook
 
 ### Overview
 
-Hyperswitch supports asynchronous report generation for automated workflows. You can trigger a report using an API key and receive the completed report through a webhook.
+Hyperswitch can generate reports asynchronously. Submit a report request with `returnUrl` to receive the completed report through a webhook instead of waiting for the file in the API response.
 
-The webhook payload contains a pre-signed URL to download the CSV file. The CSV file is not included in the webhook payload.
+Report routes exist at the Merchant, Organization, and Profile levels. Merchant and Profile handlers fetch `payment_response_hash_key` when `returnUrl` is present and pass it to the report component. Organization handlers exist, but pass no signing key. Confirm the required authentication and webhook-signing behavior before using an Organization-level route for webhook delivery.
 
-Programmatic report delivery is supported only at the Merchant and Profile levels. Organization-level reports are not supported.
+### How it works
 
-### How It Works
+1. Send a report request with `timeRange`, `emails` (required for API-key requests; JWT requests use the authenticated user's email), and `returnUrl`.
+2. The router validates the request according to the route's authentication method and passes it to the report component.
+3. The report component generates the file and sends its completion payload to `returnUrl`.
+4. Verify the webhook signature before using the download URL from the completion payload.
 
-1. Send a report request with a time range, email address and `returnUrl`.
-2. Hyperswitch accepts the request and starts report generation.
-3. Hyperswitch uploads the completed CSV file to secure storage.
-4. Hyperswitch sends a signed webhook to your `returnUrl`.
-5. Verify the signature and download the report using `data.download_url`.
+The router owns the route, request validation, and signing-key handoff. The completion payload documented below is owned and emitted by the external report component.
 
-Report generation can take a few seconds or several minutes, depending on the amount of data.
+### Supported report types
 
-### Prerequisites
+Each route scope exposes at least the 5 report suffixes below. The Merchant and Profile scopes also expose a sixth suffix, `relay`, for 17 routes in total:
 
-Before you begin, ensure that you have the following:
-
-* a Hyperswitch sandbox/production API key
-* at least one valid email address for the \`emails\` field
-* a public HTTPS endpoint that can receive `POST` requests
-* your Profile ID or when requesting a Profile-level report
-
-Note: You do not need to provide a Merchant ID for Merchant-level reports. Hyperswitch identifies the Merchant from the API key.
-
-### Supported Report Types
-
-You can generate the following reports:
-
-| Report Type     | URL Suffix        |
-| --------------- | ----------------- |
-| Payments        | `payments`        |
-| Refunds         | `refunds`         |
-| Disputes        | `dispute`         |
-| Payouts         | `payouts`         |
+| Report type | URL suffix |
+| --- | --- |
+| Payments | `payments` |
+| Refunds | `refunds` |
+| Disputes | `dispute` |
+| Payouts | `payouts` |
 | Authentications | `authentications` |
 
-> Note: Use `dispute` in the endpoint URL, not `disputes`. Authentications is only supported in sandbox
+Use `dispute`, not `disputes`. This page does not document the `relay` report suffix.
 
-### Sandbox Endpoints
+### Endpoints
 
-#### Merchant-Level Endpoints
+#### Merchant-level endpoints
 
-Use these endpoints to generate a report for the Merchant associated with your API key.
+| Report type | Endpoint |
+| --- | --- |
+| Payments | `POST /analytics/v1/merchant/report/payments` |
+| Refunds | `POST /analytics/v1/merchant/report/refunds` |
+| Disputes | `POST /analytics/v1/merchant/report/dispute` |
+| Payouts | `POST /analytics/v1/merchant/report/payouts` |
+| Authentications | `POST /analytics/v1/merchant/report/authentications` |
 
-| Report Type     | Endpoint                                                                      |
-| --------------- | ----------------------------------------------------------------------------- |
-| Payments        | `https://app.hyperswitch.io/api/analytics/v1/merchant/report/payments`        |
-| Refunds         | `https://app.hyperswitch.io/api/analytics/v1/merchant/report/refunds`         |
-| Disputes        | `https://app.hyperswitch.io/api/analytics/v1/merchant/report/dispute`         |
-| Payouts         | `https://app.hyperswitch.io/api/analytics/v1/merchant/report/payouts`         |
-| Authentications | `https://app.hyperswitch.io/api/analytics/v1/merchant/report/authentications` |
+Merchant routes accept API-key or JWT authentication.
 
-The API key identifies the Merchant. You do not need to pass a Merchant ID in the endpoint or request body.
+#### Organization-level endpoints
 
-#### Profile-Level Endpoints
+| Report type | Endpoint |
+| --- | --- |
+| Payments | `POST /analytics/v1/org/report/payments` |
+| Refunds | `POST /analytics/v1/org/report/refunds` |
+| Disputes | `POST /analytics/v1/org/report/dispute` |
+| Payouts | `POST /analytics/v1/org/report/payouts` |
+| Authentications | `POST /analytics/v1/org/report/authentications` |
 
-Use these endpoints with the `X-Profile-Id` header to generate a report for a specific Profile.
+Organization routes use JWT authentication with `OrganizationReportRead`. Their handlers pass no `payment_response_hash_key` to the report component.
 
-| Report Type     | Endpoint                                                                     |
-| --------------- | ---------------------------------------------------------------------------- |
-| Payments        | `https://app.hyperswitch.io/api/analytics/v1/profile/report/payments`        |
-| Refunds         | `https://app.hyperswitch.io/api/analytics/v1/profile/report/refunds`         |
-| Disputes        | `https://app.hyperswitch.io/api/analytics/v1/profile/report/dispute`         |
-| Payouts         | `https://app.hyperswitch.io/api/analytics/v1/profile/report/payouts`         |
-| Authentications | `https://app.hyperswitch.io/api/analytics/v1/profile/report/authentications` |
+#### Profile-level endpoints
 
-#### Production Endpoints
+| Report type | Endpoint |
+| --- | --- |
+| Payments | `POST /analytics/v1/profile/report/payments` |
+| Refunds | `POST /analytics/v1/profile/report/refunds` |
+| Disputes | `POST /analytics/v1/profile/report/dispute` |
+| Payouts | `POST /analytics/v1/profile/report/payouts` |
+| Authentications | `POST /analytics/v1/profile/report/authentications` |
 
-Contact the Hyperswitch team to get the production report endpoints for your account. Use your production API key and allowlist the production webhook URL before going live.
+Profile routes accept API-key or JWT authentication. Include the profile context required by your authentication method.
 
-### Request Parameters
+### Request parameters
 
-#### Headers
+`ReportRequest` uses camel-case JSON field names:
 
-| Header                           | Merchant Request | Profile Request | Description                           |
-| -------------------------------- | ---------------- | --------------- | ------------------------------------- |
-| `api-key`                        | Required         | Required        | Your secret Hyperswitch API key       |
-| `Content-Type: application/json` | Required         | Required        | Identifies the request body as JSON   |
-| `X-Profile-Id`                   | Not required     | Required        | Identifies the Profile for the report |
+| Field | Required for webhook delivery | Description |
+| --- | --- | --- |
+| `timeRange` | Yes | Report time range. |
+| `timeRange.startTime` | Yes | ISO 8601 start time. The Rust field is `start_time` and accepts the `startTime` alias. |
+| `timeRange.endTime` | No | ISO 8601 end time. The Rust field is optional and accepts the `endTime` alias. |
+| `emails` | Yes for API-key requests | Non-empty array. The first address is used as the primary report address. |
+| `returnUrl` | Yes | HTTPS endpoint that receives the report-component webhook. |
+| `columns` | No | Optional report-column selection. |
 
-#### Request Body
+The shared Rust type also contains `reportType`, but that field is compiled only for v2. The v1 endpoint suffix selects the report type.
 
-| Field                 | Required | Description                                                               |
-| --------------------- | -------- | ------------------------------------------------------------------------- |
-| `timeRange`           | Yes      | Contains the report start and end times                                   |
-| `timeRange.startTime` | Yes      | Start time in ISO 8601 format                                             |
-| `timeRange.endTime`   | No       | End time in ISO 8601 format. Defaults to the current time                 |
-| `emails`              | Yes      | A non-empty array containing at least one valid email address             |
-| `returnUrl`           | Yes      | The allowlisted HTTPS endpoint that receives the completed report webhook |
+For API-key requests, `validate_report_request` rejects a non-HTTPS `returnUrl`. A missing or empty `emails` array returns HTTP `400` with error code `IR_06`.
 
-Use UTC timestamps with millisecond precision, such as `2026-06-15T00:00:00.000Z`.
+### Trigger report generation
 
-> Note: The `emails` array is currently required for API-key requests, even when the report is delivered through a webhook. If the field is missing or empty, the API returns HTTP `400` with error code `IR_06`.
-
-> Note: `timeRange.endTime` is optional. We recommend sending it when you need a fixed and repeatable reporting period.
-
-### Step 1: Configure Your Webhook Endpoint
-
-Set up a dedicated endpoint on your server to receive the completed report webhook.
-
-Your `returnUrl` must:
-
-* use HTTPS
-* be accessible from the public internet
-* be allowlisted by the Hyperswitch team(for production)
-* accept `POST` requests with a JSON body
-
-Share the exact sandbox and production URLs with the Hyperswitch team if you use different endpoints for each environment.
-
-### Step 2: Trigger Report Generation
-
-#### Merchant-Level Request
-
-The following example generates a Merchant-level Payments report in sandbox:
+This request generates a Merchant-level payment report. Set `HYPERSWITCH_BASE_URL` to the base URL for your environment.
 
 ```bash
 curl --request POST \
-  --url https://app.hyperswitch.io/api/analytics/v1/merchant/report/payments \
+  --url "${HYPERSWITCH_BASE_URL}/analytics/v1/merchant/report/payments" \
   --header 'Content-Type: application/json' \
   --header 'api-key: <api-key>' \
   --data '{
@@ -134,172 +117,72 @@ curl --request POST \
       "startTime": "2026-06-15T00:00:00.000Z",
       "endTime": "2026-07-15T23:59:59.000Z"
     },
-    "emails": [
-      "reports@example.com"
-    ],
-    "returnUrl": "https://example.com/webhooks/hyperswitch-reports"
+    "emails": ["reports@example.com"],
+    "returnUrl": "https://example.com/webhooks/reports"
   }'
 ```
 
-Change the endpoint suffix to generate another supported report type.
+Change the scope and suffix only to a route listed above. Profile and Organization routes have different authentication context.
 
-#### Profile-Level Request
+### Receive the completion webhook
 
-For a Profile-level report, use the Profile endpoint and include `X-Profile-Id`:
-
-```bash
-curl --request POST \
-  --url https://app.hyperswitch.io/api/analytics/v1/profile/report/payments \
-  --header 'Content-Type: application/json' \
-  --header 'X-Profile-Id: <profile-id>' \
-  --header 'api-key: <api-key>' \
-  --data '{
-    "timeRange": {
-      "startTime": "2026-06-15T00:00:00.000Z",
-      "endTime": "2026-07-15T23:59:59.000Z"
-    },
-    "emails": [
-      "reports@example.com"
-    ],
-    "returnUrl": "https://example.com/webhooks/hyperswitch-reports"
-  }'
-```
-
-### API Response
-
-Hyperswitch returns HTTP `200` after accepting the report request. The response body can be JSON `null`.
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-null
-```
-
-This response is only an acknowledgement. The report is generated asynchronously and is not included in the API response.
-
-### Step 3: Receive the Webhook
-
-When the report is ready, Hyperswitch sends a `POST` request to your `returnUrl`.
-
-The request includes the following signature header:
-
-```http
-X-Webhook-Signature-512: <hex-encoded-signature>
-```
-
-The webhook payload has the following structure:
+The completion shape below comes from the external report component, not from the router's OpenAPI specification or an in-repo router response struct. The in-repo boundary confirms that the router passes `returnUrl` and, for Merchant and Profile routes, the signing key to that component.
 
 ```json
 {
   "event_type": "report_generation.completed",
   "status": "success",
-  "org_id": "org_example",
-  "merchant_id": "merchant_example",
+  "org_id": "<organization-id>",
+  "merchant_id": "<merchant-id>",
   "data": {
     "report_type": "payment_report",
     "start_date_utc": "2026-06-15",
     "end_date_utc": "2026-07-15",
-    "download_url": "https://example-bucket.s3.amazonaws.com/report.csv?...",
+    "download_url": "https://example.com/reports/report.csv",
     "expires_in_hours": 48
   }
 }
 ```
 
-The report is available at `data.download_url`. The webhook does not contain the CSV file itself.
+The 9 documented completion symbols are `event_type`, `status`, `org_id`, `merchant_id`, `data.report_type`, `data.start_date_utc`, `data.end_date_utc`, `data.download_url`, and `data.expires_in_hours`. Their payload contract is external to the router repository.
 
-#### Field reference
+`data.report_type` has 5 external contract values: `payment_report`, `refund_report`, `dispute_report`, `payout_report`, and `authentication_report`.
 
-<table data-search="false"><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>event_type</code></td><td>Event type. This is always <code>report_generation.completed</code>.</td></tr><tr><td><code>status</code></td><td>Report generation status. <code>success</code> means the report was generated and uploaded successfully.</td></tr><tr><td><code>org_id</code></td><td>Organization ID associated with the report.</td></tr><tr><td><code>merchant_id</code></td><td>Merchant ID associated with the report.</td></tr><tr><td><code>data.report_type</code></td><td>Report type. Possible values are <code>payment_report</code>, <code>refund_report</code>, <code>dispute_report</code>, <code>payout_report</code>, and <code>authentication_report</code>.</td></tr><tr><td><code>data.start_date_utc</code></td><td>Start date of the reporting period in <code>YYYY-MM-DD</code> UTC format.</td></tr><tr><td><code>data.end_date_utc</code></td><td>End date of the reporting period in <code>YYYY-MM-DD</code> UTC format.</td></tr><tr><td><code>data.download_url</code></td><td>Pre-signed AWS S3 URL for downloading the generated CSV report. The webhook payload does not contain the report itself.</td></tr><tr><td><code>data.expires_in_hours</code></td><td>Number of hours before the download URL expires, typically <code>48</code>. Generate a new report if the URL has expired.</td></tr></tbody></table>
+### Receive the failure webhook
 
-### Failure event
-
-If report generation fails, Hyperswitch sends a `report_generation.failed` event to your `returnUrl`.
-
-The failure payload does not contain a report download URL.
-
-#### Failure event JSON body
+When report generation fails, the report component sends a `report_generation.failed` event to `returnUrl`. Like the completion payload, this shape is owned by the external report component, not the router repository.
 
 ```json
 {
-  "org_id": "org_MZMfl5gFJ7LksZC3rua2",
-  "merchant_id": "merchant_1773034629",
+  "org_id": "<organization-id>",
+  "merchant_id": "<merchant-id>",
   "data": {
-    "code": "internal_server_error",
-    "message": "We could not generate the report due to a internal server error. Please request the report again."
+    "code": "<error-code>",
+    "message": "<error-message>"
   },
   "event": "report_generation.failed"
 }
 ```
 
-#### Field reference
+The failure payload has no download URL. When you receive it:
 
-| Field          | Description                                                                           |
-| -------------- | ------------------------------------------------------------------------------------- |
-| `event`        | Event type. This is always `report_generation.failed` for report generation failures. |
-| `org_id`       | Organization ID associated with the report request.                                   |
-| `merchant_id`  | Merchant ID associated with the report request.                                       |
-| `data.code`    | Machine-readable error code that identifies the failure.                              |
-| `data.message` | Description of the failure and the recommended action.                                |
-
-#### Handling a failure event
-
-When you receive a failure event:
-
-1. Record the error code and message for monitoring.
+1. Record `data.code` and `data.message` for monitoring.
 2. Submit a new report request.
-3. Contact the Hyperswitch team if the failure continues.
+3. Contact the Hyperswitch team if the failure repeats.
 
-### Step 4: Verify the Webhook Signature(Optional)
+### Verify the webhook signature
 
-Hyperswitch signs the exact request body using HMAC-SHA512 and the `payment_response_hash_key` associated with the Merchant or Profile.
+For Merchant and Profile reports, setting `returnUrl` makes the handler fetch `payment_response_hash_key` and pass it to the report component. The component uses that key for the HMAC-SHA512 signature sent in `X-Webhook-Signature-512`.
 
-To validate the webhook:
+1. Read the raw request body before parsing it.
+2. Read `X-Webhook-Signature-512`.
+3. Generate an HMAC-SHA512 digest from the raw body with `payment_response_hash_key`.
+4. Hex-encode the digest.
+5. Compare the generated and received values in constant time.
+6. Reject the delivery if they do not match.
 
-1. Read the exact raw request body.
-2. Read the `X-Webhook-Signature-512` header.
-3. Generate an HMAC-SHA512 signature using the raw body and `payment_response_hash_key`.
-4. Fetch `payment_response_hash_key`  from payment settings in hyperwitch control center.
-5. Compare the generated and received signatures in constant time.
-6. Reject the webhook if the signatures do not match.
+Do not apply this signing procedure to an Organization-level completion webhook without confirmation. The Organization handlers pass no signing key to the report component.
 
-Python example:
+### Download the report
 
-```python
-import hashlib
-import hmac
-
-
-def verify_signature(raw_body: bytes, signature: str, hash_key: str) -> bool:
-    expected = hmac.new(
-        hash_key.encode("utf-8"),
-        raw_body,
-        hashlib.sha512,
-    ).hexdigest()
-
-    return hmac.compare_digest(expected, signature)
-```
-
-> Important: Do not parse and recreate the JSON before signature verification. Any change to the original request body can produce a different signature.
-
-### Step 5: Download the Report
-
-After verifying the signature, download the CSV file from `data.download_url`.
-
-The pre-signed URL usually expires after 48 hours. Download and store the report before the value in `data.expires_in_hours` is reached.
-
-> Security Warning: Do not expose or log the complete `download_url`. Anyone with access to the URL may be able to download the report until it expires.
-
-### Report Limit
-
-Each generated report can contain up to 50,000 rows.
-
-If your report may exceed this limit:
-
-1. Split the reporting period into smaller, non-overlapping time ranges.
-2. Generate one report for each time range.
-3. Combine the downloaded CSV files in your system.
-
-Reports that exceed the limit are not automatically paginated.
-
-For endpoint allowlisting and integration support, contact the Hyperswitch team through your usual support channel.
+After signature verification, download the file from the completion payload's `data.download_url` field. The report-component payload states the URL lifetime in `data.expires_in_hours`. Do not log or expose the full download URL.
