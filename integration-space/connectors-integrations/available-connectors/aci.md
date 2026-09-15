@@ -22,7 +22,7 @@ ACI provides services for commerce. Its card methods support recurring charges a
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code
+**Webhook flows:** None declared in code. ACI does send webhooks, but Hyperswitch does not currently process them; see the Webhooks section below.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
@@ -62,14 +62,16 @@ To connect ACI to your Hyperswitch account, follow [Activate a connector on Hype
 
 ### Webhooks
 
-ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so this connector page treats webhooks as unavailable and the status block above remains the supported contract.
+ACI's webhooks do not currently work with Hyperswitch. Do not rely on them for payment or refund status updates; use payment sync instead. We are working on it.
 
-The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
+ACI encrypts each callback's body with AES-256-GCM and sends the hex-encoded ciphertext as the request body, with the initialization vector in the `X-Initialization-Vector` header and the authentication tag in the `X-Authentication-Tag` header. The webhook code decrypts the body only while checking the signature, but it tries to parse the body as JSON before that check runs, so parsing sees the still-encrypted ciphertext and fails, and the webhook is rejected outright. The signature check cannot succeed either: it verifies HMAC-SHA256 using the `X-Authentication-Tag` value as the HMAC digest, but that value is the AES-GCM authentication tag, not an HMAC. See [`decrypt_aci_webhook_payload()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L759-L821) and [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L832-L846). The webhook implementation has never been tested against ACI; it still carries a TODO from when it was written (see the [original webhook flow commit](https://github.com/juspay/hyperswitch/pull/8349)).
+
+When webhooks do work, the handled events are payment success, payment processing, payment failure, refund success, and refund failure, mapped from the `result.code` value in the callback. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L928-L986).
 
 ### Troubleshooting
 
 **Webhook expectations**
-Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: use the declared capabilities in the status block above as the supported behavior for this connector.
+Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: confirm the payment status through payment sync. Hyperswitch does not currently process ACI webhooks, so configuring a webhook endpoint on the ACI side has no effect.
 
 
 ### Source reference
