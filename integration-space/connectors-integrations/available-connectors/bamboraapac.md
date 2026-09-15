@@ -1,10 +1,13 @@
 ---
 description: Accept card payments through Bambora Asia-Pacific.
+metaLinks:
+  alternates:
+    - bamboraapac.md
 ---
 
 # Bambora Asia-Pacific
 
-Bambora Asia-Pacific covers credit and debit card processing through a payment gateway connection. Its card routes include mandate and refund support across a broad set of networks. Capture can happen automatically or be completed later, while 3DS is not supported.
+Accept credit and debit cards through Bambora Asia-Pacific. Cards support mandates and refunds, with automatic or manual capture. 3DS is not supported.
 
 ### Status and capabilities
 
@@ -23,8 +26,12 @@ Bambora Asia-Pacific covers credit and debit card processing through a payment g
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 | 76 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 | 76 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+
+Use automatic or manual capture. The connector declares sequential automatic capture, but the payment request builder accepts only automatic and manual, so a payment with sequential automatic capture fails with `CaptureMethodNotSupported` before any request is sent. See [`get_transaction_type()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs#L173-L179) and the [declared capture methods](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L736-L740).
+
+Voiding a payment is not implemented: the connector has no request for the void flow, so a cancel request never reaches Bambora Asia-Pacific. If you use manual capture, do not rely on Hyperswitch to cancel an uncaptured authorization. See [`ConnectorIntegration<Void>`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L527).
 
 ### Authentication
 
@@ -34,14 +41,13 @@ Supply a **Username**, **Password**, and **Account Number**. Hyperswitch maps th
 
 1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 2. Have the **Username**, **Password**, and **Account Number** ready.
-3. If the activation flow asks for payment methods, select only the card types enabled for your connector account.
 
 To connect Bambora Asia-Pacific to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Bambora Asia-Pacific supports.
 
 ### Webhooks
 
-Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. Object lookup, event classification, and resource parsing each return `WebhooksNotImplemented`; see [`IncomingWebhook for Bamboraapac`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L704-L728).
+Bambora Asia-Pacific webhooks are not supported. Use payment sync and refund sync for status updates. The connector's webhook handlers all return `WebhooksNotImplemented`; see [`IncomingWebhook for Bamboraapac`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs#L704-L728).
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `d8b6ebe773690aa37cf249b2992c2358dbd7f438`. See [Bambora Asia-Pacific connector source](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs) and [Bambora Asia-Pacific transformers](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs).
+Capture, void, authentication, and webhook behavior on this page is tied to Hyperswitch `d8b6ebe773690aa37cf249b2992c2358dbd7f438`. See [Bambora Asia-Pacific connector source](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac.rs) and [Bambora Asia-Pacific transformers](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/bamboraapac/transformers.rs).
