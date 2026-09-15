@@ -88,7 +88,7 @@ The v1 API schema defines 33 event wire values:
 32. `surcharge_payment_succeeded`
 33. `surcharge_refund_succeeded`
 
-The outgoing webhook object has 6 fields. `merchant_id`, `event_id`, `event_type`, and `content` are required. `timestamp` and `processor_merchant_id` are also defined by the schema.
+The outgoing webhook object has 6 fields. `merchant_id`, `event_id`, `event_type`, and `content` are required. `timestamp` and `processor_merchant_id` are optional; the schema marks `processor_merchant_id` as nullable.
 
 The `content` object has 6 wire shapes. Its `type` is one of `payment_details`, `refund_details`, `dispute_details`, `mandate_details`, `payout_details`, or `subscription_details`. The matching resource is in `content.object`.
 
@@ -119,7 +119,7 @@ Hyperswitch generates the signature from the exact serialized JSON body and `pay
 
 ### Webhook delivery behavior
 
-A delivery succeeds when your endpoint returns a `2xx` response. The first retry fires 1 minute after the original attempt. The configured frequency groups then apply as delays between retries, for 15 retries in total: `2 + 5 + 5 + 3 = 15`.
+A delivery succeeds when your endpoint returns a `2xx` response. The scheduler makes 16 retries over roughly 24 hours: the first fires 1 minute after the original attempt (`start_after`), then the configured frequency groups apply as delays between retries.
 
 | Retry attempt | Delay |
 | --- | --- |
@@ -127,7 +127,7 @@ A delivery succeeds when your endpoint returns a `2xx` response. The first retry
 | 2nd and 3rd | 5 minutes |
 | 4th through 8th | 10 minutes |
 | 9th through 13th | 1 hour |
-| 14th and 15th | 6 hours |
+| 14th through 16th | 6 hours |
 
 #### Handling duplicates
 

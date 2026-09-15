@@ -3,9 +3,9 @@ icon: database
 ---
 
 <!-- truth manifest; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0
-     symbols: POST /analytics/v1/merchant/report/{dispute,refunds,payments,payouts,authentications} = crates/router/src/analytics.rs:236-321
+     symbols: POST /analytics/v1/merchant/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:236-321
      symbols: POST /analytics/v1/org/report/{dispute,refunds,payments,payouts,authentications} = crates/router/src/analytics.rs:323-395
-     symbols: POST /analytics/v1/profile/report/{dispute,refunds,payments,payouts,authentications} = crates/router/src/analytics.rs:397-506
+     symbols: POST /analytics/v1/profile/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:397-506
      symbols: ReportRequest, timeRange, emails, returnUrl, columns, reportType (v2 only) = crates/api_models/src/analytics.rs:148-159
      symbols: TimeRange, startTime, endTime = crates/common_utils/src/types.rs:774-787
      symbols: HTTPS returnUrl validation = crates/router/src/analytics_validator.rs:26-32
@@ -27,16 +27,16 @@ Report routes exist at the Merchant, Organization, and Profile levels. Merchant 
 
 ### How it works
 
-1. Send a report request with `timeRange`, a non-empty `emails` array, and `returnUrl`.
-2. The router validates an API-key request and passes it to the report component.
+1. Send a report request with `timeRange`, `emails` (required for API-key requests; JWT requests use the authenticated user's email), and `returnUrl`.
+2. The router validates the request according to the route's authentication method and passes it to the report component.
 3. The report component generates the file and sends its completion payload to `returnUrl`.
-4. Verify the webhook signature before using `data.download_url`.
+4. Verify the webhook signature before using the download URL from the completion payload.
 
 The router owns the route, request validation, and signing-key handoff. The completion payload documented below is owned and emitted by the external report component.
 
 ### Supported report types
 
-Each of the 3 route scopes exposes the same 5 report suffixes, for 15 routes in total:
+Each route scope exposes at least the 5 report suffixes below. The Merchant and Profile scopes also expose a sixth suffix, `relay`, for 17 routes in total:
 
 | Report type | URL suffix |
 | --- | --- |
@@ -46,7 +46,7 @@ Each of the 3 route scopes exposes the same 5 report suffixes, for 15 routes in 
 | Payouts | `payouts` |
 | Authentications | `authentications` |
 
-Use `dispute`, not `disputes`.
+Use `dispute`, not `disputes`. This page does not document the `relay` report suffix.
 
 ### Endpoints
 
@@ -185,4 +185,4 @@ Do not apply this signing procedure to an Organization-level completion webhook 
 
 ### Download the report
 
-After signature verification, download the file from `data.download_url`. The report-component payload states the lifetime in `data.expires_in_hours`. Do not log or expose the full download URL.
+After signature verification, download the file from the completion payload's `data.download_url` field. The report-component payload states the URL lifetime in `data.expires_in_hours`. Do not log or expose the full download URL.
