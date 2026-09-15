@@ -22,7 +22,7 @@ ACI provides services for commerce. Its card methods support recurring charges a
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code. ACI does send webhooks, but Hyperswitch does not currently process them; see the Webhooks section below.
+**Webhook flows:** None declared in code
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
