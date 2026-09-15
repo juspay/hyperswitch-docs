@@ -13,6 +13,7 @@
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
+    * [BarclayCard SmartPay Fuse](connectors-integrations/available-connectors/barclaycard.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
