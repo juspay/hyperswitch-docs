@@ -26,7 +26,7 @@ Webhooks let Hyperswitch send event updates to your server without polling. Each
 
 Webhooks in Hyperswitch run in two directions, and this guide covers both:
 
-* **Incoming webhooks** (also called callbacks): the connector (the payment processor) calls Hyperswitch when something happens, such as a payment succeeding. Hyperswitch verifies the callback, updates the payment, and sends you the outgoing webhook.
+* **Incoming webhooks** (also called callbacks): the connector (the payment processor) calls Hyperswitch when something happens, such as a payment succeeding. Hyperswitch verifies the callback and updates the matching resource (a payment, refund, or dispute). If you have a webhook endpoint configured, Hyperswitch then sends you the outgoing webhook.
 * **Outgoing webhooks**: Hyperswitch calls your server with the event. Everything under [Handling webhooks](#handling-webhooks) describes this direction.
 
 ### Webhook flows and webhook support
