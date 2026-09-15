@@ -9,6 +9,7 @@
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
+    * [Affirm](connectors-integrations/available-connectors/affirm.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
