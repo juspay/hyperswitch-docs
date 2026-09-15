@@ -42,6 +42,7 @@
       * [Incremental Authorization](integration-guide/payment-suite/payments/authorizations/incremental-authorization.md)
       * [$0 Authorization](integration-guide/payment-suite/payments/authorizations/zero-amount-authorization-1.md)
       * [Extended Authorization](integration-guide/payment-suite/payments/authorizations/extended-authorization.md)
+  * [Server to Server Payments](integration-guide/payment-suite/server-to-server-payments.md)
   * [Vault-Then-Pay](integration-guide/payment-suite/payment-method-card/README.md)
     * [Token Led Payment](integration-guide/payment-suite/payment-method-card/payments.md)
     * [Proxy Payment](integration-guide/payment-suite/payment-method-card/proxy.md)
