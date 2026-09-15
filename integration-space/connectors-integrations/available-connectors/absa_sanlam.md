@@ -23,7 +23,7 @@ AbsaSanlam provides a payment gateway path for EFT debit orders. Transactions us
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code (webhooks are implemented; see the Webhooks section below)
+**Webhook flows:** None listed in the feature matrix (webhooks do work; see the Webhooks section below)
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
@@ -43,7 +43,7 @@ To connect AbsaSanlam to your Hyperswitch account, follow [Activate a connector 
 
 ### Webhooks
 
-AbsaSanlam sends webhooks for payment and dispute events even though the connector declaration lists no webhook flows. Configure the connector `merchant_secret`, shown as the **Source Verification Key**, in Hyperswitch; Hyperswitch uses it as the HMAC key when checking the signature. AbsaSanlam signs each callback's raw request body with HMAC-SHA256 and sends the hex-encoded digest in the `X-Signature` header. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L303-L329) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_interfaces/src/webhooks.rs#L265-L301).
+AbsaSanlam sends webhooks for payment and dispute events even though the feature matrix lists no webhook flows for the connector. Configure the connector `merchant_secret`, shown as the **Source Verification Key**, in Hyperswitch; Hyperswitch uses it as the HMAC key when checking the signature. AbsaSanlam signs each callback's raw request body with HMAC-SHA256 and sends the hex-encoded digest in the `X-Signature` header. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_connectors/src/connectors/absa_sanlam.rs#L303-L329) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/d8b6ebe773690aa37cf249b2992c2358dbd7f438/crates/hyperswitch_interfaces/src/webhooks.rs#L265-L301).
 
 Handled event with 3 wire values:
 
