@@ -47,6 +47,13 @@ flowchart TD
 | **Unspecified result**                      | Keeps the existing card.                                                                                                   | Remains `active`.                                           |
 | **Reported update matches the stored card** | Detects that it already holds the same card details and skips the replacement.                                             | Remains `active`.                                           |
 
+{% hint style="info" %}
+Account Updater automatically checks saved cards for merchant-initiated payments made through the Payments API when confirm: true, off\_session: true, and recurring\_details.type: "payment\_method\_id". The payment method ID in recurring\_details must match the saved payment method being retrieved.&#x20;
+
+\
+MITs using mandate\_id, a processor payment token, or a network transaction ID supplied with card, network token, wallet, or limited card data do not trigger an automatic Account Updater check.
+{% endhint %}
+
 #### FAQs
 
 **Does my payment method ID change when the card changes?**\
