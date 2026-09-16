@@ -14,9 +14,12 @@ ACI provides services for commerce. Its card methods support recurring charges a
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -32,16 +35,16 @@ ACI provides services for commerce. Its card methods support recurring charges a
 | bank redirect | iDEAL | not supported | supported | automatic, manual | not applicable | - | NLD | EUR |
 | bank redirect | Interac | not supported | supported | automatic, manual | not applicable | - | CAN | CAD, USD |
 | bank redirect | Przelewy24 | not supported | supported | automatic, manual | not applicable | - | POL | CZK, EUR, GBP, PLN |
-| bank redirect | Sofort | not supported | supported | automatic, manual | not applicable | - | 9 ([full list](https://hyperswitch.io/pm-list)) | CHF, EUR, GBP, HUF, PLN |
-| bank redirect | Trustly | not supported | supported | automatic, manual | not applicable | - | 12 ([full list](https://hyperswitch.io/pm-list)) | CZK, DKK, EUR, GBP, NOK, SEK |
-| card | Credit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
-| pay later | Klarna | not supported | supported | automatic, manual | not applicable | - | 22 ([full list](https://hyperswitch.io/pm-list)) | 11 ([full list](https://hyperswitch.io/pm-list)) |
+| bank redirect | Sofort | not supported | supported | automatic, manual | not applicable | - | 9 | CHF, EUR, GBP, HUF, PLN |
+| bank redirect | Trustly | not supported | supported | automatic, manual | not applicable | - | 12 | CZK, DKK, EUR, GBP, NOK, SEK |
+| card | Credit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 | 58 |
+| card | Debit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 | 58 |
+| pay later | Klarna | not supported | supported | automatic, manual | not applicable | - | 22 | 11 |
 | wallet | Alipay | not supported | supported | automatic, manual | not applicable | - | CHN | CNY |
-| wallet | Apple Pay | not supported | supported | automatic, manual | not applicable | - | 77 ([full list](https://hyperswitch.io/pm-list)) | 9 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, manual | not applicable | - | 74 ([full list](https://hyperswitch.io/pm-list)) | - |
+| wallet | Apple Pay | not supported | supported | automatic, manual | not applicable | - | 77 | 9 |
+| wallet | Google Pay | not supported | supported | automatic, manual | not applicable | - | 74 | - |
 | wallet | MB WAY | not supported | supported | automatic, manual | not applicable | - | ESP, EST, PRT | EUR |
-| wallet | Samsung Pay | not supported | supported | automatic, manual | not applicable | - | 31 ([full list](https://hyperswitch.io/pm-list)) | 9 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Samsung Pay | not supported | supported | automatic, manual | not applicable | - | 31 | 9 |
 
 ### Connector-Specific Notes
 

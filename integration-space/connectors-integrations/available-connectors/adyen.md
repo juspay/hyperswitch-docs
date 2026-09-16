@@ -14,19 +14,24 @@ Configure an API key and merchant account for Adyen. If your connector configura
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch f35edab780c97dd12efdd366246ff3f7fbc0e940; host http://localhost:8080; fetched 2026-09-08; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
-**Integration status:** live  
-**Category:** payment gateway  
+**Integration status:** live
+
+**Category:** payment gateway
+
 **Webhook flows:** disputes, mandates, payments, payouts, refunds
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
 | bank debit | ACH Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
 | bank debit | BACS Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | GBR | GBP |
-| bank debit | SEPA Direct Debit | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 14 ([full list](https://hyperswitch.io/pm-list)) | EUR |
+| bank debit | SEPA Direct Debit | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 14 | EUR |
 | bank redirect | Bancontact Card | supported | supported | automatic, sequential automatic | not applicable | - | BEL | EUR |
 | bank redirect | Bizum | not supported | supported | automatic, sequential automatic | not applicable | - | ESP | EUR |
 | bank redirect | BLIK | not supported | supported | automatic, sequential automatic | not applicable | - | POL | PLN |
@@ -39,7 +44,7 @@ Configure an API key and merchant account for Adyen. If your connector configura
 | bank redirect | Online Banking Slovakia | not supported | supported | automatic, sequential automatic | not applicable | - | SVK | CZK, EUR |
 | bank redirect | Online Banking Thailand | not supported | supported | automatic, sequential automatic | not applicable | - | THA | THB |
 | bank redirect | Open Banking UK | supported | supported | automatic, sequential automatic | not applicable | - | GBR | GBP |
-| bank redirect | Trustly | supported | supported | automatic, sequential automatic | not applicable | - | 12 ([full list](https://hyperswitch.io/pm-list)) | CZK, DKK, EUR, GBP, NOK, SEK |
+| bank redirect | Trustly | supported | supported | automatic, sequential automatic | not applicable | - | 12 | CZK, DKK, EUR, GBP, NOK, SEK |
 | bank transfer | BCA Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
 | bank transfer | BNI Virtual Account | not supported | supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
 | bank transfer | BRI Virtual Account | not supported | supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
@@ -54,12 +59,12 @@ Configure an API key and merchant account for Adyen. If your connector configura
 | card redirect | KNET | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
 | card redirect | MoMo ATM | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
 | gift card | Givex | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
-| gift card | PaySafeCard | not supported | supported | automatic, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 27 ([full list](https://hyperswitch.io/pm-list)) |
+| gift card | PaySafeCard | not supported | supported | automatic, sequential automatic | not applicable | - | 46 | 27 |
 | pay later | Affirm | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | USA | USD |
-| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 8 ([full list](https://hyperswitch.io/pm-list)) | GBP |
+| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 8 | GBP |
 | pay later | Alma | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | pay later | Atome | not supported | supported | automatic, sequential automatic | not applicable | - | MYS, SGP | MYR, SGD |
-| pay later | Klarna | supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
+| pay later | Klarna | supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 | 12 |
 | pay later | PayBright | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | CAN | CAD |
 | pay later | Walley | not supported | supported | automatic, manual, sequential automatic | not applicable | - | DNK, FIN, NOR, SWE | DKK, EUR, NOK, SEK |
 | voucher | Alfamart | not supported | supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
@@ -72,26 +77,25 @@ Configure an API key and merchant account for Adyen. If your connector configura
 | voucher | PayEasy | not supported | not supported | automatic, sequential automatic | not applicable | - | JPN | JPY |
 | voucher | Seicomart | not supported | not supported | automatic, sequential automatic | not applicable | - | JPN | JPY |
 | voucher | 7-Eleven | not supported | not supported | automatic, sequential automatic | not applicable | - | JPN | JPY |
-| wallet | Alipay | not supported | supported | automatic, sequential automatic | not applicable | - | 28 ([full list](https://hyperswitch.io/pm-list)) | 13 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Alipay | not supported | supported | automatic, sequential automatic | not applicable | - | 28 | 13 |
 | wallet | AlipayHK | not supported | supported | automatic, sequential automatic | not applicable | - | HKG | HKD |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 40 ([full list](https://hyperswitch.io/pm-list)) | 59 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 40 | 59 |
 | wallet | DANA | supported | supported | automatic, sequential automatic | not applicable | - | - | - |
 | wallet | GCash | supported | supported | automatic, sequential automatic | not applicable | - | PHL | PHP |
 | wallet | GoPay | supported | supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 33 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 33 | 58 |
 | wallet | KakaoPay | supported | supported | automatic, sequential automatic | not applicable | - | KOR | KRW |
 | wallet | MB WAY | not supported | supported | automatic, sequential automatic | not applicable | - | PRT | EUR |
 | wallet | MobilePay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | DNK, FIN | DKK, EUR, NOK, SEK |
 | wallet | MoMo | supported | supported | automatic, sequential automatic | not applicable | - | VNM | VND |
-| wallet | PayPal | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 23 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 46 | 23 |
 | wallet | Paze | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Samsung Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Swish | not supported | supported | automatic, sequential automatic | not applicable | - | SWE | SEK |
 | wallet | Touch 'n Go | not supported | supported | automatic, sequential automatic | not applicable | - | MYS | MYR |
 | wallet | TWINT | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Vipps | supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | - | - |
-| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | 26 ([full list](https://hyperswitch.io/pm-list)) | 10 ([full list](https://hyperswitch.io/pm-list)) |
-
+| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | 26 | 10 |
 
 ### Connector-Specific Notes
 
