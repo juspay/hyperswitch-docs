@@ -15,15 +15,17 @@ The difficulty is that a checkout screen needs three things before it can render
 2. The payment methods available for it, including the customer's saved cards
 3. The wallet session tokens
 
-Fetched separately, that is three sequential round trips, with the client secret threaded through two of them. Sending `X-Integration-Type: server` on the payments update call collapses it into one.
+Fetched separately, that is three sequential round trips, with the client secret threaded through two of them. Sending `X-Integration-Type: server` collapses them into one.
 
 ## How it compares
 
-<table><thead><tr><th width="220">Client integration</th><th>Server integration</th></tr></thead><tbody><tr><td>The SDK runs in the browser or app and fetches what it needs</td><td>Your backend fetches everything and renders checkout itself</td></tr><tr><td>Three calls before rendering</td><td>One call before rendering</td></tr><tr><td>Publishable key and client secret reach the client</td><td>Merchant API key stays on your server</td></tr><tr><td>Header is <code>client</code>, or absent</td><td>Header is <code>server</code></td></tr></tbody></table>
+<table><thead><tr><th width="220">Client integration</th><th>Server integration</th></tr></thead><tbody><tr><td>The SDK runs in the browser or app and fetches what it needs</td><td>Your backend fetches everything and renders checkout itself</td></tr><tr><td>Three calls to gather what checkout needs</td><td>One call to gather what checkout needs</td></tr><tr><td>Publishable key and client secret reach the client</td><td>Merchant API key stays on your server</td></tr><tr><td>Header is <code>client</code>, or absent</td><td>Header is <code>server</code></td></tr></tbody></table>
 
-Reach for a client integration when the Hyperswitch SDK drives checkout, because it already fetches what it needs. Reach for a server integration when your backend is in charge and you would rather make one call than three.
+Reach for a client integration when the Hyperswitch SDK drives checkout, because it already fetches what it needs. Reach for a server integration when your backend is in charge and you would rather gather everything in one call than three.
 
 ## The header
+
+`X-Integration-Type` is accepted on both the create and the update call.
 
 | Value               | What comes back                                                    |
 | ------------------- | ------------------------------------------------------------------ |
@@ -31,16 +33,21 @@ Reach for a client integration when the Hyperswitch SDK drives checkout, because
 | `client`, or absent | The payment response, unchanged                                     |
 
 {% hint style="info" %}
-The header is honoured only with merchant API key authentication. This route also accepts a publishable key with a client secret, and a caller authenticated that way gets the ordinary response even if it sends `server`. An unrecognised value reads as `client`, so a typo gives you the ordinary response rather than an error.
+The header is honoured only with merchant API key authentication. The update call also accepts a publishable key with a client secret, and a caller authenticated that way gets the ordinary response even if it sends `server`. An unrecognised value reads as `client`, so a typo gives you the ordinary response rather than an error.
 {% endhint %}
 
-## Step 1: Create the payment
+{% hint style="info" %}
+On create, the header applies to an unconfirmed intent. A create-and-confirm request, meaning one that sends `"confirm": true`, returns the ordinary response, because a payment that has already been confirmed has no use for a payment-method list or wallet session tokens.
+{% endhint %}
 
-Create the intent without confirming it.
+## Step 1: Create the payment and fetch everything
+
+Create the intent without confirming it, with the header set.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
   --header 'api-key: YOUR_API_KEY' \
+  --header 'X-Integration-Type: server' \
   --header 'Content-Type: application/json' \
   --data '{
     "amount": 6540,
@@ -52,7 +59,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
   }'
 ```
 
-Keep the `payment_id` and `client_secret` from the response.
+The response is the payment you already know, with two sections added. Keep the `payment_id` and `client_secret` from it.
 
 ```json
 {
@@ -62,34 +69,7 @@ Keep the `payment_id` and `client_secret` from the response.
   "currency": "USD",
   "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
   "customer_id": "cus_abcdefgh",
-  "profile_id": "pro_abcdefghijklmnop"
-}
-```
-
-## Step 2: Fetch everything your checkout needs
-
-Update the intent with the header set. You can change real fields in the same call, or send only what you want to change. The sections are attached either way.
-
-```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
-  --header 'api-key: YOUR_API_KEY' \
-  --header 'X-Integration-Type: server' \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "amount": 7654
-  }'
-```
-
-The response is the payment you already know, with two sections added.
-
-```json
-{
-  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
-  "status": "requires_payment_method",
-  "amount": 7654,
-  "currency": "USD",
-  "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
-  "customer_id": "cus_abcdefgh",
+  "profile_id": "pro_abcdefghijklmnop",
 
   "payment_method_list": {
     "payment_methods_enabled": [
@@ -116,13 +96,7 @@ The response is the payment you already know, with two sections added.
         }
       }
     ],
-    "sdk_next_action": { "next_action": "confirm" },
-    "intent_data": {
-      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
-      "status": "requires_payment_method",
-      "amount": 7654,
-      "currency": "USD"
-    }
+    "sdk_next_action": { "next_action": "confirm" }
   },
 
   "session_tokens": {
@@ -141,7 +115,7 @@ The response is the payment you already know, with two sections added.
 
 `payment_method_list` is the same object [List payment methods for a payment](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-payment-via-client-sdk) returns, and `session_tokens` is the same object [Create session tokens](https://api-reference.hyperswitch.io/v1/payments/payments--session-token) returns. Anything already parsing those responses works unchanged.
 
-## Step 3: Confirm
+## Step 2: Confirm
 
 Render your checkout from those two sections, then confirm. A saved card is confirmed with the `payment_token` that came back in `customer_payment_methods`.
 
@@ -156,6 +130,22 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
   }'
 ```
 
+## Changing the intent before you confirm
+
+If the basket changes between rendering and confirming, send the same header on the update call and both sections come back refreshed against the new amount. You can change real fields in the same call, or send only what you want to change.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'X-Integration-Type: server' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "amount": 7654
+  }'
+```
+
+The response has the same shape as Step 1, with the updated amount.
+
 ## When a section cannot be built
 
 The payment write has already committed by the time these sections are built. A section that fails therefore reports its own error inline rather than failing the whole request, so a committed state change is never hidden from you by a problem in a read that came after it.
@@ -164,13 +154,12 @@ The payment write has already committed by the time these sections are built. A 
 {
   "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
   "status": "requires_payment_method",
-  "amount": 7654,
+  "amount": 6540,
 
   "payment_method_list": {
     "payment_methods_enabled": [],
     "customer_payment_methods": [],
-    "sdk_next_action": { "next_action": "confirm" },
-    "intent_data": { "payment_id": "pay_mbabizu24mvu3mela5njyhpit4" }
+    "sdk_next_action": { "next_action": "confirm" }
   },
 
   "session_tokens": {
@@ -186,11 +175,12 @@ The payment write has already committed by the time these sections are built. A 
 Check each section for an `error` key before using it. The payment is unaffected, so you can proceed with the section that arrived and either retry the other or fall back to its standalone endpoint.
 
 {% hint style="success" %}
-Adding the header never changes the payment itself. The same update sent with `client`, or with no header at all, does exactly the same thing to the payment; only the response shape differs. An existing integration that has never heard of this header is unaffected.
+Adding the header never changes the payment itself. The same request sent with `client`, or with no header at all, does exactly the same thing to the payment; only the response shape differs. An existing integration that has never heard of this header is unaffected.
 {% endhint %}
 
 ## Related
 
+* [Payments - Create API reference](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 * [Payments - Update API reference](https://api-reference.hyperswitch.io/v1/payments/payments--update)
 * [Server to Server payments in the API reference](https://api-reference.hyperswitch.io/v1/payments/payments--server-to-server)
 * [Token Led Payment](payment-method-card/payments.md)
