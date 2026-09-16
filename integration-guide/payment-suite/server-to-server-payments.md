@@ -40,9 +40,48 @@ The header is honoured only with merchant API key authentication. The update cal
 On create, the header applies to an unconfirmed intent. A create-and-confirm request, meaning one that sends `"confirm": true`, returns the ordinary response, because a payment that has already been confirmed has no use for a payment-method list or wallet session tokens.
 {% endhint %}
 
-## Step 1: Create the payment and fetch everything
+## Step 1: Create the customer
 
-Create the intent without confirming it, with the header set.
+Create the customer first so the payment can be attached to it. This is what lets the payment-method list come back with the customer's saved cards, and what lets a card tokenized during this checkout be reused later.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/customers' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "customer_id": "cus_abcdefgh",
+    "name": "John Doe",
+    "email": "guest@example.com",
+    "phone": "9123456789",
+    "phone_country_code": "+1",
+    "description": "First time shopper"
+  }'
+```
+
+```json
+{
+  "customer_id": "cus_abcdefgh",
+  "name": "John Doe",
+  "email": "guest@example.com",
+  "phone": "9123456789",
+  "phone_country_code": "+1",
+  "description": "First time shopper",
+  "address": null,
+  "created_at": "2026-09-16T10:12:33.456Z",
+  "metadata": null,
+  "default_payment_method_id": null
+}
+```
+
+Keep the `customer_id`. If you already have one, skip this step and reuse it.
+
+{% hint style="info" %}
+Omit `customer_id` from the request and Hyperswitch generates one for you. Reuse the same `customer_id` across visits so saved cards follow the customer.
+{% endhint %}
+
+## Step 2: Create the payment and fetch everything
+
+Create the intent against that customer, without confirming it, with the header set.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
@@ -59,7 +98,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
   }'
 ```
 
-The response is the payment you already know, with two sections added. Keep the `payment_id` and `client_secret` from it.
+The response is the payment you already know, with two sections added. Keep the `payment_id`, and keep `session_tokens.vault_details` for Step 4.
 
 ```json
 {
@@ -115,9 +154,137 @@ The response is the payment you already know, with two sections added. Keep the 
 
 `payment_method_list` is the same object [List payment methods for a payment](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-payment-via-client-sdk) returns, and `session_tokens` is the same object [Create session tokens](https://api-reference.hyperswitch.io/v1/payments/payments--session-token) returns. Anything already parsing those responses works unchanged.
 
-## Step 2: Confirm
+A returning customer's saved cards arrive in `customer_payment_methods`, each with a `payment_token`. If the customer picks one of those, you can skip straight to Step 5.
 
-Render your checkout from those two sections, then confirm. A saved card is confirmed with the `payment_token` that came back in `customer_payment_methods`.
+## Step 3: Update the payment, only if something changed
+
+Skip this step unless a field on the intent actually changes, for example the basket total or the currency. Send the same header and both sections come back refreshed against the new values.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'X-Integration-Type: server' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "amount": 7654,
+    "currency": "USD"
+  }'
+```
+
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "requires_payment_method",
+  "amount": 7654,
+  "currency": "USD",
+  "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+  "customer_id": "cus_abcdefgh",
+
+  "payment_method_list": {
+    "payment_methods_enabled": [
+      {
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "card_networks": ["Visa", "Mastercard"],
+        "customer_acceptance_support": "supported"
+      }
+    ],
+    "customer_payment_methods": [],
+    "sdk_next_action": { "next_action": "confirm" }
+  },
+
+  "session_tokens": {
+    "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+    "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+    "session_token": [],
+    "vault_details": {
+      "vault_type": "hyperswitch",
+      "vault_data": {
+        "sdk_authorization": "cHJvZmlsZV9pZD1wcm9mXzEyMyxwdWJsaXNoYWJsZV9rZXk9cGtfbGl2ZV8xMjM="
+      }
+    }
+  }
+}
+```
+
+## Step 4: Collect the card with the Payment Methods SDK
+
+Card details never touch your server. The `sdk_authorization` inside `vault_details` is the vault session the Payment Methods SDK needs, so you do not have to call `/payment-method-sessions` separately — Step 2 already handed it to you.
+
+Pass it to your frontend, add a placeholder for the widget, and mount it.
+
+```html
+<form id="payment-methods-management-form">
+  <div id="payment-methods-management-elements">
+    <!--HyperLoader injects the Payment Methods Management SDK-->
+  </div>
+</form>
+```
+
+```javascript
+// sdkAuthorization comes from your server, lifted out of the Step 2 response:
+//   session_tokens.vault_details.vault_data.sdk_authorization
+async function initialize(sdkAuthorization) {
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+
+  let hyper;
+  let paymentMethodsManagementElements;
+
+  script.onload = () => {
+    hyper = window.Hyper({
+      publishableKey: "YOUR_PUBLISHABLE_KEY",
+      profileId: "YOUR_PROFILE_ID",
+    });
+
+    paymentMethodsManagementElements = hyper.paymentMethodsManagementElements({
+      appearance: { theme: "default" },
+      sdkAuthorization: sdkAuthorization,
+    });
+
+    const paymentMethodsManagement = paymentMethodsManagementElements.create(
+      "paymentMethodsManagement"
+    );
+    paymentMethodsManagement.mount("#payment-methods-management-elements");
+  };
+
+  document.body.appendChild(script);
+}
+```
+
+When the customer submits, call `confirmTokenization()`. The card is tokenized inside the Hyperswitch-hosted iframe and you get a token back.
+
+```javascript
+const response = await hyper.confirmTokenization({
+  paymentMethodsManagementElements,
+  confirmParams: {
+    return_url: "https://example.com/complete",
+  },
+  redirect: "if_required",
+});
+
+if (response?.id) {
+  // Send this to your server; it is what Step 5 confirms with.
+  await fetch("/complete-payment", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token: response.id }),
+  });
+} else {
+  showError(response?.error?.message ?? "An unexpected error occurred.");
+}
+```
+
+`YOUR_PUBLISHABLE_KEY` comes from the dashboard under Developers, and `YOUR_PROFILE_ID` is the `profile_id` on the Step 2 response. Never send your API key to the browser.
+
+{% hint style="info" %}
+For the full SDK walkthrough, including appearance customization and error handling, see [Vault SDK Integration](../workflows/vault/sdk-integration.md).
+{% endhint %}
+
+## Step 5: Confirm
+
+Confirm from your server with the merchant API key and the token from Step 4. A returning customer who picked a saved card in Step 2 uses the `payment_token` from `customer_payment_methods` here instead.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
@@ -130,21 +297,28 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
   }'
 ```
 
-## Changing the intent before you confirm
-
-If the basket changes between rendering and confirming, send the same header on the update call and both sections come back refreshed against the new amount. You can change real fields in the same call, or send only what you want to change.
-
-```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
-  --header 'api-key: YOUR_API_KEY' \
-  --header 'X-Integration-Type: server' \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "amount": 7654
-  }'
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "succeeded",
+  "amount": 7654,
+  "amount_received": 7654,
+  "currency": "USD",
+  "customer_id": "cus_abcdefgh",
+  "connector": "stripe",
+  "payment_method": "card",
+  "payment_method_type": "credit",
+  "payment_method_id": "pm_9Xn4KkTgVqLmZpRsWbYc",
+  "connector_transaction_id": "pi_3PqR4s2eZvKYlo2C1gFJbEwX",
+  "profile_id": "pro_abcdefghijklmnop",
+  "error_code": null,
+  "error_message": null,
+  "next_action": null,
+  "created": "2026-09-16T10:12:41.882Z"
+}
 ```
 
-The response has the same shape as Step 1, with the updated amount.
+A `status` of `succeeded` means the payment is done. If the card needs 3DS, `status` comes back as `requires_customer_action` with a `next_action` telling you where to send the customer.
 
 ## When a section cannot be built
 
@@ -180,7 +354,9 @@ Adding the header never changes the payment itself. The same request sent with `
 
 ## Related
 
+* [Customers - Create API reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)
 * [Payments - Create API reference](https://api-reference.hyperswitch.io/v1/payments/payments--create)
 * [Payments - Update API reference](https://api-reference.hyperswitch.io/v1/payments/payments--update)
+* [Payments - Confirm API reference](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)
+* [Vault SDK Integration](../workflows/vault/sdk-integration.md)
 * [Server to Server payments in the API reference](https://api-reference.hyperswitch.io/v1/payments/payments--server-to-server)
-* [Token Led Payment](payment-method-card/payments.md)
