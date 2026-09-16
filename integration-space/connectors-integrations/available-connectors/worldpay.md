@@ -13,9 +13,12 @@ Worldpay connects merchants to payment processing through Hyperswitch.
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d8f9262a968f392d6ad75747c38ed7aece123fe9; host http://localhost:8080; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** live
 
@@ -25,10 +28,10 @@ Worldpay connects merchants to payment processing through Hyperswitch.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 57 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 | 147 |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 | 147 |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 | 58 |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 | 57 |
 
 ### Connector-Specific Notes
 

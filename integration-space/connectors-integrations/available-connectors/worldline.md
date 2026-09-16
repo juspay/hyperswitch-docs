@@ -12,7 +12,7 @@ Worldline combines card checkout with bank-redirect payment paths. Refunds and d
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
      Do not edit by hand. Payment method rows regenerate from the
      connector's SupportedPaymentMethods declaration; countries and
      currencies come from pm_filters in config/development.toml.
@@ -29,8 +29,8 @@ Worldline combines card checkout with bank-redirect payment paths. Refunds and d
 |---|---|---|---|---|---|---|---|---|
 | bank redirect | Giropay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | DEU | EUR |
 | bank redirect | iDEAL | not supported | supported | automatic, manual, sequential automatic | not applicable | - | NLD | EUR |
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 | 154 |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, Mastercard, Visa | 247 | 154 |
 
 ### Authentication
 
