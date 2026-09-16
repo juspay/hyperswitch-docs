@@ -66,7 +66,7 @@ For each refund, Hyperswitch calculates:
 
 `remaining refundable amount = amount_captured - previous non-failed refund amounts`
 
-The new `amount` must not exceed that remainder. Failed refund operations do not consume it. This allows multiple partial refunds, subject to the remaining captured amount and the deployment's `refund.max_attempts` limit. Hyperswitch rejects a new refund when the payment attempt already has more than `refund.max_attempts` refunds, so the default of 10 allows up to 11 refunds on one payment attempt. Every refund counts toward that limit, including failed ones, even though failed refunds do not consume the refundable amount. Deployments can configure a different value. Use a distinct `refund_id` for each operation.
+The new `amount` must not exceed that remainder. Failed refund operations do not consume it. This allows multiple partial refunds, subject to the remaining captured amount and the deployment's `refund.max_attempts` limit. Hyperswitch rejects a new refund when the payment attempt already has more than `refund.max_attempts` refunds, so the default of 10 allows up to 11 refunds on one payment attempt. That off-by-one is a bug, not an intended limit; see the [tracking issue](https://github.com/juspay/hyperswitch/issues/14264). Every refund counts toward that limit, including failed ones, even though failed refunds do not consume the refundable amount. Deployments can configure a different value. Use a distinct `refund_id` for each operation.
 
 ## Refunds and captures
 
