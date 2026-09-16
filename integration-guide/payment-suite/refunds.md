@@ -5,13 +5,14 @@ description: Create, limit, and track API refunds against captured payment amoun
 <!-- truth manifest; hyperswitch 02ba5ea0b4cc0ad8debea4cefd28a7de5916d9db; spec api-reference/v1/openapi_spec_v1.json@02ba5ea0b4cc0ad8debea4cefd28a7de5916d9db
      symbols: POST /refunds = api-reference/v1/openapi_spec_v1.json:2283-2351; crates/router/src/routes/app.rs:1564-1602
      symbols: GET /refunds/{refund_id} = api-reference/v1/openapi_spec_v1.json:2353-2380; crates/router/src/routes/app.rs:1564-1602
-     symbols: RefundRequest has 10 fields; payment_id, refund_id, amount, reason, metadata are the 5 covered here = api-reference/v1/openapi_spec_v1.json:43403-43482
+     symbols: RefundRequest has 10 fields; payment_id, refund_id, amount, reason, metadata, refund_type are the 6 covered here = api-reference/v1/openapi_spec_v1.json:43403-43482
      symbols: RefundResponse has 21 fields; refund_id, payment_id, amount, currency, status, reason, metadata are the 7 covered here = api-reference/v1/openapi_spec_v1.json:43484-43603
      symbols: succeeded, failed, pending, review = api-reference/v1/openapi_spec_v1.json:43604-43612; crates/api_models/src/refunds.rs:571-604
      symbols: refund.max_age = crates/router/src/configs/settings.rs:1173-1178; crates/router/src/configs/defaults.rs:90-95
      symbols: refund.max_attempts = crates/router/src/configs/settings.rs:1173-1178; crates/router/src/core/refunds.rs:1676-1680
      symbols: refundable payment statuses succeeded, partially_captured = crates/router/src/core/refunds.rs:391-403
      symbols: initial refund status pending = crates/router/src/core/refunds.rs:1715-1721
+     symbols: refund_type instant is the default, executes before responding; scheduled queues = crates/api_models/src/refunds.rs:279-283; crates/router/src/core/refunds.rs:1750,2220-2245
      symbols: refund.max_attempts default 10, rejects when existing refund count exceeds it, counts all refunds including failed = crates/router/src/configs/defaults.rs:90-95; crates/router/src/core/utils/refunds_validator.rs:93-100
      symbols: GET /feature_matrix = crates/router/src/routes/app.rs:3386-3388, route registration only, absent from api-reference/v1/openapi_spec_v1.json
      symbols: refund.max_age compared with payment created_at in whole days = crates/router/src/core/refunds.rs:1656-1663; crates/router/src/core/utils/refunds_validator.rs:80-90
@@ -32,7 +33,7 @@ Use `POST /refunds` to create a refund. Use `GET /refunds/{refund_id}` to retrie
 
 ## Create a refund
 
-The request schema has 10 fields. These 5 cover the common full and partial refund flow:
+The request schema has 10 fields. These 6 cover the common full and partial refund flow:
 
 | Field | Required | What to send |
 | --- | --- | --- |
@@ -41,6 +42,7 @@ The request schema has 10 fields. These 5 cover the common full and partial refu
 | `refund_id` | No | Your unique identifier for this refund operation. Hyperswitch generates one when it is omitted. |
 | `reason` | No | A reason string. Hyperswitch stores it on the refund; whether it is passed to the processor depends on the connector. |
 | `metadata` | No | Additional structured information for your own reference. |
+| `refund_type` | No | `instant` (the default) sends the refund to the connector before responding. `scheduled` queues it instead. This decides the status in the create response, as described below. |
 
 For a partial refund:
 
@@ -89,7 +91,9 @@ The API returns four wire values:
 | `failed` | The refund did not complete. |
 | `review` | The refund requires review. |
 
-A newly created refund starts as `pending`. Retrieve it with `GET /refunds/{refund_id}` when you need the current API value. For event-driven updates, use the refund events listed in [Webhooks](../webhooks.md).
+Hyperswitch records every new refund as `pending`, but that is not necessarily the status you get back from `POST /refunds`. With the default `refund_type` of `instant`, Hyperswitch sends the refund to the connector before responding, so the create response can already be `succeeded`, `failed`, or `review`, and is `pending` only when the connector has not reached a final outcome. With `refund_type: scheduled`, the refund is queued and the create response is `pending`.
+
+Retrieve a refund with `GET /refunds/{refund_id}` when you need the current API value. For event-driven updates, use the refund events listed in [Webhooks](../webhooks.md).
 
 The Control Center uses display labels for operators. See [Operations](../control-center/operations.md) for the dashboard workflow. Those labels and the API wire values serve different interfaces.
 
