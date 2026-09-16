@@ -3,6 +3,9 @@ description: >-
   Drive checkout from your own backend and fetch the payment, its payment
   methods and the wallet session tokens in a single call
 icon: server
+metaLinks:
+  alternates:
+    - server-to-server-payments.md
 ---
 
 # Server to Server Payments
@@ -135,7 +138,18 @@ The response is the payment you already know, with two sections added. Keep the 
         }
       }
     ],
-    "sdk_next_action": { "next_action": "confirm" }
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 6540,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
   },
 
   "session_tokens": {
@@ -152,13 +166,13 @@ The response is the payment you already know, with two sections added. Keep the 
 }
 ```
 
-`payment_method_list` is the same object [List payment methods for a payment](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-payment-via-client-sdk) returns, and `session_tokens` is the same object [Create session tokens](https://api-reference.hyperswitch.io/v1/payments/payments--session-token) returns. Anything already parsing those responses works unchanged.
+`payment_method_list` is the object [List payment methods for a payment](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-payment-via-client-sdk) returns, including `intent_data`, which repeats the intent fields the checkout screen needs so you do not have to thread them through yourself. `session_tokens` is the same object [Create session tokens](https://api-reference.hyperswitch.io/v1/payments/payments--session-token) returns. Anything already parsing those responses works unchanged.
 
-A returning customer's saved cards arrive in `customer_payment_methods`, each with a `payment_token`. If the customer picks one of those, you can skip straight to Step 5.
+A returning customer's saved cards arrive in `customer_payment_methods`, each with a `payment_token`. If the customer picks one of those, skip Step 4 and confirm with that token. Check `requires_cvv` first: when it is `true`, collect the CVV and send it alongside the token, as the [saved card](#confirming-a-saved-card) example shows.
 
 ## Step 3: Update the payment, only if something changed
 
-Skip this step unless a field on the intent actually changes, for example the basket total or the currency. Send the same header and both sections come back refreshed against the new values.
+Skip this step unless a field on the intent actually changes, for example the basket total or the currency. Send the same header and both sections come back refreshed against the new values. If you do run it, use this response for the rest of the flow: its `session_tokens` and `payment_method_list` supersede the ones from Step 2.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
@@ -189,8 +203,34 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
         "customer_acceptance_support": "supported"
       }
     ],
-    "customer_payment_methods": [],
-    "sdk_next_action": { "next_action": "confirm" }
+    "customer_payment_methods": [
+      {
+        "payment_token": "token_7ebf443fa0504067",
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "requires_cvv": true,
+        "payment_method_data": {
+          "card": {
+            "last4_digits": "4242",
+            "card_network": "Visa",
+            "expiry_month": "12",
+            "expiry_year": "2030"
+          }
+        }
+      }
+    ],
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 7654,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
   },
 
   "session_tokens": {
@@ -209,7 +249,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
 
 ## Step 4: Collect the card with the Payment Methods SDK
 
-Card details never touch your server. The `sdk_authorization` inside `vault_details` is the vault session the Payment Methods SDK needs, so you do not have to call `/payment-method-sessions` separately — Step 2 already handed it to you.
+Card details never touch your server. The `sdk_authorization` inside `vault_details` is the vault session the Payment Methods SDK needs, so you do not have to call `/payment-method-sessions` separately — the call you just made already handed it to you. Take it from the most recent response: Step 3's if you ran it, otherwise Step 2's.
 
 Pass it to your frontend, add a placeholder for the widget, and mount it.
 
@@ -222,15 +262,15 @@ Pass it to your frontend, add a placeholder for the widget, and mount it.
 ```
 
 ```javascript
-// sdkAuthorization comes from your server, lifted out of the Step 2 response:
+// sdkAuthorization comes from your server, lifted out of the latest response:
 //   session_tokens.vault_details.vault_data.sdk_authorization
-async function initialize(sdkAuthorization) {
+let hyper;
+let paymentMethodsManagementElements;
+
+function initialize(sdkAuthorization) {
   const script = document.createElement("script");
   script.type = "text/javascript";
   script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
-
-  let hyper;
-  let paymentMethodsManagementElements;
 
   script.onload = () => {
     hyper = window.Hyper({
@@ -251,6 +291,9 @@ async function initialize(sdkAuthorization) {
 
   document.body.appendChild(script);
 }
+
+// Call it with the value your server passed to the page.
+initialize(sdkAuthorization);
 ```
 
 When the customer submits, call `confirmTokenization()`. The card is tokenized inside the Hyperswitch-hosted iframe and you get a token back.
@@ -284,7 +327,7 @@ For the full SDK walkthrough, including appearance customization and error handl
 
 ## Step 5: Confirm
 
-Confirm from your server with the merchant API key and the token from Step 4. A returning customer who picked a saved card in Step 2 uses the `payment_token` from `customer_payment_methods` here instead.
+Confirm from your server with the merchant API key and the token your frontend sent back from Step 4, the `response.id` of `confirmTokenization()`.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
@@ -293,16 +336,38 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
   --data '{
     "payment_method": "card",
     "payment_method_type": "credit",
-    "payment_token": "token_7ebf443fa0504067"
+    "payment_token": "<token from confirmTokenization()>"
   }'
 ```
+
+### Confirming a saved card
+
+A returning customer who picked a saved card never goes through Step 4. Confirm with that card's `payment_token` from `customer_payment_methods` instead. When the card came back with `"requires_cvv": true`, collect the CVV and send it in `payment_method_data.card_token`.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "payment_method": "card",
+    "payment_method_type": "credit",
+    "payment_token": "token_7ebf443fa0504067",
+    "payment_method_data": {
+      "card_token": {
+        "card_cvc": "123"
+      }
+    }
+  }'
+```
+
+Collect that CVV through the SDK rather than your own form, so the value never reaches your server. Cards that come back with `"requires_cvv": false` confirm with the token alone.
 
 ```json
 {
   "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
   "status": "succeeded",
-  "amount": 7654,
-  "amount_received": 7654,
+  "amount": 6540,
+  "amount_received": 6540,
   "currency": "USD",
   "customer_id": "cus_abcdefgh",
   "connector": "stripe",
