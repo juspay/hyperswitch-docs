@@ -35,8 +35,32 @@ Reach for a client integration when the Hyperswitch SDK drives checkout, because
 | `server`            | The payment, plus `payment_method_list` and `session_tokens`        |
 | `client`, or absent | The payment response, unchanged                                     |
 
+### Your merchant account has to allow it
+
+Every create and update call checks the header against your account's configured integration type, and rejects a mismatch with a `422` before anything else happens. The default is `client`, so a new account rejects `server` until it is reconfigured.
+
+| Your integration type | `server` | `client`, or absent |
+| --- | --- | --- |
+| `client` (the default) | Rejected | Accepted |
+| `server` | Accepted | Rejected |
+| `client_and_server` | Accepted | Accepted |
+
+The rejection reads:
+
+```json
+{
+  "error": {
+    "type": "invalid_request",
+    "message": "`X-Integration-Type` header value `server` does not match the merchant integration type `client`",
+    "code": "IR_06"
+  }
+}
+```
+
+Ask your Hyperswitch contact to set the account to `server` or `client_and_server` before you start.
+
 {% hint style="info" %}
-The header is honoured only with merchant API key authentication. The update call also accepts a publishable key with a client secret, and a caller authenticated that way gets the ordinary response even if it sends `server`. An unrecognised value reads as `client`, so a typo gives you the ordinary response rather than an error.
+Once your account allows the header, the sections come back only with merchant API key authentication. The update call also accepts a publishable key with a client secret, and a caller authenticated that way gets the ordinary response even if it sends `server`. An unrecognised value reads as `client`, which means a typo is rejected outright on a `server` account, and returns the ordinary response on a `client_and_server` one.
 {% endhint %}
 
 {% hint style="info" %}
@@ -251,6 +275,8 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
 
 Card details never touch your server. The `sdk_authorization` inside `vault_details` is the vault session the Payment Methods SDK needs, so you do not have to call `/payment-method-sessions` separately — the call you just made already handed it to you. Take it from the most recent response: Step 3's if you ran it, otherwise Step 2's.
 
+`vault_details` is optional, and `session_tokens` can arrive carrying an `error` instead of the tokens, as [When a section cannot be built](#when-a-section-cannot-be-built) describes. Read `session_tokens.vault_details.vault_data.sdk_authorization` defensively, and when it is not there, fall back to creating the session yourself with `/payment-method-sessions` before mounting the widget.
+
 Pass it to your frontend, add a placeholder for the widget, and mount it.
 
 ```html
@@ -382,6 +408,8 @@ Collect that CVV through the SDK rather than your own form, so the value never r
   "created": "2026-09-16T10:12:41.882Z"
 }
 ```
+
+The amounts here follow the walkthrough as written, with Step 3 skipped. If you did run Step 3, the confirmed amount is the updated one.
 
 A `status` of `succeeded` means the payment is done. If the card needs 3DS, `status` comes back as `requires_customer_action` with a `next_action` telling you where to send the customer.
 
