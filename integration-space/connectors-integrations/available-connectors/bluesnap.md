@@ -11,9 +11,12 @@ BlueSnap is a payment gateway for card and digital wallet payments. Card payment
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch a17a23c4c4c907d2314043a32a9f505f7f2bd4f9; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** live
 
@@ -23,9 +26,9 @@ BlueSnap is a payment gateway for card and digital wallet payments. Card payment
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, RuPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 94 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 88 ([full list](https://hyperswitch.io/pm-list)) | 52 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 74 ([full list](https://hyperswitch.io/pm-list)) | 54 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, RuPay, Visa | 185 | 94 |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 88 | 52 |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 74 | 54 |
 
 ### Authentication
 

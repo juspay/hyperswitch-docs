@@ -13,9 +13,12 @@ Checkout.com supports cards, network tokens, Apple Pay, and Google Pay through H
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; host http://localhost:8080; fetched 2026-09-09; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** live
 
@@ -25,11 +28,11 @@ Checkout.com supports cards, network tokens, Apple Pay, and Google Pay through H
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 | 154 |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic, manual multiple | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 49 | 154 |
 | network token | Network Token | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | - | - |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 85 ([full list](https://hyperswitch.io/pm-list)) | 55 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 72 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 85 | 55 |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic, manual multiple | not applicable | - | 72 | 53 |
 
 ### Connector-Specific Notes
 
