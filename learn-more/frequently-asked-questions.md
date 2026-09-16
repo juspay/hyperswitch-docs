@@ -1186,7 +1186,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/ru
 
 **Refunds**
 
-Track via the Refunds Retrieve API, webhook events (`refund_succeeded`, `refund_failed`), and the Payment Operations dashboard in the Control Centre.
+Track via the Refunds Retrieve API, the refund webhook events listed in [Webhooks](../integration-guide/webhooks.md), and the Payment Operations dashboard in the Control Centre.
 
 **Disputes**
 

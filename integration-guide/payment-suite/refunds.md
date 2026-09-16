@@ -12,7 +12,8 @@ description: Create, limit, and track API refunds against captured payment amoun
      symbols: refund.max_attempts = crates/router/src/configs/settings.rs:1173-1178; crates/router/src/core/refunds.rs:1676-1680
      symbols: refundable payment statuses succeeded, partially_captured = crates/router/src/core/refunds.rs:391-403
      symbols: initial refund status pending = crates/router/src/core/refunds.rs:1715-1721
-     symbols: refund.max_attempts default 10, counts all refunds including failed = crates/router/src/configs/defaults.rs:90-95; crates/router/src/core/utils/refunds_validator.rs:93-100
+     symbols: refund.max_attempts default 10, rejects when existing refund count exceeds it, counts all refunds including failed = crates/router/src/configs/defaults.rs:90-95; crates/router/src/core/utils/refunds_validator.rs:93-100
+     symbols: GET /feature_matrix = crates/router/src/routes/app.rs:3386-3388, route registration only, absent from api-reference/v1/openapi_spec_v1.json
      symbols: refund.max_age compared with payment created_at in whole days = crates/router/src/core/refunds.rs:1656-1663; crates/router/src/core/utils/refunds_validator.rs:80-90
      symbols: post-capture void blocks refund = crates/router/src/core/refunds.rs:412; crates/hyperswitch_domain_models/src/payments.rs:442-461
      symbols: connector refund support check = crates/router/src/core/refunds.rs:1697; crates/router/src/core/utils/refunds_validator.rs:119-147
@@ -65,7 +66,7 @@ For each refund, Hyperswitch calculates:
 
 `remaining refundable amount = amount_captured - previous non-failed refund amounts`
 
-The new `amount` must not exceed that remainder. Failed refund operations do not consume it. This allows multiple partial refunds, subject to the remaining captured amount and the deployment's `refund.max_attempts` limit. That limit counts every refund on the payment attempt, including failed ones, so failed refunds do not consume the refundable amount but do count toward the limit. The repository default is 10, but deployments can configure a different value. Use a distinct `refund_id` for each operation.
+The new `amount` must not exceed that remainder. Failed refund operations do not consume it. This allows multiple partial refunds, subject to the remaining captured amount and the deployment's `refund.max_attempts` limit. Hyperswitch rejects a new refund when the payment attempt already has more than `refund.max_attempts` refunds, so the default of 10 allows up to 11 refunds on one payment attempt. Every refund counts toward that limit, including failed ones, even though failed refunds do not consume the refundable amount. Deployments can configure a different value. Use a distinct `refund_id` for each operation.
 
 ## Refunds and captures
 
@@ -75,7 +76,7 @@ The limit is based on `amount_captured`, not the originally requested payment am
 
 A payment that had a void issued after capture cannot be refunded; the request fails with a precondition error.
 
-The connector must also support refunds for the payment's method type. If the connector does not declare refund support for that payment method type, Hyperswitch rejects the request before creating a refund, with the message `Refunds are currently not supported for <payment method type> transactions via <connector>`. Check refund support per connector in [Payment Processor Capabilities](../../other-features/connectors/payment-processor-capabilities.md).
+The connector must also support refunds for the payment's method type. If the connector does not declare refund support for that payment method type, Hyperswitch rejects the request before creating a refund, with the message `Refunds are currently not supported for <payment method type> transactions via <connector>`. Call `GET /feature_matrix` to see which payment method types each connector declares refund support for.
 
 ## Refund status lifecycle
 
