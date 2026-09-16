@@ -14,7 +14,7 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
      Do not edit by hand. Payment method rows regenerate from the
      connector's SupportedPaymentMethods declaration; countries and
      currencies come from pm_filters in config/development.toml.
@@ -25,11 +25,11 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 
 **Category:** payment gateway
 
-**Webhook flows:** payments (declared in code; webhooks currently do not work, see the Webhooks section below)
+**Webhook flows:** payments
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| crypto | Crypto | not supported | not supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
+| crypto | Crypto | not supported | not supported | automatic | 31 | 12 |
 
 ### Authentication
 
