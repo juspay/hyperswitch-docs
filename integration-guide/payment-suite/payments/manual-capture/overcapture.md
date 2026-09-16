@@ -1,117 +1,115 @@
 ---
 description: >-
-  Capture amounts greater than the originally authorized amount in manual
-  capture payments
+  Capture more than the originally authorized amount on a manual capture payment
 icon: chart-diagram
 metaLinks:
   alternates:
     - overcapture.md
 ---
 
+<!-- truth manifest; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; spec api-reference/v1/openapi_spec_v1.json@184ffd4c015fd3fea2f3868549f1a86ffa5f40da
+     symbols: enable_overcapture = crates/api_models/src/payments.rs:1611, 8008
+     symbols: is_overcapture_enabled = crates/api_models/src/payments.rs:8013
+     symbols: is_overcapture_enabled is taken from the connector authorize response = crates/router/src/core/payments/operations/payment_response.rs:2794-2798, 2912
+     symbols: always_enable_overcapture profile field = crates/api_models/src/admin.rs:2488-2490; crates/diesel_models/src/business_profile.rs:91
+     symbols: enable_overcapture accepted only with capture_method manual = crates/router/src/core/payments/helpers.rs:1244-1262
+     symbols: connectors declared to support overcapture, Stripe and Adyen = crates/common_enums/src/connector_enums.rs:497-499
+     symbols: amount_to_capture ceiling check skipped when the attempt has overcapture enabled = crates/router/src/core/payments/operations/payment_capture.rs:101-111
+     symbols: amount_capturable, amount_received = crates/api_models/src/payments.rs:7490
+     symbols: capture_method wire values = crates/common_enums/src/enums.rs:814-830
+     symbols: refundable ceiling is amount_captured = crates/router/src/core/refunds.rs:1665-1674
+     checked: 2026-09-16 -->
+
 # Overcapture
 
 ### Overview
 
-In card payments, Over Capture occurs when a merchant captures (settles) an amount greater than the originally authorized amount.
+Overcapture is capturing more than the amount the issuer originally authorized. It is useful when the final order value is only known after authorization:
 
-This is particularly useful in scenarios such as:
+* Shipping, handling, or gratuities added later.
+* Price adjustments after the customer checked out.
+* Orders where you would otherwise authorize high to be safe.
 
-* Additional charges (e.g., shipping, handling, gratuities).
-* Price adjustments made after initial authorization.
-* Reducing the risk of under-capturing when final order values differ.
+### It only works with single manual capture
 
-### Enabling Over Capture
+Overcapture is accepted only when `capture_method` is `manual`. A request with `enable_overcapture: true` and any other capture method, `manual_multiple` included, is rejected with a precondition error saying overcapture is supported only with manual capture. If you need several captures, you cannot also have overcapture; pick one at payment creation.
 
-#### 1. Profile-level Configuration (via Dashboard)
+### Turn it on
 
-* Navigate to:\
-  Developer → Payment Settings → Always Enable Over Capture
-* Toggle Enable/Disable as required.
+#### Profile level, from the dashboard
 
-#### 2. Per-request Configuration (via API)
+Go to Developer, then Payment Settings, then Always Enable Over Capture, and toggle it. This is the `always_enable_overcapture` setting on the profile, and it applies to every payment on that profile.
 
-Use the boolean field `enable_overcapture` in your payment request.
+#### Per payment, from the API
 
-This can be passed in:
+Send the boolean `enable_overcapture` on [`POST /payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) or [`POST /payments/{payment_id}/update`](https://api-reference.hyperswitch.io/v1/payments/payments--update). The request value overrides the profile setting.
 
-[POST /payments](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+**Sample curl:**
 
-[POST /payments/:id/update](https://api-reference.hyperswitch.io/v1/payments/payments--update)
-
-{% hint style="warning" %}
-**Note:**
-
-* The request-level `enable_overcapture` will override the profile-level setting.
-* Over Capture is only applicable for manual capture payments i.e. `capture_method = manual`.
-{% endhint %}
-
-***
-
-### Example: API Request
-
-```json
+```bash
 curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: <your_publishable_key>' \
+--header 'api-key: <api key>' \
 --data '{
   "amount": 100,
   "currency": "USD",
   "confirm": true,
   "capture_method": "manual",
-  "enable_overcapture": true,
+  "enable_overcapture": true
 }'
-
 ```
 
-### Example: API Response
+### Asking is not the same as getting
+
+Two fields, and they do not mean the same thing.
+
+`enable_overcapture` is what you asked for. You set it; it is echoed back.
+
+`is_overcapture_enabled` is the answer. Hyperswitch fills it from the connector's authorization response, so it tells you whether the processor actually accepted overcapture for this payment. Read it after authorization, before you plan a capture above the authorized amount.
+
+| Field                    | Set by       | `true` means                                            |
+| ------------------------ | ------------ | --------------------------------------------------------- |
+| `enable_overcapture`     | You          | You requested overcapture for this payment.               |
+| `is_overcapture_enabled` | The connector | The connector accepted overcapture for this payment.       |
+
+**Sample response after authorization:**
 
 ```json
 {
-  "payment_id": "pay_GPnTPs4e56yZ8FKAcj0K",
+  "payment_id": "<payment_id>",
   "status": "requires_capture",
   "amount": 100,
   "amount_capturable": 100,
-  "connector": "adyen",
+  "connector": "stripe",
   "enable_overcapture": true,
   "is_overcapture_enabled": true,
   "capture_method": "manual",
   "payment_method": "card",
   "payment_method_type": "debit",
-  "network_transaction_id": "112181545921495",
   "created": "2025-09-24T11:29:55.629Z",
   "expires_on": "2025-09-24T11:44:55.629Z"
 }
-
 ```
 
-#### Field Semantics
+### What changes at capture time
 
-`enable_overcapture` Indicates merchant intent.
+Normally `amount_to_capture` may not exceed `amount_capturable`, and a capture above it is rejected. When the payment attempt has overcapture enabled, that ceiling check is skipped and a larger `amount_to_capture` goes through to the connector. How much above the authorized amount the connector will accept is the connector's rule, not Hyperswitch's, and it is usually a percentage of the authorization. Confirm the headroom with your connector before you rely on it.
 
-| Value   | Meaning                    |
-| ------- | -------------------------- |
-| `true`  | Over-capture requested     |
-| `false` | Over-capture not requested |
+`amount_capturable` after authorization still shows the authorized amount, so it is not the overcapture limit. Use `amount_received` after capture to see what was actually settled.
 
-***
+### Connector support
 
-`is_overcapture_enabled` Indicates connector capability acceptance.
+Stripe and Adyen are the connectors declared to support overcapture. Any other connector will leave `is_overcapture_enabled` false, whatever you send. If you need overcapture on a different connector, contact the Hyperswitch support team.
 
-| Value   | Meaning                                     |
-| ------- | ------------------------------------------- |
-| `true`  | Connector supports and enabled over-capture |
-| `false` | Connector does not support over-capture     |
+### Before you go live
 
-***
+* Set the capture method to `manual` at payment creation. Overcapture cannot be added to a `manual_multiple` payment.
+* Check `is_overcapture_enabled` after authorization rather than assuming your request was honoured.
+* Refunds are bounded by `amount_captured`, so an overcaptured payment is refundable up to the larger captured figure. See [Refunds](../../refunds.md).
 
-### Monitoring & Settlement
+### Questions this page does not answer
 
-* After authorization, merchants can view the `amount_capturable` field (under More Payment Details) to see the maximum amount that can be captured.
-* Once the payment is captured (or overcaptured), the final amount will be reflected in the `amount_received` field.
-
-### Merchant Action
-
-* Use Dashboard settings for global enablement
-* Use API overrides for payment-specific enablement
-* Monitor capturable and received amounts to track final settlements
+* Partial capture, the uncaptured remainder, and capture statuses: [Manual Capture](./).
+* Raising the authorized amount instead of capturing above it: [Incremental Authorization](../authorizations/incremental-authorization.md).
+* Per-connector overcapture headroom: the connector's own documentation.
