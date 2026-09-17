@@ -31,9 +31,10 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Coinbase 
 |---|---|---|---|---|---|---|
 | crypto | Crypto | not supported | not supported | automatic, manual, sequential automatic | 15 ([full list](https://hyperswitch.io/pm-list)) | - |
 
-The connector declares refund webhooks in code, but they cannot be processed: only `charge:*` events are recognized, and there is no refund event. Webhooks work for payments only.
+Two lines of that block are the connector's declaration rather than working behavior, and both are being corrected upstream in [juspay/hyperswitch#14277](https://github.com/juspay/hyperswitch/issues/14277):
 
-The connector also declares manual and sequential automatic capture, but capture is not implemented: capture requests return `FlowNotSupported`. Only automatic capture works.
+* **Webhook flows.** Refunds are declared, but no refund event exists to process: only `charge:*` events are recognized, and refunds are not supported on this connector at all. Webhooks work for payments only.
+* **Capture methods.** Manual and sequential automatic are declared, but capture is not implemented and capture requests return `FlowNotSupported`. Only automatic capture works.
 
 ### Authentication
 
