@@ -14,9 +14,12 @@ ACI provides services for commerce. Its card methods support recurring charges a
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -62,14 +65,16 @@ To connect ACI to your Hyperswitch account, follow [Activate a connector on Hype
 
 ### Webhooks
 
-ACI does not currently declare webhook flows in `SupportedPaymentMethods`, so this connector page treats webhooks as unavailable and the status block above remains the supported contract.
+ACI's webhooks do not currently work with Hyperswitch. Do not rely on them for payment status updates; use payment sync instead. Refund status updates are also affected, and Hyperswitch cannot fetch refund status from ACI on demand either (see below). We are working on it.
 
-The connector source includes incoming-webhook handling code, but until webhook flows are declared for ACI, those implementation details are not documented here as a supported integration feature.
+ACI encrypts each callback's body with AES-256-GCM and sends the hex-encoded ciphertext as the request body, with the initialization vector in the `X-Initialization-Vector` header and the authentication tag in the `X-Authentication-Tag` header. The webhook code decrypts the body only while checking the signature, but it tries to parse the body as JSON before that check runs, so parsing sees the still-encrypted ciphertext and fails, and the webhook is rejected outright. The signature check cannot succeed either: it verifies HMAC-SHA256 using the `X-Authentication-Tag` value as the HMAC digest, but that value is the AES-GCM authentication tag, not an HMAC. See [`decrypt_aci_webhook_payload()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L759-L821) and [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L832-L846). The webhook implementation has never been tested against ACI; it was written without dashboard access to verify against live callbacks (see the [original webhook flow commit](https://github.com/juspay/hyperswitch/pull/8349)), and it has no webhook tests.
+
+When webhooks do work, the handled events are payment success, payment processing, payment failure, refund success, and refund failure. The mapping reads the `result.code` value in the callback and the `paymentType` field, which separates payments from refunds (`RF`). A pending refund is not supported. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L928-L986).
 
 ### Troubleshooting
 
 **Webhook expectations**
-Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: use the declared capabilities in the status block above as the supported behavior for this connector.
+Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: for payments, confirm the status through payment sync. Hyperswitch does not currently process ACI webhooks, so configuring a webhook endpoint on the ACI side has no effect. For refunds, there is currently no in-product way to fetch the status from ACI on demand; Hyperswitch cannot run refund sync for ACI (see [`ConnectorIntegration<RSync>`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L749), the unimplemented flow). Check the refund status in your ACI dashboard.
 
 
 ### Source reference
