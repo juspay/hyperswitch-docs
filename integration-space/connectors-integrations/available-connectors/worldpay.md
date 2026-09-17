@@ -28,10 +28,10 @@ Worldpay connects merchants to payment processing through Hyperswitch.
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 | 147 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 | 147 |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 | 58 |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 | 57 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, JCB, Maestro, Mastercard, Visa | 133 ([full list](https://hyperswitch.io/pm-list)) | 147 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 90 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 57 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-Specific Notes
 

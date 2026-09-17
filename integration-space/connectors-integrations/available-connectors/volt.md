@@ -28,8 +28,8 @@ Volt is a payment gateway for open banking payments through bank redirects. The 
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| bank redirect | Open Banking | not supported | supported | automatic | 31 | DKK, EUR, GBP, NOK, PLN, SEK |
-| bank redirect | Open Banking UK | not supported | supported | automatic | 31 | GBP |
+| bank redirect | Open Banking | not supported | supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | DKK, EUR, GBP, NOK, PLN, SEK |
+| bank redirect | Open Banking UK | not supported | supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | GBP |
 
 ### Connector-Specific Notes
 
