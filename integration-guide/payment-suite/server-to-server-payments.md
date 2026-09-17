@@ -1,0 +1,506 @@
+---
+description: >-
+  Drive checkout from your own backend and fetch the payment, its payment
+  methods and the wallet session tokens in a single call
+icon: server
+metaLinks:
+  alternates:
+    - server-to-server-payments.md
+---
+
+<!-- truth manifest; hyperswitch 5fb7e5598eadd8ed5fa42822427107f271a1e112; spec api-reference/v1/openapi_spec_v1.json@5fb7e5598eadd8ed5fa42822427107f271a1e112
+     symbols: X-Integration-Type header name = crates/common_utils/src/consts.rs:229 (X_INTEGRATION_TYPE, "x-integration-type"); annotated on both routes at crates/openapi/src/routes/payments.rs:639,681; published as a parameter on POST /payments and POST /payments/{payment_id} in api-reference/v1/openapi_spec_v1.json
+     symbols: PaymentsResponse in the published spec carries payment_method_list and session_tokens, so the spec advertises both sections on create even though only update builds them = api-reference/v1/openapi_spec_v1.json, PaymentsResponse properties
+     symbols: IntegrationType has 2 variants, Client and Server = crates/api_models/src/payments.rs:10801-10806
+     symbols: an absent or unrecognised header reads as client, matched case-insensitively after trim = crates/api_models/src/payments.rs:10810-10820; crates/router/src/core/payments/update_context.rs:43-69
+     symbols: MerchantIntegrationType has 3 variants, client, server, client_and_server, serde snake_case, default client = crates/common_enums/src/enums/accounts.rs:52-76
+     symbols: header validated against merchant integration type on create = crates/router/src/routes/payments.rs:137,149-152
+     symbols: header validated against merchant integration type on update = crates/router/src/routes/payments.rs:941,957-960
+     symbols: the accept or reject matrix = crates/router/src/core/payments/update_context.rs:89-110
+     symbols: rejection message text = crates/router/src/core/payments/update_context.rs:102-106
+     symbols: rejection is InvalidRequestData, code IR_06, type invalid_request = crates/hyperswitch_domain_models/src/errors/api_error_response.rs:193-194; crates/api_models/src/errors/types.rs:167
+     symbols: sections returned only for merchant API key auth; publishable key plus client_secret gets the ordinary response = crates/router/src/routes/payments.rs:943-945, `enrich = integration_type.is_server() && auth_flow == api::AuthFlow::Merchant`
+     symbols: enrichment runs after the write, as AuthFlow::Merchant = crates/router/src/core/payments/update_context.rs:268; crates/router/src/routes/payments.rs:1002-1019
+     symbols: PaymentsResponse.payment_method_list = crates/api_models/src/payments.rs:7511-7516, skipped when None
+     symbols: PaymentsResponse.session_tokens = crates/api_models/src/payments.rs:7518-7523, skipped when None
+     symbols: PaymentMethodListResult has 2 variants, Success and Failed { error } = crates/api_models/src/payment_methods.rs:3301-3309
+     symbols: SessionTokensResult has 2 variants, serialized untagged = crates/api_models/src/payments.rs:10835-10843
+     symbols: ClientPaymentMethodsListResponse has 4 fields, payment_methods_enabled, customer_payment_methods, sdk_next_action, intent_data = crates/api_models/src/payment_methods.rs:3276-3289
+     symbols: requires_cvv = crates/api_models/src/payment_methods.rs:3252,3658,3727
+     symbols: PaymentsSessionResponse has 4 fields, payment_id, client_secret, session_token, vault_details = crates/api_models/src/payments.rs:11714-11725
+     symbols: vault_details serialized as tagged vault_type plus vault_data = crates/api_models/src/payments.rs:10933-10944
+     symbols: vault_data.sdk_authorization for the hyperswitch vault_type = crates/api_models/src/payments.rs:10946-10952
+     symbols: CardToken.card_cvc_token = crates/api_models/src/payments.rs:2913,2930
+     symbols: a failing section reports inline and the response still succeeds = crates/router/src/core/payments/update_context.rs:131-136,186-220
+     derived: section timeout 30 s = SECTION_TIMEOUT is std::time::Duration::from_secs(consts::REQUEST_TIME_OUT) and REQUEST_TIME_OUT is 30, sources crates/router/src/core/payments/update_context.rs:36-37; crates/common_utils/src/consts.rs:272
+     derived: create returns the ordinary response today = attach_server_context is called exactly once repo-wide, from the update route only, so no create request is enriched at this SHA regardless of confirm, sources crates/router/src/routes/payments.rs:1007; repo-wide grep for attach_server_context over crates/
+     absent: a confirm-true carve-out on create = checked crates/router/src/routes/payments.rs:112-190 and a repo-wide grep for attach_server_context over crates/, no create-side enrichment and therefore no confirm-conditional branch exists at this SHA; the create route validates the header and does nothing else with it
+     external: none
+     checked: 2026-09-17 -->
+
+# Server to Server Payments
+
+In a server-to-server integration your backend orchestrates checkout. It holds the merchant API key, calls Hyperswitch, and hands the result to whatever renders the payment screen: your own UI, a mobile app, or a partner surface.
+
+The difficulty is that a checkout screen needs three things before it can render anything.
+
+1. The payment itself
+2. The payment methods available for it, including the customer's saved cards
+3. The wallet session tokens
+
+Fetched separately, that is three sequential round trips, with the client secret threaded through two of them. Sending `X-Integration-Type: server` collapses them into one.
+
+## How it compares
+
+<table><thead><tr><th width="220">Client integration</th><th>Server integration</th></tr></thead><tbody><tr><td>The SDK runs in the browser or app and fetches what it needs</td><td>Your backend fetches everything and renders checkout itself</td></tr><tr><td>Three calls to gather what checkout needs</td><td>One call to gather what checkout needs</td></tr><tr><td>Publishable key and client secret reach the client</td><td>Merchant API key stays on your server</td></tr><tr><td>Header is <code>client</code>, or absent</td><td>Header is <code>server</code></td></tr></tbody></table>
+
+Reach for a client integration when the Hyperswitch SDK drives checkout, because it already fetches what it needs. Reach for a server integration when your backend is in charge and you would rather gather everything in one call than three.
+
+## The header
+
+`X-Integration-Type` is accepted on both the create and the update call.
+
+| Value               | What comes back                                                    |
+| ------------------- | ------------------------------------------------------------------ |
+| `server`            | The payment, plus `payment_method_list` and `session_tokens`        |
+| `client`, or absent | The payment response, unchanged                                     |
+
+{% hint style="warning" %}
+**The create call does not return the sections yet.** Both calls validate the header today, but only the update call builds `payment_method_list` and `session_tokens`. Create-side support is [juspay/hyperswitch#14172](https://github.com/juspay/hyperswitch/pull/14172), still open at the time of writing.
+
+Until it ships, create the payment, then make one update call with the header and take both sections from that response. [Step 3](#step-3-update-the-payment) is that call, and it works on any intent field, so you can send the same amount you created with. This page will lose the extra call when #14172 lands.
+{% endhint %}
+
+### Your merchant account has to allow it
+
+Every create and update call checks the header against your account's configured integration type, and rejects a mismatch with a `422` before anything else happens. The default is `client`, so a new account rejects `server` until it is reconfigured.
+
+| Your integration type | `server` | `client`, or absent |
+| --- | --- | --- |
+| `client` (the default) | Rejected | Accepted |
+| `server` | Accepted | Rejected |
+| `client_and_server` | Accepted | Accepted |
+
+The rejection reads:
+
+```json
+{
+  "error": {
+    "type": "invalid_request",
+    "message": "`X-Integration-Type` header value `server` does not match the merchant integration type `client`",
+    "code": "IR_06"
+  }
+}
+```
+
+Ask your Hyperswitch contact to set the account to `server` or `client_and_server` before you start.
+
+{% hint style="info" %}
+Once your account allows the header, the sections come back only with merchant API key authentication. The update call also accepts a publishable key with a client secret, and a caller authenticated that way gets the ordinary response even if it sends `server`. An unrecognised value reads as `client`, which means a typo is rejected outright on a `server` account, and returns the ordinary response on a `client_and_server` one.
+{% endhint %}
+
+{% hint style="info" %}
+When create-side support ships, the header will apply to an unconfirmed intent: a create-and-confirm request, meaning one that sends `"confirm": true`, will return the ordinary response, because a payment that has already been confirmed has no use for a payment-method list or wallet session tokens. Today the create call returns the ordinary response either way, as the warning above describes.
+{% endhint %}
+
+## Step 1: Create the customer
+
+Create the customer first so the payment can be attached to it. This is what lets the payment-method list come back with the customer's saved cards, and what lets a card tokenized during this checkout be reused later.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/customers' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "customer_id": "cus_abcdefgh",
+    "name": "John Doe",
+    "email": "guest@example.com",
+    "phone": "9123456789",
+    "phone_country_code": "+1",
+    "description": "First time shopper"
+  }'
+```
+
+```json
+{
+  "customer_id": "cus_abcdefgh",
+  "name": "John Doe",
+  "email": "guest@example.com",
+  "phone": "9123456789",
+  "phone_country_code": "+1",
+  "description": "First time shopper",
+  "address": null,
+  "created_at": "2026-09-16T10:12:33.456Z",
+  "metadata": null,
+  "default_payment_method_id": null
+}
+```
+
+Keep the `customer_id`. If you already have one, skip this step and reuse it.
+
+{% hint style="info" %}
+Omit `customer_id` from the request and Hyperswitch generates one for you. Reuse the same `customer_id` across visits so saved cards follow the customer.
+{% endhint %}
+
+## Step 2: Create the payment
+
+Create the intent against that customer, without confirming it, with the header set.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'X-Integration-Type: server' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "amount": 6540,
+    "currency": "USD",
+    "confirm": false,
+    "capture_method": "automatic",
+    "customer_id": "cus_abcdefgh",
+    "email": "guest@example.com"
+  }'
+```
+
+The response is the payment you already know, with two sections added once [#14172](https://github.com/juspay/hyperswitch/pull/14172) ships. Until then this call returns the ordinary payment response, and [Step 3](#step-3-update-the-payment) returns the sections shown here. Keep the `payment_id`, and keep `session_tokens.vault_details` for Step 4.
+
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "requires_payment_method",
+  "amount": 6540,
+  "currency": "USD",
+  "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+  "customer_id": "cus_abcdefgh",
+  "profile_id": "pro_abcdefghijklmnop",
+
+  "payment_method_list": {
+    "payment_methods_enabled": [
+      {
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "card_networks": ["Visa", "Mastercard"],
+        "customer_acceptance_support": "supported"
+      }
+    ],
+    "customer_payment_methods": [
+      {
+        "payment_token": "token_7ebf443fa0504067",
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "requires_cvv": true,
+        "payment_method_data": {
+          "card": {
+            "last4_digits": "4242",
+            "card_network": "Visa",
+            "expiry_month": "12",
+            "expiry_year": "2030"
+          }
+        }
+      }
+    ],
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 6540,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
+  },
+
+  "session_tokens": {
+    "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+    "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+    "session_token": [],
+    "vault_details": {
+      "vault_type": "hyperswitch",
+      "vault_data": {
+        "sdk_authorization": "cHJvZmlsZV9pZD1wcm9mXzEyMyxwdWJsaXNoYWJsZV9rZXk9cGtfbGl2ZV8xMjM="
+      }
+    }
+  }
+}
+```
+
+`payment_method_list` is the object [List payment methods for a payment](https://api-reference.hyperswitch.io/v1/payment-methods/list-payment-methods-for-a-payment-via-client-sdk) returns, including `intent_data`, which repeats the intent fields the checkout screen needs so you do not have to thread them through yourself. `session_tokens` is the same object [Create session tokens](https://api-reference.hyperswitch.io/v1/payments/payments--session-token) returns. Anything already parsing those responses works unchanged.
+
+A returning customer's saved cards arrive in `customer_payment_methods`, each with a `payment_token`. If the customer picks one of those, skip Step 4 and confirm with that token. Check `requires_cvv` first: when it is `true`, collect the CVV and send it alongside the token, as the [saved card](#confirming-a-saved-card) example shows.
+
+## Step 3: Update the payment
+
+Send the same header on an update and both sections come back, built against the intent's current values. Use this response for the rest of the flow: its `session_tokens` and `payment_method_list` supersede anything from Step 2.
+
+Run this step when a field on the intent changes, for example the basket total or the currency. Until [#14172](https://github.com/juspay/hyperswitch/pull/14172) ships, run it even when nothing changed, because it is the call that returns the sections; send the values you already created with.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'X-Integration-Type: server' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "amount": 7654,
+    "currency": "USD"
+  }'
+```
+
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "requires_payment_method",
+  "amount": 7654,
+  "currency": "USD",
+  "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+  "customer_id": "cus_abcdefgh",
+
+  "payment_method_list": {
+    "payment_methods_enabled": [
+      {
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "card_networks": ["Visa", "Mastercard"],
+        "customer_acceptance_support": "supported"
+      }
+    ],
+    "customer_payment_methods": [
+      {
+        "payment_token": "token_7ebf443fa0504067",
+        "payment_method": "card",
+        "payment_method_type": "credit",
+        "requires_cvv": true,
+        "payment_method_data": {
+          "card": {
+            "last4_digits": "4242",
+            "card_network": "Visa",
+            "expiry_month": "12",
+            "expiry_year": "2030"
+          }
+        }
+      }
+    ],
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 7654,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
+  },
+
+  "session_tokens": {
+    "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+    "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+    "session_token": [],
+    "vault_details": {
+      "vault_type": "hyperswitch",
+      "vault_data": {
+        "sdk_authorization": "cHJvZmlsZV9pZD1wcm9mXzEyMyxwdWJsaXNoYWJsZV9rZXk9cGtfbGl2ZV8xMjM="
+      }
+    }
+  }
+}
+```
+
+## Step 4: Collect the card with the Payment Methods SDK
+
+Card details never touch your server. The `sdk_authorization` inside `vault_details` is the vault session the Payment Methods SDK needs, so you do not have to call `/payment-method-sessions` separately — the call you just made already handed it to you. Take it from the most recent response: Step 3's if you ran it, otherwise Step 2's.
+
+`vault_details` is optional, and `session_tokens` can arrive carrying an `error` instead of the tokens, as [When a section cannot be built](#when-a-section-cannot-be-built) describes. Read `session_tokens.vault_details.vault_data.sdk_authorization` defensively, and when it is not there, fall back to creating the session yourself with `/payment-method-sessions` before mounting the widget.
+
+Pass it to your frontend, add a placeholder for the widget, and mount it.
+
+```html
+<form id="payment-methods-management-form">
+  <div id="payment-methods-management-elements">
+    <!--HyperLoader injects the Payment Methods Management SDK-->
+  </div>
+</form>
+```
+
+```javascript
+// sdkAuthorization comes from your server, lifted out of the latest response:
+//   session_tokens.vault_details.vault_data.sdk_authorization
+let hyper;
+let paymentMethodsManagementElements;
+
+function initialize(sdkAuthorization) {
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://beta.hyperswitch.io/v1/HyperLoader.js";
+
+  script.onload = () => {
+    hyper = window.Hyper({
+      publishableKey: "YOUR_PUBLISHABLE_KEY",
+      profileId: "YOUR_PROFILE_ID",
+    });
+
+    paymentMethodsManagementElements = hyper.paymentMethodsManagementElements({
+      appearance: { theme: "default" },
+      sdkAuthorization: sdkAuthorization,
+    });
+
+    const paymentMethodsManagement = paymentMethodsManagementElements.create(
+      "paymentMethodsManagement"
+    );
+    paymentMethodsManagement.mount("#payment-methods-management-elements");
+  };
+
+  document.body.appendChild(script);
+}
+
+// Call it with the value your server passed to the page.
+initialize(sdkAuthorization);
+```
+
+When the customer submits, call `confirmTokenization()`. The card is tokenized inside the Hyperswitch-hosted iframe and `response.id` comes back as the `payment_method_id` for the vaulted card.
+
+```javascript
+const response = await hyper.confirmTokenization({
+  paymentMethodsManagementElements,
+  confirmParams: {
+    return_url: "https://example.com/complete",
+  },
+  redirect: "if_required",
+});
+
+if (response?.id) {
+  // Send this to your server; it is what Step 5 confirms with.
+  await fetch("/complete-payment", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token: response.id }),
+  });
+} else {
+  showError(response?.error?.message ?? "An unexpected error occurred.");
+}
+```
+
+`YOUR_PUBLISHABLE_KEY` comes from the dashboard under Developers, and `YOUR_PROFILE_ID` is the `profile_id` on the Step 2 response. Never send your API key to the browser.
+
+{% hint style="info" %}
+For the full SDK walkthrough, including appearance customization and error handling, see [Vault SDK Integration](../workflows/vault/sdk-integration.md).
+{% endhint %}
+
+## Step 5: Confirm
+
+Confirm from your server with the merchant API key and the identifier your frontend sent back from Step 4. `confirmTokenization()` returns it as `response.id`, the `payment_method_id` for the card it just vaulted, and the confirm call's `payment_token` accepts that identifier, the same way the [Token Led Payment](payment-method-card/payments.md) flow uses it.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "payment_method": "card",
+    "payment_method_type": "credit",
+    "payment_token": "<payment_method_id from confirmTokenization()>"
+  }'
+```
+
+### Confirming a saved card
+
+A returning customer who picked a saved card never goes through Step 4. Confirm with that card's `payment_token` from `customer_payment_methods` instead.
+
+When the card came back with `"requires_cvv": true`, the CVV has to travel with the confirm call, in `payment_method_data.card_token`. Collect it through the SDK's card element rather than a form of your own, so the raw value is tokenized in the Hyperswitch iframe and your server forwards a token; `card_token` also accepts `card_cvc_token` for that. Handling the raw CVV on your server puts that request in PCI scope.
+
+```bash
+curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
+  --header 'api-key: YOUR_API_KEY' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "payment_method": "card",
+    "payment_method_type": "credit",
+    "payment_token": "token_7ebf443fa0504067",
+    "payment_method_data": {
+      "card_token": {
+        "card_cvc": "123"
+      }
+    }
+  }'
+```
+
+Cards that come back with `"requires_cvv": false` confirm with the token alone.
+
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "succeeded",
+  "amount": 6540,
+  "amount_received": 6540,
+  "currency": "USD",
+  "customer_id": "cus_abcdefgh",
+  "connector": "stripe",
+  "payment_method": "card",
+  "payment_method_type": "credit",
+  "payment_method_id": "pm_9Xn4KkTgVqLmZpRsWbYc",
+  "connector_transaction_id": "pi_3PqR4s2eZvKYlo2C1gFJbEwX",
+  "profile_id": "pro_abcdefghijklmnop",
+  "error_code": null,
+  "error_message": null,
+  "next_action": null,
+  "created": "2026-09-16T10:12:41.882Z"
+}
+```
+
+The amounts here are the ones the payment was created with. If Step 3 changed the amount, the confirmed amount is the updated one.
+
+A `status` of `succeeded` means the payment is done. If the card needs 3DS, `status` comes back as `requires_customer_action` with a `next_action` telling you where to send the customer.
+
+## When a section cannot be built
+
+The payment write has already committed by the time these sections are built. A section that fails therefore reports its own error inline rather than failing the whole request, so a committed state change is never hidden from you by a problem in a read that came after it.
+
+```json
+{
+  "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+  "status": "requires_payment_method",
+  "amount": 6540,
+
+  "payment_method_list": {
+    "payment_methods_enabled": [],
+    "customer_payment_methods": [],
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 6540,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
+  },
+
+  "session_tokens": {
+    "error": {
+      "type": "api",
+      "message": "Something went wrong",
+      "code": "HE_00"
+    }
+  }
+}
+```
+
+Check each section for an `error` key before using it. The payment is unaffected, so you can proceed with the section that arrived and either retry the other or fall back to its standalone endpoint.
+
+{% hint style="success" %}
+Adding the header never changes the payment itself. The same request sent with `client`, or with no header at all, does exactly the same thing to the payment; only the response shape differs. An existing integration that has never heard of this header keeps working on a `client` or `client_and_server` account. Switching an account to `server` is the breaking move: that account then rejects calls without the header, so migrate your callers before asking for the switch, or use `client_and_server` while you do.
+{% endhint %}
+
+## Related
+
+* [Customers - Create API reference](https://api-reference.hyperswitch.io/v1/customers/customers--create)
+* [Payments - Create API reference](https://api-reference.hyperswitch.io/v1/payments/payments--create)
+* [Payments - Update API reference](https://api-reference.hyperswitch.io/v1/payments/payments--update)
+* [Payments - Confirm API reference](https://api-reference.hyperswitch.io/v1/payments/payments--confirm)
+* [Vault SDK Integration](../workflows/vault/sdk-integration.md)
+* [Server to Server payments in the API reference](https://api-reference.hyperswitch.io/v1/payments/payments--server-to-server)
