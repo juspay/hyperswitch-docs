@@ -29,9 +29,9 @@ Authorize.net is an online payment provider. Its card and selected wallet method
 |---|---|---|---|---|---|---|---|---|
 | card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Discover, JCB, Mastercard, Visa | - | CAD, USD |
 | card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Discover, JCB, Mastercard, Visa | - | CAD, USD |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 44 |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 11 |
-| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 24 |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 44 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 11 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 24 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Authentication
 

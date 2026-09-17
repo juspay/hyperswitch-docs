@@ -34,13 +34,13 @@ Configure an API key and client ID for Airwallex. Hyperswitch exchanges these cr
 | bank redirect | iDEAL | not supported | supported | automatic, sequential automatic | not applicable | - | NLD | EUR |
 | bank redirect | Trustly | not supported | supported | automatic, sequential automatic | not applicable | - | - | DKK, EUR, GBP, NOK, PLN, SEK |
 | bank transfer | Indonesian Bank Transfer | not supported | not supported | automatic, sequential automatic | not applicable | - | IDN | IDR |
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | AUS, HKG, NZL, SGP, USA | 157 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | AUS, HKG, NZL, SGP, USA | 157 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | AUS, HKG, NZL, SGP, USA | 157 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | AUS, HKG, NZL, SGP, USA | 157 ([full list](https://hyperswitch.io/pm-list)) |
 | pay later | Atome | not supported | supported | automatic, sequential automatic | not applicable | - | MYS, SGP | MYR, SGD |
-| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 9 |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 67 | 56 |
-| wallet | PayPal | not supported | supported | automatic, sequential automatic | not applicable | - | - | 22 |
-| wallet | Skrill | not supported | supported | automatic, sequential automatic | not applicable | - | 123 | EUR, GBP, USD |
+| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 9 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 67 ([full list](https://hyperswitch.io/pm-list)) | 56 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic | not applicable | - | - | 22 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Skrill | not supported | supported | automatic, sequential automatic | not applicable | - | 123 ([full list](https://hyperswitch.io/pm-list)) | EUR, GBP, USD |
 
 ### Connector-Specific Notes
 
