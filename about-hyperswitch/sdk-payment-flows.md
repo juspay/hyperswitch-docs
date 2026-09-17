@@ -15,7 +15,9 @@ metaLinks:
      symbols: session_tokens.vault_details carries the vault SDK authorization = crates/router/src/core/payments/update_context.rs:277-281
      symbols: Web SDK source = hyperswitch-web@e8e869329c44aa769efe3df89f98e4fd51de6d04
      symbols: hyper.initPaymentMethodSession = hyperswitch-web src/hyper-loader/Hyper.res:841
-     symbols: hyper instance exposes 13 members, elements, confirmPayment, initPaymentSession, initPaymentMethodSession among them = hyperswitch-web src/hyper-loader/Hyper.res:827-842
+     symbols: hyper instance exposes 14 members, elements, widgets, confirmPayment, initPaymentSession, initPaymentMethodSession among them = hyperswitch-web src/hyper-loader/Hyper.res:827-842
+     symbols: initPaymentSession returns 2 members, getCustomerSavedPaymentMethods and updateIntent; confirmWithCustomerDefaultPaymentMethod and confirmWithLastUsedPaymentMethod are attached to the object getCustomerSavedPaymentMethods resolves to = hyperswitch-web src/hyper-loader/PaymentSession.res:51-66; src/hyper-loader/PaymentSessionMethods.res:263,429,623-648
+     symbols: useWalletSession returns walletSession, isGooglePayEligible, isApplePayEligible, loading, load; the launch methods are on the nullable handle load resolves to = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/context/HyperElements.tsx:181-190
      symbols: paymentMethodSession exposes createCardForm, update, on, deinit, fields = hyperswitch-web src/hyper-loader/PaymentMethodSession.res:1074-1080
      symbols: cardForm exposes create, on, tokenize, deinit, update, fields = hyperswitch-web src/hyper-loader/PaymentMethodSession.res:1065-1072
      symbols: cardCvc mounted alone routes tokenize to flow update = hyperswitch-web src/hyper-loader/PaymentMethodSession.res:976-981
@@ -131,21 +133,21 @@ The stages above describe the full checkout sheet. Four other surfaces exist, an
 | No Hyperswitch UI at all, saved methods only | Headless SDK | `hyper.initPaymentSession(...)` on Web, `Hyperswitch.init(...)` on React Native |
 | Collect and vault a card with no payment attached | Payment method session | `hyper.initPaymentMethodSession(...)` |
 
-`elements.create` accepts 15 names in all. The other four are `card`, `paymentMethodsSDK`, `paymentMethodCollect`, `klarna` and `paymentMethodsManagement`.
+`elements.create` accepts 15 names in all. The other five are `card`, `paymentMethodsSDK`, `paymentMethodCollect`, `klarna` and `paymentMethodsManagement`.
 
 ### Take React Native to production
 
 The quickstart gets a sheet on screen. Four things separate that from a production app, and none of them are optional.
 
-**Install the peer dependencies yourself.** `@juspay-tech/react-native-hyperswitch` declares 6 peer dependencies and bundles none of them: `@sentry/react-native`, `react`, `react-native`, `react-native-inappbrowser-reborn`, `react-native-svg`, `react-native-webview`. A build that resolves without them will fail at the first redirect.
+**Install the peer dependencies yourself.** `@juspay-tech/react-native-hyperswitch` declares 6 peer dependencies and bundles none of them: `@sentry/react-native`, `react`, `react-native`, `react-native-inappbrowser-reborn`, `react-native-svg`, `react-native-webview`. Where a missing one bites depends on which: `react` and `react-native` fail at module resolution, while `react-native-inappbrowser-reborn` and `react-native-webview` are only reached when a payment redirects, so a build can look healthy until the first redirect.
 
-**Add the companion package for every method you accept.** The base package does not carry wallets, 3DS or card scanning. Eight companion packages ship alongside it, one each for Click to Pay, Netcetera 3DS, Trident 3DS, Samsung Pay, PayPal, card scanning, vault and payment methods. Install only the ones you accept; each adds native weight.
+**Add the companion package for the methods the base package does not cover.** Apple Pay and Google Pay are in the base package: it exports `GooglePayButton` and `ApplePayButton` along with the support checks. Eight companion packages ship alongside it for the rest, one each for Click to Pay, Netcetera 3DS, Trident 3DS, Samsung Pay, PayPal, card scanning, vault and payment methods. Install only the ones you accept; each adds native weight.
 
 **Set the environment explicitly.** `Hyperswitch.init` takes `environment`, one of `PROD`, `SANDBOX` or `INTEG`. It defaults to `PROD`. A sandbox build that forgets the field points at production.
 
 **Create the session on your server.** `initPaymentSession` takes `sdkAuthorization`, not a client secret. Your backend creates the payment and returns that string. The secret API key never reaches the app.
 
-Per-platform steps, Expo, over-the-air updates and customization are in the [React Native guide](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/react-native/README.md).
+Step-by-step integration, [Expo](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/react-native/expo-integration.md) and [customization](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/react-native/customization.md) are in the [React Native guide](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/react-native/README.md).
 
 ### Collect a CVC for a saved card on the Web SDK
 
@@ -163,7 +165,7 @@ Both platforms let you put Apple Pay or Google Pay on a page that has no payment
 
 On Web, create the element by name: `googlePay`, `applePay`, `payPal`, `samsungPay` or `paze`, or `expressCheckout` for the row of every eligible wallet. The button confirms the payment through the SDK.
 
-On React Native, render `GooglePayButton` or `ApplePayButton`. Check eligibility first with `isGooglePaySupported`, `isApplePaySupported`, `isWalletSupported` or `isPlatformPaySupported`, because a button for a wallet the device cannot present is a dead button. `useWalletSession` gives you `launchGooglePay`, `launchApplePay` and `launchWallet` if you would rather drive the sheet from your own button. The wallet session has 15 seconds to bootstrap before it reports a timeout.
+On React Native, render `GooglePayButton` or `ApplePayButton`. Check eligibility first with `isGooglePaySupported`, `isApplePaySupported`, `isWalletSupported` or `isPlatformPaySupported`, because a button for a wallet the device cannot present is a dead button. To drive the sheet from your own button, call `load()` from `useWalletSession()`: the hook itself returns `{ walletSession, isGooglePayEligible, isApplePayEligible, loading, load }`, and it is the wallet session handle that `load()` resolves to, later also held in `walletSession`, that carries `launchWallet`, `launchGooglePay` and `launchApplePay`. The handle is nullable, so check it before calling. The wallet session has 15 seconds to bootstrap before it reports a timeout.
 
 {% hint style="info" %}
 **Confirming a standalone wallet button from your server is not documented.** We could not find a path in the Web SDK that hands the wallet token back to your backend for you to confirm there; the standalone buttons confirm through the SDK. If you need server-side confirmation, talk to your Hyperswitch contact before you build against it.
@@ -191,18 +193,18 @@ Send `payment_link: true` on `POST /payments` and the response carries a `paymen
 
 The Headless SDK renders nothing. You get a customer's saved payment methods as data, and you draw the UI.
 
-On Web, `hyper.initPaymentSession({ clientSecret })` returns a session whose `getCustomerSavedPaymentMethods()` gives you the saved method data, plus `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` to confirm one of them.
+On Web, `hyper.initPaymentSession({ clientSecret })` returns a session with two members, `getCustomerSavedPaymentMethods` and `updateIntent`. Await `getCustomerSavedPaymentMethods()` and the object it resolves to is the one that carries both the saved method data and the confirm functions, `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod`. Call them on that object, not on the session.
 
 On React Native, `Hyperswitch.init(...)` then `initPaymentSession({ sdkAuthorization })` returns a session exposing `presentPaymentSheet`, `getCustomerSavedPaymentMethods`, `getWalletSession` and `updateIntent`. The saved-methods session gives you the last-used and the default card.
 
 It only covers already-saved methods. A first-time card still needs a card form, which means an element or the payment sheet.
 
-Per-platform Headless guides live under [Payment Experience](../integration-guide/payment-experience/pay-then-vault/web/headless-sdk.md), one per platform.
+Per-platform Headless guides: [Web](../integration-guide/payment-experience/pay-then-vault/web/headless-sdk.md), [Android](../integration-guide/payment-experience/pay-then-vault/mobile/android/headless-sdk.md), [iOS](../integration-guide/payment-experience/pay-then-vault/mobile/ios/headless-sdk.md), [React Native](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/react-native/headless-sdk.md) and [Flutter](../integration-guide/payment-experience/pay-then-vault/mobile/cross-platform/flutter/headless-sdk.md).
 
 ### Questions this page does not answer
 
 * **Where the PCI SAQ-A boundary sits when you use the hosted SDK.** Hyperswitch has not published a statement of that boundary, so this page does not state one. [Security and Compliance](https://docs.hyperswitch.io/self-hosting/guides-for-self-hosting/security-and-compliance) covers how PCI DSS assessment works, SAQ against ROC, and when a QSA is required. Your assessment level is a QSA question.
-* **Driving checkout entirely from your backend.** That is [Server to Server Payments](../integration-guide/payment-suite/server-to-server-payments.md), which returns the payment, its payment-method list and the wallet session tokens in one call.
+* **Driving checkout entirely from your backend.** That is [Server to Server Payments](../integration-guide/payment-suite/server-to-server-payments.md), where one call returns the payment together with its payment-method list and the wallet session tokens. Read that page for which call does it today.
 * **Refunding a payment made through the SDK.** The SDK plays no part; see [Refunds](../integration-guide/payment-suite/refunds.md).
 
 ### **What are `PaymentIntent` and `PaymentAttempt` objects and how do they work in Hyperswitch?**
