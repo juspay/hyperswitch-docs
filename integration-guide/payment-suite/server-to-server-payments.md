@@ -322,7 +322,7 @@ function initialize(sdkAuthorization) {
 initialize(sdkAuthorization);
 ```
 
-When the customer submits, call `confirmTokenization()`. The card is tokenized inside the Hyperswitch-hosted iframe and you get a token back.
+When the customer submits, call `confirmTokenization()`. The card is tokenized inside the Hyperswitch-hosted iframe and `response.id` comes back as the `payment_method_id` for the vaulted card.
 
 ```javascript
 const response = await hyper.confirmTokenization({
@@ -353,7 +353,7 @@ For the full SDK walkthrough, including appearance customization and error handl
 
 ## Step 5: Confirm
 
-Confirm from your server with the merchant API key and the token your frontend sent back from Step 4, the `response.id` of `confirmTokenization()`.
+Confirm from your server with the merchant API key and the identifier your frontend sent back from Step 4. `confirmTokenization()` returns it as `response.id`, the `payment_method_id` for the card it just vaulted, and the confirm call's `payment_token` accepts that identifier, the same way the [Token Led Payment](payment-method-card/payments.md) flow uses it.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
@@ -362,13 +362,15 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
   --data '{
     "payment_method": "card",
     "payment_method_type": "credit",
-    "payment_token": "<token from confirmTokenization()>"
+    "payment_token": "<payment_method_id from confirmTokenization()>"
   }'
 ```
 
 ### Confirming a saved card
 
-A returning customer who picked a saved card never goes through Step 4. Confirm with that card's `payment_token` from `customer_payment_methods` instead. When the card came back with `"requires_cvv": true`, collect the CVV and send it in `payment_method_data.card_token`.
+A returning customer who picked a saved card never goes through Step 4. Confirm with that card's `payment_token` from `customer_payment_methods` instead.
+
+When the card came back with `"requires_cvv": true`, the CVV has to travel with the confirm call, in `payment_method_data.card_token`. Collect it through the SDK's card element rather than a form of your own, so the raw value is tokenized in the Hyperswitch iframe and your server forwards a token; `card_token` also accepts `card_cvc_token` for that. Handling the raw CVV on your server puts that request in PCI scope.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4/confirm' \
@@ -386,7 +388,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5n
   }'
 ```
 
-Collect that CVV through the SDK rather than your own form, so the value never reaches your server. Cards that come back with `"requires_cvv": false` confirm with the token alone.
+Cards that come back with `"requires_cvv": false` confirm with the token alone.
 
 ```json
 {
@@ -442,7 +444,7 @@ The payment write has already committed by the time these sections are built. A 
 Check each section for an `error` key before using it. The payment is unaffected, so you can proceed with the section that arrived and either retry the other or fall back to its standalone endpoint.
 
 {% hint style="success" %}
-Adding the header never changes the payment itself. The same request sent with `client`, or with no header at all, does exactly the same thing to the payment; only the response shape differs. An existing integration that has never heard of this header is unaffected.
+Adding the header never changes the payment itself. The same request sent with `client`, or with no header at all, does exactly the same thing to the payment; only the response shape differs. An existing integration that has never heard of this header keeps working on a `client` or `client_and_server` account. Switching an account to `server` is the breaking move: that account then rejects calls without the header, so migrate your callers before asking for the switch, or use `client_and_server` while you do.
 {% endhint %}
 
 ## Related
