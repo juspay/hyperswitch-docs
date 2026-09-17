@@ -30,13 +30,13 @@ PayPal connects to Hyperswitch as a `PaymentGateway` connector using OAuth2 auth
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | 195 | 24 |
+| bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | 195 ([full list](https://hyperswitch.io/pm-list)) | 24 ([full list](https://hyperswitch.io/pm-list)) |
 | bank redirect | Giropay | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR |
 | bank redirect | iDEAL | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR |
-| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | 195 | 24 |
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 195 | 24 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 195 | 24 |
-| wallet | PayPal | supported | supported | automatic, manual, sequential automatic | not applicable | - | 195 | 24 |
+| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | 195 ([full list](https://hyperswitch.io/pm-list)) | 24 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 195 ([full list](https://hyperswitch.io/pm-list)) | 24 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 195 ([full list](https://hyperswitch.io/pm-list)) | 24 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | supported | supported | automatic, manual, sequential automatic | not applicable | - | 195 ([full list](https://hyperswitch.io/pm-list)) | 24 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-Specific Notes
 

@@ -30,9 +30,9 @@ Based in the United States, Shift4 is a payment processing company. Merchants ca
 | bank redirect | EPS | not supported | supported | automatic, manual, sequential automatic | not applicable | - | AUT | EUR |
 | bank redirect | Giropay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | DEU | EUR |
 | bank redirect | iDEAL | not supported | supported | automatic, manual, sequential automatic | not applicable | - | NLD | EUR |
-| bank redirect | Sofort | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 12 | CHF, EUR |
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 | 154 |
-| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 | 154 |
+| bank redirect | Sofort | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 12 ([full list](https://hyperswitch.io/pm-list)) | CHF, EUR |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | Mastercard, Visa | 247 ([full list](https://hyperswitch.io/pm-list)) | 154 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Authentication
 

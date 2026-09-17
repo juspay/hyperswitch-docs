@@ -33,7 +33,7 @@ Stripe connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey`
 | bank debit | ACH Direct Debit | supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
 | bank debit | BACS Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | GBR | GBP |
 | bank debit | BECS Direct Debit | supported | supported | automatic, manual, sequential automatic | not applicable | - | AUS | AUD |
-| bank debit | SEPA Direct Debit | supported | supported | automatic, sequential automatic | not applicable | - | 33 | EUR |
+| bank debit | SEPA Direct Debit | supported | supported | automatic, sequential automatic | not applicable | - | 33 ([full list](https://hyperswitch.io/pm-list)) | EUR |
 | bank redirect | Bancontact Card | supported | supported | automatic, sequential automatic | not applicable | - | BEL | EUR |
 | bank redirect | BLIK | not supported | supported | automatic, sequential automatic | not applicable | - | POL | PLN |
 | bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | AUT | EUR |
@@ -41,23 +41,23 @@ Stripe connects to Hyperswitch as a `PaymentGateway` connector using `HeaderKey`
 | bank redirect | iDEAL | supported | supported | automatic, sequential automatic | not applicable | - | NLD | EUR |
 | bank redirect | Online Banking FPX | not supported | supported | automatic, sequential automatic | not applicable | - | MYS | MYR |
 | bank redirect | Przelewy24 | not supported | supported | automatic, sequential automatic | not applicable | - | POL | EUR, PLN |
-| bank redirect | Sofort | supported | supported | automatic, sequential automatic | not applicable | - | 30 | EUR |
+| bank redirect | Sofort | supported | supported | automatic, sequential automatic | not applicable | - | 30 ([full list](https://hyperswitch.io/pm-list)) | EUR |
 | bank transfer | ACH Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | USA | USD |
 | bank transfer | BACS Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | GBR | GBP |
-| bank transfer | Multibanco | not supported | supported | automatic, sequential automatic | not applicable | - | 32 | EUR |
+| bank transfer | Multibanco | not supported | supported | automatic, sequential automatic | not applicable | - | 32 ([full list](https://hyperswitch.io/pm-list)) | EUR |
 | bank transfer | SEPA Bank Transfer | not supported | supported | automatic, sequential automatic | not applicable | - | - | - |
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 | 160 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 | 160 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
 | pay later | Affirm | not supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
-| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 7 | AUD, CAD, GBP, NZD, USD |
-| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 | 12 |
-| wallet | Alipay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | CHN | 11 |
-| wallet | Amazon Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 249 | 12 |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 43 | - |
+| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 7 ([full list](https://hyperswitch.io/pm-list)) | AUD, CAD, GBP, NZD, USD |
+| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 22 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Alipay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | CHN | 11 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Amazon Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 249 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 43 ([full list](https://hyperswitch.io/pm-list)) | - |
 | wallet | Cash App | supported | supported | automatic, manual, sequential automatic | not applicable | - | USA | USD |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 53 | - |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 53 ([full list](https://hyperswitch.io/pm-list)) | - |
 | wallet | RevolutPay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR, GBP |
-| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | CHN | 13 |
+| wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | CHN | 13 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-Specific Notes
 

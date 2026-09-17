@@ -29,7 +29,7 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| crypto | Crypto | not supported | not supported | automatic | 31 | 12 |
+| crypto | Crypto | not supported | not supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Authentication
 

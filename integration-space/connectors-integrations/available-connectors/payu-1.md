@@ -28,10 +28,10 @@ PayU places Apple Pay and Google Pay beside credit and debit cards in its paymen
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 | 134 |
-| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 | 134 |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | required | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 134 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 | 53 |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 46 ([full list](https://hyperswitch.io/pm-list)) | 53 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Activate PayU with Hyperswitch
 

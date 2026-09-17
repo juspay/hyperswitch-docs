@@ -28,10 +28,10 @@ Across Rapyd's payment gateway routes, card payments sit alongside Apple Pay and
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 | 76 |
-| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 | 76 |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 | 40 |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 50 | 36 |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, UnionPay, Visa | 246 ([full list](https://hyperswitch.io/pm-list)) | 76 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 40 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 50 ([full list](https://hyperswitch.io/pm-list)) | 36 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Activate Rapyd with Hyperswitch
 #### Before you start
