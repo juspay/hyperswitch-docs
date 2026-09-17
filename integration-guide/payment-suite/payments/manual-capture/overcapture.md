@@ -16,6 +16,8 @@ metaLinks:
      symbols: always_enable_overcapture profile field = crates/api_models/src/admin.rs:2488-2490; crates/diesel_models/src/business_profile.rs:91
      symbols: enable_overcapture accepted only with capture_method manual = crates/router/src/core/payments/helpers.rs:1244-1262
      symbols: connectors declared to support overcapture, Stripe and Adyen = crates/common_enums/src/connector_enums.rs:497-499
+     symbols: only the Stripe connector implementation carries overcapture, as request_overcapture = crates/hyperswitch_connectors/src/connectors/stripe/transformers.rs:375-376; crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs has zero occurrences
+     symbols: the Unified Connector Service maps an overcapture result, and Adyen is not ucs-only so it can route either way = crates/hyperswitch_interfaces/src/unified_connector_service/transformers.rs:739-745; crates/router/src/core/unified_connector_service.rs:889-904; config/development.toml:1610
      symbols: amount_to_capture ceiling check skipped when the attempt has overcapture enabled = crates/router/src/core/payments/operations/payment_capture.rs:101-111
      symbols: amount_capturable, amount_received = crates/api_models/src/payments.rs:7490
      symbols: capture_method wire values = crates/common_enums/src/enums.rs:814-830
@@ -106,7 +108,7 @@ Normally `amount_to_capture` may not exceed `amount_capturable`, and a capture a
 
 Stripe and Adyen are the connectors declared to support overcapture. On any other connector the requested value is cleared, so `is_overcapture_enabled` comes back empty rather than `false`, and overcapture does not apply whatever you send. If you need overcapture on a different connector, contact the Hyperswitch support team.
 
-Of those two, only Stripe carries overcapture in its connector request today, which is why the example above uses it. The Adyen connector sends no overcapture field and parses no overcapture result, so an Adyen payment can report `is_overcapture_enabled: true` from the fallback described above. Confirm overcapture with Adyen directly before relying on it; the tracking issue is [juspay/hyperswitch#14275](https://github.com/juspay/hyperswitch/issues/14275).
+Of those two, only Stripe carries overcapture in its own connector implementation today, which is why the example above uses it. The Adyen connector implementation sends no overcapture field and reads no overcapture result, so on that path an Adyen payment can report `is_overcapture_enabled: true` from the fallback described above. Adyen can also be routed through the Unified Connector Service, which does map an overcapture result, so what you get back depends on how your Adyen traffic is routed. Confirm overcapture with Adyen and with your Hyperswitch contact before relying on it; the tracking issue is [juspay/hyperswitch#14275](https://github.com/juspay/hyperswitch/issues/14275).
 
 ### Before you go live
 

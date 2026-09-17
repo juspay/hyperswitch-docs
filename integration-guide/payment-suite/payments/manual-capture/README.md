@@ -12,6 +12,8 @@ metaLinks:
      symbols: capture_method wire values automatic, manual, manual_multiple, scheduled, sequential_automatic = crates/common_enums/src/enums.rs:814-830, serde rename_all = "snake_case" at enums.rs:814
      symbols: capture_method default automatic = crates/common_enums/src/enums.rs:819-821
      symbols: capture_method scheduled returns 501 Not Implemented on payment create and update = crates/router/src/routes/payments.rs:86-88, 205, 910, 1216
+     symbols: manual_multiple with a pending capture and none charged gives AttemptStatus::CaptureInitiated, which maps to IntentStatus::Processing = crates/router/src/core/payments/types.rs:133-146; crates/common_enums/src/transformers.rs:2130-2135
+     external: release of the uncaptured hold = processor and issuer owned; the in-repo change is amount_capturable set to zero at crates/router/src/types.rs:429-469, which is bookkeeping and not a void
      symbols: POST /payments/{payment_id}/capture request fields = crates/api_models/src/payments.rs:6731-6760 PaymentsCaptureRequest; api-reference/v1/openapi_spec_v1.json:33991-34030
      symbols: amount_to_capture omitted captures the whole amount_capturable = crates/api_models/src/payments.rs:6740-6743
      symbols: amount_to_capture must be positive and not above amount_capturable = crates/router/src/core/payments/helpers.rs:4054-4072
@@ -60,7 +62,7 @@ Manual capture splits it in two. The authorization places a hold on the customer
 
 Do not build against `scheduled`: it is declared in the enum and published in the spec, but every payment create or update carrying it returns `501 Not Implemented` before the payment is touched. To capture at a later time, use `manual` or `manual_multiple` and call the capture endpoint when you are ready.
 
-Pick `manual_multiple` at creation if you might capture in more than one go. You cannot change your mind after authorizing: a `manual` payment releases whatever you do not capture in the single capture call.
+Pick `manual_multiple` at creation if you might capture in more than one go. You cannot change your mind after authorizing: with `manual`, whatever you do not take in the single capture call stops being capturable.
 
 ### How to do manual capture
 
@@ -151,7 +153,9 @@ The endpoint rejects `capture_method: automatic` outright. It accepts the paymen
 
 This is the part that decides whether you lose the remainder, and `capture_method` decides it.
 
-**`manual`.** One capture, and the payment lands in a terminal state. Capture the full amount and the payment is `succeeded`. Capture less and the payment is `partially_captured`, `amount_capturable` is set to `0`, and the rest of the hold is not capturable through Hyperswitch again. There is no second capture call. The issuer releases the untouched part of the hold on its own schedule; Hyperswitch does not send a void for it and does not report when the issuer lets go.
+**`manual`.** One capture, and the payment lands in a terminal state. Capture the full amount and the payment is `succeeded`. Capture less and the payment is `partially_captured`, `amount_capturable` is set to `0`, and the rest of the hold is not capturable through Hyperswitch again. There is no second capture call.
+
+What that changes is Hyperswitch's own bookkeeping: the remainder is no longer capturable here. It is not a void, and Hyperswitch does not send one for the untouched part. What the processor and issuer do with the remaining hold, whether a partial capture releases it right away or it sits until the authorization ages out, is the connector's behavior, not Hyperswitch's. Ask your connector if you need to know when the customer stops seeing the hold.
 
 **`manual_multiple`.** Each capture creates a capture record. After a capture that does not exhaust the hold, the payment is `partially_captured_and_capturable` and `amount_capturable` becomes the authorized amount minus everything already blocked by earlier captures. That remainder stays capturable, so you can call the capture endpoint again. When the captures add up to the authorized amount, the payment becomes `succeeded`.
 
@@ -165,11 +169,14 @@ This is the part that decides whether you lose the remainder, and `capture_metho
 | `succeeded`                         | Everything capturable has been captured. Terminal.                                                                |
 | `partially_captured`                | Part captured, nothing left to capture. Terminal. Refundable up to `amount_captured`.                             |
 | `partially_captured_and_capturable` | Part captured, remainder still capturable. Not terminal. Not refundable until it becomes terminal.                |
+| `processing`                        | A `manual_multiple` capture is in flight and no capture has been charged yet. The capture endpoint still accepts calls in this state. |
 | `partially_authorized_and_requires_capture` | The processor authorized less than you asked for. Capture against the smaller authorized amount.           |
 | `cancelled`                         | Voided before any capture.                                                                                        |
 | `cancelled_post_capture`            | Voided after a capture. A payment in this state cannot be refunded.                                               |
 
-`partially_captured_and_processing` also exists as a wire value, and it is not a capture status. It is produced only on the partial authorization path, when `enable_partial_authorization` is on, some amount has already been captured, and the attempt is still pending at the processor. No value of `capture_method` produces it. If you are seeing it, look at partial authorization, not at your capture calls.
+`processing` on a `manual_multiple` payment means a capture has been sent and none has been charged yet; once one is charged, the payment moves to `partially_captured_and_capturable`.
+
+`partially_captured_and_processing` is a different status, and it is not a capture status. It is produced only on the partial authorization path, when `enable_partial_authorization` is on, some amount has already been captured, and the attempt is still pending at the processor. No value of `capture_method` produces it. If you are seeing it, look at partial authorization, not at your capture calls.
 
 ### About `refund_uncaptured_amount`
 
