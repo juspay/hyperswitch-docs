@@ -8,6 +8,36 @@ metaLinks:
     - server-to-server-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 5fb7e5598eadd8ed5fa42822427107f271a1e112; spec api-reference/v1/openapi_spec_v1.json@5fb7e5598eadd8ed5fa42822427107f271a1e112
+     symbols: X-Integration-Type header name = crates/common_utils/src/consts.rs:229 (X_INTEGRATION_TYPE, "x-integration-type"); annotated on both routes at crates/openapi/src/routes/payments.rs:639,681; published as a parameter on POST /payments and POST /payments/{payment_id} in api-reference/v1/openapi_spec_v1.json
+     symbols: PaymentsResponse in the published spec carries payment_method_list and session_tokens, so the spec advertises both sections on create even though only update builds them = api-reference/v1/openapi_spec_v1.json, PaymentsResponse properties
+     symbols: IntegrationType has 2 variants, Client and Server = crates/api_models/src/payments.rs:10801-10806
+     symbols: an absent or unrecognised header reads as client, matched case-insensitively after trim = crates/api_models/src/payments.rs:10810-10820; crates/router/src/core/payments/update_context.rs:43-69
+     symbols: MerchantIntegrationType has 3 variants, client, server, client_and_server, serde snake_case, default client = crates/common_enums/src/enums/accounts.rs:52-76
+     symbols: header validated against merchant integration type on create = crates/router/src/routes/payments.rs:137,149-152
+     symbols: header validated against merchant integration type on update = crates/router/src/routes/payments.rs:941,957-960
+     symbols: the accept or reject matrix = crates/router/src/core/payments/update_context.rs:89-110
+     symbols: rejection message text = crates/router/src/core/payments/update_context.rs:102-106
+     symbols: rejection is InvalidRequestData, code IR_06, type invalid_request = crates/hyperswitch_domain_models/src/errors/api_error_response.rs:193-194; crates/api_models/src/errors/types.rs:167
+     symbols: sections returned only for merchant API key auth; publishable key plus client_secret gets the ordinary response = crates/router/src/routes/payments.rs:943-945, `enrich = integration_type.is_server() && auth_flow == api::AuthFlow::Merchant`
+     symbols: enrichment runs after the write, as AuthFlow::Merchant = crates/router/src/core/payments/update_context.rs:268; crates/router/src/routes/payments.rs:1002-1019
+     symbols: PaymentsResponse.payment_method_list = crates/api_models/src/payments.rs:7511-7516, skipped when None
+     symbols: PaymentsResponse.session_tokens = crates/api_models/src/payments.rs:7518-7523, skipped when None
+     symbols: PaymentMethodListResult has 2 variants, Success and Failed { error } = crates/api_models/src/payment_methods.rs:3301-3309
+     symbols: SessionTokensResult has 2 variants, serialized untagged = crates/api_models/src/payments.rs:10835-10843
+     symbols: ClientPaymentMethodsListResponse has 4 fields, payment_methods_enabled, customer_payment_methods, sdk_next_action, intent_data = crates/api_models/src/payment_methods.rs:3276-3289
+     symbols: requires_cvv = crates/api_models/src/payment_methods.rs:3252,3658,3727
+     symbols: PaymentsSessionResponse has 4 fields, payment_id, client_secret, session_token, vault_details = crates/api_models/src/payments.rs:11714-11725
+     symbols: vault_details serialized as tagged vault_type plus vault_data = crates/api_models/src/payments.rs:10933-10944
+     symbols: vault_data.sdk_authorization for the hyperswitch vault_type = crates/api_models/src/payments.rs:10946-10952
+     symbols: CardToken.card_cvc_token = crates/api_models/src/payments.rs:2913,2930
+     symbols: a failing section reports inline and the response still succeeds = crates/router/src/core/payments/update_context.rs:131-136,186-220
+     derived: section timeout 30 s = SECTION_TIMEOUT is std::time::Duration::from_secs(consts::REQUEST_TIME_OUT) and REQUEST_TIME_OUT is 30, sources crates/router/src/core/payments/update_context.rs:36-37; crates/common_utils/src/consts.rs:272
+     derived: create returns the ordinary response today = attach_server_context is called exactly once repo-wide, from the update route only, so no create request is enriched at this SHA regardless of confirm, sources crates/router/src/routes/payments.rs:1007; repo-wide grep for attach_server_context over crates/
+     absent: a confirm-true carve-out on create = checked crates/router/src/routes/payments.rs:112-190 and a repo-wide grep for attach_server_context over crates/, no create-side enrichment and therefore no confirm-conditional branch exists at this SHA; the create route validates the header and does nothing else with it
+     external: none
+     checked: 2026-09-17 -->
+
 # Server to Server Payments
 
 In a server-to-server integration your backend orchestrates checkout. It holds the merchant API key, calls Hyperswitch, and hands the result to whatever renders the payment screen: your own UI, a mobile app, or a partner surface.
@@ -70,7 +100,7 @@ Once your account allows the header, the sections come back only with merchant A
 {% endhint %}
 
 {% hint style="info" %}
-On create, the header applies to an unconfirmed intent. A create-and-confirm request, meaning one that sends `"confirm": true`, returns the ordinary response, because a payment that has already been confirmed has no use for a payment-method list or wallet session tokens.
+When create-side support ships, the header will apply to an unconfirmed intent: a create-and-confirm request, meaning one that sends `"confirm": true`, will return the ordinary response, because a payment that has already been confirmed has no use for a payment-method list or wallet session tokens. Today the create call returns the ordinary response either way, as the warning above describes.
 {% endhint %}
 
 ## Step 1: Create the customer
@@ -436,7 +466,18 @@ The payment write has already committed by the time these sections are built. A 
   "payment_method_list": {
     "payment_methods_enabled": [],
     "customer_payment_methods": [],
-    "sdk_next_action": { "next_action": "confirm" }
+    "sdk_next_action": { "next_action": "confirm" },
+    "intent_data": {
+      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+      "status": "requires_payment_method",
+      "amount": 6540,
+      "currency": "USD",
+      "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
+      "customer_id": "cus_abcdefgh",
+      "email": "guest@example.com",
+      "setup_future_usage": null,
+      "return_url": null
+    }
   },
 
   "session_tokens": {
