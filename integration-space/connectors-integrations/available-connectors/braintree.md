@@ -27,8 +27,8 @@ Braintree is a PayPal service for accepting payments in apps and websites. Merch
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 | 134 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 | 134 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Discover, JCB, Mastercard, UnionPay, Visa | 45 ([full list](https://hyperswitch.io/pm-list)) | 134 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
 | wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |

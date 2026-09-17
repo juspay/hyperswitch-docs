@@ -26,9 +26,9 @@ BlueSnap is a payment gateway for card and digital wallet payments. Card payment
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, RuPay, Visa | 185 | 94 |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 88 | 52 |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 74 | 54 |
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, RuPay, Visa | 185 ([full list](https://hyperswitch.io/pm-list)) | 94 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 88 ([full list](https://hyperswitch.io/pm-list)) | 52 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 74 ([full list](https://hyperswitch.io/pm-list)) | 54 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Authentication
 

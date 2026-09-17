@@ -29,7 +29,7 @@ Coinbase Commerce gives this connector a cryptocurrency checkout path. Coinbase 
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| crypto | Crypto | not supported | not supported | automatic, manual, sequential automatic | 15 | - |
+| crypto | Crypto | not supported | not supported | automatic, manual, sequential automatic | 15 ([full list](https://hyperswitch.io/pm-list)) | - |
 
 The connector declares refund webhooks in code, but they cannot be processed: only `charge:*` events are recognized, and there is no refund event. Webhooks work for payments only.
 

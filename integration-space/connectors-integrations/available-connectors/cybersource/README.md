@@ -30,10 +30,10 @@ CyberSource connects to Hyperswitch as a `PaymentGateway` connector using `Signa
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | - | 9 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 ([full list](https://hyperswitch.io/pm-list)) |
 | wallet | Paze | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | SEK, USD |
 | wallet | Samsung Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR, GBP, SEK, USD |
 

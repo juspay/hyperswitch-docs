@@ -27,11 +27,11 @@ Bank of America covers card payments and several wallet paths. Most declared met
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 | USD |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 | USD |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 72 | USD |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 66 | USD |
-| wallet | Samsung Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 31 | USD |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 216 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 72 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 66 ([full list](https://hyperswitch.io/pm-list)) | USD |
+| wallet | Samsung Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 31 ([full list](https://hyperswitch.io/pm-list)) | USD |
 
 ### Authentication
 
