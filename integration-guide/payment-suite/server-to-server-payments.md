@@ -35,6 +35,12 @@ Reach for a client integration when the Hyperswitch SDK drives checkout, because
 | `server`            | The payment, plus `payment_method_list` and `session_tokens`        |
 | `client`, or absent | The payment response, unchanged                                     |
 
+{% hint style="warning" %}
+**The create call does not return the sections yet.** Both calls validate the header today, but only the update call builds `payment_method_list` and `session_tokens`. Create-side support is [juspay/hyperswitch#14172](https://github.com/juspay/hyperswitch/pull/14172), still open at the time of writing.
+
+Until it ships, create the payment, then make one update call with the header and take both sections from that response. [Step 3](#step-3-update-the-payment) is that call, and it works on any intent field, so you can send the same amount you created with. This page will lose the extra call when #14172 lands.
+{% endhint %}
+
 ### Your merchant account has to allow it
 
 Every create and update call checks the header against your account's configured integration type, and rejects a mismatch with a `422` before anything else happens. The default is `client`, so a new account rejects `server` until it is reconfigured.
@@ -106,7 +112,7 @@ Keep the `customer_id`. If you already have one, skip this step and reuse it.
 Omit `customer_id` from the request and Hyperswitch generates one for you. Reuse the same `customer_id` across visits so saved cards follow the customer.
 {% endhint %}
 
-## Step 2: Create the payment and fetch everything
+## Step 2: Create the payment
 
 Create the intent against that customer, without confirming it, with the header set.
 
@@ -125,7 +131,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
   }'
 ```
 
-The response is the payment you already know, with two sections added. Keep the `payment_id`, and keep `session_tokens.vault_details` for Step 4.
+The response is the payment you already know, with two sections added once [#14172](https://github.com/juspay/hyperswitch/pull/14172) ships. Until then this call returns the ordinary payment response, and [Step 3](#step-3-update-the-payment) returns the sections shown here. Keep the `payment_id`, and keep `session_tokens.vault_details` for Step 4.
 
 ```json
 {
@@ -194,9 +200,11 @@ The response is the payment you already know, with two sections added. Keep the 
 
 A returning customer's saved cards arrive in `customer_payment_methods`, each with a `payment_token`. If the customer picks one of those, skip Step 4 and confirm with that token. Check `requires_cvv` first: when it is `true`, collect the CVV and send it alongside the token, as the [saved card](#confirming-a-saved-card) example shows.
 
-## Step 3: Update the payment, only if something changed
+## Step 3: Update the payment
 
-Skip this step unless a field on the intent actually changes, for example the basket total or the currency. Send the same header and both sections come back refreshed against the new values. If you do run it, use this response for the rest of the flow: its `session_tokens` and `payment_method_list` supersede the ones from Step 2.
+Send the same header on an update and both sections come back, built against the intent's current values. Use this response for the rest of the flow: its `session_tokens` and `payment_method_list` supersede anything from Step 2.
+
+Run this step when a field on the intent changes, for example the basket total or the currency. Until [#14172](https://github.com/juspay/hyperswitch/pull/14172) ships, run it even when nothing changed, because it is the call that returns the sections; send the values you already created with.
 
 ```bash
 curl --location 'https://sandbox.hyperswitch.io/payments/pay_mbabizu24mvu3mela5njyhpit4' \
@@ -411,7 +419,7 @@ Cards that come back with `"requires_cvv": false` confirm with the token alone.
 }
 ```
 
-The amounts here follow the walkthrough as written, with Step 3 skipped. If you did run Step 3, the confirmed amount is the updated one.
+The amounts here are the ones the payment was created with. If Step 3 changed the amount, the confirmed amount is the updated one.
 
 A `status` of `succeeded` means the payment is done. If the card needs 3DS, `status` comes back as `requires_customer_action` with a `next_action` telling you where to send the customer.
 
