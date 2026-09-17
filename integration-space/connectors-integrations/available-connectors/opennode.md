@@ -31,6 +31,8 @@ OpenNode provides a bitcoin checkout path with asynchronous payment states. Unde
 |---|---|---|---|---|---|---|
 | crypto | Crypto | not supported | not supported | automatic | 31 ([full list](https://hyperswitch.io/pm-list)) | 12 ([full list](https://hyperswitch.io/pm-list)) |
 
+The payments webhook flow above is what the connector declares in code. OpenNode webhooks do not currently work: callbacks fail to parse or fail signature verification, so use payment sync for status updates. See [Webhooks](#webhooks) below and the tracking issue [juspay/hyperswitch#14205](https://github.com/juspay/hyperswitch/issues/14205).
+
 ### Authentication
 
 OpenNode requires an **API Key**. The connector's [`build_headers()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L82-L105) override sets `Content-Type` and `Accept`, then appends the result of [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode.rs#L124-L134). That method sends the value mapped by [`OpennodeAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0/crates/hyperswitch_connectors/src/connectors/opennode/transformers.rs#L65-L75) unchanged in the `Authorization` header.
