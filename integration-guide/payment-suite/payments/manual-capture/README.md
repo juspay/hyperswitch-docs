@@ -11,6 +11,7 @@ metaLinks:
 <!-- truth manifest; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; spec api-reference/v1/openapi_spec_v1.json@184ffd4c015fd3fea2f3868549f1a86ffa5f40da
      symbols: capture_method wire values automatic, manual, manual_multiple, scheduled, sequential_automatic = crates/common_enums/src/enums.rs:814-830, serde rename_all = "snake_case" at enums.rs:814
      symbols: capture_method default automatic = crates/common_enums/src/enums.rs:819-821
+     symbols: capture_method scheduled returns 501 Not Implemented on payment create and update = crates/router/src/routes/payments.rs:86-88, 205, 910, 1216
      symbols: POST /payments/{payment_id}/capture request fields = crates/api_models/src/payments.rs:6731-6760 PaymentsCaptureRequest; api-reference/v1/openapi_spec_v1.json:33991-34030
      symbols: amount_to_capture omitted captures the whole amount_capturable = crates/api_models/src/payments.rs:6740-6743
      symbols: amount_to_capture must be positive and not above amount_capturable = crates/router/src/core/payments/helpers.rs:4054-4072
@@ -54,8 +55,10 @@ Manual capture splits it in two. The authorization places a hold on the customer
 | `automatic`            | Default. Authorization and capture happen together. The capture endpoint rejects it. |
 | `manual`               | One capture only. Capture the whole hold or part of it, once.                        |
 | `manual_multiple`      | Several captures against one authorization, up to the authorized amount.             |
-| `scheduled`            | Capture is triggered automatically at a future time you set.                          |
+| `scheduled`            | Not implemented. Accepted as a wire value, but payment create and update reject it with `501 Not Implemented`. |
 | `sequential_automatic` | Separate authorization and capture run back to back, like `automatic`.                |
+
+Do not build against `scheduled`: it is declared in the enum and published in the spec, but every payment create or update carrying it returns `501 Not Implemented` before the payment is touched. To capture at a later time, use `manual` or `manual_multiple` and call the capture endpoint when you are ready.
 
 Pick `manual_multiple` at creation if you might capture in more than one go. You cannot change your mind after authorizing: a `manual` payment releases whatever you do not capture in the single capture call.
 

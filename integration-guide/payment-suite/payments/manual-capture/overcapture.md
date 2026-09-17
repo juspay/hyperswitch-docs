@@ -10,7 +10,9 @@ metaLinks:
 <!-- truth manifest; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; spec api-reference/v1/openapi_spec_v1.json@184ffd4c015fd3fea2f3868549f1a86ffa5f40da
      symbols: enable_overcapture = crates/api_models/src/payments.rs:1611, 8008
      symbols: is_overcapture_enabled = crates/api_models/src/payments.rs:8013
-     symbols: is_overcapture_enabled is taken from the connector authorize response = crates/router/src/core/payments/operations/payment_response.rs:2794-2798, 2912
+     symbols: is_overcapture_enabled is taken from the connector authorize response, falling back to the effective enable_overcapture when the connector reports none = crates/router/src/core/payments/operations/payment_response.rs:2794-2804, 2912
+     symbols: always_enable_overcapture applies only when capture_method is manual and the connector declares support, otherwise the effective value is cleared = crates/hyperswitch_domain_models/src/payments.rs:285-300
+     symbols: the payments update route is POST /payments/{payment_id} = crates/router/src/routes/app.rs:1041-1043
      symbols: always_enable_overcapture profile field = crates/api_models/src/admin.rs:2488-2490; crates/diesel_models/src/business_profile.rs:91
      symbols: enable_overcapture accepted only with capture_method manual = crates/router/src/core/payments/helpers.rs:1244-1262
      symbols: connectors declared to support overcapture, Stripe and Adyen = crates/common_enums/src/connector_enums.rs:497-499
@@ -38,11 +40,13 @@ Overcapture is accepted only when `capture_method` is `manual`. A request with `
 
 #### Profile level, from the dashboard
 
-Go to Developer, then Payment Settings, then Always Enable Over Capture, and toggle it. This is the `always_enable_overcapture` setting on the profile, and it applies to every payment on that profile.
+Go to Developer, then Payment Settings, then Always Enable Over Capture, and toggle it. This is the `always_enable_overcapture` setting on the profile.
+
+It does not reach every payment on the profile. Hyperswitch applies it only when the payment's `capture_method` is `manual` and the connector routing the payment is one of the connectors declared to support overcapture. On any other payment the effective value is cleared, and the profile setting has no effect.
 
 #### Per payment, from the API
 
-Send the boolean `enable_overcapture` on [`POST /payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) or [`POST /payments/{payment_id}/update`](https://api-reference.hyperswitch.io/v1/payments/payments--update). The request value overrides the profile setting.
+Send the boolean `enable_overcapture` on [`POST /payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) or [`POST /payments/{payment_id}`](https://api-reference.hyperswitch.io/v1/payments/payments--update), the update call. The request value overrides the profile setting.
 
 **Sample curl:**
 
@@ -66,12 +70,12 @@ Two fields, and they do not mean the same thing.
 
 `enable_overcapture` is what you asked for. You set it; it is echoed back.
 
-`is_overcapture_enabled` is the answer. Hyperswitch fills it from the connector's authorization response, so it tells you whether the processor actually accepted overcapture for this payment. Read it after authorization, before you plan a capture above the authorized amount.
+`is_overcapture_enabled` is the answer, when the connector gives one. Hyperswitch fills it from the connector's authorization response. If that response carries no overcapture result, Hyperswitch falls back to the effective request value, so `true` can mean the connector accepted overcapture, or only that it was requested and the connector said nothing. Treat it as confirmation only for a connector you already know reports the result.
 
 | Field                    | Set by       | `true` means                                            |
 | ------------------------ | ------------ | --------------------------------------------------------- |
-| `enable_overcapture`     | You          | You requested overcapture for this payment.               |
-| `is_overcapture_enabled` | The connector | The connector accepted overcapture for this payment.       |
+| `enable_overcapture`     | You, or the profile setting | Overcapture was requested for this payment.  |
+| `is_overcapture_enabled` | The connector, or the requested value as a fallback | The connector accepted overcapture, or it did not report a result and this repeats the request. |
 
 **Sample response after authorization:**
 
@@ -100,12 +104,12 @@ Normally `amount_to_capture` may not exceed `amount_capturable`, and a capture a
 
 ### Connector support
 
-Stripe and Adyen are the connectors declared to support overcapture. Any other connector will leave `is_overcapture_enabled` false, whatever you send. If you need overcapture on a different connector, contact the Hyperswitch support team.
+Stripe and Adyen are the connectors declared to support overcapture. On any other connector the requested value is cleared, so `is_overcapture_enabled` comes back empty rather than `false`, and overcapture does not apply whatever you send. If you need overcapture on a different connector, contact the Hyperswitch support team.
 
 ### Before you go live
 
 * Set the capture method to `manual` at payment creation. Overcapture cannot be added to a `manual_multiple` payment.
-* Check `is_overcapture_enabled` after authorization rather than assuming your request was honoured.
+* Confirm with your connector that it supports overcapture and reports the result, rather than reading `is_overcapture_enabled: true` as proof on its own. On a connector that reports nothing, that field repeats what you asked for.
 * Refunds are bounded by `amount_captured`, so an overcaptured payment is refundable up to the larger captured figure. See [Refunds](../../refunds.md).
 
 ### Questions this page does not answer
