@@ -12,7 +12,7 @@ AbsaSanlam is an EFT debit order connector, but Hyperswitch cannot currently pro
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d8b6ebe773690aa37cf249b2992c2358dbd7f438; host http://localhost:8080; fetched 2026-09-15; matrix canonical-json-v1 sha256 571f94742339b80b; 139 connectors.
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
      Do not edit by hand. Payment method rows regenerate from the
      connector's SupportedPaymentMethods declaration; countries and
      currencies come from pm_filters in config/development.toml.
