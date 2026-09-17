@@ -15,6 +15,7 @@ metaLinks:
      symbols: the payments update route is POST /payments/{payment_id} = crates/router/src/routes/app.rs:1041-1043
      symbols: always_enable_overcapture profile field = crates/api_models/src/admin.rs:2488-2490; crates/diesel_models/src/business_profile.rs:91
      symbols: enable_overcapture accepted only with capture_method manual = crates/router/src/core/payments/helpers.rs:1244-1262
+     symbols: the update operation accepts only requires_payment_method, requires_confirmation and requires_customer_action, so it cannot change an authorized payment = crates/router/src/core/payments/operations/payment_update.rs:118-126
      symbols: connectors declared to support overcapture, Stripe and Adyen = crates/common_enums/src/connector_enums.rs:497-499
      symbols: only the Stripe connector implementation carries overcapture, as request_overcapture = crates/hyperswitch_connectors/src/connectors/stripe/transformers.rs:375-376; crates/hyperswitch_connectors/src/connectors/adyen/transformers.rs has zero occurrences
      symbols: the Unified Connector Service maps an overcapture result, and Adyen is not ucs-only so it can route either way = crates/hyperswitch_interfaces/src/unified_connector_service/transformers.rs:739-745; crates/router/src/core/unified_connector_service.rs:889-904; config/development.toml:1610
@@ -50,6 +51,8 @@ It does not reach every payment on the profile. Hyperswitch applies it only when
 
 Send the boolean `enable_overcapture` on [`POST /payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) or [`POST /payments/{payment_id}`](https://api-reference.hyperswitch.io/v1/payments/payments--update), the update call. The request value overrides the profile setting.
 
+The update call only works before the payment is authorized. It accepts a payment in `requires_payment_method`, `requires_confirmation`, or `requires_customer_action`, and rejects one in `requires_capture`. Once the payment is authorized you cannot turn overcapture on, so decide at creation if you can.
+
 **Sample curl:**
 
 ```bash
@@ -62,7 +65,17 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
   "currency": "USD",
   "confirm": true,
   "capture_method": "manual",
-  "enable_overcapture": true
+  "enable_overcapture": true,
+  "payment_method": "card",
+  "payment_method_data": {
+    "card": {
+      "card_number": "4242424242424242",
+      "card_exp_month": "10",
+      "card_exp_year": "30",
+      "card_holder_name": "John Doe",
+      "card_cvc": "123"
+    }
+  }
 }'
 ```
 

@@ -12,7 +12,7 @@ metaLinks:
      symbols: capture_method wire values automatic, manual, manual_multiple, scheduled, sequential_automatic = crates/common_enums/src/enums.rs:814-830, serde rename_all = "snake_case" at enums.rs:814
      symbols: capture_method default automatic = crates/common_enums/src/enums.rs:819-821
      symbols: capture_method scheduled returns 501 Not Implemented on payment create and update = crates/router/src/routes/payments.rs:86-88, 205, 910, 1216
-     symbols: manual_multiple with a pending capture and none charged gives AttemptStatus::CaptureInitiated, which maps to IntentStatus::Processing = crates/router/src/core/payments/types.rs:133-146; crates/common_enums/src/transformers.rs:2130-2135
+     symbols: manual_multiple with a pending capture and none charged gives AttemptStatus::CaptureInitiated, which maps to IntentStatus::Processing; a charged total equal to the authorized amount gives Charged, and a charged capture short of it gives PartialChargedAndChargeable = crates/router/src/core/payments/types.rs:133-146; crates/common_enums/src/transformers.rs:2128-2135
      external: release of the uncaptured hold = processor and issuer owned; the in-repo change is amount_capturable set to zero at crates/router/src/types.rs:429-469, which is bookkeeping and not a void
      symbols: POST /payments/{payment_id}/capture request fields = crates/api_models/src/payments.rs:6731-6760 PaymentsCaptureRequest; api-reference/v1/openapi_spec_v1.json:33991-34030
      symbols: amount_to_capture omitted captures the whole amount_capturable = crates/api_models/src/payments.rs:6740-6743
@@ -174,7 +174,7 @@ What that changes is Hyperswitch's own bookkeeping: the remainder is no longer c
 | `cancelled`                         | Voided before any capture.                                                                                        |
 | `cancelled_post_capture`            | Voided after a capture. A payment in this state cannot be refunded.                                               |
 
-`processing` on a `manual_multiple` payment means a capture has been sent and none has been charged yet; once one is charged, the payment moves to `partially_captured_and_capturable`.
+`processing` on a `manual_multiple` payment means a capture has been sent and none has been charged yet. Where it goes next depends on what the captures add up to: if the charged total reaches the authorized amount the payment is `succeeded`, and if a capture is charged while the total is still short it is `partially_captured_and_capturable`.
 
 `partially_captured_and_processing` is a different status, and it is not a capture status. It is produced only on the partial authorization path, when `enable_partial_authorization` is on, some amount has already been captured, and the attempt is still pending at the processor. No value of `capture_method` produces it. If you are seeing it, look at partial authorization, not at your capture calls.
 
