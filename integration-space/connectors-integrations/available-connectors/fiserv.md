@@ -14,9 +14,12 @@ Fiserv operates as a payment gateway. Its declared card and wallet methods suppo
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 36360b019f2761dd; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -26,11 +29,11 @@ Fiserv operates as a payment gateway. Its declared card and wallet methods suppo
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 ([full list](https://hyperswitch.io/pm-list)) | 156 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 ([full list](https://hyperswitch.io/pm-list)) | 156 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 85 ([full list](https://hyperswitch.io/pm-list)) | 22 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 11 ([full list](https://hyperswitch.io/pm-list)) | 10 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 20 ([full list](https://hyperswitch.io/pm-list)) | 15 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 | 156 |
+| card | Debit Card | not supported | supported | automatic, sequential automatic, manual | not supported | American Express, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 27 | 156 |
+| wallet | Apple Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 85 | 22 |
+| wallet | Google Pay | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 11 | 10 |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic, manual | not applicable | - | 20 | 15 |
 
 ### Authentication
 
