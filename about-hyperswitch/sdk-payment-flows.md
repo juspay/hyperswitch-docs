@@ -8,7 +8,9 @@ metaLinks:
 <!-- truth manifest; hyperswitch 5fb7e5598eadd8ed5fa42822427107f271a1e112; spec crates/openapi/src/routes/payments.rs@5fb7e5598eadd8ed5fa42822427107f271a1e112
      symbols: PaymentsResponse.payment_link = crates/api_models/src/payments.rs:7813-7814, struct PaymentsResponse at :7444
      symbols: PaymentLinkResponse.link = crates/api_models/src/payments.rs:13099-13100
-     symbols: PaymentLinkResponse.secure_link = crates/api_models/src/payments.rs:13101-13102
+     symbols: PaymentLinkResponse.secure_link, Option<String> with no skip_serializing_if, so it serializes as null rather than being omitted = crates/api_models/src/payments.rs:13101-13102
+     symbols: react-native-inappbrowser-reborn is imported by the Android sources, so a missing peer fails the native build = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/android/src/main/java/io/hyperswitch/react/HyperActivity.kt:9-10
+     symbols: CustomerSavedPaymentMethodsSession getters and confirm functions = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/types/savedPaymentMethods/index.ts:65-75
      symbols: PaymentLinkResponse.payment_link_id = crates/api_models/src/payments.rs:13103-13104
      symbols: PaymentsRequest.payment_link = crates/api_models/src/payments.rs:1461
      symbols: PaymentsRequest.payment_link_config = crates/api_models/src/payments.rs:1464
@@ -128,18 +130,18 @@ The stages above describe the full checkout sheet. Four other surfaces exist, an
 | You want | Surface | Where it lives |
 | --- | --- | --- |
 | The whole payment sheet, Hyperswitch renders it | Payment element | `elements.create("payment")` on Web, `PaymentElement` on React Native |
-| One payment method, your own layout around it | Single element | `elements.create("cardNumber" \| "cardExpiry" \| "cardCvc")` |
+| One payment method, your own layout around it | Single element | `elements.create("card")` for a whole card form, or `cardNumber`, `cardExpiry` and `cardCvc` mounted separately when you lay the fields out yourself |
 | A wallet button on its own, no sheet | Wallet element | `elements.create("googlePay" \| "applePay" \| "payPal" \| "samsungPay" \| "paze" \| "expressCheckout")` |
-| No Hyperswitch UI at all, saved methods only | Headless SDK | `hyper.initPaymentSession(...)` on Web, `Hyperswitch.init(...)` on React Native |
+| No Hyperswitch UI at all, saved methods only | Headless SDK | `hyper.initPaymentSession(...)` on Web; on React Native `Hyperswitch.init(...)` first, then `initPaymentSession(...)` on what it returns |
 | Collect and vault a card with no payment attached | Payment method session | `hyper.initPaymentMethodSession(...)` |
 
 `elements.create` accepts 15 names in all. The other five are `card`, `paymentMethodsSDK`, `paymentMethodCollect`, `klarna` and `paymentMethodsManagement`.
 
 ### Take React Native to production
 
-The quickstart gets a sheet on screen. Four things separate that from a production app, and none of them are optional.
+The quickstart gets a sheet on screen. Four things separate that from a production app.
 
-**Install the peer dependencies yourself.** `@juspay-tech/react-native-hyperswitch` declares 6 peer dependencies and bundles none of them: `@sentry/react-native`, `react`, `react-native`, `react-native-inappbrowser-reborn`, `react-native-svg`, `react-native-webview`. Where a missing one bites depends on which: `react` and `react-native` fail at module resolution, while `react-native-inappbrowser-reborn` and `react-native-webview` are only reached when a payment redirects, so a build can look healthy until the first redirect.
+**Install the peer dependencies yourself.** `@juspay-tech/react-native-hyperswitch` declares 6 peer dependencies and bundles none of them: `@sentry/react-native`, `react`, `react-native`, `react-native-inappbrowser-reborn`, `react-native-svg`, `react-native-webview`. Install all six. Missing ones surface early rather than at runtime: `react` and `react-native` fail at module resolution, and the Android sources import `react-native-inappbrowser-reborn` classes directly, so leaving it out fails the native build.
 
 **Add the companion package for the methods the base package does not cover.** Apple Pay and Google Pay are in the base package: it exports `GooglePayButton` and `ApplePayButton` along with the support checks. Eight companion packages ship alongside it for the rest, one each for Click to Pay, Netcetera 3DS, Trident 3DS, Samsung Pay, PayPal, card scanning, vault and payment methods. Install only the ones you accept; each adds native weight.
 
@@ -151,7 +153,7 @@ Step-by-step integration, [Expo](../integration-guide/payment-experience/pay-the
 
 ### Collect a CVC for a saved card on the Web SDK
 
-Use a payment method session, not the payment sheet. `hyper.initPaymentMethodSession(...)` returns a session that exposes `createCardForm`, and the form you build decides what happens on `tokenize()`:
+Use a payment method session, not the payment sheet. `hyper.initPaymentMethodSession({ sdkAuthorization })` returns a session that exposes `createCardForm`, and the form you build decides what happens on `tokenize()`. The `sdkAuthorization` string comes from your server, the same way it does on React Native; the session reads it to resolve the payment method session and its customer.
 
 * Mount `cardCvc` on its own and `tokenize()` runs the update flow against the saved card, which is the CVC-refresh case.
 * Mount `cardNumber` and `tokenize()` runs the save flow, vaulting a new card.
@@ -187,7 +189,7 @@ Send `payment_link: true` on `POST /payments` and the response carries a `paymen
 }
 ```
 
-`secure_link` is present only when the profile is configured for secure links. Send `payment_link_config` on the same request to theme the page. Configuration, theming and custom domains are in [Payment Links](../integration-guide/payment-experience/pay-then-vault/payment-links/README.md).
+`secure_link` is always in the response: it carries the secure URL when the profile is configured for secure links, and is `null` when it is not. Send `payment_link_config` on the same request to theme the page. Configuration, theming and custom domains are in [Payment Links](../integration-guide/payment-experience/pay-then-vault/payment-links/README.md).
 
 ### What the Headless SDK exposes
 
@@ -195,7 +197,7 @@ The Headless SDK renders nothing. You get a customer's saved payment methods as 
 
 On Web, `hyper.initPaymentSession({ clientSecret })` returns a session with two members, `getCustomerSavedPaymentMethods` and `updateIntent`. Await `getCustomerSavedPaymentMethods()` and the object it resolves to is the one that carries both the saved method data and the confirm functions, `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod`. Call them on that object, not on the session.
 
-On React Native, `Hyperswitch.init(...)` then `initPaymentSession({ sdkAuthorization })` returns a session exposing `presentPaymentSheet`, `getCustomerSavedPaymentMethods`, `getWalletSession` and `updateIntent`. The saved-methods session gives you the last-used and the default card.
+On React Native, `Hyperswitch.init(...)` then `initPaymentSession({ sdkAuthorization })` returns a session exposing `presentPaymentSheet`, `getCustomerSavedPaymentMethods`, `getWalletSession` and `updateIntent`. Await `getCustomerSavedPaymentMethods()` for the saved-methods session, which carries three getters, `getCustomerLastUsedPaymentMethodData`, `getCustomerDefaultSavedPaymentMethodData` and `getCustomerSavedPaymentMethodData`, and the two confirm functions, `confirmWithCustomerLastUsedPaymentMethod` and `confirmWithCustomerDefaultPaymentMethod`. Each getter resolves to a payment method or `null`, and its `card` field is itself nullable, so do not assume a card came back.
 
 It only covers already-saved methods. A first-time card still needs a card form, which means an element or the payment sheet.
 
