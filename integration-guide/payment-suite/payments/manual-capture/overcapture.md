@@ -106,6 +106,8 @@ Normally `amount_to_capture` may not exceed `amount_capturable`, and a capture a
 
 Stripe and Adyen are the connectors declared to support overcapture. On any other connector the requested value is cleared, so `is_overcapture_enabled` comes back empty rather than `false`, and overcapture does not apply whatever you send. If you need overcapture on a different connector, contact the Hyperswitch support team.
 
+Of those two, only Stripe carries overcapture in its connector request today, which is why the example above uses it. The Adyen connector sends no overcapture field and parses no overcapture result, so an Adyen payment can report `is_overcapture_enabled: true` from the fallback described above. Confirm overcapture with Adyen directly before relying on it; the tracking issue is [juspay/hyperswitch#14275](https://github.com/juspay/hyperswitch/issues/14275).
+
 ### Before you go live
 
 * Set the capture method to `manual` at payment creation. Overcapture cannot be added to a `manual_multiple` payment.

@@ -175,7 +175,7 @@ This is the part that decides whether you lose the remainder, and `capture_metho
 
 The capture request accepts a boolean `refund_uncaptured_amount`. It does nothing today. No code path in the payments backend reads it, so sending `true`, sending `false`, and omitting it all behave the same way, and there is no default to speak of. The field's own description in the API reference says it is not fully supported.
 
-We are working on it. Until it does something, do not plan around it. What governs the remainder is `capture_method`, described above: choose `manual_multiple` at creation if you need the uncaptured part to stay capturable, and accept that with `manual` a partial capture ends the payment.
+We are working on it; the tracking issue is [juspay/hyperswitch#14274](https://github.com/juspay/hyperswitch/issues/14274). Until it does something, do not plan around it. What governs the remainder is `capture_method`, described above: choose `manual_multiple` at creation if you need the uncaptured part to stay capturable, and accept that with `manual` a partial capture ends the payment.
 
 ### Questions this page does not answer
 
