@@ -12,9 +12,12 @@ Based in Canada, Nuvei is a fintech company. Merchants can accept cards, network
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 93becbaee4ee3686e1a4d5750d2e547c56c27047; host http://localhost:8080; fetched 2026-09-10; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** live
 
@@ -24,18 +27,18 @@ Based in Canada, Nuvei is a fintech company. Merchants can accept cards, network
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| bank redirect | EPS | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| bank redirect | EPS | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 | 90 |
 | bank redirect | Giropay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR |
 | bank redirect | iDEAL | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | EUR |
-| bank redirect | Sofort | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| bank redirect | Sofort | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 | 90 |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 | 90 |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | 249 | 90 |
 | network token | Network Token | supported | supported | automatic, manual, sequential automatic | not applicable | - | - | - |
-| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 237 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 ([full list](https://hyperswitch.io/pm-list)) | 90 ([full list](https://hyperswitch.io/pm-list)) |
+| pay later | Afterpay Clearpay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 | 90 |
+| pay later | Klarna | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 | 90 |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 59 | 90 |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 237 | 90 |
+| wallet | PayPal | not supported | supported | automatic, manual, sequential automatic | not applicable | - | 10 | 90 |
 
 ### Authentication
 
