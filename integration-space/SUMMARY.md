@@ -20,6 +20,7 @@
     * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
+    * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
