@@ -27,7 +27,7 @@ Blackhawk Network accepts gift card payments on the BHN Card Network as a single
 
 **Category:** payment gateway
 
-**Webhook flows:** None declared in code
+**Webhook flows:** There's nothing declared in code
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
