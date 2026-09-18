@@ -1,5 +1,8 @@
 ---
 description: Accept card and wallet payments through BarclayCard SmartPay Fuse.
+metaLinks:
+  alternates:
+    - barclaycard.md
 ---
 
 # BarclayCard SmartPay Fuse
