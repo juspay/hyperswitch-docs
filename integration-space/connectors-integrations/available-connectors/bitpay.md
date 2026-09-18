@@ -1,5 +1,8 @@
 ---
 description: Accept cryptocurrency payments through Bitpay.
+metaLinks:
+  alternates:
+    - bitpay.md
 ---
 
 # Bitpay
