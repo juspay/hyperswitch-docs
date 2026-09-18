@@ -8,7 +8,9 @@ metaLinks:
 # Blackhawk Network
 
 {% hint style="warning" %}
-**Alpha connector.** Blackhawk Network is at alpha integration status and supports one flow only: a single, automatically captured gift card payment. There are no refunds, no separate capture, no webhooks, and no payment or refund sync, so once Hyperswitch submits a payment it has no way to re-check what happened to it. Do not route production traffic through this connector.
+**Alpha connector.** Blackhawk Network is at alpha integration status and supports one flow only: a single, automatically captured gift card payment. There are no refunds, no separate capture, no webhooks, and no payment or refund sync, so once Hyperswitch submits a payment it has no way to re-check what happened to it.
+
+If you want to use this connector, reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) first so someone on the Hyperswitch team can tell you where it stands.
 {% endhint %}
 
 Blackhawk Network accepts gift card payments on the BHN Card Network as a single automatically captured redemption. Redemption takes two steps: a preprocessing call to `verifyAccount` returns an account ID, and the authorize request redeems against that ID. Hyperswitch does not drive this sequence for you. The connector leaves [`is_balance_check_flow_required()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_interfaces/src/api.rs#L455-L457) at its default `false`, so the router never runs the balance-check flow automatically, and [`BlackhawknetworkPaymentsRequest::try_from()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/blackhawknetwork/transformers.rs#L255-L283) fails with `MissingConnectorRelatedTransactionID` if no preprocessing step has supplied the ID. Mandates and refunds are not supported, so a card cannot be stored for reuse and a completed payment cannot be reversed through Hyperswitch.
