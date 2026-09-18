@@ -29,8 +29,8 @@ BarclayCard SmartPay Fuse accepts card payments alongside Apple Pay and Google P
 |---|---|---|---|---|---|---|---|---|
 | card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | - | EUR, GBP, PLN, SEK, USD |
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | - | EUR, GBP, PLN, SEK, USD |
-| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Apple Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 22 |
+| wallet | Google Pay | not supported | supported | automatic, manual, sequential automatic | not applicable | - | - | 23 |
 
 BarclayCard SmartPay Fuse is a UCS-only connector. Where the Unified Connector Service is configured, Hyperswitch sends all BarclayCard traffic through it and has no direct integration to fall back on, so the UCS kill switch never diverts this connector to a direct path. See the `ucs_only_connectors` list in [`config/deployments/production.toml`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/config/deployments/production.toml#L1076) and [`determine_connector_integration_type()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/router/src/core/unified_connector_service.rs#L883-L913).
 
