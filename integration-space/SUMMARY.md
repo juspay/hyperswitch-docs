@@ -19,6 +19,7 @@
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
     * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
+    * [BarclayCard SmartPay Fuse](connectors-integrations/available-connectors/barclaycard.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
     * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
     * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
