@@ -37,11 +37,12 @@ Behind the scenes, Hyperswitch Base64-decodes the Shared Secret and uses it as a
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Enter **Key**, **Merchant ID**, and **Shared Secret** during connector activation.
-3. Enable only the card and wallet methods available on your connector account.
-4. To accept Apple Pay, work through [Apple Pay setup](../../wallets/apple-pay/README.md) first. Activation then asks for the merchant certificate, merchant private key, Apple merchant identifier, display name, domain (`web` or `ios`), domain name, merchant business country, and where payments are processed (`Connector` or `Hyperswitch`). All of them are required.
-5. To accept Google Pay, work through [Google Pay setup](../../wallets/google-pay/README.md) first. Activation then asks for the Google Pay merchant name, merchant ID, merchant key, and allowed authentication methods (`PAN_ONLY`, `CRYPTOGRAM_3DS`). All of them are required.
+1. Register for BarclayCard SmartPay Fuse and obtain your **Key**, **Merchant ID**, and **Shared Secret**.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Enter **Key**, **Merchant ID**, and **Shared Secret** during connector activation.
+4. Enable only the card and wallet methods available on your connector account.
+5. To accept Apple Pay, work through [Apple Pay setup](../../wallets/apple-pay/README.md) first. Activation then asks for the merchant certificate, merchant private key, Apple merchant identifier, display name, domain (`web` or `ios`), domain name, merchant business country, and where payments are processed (`Connector` or `Hyperswitch`). All of them are required.
+6. To accept Google Pay, work through [Google Pay setup](../../wallets/google-pay/README.md) first. Activation then asks for the Google Pay merchant name, merchant ID, merchant key, and allowed authentication methods (`PAN_ONLY`, `CRYPTOGRAM_3DS`). All of them are required.
 
 The exact wallet field labels come from the [connector metadata configuration](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/connector_configs/toml/production.toml#L1336-L1411).
 
