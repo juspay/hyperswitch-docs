@@ -7,13 +7,21 @@
   * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 * [Payment Processors](connectors-integrations/payment-processor-capabilities.md)
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
+    * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
+    * [Affirm](connectors-integrations/available-connectors/affirm.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
+    * [Amazon Pay](connectors-integrations/available-connectors/amazonpay.md)
+    * [Archipel](connectors-integrations/available-connectors/archipel.md)
+    * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
+    * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
+    * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
+    * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
@@ -28,12 +36,14 @@
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
     * [MultiSafepay](connectors-integrations/available-connectors/multisafepay.md)
+    * [NMI](connectors-integrations/available-connectors/nmi.md)
     * [Nuvei](connectors-integrations/available-connectors/nuvei.md)
     * [OpenNode](connectors-integrations/available-connectors/opennode.md)
     * [Paypal](connectors-integrations/available-connectors/paypal.md)
     * [PayU](connectors-integrations/available-connectors/payu-1.md)
     * [Prophetpay](connectors-integrations/available-connectors/prophetpay.md)
     * [Rapyd](connectors-integrations/available-connectors/rapyd.md)
+    * [Razorpay](connectors-integrations/available-connectors/razorpay.md)
     * [Shift4](connectors-integrations/available-connectors/shift4.md)
     * [Stripe](connectors-integrations/available-connectors/stripe.md)
     * [TrustPay](connectors-integrations/available-connectors/trustpay.md)
@@ -113,6 +123,34 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

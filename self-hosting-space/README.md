@@ -6,7 +6,7 @@ metaLinks:
     - ./
 ---
 
-# Get Started
+# Quickstart
 
 At Juspay, we believe payment infrastructure should be transparent, adaptable, and under merchants' control—not confined by vendor restrictions. That's why we've made the bold move to open-source our Payment Orchestrator.​
 
@@ -32,4 +32,4 @@ This setup is ideal for businesses seeking a resilient payment solution capable 
 
 To assist you in deploying Hyperswitch on Kubernetes, we have created detailed guides for specific platforms:
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Local Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-local-using-helm-charts-and-minikube.md">deploy-on-local-using-helm-charts-and-minikube.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-aws-using-helm-charts.md">deploy-on-aws-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on GCP Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-gcp-using-helm-charts.md">deploy-on-gcp-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Azure Using Helm Charts</strong></mark></td><td><a href="hyperswitch-open-source/deploy-on-kubernetes-using-helm/deploy-on-azure-using-helm-charts.md">deploy-on-azure-using-helm-charts.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Local Using Helm Charts</strong></mark></td><td><a href="want-to-explore/readme/deploy-on-local-using-helm-charts-and-minikube.md">deploy-on-local-using-helm-charts-and-minikube.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on AWS Using Helm Charts</strong></mark></td><td><a href="want-to-explore/readme/deploy-on-aws-using-helm-charts.md">deploy-on-aws-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on GCP Using Helm Charts</strong></mark></td><td><a href="want-to-explore/readme/deploy-on-gcp-using-helm-charts.md">deploy-on-gcp-using-helm-charts.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Deploy Hyperswitch on Azure Using Helm Charts</strong></mark></td><td><a href="want-to-explore/readme/deploy-on-azure-using-helm-charts.md">deploy-on-azure-using-helm-charts.md</a></td></tr></tbody></table>

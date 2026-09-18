@@ -41,21 +41,36 @@ Maximize payout success with [Smart Retries](https://docs.hyperswitch.io/explore
 
 ### Supported Connectors and Methods
 
-Hyperswitch abstracts the complexity of regional payment rails. The table below outlines our currently supported payout combinations.
+Hyperswitch currently supports payouts through 21 connectors. The table below reflects the payout methods and rails each connector implements in the [Hyperswitch codebase](https://github.com/juspay/hyperswitch/tree/main/crates/hyperswitch_connectors/src/connectors).
 
-| Connector       | Regions | Cards          | Bank Rails       | Wallets                      |
-| --------------- | ------- | -------------- | ---------------- | ---------------------------- |
-| **Adyen**       | Global  | Major Networks | SEPA, SWIFT, ACH | PayPal, Neteller\*, Skrill\* |
-| **Stripe**      | Global  | Major Networks | SEPA             | —                            |
-| **Wise**        | Global  | Major Networks | SEPA, SWIFT, ACH | —                            |
-| **PayPal**      | Global  | —              | —                | PayPal, Venmo (US)           |
-| **Ebanx**       | LATAM   | —              | Pix\*\*          | —                            |
-| **Cybersource** | Global  | Major Networks | —                | —                            |
+| Connector           | Regions      | Cards                                                                 | Bank Rails              | Wallets                |
+| ------------------- | ------------ | ---------------------------------------------------------------------| ------------------------| ---------------------- |
+| **Adyen**           | Global       | —                                                                     | SEPA                    | PayPal                 |
+| **Adyen Platform**  | Global       | Visa, Mastercard                                                      | SEPA                     | —                      |
+| **Cybersource**     | Global       | Major Networks                                                        | —                       | —                      |
+| **Deutsche Bank**   | Europe       | —                                                                     | SEPA                    | —                      |
+| **Ebanx**           | Brazil       | —                                                                     | Pix (Key)\*             | —                      |
+| **Envoy**           | UK, EU & US  | —                                                                     | SEPA, BACS, ACH         | —                      |
+| **Gigadat**         | Canada       | —                                                                     | Interac                 | —                      |
+| **GotymeSanlam**    | South Africa | —                                                                     | PayShap, PayShap Proxy  | —                      |
+| **Itaubank**        | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
+| **Loonio**          | Canada       | —                                                                     | Interac                 | —                      |
+| **Nomupay**         | Europe       | —                                                                     | SEPA                    | —                      |
+| **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | —                       | —                      |
+| **Payone**          | Europe       | Major Networks                                                        | —                       | —                      |
+| **PayPal**          | Global       | —                                                                     | —                       | PayPal, Venmo\*\*      |
+| **Santander**       | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
+| **Stripe**          | Global       | Debit Cards                                                           | ACH                     | —                      |
+| **Truelayer**       | UK & Europe  | —                                                                     | Open Banking            | —                      |
+| **Trustly**         | Europe       | —                                                                     | Trustly (A2A)           | —                      |
+| **Wise**            | Global       | —                                                                     | ACH, BACS, SEPA         | —                      |
+| **Worldpay**        | Global       | —                                                                     | —                       | Apple Pay              |
+| **Worldpay XML**    | Global       | Visa, Mastercard                                                      | —                       | Apple Pay, Google Pay  |
 
 {% hint style="info" %}
-Methods marked with `*` are supported but not enabled by default.
+Methods marked with `*` are partially supported — Ebanx currently supports Pix payouts via Pix Key only; generic Pix and Pix EMV are not yet supported.
 
-Methods marked with `**` are in beta.
+Methods marked with `**` are region-restricted — Venmo payouts via PayPal are limited to US recipients.
 {% endhint %}
 
 ### FAQ

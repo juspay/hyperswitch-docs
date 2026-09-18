@@ -21,7 +21,7 @@ Juspay Hyperswitch supports external 3DS authentication providers as a distinct 
 
 | Provider | Integration Status | Description |
 | --- | --- | --- |
-| **Netcetera** | Live | EMV 3DS 2.X processing via TLS client certificate authentication. Handles Pre-Authenticate and Post-Authenticate flows. |
+| **Netcetera** | Sandbox | EMV 3DS 2.X processing via TLS client certificate authentication. Handles Pre-Authenticate and Post-Authenticate flows. |
 | **GPayments** | Live | 3DS MPI/ACS services supporting Visa Secure, Mastercard SecureCode, and global card authentication standards |
 | **Juspay 3DS Server** | Live | Juspay's own 3DS Server for comprehensive 3-Domain Secure authentication, cardholder verification, and fraud prevention across card networks |
 | **3dsecure.io** | Sandbox | 3-D Secure verification for online card transactions via a JSON API |

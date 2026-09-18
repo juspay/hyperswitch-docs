@@ -1,8 +1,0 @@
----
-metaLinks:
-  alternates:
-    - ./
----
-
-# API Reference
-
