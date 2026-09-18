@@ -48,7 +48,11 @@ Behind the scenes, Hyperswitch Base64-decodes the Shared Secret and uses it as a
 4. Enable only the card and wallet methods available on your connector account.
 5. Make sure your payment requests carry an email address and a full billing address. BarclayCard needs a first name, last name, address line 1, city, state, postal code and country on every card and wallet payment, and Hyperswitch rejects the request before sending it if any of them is missing.
 6. To accept Apple Pay, work through [Apple Pay setup](../../wallets/apple-pay/README.md) first. Activation then asks for the merchant certificate and merchant private key, **both Base64-encoded**, plus the Apple merchant identifier, display name, domain (`web` or `ios`), domain name, merchant business country, and where payments are processed (`Connector` or `Hyperswitch`). All of them are required.
-7. To accept Google Pay, work through [Google Pay setup](../../wallets/google-pay/README.md) first. Google Pay asks for more than the other wallets, and all seven fields are required: merchant name, merchant ID, merchant key, public key, private key, recipient ID, and allowed authentication methods (`PAN_ONLY`, `CRYPTOGRAM_3DS`).
+7. To accept Google Pay, decide first who decrypts the payment token, because the dashboard asks for a different set of fields for each. Under **Choose Configuration Method** you pick either **Payment Gateway**, where BarclayCard decrypts, or **Direct**, where Hyperswitch does.
+   * **Payment Gateway**, set up in [PSP decryption](../../wallets/google-pay/in-app-and-web-transactions-processed-using-psp-decryption.md), needs the Google Pay merchant name, merchant ID, merchant key, and allowed authentication methods (`PAN_ONLY`, `CRYPTOGRAM_3DS`).
+   * **Direct**, set up in [Hyperswitch decryption](../../wallets/google-pay/in-app-and-web-transactions-processed-using-hyperswitch-decryption.md), needs those four plus a public key, a private key, and a recipient ID.
+
+   All fields in whichever set applies are required.
 
 The billing requirement comes from [`build_bill_to()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard/transformers.rs#L284-L310), and the wallet field labels from the [connector wallet configuration](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/connector_configs/toml/production.toml#L1336-L1456).
 
