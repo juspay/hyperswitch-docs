@@ -43,7 +43,9 @@ metaLinks:
      symbols: paymentSession presentPaymentSheet, getCustomerSavedPaymentMethods, getWalletSession, updateIntent = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/types/definitions.ts:63-74
      symbols: 8 optional React Native companion packages, click-to-pay, netcetera-3ds, trident-3ds, samsung-pay, paypal, scancard, vault, payment-methods = react-native-hyperswitch packages/@juspay-tech/, one package.json each
      symbols: Web headless getCustomerSavedPaymentMethods, getCustomerDefaultSavedPaymentMethodData, confirmWithCustomerDefaultPaymentMethod, confirmWithLastUsedPaymentMethod = hyperswitch-docs integration-guide/payment-experience/pay-then-vault/web/headless-sdk.md
-     derived: 15000 ms wallet session bootstrap bound = WALLET_SESSION_TIMEOUT_MS passed to withTimeout around getWalletSession, sources react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/session/WalletSession.ts:48,50-68,78-86
+     symbols: WALLET_SESSION_TIMEOUT_MS is 15000 and withTimeout rejects with a timed-out Error = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/session/WalletSession.ts:48,50-56,73
+     symbols: loadWalletSession catches every rejection, including that timeout, resets the handle and both eligibility flags and resolves null, so load() reports no error to the caller = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/context/HyperElements.tsx:76-97
+     symbols: the 8 optional companion packages, click-to-pay, netcetera-3ds, payment-methods, paypal, samsung-pay, scancard, trident-3ds, vault = react-native-hyperswitch packages/@juspay-tech/, one directory each
      absent: SAQ-A boundary for the hosted SDK = checked hyperswitch-docs@670f0412f12a3c199368931f6939362214eb223d self-hosting-space/guides-for-self-hosting/security-and-compliance.md:141-154 plus a repo-wide grep for SAQ, no published Hyperswitch statement of an SAQ-A boundary for the hosted SDK found; the two SAQ-A sentences that exist are scoped to the external-vault model at integration-guide/workflows/vault/self-hosted-orchestration-with-external-or-third-party-pci-vault.md:165 and integration-space/cashier-payments/faqs.md:16
      absent: server-side confirmation of a standalone Web wallet button = checked hyperswitch-web@e8e869329c44aa769efe3df89f98e4fd51de6d04 src/hyper-loader/Hyper.res:483-505, src/Utilities/PaymentBody.res:315-324, src/Components/PayNowButton.res:20-59, no path found that hands the wallet token to the merchant server for confirmation there
      checked: 2026-09-17 -->
@@ -147,7 +149,20 @@ The quickstart gets a sheet on screen. Four things separate that from a producti
 
 **Install the peer dependencies yourself.** `@juspay-tech/react-native-hyperswitch` declares 6 peer dependencies and bundles none of them: `@sentry/react-native`, `react`, `react-native`, `react-native-inappbrowser-reborn`, `react-native-svg`, `react-native-webview`. Install all six. Missing ones surface early rather than at runtime: `react` and `react-native` fail at module resolution, and the Android sources import `react-native-inappbrowser-reborn` classes directly, so leaving it out fails the native build.
 
-**Add the companion package for the methods the base package does not cover.** Apple Pay and Google Pay are in the base package: it exports `GooglePayButton` and `ApplePayButton` along with the support checks. Eight companion packages ship alongside it, and they are capabilities rather than a list of payment methods: Click to Pay, Samsung Pay and PayPal add methods, Netcetera 3DS and Trident 3DS add authentication, card scanning adds capture, and vault and payment methods add card collection. Pick them from the methods **and** the authentication setup your integration uses; each adds native weight.
+**Add the companion packages you need.** Apple Pay and Google Pay are already in the base package, which exports `GooglePayButton`, `ApplePayButton` and the support checks. Eight more packages ship alongside it. Install only the ones you use, because each one adds native weight to your build.
+
+| Package | What it adds |
+| --- | --- |
+| `@juspay-tech/react-native-hyperswitch-click-to-pay` | Click to Pay |
+| `@juspay-tech/react-native-hyperswitch-samsung-pay` | Samsung Pay |
+| `@juspay-tech/react-native-hyperswitch-paypal` | PayPal |
+| `@juspay-tech/react-native-hyperswitch-netcetera-3ds` | Netcetera 3DS authentication |
+| `@juspay-tech/react-native-hyperswitch-trident-3ds` | Trident 3DS authentication |
+| `@juspay-tech/react-native-hyperswitch-scancard` | Card scanning |
+| `@juspay-tech/react-native-hyperswitch-vault` | Hyperswitch's own card form |
+| `@juspay-tech/react-native-hyperswitch-payment-methods` | Card collection widgets for an external vault, covering VGS, Skyflow, Basis Theory and Evervault behind one interface |
+
+Choose from your authentication setup as well as your payment methods. The 3DS packages are easy to miss, because nothing about a card payment says out loud that it needs one.
 
 **Set the environment explicitly.** `Hyperswitch.init` takes `environment`, one of `PROD`, `SANDBOX` or `INTEG`. It defaults to `PROD`. A sandbox build that forgets the field points at production.
 
@@ -173,7 +188,11 @@ On Web, create the element by name: `googlePay`, `applePay`, `payPal`, `samsungP
 
 On React Native, render `GooglePayButton` or `ApplePayButton`. `isGooglePaySupported`, `isApplePaySupported`, `isWalletSupported` and `isPlatformPaySupported` answer whether the device can present the wallet at all, which is worth checking first because a button for a wallet the device cannot present is a dead button. Whether this payment is eligible is a separate answer, and it comes from the wallet session.
 
-To drive the sheet from your own button, render inside `<HyperElements>` and call `load()` from `useWalletSession()`. The hook throws outside that provider. It returns `{ walletSession, isGooglePayEligible, isApplePayEligible, loading, load }`, where the two eligibility flags are the per-payment answer, and the handle that `load()` resolves to, later also held in `walletSession`, is what carries `launchWallet`, `launchGooglePay` and `launchApplePay`. The handle is nullable, so check it before calling. The wallet session has 15 seconds to bootstrap before it reports a timeout.
+To drive the sheet from your own button, render inside `<HyperElements>` and call `load()` from `useWalletSession()`. The hook throws if you use it outside that provider.
+
+The hook hands you `{ walletSession, isGooglePayEligible, isApplePayEligible, loading, load }`. The two eligibility flags are the per-payment answer: whether this payment can use that wallet. The launch methods are not on the hook. They live on the handle that `load()` resolves to, which is also kept in `walletSession` afterwards, and that handle is what carries `launchWallet`, `launchGooglePay` and `launchApplePay`.
+
+Check the handle before you use it. `load()` never throws; when anything goes wrong it resolves to `null` instead. A session that cannot bootstrap within 15 seconds comes back that way, and so does calling `load()` before the payment session is ready. You get the same `null` either way, with nothing to tell the two apart, so log around the call if you need to know which happened.
 
 {% hint style="info" %}
 **Confirming a standalone wallet button from your server is not documented.** We could not find a path in the Web SDK that hands the wallet token back to your backend for you to confirm there; the standalone buttons confirm through the SDK. If you need server-side confirmation, talk to your Hyperswitch contact before you build against it.
