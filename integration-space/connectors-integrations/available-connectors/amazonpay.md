@@ -1,5 +1,8 @@
 ---
 description: Accept Amazon Pay wallet payments.
+metaLinks:
+  alternates:
+    - amazonpay.md
 ---
 
 # Amazon Pay
@@ -33,14 +36,22 @@ Supply **Public Key** and **Private Key**, the labels shown in the Hyperswitch c
 ### Before you start
 
 1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Enter **Public Key** and **Private Key** during connector activation.
-3. Enable Amazon Pay only after the wallet is available on your connector account.
+2. Have four values ready, all of them required by the connector form:
+
+   | Field | What it is |
+   | --- | --- |
+   | **Public Key** | The credential Hyperswitch sends in the `Authorization` header |
+   | **Private Key** | The RSA key Hyperswitch signs each request with |
+   | **Merchant ID** | Your Amazon Pay merchant identifier |
+   | **Store ID** | The Amazon Pay store the payments belong to |
+
+3. Enter all four during connector activation. Merchant ID and Store ID are wallet fields on the same form; activation without them is incomplete.
 
 To connect Amazon Pay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Amazon Pay-specific behavior.
 
 ### Webhooks
 
-Amazon Pay webhooks are not supported. Use payment sync for status updates. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L727-L732), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L734-L740), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L742-L748) each return `WebhooksNotImplemented`.
+Amazon Pay webhooks are not supported. Sync instead: payment sync for payment status, and refund sync for refund status, which this connector implements as a `GET` to `/refunds/{connector_refund_id}`. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L727-L732), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L734-L740), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/amazonpay.rs#L742-L748) each return `WebhooksNotImplemented`.
 
 ### Source reference
 
