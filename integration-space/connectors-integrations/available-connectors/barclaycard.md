@@ -60,7 +60,7 @@ To connect BarclayCard SmartPay Fuse to your Hyperswitch account, follow [Activa
 
 ### Webhooks
 
-BarclayCard SmartPay Fuse webhooks are not supported. Use payment sync and refund sync for status updates. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1520-L1525), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1527-L1533), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1535-L1541) each return `WebhooksNotImplemented`.
+BarclayCard SmartPay Fuse webhooks are not supported. Please use payment sync and refund sync for status updates. [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1520-L1525), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1527-L1533), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/barclaycard.rs#L1535-L1541) each return `WebhooksNotImplemented`.
 
 ### Source reference
 
