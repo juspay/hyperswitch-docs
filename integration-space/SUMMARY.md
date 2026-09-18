@@ -21,6 +21,7 @@
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
     * [BarclayCard SmartPay Fuse](connectors-integrations/available-connectors/barclaycard.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
+    * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
     * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
