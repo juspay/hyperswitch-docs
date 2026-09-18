@@ -133,10 +133,10 @@ The stages above describe the full checkout sheet. Four other surfaces exist, an
 
 | You want | Surface | Where it lives |
 | --- | --- | --- |
-| The whole payment sheet, Hyperswitch renders it | Payment element | `elements.create("payment")` on Web, `PaymentElement` on React Native |
+| The whole payment sheet, Hyperswitch renders it | Payment element | `elements.create("payment")` on Web. On React Native, `PaymentElement` embeds the sheet in your screen, while `paymentSession.presentPaymentSheet(...)` presents it as a drop-in |
 | One payment method, your own layout around it | Single element | `elements.create("card")` for a whole card form, or `cardNumber`, `cardExpiry` and `cardCvc` mounted separately when you lay the fields out yourself |
-| A wallet button on its own, no sheet | Wallet element | `elements.create("googlePay" \| "applePay" \| "payPal" \| "samsungPay" \| "paze" \| "expressCheckout")` |
-| No Hyperswitch UI at all, saved methods only | Headless SDK | `hyper.initPaymentSession(...)` on Web; on React Native `Hyperswitch.init(...)` first, then `initPaymentSession(...)` on what it returns |
+| A wallet button on its own, no sheet | Wallet element | One name per call, for example `elements.create("googlePay")`. The others are `applePay`, `payPal`, `samsungPay`, `paze` and `expressCheckout` |
+| Saved methods as data, you draw the UI | Headless SDK | `hyper.initPaymentSession(...)` on Web; on React Native `Hyperswitch.init(...)` first, then `initPaymentSession(...)` on what it returns. A saved card with `requires_cvv` still needs the SDK's CVC element |
 | Collect and vault a card with no payment attached | Payment method session | `hyper.initPaymentMethodSession(...)` |
 
 `elements.create` accepts 14 names in all. The other three are `paymentMethodCollect`, `klarna` and `paymentMethodsManagement`. Anything else logs an unknown-key warning and creates nothing.
@@ -199,7 +199,7 @@ Send `payment_link: true` on `POST /payments` and the response carries a `paymen
 
 ### What the Headless SDK exposes
 
-The Headless SDK renders nothing. You get a customer's saved payment methods as data, and you draw the UI.
+The Headless SDK gives you a customer's saved payment methods as data and leaves the UI to you. One piece stays Hyperswitch's: a saved card that comes back with `requires_cvv` is confirmed by passing the id of a mounted `CardCVCElement`, so the CVC is collected in the SDK's element rather than an input of your own. Everything around it is yours to draw.
 
 On Web, `hyper.initPaymentSession({ clientSecret })` returns a session with two members, `getCustomerSavedPaymentMethods` and `updateIntent`. Await `getCustomerSavedPaymentMethods()` and the object it resolves to is the one that carries both the saved method data and the confirm functions, `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod`. Call them on that object, not on the session.
 
@@ -212,7 +212,7 @@ Per-platform Headless guides: [Web](../integration-guide/payment-experience/pay-
 ### Questions this page does not answer
 
 * **Where the PCI SAQ-A boundary sits when you use the hosted SDK.** Hyperswitch has not published a statement of that boundary, so this page does not state one. [Security and Compliance](https://docs.hyperswitch.io/self-hosting/guides-for-self-hosting/security-and-compliance) covers how PCI DSS assessment works, SAQ against ROC, and when a QSA is required. Your assessment level is a QSA question.
-* **Driving checkout entirely from your backend.** That is [Server to Server Payments](../integration-guide/payment-suite/server-to-server-payments.md), where one call returns the payment together with its payment-method list and the wallet session tokens. Read that page for which call does it today.
+* **Driving checkout entirely from your backend.** That is [Server to Server Payments](../integration-guide/payment-suite/server-to-server-payments.md), where one call returns the payment together with its payment-method list and the wallet session tokens. That page says which call does it today.
 * **Refunding a payment made through the SDK.** The SDK plays no part; see [Refunds](../integration-guide/payment-suite/refunds.md).
 
 ### **What are `PaymentIntent` and `PaymentAttempt` objects and how do they work in Hyperswitch?**
