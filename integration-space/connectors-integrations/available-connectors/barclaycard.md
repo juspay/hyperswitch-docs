@@ -4,7 +4,7 @@ description: Accept card and wallet payments through BarclayCard SmartPay Fuse.
 
 # BarclayCard SmartPay Fuse
 
-BarclayCard SmartPay Fuse accepts card payments alongside Apple Pay and Google Pay. Cards support refunds, optional 3DS, and your choice of automatic or manual capture. Mandates are not supported on any route, so this connector cannot store a payment method for later reuse.
+BarclayCard SmartPay Fuse accepts card payments alongside Apple Pay and Google Pay. Cards support refunds, optional 3DS, and automatic, manual, or sequential automatic capture. Mandates are not supported on any route, so this connector cannot store a payment method for later reuse.
 
 ### Status and capabilities
 
