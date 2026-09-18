@@ -36,9 +36,9 @@ Supply **Client Id**, **Client Secret**, and **Product Line Id**, the labels sho
 
 ### Before you start
 
-1. Obtain **Client Id**, **Client Secret**, and **Product Line Id** from Blackhawk Network.
+1. Register with Blackhawk Network at [blackhawknetwork.com](https://www.blackhawknetwork.com/).
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Enter **Client Id**, **Client Secret**, and **Product Line Id** during connector activation.
+3. Obtain **Client Id**, **Client Secret**, and **Product Line Id** from Blackhawk Network, then enter them during connector activation.
 4. If the activation flow asks you to select payment methods, choose only the gift card methods enabled on your Blackhawk Network account.
 
 Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Blackhawk Network-specific behavior.
