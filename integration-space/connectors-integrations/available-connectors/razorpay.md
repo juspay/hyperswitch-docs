@@ -1,6 +1,9 @@
 ---
 description: >-
   Accept UPI Collect payments in India through Razorpay on Hyperswitch.
+metaLinks:
+  alternates:
+    - razorpay.md
 ---
 
 # Razorpay

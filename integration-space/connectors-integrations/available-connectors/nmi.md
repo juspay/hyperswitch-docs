@@ -1,6 +1,9 @@
 ---
 description: >-
   Accept card and wallet payments through NMI on Hyperswitch, with mandates, refunds, and manual capture.
+metaLinks:
+  alternates:
+    - nmi.md
 ---
 
 # NMI
