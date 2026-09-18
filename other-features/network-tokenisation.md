@@ -1,308 +1,93 @@
 ---
 description: >-
-  Network Tokenization in Hyperswitch: Increase Security and Authorization Rates
-  with Minimal Changes
+  Configure network tokenisation, understand saved-card execution, and check the
+  repository defaults for supported networks and connectors.
 icon: shield-check
 metaLinks:
   alternates:
     - network-tokenisation.md
 ---
 
-# Network Tokenisation
+<!-- truth manifest; hyperswitch 3fc54c13236c5259f76c4e12f2c176569b18c7a4; spec api-reference/v1/openapi_spec_v1.json@3fc54c13236c5259f76c4e12f2c176569b18c7a4
+     symbols: network_tokenization_service = crates/router/src/configs/settings.rs:178-181; crates/router/src/core/payment_methods/network_tokenization.rs:228-233,465-470
+     symbols: is_network_tokenization_enabled = migrations/2024-09-12-112019_add_is_network_tokenization_enabled_in_business_profile/up.sql:1-2
+     symbols: network_tokenization_supported_card_networks = config/config.example.toml:1423-1424
+     symbols: network_tokenization_supported_connectors = config/config.example.toml:1439-1440
+     symbols: determine_standard_vault_action = crates/router/src/core/payments/helpers.rs:2815-2869
+     symbols: get_token_from_tokenization_service = crates/router/src/core/payment_methods/network_tokenization.rs:632-781
+     symbols: handle_metadata_update = crates/router/src/core/webhooks/network_tokenization_incoming.rs:241-404
+     symbols: delete_network_token_from_locker_and_token_service = crates/router/src/core/payment_methods/network_tokenization.rs:1033-1146
+     symbols: NetworkTokenData = crates/hyperswitch_domain_models/src/payment_method_data.rs:2018-2051
+     symbols: payment_account_reference = crates/router/src/core/payments/operations/payment_response.rs:2732-2736,2930; crates/router/src/core/payments/transformers.rs:4449-4452
+     symbols: Checkout VTS and MDES mapping = crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs:1054-1061
+     absent: connector_tokens in saved-card network-token selection = checked crates/router/src/core/payments/helpers.rs:2815-2869, not found
+     absent: data-only 3DS network-token path = checked crates/router/src/core/payment_methods/network_tokenization.rs, crates/hyperswitch_domain_models/src/payment_method_data.rs, crates/router/src/core/payments/helpers.rs, not found
+     checked: 2026-09-17 -->
 
-### What is Network Tokenization?
+# Network tokenisation
 
-Network tokenization is the process of replacing sensitive card details (like PAN) with a unique, merchant-specific token issued and managed by card networks (Visa, Mastercard, etc.). These tokens can be safely used in transactions and stored without increasing PCI scope.
+Network tokenisation replaces a stored card number with a token issued through a card network. A payment can use that token only when the profile is enabled, the token service is configured, and the selected payment connector supports the flow.
 
-As more issuers and networks prioritize token-first infrastructure, network tokenization is rapidly becoming the standard for secure and high-converting card payments globally.
+For example, the Checkout connector identifies a Visa network token as `vts` and a Mastercard network token as `mdes`. Other connector-specific formats and decryption behavior belong on the connector page.
 
-A network token is scoped to a Merchant, Customer & Token Requestor ensuring a more secure payment experience. Every entity to the left of Network will transact using a token and the entities to the right will have card details. Each token is also unique to the Network provider.
+## Prerequisites
 
-<div data-full-width="false"><figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdTTFA15C5uBOpzeRHfpxLyVSOXUgTzo8hhhECmHMzVp_Tg8NvSQ2PBi1ptG99ZhinPI5seKzESVf4IBoku_NYKe-CYn6zfV4gnC9yTMevLJmETNa8U8D39B8eNZOBisNzBGmPSXw?key=L_7zrdqKs_cTzmvGXIqAyQ" alt=""><figcaption></figcaption></figure></div>
+Complete these checks before testing a tokenised payment:
 
-### Key Advantages for Merchants:
+1. **Enable network tokenisation for the profile.** The `is_network_tokenization_enabled` database default is `false`.
+2. **Configure the network tokenisation service.** The service configuration is optional at application startup. A tokenisation call made without it is rejected with `NetworkTokenizationServiceNotConfigured`, whose source message is `Network token service not configured`.
+3. **Allow the card network and connector in deployment configuration.** The lists below are repository example defaults. Operators can change them for a deployment.
+4. **Keep a card available in the vault for fallback.** The saved-card payment path can use the card when the token cannot be fetched or the selected connector is not enabled for network tokens.
 
-1. **Reduced Security Vulnerability:** By using network tokens instead of sensitive card information, you minimize the impact of data breaches, as the network token is specific to a merchant and is of no use to malicious actors. This helps you maintain customer trust and avoid the financial and reputational damage associated with security incidents.
-2. **Up-to-date Cardholder Information:** Tokenization automatically updates cardholder information if the card is lost, expired, or reissued. This ensures uninterrupted recurring payments, increasing customer retention and reducing payment disruptions.
-3. **Improved Authorization Rates:** Transactions using network tokens are considered more authentic by networks due to richer metadata. This leads to fewer declines and significantly improves your authorization rates by up to 3-5%
-4. **Reduced Fraud:** Network tokens are less prone to frauds and have been shown to reduce fraud by up to 26%, which means fewer chargebacks and losses for your business, ultimately improving your bottom line.
-5. **Simplified Compliance:** With tokenization, your business doesn't need to store sensitive card data, reducing the scope and cost of compliance efforts.
-6. **Reduced Interchange costs:** Networks in certain geographies provide interchange cost savings to merchants up to 10bps in case of using network tokenization
+## Repository example defaults
 
-### Supported Networks via Hyperswitch
+These values come from `config/config.example.toml`. They describe the repository example configuration, not every deployment.
 
-Currently supported: Visa, Mastercard, American Express
+| Configuration | Example default | Count |
+| --- | --- | ---: |
+| Card networks | Visa, American Express, Mastercard | 3 |
+| Payment connectors | Adyen, Cybersource, Peach Payments, TrustPay | 4 |
 
-(Additional networks may be added based on merchant needs and network readiness.)
+A connector can support cards without supporting Hyperswitch-managed network-token execution. Check the active deployment configuration before routing live traffic.
 
-### Juspay as Token Requestor / Token Service Provider
+## How the lifecycle works
 
-Juspay is certified as both a Token Requestor (TR) and Token Service Provider (TSP). This means:
+The saved-card sequence below describes the v1 path. Token fetching has separate v1 and v2 implementations, but the selection and deletion behavior cited here is v1-specific.
 
-* As a Token Requestor, we initiate token provisioning with card networks on your behalf.
-* As a TSP, we securely manage token lifecycle events: provisioning, detokenization, refresh, suspension, and deletion.
+1. **Provision.** When an eligible card is saved and network tokenisation is enabled, Hyperswitch requests a network token. The payment method stores a network-token request reference, a network-token locker reference, and encrypted network-token metadata.
+2. **Use.** A later payment supplies the saved `payment_method_id`. For the v1 saved-card path, Hyperswitch checks the profile flag, the selected connector against the configured allowlist, and the saved network-token request reference.
+3. **Fetch fresh payment data.** When all checks pass, Hyperswitch fetches network-token payment data from the token service. The payment data can carry a cryptogram and ECI for connector authorization.
+4. **Fall back to the card.** If the connector is not allowed, the request reference is absent, or the token fetch fails, Hyperswitch retrieves card details from the vault instead.
+5. **Read status and maintain metadata.** Status checks read token state and expiration. Network-token webhooks can update stored expiration metadata. In v1, deleting the saved method invokes deletion from the token service and its locker record.
 
-Juspay's tokenization suite is capable of handling the complete token lifecycle management. We've issued more than 150 million network tokens globally.
+## Reuse across payment connectors
 
-By leveraging Juspay's infrastructure through Juspay Hyperswitch, you get seamless access to tokenization features without having to integrate with each network independently or worry about certifications.
+A saved network token is reusable across payment connectors only when each selected connector is in the deployment's `network_tokenization_supported_connectors` list. It is not automatically portable to every connector.
 
-#### Bring your own Token Requestor credentials
+The saved-card network-token decision does not read `connector_tokens`. If `connector_tokens` is `null`, Hyperswitch can still select the network-token path when the profile is enabled, the selected connector is allowed, and the payment method has a network-token request reference. If any of those checks fail, the path uses the vaulted card.
 
-We also offer you the flexibility to bring your own Token Requestor credentials and configure them within our system so that all network tokenization requests are made using your own credentials. This could ensure better control, compliance alignment, and consistency across your systems.
+## Vault and `payment_method_id`
 
-### Hyperswitch: Network Tokenization Support Modes
+`payment_method_id` is the stable reference used by a later payment. It identifies the saved payment method, while the card and network-token material remain behind the vault and token-service references.
 
-Juspay Hyperswitch supports three distinct Network Tokenization flows, depending on how you're integrated:
+Network tokenisation does not change payment-method ownership or sharing rules. For cross-merchant reuse and on-behalf-of operations, see [Platform organization concepts](../integration-guide/account-management/multiple-accounts-and-profiles/platform-organization-concepts.md).
 
-#### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+For card storage and retrieval choices, see [Vault workflows](../integration-guide/workflows/vault/). For general card enablement and 3DS setup, see [Cards](payment-orchestration/quickstart/payment-methods-setup/cards.md).
 
-When you process payments using Hyperswitch's orchestration layer, you can perform tokenized payments directly - Hyperswitch handles provisioning and using the network token dynamically at payment time. We also take care of optimizing authorization rates and latency by switching between network tokens and clear PAN.
+## 3DS and cryptographic data
 
-#### 2. Network Tokenization during Vaulting (via Hyperswitch Vault service)
+Network-token payment data carries a token cryptogram and ECI when the token service returns them. The network-token flow does not declare a separate data-only 3DS mode in the relevant payment, token, or vault-selection code.
 
-You can network tokenize cards at the time of storage in Hyperswitch's Vault service. These network tokens can later be used for recurring payments, subscriptions, or one-click checkouts in combination with NTID or cryptogram.
+Treat 3DS configuration and network tokenisation as separate checks. A connector may require its own authentication setup even when it accepts network-token fields.
 
-#### 3. Standalone Network Tokenization API Service
+## Payment Account Reference
 
-Use Juspay's standalone Network Tokenization API service to provision, manage, or detokenize network tokens - without using Hyperswitch's payment orchestration or vault services.
+The network-token data model carries an optional Payment Account Reference (PAR) in both v1 and v2. Token-service responses map PAR into that model when present.
 
-***
+A connector can also return `payment_account_reference` on a payment. Hyperswitch stores that value on the payment attempt and returns it in the payment response. Because both values are optional, do not assume that every token or connector response includes PAR.
 
-### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
+## Connector and analytics details
 
-_No changes required to your PSP integrations — Hyperswitch handles the token lifecycle, retries, and PAN fallback automatically._
-
-In this flow:
-
-* Hyperswitch dynamically provisions a network token at the time of payment.
-* The network token is used in real-time to complete the transaction.
-* If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVW/NTI to optimize for higher authorization rates
-* Hyperswitch also optimizes for latency by falling back to Clear PAN + CVW/NTI
-
-#### Flow Summary:
-
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#ffffff",
-    "primaryBorderColor": "#2563EB",
-    "lineColor": "#2563EB",
-    "secondaryColor": "#EFF6FF",
-    "tertiaryColor": "#DBEAFE",
-    "fontFamily": "Inter, system-ui, sans-serif",
-    "fontSize": "14px",
-    "textColor": "#000000",
-
-    "actorBkg": "#346DDB",
-    "actorBorder": "#999999",
-    "actorTextColor": "#ffffff",
-
-    "signalColor": "#000000",
-    "signalTextColor": "#696969",
-
-    "labelBoxBkgColor": "#346DDB",
-    "labelBoxBorderColor": "#2563EB",
-    "loopTextColor": "#000080"
-  }
-}}%%
-sequenceDiagram
-    participant MS as Merchant Server
-    participant UI as Hyperswitch UI/Checkout
-    participant HS as Hyperswitch Server
-    participant HV as Hyperswitch Vault
-    participant CN as Card Network
-    participant PSP as PSP
-
-    rect rgb(240, 240, 240)
-        Note over MS,PSP: Setup
-        Note over MS,HS: Enable NT on orchestration account
-        Note over MS,HS: Choose Juspay TR ID or bring your own
-    end
-
-    rect rgb(240, 240, 240)
-        Note over MS,PSP: During Checkout
-        Note over UI: End user enters card details
-        UI->>HS: Submit card details
-        HS->>CN: Request network token
-        CN-->>HS: Return token + cryptogram (if eligible)
-
-        alt Tokenization successful
-            HS->>PSP: Send network token + cryptogram
-            PSP-->>HS: success_response
-        else Tokenization failed / Payments using Tokenization failed
-            HS->>PSP: Send clear PAN + CVV
-        end
-
-        alt Card to be stored
-            HS->>HV: Store network token (and optionally PAN)
-            HS-->>UI: Return token (optional)
-        end
-    end
-```
-
-1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
-   1. You can either bring your own TRID or use Juspay's TRID to request network tokens
-2. The end user enters their card details on your checkout
-3. Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
-4. If tokenization succeeds, Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
-5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
-6. If the end user had agreed to store the card, the Network token is stored in Hyperswitch vault and optionally, the token can be returned to the merchant for future use
-
-#### How to Try:
-
-Contact our support team to enable Network Tokenization on your merchant account and receive access. You can test tokenized payment flows in sandbox before going live.
-
-***
-
-### 2. Network Tokenization during Vaulting (via Hyperswitch Vault)
-
-In this flow:
-
-* You integrate with [Hyperswitch's standalone Vault service](../integration-guide/workflows/vault/).
-* Card details are securely captured and stored alongside PSP tokens and network tokens
-* These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
-
-#### Flow Summary:
-
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#ffffff",
-    "primaryBorderColor": "#2563EB",
-    "lineColor": "#2563EB",
-    "secondaryColor": "#EFF6FF",
-    "tertiaryColor": "#DBEAFE",
-    "fontFamily": "Inter, system-ui, sans-serif",
-    "fontSize": "14px",
-    "textColor": "#000000",
-
-    "actorBkg": "#346DDB",
-    "actorBorder": "#999999",
-    "actorTextColor": "#ffffff",
-
-    "signalColor": "#000000",
-    "signalTextColor": "#696969",
-
-    "labelBoxBkgColor": "#346DDB",
-    "labelBoxBorderColor": "#2563EB",
-    "loopTextColor": "#000080"
-  }
-}}%%
-
-sequenceDiagram
-    participant MS as Merchant Server
-    participant UI as Hyperswitch UI SDK
-    participant HV as Hyperswitch Vault Server
-    participant CN as Card Network
-    participant PSP as PSP
-
-    Note over MS,HV: Sign up for Standalone Vault
-    Note over MS,HV: Initiate payment method session with Network Tokenization request
-
-    alt Using UI SDK
-        Note over UI: End user enters card details
-        UI->>HV: Send card details securely
-    else Using Server API
-        MS->>HV: Send card details (S2S)
-    end
-
-    HV->>CN: Provision network token
-    CN-->>HV: Token + cryptogram
-    HV->>PSP: Tokenize with PSP
-    PSP-->>HV: Return PSP token + NTI (if any)
-    Note over HV: Store PAN + network tokens + PSP tokens
-    HV-->>MS: Return NT + cryptogram + PSP tokens + NTI
-
-    rect rgb(240, 240, 240)
-        Note over MS,PSP: Later usage
-        MS->>HV: /retrieve_payment_method
-        HV-->>MS: Return NT + cryptogram
-        MS->>PSP: Use NT + cryptogram or NTI to process payments
-    end
-```
-
-1. Merchant signs up for [Hyperswitch's standalone vault service ](../integration-guide/workflows/vault/)and requests network tokenization in every payment method session create request
-2. Card details are captured from the end users via Hyperswitch's PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
-3. Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
-4. The network token along with PSP tokens and NTI (if returned by the PSP) is passed back to the merchant
-5. Token can be retrieved later by the merchant along with cryptogram using the Retrieve payment method endpoint
-6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system
-
-#### How to Try?
-
-Contact our support team to enable Network Tokenization on your merchant account and receive access. You can test tokenized payment flows in sandbox before going live. You can learn more and try out our Vault service here.
-
-***
-
-### 3. Standalone Network Tokenization Service (via Juspay Tokenization service)
-
-This is a lightweight, standalone integration when you:
-
-* Already have your own PCI compliant vault or orchestration system but want to add Network Tokenization for better auth rates and lower costs
-* You only want to use Juspay to provision and manage network tokens
-
-#### Flow Summary:
-
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#ffffff",
-    "primaryBorderColor": "#2563EB",
-    "lineColor": "#2563EB",
-    "secondaryColor": "#EFF6FF",
-    "tertiaryColor": "#DBEAFE",
-    "fontFamily": "Inter, system-ui, sans-serif",
-    "fontSize": "14px",
-    "textColor": "#000000",
-
-    "actorBkg": "#346DDB",
-    "actorBorder": "#999999",
-    "actorTextColor": "#ffffff",
-
-    "signalColor": "#000000",
-    "signalTextColor": "#696969",
-
-    "labelBoxBkgColor": "#346DDB",
-    "labelBoxBorderColor": "#2563EB"
-  }
-}}%%
-sequenceDiagram
-    participant MS as Merchant Server
-    participant JS as Juspay Server
-    participant CN as Card Network
-    participant PSP as PSP
-
-    Note over MS,JS: Sign up for Network Tokenization
-    Note over MS,JS: Choose to use Juspay TR ID or own TR ID
-
-    rect rgb(240, 240, 240)
-        Note over MS,PSP: Token Lifecycle APIs
-        MS->>JS: /generate_token (PAN, expiry, etc.)
-        JS->>CN: Provision network token
-        CN-->>JS: Return network token + cryptogram
-        JS-->>MS: Return token + cryptogram
-        MS->>JS: /update_token or /delete_token
-        CN-->>JS: Webhooks to update token details
-    end
-
-    rect rgb(240, 240, 240)
-        Note over MS,PSP: Token Retrieval and Usage
-        MS->>JS: /retrieve_token (token_ref)
-        JS-->>MS: Return token + cryptogram
-        MS->>PSP: Use token + cryptogram to make payment
-    end
-```
-
-* You sign up for Juspay's Network Tokenization service by reaching out to our support team
-* You can either use Juspay's TR ID or setup your own TR ID
-* You use [Juspay's Tokenization APIs](https://juspay.io/in/docs/api-reference/docs/tokenization-apis/generate-network-token) to:
-  * Generate Network Tokens for a given PAN
-  * Update or delete tokens
-  * Retrieve Network tokens and cryptogram to make payment through your own payments system
-
-#### How to Try?
-
-Contact our support to set up your credentials and get access to our Token Provisioning and Cryptogram APIs.
+* **Checkout:** Its adapter maps Visa network tokens to `vts` and Mastercard network tokens to `mdes`. See the [Checkout connector page](https://docs.hyperswitch.io/integrations/connectors-integrations/payment-processor-capabilities/available-connectors/checkout) for connector-owned setup and capability details.
+* **Peach Payments:** The current connector directory has no dedicated Peach Payments page. Use [Connector configurations](https://docs.hyperswitch.io/integrations/connectors-integrations/payment-processor-capabilities/available-connectors) to check the published connector pages, and verify the active deployment configuration before relying on decryption behavior.
+* **Control Center analytics:** Token execution and connector capability are not analytics definitions. See [Analytics](../integration-guide/control-center/analytics.md) for the available Control Center views and filters.
