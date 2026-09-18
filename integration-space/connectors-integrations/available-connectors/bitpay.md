@@ -30,19 +30,27 @@ The feature matrix declares refunds, but the refund execute request returns `Not
 
 ### Authentication
 
-Supply **API Key**, the label shown in the Hyperswitch control center. The current [`build_headers()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay.rs#L83-L107) override sends content type and `X-Accept-Version: 2.0.0`; it does not call [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay.rs#L126-L137), so the API Key is not added to connector requests. [`BitpayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay/transformers.rs#L67-L80) maps the dashboard field.
+Supply **API Key**, the label shown in the Hyperswitch control center. Bitpay carries it as a `token` value rather than an authorization header: the authorize request serializes it into the request body as `token`, and payment sync appends it to the URL as `?token=...`. The [`build_headers()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay.rs#L83-L107) override sends only the content type and `X-Accept-Version: 2.0.0`, and never calls [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay.rs#L126-L137), so no `Authorization` header is sent. See the body field in [`BitpayPaymentsRequest`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay/transformers.rs#L53) and the sync URL in [`get_url()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay.rs#L296-L305). [`BitpayAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_connectors/src/connectors/bitpay/transformers.rs#L67-L80) maps the dashboard field.
+
+Because the key travels in a query string on sync, it can reach proxy and server logs that would not record a header. Treat it as you would any other secret in a URL.
 
 ### Before you start
 
 1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 2. Enter **API Key** during connector activation.
-3. Leave **Source verification key** blank. Bitpay uses the default no-op verification algorithm, so this field does not add signature verification.
+3. Leave **Source verification key** blank. Bitpay uses the default no-op verification algorithm, so a value here adds no signature verification. See the webhook warning below before you rely on callbacks at all.
 
 To connect Bitpay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Bitpay-specific behavior.
 
 ### Webhooks
 
-Bitpay does not verify callback signatures. The default [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_interfaces/src/webhooks.rs#L194-L200) selects `NoAlgorithm`, whose [`verify_signature()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/common_utils/src/crypto.rs#L177-L185) always returns true.
+{% hint style="warning" %}
+**Bitpay callbacks are not authenticated. Do not treat one as proof of payment.** The connector verifies no signature: the default [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/hyperswitch_interfaces/src/webhooks.rs#L194-L200) selects `NoAlgorithm`, whose [`verify_signature()`](https://github.com/juspay/hyperswitch/blob/9e5dd70d1cb4011bbcca3114862406008a0b61f8/crates/common_utils/src/crypto.rs#L177-L185) always returns true, so every callback that reaches the endpoint is accepted. Anyone who can reach it can post `invoice_confirmed` or `invoice_completed` and drive a payment to succeeded.
+
+Confirm with payment sync before you release goods or mark an order paid, and treat the callback only as a signal to go and check.
+{% endhint %}
+
+The events below are what the connector does with a callback once it accepts it.
 
 The connector handles 8 event wire values.
 
