@@ -1,5 +1,8 @@
 ---
 description: Accept Blackhawk Network gift card payments.
+metaLinks:
+  alternates:
+    - blackhawknetwork.md
 ---
 
 # Blackhawk Network
