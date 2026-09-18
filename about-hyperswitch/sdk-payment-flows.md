@@ -46,6 +46,9 @@ metaLinks:
      symbols: WALLET_SESSION_TIMEOUT_MS is 15000 and withTimeout rejects with a timed-out Error = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/session/WalletSession.ts:48,50-56,73
      symbols: loadWalletSession catches every rejection, including that timeout, resets the handle and both eligibility flags and resolves null, so load() reports no error to the caller = react-native-hyperswitch packages/@juspay-tech/react-native-hyperswitch/src/context/HyperElements.tsx:76-97
      symbols: the 8 optional companion packages, click-to-pay, netcetera-3ds, payment-methods, paypal, samsung-pay, scancard, trident-3ds, vault = react-native-hyperswitch packages/@juspay-tech/, one directory each
+     symbols: getSdkAuthorizationData base64-decodes sdkAuthorization into key=value pairs and reads publishable_key, client_secret, customer_id, profile_id, payment_method_session_id and payment_id = hyperswitch-web src/Utilities/Utils.res:2083-2107
+     symbols: PaymentMethodSession.make takes pmSessionId from that decode and defaults it to an empty string, so an authorization with no payment_method_session_id leaves it empty = hyperswitch-web src/hyper-loader/PaymentMethodSession.res:136-139,159
+     symbols: POST /v2/payment-method-sessions creates a payment method session from a customer_id = crates/openapi/src/routes/payment_method.rs:648-676
      absent: SAQ-A boundary for the hosted SDK = checked hyperswitch-docs@670f0412f12a3c199368931f6939362214eb223d self-hosting-space/guides-for-self-hosting/security-and-compliance.md:141-154 plus a repo-wide grep for SAQ, no published Hyperswitch statement of an SAQ-A boundary for the hosted SDK found; the two SAQ-A sentences that exist are scoped to the external-vault model at integration-guide/workflows/vault/self-hosted-orchestration-with-external-or-third-party-pci-vault.md:165 and integration-space/cashier-payments/faqs.md:16
      absent: server-side confirmation of a standalone Web wallet button = checked hyperswitch-web@e8e869329c44aa769efe3df89f98e4fd51de6d04 src/hyper-loader/Hyper.res:483-505, src/Utilities/PaymentBody.res:315-324, src/Components/PayNowButton.res:20-59, no path found that hands the wallet token to the merchant server for confirmation there
      checked: 2026-09-17 -->
@@ -172,7 +175,9 @@ Step-by-step integration, [Expo](../integration-guide/payment-experience/pay-the
 
 ### Collect a CVC for a saved card on the Web SDK
 
-Use a payment method session, not the payment sheet. `hyper.initPaymentMethodSession({ sdkAuthorization })` returns a session that exposes `createCardForm`, and the form you build decides what happens on `tokenize()`. The `sdkAuthorization` string comes from your server, the same way it does on React Native; the session reads it to resolve the payment method session and its customer.
+Use a payment method session, not the payment sheet. `hyper.initPaymentMethodSession({ sdkAuthorization })` returns a session that exposes `createCardForm`, and the form you build decides what happens on `tokenize()`.
+
+One thing to get right first: the `sdkAuthorization` here is not the one a payment hands you. The two look alike, so they are easy to mix up. The SDK decodes the string and looks inside it for a `payment_method_session_id`, and a payment's authorization carries a `payment_id` instead. Pass the wrong one and the session id comes back empty, so the card form never initializes. Create a payment method session for the customer on your backend first, with `POST /v2/payment-method-sessions`, and hand the SDK an authorization for that session.
 
 * Mount `cardCvc` on its own and `tokenize()` runs the update flow against the saved card, which is the CVC-refresh case.
 * Mount `cardNumber` and `tokenize()` runs the save flow, vaulting a new card.
