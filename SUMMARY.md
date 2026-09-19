@@ -248,11 +248,7 @@
     * [Connector Cloning](integration-guide/control-center/connectors/connector-cloning.md)
   * [Reporting](integration-guide/control-center/reporting/README.md)
     * [Payments Report](integration-guide/control-center/reporting/payments-report.md)
-  * [Workflow](integration-guide/control-center/workflow.md)
-  * [Analytics](integration-guide/control-center/analytics.md)
   * [Developers](integration-guide/control-center/developers.md)
-  * [Settings & Administration](integration-guide/control-center/settings-and-administration.md)
-  * [Users](integration-guide/control-center/users.md)
   * [Configure SSO for the Hyperswitch Control Center](integration-guide/control-center/configure-sso-for-the-hyperswitch-control-center.md)
 
 ## Use-Cases

@@ -8,23 +8,7 @@ metaLinks:
     - network-tokenisation.md
 ---
 
-<!-- truth manifest; hyperswitch 3fc54c13236c5259f76c4e12f2c176569b18c7a4; spec api-reference/v1/openapi_spec_v1.json@3fc54c13236c5259f76c4e12f2c176569b18c7a4
-     symbols: network_tokenization_service = crates/router/src/configs/settings.rs:178-181; crates/router/src/core/payment_methods/network_tokenization.rs:228-233,465-470
-     symbols: is_network_tokenization_enabled = migrations/2024-09-12-112019_add_is_network_tokenization_enabled_in_business_profile/up.sql:1-2
-     symbols: network_tokenization_supported_card_networks = config/config.example.toml:1423-1424
-     symbols: network_tokenization_supported_connectors = config/config.example.toml:1439-1440
-     symbols: determine_standard_vault_action = crates/router/src/core/payments/helpers.rs:2815-2869
-     symbols: get_token_from_tokenization_service = crates/router/src/core/payment_methods/network_tokenization.rs:632-781
-     symbols: handle_metadata_update = crates/router/src/core/webhooks/network_tokenization_incoming.rs:241-404
-     symbols: delete_network_token_from_locker_and_token_service = crates/router/src/core/payment_methods/network_tokenization.rs:1033-1146
-     symbols: NetworkTokenData = crates/hyperswitch_domain_models/src/payment_method_data.rs:2018-2051
-     symbols: payment_account_reference = crates/router/src/core/payments/operations/payment_response.rs:2732-2736,2930; crates/router/src/core/payments/transformers.rs:4449-4452
-     symbols: Checkout VTS and MDES mapping = crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs:1054-1061
-     absent: connector_tokens in saved-card network-token selection = checked crates/router/src/core/payments/helpers.rs:2815-2869, not found
-     absent: data-only 3DS network-token path = checked crates/router/src/core/payment_methods/network_tokenization.rs, crates/hyperswitch_domain_models/src/payment_method_data.rs, crates/router/src/core/payments/helpers.rs, not found
-     checked: 2026-09-17 -->
-
-# Network tokenisation
+# Network Tokenisation
 
 Network tokenisation replaces a stored card number with a token issued through a card network. A payment can use that token only when the profile is enabled, the token service is configured, and the selected payment connector supports the flow.
 
@@ -43,10 +27,10 @@ Complete these checks before testing a tokenised payment:
 
 These values come from `config/config.example.toml`. They describe the repository example configuration, not every deployment.
 
-| Configuration | Example default | Count |
-| --- | --- | ---: |
-| Card networks | Visa, American Express, Mastercard | 3 |
-| Payment connectors | Adyen, Cybersource, Peach Payments, TrustPay | 4 |
+| Configuration      | Example default                              | Count |
+| ------------------ | -------------------------------------------- | ----: |
+| Card networks      | Visa, American Express, Mastercard           |     3 |
+| Payment connectors | Adyen, Cybersource, Peach Payments, TrustPay |     4 |
 
 A connector can support cards without supporting Hyperswitch-managed network-token execution. Check the active deployment configuration before routing live traffic.
 
@@ -90,4 +74,4 @@ A connector can also return `payment_account_reference` on a payment. Hyperswitc
 
 * **Checkout:** Its adapter maps Visa network tokens to `vts` and Mastercard network tokens to `mdes`. See the [Checkout connector page](https://docs.hyperswitch.io/integrations/connectors-integrations/payment-processor-capabilities/available-connectors/checkout) for connector-owned setup and capability details.
 * **Peach Payments:** The current connector directory has no dedicated Peach Payments page. Use [Connector configurations](https://docs.hyperswitch.io/integrations/connectors-integrations/payment-processor-capabilities/available-connectors) to check the published connector pages, and verify the active deployment configuration before relying on decryption behavior.
-* **Control Center analytics:** Token execution and connector capability are not analytics definitions. See [Analytics](../integration-guide/control-center/analytics.md) for the available Control Center views and filters.
+* **Control Center analytics:** Token execution and connector capability are not analytics definitions. See [Analytics](/broken/pages/BwHg28C74KoY3JgRzksn) for the available Control Center views and filters.
