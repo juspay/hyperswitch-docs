@@ -29,7 +29,7 @@ Here, **Status** is a field from the source data. It is separate from the reconc
 
 #### Step 1: Open the mismatch details
 
-Go to **Exceptions → Transformed Entries**, and open the transaction showing **Data Mismatch**.
+Go to **Exceptions → Recon**, and open the transaction showing **Data Mismatch**.
 
 Read the **expected value versus actual value** for each mismatched field. For this example, look for the status difference: **`success` expected, `charged` received**. Then inspect the entries grouped by account.
 
@@ -63,7 +63,7 @@ After saving, inspect the resulting status and entries. Both source-data status 
 
 #### A note on transformation configuration
 
-If your PSP reports a successful payment as **`charged`**, the normal setup should handle this in the **transformation configuration**: map the incoming value **`charged`** to **`success`** and store **`success`** in the transformed entry's status field.
+If your PSP reports a successful payment as **`charged`**, the normal setup should handle this in the **transformation configuration**: ask hyperswitch team to map the incoming value **`charged`** to **`success`** and store **`success`** in the transformed entry's status field.
 
 That way, reconciliation compares **`success`** on the OMS side with **`success`** on the PSP side, so matching continues automatically when the other checks agree.
 
