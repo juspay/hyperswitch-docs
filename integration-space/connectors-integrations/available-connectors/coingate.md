@@ -33,18 +33,20 @@ To connect Coingate to your Hyperswitch account, follow [Activate a connector on
 
 ### Authentication
 
-The control-center configuration exposes these connector fields: API Key; Merchant Token; currency_id; platform_id; ledger_account_id. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`Coingate connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L89-L136) and the [`Coingate transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L1-L20).
+Enter the connector credentials **API Key** and **Merchant Token**. The API key is sent as `Authorization: Bearer <API key>`; the merchant token is used to verify CoinGate webhook requests. These labels come from [`[coingate.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml); the auth mapping is [`CoingateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L119-L135), and the header is built in [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L122-L133). Refunds additionally use `currency_id`, `platform_id`, and `ledger_account_id`; these are refund metadata, not authentication fields. They are not currency-scoped credentials.
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Open the connector configuration form and provide the fields named in Authentication.
-3. Use the configured base URL for the environment you are enabling.
+1. Create or sign in to your CoinGate account and obtain the **API Key** and **Merchant Token**.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open CoinGate.
+3. Enter the two connector credentials.
+
+No provider dashboard path beyond account setup was verified for this page.
 
 ### Webhooks
 
-The matrix declares a payments webhook flow. Event names, source verification, and handler outcomes are tied to the connector source and should be verified before relying on callbacks. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L567-L590) and the connector transformers before callbacks are used as payment confirmation.
+CoinGate maps webhook statuses to payment outcomes: `Pending` becomes processing, `Confirming` and `New` require payment action, `Paid` succeeds, and `Invalid`, `Expired`, and `Canceled` fail. It verifies the webhook by comparing the request token with the configured **Merchant Token**. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L569-L595) and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L596-L618).
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Coingate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs) and [Coingate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs).
+Authentication, refund metadata, capture, and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Coingate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs) and [Coingate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs).
