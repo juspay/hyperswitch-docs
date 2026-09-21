@@ -9,6 +9,10 @@ metaLinks:
 
 CashToCode settles payments as rewards rather than card or bank transactions, in two forms: Classic Reward and Evoucher. A payment either completes or it does not. There are no refunds, no cancellations, and no stored method to charge again later.
 
+**This is a redirect flow, and the redirect is not optional.** Authorizing a payment does not charge anything. The response comes back with the attempt in `AuthenticationPending` and carries redirection data built from a `pay_url`; the customer has to be sent there to complete the payment at CashToCode. If you submit the payment and never present that redirect, nothing further happens: the attempt stays pending, and no callback arrives, because there is nothing to report on.
+
+The two reward types redirect differently, which [`get_redirect_form_data()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode/transformers.rs#L209-L228) handles for you: Classic Reward posts to the `pay_url` as-is, while Evoucher parses the URL and sends its query parameters as form fields on a GET. Use the redirection data Hyperswitch returns rather than constructing the redirect yourself. The attempt moves to `Charged` only when CashToCode reports the payment succeeded, at [the status mapping](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode/transformers.rs#L172-L178).
+
 To connect CashToCode to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
 
 ### Status and capabilities
