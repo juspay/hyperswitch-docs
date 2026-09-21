@@ -9,9 +9,9 @@ metaLinks:
 # Prophetpay
 
 {% hint style="warning" %}
-**Alpha connector, Test mode only.** Prophetpay has no production configuration, so it appears in the control center in **Test mode** and not in Live mode. If you are looking for it in Live mode and cannot find it, that is why. See [Test vs Live mode](../../../integration-guide/control-center/getting-started.md).
+**Alpha connector, no production configuration.** Prophetpay has no entry in Hyperswitch's production connector configuration, which is compiled into production builds. It is available in Test mode on the hosted control center. Whether it is offered to you in Live mode depends on how your Hyperswitch deployment was built, so confirm with the Hyperswitch team before planning a live rollout.
 
-It is also at alpha integration status. If you want to use this connector, reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) first so someone on the Hyperswitch team can tell you where it stands.
+It is also at alpha integration status. Reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) to check where it stands before you build on it.
 {% endhint %}
 
 Prophetpay uses a hosted card-entry path for one-time payments. Refunds are supported for that path, while mandate reuse is not declared. The connector supports immediate and follow-up automatic capture behavior.
@@ -42,7 +42,7 @@ Prophetpay requires **Username**, **Password**, and **Profile ID**. Hyperswitch 
 ### Before you start
 
 1. Register for Prophetpay at [clubprophet.com](https://www.clubprophet.com/products/prophetpay).
-2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and stay in **Test mode**. Prophetpay is not offered in Live mode, so switching there will hide it.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 3. Obtain **Username** and **Password** during onboarding and obtain **Profile ID** from the Prophetpay dashboard.
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
