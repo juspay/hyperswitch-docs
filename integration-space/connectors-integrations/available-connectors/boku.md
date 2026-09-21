@@ -17,7 +17,7 @@ If you want to use this connector, reach out on the [Slack Community](https://in
 
 Boku reaches mobile wallets across Southeast and East Asia: DANA and GoPay in Indonesia, GCash in the Philippines, KakaoPay in Korea, and MoMo in Vietnam. Each pays in its own local currency, refunds are supported, and a saved wallet cannot be reused for a later payment.
 
-To connect Boku to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
+The shared [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md) guide does not apply here, because it begins by picking a connector in the control center and Boku is not offered there. See Before you start below.
 
 
 ### Status and capabilities
@@ -48,9 +48,9 @@ The feature matrix declares manual capture, but the capture flow is not implemen
 
 ### Authentication
 
-Supply **API KEY** and **MERCHANT ID**, the labels shown in the Hyperswitch control center. Those are the only two credentials Boku authenticates with: [`BokuAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku/transformers.rs#L219-L235) accepts a `BodyKey` pair and rejects every other shape. Hyperswitch signs each request from them in [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku.rs#L94-L113), so you do not assemble a signature yourself.
+Boku authenticates with two credentials, named **API KEY** and **MERCHANT ID** in the connector configuration. Those are the only two: [`BokuAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku/transformers.rs#L219-L235) accepts a `BodyKey` pair and rejects every other shape. Hyperswitch signs each request from them in [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku.rs#L94-L113), so you do not assemble a signature yourself.
 
-The control center also shows a **Source verification key** field. It is not a credential: the configuration files list it under webhook details rather than connector authentication, and because Boku webhooks are not implemented, a value there does nothing today. Leave it blank.
+The connector configuration carries a third field, **Source verification key**, which is not a credential: it sits under webhook details rather than connector authentication, and because Boku webhooks are not implemented, it has no effect. Nothing needs to be supplied for it.
 
 ### Before you start
 
