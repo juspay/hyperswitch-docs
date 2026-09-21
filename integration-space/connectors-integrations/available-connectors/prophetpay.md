@@ -9,9 +9,7 @@ metaLinks:
 # Prophetpay
 
 {% hint style="warning" %}
-**Alpha connector, no production configuration.** Prophetpay has no entry in Hyperswitch's production connector configuration, which is compiled into production builds. It is available in Test mode on the hosted control center. Whether it is offered to you in Live mode depends on how your Hyperswitch deployment was built, so confirm with the Hyperswitch team before planning a live rollout.
-
-It is also at alpha integration status. Reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) to check where it stands before you build on it.
+**Alpha connector.** Prophetpay is at alpha integration status. Reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) to check where it stands before you build on it.
 {% endhint %}
 
 Prophetpay uses a hosted card-entry path for one-time payments. Refunds are supported for that path, while mandate reuse is not declared. The connector supports immediate and follow-up automatic capture behavior.

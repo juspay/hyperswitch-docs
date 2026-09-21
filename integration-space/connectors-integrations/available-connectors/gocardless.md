@@ -7,10 +7,6 @@ metaLinks:
 
 # GoCardless
 
-{% hint style="warning" %}
-**No production configuration.** GoCardless has no entry in Hyperswitch's production connector configuration, which is compiled into production builds. It is available in Test mode on the hosted control center. Whether it is offered to you in Live mode depends on how your Hyperswitch deployment was built, so confirm with the Hyperswitch team before planning a live rollout.
-{% endhint %}
-
 ACH, BECS, and SEPA Direct Debit define the GoCardless payment gateway route. Mandates and refunds apply to every bank debit method. Capture stays automatic or sequential automatic throughout.
 
 ### Status and capabilities
