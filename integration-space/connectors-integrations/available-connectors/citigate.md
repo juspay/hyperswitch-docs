@@ -7,7 +7,7 @@ metaLinks:
 
 # Citigate
 
-Citigate is not currently usable for payment processing through Hyperswitch: its payment request conversion returns `NotImplemented`, including for cards. Do not activate Citigate for live payment traffic until the connector implements a payment method and the Hyperswitch team confirms setup.
+Citigate appears in the Hyperswitch control center, but it is not currently usable for payment processing: its payment request conversion returns `NotImplemented`, including for cards. Do not activate Citigate for live payment traffic until the connector implements a payment method and the Hyperswitch team confirms setup.
 
 ### Status and capabilities
 
@@ -32,7 +32,7 @@ The feature matrix declares live status but no payment-method rows. The connecto
 
 ### Authentication
 
-The connector source accepts a BodyKey with an API key and a second key, but no Citigate `[connector_auth]` labels were present in the pinned `sandbox.toml`, and Citigate is not listed in the control center. Do not enter credentials through a nonexistent activation form. The source maps the two accepted fields in [`CitigateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs#L68-L80); only the API key is sent in `Authorization` by [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L121-L132), with transport headers assembled by [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L82-L95).
+The connector source accepts a BodyKey with an API key and a second key, but no Citigate `[connector_auth]` labels were present in the pinned `sandbox.toml`. The control center lists Citigate, but a rendered credential label could not be verified from the pinned configuration. Do not guess the field labels. The source maps the two accepted fields in [`CitigateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs#L68-L80); only the API key is sent in `Authorization` by [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L121-L132), with transport headers assembled by [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L82-L95).
 
 ### Before you start
 
