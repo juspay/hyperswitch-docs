@@ -33,7 +33,7 @@ To connect Calida to your Hyperswitch account, follow [Activate a connector on H
 
 ### Authentication
 
-Calida requires three credentials from your Calida account:
+Calida requires three credentials, which you can obtain from your Calida account at [https://www.calida.com](https://www.calida.com):
 
 | Field | Description |
 |---|---|
