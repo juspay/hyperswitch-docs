@@ -33,13 +33,13 @@ To connect Calida to your Hyperswitch account, follow [Activate a connector on H
 
 ### Authentication
 
-Calida requires three credentials, which you can obtain from your Calida account at [https://www.calida.com](https://www.calida.com):
+Calida provides three values when you set up your account with them — contact Calida or visit [https://www.calida.com](https://www.calida.com) to get started:
 
-| Field | Description |
-|---|---|
-| **E-Order Token** | API token issued by Calida, sent as an `Authorization: token <E-Order Token>` header on every API request |
-| **Shop Name** | Your Calida shop identifier, sent as `shop_name` in each payment creation request |
-| **Source verification key** | Secret used to verify incoming Calida webhooks (see [Webhooks](#webhooks)) |
+| Field | Hyperswitch configuration | Description |
+|---|---|---|
+| **E-Order Token** | Connector API key | API token issued by Calida, sent as an `Authorization: token <E-Order Token>` header on every API request |
+| **Shop Name** | Connector metadata | Your Calida shop identifier, sent as `shop_name` in each payment creation request |
+| **Source verification key** | Webhook secret | Secret used to verify incoming Calida webhooks (see [Webhooks](#webhooks)) |
 
 Enter these through the connector configuration form in the control center. The E-Order Token uses Hyperswitch's header-key authentication — see [`CalidaAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida/transformers.rs#L158-L172) and the [auth header construction](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida.rs#L123-L134) in the connector source.
 
