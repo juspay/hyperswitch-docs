@@ -25,6 +25,7 @@
     * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
+    * [Calida](connectors-integrations/available-connectors/calida.md)
     * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
