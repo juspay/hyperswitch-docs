@@ -7,12 +7,11 @@ metaLinks:
 
 # Breadpay
 
-Breadpay gives merchants a pay-later redirect flow through Hyperswitch. The connector is in alpha, so confirm availability with the Hyperswitch team before using it in production. Payment status is retrieved through the API because Breadpay does not implement incoming webhooks.
+{% hint style="warning" %}
+**Alpha connector.** Breadpay is at alpha integration status, and refunds are declared but not implemented. Reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) to check where it stands before you build on it.
+{% endhint %}
 
-To connect Breadpay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
-
-This connector is in alpha status. Check with the Hyperswitch team before enabling it in production.
-
+Breadpay offers a pay-later redirect: the customer leaves your checkout to arrange financing with Breadpay and returns once it is settled. There are no webhooks, so payment status comes from syncing rather than callbacks.
 
 ### Status and capabilities
 
@@ -34,15 +33,19 @@ This connector is in alpha status. Check with the Hyperswitch team before enabli
 |---|---|---|---|---|---|---|
 | pay later | Breadpay | not supported | supported | automatic, manual, sequential automatic | - | - |
 
+The matrix declares refunds, but neither refund flow is implemented: `get_url()` returns `NotImplemented` for [refund execute](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L642-L648) and for [refund sync](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L726-L732), and both `build_request()` implementations call it, so a refund fails before it is sent. Capture is unaffected and works as declared.
+
 ### Authentication
 
-Enter the control-center fields **API Key** and **API Secret**. Breadpay sends them as HTTP Basic authentication in the `Authorization` header; the header builder also adds `Content-Type: application/json`. See [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L134-L148) and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L99-L110). The control-center labels come from [`[breadpay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml#L7898-L7901).
+Supply **API Key** and **API Secret**, the labels shown in the Hyperswitch control center. Breadpay sends them as HTTP Basic authentication in the `Authorization` header; the header builder also adds `Content-Type: application/json`. See [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L134-L148) and [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L99-L110). The labels come from [`[breadpay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml#L7898-L7901).
 
 ### Before you start
 
 1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 2. Open Breadpay in the connector configuration form.
 3. Enter the **API Key** and **API Secret** from your Breadpay account.
+
+To connect Breadpay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
 
 No provider registration URL was verified for this page.
 
@@ -52,4 +55,4 @@ Breadpay does not support incoming webhooks. The object-reference, event-type, a
 
 ### Source reference
 
-Authentication, capture, and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Breadpay connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs) and [Breadpay transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Breadpay connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs) and [Breadpay transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay/transformers.rs).
