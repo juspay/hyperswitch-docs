@@ -33,7 +33,15 @@ To connect Calida to your Hyperswitch account, follow [Activate a connector on H
 
 ### Authentication
 
-The control-center configuration exposes these connector fields: E-Order Token; Shop Name; Source verification key. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`Calida connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida.rs#L90-L135) and the [`Calida transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida/transformers.rs#L1-L20).
+Calida requires three credentials from your Calida account:
+
+| Field | Description |
+|---|---|
+| **E-Order Token** | API token issued by Calida, sent as an `Authorization: token <E-Order Token>` header on every API request |
+| **Shop Name** | Your Calida shop identifier, sent as `shop_name` in each payment creation request |
+| **Source verification key** | Secret used to verify incoming Calida webhooks (see [Webhooks](#webhooks)) |
+
+Enter these through the connector configuration form in the control center. The E-Order Token uses Hyperswitch's header-key authentication — see [`CalidaAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida/transformers.rs#L158-L172) and the [auth header construction](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida.rs#L123-L134) in the connector source.
 
 ### Before you start
 
@@ -43,7 +51,19 @@ The control-center configuration exposes these connector fields: E-Order Token; 
 
 ### Webhooks
 
-The matrix declares a payments webhook flow. Event names, source verification, and handler outcomes are tied to the connector source and should be verified before relying on callbacks. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida.rs#L696-L720) and the connector transformers before callbacks are used as payment confirmation.
+Calida sends payment webhooks. Hyperswitch verifies each webhook using **HMAC-SHA512**: the signature arrives in the `x-eorder-webhook-signature` header (hex-encoded) and is computed over the **sorted, minified JSON** of the webhook body — not the raw request body. The HMAC secret is the **Source verification key** you configured in the connector webhook details.
+
+Webhook statuses map to Hyperswitch payment states as follows:
+
+| Calida status | Hyperswitch state |
+|---|---|
+| `COMPLETED` | Charged (payment succeeded) |
+| `FAILED` | Failure |
+| `MANUAL_PROCESSING` | Pending |
+| `PENDING` | Authentication pending |
+| `PAYMENT_INITIATED` | Authentication pending |
+
+See [webhook verification](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida.rs#L621-L682) and [status mapping](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/calida/transformers.rs#L174-L185) in the connector source.
 
 ### Source reference
 
