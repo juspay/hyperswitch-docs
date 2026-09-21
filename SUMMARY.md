@@ -177,6 +177,7 @@
     * [Native 3DS Authentication](integration-guide/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md)
     * [Standalone 3D Secure (via Hyperswitch)](integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md)
     * [Copy of Standalone 3D Secure (via Hyperswitch)](integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds-1.md)
+    * [External 3DS with the Juspay 3DS Server](integration-guide/workflows/3ds-decision-manager/external-3ds-with-the-juspay-3ds-server.md)
     * [3DS Intelligence Engine](integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine/README.md)
       * [3DS Decision Manager](integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine/get-started-with-3ds-decision-manager.md)
   * [Fraud & Risk Management](integration-guide/workflows/fraud-and-risk-management/README.md)
