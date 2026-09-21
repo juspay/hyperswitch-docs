@@ -7,7 +7,7 @@ metaLinks:
 
 # CashToCode
 
-CashToCode gives merchants a payment gateway integration in Hyperswitch. It declares reward support in the capability block below, with method-specific capture, refund, mandate, region, and currency details there. Use the status and webhook declaration in that block when deciding whether to enable it.
+CashToCode settles payments as rewards rather than card or bank transactions, in two forms: Classic Reward and Evoucher. A payment either completes or it does not. There are no refunds, no cancellations, and no stored method to charge again later.
 
 To connect CashToCode to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
 
@@ -32,9 +32,19 @@ To connect CashToCode to your Hyperswitch account, follow [Activate a connector 
 | reward | Classic Reward | not supported | not supported | automatic, manual, sequential automatic | 249 | 160 |
 | reward | Evoucher | not supported | not supported | automatic, manual, sequential automatic | 249 | 160 |
 
+The matrix declares manual capture, but the capture flow is not implemented: [`build_request()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L347-L359) returns `FlowNotSupported`. Use automatic capture. Cancellation is unavailable for the same reason, at [`Void`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L361-L373).
+
 ### Authentication
 
-The control-center configuration exposes these connector fields: Password Classic; Username Classic; MerchantId Classic; Password Evoucher; Username Evoucher; MerchantId Evoucher. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`CashToCode connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L1-L45) and the [`CashToCode transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode/transformers.rs#L1-L20).
+CashToCode credentials are scoped per currency, not per connector account. For each currency you accept, you supply two sets of three:
+
+| Field | Classic Reward | Evoucher |
+| --- | --- | --- |
+| Username | **Username Classic** | **Username Evoucher** |
+| Password | **Password Classic** | **Password Evoucher** |
+| Merchant ID | **MerchantId Classic** | **MerchantId Evoucher** |
+
+Eleven currencies are configured, each carrying its own set: AUD, CAD, CHF, CNY, EUR, GBP, INR, JPY, NZD, USD and ZAR. So a merchant accepting two currencies and both reward types fills in twelve values. The shape comes from [`cashtocode.connector_auth.CurrencyAuthKey`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml), and the connector selects the set matching the payment's currency and reward type.
 
 ### Before you start
 
@@ -44,7 +54,15 @@ The control-center configuration exposes these connector fields: Password Classi
 
 ### Webhooks
 
-The matrix declares a payments webhook flow. Event names, source verification, and handler outcomes are tied to the connector source and should be verified before relying on callbacks. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L431-L455) and the connector transformers before callbacks are used as payment confirmation.
+CashToCode posts a payment webhook, and two things about how Hyperswitch handles it are worth knowing before you rely on it.
+
+**There is no event list.** Any callback with a non-empty body is treated as a successful payment. [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L431-L441) returns `PaymentIntentSuccess` for every non-empty body and `EventNotSupported` only for an empty one. It never reads a status field, so there is no failure or pending event to handle.
+
+**Verification is a shared secret in a header, not a signature.** CashToCode sends the secret in the `Authorization` header, and [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L387-L415) compares that header to your configured **Source verification key** as plain text. Nothing is computed over the body, so the check confirms the sender knows the secret and says nothing about what the body contains.
+
+Two consequences follow. The secret travels in the clear on every callback, so anyone who can read one request, from a log or a proxy, holds it. And because any non-empty body then counts as success, that secret is all it takes to drive a payment to succeeded. Treat the source verification key as a live credential, rotate it if a callback may have been logged, and confirm with payment sync before releasing goods.
+
+The payment a callback refers to is taken from `transactionId` in the body, at [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L417-L429).
 
 ### Source reference
 
