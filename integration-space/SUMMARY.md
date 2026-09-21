@@ -24,6 +24,7 @@
     * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
     * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
+    * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
