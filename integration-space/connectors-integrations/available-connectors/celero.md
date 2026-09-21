@@ -37,7 +37,7 @@ This connector is in alpha status. Check with the Hyperswitch team before enabli
 
 ### Authentication
 
-The control-center configuration exposes these connector fields: Celero API Key. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`Celero connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L86-L133) and the [`Celero transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero/transformers.rs#L1-L20).
+Celero requires a single credential, the **Celero API Key**, which Celero provides when you set up your account with them. It is sent as the `Authorization` header value on every API request (no `Bearer` prefix). Enter it through the connector configuration form in the control center — see [`CeleroAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero/transformers.rs#L358-L373) and the [auth header construction](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L119-L130) in the connector source.
 
 ### Before you start
 
@@ -47,7 +47,7 @@ The control-center configuration exposes these connector fields: Celero API Key.
 
 ### Webhooks
 
-The matrix declares no webhook flow; status updates should be checked against the API. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L716-L740) and the connector transformers before callbacks are used as payment confirmation.
+Webhooks are **not supported** for Celero — the connector does not implement incoming webhook handling, so there are no callbacks to configure or verify. To track payment status, use the payment sync (status check) API through Hyperswitch, or query Celero's API directly. See the [webhook interface stubs](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L707-L731) in the connector source.
 
 ### Source reference
 
