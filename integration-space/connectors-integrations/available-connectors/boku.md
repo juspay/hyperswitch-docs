@@ -8,7 +8,9 @@ metaLinks:
 # Boku
 
 {% hint style="warning" %}
-**Alpha connector, no production configuration.** Boku has no entry in Hyperswitch's production connector configuration, which is compiled into production builds, so confirm with the Hyperswitch team before planning a live rollout. It is also at alpha integration status: manual capture is declared but not implemented, and webhooks are not implemented at all.
+**Boku cannot be set up from the control center.** The dashboard keeps its own list of connectors, and Boku is not in it, so Boku does not appear at app.hyperswitch.io in any mode and there is no activation form to fill in. The connector itself exists in the router and is configured for sandbox, so talk to the Hyperswitch team about how to enable it.
+
+Boku is also at alpha integration status, with two gaps worth knowing before you build on it: manual capture is declared but not implemented, and webhooks are not implemented at all.
 
 If you want to use this connector, reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) first so someone on the Hyperswitch team can tell you where it stands.
 {% endhint %}
@@ -52,10 +54,13 @@ The control center also shows a **Source verification key** field. It is not a c
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Enter **API KEY** and **MERCHANT ID** during connector activation, and leave **Source verification key** blank.
-3. Enable only the wallets your Boku account covers, and select automatic capture.
-4. Do not plan a live cutover on this connector yet. Boku has no production connector configuration, so check with the Hyperswitch team first.
+Boku is not offered in the control center, so the usual activation flow does not apply. Work through the Hyperswitch team instead, and have the following ready.
+
+1. Your Boku **API KEY** and **MERCHANT ID**. Those are the only two credentials the connector authenticates with.
+2. The wallets your Boku account covers, from DANA, GCash, GoPay, KakaoPay and MoMo.
+3. Automatic capture. Manual capture is declared in the matrix but not implemented, so do not plan around it.
+
+You will not be asked for a source verification key. It is a webhook field, and Boku webhooks are not implemented.
 
 ### Webhooks
 
