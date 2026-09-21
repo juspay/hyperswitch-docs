@@ -8,7 +8,7 @@ metaLinks:
 # Boku
 
 {% hint style="warning" %}
-**Alpha connector, Test mode only.** Boku has no production configuration, so it appears in the control center in **Test mode** and not in Live mode. If you are looking for it in Live mode and cannot find it, that is why. It is also at alpha integration status: manual capture is declared but not implemented, and webhooks are not implemented at all.
+**Alpha connector, no production configuration.** Boku has no entry in Hyperswitch's production connector configuration, which is compiled into production builds, so confirm with the Hyperswitch team before planning a live rollout. It is also at alpha integration status: manual capture is declared but not implemented, and webhooks are not implemented at all.
 
 If you want to use this connector, reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) first so someone on the Hyperswitch team can tell you where it stands.
 {% endhint %}
@@ -52,10 +52,10 @@ The control center also shows a **Source verification key** field. It is not a c
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and stay in **Test mode**. Boku is not offered in Live mode, so switching there will hide it. See [Test vs Live mode](../../../integration-guide/control-center/getting-started.md).
+1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
 2. Enter **API KEY** and **MERCHANT ID** during connector activation, and leave **Source verification key** blank.
 3. Enable only the wallets your Boku account covers, and select automatic capture.
-4. Do not plan a Live cutover on this connector yet. There is no production configuration for Boku, so there is no production base URL to point at.
+4. Do not plan a live cutover on this connector yet. Boku has no production connector configuration, so check with the Hyperswitch team first.
 
 ### Webhooks
 
