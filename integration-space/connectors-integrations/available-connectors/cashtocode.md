@@ -48,9 +48,10 @@ Eleven currencies are configured, each carrying its own set: AUD, CAD, CHF, CNY,
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Open the connector configuration form and provide the fields named in Authentication.
-3. Use the configured base URL for the environment you are enabling.
+1. Register with CashToCode at [cashtocode.com](https://cashtocode.com/).
+2. Obtain a username, password and merchant ID for each currency you plan to accept, and for each reward type you plan to offer. Both reward types in one currency means six values.
+3. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+4. Enter those credentials during connector activation, and select automatic capture.
 
 ### Webhooks
 
