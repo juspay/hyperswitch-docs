@@ -28,6 +28,7 @@
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
     * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
     * [Calida](connectors-integrations/available-connectors/calida.md)
+    * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
