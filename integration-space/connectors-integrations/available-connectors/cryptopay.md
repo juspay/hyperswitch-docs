@@ -7,7 +7,7 @@ metaLinks:
 
 # Cryptopay
 
-Cryptopay gives merchants a payment gateway integration in Hyperswitch. It declares crypto support in the capability block below, with method-specific capture, refund, mandate, region, and currency details there. Use the status and webhook declaration in that block when deciding whether to enable it.
+Cryptopay lets merchants send cryptocurrency payments through a payment gateway integration. Cryptopay signs API requests with the Secret Key and signs webhook payloads with the `X-Cryptopay-Signature` header. The pinned connector does not implement capture requests, so review the capture limitation before enabling the flow.
 
 To connect Cryptopay to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
 
@@ -31,20 +31,24 @@ To connect Cryptopay to your Hyperswitch account, follow [Activate a connector o
 |---|---|---|---|---|---|---|
 | crypto | Crypto | not supported | not supported | automatic, sequential automatic | - | - |
 
+The capability block declares automatic and sequential automatic capture, but the pinned connector has an empty Capture integration with no `build_request`. Capture requests are not implemented; treat the capture declaration as an upstream gap and do not rely on post-authorisation capture. See [`ConnectorIntegration<Capture, ...>`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L419-L425).
+
 ### Authentication
 
-The control-center configuration exposes these connector fields: API Key; Secret Key; Source verification key. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`Cryptopay connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L91-L181) and the [`Cryptopay transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay/transformers.rs#L1-L20).
+Enter **API Key** and **Secret Key**. The connector labels are defined in [`[cryptopay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml); the accepted fields are mapped by [`CryptopayAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay/transformers.rs#L107-L126). Each API request gets an HMAC-SHA1 `Authorization` value built from the Secret Key in [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L91-L147). **Source verification key** is the webhook signing secret, not a connector-auth field. These credentials are not currency-scoped.
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Open the connector configuration form and provide the fields named in Authentication.
-3. Use the configured base URL for the environment you are enabling.
+1. Obtain the **API Key**, **Secret Key**, and webhook signing secret from Cryptopay.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open Cryptopay.
+3. Enter the two connector-auth fields and configure the webhook signing secret separately.
+
+No provider dashboard path beyond these credential names was verified for this page.
 
 ### Webhooks
 
-The matrix declares a payments webhook flow. Event names, source verification, and handler outcomes are tied to the connector source and should be verified before relying on callbacks. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L477-L505) and the connector transformers before callbacks are used as payment confirmation.
+Cryptopay verifies callbacks with HMAC-SHA256 over the raw request body, using the hex signature in `X-Cryptopay-Signature`. It maps `Completed` to success, `Unresolved` to action required, and `Cancelled` to failure; other statuses are unsupported. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L429-L456) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L477-L499).
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Cryptopay connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs) and [Cryptopay transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay/transformers.rs).
+Authentication, capture, and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Cryptopay connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs) and [Cryptopay transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay/transformers.rs).
