@@ -26,6 +26,7 @@
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
     * [Boku](connectors-integrations/available-connectors/boku.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
+    * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
     * [Calida](connectors-integrations/available-connectors/calida.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
