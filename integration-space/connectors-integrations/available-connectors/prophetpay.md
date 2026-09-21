@@ -8,6 +8,12 @@ metaLinks:
 
 # Prophetpay
 
+{% hint style="warning" %}
+**Alpha connector, Test mode only.** Prophetpay has no production configuration, so it appears in the control center in **Test mode** and not in Live mode. If you are looking for it in Live mode and cannot find it, that is why. See [Test vs Live mode](../../../integration-guide/control-center/getting-started.md).
+
+It is also at alpha integration status. If you want to use this connector, reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) first so someone on the Hyperswitch team can tell you where it stands.
+{% endhint %}
+
 Prophetpay uses a hosted card-entry path for one-time payments. Refunds are supported for that path, while mandate reuse is not declared. The connector supports immediate and follow-up automatic capture behavior.
 
 ### Status and capabilities
@@ -36,7 +42,7 @@ Prophetpay requires **Username**, **Password**, and **Profile ID**. Hyperswitch 
 ### Before you start
 
 1. Register for Prophetpay at [clubprophet.com](https://www.clubprophet.com/products/prophetpay).
-2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and stay in **Test mode**. Prophetpay is not offered in Live mode, so switching there will hide it.
 3. Obtain **Username** and **Password** during onboarding and obtain **Profile ID** from the Prophetpay dashboard.
 4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 

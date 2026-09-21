@@ -7,6 +7,10 @@ metaLinks:
 
 # GoCardless
 
+{% hint style="warning" %}
+**Test mode only.** GoCardless has no production configuration, so it appears in the control center in **Test mode** and not in Live mode. If you are looking for it in Live mode and cannot find it, that is why. See [Test vs Live mode](../../../integration-guide/control-center/getting-started.md).
+{% endhint %}
+
 ACH, BECS, and SEPA Direct Debit define the GoCardless payment gateway route. Mandates and refunds apply to every bank debit method. Capture stays automatic or sequential automatic throughout.
 
 ### Status and capabilities
@@ -35,7 +39,7 @@ ACH, BECS, and SEPA Direct Debit define the GoCardless payment gateway route. Ma
 #### Before you start
 
 1. Create a GoCardless sandbox account.
-2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) or create your Hyperswitch account, and stay in **Test mode**. GoCardless is not offered in Live mode, so switching there will hide it.
 3. In the GoCardless dashboard, go to **Developers > Create > Access Token** and create or copy your Access Token.
 4. Enable the same payment methods in GoCardless and in your Hyperswitch connector configuration.
 
