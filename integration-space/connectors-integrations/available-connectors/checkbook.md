@@ -7,7 +7,7 @@ metaLinks:
 
 # Checkbook
 
-Checkbook gives merchants a payment gateway integration in Hyperswitch. It declares bank transfer support in the capability block below, with method-specific capture, refund, mandate, region, and currency details there. Use the status and webhook declaration in that block when deciding whether to enable it.
+Checkbook lets merchants receive ACH payments through a bank-transfer integration. The connector is in beta, and payment callbacks use a signed `signature` header that Checkbook provides with the webhook request.
 
 To connect Checkbook to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for connector-specific behavior.
 
@@ -36,18 +36,20 @@ This connector is in beta status. Check with the Hyperswitch team before enablin
 
 ### Authentication
 
-The control-center configuration exposes these connector fields: Checkbook Publishable key; Checkbook API Secret key; Source verification key. Enter them through the connector configuration form. Authentication transport and flow-specific headers are implemented in [`Checkbook connector source`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs#L87-L134) and the [`Checkbook transformers`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook/transformers.rs#L1-L20).
+Enter **Checkbook Publishable key** and **Checkbook API Secret key**. Checkbook combines them as `publishable_key:secret_key` for the `Authorization` header. The control-center labels are defined in [`[checkbook.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml#L1842-L1846); the accepted fields are mapped by [`CheckbookAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook/transformers.rs#L53-L69) and sent by [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs#L120-L136). The Source verification key is not a connector credential.
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Open the connector configuration form and provide the fields named in Authentication.
-3. Use the configured base URL for the environment you are enabling.
+1. Create or sign in to your Checkbook account and obtain the **Checkbook Publishable key** and **Checkbook API Secret key**.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open Checkbook.
+3. Enter those two credentials.
+
+No provider dashboard path beyond account setup was verified for this page.
 
 ### Webhooks
 
-The matrix declares a payments webhook flow. Event names, source verification, and handler outcomes are tied to the connector source and should be verified before relying on callbacks. The exact event list and verification mechanism require code-level review of [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs#L554-L580) and the connector transformers before callbacks are used as payment confirmation.
+Checkbook maps the webhook status in the request body to a payment event through [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs#L554-L567). It verifies the callback with HMAC-SHA256: the `signature` header carries `signature=<hex>` and `nonce=<value>`, and the signed message is the request body followed by the nonce. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs#L580-L628).
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Checkbook connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs) and [Checkbook transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook/transformers.rs).
+Authentication, capture, and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Checkbook connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook.rs) and [Checkbook transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/checkbook/transformers.rs).
