@@ -177,6 +177,7 @@
     * [Native 3DS Authentication](integration-guide/workflows/3ds-decision-manager/native-3ds-authentication-for-mobile-payments.md)
     * [Standalone 3D Secure (via Hyperswitch)](integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds.md)
     * [Copy of Standalone 3D Secure (via Hyperswitch)](integration-guide/workflows/3ds-decision-manager/external-authentication-for-3ds-1.md)
+    * [External 3DS with the Juspay 3DS Server](integration-guide/workflows/3ds-decision-manager/external-3ds-with-the-juspay-3ds-server.md)
     * [3DS Intelligence Engine](integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine/README.md)
       * [3DS Decision Manager](integration-guide/workflows/3ds-decision-manager/3ds-intelligence-engine/get-started-with-3ds-decision-manager.md)
   * [Fraud & Risk Management](integration-guide/workflows/fraud-and-risk-management/README.md)
@@ -249,11 +250,7 @@
     * [Connector Cloning](integration-guide/control-center/connectors/connector-cloning.md)
   * [Reporting](integration-guide/control-center/reporting/README.md)
     * [Payments Report](integration-guide/control-center/reporting/payments-report.md)
-  * [Workflow](integration-guide/control-center/workflow.md)
-  * [Analytics](integration-guide/control-center/analytics.md)
   * [Developers](integration-guide/control-center/developers.md)
-  * [Settings & Administration](integration-guide/control-center/settings-and-administration.md)
-  * [Users](integration-guide/control-center/users.md)
   * [Configure SSO for the Hyperswitch Control Center](integration-guide/control-center/configure-sso-for-the-hyperswitch-control-center.md)
 
 ## Use-Cases
@@ -297,6 +294,7 @@
         * [Resolving Amount Mismatch Exceptions](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-amount-mismatch-exceptions.md)
         * [Transformation Error Reports & Run Details](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/transformation-error-reports-and-run-details.md)
         * [Resolving Split Payments by Linking an Entry (When 1:1 Becomes Many-to-1)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-split-payments-by-linking-an-entry-when-1-1-becomes-many-to-1.md)
+        * [Resolving Data Mismatches When Amounts Agree](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-data-mismatches-when-amounts-agree.md)
     * [FAQ](other-features/payments-modules/reconciliation-product/faq.md)
   * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
     * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
