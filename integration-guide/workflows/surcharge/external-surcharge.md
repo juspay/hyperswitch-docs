@@ -22,7 +22,7 @@ Card surcharging is heavily regulated. The amount you are allowed to add — and
 
 This gives you two things:
 
-* **Compliance is maintained for you.** The surcharge processor keeps up with card-network and jurisdictional rules. Debit cards, for example, generally cannot be surcharged in the US — the processor returns a zero surcharge for them, without you writing a rule.
+* **Compliance support.** The surcharge processor automates decisions using card-network and jurisdictional rules. The merchant remains responsible for applicable laws, network requirements, customer disclosures, and configuration. Debit cards, for example, generally cannot be surcharged in the US — the processor returns a zero surcharge for them, without you writing a rule.
 * **The shopper sees the fee before they commit.** The surcharge is quoted once the card number identifies the card, so the updated total can be shown on the payment form rather than appearing as a surprise on the statement.
 
 **InterPayments** is the surcharge processor currently supported by Hyperswitch.
@@ -32,9 +32,9 @@ This gives you two things:
 | | Rule-based surcharge | External surcharge |
 | --- | --- | --- |
 | Who decides the amount | You, via rules in the Surcharge Manager | The external surcharge processor |
-| Compliance responsibility | Yours | Handled by the surcharge processor |
+| Compliance responsibility | Yours | Processor automates the decision; merchant remains responsible |
 | Inputs | Payment parameters you choose (amount, currency, payment method, card network, …) | The card the shopper actually entered |
-| Setup | Configure rules per profile | Connect the surcharge processor once |
+| Setup | Configure rules per profile | Connect and select the surcharge processor for each profile |
 | When it is decided | While listing payment methods | On a dedicated eligibility call, once the card is known |
 
 You can also use the surcharge returned by the external processor as an input to routing — see [Routing to payment processors based on surcharge value](#routing-to-payment-processors-based-on-surcharge-value) below.
@@ -200,7 +200,7 @@ Build two rules:
 Amounts are entered in the **smallest currency unit** — `100` means $1.00 for USD.
 
 {% hint style="info" %}
-Rules are evaluated top to bottom and the first match wins. Here the two conditions are mutually exclusive and between them cover every possible value, so the order does not matter and no payment should reach your [Default Fallback](../intelligent-routing/default-fallback-routing.md) list. If payments *are* landing on your fallback processor, the rules are not matching — check the profile's surcharge connector setting.
+Rules are evaluated top to bottom and the first match wins. Here the two conditions are mutually exclusive and between them cover every possible value, so the order does not matter. If payments *are* landing on your [Default Fallback](../intelligent-routing/default-fallback-routing.md) list, first verify that the routing configuration is active and that the surcharge connector is selected for the profile. Also confirm that the processor selected by the rule is active and eligible, because fallback can occur after a rule match.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -235,9 +235,14 @@ Routing reads the surcharge that is attached to the payment, so the quote has to
 {% endhint %}
 
 {% hint style="warning" %}
-**Set up the test so a rule hit and a rule miss look different.** If a rule points at a processor that is also the first entry in your Default Fallback list, a payment landing on that processor tells you nothing — it could have matched the rule, or it could have fallen through.
+**Verify the routing decision, not only the selected connector.** A payment
+landing on the Default Fallback processor does not necessarily mean that no
+routing rule matched. Fallback can also occur when the selected processor is
+unavailable or the payment is ineligible for that processor.
 
-Before testing, connect a third processor you are not routing to and move it to the top of your Default Fallback list. Then any payment landing on that third processor is unambiguously a rule miss, and anything landing on Fauxpay or Pretendpay is unambiguously a rule hit. Restore your fallback order afterwards.
+Before treating fallback as a rule miss, verify that the targeted processors
+are active and eligible, then check the payment or routing logs for the actual
+routing decision.
 {% endhint %}
 
 The two payments land on different processors, confirming both branches of the rule:
@@ -248,7 +253,7 @@ The middle row above is a second no-surcharge payment that Fauxpay rejected at a
 
 ## What this page was verified against
 
-Everything on this page was verified against a live sandbox with InterPayments connected and selected on the profile, and with eligibility checks enabled on the merchant account:
+The behaviors listed below were verified against a live sandbox with InterPayments connected and selected on the profile, and with eligibility checks enabled on the merchant account:
 
 * `GET /payments/{payment_id}/client` returned `"sdk_next_action": {"next_action": "eligibility_check", "should_block_confirm": true}` on freshly created payments.
 * A credit-card BIN returned a `300` surcharge on a `10000` payment (`display_total_surcharge_amount: 3.0`); confirming it produced `net_amount: 10300`.
