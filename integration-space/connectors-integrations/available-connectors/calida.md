@@ -45,9 +45,10 @@ Enter these through the connector configuration form in the control center. The 
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Open the connector configuration form and provide the fields named in Authentication.
-3. Use the configured base URL for the environment you are enabling.
+1. Set up a Calida account at [https://www.calida.com/](https://www.calida.com/) to obtain the E-Order Token, Shop Name, and Source verification key.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Open the connector configuration form and provide the fields named in Authentication.
+4. Use the configured base URL for the environment you are enabling.
 
 ### Webhooks
 
