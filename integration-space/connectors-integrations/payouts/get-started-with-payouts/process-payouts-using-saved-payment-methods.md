@@ -9,6 +9,11 @@ metaLinks:
       https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/process-payouts-using-saved-payment-methods
 ---
 
+<!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
+     symbols: payout_method_id recurring validation = crates/router/src/core/payouts/validator.rs:77-92
+     absent: recurring schedule interval = checked crates/api_models/src/payouts.rs and crates/router/src/routes/app.rs:1639-1689, not found
+     checked: 2026-09-21 -->
+
 # Payouts with Saved Payment Methods
 
 Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer's saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
@@ -20,7 +25,7 @@ Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitc
 * Pre-transaction storage: Create a payment method for a specific customer using the [/payment\_methods API](https://api-reference.hyperswitch.io/v1/payment-methods/paymentmethods--create). This action stores details directly in the secure locker.
 * Post-transaction storage: Details are automatically vaulted following a successful transaction if specific flags are set:
   * For payments: Set `"setup_future_usage": "off_session"`.
-  * For payouts: Set `"recurring": true`.
+  * For payouts: pass `payout_method_id` and set `confirm` to `true` for a subsequent payout. The create validator requires this combination for recurring payouts ([`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92)).
 
 ### Retrieving Saved Methods
 

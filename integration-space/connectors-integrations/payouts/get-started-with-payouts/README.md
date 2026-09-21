@@ -8,6 +8,14 @@ metaLinks:
       https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/get-started-with-payouts
 ---
 
+<!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
+     symbols: PayoutCreateRequest.payout_type = crates/api_models/src/payouts.rs:88-94
+     symbols: PayoutMethodData = crates/api_models/src/payouts.rs:252-261
+     symbols: BankTransfer payout_method_type = crates/api_models/src/payouts.rs:421-434
+     symbols: POST /payouts/create = crates/router/src/routes/app.rs:1639-1641
+     absent: native payout schedule = checked crates/api_models/src/payouts.rs and crates/router/src/routes/app.rs:1639-1689, not found
+     checked: 2026-09-21 -->
+
 # Payout features
 
 To begin processing payouts with Juspay Hyperswitch, you must first establish accounts with your [supported payout processors](https://juspay.io/integrations).
@@ -24,13 +32,25 @@ Implementation requires the Hyperswitch Dashboard for configuration and the API 
 * Hyperswitch Dashboard: [app.hyperswitch.io](https://app.hyperswitch.io)
 * Technical Reference: [Payouts API Reference](https://api-reference.hyperswitch.io/v1/payouts/payouts--create)
 
-#### Prerequisites
+### Prerequisites
 
-Before configuring your first payout, ensure you have the following credentials from your Dashboard:
+Complete these checks before following the walkthrough:
 
-1. A Hyperswitch account.
-2. An API Key (located in the Developers section).
-3. Your Merchant ID (available on the Home page).
+1. Confirm payouts are enabled for your account. If the **Payout Processors** tab is not visible, contact support before continuing.
+2. Create or sign in to the payout processor accounts you plan to use.
+3. Create an API key in the Dashboard **Developers** section.
+4. Copy your Merchant ID from the Dashboard home page.
+5. Configure at least one payout processor and enable the payout methods you intend to use.
+
+### Request field guide
+
+The create request uses `payout_type` for the method family and `payout_method_data` for the details:
+
+* `payout_type`: `card`, `bank`, `wallet`, or `bank_redirect`, serialized in `snake_case` by [`PayoutType`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/common_enums/src/enums.rs#L9081-L9090).
+* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`, serialized in `snake_case` by [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261).
+* With `bank_transfer`, `payout_method_type` is `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, or `payshap_proxy`. These are the tagged wire values on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434).
+
+Crypto assets, including USDT, are not payout method values in these enums.
 
 #### Configuring Payout Processors
 
