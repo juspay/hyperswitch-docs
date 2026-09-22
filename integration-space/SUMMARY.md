@@ -39,6 +39,7 @@
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
+    * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
