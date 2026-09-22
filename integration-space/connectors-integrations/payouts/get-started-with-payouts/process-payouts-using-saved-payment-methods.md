@@ -40,10 +40,12 @@ To process a payout, fetch the identifiers for a customer's saved methods via th
 
 The field names differ between the two calls. The list response calls it `payment_token`; [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) has no `payment_token` field. Send that value as **`payout_token`** instead.
 
-There are two ways to reference a vaulted method, and they are mutually exclusive. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L171-L200) rejects a request carrying both:
+There are two ways to reference a vaulted method, and they are mutually exclusive. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L171-L200) rejects a request carrying both.
+
+Either way the request needs customer context. Supplying `payout_token` with no customer or `customer_id` is rejected with a missing-field error naming exactly that ([`validator.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L211-L218)), and the `payout_method_id` path additionally checks that the stored method's `customer_id` matches.
 
 * **`payout_token`**, the value the list response returned as `payment_token` ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L169)).
-* **`payout_method_id`** ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L209)), which additionally needs `confirm: true` and customer details on the request. The validator looks the method up and checks its `customer_id` matches, so a payout with no customer context cannot use this path.
+* **`payout_method_id`** ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L209)), which additionally needs `confirm: true`. The validator looks the stored method up and rejects the payout if its `customer_id` does not match the customer on the request.
 
 ### Setup and Integration
 
