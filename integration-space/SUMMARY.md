@@ -44,6 +44,7 @@
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
+    * [Elavon](connectors-integrations/available-connectors/elavon.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
