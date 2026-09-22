@@ -32,7 +32,11 @@ The feature matrix declares live status but no payment-method rows. The connecto
 
 ### Authentication
 
-The connector source accepts a BodyKey with an API key and a second key, but no Citigate `[connector_auth]` labels were present in the pinned `sandbox.toml`. The control center lists Citigate, but a rendered credential label could not be verified from the pinned configuration. Do not guess the field labels. The source maps the two accepted fields in [`CitigateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs#L68-L80); only the API key is sent in `Authorization` by [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L121-L132), with transport headers assembled by [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L82-L95).
+Citigate takes two credentials, shown in the control center as **Merchant Name** and **Merchant Password**, from [`[citigate.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml#L9145-L9147).
+
+[`CitigateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs#L65-L85) accepts them as a `BodyKey` pair and rejects any other shape. Only the first is sent in `Authorization` by [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L121-L132), with the remaining transport headers assembled by [`build_headers()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs#L82-L95).
+
+Citigate is a UCS-only connector: Hyperswitch forwards the credentials to the Unified Connector Service rather than calling Citigate directly, which the source notes alongside the auth type. None of this is reachable today, since no payment method is implemented.
 
 ### Before you start
 
@@ -47,4 +51,4 @@ Citigate does not support incoming webhooks. The object-reference, event-type, a
 
 ### Source reference
 
-Authentication, payment processing, and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Citigate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs) and [Citigate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Citigate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate.rs) and [Citigate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/citigate/transformers.rs).
