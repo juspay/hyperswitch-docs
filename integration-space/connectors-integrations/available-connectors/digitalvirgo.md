@@ -28,10 +28,13 @@ To connect Digital Virgo to your Hyperswitch account, follow [Activate a connect
 |---|---|---|---|---|---|---|
 | mobile payment | Direct Carrier Billing | not supported | supported | automatic, sequential automatic | 48 | 37 |
 
+{% hint style="warning" %}
+Although the capability table lists sequential automatic capture, the connector does not implement the capture flow — capture requests return a "flow not supported" error. Only **automatic** capture works with Digital Virgo.
+{% endhint %}
 
 ### Authentication
 
-Supply Username. The dashboard labels come from the connector configuration; implementation details are defined in the connector source.
+Digital Virgo requires two credentials, which Digital Virgo provides when you set up your account with them: **Username** and **Password**. Both are sent with each API request as body-key authentication — see [`DigitalvirgoAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo/transformers.rs#L86-L102) in the connector source.
 
 ### Before you start
 
@@ -41,6 +44,8 @@ Dashboard setup is not offered for this connector in the current connector list;
 
 Webhooks are not currently supported. All three webhook handlers return `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo.rs#L524-537).
 
+Payment status can be tracked through the payment sync (status check) API, which Digital Virgo implements against its payment state endpoint. Refund status cannot be synced through Hyperswitch: refund sync is not implemented, so refunds marked supported in the table above must be reconciled with Digital Virgo out of band. See the [payment sync implementation](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo.rs#L314-L354) and the [refund sync stub](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo.rs#L501-L512) in the connector source.
+
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Digital Virgo connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo.rs) and [Digital Virgo transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Digital Virgo connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo.rs) and [Digital Virgo transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/digitalvirgo/transformers.rs).
