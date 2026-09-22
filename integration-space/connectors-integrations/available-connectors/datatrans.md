@@ -34,7 +34,7 @@ To connect Datatrans to your Hyperswitch account, follow [Activate a connector o
 
 Supply **datatrans MerchantId** and **Passcode**, the two labels the control center shows. Both are required: [`DatatransAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/datatrans/transformers.rs#L449-L460) takes them as a `BodyKey` pair and rejects any other shape, and the labels come from [`[datatrans.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml).
 
-The form also offers **Acquirer Bin** and **Acquirer Merchant ID**. Both are marked optional in the connector configuration, and the Datatrans connector reads neither, so leave them blank unless the Hyperswitch team tells you otherwise.
+The form also offers **Acquirer Bin**, **Acquirer Merchant ID**, and **Acquirer Country Code**. All three are marked optional in the connector configuration, and the Datatrans connector reads none of them, so leave them blank unless the Hyperswitch team tells you otherwise.
 
 ### Before you start
 
