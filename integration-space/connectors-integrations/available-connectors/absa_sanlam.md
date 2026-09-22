@@ -39,12 +39,9 @@ The authentication code is implemented, but it only runs as part of the payment 
 
 ### Before you start
 
-1. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
-2. Have the **API Key** and **Merchant ID** ready.
+AbsaSanlam is not offered in the Hyperswitch control center, so there is no activation form for it and the usual connector setup flow does not apply. That matches the state of the connector: even once an account exists, every payment flow fails before a request is sent.
 
-To connect AbsaSanlam to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what AbsaSanlam supports.
-
-You can create the connector account, but payments against it will fail until the payment flows are implemented.
+If you need AbsaSanlam, talk to the Hyperswitch team rather than working from this page, and have your **API Key** and **Merchant ID** ready for when the payment flows land.
 
 ### Webhooks
 
