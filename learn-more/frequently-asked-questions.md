@@ -1268,7 +1268,8 @@ Navigate to **Settings → Users** in the Control Centre to create or assign rol
 | ----------------------------- | ------------------------------------------- |
 | Organization Admin            | Full platform access                        |
 | Merchant or Profile Admin     | Full merchant-level access                  |
-| Merchant or Profile Developer | Analytics access and API key management     |
+| Merchant Developer            | Analytics access and API key management     |
+| Profile Developer             | Analytics access and profile settings       |
 | Merchant or Profile Operator  | Payment operations and analytics visibility |
 | Customer Support              | Transaction-level access                    |
 | View Only roles               | Read-only access to analytics dashboards    |

@@ -18,6 +18,7 @@ metaLinks:
      symbols: profile_update = crates/router/src/routes/profiles.rs; crates/router/src/routes/app.rs
      symbols: BusinessProfileInterfaceTypesV1.profileEntity_v1, profileEntityRequestType_v1 = control-center/src/Interface/BusinessProfileInterface/BusinessProfileInterfaceTypes/BusinessProfileInterfaceTypesV1.res
      symbols: ProfileInfoHeader = control-center/src/screens/Developer/PaymentSettings/PaymentSettingsProfileInfo.res
+     symbols: MerchantSwitch, ProfileSwitch, AddNewOMPButton = control-center/src/entryPoints/OMPSwitch/MerchantSwitch.res; control-center/src/entryPoints/OMPSwitch/ProfileSwitch.res; control-center/src/entryPoints/OMPSwitch/OMPSwitchHelper.res
      checked: 2026-09-22 -->
 
 # Organization, Merchant Account, and Business Profile
@@ -38,6 +39,32 @@ The backend models this relationship in `OrganizationResponse`, `MerchantAccount
 Use multiple merchant accounts when each business needs separate merchant API keys. Use multiple profiles when one merchant account needs separate payment configuration while retaining one merchant API-key scope.
 
 How a profile is selected for a payment depends on the API version. On v1, `PaymentsRequest` carries an optional `profile_id`. The handler calls `get_profile_id_from_business_details`: it first uses the request `profile_id`, then the merchant account's `default_profile`, and only then resolves the legacy `business_country` plus `business_label` pair. If none is available, the handler returns a missing-field error. Therefore, when the account has one profile and that profile is the account's `default_profile`, omitting `profile_id` works through the default-profile branch. This is handler behavior, not a property of the Rust field declaration. On v2, `PaymentsRequest` has no `profile_id` field at all: the profile comes from the `X-Profile-Id` request header, which `V2ApiKeyAuth` requires when it authenticates the call.
+
+### Create merchant accounts and profiles
+
+Sign-up creates one merchant account with one profile. You add more from the switchers in the dashboard, not from the settings pages.
+
+Creating either one is restricted by role. Adding a merchant account needs Organization Admin; adding a profile needs Merchant Admin or above. Without the role, the option is visible but disabled.
+
+**To add a merchant account:**
+
+1. Open the **Merchant Account** switcher at the top of the left sidebar.
+2. Select **+ Create new**.
+3. In **Add a new merchant**, enter the merchant name. Some deployments also ask for a merchant type.
+4. Select **Add Merchant**.
+
+<figure><img src="../../../.gitbook/assets/account-create-merchant.png" alt="Merchant Account switcher expanded, with the Create new option highlighted"><figcaption><p>The Merchant Account switcher in the sidebar, with "+ Create new"</p></figcaption></figure>
+
+**To add a profile:**
+
+1. Open the **Profile** switcher at the top of the main content area.
+2. Select **+ Create new**.
+3. In **Add a new profile**, enter the **Profile Name**.
+4. Select **Add Profile**.
+
+<figure><img src="../../../.gitbook/assets/account-create-profile.png" alt="Profile switcher expanded, with the Create new option highlighted"><figcaption><p>The Profile switcher above the dashboard content, with "+ Create new"</p></figcaption></figure>
+
+Both switchers list everything you already have, so they double as the way to move between merchant accounts and profiles.
 
 ### Edit a Business Profile
 

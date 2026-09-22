@@ -223,7 +223,7 @@
   * [Account Setup and Structure](integration-guide/account-management/multiple-accounts-and-profiles/README.md)
     * [Quick Start: Create Your Hyperswitch Account](integration-guide/account-management/multiple-accounts-and-profiles/quick-start.md)
     * [Pick the Right Setup for Your Business](integration-guide/account-management/multiple-accounts-and-profiles/pick-the-right-setup.md)
-    * [Organization, Merchant, and Profile](integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
+    * [Organization, Merchant Account, and Business Profile](integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
     * [Standard Organization](integration-guide/account-management/multiple-accounts-and-profiles/standard-organization.md)
     * [Platform Organization](integration-guide/account-management/multiple-accounts-and-profiles/platform-organization-concepts.md)
       * [Setting Up a Platform Organization](integration-guide/account-management/multiple-accounts-and-profiles/setting-up-platform-organization.md)
