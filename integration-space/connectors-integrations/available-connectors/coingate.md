@@ -51,7 +51,7 @@ Three more come from the refund request itself: `address` and `email` are read o
 
 ### Before you start
 
-1. Create or sign in to your CoinGate account and obtain the **API Key** and **Merchant Token**.
+1. Create or sign in to your [CoinGate account](https://coingate.com/) and obtain the **API Key** and **Merchant Token**.
 2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open CoinGate.
 3. Enter the two connector credentials.
 
