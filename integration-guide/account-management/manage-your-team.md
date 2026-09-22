@@ -46,8 +46,8 @@ Our system currently offers a set of default roles, each with predefined permiss
 
 **5. Profile Developer**
 
-* Can create and manage API keys for the profile.
-* Has view and manage access to operations, connectors, analytics, users, and merchant details.
+* Has view access to operations, connectors, analytics, users, and merchant details, with the ability to manage merchant details.
+* Cannot create or manage API keys. API keys are scoped to the merchant account rather than the profile, so key management is a Merchant Developer capability.
 
 ***
 
