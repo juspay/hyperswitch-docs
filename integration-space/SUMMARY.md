@@ -40,6 +40,7 @@
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
+    * [Envoy](connectors-integrations/available-connectors/envoy.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
