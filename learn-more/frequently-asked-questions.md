@@ -5,6 +5,8 @@ metaLinks:
     - frequently-asked-questions.md
 ---
 
+<!-- truth manifest; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; checked: 2026-09-22; symbols: MerchantAccount API-key scope = crates/router/src/routes/api_keys.rs; ProfileUpdate and ProfileResponse = crates/api_models/src/admin.rs -->
+
 # Frequently Asked Questions
 
 ## Getting Started
@@ -2171,7 +2173,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 | Merchant                   | Business entity under the organisation | Individual business or subsidiary                 |
 | Profile (Business Profile) | Operational unit within a merchant     | Website, mobile app, brand, or regional operation |
 
-Each business profile maintains independent configurations for payment methods, connector credentials, routing rules, webhook endpoints, and API keys.
+Each business profile maintains independent payment configuration, connector associations, routing rules, and webhook endpoints. API keys belong to the Merchant Account scope, not to the Business Profile.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure
