@@ -7,9 +7,9 @@ metaLinks:
 
 # Envoy
 
-Envoy declares a payment gateway integration with no payment methods or webhook flow in the current matrix.
-
-To connect Envoy to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Envoy supports.
+{% hint style="warning" %}
+**Envoy is a payout processor.** Although Envoy is registered as a payment gateway connector, its payment-side flows are unimplemented stubs: the connector declares no payment methods, and every payment flow (authorize, sync, capture, refund) fails with a "not implemented" error. What Envoy actually implements is payouts — it is one of the [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/api_models/src/enums.rs#L48-L70), and payout fulfillment has a working implementation. Use Envoy through [Hyperswitch Payouts](../payouts/README.md), not for accepting payments.
+{% endhint %}
 
 ### Status and capabilities
 
@@ -24,21 +24,22 @@ To connect Envoy to your Hyperswitch account, follow [Activate a connector on Hy
 
 **Webhook flows:** None declared in code
 
-_This connector declares no payment methods. It is a payment gateway rather than a payment processor._
-
+_This connector declares no payment methods. Its payment flows are stubs; see the warning above._
 
 ### Authentication
 
-Supply the connector credentials. The dashboard labels come from the connector configuration; implementation details are defined in the connector source.
+Envoy requires two credentials, which Envoy provides when you set up your account with them: **Username** and **Password**. Both are sent with each API request as body-key fields — see [`EnvoyAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy/transformers.rs#L83-L98) in the connector source.
 
 ### Before you start
 
-Dashboard setup is not offered for this connector in the current connector list; contact the Hyperswitch team. Have the credentials shown in the Authentication section ready before configuring the connector.
+1. Set up an Envoy account and obtain the **Username** and **Password**.
+2. Envoy is not offered in the control-center payment connector list (it appears only as a payout connector), so contact the Hyperswitch team to arrange setup.
+3. Configure Envoy as a payout connector and initiate payouts through the [Payouts API](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts). Note that payout create eligibility checks are not implemented; the working flow is payout fulfillment.
 
 ### Webhooks
 
-Webhooks are not currently supported. All three webhook handlers return `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs#L683-696).
+Webhooks are not currently supported. All three webhook handlers return `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs#L683-696). Payout status must be tracked through payout sync or by checking Envoy directly.
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Envoy connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs) and [Envoy transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Envoy connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs) and [Envoy transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy/transformers.rs).
