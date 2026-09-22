@@ -55,6 +55,36 @@ The payout connector enum defines **21** wire values: `adyen`, `adyenplatform`, 
 
 Helcim is not a payout processor in this list. Connector-specific payment methods can differ, so check the relevant payout processor page before integration.
 
+### Supported connectors
+
+Payouts run through 21 connectors. The names below are the variants of [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/enums.rs#L46-L70), so the list is exactly what the router accepts.
+
+| Connector           | Regions      | Cards                                                                 | Bank Rails              | Wallets                |
+| ------------------- | ------------ | ---------------------------------------------------------------------| ------------------------| ---------------------- |
+| **Adyen**           | Global       | —                                                                     | SEPA                    | PayPal                 |
+| **Adyen Platform**  | Global       | Visa, Mastercard                                                      | SEPA                     | —                      |
+| **Cybersource**     | Global       | Major Networks                                                        | —                       | —                      |
+| **Deutsche Bank**   | Europe       | —                                                                     | SEPA                    | —                      |
+| **Ebanx**           | Brazil       | —                                                                     | Pix (Key)\*             | —                      |
+| **Envoy**           | UK, EU & US  | —                                                                     | SEPA, BACS, ACH         | —                      |
+| **Gigadat**         | Canada       | —                                                                     | Interac                 | —                      |
+| **GotymeSanlam**    | South Africa | —                                                                     | PayShap, PayShap Proxy  | —                      |
+| **Itaubank**        | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
+| **Loonio**          | Canada       | —                                                                     | Interac                 | —                      |
+| **Nomupay**         | Europe       | —                                                                     | SEPA                    | —                      |
+| **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | —                       | —                      |
+| **Payone**          | Europe       | Major Networks                                                        | —                       | —                      |
+| **PayPal**          | Global       | —                                                                     | —                       | PayPal, Venmo\*\*      |
+| **Santander**       | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
+| **Stripe**          | Global       | Debit Cards                                                           | ACH                     | —                      |
+| **Truelayer**       | UK & Europe  | —                                                                     | Open Banking            | —                      |
+| **Trustly**         | Europe       | —                                                                     | Trustly (A2A)           | —                      |
+| **Wise**            | Global       | —                                                                     | ACH, BACS, SEPA         | —                      |
+| **Worldpay**        | Global       | —                                                                     | —                       | Apple Pay              |
+| **Worldpay XML**    | Global       | Visa, Mastercard                                                      | —                       | Apple Pay, Google Pay  |
+
+The regions and method columns are maintained by hand and are not derived from the connector declarations, so treat them as a guide and confirm with your connector. The connector names are the part tied to the source.
+
 ### Payout fields and wire values
 
 Use these request values when you create or update a payout:
