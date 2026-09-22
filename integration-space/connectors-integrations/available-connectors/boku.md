@@ -64,7 +64,7 @@ You will not be asked for a source verification key. It is a webhook field, and 
 
 ### Webhooks
 
-Boku webhooks are not supported, so there is no event list and nothing to configure. Use payment sync and refund sync for status updates.
+Boku webhooks are not supported, so there is no event list and nothing to configure. Refund sync is available for refund status. Payment sync is not implemented, so do not rely on it for payment status.
 
 All three incoming-webhook handlers return `WebhooksNotImplemented`: [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku.rs#L644-L649), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku.rs#L651-L657), and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/boku.rs#L659-L665).
 
