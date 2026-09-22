@@ -1,5 +1,5 @@
 ---
-description: Facilitapay connector for payment gateway.
+description: Connect Facilitapay through Hyperswitch.
 metaLinks:
   alternates:
     - facilitapay.md
@@ -13,10 +13,13 @@ To connect Facilitapay to your Hyperswitch account, follow [Activate a connector
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; host http://localhost:8080; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; fetched 2026-09-22; matrix canonical-json-v1 sha256 873f2bbfe94dc9fda3279d10e6c077a8fe4a10d38f97f3aba64d57093c5245c4; 146 connectors.
-     Do not edit by hand. Payment method rows regenerate from the connector's SupportedPaymentMethods declaration; countries and
-     currencies come from pm_filters in config/development.toml. Webhook flows and capture methods print as declared; the
-     declaration-gap check reconciles them in prose. Edit those sources instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7; host http://localhost:8080; fetched 2026-09-21; matrix canonical-json-v1 sha256 873f2bbfe94dc9fda3279d10e6c077a8fe4a10d38f97f3aba64d57093c5245c4; 146 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods print as declared; the
+     declaration-gap check reconciles them in prose. Edit those
+     sources instead. -->
 
 **Integration status:** sandbox
 
@@ -31,7 +34,7 @@ To connect Facilitapay to your Hyperswitch account, follow [Activate a connector
 
 ### Authentication
 
-Activation needs three values. [`[facilitapay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml) supplies the first two labels, and the connector metadata supplies the third:
+Activation needs three values. [`[facilitapay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L7209-L7211) supplies the first two labels, and the connector metadata supplies the third:
 
 | Field | Required |
 | --- | --- |
