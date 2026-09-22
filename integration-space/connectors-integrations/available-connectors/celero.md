@@ -7,9 +7,11 @@ metaLinks:
 
 # Celero
 
-Celero lets merchants route credit and debit card payments through its API. Celero is not offered in the Hyperswitch control center, so contact the Hyperswitch team to arrange setup instead of looking for a Celero activation form. Payment status should be checked through payment sync because Celero does not implement incoming webhooks.
+{% hint style="warning" %}
+**Alpha connector, not in the control center.** Celero is not offered in the Hyperswitch control center, so there is no activation form to fill in; arrange setup with the Hyperswitch team instead. It is also at alpha integration status, so reach out on the [Slack Community](https://inviter.co/hyperswitch-slack) to check where it stands before you build on it.
+{% endhint %}
 
-This connector is in alpha status. Check with the Hyperswitch team before enabling it in production.
+Celero routes credit and debit card payments through its API. There are no webhooks, so payment status comes from syncing rather than callbacks.
 
 
 ### Status and capabilities
@@ -44,8 +46,8 @@ Celero requires one credential: the **Celero API Key**, obtained when you set up
 
 ### Webhooks
 
-Webhooks are **not supported** for Celero — the connector does not implement incoming webhook handling, so there are no callbacks to configure or verify. To track payment status, use the payment sync (status check) API through Hyperswitch, or query Celero's API directly. See the [webhook interface stubs](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L707-L731) in the connector source.
+Webhooks are not supported for Celero. The connector does not implement incoming webhook handling, so there are no callbacks to configure or verify. To track payment status, use the payment sync (status check) API through Hyperswitch, or query Celero's API directly. See the [webhook interface stubs](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L707-L731) in the connector source.
 
 ### Source reference
 
-Authentication, dashboard availability, and webhook behavior on this page are tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Celero connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs) and [Celero transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Celero connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs) and [Celero transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero/transformers.rs).
