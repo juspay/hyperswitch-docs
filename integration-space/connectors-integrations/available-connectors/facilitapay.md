@@ -13,7 +13,7 @@ To connect Facilitapay to your Hyperswitch account, follow [Activate a connector
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; host http://localhost:8080; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; fetched 2026-09-22; matrix canonical-json-v1 sha256 873f2bbfe94dc9fd; 146 connectors.
+<!-- generated from GET /feature_matrix; host http://localhost:8080; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; fetched 2026-09-22; matrix canonical-json-v1 sha256 873f2bbfe94dc9fda3279d10e6c077a8fe4a10d38f97f3aba64d57093c5245c4; 146 connectors.
      Do not edit by hand. Payment method rows regenerate from the connector's SupportedPaymentMethods declaration; countries and
      currencies come from pm_filters in config/development.toml. Webhook flows and capture methods print as declared; the
      declaration-gap check reconciles them in prose. Edit those sources instead. -->
@@ -31,16 +31,50 @@ To connect Facilitapay to your Hyperswitch account, follow [Activate a connector
 
 ### Authentication
 
-Supply Username. The dashboard labels come from the connector configuration; implementation details are defined in the connector source.
+Activation needs three values. [`[facilitapay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml) supplies the first two labels, and the connector metadata supplies the third:
+
+| Field | Required |
+| --- | --- |
+| **Username** | yes |
+| **Password** | yes |
+| **Merchant Account Number** | yes, from `facilitapay.metadata.destination_account_number` |
+
+All three are required, so activation will not complete with the username alone.
 
 ### Before you start
 
-Facilitapay is available in the control center connector list. Have the credentials shown in the Authentication section ready before configuring the connector.
+1. Obtain your **Username**, **Password** and **Merchant Account Number** from Facilitapay.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open Facilitapay, which is offered in the connector list.
+3. Enter all three during connector activation.
+4. Read the webhook warning below before you rely on callbacks.
 
 ### Webhooks
 
-Facilitapay maps eight webhook event values: ExchangeCreated, Identified, PaymentApproved, PaymentExpired, PaymentFailed, PaymentRefunded, WireCreated, and WireWaitingCorrection. Source verification compares the notification secret. See [`FacilitapayWebhookEventType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay/responses.rs#L278-L287) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L879-L908).
+{% hint style="warning" %}
+**Facilitapay callbacks are weakly authenticated. Do not treat one as proof of payment.**
+
+Verification compares a secret carried in the callback body against your configured value as plain text, at [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L812-L841). Nothing is computed over the payload, so the check says only that the sender knew the secret, and the source comment describes it as "a simple 4-digit secret".
+
+Two things make that weaker still. When no webhook secret is configured the comparison falls back to the literal string `default_secret` ([`facilitapay.rs:836`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L836)), so an unconfigured connector accepts any callback carrying that value. And no `connector_webhook_details` block exists for Facilitapay in any connector configuration, so there is no control-center field in which to set a secret.
+
+Confirm with payment sync before you release goods or mark an order paid, and treat a callback only as a signal to go and check.
+{% endhint %}
+
+The events below are what the connector does with a callback once it accepts it.
+
+| Wire value | Effect |
+| --- | --- |
+| `exchange_created` | Payment is processing |
+| `identified` | Payment succeeds |
+| `payment_approved` | Payment succeeds |
+| `wire_created` | Payment succeeds |
+| `payment_expired` | Payment fails |
+| `payment_failed` | Payment fails |
+| `payment_refunded` | Refund succeeds |
+| `wire_waiting_correction` | Payment needs action |
+
+The eight wire values come from [`FacilitapayWebhookEventType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay/responses.rs#L278-L287); their effects come from [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L879-L913). The match is exhaustive, so every declared value maps to an outcome and there is no unknown fallback.
 
 ### Source reference
 
-Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Facilitapay connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs) and [Facilitapay transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5`. See [Facilitapay connector source](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs) and [Facilitapay transformers](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay/transformers.rs).
