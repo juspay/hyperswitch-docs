@@ -33,7 +33,7 @@ Breadpay offers a pay-later redirect: the customer leaves your checkout to arran
 |---|---|---|---|---|---|---|
 | pay later | Breadpay | not supported | supported | automatic, manual, sequential automatic | - | - |
 
-The matrix declares refunds, but neither refund flow is implemented: `get_url()` returns `NotImplemented` for [refund execute](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L642-L648) and for [refund sync](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L726-L732), and both `build_request()` implementations call it, so a refund fails before it is sent. Capture is unaffected and works as declared.
+The matrix declares refunds, but neither refund flow is implemented: `get_url()` returns `NotImplemented` for [refund execute](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L642-L648) and for [refund sync](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/breadpay.rs#L726-L732), and both `build_request()` implementations call it, so a refund fails before it is sent. Capture is unaffected and works as declared. Tracked upstream as [issue 14373](https://github.com/juspay/hyperswitch/issues/14373).
 
 ### Authentication
 

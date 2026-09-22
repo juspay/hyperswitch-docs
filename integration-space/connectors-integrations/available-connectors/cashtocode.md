@@ -38,7 +38,7 @@ To connect CashToCode to your Hyperswitch account, follow [Activate a connector 
 
 The table's currency count comes from the payment-method filters, not from CashToCode's credentials. Credentials exist for eleven currencies only, listed under Authentication, and a payment in any other currency has no credential set to authenticate with. Treat those eleven as the real list.
 
-The matrix declares manual capture, but the capture flow is not implemented: [`build_request()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L347-L359) returns `FlowNotSupported`. Use automatic capture. Cancellation is unavailable for the same reason, at [`Void`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L361-L373).
+The matrix declares manual capture, but the capture flow is not implemented: [`build_request()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L347-L359) returns `FlowNotSupported`. Use automatic capture. Cancellation is unavailable for the same reason, at [`Void`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cashtocode.rs#L361-L373). The capture gap is tracked upstream as [issue 14350](https://github.com/juspay/hyperswitch/issues/14350).
 
 ### Authentication
 
