@@ -35,6 +35,10 @@ To connect Finix to your Hyperswitch account, follow [Activate a connector on Hy
 | wallet | Google Pay | supported | supported | automatic, manual | not applicable | - | 221 | CAD, USD |
 
 
+{% hint style="warning" %}
+Finix rejects 3DS card payments outright. A card request sent with the authentication type set to 3DS fails with a "not supported" error before anything reaches Finix — see [the guard in `FinixPaymentsRequest`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L133-L144). The table's "3DS: not supported" means the connector errors on 3DS attempts rather than falling back to non-3DS, so route cards to another connector if your profile enables 3DS.
+{% endhint %}
+
 ### Authentication
 
 Finix needs four credentials, not two. Enter **Username**, **Password**, **Merchant Id**, and **Merchant Identity Id**; activation will not complete without all four. The labels come from [`[finix.connector_auth.MultiAuthKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L8341-L8345).
@@ -43,11 +47,15 @@ They are not used the same way. **Username** and **Password** are combined as `u
 
 ### Before you start
 
-Finix is available in the control center connector list. Have the credentials shown in the Authentication section ready before configuring the connector.
+Finix is available in the control center connector list. Have the four credentials from the Authentication section ready before configuring the connector.
+
+Cards and wallets both go through Finix's own tokenization step, so the payment must carry a Finix token rather than raw or decrypted payment data. Wallet flows that hand Hyperswitch decrypted data are not supported: Apple Pay in Simplified mode, Google Pay decrypt, and Paze each fail with an unimplemented error ([`FinixPaymentsRequest`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L146-L164)). Configure Apple Pay and Google Pay for the tokenized path.
 
 ### Webhooks
 
 The matrix declares no webhook flow, but the handler processes authorization, transfer, dispute, and evidence payloads. It maps authorization states to authorization, processing, cancellation, or failure events; debit transfers to payment events; reversal transfers to refund events; and dispute states to dispute events. Evidence payloads are recognized but return `EventNotSupported`, so they apply no update. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L779-L848).
+
+Unlike the event mapping, webhook verification is configured rather than automatic. Set **Source verification key** on the connector, the label from [`[finix.connector_webhook_details]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L8505-L8506), to the signing secret Finix issues. Callbacks are then verified with HMAC-SHA256: Hyperswitch reads the `Finix-Signature` header, which carries comma-separated `key=value` pairs including a timestamp and a hex signature, and checks the signature over `timestamp:body`. See [`get_webhook_source_verification_message()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix.rs#L1159-L1173) and [`decode_finix_signature()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix.rs#L1103-L1139).
 
 ### Source reference
 
