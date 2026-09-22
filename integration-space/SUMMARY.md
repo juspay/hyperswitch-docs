@@ -47,6 +47,7 @@
     * [Elavon](connectors-integrations/available-connectors/elavon.md)
     * [Envoy](connectors-integrations/available-connectors/envoy.md)
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
+    * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
