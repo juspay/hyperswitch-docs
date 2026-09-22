@@ -10,7 +10,8 @@ metaLinks:
 ---
 
 <!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
-     symbols: payout_method_id recurring validation = crates/router/src/core/payouts/validator.rs:77-92
+     symbols: recurring true vaults the method after a successful payout, when no payout_method_id was supplied = crates/router/src/core/payouts.rs:3123-3143
+     symbols: supplying payout_method_id without confirm true is rejected = crates/router/src/core/payouts/validator.rs:77-92
      absent: recurring schedule interval = checked crates/api_models/src/payouts.rs and crates/router/src/routes/app.rs:1639-1689, not found
      checked: 2026-09-21 -->
 
@@ -25,7 +26,9 @@ Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitc
 * Pre-transaction storage: Create a payment method for a specific customer using the [/payment\_methods API](https://api-reference.hyperswitch.io/v1/payment-methods/paymentmethods--create). This action stores details directly in the secure locker.
 * Post-transaction storage: Details are automatically vaulted following a successful transaction if specific flags are set:
   * For payments: Set `"setup_future_usage": "off_session"`.
-  * For payouts: pass `payout_method_id` and set `confirm` to `true` for a subsequent payout. The create validator requires this combination for recurring payouts ([`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92)).
+  * For payouts: set `"recurring": true`. The method is vaulted after the payout succeeds, at [`payouts.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts.rs#L3123-L3143), which saves to the locker when `recurring` is set and no `payout_method_id` was supplied.
+
+Reusing a vaulted method is the other half of this and is covered under [Recurring/Subsequent Payouts](#recurring-subsequent-payouts): pass the stored `payout_method_id` and set `confirm` to `true`. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92) rejects a payout that supplies `payout_method_id` without `confirm: true`.
 
 ### Retrieving Saved Methods
 
