@@ -29,6 +29,7 @@
     * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
     * [Calida](connectors-integrations/available-connectors/calida.md)
     * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
+    * [Checkbook](connectors-integrations/available-connectors/checkbook.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
     * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
