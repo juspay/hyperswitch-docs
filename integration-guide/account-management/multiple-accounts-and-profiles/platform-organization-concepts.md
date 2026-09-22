@@ -13,7 +13,7 @@ metaLinks:
      symbols: ProfileCreate = crates/api_models/src/admin.rs
      symbols: CreateApiKeyRequest, MerchantConnectorCreate = crates/router/src/types/api/api_keys.rs; crates/api_models/src/admin.rs
      symbols: organization_create, merchant_account_create, profile_create, api_key_create, connector_create = crates/router/src/routes/admin.rs; crates/router/src/routes/profiles.rs; crates/router/src/routes/api_keys.rs
-     symbols: PlatformOrgAdminAuth = crates/router/src/services/authentication.rs
+     symbols: PlatformOrgAdminAuth, ApiKeyAuthWithMerchantIdFromRoute, X_CONNECTED_MERCHANT_ID = crates/router/src/services/authentication.rs; crates/router/src/lib.rs
      symbols: MerchantAccountType, MerchantConnectorCreate.profile_id = crates/common_enums/src/enums/accounts.rs; crates/api_models/src/admin.rs
      symbols: merchant_account_create.merchant_account_type, validate_and_get_business_profile = crates/router/src/core/admin.rs
      checked: 2026-09-22 -->
@@ -29,12 +29,18 @@ The platform merchant is the control-plane merchant. A Connected merchant can be
 The exact v1 sequence is:
 
 1. Create or convert the organization. Create with `POST /organization`, or convert with `POST /organization/{id}/convert_to_platform`.
-2. Generate the Platform API Key. The first merchant account created in a platform organization is forced to type `platform` whatever the request asks for, and that merchant is the control-plane account. Switch to it in the dashboard and create an API key on the [API keys page](https://app.hyperswitch.io/dashboard/developer-api-keys). Steps 3 to 5 are administrative calls that authenticate with this key, so generate it before continuing.
-3. Create the merchant account with `POST /accounts`. The `merchant_account_type` field decides what you get. Omit it and it defaults to `standard`, an isolated merchant. Send `connected` for a merchant the platform will operate on behalf of; that request is rejected unless `platform.allow_connected_merchants` is enabled in configuration. Steps 4 to 6 are identical for both types, and only step 7 differs.
-4. Create the merchant's Business Profile with `POST /account/{account_id}/business_profile`. Keep the returned `profile_id` for step 6.
+2. Generate the Platform API Key. The first merchant account created in a platform organization is forced to type `platform` whatever the request asks for, and that merchant is the control-plane account. Switch to it in the dashboard and create an API key on the [API keys page](https://app.hyperswitch.io/dashboard/developer-api-keys). Step 3 authenticates with this key, and steps 4 to 6 may, depending on the merchant type; see the note under the list. Generate it before continuing.
+3. Create the merchant account with `POST /accounts`. The `merchant_account_type` field decides what you get. Omit it and it defaults to `standard`, an isolated merchant. Send `connected` for a merchant the platform will operate on behalf of; that request is rejected unless `platform.allow_connected_merchants` is enabled in configuration. Creating the account also creates a default Business Profile and records it as the merchant's `default_profile`.
+4. Only if the merchant needs more than the default profile, create another with `POST /account/{account_id}/business_profile`. Keep the returned `profile_id` for step 6; otherwise use the default profile's id.
 5. Create an API key for that merchant with `POST /api_keys/{merchant_id}`.
-6. Create the merchant connector account with `POST /account/{merchant_id}/connectors`, putting the processor credentials in `connector_account_details` and the `profile_id` from step 4 in the request body. The path carries only the merchant ID, so `profile_id` is what attaches the connector to the right profile. It is optional on v1 and required on v2, but leave it out on v1 and the handler falls back to the merchant's `default_profile`, which for a merchant with more than one profile is unlikely to be the profile you just created. This call accepts either the merchant's own API key or the Platform API Key.
+6. Create the merchant connector account with `POST /account/{merchant_id}/connectors`, putting the processor credentials in `connector_account_details` and the `profile_id` from step 4 in the request body. The path carries only the merchant ID, so `profile_id` is what attaches the connector to the right profile. It is optional on v1 and required on v2, but leave it out on v1 and the handler falls back to the merchant's `default_profile`, which for a merchant with more than one profile is unlikely to be the profile you just created.
 7. Use the new merchant API key for the merchant's payment operations. For a Connected merchant, the platform authorization path can also perform permitted operations on behalf of that merchant. A Standard merchant has no such path: its payments run only under its own key.
+
+Which credential steps 4 to 6 accept depends on the merchant type, and this is the main practical difference between the two.
+
+For a **Connected** merchant the Platform API Key works, but only with an `X-Connected-Merchant-Id` header naming that merchant. Without the header the platform key is read as operating on the platform merchant itself, and the call fails because the merchant in the route does not match.
+
+For a **Standard** merchant there is no platform path at all. Those calls take the merchant's own API key, or a dashboard session. Create the merchant's API key first, so run step 5 before steps 4 and 6; the API key route also accepts the deployment's admin API key, which is how the first key gets created when the merchant has none.
 
 The Platform API Key is privileged but not universal. It authorizes creating and managing merchant accounts in the organization, and it can act on behalf of Connected merchants. It does not run payments for Standard merchants; those use their own merchant API key. The administrative routes accept it through `PlatformOrgAdminAuth`, which rejects the key unless it belongs to a platform merchant account and platform support is enabled in configuration.
 

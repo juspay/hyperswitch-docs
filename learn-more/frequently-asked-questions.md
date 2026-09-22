@@ -1059,7 +1059,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries
 * Credentials are encrypted using **AES-256 symmetric encryption** through a master key.
 * Sensitive values are masked during transmission and are not stored on local systems.
 
-Connector credential management permissions are available to Merchant Developer and Profile Developer roles.
+Managing connector credentials requires an Admin role: Organization Admin, Merchant Admin, or Profile Admin. The Developer roles have view-only access to connectors and cannot add or edit processor credentials.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch\
