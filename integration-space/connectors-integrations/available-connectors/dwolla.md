@@ -50,7 +50,7 @@ If you take webhooks, also set **Source verification key**. It is not an authent
 
 ### Webhooks
 
-Dwolla's event enum carries 22 wire values ([`DwollaWebhookEventType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L550-L574)), but only six of them change a payment or refund. Everything else resolves to `EventNotSupported` and applies no update.
+Dwolla's event enum recognizes 21 topic wire values, plus an `Unknown` fallback that any unrecognized topic resolves to ([`DwollaWebhookEventType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L550-L574)). Only six of the recognized topics change a payment or refund. Everything else resolves to `EventNotSupported` and applies no update.
 
 What a handled event means depends on whether the callback belongs to a refund, which the connector decides from the correlation id: an id beginning `refund_` makes it a refund event.
 
@@ -60,7 +60,7 @@ What a handled event means depends on whether the callback belongs to a refund, 
 | `CustomerTransferCompleted`, `CustomerBankTransferCompleted` | Payment succeeds | Refund succeeds |
 | `CustomerTransferFailed`, `CustomerBankTransferFailed` | Payment fails | Refund fails |
 
-The mapping is at [`TryFrom<DwollaWebhookDetails> for IncomingWebhookEvent`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L576-L608). The other sixteen values, the customer and funding-source and microdeposit events, parse but do nothing.
+The mapping is at [`TryFrom<DwollaWebhookDetails> for IncomingWebhookEvent`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L576-L608). The other fifteen recognized values, the customer and funding-source and microdeposit events, parse but do nothing, as does the `Unknown` fallback for unrecognized topics.
 
 Callbacks are verified with a real HMAC-SHA256 over the request body, keyed on your **Source verification key**, at [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla.rs#L888-L915). A callback that fails the check is rejected.
 
