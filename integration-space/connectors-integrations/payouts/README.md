@@ -60,7 +60,7 @@ Helcim is not a payout processor in this list. Connector-specific payment method
 Use these request values when you create or update a payout:
 
 * `payout_type`: `card`, `bank`, `wallet`, or `bank_redirect`. These values come from [`PayoutType` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/common_enums/src/enums.rs#L9081-L9090).
-* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`. These values come from [`PayoutMethodData` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261).
+* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`. These values come from [`PayoutMethodData` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261). `bank` is deprecated in the source, which directs new integrations to `bank_transfer` instead; prefer `bank_transfer` unless you are maintaining an existing integration.
 * For `bank_transfer`, `payout_method_type`: `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, or `payshap_proxy`. The field is the tagged discriminator on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434).
 
 Crypto assets are not modeled as payout methods. This includes USDT. The payout method enums have no crypto or USDT wire value.

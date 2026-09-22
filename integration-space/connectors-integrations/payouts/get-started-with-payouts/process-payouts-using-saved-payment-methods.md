@@ -12,6 +12,8 @@ metaLinks:
 <!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
      symbols: recurring true vaults the method after a successful payout, when no payout_method_id was supplied = crates/router/src/core/payouts.rs:3123-3143
      symbols: supplying payout_method_id without confirm true is rejected = crates/router/src/core/payouts/validator.rs:77-92
+     symbols: payout_token and payout_method_id are mutually exclusive, and payout_method_id requires customer context whose customer_id must match the stored method = crates/router/src/core/payouts/validator.rs:171-200
+     symbols: the create request carries payout_token and payout_method_id, and no payment_token; payment_token is the list response field = crates/api_models/src/payouts.rs:169,209
      absent: recurring schedule interval = checked crates/api_models/src/payouts.rs and crates/router/src/routes/app.rs:1639-1689, not found
      checked: 2026-09-21 -->
 
@@ -32,11 +34,16 @@ Reusing a vaulted method is the other half of this and is covered under [Recurri
 
 ### Retrieving Saved Methods
 
-To process a payout, fetch the identifiers for a customer's saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token` required for transaction processing.
+To process a payout, fetch the identifiers for a customer's saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token`.
 
 ### Executing the Payout
 
-The `payment_token` is passed in the [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) request to trigger the fund transfer using the customer's vaulted credentials.
+The field names differ between the two calls. The list response calls it `payment_token`; [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) has no `payment_token` field. Send that value as **`payout_token`** instead.
+
+There are two ways to reference a vaulted method, and they are mutually exclusive. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L171-L200) rejects a request carrying both:
+
+* **`payout_token`**, the value the list response returned as `payment_token` ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L169)).
+* **`payout_method_id`** ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L209)), which additionally needs `confirm: true` and customer details on the request. The validator looks the method up and checks its `customer_id` matches, so a payout with no customer context cannot use this path.
 
 ### Setup and Integration
 

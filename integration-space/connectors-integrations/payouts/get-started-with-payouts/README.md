@@ -47,7 +47,7 @@ Complete these checks before following the walkthrough:
 The create request uses `payout_type` for the method family and `payout_method_data` for the details:
 
 * `payout_type`: `card`, `bank`, `wallet`, or `bank_redirect`, serialized in `snake_case` by [`PayoutType`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/common_enums/src/enums.rs#L9081-L9090).
-* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`, serialized in `snake_case` by [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261).
+* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`, serialized in `snake_case` by [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261). The source marks `bank` deprecated and points new integrations at `bank_transfer`.
 * With `bank_transfer`, `payout_method_type` is `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, or `payshap_proxy`. These are the tagged wire values on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434).
 
 Crypto assets, including USDT, are not payout method values in these enums.
