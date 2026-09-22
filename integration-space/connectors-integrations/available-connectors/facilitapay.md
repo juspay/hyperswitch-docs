@@ -32,6 +32,8 @@ To connect Facilitapay to your Hyperswitch account, follow [Activate a connector
 | bank transfer | Pix | not supported | supported | automatic, sequential automatic | BRA | BRL |
 
 
+The table says refunds are supported, which is true only for the full amount. A refund whose amount differs from the payment amount is rejected before any request is sent, with "Partial refund not supported by Facilitapay" — see [`build_request()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L686-L709). Refund the whole payment or not at all.
+
 ### Authentication
 
 Activation needs three values. [`[facilitapay.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L7209-L7211) supplies the first two labels, and the connector metadata supplies the third:
