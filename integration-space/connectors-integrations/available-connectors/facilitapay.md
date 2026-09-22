@@ -55,7 +55,9 @@ All three are required, so activation will not complete with the username alone.
 
 Verification compares a secret carried in the callback body against your configured value as plain text, at [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L812-L841). Nothing is computed over the payload, so the check says only that the sender knew the secret, and the source comment describes it as "a simple 4-digit secret".
 
-Two things make that weaker still. When no webhook secret is configured the comparison falls back to the literal string `default_secret` ([`facilitapay.rs:836`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L836)), so an unconfigured connector accepts any callback carrying that value. And no `connector_webhook_details` block exists for Facilitapay in any connector configuration, so there is no control-center field in which to set a secret.
+Two things make that weaker still. When no webhook secret is configured the comparison falls back to the literal string `default_secret` ([`facilitapay.rs:836`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/facilitapay.rs#L836)), rather than failing closed, so a connector with no secret set accepts any callback carrying that value.
+
+And the default path leaves it unset. No `connector_webhook_details` block exists for Facilitapay in any connector configuration, so the control center offers no field for it. The value can still be set through the connector-account API, as `merchant_secret` in `connector_webhook_details`, but a connector configured through the dashboard alone will not have one.
 
 Confirm with payment sync before you release goods or mark an order paid, and treat a callback only as a signal to go and check.
 {% endhint %}
