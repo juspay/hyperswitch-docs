@@ -30,6 +30,7 @@
     * [Calida](connectors-integrations/available-connectors/calida.md)
     * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
+    * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
