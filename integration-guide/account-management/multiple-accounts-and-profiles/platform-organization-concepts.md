@@ -14,6 +14,7 @@ metaLinks:
      symbols: CreateApiKeyRequest, MerchantConnectorCreate = crates/router/src/types/api/api_keys.rs; crates/api_models/src/admin.rs
      symbols: organization_create, merchant_account_create, profile_create, api_key_create, connector_create = crates/router/src/routes/admin.rs; crates/router/src/routes/profiles.rs; crates/router/src/routes/api_keys.rs
      symbols: PlatformOrgAdminAuth, ApiKeyAuthWithMerchantIdFromRoute, X_CONNECTED_MERCHANT_ID = crates/router/src/services/authentication.rs; crates/router/src/lib.rs
+     symbols: AdminApiAuth, convert_organization_to_platform, create_platform = crates/router/src/services/authentication.rs; crates/router/src/routes/admin.rs; crates/router/src/routes/user.rs
      symbols: MerchantAccountType, MerchantConnectorCreate.profile_id = crates/common_enums/src/enums/accounts.rs; crates/api_models/src/admin.rs
      symbols: merchant_account_create.merchant_account_type, validate_and_get_business_profile = crates/router/src/core/admin.rs
      checked: 2026-09-22 -->
@@ -28,7 +29,7 @@ The platform merchant is the control-plane merchant. A Connected merchant can be
 
 The exact v1 sequence is:
 
-1. Create or convert the organization. Create with `POST /organization`, or convert with `POST /organization/{id}/convert_to_platform`.
+1. Create or convert the organization. These are not equally available to you. A **new** platform organization is self-service: an Org Admin creates one from the dashboard under Settings then Organization Settings, which calls `POST /user/create_platform` and needs the `OrganizationAccountWrite` permission. **Converting an existing organization is not.** Both `POST /organization/{id}/convert_to_platform` and the admin-API `POST /organization` authenticate with the deployment's admin API key, not with any merchant, platform or dashboard credential, so conversion has to be done by whoever operates your Hyperswitch deployment. See [Setting Up a Platform Organization](setting-up-platform-organization.md).
 2. Generate the Platform API Key. The first merchant account created in a platform organization is forced to type `platform` whatever the request asks for, and that merchant is the control-plane account. Switch to it in the dashboard and create an API key on the [API keys page](https://app.hyperswitch.io/dashboard/developer-api-keys). Step 3 authenticates with this key, and steps 4 to 6 may, depending on the merchant type; see the note under the list. Generate it before continuing.
 3. Create the merchant account with `POST /accounts`. The `merchant_account_type` field decides what you get. Omit it and it defaults to `standard`, an isolated merchant. Send `connected` for a merchant the platform will operate on behalf of; that request is rejected unless `platform.allow_connected_merchants` is enabled in configuration. Creating the account also creates a default Business Profile and records it as the merchant's `default_profile`.
 4. Only if the merchant needs more than the default profile, create another with `POST /account/{account_id}/business_profile`. Keep the returned `profile_id` for step 6; otherwise use the default profile's id.
