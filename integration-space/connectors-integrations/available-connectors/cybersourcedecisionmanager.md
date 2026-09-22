@@ -45,7 +45,7 @@ Contact the Hyperswitch team. There is no dashboard setup for this connector, an
 
 Webhooks are not supported, so there is no event list and nothing to configure. All three handlers return `WebhooksNotImplemented`: [`get_webhook_object_reference_id()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/cybersourcedecisionmanager.rs#L630-L635), [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/cybersourcedecisionmanager.rs#L637-L643) and [`get_webhook_resource_object()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/cybersourcedecisionmanager.rs#L645-L650).
 
-There is nothing to fall back on either, since the payment and sync flows are unimplemented too. This connector reports no status of its own.
+There is nothing to fall back on for payment status either, since the payment and sync flows are unimplemented too. Fraud-check status is the exception: the fraud-check flows return fraud screening outcomes (legitimate, fraud, manual review) from Cybersource responses.
 
 ### Source reference
 
