@@ -31,6 +31,7 @@
     * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
     * [Checkbook](connectors-integrations/available-connectors/checkbook.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
+    * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
