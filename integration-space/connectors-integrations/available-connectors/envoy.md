@@ -38,7 +38,7 @@ Envoy requires two credentials, which Envoy provides when you set up your accoun
 
 ### Webhooks
 
-Webhooks are not currently supported. All three webhook handlers return `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs#L683-696). Payout status must be tracked through payout sync or by checking Envoy directly.
+Webhooks are not currently supported. All three webhook handlers return `WebhooksNotImplemented`; see [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy.rs#L683-696). Payout sync is also not implemented — Envoy provides only payout create and payout fulfill — so payout status must be checked with Envoy directly.
 
 ### Source reference
 
