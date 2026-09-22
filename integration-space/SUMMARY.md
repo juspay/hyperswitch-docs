@@ -34,6 +34,7 @@
     * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
     * [Coingate](connectors-integrations/available-connectors/coingate.md)
+    * [Cryptopay](connectors-integrations/available-connectors/cryptopay.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
