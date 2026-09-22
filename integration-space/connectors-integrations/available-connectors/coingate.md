@@ -32,7 +32,7 @@ To connect Coingate to your Hyperswitch account, follow [Activate a connector on
 | crypto | Crypto | not supported | supported | automatic, sequential automatic | 59 | EUR, GBP, USD |
 
 {% hint style="warning" %}
-Although the capability table lists sequential automatic capture, the connector does not implement the capture flow. A capture request returns a flow-not-supported error, so only automatic capture works with CoinGate.
+Although the capability table lists sequential automatic capture, the connector does not implement the capture flow. A capture request returns a flow-not-supported error, so only automatic capture works with CoinGate. Tracked upstream as [issue 14374](https://github.com/juspay/hyperswitch/issues/14374).
 {% endhint %}
 
 ### Authentication
