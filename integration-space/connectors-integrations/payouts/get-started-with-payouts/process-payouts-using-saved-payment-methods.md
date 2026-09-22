@@ -10,7 +10,7 @@ metaLinks:
 ---
 
 <!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
-     symbols: recurring true vaults the method after a successful payout, when no payout_method_id was supplied = crates/router/src/core/payouts.rs:3123-3143
+     symbols: vaulting needs recurring true, no payout_method_id, and a customer_id; the customer_id check is an if let, so a payout without one succeeds and silently saves nothing = crates/router/src/core/payouts.rs:3123-3142
      symbols: supplying payout_method_id without confirm true is rejected = crates/router/src/core/payouts/validator.rs:77-92
      symbols: payout_token and payout_method_id are mutually exclusive, and payout_method_id requires customer context whose customer_id must match the stored method = crates/router/src/core/payouts/validator.rs:171-200
      symbols: the create request carries payout_token and payout_method_id, and no payment_token; payment_token is the list response field = crates/api_models/src/payouts.rs:169,209
@@ -28,7 +28,9 @@ Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitc
 * Pre-transaction storage: Create a payment method for a specific customer using the [/payment\_methods API](https://api-reference.hyperswitch.io/v1/payment-methods/paymentmethods--create). This action stores details directly in the secure locker.
 * Post-transaction storage: Details are automatically vaulted following a successful transaction if specific flags are set:
   * For payments: Set `"setup_future_usage": "off_session"`.
-  * For payouts: set `"recurring": true`. The method is vaulted after the payout succeeds, at [`payouts.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts.rs#L3123-L3143), which saves to the locker when `recurring` is set and no `payout_method_id` was supplied.
+  * For payouts: set `"recurring": true` **and send the customer**. Both are needed. The success handler at [`payouts.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts.rs#L3123-L3142) saves to the locker only when `recurring` is set, no `payout_method_id` was supplied, and a `customer_id` is present.
+
+    A payout with no customer still succeeds, and simply saves nothing. There is no error to catch, so the first sign of trouble is an empty list when you later go looking for the saved method. Send `customer` or `customer_id` on the create request whenever you intend to vault.
 
 Reusing a vaulted method is the other half of this and is covered under [Recurring/Subsequent Payouts](#recurring-subsequent-payouts): pass the stored `payout_method_id` and set `confirm` to `true`. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92) rejects a payout that supplies `payout_method_id` without `confirm: true`.
 
