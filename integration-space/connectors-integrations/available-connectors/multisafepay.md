@@ -12,9 +12,12 @@ MultiSafepay brings several checkout families into one connector, including card
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -27,17 +30,16 @@ MultiSafepay brings several checkout families into one connector, including card
 | bank redirect | EPS | not supported | supported | automatic, sequential automatic | not applicable | - | AUT | EUR |
 | bank redirect | Giropay | not supported | supported | automatic, sequential automatic | not applicable | - | DEU | EUR |
 | bank redirect | iDEAL | not supported | supported | automatic, sequential automatic | not applicable | - | NLD | EUR |
-| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | 9 ([full list](https://hyperswitch.io/pm-list)) | EUR |
-| bank redirect | Trustly | not supported | supported | automatic, sequential automatic | not applicable | - | 15 ([full list](https://hyperswitch.io/pm-list)) | EUR, GBP, SEK |
-| card | Credit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
-| pay later | Klarna | not supported | supported | automatic, sequential automatic | not applicable | - | 13 ([full list](https://hyperswitch.io/pm-list)) | DKK, EUR, GBP, NOK, SEK |
+| bank redirect | Sofort | not supported | supported | automatic, sequential automatic | not applicable | - | 9 | EUR |
+| bank redirect | Trustly | not supported | supported | automatic, sequential automatic | not applicable | - | 15 | EUR, GBP, SEK |
+| card | Credit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 | 34 |
+| card | Debit Card | supported | supported | automatic, sequential automatic | required | American Express, Cartes Bancaires, Maestro, Mastercard, Visa | 249 | 34 |
+| pay later | Klarna | not supported | supported | automatic, sequential automatic | not applicable | - | 13 | DKK, EUR, GBP, NOK, SEK |
 | wallet | Alipay | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR, USD |
-| wallet | Google Pay | supported | supported | automatic, sequential automatic | not applicable | - | 75 ([full list](https://hyperswitch.io/pm-list)) | 34 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | supported | supported | automatic, sequential automatic | not applicable | - | 75 | 34 |
 | wallet | MB WAY | not supported | supported | automatic, sequential automatic | not applicable | - | PRT | EUR |
-| wallet | PayPal | not supported | supported | automatic, sequential automatic | not applicable | - | 249 ([full list](https://hyperswitch.io/pm-list)) | 25 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | PayPal | not supported | supported | automatic, sequential automatic | not applicable | - | 249 | 25 |
 | wallet | WeChat Pay | not supported | supported | automatic, sequential automatic | not applicable | - | - | EUR |
-
 
 ### Authentication
 

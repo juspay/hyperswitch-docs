@@ -7,17 +7,35 @@
   * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 * [Payment Processors](connectors-integrations/payment-processor-capabilities.md)
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
+    * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
+    * [Affirm](connectors-integrations/available-connectors/affirm.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
+    * [Amazon Pay](connectors-integrations/available-connectors/amazonpay.md)
+    * [Archipel](connectors-integrations/available-connectors/archipel.md)
+    * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
+    * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
+    * [BarclayCard SmartPay Fuse](connectors-integrations/available-connectors/barclaycard.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
+    * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
+    * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
+    * [Boku](connectors-integrations/available-connectors/boku.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
+    * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
+    * [Calida](connectors-integrations/available-connectors/calida.md)
+    * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
+    * [Celero](connectors-integrations/available-connectors/celero.md)
+    * [Checkbook](connectors-integrations/available-connectors/checkbook.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
+    * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
+    * [Coingate](connectors-integrations/available-connectors/coingate.md)
+    * [Cryptopay](connectors-integrations/available-connectors/cryptopay.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
@@ -115,6 +133,12 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
+
+
+
+
+
+
 
 
 

@@ -44,7 +44,7 @@ Session _sessionId = await hyper.initPaymentSession(params);
 
 **4. Craft a customized payments experience**
 
-Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` function, using which you can confirm and handle the payment session.
+Call `getCustomerSavedPaymentMethods` with your session id and keep the `SavedSession` it returns. On Flutter the confirm functions are on the `Hyper` instance and take that saved session, as the example below shows, rather than hanging off a session object.
 
 ```dart
 SavedSession? _savedSessionId = await _hyper.getCustomerSavedPaymentMethods(_sessionId!);

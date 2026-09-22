@@ -12,9 +12,12 @@ Billwerk connects subscription commerce to card payment processing. Both credit 
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d4e93b6e6dd39e45a8d5d8647b362f1bb8543946; host http://localhost:8080; fetched 2026-09-14; matrix canonical-json-v1 sha256 1beab3d720a6bcc5; 138 connectors.
-     Do not edit by hand. This block regenerates from ConnectorSpecifications
-     and pm_filters in code; edit those sources instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
 **Integration status:** sandbox
 
@@ -26,7 +29,6 @@ Billwerk connects subscription commerce to card payment processing. Both credit 
 |---|---|---|---|---|---|---|---|---|
 | card | Credit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | DEU, DNK, FRA, SWE | DKK, NOK |
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | DEU, DNK, FRA, SWE | DKK, NOK |
-
 
 ### Authentication
 

@@ -1,6 +1,9 @@
 ---
 description: >-
   Accept card and wallet payments through NMI on Hyperswitch, with mandates, refunds, and manual capture.
+metaLinks:
+  alternates:
+    - nmi.md
 ---
 
 # NMI
@@ -9,20 +12,25 @@ NMI handles card payments and Apple Pay and Google Pay wallets through Hyperswit
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch d3c487e91c4f492e8839838966cce47ff12dc648; host http://localhost:8080; fetched 2026-09-04; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
-**Integration status:** live  
-**Category:** payment gateway  
+**Integration status:** live
+
+**Category:** payment gateway
+
 **Webhook flows:** payments, refunds
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
 |---|---|---|---|---|---|---|---|---|
-| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 98 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
-| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 98 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 96 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
-| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 96 ([full list](https://hyperswitch.io/pm-list)) | 160 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Credit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 98 | 160 |
+| card | Debit Card | supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Maestro, Mastercard, UnionPay, Visa | 98 | 160 |
+| wallet | Apple Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 96 | 160 |
+| wallet | Google Pay | supported | supported | automatic, manual, sequential automatic | not applicable | - | 96 | 160 |
 
 ### Webhooks
 
