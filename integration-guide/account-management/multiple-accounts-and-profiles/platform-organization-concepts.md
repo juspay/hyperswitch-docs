@@ -11,8 +11,8 @@ metaLinks:
      symbols: OrganizationCreateRequest, OrganizationResponse, ConvertOrganizationToPlatformRequest = crates/api_models/src/organization.rs
      symbols: MerchantAccountCreate = crates/api_models/src/admin.rs
      symbols: ProfileCreate = crates/api_models/src/admin.rs
-     symbols: CreateApiKeyRequest = crates/router/src/types/api/api_keys.rs
-     symbols: organization_create, merchant_account_create, profile_create, api_key_create = crates/router/src/routes/admin.rs; crates/router/src/routes/profiles.rs; crates/router/src/routes/api_keys.rs
+     symbols: CreateApiKeyRequest, MerchantConnectorCreate = crates/router/src/types/api/api_keys.rs; crates/api_models/src/admin.rs
+     symbols: organization_create, merchant_account_create, profile_create, api_key_create, connector_create = crates/router/src/routes/admin.rs; crates/router/src/routes/profiles.rs; crates/router/src/routes/api_keys.rs
      checked: 2026-09-22 -->
 
 # Platform Organization
@@ -29,9 +29,10 @@ The exact v1 sequence is:
 2. Create a connected merchant account with `POST /accounts`. Set the merchant-account request type to `connected` where the request schema provides it.
 3. Create the merchant's Business Profile with `POST /account/{account_id}/business_profile`.
 4. Create an API key for that merchant with `POST /api_keys/{merchant_id}`.
-5. Use the new merchant API key for the merchant's payment operations. For a Connected merchant, the platform authorization path can perform permitted operations on behalf of that merchant.
+5. Create the merchant connector account for that profile with `POST /account/{merchant_id}/connectors`, putting the processor credentials in `connector_account_details`. The platform can send this with either the merchant's own API key or the Platform API Key.
+6. Use the new merchant API key for the merchant's payment operations. For a Connected merchant, the platform authorization path can perform permitted operations on behalf of that merchant.
 
-For v2, the corresponding routes are `POST /v2/merchant-accounts`, `POST /v2/profiles`, and `POST /v2/api-keys`. The v2 route uses the authenticated merchant context rather than putting the merchant ID in each of those paths. Check the versioned request schema before sending fields because v1 and v2 use different identifier placement and profile request shapes.
+For v2, the corresponding routes are `POST /v2/merchant-accounts`, `POST /v2/profiles`, `POST /v2/api-keys`, and `POST /v2/connector-accounts`. The v2 route uses the authenticated merchant context rather than putting the merchant ID in each of those paths. Check the versioned request schema before sending fields because v1 and v2 use different identifier placement and profile request shapes.
 
 The profile remains the boundary for payment configuration. Processor credentials belong to the merchant connector account created for that profile, not to the platform organization or the merchant account.
 

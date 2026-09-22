@@ -2167,7 +2167,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-acco
 | Merchant Admin     | Merchant     | Full access across all profiles within the merchant |
 | Profile Admin      | Profile      | Full access to a specific business profile          |
 | Merchant Developer | Merchant     | Manage API keys and view analytics                  |
-| Profile Developer  | Profile      | Manage profile API keys and view analytics          |
+| Profile Developer  | Profile      | Manage profile settings and view analytics          |
 | Merchant Operator  | Merchant     | Manage operational workflows and view analytics     |
 | Profile Operator   | Profile      | Perform operational tasks within a profile          |
 | Customer Support   | Merchant     | View transactions and search payments               |
