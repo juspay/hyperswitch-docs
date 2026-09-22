@@ -46,7 +46,7 @@ Celero requires one credential: the **Celero API Key**, obtained when you set up
 
 ### Webhooks
 
-Webhooks are not supported for Celero. The connector does not implement incoming webhook handling, so there are no callbacks to configure or verify. To track payment status, use the payment sync (status check) API through Hyperswitch, or query Celero's API directly. See the [webhook interface stubs](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L707-L731) in the connector source.
+Webhooks are not supported for Celero. The connector does not implement incoming webhook handling, so there are no callbacks to configure or verify. To track payment status, use the payment sync (status check) API through Hyperswitch. Refund status works the same way: refund sync is implemented via Celero's transaction search endpoint, so use the refund status check API rather than waiting for callbacks. See the [webhook interface stubs](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L707-L731) and the [refund sync implementation](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/celero.rs#L626-L657) in the connector source.
 
 ### Source reference
 
