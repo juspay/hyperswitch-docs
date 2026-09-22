@@ -50,6 +50,19 @@ The create request uses `payout_type` for the method family and `payout_method_d
 * `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`, serialized in `snake_case` by [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261). The source marks `bank` deprecated and points new integrations at `bank_transfer`.
 * With `bank_transfer`, `payout_method_type` is `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, or `payshap_proxy`. These are the tagged wire values on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434).
 
+```json
+"payout_type": "bank",
+"payout_method_data": {
+  "bank_transfer": {
+    "payout_method_type": "ach",
+    "bank_account_number": "<account number>",
+    "bank_routing_number": "<routing number>"
+  }
+}
+```
+
+`payout_type` is a plain string. `payout_method_data` is not: it is an object keyed by the method name, because [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261) carries the method's details and is externally tagged. Sending `"payout_method_data": "bank_transfer"` is not a valid request. Inside `bank_transfer`, the method type is a field rather than another level of nesting, because [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434) is tagged on `payout_method_type`.
+
 Crypto assets, including USDT, are not payout method values in these enums.
 
 #### Configuring Payout Processors
