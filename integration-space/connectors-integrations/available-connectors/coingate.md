@@ -32,16 +32,22 @@ To connect Coingate to your Hyperswitch account, follow [Activate a connector on
 | crypto | Crypto | not supported | supported | automatic, sequential automatic | 59 | EUR, GBP, USD |
 
 {% hint style="warning" %}
-Although the capability table lists sequential automatic capture, the connector does not implement the capture flow — capture requests return a "flow not supported" error. Only **automatic** capture works with CoinGate.
+Although the capability table lists sequential automatic capture, the connector does not implement the capture flow. A capture request returns a flow-not-supported error, so only automatic capture works with CoinGate.
 {% endhint %}
 
 ### Authentication
 
-Enter the connector credentials **API Key** and **Merchant Token**. The API key is sent as `Authorization: Bearer <API key>`; the merchant token is used to verify CoinGate webhook requests. These labels come from [`[coingate.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml); the auth mapping is [`CoingateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L119-L135), and the header is built in [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L122-L133).
+Enter the connector credentials **API Key** and **Merchant Token**. Both are used on the payment path, not just for callbacks.
+
+The API key is sent as `Authorization: Bearer <API key>`. The Merchant Token is sent in the body of every payment creation request, as the `token` field of [`CoingatePaymentsRequest`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L67-L94), and the same value is what CoinGate webhooks are checked against. A wrong Merchant Token therefore fails payments, not only callbacks. These labels come from [`[coingate.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/connector_configs/toml/sandbox.toml); the auth mapping is [`CoingateAuthType`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L119-L135), and the header is built in [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs#L122-L133).
 
 ### Refund metadata
 
-Refunds require three additional values in the connector metadata — `currency_id`, `platform_id`, and `ledger_account_id` — which are consumed by refund requests, not authentication. They are not currency-scoped credentials. See [`CoingateConnectorMetadataObject`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L38-L42).
+Refunds need more than the two credentials, from two different places, and a refund fails if either set is incomplete.
+
+Three values come from the connector metadata you configure once: `currency_id`, `platform_id`, and `ledger_account_id`, from [`CoingateConnectorMetadataObject`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L37-L42). These are not authentication values and are not currency-scoped credentials.
+
+Three more come from the refund request itself: `address` and `email` are read out of `refund_connector_metadata`, and `reason` is the refund's own reason field. [`CoingateRefundRequest`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs#L218-L275) rejects the refund with a missing-field error if `refund_connector_metadata` is absent, or if it lacks `address` or `email`, or if the refund carries no `reason`. Supply all three per refund.
 
 ### Before you start
 
@@ -57,4 +63,4 @@ CoinGate maps webhook statuses to payment outcomes: `Pending` becomes processing
 
 ### Source reference
 
-Authentication, refund metadata, capture, and webhook behavior on this page are tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Coingate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs) and [Coingate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs).
+Authentication and webhook behavior on this page is tied to Hyperswitch `ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7`. See [Coingate connector source](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate.rs) and [Coingate transformers](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/coingate/transformers.rs).
