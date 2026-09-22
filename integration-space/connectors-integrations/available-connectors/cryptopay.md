@@ -47,7 +47,7 @@ No provider dashboard path beyond these credential names was verified for this p
 
 ### Webhooks
 
-Cryptopay verifies callbacks with HMAC-SHA256 over the raw request body, using the hex signature in `X-Cryptopay-Signature`. It maps `Completed` to success, `Unresolved` to action required, and `Cancelled` to failure; other statuses are unsupported. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L429-L456) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L477-L499).
+Cryptopay verifies callbacks with HMAC-SHA256 over the raw request body, using the hex signature in `X-Cryptopay-Signature`. It maps the wire statuses `completed` to success, `unresolved` to action required, and `cancelled` to failure; other statuses are unsupported. See [`get_webhook_source_verification_algorithm()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L429-L456) and [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7/crates/hyperswitch_connectors/src/connectors/cryptopay.rs#L477-L499).
 
 ### Source reference
 
