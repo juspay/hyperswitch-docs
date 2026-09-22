@@ -1,5 +1,5 @@
 ---
-description: Dwolla connector for payment gateway.
+description: Connect Dwolla through Hyperswitch.
 metaLinks:
   alternates:
     - dwolla.md
@@ -13,10 +13,13 @@ To connect Dwolla to your Hyperswitch account, follow [Activate a connector on H
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; host http://localhost:8080; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; fetched 2026-09-22; matrix canonical-json-v1 sha256 873f2bbfe94dc9fda3279d10e6c077a8fe4a10d38f97f3aba64d57093c5245c4; 146 connectors.
-     Do not edit by hand. Payment method rows regenerate from the connector's SupportedPaymentMethods declaration; countries and
-     currencies come from pm_filters in config/development.toml. Webhook flows and capture methods print as declared; the
-     declaration-gap check reconciles them in prose. Edit those sources instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch ec9d1d22bf0257b7de4d4d8bbba4e27fd520bdf7; host http://localhost:8080; fetched 2026-09-21; matrix canonical-json-v1 sha256 873f2bbfe94dc9fda3279d10e6c077a8fe4a10d38f97f3aba64d57093c5245c4; 146 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods print as declared; the
+     declaration-gap check reconciles them in prose. Edit those
+     sources instead. -->
 
 **Integration status:** sandbox
 
@@ -31,7 +34,7 @@ To connect Dwolla to your Hyperswitch account, follow [Activate a connector on H
 
 ### Authentication
 
-Activation needs three values, not two. [`[dwolla.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml) supplies the first two labels and the connector metadata supplies the third:
+Activation needs three values, not two. [`[dwolla.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L2441-L2443) supplies the first two labels and the connector metadata supplies the third:
 
 | Field | Required |
 | --- | --- |
@@ -54,13 +57,15 @@ Dwolla's event enum recognizes 21 topic wire values, plus an `Unknown` fallback 
 
 What a handled event means depends on whether the callback belongs to a refund, which the connector decides from the correlation id: an id beginning `refund_` makes it a refund event.
 
-| Wire value | On a payment | On a refund |
+| Topic | On a payment | On a refund |
 | --- | --- | --- |
-| `CustomerTransferCreated`, `CustomerBankTransferCreated` | Payment is processing | No update |
-| `CustomerTransferCompleted`, `CustomerBankTransferCompleted` | Payment succeeds | Refund succeeds |
-| `CustomerTransferFailed`, `CustomerBankTransferFailed` | Payment fails | Refund fails |
+| `customer_transfer_created`, `customer_bank_transfer_created` | Payment is processing | No update |
+| `customer_transfer_completed`, `customer_bank_transfer_completed` | Payment succeeds | Refund succeeds |
+| `customer_transfer_failed`, `customer_bank_transfer_failed` | Payment fails | Refund fails |
 
-The mapping is at [`TryFrom<DwollaWebhookDetails> for IncomingWebhookEvent`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L576-L608). The other fifteen recognized values, the customer and funding-source and microdeposit events, parse but do nothing, as does the `Unknown` fallback for unrecognized topics.
+The topic strings above are what Dwolla sends on the wire, matched in [`From<&str> for DwollaWebhookEventType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L519-L546); the mapping to an outcome is at [`TryFrom<DwollaWebhookDetails> for IncomingWebhookEvent`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla/transformers.rs#L576-L608). The other fifteen recognized topics, the customer and funding-source and microdeposit events, parse but do nothing, as does the `Unknown` fallback for unrecognized topics.
+
+A callback that arrives with no correlation id at all is dropped before the topic is even read: the handler returns `EventNotSupported` regardless of which event it was. Payments and refunds started through Hyperswitch carry one, but a transfer created directly in Dwolla may not, and no such callback will update a payment.
 
 Callbacks are verified with a real HMAC-SHA256 over the request body, keyed on your **Source verification key**, at [`verify_webhook_source()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/dwolla.rs#L888-L915). A callback that fails the check is rejected.
 
