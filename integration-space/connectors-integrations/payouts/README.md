@@ -61,27 +61,27 @@ Payouts run through 21 connectors. The names below are the variants of [`PayoutC
 
 | Connector           | Regions      | Cards                                                                 | Bank Rails              | Wallets                |
 | ------------------- | ------------ | ---------------------------------------------------------------------| ------------------------| ---------------------- |
-| **Adyen**           | Global       | —                                                                     | SEPA                    | PayPal                 |
-| **Adyen Platform**  | Global       | Visa, Mastercard                                                      | SEPA                     | —                      |
-| **Cybersource**     | Global       | Major Networks                                                        | —                       | —                      |
-| **Deutsche Bank**   | Europe       | —                                                                     | SEPA                    | —                      |
-| **Ebanx**           | Brazil       | —                                                                     | Pix (Key)\*             | —                      |
-| **Envoy**           | UK, EU & US  | —                                                                     | SEPA, BACS, ACH         | —                      |
-| **Gigadat**         | Canada       | —                                                                     | Interac                 | —                      |
-| **GotymeSanlam**    | South Africa | —                                                                     | PayShap, PayShap Proxy  | —                      |
-| **Itaubank**        | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
-| **Loonio**          | Canada       | —                                                                     | Interac                 | —                      |
-| **Nomupay**         | Europe       | —                                                                     | SEPA                    | —                      |
-| **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | —                       | —                      |
-| **Payone**          | Europe       | Major Networks                                                        | —                       | —                      |
-| **PayPal**          | Global       | —                                                                     | —                       | PayPal, Venmo\*\*      |
-| **Santander**       | Brazil       | —                                                                     | Pix, Pix Key, Pix EMV   | —                      |
-| **Stripe**          | Global       | Debit Cards                                                           | ACH                     | —                      |
-| **Truelayer**       | UK & Europe  | —                                                                     | Open Banking            | —                      |
-| **Trustly**         | Europe       | —                                                                     | Trustly (A2A)           | —                      |
-| **Wise**            | Global       | —                                                                     | ACH, BACS, SEPA         | —                      |
-| **Worldpay**        | Global       | —                                                                     | —                       | Apple Pay              |
-| **Worldpay XML**    | Global       | Visa, Mastercard                                                      | —                       | Apple Pay, Google Pay  |
+| **Adyen**           | Global       | -                                                                     | SEPA                    | PayPal                 |
+| **Adyen Platform**  | Global       | Visa, Mastercard                                                      | SEPA                     | -                      |
+| **Cybersource**     | Global       | Major Networks                                                        | -                       | -                      |
+| **Deutsche Bank**   | Europe       | -                                                                     | SEPA                    | -                      |
+| **Ebanx**           | Brazil       | -                                                                     | Pix (Key)\*             | -                      |
+| **Envoy**           | UK, EU & US  | -                                                                     | SEPA, BACS, ACH         | -                      |
+| **Gigadat**         | Canada       | -                                                                     | Interac                 | -                      |
+| **GotymeSanlam**    | South Africa | -                                                                     | PayShap, PayShap Proxy  | -                      |
+| **Itaubank**        | Brazil       | -                                                                     | Pix, Pix Key, Pix EMV   | -                      |
+| **Loonio**          | Canada       | -                                                                     | Interac                 | -                      |
+| **Nomupay**         | Europe       | -                                                                     | SEPA                    | -                      |
+| **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | -                       | -                      |
+| **Payone**          | Europe       | Major Networks                                                        | -                       | -                      |
+| **PayPal**          | Global       | -                                                                     | -                       | PayPal, Venmo\*\*      |
+| **Santander**       | Brazil       | -                                                                     | Pix, Pix Key, Pix EMV   | -                      |
+| **Stripe**          | Global       | Debit Cards                                                           | ACH                     | -                      |
+| **Truelayer**       | UK & Europe  | -                                                                     | Open Banking            | -                      |
+| **Trustly**         | Europe       | -                                                                     | Trustly (A2A)           | -                      |
+| **Wise**            | Global       | -                                                                     | ACH, BACS, SEPA         | -                      |
+| **Worldpay**        | Global       | -                                                                     | -                       | Apple Pay              |
+| **Worldpay XML**    | Global       | Visa, Mastercard                                                      | -                       | Apple Pay, Google Pay  |
 
 The regions and method columns are maintained by hand and are not derived from the connector declarations, so treat them as a guide and confirm with your connector. The connector names are the part tied to the source.
 
