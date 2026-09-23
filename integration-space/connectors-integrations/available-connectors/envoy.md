@@ -10,7 +10,7 @@ metaLinks:
 # Envoy
 
 {% hint style="warning" %}
-**Envoy is a payout processor.** Although Envoy is registered as a payment gateway connector, its payment-side flows are unimplemented stubs: the connector declares no payment methods, and every payment flow (authorize, sync, capture, refund) fails with a "not implemented" error. What Envoy actually implements is payouts — it is one of the [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/api_models/src/enums.rs#L48-L70), and payout fulfillment has a working implementation. Use Envoy through [Hyperswitch Payouts](../payouts/README.md), not for accepting payments.
+**Envoy is a payout processor.** Although Envoy is registered as a payment gateway connector, its payment-side flows are unimplemented stubs: the connector declares no payment methods, and every payment flow (authorize, sync, capture, refund) fails with a "not implemented" error. What Envoy actually implements is payouts. It is one of the [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/api_models/src/enums.rs#L48-L70), and payout fulfillment has a working implementation. Use Envoy through [Hyperswitch Payouts](../payouts/README.md), not for accepting payments.
 {% endhint %}
 
 ### Status and capabilities
@@ -33,7 +33,7 @@ _This connector declares no payment methods. Its payment flows are stubs; see th
 
 ### Authentication
 
-Envoy requires two credentials, which Envoy provides when you set up your account with them: **Username** and **Password**. Both are sent with each API request as body-key fields — see [`EnvoyAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy/transformers.rs#L83-L98) in the connector source. The labels come from [`[envoy_payout.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L8731-L8733); note that the configuration key is `envoy_payout`, because Envoy is registered for payouts rather than payments.
+Envoy requires two credentials, which Envoy provides when you set up your account with them: **Username** and **Password**. Both are sent with each API request as body-key fields. See [`EnvoyAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/envoy/transformers.rs#L83-L98) in the connector source. The labels come from [`[envoy_payout.connector_auth.BodyKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L8731-L8733); note that the configuration key is `envoy_payout`, because Envoy is registered for payouts rather than payments.
 
 ### Before you start
 
