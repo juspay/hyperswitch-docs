@@ -36,14 +36,14 @@ To connect Finix to your Hyperswitch account, follow [Activate a connector on Hy
 
 
 {% hint style="warning" %}
-Finix rejects 3DS card payments outright. A card request sent with the authentication type set to 3DS fails with a "not supported" error before anything reaches Finix — see [the guard in `FinixPaymentsRequest`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L133-L144). The table's "3DS: not supported" means the connector errors on 3DS attempts rather than falling back to non-3DS, so route cards to another connector if your profile enables 3DS.
+Finix rejects 3DS card payments outright. A card request sent with the authentication type set to 3DS fails with a "not supported" error before anything reaches Finix. See [the guard in `FinixPaymentsRequest`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L133-L144). The table's "3DS: not supported" means the connector errors on 3DS attempts rather than falling back to non-3DS, so route cards to another connector if your profile enables 3DS.
 {% endhint %}
 
 ### Authentication
 
 Finix needs four credentials, not two. Enter **Username**, **Password**, **Merchant Id**, and **Merchant Identity Id**; activation will not complete without all four. The labels come from [`[finix.connector_auth.MultiAuthKey]`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/connector_configs/toml/sandbox.toml#L8341-L8345).
 
-They are not used the same way. **Username** and **Password** are combined as `username:password`, base64-encoded, and sent as HTTP Basic authentication in the `Authorization` header — see [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix.rs#L307-L328). **Merchant Id** and **Merchant Identity Id** are not authentication values: they travel in the request body as the `merchant` and `merchant_identity` fields, so a wrong value there fails the payment rather than the login. The mapping is [`FinixAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L511-L529).
+They are not used the same way. **Username** and **Password** are combined as `username:password`, base64-encoded, and sent as HTTP Basic authentication in the `Authorization` header. See [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix.rs#L307-L328). **Merchant Id** and **Merchant Identity Id** are not authentication values: they travel in the request body as the `merchant` and `merchant_identity` fields, so a wrong value there fails the payment rather than the login. The mapping is [`FinixAuthType`](https://github.com/juspay/hyperswitch/blob/502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5/crates/hyperswitch_connectors/src/connectors/finix/transformers.rs#L511-L529).
 
 ### Before you start
 
