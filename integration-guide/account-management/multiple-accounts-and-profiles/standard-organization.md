@@ -30,7 +30,7 @@ A Standard Organization follows the standard three-level hierarchy:
 * **Merchant Account** under the organization, each with its own API keys.
 * **Profile** under each merchant, where routing, connectors, webhooks, and return URLs are configured.
 
-For the full hierarchy reference, including how to add merchants and profiles via the dashboard, see [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
+For the full hierarchy reference, including how to add merchants and profiles via the dashboard, see [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md).
 
 ***
 
@@ -63,5 +63,5 @@ For role-based access details, see [Manage Your Team](../manage-your-team.md).
 ### Next Steps
 
 * Run your first payment: [Quick Start: Make a Payment](quick-start.md#5.-make-a-payment).
-* Understand the Org / Merchant / Profile hierarchy in depth: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
+* Understand the Org / Merchant / Profile hierarchy in depth: [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md).
 * Considering a Platform setup instead: [Pick the Right Setup for Your Business](pick-the-right-setup.md).

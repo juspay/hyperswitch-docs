@@ -5,6 +5,8 @@ metaLinks:
     - frequently-asked-questions.md
 ---
 
+<!-- truth manifest; hyperswitch 502bfe8ddbe6a9a9619dc4e0b88900a780c2aac5; checked: 2026-09-22; symbols: MerchantAccount API-key scope = crates/router/src/routes/api_keys.rs; ProfileUpdate and ProfileResponse = crates/api_models/src/admin.rs -->
+
 # Frequently Asked Questions
 
 ## Getting Started
@@ -1057,7 +1059,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/workflows/smart-retries
 * Credentials are encrypted using **AES-256 symmetric encryption** through a master key.
 * Sensitive values are masked during transmission and are not stored on local systems.
 
-Connector credential management permissions are available to Merchant Developer and Profile Developer roles.
+Managing connector credentials requires an Admin role: Organization Admin, Merchant Admin, or Profile Admin. The Developer roles have view-only access to connectors and cannot add or edit processor credentials.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/connectors/activate-connector-on-hyperswitch\
@@ -1266,7 +1268,8 @@ Navigate to **Settings → Users** in the Control Centre to create or assign rol
 | ----------------------------- | ------------------------------------------- |
 | Organization Admin            | Full platform access                        |
 | Merchant or Profile Admin     | Full merchant-level access                  |
-| Merchant or Profile Developer | Analytics access and API key management     |
+| Merchant Developer            | Analytics access and API key management     |
+| Profile Developer             | Analytics access and profile settings       |
 | Merchant or Profile Operator  | Payment operations and analytics visibility |
 | Customer Support              | Transaction-level access                    |
 | View Only roles               | Read-only access to analytics dashboards    |
@@ -2148,7 +2151,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart
 | Merchant                   | Business entity under the organisation | Individual business or subsidiary                 |
 | Profile (Business Profile) | Operational unit within a merchant     | Website, mobile app, brand, or regional operation |
 
-Each business profile maintains independent configurations for payment methods, connector credentials, routing rules, webhook endpoints, and API keys.
+Each business profile maintains independent payment configuration, connector associations, routing rules, and webhook endpoints. API keys belong to the Merchant Account scope, not to the Business Profile.
 
 Documentation:\
 https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure
@@ -2165,7 +2168,7 @@ https://docs.hyperswitch.io/explore-hyperswitch/account-management/multiple-acco
 | Merchant Admin     | Merchant     | Full access across all profiles within the merchant |
 | Profile Admin      | Profile      | Full access to a specific business profile          |
 | Merchant Developer | Merchant     | Manage API keys and view analytics                  |
-| Profile Developer  | Profile      | Manage profile API keys and view analytics          |
+| Profile Developer  | Profile      | Manage profile settings and view analytics          |
 | Merchant Operator  | Merchant     | Manage operational workflows and view analytics     |
 | Profile Operator   | Profile      | Perform operational tasks within a profile          |
 | Customer Support   | Merchant     | View transactions and search payments               |

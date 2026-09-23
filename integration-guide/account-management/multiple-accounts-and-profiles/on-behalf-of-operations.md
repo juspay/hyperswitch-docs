@@ -17,7 +17,7 @@ The walkthrough below uses a payment as the example, but the same authentication
 
 ### 1. Authenticate with the Platform API Key
 
-Use the Platform API Key (generated from the Platform Merchant context) to authenticate the request. See [Generating a Platform API Key](platform-organization-concepts.md#2.-generate-a-platform-api-key) for how to create one.
+Use the Platform API Key (generated from the Platform Merchant context) to authenticate the request. See [Programmatic onboarding flow](platform-organization-concepts.md#programmatic-onboarding-flow) for how to create one.
 
 ### 2. Identify the Connected Merchant in the Request
 

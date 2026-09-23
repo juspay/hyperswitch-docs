@@ -94,5 +94,5 @@ For deeper routing options, see the [Smart Router](../../../other-features/payme
 ### What's Next
 
 * Decide on the right account structure for your business: [Pick the Right Setup for Your Business](pick-the-right-setup.md).
-* Understand the three-level hierarchy: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
+* Understand the three-level hierarchy: [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md).
 * If you're operating a marketplace, VSaaS, or onboarding sub-merchants: [Platform Organization](platform-organization-concepts.md).
