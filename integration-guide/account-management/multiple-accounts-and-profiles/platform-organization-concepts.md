@@ -55,7 +55,7 @@ Connected merchants share the platform resource model only where the backend per
 
 ### Dashboard profile identifier
 
-The control center's payment-settings profile view shows `Profile ID` next to `Profile Name` and `Merchant ID`, with a copy control. Where that identifier goes depends on the API version: on v1 pass it as `profile_id` in the payment request body, and on v2 send it in the `X-Profile-Id` header, because the v2 `PaymentsRequest` has no `profile_id` field. In profile APIs it is the profile path parameter on both versions. See [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md#choosing-the-level).
+The control center's payment-settings profile view shows `Profile ID` next to `Profile Name` and `Merchant ID`, with a copy control. Where that identifier goes depends on the API version: on v1 pass it as `profile_id` in the payment request body, and on v2 send it in the `X-Profile-Id` header, because the v2 `PaymentsRequest` has no `profile_id` field. In profile APIs it is the profile path parameter on both versions. See [Selecting a profile for a payment](hyperswitch-account-structure.md#selecting-a-profile-for-a-payment).
 
 ### Related pages
 

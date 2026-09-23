@@ -30,15 +30,48 @@ Hyperswitch separates organization ownership, merchant authentication, and payme
 * A **Business Profile** belongs to a merchant account and stores payment configuration, including return URL, webhook details, routing-related settings, and profile-level feature settings.
 * A **merchant_connector_account** belongs to a profile. Its connector account details are where processor credentials are stored. Do not put processor credentials on the organization or merchant account.
 
-Identifier names depend on the API version. On v1 each object carries a named identifier: `organization_id`, `merchant_id`, `profile_id`, and `merchant_connector_id`. On v2 an object's own identifier is always `id`. A reference to another object keeps its named form on both versions, so the profile a connector account belongs to is `profile_id` either way.
+### Identifiers
 
-The backend models this relationship in `OrganizationResponse`, `MerchantAccountResponse`, `ProfileResponse`, and `MerchantConnectorResponse`. The connector create request carries `connector_account_details` on `MerchantConnectorCreate`.
+Every object in the hierarchy has an identifier, and the naming convention changed between API versions. This is worth understanding before you read an API response, because v1-era examples and v2 responses describe the same objects with different field names.
+
+The rule is short: on v1, an object's identifier is named after the object; on v2, an object's own identifier is always `id`.
+
+| Object | v1 | v2 |
+| --- | --- | --- |
+| Organization | `organization_id` | `id` |
+| Merchant Account | `merchant_id` | `id` |
+| Business Profile | `profile_id` | `id` |
+| Connector account | `merchant_connector_id` | `id` |
+
+The rename applies only to an object's *own* identifier. When one object points at another, that reference keeps its descriptive name on both versions. A connector account is the clearest example: on v2 its response carries `id` for itself and `profile_id` for the profile it belongs to, side by side. Seeing `profile_id` in a v2 payload does not mean you are looking at a profile — it means you are looking at something that belongs to one.
+
+These shapes come from `OrganizationResponse`, `MerchantAccountResponse`, `ProfileResponse`, and `MerchantConnectorResponse`. When you create a connector account, the processor credentials go in `connector_account_details` on `MerchantConnectorCreate`.
 
 ### Choosing the level
 
-Use multiple merchant accounts when each business needs separate merchant API keys. Use multiple profiles when one merchant account needs separate payment configuration while retaining one merchant API-key scope.
+Merchant accounts and profiles solve different problems, and the question that separates them is whether the units need their own credentials or only their own configuration.
 
-How a profile is selected for a payment depends on the API version. On v1, `PaymentsRequest` carries an optional `profile_id`. The handler calls `get_profile_id_from_business_details`: it first uses the request `profile_id`, then the merchant account's `default_profile`, and only then resolves the legacy `business_country` plus `business_label` pair. If none is available, the handler returns a missing-field error. Therefore, when the account has one profile and that profile is the account's `default_profile`, omitting `profile_id` works through the default-profile branch. This is handler behavior, not a property of the Rust field declaration. On v2, `PaymentsRequest` has no `profile_id` field at all: the profile comes from the `X-Profile-Id` request header, which `V2ApiKeyAuth` requires when it authenticates the call.
+Add **merchant accounts** when each unit needs its own API keys, because API keys are issued at the merchant-account scope. Separate legal entities, separate billing relationships, or any case where one unit's credentials must not work for another all point here.
+
+Add **profiles** when one business needs several payment setups but can share a single set of API keys. A profile owns its connectors, routing rules, webhook endpoint and return URL, so profiles are how you separate a web storefront from a mobile app, or one region from another, without multiplying credentials.
+
+Because payments, connectors and webhooks are all configured at the profile level anyway, reach for a second merchant account only when the API-key boundary is the actual requirement.
+
+#### Selecting a profile for a payment
+
+Each payment runs against exactly one profile. How that profile is chosen differs by version, and the v1 behavior deserves attention because the field is optional without always being safe to omit.
+
+**On v1**, `PaymentsRequest` carries an optional `profile_id`. The handler, `get_profile_id_from_business_details`, tries three sources in order:
+
+1. the `profile_id` on the request, if you sent one;
+2. the merchant account's `default_profile`;
+3. the legacy `business_country` and `business_label` pair, resolved together.
+
+If none of the three produces a profile, the request fails with a missing-field error.
+
+The practical consequence is in step 2. An account with a single profile that is also its `default_profile` will accept payments that omit `profile_id`, which makes the field look unnecessary. Add a second profile and nothing breaks — the payment simply keeps going to the default profile, which may not be the one you intended. That silent outcome is the reason to send `profile_id` explicitly once an account has more than one profile. The field being optional describes the request schema; it does not tell you whether omitting it is safe for your account.
+
+**On v2**, `PaymentsRequest` has no `profile_id` field at all. The profile comes from the `X-Profile-Id` request header, which `V2ApiKeyAuth` reads and requires while authenticating the call. Every v2 payment therefore names its profile explicitly, and there is no default-profile fallback to depend on.
 
 ### Create merchant accounts and profiles
 
