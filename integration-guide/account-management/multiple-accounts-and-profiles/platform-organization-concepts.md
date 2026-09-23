@@ -23,7 +23,7 @@ metaLinks:
 
 A Platform Organization is an organization whose platform merchant can create and manage merchant accounts programmatically. The backend represents organization type with `organization_type: "platform"` and merchant type with `merchant_account_type: "platform"`, `"connected"`, or `"standard"`.
 
-The platform merchant is the control-plane merchant. A Connected merchant can be operated on behalf of through the platform authorization path. A Standard merchant remains operationally isolated and uses its own merchant API key for payment operations.
+The platform merchant is the control-plane merchant. A Connected merchant can be operated on behalf of through the platform authorization path. A Standard merchant cannot be operated on that path and uses its own merchant API key for payment operations.
 
 ### Programmatic onboarding flow
 
