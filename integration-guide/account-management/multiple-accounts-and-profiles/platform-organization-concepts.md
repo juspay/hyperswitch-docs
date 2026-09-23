@@ -53,6 +53,8 @@ The profile remains the boundary for payment configuration. Processor credential
 
 Connected merchants share the platform resource model only where the backend permits it. Standard merchants keep isolated customer and payment-method data. Both merchant types have their own merchant account and profiles. The classification is set by the merchant-account type and is not a dashboard label that changes the API scope.
 
+<figure><img src="../../../.gitbook/assets/setup-platform-org-diagram.png" alt="Platform Organization with Platform Merchant and Connected Merchants in shared scope, and Standard Merchants in isolated scope"><figcaption><p>Platform Organization - shared scope for Platform and Connected merchants, isolated scope for Standard merchants</p></figcaption></figure>
+
 ### Dashboard profile identifier
 
 The control center's payment-settings profile view shows `Profile ID` next to `Profile Name` and `Merchant ID`, with a copy control. Where that identifier goes depends on the API version: on v1 pass it as `profile_id` in the payment request body, and on v2 send it in the `X-Profile-Id` header, because the v2 `PaymentsRequest` has no `profile_id` field. In profile APIs it is the profile path parameter on both versions. See [Selecting a profile for a payment](hyperswitch-account-structure.md#selecting-a-profile-for-a-payment).

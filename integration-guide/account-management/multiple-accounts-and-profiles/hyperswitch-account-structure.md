@@ -51,9 +51,13 @@ These shapes come from `OrganizationResponse`, `MerchantAccountResponse`, `Profi
 
 Merchant accounts and profiles solve different problems, and the question that separates them is whether the units need their own credentials or only their own configuration.
 
-Add **merchant accounts** when each unit needs its own API keys, because API keys are issued at the merchant-account scope. Separate legal entities, separate billing relationships, or any case where one unit's credentials must not work for another all point here.
+Add **merchant accounts** when each unit needs its own API keys, because API keys are issued at the merchant-account scope. Separate legal entities, separate billing relationships, or any case where one unit's credentials must not work for another all point here. A retailer whose Shoes, Clothing and Bags brands each integrate separately, or a marketplace whose sub-merchants embed their own keys, both land on this shape.
 
-Add **profiles** when one business needs several payment setups but can share a single set of API keys. A profile owns its connectors, routing rules, webhook endpoint and return URL, so profiles are how you separate a web storefront from a mobile app, or one region from another, without multiplying credentials.
+<figure><img src="../../../.gitbook/assets/account-multiple-merchants-diagram.png" alt="Organization with multiple Merchant Accounts (Clothing, Shoes, Bags), each with its own API key, Profile, and Connectors"><figcaption><p>One Organization with multiple Merchant Accounts, each having its own Profile and Connectors</p></figcaption></figure>
+
+Add **profiles** when one business needs several payment setups but can share a single set of API keys. A profile owns its connectors, routing rules, webhook endpoint and return URL, so profiles are how you separate a web storefront from a mobile app, or one region from another, without multiplying credentials. The same retailer wanting one key across all three brands, but different routing rules for each, belongs here instead.
+
+<figure><img src="../../../.gitbook/assets/account-multiple-profiles-diagram.png" alt="One Organization with one Merchant Account (Merchant A) and multiple Profiles (Clothing, Shoes, Bags), each with its own Connectors"><figcaption><p>One Merchant Account with multiple Profiles, each having its own set of Connectors</p></figcaption></figure>
 
 Because payments, connectors and webhooks are all configured at the profile level anyway, reach for a second merchant account only when the API-key boundary is the actual requirement.
 
