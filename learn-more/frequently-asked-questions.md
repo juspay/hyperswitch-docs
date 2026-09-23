@@ -2588,7 +2588,7 @@ Payment data is hosted and managed by Juspay within Juspay's cloud infrastructur
 
 **Self-hosted deployment**
 
-Payment data resides within the merchant's own infrastructure. The merchant controls storage location, access, encryption, retention, and regional data residency compliance.
+Payment data does not leave the merchant's own infrastructure. The merchant controls storage location, access, encryption, retention, and regional data residency compliance.
 
 **Vault and card data**
 
