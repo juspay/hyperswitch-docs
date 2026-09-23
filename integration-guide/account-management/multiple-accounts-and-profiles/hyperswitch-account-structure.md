@@ -43,7 +43,7 @@ The rule is short: on v1, an object's identifier is named after the object; on v
 | Business Profile | `profile_id` | `id` |
 | Connector account | `merchant_connector_id` | `id` |
 
-The rename applies only to an object's *own* identifier. When one object points at another, that reference keeps its descriptive name on both versions. A connector account is the clearest example: on v2 its response carries `id` for itself and `profile_id` for the profile it belongs to, side by side. Seeing `profile_id` in a v2 payload does not mean you are looking at a profile — it means you are looking at something that belongs to one.
+The rename applies only to an object's *own* identifier. When one object points at another, that reference keeps its descriptive name on both versions. A connector account is the clearest example: on v2 its response carries `id` for itself and `profile_id` for the profile it belongs to, side by side. Seeing `profile_id` in a v2 payload does not mean you are looking at a profile. It means you are looking at something that belongs to one.
 
 These shapes come from `OrganizationResponse`, `MerchantAccountResponse`, `ProfileResponse`, and `MerchantConnectorResponse`. When you create a connector account, the processor credentials go in `connector_account_details` on `MerchantConnectorCreate`.
 
@@ -73,7 +73,7 @@ Each payment runs against exactly one profile. How that profile is chosen differ
 
 If none of the three produces a profile, the request fails with a missing-field error.
 
-The practical consequence is in step 2. An account with a single profile that is also its `default_profile` will accept payments that omit `profile_id`, which makes the field look unnecessary. Add a second profile and nothing breaks — the payment simply keeps going to the default profile, which may not be the one you intended. That silent outcome is the reason to send `profile_id` explicitly once an account has more than one profile. The field being optional describes the request schema; it does not tell you whether omitting it is safe for your account.
+The practical consequence is in step 2. An account with a single profile that is also its `default_profile` will accept payments that omit `profile_id`, which makes the field look unnecessary. Add a second profile and nothing breaks. The payment simply keeps going to the default profile, which may not be the one you intended. That silent outcome is the reason to send `profile_id` explicitly once an account has more than one profile. The field being optional describes the request schema; it does not tell you whether omitting it is safe for your account.
 
 **On v2**, `PaymentsRequest` has no `profile_id` field at all. The profile comes from the `X-Profile-Id` request header, which `V2ApiKeyAuth` reads and requires while authenticating the call. Every v2 payment therefore names its profile explicitly, and there is no default-profile fallback to depend on.
 

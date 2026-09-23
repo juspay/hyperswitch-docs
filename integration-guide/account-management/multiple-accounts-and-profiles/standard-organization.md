@@ -5,7 +5,7 @@ icon: building
 
 # Standard Organization
 
-A Standard Organization is the default account setup created when you sign up. It supports a single business or a business with multiple brands and business units, governed entirely from the Control Centre dashboard. If you need to onboard sub-merchants programmatically with a shared customer pool or platform-initiated operations, see [Platform Organization](platform-organization-concepts.md) instead.
+A Standard Organization is the default account setup created when you sign up. It supports a single business or a business with multiple brands and business units, governed from the Control Centre dashboard. If you need to onboard sub-merchants programmatically with a shared customer pool or platform-initiated operations, see [Platform Organization](platform-organization-concepts.md) instead.
 
 ***
 
