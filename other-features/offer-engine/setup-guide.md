@@ -131,8 +131,6 @@ Offers are **off by default**. Set the following dynamic configuration values in
 | `offer_engine.credential_source`      | `"merchant"` | Reads Offer Engine credentials from the merchant account updated in Step 2  |
 | `payments.should_perform_eligibility` | `true`       | Tells the Web SDK to perform eligibility checks before confirming a payment |
 
-Use a merchant-scoped override targeting `processor_merchant_id` with your Hyperswitch merchant ID. Offer enablement can also be scoped to a business profile while credentials remain stored on the merchant account.
-
 {% hint style="warning" %}
 Keep **client sessions** enabled. Offer quotes are stored in the client session between eligibility and confirm; a selected offer cannot be applied without its stored quote.
 {% endhint %}
@@ -164,10 +162,6 @@ Then make a payment with an eligible test card. Confirm that the offer appears i
 #### Which environment should I start with?
 
 Start with sandbox. Work with the Hyperswitch team to configure test offers and eligible test cards before enabling Offers in production.
-
-#### We have multiple business profiles. Can Offers be enabled for just one?
-
-Yes. Offer enablement can be scoped to a business profile. The Offer Engine credentials are stored on the merchant account and used by its enabled profiles. Verify the setup with a payment created under the intended profile.
 
 #### How do I turn Offers off?
 
