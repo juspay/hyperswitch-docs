@@ -132,7 +132,7 @@ Offers are **off by default**. Set the following dynamic configuration values in
 | `payments.should_perform_eligibility` | `true`       | Tells the Web SDK to perform eligibility checks before confirming a payment |
 
 {% hint style="warning" %}
-Keep **client sessions** enabled. Offer quotes are stored in the client session between eligibility and confirm; a selected offer cannot be applied without its stored quote.
+Keep **client sessions** enabled(client\_session\_validation\_enabled = true). Offer quotes are stored in the client session between eligibility and confirm; a selected offer cannot be applied without its stored quote.
 {% endhint %}
 
 #### Step 4 — Verify your setup

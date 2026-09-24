@@ -249,7 +249,7 @@ Applied-offer details are persisted on the payment attempt and exposed through p
 
 Confirmation may require further customer authentication or return a pending or failed payment. Handle the returned payment `status` and any required next action using your normal payment flow. An applied offer alone does not establish payment success.
 
-`applied_offer` records the applied discount; it is not a live redemption-status field. Successful full or partial refunds trigger background revocation of the entire offer redemption. See Offer Payment Lifecycle for failure and refund handling.
+`applied_offer` records the applied discount; it is not a live redemption-status field. Successful full or partial refunds trigger background revocation of the entire offer redemption.&#x20;
 
 #### Common offer-validation errors
 

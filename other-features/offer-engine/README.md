@@ -64,7 +64,7 @@ Key behaviours:
 * **Refunds are handled** —  Both full and partial refunds are supported. Any successful refund triggers background revocation of the entire applied offer. Once the revocation is processed, the offer redemption is fully reversed, restoring the offer budget and per-card usage counters.
 * **Disputes are not handled today** — a chargeback does not revoke the redemption
 * **Offer configuration** — creation, updates, pause/resume, and deletion are a self-serve configuration UI on control center
-* **Display offers on your website** — use the Browse Offers API show available offers before a payment is created. Its optional \`display\_title\` field provides a short label for website banners or offer listings, alongside \`code\`, \`title\`, and \`description\`. Eligibility for the customer's card is checked during the payment flow.
+* **Display offers on your website** — use the Browse Offers API show available offers before a payment is created. Its optional <kbd>display\_title</kbd> field provides a short label for website banners or offer listings, alongside <kbd>code</kbd>, <kbd>title</kbd>, and <kbd>description</kbd>. Eligibility for the customer's card is checked during the payment flow.
 
 ### Getting started
 
@@ -80,7 +80,7 @@ Offers require onboarding with the Hyperswitch team. **Reach out to your Hypersw
 Then follow the setup guide for your deployment model:
 
 * **Hyperswitch Cloud** — the Hyperswitch team enables the feature for your merchant account; you only verify and go live.
-* **Self-hosted** — you add the Offer Engine configuration to your own Hyperswitch stack (config, migrations, feature flags, scheduler).
+* **Self-hosted** — you add the Offer Engine configuration to your own Hyperswitch stack (config, feature flags).
 
 ### FAQs
 
@@ -93,4 +93,4 @@ Then follow the setup guide for your deployment model:
 4. **Does this work for wallets / bank transfers?**\
    No. Offers are currently supported for card payments only.
 5. **Is the card number shared with the Offer Engine?**\
-   No. Only the card BIN (first 6/7/8 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.
+   No. Only the card BIN (upto 9 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.
