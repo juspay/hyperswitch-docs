@@ -84,7 +84,7 @@ Key behaviours:
 * **One offer per payment** — the best eligible offer is auto-applied, read-only
 * **Web SDK works out of the box**; custom/headless and mobile checkouts integrate via the REST APIs
 * **Automatic capture** — partial capture is not supported with offers
-* **Refunds are handled** — a successful refund automatically revokes the offer redemption and restores budgets and per-card counters
+* **Refunds are handled** — -- Both full and partial refunds are supported. Any successful refund triggers background revocation of the entire applied offer. Once the revocation is processed, the offer redemption is fully reversed, restoring the offer budget and per-card usage counters.
 * **Disputes are not handled today** — a chargeback does not revoke the redemption
 * **Offer configuration** — creation, updates, pause/resume, and deletion are done together with the Hyperswitch team today (what's configurable); a self-serve configuration UI is on the roadmap
 

@@ -117,6 +117,7 @@ sequenceDiagram
 ```
 
 * Triggers: terminal payment failure (authorization/capture failure, void, expiry) or a **successful refund**
+* Both full and partial refunds are supported. When a refund succeeds, including a partial refund, Hyperswitch schedules revocation of the entire applied offer. Once the Offer Engine processes the revocation, the offer's budget and per-card usage counters are restored.
 * Delivery is retried automatically and never affects the payment or refund result
 * Successful payments need no notification — the redemption from apply simply stands
 
