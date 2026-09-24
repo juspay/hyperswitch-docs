@@ -19,28 +19,6 @@ An offer is a promotion configured against card attributes — for example, _"10
 
 ### How does it work?
 
-```mermaid
-flowchart LR
-    subgraph Checkout["Your Checkout Page"]
-        SDK["Hyperswitch Web SDK"]
-    end
-    subgraph HS["Hyperswitch"]
-        API["Payments API"]
-        PT["Background Worker"]
-    end
-    OE["Offer Engine"]
-    PSP["Payment Processor"]
-
-    SDK -- "1 · card entered" --> API
-    API -- "2 · check eligibility" --> OE
-    OE -- "3 · matching offer" --> API
-    API -- "4 · offer shown, auto-applied" --> SDK
-    SDK -- "5 · confirm payment" --> API
-    API -- "6 · apply offer" --> OE
-    API -- "7 · charge discounted amount" --> PSP
-    PT -. "8 · revoke on failure / refund" .-> OE
-```
-
 The full journey of a payment with an offer:
 
 ```mermaid
@@ -80,13 +58,13 @@ Key behaviours:
 
 ### What's supported today
 
-* **Card payments only** — new cards, saved cards, and Click to Pay; wallets/bank methods are skipped by the offer flow
 * **One offer per payment** — the best eligible offer is auto-applied, read-only
 * **Web SDK works out of the box**; custom/headless and mobile checkouts integrate via the REST APIs
 * **Automatic capture** — partial capture is not supported with offers
-* **Refunds are handled** — -- Both full and partial refunds are supported. Any successful refund triggers background revocation of the entire applied offer. Once the revocation is processed, the offer redemption is fully reversed, restoring the offer budget and per-card usage counters.
+* **Refunds are handled** —  Both full and partial refunds are supported. Any successful refund triggers background revocation of the entire applied offer. Once the revocation is processed, the offer redemption is fully reversed, restoring the offer budget and per-card usage counters.
 * **Disputes are not handled today** — a chargeback does not revoke the redemption
-* **Offer configuration** — creation, updates, pause/resume, and deletion are done together with the Hyperswitch team today (what's configurable); a self-serve configuration UI is on the roadmap
+* **Offer configuration** — creation, updates, pause/resume, and deletion are a self-serve configuration UI on control center
+* **Display offers on your website** — use the Browse Offers API show available offers before a payment is created. Its optional \`display\_title\` field provides a short label for website banners or offer listings, alongside \`code\`, \`title\`, and \`description\`. Eligibility for the customer's card is checked during the payment flow.
 
 ### Getting started
 
@@ -115,4 +93,4 @@ Then follow the setup guide for your deployment model:
 4. **Does this work for wallets / bank transfers?**\
    No. Offers are currently supported for card payments only.
 5. **Is the card number shared with the Offer Engine?**\
-   No. Only the card BIN (first 6 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.
+   No. Only the card BIN (first 6/7/8 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.
