@@ -251,6 +251,7 @@
     * [Payments Report](integration-guide/control-center/reporting/payments-report.md)
   * [Developers](integration-guide/control-center/developers.md)
   * [Configure SSO for the Hyperswitch Control Center](integration-guide/control-center/configure-sso-for-the-hyperswitch-control-center.md)
+  * [Payment Settings](integration-guide/control-center/payment-settings.md)
 
 ## Use-Cases
 
