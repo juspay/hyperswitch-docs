@@ -1,50 +1,68 @@
 ---
 description: >-
-  Authenticate payments through Juspay's own 3DS Server integrated via Juspay
-  Hyperswitch for comprehensive cardholder verification across card networks.
+  Activate the Juspay 3DS Server connector in Hyperswitch and provide the
+  merchant metadata required for standalone 3DS authentication.
+metaLinks:
+  alternates:
+    - juspaythreedsserver.md
 ---
 
 # Juspay 3DS Server
 
-Juspay 3DS Server connects to Hyperswitch as an external `AuthenticationProvider`. It is Juspay's own 3DS Server providing comprehensive 3-Domain Secure authentication, cardholder verification, and fraud prevention across card networks. Because it is operated by Juspay, it shares the same trust boundary as Hyperswitch itself.
+Juspay 3DS Server handles standalone 3DS authentication for card payments. Enable it in the Hyperswitch Control Center, enter the merchant authentication metadata, then follow the external 3DS workflow guide.
 
-### Authentication
+### Status and capabilities
 
-Juspay 3DS Server uses `HeaderKey` authentication — a single API key sent as a Bearer token on every request.
+<!-- generated from GET /feature_matrix; hyperswitch c934d28c22cb7dbf3e6fcf58e39305556cc177ea; host http://localhost:8080; fetched 2026-10-01; matrix canonical-json-v1 sha256 8b92b42f08eb323a31ea974c99ac67dc4972774ab49bda767a79da9d2992fd5b; 147 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods print as declared; the
+     declaration-gap check reconciles them in prose. Edit those
+     sources instead. -->
 
-| Credential | Description |
-| --- | --- |
-| **API Key** | Bearer token issued during Juspay 3DS Server provisioning |
+**Integration status:** alpha
 
-### 3DS Flows
+**Category:** authentication provider
 
-Juspay 3DS Server handles the following flows within Hyperswitch's external 3DS authentication:
+**Webhook flows:** None declared in code
 
-| Flow | Description |
-| --- | --- |
-| **Pre-Authenticate** | Initiates 3DS authentication — sends card and order details to Juspay's 3DS server |
-| **Post-Authenticate** | Completes the flow — retrieves CAVV, ECI, and DS Transaction ID for use in payment authorization |
+_This connector declares no payment methods. It is a authentication provider rather than a payment processor._
 
-### Common Failure Modes
+### Activation fields
 
-**API key rejected**
-Symptom: Authentication requests return 401 Unauthorized. Fix: Verify the API key stored in Hyperswitch matches the one provisioned for your Juspay 3DS Server instance.
+The connector configuration declares `NoKey`. The Control Center does not ask for an API key or bearer token when you activate this connector.
 
-**Authentication result missing**
-Symptom: Post-Authenticate returns empty or incomplete authentication values. Fix: Confirm Pre-Authenticate completed successfully. Check that the card BIN is enrolled in 3DS on the relevant card network.
+Have these merchant-specific values ready:
 
----
+- **ThreeDS requestor name:** Optional text.
+- **ThreeDS request id:** Required text.
+- **merchant_category_code:** Required text.
+- **merchant_country_code:** Required text.
+- **merchant_name:** Required text.
+- **Pull Mechanism Enabled:** Required toggle.
 
-### Activating Juspay 3DS Server via Hyperswitch
+### Activate the connector
 
-#### Prerequisites
+1. Sign in to the [Hyperswitch Control Center](https://app.hyperswitch.io/).
+2. Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+3. Select **Juspay 3DS Server** and complete the activation fields above.
+4. Follow [External 3DS with the Juspay 3DS Server](../../../integration-guide/workflows/3ds-decision-manager/external-3ds-with-the-juspay-3ds-server.md) to integrate the payment and browser steps.
 
-1. Juspay 3DS Server provisioned for your account. Contact your Juspay account manager for access.
-2. A registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. API Key provided during Juspay 3DS Server provisioning.
+### Webhooks
 
-[Steps to activate a connector on the Hyperswitch control center](../activate-connector-on-hyperswitch/README.md)
+Handled webhook event wire values: **0**. The feature matrix declares no webhook flows. The connector's incoming-webhook methods return `WebhooksNotImplemented`.
 
----
+### Troubleshooting
 
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/juspaythreedsserver.rs`.
+**The activation form asks for an API key**
+
+The current connector configuration does not define an API key field. Confirm that you selected **Juspay 3DS Server**. Do not put an API key into a metadata field.
+
+**The connector cannot be saved because metadata is missing**
+
+Complete every required activation field above. Only **ThreeDS requestor name** is optional in the current configuration.
+
+### Source reference
+
+The activation fields and webhook behavior on this page are tied to Hyperswitch `c934d28c22cb7dbf3e6fcf58e39305556cc177ea`. See the [production connector configuration](https://github.com/juspay/hyperswitch/blob/c934d28c22cb7dbf3e6fcf58e39305556cc177ea/crates/connector_configs/toml/production.toml#L7043-L7079), [connector specification](https://github.com/juspay/hyperswitch/blob/c934d28c22cb7dbf3e6fcf58e39305556cc177ea/crates/hyperswitch_connectors/src/connectors/juspaythreedsserver.rs#L631-L674), and [connector validation](https://github.com/juspay/hyperswitch/blob/c934d28c22cb7dbf3e6fcf58e39305556cc177ea/crates/router/src/core/connector_validation.rs#L371-L379).
