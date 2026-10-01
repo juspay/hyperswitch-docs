@@ -37,6 +37,17 @@ The two models share the same setup, payment, fingerprinting, and authentication
 
 For the provider-neutral explanation, see [Standalone 3D Secure](external-authentication-for-3ds.md). Mobile 3DS is outside this browser walkthrough.
 
+## How the integration works
+
+A payment is created and confirmed on Hyperswitch. When external 3DS is requested, Hyperswitch uses Juspay as the authentication connector and returns a `three_ds_invoke` next action. Your frontend then completes device fingerprinting, calls the authentication endpoint, handles either a challenge or frictionless outcome, and retrieves the payment status.
+
+1. Create and confirm a payment in Hyperswitch.
+2. Receive `three_ds_invoke`.
+3. Run device fingerprinting when required.
+4. Call the 3DS authentication endpoint.
+5. Handle challenge or frictionless authentication.
+6. Finalize authorization and retrieve the payment status.
+
 ## Before you start
 
 Keep a secret API key on your backend and a publishable key in the browser. Never expose the secret API key in browser code.
@@ -147,6 +158,12 @@ curl --request POST \
     "confirm": true,
     "capture_method": "automatic",
     "profile_id": "<profile id>",
+    "customer_id": "TestCustomer",
+    "email": "test@example.com",
+    "name": "John Doe",
+    "phone": "999999999",
+    "phone_country_code": "+1",
+    "description": "External 3DS test payment",
     "authentication_type": "three_ds",
     "return_url": "https://<your domain>/payments/return",
     "request_external_three_ds_authentication": true,
@@ -166,11 +183,22 @@ curl --request POST \
     },
     "payment_method_data": {
       "card": {
-        "card_number": "<card number>",
-        "card_exp_month": "<expiry month>",
-        "card_exp_year": "<expiry year>",
-        "card_holder_name": "<cardholder name>",
-        "card_cvc": "<card cvc>"
+        "card_number": "5204730541001215",
+        "card_exp_month": "07",
+        "card_exp_year": "31",
+        "card_holder_name": "CL-BRW2",
+        "card_cvc": "123"
+      }
+    },
+    "billing": {
+      "address": {
+        "line1": "1467 Harrison Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94122",
+        "country": "US",
+        "first_name": "John",
+        "last_name": "Doe"
       }
     }
   }'
