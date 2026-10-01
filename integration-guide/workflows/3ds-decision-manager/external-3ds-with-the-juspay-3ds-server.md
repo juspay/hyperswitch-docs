@@ -145,7 +145,7 @@ curl --request POST \
 
 Set `request_external_three_ds_authentication` to `true`, use `authentication_type: "three_ds"`, and provide a `return_url`.
 
-The v1 schema allows `browser_info` to be omitted. The authentication transformer then supplies an empty browser object. Send the real browser values for a browser transaction so the authentication request does not rely on that fallback.
+Send `browser_info`. It is reused later for the authentication step in step 4, which does not accept browser data of its own. The v1 schema allows `browser_info` to be omitted, and the authentication transformer then supplies an empty browser object, so send the real browser values for a browser transaction rather than relying on that fallback.
 
 ```bash
 curl --request POST \
