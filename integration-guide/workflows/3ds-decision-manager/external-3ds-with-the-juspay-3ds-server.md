@@ -1,5 +1,8 @@
 <!-- truth manifest; hyperswitch cfbeb2bedf523da301d7d7b0a8dcbeaf2263c696; spec api-reference/v1/openapi_spec_v1.json@cfbeb2bedf523da301d7d7b0a8dcbeaf2263c696
      symbols: POST /account/{account_id}/business_profile/{profile_id} = crates/openapi/src/routes/profile.rs:40-70
+     symbols: POST /account/{merchant_id}/connectors = crates/router/src/routes/app.rs:2183-2185
+     symbols: POST /account/{merchant_id}/connectors/{merchant_connector_id} = crates/router/src/routes/app.rs:2188-2191
+     symbols: juspaythreedsserver connector_auth NoKey = crates/connector_configs/toml/sandbox.toml:7048; crates/router/src/core/connector_validation.rs:378
      symbols: POST /payments = crates/router/src/routes/app.rs:1039-1043; crates/openapi/src/routes/payments.rs:1-8,650-655
      symbols: GET /payments/{payment_id}; force_sync; client_secret = crates/router/src/routes/app.rs:1052-1055; crates/openapi/src/routes/payments.rs:657-685
      symbols: POST or GET /payments/{payment_id}/{merchant_id}/authorize/{connector} = crates/router/src/routes/app.rs:1129-1133
