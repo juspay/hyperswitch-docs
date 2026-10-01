@@ -36,14 +36,81 @@ For the provider-neutral explanation, see [Standalone 3D Secure](external-authen
 
 ## Before you start
 
-1. Configure the payment processor that will authorize the payment.
-2. Configure the [Juspay 3DS Server authentication connector](../../../integration-space/connectors-integrations/3ds-providers/juspaythreedsserver.md). Connector credentials and activation belong on that connector page.
-3. Add the authentication connector to the Business Profile used by the payment.
-4. Keep both a secret API key on your backend and a publishable key in the browser. Never expose the secret API key in browser code.
+Keep a secret API key on your backend and a publishable key in the browser. Never expose the secret API key in browser code.
 
-### Add the authentication connector to the Business Profile
+Complete the four setup steps below in order. They enable the feature, add the 3DS metadata to your payment connector, register the Juspay 3DS Server, and point the Business Profile at it.
 
-Update the profile with your secret API key. `authentication_connector_details` contains the ordered authentication connector list and the 3DS requestor URL.
+### Step 1: Enable External 3DS for your account
+
+Contact Hyperswitch Support to enable External 3DS. It can be enabled at either level:
+
+* **Organization ID:** External 3DS is enabled for the organization, and every Merchant ID under it is enabled by default.
+* **Merchant ID:** External 3DS is enabled only for the specified Merchant ID.
+
+### Step 2: Add External 3DS metadata to the payment connector
+
+The Merchant Connector Account for the payment processor needs additional metadata for the External 3DS flow. If the connector already exists, update it rather than creating a second one.
+
+The example below updates a Nuvei connector.
+
+```bash
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/account/<merchant id>/connectors/<mca id>' \
+  --header 'Content-Type: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
+    "connector_type": "payment_processor",
+    "metadata": {
+      "merchant_category_code": "5411",
+      "merchant_country_code": "840",
+      "merchant_name": "Dummy Merchant",
+      "acquirer_bin": "444444",
+      "endpoint_prefix": "test",
+      "acquirer_merchant_id": "JuspayTest1",
+      "acquirer_country_code": "356"
+    }
+  }'
+```
+
+Dashboard support for these fields is planned, so that they can be set while creating or updating the connector.
+
+### Step 3: Register the Juspay 3DS Server
+
+Add the Juspay 3DS Server as an authentication connector. This is what lets Hyperswitch use it for External 3DS.
+
+```bash
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/account/<merchant id>/connectors' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
+    "connector_type": "authentication_processor",
+    "connector_name": "juspaythreedsserver",
+    "connector_label": "test",
+    "profile_id": "<profile id>",
+    "connector_account_details": {
+      "auth_type": "NoKey"
+    },
+    "test_mode": true,
+    "disabled": false,
+    "metadata": {
+      "merchant_category_code": "5411",
+      "merchant_country_code": "840",
+      "merchant_name": "Dummy Merchant",
+      "endpoint_prefix": "",
+      "three_ds_requestor_name": "hyperswitch_sbx",
+      "three_ds_requestor_id": "hyperswitch_sbx",
+      "pull_mechanism_for_external_3ds_enabled": true
+    }
+  }'
+```
+
+`auth_type` is `NoKey`: the connector configuration declares no credential fields for the Juspay 3DS Server, so the activation call carries metadata only. See the [Juspay 3DS Server connector page](../../../integration-space/connectors-integrations/3ds-providers/juspaythreedsserver.md).
+
+### Step 4: Enable 3DS authentication on the Business Profile
+
+Point the profile at the Juspay 3DS Server. `authentication_connector_details` carries the ordered authentication connector list and the 3DS requestor URL.
 
 ```bash
 curl --request POST \
@@ -54,7 +121,9 @@ curl --request POST \
     "authentication_connector_details": {
       "authentication_connectors": ["juspaythreedsserver"],
       "three_ds_requestor_url": "https://<your domain>"
-    }
+    },
+    "merchant_country_code": "004",
+    "merchant_category_code": "5411"
   }'
 ```
 
@@ -179,6 +248,10 @@ Check `three_ds_method_data_submission` before creating the form.
   document.getElementById("threeDSMethodForm").submit();
 </script>
 ```
+
+The hidden iframe is required in both browser models. Fingerprinting must run invisibly in the background without navigating your page away.
+
+**Detecting completion.** Watch for the hidden iframe navigating away from `about:blank`. Cross-origin access to the iframe throws a `SecurityError`, which you can treat as completion. Apply a timeout of about 15 seconds as a fallback, and send `"N"` if it expires.
 
 ## 4. Start 3DS authentication
 
@@ -378,7 +451,13 @@ window.addEventListener("message", async (event) => {
 
 ### Full-page redirect
 
-The authorize response runs in the top-level window and redirects to `return_url`. Read `payment_id` and `payment_intent_client_secret` from the return URL, then retrieve the payment. Do not use the query-string status as the final result.
+The authorize response runs in the top-level window and redirects to `return_url`, appending `payment_id`, `status`, `payment_intent_client_secret`, `amount`, and `manual_retry_allowed` as query parameters. No `postMessage` is sent and `/poll/status` is not used in this model.
+
+The redirect is immediate. The `status` in the return URL is the status at the moment of redirect and may not be terminal yet, because the return URL does not wait for authorization to finalize. Confirm the final status yourself on your return page.
+
+Ensure `return_url` is set on the confirm request in step 1. In this model it is load-bearing: the backend redirects the top-level window to it.
+
+Read `payment_id` and `payment_intent_client_secret` from the return URL, then retrieve the payment, retrying until the status is terminal.
 
 ```javascript
 const params = new URLSearchParams(window.location.search);
@@ -410,3 +489,30 @@ async function retrieveFinalPayment(returnUrl, suppliedPaymentId, suppliedClient
 ```
 
 Use the returned payment `status` to decide what your application shows next.
+
+In the full-page redirect model, retry the retrieve until the status is terminal:
+
+```javascript
+async function confirmFinalStatus(paymentId, clientSecret) {
+  const terminal = ["succeeded", "failed", "cancelled", "requires_capture"];
+
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const response = await fetch(
+      `https://sandbox.hyperswitch.io/payments/${encodeURIComponent(paymentId)}` +
+        `?force_sync=true&client_secret=${encodeURIComponent(clientSecret)}`,
+      { headers: { "api-key": "<publishable key>" } }
+    );
+    const payment = await response.json();
+
+    if (terminal.includes(payment.status)) {
+      return payment;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+}
+```
+
+## Sandbox testing notes
+
+* **Test OTP:** on the challenge page, choose any of the answers offered in the multiple-choice prompt.
+* **Test card:** `2221008123677736`. This card is specific to Nuvei as the authorizing processor.
