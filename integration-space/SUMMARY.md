@@ -45,6 +45,7 @@
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
     * [Elavon](connectors-integrations/available-connectors/elavon.md)
+    * [Etisalat](connectors-integrations/available-connectors/etisalat.md)
     * [Envoy](connectors-integrations/available-connectors/envoy.md)
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
