@@ -30,8 +30,8 @@ Use this flow when the Juspay 3DS Server authenticates the cardholder and a sepa
 
 This page owns the complete browser walkthrough for the Juspay 3DS Server. It covers both browser models:
 
-* **Embedded iframe:** the challenge stays on your checkout page. Completion arrives through `postMessage`.
-* **Full-page redirect:** the browser opens the challenge at the top level and returns to your `return_url`.
+* **Embedded iframe:** the challenge stays on your checkout page. You listen for `postMessage` events and poll a lightweight status endpoint to determine the authentication status.
+* **Full-page redirect:** the browser navigates to the ACS and returns to your `return_url`. This is simpler to implement, but it does not provide an embedded experience.
 
 The two models share the same setup, payment, fingerprinting, and authentication calls. They differ only in the target used for the final forms and how your application receives completion.
 
@@ -240,10 +240,12 @@ The response shape is a tagged `next_action` object. `poll_config.delay_in_secs`
 
 | Field | Use |
 | --- | --- |
-| `three_ds_authentication_url` | Send the browser authentication request in step 4. |
-| `three_ds_authorize_url` | Finalize the challenge or non-challenge result in step 5. |
-| `three_ds_method_details` | Build the hidden fingerprinting form in step 3. |
-| `poll_config` | Poll after an embedded completion message asks you to do so. |
+| `three_ds_method_details.three_ds_method_data_submission` | Whether device fingerprinting in step 3 is required. |
+| `three_ds_method_url`, `three_ds_method_data`, `three_ds_method_key` | Inputs for the fingerprinting POST. For the Juspay 3DS Server, `three_ds_method_key` is always `threeDSMethodData`. |
+| `three_ds_method_details.consume_post_message_for_three_ds_method_completion` | For the Juspay 3DS Server this is always `false`. |
+| `three_ds_authentication_url` | Endpoint for the authentication call in step 4. |
+| `three_ds_authorize_url` | Endpoint to post the challenge or non-challenge result to in step 5. |
+| `poll_config` | Poll id, delay and maximum attempts for the lightweight status poll. Used only in the embedded iframe model. |
 | `message_version`, `directory_server_id`, `card_network`, `three_ds_connector` | Context returned for the selected 3DS path. |
 
 ## 3. Perform device fingerprinting
@@ -376,7 +378,7 @@ Submit `challenge_request` to `acs_url`. Name the field with `challenge_request_
 </script>
 ```
 
-The ACS posts its result to `three_ds_authorize_url`.
+The ACS renders the challenge page, for example an OTP prompt. On completion it posts the result to `three_ds_authorize_url`, which returns the script that finalizes the flow.
 
 ### Non-challenge response
 
@@ -410,6 +412,8 @@ Submit an empty form to `three_ds_authorize_url`.
 ```
 
 ## 6. Complete the selected browser model
+
+When the challenge or non-challenge result reaches `three_ds_authorize_url`, Hyperswitch responds with an HTML page containing a small script. That script detects at runtime whether it is running inside an iframe or in the top-level window, and behaves accordingly. This is why the same authorize URL serves both models. Use the section below that matches how you submitted the form in step 5.
 
 ### Embedded iframe
 
