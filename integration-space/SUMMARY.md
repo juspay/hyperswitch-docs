@@ -49,6 +49,7 @@
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
+    * [Forte](connectors-integrations/available-connectors/forte.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
