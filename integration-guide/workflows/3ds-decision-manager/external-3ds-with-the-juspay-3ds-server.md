@@ -86,7 +86,7 @@ curl --request POST \
   }'
 ```
 
-Dashboard support for these fields is planned, so that they can be set while creating or updating the connector.
+These fields are not exposed in the dashboard connector form. Set them through the connector update API as shown.
 
 ### Step 3: Register the Juspay 3DS Server
 
@@ -140,6 +140,8 @@ curl --request POST \
     "merchant_category_code": "5411"
   }'
 ```
+
+The profile example sends `merchant_country_code` `004`, reproduced from the source guide, while the connector examples in steps 2 and 3 send `840`. The value is validated as a numeric ISO 3166 country code. Use your own merchant's code in all three places rather than copying either example value.
 
 ## 1. Create and confirm the payment
 
@@ -386,7 +388,10 @@ Submit an empty form to `three_ds_authorize_url`.
 
 **Embedded iframe**
 
+This reuses the challenge iframe. Declare it here if your flow skipped the challenge path, or the form opens in a new window.
+
 ```html
+<iframe name="threeDSChallengeFrame" title="3DS challenge"></iframe>
 <form
   id="threeDSAuthorizeForm"
   method="POST"
