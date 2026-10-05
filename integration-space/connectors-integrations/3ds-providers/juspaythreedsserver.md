@@ -27,7 +27,7 @@ Juspay 3DS Server handles standalone 3DS authentication for card payments. Enabl
 
 **Webhook flows:** None declared in code
 
-_This connector declares no payment methods. It is a authentication provider rather than a payment processor._
+_This connector declares no payment methods. It is an authentication provider rather than a payment processor._
 
 ### Activation fields
 
