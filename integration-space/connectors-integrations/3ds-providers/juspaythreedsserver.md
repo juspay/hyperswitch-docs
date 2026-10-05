@@ -33,14 +33,16 @@ _This connector declares no payment methods. It is an authentication provider ra
 
 The connector configuration declares `NoKey`. The Control Center does not ask for an API key or bearer token when you activate this connector.
 
-Have these merchant-specific values ready:
+The form also asks for a **Connector label**, a display name for the connector account. It is required and appears in the connectors table after activation.
 
+Have these merchant-specific values ready, in the order the form shows them:
+
+- **merchant_country_code:** Required text.
+- **merchant_name:** Required text.
 - **ThreeDS requestor name:** Optional text.
 - **ThreeDS request id:** Required text.
 - **merchant_category_code:** Required text.
-- **merchant_country_code:** Required text.
-- **merchant_name:** Required text.
-- **Pull Mechanism Enabled:** Required toggle.
+- **Pull Mechanism Enabled:** Required toggle. Controls how the payment proceeds after 3DS authentication: on (the default when unset) confirms the payment through the standard flow; off routes challenge completions through the decoupled challenge-notification flow.
 
 ### Activate the connector
 
