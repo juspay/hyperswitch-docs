@@ -36,7 +36,7 @@ Provide the **API Key**, **Merchant ID**, **API Secret**, and **Terminal ID** sh
 
 ### Before you start
 
-Have the API Key, Merchant ID, API Secret, and Terminal ID ready. To connect Fiserv Commerce Hub to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Fiserv Commerce Hub supports.
+Request the API Key, Merchant ID, API Secret, and Terminal ID from [Fiserv](https://www.fiserv.com/en/who-we-serve/enterprise/contact-us.html?cid=%7Ccommerce-hub-for-platforms%7C). Once you have them, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md) to connect Fiserv Commerce Hub to your account.
 
 ### Webhooks
 
