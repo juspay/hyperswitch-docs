@@ -40,6 +40,7 @@
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
     * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
+    * [D24](connectors-integrations/available-connectors/d24.md)
     * [Datatrans](connectors-integrations/available-connectors/datatrans.md)
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
