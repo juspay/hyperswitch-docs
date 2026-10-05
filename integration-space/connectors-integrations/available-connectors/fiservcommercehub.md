@@ -40,7 +40,7 @@ Have the API Key, Merchant ID, API Secret, and Terminal ID ready. To connect Fis
 
 ### Webhooks
 
-Fiserv Commerce Hub webhooks are not currently supported. The object lookup, event lookup, and resource lookup methods all return `WebhooksNotImplemented`; use payment sync for payment status and refund sync for refund status. See [`IncomingWebhook for Fiservcommercehub`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/fiservcommercehub.rs#L583-L606), [`ConnectorIntegration<PSync>`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/fiservcommercehub.rs#L280-L331), and [`ConnectorIntegration<RSync>`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/fiservcommercehub.rs#L514-L565).
+Fiserv Commerce Hub webhooks are not supported. Use Hyperswitch payment sync and refund sync to check status. Both routes go through Connector Service. See [`IncomingWebhook for Fiservcommercehub`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/fiservcommercehub.rs#L583-L606) and [Connector Service routing](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/config/development.toml#L1684).
 
 ### Source reference
 
