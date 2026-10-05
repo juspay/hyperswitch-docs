@@ -9,7 +9,19 @@ metaLinks:
     - stripe-split-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 59c3249bf29bc3800ce391de49fab00590c0cf9e
+     symbols: SplitPaymentsRequest.stripe_split_payment externally tagged shape = crates/common_types/src/payments.rs:35-66
+     symbols: StripeSplitPaymentRequest.charge_type, application_fees, transfer_account_id, on_behalf_of = crates/common_types/src/payments.rs:68-103
+     symbols: PaymentChargeType.Stripe untagged wrapper; StripeChargeType direct, destination = crates/common_enums/src/enums.rs:11230-11269
+     symbols: stripe application_fees validation = crates/router/src/core/payments/helpers.rs:9595-9627
+     symbols: ConnectorChargeResponseData.stripe_split_payment = crates/common_types/src/payments.rs:436-468
+     checked: 2026-10-05 -->
+
 # Stripe Split Settlement
+
+### Before you start
+
+Enable split settlement for the Business Profile and configure a Stripe merchant connector account for that profile. The payment request is rejected before connector processing if its split fields fail validation.
 
 ### Overview
 
@@ -36,6 +48,9 @@ In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/creat
 | transfer\_account\_id | `string`  | Identifier of a [Connected Account](https://docs.stripe.com/connect/accounts) created using Stripe's API or Dashboard.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | charge\_type          | `enum`    | <p>1. <a href="https://docs.stripe.com/connect/direct-charges">Direct</a>: Customers transact directly with your connected account. The charge is created on the connected account, and you can choose whether Stripe fees are debited from the connected account or your platform.</p><p><br><br></p><p>2. <a href="https://docs.stripe.com/connect/destination-charges">Destination</a>: Customers transact with your platform for products/services provided by your connected account. Stripe fees are debited from your platform account. The funds are then transferred to the destination account.</p> |
 | application\_fees     | `integer` | Platform fee amount deducted from the transaction (in minor currency units). The `application_fee_amount` is transferred to the platform.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| on\_behalf\_of        | `string`  | Optional Stripe account ID that the payment is made on behalf of.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+
+`split_payments` is an externally tagged object. Use `stripe_split_payment` as the object key. Inside it, `charge_type` is the lowercase string `direct` or `destination`; `transfer_account_id` is required, while `application_fees` and `on_behalf_of` are optional. For a non-zero payment, `application_fees` cannot exceed the payment amount. For a zero-amount payment, it must be zero or omitted.
 
 #### Payment Response
 
