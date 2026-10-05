@@ -8,7 +8,18 @@ metaLinks:
     - adyen-split-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 59c3249bf29bc3800ce391de49fab00590c0cf9e
+     symbols: SplitPaymentsRequest.adyen_split_payment externally tagged shape = crates/common_types/src/payments.rs:35-66
+     symbols: AdyenSplitData.store, split_items; AdyenSplitItem.amount, split_type, account, reference, description = crates/common_types/src/domain.rs:14-75
+     symbols: Adyen split amount and field validation = crates/router/src/core/payments/helpers.rs:9628-9710
+     symbols: ConnectorChargeResponseData.adyen_split_payment snake_case response key = crates/common_types/src/payments.rs:436-468
+     checked: 2026-10-05 -->
+
 # Adyen Split Settlement
+
+### Before you start
+
+Enable split settlement for the Business Profile and configure an Adyen merchant connector account for that profile. The sum of provided split amounts must equal the payment amount, and each split type must include the fields required by the validation rules below.
 
 ### Overview
 
@@ -84,7 +95,7 @@ Hyperswitch enforces several validation rules:
 ```json
 {
   "split_payments": {
-    "AdyenSplitPayment": {
+    "adyen_split_payment": {
       "store": "4935y84385736",
       "split_items": [
         {
