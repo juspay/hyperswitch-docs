@@ -40,7 +40,7 @@ Have the EPG Password, EPG UserName, and EPG Customer ready. To connect Etisalat
 
 ### Webhooks
 
-Etisalat webhooks are not currently supported. The object lookup, event lookup, and resource lookup methods all return `WebhooksNotImplemented`; use payment sync for payment status and refund sync for refund status. See [`IncomingWebhook for Etisalat`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/etisalat.rs#L591-L614), [`ConnectorIntegration<PSync>`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/etisalat.rs#L292-L343), and [`ConnectorIntegration<RSync>`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/etisalat.rs#L522-L573).
+Etisalat webhooks are not currently supported. Use Hyperswitch payment sync and refund sync for status updates. Both operations route through the Unified Connector Service (UCS). See [`IncomingWebhook for Etisalat`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/etisalat.rs#L591-L614) and the [`UCS connector routing`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/config/development.toml#L1684).
 
 ### Source reference
 
