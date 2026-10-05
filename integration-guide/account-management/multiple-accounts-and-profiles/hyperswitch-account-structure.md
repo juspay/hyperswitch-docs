@@ -90,7 +90,7 @@ Creating either one is restricted by role. Adding a merchant account needs Organ
 3. In **Add a new merchant**, enter the merchant name. Some deployments also ask for a merchant type.
 4. Select **Add Merchant**.
 
-<figure><img src="../../../.gitbook/assets/account-create-merchant.png" alt="Merchant Account switcher expanded, with the Create new option highlighted"><figcaption><p>The Merchant Account switcher in the sidebar, with "+ Create new"</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/account-create-merchant.png" alt="Sidebar dropdown with the Create new merchant option highlighted"><figcaption><p>Sidebar merchant dropdown with the "+ Create new" option to add a new merchant</p></figcaption></figure>
 
 **To add a profile:**
 
@@ -99,7 +99,7 @@ Creating either one is restricted by role. Adding a merchant account needs Organ
 3. In **Add a new profile**, enter the **Profile Name**.
 4. Select **Add Profile**.
 
-<figure><img src="../../../.gitbook/assets/account-create-profile.png" alt="Profile switcher expanded, with the Create new option highlighted"><figcaption><p>The Profile switcher above the dashboard content, with "+ Create new"</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/account-create-profile.png" alt="Profile dropdown with the Create new profile option highlighted"><figcaption><p>Profile dropdown with the "+ Create new" option to add a new profile</p></figcaption></figure>
 
 Both switchers list everything you already have, so they double as the way to move between merchant accounts and profiles.
 
