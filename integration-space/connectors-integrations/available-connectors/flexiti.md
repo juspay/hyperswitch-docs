@@ -48,7 +48,10 @@ Provide the **Client id** and **Client secret** shown in the connector form. The
 
 ### Before you start
 
-Confirm availability with the Hyperswitch team before enabling Flexiti. Have the Client id and Client secret ready. To connect Flexiti to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Flexiti supports.
+1. Register for a Flexiti account at [flexiti.com](https://www.flexiti.com/).
+2. Confirm availability with the Hyperswitch team before enabling Flexiti.
+3. Have the Client id and Client secret from your Flexiti account ready.
+4. To connect Flexiti to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Flexiti supports.
 
 ### Webhooks
 
