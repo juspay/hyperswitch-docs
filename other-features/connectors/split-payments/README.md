@@ -22,9 +22,8 @@ metaLinks:
 
 ### Before you start
 
-Enable split settlement for the Business Profile with `split_txns_enabled`, then configure the merchant connector account for that profile. Processor credentials stay with that profile's connector account.
-
-A platform API key can act on behalf of a Connected merchant by sending `X-Connected-Merchant-Id`, but the payment still runs under the Connected merchant. Split rules are sent on that payment and use its selected connector account. See [Platform Organization](../../../integration-guide/account-management/multiple-accounts-and-profiles/platform-organization-concepts.md) for the account and credential boundaries.
+1. Enable split settlement for the Business Profile with the `split_txns_enabled` flag.
+2. Configure a merchant connector account for that profile. Processor credentials stay with that profile's connector account.
 
 ### Overview
 
@@ -47,12 +46,16 @@ The table below outlines the specific capabilities supported by each processor i
 | [Xendit](xendit-split-payments.md) | Supports both single splits and multiple route distributions, with flexible routing options including flat amounts and percentage-based splits. |
 | [Adyen](adyen-split-payments.md)   | Provides various split types including balance accounts, commissions, and fees with detailed charge response tracking.                          |
 | [Stripe](stripe-split-payments.md) | Implements application fees and destination accounts for revenue sharing scenarios.                                                             |
-| Payload                            | Uses ledger entries to allocate amounts to receivers. This section does not yet have a Payload setup guide.                                      |
+| Payload                            | Uses ledger entries to allocate amounts to receivers. Setup guide coming soon.                                                                   |
 
-### Coverage boundaries
+### Platform merchants
 
-`SplitPaymentsRequest` has four processor variants. It has no Razorpay or Cashfree variant, so this request does not provide split settlement through those connectors. For UPI support, use the [Razorpay connector guide](../../../integration-space/connectors-integrations/available-connectors/razorpay.md) and the [connector catalog](../../../integration-space/connectors-integrations/available-connectors/README.md). A Cashfree connector guide was not present at the checked docs revision.
+A platform API key can act on behalf of a Connected merchant by sending the `X-Connected-Merchant-Id` header, but the payment still runs under the Connected merchant. Split rules sent on that payment use that merchant's selected connector account. See [Platform Organization](../../../integration-guide/account-management/multiple-accounts-and-profiles/platform-organization-concepts.md) for the account and credential boundaries.
 
-The split request and route currency fields use Hyperswitch's `Currency` enum. The enum has 160 values and no `USDT` entry. No crypto-asset variant appears in the split request enums, so USDT cannot be used for split settlement through this API shape.
+### Supported processors and limitations
 
-Percentage-based processor traffic allocation is a routing concern, not settlement allocation. Use [Volume-Based Routing](../../../integration-guide/workflows/intelligent-routing/volume-based-routing.md) when the goal is to send a percentage of traffic to each processor.
+Split settlement is available through Stripe, Adyen, Xendit, and Payload. It is not available through Razorpay or Cashfree, even though those connectors support other payment features. For UPI payments through Razorpay, see the [Razorpay connector guide](../../../integration-space/connectors-integrations/available-connectors/razorpay.md) and the [connector catalog](../../../integration-space/connectors-integrations/available-connectors/README.md).
+
+Split payments support the same currencies as regular payments through Hyperswitch, with the exception of crypto assets such as USDT, which cannot be used for split settlement.
+
+If your goal is to send a percentage of your payment traffic to each processor rather than splitting the funds of a single payment, use [Volume-Based Routing](../../../integration-guide/workflows/intelligent-routing/volume-based-routing.md) instead.
