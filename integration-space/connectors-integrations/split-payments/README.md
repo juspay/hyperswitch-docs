@@ -19,7 +19,7 @@ This is essential for marketplaces, platforms, and businesses handling multi-par
 
 ### Hyperswitch Implementation
 
-Juspay Hyperswitch provides payment functionality with connector-specific implementations supporting four processor integrations: Stripe, Adyen, Xendit, and Payload.
+Juspay Hyperswitch provides payment functionality with connector-specific implementations supporting three major payment processors: Stripe, Adyen, and Xendit.
 
 Each connector has distinct validation rules, data structures, and split models tailored to their specific requirements. This abstraction allows you to manage multi-party flows through a single orchestration layer.
 
@@ -37,4 +37,3 @@ The table below outlines the specific capabilities supported by each processor i
 | [Xendit](xendit-split-payments.md) | Supports both single splits and multiple route distributions, with flexible routing options including flat amounts and percentage-based splits. |
 | [Adyen](adyen-split-payments.md)   | Provides various split types including balance accounts, commissions, and fees with detailed charge response tracking.                          |
 | [Stripe](stripe-split-payments.md) | Implements application fees and destination accounts for revenue sharing scenarios.                                                             |
-| Payload                            | Uses ledger entries to allocate amounts to receivers. Setup guide coming soon.                                                                   |
