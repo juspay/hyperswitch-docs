@@ -56,6 +56,6 @@ A platform API key can act on behalf of a Connected merchant by sending the `X-C
 
 Split settlement is available through Stripe, Adyen, Xendit, and Payload. It is not available through Razorpay or Cashfree, even though those connectors support other payment features. For UPI payments through Razorpay, see the [Razorpay connector guide](../../../integration-space/connectors-integrations/available-connectors/razorpay.md) and the [connector catalog](../../../integration-space/connectors-integrations/available-connectors/README.md).
 
-Each processor supports its own set of currencies for split settlement, listed in its connector guide. Crypto assets such as USDT are not supported for split settlement through any processor.
+Currency support for split settlement depends on the processor and the accounts involved. Crypto assets such as USDT are not supported for split settlement through any processor.
 
 If your goal is to send a percentage of your payment traffic to each processor rather than splitting the funds of a single payment, use [Volume-Based Routing](../../../integration-guide/workflows/intelligent-routing/volume-based-routing.md) instead.
