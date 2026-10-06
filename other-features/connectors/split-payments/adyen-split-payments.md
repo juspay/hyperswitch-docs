@@ -19,7 +19,8 @@ metaLinks:
 
 ### Before you start
 
-Enable split settlement for the Business Profile and configure an Adyen merchant connector account for that profile. The sum of provided split amounts must equal the payment amount, and each split type must include the fields required by the validation rules below.
+1. Enable split transactions for the Business Profile. In the [Hyperswitch control center](https://app.hyperswitch.io/), go to **Payment Settings → Payment Behaviour** and turn on the **Split Transactions** toggle.
+2. Configure an Adyen merchant connector account for that profile.
 
 ### Overview
 
@@ -69,9 +70,9 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 * `BalanceAccount`: Direct allocation to specified account (requires `account` field)
 * `Commission`: Platform commission (requires `amount` field)
-* `Vat`: Value-added tax allocation
-* `TopUp`: Balance account funding (requires `account`, not available with Platform)
-* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
+* `Vat`: Value-added tax allocation (requires `amount` field)
+* `TopUp`: Balance account funding (requires `amount` and `account` fields, not available with Platform)
+* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, `AdyenCommission`, `AdyenMarkup`, `Interchange`, `SchemeFee`): Calculated automatically by Adyen
 
 **`amount`**: Split amount in minor units. Required for `Commission`, `Vat`, and `TopUp` types; optional for fee types as they're calculated by Adyen.
 
@@ -124,7 +125,7 @@ In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/r
 
 ```json
 {
-  "split_refund": {
+  "split_refunds": {
     "adyen_split_refund": {
       "store": "4935y84385736",
       "split_items": [
@@ -162,7 +163,7 @@ The request structure includes fields:
 
 ```json
 {
-  "split_refund": {
+  "split_refunds": {
     "adyen_split_refund": {
       "store": "4935y84385736",
       "split_items": [
