@@ -7,7 +7,7 @@ metaLinks:
 
 # Flexiti
 
-Flexiti provides a redirected pay-later checkout through Hyperswitch. Payments use manual capture. Refunds and mandates are not available for this payment route.
+Flexiti provides a redirected pay-later checkout through Hyperswitch. The payment is captured automatically when the customer completes checkout, so no separate capture call is needed. Manual capture is not supported. Refunds and mandates are not available for this payment route.
 
 ### Status and capabilities
 
@@ -17,7 +17,16 @@ Flexiti provides a redirected pay-later checkout through Hyperswitch. Payments u
      currencies come from pm_filters in config/development.toml.
      Webhook flows and capture methods print as declared; the
      declaration-gap check reconciles them in prose. Edit those
-     sources instead. -->
+     sources instead.
+     Manually corrected 2026-10-05: the feature matrix still declares
+     manual capture at hyperswitch d03f8547, but Flexiti does not
+     support manual capture (confirmed in
+     https://github.com/juspay/hyperswitch/issues/14610). The capture
+     method and CA/CAD availability below reflect the confirmed
+     behavior, not the current matrix output. Regenerate this block
+     once the hyperswitch fix lands and the matrix reports automatic
+     capture. Countries and currencies come from pm_filters in
+     config/development.toml (flexiti = CA, CAD). -->
 
 **Integration status:** alpha
 
@@ -27,7 +36,7 @@ Flexiti provides a redirected pay-later checkout through Hyperswitch. Payments u
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| pay later | Klarna | not supported | not supported | manual | - | - |
+| pay later | Klarna | not supported | not supported | automatic | CA | CAD |
 
 ### Authentication
 
