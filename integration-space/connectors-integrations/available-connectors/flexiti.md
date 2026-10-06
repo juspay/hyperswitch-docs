@@ -7,6 +7,10 @@ metaLinks:
 
 # Flexiti
 
+{% hint style="warning" %}
+**Alpha connector.** Flexiti is at alpha integration status. The payment status mapping from Flexiti is incomplete: a completed purchase currently reports as authorized rather than captured, so a successful payment may show a `requires_capture` status even though no capture call is needed or possible. Manual capture, refunds, mandates, and webhooks are not supported. Use payment sync to check payment status, and confirm current behavior with the Hyperswitch team before relying on this connector in production.
+{% endhint %}
+
 Flexiti provides a redirected pay-later checkout through Hyperswitch. The payment is captured automatically when the customer completes checkout, so no separate capture call is needed. Manual capture is not supported. Refunds and mandates are not available for this payment route.
 
 ### Status and capabilities
