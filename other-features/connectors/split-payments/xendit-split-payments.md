@@ -20,7 +20,7 @@ metaLinks:
 
 ### Before you start
 
-Enable split settlement for the Business Profile and configure a Xendit merchant connector account for that profile. Each route must provide exactly one of `flat_amount` or `percent_amount`.
+Set up a Xendit account and enable split settlement on the Xendit platform. See the [Xendit documentation](https://docs.xendit.co/docs) for setup instructions. Then configure a Xendit connector account in the [Hyperswitch control center](https://app.hyperswitch.io/).
 
 ### Overview
 
@@ -158,7 +158,7 @@ Each route in the `routes` array has these parameters:
 
 * Amount of payments to be split using a percentage rate
 * Integer percentage value (e.g., 5 = 5%)
-* Percent amounts are calculated and rounded to the nearest monetary unit
+* Percent amounts are calculated using integer division and truncated to the whole minor unit
 
 **`currency`** (Currency enum, **required**)
 
@@ -178,7 +178,7 @@ Each route in the `routes` array has these parameters:
 
 #### SingleSplit Parameters
 
-For single split settlements, the structure is simpler domain.rs:55-58 :
+For single split settlements, the structure is simpler:
 
 **`for_user_id`** (string, **required**)
 
