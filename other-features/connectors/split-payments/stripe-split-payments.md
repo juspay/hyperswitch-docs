@@ -21,7 +21,8 @@ metaLinks:
 
 ### Before you start
 
-Enable split settlement for the Business Profile and configure a Stripe merchant connector account for that profile. The payment request is rejected before connector processing if its split fields fail validation.
+1. Enable split transactions for the Business Profile. In the [Hyperswitch control center](https://app.hyperswitch.io/), go to **Payment Settings → Payment Behaviour** and turn on the **Split Transactions** toggle.
+2. Configure a Stripe merchant connector account for that profile.
 
 ### Overview
 
@@ -50,7 +51,7 @@ In the [Payment Create](https://docs.hyperswitch.io/api-reference/payments/creat
 | application\_fees     | `integer` | Platform fee amount deducted from the transaction (in minor currency units). The `application_fee_amount` is transferred to the platform.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | on\_behalf\_of        | `string`  | Optional Stripe account ID that the payment is made on behalf of.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-`split_payments` is an externally tagged object. Use `stripe_split_payment` as the object key. Inside it, `charge_type` is the lowercase string `direct` or `destination`; `transfer_account_id` is required, while `application_fees` and `on_behalf_of` are optional. For a non-zero payment, `application_fees` cannot exceed the payment amount. For a zero-amount payment, it must be zero or omitted.
+Use `stripe_split_payment` as the object key inside `split_payments`. Within it, `charge_type` is the string `direct` or `destination`; `transfer_account_id` is required, while `application_fees` and `on_behalf_of` are optional. For a non-zero payment, `application_fees` cannot exceed the payment amount. For a zero-amount payment, it must be zero or omitted.
 
 #### Payment Response
 
