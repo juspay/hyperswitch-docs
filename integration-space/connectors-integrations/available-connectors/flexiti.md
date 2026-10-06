@@ -26,11 +26,18 @@ Flexiti provides a redirected pay-later checkout through Hyperswitch. The paymen
      manual capture at hyperswitch d03f8547, but Flexiti does not
      support manual capture (confirmed in
      https://github.com/juspay/hyperswitch/issues/14610). The capture
-     method and CA/CAD availability below reflect the confirmed
-     behavior, not the current matrix output. Regenerate this block
-     once the hyperswitch fix lands and the matrix reports automatic
-     capture. Countries and currencies come from pm_filters in
-     config/development.toml (flexiti = CA, CAD). -->
+     method, payment method type, and CA/CAD availability below
+     reflect the confirmed behavior, not the current matrix output.
+     The matrix also reports the payment method type as Klarna
+     because the SupportedPaymentMethods declaration uses
+     PaymentMethodType::Klarna; the connector form registers
+     payment_method_type = "flexiti" and the code has a dedicated
+     Flexiti type and FlexitiRedirect payment method data, so
+     "flexiti" is printed here. Regenerate this block once the
+     hyperswitch fix lands and the matrix reports automatic capture
+     with the flexiti payment method type. Countries and currencies
+     come from pm_filters in config/development.toml
+     (flexiti = CA, CAD). -->
 
 **Integration status:** alpha
 
@@ -40,7 +47,7 @@ Flexiti provides a redirected pay-later checkout through Hyperswitch. The paymen
 
 | Payment method | Type | Mandates | Refunds | Capture methods | Countries | Currencies |
 |---|---|---|---|---|---|---|
-| pay later | Klarna | not supported | not supported | automatic | CA | CAD |
+| pay later | flexiti | not supported | not supported | automatic | CA | CAD |
 
 ### Authentication
 
