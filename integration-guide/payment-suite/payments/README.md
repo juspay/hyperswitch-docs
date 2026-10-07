@@ -8,6 +8,13 @@ metaLinks:
     - ./
 ---
 
+<!-- truth manifest; hyperswitch 7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8; spec api-reference/v1/openapi_spec_v1.json@7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8
+     symbols: capture methods automatic, manual, manual_multiple, scheduled, sequential_automatic = api-reference/v1/openapi_spec_v1.json:17937-17946; crates/common_enums/src/enums.rs:843-859
+     symbols: terminal payment statuses succeeded, failed, cancelled, cancelled_post_capture, partially_captured, expired = crates/common_enums/src/enums.rs:2150-2198,2205-2225
+     symbols: partially_captured_and_capturable = api-reference/v1/openapi_spec_v1.json:27103-27123; crates/common_enums/src/enums.rs:2177-2182,2205-2225; crates/common_enums/src/transformers.rs:2129-2130
+     symbols: reused refund_id returns DuplicateRefundRequest = crates/router/src/core/refunds.rs:1828-1835
+     checked: 2026-10-07 -->
+
 # Pay-Then-Vault
 
 Juspay Hyperswitch provides flexible payment processing with multiple flow patterns to accommodate different business needs. The system supports one-time payments, saved payment methods, and recurring billing through a comprehensive API design.
@@ -399,7 +406,10 @@ stateDiagram-v2
     Processing --> Succeeded : automatic capture
     Processing --> Failed : payment failed
     RequiresCapture --> Succeeded : capture API call
-    RequiresCapture --> PartiallyCaptured : partial capture
+    RequiresCapture --> PartiallyCaptured : partial capture, no amount remains capturable
+    RequiresCapture --> PartiallyCapturedAndCapturable : partial capture, amount remains capturable
+    PartiallyCapturedAndCapturable --> PartiallyCapturedAndCapturable : another partial capture
+    PartiallyCapturedAndCapturable --> Succeeded : final capture
     PartiallyCaptured --> [*]
     Succeeded --> [*]
     Failed --> [*]       
@@ -407,7 +417,8 @@ stateDiagram-v2
 
 ### Notes
 
-* **Terminal States:** `succeeded`, `failed`, `cancelled`, `partially_captured` are terminal states requiring no further action
-* **Capture Methods:** System supports `automatic` (funds captured immediately), `manual` (funds captured in a separate step), `manual_multiple` (funds captured in multiple partial amounts via separate steps), and `scheduled` (funds captured automatically at a future predefined time) capture methods.
+* **Terminal States:** `succeeded`, `failed`, `cancelled`, `cancelled_post_capture`, `partially_captured`, and `expired` are terminal states requiring no further action
+* **Capture Methods:** System supports `automatic` (funds captured immediately), `manual` (funds captured in a separate step), `manual_multiple` (funds captured in multiple partial amounts via separate steps), `scheduled` (funds captured automatically at a future predefined time), and `sequential_automatic` (authorization and capture are handled as sequential operations) capture methods.
 * **Authentication:** 3DS authentication automatically resumes payment processing after customer completion
 * **MIT Compliance:** Off-session recurring payments follow industry standards for merchant-initiated transactions
+* **Refund IDs:** Use a new `refund_id` for each refund request. Reusing an existing value is rejected as `DuplicateRefundRequest`.
