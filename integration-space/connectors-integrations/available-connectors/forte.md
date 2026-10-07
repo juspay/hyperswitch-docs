@@ -42,7 +42,11 @@ They are not all used the same way. The **API Access ID** and **API Secure Key**
 
 ### Before you start
 
-Have the API Access ID, Organization ID, API Secure Key, and Location ID ready. To connect Forte to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Forte supports.
+1. Create or sign in to your [Forte account](https://www.forte.net/) and obtain the **API Access ID**, **Organization ID**, **API Secure Key**, and **Location ID**.
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/) and open Forte.
+3. Enter the four credentials.
+
+To connect Forte to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what Forte supports.
 
 ### Webhooks
 
