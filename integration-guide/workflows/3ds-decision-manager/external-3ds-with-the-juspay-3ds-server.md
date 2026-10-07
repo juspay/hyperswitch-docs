@@ -39,7 +39,7 @@ For the provider-neutral explanation, see [Standalone 3D Secure](external-authen
 
 ## How the integration works
 
-A payment is created and confirmed on Hyperswitch. When external 3DS is requested, Hyperswitch uses Juspay as the authentication connector and returns a `three_ds_invoke` next action. Your frontend then completes device fingerprinting, calls the authentication endpoint, handles either a challenge or frictionless outcome, and retrieves the payment status.
+A payment is created and confirmed on Hyperswitch. When external 3DS is requested, Hyperswitch uses Juspay ThreeDs server as authentication connector and returns a `three_ds_invoke` next action. Your frontend then completes device fingerprinting, calls the authentication endpoint, handles either a challenge or frictionless outcome, and retrieves the payment status.
 
 1. Create and confirm a payment in Hyperswitch.
 2. Receive `three_ds_invoke`.
@@ -468,7 +468,7 @@ window.addEventListener("message", async (event) => {
 
     for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
       const response = await fetch(
-        `https://sandbox.hyperswitch.io/poll/status/${encodeURIComponent(pollId)}`,
+        `https://sandbox.hyperswitch_domain/poll/status/${encodeURIComponent(pollId)}`,
         { headers: { "api-key": "<publishable key>" } }
       );
       const poll = await response.json();
@@ -538,7 +538,7 @@ async function confirmFinalStatus(paymentId, clientSecret) {
 
   for (let attempt = 0; attempt < 10; attempt++) {
     const response = await fetch(
-      `https://sandbox.hyperswitch.io/payments/${encodeURIComponent(paymentId)}` +
+      `https://sandbox.hyperswitch_domain/poll/payments/${encodeURIComponent(paymentId)}` +
         `?force_sync=true&client_secret=${encodeURIComponent(clientSecret)}`,
       { headers: { "api-key": "<publishable key>" } }
     );
