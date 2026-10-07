@@ -8,7 +8,19 @@ metaLinks:
     - adyen-split-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 59c3249bf29bc3800ce391de49fab00590c0cf9e
+     symbols: SplitPaymentsRequest.adyen_split_payment externally tagged shape = crates/common_types/src/payments.rs:35-66
+     symbols: AdyenSplitData.store, split_items; AdyenSplitItem.amount, split_type, account, reference, description = crates/common_types/src/domain.rs:14-75
+     symbols: Adyen split amount and field validation = crates/router/src/core/payments/helpers.rs:9628-9710
+     symbols: ConnectorChargeResponseData.adyen_split_payment snake_case response key = crates/common_types/src/payments.rs:436-468
+     checked: 2026-10-05 -->
+
 # Adyen Split Settlement
+
+### Before you start
+
+1. Enable split transactions for the Business Profile. In the [Hyperswitch control center](https://app.hyperswitch.io/), go to **Payment Settings → Payment Behaviour** and turn on the **Split Transactions** toggle.
+2. Configure an Adyen merchant connector account for that profile.
 
 ### Overview
 
@@ -58,9 +70,9 @@ In the [payment create](https://api-reference.hyperswitch.io/v1/payments/payment
 
 * `BalanceAccount`: Direct allocation to specified account (requires `account` field)
 * `Commission`: Platform commission (requires `amount` field)
-* `Vat`: Value-added tax allocation
-* `TopUp`: Balance account funding (requires `account`, not available with Platform)
-* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, etc.): Calculated automatically
+* `Vat`: Value-added tax allocation (requires `amount` field)
+* `TopUp`: Balance account funding (requires `amount` and `account` fields, not available with Platform)
+* Fee types (`AcquiringFees`, `PaymentFee`, `AdyenFees`, `AdyenCommission`, `AdyenMarkup`, `Interchange`, `SchemeFee`): Calculated automatically by Adyen
 
 **`amount`**: Split amount in minor units. Required for `Commission`, `Vat`, and `TopUp` types; optional for fee types as they're calculated by Adyen.
 
@@ -84,7 +96,7 @@ Hyperswitch enforces several validation rules:
 ```json
 {
   "split_payments": {
-    "AdyenSplitPayment": {
+    "adyen_split_payment": {
       "store": "4935y84385736",
       "split_items": [
         {
@@ -113,7 +125,7 @@ In the [refund create request](https://api-reference.hyperswitch.io/v1/refunds/r
 
 ```json
 {
-  "split_refund": {
+  "split_refunds": {
     "adyen_split_refund": {
       "store": "4935y84385736",
       "split_items": [
@@ -151,7 +163,7 @@ The request structure includes fields:
 
 ```json
 {
-  "split_refund": {
+  "split_refunds": {
     "adyen_split_refund": {
       "store": "4935y84385736",
       "split_items": [
