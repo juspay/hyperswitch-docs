@@ -56,6 +56,7 @@
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [Forte](connectors-integrations/available-connectors/forte.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
