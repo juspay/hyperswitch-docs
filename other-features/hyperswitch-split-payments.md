@@ -6,6 +6,13 @@ metaLinks:
     - hyperswitch-split-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 59c3249bf29bc3800ce391de49fab00590c0cf9e
+     symbols: SplitPaymentMethodDataRequest.payment_method_data, payment_method_type, payment_method_subtype = crates/api_models/src/payments.rs:3478-3486
+     symbols: PaymentsConfirmIntentRequest.payment_method_data, split_payment_method_data, payment_method_type, payment_method_subtype = crates/api_models/src/payments.rs:8351-8373
+     symbols: POST /v2/payments/{id}/eligibility/check-balance-and-apply-pm-data, POST /v2/payments/{id}/confirm-intent = crates/openapi/src/routes/payments.rs:1442,1613; crates/router/src/routes/app.rs:895,944
+     symbols: elements.create cardNumber, cardExpiry, cardCvc = hyperswitch-docs about-hyperswitch/sdk-payment-flows.md@4e9433db31e30e5ddb80dcf47784942d92f360dd
+     checked: 2026-10-05 -->
+
 # Split Payments
 
 Juspay Hyperswitch enables split payments, allowing a single transaction to be completed using more than one payment method. This is commonly used for gift card + card scenarios, where a customer pays partially with a gift card and covers the remaining balance with another method.
@@ -17,6 +24,8 @@ This capability helps merchants:
 * Support common retail and digital wallet experiences
 
 Juspay Hyperswitch manages the orchestration, balance checks, and sequential processing behind the scenes.
+
+This page covers using more than one payment method for one purchase. To distribute one payment among marketplace recipients, use [split settlement](connectors/split-payments/README.md).
 
 ### Supported Configurations
 
@@ -96,6 +105,12 @@ If the gift card authorization fails after the card payment has already been pro
 
 Once all payment methods are processed, the final transaction status is returned to the SDK.
 
+### Related SDK and routing questions
+
+If you build the card form from separate SDK fields, mount `cardNumber`, `cardExpiry`, and `cardCvc` with `elements.create`; see [SDK payment flows](../about-hyperswitch/sdk-payment-flows.md).
+
+If you need to send percentages of payment traffic to different processors, use [Volume-Based Routing](../integration-guide/workflows/intelligent-routing/volume-based-routing.md). It changes processor selection, not how one payment is settled among recipients.
+
 ### API Details
 
 **Apply a gift card**
@@ -126,7 +141,7 @@ curl --request POST \
 
 ```
 curl --request POST \
-  --url https://sandbox.hyperswitch.io/v2/payments/confirm-intent \
+  --url https://sandbox.hyperswitch.io/v2/payments/{id}/confirm-intent \
   --header 'Content-Type: application/json' \
   --header 'X-Profile-Id: <x-profile-id>' \
   --header 'api-key: <api-key>' \
