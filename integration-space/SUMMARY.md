@@ -42,6 +42,7 @@
     * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
     * [D24](connectors-integrations/available-connectors/d24.md)
     * [Datatrans](connectors-integrations/available-connectors/datatrans.md)
+    * [Deutsche Bank](connectors-integrations/available-connectors/deutschebank.md)
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
