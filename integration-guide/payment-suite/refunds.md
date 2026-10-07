@@ -2,28 +2,27 @@
 description: Create, limit, and track API refunds against captured payment amounts
 ---
 
-<!-- truth manifest; hyperswitch 02ba5ea0b4cc0ad8debea4cefd28a7de5916d9db; spec api-reference/v1/openapi_spec_v1.json@02ba5ea0b4cc0ad8debea4cefd28a7de5916d9db
-     symbols: POST /refunds = api-reference/v1/openapi_spec_v1.json:2283-2351; crates/router/src/routes/app.rs:1564-1602
-     symbols: GET /refunds/{refund_id} = api-reference/v1/openapi_spec_v1.json:2353-2380; crates/router/src/routes/app.rs:1564-1602
-     symbols: RefundRequest has 10 fields; payment_id, refund_id, amount, reason, metadata, refund_type are the 6 covered here = api-reference/v1/openapi_spec_v1.json:43403-43482
-     symbols: RefundResponse has 21 fields; refund_id, payment_id, amount, currency, status, reason, metadata are the 7 covered here = api-reference/v1/openapi_spec_v1.json:43484-43603
-     symbols: succeeded, failed, pending, review = api-reference/v1/openapi_spec_v1.json:43604-43612; crates/api_models/src/refunds.rs:571-604
-     symbols: refund.max_age = crates/router/src/configs/settings.rs:1173-1178; crates/router/src/configs/defaults.rs:90-95
-     symbols: refund.max_attempts = crates/router/src/configs/settings.rs:1173-1178; crates/router/src/core/refunds.rs:1676-1680
-     symbols: refundable payment statuses succeeded, partially_captured = crates/router/src/core/refunds.rs:391-403
-     symbols: initial refund status pending = crates/router/src/core/refunds.rs:1715-1721
-     symbols: refund_type instant is the default, executes before responding; scheduled queues = crates/api_models/src/refunds.rs:279-283; crates/router/src/core/refunds.rs:1750,2220-2245
-     symbols: refund.max_attempts default 10, rejects when existing refund count exceeds it, counts all refunds including failed = crates/router/src/configs/defaults.rs:90-95; crates/router/src/core/utils/refunds_validator.rs:93-100
-     symbols: GET /feature_matrix = crates/router/src/routes/app.rs:3386-3388, route registration only, absent from api-reference/v1/openapi_spec_v1.json
-     symbols: refund.max_age compared with payment created_at in whole days = crates/router/src/core/refunds.rs:1656-1663; crates/router/src/core/utils/refunds_validator.rs:80-90
-     symbols: post-capture void blocks refund = crates/router/src/core/refunds.rs:412; crates/hyperswitch_domain_models/src/payments.rs:442-461
-     symbols: connector refund support check = crates/router/src/core/refunds.rs:1697; crates/router/src/core/utils/refunds_validator.rs:119-147
-     symbols: reason stored on refund = crates/router/src/core/refunds.rs:1715-1725; Stripe connector does not send reason = crates/hyperswitch_connectors/src/connectors/stripe/transformers.rs:4309-4331
-     absent: customer statement timing = checked api-reference/v1/openapi_spec_v1.json:2283-2380,43403-43612; crates/router/src/routes/app.rs:1564-1605; crates/api_models/src/refunds.rs:19-76, no duration contract found
-     external: customer statement timing = payment processor and issuer owned; no fixed duration asserted, consistent with the in-repo refund status contract at api-reference/v1/openapi_spec_v1.json:43484-43612
+<!-- truth manifest; hyperswitch 7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8; spec api-reference/v1/openapi_spec_v1.json@7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8
+     symbols: POST /refunds = api-reference/v1/openapi_spec_v1.json:2474-2555; crates/router/src/routes/app.rs:1592-1640
+     symbols: GET /refunds/{refund_id} = api-reference/v1/openapi_spec_v1.json:2557-2618; crates/router/src/routes/app.rs:1592-1640
+     symbols: RefundRequest has 10 fields; payment_id, refund_id, amount, reason, metadata, refund_type are the 6 covered here = api-reference/v1/openapi_spec_v1.json:44612-44692; crates/api_models/src/refunds.rs:15-76
+     symbols: RefundResponse has 21 fields; refund_id, payment_id, amount, currency, status, reason, metadata are the 7 covered here = api-reference/v1/openapi_spec_v1.json:44693-44812; crates/api_models/src/refunds.rs:297-382
+     symbols: succeeded, failed, pending, review = api-reference/v1/openapi_spec_v1.json:44813-44821; crates/api_models/src/refunds.rs:680-708
+     symbols: refund.max_age and refund.max_attempts = crates/router/src/configs/settings.rs:1155-1160; crates/router/src/configs/defaults.rs:92-97
+     symbols: refundable payment statuses succeeded, partially_captured = crates/router/src/core/refunds.rs:402-414
+     symbols: initial refund status pending = crates/router/src/core/refunds.rs:1742-1760
+     symbols: refund_type instant is the default, executes before responding; scheduled queues = crates/api_models/src/refunds.rs:277-283; crates/router/src/core/refunds.rs:1653-1658,2408-2467
+     symbols: refund.max_attempts default 10, rejects when existing refund count exceeds it, counts all refunds including failed = crates/router/src/configs/defaults.rs:92-97; crates/router/src/core/utils/refunds_validator.rs:92-100
+     symbols: GET /feature_matrix = crates/router/src/routes/app.rs:3427-3435, route registration only, absent from api-reference/v1/openapi_spec_v1.json
+     symbols: refund.max_age compared with payment created_at in whole days = crates/router/src/core/refunds.rs:1692-1700; crates/router/src/core/utils/refunds_validator.rs:79-90
+     symbols: post-capture void blocks refund = crates/router/src/core/refunds.rs:416-423; crates/hyperswitch_domain_models/src/payments.rs:441-461
+     symbols: connector refund support check = crates/router/src/core/refunds.rs:1733-1738; crates/router/src/core/utils/refunds_validator.rs:118-147
+     symbols: reason stored on refund = crates/router/src/core/refunds.rs:1742-1760; Stripe connector does not send reason = crates/hyperswitch_connectors/src/connectors/stripe/transformers.rs:4337-4413
+     absent: customer statement timing = checked api-reference/v1/openapi_spec_v1.json:2474-2618,44612-44821; crates/router/src/routes/app.rs:1592-1640; crates/api_models/src/refunds.rs:15-76, no duration contract found
+     external: customer statement timing = payment processor and issuer owned; no fixed duration asserted, consistent with the in-repo refund status contract at api-reference/v1/openapi_spec_v1.json:44693-44821
      derived: remaining refundable amount = amount_captured - sum of refund_amount for refunds not in failure or transaction_failure, sources crates/router/src/core/utils/refunds_validator.rs:51-77
-     derived: omitted request amount = req.amount.or(payment_intent.amount_captured), then validated against the remaining refundable amount, sources crates/router/src/core/refunds.rs:414-419,1665-1674; crates/router/src/core/utils/refunds_validator.rs:51-77
-     checked: 2026-09-15 -->
+     derived: omitted request amount = req.amount.or(payment_intent.amount_captured), then validated against the remaining refundable amount, sources crates/router/src/core/refunds.rs:425-430,1702-1711; crates/router/src/core/utils/refunds_validator.rs:51-77
+     checked: 2026-10-07 -->
 
 # Refunds
 
