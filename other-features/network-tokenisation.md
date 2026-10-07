@@ -8,6 +8,25 @@ metaLinks:
     - network-tokenisation.md
 ---
 
+<!-- truth manifest; hyperswitch 7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8; spec api-reference/v1/openapi_spec_v1.json@7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8
+     symbols: network_tokenization_service = crates/router/src/configs/settings.rs:181-184; crates/router/src/core/payment_methods/network_tokenization.rs:633-666,704-740
+     symbols: is_network_tokenization_enabled = migrations/2024-09-12-112019_add_is_network_tokenization_enabled_in_business_profile/up.sql:1-2
+     symbols: network_tokenization_supported_card_networks = config/config.example.toml:1511-1512
+     symbols: network_tokenization_supported_connectors = config/config.example.toml:1527-1528
+     symbols: stored network-token references and encrypted data = crates/router/src/core/payment_methods/tokenize/payment_method_executor.rs:415-425
+     symbols: determine_standard_vault_action = crates/router/src/core/payments/helpers.rs:2892-2946
+     symbols: saved-card token fetch and card fallback = crates/router/src/core/payments/helpers.rs:2950-3075
+     symbols: get_token_from_tokenization_service v1 and v2 = crates/router/src/core/payment_methods/network_tokenization.rs:633-781
+     symbols: network-token status checks = crates/router/src/core/payment_methods/network_tokenization.rs:785-1025
+     symbols: handle_metadata_update = crates/router/src/core/webhooks/network_tokenization_incoming.rs:241-404
+     symbols: delete_network_token_from_locker_and_token_service = crates/router/src/core/payment_methods/network_tokenization.rs:1034-1172
+     symbols: NetworkTokenData v1 and v2 = crates/hyperswitch_domain_models/src/payment_method_data.rs:2098-2131
+     symbols: payment_account_reference = crates/router/src/core/payments/operations/payment_response.rs:2964-2968; crates/router/src/core/payments/transformers.rs:4491
+     symbols: Checkout VTS and MDES mapping = crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs:1054-1061,1099-1106
+     absent: connector_tokens in saved-card network-token selection = checked crates/router/src/core/payments/helpers.rs:2892-2946, not found
+     absent: data-only 3DS network-token path = checked crates/router/src/core/payment_methods/network_tokenization.rs, crates/hyperswitch_domain_models/src/payment_method_data.rs, crates/router/src/core/payments/helpers.rs, not found
+     checked: 2026-10-07 -->
+
 # Network Tokenisation
 
 Network tokenisation replaces a stored card number with a token issued through a card network. A payment can use that token only when the profile is enabled, the token service is configured, and the selected payment connector supports the flow.
