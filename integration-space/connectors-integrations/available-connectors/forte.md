@@ -30,9 +30,15 @@ Forte processes credit and debit card payments in Canada and the United States. 
 | card | Credit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Diners Club, Discover, JCB, Mastercard, Visa | CAN, USA | CAD, USD |
 | card | Debit Card | not supported | supported | automatic, manual, sequential automatic | not supported | American Express, Diners Club, Discover, JCB, Mastercard, Visa | CAN, USA | CAD, USD |
 
+3DS is not supported. A card request sent with 3DS set is rejected with a "not supported" error before anything reaches Forte ([`FortePaymentsRequest`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte/transformers.rs#L98-L105)), so route cards to another connector if your profile enables 3DS.
+
+Capture method changes what the create response reports. A manual-capture authorization returns `Authorized`, and a capture returns `Charged`. An automatic-capture sale returns `Pending` even when Forte approved it, and the payment moves to `Charged` only when a sync reports Forte's status as complete or settled ([`get_status`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte/transformers.rs#L217-L227), [status mapping](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte/transformers.rs#L205-L215)). Sync after every automatic payment before treating it as paid.
+
 ### Authentication
 
 Provide the **API Access ID**, **Organization ID**, **API Secure Key**, and **Location ID** shown in the connector form. The labels and accepted multi-auth fields are defined by the [`forte.connector_auth.MultiAuthKey` configuration](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/connector_configs/toml/sandbox.toml#L2759-L2763) and [`ForteAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte/transformers.rs#L174-L192).
+
+They are not all used the same way. The **API Access ID** and **API Secure Key** are combined and sent as HTTP Basic authentication in the `Authorization` header. The **Organization ID** is sent in the `X-Forte-Auth-Organization-Id` header and, together with the **Location ID**, forms the request path, `/organizations/{organization id}/locations/{location id}/transactions` ([`get_auth_header`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte.rs#L123-L146), [`get_url`](https://github.com/juspay/hyperswitch/blob/d03f8547d6367fab56690e4f5043590be4935dcd/crates/hyperswitch_connectors/src/connectors/forte.rs#L220-L225)). A wrong Access ID or Secure Key fails authentication; a wrong Organization ID or Location ID sends the request to the wrong endpoint.
 
 ### Before you start
 
