@@ -1,136 +1,165 @@
+<!-- truth manifest; hyperswitch cfbeb2bedf523da301d7d7b0a8dcbeaf2263c696; spec api-reference/v1/openapi_spec_v1.json@cfbeb2bedf523da301d7d7b0a8dcbeaf2263c696
+     symbols: POST /account/{account_id}/business_profile/{profile_id} = crates/openapi/src/routes/profile.rs:40-70
+     symbols: POST /account/{merchant_id}/connectors = crates/router/src/routes/app.rs:2183-2185
+     symbols: POST /account/{merchant_id}/connectors/{merchant_connector_id} = crates/router/src/routes/app.rs:2188-2191
+     symbols: juspaythreedsserver connector_auth NoKey = crates/connector_configs/toml/sandbox.toml:7048; crates/router/src/core/connector_validation.rs:378
+     symbols: POST /payments = crates/router/src/routes/app.rs:1039-1043; crates/openapi/src/routes/payments.rs:1-8,650-655
+     symbols: GET /payments/{payment_id}; force_sync; client_secret = crates/router/src/routes/app.rs:1052-1055; crates/openapi/src/routes/payments.rs:657-685
+     symbols: POST or GET /payments/{payment_id}/{merchant_id}/authorize/{connector} = crates/router/src/routes/app.rs:1129-1133
+     symbols: POST /payments/{payment_id}/3ds/authentication = crates/router/src/routes/app.rs:1135; crates/openapi/src/routes/payments.rs:1210-1224
+     symbols: GET /poll/status/{poll_id} = crates/router/src/routes/app.rs:2440-2449; crates/openapi/src/routes/poll.rs:1-15
+     symbols: request_external_three_ds_authentication = api-reference/v1/openapi_spec_v1.json:34256-34262
+     symbols: browser_info = crates/api_models/src/payments.rs:1387-1400; crates/hyperswitch_connectors/src/connectors/unified_authentication_service/transformers.rs:977-997
+     symbols: authentication_connector_details = crates/api_models/src/admin.rs:377-386
+     symbols: NextActionData::ThreeDsInvoke = crates/api_models/src/payments.rs:6900-6903,6995-6999
+     symbols: ThreeDsData = crates/api_models/src/payments.rs:7061-7087
+     symbols: PollConfigResponse = crates/api_models/src/payments.rs:7129-7138
+     symbols: PaymentsExternalAuthenticationRequest = crates/api_models/src/payments.rs:12175-12188
+     symbols: ThreeDsCompletionIndicator = Y,N,U (3 values) = crates/api_models/src/payments.rs:12278-12291
+     symbols: DeviceChannel = APP,BRW (2 values) = crates/api_models/src/payments.rs:12293-12313
+     symbols: PaymentsExternalAuthenticationResponse = crates/api_models/src/payments.rs:12442-12467
+     symbols: TransactionStatus = Y,N,U,A,R,C,D,I (8 values) = crates/common_enums/src/enums.rs:9633-9659
+     symbols: PollResponse and PollStatus = pending,completed,not_found (3 values) = crates/api_models/src/poll.rs:5-20
+     symbols: poll_status postMessage string fields = crates/router/src/core/utils.rs:2520-2566
+     symbols: openurl_if_required postMessage = crates/router/src/core/utils.rs:2568-2597
+     checked: 2026-10-01 -->
+
 # External 3DS with the Juspay 3DS Server
 
-Configure and run external 3DS authentication with the **Juspay 3DS Server**. Juspay performs the cardholder authentication, while your configured payment processor (PSP) authorizes the payment.
+Use this flow when the Juspay 3DS Server authenticates the cardholder and a separate payment processor authorizes the payment. Your backend creates and confirms the payment. Your browser then performs device fingerprinting, starts authentication, presents any challenge, and retrieves the final payment status.
 
-This guide is written for server-to-server (S2S) merchants who drive checkout from their own backend. The server setup (Steps 1–5) is shared across platforms; Step 6 then splits into the **web** flow (browser iframe or full-page redirect) and the **mobile** flow (native challenge or in-app browser).
+This page owns the complete browser walkthrough for the Juspay 3DS Server. It covers both browser models:
 
-### How the integration works
+* **Embedded iframe:** the challenge stays on your checkout page. You listen for `postMessage` events and poll a lightweight status endpoint to determine the authentication status.
+* **Full-page redirect:** the browser navigates to the ACS and returns to your `return_url`. This is simpler to implement, but it does not provide an embedded experience.
 
-A payment is created and confirmed on Hyperswitch. When external 3DS is requested, Hyperswitch uses Juspay as the authentication connector and returns a `three_ds_invoke` next action. Your client (web frontend or mobile app) then completes device data collection, calls the authentication endpoint, handles either a challenge or frictionless outcome, and finally retrieves the payment status.
+The two models share the same setup, payment, fingerprinting, and authentication calls. They differ only in the target used for the final forms and how your application receives completion.
+
+For the provider-neutral explanation, see [Standalone 3D Secure](external-authentication-for-3ds.md). Mobile 3DS is outside this browser walkthrough.
+
+## How the integration works
+
+A payment is created and confirmed on Hyperswitch. When external 3DS is requested, Hyperswitch uses Juspay ThreeDs server as authentication connector and returns a `three_ds_invoke` next action. Your frontend then completes device fingerprinting, calls the authentication endpoint, handles either a challenge or frictionless outcome, and retrieves the payment status.
 
 1. Create and confirm a payment in Hyperswitch.
 2. Receive `three_ds_invoke`.
-3. Collect device data (a hidden fingerprinting iframe on web; the native 3DS SDK on mobile).
+3. Run device fingerprinting when required.
 4. Call the 3DS authentication endpoint.
 5. Handle challenge or frictionless authentication.
 6. Finalize authorization and retrieve the payment status.
 
-The client-side handling differs by platform:
+## Before you start
 
-| Platform   | Models                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Web**    | Embedded iframe flow (cardholder stays on your page) or full-page redirect flow (browser navigates to the ACS and returns to your `return_url`). |
-| **Mobile** | Native 3DS flow (challenge rendered by a native 3DS SDK inside your app) or redirected 3DS flow (challenge in an in-app browser).                |
+Keep a secret API key on your backend and a publishable key in the browser. Never expose the secret API key in browser code.
 
-{% hint style="info" %}
-The most important platform difference is the **device channel**. Web sends `device_channel: "BRW"` and collects data via `browser_info` plus a hidden fingerprinting iframe. Mobile sends `device_channel: "APP"` and collects device data through the native 3DS SDK — there is **no** device-fingerprinting step and **no** `browser_info` on mobile.
-{% endhint %}
+Complete the four setup steps below in order. They enable the feature, add the 3DS metadata to your payment connector, register the Juspay 3DS Server, and point the Business Profile at it.
 
-### Step 1: Enable External 3DS
+### Step 1: Enable External 3DS for your account
 
-Contact [Hyperswitch Support](https://hyperswitch.io/contact-us) to enable External 3DS for your account. External 3DS can be enabled at either of the following levels:
+Contact Hyperswitch Support to enable External 3DS. It can be enabled at either level:
 
-* **Organization ID** — External 3DS is enabled for the organization, and all Merchant IDs (MIDs) under the organization are enabled for External 3DS by default.
-* **Merchant ID** — External 3DS is enabled only for the specified MID.
+* **Organization ID:** External 3DS is enabled for the organization, and every Merchant ID under it is enabled by default.
+* **Merchant ID:** External 3DS is enabled only for the specified Merchant ID.
 
-### Step 2: Configure the payment connector with additional data
+### Step 2: Add External 3DS metadata to the payment connector
 
-For External 3DS, the Merchant Connector Account (MCA) requires additional configuration metadata specific to the External 3DS flow. If you already have a payment connector configured, update the existing Merchant Connector Account to include the additional metadata required for the External 3DS flow.
+The Merchant Connector Account for the payment processor needs additional metadata for the External 3DS flow. If the connector already exists, update it rather than creating a second one.
 
-The following is an example of an MCA update request for the Nuvei connector, including the additional fields required to support External 3DS:
+The example below updates a Nuvei connector.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/account/{{merchant_id}}/connectors/{{mca_id}}' \
---header 'Content-Type: application/json' \
---header 'api-key: {{api_key}}' \
---data '{
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/account/<merchant id>/connectors/<mca id>' \
+  --header 'Content-Type: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
     "connector_type": "payment_processor",
     "metadata": {
-        "merchant_category_code": "5411",
-        "merchant_country_code": "840",
-        "merchant_name": "Dummy Merchant",
-        "acquirer_bin": "444444",
-        "endpoint_prefix": "test",
-        "acquirer_merchant_id": "JuspayTest1",
-        "acquirer_country_code": "356"
+      "merchant_category_code": "5411",
+      "merchant_country_code": "840",
+      "merchant_name": "Dummy Merchant",
+      "acquirer_bin": "444444",
+      "endpoint_prefix": "test",
+      "acquirer_merchant_id": "JuspayTest1",
+      "acquirer_country_code": "356"
     }
-}'
+  }'
 ```
 
-{% hint style="info" %}
-Dashboard support for configuring these additional fields directly while setting up or updating a connector is on the way. Until then, set them through the API request shown above.
-{% endhint %}
+These fields are not exposed in the dashboard connector form. Set them through the connector update API as shown.
 
-### Step 3: Configure the Juspay 3DS Server
+### Step 3: Register the Juspay 3DS Server
 
-Configure the Juspay 3DS Server as a 3DS authenticator. This enables Hyperswitch to use the Juspay 3DS Server for External 3DS authentication.
+Add the Juspay 3DS Server as an authentication connector. This is what lets Hyperswitch use it for External 3DS.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/account/{{merchant_id}}/connectors' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: {{api_key}}' \
---data '{
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/account/<merchant id>/connectors' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
     "connector_type": "authentication_processor",
     "connector_name": "juspaythreedsserver",
     "connector_label": "test",
-    "profile_id": "{{profile_id}}",
+    "profile_id": "<profile id>",
     "connector_account_details": {
-        "auth_type": "NoKey"
+      "auth_type": "NoKey"
     },
     "test_mode": true,
     "disabled": false,
     "metadata": {
-        "merchant_category_code": "5411",
-        "merchant_country_code": "840",
-        "merchant_name": "Dummy Merchant",
-        "endpoint_prefix": "",
-        "three_ds_requestor_name": "hyperswitch_sbx",
-        "three_ds_requestor_id": "hyperswitch_sbx",
-        "pull_mechanism_for_external_3ds_enabled": true
+      "merchant_category_code": "5411",
+      "merchant_country_code": "840",
+      "merchant_name": "Dummy Merchant",
+      "endpoint_prefix": "",
+      "three_ds_requestor_name": "hyperswitch_sbx",
+      "three_ds_requestor_id": "hyperswitch_sbx",
+      "pull_mechanism_for_external_3ds_enabled": true
     }
-}'
+  }'
 ```
 
-### Step 4: Enable 3DS authentication on the business profile
+`auth_type` is `NoKey`: the connector configuration declares no credential fields for the Juspay 3DS Server, so the activation call carries metadata only. See the [Juspay 3DS Server connector page](../../../integration-space/connectors-integrations/3ds-providers/juspaythreedsserver.md).
 
-Configure your business profile to use the Juspay 3DS Server.
+### Step 4: Enable 3DS authentication on the Business Profile
+
+Point the profile at the Juspay 3DS Server. `authentication_connector_details` carries the ordered authentication connector list and the 3DS requestor URL.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/account/{{merchant_id}}/business_profile/{{profile_id}}' \
---header 'Content-Type: application/json' \
---header 'api-key: {{api_key}}' \
---data '{
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/account/<merchant id>/business_profile/<profile id>' \
+  --header 'Content-Type: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
     "authentication_connector_details": {
-        "authentication_connectors": [
-            "juspaythreedsserver"
-        ],
-        "three_ds_requestor_url": "https://your-domain.com"
+      "authentication_connectors": ["juspaythreedsserver"],
+      "three_ds_requestor_url": "https://<your domain>"
     },
     "merchant_country_code": "004",
     "merchant_category_code": "5411"
-}'
+  }'
 ```
 
-### Step 5: Create the payment with External 3DS
+The profile example sends `merchant_country_code` `004`, reproduced from the source guide, while the connector examples in steps 2 and 3 send `840`. The value is validated as a numeric ISO 3166 country code. Use your own merchant's code in all three places rather than copying either example value.
 
-Set [`request_external_three_ds_authentication`](https://api-reference.hyperswitch.io/v1/payments/payments--create#body-request-external-three-ds-authentication-one-of-0) to `true` to use the external 3DS flow instead of the processor's native 3DS.
+## 1. Create and confirm the payment
 
-{% hint style="warning" %}
-On **web**, the `browser_info` object below is **required** and is reused later for the authentication step (Step 6 · Web). Collect it on your checkout page before confirming the payment. On **mobile**, `browser_info` is not sent — device data is supplied as `sdk_information` at authentication time (Step 6 · Mobile), gathered by the native 3DS SDK. If you use the Hyperswitch mobile SDK, it creates and confirms the payment for you.
-{% endhint %}
+Set `request_external_three_ds_authentication` to `true`, use `authentication_type: "three_ds"`, and provide a `return_url`.
+
+Send `browser_info`. It is reused later for the authentication step in step 4, which does not accept browser data of its own. The v1 schema allows `browser_info` to be omitted, and the authentication transformer then supplies an empty browser object, so send the real browser values for a browser transaction rather than relying on that fallback.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: {{secret_api_key}}' \
---data '{
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/payments' \
+  --header 'Content-Type: application/json' \
+  --header 'api-key: <secret api key>' \
+  --data '{
     "amount": 15100,
     "currency": "USD",
     "confirm": true,
     "capture_method": "automatic",
-    "profile_id": "{{profile_id}}",
+    "profile_id": "<profile id>",
     "customer_id": "TestCustomer",
     "email": "test@example.com",
     "name": "John Doe",
@@ -138,595 +167,392 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "phone_country_code": "+1",
     "description": "External 3DS test payment",
     "authentication_type": "three_ds",
-    "return_url": "https://your-domain.com/return",
+    "return_url": "https://<your domain>/payments/return",
     "request_external_three_ds_authentication": true,
     "payment_method": "card",
     "payment_method_type": "debit",
     "browser_info": {
-        "accept_header": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "ip_address": "192.168.1.1",
-        "java_enabled": false,
-        "java_script_enabled": true,
-        "language": "en-US",
-        "color_depth": 24,
-        "screen_height": 1080,
-        "screen_width": 1920,
-        "time_zone": 330,
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      "accept_header": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "ip_address": "203.0.113.10",
+      "java_enabled": false,
+      "java_script_enabled": true,
+      "language": "en-US",
+      "color_depth": 24,
+      "screen_height": 1080,
+      "screen_width": 1920,
+      "time_zone": 330,
+      "user_agent": "<browser user agent>"
     },
     "payment_method_data": {
-        "card": {
-            "card_number": "5204730541001215",
-            "card_exp_month": "07",
-            "card_exp_year": "31",
-            "card_holder_name": "CL-BRW2",
-            "card_cvc": "123"
-        }
+      "card": {
+        "card_number": "5204730541001215",
+        "card_exp_month": "07",
+        "card_exp_year": "31",
+        "card_holder_name": "CL-BRW2",
+        "card_cvc": "123"
+      }
     },
     "billing": {
-        "address": {
-            "line1": "1467 Harrison Street",
-            "city": "San Francisco",
-            "state": "CA",
-            "zip": "94122",
-            "country": "US",
-            "first_name": "John",
-            "last_name": "Doe"
-        }
+      "address": {
+        "line1": "1467 Harrison Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94122",
+        "country": "US",
+        "first_name": "John",
+        "last_name": "Doe"
+      }
     }
-}'
+  }'
 ```
 
-The response returns a `next_action`, indicating that 3DS authentication is required. Continue to Step 6 for your platform.
+A payment that needs this flow returns `next_action.type` as `three_ds_invoke`.
 
-### Step 6: Handle the 3DS flow
+## 2. Read `three_ds_invoke`
 
-The client branches on `next_action.type`:
-
-| `next_action.type` | Meaning                                                                                         |
-| ------------------ | ----------------------------------------------------------------------------------------------- |
-| `three_ds_invoke`  | External 3DS via the Juspay 3DS Server (produced only when External 3DS is enabled, Steps 1–5). |
-| `redirect_to_url`  | Processor-native 3DS or fallback (produced when External 3DS is not used).                      |
-
-Follow the section for your platform below.
-
-### Step 6 · Web
-
-Hyperswitch supports two web integration models. Choose the one that fits your UX requirements:
-
-* **Embedded iframe flow** — device fingerprinting, the 3DS challenge, and result handling are performed within iframes embedded on your page. The cardholder remains on your checkout page throughout. You listen for `postMessage` events and poll a lightweight status endpoint to determine the authentication status.
-* **Full-page redirect flow** — the 3DS challenge is presented by navigating the entire browser window. Once authentication completes, the cardholder is redirected to your configured `return_url`, where the final status can be retrieved. This is simpler to implement but does not provide an embedded experience.
-
-{% hint style="info" %}
-The device fingerprinting step (Web 6.2) always uses a **hidden** iframe, regardless of the integration model you select. It runs invisibly in the background and needs no cardholder interaction.
-{% endhint %}
-
-#### Web 6.1 — The `next_action` response
-
-For the web flow, the response contains a `three_ds_invoke` action with a `three_ds_data` object:
+The response shape is a tagged `next_action` object. `poll_config.delay_in_secs` and `poll_config.frequency` are integers here.
 
 ```json
-"next_action": {
-  "type": "three_ds_invoke",
-  "three_ds_data": {
-    "three_ds_authentication_url": "https://SANDBOX_URL/payments/pay_XXXX/3ds/authentication",
-    "three_ds_authorize_url": "https://SANDBOX_URL/payments/pay_XXXX/merchant_XXXX/authorize/nuvei",
-    "three_ds_method_details": {
-      "three_ds_method_data_submission": true,
-      "three_ds_method_data": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6Ii4uLiJ9",
-      "three_ds_method_url": "https://acs-public.tp.mastercard.com/api/v1/3ds_method",
-      "three_ds_method_key": "threeDSMethodData",
-      "consume_post_message_for_three_ds_method_completion": false
-    },
-    "poll_config": {
-      "poll_id": "external_authentication_pay_XXXX",
-      "delay_in_secs": 2,
-      "frequency": 5
-    },
-    "message_version": "2.2.0",
-    "directory_server_id": "A000000004",
-    "card_network": "Mastercard"
+{
+  "next_action": {
+    "type": "three_ds_invoke",
+    "three_ds_data": {
+      "three_ds_authentication_url": "https://<hyperswitch host>/payments/<payment id>/3ds/authentication",
+      "three_ds_authorize_url": "https://<hyperswitch host>/payments/<payment id>/<merchant id>/authorize/<payment connector>",
+      "three_ds_method_details": {
+        "three_ds_method_data_submission": true,
+        "three_ds_method_data": "<encoded 3DS method data>",
+        "three_ds_method_url": "https://<acs host>/<3ds method path>",
+        "three_ds_method_key": "threeDSMethodData",
+        "consume_post_message_for_three_ds_method_completion": false
+      },
+      "poll_config": {
+        "poll_id": "external_authentication_<payment id>",
+        "delay_in_secs": 2,
+        "frequency": 5
+      },
+      "message_version": "2.2.0",
+      "directory_server_id": "<directory server id>",
+      "card_network": "<card network>",
+      "three_ds_connector": "juspaythreedsserver"
+    }
   }
 }
 ```
 
-| Parameter                                                                     | Description                                                                                                                      |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `three_ds_method_details.three_ds_method_data_submission`                     | Whether device fingerprinting (Web 6.2) is required.                                                                             |
-| `three_ds_method_url` / `three_ds_method_data` / `three_ds_method_key`        | Inputs for the fingerprinting POST. For Juspay 3DS, `three_ds_method_key` is always `"threeDSMethodData"`.                       |
-| `three_ds_method_details.consume_post_message_for_three_ds_method_completion` | For Juspay 3DS this is always `false`.                                                                                           |
-| `three_ds_authentication_url`                                                 | Endpoint for the authentication call (Web 6.3).                                                                                  |
-| `three_ds_authorize_url`                                                      | Endpoint to post the challenge/frictionless result to (Web 6.4).                                                                 |
-| `poll_config`                                                                 | Poll id, delay, and max attempts for the lightweight status poll. Only used in the embedded iframe flow (Web 6.5, embedded tab). |
+| Field | Use |
+| --- | --- |
+| `three_ds_method_details.three_ds_method_data_submission` | Whether device fingerprinting in step 3 is required. |
+| `three_ds_method_url`, `three_ds_method_data`, `three_ds_method_key` | Inputs for the fingerprinting POST. For the Juspay 3DS Server, `three_ds_method_key` is always `threeDSMethodData`. |
+| `three_ds_method_details.consume_post_message_for_three_ds_method_completion` | For the Juspay 3DS Server this is always `false`. |
+| `three_ds_authentication_url` | Endpoint for the authentication call in step 4. |
+| `three_ds_authorize_url` | Endpoint to post the challenge or non-challenge result to in step 5. |
+| `poll_config` | Poll id, delay and maximum attempts for the lightweight status poll. Used only in the embedded iframe model. |
+| `message_version`, `directory_server_id`, `card_network`, `three_ds_connector` | Context returned for the selected 3DS path. |
 
-#### Web 6.2 — Device fingerprinting
+## 3. Perform device fingerprinting
 
-{% hint style="info" %}
-Perform this **only if** `three_ds_method_data_submission` is `true`. Otherwise skip directly to Web 6.3 with `threeds_method_comp_ind = "U"`.
-{% endhint %}
+Check `three_ds_method_data_submission` before creating the form.
 
-Submit a hidden form (POST) to `three_ds_method_url`, targeting a hidden iframe, with one field named by `three_ds_method_key` (`threeDSMethodData`) carrying `three_ds_method_data`. The hidden iframe is required here in **both** web integration models — fingerprinting must run invisibly in the background without navigating your page away.
+* If it is `false`, skip the form and send `threeds_method_comp_ind: "U"` in step 4.
+* If it is `true`, submit the method data in a hidden iframe. Send `"Y"` when your method completion handling succeeds. Send `"N"` when it fails.
 
-**Completion detection:**
+`threeds_method_comp_ind` has exactly three wire values:
 
-* Detect the hidden iframe navigating away from `about:blank`. Cross-origin access to the iframe throws a `SecurityError`, which you can treat as completion.
-* Apply a timeout of \~15 seconds as a fallback.
-
-**Set the indicator (`threeds_method_comp_ind`) for Web 6.3:**
-
-* `"Y"` — fingerprinting completed.
-* `"N"` — timeout/error.
-* `"U"` — fingerprinting was skipped (i.e. `three_ds_method_data_submission` was `false`).
+| Value | Meaning |
+| --- | --- |
+| `Y` | The 3DS method completed. |
+| `N` | The 3DS method did not complete successfully. |
+| `U` | The 3DS method URL was unavailable or no submission was requested. |
 
 ```html
-<iframe name="threeDSMethodFrame" style="display:none"></iframe>
-
-<form id="tdsMethodForm" method="POST"
-      action="{{three_ds_method_url}}" target="threeDSMethodFrame">
-  <input name="{{three_ds_method_key}}" value="{{three_ds_method_data}}">
+<iframe name="threeDSMethodFrame" hidden></iframe>
+<form
+  id="threeDSMethodForm"
+  method="POST"
+  action="<three ds method url>"
+  target="threeDSMethodFrame"
+>
+  <input
+    type="hidden"
+    name="<three ds method key>"
+    value="<encoded three ds method data>"
+  />
 </form>
-
-<script>document.getElementById('tdsMethodForm').submit();</script>
+<script>
+  document.getElementById("threeDSMethodForm").submit();
+</script>
 ```
 
-#### Web 6.3 — Authentication call
+The hidden iframe is required in both browser models. Fingerprinting must run invisibly in the background without navigating your page away.
 
-Call `three_ds_authentication_url` with the publishable API key. Send `client_secret`, `device_channel` (always `"BRW"` for browser), and the `threeds_method_comp_ind` from Web 6.2.
+**Detecting completion.** Watch for the hidden iframe navigating away from `about:blank`. Cross-origin access to the iframe throws a `SecurityError`, which you can treat as completion. Apply a timeout of about 15 seconds as a fallback, and send `"N"` if it expires.
 
-{% hint style="warning" %}
-Do **not** send `browser_info` here — this endpoint does not accept it. Browser data is taken from the `browser_info` you already provided in the confirm request (Step 5).
-{% endhint %}
+## 4. Start 3DS authentication
 
-**Request:**
+Call `POST /payments/{payment_id}/3ds/authentication` with the publishable key. When the request does not use an SDK Authorization header, `client_secret` is required. Browser requests use `device_channel: "BRW"`.
+
+Do not send `browser_info` to this endpoint. Its request object has four fields: `client_secret`, `sdk_information`, `device_channel`, and `threeds_method_comp_ind`. The browser information comes from the payment created in step 1.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/{{payment_id}}/3ds/authentication' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---header 'api-key: {{publishable_api_key}}' \
---data '{
-    "client_secret": "{{client_secret}}",
+curl --request POST \
+  --url 'https://sandbox.hyperswitch.io/payments/<payment id>/3ds/authentication' \
+  --header 'Content-Type: application/json' \
+  --header 'api-key: <publishable key>' \
+  --data '{
+    "client_secret": "<payment client secret>",
     "device_channel": "BRW",
     "threeds_method_comp_ind": "Y"
-}'
+  }'
 ```
 
-**Response:**
-
-```json
-{
-    "trans_status": "C",
-    "acs_url": "https://.../acs/trigger-otp?redirectUrl=...",
-    "challenge_request": "BASE64_ENCODED_CREQ",
-    "challenge_request_key": "creq",
-    "acs_trans_id": "UUID",
-    "three_dsserver_trans_id": "UUID"
-}
-```
-
-Based on `trans_status`:
-
-* `trans_status = "C"` — a challenge is required (Web 6.4, challenge).
-* Any other value — frictionless (Web 6.4, frictionless).
-
-#### Web 6.4 — Submit the result
-
-How you target the form in this step determines your integration model — target a visible iframe to keep the cardholder on your page, or submit in the top-level window to redirect the whole browser.
-
-{% tabs %}
-{% tab title="Embedded iframe flow" %}
-**Challenge (`trans_status = "C"`)** — submit a form (POST) to `acs_url` with one field named by `challenge_request_key` (default `creq`) carrying `challenge_request`, targeting a **visible** iframe. The ACS renders the challenge (e.g. OTP) inside your page.
-
-```html
-<iframe name="threeDsAuthFrame" style="width:100%;min-height:500px"></iframe>
-
-<form id="acsForm" method="POST" action="{{acs_url}}" target="threeDsAuthFrame">
-  <input name="{{challenge_request_key}}" value="{{challenge_request}}">
-</form>
-
-<script>document.getElementById('acsForm').submit();</script>
-```
-
-**Frictionless (any other `trans_status`)** — no challenge is shown. Submit a form (POST) to `three_ds_authorize_url` targeting the same visible iframe to finalize authorization.
-
-```html
-<iframe name="threeDsAuthFrame" style="width:100%;min-height:500px"></iframe>
-
-<form id="authorizeForm" method="POST" action="{{three_ds_authorize_url}}" target="threeDsAuthFrame">
-</form>
-
-<script>document.getElementById('authorizeForm').submit();</script>
-```
-
-Continue to Web 6.5 (embedded iframe tab).
-{% endtab %}
-
-{% tab title="Full-page redirect flow" %}
-**Challenge (`trans_status = "C"`)** — submit a form (POST) to `acs_url` in the top-level window (no `target`). The whole browser navigates to the ACS challenge page.
-
-```html
-<form id="acsForm" method="POST" action="{{acs_url}}">
-  <input name="{{challenge_request_key}}" value="{{challenge_request}}">
-</form>
-
-<script>document.getElementById('acsForm').submit();</script>
-```
-
-**Frictionless (any other `trans_status`)** — no challenge is shown. Submit a form (POST) to `three_ds_authorize_url` in the top-level window.
-
-```html
-<form id="authorizeForm" method="POST" action="{{three_ds_authorize_url}}"></form>
-
-<script>document.getElementById('authorizeForm').submit();</script>
-```
-
-Continue to Web 6.5 (full-page redirect tab).
-{% endtab %}
-{% endtabs %}
-
-#### Web 6.5 — Completion
-
-When the challenge/frictionless result reaches `three_ds_authorize_url`, Hyperswitch responds with an HTML page containing a small script. That script detects at runtime whether it is running inside an iframe or in the top-level window and behaves accordingly. Use the completion section below that matches how you submitted the form in Web 6.4.
-
-{% tabs %}
-{% tab title="Embedded iframe flow" %}
-Since the authorized response is loaded inside your iframe, its script does not redirect. Instead it sends a `postMessage` to the parent (merchant) window. Add a listener on the parent window. Two message shapes are possible:
-
-* When authorization is still finalizing (HS intent status `requires_customer_action`), you receive a `poll_status` message:
-
-```json
-{
-  "poll_status": {
-    "poll_id": "external_authentication_pay_XXXX",
-    "frequency": "5",
-    "delay_in_secs": "2",
-    "return_url_with_query_params": "https://your-domain.com/return?payment_id=pay_XXXX&status=..."
-  }
-}
-```
-
-* When authorization is already resolved, you receive an `openurl_if_required` message whose value is the return URL string:
-
-```json
-{ "openurl_if_required": "https://your-domain.com/return?payment_id=pay_XXXX&status=..." }
-```
-
-{% hint style="info" %}
-In the `poll_status` message, `frequency` and `delay_in_secs` are **strings**. In the `poll_config` object from Web 6.1 they are integers.
-{% endhint %}
-
-**Parent-window listener:**
-
-```javascript
-window.addEventListener("message", async (event) => {
-  const data = event.data || {};
-
-  // Case 1: authorization still finalizing -> poll, then retrieve
-  if (data.poll_status) {
-    const { poll_id, delay_in_secs, frequency, return_url_with_query_params } = data.poll_status;
-    const delayMs = parseInt(delay_in_secs, 10) * 1000;
-    const maxAttempts = parseInt(frequency, 10);
-
-    for (let i = 0; i < maxAttempts; i++) {
-      const res = await fetch(`{{SANDBOX_URL}}/poll/status/${poll_id}`, {
-        headers: { "api-key": "{{publishable_api_key}}" }
-      });
-      const poll = await res.json();
-      if (poll.status === "completed" || poll.status === "not_found") break;
-      await new Promise(r => setTimeout(r, delayMs));
-    }
-
-    await retrieveAndFinish(return_url_with_query_params);
-  }
-
-  // Case 2: already resolved -> just retrieve
-  if (data.openurl_if_required) {
-    await retrieveAndFinish(data.openurl_if_required);
-  }
-});
-
-async function retrieveAndFinish(returnUrl) {
-  // force_sync=true makes Hyperswitch sync with the connector for the freshest status
-  const res = await fetch(
-    `{{SANDBOX_URL}}/payments/{{payment_id}}?force_sync=true&client_secret={{client_secret}}`,
-    { headers: { "api-key": "{{publishable_api_key}}" } }
-  );
-  const payment = await res.json();
-  // payment.status is now succeeded / failed / requires_capture / etc.
-  // Update your UI, or redirect to returnUrl.
-}
-```
-
-**Poll endpoint — `GET /poll/status/{poll_id}`:**
-
-```bash
-curl --location '{{SANDBOX_URL}}/poll/status/{{poll_id}}' \
---header 'api-key: {{publishable_api_key}}'
-```
-
-```json
-{ "poll_id": "external_authentication_pay_XXXX", "status": "pending" }
-```
-
-`status` will be one of `pending`, `completed`, or `not_found`. Poll while `pending` (waiting `delay_in_secs` between calls, up to `frequency` attempts). Once `completed`, retrieve the payment for the final status:
-
-```bash
-curl --location '{{SANDBOX_URL}}/payments/{{payment_id}}?force_sync=true&client_secret={{client_secret}}' \
---header 'api-key: {{publishable_api_key}}'
-```
-{% endtab %}
-
-{% tab title="Full-page redirect flow" %}
-Since the authorized response is loaded in the top-level window, its script runs the redirect branch and navigates the browser directly to `return_url`, with `payment_id`, `status`, `payment_intent_client_secret`, `amount`, and `manual_retry_allowed` query params appended. No `postMessage` is sent and `/poll/status` is not used in this model.
-
-{% hint style="warning" %}
-The redirect is immediate. The `status` in the return URL is the status **at the moment of redirect** and may not yet be terminal — the return URL does not wait for authorization to finalize. You must confirm the final status yourself on your return page.
-{% endhint %}
-
-On your return page, retrieve the payment with `force_sync=true` and retry until the status is terminal:
-
-```bash
-curl --location '{{SANDBOX_URL}}/payments/{{payment_id}}?force_sync=true&client_secret={{client_secret}}' \
---header 'api-key: {{publishable_api_key}}'
-```
-
-**Example return-page logic:**
-
-```javascript
-// On your return page, read payment_id and payment_intent_client_secret from the
-// query params and use them for the retrieve call:
-// const params = new URLSearchParams(window.location.search);
-// const paymentId = params.get("payment_id");
-// const clientSecret = params.get("payment_intent_client_secret");
-
-async function confirmFinalStatus(paymentId, clientSecret) {
-  const terminal = ["succeeded", "failed", "cancelled", "requires_capture"];
-  for (let i = 0; i < 10; i++) {
-    const res = await fetch(
-      `{{SANDBOX_URL}}/payments/${paymentId}?force_sync=true&client_secret=${clientSecret}`,
-      { headers: { "api-key": "{{publishable_api_key}}" } }
-    );
-    const payment = await res.json();
-    if (terminal.includes(payment.status)) return payment;
-    await new Promise(r => setTimeout(r, 2000)); // wait, then retry
-  }
-}
-```
-
-{% hint style="warning" %}
-Ensure `return_url` is set in the confirm request (Step 5). In this model it is load-bearing — the backend redirects the top-level window to it.
-{% endhint %}
-{% endtab %}
-{% endtabs %}
-
-### Step 6 · Mobile
-
-On mobile there is no browser page or iframe, so device data collection and challenge rendering are handled by a **native 3DS SDK** embedded in your app rather than by browser iframes. The External 3DS flow itself is identical to web — the same authentication and authorize endpoints, the same challenge/frictionless branch — only the client that performs it changes.
-
-There are two ways to run this flow on mobile:
-
-* **Hyperswitch mobile SDK (iOS, Android, React Native)** — the SDK performs the entire flow below for you, including bundling and driving a native 3DS SDK. It is 3DS-provider agnostic: it detects an available 3DS SDK at runtime (the Juspay 3DS SDK or Netcetera) and drives it, so you don't integrate a 3DS SDK yourself. If you take this path, the steps below describe what happens under the hood so you can configure it correctly and understand the states your app will surface.
-* **Direct server-to-server integration** — if you want to stay fully S2S and drive checkout from your own app _without_ the Hyperswitch mobile SDK, integrate a **native 3DS SDK directly** and make the same Hyperswitch API calls the web flow uses. The **Juspay 3DS SDK** is the recommended option for S2S merchants. The 3DS SDK is used only to gather device data and render the challenge; every network call in the steps below is a plain Hyperswitch API call your app makes itself.
-
-{% hint style="info" %}
-The **Juspay 3DS Server** (Steps 1–5) and the **Juspay 3DS SDK** are different components despite the similar names. The 3DS Server is the server-side `authentication_processor` connector that performs the authentication; the 3DS SDK is a client-side library embedded in your mobile app that collects device data and renders the challenge. You can use either 3DS SDK provider (Juspay or Netcetera) with the Juspay 3DS Server.
-{% endhint %}
-
-Either way, the client branches on `next_action.type`:
-
-| `next_action.type` | Flow                                                | Section          |
-| ------------------ | --------------------------------------------------- | ---------------- |
-| `three_ds_invoke`  | Native 3DS (External 3DS via the Juspay 3DS Server) | Mobile 6.1 → 6.M |
-| `redirect_to_url`  | Redirected 3DS (processor-native 3DS or fallback)   | Mobile 6.R       |
-
-#### Mobile 6.1 — The `next_action` response (`three_ds_invoke`)
-
-Similar shape to web, but without `three_ds_method_details` (there is no fingerprinting step on mobile):
-
-```json
-"next_action": {
-  "type": "three_ds_invoke",
-  "three_ds_data": {
-    "three_ds_authentication_url": "https://SANDBOX_URL/payments/pay_XXXX/3ds/authentication",
-    "three_ds_authorize_url": "https://SANDBOX_URL/payments/pay_XXXX/merchant_XXXX/authorize/nuvei",
-    "poll_config": {
-      "poll_id": "external_authentication_pay_XXXX",
-      "delay_in_secs": 2,
-      "frequency": 5
-    },
-    "message_version": "2.2.0",
-    "directory_server_id": "A000000004",
-    "card_network": "Mastercard"
-  }
-}
-```
-
-| Parameter                     | Description                                                                                                                       |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `three_ds_authentication_url` | Endpoint for the native authentication call (Mobile 6.M.2).                                                                       |
-| `three_ds_authorize_url`      | Endpoint to POST to after challenge/frictionless to finalize authorization (Mobile 6.M.4).                                        |
-| `message_version`             | 3DS protocol version. Passed to the native SDK to generate the authentication request (AReq) parameters.                          |
-| `directory_server_id`         | Card-network directory server ID. Passed to the native SDK to generate AReq parameters.                                           |
-| `poll_config`                 | `poll_id`, `delay_in_secs`, and max attempts (`frequency`) for the status poll used while authorization finalizes (Mobile 6.M.5). |
-
-{% hint style="info" %}
-Unlike web, mobile does **not** use `three_ds_method_details` (device fingerprinting). Device data is gathered natively by the 3DS SDK, so the fingerprinting iframe and `threeds_method_comp_ind` / `three_ds_method_url` inputs are not part of the mobile flow.
-{% endhint %}
-
-#### Mobile 6.M — Native 3DS flow (`device_channel = "APP"`)
-
-**Prerequisite: integrate a native 3DS SDK**
-
-Native 3DS on mobile is powered by a **native 3DS SDK** that generates the authentication request (AReq) parameters and renders the challenge screen. Hyperswitch is provider agnostic here. To enable it:
-
-1. Add the 3DS SDK dependency to your app (iOS pod / Android gradle / React Native package, as documented in that SDK's integration guide).
-2. Provide the **3DS SDK API key** in the configuration (`threeDsSdkApiKey`) (Optional, provider dependent).
-
-{% hint style="info" %}
-If you use the Hyperswitch mobile SDK, it detects an available 3DS SDK at runtime (Juspay 3DS SDK or Netcetera) and drives it for you — you only supply the dependency and API key. If you integrate directly, you call the 3DS SDK yourself at the points noted below.
-{% endhint %}
-
-{% hint style="danger" %}
-If no native 3DS SDK is present, the native flow cannot run and the payment fails with an external-3DS error. Ensure a 3DS SDK dependency is added before testing.
-{% endhint %}
-
-The flow then runs the following sequence.
-
-**Mobile 6.M.1 — Initialize the 3DS SDK and generate AReq parameters**
-
-Initialize the native 3DS SDK (once per session), then generate the **authentication request (AReq) parameters** using `message_version`, `directory_server_id`, and `card_network` from Mobile 6.1. This yields the encrypted device data, SDK app ID, SDK transaction ID, SDK reference number, and an ephemeral public key.
-
-**Mobile 6.M.2 — Authentication call**
-
-POST to `three_ds_authentication_url` with `device_channel: "APP"` and an `sdk_information` object built from the AReq parameters. There is **no `browser_info`** — device data lives inside `sdk_information`:
-
-```json
-{
-  "client_secret": "{{client_secret}}",
-  "device_channel": "APP",
-  "threeds_method_comp_ind": "N",
-  "sdk_information": {
-    "sdk_app_id": "…",
-    "sdk_enc_data": "…",
-    "sdk_ephem_pub_key": { "kty": "…", "crv": "…", "x": "…", "y": "…" },
-    "sdk_trans_id": "…",
-    "sdk_reference_number": "…",
-    "sdk_max_timeout": 10
-  }
-}
-```
-
-Headers: `Content-Type: application/json`, and either `api-key: <publishable key>` **or** `Authorization: <sdkAuthorization>` when using an ephemeral/session token.
-
-**Response (APP channel):**
+The response carries `trans_status` and, when needed, ACS challenge fields.
 
 ```json
 {
   "trans_status": "C",
-  "acs_signed_content": "…",
-  "acs_reference_number": "…",
-  "acs_trans_id": "UUID",
-  "three_dsserver_trans_id": "UUID"
+  "acs_url": "https://<acs host>/<challenge path>",
+  "challenge_request": "<encoded challenge request>",
+  "challenge_request_key": "creq",
+  "acs_reference_number": "<acs reference number>",
+  "acs_trans_id": "<acs transaction id>",
+  "three_dsserver_trans_id": "<3ds server transaction id>",
+  "three_ds_requestor_url": "https://<your domain>"
 }
 ```
 
-Based on `trans_status`:
+`trans_status` has eight wire values. The list below contains all eight values declared by the API enum.
 
-* `trans_status = "C"` — a **challenge** is required (Mobile 6.M.3a).
-* Any other value — **frictionless** (Mobile 6.M.3b).
+| Value | Meaning |
+| --- | --- |
+| `Y` | Authentication or account verification succeeded. |
+| `N` | Authentication failed or the transaction was denied. |
+| `U` | Authentication could not be performed. |
+| `A` | An authentication attempt was recorded, but the cardholder was not verified. |
+| `R` | The issuer rejected authentication and requests that authorization not be attempted. |
+| `C` | A challenge is required. |
+| `D` | Decoupled authentication is pending. |
+| `I` | Informational response only. |
 
-{% hint style="info" %}
-The APP-channel response returns `acs_signed_content` (not the web `acs_url` + `creq`). This signed content is handed directly to the native SDK to render the challenge — there is no form POST to an ACS URL.
-{% endhint %}
+Only `C` uses the ACS challenge form in this browser walkthrough. Do not treat every non-`C` value as success. Continue to the authorize URL so Hyperswitch can finalize the payment, then use the final payment status as the result.
 
-**Mobile 6.M.3a — Challenge flow (`trans_status = "C"`)**
+## 5. Submit the challenge or non-challenge result
 
-Pass `acs_signed_content`, `acs_reference_number`, `acs_trans_id`, and `three_dsserver_trans_id` to the native 3DS SDK, which renders the **challenge screen natively** inside your app (the OTP/biometric UI is drawn by the 3DS SDK — there is no iframe and no browser). On completion, proceed to Mobile 6.M.4.
+The payload is the same for both integration models. Only the form target changes.
 
-**Mobile 6.M.3b — Frictionless flow (any other `trans_status`)**
+### Challenge response when `trans_status` is `C`
 
-No challenge screen is shown. Proceed directly to Mobile 6.M.4.
+Submit `challenge_request` to `acs_url`. Name the field with `challenge_request_key`.
 
-**Mobile 6.M.4 — Finalize authorization**
+**Embedded iframe**
 
-POST (empty body) to `three_ds_authorize_url` to finalize authorization — the mobile equivalent of the web "authorize" submission. This is done for both the challenge and frictionless paths.
-
-**Mobile 6.M.5 — Completion (retrieve + short-poll)**
-
-Authorization can take a moment to settle at the connector, so confirm the final status yourself:
-
-1. **Retrieve** the payment (`GET /payments/{payment_id}` with `force_sync=true`).
-2. If the status is already terminal, surface it:
-   * `succeeded` / `processing` → **success**
-   * `failed` → **failure**
-3. If the status is not yet terminal (still `requires_customer_action`), **short-poll** `GET /poll/status/{poll_id}` using `poll_config` — waiting `delay_in_secs` between calls, up to `frequency` attempts — until `status = "completed"`, then **retrieve once more** for the final status.
-
-```bash
-curl --location '{{SANDBOX_URL}}/poll/status/{{poll_id}}' \
---header 'api-key: {{publishable_api_key}}'
+```html
+<iframe name="threeDSChallengeFrame" title="3DS challenge"></iframe>
+<form
+  id="threeDSChallengeForm"
+  method="POST"
+  action="<acs url>"
+  target="threeDSChallengeFrame"
+>
+  <input
+    type="hidden"
+    name="<challenge request key>"
+    value="<encoded challenge request>"
+  />
+</form>
+<script>
+  document.getElementById("threeDSChallengeForm").submit();
+</script>
 ```
 
-```json
-{ "poll_id": "external_authentication_pay_XXXX", "status": "pending" }
+**Full-page redirect**
+
+```html
+<form id="threeDSChallengeForm" method="POST" action="<acs url>">
+  <input
+    type="hidden"
+    name="<challenge request key>"
+    value="<encoded challenge request>"
+  />
+</form>
+<script>
+  document.getElementById("threeDSChallengeForm").submit();
+</script>
 ```
 
-`status` is one of `pending`, `completed`, or `not_found`. This mirrors the web embedded-iframe completion (Web 6.5, embedded tab), except you poll directly instead of listening for a `postMessage` from an iframe.
+The ACS renders the challenge page, for example an OTP prompt. On completion it posts the result to `three_ds_authorize_url`, which returns the script that finalizes the flow.
 
-#### Mobile 6.R — Redirected 3DS flow (`redirect_to_url`)
+### Non-challenge response
 
-When the intent returns `status: "requires_customer_action"` with a `next_action.type` of `redirect_to_url`, open the authentication URL in an in-app browser. This is the mobile equivalent of the web full-page redirect (Web 6.5, redirect tab), and is the flow used for **processor-native 3DS** (i.e. when External 3DS is not enabled). No native 3DS SDK is required for this flow.
+Submit an empty form to `three_ds_authorize_url`.
+
+**Embedded iframe**
+
+This reuses the challenge iframe. Declare it here if your flow skipped the challenge path, or the form opens in a new window.
+
+```html
+<iframe name="threeDSChallengeFrame" title="3DS challenge"></iframe>
+<form
+  id="threeDSAuthorizeForm"
+  method="POST"
+  action="<three ds authorize url>"
+  target="threeDSChallengeFrame"
+></form>
+<script>
+  document.getElementById("threeDSAuthorizeForm").submit();
+</script>
+```
+
+**Full-page redirect**
+
+```html
+<form
+  id="threeDSAuthorizeForm"
+  method="POST"
+  action="<three ds authorize url>"
+></form>
+<script>
+  document.getElementById("threeDSAuthorizeForm").submit();
+</script>
+```
+
+## 6. Complete the selected browser model
+
+When the challenge or non-challenge result reaches `three_ds_authorize_url`, Hyperswitch responds with an HTML page containing a small script. That script detects at runtime whether it is running inside an iframe or in the top-level window, and behaves accordingly. This is why the same authorize URL serves both models. Use the section below that matches how you submitted the form in step 5.
+
+### Embedded iframe
+
+The authorize response runs inside the iframe. It posts one of two message shapes to the parent window:
+
+* `poll_status` means authorization is still being finalized.
+* `openurl_if_required` carries the return URL when no polling instruction is needed.
+
+In `poll_status`, `frequency` and `delay_in_secs` are strings. This differs from the integer values in `next_action.three_ds_data.poll_config`.
 
 ```json
-"next_action": {
-  "type": "redirect_to_url",
-  "redirect_to_url": "https://SANDBOX_URL/payments/redirect/pay_XXXX/…"
+{
+  "poll_status": {
+    "poll_id": "external_authentication_<payment id>",
+    "frequency": "5",
+    "delay_in_secs": "2",
+    "return_url_with_query_params": "https://<your domain>/payments/return?<query>"
+  }
 }
 ```
 
-**Mobile 6.R.1 — Prerequisite: `return_url`**
-
-Set `return_url` in the confirm request (Step 5).
-
-{% hint style="warning" %}
-`return_url` is **load-bearing** on mobile: the in-app browser watches for a navigation to your `return_url` carrying a `status=` query parameter, and uses that to know the flow is finished. Ensure the `return_url` scheme/host is registered with your app's redirect configuration.
-{% endhint %}
-
-**Mobile 6.R.2 — Open the authentication URL**
-
-Open `redirect_to_url` in a secure in-app browser:
-
-{% tabs %}
-{% tab title="iOS" %}
-`SFSafariViewController` / `ASWebAuthenticationSession` (ephemeral session for card payments).
-{% endtab %}
-
-{% tab title="Android" %}
-Chrome Custom Tabs.
-{% endtab %}
-{% endtabs %}
-
-The cardholder completes the ACS challenge (e.g. OTP) in that browser.
-
-**Mobile 6.R.3 — Return and finalize**
-
-When the ACS redirects to your `return_url`, inspect the appended `status=` query parameter:
-
-* `status=succeeded` / `processing` / `requires_capture` / `partially_captured` → treat as **success**, then **retrieve** the payment for the authoritative final status.
-* `status=failed` / `requires_payment_method` → **failure**.
-* Browser dismissed without a status → **cancelled**.
-
-As on web, the status in the return URL is the status _at the moment of redirect_ and may not yet be terminal — always perform a **retrieve** to confirm the final state before reporting the result to your app:
-
-```bash
-curl --location '{{SANDBOX_URL}}/payments/{{payment_id}}?force_sync=true&client_secret={{client_secret}}' \
---header 'api-key: {{publishable_api_key}}'
+```json
+{
+  "openurl_if_required": "https://<your domain>/payments/return?<query>"
+}
 ```
 
-#### Choosing native vs redirected on mobile
+Register the listener before submitting the challenge or authorize form. Validate `event.origin` against the origin of `three_ds_authorize_url` before using the message.
 
-You do not choose the flow per request — it is determined by your configuration:
+```javascript
+window.addEventListener("message", async (event) => {
+  const authorizeOrigin = new URL("<three ds authorize url>").origin;
+  if (event.origin !== authorizeOrigin) return;
 
-* **Enable External 3DS (Steps 1–5) + integrate a native 3DS SDK** → confirm returns `three_ds_invoke` → **native flow (Mobile 6.M)**, with the challenge rendered inside your app.
-* **Do not enable External 3DS** → the processor returns a standard `redirect_to_url` → **redirected flow (Mobile 6.R)**, with the challenge in an in-app browser.
+  const data = event.data || {};
 
-{% hint style="info" %}
-If External 3DS is requested but the native 3DS SDK cannot initialize or generate AReq parameters, retrieve the payment and surface the resulting status rather than silently failing. (The Hyperswitch mobile SDK does this automatically.)
-{% endhint %}
+  if (data.poll_status) {
+    const {
+      poll_id: pollId,
+      delay_in_secs: delayInSecs,
+      frequency,
+      return_url_with_query_params: returnUrl
+    } = data.poll_status;
 
-### Web vs mobile at a glance
+    const delayMs = Number.parseInt(delayInSecs, 10) * 1000;
+    const maxAttempts = Number.parseInt(frequency, 10);
 
-| Aspect                        | Web                                             | Mobile                                                      |
-| ----------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| Device channel                | `BRW`                                           | `APP`                                                       |
-| Device data source            | `browser_info` + hidden fingerprinting iframe   | Native 3DS SDK (`sdk_information`)                          |
-| Fingerprinting step (Web 6.2) | Required (hidden iframe)                        | Not applicable                                              |
-| Challenge rendering           | Iframe or full-page redirect                    | Native SDK screen **or** in-app browser                     |
-| Auth response                 | `acs_url` + `creq`                              | `acs_signed_content`                                        |
-| Completion signal             | `postMessage` (iframe) or return URL (redirect) | Retrieve + `/poll/status` (native) or return URL (redirect) |
-| Final status                  | Retrieve with `force_sync=true`                 | Retrieve with `force_sync=true`                             |
+    for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+      const response = await fetch(
+        `https://sandbox.hyperswitch_domain/poll/status/${encodeURIComponent(pollId)}`,
+        { headers: { "api-key": "<publishable key>" } }
+      );
+      const poll = await response.json();
 
-### Sandbox testing
+      if (poll.status === "completed" || poll.status === "not_found") break;
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
 
-* **Test OTP** — choose any of the answers in the MCQ presented by the ACS.
-* **Test card** — `2221008123677736` (Nuvei-specific).
-* For native mobile testing, confirm a **native 3DS SDK dependency** (Juspay 3DS SDK or Netcetera) is bundled and `threeDsSdkApiKey` is set; otherwise the app falls back to an error on `three_ds_invoke`.
+    await retrieveFinalPayment(returnUrl);
+    return;
+  }
+
+  if (data.openurl_if_required) {
+    await retrieveFinalPayment(data.openurl_if_required);
+  }
+});
+```
+
+`GET /poll/status/{poll_id}` returns `pending`, `completed`, or `not_found`. It accepts the publishable key.
+
+### Full-page redirect
+
+The authorize response runs in the top-level window and redirects to `return_url`, appending `payment_id`, `status`, `payment_intent_client_secret`, `amount`, and `manual_retry_allowed` as query parameters. No `postMessage` is sent and `/poll/status` is not used in this model.
+
+The redirect is immediate. The `status` in the return URL is the status at the moment of redirect and may not be terminal yet, because the return URL does not wait for authorization to finalize. Confirm the final status yourself on your return page.
+
+Ensure `return_url` is set on the confirm request in step 1. In this model it is load-bearing: the backend redirects the top-level window to it.
+
+Read `payment_id` and `payment_intent_client_secret` from the return URL, then retrieve the payment, retrying until the status is terminal.
+
+```javascript
+const params = new URLSearchParams(window.location.search);
+const paymentId = params.get("payment_id");
+const clientSecret = params.get("payment_intent_client_secret");
+
+await retrieveFinalPayment(window.location.href, paymentId, clientSecret);
+```
+
+### Retrieve the final payment
+
+Both models finish by retrieving the payment with `force_sync=true`. The retrieve endpoint accepts the publishable key when the payment client secret is supplied.
+
+```javascript
+async function retrieveFinalPayment(returnUrl, suppliedPaymentId, suppliedClientSecret) {
+  const params = new URL(returnUrl).searchParams;
+  const paymentId = suppliedPaymentId || params.get("payment_id");
+  const clientSecret =
+    suppliedClientSecret || params.get("payment_intent_client_secret");
+
+  const response = await fetch(
+    `https://sandbox.hyperswitch.io/payments/${encodeURIComponent(paymentId)}` +
+      `?force_sync=true&client_secret=${encodeURIComponent(clientSecret)}`,
+    { headers: { "api-key": "<publishable key>" } }
+  );
+
+  return response.json();
+}
+```
+
+Use the returned payment `status` to decide what your application shows next.
+
+In the full-page redirect model, retry the retrieve until the status is terminal:
+
+```javascript
+async function confirmFinalStatus(paymentId, clientSecret) {
+  const terminal = ["succeeded", "failed", "cancelled", "requires_capture"];
+
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const response = await fetch(
+      `https://sandbox.hyperswitch_domain/poll/payments/${encodeURIComponent(paymentId)}` +
+        `?force_sync=true&client_secret=${encodeURIComponent(clientSecret)}`,
+      { headers: { "api-key": "<publishable key>" } }
+    );
+    const payment = await response.json();
+
+    if (terminal.includes(payment.status)) {
+      return payment;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+}
+```
+
+## Sandbox testing notes
+
+* **Test OTP:** on the challenge page, choose any of the answers offered in the multiple-choice prompt.
+* **Test card:** `2221008123677736`. This card is specific to Nuvei as the authorizing processor.
