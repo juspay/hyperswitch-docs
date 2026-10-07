@@ -50,6 +50,7 @@
     * [Etisalat](connectors-integrations/available-connectors/etisalat.md)
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
+    * [Deutsche Bank](connectors-integrations/available-connectors/deutschebank.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
