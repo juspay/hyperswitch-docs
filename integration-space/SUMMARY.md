@@ -51,6 +51,7 @@
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
+    * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
