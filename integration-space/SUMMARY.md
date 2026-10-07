@@ -40,15 +40,20 @@
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
     * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
+    * [D24](connectors-integrations/available-connectors/d24.md)
     * [Datatrans](connectors-integrations/available-connectors/datatrans.md)
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
     * [Elavon](connectors-integrations/available-connectors/elavon.md)
     * [Envoy](connectors-integrations/available-connectors/envoy.md)
+    * [Etisalat](connectors-integrations/available-connectors/etisalat.md)
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
+    * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
+    * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
+    * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
@@ -141,6 +146,7 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
+
 
 
 
