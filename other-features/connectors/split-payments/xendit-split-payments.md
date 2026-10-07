@@ -20,7 +20,7 @@ metaLinks:
 
 ### Before you start
 
-Set up a Xendit account and enable split settlement on the Xendit platform. See the [Xendit documentation](https://docs.xendit.co/docs) for setup instructions. Then configure a Xendit connector account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+Set up a Xendit account and enable split settlement on the Xendit platform. Also enable Split Settlement for the relevant Hyperswitch business profile, then configure a Xendit connector account in the [Hyperswitch control center](https://app.hyperswitch.io/). See the [Xendit documentation](https://docs.xendit.co/docs) for setup instructions.
 
 ### Overview
 
