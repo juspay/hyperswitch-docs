@@ -89,6 +89,10 @@ async function initialize() {
 }
 ```
 
+{% hint style="warning" %}
+**Apple Pay:** The HyperLoader script must be mounted on the top-level window of your checkout page, as the Apple Pay session is always started from the top-level window. If you render the SDK inside an iframe, make sure the HyperLoader script is mounted on the top-level window as well, to avoid Apple Pay payment failures.
+{% endhint %}
+
 **2.3 Additional Callback Handling for Wallets Payment Process**
 
 This document outlines the details and functionality of an optional callback `completeDoThis` and `onSDKHandleClick` that can be provided by merchants during the payment process. These callbacks allow merchants to hook into the payment flow at key stages and handle specific actions or events before continuing the normal flow.
@@ -171,6 +175,10 @@ async function initialize() {
   document.body.appendChild(script);
 }
 ```
+
+{% hint style="warning" %}
+**Apple Pay:** The HyperLoader script must be mounted on the top-level window of your checkout page, as the Apple Pay session is always started from the top-level window. If you render the SDK inside an iframe, make sure the HyperLoader script is mounted on the top-level window as well, to avoid Apple Pay payment failures.
+{% endhint %}
 {% endtab %}
 {% endtabs %}
 

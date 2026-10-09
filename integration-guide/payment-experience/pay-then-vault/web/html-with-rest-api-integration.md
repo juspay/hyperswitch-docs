@@ -25,6 +25,10 @@ Use `HyperLoader` to ensure PCI compliant means of accepting payment details fro
 <script src="https://beta.hyperswitch.io/v1/HyperLoader.js"></script>
 ```
 
+{% hint style="warning" %}
+**Apple Pay:** The HyperLoader script must be mounted on the top-level window of your checkout page, as the Apple Pay session is always started from the top-level window. If you render the SDK inside an iframe, make sure the HyperLoader script is mounted on the top-level window as well, to avoid Apple Pay payment failures.
+{% endhint %}
+
 **2.2 Define the payment form**
 
 {% hint style="info" %}
