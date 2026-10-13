@@ -224,7 +224,7 @@
   * [Account Setup and Structure](integration-guide/account-management/multiple-accounts-and-profiles/README.md)
     * [Quick Start: Create Your Hyperswitch Account](integration-guide/account-management/multiple-accounts-and-profiles/quick-start.md)
     * [Pick the Right Setup for Your Business](integration-guide/account-management/multiple-accounts-and-profiles/pick-the-right-setup.md)
-    * [Organization, Merchant, and Profile](integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
+    * [Organization, Merchant Account, and Business Profile](integration-guide/account-management/multiple-accounts-and-profiles/hyperswitch-account-structure.md)
     * [Standard Organization](integration-guide/account-management/multiple-accounts-and-profiles/standard-organization.md)
     * [Platform Organization](integration-guide/account-management/multiple-accounts-and-profiles/platform-organization-concepts.md)
       * [Setting Up a Platform Organization](integration-guide/account-management/multiple-accounts-and-profiles/setting-up-platform-organization.md)
@@ -252,6 +252,7 @@
     * [Payments Report](integration-guide/control-center/reporting/payments-report.md)
   * [Developers](integration-guide/control-center/developers.md)
   * [Configure SSO for the Hyperswitch Control Center](integration-guide/control-center/configure-sso-for-the-hyperswitch-control-center.md)
+  * [Payment Settings](integration-guide/control-center/payment-settings.md)
 
 ## Use-Cases
 
@@ -271,7 +272,8 @@
 * [Payments Modules](other-features/payments-modules/README.md)
   * [Cost Observability](other-features/payments-modules/ai-powered-cost-observability/README.md)
     * [Uploading Fee Reports for Analysis](other-features/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis.md)
-  * [Revenue Recovery](other-features/payments-modules/revenue-recovery.md)
+  * [Revenue Recovery](other-features/payments-modules/revenue-recovery/README.md)
+    * [How Revenue Recovery Works](other-features/payments-modules/revenue-recovery/how-revenue-recovery-works.md)
   * [Reconciliation](other-features/payments-modules/reconciliation-product/README.md)
     * [Why we evolved(V1 vs V2)](other-features/payments-modules/reconciliation-product/why-we-evolved-v1-vs-v2.md)
     * [Core Concepts](other-features/payments-modules/reconciliation-product/core-concepts.md)
@@ -403,10 +405,8 @@
 * [Offer Engine](other-features/offer-engine/README.md)
   * [Setup Guide](other-features/offer-engine/setup-guide.md)
   * [How the SDK works](other-features/offer-engine/how-the-sdk-works.md)
-  * [Offer Payment Lifecycle](other-features/offer-engine/offer-payment-lifecycle.md)
   * [Offers API Reference](other-features/offer-engine/offers-api-reference.md)
-  * [Configuring an Offer](other-features/offer-engine/configuring-an-offer.md)
-  * [Roadmap](other-features/offer-engine/roadmap.md)
+  * [Additional Offer Capabilities](other-features/offer-engine/additional-offer-capabilities.md)
 
 ## FAQs
 

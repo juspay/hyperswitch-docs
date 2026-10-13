@@ -23,7 +23,7 @@ This chapter covers how to set up your Hyperswitch account end to end: signing u
 
 * [Quick Start: Create Your Hyperswitch Account](quick-start.md)
 * [Pick the Right Setup for Your Business](pick-the-right-setup.md)
-* [Organization, Merchant, and Profile](hyperswitch-account-structure.md)
+* [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md)
 * [Standard Organization](standard-organization.md)
 * [Platform Organization](platform-organization-concepts.md)
   * [Setting Up a Platform Organization](setting-up-platform-organization.md)
