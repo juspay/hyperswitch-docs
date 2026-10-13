@@ -10,10 +10,11 @@ metaLinks:
 
 <!-- truth manifest; hyperswitch 7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8; spec api-reference/v1/openapi_spec_v1.json@7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8
      symbols: capture methods automatic, manual, manual_multiple, scheduled, sequential_automatic = api-reference/v1/openapi_spec_v1.json:17937-17946; crates/common_enums/src/enums.rs:843-859
+     symbols: scheduled capture method rejected with 501 Not Implemented on payment create and update = crates/router/src/routes/payments.rs:86-88,967-969
      symbols: terminal payment statuses succeeded, failed, cancelled, cancelled_post_capture, partially_captured, expired = crates/common_enums/src/enums.rs:2150-2198,2205-2225
      symbols: partially_captured_and_capturable = api-reference/v1/openapi_spec_v1.json:27103-27123; crates/common_enums/src/enums.rs:2177-2182,2205-2225; crates/common_enums/src/transformers.rs:2129-2130
-     symbols: reused refund_id returns DuplicateRefundRequest = crates/router/src/core/refunds.rs:1828-1835
-     checked: 2026-10-07 -->
+     symbols: refund insertion database uniqueness violation returns DuplicateRefundRequest, public response HTTP 400 code HE_01 = crates/router/src/core/refunds.rs:1828-1835; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:67-68,428
+     checked: 2026-10-13 -->
 
 # Pay-Then-Vault
 
@@ -418,7 +419,7 @@ stateDiagram-v2
 ### Notes
 
 * **Terminal States:** `succeeded`, `failed`, `cancelled`, `cancelled_post_capture`, `partially_captured`, and `expired` are terminal states requiring no further action
-* **Capture Methods:** System supports `automatic` (funds captured immediately), `manual` (funds captured in a separate step), `manual_multiple` (funds captured in multiple partial amounts via separate steps), `scheduled` (funds captured automatically at a future predefined time), and `sequential_automatic` (authorization and capture are handled as sequential operations) capture methods.
+* **Capture Methods:** System supports `automatic` (funds captured immediately), `manual` (funds captured in a separate step), `manual_multiple` (funds captured in multiple partial amounts via separate steps), `scheduled` (funds captured automatically at a future predefined time), and `sequential_automatic` (authorization and capture are handled as sequential operations) capture methods. `scheduled` is declared in the API spec but not implemented: payment create and update with `capture_method: scheduled` return `501 Not Implemented`. To capture at a later time, use `manual` or `manual_multiple`; see [Manual Capture](manual-capture/README.md).
 * **Authentication:** 3DS authentication automatically resumes payment processing after customer completion
 * **MIT Compliance:** Off-session recurring payments follow industry standards for merchant-initiated transactions
-* **Refund IDs:** Use a new `refund_id` for each refund request. Reusing an existing value is rejected as `DuplicateRefundRequest`.
+* **Refund IDs:** Use a distinct `refund_id` for each refund operation. When retrying an uncertain request (for example, a timeout), keep the same `refund_id` and retrieve the refund with `GET /refunds/{refund_id}`; sending a new `refund_id` can create a second refund while refundable funds remain. A request that reuses an existing `refund_id` is still subject to amount and refund-count validation, and if it passes, it is rejected with HTTP 400, error code `HE_01` ("Duplicate refund request. Refund already attempted with the refund ID").
