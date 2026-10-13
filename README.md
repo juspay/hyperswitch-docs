@@ -133,7 +133,7 @@ Control how transactions flow across payment providers with configurable routing
 
 Automatically route transactions based on geography, success rate, or cost to maximize authorization rates.
 
-[Smart Retries →](other-features/payments-modules/revenue-recovery.md)
+[Smart Retries →](other-features/payments-modules/revenue-recovery/)
 
 Recover failed payments using ML-driven retry strategies optimized for timing, issuer behavior, and card type.
 
