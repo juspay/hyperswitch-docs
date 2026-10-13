@@ -7,7 +7,7 @@ metaLinks:
     - copy-of-subscriptions.md
 ---
 
-# Copy of Subscriptions
+# Subscriptions Management
 
 Businesses that run on subscription model powered by providers viz. Chargebee, Recurly, Stripe Billing etc. can now augment it with payments orchestration by decoupling the payments from the subscription provider and using them purely for subscription ledger and scheduling, while owning 100% of the card vaulting, payment attempts, and retry logic (owned in-house, or via an ensemble of specialized payment-focused orchestrator and other focused third parties, modularized to work with each other)
 
@@ -28,7 +28,7 @@ Businesses that run on subscription model powered by providers viz. Chargebee, R
 5. Subscription is created at Hyperswitch and at the subscription provider's end
 6. First invoice is marked as paid and the subscription is activated
 7. Subsequent billing cycles are handled independently by Hyperswitch through MIT payments
-8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../other-features/payments-modules/revenue-recovery.md)) or by the solution provider of your choice.
+8. Failed MIT payments can be smartly retried by Hyperswitch ([read more](../../../other-features/payments-modules/revenue-recovery/)) or by the solution provider of your choice.
 
 ### Flow Diagram
 
