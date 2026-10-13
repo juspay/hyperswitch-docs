@@ -158,7 +158,7 @@ Each route in the `routes` array has these parameters:
 
 * Amount of payments to be split using a percentage rate
 * Integer percentage value (e.g., 5 = 5%)
-* Percent amounts are calculated using integer division and truncated to the whole minor unit
+* Hyperswitch calculates the split as `percent_amount x total amount / 100` in minor units, using integer arithmetic. Any fraction of a minor unit is discarded, so a positive payment always rounds down: a 33% route on a 10,000 IDR payment splits 3,300, and the same route on a 10 IDR payment splits 3, not 3.3
 
 **`currency`** (Currency enum, **required**)
 
@@ -207,7 +207,7 @@ For multiple splits, the `charges` field contains detailed split rule informatio
 }
 ```
 
-Key fields to document:
+Key fields:
 
 * `split_rule_id`: Generated during preprocessing step
 * `for_user_id`: Optional sub-merchant identifier
@@ -231,13 +231,13 @@ For single splits, the structure is simpler:
 
 #### Response Processing Flow
 
-Document the transformation process:
+The response passes through three stages:
 
 1. **Raw Xendit Response**: Received from Xendit's API
 2. **Response Transformation**: Converted by the connector transformer
 3. **Charge Data Storage**: Split information preserved for subsequent operations
 
-#### Important Documentation Points
+#### Things to know
 
 **Field Usage Distinction**: `split_payments` is used in requests while `charges` is used in responses. This is a common source of confusion.
 
