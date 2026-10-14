@@ -154,14 +154,16 @@ Each route in the `routes` array has these parameters:
 **`flat_amount`** (MinorUnit, optional)
 
 * Amount of payments to be split using a flat rate
-* Specified in Hyperswitch minor units: 3000 is 30.00 USD. Hyperswitch treats IDR as a two-decimal currency as well, so 3000 is also 30.00 IDR; Hyperswitch converts the value to major units before sending it to Xendit
+* Specified in Hyperswitch minor units, which follow Hyperswitch's currency exponent rather than Xendit's: 3000 is 30.00 USD. Hyperswitch treats IDR as a two-decimal currency as well, so 3000 is also 30.00 IDR. Hyperswitch converts the value to major units before sending it to Xendit, and the conversion is exact: 3000 becomes 30.00, nothing is rounded
 * **Validation**: Must specify either `flat_amount` OR `percent_amount`, never both
 
 **`percent_amount`** (i64, optional)
 
 * Amount of payments to be split using a percentage rate
 * Integer percentage value (e.g., 5 = 5%)
-* Xendit performs the split; Hyperswitch only checks that the routes fit inside the payment. For that check it values a percent route as `percent_amount * total_amount / 100` in minor units with integer division, so any fraction of a minor unit is dropped (a 33% route on a payment of 1,001 minor units counts as 330), adds the flat routes, and rejects the request if the sum exceeds the payment amount
+* Xendit performs the split. Hyperswitch does not compute route amounts for the request; it only checks that the routes fit inside the payment
+* For that check, a percent route is valued as `percent_amount * total_amount / 100` in minor units with integer division, so any fraction of a minor unit is dropped: a 33% route on a payment of 1,001 minor units counts as 330
+* The valued percent routes and the flat routes are added together, and the request is rejected if the sum exceeds the payment amount
 
 **`currency`** (Currency enum, **required**)
 
