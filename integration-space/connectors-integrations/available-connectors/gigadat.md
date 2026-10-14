@@ -36,7 +36,7 @@ Provide the **Access Token**, **Security Token**, and **Campaign ID**. Also prov
 
 ### Before you start
 
-Gigadat appears in the control center payment-processor list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Have the three credentials and Site value ready. Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [Gigadat account](https://gigadatsolutions.com/) and obtain the **Access Token**, **Security Token**, and **Campaign ID**, plus the site value Gigadat registered for you. Gigadat appears in the control center payment-processor list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
 
 ### Webhooks
 
