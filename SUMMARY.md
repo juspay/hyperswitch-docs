@@ -297,8 +297,6 @@
         * [Resolving Split Payments by Linking an Entry (When 1:1 Becomes Many-to-1)](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-split-payments-by-linking-an-entry-when-1-1-becomes-many-to-1.md)
         * [Resolving Data Mismatches When Amounts Agree](other-features/payments-modules/reconciliation-product/reconciliation-user-guides/exceptions/resolving-data-mismatches-when-amounts-agree.md)
     * [FAQ](other-features/payments-modules/reconciliation-product/faq.md)
-  * [Reconciliation V1](other-features/payments-modules/reconciliation/README.md)
-    * [Getting Started with Recon](other-features/payments-modules/reconciliation/getting-started-with-recon.md)
 * [Click To Pay](other-features/click-to-pay/README.md)
   * [Visa Click to Pay: V1 to V2 Migration](other-features/click-to-pay/visa-click-to-pay-v1-to-v2-migration.md)
 * [Level 2 and Level 3 data](other-features/level-2-and-level-3-data.md)
