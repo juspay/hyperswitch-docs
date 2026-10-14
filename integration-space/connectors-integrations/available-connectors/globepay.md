@@ -37,7 +37,11 @@ Provide the **Partner Code** and **Credential Code** from [`globepay.connector_a
 
 ### Before you start
 
-GlobePay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Have both credentials ready and follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [GlobePay account](https://www.globepay.co/services/) and obtain the **Partner Code** and **Credential Code**. GlobePay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+
+### Payment flow
+
+GlobePay is a QR flow. Send the QR wallet variants, `ali_pay_qr` or `we_chat_pay_qr`; the redirect variants of Alipay and WeChat Pay return a not-implemented error ([wallet handling](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/globepay/transformers.rs#L56-L95)). Authorize returns the QR image URL in `connector_metadata` as `image_data_url`, and the payment stays `requires_customer_action` until the customer scans it ([QR metadata](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/globepay/transformers.rs#L207-L231)). Only a payment sync moves it on: `PAYING` keeps it pending, `PAY_SUCCESS` marks it charged, and `CLOSED` or a failure marks it failed ([`GlobepayPaymentPsyncStatus`](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/globepay/transformers.rs#L266-L281)). A refund sync maps `FINISHED` to success, `WAITING` and `SUCCESS` to pending, and `CHANGE` to failure ([`GlobepayRefundStatus`](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/globepay/transformers.rs#L366-L382)).
 
 ### Webhooks
 
