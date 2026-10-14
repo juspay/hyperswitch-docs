@@ -37,7 +37,7 @@ Provide the **API Key** and **Secret Key** shown in the connector form. The labe
 
 ### Before you start
 
-The control center lists `FISERVIPG` in [`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205) and maps it to `fiservemea` in [`the connector mapping`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L1036-L1036). Have the API Key and Secret Key ready. Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [Fiserv EMEA account](https://www.fiserv.com/en-emea.html) and obtain the **API Key** and **Secret Key** for IPG. The control center lists `FISERVIPG` in [`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205) and maps it to `fiservemea` in [`the connector mapping`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L1036-L1036). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
 
 ### Webhooks
 
