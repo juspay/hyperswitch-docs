@@ -51,6 +51,10 @@ const hyperPromise = loadHyper("YOUR_PUBLISHABLE_KEY",{
 });
 ```
 
+{% hint style="warning" %}
+**Apple Pay:** `loadHyper` must be called from the top-level window of your checkout page, as the Apple Pay session is always started from the top-level window. If you render the SDK inside an iframe, make sure the HyperLoader script is also mounted on the top-level window, to avoid Apple Pay payment failures.
+{% endhint %}
+
 #### 2.4 Fetch the Payment and Initialise `hyperElements`
 
 Immediately make a request to the endpoint on your server to create a new Payment as soon as your checkout page loads. The clientSecret returned by your endpoint is used to complete the payment.
