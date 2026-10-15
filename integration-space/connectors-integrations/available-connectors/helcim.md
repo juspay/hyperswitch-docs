@@ -38,7 +38,7 @@ Provide the **Api Key** from [`helcim.connector_auth.HeaderKey`](https://github.
 
 ### Before you start
 
-Helcim appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Have the Api Key ready and follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [Helcim account](https://www.helcim.com/guides/online-payment-integration/) and obtain the **Api Key**. Helcim appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
 
 ### Webhooks
 
