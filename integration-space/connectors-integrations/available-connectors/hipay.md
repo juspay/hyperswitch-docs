@@ -37,7 +37,7 @@ Provide the **API Login ID** and **API password** from [`hipay.connector_auth.Bo
 
 ### Before you start
 
-HiPay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Have both credentials ready and follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [HiPay account](https://hipay.com/en/) and obtain the **API Login ID** and **API password**. HiPay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
 
 ### Webhooks
 
