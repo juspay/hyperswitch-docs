@@ -12,7 +12,7 @@ metaLinks:
      symbols: X-Integration-Type header name = crates/common_utils/src/consts.rs:234 (X_INTEGRATION_TYPE, "x-integration-type"); annotated on both routes at crates/openapi/src/routes/payments.rs:639,695
      symbols: an absent or unrecognised header reads as client, matched case-insensitively after trim = crates/api_models/src/payments.rs:11217-11225
      symbols: MerchantIntegrationType client, server, client_and_server, default client = crates/common_enums/src/enums/accounts.rs:66-76
-     symbols: merchant integration type config key system.payment_integration_type_<merchant id> = crates/router/src/consts.rs:425; crates/router/src/core/configs/dimension_config.rs:1106-1126
+     symbols: merchant integration type is superposition key system.payment_integration_type (seed default client, override per processor_merchant_id), configs-table fallback system.payment_integration_type_<merchant id> only when superposition misses = config/superposition_seed.toml:2687-2691; crates/router/src/core/configs.rs:216-260; crates/router/src/core/configs/dimension_config.rs:1106-1126
      symbols: accept or reject matrix and IR_06 rejection = crates/router/src/core/payments/server_integration.rs:90-111; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:197-198
      symbols: create enriches when header is server and confirm is not true = crates/router/src/routes/payments.rs:137-142,204-221
      symbols: update enriches only for merchant API key auth = crates/router/src/routes/payments.rs:1001-1003,1061-1078
@@ -51,7 +51,18 @@ Before integrating, ensure you have:
 
 Each merchant account has an integration type: `client` (the default), `server`, or `client_and_server`. Contact the Hyperswitch team to set your account to `server` or `client_and_server`.
 
-If you self-host Hyperswitch, set it yourself with the admin API key:
+If you self-host Hyperswitch, the integration type is the Superposition config `system.payment_integration_type`. Add an override for your merchant on the `processor_merchant_id` dimension:
+
+```toml
+[[overrides]]
+_context_ = { processor_merchant_id = "YOUR_MERCHANT_ID" }
+"system.payment_integration_type" = "client_and_server"
+```
+
+See [Configuration Management](../../self-hosting-space/guides-for-self-hosting/config-management.md) for how to run Superposition and create overrides.
+
+{% hint style="info" %}
+Hyperswitch reads Superposition first. Only when Superposition returns no value does it fall back to the `configs` table, under the key `system.payment_integration_type_YOUR_MERCHANT_ID`, set with the admin API:
 
 ```bash
 curl --location 'https://your-hyperswitch-host/configs/' \
@@ -62,6 +73,7 @@ curl --location 'https://your-hyperswitch-host/configs/' \
     "value": "client_and_server"
   }'
 ```
+{% endhint %}
 
 ### Integration type
 
