@@ -7,7 +7,7 @@ metaLinks:
 
 # Helcim
 
-Helcim processes credit and debit card payments through Hyperswitch. Its card routes support mandates, refunds, and manual capture. 3DS is not supported.
+Helcim processes credit and debit card payments through Hyperswitch. Its card routes support refunds and manual capture. Mandates and 3DS are not supported.
 
 ### Status and capabilities
 
@@ -30,6 +30,7 @@ Helcim processes credit and debit card payments through Hyperswitch. Its card ro
 | card | Credit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | CAN, USA | CAD, USD |
 | card | Debit Card | supported | supported | automatic, manual, sequential automatic | not supported | American Express, Cartes Bancaires, Diners Club, Discover, Interac, JCB, Mastercard, UnionPay, Visa | CAN, USA | CAD, USD |
 
+The table marks mandates as supported, but the connector cannot use them: mandate setup is not implemented ([`SetupMandate`](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/helcim.rs#L248-L255)), no response returns a mandate reference ([response mapping](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/helcim/transformers.rs#L399)), and a mandate payment is rejected as an unsupported payment method ([request builder](https://github.com/juspay/hyperswitch/blob/7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8/crates/hyperswitch_connectors/src/connectors/helcim/transformers.rs#L163-L186)). Treat mandates and recurring payments as not supported through Helcim.
 
 ### Authentication
 
