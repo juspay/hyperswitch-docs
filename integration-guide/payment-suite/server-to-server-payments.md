@@ -209,14 +209,7 @@ In addition to standard payment details, the response includes:
         }
       }
     ],
-    "sdk_next_action": { "next_action": "confirm" },
-    "intent_data": {
-      "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
-      "status": "requires_payment_method",
-      "amount": 6540,
-      "currency": "USD",
-      "attempt_count": 1
-    }
+    "sdk_next_action": { "next_action": "confirm" }
   },
   "session_tokens": {
     "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
