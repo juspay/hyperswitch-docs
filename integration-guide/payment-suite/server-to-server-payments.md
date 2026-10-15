@@ -175,7 +175,8 @@ In addition to standard payment details, the response includes:
       {
         "payment_method": "card",
         "payment_method_type": "credit",
-        "card_networks": ["Visa", "Mastercard"]
+        "card_networks": ["Visa", "Mastercard"],
+        "customer_acceptance_support": "supported"
       }
     ],
     "customer_payment_methods": [
@@ -183,13 +184,15 @@ In addition to standard payment details, the response includes:
         "payment_token": "token_7ebf443fa0504067",
         "payment_method": "card",
         "payment_method_type": "credit",
+        "default_payment_method_set": true,
         "requires_cvv": true,
         "payment_method_data": {
           "card": {
             "last4_digits": "4242",
             "card_network": "Visa",
             "expiry_month": "12",
-            "expiry_year": "2030"
+            "expiry_year": "2030",
+            "saved_to_locker": true
           }
         }
       }
@@ -199,11 +202,13 @@ In addition to standard payment details, the response includes:
       "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
       "status": "requires_payment_method",
       "amount": 6540,
-      "currency": "USD"
+      "currency": "USD",
+      "attempt_count": 1
     }
   },
   "session_tokens": {
     "payment_id": "pay_mbabizu24mvu3mela5njyhpit4",
+    "client_secret": "pay_mbabizu24mvu3mela5njyhpit4_secret_el9ksDkiB8hi6j9N78yo",
     "session_token": [],
     "vault_details": {
       "vault_type": "hyperswitch",
