@@ -43,7 +43,7 @@ Provide **Client ID**, **Airline ID**, **Client Secret**, and **Source verificat
 
 ### Before you start
 
-IATA Pay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Have all four values ready and follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
+Create or sign in to your [IATA Pay account](https://www.iata.org/en/services/finance/iata-pay/) and obtain the **Client ID**, **Airline ID**, **Client Secret** and the webhook signing secret you will enter as **Source verification key**. IATA Pay appears in the control center list ([`connectorList`](https://github.com/juspay/hyperswitch-control-center/blob/ecca16a27cb6acb336569ea30714fa05d867c765/src/screens/Connectors/ConnectorUtils.res#L89-L205)). Then follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md).
 
 ### Webhooks
 
