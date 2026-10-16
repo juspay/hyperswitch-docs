@@ -157,6 +157,14 @@ Submit the network transaction identifier in combination with the corresponding 
 
 Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
 
+#### [**Network Transaction ID with Externally Vaulted Card**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-an-externally-vaulted-card)
+
+Reference the customer's card through an external vault alias together with the network transaction id from the initial transaction, without passing the card number.
+
+#### [**Network Token with External Vault Card Fallback**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-a-network-token-and-external-vault-card-fallback)
+
+Attempt the MIT with the network token, and fall back to the externally vaulted card alias when the network flags the token decline as retryable on the card.
+
 ***
 
 ### Connector-Agnostic MIT Routing
