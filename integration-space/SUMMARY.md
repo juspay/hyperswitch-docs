@@ -102,6 +102,7 @@
   * [PayPal](connectors-integrations/payouts/payout-processors/paypal.md)
   * [EBANX](connectors-integrations/payouts/payout-processors/ebanx.md)
   * [Cybersource](connectors-integrations/payouts/payout-processors/cybersource.md)
+  * [Mifinity](connectors-integrations/payouts/payout-processors/mifinity.md)
   * [Payout features](connectors-integrations/payouts/get-started-with-payouts/README.md)
     * [Payout Links](connectors-integrations/payouts/get-started-with-payouts/payout-link.md)
     * [Payouts with Saved Payment Methods](connectors-integrations/payouts/get-started-with-payouts/process-payouts-using-saved-payment-methods.md)
