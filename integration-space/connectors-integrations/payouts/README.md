@@ -71,7 +71,7 @@ Payouts run through 22 connectors. The names below are the variants of [`PayoutC
 | **GotymeSanlam**    | South Africa | -                                                                     | PayShap, PayShap Proxy  | -                      |
 | **Itaubank**        | Brazil       | -                                                                     | Pix, Pix Key, Pix EMV   | -                      |
 | **Loonio**          | Canada       | -                                                                     | Interac                 | -                      |
-| **Mifinity**        | Global       | -                                                                     | SEPA                    | Mifinity               |
+| **Mifinity**        | -            | -                                                                     | SEPA (declared, not implemented) | Mifinity (declared, not implemented) |
 | **Nomupay**         | Europe       | -                                                                     | SEPA                    | -                      |
 | **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | -                       | -                      |
 | **Payone**          | Europe       | Major Networks                                                        | -                       | -                      |
