@@ -49,7 +49,7 @@ Follow this video guide to learn more:
 
 You can use the Decision Simulator to run various scenarios to see the behaviour of the routing module under the set configurations&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (162).png" alt="Decision Simulator showing gateway success rates, card scenario, currency, amount range, Run simulation, and results panels"><figcaption></figcaption></figure>
 
 Follow this video guide to learn more:
 

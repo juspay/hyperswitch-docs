@@ -14,7 +14,7 @@ Default Fallback Routing is the priority order of configured processors for a me
 
 ## When It Applies
 
-Default fallback can be used when:
+Default fallback can be used in the following situations.
 
 * No routing configuration is active.
 * A rule or volume split points to a processor that does not support the payment method.
@@ -23,11 +23,19 @@ Default fallback can be used when:
 
 ## Setup
 
-1. Go to `Workflow` > `Routing`.
-2. Click `Manage` for Default Fallback.
-3. Review the list of configured processors.
-4. Reorder processors based on the priority you want Hyperswitch to use when no routing algorithm is active or the selected processor is not eligible.
-5. Save the fallback order.
+{% hint style="info" %}
+If your account still shows the older routing interface, open `Workflow` > `Routing` and click `Manage` for Default Fallback. The steps below describe the Decision Engine Routing interface.
+{% endhint %}
+
+1. Select your merchant account and **Profile** in the dashboard.
+2. Go to **Decision Engine Routing** > **Default Fallback**.
+3. Confirm the **Profile** on the fallback page and review its configured processors.
+4. Drag and drop processors into your preferred priority order, from top to bottom.
+5. Click **Save Changes**, then confirm with **Yes, save it**.
+
+<figure><img src="../../../.gitbook/assets/decision-engine-default-fallback.png" alt="Decision Engine Routing > Default Fallback page showing the selected profile, Stripe first and Adyen second, drag handles, priority positions, and Save Changes."><figcaption><p>Drag processors into your preferred fallback order, then click Save Changes.</p></figcaption></figure>
+
+For unmatched Rule-Based payments routed through Hyperswitch, this profile-level order takes precedence over **Default Fallback Gateway** in the rule builder when the profile has a fallback list. Review this order whenever you change your routing configuration.
 
 ## Good Practices
 
